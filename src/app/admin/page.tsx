@@ -13,12 +13,6 @@ type Post = {
   filename?: string;
 };
 
-type TagInfo = {
-  name: string;
-  count: number;
-  posts: string[];
-};
-
 type ImageInfo = {
   name: string;
   url: string;
@@ -49,7 +43,7 @@ export default function AdminPage() {
   const [authError, setAuthError] = useState("");
   const [authLoading, setAuthLoading] = useState(false);
   const [activeTab, setActiveTab] = useState<
-    "articles" | "tags" | "images" | "subscribers"
+    "articles" | "images" | "subscribers"
   >("articles");
 
   // Articles state
@@ -68,11 +62,6 @@ export default function AdminPage() {
   const [filterCategory, setFilterCategory] = useState("");
   const [filterTag, setFilterTag] = useState("");
   const [customCategory, setCustomCategory] = useState(false);
-
-  // Tags state
-  const [tags, setTags] = useState<TagInfo[]>([]);
-  const [tagsLoading, setTagsLoading] = useState(false);
-  const [selectedTag, setSelectedTag] = useState<TagInfo | null>(null);
 
   // Images state
   const [images, setImages] = useState<ImageInfo[]>([]);
@@ -203,23 +192,6 @@ export default function AdminPage() {
     }
   };
 
-  // ── Tags ──
-
-  const fetchTags = useCallback(async () => {
-    setTagsLoading(true);
-    try {
-      const res = await adminFetch("/api/admin/tags");
-      if (res.ok) {
-        const data = await res.json();
-        setTags(data.tags || []);
-      }
-    } catch {
-      // ignore
-    } finally {
-      setTagsLoading(false);
-    }
-  }, []);
-
   // ── Images ──
 
   const fetchImages = useCallback(async () => {
@@ -316,10 +288,9 @@ export default function AdminPage() {
   useEffect(() => {
     if (!isAuthed) return;
     if (activeTab === "articles") fetchPosts();
-    if (activeTab === "tags") fetchTags();
     if (activeTab === "images") fetchImages();
     if (activeTab === "subscribers") fetchSubscribers();
-  }, [isAuthed, activeTab, fetchPosts, fetchTags, fetchImages, fetchSubscribers]);
+  }, [isAuthed, activeTab, fetchPosts, fetchImages, fetchSubscribers]);
 
   // Derived: all categories and tags from posts
   const allCategories = Array.from(
@@ -373,7 +344,6 @@ export default function AdminPage() {
 
   const tabs = [
     { key: "articles" as const, label: "Articles" },
-    { key: "tags" as const, label: "Tags" },
     { key: "images" as const, label: "Images" },
     { key: "subscribers" as const, label: "Subscribers" },
   ];
@@ -689,73 +659,6 @@ export default function AdminPage() {
                   </div>
                 </div>
               </div>
-            )}
-          </div>
-        )}
-
-        {/* ── Tags Tab ── */}
-        {activeTab === "tags" && (
-          <div>
-            {tagsLoading ? (
-              <p className="text-gray-500">Loading tags...</p>
-            ) : (
-              <>
-                <div className="bg-white rounded-lg border border-gray-200 p-6">
-                  <h2 className="text-sm font-medium text-gray-500 mb-4">
-                    Tag Cloud
-                  </h2>
-                  <div className="flex flex-wrap gap-2">
-                    {tags.map((tag) => (
-                      <button
-                        key={tag.name}
-                        onClick={() =>
-                          setSelectedTag(
-                            selectedTag?.name === tag.name ? null : tag
-                          )
-                        }
-                        className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm transition-colors ${
-                          selectedTag?.name === tag.name
-                            ? "bg-[var(--primary,#3b82f6)] text-white"
-                            : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                        }`}
-                      >
-                        {tag.name}
-                        <span
-                          className={`inline-flex items-center justify-center w-5 h-5 rounded-full text-xs font-medium ${
-                            selectedTag?.name === tag.name
-                              ? "bg-white/20 text-white"
-                              : "bg-gray-300 text-gray-600"
-                          }`}
-                        >
-                          {tag.count}
-                        </span>
-                      </button>
-                    ))}
-                  </div>
-                  {tags.length === 0 && (
-                    <p className="text-gray-400">No tags found</p>
-                  )}
-                </div>
-
-                {selectedTag && (
-                  <div className="mt-4 bg-white rounded-lg border border-gray-200 p-6">
-                    <h3 className="text-sm font-medium text-gray-500 mb-3">
-                      Articles tagged &quot;{selectedTag.name}&quot;
-                    </h3>
-                    <ul className="space-y-2">
-                      {selectedTag.posts.map((postTitle, i) => (
-                        <li
-                          key={i}
-                          className="text-sm text-gray-700 flex items-center gap-2"
-                        >
-                          <span className="w-1.5 h-1.5 bg-[var(--primary,#3b82f6)] rounded-full flex-shrink-0" />
-                          {postTitle}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </>
             )}
           </div>
         )}
