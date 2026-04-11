@@ -55,9 +55,7 @@ export default function SubscribeForm({
           <div>
             <p className="font-semibold text-green-800">{message}</p>
             <a
-              href="https://yunyinghui.feishu.cn/wiki/GGZ4wvoCeiw8ibk8151c2zuCneh"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/handbook"
               className="mt-2 inline-block px-4 py-2 bg-green-600 text-white rounded-lg text-sm font-medium hover:bg-green-700 transition-colors"
             >
               立即查看完整手册 →
