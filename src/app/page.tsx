@@ -38,9 +38,10 @@ export default function HomePage() {
               <span className="text-[var(--primary)]">Jason Zhu</span>
             </h1>
             <p className="mt-4 text-lg md:text-xl text-gray-600 leading-relaxed">
-              前AI算法工程师，现专注于AI应用实践与传播。
+              前AI算法工程师，现专注于AI应用实践与传播，帮助更多人和企业拥抱AI。
               <br className="hidden sm:block" />
-              通过博客、培训和咨询，帮助更多人和企业拥抱AI。
+              9个月推特/X涨粉26900+，帮助很多推友实现了X增长，现开源
+              <Link href="/handbook" className="text-[var(--primary)] hover:underline">《AIP出海自媒体实战手册》</Link>
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {["前AI算法工程师", "AI博主", "企业培训", "AI MCN", "需求承接"].map(

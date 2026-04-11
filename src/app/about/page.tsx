@@ -60,6 +60,16 @@ const socials = [
     ),
   },
   {
+    name: "WeChat / 微信",
+    handle: "GoSail_AI",
+    url: null,
+    icon: (
+      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .543-.027.811-.05a6.127 6.127 0 01-.253-1.736c0-3.74 3.568-6.768 7.964-6.768.308 0 .608.019.908.044C17.701 4.648 13.558 2.188 8.691 2.188zm-2.15 4.03a1.12 1.12 0 110 2.24 1.12 1.12 0 010-2.24zm4.918 0a1.12 1.12 0 110 2.24 1.12 1.12 0 010-2.24zM16.213 8.78c-3.857 0-6.987 2.68-6.987 5.986 0 3.306 3.13 5.986 6.987 5.986.778 0 1.527-.118 2.228-.33a.716.716 0 01.592.08l1.486.872a.27.27 0 00.138.045c.133 0 .24-.108.24-.243 0-.06-.024-.118-.04-.176l-.305-1.158a.488.488 0 01.177-.55C22.337 18.147 23.2 16.48 23.2 14.766c0-3.306-3.13-5.986-6.987-5.986zm-2.07 3.39a.927.927 0 110 1.854.927.927 0 010-1.855zm4.14 0a.927.927 0 110 1.854.927.927 0 010-1.855z" />
+      </svg>
+    ),
+  },
+  {
     name: "GitHub",
     handle: "zhuyansen",
     url: "https://github.com/zhuyansen",
@@ -192,23 +202,45 @@ export default function AboutPage() {
       <section>
         <h2 className="text-xl font-bold text-gray-900 mb-4">找到我</h2>
         <div className="space-y-3">
-          {socials.map((social) => (
-            <a
-              key={social.name}
-              href={social.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 p-4 rounded-xl border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all"
-            >
-              <span className="text-gray-600">{social.icon}</span>
-              <div>
-                <p className="text-sm font-medium text-gray-900">
-                  {social.name}
-                </p>
-                <p className="text-xs text-gray-400">{social.handle}</p>
+          {socials.map((social) => {
+            const content = (
+              <>
+                <span className="text-gray-600">{social.icon}</span>
+                <div>
+                  <p className="text-sm font-medium text-gray-900">
+                    {social.name}
+                  </p>
+                  <p className="text-xs text-gray-400">
+                    {social.handle}
+                    {!social.url && <span className="ml-1 text-gray-300">（添加好友请备注来源）</span>}
+                  </p>
+                </div>
+              </>
+            );
+
+            if (social.url) {
+              return (
+                <a
+                  key={social.name}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 p-4 rounded-xl border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all"
+                >
+                  {content}
+                </a>
+              );
+            }
+
+            return (
+              <div
+                key={social.name}
+                className="flex items-center gap-3 p-4 rounded-xl border border-gray-100 bg-gray-50"
+              >
+                {content}
               </div>
-            </a>
-          ))}
+            );
+          })}
         </div>
       </section>
     </div>
