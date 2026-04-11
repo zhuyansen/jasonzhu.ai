@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import type { Dictionary, Locale } from "@/lib/dictionaries";
@@ -30,8 +31,15 @@ export default function Header({ lang, dict }: HeaderProps) {
     <header className="border-b border-gray-100 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
-          <Link href={`/${lang}`} className="flex items-center gap-2">
-            <span className="text-xl font-bold text-gray-900">
+          <Link href={`/${lang}`} className="flex items-center gap-2.5">
+            <Image
+              src="/avatar.jpg"
+              alt="Jason Zhu"
+              width={32}
+              height={32}
+              className="rounded-full"
+            />
+            <span className="text-lg font-bold text-gray-900">
               Jason<span className="text-[var(--primary)]">Zhu</span>.AI
             </span>
           </Link>
