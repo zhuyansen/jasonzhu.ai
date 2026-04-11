@@ -13,6 +13,7 @@ export interface BlogPost {
   excerpt: string;
   coverImage?: string;
   content: string;
+  filename?: string;
 }
 
 export function getAllPosts(): BlogPost[] {
@@ -35,6 +36,7 @@ export function getAllPosts(): BlogPost[] {
       excerpt: data.excerpt || "",
       coverImage: data.coverImage || undefined,
       content,
+      filename,
     };
   });
 

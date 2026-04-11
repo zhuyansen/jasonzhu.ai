@@ -10,6 +10,7 @@ type Post = {
   category: string;
   tags: string[];
   excerpt: string;
+  filename?: string;
 };
 
 type TagInfo = {
@@ -512,7 +513,7 @@ export default function AdminPage() {
                               View
                             </a>
                             <a
-                              href={`obsidian://open?vault=jasonzhu.ai&file=src/content/blog/${post.slug}`}
+                              href={`obsidian://open?vault=jasonzhu.ai&file=src%2Fcontent%2Fblog%2F${post.filename || post.slug + ".mdx"}`}
                               className="inline-flex items-center px-2.5 py-1 text-xs text-purple-600 bg-purple-50 rounded-md hover:bg-purple-100 transition-colors"
                             >
                               Obsidian
