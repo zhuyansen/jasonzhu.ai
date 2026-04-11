@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 interface SubscribeFormProps {
   source?: string;
@@ -11,6 +12,7 @@ export default function SubscribeForm({
   source = "website",
   compact = false,
 }: SubscribeFormProps) {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<
     "idle" | "loading" | "success" | "error"
@@ -35,6 +37,8 @@ export default function SubscribeForm({
         setStatus("success");
         setMessage(data.message);
         setEmail("");
+        // Auto-redirect to handbook page
+        router.push("/handbook?unlocked=true");
       } else {
         setStatus("error");
         setMessage(data.error);
