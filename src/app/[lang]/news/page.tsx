@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getDictionary, type Locale } from "@/lib/dictionaries";
 
 export const metadata: Metadata = {
   title: "AI 快讯",
@@ -84,14 +85,21 @@ function groupByDate(items: NewsItem[]): Record<string, NewsItem[]> {
   return groups;
 }
 
-export default function NewsPage() {
+export default async function NewsPage({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang: rawLang } = await params;
+  const lang = (rawLang === "en" ? "en" : "zh") as Locale;
+  const dict = await getDictionary(lang);
   const grouped = groupByDate(newsItems);
   const dates = Object.keys(grouped).sort((a, b) => b.localeCompare(a));
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12">
-      <h1 className="text-3xl font-bold text-gray-900 mb-2">AI 快讯</h1>
-      <p className="text-gray-500 mb-10">每日精选AI行业动态</p>
+      <h1 className="text-3xl font-bold text-gray-900 mb-2">{dict.news.title}</h1>
+      <p className="text-gray-500 mb-10">{dict.news.desc}</p>
 
       <div className="space-y-10">
         {dates.map((date) => (

@@ -3,24 +3,34 @@
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import type { Dictionary, Locale } from "@/lib/dictionaries";
 
-const navItems = [
-  { href: "/blog", label: "博客" },
-  { href: "/news", label: "快讯" },
-  { href: "/tools", label: "AI工具" },
-  { href: "/services", label: "服务" },
-  { href: "/about", label: "关于" },
-];
+interface HeaderProps {
+  lang: Locale;
+  dict: Dictionary;
+}
 
-export default function Header() {
+export default function Header({ lang, dict }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
+
+  const navItems = [
+    { href: `/${lang}/blog`, label: dict.nav.blog },
+    { href: `/${lang}/news`, label: dict.nav.news },
+    { href: `/${lang}/tools`, label: dict.nav.tools },
+    { href: `/${lang}/services`, label: dict.nav.services },
+    { href: `/${lang}/about`, label: dict.nav.about },
+  ];
+
+  // Build the alternate language URL
+  const otherLang = lang === "zh" ? "en" : "zh";
+  const switchPath = pathname.replace(`/${lang}`, `/${otherLang}`);
 
   return (
     <header className="border-b border-gray-100 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="flex items-center gap-2">
+          <Link href={`/${lang}`} className="flex items-center gap-2">
             <span className="text-xl font-bold text-gray-900">
               Jason<span className="text-[var(--primary)]">Zhu</span>.AI
             </span>
@@ -41,22 +51,37 @@ export default function Header() {
                 {item.label}
               </Link>
             ))}
+            {/* Language switcher */}
+            <Link
+              href={switchPath}
+              className="ml-2 px-2.5 py-1.5 rounded-lg text-xs font-semibold border border-gray-200 text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-colors"
+            >
+              {lang === "zh" ? "EN" : "中"}
+            </Link>
           </nav>
 
-          {/* Mobile menu button */}
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-50"
-            aria-label="Toggle menu"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              {menuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
+          {/* Mobile: lang switch + menu button */}
+          <div className="md:hidden flex items-center gap-2">
+            <Link
+              href={switchPath}
+              className="px-2 py-1 rounded text-xs font-semibold border border-gray-200 text-gray-500"
+            >
+              {lang === "zh" ? "EN" : "中"}
+            </Link>
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="p-2 rounded-lg text-gray-600 hover:bg-gray-50"
+              aria-label="Toggle menu"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {menuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
+          </div>
         </div>
 
         {/* Mobile nav */}

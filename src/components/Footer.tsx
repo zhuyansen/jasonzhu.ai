@@ -1,27 +1,33 @@
 import Link from "next/link";
+import type { Dictionary, Locale } from "@/lib/dictionaries";
 
-export default function Footer() {
+interface FooterProps {
+  lang: Locale;
+  dict: Dictionary;
+}
+
+export default function Footer({ lang, dict }: FooterProps) {
   return (
     <footer className="border-t border-gray-100 bg-gray-50 mt-auto">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="md:col-span-1">
-            <Link href="/" className="text-lg font-bold text-gray-900">
+            <Link href={`/${lang}`} className="text-lg font-bold text-gray-900">
               Jason<span className="text-[var(--primary)]">Zhu</span>.AI
             </Link>
             <p className="mt-3 text-sm text-gray-500 leading-relaxed">
-              前AI算法工程师，专注AI应用与实践。分享AI工具、教程、行业洞察。
+              {dict.footer.desc}
             </p>
           </div>
 
           {/* Navigation */}
           <div>
-            <h3 className="text-sm font-semibold text-gray-900 mb-3">导航</h3>
+            <h3 className="text-sm font-semibold text-gray-900 mb-3">{dict.footer.nav}</h3>
             <ul className="space-y-2">
-              <li><Link href="/blog" className="text-sm text-gray-500 hover:text-gray-900">博客</Link></li>
-              <li><Link href="/news" className="text-sm text-gray-500 hover:text-gray-900">快讯</Link></li>
-              <li><Link href="/tools" className="text-sm text-gray-500 hover:text-gray-900">AI工具</Link></li>
+              <li><Link href={`/${lang}/blog`} className="text-sm text-gray-500 hover:text-gray-900">{dict.nav.blog}</Link></li>
+              <li><Link href={`/${lang}/news`} className="text-sm text-gray-500 hover:text-gray-900">{dict.nav.news}</Link></li>
+              <li><Link href={`/${lang}/tools`} className="text-sm text-gray-500 hover:text-gray-900">{dict.nav.tools}</Link></li>
               <li><a href="https://agentskillshub.top" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 hover:text-gray-900">Agent Skills Hub</a></li>
               <li><a href="https://gosaillab.com" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 hover:text-gray-900">GoSail Lab</a></li>
             </ul>
@@ -29,17 +35,17 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="text-sm font-semibold text-gray-900 mb-3">服务</h3>
+            <h3 className="text-sm font-semibold text-gray-900 mb-3">{dict.footer.services}</h3>
             <ul className="space-y-2">
-              <li><Link href="/services" className="text-sm text-gray-500 hover:text-gray-900">企业培训</Link></li>
-              <li><Link href="/services" className="text-sm text-gray-500 hover:text-gray-900">AI MCN</Link></li>
-              <li><Link href="/services" className="text-sm text-gray-500 hover:text-gray-900">需求承接</Link></li>
+              <li><Link href={`/${lang}/services`} className="text-sm text-gray-500 hover:text-gray-900">{dict.footer.training}</Link></li>
+              <li><Link href={`/${lang}/services`} className="text-sm text-gray-500 hover:text-gray-900">{dict.footer.mcn}</Link></li>
+              <li><Link href={`/${lang}/services`} className="text-sm text-gray-500 hover:text-gray-900">{dict.footer.dev}</Link></li>
             </ul>
           </div>
 
           {/* Social */}
           <div>
-            <h3 className="text-sm font-semibold text-gray-900 mb-3">联系</h3>
+            <h3 className="text-sm font-semibold text-gray-900 mb-3">{dict.footer.contact}</h3>
             <ul className="space-y-2">
               <li>
                 <a href="https://x.com/GoSailGlobal" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 hover:text-gray-900">
@@ -52,7 +58,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <Link href="/about" className="text-sm text-gray-500 hover:text-gray-900">关于我</Link>
+                <Link href={`/${lang}/about`} className="text-sm text-gray-500 hover:text-gray-900">{dict.footer.aboutMe}</Link>
               </li>
             </ul>
           </div>

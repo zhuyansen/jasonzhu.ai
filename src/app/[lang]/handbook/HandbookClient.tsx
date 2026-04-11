@@ -3,14 +3,17 @@
 import { useState, Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
+import type { Dictionary } from "@/lib/dictionaries";
 
-function HandbookContent() {
+function HandbookContent({ lang, dict }: { lang: string; dict: Dictionary }) {
   const searchParams = useSearchParams();
   const router = useRouter();
   const isUnlocked = searchParams.get("unlocked") === "true";
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
+
+  const t = dict.handbook;
 
   const handleUnlock = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,14 +28,14 @@ function HandbookContent() {
       });
       const data = await res.json();
       if (res.ok) {
-        router.push("/handbook?unlocked=true");
+        router.push(`/${lang}/handbook?unlocked=true`);
       } else {
         setStatus("error");
-        setErrorMsg(data.error || "订阅失败，请稍后重试");
+        setErrorMsg(data.error || dict.subscribe.networkError);
       }
     } catch {
       setStatus("error");
-      setErrorMsg("网络错误，请稍后重试");
+      setErrorMsg(dict.subscribe.networkError);
     }
   };
 
@@ -43,17 +46,17 @@ function HandbookContent() {
         <div className="text-center mb-10">
           <span className="text-5xl mb-4 block">📘</span>
           <h1 className="text-3xl font-bold text-gray-900 mb-3">
-            AIP 出海自媒体实战手册
+            {t.title}
           </h1>
           <p className="text-gray-500">
-            从入门到精通，14天打造X平台写作技能及变现闭环
+            {t.subtitle}
           </p>
         </div>
 
         {/* Preview of what's inside */}
         <div className="bg-gray-50 rounded-2xl p-6 mb-8">
           <h3 className="text-sm font-semibold text-gray-900 mb-4">
-            手册包含 8 大章节：
+            {t.chapters}
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             {[
@@ -92,10 +95,10 @@ function HandbookContent() {
         {/* Subscribe to unlock */}
         <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl border border-blue-100 p-8">
           <h3 className="text-lg font-bold text-gray-900 mb-2 text-center">
-            免费订阅，立即解锁完整手册
+            {t.unlockTitle}
           </h3>
           <p className="text-sm text-gray-500 text-center mb-6">
-            输入邮箱即可阅读全部内容，同时获取每周AI精选推送
+            {t.unlockDesc}
           </p>
           <form onSubmit={handleUnlock}>
             <div className="flex gap-2">
@@ -112,7 +115,7 @@ function HandbookContent() {
                 disabled={status === "loading"}
                 className="px-6 py-3 bg-[var(--primary)] text-white rounded-xl text-sm font-medium hover:bg-[var(--primary-dark)] transition-colors disabled:opacity-50 whitespace-nowrap"
               >
-                {status === "loading" ? "解锁中..." : "解锁手册"}
+                {status === "loading" ? t.unlocking : t.unlockBtn}
               </button>
             </div>
             {status === "error" && (
@@ -121,7 +124,7 @@ function HandbookContent() {
               </p>
             )}
             <p className="text-xs text-gray-400 mt-3 text-center">
-              不会发送垃圾邮件，可随时退订
+              {t.privacy}
             </p>
           </form>
         </div>
@@ -138,10 +141,10 @@ function HandbookContent() {
           <span className="text-xl">🎉</span>
           <div>
             <p className="text-sm font-medium text-green-800">
-              完整手册已解锁！
+              {t.successTitle}
             </p>
             <p className="text-xs text-green-600">
-              包含全部 8 章内容、图片和案例
+              {t.successDesc}
             </p>
           </div>
         </div>
@@ -163,27 +166,27 @@ function HandbookContent() {
               d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
             />
           </svg>
-          下载 PDF
+          {t.downloadPdf}
         </a>
       </div>
 
       {/* Header */}
       <div className="text-center mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">
-          AIP 出海自媒体实战手册
+          {t.title}
         </h1>
         <p className="text-gray-500">
-          从入门到精通，14天打造X平台写作技能及变现闭环
+          {t.subtitle}
         </p>
         <p className="text-xs text-gray-400 mt-2">
-          带队教练：
+          {t.coach}：
           <Link
-            href="/about"
+            href={`/${lang}/about`}
             className="text-[var(--primary)] hover:underline"
           >
             Jason Zhu
           </Link>{" "}
-          | 内容出品方：万象AI实验室
+          | {t.producer}
         </p>
       </div>
 
@@ -193,7 +196,7 @@ function HandbookContent() {
           src="/handbook.pdf"
           className="w-full"
           style={{ height: "85vh", minHeight: "600px" }}
-          title="AIP出海自媒体实战手册"
+          title={t.title}
         />
       </div>
 
@@ -217,21 +220,21 @@ function HandbookContent() {
               d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
             />
           </svg>
-          下载完整 PDF（32MB）
+          {t.downloadFull}
         </a>
         <p className="text-xs text-gray-400">
-          收藏本页随时回来查看 ·{" "}
-          <Link href="/blog" className="text-[var(--primary)] hover:underline">
-            阅读更多文章
+          {t.bookmarkTip} ·{" "}
+          <Link href={`/${lang}/blog`} className="text-[var(--primary)] hover:underline">
+            {t.readMore}
           </Link>
         </p>
       </div>
 
       {/* CTA */}
       <div className="mt-12 bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 md:p-12 text-center text-white">
-        <h2 className="text-2xl font-bold mb-3">想要更多实战指导？</h2>
+        <h2 className="text-2xl font-bold mb-3">{t.ctaTitle}</h2>
         <p className="text-blue-100 mb-6">
-          关注我获取更多AI出海实战内容，或了解企业培训服务
+          {t.ctaDesc}
         </p>
         <div className="flex justify-center gap-3 flex-wrap">
           <a
@@ -240,19 +243,19 @@ function HandbookContent() {
             rel="noopener noreferrer"
             className="px-5 py-2.5 bg-white text-blue-700 rounded-lg text-sm font-medium hover:bg-blue-50 transition-colors"
           >
-            关注我的 X
+            {t.followX}
           </a>
           <Link
-            href="/services"
+            href={`/${lang}/services`}
             className="px-5 py-2.5 border border-white/30 text-white rounded-lg text-sm font-medium hover:bg-white/10 transition-colors"
           >
-            企业培训服务
+            {t.trainingService}
           </Link>
           <Link
-            href="/blog"
+            href={`/${lang}/blog`}
             className="px-5 py-2.5 border border-white/30 text-white rounded-lg text-sm font-medium hover:bg-white/10 transition-colors"
           >
-            更多文章
+            {t.moreArticles}
           </Link>
         </div>
       </div>
@@ -260,16 +263,16 @@ function HandbookContent() {
   );
 }
 
-export default function HandbookPage() {
+export default function HandbookClient({ lang, dict }: { lang: string; dict: Dictionary }) {
   return (
     <Suspense
       fallback={
         <div className="max-w-2xl mx-auto px-4 py-20 text-center text-gray-400">
-          加载中...
+          ...
         </div>
       }
     >
-      <HandbookContent />
+      <HandbookContent lang={lang} dict={dict} />
     </Suspense>
   );
 }

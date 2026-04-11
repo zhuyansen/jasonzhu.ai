@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { Metadata } from "next";
+import { usePathname } from "next/navigation";
 
 interface Tool {
   name: string;
@@ -73,17 +73,25 @@ const tools: Tool[] = [
 const categories = ["全部", "编程", "图像", "视频", "音频", "效率"];
 
 export default function ToolsPage() {
-  const [activeCategory, setActiveCategory] = useState("全部");
+  const pathname = usePathname();
+  const lang = pathname.split("/")[1] || "zh";
+  const isEn = lang === "en";
+
+  const title = isEn ? "AI Tools" : "AI 工具";
+  const desc = isEn ? "Curated useful AI tool recommendations" : "精选实用AI工具推荐";
+  const allLabel = isEn ? "All" : "全部";
+
+  const [activeCategory, setActiveCategory] = useState(allLabel);
 
   const filtered =
-    activeCategory === "全部"
+    activeCategory === allLabel
       ? tools
       : tools.filter((t) => t.category === activeCategory);
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
-      <h1 className="text-3xl font-bold text-gray-900 mb-2">AI 工具</h1>
-      <p className="text-gray-500 mb-8">精选实用AI工具推荐</p>
+      <h1 className="text-3xl font-bold text-gray-900 mb-2">{title}</h1>
+      <p className="text-gray-500 mb-8">{desc}</p>
 
       {/* Category filter */}
       <div className="flex flex-wrap gap-2 mb-8">

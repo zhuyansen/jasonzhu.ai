@@ -2,30 +2,38 @@ import Link from "next/link";
 import { getAllPosts } from "@/lib/mdx";
 import BlogCard from "@/components/BlogCard";
 import SubscribeForm from "@/components/SubscribeForm";
+import { getDictionary, type Locale } from "@/lib/dictionaries";
 
-const services = [
-  {
-    title: "AI 企业培训",
-    desc: "为企业团队提供系统化的AI工具使用培训，涵盖Prompt工程、AI编程、内容创作等实战课程。",
-    icon: "🎓",
-    href: "/services",
-  },
-  {
-    title: "AI MCN",
-    desc: "AI领域内容矩阵运营，打造高质量AI内容IP，助力品牌在AI赛道的传播与影响力。",
-    icon: "📡",
-    href: "/services",
-  },
-  {
-    title: "需求承接",
-    desc: "AI应用开发、技术咨询、解决方案设计。从需求分析到落地交付的一站式服务。",
-    icon: "🛠️",
-    href: "/services",
-  },
-];
-
-export default function HomePage() {
+export default async function HomePage({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang: rawLang } = await params;
+  const lang = (rawLang === "en" ? "en" : "zh") as Locale;
+  const dict = await getDictionary(lang);
   const posts = getAllPosts().slice(0, 4);
+
+  const services = [
+    {
+      title: dict.home.serviceTraining,
+      desc: dict.home.serviceTrainingDesc,
+      icon: "🎓",
+      href: `/${lang}/services`,
+    },
+    {
+      title: dict.home.serviceMCN,
+      desc: dict.home.serviceMCNDesc,
+      icon: "📡",
+      href: `/${lang}/services`,
+    },
+    {
+      title: dict.home.serviceDev,
+      desc: dict.home.serviceDevDesc,
+      icon: "🛠️",
+      href: `/${lang}/services`,
+    },
+  ];
 
   return (
     <>
@@ -34,18 +42,18 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-20 md:py-28">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-              Hi, 我是{" "}
+              {dict.home.greeting}{" "}
               <span className="text-[var(--primary)]">Jason Zhu</span>
             </h1>
             <p className="mt-4 text-lg md:text-xl text-gray-600 leading-relaxed">
-              前AI算法工程师，现专注于AI应用实践与传播，帮助更多人和企业拥抱AI。
+              {dict.home.intro}
               <br className="hidden sm:block" />
-              9个月推特/X涨粉26900+，帮助很多推友实现了X增长，现开源
-              <Link href="/handbook" className="text-[var(--primary)] hover:underline">《AIP出海自媒体实战手册》</Link>
+              {dict.home.intro2}
+              <Link href={`/${lang}/handbook`} className="text-[var(--primary)] hover:underline">{dict.home.handbookLink}</Link>
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
-              {["前AI算法工程师", "AI博主", "企业培训", "AI MCN", "需求承接"].map(
-                (tag) => (
+              {dict.home.tags.map(
+                (tag: string) => (
                   <span
                     key={tag}
                     className="inline-block px-3 py-1 bg-white border border-gray-200 rounded-full text-sm text-gray-600"
@@ -57,16 +65,16 @@ export default function HomePage() {
             </div>
             <div className="mt-8 flex gap-3">
               <Link
-                href="/blog"
+                href={`/${lang}/blog`}
                 className="px-5 py-2.5 bg-[var(--primary)] text-white rounded-lg text-sm font-medium hover:bg-[var(--primary-dark)] transition-colors"
               >
-                阅读博客
+                {dict.home.readBlog}
               </Link>
               <Link
-                href="/services"
+                href={`/${lang}/services`}
                 className="px-5 py-2.5 bg-white border border-gray-200 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-50 transition-colors"
               >
-                了解服务
+                {dict.home.learnServices}
               </Link>
             </div>
           </div>
@@ -77,17 +85,17 @@ export default function HomePage() {
       {posts.length > 0 && (
         <section className="max-w-6xl mx-auto px-4 sm:px-6 py-16">
           <div className="flex items-center justify-between mb-8">
-            <h2 className="text-2xl font-bold text-gray-900">最新文章</h2>
+            <h2 className="text-2xl font-bold text-gray-900">{dict.home.latestPosts}</h2>
             <Link
-              href="/blog"
+              href={`/${lang}/blog`}
               className="text-sm text-[var(--primary)] hover:underline"
             >
-              查看全部 &rarr;
+              {dict.home.viewAll} &rarr;
             </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {posts.map((post) => (
-              <BlogCard key={post.slug} post={post} />
+              <BlogCard key={post.slug} post={post} lang={lang} />
             ))}
           </div>
         </section>
@@ -95,12 +103,12 @@ export default function HomePage() {
 
       {/* Subscribe */}
       <section className="max-w-3xl mx-auto px-4 sm:px-6 py-8">
-        <SubscribeForm source="homepage" />
+        <SubscribeForm source="homepage" lang={lang} dict={dict} />
       </section>
 
       {/* Projects */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 py-16">
-        <h2 className="text-2xl font-bold text-gray-900 mb-8">我的项目</h2>
+        <h2 className="text-2xl font-bold text-gray-900 mb-8">{dict.home.myProjects}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <a
             href="https://agentskillshub.top"
@@ -115,7 +123,7 @@ export default function HomePage() {
               </h3>
             </div>
             <p className="text-sm text-gray-500 leading-relaxed mb-3">
-              AI Agent Skills 聚合站，收录和推荐优质的 Claude Code Skills、Agent 插件和工作流模板。
+              {dict.home.agentSkillsDesc}
             </p>
             <span className="text-xs text-purple-500 font-medium">
               agentskillshub.top →
@@ -134,7 +142,7 @@ export default function HomePage() {
               </h3>
             </div>
             <p className="text-sm text-gray-500 leading-relaxed mb-3">
-              AI MCN &amp; 产品推广实验室。作为 MCN Founder，承接AI产品推广、KOL合作与品牌出海业务。
+              {dict.home.goSailDesc}
             </p>
             <span className="text-xs text-orange-500 font-medium">
               gosaillab.com →
@@ -146,7 +154,7 @@ export default function HomePage() {
       {/* Services */}
       <section className="bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-16">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">我的服务</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-8">{dict.home.myServices}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {services.map((service) => (
               <Link
@@ -171,10 +179,10 @@ export default function HomePage() {
       <section className="max-w-6xl mx-auto px-4 sm:px-6 py-16">
         <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 md:p-12 text-center text-white">
           <h2 className="text-2xl md:text-3xl font-bold mb-3">
-            想要合作或咨询？
+            {dict.home.ctaTitle}
           </h2>
           <p className="text-blue-100 mb-6 max-w-xl mx-auto">
-            无论是企业AI培训、内容合作还是技术咨询，欢迎随时联系我。
+            {dict.home.ctaDesc}
           </p>
           <div className="flex justify-center gap-3">
             <a
@@ -186,10 +194,10 @@ export default function HomePage() {
               X / Twitter
             </a>
             <Link
-              href="/about"
+              href={`/${lang}/about`}
               className="px-5 py-2.5 border border-white/30 text-white rounded-lg text-sm font-medium hover:bg-white/10 transition-colors"
             >
-              了解更多
+              {dict.home.ctaMore}
             </Link>
           </div>
         </div>

@@ -3,25 +3,30 @@
 import { useState } from "react";
 import BlogCard from "@/components/BlogCard";
 import type { BlogPost } from "@/lib/mdx";
+import type { Dictionary } from "@/lib/dictionaries";
 
 export default function BlogListClient({
   posts,
   categories,
+  lang,
+  dict,
 }: {
   posts: BlogPost[];
   categories: string[];
+  lang: string;
+  dict: Dictionary["blog"];
 }) {
-  const [activeCategory, setActiveCategory] = useState("全部");
+  const [activeCategory, setActiveCategory] = useState(dict.all);
 
   const filtered =
-    activeCategory === "全部"
+    activeCategory === dict.all
       ? posts
       : posts.filter((p) => p.category === activeCategory);
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
-      <h1 className="text-3xl font-bold text-gray-900 mb-2">博客</h1>
-      <p className="text-gray-500 mb-8">AI工具评测、实战教程、行业洞察</p>
+      <h1 className="text-3xl font-bold text-gray-900 mb-2">{dict.title}</h1>
+      <p className="text-gray-500 mb-8">{dict.desc}</p>
 
       {/* Category filter */}
       <div className="flex flex-wrap gap-2 mb-8">
@@ -44,11 +49,11 @@ export default function BlogListClient({
       {filtered.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {filtered.map((post) => (
-            <BlogCard key={post.slug} post={post} />
+            <BlogCard key={post.slug} post={post} lang={lang} />
           ))}
         </div>
       ) : (
-        <p className="text-gray-400 text-center py-12">暂无文章</p>
+        <p className="text-gray-400 text-center py-12">{dict.noPosts}</p>
       )}
     </div>
   );

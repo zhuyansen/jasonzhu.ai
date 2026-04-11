@@ -3,15 +3,19 @@ import Link from "next/link";
 import { getAllPosts, getPostBySlug } from "@/lib/mdx";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import SubscribeForm from "@/components/SubscribeForm";
+import { getDictionary, type Locale } from "@/lib/dictionaries";
 import type { Metadata } from "next";
 
 interface Props {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ lang: Locale; slug: string }>;
 }
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
-  return posts.map((post) => ({ slug: post.slug }));
+  return posts.flatMap((post) => [
+    { lang: "zh", slug: post.slug },
+    { lang: "en", slug: post.slug },
+  ]);
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -25,7 +29,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function BlogPostPage({ params }: Props) {
-  const { slug } = await params;
+  const { lang: rawLang, slug } = await params;
+  const lang = (rawLang === "en" ? "en" : "zh") as Locale;
+  const dict = await getDictionary(lang);
   const post = getPostBySlug(slug);
   if (!post) notFound();
 
@@ -33,13 +39,13 @@ export default async function BlogPostPage({ params }: Props) {
     <article className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
       {/* Back link */}
       <Link
-        href="/blog"
+        href={`/${lang}/blog`}
         className="inline-flex items-center text-sm text-gray-400 hover:text-gray-600 mb-8"
       >
         <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
         </svg>
-        返回博客
+        {dict.blog.backToBlog}
       </Link>
 
       {/* Header */}
@@ -74,7 +80,7 @@ export default async function BlogPostPage({ params }: Props) {
 
       {/* Subscribe CTA */}
       <div className="mt-12">
-        <SubscribeForm source={`blog-${slug}`} />
+        <SubscribeForm source={`blog-${slug}`} lang={lang} dict={dict} />
       </div>
 
       {/* Footer */}
@@ -82,7 +88,7 @@ export default async function BlogPostPage({ params }: Props) {
         <div className="flex items-center justify-between">
           <div>
             <p className="text-sm font-medium text-gray-900">Jason Zhu</p>
-            <p className="text-sm text-gray-500">前AI算法工程师 | AI博主</p>
+            <p className="text-sm text-gray-500">{dict.blog.authorTitle}</p>
           </div>
           <a
             href="https://x.com/GoSailGlobal"
@@ -90,7 +96,7 @@ export default async function BlogPostPage({ params }: Props) {
             rel="noopener noreferrer"
             className="text-sm text-[var(--primary)] hover:underline"
           >
-            在 X 上关注我
+            {dict.blog.followOnX}
           </a>
         </div>
       </div>

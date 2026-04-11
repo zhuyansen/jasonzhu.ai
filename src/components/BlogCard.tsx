@@ -9,12 +9,12 @@ const categoryColors: Record<string, string> = {
   "Vibe Coding": "bg-pink-50 text-pink-700",
 };
 
-export default function BlogCard({ post }: { post: BlogPost }) {
+export default function BlogCard({ post, lang = "zh" }: { post: BlogPost; lang?: string }) {
   const colorClass = categoryColors[post.category] || "bg-gray-50 text-gray-600";
 
   return (
     <Link
-      href={`/blog/${post.slug}`}
+      href={`/${lang}/blog/${post.slug}`}
       className="group block bg-white rounded-xl border border-gray-100 p-6 hover:border-gray-200 hover:shadow-sm transition-all"
     >
       <div className="flex items-center gap-2 mb-3">

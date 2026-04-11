@@ -2,22 +2,38 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import type { Dictionary } from "@/lib/dictionaries";
 
 interface SubscribeFormProps {
   source?: string;
   compact?: boolean;
+  lang?: string;
+  dict?: Dictionary;
 }
 
 export default function SubscribeForm({
   source = "website",
   compact = false,
+  lang = "zh",
+  dict,
 }: SubscribeFormProps) {
   const router = useRouter();
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<
-    "idle" | "loading" | "success" | "error"
-  >("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
+
+  // Fallback strings if dict not provided
+  const t = dict?.subscribe ?? {
+    title: "订阅 Newsletter，免费获取完整手册",
+    desc: "Subscribe即送《AIP出海自媒体实战手册》完整版，还有每周AI精选内容推送",
+    placeholder: "your@email.com",
+    placeholderCompact: "输入邮箱，获取完整手册",
+    submit: "免费订阅",
+    submitting: "提交中...",
+    privacy: "我们尊重你的隐私，不会发送垃圾邮件。可随时退订。",
+    successBtn: "立即查看完整手册 →",
+    networkError: "网络错误，请稍后重试",
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -37,32 +53,29 @@ export default function SubscribeForm({
         setStatus("success");
         setMessage(data.message);
         setEmail("");
-        // Auto-redirect to handbook page
-        router.push("/handbook?unlocked=true");
+        router.push(`/${lang}/handbook?unlocked=true`);
       } else {
         setStatus("error");
         setMessage(data.error);
       }
     } catch {
       setStatus("error");
-      setMessage("网络错误，请稍后重试");
+      setMessage(t.networkError);
     }
   };
 
   if (status === "success") {
     return (
-      <div
-        className={`rounded-xl border border-green-200 bg-green-50 p-6 ${compact ? "p-4" : "p-6"}`}
-      >
+      <div className={`rounded-xl border border-green-200 bg-green-50 p-6 ${compact ? "p-4" : "p-6"}`}>
         <div className="flex items-start gap-3">
           <span className="text-2xl">🎉</span>
           <div>
             <p className="font-semibold text-green-800">{message}</p>
             <a
-              href="/handbook"
+              href={`/${lang}/handbook?unlocked=true`}
               className="mt-2 inline-block px-4 py-2 bg-green-600 text-white rounded-lg text-sm font-medium hover:bg-green-700 transition-colors"
             >
-              立即查看完整手册 →
+              {t.successBtn}
             </a>
           </div>
         </div>
@@ -77,7 +90,7 @@ export default function SubscribeForm({
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="输入邮箱，获取完整手册"
+          placeholder={t.placeholderCompact}
           required
           className="flex-1 px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-[var(--primary)] focus:ring-1 focus:ring-[var(--primary)]"
         />
@@ -86,7 +99,7 @@ export default function SubscribeForm({
           disabled={status === "loading"}
           className="px-5 py-2.5 bg-[var(--primary)] text-white rounded-lg text-sm font-medium hover:bg-[var(--primary-dark)] transition-colors disabled:opacity-50 whitespace-nowrap"
         >
-          {status === "loading" ? "..." : "免费订阅"}
+          {status === "loading" ? "..." : t.submit}
         </button>
         {status === "error" && (
           <p className="text-xs text-red-500 mt-1">{message}</p>
@@ -100,12 +113,8 @@ export default function SubscribeForm({
       <div className="flex items-start gap-3 mb-4">
         <span className="text-3xl">📬</span>
         <div>
-          <h3 className="text-lg font-bold text-gray-900">
-            订阅 Newsletter，免费获取完整手册
-          </h3>
-          <p className="text-sm text-gray-500 mt-1">
-            Subscribe即送《AIP出海自媒体实战手册》完整版，还有每周AI精选内容推送
-          </p>
+          <h3 className="text-lg font-bold text-gray-900">{t.title}</h3>
+          <p className="text-sm text-gray-500 mt-1">{t.desc}</p>
         </div>
       </div>
 
@@ -115,7 +124,7 @@ export default function SubscribeForm({
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="your@email.com"
+            placeholder={t.placeholder}
             required
             className="flex-1 px-4 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-[var(--primary)] focus:ring-2 focus:ring-blue-100"
           />
@@ -124,15 +133,13 @@ export default function SubscribeForm({
             disabled={status === "loading"}
             className="px-6 py-3 bg-[var(--primary)] text-white rounded-xl text-sm font-medium hover:bg-[var(--primary-dark)] transition-colors disabled:opacity-50 whitespace-nowrap"
           >
-            {status === "loading" ? "提交中..." : "免费订阅"}
+            {status === "loading" ? t.submitting : t.submit}
           </button>
         </div>
         {status === "error" && (
           <p className="text-sm text-red-500 mt-2">{message}</p>
         )}
-        <p className="text-xs text-gray-400 mt-3">
-          我们尊重你的隐私，不会发送垃圾邮件。可随时退订。
-        </p>
+        <p className="text-xs text-gray-400 mt-3">{t.privacy}</p>
       </form>
     </div>
   );
