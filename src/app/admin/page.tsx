@@ -468,6 +468,9 @@ export default function AdminPage() {
                       <th className="text-left px-4 py-3 font-medium text-gray-600">
                         Date
                       </th>
+                      <th className="text-right px-4 py-3 font-medium text-gray-600">
+                        Actions
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
@@ -497,6 +500,24 @@ export default function AdminPage() {
                         </td>
                         <td className="px-4 py-3 text-gray-500 whitespace-nowrap">
                           {post.date}
+                        </td>
+                        <td className="px-4 py-3 text-right whitespace-nowrap">
+                          <div className="flex items-center justify-end gap-2" onClick={(e) => e.stopPropagation()}>
+                            <a
+                              href={`/zh/blog/${post.slug}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center px-2.5 py-1 text-xs text-blue-600 bg-blue-50 rounded-md hover:bg-blue-100 transition-colors"
+                            >
+                              View
+                            </a>
+                            <a
+                              href={`obsidian://open?vault=jasonzhu.ai&file=src/content/blog/${post.slug}`}
+                              className="inline-flex items-center px-2.5 py-1 text-xs text-purple-600 bg-purple-50 rounded-md hover:bg-purple-100 transition-colors"
+                            >
+                              Obsidian
+                            </a>
+                          </div>
                         </td>
                       </tr>
                     ))}
