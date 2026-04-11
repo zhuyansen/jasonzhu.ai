@@ -18,7 +18,7 @@ export interface BlogPost {
 export function getAllPosts(): BlogPost[] {
   if (!fs.existsSync(BLOG_DIR)) return [];
 
-  const files = fs.readdirSync(BLOG_DIR).filter((f) => f.endsWith(".mdx"));
+  const files = fs.readdirSync(BLOG_DIR).filter((f) => f.endsWith(".mdx") && !f.startsWith("_"));
 
   const posts = files.map((filename) => {
     const slug = filename.replace(/\.mdx$/, "");
