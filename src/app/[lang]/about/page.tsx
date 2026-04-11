@@ -1,42 +1,19 @@
 import type { Metadata } from "next";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
 
-export const metadata: Metadata = {
-  title: "关于我",
-  description: "了解 Jason Zhu - 前AI算法工程师，AI博主，企业培训师",
-};
-
-const skills = [
-  "Prompt Engineering",
-  "AI Agent",
-  "Claude Code",
-  "Vibe Coding",
-  "LLM应用开发",
-  "AI内容创作",
-  "企业培训",
-  "产品设计",
-  "Python",
-  "TypeScript",
-  "机器学习",
-  "深度学习",
-];
-
-const projects = [
-  {
-    name: "Agent Skills Hub",
-    descZh: "AI Agent Skills 聚合站，收录优质 Claude Code Skills 和 Agent 插件",
-    descEn: "AI Agent Skills hub — curating top Claude Code Skills and Agent plugins",
-    url: "https://agentskillshub.top",
-    emoji: "🧩",
-  },
-  {
-    name: "GoSail Lab",
-    descZh: "AI MCN & 产品推广实验室，承接AI产品推广与品牌出海",
-    descEn: "AI MCN & product promotion lab — handling AI product promotion and brand expansion",
-    url: "https://gosaillab.com",
-    emoji: "🚀",
-  },
-];
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang: rawLang } = await params;
+  const lang = (rawLang === "en" ? "en" : "zh") as Locale;
+  const dict = await getDictionary(lang);
+  return {
+    title: dict.about.title,
+    description: dict.about.intro,
+  };
+}
 
 export default async function AboutPage({
   params,
@@ -57,6 +34,21 @@ export default async function AboutPage({
       period: dict.about.before,
       title: dict.about.beforeTitle,
       desc: dict.about.beforeDesc,
+    },
+  ];
+
+  const projects = [
+    {
+      name: "Agent Skills Hub",
+      desc: dict.about.projectAgentSkills,
+      url: "https://agentskillshub.top",
+      emoji: "🧩",
+    },
+    {
+      name: "GoSail Lab",
+      desc: dict.about.projectGoSail,
+      url: "https://gosaillab.com",
+      emoji: "🚀",
     },
   ];
 
@@ -167,7 +159,7 @@ export default async function AboutPage({
                   {project.name}
                 </p>
                 <p className="text-xs text-gray-400">
-                  {lang === "en" ? project.descEn : project.descZh}
+                  {project.desc}
                 </p>
               </div>
             </a>
@@ -199,7 +191,7 @@ export default async function AboutPage({
       <section className="mb-12">
         <h2 className="text-xl font-bold text-gray-900 mb-4">{dict.about.skills}</h2>
         <div className="flex flex-wrap gap-2">
-          {skills.map((skill) => (
+          {dict.about.skillTags.map((skill) => (
             <span
               key={skill}
               className="px-3 py-1.5 bg-gray-100 text-gray-700 rounded-full text-sm"

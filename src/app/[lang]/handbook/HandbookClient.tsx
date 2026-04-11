@@ -59,16 +59,7 @@ function HandbookContent({ lang, dict }: { lang: string; dict: Dictionary }) {
             {t.chapters}
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-            {[
-              "第一章：出海AIP基础准备工作",
-              "第二章：出海AIP的定位",
-              "第三章：X平台的基础认知",
-              "第四章：如何运营图文短内容",
-              "第五章：出海AIP实战",
-              "第六章：多元化变现模式",
-              "第七章：内容运营方法论",
-              "第八章：常见问题答疑",
-            ].map((ch) => (
+            {t.chapterList.map((ch) => (
               <div
                 key={ch}
                 className="flex items-center gap-2 text-sm text-gray-600"
@@ -150,7 +141,7 @@ function HandbookContent({ lang, dict }: { lang: string; dict: Dictionary }) {
         </div>
         <a
           href="/handbook.pdf"
-          download="AIP出海自媒体实战手册.pdf"
+          download={t.pdfFilename}
           className="px-4 py-2 bg-green-600 text-white rounded-lg text-sm font-medium hover:bg-green-700 transition-colors flex items-center gap-2"
         >
           <svg
@@ -204,7 +195,7 @@ function HandbookContent({ lang, dict }: { lang: string; dict: Dictionary }) {
       <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
         <a
           href="/handbook.pdf"
-          download="AIP出海自媒体实战手册.pdf"
+          download={t.pdfFilename}
           className="px-5 py-2.5 bg-[var(--primary)] text-white rounded-lg text-sm font-medium hover:bg-[var(--primary-dark)] transition-colors flex items-center gap-2"
         >
           <svg

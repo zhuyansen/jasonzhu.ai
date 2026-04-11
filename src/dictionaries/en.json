@@ -46,7 +46,18 @@
   "tools": {
     "title": "AI Tools",
     "desc": "Curated useful AI tool recommendations",
-    "all": "All"
+    "all": "All",
+    "categories": ["All", "Coding", "Image", "Video", "Audio", "Productivity"],
+    "items": [
+      { "name": "Claude Code", "description": "Anthropic's AI coding assistant CLI — supporting code generation, debugging, and refactoring.", "category": "Coding", "url": "https://claude.ai/code", "tags": ["Coding", "CLI", "Anthropic"] },
+      { "name": "Cursor", "description": "AI-native code editor with built-in assistant, multi-model switching, and smart code completion.", "category": "Coding", "url": "https://cursor.com", "tags": ["Coding", "IDE", "Autocomplete"] },
+      { "name": "Midjourney", "description": "One of the most popular AI image generators, excelling at artistic styles. V7 supports video.", "category": "Image", "url": "https://midjourney.com", "tags": ["Image Gen", "Design", "Creative"] },
+      { "name": "Runway", "description": "Professional AI video generation and editing tool — text-to-video, image animation, and more.", "category": "Video", "url": "https://runway.ml", "tags": ["Video", "Creative", "Editing"] },
+      { "name": "Perplexity", "description": "AI-powered search engine providing cited real-time answers — great for quick research.", "category": "Productivity", "url": "https://perplexity.ai", "tags": ["Search", "Research", "Knowledge"] },
+      { "name": "NotebookLM", "description": "Google's AI notebook tool — upload documents, chat with content, generate podcasts.", "category": "Productivity", "url": "https://notebooklm.google.com", "tags": ["Notes", "Documents", "Google"] },
+      { "name": "Suno", "description": "AI music generation platform — describe in text, get a complete song in multiple styles.", "category": "Audio", "url": "https://suno.com", "tags": ["Music", "Audio", "Creative"] },
+      { "name": "v0.dev", "description": "Vercel's AI UI generator — describe in natural language, get React component code.", "category": "Coding", "url": "https://v0.dev", "tags": ["UI", "Frontend", "React"] }
+    ]
   },
   "services": {
     "title": "Services",
@@ -54,7 +65,43 @@
     "ctaTitle": "Interested? Let's talk",
     "ctaDesc": "Feel free to reach out for detailed proposals and pricing",
     "ctaDM": "X / Twitter DM",
-    "ctaMore": "More Contact Info"
+    "ctaMore": "More Contact Info",
+    "items": [
+      {
+        "title": "AI Enterprise Training",
+        "icon": "🎓",
+        "description": "Customized AI training programs — from basic awareness to hands-on practice, helping teams quickly master AI tools and boost productivity.",
+        "features": ["Prompt Engineering: Beginner to Advanced", "AI Coding Toolchain: Claude Code / Cursor / Copilot", "AI Content Creation: Copy, Images, Video Full Pipeline", "AI Office Productivity: Data Analysis, Doc Processing, Automation", "Custom Courses: Designed for Your Business Scenarios"],
+        "highlight": "Trained multiple enterprise teams, 95%+ satisfaction rate"
+      },
+      {
+        "title": "AI MCN",
+        "icon": "📡",
+        "description": "AI content matrix operations — aggregating quality AI creators, building a premium content ecosystem for brand visibility.",
+        "features": ["AI Content IP Incubation & Operations", "Multi-Platform Content Distribution Strategy", "AI KOL Collaboration Network", "Brand AI Content Custom Services", "Data-Driven Content Optimization"],
+        "highlight": "Covering major social media platforms, reaching AI audience → gosaillab.com"
+      },
+      {
+        "title": "AI Consulting",
+        "icon": "🛠️",
+        "description": "Full-stack AI solutions powered by deep algorithm and engineering expertise — from ideation to delivery.",
+        "features": ["AI Application Prototyping & MVP", "AI Workflow / Agent Development", "Business AI Transformation Plans", "Tech Stack Selection & Architecture Consulting", "AI Website & Tool Development"],
+        "highlight": "End-to-end service from requirements analysis to delivery"
+      }
+    ]
+  },
+  "news": {
+    "title": "AI News",
+    "desc": "Daily curated AI industry updates",
+    "categories": { "产品": "Product", "研究": "Research", "动态": "Updates", "文章": "Article" },
+    "items": [
+      { "id": "1", "title": "Claude 4.5 Released: Stronger Coding & Multimodal Understanding", "source": "Anthropic", "category": "产品", "date": "2026-04-10", "summary": "Anthropic releases Claude 4.5 with significant improvements in coding, math reasoning, and multimodal understanding. Claude Code also updated." },
+      { "id": "2", "title": "GPT-5 Coming Soon: OpenAI Reveals Latest Progress", "source": "OpenAI", "category": "动态", "date": "2026-04-09", "summary": "OpenAI CEO Sam Altman reveals GPT-5 development progress in latest interview, expected to achieve major breakthroughs in reasoning." },
+      { "id": "3", "title": "Midjourney V7 Launches: Real-Time Video Generation", "source": "Midjourney", "category": "产品", "date": "2026-04-08", "summary": "Midjourney releases V7, supporting text-to-video generation for the first time with greatly improved quality and consistency." },
+      { "id": "4", "title": "Google DeepMind Paper: Agents Can Self-Evolve", "source": "DeepMind", "category": "研究", "date": "2026-04-07", "summary": "DeepMind's latest research demonstrates a method for AI Agents to self-improve during task execution without human feedback." },
+      { "id": "5", "title": "Cursor 3.0: Multi-File Editing Greatly Enhanced", "source": "Cursor", "category": "产品", "date": "2026-04-06", "summary": "Cursor IDE releases 3.0 with cross-file context understanding and auto-refactoring, boosting coding productivity." },
+      { "id": "6", "title": "Why Every AI Company Is Building CLI Tools", "source": "JasonZhu.AI", "category": "文章", "date": "2026-04-05", "summary": "From Claude Code to Codex CLI, AI companies are launching command-line tools. What trend does this reflect?" }
+    ]
   },
   "about": {
     "title": "About Me",
@@ -77,6 +124,9 @@
     "beforeTitle": "AI Algorithm Engineer",
     "beforeDesc": "Deep expertise in ML/DL algorithm R&D with solid engineering experience.",
     "skills": "Skills",
+    "skillTags": ["Prompt Engineering", "AI Agent", "Claude Code", "Vibe Coding", "LLM App Dev", "AI Content Creation", "Enterprise Training", "Product Design", "Python", "TypeScript", "Machine Learning", "Deep Learning"],
+    "projectAgentSkills": "AI Agent Skills hub — curating top Claude Code Skills and Agent plugins",
+    "projectGoSail": "AI MCN & product promotion lab — AI product promotion and brand expansion",
     "findMe": "Find Me",
     "wechatNote": "(Please mention where you found me)"
   },
@@ -84,6 +134,8 @@
     "title": "AIP Overseas Social Media Playbook",
     "subtitle": "From beginner to expert — build your X writing skills and monetization pipeline in 14 days",
     "chapters": "8 chapters included:",
+    "chapterList": ["Ch.1: AIP Overseas Basics", "Ch.2: AIP Positioning", "Ch.3: X Platform Fundamentals", "Ch.4: Short-Form Content Strategy", "Ch.5: AIP Hands-On Practice", "Ch.6: Monetization Models", "Ch.7: Content Operations Methodology", "Ch.8: FAQ"],
+    "pdfFilename": "AIP-Overseas-Social-Media-Playbook.pdf",
     "unlockTitle": "Subscribe to unlock the full playbook",
     "unlockDesc": "Enter your email to access all content and get weekly AI curated updates",
     "unlockBtn": "Unlock Playbook",

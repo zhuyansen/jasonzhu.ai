@@ -2,10 +2,19 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
 
-export const metadata: Metadata = {
-  title: "服务",
-  description: "AI企业培训、AI MCN运营、技术需求承接",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang: rawLang } = await params;
+  const lang = (rawLang === "en" ? "en" : "zh") as Locale;
+  const dict = await getDictionary(lang);
+  return {
+    title: dict.services.title,
+    description: dict.services.desc,
+  };
+}
 
 export default async function ServicesPage({
   params,
@@ -16,92 +25,7 @@ export default async function ServicesPage({
   const lang = (rawLang === "en" ? "en" : "zh") as Locale;
   const dict = await getDictionary(lang);
 
-  const services = [
-    {
-      title: dict.home.serviceTraining,
-      icon: "🎓",
-      description:
-        lang === "en"
-          ? "Customized AI training solutions for enterprise teams — from basic awareness to practical applications, helping teams quickly master AI tools and boost productivity."
-          : "为企业团队提供定制化AI培训方案，从基础认知到实战应用，帮助团队快速掌握AI工具，提升工作效率。",
-      features:
-        lang === "en"
-          ? [
-              "Prompt Engineering: from beginner to expert",
-              "AI Coding Tools: Claude Code / Cursor / Copilot",
-              "AI Content Creation: copywriting, images, video pipeline",
-              "AI Office Productivity: data analysis, docs, automation",
-              "Custom Courses: designed for your actual business scenarios",
-            ]
-          : [
-              "Prompt工程实战：从入门到精通",
-              "AI编程工具链：Claude Code / Cursor / Copilot",
-              "AI内容创作：文案、图片、视频全流程",
-              "AI办公提效：数据分析、文档处理、自动化",
-              "定制化课程：根据企业实际业务场景设计",
-            ],
-      highlight:
-        lang === "en"
-          ? "Training delivered to multiple enterprises with 95%+ satisfaction rate"
-          : "已为多家企业提供培训服务，学员满意度95%+",
-    },
-    {
-      title: dict.home.serviceMCN,
-      icon: "📡",
-      description:
-        lang === "en"
-          ? "AI content matrix operations — aggregating quality AI creators, building a high-quality AI content ecosystem to boost brand communication and monetization."
-          : "AI领域内容矩阵运营，聚合优质AI创作者，打造高质量AI内容生态，助力品牌传播与商业化。",
-      features:
-        lang === "en"
-          ? [
-              "AI content IP incubation & operations",
-              "Multi-platform content distribution strategy",
-              "AI domain KOL collaboration network",
-              "Brand AI content customization",
-              "Data-driven content optimization",
-            ]
-          : [
-              "AI内容IP孵化与运营",
-              "多平台内容分发策略",
-              "AI领域KOL合作网络",
-              "品牌AI内容定制服务",
-              "数据驱动的内容优化",
-            ],
-      highlight:
-        lang === "en"
-          ? "Covering major social platforms, reaching AI target audience → gosaillab.com"
-          : "覆盖主流社媒平台，触达AI领域目标用户 → gosaillab.com",
-    },
-    {
-      title: dict.home.serviceDev,
-      icon: "🛠️",
-      description:
-        lang === "en"
-          ? "Leveraging deep AI algorithm and engineering expertise to provide end-to-end AI application development, consulting, and solution design services."
-          : "基于丰富的AI算法和工程经验，为企业提供AI应用开发、技术咨询、解决方案设计等一站式服务。",
-      features:
-        lang === "en"
-          ? [
-              "AI application prototyping & MVP",
-              "AI Workflow / Agent building",
-              "Business AI transformation plans",
-              "Tech stack selection & architecture consulting",
-              "AI website & tool development",
-            ]
-          : [
-              "AI应用原型开发与MVP",
-              "AI Workflow / Agent 搭建",
-              "现有业务AI化改造方案",
-              "技术选型与架构咨询",
-              "AI网站与工具开发",
-            ],
-      highlight:
-        lang === "en"
-          ? "Full-cycle support from requirements analysis to delivery"
-          : "从需求分析到落地交付，全流程陪伴式服务",
-    },
-  ];
+  const services = dict.services.items;
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">

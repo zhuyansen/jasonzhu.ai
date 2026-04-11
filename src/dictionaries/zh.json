@@ -46,7 +46,18 @@
   "tools": {
     "title": "AI 工具",
     "desc": "精选实用AI工具推荐",
-    "all": "全部"
+    "all": "全部",
+    "categories": ["全部", "编程", "图像", "视频", "音频", "效率"],
+    "items": [
+      { "name": "Claude Code", "description": "Anthropic出品的AI编程助手CLI工具，支持代码生成、调试、重构等全流程开发任务。", "category": "编程", "url": "https://claude.ai/code", "tags": ["编程", "CLI", "Anthropic"] },
+      { "name": "Cursor", "description": "AI原生代码编辑器，内置AI助手，支持多模型切换，智能代码补全和重构。", "category": "编程", "url": "https://cursor.com", "tags": ["编程", "IDE", "代码补全"] },
+      { "name": "Midjourney", "description": "最流行的AI图像生成工具之一，擅长艺术风格图片生成，V7支持视频。", "category": "图像", "url": "https://midjourney.com", "tags": ["图像生成", "设计", "创意"] },
+      { "name": "Runway", "description": "专业级AI视频生成和编辑工具，支持文本生成视频、图片动画化等功能。", "category": "视频", "url": "https://runway.ml", "tags": ["视频", "创意", "编辑"] },
+      { "name": "Perplexity", "description": "AI驱动的搜索引擎，提供带引用的实时回答，适合快速研究和信息获取。", "category": "效率", "url": "https://perplexity.ai", "tags": ["搜索", "研究", "知识"] },
+      { "name": "NotebookLM", "description": "Google推出的AI笔记工具，上传文档后可以与内容对话，支持生成播客。", "category": "效率", "url": "https://notebooklm.google.com", "tags": ["笔记", "文档", "Google"] },
+      { "name": "Suno", "description": "AI音乐生成平台，输入文字描述即可生成完整歌曲，支持多种音乐风格。", "category": "音频", "url": "https://suno.com", "tags": ["音乐", "音频", "创意"] },
+      { "name": "v0.dev", "description": "Vercel推出的AI UI生成工具，通过自然语言描述生成React组件代码。", "category": "编程", "url": "https://v0.dev", "tags": ["UI", "前端", "React"] }
+    ]
   },
   "services": {
     "title": "我的服务",
@@ -54,7 +65,43 @@
     "ctaTitle": "感兴趣？聊聊你的需求",
     "ctaDesc": "欢迎通过以下方式联系我，了解具体方案和报价",
     "ctaDM": "X / Twitter 私信",
-    "ctaMore": "更多联系方式"
+    "ctaMore": "更多联系方式",
+    "items": [
+      {
+        "title": "AI 企业培训",
+        "icon": "🎓",
+        "description": "为企业团队提供定制化AI培训方案，从基础认知到实战应用，帮助团队快速掌握AI工具，提升工作效率。",
+        "features": ["Prompt工程实战：从入门到精通", "AI编程工具链：Claude Code / Cursor / Copilot", "AI内容创作：文案、图片、视频全流程", "AI办公提效：数据分析、文档处理、自动化", "定制化课程：根据企业实际业务场景设计"],
+        "highlight": "已为多家企业提供培训服务，学员满意度95%+"
+      },
+      {
+        "title": "AI MCN",
+        "icon": "📡",
+        "description": "AI领域内容矩阵运营，聚合优质AI创作者，打造高质量AI内容生态，助力品牌传播与商业化。",
+        "features": ["AI内容IP孵化与运营", "多平台内容分发策略", "AI领域KOL合作网络", "品牌AI内容定制服务", "数据驱动的内容优化"],
+        "highlight": "覆盖主流社媒平台，触达AI领域目标用户 → gosaillab.com"
+      },
+      {
+        "title": "需求承接",
+        "icon": "🛠️",
+        "description": "基于丰富的AI算法和工程经验，为企业提供AI应用开发、技术咨询、解决方案设计等一站式服务。",
+        "features": ["AI应用原型开发与MVP", "AI Workflow / Agent 搭建", "现有业务AI化改造方案", "技术选型与架构咨询", "AI网站与工具开发"],
+        "highlight": "从需求分析到落地交付，全流程陪伴式服务"
+      }
+    ]
+  },
+  "news": {
+    "title": "AI 快讯",
+    "desc": "每日精选AI行业动态",
+    "categories": { "产品": "产品", "研究": "研究", "动态": "动态", "文章": "文章" },
+    "items": [
+      { "id": "1", "title": "Claude 4.5 发布：更强的编程能力与多模态理解", "source": "Anthropic", "category": "产品", "date": "2026-04-10", "summary": "Anthropic发布Claude 4.5，在编程、数学推理和多模态理解方面取得显著提升，Claude Code也同步更新。" },
+      { "id": "2", "title": "GPT-5 即将发布：OpenAI 透露最新进展", "source": "OpenAI", "category": "动态", "date": "2026-04-09", "summary": "OpenAI CEO Sam Altman在最新访谈中透露GPT-5的研发进展，预计将在推理能力上实现重大突破。" },
+      { "id": "3", "title": "Midjourney V7 上线：支持实时视频生成", "source": "Midjourney", "category": "产品", "date": "2026-04-08", "summary": "Midjourney推出V7版本，首次支持从文本直接生成短视频，画面质量和一致性大幅提升。" },
+      { "id": "4", "title": "Google DeepMind 发布新论文：Agent可以自我进化", "source": "DeepMind", "category": "研究", "date": "2026-04-07", "summary": "DeepMind最新研究展示了一种让AI Agent在执行任务过程中自我改进的方法，无需人类反馈即可持续优化。" },
+      { "id": "5", "title": "Cursor 3.0 发布：多文件编辑能力大幅增强", "source": "Cursor", "category": "产品", "date": "2026-04-06", "summary": "Cursor IDE发布3.0版本，新增跨文件上下文理解和自动重构功能，编程效率再次提升。" },
+      { "id": "6", "title": "为什么每个AI公司都在做CLI工具？", "source": "JasonZhu.AI", "category": "文章", "date": "2026-04-05", "summary": "从Claude Code到Codex CLI，AI公司纷纷推出命令行工具。这背后反映了什么趋势？" }
+    ]
   },
   "about": {
     "title": "关于我",
@@ -77,6 +124,9 @@
     "beforeTitle": "AI算法工程师",
     "beforeDesc": "深耕AI算法研发，积累了扎实的机器学习、深度学习技术功底和工程落地经验。",
     "skills": "技能标签",
+    "skillTags": ["Prompt Engineering", "AI Agent", "Claude Code", "Vibe Coding", "LLM应用开发", "AI内容创作", "企业培训", "产品设计", "Python", "TypeScript", "机器学习", "深度学习"],
+    "projectAgentSkills": "AI Agent Skills 聚合站，收录优质 Claude Code Skills 和 Agent 插件",
+    "projectGoSail": "AI MCN & 产品推广实验室，承接AI产品推广与品牌出海",
     "findMe": "找到我",
     "wechatNote": "（添加好友请备注来源）"
   },
@@ -84,6 +134,8 @@
     "title": "AIP 出海自媒体实战手册",
     "subtitle": "从入门到精通，14天打造X平台写作技能及变现闭环",
     "chapters": "手册包含 8 大章节：",
+    "chapterList": ["第一章：出海AIP基础准备工作", "第二章：出海AIP的定位", "第三章：X平台的基础认知", "第四章：如何运营图文短内容", "第五章：出海AIP实战", "第六章：多元化变现模式", "第七章：内容运营方法论", "第八章：常见问题答疑"],
+    "pdfFilename": "AIP出海自媒体实战手册.pdf",
     "unlockTitle": "免费订阅，立即解锁完整手册",
     "unlockDesc": "输入邮箱即可阅读全部内容，同时获取每周AI精选推送",
     "unlockBtn": "解锁手册",

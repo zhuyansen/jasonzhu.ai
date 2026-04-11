@@ -7,7 +7,7 @@ import { getDictionary, type Locale } from "@/lib/dictionaries";
 import type { Metadata } from "next";
 
 interface Props {
-  params: Promise<{ lang: Locale; slug: string }>;
+  params: Promise<{ lang: string; slug: string }>;
 }
 
 export async function generateStaticParams() {
