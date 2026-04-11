@@ -6,20 +6,6 @@ const defaultLocale = "zh";
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Skip static files, API routes, and assets
-  if (
-    pathname.startsWith("/_next") ||
-    pathname.startsWith("/api") ||
-    pathname.startsWith("/favicon") ||
-    pathname.endsWith(".pdf") ||
-    pathname.endsWith(".png") ||
-    pathname.endsWith(".jpg") ||
-    pathname.endsWith(".svg") ||
-    pathname.endsWith(".ico")
-  ) {
-    return NextResponse.next();
-  }
-
   // Check if pathname already has a locale
   const pathnameHasLocale = locales.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
@@ -27,12 +13,13 @@ export function middleware(request: NextRequest) {
 
   if (pathnameHasLocale) return NextResponse.next();
 
-  // Redirect to default locale
+  // Rewrite (not redirect) to default locale — avoids flash/flicker
   const url = request.nextUrl.clone();
   url.pathname = `/${defaultLocale}${pathname}`;
-  return NextResponse.redirect(url);
+  return NextResponse.rewrite(url);
 }
 
 export const config = {
-  matcher: ["/((?!_next|api|favicon|.*\\..*).*)"],
+  // Only match page routes, skip all static files and API
+  matcher: ["/((?!_next|api|favicon\\.ico|handbook\\.pdf|.*\\..*).*)" ],
 };
