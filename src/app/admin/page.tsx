@@ -40,7 +40,7 @@ async function adminFetch(url: string, options?: RequestInit) {
   });
 }
 
-const CATEGORIES = ["教程", "AI工具", "观点", "案例", "Vibe Coding"];
+const DEFAULT_CATEGORIES = ["教程", "AI工具", "观点", "案例", "Vibe Coding"];
 
 export default function AdminPage() {
   const [isAuthed, setIsAuthed] = useState(false);
@@ -64,6 +64,9 @@ export default function AdminPage() {
   });
   const [saveLoading, setSaveLoading] = useState(false);
   const [saveMessage, setSaveMessage] = useState("");
+  const [filterCategory, setFilterCategory] = useState("");
+  const [filterTag, setFilterTag] = useState("");
+  const [customCategory, setCustomCategory] = useState(false);
 
   // Tags state
   const [tags, setTags] = useState<TagInfo[]>([]);
@@ -155,11 +158,13 @@ export default function AdminPage() {
       excerpt: post.excerpt || "",
     });
     setSaveMessage("");
+    setCustomCategory(false);
   };
 
   const closeEditModal = () => {
     setEditingPost(null);
     setSaveMessage("");
+    setCustomCategory(false);
   };
 
   const handleSavePost = async () => {
@@ -315,6 +320,21 @@ export default function AdminPage() {
     if (activeTab === "subscribers") fetchSubscribers();
   }, [isAuthed, activeTab, fetchPosts, fetchTags, fetchImages, fetchSubscribers]);
 
+  // Derived: all categories and tags from posts
+  const allCategories = Array.from(
+    new Set([...DEFAULT_CATEGORIES, ...posts.map((p) => p.category).filter(Boolean)])
+  );
+  const allTags = Array.from(
+    new Set(posts.flatMap((p) => p.tags || []))
+  ).sort();
+
+  // Filtered posts
+  const filteredPosts = posts.filter((p) => {
+    if (filterCategory && p.category !== filterCategory) return false;
+    if (filterTag && !(p.tags || []).includes(filterTag)) return false;
+    return true;
+  });
+
   // ── Login Screen ──
 
   if (!isAuthed) {
@@ -394,6 +414,41 @@ export default function AdminPage() {
         {/* ── Articles Tab ── */}
         {activeTab === "articles" && (
           <div>
+            {/* Filters */}
+            <div className="flex flex-wrap gap-3 mb-4">
+              <select
+                value={filterCategory}
+                onChange={(e) => setFilterCategory(e.target.value)}
+                className="px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary,#3b82f6)] focus:border-transparent"
+              >
+                <option value="">All Categories</option>
+                {allCategories.map((cat) => (
+                  <option key={cat} value={cat}>{cat}</option>
+                ))}
+              </select>
+              <select
+                value={filterTag}
+                onChange={(e) => setFilterTag(e.target.value)}
+                className="px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary,#3b82f6)] focus:border-transparent"
+              >
+                <option value="">All Tags</option>
+                {allTags.map((tag) => (
+                  <option key={tag} value={tag}>{tag}</option>
+                ))}
+              </select>
+              {(filterCategory || filterTag) && (
+                <button
+                  onClick={() => { setFilterCategory(""); setFilterTag(""); }}
+                  className="px-3 py-2 text-sm text-gray-500 hover:text-gray-700 transition-colors"
+                >
+                  Clear filters
+                </button>
+              )}
+              <span className="px-3 py-2 text-sm text-gray-400">
+                {filteredPosts.length} / {posts.length} articles
+              </span>
+            </div>
+
             {postsLoading ? (
               <p className="text-gray-500">Loading articles...</p>
             ) : (
@@ -416,7 +471,7 @@ export default function AdminPage() {
                     </tr>
                   </thead>
                   <tbody>
-                    {posts.map((post) => (
+                    {filteredPosts.map((post) => (
                       <tr
                         key={post.slug}
                         onClick={() => openEditModal(post)}
@@ -505,23 +560,48 @@ export default function AdminPage() {
                         <label className="block text-sm font-medium text-gray-700 mb-1">
                           Category
                         </label>
-                        <select
-                          value={editForm.category}
-                          onChange={(e) =>
-                            setEditForm({
-                              ...editForm,
-                              category: e.target.value,
-                            })
-                          }
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary,#3b82f6)] focus:border-transparent text-sm"
-                        >
-                          <option value="">Select category</option>
-                          {CATEGORIES.map((cat) => (
-                            <option key={cat} value={cat}>
-                              {cat}
-                            </option>
-                          ))}
-                        </select>
+                        {customCategory ? (
+                          <div className="flex gap-2">
+                            <input
+                              type="text"
+                              value={editForm.category}
+                              onChange={(e) =>
+                                setEditForm({ ...editForm, category: e.target.value })
+                              }
+                              placeholder="Enter custom category"
+                              className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary,#3b82f6)] focus:border-transparent text-sm"
+                            />
+                            <button
+                              type="button"
+                              onClick={() => setCustomCategory(false)}
+                              className="px-3 py-2 text-xs text-gray-500 border border-gray-300 rounded-md hover:bg-gray-50"
+                            >
+                              Select
+                            </button>
+                          </div>
+                        ) : (
+                          <div className="flex gap-2">
+                            <select
+                              value={allCategories.includes(editForm.category) ? editForm.category : ""}
+                              onChange={(e) =>
+                                setEditForm({ ...editForm, category: e.target.value })
+                              }
+                              className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary,#3b82f6)] focus:border-transparent text-sm"
+                            >
+                              <option value="">Select category</option>
+                              {allCategories.map((cat) => (
+                                <option key={cat} value={cat}>{cat}</option>
+                              ))}
+                            </select>
+                            <button
+                              type="button"
+                              onClick={() => setCustomCategory(true)}
+                              className="px-3 py-2 text-xs text-gray-500 border border-gray-300 rounded-md hover:bg-gray-50"
+                            >
+                              Custom
+                            </button>
+                          </div>
+                        )}
                       </div>
 
                       <div>
