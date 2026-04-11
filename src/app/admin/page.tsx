@@ -136,7 +136,7 @@ export default function AdminPage() {
       const res = await adminFetch("/api/admin/posts");
       if (res.ok) {
         const data = await res.json();
-        setPosts(data);
+        setPosts(data.posts || []);
       }
     } catch {
       // ignore
@@ -205,7 +205,7 @@ export default function AdminPage() {
       const res = await adminFetch("/api/admin/tags");
       if (res.ok) {
         const data = await res.json();
-        setTags(data);
+        setTags(data.tags || []);
       }
     } catch {
       // ignore
@@ -222,7 +222,7 @@ export default function AdminPage() {
       const res = await adminFetch("/api/admin/upload");
       if (res.ok) {
         const data = await res.json();
-        setImages(data);
+        setImages(data.images || []);
       }
     } catch {
       // ignore
