@@ -6,6 +6,9 @@ const defaultLocale = "zh";
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  // Skip admin routes
+  if (pathname.startsWith("/admin")) return NextResponse.next();
+
   // Check if pathname already has a locale
   const pathnameHasLocale = locales.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
