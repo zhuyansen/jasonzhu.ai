@@ -75,7 +75,19 @@ export default async function BlogPostPage({ params }: Props) {
 
       {/* Content */}
       <div className="prose">
-        <MDXRemote source={post.content} />
+        <MDXRemote
+          source={post.content}
+          components={{
+            img: (props) => (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                {...props}
+                alt={props.alt || ""}
+                src={props.src?.replace(/^public\//, "/") || ""}
+              />
+            ),
+          }}
+        />
       </div>
 
       {/* Subscribe CTA */}
