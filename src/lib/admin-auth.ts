@@ -2,9 +2,9 @@ import { NextRequest, NextResponse } from "next/server";
 
 export function checkAuth(request: NextRequest): NextResponse | null {
   const authHeader = request.headers.get("authorization");
-  const password = process.env.ADMIN_PASSWORD || process.env.ADMIN_PWD;
+  const password = (process.env.ADMIN_PASSWORD || process.env.ADMIN_PWD || "").trim();
 
-  if (!password) {
+  if (!password || password.length === 0) {
     return NextResponse.json({ error: "Admin not configured" }, { status: 503 });
   }
 
