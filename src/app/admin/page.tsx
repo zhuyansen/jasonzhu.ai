@@ -72,6 +72,9 @@ export default function AdminPage() {
   const [copyFeedback, setCopyFeedback] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
+  // Views state
+  const [viewCounts, setViewCounts] = useState<Record<string, number>>({});
+
   // Subscribers state
   const [subscriberCount, setSubscriberCount] = useState(0);
   const [recentSubscribers, setRecentSubscribers] = useState<Subscriber[]>([]);
@@ -130,6 +133,23 @@ export default function AdminPage() {
       if (res.ok) {
         const data = await res.json();
         setPosts(data.posts || []);
+
+        // Fetch view counts from Supabase
+        const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+        const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+        if (supabaseUrl && supabaseKey) {
+          const supabase = createClient(supabaseUrl, supabaseKey);
+          const { data: views } = await supabase
+            .from("page_views")
+            .select("slug, count");
+          if (views) {
+            const counts: Record<string, number> = {};
+            for (const v of views) {
+              counts[v.slug] = v.count;
+            }
+            setViewCounts(counts);
+          }
+        }
       }
     } catch {
       // ignore
@@ -440,6 +460,9 @@ export default function AdminPage() {
                         Date
                       </th>
                       <th className="text-right px-4 py-3 font-medium text-gray-600">
+                        Views
+                      </th>
+                      <th className="text-right px-4 py-3 font-medium text-gray-600">
                         Actions
                       </th>
                     </tr>
@@ -471,6 +494,9 @@ export default function AdminPage() {
                         </td>
                         <td className="px-4 py-3 text-gray-500 whitespace-nowrap">
                           {post.date}
+                        </td>
+                        <td className="px-4 py-3 text-right text-gray-500 whitespace-nowrap">
+                          {viewCounts[post.slug] ?? 0}
                         </td>
                         <td className="px-4 py-3 text-right whitespace-nowrap">
                           <div className="flex items-center justify-end gap-2" onClick={(e) => e.stopPropagation()}>

@@ -3,6 +3,9 @@ import Link from "next/link";
 import { getAllPosts, getPostBySlug } from "@/lib/mdx";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import SubscribeForm from "@/components/SubscribeForm";
+import ViewCounter from "@/components/ViewCounter";
+import LikeButton from "@/components/LikeButton";
+import GiscusComments from "@/components/GiscusComments";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
 import type { Metadata } from "next";
 
@@ -55,6 +58,7 @@ export default async function BlogPostPage({ params }: Props) {
             {post.category}
           </span>
           <span className="text-sm text-gray-400">{post.date}</span>
+          <ViewCounter slug={slug} />
         </div>
         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
           {post.title}
@@ -90,9 +94,19 @@ export default async function BlogPostPage({ params }: Props) {
         />
       </div>
 
+      {/* Like Button */}
+      <div className="mt-10 flex justify-center">
+        <LikeButton slug={slug} />
+      </div>
+
       {/* Subscribe CTA */}
       <div className="mt-12">
         <SubscribeForm source={`blog-${slug}`} lang={lang} dict={dict} />
+      </div>
+
+      {/* Comments */}
+      <div className="mt-12">
+        <GiscusComments lang={lang} />
       </div>
 
       {/* Footer */}
