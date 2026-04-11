@@ -47,7 +47,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="https://github.com/JCodesMore" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 hover:text-gray-900">
+                <a href="https://github.com/zhuyansen" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 hover:text-gray-900">
                   GitHub
                 </a>
               </li>
