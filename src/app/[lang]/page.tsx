@@ -33,22 +33,19 @@ export default async function HomePage({
             {/* Right: handbook highlight card */}
             <Link
               href={`/${lang}/handbook`}
-              className="flex items-center gap-4 px-5 py-4 bg-gradient-to-r from-blue-50 to-white border border-blue-100 rounded-xl hover:border-blue-200 hover:shadow-sm transition-all shrink-0"
+              className="group flex items-center gap-4 px-6 py-5 bg-gradient-to-r from-blue-600 to-blue-500 border border-blue-500 rounded-xl hover:from-blue-700 hover:to-blue-600 hover:shadow-lg hover:shadow-blue-200 transition-all shrink-0"
             >
               <span className="text-3xl">📘</span>
               <div>
-                <span className="text-xs font-medium text-[var(--primary)] uppercase tracking-wide">
-                  {dict.home.featuredHandbook}
-                </span>
-                <p className="text-sm font-semibold text-gray-900 mt-0.5">
+                <p className="text-sm font-bold text-white">
                   {dict.home.handbookTitle}
                 </p>
-                <p className="text-xs text-gray-400 mt-0.5 hidden sm:block max-w-xs">
+                <p className="text-xs text-blue-100 mt-1 hidden sm:block max-w-xs">
                   {dict.home.handbookDesc}
                 </p>
               </div>
-              <span className="text-xs text-[var(--primary)] font-medium whitespace-nowrap">
-                {dict.home.getHandbook} →
+              <span className="text-sm text-white font-semibold whitespace-nowrap bg-white/20 px-3 py-1.5 rounded-lg group-hover:bg-white/30 transition-colors">
+                {dict.home.getHandbook}
               </span>
             </Link>
           </div>
