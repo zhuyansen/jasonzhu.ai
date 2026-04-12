@@ -4,6 +4,8 @@ import BlogCard from "@/components/BlogCard";
 import SubscribeForm from "@/components/SubscribeForm";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
 
+export const dynamic = "force-dynamic";
+
 export default async function HomePage({
   params,
 }: {
