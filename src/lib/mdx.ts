@@ -24,5 +24,5 @@ export function getPostBySlug(slug: string): BlogPost | undefined {
 
 export function getCategories(): string[] {
   const categories = new Set(allPosts.map((p) => p.category));
-  return ["全部", ...Array.from(categories)];
+  return Array.from(categories);
 }

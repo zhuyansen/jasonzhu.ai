@@ -7,10 +7,24 @@ const categoryColors: Record<string, string> = {
   "观点": "bg-purple-50 text-purple-700",
   "案例": "bg-orange-50 text-orange-700",
   "Vibe Coding": "bg-pink-50 text-pink-700",
+  "出海": "bg-teal-50 text-teal-700",
+  "营销增长": "bg-yellow-50 text-yellow-700",
+  "书单推荐": "bg-indigo-50 text-indigo-700",
+  "咨询培训": "bg-cyan-50 text-cyan-700",
+  "出入金": "bg-amber-50 text-amber-700",
 };
 
-export default function BlogCard({ post, lang = "zh" }: { post: BlogPost; lang?: string }) {
+export default function BlogCard({
+  post,
+  lang = "zh",
+  categoryMap,
+}: {
+  post: BlogPost;
+  lang?: string;
+  categoryMap?: Record<string, string>;
+}) {
   const colorClass = categoryColors[post.category] || "bg-gray-50 text-gray-600";
+  const displayCategory = categoryMap?.[post.category] || post.category;
 
   return (
     <Link
@@ -19,7 +33,7 @@ export default function BlogCard({ post, lang = "zh" }: { post: BlogPost; lang?:
     >
       <div className="flex items-center gap-2 mb-3">
         <span className={`inline-block px-2.5 py-0.5 rounded-full text-xs font-medium ${colorClass}`}>
-          {post.category}
+          {displayCategory}
         </span>
         <span className="text-xs text-gray-400">{post.date}</span>
       </div>

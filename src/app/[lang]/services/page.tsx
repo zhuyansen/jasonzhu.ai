@@ -77,7 +77,15 @@ export default async function ServicesPage({
                 ))}
               </ul>
               <p className="text-sm text-[var(--primary)] font-medium">
-                {service.highlight}
+                {service.highlight.includes("gosaillab.com") ? (
+                  <>
+                    {service.highlight.split("gosaillab.com")[0]}
+                    <a href="https://gosaillab.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-[var(--primary-dark)]">gosaillab.com</a>
+                    {service.highlight.split("gosaillab.com")[1]}
+                  </>
+                ) : (
+                  service.highlight
+                )}
               </p>
             </div>
           </div>

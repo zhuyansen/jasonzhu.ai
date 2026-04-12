@@ -36,7 +36,18 @@
     "noPosts": "No posts yet",
     "backToBlog": "Back to Blog",
     "followOnX": "Follow me on X",
-    "authorTitle": "Ex-AI Engineer | AI Blogger"
+    "authorTitle": "Ex-AI Engineer | AI Blogger",
+    "categoryMap": {
+      "观点": "Insights",
+      "教程": "Tutorials",
+      "书单推荐": "Book Reviews",
+      "出海": "Going Global",
+      "营销增长": "Marketing",
+      "咨询培训": "Consulting",
+      "Vibe Coding": "Vibe Coding",
+      "出入金": "Payments",
+      "AI工具": "AI Tools"
+    }
   },
   "news": {
     "title": "AI News",
@@ -76,6 +87,8 @@
       { "name": "Midjourney", "description": "One of the most popular AI image generators. V7 now supports video generation.", "category": "Image", "url": "https://midjourney.com", "tags": ["Image Gen", "Design", "Creative"] },
       { "name": "FLUX", "description": "Open-source image generation model by Black Forest Labs. Quality rivals commercial products.", "category": "Image", "url": "https://blackforestlabs.ai", "tags": ["Image Gen", "Open Source", "Self-Host"] },
       { "name": "Dreamina", "description": "ByteDance's AI image tool. Text-to-image and image-to-image with impressive results.", "category": "Image", "url": "https://jimeng.jianying.com", "tags": ["Image Gen", "Free", "ByteDance"] },
+      { "name": "YouMind", "description": "AI mind map & knowledge management tool. Convert articles, webpages, PDFs into structured mind maps with AI-powered editing.", "category": "Image", "url": "https://youmind.ai", "tags": ["Mind Map", "Knowledge", "AI"] },
+      { "name": "Seedance 2.0", "description": "ByteDance's AI dance/motion video generation model. High-quality human motion videos from text and image inputs.", "category": "Image", "url": "https://seedance.ai", "tags": ["Image Gen", "Video", "ByteDance"] },
       { "name": "Runway", "description": "Professional AI video generation and editing. Gen-3 produces high-quality text/image-to-video.", "category": "Video", "url": "https://runway.ml", "tags": ["Video Gen", "Creative", "Editing"] },
       { "name": "Kling", "description": "By Kuaishou. AI video generation with strong motion coherence.", "category": "Video", "url": "https://klingai.com", "tags": ["Video Gen", "Kuaishou"] },
       { "name": "Veo", "description": "Google DeepMind's video generation model with high visual quality and long video support.", "category": "Video", "url": "https://deepmind.google/technologies/veo/", "tags": ["Video Gen", "Google", "High Quality"] },

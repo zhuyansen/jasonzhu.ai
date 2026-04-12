@@ -36,7 +36,18 @@
     "noPosts": "暂无文章",
     "backToBlog": "返回博客",
     "followOnX": "在 X 上关注我",
-    "authorTitle": "前AI算法工程师 | AI博主"
+    "authorTitle": "前AI算法工程师 | AI博主",
+    "categoryMap": {
+      "观点": "观点",
+      "教程": "教程",
+      "书单推荐": "书单推荐",
+      "出海": "出海",
+      "营销增长": "营销增长",
+      "咨询培训": "咨询培训",
+      "Vibe Coding": "Vibe Coding",
+      "出入金": "出入金",
+      "AI工具": "AI工具"
+    }
   },
   "news": {
     "title": "AI 快讯",
@@ -76,6 +87,8 @@
       { "name": "Midjourney", "description": "最流行的AI图像生成工具之一，擅长艺术风格图片生成，V7已支持视频生成。", "category": "图像", "url": "https://midjourney.com", "tags": ["图像生成", "设计", "创意"] },
       { "name": "FLUX", "description": "Black Forest Labs出品的开源图像生成模型，质量媲美商业产品，支持本地部署。", "category": "图像", "url": "https://blackforestlabs.ai", "tags": ["图像生成", "开源", "本地部署"] },
       { "name": "即梦 Dreamina", "description": "字节旗下AI绘画工具，国内直连，支持文生图、图生图，效果出色。", "category": "图像", "url": "https://jimeng.jianying.com", "tags": ["图像生成", "国产", "免费"] },
+      { "name": "YouMind", "description": "AI思维导图与知识管理工具，一键将文章、网页、PDF转为结构化思维导图，支持AI对话式编辑。", "category": "图像", "url": "https://youmind.ai", "tags": ["思维导图", "知识管理", "AI"] },
+      { "name": "Seedance 2.0", "description": "字节跳动推出的AI舞蹈/动作视频生成模型，支持文本和图片驱动的高质量人物动作视频生成。", "category": "图像", "url": "https://seedance.ai", "tags": ["图像生成", "视频", "字节"] },
       { "name": "Runway", "description": "专业级AI视频生成和编辑工具，Gen-3支持文本/图片生成高质量视频。", "category": "视频", "url": "https://runway.ml", "tags": ["视频生成", "创意", "编辑"] },
       { "name": "Kling", "description": "快手出品的AI视频生成工具，动作连贯性强，国内直连可用。", "category": "视频", "url": "https://klingai.com", "tags": ["视频生成", "国产", "快手"] },
       { "name": "Veo", "description": "Google DeepMind的视频生成模型，画面质量高，支持长视频生成。", "category": "视频", "url": "https://deepmind.google/technologies/veo/", "tags": ["视频生成", "Google", "高质量"] },

@@ -16,10 +16,17 @@ export default function BlogListClient({
   lang: string;
   dict: Dictionary["blog"];
 }) {
-  const [activeCategory, setActiveCategory] = useState(dict.all);
+  const [activeCategory, setActiveCategory] = useState("__all__");
+
+  const categoryMap = (dict as any).categoryMap as Record<string, string> | undefined;
+
+  const getDisplayName = (cat: string) => {
+    if (categoryMap && categoryMap[cat]) return categoryMap[cat];
+    return cat;
+  };
 
   const filtered =
-    activeCategory === dict.all
+    activeCategory === "__all__"
       ? posts
       : posts.filter((p) => p.category === activeCategory);
 
@@ -30,6 +37,16 @@ export default function BlogListClient({
 
       {/* Category filter */}
       <div className="flex flex-wrap gap-2 mb-8">
+        <button
+          onClick={() => setActiveCategory("__all__")}
+          className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
+            activeCategory === "__all__"
+              ? "bg-[var(--primary)] text-white"
+              : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+          }`}
+        >
+          {dict.all}
+        </button>
         {categories.map((cat) => (
           <button
             key={cat}
@@ -40,7 +57,7 @@ export default function BlogListClient({
                 : "bg-gray-100 text-gray-600 hover:bg-gray-200"
             }`}
           >
-            {cat}
+            {getDisplayName(cat)}
           </button>
         ))}
       </div>
@@ -49,7 +66,7 @@ export default function BlogListClient({
       {filtered.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {filtered.map((post) => (
-            <BlogCard key={post.slug} post={post} lang={lang} />
+            <BlogCard key={post.slug} post={post} lang={lang} categoryMap={categoryMap} />
           ))}
         </div>
       ) : (
