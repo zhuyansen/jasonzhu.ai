@@ -2,6 +2,9 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getAllPosts, getPostBySlug } from "@/lib/mdx";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import remarkGfm from "remark-gfm";
+import rehypeHighlight from "rehype-highlight";
+import rehypeSlug from "rehype-slug";
 import SubscribeForm from "@/components/SubscribeForm";
 import ViewCounter from "@/components/ViewCounter";
 import LikeButton from "@/components/LikeButton";
@@ -81,6 +84,12 @@ export default async function BlogPostPage({ params }: Props) {
       <div className="prose">
         <MDXRemote
           source={post.content}
+          options={{
+            mdxOptions: {
+              remarkPlugins: [remarkGfm],
+              rehypePlugins: [rehypeHighlight, rehypeSlug],
+            },
+          }}
           components={{
             img: (props) => (
               // eslint-disable-next-line @next/next/no-img-element
