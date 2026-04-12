@@ -65,6 +65,7 @@
       { "name": "DeepSeek", "description": "国产开源大模型，推理能力强劲，性价比极高，支持本地部署。", "category": "对话搜索", "url": "https://chat.deepseek.com", "tags": ["对话", "开源", "推理"] },
       { "name": "Perplexity", "description": "AI驱动的搜索引擎，提供带引用的实时回答，适合快速调研和信息获取。", "category": "对话搜索", "url": "https://perplexity.ai", "tags": ["搜索", "研究", "知识"] },
       { "name": "Kimi", "description": "月之暗面出品，超长上下文支持，擅长处理长文档和复杂资料分析。", "category": "对话搜索", "url": "https://kimi.moonshot.cn", "tags": ["对话", "长文本", "月之暗面"] },
+      { "name": "豆包", "description": "字节跳动出品的AI对话助手，支持多模态交互，国内直连，内置丰富插件生态。", "category": "对话搜索", "url": "https://www.doubao.com", "tags": ["对话", "国产", "字节"] },
       { "name": "Claude Code", "description": "Anthropic出品的AI编程CLI，2026年最火的Vibe Coding工具，支持Agent级自主开发。", "category": "编程", "url": "https://claude.ai/code", "tags": ["编程", "CLI", "Agent"] },
       { "name": "Cursor", "description": "AI原生代码编辑器，内置AI助手，支持多模型切换，智能代码补全和重构。", "category": "编程", "url": "https://cursor.com", "tags": ["编程", "IDE", "代码补全"] },
       { "name": "Windsurf", "description": "Codeium出品的AI编辑器，Cascade功能支持多步骤Agent式编程，上手简单。", "category": "编程", "url": "https://codeium.com/windsurf", "tags": ["编程", "IDE", "Agent"] },
@@ -73,9 +74,11 @@
       { "name": "Bolt.new", "description": "浏览器内全栈AI开发环境，一句话生成完整应用，适合快速原型。", "category": "编程", "url": "https://bolt.new", "tags": ["全栈", "原型", "浏览器"] },
       { "name": "Lovable", "description": "AI全栈开发平台，自然语言描述即可生成带数据库和认证的完整应用。", "category": "编程", "url": "https://lovable.dev", "tags": ["全栈", "无代码", "应用"] },
       { "name": "Replit Agent", "description": "Replit的AI Agent，从需求到部署全自动化，支持一键上线。", "category": "编程", "url": "https://replit.com", "tags": ["全栈", "部署", "Agent"] },
+      { "name": "Codex", "description": "OpenAI推出的AI编程Agent，支持在沙盒环境中自主完成代码编写、测试和调试。", "category": "编程", "url": "https://openai.com/index/introducing-codex/", "tags": ["编程", "Agent", "OpenAI"] },
       { "name": "OpenClaw", "description": "AI Agent技能商店，Claude Code/Cursor的Skills聚合平台，已收录53000+工具。", "category": "Agent", "url": "https://openclaw.com", "tags": ["Agent", "Skills", "开源"] },
       { "name": "Manus", "description": "通用AI Agent，支持自主浏览网页、写代码、处理文件，适合复杂任务自动化。", "category": "Agent", "url": "https://manus.im", "tags": ["Agent", "自动化", "通用"] },
       { "name": "Devin", "description": "Cognition出品的AI软件工程师，能独立完成从需求理解到代码提交的完整开发流程。", "category": "Agent", "url": "https://devin.ai", "tags": ["Agent", "编程", "自主开发"] },
+      { "name": "Claude Code", "description": "Anthropic出品的终端AI编程Agent，支持自主读写代码、运行命令、搜索文件，2026年最强编程Agent。", "category": "Agent", "url": "https://claude.ai/code", "tags": ["Agent", "编程", "CLI"] },
       { "name": "APIMart（书虫推荐）", "description": "AI中转站，支持AI生图、生视频等多种模型API调用，价格实惠。", "category": "AI中转站", "url": "https://apimart.ai/register?aff=npuNLN", "tags": ["中转站", "生图", "生视频", "API"] },
       { "name": "云雾 AI", "description": "AI中转站，聚合多家AI模型，支持图像生成、视频生成等创意类API。", "category": "AI中转站", "url": "https://yunwu.ai/register?aff=xlFA", "tags": ["中转站", "生图", "生视频", "API"] },
       { "name": "AiGoCode（涛哥推荐）", "description": "代码类AI中转站，专注编程场景的API中转服务，稳定好用。", "category": "AI中转站", "url": "https://aigocode.com/invite/ZS329NMN", "tags": ["中转站", "编程", "API"] },
@@ -95,10 +98,13 @@
       { "name": "HeyGen", "description": "AI数字人视频平台，支持文本生成口播视频、视频翻译和唇形同步。", "category": "视频", "url": "https://heygen.com", "tags": ["数字人", "口播", "翻译"] },
       { "name": "Suno", "description": "AI音乐生成平台，输入文字描述即可生成完整歌曲，支持多种音乐风格。", "category": "音频", "url": "https://suno.com", "tags": ["音乐", "音频", "创意"] },
       { "name": "ElevenLabs", "description": "最先进的AI语音合成平台，支持声音克隆、多语言配音，效果极其逼真。", "category": "音频", "url": "https://elevenlabs.io", "tags": ["语音合成", "配音", "声音克隆"] },
+      { "name": "ListenHub", "description": "AI播客与音频工具，支持音频转文字、智能摘要、多语言翻译，提升音频内容消费效率。", "category": "音频", "url": "https://listenhub.ai", "tags": ["播客", "转录", "翻译"] },
+      { "name": "YouMind", "description": "AI思维导图与知识管理工具，支持将音频、视频内容一键转为结构化思维导图和笔记。", "category": "音频", "url": "https://youmind.ai", "tags": ["思维导图", "笔记", "知识管理"] },
       { "name": "NotebookLM", "description": "Google推出的AI笔记工具，上传文档后可与内容对话，一键生成播客。", "category": "效率", "url": "https://notebooklm.google.com", "tags": ["笔记", "文档", "播客"] },
       { "name": "Notion AI", "description": "Notion内置AI助手，支持写作、总结、翻译、数据分析，无缝融入工作流。", "category": "效率", "url": "https://notion.so", "tags": ["笔记", "写作", "协作"] },
       { "name": "Gamma", "description": "AI演示文稿生成工具，一句话生成精美PPT，支持自定义模板和品牌色。", "category": "效率", "url": "https://gamma.app", "tags": ["PPT", "演示", "设计"] },
-      { "name": "n8n", "description": "开源工作流自动化平台，拖拽式连接AI模型和各种服务，构建自动化流程。", "category": "效率", "url": "https://n8n.io", "tags": ["自动化", "工作流", "开源"] }
+      { "name": "n8n", "description": "开源工作流自动化平台，拖拽式连接AI模型和各种服务，构建自动化流程。", "category": "效率", "url": "https://n8n.io", "tags": ["自动化", "工作流", "开源"] },
+      { "name": "Obsidian", "description": "本地优先的知识管理和笔记工具，支持双向链接、Markdown编辑，插件生态丰富，适合构建个人知识库。", "category": "效率", "url": "https://obsidian.md", "tags": ["笔记", "知识管理", "Markdown"] }
     ]
   },
   "services": {
