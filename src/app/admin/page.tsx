@@ -119,7 +119,6 @@ export default function AdminPage() {
     setIsAuthed(false);
     setPassword("");
     setPosts([]);
-    setTags([]);
     setImages([]);
     setRecentSubscribers([]);
   };
