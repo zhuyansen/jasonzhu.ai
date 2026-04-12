@@ -9,8 +9,6 @@ import GiscusComments from "@/components/GiscusComments";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
 import type { Metadata } from "next";
 
-export const dynamic = "force-dynamic";
-
 interface Props {
   params: Promise<{ lang: string; slug: string }>;
 }

@@ -3,7 +3,7 @@ import { getAllPosts, getCategories } from "@/lib/mdx";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
 import BlogListClient from "./BlogListClient";
 
-export const dynamic = "force-dynamic";
+
 
 export async function generateMetadata({
   params,

@@ -1,12 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
 import { checkAuth } from "@/lib/admin-auth";
+import { getPostBySlug } from "@/lib/mdx";
 
 export const dynamic = "force-dynamic";
-
-const BLOG_DIR = path.join(process.cwd(), "src/content/blog");
 
 export async function GET(
   request: NextRequest,
@@ -16,42 +12,33 @@ export async function GET(
   if (authError) return authError;
 
   const { slug } = await params;
-  const mdxPath = path.join(BLOG_DIR, `${slug}.mdx`);
-  const mdPath = path.join(BLOG_DIR, `${slug}.md`);
-  const filePath = fs.existsSync(mdxPath) ? mdxPath : mdPath;
+  const post = getPostBySlug(slug);
 
-  if (!fs.existsSync(filePath)) {
+  if (!post) {
     return NextResponse.json({ error: "Post not found" }, { status: 404 });
   }
 
-  const fileContent = fs.readFileSync(filePath, "utf-8");
-  const { data, content } = matter(fileContent);
-
-  return NextResponse.json({ frontmatter: data, content, filePath: path.basename(filePath) });
+  return NextResponse.json({
+    frontmatter: {
+      title: post.title,
+      date: post.date,
+      category: post.category,
+      tags: post.tags,
+      excerpt: post.excerpt,
+    },
+    content: post.content,
+    filePath: post.filename,
+  });
 }
 
 export async function PUT(
-  request: NextRequest,
+  _request: NextRequest,
   { params }: { params: Promise<{ slug: string }> }
 ) {
-  const authError = checkAuth(request);
-  if (authError) return authError;
-
   const { slug } = await params;
-  const mdxPath = path.join(BLOG_DIR, `${slug}.mdx`);
-  const mdPath = path.join(BLOG_DIR, `${slug}.md`);
-  const filePath = fs.existsSync(mdxPath) ? mdxPath : mdPath;
-
-  if (!fs.existsSync(filePath)) {
-    return NextResponse.json({ error: "Post not found" }, { status: 404 });
-  }
-
-  const { frontmatter } = await request.json();
-  const fileContent = fs.readFileSync(filePath, "utf-8");
-  const { content } = matter(fileContent);
-
-  const newContent = matter.stringify(content, frontmatter);
-  fs.writeFileSync(filePath, newContent);
-
-  return NextResponse.json({ success: true });
+  // Editing files is not supported on Vercel's read-only filesystem
+  return NextResponse.json(
+    { error: `Cannot edit posts on production. Edit ${slug}.md locally and redeploy.` },
+    { status: 405 }
+  );
 }

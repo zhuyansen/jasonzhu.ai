@@ -1,0 +1,1098 @@
+[
+  {
+    "slug": "ai-agent-complete-picture",
+    "title": "Skill、Harness、记忆、安全：60篇文章和20个项目之后，我们画出了AI Agent的完整拼图",
+    "date": "2026-04-11",
+    "category": "观点",
+    "tags": [
+      "AI Agent",
+      "Skill系统",
+      "安全",
+      "开源"
+    ],
+    "excerpt": "过去三个月写了60篇AI Agent文章，覆盖Skill系统、Harness治理、记忆架构、安全防御四个方向。这篇文章把四根柱子拉到一起，画一张完整的图。",
+    "content": "\n过去三个月我们写了将近 60 篇关于 AI Agent 的文章，覆盖了 Skill 系统、Harness 治理、记忆架构、安全防御四个方向。回头看，这四个方向其实在解同一个问题：怎么让 Agent 从\"能用\"变成\"可靠\"。这篇文章把四根柱子拉到一起，用 20+ 个开源项目和我们的实战经验，画一张完整的图\n\n---\n\n## 四根柱子，一个目标\n\nAI Agent 和普通 LLM 调用的本质区别在于它有执行能力。能读写文件、能跑 Shell、能调 API、能上网。这意味着它能做的事情多了一个数量级，但同时出错的后果也严重了一个数量级\n\n让 Agent 可靠地工作需要四根柱子同时撑住\n\n**Skill 系统**解决\"Agent 能做什么\"。把领域知识、工作流、最佳实践打包成可复用的模块，让 Agent 从通才变专家。Anthropic 内部用了几百个 Skills，Uber 内部管理着 500+ 个\n\n**Harness 治理**解决\"Agent 怎么做\"。定义 Agent 的工作流程、协作模式、质量门禁。从 Prompt Engineering 到 Context Engineering 到 Harness Engineering，工程师的角色从写代码变成了设计 Agent 的运行环境\n\n**记忆系统**解决\"Agent 记住什么\"。跨 session 积累经验，避免重复犯错。从简单的 CLAUDE.md 文件到向量数据库到知识图谱，12+ 个开源项目在竞争最优方案\n\n**安全防御**解决\"Agent 不做什么\"。MCP 生态 60 天爆出 30+ 个 CVE，OpenClaw 商店五分之一的包是恶意软件。执行权限带来攻击面，防御必须跟上\n\n![四根柱子](public/blog/agent-four-pillars/section1-four-pillars.png)\n\n---\n\n## Skill 系统：从 Anthropic 内部实践到社区爆发\n\n我们在第 13 到 25 篇文章里密集追踪了 Skill 生态的演进。Anthropic 官方出了 6 节课的教程，总结了 9 种最有效的 Skill 类型，核心理念是\"别再造 Agent 了，造 Skills 就够了\"\n\n社区的响应非常快。目前影响力最大的几个 Skill 框架各有侧重\n\n**Addy Osmani 的 <a href=\"https://github.com/addyosmani/agent-skills\">agent-skills</a>**（8.8K 星）走的是标准化路线。19 个核心 Skill 覆盖从 /spec 到 /ship 的完整开发生命周期，7 个斜杠命令，3 个专家 Agent 人设（代码审查员、测试工程师、安全审计师）。最有意思的设计是\"反合理化表\"，列出了 Agent 常用来跳过关键步骤的借口和对应的反驳，防止 Agent 偷懒\n\n**obra 的 <a href=\"https://github.com/obra/superpowers\">superpowers</a>**（14 万星）是目前 star 数最高的 Skill 框架。强制 TDD 红绿重构循环，子 Agent 驱动开发，每个任务派一个全新的 Agent 执行再做两轮代码审查。Git worktree 隔离保证并行开发不冲突。Skill 在这里的角色更像是强制执行的方法论，不是可选的建议\n\n**Garry Tan 的 <a href=\"https://github.com/garrytan/gstack\">gstack</a>**（6.7 万星）把 Claude Code 变成了一个 23 人的虚拟工程团队。CEO、设计师、工程师、QA 负责人、发布经理、首席安全官各司其职，Sprint 流水线从 Think 到 Ship 到 Reflect。/learn 命令管理跨 session 的模式积累，/cso 做 OWASP/STRIDE 安全审计\n\n**Every 的 <a href=\"https://github.com/EveryInc/compound-engineering-plugin\">compound-engineering</a>**（1.36 万星）强调复合效应：每次工程迭代都应该让下一次更容易。6 个 /ce: 命令，80% 规划和审查、20% 执行。最独特的是 /ce:compound 命令，在每个迭代结束时提取经验教训写入知识库，让未来的工作自动受益于过去的积累\n\n这些框架的共同趋势是 Skill 的职责在扩大。最早的 Skill 只是一段提示词模板，现在的 Skill 同时承载了工作流定义（Harness 的职责）、经验积累（记忆的职责）、安全审计（防御的职责）。四根柱子在实践中正在融合\n\n![Skill生态](public/blog/agent-four-pillars/section2-skills.png)\n\n---\n\n## Harness 治理：从概念争议到六种架构模式\n\n我们从第 34 篇开始追踪 Harness Engineering 这个概念。Anthropic 和 OpenAI 几乎同一周发了各自的实践文章，然后整个社区炸了\n\n**三次范式转移**现在已经是共识。2023-2024 年的 Prompt Engineering 关注措辞和结构化。2025 年的 Context Engineering 关注信息编排，把整个上下文窗口当工程对象设计。2026 年的 Harness Engineering 关注 Agent 的运行环境设计，包括协作架构、评估闭环、记忆系统、治理机制\n\nrevfactory 的 Harness 插件（第 42 篇）把概念变成了工具，内置了六种 Agent 协作模式：Pipeline 流水线、Fan-out/Fan-in 扇出扇入、Expert Pool 专家池、Producer-Reviewer 生成评审、Supervisor 主管、Hierarchical Delegation 层级委派。A/B 测试数据显示平均质量提升 60%，任务越复杂提升越大\n\nDex Horthy 的 RPI 方法论（第 48 篇）提供了另一个视角。他的核心洞察是上下文窗口有一个\"聪明区\"和一个\"笨蛋区\"，大约在 40% 使用率时质量开始下降。Research-Plan-Implement 三步法的本质就是持续压缩上下文，始终待在聪明区\n\nMitchell Hashimoto 的六阶段复盘（第 56 篇）则展示了一个工程师从怀疑到全面采纳的真实路径。他的第五阶段\"Engineer the Harness\"正好印证了整个社区的方向\n\n<a href=\"https://github.com/zstmfhy/Claude-code\">Claude Code 的内部架构</a>（190 星）展示了参考实现：50+ 命令、JSON Schema 验证的工具系统、完整的 MCP 协议实现、支持并行执行和上下文隔离的 Agent 系统。所有外部框架都构建在这个基座之上\n\n![Harness治理](public/blog/agent-four-pillars/section3-harness.png)\n\n---\n\n## 记忆系统：12 个项目的四条技术路线\n\n我们在第 58 篇做了完整的记忆系统竞品分析。核心问题很简单：LLM 是无状态的，关掉 session 就全忘了\n\n四条技术路线各有取舍。纯文件存储（CLAUDE.md）零依赖但不支持语义搜索。向量数据库 + RAG 能处理规模但衡量的是\"相似\"而非\"正确\"。知识图谱精度最高但构建成本也最高。混合检索（BM25 + 向量 + 知识图谱）效果最好，学术研究显示精确率可达 92%\n\n新加入的 **<a href=\"https://github.com/milla-jovovich/mempalace\">mempalace</a>**（2.16 万星）是目前基准测试得分最高的方案，LongMemEval R@5 达到 96.6%。它的设计灵感来自古希腊的记忆宫殿术：Wings（翼）对应人或项目，Rooms（房间）对应话题，Halls（厅）对应记忆类型，Closets（衣橱）存放摘要，Drawers（抽屉）保留原始文件。最关键的设计决策是**原文逐字存储，不做 LLM 摘要**，用 ChromaDB 做向量搜索、SQLite 做知识图谱。19 个 MCP 工具接口让它可以接入任何兼容的 Agent\n\n**agentmemory**（592 星）做了目前最完整的检索引擎，三路融合加矛盾检测加级联失效。**claude-memory-compiler**（251 星）走 Karpathy 的知识编译路线，把对话蒸馏成维基式知识文章。**agent-memory**（13 星）纯 bash + jq 实现的知识图谱，零依赖但有完整的矛盾检测\n\ncompound-engineering 的 /ce:compound 命令提供了一个有趣的视角：记忆不需要是一个独立的基础设施，它可以内嵌到工作流里。每次迭代结束时自动提取经验教训，下次迭代自动加载。gstack 的 /learn 命令做了类似的事，跨 session 积累模式\n\n![记忆系统](public/blog/agent-four-pillars/section4-memory.png)\n\n---\n\n## 安全防御：从 30 个 CVE 到三层纵深\n\n我们在第 59 篇深度调研了 Agent 安全领域。数据触目惊心：MCP 生态 60 天 30+ 个 CVE，43% 的 MCP 服务器有命令注入漏洞，OpenClaw 商店 1184 个恶意包，Claude Code 自身两个高危 CVE，87% 的 AI 生成 PR 引入安全漏洞\n\n**<a href=\"https://github.com/SafeAI-Lab-X/ClawKeeper\">ClawKeeper</a>**（464 星）提出了三层防御纵深：Skill 层通过 Markdown 策略注入告诉 Agent \"什么不该做\"，Plugin 层在运行时拦截危险操作（11 个核心模块覆盖 10 个威胁域），Watcher 层作为独立守护进程监控所有行为并可强制人工确认。论文在 140 个对抗测试实例上达到了最优防御性能\n\n**Invariant MCP-Scan**（1100+ 星，已被 Snyk 收购）做静态扫描，检测工具描述中的 prompt 注入和 rug pull 攻击。**AgentSeal** 给 8000+ 个 MCP 服务器做了安全评分，发现 4513 个深度问题。**Docker Sandboxes** 用 MicroVM 在基础设施层面隔离 Agent。**MCP Guardian** 用 SHA-256 哈希做工具定义钉住，防止篡改\n\n安全的挑战在于它和其他三根柱子存在张力。Skill 越多攻击面越大，记忆系统可能存储敏感信息，Harness 的工具调用权限本身就是安全风险。gstack 的做法值得参考：/guard 命令做安全护栏防止危险命令执行，/cso 命令做 OWASP/STRIDE 威胁建模，把安全内嵌到 Sprint 流水线里而非事后补救\n\n![安全防御](public/blog/agent-four-pillars/section5-security.png)\n\n---\n\n## 四虾阵实战：四根柱子怎么整合\n\n理论框架再完美，落地才是真功夫。\"四虾阵 Agent Ops\"（第 37 篇）提供了一个把四根柱子整合到一起的运营范例\n\n**架构层**：小龙虾协调者持有任务板 board.json 做路由和状态推进，码力/笔锋/谋士三个执行层 Agent 通过 SOUL.md 约束角色边界（这是 Skill + Harness 的融合）\n\n**记忆层**：三级记忆塔。L0 OpenViking 自动召回处理当前会话和 Session 归档，L1 MemOS 处理日常轻量协作记忆，L2 MEMORY.md/Daily Notes 做冷启动兜底。重启不失忆\n\n**治理层**：OpenHarness 实践。YAML Constitution 硬约束定义 deny_patterns，所有 exec 指令派发前必须经过 lobster_ops.py 验证，高风险操作强制触发 ask 等用户批准。任务流转以 board.json 为唯一真相源\n\n**安全层**：运行时防御 Pre-exec Validation 加日志压缩 Microcompact。所有操作可审计，Token 损耗严控\n\n这套体系的核心理念是放弃对 Agent 自觉性的幻想，通过显式治理机制实施控制。和 ClawKeeper 的三层纵深、gstack 的 Sprint 流水线、superpowers 的强制 TDD 本质上是同一个思路：**Agent 的可靠性来自外部约束，不是内部自觉**\n\n![四虾阵整合](public/blog/agent-four-pillars/section6-four-shrimp.png)\n\n---\n\n## 融合趋势：四根柱子正在变成一根\n\n回看这 20+ 个项目，一个明显的趋势是四根柱子的边界在模糊\n\nsuperpowers 的 Skill 强制执行 TDD 方法论（Skill 承载了 Harness 的职责），自动保存设计文档和计划（Skill 承载了记忆的职责）。gstack 的 /cso 安全审计是一个 Skill，/guard 安全护栏是一个 Harness 机制，/learn 经验积累是一个记忆功能，三者无缝融合在同一个 Sprint 流水线里。compound-engineering 的 /ce:compound 既是记忆（提取经验）也是 Harness（强制回顾）也是 Skill（可复用模块）\n\n这个融合方向对开发者的启示是：不需要分别搭建四套独立的系统。一个设计良好的 Skill 框架可以同时承载工作流约束、经验积累和安全检查。agent-skills 的验证门禁、superpowers 的强制流水线、gstack 的 Sprint 七步都是这个思路\n\n未来的 Agent 工程工具大概率会收敛成一个统一的框架：用 Skill 定义能力边界，用 Harness 定义执行流程，用记忆积累领域经验，用安全机制兜底。四根柱子变成一根，就是 Agent 真正可靠的那一天\n\n![融合趋势](public/blog/agent-four-pillars/section7-convergence.png)\n\n\n",
+    "filename": "ai-agent-complete-picture.md"
+  },
+  {
+    "slug": "x-growth-handbook",
+    "title": "AIP出海自媒体实战手册：14天打造X平台写作技能及变现闭环",
+    "date": "2026-04-11",
+    "category": "教程",
+    "tags": [
+      "X增长",
+      "出海",
+      "AIP",
+      "自媒体",
+      "变现"
+    ],
+    "excerpt": "一份完整的X/Twitter出海增长手册。从冷启动到变现，涵盖定位、内容运营、涨粉路径、变现模式全流程。Subscribe即可获取完整手册。",
+    "content": "\n> 本文是《AIP出海自媒体实战手册（图文博主）》的精华摘要版。Subscribe我们的Newsletter即可获取完整版手册。\n\n## 为什么现在是\"AIP出海\"的黄金时代？\n\nAIP = AI + IP（个人品牌）。2025-2026年，三大红利正在汇聚：\n\n**红利分析**：从内卷的中文互联网到广阔的全球市场（英语区、日语区等），增量空间巨大。\n\n**AI的杠杆作用**：消除语言障碍、内容生产效率提升100倍、24小时自动化运营。\n\n**为什么首选X平台？**\n\n- 全球高质量信息圈层的核心发源地\n- 高客单价用户聚集地（SaaS、Web3、科技圈）\n- 文字为主+图片辅助，最适合AI辅助生成的媒介形式\n- 对个体超级节点最友好的算法机制\n\n**外部环境**：经济下行，企业/个人纷纷出海寻找增量市场；AI爆发，各企业启动攻防战，潜在商单很多。\n\n## 课程核心目标\n\n- **学习路径**：冷启动期（0→100粉）+ 加速期（AIP出海自媒体成长）\n- **实操平台**：以X（Twitter）为主，内容可同步朋友圈、公众号及即刻\n- **冷启动完成标准**：X粉丝数≥100，账号无限流/冻结\n\n---\n\n## 第一章：出海AIP基础准备工作\n\n### 1.1 基础准备\n\n包括科学上网工具、X账号注册、AI工具准备等基础设施搭建。\n\n### 1.2 心理建设\n\n做海外自媒体需要耐心和持续输出的心态。初期数据不好是正常的，关键是保持稳定更新。\n\n---\n\n## 第二章：出海AIP的定位\n\n### 2.1 自媒体不可能三角\n\n自媒体存在一个\"不可能三角\"——你需要在三个维度中做出取舍：\n\n- **为什么泛流量不值钱？** 没有精准定位的流量难以变现\n- **为什么要走IP路线？** IP能建立信任，信任能带来高客单转化\n\n### 2.2 适合出海AIP的黄金赛道\n\n**推特人群画像**：科技从业者、创业者、投资人、开发者\n\n**推特人群需求**：AI工具推荐、编程教程、创业经验、效率提升\n\n### 2.3 如何找对自己的方向\n\n结合自身优势、市场需求和变现路径三者的交集，找到最适合自己的细分赛道。\n\n---\n\n## 第三章：核心阵地X平台的基础认知\n\n### 3.1 X平台解读\n\n- **中推和英推的区别**：通过语言区分，受众和变现路径不同\n- **2025 X平台算法规则**：了解推荐机制，让内容获得更多曝光\n\n### 3.2 内容运营红线\n\n国内和国外各有不同的内容红线需要注意，避免账号被限流或封禁。\n\n### 3.3 做IP账号，就像\"开一家店\"\n\n账号装修四要素：头像、昵称、Bio、置顶推文——这些是你的\"店面门头\"。\n\n---\n\n## 第四章：如何运营图文短内容\n\n### 四种常见的图文短内容\n\n| 类型 | 创作难度 | 互动率 | 涨粉效果 | 适用场景 |\n|------|---------|--------|---------|---------|\n| 故事型 | ⭐⭐⭐ | 高 | 强 | 个人经历分享 |\n| 列表型 | ⭐⭐ | 中高 | 强 | 工具推荐、方法汇总 |\n| 观点型 | ⭐⭐⭐ | 高 | 中 | 行业洞察、争议话题 |\n| 教程型 | ⭐⭐⭐⭐ | 中 | 强 | 技术教学、操作指南 |\n\n### 写作要点\n\n- **故事型**：用真实经历引发共鸣，开头要有冲突或悬念\n- **列表型**：数字开头，结构清晰，信息密度高\n- **观点型**：立场鲜明，有理有据，引发讨论\n- **教程型**：步骤清晰，截图辅助，让读者感谢你\n\n### 内容二创提示词\n\n利用AI工具将已有素材改写、翻译、扩展，实现一鱼多吃。\n\n---\n\n## 第五章：出海AIP实战\n\n### 5.1 X初期冷启动\n\n**冷启动五步走**：\n\n1. **账号检查**：确保账号状态正常\n2. **账号养号**：建立正常的使用行为模式\n3. **账号装修四要素**：头像、昵称、Bio、置顶推文\n4. **开蓝标**：建议长期做的话开通Premium\n5. **初期内容策略**：高频输出+互动评论\n\n### 5.2 涨粉路径分析\n\n用户新增关注的四个转化步骤：\n\n1. **了解（Aware）**：推文出现在用户信息流\n2. **吸引（Appeal）**：展开长推文/读完短推文\n3. **兴趣（Long-term Interest）**：进入Profile页面浏览门面四要素\n4. **行动（Action）**：点击关注\n\n每一步都有优化空间，完整手册中有详细的优化策略。\n\n---\n\n## 第六章：AIP出海的多元化变现模式\n\n1. **平台内变现**：X Premium创作者收益\n2. **产品与服务变现**：课程、社群、SaaS、付费内容（主流模式）\n3. **分销别人产品/联盟营销**：推广AI工具赚取佣金\n4. **咨询与顾问**：一对一咨询、企业顾问\n5. **商单**：品牌合作、软广\n\n---\n\n## 第七章：出海AIP内容运营方法论\n\n### 7.1 灵感与选题\n\n- **看对标**：从爆款里挖\"可复用的需求\"\n- **看热搜**：让热点为你的领域\"供血\"\n- **问工具**：用AI工具放大选题效率\n\n### 7.2 素材库搭建\n\n建立系统化的素材库，包括行业动态、工具更新、个人经验等维度。\n\n### 7.3 内容数据复盘\n\n定期复盘内容数据，找出什么类型的内容表现最好，持续优化内容策略。\n\n---\n\n## 第八章：常见问题答疑\n\n完整手册涵盖四大类常见问题：\n\n1. **账号问题**：注册、限流、封号等\n2. **内容问题**：选题、写作、发布节奏等\n3. **变现问题**：变现路径、定价策略等\n4. **引流问题**：跨平台引流、私域沉淀等\n\n---\n\n## 获取完整手册\n\n以上是手册的精华摘要。完整版手册包含更多实操细节、案例拆解、模板和提示词。\n\n**Subscribe我们的Newsletter，即可免费获取完整版《AIP出海自媒体实战手册》。**\n",
+    "filename": "x-growth-handbook.md"
+  },
+  {
+    "slug": "community-operation-book-recommendation",
+    "title": "社群运营实战经验与书籍推荐",
+    "date": "2026-04-10",
+    "category": "书单推荐",
+    "tags": [
+      "社群运营",
+      "社群营销",
+      "读书",
+      "运营"
+    ],
+    "excerpt": "从免费群到付费陪跑群的实践经验，推荐秋叶老师的两本社群运营好书。",
+    "content": "\n最近大家在讨论社群运营\n\n从 免费群 → 押金两位数打卡群 → 三位数写作营群 → 四位数陪跑群 → 短期实战营的实践下来\n\n当然现在统统没在做了，因为不赚钱\n\n真心推荐秋叶老师的两本书，微信读书上就可以看：\n\n1️⃣ 《社群营销与运营》\n\n2️⃣ 《社群营销实战手册：从社群运营到社群经济》\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/2042406752684294256)\n",
+    "filename": "community-operation-book-recommendation.md"
+  },
+  {
+    "slug": "going-global-email-receiving-cloudflare-routing",
+    "title": "出海产品收邮件：用Cloudflare Email Routing免费搞定",
+    "date": "2026-04-10",
+    "category": "出海",
+    "tags": [
+      "出海",
+      "邮件",
+      "Cloudflare",
+      "Email Routing",
+      "Resend",
+      "收件"
+    ],
+    "excerpt": "用Resend解决了发件，但收件怎么办？Cloudflare Email Routing免费搞定出海产品的收件问题。",
+    "content": "\n做出海产品的应该都遇到过这个问题：网站上写了个 support@yourdomain.com，但用户真发邮件过来，**你收不到**。\n\n因为大部分人用 Resend 只解决了发件（验证码、通知、Newsletter），但收件这块一直没搞。\n\n## 解决方案：Cloudflare Email Routing\n\n其实 Cloudflare 有个免费功能叫 **Email Routing**，专门干这个事。\n\n### 配置步骤\n\n1. 在 Cloudflare Dashboard 中找到 Email Routing\n2. 添加你的自定义域名邮箱地址（如 support@yourdomain.com）\n3. 设置转发目标（你的个人 Gmail 或其他邮箱）\n4. 验证转发目标邮箱\n5. 完成 DNS 记录配置\n\n配置完成后，发到 support@yourdomain.com 的邮件会自动转发到你的个人邮箱，完全免费。\n\n### 发件 + 收件完整方案\n\n- **发件**：Resend（注册验证、通知、Newsletter）\n- **收件**：Cloudflare Email Routing（客服邮件、用户反馈）\n\n这样你就有了一套完整的出海产品邮件解决方案，成本为零。\n\n---\n\n**撰稿人**: [sitin](https://x.com/sitinme) | [原文链接](https://x.com/sitinme/status/2042492524720517127)\n",
+    "filename": "going-global-email-receiving-cloudflare-routing.md"
+  },
+  {
+    "slug": "top-10-most-inspiring-books",
+    "title": "对我最有启发的十本书",
+    "date": "2026-04-10",
+    "category": "书单推荐",
+    "tags": [
+      "读书",
+      "书单",
+      "个人成长",
+      "创业",
+      "写作"
+    ],
+    "excerpt": "去年看了77本书，从中精选出对我最有启发的十本书，涵盖探索生活、创业实战、学习方法和写作技巧。",
+    "content": "\n去年看了77本书，今年好像很少打开了，是该看看书了\n\n对我最有启发的十本书：\n\n1️⃣ 《How to be an explorer of the world》：这是一本手册让你开始能发现生活中的美，欣赏生活中的美，最终从生活中的美获得感悟\n\n2️⃣ 《这世界既残酷又文荣》：先用独立拿到选择权，再用增量和格局选对赛道，用结果导向打穿执行，用All in穿越波动，最后用财富把价值观从妥协里赎出来。\n\n3️⃣ 《摆摊式创业》：解决眼高手低的问题\n\n4️⃣ 《费曼学习法》：用输出倒逼输入\n\n5️⃣ 《饭否》：88万字饭否合集\n\n6️⃣ 《Sleight of Mouth》：巧舌如簧，对话式信念改变的魔力\n\n7️⃣ 《$100M Offers》：教你如何设计无法拒绝的产品与价格。让你能把东西卖出去。\n\n8️⃣ 《$100M Leads》：有好产品不够，你更需要被看见。让你找到「流量」\n\n9️⃣ 《$100M Money Models》：能让你的系统持续运转的关键\n\n🔟 《The Game Of Online Writing》：如何写作\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/2042461003825467863)\n",
+    "filename": "top-10-most-inspiring-books.md"
+  },
+  {
+    "slug": "meta-manus-trillion-business-flywheel",
+    "title": "Meta + Manus：搭建AI代理的第一个万亿级商业飞轮",
+    "date": "2026-04-09",
+    "category": "观点",
+    "tags": [
+      "Meta",
+      "Manus",
+      "AI代理",
+      "商业飞轮",
+      "达人经济"
+    ],
+    "excerpt": "Meta + Manus，200万达人库+30亿用户，搭建AI代理的第一个万亿级商业飞轮。",
+    "content": "\nMeta + Manus\n\n200万达人库 + 30亿用户\n\n搭建AI代理的第一个万亿级商业飞轮。\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/2042159682303963472)\n",
+    "filename": "meta-manus-trillion-business-flywheel.md"
+  },
+  {
+    "slug": "ai-product-marketing-localhost-demo",
+    "title": "AI产品营销范本：Localhost演示看市场反馈",
+    "date": "2026-04-08",
+    "category": "营销增长",
+    "tags": [
+      "AI产品",
+      "营销",
+      "MVP",
+      "waitlist"
+    ],
+    "excerpt": "AI产品营销最轻量的方式：Localhost就演示看市场反馈，填waitlist。",
+    "content": "\nAI产品营销范本\n\nLocalhost就演示看市场反馈，填waitlist。\n\n不用等产品完美，不用等服务器部署好，甚至不用等域名备案。直接在本地跑一个 demo，录屏或者直播展示，看市场的真实反应。如果有人愿意填 waitlist，说明方向对了；如果没人理，趁早换方向。\n\n这就是 AI 时代最轻量的营销方式——用最小成本验证最大假设。\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/2041768413606162508)\n",
+    "filename": "ai-product-marketing-localhost-demo.md"
+  },
+  {
+    "slug": "us-company-annual-tax-filing-diy",
+    "title": "美国公司年税申报DIY：全程只花3美元",
+    "date": "2026-04-07",
+    "category": "出海",
+    "tags": [
+      "美国公司",
+      "年税申报",
+      "IRS",
+      "Form 1120",
+      "Form 5472",
+      "报税"
+    ],
+    "excerpt": "自己搞定美国公司年税申报，IRS官网下载表格，传真提交，全程只花3美元，省下几百刀会计师费用。",
+    "content": "\n## 美国公司年税申报 DIY\n\n刚自己搞定了美国公司年税申报！\n\n全程 DIY，只花了 **$3**：\n\n1. IRS 官网下载 **Form 1120 + 5472**\n2. 填好后用 faxzero.com 传真给 IRS\n3. 搞定！\n\n## 省了多少钱？\n\n省下了给会计师的几百刀，关键是没想象中复杂。\n\n## 关键步骤\n\n### 1. 下载表格\n\n去 IRS 官网下载 Form 1120（企业所得税申报表）和 Form 5472（外国人持有的美国公司信息申报表）。\n\n### 2. 填写表格\n\n按照表格说明如实填写公司信息。如果公司没有实际经营收入，填写相对简单。\n\n### 3. 传真提交\n\n通过 [faxzero.com](https://faxzero.com) 传真给 IRS，费用仅 $3。\n\n## 小贴士\n\n- Form 5472 是外国人持有的美国公司必须提交的\n- 零收入的公司填写相对简单\n- 传真是IRS接受的提交方式之一\n- 建议保留好传真确认回执作为凭证\n\n---\n\n**撰稿人**: [Ivanvolt](https://x.com/ivanvolt815) | [原文链接](https://x.com/ivanvolt815/status/2041507596868420084)\n",
+    "filename": "us-company-annual-tax-filing-diy.md"
+  },
+  {
+    "slug": "youtube-product-growth-pmf-videos",
+    "title": "10个超高质量YouTube产品干货视频，系统化掌握产品、增长与PMF",
+    "date": "2026-04-07",
+    "category": "营销增长",
+    "tags": [
+      "YouTube",
+      "产品",
+      "PMF",
+      "增长",
+      "创业"
+    ],
+    "excerpt": "精选10个YouTube产品干货视频，帮你系统化掌握产品、增长和PMF。",
+    "content": "\n最近挖到10个超高质量的 YouTube 产品干货视频，帮你系统化掌握产品、增长、PMF，纯干货推荐！\n\n**产品如何找到 PMF**\nhttps://www.youtube.com/watch?v=_6pl5GG8RQ4\n\n**如何判断一个创业 idea 值不值得做**\nhttps://www.youtube.com/watch?v=Th8JoIan4dg\n\n**产品增长到底该怎么做**\nhttps://www.youtube.com/watch?v=T9ikpoF2GH0\n\n**找到产品市场匹配的实战框架**\n\n这几个视频覆盖了从 idea 验证、PMF 寻找到增长实战的完整链路，适合所有正在做产品的人反复观看。\n\n---\n\n**撰稿人**: [Niko](https://x.com/guishou_56) | [原文链接](https://x.com/guishou_56/status/2041398818575692118)\n",
+    "filename": "youtube-product-growth-pmf-videos.md"
+  },
+  {
+    "slug": "ide-will-die-itc-forever",
+    "title": "IDE将死，ITC永生",
+    "date": "2026-04-06",
+    "category": "观点",
+    "tags": [
+      "IDE",
+      "ITC",
+      "AI编程",
+      "思维",
+      "未来趋势"
+    ],
+    "excerpt": "未来IDE也不被需要，ITC（集成思维澄清器）帮你找出模糊的地方，逼你把意图说清楚。",
+    "content": "\nIDE将死，ITC永生。\n\n未来IDE也不被需要。\n\nITC（Integrated Thought Clarifier，集成思维澄清器）\n\n帮你找出模糊的地方，逼你把意图说清楚。\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/2041080794484261236)\n",
+    "filename": "ide-will-die-itc-forever.md"
+  },
+  {
+    "slug": "five-day-ai-training-outline",
+    "title": "五天企业AI培训大纲：从认知到落地实战",
+    "date": "2026-04-04",
+    "category": "咨询培训",
+    "tags": [
+      "企业培训",
+      "AI培训",
+      "提示词工程",
+      "AI自动化",
+      "培训大纲"
+    ],
+    "excerpt": "五次课程的企业AI培训大纲，从认识AI到落地实战，帮助企业真正用起来。",
+    "content": "\n之前推友想了解培训大纲，差不多五次的课程\n\n1、认识AI、精简AI资讯渠道和获取的重要性、文生文场景各类工具使用\n\n2、提示词工程、文生图、视频场景各类工具使用\n\n3、AI自动化工具使用\n\n4、落地实战，对方企业场景Linkin和飞书的Agent现场演示搭建\n\n5、针对对方企业在各流程给到Skill建议，并现场听取场景给到解决方案\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/2040568157732282709)\n",
+    "filename": "five-day-ai-training-outline.md"
+  },
+  {
+    "slug": "ai-website-development-training",
+    "title": "企业培训分享：AI网站开发从0到1及迭代心得",
+    "date": "2026-04-02",
+    "category": "咨询培训",
+    "tags": [
+      "企业培训",
+      "AI开发",
+      "网站开发",
+      "Claude Code",
+      "SEO"
+    ],
+    "excerpt": "给企业培训分享的网站开发心得，从0-1建站到1-100迭代优化，涵盖多种AI辅助开发方式。",
+    "content": "\n今天给企业培训，分享了我的网站开发心得\n\n## 1️⃣ 0-1\n\n**方式一**：直接上需求，慢慢调\n\n**方式二**：需求分析与PRD → 架构设计 → 项目规划 → 测试用例、开发与调试 → 测试与部署\n\n**方式三**：找对标网站，使用AI Website Cloner Template skills\n\n**方式四**：找对标网站，使用AI Website Cloner Template skills，再加上front-design skills 和 UI UX Pro Max skill\n\n## 2️⃣ 1-100 迭代思路\n\n**方式一**：/insight 根据项目给我提些建议\n\n**方式二**：使用gstack skills，让其项目进行审查，看看能不能提供一些点子\n\n**方式三**：superpower下的brainstorm的skill，头脑风暴一些想法\n\n## 3️⃣ SEO诊断\n\n用seo-audit看下，给到我们一些seo建议\n\n## 4️⃣ Prompt 工程 & AEO\n\n## 5️⃣ 代码质量红线\n\n文件/函数长度、缩进深度、Code Smells，CLAUDE.md 新增 Code Quality Red Lines 章节\n\n## 6️⃣ 开发工具链\n\nOpenAI Codex CLI 进行AI Code Review（发现了 sitemap 计数 bug、关键词匹配 bug），修复了 2 个真实 bug，纳入日常 review 流程\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/2039679069026193861)\n",
+    "filename": "ai-website-development-training.md"
+  },
+  {
+    "slug": "vibe-coding-website",
+    "title": "Vibe Coding 网站开发实战：从0到1的四种方式",
+    "date": "2026-04-02",
+    "category": "Vibe Coding",
+    "tags": [
+      "Vibe Coding",
+      "Claude Code",
+      "网站开发"
+    ],
+    "excerpt": "分享我在企业培训中总结的网站开发四种方式，从直接上需求到使用AI Website Cloner + Design Skills的进阶方法。",
+    "content": "\n## 从0到1的四种方式\n\n在最近的企业培训中，我分享了用AI进行网站开发的心得。这里总结了四种从零开始的方式。\n\n### 方式一：直接上需求，慢慢调\n\n最简单直接的方式。把你的需求告诉AI，让它生成代码，然后逐步调整。适合简单的页面或原型。\n\n### 方式二：标准软件工程流程\n\n需求分析与PRD → 架构设计 → 项目规划 → 测试用例、开发与调试 → 测试与部署\n\n这是最规范的方式，适合复杂项目。AI在每个环节都能发挥重要作用。\n\n### 方式三：对标网站 + AI Cloner\n\n找到一个你喜欢的对标网站，使用AI Website Cloner Template skills快速克隆其设计和结构，然后在此基础上修改。\n\n### 方式四：组合技\n\n在方式三的基础上，叠加front-design skills和UI UX Pro Max skill，获得更专业的设计效果。\n\n## 从1到100的迭代\n\n网站上线只是开始，持续迭代才是关键：\n\n- 使用 `/insight` 让AI根据项目给出改进建议\n- 使用 gstack skills 进行项目审查\n- 用 brainstorm skill 头脑风暴新想法\n- 使用 seo-audit 进行SEO诊断\n\n持续优化，让网站越来越好。\n",
+    "filename": "vibe-coding-website.md"
+  },
+  {
+    "slug": "electronic-signature-platform-comparison",
+    "title": "电子签名平台怎么选？国内外六大平台对比，最终选了腾讯电子签和SignNow",
+    "date": "2026-03-31",
+    "category": "出海",
+    "tags": [
+      "电子签名",
+      "合同签署",
+      "腾讯电子签",
+      "SignNow",
+      "OPC"
+    ],
+    "excerpt": "用Manus AI做了一份电子签名平台完整对比调研，国内四家+海外方案，最终选择腾讯电子签和SignNow。",
+    "content": "\n## 背景\n\n听国内天天喊着OPC（One Person Company），签合同这件事可以再简便一些。\n\n## 调研方法\n\n让 Manus AI 做了一份完整的电子签名平台对比调研。\n\n## 国内四家平台\n\n| 平台 | 特点 | 适合 |\n|------|------|------|\n| **e签宝** | 市占率第一 | 大中型企业 |\n| **腾讯电子签** | 靠微信生态，小程序即签 | 中小企业 |\n| **契约锁** | 私有化部署强 | 央国企 |\n| 其他平台 | 各有特色 | 按需选择 |\n\n## 海外方案\n\n对于出海业务，还需要考虑海外客户的签署体验。SignNow 是一个性价比较高的选择。\n\n## 最终选择\n\n最后还是花小钱，选了：\n\n- **腾讯电子签** - 国内签署场景\n- **SignNow** - 海外签署场景\n\n## 选择建议\n\n- 如果主要面向国内客户，腾讯电子签的微信生态优势明显\n- 如果有海外签署需求，SignNow 比 DocuSign 更具性价比\n- 大型企业可以考虑 e签宝\n- 对数据安全要求极高的企业可以看契约锁的私有化方案\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/2038838313931743597)\n",
+    "filename": "electronic-signature-platform-comparison.md"
+  },
+  {
+    "slug": "training-video-production-workflow",
+    "title": "教育培训视频制作全流程：四个Skills搞定从课件到视频",
+    "date": "2026-03-30",
+    "category": "咨询培训",
+    "tags": [
+      "教育",
+      "培训",
+      "视频制作",
+      "Claude Code",
+      "Skills",
+      "PaddleOCR",
+      "Remotion"
+    ],
+    "excerpt": "用四个Skills实现课件PDF到提取内容、生成练习题、思维导图、视频的完整流程。",
+    "content": "\n教育/培训材料制作教学视频制作全流程\n\n这四个skills就够了，实现课件 PDF → 提取内容 → 生成练习题/思维导图/视频的流程：\n\n1、**paddleocr-doc-parsing**：https://clawhub.ai/bobholamovic/paddleocr-doc-parsing\n\n2、**wshuyi/remotion-video-skill**：https://github.com/wshuyi/remotion-video-skill\n\n3、**joeseesun/knowledge-site-creator**：https://github.com/joeseesun/knowledge-site-creator\n\n4、**coleam00/excalidraw-diagram-skill**：https://github.com/coleam00/excalidraw-diagram-skill\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/2038528339581997500)\n",
+    "filename": "training-video-production-workflow.md"
+  },
+  {
+    "slug": "openclaw-data-collection-tools",
+    "title": "OpenClaw数据采集能力调研：自媒体和网站数据获取工具",
+    "date": "2026-03-26",
+    "category": "教程",
+    "tags": [
+      "OpenClaw",
+      "数据采集",
+      "agent-reach",
+      "浏览器自动化",
+      "Claude Code"
+    ],
+    "excerpt": "调研自媒体和网站数据获取的工具生态，包括agent-reach、opencli、bb-browser等。",
+    "content": "\n最近在折腾 OpenClaw 的数据采集能力，调研了一圈目前自媒体或者网站数据获取的工具：\n\n1. **agent-reach** 各社媒平台数据获取：https://github.com/anthropics/agent-reach\n\n2. **opencli** 浏览器自动化：https://github.com/anthropics/opencli\n\n3. **bb-browser** 浏览器就是API：https://github.com/anthropics/bb-browser\n\n4. **web-access** 补上Claude Code联网策略\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/2037042204859052483)\n",
+    "filename": "openclaw-data-collection-tools.md"
+  },
+  {
+    "slug": "claude-code-skills-guide",
+    "title": "Claude Code Skills 实用指南：提升开发效率的秘密武器",
+    "date": "2026-03-25",
+    "category": "教程",
+    "tags": [
+      "Claude Code",
+      "Skills",
+      "AI编程"
+    ],
+    "excerpt": "深入解析Claude Code的Skills系统，包括Design Skills评测、SEO审计、代码质量红线等实用技巧。",
+    "content": "\n## 什么是 Claude Code Skills？\n\nSkills 是 Claude Code 的扩展能力系统，通过 Markdown 文件定义的专业化提示词模板，让 Claude 在特定任务上表现更出色。\n\n## Design Skills 评测\n\n最近社区对各种 Design Skills 进行了大量评测：\n\n1. **Anthropic / front-end design** - 官方基准线，表现稳定\n2. **impeccable** - 社区公认 Top 1，设计质量最高\n3. **ui-skills / baseline-ui** - 中规中矩，适合快速原型\n\n## 实用 Skills 推荐\n\n### SEO 审计\n使用 seo-audit skill 可以自动检查网站的 SEO 状况，生成详细的诊断报告。\n\n### 代码质量红线\n在 CLAUDE.md 中设置代码质量红线，包括文件/函数长度、缩进深度、Code Smells 等指标。\n\n### AI Code Review\n结合 OpenAI Codex CLI 进行代码审查，能发现隐藏的 bug，如 sitemap 计数和关键词匹配等问题。\n\n## 最佳实践\n\n- 根据项目需求选择合适的 Skills 组合\n- 定期更新 Skills 到最新版本\n- 自定义 Skills 来匹配团队的开发规范\n",
+    "filename": "claude-code-skills-guide.md"
+  },
+  {
+    "slug": "uk-company-annual-review-tax-filing",
+    "title": "英国公司年审+零申报：自己办只需1000元，省下一半费用",
+    "date": "2026-03-24",
+    "category": "出海",
+    "tags": [
+      "英国公司",
+      "年审",
+      "报税",
+      "零申报",
+      "1stFormations"
+    ],
+    "excerpt": "英国公司年审+零申报淘宝报价2000，自己通过1stFormations+TinyTax办理只需122欧（约1000元），信息差就是钱。",
+    "content": "\n## 淘宝报价 vs 自己办理\n\n英国公司年审 + 零申报，淘宝报价 **2000元**。\n\n看了下，自己办理的费用：\n\n| 项目 | 费用 |\n|------|------|\n| 1st Formations 代办年审 | 76欧 |\n| 注册地址续费 | 26欧 |\n| TinyTax 半自助提交报税 | 20欧 |\n| **总计** | **122欧（约1000元）** |\n\n怒赚1000，果然还是**信息差赚钱**！\n\n## 操作步骤\n\n1. **年审（Confirmation Statement）**：通过 1st Formations 代办提交，费用76欧\n2. **注册地址续费**：如果用的是代理地址，需要续费，26欧\n3. **零申报（Dormant Accounts）**：通过 TinyTax 半自助提交，费用20欧\n\n## 小贴士\n\n- 年审和报税是两件不同的事，都需要按时完成\n- 如果公司没有实际经营，可以做零申报（Dormant Accounts）\n- 1st Formations 的服务比较成熟，流程也比较顺畅\n- 自己动手操作并不复杂，主要是知道去哪里办\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/2036410947762528571)\n",
+    "filename": "uk-company-annual-review-tax-filing.md"
+  },
+  {
+    "slug": "manus-html-presentation-skills",
+    "title": "用Manus和Zara Zhang的HTML制作演讲稿Skills",
+    "date": "2026-03-21",
+    "category": "教程",
+    "tags": [
+      "Manus",
+      "Skills",
+      "演讲稿",
+      "HTML",
+      "Zara Zhang"
+    ],
+    "excerpt": "用Zara Zhang的html来制作演讲稿的skills，已部署到manus，网页可访问学习。",
+    "content": "\n今天下午的skills分享。\n\n已部署到manus，网页可访问学习。\n\n用的 @zarazhangrui 的html来制作演讲稿的skills。\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/2035289381649674267)\n",
+    "filename": "manus-html-presentation-skills.md"
+  },
+  {
+    "slug": "going-global-business-types",
+    "title": "出海业务分类：SaaS出海 vs 跨境电商",
+    "date": "2026-03-20",
+    "category": "出海",
+    "tags": [
+      "出海业务",
+      "SaaS",
+      "跨境电商",
+      "独立开发",
+      "SEO"
+    ],
+    "excerpt": "出海业务主要分为SaaS出海和跨境电商，了解各自的成本结构和盈利途径。",
+    "content": "\n出海业务主要分为 SaaS 出海（网站或 APP 出海）和跨境电商：\n\n- **跨境电商**涉及供应链和实物成本\n- **SaaS 出海**主要是软件成本及自身时间和能力成本\n\n## SaaS 出海盈利途径\n\nSaaS 出海或独立开发赚钱的仅占 10%，盈利途径有：\n\n- 走 SEO 做网站\n- 谷歌投流\n- 从 UGC 或 AI 生产内容引流\n- 转型自媒体\n\n大部分人并不是靠产品本身赚到钱，而是通过内容和流量找到了变现路径。选择哪条路，取决于你的资源和能力。\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/2034915533792190558)\n",
+    "filename": "going-global-business-types.md"
+  },
+  {
+    "slug": "bitget-wallet-subscribe-claude",
+    "title": "实操｜用Bitget Wallet半价订阅Claude",
+    "date": "2026-03-17",
+    "category": "出入金",
+    "tags": [
+      "Bitget",
+      "Claude",
+      "订阅",
+      "USDT",
+      "教程"
+    ],
+    "excerpt": "用Bitget Wallet半价订阅Claude的实操教程，IP、地址、卡三件事对齐即可。",
+    "content": "\n实操 | 用 Bitget Wallet 半价订阅 Claude\n\n很多人卡在 Claude 订阅，其实思路很简单：IP、地址、卡三件事对齐。\n\n## 一、准备\n\n先把全局代理挂到美国或新加坡，别用港澳节点，也别国内出口。\n\nIP 一旦选好就别乱跳。\n\n之前按照wise哥的教程，开了Bitget Wallet，在里面准备 22-25 USDT。\n\nClaude 月费 20 美元。\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/2033736097898131599)\n",
+    "filename": "bitget-wallet-subscribe-claude.md"
+  },
+  {
+    "slug": "ai-enterprise-training-insights",
+    "title": "AI企业培训的那些事：从算法工程师到培训师的转变",
+    "date": "2026-03-15",
+    "category": "观点",
+    "tags": [
+      "企业培训",
+      "AI应用",
+      "职业转型"
+    ],
+    "excerpt": "从AI算法工程师转型到AI培训师，分享我在企业AI培训中的经验、方法论和对行业的思考。",
+    "content": "\n## 为什么做AI企业培训？\n\n作为一名前AI算法工程师，我深刻理解技术和应用之间的鸿沟。很多企业知道AI重要，但不知道如何落地。\n\n培训的核心不是教技术原理，而是帮助团队找到AI在他们业务场景中的价值。\n\n## 我的培训方法论\n\n### 1. 场景先行\n\n先了解企业的实际业务场景，再设计对应的AI解决方案。避免\"为了用AI而用AI\"。\n\n### 2. 动手实践\n\n每次培训至少50%时间是动手练习。只有真正用起来，才能理解AI工具的能力边界。\n\n### 3. 工具链搭建\n\n不是只教一个工具，而是帮助团队搭建完整的AI工作流。从内容创作到代码开发，形成闭环。\n\n## 常见的企业需求\n\n- **内容团队**：AI写作、图片生成、视频制作\n- **开发团队**：AI编程助手、代码审查、自动化测试\n- **运营团队**：数据分析、用户洞察、自动化营销\n- **管理层**：AI战略规划、ROI评估、风险管理\n\n## 未来展望\n\nAI工具的迭代速度越来越快，培训的重点也在从\"教工具\"转向\"教思维\"。帮助团队建立AI思维，比会用某个具体工具更重要。\n",
+    "filename": "ai-enterprise-training-insights.md"
+  },
+  {
+    "slug": "going-global-email-sending-with-resend",
+    "title": "出海产品发邮件：为什么你应该用Resend替代平台自带SMTP",
+    "date": "2026-03-12",
+    "category": "出海",
+    "tags": [
+      "出海",
+      "邮件",
+      "Resend",
+      "SMTP",
+      "Supabase",
+      "基础设施"
+    ],
+    "excerpt": "做出海产品，邮件是基础设施。平台自带SMTP送达率差，推荐使用Resend提升邮件送达率。",
+    "content": "\n做出海产品，邮件几乎是基础设施。用户注册验证、付款成功收据、密码重置、后面的 Newsletter，都离不开邮件。\n\n但很多人一开始用平台自带的 SMTP（比如 Supabase 免费版），其实**送达率很差**，尤其是 Gmail，经常直接收不到。\n\n## 推荐方案：Resend\n\n最近换成了 Resend，整体体验非常简单。免费版每月 3000 封邮件，对于早期项目完全够用。\n\n### 关键步骤\n\n1. 注册 Resend 账号\n2. 绑定自定义域名\n3. 配置 DKIM/SPF 记录（大约10分钟）\n4. 集成到你的项目中\n\n配置好 DKIM 和 SPF 之后，邮件送达率会有质的提升，不会再被当作垃圾邮件。\n\n### 社区补充\n\n- 收件方面可以用 Cloudflare 绑定自定义域名\n- 也有人用飞书的域名邮箱，支持多个域名接入\n- Lark 的邮箱服务器地址很干净，几乎不会被当作垃圾邮件\n\n---\n\n**撰稿人**: [sitin](https://x.com/sitinme) | [原文链接](https://x.com/sitinme/status/2032057264484348047)\n",
+    "filename": "going-global-email-sending-with-resend.md"
+  },
+  {
+    "slug": "anthropic-growth-marketing-one-person",
+    "title": "Anthropic增长营销只有1个人在负责",
+    "date": "2026-03-11",
+    "category": "营销增长",
+    "tags": [
+      "Anthropic",
+      "增长营销",
+      "AI公司",
+      "团队"
+    ],
+    "excerpt": "今天最震惊的是知道Anthropic增长营销只有1个人在负责。",
+    "content": "\n今天最震惊的是知道Anthropic增长营销只有1个人在负责 @helloitsaustin\n\n一家估值几百亿美金的AI公司，增长营销居然只有一个人。这说明什么？\n\n好产品自己会说话，但那一个人做的事情一定是高杠杆的。不是堆人头，而是找到最关键的增长杠杆，然后全力压上去。\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/2031585821439267047)\n",
+    "filename": "anthropic-growth-marketing-one-person.md"
+  },
+  {
+    "slug": "three-agent-frontier-companies",
+    "title": "三家最值得关注Agent前沿动向的公司",
+    "date": "2026-03-03",
+    "category": "观点",
+    "tags": [
+      "Agent",
+      "Anthropic",
+      "OpenAI",
+      "Manus",
+      "AI前沿"
+    ],
+    "excerpt": "如果让你选三家关注Agent前沿的公司：Anthropic、OpenAI、Manus，各有定位。",
+    "content": "\n如果让你来选三家需要关注Agent前沿动向的公司，我选的是：\n\n## 1. Anthropic\n\n将Agent推向工程级。\n\n## 2. OpenAI\n\n将Agent作为基础建设。\n\n## 3. Manus\n\n将Agent作为产品交付形态。\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/2028719911875584318)\n",
+    "filename": "three-agent-frontier-companies.md"
+  },
+  {
+    "slug": "three-things-to-embrace-in-2026",
+    "title": "2026你最应该拥抱的三件事",
+    "date": "2026-02-28",
+    "category": "观点",
+    "tags": [
+      "Agent",
+      "CLI",
+      "管理思维",
+      "AI趋势",
+      "2026"
+    ],
+    "excerpt": "未来是Agent的，拥抱CLI；用管理思维管理AI；别盯着执行层面的细节。",
+    "content": "\n2026 你最应该拥抱的三件事：\n\n## 1. 未来是Agent的，拥抱CLI\n\nGUI是对人类友好，GUI的产品即使不重做，也要支持CLI。\n\n## 2. 管理思维\n\n大多数人都是牛马，需要用管理牛马的思维来管理AI。如果还盯着执行层面的细节，反而是你阻碍了AI的发挥。\n\n## 3. 拥抱变化\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/2027538886998823077)\n",
+    "filename": "three-things-to-embrace-in-2026.md"
+  },
+  {
+    "slug": "why-n8n-is-dead",
+    "title": "为什么我说n8n已死？SaaS已死？",
+    "date": "2026-02-22",
+    "category": "观点",
+    "tags": [
+      "n8n",
+      "SaaS",
+      "Manus",
+      "Skills",
+      "工作流",
+      "AI趋势"
+    ],
+    "excerpt": "n8n的搭建和调试受众还是程序员，搭建一个工作流只需要1.6 RMB，SaaS的时代已经过去。",
+    "content": "\n## 为什么我说n8n已死？\n\n因为搭建和调试的受众还是程序员。\n\n## 为什么SaaS已死？\n\n因为我搭建一个工作流只需要1.6 RMB，且是定制化需求。\n\n我8块钱买一个号，能用一个月！！！\n\n大家试试manus的skills，以下是我的提示词：\n\n/skill-creator\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/2025497367643074739)\n",
+    "filename": "why-n8n-is-dead.md"
+  },
+  {
+    "slug": "manus-build-twitter-leaderboard",
+    "title": "用Manus构建Twitter中文博主榜单",
+    "date": "2026-02-18",
+    "category": "教程",
+    "tags": [
+      "Manus",
+      "Twitter",
+      "Leaderboard",
+      "Readwise",
+      "数据分析"
+    ],
+    "excerpt": "用manus每天免费的300积分，构建中文博主榜单，分类整理都由manus独立完成。",
+    "content": "\n看到这则保存readwise的通知，ranked 8738。\n\n看来到达top1000还需努力。\n\n直接根据Twitter Leaderboard（Top threads saved）：https://readwise.io/twitter-leaderboard\n\n用manus每天免费的300积分，就给大家做了中文博主榜单（分类、整理都由manus独立完成，千万轻拍，掉了不是我的错）。\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/2024045650229236086)\n",
+    "filename": "manus-build-twitter-leaderboard.md"
+  },
+  {
+    "slug": "lemfi-withdrawal-transit",
+    "title": "出金中转方LemFi：首笔免手续费还能拿10%返现",
+    "date": "2026-02-17",
+    "category": "出入金",
+    "tags": [
+      "LemFi",
+      "出金",
+      "Kraken",
+      "iFast",
+      "套利"
+    ],
+    "excerpt": "发现不错的出金中转方LemFi，首笔汇款手续费免，更能拿10%返现激励，净赚约400+人民币。",
+    "content": "\n最近发现个不错的出金中转方：LemFi（套利拿奖励，首笔汇款LemFi 手续费免，更能拿10%返现激励，净赚 48英镑，约 400+人民币）\n\n## 成本\n\nKraken 交易费（换GBP 固定手续费0.2%，提到iFAST 1.95英镑）+ iFAST 转账（0英镑）+ LemFi 手续费（0英镑，首笔免）\n\n## 奖励（特别注意）\n\n新人 10% 返现激励。\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/2023694554273378523)\n",
+    "filename": "lemfi-withdrawal-transit.md"
+  },
+  {
+    "slug": "manus-openclaw-integration",
+    "title": "Manus套壳OpenClaw的思路解析",
+    "date": "2026-02-14",
+    "category": "观点",
+    "tags": [
+      "Manus",
+      "OpenClaw",
+      "Telegram",
+      "Skills",
+      "AI产品"
+    ],
+    "excerpt": "Manus套壳OpenClaw，看套壳还得蝴蝶效应，用户最短路径使用，少即是多。",
+    "content": "\nManus套壳了下OpenClaw，看套壳，还得蝴蝶效应。\n\n## 1. 快速体验\n\n点击下方的get start on telegram即可使用。\n\n## 2. 用户最短路径使用\n\n打开直接一键生成：bind id到输入栏。\n\n## 3. 少即是多\n\n（1）内嵌skill-creator skill\n\n（2）API 调用目前支持以下模型：\n- gpt-4.1-mini\n- gpt-4.1-nano\n- gemini-2.5-flash\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/2022536374717682072)\n",
+    "filename": "manus-openclaw-integration.md"
+  },
+  {
+    "slug": "ban-marketing-method-win-win",
+    "title": "ban总营销大法：共赢与沟通",
+    "date": "2026-02-09",
+    "category": "营销增长",
+    "tags": [
+      "营销",
+      "合作",
+      "沟通",
+      "商业思维"
+    ],
+    "excerpt": "ban总的营销核心：共赢找合作伙伴，真诚做沟通。",
+    "content": "\nban总 @xbanboo 的营销大法\n\n**1. 共赢**\n\n合作伙伴，从来不是一下子就能找到的。\n\n合作之前，要先验资。\n\n和人合作，有没有更多赢、更好的方案？\n\n**2. 沟通**\n\n一人应该真诚相待。\n\n多人应该演讲。\n\n营销的本质不是单方面的推销，而是创造双赢的局面。找到合作伙伴的关键在于先验证彼此的价值，然后设计出让所有人都能受益的方案。沟通方式也要因场景而变——一对一靠真诚，一对多靠表达力。\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/2020730699914080268)\n",
+    "filename": "ban-marketing-method-win-win.md"
+  },
+  {
+    "slug": "how-to-withdraw-money",
+    "title": "赚了钱怎么出金？从小额到大额的完整方案",
+    "date": "2026-02-05",
+    "category": "出入金",
+    "tags": [
+      "出金",
+      "Bitget U卡",
+      "Kraken",
+      "iFast",
+      "港卡"
+    ],
+    "excerpt": "赚了钱怎么出金？从小额Bitget U卡到大额合规渠道Kraken Pro的完整方案。",
+    "content": "\n赚了钱，怎么出金呢？\n\n## （1）钱少的\n\n1. **HK Wechat直接刷**\n\n2. **Bitget U卡**：每个月400U免费额度 零费率\n\n## （2）钱多的（合规渠道）\n\n1. **海妖 Kraken Pro → 港卡**（有点风险）\n\n2. **海妖 Kraken Pro → iFast → xxx → 港卡**\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/2019264430408888507)\n",
+    "filename": "how-to-withdraw-money.md"
+  },
+  {
+    "slug": "tencent-yuanbao-marketing-spam",
+    "title": "腾讯元宝的营销方式让人反感",
+    "date": "2026-02-01",
+    "category": "营销增长",
+    "tags": [
+      "腾讯元宝",
+      "营销",
+      "反面案例",
+      "社群运营"
+    ],
+    "excerpt": "腾讯元宝的营销方式令人反感，群发式推广只会招来拉黑。",
+    "content": "\n腾讯元宝的营销真恶心\n\n但凡在群里发的一律移出，发给我的一律拉黑\n\n这是一个典型的反面案例。无差别群发、强推式营销不但不会带来用户增长，反而会让潜在用户产生强烈的抵触情绪。好的营销应该是让用户主动来找你，而不是把信息硬塞到别人面前。\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/2017786635103178830)\n",
+    "filename": "tencent-yuanbao-marketing-spam.md"
+  },
+  {
+    "slug": "manus-similarweb-data-research",
+    "title": "Manus接上SimilarWeb数据做竞品调研",
+    "date": "2026-01-24",
+    "category": "教程",
+    "tags": [
+      "Manus",
+      "SimilarWeb",
+      "SEO",
+      "竞品分析",
+      "调研"
+    ],
+    "excerpt": "使用manus调研，接上similarweb数据，分析关键词相关网站的SEO和付费广告策略。",
+    "content": "\n使用manus调研，manus接上了similarweb数据。\n\n利用similarweb先找出一些关键词的相关网站，然后再深入分析：\n\n这网站早期直接上付费，后面优化SEO，慢慢降低了付费广告的权重，感觉挺厉害的，也很健康。\n\n目前来说，manus积分消耗有些不太合理（一个任务干了我7600积分），可以继续优化下。\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/2014963472820584616)\n",
+    "filename": "manus-similarweb-data-research.md"
+  },
+  {
+    "slug": "ai-video-saas-product-operations",
+    "title": "A梦出海SaaS视频网站分享：套壳站不是建站，是产品化运营",
+    "date": "2026-01-17",
+    "category": "出海",
+    "tags": [
+      "SaaS出海",
+      "AI视频",
+      "套壳站",
+      "转化漏斗",
+      "产品运营"
+    ],
+    "excerpt": "AI视频/套壳站不是建站，而是产品化运营，拼的是转化漏斗、LTV、迭代和风险控制。",
+    "content": "\n今天听了A梦出海SaaS网站分享，很有价值。\n\n不像我这干了一个月出海网站，没反馈就转战了自媒体！\n\n**AI 视频/套壳站不是\"建站\"，而是产品化运营：**\n\n- 流量只是入口，真正拼的是**转化漏斗 + LTV + 迭代 + 风险控制**。\n\n## 三个关键判断\n\n1. **不要靠自我感觉，靠漏斗数据定位问题。** 每一步转化都要有数据支撑，注册率、付费率、留存率，哪个环节掉了就优化哪个环节。\n\n2. **关注用户生命周期价值（LTV）。** 不要只看首单收入，要看用户能持续付费多久。LTV决定了你能花多少钱获客。\n\n3. **风险控制不能忽视。** 包括支付风控、内容合规、API成本波动等，这些都会直接影响利润。\n\n做出海SaaS不是上线就完事了，真正的挑战在上线之后的持续运营和优化。\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/2012537694421926149)\n",
+    "filename": "ai-video-saas-product-operations.md"
+  },
+  {
+    "slug": "manus-xiaohongshu-research",
+    "title": "用Manus做小红书AI博主选题调研",
+    "date": "2026-01-15",
+    "category": "教程",
+    "tags": [
+      "Manus",
+      "小红书",
+      "选题调研",
+      "AI博主",
+      "内容运营"
+    ],
+    "excerpt": "用manus做小红书AI博主选题报告，包括低粉爆款分析和热门话题调研。",
+    "content": "\n用manus做调研还是不错的，记得用manus 1.6 Max。\n\n## Prompt提示词\n\n统一整理成一个小红书AI博主选题报告：\n\n1. **低粉爆款**：给我找一些其他可以对标的小红书博主，符合低粉爆款的特征，且是最近一周的，另外给到博主简介；\n\n2. **热门话题**：找到那些AI博主最近都在发的内容，包括小红书的AI热词。\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/2011704802703724972)\n",
+    "filename": "manus-xiaohongshu-research.md"
+  },
+  {
+    "slug": "manus-x-tweet-data-analysis-plugin",
+    "title": "用Manus做X博主推文数据分析插件",
+    "date": "2026-01-07",
+    "category": "教程",
+    "tags": [
+      "Manus",
+      "X/Twitter",
+      "数据分析",
+      "插件",
+      "AI工具"
+    ],
+    "excerpt": "用Manus 3分钟做了一个分析X博主推文数据的插件，做工具不再是门槛，知道分析什么才是。",
+    "content": "\n我用 Manus 做了一个分析 X 博主推文数据的插件。\n\n真正花在输入需求上的时间，不到 3 分钟。\n\n这件事本身有个很明确的信号：以后\"做工具\"，几乎不再是门槛问题。\n\n真正的门槛，变成了：你知不知道自己要分析什么数据。\n\n插件能做的事情很简单：\n\n- 扫描指定博主一定时间内的原创推文\n- 分析推文数据表现\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/2008853263605776694)\n",
+    "filename": "manus-x-tweet-data-analysis-plugin.md"
+  },
+  {
+    "slug": "philosophy-thinking-in-ai-era",
+    "title": "AI时代的哲学思考：无用之用，方为大用",
+    "date": "2026-01-03",
+    "category": "观点",
+    "tags": [
+      "哲学",
+      "Manus",
+      "编程",
+      "道德经",
+      "思考"
+    ],
+    "excerpt": "朋友完全不会编程，用manus花两天做了图片推理网站。哲学这无用之用，才能让人做的很不错。",
+    "content": "\n今天有个朋友跟我分享了他的哲学观，他完全不会编程。\n\n用manus花了两天时间做了一个通过图片识别推理所在位置的网站（像柯南一样推理照片位置），包括登陆系统等等。\n\n现在越来越觉得，纯想和don哥是真的懂哲学的，也是因为哲学这无用之用，才能让他们现在做的很不错。\n\n两个例子：\n\n## 1. 道可道，非常道\n\n能被说出来的道理，都不是永恒不变的道理。在AI时代同样如此，最有价值的往往是那些无法被简单定义的东西。\n\n## 2. 无用之用\n\n看似无用的哲学思考，才是驱动创造力的根本。\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/2007464278610325820)\n",
+    "filename": "philosophy-thinking-in-ai-era.md"
+  },
+  {
+    "slug": "going-global-three-essentials",
+    "title": "出海三件套：模版站、API站、知识付费",
+    "date": "2025-12-14",
+    "category": "出海",
+    "tags": [
+      "出海三件套",
+      "模版站",
+      "API站",
+      "知识付费",
+      "独立开发"
+    ],
+    "excerpt": "出海三件套的商业模式解析：模版站、API站和知识付费各自怎么赚钱。",
+    "content": "\n出海三件套：\n\n1. **模版站**\n2. **API站**\n3. **知识付费**\n\n今天给企业培训，稍微帮忙分析了下模版站和API站，他们到底赚的是什么钱和怎么赚的！\n\n- **API站**两种方式赚钱，本质还是赚差价，中间商，走量。把上游API包装成更易用的服务，靠规模化获利。\n- **模版站**是为了让你上站更简单、更快，提前帮你集成了一些功能。降低建站门槛，靠模版售卖和增值服务赚钱。\n\n三件套之间其实可以互相组合。先用模版站快速上线，再接入API提供核心能力，最后把经验打包成知识付费产品。\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/2000046471857758657)\n",
+    "filename": "going-global-three-essentials.md"
+  },
+  {
+    "slug": "indie-dev-vs-businessman-mindset",
+    "title": "独立开发者 vs 生意人：不会营销的开发者只是后端交付方",
+    "date": "2025-12-07",
+    "category": "咨询培训",
+    "tags": [
+      "独立开发",
+      "营销",
+      "创业",
+      "企业培训",
+      "商业思维"
+    ],
+    "excerpt": "独立开发在找场景开发产品，生意人直接把产品包装卖给客户。不会营销的独立开发只是后端交付方。",
+    "content": "\n现在一周一次培训、一次孩子私教\n\n独立开发在找场景开发自己的得意产品\n\n生意人直接把这个产品包装一下，找到客户，卖给客户\n\n最后把钱赚了\n\n所以不会营销的独立开发只是一个后端交付方，甚至不知道你交付给了谁\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/1997508412603777208)\n",
+    "filename": "indie-dev-vs-businessman-mindset.md"
+  },
+  {
+    "slug": "bitget-u-card-review",
+    "title": "Bitget U卡体验：支付宝无损支付，远程工作者的好选择",
+    "date": "2025-12-04",
+    "category": "出入金",
+    "tags": [
+      "Bitget",
+      "U卡",
+      "支付宝",
+      "远程工作",
+      "出金"
+    ],
+    "excerpt": "Bitget U卡支付宝无损支付，每月400U免费额度零费率，远程工作者的好选择。",
+    "content": "\n根据 Wise哥推荐的Bitget开了 U卡。\n\n支付宝无损支付，对于我这样的远程工作者，很友好。\n\n目前每个月400U免费额度零费率。\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/1996442005078163610)\n",
+    "filename": "bitget-u-card-review.md"
+  },
+  {
+    "slug": "google-nano-vs-ali-tongyi-image-review",
+    "title": "Google Nano Banana Pro vs 阿里通义Z-Image-Turbo深度评测",
+    "date": "2025-12-02",
+    "category": "教程",
+    "tags": [
+      "AI绘图",
+      "Google Nano",
+      "阿里通义",
+      "Gemini",
+      "AI评测",
+      "图像生成"
+    ],
+    "excerpt": "AI图像生成领域诸神之战，花了一天时间深度评测Google Nano Banana Pro和阿里通义Z-Image-Turbo。",
+    "content": "\nAI图像生成领域迎来了\"诸神之战\"\n\n花了一天时间，针对Google Nano Banana Pro vs 阿里通义 Z-Image-Turbo 进行了深度评测。\n\n## 一、Nano Banana Pro vs Z-Image-Turbo使用教程\n\n### 1. Nano Banana Pro使用教程\n\n谷歌官方渠道（最推荐/最稳定）：Gemini 官网 https://gemini.google.com\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/1995780743264383195)\n",
+    "filename": "google-nano-vs-ali-tongyi-image-review.md"
+  },
+  {
+    "slug": "indie-dev-going-global-tool-collection",
+    "title": "独立开发出海工具合集",
+    "date": "2025-12-01",
+    "category": "出海",
+    "tags": [
+      "出海工具",
+      "独立开发",
+      "需求挖掘",
+      "SEO",
+      "推广营销"
+    ],
+    "excerpt": "独立开发出海工具合集，覆盖需求挖掘、产品开发、推广营销三大阶段。",
+    "content": "\n独立开发出海工具合集\n\n需求挖掘、产品开发、推广营销时间占比推荐：**40% - 20% - 40%**\n\n## 一、需求挖掘 Phase 1: Discovery（探索与验证）\n\n### 1. 灵感与挖掘 (Inspiration & Mining)\n- Product Hunt\n- Toolify\n- Twitter\n- Reddit\n- GitHub Trending\n\n### 2. 趋势与热度 (Trends & Heat)\n- Google Trends\n- Keyword Planner\n\n### 3. 竞品分析\n- SimilarWeb\n- SEMrush\n- Ahrefs\n\n## 二、产品开发 Phase 2: Build\n\n- Next.js / Nuxt.js 框架\n- Vercel / Cloudflare Pages 部署\n- Supabase / Firebase 后端\n- Stripe / Lemon Squeezy 支付\n\n## 三、推广营销 Phase 3: Growth\n\n- SEO（Google Search Console）\n- Twitter / X 社交媒体\n- Product Hunt 发布\n- Reddit 社区推广\n- 邮件营销（Resend / Mailgun）\n\n核心观点：需求挖掘和推广营销各占40%的精力，产品开发只需要20%。很多独立开发者把80%的时间花在开发上，这是最常见的误区。\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/1995344688027742572)\n",
+    "filename": "indie-dev-going-global-tool-collection.md"
+  },
+  {
+    "slug": "black-friday-premium-plus-guide",
+    "title": "黑五开Premium全套优惠教程（附各区对比价格）",
+    "date": "2025-11-27",
+    "category": "教程",
+    "tags": [
+      "黑五",
+      "Premium",
+      "X Premium",
+      "教程",
+      "省钱"
+    ],
+    "excerpt": "黑五开premium全套优惠教程，附上各区对比价格和详细步骤。",
+    "content": "\n黑五开premium全套优惠教程（附上各区对比价格+教程）\n\n## 必须项\n\n黑五折扣必须要别人赠送，接收方不能已经是 Premium，且赠送方必须得是 Premium，而且赠送方开通的时候是什么区的就是什么区无法切换。\n\n## 方案一：没有号的\n\n可以自己小号开一个月，然后送自己或者找朋友。\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/1993864986826035709)\n",
+    "filename": "black-friday-premium-plus-guide.md"
+  },
+  {
+    "slug": "web3-enterprise-ai-coding-training",
+    "title": "Web3企业AI Coding培训 + Web2企业AI提效培训圆满结束",
+    "date": "2025-11-27",
+    "category": "咨询培训",
+    "tags": [
+      "Web3",
+      "AI Coding",
+      "企业培训",
+      "Vibe Coding",
+      "AI提效"
+    ],
+    "excerpt": "Web3企业培训AI Coding开单加Web2企业培训AI提效，圆满结束。",
+    "content": "\nWeb3 企业培训AI Coding开单 + Web2 企业培训AI提效\n\n圆满结束\n\n大家想听AI 工具提效的具体使用，还是AI Coding使用？\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/1994042617915691516)\n",
+    "filename": "web3-enterprise-ai-coding-training.md"
+  },
+  {
+    "slug": "ai-tools-checklist-2025",
+    "title": "我目前在使用的AI工具清单｜2025版",
+    "date": "2025-11-25",
+    "category": "AI工具",
+    "tags": [
+      "AI工具",
+      "Gemini",
+      "Deepseek",
+      "Claude",
+      "NotebookLM",
+      "豆包",
+      "工具清单"
+    ],
+    "excerpt": "企业培训分享的AI工具清单，嫌麻烦只用最好的就行。",
+    "content": "\n今天给企业培训分享了一下我目前在使用的AI工具清单\n\n嫌麻烦只用最好的就行\n\n## 1. 聊天工具\n\n1. Gemini\n2. Deepseek\n3. 豆包：可以直接提取抖音文案\n4. 元宝：直接提取视频号、公众号文案\n5. Claude\n6. NotebookLM\n7. 集成：youmind\n\n## 2. 生图\n\nGemini（Nano Banano Pro）\n\n## 3. 生视频\n\n1. veo3.1\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/1993301836028088387)\n",
+    "filename": "ai-tools-checklist-2025.md"
+  },
+  {
+    "slug": "giffgaff-uk-phone-card",
+    "title": "出海必备：GiffGaff英国电话卡申请与激活指南",
+    "date": "2025-11-17",
+    "category": "出海",
+    "tags": [
+      "英国电话卡",
+      "GiffGaff",
+      "出海工具",
+      "英国公司"
+    ],
+    "excerpt": "出海需要海外电话卡，GiffGaff英国卡的申请渠道和激活流程分享。",
+    "content": "\n## 为什么需要海外电话卡？\n\n出海的话还是需要有一个海外电话卡。我注册英国公司后就申请了 GiffGaff 的英国电话卡。\n\n## 如何获取？\n\nGiffGaff官网邮寄地址已经无法选择中国了，我是从小红书买的，大约 **15元** 左右。建议早点买，后面不知道会不会有变动。\n\n## 手机选择\n\n建议用美版手机。iPhone比较贵，我在拼多多买的二手谷歌 Pixel 3，花了 **485元**。\n\n## GiffGaff 激活流程\n\n1. 收到SIM卡后，访问 GiffGaff 官网进行激活\n2. 插入SIM卡到支持的手机中\n3. 按照页面指引完成注册和激活\n4. 选择合适的套餐或充值\n\n## 小贴士\n\n- 提前准备好一台支持的手机\n- 激活需要稳定的网络环境\n- GiffGaff 套餐灵活，可以按需选择\n\n---\n\n**撰稿人**: [饼干哥哥AGI](https://x.com/bggg_ai) | [原文链接](https://x.com/bggg_ai/status/1990247508401164687)\n",
+    "filename": "giffgaff-uk-phone-card.md"
+  },
+  {
+    "slug": "investment-reading-list",
+    "title": "投资学习书单：从入门到进阶的推荐阅读顺序",
+    "date": "2025-11-17",
+    "category": "书单推荐",
+    "tags": [
+      "投资",
+      "读书",
+      "理财",
+      "经济学",
+      "书单"
+    ],
+    "excerpt": "从建立基金概念到政治经济学，我的投资学习推荐阅读顺序，涵盖初期、进阶到宏观视野。",
+    "content": "\n如果你想学习投资？\n\n我的推荐阅读顺序是：\n\n## 1️⃣ 初期：建立基金概念\n\n1、小狗钱钱：通过童话讲诉理财观念\n2、世界上最简单的会计书：通过柠檬汁摊案例学习会计\n\n## 2️⃣ 进阶1：开始投资基金\n\n1、坚守--指数基金之父博格的长赢之道：了解指数基金的的智慧之处\n\n## 3️⃣ 进阶2：开始投资个股（大多数人不需要到这一步）\n\n1、巴菲特致股东的信：学习价值投资\n2、一本书读懂财报：通过财报学会估值，才能判断是否低估，因为财报有很多坑\n\n## 4️⃣ 进阶3：政治学、经济学\n\n**社会如何？**\n\n1、贫穷的终结--我们时代的经济可能：全球贫困问题深度解析、经济发展与全球合作\n2、低欲望社会：日本低欲望社会的深度观察\n3、低智商社会：日本集体智商衰退现象\n4、M型社会：收入阶层在经济长期衰退中两极分化，中低阶层占比增大，中上阶层人数大为减少\n5、专业主义：应对不确定趋势，需要成为专家\n6、思考的技术：新时代是个会因思考力差异而造成极大差距的时代，提升自己的逻辑思考力\n7、大前研一解读AI与Fintech：AI将引起商业变革\n8、半拿铁《互联网史话》：以史为鉴，从移动互联网看AI发展\n\n**政治？**\n\n9、偏见看政治：只要有人，就有恩怨，有恩怨，就有江湖，政治是江湖，政治学是黑魔法的防御术。\n\n**经济？**\n\n10、见证逆潮-付鹏：建立全球经济世界观\n\n**未来预测和个人应对？**\n\n11、全球新舞台：全球舞台无疆无界\n12、主权个人：在信息时代能够利用技术实现经济独立、跨越国界限制、保护个人财富与自由的个体。\n13、巴拉吉预言--技术、真相和构建未来的指南：技术是历史的驱动力，位于文化的上游，也位于政治的上游；真相大多不流行，流行大多非真相，首先要学会确定何为真相；要想撞大运，首先你得学会抓住机会，不要去争论，而要去构建。\n\n## 补充：货币\n\n1、货币未来--从金本位到区块链：货币的发展历程：原始货币→金属货币→金本位→政府货币→数字货币，何为健全货币？\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/1990376681178320957)\n",
+    "filename": "investment-reading-list.md"
+  },
+  {
+    "slug": "andy-w-systematic-seo-for-going-global",
+    "title": "Andy W大佬体系化SEO打法分享",
+    "date": "2025-11-16",
+    "category": "出海",
+    "tags": [
+      "SEO",
+      "出海",
+      "谷歌",
+      "体系化SEO",
+      "价值交换"
+    ],
+    "excerpt": "SEO的本质是共赢，是你与谷歌的价值交换。Andy W大佬的体系化SEO打法分享。",
+    "content": "\n今天听了Andy W大佬体系化SEO的打法，发现是我社群的群友。\n\n## SEO的本质是共赢\n\n**SEO的本质也是共赢，是你与谷歌的价值交换。**\n\n你提供有价值的内容，谷歌把你的内容展示给需要的用户。这不是一个对抗的过程，而是一个合作的过程。\n\n没想到自己搞了一个月的出海网站，然后做出海公众号的社群，隐藏了这么多大佬。\n\n体系化的SEO不是靠堆关键词或者黑帽手段，而是建立一套完整的内容生产和优化流程，持续为用户提供价值，自然就能获得谷歌的认可和流量。\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/1989997347426927099)\n",
+    "filename": "andy-w-systematic-seo-for-going-global.md"
+  },
+  {
+    "slug": "uk-company-wise-business-account",
+    "title": "英国公司注册Wise企业银行账户：无月费、多币种收款",
+    "date": "2025-11-16",
+    "category": "出海",
+    "tags": [
+      "Wise",
+      "英国公司",
+      "企业银行",
+      "收款",
+      "Stripe"
+    ],
+    "excerpt": "注册好英国公司后，用Wise开企业银行账户，无月费、一次性开户费、全球多货币收款，还能开通企业版Stripe。",
+    "content": "\n## 为什么选 Wise？\n\n注册好英国公司后，直接去 Wise 注册一个企业银行账户就好了，非常简单。\n\n**Wise 企业版的优势：**\n\n- 无月费\n- 一次性开户费\n- 全球多货币收款\n- 后续可以开通企业版 Stripe，费率比 PayPal 等渠道更低\n\n## 注册步骤\n\n1. 用国内手机号验证即可\n2. 把英国注册地址和商业地址都填进去\n3. 按照页面指引完成身份验证\n4. 支付一次性开户费用\n\n## Wise + Stripe 组合\n\n拿着 Wise 企业银行账户可以去开通企业版 Stripe，相对于 PayPal 等渠道，费率还更低。这是出海收款的黄金组合。\n\n## 小贴士\n\n- 准备好英国公司注册证书\n- 地址信息要和公司注册时保持一致\n- 开户过程中可能需要提供额外的身份证明文件\n\n---\n\n**撰稿人**: [饼干哥哥AGI](https://x.com/bggg_ai) | [原文链接](https://x.com/bggg_ai/status/1989944484680155356)\n",
+    "filename": "uk-company-wise-business-account.md"
+  },
+  {
+    "slug": "ai-productivity-tools-guide-2025",
+    "title": "AI生产力工具指南｜2025最新版收藏帖",
+    "date": "2025-11-14",
+    "category": "AI工具",
+    "tags": [
+      "AI工具",
+      "生产力",
+      "AI对话",
+      "AI绘图",
+      "AI编程",
+      "工具推荐"
+    ],
+    "excerpt": "覆盖对话、搜索、编程、绘图和音视频的AI工具清单，全网实测版。",
+    "content": "\nAI生产力工具指南｜2025最新版收藏帖（全网实测版）\n\n看完电子书和影视资源，应该要开始学习了。\n\n给大家找了目前全赛道最火的AI生产力工具，平台原因无法直接发这么多地址。\n\n别再为找AI工具一个个测试网站了。\n\n我整理了一份覆盖对话、搜索、编程、绘图和音视频的AI工具清单。\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/1989186465503539261)\n",
+    "filename": "ai-productivity-tools-guide-2025.md"
+  },
+  {
+    "slug": "pricing-anchor-10x-rule",
+    "title": "营销策略：价格锚定的10倍法则",
+    "date": "2025-11-10",
+    "category": "营销增长",
+    "tags": [
+      "定价策略",
+      "价格锚定",
+      "营销策略",
+      "SaaS"
+    ],
+    "excerpt": "不要强调功能，强调资金和结果——让客户获得至少10倍于价格的价值。",
+    "content": "\n营销策略：价格锚定的 10 倍法则\n\n我们收取这么多费用，是因为我们的客户至少获得了 10 倍的价值。\n\n不要强调功能，强调资金和结果。\n\n- ❌ 只需 10 美元，您就可以获得功能 #1、#2、#3 和 #4。\n- ✅ 只需 10 美元，您就可以避免每月在心理学家身上花费 5000 美元。\n\n定价的核心逻辑不是\"我的东西值多少钱\"，而是\"用户用了之后能省多少钱、赚多少钱\"。当你能证明产品带来的价值是价格的 10 倍时，价格就不再是障碍。\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/1987800842066604235)\n",
+    "filename": "pricing-anchor-10x-rule.md"
+  },
+  {
+    "slug": "uk-company-registration-2hours",
+    "title": "2025年最新：2小时完成英国公司注册，只需50英镑",
+    "date": "2025-10-31",
+    "category": "出海",
+    "tags": [
+      "英国公司",
+      "公司注册",
+      "出海",
+      "独立开发者"
+    ],
+    "excerpt": "不用代理，直接去英国官网注册公司，2小时搞定，总费用只需50英镑+400元注册地址。",
+    "content": "\n## 为什么选英国公司？\n\n美国公司费用高、税务繁琐，所以不建议。英国公司注册简单快捷，费用也低。\n\n## 注册流程\n\n### 1. 直接去官网注册\n\n1stformations 是一个注册代理，现在政策已经非常贵了。**直接去英国公司注册官网**，非常简单，按国内实际的情况去填即可。\n\n### 2. 购买注册地址\n\n中间去淘宝买一个英国公司注册地址，大约 **400块** 左右。\n\n### 3. 付款注册\n\n最后付款 **50英镑** 即可完成注册。\n\n## 费用汇总\n\n| 项目 | 费用 |\n|------|------|\n| 官网注册费 | 50英镑 |\n| 英国注册地址（淘宝） | ~400元人民币 |\n| **总计** | **约800元人民币** |\n\n## 注意事项\n\n- 整个过程只需约2小时\n- 按真实信息填写即可\n- 注册完成后可以考虑开设海外企业银行账号\n\n---\n\n**撰稿人**: [饼干哥哥AGI](https://x.com/bggg_ai) | [原文链接](https://x.com/bggg_ai/status/1984069875996967213)\n",
+    "filename": "uk-company-registration-2hours.md"
+  },
+  {
+    "slug": "storytelling-interest-to-belief",
+    "title": "讲故事，让用户从兴趣转为信念",
+    "date": "2025-10-11",
+    "category": "营销增长",
+    "tags": [
+      "故事营销",
+      "用户心理",
+      "产品营销"
+    ],
+    "excerpt": "讲故事是营销和产品的核心能力，让用户从兴趣转为信念。",
+    "content": "\n讲故事，让用户从兴趣转为信念。\n\n产品也是，营销也是。\n\n用户不会因为你的功能列表而买单，他们会因为一个好故事而产生共鸣。故事把抽象的价值变成具体的场景，把\"我觉得不错\"变成\"我一定要用\"。无论是做产品还是做营销，学会讲故事都是最底层的能力。\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/1976829008039100516)\n",
+    "filename": "storytelling-interest-to-belief.md"
+  },
+  {
+    "slug": "uk-company-wise-address-verification",
+    "title": "英国公司Wise账户地址验证：证明文件要包含公司名称",
+    "date": "2025-10-06",
+    "category": "出海",
+    "tags": [
+      "Wise",
+      "英国公司",
+      "地址验证",
+      "KYC"
+    ],
+    "excerpt": "Wise账户触发地址验证时，证明文件需要包含英国公司名称，可以尝试用招商银行信用卡对账单。",
+    "content": "\n## 遇到的问题\n\n英国公司的 Wise 账户触发了地址验证。\n\n问题是：证明文件要包含英国公司名称，这一点难到我了。\n\n## 我的解决方案\n\n今天上传了**招商银行信用卡的对账单**，先看看情况。\n\n## 经验分享\n\nWise 的地址验证是 KYC（了解你的客户）流程的一部分，对于英国公司账户来说，提供的证明文件必须满足：\n\n- 包含公司注册名称\n- 显示注册地址\n- 文件需要是近期的（通常3个月内）\n\n常见的可用文件包括：\n- 银行对账单\n- 水电费账单\n- 税务文件\n\n如果你也遇到了类似的问题，可以尝试用国内银行的对账单，确保上面有公司相关信息。\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/1975127603200790811)\n",
+    "filename": "uk-company-wise-address-verification.md"
+  },
+  {
+    "slug": "programmer-business-marketing-mindset",
+    "title": "程序员如何做生意？从牛马思维转变到营销思维",
+    "date": "2025-09-24",
+    "category": "营销增长",
+    "tags": [
+      "程序员",
+      "商业思维",
+      "营销思维",
+      "独立开发"
+    ],
+    "excerpt": "程序员做生意的关键：从上班牛马思维转变到营销思维，钱掰成10份和人挂钩。",
+    "content": "\n程序员如何做生意？\n\n从上班牛马思维转变到营销思维至关重要。\n\n钱掰成10份，和人挂钩，远比自己独享稳固。\n\n商业模式是这份生意能否长久的关键因素。\n\n剩下来无非是多去实践，没有那么多预设困难，有问题就解决，不要内耗。\n\n确实和ban总学到了很多做生意的意识。程序员最容易犯的错就是埋头写代码，觉得产品好自然有人来用。但现实是，营销和分发才是决定生死的关键。学会把利益分出去，让更多人帮你推，比自己一个人扛着要走得远得多。\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/1970641940057362622)\n",
+    "filename": "programmer-business-marketing-mindset.md"
+  },
+  {
+    "slug": "ebook-download-sites",
+    "title": "私藏的电子书下载站推荐",
+    "date": "2025-09-21",
+    "category": "书单推荐",
+    "tags": [
+      "电子书",
+      "资源",
+      "读书",
+      "工具"
+    ],
+    "excerpt": "推荐几个私藏的电子书下载站，涵盖中英文资源，帮你轻松找到想看的书。",
+    "content": "\n如果你想下载电子书\n\n推荐几个私藏的下载站：\n\n1️⃣ Scribd：https://scribd.com\n\n2️⃣ Welib：https://welib.org\n\n3️⃣ 安娜的档案：https://annas-archive.org\n\n4️⃣ Oceanofpdf：https://oceanofpdf.com\n\n5️⃣ 十万本经典电子书：https://www.shiwanben.com\n\n6️⃣ 盘搜：https://www.pansou.com\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/1969704967138312637)\n",
+    "filename": "ebook-download-sites.md"
+  },
+  {
+    "slug": "reddit-product-promotion-subreddits",
+    "title": "宣传产品为什么首选Reddit？附子版块推荐全列表",
+    "date": "2025-09-17",
+    "category": "营销增长",
+    "tags": [
+      "Reddit",
+      "产品推广",
+      "SEO",
+      "AI",
+      "增长"
+    ],
+    "excerpt": "Reddit被Google收录快、是AI大模型信息来源占比Top1，宣传产品首选Reddit。",
+    "content": "\n宣传产品，为什么首选Reddit？\n\n被Google收录快、AI大模型信息来源占比Top1。\n\nReddit子版块推荐全列表（以下为比较火的子版块）：\n\n**1. 人工智能 / 工程技术：**\nr/MachineLearning、r/LocalLLaMA、r/ChatGPT、r/StableDiffusion、r/dataengineering、r/learnprogramming\n\n**2. 增长 / 营销：**\n相关增长和营销类子版块也是推广产品的好去处。\n\nReddit 的独特价值在于它的内容会被 Google 高权重收录，同时也是各大 AI 模型训练数据的重要来源。在 Reddit 上发布高质量内容，相当于同时做了 SEO 和 AI 时代的\"信息播种\"。\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/1968124493525815484)\n",
+    "filename": "reddit-product-promotion-subreddits.md"
+  },
+  {
+    "slug": "sitin-going-global-research-tools",
+    "title": "出海调研工具推荐：AITDK、SEOquake、Wappalyzer",
+    "date": "2025-09-16",
+    "category": "出海",
+    "tags": [
+      "出海工具",
+      "SEO工具",
+      "AITDK",
+      "SEOquake",
+      "Wappalyzer",
+      "竞品分析"
+    ],
+    "excerpt": "三款出海调研必备浏览器插件：AITDK、SEOquake和Wappalyzer，帮你快速分析竞品网站。",
+    "content": "\n出海调研工具补充解释：\n\n## 1. AITDK\n浏览器插件，能直接显示网站的流量来源、关键词排名、SEO 难度等核心指标。日常使用频率非常高，是出海人必备插件之一。\n\n## 2. SEOquake\n老牌 SEO 插件，一键查看网页的关键词密度、Meta 信息、收录情况。做SEO分析时非常方便，可以快速了解竞品页面的SEO状况。\n\n## 3. Wappalyzer\n技术栈检测工具，可以一键识别网站使用的技术框架、CMS、分析工具、支付方案等。帮你了解竞品的技术选型，为自己的技术栈决策提供参考。\n\n这三个插件配合使用，基本可以覆盖出海调研的核心需求：流量分析、SEO诊断、技术栈识别。装上之后，看到任何一个竞品网站，都能快速获取关键信息。\n\n---\n\n**撰稿人**: [sitin](https://x.com/sitinme) | [原文链接](https://x.com/sitinme/status/1967740778823991574)\n",
+    "filename": "sitin-going-global-research-tools.md"
+  },
+  {
+    "slug": "street-vendor-startup-book-review",
+    "title": "《摆谈式创业》：一人公司和自媒体创业本质就是摆摊",
+    "date": "2025-09-16",
+    "category": "书单推荐",
+    "tags": [
+      "读书",
+      "创业",
+      "一人公司",
+      "自媒体",
+      "SaaS出海"
+    ],
+    "excerpt": "这是一本专门讲摆地摊的书，一人公司、SaaS出海、自媒体这些所谓的创业，其实就是摆摊。",
+    "content": "\n这是一本专门讲摆地摊的书，之前一直没翻开看。\n\n上周末，听了ban总说了一些事情，然后这周用三个小时看完了，非常有收获。\n\n一人公司、SaaS出海、自媒体这些所谓的创业，其实就是摆摊。\n\n摆摊首先得保证自己出摊，如果光信什么被动收入，人从哪里来。\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/1967901107621183763)\n",
+    "filename": "street-vendor-startup-book-review.md"
+  },
+  {
+    "slug": "marketing-cannot-skip-indie-dev",
+    "title": "营销是独立开发里永远不能按「跳过」的一关",
+    "date": "2025-08-10",
+    "category": "营销增长",
+    "tags": [
+      "独立开发",
+      "营销",
+      "产品上线",
+      "经验分享"
+    ],
+    "excerpt": "营销不是待办清单里不紧急的选项，而是独立开发中永远不能跳过的一关。",
+    "content": "\n营销，是独立开发里永远不能按\"跳过\"的一关。\n\n今天和一位老哥吃饭聊天，他曾经一个月独自做完一个产品，从立项到上线、收款，全流程自己跑通。\n\n听他的故事，像是很多开发者的缩影：一开始，总是从自己最擅长的地方入手，写代码、做功能、打磨体验。\n\n那时候，营销只是待办清单里一个不紧急的选项。\n\n但产品做完上线之后才发现，没有流量、没有用户、没有反馈。技术再好，没人知道你做了什么，一切都是零。营销不是锦上添花，而是从第一天就应该开始的事情。\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/1954541338739015801)\n",
+    "filename": "marketing-cannot-skip-indie-dev.md"
+  },
+  {
+    "slug": "going-global-veteran-paths",
+    "title": "出海前辈之路，你适合哪种？",
+    "date": "2025-08-01",
+    "category": "出海",
+    "tags": [
+      "出海路径",
+      "SEO",
+      "独立开发",
+      "流量",
+      "Indie Hacker"
+    ],
+    "excerpt": "总结出海前辈们的不同打法路径，帮你找到最适合自己的出海方式。",
+    "content": "\n出海前辈之路，你适合哪种？\n\n自己观察到的出海人，和群友讨论得出：\n\n1. **哥飞的新词新站SEO打法——站长打法**\n   抓住新词趋势，快速建站，靠SEO获取流量。\n\n2. **刘小排根据新词挖掘国内用户需求做的海外产品**\n   容易陷入竞争，因为国内需求往往已经有很多人在做。\n\n3. **Indie hacker们挖掘海外细分需求**\n   天花板比较不错，但需要了解海外市场和建立海外推广渠道。\n\n4. **锤哥、ban总的流量IP打法**\n   通过个人IP和内容获取流量，再转化为产品收入。\n\n每条路都有人走通了，关键是找到适合自己背景和能力的那条。技术强的可以走Indie Hacker路线，内容能力强的可以走IP打法，SEO敏感度高的可以走站长路线。\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/1951134537855242418)\n",
+    "filename": "going-global-veteran-paths.md"
+  },
+  {
+    "slug": "saas-going-global-quick-start",
+    "title": "SaaS出海/独立开发怎么开始？从套壳开始",
+    "date": "2025-07-31",
+    "category": "出海",
+    "tags": [
+      "SaaS出海",
+      "独立开发",
+      "落地页",
+      "模版",
+      "快速启动"
+    ],
+    "excerpt": "SaaS出海或独立开发的第一步：先从套壳开始，快速做一个，才能认识到自己的不足。",
+    "content": "\nSaaS出海/独立开发如果想从你最擅长的开始，那么**先从套壳开始**。\n\n快速做一个，才能快速认识到自己的不足——**营销**。\n\n以下是干货，让你快速启动你的第一个项目：\n\n## 1. 落地页模版\n- 免费模版资源\n- 程普 @weijunext 的 Nexty（付费，全栈 SaaS 模板，落地页也很好看、很通用，改文案和图片就能变成自己的落地页）\n- 其他付费模版\n\n## 核心建议\n\n先做个\"垃圾\"出来。不要追求完美，先上线，先跑起来。\n\n模版只解决了10%的问题，真正卡脖子的是：\n- **Stripe收款**（很多国家不支持）\n- **SEO冷启动**\n\n建议套壳之前先验证目标市场的支付通道，不然落地页做得再漂亮也收不到钱。\n\n套壳最大的问题不是技术是定价。独立开发者真正的护城河不是速度，是找到大厂懒得做的细分场景。\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/1950740025878212619)\n",
+    "filename": "saas-going-global-quick-start.md"
+  },
+  {
+    "slug": "indie-hacker-us-company-complete-guide",
+    "title": "独立开发者出海实操指南：193刀搞定美国公司+EIN+Stripe+银行",
+    "date": "2025-07-21",
+    "category": "出海",
+    "tags": [
+      "独立开发者",
+      "美国公司",
+      "EIN",
+      "Stripe",
+      "Mercury",
+      "Wise",
+      "出海"
+    ],
+    "excerpt": "从注册Wyoming州公司到EIN申请、水星银行开户、Stripe激活、Wise账户，独立开发者出海全流程实操指南。",
+    "content": "\n## 项目介绍\n\n这是由秋风（@qiufenghyf）维护的独立开发者出海指南，记录了从注册美国公司到收款的完整实操流程。\n\n## 费用总览\n\n**193刀** 注册美国公司 + EIN + Stripe + 水星银行\n\n## 出海淘金基础\n\n### Step 1: 申请美国公司（150刀，耗时1周）\n\n选择 Wyoming 州注册，因为 Wyoming 免公司税和个人税，且任何国籍都可以注册。\n\n通过 [wyomingagents.com](https://www.wyomingagents.com/) 注册：\n- 按要求填写基本资料\n- 公司类型选择 LLC（个人或小型组织推荐）\n- 地址填写实际地址即可\n- 增值付费部分按默认选项\n- 大约1周完成注册\n\n### Step 2: EIN 申请（43刀，耗时3天）\n\n可以自己去 IRS 官网申请，也可以找代办。在 Fiverr 上找人代办，发送公司章程即可。\n\n### Step 3: 水星银行（免费，耗时5天）\n\n有了美国公司主体 + EIN，申请非常简单。需要提供地址证明（水电费账单+姓名+地址）。\n\n### Step 4: Stripe（免费，1天）\n\n有了以上材料，直接申请 Stripe 即可。\n\n### Step 5: BOI 申报（9刀）\n\n通过 wyomingagents.com 代理申请，需要准备好护照。\n\n### Step 6: Wise 账户（31刀开户费）\n\n可以接受所有地区的汇款和收款，企业账户需要准备：美国公司+EIN、国内地址、护照、关联的美国银行。\n\n### Step 7: 税务申报（50刀）\n\n通过 Fiverr 完成 Form 1120 和 5472 的申报。\n\n## 免费启动云资源\n\n注册美国公司后还可以申请大厂免费云资源：\n- GitHub Enterprise 12个月（价值$5040）\n- Azure（最高$15万 Credits）\n- AWS（$15k）\n- Google Cloud（$2k）\n- Nvidia 云资源\n\n---\n\n**撰稿人**: [秋风_irwin](https://x.com/qiufenghyf) | [原文链接](https://github.com/hua1995116/indiehackers-steps)\n",
+    "filename": "indie-hacker-us-company-complete-guide.md"
+  },
+  {
+    "slug": "indie-dev-marketing-experience-reddit",
+    "title": "Reddit独立开发营销经验帖：7条实战建议",
+    "date": "2025-07-17",
+    "category": "营销增长",
+    "tags": [
+      "独立开发",
+      "营销经验",
+      "Reddit",
+      "创业"
+    ],
+    "excerpt": "Reddit上一篇独立开发经验帖总结的7条实战建议，从idea到坚持到实验。",
+    "content": "\nReddit一篇独立开发经验帖：\n\n1. **你不需要一个原创的想法** — 好的执行比原创的 idea 更重要\n2. **营销不是一次性活动** — 持续做，反复做，不要指望一波流量就够了\n3. **这是一段过山车般的旅程** — 心理准备要到位，高低起伏是常态\n4. **坚持下去** — 大多数人死在半路上，活下来的就赢了\n5. **实验** — 不断尝试新渠道、新方法，找到适合自己的增长方式\n6. **添加你自己的特色** — 差异化不一定来自功能，可以来自你的风格\n7. **拥有支持系统** — 找到志同道合的人，独立开发不代表孤军奋战\n\n这七条建议看起来简单，但每一条背后都是无数独立开发者用时间和金钱换来的教训。\n\n---\n\n**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/1945698106370355257)\n",
+    "filename": "indie-dev-marketing-experience-reddit.md"
+  },
+  {
+    "slug": "zero-cost-indie-dev-going-global-toolkit",
+    "title": "零成本出海独立开发全家桶",
+    "date": "2025-07-13",
+    "category": "出海",
+    "tags": [
+      "独立开发",
+      "零成本",
+      "出海工具",
+      "全家桶"
+    ],
+    "excerpt": "Deep Earn分享的零成本出海独立开发全家桶，帮你用最低成本启动出海项目。",
+    "content": "\n零成本出海独立开发全家桶。\n\n对于独立开发者来说，成本控制是出海早期最重要的事情之一。利用各种免费工具和服务，可以把启动成本压到接近零。\n\n从域名注册、网站托管、数据库、认证、支付、邮件到SEO工具，现在都有免费或极低成本的方案可以选择。关键是把这些工具组合起来，形成一套完整的技术栈，让你专注在产品和营销上，而不是被基础设施的成本拖累。\n\n先用免费方案跑通MVP，等有了收入再逐步升级到付费服务。\n\n---\n\n**撰稿人**: [Deep Earn](https://x.com/washge12138) | [原文链接](https://x.com/washge12138/status/1944409952300474645)\n",
+    "filename": "zero-cost-indie-dev-going-global-toolkit.md"
+  },
+  {
+    "slug": "us-company-registration-full-guide",
+    "title": "出海网站收款全流程：美国公司注册、EIN申请、银行开户到Stripe激活",
+    "date": "2025-06-07",
+    "category": "出海",
+    "tags": [
+      "美国公司",
+      "公司注册",
+      "EIN",
+      "Stripe",
+      "银行开户",
+      "出海收款"
+    ],
+    "excerpt": "手把手教你从零注册美国公司、申请EIN、开设银行账户、激活Stripe，实现出海网站收款全流程。",
+    "content": "\n## 项目介绍\n\n这个开源项目由骑龙（princehuang）维护，旨在分享开发海外网站过程中积累的经验。涵盖从海外公司注册到收款的完整流程。\n\n## 收款全流程目录\n\n1. **海外公司注册** - 选择合适的州注册LLC或Corp\n2. **申请EIN** - 获取美国税号\n3. **申请美国银行卡** - 开设企业银行账户\n4. **激活Stripe** - 对接支付系统\n5. **回款回国** - 资金回流方案\n\n## 关键要点\n\n- 注册美国公司时，Wyoming州是热门选择，免公司税和个人税\n- EIN可以自己申请，也可以通过Fiverr找人代办\n- 银行开户推荐Mercury等对海外创业者友好的银行\n- 有了公司主体和EIN，Stripe激活就很简单了\n\n## 其他涵盖内容\n\n本项目还持续更新以下方面的经验：\n- 法律合规\n- 支付系统对接\n- 网站开发技术细节\n\n> 项目采用 CC BY-NC-SA 4.0 许可协议\n\n---\n\n**撰稿人**: [princehuang](https://github.com/princehuang) | [原文链接](https://github.com/princehuang/overseas-website-note/tree/main)\n",
+    "filename": "us-company-registration-full-guide.md"
+  },
+  {
+    "slug": "china-individual-payment-zpay",
+    "title": "国内个人主体收款方案：Zpay第三方支付接入微信和支付宝",
+    "date": "2025-03-18",
+    "category": "出海",
+    "tags": [
+      "收款",
+      "Zpay",
+      "微信支付",
+      "支付宝",
+      "个人主体",
+      "第三方支付"
+    ],
+    "excerpt": "国内个人主体如何解决收款问题？88元开户费接入Zpay，实现微信和支付宝收款，比注册个体户成本更低。",
+    "content": "\n## 个人主体收款的痛点\n\n国内个人主体如何解决收款问题？对于零基础的编程新手来说，如果想让网站实现收款，成立个体户或公司的成本太高。\n\n## Zpay 第三方支付\n\n我比较推荐 Zpay 等第三方支付平台，可以实现**微信和支付宝收款**。\n\n### 为什么推荐？\n\n- **开户费仅88元**，比成立个体和公司的成本要小得多\n- 我用这个平台**2年副业收款了小几万**，安全靠谱\n- 支持微信和支付宝两大主流支付方式\n- 适合零基础的编程新手\n\n### 使用体验\n\n这个平台我已经用了2年，收款流程稳定，结算及时。对于刚起步的独立开发者来说，是一个低成本的收款解决方案。\n\n## 适用场景\n\n- 个人网站收费\n- 知识付费\n- 小型SaaS产品\n- 副业项目收款\n\n## 注意事项\n\n- 第三方支付平台有手续费，需要了解清楚费率\n- 建议对比多家平台选择最适合自己的\n- 如果业务规模变大，后续可以考虑注册个体户或公司\n\n---\n\n**撰稿人**: [Yihui](https://x.com/yihui_indie) | [原文链接](https://x.com/yihui_indie/status/1902054501831585864)\n",
+    "filename": "china-individual-payment-zpay.md"
+  },
+  {
+    "slug": "uk-company-data-protection-fee",
+    "title": "英国公司数据保护费：SaaS出海合规必缴的40英镑/年",
+    "date": "2024-11-20",
+    "category": "出海",
+    "tags": [
+      "英国公司",
+      "数据保护",
+      "合规",
+      "SaaS",
+      "ICO"
+    ],
+    "excerpt": "如果你的海外公司注册在英国且做SaaS业务，数据保护费是合规必缴项，不按时缴纳会面临4000英镑罚款。",
+    "content": "\n## 英国公司数据保护费\n\n刚缴纳完了英国公司的数据保护费 **40英镑/年**。\n\n如果你和我一样海外公司是注册在英国，且是做SaaS相关的业务，这笔钱是合规必须缴纳的，不按时缴纳会面临 **4000英镑的罚款**。\n\n## 如何缴纳？\n\n登录ICO官网自助缴纳就好，非常方便：[https://ico.org.uk](https://ico.org.uk)\n\n## 注意事项\n\n- 如果你是第一次注册，需要先在ICO网站上完成登记\n- 费用根据公司规模和营业额可能有所不同，小微企业通常是40英镑/年\n- 建议设置好提醒，避免忘记续费被罚款\n\n---\n\n**撰稿人**: [Yihui](https://x.com/yihui_indie) | [原文链接](https://x.com/yihui_indie/status/1859064567034507544)\n",
+    "filename": "uk-company-data-protection-fee.md"
+  }
+]
