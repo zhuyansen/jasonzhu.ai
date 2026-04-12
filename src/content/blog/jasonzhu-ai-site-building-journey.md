@@ -173,7 +173,7 @@ X/Twitter推文 → xreach CLI读取 → Claude Code生成.md → Obsidian编辑
 
 | 项目 | 费用 | 周期 |
 |------|------|------|
-| **域名** (jasonzhu.ai) | ~$30 | /年 |
+| **域名** (jasonzhu.ai) | ¥1,092 | 2年 |
 | **Vercel** (Hobby Plan) | $0 | 免费 |
 | **Supabase** (Free Plan) | $0 | 免费 |
 | **GitHub** | $0 | 免费 |
@@ -184,7 +184,7 @@ X/Twitter推文 → xreach CLI读取 → Claude Code生成.md → Obsidian编辑
 
 | 项目 | 费用 | 说明 |
 |------|------|------|
-| **Claude Pro** (含Claude Code) | $20 | /月 |
+| **Claude Code** (Max Plan) | $200 | /月 |
 | **Obsidian** | $0 | 免费 |
 | **xreach CLI** | $0 | 免费开源 |
 
@@ -192,11 +192,11 @@ X/Twitter推文 → xreach CLI读取 → Claude Code生成.md → Obsidian编辑
 
 | 类型 | 月费用 | 年费用 |
 |------|--------|--------|
-| 固定成本 | ~$2.5 | ~$30 |
-| 工具成本 | $20 | $240 |
-| **合计** | **~$22.5** | **~$270** |
+| 固定成本 | ~¥46 | ~¥546 |
+| 工具成本 | $200 | $2,400 |
+| **合计** | **~$200 + ¥46** | **~$2,400 + ¥546** |
 
-> 💡 **核心发现**：得益于Vercel、Supabase、Cloudflare的免费层，一个完整的个人品牌网站的运营成本可以控制在每月$22.5以内。唯一的"大额"支出是Claude Pro订阅，但它同时也是我日常工作的核心工具。
+> 💡 **核心发现**：得益于Vercel、Supabase、Cloudflare的免费层，网站托管几乎零成本。主要支出是Claude Code Max订阅（$200/月），但它不仅用于建站，更是日常工作的核心生产力工具，覆盖编程、写作、研究等多个场景，综合ROI极高。
 
 ## 踩过的坑
 
