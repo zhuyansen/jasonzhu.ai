@@ -46,16 +46,24 @@
     "title": "AI Tools",
     "desc": "Curated useful AI tool recommendations",
     "all": "All",
-    "categories": ["All", "Coding", "Image", "Video", "Audio", "Productivity"],
+    "categories": ["All", "Coding", "AI Proxy", "Image", "Video", "Audio", "Productivity"],
     "items": [
       { "name": "Claude Code", "description": "Anthropic's AI coding assistant CLI — supporting code generation, debugging, and refactoring.", "category": "Coding", "url": "https://claude.ai/code", "tags": ["Coding", "CLI", "Anthropic"] },
       { "name": "Cursor", "description": "AI-native code editor with built-in assistant, multi-model switching, and smart code completion.", "category": "Coding", "url": "https://cursor.com", "tags": ["Coding", "IDE", "Autocomplete"] },
+      { "name": "v0.dev", "description": "Vercel's AI UI generator — describe in natural language, get React component code.", "category": "Coding", "url": "https://v0.dev", "tags": ["UI", "Frontend", "React"] },
+      { "name": "APIMart", "description": "AI proxy for image & video generation models. Affordable API access to creative AI.", "category": "AI Proxy", "url": "https://apimart.ai/register?aff=npuNLN", "tags": ["Proxy", "Image Gen", "Video Gen", "API"] },
+      { "name": "Yunwu AI", "description": "AI proxy aggregating multiple models for image and video generation APIs.", "category": "AI Proxy", "url": "https://yunwu.ai/register?aff=xlFA", "tags": ["Proxy", "Image Gen", "Video Gen", "API"] },
+      { "name": "AiGoCode", "description": "Code-focused AI proxy service, stable and reliable for daily programming.", "category": "AI Proxy", "url": "https://aigocode.com/invite/ZS329NMN", "tags": ["Proxy", "Coding", "API"] },
+      { "name": "PipeLLM", "description": "Code-focused AI proxy with multi-model switching, great for developers.", "category": "AI Proxy", "url": "https://code.pipellm.ai/login?ref=rtpmnwrf", "tags": ["Proxy", "Coding", "API"] },
+      { "name": "AI Naibah Hub", "description": "xAI model proxy service, focused on Grok series model APIs.", "category": "AI Proxy", "url": "https://manage-xai.ainaibahub.com/", "tags": ["Proxy", "xAI", "Grok", "API"] },
+      { "name": "DGrid AI", "description": "AI compute and API service platform with multiple LLM proxy APIs.", "category": "AI Proxy", "url": "https://dgrid.ai/", "tags": ["Proxy", "Compute", "API"] },
+      { "name": "oFox AI", "description": "AI proxy supporting multiple mainstream model APIs, clean and easy to use.", "category": "AI Proxy", "url": "https://ofox.ai/x/janson_z", "tags": ["Proxy", "API"] },
+      { "name": "FluxNode", "description": "AI proxy by Agent Reach author Neo, focused on Agent and coding scenarios.", "category": "AI Proxy", "url": "https://fluxnode.org", "tags": ["Proxy", "Agent", "API"] },
       { "name": "Midjourney", "description": "One of the most popular AI image generators, excelling at artistic styles. V7 supports video.", "category": "Image", "url": "https://midjourney.com", "tags": ["Image Gen", "Design", "Creative"] },
       { "name": "Runway", "description": "Professional AI video generation and editing tool — text-to-video, image animation, and more.", "category": "Video", "url": "https://runway.ml", "tags": ["Video", "Creative", "Editing"] },
       { "name": "Perplexity", "description": "AI-powered search engine providing cited real-time answers — great for quick research.", "category": "Productivity", "url": "https://perplexity.ai", "tags": ["Search", "Research", "Knowledge"] },
       { "name": "NotebookLM", "description": "Google's AI notebook tool — upload documents, chat with content, generate podcasts.", "category": "Productivity", "url": "https://notebooklm.google.com", "tags": ["Notes", "Documents", "Google"] },
-      { "name": "Suno", "description": "AI music generation platform — describe in text, get a complete song in multiple styles.", "category": "Audio", "url": "https://suno.com", "tags": ["Music", "Audio", "Creative"] },
-      { "name": "v0.dev", "description": "Vercel's AI UI generator — describe in natural language, get React component code.", "category": "Coding", "url": "https://v0.dev", "tags": ["UI", "Frontend", "React"] }
+      { "name": "Suno", "description": "AI music generation platform — describe in text, get a complete song in multiple styles.", "category": "Audio", "url": "https://suno.com", "tags": ["Music", "Audio", "Creative"] }
     ]
   },
   "services": {

@@ -46,16 +46,24 @@
     "title": "AI 工具",
     "desc": "精选实用AI工具推荐",
     "all": "全部",
-    "categories": ["全部", "编程", "图像", "视频", "音频", "效率"],
+    "categories": ["全部", "编程", "AI中转站", "图像", "视频", "音频", "效率"],
     "items": [
       { "name": "Claude Code", "description": "Anthropic出品的AI编程助手CLI工具，支持代码生成、调试、重构等全流程开发任务。", "category": "编程", "url": "https://claude.ai/code", "tags": ["编程", "CLI", "Anthropic"] },
       { "name": "Cursor", "description": "AI原生代码编辑器，内置AI助手，支持多模型切换，智能代码补全和重构。", "category": "编程", "url": "https://cursor.com", "tags": ["编程", "IDE", "代码补全"] },
+      { "name": "v0.dev", "description": "Vercel推出的AI UI生成工具，通过自然语言描述生成React组件代码。", "category": "编程", "url": "https://v0.dev", "tags": ["UI", "前端", "React"] },
+      { "name": "APIMart（书虫推荐）", "description": "AI中转站，支持AI生图、生视频等多种模型API调用，价格实惠。", "category": "AI中转站", "url": "https://apimart.ai/register?aff=npuNLN", "tags": ["中转站", "生图", "生视频", "API"] },
+      { "name": "云雾 AI", "description": "AI中转站，聚合多家AI模型，支持图像生成、视频生成等创意类API。", "category": "AI中转站", "url": "https://yunwu.ai/register?aff=xlFA", "tags": ["中转站", "生图", "生视频", "API"] },
+      { "name": "AiGoCode（涛哥推荐）", "description": "代码类AI中转站，专注编程场景的API中转服务，稳定好用。", "category": "AI中转站", "url": "https://aigocode.com/invite/ZS329NMN", "tags": ["中转站", "编程", "API"] },
+      { "name": "PipeLLM（c大推荐）", "description": "代码类AI中转站，支持多模型切换，适合开发者日常编程使用。", "category": "AI中转站", "url": "https://code.pipellm.ai/login?ref=rtpmnwrf", "tags": ["中转站", "编程", "API"] },
+      { "name": "AI奶爸Hub", "description": "xAI模型中转站，由AI奶爸维护，专注Grok系列模型的API服务。", "category": "AI中转站", "url": "https://manage-xai.ainaibahub.com/", "tags": ["中转站", "xAI", "Grok", "API"] },
+      { "name": "DGrid AI", "description": "AI算力和API服务平台，提供多种大模型的中转API服务。", "category": "AI中转站", "url": "https://dgrid.ai/", "tags": ["中转站", "算力", "API"] },
+      { "name": "oFox AI（ofox推荐）", "description": "AI中转站，支持多种主流模型API，简洁好用。", "category": "AI中转站", "url": "https://ofox.ai/x/janson_z", "tags": ["中转站", "API"] },
+      { "name": "FluxNode（Neo推荐）", "description": "Agent Reach作者Neo维护的AI中转站，专注Agent和编程场景。", "category": "AI中转站", "url": "https://fluxnode.org", "tags": ["中转站", "Agent", "API"] },
       { "name": "Midjourney", "description": "最流行的AI图像生成工具之一，擅长艺术风格图片生成，V7支持视频。", "category": "图像", "url": "https://midjourney.com", "tags": ["图像生成", "设计", "创意"] },
       { "name": "Runway", "description": "专业级AI视频生成和编辑工具，支持文本生成视频、图片动画化等功能。", "category": "视频", "url": "https://runway.ml", "tags": ["视频", "创意", "编辑"] },
       { "name": "Perplexity", "description": "AI驱动的搜索引擎，提供带引用的实时回答，适合快速研究和信息获取。", "category": "效率", "url": "https://perplexity.ai", "tags": ["搜索", "研究", "知识"] },
       { "name": "NotebookLM", "description": "Google推出的AI笔记工具，上传文档后可以与内容对话，支持生成播客。", "category": "效率", "url": "https://notebooklm.google.com", "tags": ["笔记", "文档", "Google"] },
-      { "name": "Suno", "description": "AI音乐生成平台，输入文字描述即可生成完整歌曲，支持多种音乐风格。", "category": "音频", "url": "https://suno.com", "tags": ["音乐", "音频", "创意"] },
-      { "name": "v0.dev", "description": "Vercel推出的AI UI生成工具，通过自然语言描述生成React组件代码。", "category": "编程", "url": "https://v0.dev", "tags": ["UI", "前端", "React"] }
+      { "name": "Suno", "description": "AI音乐生成平台，输入文字描述即可生成完整歌曲，支持多种音乐风格。", "category": "音频", "url": "https://suno.com", "tags": ["音乐", "音频", "创意"] }
     ]
   },
   "services": {
