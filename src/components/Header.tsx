@@ -17,7 +17,7 @@ export default function Header({ lang, dict }: HeaderProps) {
 
   const navItems = [
     { href: `/${lang}/blog`, label: dict.nav.blog },
-    { href: `/${lang}/news`, label: dict.nav.news },
+    { href: `/${lang}/news`, label: dict.nav.news, badge: "Beta" },
     { href: `/${lang}/tools`, label: dict.nav.tools },
     { href: `/${lang}/services`, label: dict.nav.services },
     { href: `/${lang}/about`, label: dict.nav.about },
@@ -50,13 +50,18 @@ export default function Header({ lang, dict }: HeaderProps) {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors relative ${
                   pathname.startsWith(item.href)
                     ? "text-[var(--primary)] bg-blue-50"
                     : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
                 }`}
               >
                 {item.label}
+                {item.badge && (
+                  <span className="ml-1 px-1.5 py-0.5 text-[10px] font-semibold leading-none bg-orange-100 text-orange-600 rounded-full align-top">
+                    {item.badge}
+                  </span>
+                )}
               </Link>
             ))}
             {/* Language switcher */}
@@ -107,6 +112,11 @@ export default function Header({ lang, dict }: HeaderProps) {
                 }`}
               >
                 {item.label}
+                {item.badge && (
+                  <span className="ml-1 px-1.5 py-0.5 text-[10px] font-semibold leading-none bg-orange-100 text-orange-600 rounded-full">
+                    {item.badge}
+                  </span>
+                )}
               </Link>
             ))}
           </nav>
