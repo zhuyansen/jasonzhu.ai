@@ -1,0 +1,17 @@
+---
+title: "Anthropic增长营销只有1个人在负责"
+date: "2026-03-11"
+category: "营销增长"
+tags: ["Anthropic", "增长营销", "AI公司", "团队"]
+excerpt: "今天最震惊的是知道Anthropic增长营销只有1个人在负责。"
+---
+
+今天最震惊的是知道Anthropic增长营销只有1个人在负责 @helloitsaustin
+
+一家估值几百亿美金的AI公司，增长营销居然只有一个人。这说明什么？
+
+好产品自己会说话，但那一个人做的事情一定是高杠杆的。不是堆人头，而是找到最关键的增长杠杆，然后全力压上去。
+
+---
+
+**撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/2031585821439267047)
