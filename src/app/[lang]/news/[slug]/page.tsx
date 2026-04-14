@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getDictionary, type Locale } from "@/lib/dictionaries";
-import { getAllDigests, getDigestBySlug, type NewsDigest } from "@/lib/news";
+import type { Locale } from "@/lib/dictionaries";
+import { getAllDigests, getDigestBySlug } from "@/lib/news";
 
 const SITE_URL = "https://jasonzhu.ai";
 

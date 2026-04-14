@@ -4,14 +4,13 @@ import { useEffect, useState } from "react";
 
 export default function LikeButton({ slug }: { slug: string }) {
   const [count, setCount] = useState<number>(0);
-  const [liked, setLiked] = useState(false);
+  const [liked, setLiked] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return localStorage.getItem(`liked_${slug}`) === "true";
+  });
   const [animating, setAnimating] = useState(false);
 
   useEffect(() => {
-    // Check localStorage for existing like
-    const hasLiked = localStorage.getItem(`liked_${slug}`) === "true";
-    setLiked(hasLiked);
-
     // Fetch current count
     fetch(`/api/likes/${slug}`)
       .then((res) => res.json())

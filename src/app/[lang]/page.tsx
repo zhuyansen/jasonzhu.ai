@@ -78,7 +78,7 @@ export default async function HomePage({
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {posts.map((post) => (
-              <BlogCard key={post.slug} post={post} lang={lang} categoryMap={(dict.blog as any).categoryMap} />
+              <BlogCard key={post.slug} post={post} lang={lang} categoryMap={dict.blog.categoryMap} />
             ))}
           </div>
         </section>

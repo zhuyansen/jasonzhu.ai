@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
-import { getAllDigests, type NewsDigest, type NewsItem } from "@/lib/news";
+import { getAllDigests } from "@/lib/news";
 
 const SITE_URL = "https://jasonzhu.ai";
 
@@ -21,7 +21,7 @@ export async function generateMetadata({
   const dict = await getDictionary(lang);
   return {
     title: dict.news.title,
-    description: (dict.news as any).desc,
+    description: dict.news.desc,
     alternates: {
       canonical: `${SITE_URL}/${lang}/news`,
       languages: { zh: `${SITE_URL}/zh/news`, en: `${SITE_URL}/en/news` },
@@ -36,7 +36,6 @@ export default async function NewsPage({
 }) {
   const { lang: rawLang } = await params;
   const lang = (rawLang === "en" ? "en" : "zh") as Locale;
-  const dict = await getDictionary(lang);
   const digests = getAllDigests();
 
   const isZh = lang === "zh";

@@ -17,8 +17,6 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
   const isZh = lang === "zh";
-  const altLang = isZh ? "en" : "zh";
-
   return {
     title: {
       default: isZh

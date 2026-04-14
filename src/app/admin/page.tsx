@@ -756,6 +756,7 @@ export default function AdminPage() {
                       className="bg-white rounded-lg border border-gray-200 overflow-hidden cursor-pointer hover:shadow-md transition-shadow group"
                     >
                       <div className="aspect-video bg-gray-100 relative">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                           src={img.url}
                           alt={img.name}

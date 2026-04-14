@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -19,11 +20,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Read locale from middleware-set header for correct html lang attribute
+  const headersList = await headers();
+  const lang = headersList.get("x-locale") || "zh";
   // JSON-LD Organization structured data
   const organizationJsonLd = {
     "@context": "https://schema.org",
@@ -54,7 +58,7 @@ export default function RootLayout({
 
   return (
     <html
-      lang="zh"
+      lang={lang}
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >

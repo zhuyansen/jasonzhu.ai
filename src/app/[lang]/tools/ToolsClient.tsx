@@ -17,7 +17,7 @@ interface ToolsClientProps {
   lang: string;
 }
 
-export default function ToolsClient({ tools, categories, lang }: ToolsClientProps) {
+export default function ToolsClient({ tools, categories }: ToolsClientProps) {
   const allLabel = categories[0]; // "All" or "全部" is always first
   const [activeCategory, setActiveCategory] = useState(allLabel);
 

@@ -11,8 +11,8 @@ export async function generateMetadata({
   const lang = (rawLang === "en" ? "en" : "zh") as Locale;
   const dict = await getDictionary(lang);
   return {
-    title: (dict.handbook as any)?.title || "Handbook",
-    description: (dict.handbook as any)?.desc || "Download the AIP Overseas Social Media Playbook",
+    title: dict.handbook?.title || "Handbook",
+    description: dict.handbook?.desc || "Download the AIP Overseas Social Media Playbook",
     alternates: {
       canonical: `https://jasonzhu.ai/${lang}/handbook`,
       languages: { zh: "https://jasonzhu.ai/zh/handbook", en: "https://jasonzhu.ai/en/handbook" },

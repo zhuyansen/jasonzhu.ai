@@ -18,7 +18,7 @@ export default function BlogListClient({
 }) {
   const [activeCategory, setActiveCategory] = useState("__all__");
 
-  const categoryMap = (dict as any).categoryMap as Record<string, string> | undefined;
+  const categoryMap = dict.categoryMap as Record<string, string> | undefined;
 
   const getDisplayName = (cat: string) => {
     if (categoryMap && categoryMap[cat]) return categoryMap[cat];

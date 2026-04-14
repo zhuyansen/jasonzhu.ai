@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getDictionary, type Locale } from "@/lib/dictionaries";
+import type { Locale } from "@/lib/dictionaries";
 
 export async function generateMetadata({
   params,
