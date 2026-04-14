@@ -4,7 +4,9 @@
  * 流程：RSS/网页采集 → Claude 摘要分类 → 写入 Supabase → 生成 MDX → commit 触发部署
  *
  * 环境变量：
- *   ANTHROPIC_API_KEY       - Claude API 密钥
+ *   ANTHROPIC_AUTH_TOKEN     - Claude API 密钥（支持中转站）
+ *   ANTHROPIC_BASE_URL       - API 地址（默认 https://api.aigocode.com）
+ *   ANTHROPIC_API_KEY        - 备选：原生 Anthropic API 密钥
  *   NEXT_PUBLIC_SUPABASE_URL - Supabase URL
  *   SUPABASE_SERVICE_KEY     - Supabase Service Role Key（写入权限）
  */
@@ -39,7 +41,19 @@ const MONTH_DAY = (() => {
 
 // ─── 初始化 ─────────────────────────────────────────
 
-const anthropic = new Anthropic();
+// 支持中转站（aigocode）和原生 Anthropic API
+const apiKey = process.env.ANTHROPIC_AUTH_TOKEN || process.env.ANTHROPIC_API_KEY;
+const baseURL = process.env.ANTHROPIC_BASE_URL || "https://api.aigocode.com";
+
+if (!apiKey) {
+  console.error("❌ Missing ANTHROPIC_AUTH_TOKEN or ANTHROPIC_API_KEY");
+  process.exit(1);
+}
+
+const anthropic = new Anthropic({
+  apiKey,
+  baseURL,
+});
 const parser = new Parser({ timeout: 10000 });
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -132,7 +146,7 @@ ${itemsText}
 只输出 JSON，不要其他内容。`;
 
   const response = await anthropic.messages.create({
-    model: "claude-sonnet-4-20250514",
+    model: process.env.CLAUDE_MODEL || "claude-3-5-sonnet-20241022",
     max_tokens: 2000,
     messages: [{ role: "user", content: prompt }],
   });
