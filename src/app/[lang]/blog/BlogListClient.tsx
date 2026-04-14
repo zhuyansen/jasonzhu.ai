@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import BlogCard from "@/components/BlogCard";
-import type { BlogPost } from "@/lib/mdx";
+import type { BlogPostMeta } from "@/lib/mdx";
 import type { Dictionary } from "@/lib/dictionaries";
 
 export default function BlogListClient({
@@ -11,7 +11,7 @@ export default function BlogListClient({
   lang,
   dict,
 }: {
-  posts: BlogPost[];
+  posts: BlogPostMeta[];
   categories: string[];
   lang: string;
   dict: Dictionary["blog"];

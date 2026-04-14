@@ -30,7 +30,7 @@ async function adminFetch(url: string, options?: RequestInit) {
     ...options,
     headers: {
       ...options?.headers,
-      Authorization: `Bearer ${localStorage.getItem("admin_token")}`,
+      Authorization: `Bearer ${sessionStorage.getItem("admin_token")}`,
     },
   });
 }
@@ -80,15 +80,15 @@ export default function AdminPage() {
   const [recentSubscribers, setRecentSubscribers] = useState<Subscriber[]>([]);
   const [subscribersLoading, setSubscribersLoading] = useState(false);
 
-  // Check existing auth on mount
+  // Check existing session on mount
   useEffect(() => {
-    const token = localStorage.getItem("admin_token");
+    const token = sessionStorage.getItem("admin_token");
     if (token) {
-      testAuth(token);
+      verifyExistingSession(token);
     }
   }, []);
 
-  const testAuth = async (token: string) => {
+  const verifyExistingSession = async (token: string) => {
     setAuthLoading(true);
     setAuthError("");
     try {
@@ -96,11 +96,9 @@ export default function AdminPage() {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (res.ok) {
-        localStorage.setItem("admin_token", token);
         setIsAuthed(true);
       } else {
-        setAuthError("Invalid password");
-        localStorage.removeItem("admin_token");
+        sessionStorage.removeItem("admin_token");
       }
     } catch {
       setAuthError("Network error");
@@ -111,11 +109,43 @@ export default function AdminPage() {
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    await testAuth(password);
+    setAuthLoading(true);
+    setAuthError("");
+    try {
+      const res = await fetch("/api/admin/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password }),
+      });
+      if (res.ok) {
+        const data = await res.json();
+        sessionStorage.setItem("admin_token", data.token);
+        setIsAuthed(true);
+      } else if (res.status === 429) {
+        setAuthError("Too many attempts. Please wait a moment.");
+      } else {
+        setAuthError("Invalid password");
+      }
+    } catch {
+      setAuthError("Network error");
+    } finally {
+      setAuthLoading(false);
+    }
   };
 
-  const handleLogout = () => {
-    localStorage.removeItem("admin_token");
+  const handleLogout = async () => {
+    const token = sessionStorage.getItem("admin_token");
+    if (token) {
+      try {
+        await fetch("/api/admin/login", {
+          method: "DELETE",
+          headers: { Authorization: `Bearer ${token}` },
+        });
+      } catch {
+        // Best-effort revocation
+      }
+    }
+    sessionStorage.removeItem("admin_token");
     setIsAuthed(false);
     setPassword("");
     setPosts([]);

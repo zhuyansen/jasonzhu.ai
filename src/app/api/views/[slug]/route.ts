@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getSupabase } from "@/lib/supabase";
+import { rateLimit } from "@/lib/rate-limit";
 
 export const dynamic = "force-dynamic";
 
@@ -27,6 +28,9 @@ export async function POST(
   _request: NextRequest,
   { params }: { params: Promise<{ slug: string }> }
 ) {
+  const rateLimited = rateLimit(_request, { limit: 30, prefix: "views" });
+  if (rateLimited) return rateLimited;
+
   const { slug } = await params;
   const supabase = getSupabase();
 

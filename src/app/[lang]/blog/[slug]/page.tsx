@@ -53,14 +53,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       publishedTime: post.date,
       authors: ["Jason Zhu"],
       tags: post.tags,
-      images: [
-        {
-          url: `${SITE_URL}/og-image.png`,
-          width: 1200,
-          height: 630,
-          alt: post.title,
-        },
-      ],
     },
     twitter: {
       card: "summary_large_image",
@@ -124,7 +116,7 @@ export default async function BlogPostPage({ params }: Props) {
       "@type": "WebPage",
       "@id": `${SITE_URL}/${lang}/blog/${slug}`,
     },
-    image: `${SITE_URL}/og-image.png`,
+    image: `${SITE_URL}/${lang}/blog/${slug}/opengraph-image`,
     keywords: post.tags.join(", "),
   };
 

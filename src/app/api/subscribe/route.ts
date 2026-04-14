@@ -1,9 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getSupabase } from "@/lib/supabase";
+import { rateLimit } from "@/lib/rate-limit";
 
 export const dynamic = "force-dynamic";
 
 export async function POST(request: NextRequest) {
+  const rateLimited = rateLimit(request, { limit: 10, prefix: "subscribe" });
+  if (rateLimited) return rateLimited;
+
   try {
     const { email, source } = await request.json();
 

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { BlogPost } from "@/lib/mdx";
+import type { BlogPostMeta } from "@/lib/mdx";
 
 const categoryColors: Record<string, string> = {
   "AI工具": "bg-blue-50 text-blue-700",
@@ -19,7 +19,7 @@ export default function BlogCard({
   lang = "zh",
   categoryMap,
 }: {
-  post: BlogPost;
+  post: BlogPostMeta;
   lang?: string;
   categoryMap?: Record<string, string>;
 }) {
