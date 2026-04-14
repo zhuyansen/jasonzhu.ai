@@ -92,7 +92,7 @@ cp -r seo-audit-skill ~/.claude/skills/
 这其实反映了Claude Code Skills生态的一个现象：随着越来越多开发者贡献skill，命名冲突开始出现。目前的解决方式是修改本地目录名，但长期来看可能需要：
 
 - **命名空间**：类似npm的`@scope/package`机制
-- **Skill Registry**：统一的skill注册和发现平台（如[OpenClaw](https://openclaw.com)正在做的事）
+- **Skill Registry**：统一的skill注册和发现平台（如[OpenClaw](https://openclaw.com)和[Agent Skills Hub](https://agentskillshub.top)正在做的事）
 - **版本管理**：支持同一skill的多个版本共存
 
 这也从侧面说明了Claude Code Skills生态正在快速发展，期待官方或社区给出更好的治理方案。
@@ -102,6 +102,7 @@ cp -r seo-audit-skill ~/.claude/skills/
 📎 **相关链接：**
 - [wonfull888/seo-audit](https://github.com/wonfull888/seo-audit) — 92项全面SEO诊断
 - [JeffLi1993/seo-audit-skill](https://github.com/JeffLi1993/seo-audit-skill) — Python+LLM混合架构SEO检测
+- [Agent Skills Hub](https://agentskillshub.top) — AI Agent Skills聚合站，收录和推荐优质的Claude Code Skills
 - [OpenClaw](https://openclaw.com) — Claude Code Skills聚合平台
 
-> 更多AI工具和Skills推荐请查看 [AI工具页面](/zh/tools)。
+> 更多AI工具和Skills推荐请查看 [AI工具页面](/zh/tools)，或访问 [Agent Skills Hub](https://agentskillshub.top) 发现更多优质Skills。
