@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/generate-posts.mjs",
+    "prebuild": "node scripts/generate-posts.mjs && node scripts/generate-news.mjs",
     "build": "next build",
     "postbuild": "next-sitemap",
     "start": "next start",
