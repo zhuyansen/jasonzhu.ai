@@ -12,7 +12,19 @@ export default async function HomePage({
   const { lang: rawLang } = await params;
   const lang = (rawLang === "en" ? "en" : "zh") as Locale;
   const dict = await getDictionary(lang);
-  const posts = getAllPosts().slice(0, 6);
+  // Pinned posts shown first, then fill remaining slots with latest posts
+  const pinnedSlugs = [
+    "x-growth-handbook",
+    "jasonzhu-ai-site-building-journey",
+  ];
+  const allPosts = getAllPosts();
+  const pinned = pinnedSlugs
+    .map((s) => allPosts.find((p) => p.slug === s))
+    .filter((p): p is NonNullable<typeof p> => Boolean(p));
+  const rest = allPosts
+    .filter((p) => !pinnedSlugs.includes(p.slug))
+    .slice(0, 6 - pinned.length);
+  const posts = [...pinned, ...rest];
 
   return (
     <>
