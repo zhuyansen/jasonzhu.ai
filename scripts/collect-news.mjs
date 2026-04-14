@@ -146,15 +146,20 @@ ${itemsText}
 只输出 JSON，不要其他内容。`;
 
   const response = await anthropic.messages.create({
-    model: process.env.CLAUDE_MODEL || "claude-3-5-sonnet-20241022",
+    model: process.env.CLAUDE_MODEL || "claude-sonnet-4-6",
     max_tokens: 2000,
     messages: [{ role: "user", content: prompt }],
   });
 
-  const text = response.content[0].text.trim();
+  // Debug: log response structure
+  if (!response.content || !response.content[0]) {
+    console.error("Unexpected response:", JSON.stringify(response).slice(0, 500));
+    throw new Error("Empty response from Claude API");
+  }
+  const text = (response.content[0].text || "").trim();
   // 提取 JSON（可能被 ```json 包裹）
   const jsonMatch = text.match(/\{[\s\S]*\}/);
-  if (!jsonMatch) throw new Error("Claude response is not valid JSON");
+  if (!jsonMatch) throw new Error("Claude response is not valid JSON: " + text.slice(0, 200));
 
   return JSON.parse(jsonMatch[0]);
 }

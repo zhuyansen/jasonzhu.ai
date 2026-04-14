@@ -5,49 +5,49 @@
     "title": "AI 快讯 · 4月14日",
     "items": [
       {
-        "title": "两个同名 SEO Audit Skills 对比：全面诊断 vs 精准工程",
-        "source": "JasonZhu.AI",
+        "title": "Claude Code 权限跳过参数的安全改造实践",
+        "source": "Hacker News",
         "category": "Skills 生态",
-        "url": "https://jasonzhu.ai/zh/blog/two-seo-audit-skills-comparison",
-        "summary": "wonfull888 版 92 项全面检查 + 四维度评分，CoderJeffLee 版 Python+LLM 混合架构防幻觉。两个 skill 都叫 seo-audit，定位完全不同。"
+        "url": "https://codeofchange.io/how-i-made-dangerously-skip-permissions-safe-in-claude-code/",
+        "summary": "开发者分享如何安全地使用 Claude Code 的 --dangerously-skip-permissions 参数。这个参数原本为了提升自动化效率会跳过权限检查,作者通过技术改造在保持便利性的同时增强了安全性,为 Claude Code 的企业级应用提供了参考方案。"
       },
       {
-        "title": "Claude Code 新增 Hooks 和 Sub-Agent 能力",
-        "source": "Anthropic",
-        "category": "AI 工具动态",
-        "url": "https://docs.anthropic.com/en/docs/claude-code",
-        "summary": "Claude Code 支持 pre/post commit hooks 和多 agent 协作，开发者可以配置自动化工作流，比如提交前自动 lint、测试。"
-      },
-      {
-        "title": "Cursor 推出 Background Agent 公测",
-        "source": "Cursor",
-        "category": "AI 工具动态",
-        "url": "https://cursor.com",
-        "summary": "Cursor 推出后台 Agent 功能，支持在云端沙盒中自主完成多步骤编程任务，不占用本地 IDE 资源。"
-      },
-      {
-        "title": "Niko 的 SaaS 出海一年复盘：从 0 到月入 $5K",
-        "source": "@nicogpt",
+        "title": "Vercel CEO 透露 IPO 准备就绪,AI Agent 推动营收激增",
+        "source": "TechCrunch AI",
         "category": "出海实战",
-        "url": "https://jasonzhu.ai/zh/blog/niko-saas-one-year-review",
-        "summary": "独立开发者 Niko 分享一年 SaaS 出海经历，从产品选型、支付接入到增长策略的完整复盘。"
+        "url": "https://techcrunch.com/2026/04/13/vercel-ceo-guillermo-rauch-signals-ipo-readiness-as-ai-agents-fuel-revenue-surge/",
+        "summary": "成立 10 年的开发工具和网站托管平台 Vercel 正受益于 AI 生成应用和 Agent 的爆发式增长。CEO Guillermo Rauch 表示公司已为 IPO 做好准备,展示了传统开发工具如何成功转型 AI 时代并实现商业突破。"
       },
       {
-        "title": "Agent Skills Hub 收录量突破新高",
-        "source": "Agent Skills Hub",
-        "category": "Skills 生态",
-        "url": "https://agentskillshub.top",
-        "summary": "Agent Skills Hub 持续收录优质 Claude Code Skills 和 Agent 插件，为开发者提供一站式 Skills 发现平台。"
-      },
-      {
-        "title": "OpenAI Codex 正式开放公测",
-        "source": "OpenAI",
+        "title": "OpenAI 收购 AI 理财初创公司 Hiro",
+        "source": "TechCrunch AI",
         "category": "AI 工具动态",
-        "url": "https://openai.com/index/introducing-codex/",
-        "summary": "OpenAI 的 AI 编程 Agent Codex 面向所有 Plus 用户开放，支持在云端沙盒自主完成代码编写、测试和 PR 提交。"
+        "url": "https://techcrunch.com/2026/04/13/openai-has-bought-ai-personal-finance-startup-hiro/",
+        "summary": "这笔收购表明 OpenAI 正在为 ChatGPT 构建财务规划能力。继代码编写、数据分析后,个人财务管理可能成为 ChatGPT 的下一个重要应用场景,进一步扩展其在日常生活中的实用性。"
+      },
+      {
+        "title": "Cloudflare Agent Cloud 集成 OpenAI GPT-5.4",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/cloudflare-openai-agent-cloud",
+        "summary": "Cloudflare 将 OpenAI 的 GPT-5.4 和 Codex 引入 Agent Cloud,让企业能够快速、安全地构建、部署和扩展 AI Agent。这一合作为企业级 AI Agent 应用提供了高性能基础设施支持。"
+      },
+      {
+        "title": "微软开发新一代企业级 AI Agent,对标 OpenClaw",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/04/13/microsoft-is-working-on-yet-another-openclaw-like-agent/",
+        "summary": "微软正在开发类似 OpenClaw 的 AI Agent,但专注于企业客户,提供比开源 OpenClaw 更强的安全控制。这反映出企业对 AI Agent 的需求正从实验性工具转向生产级应用。"
+      },
+      {
+        "title": "斯坦福报告:AI 内部人士与公众认知鸿沟加剧",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/04/13/stanford-report-highlights-growing-disconnect-between-ai-insiders-and-everyone-else/",
+        "summary": "斯坦福最新 AI 指数显示,专家与公众之间的认知差距正在扩大,公众对就业、医疗和经济的焦虑情绪上升。这提醒 AI 从业者需要更多关注技术的社会影响和公众沟通。"
       }
     ],
-    "jasonSays": "Skills 生态重名问题开始出现，说明生态真的繁荣起来了。期待命名空间和 Registry 的成熟方案。",
+    "jasonSays": "Claude Code 安全改造和 Vercel 的 IPO 信号都在说同一件事:AI 工具正在从玩具变成生产力,商业化路径越来越清晰了。",
     "filename": "2026-04-14.md"
   }
 ]
