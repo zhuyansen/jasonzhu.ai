@@ -145,23 +145,58 @@ ${itemsText}
 
 只输出 JSON，不要其他内容。`;
 
-  const response = await anthropic.messages.create({
-    model: process.env.CLAUDE_MODEL || "claude-sonnet-4-6",
-    max_tokens: 2000,
-    messages: [{ role: "user", content: prompt }],
-  });
+  // 重试机制：最多 3 次
+  const MAX_RETRIES = 3;
+  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+    try {
+      console.log(`  🔄 Claude API 调用 (attempt ${attempt}/${MAX_RETRIES})...`);
+      const response = await anthropic.messages.create({
+        model: process.env.CLAUDE_MODEL || "claude-sonnet-4-6",
+        max_tokens: 2000,
+        messages: [{ role: "user", content: prompt }],
+      });
 
-  // Debug: log response structure
-  if (!response.content || !response.content[0]) {
-    console.error("Unexpected response:", JSON.stringify(response).slice(0, 500));
-    throw new Error("Empty response from Claude API");
+      if (!response.content || !response.content[0]) {
+        console.error(`  ⚠️  Attempt ${attempt}: empty response`, JSON.stringify(response).slice(0, 300));
+        if (attempt < MAX_RETRIES) {
+          await sleep(3000 * attempt); // 递增等待
+          continue;
+        }
+        throw new Error("Empty response from Claude API after all retries");
+      }
+
+      const text = (response.content[0].text || "").trim();
+      if (!text) {
+        console.error(`  ⚠️  Attempt ${attempt}: empty text in response`);
+        if (attempt < MAX_RETRIES) {
+          await sleep(3000 * attempt);
+          continue;
+        }
+        throw new Error("Claude returned empty text after all retries");
+      }
+
+      // 提取 JSON（可能被 ```json 包裹）
+      const jsonMatch = text.match(/\{[\s\S]*\}/);
+      if (!jsonMatch) {
+        console.error(`  ⚠️  Attempt ${attempt}: invalid JSON — ${text.slice(0, 100)}`);
+        if (attempt < MAX_RETRIES) {
+          await sleep(3000 * attempt);
+          continue;
+        }
+        throw new Error("Claude response is not valid JSON: " + text.slice(0, 200));
+      }
+
+      return JSON.parse(jsonMatch[0]);
+    } catch (err) {
+      if (attempt >= MAX_RETRIES) throw err;
+      console.error(`  ⚠️  Attempt ${attempt} failed: ${err.message}`);
+      await sleep(3000 * attempt);
+    }
   }
-  const text = (response.content[0].text || "").trim();
-  // 提取 JSON（可能被 ```json 包裹）
-  const jsonMatch = text.match(/\{[\s\S]*\}/);
-  if (!jsonMatch) throw new Error("Claude response is not valid JSON: " + text.slice(0, 200));
+}
 
-  return JSON.parse(jsonMatch[0]);
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 // ─── Step 3: 写入 Supabase ──────────────────────────
