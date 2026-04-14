@@ -29,6 +29,10 @@ export async function generateMetadata({
   return {
     title: dict.news.title,
     description: dict.news.desc,
+    alternates: {
+      canonical: `https://jasonzhu.ai/${lang}/news`,
+      languages: { zh: "https://jasonzhu.ai/zh/news", en: "https://jasonzhu.ai/en/news" },
+    },
   };
 }
 

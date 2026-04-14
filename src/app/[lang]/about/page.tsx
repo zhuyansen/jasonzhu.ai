@@ -12,6 +12,10 @@ export async function generateMetadata({
   return {
     title: dict.about.title,
     description: dict.about.intro,
+    alternates: {
+      canonical: `https://jasonzhu.ai/${lang}/about`,
+      languages: { zh: "https://jasonzhu.ai/zh/about", en: "https://jasonzhu.ai/en/about" },
+    },
   };
 }
 

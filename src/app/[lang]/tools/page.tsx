@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
 import ToolsClient from "./ToolsClient";
 
+const SITE_URL = "https://jasonzhu.ai";
+
 export async function generateMetadata({
   params,
 }: {
@@ -13,6 +15,13 @@ export async function generateMetadata({
   return {
     title: dict.tools.title,
     description: dict.tools.desc,
+    alternates: {
+      canonical: `${SITE_URL}/${lang}/tools`,
+      languages: {
+        zh: `${SITE_URL}/zh/tools`,
+        en: `${SITE_URL}/en/tools`,
+      },
+    },
   };
 }
 

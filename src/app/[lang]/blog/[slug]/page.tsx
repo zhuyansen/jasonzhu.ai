@@ -24,13 +24,50 @@ export async function generateStaticParams() {
   ]);
 }
 
+const SITE_URL = "https://jasonzhu.ai";
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
+  const { lang, slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) return {};
+
+  const description = post.excerpt && post.excerpt.length >= 50
+    ? post.excerpt
+    : `${post.title} - Jason Zhu 的博客文章，涵盖${post.category}领域的深度分析与实战经验分享。`;
+
   return {
     title: post.title,
-    description: post.excerpt,
+    description,
+    alternates: {
+      canonical: `${SITE_URL}/${lang}/blog/${slug}`,
+      languages: {
+        zh: `${SITE_URL}/zh/blog/${slug}`,
+        en: `${SITE_URL}/en/blog/${slug}`,
+      },
+    },
+    openGraph: {
+      type: "article",
+      title: post.title,
+      description,
+      url: `${SITE_URL}/${lang}/blog/${slug}`,
+      publishedTime: post.date,
+      authors: ["Jason Zhu"],
+      tags: post.tags,
+      images: [
+        {
+          url: `${SITE_URL}/og-image.png`,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description,
+      creator: "@GoSailGlobal",
+    },
   };
 }
 
@@ -41,8 +78,88 @@ export default async function BlogPostPage({ params }: Props) {
   const post = getPostBySlug(slug);
   if (!post) notFound();
 
+  // Breadcrumb JSON-LD
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: lang === "zh" ? "首页" : "Home",
+        item: `${SITE_URL}/${lang}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: lang === "zh" ? "博客" : "Blog",
+        item: `${SITE_URL}/${lang}/blog`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: post.title,
+        item: `${SITE_URL}/${lang}/blog/${slug}`,
+      },
+    ],
+  };
+
+  // Article JSON-LD structured data
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt || post.title,
+    datePublished: post.date,
+    author: {
+      "@type": "Person",
+      name: "Jason Zhu",
+      url: "https://jasonzhu.ai",
+    },
+    publisher: {
+      "@type": "Person",
+      name: "Jason Zhu",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${SITE_URL}/${lang}/blog/${slug}`,
+    },
+    image: `${SITE_URL}/og-image.png`,
+    keywords: post.tags.join(", "),
+  };
+
   return (
     <article className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbJsonLd),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(articleJsonLd),
+        }}
+      />
+      {/* Breadcrumb navigation */}
+      <nav aria-label="Breadcrumb" className="mb-6 text-sm text-gray-400">
+        <ol className="flex items-center gap-1">
+          <li>
+            <Link href={`/${lang}`} className="hover:text-gray-600">
+              {lang === "zh" ? "首页" : "Home"}
+            </Link>
+          </li>
+          <li>/</li>
+          <li>
+            <Link href={`/${lang}/blog`} className="hover:text-gray-600">
+              {lang === "zh" ? "博客" : "Blog"}
+            </Link>
+          </li>
+          <li>/</li>
+          <li className="text-gray-600 truncate max-w-[200px]">{post.title}</li>
+        </ol>
+      </nav>
       {/* Back link */}
       <Link
         href={`/${lang}/blog`}

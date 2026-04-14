@@ -13,6 +13,10 @@ export async function generateMetadata({
   return {
     title: dict.services.title,
     description: dict.services.desc,
+    alternates: {
+      canonical: `https://jasonzhu.ai/${lang}/services`,
+      languages: { zh: "https://jasonzhu.ai/zh/services", en: "https://jasonzhu.ai/en/services" },
+    },
   };
 }
 

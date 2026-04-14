@@ -64,10 +64,18 @@ export default function Footer({ lang, dict }: FooterProps) {
           </div>
         </div>
 
-        <div className="border-t border-gray-200 mt-8 pt-8 text-center">
+        <div className="border-t border-gray-200 mt-8 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-gray-400">
             &copy; {new Date().getFullYear()} JasonZhu.AI. All rights reserved.
           </p>
+          <div className="flex items-center gap-4">
+            <Link href={`/${lang}/privacy`} className="text-sm text-gray-400 hover:text-gray-600">
+              {lang === "zh" ? "隐私政策" : "Privacy"}
+            </Link>
+            <Link href={`/${lang}/terms`} className="text-sm text-gray-400 hover:text-gray-600">
+              {lang === "zh" ? "使用条款" : "Terms"}
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
