@@ -161,7 +161,7 @@ ${itemsText}
       console.log(`  🔄 Claude API 调用 (attempt ${attempt}/${MAX_RETRIES})...`);
       const response = await anthropic.messages.create({
         model: process.env.CLAUDE_MODEL || "claude-sonnet-4-6",
-        max_tokens: 2000,
+        max_tokens: 4096,
         messages: [{ role: "user", content: prompt }],
       });
 
@@ -170,16 +170,32 @@ ${itemsText}
       if (!response.content || !response.content[0]) {
         console.error(`  ⚠️  Attempt ${attempt}: empty response`, JSON.stringify(response).slice(0, 500));
         if (attempt < MAX_RETRIES) {
-          await sleep(5000 * attempt); // 递增等待（加长）
+          await sleep(5000 * attempt);
           continue;
         }
         throw new Error("Empty response from Claude API after all retries");
       }
 
-      const text = (response.content[0].text || "").trim();
-      console.log(`  📝 Text length: ${text.length}, first 100 chars: ${text.slice(0, 100)}`);
+      // 尝试从所有 content blocks 中提取 text
+      let text = "";
+      for (const block of response.content) {
+        if (block.type === "text" && block.text) {
+          text += block.text;
+        } else if (typeof block === "string") {
+          text += block;
+        }
+      }
+      text = text.trim();
+
+      console.log(`  📝 Text length: ${text.length}, block types: ${response.content.map(b => b.type || 'unknown').join(',')}`);
+      if (text.length > 0) console.log(`  📝 First 100 chars: ${text.slice(0, 100)}`);
+
       if (!text) {
-        console.error(`  ⚠️  Attempt ${attempt}: empty text in response, full: ${JSON.stringify(response.content).slice(0, 300)}`);
+        // 如果 stop_reason 是 max_tokens，说明输出被截断，增加 token 不够
+        if (response.stop_reason === "max_tokens") {
+          console.error(`  ⚠️  Attempt ${attempt}: stop_reason=max_tokens but text empty — proxy may be returning encrypted content`);
+        }
+        console.error(`  ⚠️  Attempt ${attempt}: empty text. Content keys: ${JSON.stringify(Object.keys(response.content[0] || {}))}`);
         if (attempt < MAX_RETRIES) {
           await sleep(5000 * attempt);
           continue;
