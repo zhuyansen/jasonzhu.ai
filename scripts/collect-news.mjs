@@ -21,17 +21,20 @@ import path from "path";
 
 const RSS_FEEDS = [
   // AI 行业官方博客
-  { url: "https://www.anthropic.com/rss.xml", name: "Anthropic Blog" },
   { url: "https://openai.com/blog/rss.xml", name: "OpenAI Blog" },
   { url: "https://blog.google/technology/ai/rss/", name: "Google AI Blog" },
-  { url: "https://vercel.com/atom", name: "Vercel Blog" },
-  // Hacker News AI 相关
+  // 社区 & 聚合
   { url: "https://hnrss.org/newest?q=AI+agent+OR+claude+OR+cursor+OR+MCP&count=15", name: "Hacker News" },
-  // TechCrunch AI
   { url: "https://techcrunch.com/category/artificial-intelligence/feed/", name: "TechCrunch AI" },
+  // 中文 AI 媒体
+  { url: "https://36kr.com/feed", name: "36Kr" },
+  // 产品发现
+  { url: "https://www.producthunt.com/feed?category=ai", name: "Product Hunt AI" },
+  // AI 专题 Hacker News（补充更多关键词）
+  { url: "https://hnrss.org/newest?q=LLM+OR+GPT+OR+anthropic+OR+openai+OR+vercel+AI&count=10", name: "HN AI Extended" },
 ];
 
-const CATEGORIES = ["Skills 生态", "出海实战", "AI 工具动态"];
+const CATEGORIES = ["Skills 生态", "出海实战", "AI 工具动态", "变现案例"];
 
 const TODAY = new Date().toISOString().split("T")[0];
 const MONTH_DAY = (() => {
@@ -78,10 +81,15 @@ async function fetchAllFeeds() {
       const recent = (result.items || [])
         .filter((item) => {
           // 只取最近 2 天的内容
-          const pubDate = item.pubDate ? new Date(item.pubDate) : new Date();
-          const twoDaysAgo = new Date();
-          twoDaysAgo.setDate(twoDaysAgo.getDate() - 2);
-          return pubDate >= twoDaysAgo;
+          try {
+            const pubDate = item.pubDate ? new Date(item.pubDate) : new Date();
+            if (isNaN(pubDate.getTime())) return true; // 日期无效则保留
+            const twoDaysAgo = new Date();
+            twoDaysAgo.setDate(twoDaysAgo.getDate() - 2);
+            return pubDate >= twoDaysAgo;
+          } catch {
+            return true; // 解析失败则保留
+          }
         })
         .slice(0, 5)
         .map((item) => ({
@@ -118,8 +126,9 @@ async function curateWithClaude(rawItems) {
 ## 筛选标准（优先级从高到低）
 1. Claude Code / Skills / MCP 相关更新（归类：Skills 生态）
 2. 出海 SaaS / 独立开发者增长案例（归类：出海实战）
-3. 主流 AI 工具重大更新 — ChatGPT/Claude/Cursor/Gemini 等（归类：AI 工具动态）
-4. AI 行业重大事件或研究突破（归类：AI 工具动态）
+3. AI 赚钱案例 / MRR 突破 / 变现策略（归类：变现案例）
+4. 主流 AI 工具重大更新 — ChatGPT/Claude/Cursor/Gemini 等（归类：AI 工具动态）
+5. AI 行业重大事件或研究突破（归类：AI 工具动态）
 
 ## 排除标准
 - 纯营销推广内容
@@ -135,7 +144,7 @@ ${itemsText}
     {
       "title": "简洁有力的中文标题（15-25字）",
       "source": "来源名称",
-      "category": "Skills 生态 | 出海实战 | AI 工具动态",
+      "category": "Skills 生态 | 出海实战 | AI 工具动态 | 变现案例",
       "url": "原始链接",
       "summary": "一段话中文摘要（50-100字），说清楚是什么+为什么重要"
     }
@@ -145,8 +154,8 @@ ${itemsText}
 
 只输出 JSON，不要其他内容。`;
 
-  // 重试机制：最多 3 次
-  const MAX_RETRIES = 3;
+  // 重试机制：最多 5 次（aigocode 中转站可能不稳定）
+  const MAX_RETRIES = 5;
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
     try {
       console.log(`  🔄 Claude API 调用 (attempt ${attempt}/${MAX_RETRIES})...`);
@@ -156,20 +165,23 @@ ${itemsText}
         messages: [{ role: "user", content: prompt }],
       });
 
+      console.log(`  📋 Response stop_reason: ${response.stop_reason}, content blocks: ${response.content?.length || 0}`);
+
       if (!response.content || !response.content[0]) {
-        console.error(`  ⚠️  Attempt ${attempt}: empty response`, JSON.stringify(response).slice(0, 300));
+        console.error(`  ⚠️  Attempt ${attempt}: empty response`, JSON.stringify(response).slice(0, 500));
         if (attempt < MAX_RETRIES) {
-          await sleep(3000 * attempt); // 递增等待
+          await sleep(5000 * attempt); // 递增等待（加长）
           continue;
         }
         throw new Error("Empty response from Claude API after all retries");
       }
 
       const text = (response.content[0].text || "").trim();
+      console.log(`  📝 Text length: ${text.length}, first 100 chars: ${text.slice(0, 100)}`);
       if (!text) {
-        console.error(`  ⚠️  Attempt ${attempt}: empty text in response`);
+        console.error(`  ⚠️  Attempt ${attempt}: empty text in response, full: ${JSON.stringify(response.content).slice(0, 300)}`);
         if (attempt < MAX_RETRIES) {
-          await sleep(3000 * attempt);
+          await sleep(5000 * attempt);
           continue;
         }
         throw new Error("Claude returned empty text after all retries");

@@ -49,3 +49,11 @@ jobs:
           DATE=$(date +%Y-%m-%d)
           git commit -m "📰 AI 快讯自动采集 ${DATE}"
           git push
+
+      - name: Send digest email
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: node scripts/send-digest-email.mjs

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
 import { getAllDigests } from "@/lib/news";
+import { findCrossLinks } from "@/lib/cross-links";
 
 const SITE_URL = "https://jasonzhu.ai";
 
@@ -9,6 +10,7 @@ const categoryConfig: Record<string, { color: string; icon: string }> = {
   "Skills 生态": { color: "bg-purple-50 text-purple-700", icon: "🔥" },
   "出海实战": { color: "bg-orange-50 text-orange-700", icon: "🚀" },
   "AI 工具动态": { color: "bg-blue-50 text-blue-700", icon: "🛠️" },
+  "变现案例": { color: "bg-green-50 text-green-700", icon: "💰" },
 };
 
 export async function generateMetadata({
@@ -49,15 +51,29 @@ export default async function NewsPage({
         <h1 className="text-3xl font-bold text-gray-900 mb-2">
           {isZh ? "AI 快讯" : "AI News"}
         </h1>
-        <p className="text-gray-500">
-          {isZh
-            ? "每日精选 AI 行业动态：Skills 生态、出海实战、工具更新"
-            : "Daily curated AI updates: Skills ecosystem, going global, tool releases"}
-        </p>
+        <div className="flex items-center justify-between">
+          <p className="text-gray-500">
+            {isZh
+              ? "每日精选 AI 行业动态：Skills 生态、出海实战、工具更新"
+              : "Daily curated AI updates: Skills ecosystem, going global, tool releases"}
+          </p>
+          <a
+            href="/feed/news.xml"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-orange-600 bg-orange-50 rounded-lg hover:bg-orange-100 transition-colors shrink-0"
+            title="RSS Feed"
+          >
+            <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M6.503 20.752c0 1.794-1.456 3.248-3.251 3.248-1.796 0-3.252-1.454-3.252-3.248 0-1.794 1.456-3.248 3.252-3.248 1.795.001 3.251 1.454 3.251 3.248zm-6.503-12.572v4.811c6.05.062 10.96 4.966 11.022 11.009h4.817c-.062-8.742-7.115-15.793-15.839-15.82zm0-8.18v4.819c12.951.115 23.408 10.676 23.408 23.752h4.592c0-15.69-12.691-28.49-28-28.571z" />
+            </svg>
+            RSS
+          </a>
+        </div>
 
         {/* Section legend */}
         <div className="flex flex-wrap gap-3 mt-4">
-          {["Skills 生态", "出海实战", "AI 工具动态"].map((cat) => {
+          {["Skills 生态", "出海实战", "AI 工具动态", "变现案例"].map((cat) => {
             const cfg = categoryConfig[cat] || { color: "bg-gray-50 text-gray-700", icon: "📌" };
             return (
               <span key={cat} className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium ${cfg.color}`}>
@@ -127,6 +143,25 @@ export default async function NewsPage({
                         <p className="text-sm text-gray-500 leading-relaxed">
                           {item.summary}
                         </p>
+                        {(() => {
+                          const crossLinks = findCrossLinks(
+                            `${item.title} ${item.summary}`,
+                            lang
+                          );
+                          return crossLinks.length > 0 ? (
+                            <div className="flex items-center gap-2 mt-2">
+                              {crossLinks.map((cl) => (
+                                <Link
+                                  key={cl.href}
+                                  href={cl.href}
+                                  className="inline-flex items-center gap-1 px-2 py-0.5 text-xs rounded-full bg-gray-50 text-blue-600 hover:bg-blue-50 transition-colors"
+                                >
+                                  <span>📎</span> {cl.label}
+                                </Link>
+                              ))}
+                            </div>
+                          ) : null;
+                        })()}
                       </div>
                     </div>
                   </div>

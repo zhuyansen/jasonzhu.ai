@@ -3,6 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Locale } from "@/lib/dictionaries";
 import { getAllDigests, getDigestBySlug } from "@/lib/news";
+import { findCrossLinks } from "@/lib/cross-links";
+import ShareButtons from "@/components/ShareButtons";
 
 const SITE_URL = "https://jasonzhu.ai";
 
@@ -10,6 +12,7 @@ const categoryConfig: Record<string, { color: string; icon: string }> = {
   "Skills 生态": { color: "bg-purple-50 text-purple-700", icon: "🔥" },
   "出海实战": { color: "bg-orange-50 text-orange-700", icon: "🚀" },
   "AI 工具动态": { color: "bg-blue-50 text-blue-700", icon: "🛠️" },
+  "变现案例": { color: "bg-green-50 text-green-700", icon: "💰" },
 };
 
 export async function generateStaticParams() {
@@ -76,10 +79,19 @@ export default async function NewsDetailPage({
 
       {/* Header */}
       <div className="mb-8">
-        <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
-          {digest.title}
-        </h1>
-        <time className="text-sm text-gray-400">{digest.date}</time>
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
+              {digest.title}
+            </h1>
+            <time className="text-sm text-gray-400">{digest.date}</time>
+          </div>
+          <ShareButtons
+            url={`${SITE_URL}/${lang}/news/${slug}`}
+            title={digest.title}
+            summary={digest.jasonSays}
+          />
+        </div>
       </div>
 
       {/* Jason Says — top highlight */}
@@ -136,6 +148,25 @@ export default async function NewsDetailPage({
                   <p className="text-sm text-gray-500 leading-relaxed">
                     {item.summary}
                   </p>
+                  {(() => {
+                    const crossLinks = findCrossLinks(
+                      `${item.title} ${item.summary}`,
+                      lang
+                    );
+                    return crossLinks.length > 0 ? (
+                      <div className="flex items-center gap-2 mt-2">
+                        {crossLinks.map((cl) => (
+                          <Link
+                            key={cl.href}
+                            href={cl.href}
+                            className="inline-flex items-center gap-1 px-2 py-0.5 text-xs rounded-full bg-gray-50 text-blue-600 hover:bg-blue-50 transition-colors"
+                          >
+                            <span>📎</span> {cl.label}
+                          </Link>
+                        ))}
+                      </div>
+                    ) : null;
+                  })()}
                 </div>
               </div>
             </article>

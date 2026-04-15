@@ -12,7 +12,7 @@ export async function generateMetadata({
   const dict = await getDictionary(lang);
   return {
     title: dict.handbook?.title || "Handbook",
-    description: dict.handbook?.desc || "Download the AIP Overseas Social Media Playbook",
+    description: dict.handbook?.subtitle || "Download the AIP Overseas Social Media Playbook",
     alternates: {
       canonical: `https://jasonzhu.ai/${lang}/handbook`,
       languages: { zh: "https://jasonzhu.ai/zh/handbook", en: "https://jasonzhu.ai/en/handbook" },
