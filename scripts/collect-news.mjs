@@ -161,7 +161,11 @@ ${itemsText}
       console.log(`  🔄 Claude API 调用 (attempt ${attempt}/${MAX_RETRIES})...`);
       const response = await anthropic.messages.create({
         model: process.env.CLAUDE_MODEL || "claude-sonnet-4-6",
-        max_tokens: 4096,
+        max_tokens: 16000,
+        thinking: {
+          type: "enabled",
+          budget_tokens: 5000,
+        },
         messages: [{ role: "user", content: prompt }],
       });
 
@@ -206,15 +210,40 @@ ${itemsText}
       // 提取 JSON（可能被 ```json 包裹）
       const jsonMatch = text.match(/\{[\s\S]*\}/);
       if (!jsonMatch) {
-        console.error(`  ⚠️  Attempt ${attempt}: invalid JSON — ${text.slice(0, 100)}`);
+        console.error(`  ⚠️  Attempt ${attempt}: no JSON object found — ${text.slice(0, 100)}`);
         if (attempt < MAX_RETRIES) {
-          await sleep(3000 * attempt);
+          await sleep(5000 * attempt);
           continue;
         }
         throw new Error("Claude response is not valid JSON: " + text.slice(0, 200));
       }
 
-      return JSON.parse(jsonMatch[0]);
+      try {
+        return JSON.parse(jsonMatch[0]);
+      } catch (parseErr) {
+        // 如果 JSON 被截断（max_tokens），尝试修复
+        console.error(`  ⚠️  Attempt ${attempt}: JSON parse error — ${parseErr.message}`);
+        if (response.stop_reason === "max_tokens") {
+          console.log(`  🔧 Trying to fix truncated JSON...`);
+          // 尝试截取到最后一个完整 item 的 }
+          const lastCompleteItem = jsonMatch[0].lastIndexOf('}');
+          if (lastCompleteItem > 0) {
+            const fixed = jsonMatch[0].slice(0, lastCompleteItem + 1) + ']}';
+            try {
+              const result = JSON.parse(fixed);
+              if (result.items && result.items.length >= 3) {
+                console.log(`  ✅ Fixed! Got ${result.items.length} items`);
+                return result;
+              }
+            } catch { /* continue to retry */ }
+          }
+        }
+        if (attempt < MAX_RETRIES) {
+          await sleep(5000 * attempt);
+          continue;
+        }
+        throw parseErr;
+      }
     } catch (err) {
       if (attempt >= MAX_RETRIES) throw err;
       console.error(`  ⚠️  Attempt ${attempt} failed: ${err.message}`);
