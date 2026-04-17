@@ -1,5 +1,70 @@
 [
   {
+    "slug": "2026-04-17",
+    "date": "2026-04-17",
+    "title": "AI 快讯 · 4月17日",
+    "items": [
+      {
+        "title": "OpenAI Codex 重大升级：获得电脑控制、浏览器与图像生成能力",
+        "source": "OpenAI Blog / TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/codex-for-almost-everything",
+        "summary": "OpenAI 大幅升级 Codex，新增 computer use（桌面控制）、应用内浏览、图像生成、记忆与插件支持，直接对标 Anthropic Claude Code。此次更新让 Codex 从单纯代码补全工具演变为全能 AI 开发代理，与 Anthropic 的正面竞争全面升级。"
+      },
+      {
+        "title": "Claude Opus 4.7 发布，LiveBench 排名跻身全球第三",
+        "source": "X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://nitter.net/bindureddy/status/2044813400472260905#m",
+        "summary": "Anthropic 悄然发布 Claude Opus 4.7，性能超越 Opus 4.6 高强度模式，疑似基于全新底座模型训练，可能是更大模型的蒸馏版本。新增任务预算（task budgets）机制，有助于开发者精确控制 API 调用成本，对高频应用场景意义重大。"
+      },
+      {
+        "title": "DeepLearning.AI 联合 JetBrains 发布 Spec 驱动开发新课程",
+        "source": "X/@AndrewYNg",
+        "category": "Skills 生态",
+        "url": "https://www.deeplearning.ai/short-courses/spec-driven-development",
+        "summary": "吴恩达推出《Spec-Driven Development with Coding Agents》免费短课，教开发者用详细规格文档驯服 AI 编程代理，解决 vibe coding 跑偏问题。课程涵盖如何将工作流打包为可移植 Agent Skill，跨 IDE 和 Agent 复用，是 Claude Code / Cursor 用户的进阶必修内容。"
+      },
+      {
+        "title": "OpenAI Agents SDK 重大迭代：原生沙箱执行与模型原生框架上线",
+        "source": "OpenAI Blog",
+        "category": "Skills 生态",
+        "url": "https://openai.com/index/the-next-evolution-of-the-agents-sdk",
+        "summary": "OpenAI 更新 Agents SDK，引入原生沙箱执行环境（native sandbox execution）和模型原生调度框架，支持跨文件与工具的长时运行 Agent，大幅降低构建安全可靠的自动化工作流难度，是面向开发者的重要基础设施升级。"
+      },
+      {
+        "title": "Qwen 3.6 系列正式开源，阿里再发强力模型",
+        "source": "X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://nitter.net/bindureddy/status/2044775824881242463#m",
+        "summary": "阿里 Qwen 团队发布 3.6 系列开源模型，据社区评测性能强劲。开源策略持续加码，为开发者和独立创业者提供高性价比的本地部署选项，进一步压缩闭源 API 的竞争优势。"
+      },
+      {
+        "title": "OpenAI 推出 GPT-Rosalind：专攻药物发现与基因组学的前沿推理模型",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/introducing-gpt-rosalind",
+        "summary": "OpenAI 发布专为生命科学打造的前沿推理模型 GPT-Rosalind，覆盖药物发现、基因组分析、蛋白质推理等研究场景。这是 OpenAI 在垂直行业深度布局的重要信号，也预示 AI 在科学研究领域的商业化正加速落地。"
+      },
+      {
+        "title": "AI 编程创企 Factory 估值达 15 亿美元，融资 1.5 亿美元",
+        "source": "TechCrunch AI",
+        "category": "变现案例",
+        "url": "https://techcrunch.com/2026/04/16/factory-hits-1-5b-valuation-to-build-ai-coding-for-enterprises/",
+        "summary": "成立仅三年的 AI 编程企业服务公司 Factory 完成由 Khosla Ventures 领投的 1.5 亿美元融资，估值升至 15 亿美元。印证了面向企业级 AI 编程工具赛道的强劲资本热度，也为同类 SaaS 创业者提供了重要的估值参考锚点。"
+      },
+      {
+        "title": "Physical Intelligence 发布 π0.7：首次展现零样本任务泛化能力",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/04/16/physical-intelligence-a-hot-robotics-startup-says-its-new-robot-brain-can-figure-out-tasks-it-was-never-taught/",
+        "summary": "机器人 AI 明星公司 Physical Intelligence 发布 π0.7，该模型能够完成从未专门训练过的任务，是通用机器人大脑的早期里程碑。具身智能从「专用工具」走向「通用智能」的技术拐点正在临近。"
+      }
+    ],
+    "jasonSays": "今天最大的戏是 OpenAI vs Anthropic 的全面开战——Codex 直怼 Claude Code，Opus 4.7 悄然反击；真正的 AI 编程军备竞赛已经打响，开发者是最大赢家。",
+    "filename": "2026-04-17.md"
+  },
+  {
     "slug": "2026-04-16",
     "date": "2026-04-16",
     "title": "AI 快讯 · 4月16日",
