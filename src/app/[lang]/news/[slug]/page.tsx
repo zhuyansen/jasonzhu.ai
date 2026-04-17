@@ -66,8 +66,24 @@ export default async function NewsDetailPage({
   const prevDigest = currentIndex < allDigests.length - 1 ? allDigests[currentIndex + 1] : null;
   const nextDigest = currentIndex > 0 ? allDigests[currentIndex - 1] : null;
 
+  const newsArticleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    headline: digest.title,
+    datePublished: digest.date,
+    dateModified: digest.date,
+    author: { "@type": "Person", name: "Jason Zhu", url: SITE_URL },
+    publisher: { "@type": "Person", name: "Jason Zhu", url: SITE_URL },
+    mainEntityOfPage: `${SITE_URL}/${lang}/news/${slug}`,
+    description: digest.jasonSays || `AI 快讯 ${digest.date}`,
+  };
+
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(newsArticleJsonLd) }}
+      />
       {/* Breadcrumb */}
       <nav className="flex items-center gap-2 text-sm text-gray-400 mb-8">
         <Link href={`/${lang}/news`} className="hover:text-blue-600 transition-colors">

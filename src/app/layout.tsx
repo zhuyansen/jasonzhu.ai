@@ -63,6 +63,12 @@ export default async function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="JasonZhu.AI - AI 快讯 RSS"
+          href="/feed/news.xml"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

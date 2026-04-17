@@ -198,6 +198,10 @@ async function main() {
       to: s.email,
       subject,
       html,
+      headers: {
+        "List-Unsubscribe": `<${SITE_URL}/zh/news>`,
+        "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
+      },
     }));
 
     try {

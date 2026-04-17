@@ -32,6 +32,10 @@ const RSS_FEEDS = [
   { url: "https://www.producthunt.com/feed?category=ai", name: "Product Hunt AI" },
   // AI 专题 Hacker News（补充更多关键词）
   { url: "https://hnrss.org/newest?q=LLM+OR+GPT+OR+anthropic+OR+openai+OR+vercel+AI&count=10", name: "HN AI Extended" },
+  // X/Twitter AI KOLs via Nitter RSS
+  { url: "https://nitter.net/AndrewYNg/rss", name: "X/@AndrewYNg" },
+  { url: "https://nitter.net/kaboroevich/rss", name: "X/@kaboroevich" },
+  { url: "https://nitter.net/bindureddy/rss", name: "X/@bindureddy" },
 ];
 
 const CATEGORIES = ["Skills 生态", "出海实战", "AI 工具动态", "变现案例"];
