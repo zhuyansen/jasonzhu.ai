@@ -1,5 +1,70 @@
 [
   {
+    "slug": "2026-04-21",
+    "date": "2026-04-21",
+    "title": "AI 快讯 · 4月21日",
+    "items": [
+      {
+        "title": "Anthropic 获亚马逊再投 50 亿美元，承诺回购 1000 亿 AWS 云服务",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/04/20/anthropic-takes-5b-from-amazon-and-pledges-100b-in-cloud-spending-in-return/",
+        "summary": "亚马逊再向 Anthropic 注资 50 亿美元，而 Anthropic 承诺在 AWS 上消耗 1000 亿美元云算力，形成典型的「循环 AI 交易」结构。此举进一步巩固了 AWS 与 Anthropic 的深度绑定关系，也意味着 Claude 系列模型将以 AWS 为核心基础设施持续扩张。"
+      },
+      {
+        "title": "Claude Code 编排可视化工具开源：实时观测多 Agent 协作流程",
+        "source": "Hacker News",
+        "category": "Skills 生态",
+        "url": "https://github.com/patoles/agent-flow",
+        "summary": "开发者开源了 agent-flow 工具，可实时可视化 Claude Code 的 Agent 编排过程，直观呈现多 Agent 之间的任务分配与协作流。对于正在构建复杂 Claude Code 工作流的开发者来说，这是一个调试与理解 Agent 行为的实用利器。"
+      },
+      {
+        "title": "NSA 秘密使用 Anthropic 受限模型 Mythos，绕过五角大楼争议",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/04/20/nsa-spies-are-reportedly-using-anthropics-mythos-despite-pentagon-feud/",
+        "summary": "据报道，美国国家安全局（NSA）正在使用 Anthropic 专为政府/情报机构开发的受限模型 Mythos，尽管 Anthropic 与五角大楼之间存在合作摩擦。这是 AI 大模型深度渗透国家安全领域的最新信号，也暗示 Anthropic 正在构建面向情报机构的专属产品线。"
+      },
+      {
+        "title": "Google Gemini 入驻 Chrome 浏览器，新增 7 国支持含新加坡、日本",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/04/20/google-rolls-out-gemini-in-chrome-in-seven-new-countries/",
+        "summary": "Google 将 Chrome 内置 Gemini 功能扩展至澳大利亚、印尼、日本、菲律宾、新加坡、韩国和越南，覆盖桌面端与 iOS（日本仅桌面）。此次亚太区大规模铺开，意味着 Gemini 正加速争夺浏览器端 AI 助手的日常使用场景。"
+      },
+      {
+        "title": "Kimi 2.6 开源模型性能媲美闭源大模型，刷新多项基准",
+        "source": "X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://nitter.net/bindureddy/status/2046418661330813015#m",
+        "summary": "月之暗面发布的 Kimi 2.6 在多项基准测试中超越同级别闭源模型，被业内人士认为是当前最强开源模型之一。开源大模型的能力天花板正在被快速抬高，对依赖闭源 API 的开发者成本结构形成直接冲击。"
+      },
+      {
+        "title": "DeepSeek V4 本周或发布，预判将登顶性价比曲线",
+        "source": "X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://nitter.net/bindureddy/status/2045768089661550802#m",
+        "summary": "多位业内人士预测 DeepSeek V4 将在本周发布，并有望以远低于 Claude Opus 4.7 的价格实现顶级性能。Opus 4.7 被指价格较 4.6 翻倍，若 V4 如期落地，将直接重塑高性能模型的价格预期，对开发者选型影响重大。"
+      },
+      {
+        "title": "凯悦酒店全球部署 ChatGPT Enterprise，用 GPT-5 与 Codex 驱动运营",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/hyatt-advances-ai-with-chatgpt-enterprise",
+        "summary": "凯悦酒店集团在全球员工中推行 ChatGPT Enterprise，整合 GPT-5.4 和 Codex 提升员工生产力、运营效率及宾客体验。这是大型传统企业规模化落地 AI 的典型案例，也是 OpenAI 企业客户渗透加速的有力佐证。"
+      },
+      {
+        "title": "AI 智能床垫独角兽 Eight Sleep 进中国：免订阅费，首发定价 19999 元",
+        "source": "36Kr",
+        "category": "出海实战",
+        "url": "https://36kr.com/p/3775892441301511?f=rss",
+        "summary": "估值超 15 亿美元的 AI 睡眠系统品牌 Eight Sleep 正式进入中国市场，推出 Pod 5 系列，起价 19999 元，并针对中国市场免除 199 美元的年度软件订阅费。其用户覆盖马斯克、扎克伯格等知名人士，本次入华的本地化定价策略值得出海 SaaS 参考。"
+      }
+    ],
+    "jasonSays": "本周最大变量是 DeepSeek V4 的潜在落地——如果性价比再次碾压闭源模型，Anthropic 刚拿到的 50 亿融资可能会比预想中烧得更快。",
+    "filename": "2026-04-21.md"
+  },
+  {
     "slug": "2026-04-20",
     "date": "2026-04-20",
     "title": "AI 快讯 · 4月20日",
