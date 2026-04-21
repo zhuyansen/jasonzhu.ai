@@ -48,19 +48,30 @@ const MONTH_DAY = (() => {
 
 // ─── 初始化 ─────────────────────────────────────────
 
-// 支持中转站（aigocode）和原生 Anthropic API
-const apiKey = process.env.ANTHROPIC_AUTH_TOKEN || process.env.ANTHROPIC_API_KEY;
-const baseURL = process.env.ANTHROPIC_BASE_URL || "https://api.aigocode.com";
+// 主客户端：aigocode 中转站
+const proxyKey = process.env.ANTHROPIC_AUTH_TOKEN;
+const proxyURL = process.env.ANTHROPIC_BASE_URL || "https://api.aigocode.com";
 
-if (!apiKey) {
+// 备用客户端：官方 Anthropic API（当中转站不可用时 fallback）
+const officialKey = process.env.ANTHROPIC_API_KEY;
+
+if (!proxyKey && !officialKey) {
   console.error("❌ Missing ANTHROPIC_AUTH_TOKEN or ANTHROPIC_API_KEY");
   process.exit(1);
 }
 
-const anthropic = new Anthropic({
-  apiKey,
-  baseURL,
-});
+const anthropicProxy = proxyKey
+  ? new Anthropic({ apiKey: proxyKey, baseURL: proxyURL })
+  : null;
+
+const anthropicOfficial = officialKey
+  ? new Anthropic({ apiKey: officialKey })
+  : null;
+
+// 主客户端（优先 proxy）
+let anthropic = anthropicProxy || anthropicOfficial;
+
+console.log(`🔌 API 客户端：${anthropicProxy ? `proxy (${proxyURL})` : "official Anthropic"}`);
 const parser = new Parser({ timeout: 10000 });
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -158,12 +169,17 @@ ${itemsText}
 
 只输出 JSON，不要其他内容。`;
 
-  // 重试机制：最多 5 次（aigocode 中转站可能不稳定）
+  // 重试机制：最多 5 次（aigocode 中转站可能不稳定，503 时自动 fallback 到官方 API）
   const MAX_RETRIES = 5;
+  let useOfficial = false; // 是否已切换到官方 API
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+    const client = useOfficial ? anthropicOfficial : anthropic;
+    if (!client) {
+      throw new Error("No available API client");
+    }
     try {
-      console.log(`  🔄 Claude API 调用 (attempt ${attempt}/${MAX_RETRIES})...`);
-      const response = await anthropic.messages.create({
+      console.log(`  🔄 Claude API 调用 (attempt ${attempt}/${MAX_RETRIES}${useOfficial ? " [official]" : " [proxy]"})...`);
+      const response = await client.messages.create({
         model: process.env.CLAUDE_MODEL || "claude-sonnet-4-6",
         max_tokens: 16000,
         thinking: {
@@ -249,8 +265,23 @@ ${itemsText}
         throw parseErr;
       }
     } catch (err) {
+      const errMsg = err.message || String(err);
+      console.error(`  ⚠️  Attempt ${attempt} failed: ${errMsg}`);
+
+      // 503 "No available accounts" — proxy 不可用，切换到官方 API
+      if (
+        errMsg.includes("503") &&
+        errMsg.includes("No available accounts") &&
+        !useOfficial &&
+        anthropicOfficial
+      ) {
+        console.log("  🔀 Proxy 不可用，切换到官方 Anthropic API...");
+        useOfficial = true;
+        // 不等待，立即重试
+        continue;
+      }
+
       if (attempt >= MAX_RETRIES) throw err;
-      console.error(`  ⚠️  Attempt ${attempt} failed: ${err.message}`);
       await sleep(3000 * attempt);
     }
   }
