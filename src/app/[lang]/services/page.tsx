@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
+import CopyWechatButton from "@/components/CopyWechatButton";
 
 export async function generateMetadata({
   params,
@@ -31,12 +32,54 @@ export default async function ServicesPage({
 
   const services = dict.services.items;
 
+  const isZh = lang === "zh";
+  const wechatId = "GoSail_AI";
+
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
       <h1 className="text-3xl font-bold text-gray-900 mb-2">{dict.services.title}</h1>
-      <p className="text-gray-500 mb-12">
+      <p className="text-gray-500 mb-6">
         {dict.services.desc}
       </p>
+
+      {/* Top contact bar — 显眼联系入口 */}
+      <div className="mb-12 rounded-2xl border border-blue-100 bg-gradient-to-br from-blue-50 to-indigo-50 p-5 sm:p-6">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div>
+            <div className="flex items-center gap-2 mb-1">
+              <span className="text-xl">💬</span>
+              <h2 className="text-base font-semibold text-gray-900">
+                {isZh ? "直接联系我，聊聊你的需求" : "Reach out directly to discuss your needs"}
+              </h2>
+            </div>
+            <p className="text-xs text-gray-500">
+              {isZh
+                ? "企业培训 / KOL 合作 / 技术咨询，工作日通常当天回复"
+                : "Training, partnerships, consulting — usually respond within 1 business day"}
+            </p>
+          </div>
+          <div className="flex flex-wrap items-center gap-2 shrink-0">
+            <a
+              href="https://x.com/GoSailGlobal"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-gray-900 text-white rounded-lg text-xs font-medium hover:bg-gray-800 transition-colors"
+            >
+              <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+              X / Twitter
+            </a>
+            <CopyWechatButton wechatId={wechatId} isZh={isZh} />
+            <Link
+              href={`/${lang}/about`}
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-white border border-gray-200 text-gray-700 rounded-lg text-xs font-medium hover:bg-gray-50 transition-colors"
+            >
+              {isZh ? "更多方式" : "More"}
+            </Link>
+          </div>
+        </div>
+      </div>
 
       <div className="space-y-8">
         {services.map((service) => (
@@ -104,7 +147,7 @@ export default async function ServicesPage({
         <p className="text-gray-500 mb-6">
           {dict.services.ctaDesc}
         </p>
-        <div className="flex justify-center gap-3">
+        <div className="flex flex-wrap justify-center gap-3">
           <a
             href="https://x.com/GoSailGlobal"
             target="_blank"
@@ -113,6 +156,7 @@ export default async function ServicesPage({
           >
             {dict.services.ctaDM}
           </a>
+          <CopyWechatButton wechatId={wechatId} isZh={isZh} />
           <Link
             href={`/${lang}/about`}
             className="px-5 py-2.5 bg-white border border-gray-200 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-50 transition-colors"
