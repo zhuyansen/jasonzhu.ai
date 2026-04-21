@@ -236,45 +236,41 @@ export default function NewsListClient({ digests, lang }: Props) {
                   <Link
                     key={digest.slug}
                     href={`/${lang}/news/${digest.slug}`}
-                    className="group flex items-center justify-between p-4 border border-gray-100 rounded-xl hover:border-blue-200 hover:bg-blue-50/30 transition-all"
+                    className="group flex items-center gap-4 p-4 border border-gray-100 rounded-xl hover:border-blue-200 hover:bg-blue-50/30 transition-all"
                   >
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-gray-50 group-hover:bg-blue-50 rounded-lg flex flex-col items-center justify-center transition-colors">
-                        <span className="text-xs text-gray-400 leading-none">
-                          {digest.date.split("-")[1]}
-                          {isZh ? "月" : "/"}
-                        </span>
-                        <span className="text-lg font-bold text-gray-700 leading-none">
-                          {parseInt(digest.date.split("-")[2])}
-                        </span>
-                      </div>
-                      <div>
-                        <h3 className="text-sm font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
-                          {digest.title}
-                        </h3>
-                        <p className="text-xs text-gray-400 mt-0.5 line-clamp-1">
-                          {digest.jasonSays ||
-                            `${digest.items.length} ${isZh ? "条快讯" : "items"}`}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="hidden sm:flex items-center gap-1.5">
-                        {[...new Set(digest.items.map((i) => i.category))]
-                          .slice(0, 3)
-                          .map((cat) => {
-                            const cfg = categoryConfig[cat];
-                            return cfg ? (
-                              <span key={cat} className="text-xs">
-                                {cfg.icon}
-                              </span>
-                            ) : null;
-                          })}
-                      </div>
-                      <span className="text-xs text-gray-300 group-hover:text-blue-400 transition-colors">
-                        →
+                    <div className="w-14 h-14 bg-gray-50 group-hover:bg-blue-50 rounded-lg flex flex-col items-center justify-center transition-colors shrink-0">
+                      <span className="text-[10px] uppercase tracking-wide text-gray-400 leading-none">
+                        {digest.date.split("-")[1]}
+                        {isZh ? "月" : ""}
+                      </span>
+                      <span className="text-xl font-bold text-gray-700 leading-none mt-1">
+                        {parseInt(digest.date.split("-")[2])}
                       </span>
                     </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-sm font-semibold text-gray-900 group-hover:text-blue-600 transition-colors truncate">
+                        {digest.title}
+                      </h3>
+                      <p className="text-xs text-gray-400 mt-1 line-clamp-1">
+                        {digest.jasonSays ||
+                          `${digest.items.length} ${isZh ? "条快讯" : "items"}`}
+                      </p>
+                    </div>
+                    <div className="hidden sm:flex items-center gap-1 shrink-0">
+                      {[...new Set(digest.items.map((i) => i.category))]
+                        .slice(0, 4)
+                        .map((cat) => {
+                          const cfg = categoryConfig[cat];
+                          return cfg ? (
+                            <span key={cat} className="text-sm" title={cat}>
+                              {cfg.icon}
+                            </span>
+                          ) : null;
+                        })}
+                    </div>
+                    <span className="text-gray-300 group-hover:text-blue-500 group-hover:translate-x-0.5 transition-all shrink-0">
+                      →
+                    </span>
                   </Link>
                 ))}
               </div>
