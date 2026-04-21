@@ -13,6 +13,7 @@ const categoryConfig: Record<string, { color: string; icon: string }> = {
   "出海实战": { color: "bg-orange-50 text-orange-700", icon: "🚀" },
   "AI 工具动态": { color: "bg-blue-50 text-blue-700", icon: "🛠️" },
   "变现案例": { color: "bg-green-50 text-green-700", icon: "💰" },
+  "AI 论文": { color: "bg-indigo-50 text-indigo-700", icon: "📚" },
 };
 
 export async function generateStaticParams() {

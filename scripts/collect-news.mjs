@@ -36,9 +36,11 @@ const RSS_FEEDS = [
   { url: "https://nitter.net/AndrewYNg/rss", name: "X/@AndrewYNg" },
   { url: "https://nitter.net/kaboroevich/rss", name: "X/@kaboroevich" },
   { url: "https://nitter.net/bindureddy/rss", name: "X/@bindureddy" },
+  // 老牌 AI Newsletter
+  { url: "https://www.bensbites.com/feed", name: "Ben's Bites" },
 ];
 
-const CATEGORIES = ["Skills 生态", "出海实战", "AI 工具动态", "变现案例"];
+const CATEGORIES = ["Skills 生态", "出海实战", "AI 工具动态", "变现案例", "AI 论文"];
 
 const TODAY = new Date().toISOString().split("T")[0];
 const MONTH_DAY = (() => {
@@ -122,6 +124,29 @@ async function fetchAllFeeds() {
     }
   }
 
+  // 额外采集：HuggingFace Daily Papers（无 RSS，走 JSON API）
+  try {
+    const res = await fetch("https://huggingface.co/api/daily_papers?limit=8", {
+      headers: { "User-Agent": "Mozilla/5.0 jasonzhu-ai-news-bot" },
+    });
+    if (res.ok) {
+      const papers = await res.json();
+      const hfItems = (papers || []).slice(0, 8).map((p) => ({
+        title: p.title || p.paper?.title || "",
+        link: p.paper?.id ? `https://huggingface.co/papers/${p.paper.id}` : "",
+        snippet: (p.summary || p.paper?.ai_summary || "").slice(0, 500),
+        source: "HuggingFace Papers",
+        pubDate: p.publishedAt || p.paper?.publishedAt || "",
+      })).filter((it) => it.title && it.link);
+      allItems.push(...hfItems);
+      console.log(`  📡 HuggingFace Papers: ${hfItems.length} items`);
+    } else {
+      console.log(`  ⚠️  HuggingFace Papers: HTTP ${res.status}`);
+    }
+  } catch (err) {
+    console.log(`  ⚠️  HuggingFace Papers: failed (${err.message})`);
+  }
+
   console.log(`\n📥 Total raw items: ${allItems.length}`);
   return allItems;
 }
@@ -143,7 +168,8 @@ async function curateWithClaude(rawItems) {
 2. 出海 SaaS / 独立开发者增长案例（归类：出海实战）
 3. AI 赚钱案例 / MRR 突破 / 变现策略（归类：变现案例）
 4. 主流 AI 工具重大更新 — ChatGPT/Claude/Cursor/Gemini 等（归类：AI 工具动态）
-5. AI 行业重大事件或研究突破（归类：AI 工具动态）
+5. AI 行业重大事件（归类：AI 工具动态）
+6. 来自 HuggingFace Papers 的重要研究突破或新模型论文（归类：AI 论文）—— 注意：摘要要把学术黑话翻译成"为什么对开发者重要"
 
 ## 排除标准
 - 纯营销推广内容
@@ -159,7 +185,7 @@ ${itemsText}
     {
       "title": "简洁有力的中文标题（15-25字）",
       "source": "来源名称",
-      "category": "Skills 生态 | 出海实战 | AI 工具动态 | 变现案例",
+      "category": "Skills 生态 | 出海实战 | AI 工具动态 | 变现案例 | AI 论文",
       "url": "原始链接",
       "summary": "一段话中文摘要（50-100字），说清楚是什么+为什么重要"
     }
