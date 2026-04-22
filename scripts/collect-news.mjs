@@ -294,16 +294,24 @@ ${itemsText}
       const errMsg = err.message || String(err);
       console.error(`  ⚠️  Attempt ${attempt} failed: ${errMsg}`);
 
-      // 503 "No available accounts" — proxy 不可用，切换到官方 API
-      if (
-        errMsg.includes("503") &&
-        errMsg.includes("No available accounts") &&
+      // Proxy 不可用（503 无账号 / 524 网关超时 / 502 / 504 / ETIMEDOUT / ECONNRESET）
+      // 立即切到官方 API，避免在挂掉的代理上反复重试耗尽 15min job 预算
+      const isProxyOutage =
         !useOfficial &&
-        anthropicOfficial
-      ) {
-        console.log("  🔀 Proxy 不可用，切换到官方 Anthropic API...");
+        anthropicOfficial &&
+        (
+          (errMsg.includes("503") && errMsg.includes("No available accounts")) ||
+          errMsg.includes("524") ||
+          errMsg.includes("502 Bad Gateway") ||
+          errMsg.includes("504 Gateway") ||
+          errMsg.includes("ETIMEDOUT") ||
+          errMsg.includes("ECONNRESET") ||
+          errMsg.includes("origin web server timed out") ||
+          errMsg.includes("Cloudflare")
+        );
+      if (isProxyOutage) {
+        console.log(`  🔀 Proxy 故障 (${errMsg.slice(0, 80)}...)，切换到官方 Anthropic API...`);
         useOfficial = true;
-        // 不等待，立即重试
         continue;
       }
 
