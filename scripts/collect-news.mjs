@@ -197,25 +197,25 @@ ${itemsText}
 
 只输出 JSON，不要其他内容。`;
 
-  // 重试机制：最多 5 次（aigocode 中转站可能不稳定，503 时自动 fallback 到官方 API）
-  const MAX_RETRIES = 5;
-  let useOfficial = false; // 是否已切换到官方 API
+  // 重试机制：最多 6 次（aigocode 中转站不稳定，524 时拉长等待 + 第 2 次起关掉 thinking 降低上游耗时）
+  const MAX_RETRIES = 6;
+  let disableThinking = false; // 524 后关掉 thinking 减轻上游负担
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
-    const client = useOfficial ? anthropicOfficial : anthropic;
+    const client = anthropic;
     if (!client) {
       throw new Error("No available API client");
     }
     try {
-      console.log(`  🔄 Claude API 调用 (attempt ${attempt}/${MAX_RETRIES}${useOfficial ? " [official]" : " [proxy]"})...`);
-      const response = await client.messages.create({
+      console.log(`  🔄 Claude API 调用 (attempt ${attempt}/${MAX_RETRIES} [proxy${disableThinking ? ", no-thinking" : ""}])...`);
+      const requestParams = {
         model: process.env.CLAUDE_MODEL || "claude-sonnet-4-6",
         max_tokens: 16000,
-        thinking: {
-          type: "enabled",
-          budget_tokens: 5000,
-        },
         messages: [{ role: "user", content: prompt }],
-      });
+      };
+      if (!disableThinking) {
+        requestParams.thinking = { type: "enabled", budget_tokens: 5000 };
+      }
+      const response = await client.messages.create(requestParams);
 
       console.log(`  📋 Response stop_reason: ${response.stop_reason}, content blocks: ${response.content?.length || 0}`);
 
@@ -296,29 +296,28 @@ ${itemsText}
       const errMsg = err.message || String(err);
       console.error(`  ⚠️  Attempt ${attempt} failed: ${errMsg}`);
 
-      // Proxy 不可用（503 无账号 / 524 网关超时 / 502 / 504 / ETIMEDOUT / ECONNRESET）
-      // 立即切到官方 API，避免在挂掉的代理上反复重试耗尽 15min job 预算
-      const isProxyOutage =
-        !useOfficial &&
-        anthropicOfficial &&
-        (
-          (errMsg.includes("503") && errMsg.includes("No available accounts")) ||
-          errMsg.includes("524") ||
-          errMsg.includes("502 Bad Gateway") ||
-          errMsg.includes("504 Gateway") ||
-          errMsg.includes("ETIMEDOUT") ||
-          errMsg.includes("ECONNRESET") ||
-          errMsg.includes("origin web server timed out") ||
-          errMsg.includes("Cloudflare")
-        );
-      if (isProxyOutage) {
-        console.log(`  🔀 Proxy 故障 (${errMsg.slice(0, 80)}...)，切换到官方 Anthropic API...`);
-        useOfficial = true;
-        continue;
-      }
+      // 上游超时（524 / 502 / 504 / ETIMEDOUT）：关掉 thinking 缩短响应，并拉长退避到 30s/60s/90s/120s/150s
+      const isUpstreamTimeout =
+        errMsg.includes("524") ||
+        errMsg.includes("502 Bad Gateway") ||
+        errMsg.includes("504 Gateway") ||
+        errMsg.includes("ETIMEDOUT") ||
+        errMsg.includes("ECONNRESET") ||
+        errMsg.includes("origin web server timed out");
 
       if (attempt >= MAX_RETRIES) throw err;
-      await sleep(3000 * attempt);
+
+      if (isUpstreamTimeout) {
+        if (!disableThinking) {
+          console.log(`  🔀 上游超时 (${errMsg.slice(0, 80)}...)，关闭 thinking 减轻负担`);
+          disableThinking = true;
+        }
+        const waitMs = 30000 * attempt; // 30s, 60s, 90s, 120s, 150s
+        console.log(`  ⏳ 等待 ${waitMs / 1000}s 让代理上游恢复...`);
+        await sleep(waitMs);
+      } else {
+        await sleep(3000 * attempt);
+      }
     }
   }
 }
