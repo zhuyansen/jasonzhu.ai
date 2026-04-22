@@ -66,8 +66,10 @@ const anthropicProxy = proxyKey
   ? new Anthropic({ apiKey: proxyKey, baseURL: proxyURL })
   : null;
 
+// 显式覆盖 baseURL — Anthropic SDK 会自动读 ANTHROPIC_BASE_URL 环境变量
+// 不显式覆盖会导致 official 客户端也走代理
 const anthropicOfficial = officialKey
-  ? new Anthropic({ apiKey: officialKey })
+  ? new Anthropic({ apiKey: officialKey, baseURL: "https://api.anthropic.com" })
   : null;
 
 // 主客户端（优先 proxy）
