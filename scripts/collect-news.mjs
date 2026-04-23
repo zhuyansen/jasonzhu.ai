@@ -199,7 +199,9 @@ ${itemsText}
 
   // 重试机制：最多 6 次（aigocode 中转站不稳定，524 时拉长等待 + 第 2 次起关掉 thinking 降低上游耗时）
   const MAX_RETRIES = 6;
-  let disableThinking = false; // 524 后关掉 thinking 减轻上游负担
+  // 默认关 thinking：news digest 不需要复杂推理；
+  // 而且 aigocode 代理在 thinking+text 混合输出时常截断 text（4/23 cron 6 次全挂在 ~300 字符 JSON 截断）
+  let disableThinking = true;
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
     const client = anthropic;
     if (!client) {
