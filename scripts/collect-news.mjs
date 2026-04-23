@@ -202,15 +202,21 @@ ${itemsText}
   // 默认关 thinking：news digest 不需要复杂推理；
   // 而且 aigocode 代理在 thinking+text 混合输出时常截断 text（4/23 cron 6 次全挂在 ~300 字符 JSON 截断）
   let disableThinking = true;
+  // Model fallback chain: 代理对模型名敏感，400 model not supported 时自动降级
+  const modelChain = process.env.CLAUDE_MODEL
+    ? [process.env.CLAUDE_MODEL]
+    : ["claude-sonnet-4-6", "claude-sonnet-4-5", "claude-opus-4-5", "claude-3-5-sonnet-latest"];
+  let modelIdx = 0;
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
     const client = anthropic;
     if (!client) {
       throw new Error("No available API client");
     }
     try {
-      console.log(`  🔄 Claude API 调用 (attempt ${attempt}/${MAX_RETRIES} [proxy${disableThinking ? ", no-thinking" : ""}])...`);
+      const currentModel = modelChain[modelIdx];
+      console.log(`  🔄 Claude API 调用 (attempt ${attempt}/${MAX_RETRIES} [proxy${disableThinking ? ", no-thinking" : ""}, ${currentModel}])...`);
       const requestParams = {
-        model: process.env.CLAUDE_MODEL || "claude-sonnet-4-6",
+        model: currentModel,
         max_tokens: 16000,
         messages: [{ role: "user", content: prompt }],
       };
@@ -306,6 +312,17 @@ ${itemsText}
         errMsg.includes("ETIMEDOUT") ||
         errMsg.includes("ECONNRESET") ||
         errMsg.includes("origin web server timed out");
+
+      // Model 不被代理支持：自动降级到下一个候选 model
+      const isModelUnsupported =
+        errMsg.includes("400") &&
+        (errMsg.includes("model is not supported") || errMsg.includes("model_not_found"));
+
+      if (isModelUnsupported && modelIdx < modelChain.length - 1) {
+        modelIdx++;
+        console.log(`  🔀 Model 不被代理支持，降级到 ${modelChain[modelIdx]}`);
+        continue;
+      }
 
       if (attempt >= MAX_RETRIES) throw err;
 
