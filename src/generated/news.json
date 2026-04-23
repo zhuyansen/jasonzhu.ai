@@ -1,5 +1,70 @@
 [
   {
+    "slug": "2026-04-23",
+    "date": "2026-04-23",
+    "title": "AI 快讯 · 4月23日",
+    "items": [
+      {
+        "title": "Better-skills：Agent Skill 版本管理工具正式开源",
+        "source": "Hacker News",
+        "category": "Skills 生态",
+        "url": "https://github.com/ocherry341/better-skills",
+        "summary": "开发者自建的 Agent Skill 管理工具，借鉴 pnpm 思路实现 Skill 集中存储、多 Profile 共享、版本回滚和即时切换。解决了手动管理 Agent Skill 混乱、跨项目复用困难的痛点，对重度使用 Claude Code 或多 Agent 工作流的开发者极具参考价值。"
+      },
+      {
+        "title": "ChatGPT Workspace Agents 发布，Codex 驱动团队级自动化",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/introducing-workspace-agents-in-chatgpt",
+        "summary": "OpenAI 推出 Workspace Agents，基于 Codex 在云端运行，可跨工具自动化复杂工作流，面向团队级规模使用。同步开放 WebSockets 支持以降低 API 延迟，标志着 ChatGPT 从对话工具向企业 Agent 平台正式转型。"
+      },
+      {
+        "title": "Cursor 估值 600 亿美元被 SpaceX 收购？内幕曝光",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/04/22/how-spacex-preempted-a-2b-fundraise-with-a-60b-buyout-offer/",
+        "summary": "Cursor 原本即将完成 20 亿美元融资，但 SpaceX 突然抛出 100 亿美元「合作费」并开出 600 亿美元收购路径，导致融资谈判中止。这一事件揭示 AI 编程工具赛道的战略价值已被顶级科技公司高度重视。"
+      },
+      {
+        "title": "Claude 新设计师定位 + Opus 4.7 模型悄然上线",
+        "source": "Ben's Bites",
+        "category": "AI 工具动态",
+        "url": "https://www.bensbites.com/p/thats-my-designer-claude",
+        "summary": "Anthropic 为 Claude 推出新的「设计师」定位能力，并同步发布 Opus 4.7 模型。Kimi K2.6 在独立评测中声称达到 Opus 4.7 水平且成本低 10 倍，两者直接形成对比，开发者选型值得关注。"
+      },
+      {
+        "title": "Kimi K2.6 声称超越 Opus 4.7，成本仅十分之一",
+        "source": "X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://nitter.net/bindureddy/status/2046987327957020909#m",
+        "summary": "月之暗面 Kimi K2.6 在 LiveBench（难以刷分的榜单）上得分超过 Claude Opus 4.7，在推理、编程和 Agentic Coding 上表现接近，但成本低 10 倍。若数据属实，将对高性价比 Agent 部署场景产生重大影响。"
+      },
+      {
+        "title": "Ribbi：一只「青蛙 AI」一周吸引 4 万用户申请",
+        "source": "36Kr",
+        "category": "变现案例",
+        "url": "https://36kr.com/p/3778121523025154?f=rss",
+        "summary": "AI 内容创作工具 Ribbi 以对话框为唯一交互界面，自动将用户创作流程沉淀为 Skill 并持续优化。封测一周收到 4 万用户申请，内测码被炒至 200 元。「反常规 UI + 强人格化 Agent」的 PMF 验证路径对独立开发者有直接借鉴意义。"
+      },
+      {
+        "title": "Google Cloud 发布第八代 TPU，正面挑战 Nvidia",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/04/22/google-cloud-next-new-tpu-ai-chips-compete-with-nvidia/",
+        "summary": "Google Cloud 推出两款第八代专用 TPU（8T 推理 / 8i 训练），速度更快、成本更低，专为 Agentic 时代设计。Google 同时表示仍会拥抱 Nvidia，意在以双轨策略在 AI 算力市场扩大份额。"
+      },
+      {
+        "title": "DR-Venus：仅用 1 万条开源数据训练出 4B 级深度研究 Agent",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2604.19859",
+        "summary": "研究证明：用极少量高质量开源数据也能训练出媲美大模型的小型深度研究 Agent。对独立开发者意味着——未来在边缘设备或低成本环境部署具备完整研究推理能力的 Agent 有望成真，隐私和成本问题同时得到解决。"
+      }
+    ],
+    "jasonSays": "今天最炸裂的不是哪个新模型，而是 Cursor 被 SpaceX 600 亿收购的传闻——AI 编程工具已成战略资产，下一个被抢购的会是谁？",
+    "filename": "2026-04-23.md"
+  },
+  {
     "slug": "2026-04-22",
     "date": "2026-04-22",
     "title": "AI 快讯 · 4月22日",
