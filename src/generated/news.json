@@ -5,63 +5,63 @@
     "title": "AI 快讯 · 4月23日",
     "items": [
       {
-        "title": "Better-skills：Agent Skill 版本管理工具正式开源",
-        "source": "Hacker News",
+        "title": "claude-context：让 Claude Code 读懂你整个代码库",
+        "source": "GitHub Trending",
         "category": "Skills 生态",
-        "url": "https://github.com/ocherry341/better-skills",
-        "summary": "开发者自建的 Agent Skill 管理工具，借鉴 pnpm 思路实现 Skill 集中存储、多 Profile 共享、版本回滚和即时切换。解决了手动管理 Agent Skill 混乱、跨项目复用困难的痛点，对重度使用 Claude Code 或多 Agent 工作流的开发者极具参考价值。"
+        "url": "https://github.com/zilliztech/claude-context",
+        "summary": "Zilliz 开源的 MCP 插件，通过语义代码搜索让 Claude Code 拥有整个代码库的上下文感知能力。对于大型项目开发者来说，这意味着 AI 编程助手不再是「局部盲人」，可以真正理解跨文件的依赖和逻辑关系。"
       },
       {
-        "title": "ChatGPT Workspace Agents 发布，Codex 驱动团队级自动化",
+        "title": "OpenAI 推出 Workspace Agents：Codex 驱动的团队自动化工作流",
         "source": "OpenAI Blog",
         "category": "AI 工具动态",
         "url": "https://openai.com/index/introducing-workspace-agents-in-chatgpt",
-        "summary": "OpenAI 推出 Workspace Agents，基于 Codex 在云端运行，可跨工具自动化复杂工作流，面向团队级规模使用。同步开放 WebSockets 支持以降低 API 延迟，标志着 ChatGPT 从对话工具向企业 Agent 平台正式转型。"
+        "summary": "ChatGPT 上线 Workspace Agents，基于 Codex 构建，可在云端自动执行复杂工作流、连接多种工具，面向团队协作场景。同步开放 WebSocket 加速方案，通过连接级缓存显著降低 Agent 循环的 API 延迟。"
       },
       {
-        "title": "Cursor 估值 600 亿美元被 SpaceX 收购？内幕曝光",
+        "title": "Cursor 拒绝 20 亿融资，传 SpaceX 开价 600 亿收购",
         "source": "TechCrunch AI",
         "category": "AI 工具动态",
         "url": "https://techcrunch.com/2026/04/22/how-spacex-preempted-a-2b-fundraise-with-a-60b-buyout-offer/",
-        "summary": "Cursor 原本即将完成 20 亿美元融资，但 SpaceX 突然抛出 100 亿美元「合作费」并开出 600 亿美元收购路径，导致融资谈判中止。这一事件揭示 AI 编程工具赛道的战略价值已被顶级科技公司高度重视。"
+        "summary": "Cursor 本周原本将完成 20 亿美元融资，但在 SpaceX 提出 100 亿「合作费」并给出 600 亿收购路径后叫停谈判。AI 编程工具的战略价值被推向新高度，这笔潜在并购若成真将重塑整个 AI 开发工具赛道。"
       },
       {
-        "title": "Claude 新设计师定位 + Opus 4.7 模型悄然上线",
-        "source": "Ben's Bites",
-        "category": "AI 工具动态",
-        "url": "https://www.bensbites.com/p/thats-my-designer-claude",
-        "summary": "Anthropic 为 Claude 推出新的「设计师」定位能力，并同步发布 Opus 4.7 模型。Kimi K2.6 在独立评测中声称达到 Opus 4.7 水平且成本低 10 倍，两者直接形成对比，开发者选型值得关注。"
-      },
-      {
-        "title": "Kimi K2.6 声称超越 Opus 4.7，成本仅十分之一",
+        "title": "Kimi K2.6 基准超越 Claude Opus 4.7，成本仅十分之一",
         "source": "X/@bindureddy",
         "category": "AI 工具动态",
         "url": "https://nitter.net/bindureddy/status/2046987327957020909#m",
-        "summary": "月之暗面 Kimi K2.6 在 LiveBench（难以刷分的榜单）上得分超过 Claude Opus 4.7，在推理、编程和 Agentic Coding 上表现接近，但成本低 10 倍。若数据属实，将对高性价比 Agent 部署场景产生重大影响。"
+        "summary": "月之暗面 Kimi K2.6 在无法刷榜的 LiveBench 上超过 Claude Opus 4.7，推理和编码能力接近，而成本仅为后者十分之一。对开发者来说，这是一个性价比极高的 Opus 替代选项，开源生态正在快速逼近顶级闭源模型。"
       },
       {
-        "title": "Ribbi：一只「青蛙 AI」一周吸引 4 万用户申请",
+        "title": "OpenAI 发布隐私过滤开源模型，PII 检测达 SOTA 精度",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/introducing-openai-privacy-filter",
+        "summary": "OpenAI 开源了一个专门检测和脱敏文本中个人隐私信息（PII）的模型，精度达到业界最高水平。对于处理用户数据的 SaaS 产品和出海应用，这是一个可直接集成的合规利器，尤其适合 GDPR 场景。"
+      },
+      {
+        "title": "Ribbi：一个对话框+一只青蛙，一周斩获 4 万用户申请",
         "source": "36Kr",
         "category": "变现案例",
         "url": "https://36kr.com/p/3778121523025154?f=rss",
-        "summary": "AI 内容创作工具 Ribbi 以对话框为唯一交互界面，自动将用户创作流程沉淀为 Skill 并持续优化。封测一周收到 4 万用户申请，内测码被炒至 200 元。「反常规 UI + 强人格化 Agent」的 PMF 验证路径对独立开发者有直接借鉴意义。"
+        "summary": "AI 内容创作工具 Ribbi 封测一周收到 4 万用户申请，内测码被炒至 200 元。产品无画布、只有对话框，能自动将创作流程沉淀为 Skill 并监测社媒数据优化后续内容。极简交互+人格化 AI 的差异化打法值得独立开发者借鉴。"
       },
       {
-        "title": "Google Cloud 发布第八代 TPU，正面挑战 Nvidia",
-        "source": "TechCrunch AI",
-        "category": "AI 工具动态",
-        "url": "https://techcrunch.com/2026/04/22/google-cloud-next-new-tpu-ai-chips-compete-with-nvidia/",
-        "summary": "Google Cloud 推出两款第八代专用 TPU（8T 推理 / 8i 训练），速度更快、成本更低，专为 Agentic 时代设计。Google 同时表示仍会拥抱 Nvidia，意在以双轨策略在 AI 算力市场扩大份额。"
-      },
-      {
-        "title": "DR-Venus：仅用 1 万条开源数据训练出 4B 级深度研究 Agent",
+        "title": "论文：AI「科学家」会出结果，但不会做科学推理",
         "source": "HuggingFace Papers",
         "category": "AI 论文",
-        "url": "https://huggingface.co/papers/2604.19859",
-        "summary": "研究证明：用极少量高质量开源数据也能训练出媲美大模型的小型深度研究 Agent。对独立开发者意味着——未来在边缘设备或低成本环境部署具备完整研究推理能力的 Agent 有望成真，隐私和成本问题同时得到解决。"
+        "url": "https://huggingface.co/papers/2604.18805",
+        "summary": "研究者对 LLM 科学 Agent 做了 25000+ 次运行评测，发现它们能产出结论，但推理过程并不符合科学的自我纠错规范。对开发者的启示：别把 AI Agent 当黑盒科学家用，流程设计和结果验证机制必须由人来把控。"
+      },
+      {
+        "title": "论文：测试时扩展计算量可显著提升长流程 Coding Agent 性能",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2604.16529",
+        "summary": "研究提出如何在推理阶段扩大计算投入来提升 Coding Agent 在复杂长任务中的表现，核心挑战是如何把多次尝试的「经验」有效编码给模型。对构建 AI 编程工具和 Agent 框架的开发者，这给出了提升稳定性的新方向。"
       }
     ],
-    "jasonSays": "今天最炸裂的不是哪个新模型，而是 Cursor 被 SpaceX 600 亿收购的传闻——AI 编程工具已成战略资产，下一个被抢购的会是谁？",
+    "jasonSays": "今天最大的震撼不是某个模型更新，而是 Cursor 拒了 20 亿融资去谈 600 亿收购——AI 编程工具的天花板，可能远比我们想象的高。",
     "filename": "2026-04-23.md"
   },
   {
