@@ -38,6 +38,12 @@ const RSS_FEEDS = [
   { url: "https://nitter.net/bindureddy/rss", name: "X/@bindureddy" },
   // 老牌 AI Newsletter
   { url: "https://www.bensbites.com/feed", name: "Ben's Bites" },
+  // 借鉴自 cclank/news-aggregator-skill 的高价值 newsletter / 趋势源
+  { url: "https://www.latent.space/feed", name: "Latent Space" },
+  { url: "https://www.interconnects.ai/feed", name: "Interconnects" },
+  { url: "https://www.oneusefulthing.org/feed", name: "One Useful Thing" },
+  { url: "https://chinai.substack.com/feed", name: "ChinAI" },
+  { url: "https://mshibanami.github.io/GitHubTrendingRSS/daily/all.xml", name: "GitHub Trending" },
 ];
 
 const CATEGORIES = ["Skills 生态", "出海实战", "AI 工具动态", "变现案例", "AI 论文"];
