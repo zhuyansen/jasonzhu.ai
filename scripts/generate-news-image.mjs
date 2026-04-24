@@ -17,6 +17,24 @@ if (!APIMART_API_KEY) {
   process.exit(1);
 }
 
+// Per-request timeout 防止 apimart 单次请求挂住
+async function fetchWithTimeout(url, opts = {}, timeoutMs = 60000) {
+  const ctl = new AbortController();
+  const t = setTimeout(() => ctl.abort(), timeoutMs);
+  try {
+    return await fetch(url, { ...opts, signal: ctl.signal });
+  } finally {
+    clearTimeout(t);
+  }
+}
+
+// 全局超时保险：8 分钟没出图就放弃
+const GLOBAL_TIMEOUT = setTimeout(() => {
+  console.error("❌ 全局超时 8min，放弃");
+  process.exit(1);
+}, 8 * 60 * 1000);
+GLOBAL_TIMEOUT.unref();
+
 function todayCN() {
   // 北京时间日期
   const d = new Date(Date.now() + 8 * 3600 * 1000);
@@ -80,7 +98,7 @@ The text content listed above MUST appear EXACTLY as written. Render Chinese cha
 console.log(`📝 Prompt 字符数: ${prompt.length}`);
 
 // 1) Submit
-const submitRes = await fetch(`${APIMART_BASE}/v1/images/generations`, {
+const submitRes = await fetchWithTimeout(`${APIMART_BASE}/v1/images/generations`, {
   method: "POST",
   headers: {
     Authorization: `Bearer ${APIMART_API_KEY}`,
@@ -112,7 +130,7 @@ let imageUrl = null;
 const maxPolls = 30; // 30 * 10s = 5 min
 for (let i = 1; i <= maxPolls; i++) {
   await new Promise((r) => setTimeout(r, 10000));
-  const pollRes = await fetch(`${APIMART_BASE}/v1/tasks/${taskId}`, {
+  const pollRes = await fetchWithTimeout(`${APIMART_BASE}/v1/tasks/${taskId}`, {
     headers: { Authorization: `Bearer ${APIMART_API_KEY}` },
   });
   const pollJson = await pollRes.json();
@@ -138,7 +156,7 @@ if (!imageUrl) {
 console.log(`🖼  图片 URL: ${imageUrl}`);
 
 // 3) Download
-const imgRes = await fetch(imageUrl);
+const imgRes = await fetchWithTimeout(imageUrl);
 if (!imgRes.ok) {
   console.error(`❌ 下载失败 HTTP ${imgRes.status}`);
   process.exit(1);
