@@ -125,11 +125,12 @@ if (!taskId) {
 }
 console.log(`📨 task_id: ${taskId}`);
 
-// 2) Poll
+// 2) Poll —— gpt-image-2 实际生成 ~75-120s，先睡 30s 再 5s 轮询
+await new Promise((r) => setTimeout(r, 30000));
 let imageUrl = null;
-const maxPolls = 30; // 30 * 10s = 5 min
+const maxPolls = 60; // 60 * 5s = 5 min（外加 30s 初始 sleep）
 for (let i = 1; i <= maxPolls; i++) {
-  await new Promise((r) => setTimeout(r, 10000));
+  await new Promise((r) => setTimeout(r, 5000));
   const pollRes = await fetchWithTimeout(`${APIMART_BASE}/v1/tasks/${taskId}`, {
     headers: { Authorization: `Bearer ${APIMART_API_KEY}` },
   });
