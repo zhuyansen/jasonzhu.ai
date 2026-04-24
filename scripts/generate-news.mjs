@@ -58,6 +58,10 @@ const digests = files.map((filename) => {
     if (item.title) items.push(item);
   }
 
+  // Auto-detect cover image at public/news/<slug>.png
+  const coverImagePath = path.join(process.cwd(), "public/news", `${slug}.png`);
+  const hasCover = fs.existsSync(coverImagePath);
+
   return {
     slug,
     date: data.date || slug, // slug is typically the date: 2026-04-14
@@ -65,6 +69,8 @@ const digests = files.map((filename) => {
     items,
     jasonSays: data.jasonSays || "",
     filename,
+    ...(data.tweetUrl ? { tweetUrl: data.tweetUrl } : {}),
+    ...(hasCover ? { coverImage: `/news/${slug}.png` } : {}),
   };
 });
 

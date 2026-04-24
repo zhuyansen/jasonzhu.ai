@@ -36,6 +36,10 @@ export async function generateMetadata({
   const digest = getDigestBySlug(slug);
   if (!digest) return { title: "Not Found" };
 
+  const ogImages = digest.coverImage
+    ? [{ url: `${SITE_URL}${digest.coverImage}`, width: 1024, height: 1536, alt: digest.title }]
+    : undefined;
+
   return {
     title: digest.title,
     description: digest.jasonSays || `AI 快讯 ${digest.date}`,
@@ -46,6 +50,8 @@ export async function generateMetadata({
         en: `${SITE_URL}/en/news/${slug}`,
       },
     },
+    openGraph: ogImages ? { images: ogImages, type: "article" } : undefined,
+    twitter: ogImages ? { card: "summary_large_image", images: ogImages } : undefined,
   };
 }
 
@@ -110,6 +116,37 @@ export default async function NewsDetailPage({
           />
         </div>
       </div>
+
+      {/* Cover image */}
+      {digest.coverImage && (
+        <div className="mb-8 rounded-2xl overflow-hidden border border-gray-100 bg-gray-50">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={digest.coverImage}
+            alt={digest.title}
+            className="w-full h-auto block"
+            loading="lazy"
+          />
+        </div>
+      )}
+
+      {/* Tweet link */}
+      {digest.tweetUrl && (
+        <div className="mb-8">
+          <a
+            href={digest.tweetUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors"
+          >
+            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+            {isZh ? "在 X 上查看本期推文" : "View on X"}
+            <span className="text-gray-300 text-xs">↗</span>
+          </a>
+        </div>
+      )}
 
       {/* Jason Says — top highlight */}
       {digest.jasonSays && (

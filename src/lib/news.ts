@@ -15,6 +15,8 @@ export interface NewsDigest {
   items: NewsItem[];
   jasonSays: string;
   filename: string;
+  tweetUrl?: string;
+  coverImage?: string;
 }
 
 const allDigests: NewsDigest[] = newsData as NewsDigest[];
