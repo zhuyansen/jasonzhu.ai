@@ -5,63 +5,63 @@
     "title": "AI 快讯 · 4月24日",
     "items": [
       {
-        "title": "OpenAI 发布 GPT-5.5：基准测试登顶，但价格翻倍至 $30/M tokens",
+        "title": "OpenAI 发布 GPT-5.5：指令遵循能力超越 Claude Opus 4.7",
         "source": "OpenAI Blog / X/@bindureddy",
         "category": "AI 工具动态",
         "url": "https://openai.com/index/introducing-gpt-5-5",
-        "summary": "GPT-5.5 在 LiveBench 多数类别中登顶，指令跟随能力被评为「极强」，实测超过 Claude Opus 4.7。但代价不菲：定价 $30/M 输出 token，是 GPT-5.4 的两倍，也贵过 Opus 4.7。OpenAI 自称这是迈向「AI 超级应用」的关键一步，覆盖编程、研究、数据分析等复杂任务。"
+        "summary": "GPT-5.5 正式发布，LiveBench 评测多项指标领先，指令遵循能力被评为「极其出色」，实际表现优于 Claude Opus 4.7。但代价不菲：输出 token 定价 $30/1M，是 GPT-5.4 的两倍，也贵过 Opus 4.7。OpenAI 凭此重新夺回模型排行榜头把交椅。"
       },
       {
-        "title": "Claude Context MCP 插件：让 AI 编程 Agent 读懂你的整个代码库",
+        "title": "DeepSeek V4 突然发布，初步跑分直逼 GPT-5.5 水平",
+        "source": "X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://nitter.net/bindureddy/status/2047515312434934166#m",
+        "summary": "DeepSeek V4 低调上线，初步 benchmark 数据显示性能达到 Opus 4.7 Max 与 GPT-5.5 同级别，消息发布者正在紧急核实数据。若属实，这将是中国模型再次在顶级性能上与美国旗舰模型正面掰手腕。"
+      },
+      {
+        "title": "Claude Code 新增 /ultrareview 指令，代码审查能力再升级",
+        "source": "Product Hunt AI",
+        "category": "Skills 生态",
+        "url": "https://www.producthunt.com/products/claude-code",
+        "summary": "Claude Code 上线 /ultrareview 新指令，专为深度代码审查设计。对于日常用 Claude Code 写代码的开发者来说，这是一个可以直接集成进工作流的实用升级，减少人工 review 负担。"
+      },
+      {
+        "title": "Zilliz 开源 claude-context：让 Claude Code 语义搜索整个代码库",
         "source": "GitHub Trending",
         "category": "Skills 生态",
         "url": "https://github.com/zilliztech/claude-context",
-        "summary": "Zilliz 开源的 claude-context 是一个 MCP 插件，通过语义代码搜索将整个代码库作为 Claude Code 及其他 AI Coding Agent 的上下文。解决了大型项目中 Agent「只见树木不见森林」的痛点，支持跨 session 的长期记忆，对需要用 Claude Code 处理中大型项目的开发者极具实用价值。"
+        "summary": "zilliztech 开源的 MCP 插件 claude-context，为 Claude Code 及其他 AI 编程 Agent 提供全代码库语义搜索能力，让 AI 不再只看当前文件，而是真正理解整个项目上下文。同系列还有跨会话长期记忆插件 memsearch。"
       },
       {
-        "title": "Claude Code Personal Max 计划不含 Channels 功能，用户反映体验缩水",
-        "source": "Hacker News / Twitter",
-        "category": "Skills 生态",
-        "url": "https://twitter.com/pranay01/status/2047444399114932548",
-        "summary": "有用户发现 Claude Code 的 Channels 功能在 Personal Max 订阅计划下无法使用，引发社区讨论。这意味着部分重要的协作与工作流功能可能仅对更高层级订阅开放，对重度依赖 Claude Code 的独立开发者来说是个需要注意的限制。"
+        "title": "HuggingFace 开源 ml-intern：自主读论文、训模型、提交代码的 AI ML 工程师",
+        "source": "GitHub Trending",
+        "category": "AI 工具动态",
+        "url": "https://github.com/huggingface/ml-intern",
+        "summary": "HuggingFace 官方开源 ml-intern，一个能自主浏览论文、访问数据集、调用云计算资源并产出可运行 ML 代码的 AI Agent。对独立开发者和小团队意味着：做 ML 实验的人力门槛正在被大幅压低。"
       },
       {
-        "title": "Shopify CTO 独家披露：2026 年 AI 使用量爆发，无限 Opus 4.6 Token 预算",
+        "title": "Shopify CTO 独家访谈：2026 年 AI 使用量爆炸，Claude Opus 无限 Token 预算",
         "source": "Latent Space",
         "category": "AI 工具动态",
         "url": "https://www.latent.space/p/shopify",
-        "summary": "Latent Space 对 Shopify CTO Mikhail Parakhin 的罕见专访，披露 Shopify 2026 年 AI 使用量爆炸式增长的独家数据，以及他们如何给开发团队配置「无限 Claude Opus 4.6 Token 预算」。还介绍了内部工具 Tangle、Tangent 和 SimGym，展示头部电商平台如何全面押注 AI 转型。"
+        "summary": "Shopify CTO Mikhail Parakhin 披露公司内部 AI 使用数据：2026 年用量暴增，内部工具已开放 Claude Opus-4.6 无限 Token 预算，并自研 Tangle/SimGym 等 AI 系统。这是 SaaS 巨头全面 AI 原生化的典型样本，值得出海产品团队对标。"
       },
       {
-        "title": "闪送开源 CLI 工具，向 Claude Code/Cursor 等 AI Agent 全面开放接口",
-        "source": "36Kr",
-        "category": "Skills 生态",
-        "url": "https://36kr.com/p/3774776226923272",
-        "summary": "同城即时配送平台闪送成为行业首家开源 CLI 工具的企业，全面向 Claude Code、Codex、Cursor、Openclaw 等主流 AI Agent 开放接入端口。这意味着 AI Agent 可直接调用闪送能力完成配送自动化，是 AI Agent 接入线下物流服务的标志性案例。"
-      },
-      {
-        "title": "Expert Upcycling：用「回收」旧专家层大幅降低 MoE 大模型训练成本",
+        "title": "VLAA-GUI：解决 AI GUI Agent「假完成」和「死循环」两大顽疾的新框架",
         "source": "HuggingFace Papers",
         "category": "AI 论文",
-        "url": "https://huggingface.co/papers/2604.19835",
-        "summary": "这篇论文解决了一个实际痛点：训练 MoE（混合专家）大模型极其昂贵，因为总参数量越大，显存和通信开销越高。研究者提出「Expert Upcycling」方法，通过复用和改造已有模型的专家层来扩展 MoE，而非从头训练——对开发者的意义是：更低成本训出更大、更强的稀疏模型，有望让 MoE 架构变得更加平民化。"
+        "url": "https://huggingface.co/papers/2604.21375",
+        "summary": "做 GUI 自动化 Agent 的开发者都懂这两个痛点：Agent 明明没完成任务却宣布成功（早停），或者反复执行同一个失败操作（死循环）。VLAA-GUI 提出「何时停止、何时恢复、如何搜索」三模块架构，强制验证 UI 可观测的完成条件，对构建可靠 RPA/自动化产品的开发者有直接参考价值。"
       },
       {
-        "title": "「微调破坏安全对齐」扩展到音频 LLM：良性数据也能毁掉安全护栏",
+        "title": "DAVinCI：给 LLM 输出加「双重溯源验证」，对抗幻觉的新思路",
         "source": "HuggingFace Papers",
         "category": "AI 论文",
-        "url": "https://huggingface.co/papers/2604.16659",
-        "summary": "研究发现，对音频大模型做看似无害的微调，同样会破坏其安全对齐——这一风险已在文本和视觉模态被证实，现在音频也不例外。对开发者的警示：任何模态的微调都可能无意间打开安全漏洞，在部署客户定制化音频 AI 产品时需要重新审视安全评估流程。"
-      },
-      {
-        "title": "Kimi 2.6 被用于生产环境：开源模型首次顶替闭源 API 跑真实业务",
-        "source": "X/@bindureddy",
-        "category": "AI 工具动态",
-        "url": "https://nitter.net/bindureddy/status/2047320286396391710#m",
-        "summary": "知名 AI 创业者 @bindureddy 宣布将部分生产工作负载迁移至 Kimi 2.6，这是其团队首次将开源模型用于真实业务。他感叹「开源终将获胜」，这一信号对靠 API 费用控制成本的独立开发者和出海团队极具参考价值。"
+        "url": "https://huggingface.co/papers/2604.21193",
+        "summary": "LLM 幻觉在医疗、法律等高风险场景是硬伤。DAVinCI 框架提出「双重归因+验证」机制，让模型在生成声明时同时标注证据来源并自动核实。对做垂直行业 AI 产品（合规、医疗、法律）的开发者来说，这类可解释性框架是提升用户信任的关键工程方向。"
       }
     ],
-    "jasonSays": "今天最大的矛盾是：GPT-5.5 能力确实强，但 $30/M tokens 的定价让人肉疼；与此同时 Kimi 2.6 悄悄进了生产环境——能力平权的时代，谁还在乖乖付溢价？",
+    "jasonSays": "今天最大的戏剧性：GPT-5.5 刚发布宣布夺回第一，DeepSeek V4 同天突袭——AI 军备竞赛的节奏已经快到「发布即被挑战」，开发者选模型的窗口期越来越短，别等「最佳模型」，先跑起来才是正解。",
     "filename": "2026-04-24.md"
   },
   {
