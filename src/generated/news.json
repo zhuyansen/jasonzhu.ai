@@ -1,5 +1,70 @@
 [
   {
+    "slug": "2026-04-24",
+    "date": "2026-04-24",
+    "title": "AI 快讯 · 4月24日",
+    "items": [
+      {
+        "title": "OpenAI 发布 GPT-5.5：基准测试登顶，但价格翻倍至 $30/M tokens",
+        "source": "OpenAI Blog / X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/introducing-gpt-5-5",
+        "summary": "GPT-5.5 在 LiveBench 多数类别中登顶，指令跟随能力被评为「极强」，实测超过 Claude Opus 4.7。但代价不菲：定价 $30/M 输出 token，是 GPT-5.4 的两倍，也贵过 Opus 4.7。OpenAI 自称这是迈向「AI 超级应用」的关键一步，覆盖编程、研究、数据分析等复杂任务。"
+      },
+      {
+        "title": "Claude Context MCP 插件：让 AI 编程 Agent 读懂你的整个代码库",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/zilliztech/claude-context",
+        "summary": "Zilliz 开源的 claude-context 是一个 MCP 插件，通过语义代码搜索将整个代码库作为 Claude Code 及其他 AI Coding Agent 的上下文。解决了大型项目中 Agent「只见树木不见森林」的痛点，支持跨 session 的长期记忆，对需要用 Claude Code 处理中大型项目的开发者极具实用价值。"
+      },
+      {
+        "title": "Claude Code Personal Max 计划不含 Channels 功能，用户反映体验缩水",
+        "source": "Hacker News / Twitter",
+        "category": "Skills 生态",
+        "url": "https://twitter.com/pranay01/status/2047444399114932548",
+        "summary": "有用户发现 Claude Code 的 Channels 功能在 Personal Max 订阅计划下无法使用，引发社区讨论。这意味着部分重要的协作与工作流功能可能仅对更高层级订阅开放，对重度依赖 Claude Code 的独立开发者来说是个需要注意的限制。"
+      },
+      {
+        "title": "Shopify CTO 独家披露：2026 年 AI 使用量爆发，无限 Opus 4.6 Token 预算",
+        "source": "Latent Space",
+        "category": "AI 工具动态",
+        "url": "https://www.latent.space/p/shopify",
+        "summary": "Latent Space 对 Shopify CTO Mikhail Parakhin 的罕见专访，披露 Shopify 2026 年 AI 使用量爆炸式增长的独家数据，以及他们如何给开发团队配置「无限 Claude Opus 4.6 Token 预算」。还介绍了内部工具 Tangle、Tangent 和 SimGym，展示头部电商平台如何全面押注 AI 转型。"
+      },
+      {
+        "title": "闪送开源 CLI 工具，向 Claude Code/Cursor 等 AI Agent 全面开放接口",
+        "source": "36Kr",
+        "category": "Skills 生态",
+        "url": "https://36kr.com/p/3774776226923272",
+        "summary": "同城即时配送平台闪送成为行业首家开源 CLI 工具的企业，全面向 Claude Code、Codex、Cursor、Openclaw 等主流 AI Agent 开放接入端口。这意味着 AI Agent 可直接调用闪送能力完成配送自动化，是 AI Agent 接入线下物流服务的标志性案例。"
+      },
+      {
+        "title": "Expert Upcycling：用「回收」旧专家层大幅降低 MoE 大模型训练成本",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2604.19835",
+        "summary": "这篇论文解决了一个实际痛点：训练 MoE（混合专家）大模型极其昂贵，因为总参数量越大，显存和通信开销越高。研究者提出「Expert Upcycling」方法，通过复用和改造已有模型的专家层来扩展 MoE，而非从头训练——对开发者的意义是：更低成本训出更大、更强的稀疏模型，有望让 MoE 架构变得更加平民化。"
+      },
+      {
+        "title": "「微调破坏安全对齐」扩展到音频 LLM：良性数据也能毁掉安全护栏",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2604.16659",
+        "summary": "研究发现，对音频大模型做看似无害的微调，同样会破坏其安全对齐——这一风险已在文本和视觉模态被证实，现在音频也不例外。对开发者的警示：任何模态的微调都可能无意间打开安全漏洞，在部署客户定制化音频 AI 产品时需要重新审视安全评估流程。"
+      },
+      {
+        "title": "Kimi 2.6 被用于生产环境：开源模型首次顶替闭源 API 跑真实业务",
+        "source": "X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://nitter.net/bindureddy/status/2047320286396391710#m",
+        "summary": "知名 AI 创业者 @bindureddy 宣布将部分生产工作负载迁移至 Kimi 2.6，这是其团队首次将开源模型用于真实业务。他感叹「开源终将获胜」，这一信号对靠 API 费用控制成本的独立开发者和出海团队极具参考价值。"
+      }
+    ],
+    "jasonSays": "今天最大的矛盾是：GPT-5.5 能力确实强，但 $30/M tokens 的定价让人肉疼；与此同时 Kimi 2.6 悄悄进了生产环境——能力平权的时代，谁还在乖乖付溢价？",
+    "filename": "2026-04-24.md"
+  },
+  {
     "slug": "2026-04-23",
     "date": "2026-04-23",
     "title": "AI 快讯 · 4月23日",
