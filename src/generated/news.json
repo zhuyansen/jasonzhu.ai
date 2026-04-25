@@ -1,5 +1,70 @@
 [
   {
+    "slug": "2026-04-25",
+    "date": "2026-04-25",
+    "title": "AI 快讯 · 4月25日",
+    "items": [
+      {
+        "title": "GPT-5.5 正式发布，登顶多项基准测试榜首",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/introducing-gpt-5-5",
+        "summary": "OpenAI 发布 GPT-5.5，主打更快速度与更强复杂任务能力，尤其在编程、研究和数据分析场景表现突出。社区反馈显示其在多项排行榜中排名第一，API 已同步开放，开发者可立即接入构建产品。"
+      },
+      {
+        "title": "OpenAI Codex 升级为超级应用，支持插件与 Skills 自动化工作流",
+        "source": "OpenAI Blog",
+        "category": "Skills 生态",
+        "url": "https://openai.com/academy/codex-plugins-and-skills",
+        "summary": "OpenAI Codex 推出 Plugins & Skills 体系，支持连接外部工具、访问数据并执行可复用工作流；同时新增定时触发和自动化功能，可无需人工干预生成报告和周期性任务，标志着 Codex 从代码辅助工具向通用 AI 工作平台演进。"
+      },
+      {
+        "title": "Google 宣布向 Anthropic 投资高达 400 亿美元",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/04/24/google-to-invest-up-to-40b-in-anthropic-in-cash-and-compute/",
+        "summary": "Google 计划以现金+算力形式向 Anthropic 投资最高 400 亿美元，创下 AI 领域单笔投资新纪录。与此同时 Anthropic 还低调发布了专注网络安全的 Mythos 模型，巨头争夺算力与顶尖 AI 实验室的战争正在加速。"
+      },
+      {
+        "title": "Elon Musk 出价 600 亿美元收购 Cursor，AI 编程工具估值疯狂",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/podcast/apples-new-ceo-and-why-elon-musk-wants-to-buy-cursor-for-60b/",
+        "summary": "据报道 Elon Musk 有意以 600 亿美元收购 AI 编程工具 Cursor，这一估值震惊业界。AI 编程赛道的战略价值被重新定价，也印证了开发者工具正成为 AI 时代最稀缺的入口资产。"
+      },
+      {
+        "title": "DeepSeek V4 发布，基准测试直追 GPT-5.5 与 Claude Opus",
+        "source": "X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://nitter.net/bindureddy/status/2047515312434934166#m",
+        "summary": "DeepSeek V4 悄然发布，初步基准数据显示性能比肩 GPT-5.5 和 Claude Opus 4.7 Max 级别。若数据属实，开源/低成本高性能模型阵营再添重量级选手，对 API 定价和模型选型策略影响不小。"
+      },
+      {
+        "title": "ComfyUI 完成 3000 万美元融资，估值达 5 亿美元",
+        "source": "TechCrunch AI",
+        "category": "变现案例",
+        "url": "https://techcrunch.com/2026/04/24/comfyui-hits-500m-valuation-as-creators-seek-more-control-over-ai-generated-media/",
+        "summary": "专注 AI 图像/视频/音频生成的 ComfyUI 获得 3000 万美元融资，估值 5 亿美元。核心卖点是给创作者更高的生成控制权，差异化路线在 AI 媒体工具红海中跑出了独特价值，值得独立开发者参考。"
+      },
+      {
+        "title": "claude-context MCP 插件：让 Claude Code 理解你的整个代码库",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/zilliztech/claude-context",
+        "summary": "Zilliz 开源的 claude-context 是专为 Claude Code 设计的 MCP 插件，基于语义向量搜索让 AI 编程助手能检索整个代码库作为上下文，还附带跨会话长期记忆功能。大型项目开发者的效率神器，值得立刻试用。"
+      },
+      {
+        "title": "论文：知识图谱让 LLM Agent 真正记住你是谁",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2506.17001",
+        "summary": "PersonalAI 论文系统比较了多种基于知识图谱的个性化记忆方案。对开发者的意义：RAG 只能检索事实，但知识图谱能结构化存储用户偏好和历史关系，是构建真正「记得住用户」的 Agent 产品的关键技术路径。"
+      }
+    ],
+    "jasonSays": "今天最大的信号不是 GPT-5.5 发布，而是 Cursor 被传出 600 亿美元收购价——当开发者工具的入口价值被这样定价，All in 做好一个垂直编程/效率工具，可能是当下最确定的机会。",
+    "filename": "2026-04-25.md"
+  },
+  {
     "slug": "2026-04-24",
     "date": "2026-04-24",
     "title": "AI 快讯 · 4月24日",
