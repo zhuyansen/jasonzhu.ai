@@ -1,5 +1,70 @@
 [
   {
+    "slug": "2026-04-27",
+    "date": "2026-04-27",
+    "title": "AI 快讯 · 4月27日",
+    "items": [
+      {
+        "title": "mattpocock 开源个人 Skills 目录，Claude Code 生态持续扩张",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/mattpocock/skills",
+        "summary": "TypeScript 社区知名开发者 Matt Pocock 开源了自己的 Claude Code Skills 目录，包含 to-prd（对话转 PRD 并提 GitHub Issue）、to-issues 等实用 Agent 技能，支持一行命令安装。这是 Claude Code Skills 生态从官方走向社区共建的重要信号。"
+      },
+      {
+        "title": "免费用 Claude Code：无需 API Key 的代理工具走红 GitHub",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/Alishahryar1/free-claude-code",
+        "summary": "开源项目 free-claude-code 支持将 Claude Code 的 API 请求路由至 NVIDIA NIM（每分钟 40 次免费）、OpenRouter、DeepSeek 或本地 LLM，无需 Anthropic API Key 即可在终端、VSCode 和 Discord 中使用 Claude Code，极大降低上手门槛。"
+      },
+      {
+        "title": "Claude Code Templates 上线管理面板，MCP 配置与 Hooks 一站搞定",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/davila7/claude-code-templates",
+        "summary": "claude-code-templates 推出 aitmpl.com Dashboard Beta，提供 AI Agent、自定义命令、Hooks 和 MCP 集成的可视化管理。对于需要在多项目间复用 Claude Code 配置的开发者，这套模板体系能显著提升工作流效率。"
+      },
+      {
+        "title": "GPT-5.5 引发行业震动，社区评测：Opus 4.7 反而退步了",
+        "source": "X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://nitter.net/bindureddy/status/2048475982953402472#m",
+        "summary": "多位开发者周末密集测试 GPT-5.5 后给出高度评价，称其在 Agentic 推理任务上领先其他模型「数周」。与此同时，Claude Opus 4.7 被多人反映相比 4.6 出现明显退步，两款旗舰模型能力出现戏剧性反转，值得重点关注。"
+      },
+      {
+        "title": "Cohere 合并德国 Aleph Alpha，欧洲主权 AI 联盟正式成型",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/04/25/why-cohere-is-merging-with-aleph-alpha/",
+        "summary": "加拿大 AI 创业公司 Cohere 收购德国 Aleph Alpha，背后有零售巨头 Schwarz Group 支持，两国政府均表支持。此举意在为欧洲企业打造一个不依赖美国大厂的主权 AI 平台，是全球 AI 格局去中心化的重要一步。"
+      },
+      {
+        "title": "Anthropic 实验 Agent 商业市场：AI 自主买卖真实商品",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/04/25/anthropic-created-a-test-marketplace-for-agent-on-agent-commerce/",
+        "summary": "Anthropic 搭建了一个实验性 Agent 对 Agent 分类市场，AI 自主扮演买卖双方，完成真实商品的真实交易。这是 Agentic 经济最早期的实证探索，为未来 MCP 生态下的 Agent 自主协作商业化提供了重要参考。"
+      },
+      {
+        "title": "DeepSeek V4 Pro 发布：1.6T 参数、支持华为昇腾芯片",
+        "source": "Latent Space",
+        "category": "AI 工具动态",
+        "url": "https://www.latent.space/p/ainews-deepseek-v4-pro-16t-a49b-and",
+        "summary": "DeepSeek V4 Pro（1.6T 参数，激活 49B）和 Flash（284B，激活 13B）正式发布，同时支持在华为昇腾芯片上运行，已成为 OpenClaw 默认模型。但据评测，V4 Pro 在 Benchmark 上已不再是绝对领先，竞争格局正在改变。"
+      },
+      {
+        "title": "【AI 论文】知识图谱让 LLM 记住你：个性化 Agent 记忆框架对比研究",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2506.17001",
+        "summary": "论文提出基于知识图谱的外部记忆框架，自动构建和更新用户交互历史，解决 RAG 在长期复杂对话中「记不住人」的问题。对做个性化 AI 助手、用户画像类产品的开发者有直接参考价值——这套框架能让你的 Agent 真正认识每一个用户。"
+      }
+    ],
+    "jasonSays": "GPT-5.5 横空出世、Opus 4.7 被曝退步、DeepSeek V4 登场——一周之内模型排行榜几乎全部重洗，而 Claude Code Skills 生态在 GitHub 悄悄开花，底层工具链的战争才刚刚开始。",
+    "filename": "2026-04-27.md"
+  },
+  {
     "slug": "2026-04-26",
     "date": "2026-04-26",
     "title": "AI 快讯 · 4月26日",
@@ -62,7 +127,8 @@
       }
     ],
     "jasonSays": "今天最大的戏剧性：GPT-5.5 登顶、Claude Opus 4.7 疑似退步、DeepSeek V4 横空杀出——模型格局一夜剧变，选对底座比什么都重要，你的 Workflow 该重新压测了。",
-    "filename": "2026-04-26.md"
+    "filename": "2026-04-26.md",
+    "coverImage": "/news/2026-04-26.png"
   },
   {
     "slug": "2026-04-25",
