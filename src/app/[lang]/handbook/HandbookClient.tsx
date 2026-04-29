@@ -14,6 +14,7 @@ function HandbookContent({ lang, dict }: { lang: string; dict: Dictionary }) {
   const [errorMsg, setErrorMsg] = useState("");
 
   const t = dict.handbook;
+  const isZh = lang === "zh";
 
   const handleUnlock = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -181,14 +182,62 @@ function HandbookContent({ lang, dict }: { lang: string; dict: Dictionary }) {
         </p>
       </div>
 
-      {/* PDF Viewer */}
-      <div className="rounded-2xl border border-gray-200 overflow-hidden bg-gray-100">
-        <iframe
-          src="/handbook.pdf"
-          className="w-full"
-          style={{ height: "85vh", minHeight: "600px" }}
-          title={t.title}
-        />
+      {/* Page previews — hero gallery */}
+      <div className="rounded-2xl border border-gray-200 overflow-hidden bg-gradient-to-b from-gray-50 to-white p-6 sm:p-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          {[1, 2, 3, 4, 5].map((n) => (
+            <div
+              key={n}
+              className="group relative rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition-all bg-white"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={`/handbook-preview/page-${String(n).padStart(2, "0")}.png`}
+                alt={`${t.title} — page ${n}`}
+                className="w-full h-auto block group-hover:scale-[1.02] transition-transform duration-300"
+                loading={n <= 2 ? "eager" : "lazy"}
+              />
+              <div className="absolute bottom-2 right-2 bg-black/60 text-white text-xs px-2 py-0.5 rounded">
+                P.{n}
+              </div>
+            </div>
+          ))}
+          {/* "More" tile */}
+          <div className="rounded-xl border-2 border-dashed border-gray-200 bg-gray-50 flex flex-col items-center justify-center text-center p-8 min-h-[200px]">
+            <div className="text-3xl mb-2">📚</div>
+            <p className="text-sm font-medium text-gray-700 mb-1">
+              {isZh ? "完整 8 章 / 全部页面" : "8 chapters · full pages"}
+            </p>
+            <p className="text-xs text-gray-400">
+              {isZh ? "下载 PDF 查看完整内容" : "Download PDF for full content"}
+            </p>
+          </div>
+        </div>
+
+        {/* Primary CTA inside hero */}
+        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+          <a
+            href="/handbook.pdf"
+            download={t.pdfFilename}
+            className="w-full sm:w-auto px-8 py-3.5 bg-[var(--primary)] text-white rounded-xl text-base font-semibold hover:bg-[var(--primary-dark)] transition-colors flex items-center justify-center gap-2 shadow-lg shadow-blue-500/20"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            {isZh ? "下载完整 PDF（约 32MB）" : "Download Full PDF (~32MB)"}
+          </a>
+          <a
+            href="/handbook.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto px-6 py-3.5 border border-gray-200 text-gray-700 rounded-xl text-base font-medium hover:bg-gray-50 transition-colors flex items-center justify-center gap-2"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+            {isZh ? "新窗口打开" : "Open in new tab"}
+          </a>
+        </div>
       </div>
 
       {/* Bottom actions */}
