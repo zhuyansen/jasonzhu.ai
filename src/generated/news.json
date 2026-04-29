@@ -1,5 +1,70 @@
 [
   {
+    "slug": "2026-04-29",
+    "date": "2026-04-29",
+    "title": "AI 快讯 · 4月29日",
+    "items": [
+      {
+        "title": "Claude Code 系统提示 Bug 导致托管 Agent 失效并浪费用户费用",
+        "source": "Hacker News / GitHub",
+        "category": "Skills 生态",
+        "url": "https://github.com/anthropics/claude-code/issues/49363",
+        "summary": "Claude Code 出现系统提示相关 Bug，导致托管 Agent（Managed Agents）无法正常运行，同时造成用户 token 意外消耗、账单损失。对于依赖 Claude Code 构建自动化工作流的开发者来说，这个问题影响直接且严重，需关注官方修复进展。"
+      },
+      {
+        "title": "mattpocock 开源 Claude Skills 目录：工程师级别的 Agent 实战技能包",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/mattpocock/skills",
+        "summary": "知名 TypeScript 布道师 Matt Pocock 将其日常 .claude 目录开源，包含规划、设计、PRD 生成等多类 Skills，定位「真实工程使用而非 Vibe Coding」，已吸引 6 万开发者订阅。是目前最具实战参考价值的 Claude Skills 合集之一。"
+      },
+      {
+        "title": "Composio 发布 awesome-codex-skills：Codex CLI 工作流自动化技能精选库",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/ComposioHQ/awesome-codex-skills",
+        "summary": "Composio 整理发布 Codex Skills 精选集，覆盖发邮件、创建 Issue、推送 Slack 消息等 1000+ 应用集成场景，适配 Codex CLI 和 API 双端。对希望用 Codex 实现跨平台自动化的开发者来说，是即插即用的工具库。"
+      },
+      {
+        "title": "OpenAI 登陆 AWS：GPT 模型、Codex 与托管 Agent 全面上云",
+        "source": "OpenAI Blog / TechCrunch",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/openai-on-aws",
+        "summary": "就在 OpenAI 与微软修订协议、终止独家云条款后一天，AWS 即宣布上线 OpenAI 全系产品，包括 GPT 模型、Codex 及托管 Agent 服务。这意味着企业可在 AWS 安全环境中直接调用 OpenAI 能力，多云竞争格局正式开启。"
+      },
+      {
+        "title": "Anthropic 拒绝军方后，Google 签约五角大楼扩大 AI 供应",
+        "source": "TechCrunch",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/04/28/google-expands-pentagons-access-to-its-ai-after-anthropics-refusal/",
+        "summary": "Anthropic 以「国内大规模监控与自主武器」为由拒绝美国国防部合作后，Google 迅速签署新合同扩大向五角大楼提供 AI 能力。此事件清晰划出 AI 公司在军事伦理上的分野，也将影响 Anthropic 与政府客户的长期关系。"
+      },
+      {
+        "title": "Lovable 上线 iOS/Android 应用：移动端随时随地 Vibe Coding",
+        "source": "TechCrunch",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/04/28/lovable-launches-its-vibe-coding-app-on-ios-and-android/",
+        "summary": "Vibe Coding 平台 Lovable 正式推出手机 App，支持在 iOS 和 Android 上直接构建 Web 应用和网站。移动端入口的打通意味着非技术用户的创作门槛进一步降低，也预示着 AI 编程工具的受众边界在快速扩张。"
+      },
+      {
+        "title": "Fine-Tuning 为何加剧幻觉？持续学习工具或可解决这一顽疾",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2604.15574",
+        "summary": "研究发现：用 SFT 对模型做微调时，新知识的注入会破坏预训练中习得的旧知识，从而引发更多幻觉。论文借鉴「持续学习」领域的技术加以缓解。对做垂直领域微调的开发者很关键——你的模型可能越调越「编」，这篇论文给出了应对思路。"
+      },
+      {
+        "title": "Andrew Ng：AI 原生小团队正在重塑工程师角色，全栈型人才成新标准",
+        "source": "X/@AndrewYNg",
+        "category": "AI 工具动态",
+        "url": "https://nitter.net/AndrewYNg/status/2048793852702757151#m",
+        "summary": "吴恩达在最新 The Batch 中指出：AI 编程将编码速度提升 10-100 倍后，设计、市场、法务成了新瓶颈；2-10 人 AI 原生团队中，工程师需兼顾产品决策，PM 需要会写代码。这不只是方法论，更是对独立开发者和小团队创业者的实战指引。"
+      }
+    ],
+    "jasonSays": "今天最值得盯紧的是 Skills 生态的三重爆发：Claude Code 的 Bug 暴露了 Managed Agent 的脆弱性，而 mattpocock 和 Composio 同日开源的两个 Skills 库，恰好填补了这个空白——工具在进化，生产级 Skills 的稀缺正在成为真正的护城河。",
+    "filename": "2026-04-29.md"
+  },
+  {
     "slug": "2026-04-28",
     "date": "2026-04-28",
     "title": "AI 快讯 · 4月28日",
@@ -62,7 +127,8 @@
       }
     ],
     "jasonSays": "今天最大的两个信号：OpenAI 打破 Azure 独家绑定走向多云，以及中国叫停 Manus 收购——AI 的商业版图和地缘博弈正在同步加速，独立开发者要趁乱找到自己的位置。",
-    "filename": "2026-04-28.md"
+    "filename": "2026-04-28.md",
+    "coverImage": "/news/2026-04-28.png"
   },
   {
     "slug": "2026-04-27",
