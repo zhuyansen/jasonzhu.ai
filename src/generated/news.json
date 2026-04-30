@@ -1,5 +1,70 @@
 [
   {
+    "slug": "2026-04-30",
+    "date": "2026-04-30",
+    "title": "AI 快讯 · 4月30日",
+    "items": [
+      {
+        "title": "Claude Skills 开源库爆火：工程师的真实 Agent 武器库",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/mattpocock/skills",
+        "summary": "TypeScript 大神 Matt Pocock 开源了他日常使用的 Claude Skills 合集，主打小而精、可组合、易适配，区别于 GSD/BMAD 等重量级流程框架，专为真实工程场景设计，不抢走开发者的控制权。这正是当前 Claude Code 生态最缺的那类「真实可用」资产。"
+      },
+      {
+        "title": "Codex Skills 精选合集上线：1000+ 应用自动化工作流一网打尽",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/ComposioHQ/awesome-codex-skills",
+        "summary": "Composio 开源了 Awesome Codex Skills 合集，覆盖 Codex CLI 和 API 的实用技能，支持发邮件、创建 Issue、推送 Slack 消息等 1000+ 应用动作。Skills 生态正快速繁荣，给 AI Coding Agent 装上「手脚」的时代真正到来。"
+      },
+      {
+        "title": "Warp 终端开源：OpenAI 赞助，支持接入 Claude Code / Gemini CLI",
+        "source": "GitHub Trending",
+        "category": "AI 工具动态",
+        "url": "https://github.com/warpdotdev/warp",
+        "summary": "Warp 宣布开源，OpenAI 成为首个赞助商，新的 Agentic 工作流由 GPT 模型驱动。同时支持接入 Claude Code、Codex、Gemini CLI 等主流 Coding Agent，定位为下一代 Agentic 开发环境，终端工具的 AI 争夺战正式打响。"
+      },
+      {
+        "title": "Anthropic 估值冲破 9000 亿美元，新一轮 500 亿融资在路上",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/04/29/sources-anthropic-could-raise-a-new-50b-round-at-a-valuation-of-900b/",
+        "summary": "据知情人士透露，Anthropic 已收到多份主动报价，估值区间在 8500-9000 亿美元，拟融资 500 亿美元。短短数年内估值翻了数十倍，Claude 系列产品的商业化势头可见一斑，这轮融资将进一步强化其与 OpenAI 的正面竞争。"
+      },
+      {
+        "title": "Kimi 2.6 实测：部分场景超越 Claude Opus，价格便宜 5 倍",
+        "source": "X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://nitter.net/bindureddy/status/2049330512544808983#m",
+        "summary": "有开发者公开分享将工作负载迁移至 Kimi 2.6 的实测结论：部分场景超越 Claude Opus 4.7 medium，前端表现优于 GPT 5.5，工具调用和指令遵循俱佳，且价格仅为竞品的 1/5。国产模型的性价比正在改变开发者的模型选型逻辑。"
+      },
+      {
+        "title": "微软 Nadella：将「充分利用」与 OpenAI 的新合作协议",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/04/29/satya-nadella-says-hes-ready-to-exploit-the-new-openai-deal/",
+        "summary": "微软 CEO Nadella 表示将全面「榨取」与 OpenAI 新协议的价值——微软可向云客户提供 OpenAI 全套技术能力，且无需额外付费。这意味着 Azure 客户将更低成本获得 GPT 系列模型，对 AWS Bedrock 和 Google Cloud 形成直接压力。"
+      },
+      {
+        "title": "TIDE 框架：让小模型「跨架构」学会扩散式语言模型的能力",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2604.26951",
+        "summary": "扩散式大语言模型（dLLM）支持并行解码和双向上下文，推理效率高，但需要巨大参数量才能达到竞争级别。TIDE 是首个跨架构 dLLM 知识蒸馏框架，让小模型可以从架构完全不同的大模型中学习，对开发者意味着：未来可能用更小、更便宜的模型实现接近 GPT-4 级别的推理速度。"
+      },
+      {
+        "title": "强化学习训练加速新法：推测解码让 Rollout 生成提速不损精度",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2604.26779",
+        "summary": "RL 后训练的最大瓶颈之一是 Rollout 生成太慢。这篇论文将 Speculative Decoding 引入 RL 训练流程，在不改变模型输出分布的前提下实现无损加速。对做模型微调或 RL 训练的开发者而言，这意味着相同算力下可跑更多训练轮次，显著降低迭代成本。"
+      }
+    ],
+    "jasonSays": "今天最值得盯的是 Skills 生态的集体爆发——Matt Pocock 的 Claude Skills 库和 Composio 的 Codex Skills 合集同日登上 GitHub Trending，Agent 工具层的基础设施正在快速补全，这波红利属于最早把 Skills 用进真实项目的开发者。",
+    "filename": "2026-04-30.md"
+  },
+  {
     "slug": "2026-04-29",
     "date": "2026-04-29",
     "title": "AI 快讯 · 4月29日",
