@@ -21,17 +21,38 @@ export async function POST(request: NextRequest) {
       });
     }
 
-    // Time-trap: real humans take >1.5s to fill a form. Bots POST instantly.
-    if (ts && typeof ts === "number") {
-      const elapsedMs = Date.now() - ts;
-      if (elapsedMs < 1500) {
-        console.warn("[subscribe] timetrap triggered", { email, source, elapsedMs });
-        return NextResponse.json({
-          success: true,
-          message: "订阅成功！你现在可以下载完整手册了",
-          alreadySubscribed: false,
-        });
-      }
+    // Origin / Referer guard: only accept submissions from our own site
+    const origin = request.headers.get("origin") || "";
+    const referer = request.headers.get("referer") || "";
+    const ALLOWED = ["https://jasonzhu.ai", "https://www.jasonzhu.ai", "http://localhost:3000"];
+    const isOriginOk = ALLOWED.some((o) => origin === o || referer.startsWith(o + "/"));
+    if (!isOriginOk) {
+      console.warn("[subscribe] origin blocked", { origin, referer, email, source });
+      return NextResponse.json({
+        success: true,
+        message: "订阅成功！你现在可以下载完整手册了",
+        alreadySubscribed: false,
+      });
+    }
+
+    // Time-trap: real form mounts and POSTs include a timestamp.
+    // Missing ts = bot posting directly to API; <1.5s = bot rendered but auto-fills.
+    if (typeof ts !== "number") {
+      console.warn("[subscribe] missing ts (bot)", { email, source });
+      return NextResponse.json({
+        success: true,
+        message: "订阅成功！你现在可以下载完整手册了",
+        alreadySubscribed: false,
+      });
+    }
+    const elapsedMs = Date.now() - ts;
+    if (elapsedMs < 1500) {
+      console.warn("[subscribe] timetrap triggered", { email, source, elapsedMs });
+      return NextResponse.json({
+        success: true,
+        message: "订阅成功！你现在可以下载完整手册了",
+        alreadySubscribed: false,
+      });
     }
 
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
