@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, Suspense } from "react";
+import { useState, useRef, Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
 import type { Dictionary } from "@/lib/dictionaries";
@@ -10,8 +10,10 @@ function HandbookContent({ lang, dict }: { lang: string; dict: Dictionary }) {
   const router = useRouter();
   const isUnlocked = searchParams.get("unlocked") === "true";
   const [email, setEmail] = useState("");
+  const [website, setWebsite] = useState(""); // honeypot
   const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const mountedAt = useRef<number>(Date.now());
 
   const t = dict.handbook;
   const isZh = lang === "zh";
@@ -25,7 +27,7 @@ function HandbookContent({ lang, dict }: { lang: string; dict: Dictionary }) {
       const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, source: "handbook-gate" }),
+        body: JSON.stringify({ email, source: "handbook-gate", website, ts: mountedAt.current }),
       });
       const data = await res.json();
       if (res.ok) {
@@ -93,6 +95,17 @@ function HandbookContent({ lang, dict }: { lang: string; dict: Dictionary }) {
             {t.unlockDesc}
           </p>
           <form onSubmit={handleUnlock}>
+            {/* Honeypot — hidden from real users */}
+            <input
+              type="text"
+              name="website"
+              value={website}
+              onChange={(e) => setWebsite(e.target.value)}
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
+            />
             <div className="flex gap-2">
               <input
                 type="email"

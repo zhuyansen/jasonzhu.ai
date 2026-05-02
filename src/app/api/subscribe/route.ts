@@ -9,7 +9,30 @@ export async function POST(request: NextRequest) {
   if (rateLimited) return rateLimited;
 
   try {
-    const { email, source } = await request.json();
+    const { email, source, website, ts } = await request.json();
+
+    // Honeypot: real users never fill this hidden field. Pretend success.
+    if (website && String(website).trim() !== "") {
+      console.warn("[subscribe] honeypot triggered", { email, source });
+      return NextResponse.json({
+        success: true,
+        message: "订阅成功！你现在可以下载完整手册了",
+        alreadySubscribed: false,
+      });
+    }
+
+    // Time-trap: real humans take >1.5s to fill a form. Bots POST instantly.
+    if (ts && typeof ts === "number") {
+      const elapsedMs = Date.now() - ts;
+      if (elapsedMs < 1500) {
+        console.warn("[subscribe] timetrap triggered", { email, source, elapsedMs });
+        return NextResponse.json({
+          success: true,
+          message: "订阅成功！你现在可以下载完整手册了",
+          alreadySubscribed: false,
+        });
+      }
+    }
 
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return NextResponse.json(

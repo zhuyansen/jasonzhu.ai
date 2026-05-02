@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import type { Dictionary } from "@/lib/dictionaries";
 
@@ -19,8 +19,10 @@ export default function SubscribeForm({
 }: SubscribeFormProps) {
   const router = useRouter();
   const [email, setEmail] = useState("");
+  const [website, setWebsite] = useState(""); // honeypot
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
+  const mountedAt = useRef<number>(Date.now());
 
   // Fallback strings if dict not provided
   const t = dict?.subscribe ?? {
@@ -44,7 +46,7 @@ export default function SubscribeForm({
       const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, source }),
+        body: JSON.stringify({ email, source, website, ts: mountedAt.current }),
       });
 
       const data = await res.json();
@@ -86,6 +88,17 @@ export default function SubscribeForm({
   if (compact) {
     return (
       <form onSubmit={handleSubmit} className="flex gap-2">
+        {/* Honeypot — hidden from real users */}
+        <input
+          type="text"
+          name="website"
+          value={website}
+          onChange={(e) => setWebsite(e.target.value)}
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
+        />
         <input
           type="email"
           value={email}
@@ -119,6 +132,17 @@ export default function SubscribeForm({
       </div>
 
       <form onSubmit={handleSubmit} className="mt-4">
+        {/* Honeypot — hidden from real users */}
+        <input
+          type="text"
+          name="website"
+          value={website}
+          onChange={(e) => setWebsite(e.target.value)}
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
+        />
         <div className="flex gap-2">
           <input
             type="email"
