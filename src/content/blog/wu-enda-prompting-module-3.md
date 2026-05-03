@@ -1,0 +1,226 @@
+---
+title: "吴恩达 2026《AI 提示词工程》Module 3 全笔记：让 AI 帮你出图、做应用、分析数据"
+date: "2026-05-04"
+category: "教程"
+tags: ["AI", "提示词工程", "吴恩达", "多模态", "Vibe Coding", "数据分析"]
+coverImage: "/blog/wu-enda-prompting-module-3/cover.png"
+excerpt: "吴恩达《AI Prompting for Everyone》Module 3 完整中文笔记。6 节课讲透：多模态成本意识、图像理解与生成、用 prompt 直接造 mini app、AI 写代码做数据分析、最终项目实战。9 个能直接抄走的 prompt 模板。"
+---
+
+Module 1 教你「找信息」，Module 2 教你「让 AI 帮你思考」，**Module 3 教你让 AI 真的帮你做东西**——出图、做应用、跑数据分析。
+
+这是整个系列里最容易低估的一块。原来需要专业技能（设计师、工程师、数据分析师）才能完成的事，现在一段中文 prompt 就能落地。
+
+按「**截图 + 1 句解读 + 1 个模板**」三段式整理：
+
+---
+
+## Day 1·多模态成本意识：知道什么时候该用哪种输出
+
+![多模态输出成本/时间曲线：text < voice << images <<< videos](/blog/wu-enda-prompting-module-3/day-1-multimedia.png)
+
+**💡 1 句话解读：** 文字几乎免费几秒出，语音几美分十几秒，图像几十美分几十秒，视频几美元几分钟——**一个简单认知：能用文字描述清楚的，先别让它出图；能用图说清的，先别让它出视频**。
+
+**📋 模板·多模态成本意识检查**
+
+```
+我想让 AI 帮我做：[任务]
+
+回答前先评估三件事：
+1) 这个任务能用纯文字解决吗？
+   能 → 直接用文字，省 90% 时间和钱
+   不能 → 进 2)
+2) 用静态图片能解决吗？
+   能 → 出图（成本可控）
+   不能 → 进 3)
+3) 必须用视频吗？
+   是 → 先用图说清，最后才出 1 个视频（视频不可迭代）
+
+给我推荐方案 + 预估时间/成本。
+```
+
+---
+
+## Day 2·图像理解：AI 看图很粗，看文字很细
+
+![AI 看健身器械混淆 vs 看人形仓鼠跑步机准确](/blog/wu-enda-prompting-module-3/day-2-image-understanding.png)
+
+**💡 1 句话解读：** AI 看图像是「一眼大概」——区分相似器械（kickback vs hamstring curl）经常错，但识别独特物体（人形仓鼠跑步机）和**读图中文字（手写都能读）**很准。
+
+**📋 模板·图片输入信息提取**
+
+```
+[上传图片]
+
+请按以下顺序提取，每一步独立完成：
+
+Step 1·先告诉我你看到了什么（粗描述）
+- 主体是什么
+- 你的识别置信度（高/中/低）
+
+Step 2·提取文字（如果有）
+- 完整转录所有可见文字
+- 不确定的字标 [?]
+
+Step 3·结构化数据（按需）
+- 表格 / 列表 / 数字 / 日期 → 整理成 markdown
+
+Step 4·我要的具体动作：[你的需求]
+（比如：算我的账单分摊 / 整理成 Notion 表 / 翻译成英文）
+```
+
+---
+
+## Day 3·图像生成：会用「视觉语言」的人才能出好图
+
+![Diffusion 模型生成过程：噪声 → 模糊 → 清晰图像](/blog/wu-enda-prompting-module-3/day-3-image-gen.png)
+
+**💡 1 句话解读：** AI 出图本质是「从噪声里反向去噪」，prompt 给得越精准，去噪方向越对——艺术词汇（cinematic / watercolor / cyberpunk / anime）比形容词（漂亮/酷）有用 10 倍。
+
+**📋 模板·先让 AI 帮你写图像 prompt**
+
+```
+我想生成一张图：[一句话描述你的需求]
+
+先别出图。请帮我写一段专业图像生成 prompt，包含以下要素：
+
+1) Setting（场景）：时间、地点、氛围
+2) Subject（主体）：是谁、在干什么、姿态
+3) Style（风格关键词）：从这些里选 2-3 个或自己加：
+   cinematic / watercolor / oil painting / cyberpunk / anime
+   minimalist / editorial / 3D render / pencil sketch / vintage
+4) Lighting（光线）：natural / golden hour / dramatic / soft
+5) Composition（构图）：close-up / wide angle / overhead / symmetric
+
+输出 3 个不同风格的 prompt 选项，我选完一个再让你出图。
+```
+
+---
+
+## Day 4·Vibe Coding：一段 prompt 就能造个能跑的 App
+
+![一段 prompt 生成可玩的 fireworks 应用](/blog/wu-enda-prompting-module-3/day-4-build-app.png)
+
+**💡 1 句话解读：** 用 Claude / ChatGPT 写一段 `Goal + Input + Output` 三件套 prompt，就能直接出能在浏览器里跑的 mini app——**简单的事很容易（French 闪卡、计时器、分账计算器），复杂的事仍很难（多人在线、实时 AI 反馈）**。
+
+**📋 模板·Mini App 生成（GIO 三件套）**
+
+```
+请帮我做一个能在浏览器里运行的 mini app。
+
+【Goal】这个 app 的核心目标
+[一句话，例如：帮我练 100 个常用法语词]
+
+【Input】用户能做什么 / 输入什么
+- [输入项 1，例如：点击"开始"按钮]
+- [输入项 2，例如：键盘输入答案]
+
+【Output】app 给用户什么反馈
+- [输出项 1，例如：显示一个法语词，3 秒后显示中文]
+- [输出项 2，例如：答对显示绿色✓，答错显示红色✗ + 正确答案]
+
+【约束】
+- 单文件 HTML（包含 CSS + JS），可以直接双击打开
+- 无需后端、无需 npm 安装
+- 移动端可用
+
+先列出 3 段功能清单等我确认，再写代码。
+```
+
+---
+
+## Day 5·数据分析：AI 写代码帮你跑数据
+
+![奶茶销量趋势图：AI 自动识别 4 款重点产品并画图](/blog/wu-enda-prompting-module-3/day-5-data-analysis.png)
+
+**💡 1 句话解读：** 上传 CSV / Excel / PDF 报表，AI 会**自己写 Python 代码**跑分析、画图、找规律——奶茶店例子里它甚至自动跳过平稳产品、聚焦 4 款季节性爆款。但**数字必须人工复核**（仍会幻觉）。
+
+**📋 模板·数据分析驱动**
+
+```
+[上传你的数据文件]
+
+请按以下流程分析，写并运行代码：
+
+Step 1·先告诉我数据结构
+- 共多少行 / 列
+- 关键字段及类型
+- 时间跨度
+- 异常值或缺失
+
+Step 2·我的核心问题：[你想知道什么]
+（例如：哪些产品销量增长最快？淡旺季差距多大？）
+
+Step 3·分析要求
+- 必须用代码计算（不要凭印象估）
+- 关键数字给我代码 + 结果，方便我复核
+- 自动跳过无趣的平稳数据，聚焦异常和趋势
+- 给我 1-2 张关键图（matplotlib / 简洁配色）
+
+Step 4·结论 + 决策建议
+- 3 条最值得我关注的洞察
+- 每条配 1 个我现在能做的具体行动
+```
+
+---
+
+## Day 6·Final Project：用今天学的全套做一个真东西
+
+![Lab 流程：brainstorm 问题 → 深度调研 → 生成 quiz/infographic 应用](/blog/wu-enda-prompting-module-3/day-6-lab.png)
+
+**💡 1 句话解读：** 吴恩达官方 lab 的最终项目串起 Module 1-3 全套能力——**brainstorm 问题（M2 头脑风暴）→ deep research（M1 深度调研）→ 生成 mini app（M3 vibe coding）**，跑一遍就能感受到「AI 当全栈搭档」的真实威力。
+
+**📋 模板·三步串联实战**
+
+```
+我要做一个真实研究 + 落地 mini app 的项目。
+
+【Step 1·brainstorm 研究问题】
+我感兴趣的领域：[职业选择 / 健康 / 投资 / 学习 / 兴趣...]
+我的具体情境：[年龄 / 现状 / 资源 / 偏好]
+
+请头脑风暴 5 个具体研究问题，每个 30 字内。
+我反馈后你再迭代 2 轮。
+
+【Step 2·deep research】
+确认研究问题后：
+- 进入 deep research 模式
+- 至少 20 个独立来源
+- 优先官方/学术/一手数据
+- 输出含正反观点的结构化报告
+
+【Step 3·生成 mini app】
+基于研究报告，做一个 mini app（三选一）：
+A. 5 题多选 quiz 自测
+B. 总结成 1 张 infographic
+C. 互动式决策小游戏
+
+要求：单文件 HTML，可分享 URL。
+```
+
+---
+
+## 6 节课浓缩成一句话
+
+> **AI 已经能做的远不止聊天——出图、做 app、跑数据，每件事都有「最低成本路径」，关键是知道怎么开口要。**
+
+---
+
+## 🎬 21 节系列完结撒花
+
+到这里 21 节课全部刷完。三个 Module 一句话总结：
+
+- **M1·找信息**：给 AI 中性框架 + 强制信源限定 + 必要时上 Deep Research
+- **M2·思考伙伴**：给足上下文 + 用 rubric 锁评审 + 用 ultrathink 释放推理
+- **M3·做东西**：选对模态省成本 + 用视觉语言出图 + 用 GIO 三件套造 app
+
+完整 21 节 + 30+ prompt 模板的一份 PDF 笔记，订阅获取 👉 [免费手册](/zh/handbook)。
+
+→ 上一篇：[Module 2·思考伙伴](/zh/blog/wu-enda-prompting-module-2)
+→ 第一篇：[Module 1·找信息](/zh/blog/wu-enda-prompting-module-1)
+
+---
+
+## 想继续学怎么用 AI 写代码？
+
+吴恩达本人推荐的进阶课程：[Build with Andrew](https://learn.deeplearning.ai)，专门教非工程师用 AI 造能上线的应用。我会陆续把那门课也整理成笔记发出来。
