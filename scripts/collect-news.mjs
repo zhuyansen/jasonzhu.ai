@@ -159,6 +159,28 @@ async function fetchAllFeeds() {
   return allItems;
 }
 
+// ─── 跨天去重：读最近 N 天已发标题 ──────────────────
+
+function getRecentTitles(days = 3) {
+  const newsDir = path.join(process.cwd(), "src/content/news");
+  if (!fs.existsSync(newsDir)) return [];
+  const titles = [];
+  const today = new Date(TODAY);
+  for (let i = 1; i <= days; i++) {
+    const d = new Date(today);
+    d.setDate(d.getDate() - i);
+    const iso = d.toISOString().split("T")[0];
+    const file = path.join(newsDir, `${iso}.md`);
+    if (!fs.existsSync(file)) continue;
+    const content = fs.readFileSync(file, "utf-8");
+    const matches = [...content.matchAll(/^###\s+(.+)$/gm)];
+    for (const m of matches) {
+      titles.push({ date: iso, title: m[1].trim() });
+    }
+  }
+  return titles;
+}
+
 // ─── Step 2: Claude 筛选 + 摘要 ─────────────────────
 
 async function curateWithClaude(rawItems) {
@@ -168,6 +190,14 @@ async function curateWithClaude(rawItems) {
         `[${i}] ${item.title}\n    来源: ${item.source}\n    链接: ${item.link}\n    摘要: ${item.snippet}`
     )
     .join("\n\n");
+
+  const recentTitles = getRecentTitles(3);
+  const dedupBlock = recentTitles.length > 0
+    ? `\n## 过去 3 天已经发过的标题（务必避开同一主题/同一新闻，不要重复！）
+${recentTitles.map((t) => `- [${t.date}] ${t.title}`).join("\n")}
+
+如果同一新闻今天又被 RSS 推上来，你必须跳过，或换一个全新的角度（例如 follow-up 数据、社区反应、对比观点），否则订阅者会看到重复内容感到失望。\n`
+    : "";
 
   const prompt = `你是 JasonZhu.AI 的 AI 快讯编辑。从以下原始新闻中筛选出 6-8 条最值得关注的，生成结构化快讯。
 
@@ -183,7 +213,7 @@ async function curateWithClaude(rawItems) {
 - 纯营销推广内容
 - 无实质更新的水文
 - 与 AI 无关的内容
-
+${dedupBlock}
 ## 原始内容
 ${itemsText}
 
@@ -213,6 +243,7 @@ ${itemsText}
     ? [process.env.CLAUDE_MODEL]
     : ["claude-sonnet-4-6", "claude-sonnet-4-5", "claude-opus-4-5", "claude-3-5-sonnet-latest"];
   let modelIdx = 0;
+  let usingFallback = false;
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
     const client = anthropic;
     if (!client) {
@@ -220,7 +251,8 @@ ${itemsText}
     }
     try {
       const currentModel = modelChain[modelIdx];
-      console.log(`  🔄 Claude API 调用 (attempt ${attempt}/${MAX_RETRIES} [proxy${disableThinking ? ", no-thinking" : ""}, ${currentModel}])...`);
+      const clientLabel = usingFallback ? "official-fallback" : "proxy";
+      console.log(`  🔄 Claude API 调用 (attempt ${attempt}/${MAX_RETRIES} [${clientLabel}${disableThinking ? ", no-thinking" : ""}, ${currentModel}])...`);
       const requestParams = {
         model: currentModel,
         max_tokens: 16000,
@@ -319,10 +351,27 @@ ${itemsText}
         errMsg.includes("ECONNRESET") ||
         errMsg.includes("origin web server timed out");
 
+      // 代理账号池干涸：no available accounts / 503 → 立即切到官方 Anthropic
+      const isProxyDry =
+        errMsg.includes("no available accounts") ||
+        errMsg.includes("No available accounts") ||
+        (errMsg.includes("503") && !usingFallback);
+
       // Model 不被代理支持：自动降级到下一个候选 model
       const isModelUnsupported =
         errMsg.includes("400") &&
         (errMsg.includes("model is not supported") || errMsg.includes("model_not_found"));
+
+      if (isProxyDry && !usingFallback && anthropicOfficial) {
+        console.log(`  🔀 代理账号池干涸，立即切换到官方 Anthropic API`);
+        anthropic = anthropicOfficial;
+        usingFallback = true;
+        // 官方 API 不限制 thinking，但保持 disableThinking=true 因为 prompt 不需要它
+        // 重置 modelIdx —— 官方 API 用最新 model 即可
+        modelIdx = 0;
+        await sleep(2000);
+        continue;
+      }
 
       if (isModelUnsupported && modelIdx < modelChain.length - 1) {
         modelIdx++;
@@ -427,6 +476,18 @@ function generateMDX(digest) {
 
 async function main() {
   console.log(`\n🗞️  AI 快讯采集 — ${TODAY}\n`);
+
+  // 幂等：今天已生成且 ≥3 条新闻就跳过（用于 cron 重试不覆盖正确产出）
+  const todayFile = path.join(process.cwd(), "src/content/news", `${TODAY}.md`);
+  const force = process.argv.includes("--force");
+  if (!force && fs.existsSync(todayFile)) {
+    const existing = fs.readFileSync(todayFile, "utf-8");
+    const itemCount = (existing.match(/^###\s+/gm) || []).length;
+    if (itemCount >= 3) {
+      console.log(`✅ 今天 (${TODAY}) 已有 ${itemCount} 条快讯，跳过。如需重新生成请加 --force`);
+      return;
+    }
+  }
 
   // Step 1: 采集
   console.log("📡 Step 1: 采集 RSS feeds...");

@@ -2,8 +2,12 @@ name: Daily AI News Digest
 
 on:
   schedule:
-    # 每天北京时间 8:00 (UTC 0:00) 运行
+    # 主跑：北京时间 08:00 (UTC 00:00)
     - cron: "0 0 * * *"
+    # 备跑 1：北京时间 09:30 (UTC 01:30) — 主跑挂了 90 分钟后自动补
+    - cron: "30 1 * * *"
+    # 备跑 2：北京时间 11:00 (UTC 03:00) — 二次保险
+    - cron: "0 3 * * *"
   workflow_dispatch: # 支持手动触发
 
 permissions:
@@ -68,3 +72,26 @@ jobs:
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: node scripts/send-digest-email.mjs
+
+      # 失败通知 —— 三次都挂才发，避免噪音
+      - name: Notify on final failure (03:00 UTC retry)
+        if: failure() && github.event.schedule == '0 3 * * *'
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          ALERT_EMAIL: ${{ secrets.ALERT_EMAIL }}
+          GH_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          if [ -z "$RESEND_API_KEY" ] || [ -z "$ALERT_EMAIL" ]; then
+            echo "⚠️ RESEND_API_KEY / ALERT_EMAIL 未设置，跳过告警邮件"
+            exit 0
+          fi
+          DATE=$(date +%Y-%m-%d)
+          curl -s -X POST https://api.resend.com/emails \
+            -H "Authorization: Bearer $RESEND_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d "{
+              \"from\": \"alerts@jasonzhu.ai\",
+              \"to\": [\"$ALERT_EMAIL\"],
+              \"subject\": \"⚠️ AI 快讯 cron 三次全失败 ($DATE)\",
+              \"html\": \"今天 (UTC 00:00 / 01:30 / 03:00) 三次 cron 全部失败，请手动检查：<br><a href='$GH_RUN_URL'>查看日志</a>\"
+            }"
