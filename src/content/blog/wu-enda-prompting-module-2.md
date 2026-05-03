@@ -3,6 +3,7 @@ title: "吴恩达 2026《AI 提示词工程》Module 2 全笔记：把 AI 真正
 date: "2026-05-04"
 category: "教程"
 tags: ["AI", "提示词工程", "吴恩达", "DeepLearning.AI", "Prompt", "Brainstorm"]
+coverImage: "/blog/wu-enda-prompting-module-2/cover.png"
 excerpt: "吴恩达《AI Prompting for Everyone》Module 2 完整中文笔记。8 节课讲透：怎么用 AI 头脑风暴、管理上下文、调用桌面 Agent、做深度推理、避免 AI 拍马屁、写作迭代、客观评审。10 个能直接抄走的 prompt 模板。"
 ---
 

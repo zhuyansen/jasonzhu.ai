@@ -53,12 +53,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       publishedTime: post.date,
       authors: ["Jason Zhu"],
       tags: post.tags,
+      ...(post.coverImage
+        ? { images: [{ url: `${SITE_URL}${post.coverImage}`, width: 1536, height: 1024, alt: post.title }] }
+        : {}),
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description,
       creator: "@GoSailGlobal",
+      ...(post.coverImage ? { images: [`${SITE_URL}${post.coverImage}`] } : {}),
     },
   };
 }
@@ -116,7 +120,9 @@ export default async function BlogPostPage({ params }: Props) {
       "@type": "WebPage",
       "@id": `${SITE_URL}/${lang}/blog/${slug}`,
     },
-    image: `${SITE_URL}/${lang}/blog/${slug}/opengraph-image`,
+    image: post.coverImage
+      ? `${SITE_URL}${post.coverImage}`
+      : `${SITE_URL}/${lang}/blog/${slug}/opengraph-image`,
     keywords: post.tags.join(", "),
   };
 
@@ -206,6 +212,19 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
         )}
       </header>
+
+      {/* Cover image (hero) */}
+      {post.coverImage && (
+        <div className="mb-8 rounded-2xl overflow-hidden border border-gray-100 bg-gray-50">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={post.coverImage}
+            alt={post.title}
+            className="w-full h-auto block"
+            loading="eager"
+          />
+        </div>
+      )}
 
       {/* Content */}
       <div className="prose">
