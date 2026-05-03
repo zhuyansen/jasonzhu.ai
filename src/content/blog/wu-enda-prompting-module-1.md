@@ -4,6 +4,7 @@ date: "2026-05-03"
 category: "教程"
 tags: ["AI", "提示词工程", "吴恩达", "DeepLearning.AI", "Prompt"]
 tweetUrl: "https://x.com/GoSailGlobal/status/2050843726956859420"
+coverImage: "/blog/wu-enda-prompting-module-1/cover.png"
 excerpt: "吴恩达 2026 年新课《AI Prompting for Everyone》Module 1 完整中文笔记，6 节课 + 7 个能直接抄走的 prompt 模板。一句话总结：90% 的人还在把 AI 当 Google 用，能力被浪费一大半。"
 ---
 
