@@ -1,0 +1,162 @@
+---
+title: "吴恩达 2026《AI 提示词工程》Module 1 全笔记：在 AI 时代，连「找信息」都被重写了"
+date: "2026-05-03"
+category: "教程"
+tags: ["AI", "提示词工程", "吴恩达", "DeepLearning.AI", "Prompt"]
+excerpt: "吴恩达 2026 年新课《AI Prompting for Everyone》Module 1 完整中文笔记，6 节课 + 7 个能直接抄走的 prompt 模板。一句话总结：90% 的人还在把 AI 当 Google 用，能力被浪费一大半。"
+---
+
+吴恩达 2026 年发布了一门新课《AI Prompting for Everyone》，专门讲在「AI 已经远超 2022 年」的当下，怎么真正用好它。Module 1 主题是「找信息」——这是大多数人最常用 AI 的场景，也是最容易做错的场景。
+
+我把 6 节课按「**截图 + 1 句解读 + 1 个模板**」三段式整理出来，每个模板都能直接复制粘贴使用。
+
+---
+
+## Day 1·新手 vs 高手的 prompt 差距
+
+![AI 新手 vs AI 高手：用 rubric 拿到客观打分](/blog/wu-enda-prompting-module-1/day-1-rubric.png)
+
+**💡 1 句话解读：** 带感情色彩的 prompt → AI 一定哄你；带 rubric 的中性 prompt → AI 才敢真打分（课程里 mobile tie-dying 直接被打 8/100）。
+
+**📋 模板·反奉承评估（对齐课程 5 维 rubric）**
+
+```
+请客观评估：[你的想法]
+评分维度（参考 Andrew Ng 课程 rubric，每项 20 分，共 100 分）：
+1) 问题与市场（The Problem & Market）
+   真痛点是否存在、市场规模、可触达性
+2) 解决方案与价值主张（Solution & Value Prop）
+   你怎么解、用户为什么愿意买单
+3) 差异化竞争优势（Competitive Advantage）
+   别人复制不了你什么
+4) 商业模式（Business Model）
+   怎么收钱、毛利、增长飞轮
+5) 可行性与执行力（Feasibility & Execution）
+   12 个月内能跑出哪些可验证 milestone
+
+每项给分必须说明扣分原因，不要安慰话。
+最后给一个总分 + 是否值得投入 6 个月时间的明确建议。
+```
+
+---
+
+## Day 2·AI 的知识到底从哪来
+
+![Pretrained knowledge 反映训练数据频次](/blog/wu-enda-prompting-module-1/day-2-pretrained.png)
+
+**💡 1 句话解读：** AI 答得靠不靠谱，先看你的话题在互联网上是热门还是冷门——Cooking / Celebrities / Movies ✅，Quasars / Cantonese ⚠️，你公司 Secret data ❌。
+
+**📋 模板·回答前自检**
+
+```
+正式回答前，先告诉我：
+1) 这话题你的训练数据主要来自哪类来源？
+   （社媒 / 论文 / 官方文档 / 百科）
+2) 哪些信息可能已过时？知识截止到？
+3) 你对自己回答可靠性的自评：高 / 中 / 低
+然后再正式回答。
+
+如果可靠性自评是「中」或「低」，主动联网补充。
+```
+
+---
+
+## Day 3·什么时候 AI 会自动联网
+
+![GPT 5.4 知识截止日 vs 6-7 meme 搜索量爆发](/blog/wu-enda-prompting-module-1/day-3-web-search.png)
+
+**💡 1 句话解读：** 知识有截止日期。GPT-5.4 截止 August 2025，所以 6-7 meme 在那之后才爆，AI 不联网根本不知道——4 种问题会自动触发联网：当前事件、地点相关、冷门细分、含具体年份。
+
+**📋 模板·强制联网 + 时效校验**
+
+```
+请联网搜索：[问题]
+要求：
+- 优先 30 天内的新信息
+- 每条结论附 URL + 发布日期
+- 来源彼此矛盾时，列出双方观点
+- 30 天前的信息标 ⚠️ 提醒我可能过时
+```
+
+---
+
+## Day 4·联网 ≠ 可靠
+
+![Web search 的双 AI 架构：你看到的是「转述的转述」](/blog/wu-enda-prompting-module-1/day-4-two-ai.png)
+
+**💡 1 句话解读：** 你看到的回答其实是「另一个 AI 看了网页摘要后转述给你」——它根本没读完整页面（"Not read all pages in their entirety!"），引用经常曲解原文。
+
+**📋 模板·高质量信源限定**
+
+```
+回答时只使用以下来源：
+- 官方机构（WHO / FDA / 国家统计局 / 央行等）
+- 同行评审论文
+- 一手数据 / 原始报告
+
+明确禁用：Reddit / Quora / 个人博客 / 销售页 / 内容农场
+
+每条引用必须附：
+1) 来源类型（官方/学术/媒体/社媒）
+2) 发布日期
+3) 你只看了摘要还是读了全文？
+   只看摘要的请标 ⚠️
+```
+
+---
+
+## Day 5·Deep Research——被严重低估的功能
+
+![Deep Research 的 agentic loop：并行检索 → 评估 → 不够再搜 → 综合报告](/blog/wu-enda-prompting-module-1/day-5-deep-research.png)
+
+**💡 1 句话解读：** 普通联网 = 几秒读 3-5 页；Deep Research = 5-30 分钟读 20-50+ 页 + 多轮迭代检索（Plan → 并行搜索 → 读 → 评估 → 不够再搜）+ 输出结构化报告。决策成本高的事都该用这个。
+
+**📋 模板·Deep Research 启动**
+
+```
+进入 deep research 模式调研：[主题]
+
+要求：
+1) 先给我研究计划（5-8 个调研角度），等我确认再开始
+2) 至少 20 个独立来源，覆盖正反两面
+3) 报告必须含：
+   - 核心结论（3-5 条）
+   - 正反观点对比
+   - 关键数据 + 来源时间戳
+   - 不确定性与风险点
+4) 末尾给一份「我现在就能做的 3 个决策」清单
+```
+
+---
+
+## Day 6·Lab 实操：亲手感受差距比看 100 篇文章管用
+
+![Lab 截图：同一问题，不联网（错答数学梗）vs 联网（正确解释 TikTok meme）](/blog/wu-enda-prompting-module-1/day-6-lab.png)
+
+**💡 1 句话解读：** 吴恩达官方 lab 里最震撼的对比——同一个 "What's the 6 7 meme?"，左侧 ChatGPT 5.4 不联网答成了数学梗（完全错），右侧联网准确说出是 2025 年 1 月起源于 TikTok 的 LaMelo Ball 梗，连出处都给到。
+
+**📋 模板·5 分钟自测三连**
+
+```
+打开任一 AI（ChatGPT / Claude / Gemini），
+同一个问题用三种方式问，对比输出差距：
+
+1) 普通问（不联网，纯靠 pretrained）
+2) 联网 + "请用高质量信源（官方/学术），禁用 Reddit/博客"
+3) Deep Research 模式 + 给 rubric
+
+观察：
+- 哪种方式给出了你能直接拿去做决策的内容？
+- 哪种方式里 AI 自信但其实在编？
+- 找出你之前用 AI 时浪费掉的能力。
+```
+
+---
+
+## 6 节课浓缩成一句话
+
+> **给足上下文 + 让 AI 像人一样思考 + 强制中性提问，远比写华丽 prompt 重要。**
+
+下周更新 Module 2「AI 当思考伙伴」（共 7 节）——含 brainstorm、context 管理、AI desktop 应用、reasoning、反奉承机制、写作迭代、AI critique。
+
+完整 21 节中文笔记 + 100+ prompt 模板，订阅获取 👉 [免费手册](/zh/handbook)。
