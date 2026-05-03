@@ -24,6 +24,7 @@ const posts = files.map((filename) => {
     tags: data.tags || [],
     excerpt: data.excerpt || "",
     coverImage: data.coverImage || undefined,
+    tweetUrl: data.tweetUrl || undefined,
     content,
     filename,
   };

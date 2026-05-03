@@ -10,6 +10,7 @@ export interface BlogPostMeta {
   tags: string[];
   excerpt: string;
   coverImage?: string;
+  tweetUrl?: string;
   filename?: string;
 }
 
