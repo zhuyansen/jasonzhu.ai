@@ -1,5 +1,70 @@
 [
   {
+    "slug": "2026-05-04",
+    "date": "2026-05-04",
+    "title": "AI 快讯 · 5月4日",
+    "items": [
+      {
+        "title": "browserbase/skills：给 Claude Code 装上浏览器自动化超能力",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/browserbase/skills",
+        "summary": "Browserbase 开源了一套 Claude Code Skills 插件，让 Claude 直接通过 CLI 命令操控远程浏览器，内置反机器人检测绕过、CAPTCHA 自动解决和住宅代理支持。对需要做网页爬取、自动化测试或 Agent 操控 Web 界面的开发者来说，这是开箱即用的生产级方案。"
+      },
+      {
+        "title": "Ruflo：专为 Claude Code 打造的百级 Agent 编排平台",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/ruvnet/ruflo",
+        "summary": "Ruflo 是一个以 Claude 为核心的多 Agent 编排框架，支持跨机器、跨团队部署 100+ 专用 Agent 群体，内置 RAG 集成、分布式 Swarm 智能和 Claude Code/Codex 原生对接。定位于企业级 Agent 工作流，是目前 Claude 生态里最完整的编排基础设施之一。"
+      },
+      {
+        "title": "DeepClaude：用 DeepSeek V4 Pro 驱动 Claude Code，成本降 17 倍",
+        "source": "Hacker News",
+        "category": "变现案例",
+        "url": "https://github.com/aattaran/deepclaude",
+        "summary": "开发者将 DeepSeek V4 Pro 接入 Claude Code 的 Agent Loop，用超低价开源模型替代 Claude 处理推理任务，实测成本降至原来的 1/17。HN 上已获 114 分、53 条讨论，是一个极具参考价值的 AI 降本实战案例，值得跑 Claude Code 的独立开发者重点关注。"
+      },
+      {
+        "title": "GPT 5.5 Thinking 首发评测：EQ 和情境感知远超同级模型",
+        "source": "X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://nitter.net/bindureddy/status/2051070242890354739#m",
+        "summary": "知名评测账号 bindureddy 发布 GPT 5.5 Thinking 第一手体验：认为它在情绪智能、情境感知和整体「有脑子」程度上显著领先其他模型，不再只是「无脑讨好」。目前 GPT 5.5 系列的社区热度正在快速上升，值得关注后续基准测试数据。"
+      },
+      {
+        "title": "DeepSeek V4 Flash 被低估：快速开源模型的最佳隐藏选项",
+        "source": "X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://nitter.net/bindureddy/status/2050414613293084942#m",
+        "summary": "bindureddy 指出 DeepSeek V4 Flash 在讨论热度上严重被 V4 Pro 压制，但实际上是目前最快的高质量开源模型之一，速度远超 GPT 5.5 Thinking 和 Opus 4.7，非常适合大规模简单任务的低成本部署，是出海 SaaS 降本的可选项。"
+      },
+      {
+        "title": "哈佛研究：AI 在急诊室诊断准确率超过两名人类医生",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/05/03/in-harvard-study-ai-offered-more-accurate-diagnoses-than-emergency-room-doctors/",
+        "summary": "哈佛最新研究对 LLM 在真实急诊病例中的诊断能力进行系统测试，至少一个模型的准确率超过了两名人类急诊医生。这是医疗 AI 落地的重要里程碑，也进一步推动垂直医疗 AI 产品的商业化论证。"
+      },
+      {
+        "title": "Nemotron 3 Nano Omni：英伟达开源首个原生支持音频的全模态小模型",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2604.24954",
+        "summary": "英伟达发布 Nemotron 3 Nano Omni，是 Nemotron 系列首个同时处理文本、图像、视频和音频的多模态模型。对开发者的意义：一个轻量级模型就能搞定多模态输入，无需拼接多个专用模型，在文档理解、长视频理解和 Agent 计算任务上均有提升，适合边缘部署场景。"
+      },
+      {
+        "title": "FlashRT：长上下文 LLM 的提示注入与知识污染安全测试新框架",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2604.28157",
+        "summary": "针对 Gemini、Qwen 等长上下文模型在 RAG 和 Agent 场景下的安全漏洞，研究者提出 FlashRT 框架，专门高效测试提示注入和知识污染攻击。对开发者的意义：你部署的 RAG 应用可能比你想象的更脆弱，这套工具可以帮你在上线前量化风险。"
+      }
+    ],
+    "jasonSays": "今天最有意思的信号是 DeepClaude——用 DeepSeek V4 Pro 驱动 Claude Code Agent Loop 降本 17 倍，这不是炫技，是独立开发者控成本的实战模板，值得每个跑 Claude Code 的人认真研究。",
+    "filename": "2026-05-04.md"
+  },
+  {
     "slug": "2026-05-03",
     "date": "2026-05-03",
     "title": "AI 快讯 · 5月3日",
@@ -62,7 +127,8 @@
       }
     ],
     "jasonSays": "今天最值得盯的主线：开源模型正在以「性价比碾压」的方式逼迫闭源 API 降价，DeepSeek V4 / Kimi 2.6 / Grok 4.3 三连击——付费 API 的护城河在快速消失，现在建产品要认真考虑开源路线了。",
-    "filename": "2026-05-03.md"
+    "filename": "2026-05-03.md",
+    "coverImage": "/news/2026-05-03.png"
   },
   {
     "slug": "2026-05-02",
