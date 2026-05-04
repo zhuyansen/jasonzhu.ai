@@ -8,7 +8,12 @@ on:
     - cron: "30 1 * * *"
     # 备跑 2：北京时间 11:00 (UTC 03:00) — 二次保险
     - cron: "0 3 * * *"
-  workflow_dispatch: # 支持手动触发
+  workflow_dispatch: # 支持手动触发，可指定 date 回填历史
+    inputs:
+      date:
+        description: "回填日期 YYYY-MM-DD（留空 = 今天）"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -38,13 +43,14 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          DATE: ${{ inputs.date }}
         run: node scripts/collect-news.mjs
 
       - name: Generate daily news cover image
         continue-on-error: true
         env:
           APIMART_API_KEY: ${{ secrets.APIMART_API_KEY }}
-        run: node scripts/generate-news-image.mjs
+        run: node scripts/generate-news-image.mjs ${{ inputs.date }}
 
       - name: Check for changes
         id: changes
@@ -61,8 +67,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add src/content/news/ src/generated/news.json public/news/
-          DATE=$(date +%Y-%m-%d)
-          git commit -m "📰 AI 快讯自动采集 ${DATE}"
+          DATE_LABEL="${{ inputs.date }}"
+          if [ -z "$DATE_LABEL" ]; then DATE_LABEL=$(date +%Y-%m-%d); fi
+          git commit -m "📰 AI 快讯自动采集 ${DATE_LABEL}"
           git push
 
       - name: Send digest email

@@ -48,9 +48,10 @@ const RSS_FEEDS = [
 
 const CATEGORIES = ["Skills 生态", "出海实战", "AI 工具动态", "变现案例", "AI 论文"];
 
-const TODAY = new Date().toISOString().split("T")[0];
+// 支持 DATE 环境变量回填历史日期（例如 DATE=2026-05-01 node scripts/collect-news.mjs）
+const TODAY = process.env.DATE || new Date().toISOString().split("T")[0];
 const MONTH_DAY = (() => {
-  const d = new Date();
+  const d = process.env.DATE ? new Date(process.env.DATE + "T00:00:00") : new Date();
   return `${d.getMonth() + 1}月${d.getDate()}日`;
 })();
 
