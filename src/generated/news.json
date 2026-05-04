@@ -62,7 +62,8 @@
       }
     ],
     "jasonSays": "今天最有意思的信号是 DeepClaude——用 DeepSeek V4 Pro 驱动 Claude Code Agent Loop 降本 17 倍，这不是炫技，是独立开发者控成本的实战模板，值得每个跑 Claude Code 的人认真研究。",
-    "filename": "2026-05-04.md"
+    "filename": "2026-05-04.md",
+    "coverImage": "/news/2026-05-04.png"
   },
   {
     "slug": "2026-05-03",
@@ -195,6 +196,71 @@
     "jasonSays": "今天最值得盯的是 Skills 生态的「方法论内卷」——mattpocock 的小粒度可组合 Skills vs. Superpowers 的完整方法论，两条路谁能跑通，决定了未来 Agent 开发的主流范式。",
     "filename": "2026-05-02.md",
     "coverImage": "/news/2026-05-02.png"
+  },
+  {
+    "slug": "2026-05-01",
+    "date": "2026-05-01",
+    "title": "AI 快讯 · 5月1日",
+    "items": [
+      {
+        "title": "DeepSeek V4 Pro 横空出世：开源模型新王，比 Opus 4.7 强且便宜 10 倍",
+        "source": "X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://nitter.net/bindureddy/status/2051142381752517114#m",
+        "summary": "DeepSeek V4 Pro 在多项评测中超越 Claude Opus 4.7 和 GPT 5.5 Medium，速度更快、成本仅为竞品十分之一，被评测者称为「当前最强开源模型」。若评测数据可信，这将是继 DeepSeek R1 之后又一次颠覆开源模型格局的发布。"
+      },
+      {
+        "title": "Ruflo 开源：专为 Claude Code 打造的百 Agent 协同编排平台",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/ruvnet/ruflo",
+        "summary": "Ruflo 是专为 Claude 设计的多 Agent 编排平台，支持跨机器、跨团队部署 100+ 专业 Agent 协同工作，内置 RAG 集成、自学习群体智能与原生 Claude Code / Codex 对接能力。对于需要复杂 Agent 工作流的开发者，这是目前 Claude 生态里架构最完整的开源编排框架之一。"
+      },
+      {
+        "title": "DeepSeek TUI：终端原生编码 Agent，1M Token 上下文 + 内置 MCP 客户端",
+        "source": "GitHub Trending",
+        "category": "AI 工具动态",
+        "url": "https://github.com/Hmbown/DeepSeek-TUI",
+        "summary": "DeepSeek TUI 是一个运行在终端的编码 Agent，基于 DeepSeek V4 的 100 万 Token 上下文，单二进制文件无需 Node/Python 环境，开箱即带 MCP 客户端、沙箱和持久任务队列。想在命令行里跑 AI 编码 Agent 又不想被 Cursor 账单绑死的开发者值得试试。"
+      },
+      {
+        "title": "一人 8 天用 Claude 做出 Jira 替代品：独立开发者的真实速度边界",
+        "source": "Hacker News",
+        "category": "出海实战",
+        "url": "https://is.team",
+        "summary": "一位独立开发者公开分享了用 Claude 辅助、仅用 8 天独自构建出 Jira 替代品 is.team 的经历。这个案例的价值不在于「打倒 Jira」，而在于它真实展示了 AI 加持下单人团队的产品交付速度边界正在被重新定义。"
+      },
+      {
+        "title": "哈佛研究：AI 急诊诊断准确率超过两位人类医生",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/05/03/in-harvard-study-ai-offered-more-accurate-diagnoses-than-emergency-room-doctors/",
+        "summary": "哈佛最新研究将多个 LLM 放入真实急诊场景测试，至少一个模型的诊断准确率超越了人类急诊医生。这不是模拟题库，而是真实病例——AI 医疗辅助从「辅助」走向「超越」的信号越来越强，也对医疗监管框架提出了新挑战。"
+      },
+      {
+        "title": "奥斯卡官宣：AI 生成演员与剧本永久无缘小金人",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/05/02/ai-generated-actors-and-scripts-are-now-ineligible-for-oscars/",
+        "summary": "奥斯卡正式将 AI 生成的演员和剧本列为参赛资格禁区。这是电影工业对 AI 内容的首次系统性制度排斥，也预示着「AI 创作物的版权与荣誉归属」之争将从行业潜规则走向明文规则。"
+      },
+      {
+        "title": "Agent Skill 结构化表示新框架：让机器真正「读懂」技能包而非只看文档",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2604.24026",
+        "summary": "现有 Agent 的 Skill 大多还是 Markdown 文档，机器靠「猜」来理解和调用。这篇论文提出 SSL（调度-结构-逻辑）表示框架，把技能包拆解为机器可直接解析的结构化格式。对于正在构建 Skill 生态或 Agent 编排系统的开发者，这套框架可能直接影响你的 Skill 设计思路。"
+      },
+      {
+        "title": "视觉语言模型「在线自校正」新方法：无需 GPT 监督，自己治自己的幻觉",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2605.00323",
+        "summary": "主流 VLM 减少幻觉的方式是用 GPT 等强模型来「教」弱模型，但这会导致学生模型学会「猜答案」而非真正看图。这篇论文提出在线自校正机制，让模型在推理过程中自己发现并纠正幻觉，无需外部强模型监督——对多模态应用开发者而言，意味着更可靠的视觉理解输出。"
+      }
+    ],
+    "jasonSays": "今天最炸的是 DeepSeek V4 Pro——如果评测数据站得住脚，开源模型追上闭源的时间线又要提前了；而奥斯卡封杀 AI 内容这件事，说明监管侧的「划线」速度其实比技术侧快得多。",
+    "filename": "2026-05-01.md"
   },
   {
     "slug": "2026-04-30",
