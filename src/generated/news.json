@@ -1,5 +1,70 @@
 [
   {
+    "slug": "2026-05-05",
+    "date": "2026-05-05",
+    "title": "AI 快讯 · 5月5日",
+    "items": [
+      {
+        "title": "Gemini API 新增 Webhook 推送：告别轮询等待长任务",
+        "source": "Google AI Blog",
+        "category": "AI 工具动态",
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/event-driven-webhooks/",
+        "summary": "Gemini API 上线事件驱动 Webhook，长任务完成后主动推送通知，不再需要开发者反复轮询接口。对于需要跑批量推理、长文档处理的开发者来说，这直接降低了延迟和无效请求成本，工程体验大幅提升。"
+      },
+      {
+        "title": "OpenAI 重建 WebRTC 栈：实时语音 AI 的低延迟工程内幕",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/delivering-low-latency-voice-ai-at-scale",
+        "summary": "OpenAI 公开了其为实时语音 AI 从头重建 WebRTC 技术栈的工程细节，涵盖全球低延迟调度、对话轮转处理等核心挑战。想做语音 Agent 产品的开发者值得深读，这是目前最接近生产级语音 AI 架构的公开参考。"
+      },
+      {
+        "title": "Sierra 融资 9.5 亿美元，企业 AI 客服赛道进入军备竞赛",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/05/04/sierra-raises-950m-as-the-race-to-own-enterprise-ai-gets-serious/",
+        "summary": "企业 AI 对话平台 Sierra 完成 9.5 亿美元融资，累计可用资本超 10 亿美元，目标成为 AI 客户体验的全球标准。这轮融资规模表明资本正在押注企业级 AI 客服将成为下一个万亿市场。"
+      },
+      {
+        "title": "图像 AI 模型发布带动 App 下载量是聊天机器人的 6.5 倍，但留存是难题",
+        "source": "TechCrunch AI",
+        "category": "变现案例",
+        "url": "https://techcrunch.com/2026/05/04/image-ai-models-now-drive-app-growth-beating-chatbot-upgrades/",
+        "summary": "Appfigures 数据显示，图像 AI 模型更新带来的 App 下载量增幅是聊天机器人升级的 6.5 倍，但绝大多数 App 未能将下载热度转化为持续收入。对独立开发者的启示：图像功能是拉新利器，但变现设计需要前置规划。"
+      },
+      {
+        "title": "豆包筹备付费订阅，三档定价最高 500 元/月",
+        "source": "36Kr",
+        "category": "AI 工具动态",
+        "url": "https://36kr.com/p/3794799114476809?f=rss",
+        "summary": "豆包 App Store 页面曝出三档订阅方案：68/200/500 元每月，聚焦 PPT 生成、数据分析、影视制作等高算力复杂任务。字节系大模型产品首次尝试付费分层，国内 AI 应用变现路径的重要信号。"
+      },
+      {
+        "title": "DeepSeek-TUI：专为 DeepSeek V4 打造的终端原生编程 Agent",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/Hmbown/DeepSeek-TUI",
+        "summary": "DeepSeek TUI 是一个单二进制终端编程 Agent，基于 DeepSeek V4 的 100 万 token 上下文，内置 MCP 客户端、沙箱和持久任务队列，无需 Node/Python 运行时。对想用开源模型平替 Claude Code 的开发者是值得一试的轻量选项。"
+      },
+      {
+        "title": "Odysseus：用强化学习让视觉语言模型打通关游戏，决策能力突破 100 轮",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2605.00347",
+        "summary": "现有 VLM 做长序列决策通常撑不过 20-30 步就跑偏，Odysseus 用 RL 训练让模型在超级马里奥关卡中稳定完成 100+ 轮决策。对开发者的意义：这是把 VLM 用于复杂多步 Agent 任务（如 UI 自动化、长流程操控）的关键研究方向。"
+      },
+      {
+        "title": "Cerebras 冲刺 IPO：估值或超 266 亿美元，与 OpenAI 深度绑定",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/05/04/openais-cozy-partner-cerebras-is-on-track-for-a-blockbuster-ipo/",
+        "summary": "AI 芯片公司 Cerebras 即将 IPO，估值有望超 266 亿美元，其与 OpenAI 的深度合作关系是核心叙事。英伟达之外的 AI 算力替代路线正在获得资本市场认可，AI 基础设施投资热度持续升温。"
+      }
+    ],
+    "jasonSays": "今天最值得盯的信号是豆包要收费了——国内 AI 应用一直靠免费抢用户，字节率先试水分层付费，这条鲶鱼一旦跑通，其他大厂跟进只是时间问题。",
+    "filename": "2026-05-05.md"
+  },
+  {
     "slug": "2026-05-04",
     "date": "2026-05-04",
     "title": "AI 快讯 · 5月4日",
@@ -260,7 +325,8 @@
       }
     ],
     "jasonSays": "今天最炸的是 DeepSeek V4 Pro——如果评测数据站得住脚，开源模型追上闭源的时间线又要提前了；而奥斯卡封杀 AI 内容这件事，说明监管侧的「划线」速度其实比技术侧快得多。",
-    "filename": "2026-05-01.md"
+    "filename": "2026-05-01.md",
+    "coverImage": "/news/2026-05-01.png"
   },
   {
     "slug": "2026-04-30",
