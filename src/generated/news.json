@@ -1,5 +1,70 @@
 [
   {
+    "slug": "2026-05-06",
+    "date": "2026-05-06",
+    "title": "AI 快讯 · 5月6日",
+    "items": [
+      {
+        "title": "GPT-5.5 Instant 正式发布：更准确、更少幻觉、支持个性化",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/gpt-5-5-instant",
+        "summary": "OpenAI 发布 GPT-5.5 Instant，成为 ChatGPT 新默认模型。官方强调三大改进：回答更准确、幻觉率降低、新增个性化控制能力。区别于此前已报道的 GPT-5.5 Thinking，这是面向日常对话场景的轻量快速版本，直接影响数亿 ChatGPT 用户的使用体验。"
+      },
+      {
+        "title": "OpenAI 向 ChatGPT 引入广告：自助投放 + CPC 竞价公开测试",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/new-ways-to-buy-chatgpt-ads",
+        "summary": "OpenAI 正式推出 ChatGPT 广告自助管理平台（Ads Manager），支持 CPC 竞价和效果衡量工具，面向广告主开放 Beta 测试。官方声称广告与对话内容严格隔离、保护隐私。这是 OpenAI 商业化的重要转折——AI 对话界面正式成为新广告渠道。"
+      },
+      {
+        "title": "Apple iOS 27 将支持自选第三方 AI 模型，打破 Siri 垄断",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/05/05/apple-plans-to-make-ios-27-a-choose-your-own-adventure-of-ai-models/",
+        "summary": "据报道，Apple 在 iOS 27 中计划让用户自由选择 ChatGPT、Gemini 等第三方 AI 模型执行各类系统任务，而非锁定 Apple Intelligence。这一「AI 模型自选」机制若落地，将彻底改变移动端 AI 分发格局，对独立开发者和 SaaS 产品的用户触达路径影响深远。"
+      },
+      {
+        "title": "SAP 斥资 11.6 亿美元收购德国 AI 初创 Prior Labs",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/05/05/sap-bets-1-16b-on-18-month-old-german-ai-lab-and-says-yes-to-nemoclaw/",
+        "summary": "成立仅 18 个月的德国 AI 实验室 Prior Labs 被 SAP 以 11.6 亿美元收购，同时 SAP 宣布限定客户 Agent 只能接入含英伟达 NemoClaw 在内的少数合作模型。这是欧洲 AI 生态的标志性并购，也揭示出企业级 AI 平台正在构筑封闭 Agent 生态。"
+      },
+      {
+        "title": "中国法院判决：企业不得以 AI 替代为由解雇员工",
+        "source": "Hacker News",
+        "category": "AI 工具动态",
+        "url": "https://fortune.com/2026/05/03/chinese-court-layoffs-workers-ai-replacement-labor-market/",
+        "summary": "中国法院裁定，企业以 AI 可替代岗位职能为由进行裁员属于违法行为。这是全球首批将 AI 裁员纳入司法管辖的判例之一，对出海中国市场的企业 HR 合规策略有直接影响，也预示着各国劳动保护立法将加速跟进。"
+      },
+      {
+        "title": "Andrew Ng 实测：编程 Agent 对前端加速最显著，研究工作几乎无感",
+        "source": "X/@AndrewYNg",
+        "category": "AI 工具动态",
+        "url": "https://nitter.net/AndrewYNg/status/2051691741150081122#m",
+        "summary": "Andrew Ng 在最新一期 The Batch 分享团队实践：编程 Agent 对前端开发加速最大（TypeScript/React 流畅），其次是后端，基础设施和研究工作收益最小。他建议前端团队大幅提速，但对研究团队期望不变——这是迄今最务实的 AI 编程提效分层框架。"
+      },
+      {
+        "title": "HiL-Bench：测试 AI Agent 是否知道何时该向人类求助",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2604.09408",
+        "summary": "新基准 HiL-Bench 专门评测 Agent 在任务信息不完整或模糊时的「求助判断力」——现有 Agent 往往乱猜而不是主动提问。对开发者重要：这直接关系到 Agent 在生产环境中能否安全自主运行，当前所有主流 Agent 框架在此维度几乎没有被系统评测过。"
+      },
+      {
+        "title": "大模型「元认知」研究：让 AI 知道自己不知道什么",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2605.01428",
+        "summary": "论文指出，当前模型减少幻觉的主要手段是「塞更多知识」，但真正的出路是让模型具备元认知——即准确判断自己对某个问题的置信度。对开发者重要：构建 RAG 或 Agent 系统时，模型能否诚实表达不确定性，直接决定产品可靠性上限。"
+      }
+    ],
+    "jasonSays": "今天最值得盯的是 ChatGPT 广告平台开放——OpenAI 把对话框变成广告位，这不只是商业化，更是在重新定义「搜索引擎替代品」的流量分配逻辑，出海做 SaaS 的朋友要开始研究怎么在 AI 对话里被找到了。",
+    "filename": "2026-05-06.md"
+  },
+  {
     "slug": "2026-05-05",
     "date": "2026-05-05",
     "title": "AI 快讯 · 5月5日",
@@ -62,7 +127,8 @@
       }
     ],
     "jasonSays": "今天最值得盯的信号是豆包要收费了——国内 AI 应用一直靠免费抢用户，字节率先试水分层付费，这条鲶鱼一旦跑通，其他大厂跟进只是时间问题。",
-    "filename": "2026-05-05.md"
+    "filename": "2026-05-05.md",
+    "coverImage": "/news/2026-05-05.png"
   },
   {
     "slug": "2026-05-04",
