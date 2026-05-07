@@ -1,5 +1,70 @@
 [
   {
+    "slug": "2026-05-07",
+    "date": "2026-05-07",
+    "title": "AI 快讯 · 5月7日",
+    "items": [
+      {
+        "title": "Anthropic 上调 Claude Code 用量上限，SpaceX 大单是关键推手",
+        "source": "Hacker News / Ars Technica",
+        "category": "Skills 生态",
+        "url": "https://arstechnica.com/ai/2026/05/anthropic-raises-claude-code-usage-limits-credits-new-deal-with-spacex/",
+        "summary": "Anthropic 宣布提高 Claude Code 的使用配额上限，并将这一决定部分归因于与 SpaceX 签订的新合作协议带来的收入支撑。这意味着重度依赖 Claude Code 的开发者和团队将获得更大的操作空间，也侧面印证了 Claude Code 在企业级市场的商业化提速。"
+      },
+      {
+        "title": "Snap 与 Perplexity 4 亿美元 AI 搜索合作宣告终止",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/05/06/snap-says-its-400m-deal-with-perplexity-amicably-ended/",
+        "summary": "去年 11 月宣布的 Snap×Perplexity 战略合作正式\"友好结束\"，原计划将 Perplexity AI 搜索引擎深度集成进 Snapchat。此次分手意味着 Perplexity 在社交平台分发渠道上折戟，也暗示大型平台对外部 AI 搜索的整合策略正在重新审视。"
+      },
+      {
+        "title": "xAI 真实商业模式曝光：卖算力数据中心比训练模型更赚钱",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/05/06/is-xai-a-neocloud-now/",
+        "summary": "TechCrunch 分析指出，xAI 的核心业务正逐渐转向以数据中心建设和算力租售为主的\"新云\"（neocloud）模式，而非单纯的模型研发公司。结合 SpaceX 拟在德州斥资高达 1190 亿美元建设 Terafab 芯片工厂的消息，马斯克系的算力布局野心已远超外界预期。"
+      },
+      {
+        "title": "OpenAI Codex 企业级渗透加速：B2B 报告揭示规模化 Agent 落地路径",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/introducing-b2b-signals",
+        "summary": "OpenAI 发布 B2B Signals 研究报告，披露头部企业如何通过 Codex 驱动的 Agent 工作流深化 AI 采用、建立竞争壁垒。报告显示，领先企业不再停留在 Copilot 级别的辅助工具，而是将 AI 嵌入核心业务流程，形成可复制的规模化优势。"
+      },
+      {
+        "title": "Dexter：对标 Claude Code 的自主金融研究 Agent 开源发布",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/virattt/dexter",
+        "summary": "开源项目 Dexter 是一个专为金融研究打造的自主 Agent，具备任务规划、自我反思和实时市场数据接入能力，定位\"金融领域的 Claude Code\"。支持 WhatsApp 集成，对独立研究员和量化团队有较高实用价值，值得关注其 MCP 工具链扩展潜力。"
+      },
+      {
+        "title": "GPT-5.5 助力理论物理突破：AI 首次在量子引力领域推导出新结果",
+        "source": "Latent Space",
+        "category": "AI 工具动态",
+        "url": "https://www.latent.space/p/lupsasca",
+        "summary": "OpenAI 研究员与物理学家 Alex Lupsasca 合作，详述了 GPT-5.x 如何在理论物理和量子引力领域推导出全新结论的完整过程。这是 AI 在纯理论科学研究中实现实质性突破的罕见案例，对评估前沿模型的\"研究加速\"上限具有重要参考价值。"
+      },
+      {
+        "title": "ARIS：多智能体对抗协作实现全自主科研的开源框架",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2605.03042",
+        "summary": "ARIS 提出一套开源自主科研系统，核心是让多个 Agent 互相\"挑战\"彼此的结论来避免「看起来合理但无依据」的幻觉输出——这是长周期研究任务中最致命的失败模式。对于想用 AI 辅助严肃研究的开发者，ARIS 的质控机制设计很值得借鉴。"
+      },
+      {
+        "title": "强化学习训练策略全景综述：Rollout 设计才是 LLM 推理能力的真正瓶颈",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2605.02913",
+        "summary": "这篇综述系统梳理了用 RL 提升 LLM 推理能力时，\"采样轨迹（rollout）\"的生成、过滤和回放策略——通俗说就是 AI 在训练时\"练习题怎么出、怎么筛、怎么复习\"。这个环节长期被忽视却决定训练效果上限，对构建自研后训练流程的团队有极高参考价值。"
+      }
+    ],
+    "jasonSays": "今天最值得盯的信号：Anthropic 靠 SpaceX 大单撑起 Claude Code 扩容，xAI 悄悄转型算力卖场——AI 军备竞赛的钱，越来越多流向算力基础设施而非模型本身，这个趋势比任何跑分都重要。",
+    "filename": "2026-05-07.md"
+  },
+  {
     "slug": "2026-05-06",
     "date": "2026-05-06",
     "title": "AI 快讯 · 5月6日",
@@ -62,7 +127,8 @@
       }
     ],
     "jasonSays": "今天最值得盯的是 ChatGPT 广告平台开放——OpenAI 把对话框变成广告位，这不只是商业化，更是在重新定义「搜索引擎替代品」的流量分配逻辑，出海做 SaaS 的朋友要开始研究怎么在 AI 对话里被找到了。",
-    "filename": "2026-05-06.md"
+    "filename": "2026-05-06.md",
+    "coverImage": "/news/2026-05-06.png"
   },
   {
     "slug": "2026-05-05",
