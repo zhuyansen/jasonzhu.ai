@@ -511,6 +511,15 @@ async function main() {
   console.log(`  筛选出 ${digest.items.length} 条快讯`);
   console.log(`  Jason 说: ${digest.jasonSays}`);
 
+  // 链接清洗：nitter.net 已死链，改回 x.com 原推
+  for (const item of digest.items) {
+    if (item.url) {
+      item.url = item.url
+        .replace(/https?:\/\/nitter\.net\/([^/]+)\/status\/(\d+)#?m?/g, "https://x.com/$1/status/$2")
+        .replace(/#m$/, "");
+    }
+  }
+
   // Step 3: 写入 Supabase
   console.log("\n💾 Step 3: 写入 Supabase...");
   await writeToSupabase(digest);
