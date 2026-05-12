@@ -17,7 +17,7 @@ Module 1 教你「找信息」，Module 2 教你「让 AI 帮你思考」，**Mo
 
 ## Day 1·多模态成本意识：知道什么时候该用哪种输出
 
-![多模态输出成本/时间曲线：text < voice << images <<< videos](/blog/wu-enda-prompting-module-3/day-1-multimedia.png)
+![多模态输出成本/时间曲线：text → voice → images → videos 逐级提升](/blog/wu-enda-prompting-module-3/day-1-multimedia.png)
 
 **💡 1 句话解读：** 文字几乎免费几秒出，语音几美分十几秒，图像几十美分几十秒，视频几美元几分钟——**一个简单认知：能用文字描述清楚的，先别让它出图；能用图说清的，先别让它出视频**。
 
