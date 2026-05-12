@@ -511,12 +511,26 @@ async function main() {
   console.log(`  筛选出 ${digest.items.length} 条快讯`);
   console.log(`  Jason 说: ${digest.jasonSays}`);
 
-  // 链接清洗：nitter.net 已死链，改回 x.com 原推
+  // 链接清洗：nitter.net 已死链
+  // ⚠️ nitter 部分 fork 给出的 status ID 是合成 ID（非真实 X tweet ID），
+  // 直接重写到 x.com/<user>/status/<id> 会得到 404 死链。
+  // 兜底策略：rewrite 后用 fxtwitter API 验证真实性，404 的退化为 profile URL。
   for (const item of digest.items) {
-    if (item.url) {
-      item.url = item.url
-        .replace(/https?:\/\/nitter\.net\/([^/]+)\/status\/(\d+)#?m?/g, "https://x.com/$1/status/$2")
-        .replace(/#m$/, "");
+    if (!item.url) continue;
+    const m = item.url.match(/https?:\/\/nitter\.net\/([^/]+)\/status\/(\d+)#?m?/);
+    if (m) {
+      const [, user, id] = m;
+      try {
+        const r = await fetch(`https://api.fxtwitter.com/${user}/${id}`);
+        const data = await r.json();
+        item.url = data?.code === 200
+          ? `https://x.com/${user}/status/${id}`
+          : `https://x.com/${user}`;
+      } catch {
+        item.url = `https://x.com/${user}`; // 网络失败保守退化
+      }
+    } else {
+      item.url = item.url.replace(/#m$/, "");
     }
   }
 
