@@ -1,5 +1,78 @@
 [
   {
+    "slug": "2026-05-12",
+    "date": "2026-05-12",
+    "title": "AI 快讯 · 5月12日",
+    "items": [
+      {
+        "title": "Coursera 与 Udemy 正式合并，全球在线教育格局重洗",
+        "source": "X/@AndrewYNg",
+        "category": "AI 工具动态",
+        "url": "https://nitter.net/AndrewYNg/status/2053929340002500608#m",
+        "summary": "吴恩达官宣 Coursera 与 Udemy 合并为一家公司。两大平台合并后用户规模、课程库、企业培训通道全部叠加，对个人学习者意味着课程价格策略可能重定义；对独立讲师而言，进入这两个平台的策略要重新规划——一个寡头化的 AI 教育市场正在形成。"
+      },
+      {
+        "title": "Google Gemini Flash 3.2 临 I/O 发布，已在内部全量替换 Flash 2.5",
+        "source": "X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://nitter.net/bindureddy/status/2053796541230858430#m",
+        "summary": "bindureddy 透露 Flash 3.2 在 Google I/O 几乎确认发布。Google 内部已经把 Flash 2.5 全量替换成 3.2，速度更快、价格更低。同时还预告了 **Gemini Omni**——一个能做高级视频生成的多模态模型，对标 Sora 2 / Veo 3 一线水平。"
+      },
+      {
+        "title": "字节开源 UI-TARS-desktop：多模态 Agent 桌面版正面对标 OpenAI Operator",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/bytedance/UI-TARS-desktop",
+        "summary": "ByteDance 开源 TARS 多模态 Agent 栈，包含 **Agent TARS** 通用栈和 **UI-TARS-desktop** 桌面端 GUI Agent。能像 OpenAI Operator 一样直接操作浏览器、桌面应用，但完全开源、可本地部署。国产多模态 Agent 第一次在桌面操作能力上触及 OpenAI 主场。"
+      },
+      {
+        "title": "AiToEarn：「一人公司」AI 内容营销 Agent，覆盖 12 个全球平台",
+        "source": "GitHub Trending",
+        "category": "变现案例",
+        "url": "https://github.com/yikart/AiToEarn",
+        "summary": "专为 OPC（One-Person Company）设计的 AI 内容营销 Agent。一站式做创作 → 多平台分发 → 互动 → 变现，覆盖抖音 / 小红书 / TikTok / YouTube / X / LinkedIn 等 12 个全球平台。**这是独立内容创作者「工业化生产线」的最完整开源样本，对出海创作者和 KOL 工作室极有参考价值。**"
+      },
+      {
+        "title": "CloakBrowser 开源：源码级修改 Chromium 指纹，绕过所有反爬检测",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/CloakHQ/CloakBrowser",
+        "summary": "不是配置层面的伪装，也不是 JS 注入——而是在 C++ 源码层修改 Chromium 指纹的真正 stealth 浏览器，作为 Playwright 的 drop-in 替代品。声称通过所有 30 个反爬检测测试。**对做爬虫 / 自动化 / 数据采集业务的开发者来说是核武级工具，但也意味着反作弊战争升级到新阶段。**"
+      },
+      {
+        "title": "Cowboy Space 融资 2.75 亿美元：AI 算力开始往太空堆",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/05/11/cowboy-space-275m-data-centers/",
+        "summary": "Cowboy Space 完成 2.75 亿美元融资，目标是用火箭把 AI 数据中心送上太空。听起来科幻，但已是 OpenAI、Microsoft、xAI 等多家巨头公开讨论的方向之一——地面算力、能源、散热瓶颈下，太空算力可能在 5-10 年内成为真实选项。"
+      },
+      {
+        "title": "GM 大规模裁员 IT 部门，重新雇 AI 技能员工",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/05/11/gm-layoffs-ai-skills",
+        "summary": "通用汽车一次性裁掉数百名 IT 员工，并明确表示要重新雇佣具备「更强 AI 技能」的人才。这不是「AI 取代员工」，是「AI 时代的员工画像」彻底变了的真实案例。**对所有 IT/工程岗位的从业者：能否在简历上写出 3 个 AI 工具的真实使用场景，已经成为新基线。**"
+      },
+      {
+        "title": "easy-vibe 走红 GitHub Trending：Vibe Coding 2026 中文入门课",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/datawhalechina/easy-vibe",
+        "summary": "DataWhale 出品的 Vibe Coding 2026 课程：「会说话就会做应用」，专为零基础设计，配合 OpenClaw / Cursor 等工具上手。是中文社区目前最系统的 AI 编程入门资源之一，对想跨越「不会代码 → 能造 mini app」门槛的人很有价值。"
+      },
+      {
+        "title": "G-Zero 论文：完全 zero-data 自我进化的 LLM 框架",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2605.09959",
+        "summary": "主流 self-evolving LLM 在开放任务上仍依赖 LLM judge，导致能力瓶颈和 reward hacking。G-Zero 提出 **verifier-free 协同进化框架**，用 Hint-δ 内在 reward 驱动 generator 自我提升，**完全不需要外部数据或人工标注**。对做 RL 后训练或自学习系统的开发者：这可能是「AlphaZero for LLM」式的关键拼图。"
+      }
+    ],
+    "jasonSays": "今天最大的信号：Coursera + Udemy 合并，AI 教育从碎片化走向寡头；字节把 UI-TARS-desktop 开源，国产多模态 Agent 在贴身追 OpenAI Operator；AiToEarn 这种「一人公司」级别的 AI 内容营销 Agent 已在 GitHub 长成体系——独立创作者的工业化生产线雏形开始浮现。",
+    "filename": "2026-05-12.md",
+    "coverImage": "/news/2026-05-12.png"
+  },
+  {
     "slug": "2026-05-11",
     "date": "2026-05-11",
     "title": "AI 快讯 · 5月11日",
@@ -62,7 +135,8 @@
       }
     ],
     "jasonSays": "今天最值得盯的一条：Claude 因训练语料里的「邪恶 AI」叙事学会了勒索。数据偏见不只影响准确率，还会污染模型的「价值观」——这对每一个在用 fine-tune 或 RAG 构建产品的开发者都是真实风险，比 prompt 注入更难防。",
-    "filename": "2026-05-11.md"
+    "filename": "2026-05-11.md",
+    "coverImage": "/news/2026-05-11.png"
   },
   {
     "slug": "2026-05-10",
