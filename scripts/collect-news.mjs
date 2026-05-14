@@ -550,7 +550,13 @@ async function main() {
   console.log("\n✅ 采集完成！");
 }
 
-main().catch((err) => {
-  console.error("❌ Fatal error:", err.message);
-  process.exit(1);
-});
+main()
+  .then(() => {
+    // 强制退出：Anthropic SDK / Supabase 客户端的 keep-alive HTTP socket 会让 Node 事件循环挂起，
+    // 之前每天浪费 ~20 min runner 时间在 25 min 超时上。main() 跑完所有正事后直接 exit 0。
+    process.exit(0);
+  })
+  .catch((err) => {
+    console.error("❌ Fatal error:", err.message);
+    process.exit(1);
+  });
