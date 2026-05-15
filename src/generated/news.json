@@ -1,5 +1,70 @@
 [
   {
+    "slug": "2026-05-15",
+    "date": "2026-05-15",
+    "title": "AI 快讯 · 5月15日",
+    "items": [
+      {
+        "title": "OpenAI Codex 登陆手机：随时随地监控和审批编程任务",
+        "source": "OpenAI Blog / TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/work-with-codex-from-anywhere",
+        "summary": "OpenAI 宣布 Codex 接入 ChatGPT 移动端，用户可在手机上实时监控、引导和审批 AI 编程任务，支持跨设备和远程环境工作流管理。同步发布 Windows 沙箱技术文章，详解如何通过受控文件访问和网络隔离保障 Codex 安全运行。对独立开发者而言，碎片时间管理 AI 编程任务成为现实。"
+      },
+      {
+        "title": "agentmemory：让 Claude Code/Cursor/Codex 等编程 Agent 拥有持久记忆",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/rohitg00/agentmemory",
+        "summary": "agentmemory 是专为编程 Agent 设计的持久记忆层，支持 Claude Code、Cursor、Gemini CLI、Codex CLI 等主流工具及所有 MCP 客户端。基于 Karpathy 的 LLM Wiki 模式扩展，加入置信度评分、知识图谱和混合搜索，彻底解决 Agent 每次会话都要重新解释上下文的痛点。"
+      },
+      {
+        "title": "OpenAI 准备起诉苹果：ChatGPT 集成未带来预期用户增长",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/05/14/openai-is-reportedly-preparing-legal-action-against-apple-it-wouldnt-be-the-first-partner-to-feel-burned/",
+        "summary": "OpenAI 正考虑对苹果采取法律行动，原因是双方 ChatGPT 集成协议未能带来承诺的订阅用户增长和产品曝光度。这是 OpenAI 与合作伙伴关系破裂的最新案例，也揭示了 AI 公司在平台分发合作中的结构性博弈困境。"
+      },
+      {
+        "title": "SpaceXAI 合并后人才大失血：50+ 员工悄然离职",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/05/14/elon-musks-spacexai-has-been-bleeding-staff-since-its-merger/",
+        "summary": "马斯克旗下 SpaceXAI 合并后短短数月，已有超过 50 名员工离职，原因涉及倦怠、管理层变动、竞争对手挖人以及流动性套现削弱留人激励。这一人才流失趋势对 xAI 的竞争力构成实质威胁，也是 AI 大厂「并购整合」风险的典型案例。"
+      },
+      {
+        "title": "Richard Socher 6.5 亿美元豪赌：打造能自我研究和持续进化的 AI",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/05/14/what-happens-when-ai-starts-building-itself/",
+        "summary": "前 Salesforce AI 研究负责人 Richard Socher 创办新公司，融资 6.5 亿美元，目标是构建能无限循环自我研究与改进的 AI 系统，并承诺会真正落地产品而非停留在 AGI 幻想。这是 AI 「自我进化」赛道迄今最大规模的资本押注。"
+      },
+      {
+        "title": "LEAD 论文：让推理模型「说人话」——动态压缩 CoT 链路节省 40% Token",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2605.09806",
+        "summary": "o1、DeepSeek-R1 这类推理模型越聪明越啰嗦，思维链动辄数千 Token 浪费算力。LEAD 框架通过强化学习引入「长度效率奖励」，让模型自适应调整推理深度——简单问题短答、复杂问题深想。实测在保持准确率的前提下显著压缩推理成本，对部署推理模型的开发者意义重大。"
+      },
+      {
+        "title": "FlowCompile：首个专为多 Agent 工作流设计的「编译器优化」框架",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2605.13647",
+        "summary": "多个 LLM 子 Agent 组成的工作流该如何自动优化模型选择、推理预算和结构配置？FlowCompile 把这个问题类比为编译器优化，系统性地在准确率和延迟之间寻找最优配置。对正在搭建复杂 Agent Pipeline 的开发者来说，这是把「凭感觉调参」变成「有算法依据」的关键一步。"
+      },
+      {
+        "title": "DeepLearning.AI 新课上线：拆解 Transformer 内部机制，从注意力到 GPU 推理加速",
+        "source": "X/@AndrewYNg",
+        "category": "AI 工具动态",
+        "url": "https://www.deeplearning.ai/courses/transformers-in-practice",
+        "summary": "Andrew Ng 联合 AMD 推出「Transformers in Practice」实践课，教你真正看懂 LLM 内部运作：注意力机制如何决定下一个 Token、为什么会幻觉、量化如何加速 GPU 推理。课程包含交互式可视化，是开发者从「会用」到「能诊断问题」的必要升级。"
+      }
+    ],
+    "jasonSays": "今天最值得盯的是 OpenAI 准备告苹果这件事——AI 公司与平台巨头的分发博弈正式走向法庭，这不是个案，是所有 AI 产品在平台分发上都会面临的结构性困境，出海 SaaS 开发者该认真思考自己的渠道依赖风险了。",
+    "filename": "2026-05-15.md"
+  },
+  {
     "slug": "2026-05-14",
     "date": "2026-05-14",
     "title": "AI 快讯 · 5月14日",
@@ -62,7 +127,8 @@
       }
     ],
     "jasonSays": "今天最值得盯的是 Anthropic Cat Wu 的那句话——AI 下一步是「主动预判需求」，这不只是产品愿景，而是 Claude Code 正在走的路。谁先把主动式 Agent 做进自己的产品，谁就提前卡位下一个用户习惯。",
-    "filename": "2026-05-14.md"
+    "filename": "2026-05-14.md",
+    "coverImage": "/news/2026-05-14.png"
   },
   {
     "slug": "2026-05-13",
