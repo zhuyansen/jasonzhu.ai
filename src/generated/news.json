@@ -1,5 +1,71 @@
 [
   {
+    "slug": "2026-05-16",
+    "date": "2026-05-16",
+    "title": "AI 快讯 · 5月16日",
+    "items": [
+      {
+        "title": "OpenAI 推出 ChatGPT 个人金融：直接连接银行账户",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/05/15/openai-launches-chatgpt-for-personal-finance-will-let-you-connect-bank-accounts",
+        "summary": "OpenAI 正式发布 ChatGPT for personal finance，用户可授权 ChatGPT 直接连接银行账户进行预算分析、交易归类、消费建议。这是 ChatGPT 首次进入消费级金融场景，对国内外个人理财 SaaS（Mint / Copilot Money / Cleo 等）形成直接威胁，AI 助手正在抢占信任成本最高的家庭财务场景。"
+      },
+      {
+        "title": "Anthropic 改 Claude Code 计费模式：programmatic usage 单独计量",
+        "source": "Latent Space",
+        "category": "AI 工具动态",
+        "url": "https://www.latent.space/p/codex-claude-meters",
+        "summary": "Latent Space AINews 拆解 Anthropic 最新动作：Claude Code 的 programmatic（脚本/自动化调用）使用将单独计量收费，告别此前的 finger-based（按使用人头）定价。对独立开发者和小团队而言，**重度自动化用户成本可能显著上升**，需要重新评估 Agent workflow 的总拥有成本。"
+      },
+      {
+        "title": "bindureddy：AI 单位推理成本已正式超过雇人",
+        "source": "X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://x.com/bindureddy",
+        "summary": "bindureddy 抛出反常识观察：在很多重度推理场景下，AI 单次任务成本已超过雇人完成同样任务的边际成本。半开玩笑说「Humans are sooo back! 😅」——背后真问题是：第一波「AI 比人便宜」红利在某些场景已经结束，下一轮拼的是「同等成本下质量是否真比人强」。"
+      },
+      {
+        "title": "GPT 5.6 vs Gemini 3.2 Flash：下周两大模型对决",
+        "source": "X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://x.com/bindureddy",
+        "summary": "bindureddy 预告下周关键节点：GPT 5.6 与 Gemini 3.2 Flash 几乎同档期发布。Gemini 3.2 Flash 据称深度使用了 DeepMind 的蒸馏技术，目标是把 Flash 价格档位推进到更强水平。**这是 OpenAI 与 Google 在「便宜+够强」段位的正面贴身战**，对开发者选型有直接影响。"
+      },
+      {
+        "title": "LiteLLM Agent Platform 开源：Claude Code / Codex 私有部署沙箱与密钥库",
+        "source": "Hacker News",
+        "category": "Skills 生态",
+        "url": "https://news.ycombinator.com/from?site=litellm.ai",
+        "summary": "LiteLLM 推出 Agent Platform，允许企业在自家基础设施上跑 Claude Code / Codex / Cursor 等编程 Agent，自带沙箱隔离 + 密钥金库管理。对受合规约束的金融 / 医疗 / 政府用户，这是把 AI 编程 Agent 落地内网的关键中间件。"
+      },
+      {
+        "title": "scientific-agent-skills 开源：让 AI Agent 真正能做科研工作的 Skills 集合",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+        "summary": "K-Dense-AI 开源面向科研场景的 Agent Skills 库，覆盖论文检索、实验设计、数据分析、文献综述等真实科研工作流。这是 Skills 生态从「办公提效」走向「专业领域知识工作」的标志性项目，对做学术 / 制药 / 材料 AI 工具的开发者有直接参考价值。"
+      },
+      {
+        "title": "吴恩达新课《Transformers in Practice》上线",
+        "source": "X/@AndrewYNg",
+        "category": "AI 工具动态",
+        "url": "https://x.com/AndrewYNg",
+        "summary": "吴恩达官宣 DeepLearning.AI 新课《Transformers in Practice》，主打实操视角讲透 transformer-based LLM 内部机制。不同于偏理论的旧课，这门课专为想真正动手训练 / 微调 / 部署模型的工程师设计——免费，是想跨越「会用 API」到「理解原理」鸿沟的关键资源。"
+      },
+      {
+        "title": "Lighthouse Attention 论文：长上下文预训练效率新突破",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2605.14358",
+        "summary": "主流长上下文模型在预训练阶段计算成本指数增长。Lighthouse Attention 提出新机制，在保持全局信息可达的同时大幅压缩计算复杂度，可支持百万 token 级别上下文的可负担预训练。对做长文档理解 / 代码库级 Agent / RAG 优化的团队，这是值得跟进的架构方向。"
+      }
+    ],
+    "jasonSays": "今天最值得盯的 3 件事：Anthropic 改 Claude Code 定价（programmatic usage 计量收费）、OpenAI 连接银行账户做个人金融、bindureddy 一句「AI 现在比雇人还贵」——AI 产品化正进入「定价模型重构」阶段，靠人为单位买单的时代意外回潮。",
+    "filename": "2026-05-16.md",
+    "coverImage": "/news/2026-05-16.png"
+  },
+  {
     "slug": "2026-05-15",
     "date": "2026-05-15",
     "title": "AI 快讯 · 5月15日",
@@ -62,7 +128,8 @@
       }
     ],
     "jasonSays": "今天最值得盯的是 OpenAI 准备告苹果这件事——AI 公司与平台巨头的分发博弈正式走向法庭，这不是个案，是所有 AI 产品在平台分发上都会面临的结构性困境，出海 SaaS 开发者该认真思考自己的渠道依赖风险了。",
-    "filename": "2026-05-15.md"
+    "filename": "2026-05-15.md",
+    "coverImage": "/news/2026-05-15.png"
   },
   {
     "slug": "2026-05-14",
