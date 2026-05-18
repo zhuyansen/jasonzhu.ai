@@ -91,4 +91,4 @@ excerpt: "Anthropic、OpenAI、Google、NVIDIA、微软、AWS、Meta、IBM、Dee
 
 ---
 
-想要这 **10 平台 + 100+ 课程的打包清单（PDF 版）**，连同每条路径的学习顺序和避坑笔记，[订阅免费手册](/zh/handbook)即可获取。每周还会推送新出的免费课更新。
+想要这份 **10 平台 AI 免费学习全景图（PDF 版）**——10 平台对比表、逐个拆解、按身份选路径全收录，[订阅免费领取 →](/zh/ai-learning-guide)。每周还会推送新出的免费课更新。
