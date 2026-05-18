@@ -152,3 +152,7 @@ Higher Education / K-12 / Nonprofits / Small Business / Healthcare / Veterans �
 > **两套官方课加起来 25+ 门课、几百小时内容，覆盖从「不会用 AI」到「能写进简历的 AI 工程师」全程。任何收钱超过 $200 的中文 AI 报班，本质都是在卖「免费课的中文翻版 + 一点社群陪伴」。**
 
 → 想看 Anthropic 13 门课的详细清单？[Claude Certified Architect 完整路线图](/zh/blog/anthropic-claude-certified-architect-roadmap)
+
+---
+
+📚 **[10 大平台 AI 免费学习全景图 →](/zh/blog/ai-free-learning-hub)** 一张表 + 按身份选路径，完整系列总目录。

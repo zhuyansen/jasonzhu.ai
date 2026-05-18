@@ -1,0 +1,94 @@
+---
+title: "10 大平台 AI 免费学习全景图：学 AI 这两年，一分钱都不用花"
+date: "2026-05-18"
+category: "教程"
+tags: ["AI 学习", "免费课程", "学习路径", "总目录", "Anthropic", "OpenAI", "AI 认证"]
+coverImage: "/blog/ai-free-learning-hub/cover.png"
+excerpt: "Anthropic、OpenAI、Google、NVIDIA、微软、AWS、Meta、IBM、DeepLearning.AI、Hugging Face——10 大平台的官方 AI 课程全部免费。这是整个系列的总目录页：一张对比表 + 按身份选路径，完整路线全在这里。"
+---
+
+过去几周，我把 **10 大平台的官方免费 AI 课程**逐一拆完了。结论很简单：
+
+> **学 AI 这一两年想花的钱，一分都不用花。**
+
+任何收你几千块的中文 AI 报班，本质都是在卖「这些免费课的翻版 + 一点社群陪伴」。这一页是整个系列的**总目录**——收藏这一篇，完整路径全在。
+
+---
+
+## 一张表看懂 10 大平台
+
+| 平台 | 一句话定位 | 免费课量 | 发证 | 最适合谁 |
+|------|-----------|---------|------|---------|
+| **Anthropic** | 认证驱动，全栈覆盖 | 13 门 | ✅ $99 认证 | 想拿能写简历的 AI 工程师证 |
+| **OpenAI** | 全民普及，企业友好 | 15+ 门 | ⏳ 2026 中 | 团队/公司怎么用好 ChatGPT |
+| **Google Skills** | 游戏化副本，拿 Badge | 多条路径 | ✅ Skill Badge | 零基础、拖延症友好 |
+| **NVIDIA DLI** | 底层 + GPU 加速 | 600+ 免费 | ✅ 证书 | 想补深度学习/CUDA 底层 |
+| **Microsoft** | 一技能一证，发证爽快 | 大量 | ✅ Applied Skills | 想快速攒可信凭证 |
+| **AWS** | 课最多，按路径走 | 600 门 | ✅ 认证 | AWS 生态做 AI 应用 |
+| **Meta** | PyTorch 行业标准 | 教程全免费 | ❌ | 想从零搭训练模型 |
+| **IBM** | 免费课量第一 | 1000+ 门 | ✅ 数字徽章 | 边转行边攒凭证 |
+| **DeepLearning.AI** | 作者亲授，前沿密度高 | 120 门 | ❌ | 想学最前沿应用技术 |
+| **Hugging Face** | 自己跑/微调/发布模型 | 12 门 | ❌ | 想真正造 AI 不只用 AI |
+
+---
+
+## 按身份选路径（别瞎挑）
+
+### 🟢 我是非技术岗（市场/运营/HR/管理）
+
+1. **Google AI Essentials**（最友好入门）→ [Google Skills](/zh/blog/google-skills-ai-learning-paths)
+2. **ChatGPT 101 / 102**（OpenAI 全民课）→ [OpenAI 路径](/zh/blog/openai-academy-vs-anthropic-learning-paths)
+3. **IBM AI for X 系列**（套进你的岗位）→ [IBM SkillsBuild](/zh/blog/ibm-skillsbuild-ai-courses)
+
+### 🔵 我是开发者，想做 AI 应用
+
+1. **Anthropic Claude Certified Architect**（拿证）→ [Anthropic 路径](/zh/blog/anthropic-claude-certified-architect-roadmap)
+2. **DeepLearning.AI Agent / RAG 路径**（作者亲授）→ [DeepLearning.AI 选课](/zh/blog/deeplearning-ai-courses-guide)
+3. **AWS Bedrock 实战**（云端落地）→ [AWS Skill Builder](/zh/blog/aws-skill-builder-free-ai-courses)
+
+### 🟣 我想转行进 AI，要可信凭证
+
+1. **Microsoft Applied Skills**（一技能一证，拿证快）→ [微软认证](/zh/blog/microsoft-learn-ai-certifications)
+2. **IBM 三段式路径 + 数字徽章** → [IBM SkillsBuild](/zh/blog/ibm-skillsbuild-ai-courses)
+3. **Anthropic $99 认证**（含金量最高）→ [Anthropic 路径](/zh/blog/anthropic-claude-certified-architect-roadmap)
+
+### 🔴 我想做研究/自己造模型
+
+1. **Meta PyTorch 9 步**（从零搭 transformer）→ [Meta PyTorch](/zh/blog/meta-pytorch-tutorials-guide)
+2. **Hugging Face LLM/Agent Course**（自己跑/微调/发布）→ [Hugging Face Learn](/zh/blog/huggingface-learn-courses-guide)
+3. **NVIDIA DLI + CUDA**（底层加速）→ [NVIDIA DLI](/zh/blog/nvidia-dli-free-courses)
+
+---
+
+## 10 篇深度攻略全索引
+
+每一篇都按「平台定位 + 路径拆解 + 官方直达链接 + 避坑提醒」整理：
+
+1. [Anthropic Claude Certified Architect 完整路线图](/zh/blog/anthropic-claude-certified-architect-roadmap) — 认证驱动，$99 拿工程师证
+2. [OpenAI Academy vs Anthropic 完整对比](/zh/blog/openai-academy-vs-anthropic-learning-paths) — 两套路径横向对比
+3. [Google Skills 游戏化学习路径](/zh/blog/google-skills-ai-learning-paths) — 刷副本拿 Badge
+4. [NVIDIA DLI 免费课完整攻略](/zh/blog/nvidia-dli-free-courses) — CUDA 官方唯一免费入口
+5. [微软 AI 认证完整攻略](/zh/blog/microsoft-learn-ai-certifications) — 一技能一证，AI-901 避坑
+6. [AWS Skill Builder 免费 AI 课攻略](/zh/blog/aws-skill-builder-free-ai-courses) — 600 门免费课，按路径走
+7. [Meta PyTorch 官方教程攻略](/zh/blog/meta-pytorch-tutorials-guide) — 9 步搭训练部署 transformer
+8. [IBM SkillsBuild 免费 AI 课攻略](/zh/blog/ibm-skillsbuild-ai-courses) — 1000+ 门课，注册避坑
+9. [DeepLearning.AI 完整选课指南](/zh/blog/deeplearning-ai-courses-guide) — 120 门课，作者亲授
+10. [Hugging Face Learn 完整攻略](/zh/blog/huggingface-learn-courses-guide) — 12 门课教你自己造 AI
+
+---
+
+## 三条通用建议
+
+1. **先定身份再选路径**：10 个平台、几千门课，不按身份收敛一定迷路
+2. **一次只攻一条线**：3 个月只走一个目标，刷完拿到凭证再开下一条
+3. **凭证及时挂 LinkedIn**：2026 年求职市场，AI 技能可见化是硬通货
+
+---
+
+## 一句话总结
+
+> **10 大平台、几千门官方免费课，覆盖从「不会用 AI」到「能自己造 AI」全程。学 AI 真正稀缺的从来不是钱，是「按身份选对路径 + 学完就用」的执行力。**
+
+---
+
+想要这 **10 平台 + 100+ 课程的打包清单（PDF 版）**，连同每条路径的学习顺序和避坑笔记，[订阅免费手册](/zh/handbook)即可获取。每周还会推送新出的免费课更新。

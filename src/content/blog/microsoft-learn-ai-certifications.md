@@ -101,3 +101,7 @@ AI-901 的官方自学课程，覆盖 Azure AI 基础概念。这是替代已停
 → [OpenAI Academy vs Anthropic 完整对比](/zh/blog/openai-academy-vs-anthropic-learning-paths)
 
 下一篇会扒 **AWS 的 AI 课程体系**——大厂里课最多的一家，但坑也最深。
+
+---
+
+📚 **[10 大平台 AI 免费学习全景图 →](/zh/blog/ai-free-learning-hub)** 一张表 + 按身份选路径，完整系列总目录。

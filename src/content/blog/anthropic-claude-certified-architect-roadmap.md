@@ -140,3 +140,7 @@ Claude Code 完整配置：
 > **Anthropic 这套 13 门课是目前最系统的 Claude 工程师免费学习路径，认证驱动 + 全栈覆盖（基础 → API → MCP → Claude Code → Skills）。如果你目标是「拿一份能写进简历的 AI 认证」，这是性价比最高的一条路。**
 
 想看 OpenAI Academy 的对应路径？参考 → [OpenAI Academy vs Anthropic：两套免费 AI 学习路径完整对比](/zh/blog/openai-academy-vs-anthropic-learning-paths)
+
+---
+
+📚 **[10 大平台 AI 免费学习全景图 →](/zh/blog/ai-free-learning-hub)** 一张表 + 按身份选路径，完整系列总目录。

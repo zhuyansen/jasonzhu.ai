@@ -89,3 +89,7 @@ AWS Skill Builder 是大厂里**课程数量最多**的一家——1500 门课�
 → [OpenAI Academy vs Anthropic 完整对比](/zh/blog/openai-academy-vs-anthropic-learning-paths)
 
 下一篇会扒 **Meta**——它没开学院，但把 PyTorch 教程做成了整个行业的标准。
+
+---
+
+📚 **[10 大平台 AI 免费学习全景图 →](/zh/blog/ai-free-learning-hub)** 一张表 + 按身份选路径，完整系列总目录。

@@ -116,3 +116,7 @@ RAG 仍是企业级 AI 应用最高频的架构，从基础 RAG 到知识图谱 
 → [OpenAI Academy vs Anthropic 完整对比](/zh/blog/openai-academy-vs-anthropic-learning-paths)
 
 下一篇会扒 **Hugging Face**——真正在做开源 LLM 的人，都从它的课开始。
+
+---
+
+📚 **[10 大平台 AI 免费学习全景图 →](/zh/blog/ai-free-learning-hub)** 一张表 + 按身份选路径，完整系列总目录。

@@ -97,3 +97,7 @@ PyTorch 教程练基本功，Llama 资源做实战——两条线配合，是开
 → [OpenAI Academy vs Anthropic 完整对比](/zh/blog/openai-academy-vs-anthropic-learning-paths)
 
 下一篇会扒 **IBM**——大厂里免费课数量第一，但要避开一个大坑。
+
+---
+
+📚 **[10 大平台 AI 免费学习全景图 →](/zh/blog/ai-free-learning-hub)** 一张表 + 按身份选路径，完整系列总目录。

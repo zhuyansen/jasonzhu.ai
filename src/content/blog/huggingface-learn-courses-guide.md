@@ -118,3 +118,7 @@ AI + 机器人入口——**这是前面九家平台全都没有的领域**。
 → [DeepLearning.AI 完整选课指南](/zh/blog/deeplearning-ai-courses-guide)（DeepLearning.AI）
 
 **收藏这一篇，翻回前面 9 篇，完整路径全在。** 学 AI 这一两年想花的钱，一分都不用花。
+
+---
+
+📚 **[10 大平台 AI 免费学习全景图 →](/zh/blog/ai-free-learning-hub)** 一张表 + 按身份选路径，完整系列总目录。

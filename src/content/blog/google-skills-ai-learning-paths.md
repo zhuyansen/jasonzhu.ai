@@ -88,3 +88,7 @@ Google 把老牌学习平台 **Cloud Skills Boost 整个改名**了，现在叫 
 → 想看 OpenAI 路径？[OpenAI Academy vs Anthropic 完整对比](/zh/blog/openai-academy-vs-anthropic-learning-paths)
 
 下一篇会扒一下 **NVIDIA 真正免费的 AI 课程入口**——它藏在另一个域名里，很多人找错地方。
+
+---
+
+📚 **[10 大平台 AI 免费学习全景图 →](/zh/blog/ai-free-learning-hub)** 一张表 + 按身份选路径，完整系列总目录。

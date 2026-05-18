@@ -83,3 +83,7 @@ IBM SkillsBuild 是大厂里**免费课数量第一**的平台——**1000+ 门�
 → [OpenAI Academy vs Anthropic 完整对比](/zh/blog/openai-academy-vs-anthropic-learning-paths)
 
 下一篇会扒 **DeepLearning.AI**——这家有一样东西，上面七家全都没有。
+
+---
+
+📚 **[10 大平台 AI 免费学习全景图 →](/zh/blog/ai-free-learning-hub)** 一张表 + 按身份选路径，完整系列总目录。

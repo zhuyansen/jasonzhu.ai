@@ -97,3 +97,7 @@ RAG 仍是 2026 年 AI 应用最高频的架构，这门免费实战课值得认
 → [OpenAI Academy vs Anthropic 完整对比](/zh/blog/openai-academy-vs-anthropic-learning-paths)
 
 下一篇会扒 **微软的 AI 认证体系**——大厂里发证最爽快的一家，一个技能点一张证。
+
+---
+
+📚 **[10 大平台 AI 免费学习全景图 →](/zh/blog/ai-free-learning-hub)** 一张表 + 按身份选路径，完整系列总目录。
