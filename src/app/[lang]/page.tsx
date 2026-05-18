@@ -54,7 +54,7 @@ export default async function HomePage({
                   <p className="text-sm font-bold text-white">
                     {lang === "zh" ? "10 大平台 AI 免费学习全景图" : "Free AI Learning Map · 10 Platforms"}
                   </p>
-                  <p className="text-xs text-blue-100 mt-0.5 hidden sm:block max-w-xs">
+                  <p className="text-xs text-blue-100 mt-0.5 hidden sm:block max-w-xs truncate">
                     {lang === "zh" ? "学 AI 这两年想花的钱，一分都不用花" : "Learn AI for free — here's the full map"}
                   </p>
                 </div>
@@ -65,15 +65,15 @@ export default async function HomePage({
               {/* Handbook — narrower, secondary */}
               <Link
                 href={`/${lang}/handbook`}
-                className="group flex items-center gap-3 px-5 py-3.5 bg-white border border-gray-200 rounded-xl hover:border-blue-300 hover:shadow-sm transition-all"
+                className="group flex items-center gap-3 px-5 py-4 bg-white border border-gray-200 rounded-xl hover:border-blue-300 hover:shadow-sm transition-all"
               >
                 <span className="text-2xl">📘</span>
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm font-bold text-gray-900">
+                  <p className="text-sm font-bold text-gray-900 truncate">
                     {dict.home.handbookTitle}
                   </p>
-                  <p className="text-xs text-gray-400 mt-0.5 hidden sm:block max-w-xs">
-                    {dict.home.handbookDesc}
+                  <p className="text-xs text-gray-400 mt-0.5 hidden sm:block max-w-xs truncate">
+                    {lang === "zh" ? "14 天打造 X 平台写作与变现闭环" : dict.home.handbookDesc}
                   </p>
                 </div>
                 <span className="text-xs text-[var(--primary)] font-semibold whitespace-nowrap bg-blue-50 px-3 py-1.5 rounded-lg group-hover:bg-blue-100 transition-colors">
