@@ -1,5 +1,70 @@
 [
   {
+    "slug": "2026-05-20",
+    "date": "2026-05-20",
+    "title": "AI 快讯 · 5月20日",
+    "items": [
+      {
+        "title": "Google I/O 2026：Gemini 3.5 正式发布，主打「智能+行动力」",
+        "source": "Google AI Blog",
+        "category": "AI 工具动态",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/",
+        "summary": "Google I/O 2026 重磅发布 Gemini 3.5 系列模型，定位「前沿智能+行动力」，主打 Agent 能力。Gemini 3.5 Flash 正式 GA，无速率限制，定价约为前代 3 倍但仍远低于 GPT-5.5 和 Claude Opus 4.7。开发者早期评测认为指令跟随能力出色、Agent 编码表现亮眼，且并非单纯 bench-maxxed 模型。"
+      },
+      {
+        "title": "Google I/O 2026：AI Agent 进驻 Gmail/Workspace，搜索全面自然语言化",
+        "source": "Google AI Blog / TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/05/19/you-can-now-talk-to-your-gmail-inbox-as-seen-at-google-io-2026/",
+        "summary": "Google I/O 宣布 Gmail 新增语音对话 AI Inbox、Docs 和 Keep 加入语音能力；Search 推出「信息 Agent」可后台监控话题主动推送更新；AI Mode 上线一年已显著改变搜索行为，用户从关键词转向自然语言长句查询。Google 正将整个产品线推向 Agent 化。"
+      },
+      {
+        "title": "Cursor 发布 Composer 2.5：AI 编码体验再度升级",
+        "source": "Product Hunt AI",
+        "category": "AI 工具动态",
+        "url": "https://www.producthunt.com/products/cursor",
+        "summary": "Cursor 在 Product Hunt 上线 Composer 2.5 版本更新，作为目前最受开发者青睐的 AI 编程工具，此次升级时间节点正值 Google I/O 和各大模型集中发布期，预计在 Agent 模式和多模型切换方面有针对性增强，值得 Cursor 用户关注。"
+      },
+      {
+        "title": "PrismoDev：本地 CLI 工具，帮你揪出 Claude Code/Codex 的 Token 浪费",
+        "source": "Hacker News",
+        "category": "Skills 生态",
+        "url": "https://github.com/shanirsh/prismodev",
+        "summary": "开发者因 Claude Code 和 Codex 账单居高不下而构建了这个本地 CLI 工具，通过扫描本地会话日志，精准定位 context bloat 来源：过大的 CLAUDE.md 文件、重复工具输出、宽泛的 repo 探索、stale session 状态等。对重度使用 Claude Code 的开发者有直接降本价值。"
+      },
+      {
+        "title": "Academic Research Skills for Claude Code：30 秒装全套学术写作流水线",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/Imbad0202/academic-research-skills",
+        "summary": "开源 Claude Code Skills 插件，一条命令安装覆盖「选题→写作→审阅→修订→定稿」完整学术研究流程。支持 Claude Code CLI、VS Code、JetBrains，兼容 v3.7.0+。对研究人员和学术写作重度用户而言，是目前 Skills 生态中少见的垂直场景完整解决方案。"
+      },
+      {
+        "title": "OpenAI 推进内容溯源：AI 生成媒体将嵌入 Content Credentials 水印",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/advancing-content-provenance",
+        "summary": "OpenAI 宣布联合推进 AI 内容溯源标准，整合 Content Credentials、SynthID 及自研验证工具，帮助用户识别并核验 AI 生成媒体的来源。此举是应对 deepfake 泛滥的重要基础设施，也是内容平台合规的必要前置能力。"
+      },
+      {
+        "title": "OSCAR 论文：2-bit KV Cache 量化新方案，长上下文推理成本有望大幅压缩",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2605.17757",
+        "summary": "为什么对开发者重要：跑长上下文 LLM 最贵的不是算力而是 KV Cache 内存。OSCAR 提出一种「离线估算注意力感知协方差结构」的方法，把 KV Cache 压缩到 2-bit 还不掉精度——相当于同样的显存能塞进 4 倍更长的上下文。对本地部署和 API 成本敏感的开发者是重大利好。"
+      },
+      {
+        "title": "Supertonic：ONNX 驱动的端侧多语言 TTS，无需 API 可直接本地运行",
+        "source": "GitHub Trending",
+        "category": "AI 工具动态",
+        "url": "https://github.com/supertone-inc/supertonic",
+        "summary": "Supertone 开源 Supertonic TTS 引擎，基于 ONNX Runtime 实现超低延迟本地多语言语音合成，支持桌面、浏览器、移动端和边缘设备，完全离线无隐私顾虑。对需要在 Agent 或应用中集成语音能力但不想依赖云端 API 的开发者是实用选项。"
+      }
+    ],
+    "jasonSays": "今天最大的事就是 Google I/O——Gemini 3.5 Flash 直接 GA 无限速，开发者说比 Sonnet 还能打还更便宜。Google 这次不再是「发布即难用」，AI 赛道格局真的在重排了。",
+    "filename": "2026-05-20.md"
+  },
+  {
     "slug": "2026-05-19",
     "date": "2026-05-19",
     "title": "AI 快讯 · 5月19日",
@@ -62,7 +127,8 @@
       }
     ],
     "jasonSays": "今天最值得盯的是 Anthropic 收购 Stainless——一家同时给 OpenAI 和 Google 做 SDK 的公司现在归了 Anthropic，开发者工具层的卡位战比模型层更悄无声息、也更致命。",
-    "filename": "2026-05-19.md"
+    "filename": "2026-05-19.md",
+    "coverImage": "/news/2026-05-19.png"
   },
   {
     "slug": "2026-05-18",
