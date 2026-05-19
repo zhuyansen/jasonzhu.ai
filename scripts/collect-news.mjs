@@ -49,9 +49,11 @@ const RSS_FEEDS = [
 const CATEGORIES = ["Skills 生态", "出海实战", "AI 工具动态", "变现案例", "AI 论文"];
 
 // 支持 DATE 环境变量回填历史日期（例如 DATE=2026-05-01 node scripts/collect-news.mjs）
-const TODAY = process.env.DATE || new Date().toISOString().split("T")[0];
+// 默认日期用北京时间（UTC+8）—— cron 在 UTC 22:00 跑时，UTC 日期还是前一天，必须按北京日期取
+const beijingToday = () => new Date(Date.now() + 8 * 3600 * 1000).toISOString().split("T")[0];
+const TODAY = process.env.DATE || beijingToday();
 const MONTH_DAY = (() => {
-  const d = process.env.DATE ? new Date(process.env.DATE + "T00:00:00") : new Date();
+  const d = new Date(TODAY + "T00:00:00");
   return `${d.getMonth() + 1}月${d.getDate()}日`;
 })();
 
