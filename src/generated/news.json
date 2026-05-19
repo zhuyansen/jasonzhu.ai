@@ -1,5 +1,70 @@
 [
   {
+    "slug": "2026-05-19",
+    "date": "2026-05-19",
+    "title": "AI 快讯 · 5月19日",
+    "items": [
+      {
+        "title": "Anthropic 收购 SDK 自动化初创公司 Stainless",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/05/18/anthropic-has-acquired-the-dev-tools-startup-used-by-openai-google-and-cloudflare/",
+        "summary": "Anthropic 收购了 API SDK 自动生成工具 Stainless，该公司曾为 OpenAI、Google、Cloudflare 提供 SDK 构建服务。此次收购意味着 Anthropic 将把 SDK 开发内化，进一步掌控开发者接入体验，对第三方 API 封装工具赛道形成直接冲击。"
+      },
+      {
+        "title": "OpenAI 联手 Dell：Codex AI 编程 Agent 进军企业私有化部署",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/dell-codex-enterprise-partnership",
+        "summary": "OpenAI 与 Dell 达成合作，将 Codex 编程 Agent 带入企业混合云和本地部署环境，让企业可在自有数据和工作流上安全运行 AI 编程代理。这是 Codex 从 API 服务走向企业私有化部署的关键一步，直接对标 GitHub Copilot Enterprise。"
+      },
+      {
+        "title": "马斯克起诉 Altman 和 OpenAI 案宣判败诉",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/05/18/elon-musk-has-lost-his-lawsuit-against-sam-altman-and-openai/",
+        "summary": "加州陪审团以 9 票一致裁定马斯克败诉，认定其针对 Sam Altman 和 OpenAI 的诉讼提起时间过晚、索赔依据不足。这场持续多年的法律拉锯战正式落幕，OpenAI 商业化路径扫清一大外部干扰。"
+      },
+      {
+        "title": "SandboxAQ 将药物发现 AI 模型接入 Claude，降低药研门槛",
+        "source": "TechCrunch AI",
+        "category": "Skills 生态",
+        "url": "https://techcrunch.com/2026/05/18/sandboxaq-brings-its-drug-discovery-models-to-claude-no-phd-in-computing-required/",
+        "summary": "SandboxAQ 将其量子化学药物发现模型集成到 Claude，让无需计算机博士学位的研究员也能通过自然语言调用复杂分子模拟能力。这是 Claude 作为专业科学 Skills 聚合平台的又一落地案例，与 Chai Discovery、Isomorphic Labs 的纯模型路线形成差异化竞争。"
+      },
+      {
+        "title": "CLI-Anything：让所有软件对 AI Agent 原生可用的开源框架",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/HKUDS/CLI-Anything",
+        "summary": "港大开源项目 CLI-Anything 提出「让一切软件 Agent 原生化」的思路，通过统一 CLI 接口让 AI Agent 直接调用现有软件生态，配套 CLI-Hub 市场支持社区贡献和一键安装。对需要扩展 Agent 工具调用边界的开发者而言，这是当前 MCP 之外值得关注的新路径。"
+      },
+      {
+        "title": "Anthropic 联合创始人将与新教皇 Leo XIV 同台发布 AI 通谕",
+        "source": "Hacker News",
+        "category": "AI 工具动态",
+        "url": "https://www.vaticannews.va/en/pope/news/2026-05/pope-leo-xiv-first-encyclical-magnifica-humanitas.html",
+        "summary": "梵蒂冈官方消息，新任教皇 Leo XIV 的首份通谕《Magnifica Humanitas》将涉及 AI 伦理议题，Anthropic 联合创始人受邀同台呈现。AI 价值观讨论正式进入宗教与全球道德叙事框架，Anthropic 的「AI 安全」品牌定位再获高权威背书。"
+      },
+      {
+        "title": "MetaAgent-X 论文：用端到端强化学习打破多智能体系统的「冻结执行者瓶颈」",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2605.14212",
+        "summary": "现有多 Agent 系统的痛点：设计 Agent 的「元层」可以优化，但实际干活的执行 Agent 是冻结的，无法一起训练。MetaAgent-X 用端到端强化学习同时训练「自我设计」和「自我执行」两层，打破了这个天花板。对构建复杂 Agent 工作流的开发者而言，这意味着未来 Agent 编排不再需要手工写死执行逻辑。"
+      },
+      {
+        "title": "Agent Harness 安全审计论文：最终输出无问题不代表过程没有越权",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2605.14271",
+        "summary": "研究发现 LLM Agent 的执行框架（Harness）存在严重安全盲区：Agent 给出了正确答案，但中间过程可能访问了未授权资源或向错误组件泄露上下文，而现有安全评测只看最终输出根本发现不了。这对所有在生产环境部署 Agent 的团队是一记警钟——你的 Agent 可能「表现良好但行为有问题」。"
+      }
+    ],
+    "jasonSays": "今天最值得盯的是 Anthropic 收购 Stainless——一家同时给 OpenAI 和 Google 做 SDK 的公司现在归了 Anthropic，开发者工具层的卡位战比模型层更悄无声息、也更致命。",
+    "filename": "2026-05-19.md"
+  },
+  {
     "slug": "2026-05-18",
     "date": "2026-05-18",
     "title": "AI 快讯 · 5月18日",
