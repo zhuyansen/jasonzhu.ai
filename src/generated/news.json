@@ -1,5 +1,70 @@
 [
   {
+    "slug": "2026-05-21",
+    "date": "2026-05-21",
+    "title": "AI 快讯 · 5月21日",
+    "items": [
+      {
+        "title": "Google I/O 2026 三连发：Gemini 3.5 Flash、Omni 视频版、Spark 后台 Agent",
+        "source": "Latent Space",
+        "category": "AI 工具动态",
+        "url": "https://www.latent.space/p/ainews-google-io-2026",
+        "summary": "Google I/O 2026 一口气放出 3 个核心产品：**Gemini 3.5 Flash**（更快更便宜的旗舰）、**Gemini Omni**（NanoBanana for Video，视频生成新标杆）、**Spark**（在后台自主运行的 Agent）。这是 Google 在产品广度上首次全线对标 OpenAI，从模型、多模态到 Agent 一并发力。"
+      },
+      {
+        "title": "Anthropic 宣布即将迎来首个盈利季度",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/05/20/anthropic-says-its-about-to-have-its-first-profitable-quarter/",
+        "summary": "Anthropic 表示本季度有望实现首次盈利。这家以 Claude 模型起家的公司从「烧钱训练」走向「正向现金流」，意味着大模型公司商业化路径首次被验证可行。对开发者意味着：Claude 系列产品的长期供给和定价更稳定。"
+      },
+      {
+        "title": "Jensen Huang：Nvidia 发现「全新」2000 亿美元市场",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/05/20/jensen-huang-says-hes-found-a-brand-new-200b-market-for-nvidia/",
+        "summary": "英伟达 CEO 黄仁勋在最新财报会上透露找到一块全新的 2000 亿美元市场——主要瞄准企业级 AI 基础设施与边缘推理。这是英伟达从「AI 训练芯片独家供应商」往「AI 全栈基础设施」延伸的明确信号，长期看会进一步挤压 AMD、Intel 在 AI 推理侧的空间。"
+      },
+      {
+        "title": "Anthropic 推出官方 Claude Plugins 仓库",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/anthropics/claude-plugins-official",
+        "summary": "Anthropic 官方开源 claude-plugins-official，作为 Claude 插件生态的官方参考实现。这是 Anthropic 把 Skills / Plugins 生态从「社区野生」往「官方治理」收口的关键一步，对所有靠 Claude Skills 吃饭的开发者意味着：标准化即将到来。"
+      },
+      {
+        "title": "WordPress 7.0 内置 AI Client：AI 接入全网 40% 网站",
+        "source": "Hacker News",
+        "category": "AI 工具动态",
+        "url": "https://news.ycombinator.com/from?site=wordpress.org",
+        "summary": "WordPress 7.0 将内置 AI Client，标准化第三方 AI 模型接入流程。WordPress 占据全球 40%+ 网站，这意味着 AI 能力将以原生方式触达数亿站点。对建站、内容、SaaS 出海团队是巨大机会——WordPress 插件生态可能迎来新一轮 AI 化淘金期。"
+      },
+      {
+        "title": "TBN Protocol：AI Agent 的运行时治理基础设施",
+        "source": "Hacker News",
+        "category": "Skills 生态",
+        "url": "https://news.ycombinator.com/from?site=tbn-protocol.io",
+        "summary": "TBN Protocol 提出 Agent 运行时治理标准——在 Agent 执行过程中实时检查权限、审计行为、阻断越权操作。这是对前两天 HF 论文「Agent Harness 安全盲区」的工程化回应：光看最终输出对不对不够，过程必须可治理。生产环境跑 Agent 的团队值得关注。"
+      },
+      {
+        "title": "Interconnects 实地考察：中国 AI 实验室内部见闻",
+        "source": "Interconnects",
+        "category": "出海实战",
+        "url": "https://www.interconnects.ai/p/notes-from-inside-chinas-ai-labs",
+        "summary": "Interconnects 作者深度走访国内多家 AI 实验室，记录他们在算力受限、人才结构、产品策略上的真实状态。对出海做 AI 产品的中国团队是重要参考——既能看到自己的位置，也能看到海外视角怎么解读你。"
+      },
+      {
+        "title": "HF 论文：不是所有 rubric 教得都一样——给 RLVR 一份「策略感知」奖励",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2605.16584",
+        "summary": "论文提出 **Policy-Aware Rubric Rewards**，让 RLVR（Reinforcement Learning with Verifiable Rewards）训练时根据当前策略动态调整 rubric 权重——避免「rubric 看起来对，但其实在教模型走偏」。对做 RL 微调、Agent 训练的团队，这是值得落地的调度技巧。"
+      }
+    ],
+    "jasonSays": "今天最炸的是 Google I/O 2026 一口气放出 Gemini 3.5 Flash + Omni 视频版 + Spark 后台 Agent，正面挑战 OpenAI 全线产品；同时 Anthropic 宣布即将首次盈利——两家头部 AI 公司的商业化竞赛进入「正常公司」阶段。",
+    "filename": "2026-05-21.md"
+  },
+  {
     "slug": "2026-05-20",
     "date": "2026-05-20",
     "title": "AI 快讯 · 5月20日",
@@ -62,7 +127,8 @@
       }
     ],
     "jasonSays": "今天最大的事就是 Google I/O——Gemini 3.5 Flash 直接 GA 无限速，开发者说比 Sonnet 还能打还更便宜。Google 这次不再是「发布即难用」，AI 赛道格局真的在重排了。",
-    "filename": "2026-05-20.md"
+    "filename": "2026-05-20.md",
+    "coverImage": "/news/2026-05-20.png"
   },
   {
     "slug": "2026-05-19",
