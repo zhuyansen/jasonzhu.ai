@@ -1,5 +1,70 @@
 [
   {
+    "slug": "2026-05-23",
+    "date": "2026-05-23",
+    "title": "AI 快讯 · 5月23日",
+    "items": [
+      {
+        "title": "OpenAI Codex 入选 Gartner 企业级 AI 编码 Agent 领导者象限",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/gartner-2026-agentic-coding-leader",
+        "summary": "Gartner 2026 企业级 AI 编码 Agent 魔力象限正式发布，OpenAI 凭借 Codex 的创新能力与企业规模化部署能力入选领导者象限。这是 AI 编码工具从开发者玩具正式进入企业采购清单的重要信号，意味着这条赛道的商业化节奏正在加速。"
+      },
+      {
+        "title": "微软 .NET 团队发布官方 Agent Skills：C# 开发者的编码 Agent 标准套件",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/dotnet/skills",
+        "summary": ".NET 官方团队在 GitHub 发布 dotnet/skills 仓库，提供专为 .NET 和 C# 场景打造的核心 Agent Skills 与自定义 Agent，并附带准确率与效率评分仪表盘。这是 Skills 生态走向语言/框架专属化的重要里程碑，也是微软官方下场背书 Agent Skills 标准的明确信号。"
+      },
+      {
+        "title": "Superpowers：一套跨主流 Agent 通用的软件开发方法论与 Skills 框架",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/obra/superpowers",
+        "summary": "obra/superpowers 提供完整的 Agent 软件开发方法论，基于可组合 Skills 体系，同时支持 Claude Code、Codex CLI、Gemini CLI、Cursor、GitHub Copilot CLI 等主流编码 Agent。不只是插件集合，而是一套从启动到交付的完整工作流规范，适合想统一多 Agent 工作流的团队。"
+      },
+      {
+        "title": "AI 基础设施三连独角兽：Exa、Modal、TurboPuffer 同期完成融资",
+        "source": "Latent Space",
+        "category": "AI 工具动态",
+        "url": "https://www.latent.space/p/ainews-new-ai-infra-unicorns-exa",
+        "summary": "AI 搜索 API Exa、无服务器 GPU 计算平台 Modal、向量数据库 TurboPuffer 三家 AI 基础设施公司同期完成融资并达独角兽估值。这三家都是开发者构建 AI 应用的常用底层工具，集中融资信号表明 AI 基础设施赛道的资本热度仍未退潮。"
+      },
+      {
+        "title": "AI 创业公司 ARR 注水调查：投资人和创始人如何联手造数字",
+        "source": "TechCrunch AI",
+        "category": "变现案例",
+        "url": "https://techcrunch.com/2026/05/22/how-vcs-and-founders-use-inflated-arr-to-kingmake-ai-startups/",
+        "summary": "TechCrunch 深度调查揭示，部分 AI 创业公司正在拉伸传统 ARR 定义对外宣传，而其投资人对此完全知情甚至默许。对独立开发者和出海 SaaS 创业者的参考价值在于：看清行业水分，才能更清醒地判断竞争格局，避免被虚假基准误导定价和融资叙事。"
+      },
+      {
+        "title": "Google Android XR 眼镜实测：Gemini 加持的 AR 翻译导航，差一点就到位了",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/05/22/we-tried-googles-ai-glasses-and-theyre-almost-there/",
+        "summary": "TechCrunch 实测 Google 原型 Android XR 眼镜，可将 Gemini 驱动的实时翻译、导航等信息直接叠加在视野中。评价是「almost there」——核心功能已成型，但距消费级产品还差临门一脚。AI 眼镜赛道正从概念走向可用，值得出海硬件和 AR 应用开发者持续关注。"
+      },
+      {
+        "title": "论文：Agent 自我调节规划框架，让推理更高效、Token 不再白烧",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2605.22138",
+        "summary": "这篇论文提出将 Agent 决策拆解为感知、规划、执行三层，通过「自我调节模拟规划」让 Agent 自主决定何时以及如何规划，而非无脑拉长推理链。对开发者的意义：更少 Token 消耗、更可靠的任务完成率，是构建高效长程 Agent 的重要参考架构。"
+      },
+      {
+        "title": "SpaceX 砸 28 亿美元买燃气轮机：马斯克为 Grok AI 数据中心自建电网",
+        "source": "Hacker News",
+        "category": "AI 工具动态",
+        "url": "https://www.wired.com/story/elon-musk-spacex-spending-gas-turbines-grok/",
+        "summary": "SpaceX 正斥资 28 亿美元采购燃气轮机，为 xAI 的 Grok AI 数据中心提供独立电力供应，彻底脱离公共电网。AI 算力军备竞赛已经延伸到能源层，大模型公司的基础设施投入规模正在超出大多数人的想象。"
+      }
+    ],
+    "jasonSays": "Skills 生态这周明显在提速——微软官方下场、跨 Agent 框架涌现，加上 Gartner 把编码 Agent 列入企业采购象限，这条赛道的「基础设施化」比预期快得多，现在入场做 Skills 开发，窗口期还在。",
+    "filename": "2026-05-23.md"
+  },
+  {
     "slug": "2026-05-22",
     "date": "2026-05-22",
     "title": "AI 快讯 · 5月22日",
@@ -62,7 +127,8 @@
       }
     ],
     "jasonSays": "今天最震撼的是 OpenAI 模型用不到 1000 美元干掉了 80 年数学难题——这不是「AI 辅助数学」，这是 AI 自己做数学研究了；与此同时 Daytona 和 Railway 的增长数据也在告诉你：Agent 基础设施才是这波最稳的生意。",
-    "filename": "2026-05-22.md"
+    "filename": "2026-05-22.md",
+    "coverImage": "/news/2026-05-22.png"
   },
   {
     "slug": "2026-05-21",
