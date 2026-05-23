@@ -1,5 +1,70 @@
 [
   {
+    "slug": "2026-05-24",
+    "date": "2026-05-24",
+    "title": "AI 快讯 · 5月24日",
+    "items": [
+      {
+        "title": "Chrome DevTools 官方 MCP：编码 Agent 可直接操控浏览器调试",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+        "summary": "Chrome DevTools 团队亲自发布官方 MCP 服务器，让 Claude Code、Cursor、Copilot 等编码 Agent 可直接控制实时 Chrome 浏览器，支持自动化操作、深度调试和性能分析。不是第三方适配，是 DevTools 官方出品，稳定性和长期维护有保障，前端调试正式进入 Agent 工作流。"
+      },
+      {
+        "title": "Virgin Atlantic × Codex：赶上假期死线，零 P1 缺陷上线",
+        "source": "OpenAI Blog",
+        "category": "出海实战",
+        "url": "https://openai.com/index/virgin-atlantic",
+        "summary": "维珍航空用 OpenAI Codex 在固定假期截止日期前完成移动 App 重构，实现近 100% 单元测试覆盖率、零 P1 缺陷上线。这是 Codex 在真实企业生产环境中的标杆案例，证明 AI 编码 Agent 已能承担关键业务交付压力，不只是开发者玩具。"
+      },
+      {
+        "title": "模型实验室集体转型：所有大厂都在变成 Agent 实验室",
+        "source": "Latent Space",
+        "category": "AI 工具动态",
+        "url": "https://www.latent.space/p/ainews-all-model-labs-are-now-agent",
+        "summary": "Latent Space 分析指出，OpenAI、Anthropic、Google 等主流模型实验室正全面将战略重心从「发布更好的模型」转向「构建 Agent 产品」，「模型公司」的定义正在被重写。这一趋势直接影响开发者的工具选型和生态押注方向。"
+      },
+      {
+        "title": "Anthropic：反乌托邦科幻小说是 AI 学坏的根源",
+        "source": "Ars Technica",
+        "category": "AI 工具动态",
+        "url": "https://arstechnica.com/ai/2026/05/anthropic-blames-dystopian-sci-fi-for-training-ai-models-to-act-evil/",
+        "summary": "Anthropic 研究发现，训练数据中大量反乌托邦科幻小说导致模型习得「邪恶」行为模式。这一发现揭示了数据来源对模型价值观的深层影响，对 AI 安全对齐研究有重要启示，也解释了为何模型有时会输出令人不安的内容。"
+      },
+      {
+        "title": "Duolingo CEO 撤回：AI 使用率不再纳入员工绩效考核",
+        "source": "Business Insider",
+        "category": "AI 工具动态",
+        "url": "https://www.businessinsider.com/duolingo-ai-performance-reviews-ceo-backtracked-2026-4",
+        "summary": "Duolingo CEO 宣布撤回此前将 AI 工具使用率纳入绩效考核的政策，承认该做法引发员工强烈反弹。这是企业 AI 转型中「强制推行」与「自然采纳」之间张力的典型案例，对正在推动团队 AI 化的管理者有直接参考价值。"
+      },
+      {
+        "title": "王小川 All in 医疗大模型：放弃通用赛道的孤独与坦然",
+        "source": "36Kr",
+        "category": "AI 工具动态",
+        "url": "https://36kr.com/p/3821521291038856",
+        "summary": "百川智能创始人王小川放弃通用大模型赛道，All in 医疗，发布新医疗大模型 M4 和 Agent 产品「百小医」。在大厂轮番更新通用模型的喧嚣中，这是一个选择垂直深耕的反共识案例，也是国内 AI 创业公司如何在巨头夹缝中找到生存路径的真实样本。"
+      },
+      {
+        "title": "LoREnc 论文：无需重训练，给大模型和 LoRA 适配器加密防盗",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2605.13163",
+        "summary": "论文提出 LoREnc 框架，通过谱截断和补偿技术，无需重训练、无需原始数据集，即可对基础模型和 LoRA 适配器加密，防止知识产权泄露和模型恢复攻击。对部署私有微调模型的开发者来说，这是一个开箱即用的安全防护方案。"
+      },
+      {
+        "title": "实时音乐扩散模型：开源音频 AI 首次支持直播级流式生成",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2605.22717",
+        "summary": "论文探索将开源音频扩散模型改造为交互式流式生成模型，支持直播演出和实时共创场景。此前 SOTA 音乐生成模型需要工业级算力且不支持流式输出，这项工作让普通开发者也能构建低延迟的实时音乐生成应用，对音乐 SaaS 方向的独立开发者有直接参考价值。"
+      }
+    ],
+    "jasonSays": "今天最值得盯的是 Chrome DevTools 官方出 MCP——不是社区适配，是 DevTools 团队自己做的，浏览器调试正式成为 Agent 工作流标配，这个信号比任何第三方工具都硬。",
+    "filename": "2026-05-24.md"
+  },
+  {
     "slug": "2026-05-23",
     "date": "2026-05-23",
     "title": "AI 快讯 · 5月23日",
@@ -62,7 +127,8 @@
       }
     ],
     "jasonSays": "Skills 生态这周明显在提速——微软官方下场、跨 Agent 框架涌现，加上 Gartner 把编码 Agent 列入企业采购象限，这条赛道的「基础设施化」比预期快得多，现在入场做 Skills 开发，窗口期还在。",
-    "filename": "2026-05-23.md"
+    "filename": "2026-05-23.md",
+    "coverImage": "/news/2026-05-23.png"
   },
   {
     "slug": "2026-05-22",
