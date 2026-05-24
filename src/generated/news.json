@@ -1,5 +1,63 @@
 [
   {
+    "slug": "2026-05-25",
+    "date": "2026-05-25",
+    "title": "AI 快讯 · 5月25日",
+    "items": [
+      {
+        "title": "Anthropic 官方 Claude Code 插件目录正式上线",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/anthropics/claude-plugins-official",
+        "summary": "Anthropic 亲自维护的 Claude Code 插件精选目录正式开放，收录经过筛选的高质量插件。这标志着 Claude Code 生态从散乱的第三方 MCP 服务器，走向有官方背书的插件市场。安装前仍需自行审查信任度，Anthropic 不对插件内容做兜底保证。"
+      },
+      {
+        "title": "Understand-Anything：任意代码库秒变可交互知识图谱",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/Lum1104/Understand-Anything",
+        "summary": "开源工具，可将任意代码库、知识库或文档转换为可探索、可搜索、可提问的交互式知识图谱，原生支持 Claude Code、Codex、Cursor、Copilot、Gemini CLI 等主流 AI 编码工具。对大型项目的 Agent 上下文理解有直接帮助，是 CodeGraph 之外的另一条路径。"
+      },
+      {
+        "title": "AI Agent 专属浏览器：Firefox 分叉版专为自动化而生",
+        "source": "Hacker News",
+        "category": "AI 工具动态",
+        "url": "https://blog.adafruit.com/2026/05/19/ai-agents-just-got-their-own-web-browser-via-a-firefox-fork/",
+        "summary": "一款基于 Firefox 分叉的浏览器专为 AI Agent 设计，针对自动化操作深度优化。与 Chrome DevTools MCP 方案不同，这是独立的 Agent 专属运行时，让 Agent 执行网页任务时拥有更可控的隔离环境，不干扰用户日常浏览器会话。"
+      },
+      {
+        "title": "六月 AI 模型大爆发：Gemini 3.5 Pro、GPT 5.6、Sonnet 4.7 同期来袭",
+        "source": "X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://x.com/bindureddy",
+        "summary": "Abacus AI CEO Bindu Reddy 预测六月将是旗舰模型密集发布月：Gemini 3.5 Pro、GPT 5.6/5.6 Pro、Sonnet 4.7、Mythos 等可能同期亮相。她押注 Google 凭借合理定价重夺竞争优势——若 Gemini 3.5 Pro 能以 Opus 级能力打出低价，一场价格战或将随之而来。"
+      },
+      {
+        "title": "DeepSeek Flash：比主流模型便宜近百倍的轻量级新选手",
+        "source": "X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://x.com/bindureddy",
+        "summary": "DeepSeek 推出 Flash 轻量模型，定价极低，适合小任务处理和大批量数据操作。对需要高频调用 API 的开发者来说，这是一个值得认真评估的成本优化选项，尤其适合数据清洗、批量标注、日志分析等高吞吐量场景。"
+      },
+      {
+        "title": "CUSP 论文：AI 能预测未来科学突破吗？首个标准化基准来了",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2605.22681",
+        "summary": "研究者提出 CUSP 基准，专门测试 AI 系统预测科学进展的能力，包括可行性评估和里程碑预测。对开发者的意义：这是首个量化 AI「前瞻性」的标准框架，未来科研 Agent 的能力边界将有据可查，也为构建科研辅助产品提供了评测基线。"
+      },
+      {
+        "title": "AutoRubric-T2I：无需人工标注，文生图对齐有了规则驱动奖励模型",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2605.17602",
+        "summary": "现有文生图奖励模型依赖大规模人工偏好数据，成本高且评分标准不透明。AutoRubric-T2I 用 VLM 自动生成评分规则，无需人工标注即可对图像质量和提示词对齐度打分。对开发者意义：可低成本搭建自定义图像生成质量评估流水线，适合独立开发者做产品质控。"
+      }
+    ],
+    "jasonSays": "今天最值得盯的是 Anthropic 官方插件目录——这不只是一个 GitHub 仓库，而是 Claude Code 生态从野蛮生长走向有序治理的起点，谁先在目录里占位，谁就先拿到官方流量入口。",
+    "filename": "2026-05-25.md"
+  },
+  {
     "slug": "2026-05-24",
     "date": "2026-05-24",
     "title": "AI 快讯 · 5月24日",
@@ -62,7 +120,8 @@
       }
     ],
     "jasonSays": "今天最值得盯的是 Chrome DevTools 官方出 MCP——不是社区适配，是 DevTools 团队自己做的，浏览器调试正式成为 Agent 工作流标配，这个信号比任何第三方工具都硬。",
-    "filename": "2026-05-24.md"
+    "filename": "2026-05-24.md",
+    "coverImage": "/news/2026-05-24.png"
   },
   {
     "slug": "2026-05-23",
