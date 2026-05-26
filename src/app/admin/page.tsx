@@ -163,14 +163,17 @@ export default function AdminPage() {
         const data = await res.json();
         setPosts(data.posts || []);
 
-        // Fetch view counts from Supabase
+        // Fetch view counts only for real post slugs (avoid pulling the
+        // bot-polluted 250K+ rows that exceed the default 1000 row limit).
         const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
         const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-        if (supabaseUrl && supabaseKey) {
+        const realSlugs = (data.posts || []).map((p: PostMeta) => p.slug).filter(Boolean);
+        if (supabaseUrl && supabaseKey && realSlugs.length > 0) {
           const supabase = createClient(supabaseUrl, supabaseKey);
           const { data: views } = await supabase
             .from("page_views")
-            .select("slug, count");
+            .select("slug, count")
+            .in("slug", realSlugs);
           if (views) {
             const counts: Record<string, number> = {};
             for (const v of views) {

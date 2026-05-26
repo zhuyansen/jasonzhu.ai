@@ -1,14 +1,24 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getSupabase } from "@/lib/supabase";
 import { rateLimit } from "@/lib/rate-limit";
+import { getAllPosts } from "@/lib/mdx";
+import newsData from "@/generated/news.json";
 
 export const dynamic = "force-dynamic";
+
+function isKnownSlug(slug: string): boolean {
+  if (!/^[a-zA-Z0-9_-]{1,100}$/.test(slug)) return false;
+  const blogSlugs = new Set(getAllPosts().map((p) => p.slug));
+  const newsSlugs = new Set((newsData as Array<{ slug: string }>).map((n) => n.slug));
+  return blogSlugs.has(slug) || newsSlugs.has(slug);
+}
 
 export async function GET(
   _request: NextRequest,
   { params }: { params: Promise<{ slug: string }> }
 ) {
   const { slug } = await params;
+  if (!isKnownSlug(slug)) return NextResponse.json({ count: 0 });
   const supabase = getSupabase();
 
   const { data, error } = await supabase
@@ -32,6 +42,7 @@ export async function POST(
   if (rateLimited) return rateLimited;
 
   const { slug } = await params;
+  if (!isKnownSlug(slug)) return NextResponse.json({ count: 0 });
   const supabase = getSupabase();
 
   const { data, error } = await supabase.rpc("increment_page_likes", {
