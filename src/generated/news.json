@@ -1,5 +1,70 @@
 [
   {
+    "slug": "2026-05-28",
+    "date": "2026-05-28",
+    "title": "AI 快讯 · 5月28日",
+    "items": [
+      {
+        "title": "AI 编程独角兽 Cognition 融资 10 亿美元，估值 250 亿（pre-money）",
+        "source": "TechCrunch AI",
+        "category": "变现案例",
+        "url": "https://techcrunch.com/2026/05/27/ai-coding-startup-cognition-raises-1b-at-25b-pre-money-valuation/",
+        "summary": "Devin AI 母公司 Cognition 完成 $10 亿美元融资，pre-money 估值 $250 亿。AI 编程赛道继 Cursor、Lovable 之后又一笔超大单——资本明确认定 AI Coding Agent 是下一代开发者工具入口，估值层级已和顶级 SaaS 公司平齐。对独立开发者：这条赛道的产品形态正在被反复验证，下游应用机会仍在打开。"
+      },
+      {
+        "title": "「All Model Labs are now Agent Labs」：行业战略转向已成定局",
+        "source": "Latent Space",
+        "category": "AI 工具动态",
+        "url": "https://www.latent.space/p/ainews-all-model-labs-are-now-agent",
+        "summary": "Latent Space 最新观察：从 OpenAI、Anthropic 到 Google、Meta，**所有模型实验室都已经把战略重心从「训练更大的模型」转向「做出更强的 Agent」**。模型层逐渐商品化，Agent 编排、工具调用、长任务执行成为新战场。对开发者意味着：Agent 工程能力是 2026 下半年最值钱的技能栈。"
+      },
+      {
+        "title": "OpenAI GPT-next 用 < $1000 推翻 80 年 Erdős 平面单位距离猜想",
+        "source": "Latent Space",
+        "category": "AI 论文",
+        "url": "https://www.latent.space/p/ainews-openai-gpt-next-disproves",
+        "summary": "OpenAI 下一代模型（GPT-next）在测试中用不到 $1000 的算力，**反例推翻了数学家 Erdős 1946 年提出的平面单位距离问题猜想**。这是 LLM 首次在主流数学公开难题上取得突破性贡献。对研究者：AI 辅助证明 / 反例搜索可能成为数学研究的标配。"
+      },
+      {
+        "title": "Snowflake 与 AWS 签下 60 亿美元 AI CPU 大单",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/05/27/in-more-good-news-for-amazon-snowflake-signs-6b-deal-with-aws-for-ai-cpu-chips/",
+        "summary": "Snowflake 与 AWS 签署 60 亿美元长期合作，重点采购 AWS 的自研 AI CPU 芯片（Graviton + Trainium 系列）。这是数据云平台首次明确选择「非英伟达」算力栈的标志性事件——AI 推理侧的算力多元化正在加速，对 Nvidia 的市场份额是真实压力。"
+      },
+      {
+        "title": "Meta 推出 Instagram / Facebook / WhatsApp 订阅，含 AI 套餐",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/05/27/meta-officially-launches-instagram-facebook-and-whatsapp-subscriptions-with-more-to-come-including-ai-plans/",
+        "summary": "Meta 正式上线 Instagram / Facebook / WhatsApp 的付费订阅，其中包含独立的 AI 套餐——意味着 Meta AI 从「免费引流功能」走向「直接付费产品」。社媒巨头开始把 AI 当订阅型 SaaS 卖，对独立 AI 工具产品形成定价参考与替代压力。"
+      },
+      {
+        "title": "Illinois 通过美国最严 AI 安全法案",
+        "source": "Wired",
+        "category": "AI 工具动态",
+        "url": "https://www.wired.com/story/illinois-pass-major-ai-safety-law-pritzker/",
+        "summary": "伊利诺伊州议会通过号称「美国最严」的 AI 安全法案，覆盖前沿模型披露、合成内容标注、AI 决策透明度等。州级监管走在联邦前面，对在美做 AI 产品的团队意味着：合规复杂度从「联邦层面」碎片化到「逐州落地」，出海团队的法务/合规预算要重新估算。"
+      },
+      {
+        "title": "Anthropic 推出 knowledge-work-plugins：把 Skills 推进知识工作者场景",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/anthropics/knowledge-work-plugins",
+        "summary": "Anthropic 官方开源 knowledge-work-plugins，把 Claude Skills 体系延伸到知识工作场景——文档协作、研究综述、报告生成等典型白领工作流。继前几天的 claude-plugins-official 之后，Anthropic 在 Skills 生态的官方治理与场景化两条线同时加速。"
+      },
+      {
+        "title": "HF 论文：LLM 能内省吗？一次「现实检查」",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2605.26242",
+        "summary": "「LLM 是否真的能内省自己的推理过程」一直是热门哲学/工程问题。这篇论文系统性测试主流模型的自我报告 vs 实际行为的一致性，结论是：**模型给出的「内省解释」与真实决策路径系统性不一致**。对做 AI 可解释性 / Agent 调试的开发者：别再相信 LLM 自己写的「我为什么这样做」——它经常是事后编故事。"
+      }
+    ],
+    "jasonSays": "今天最劲爆的是 Cognition（Devin AI 母公司）$25B 估值融 $10 亿，AI 编程 startup 正在被资本定价为下一个 Cursor；同时 Latent Space 一句话点透行业现状——「All Model Labs are now Agent Labs」，模型公司全面转向 Agent 路线已成共识。",
+    "filename": "2026-05-28.md"
+  },
+  {
     "slug": "2026-05-27",
     "date": "2026-05-27",
     "title": "AI 快讯 · 5月27日",
@@ -62,7 +127,8 @@
       }
     ],
     "jasonSays": "今天两件事放一起看很有意思：OpenRouter 估值翻倍说明多模型调用已是基础设施级需求，同时数百万 Agent 面临安全漏洞——AI 基础设施在快速成熟，但安全欠账也在同步累积，这个剪刀差迟早要还。",
-    "filename": "2026-05-27.md"
+    "filename": "2026-05-27.md",
+    "coverImage": "/news/2026-05-27.png"
   },
   {
     "slug": "2026-05-26",
