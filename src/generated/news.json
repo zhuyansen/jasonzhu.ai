@@ -1,5 +1,70 @@
 [
   {
+    "slug": "2026-05-30",
+    "date": "2026-05-30",
+    "title": "AI 快讯 · 5月30日",
+    "items": [
+      {
+        "title": "Anthropic 三连发：Opus 4.8 + Dynamic Workflows/ultracode + 巨额 Series H",
+        "source": "Latent Space",
+        "category": "AI 工具动态",
+        "url": "https://www.latent.space/p/ainews-anthropic-raises-965b-series",
+        "summary": "Anthropic 同日宣布三件大事：**Opus 4.8 新模型**、**Dynamic Workflows + ultracode** 新产品线、以及 **Series H 巨额融资**。Latent Space 标题直接用「Total Anthropic victory」点评。Opus 4.8 主打 agentic 推理与长任务执行，ultracode 则瞄准下一代 AI 编程工作流，正面叫板 Cognition 的 Devin。"
+      },
+      {
+        "title": "Cognition 公布 Async Agent 范式：80% Devin Commits + Spec-to-PR + Agent Memory",
+        "source": "Latent Space",
+        "category": "AI 工具动态",
+        "url": "https://www.latent.space/p/cognition",
+        "summary": "Cognition 联合创始人 Walden Yan 公开 Devin 内部产品形态：**80% 的代码 commit 由 Devin 自主产出**，工作流从「PM 写 spec → Devin 直接出 PR」，配合完整虚拟机环境和 Agent 长期记忆。这是 AI 编程从「Copilot 辅助」走向「Async 自主交付」的范式转变，对所有 SaaS / 开发工具团队意义重大。"
+      },
+      {
+        "title": "AI 芯片 Groq 融资 6.5 亿美元，从硬件转向推理服务",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/05/29/after-nvidias-20b-not-acqui-hire-ai-chip-startup-groq-reportedly-raising-650m/",
+        "summary": "紧随英伟达 200 亿美元「类收购」之后，Groq 拟融资 6.5 亿美元，战略重心从硬件销售转向 **AI 推理服务**。这是英伟达之外又一家明确定位「推理算力专卖」的玩家——AI 推理段的成本与速度战争正在升温，对 AI 应用毛利结构影响显著。"
+      },
+      {
+        "title": "Cognition CEO Scott Wu：AI 编程 Agent 不该取代人类",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/05/29/cognitions-scott-wu-says-ai-coding-agents-shouldnt-replace-humans/",
+        "summary": "做出 Devin 这一最成功 AI 编程 Agent 的 Cognition CEO 公开表态：**Devin 设计上不是为了取代程序员**，而是作为高效协作者。这是赛道头部公司在「AI 替人」叙事下的少见冷静声音，对开发者职业焦虑是重要参考点。"
+      },
+      {
+        "title": "TechCrunch 警示：程序员拒绝不用 AI 工作，但代码质量隐患浮现",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/05/29/coders-are-refusing-to-work-without-ai-and-that-could-come-back-to-bite-them/",
+        "summary": "研究显示开发者已普遍依赖 AI 辅助编程，但**输出代码质量并未同步提升**——一旦 AI 工具不可用，技术债与维护性问题集中爆发。对工程团队意味着：AI 编程不只是效率工具，还要建立质量审查与回归测试闭环。"
+      },
+      {
+        "title": "中国扩大对 DeepSeek、阿里等头部 AI 公司核心人才的出境限制",
+        "source": "Bloomberg（via Hacker News）",
+        "category": "AI 工具动态",
+        "url": "https://www.bloomberg.com/news/articles/2026-05-26/china-expands-travel-curbs-to-top-ai-talent-at-private-firms",
+        "summary": "彭博报道：中国正在把核心 AI 人才出境管控从国企扩展到 DeepSeek、阿里等私营企业。这是中美 AI 竞争背景下「人才即战略资源」的明确信号——对出海 AI 团队的人才结构与跨境协作模式将产生直接影响。"
+      },
+      {
+        "title": "MoneyPrinterTurbo 走红 GitHub Trending：一键 AI 生成高清短视频",
+        "source": "GitHub Trending",
+        "category": "变现案例",
+        "url": "https://github.com/harry0703/MoneyPrinterTurbo",
+        "summary": "中文开源项目 MoneyPrinterTurbo 在 GitHub Trending 持续走红——给一个主题或关键词，自动生成视频文案、素材、字幕、背景音乐，合成高清短视频。Web 界面 + API 双形态，是 AI 内容批量生产线的典型代表。对做 TikTok / 抖音 / YouTube Shorts 矩阵运营的独立创作者有直接价值。"
+      },
+      {
+        "title": "HF 论文：PANDO——多模态 Agent 的「在线 Skill 蒸馏」",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2605.24785",
+        "summary": "PANDO 提出多模态 web agent 的新范式：不再依赖 inference-time 大算力（rollout 搜索、verifier 多次校验、专家模型栈），而是**通过在线 Skill 蒸馏**让 agent 在执行中自主积累技能。对做生产环境多模态 Agent 的团队：可显著降低推理成本，是值得跟进的工程方向。"
+      }
+    ],
+    "jasonSays": "今天最猛的是 Anthropic 一口气发 Opus 4.8 + Dynamic Workflows/ultracode + 巨额 Series H 融资，被 Latent Space 称作「Total Anthropic victory」；同时 Cognition 公开 Async Agent 范式——80% Devin commits、Spec-to-PR、Agent Memory——AI 编程真正进入「人定 spec、Agent 自交付」时代。",
+    "filename": "2026-05-30.md"
+  },
+  {
     "slug": "2026-05-29",
     "date": "2026-05-29",
     "title": "AI 快讯 · 5月29日",
@@ -62,7 +127,8 @@
       }
     ],
     "jasonSays": "Anthropic 估值逼近万亿，Opus 4.8 却被社区评为「微增」——融资能力和模型迭代速度之间的张力，是 Anthropic 在 IPO 前最需要正面回答的问题。",
-    "filename": "2026-05-29.md"
+    "filename": "2026-05-29.md",
+    "coverImage": "/news/2026-05-29.png"
   },
   {
     "slug": "2026-05-28",
