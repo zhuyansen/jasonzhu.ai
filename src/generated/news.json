@@ -1,5 +1,70 @@
 [
   {
+    "slug": "2026-05-31",
+    "date": "2026-05-31",
+    "title": "AI 快讯 · 5月31日",
+    "items": [
+      {
+        "title": "GitHub Copilot 改按 Token 计费，开发者集体炸锅",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/05/30/what-a-joke-github-copilots-new-token-based-billing-spurs-consternation-among-devs/",
+        "summary": "GitHub Copilot 宣布从订阅制转向按 Token 用量计费，开发者社区强烈反弹，有人直呼「What a joke」。这标志着「AI 编程工具免费午餐」时代正在终结——当用户量和用量双双爆炸，平台必然要把成本转嫁回去，对重度用户影响尤其显著。"
+      },
+      {
+        "title": "某神秘公司单月意外烧掉 5 亿美元 Claude 费用",
+        "source": "Tom's Hardware / HN",
+        "category": "AI 工具动态",
+        "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/mystery-company-accidentally-blew-usd500-million-on-claude-in-a-single-month-failed-to-put-usage-limit-on-licenses-for-employees",
+        "summary": "一家身份未披露的企业因未给员工 Claude 许可证设置用量上限，单月 API 账单高达 5 亿美元。事件折射出两个现实：Anthropic Opus 系列 token 消耗极其激进，以及企业 AI 成本治理几乎还是盲区。这对任何在内部大规模部署 Claude 的团队都是警示。"
+      },
+      {
+        "title": "Compound Engineering Plugin：首个面向 Claude Code/Cursor 的「工程技能插件」",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/EveryInc/compound-engineering-plugin",
+        "summary": "EveryInc 开源 Compound Engineering Plugin，官方支持 Claude Code、Codex、Cursor 等主流 AI 编程工具。核心理念是「每次工程工作应让后续工作更容易」，通过可复用 AI Skills 对抗技术债积累。这是 Claude Code 插件生态中少有的专注「工程复利」理念的产品，值得关注。"
+      },
+      {
+        "title": "Google Gemini Spark：全天候 AI 助理实测，有用但定位模糊",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/05/30/i-put-googles-24-7-ai-assistant-gemini-spark-to-work-and-its-actually-pretty-useful/",
+        "summary": "TechCrunch 实测 Google 新推出的 Gemini Spark——一款主打 24/7 常驻、自动化日常任务（收件箱摘要、本地活动规划）的 AI 助理。实测体验相当实用，但最大疑问是：Google 为何要把它做成独立产品而非直接集成进 Gemini App？产品策略混乱信号明显。"
+      },
+      {
+        "title": "OpenAI 推出 Rosalind Biodefense：把 GPT 开放给美国生物防御机构",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense",
+        "summary": "OpenAI 正式发布 Rosalind Biodefense 项目，向通过审核的开发者及美国政府合作伙伴开放专用 GPT-Rosalind 模型，聚焦生物防御、公共卫生和大流行病准备。这是 OpenAI 首次为国家安全场景专门定制模型访问权限，意味着 AI 在高风险政府场景的渗透进一步加深。"
+      },
+      {
+        "title": "Meta 据报正在研发 AI 项链穿戴设备",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/05/30/meta-is-reportedly-developing-an-ai-pendant/",
+        "summary": "据报道 Meta 正在开发一款 AI 驱动的穿戴式项链（pendant），这是继 Ray-Ban 智能眼镜之后 Meta 在 AI 硬件上的又一次押注。AI 硬件战场正式从手机配件延伸至「贴身可穿戴」，Humane AI Pin 的失败显然没有浇灭大厂热情。"
+      },
+      {
+        "title": "开源 AI 用量正逼近 Gemini：Kimi、DeepSeek、GLM 三足鼎立",
+        "source": "X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://x.com/bindureddy",
+        "summary": "知名 AI 投资人 Bindu Reddy 披露数据：开源 AI 的 token 消耗量正在以指数级增长，已接近 Gemini 系列模型的体量。Kimi、DeepSeek、GLM 对 50% 任务已「够用」，这对依赖闭源 API 的 SaaS 开发者是重要成本信号——切换开源模型的时间窗口正在打开。"
+      },
+      {
+        "title": "论文：用「置信度」智能管理 KV Cache，长文推理显存降一个数量级",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2605.24786",
+        "summary": "CONF-KV 提出用模型每步解码时的「下一 token 预测置信度」来动态决定保留多少 KV Cache，高置信时激进压缩、低置信时保留更多上下文。对开发者的意义：在不换模型的前提下，长文档处理的 GPU 显存和推理成本可大幅降低，部署 10 万 token 以上长文本应用的工程成本有望实质性下降。"
+      }
+    ],
+    "jasonSays": "今天最值得警惕的信号：GitHub Copilot 按 Token 收费 + 某公司单月烧掉 5 亿美元 Claude 费用——AI 工具的「成本失控时代」已经来临，企业和独立开发者必须开始认真做 AI 用量治理，不然账单会教你做人。",
+    "filename": "2026-05-31.md"
+  },
+  {
     "slug": "2026-05-30",
     "date": "2026-05-30",
     "title": "AI 快讯 · 5月30日",
