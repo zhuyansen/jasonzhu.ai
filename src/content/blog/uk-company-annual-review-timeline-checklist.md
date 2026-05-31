@@ -1,14 +1,14 @@
 ---
-title: "BRICKAI LIMITED 第一年年审实战 Timeline：£228 搞定 + 两个被忽略的省税信息差"
+title: "英国公司第一年年审实战 Timeline：£228 搞定 + 两个被忽略的省税信息差"
 date: "2026-05-31"
 category: "出海"
-tags: ["英国公司", "年审", "出海", "BRICKAI", "AIA", "DIY", "Compliance"]
+tags: ["英国公司", "年审", "出海", "AIA", "DIY", "Compliance"]
 tweetUrl: "https://x.com/GoSailGlobal/status/2060981710884635056"
 coverImage: "/blog/uk-company-annual-review-timeline-checklist/cover.png"
-excerpt: "刚独立完成 BRICKAI LIMITED 第一年完整年审：Confirmation Statement ✅、Annual Accounts ✅、CT600 等 HMRC 激活码中。总成本 £228（vs 淘宝代办 ¥2000），5 周 + 1 个下午搞定。附完整 Timeline Checklist + 两个独立开发者最容易忽略的省税信息差。"
+excerpt: "刚独立完成英国公司第一年完整年审：Confirmation Statement ✅、Annual Accounts ✅、CT600 等 HMRC 激活码中。总成本 £228（vs 淘宝代办 ¥2000），5 周 + 1 个下午搞定。附完整 Timeline Checklist + 两个独立开发者最容易忽略的省税信息差。"
 ---
 
-之前那篇 [《£148 搞定英国公司年审》](/zh/blog/uk-company-annual-review-diy-guide) 讲了完整方法论。这篇是**真实案例的 timeline 记录**——刚把 **BRICKAI LIMITED** 第一年的年审全程独立跑完。
+之前那篇 [《£148 搞定英国公司年审》](/zh/blog/uk-company-annual-review-diy-guide) 讲了完整方法论。这篇是**真实案例的 timeline 记录**——刚把自己英国公司第一年的年审全程独立跑完。
 
 **当前进度：**
 
@@ -54,7 +54,7 @@ excerpt: "刚独立完成 BRICKAI LIMITED 第一年完整年审：Confirmation S
 
 ---
 
-## BRICKAI 第一年成本明细
+## 第一年成本明细
 
 | 项 | 费用 | 用途 |
 |----|------|------|
