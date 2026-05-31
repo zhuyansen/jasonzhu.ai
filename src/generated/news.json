@@ -1,5 +1,70 @@
 [
   {
+    "slug": "2026-06-01",
+    "date": "2026-06-01",
+    "title": "AI 快讯 · 6月1日",
+    "items": [
+      {
+        "title": "Harness：为 Claude Code 一键生成专属 Agent 团队架构",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/revfactory/harness",
+        "summary": "Harness 是 Claude Code 的「团队工厂」插件，只需用自然语言描述项目，它就能自动设计 Agent 团队、定义各角色职责、并生成对应 Skills。支持英/中/日语指令，六种预置团队架构可选，是目前最接近「AI 工程师组队」体验的 Claude Code 扩展。"
+      },
+      {
+        "title": "Cursor 官方 Plugins 仓库开源：热门工具框架插件一键接入",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/cursor/plugins",
+        "summary": "Cursor 正式开源官方插件仓库，收录主流开发工具、框架和 SaaS 产品的 Cursor 插件，每个插件以独立目录 + plugin.json 清单形式存在。这意味着 Cursor 正在构建类似 VSCode 插件市场的生态，开发者可直接提交自己的插件到官方频道。"
+      },
+      {
+        "title": "SoftBank 豪掷 750 亿欧元在法国建数据中心，AI 基础设施军备赛升级",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/05/30/softbank-says-it-will-invest-up-to-e75-billion-to-build-french-data-centers/",
+        "summary": "软银宣布将在法国投资最高 750 亿欧元建设数据中心，目标新增 5GW 算力容量。这是继美国之后欧洲迄今最大单笔 AI 基础设施投资，显示全球 AI 算力争夺已从美亚蔓延至欧洲，欧盟的 AI 主权战略正在吸引顶级资本押注。"
+      },
+      {
+        "title": "GPT-5.6 即将来袭：OpenAI 编程领域优势能否继续扩大？",
+        "source": "X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://x.com/bindureddy",
+        "summary": "知名投资人 Bindu Reddy 指出：GPT-5.5 编程能力领先，Opus 4.8 未能追上；下一版 GPT-5.6 有望进一步拉大差距。结合近期 Anthropic 系列动作仍未在编程 benchmark 上反超的现实，OpenAI 在 Coding 赛道的护城河值得重新审视。"
+      },
+      {
+        "title": "微软 MarkItDown 持续霸榜：把任意文件秒转 Markdown 喂给 AI",
+        "source": "GitHub Trending",
+        "category": "AI 工具动态",
+        "url": "https://github.com/microsoft/markitdown",
+        "summary": "微软开源的 MarkItDown 再次登上 GitHub Trending，支持将 Office 文档、PDF、图片等批量转为 Markdown，是 RAG 管道和 Claude Code 知识库喂料的利器。新版本新增安全说明，提示在不可信环境下需限制调用范围，适合生产级部署。"
+      },
+      {
+        "title": "论文：让 AI 自动优化自己的 Prompt，无需人工反复调参",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2605.21781",
+        "summary": "「反思式 Prompt 调优」新方法：让 LLM 通过 Function Calling 自我评估并迭代优化 Prompt，无需大量候选搜索或固定模板。对开发者的意义：以后写 System Prompt 可以半自动化——模型自己找问题、自己改、自己验证，大幅降低 Prompt 工程人力成本。"
+      },
+      {
+        "title": "论文：视觉语言模型的空间感知存在系统性缺陷，「远=上方」是幻觉根源",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2605.30161",
+        "summary": "研究发现主流 VLM 在表征空间关系时存在「垂直-距离纠缠」：模型倾向于把「远处」和「上方」混为一谈，这是统计捷径而非真正的 3D 理解。对做多模态 Agent、机器人视觉或空间推理应用的开发者是重要警示：现有 VLM 的空间判断不可过度信任。"
+      },
+      {
+        "title": "LLM 政治偏见新研究：同一议题左右立场回答不对称，一致性训练可改善",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2605.22771",
+        "summary": "研究识别出 LLM「隐性政治偏见」的 7 类表现方式，并提出两个量化指标衡量情感一致性与帮助性一致性。「一致性训练」可显著降低这种系统性偏差。对出海做内容/社媒 AI 产品的开发者而言，这类偏见可能直接影响用户信任与合规风险。"
+      }
+    ],
+    "jasonSays": "今天最值得盯的是 Cursor 官方 Plugins 仓库开放——这不是小更新，是在复制 VSCode 生态打法；谁先占住高频工具的 Cursor 插件位置，谁就提前锁定开发者心智。",
+    "filename": "2026-06-01.md"
+  },
+  {
     "slug": "2026-05-31",
     "date": "2026-05-31",
     "title": "AI 快讯 · 5月31日",
@@ -62,7 +127,8 @@
       }
     ],
     "jasonSays": "今天最值得警惕的信号：GitHub Copilot 按 Token 收费 + 某公司单月烧掉 5 亿美元 Claude 费用——AI 工具的「成本失控时代」已经来临，企业和独立开发者必须开始认真做 AI 用量治理，不然账单会教你做人。",
-    "filename": "2026-05-31.md"
+    "filename": "2026-05-31.md",
+    "coverImage": "/news/2026-05-31.png"
   },
   {
     "slug": "2026-05-30",
