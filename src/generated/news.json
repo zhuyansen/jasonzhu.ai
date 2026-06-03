@@ -1,5 +1,71 @@
 [
   {
+    "slug": "2026-06-03",
+    "date": "2026-06-03",
+    "title": "AI 快讯 · 6月3日",
+    "items": [
+      {
+        "title": "Uber 4 个月烧光全年 AI 预算，给员工设支出上限",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/06/02/uber-caps-employee-ai-spending-after-blowing-through-budget-in-four-months/",
+        "summary": "Uber 内部 AI 工具年度预算 4 个月就被员工花光，被迫给每人设支出上限。这是继 Starbucks 撤回 AI Agent 之后又一个**「企业 AI 真实成本不可控」**的标志案例——下半年所有 SaaS 厂商都要回答同一个问题：怎么帮 B 端客户做 AI 成本治理。"
+      },
+      {
+        "title": "Microsoft 发布 Scout：OpenClaw 风格的个人助手",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/06/02/microsoft-launches-scout-an-openclaw-inspired-personal-assistant/",
+        "summary": "微软推出 **Scout** —— 明确对标 OpenClaw（OpenAI 的 Agent 平台）的个人 AI 助手。深度集成 Windows 11，可读邮件、读日历、自主跑任务。这是微软在 Agent 产品形态上从 Copilot（嵌入式）走向 Scout（独立助手）的明确转向——和 Apple Siri 重做、Google Spark 同期落地。"
+      },
+      {
+        "title": "Microsoft 新工具：用文本描述生成 AI 行为测试",
+        "source": "TechCrunch AI",
+        "category": "Skills 生态",
+        "url": "https://techcrunch.com/2026/06/02/new-microsoft-tool-lets-devs-spin-up-ai-behavior-tests-using-text-descriptions/",
+        "summary": "微软同日发布新开发者工具：用自然语言描述就能生成 **AI behavior 测试**（替代手写大量评测代码）。对所有做 AI 应用的开发者：自动化 eval 终于有了开箱即用的方案，对生产环境的 LLM 监控与回归测试是直接利好。"
+      },
+      {
+        "title": "NVIDIA 三连发：Cosmos 3 + Nemotron 3 Ultra + RTX Spark",
+        "source": "Latent Space",
+        "category": "AI 工具动态",
+        "url": "https://www.latent.space/p/ainews-nvidia-cosmos-3-nemotron-3",
+        "summary": "英伟达同日发布三款新品：**Cosmos 3**（物理世界模拟基座模型）、**Nemotron 3 Ultra**（开源旗舰 LLM）、**RTX Spark**（消费级 AI 工作站）。三条产品线分别瞄准机器人/世界模型、开源 LLM 竞争、终端 AI 算力——英伟达正在从「GPU 厂商」走向「AI 全栈平台」。"
+      },
+      {
+        "title": "Google 推 AI 深度伪造来电检测，反诈进入运营商层",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/06/02/google-rolls-out-fake-call-detection-to-protect-against-ai-deepfake-impersonation-scams/",
+        "summary": "Google 在 Android 系统集成实时 AI 深度伪造来电检测：识别 AI 合成人声 + 弹窗警示用户。AI 语音诈骗规模激增，Google 把反 AI 诈骗能力下沉到操作系统级——这是平台方对 AI 滥用的首次系统性反制。"
+      },
+      {
+        "title": "Cyera 估值 120 亿美元，80x ARR 倍数刷新 AI 安全赛道天花板",
+        "source": "TechCrunch AI",
+        "category": "变现案例",
+        "url": "https://techcrunch.com/2026/06/02/cyera-eyes-12b-valuation-at-80x-arr-multiple-despite-operating-losses/",
+        "summary": "AI 数据安全公司 Cyera 拟以 120 亿美元估值融资，**ARR 倍数高达 80x**（行业正常 10-20x）。亏损中、但资本仍给极高溢价——AI Safety 是 2026 年最被资本看好的细分赛道。对独立开发者:**「让 AI 用得放心」比「让 AI 更强」更容易拿到溢价**。"
+      },
+      {
+        "title": "GitHub 揭晓 Agents 计划：把 PR / Issue 工作流交给 Agent",
+        "source": "Latent Space",
+        "category": "Skills 生态",
+        "url": "https://www.latent.space/p/github-agents",
+        "summary": "GitHub VP Kyle Daigle 在 Latent Space 公开 GitHub Agents 计划：让 Agent 接管 issue triage、PR review、依赖更新等重复工作。这是 GitHub 对标 Cognition / Cursor 的核心反击——**用平台原生 Agent 把开发者锁在 GitHub 工作流里**。"
+      },
+      {
+        "title": "HF 论文：Show, Don't TELL——可解释的 AI 文本检测",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2606.00184",
+        "summary": "主流 AI 文本检测器输出一个「AI 概率」分数，用户无法验证。**Show, Don't TELL** 提出可解释检测框架：不只给概率，还指出文本里**哪些片段最像 AI 写的及原因**。对做内容审核、学术诚信、SEO 反 AI slop 的产品有直接落地价值。"
+      }
+    ],
+    "jasonSays": "今天最值得盯的两个极端：Uber 4 个月烧光 AI 预算被迫给员工设限，而微软同日发布 OpenClaw 风格的 Scout 助手 + AI 测试工具——企业用户在为 AI 成本焦虑，巨头却在加速 Agent 产品化。这就是 2026 下半年 AI 应用的主调：成本治理与 Agent 普及同步推进。",
+    "filename": "2026-06-03.md",
+    "coverImage": "/news/2026-06-03.png"
+  },
+  {
     "slug": "2026-06-02",
     "date": "2026-06-02",
     "title": "AI 快讯 · 6月2日",
