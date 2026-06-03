@@ -71,20 +71,43 @@ if (!proxyKey && !officialKey) {
   process.exit(1);
 }
 
-const anthropicProxy = proxyKey
-  ? new Anthropic({ apiKey: proxyKey, baseURL: proxyURL })
-  : null;
+// ⚠️ 已弃用 SDK 直接走 HTTP — SDK 在 aigocode 代理下经常无声 hang 致 cron 超时被 cancel
+// 自己用 fetch + AbortController 90s 超时，能 hard-fail，能 retry
+const officialURL = "https://api.anthropic.com";
+const PROXY = proxyKey ? { key: proxyKey, baseURL: proxyURL, label: "proxy" } : null;
+const OFFICIAL = officialKey ? { key: officialKey, baseURL: officialURL, label: "official" } : null;
+let activeClient = PROXY || OFFICIAL;
 
-// 显式覆盖 baseURL — Anthropic SDK 会自动读 ANTHROPIC_BASE_URL 环境变量
-// 不显式覆盖会导致 official 客户端也走代理
-const anthropicOfficial = officialKey
-  ? new Anthropic({ apiKey: officialKey, baseURL: "https://api.anthropic.com" })
-  : null;
+console.log(`🔌 API 端点：${activeClient.label} (${activeClient.baseURL})`);
 
-// 主客户端（优先 proxy）
-let anthropic = anthropicProxy || anthropicOfficial;
-
-console.log(`🔌 API 客户端：${anthropicProxy ? `proxy (${proxyURL})` : "official Anthropic"}`);
+/**
+ * 直接调 Anthropic Messages HTTP API，硬超时 90s。
+ * 兼容 aigocode 代理（同样的 HTTP 协议）。
+ * 返回 { content, stop_reason, ... } 跟 SDK 一致的形状。
+ */
+async function callClaudeRaw({ key, baseURL }, body, timeoutMs = 90000) {
+  const ctl = new AbortController();
+  const t = setTimeout(() => ctl.abort(), timeoutMs);
+  try {
+    const res = await fetch(`${baseURL}/v1/messages`, {
+      method: "POST",
+      headers: {
+        "x-api-key": key,
+        "anthropic-version": "2023-06-01",
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(body),
+      signal: ctl.signal,
+    });
+    if (!res.ok) {
+      const errText = await res.text().catch(() => "");
+      throw new Error(`HTTP ${res.status}: ${errText.slice(0, 300)}`);
+    }
+    return await res.json();
+  } finally {
+    clearTimeout(t);
+  }
+}
 const parser = new Parser({ timeout: 10000 });
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -248,14 +271,12 @@ ${itemsText}
   let modelIdx = 0;
   let usingFallback = false;
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
-    const client = anthropic;
-    if (!client) {
+    if (!activeClient) {
       throw new Error("No available API client");
     }
     try {
       const currentModel = modelChain[modelIdx];
-      const clientLabel = usingFallback ? "official-fallback" : "proxy";
-      console.log(`  🔄 Claude API 调用 (attempt ${attempt}/${MAX_RETRIES} [${clientLabel}${disableThinking ? ", no-thinking" : ""}, ${currentModel}])...`);
+      console.log(`  🔄 Claude API 调用 (attempt ${attempt}/${MAX_RETRIES} [${activeClient.label}${disableThinking ? ", no-thinking" : ""}, ${currentModel}])...`);
       const requestParams = {
         model: currentModel,
         max_tokens: 16000,
@@ -264,7 +285,7 @@ ${itemsText}
       if (!disableThinking) {
         requestParams.thinking = { type: "enabled", budget_tokens: 5000 };
       }
-      const response = await client.messages.create(requestParams);
+      const response = await callClaudeRaw(activeClient, requestParams, 90000);
 
       console.log(`  📋 Response stop_reason: ${response.stop_reason}, content blocks: ${response.content?.length || 0}`);
 
@@ -365,12 +386,20 @@ ${itemsText}
         errMsg.includes("400") &&
         (errMsg.includes("model is not supported") || errMsg.includes("model_not_found"));
 
-      if (isProxyDry && !usingFallback && anthropicOfficial) {
+      if (isProxyDry && !usingFallback && OFFICIAL) {
         console.log(`  🔀 代理账号池干涸，立即切换到官方 Anthropic API`);
-        anthropic = anthropicOfficial;
+        activeClient = OFFICIAL;
         usingFallback = true;
-        // 官方 API 不限制 thinking，但保持 disableThinking=true 因为 prompt 不需要它
-        // 重置 modelIdx —— 官方 API 用最新 model 即可
+        modelIdx = 0;
+        await sleep(2000);
+        continue;
+      }
+
+      // 新增：硬超时（AbortError）也算上游问题，切 fallback
+      if (errMsg.includes("aborted") && !usingFallback && OFFICIAL) {
+        console.log(`  🔀 请求超时 (90s)，切换到官方 Anthropic API`);
+        activeClient = OFFICIAL;
+        usingFallback = true;
         modelIdx = 0;
         await sleep(2000);
         continue;
