@@ -1,5 +1,71 @@
 [
   {
+    "slug": "2026-06-04",
+    "date": "2026-06-04",
+    "title": "AI 快讯 · 6月4日",
+    "items": [
+      {
+        "title": "Microsoft Build 发布 MAI-Thinking-1 + MAI 自研模型家族",
+        "source": "Latent Space",
+        "category": "AI 工具动态",
+        "url": "https://www.latent.space/p/ainews-microsoft-build-mai-thinking",
+        "summary": "微软在 Build 大会一口气发布 **MAI-Thinking-1**（推理模型）和 **MAI Family** 自研模型家族。这是微软从「OpenAI 的最大客户兼渠道商」彻底转向「自己造模型」的标志性事件——和 Apple 自研、Amazon Nova、Meta Llama 一起，**「巨头自研派」正式形成完整闭环**。Anthropic / OpenAI 的纯模型公司护城河被进一步稀释。"
+      },
+      {
+        "title": "Lovable 与 Google Cloud 签多年协议，算力上调 5 倍",
+        "source": "TechCrunch AI",
+        "category": "变现案例",
+        "url": "https://techcrunch.com/2026/06/03/lovable-signs-multi-year-deal-with-google-cloud-to-up-usage-5x-source-says/",
+        "summary": "Vibe Coding 头部 Lovable 与 Google Cloud 签下多年大单，**算力使用量直接上调 5 倍**——意味着用户增长把基础设施压力推到了「必须长期锁定供应商」的级别。对独立开发者：Vibe Coding 赛道的资本/算力门槛正在快速抬高，留给新玩家的窗口越来越窄。"
+      },
+      {
+        "title": "Alphabet 创纪录融资 850 亿美元，All-in Google AI",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/06/03/alphabets-record-breaking-85b-raise-for-googles-ai-business-is-a-helluva-good-signal/",
+        "summary": "继前天宣布 800 亿融资计划，Alphabet 实际敲定 **850 亿美元**——美国公司史上最大单笔 AI 基建融资。Google 的 TPU 集群与 Gemini 模型扩张拿到弹药库级别支持，与 Microsoft / Meta / Amazon 的「百亿级算力军备竞赛」正式进入下半场。"
+      },
+      {
+        "title": "Berkeley CS 课程：AI 使用导致数学技能下滑 + 不及格率飙升",
+        "source": "The Daily Californian",
+        "category": "AI 工具动态",
+        "url": "https://www.dailycal.org/news/campus/academics/failing-grades-soar-as-professors-see-greater-ai-usage-dwindling-math-skills-in-uc-berkeley/article_16fad0bf-02cb-4b8c-8d88-888ffd9f8608.html",
+        "summary": "UC Berkeley CS 教授报告：学生重度依赖 AI 后**数学基础技能显著下滑、不及格率飙升**。这是 AI 教育原生化的真实警示信号——当 AI 把「过程理解」一并代劳，学习效果会被掏空。对所有用 AI 自学技能的人：**用 AI 加速理解 ≠ 让 AI 替你理解**，是两件事。"
+      },
+      {
+        "title": "两位创始人离开 Goldman 和 Meta，给被忽略的市场做 voice AI",
+        "source": "TechCrunch AI",
+        "category": "出海实战",
+        "url": "https://techcrunch.com/2026/06/03/these-two-founders-left-goldman-and-meta-to-build-voice-ai-for-markets-everyone-else-overlooked/",
+        "summary": "两位前 Goldman Sachs / Meta 工程师辞职创业，专攻**主流 voice AI 都没覆盖的小语种 + 区域口音市场**（东南亚、非洲、印度方言等）。这是典型的「巨头看不上的窄缝场景」——对出海做 AI 产品的中国团队是直接参考：voice 这条线的全球性长尾还远没被吃完。"
+      },
+      {
+        "title": "Publishers 可 opt-out AI Search：新监管落地",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/06/03/publishers-will-be-able-to-opt-out-of-ai-search-thanks-to-new-regulation/",
+        "summary": "新监管允许出版商**主动 opt out 被 AI Search 摘要**——意味着新闻媒体可以拒绝 Google AI Overviews、Perplexity 等 AI 搜索引擎抓取内容做总结。对所有依赖「白嫖优质内容做 RAG」的 AI 产品：合规风险正在从可选变必选，内容来源审查要提上 roadmap。"
+      },
+      {
+        "title": "Pie：又一个 Rust 写的开源 AI 编程 Agent",
+        "source": "Hacker News",
+        "category": "Skills 生态",
+        "url": "https://github.com/c4pt0r/pie",
+        "summary": "新开源项目 **Pie** 用 Rust 实现完整 coding agent，强调启动速度与资源占用——和 Cursor / Cline / Aider 等同台竞争。Rust 系 coding agent 在 2026 年快速增多（前面 LiteLLM / Zero / Pie），「轻量、可本地、不锁定」正在成为开发者工具新审美。"
+      },
+      {
+        "title": "HF 论文：Meta-Agent Challenge——当前 Agent 能自主开发新 Agent 吗？",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2606.04455",
+        "summary": "论文构建 **Meta-Agent Challenge** 基准，专门测试：「现有 Agent 能否自主设计、实现、测试出全新 Agent？」结果显示主流模型在「Agent 造 Agent」这件事上**普遍失败**——离 AGI 式自我繁殖还有距离。对所有想搭「自进化 Agent 系统」的团队是冷水。"
+      }
+    ],
+    "jasonSays": "今天最爆是 Microsoft Build 发布 MAI-Thinking-1 + MAI 自研模型家族——微软终于不再只做 OpenAI 的渠道商，而是自己造模型；同时 Lovable 锁定 Google Cloud 5 倍算力——Vibe Coding 赛道头部加速圈地。两件事合在一起：AI 应用层下半年要重新洗牌。",
+    "filename": "2026-06-04.md",
+    "coverImage": "/news/2026-06-04.png"
+  },
+  {
     "slug": "2026-06-03",
     "date": "2026-06-03",
     "title": "AI 快讯 · 6月3日",
