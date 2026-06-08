@@ -1,5 +1,70 @@
 [
   {
+    "slug": "2026-06-09",
+    "date": "2026-06-09",
+    "title": "AI 快讯 · 6月9日",
+    "items": [
+      {
+        "title": "OpenAI 秘密提交 S-1：IPO 赛跑正式打响",
+        "source": "OpenAI Blog / TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/06/08/following-anthropic-openai-files-confidentially-for-ipo/",
+        "summary": "OpenAI 已向 SEC 秘密提交 S-1 上市申请，距 Anthropic 提交仅一周多。两大 AI 巨头相继冲刺 IPO，意味着 AI 行业从「烧钱竞速」正式迈入「向公众市场交答卷」阶段，估值与商业化路径将首次接受公开审视。"
+      },
+      {
+        "title": "WWDC 2026：苹果免费 API 配额抢开发者心，Siri 全面 AI 化",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/06/08/apple-bets-cheaper-ai-will-woo-small-developers/",
+        "summary": "苹果 WWDC 2026 重头戏：对 App Store 下载量不足 200 万的开发者免除云端 AI API 费用，同时升级 Siri、为 Safari/Shortcuts/Photos 注入 AI 能力。低成本策略明显针对独立开发者，试图在 AI 应用生态上弯道超车。"
+      },
+      {
+        "title": "Claude 正式接入苹果 Foundation Models：On-Device AI 新入口",
+        "source": "Hacker News / Anthropic",
+        "category": "AI 工具动态",
+        "url": "https://claude.com/blog/claude-for-foundation-models",
+        "summary": "Anthropic 宣布 Claude 可嵌入苹果 Foundation Models 框架，开发者可在 Apple 平台原生调用 Claude 构建智能应用。这意味着 Claude 正从「网页/API」渗透进设备端 AI 生态，与苹果 Intelligence 体系深度整合。"
+      },
+      {
+        "title": "Skills 生态新玩法：last30days 技能让 Agent 跨平台抓趋势",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/mvanhorn/last30days-skill",
+        "summary": "开源 Skill `/last30days` 可让 AI Agent 同时检索 Reddit、X、YouTube、HN、Polymarket 及全网内容，按真实用户互动数据（点赞、转发、真实资金）排序合成摘要，Claude Code 通过 Marketplace 一键安装自动更新，是目前最完整的趋势研究 Agent Skill 之一。"
+      },
+      {
+        "title": "Hermes Agent 开源：自我进化的 Agent，技能越用越强",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/NousResearch/hermes-agent",
+        "summary": "Nous Research 推出 Hermes Agent，内置「学习闭环」——每次对话后自动创建并优化 Skill，跨会话搜索历史记忆，逐步构建用户画像。可运行在 $5/月 VPS 或 Serverless 环境，是目前开源 Agent 中「持续自我改进」设计最完整的实现之一。"
+      },
+      {
+        "title": "HF 论文：只需少量样本，CORE 让模型推理能力快速跃升",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2605.28742",
+        "summary": "CORE（对比反思算法）让模型比较自己过去的推理过程，找出对错差异后快速修正——不需要 RLVR 那样的大规模训练，用极少样本就能在推理任务上显著提升。对独立开发者意义：微调成本可能大幅下降，小数据集也能训出强推理模型。"
+      },
+      {
+        "title": "HF 论文：IPT 让视觉语言模型真正「脑补」看不见的空间",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2606.03988",
+        "summary": "研究引入「想象感知 Token（IPT）」，让 VLM 在推理时生成虚拟视角的中间表示，解决遮挡、跨视角等空间推理难题。对开发者的意义：机器人导航、AR 场景理解、3D 应用中 VLM 的空间能力有望直接提升，无需更换底座模型。"
+      },
+      {
+        "title": "HF 论文：3.5 万条 GitHub 注释揭示开发者如何真实使用 AI 写代码",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2606.06843",
+        "summary": "研究分析了 35,361 条明确标注 AI 使用的 GitHub 代码注释，构建出首个「AI 辅助开发行为分类体系」，揭示开发者如何修改、适配 AI 生成代码。结论是：AI 输出普遍被二次改造，而非直接使用——为 Copilot/Claude Code 等工具的下一步优化方向提供了实证基础。"
+      }
+    ],
+    "jasonSays": "今天最大的信号是 OpenAI 和 Anthropic 双双冲刺 IPO，AI「烧钱黑洞」时代结束，下一阶段比的是谁能真正赚到钱——这对所有在 AI 赛道的独立开发者来说，既是压力也是机会窗口。",
+    "filename": "2026-06-09.md"
+  },
+  {
     "slug": "2026-06-08",
     "date": "2026-06-08",
     "title": "AI 快讯 · 6月8日",
@@ -62,7 +127,8 @@
       }
     ],
     "jasonSays": "今天最值得盯的是 Token 涨价潮 + Mythos 天价定价：免费午餐快结束了，现在不把 Multi-Agent 降本架构练熟，等 IPO 潮来了账单会让你很难受。",
-    "filename": "2026-06-08.md"
+    "filename": "2026-06-08.md",
+    "coverImage": "/news/2026-06-08.png"
   },
   {
     "slug": "2026-06-07",
