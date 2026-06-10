@@ -79,6 +79,12 @@ export default function AdminPage() {
   const [subscriberCount, setSubscriberCount] = useState(0);
   const [recentSubscribers, setRecentSubscribers] = useState<Subscriber[]>([]);
   const [subscribersLoading, setSubscribersLoading] = useState(false);
+  const [subPage, setSubPage] = useState(0);
+  const [subSearch, setSubSearch] = useState("");
+  const [subSearchInput, setSubSearchInput] = useState("");
+  const [subSourceFilter, setSubSourceFilter] = useState("");
+  const [allSources, setAllSources] = useState<string[]>([]);
+  const SUB_PAGE_SIZE = 50;
 
   // Check existing session on mount
   useEffect(() => {
@@ -316,17 +322,48 @@ export default function AdminPage() {
 
       const supabase = createClient(supabaseUrl, supabaseKey);
 
-      const { count } = await supabase
-        .from("subscribers")
-        .select("*", { count: "exact", head: true });
+      // Build filtered query (used for both count and page data)
+      const buildQuery = (forCount: boolean) => {
+        let q = forCount
+          ? supabase
+              .from("subscribers")
+              .select("*", { count: "exact", head: true })
+          : supabase
+              .from("subscribers")
+              .select("id, email, source, created_at");
+        if (subSearch.trim()) {
+          q = q.ilike("email", `%${subSearch.trim()}%`);
+        }
+        if (subSourceFilter.trim()) {
+          q = q.eq("source", subSourceFilter.trim());
+        }
+        return q;
+      };
 
+      const { count } = await buildQuery(true);
       setSubscriberCount(count ?? 0);
 
-      const { data } = await supabase
-        .from("subscribers")
-        .select("id, email, source, created_at")
+      // Load distinct sources (only once or when empty)
+      if (allSources.length === 0) {
+        const { data: srcData } = await supabase
+          .from("subscribers")
+          .select("source")
+          .limit(10000);
+        const uniq = Array.from(
+          new Set(
+            ((srcData ?? []) as Array<{ source: string | null }>)
+              .map((r) => r.source || "")
+              .filter(Boolean)
+          )
+        ).sort();
+        setAllSources(uniq);
+      }
+
+      const from = subPage * SUB_PAGE_SIZE;
+      const to = from + SUB_PAGE_SIZE - 1;
+      const { data } = await buildQuery(false)
         .order("created_at", { ascending: false })
-        .limit(10);
+        .range(from, to);
 
       setRecentSubscribers((data as Subscriber[]) ?? []);
     } catch {
@@ -334,7 +371,7 @@ export default function AdminPage() {
     } finally {
       setSubscribersLoading(false);
     }
-  }, []);
+  }, [subPage, subSearch, subSourceFilter, allSources.length]);
 
   // Fetch data when tab changes
   useEffect(() => {
@@ -838,12 +875,123 @@ export default function AdminPage() {
                   </p>
                 </div>
 
-                {/* Recent Subscribers */}
+                {/* Search + filter + export */}
+                <div className="bg-white rounded-lg border border-gray-200 p-4 mb-4 flex flex-wrap gap-3 items-center">
+                  <form
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      setSubPage(0);
+                      setSubSearch(subSearchInput);
+                    }}
+                    className="flex gap-2 flex-1 min-w-[240px]"
+                  >
+                    <input
+                      type="text"
+                      value={subSearchInput}
+                      onChange={(e) => setSubSearchInput(e.target.value)}
+                      placeholder="搜索 email..."
+                      className="flex-1 px-3 py-1.5 border border-gray-300 rounded text-sm"
+                    />
+                    <button
+                      type="submit"
+                      className="px-3 py-1.5 bg-gray-900 text-white text-sm rounded hover:bg-gray-700"
+                    >
+                      搜索
+                    </button>
+                    {subSearch && (
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setSubSearch("");
+                          setSubSearchInput("");
+                          setSubPage(0);
+                        }}
+                        className="px-3 py-1.5 text-gray-600 text-sm hover:text-gray-900"
+                      >
+                        清除
+                      </button>
+                    )}
+                  </form>
+                  <select
+                    value={subSourceFilter}
+                    onChange={(e) => {
+                      setSubSourceFilter(e.target.value);
+                      setSubPage(0);
+                    }}
+                    className="px-3 py-1.5 border border-gray-300 rounded text-sm"
+                  >
+                    <option value="">所有来源</option>
+                    {allSources.map((s) => (
+                      <option key={s} value={s}>
+                        {s}
+                      </option>
+                    ))}
+                  </select>
+                  <button
+                    type="button"
+                    onClick={async () => {
+                      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+                      const supabaseKey =
+                        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+                      if (!supabaseUrl || !supabaseKey) return;
+                      const supabase = createClient(supabaseUrl, supabaseKey);
+                      let q = supabase
+                        .from("subscribers")
+                        .select("email, source, created_at");
+                      if (subSearch.trim())
+                        q = q.ilike("email", `%${subSearch.trim()}%`);
+                      if (subSourceFilter.trim())
+                        q = q.eq("source", subSourceFilter.trim());
+                      const { data } = await q
+                        .order("created_at", { ascending: false })
+                        .limit(50000);
+                      const rows = (data ?? []) as Array<{
+                        email: string;
+                        source: string | null;
+                        created_at: string;
+                      }>;
+                      const csv =
+                        "email,source,created_at\n" +
+                        rows
+                          .map(
+                            (r) =>
+                              `"${r.email}","${r.source ?? ""}","${r.created_at}"`
+                          )
+                          .join("\n");
+                      const blob = new Blob([csv], {
+                        type: "text/csv;charset=utf-8",
+                      });
+                      const url = URL.createObjectURL(blob);
+                      const a = document.createElement("a");
+                      a.href = url;
+                      a.download = `subscribers-${new Date()
+                        .toISOString()
+                        .slice(0, 10)}.csv`;
+                      a.click();
+                      URL.revokeObjectURL(url);
+                    }}
+                    className="px-3 py-1.5 border border-gray-300 text-sm rounded hover:bg-gray-50"
+                  >
+                    导出 CSV
+                  </button>
+                </div>
+
+                {/* Subscribers Table */}
                 <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
-                  <div className="px-4 py-3 border-b border-gray-200 bg-gray-50">
+                  <div className="px-4 py-3 border-b border-gray-200 bg-gray-50 flex justify-between items-center">
                     <h2 className="text-sm font-medium text-gray-600">
-                      Recent Subscribers
+                      Subscribers
+                      {(subSearch || subSourceFilter) && (
+                        <span className="ml-2 text-gray-400">
+                          (筛选后 {subscriberCount} 条)
+                        </span>
+                      )}
                     </h2>
+                    <span className="text-xs text-gray-500">
+                      第 {subPage + 1} 页 / 共{" "}
+                      {Math.max(1, Math.ceil(subscriberCount / SUB_PAGE_SIZE))}{" "}
+                      页
+                    </span>
                   </div>
                   <table className="w-full text-sm">
                     <thead>
@@ -874,14 +1022,13 @@ export default function AdminPage() {
                             </span>
                           </td>
                           <td className="px-4 py-2.5 text-gray-500">
-                            {new Date(sub.created_at).toLocaleDateString(
-                              "zh-CN",
-                              {
-                                year: "numeric",
-                                month: "2-digit",
-                                day: "2-digit",
-                              }
-                            )}
+                            {new Date(sub.created_at).toLocaleString("zh-CN", {
+                              year: "numeric",
+                              month: "2-digit",
+                              day: "2-digit",
+                              hour: "2-digit",
+                              minute: "2-digit",
+                            })}
                           </td>
                         </tr>
                       ))}
@@ -889,9 +1036,38 @@ export default function AdminPage() {
                   </table>
                   {recentSubscribers.length === 0 && (
                     <p className="text-gray-400 text-center py-8">
-                      No subscribers yet
+                      No subscribers
                     </p>
                   )}
+                  {/* Pagination */}
+                  <div className="flex justify-between items-center px-4 py-3 border-t border-gray-100 bg-gray-50">
+                    <button
+                      type="button"
+                      onClick={() => setSubPage((p) => Math.max(0, p - 1))}
+                      disabled={subPage === 0}
+                      className="px-3 py-1.5 text-sm border border-gray-300 rounded hover:bg-white disabled:opacity-40 disabled:cursor-not-allowed"
+                    >
+                      ← 上一页
+                    </button>
+                    <span className="text-xs text-gray-500">
+                      显示 {subPage * SUB_PAGE_SIZE + 1} -{" "}
+                      {Math.min(
+                        (subPage + 1) * SUB_PAGE_SIZE,
+                        subscriberCount
+                      )}{" "}
+                      条 / 共 {subscriberCount}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => setSubPage((p) => p + 1)}
+                      disabled={
+                        (subPage + 1) * SUB_PAGE_SIZE >= subscriberCount
+                      }
+                      className="px-3 py-1.5 text-sm border border-gray-300 rounded hover:bg-white disabled:opacity-40 disabled:cursor-not-allowed"
+                    >
+                      下一页 →
+                    </button>
+                  </div>
                 </div>
               </>
             )}

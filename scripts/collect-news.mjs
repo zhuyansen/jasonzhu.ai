@@ -17,6 +17,34 @@ import { createClient } from "@supabase/supabase-js";
 import fs from "fs";
 import path from "path";
 
+// 本地手动跑时自动加载 .env.local（GitHub Actions 直接走系统 env，无影响）
+// 注意：手动解析以强制覆盖已存在的 env（process.loadEnvFile 不覆盖，
+// 在 Claude Code 等已导出 ANTHROPIC_BASE_URL 的环境下会导致 key 发到错地方）
+for (const envFile of [".env.local", ".env"]) {
+  if (fs.existsSync(envFile)) {
+    const content = fs.readFileSync(envFile, "utf-8");
+    let count = 0;
+    for (const line of content.split("\n")) {
+      const trimmed = line.trim();
+      if (!trimmed || trimmed.startsWith("#")) continue;
+      const eq = trimmed.indexOf("=");
+      if (eq < 0) continue;
+      const key = trimmed.slice(0, eq).trim();
+      let val = trimmed.slice(eq + 1).trim();
+      if (
+        (val.startsWith('"') && val.endsWith('"')) ||
+        (val.startsWith("'") && val.endsWith("'"))
+      ) {
+        val = val.slice(1, -1);
+      }
+      process.env[key] = val;
+      count++;
+    }
+    console.log(`📂 Loaded ${envFile} (${count} vars, override mode)`);
+    break;
+  }
+}
+
 // ─── 配置 ───────────────────────────────────────────
 
 const RSS_FEEDS = [
@@ -44,6 +72,9 @@ const RSS_FEEDS = [
   { url: "https://www.oneusefulthing.org/feed", name: "One Useful Thing" },
   { url: "https://chinai.substack.com/feed", name: "ChinAI" },
   { url: "https://mshibanami.github.io/GitHubTrendingRSS/daily/all.xml", name: "GitHub Trending" },
+  // 融资专源（用于"AI 融资速递"模块）
+  { url: "https://techcrunch.com/category/venture/feed/", name: "TC Venture" },
+  { url: "https://news.crunchbase.com/feed/", name: "Crunchbase News" },
 ];
 
 const CATEGORIES = ["Skills 生态", "出海实战", "AI 工具动态", "变现案例", "AI 论文"];
@@ -243,6 +274,12 @@ ${dedupBlock}
 ## 原始内容
 ${itemsText}
 
+## 额外任务：AI 融资速递
+从原始内容里**单独**挑出 3-5 条 **AI 相关的融资 / 投资 / 估值** 新闻（关键词：raised / Series / funding / valuation / seed / IPO / acquisition）。
+- 必须是 AI 公司或 AI 业务相关（纯传统 SaaS 融资不要）
+- 信息缺失就尽量从标题和摘要里推断，推断不出来字段就留空字符串
+- 这部分**和上面 items 互不重叠**——融资类条目只进 funding 数组，不进 items
+
 ## 输出格式（严格 JSON）
 {
   "items": [
@@ -254,10 +291,21 @@ ${itemsText}
       "summary": "一段话中文摘要（50-100字），说清楚是什么+为什么重要"
     }
   ],
+  "funding": [
+    {
+      "company": "公司名（保留英文原名）",
+      "round": "轮次，如 Seed / Series A / Series B / Series C / Acquisition / IPO",
+      "amount": "金额，如 $100M / $1.2B（没披露写 'undisclosed'）",
+      "valuation": "估值，如 $5B（没披露留空字符串）",
+      "investors": "领投/主要投资方（多个用顿号分隔，没披露留空字符串）",
+      "url": "原始链接",
+      "pitch": "一句话产品定位 + 为什么值得关注（30-50字中文）"
+    }
+  ],
   "jasonSays": "一句话个人点评，关于今天最值得关注的事（30-60字，有态度、不官腔）"
 }
 
-只输出 JSON，不要其他内容。`;
+只输出 JSON，不要其他内容。funding 数组如果当天没有合适的融资新闻就给空数组 []。`;
 
   // 重试机制：最多 6 次（aigocode 中转站不稳定，524 时拉长等待 + 第 2 次起关掉 thinking 降低上游耗时）
   const MAX_RETRIES = 6;
@@ -490,6 +538,22 @@ function generateMDX(digest) {
     lines.push(`- **链接**：${item.url}`);
     lines.push("");
     lines.push(item.summary);
+    lines.push("");
+  }
+
+  // 融资速递模块
+  if (Array.isArray(digest.funding) && digest.funding.length > 0) {
+    lines.push("### 💰 AI 融资速递");
+    lines.push("");
+    for (const f of digest.funding) {
+      const meta = [f.round, f.amount, f.valuation && `估值 ${f.valuation}`]
+        .filter(Boolean)
+        .join(" · ");
+      const company = f.url ? `[${f.company}](${f.url})` : f.company;
+      lines.push(`- **${company}** · ${meta}`);
+      if (f.investors) lines.push(`  - 投资方：${f.investors}`);
+      if (f.pitch) lines.push(`  - ${f.pitch}`);
+    }
     lines.push("");
   }
 
