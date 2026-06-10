@@ -6,9 +6,14 @@ const BLOG_DIR = path.join(process.cwd(), "src/content/blog");
 const OUTPUT = path.join(process.cwd(), "src/generated/posts.json");
 const CONTENT_DIR = path.join(process.cwd(), "src/generated/post-content");
 
-const files = fs
+const allFiles = fs
   .readdirSync(BLOG_DIR)
   .filter((f) => (f.endsWith(".mdx") || f.endsWith(".md")) && !f.startsWith("_"));
+
+// 双语机制：<slug>.en.md 是 <slug>.md 的英文版，不算独立文章
+const enFiles = allFiles.filter((f) => /\.en\.mdx?$/.test(f));
+const files = allFiles.filter((f) => !/\.en\.mdx?$/.test(f));
+const enSlugs = new Set(enFiles.map((f) => f.replace(/\.en\.mdx?$/, "")));
 
 const posts = files.map((filename) => {
   const slug = filename.replace(/\.mdx?$/, "");
@@ -26,6 +31,7 @@ const posts = files.map((filename) => {
     excerpt: data.excerpt || "",
     coverImage: data.coverImage || undefined,
     tweetUrl: data.tweetUrl || undefined,
+    hasEnglish: enSlugs.has(slug) || undefined,
     content,
     filename,
   };
@@ -46,3 +52,20 @@ for (const post of posts) {
   fs.writeFileSync(contentFile, JSON.stringify({ content: post.content }));
 }
 console.log(`Generated ${posts.length} post content files to ${CONTENT_DIR}`);
+
+// 英文版内容：<slug>.en.json，frontmatter 可覆盖 title/excerpt
+for (const filename of enFiles) {
+  const slug = filename.replace(/\.en\.mdx?$/, "");
+  const { data, content } = matter(
+    fs.readFileSync(path.join(BLOG_DIR, filename), "utf-8")
+  );
+  fs.writeFileSync(
+    path.join(CONTENT_DIR, `${slug}.en.json`),
+    JSON.stringify({
+      content,
+      title: data.title || undefined,
+      excerpt: data.excerpt || undefined,
+    })
+  );
+}
+if (enFiles.length) console.log(`Generated ${enFiles.length} English versions`);

@@ -30,7 +30,7 @@ const SITE_URL = "https://jasonzhu.ai";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang, slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = getPostBySlug(slug, lang === "en" ? "en" : "zh");
   if (!post) return {};
 
   const description = post.excerpt && post.excerpt.length >= 50
@@ -75,7 +75,7 @@ export default async function BlogPostPage({ params }: Props) {
   const { lang: rawLang, slug } = await params;
   const lang = (rawLang === "en" ? "en" : "zh") as Locale;
   const dict = await getDictionary(lang);
-  const post = getPostBySlug(slug);
+  const post = getPostBySlug(slug, lang);
   if (!post) notFound();
 
   // Related posts: shared tags weighted highest, then same category, newest first
