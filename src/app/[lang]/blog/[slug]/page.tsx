@@ -10,6 +10,7 @@ import ViewCounter from "@/components/ViewCounter";
 import LikeButton from "@/components/LikeButton";
 import GiscusComments from "@/components/GiscusComments";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
+import { extractFaq, faqJsonLd } from "@/lib/faq";
 import type { Metadata } from "next";
 
 interface Props {
@@ -140,6 +141,9 @@ export default async function BlogPostPage({ params }: Props) {
     keywords: post.tags.join(", "),
   };
 
+  // FAQPage JSON-LD：文章含「## 常见问题」段落时自动生成
+  const faqItems = extractFaq(post.content);
+
   return (
     <article className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
       <script
@@ -154,6 +158,14 @@ export default async function BlogPostPage({ params }: Props) {
           __html: JSON.stringify(articleJsonLd),
         }}
       />
+      {faqItems.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(faqJsonLd(faqItems)),
+          }}
+        />
+      )}
       {/* Breadcrumb navigation */}
       <nav aria-label="Breadcrumb" className="mb-6 text-sm text-gray-400">
         <ol className="flex items-center gap-1">
