@@ -1,6 +1,17 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      // www → apex 308，统一权重避免双域名收录
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.jasonzhu.ai" }],
+        destination: "https://jasonzhu.ai/:path*",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
