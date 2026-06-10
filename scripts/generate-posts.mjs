@@ -22,6 +22,7 @@ const posts = files.map((filename) => {
     date: data.date || "2024-01-01",
     category: data.category || "未分类",
     tags: data.tags || [],
+    updated: data.updated || undefined,
     excerpt: data.excerpt || "",
     coverImage: data.coverImage || undefined,
     tweetUrl: data.tweetUrl || undefined,

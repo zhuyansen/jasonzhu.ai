@@ -37,3 +37,5 @@ excerpt: "英国公司年审+零申报淘宝报价2000，自己通过1stFormatio
 ---
 
 **撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/2036410947762528571)
+
+> ⚠️ **免责声明**：本文为个人实操记录与信息分享，不构成税务、法律或财务建议。涉税事项请以 HMRC / Companies House 官方文件为准，必要时咨询持牌会计师。

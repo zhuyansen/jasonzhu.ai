@@ -48,6 +48,7 @@ export async function generateMetadata({
       languages: {
         zh: `${SITE_URL}/zh/news/${slug}`,
         en: `${SITE_URL}/en/news/${slug}`,
+        "x-default": `${SITE_URL}/zh/news/${slug}`,
       },
     },
     openGraph: ogImages ? { images: ogImages, type: "article" } : undefined,

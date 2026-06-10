@@ -19,6 +19,7 @@ export async function generateMetadata({
       languages: {
         zh: "https://jasonzhu.ai/zh/privacy",
         en: "https://jasonzhu.ai/en/privacy",
+        "x-default": "https://jasonzhu.ai/zh/privacy",
       },
     },
   };

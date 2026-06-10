@@ -19,7 +19,7 @@ export async function generateMetadata({
     description: dict.news.desc,
     alternates: {
       canonical: `${SITE_URL}/${lang}/news`,
-      languages: { zh: `${SITE_URL}/zh/news`, en: `${SITE_URL}/en/news` },
+      languages: { zh: `${SITE_URL}/zh/news`, en: `${SITE_URL}/en/news`, "x-default": `${SITE_URL}/zh/news` },
     },
   };
 }

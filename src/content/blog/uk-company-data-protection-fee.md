@@ -25,3 +25,5 @@ excerpt: "如果你的海外公司注册在英国且做SaaS业务，数据保护
 ---
 
 **撰稿人**: [Yihui](https://x.com/yihui_indie) | [原文链接](https://x.com/yihui_indie/status/1859064567034507544)
+
+> ⚠️ **免责声明**：本文为个人实操记录与信息分享，不构成税务、法律或财务建议。涉税事项请以 HMRC / Companies House 官方文件为准，必要时咨询持牌会计师。

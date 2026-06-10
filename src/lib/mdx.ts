@@ -6,6 +6,7 @@ export interface BlogPostMeta {
   slug: string;
   title: string;
   date: string;
+  updated?: string;
   category: string;
   tags: string[];
   excerpt: string;

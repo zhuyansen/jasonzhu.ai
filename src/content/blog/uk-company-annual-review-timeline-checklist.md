@@ -1,6 +1,7 @@
 ---
 title: "英国公司第一年年审实战 Timeline：£228 搞定 + 两个被忽略的省税信息差"
 date: "2026-05-31"
+updated: "2026-06-10"
 category: "出海"
 tags: ["英国公司", "年审", "出海", "AIA", "DIY", "Compliance"]
 tweetUrl: "https://x.com/GoSailGlobal/status/2060981710884635056"
@@ -136,3 +137,5 @@ excerpt: "刚独立完成英国公司第一年完整年审：Confirmation Statem
 ---
 
 📚 想看更多独立开发者出海的实战记录？关注 [@GoSailGlobal](https://x.com/GoSailGlobal)。
+
+> ⚠️ **免责声明**：本文为个人实操记录与信息分享，不构成税务、法律或财务建议。涉税事项请以 HMRC / Companies House 官方文件为准，必要时咨询持牌会计师。

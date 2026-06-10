@@ -20,6 +20,7 @@ export async function generateMetadata({
       languages: {
         zh: `${SITE_URL}/zh/tools`,
         en: `${SITE_URL}/en/tools`,
+        "x-default": `${SITE_URL}/zh/tools`,
       },
     },
   };

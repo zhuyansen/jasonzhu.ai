@@ -107,3 +107,5 @@ Companies House 和 HMRC 的支付接口对非英国发卡风控极严。Wise �
 ---
 
 > 原文出处：[Jason Zhu on X](https://x.com/GoSailGlobal/status/2047521885567713331)
+
+> ⚠️ **免责声明**：本文为个人实操记录与信息分享，不构成税务、法律或财务建议。涉税事项请以 HMRC / Companies House 官方文件为准，必要时咨询持牌会计师。

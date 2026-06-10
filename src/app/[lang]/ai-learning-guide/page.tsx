@@ -27,6 +27,7 @@ export async function generateMetadata({
       languages: {
         zh: `${SITE_URL}/zh/ai-learning-guide`,
         en: `${SITE_URL}/en/ai-learning-guide`,
+        "x-default": `${SITE_URL}/zh/ai-learning-guide`,
       },
     },
     openGraph: {

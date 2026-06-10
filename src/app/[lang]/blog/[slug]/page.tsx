@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { getAllPosts, getPostBySlug } from "@/lib/mdx";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
@@ -44,6 +45,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       languages: {
         zh: `${SITE_URL}/zh/blog/${slug}`,
         en: `${SITE_URL}/en/blog/${slug}`,
+        "x-default": `${SITE_URL}/zh/blog/${slug}`,
       },
     },
     openGraph: {
@@ -52,6 +54,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description,
       url: `${SITE_URL}/${lang}/blog/${slug}`,
       publishedTime: post.date,
+      modifiedTime: post.updated || post.date,
       authors: ["Jason Zhu"],
       tags: post.tags,
       ...(post.coverImage
@@ -122,6 +125,7 @@ export default async function BlogPostPage({ params }: Props) {
     headline: post.title,
     description: post.excerpt || post.title,
     datePublished: post.date,
+    dateModified: post.updated || post.date,
     author: {
       "@type": "Person",
       name: "Jason Zhu",
@@ -202,6 +206,11 @@ export default async function BlogPostPage({ params }: Props) {
             {post.category}
           </span>
           <span className="text-sm text-gray-400">{post.date}</span>
+          {post.updated && post.updated !== post.date && (
+            <span className="text-sm text-gray-400">
+              · {lang === "zh" ? "更新于" : "Updated"} {post.updated}
+            </span>
+          )}
           <ViewCounter slug={slug} />
         </div>
         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
@@ -239,15 +248,17 @@ export default async function BlogPostPage({ params }: Props) {
         )}
       </header>
 
-      {/* Cover image (hero) */}
+      {/* Cover image (hero) — next/image: 自动 AVIF/WebP + srcset，priority 保 LCP */}
       {post.coverImage && (
         <div className="mb-8 rounded-2xl overflow-hidden border border-gray-100 bg-gray-50">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src={post.coverImage}
             alt={post.title}
+            width={1536}
+            height={1024}
+            priority
+            sizes="(max-width: 768px) 100vw, 768px"
             className="w-full h-auto block"
-            loading="eager"
           />
         </div>
       )}

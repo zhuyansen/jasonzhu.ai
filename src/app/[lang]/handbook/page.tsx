@@ -15,7 +15,7 @@ export async function generateMetadata({
     description: dict.handbook?.subtitle || "Download the AIP Overseas Social Media Playbook",
     alternates: {
       canonical: `https://jasonzhu.ai/${lang}/handbook`,
-      languages: { zh: "https://jasonzhu.ai/zh/handbook", en: "https://jasonzhu.ai/en/handbook" },
+      languages: { zh: "https://jasonzhu.ai/zh/handbook", en: "https://jasonzhu.ai/en/handbook", "x-default": "https://jasonzhu.ai/zh/handbook" },
     },
   };
 }

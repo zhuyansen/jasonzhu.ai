@@ -18,7 +18,7 @@ export async function generateMetadata({
     description: dict.blog.desc,
     alternates: {
       canonical: `https://jasonzhu.ai/${lang}/blog`,
-      languages: { zh: "https://jasonzhu.ai/zh/blog", en: "https://jasonzhu.ai/en/blog" },
+      languages: { zh: "https://jasonzhu.ai/zh/blog", en: "https://jasonzhu.ai/en/blog", "x-default": "https://jasonzhu.ai/zh/blog" },
     },
   };
 }

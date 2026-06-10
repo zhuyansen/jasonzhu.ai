@@ -147,5 +147,15 @@ if (!imgRes.ok) {
 }
 const buf = Buffer.from(await imgRes.arrayBuffer());
 await fs.mkdir(outDir, { recursive: true });
-await fs.writeFile(outPath, buf);
-console.log(`✅ 已保存：${outPath} (${(buf.length / 1024).toFixed(1)} KB)`);
+
+// sharp 压缩：原始 PNG ~2MB，压成高质量 PNG（保留 .png 路径约定，next/image 再转 AVIF/WebP）
+let outBuf = buf;
+try {
+  const { default: sharp } = await import("sharp");
+  outBuf = await sharp(buf).png({ quality: 80, compressionLevel: 9, palette: true }).toBuffer();
+  console.log(`🗜  压缩：${(buf.length / 1024).toFixed(0)}KB → ${(outBuf.length / 1024).toFixed(0)}KB`);
+} catch (e) {
+  console.warn(`⚠️  sharp 压缩跳过（${e.message}），保存原图`);
+}
+await fs.writeFile(outPath, outBuf);
+console.log(`✅ 已保存：${outPath} (${(outBuf.length / 1024).toFixed(1)} KB)`);
