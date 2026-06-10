@@ -20,3 +20,9 @@ Key routing rules:
 - Save progress, save state, save my work → invoke context-save
 - Resume, where was I, pick up where I left off → invoke context-restore
 - Code quality, health check → invoke health
+
+## Health Stack
+
+- typecheck: npx tsc --noEmit
+- lint: npx eslint .
+- test: npm run build

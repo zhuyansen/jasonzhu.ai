@@ -24,8 +24,13 @@ export async function POST(request: NextRequest) {
     // Origin / Referer guard: only accept submissions from our own site
     const origin = request.headers.get("origin") || "";
     const referer = request.headers.get("referer") || "";
-    const ALLOWED = ["https://jasonzhu.ai", "https://www.jasonzhu.ai", "http://localhost:3000"];
-    const isOriginOk = ALLOWED.some((o) => origin === o || referer.startsWith(o + "/"));
+    const ALLOWED = ["https://jasonzhu.ai", "https://www.jasonzhu.ai"];
+    // 本地开发端口不固定（preview server 随机分配），放行任意 localhost 端口
+    const isLocalhost =
+      /^http:\/\/localhost(:\d+)?$/.test(origin) ||
+      /^http:\/\/localhost(:\d+)?\//.test(referer);
+    const isOriginOk =
+      isLocalhost || ALLOWED.some((o) => origin === o || referer.startsWith(o + "/"));
     if (!isOriginOk) {
       console.warn("[subscribe] origin blocked", { origin, referer, email, source });
       return NextResponse.json({

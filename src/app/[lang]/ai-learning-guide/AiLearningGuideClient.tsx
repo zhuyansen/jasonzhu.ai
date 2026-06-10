@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, Suspense } from "react";
+import { useState, useRef, useEffect, Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import type { Locale } from "@/lib/dictionaries";
@@ -21,7 +21,11 @@ function GuideContent({ lang }: { lang: Locale }) {
   const [website, setWebsite] = useState(""); // honeypot
   const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
-  const mountedAt = useRef<number>(Date.now());
+  // time-trap 反 bot：渲染期不可调 Date.now()（react-hooks/purity），挂载后再记时
+  const mountedAt = useRef<number>(0);
+  useEffect(() => {
+    mountedAt.current = Date.now();
+  }, []);
 
   const t = isZh
     ? {

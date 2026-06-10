@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, Suspense } from "react";
+import { useState, useRef, useEffect, Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
 import type { Dictionary } from "@/lib/dictionaries";
@@ -13,7 +13,11 @@ function HandbookContent({ lang, dict }: { lang: string; dict: Dictionary }) {
   const [website, setWebsite] = useState(""); // honeypot
   const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
-  const mountedAt = useRef<number>(Date.now());
+  // time-trap 反 bot：渲染期不可调 Date.now()（react-hooks/purity），挂载后再记时
+  const mountedAt = useRef<number>(0);
+  useEffect(() => {
+    mountedAt.current = Date.now();
+  }, []);
 
   const t = dict.handbook;
   const isZh = lang === "zh";

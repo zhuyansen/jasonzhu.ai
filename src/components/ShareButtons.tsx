@@ -6,10 +6,9 @@ interface ShareButtonsProps {
   summary?: string;
 }
 
-export default function ShareButtons({ url, title, summary }: ShareButtonsProps) {
+export default function ShareButtons({ url, title }: ShareButtonsProps) {
   const encodedUrl = encodeURIComponent(url);
   const encodedTitle = encodeURIComponent(title);
-  const encodedSummary = encodeURIComponent(summary || title);
 
   const shareLinks = [
     {

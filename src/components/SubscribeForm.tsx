@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import type { Dictionary } from "@/lib/dictionaries";
 
@@ -22,7 +22,11 @@ export default function SubscribeForm({
   const [website, setWebsite] = useState(""); // honeypot
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
-  const mountedAt = useRef<number>(Date.now());
+  // time-trap 反 bot：渲染期不可调 Date.now()（react-hooks/purity），挂载后再记时
+  const mountedAt = useRef<number>(0);
+  useEffect(() => {
+    mountedAt.current = Date.now();
+  }, []);
 
   // Fallback strings if dict not provided
   const t = dict?.subscribe ?? {
