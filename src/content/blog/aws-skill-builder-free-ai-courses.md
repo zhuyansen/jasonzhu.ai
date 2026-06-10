@@ -78,6 +78,22 @@ AWS Skill Builder 是大厂里**课程数量最多**的一家——1500 门课�
 
 ---
 
+## 常见问题
+
+### AWS Skill Builder 哪些课是免费的？
+
+1500 门课里有 600 门免费。进 skillbuilder.aws 第一件事把顶部筛选器 Price 勾选 Free——直接搜索会被付费课刷屏，免费好课全沉在底下。
+
+### 开发者学 AWS AI 走哪条路径？
+
+Generative AI Learning Plan for Developers：Amazon Bedrock 上手、模型微调、RAG 落地。按 Learning Plan 走而不是单门搜，路径里的课是串好顺序的。
+
+### 非技术岗适合 AWS 的课吗？
+
+适合。Generative AI Learning Plan for Decision Makers 共 3 门课，讲清生成式 AI 是什么、AI 项目怎么立项评估，全程不碰代码。
+
+---
+
 ## 一句话总结
 
 > **AWS Skill Builder 课最多（600 门免费）但也最容易迷路——核心心法就一条：勾 Free 筛选器 + 只走 Learning Plan。3 条生成式 AI 路径覆盖管理者到开发者，Bedrock 实战 + DeepRacer 是最值得薅的部分。**

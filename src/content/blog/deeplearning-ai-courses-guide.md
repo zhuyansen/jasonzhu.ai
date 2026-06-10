@@ -102,6 +102,22 @@ RAG 仍是企业级 AI 应用最高频的架构，从基础 RAG 到知识图谱 
 
 ---
 
+## 常见问题
+
+### DeepLearning.AI 的课程免费吗？
+
+120 门短课全部免费，不要信用卡。每门 1-2 小时，注册账号即可学。
+
+### DeepLearning.AI 和大厂官方课比优势在哪？
+
+工具作者本人来讲：Anthropic 4 门、OpenAI 4 门、Meta 4 门、Hugging Face 5 门、LangChain 5 门——做工具的人亲自教你用工具，这是任何二手教程替代不了的一手知识。
+
+### 120 门课先学哪门？
+
+按目标选别按热度选：日常提效走 AI Prompting for Everyone（吴恩达）；做 Agent 走 Agentic AI + MCP 两门 Anthropic 官方课；做 RAG 走 RAG 系统课。一次只攻一条线。
+
+---
+
 ## 一句话总结
 
 > **DeepLearning.AI 的杀手锏不是 120 门课的数量，而是「工具作者亲自教你用工具」。按 6 大目标选路径——prompting、Agent、RAG、fine-tune、深度学习基础、AI 编程，每条线都是一手知识。全免费、不要信用卡，是整个 AI 免费学习版图里信息密度最高的一家。**

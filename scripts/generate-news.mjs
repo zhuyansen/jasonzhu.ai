@@ -49,6 +49,10 @@ const digests = files.map((filename) => {
         item.category = trimmed.replace(/^- \*\*板块\*\*[：:]/, "").trim();
       } else if (trimmed.startsWith("- **链接**:") || trimmed.startsWith("- **链接**：")) {
         item.url = trimmed.replace(/^- \*\*链接\*\*[：:]/, "").trim();
+      } else if (trimmed.startsWith("- **TitleEN**:") || trimmed.startsWith("- **TitleEN**：")) {
+        item.titleEn = trimmed.replace(/^- \*\*TitleEN\*\*[：:]/, "").trim();
+      } else if (trimmed.startsWith("- **EN**:") || trimmed.startsWith("- **EN**：")) {
+        item.summaryEn = trimmed.replace(/^- \*\*EN\*\*[：:]/, "").trim();
       } else if (trimmed && !trimmed.startsWith("- **")) {
         summaryLines.push(trimmed);
       }
@@ -68,6 +72,7 @@ const digests = files.map((filename) => {
     title: data.title || `AI 快讯 ${data.date || slug}`,
     items,
     jasonSays: data.jasonSays || "",
+    ...(data.jasonSaysEn ? { jasonSaysEn: data.jasonSaysEn } : {}),
     filename,
     ...(data.tweetUrl ? { tweetUrl: data.tweetUrl } : {}),
     ...(hasCover ? { coverImage: `/news/${slug}.png` } : {}),

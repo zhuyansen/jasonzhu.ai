@@ -80,6 +80,22 @@ Google 把老牌学习平台 **Cloud Skills Boost 整个改名**了，现在叫 
 
 ---
 
+## 常见问题
+
+### Google Skills 的 Badge 有什么用？
+
+通关一条学习路径拿一枚 Skill Badge，可以直接挂到 LinkedIn。2026 年求职市场上，可见的 AI 技能凭证是硬通货。
+
+### 零基础从哪条路径开始？
+
+写代码的从 Introduction to Generative AI（路径 118，5 个 activity）开始再进开发者路径；完全不写代码走 Google AI Essentials，聚焦日常工作场景。
+
+### Google Skills 要花钱吗？
+
+学习路径全部免费。开发者进阶路径（Generative AI for Developers）还附送 Google Cloud credits，可以在真实云环境里跑 Gemini API 实验。
+
+---
+
 ## 一句话总结
 
 > **Google Skills 把 AI 学习做成了「刷副本拿 Badge」，对零基础和拖延症最友好。3 条路径全免费，路径 2 还白送 Cloud credits。配合 Anthropic、OpenAI 两套官方课一起刷，是 2026 年最省钱的 AI 进阶组合。**

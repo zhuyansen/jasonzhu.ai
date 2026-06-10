@@ -2,10 +2,12 @@ import newsData from "@/generated/news.json";
 
 export interface NewsItem {
   title: string;
+  titleEn?: string;
   source: string;
   category: string;
   url: string;
   summary: string;
+  summaryEn?: string;
 }
 
 export interface NewsDigest {
@@ -14,6 +16,7 @@ export interface NewsDigest {
   title: string;
   items: NewsItem[];
   jasonSays: string;
+  jasonSaysEn?: string;
   filename: string;
   tweetUrl?: string;
   coverImage?: string;

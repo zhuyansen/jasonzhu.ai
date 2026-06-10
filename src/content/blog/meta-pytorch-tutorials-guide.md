@@ -85,6 +85,22 @@ PyTorch 教程练基本功，Llama 资源做实战——两条线配合，是开
 
 ---
 
+## 常见问题
+
+### PyTorch 官方教程适合零基础吗？
+
+适合有基础 Python 的人。新手三件套从 Learn the Basics（60 分钟打通张量/自动求导/训练循环）开始，配 FashionMNIST 跑第一个端到端实例。
+
+### 学完 PyTorch 9 步能干什么？
+
+简历上可以写「能基于 PyTorch 从零搭建、训练、微调、部署一个 transformer」——这个能力点比 80% 的简历都值钱。配合 Torchtune 还能直接微调 Llama。
+
+### PyTorch 教程收费吗？
+
+全部免费、全代码、全部能在 Colab 直接跑。Meta 没开 AI 学院，但 PyTorch tutorials 就是事实上的深度学习实习手册。
+
+---
+
 ## 一句话总结
 
 > **学完 PyTorch 这 9 步，你简历上就能写「能基于 PyTorch 从零搭建、训练、微调、部署一个 transformer」——这个能力点，比 80% 的简历都值钱。Meta 没开学院，但 PyTorch tutorials 就是最好的学院。**

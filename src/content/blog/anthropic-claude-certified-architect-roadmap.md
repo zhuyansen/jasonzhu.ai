@@ -135,6 +135,26 @@ Claude Code 完整配置：
 
 ---
 
+## 常见问题
+
+### Claude 认证一共要花多少钱？
+
+13 门课程全部免费——无订阅、无付费墙、无需注册即可开学（入口 anthropic.skilljar.com）。唯一收费的是最后的 Claude Certified Architect 认证考试 $99。备考阶段零成本。
+
+### Claude Certified Architect 要学多久？
+
+官方体系按 12 周路线图设计，Weeks 1-9 覆盖 8 门关键课程，旗舰课 Building Applications with the Claude API 时长 8.1 小时。有开发基础的人可以明显压缩，零基础建议老老实实按周走。
+
+### 零基础能直接备考吗？
+
+建议从 Claude 101 和 AI Fluency 两门基础课开始——考试全程假设你掌握这些基础知识。即使已经用了几个月 Claude，也别跳过 Claude 101。
+
+### 这个认证值得考吗？
+
+2026 年各大厂 AI 认证里含金量最高的之一：认证驱动、覆盖从 API 到 agentic 架构全栈，能直接写进简历。对做 AI 应用的开发者是目前性价比最高的 $99。
+
+---
+
 ## 一句话总结
 
 > **Anthropic 这套 13 门课是目前最系统的 Claude 工程师免费学习路径，认证驱动 + 全栈覆盖（基础 → API → MCP → Claude Code → Skills）。如果你目标是「拿一份能写进简历的 AI 认证」，这是性价比最高的一条路。**

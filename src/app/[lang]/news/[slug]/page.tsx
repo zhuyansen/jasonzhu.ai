@@ -156,7 +156,9 @@ export default async function NewsDetailPage({
             <span className="text-xl">💡</span>
             <div>
               <p className="text-xs font-semibold text-blue-700 mb-1.5">Jason {isZh ? "说" : "Says"}</p>
-              <p className="text-sm text-gray-700 leading-relaxed">{digest.jasonSays}</p>
+              <p className="text-sm text-gray-700 leading-relaxed">
+                {lang === "en" && digest.jasonSaysEn ? digest.jasonSaysEn : digest.jasonSays}
+              </p>
             </div>
           </div>
         </div>
@@ -169,6 +171,10 @@ export default async function NewsDetailPage({
             color: "bg-gray-50 text-gray-700",
             icon: "📌",
           };
+          const displayTitle =
+            lang === "en" && item.titleEn ? item.titleEn : item.title;
+          const displaySummary =
+            lang === "en" && item.summaryEn ? item.summaryEn : item.summary;
           return (
             <article
               key={idx}
@@ -193,15 +199,15 @@ export default async function NewsDetailPage({
                         rel="noopener noreferrer"
                         className="hover:text-blue-600 transition-colors"
                       >
-                        {item.title}
+                        {displayTitle}
                         <span className="text-gray-300 ml-1 text-sm">↗</span>
                       </a>
                     ) : (
-                      item.title
+                      displayTitle
                     )}
                   </h2>
                   <p className="text-sm text-gray-500 leading-relaxed">
-                    {item.summary}
+                    {displaySummary}
                   </p>
                   {(() => {
                     const crossLinks = findCrossLinks(

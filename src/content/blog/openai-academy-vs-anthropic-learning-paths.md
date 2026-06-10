@@ -147,6 +147,22 @@ Higher Education / K-12 / Nonprofits / Small Business / Healthcare / Veterans �
 
 ---
 
+## 常见问题
+
+### OpenAI Academy 收费吗？
+
+全部免费，需要注册账号。入口 academy.openai.com，15+ 门课覆盖直播、录播和资源库，从 ChatGPT 101 到企业 IT admin 全场景。
+
+### OpenAI 和 Anthropic 的学习路径选哪个？
+
+互补，不冲突。Anthropic 是认证驱动（13 门课 + $99 工程师证书），适合要凭证的开发者；OpenAI 是全民驱动，适合个人和团队普及。两家都免费，时间够就都刷。
+
+### OpenAI 有官方认证证书吗？
+
+认证预计 2026 年中推出，目前以免费课程为主。想现在就拿能写简历的证书，先走 Anthropic 的 $99 认证。
+
+---
+
 ## 一句话总结
 
 > **两套官方课加起来 25+ 门课、几百小时内容，覆盖从「不会用 AI」到「能写进简历的 AI 工程师」全程。任何收钱超过 $200 的中文 AI 报班，本质都是在卖「免费课的中文翻版 + 一点社群陪伴」。**

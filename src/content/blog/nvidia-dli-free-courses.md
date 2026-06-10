@@ -88,6 +88,22 @@ RAG 仍是 2026 年 AI 应用最高频的架构，这门免费实战课值得认
 
 ---
 
+## 常见问题
+
+### NVIDIA DLI 的课程都免费吗？
+
+不全是——主站首页推的多是 $39 付费课，免费课要主动挖：进 learn.nvidia.com 在筛选器把 Price 勾选 Free，600+ 门免费课直接出来。
+
+### 想免费学 CUDA 去哪里？
+
+Fundamentals of Accelerated Computing with CUDA Python——这是全网唯一的官方免费 CUDA 入口，用 Python 入门加速计算。建议趁早学，没人保证它一直免费。
+
+### 本地没有 GPU 能学吗？
+
+能。DLI 课程配 cloud GPU 环境，深度学习三大架构、RAG 实战都能在云端跑完，本地不用折腾环境。
+
+---
+
 ## 一句话总结
 
 > **NVIDIA DLI 的免费课藏在 Price 筛选器后面，挖出来全是硬货——深度学习三大架构、RAG 实战、CUDA 官方唯一免费入口。配合 cloud GPU 白嫖，是想补底层能力的开发者最该薅的一批羊毛。**

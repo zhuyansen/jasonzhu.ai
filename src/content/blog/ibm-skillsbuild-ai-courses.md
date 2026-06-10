@@ -70,6 +70,22 @@ IBM SkillsBuild 是大厂里**免费课数量第一**的平台——**1000+ 门�
 
 ---
 
+## 常见问题
+
+### IBM SkillsBuild 注册有什么坑？
+
+最大的坑：注册时身份必须选 Adult Learners（成人学习者）。选成高中生/大学生，一半的 AI 课程会直接对你隐藏。
+
+### IBM 的数字徽章有用吗？
+
+IBM 官方数字徽章可验证、可挂 LinkedIn。第一枚从 Artificial Intelligence Fundamentals 拿，10-20 小时学完。
+
+### 在职转行适合 IBM 的课吗？
+
+特别适合。AI for Customer Service / Marketing / HR 三门场景课不讲抽象概念，直接把 AI 套进具体岗位工作流，你现在的岗位大概率能对上一门。
+
+---
+
 ## 一句话总结
 
 > **IBM SkillsBuild 课最多（1000+ 门）但坑也明确——注册选 Adult Learners、进站先跑 AI Level Up 评估。三段式路径从建立知识到职业转型全覆盖，每段发 IBM 官方徽章。是想「边转行边攒可信凭证」的人值得薅的一家。**

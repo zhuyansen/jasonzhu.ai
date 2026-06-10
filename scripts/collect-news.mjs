@@ -285,10 +285,12 @@ ${itemsText}
   "items": [
     {
       "title": "简洁有力的中文标题（15-25字）",
+      "titleEn": "Concise English title (5-12 words)",
       "source": "来源名称",
       "category": "Skills 生态 | 出海实战 | AI 工具动态 | 变现案例 | AI 论文",
       "url": "原始链接",
-      "summary": "一段话中文摘要（50-100字），说清楚是什么+为什么重要"
+      "summary": "一段话中文摘要（50-100字），说清楚是什么+为什么重要",
+      "summaryEn": "English summary (40-70 words): what happened + why it matters"
     }
   ],
   "funding": [
@@ -302,7 +304,8 @@ ${itemsText}
       "pitch": "一句话产品定位 + 为什么值得关注（30-50字中文）"
     }
   ],
-  "jasonSays": "一句话个人点评，关于今天最值得关注的事（30-60字，有态度、不官腔）"
+  "jasonSays": "一句话个人点评，关于今天最值得关注的事（30-60字，有态度、不官腔）",
+  "jasonSaysEn": "English version of jasonSays (one sentence, same attitude)"
 }
 
 只输出 JSON，不要其他内容。funding 数组如果当天没有合适的融资新闻就给空数组 []。`;
@@ -521,11 +524,13 @@ async function writeToSupabase(digest) {
 // ─── Step 4: 生成 MDX 文件 ──────────────────────────
 
 function generateMDX(digest) {
+  const esc = (s) => (s || "").replace(/"/g, '\\"');
   const lines = [
     "---",
     `date: "${TODAY}"`,
     `title: "AI 快讯 · ${MONTH_DAY}"`,
-    `jasonSays: "${digest.jasonSays.replace(/"/g, '\\"')}"`,
+    `jasonSays: "${esc(digest.jasonSays)}"`,
+    ...(digest.jasonSaysEn ? [`jasonSaysEn: "${esc(digest.jasonSaysEn)}"`] : []),
     "---",
     "",
   ];
@@ -536,8 +541,13 @@ function generateMDX(digest) {
     lines.push(`- **板块**：${item.category}`);
     lines.push(`- **来源**：${item.source}`);
     lines.push(`- **链接**：${item.url}`);
+    if (item.titleEn) lines.push(`- **TitleEN**：${item.titleEn}`);
     lines.push("");
     lines.push(item.summary);
+    if (item.summaryEn) {
+      lines.push("");
+      lines.push(`- **EN**：${item.summaryEn}`);
+    }
     lines.push("");
   }
 

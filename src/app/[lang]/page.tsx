@@ -110,6 +110,73 @@ export default async function HomePage({
         <SubscribeForm source="homepage" lang={lang} dict={dict} />
       </section>
 
+      {/* About — 站点导览 + E-E-A-T 作者信号 */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 py-10">
+        <h2 className="text-xl font-bold text-gray-900 mb-4">
+          {lang === "zh" ? "关于这个站" : "About This Site"}
+        </h2>
+        {lang === "zh" ? (
+          <div className="text-sm text-gray-600 leading-7 space-y-3 max-w-3xl">
+            <p>
+              我是 <strong className="text-gray-900">Jason Zhu（朱延森）</strong>
+              ，前 AI 算法工程师，现在全职做 AI
+              内容、企业培训和出海咨询。这个站上的每一篇教程都来自我的第一手实操——花了多少钱、踩了什么坑、真实数据是多少，全部写明，
+              不写没验证过的二手内容。
+            </p>
+            <p>
+              三条主线：<strong className="text-gray-900">AI 实战</strong>
+              （Claude Code、Cursor、Agent 开发的深度教程与{" "}
+              <Link href={`/${lang}/blog/ai-free-learning-hub`} className="text-[var(--primary)] hover:underline">
+                10 大平台免费学习路径
+              </Link>
+              ）、<strong className="text-gray-900">独立开发者出海</strong>
+              （英国公司注册、年审、跨境合规的完整实录）、
+              <strong className="text-gray-900">自媒体变现</strong>
+              （X 平台增长与 MCN 运营方法论）。每天还有一份{" "}
+              <Link href={`/${lang}/news`} className="text-[var(--primary)] hover:underline">
+                AI 快讯
+              </Link>
+              ，筛选当天最值得关注的行业动态和融资速递。
+            </p>
+            <p>
+              不知道从哪开始？非技术岗从{" "}
+              <Link href={`/${lang}/blog/ai-free-learning-hub`} className="text-[var(--primary)] hover:underline">
+                免费学习全景图
+              </Link>{" "}
+              进；想出海的从{" "}
+              <Link href={`/${lang}/blog/uk-company-registration-2hours`} className="text-[var(--primary)] hover:underline">
+                2 小时注册英国公司
+              </Link>{" "}
+              进；做内容的直接领{" "}
+              <Link href={`/${lang}/handbook`} className="text-[var(--primary)] hover:underline">
+                X 平台实战手册
+              </Link>
+              。
+            </p>
+          </div>
+        ) : (
+          <div className="text-sm text-gray-600 leading-7 space-y-3 max-w-3xl">
+            <p>
+              I&apos;m <strong className="text-gray-900">Jason Zhu</strong>, a
+              former AI algorithm engineer, now writing about AI full-time and
+              running enterprise AI training. Every tutorial here comes from
+              first-hand practice — real costs, real pitfalls, real numbers.
+            </p>
+            <p>
+              Three tracks: <strong className="text-gray-900">hands-on AI</strong>{" "}
+              (deep tutorials on Claude Code, Cursor, agents, plus a{" "}
+              <Link href={`/${lang}/blog/ai-free-learning-hub`} className="text-[var(--primary)] hover:underline">
+                map of free AI courses across 10 platforms
+              </Link>
+              ), <strong className="text-gray-900">indie founders going global</strong>{" "}
+              (UK company registration and compliance, fully documented), and{" "}
+              <strong className="text-gray-900">creator monetization</strong>. Plus a
+              daily <Link href={`/${lang}/news`} className="text-[var(--primary)] hover:underline">AI news digest</Link>.
+            </p>
+          </div>
+        )}
+      </section>
+
       {/* Projects */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 py-10">
         <h2 className="text-xl font-bold text-gray-900 mb-6">{dict.home.myProjects}</h2>
