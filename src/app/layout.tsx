@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import type { Metadata } from "next";
 import { headers } from "next/headers";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -69,6 +70,12 @@ export default async function RootLayout({
           title="JasonZhu.AI - AI 快讯 RSS"
           href="/feed/news.xml"
         />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="JasonZhu.AI - 博客 RSS"
+          href="/feed/blog.xml"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -84,6 +91,7 @@ export default async function RootLayout({
       </head>
       <body className="min-h-full flex flex-col bg-white text-gray-900">
         {children}
+        <Analytics />
       </body>
     </html>
   );

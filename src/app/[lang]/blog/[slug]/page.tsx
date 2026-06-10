@@ -74,6 +74,20 @@ export default async function BlogPostPage({ params }: Props) {
   const post = getPostBySlug(slug);
   if (!post) notFound();
 
+  // Related posts: shared tags weighted highest, then same category, newest first
+  const relatedPosts = getAllPosts()
+    .filter((p) => p.slug !== slug)
+    .map((p) => {
+      const sharedTags = p.tags.filter((t) => post.tags.includes(t)).length;
+      const sameCategory = p.category === post.category ? 1 : 0;
+      return { ...p, score: sharedTags * 2 + sameCategory };
+    })
+    .filter((p) => p.score > 0)
+    .sort(
+      (a, b) => b.score - a.score || (a.date < b.date ? 1 : -1)
+    )
+    .slice(0, 3);
+
   // Breadcrumb JSON-LD
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
@@ -258,6 +272,32 @@ export default async function BlogPostPage({ params }: Props) {
       <div className="mt-12">
         <SubscribeForm source={`blog-${slug}`} lang={lang} dict={dict} />
       </div>
+
+      {/* Related Posts */}
+      {relatedPosts.length > 0 && (
+        <div className="mt-12">
+          <h2 className="text-lg font-semibold text-gray-900 mb-4">
+            {lang === "zh" ? "相关文章" : "Related Posts"}
+          </h2>
+          <div className="grid gap-4 sm:grid-cols-3">
+            {relatedPosts.map((rp) => (
+              <Link
+                key={rp.slug}
+                href={`/${lang}/blog/${rp.slug}`}
+                className="block p-4 rounded-lg border border-gray-200 hover:border-[var(--primary)] hover:shadow-sm transition-all"
+              >
+                <span className="inline-block px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded-full mb-2">
+                  {rp.category}
+                </span>
+                <p className="text-sm font-medium text-gray-900 line-clamp-2 leading-snug">
+                  {rp.title}
+                </p>
+                <p className="text-xs text-gray-400 mt-2">{rp.date}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Comments */}
       <div className="mt-12">
