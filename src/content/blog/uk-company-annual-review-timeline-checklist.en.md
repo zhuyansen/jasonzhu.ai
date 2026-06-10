@@ -1,0 +1,133 @@
+---
+title: "UK Company First-Year Filing, DIY: £228 All-In + Two Tax Breaks Most Founders Miss"
+excerpt: "Just completed my UK company's entire first-year compliance solo: Confirmation Statement ✅, Annual Accounts ✅, CT600 pending HMRC activation code. Total cost £228 (vs £200+ for an agent), done in 5 weeks of waiting plus one afternoon of work. Full timeline checklist + two legal tax breaks indie founders usually miss."
+---
+
+My earlier guide covered the full methodology. This post is the **real-world timeline log** — I just finished my UK company's entire first-year compliance, completely on my own.
+
+**Current status:**
+
+- ✅ **Confirmation Statement** filed
+- ✅ **Annual Accounts** filed
+- ⏳ **CT600** waiting for the HMRC activation code
+
+**Total cost: £228** (agents typically charge £200-400 *per filing*, and Chinese Taobao agents charge ¥2,000+), **5 weeks of waiting + one afternoon of actual work**.
+
+Here is the complete timeline, plus two tax breaks I only learned about after stepping in the holes myself.
+
+---
+
+## The Complete Timeline Checklist
+
+### Week 1 · Receive UTR + register Government Gateway
+
+- HMRC mails your **UTR (Unique Taxpayer Reference)** to the registered address (arrives 2-3 weeks after incorporation)
+- As soon as you have the UTR, register a **Government Gateway Organisation account** (NOT Agent — that type is for accountants managing clients)
+- In Gateway, **Add Corporation Tax**: enter the UTR + a UK contact number
+- Wait for HMRC to mail the **CT activation code** (another 7-10 days)
+
+> ⚠️ **Do the ID Check App in parallel**: download the Companies House ID Check App (not the Gateway one), scan your passport via NFC + liveness selfie, and get your **Personal Code**. Mandatory since 2025-11-18 — without it you cannot file the CS01 later.
+
+### Month 11 · Start organising the books
+
+- Export **all currency CSVs from Wise Business** (I had 8 currencies)
+- Convert to GBP using **HMRC monthly exchange rates** (do not use per-transaction daily rates — that way lies madness)
+- Map everything into a **17-account Trial Balance template**: Sales / Cost of Sales / Admin Expenses / Interest Income / Corporation Tax, etc.
+
+### Month 12 · CS01 deadline (hard deadline)
+
+- The **Confirmation Statement window** opens
+- CS01 fee: **£50**, paid with a friend's UK card in one go
+- Renew the **Registered Office service** at the same time (free first year, £39/year after)
+
+### Months 13-20 · File the annual accounts
+
+- Buy the **TinyTax Bundle (£59)**, import your Trial Balance
+- It auto-generates **CT600 + Annual Accounts** (iXBRL format)
+- Submit to **HMRC + Companies House**
+- Pay **Corporation Tax** last (hard deadline: accounting period end + 9 months + 1 day)
+
+---
+
+## First-Year Cost Breakdown
+
+| Item | Cost | Notes |
+|------|------|-------|
+| CS01 (Confirmation Statement) | £50 | Friend's UK card |
+| TinyTax Bundle | £59 | Generates CT600 + Accounts |
+| Registered Office renewal | £39 | Annual from year 2 |
+| Personal Code IDV | £0 | App is free |
+| Card payment fees | £0 | Bought my friend a coffee |
+| Government Gateway / HMRC filing | £0 | Free |
+| **Service fees subtotal** | **£148** | Excluding tax |
+| **Actual first-year total incl. Corporation Tax** | **£228** | Incl. ~£80 tax |
+
+**For comparison**: agencies charge £200-400 per filing, and many default to filing your company as Dormant. If you have real transactions, a Dormant filing is fraud — HMRC penalties start at £3,000.
+
+---
+
+## Two Tax Breaks Indie Founders Usually Miss
+
+These two saved me thousands of pounds in tax.
+
+### 1️⃣ Equipment purchases qualify for AIA — 100% deductible in year one
+
+**AIA = Annual Investment Allowance.**
+
+- Computers, monitors, cameras, servers — **capital equipment** bought by the company can be deducted 100% against profit in the year of purchase via AIA
+- No multi-year depreciation needed: buy this year, deduct this year
+- Annual cap: £1,000,000 (an indie founder will never hit it)
+
+**My case**: the MacBook + monitor + filming gear my company bought in year one all went through AIA, knocking thousands of pounds off taxable profit.
+
+### 2️⃣ Put every subscription on the company card with a company invoice
+
+- ChatGPT Plus, Claude Pro, Cursor, Notion, domains, cloud services…
+- **Pay all of them with the company card, invoice in the company name**
+- They are all 100% deductible as Admin Expenses
+- After year one, **my company owes me €2,465.94** (subscriptions + equipment I paid personally) — I can withdraw this from future profits **without paying personal income tax**
+
+> 💡 **Set up the company card early**: every AI tool subscription paid from the company account accumulates automatically into deductible expenses — no year-end statement archaeology.
+
+---
+
+## Pitfalls I Hit (So You Don't Have To)
+
+1. **Choose Organisation in Government Gateway** — choosing Agent means re-registering
+2. **The ID Check App is slower than you think**: NFC passport positioning is finicky, took me 5 attempts. Do it early
+3. **ARD defaults to 13 months**: your first accounting period is 13 months, not 12. To align it, file an AA01 within year one
+4. **Export ALL Wise currencies**: USD/EUR/HKD are separate accounts. Exporting only GBP means under-reporting income — that gets penalised
+5. **There is no "personal allowance" for companies**: the £12,570 allowance is for personal income tax. Companies pay 19% from the first pound of profit
+6. **Registered Office starts charging in year 2**: set a calendar reminder — if it lapses, you stop receiving all HMRC mail
+
+---
+
+## FAQ
+
+### How much does it cost to file UK company accounts yourself?
+
+Service fees are £148 (CS01 £50 + TinyTax £59 + Registered Office renewal £39). Adding a small company's Corporation Tax, my actual first-year total was about £228. Agencies charge £200-400 per filing and often default to Dormant status — which is fraud if you have real transactions, with HMRC penalties starting at £3,000.
+
+### How long does first-year UK company compliance take?
+
+About 5 weeks of waiting plus one afternoon of actual work. The waiting is mostly HMRC mailing the UTR (2-3 weeks) and the CT activation code (7-10 days), so register your Government Gateway account as soon as the UTR arrives to parallelise the waits. Year two takes half an afternoon.
+
+### Does a UK company with no revenue still need to file?
+
+Yes. The Confirmation Statement (CS01, £50) is due every year regardless of revenue. Annual Accounts and CT600 must also be filed. A company with zero transactions can file as Dormant, but if there are any real transactions you must file properly — otherwise it is fraud.
+
+### How can an indie founder legally reduce UK Corporation Tax?
+
+Two commonly missed deductions: (1) equipment like computers and cameras qualifies for AIA (Annual Investment Allowance) — 100% deductible against profit in the purchase year, capped at £1M; (2) pay every subscription (ChatGPT, Claude, Cursor, domains, cloud) with the company card and a company-name invoice — all fully deductible as Admin Expenses. Personal advances can later be withdrawn from company profits without personal income tax.
+
+---
+
+## One-line Summary
+
+> **£228 + 5 weeks + one afternoon = a UK company's entire first-year compliance, done solo.** The real cost was never money — it's the cognitive friction of doing it the first time. Once you've run the process once, year two takes half an afternoon.
+
+---
+
+📚 More hands-on logs from an indie founder going global: follow [@GoSailGlobal](https://x.com/GoSailGlobal).
+
+> ⚠️ **Disclaimer**: This article is a personal experience log shared for information only. It is not tax, legal, or financial advice. For tax matters, refer to official HMRC / Companies House documentation and consult a licensed accountant where necessary.
