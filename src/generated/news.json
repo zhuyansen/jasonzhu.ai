@@ -1,5 +1,94 @@
 [
   {
+    "slug": "2026-06-12",
+    "date": "2026-06-12",
+    "title": "AI 快讯 · 6月12日",
+    "items": [
+      {
+        "title": "OpenAI 收购 Ona：Codex 获得持久云端沙盒环境",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/openai-to-acquire-ona",
+        "summary": "OpenAI 宣布收购 Ona，将为 Codex 带来安全、持久的云端执行环境，让 AI Agent 能在企业工作流中跑长时任务。这意味着 Codex 不再只是代码补全工具，而是可以跨会话保持状态、持续执行复杂任务的自主 Agent 平台，对企业落地场景影响深远。",
+        "titleEn": "OpenAI Acquires Ona to Give Codex Persistent Cloud Environments",
+        "summaryEn": "OpenAI is acquiring Ona to equip Codex with secure, persistent cloud environments. This move upgrades Codex from a code-completion tool into a stateful, long-running agent platform capable of handling complex enterprise workflows autonomously — a significant step toward production-grade AI agents."
+      },
+      {
+        "title": "addyosmani 开源 agent-skills：把高级工程师经验封装成 AI Agent 技能包",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/addyosmani/agent-skills",
+        "summary": "Chrome 前 DevRel 负责人 Addy Osmani 开源了 agent-skills 仓库，将资深工程师的完整研发流程（定义→规划→构建→验证→审查→发布）封装为 AI Agent 可直接调用的生产级技能。目标是让 AI Coding Agent 在每个开发阶段都能稳定遵循工程最佳实践，而不是随机发挥。",
+        "titleEn": "addyosmani's agent-skills: Senior Engineer Workflows Packaged for AI Agents",
+        "summaryEn": "Addy Osmani open-sourced agent-skills, packaging senior engineering workflows (DEFINE→PLAN→BUILD→VERIFY→REVIEW→SHIP) into production-grade skills for AI coding agents. The goal: make agents consistently follow engineering best practices across every phase, not just wing it."
+      },
+      {
+        "title": "PM Skills Marketplace：100+ 个产品经理 Agent 技能一键接入 Claude Code",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/phuryn/pm-skills",
+        "summary": "pm-skills 仓库上线，提供 68 个 PM 专项技能 + 42 个链式工作流，覆盖需求发现、策略制定、执行上线、增长分析全流程，专为 Claude Code 和 Cowork 设计。这是继工程师 Skills 之后，Skills 生态向产品管理角色快速延伸的信号。",
+        "titleEn": "PM Skills Marketplace: 100+ Agentic PM Skills for Claude Code",
+        "summaryEn": "pm-skills marketplace launches with 68 PM skills and 42 chained workflows covering the full product lifecycle — from discovery to strategy, launch, and growth. Built for Claude Code and Cowork, this signals the agent-skills ecosystem rapidly expanding beyond engineering into product management."
+      },
+      {
+        "title": "Claude Fable 实测分裂评价：Agent 模式「极度偏向行动」却在日常对话翻车",
+        "source": "X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://x.com/bindureddy",
+        "summary": "Abacus AI 创始人 Bindu Reddy 连发多推展示 Fable 的极端两面性：Agent 模式下「极度偏向行动、令人发指地能干」，但在基础对话中表现反而不如 GPT-5.5 和 Grok，还经常过度思考、反复兜圈。同时传出 GPT-5.6 可能大幅降价的可靠消息。",
+        "titleEn": "Claude Fable Splits Opinions: Brilliant Agent Mode, Poor Daily Chat",
+        "summaryEn": "Abacus AI's Bindu Reddy reports Claude Fable as a split personality: terrifyingly capable in agent mode with a strong bias for action, yet surprisingly poor at basic chat compared to GPT-5.5 and Grok. Meanwhile, credible rumors suggest GPT-5.6 may launch significantly cheaper."
+      },
+      {
+        "title": "HF 论文：ModSleuth 自动追溯现代 LLM 的「隐形依赖链」",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2606.12385",
+        "summary": "你训练的模型用了 A 模型生成的数据，而 A 又依赖 B 筛选语料——这条依赖链现在复杂到人类无法手动追踪。ModSleuth 提出自动审计框架，像软件 SBOM（物料清单）一样梳理 LLM 的上游依赖。对开发者而言，这意味着模型合规风险和「谁的能力在影响你的模型」将首次可被量化追溯。",
+        "titleEn": "ModSleuth Audits the Hidden Dependency Chains Inside Modern LLMs",
+        "summaryEn": "ModSleuth introduces an automated framework to audit the recursive dependency chains in modern LLMs — tracking which upstream models generated training data, filtered corpora, or guided decisions. Think of it as an SBOM for AI models. Critical for compliance, IP risk, and understanding why your model behaves the way it does."
+      },
+      {
+        "title": "HF 论文：ReVision 压缩截图 Token，让电脑操控 Agent 历史利用率大幅提升",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2605.11212",
+        "summary": "电脑操控 Agent（如 Claude Computer Use）每步都要编码一张截图，长任务下 Token 爆炸，导致几乎无法利用历史信息。ReVision 利用「时序视觉冗余」——相邻截图变化不大这一事实——大幅压缩视觉 Token，首次让历史轨迹真正帮助提升 Agent 性能。对构建长流程自动化的开发者极具参考价值。",
+        "titleEn": "ReVision Cuts Screenshot Tokens, Letting Computer-Use Agents Use More History",
+        "summaryEn": "Computer-use agents waste massive tokens encoding near-identical consecutive screenshots. ReVision exploits temporal visual redundancy to compress visual tokens, finally enabling agents to meaningfully leverage interaction history. First method to show real performance gains from history in computer-use tasks — key for developers building long-horizon automation."
+      },
+      {
+        "title": "HF 论文：SparDA 稀疏注意力架构，长上下文推理速度与内存双双突破",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2606.04511",
+        "summary": "长上下文推理有两大痛点：KV Cache 随序列长度爆炸式增长、稀疏选择步骤本身复杂度仍是 O(T²)。SparDA 引入「Forecast」第四投影层，将稀疏选择与注意力计算解耦，同时缓解 PCIe 传输瓶颈。对于部署 128K+ 上下文模型的开发者，这是真正降低推理成本的硬核方案。",
+        "titleEn": "SparDA: Sparse Decoupled Attention Breaks Long-Context Inference Bottlenecks",
+        "summaryEn": "Long-context inference faces two walls: exploding KV cache memory and O(T²) sparse selection cost. SparDA introduces a fourth 'Forecast' projection to decouple sparse selection from attention computation, tackling both bottlenecks simultaneously. Directly relevant for developers deploying 128K+ context models who need lower inference costs."
+      },
+      {
+        "title": "天文学家用 Codex 模拟黑洞：科学计算迎来 AI Agent 时代",
+        "source": "OpenAI Blog",
+        "category": "变现案例",
+        "url": "https://openai.com/index/using-codex-to-simulate-black-holes",
+        "summary": "天体物理学家 Chi-kwan Chan 用 Codex 构建黑洞模拟程序，研究极端物理现象并验证广义相对论。这个案例展示了 AI Coding Agent 在高度专业化的科学计算场景中的实际价值——不只是写 CRUD，而是帮助顶尖科学家加速突破认知边界的研究。",
+        "titleEn": "Astrophysicist Uses Codex to Simulate Black Holes and Test Einstein's Theory",
+        "summaryEn": "Astrophysicist Chi-kwan Chan uses Codex to build black hole simulation software, studying extreme physics and testing general relativity. This case demonstrates AI coding agents delivering real value in highly specialized scientific computing — far beyond typical CRUD apps, accelerating research at the frontier of human knowledge."
+      },
+      {
+        "title": "💰 AI 融资速递",
+        "source": "",
+        "category": "",
+        "url": "",
+        "summary": "- 投资方：OpenAI - 为 AI Agent 提供安全持久云端执行环境，被 OpenAI 收购以强化 Codex 的长时任务能力，是企业级 Agent 基础设施的关键拼图。 - 投资方：Base10 Partners - 专注物流、薪资、建筑等实体经济自动化的 AI 投资基金，关闭两支共 8.5 亿美元基金，押注 AI 向传统行业深度渗透的趋势。"
+      }
+    ],
+    "jasonSays": "今天最关键的信号是 OpenAI 收购 Ona——给 Codex 装上「持久记忆和云端沙盒」，Agent 从「一次性助手」进化为「长期同事」的转折点正在加速到来，Skills 生态的价值也将随之指数级放大。",
+    "jasonSaysEn": "OpenAI acquiring Ona is today's clearest signal: equipping Codex with persistent cloud environments transforms AI agents from one-shot assistants into long-term collaborators — and that makes the entire agent-skills ecosystem exponentially more valuable.",
+    "filename": "2026-06-12.md"
+  },
+  {
     "slug": "2026-06-11",
     "date": "2026-06-11",
     "title": "AI 快讯 · 6月11日",
@@ -86,7 +175,8 @@
     ],
     "jasonSays": "Fable 上线一天就被网安圈和开发者群体双杀——过度审查 + 性价比存疑，Anthropic 把「最强模型」做成了「最多限制模型」。真正的赢家反而是 GPT-5.6 的期待值，还没发布就已经收割了用户心智。",
     "jasonSaysEn": "Anthropic turned its 'most powerful model' into its 'most restricted model'—Fable got torched by both security researchers and developers within 24 hours of launch, and GPT-5.6 is winning the hype war before it even ships.",
-    "filename": "2026-06-11.md"
+    "filename": "2026-06-11.md",
+    "coverImage": "/news/2026-06-11.png"
   },
   {
     "slug": "2026-06-10",
