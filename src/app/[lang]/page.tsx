@@ -116,9 +116,9 @@ export default async function HomePage({
           {lang === "zh" ? "关于这个站" : "About This Site"}
         </h2>
         {lang === "zh" ? (
-          <div className="text-sm text-gray-600 leading-7 space-y-3 max-w-3xl">
+          <div className="text-sm text-gray-600 leading-7 space-y-3">
             <p>
-              我是 <strong className="text-gray-900">Jason Zhu（朱延森）</strong>
+              我是 <strong className="text-gray-900">Jason Zhu（祝彦森）</strong>
               ，前 AI 算法工程师，现在全职做 AI
               内容、企业培训和出海咨询。这个站上的每一篇教程都来自我的第一手实操——花了多少钱、踩了什么坑、真实数据是多少，全部写明，
               不写没验证过的二手内容。
@@ -155,7 +155,7 @@ export default async function HomePage({
             </p>
           </div>
         ) : (
-          <div className="text-sm text-gray-600 leading-7 space-y-3 max-w-3xl">
+          <div className="text-sm text-gray-600 leading-7 space-y-3">
             <p>
               I&apos;m <strong className="text-gray-900">Jason Zhu</strong>, a
               former AI algorithm engineer, now writing about AI full-time and

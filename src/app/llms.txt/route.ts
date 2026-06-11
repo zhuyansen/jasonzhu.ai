@@ -34,7 +34,7 @@ export async function GET() {
     "",
     "## 作者",
     "",
-    `- Jason Zhu（朱延森）：前 AI 算法工程师，现全职 AI 博主 / 出海教练`,
+    `- Jason Zhu（祝彦森）：前 AI 算法工程师，现全职 AI 博主 / 出海教练`,
     `- X: https://x.com/GoSailGlobal`,
     `- GitHub: https://github.com/zhuyansen`,
     "",
