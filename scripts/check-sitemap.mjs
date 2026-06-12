@@ -16,10 +16,15 @@ const count = (dir) =>
     ? fs.readdirSync(dir).filter((f) => f.endsWith(".md")).length
     : 0;
 
-const blogCount = count(path.join(process.cwd(), "src/content/blog"));
+// en URL 只收录有英文翻译的内容（.en.md / summaryEn），
+// 下限按「zh 全量 + 静态页双语」算（.en.md 文件不计入 zh 文章数）
+const blogDir = path.join(process.cwd(), "src/content/blog");
+const blogCount = fs.existsSync(blogDir)
+  ? fs.readdirSync(blogDir).filter((f) => f.endsWith(".md") && !f.endsWith(".en.md")).length
+  : 0;
 const newsCount = count(path.join(process.cwd(), "src/content/news"));
 const MIN_STATIC = 16; // 8 个静态页 × 2 语言的保守下限
-const expected = (blogCount + newsCount) * 2 + MIN_STATIC;
+const expected = blogCount + newsCount + MIN_STATIC;
 
 const res = await fetch(SITEMAP_URL);
 if (!res.ok) {
@@ -30,7 +35,7 @@ const xml = await res.text();
 const actual = (xml.match(/<loc>/g) || []).length;
 
 console.log(`📋 sitemap URL 数：${actual}`);
-console.log(`📋 期望下限：${expected}（blog ${blogCount} + news ${newsCount}，×2 语言，+静态页 ${MIN_STATIC}）`);
+console.log(`📋 期望下限：${expected}（zh blog ${blogCount} + zh news ${newsCount} + 静态页 ${MIN_STATIC}；en 仅计入已翻译内容）`);
 
 if (actual < expected) {
   console.error(`❌ sitemap URL 数不足！生成逻辑可能又坏了（上次静默坏了两个月）`);

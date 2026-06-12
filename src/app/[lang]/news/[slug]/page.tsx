@@ -40,16 +40,28 @@ export async function generateMetadata({
     ? [{ url: `${SITE_URL}${digest.coverImage}`, width: 1024, height: 1536, alt: digest.title }]
     : undefined;
 
+  // 无英文字段的期数：en 页是中文复制，canonical 指回 zh，
+  // 避免 GSC「重复网页，Google 选择的规范网页与用户指定的不同」
+  const hasEn = digest.items.some((i) => i.summaryEn);
+
   return {
     title: digest.title,
     description: digest.jasonSays || `AI 快讯 ${digest.date}`,
     alternates: {
-      canonical: `${SITE_URL}/${lang}/news/${slug}`,
-      languages: {
-        zh: `${SITE_URL}/zh/news/${slug}`,
-        en: `${SITE_URL}/en/news/${slug}`,
-        "x-default": `${SITE_URL}/zh/news/${slug}`,
-      },
+      canonical:
+        lang === "en" && !hasEn
+          ? `${SITE_URL}/zh/news/${slug}`
+          : `${SITE_URL}/${lang}/news/${slug}`,
+      languages: hasEn
+        ? {
+            zh: `${SITE_URL}/zh/news/${slug}`,
+            en: `${SITE_URL}/en/news/${slug}`,
+            "x-default": `${SITE_URL}/zh/news/${slug}`,
+          }
+        : {
+            zh: `${SITE_URL}/zh/news/${slug}`,
+            "x-default": `${SITE_URL}/zh/news/${slug}`,
+          },
     },
     openGraph: ogImages ? { images: ogImages, type: "article" } : undefined,
     twitter: ogImages ? { card: "summary_large_image", images: ogImages } : undefined,

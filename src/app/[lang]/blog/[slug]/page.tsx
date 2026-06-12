@@ -41,12 +41,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: post.title,
     description,
     alternates: {
-      canonical: `${SITE_URL}/${lang}/blog/${slug}`,
-      languages: {
-        zh: `${SITE_URL}/zh/blog/${slug}`,
-        en: `${SITE_URL}/en/blog/${slug}`,
-        "x-default": `${SITE_URL}/zh/blog/${slug}`,
-      },
+      // 未翻译的 en 页是中文内容的复制，canonical 指回 zh 版，
+      // 避免 GSC「重复网页，Google 选择的规范网页与用户指定的不同」
+      canonical:
+        lang === "en" && !post.hasEnglish
+          ? `${SITE_URL}/zh/blog/${slug}`
+          : `${SITE_URL}/${lang}/blog/${slug}`,
+      languages: post.hasEnglish
+        ? {
+            zh: `${SITE_URL}/zh/blog/${slug}`,
+            en: `${SITE_URL}/en/blog/${slug}`,
+            "x-default": `${SITE_URL}/zh/blog/${slug}`,
+          }
+        : {
+            zh: `${SITE_URL}/zh/blog/${slug}`,
+            "x-default": `${SITE_URL}/zh/blog/${slug}`,
+          },
     },
     openGraph: {
       type: "article",
