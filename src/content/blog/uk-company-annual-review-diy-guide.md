@@ -1,6 +1,7 @@
 ---
 title: "£148 搞定英国公司年审，淘宝报 ¥2000 还不含税款"
 date: "2026-04-26"
+updated: "2026-06-13"
 category: "出海"
 tags: ["英国公司", "年审", "出海", "DIY", "Companies House", "HMRC"]
 excerpt: "去年开了家英国 Ltd，今年一整套年审加报税走完，服务费总共 £148，约 ¥1,406。淘宝同样的服务打包价 ¥2,000，里面还不含必须交给 HMRC 的 Corporation Tax。同口径对比下来 DIY 一年省 ¥594，还省掉淘宝零申报可能埋的雷。"
@@ -103,6 +104,31 @@ Companies House 和 HMRC 的支付接口对非英国发卡风控极严。Wise �
 两个都能解决，剩下的流程都是一次性学习。学会了还能帮朋友做，收 ¥500 一单都比淘宝透明，对方还感谢你。
 
 把**注册日、CS01 截止日、Corporation Tax 缴款日**三个时间点丢进日历，每年按时提醒就是最大的合规保障。
+
+## 常见问题
+
+### 英国公司年审可以自己办吗？需要请会计师吗？
+
+可以全程 DIY，不需要会计师。年审（Confirmation Statement）在 Companies House 提交，报税（CT600）通过 TinyTax 半自助生成 iXBRL 文件提交 HMRC，流程标准化，独立开发者自己就能完成。
+
+### 自己办和淘宝代办差多少钱？
+
+服务费 £148（约 ¥1406）vs 淘宝打包 ¥2000，且淘宝价不含必须缴给 HMRC 的 Corporation Tax。同口径自己办一年省约 ¥594。
+
+### 淘宝代办的「零申报」有什么风险？
+
+淘宝常默认报 Dormant（零申报）压低成本，但只要公司有真实交易，零申报就构成欺诈，被 HMRC 查到罚款 £3000 起步。有营收必须如实申报。
+
+## 英国公司出海系列
+
+独立开发者从注册到年审的完整实操路径，每篇都是第一手记录：
+
+- [2 小时注册英国公司，只需 £50](/zh/blog/uk-company-registration-2hours)
+- [注册 Wise 企业银行账户：无月费、多币种收款](/zh/blog/uk-company-wise-business-account)
+- [Wise 地址验证：证明文件要含公司名](/zh/blog/uk-company-wise-address-verification)
+- [数据保护费：SaaS 出海合规必缴 £40/年](/zh/blog/uk-company-data-protection-fee)
+- [年审 + 零申报：自己办省一半费用](/zh/blog/uk-company-annual-review-tax-filing)
+- [年审实战 Timeline：£228 全程 + 省税信息差](/zh/blog/uk-company-annual-review-timeline-checklist)
 
 ---
 

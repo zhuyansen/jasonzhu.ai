@@ -1,6 +1,7 @@
 ---
 title: "2025年最新：2小时完成英国公司注册，只需50英镑"
 date: "2025-10-31"
+updated: "2026-06-13"
 category: "出海"
 tags: ["英国公司", "公司注册", "出海", "独立开发者"]
 excerpt: "不用代理，直接去英国官网注册公司，2小时搞定，总费用只需50英镑+400元注册地址。"
@@ -37,6 +38,31 @@ excerpt: "不用代理，直接去英国官网注册公司，2小时搞定，总
 - 整个过程只需约2小时
 - 按真实信息填写即可
 - 注册完成后可以考虑开设海外企业银行账号
+
+## 常见问题
+
+### 注册英国公司要多少钱？
+
+官网注册费 50 英镑 + 淘宝买英国注册地址约 ¥400，总计约 ¥800 人民币，全程约 2 小时。
+
+### 注册英国公司需要找代理吗？
+
+不需要。直接去英国 Companies House 官网按真实信息填写即可，1st Formations 等代理现在收费很贵。唯一需要外部购买的是英国注册地址。
+
+### 中国人可以注册英国公司吗？
+
+可以，按真实个人信息填写即可，不需要英国身份或居住地。注册完成后可以用 Wise 开企业银行账户收款。
+
+## 英国公司出海系列
+
+独立开发者从注册到年审的完整实操路径，每篇都是第一手记录：
+
+- [注册 Wise 企业银行账户：无月费、多币种收款](/zh/blog/uk-company-wise-business-account)
+- [Wise 地址验证：证明文件要含公司名](/zh/blog/uk-company-wise-address-verification)
+- [数据保护费：SaaS 出海合规必缴 £40/年](/zh/blog/uk-company-data-protection-fee)
+- [£148 搞定年审：DIY vs 淘宝同口径对比](/zh/blog/uk-company-annual-review-diy-guide)
+- [年审 + 零申报：自己办省一半费用](/zh/blog/uk-company-annual-review-tax-filing)
+- [年审实战 Timeline：£228 全程 + 省税信息差](/zh/blog/uk-company-annual-review-timeline-checklist)
 
 ---
 

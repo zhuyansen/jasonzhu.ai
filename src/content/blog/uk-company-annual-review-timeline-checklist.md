@@ -134,6 +134,17 @@ excerpt: "刚独立完成英国公司第一年完整年审：Confirmation Statem
 
 完整方法论 + 流程图见 → [《£148 搞定英国公司年审，淘宝报 ¥2000 还不含税款》](/zh/blog/uk-company-annual-review-diy-guide)
 
+## 英国公司出海系列
+
+独立开发者从注册到年审的完整实操路径，每篇都是第一手记录：
+
+- [2 小时注册英国公司，只需 £50](/zh/blog/uk-company-registration-2hours)
+- [注册 Wise 企业银行账户：无月费、多币种收款](/zh/blog/uk-company-wise-business-account)
+- [Wise 地址验证：证明文件要含公司名](/zh/blog/uk-company-wise-address-verification)
+- [数据保护费：SaaS 出海合规必缴 £40/年](/zh/blog/uk-company-data-protection-fee)
+- [£148 搞定年审：DIY vs 淘宝同口径对比](/zh/blog/uk-company-annual-review-diy-guide)
+- [年审 + 零申报：自己办省一半费用](/zh/blog/uk-company-annual-review-tax-filing)
+
 ---
 
 📚 想看更多独立开发者出海的实战记录？关注 [@GoSailGlobal](https://x.com/GoSailGlobal)。
