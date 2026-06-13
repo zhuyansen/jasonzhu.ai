@@ -75,18 +75,41 @@
         "summary": "Google 对「Outsider Enterprise」提起诉讼，该组织利用 AI 技术在两周内发送 250 万条诈骗短信，受害者达数十万。这是 AI 被大规模用于网络犯罪的典型案例，也预示着 Google 将法律手段作为打击 AI 滥用的新武器，对整个行业的合规和安全生态具有重要警示意义。",
         "titleEn": "Google Sues Chinese Cybercrime Group for AI-Powered SMS Scam Hitting Hundreds of Thousands",
         "summaryEn": "Google is suing 'Outsider Enterprise' for using AI to send 2.5 million scam texts in two weeks, defrauding hundreds of thousands. A landmark case signaling Google is weaponizing litigation against AI-powered cybercrime — an important warning shot for the entire industry on AI misuse liability."
+      }
+    ],
+    "funding": [
+      {
+        "company": "Mistral AI",
+        "url": "https://techcrunch.com/2026/06/12/mistral-is-rumored-to-be-raising-e3b-at-e20-valuation/",
+        "round": "Series D（传闻）",
+        "amount": "€3B",
+        "valuation": "€20B（约 $23.15B）",
+        "investors": "",
+        "pitch": "欧洲最强开源 LLM 公司，本轮估值较 Series C 几近翻倍，显示开源模型赛道资本热度持续高涨。"
       },
       {
-        "title": "💰 AI 融资速递",
-        "source": "",
-        "category": "",
-        "url": "",
-        "summary": "- 欧洲最强开源 LLM 公司，本轮估值较 Series C 几近翻倍，显示开源模型赛道资本热度持续高涨。 - 史上最大 IPO，上市首日涨 19%。SpaceX 本身是 AI 基础设施（Starlink 宽带 + Grok 算力）重要载体，其 IPO 为 Anthropic、OpenAI 上市铺路。 - 聚焦物流、薪酬、建筑等实体经济 AI 自动化，两只基金合计 8.5 亿美元，押注 AI 落地「真实世界」而非纯软件。"
+        "company": "SpaceX",
+        "url": "https://news.crunchbase.com/public/spacex-record-breaking-ipo-spcx/",
+        "round": "IPO",
+        "amount": "$750亿（募资规模）",
+        "valuation": "",
+        "investors": "",
+        "pitch": "史上最大 IPO，上市首日涨 19%。SpaceX 本身是 AI 基础设施（Starlink 宽带 + Grok 算力）重要载体，其 IPO 为 Anthropic、OpenAI 上市铺路。"
+      },
+      {
+        "company": "Base10 Partners",
+        "url": "https://news.crunchbase.com/venture/base10-partners-invests-real-economy-automation-ajao/",
+        "round": "Fund Close",
+        "amount": "$850M",
+        "valuation": "",
+        "investors": "",
+        "pitch": "聚焦物流、薪酬、建筑等实体经济 AI 自动化，两只基金合计 8.5 亿美元，押注 AI 落地「真实世界」而非纯软件。"
       }
     ],
     "jasonSays": "今天最值得盯的是 NVIDIA 的 SkillSpector——Skills 生态野蛮生长，现在官方钦点了「安全审计」赛道，26% 的技能包有漏洞这个数字触目惊心。边跑边造安全带，这就是 AI 工具链的现实。",
     "jasonSaysEn": "NVIDIA's SkillSpector is the real story today — the agent skills ecosystem is growing so fast that 26% of skills have vulnerabilities; we're building the seatbelts while the car is already doing 100mph.",
-    "filename": "2026-06-13.md"
+    "filename": "2026-06-13.md",
+    "coverImage": "/news/2026-06-13.png"
   },
   {
     "slug": "2026-06-12",
@@ -164,13 +187,26 @@
         "summary": "天体物理学家 Chi-kwan Chan 用 Codex 构建黑洞模拟程序，研究极端物理现象并验证广义相对论。这个案例展示了 AI Coding Agent 在高度专业化的科学计算场景中的实际价值——不只是写 CRUD，而是帮助顶尖科学家加速突破认知边界的研究。",
         "titleEn": "Astrophysicist Uses Codex to Simulate Black Holes and Test Einstein's Theory",
         "summaryEn": "Astrophysicist Chi-kwan Chan uses Codex to build black hole simulation software, studying extreme physics and testing general relativity. This case demonstrates AI coding agents delivering real value in highly specialized scientific computing — far beyond typical CRUD apps, accelerating research at the frontier of human knowledge."
+      }
+    ],
+    "funding": [
+      {
+        "company": "Ona",
+        "url": "https://openai.com/index/openai-to-acquire-ona",
+        "round": "Acquisition",
+        "amount": "undisclosed",
+        "valuation": "",
+        "investors": "OpenAI",
+        "pitch": "为 AI Agent 提供安全持久云端执行环境，被 OpenAI 收购以强化 Codex 的长时任务能力，是企业级 Agent 基础设施的关键拼图。"
       },
       {
-        "title": "💰 AI 融资速递",
-        "source": "",
-        "category": "",
-        "url": "",
-        "summary": "- 投资方：OpenAI - 为 AI Agent 提供安全持久云端执行环境，被 OpenAI 收购以强化 Codex 的长时任务能力，是企业级 Agent 基础设施的关键拼图。 - 投资方：Base10 Partners - 专注物流、薪资、建筑等实体经济自动化的 AI 投资基金，关闭两支共 8.5 亿美元基金，押注 AI 向传统行业深度渗透的趋势。"
+        "company": "Base10 Partners portfolio companies",
+        "url": "https://news.crunchbase.com/venture/base10-partners-invests-real-economy-automation-ajao/",
+        "round": "Fund",
+        "amount": "$850M",
+        "valuation": "",
+        "investors": "Base10 Partners",
+        "pitch": "专注物流、薪资、建筑等实体经济自动化的 AI 投资基金，关闭两支共 8.5 亿美元基金，押注 AI 向传统行业深度渗透的趋势。"
       }
     ],
     "jasonSays": "今天最关键的信号是 OpenAI 收购 Ona——给 Codex 装上「持久记忆和云端沙盒」，Agent 从「一次性助手」进化为「长期同事」的转折点正在加速到来，Skills 生态的价值也将随之指数级放大。",
@@ -254,13 +290,35 @@
         "summary": "DeLM（去中心化语言模型）框架让多个 Agent 通过共享上下文并行协作，彻底绕开传统「主 Agent 分配-收集-合并」的中央调度瓶颈。随着 Agent 数量增加，这个瓶颈会指数级恶化。对构建大规模 Multi-Agent 系统的开发者，DeLM 提供了一个可落地的扩展性解决方案。",
         "titleEn": "HF Paper: DeLM Decentralizes Multi-Agent Coordination via Shared Context",
         "summaryEn": "DeLM replaces centralized orchestration in multi-agent systems with parallel agents sharing a common context, eliminating the bottleneck where a main agent assigns, collects, and merges all work. For developers building scalable multi-agent pipelines, this architecture offers a practical path to horizontal scaling."
+      }
+    ],
+    "funding": [
+      {
+        "company": "Niteshift",
+        "url": "https://techcrunch.com/2026/06/10/datadog-veterans-launch-ai-coding-startup-niteshift-on-a-bet-against-big-ai-lock-in/",
+        "round": "Seed",
+        "amount": "$7M",
+        "valuation": "",
+        "investors": "知名天使投资人团",
+        "pitch": "Datadog 前员工创立的 AI 编程 Agent 创业公司，押注企业不愿被大模型厂商锁定，提供模型无关的自主编程 Agent 解决方案。"
       },
       {
-        "title": "💰 AI 融资速递",
-        "source": "",
-        "category": "",
-        "url": "",
-        "summary": "- 投资方：知名天使投资人团 - Datadog 前员工创立的 AI 编程 Agent 创业公司，押注企业不愿被大模型厂商锁定，提供模型无关的自主编程 Agent 解决方案。 - 投资方：顺为资本 - 清华团队打造的人类生理情绪感知基座模型，可实时输出心率/情绪等 120+ 项指标，为大模型提供非语言生理数据入口，是具身智能与情感计算的底层基础设施。 - 字节 AI 制药业务拆分独立融资，核心算法与 Protenix 蛋白结构预测平台整体打包，字节保持控股，标志 AI4S（AI for Science）正式进入产业化变现阶段。"
+        "company": "微面科技（FacePhys）",
+        "url": "https://36kr.com/p/3846789531404549",
+        "round": "天使轮",
+        "amount": "数百万美元",
+        "valuation": "",
+        "investors": "顺为资本",
+        "pitch": "清华团队打造的人类生理情绪感知基座模型，可实时输出心率/情绪等 120+ 项指标，为大模型提供非语言生理数据入口，是具身智能与情感计算的底层基础设施。"
+      },
+      {
+        "company": "字节跳动 AI 制药（拆分新公司）",
+        "url": "https://36kr.com/p/3846956646124036",
+        "round": "战略融资（拆分融资）",
+        "amount": "undisclosed",
+        "valuation": "",
+        "investors": "",
+        "pitch": "字节 AI 制药业务拆分独立融资，核心算法与 Protenix 蛋白结构预测平台整体打包，字节保持控股，标志 AI4S（AI for Science）正式进入产业化变现阶段。"
       }
     ],
     "jasonSays": "Fable 上线一天就被网安圈和开发者群体双杀——过度审查 + 性价比存疑，Anthropic 把「最强模型」做成了「最多限制模型」。真正的赢家反而是 GPT-5.6 的期待值，还没发布就已经收割了用户心智。",

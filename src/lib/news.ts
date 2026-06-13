@@ -10,11 +10,22 @@ export interface NewsItem {
   summaryEn?: string;
 }
 
+export interface FundingItem {
+  company: string;
+  url?: string;
+  round?: string;
+  amount?: string;
+  valuation?: string;
+  investors?: string;
+  pitch?: string;
+}
+
 export interface NewsDigest {
   slug: string;
   date: string;
   title: string;
   items: NewsItem[];
+  funding?: FundingItem[];
   jasonSays: string;
   jasonSaysEn?: string;
   filename: string;

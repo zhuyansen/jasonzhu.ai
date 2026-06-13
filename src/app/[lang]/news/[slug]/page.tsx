@@ -247,6 +247,69 @@ export default async function NewsDetailPage({
         })}
       </div>
 
+      {/* 💰 AI 融资速递 */}
+      {digest.funding && digest.funding.length > 0 && (
+        <div className="mt-8">
+          <h2 className="text-base font-bold text-gray-900 mb-4 flex items-center gap-2">
+            <span>💰</span>
+            {isZh ? "AI 融资速递" : "AI Funding Roundup"}
+          </h2>
+          <div className="space-y-3">
+            {digest.funding.map((f, i) => (
+              <div
+                key={i}
+                className="border border-gray-100 rounded-xl p-4 bg-gradient-to-br from-amber-50/40 to-white"
+              >
+                <div className="flex items-baseline justify-between gap-3 flex-wrap mb-1.5">
+                  <h3 className="text-sm font-semibold text-gray-900">
+                    {f.url ? (
+                      <a
+                        href={f.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-blue-600 transition-colors"
+                      >
+                        {f.company}
+                        <span className="text-gray-300 ml-1 text-xs">↗</span>
+                      </a>
+                    ) : (
+                      f.company
+                    )}
+                  </h3>
+                  <div className="flex items-center gap-1.5 flex-wrap text-xs">
+                    {f.round && (
+                      <span className="px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 font-medium">
+                        {f.round}
+                      </span>
+                    )}
+                    {f.amount && (
+                      <span className="px-2 py-0.5 rounded-full bg-green-50 text-green-700 font-semibold">
+                        {f.amount}
+                      </span>
+                    )}
+                    {f.valuation && (
+                      <span className="px-2 py-0.5 rounded-full bg-gray-100 text-gray-600">
+                        {isZh ? "估值 " : "Val. "}
+                        {f.valuation}
+                      </span>
+                    )}
+                  </div>
+                </div>
+                {f.investors && (
+                  <p className="text-xs text-gray-400 mb-1">
+                    {isZh ? "投资方：" : "Investors: "}
+                    {f.investors}
+                  </p>
+                )}
+                {f.pitch && (
+                  <p className="text-sm text-gray-600 leading-relaxed">{f.pitch}</p>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Prev / Next navigation */}
       <div className="mt-12 flex items-center justify-between border-t border-gray-100 pt-6">
         {prevDigest ? (
