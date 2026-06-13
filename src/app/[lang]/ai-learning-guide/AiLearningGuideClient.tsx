@@ -51,6 +51,7 @@ function GuideContent({ lang }: { lang: Locale }) {
         moreDesc: "10 大平台 + 总目录共 11 篇深度文章，每篇含完整课程清单与避坑细节。",
         moreBtn: "阅读完整系列",
         previewTip: "PDF 内容预览",
+        pdfFilename: "AI-免费学习全景图-JasonZhu.pdf",
       }
     : {
         title: "The Complete Map of Free AI Learning",
@@ -75,6 +76,7 @@ function GuideContent({ lang }: { lang: Locale }) {
         moreDesc: "11 in-depth articles covering all 10 platforms.",
         moreBtn: "Read the full series",
         previewTip: "PDF preview",
+        pdfFilename: "Free-AI-Learning-Map-JasonZhu.pdf",
       };
 
   const handleUnlock = async (e: React.FormEvent) => {
@@ -198,7 +200,7 @@ function GuideContent({ lang }: { lang: Locale }) {
         </div>
         <a
           href={PDF_PATH}
-          download="AI免费学习全景图-JasonZhu.pdf"
+          download={t.pdfFilename}
           className="px-4 py-2 bg-green-600 text-white rounded-lg text-sm font-medium hover:bg-green-700 transition-colors"
         >
           {t.download}
@@ -233,7 +235,7 @@ function GuideContent({ lang }: { lang: Locale }) {
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
           <a
             href={PDF_PATH}
-            download="AI免费学习全景图-JasonZhu.pdf"
+            download={t.pdfFilename}
             className="w-full sm:w-auto px-8 py-3.5 bg-[var(--primary)] text-white rounded-xl text-base font-semibold hover:bg-[var(--primary-dark)] transition-colors flex items-center justify-center gap-2 shadow-lg shadow-blue-500/20"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

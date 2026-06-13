@@ -4,11 +4,19 @@ interface ShareButtonsProps {
   url: string;
   title: string;
   summary?: string;
+  lang?: string;
 }
 
-export default function ShareButtons({ url, title }: ShareButtonsProps) {
+export default function ShareButtons({ url, title, lang = "zh" }: ShareButtonsProps) {
+  const isZh = lang === "zh";
   const encodedUrl = encodeURIComponent(url);
   const encodedTitle = encodeURIComponent(title);
+  const t = {
+    copiedWechat: isZh ? "已复制到剪贴板，可粘贴到微信分享" : "Copied — paste to share on WeChat",
+    copied: isZh ? "已复制到剪贴板" : "Copied to clipboard",
+    shareOn: (n: string) => (isZh ? `分享到 ${n}` : `Share on ${n}`),
+    copyLink: isZh ? "复制链接" : "Copy link",
+  };
 
   const shareLinks = [
     {
@@ -43,7 +51,7 @@ export default function ShareButtons({ url, title }: ShareButtonsProps) {
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(`${title}\n${url}`);
-      alert("已复制到剪贴板，可粘贴到微信分享");
+      alert(t.copiedWechat);
     } catch {
       // Fallback
       const textArea = document.createElement("textarea");
@@ -52,7 +60,7 @@ export default function ShareButtons({ url, title }: ShareButtonsProps) {
       textArea.select();
       document.execCommand("copy");
       document.body.removeChild(textArea);
-      alert("已复制到剪贴板");
+      alert(t.copied);
     }
   };
 
@@ -66,7 +74,7 @@ export default function ShareButtons({ url, title }: ShareButtonsProps) {
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center w-8 h-8 rounded-lg border border-gray-200 text-gray-500 hover:text-blue-600 hover:border-blue-200 hover:bg-blue-50 transition-all"
-            title={`Share on ${link.name}`}
+            title={t.shareOn(link.name)}
           >
             {link.icon}
           </a>
@@ -75,7 +83,7 @@ export default function ShareButtons({ url, title }: ShareButtonsProps) {
             key={link.name}
             onClick={handleCopy}
             className="inline-flex items-center justify-center w-8 h-8 rounded-lg border border-gray-200 text-gray-500 hover:text-green-600 hover:border-green-200 hover:bg-green-50 transition-all"
-            title="Copy link"
+            title={t.copyLink}
           >
             {link.icon}
           </button>

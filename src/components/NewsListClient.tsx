@@ -3,17 +3,21 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import { findCrossLinks } from "@/lib/cross-links";
-import type { NewsDigest } from "@/lib/news";
+import { digestTitle, digestJasonSays, type NewsDigest } from "@/lib/news";
 
-const categoryConfig: Record<string, { color: string; icon: string }> = {
-  "Skills 生态": { color: "bg-purple-50 text-purple-700", icon: "🔥" },
-  "出海实战": { color: "bg-orange-50 text-orange-700", icon: "🚀" },
-  "AI 工具动态": { color: "bg-blue-50 text-blue-700", icon: "🛠️" },
-  "变现案例": { color: "bg-green-50 text-green-700", icon: "💰" },
-  "AI 论文": { color: "bg-indigo-50 text-indigo-700", icon: "📚" },
+const categoryConfig: Record<string, { color: string; icon: string; en: string }> = {
+  "Skills 生态": { color: "bg-purple-50 text-purple-700", icon: "🔥", en: "Skills" },
+  "出海实战": { color: "bg-orange-50 text-orange-700", icon: "🚀", en: "Going Global" },
+  "AI 工具动态": { color: "bg-blue-50 text-blue-700", icon: "🛠️", en: "AI Tools" },
+  "变现案例": { color: "bg-green-50 text-green-700", icon: "💰", en: "Monetization" },
+  "AI 论文": { color: "bg-indigo-50 text-indigo-700", icon: "📚", en: "AI Papers" },
 };
 
 const ALL_CATEGORIES = ["Skills 生态", "出海实战", "AI 工具动态", "变现案例", "AI 论文"];
+
+// 分类显示名：en 时取英文标签，回退原中文
+const catLabel = (cat: string, isZh: boolean) =>
+  isZh ? cat : categoryConfig[cat]?.en || cat;
 
 interface Props {
   digests: NewsDigest[];
@@ -119,7 +123,7 @@ export default function NewsListClient({ digests, lang }: Props) {
                     : `${cfg.color} hover:opacity-80`
                 }`}
               >
-                <span>{cfg.icon}</span> {cat}
+                <span>{cfg.icon}</span> {catLabel(cat, isZh)}
               </button>
             );
           })}
@@ -138,7 +142,7 @@ export default function NewsListClient({ digests, lang }: Props) {
             <div className="flex items-center justify-between mb-5">
               <div className="flex items-center gap-3">
                 <div className="w-1.5 h-6 bg-blue-600 rounded-full" />
-                <h2 className="text-lg font-bold text-gray-900">{latest.title}</h2>
+                <h2 className="text-lg font-bold text-gray-900">{digestTitle(latest, lang)}</h2>
                 <span className="text-sm text-gray-400">{latest.date}</span>
               </div>
               <Link
@@ -160,7 +164,10 @@ export default function NewsListClient({ digests, lang }: Props) {
                   const cfg = categoryConfig[item.category] || {
                     color: "bg-gray-50 text-gray-700",
                     icon: "📌",
+                    en: item.category,
                   };
+                  const itemTitle = !isZh && item.titleEn ? item.titleEn : item.title;
+                  const itemSummary = !isZh && item.summaryEn ? item.summaryEn : item.summary;
                   return (
                     <div
                       key={idx}
@@ -173,7 +180,7 @@ export default function NewsListClient({ digests, lang }: Props) {
                             <span
                               className={`px-2 py-0.5 rounded-full text-xs font-medium ${cfg.color}`}
                             >
-                              {item.category}
+                              {catLabel(item.category, isZh)}
                             </span>
                             <span className="text-xs text-gray-400">{item.source}</span>
                           </div>
@@ -185,14 +192,14 @@ export default function NewsListClient({ digests, lang }: Props) {
                                 rel="noopener noreferrer"
                                 className="hover:text-blue-600 transition-colors"
                               >
-                                {item.title}
+                                {itemTitle}
                                 <span className="text-gray-300 ml-1 text-sm">↗</span>
                               </a>
                             ) : (
-                              item.title
+                              itemTitle
                             )}
                           </h3>
-                          <p className="text-sm text-gray-500 leading-relaxed">{item.summary}</p>
+                          <p className="text-sm text-gray-500 leading-relaxed">{itemSummary}</p>
                           <CrossLinks title={item.title} summary={item.summary} lang={lang} />
                         </div>
                       </div>
@@ -203,7 +210,7 @@ export default function NewsListClient({ digests, lang }: Props) {
             )}
 
             {/* Jason Says */}
-            {latest.jasonSays && (
+            {digestJasonSays(latest, lang) && (
               <div className="mt-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-4 border border-blue-100">
                 <div className="flex items-start gap-3">
                   <span className="text-lg">💡</span>
@@ -211,7 +218,7 @@ export default function NewsListClient({ digests, lang }: Props) {
                     <p className="text-xs font-semibold text-blue-700 mb-1">
                       Jason {isZh ? "说" : "Says"}
                     </p>
-                    <p className="text-sm text-gray-700 leading-relaxed">{latest.jasonSays}</p>
+                    <p className="text-sm text-gray-700 leading-relaxed">{digestJasonSays(latest, lang)}</p>
                   </div>
                 </div>
               </div>
@@ -249,10 +256,10 @@ export default function NewsListClient({ digests, lang }: Props) {
                     </div>
                     <div className="flex-1 min-w-0">
                       <h3 className="text-sm font-semibold text-gray-900 group-hover:text-blue-600 transition-colors truncate">
-                        {digest.title}
+                        {digestTitle(digest, lang)}
                       </h3>
                       <p className="text-xs text-gray-400 mt-1 line-clamp-1">
-                        {digest.jasonSays ||
+                        {digestJasonSays(digest, lang) ||
                           `${digest.items.length} ${isZh ? "条快讯" : "items"}`}
                       </p>
                     </div>
@@ -262,7 +269,7 @@ export default function NewsListClient({ digests, lang }: Props) {
                         .map((cat) => {
                           const cfg = categoryConfig[cat];
                           return cfg ? (
-                            <span key={cat} className="text-sm" title={cat}>
+                            <span key={cat} className="text-sm" title={catLabel(cat, isZh)}>
                               {cfg.icon}
                             </span>
                           ) : null;

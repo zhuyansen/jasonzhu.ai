@@ -2,18 +2,18 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Locale } from "@/lib/dictionaries";
-import { getAllDigests, getDigestBySlug } from "@/lib/news";
+import { getAllDigests, getDigestBySlug, digestTitle, digestJasonSays } from "@/lib/news";
 import { findCrossLinks } from "@/lib/cross-links";
 import ShareButtons from "@/components/ShareButtons";
 
 const SITE_URL = "https://jasonzhu.ai";
 
-const categoryConfig: Record<string, { color: string; icon: string }> = {
-  "Skills 生态": { color: "bg-purple-50 text-purple-700", icon: "🔥" },
-  "出海实战": { color: "bg-orange-50 text-orange-700", icon: "🚀" },
-  "AI 工具动态": { color: "bg-blue-50 text-blue-700", icon: "🛠️" },
-  "变现案例": { color: "bg-green-50 text-green-700", icon: "💰" },
-  "AI 论文": { color: "bg-indigo-50 text-indigo-700", icon: "📚" },
+const categoryConfig: Record<string, { color: string; icon: string; en: string }> = {
+  "Skills 生态": { color: "bg-purple-50 text-purple-700", icon: "🔥", en: "Skills" },
+  "出海实战": { color: "bg-orange-50 text-orange-700", icon: "🚀", en: "Going Global" },
+  "AI 工具动态": { color: "bg-blue-50 text-blue-700", icon: "🛠️", en: "AI Tools" },
+  "变现案例": { color: "bg-green-50 text-green-700", icon: "💰", en: "Monetization" },
+  "AI 论文": { color: "bg-indigo-50 text-indigo-700", icon: "📚", en: "AI Papers" },
 };
 
 export async function generateStaticParams() {
@@ -36,8 +36,9 @@ export async function generateMetadata({
   const digest = getDigestBySlug(slug);
   if (!digest) return { title: "Not Found" };
 
+  const mTitle = digestTitle(digest, lang);
   const ogImages = digest.coverImage
-    ? [{ url: `${SITE_URL}${digest.coverImage}`, width: 1024, height: 1536, alt: digest.title }]
+    ? [{ url: `${SITE_URL}${digest.coverImage}`, width: 1024, height: 1536, alt: mTitle }]
     : undefined;
 
   // 无英文字段的期数：en 页是中文复制，canonical 指回 zh，
@@ -45,8 +46,10 @@ export async function generateMetadata({
   const hasEn = digest.items.some((i) => i.summaryEn);
 
   return {
-    title: digest.title,
-    description: digest.jasonSays || `AI 快讯 ${digest.date}`,
+    title: mTitle,
+    description:
+      digestJasonSays(digest, lang) ||
+      (lang === "en" ? `AI News ${digest.date}` : `AI 快讯 ${digest.date}`),
     alternates: {
       canonical:
         lang === "en" && !hasEn
@@ -80,6 +83,9 @@ export default async function NewsDetailPage({
   const digest = getDigestBySlug(slug);
   if (!digest) notFound();
 
+  const dTitle = digestTitle(digest, lang);
+  const dJasonSays = digestJasonSays(digest, lang);
+
   // Find prev/next digests for navigation
   const allDigests = getAllDigests();
   const currentIndex = allDigests.findIndex((d) => d.slug === slug);
@@ -89,13 +95,13 @@ export default async function NewsDetailPage({
   const newsArticleJsonLd = {
     "@context": "https://schema.org",
     "@type": "NewsArticle",
-    headline: digest.title,
+    headline: dTitle,
     datePublished: digest.date,
     dateModified: digest.date,
     author: { "@type": "Person", name: "Jason Zhu", url: SITE_URL },
     publisher: { "@type": "Person", name: "Jason Zhu", url: SITE_URL },
     mainEntityOfPage: `${SITE_URL}/${lang}/news/${slug}`,
-    description: digest.jasonSays || `AI 快讯 ${digest.date}`,
+    description: dJasonSays || (isZh ? `AI 快讯 ${digest.date}` : `AI News ${digest.date}`),
   };
 
   return (
@@ -110,7 +116,7 @@ export default async function NewsDetailPage({
           {isZh ? "AI 快讯" : "AI News"}
         </Link>
         <span>/</span>
-        <span className="text-gray-600">{digest.title}</span>
+        <span className="text-gray-600">{dTitle}</span>
       </nav>
 
       {/* Header */}
@@ -118,14 +124,15 @@ export default async function NewsDetailPage({
         <div className="flex items-start justify-between gap-4">
           <div>
             <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
-              {digest.title}
+              {dTitle}
             </h1>
             <time className="text-sm text-gray-400">{digest.date}</time>
           </div>
           <ShareButtons
             url={`${SITE_URL}/${lang}/news/${slug}`}
-            title={digest.title}
-            summary={digest.jasonSays}
+            title={dTitle}
+            summary={dJasonSays}
+            lang={lang}
           />
         </div>
       </div>
@@ -136,7 +143,7 @@ export default async function NewsDetailPage({
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={digest.coverImage}
-            alt={digest.title}
+            alt={dTitle}
             className="w-full h-auto block"
             loading="lazy"
           />
@@ -162,14 +169,14 @@ export default async function NewsDetailPage({
       )}
 
       {/* Jason Says — top highlight */}
-      {digest.jasonSays && (
+      {dJasonSays && (
         <div className="mb-8 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-5 border border-blue-100">
           <div className="flex items-start gap-3">
             <span className="text-xl">💡</span>
             <div>
               <p className="text-xs font-semibold text-blue-700 mb-1.5">Jason {isZh ? "说" : "Says"}</p>
               <p className="text-sm text-gray-700 leading-relaxed">
-                {lang === "en" && digest.jasonSaysEn ? digest.jasonSaysEn : digest.jasonSays}
+                {dJasonSays}
               </p>
             </div>
           </div>
@@ -182,6 +189,7 @@ export default async function NewsDetailPage({
           const cfg = categoryConfig[item.category] || {
             color: "bg-gray-50 text-gray-700",
             icon: "📌",
+            en: item.category,
           };
           const displayTitle =
             lang === "en" && item.titleEn ? item.titleEn : item.title;
@@ -199,7 +207,7 @@ export default async function NewsDetailPage({
                     <span
                       className={`px-2 py-0.5 rounded-full text-xs font-medium ${cfg.color}`}
                     >
-                      {item.category}
+                      {isZh ? item.category : cfg.en || item.category}
                     </span>
                     <span className="text-xs text-gray-400">{item.source}</span>
                   </div>
@@ -320,7 +328,7 @@ export default async function NewsDetailPage({
             <span className="text-lg group-hover:-translate-x-0.5 transition-transform">&larr;</span>
             <div>
               <p className="text-xs text-gray-400">{isZh ? "上一期" : "Previous"}</p>
-              <p className="font-medium">{prevDigest.title}</p>
+              <p className="font-medium">{digestTitle(prevDigest, lang)}</p>
             </div>
           </Link>
         ) : (
@@ -333,7 +341,7 @@ export default async function NewsDetailPage({
           >
             <div>
               <p className="text-xs text-gray-400">{isZh ? "下一期" : "Next"}</p>
-              <p className="font-medium">{nextDigest.title}</p>
+              <p className="font-medium">{digestTitle(nextDigest, lang)}</p>
             </div>
             <span className="text-lg group-hover:translate-x-0.5 transition-transform">&rarr;</span>
           </Link>

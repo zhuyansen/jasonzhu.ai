@@ -35,6 +35,19 @@ export interface NewsDigest {
 
 const allDigests: NewsDigest[] = newsData as NewsDigest[];
 
+/** 快讯标题本地化：zh 用原标题（AI 快讯 · 6月13日），en 用日期版 */
+export function digestTitle(
+  d: { title: string; date: string },
+  lang: string
+): string {
+  return lang === "en" ? `AI News · ${d.date}` : d.title;
+}
+
+/** jasonSays 本地化：en 优先英文版，回退中文 */
+export function digestJasonSays(d: NewsDigest, lang: string): string {
+  return lang === "en" && d.jasonSaysEn ? d.jasonSaysEn : d.jasonSays;
+}
+
 export function getAllDigests(): NewsDigest[] {
   return allDigests;
 }
