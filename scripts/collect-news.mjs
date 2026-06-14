@@ -260,6 +260,29 @@ function getRecentTitles(days = 3) {
   return titles;
 }
 
+// 读最近 N 天融资速递里的公司名，用于融资段跨天去重
+function getRecentFundingCompanies(days = 4) {
+  const newsDir = path.join(process.cwd(), "src/content/news");
+  if (!fs.existsSync(newsDir)) return [];
+  const names = new Set();
+  const today = new Date(TODAY);
+  for (let i = 1; i <= days; i++) {
+    const d = new Date(today);
+    d.setDate(d.getDate() - i);
+    const iso = d.toISOString().split("T")[0];
+    const file = path.join(newsDir, `${iso}.md`);
+    if (!fs.existsSync(file)) continue;
+    const content = fs.readFileSync(file, "utf-8");
+    const seg = content.split(/###\s*💰[^\n]*融资速递/)[1];
+    if (!seg) continue;
+    for (const m of seg.matchAll(/^-\s+\*\*(?:\[([^\]]+)\]|([^*·]+))/gm)) {
+      const name = (m[1] || m[2] || "").trim();
+      if (name) names.add(name);
+    }
+  }
+  return [...names];
+}
+
 // ─── Step 2: Claude 筛选 + 摘要 ─────────────────────
 
 async function curateWithClaude(rawItems) {
@@ -278,6 +301,11 @@ ${recentTitles.map((t) => `- [${t.date}] ${t.title}`).join("\n")}
 如果同一新闻今天又被 RSS 推上来，你必须跳过，或换一个全新的角度（例如 follow-up 数据、社区反应、对比观点），否则订阅者会看到重复内容感到失望。\n`
     : "";
 
+  const recentFunding = getRecentFundingCompanies(4);
+  const fundingDedupBlock = recentFunding.length > 0
+    ? `\n## 最近几天已报过的融资公司（融资速递不要再放这些，除非有全新一轮/估值变化）\n${recentFunding.map((n) => `- ${n}`).join("\n")}\n`
+    : "";
+
   const prompt = `你是 JasonZhu.AI 的 AI 快讯编辑。从以下原始新闻中筛选出 6-8 条最值得关注的，生成结构化快讯。
 
 ## 筛选标准（优先级从高到低）
@@ -292,15 +320,18 @@ ${recentTitles.map((t) => `- [${t.date}] ${t.title}`).join("\n")}
 - 纯营销推广内容
 - 无实质更新的水文
 - 与 AI 无关的内容
-${dedupBlock}
+${dedupBlock}${fundingDedupBlock}
 ## 原始内容
 ${itemsText}
 
 ## 额外任务：AI 融资速递
-从原始内容里**单独**挑出 3-5 条 **AI 相关的融资 / 投资 / 估值** 新闻（关键词：raised / Series / funding / valuation / seed / IPO / acquisition）。
+从原始内容里**单独**挑出 0-5 条 **AI 相关的真实资金事件**（关键词：raised / Series / funding / valuation / seed / IPO priced）。
+- **只收「钱真的进来了」的事件**：完成融资、IPO 定价/上市、基金 close。**撤回/搁置/传闻/被叫停的交易一律不算融资**（那些该进 items，不进 funding）。
 - 必须是 AI 公司或 AI 业务相关（纯传统 SaaS 融资不要）
+- **绝对不要和今天上面的 items 重复**：同一家公司/同一事件只要已经作为今天的某条 item 出现，就**绝不**再放进 funding（哪怕它是融资/IPO 也不行——已经被报道过就够了，不要同一天讲两遍）。
+- **不要重复最近几天已报过的融资**（见下方「最近融资过的公司」清单），除非有全新的实质进展（如估值再变、新一轮）。
+- 宁缺毋滥：当天没有符合标准的新融资，就给空数组 []，**绝不靠重复旧闻或塞撤回交易来凑数**。
 - 信息缺失就尽量从标题和摘要里推断，推断不出来字段就留空字符串
-- 这部分**和上面 items 互不重叠**——融资类条目只进 funding 数组，不进 items
 
 ## 输出格式（严格 JSON）
 {

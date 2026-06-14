@@ -5,100 +5,80 @@
     "title": "AI 快讯 · 6月14日",
     "items": [
       {
-        "title": "Anthropic 发布「让 Claude 成为化学家」研究：专业领域 Agent 新里程碑",
+        "title": "Anthropic 研究：把 Claude 训练成专业化学家",
         "source": "Anthropic / Hacker News",
         "category": "AI 工具动态",
         "url": "https://www.anthropic.com/research/making-claude-a-chemist",
-        "summary": "Anthropic 发布研究报告，展示如何将 Claude 打造成具备化学专业能力的 AI Agent。这标志着 LLM 在高度专业化科学领域的深度应用正从概念走向实践，对制药、材料研发等行业具有重要示范意义。",
-        "titleEn": "Anthropic's 'Making Claude a Chemist': Domain-Specific Agent Breakthrough",
-        "summaryEn": "Anthropic published research on transforming Claude into a chemistry-capable AI agent. This signals a shift from general-purpose LLMs to deep domain-specialized agents, with major implications for pharma, materials science, and scientific R&D workflows."
+        "summary": "Anthropic 发布研究报告，探讨如何将 Claude 专业化为化学领域专家。这是 Anthropic 将通用 LLM 向垂直科学领域深度适配的最新尝试，延续了此前天文学家用 Codex 模拟黑洞的趋势——AI 正系统性渗透硬科学研究工作流。",
+        "titleEn": "Anthropic Research: Training Claude as a Specialized Chemist",
+        "summaryEn": "Anthropic publishes research on adapting Claude into a domain-specific chemistry expert. Continuing the trend of LLMs penetrating hard sciences, this signals Anthropic's push toward deep vertical specialization beyond general-purpose assistants."
       },
       {
-        "title": "Meta 撤回 20 亿美元 Manus 收购：北京施压后被迫反转",
+        "title": "Meta 斥资 $20 亿收购 Manus 被北京叫停，强制撤单",
         "source": "TechCrunch AI",
         "category": "AI 工具动态",
         "url": "https://techcrunch.com/2026/06/13/meta-reportedly-moves-to-unwind-2b-manus-deal-after-beijings-demand/",
-        "summary": "Meta 正在拆解其对 AI Agent 公司 Manus 高达 20 亿美元的收购，原因是北京方面直接下令要求撤回该交易。这是迄今为止中国政府直接干预一笔硅谷跨境 AI 并购的最高调案例，折射出中美 AI 竞争的地缘政治新变局。",
-        "titleEn": "Meta Unwinds $2B Manus Acquisition After Beijing's Intervention",
-        "summaryEn": "Meta is dismantling its $2B acquisition of AI agent startup Manus after Beijing directly ordered the deal reversed. This is one of the most high-profile cases of Chinese government intervention in a cross-border AI M&A deal, highlighting deepening geopolitical tensions around AI assets."
+        "summary": "北京直接出手干预，要求 Meta 撤回对 AI Agent 公司 Manus 的 20 亿美元收购案，Meta 已开始拆解该交易。这是迄今中国政府最直接介入中美 AI 并购的案例，预示未来跨境 AI 资产交易将面临更大地缘政治摩擦。",
+        "titleEn": "Meta's $2B Manus Acquisition Unwound After Beijing's Order",
+        "summaryEn": "Beijing ordered Meta to reverse its $2B acquisition of AI agent company Manus, which Meta is now unwinding. This marks the most direct Chinese government intervention in a US-China AI M&A deal to date, signaling rising geopolitical friction in cross-border AI asset transfers."
       },
       {
-        "title": "Andy Jassy 疑为举报人：Anthropic 紧急下线两款模型背后的政治博弈",
-        "source": "TechCrunch AI",
-        "category": "AI 工具动态",
-        "url": "https://techcrunch.com/2026/06/13/amazon-ceo-reportedly-raised-anthropic-model-concerns-before-government-crackdown/",
-        "summary": "TechCrunch 报道，亚马逊 CEO Andy Jassy 可能是安全顾虑的来源，直接导致 Anthropic 上周五紧急切断全球两款模型访问权限。作为 Anthropic 最大股东之一，亚马逊对模型安全表达关切并触发政府层面的介入，展示了 AI 治理中资方与监管方的复杂关系。",
-        "titleEn": "Amazon CEO Reportedly Triggered Anthropic's Emergency Model Takedown",
-        "summaryEn": "Amazon CEO Andy Jassy may have been the source behind Anthropic's abrupt global suspension of two models last Friday. As one of Anthropic's largest backers, Amazon raising security concerns that trigger regulatory action reveals how investor-regulator dynamics are shaping real-time AI governance."
-      },
-      {
-        "title": "OpenAI 遭多州检察长联合调查：广告政策与健康数据处理均在审查范围",
-        "source": "TechCrunch AI",
-        "category": "AI 工具动态",
-        "url": "https://techcrunch.com/2026/06/13/openai-faces-investigation-from-state-attorneys-general/",
-        "summary": "美国多个州检察长联合对 OpenAI 展开调查，范围涵盖广告政策、健康数据处理等多个方面。这是继联邦层面监管动作之后，州级执法机构对 OpenAI 的首次大规模协同行动，预示着 AI 公司面临的合规压力将全面升级。",
-        "titleEn": "OpenAI Faces Multi-State Attorney General Investigation Over Data and Ads",
-        "summaryEn": "Multiple U.S. state attorneys general have launched a coordinated investigation into OpenAI, covering ad policies, health data handling, and more. This marks the first major coordinated state-level enforcement action against OpenAI, signaling that compliance pressure on AI companies is escalating beyond federal oversight."
-      },
-      {
-        "title": "KPMG 因幻觉问题撤回 AI 使用报告：四大咨询公司集体踩坑",
+        "title": "KPMG 因 AI 幻觉撤回 AI 使用报告，四大咨询翻车",
         "source": "TechCrunch AI",
         "category": "AI 工具动态",
         "url": "https://techcrunch.com/2026/06/13/kpmg-pulls-report-on-ai-usage-due-to-apparent-hallucinations/",
-        "summary": "KPMG 因报告中出现明显的 AI 幻觉内容而被迫撤回一份关于 AI 使用情况的研究报告。颇具讽刺意味的是，这份「关于 AI 的报告」本身因 AI 失真而作废。对于企业决策者而言，这是一个不容忽视的 AI 工作流质量控制警示。",
-        "titleEn": "KPMG Pulls AI Usage Report After Apparent Hallucinations Discovered",
-        "summaryEn": "KPMG retracted a report on AI usage after discovering it contained apparent AI-generated hallucinations — a report about AI, undone by AI errors. A stark reminder that even top-tier professional firms struggle with AI output quality control in high-stakes research contexts."
+        "summary": "四大之一 KPMG 发布了一份关于 AI 使用情况的报告，随后因内容存在明显 AI 幻觉而紧急撤回。这一乌龙事件极具讽刺意味——一份关于 AI 的报告，本身就被 AI 的幻觉问题拖累，凸显企业级 AI 落地中的质量管控盲区。",
+        "titleEn": "KPMG Pulls AI Usage Report Due to Apparent Hallucinations",
+        "summaryEn": "KPMG retracted a report on AI adoption after it was found to contain apparent AI hallucinations — ironically in a report about AI itself. A stark reminder that even top consulting firms lack reliable QA pipelines for AI-generated content."
       },
       {
-        "title": "Superpowers：跨 Claude Code/Cursor/Gemini CLI 的通用 Agent 技能框架",
+        "title": "亚马逊 CEO 曾向政府举报 Anthropic 模型安全问题",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/06/13/amazon-ceo-reportedly-raised-anthropic-model-concerns-before-government-crackdown/",
+        "summary": "报道称 Amazon CEO Andy Jassy 可能是向政府传递安全顾虑的源头，直接触发了 Anthropic 上周五对两款模型（Fable/Mythos）全球断供。这意味着 Amazon 作为 Anthropic 最大投资方，同时也在向监管施压，投资方与被投方关系趋于复杂。",
+        "titleEn": "Amazon CEO Reportedly Flagged Anthropic Model Concerns to Government",
+        "summaryEn": "Amazon CEO Andy Jassy may have triggered the government crackdown that caused Anthropic to cut off global access to Fable and Mythos. The revelation complicates Amazon's role as Anthropic's largest investor while also apparently pressuring it via regulators."
+      },
+      {
+        "title": "OpenAI 遭多州检察长联合调查：广告政策到健康数据全面审查",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/06/13/openai-faces-investigation-from-state-attorneys-general/",
+        "summary": "多位美国州检察长正对 OpenAI 展开调查，涵盖广告政策、健康数据处理等多个领域，具体涉及州份尚未披露。继转型营利实体后，OpenAI 正面临来自联邦与州两级的监管双重夹击，合规压力快速上升。",
+        "titleEn": "OpenAI Under Multi-State AG Investigation Covering Ads to Health Data",
+        "summaryEn": "Multiple US state attorneys general are investigating OpenAI across issues ranging from ad policies to health data handling. Following its for-profit conversion, OpenAI now faces mounting regulatory pressure from both federal and state levels simultaneously."
+      },
+      {
+        "title": "obra/superpowers：多 Agent 工具通用技能框架，支持 Claude Code/Cursor 等",
         "source": "GitHub Trending",
         "category": "Skills 生态",
         "url": "https://github.com/obra/superpowers",
-        "summary": "开源项目 Superpowers 提供一套完整的软件开发方法论，基于可组合的技能模块，兼容 Claude Code、Codex、Cursor、Gemini CLI、GitHub Copilot CLI 等所有主流 Coding Agent。相比针对单一平台的技能包，其跨平台通用性让团队无需重复配置。",
-        "titleEn": "Superpowers: Universal Agentic Skills Framework Across All Major Coding Agents",
-        "summaryEn": "Superpowers is an open-source agentic skills framework and software development methodology compatible with Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot CLI, and more. Its cross-platform composable skill system means teams can define best practices once and apply them everywhere."
+        "summary": "GitHub 新晋热门项目 Superpowers 是一套完整的 Agent 软件开发方法论，基于可组合技能包（Skills）构建，原生支持 Claude Code、Codex CLI、Cursor、GitHub Copilot 等主流 Agent 工具。与 addyosmani/agent-skills 互补，进一步完善 Skills 生态工具链。",
+        "titleEn": "obra/superpowers: Universal Agentic Skills Framework for Claude Code, Cursor & More",
+        "summaryEn": "Superpowers is a composable agentic skills framework and software development methodology natively supporting Claude Code, Codex CLI, Cursor, and GitHub Copilot. It complements agent-skills with a full opinionated methodology on top of composable skill primitives."
       },
       {
-        "title": "Loopcraft：Karpathy + Boris Cherny 提出 AI Agent「循环堆叠」架构方法论",
+        "title": "SpaceX 史上最大 IPO 首日收涨 19%，市值一度破 2 万亿",
+        "source": "Crunchbase News",
+        "category": "AI 工具动态",
+        "url": "https://news.crunchbase.com/public/spacex-record-breaking-ipo-spcx/",
+        "summary": "SpaceX 以 135 美元定价登陆纳斯达克，募资约 750 亿美元，创人类 IPO 史上融资规模之最。盘中市值一度突破 2 万亿美元。招股书中明确写入「太空算力」业务，标志着 SpaceX 正式将 AI 基础设施作为下一增长极叙事。",
+        "titleEn": "SpaceX Closes Up 19% After Largest IPO in History, Briefly Tops $2T",
+        "summaryEn": "SpaceX debuted on Nasdaq at $135, raising ~$75B in the largest IPO in history, briefly hitting a $2T market cap. With 'space computing' explicitly in its prospectus, SpaceX is now positioning AI infrastructure as a core growth narrative alongside Starlink."
+      },
+      {
+        "title": "Latent Space：Loopcraft——Karpathy 等人提出 Agent 循环堆叠方法论",
         "source": "Latent Space",
         "category": "AI 工具动态",
         "url": "https://www.latent.space/p/ainews-loopcraft-the-art-of-stacking",
-        "summary": "Latent Space 整理了 Peter Steinberger、Boris Cherny 和 Andrej Karpathy 提出的「循环堆叠」概念——将 AI Agent 设计为多层嵌套的执行循环。这一方法论对构建复杂 Agentic 系统的开发者极具参考价值，代表了业界顶尖工程师对 Agent 架构的最新思考。",
-        "titleEn": "Loopcraft: Karpathy & Cherny's Framework for Stacking Agent Loops",
-        "summaryEn": "Latent Space highlights the 'Loopcraft' concept from Karpathy, Boris Cherny, and Peter Steinberger — a methodology for designing AI agents as stacked, nested execution loops. A rare synthesis of top engineering thinking on agentic architecture that every serious agent builder should study."
-      },
-      {
-        "title": "Apple 开源 container 工具：Mac 上用轻量虚拟机跑 Linux 容器",
-        "source": "GitHub Trending",
-        "category": "AI 工具动态",
-        "url": "https://github.com/apple/container",
-        "summary": "Apple 开源了 container 工具，支持在 Mac（尤其 Apple Silicon）上通过轻量级虚拟机运行 Linux 容器，兼容 OCI 标准镜像。对于在 Mac 上本地运行 AI 模型、构建 Agent 沙盒环境的开发者来说，这是 Docker 之外的一个高性能原生替代方案。",
-        "titleEn": "Apple Open-Sources 'container': Linux Containers via Lightweight VMs on Mac",
-        "summaryEn": "Apple open-sourced 'container', a Swift-built tool for running OCI-compatible Linux containers as lightweight VMs on Mac, optimized for Apple Silicon. For developers building local AI model environments or agent sandboxes on Mac, this offers a native, high-performance alternative to Docker."
+        "summary": "Andrej Karpathy、Peter Steinberger 和 Boris Cherny 联合提出「Loopcraft」概念，核心思想是通过叠加多层循环（Loops）来构建更强大的 Agent 行为模式。这一来自实践一线的方法论总结，对构建复杂 Multi-Agent 系统的开发者有较高参考价值。",
+        "titleEn": "Loopcraft: Karpathy & Peers Propose a Loop-Stacking Methodology for Agents",
+        "summaryEn": "Andrej Karpathy, Peter Steinberger, and Boris Cherny jointly articulate 'Loopcraft' — a methodology for building more capable agents by deliberately stacking multiple loops. A practitioner-first framework with high signal for developers building complex multi-agent systems."
       }
     ],
-    "funding": [
-      {
-        "company": "SpaceX",
-        "url": "https://news.crunchbase.com/public/spacex-record-breaking-ipo-spcx/",
-        "round": "IPO",
-        "amount": "$750亿（募资）",
-        "valuation": "$2万亿（盘中峰值）",
-        "investors": "纳斯达克公开市场",
-        "pitch": "人类史上最大 IPO，首日涨 19%，星链与「太空算力」是真正的估值支柱，火箭业务反而只是入场券。"
-      },
-      {
-        "company": "Manus（AI Agent 创业公司）",
-        "url": "https://techcrunch.com/2026/06/13/meta-reportedly-moves-to-unwind-2b-manus-deal-after-beijings-demand/",
-        "round": "Acquisition（撤回）",
-        "amount": "$2B",
-        "valuation": "",
-        "investors": "Meta（收购方，已撤回）",
-        "pitch": "中国政府直接叫停的 AI 跨境并购案，20 亿美元交易被迫撤回，地缘政治正式成为 AI 并购最大风险变量。"
-      }
-    ],
-    "jasonSays": "今天最值得盯的是三件事同时发生：Meta/Manus 被北京叫停、Andy Jassy 疑似举报 Anthropic、OpenAI 遭多州调查——AI 行业的地缘政治与监管风暴已经不是「将来时」了，现在就是。",
-    "jasonSaysEn": "Three simultaneous signals today — Beijing killing Meta's Manus deal, Amazon's CEO reportedly triggering Anthropic's model shutdown, and OpenAI facing a multi-state probe — the geopolitical and regulatory storm around AI isn't coming, it's already here.",
+    "jasonSays": "今天最值得警惕的两件事：KPMG 用 AI 写 AI 报告结果被幻觉拖垮，以及 Amazon 一边重金押注 Anthropic 一边向监管举报——AI 时代的利益关系已经复杂到连盟友都不可信。",
+    "jasonSaysEn": "Two red flags today: KPMG embarrassed itself using AI to write an AI report, and Amazon reportedly ratted out its own $4B investee Anthropic to regulators — in the AI era, even your biggest backer can be your biggest liability.",
     "filename": "2026-06-14.md"
   },
   {
