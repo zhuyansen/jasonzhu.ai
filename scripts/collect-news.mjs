@@ -117,6 +117,28 @@ console.log(`🔌 API 端点：${activeClient.label} (${activeClient.baseURL})`)
  * 返回 { content, stop_reason, ... } 跟 SDK 一致的形状。
  */
 async function callClaudeRaw({ key, baseURL }, body, timeoutMs = 90000) {
+  // 本地兜底：某些网络下 Node/undici 连不上代理（UND_ERR_CONNECT_TIMEOUT），
+  // 但 curl 正常。设 CLAUDE_TRANSPORT=curl 走 curl（仅本地手动跑用，生产不设此变量）。
+  if (process.env.CLAUDE_TRANSPORT === "curl") {
+    const { execFileSync } = await import("node:child_process");
+    const out = execFileSync(
+      "curl",
+      [
+        "-sS", "--max-time", String(Math.ceil(timeoutMs / 1000)),
+        `${baseURL}/v1/messages`,
+        "-H", `x-api-key: ${key}`,
+        "-H", "anthropic-version: 2023-06-01",
+        "-H", "content-type: application/json",
+        "-d", "@-",
+      ],
+      { input: JSON.stringify(body), maxBuffer: 50 * 1024 * 1024, encoding: "utf-8" }
+    );
+    const parsed = JSON.parse(out);
+    if (parsed.type === "error") {
+      throw new Error(`API error: ${JSON.stringify(parsed.error).slice(0, 300)}`);
+    }
+    return parsed;
+  }
   const ctl = new AbortController();
   const t = setTimeout(() => ctl.abort(), timeoutMs);
   try {
