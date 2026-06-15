@@ -72,9 +72,9 @@ const RSS_FEEDS = [
   { url: "https://www.oneusefulthing.org/feed", name: "One Useful Thing" },
   { url: "https://chinai.substack.com/feed", name: "ChinAI" },
   { url: "https://mshibanami.github.io/GitHubTrendingRSS/daily/all.xml", name: "GitHub Trending" },
-  // 融资专源（用于"AI 融资速递"模块）
-  { url: "https://techcrunch.com/category/venture/feed/", name: "TC Venture" },
-  { url: "https://news.crunchbase.com/feed/", name: "Crunchbase News" },
+  // 融资专源（用于"AI 融资速递"模块）—— 融资多为周更，放宽时间窗到 7 天
+  { url: "https://techcrunch.com/category/venture/feed/", name: "TC Venture", days: 7 },
+  { url: "https://news.crunchbase.com/feed/", name: "Crunchbase News", days: 7 },
 ];
 
 const CATEGORIES = ["Skills 生态", "出海实战", "AI 工具动态", "变现案例", "AI 论文"];
@@ -161,7 +161,7 @@ async function callClaudeRaw({ key, baseURL }, body, timeoutMs = 90000) {
     clearTimeout(t);
   }
 }
-const parser = new Parser({ timeout: 10000 });
+const parser = new Parser({ timeout: 20000 });
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_SERVICE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
@@ -180,35 +180,46 @@ async function fetchAllFeeds() {
   const allItems = [];
 
   for (const feed of RSS_FEEDS) {
-    try {
-      const result = await parser.parseURL(feed.url);
-      const recent = (result.items || [])
-        .filter((item) => {
-          // 只取最近 2 天的内容
-          try {
-            const pubDate = item.pubDate ? new Date(item.pubDate) : new Date();
-            if (isNaN(pubDate.getTime())) return true; // 日期无效则保留
-            const twoDaysAgo = new Date();
-            twoDaysAgo.setDate(twoDaysAgo.getDate() - 2);
-            return pubDate >= twoDaysAgo;
-          } catch {
-            return true; // 解析失败则保留
-          }
-        })
-        .slice(0, 5)
-        .map((item) => ({
-          title: item.title || "",
-          link: item.link || "",
-          snippet: (item.contentSnippet || item.content || "").slice(0, 500),
-          source: feed.name,
-          pubDate: item.pubDate || "",
-        }));
-
-      allItems.push(...recent);
-      console.log(`  📡 ${feed.name}: ${recent.length} items`);
-    } catch (err) {
-      console.log(`  ⚠️  ${feed.name}: failed (${err.message})`);
+    const windowDays = feed.days || 2; // 融资源等周更内容可指定更长窗口
+    // 失败重试一次（rss-parser 偶发超时，融资源尤其不能漏）
+    let result = null;
+    for (let attempt = 1; attempt <= 2; attempt++) {
+      try {
+        result = await parser.parseURL(feed.url);
+        break;
+      } catch (err) {
+        if (attempt === 2) {
+          console.log(`  ⚠️  ${feed.name}: failed (${err.message})`);
+        } else {
+          await sleep(1500);
+        }
+      }
     }
+    if (!result) continue;
+
+    const recent = (result.items || [])
+      .filter((item) => {
+        try {
+          const pubDate = item.pubDate ? new Date(item.pubDate) : new Date();
+          if (isNaN(pubDate.getTime())) return true; // 日期无效则保留
+          const cutoff = new Date();
+          cutoff.setDate(cutoff.getDate() - windowDays);
+          return pubDate >= cutoff;
+        } catch {
+          return true; // 解析失败则保留
+        }
+      })
+      .slice(0, 5)
+      .map((item) => ({
+        title: item.title || "",
+        link: item.link || "",
+        snippet: (item.contentSnippet || item.content || "").slice(0, 500),
+        source: feed.name,
+        pubDate: item.pubDate || "",
+      }));
+
+    allItems.push(...recent);
+    console.log(`  📡 ${feed.name}: ${recent.length} items`);
   }
 
   // 额外采集：HuggingFace Daily Papers（无 RSS，走 JSON API）
