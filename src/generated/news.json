@@ -1,5 +1,107 @@
 [
   {
+    "slug": "2026-06-16",
+    "date": "2026-06-16",
+    "title": "AI 快讯 · 6月16日",
+    "items": [
+      {
+        "title": "Anthropic 模型禁令背后：政治报复而非技术安全",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/06/15/the-us-governments-anthropic-models-ban-was-never-about-an-ai-jailbreak/",
+        "summary": "TechCrunch 深度报道揭示：特朗普政府对 Anthropic Fable/Mythos 模型的出口管制，从一开始就与 AI 越狱无关，更可能是针对 AI 行业的政治报复或警告信号。这意味着 AI 模型随时可能成为政治博弈筹码，企业依赖单一模型供应商的风险被彻底暴露。",
+        "titleEn": "Anthropic Model Ban Was Political, Not Technical Safety Issue",
+        "summaryEn": "TechCrunch investigates the Trump administration's ban on Anthropic's Fable and Mythos models, concluding it was never about a jailbreak but potentially political retaliation. The implications are chilling: AI models can become pawns in geopolitical games, fundamentally exposing the risk of vendor lock-in for enterprise AI deployments."
+      },
+      {
+        "title": "数十名网安专家联名抗议：Anthropic 禁令正在削弱美国防御能力",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/06/15/cybersecurity-vets-protest-dangerous-us-government-ban-on-anthropics-most-powerful-models/",
+        "summary": "数十位网络安全专家联名致信白宫，要求解除对 Anthropic Fable 和 Mythos 模型的出口管制。他们的核心论点：禁令不仅没让美国更安全，反而让防御方失去了最强 AI 工具，而攻击方不受此限制。禁令的反效果已开始被行业广泛认知。",
+        "titleEn": "Cybersecurity Veterans Protest Anthropic Ban, Call It Self-Defeating",
+        "summaryEn": "Dozens of cybersecurity experts sent an open letter to the White House demanding removal of export controls on Anthropic's models, arguing the ban weakens defenders while doing nothing to stop attackers. The letter signals growing industry consensus that the policy is counterproductive and politically motivated."
+      },
+      {
+        "title": "Anthropic 禁令成企业 AI 策略转折点：多模型混用时代来临",
+        "source": "X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://x.com/bindureddy",
+        "summary": "AI 从业者 Bindu Reddy 因 Anthropic 禁令宣布组建 10 人开源工程团队，并提出企业 AI 自救五原则：不依赖单一供应商、拥抱开源、动态模型路由、避免 token 滥用、优化性价比。Kimi 2.7 代码 Agent 和 Fusion Agent Swarm（Opus+DeepSeek 组合）两个开源方案即将发布。",
+        "titleEn": "Anthropic Ban Triggers Enterprise Shift to Multi-Model AI Strategy",
+        "summaryEn": "AI practitioner Bindu Reddy announces a dedicated 10-person open-source AI team in response to the Anthropic ban, advocating for multi-provider strategies, open-source embrace, and dynamic model routing. Imminent open-source releases include a Kimi 2.7 coding agent loop and a hybrid Opus 4.8 + DeepSeek swarm architecture."
+      },
+      {
+        "title": "Salesforce 以 $36 亿收购 AI 客服平台 Fin，强化 Agentforce",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/06/15/salesforce-acquires-ai-customer-service-platform-fin-for-3-6b/",
+        "summary": "Salesforce 宣布以 36 亿美元收购 AI 客服平台 Fin，将其团队和技术并入 Agentforce 企业 Agent 构建平台。这是 Salesforce 在 AI Agent 赛道的重大押注，也预示着传统 CRM 巨头加速用收购方式补齐 AI 能力的趋势，独立 AI 客服 SaaS 的出海竞争格局将随之改变。",
+        "titleEn": "Salesforce Acquires AI Customer Service Platform Fin for $3.6B",
+        "summaryEn": "Salesforce acquires AI customer service platform Fin for $3.6 billion, integrating its tech into Agentforce. The deal signals that legacy CRM giants are aggressively acquiring AI-native companies rather than building in-house, reshaping the competitive landscape for independent AI customer service SaaS players globally."
+      },
+      {
+        "title": "Meta 在 Facebook 全面铺开 AI Mode：跨平台公开信息统一调用",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/06/15/metas-new-ai-mode-on-facebook-pulls-from-public-info-across-its-platforms/",
+        "summary": "Meta 宣布在 Facebook 推出 AI Mode，可跨平台调用其生态内的公开信息来回答用户问题，是 Meta 追赶 AI 竞争对手、提升用户粘性的最新动作。对于出海 SaaS 开发者而言，Meta 生态 AI 能力的快速补齐意味着营销和用户触达的玩法将加速演变。",
+        "titleEn": "Meta Rolls Out AI Mode on Facebook, Pulling Data Across All Platforms",
+        "summaryEn": "Meta launches AI Mode on Facebook, aggregating public information across its platforms to power conversational AI responses. The move is Meta's latest catch-up play in the AI race, aiming to keep users more engaged — and signals that social media AI integration will reshape how indie developers and SaaS products reach audiences."
+      },
+      {
+        "title": "SaaS 融资逻辑正在重写：AI 时代投资人只看结果，不看软件",
+        "source": "Crunchbase News",
+        "category": "出海实战",
+        "url": "https://news.crunchbase.com/saas/rewriting-pitch-playbook-venture-ai-startup-nikkhoo-navigate/",
+        "summary": "Crunchbase 特约作者、资深投资人 Ivan Nikkhoo 指出：AI 正在颠覆传统 SaaS 融资逻辑，投资人不再关心你卖什么软件，而是关注你能否拥有客户工作流、证明 AI 创造的可持续价值。出海独立开发者和 SaaS 创业者需要从「功能驱动」转向「结果驱动」重构 pitch 和定价策略。",
+        "titleEn": "SaaS Pitch Playbook Is Broken: Investors Now Want Outcomes, Not Software",
+        "summaryEn": "Venture investor Ivan Nikkhoo argues that AI has broken the traditional SaaS pitch playbook — investors no longer care about software features but want proof of workflow ownership, measurable outcomes, and usage- or outcome-based pricing. A must-read reframe for indie developers and SaaS founders building in the AI era."
+      },
+      {
+        "title": "HF 论文：AI 同行评审可被「纯文字包装」操控，无需任何隐藏指令",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2606.13044",
+        "summary": "研究发现：仅修改论文摘要、贡献描述、相关工作等「表达层」内容（不改方法、数据、结论），就能显著提升 AI 评审系统给出的评分。对开发者的警示：任何用 LLM 做内容质量评估的系统（论文、代码、提案审核）都可能被纯「包装优化」欺骗，需要引入对抗性测试。",
+        "titleEn": "AI Peer Review Can Be Gamed With Presentation Tweaks Alone, No Hidden Prompts",
+        "summaryEn": "Researchers show that AI peer review systems can be manipulated by tweaking only presentation-level text — abstract framing, related work, contribution language — with zero changes to methods or results. Critical warning for developers building LLM-based evaluation pipelines: your quality filters may be fooled by sophisticated copywriting alone."
+      },
+      {
+        "title": "HF 论文：大推理模型存在「评估盲点」——能解题却看不出错误推理",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2606.01462",
+        "summary": "研究用 VAIR 数据集测试发现：大型推理模型（LRMs）擅长解题，但在「答案正确但推理过程有明显错误」的题目上，无法识别推理漏洞。这与人类「评估强于生产」的认知规律相反。对 AI Agent 开发者意味着：不能用模型自我检查来替代真正的推理验证机制。",
+        "titleEn": "Large Reasoning Models Excel at Solving Problems But Fail to Spot Flawed Reasoning",
+        "summaryEn": "Using the VAIR dataset, researchers find that large reasoning models (LRMs) fail to detect flawed reasoning when the final answer is still correct — the opposite of human cognition where evaluation outpaces production. For Agent builders: self-verification loops using the same model are fundamentally unreliable and need external validation."
+      }
+    ],
+    "funding": [
+      {
+        "company": "Fin (AI customer service platform)",
+        "url": "https://techcrunch.com/2026/06/15/salesforce-acquires-ai-customer-service-platform-fin-for-3-6b/",
+        "round": "Acquisition",
+        "amount": "$3.6B",
+        "valuation": "",
+        "investors": "Salesforce",
+        "pitch": "AI 原生客服平台，被 Salesforce 纳入 Agentforce 生态；传统 CRM 巨头以高溢价收购 AI 客服能力，验证该赛道商业价值。"
+      },
+      {
+        "company": "Orbio",
+        "url": "https://techcrunch.com/2026/06/14/orbio-raises-21-million-to-automate-hiring-and-onboarding-for-frontline-workers/",
+        "round": "Series A",
+        "amount": "$21M",
+        "valuation": "",
+        "investors": "Dawn Capital",
+        "pitch": "用 AI 自动化一线工人的招聘与入职流程；瞄准传统 HR 科技未覆盖的蓝领市场，规模化空间大。"
+      }
+    ],
+    "jasonSays": "Anthropic 禁令揭示了 AI 行业最大的隐性风险：你以为在用技术工具，其实在押注地缘政治。多模型策略不再是「最佳实践」，而是生存必需——是时候给你的 AI 应用加上「断路器」了。",
+    "jasonSaysEn": "The Anthropic ban exposes the biggest hidden risk in AI: you think you're using a tech tool, but you're actually betting on geopolitics. Multi-model fallback isn't best practice anymore — it's survival infrastructure. Time to build circuit breakers into every AI-dependent product.",
+    "filename": "2026-06-16.md"
+  },
+  {
     "slug": "2026-06-15",
     "date": "2026-06-15",
     "title": "AI 快讯 · 6月15日",
