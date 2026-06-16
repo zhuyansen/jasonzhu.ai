@@ -1,5 +1,98 @@
 [
   {
+    "slug": "2026-06-17",
+    "date": "2026-06-17",
+    "title": "AI 快讯 · 6月17日",
+    "items": [
+      {
+        "title": "OpenAI 推出「部署模拟」：上线前预测模型真实行为",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/deployment-simulation",
+        "summary": "OpenAI 发布 Deployment Simulation 方法，用真实对话数据在模型上线前模拟部署场景，提前预测行为边界与安全风险。这意味着 AI 安全评估从「上线后发现问题」转向「发布前主动预判」，对企业采购和监管合规均有重要意义。",
+        "titleEn": "OpenAI's Deployment Simulation Predicts Model Behavior Pre-Launch",
+        "summaryEn": "OpenAI introduced Deployment Simulation, using real conversation data to predict AI model behavior before release. This shifts safety evaluation from reactive to proactive, letting teams catch risky behaviors pre-launch — a meaningful step for enterprise trust and regulatory compliance."
+      },
+      {
+        "title": "Android 17 正式发布，Gemini 全面深入 Pixel 设备",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/06/16/android-17-launches-with-new-multitasking-tools-as-google-expands-gemini-features/",
+        "summary": "Google 发布 Android 17 与 Wear OS 7，同步推送 Pixel Drop，将最新 Gemini 模型下放至 Pixel 设备。此次更新涵盖多任务工具、家长控制和安全增强，Gemini 正式成为 Android 系统级 AI 基础设施，而非插件。",
+        "titleEn": "Android 17 Launches with Expanded Gemini AI Integration",
+        "summaryEn": "Google launched Android 17 and Wear OS 7 alongside a Pixel Drop that embeds its latest Gemini models system-wide. Multitasking, parental controls, and security tools are upgraded, marking Gemini's transition from an add-on to a core OS component."
+      },
+      {
+        "title": "SpaceX 收购 AI 编程工具 Cursor，估值 $600 亿",
+        "source": "Crunchbase News",
+        "category": "AI 工具动态",
+        "url": "https://news.crunchbase.com/ma/spcx-acquires-ai-coding-cursor-largest-startup-ma-deal-2026/",
+        "summary": "SpaceX 以 600 亿美元收购 AI 编程工具 Cursor，成为今年最大的初创公司并购案。此举让 SpaceX 直接切入企业软件开发市场——AI 辅助编程已让大企业大幅减少对人工工程师的依赖，Cursor 的用户基础和技术壁垒因此成为战略资产。",
+        "titleEn": "SpaceX Acquires AI Coding Tool Cursor for $60B",
+        "summaryEn": "SpaceX acquired AI coding tool Cursor for $60B in the year's largest startup M&A deal, gaining a foothold in enterprise software development. AI-assisted coding has already triggered significant reductions in human engineering headcount, making Cursor's user base a strategic asset."
+      },
+      {
+        "title": "60% 美国消费者反感品牌营销中出现「AI」字样",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/06/16/sixty-percent-of-u-s-consumers-say-ai-in-brand-messaging-is-a-turnoff-survey-finds/",
+        "summary": "WordPress VIP 调查显示，60% 的美国消费者认为品牌宣传中强调「AI」会产生反效果，对 AI 生成内容持怀疑态度——即使企业正将 AI 搜索视为重要流量入口。对出海独立开发者和 SaaS 团队而言，这是个值得警惕的产品营销信号。",
+        "titleEn": "60% of US Consumers Find 'AI' in Brand Messaging a Turnoff",
+        "summaryEn": "A WordPress VIP survey found 60% of US consumers are turned off by 'AI' in brand messaging, remaining skeptical of AI-generated content even as companies increasingly rely on AI search for traffic. A key warning for SaaS marketers and indie devs targeting US audiences."
+      },
+      {
+        "title": "GLM 5.2 开源发布：编程与 Agent 循环能力媲美闭源顶模",
+        "source": "X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://x.com/bindureddy",
+        "summary": "智谱 GLM 5.2 正式开放权重，在编程任务和 Agent 循环场景表现突出，目前与 Kimi 2.7 展开激烈竞争。对于担忧闭源模型随时被封禁的开发者来说，高质量开源模型的持续涌现正在降低「被卡脖子」的风险，多模型切换策略变得更可行。",
+        "titleEn": "GLM 5.2 Open Weights Released, Rivals Top Models in Coding & Agentic Tasks",
+        "summaryEn": "Zhipu's GLM 5.2 released as open weights, excelling in coding and agentic loops while competing head-to-head with Kimi 2.7. For developers rattled by closed-model ban risks, a steady stream of capable open-source alternatives is making multi-model hedging strategies increasingly viable."
+      },
+      {
+        "title": "AI 融资热潮不是全球现象：美国独揽 80% 全球 AI 融资",
+        "source": "Crunchbase News",
+        "category": "AI 工具动态",
+        "url": "https://news.crunchbase.com/venture/us-ai-startup-funding-boom-data/",
+        "summary": "Crunchbase 数据显示，2026 年迄今美国 AI 创业公司拿走了全球约 80% 的种子至成长期融资，而 AI 热潮前美国占比通常不超过一半。这一极端集中现象意味着非美国 AI 创业者面临更激烈的资金竞争，出海融资路径选择愈发关键。",
+        "titleEn": "US Captures Nearly 80% of Global AI Startup Funding in 2026",
+        "summaryEn": "Crunchbase data shows US AI startups captured nearly 80% of global seed-to-growth funding in 2026, up sharply from under 50% pre-AI boom. This extreme concentration signals tougher capital competition for non-US founders and raises the stakes for international fundraising strategy."
+      },
+      {
+        "title": "HF 论文：时序差异驱动视觉表征学习，无需人工标注也不靠强归纳假设",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2606.15956",
+        "summary": "新研究提出用视频帧间「时序差异」作为自监督信号学习视觉表征，无需人工标注、无需强归纳假设。对开发者的意义：这条路线可能让视觉模型预训练更通用、更省标注成本，尤其适合数据稀缺的垂直场景（医疗、工业等）自建视觉基础模型。",
+        "titleEn": "Visual Representation Learning via Temporal Differences Drops Strong Inductive Biases",
+        "summaryEn": "This paper proposes using temporal differences between video frames as a self-supervised signal for visual representation learning — no human labels, no strong architectural assumptions needed. Developers building vision models for data-scarce verticals (medical, industrial) could benefit from cheaper, more generalizable pretraining pipelines."
+      },
+      {
+        "title": "HF 论文：探索性 RL 让 LLM 自主发现推理原语，无需人工指定训练方向",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2606.17024",
+        "summary": "ExpRL 提出在 LLM 中训练阶段引入探索性强化学习，让模型自主发现分解、验证、自我纠错等推理原语，而无需人工手动标注「该学什么」。对开发者的意义：这可能大幅降低构建高质量推理模型的数据工程成本，是 Post-Training 流程的重要简化方向。",
+        "titleEn": "ExpRL: LLMs Self-Discover Reasoning Primitives via Exploratory Reinforcement Learning",
+        "summaryEn": "ExpRL introduces exploratory RL during LLM mid-training, letting models autonomously discover reasoning primitives like decomposition and self-correction — without manually curated training traces. This could dramatically cut data engineering costs for building strong reasoning models, a notable simplification of post-training pipelines."
+      }
+    ],
+    "funding": [
+      {
+        "company": "SpaceX (Cursor Acquisition)",
+        "url": "https://news.crunchbase.com/ma/spcx-acquires-ai-coding-cursor-largest-startup-ma-deal-2026/",
+        "round": "Acquisition",
+        "amount": "$60B",
+        "valuation": "",
+        "investors": "SpaceX",
+        "pitch": "AI 编程工具 Cursor 被 SpaceX 以 600 亿美元收购，成年度最大并购案，标志 AI 编程工具正式进入超级公司战略版图。"
+      }
+    ],
+    "jasonSays": "SpaceX 600 亿收购 Cursor 是今天最炸裂的信号——AI 编程工具已从「效率插件」升级为战略基础设施，下一个被吃掉的会是谁？Windsurf？Devin？游戏才刚开始。",
+    "jasonSaysEn": "SpaceX's $60B Cursor acquisition is the loudest signal yet: AI coding tools have graduated from productivity plugins to strategic infrastructure — and the consolidation game has only just begun.",
+    "filename": "2026-06-17.md"
+  },
+  {
     "slug": "2026-06-16",
     "date": "2026-06-16",
     "title": "AI 快讯 · 6月16日",
