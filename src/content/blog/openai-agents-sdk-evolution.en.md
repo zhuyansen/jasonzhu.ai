@@ -1,0 +1,75 @@
+---
+title: "OpenAI Agents SDK Major Upgrade: Harness and Sandbox Now Built Into the SDK — The Opposite Approach from Anthropic"
+excerpt: "OpenAI has shipped a major upgrade to its Agents SDK, with the headline changes being harness and sandbox support built directly into the SDK. Anthropic's Claude Agent SDK takes exactly the opposite approach — one gives you everything pre-assembled, the other hands you a toolbox."
+---
+
+OpenAI shipped a major upgrade to its Agents SDK on April 15, 2026. The headline changes are harness and sandbox support built directly into the SDK. Previously, building an agent meant wiring up the agent loop yourself, maintaining your own tool integrations, and handling retries and state management on your own. The SDK now takes care of all of that. Anthropic's Claude Agent SDK takes exactly the opposite approach.
+
+## From Rolling Your Own to Full SDK-Managed Workflows
+
+OpenAI's official comparison diagram makes the core value proposition clear. On the left is the traditional approach: developers have to build their own Agent Loop (receive request → route to model → invoke tools → update context → generate response), integrate a laundry list of tools themselves (Web Search, File Search, MCP, Code Interpreter, Skills, Remote MCP, and more), and write all the supporting components — Message Handling, Model Interface, Tool Manager, Context Management — from scratch.
+
+![Agent Loop Comparison: Traditional vs. SDK-Managed](public/blog/openai-agents-sdk-evolution/section1-agent-loop.png)
+
+On the right is what you get with the Agents SDK. The Agent Loop is handled by the SDK, Built-in Tools are all connected through a single SDK integration, and Key Components come pre-built. Developers can focus purely on business logic. OpenAI includes a warning banner in the diagram — "Retries, auth, state, and edge cases are on you" — which cuts right to the heart of what makes the traditional approach painful.
+
+Even more notable: the SDK supports 100+ non-OpenAI models. Any model that exposes a Chat Completions-compatible endpoint can be plugged in. This isn't a closed toolchain that locks you into OpenAI's own models.
+
+## A Fundamental Rearchitecting of the Harness
+
+The most technically significant change in this upgrade is the separation of harness and compute. OpenAI's before/after diagram makes the architectural shift immediately obvious.
+
+![Harness Architecture Evolution: Coupled vs. Separated](public/blog/openai-agents-sdk-evolution/section2-harness.png)
+
+The old design — "Harness in compute" — worked like this: a Server/Agent Harness would launch the coding agent as a tool and throw it directly into a Sandbox for execution. The Harness, Agent Loop, and MCPs/Tools were all crammed inside the Sandbox. Filesystem and external data access had to pass through a Gateway Service to prevent the coding sandbox from making untrusted HTTP requests. The fundamental problem with this design: harness and compute were tightly coupled, so if the sandbox crashed, the entire agent state was lost.
+
+The new design — "Harness separate from compute" — moves the HARNESS (including the AGENT LOOP and MCPS/TOOLS) outside the Sandbox entirely. It can run anywhere: Temporal, AWS, Azure. The Sandbox becomes a pure execution environment, with integrations for OpenAI, E2B, Daytona, Cloudflare, Vercel, Modal, Runloop, and Blaxel. The Filesystem supports local mounts or cloud storage like AWS S3, Azure Blob Storage, and Google Cloud Storage.
+
+The benefits of this separation are significant. Secrets are managed by the Server and never enter the model-generated execution environment, giving you a much cleaner security boundary. The Server can access databases and the web from a trusted environment, while the coding sandbox focuses purely on computation — running shell commands, grepping files, writing code. And critically, if the Harness crashes and restarts, it doesn't affect the execution state inside the Sandbox. Built-in snapshotting and rehydration handle state recovery for long-running tasks.
+
+## Sandbox Native Integrations with 7 Providers
+
+Rather than building its own sandbox execution layer, OpenAI took a different path: integrating seven cloud providers directly and letting developers choose. Blaxel, Cloudflare, Daytona, E2B, Modal, Runloop, and Vercel are all in the first wave of integrations. Developers can keep using their existing sandbox infrastructure or adopt one of these managed options.
+
+The Manifest abstraction introduced alongside this is a key design decision. It makes sandbox environments portable — developers declare which local files to mount, output directories, and cloud storage connections, then switch sandbox providers without changing any code. This kind of abstraction layer matters a lot for enterprises, where compliance requirements and cost considerations mean regularly moving workloads between clouds.
+
+![Sandbox Ecosystem: 7 Provider Integrations](public/blog/openai-agents-sdk-evolution/section3-sandbox.png)
+
+## Subagents and Code Mode Coming Soon
+
+OpenAI also previewed two upcoming capabilities: subagents and code mode, both with Python and TypeScript support.
+
+Subagents let an orchestrating agent spawn specialized child agents, enabling modular, parallelizable task decomposition. The traditional approach handles everything within a single agent; subagents let you split responsibilities by expertise — one child agent dedicated to web scraping, another to data cleaning, with a parent agent coordinating the whole thing.
+
+Code Mode adds professional-grade code execution and generation capabilities to agents, letting developers build coding agents directly within the SDK. This is essentially bringing Codex-level product capabilities down to the SDK layer.
+
+![Upcoming Capabilities: Subagents and Code Mode](public/blog/openai-agents-sdk-evolution/section4-future.png)
+
+## Tool Integration: MCP + Skills + AGENTS.md + apply_patch
+
+The new harness brings a unified approach to tool integration. Model Context Protocol (MCP) handles the standardized protocol for tool calls — this is the open standard Anthropic introduced, and OpenAI has now fully adopted it. Skills handle progressive disclosure, so agents don't need to load every tool upfront but can call them on demand.
+
+AGENTS.md serves as the vehicle for custom instructions, similar in concept to CLAUDE.md. Developers write project-specific rules into this file, and the agent loads them automatically at startup. The `apply_patch` tool handles file modifications; the shell tool handles code execution.
+
+This combination is a direct counterpart to Claude Code's toolchain. Anthropic has CLAUDE.md + Skills + Tools; OpenAI has AGENTS.md + Skills + apply_patch. The two companies are rapidly converging on similar design philosophies for agent toolchains.
+
+![Tool Integration System](public/blog/openai-agents-sdk-evolution/section5-tools.png)
+
+## The Opposite Philosophy from Anthropic
+
+This upgrade takes a fundamentally different approach from the Claude Agent SDK that Anthropic released in October. Anthropic extracted the core capabilities from Claude Code into an SDK and let developers assemble their own agent loop — the philosophy is "here's a toolbox, go build." OpenAI has done the opposite: the agent loop is built into the SDK, and developers configure rather than implement — the philosophy is "the SDK builds it for you, just use it."
+
+![OpenAI vs. Anthropic: A Philosophical Comparison](public/blog/openai-agents-sdk-evolution/section6-vs-anthropic.png)
+
+Neither approach is inherently better — they suit different scenarios:
+
+- **Developers who want deep customization and full control over agent execution** will find Anthropic's approach a better fit.
+- **Enterprise teams who want to move fast and not worry about the underlying architecture** will find OpenAI's new SDK much more convenient.
+
+The Python SDK is available now; TypeScript support is coming soon. Pricing follows standard API token and tool usage billing — there are no additional harness fees.
+
+Original post: [The Next Evolution of the Agents SDK](https://openai.com/index/the-next-evolution-of-the-agents-sdk/)
+
+## FAQ
+
+No FAQ section was present in the original article.

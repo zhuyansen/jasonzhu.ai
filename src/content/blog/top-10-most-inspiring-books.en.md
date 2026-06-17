@@ -1,0 +1,32 @@
+---
+title: The Ten Most Inspiring Books I've Ever Read
+excerpt: Last year I read 77 books. Here are the ten that inspired me most — covering life exploration, entrepreneurship, learning strategies, and writing craft.
+---
+
+Last year I read 77 books. This year I've barely cracked one open — time to fix that.
+
+The ten most inspiring books I've read:
+
+1️⃣ **How to Be an Explorer of the World** — A hands-on guide to noticing the beauty around you, learning to truly appreciate it, and ultimately drawing deeper meaning from it.
+
+2️⃣ **这世界既残酷又文荣** — First, gain your independence so you have real choices. Then use leverage and a broader perspective to pick the right path. Drive execution with results-oriented thinking, go all-in to ride out the volatility, and finally use wealth to redeem your values from compromise.
+
+3️⃣ **摆摊式创业** — A cure for the gap between big ambitions and small actions.
+
+4️⃣ **费曼学习法** — Use output to force better input.
+
+5️⃣ **饭否** — An 880,000-character anthology from Fanfou.
+
+6️⃣ **Sleight of Mouth** — The art of silver-tongued persuasion and the power of conversational belief change.
+
+7️⃣ **$100M Offers** — How to design offers so compelling people can't say no. Teaches you how to actually sell.
+
+8️⃣ **$100M Leads** — A great product isn't enough — you need to be seen. This one shows you how to find your audience.
+
+9️⃣ **$100M Money Models** — The key to keeping your business engine running long-term.
+
+🔟 **The Game of Online Writing** — How to write for the internet.
+
+---
+
+**Author**: [Jason Zhu](https://x.com/GoSailGlobal) | [Original Post](https://x.com/GoSailGlobal/status/2042461003825467863)
