@@ -1,0 +1,130 @@
+---
+title: >-
+  Skill, Harness, Memory, Safety: After 60 Articles and 20 Projects, We've
+  Mapped the Complete Puzzle of AI Agents
+excerpt: >-
+  Over the past three months, we wrote 60 articles on AI Agents covering four
+  directions: the Skill system, Harness governance, memory architecture, and
+  safety defense. This article brings all four pillars together to draw one
+  complete picture.
+---
+
+Over the past three months we have written nearly 60 articles about AI Agents, covering four directions: the Skill system, Harness governance, memory architecture, and security defense. Looking back, these four directions are really all solving the same problem: how to take an Agent from "usable" to "reliable." This article brings the four pillars together, drawing a complete picture with 20+ open-source projects and our hands-on experience.
+
+---
+
+## Four Pillars, One Goal
+
+The essential difference between an AI Agent and an ordinary LLM call is that an Agent has execution capability. It can read and write files, run shell commands, call APIs, and browse the web. This means it can do an order of magnitude more things—but at the same time, the consequences of mistakes are also an order of magnitude more serious.
+
+Making an Agent work reliably requires all four pillars to hold at once.
+
+**The Skill system** answers "what can the Agent do?" It packages domain knowledge, workflows, and best practices into reusable modules, turning the Agent from a generalist into a specialist. Anthropic uses hundreds of Skills internally; Uber manages 500+ internally.
+
+**Harness governance** answers "how does the Agent do it?" It defines the Agent's workflows, collaboration patterns, and quality gates. From Prompt Engineering to Context Engineering to Harness Engineering, the engineer's role shifts from writing code to designing the Agent's operating environment.
+
+**The memory system** answers "what does the Agent remember?" It accumulates experience across sessions and avoids repeating mistakes. From simple CLAUDE.md files to vector databases to knowledge graphs, 12+ open-source projects are competing for the best solution.
+
+**Security defense** answers "what does the Agent not do?" The MCP ecosystem produced 30+ CVEs in 60 days, and one-fifth of the packages in the OpenClaw store are malicious software. Execution permissions create an attack surface, and defenses must keep pace.
+
+![Four Pillars](public/blog/agent-four-pillars/section1-four-pillars.png)
+
+---
+
+## The Skill System: From Anthropic's Internal Practice to a Community Explosion
+
+In articles 13 through 25 we closely tracked the evolution of the Skill ecosystem. Anthropic officially released a 6-lesson tutorial, summarized 9 of the most effective Skill types, and the core idea is "stop building Agents—building Skills is enough."
+
+The community responded very quickly. The most influential Skill frameworks currently each have their own focus.
+
+**Addy Osmani's <a href="https://github.com/addyosmani/agent-skills">agent-skills</a>** (8.8K stars) takes a standardization approach. 19 core Skills cover the full development lifecycle from /spec to /ship, with 7 slash commands and 3 expert Agent personas (code reviewer, test engineer, security auditor). The most interesting design is the "anti-rationalization table," which lists the excuses Agents commonly use to skip critical steps along with the rebuttals—preventing the Agent from cutting corners.
+
+**obra's <a href="https://github.com/obra/superpowers">superpowers</a>** (140K stars) is currently the highest-starred Skill framework. It enforces a TDD red-green-refactor cycle, sub-Agent-driven development, spinning up a brand-new Agent for each task followed by two rounds of code review. Git worktree isolation ensures that parallel development doesn't cause conflicts. Skills here function more like an enforced methodology than optional suggestions.
+
+**Garry Tan's <a href="https://github.com/garrytan/gstack">gstack</a>** (67K stars) turns Claude Code into a virtual engineering team of 23 people. CEO, designer, engineer, QA lead, release manager, and chief security officer each play their role, with a Sprint pipeline running from Think to Ship to Reflect. The /learn command manages cross-session pattern accumulation, and /cso performs OWASP/STRIDE security audits.
+
+**Every's <a href="https://github.com/EveryInc/compound-engineering-plugin">compound-engineering</a>** (13.6K stars) emphasizes the compounding effect: every engineering iteration should make the next one easier. It provides 6 /ce: commands with an 80% planning-and-review, 20% execution split. The most distinctive feature is the /ce:compound command, which extracts lessons learned at the end of each iteration and writes them to a knowledge base, so that future work automatically benefits from past accumulation.
+
+The common trend across these frameworks is that the scope of a Skill is expanding. The earliest Skills were nothing more than prompt templates; today's Skills simultaneously carry workflow definitions (the role of Harness), experience accumulation (the role of memory), and security audits (the role of defense). In practice, the four pillars are converging.
+
+![Skill Ecosystem](public/blog/agent-four-pillars/section2-skills.png)
+
+---
+
+## Harness Governance: From Conceptual Debate to Six Architectural Patterns
+
+We began tracking the Harness Engineering concept at issue 34. Anthropic and OpenAI published their respective practice articles within almost the same week, and the entire community exploded.
+
+**Three paradigm shifts** are now consensus. The 2023–2024 era of Prompt Engineering focused on wording and structure. The 2025 era of Context Engineering focused on information orchestration, treating the entire context window as an engineered artifact. The 2026 era of Harness Engineering focuses on designing the runtime environment for agents—including collaborative architecture, evaluation feedback loops, memory systems, and governance mechanisms.
+
+revfactory's Harness plugin (issue 42) turned the concept into a tool, with six built-in agent collaboration patterns: Pipeline, Fan-out/Fan-in, Expert Pool, Producer-Reviewer, Supervisor, and Hierarchical Delegation. A/B test data shows an average quality improvement of 60%, with larger gains for more complex tasks.
+
+Dex Horthy's RPI methodology (issue 48) offers another perspective. His core insight is that the context window has a "smart zone" and a "dumb zone"—quality begins to degrade at around 40% utilization. The essence of the Research-Plan-Implement three-step approach is continuously compressing the context to stay in the smart zone at all times.
+
+Mitchell Hashimoto's six-phase retrospective (issue 56) illustrates a genuine path from skepticism to full adoption. His fifth phase, "Engineer the Harness," perfectly validates the direction the entire community is heading.
+
+<a href="https://github.com/zstmfhy/Claude-code">Claude Code's internal architecture</a> (190 stars) demonstrates the reference implementation: 50+ commands, a JSON Schema–validated tool system, a complete MCP protocol implementation, and an agent system supporting parallel execution and context isolation. All external frameworks are built on top of this foundation.
+
+![Harness治理](public/blog/agent-four-pillars/section3-harness.png)
+
+---
+
+## Memory Systems: Four Technical Approaches Across 12 Projects
+
+We conducted a comprehensive competitive analysis of memory systems in issue 58. The core problem is straightforward: LLMs are stateless—close a session and everything is forgotten.
+
+Each of the four technical approaches involves tradeoffs. Pure file storage (CLAUDE.md) has zero dependencies but does not support semantic search. Vector databases + RAG can handle scale but measure "similarity" rather than "correctness." Knowledge graphs offer the highest precision but also the highest construction cost. Hybrid retrieval (BM25 + vector + knowledge graph) performs best; academic research shows it can achieve 92% precision.
+
+The newly added **<a href="https://github.com/milla-jovovich/mempalace">mempalace</a>** (21,600 stars) is currently the highest-scoring solution on benchmarks, achieving an R@5 of 96.6% on LongMemEval. Its design draws inspiration from the ancient Greek method of loci: Wings correspond to people or projects, Rooms to topics, Halls to memory types, Closets to summaries, and Drawers to raw files. The most critical design decision is **verbatim storage of original text with no LLM summarization**, using ChromaDB for vector search and SQLite for the knowledge graph. Nineteen MCP tool interfaces allow it to connect to any compatible agent.
+
+**agentmemory** (592 stars) implements the most complete retrieval engine to date—three-way fusion with contradiction detection and cascading invalidation. **claude-memory-compiler** (251 stars) follows Karpathy's knowledge compilation approach, distilling conversations into wiki-style knowledge articles. **agent-memory** (13 stars) is a pure bash + jq knowledge graph implementation with zero dependencies but full contradiction detection.
+
+compound-engineering's `/ce:compound` command offers an interesting perspective: memory doesn't need to be a standalone piece of infrastructure—it can be embedded directly into the workflow. Lessons learned are automatically extracted at the end of each iteration and automatically loaded at the start of the next. gstack's `/learn` command does something similar, accumulating patterns across sessions.
+
+![记忆系统](public/blog/agent-four-pillars/section4-memory.png)
+
+---
+
+## Security Defense: From 30 CVEs to Three Layers of Defense in Depth
+
+We conducted an in-depth investigation of agent security in issue 59. The data is alarming: 30+ CVEs in the MCP ecosystem in 60 days, 43% of MCP servers with command injection vulnerabilities, 1,184 malicious packages in the OpenClaw marketplace, two high-severity CVEs in Claude Code itself, and 87% of AI-generated PRs introducing security vulnerabilities.
+
+**<a href="https://github.com/SafeAI-Lab-X/ClawKeeper">ClawKeeper</a>** (464 stars) proposes a three-layer defense in depth: the Skill layer uses Markdown policy injection to tell agents "what not to do"; the Plugin layer intercepts dangerous operations at runtime (11 core modules covering 10 threat domains); and the Watcher layer acts as an independent daemon monitoring all behavior with the ability to enforce human confirmation. The paper achieved state-of-the-art defensive performance on 140 adversarial test instances.
+
+**Invariant MCP-Scan** (1,100+ stars, acquired by Snyk) performs static scanning to detect prompt injection and rug-pull attacks in tool descriptions. **AgentSeal** has produced security scores for 8,000+ MCP servers, uncovering 4,513 deep-level issues. **Docker Sandboxes** use MicroVMs to isolate agents at the infrastructure level. **MCP Guardian** uses SHA-256 hashing to pin tool definitions and prevent tampering.
+
+The challenge with security is that it exists in tension with the other three pillars. More skills mean a larger attack surface; memory systems may store sensitive information; and the tool-calling permissions of the Harness are themselves a security risk. gstack's approach is worth noting: the `/guard` command provides security guardrails to prevent dangerous command execution, and the `/cso` command performs OWASP/STRIDE threat modeling, embedding security into the sprint pipeline rather than addressing it as an afterthought.
+
+![安全防御](public/blog/agent-four-pillars/section5-security.png)
+
+---
+
+## Four-Shrimp Formation in Practice: How to Integrate All Four Pillars
+
+No matter how elegant a theoretical framework is, execution is what counts. "Four-Shrimp Formation Agent Ops" (post #37) offers an operational example of bringing all four pillars together.
+
+**Architecture layer**: The crayfish coordinator holds `board.json` as the routing and state-progression task board, while the three execution-layer Agents — CodeForce, PenEdge, and Strategist — use `SOUL.md` to constrain their role boundaries (a fusion of Skill + Harness).
+
+**Memory layer**: A three-tier memory tower. L0 OpenViking handles automatic recall for the current session and session archiving; L1 MemOS handles everyday lightweight collaboration memory; L2 `MEMORY.md` / Daily Notes serves as a cold-start fallback. No memory loss on restart.
+
+**Governance layer**: OpenHarness in practice. The YAML Constitution hard-constraints define `deny_patterns`; every `exec` instruction must pass validation through `lobster_ops.py` before dispatch; high-risk operations are forced to trigger an `ask` for user approval. Task flow uses `board.json` as the single source of truth.
+
+**Security layer**: Runtime defense via Pre-exec Validation plus log compression with Microcompact. All operations are auditable; token consumption is tightly controlled.
+
+The core philosophy of this system is to abandon any illusion of Agent self-discipline and instead enforce control through explicit governance mechanisms. At its heart, this is the same idea as ClawKeeper's three-layer defense-in-depth, gstack's Sprint pipeline, and superpowers' mandatory TDD: **an Agent's reliability comes from external constraints, not internal self-awareness.**
+
+![Four-Shrimp Formation Integration](public/blog/agent-four-pillars/section6-four-shrimp.png)
+
+---
+
+## Convergence Trend: The Four Pillars Are Becoming One
+
+Looking back across these 20+ projects, one clear trend stands out: the boundaries between the four pillars are blurring.
+
+superpowers' Skill enforces TDD methodology (Skill taking on Harness responsibilities) and automatically saves design documents and plans (Skill taking on memory responsibilities). gstack's `/cso` security audit is a Skill, `/guard` safety guardrails are a Harness mechanism, and `/learn` experience accumulation is a memory function — all three seamlessly integrated into the same Sprint pipeline. compound-engineering's `/ce:compound` is simultaneously memory (extracting experience), Harness (enforcing review), and Skill (reusable module).
+
+The takeaway for developers from this convergence is: you don't need to build four separate, independent systems. A well-designed Skill framework can simultaneously carry workflow constraints, experience accumulation, and security checks. The validation gates in agent-skills, the mandatory pipeline in superpowers, and the seven-step Sprint in gstack all follow this same thinking.
+
+Future Agent engineering tools will most likely converge into a unified framework: use Skill to define capability boundaries, use Harness to define execution flow, use memory to accumulate domain experience, and use security mechanisms as a safety net. The day the four pillars become one is the day Agents become truly reliable.
+
+![Convergence Trend](public/blog/agent-four-pillars/section7-convergence.png)
