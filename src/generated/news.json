@@ -1,5 +1,87 @@
 [
   {
+    "slug": "2026-06-18",
+    "date": "2026-06-18",
+    "title": "AI 快讯 · 6月18日",
+    "items": [
+      {
+        "title": "Claude Code 助力 Ångstrom 训练出击败 Meta 顶模的新模型",
+        "source": "Hacker News / AnyCloud",
+        "category": "Skills 生态",
+        "url": "https://anycloud.sh/blog/angstrom-case-study/",
+        "summary": "Ångstrom 团队使用 Claude Code 完成了完整的模型训练流程，最终在基准测试中超越了 Meta 的 UMA-OMC 模型。这是 Claude Code 作为科研工程工具的真实落地案例，证明 AI 编程助手正在从「写代码」升级到「跑实验、打榜」的深度科研场景。",
+        "titleEn": "Angstrom Used Claude Code to Beat Meta's UMA-OMC Model",
+        "summaryEn": "Ångstrom used Claude Code end-to-end to train a model that outperformed Meta's UMA-OMC on benchmarks. This real-world case study shows Claude Code evolving beyond code writing into deep research engineering — running experiments and beating frontier models."
+      },
+      {
+        "title": "G7 峰会各国领导人的隐忧：想用美国 AI，但不想被美国随时断供",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/06/17/world-leaders-want-american-ai-they-just-dont-want-america-to-be-able-to-turn-it-off/",
+        "summary": "马克龙与莫迪在 G7 峰会上公开表达对美国 AI「随时断供」的担忧，而 Anthropic 封禁事件已将这种恐惧变为现实。这不仅是地缘政治问题，更将直接推动各国政府加速布局本地化与开源模型，重塑全球 AI 供应链格局。",
+        "titleEn": "World Leaders Want US AI But Fear the Off Switch",
+        "summaryEn": "At the G7 summit, Macron and Modi raised alarms that the U.S. could cut off AI access overnight — fears the Anthropic blackout just validated. This signals a global push toward local deployment and open-source AI as sovereign hedge against US platform risk."
+      },
+      {
+        "title": "OpenAI × Molecule.one：GPT-5.4 驱动近全自主 AI 化学家突破药物合成难题",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/ai-chemist-improves-reaction",
+        "summary": "OpenAI 与 Molecule.one 合作展示了由 GPT-5.4 驱动的「近全自主 AI 化学家」，成功改进了一个医药化学中关键但极具挑战性的合成反应。这是 AI Agent 在湿实验室科学中自主执行高专业度任务的重要里程碑，预示 AI 加速药物研发的时代正在到来。",
+        "titleEn": "OpenAI's Near-Autonomous AI Chemist Improves Drug Synthesis Reaction",
+        "summaryEn": "OpenAI and Molecule.one demonstrated a near-autonomous AI chemist powered by GPT-5.4 that improved a challenging medicinal chemistry reaction. A major milestone for AI agents operating autonomously in wet-lab science, signaling AI-accelerated drug discovery is becoming real."
+      },
+      {
+        "title": "企业 AI 预算烧穿了——「Token 极限主义」正在遭遇现实反噬",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/video/neas-tiffany-luck-says-enterprises-are-still-figuring-out-their-ai-roi/",
+        "summary": "Uber 数月内烧完全年 AI 预算，Meta 关闭内部 AI 使用排行榜，部分企业削减 Claude 席位——曾席卷硅谷的「Token 极限主义」正在遭遇 ROI 拷问。投资方 NEA 指出，企业还没搞清楚 AI 真正带来了多少回报，这将重塑 2026 年下半年的企业 AI 采购节奏。",
+        "titleEn": "Enterprise AI Tokenmaxxing Hits a Wall as Budgets Blow Out",
+        "summaryEn": "Uber burned its annual AI budget in months, Meta killed its AI leaderboard, and some companies are cutting Claude licenses. NEA's Tiffany Luck says enterprises still haven't figured out AI ROI — signaling a correction in enterprise AI spending after the 'tokenmaxxing' hype."
+      },
+      {
+        "title": "Google AMIE 医疗 AI 登上《Nature》：复杂病症管理已比肩初级诊疗医生",
+        "source": "Google AI Blog",
+        "category": "AI 工具动态",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/amie-for-disease-management-in-nature/",
+        "summary": "Google AMIE 对话式医疗 AI 在《Nature》发表研究，证明其在复杂慢性病管理场景中的表现已与初级保健医生相当。顶级学术期刊背书大幅提升可信度，医疗 AI 从「辅助工具」走向「替代场景」的叙事正在被主流科学界接受。",
+        "titleEn": "Google's AMIE Medical AI Matches Primary Care Physicians in Nature Study",
+        "summaryEn": "Google's AMIE conversational AI matched primary care physicians in complex disease management, per a Nature study. Top-tier peer-reviewed validation marks a turning point — medical AI is graduating from 'assistive tool' to legitimate clinical substitute in specific scenarios."
+      },
+      {
+        "title": "HF 论文：多智能体 LLM 系统存在四类并发异常，已用 TLA+ 形式化验证",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2606.17182",
+        "summary": "研究者发现多智能体 LLM 系统在共享内存、向量索引和工具注册表时，存在「过时生成」「幽灵工具」「因果级联」「工具效果乱序」四类并发 Bug，并用 TLA+ 形式化证明了每类异常的存在。**对开发者的意义**：你的 Multi-Agent 系统可能正在悄悄产生错误结果——这篇论文给出了诊断清单和防御设计模式。",
+        "titleEn": "Multi-Agent LLM Concurrency Bugs Formally Verified in TLA+",
+        "summaryEn": "Researchers formally identified four concurrency bugs in multi-agent LLM systems — stale-generation, phantom-tool, causal-cascade, and tool-effect reordering — verified with TLA+ proofs. Developers building multi-agent pipelines now have a concrete checklist of race conditions to guard against in production."
+      },
+      {
+        "title": "HF 论文：LLM「遗忘」其实只是表面——微调几步就能把知识找回来",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2606.17168",
+        "summary": "RepSelect 论文揭示了 LLM「遗忘」（Unlearning）领域的核心漏洞：现有方法只是浅层压制，只需少量微调或 few-shot 提示就能把「遗忘」的内容找回来。**对开发者的意义**：依赖遗忘技术做合规或版权保护的产品，安全假设可能从根本上就是错的——这个问题比想象中严重得多。",
+        "titleEn": "LLM Unlearning Is Shallow: Fine-Tuning Easily Recovers 'Forgotten' Knowledge",
+        "summaryEn": "RepSelect shows that current LLM unlearning methods only achieve shallow forgetting — a few fine-tuning steps or few-shot prompts can recover supposedly deleted knowledge. For developers and compliance teams relying on unlearning for data removal or copyright protection, the security assumptions may be fundamentally broken."
+      },
+      {
+        "title": "VC 逆向判断：真正的 AI 赢家不是在「卖 AI」的公司",
+        "source": "TechCrunch",
+        "category": "变现案例",
+        "url": "https://techcrunch.com/2026/06/17/chi-hua-chien-saw-facebook-coming-now-he-says-the-real-ai-winners-wont-be-selling-ai/",
+        "summary": "早年预判 Facebook 崛起的 VC Chi-Hua Chien 表示，下一轮 AI 财富将属于那些「用 AI 解决具体行业问题」的公司，而非销售 AI 能力本身的平台。对独立开发者和出海 SaaS 创业者来说，这个判断意味着：垂直深耕 > 做通用 AI 工具。",
+        "titleEn": "The Real AI Winners Won't Be Selling AI, Says Veteran VC",
+        "summaryEn": "Veteran VC Chi-Hua Chien, who called Facebook's rise early, says the biggest AI winners won't be selling AI — they'll be using it to dominate specific industries. For indie hackers and SaaS founders, the implication is clear: go deep vertical rather than build another generic AI wrapper."
+      }
+    ],
+    "jasonSays": "今天最值得关注的信号：G7 领导人怕被美国「断 AI」，企业 tokenmaxxing 遭遇预算反噬，加上 LLM 遗忘技术被证明形同虚设——AI 行业正同时面临地缘、ROI 和安全三重信任危机，2026 下半年会很有意思。",
+    "jasonSaysEn": "Three simultaneous trust crises hitting AI right now: G7 leaders fear US supply cutoffs, enterprise tokenmaxxing is hitting budget walls, and LLM unlearning is proven shallow — the second half of 2026 is going to be a serious reality check for the entire industry.",
+    "filename": "2026-06-18.md"
+  },
+  {
     "slug": "2026-06-17",
     "date": "2026-06-17",
     "title": "AI 快讯 · 6月17日",
