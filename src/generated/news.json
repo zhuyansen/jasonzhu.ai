@@ -1,5 +1,107 @@
 [
   {
+    "slug": "2026-06-21",
+    "date": "2026-06-21",
+    "title": "AI 快讯 · 6月21日",
+    "items": [
+      {
+        "title": "诺贝尔奖得主 John Jumper 离开 DeepMind 加盟 Anthropic",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/06/20/nobel-laureate-john-jumper-is-leaving-deepmind-for-rival-anthropic/",
+        "summary": "AlphaFold 核心人物、2024 年诺贝尔化学奖得主 John Jumper 宣布离开 Google DeepMind，加入竞争对手 Anthropic。报道指出他并非唯一离开 DeepMind 的大名鼎鼎研究员，此次人才流动对 AI 生物科学研究格局将产生深远影响。",
+        "titleEn": "Nobel Laureate John Jumper Leaves DeepMind for Anthropic",
+        "summaryEn": "John Jumper, Nobel laureate in chemistry and key figure behind AlphaFold, is departing Google DeepMind to join Anthropic. He is reportedly not the only high-profile researcher leaving DeepMind, signaling a significant talent shift that could reshape AI-driven biological research."
+      },
+      {
+        "title": "Andrew Ng：Anthropic 管控模型 + 美国出口限制，正在加速全球 AI 主权化浪潮",
+        "source": "X/@AndrewYNg",
+        "category": "AI 工具动态",
+        "url": "https://x.com/AndrewYNg",
+        "summary": "吴恩达在 The Batch 撰文指出：Anthropic 限制竞争对手使用 Fable 5 + 美国政府出口管制双重操作，让全球各国意识到美国随时可断供前沿 AI。他警告这将大幅加速各国和企业转向开源与本地化部署，并类比美国限制中国半导体后中国反而全力自研的历史。",
+        "titleEn": "Andrew Ng: Anthropic & US Export Controls Accelerating Global AI Sovereignty",
+        "summaryEn": "Andrew Ng warns that Anthropic's usage restrictions on Fable 5 and the US government's export controls have made it clear that frontier AI access can be cut off at any time, strongly accelerating nations and enterprises to pursue open-source and sovereign AI alternatives—paralleling how US chip restrictions accelerated China's semiconductor self-sufficiency."
+      },
+      {
+        "title": "特朗普表态：不再将 Anthropic 视为国家安全威胁",
+        "source": "36Kr / Axios Show",
+        "category": "AI 工具动态",
+        "url": "https://36kr.com/newsflashes/3861259140764678?f=rss",
+        "summary": "美国总统特朗普在《Axios Show》访谈中表示已不再将 Anthropic 视为国家安全威胁。此前美国政府以国家安全为由对 Anthropic 的 Mythos 和 Fable 模型实施出口管制，此番表态意味着政策立场可能出现转向，局势或有缓和。",
+        "titleEn": "Trump: Anthropic No Longer a National Security Threat",
+        "summaryEn": "President Trump stated in an Axios interview that he no longer views Anthropic as a national security threat, signaling a potential policy reversal after the Commerce Department placed export controls on Anthropic's Mythos and Fable models just days earlier."
+      },
+      {
+        "title": "GLM-5.2 + Kimi 2.7 开源组合通过「气味测试」，性价比吊打闭源旗舰",
+        "source": "Latent Space / X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://www.latent.space/p/ainews-glm-gpt-glm-52-passes-vibe",
+        "summary": "GLM-5.2 与 Kimi 2.7 的开源组合在社区大规模实测中通过「vibe check」，被认为可承担 85-90% 的编程任务，而成本仅是 Claude Opus 4.8 / GPT-5.5 的极小部分。Z.ai 还预测 Fable 的开源版本将于 12 月前发布。这标志着开源模型首次真正进入前沿竞争。",
+        "titleEn": "GLM-5.2 + Kimi 2.7 Open-Source Combo Passes Vibe Check, Rivals Frontier Models",
+        "summaryEn": "GLM-5.2 and Kimi 2.7 have passed community vibe checks, reportedly handling 85-90% of coding tasks at a fraction of the cost of Claude Opus 4.8 or GPT-5.5. Z.ai forecasts an open-source Fable equivalent by December, marking the first time open models are genuinely competitive at the frontier."
+      },
+      {
+        "title": "LoopFlow：为 Claude Code 打造的循环工程控制框架",
+        "source": "Hacker News / GitHub",
+        "category": "Skills 生态",
+        "url": "https://github.com/faisalishfaq2005/loopflow",
+        "summary": "开源工具 LoopFlow 专为 Claude Code 设计，提供「循环工程（loop engineering）」能力，让开发者能更精细地控制 Claude Code 的执行循环与任务流。对于需要在 Claude Code 中实现复杂多步骤自动化的开发者，是值得关注的新工具。",
+        "titleEn": "LoopFlow: Loop Engineering Framework for Claude Code",
+        "summaryEn": "LoopFlow is an open-source framework designed specifically for Claude Code, enabling fine-grained control over execution loops and task flows. It targets developers who need complex multi-step automation within Claude Code workflows."
+      },
+      {
+        "title": "挪威立法禁止小学生使用生成式 AI，全球 AI 教育监管进入新阶段",
+        "source": "36Kr",
+        "category": "AI 工具动态",
+        "url": "https://36kr.com/newsflashes/3861257682129921?f=rss",
+        "summary": "挪威首相宣布将禁止 6-13 岁小学生使用生成式 AI，初中生须在教师严密监管下使用，高中生则以学习「如何正确使用」为目标。这是欧洲主要国家首次以立法形式系统性限制中小学生的 AI 使用，或引发更多国家效仿。",
+        "titleEn": "Norway to Ban Generative AI for Primary School Students",
+        "summaryEn": "Norway's Prime Minister announced a ban on generative AI tools for primary school students aged 6-13, with strict supervision for middle schoolers and guided usage for high schoolers. This marks one of Europe's first systematic legislative restrictions on student AI use, potentially setting a precedent for other nations."
+      },
+      {
+        "title": "HF 论文：法律 AI 幻觉率高达 52%，新框架按错误类型精准审计",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2606.18021",
+        "summary": "LegalHalluLens 论文揭示法律 AI 的幻觉率高达约 52%，但更关键的是：不同类型错误（数字/时间/义务/事实）的分布差异极大，用平均值衡量会严重误导。对于做法律 AI 产品的开发者，这个框架可以帮你找到「哪类错误最多」，从而有针对性地修复，而不是盲目调参。",
+        "titleEn": "HF Paper: Legal AI Hallucinates 52% of the Time — New Typed Auditing Framework",
+        "summaryEn": "LegalHalluLens reveals that legal AI systems hallucinate ~52% of the time on average, but this hides critical variance across error types—numeric, temporal, obligation, and factual claims fail at very different rates. For developers building legal AI products, this typed auditing framework provides actionable signals for targeted improvement rather than blind fine-tuning."
+      },
+      {
+        "title": "HF 论文：ContextRL 让 LLM 真正「看进去」长上下文，推理准确率显著提升",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2606.17053",
+        "summary": "ContextRL 提出一种上下文感知强化学习方法：不只奖励最终答案正确，还训练模型精准定位「长文档中那一行决定性证据」。对做 RAG、Agent 工具调用链或多模态推理的开发者而言，这意味着模型不再靠运气找关键信息，长上下文推理能力将有实质提升。",
+        "titleEn": "HF Paper: ContextRL Teaches LLMs to Extract Critical Evidence from Long Contexts",
+        "summaryEn": "ContextRL introduces context-aware reinforcement learning that trains LLMs to pinpoint decisive evidence within long documents or tool traces, not just produce correct final answers. Developers building RAG pipelines, agentic tool-calling, or multimodal reasoning systems will benefit as models become more reliable at extracting the needle from the haystack."
+      }
+    ],
+    "funding": [
+      {
+        "company": "ZuzuZoos（多蓝艾梦智能科技）",
+        "url": "https://36kr.com/p/3859926114161665?f=rss",
+        "round": "Pre-A",
+        "amount": "数千万人民币",
+        "valuation": "",
+        "investors": "锦秋、上海复容",
+        "pitch": "AI 陪伴机器人 + 潮玩 IP 融合品牌，moody 前高管 + 大疆骨干联合创业，瞄准 Z 世代情感陪伴市场。"
+      },
+      {
+        "company": "Odyssey",
+        "url": "https://news.crunchbase.com/venture/biggest-funding-rounds-cybersecurity-defense-startup-ai-odyssey-leads/",
+        "round": "未披露轮次",
+        "amount": "$310M",
+        "valuation": "",
+        "investors": "",
+        "pitch": "世界模型（World Model）初创公司，本周最大单笔 AI 融资，专注可交互 3D 世界生成技术。"
+      }
+    ],
+    "jasonSays": "本周最大信号不是哪个模型更强，而是 Andrew Ng 那篇文章：当美国政府和 Anthropic 同时展示「断供」能力，全球 AI 主权化就从「口号」变成了「预算」——开源和多模型路由将是未来两年最确定的趋势。",
+    "jasonSaysEn": "The biggest signal this week isn't which model wins benchmarks—it's Andrew Ng's warning: once the US government and Anthropic both demonstrated the power to cut off AI access, AI sovereignty shifted from rhetoric to real budget line items worldwide, making open-source and multi-model routing the most certain trend of the next two years.",
+    "filename": "2026-06-21.md"
+  },
+  {
     "slug": "2026-06-19",
     "date": "2026-06-19",
     "title": "AI 快讯 · 6月19日",
@@ -90,7 +192,8 @@
     ],
     "jasonSays": "今天最值得盯的是 MCP 企业 OAuth——Zero-Touch 认证一出，MCP 从「开发者玩具」到「企业可落地工具」的最后一块拼图基本到位，接下来就看有没有大公司第一个吃螃蟹了。",
     "jasonSaysEn": "MCP's Zero-Touch OAuth is the piece that finally makes MCP enterprise-deployable at scale—not just a dev toy anymore. Now the real question is which Fortune 500 will be the first to go all-in.",
-    "filename": "2026-06-19.md"
+    "filename": "2026-06-19.md",
+    "coverImage": "/news/2026-06-19.png"
   },
   {
     "slug": "2026-06-18",
