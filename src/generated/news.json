@@ -1,5 +1,87 @@
 [
   {
+    "slug": "2026-06-22",
+    "date": "2026-06-22",
+    "title": "AI 快讯 · 6月22日",
+    "items": [
+      {
+        "title": "iOS 27 实用 AI 功能全览：远不止 Siri 大改版",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/06/21/beyond-siri-here-are-the-practical-ai-features-coming-to-your-iphone-in-ios-27/",
+        "summary": "WWDC 上 Siri 重构抢了头条，但 iOS 27 还藏着大量散落在系统各处的实用 AI 功能。对开发者和独立创作者来说，这意味着 Apple 正在将 AI 能力下沉到 OS 层级，未来 App 的 AI 集成门槛和竞争格局都会随之改变。",
+        "titleEn": "iOS 27 Practical AI Features Beyond the Siri Overhaul",
+        "summaryEn": "While Siri's redesign grabbed WWDC headlines, iOS 27 packs a broader set of AI features across the system. For developers, this signals Apple embedding AI deeper into the OS layer, reshaping the competitive landscape for AI-integrated apps."
+      },
+      {
+        "title": "特朗普政府施压 Anthropic 后，受益者会是谁？",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/06/21/when-the-trump-administration-cracks-down-on-anthropic-who-benefits/",
+        "summary": "在特朗普政府最新一轮对 Anthropic 施压行动的背景下，TechCrunch Equity 分析了背后真实动因，以及这对 OpenAI、Google、开源阵营等竞争方的潜在利好。这不只是监管风险，更是一次 AI 生态格局重塑的信号。",
+        "titleEn": "Who Benefits When the Trump Admin Cracks Down on Anthropic?",
+        "summaryEn": "TechCrunch's Equity podcast digs into what actually triggered the administration's latest moves against Anthropic, and maps out which players—OpenAI, Google, or open-source—stand to gain most from the political pressure."
+      },
+      {
+        "title": "Gemini 落后开源模型，外界呼吁 Google 宣布「红色警报」",
+        "source": "X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://x.com/bindureddy",
+        "summary": "Abacus AI CEO Bindu Reddy 公开表示 Gemini 在基准表现上已被开源模型（GLM 5.2 / Kimi 2.7）超越，呼吁 Google 砍掉旁枝业务、集中资源做核心 AI 研究。这是继「Fable 5 事件」之后，闭源阵营面临的又一次公开压力测试。",
+        "titleEn": "Gemini Officially Falls Behind Open Source: Time for Google to Sound the Alarm",
+        "summaryEn": "Abacus AI CEO Bindu Reddy declares Gemini has officially fallen behind open-source rivals like GLM 5.2 and Kimi 2.7, urging Google to declare a 'Code Red' and redirect compute and talent back to core AI research."
+      },
+      {
+        "title": "企业 Anthropic 账单可能大幅缩水：开源替代仅需 10% 场景用旗舰",
+        "source": "X/@bindureddy",
+        "category": "变现案例",
+        "url": "https://x.com/bindureddy",
+        "summary": "Abacus AI 的实战观测显示，只有 10-15% 的任务真正需要 Claude Opus 4.8 或 GPT-5.6 级别的旗舰模型，其余场景 Kimi 和 GLM 完全胜任。对于正在构建 AI 应用的独立开发者和出海 SaaS 团队，这是一条值得认真测试的降本路径。",
+        "titleEn": "Enterprises Overpaying Anthropic? Open-Source Handles 85-90% of Tasks",
+        "summaryEn": "Abacus AI's real-world data suggests only 10-15% of enterprise AI tasks truly need flagship models like Opus 4.8. Kimi and GLM handle the rest—a significant cost-reduction signal for AI app builders and SaaS teams watching their inference bills."
+      },
+      {
+        "title": "OpenMontage：把 AI 编程助手变成完整视频生产线的开源 Agent 系统",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/calesthio/OpenMontage",
+        "summary": "全球首个开源 Agentic 视频生产系统，内置 12 条 Pipeline、52 个工具、500+ Agent Skills。可直接接入 Claude Code、Cursor 等 AI 编程助手，用自然语言描述即可驱动完整视频制作流程，对内容创作者和独立开发者极具想象空间。",
+        "titleEn": "OpenMontage: Turn Your AI Coding Assistant into a Full Video Production Studio",
+        "summaryEn": "OpenMontage is the first open-source agentic video production system with 12 pipelines, 52 tools, and 500+ agent skills. It plugs directly into AI coding assistants like Claude Code, letting you produce full videos through natural language prompts."
+      },
+      {
+        "title": "HF 论文：LedgerAgent 用「结构化状态账本」让客服 AI Agent 严格遵守业务规则",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2606.20529",
+        "summary": "传统 Agent 把任务状态、工具返回值、策略指令全塞进 Prompt，每轮对话都要从头重建上下文，容易「忘规则」。LedgerAgent 提出把关键状态单独维护成结构化账本，Agent 只读账本不读全文。对构建企业级客服或合规 AI 的开发者来说，这是解决「Agent 违规操作」顽疾的新思路。",
+        "titleEn": "LedgerAgent: Structured State Ledger Makes Tool-Calling Agents Policy-Adherent",
+        "summaryEn": "LedgerAgent separates task state into a structured ledger instead of dumping everything into the prompt. This makes tool-calling agents far more reliable at following business rules—critical for developers building enterprise customer-service or compliance AI."
+      },
+      {
+        "title": "HF 论文：LOCUS 开放美国全国地方法规语料库，法律 AI 训练数据短板有望补齐",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2606.19334",
+        "summary": "区划、住房、商业许可等地方法规是美国日常监管的核心，但长期缺乏机器可读的结构化数据集。LOCUS 首次系统性整理了美国地方政府法令语料库，对构建本地化合规助手、房产科技、政务 AI 的开发者是直接可用的训练数据宝库。",
+        "titleEn": "LOCUS: Open Corpus of U.S. Local Ordinances Fills a Critical Legal AI Data Gap",
+        "summaryEn": "LOCUS is the first large-scale machine-readable corpus of U.S. local ordinances—covering zoning, housing, licensing and more. For developers building local compliance tools, real-estate tech, or civic AI, this dataset directly addresses a long-standing training data gap."
+      },
+      {
+        "title": "HF 论文：FID「彩票效应」揭示图像生成评测结果高度依赖随机种子，单一数字不可信",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2606.20536",
+        "summary": "FID（Fréchet Inception Distance）是图像生成模型最主流的评分标准，但研究发现该指标对训练随机种子和采样种子极度敏感，「同一模型」换个种子分数可以大幅波动。这意味着大量论文中的 SOTA 声明可能存在选择性汇报，对正在评估生成模型的开发者是重要提醒。",
+        "titleEn": "The FID Lottery: Single Benchmark Numbers for Image Generation Are Dangerously Misleading",
+        "summaryEn": "This paper treats FID as a random variable and finds its variance across training/sampling seeds is surprisingly high—meaning many published 'SOTA' image generation results may be cherry-picked. A must-read warning for anyone benchmarking or comparing generative models."
+      }
+    ],
+    "jasonSays": "今天最大的信号不是某个产品更新，而是开源模型对闭源旗舰的成本压制正在从「benchmark 数据」变成「客户真实迁移行为」——当企业账单压力驱动选型，Anthropic 和 OpenAI 的定价护城河正在被侵蚀。",
+    "jasonSaysEn": "Today's biggest signal: open-source cost pressure on closed-source flagships is shifting from benchmark talk to real customer migration—when enterprise bills drive model choices, Anthropic and OpenAI's pricing moats are being quietly eroded.",
+    "filename": "2026-06-22.md"
+  },
+  {
     "slug": "2026-06-21",
     "date": "2026-06-21",
     "title": "AI 快讯 · 6月21日",
