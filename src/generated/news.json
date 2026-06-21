@@ -99,7 +99,101 @@
     ],
     "jasonSays": "本周最大信号不是哪个模型更强，而是 Andrew Ng 那篇文章：当美国政府和 Anthropic 同时展示「断供」能力，全球 AI 主权化就从「口号」变成了「预算」——开源和多模型路由将是未来两年最确定的趋势。",
     "jasonSaysEn": "The biggest signal this week isn't which model wins benchmarks—it's Andrew Ng's warning: once the US government and Anthropic both demonstrated the power to cut off AI access, AI sovereignty shifted from rhetoric to real budget line items worldwide, making open-source and multi-model routing the most certain trend of the next two years.",
-    "filename": "2026-06-21.md"
+    "filename": "2026-06-21.md",
+    "coverImage": "/news/2026-06-21.png"
+  },
+  {
+    "slug": "2026-06-20",
+    "date": "2026-06-20",
+    "title": "AI 快讯 · 6月20日",
+    "items": [
+      {
+        "title": "诺贝尔奖得主 John Jumper 离开 DeepMind 加盟 Anthropic",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/06/20/nobel-laureate-john-jumper-is-leaving-deepmind-for-rival-anthropic/",
+        "summary": "AlphaFold 背后的核心科学家、2024年诺贝尔化学奖得主 John Jumper 宣布离开 Google DeepMind，加入 Anthropic。这是近期 DeepMind 多名重量级人才出走潮的一部分，Anthropic 在顶尖科研人才争夺战中再下一城，或将加速其在蛋白质结构与生物 AI 领域的布局。",
+        "titleEn": "Nobel Laureate John Jumper Leaves DeepMind for Anthropic",
+        "summaryEn": "AlphaFold architect and 2024 Nobel Chemistry laureate John Jumper is departing Google DeepMind for Anthropic, part of a broader talent exodus from DeepMind. The move signals Anthropic's growing ambitions in scientific AI and could accelerate its work in structural biology and drug discovery."
+      },
+      {
+        "title": "特朗普：已不再视 Anthropic 为国家安全威胁",
+        "source": "36Kr / TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/video/is-the-us-governments-anthropic-ban-accidentally-helping-the-brand/",
+        "summary": "美国总统特朗普在接受采访时表示已不再将 Anthropic 视为国家安全威胁。此前政府以国家安全为由强制下架了 Anthropic 的 Fable 5 和 Mythos 5 两款新模型，引发网络安全研究者强烈抗议。戏剧性的政策反转叠加媒体曝光，反而意外拉升了 Anthropic 的品牌知名度。",
+        "titleEn": "Trump: Anthropic No Longer a National Security Threat",
+        "summaryEn": "President Trump says he no longer views Anthropic as a national security threat, reversing the position that led to the forced removal of Fable 5 and Mythos 5 models. The policy reversal, combined with backlash from cybersecurity researchers, has inadvertently boosted Anthropic's brand visibility."
+      },
+      {
+        "title": "开源 AI 禁令将是大错：Fable 5 事件引发开源攻防激辩",
+        "source": "Interconnects",
+        "category": "AI 工具动态",
+        "url": "https://www.interconnects.ai/p/banning-open-source-ai-would-be-a",
+        "summary": "Interconnects 联合作者撰文指出，禁止开源 AI 不仅无法阻止扩散，反而会损害美国的技术竞争力。文章结合 PGP 加密出口限制的历史先例，分析政府管控 Anthropic Mythos 模型的逻辑漏洞——相同的越狱方法在其他闭源模型中同样存在，封锁只是制造安全幻觉。",
+        "titleEn": "Banning Open Source AI Would Be a Mistake, Experts Warn",
+        "summaryEn": "An op-ed argues banning open-source AI would repeat history's failed export control playbook—from PGP to now—and damage US competitiveness without actually stopping proliferation. The same jailbreaks that triggered Mythos restrictions exist across closed models too, making blanket bans security theater."
+      },
+      {
+        "title": "DeepSeek $74 亿 A 轮背后：中国 AI 阵营加速重组",
+        "source": "Hacker News / Asia AI",
+        "category": "AI 工具动态",
+        "url": "https://asiaai.fyi/east-asias-ai-capital-surge-homegrown-models-challenge-west-amid-mineral-tensions/",
+        "summary": "DeepSeek 完成 74 亿美元 A 轮融资，但更深层的意义在于：这标志着中国 AI 资本正加速向本土模型集结，东亚各国在矿产资源博弈的背景下加速构建独立 AI 供应链，对西方 AI 生态形成结构性挑战。这是继 GLM-5.2 之后，开源竞争格局的又一重要信号。",
+        "titleEn": "Beyond DeepSeek's $7.4B Series A: China's AI Alliance Reshaping",
+        "summaryEn": "DeepSeek's $7.4B Series A signals more than just a funding milestone—it marks a strategic realignment of Chinese AI capital toward homegrown models amid mineral tensions with the West. Eastern Asia is accelerating AI supply chain independence, posing a structural challenge to Western AI dominance."
+      },
+      {
+        "title": "YC 2026 春季 Demo Day：11 家明星创业公司估值超 $1.75 亿",
+        "source": "TechCrunch Venture",
+        "category": "变现案例",
+        "url": "https://techcrunch.com/2026/06/18/the-11-standout-startups-from-ycs-demo-day-according-to-vcs/",
+        "summary": "TechCrunch 梳理了 YC 2026 春季批次中最受 VC 关注的 11 家初创公司，部分估值已超 1.75 亿美元。这批创业公司反映了当前 AI 应用层的热门方向，对独立开发者和出海创业者而言，这份清单是很好的市场风向标。",
+        "titleEn": "YC Spring 2026 Demo Day: 11 Standout AI Startups, Valuations Over $175M",
+        "summaryEn": "TechCrunch surveyed VCs to identify 11 standout startups from YC's Spring 2026 batch, with some commanding valuations exceeding $175M. The cohort reveals the current hottest AI application verticals and serves as a useful market signal for indie developers and founders."
+      },
+      {
+        "title": "FERNme：接近零 LLM 调用的 Agent 持久记忆系统",
+        "source": "Hacker News",
+        "category": "Skills 生态",
+        "url": "https://github.com/mirkofr/FERNme",
+        "summary": "开发者开源了 FERNme，一个基于模糊边 Hebbian 共现规则的图式持久记忆系统。核心卖点是几乎不需要额外的 LLM 调用来维护记忆，大幅降低 Token 消耗。适合需要个性化长期记忆的 AI Agent，可让用户数据随时间积累形成个人知识图谱。",
+        "titleEn": "FERNme: Agent Memory Graph with Near-Zero LLM Calls",
+        "summaryEn": "FERNme is an open-source graph-based persistent memory system for AI agents that uses fuzzy-edge Hebbian co-occurrence rules to maintain memory with near-zero additional LLM calls. It dramatically cuts token costs while building personalized user knowledge graphs over time—ideal for memory-augmented agents."
+      },
+      {
+        "title": "Palmier Pro：macOS 上专为 AI Agent 协作打造的开源视频编辑器",
+        "source": "GitHub Trending",
+        "category": "AI 工具动态",
+        "url": "https://github.com/palmier-io/palmier-pro",
+        "summary": "Palmier Pro 是一款专为 macOS Tahoe（Apple Silicon）打造的开源视频编辑器，用户可以与 AI Agent 在同一时间线上协作生成和编辑视频。Swift 原生开发，内置生成式 AI，目标对标 Premiere Pro 的 AI 原生替代品，是目前为数不多的「人机共驾」创意工具。",
+        "titleEn": "Palmier Pro: Open-Source macOS Video Editor Built for AI Agents",
+        "summaryEn": "Palmier Pro is a Swift-native open-source video editor for macOS Tahoe (Apple Silicon) where users and AI agents co-edit directly on the same timeline. With built-in generative AI, it aims to be an AI-native alternative to Premiere Pro—one of the few truly human-agent collaborative creative tools."
+      },
+      {
+        "title": "挪威立法禁止小学生使用生成式 AI：监管浪潮正席卷教育领域",
+        "source": "36Kr",
+        "category": "AI 工具动态",
+        "url": "https://36kr.com/newsflashes/3861257682129921?f=rss",
+        "summary": "挪威首相宣布将立法禁止 6-13 岁小学生使用生成式 AI，初中生须在教师严密监督下谨慎使用，高中生则以正确使用为学习目标。这是继多国学校封锁 ChatGPT 后，又一政府层面的系统性 AI 教育管控举措，或引发更多国家效仿。",
+        "titleEn": "Norway to Ban Generative AI for Primary School Students",
+        "summaryEn": "Norway's PM announced legislation banning generative AI use for students aged 6-13, with strict supervision required for middle schoolers. It's one of the most systematic government-level AI restrictions in education yet, and may trigger a wave of similar policies across Europe and beyond."
+      }
+    ],
+    "funding": [
+      {
+        "company": "ZuzuZoos（查无此园）",
+        "url": "https://36kr.com/p/3859926114161665?f=rss",
+        "round": "Pre-A",
+        "amount": "数千万人民币",
+        "valuation": "",
+        "investors": "锦秋、上海复容",
+        "pitch": "AI 陪伴机器人+潮玩 IP 融合品牌，主打有「活人感」的硅基伙伴，团队来自 moody、大疆、泡泡玛特，差异化切情绪体验赛道。"
+      }
+    ],
+    "jasonSays": "今天最大的信号其实是两件事叠加：诺贝尔奖得主 Jumper 从 DeepMind 出走加盟 Anthropic，同时特朗普又公开撤回对 Anthropic 的「威胁」定性——顶尖人才流向 + 政治解封，Anthropic 正在悄悄完成一次品牌和能力的双重跃升。",
+    "jasonSaysEn": "Today's biggest signal is the Jumper + Trump combo: a Nobel laureate defects to Anthropic while the White House quietly walks back its threat designation—Anthropic is staging a quiet double upgrade in both talent and political legitimacy.",
+    "filename": "2026-06-20.md"
   },
   {
     "slug": "2026-06-19",
