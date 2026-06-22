@@ -336,8 +336,9 @@ ${dedupBlock}${fundingDedupBlock}
 ${itemsText}
 
 ## 额外任务：AI 融资速递
-从原始内容里**单独**挑出 0-5 条 **AI 相关的真实资金事件**（关键词：raised / Series / funding / valuation / seed / IPO priced）。
-- **只收「钱真的进来了」的事件**：完成融资、IPO 定价/上市、基金 close。**撤回/搁置/传闻/被叫停的交易一律不算融资**（那些该进 items，不进 funding）。
+从原始内容里**单独**挑出 0-5 条 **AI 相关的真实资金事件**（关键词：raised / Series / funding / valuation / seed / IPO priced / acquires / acquisition / M&A）。
+- **只收「钱真的发生了」的事件**：①完成融资 ②IPO 定价/上市 ③基金 close ④**已完成的收购/并购（acquisition / acquires / M&A）**——这些都算。**只有撤回/搁置/传闻/被叫停的交易不算**（那些该进 items，不进 funding）。
+- **从「本周最大融资榜」「Biggest Funding Rounds」这类聚合贴里，要主动抽出领头的具体 AI 公司**（如标题里写「Odyssey Leads With \$310M」就抽 Odyssey \$310M），不要因为它是榜单就跳过。
 - 必须是 AI 公司或 AI 业务相关（纯传统 SaaS 融资不要）
 - **绝对不要和今天上面的 items 重复**：同一家公司/同一事件只要已经作为今天的某条 item 出现，就**绝不**再放进 funding（哪怕它是融资/IPO 也不行——已经被报道过就够了，不要同一天讲两遍）。
 - **不要重复最近几天已报过的融资**（见下方「最近融资过的公司」清单），除非有全新的实质进展（如估值再变、新一轮）。
