@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getSupabase } from "@/lib/supabase";
 import { rateLimit } from "@/lib/rate-limit";
+import { backupLead } from "@/lib/lead-backup";
 
 export const dynamic = "force-dynamic";
 
@@ -92,15 +93,27 @@ export async function POST(request: NextRequest) {
       });
     }
 
-    // Insert new subscriber
+    // Insert new subscriber (primary: Supabase)
     const { error } = await supabase.from("subscribers").insert({
       email: email.toLowerCase(),
       source: source || "website",
       subscribed_at: new Date().toISOString(),
     });
 
+    // 双写：独立 KV 备份（best-effort，不阻塞成功路径；Supabase 整库被限制时兜底）
+    const backedUp = await backupLead(email, source);
+
     if (error) {
       console.error("Supabase insert error:", error);
+      if (backedUp) {
+        // 主写失败但 KV 兜住了线索：照常解锁 PDF，绝不丢线索 / 不显示「订阅失败」
+        console.warn("[subscribe] supabase down, lead captured via KV backup", { email, source });
+        return NextResponse.json({
+          success: true,
+          message: "订阅成功！你现在可以下载完整手册了",
+          alreadySubscribed: false,
+        });
+      }
       return NextResponse.json(
         { error: "订阅失败，请稍后重试" },
         { status: 500 }
