@@ -10,8 +10,9 @@
  *   {"email","source","ts"}
  * 之后可用 admin 或脚本把它们回灌进 Supabase 主表。
  */
-const KV_URL = process.env.KV_REST_API_URL;
-const KV_TOKEN = process.env.KV_REST_API_TOKEN;
+// 兼容两种命名：Vercel KV 经典命名 / Upstash 原生命名
+const KV_URL = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL;
+const KV_TOKEN = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN;
 
 export const kvEnabled = () => Boolean(KV_URL && KV_TOKEN);
 
