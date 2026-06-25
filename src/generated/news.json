@@ -1,5 +1,116 @@
 [
   {
+    "slug": "2026-06-26",
+    "date": "2026-06-26",
+    "title": "AI 快讯 · 6月26日",
+    "items": [
+      {
+        "title": "Claude Code 内存文件会「腐烂」：这个 Skill 用差分法一条一条剪掉废话",
+        "source": "Hacker News",
+        "category": "Skills 生态",
+        "url": "https://puremint.co.uk/blog/stop-your-ai-memory-file-rotting/",
+        "summary": "开发者发现 Claude Code 的 memory 文件随使用积累大量冗余，导致 AI「遗忘」之前的指令甚至产生负向干扰。他做了一个专用 Skill，用 diff 逐条对比、剪除垃圾内容，兼容 Codex/OpenCode/Composer 等工具。适合重度使用 Claude Code 的开发者定期「体检」记忆文件。",
+        "titleEn": "Claude Code memory pruner skill: clean bloat one diff at a time",
+        "summaryEn": "A developer noticed Claude Code's memory file fills with junk over time, causing it to forget instructions and degrade performance. They built a Skill that prunes bloat using diff-based incremental cleanup, compatible with Codex, OpenCode, and Composer. Essential maintenance for heavy Claude Code users."
+      },
+      {
+        "title": "OpenMontage：52 工具 + 500+ Agent Skills，把 AI 编程助手变成视频制作工作室",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/calesthio/OpenMontage",
+        "summary": "全球首个开源 Agentic 视频生产系统，内置 12 条生产流水线、52 个工具、500+ Agent Skills，可接入 Claude Code 等 AI 编程助手，通过自然语言描述直接生成完整视频。覆盖剧本、素材处理到后期合成全流程，对独立开发者拓展 AI 视频工具方向有极高参考价值。",
+        "titleEn": "OpenMontage: open-source agentic video studio with 500+ agent skills",
+        "summaryEn": "The world's first open-source agentic video production system ships 12 pipelines, 52 tools, and 500+ agent skills. Plug it into Claude Code or similar tools and describe your video in natural language — it handles scripting through post-production. A major reference for indie devs exploring AI video tooling."
+      },
+      {
+        "title": "付费用户正在「背叛」ChatGPT：Claude 在高价值用户群加速抢市",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/06/25/anthropics-claude-is-winning-over-paid-consumers-a-market-owned-by-chatgpt/",
+        "summary": "数据显示，在愿意为 AI 付费的用户群中，Claude 的选择比例持续上升，正在切割 ChatGPT 长期把持的付费消费者市场。这意味着 Anthropic 不只是开发者的选择，正在向更广大的「懂 AI 的付费主流用户」渗透，竞争格局正在悄然重塑。",
+        "titleEn": "Claude is winning paid users away from ChatGPT, data shows",
+        "summaryEn": "Despite ChatGPT's overall dominance, consumers who pay for AI are increasingly switching to Claude, per new data. This signals Anthropic is breaking out of its developer-niche reputation and penetrating the broader premium consumer market — a direct threat to OpenAI's monetization stronghold."
+      },
+      {
+        "title": "GPT-5.6 与 Claude Fable 5 双双遭遇延迟，疑因政府监管介入",
+        "source": "X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://x.com/bindureddy",
+        "summary": "据 The Information 报道，GPT-5.6 发布被美国政府延迟审查，Claude Fable 5 同样受波及暂停发布；但随后有消息称两者均恢复上线计划，GPT-5.6 预计很快发布。这是 AI 模型发布首次公开遭遇政府监管卡点，预示合规压力正式进入模型发布节奏。",
+        "titleEn": "GPT-5.6 and Claude Fable 5 delayed amid reported government red tape",
+        "summaryEn": "Reports via The Information suggest GPT-5.6's release was delayed by US government review, with Claude Fable 5 also briefly paused. Both appear back on track. This marks the first publicly confirmed instance of government red tape directly impacting frontier model release timelines — a new normal is forming."
+      },
+      {
+        "title": "用游戏训练 AI Agent：General Intuition 豪赌 $2.3B 押注「游戏数据即通用智能」",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/06/25/general-intuitions-2-3b-bet-that-video-games-can-train-ai-agents-for-the-real-world/",
+        "summary": "General Intuition 完成 $3.2 亿融资，公司核心押注：用数百万小时的游戏操作数据训练 AI Agent，让其获得接近人类的「直觉」决策能力，从而迁移到真实世界任务。这是对「合成数据 vs 真实行为数据」路线争论的一次大胆下注。",
+        "titleEn": "General Intuition raises $320M: gaming data as a path to general AI intuition",
+        "summaryEn": "General Intuition raised $320M to train AI agents on millions of hours of gameplay, betting that action-rich game data can develop human-like intuition transferable to real-world tasks. A bold counter-argument to synthetic data — real behavioral signals from games as the training moat."
+      },
+      {
+        "title": "「思维链让模型更安全」是误解：HF 新研究发现 Thinking Tokens 并不改善对齐",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2606.25013",
+        "summary": "普遍认为「让模型先思考再回答」能提升安全性，但这项覆盖 GPT-OSS、Qwen、OLMo、Phi 等主流推理模型的研究发现：Thinking Tokens 并不总能阻止有害输出，在某些情况下甚至更容易被越狱。对开发者的警示：别把 CoT 当安全护栏，需要单独的对齐机制。",
+        "titleEn": "Thinking tokens don't reliably improve AI safety, new HuggingFace research finds",
+        "summaryEn": "Widely assumed that 'think before answering' improves safety, but this multi-model study (GPT-OSS, Qwen, OLMo, Phi) shows thinking tokens don't reliably prevent harmful outputs and can sometimes make models easier to jailbreak. For developers: don't treat chain-of-thought as a safety layer — it isn't one."
+      },
+      {
+        "title": "Agent 上下文管理是「承重墙」：计划最先被压缩，也最致命",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2606.22953",
+        "summary": "研究揭示：长程 Agent 在上下文压缩时，「计划」是最早被丢弃的信息，而计划丢失会导致后续步骤隐性失效。论文提出「replay pairing」诊断法，通过比较有无计划的轨迹隐层状态差异来量化损失。对构建 Multi-step Agent 的开发者：上下文管理策略必须优先保护「计划节点」。",
+        "titleEn": "Context compression kills agent plans first — a new diagnostic reveals the hidden cost",
+        "summaryEn": "Long-horizon agents compress context by evicting early tokens — and plans are evicted first. This paper introduces 'replay pairing' to measure how much plan loss degrades downstream steps. Key takeaway for agent developers: your context management strategy must explicitly protect planning tokens, or your agent silently loses its goals."
+      },
+      {
+        "title": "Patronus AI 获 $5000 万：专门造「数字压力场」来暴力测试 AI Agent",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/06/25/patronus-ai-lands-50m-to-build-digital-worlds-that-stress-test-ai-agents/",
+        "summary": "由前 Meta AI 研究员创立的 Patronus AI 完成 $5000 万融资，产品方向是为 AI Agent 构建「仿真数字世界」进行极端压力测试，需求旺盛到投资人直呼「几乎无法满足」。随着 Agent 大规模落地，专业 Eval/测试基础设施成为下一个刚需赛道。",
+        "titleEn": "Patronus AI raises $50M to build stress-test digital worlds for AI agents",
+        "summaryEn": "Patronus AI, founded by ex-Meta AI researchers, raised $50M to build simulated 'digital worlds' that stress-test AI agents at scale. Investor says demand is nearly insatiable. As agent deployments multiply, professional evaluation infrastructure is becoming its own high-value category."
+      }
+    ],
+    "funding": [
+      {
+        "company": "General Intuition",
+        "url": "https://techcrunch.com/2026/06/25/general-intuitions-2-3b-bet-that-video-games-can-train-ai-agents-for-the-real-world/",
+        "round": "Series B（推断）",
+        "amount": "$320M",
+        "valuation": "$2.3B",
+        "investors": "",
+        "pitch": "用游戏行为数据训练通用 AI Agent，赌「真实动作信号」比合成数据更能赋予 AI 现实决策直觉。"
+      },
+      {
+        "company": "Patronus AI",
+        "url": "https://techcrunch.com/2026/06/25/patronus-ai-lands-50m-to-build-digital-worlds-that-stress-test-ai-agents/",
+        "round": "未披露",
+        "amount": "$50M",
+        "valuation": "",
+        "investors": "",
+        "pitch": "为 AI Agent 构建仿真压力测试环境，前 Meta AI 研究员创立，Agent 测试基础设施赛道的核心玩家。"
+      },
+      {
+        "company": "Netris",
+        "url": "https://techcrunch.com/2026/06/25/netris-raises-15m-series-a-from-a16z-to-help-ai-neoclouds-go-live-faster/",
+        "round": "Series A",
+        "amount": "$15M",
+        "valuation": "",
+        "investors": "a16z",
+        "pitch": "为 AI Neocloud 运营商提供网络自动化软件，大幅缩短新云服务商上线周期，a16z 领投背书。"
+      }
+    ],
+    "jasonSays": "今天最让我警醒的是那篇「思维链不等于安全护栏」的研究——我们一直把 CoT 当成对齐的隐性保险，现在这个假设被正式戳破了。Agent 安全的债，迟早要还。",
+    "jasonSaysEn": "The most sobering finding today: chain-of-thought reasoning doesn't make models safer — and sometimes makes them easier to jailbreak. We've been treating CoT as a free safety layer; that debt is coming due.",
+    "filename": "2026-06-26.md"
+  },
+  {
     "slug": "2026-06-25",
     "date": "2026-06-25",
     "title": "AI 快讯 · 6月25日",
@@ -90,7 +201,8 @@
     ],
     "jasonSays": "今天最值得盯的是 OpenAI 自研推理芯片 Jalapeño——这不只是技术新闻，而是 OpenAI 开始对 Nvidia 下手的信号。模型公司自己造芯片，意味着未来 API 定价权将彻底重构，所有依赖推理成本建模的 SaaS 产品都得重新算一遍账。",
     "jasonSaysEn": "Jalapeño is the real story today—OpenAI making its own inference chip isn't a tech flex, it's a direct shot at Nvidia's margins and a signal that API pricing is about to get rewritten; every SaaS business built on inference cost assumptions needs to update their models.",
-    "filename": "2026-06-25.md"
+    "filename": "2026-06-25.md",
+    "coverImage": "/news/2026-06-25.png"
   },
   {
     "slug": "2026-06-24",
