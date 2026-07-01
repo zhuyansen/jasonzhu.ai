@@ -1,5 +1,98 @@
 [
   {
+    "slug": "2026-07-02",
+    "date": "2026-07-02",
+    "title": "AI 快讯 · 7月2日",
+    "items": [
+      {
+        "title": "Claude Fable 5 正式回归，复杂编程任务自动路由",
+        "source": "X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://x.com/bindureddy",
+        "summary": "Fable 5.0 在 Abacus AI Agent 和 ChatLLM 上已全面回归，系统会自动将复杂编程任务路由至 Fable 5.0。此前 Fable 因「输出与 Kimi/Haiku 相同内容」被封禁，如今连 GPT-5.6 也将全球解封，Abacus 联创称这是「全球的巨大胜利」。顶级模型的可及性争议终于暂时落幕。",
+        "titleEn": "Claude Fable 5 Returns, Auto-Routed for Complex Coding Tasks",
+        "summaryEn": "Fable 5.0 is live again on Abacus AI and ChatLLM, with automatic routing for complex coding tasks. After a controversial ban over alleged policy violations, both Fable and GPT-5.6 are now unblocked globally — a win for developers worldwide who rely on top-tier models."
+      },
+      {
+        "title": "Gemini Spark 登陆 Mac：24/7 Agent 助手支持实时跟踪与多 App",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/07/01/gemini-spark-googles-agentic-assistant-is-now-available-on-mac/",
+        "summary": "Google 的 Agent 助手 Gemini Spark 正式登陆 Mac，支持实时任务跟踪和更多第三方 App 集成。这是 Google 在移动端（此前已覆盖 iOS/Android）之外的重要桌面布局，直接对标 Cursor、Claude Desktop 等本地 Agent 工具。",
+        "titleEn": "Gemini Spark Comes to Mac with Real-Time Tracking and Multi-App Support",
+        "summaryEn": "Google's 24/7 agentic assistant Gemini Spark is now available on Mac, adding real-time task tracking and support for more apps. This expands Google's agentic footprint to the desktop, competing directly with tools like Claude Desktop and Cursor."
+      },
+      {
+        "title": "Cloudflare 向 AI 公司发最后通牒：9 月前须区分爬虫用途或遭封锁",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/07/01/cloudflares-new-policy-pushes-ai-companies-to-pay-for-publishers-content/",
+        "summary": "Cloudflare 宣布新政策：AI 公司必须在 9 月 15 日前将「搜索爬虫」与「AI 训练/Agent 爬虫」分开标识，否则将在大量出版商网站上被默认封锁。这是内容方向 AI 公司收费的重要一步，将深刻影响 RAG 和 Agent 的数据获取链路。",
+        "titleEn": "Cloudflare Gives AI Companies Until Sept 15 to Separate Crawlers or Face Blocks",
+        "summaryEn": "Cloudflare is giving AI companies a September 15 deadline to separate search crawlers from AI training/agent crawlers. Failure to comply risks being blocked by default across publisher sites — a major shift in how AI companies can access web content for training and agents."
+      },
+      {
+        "title": "Venice AI 完成 6500 万美元 A 轮：隐私优先 AI 平台年收入破 7000 万美元",
+        "source": "TechCrunch AI",
+        "category": "变现案例",
+        "url": "https://techcrunch.com/2026/07/01/venice-ai-becomes-a-unicorn-with-65m-series-a-as-its-privacy-first-ai-platform-takes-off/",
+        "summary": "Venice AI 以「本地隐私优先」为差异化定位，完成 6500 万美元 A 轮，估值破 10 亿美元成为独角兽，年化收入超 7000 万美元且已盈利。在隐私焦虑日益上升的 AI 市场，这是一个清晰的细分赛道变现路径。",
+        "titleEn": "Venice AI Raises $65M Series A, ARR Surpasses $70M as Privacy-First Platform Scales",
+        "summaryEn": "Venice AI, a privacy-first AI platform, raised $65M Series A at a unicorn valuation with over $70M in annualized revenues and already profitable. It's a strong signal that privacy-focused AI has a real paying market, especially as data concerns grow globally."
+      },
+      {
+        "title": "Cursor 企业部署深度拆解：「前驻工程师」如何搭建 AI 软件工厂",
+        "source": "Latent Space",
+        "category": "AI 工具动态",
+        "url": "https://www.latent.space/p/cursor-forward-deployed-engineers",
+        "summary": "Cursor 设有专门的「前驻工程师」团队，帮助企业客户落地 Agent 工作流，本质上是为大型组织搭建「AI 软件工厂」。这篇访谈揭示了 Cursor 从工具走向企业服务的商业逻辑，对独立开发者和 SaaS 团队理解 Agent 落地模式有重要参考价值。",
+        "titleEn": "Inside Cursor's Enterprise Deployment: Forward-Deployed Engineers Building AI Software Factories",
+        "summaryEn": "Cursor's Forward Deployed Engineers help enterprises implement coding agents — essentially setting up AI software factories. This interview reveals how Cursor is evolving from a dev tool into an enterprise service, with implications for how teams should structure AI-native workflows."
+      },
+      {
+        "title": "OpenAI 推出生物基因组 AI 基准 GeneBench-Pro：攻克真实科研数据集",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/introducing-genebench-pro",
+        "summary": "OpenAI 发布 GeneBench-Pro，专门测试 AI 在基因组学、生物学和科研场景中的表现，使用复杂真实数据集而非合成题目。这标志着 AI 评测从通用推理向高价值垂直领域深入，对生物医疗 AI 开发者具有重要参考意义。",
+        "titleEn": "OpenAI Launches GeneBench-Pro: Real-World Genomics Benchmark for AI Models",
+        "summaryEn": "OpenAI released GeneBench-Pro, a new benchmark testing AI on real-world genomics and biology datasets. Unlike synthetic benchmarks, it uses actual research data — a meaningful shift toward evaluating AI in high-stakes scientific domains, relevant for biotech AI developers."
+      },
+      {
+        "title": "TRIAGE：给 Agent 强化学习中每个动作精准分配信用的新框架",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2606.32017",
+        "summary": "现有 Agent 强化学习（如 GRPO）用最终结果统一奖励所有动作，导致「有用的探索被惩罚，无效动作被强化」。TRIAGE 为每个动作步骤按「角色类型」分配差异化信用，大幅提升 Agent 训练效率。对于构建搜索、点击、编辑等多步 Agent 的开发者，这个框架能让训练出的模型更精准、更少走弯路。",
+        "titleEn": "TRIAGE: Role-Typed Credit Assignment Fixes a Core Problem in Agentic RL",
+        "summaryEn": "Standard agentic RL treats all actions equally using final outcome as reward — punishing useful exploration in failed runs. TRIAGE assigns role-typed credit to each action step, making agent training significantly more precise. Practical for developers building multi-step agents that search, click, or edit."
+      },
+      {
+        "title": "OmniRoute：一个端点接通 236 个 AI 提供商，Claude Code/Cursor 免费可用",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/diegosouzapw/OmniRoute",
+        "summary": "开源项目 OmniRoute 提供统一 AI 网关，支持 236 个 AI 提供商（含 50+ 免费），Claude Code、Cursor、Cline、Copilot 均可直接接入。内置 RTK+Caveman 压缩技术节省 15-95% token，支持 MCP/A2A 协议，是独立开发者降低 AI 调用成本的实用工具。",
+        "titleEn": "OmniRoute: One Endpoint, 236 AI Providers, Free Access for Claude Code and Cursor",
+        "summaryEn": "OmniRoute is an open-source AI gateway connecting Claude Code, Cursor, Cline, and Copilot to 236 providers — 50+ free. Built-in token compression saves 15-95% on costs, with MCP/A2A support. A practical cost-cutting tool for indie developers running multiple AI coding tools."
+      }
+    ],
+    "funding": [
+      {
+        "company": "Venice AI",
+        "url": "https://techcrunch.com/2026/07/01/venice-ai-becomes-a-unicorn-with-65m-series-a-as-its-privacy-first-ai-platform-takes-off/",
+        "round": "Series A",
+        "amount": "$65M",
+        "valuation": "$1B+",
+        "investors": "",
+        "pitch": "隐私优先 AI 平台，已盈利且年化收入超 7000 万美元，靠差异化定位在巨头夹缝中杀出独角兽之路。"
+      }
+    ],
+    "jasonSays": "今天最值得玩味的是 Cloudflare 给 AI 公司发「9 月最后通牒」——免费薅网页数据的时代快结束了，RAG 和 Agent 的数据获取成本即将重构，提前布局私有数据源的团队会有明显优势。",
+    "jasonSaysEn": "Cloudflare's September ultimatum is the real story today — the era of free web scraping for AI training and agents is ending fast. Teams that build proprietary data moats now will have a serious edge when the walls go up.",
+    "filename": "2026-07-02.md"
+  },
+  {
     "slug": "2026-07-01",
     "date": "2026-07-01",
     "title": "AI 快讯 · 7月1日",
@@ -108,7 +201,8 @@
     ],
     "jasonSays": "今天最值得盯的是 Claude Sonnet 5 上线 + Loop 工程理念爆火这两件事同步发生——前者降低了跑 Agent 的成本门槛，后者告诉你如何用三层循环把 Agent 真正嵌入产品开发流程，两者叠加才是 2026 下半年 AI 原生开发者的正确姿势。",
     "jasonSaysEn": "Claude Sonnet 5's cheaper agent pricing and Andrew Ng's Loop Engineering framework dropping on the same day is no coincidence — lower cost + better mental model for human-AI collaboration is exactly the unlock indie developers needed for H2 2026.",
-    "filename": "2026-07-01.md"
+    "filename": "2026-07-01.md",
+    "coverImage": "/news/2026-07-01.png"
   },
   {
     "slug": "2026-06-30",
