@@ -1,5 +1,87 @@
 [
   {
+    "slug": "2026-07-06",
+    "date": "2026-07-06",
+    "title": "AI 快讯 · 7月6日",
+    "items": [
+      {
+        "title": "taste-skill：让AI不再生成千篇一律的丑陋前端界面",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/Leonxlnx/taste-skill",
+        "summary": "开源Skills框架，专治AI Agent生成的模板化UI。通过可移植的排版、动效、间距技能包，让Claude Code等编程Agent输出具备设计品味的界面，而非千篇一律的Bootstrap风格。已获Emil Kowalski等知名设计工程师赞助。",
+        "titleEn": "Taste-Skill: Anti-Slop Frontend Framework for AI Agents",
+        "summaryEn": "An open-source portable skill framework that upgrades AI-built interfaces with better layout, typography, and motion. Works with Claude Code, Cursor, and other coding agents to prevent generic boilerplate UIs. Already sponsored by notable design engineers."
+      },
+      {
+        "title": "337个Claude Code技能合集：覆盖13款编程Agent的全栈技能库",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/alirezarezvani/claude-skills",
+        "summary": "目前最大的Claude Code技能开源库，包含30+Agent、70+自定义命令、330+技能，覆盖工程、营销、产品、合规等场景，兼容Codex、Gemini CLI、Cursor等13款工具。Skills生态正从「单点工具」演变为「跨Agent技能市场」。",
+        "titleEn": "337 Claude Code Skills Collection for 13 AI Coding Agents",
+        "summaryEn": "The largest open-source Claude Code skills repository with 337 production-ready skills, 30+ agents, and 70+ custom commands. Compatible with 13 AI coding tools including Codex, Gemini CLI, and Cursor—signaling skills are becoming a cross-agent marketplace."
+      },
+      {
+        "title": "Amazon宣布停止接收Mechanical Turk新客户，众包标注时代落幕",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/07/05/amazon-will-stop-accepting-new-customers-for-mechanical-turk/",
+        "summary": "Amazon正式关闭Mechanical Turk新客户注册，这个运营20年的人工标注平台走向终结。AI合成数据和自动标注工具的成熟让人工众包失去经济性，数据标注行业正在被AI自身颠覆。",
+        "titleEn": "Amazon Stops Accepting New Mechanical Turk Customers",
+        "summaryEn": "Amazon is shutting down new signups for Mechanical Turk, the 20-year-old crowdsourcing platform. As synthetic data and AI-powered labeling tools mature, human annotation at scale is losing economic viability—AI is disrupting its own training pipeline."
+      },
+      {
+        "title": "主流AI系统提示词大规模泄露：Claude 5、GPT-5.5、Gemini 3.5全曝光",
+        "source": "GitHub Trending",
+        "category": "AI 工具动态",
+        "url": "https://github.com/asgeirtj/system_prompts_leaks",
+        "summary": "一个持续更新的仓库收录了当前几乎所有主流AI的系统提示词：包括Claude Fable 5、Opus 4.8、ChatGPT 5.5 Thinking、Gemini 3.5 Flash等。曾被华盛顿邮报报道。对开发者理解各模型「隐藏规则」和Prompt工程有直接参考价值。",
+        "titleEn": "Massive System Prompt Leaks: Claude 5, GPT-5.5, Gemini 3.5 Exposed",
+        "summaryEn": "A regularly updated repo has extracted system prompts from nearly all major AI models including Claude Fable 5, GPT-5.5 Thinking, and Gemini 3.5 Flash. Featured in The Washington Post. Invaluable reference for developers studying model behaviors and prompt engineering."
+      },
+      {
+        "title": "Meetily开源本地AI会议助手：Rust构建，4倍速转录+完全离线",
+        "source": "GitHub Trending",
+        "category": "AI 工具动态",
+        "url": "https://github.com/Zackriya-Solutions/meetily",
+        "summary": "隐私优先的开源会议AI，基于Rust构建，使用Parakeet/Whisper实现4倍速实时转录，支持说话人分离和Ollama本地摘要。100%本地处理无需云端，适合对数据安全要求高的企业和独立开发者部署。",
+        "titleEn": "Meetily: Open-Source Local AI Meeting Assistant Built in Rust",
+        "summaryEn": "A privacy-first, open-source AI meeting assistant built on Rust with 4x faster Parakeet/Whisper transcription, speaker diarization, and Ollama summarization. 100% local processing with no cloud dependency—ideal for security-conscious teams and indie developers."
+      },
+      {
+        "title": "Forbes：AI实际成本高于被替换员工，企业降本预期落空",
+        "source": "Hacker News",
+        "category": "AI 工具动态",
+        "url": "https://www.forbes.com/sites/jemmagreen/2026/07/02/ai-costs-more-than-the-people-it-replaced/",
+        "summary": "Forbes深度报道揭示企业部署AI的隐性成本远超预期：算力、集成、维护、幻觉修复等综合开支往往高于被裁员工薪资。这与此前Ramp数据「AI重度用户反而招更多人」的结论相互印证，AI提效≠降本。",
+        "titleEn": "Forbes: AI Costs More Than the People It Replaced",
+        "summaryEn": "Forbes reports that hidden costs of AI deployment—compute, integration, maintenance, hallucination fixes—often exceed the salaries of replaced workers. This corroborates earlier findings that heavy AI adopters actually hire more, challenging the cost-cutting narrative."
+      },
+      {
+        "title": "跨境电商新生代争「定价权」：AI助听器品牌做到美亚品类第一",
+        "source": "36Kr",
+        "category": "出海实战",
+        "url": "https://36kr.com/p/3883561480876297?f=rss",
+        "summary": "福布斯中国×亚马逊发布跨境电商30人榜单，AI助听器品牌昂听ELEHEAR凭自研AI声学算法+D2C模式做到美亚品类第一。新一代出海创业者从「拼价格」转向「定价权」，AI+硬件+品牌成为核心打法。",
+        "titleEn": "Chinese D2C Brands Fight for Pricing Power on Amazon",
+        "summaryEn": "Forbes China × Amazon's cross-border e-commerce list highlights ELEHEAR, an AI hearing aid brand that reached #1 in its Amazon US category through proprietary AI acoustic algorithms and D2C. New-gen Chinese exporters are shifting from price wars to brand pricing power."
+      },
+      {
+        "title": "Omnea给员工25万美元创业基金：AI公司留人新模式",
+        "source": "Crunchbase News",
+        "category": "变现案例",
+        "url": "https://news.crunchbase.com/startups/omnea-funding-employees-future-founders-freeman/",
+        "summary": "伦敦AI采购管理公司Omnea推出「未来创始人基金」，服务满5年的员工可Pitch获取25万美元种子资金创业。这种「内部孵化+人才绑定」模式或成AI公司在人才争夺战中的差异化策略。",
+        "titleEn": "AI Startup Omnea Offers $250K for Employees to Launch Startups",
+        "summaryEn": "London-based AI procurement startup Omnea launched a Future Founders Fund offering $250K seed funding to employees after 5 years of service. This internal incubation model could become a differentiated talent retention strategy for AI companies in a competitive market."
+      }
+    ],
+    "jasonSays": "Amazon关掉Mechanical Turk这件事细思极恐——AI正在吞噬自己赖以成长的人工标注基础设施，数据飞轮开始自转了。",
+    "jasonSaysEn": "Amazon shutting down Mechanical Turk is quietly profound—AI is now devouring the very human annotation infrastructure it grew up on. The data flywheel is going self-sustaining.",
+    "filename": "2026-07-06.md"
+  },
+  {
     "slug": "2026-07-05",
     "date": "2026-07-05",
     "title": "AI 快讯 · 7月5日",
@@ -90,7 +172,8 @@
     ],
     "jasonSays": "阿里封禁Claude Code这件事值得细品：不是因为Claude不好用，而是因为「后门风险」——这提醒所有开发者，AI编码工具的安全审计将成为企业采购的必答题，Skills生态的信任问题比功能问题更紧迫。",
     "jasonSaysEn": "Alibaba banning Claude Code isn't about capability — it's about trust. The 'backdoor risk' rationale signals that security auditing of AI coding tools will become a mandatory enterprise procurement checklist item, making the Skills ecosystem's trust problem more urgent than its feature gap.",
-    "filename": "2026-07-05.md"
+    "filename": "2026-07-05.md",
+    "coverImage": "/news/2026-07-05.png"
   },
   {
     "slug": "2026-07-04",
