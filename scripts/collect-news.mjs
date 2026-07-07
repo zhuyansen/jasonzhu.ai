@@ -5,7 +5,7 @@
  *
  * 环境变量：
  *   ANTHROPIC_AUTH_TOKEN     - Claude API 密钥（支持中转站）
- *   ANTHROPIC_BASE_URL       - API 地址（默认 https://api.aigocode.com）
+ *   ANTHROPIC_BASE_URL       - API 地址（默认 https://api.aigocode.app）
  *   ANTHROPIC_API_KEY        - 备选：原生 Anthropic API 密钥
  *   NEXT_PUBLIC_SUPABASE_URL - Supabase URL
  *   SUPABASE_SERVICE_KEY     - Supabase Service Role Key（写入权限）
@@ -92,7 +92,7 @@ const MONTH_DAY = (() => {
 
 // 主客户端：aigocode 中转站
 const proxyKey = process.env.ANTHROPIC_AUTH_TOKEN;
-const proxyURL = process.env.ANTHROPIC_BASE_URL || "https://api.aigocode.com";
+const proxyURL = process.env.ANTHROPIC_BASE_URL || "https://api.aigocode.app";
 
 // 备用客户端：官方 Anthropic API（当中转站不可用时 fallback）
 const officialKey = process.env.ANTHROPIC_API_KEY;
