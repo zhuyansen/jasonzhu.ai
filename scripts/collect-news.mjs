@@ -107,7 +107,27 @@ if (!proxyKey && !officialKey) {
 const officialURL = "https://api.anthropic.com";
 const PROXY = proxyKey ? { key: proxyKey, baseURL: proxyURL, label: "proxy" } : null;
 const OFFICIAL = officialKey ? { key: officialKey, baseURL: officialURL, label: "official" } : null;
-let activeClient = PROXY || OFFICIAL;
+
+// 备用中转站 apimart：aigocode 账号池干涸 / 宕机时自动切到这里。
+// 用自己的模型名（apimart 上是 claude-opus-4-6）。
+const apimartKey = process.env.APIMART_API_KEY;
+const APIMART = apimartKey
+  ? {
+      key: apimartKey,
+      baseURL: process.env.APIMART_BASE_URL || "https://api.apimart.ai",
+      label: "apimart",
+      model: process.env.APIMART_MODEL || "claude-opus-4-6",
+    }
+  : null;
+
+// fallback 链：aigocode → apimart → 官方
+const FALLBACKS = [APIMART, OFFICIAL].filter(Boolean);
+let fallbackIdx = -1;
+let activeClient = PROXY || FALLBACKS[0] || null;
+if (!activeClient) {
+  console.error("❌ 无可用 API 客户端（缺 ANTHROPIC_AUTH_TOKEN / APIMART_API_KEY / ANTHROPIC_API_KEY）");
+  process.exit(1);
+}
 
 console.log(`🔌 API 端点：${activeClient.label} (${activeClient.baseURL})`);
 
@@ -391,7 +411,8 @@ ${itemsText}
       throw new Error("No available API client");
     }
     try {
-      const currentModel = modelChain[modelIdx];
+      // 客户端自带模型名优先（apimart 用 opus-4-6），否则走 modelChain
+      const currentModel = activeClient.model || modelChain[modelIdx];
       console.log(`  🔄 Claude API 调用 (attempt ${attempt}/${MAX_RETRIES} [${activeClient.label}${disableThinking ? ", no-thinking" : ""}, ${currentModel}])...`);
       const requestParams = {
         model: currentModel,
@@ -482,13 +503,15 @@ ${itemsText}
       const errMsg = err.message || String(err);
       console.error(`  ⚠️  Attempt ${attempt} failed: ${errMsg}`);
 
-      // 上游超时（524 / 502 / 504 / ETIMEDOUT）：关掉 thinking 缩短响应，并拉长退避到 30s/60s/90s/120s/150s
+      // 上游超时/网关错误（任何 5xx / 524 / 连接错误 / 网关返回 HTML）：
       const isUpstreamTimeout =
+        /HTTP 5\d\d/.test(errMsg) ||       // HTTP 500~599（含 aigocode 的 "HTTP 502: <!DOCTYPE html>"）
+        /\berror code: 5\d\d/.test(errMsg) ||
         errMsg.includes("524") ||
-        errMsg.includes("502 Bad Gateway") ||
-        errMsg.includes("504 Gateway") ||
         errMsg.includes("ETIMEDOUT") ||
         errMsg.includes("ECONNRESET") ||
+        errMsg.includes("fetch failed") ||
+        errMsg.includes("Unexpected token") ||  // curl 拿到 HTML 错误页，JSON.parse 失败
         errMsg.includes("origin web server timed out");
 
       // 代理账号池干涸：no available accounts / 503 → 立即切到官方 Anthropic
@@ -502,21 +525,15 @@ ${itemsText}
         errMsg.includes("400") &&
         (errMsg.includes("model is not supported") || errMsg.includes("model_not_found"));
 
-      if (isProxyDry && !usingFallback && OFFICIAL) {
-        console.log(`  🔀 代理账号池干涸，立即切换到官方 Anthropic API`);
-        activeClient = OFFICIAL;
+      // aigocode 账号干涸 / 502 网关 / 硬超时 → 立即切下一个 provider（apimart → 官方）
+      const shouldFailover =
+        isProxyDry || errMsg.includes("aborted") || isUpstreamTimeout;
+      if (shouldFailover && fallbackIdx < FALLBACKS.length - 1) {
+        fallbackIdx++;
+        activeClient = FALLBACKS[fallbackIdx];
         usingFallback = true;
         modelIdx = 0;
-        await sleep(2000);
-        continue;
-      }
-
-      // 新增：硬超时（AbortError）也算上游问题，切 fallback
-      if (errMsg.includes("aborted") && !usingFallback && OFFICIAL) {
-        console.log(`  🔀 请求超时 (90s)，切换到官方 Anthropic API`);
-        activeClient = OFFICIAL;
-        usingFallback = true;
-        modelIdx = 0;
+        console.log(`  🔀 ${errMsg.slice(0, 45)} → 切换到 ${activeClient.label} (${activeClient.model || modelChain[0]})`);
         await sleep(2000);
         continue;
       }

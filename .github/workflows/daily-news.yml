@@ -41,6 +41,7 @@ jobs:
           ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
           ANTHROPIC_BASE_URL: "https://api.aigocode.app"
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          APIMART_API_KEY: ${{ secrets.APIMART_API_KEY }}
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
           DATE: ${{ inputs.date }}
