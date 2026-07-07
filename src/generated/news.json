@@ -1,5 +1,107 @@
 [
   {
+    "slug": "2026-07-07",
+    "date": "2026-07-07",
+    "title": "AI 快讯 · 7月7日",
+    "items": [
+      {
+        "title": "Vercel CEO深度访谈：模型与Agent必须解耦，生产环境要看性价比",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/07/06/vercel-ceo-guillermo-rauch-on-the-fight-to-split-off-models-from-agents/",
+        "summary": "Vercel CEO Guillermo Rauch接受TechCrunch专访，主张生产级Agent应将模型层与Agent逻辑彻底解耦，按性价比选模型而非绑定单一供应商。这与此前其首席工程师提出的\"技能层+沙箱\"架构一脉相承，标志着Agent基础设施从Demo走向Production的范式转变。",
+        "titleEn": "Vercel CEO: Models Must Be Split From Agents",
+        "summaryEn": "Vercel CEO Guillermo Rauch argues that production-grade agents must decouple model layers from agent logic, optimizing for price/performance rather than vendor lock-in. This aligns with Vercel's earlier 'skills layer + sandbox' vision and signals the agent infra shift from demos to production workloads."
+      },
+      {
+        "title": "首例AI执行的勒索软件攻击：技术全自动，但人类仍是幕后操盘手",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/07/06/the-first-ai-run-ransomware-attack-still-needed-a-human/",
+        "summary": "首个已知由AI Agent执行技术操作的真实勒索软件攻击被详细披露，但调查发现人类仍负责选定目标、搭建基础设施和提供凭据。这意味着AI网络犯罪尚未实现完全自主，但攻击执行层的自动化已成现实，安全团队需重新评估Agent相关的威胁模型。",
+        "titleEn": "First AI-Run Ransomware Attack Still Needed a Human",
+        "summaryEn": "The first known real-world ransomware attack technically executed by an AI agent is detailed, but a human still chose the victim, set up infra, and supplied credentials. AI cybercrime isn't fully autonomous yet, but execution-layer automation is real — security teams must reassess agent threat models."
+      },
+      {
+        "title": "2026上半年全球创投创纪录：5100亿美元涌入，AI是最大推手",
+        "source": "Crunchbase News",
+        "category": "AI 工具动态",
+        "url": "https://news.crunchbase.com/venture/global-startup-exits-ipo-ma-soar-ai-q2-h1-2026/",
+        "summary": "Crunchbase数据显示，2026年上半年全球创业投资达5100亿美元创历史新高，Q2单季超2000亿为史上第二大。AI热潮是核心驱动力，IPO和并购退出也创下多年最强水平。对独立开发者和创业者而言，资本市场窗口期仍在。",
+        "titleEn": "Global Startup Funding Hits Record $510B in H1 2026",
+        "summaryEn": "Crunchbase reports global startup funding hit a record $510B in H1 2026, with Q2 exceeding $200B — the second-largest quarter ever. AI is the primary driver, and IPOs/M&A exits are at multi-year highs. The capital window remains wide open for builders."
+      },
+      {
+        "title": "千问升级实时语音识别模型Fun-ASR-Realtime：首字延迟百毫秒级，支持16种方言",
+        "source": "36Kr",
+        "category": "AI 工具动态",
+        "url": "https://36kr.com/p/3884024701874183?f=rss",
+        "summary": "阿里千问大模型发布流式语音识别模型Fun-ASR-Realtime，首字延迟控制在百毫秒级，准确率接近离线模型，支持16种方言和30种语言。对开发者来说，这意味着中文场景下的实时语音交互终于有了可用的大模型级方案，可替代传统ASR管线。",
+        "titleEn": "Qwen Launches Fun-ASR-Realtime Streaming Speech Model",
+        "summaryEn": "Alibaba's Qwen team releases Fun-ASR-Realtime, a streaming speech recognition model with sub-100ms first-token latency and near-offline accuracy, supporting 16 Chinese dialects and 30 languages. This gives developers a production-ready LLM-grade alternative to traditional ASR pipelines for Chinese scenarios."
+      },
+      {
+        "title": "APTSell获DCM数百万美元种子轮：用组合式Agent做AI版首席销售官",
+        "source": "36Kr",
+        "category": "变现案例",
+        "url": "https://36kr.com/p/3883591654895873?f=rss",
+        "summary": "APTSell获DCM Ventures独家数百万美元种子轮融资，产品定位为\"AI版CSO\"——通过组合式Agent整合销售全流程数据，生成管理决策与执行建议。创始人有Oracle十年销售背景和规模化增长实战经验，瞄准的是销售管理SaaS最难啃的决策层自动化。",
+        "titleEn": "APTSell Raises Millions From DCM for AI Sales Agent",
+        "summaryEn": "APTSell secured a multi-million dollar seed round from DCM Ventures for its 'AI CSO' — a composite agent that integrates full-cycle sales data to generate management decisions. The founder brings 10 years of Oracle sales leadership and a proven playbook for scalable growth systems."
+      },
+      {
+        "title": "Apple重建Siri：iOS 27 Beta可自定义语速和情感表达",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/07/06/you-can-now-customize-siris-pace-and-expressivity-in-the-latest-ios-27-beta/",
+        "summary": "iOS 27最新Beta允许用户自定义Siri的语速和情感表达度，这是Apple围绕生成式AI重建Siri的一部分。从产品角度看，语音助手的\"个性化\"正成为差异化竞争点，Apple终于在追赶ChatGPT语音模式的体验深度。",
+        "titleEn": "iOS 27 Beta Lets You Customize Siri's Pace and Emotion",
+        "summaryEn": "The latest iOS 27 beta lets users customize Siri's speaking pace and expressivity as Apple rebuilds its assistant around generative AI. Voice assistant personalization is becoming a key differentiator — Apple is finally catching up to ChatGPT's voice experience depth."
+      },
+      {
+        "title": "2026科技裁员持续追踪：越来越多公司把AI列为裁员理由",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/07/06/the-running-list-major-tech-layoffs-in-2026-where-employers-cited-ai/",
+        "summary": "TechCrunch持续更新的2026科技裁员追踪显示，越来越多大型科技公司在裁员声明中直接将AI列为原因。结合此前Ramp数据显示\"重度AI用户企业反而招更多人\"的反直觉发现，AI对就业的真实影响正在分化：替代低技能岗位的同时，创造新的高技能需求。",
+        "titleEn": "2026 Tech Layoffs Increasingly Cite AI as Key Factor",
+        "summaryEn": "TechCrunch's 2026 layoff tracker shows a growing number of major tech companies explicitly citing AI as a factor in job cuts. Combined with Ramp's counterintuitive finding that heavy AI users hire more, the real employment impact is bifurcating: displacing low-skill roles while creating high-skill demand."
+      }
+    ],
+    "funding": [
+      {
+        "company": "APTSell",
+        "url": "https://36kr.com/p/3883591654895873?f=rss",
+        "round": "Seed",
+        "amount": "数百万美元",
+        "valuation": "",
+        "investors": "DCM Ventures",
+        "pitch": "AI版首席销售官，组合式Agent自动化销售全流程决策，Oracle老兵创业值得关注"
+      },
+      {
+        "company": "快粼光电",
+        "url": "https://36kr.com/p/3884289424437511?f=rss",
+        "round": "天使轮",
+        "amount": "数千万元人民币",
+        "valuation": "",
+        "investors": "小苗朗程、一村资本",
+        "pitch": "AI光互联核心的超高速光探测芯片，填补国产空白，解决算力集群的互联瓶颈"
+      },
+      {
+        "company": "SK Hynix",
+        "url": "https://techcrunch.com/2026/07/06/us-investors-will-soon-get-access-to-sk-hynix-another-memory-maker-riding-the-ai-boom/",
+        "round": "IPO",
+        "amount": "~$29B (ADR规模约44万亿韩元)",
+        "valuation": "",
+        "investors": "",
+        "pitch": "AI存储芯片巨头纳斯达克上市，外资企业史上最大规模ADR，HBM需求是核心驱动力"
+      }
+    ],
+    "jasonSays": "上半年全球5100亿美元砸向创业公司，AI是绝对主引擎——钱还在桌上，但留给纯Demo产品的时间窗正在关闭，Vercel的\"生产级Agent\"叙事说明市场在向落地要结果了。",
+    "jasonSaysEn": "With $510B poured into startups in H1 2026 and AI as the undisputed engine, the money is still on the table — but the window for demo-stage products is closing fast, as Vercel's 'production-grade agent' narrative shows the market now demands real deployment results.",
+    "filename": "2026-07-07.md"
+  },
+  {
     "slug": "2026-07-06",
     "date": "2026-07-06",
     "title": "AI 快讯 · 7月6日",
