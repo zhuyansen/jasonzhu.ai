@@ -18,7 +18,7 @@ AI 出海博主 Jason Zhu 的个人网站。前 AI 算法工程师，现专注�
 | AI | Anthropic Claude API (快讯摘要生成) |
 | 评论 | Giscus (基于 GitHub Discussions) |
 | 部署 | Vercel |
-| SEO | next-sitemap 自动生成 sitemap |
+| SEO | app/sitemap.ts 动态生成（内容目录驱动）+ llms.txt + FAQPage schema |
 
 ## 项目结构
 

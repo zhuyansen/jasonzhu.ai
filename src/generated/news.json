@@ -1,5 +1,98 @@
 [
   {
+    "slug": "2026-07-08",
+    "date": "2026-07-08",
+    "title": "AI 快讯 · 7月8日",
+    "items": [
+      {
+        "title": "Claude Cowork扩展至手机和网页端，编码Agent走出IDE",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/07/07/the-coding-agent-wars-are-spilling-into-the-rest-of-the-office-claude-cowork/",
+        "summary": "Anthropic将Claude Cowork从桌面端扩展到移动和网页端，用户可从电脑启动任务、手机查看进度、笔记本合盖后继续运行。编码Agent正式走出IDE，开始覆盖整个办公场景，这标志着Agent从开发工具向通用工作助手的关键转型。",
+        "titleEn": "Claude Cowork Expands to Mobile and Web",
+        "summaryEn": "Anthropic expands Claude Cowork to mobile and web, letting users start tasks on desktop, track progress on phones, and pick up results later — even with laptops closed. This marks coding agents moving beyond IDEs into general office workflows."
+      },
+      {
+        "title": "Google Gemini API大升级：后台Agent、远程MCP全面开放",
+        "source": "Google AI Blog",
+        "category": "Skills 生态",
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/",
+        "summary": "Google为Gemini API的Managed Agents新增后台任务执行和远程MCP支持等能力，帮助开发者构建生产级Agent应用。远程MCP意味着Gemini Agent可直接调用外部工具链，与Claude Code的MCP生态形成正面竞争，MCP正在成为Agent互操作的事实标准。",
+        "titleEn": "Gemini API Adds Background Agents and Remote MCP",
+        "summaryEn": "Google adds background tasks, remote MCP, and more to Gemini API's Managed Agents. Remote MCP support means Gemini agents can now tap external tool chains, directly competing with Claude Code's MCP ecosystem and further cementing MCP as the de facto agent interop standard."
+      },
+      {
+        "title": "AI巨头狂撒免费算力，争抢创业公司市场份额",
+        "source": "Hacker News / WSJ",
+        "category": "AI 工具动态",
+        "url": "https://www.wsj.com/tech/ai/ai-giants-are-handing-out-tons-of-free-computing-power-to-grab-startup-share-c00a5c5c",
+        "summary": "据华尔街日报报道，大型AI厂商正向创业公司大量赠送免费算力以争夺市场份额。这意味着对独立开发者和小团队来说，现在是拿免费GPU额度做产品验证的最佳窗口期，但同时也要警惕对单一平台的锁定风险。",
+        "titleEn": "AI Giants Hand Out Free Compute to Win Startups",
+        "summaryEn": "WSJ reports AI giants are giving away massive free computing credits to capture startup customers. This is a golden window for indie developers to validate products on free GPU credits, but lock-in risks are real as platforms compete for long-term retention."
+      },
+      {
+        "title": "微软削减外部AI支出，转向更多使用自研模型",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/07/07/microsoft-joins-ai-cost-cutting-trend-by-relying-more-on-its-own-models/",
+        "summary": "微软成为最新一家削减AI支出的科技巨头，策略是减少采购第三方模型、更多依赖自研模型。对开发者的信号很明确：大厂都在优化AI成本结构，多模型切换和成本控制能力将成为企业AI架构的核心竞争力。",
+        "titleEn": "Microsoft Cuts AI Costs by Favoring In-House Models",
+        "summaryEn": "Microsoft is cutting back AI spending by shifting from third-party to in-house models, joining a broader cost-cutting trend. The signal for developers is clear: multi-model flexibility and cost optimization are becoming core competencies in enterprise AI architecture."
+      },
+      {
+        "title": "开源AI崛起为何没有伤到Anthropic？TechCrunch深度拆解",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/07/07/why-the-rise-of-open-source-ai-isnt-hurting-anthropic-yet/",
+        "summary": "TechCrunch分析指出，开源模型与前沿实验室实际上在捕获同一生命周期的不同阶段：开源吃存量场景的降本需求，前沿模型吃新能力的溢价。两者并非零和竞争，这解释了为什么Llama爆火的同时Anthropic营收也在增长。",
+        "titleEn": "Why Open Source AI Isn't Hurting Anthropic Yet",
+        "summaryEn": "TechCrunch analyzes why open source models and frontier labs aren't in a zero-sum game. Open source captures cost-reduction demand for mature use cases while frontier models capture premium for new capabilities — explaining how both Llama and Anthropic can grow simultaneously."
+      },
+      {
+        "title": "Meta正式推出AI图片生成器Muse，主攻广告和创作者场景",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/07/07/meta-rolls-out-muse-a-new-ai-image-generator/",
+        "summary": "Meta发布新AI图片生成模型Muse，定位广告创意、家居装饰和创作者内容生产。Meta拥有Instagram和Facebook的海量分发渠道，Muse直接嵌入社交生态将对独立AI图片工具形成强大压力，独立开发者需关注平台级入局的挤压效应。",
+        "titleEn": "Meta Launches Muse AI Image Generator",
+        "summaryEn": "Meta launches Muse, a new AI image generator targeting advertising, decoration, and creator workflows. With Instagram and Facebook as built-in distribution, Muse embedded in Meta's social ecosystem poses serious competitive pressure on standalone AI image tools."
+      },
+      {
+        "title": "Qualcomm收购Nexa AI，开源端侧GenAI运行时GenieX",
+        "source": "Hacker News / GitHub",
+        "category": "AI 工具动态",
+        "url": "https://github.com/qualcomm/GenieX",
+        "summary": "高通收购端侧AI创业公司Nexa AI，并开源了面向Hexagon NPU的GenAI运行时GenieX。这意味着在高通芯片的安卓设备上跑大模型将有官方优化方案，对做端侧AI应用的开发者来说是重要基础设施升级。",
+        "titleEn": "Qualcomm Acquires Nexa AI, Open-Sources GenieX Runtime",
+        "summaryEn": "Qualcomm acquires edge AI startup Nexa AI and open-sources GenieX, a GenAI runtime optimized for Hexagon NPUs. This gives developers an official, optimized path to run LLMs on Qualcomm-powered Android devices — a significant infrastructure upgrade for on-device AI apps."
+      },
+      {
+        "title": "EU AI Act 8月2日正式生效：一份工程团队合规清单",
+        "source": "Hacker News",
+        "category": "出海实战",
+        "url": "https://conformityengineering.com/playbook/",
+        "summary": "EU AI Act将于8月2日正式执行，有开发者整理了一份工程视角的合规清单。对出海欧洲市场的AI产品团队而言，这是最后的合规窗口期，涉及风险分类、透明度要求、技术文档等硬性规定，不合规将面临巨额罚款。",
+        "titleEn": "EU AI Act Kicks In Aug 2: Engineering Checklist",
+        "summaryEn": "The EU AI Act becomes enforceable on August 2nd. An engineering-focused compliance checklist covers risk classification, transparency requirements, and technical documentation. For AI teams targeting European markets, this is the final compliance window before significant fines kick in."
+      }
+    ],
+    "funding": [
+      {
+        "company": "Norm",
+        "url": "https://techcrunch.com/2026/07/07/ai-law-startup-norm-raises-120m-hits-unicorn-valuation/",
+        "round": "Series C",
+        "amount": "$120M",
+        "valuation": "$1.2B",
+        "investors": "Khosla Ventures",
+        "pitch": "AI法律科技独角兽，用AI自动化法律工作流，$1.2B估值标志着AI Legal赛道进入成熟期。"
+      }
+    ],
+    "jasonSays": "Google给Gemini加上远程MCP、Anthropic把Cowork搬上手机——Agent战争的关键已经不是谁模型强，而是谁能把工具链铺得更远、更深入工作流。",
+    "jasonSaysEn": "Google adds remote MCP to Gemini while Anthropic brings Cowork to mobile — the agent war is no longer about model strength, but who can embed deeper into real workflows.",
+    "filename": "2026-07-08.md"
+  },
+  {
     "slug": "2026-07-07",
     "date": "2026-07-07",
     "title": "AI 快讯 · 7月7日",
