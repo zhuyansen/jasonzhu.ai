@@ -1,5 +1,116 @@
 [
   {
+    "slug": "2026-07-09",
+    "date": "2026-07-09",
+    "title": "AI 快讯 · 7月9日",
+    "items": [
+      {
+        "title": "SpaceXAI发布Grok 4.5：Musk称其为Opus级模型",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/07/08/spacexai-releases-grok-4-5-which-elon-describes-as-an-opus-class-model/",
+        "summary": "SpaceXAI发布Grok 4.5，Musk将其定位为「Opus级」模型，主打更低成本、更高效率。Latent Space评价其为「后收购Cursor时代第一款旗舰模型」，SpaceXAI正以超越所有前沿实验室的速度迭代，编程能力备受关注。",
+        "titleEn": "SpaceXAI Releases Grok 4.5 Opus-Class Model",
+        "summaryEn": "SpaceXAI launched Grok 4.5, which Musk describes as an 'Opus-class model' offering cheaper and more efficient performance. Latent Space calls it the first flagship model post-Cursor acquisition, signaling SpaceXAI's aggressive pace in the frontier AI race."
+      },
+      {
+        "title": "OpenAI发布GPT-Live：新一代语音模型驱动ChatGPT Voice",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/introducing-gpt-live",
+        "summary": "OpenAI推出GPT-Live，这是专为自然人机语音交互设计的新一代语音模型，已接入ChatGPT Voice。这标志着语音AI从「语音转文字再回语音」的管道模式，进化为端到端原生语音理解和生成，开发者可期待更低延迟、更自然的对话体验。",
+        "titleEn": "OpenAI Introduces GPT-Live Voice Models",
+        "summaryEn": "OpenAI launched GPT-Live, a new generation of voice models for natural human-AI interaction, now powering ChatGPT Voice. This marks a shift to end-to-end native voice understanding, promising lower latency and more natural conversational experiences for developers."
+      },
+      {
+        "title": "Addy Osmani开源agent-skills：给AI编程Agent的生产级工程技能库",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/addyosmani/agent-skills",
+        "summary": "Google Chrome团队的Addy Osmani开源agent-skills项目，将资深工程师的工作流、质量门禁和最佳实践封装为可复用的技能包，让AI编程Agent在定义、规划、构建、验证、审查、发布全流程中保持一致的高标准。这是继337技能合集后，Skills生态又一重磅贡献。",
+        "titleEn": "Addy Osmani Open-Sources Production-Grade Agent Skills",
+        "summaryEn": "Addy Osmani open-sourced agent-skills, packaging senior engineering workflows and quality gates into reusable skills for AI coding agents across the full dev lifecycle. A significant addition to the growing Skills ecosystem for Claude Code and similar agents."
+      },
+      {
+        "title": "last30days-skill：让AI Agent搜索Reddit/X/HN并生成带评分的摘要",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/mvanhorn/last30days-skill",
+        "summary": "这个Claude Code技能可让Agent自动检索Reddit、X、YouTube、Hacker News、Polymarket等平台最近30天的内容，按点赞数和真实资金等信号排序，生成有依据的主题摘要。已上架Claude Code marketplace，一条命令即可安装。适合做市场调研和竞品分析的开发者。",
+        "titleEn": "last30days-skill: AI Agent Research Across Social Platforms",
+        "summaryEn": "A Claude Code skill that researches any topic across Reddit, X, YouTube, HN, and Polymarket over the past 30 days, scoring results by upvotes, likes, and real money. Available via Claude Code marketplace for instant market research workflows."
+      },
+      {
+        "title": "腾讯开源TencentDB Agent Memory：四层渐进式本地长期记忆方案",
+        "source": "GitHub Trending",
+        "category": "AI 工具动态",
+        "url": "https://github.com/TencentCloud/TencentDB-Agent-Memory",
+        "summary": "腾讯云开源Agent长期记忆框架，采用符号化短期记忆+分层长期记忆的四层渐进式架构，完全本地运行、零外部API依赖。短期记忆将冗长工具日志压缩为紧凑的Mermaid图，长期记忆支持分层沉淀。对构建有状态Agent的开发者而言，这是一个开箱即用的记忆层方案。",
+        "titleEn": "Tencent Open-Sources 4-Tier Agent Memory System",
+        "summaryEn": "Tencent open-sourced TencentDB Agent Memory, a fully local long-term memory system using a 4-tier progressive pipeline with zero external API dependencies. It compresses tool logs into compact Mermaid diagrams for short-term memory and layers long-term recall — a practical memory solution for stateful agents."
+      },
+      {
+        "title": "OpenAI质疑SWE-Bench Pro可靠性：编程评测基准噪声太大",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/separating-signal-from-noise-coding-evaluations",
+        "summary": "OpenAI发布分析报告，指出热门编程评测基准SWE-Bench Pro存在严重的可靠性和准确性问题。这对AI编程工具的开发者和选型者意味着：不要盲信单一榜单排名，模型的实际编码能力可能被高估或低估，需要更多元的评测体系。",
+        "titleEn": "OpenAI Challenges SWE-Bench Pro Coding Benchmark Reliability",
+        "summaryEn": "OpenAI published an analysis revealing reliability and accuracy issues in SWE-Bench Pro, a popular coding benchmark. For developers evaluating AI coding tools, this means single-benchmark rankings can be misleading — actual coding ability may be over- or under-estimated."
+      },
+      {
+        "title": "Lovable估值翻倍至132亿美元：AI应用构建器的天花板在哪？",
+        "source": "TechCrunch AI",
+        "category": "变现案例",
+        "url": "https://techcrunch.com/2026/07/08/lovable-reportedly-in-talks-to-double-its-valuation-to-13-2b/",
+        "summary": "AI应用构建平台Lovable正与Menlo Ventures洽谈3亿美元新一轮融资，估值将从约66亿翻倍至132亿美元。Lovable让非技术用户也能用自然语言构建应用，其估值飙升反映了「AI+No-Code」赛道的持续火热，但也引发了对估值泡沫的讨论。",
+        "titleEn": "Lovable in Talks to Double Valuation to $13.2B",
+        "summaryEn": "AI app builder Lovable is reportedly raising $300M led by Menlo Ventures, doubling its valuation to $13.2B. The deal reflects the surging 'AI + No-Code' market, though it raises questions about whether current valuations are sustainable."
+      },
+      {
+        "title": "工信部警告Claude Code存在安全后门隐患",
+        "source": "36Kr",
+        "category": "Skills 生态",
+        "url": "https://36kr.com/p/3887648675133960?f=rss",
+        "summary": "据36氪8点1氪栏目报道，中国工信部发出警告称AI编程工具Claude Code存在安全后门隐患，危害严重。这对国内使用Claude Code的开发者是个重要信号——后续可能面临合规限制，建议关注官方后续通告并做好替代方案准备。",
+        "titleEn": "China's MIIT Warns of Claude Code Security Backdoor Risks",
+        "summaryEn": "China's MIIT warned that AI coding tool Claude Code poses serious security backdoor risks. This is a critical signal for developers in China using Claude Code — potential compliance restrictions may follow, so having alternative tools ready is advisable."
+      }
+    ],
+    "funding": [
+      {
+        "company": "EdVisorly",
+        "url": "https://news.crunchbase.com/venture/edtech-university-ai-platform-funding-edvisorly/",
+        "round": "Series A",
+        "amount": "$13.3M",
+        "valuation": "",
+        "investors": "",
+        "pitch": "AI原生大学招生自动化平台，用AI替代人工审核流程，教育AI赛道新融资"
+      },
+      {
+        "company": "深度智控（DeepCtrls）",
+        "url": "https://36kr.com/p/3887726503688968?f=rss",
+        "round": "Series B",
+        "amount": "数亿元人民币",
+        "valuation": "",
+        "investors": "晶科能源、国投创新、招银国际",
+        "pitch": "物理AI引擎驱动能源基础设施自治控制，已实现L4/L5级AI闭环，正拓展海外市场"
+      },
+      {
+        "company": "昇视唯盛（3Srobotics）",
+        "url": "https://36kr.com/p/3887871679347208?f=rss",
+        "round": "Series B",
+        "amount": "数亿元人民币",
+        "valuation": "",
+        "investors": "上海半导体产投、金桥基金",
+        "pitch": "焊接具身智能机器人，自研焊接大脑模型+运动控制系统，切入工业制造AI赛道"
+      }
+    ],
+    "jasonSays": "Grok 4.5号称Opus级、Lovable估值132亿、工信部警告Claude Code——今天的信号很清楚：AI编程赛道的竞争烈度和地缘风险都在同步升级，开发者得两手准备。",
+    "jasonSaysEn": "Grok 4.5 claims Opus-class, Lovable hits $13.2B, and China flags Claude Code security risks — the AI coding race is intensifying on both competition and geopolitical fronts. Developers, hedge your bets.",
+    "filename": "2026-07-09.md"
+  },
+  {
     "slug": "2026-07-08",
     "date": "2026-07-08",
     "title": "AI 快讯 · 7月8日",
@@ -90,7 +201,8 @@
     ],
     "jasonSays": "Google给Gemini加上远程MCP、Anthropic把Cowork搬上手机——Agent战争的关键已经不是谁模型强，而是谁能把工具链铺得更远、更深入工作流。",
     "jasonSaysEn": "Google adds remote MCP to Gemini while Anthropic brings Cowork to mobile — the agent war is no longer about model strength, but who can embed deeper into real workflows.",
-    "filename": "2026-07-08.md"
+    "filename": "2026-07-08.md",
+    "coverImage": "/news/2026-07-08.png"
   },
   {
     "slug": "2026-07-07",
@@ -636,17 +748,6 @@
         "summaryEn": "OmniRoute is an open-source AI gateway connecting Claude Code, Cursor, Cline, and Copilot to 236 providers — 50+ free. Built-in token compression saves 15-95% on costs, with MCP/A2A support. A practical cost-cutting tool for indie developers running multiple AI coding tools."
       }
     ],
-    "funding": [
-      {
-        "company": "Venice AI",
-        "url": "https://techcrunch.com/2026/07/01/venice-ai-becomes-a-unicorn-with-65m-series-a-as-its-privacy-first-ai-platform-takes-off/",
-        "round": "Series A",
-        "amount": "$65M",
-        "valuation": "$1B+",
-        "investors": "",
-        "pitch": "隐私优先 AI 平台，已盈利且年化收入超 7000 万美元，靠差异化定位在巨头夹缝中杀出独角兽之路。"
-      }
-    ],
     "jasonSays": "今天最值得玩味的是 Cloudflare 给 AI 公司发「9 月最后通牒」——免费薅网页数据的时代快结束了，RAG 和 Agent 的数据获取成本即将重构，提前布局私有数据源的团队会有明显优势。",
     "jasonSaysEn": "Cloudflare's September ultimatum is the real story today — the era of free web scraping for AI training and agents is ending fast. Teams that build proprietary data moats now will have a serious edge when the walls go up.",
     "filename": "2026-07-02.md",
@@ -731,15 +832,6 @@
       }
     ],
     "funding": [
-      {
-        "company": "Etched",
-        "url": "https://techcrunch.com/2026/06/30/nvidia-competitor-etched-hits-5b-valuation-1b-in-sales-for-ai-chip/",
-        "round": "undisclosed",
-        "amount": "undisclosed",
-        "valuation": "$5B",
-        "investors": "",
-        "pitch": "专注 Transformer 推理的专用 AI 芯片，已签 10 亿美元订单，正面挑战 Nvidia 在推理市场的主导地位。"
-      },
       {
         "company": "EquiLibre Technologies",
         "url": "https://techcrunch.com/2026/06/30/the-deepmind-trio-who-built-a-poker-ai-are-now-making-money-for-quant-hedge-funds/",
@@ -840,17 +932,6 @@
         "summary": "阿里 Qwen 团队发布机器人操控基础模型技术报告，核心发现是：通过统一数据格式对齐异构机器人数据，规模定律（scale）可以在机器人操控领域真正生效。这意味着「大力出奇迹」的 LLM 成功路径有望复制到具身智能，对机器人创业者和研究者均有重要参考意义。",
         "titleEn": "Qwen-RobotManip: Alignment Unlocks Scaling Laws for Robotic Foundation Models",
         "summaryEn": "Alibaba's Qwen team shows that aligning heterogeneous robotic manipulation data under a unified formulation allows scaling laws to work in robotics — mirroring how LLMs achieved generalization. This is a strong signal that the 'scale up' playbook from language models may finally transfer to embodied AI."
-      }
-    ],
-    "funding": [
-      {
-        "company": "Arena (Lmsys)",
-        "url": "https://techcrunch.com/2026/06/29/arena-the-ai-leaderboard-everyone-uses-is-now-a-100m-business/",
-        "round": "商业化里程碑",
-        "amount": "$100M ARR",
-        "valuation": "",
-        "investors": "",
-        "pitch": "全球最受欢迎的 AI 模型评测排行榜，9 个月内从 0 做到亿元营收，证明评测基础设施本身可以商业化。"
       }
     ],
     "jasonSays": "今天最值得划重点的是 Arena 破亿这件事——一个「免费排行榜」9 个月变成百亿生意，再次证明 AI 时代最好的护城河不是模型本身，而是你掌握着整个行业的数据和话语权标准。",
@@ -1220,24 +1301,6 @@
     ],
     "funding": [
       {
-        "company": "General Intuition",
-        "url": "https://techcrunch.com/2026/06/25/general-intuitions-2-3b-bet-that-video-games-can-train-ai-agents-for-the-real-world/",
-        "round": "Series B（推断）",
-        "amount": "$320M",
-        "valuation": "$2.3B",
-        "investors": "",
-        "pitch": "用游戏行为数据训练通用 AI Agent，赌「真实动作信号」比合成数据更能赋予 AI 现实决策直觉。"
-      },
-      {
-        "company": "Patronus AI",
-        "url": "https://techcrunch.com/2026/06/25/patronus-ai-lands-50m-to-build-digital-worlds-that-stress-test-ai-agents/",
-        "round": "未披露",
-        "amount": "$50M",
-        "valuation": "",
-        "investors": "",
-        "pitch": "为 AI Agent 构建仿真压力测试环境，前 Meta AI 研究员创立，Agent 测试基础设施赛道的核心玩家。"
-      },
-      {
         "company": "Netris",
         "url": "https://techcrunch.com/2026/06/25/netris-raises-15m-series-a-from-a16z-to-help-ai-neoclouds-go-live-faster/",
         "round": "Series A",
@@ -1426,15 +1489,6 @@
     ],
     "funding": [
       {
-        "company": "Menlo Ventures",
-        "url": "https://techcrunch.com/2026/06/23/after-betting-the-firm-on-anthropic-menlo-ventures-raises-victorious-3b-fund/",
-        "round": "基金 Close",
-        "amount": "$3B",
-        "valuation": "",
-        "investors": "",
-        "pitch": "押注 Anthropic 大获成功的 Menlo Ventures 完成 50 年历史最大募资，将继续覆盖 Seed 至 Growth 阶段 AI 创业公司。"
-      },
-      {
         "company": "Fika Jobs",
         "url": "https://techcrunch.com/2026/06/23/fika-jobs-raises-4m-to-build-a-video-first-hiring-platform-where-ai-agents-interview-candidates/",
         "round": "Seed",
@@ -1528,15 +1582,6 @@
       }
     ],
     "funding": [
-      {
-        "company": "Groq",
-        "url": "https://techcrunch.com/2026/06/22/ai-chipmaker-groq-confirms-650m-raise-re-staffs-after-nvidias-20b-not-acqui-hire-deal/",
-        "round": "Growth",
-        "amount": "$650M",
-        "valuation": "",
-        "investors": "",
-        "pitch": "以极速推理著称的 AI 芯片/云服务商，Nvidia 准收购破裂后独立融资，全力押注 neocloud 赛道，是英伟达推理生态之外最重要的变量之一。"
-      },
       {
         "company": "AppsFlyer",
         "url": "https://news.crunchbase.com/venture/marketing-digital-ad-tracker-appsflyer-lands-1b/",
@@ -1938,17 +1983,6 @@
         "summaryEn": "HiLo-Token adaptively compresses low-frequency (static) image tokens while preserving high-frequency (edited) regions in Diffusion Transformers, achieving ~3x speedup for tasks like Photoshop's Generative Fill with no quality loss. Directly actionable for developers building AI image editing pipelines on DiT architectures."
       }
     ],
-    "funding": [
-      {
-        "company": "Baseten",
-        "url": "https://techcrunch.com/2026/06/18/ai-inference-startup-baseten-reportedly-raising-1-5b-months-after-its-last-mega-round/",
-        "round": "undisclosed（新一轮，距上轮仅数月）",
-        "amount": "$1.5B",
-        "valuation": "$13B",
-        "investors": "",
-        "pitch": "AI 推理基础设施平台，帮助企业高效部署和扩展大模型推理服务；连续巨额融资印证推理层是当前 AI 价值链中最确定的基础赛道。"
-      }
-    ],
     "jasonSays": "今天最值得盯的是 MCP 企业 OAuth——Zero-Touch 认证一出，MCP 从「开发者玩具」到「企业可落地工具」的最后一块拼图基本到位，接下来就看有没有大公司第一个吃螃蟹了。",
     "jasonSaysEn": "MCP's Zero-Touch OAuth is the piece that finally makes MCP enterprise-deployable at scale—not just a dev toy anymore. Now the real question is which Fortune 500 will be the first to go all-in.",
     "filename": "2026-06-19.md",
@@ -2113,17 +2147,6 @@
         "summary": "ExpRL 提出在 LLM 中训练阶段引入探索性强化学习，让模型自主发现分解、验证、自我纠错等推理原语，而无需人工手动标注「该学什么」。对开发者的意义：这可能大幅降低构建高质量推理模型的数据工程成本，是 Post-Training 流程的重要简化方向。",
         "titleEn": "ExpRL: LLMs Self-Discover Reasoning Primitives via Exploratory Reinforcement Learning",
         "summaryEn": "ExpRL introduces exploratory RL during LLM mid-training, letting models autonomously discover reasoning primitives like decomposition and self-correction — without manually curated training traces. This could dramatically cut data engineering costs for building strong reasoning models, a notable simplification of post-training pipelines."
-      }
-    ],
-    "funding": [
-      {
-        "company": "SpaceX (Cursor Acquisition)",
-        "url": "https://news.crunchbase.com/ma/spcx-acquires-ai-coding-cursor-largest-startup-ma-deal-2026/",
-        "round": "Acquisition",
-        "amount": "$60B",
-        "valuation": "",
-        "investors": "SpaceX",
-        "pitch": "AI 编程工具 Cursor 被 SpaceX 以 600 亿美元收购，成年度最大并购案，标志 AI 编程工具正式进入超级公司战略版图。"
       }
     ],
     "jasonSays": "SpaceX 600 亿收购 Cursor 是今天最炸裂的信号——AI 编程工具已从「效率插件」升级为战略基础设施，下一个被吃掉的会是谁？Windsurf？Devin？游戏才刚开始。",
@@ -2583,15 +2606,6 @@
       }
     ],
     "funding": [
-      {
-        "company": "Ona",
-        "url": "https://openai.com/index/openai-to-acquire-ona",
-        "round": "Acquisition",
-        "amount": "undisclosed",
-        "valuation": "",
-        "investors": "OpenAI",
-        "pitch": "为 AI Agent 提供安全持久云端执行环境，被 OpenAI 收购以强化 Codex 的长时任务能力，是企业级 Agent 基础设施的关键拼图。"
-      },
       {
         "company": "Base10 Partners portfolio companies",
         "url": "https://news.crunchbase.com/venture/base10-partners-invests-real-economy-automation-ajao/",

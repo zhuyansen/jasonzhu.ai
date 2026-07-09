@@ -97,6 +97,18 @@ const digests = files.map((filename) => {
     if (item.title) items.push(item);
   }
 
+  // 融资卡自动去重：公司名已出现在当天某条 item 标题里 → 丢弃融资卡
+  // （Claude 反复把同一公司同时放 items 和 funding，此处兜底，无需再手动删）
+  const dedupedFunding = funding.filter((f) => {
+    const name = (f.company || "").split("(")[0].split("（")[0].trim();
+    if (!name) return true;
+    const dup = items.some((i) => i.title.includes(name));
+    if (dup) console.log(`  🧹 ${slug}: 融资卡「${name}」与当天 item 重复，自动移除`);
+    return !dup;
+  });
+  funding.length = 0;
+  funding.push(...dedupedFunding);
+
   // Auto-detect cover image at public/news/<slug>.png
   const coverImagePath = path.join(process.cwd(), "public/news", `${slug}.png`);
   const hasCover = fs.existsSync(coverImagePath);
