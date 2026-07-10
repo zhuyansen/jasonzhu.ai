@@ -1,5 +1,107 @@
 [
   {
+    "slug": "2026-07-11",
+    "date": "2026-07-11",
+    "title": "AI 快讯 · 7月11日",
+    "items": [
+      {
+        "title": "Apple起诉OpenAI窃取商业机密，剑指AI硬件产品线",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/07/10/apple-sues-openai-over-alleged-trade-secret-theft/",
+        "summary": "苹果公司正式起诉OpenAI，指控其利用窃取的商业机密开发AI硬件产品，苹果称相关不当行为由OpenAI高层直接主导，包括一名长期前员工。这是AI行业迄今规模最大的知识产权诉讼之一，可能深刻影响两大科技巨头的合作关系与AI硬件竞争格局。",
+        "titleEn": "Apple Sues OpenAI Over Alleged Trade Secret Theft",
+        "summaryEn": "Apple has filed a lawsuit against OpenAI alleging the company used stolen trade secrets to develop its AI devices. Apple claims the misconduct was directed by OpenAI's senior leadership. This could be one of the biggest IP disputes in AI history, potentially reshaping the relationship between the two tech giants."
+      },
+      {
+        "title": "GPT-5.6成为Microsoft 365 Copilot默认模型，全面覆盖Office套件",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/gpt-5-6-preferred-model-microsoft-365-copilot",
+        "summary": "OpenAI宣布GPT-5.6正式成为Microsoft 365 Copilot的首选模型，覆盖Word、Excel、PowerPoint、Chat和Cowork等全线产品。这一举措标志着OpenAI与微软的深度绑定持续强化，同时是对外界关于双方关系破裂传言的有力回应，企业用户将直接受益于更强的AI辅助能力。",
+        "titleEn": "GPT-5.6 Named Preferred Model for Microsoft 365 Copilot",
+        "summaryEn": "OpenAI's GPT-5.6 is now the preferred model powering Microsoft 365 Copilot across Word, Excel, PowerPoint, Chat, and Cowork. This move cements the OpenAI-Microsoft partnership amid breakup speculation, and signals enterprise users will get meaningful AI capability upgrades across daily productivity tools."
+      },
+      {
+        "title": "Cursor整合Grok：AI编程IDE加速模型多元化布局",
+        "source": "Ben's Bites",
+        "category": "AI 工具动态",
+        "url": "https://www.bensbites.com/p/grok-x-cursor",
+        "summary": "Grok正式接入Cursor编程IDE，加上同期GPT-5.6更新，AI编程工具的模型选择进入多元化时代。Abacus AI同步推出智能模型路由功能，支持在Fable、GPT-5.6、Grok 4.5等顶级模型间按任务类型自动切换，预示「最佳模型因场景而异」将成为开发者新常态。",
+        "titleEn": "Grok Integrates with Cursor, Expanding AI Coding Model Options",
+        "summaryEn": "Grok is now available inside Cursor IDE alongside GPT-5.6 and new ChatGPT Voice updates. Concurrently, Abacus AI launched a Smart Model Router that auto-routes tasks to Fable, GPT-5.6, or Grok 4.5 based on use case. The era of single-model-fits-all AI coding tools appears to be over."
+      },
+      {
+        "title": "开源项目：用Claude Code打造AI求职自动化框架",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/MadsLorentzen/ai-job-search",
+        "summary": "GitHub趋势项目ai-job-search基于Claude Code构建，让AI自动评估岗位匹配度、定制简历、撰写求职信并准备面试。用户只需填写个人档案并fork仓库即可使用，是Claude Code Skills生态中少见的面向个人用户的实用落地案例，也验证了Coding Agent处理复杂多步骤个人工作流的可行性。",
+        "titleEn": "Open-Source AI Job Search Framework Built on Claude Code",
+        "summaryEn": "A trending GitHub project builds an AI-powered job application framework on Claude Code, automating job evaluation, CV tailoring, cover letter writing, and interview prep. Users just fork and fill in a profile. It's a compelling real-world example of Claude Code handling multi-step personal workflows end-to-end."
+      },
+      {
+        "title": "awesome-design-md：一行DESIGN.md让AI Agent生成品牌级UI",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/VoltAgent/awesome-design-md",
+        "summary": "VoltAgent开源项目收录了主流品牌设计系统的DESIGN.md文件，开发者只需将对应文件放入项目，AI Agent即可生成与目标品牌视觉高度一致的UI。这一思路将设计规范「技能化」，大幅降低AI生成界面的一致性成本，对独立开发者和出海产品尤具参考价值。",
+        "titleEn": "Awesome DESIGN.md: Drop One File to Get Brand-Consistent AI-Generated UI",
+        "summaryEn": "Awesome DESIGN.md is a curated collection of design system analysis files. Drop one into your project and tell your AI agent to build a matching UI — it generates visually consistent results without manual design specs. A clever way to package design knowledge as an agent-consumable skill."
+      },
+      {
+        "title": "OfficeCLI：为AI Agent专门设计的开源Office文件操作套件",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/iOfficeAI/OfficeCLI",
+        "summary": "OfficeCLI是专为AI Agent设计的开源Office操作工具，支持读写Word、Excel、PowerPoint，无需安装Office，单一二进制文件即可运行。这直接解决了AI Agent处理企业文档的核心痛点——现有工具大多依赖Office本地安装，而OfficeCLI让Agent在任意环境下均可流畅操作Office文档。",
+        "titleEn": "OfficeCLI: Open-Source Office Suite Built Natively for AI Agents",
+        "summaryEn": "OfficeCLI is an open-source, single-binary Office suite built specifically for AI agents to read, edit, and automate Word, Excel, and PowerPoint files — no Office installation required. It removes a major blocker for agents in enterprise environments and works anywhere, making document automation dramatically more accessible."
+      },
+      {
+        "title": "记忆代理论文：解决长任务中「行为状态衰减」问题",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2607.08716",
+        "summary": "论文提出一种「主动记忆Agent」机制，用于解决长任务中关键信息随上下文扩展而逐渐失效的问题（称为「行为状态衰减」）。区别于被动检索，该方法引入独立记忆模块主动干预决策。对于开发者而言，这意味着未来构建需要持续数小时甚至数天的复杂Agent时，记忆管理将有更系统化的方案可循。",
+        "titleEn": "Proactive Memory Agent Paper Tackles 'Behavioral State Decay' in Long Tasks",
+        "summaryEn": "This paper introduces a proactive memory agent that actively intervenes to surface decision-relevant information in long-horizon tasks, tackling what authors call 'behavioral state decay' — when key context gets buried or forgotten as agent trajectories grow. For developers building multi-hour or multi-day agents, this offers a systematic memory architecture worth studying."
+      },
+      {
+        "title": "Hugging Face CEO：企业正从「租用AI」转向自主掌控开源模型",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/07/10/hugging-faces-ceo-on-why-companies-are-done-renting-their-ai/",
+        "summary": "Hugging Face CEO Clem Delangue表示，开源AI正迎来爆发期，Fortune 500中约半数公司已在使用HuggingFace平台。他观察到一个固定模式：企业先试用闭源API，最终转向开源自主部署。这一趋势对独立开发者和出海SaaS团队意味着：基于开源模型构建差异化产品的窗口正在打开。",
+        "titleEn": "Hugging Face CEO: Companies Are Done Renting AI, Going Open Source",
+        "summaryEn": "Hugging Face CEO Clem Delangue says open-source AI is booming — roughly half the Fortune 500 now uses the platform. He sees a consistent pattern: companies try closed APIs, then move to open-source for control and cost. For indie developers and SaaS builders, this signals a growing opportunity to build on open models."
+      }
+    ],
+    "funding": [
+      {
+        "company": "SambaNova Systems",
+        "url": "https://news.crunchbase.com/ai/biggest-funding-rounds-billion-dollar-cyber-ai-keyfactor-sambanova/",
+        "round": "Series（具体轮次未披露）",
+        "amount": "$1B+",
+        "valuation": "",
+        "investors": "",
+        "pitch": "AI推理基础设施领域本周最大融资之一，专注高性能AI芯片与系统，十亿美元级融资印证AI算力军备竞赛持续升温。"
+      },
+      {
+        "company": "他山科技（TaShan Technology）",
+        "url": "https://36kr.com/p/3889141540370949",
+        "round": "Series B",
+        "amount": "数亿元人民币",
+        "valuation": "",
+        "investors": "均胜电子、太平创新、奥克斯、鹏翎股份、LHCP、洪山资本；老股东道氏技术、彬复资本追加",
+        "pitch": "英伟达触觉仿真全球首家合作伙伴，AI触觉传感器芯片全栈方案，上半年订单超去年四倍，机器人灵巧手赛道正在爆发。"
+      }
+    ],
+    "jasonSays": "今天最值得关注的是Apple起诉OpenAI——这不只是一场法律战，而是AI硬件主导权之争的明牌。两家曾深度合作的巨头走到对簿公堂，背后是谁控制下一代AI入口设备的终极博弈。",
+    "jasonSaysEn": "Apple vs. OpenAI isn't just a lawsuit — it's a battle for who controls the next AI hardware interface, and the fact that two former partners are now in court tells you everything about how high the stakes have become.",
+    "filename": "2026-07-11.md"
+  },
+  {
     "slug": "2026-07-10",
     "date": "2026-07-10",
     "title": "AI 快讯 · 7月10日",
@@ -99,7 +201,8 @@
     ],
     "jasonSays": "今天最大的信号是GPT-5.6登顶LiveBench同时直接进驻微软全家桶——模型竞争已经从跑分进化到渠道战，谁能默认集成谁就赢；Mercor五个月估值翻倍也在告诉我们，AI+垂直行业的天花板远比想象中高。",
     "jasonSaysEn": "The biggest signal today is GPT-5.6 topping LiveBench while shipping as the default in Microsoft 365—model competition has evolved from benchmarks to distribution wars; Mercor doubling its valuation in five months also shows AI vertical plays have far higher ceilings than anyone expected.",
-    "filename": "2026-07-10.md"
+    "filename": "2026-07-10.md",
+    "coverImage": "/news/2026-07-10.png"
   },
   {
     "slug": "2026-07-09",
