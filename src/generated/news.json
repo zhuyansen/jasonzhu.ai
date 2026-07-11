@@ -1,5 +1,107 @@
 [
   {
+    "slug": "2026-07-12",
+    "date": "2026-07-12",
+    "title": "AI 快讯 · 7月12日",
+    "items": [
+      {
+        "title": "DesktopCommanderMCP：给Claude终端控制与文件管理能力的MCP服务器",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/wonderwhy-er/DesktopCommanderMCP",
+        "summary": "DesktopCommanderMCP 是一个 MCP 服务器，赋予 Claude 终端控制、文件系统搜索和差异化文件编辑能力，让 AI 可直接操作本地桌面环境。最近登上 GitHub Trending，它不消耗 API Token 而是复用宿主客户端订阅，对开发者来说使用成本更低，功能远超普通 AI 编辑器。",
+        "titleEn": "DesktopCommanderMCP: Terminal & File System Control for Claude via MCP",
+        "summaryEn": "DesktopCommanderMCP is a trending MCP server that gives Claude terminal control, file system search, and diff-based editing capabilities. It reuses host client subscriptions instead of API tokens, making it a cost-efficient way to turn Claude into a full desktop automation agent."
+      },
+      {
+        "title": "MenteDB：解决Claude Code上下文压缩后记忆丢失的持久化方案",
+        "source": "Hacker News",
+        "category": "Skills 生态",
+        "url": "https://mentedb.com",
+        "summary": "Claude Code 在长任务中进行上下文压缩时，重要的项目知识和对话记忆往往会丢失。MenteDB 专门解决这一痛点，提供一种持久化记忆层，让 Claude Code 在上下文被压缩后依然能保留关键信息，对重度使用 Claude Code 做长任务的开发者极具实用价值。",
+        "titleEn": "MenteDB: Persistent Memory for Claude Code That Survives Context Compaction",
+        "summaryEn": "MenteDB addresses a critical pain point: Claude Code loses important project context during context compaction. It provides a persistent memory layer that survives compaction events, enabling Claude Code to maintain continuity on long-running development tasks."
+      },
+      {
+        "title": "Anthropic秘密追踪器事件：反监控立场与隐蔽代码的矛盾引发争议",
+        "source": "Hacker News / The Register",
+        "category": "AI 工具动态",
+        "url": "https://www.theregister.com/ai-and-ml/2026/07/01/anthropic-is-removing-its-covert-code-for-catching-chinese-competitors/5265366",
+        "summary": "The Register 报道称，Anthropic 在 Claude 中植入了秘密追踪代码，用于识别中国竞争对手的使用行为——这与公司一贯强调的反监控立场形成鲜明矛盾。Anthropic 已表示正在移除该代码。此事引发社区对 AI 公司透明度和用户信任的深层讨论。",
+        "titleEn": "Anthropic's Secret Tracker: Anti-Surveillance Stance Meets Covert Code Controversy",
+        "summaryEn": "Anthropic was found to have embedded covert tracking code in Claude to detect usage by Chinese competitors, directly contradicting its anti-surveillance public stance. The company is now removing the code. The incident raises serious questions about transparency and trust in AI providers."
+      },
+      {
+        "title": "Gemini 3.5延迟至月底，GPT-6与Fable 5.1将同期竞争",
+        "source": "X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://x.com/bindureddy",
+        "summary": "据业内消息，Google Gemini 3.5 已推迟至月底发布，目标是追赶 Fable 模型的性能水准。然而 Fable 5.1 和 GPT-6 预计将在同一时间窗口发布，Google 的追赶时间窗口极为逼仄，AI 大模型竞争进入密集交火期。",
+        "titleEn": "Gemini 3.5 Delayed to Month-End as GPT-6 and Fable 5.1 Loom",
+        "summaryEn": "Industry sources indicate Gemini 3.5 has been pushed to month-end as Google tries to catch up with Fable. The problem: Fable 5.1 and GPT-6 are expected to launch in the same window, leaving Google with almost no catch-up room in a brutally competitive model race."
+      },
+      {
+        "title": "智谱押注Coding赛道：市值半年翻10倍，跻身万亿港元俱乐部",
+        "source": "36Kr",
+        "category": "AI 工具动态",
+        "url": "https://36kr.com/p/3891132709206784?f=rss",
+        "summary": "智谱创始人唐杰发内部信《巨浪已来》：过去半年智谱市值涨 10 倍，跻身万亿港元俱乐部，超越百度市值近 3 倍。核心战略是 2025 年初押注 Coding 和 Reasoning 能力，认为 Chat 范式已基本探索完毕，Coding 才是与 Agent 共生的下一个战场。",
+        "titleEn": "Zhipu AI Bets on Coding, Market Cap 10x in Six Months, Joins HKD Trillion Club",
+        "summaryEn": "Zhipu AI founder Tang Jie's internal memo reveals a 10x market cap surge in six months, joining the HKD trillion club. The key bet: doubling down on Coding and Reasoning capabilities in early 2025, wagering that the Chat paradigm is exhausted and Coding/Agent symbiosis is the next frontier."
+      },
+      {
+        "title": "SK海力士265亿美元美股IPO：AI芯片热潮史上最大外资上市",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/07/10/sk-hynix-raises-26-5b-in-the-biggest-foreign-ipo-in-us-history-is-urged-to-build-new-us-fabs/",
+        "summary": "SK 海力士在纳斯达克完成史上最大外资 IPO，融资 265 亿美元，上市首日大涨近 13%。AI 对高带宽内存（HBM）的爆炸性需求是直接推手，美国政府同时施压要求其在美建厂。这是 AI 算力军备竞赛对半导体供应链产生的最直观资本映射。",
+        "titleEn": "SK Hynix $26.5B US IPO: Largest Foreign Listing in History Fueled by AI Chip Boom",
+        "summaryEn": "SK Hynix completed the largest-ever foreign IPO on Nasdaq, raising $26.5B and surging 13% on debut. The AI chip boom's insatiable demand for HBM memory drove the deal, while the US government is pressing the company to build domestic fabs — a clear sign of AI's impact on semiconductor geopolitics."
+      },
+      {
+        "title": "线性注意力架构综述：DeltaNet系列如何在长上下文中替代Transformer",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2607.07953",
+        "summary": "这篇论文系统对比了标准 Softmax 注意力与四种线性注意力架构（DeltaNet、Gated DeltaNet、Kimi Delta Attention、Gated DeltaNet-2）。对开发者的直接意义：传统 Transformer 在长上下文下计算成本呈二次方增长，线性注意力可以突破这一瓶颈——这直接影响未来长文档处理、代码库分析等 Agent 任务的可行性与成本。",
+        "titleEn": "Linear Attention Survey: How DeltaNet Variants Challenge Transformers at Long Context",
+        "summaryEn": "This paper benchmarks standard softmax attention against four linear-attention architectures including Kimi Delta Attention and Gated DeltaNet-2. For developers: as Transformer costs scale quadratically with context length, linear attention variants offer a credible path to affordable long-context processing for Agent tasks like codebase analysis and document reasoning."
+      },
+      {
+        "title": "DrugGen 2：结合疾病本体的AI小分子药物设计模型",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2607.08404",
+        "summary": "DrugGen-2 在 GPT-2 基础上微调，同时以疾病本体和目标蛋白序列为条件生成小分子药物候选物，首次将疾病上下文纳入分子生成流程。对 AI+生物医药开发者的意义：这类「条件生成」范式可大幅缩短早期药物发现中的候选分子筛选周期，降低进入临床前的试错成本。",
+        "titleEn": "DrugGen 2: Disease-Aware Language Model for AI-Driven Drug Discovery",
+        "summaryEn": "DrugGen-2 fine-tunes GPT-2 to generate drug candidates conditioned on both disease ontology and target protein sequences — the first model to explicitly incorporate disease context. For AI/biotech developers, this conditioned generation approach could dramatically accelerate early-stage drug discovery and reduce costly trial-and-error before preclinical testing."
+      }
+    ],
+    "funding": [
+      {
+        "company": "SK Hynix",
+        "url": "https://techcrunch.com/2026/07/10/sk-hynix-raises-26-5b-in-the-biggest-foreign-ipo-in-us-history-is-urged-to-build-new-us-fabs/",
+        "round": "IPO",
+        "amount": "$26.5B",
+        "valuation": "$1T+",
+        "investors": "",
+        "pitch": "全球最大 HBM 芯片供应商，AI 训练/推理算力需求直接拉动其业务爆发，史上最大外资美股 IPO，已上市首日涨 13%。"
+      },
+      {
+        "company": "鹰瞰智翼",
+        "url": "https://36kr.com/p/3889516712065799?f=rss",
+        "round": "Series A",
+        "amount": "数千万元人民币",
+        "valuation": "",
+        "investors": "元禾璞华、孚腾资本、厚雪资本",
+        "pitch": "具身智能仿生扑翼飞行机器人公司，三个月内完成第三轮融资，将 AI 决策与流体仿真引擎结合，是具身智能赛道罕见的空中应用方向。"
+      }
+    ],
+    "jasonSays": "今天最值得盯的信号是智谱「押注 Coding 市值翻10倍」和 Anthropic「反监控立场遇上隐蔽追踪代码」——前者证明战略聚焦比什么都重要，后者提醒我们：AI 公司的价值观声明和代码行为之间，还有很长的路要走。",
+    "jasonSaysEn": "Today's two sharpest signals: Zhipu AI's 10x market cap proves that a ruthless bet on Coding beats hedging everything, while Anthropic's covert tracker scandal is a blunt reminder that there's a growing gap between what AI companies say about privacy and what's actually in their code.",
+    "filename": "2026-07-12.md"
+  },
+  {
     "slug": "2026-07-11",
     "date": "2026-07-11",
     "title": "AI 快讯 · 7月11日",
@@ -99,7 +201,8 @@
     ],
     "jasonSays": "今天最值得关注的是Apple起诉OpenAI——这不只是一场法律战，而是AI硬件主导权之争的明牌。两家曾深度合作的巨头走到对簿公堂，背后是谁控制下一代AI入口设备的终极博弈。",
     "jasonSaysEn": "Apple vs. OpenAI isn't just a lawsuit — it's a battle for who controls the next AI hardware interface, and the fact that two former partners are now in court tells you everything about how high the stakes have become.",
-    "filename": "2026-07-11.md"
+    "filename": "2026-07-11.md",
+    "coverImage": "/news/2026-07-11.png"
   },
   {
     "slug": "2026-07-10",
