@@ -20,6 +20,7 @@ const STATIC_PATHS = [
   "/about",
   "/handbook",
   "/ai-learning-guide",
+  "/club",
   "/privacy",
   "/terms",
 ];

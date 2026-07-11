@@ -43,3 +43,19 @@ CREATE POLICY "Allow service write news_digests" ON news_digests
 
 CREATE POLICY "Allow service write news_items" ON news_items
   FOR ALL USING (true) WITH CHECK (true);
+
+-- GoSail Club 入会申请表（2026-07-09 新增；Supabase 解封后在 SQL Editor 跑一次）
+create table if not exists club_applications (
+  id uuid primary key default gen_random_uuid(),
+  name text not null,
+  wechat text not null,
+  email text not null,
+  role text,
+  project text,
+  tier text not null,
+  needs text,
+  referral text,
+  status text default 'pending',  -- pending / approved / rejected / paid
+  created_at timestamptz default now()
+);
+create index if not exists club_applications_email_idx on club_applications (email);

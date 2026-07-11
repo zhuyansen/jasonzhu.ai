@@ -62,6 +62,24 @@ export default async function HomePage({
                   {lang === "zh" ? "免费领取" : "Get it"}
                 </span>
               </Link>
+              {/* GoSail Club — paid community */}
+              <Link
+                href={`/${lang}/club`}
+                className="group flex items-center gap-3 px-5 py-4 bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-xl hover:border-amber-300 hover:shadow-sm transition-all"
+              >
+                <span className="text-2xl">⛵</span>
+                <div className="flex-1 min-w-0">
+                  <p className="text-sm font-bold text-gray-900 truncate">
+                    {lang === "zh" ? "GoSail Club 启航会" : "GoSail Club"}
+                  </p>
+                  <p className="text-xs text-gray-500 mt-0.5 hidden sm:block max-w-xs truncate">
+                    {lang === "zh" ? "AI 出海实战社群 · 首期早鸟 ¥299 限 7 天" : "AI going-global community · early bird open"}
+                  </p>
+                </div>
+                <span className="text-xs text-amber-700 font-semibold whitespace-nowrap bg-amber-100 px-3 py-1.5 rounded-lg group-hover:bg-amber-200 transition-colors">
+                  {lang === "zh" ? "申请加入" : "Apply"}
+                </span>
+              </Link>
               {/* Handbook — narrower, secondary */}
               <Link
                 href={`/${lang}/handbook`}
