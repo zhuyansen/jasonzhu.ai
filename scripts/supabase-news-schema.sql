@@ -59,3 +59,15 @@ create table if not exists club_applications (
   created_at timestamptz default now()
 );
 create index if not exists club_applications_email_idx on club_applications (email);
+
+-- GoSail Club 兑换码/会员表（2026-07-11 新增；KV 为运行时主存储，此表做同步归档）
+create table if not exists member_codes (
+  code text primary key,
+  github_username text,
+  email text,
+  hub_key text,
+  status text default 'unused',   -- unused / activated / expired / revoked
+  activated_at timestamptz,
+  expires_at timestamptz,
+  created_at timestamptz default now()
+);

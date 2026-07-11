@@ -11,21 +11,23 @@ const TIERS = [
     id: "l1",
     nameZh: "启航版",
     nameEn: "Starter",
-    priceZh: "¥599",
-    priceEn: "¥599",
-    earlyBird: "¥299",
+    priceZh: "¥365",
+    priceEn: "¥365",
+    earlyBird: "¥199",
     period: "/年",
-    limitZh: "首发早鸟 ¥299 · 限 7 天",
+    limitZh: "首发早鸟 ¥199 · 限 7 天",
     featured: false,
-    forZh: "第一次为出海认知付费的你",
+    forZh: "想用 AI 杠杆做出海的你（一天一块钱）",
     itemsZh: [
-      "GoSail Club 核心社群",
-      "出海资源库（支付/合规/工具链，持续更新）",
-      "月度闭门分享（成员实战复盘）",
-      "AI 快讯深度版 + 每周出海周报",
+      "🔧 内容一键分发 Skill（公众号/小红书/推特）",
+      "🔥 推特热点捕捉发布一条龙 Skill",
+      "🔍 AgentSkillsHub Pro 搜索 + API Key",
+      "📖 AIP 出海手册会员版（105页，持续更新）",
+      "🎙 半月度线上讨论会 + 会员群",
+      "🚀 MCN 签约直通车（用成绩说话）",
     ],
-    itemsEn: ["Core community", "Resource library", "Monthly closed-door sessions", "Weekly digest"],
-    gateZh: "开放加入，无需审核",
+    itemsEn: ["Content distribution skill", "X hot-topic radar skill", "SkillsHub Pro search + API", "AIP handbook (member ed.)", "Bi-weekly sessions", "MCN fast track"],
+    gateZh: "开放加入，无需审核 · GitHub 权限自动开通",
   },
   {
     id: "l2",
@@ -330,7 +332,7 @@ export default function ClubClient({ lang }: Props) {
                     onChange={(e) => setSelectedTier(e.target.value)}
                     className="w-full px-3.5 py-2.5 border border-gray-200 rounded-lg text-sm focus:border-[var(--primary)] focus:outline-none bg-white"
                   >
-                    <option value="l1">{isZh ? "启航版 — 早鸟 ¥299/年" : "Starter ¥299/yr"}</option>
+                    <option value="l1">{isZh ? "启航版 — 早鸟 ¥199/年" : "Starter ¥199/yr"}</option>
                     <option value="l2">{isZh ? "进阶版 — ¥3,999/年" : "Pro ¥3,999/yr"}</option>
                     <option value="l3">{isZh ? "合伙人版 — ¥29,999/年（限20席）" : "Partner ¥29,999/yr"}</option>
                   </select>
