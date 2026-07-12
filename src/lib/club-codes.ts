@@ -29,7 +29,7 @@ async function kvCmd(path: string): Promise<Response | null> {
 /** 把新生成的码直接记成"已激活"状态，格式跟 club-activate 手动兑换后写入的一致。 */
 export async function recordActivatedClubCode(
   code: string,
-  activation: { github: string; email: string; hub_key: string; activated_at: string; expires_at: string }
+  activation: { github: string | null; email: string; hub_key: string; activated_at: string; expires_at: string }
 ): Promise<boolean> {
   const res = await kvCmd(`set/${encodeURIComponent("club_code:" + code)}/${encodeURIComponent(JSON.stringify(activation))}`);
   await kvCmd(

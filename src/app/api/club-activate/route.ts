@@ -78,7 +78,8 @@ export async function POST(request: NextRequest) {
     if (!/^GSC-[A-Z0-9]{8}$/.test(codeStr)) {
       return NextResponse.json({ error: "兑换码格式不正确（GSC-XXXXXXXX）" }, { status: 400 });
     }
-    if (!/^[a-zA-Z0-9-]{1,39}$/.test(ghUser)) {
+    // GitHub 用户名可选：没有 GitHub 的人不该被挡在激活外面，之后能在会员中心补填
+    if (ghUser && !/^[a-zA-Z0-9-]{1,39}$/.test(ghUser)) {
       return NextResponse.json({ error: "GitHub 用户名格式不正确" }, { status: 400 });
     }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailStr)) {
@@ -94,10 +95,12 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "该兑换码已被使用" }, { status: 400 });
     }
 
-    // 2) GitHub Team 邀请
-    const invite = await inviteToTeam(ghUser);
-    if (!invite.ok) {
-      return NextResponse.json({ error: invite.error }, { status: 400 });
+    // 2) GitHub Team 邀请（可选：没填 GitHub 用户名就跳过，不卡激活流程）
+    if (ghUser) {
+      const invite = await inviteToTeam(ghUser);
+      if (!invite.ok) {
+        return NextResponse.json({ error: invite.error }, { status: 400 });
+      }
     }
 
     // 3) 跨站发放真实 Hub Pro Key（失败则不标记码已用，允许安全重试）
@@ -109,7 +112,7 @@ export async function POST(request: NextRequest) {
     const hubKey = issued.key;
 
     const activation = {
-      github: ghUser,
+      github: ghUser || null,
       email: emailStr,
       hub_key: hubKey,
       activated_at: new Date().toISOString(),
@@ -128,7 +131,7 @@ export async function POST(request: NextRequest) {
     try {
       const supabase = getSupabase();
       await supabase.from("member_codes").update({
-        github_username: ghUser,
+        github_username: ghUser || null,
         email: emailStr,
         hub_key: hubKey,
         activated_at: activation.activated_at,

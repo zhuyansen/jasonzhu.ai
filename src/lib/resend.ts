@@ -6,7 +6,7 @@ const SITE_URL = "https://jasonzhu.ai";
 export async function sendActivationEmail(params: {
   to: string;
   code: string;
-  github: string;
+  github: string | null;
   hubKey: string;
   org: string;
   expiresAt: string;
@@ -16,7 +16,7 @@ export async function sendActivationEmail(params: {
 
   const html = `
     <div style="font-family:-apple-system,sans-serif;max-width:520px;margin:0 auto;color:#111">
-      <p>🎉 恭喜，<b>@${github}</b> 已加入 <b>${org}</b> GitHub 组织，GoSail Club 会员开通成功，有效期至 <b>${expiresAt}</b>。</p>
+      <p>🎉 恭喜，GoSail Club 会员开通成功${github ? `，<b>@${github}</b> 已加入 <b>${org}</b> GitHub 组织` : ""}，有效期至 <b>${expiresAt}</b>。</p>
 
       <h3 style="margin:24px 0 8px;font-size:14px">① 你的兑换码（已使用，仅作凭证留存）</h3>
       <code style="display:inline-block;padding:6px 10px;background:#f3f4f6;color:#374151;border-radius:6px;font-size:13px">${code}</code>
@@ -34,7 +34,9 @@ export async function sendActivationEmail(params: {
 
       <h3 style="margin:24px 0 8px;font-size:14px">③ 接下来</h3>
       <ol style="line-height:1.8;padding-left:20px;margin:0">
-        <li>接受 GitHub 组织邀请：<a href="https://github.com/orgs/${org}/invitation">github.com/orgs/${org}/invitation</a>，自动获得 AIP 出海手册 + 两个 skill 仓库权限。</li>
+        ${github
+          ? `<li>接受 GitHub 组织邀请：<a href="https://github.com/orgs/${org}/invitation">github.com/orgs/${org}/invitation</a>，自动获得 AIP 出海手册 + 两个 skill 仓库权限。</li>`
+          : `<li>还没有 GitHub 账号？没关系，先不影响其他权益。以后想要 AIP 出海手册 + 两个 skill 仓库权限，去 <a href="https://jasonzhu.ai/zh/dashboard">会员中心</a> 补填 GitHub 用户名就行。</li>`}
         <li>扫码进 GoSail Club 会员群，参加半月度讨论会：</li>
       </ol>
       <img src="${SITE_URL}/club-wechat-group-qr.jpg" alt="GoSail Club 会员群二维码" width="180" style="display:block;margin:12px 0;border-radius:8px" />

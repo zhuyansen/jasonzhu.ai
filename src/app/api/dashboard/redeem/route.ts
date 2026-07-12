@@ -63,7 +63,8 @@ export async function POST(request: NextRequest) {
     if (!/^GSC-[A-Z0-9]{8}$/.test(codeStr)) {
       return NextResponse.json({ error: "兑换码格式不正确（GSC-XXXXXXXX）" }, { status: 400 });
     }
-    if (!/^[a-zA-Z0-9-]{1,39}$/.test(ghUser)) {
+    // GitHub 用户名可选：没有 GitHub 的人不该被挡在激活外面，之后能在会员中心补填
+    if (ghUser && !/^[a-zA-Z0-9-]{1,39}$/.test(ghUser)) {
       return NextResponse.json({ error: "GitHub 用户名格式不正确" }, { status: 400 });
     }
 
@@ -75,9 +76,12 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "该兑换码已被使用" }, { status: 400 });
     }
 
-    const invite = await inviteToTeam(ghUser);
-    if (!invite.ok) {
-      return NextResponse.json({ error: invite.error }, { status: 400 });
+    // GitHub 用户名可选：没填就跳过邀请，不卡激活流程
+    if (ghUser) {
+      const invite = await inviteToTeam(ghUser);
+      if (!invite.ok) {
+        return NextResponse.json({ error: invite.error }, { status: 400 });
+      }
     }
 
     // 跨站发放真实 Hub Pro Key（失败则不标记码已用，允许安全重试）
@@ -92,11 +96,11 @@ export async function POST(request: NextRequest) {
 
     await kvSetCode(
       codeStr,
-      JSON.stringify({ github: ghUser, email: user.email, hub_key: hubKey, activated_at: activatedAt, expires_at: expiresAt })
+      JSON.stringify({ github: ghUser || null, email: user.email, hub_key: hubKey, activated_at: activatedAt, expires_at: expiresAt })
     );
     await kvCmd(
       `rpush/club_activations/${encodeURIComponent(
-        JSON.stringify({ code: codeStr, github: ghUser, email: user.email, hub_key: hubKey, activated_at: activatedAt, expires_at: expiresAt, user_id: user.id })
+        JSON.stringify({ code: codeStr, github: ghUser || null, email: user.email, hub_key: hubKey, activated_at: activatedAt, expires_at: expiresAt, user_id: user.id })
       )}`
     );
 
@@ -105,7 +109,7 @@ export async function POST(request: NextRequest) {
       .from("profiles")
       .update({
         role: "member",
-        github_username: ghUser,
+        github_username: ghUser || null,
         hub_key: hubKey,
         activated_at: activatedAt,
         expires_at: expiresAt,
@@ -118,7 +122,7 @@ export async function POST(request: NextRequest) {
       await admin
         .from("member_codes")
         .update({
-          github_username: ghUser,
+          github_username: ghUser || null,
           email: user.email,
           hub_key: hubKey,
           activated_at: activatedAt,

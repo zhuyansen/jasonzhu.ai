@@ -36,7 +36,8 @@ export async function POST(request: NextRequest) {
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailStr)) {
       return NextResponse.json({ error: "请输入有效邮箱" }, { status: 400 });
     }
-    if (!/^[a-zA-Z0-9-]{1,39}$/.test(ghUser)) {
+    // GitHub 用户名可选：没有 GitHub 的人不该被挡在付款外面，之后能在会员中心补填
+    if (ghUser && !/^[a-zA-Z0-9-]{1,39}$/.test(ghUser)) {
       return NextResponse.json({ error: "GitHub 用户名格式不正确" }, { status: 400 });
     }
     if (channelStr !== "wechat" && channelStr !== "alipay") {

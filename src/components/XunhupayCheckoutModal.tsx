@@ -119,12 +119,13 @@ export default function XunhupayCheckoutModal({ lang, onClose }: Props) {
               />
             </div>
             <div>
-              <label className="block text-xs font-medium text-gray-500 mb-1.5">{isZh ? "GitHub 用户名" : "GitHub username"}</label>
+              <label className="block text-xs font-medium text-gray-500 mb-1.5">
+                {isZh ? "GitHub 用户名（可选）" : "GitHub username (optional)"}
+              </label>
               <input
-                required
                 value={github}
                 onChange={(e) => setGithub(e.target.value)}
-                placeholder={isZh ? "如 zhuyansen（不带 @）" : "e.g. octocat"}
+                placeholder={isZh ? "没有就先跳过，之后在会员中心补填" : "Skip if you don't have one — add it later"}
                 className="w-full px-3.5 py-2.5 border border-gray-200 rounded-lg text-sm focus:border-[var(--primary)] focus:outline-none"
               />
             </div>
@@ -217,7 +218,9 @@ export default function XunhupayCheckoutModal({ lang, onClose }: Props) {
             <span className="text-4xl">🎉</span>
             <h3 className="text-lg font-bold text-gray-900 mt-3 mb-1">{isZh ? "开通成功！" : "You're in!"}</h3>
             <p className="text-sm text-gray-500 mb-5">
-              {isZh ? "GitHub 邀请和确认邮件都发出去了" : "GitHub invite and confirmation email are on the way"}
+              {result.github
+                ? (isZh ? "GitHub 邀请和确认邮件都发出去了" : "GitHub invite and confirmation email are on the way")
+                : (isZh ? "确认邮件发出去了，想要 GitHub 仓库权限可以去会员中心补填用户名" : "Confirmation email is on the way — add a GitHub username in Dashboard later for repo access")}
             </p>
             <div className="text-left bg-gray-900 rounded-lg p-3 mb-4">
               <div className="text-[10px] text-gray-400 mb-1">Agent Skills Hub Pro Key</div>

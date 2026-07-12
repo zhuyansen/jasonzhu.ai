@@ -89,27 +89,38 @@ export default function ActivateClient({ lang }: Props) {
           <ol className="space-y-5 text-sm text-gray-600">
             <li className="flex gap-3">
               <span className="shrink-0 w-6 h-6 rounded-full bg-blue-50 text-[var(--primary)] font-bold text-xs flex items-center justify-center">1</span>
-              <div>
-                <p className="font-semibold text-gray-900 mb-1">
-                  {isZh ? "接受 GitHub 邀请（7 天内）" : "Accept the GitHub invite"}
-                </p>
-                <p>
-                  {isZh ? "GitHub 已向 " : "We invited "}
-                  <code className="px-1.5 py-0.5 bg-gray-100 rounded text-xs">@{result.github}</code>
-                  {isZh ? " 发出组织邀请，查收 GitHub 通知/邮件，或直接打开：" : ". Accept at:"}
-                </p>
-                <a
-                  href={`https://github.com/orgs/${result.org}/invitation`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[var(--primary)] hover:underline break-all"
-                >
-                  github.com/orgs/{result.org}/invitation
-                </a>
-                <p className="text-xs text-gray-400 mt-1">
-                  {isZh ? "接受后自动获得：手册仓库 + 一键分发 Skill + 热点雷达 Skill" : "Grants: handbook + both skills repos"}
-                </p>
-              </div>
+              {result.github ? (
+                <div>
+                  <p className="font-semibold text-gray-900 mb-1">
+                    {isZh ? "接受 GitHub 邀请（7 天内）" : "Accept the GitHub invite"}
+                  </p>
+                  <p>
+                    {isZh ? "GitHub 已向 " : "We invited "}
+                    <code className="px-1.5 py-0.5 bg-gray-100 rounded text-xs">@{result.github}</code>
+                    {isZh ? " 发出组织邀请，查收 GitHub 通知/邮件，或直接打开：" : ". Accept at:"}
+                  </p>
+                  <a
+                    href={`https://github.com/orgs/${result.org}/invitation`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[var(--primary)] hover:underline break-all"
+                  >
+                    github.com/orgs/{result.org}/invitation
+                  </a>
+                  <p className="text-xs text-gray-400 mt-1">
+                    {isZh ? "接受后自动获得：手册仓库 + 一键分发 Skill + 热点雷达 Skill" : "Grants: handbook + both skills repos"}
+                  </p>
+                </div>
+              ) : (
+                <div>
+                  <p className="font-semibold text-gray-900 mb-1">
+                    {isZh ? "还没绑 GitHub？不影响其他权益" : "No GitHub yet? Everything else still works"}
+                  </p>
+                  <p className="text-xs text-gray-400">
+                    {isZh ? "以后想要手册仓库 + 两个 Skill 仓库权限，去会员中心补填 GitHub 用户名就行。" : "Add a GitHub username in Dashboard later to unlock the handbook + skills repos."}
+                  </p>
+                </div>
+              )}
             </li>
             <li className="flex gap-3">
               <span className="shrink-0 w-6 h-6 rounded-full bg-blue-50 text-[var(--primary)] font-bold text-xs flex items-center justify-center">2</span>
@@ -158,17 +169,13 @@ export default function ActivateClient({ lang }: Props) {
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1.5">
-              {isZh ? "GitHub 用户名" : "GitHub username"} <span className="text-red-500">*</span>
+              {isZh ? "GitHub 用户名（可选）" : "GitHub username (optional)"}
             </label>
             <input
               name="github"
-              required
-              placeholder={isZh ? "如 zhuyansen（不带 @）" : "e.g. octocat"}
+              placeholder={isZh ? "没有就先跳过，之后在会员中心补填" : "Skip if you don't have one — add it later"}
               className="w-full px-3.5 py-2.5 border border-gray-200 rounded-lg text-sm focus:border-[var(--primary)] focus:outline-none"
             />
-            <p className="text-xs text-gray-400 mt-1">
-              {isZh ? "没有 GitHub 账号？先去 github.com 免费注册一个（1 分钟）" : "Create one free at github.com"}
-            </p>
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1.5">

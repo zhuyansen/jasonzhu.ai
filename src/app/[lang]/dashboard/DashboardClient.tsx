@@ -42,6 +42,34 @@ export default function DashboardClient({ lang, initialUser, initialProfile, sug
   const [redeeming, setRedeeming] = useState(false);
   const [redeemError, setRedeemError] = useState("");
 
+  // 会员事后补填 GitHub 用户名（虎皮椒结账时可能跳过了）
+  const [linkGithub, setLinkGithub] = useState(suggestedGithub);
+  const [linking, setLinking] = useState(false);
+  const [linkError, setLinkError] = useState("");
+
+  async function handleLinkGithub(e: React.FormEvent) {
+    e.preventDefault();
+    setLinking(true);
+    setLinkError("");
+    try {
+      const res = await fetch("/api/dashboard/link-github", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ github: linkGithub }),
+      });
+      const data = await res.json();
+      if (res.ok && data.success) {
+        setProfile((p) => ({ ...(p as Profile), github_username: data.github }));
+      } else {
+        setLinkError(data.error || (isZh ? "绑定失败" : "Failed"));
+      }
+    } catch {
+      setLinkError(isZh ? "网络错误，请稍后重试" : "Network error");
+    } finally {
+      setLinking(false);
+    }
+  }
+
   async function handleSignOut() {
     const supabase = createClient();
     await supabase.auth.signOut();
@@ -134,9 +162,11 @@ export default function DashboardClient({ lang, initialUser, initialProfile, sug
             </div>
           </div>
 
-          <div className="text-sm text-gray-600">
-            <span className="text-gray-400">GitHub: </span>@{profile?.github_username}
-          </div>
+          {profile?.github_username && (
+            <div className="text-sm text-gray-600">
+              <span className="text-gray-400">GitHub: </span>@{profile.github_username}
+            </div>
+          )}
 
           <div className="border-t border-gray-100 pt-5 space-y-4">
             {/* 增长视频课 */}
@@ -163,20 +193,41 @@ export default function DashboardClient({ lang, initialUser, initialProfile, sug
             <div className="border border-gray-100 rounded-xl p-4">
               <div className="flex items-center justify-between gap-3 flex-wrap mb-2">
                 <div className="text-sm font-semibold text-gray-900">📦 {isZh ? "GitHub 会员仓库" : "GitHub member repos"}</div>
-                <a
-                  href="https://github.com/orgs/gosail-club/invitation"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="shrink-0 text-xs px-4 py-2 border border-gray-200 rounded-lg hover:border-[var(--primary)] hover:text-[var(--primary)] transition-colors"
-                >
-                  {isZh ? "接受邀请 →" : "Accept invite →"}
-                </a>
+                {profile?.github_username && (
+                  <a
+                    href="https://github.com/orgs/gosail-club/invitation"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="shrink-0 text-xs px-4 py-2 border border-gray-200 rounded-lg hover:border-[var(--primary)] hover:text-[var(--primary)] transition-colors"
+                  >
+                    {isZh ? "接受邀请 →" : "Accept invite →"}
+                  </a>
+                )}
               </div>
-              <ul className="text-xs text-gray-500 space-y-1.5">
+              <ul className="text-xs text-gray-500 space-y-1.5 mb-3">
                 <li><code className="bg-gray-100 px-1.5 py-0.5 rounded text-[11px] font-mono text-gray-700">jasonzhu-x-hot-radar</code> — {isZh ? "X 热点雷达，端到端推文发布管道（热点发现 → Typefully 草稿）" : "End-to-end X trend-to-draft pipeline"}</li>
                 <li><code className="bg-gray-100 px-1.5 py-0.5 rounded text-[11px] font-mono text-gray-700">jasonzhu-content-flow</code> — {isZh ? "公众号 / 小红书 / 推特一键分发" : "One-click distribution: WeChat / RedNote / X"}</li>
                 <li><code className="bg-gray-100 px-1.5 py-0.5 rounded text-[11px] font-mono text-gray-700">aip-handbook</code> — {isZh ? "AIP 出海自媒体实战手册（会员版）" : "AIP handbook, member edition"}</li>
               </ul>
+              {!profile?.github_username && (
+                <form onSubmit={handleLinkGithub} className="flex items-center gap-2 flex-wrap pt-2 border-t border-gray-100">
+                  <input
+                    value={linkGithub}
+                    onChange={(e) => setLinkGithub(e.target.value)}
+                    required
+                    placeholder={isZh ? "填 GitHub 用户名解锁这三个仓库" : "GitHub username to unlock these repos"}
+                    className="flex-1 min-w-0 px-3 py-2 border border-gray-200 rounded-lg text-xs focus:border-[var(--primary)] focus:outline-none"
+                  />
+                  <button
+                    type="submit"
+                    disabled={linking}
+                    className="shrink-0 text-xs px-4 py-2 bg-[var(--primary)] text-white rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50"
+                  >
+                    {linking ? (isZh ? "绑定中…" : "Linking…") : (isZh ? "绑定并邀请" : "Link & invite")}
+                  </button>
+                  {linkError && <p className="text-xs text-red-500 w-full">{linkError}</p>}
+                </form>
+              )}
             </div>
 
             {/* AgentSkillsHub Pro */}
@@ -250,12 +301,11 @@ export default function DashboardClient({ lang, initialUser, initialProfile, sug
                 />
               </div>
               <div>
-                <label className="block text-xs font-medium text-gray-500 mb-1.5">{isZh ? "GitHub 用户名" : "GitHub username"}</label>
+                <label className="block text-xs font-medium text-gray-500 mb-1.5">{isZh ? "GitHub 用户名（可选）" : "GitHub username (optional)"}</label>
                 <input
                   value={github}
                   onChange={(e) => setGithub(e.target.value)}
-                  required
-                  placeholder={isZh ? "如 zhuyansen（不带 @）" : "e.g. octocat"}
+                  placeholder={isZh ? "没有就先跳过，之后可以补填" : "Skip if you don't have one"}
                   className="w-full px-3.5 py-2.5 border border-gray-200 rounded-lg text-sm focus:border-[var(--primary)] focus:outline-none"
                 />
               </div>

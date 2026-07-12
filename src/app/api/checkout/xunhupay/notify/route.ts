@@ -46,11 +46,14 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    const invite = await inviteToTeam(order.github);
-    if (!invite.ok) {
-      await saveOrder({ ...order, status: "paid", error: invite.error });
-      console.error("[xunhupay] github invite failed:", order.tradeOrderId, invite.error);
-      return new NextResponse("github invite failed, retry me", { status: 500 });
+    // GitHub 用户名是可选的：没填就跳过邀请，别把付款流程卡在这一步上
+    if (order.github) {
+      const invite = await inviteToTeam(order.github);
+      if (!invite.ok) {
+        await saveOrder({ ...order, status: "paid", error: invite.error });
+        console.error("[xunhupay] github invite failed:", order.tradeOrderId, invite.error);
+        return new NextResponse("github invite failed, retry me", { status: 500 });
+      }
     }
 
     const note = order.amount <= 199 ? "早鸟199" : "标准365";
@@ -65,7 +68,7 @@ export async function POST(request: NextRequest) {
     const activatedAt = new Date().toISOString();
     const expiresAtIso = new Date(Date.now() + 365 * 24 * 3600 * 1000).toISOString();
     const activation = {
-      github: order.github,
+      github: order.github || null,
       email: order.email,
       hub_key: issued.key,
       activated_at: activatedAt,
@@ -79,7 +82,7 @@ export async function POST(request: NextRequest) {
       const supabase = getSupabase();
       await supabase.from("member_codes").insert({
         code,
-        github_username: order.github,
+        github_username: order.github || null,
         email: order.email,
         hub_key: issued.key,
         activated_at: activatedAt,
