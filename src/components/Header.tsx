@@ -64,6 +64,13 @@ export default function Header({ lang, dict }: HeaderProps) {
                 )}
               </Link>
             ))}
+            {/* 会员登录入口 */}
+            <Link
+              href={`/${lang}/dashboard`}
+              className="ml-2 px-3 py-1.5 rounded-lg text-xs font-semibold border border-gray-200 text-gray-500 hover:text-[var(--primary)] hover:border-blue-200 hover:bg-blue-50 transition-colors"
+            >
+              {lang === "zh" ? "会员登录" : "Sign in"}
+            </Link>
             {/* Language switcher */}
             <Link
               href={switchPath}
@@ -73,8 +80,14 @@ export default function Header({ lang, dict }: HeaderProps) {
             </Link>
           </nav>
 
-          {/* Mobile: lang switch + menu button */}
+          {/* Mobile: login + lang switch + menu button */}
           <div className="md:hidden flex items-center gap-2">
+            <Link
+              href={`/${lang}/dashboard`}
+              className="px-2 py-1 rounded text-xs font-semibold border border-gray-200 text-gray-500"
+            >
+              {lang === "zh" ? "登录" : "Sign in"}
+            </Link>
             <Link
               href={switchPath}
               className="px-2 py-1 rounded text-xs font-semibold border border-gray-200 text-gray-500"

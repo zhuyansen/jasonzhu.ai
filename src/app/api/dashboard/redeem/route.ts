@@ -81,7 +81,8 @@ export async function POST(request: NextRequest) {
     }
 
     // 跨站发放真实 Hub Pro Key（失败则不标记码已用，允许安全重试）
-    const issued = await issueProKey(user.email, "标准365");
+    // order_id 传兑换码本身：同一个码重复调用不会重复发码（RPC 侧幂等）
+    const issued = await issueProKey(user.email, "标准365", codeStr);
     if (!issued.ok) {
       return NextResponse.json({ error: `GitHub 已开通，但 Hub Key 发放失败：${issued.error}，请重试或联系 Jason` }, { status: 502 });
     }
@@ -129,7 +130,7 @@ export async function POST(request: NextRequest) {
       /* 忽略 */
     }
 
-    await sendActivationEmail({ to: user.email, github: ghUser, hubKey, org: GITHUB_ORG, expiresAt: expiresAt.slice(0, 10) });
+    await sendActivationEmail({ to: user.email, code: codeStr, github: ghUser, hubKey, org: GITHUB_ORG, expiresAt: expiresAt.slice(0, 10) });
 
     return NextResponse.json({ success: true, github: ghUser, hubKey, expiresAt: expiresAt.slice(0, 10), org: GITHUB_ORG });
   } catch {
