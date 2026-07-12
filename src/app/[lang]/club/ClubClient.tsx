@@ -37,8 +37,8 @@ const TIERS = [
     id: "l2",
     nameZh: "进阶版",
     nameEn: "Pro",
-    priceZh: "¥3,999",
-    priceEn: "¥3,999",
+    priceZh: "¥2,999",
+    priceEn: "¥2,999",
     earlyBird: null,
     period: "/年",
     limitZh: "VIP 小群限 50 人 · 审核制",
@@ -327,7 +327,7 @@ export default function ClubClient({ lang }: Props) {
                     className="w-full px-3.5 py-2.5 border border-gray-200 rounded-lg text-sm focus:border-[var(--primary)] focus:outline-none bg-white"
                   >
                     <option value="l1">{isZh ? "启航版 — 早鸟 ¥199/年" : "Starter ¥199/yr"}</option>
-                    <option value="l2">{isZh ? "进阶版 — ¥3,999/年" : "Pro ¥3,999/yr"}</option>
+                    <option value="l2">{isZh ? "进阶版 — ¥2,999/年" : "Pro ¥2,999/yr"}</option>
                   </select>
                 </div>
               </div>
