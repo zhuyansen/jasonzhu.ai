@@ -35,9 +35,11 @@ export async function sendActivationEmail(params: {
       <h3 style="margin:24px 0 8px;font-size:14px">③ 接下来</h3>
       <ol style="line-height:1.8;padding-left:20px;margin:0">
         <li>接受 GitHub 组织邀请：<a href="https://github.com/orgs/${org}/invitation">github.com/orgs/${org}/invitation</a>，自动获得 AIP 出海手册 + 两个 skill 仓库权限。</li>
-        <li>加 Jason 微信进会员群，参加半月度讨论会：</li>
+        <li>扫码进 GoSail Club 会员群，参加半月度讨论会：</li>
       </ol>
-      <img src="${SITE_URL}/wechat-qr.jpg" alt="Jason Zhu 微信二维码" width="180" style="display:block;margin:12px 0;border-radius:8px" />
+      <img src="${SITE_URL}/club-wechat-group-qr.jpg" alt="GoSail Club 会员群二维码" width="180" style="display:block;margin:12px 0;border-radius:8px" />
+      <p style="color:#888;font-size:12px;margin:4px 0 12px">群二维码有效期较短，过期了扫下面这个加 Jason 个人微信，手动拉你进群：</p>
+      <img src="${SITE_URL}/wechat-qr.jpg" alt="Jason Zhu 微信二维码" width="140" style="display:block;border-radius:8px" />
     </div>`;
 
   try {

@@ -1,14 +1,14 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import XunhupayCheckoutModal from "@/components/XunhupayCheckoutModal";
 
 interface Props {
   lang: "zh" | "en";
 }
 
-// Stripe Payment Link（支持支付宝/微信支付）。填上后启航版按钮直接跳转支付；
-// 留空则回落到下方申请表单。
-const STRIPE_PAYMENT_LINK_L1 = "";
+// 实际扣费金额（早鸟 ¥199 / 原价 ¥365）由 /api/checkout/xunhupay/create 按日期算好返回，
+// 这里不重复算，避免渲染期调 Date.now() 违反 react-hooks/purity。
 
 const TIERS = [
   {
@@ -72,6 +72,7 @@ export default function ClubClient({ lang }: Props) {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
   const [selectedTier, setSelectedTier] = useState("l1");
+  const [checkoutOpen, setCheckoutOpen] = useState(false);
   // time-trap 反 bot：渲染期不可调 Date.now()（react-hooks/purity），挂载后再记时
   const mountedAt = useRef<number>(0);
   useEffect(() => {
@@ -249,15 +250,13 @@ export default function ClubClient({ lang }: Props) {
                 ))}
               </ul>
               <div className="text-xs text-center text-gray-400 mb-4 py-2 bg-gray-50 rounded-lg">{isZh ? t.gateZh : ""}</div>
-              {t.id === "l1" && STRIPE_PAYMENT_LINK_L1 ? (
-                <a
-                  href={STRIPE_PAYMENT_LINK_L1}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full py-3 rounded-xl text-sm font-semibold text-center bg-[var(--primary)] text-white hover:opacity-90 transition-all"
+              {t.id === "l1" ? (
+                <button
+                  onClick={() => setCheckoutOpen(true)}
+                  className="w-full py-3 rounded-xl text-sm font-semibold text-center bg-[var(--primary)] text-white hover:opacity-90 transition-all"
                 >
                   {isZh ? "立即加入 · 早鸟 ¥199 →" : "Join now · ¥199 →"}
-                </a>
+                </button>
               ) : (
                 <button
                   onClick={() => scrollToApply(t.id)}
@@ -404,6 +403,8 @@ export default function ClubClient({ lang }: Props) {
           )}
         </div>
       </section>
+
+      {checkoutOpen && <XunhupayCheckoutModal lang={lang} onClose={() => setCheckoutOpen(false)} />}
     </div>
   );
 }

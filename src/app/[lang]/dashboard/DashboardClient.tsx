@@ -138,29 +138,75 @@ export default function DashboardClient({ lang, initialUser, initialProfile, sug
             <span className="text-gray-400">GitHub: </span>@{profile?.github_username}
           </div>
 
-          <div className="border-t border-gray-100 pt-5 grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <a
-              href={`/${lang}/club/course`}
-              className="text-center text-sm px-4 py-2.5 bg-[var(--primary)] text-white rounded-lg hover:opacity-90 transition-opacity font-medium"
-            >
-              {isZh ? "🎬 增长视频课" : "🎬 Growth course"}
-            </a>
-            <a
-              href={`https://github.com/orgs/gosail-club/invitation`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-center text-sm px-4 py-2.5 border border-gray-200 rounded-lg hover:border-[var(--primary)] hover:text-[var(--primary)] transition-colors"
-            >
-              {isZh ? "GitHub 邀请入口" : "GitHub invite"}
-            </a>
-            <a
-              href="https://agentskillshub.top"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-center text-sm px-4 py-2.5 border border-gray-200 rounded-lg hover:border-[var(--primary)] hover:text-[var(--primary)] transition-colors"
-            >
-              {isZh ? "AgentSkillsHub Pro 搜索" : "SkillsHub Pro search"}
-            </a>
+          <div className="border-t border-gray-100 pt-5 space-y-4">
+            {/* 增长视频课 */}
+            <div className="border border-gray-100 rounded-xl p-4">
+              <div className="flex items-center justify-between gap-3 flex-wrap">
+                <div className="min-w-0">
+                  <div className="text-sm font-semibold text-gray-900">🎬 {isZh ? "增长视频课" : "Growth video course"}</div>
+                  <p className="text-xs text-gray-500 mt-1">
+                    {isZh
+                      ? "7 集实操视频 + 完整逐字稿：从 0 搭建你的 X 增长引擎，网页内直接看"
+                      : "7 hands-on episodes with full transcripts — build your X growth engine, watch right in the browser"}
+                  </p>
+                </div>
+                <a
+                  href={`/${lang}/club/course`}
+                  className="shrink-0 text-xs px-4 py-2 bg-[var(--primary)] text-white rounded-lg hover:opacity-90 transition-opacity font-medium"
+                >
+                  {isZh ? "去看课程 →" : "Watch →"}
+                </a>
+              </div>
+            </div>
+
+            {/* GitHub 会员仓库 */}
+            <div className="border border-gray-100 rounded-xl p-4">
+              <div className="flex items-center justify-between gap-3 flex-wrap mb-2">
+                <div className="text-sm font-semibold text-gray-900">📦 {isZh ? "GitHub 会员仓库" : "GitHub member repos"}</div>
+                <a
+                  href="https://github.com/orgs/gosail-club/invitation"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="shrink-0 text-xs px-4 py-2 border border-gray-200 rounded-lg hover:border-[var(--primary)] hover:text-[var(--primary)] transition-colors"
+                >
+                  {isZh ? "接受邀请 →" : "Accept invite →"}
+                </a>
+              </div>
+              <ul className="text-xs text-gray-500 space-y-1.5">
+                <li><code className="bg-gray-100 px-1.5 py-0.5 rounded text-[11px] font-mono text-gray-700">jasonzhu-x-hot-radar</code> — {isZh ? "X 热点雷达，端到端推文发布管道（热点发现 → Typefully 草稿）" : "End-to-end X trend-to-draft pipeline"}</li>
+                <li><code className="bg-gray-100 px-1.5 py-0.5 rounded text-[11px] font-mono text-gray-700">jasonzhu-content-flow</code> — {isZh ? "公众号 / 小红书 / 推特一键分发" : "One-click distribution: WeChat / RedNote / X"}</li>
+                <li><code className="bg-gray-100 px-1.5 py-0.5 rounded text-[11px] font-mono text-gray-700">aip-handbook</code> — {isZh ? "AIP 出海自媒体实战手册（会员版）" : "AIP handbook, member edition"}</li>
+              </ul>
+            </div>
+
+            {/* AgentSkillsHub Pro */}
+            <div className="border border-gray-100 rounded-xl p-4">
+              <div className="flex items-center justify-between gap-3 flex-wrap mb-2">
+                <div className="text-sm font-semibold text-gray-900">🔍 AgentSkillsHub Pro</div>
+                <a
+                  href="https://agentskillshub.top/pro"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="shrink-0 text-xs px-4 py-2 border border-gray-200 rounded-lg hover:border-[var(--primary)] hover:text-[var(--primary)] transition-colors"
+                >
+                  {isZh ? "打开搜索 →" : "Open search →"}
+                </a>
+              </div>
+              <ol className="text-xs text-gray-500 space-y-2 leading-relaxed">
+                <li>
+                  {isZh ? "网页端：打开 " : "Web: open "}
+                  <a href="https://agentskillshub.top/pro" target="_blank" rel="noopener noreferrer" className="text-[var(--primary)] hover:underline">agentskillshub.top/pro</a>
+                  {isZh ? "，粘贴上面这串 key 即可解锁全库深度搜索、社区精选榜、Top3 解读——不用注册、不用登录。" : ", paste your key above — full-library deep search, curated ranking, weekly Top3. No signup needed."}
+                </li>
+                <li>
+                  CLI：<code className="bg-gray-100 px-1.5 py-0.5 rounded text-[11px] font-mono text-gray-700 break-all">ASH_PRO_KEY={profile?.hub_key} npx @agentskillshub/cli search &quot;关键词&quot;</code>
+                </li>
+                <li>
+                  MCP（Claude Code）：<code className="bg-gray-100 px-1.5 py-0.5 rounded text-[11px] font-mono text-gray-700 break-all">claude mcp add agentskillshub -e ASH_PRO_KEY={profile?.hub_key} -- npx -y @agentskillshub/mcp</code>
+                  {isZh ? "，配好后 agent 会自动用 pro_search 工具做深度检索。" : " — the agent will auto-use pro_search for deep lookups."}
+                </li>
+              </ol>
+            </div>
           </div>
         </div>
       ) : (
