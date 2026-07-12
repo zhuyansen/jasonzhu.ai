@@ -1,26 +1,32 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getSupabase } from "@/lib/supabase";
 import { rateLimit } from "@/lib/rate-limit";
+import { inviteToTeam, GITHUB_ORG } from "@/lib/github-invite";
+import { issueProKey } from "@/lib/agentskillshub";
+import { sendActivationEmail } from "@/lib/resend";
 
 export const dynamic = "force-dynamic";
 
 /**
  * GoSail Club 会员自动开通：
- *   兑换码验证 → GitHub Org Team 邀请（自动获得手册/skills 仓库权限）→ 生成 Hub Pro Key
+ *   兑换码验证 → GitHub Org Team 邀请（自动获得手册/skills 仓库权限）
+ *   → 跨站调 agentskillshub.top 的 issue_pro_key RPC 拿真实 Hub Pro Key
  *
  * 需要的环境变量：
- *   GITHUB_PAT      - fine-grained PAT，对 GoSail Club org 有 Members 写权限
- *   GITHUB_ORG      - org 名（默认 gosail-club）
- *   GITHUB_TEAM     - team slug（默认 members）
+ *   GITHUB_PAT                  - fine-grained PAT，对 GoSail Club org 有 Members 写权限
+ *   GITHUB_ORG                  - org 名（默认 gosail-club）
+ *   GITHUB_TEAM                 - team slug（默认 members）
+ *   AGENTSKILLSHUB_SUPABASE_URL / _ANON_KEY / _ISSUE_SECRET
+ *                                - 见 ~/content/agent-skills-hub/supabase/migrations/019_issue_pro_key_rpc.sql
  *
  * 兑换码存储：Supabase member_codes 表（主）+ KV 兜底记录激活流水。
  * 码的生成用 scripts/generate-club-codes.mjs。
+ *
+ * 顺序很重要：GitHub 邀请是幂等的（重复 PUT 无副作用），所以先做；只有 Hub Key
+ * 也发放成功才把兑换码标记为已用——避免"码被吃掉但没拿到 Key"的半失败态。
  */
 const KV_URL = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL;
 const KV_TOKEN = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN;
-const GITHUB_PAT = process.env.GITHUB_PAT;
-const GITHUB_ORG = process.env.GITHUB_ORG || "gosail-club";
-const GITHUB_TEAM = process.env.GITHUB_TEAM || "members";
 
 async function kvCmd(path: string): Promise<Response | null> {
   if (!KV_URL || !KV_TOKEN) return null;
@@ -48,45 +54,6 @@ async function kvSetCode(code: string, value: string): Promise<boolean> {
     `set/${encodeURIComponent("club_code:" + code)}/${encodeURIComponent(value)}`
   );
   return Boolean(res && res.ok);
-}
-
-/** 邀请 GitHub 用户进 org team（自动拿到 team 下所有仓库权限） */
-async function inviteToTeam(username: string): Promise<{ ok: boolean; error?: string }> {
-  if (!GITHUB_PAT) return { ok: false, error: "GITHUB_PAT 未配置" };
-  // 先确认用户名存在
-  const userRes = await fetch(`https://api.github.com/users/${encodeURIComponent(username)}`, {
-    headers: { Authorization: `Bearer ${GITHUB_PAT}`, "User-Agent": "gosail-club" },
-    signal: AbortSignal.timeout(10000),
-  });
-  if (userRes.status === 404) return { ok: false, error: "GitHub 用户名不存在，请检查拼写" };
-  if (!userRes.ok) return { ok: false, error: `GitHub 校验失败 (${userRes.status})` };
-
-  const res = await fetch(
-    `https://api.github.com/orgs/${GITHUB_ORG}/teams/${GITHUB_TEAM}/memberships/${encodeURIComponent(username)}`,
-    {
-      method: "PUT",
-      headers: {
-        Authorization: `Bearer ${GITHUB_PAT}`,
-        "User-Agent": "gosail-club",
-        Accept: "application/vnd.github+json",
-      },
-      body: JSON.stringify({ role: "member" }),
-      signal: AbortSignal.timeout(10000),
-    }
-  );
-  if (!res.ok) {
-    const t = await res.text().catch(() => "");
-    console.error("[club-activate] team invite failed:", res.status, t.slice(0, 200));
-    return { ok: false, error: `邀请失败 (${res.status})，请联系 Jason` };
-  }
-  return { ok: true };
-}
-
-function genHubKey(): string {
-  const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
-  let s = "gsc_";
-  for (let i = 0; i < 24; i++) s += chars[Math.floor(Math.random() * chars.length)];
-  return s;
 }
 
 export async function POST(request: NextRequest) {
@@ -133,8 +100,13 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: invite.error }, { status: 400 });
     }
 
-    // 3) 生成 Hub Key + 落库
-    const hubKey = genHubKey();
+    // 3) 跨站发放真实 Hub Pro Key（失败则不标记码已用，允许安全重试）
+    const issued = await issueProKey(emailStr, "早鸟199");
+    if (!issued.ok) {
+      return NextResponse.json({ error: `GitHub 已开通，但 Hub Key 发放失败：${issued.error}，请重试或联系 Jason` }, { status: 502 });
+    }
+    const hubKey = issued.key;
+
     const activation = {
       github: ghUser,
       email: emailStr,
@@ -163,6 +135,8 @@ export async function POST(request: NextRequest) {
         status: "activated",
       }).eq("code", codeStr);
     } catch { /* Supabase 锁定期忽略 */ }
+
+    await sendActivationEmail({ to: emailStr, github: ghUser, hubKey, org: GITHUB_ORG, expiresAt: activation.expires_at.slice(0, 10) });
 
     return NextResponse.json({
       success: true,

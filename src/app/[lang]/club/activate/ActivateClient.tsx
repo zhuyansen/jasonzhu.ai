@@ -124,7 +124,7 @@ export default function ActivateClient({ lang }: Props) {
                   </button>
                 </div>
                 <p className="text-xs text-gray-400 mt-1">
-                  {isZh ? "用于 AgentSkillsHub Pro 搜索与 API 访问，只显示这一次" : "Shown only once"}
+                  {isZh ? "用于 agentskillshub.top/pro/ 激活，已同步发到你的邮箱作为备份" : "For agentskillshub.top/pro/ — also emailed as backup"}
                 </p>
               </div>
             </li>

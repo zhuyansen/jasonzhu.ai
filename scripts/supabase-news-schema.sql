@@ -79,3 +79,39 @@ create policy "Allow write club_applications" on club_applications
 alter table member_codes enable row level security;
 create policy "Allow write member_codes" on member_codes
   for all using (true) with check (true);
+
+-- GoSail Club 会员 profiles 表（2026-07-12 新增；Google/GitHub 登录 + Dashboard）
+-- id 直接引用 auth.users，注册时自动建行；role/hub_key 在兑换码绑定时写入
+create table if not exists profiles (
+  id uuid primary key references auth.users(id) on delete cascade,
+  email text,
+  role text default 'free',   -- free / member / pro / partner
+  github_username text,
+  hub_key text,
+  activated_at timestamptz,
+  expires_at timestamptz,
+  created_at timestamptz default now()
+);
+
+alter table profiles enable row level security;
+-- 用户只能看/改自己那一行（依赖 auth.uid()，Dashboard 用登录 session 调用）
+create policy "Users can view own profile" on profiles
+  for select using (auth.uid() = id);
+create policy "Users can update own profile" on profiles
+  for update using (auth.uid() = id);
+
+-- 新用户注册（Google/GitHub OAuth）自动建 profiles 行
+create or replace function public.handle_new_user()
+returns trigger as $$
+begin
+  insert into public.profiles (id, email)
+  values (new.id, new.email)
+  on conflict (id) do nothing;
+  return new;
+end;
+$$ language plpgsql security definer set search_path = public;
+
+drop trigger if exists on_auth_user_created on auth.users;
+create trigger on_auth_user_created
+  after insert on auth.users
+  for each row execute procedure public.handle_new_user();
