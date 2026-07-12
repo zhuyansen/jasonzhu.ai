@@ -6,6 +6,10 @@ interface Props {
   lang: "zh" | "en";
 }
 
+// Stripe Payment Link（支持支付宝/微信支付）。填上后启航版按钮直接跳转支付；
+// 留空则回落到下方申请表单。
+const STRIPE_PAYMENT_LINK_L1 = "";
+
 const TIERS = [
   {
     id: "l1",
@@ -16,7 +20,7 @@ const TIERS = [
     earlyBird: "¥199",
     period: "/年",
     limitZh: "首发早鸟 ¥199 · 限 7 天",
-    featured: false,
+    featured: true,
     forZh: "想用 AI 杠杆做出海的你（一天一块钱）",
     itemsZh: [
       "🔧 内容一键分发 Skill（公众号/小红书/推特）",
@@ -24,9 +28,9 @@ const TIERS = [
       "🔍 AgentSkillsHub Pro 搜索 + API Key",
       "📖 AIP 出海手册会员版（105页，持续更新）",
       "🎙 半月度线上讨论会 + 会员群",
-      "🚀 MCN 签约直通车（用成绩说话）",
+      "🚀 MCN 签约直通车（500粉进 GoSail Lab，历史执行 campaign 15+）",
     ],
-    itemsEn: ["Content distribution skill", "X hot-topic radar skill", "SkillsHub Pro search + API", "AIP handbook (member ed.)", "Bi-weekly sessions", "MCN fast track"],
+    itemsEn: ["Content distribution skill", "X hot-topic radar skill", "SkillsHub Pro search + API", "AIP handbook (member ed.)", "Bi-weekly sessions", "MCN fast track (500 followers → GoSail Lab, 15+ campaigns run)"],
     gateZh: "开放加入，无需审核 · GitHub 权限自动开通",
   },
   {
@@ -38,7 +42,7 @@ const TIERS = [
     earlyBird: null,
     period: "/年",
     limitZh: "VIP 小群限 50 人 · 审核制",
-    featured: true,
+    featured: false,
     forZh: "已有产品/收入，要资源和信息差的你",
     itemsZh: [
       "启航版全部权益",
@@ -48,27 +52,6 @@ const TIERS = [
     ],
     itemsEn: ["Everything in Starter", "VIP group (50 cap)", "Structured matchmaking", "Quarterly private sessions"],
     gateZh: "审核制：有上线产品或真实业务",
-  },
-  {
-    id: "l3",
-    nameZh: "合伙人版",
-    nameEn: "Partner",
-    priceZh: "¥29,999",
-    priceEn: "¥29,999",
-    earlyBird: null,
-    period: "/年",
-    limitZh: "全球限 20 席 · 严格审核",
-    featured: false,
-    forZh: "把 Jason 变成你的出海顾问",
-    itemsZh: [
-      "进阶版全部权益",
-      "每季度 1v1 出海策略咨询",
-      "美国/英国公司注册 + 年审 + 架构陪跑",
-      "优先接入 MCN 与渠道资源",
-      "直连 Jason 的第一优先级响应",
-    ],
-    itemsEn: ["Everything in Pro", "Quarterly 1-on-1 advisory", "US/UK company setup guidance", "MCN & channel access"],
-    gateZh: "审核制：限 20 席，推荐人优先",
   },
 ];
 
@@ -200,7 +183,7 @@ export default function ClubClient({ lang }: Props) {
         <p className="text-sm text-gray-400 text-center mb-10">
           {isZh ? "按你的出海阶段选，随时可升级" : "Pick by stage, upgrade anytime"}
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch max-w-4xl mx-auto">
           {TIERS.map((t) => (
             <div
               key={t.id}
@@ -243,16 +226,27 @@ export default function ClubClient({ lang }: Props) {
                 ))}
               </ul>
               <div className="text-xs text-gray-400 mb-4">{isZh ? t.gateZh : ""}</div>
-              <button
-                onClick={() => scrollToApply(t.id)}
-                className={`w-full py-3 rounded-xl text-sm font-semibold transition-all ${
-                  t.featured
-                    ? "bg-[var(--primary)] text-white hover:opacity-90"
-                    : "border border-gray-200 text-gray-700 hover:border-[var(--primary)] hover:text-[var(--primary)]"
-                }`}
-              >
-                {isZh ? `申请${t.nameZh}` : `Apply ${t.nameEn}`}
-              </button>
+              {t.id === "l1" && STRIPE_PAYMENT_LINK_L1 ? (
+                <a
+                  href={STRIPE_PAYMENT_LINK_L1}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full py-3 rounded-xl text-sm font-semibold text-center bg-[var(--primary)] text-white hover:opacity-90 transition-all"
+                >
+                  {isZh ? "立即加入 · 早鸟 ¥199 →" : "Join now · ¥199 →"}
+                </a>
+              ) : (
+                <button
+                  onClick={() => scrollToApply(t.id)}
+                  className={`w-full py-3 rounded-xl text-sm font-semibold transition-all ${
+                    t.featured
+                      ? "bg-[var(--primary)] text-white hover:opacity-90"
+                      : "border border-gray-200 text-gray-700 hover:border-[var(--primary)] hover:text-[var(--primary)]"
+                  }`}
+                >
+                  {isZh ? `申请${t.nameZh}` : `Apply ${t.nameEn}`}
+                </button>
+              )}
             </div>
           ))}
         </div>
@@ -280,8 +274,8 @@ export default function ClubClient({ lang }: Props) {
           </h2>
           <p className="text-sm text-gray-400 text-center mb-8">
             {isZh
-              ? "启航版开放加入；进阶/合伙人版 3 个工作日内审核回复"
-              : "Starter is open; Pro/Partner reviewed within 3 business days"}
+              ? "启航版开放加入；进阶版 3 个工作日内审核回复"
+              : "Starter is open; Pro reviewed within 3 business days"}
           </p>
 
           {status === "success" ? (
@@ -292,7 +286,7 @@ export default function ClubClient({ lang }: Props) {
               </h3>
               <p className="text-sm text-gray-500">
                 {isZh
-                  ? "我们会通过微信/邮箱联系你。启航版申请通常当天处理。"
+                  ? "我们会通过微信/邮箱联系你。启航版申请通常当天处理，付款后发兑换码自动开通。"
                   : "We'll reach out via WeChat/email shortly."}
               </p>
             </div>
@@ -334,7 +328,6 @@ export default function ClubClient({ lang }: Props) {
                   >
                     <option value="l1">{isZh ? "启航版 — 早鸟 ¥199/年" : "Starter ¥199/yr"}</option>
                     <option value="l2">{isZh ? "进阶版 — ¥3,999/年" : "Pro ¥3,999/yr"}</option>
-                    <option value="l3">{isZh ? "合伙人版 — ¥29,999/年（限20席）" : "Partner ¥29,999/yr"}</option>
                   </select>
                 </div>
               </div>
@@ -353,7 +346,7 @@ export default function ClubClient({ lang }: Props) {
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                  {isZh ? "你在做什么（进阶/合伙人版必填）" : "What are you building"}
+                  {isZh ? "你在做什么（进阶版必填）" : "What are you building"}
                 </label>
                 <textarea name="project" maxLength={2000} rows={3} className="w-full px-3.5 py-2.5 border border-gray-200 rounded-lg text-sm focus:border-[var(--primary)] focus:outline-none resize-y" placeholder={isZh ? "产品/业务、目标市场、当前阶段。申请启航版可简写。" : "Product, market, stage"} />
               </div>
