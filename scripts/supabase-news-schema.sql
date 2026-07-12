@@ -71,3 +71,11 @@ create table if not exists member_codes (
   expires_at timestamptz,
   created_at timestamptz default now()
 );
+
+-- RLS：API 用 anon key 写入，走宽松策略（与 news_items 同款）
+alter table club_applications enable row level security;
+create policy "Allow write club_applications" on club_applications
+  for all using (true) with check (true);
+alter table member_codes enable row level security;
+create policy "Allow write member_codes" on member_codes
+  for all using (true) with check (true);
