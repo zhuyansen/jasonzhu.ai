@@ -22,7 +22,7 @@ export async function sendActivationEmail(params: {
       <code style="display:inline-block;padding:6px 10px;background:#f3f4f6;color:#374151;border-radius:6px;font-size:13px">${code}</code>
       <p style="color:#888;font-size:12px;margin-top:4px">遇到问题联系 Jason 时报这个码，方便核对你的开通记录。</p>
 
-      <h3 style="margin:24px 0 8px;font-size:14px">② 你的 SkillsHub Pro Key</h3>
+      <h3 style="margin:24px 0 8px;font-size:14px">② 你的 Agent Skills Hub Pro Key</h3>
       <code style="display:inline-block;padding:8px 12px;background:#111;color:#4ade80;border-radius:6px;font-size:13px">${hubKey}</code>
       <p style="color:#374151;font-size:13px;margin-top:12px 0 6px">怎么用：</p>
       <ol style="line-height:1.9;padding-left:20px;margin:0;color:#374151;font-size:13px">

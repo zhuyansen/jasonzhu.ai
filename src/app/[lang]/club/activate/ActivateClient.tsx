@@ -115,7 +115,7 @@ export default function ActivateClient({ lang }: Props) {
               <span className="shrink-0 w-6 h-6 rounded-full bg-blue-50 text-[var(--primary)] font-bold text-xs flex items-center justify-center">2</span>
               <div className="min-w-0">
                 <p className="font-semibold text-gray-900 mb-1">
-                  {isZh ? "保存你的 SkillsHub Pro Key" : "Save your SkillsHub Pro key"}
+                  {isZh ? "保存你的 Agent Skills Hub Pro Key" : "Save your Agent Skills Hub Pro Key"}
                 </p>
                 <div className="flex items-center gap-2 flex-wrap">
                   <code className="px-2 py-1 bg-gray-900 text-green-400 rounded text-xs break-all">{result.hubKey}</code>

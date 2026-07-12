@@ -125,7 +125,7 @@ export default function DashboardClient({ lang, initialUser, initialProfile, sug
           </div>
 
           <div>
-            <label className="block text-xs font-medium text-gray-500 mb-1.5">SkillsHub Pro Key</label>
+            <label className="block text-xs font-medium text-gray-500 mb-1.5">Agent Skills Hub Pro Key</label>
             <div className="flex items-center gap-2 flex-wrap">
               <code className="px-3 py-2 bg-gray-900 text-green-400 rounded-lg text-xs break-all flex-1 min-w-0">{profile?.hub_key}</code>
               <button onClick={copyKey} className="text-xs text-[var(--primary)] hover:underline shrink-0 px-2">
