@@ -23,14 +23,21 @@ const TIERS = [
     featured: true,
     forZh: "想用 AI 杠杆做出海的你（一天一块钱）",
     itemsZh: [
-      "🔍 AgentSkillsHub Pro 三件套：全库深度搜索（最新 skills 捕捉、场景 skills 交付 — FDE 驻场交付工程师首选）+ 社区精选榜 + 每周 Top3 解读",
-      "🔧 内容一键分发 Skill：写一次，公众号/小红书/X 三平台同步发",
-      "🔥 X 热点雷达 Skill：捕捉热点 → 生成推文 → 发布，全自动涨粉引擎",
-      "📖 AIP 出海手册会员版（105 页，1000+ 人实战验证，持续更新）",
-      "🎙 半月度闭门讨论会 + 会员群（第一手实操，不对外）",
-      "🚀 MCN 签约直通车：500 粉进 GoSail Lab（已执行 campaign 15+），开启你的第一个商单",
+      { icon: "🔍", title: "AgentSkillsHub Pro 三件套", desc: "全库深度搜索（FDE 驻场交付工程师首选）+ 社区精选榜 + 每周 Top3 解读" },
+      { icon: "🔧", title: "内容一键分发 Skill", desc: "写一次，公众号/小红书/X 三平台同步发" },
+      { icon: "🔥", title: "X 热点雷达 Skill", desc: "捕捉热点 → 生成推文 → 发布，全自动涨粉引擎" },
+      { icon: "📖", title: "AIP 出海手册会员版", desc: "105 页，1000+ 人实战验证，持续更新" },
+      { icon: "🎙", title: "半月度闭门讨论会", desc: "第一手实操 + 专属会员群，内容不对外" },
+      { icon: "🚀", title: "MCN 签约直通车", desc: "500 粉进 GoSail Lab（已执行 campaign 15+），开启你的第一个商单" },
     ],
-    itemsEn: ["SkillsHub Pro: deep search + curated ranking + weekly Top3", "One-click distribution skill (WeChat/RedNote/X)", "X hot-topic radar skill — auto growth engine", "AIP handbook member edition (105 pages, 1,000+ users)", "Bi-weekly closed-door sessions + member group", "MCN fast track: 500 followers → GoSail Lab, land your first brand deal"],
+    itemsEn: [
+      { icon: "🔍", title: "SkillsHub Pro Suite", desc: "Deep search + curated ranking + weekly Top3" },
+      { icon: "🔧", title: "One-click distribution", desc: "WeChat / RedNote / X, one write, three posts" },
+      { icon: "🔥", title: "X hot-topic radar skill", desc: "Auto growth engine — trend to tweet to post" },
+      { icon: "📖", title: "AIP handbook, member edition", desc: "105 pages, 1,000+ users, updated regularly" },
+      { icon: "🎙", title: "Bi-weekly closed-door sessions", desc: "First-hand playbooks + member group" },
+      { icon: "🚀", title: "MCN fast track", desc: "500 followers → GoSail Lab, land your first deal" },
+    ],
     gateZh: "开放加入，无需审核 · GitHub 权限自动开通",
   },
   {
@@ -45,12 +52,17 @@ const TIERS = [
     featured: false,
     forZh: "已有产品/收入，要资源和信息差的你",
     itemsZh: [
-      "启航版全部权益",
-      "VIP 小群（限 50 人，全员实名背景）",
-      "结构化资源对接（需求/能力入库撮合）",
-      "季度线上私享会（真实数据闭门讲）",
+      { icon: "✨", title: "启航版全部权益", desc: "六件套工具与手册全部保留" },
+      { icon: "👥", title: "VIP 小群", desc: "限 50 人，全员实名背景，深度交流" },
+      { icon: "🤝", title: "结构化资源对接", desc: "需求/能力入库撮合，精准牵线" },
+      { icon: "📊", title: "季度线上私享会", desc: "真实数据闭门讲，同行拿不到的一手信息" },
     ],
-    itemsEn: ["Everything in Starter", "VIP group (50 cap)", "Structured matchmaking", "Quarterly private sessions"],
+    itemsEn: [
+      { icon: "✨", title: "Everything in Starter", desc: "All six tools and the handbook" },
+      { icon: "👥", title: "VIP group", desc: "Capped at 50, verified real profiles" },
+      { icon: "🤝", title: "Structured matchmaking", desc: "Needs/skills indexed and matched" },
+      { icon: "📊", title: "Quarterly private session", desc: "Closed-door, real data" },
+    ],
     gateZh: "审核制：有上线产品或真实业务",
   },
 ];
@@ -183,11 +195,11 @@ export default function ClubClient({ lang }: Props) {
         <p className="text-sm text-gray-400 text-center mb-10">
           {isZh ? "按你的出海阶段选，随时可升级" : "Pick by stage, upgrade anytime"}
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch max-w-5xl mx-auto">
           {TIERS.map((t) => (
             <div
               key={t.id}
-              className={`relative flex flex-col rounded-2xl p-7 border ${
+              className={`relative flex flex-col rounded-2xl p-8 border ${
                 t.featured
                   ? "border-[var(--primary)] shadow-lg shadow-blue-100"
                   : "border-gray-200"
@@ -215,17 +227,28 @@ export default function ClubClient({ lang }: Props) {
                   </div>
                 )}
               </div>
-              <div className="text-xs text-[var(--primary)] font-medium mb-1">{t.limitZh}</div>
-              <div className="text-xs text-gray-400 mb-5">{isZh ? `适合：${t.forZh}` : ""}</div>
-              <ul className="space-y-2.5 mb-6 flex-1">
+              <div className="text-xs text-[var(--primary)] font-medium mb-3">{t.limitZh}</div>
+              <div className="text-xs text-gray-400 mb-6 pb-6 border-b border-gray-100">
+                {isZh ? `适合：${t.forZh}` : ""}
+              </div>
+              <ul className="space-y-4 mb-7 flex-1">
                 {(isZh ? t.itemsZh : t.itemsEn).map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm text-gray-600">
-                    <span className="text-green-500 mt-0.5 shrink-0">✓</span>
-                    {item}
+                  <li key={item.title} className="flex items-start gap-3">
+                    <span
+                      className={`shrink-0 w-7 h-7 rounded-lg flex items-center justify-center text-sm ${
+                        t.featured ? "bg-blue-50" : "bg-gray-50"
+                      }`}
+                    >
+                      {item.icon}
+                    </span>
+                    <div className="min-w-0 pt-0.5">
+                      <div className="text-sm font-semibold text-gray-900 leading-snug">{item.title}</div>
+                      <div className="text-xs text-gray-500 leading-relaxed mt-0.5">{item.desc}</div>
+                    </div>
                   </li>
                 ))}
               </ul>
-              <div className="text-xs text-gray-400 mb-4">{isZh ? t.gateZh : ""}</div>
+              <div className="text-xs text-center text-gray-400 mb-4 py-2 bg-gray-50 rounded-lg">{isZh ? t.gateZh : ""}</div>
               {t.id === "l1" && STRIPE_PAYMENT_LINK_L1 ? (
                 <a
                   href={STRIPE_PAYMENT_LINK_L1}
