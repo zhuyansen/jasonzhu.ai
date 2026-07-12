@@ -42,7 +42,15 @@ function formatTime(sec: number | null): string {
 export default function CourseClient({ lang, isLoggedIn, isMember, course }: Props) {
   const isZh = lang === "zh";
   const [activeIndex, setActiveIndex] = useState(0);
+  const [copied, setCopied] = useState(false);
   const active = course.episodes[activeIndex];
+
+  async function copyTranscript() {
+    const text = active.transcript.map((seg) => `[${formatTime(seg.start)}] ${seg.text}`).join("\n");
+    await navigator.clipboard.writeText(text);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  }
 
   if (!isLoggedIn) {
     return (
@@ -105,7 +113,15 @@ export default function CourseClient({ lang, isLoggedIn, isMember, course }: Pro
 
           {active.transcript.length > 0 && (
             <div className="mt-6 border-t border-gray-100 pt-5">
-              <h3 className="text-sm font-semibold text-gray-700 mb-3">{isZh ? "逐字稿" : "Transcript"}</h3>
+              <div className="flex items-center justify-between mb-3">
+                <h3 className="text-sm font-semibold text-gray-700">{isZh ? "逐字稿" : "Transcript"}</h3>
+                <button
+                  onClick={copyTranscript}
+                  className="text-xs text-[var(--primary)] hover:underline shrink-0"
+                >
+                  {copied ? (isZh ? "已复制 ✓" : "Copied ✓") : (isZh ? "复制全部" : "Copy all")}
+                </button>
+              </div>
               <div className="space-y-2.5 max-h-[500px] overflow-y-auto pr-2">
                 {active.transcript.map((seg, i) => (
                   <div key={i} className="flex gap-3 text-sm">

@@ -51,10 +51,12 @@ const list = fs
     return { order, filename, title };
   });
 
-// ── 读 uid 映射 ──
+// ── 读 uid 映射（全部上传完的 manifest 优先；还在传的话读 .tmp 里已完成的部分，
+//    不用等 7 个全传完才能上线先传好的几集） ──
 const uidByFilename = {};
-if (fs.existsSync(MANIFEST_PATH)) {
-  for (const line of fs.readFileSync(MANIFEST_PATH, "utf-8").split("\n")) {
+const manifestSource = fs.existsSync(MANIFEST_PATH) ? MANIFEST_PATH : `${MANIFEST_PATH}.tmp`;
+if (fs.existsSync(manifestSource)) {
+  for (const line of fs.readFileSync(manifestSource, "utf-8").split("\n")) {
     if (!line.trim()) continue;
     const d = JSON.parse(line);
     uidByFilename[d.filename] = d.uid;
