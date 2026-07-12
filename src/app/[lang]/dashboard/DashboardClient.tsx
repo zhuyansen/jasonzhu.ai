@@ -1,11 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import type { User } from "@supabase/supabase-js";
+import { useState } from "react";
 import { createClient } from "@/lib/supabase-browser";
 
-interface Props {
-  lang: "zh" | "en";
+interface SimpleUser {
+  id: string;
+  email: string | null;
 }
 
 interface Profile {
@@ -16,6 +16,13 @@ interface Profile {
   expires_at: string | null;
 }
 
+interface Props {
+  lang: "zh" | "en";
+  initialUser: SimpleUser | null;
+  initialProfile: Profile | null;
+  suggestedGithub: string;
+}
+
 const ROLE_LABEL: Record<string, string> = {
   free: "未激活",
   member: "启航版会员",
@@ -23,35 +30,17 @@ const ROLE_LABEL: Record<string, string> = {
   partner: "合伙人",
 };
 
-export default function DashboardClient({ lang }: Props) {
+export default function DashboardClient({ lang, initialUser, initialProfile, suggestedGithub }: Props) {
   const isZh = lang === "zh";
-  const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState<User | null>(null);
-  const [profile, setProfile] = useState<Profile | null>(null);
+  const user = initialUser;
+  const [profile, setProfile] = useState<Profile | null>(initialProfile);
   const [copied, setCopied] = useState(false);
 
   // 兑换码绑定表单
   const [code, setCode] = useState("");
-  const [github, setGithub] = useState("");
+  const [github, setGithub] = useState(suggestedGithub);
   const [redeeming, setRedeeming] = useState(false);
   const [redeemError, setRedeemError] = useState("");
-
-  useEffect(() => {
-    const supabase = createClient();
-    supabase.auth.getUser().then(async ({ data: { user } }) => {
-      setUser(user);
-      if (user) {
-        const { data } = await supabase
-          .from("profiles")
-          .select("role, github_username, hub_key, activated_at, expires_at")
-          .eq("id", user.id)
-          .single();
-        setProfile(data);
-        if (user.user_metadata?.user_name) setGithub(user.user_metadata.user_name);
-      }
-      setLoading(false);
-    });
-  }, []);
 
   async function handleSignOut() {
     const supabase = createClient();
@@ -94,10 +83,6 @@ export default function DashboardClient({ lang }: Props) {
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
-
-  if (loading) {
-    return <div className="max-w-2xl mx-auto px-4 py-24 text-center text-sm text-gray-400">{isZh ? "加载中…" : "Loading…"}</div>;
-  }
 
   if (!user) {
     return (

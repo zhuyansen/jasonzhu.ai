@@ -2,9 +2,10 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import type { Dictionary, Locale } from "@/lib/dictionaries";
+import { createClient } from "@/lib/supabase-browser";
 
 interface HeaderProps {
   lang: Locale;
@@ -13,7 +14,18 @@ interface HeaderProps {
 
 export default function Header({ lang, dict }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    const supabase = createClient();
+    supabase.auth.getSession().then(({ data: { session } }) => setLoggedIn(Boolean(session)));
+    const { data: sub } = supabase.auth.onAuthStateChange((_event, session) => setLoggedIn(Boolean(session)));
+    return () => sub.subscription.unsubscribe();
+  }, []);
+
+  const loginLabel = loggedIn ? (lang === "zh" ? "会员中心" : "Dashboard") : (lang === "zh" ? "会员登录" : "Sign in");
+  const loginLabelShort = loggedIn ? (lang === "zh" ? "会员中心" : "Dashboard") : (lang === "zh" ? "登录" : "Sign in");
 
   const navItems = [
     { href: `/${lang}/blog`, label: dict.nav.blog },
@@ -67,9 +79,13 @@ export default function Header({ lang, dict }: HeaderProps) {
             {/* 会员登录入口 */}
             <Link
               href={`/${lang}/dashboard`}
-              className="ml-2 px-3 py-1.5 rounded-lg text-xs font-semibold border border-gray-200 text-gray-500 hover:text-[var(--primary)] hover:border-blue-200 hover:bg-blue-50 transition-colors"
+              className={`ml-2 px-3 py-1.5 rounded-lg text-xs font-semibold border transition-colors ${
+                loggedIn
+                  ? "border-blue-200 bg-blue-50 text-[var(--primary)]"
+                  : "border-gray-200 text-gray-500 hover:text-[var(--primary)] hover:border-blue-200 hover:bg-blue-50"
+              }`}
             >
-              {lang === "zh" ? "会员登录" : "Sign in"}
+              {loginLabel}
             </Link>
             {/* Language switcher */}
             <Link
@@ -84,9 +100,11 @@ export default function Header({ lang, dict }: HeaderProps) {
           <div className="md:hidden flex items-center gap-2">
             <Link
               href={`/${lang}/dashboard`}
-              className="px-2 py-1 rounded text-xs font-semibold border border-gray-200 text-gray-500"
+              className={`px-2 py-1 rounded text-xs font-semibold border ${
+                loggedIn ? "border-blue-200 bg-blue-50 text-[var(--primary)]" : "border-gray-200 text-gray-500"
+              }`}
             >
-              {lang === "zh" ? "登录" : "Sign in"}
+              {loginLabelShort}
             </Link>
             <Link
               href={switchPath}

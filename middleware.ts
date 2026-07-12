@@ -4,12 +4,25 @@ import { NextRequest, NextResponse } from "next/server";
 const locales = ["zh", "en"];
 const defaultLocale = "zh";
 
+// 只有会员相关路径才需要在 middleware 里刷新 Supabase session（多一次网络请求）。
+// 博客/快讯/首页等公开内容页完全不碰 Supabase，避免拖慢全站每次导航。
+function needsAuthRefresh(pathname: string): boolean {
+  return (
+    pathname.startsWith("/admin") ||
+    pathname.startsWith("/auth/") ||
+    /\/(dashboard|login)(\/|$)/.test(pathname)
+  );
+}
+
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+  const authRefresh = needsAuthRefresh(pathname)
+    ? (response: NextResponse) => refreshSupabaseSession(request, response)
+    : (response: NextResponse) => response;
 
   // Skip admin routes and auth callback（不走 i18n 前缀重写）
   if (pathname.startsWith("/admin") || pathname.startsWith("/auth/")) {
-    return refreshSupabaseSession(request, NextResponse.next({ request }));
+    return authRefresh(NextResponse.next({ request }));
   }
 
   // Check if pathname already has a locale
@@ -24,7 +37,7 @@ export async function middleware(request: NextRequest) {
     ) || defaultLocale;
     const response = NextResponse.next({ request });
     response.headers.set("x-locale", locale);
-    return refreshSupabaseSession(request, response);
+    return authRefresh(response);
   }
 
   // Rewrite (not redirect) to default locale — avoids flash/flicker
@@ -34,7 +47,7 @@ export async function middleware(request: NextRequest) {
   url.pathname = `/${defaultLocale}${pathname === "/" ? "" : pathname}`;
   const response = NextResponse.rewrite(url);
   response.headers.set("x-locale", defaultLocale);
-  return refreshSupabaseSession(request, response);
+  return authRefresh(response);
 }
 
 /** 刷新 Supabase auth session cookie，让 Server Component 读到最新登录态 */
