@@ -76,41 +76,41 @@ export default function Header({ lang, dict }: HeaderProps) {
                 )}
               </Link>
             ))}
-            {/* 会员登录入口 */}
-            <Link
-              href={`/${lang}/dashboard`}
-              className={`ml-2 px-3 py-1.5 rounded-lg text-xs font-semibold border transition-colors ${
-                loggedIn
-                  ? "border-blue-200 bg-blue-50 text-[var(--primary)]"
-                  : "border-gray-200 text-gray-500 hover:text-[var(--primary)] hover:border-blue-200 hover:bg-blue-50"
-              }`}
-            >
-              {loginLabel}
-            </Link>
-            {/* Language switcher */}
+            {/* 语言切换（放前面、样式弱化，跟登录按钮拉开视觉层级，防误点） */}
             <Link
               href={switchPath}
-              className="ml-2 px-2.5 py-1.5 rounded-lg text-xs font-semibold border border-gray-200 text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-colors"
+              className="ml-3 px-2.5 py-1.5 rounded-lg text-xs font-medium text-gray-400 hover:text-gray-700 hover:bg-gray-50 transition-colors"
             >
               {lang === "zh" ? "EN" : "中"}
+            </Link>
+            {/* 会员登录入口：主色实心按钮，全站视觉最突出的一个 CTA */}
+            <Link
+              href={`/${lang}/dashboard`}
+              className={`ml-1 px-4 py-1.5 rounded-lg text-xs font-semibold shadow-sm transition-all ${
+                loggedIn
+                  ? "bg-green-50 text-green-700 border border-green-200 hover:bg-green-100"
+                  : "bg-[var(--primary)] text-white hover:opacity-90 hover:shadow"
+              }`}
+            >
+              {loggedIn ? `✓ ${loginLabel}` : loginLabel}
             </Link>
           </nav>
 
-          {/* Mobile: login + lang switch + menu button */}
+          {/* Mobile: lang switch + login + menu button */}
           <div className="md:hidden flex items-center gap-2">
             <Link
-              href={`/${lang}/dashboard`}
-              className={`px-2 py-1 rounded text-xs font-semibold border ${
-                loggedIn ? "border-blue-200 bg-blue-50 text-[var(--primary)]" : "border-gray-200 text-gray-500"
-              }`}
-            >
-              {loginLabelShort}
-            </Link>
-            <Link
               href={switchPath}
-              className="px-2 py-1 rounded text-xs font-semibold border border-gray-200 text-gray-500"
+              className="px-2 py-1 rounded text-xs font-medium text-gray-400"
             >
               {lang === "zh" ? "EN" : "中"}
+            </Link>
+            <Link
+              href={`/${lang}/dashboard`}
+              className={`px-2.5 py-1 rounded text-xs font-semibold shadow-sm ${
+                loggedIn ? "bg-green-50 text-green-700 border border-green-200" : "bg-[var(--primary)] text-white"
+              }`}
+            >
+              {loggedIn ? `✓ ${loginLabelShort}` : loginLabelShort}
             </Link>
             <button
               onClick={() => setMenuOpen(!menuOpen)}

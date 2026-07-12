@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import GoogleOneTap from "@/components/GoogleOneTap";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
 import "../globals.css";
 
@@ -160,6 +161,7 @@ export default async function LangLayout({ children, params }: Props) {
         <Header lang={lang} dict={dict} />
         <main className="flex-1">{children}</main>
         <Footer lang={lang} dict={dict} />
+        <GoogleOneTap />
         <Analytics />
       </body>
     </html>
