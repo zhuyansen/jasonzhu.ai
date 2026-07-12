@@ -156,7 +156,7 @@ export default function ClubClient({ lang }: Props) {
             ))}
           </div>
           <button
-            onClick={() => scrollToApply("l1")}
+            onClick={() => setCheckoutOpen(true)}
             className="px-10 py-3.5 bg-[var(--primary)] text-white font-semibold rounded-xl hover:opacity-90 transition-opacity"
           >
             {isZh ? "申请加入 →" : "Apply →"}
