@@ -24,12 +24,13 @@ export async function sendActivationEmail(params: {
 
       <h3 style="margin:24px 0 8px;font-size:14px">② 你的 SkillsHub Pro Key</h3>
       <code style="display:inline-block;padding:8px 12px;background:#111;color:#4ade80;border-radius:6px;font-size:13px">${hubKey}</code>
-      <p style="color:#888;font-size:12px;margin-top:4px;line-height:1.7">
-        <b>网页端：</b>打开 <a href="https://agentskillshub.top/pro/">agentskillshub.top/pro/</a>，粘贴这串 key 即可解锁全库深度搜索、社区精选榜、Top3 解读——不用注册、不用登录。<br/><br/>
-        <b>CLI：</b>设置环境变量 <code style="background:#f3f4f6;padding:1px 4px;border-radius:3px">ASH_PRO_KEY=${hubKey}</code> 后，<code style="background:#f3f4f6;padding:1px 4px;border-radius:3px">npx @agentskillshub/cli search</code> 自动走 README 深度搜索（200 条结果）；也可以用 <code style="background:#f3f4f6;padding:1px 4px;border-radius:3px">--pro</code> / <code style="background:#f3f4f6;padding:1px 4px;border-radius:3px">--free</code> 手动切换模式。<br/><br/>
-        <b>MCP：</b>在 Claude Code / Cursor 等客户端配置好 agentskillshub MCP server 后，agent 可以直接调用新的 <code style="background:#f3f4f6;padding:1px 4px;border-radius:3px">pro_search</code> 工具做 README 深度检索（同样靠 <code style="background:#f3f4f6;padding:1px 4px;border-radius:3px">ASH_PRO_KEY</code> 环境变量认证）。<br/><br/>
-        <b>怎么再次查看：</b>这封邮件是唯一明文备份，请自行保存；以后 <a href="https://jasonzhu.ai/zh/dashboard">jasonzhu.ai 会员中心</a>登录后也能查看。
-      </p>
+      <p style="color:#374151;font-size:13px;margin-top:12px 0 6px">怎么用：</p>
+      <ol style="line-height:1.9;padding-left:20px;margin:0;color:#374151;font-size:13px">
+        <li>网页端：打开 <a href="https://agentskillshub.top/pro/">agentskillshub.top/pro/</a>，粘贴这串 key 即可解锁全库深度搜索、社区精选榜、Top3 解读——不用注册、不用登录。</li>
+        <li>CLI：<code style="background:#f3f4f6;padding:1px 4px;border-radius:3px;font-size:12px">ASH_PRO_KEY=${hubKey} npx @agentskillshub/cli search "关键词"</code></li>
+        <li>MCP（Claude Code）：<code style="background:#f3f4f6;padding:1px 4px;border-radius:3px;font-size:12px">claude mcp add agentskillshub -e ASH_PRO_KEY=${hubKey} -- npx -y @agentskillshub/mcp</code>，配好后 agent 会自动用 pro_search 工具做深度检索。</li>
+      </ol>
+      <p style="color:#888;font-size:12px;margin-top:10px">怎么再次查看：这封邮件是唯一明文备份，请自行保存；以后 <a href="https://jasonzhu.ai/zh/dashboard">jasonzhu.ai 会员中心</a>登录后也能查看。</p>
 
       <h3 style="margin:24px 0 8px;font-size:14px">③ 接下来</h3>
       <ol style="line-height:1.8;padding-left:20px;margin:0">
