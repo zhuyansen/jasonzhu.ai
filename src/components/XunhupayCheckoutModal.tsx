@@ -17,6 +17,7 @@ export default function XunhupayCheckoutModal({ lang, onClose }: Props) {
   const [github, setGithub] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
+  const [alreadyMember, setAlreadyMember] = useState(false);
   const [qrUrl, setQrUrl] = useState("");
   const [payUrl, setPayUrl] = useState("");
   const [amount, setAmount] = useState<number | null>(null);
@@ -39,6 +40,7 @@ export default function XunhupayCheckoutModal({ lang, onClose }: Props) {
     e.preventDefault();
     setSubmitting(true);
     setErrorMsg("");
+    setAlreadyMember(false);
     try {
       const res = await fetch("/api/checkout/xunhupay/create", {
         method: "POST",
@@ -48,6 +50,7 @@ export default function XunhupayCheckoutModal({ lang, onClose }: Props) {
       const data = await res.json();
       if (!res.ok || !data.success) {
         setErrorMsg(data.error || (isZh ? "创建订单失败" : "Failed to create order"));
+        setAlreadyMember(Boolean(data.alreadyMember));
         setSubmitting(false);
         return;
       }
@@ -152,14 +155,28 @@ export default function XunhupayCheckoutModal({ lang, onClose }: Props) {
                 </button>
               </div>
             </div>
-            {errorMsg && <p className="text-sm text-red-500">{errorMsg}</p>}
-            <button
-              type="submit"
-              disabled={submitting}
-              className="w-full py-3 bg-[var(--primary)] text-white font-semibold rounded-xl hover:opacity-90 transition-opacity disabled:opacity-50"
-            >
-              {submitting ? (isZh ? "生成中…" : "Creating…") : isZh ? `生成收款二维码 →` : "Generate QR →"}
-            </button>
+            {errorMsg && (
+              <p className="text-sm text-red-500">
+                {errorMsg}
+                {alreadyMember && (
+                  <>
+                    {" "}
+                    <a href={`/${lang}/login`} className="text-[var(--primary)] hover:underline font-medium">
+                      {isZh ? "去登录 →" : "Sign in →"}
+                    </a>
+                  </>
+                )}
+              </p>
+            )}
+            {!alreadyMember && (
+              <button
+                type="submit"
+                disabled={submitting}
+                className="w-full py-3 bg-[var(--primary)] text-white font-semibold rounded-xl hover:opacity-90 transition-opacity disabled:opacity-50"
+              >
+                {submitting ? (isZh ? "生成中…" : "Creating…") : isZh ? `生成收款二维码 →` : "Generate QR →"}
+              </button>
+            )}
           </form>
         )}
 

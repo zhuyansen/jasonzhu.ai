@@ -3,6 +3,7 @@ import crypto from "crypto";
 import { rateLimit } from "@/lib/rate-limit";
 import { createXunhupayOrder, type XunhupayChannel } from "@/lib/xunhupay";
 import { saveOrder } from "@/lib/checkout-orders";
+import { getSupabase } from "@/lib/supabase";
 
 export const dynamic = "force-dynamic";
 
@@ -42,6 +43,26 @@ export async function POST(request: NextRequest) {
     }
     if (channelStr !== "wechat" && channelStr !== "alipay") {
       return NextResponse.json({ error: "支付渠道不正确" }, { status: 400 });
+    }
+
+    // 下单前查一下这个邮箱是不是已经是会员了，别让人重复付款
+    try {
+      const supabase = getSupabase();
+      const { data: existing } = await supabase
+        .from("member_codes")
+        .select("code")
+        .eq("email", emailStr)
+        .eq("status", "activated")
+        .limit(1)
+        .maybeSingle();
+      if (existing) {
+        return NextResponse.json(
+          { error: "这个邮箱已经是 GoSail Club 会员了，去登录会员中心查看吧", alreadyMember: true },
+          { status: 409 }
+        );
+      }
+    } catch {
+      /* 查重是尽力而为，查询失败不阻塞正常付款 */
     }
 
     const tradeOrderId = `xh${Date.now()}${crypto.randomBytes(4).toString("hex")}`;
