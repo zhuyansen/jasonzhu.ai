@@ -48,7 +48,7 @@ export async function issueProKey(
     if (!res.ok) {
       const t = await res.text().catch(() => "");
       console.error("[agentskillshub] issue_pro_key failed:", res.status, t.slice(0, 300));
-      return { ok: false, error: `发码失败 (${res.status})` };
+      return { ok: false, error: `发码失败 (${res.status}): ${t.slice(0, 200)}` };
     }
 
     const data = (await res.json()) as IssueProKeyResponse;
