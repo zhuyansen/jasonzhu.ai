@@ -138,7 +138,13 @@ export default function DashboardClient({ lang, initialUser, initialProfile, sug
             <span className="text-gray-400">GitHub: </span>@{profile?.github_username}
           </div>
 
-          <div className="border-t border-gray-100 pt-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="border-t border-gray-100 pt-5 grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <a
+              href={`/${lang}/club/course`}
+              className="text-center text-sm px-4 py-2.5 bg-[var(--primary)] text-white rounded-lg hover:opacity-90 transition-opacity font-medium"
+            >
+              {isZh ? "🎬 增长视频课" : "🎬 Growth course"}
+            </a>
             <a
               href={`https://github.com/orgs/gosail-club/invitation`}
               target="_blank"
@@ -158,47 +164,65 @@ export default function DashboardClient({ lang, initialUser, initialProfile, sug
           </div>
         </div>
       ) : (
-        <div className="bg-white border border-gray-100 rounded-2xl p-7">
-          <h2 className="text-sm font-semibold text-gray-900 mb-1">{isZh ? "绑定兑换码" : "Redeem your code"}</h2>
-          <p className="text-xs text-gray-400 mb-5">
-            {isZh ? "输入付款后收到的兑换码，绑定到当前账号" : "Enter the code you received after payment"}
-          </p>
-          <form onSubmit={handleRedeem} className="space-y-4">
-            <div>
-              <label className="block text-xs font-medium text-gray-500 mb-1.5">{isZh ? "兑换码" : "Code"}</label>
-              <input
-                value={code}
-                onChange={(e) => setCode(e.target.value)}
-                required
-                placeholder="GSC-XXXXXXXX"
-                className="w-full px-3.5 py-2.5 border border-gray-200 rounded-lg text-sm font-mono uppercase focus:border-[var(--primary)] focus:outline-none"
-              />
-            </div>
-            <div>
-              <label className="block text-xs font-medium text-gray-500 mb-1.5">{isZh ? "GitHub 用户名" : "GitHub username"}</label>
-              <input
-                value={github}
-                onChange={(e) => setGithub(e.target.value)}
-                required
-                placeholder={isZh ? "如 zhuyansen（不带 @）" : "e.g. octocat"}
-                className="w-full px-3.5 py-2.5 border border-gray-200 rounded-lg text-sm focus:border-[var(--primary)] focus:outline-none"
-              />
-            </div>
-            {redeemError && <p className="text-sm text-red-500">{redeemError}</p>}
-            <button
-              type="submit"
-              disabled={redeeming}
-              className="w-full py-3 bg-[var(--primary)] text-white font-semibold rounded-xl hover:opacity-90 transition-opacity disabled:opacity-50"
+        <div className="space-y-5">
+          {/* 非会员的主引导——第一眼看到的应该是"怎么加入"，不是一个假设你已经买过的表单 */}
+          <div className="bg-gradient-to-br from-blue-50 to-white border border-blue-100 rounded-2xl p-7 text-center">
+            <span className="text-3xl">⛵</span>
+            <h2 className="text-lg font-bold text-gray-900 mt-3 mb-1.5">
+              {isZh ? "你还不是 GoSail Club 会员" : "You're not a member yet"}
+            </h2>
+            <p className="text-sm text-gray-500 mb-6">
+              {isZh
+                ? "加入后解锁 Agent Skills Hub Pro Key、增长视频课、社群等全部权益"
+                : "Join to unlock the Pro Key, growth video course, and community"}
+            </p>
+            <a
+              href={`/${lang}/club`}
+              className="inline-block px-8 py-3 bg-[var(--primary)] text-white font-semibold rounded-xl hover:opacity-90 transition-opacity"
             >
-              {redeeming ? (isZh ? "绑定中…" : "Binding…") : (isZh ? "绑定并开通" : "Bind & activate")}
-            </button>
-          </form>
-          <p className="text-xs text-gray-400 text-center mt-5">
-            {isZh ? "还没有兑换码？" : "No code yet? "}
-            <a href={`/${lang}/club`} className="text-[var(--primary)] hover:underline">
               {isZh ? "了解 GoSail Club →" : "Learn about GoSail Club →"}
             </a>
-          </p>
+          </div>
+
+          {/* 已付款、手上有码的人走这里，视觉上明显弱于上面的主 CTA */}
+          <div className="bg-white border border-gray-100 rounded-2xl p-6">
+            <h3 className="text-sm font-semibold text-gray-700 mb-1">
+              {isZh ? "已经付款，有兑换码？" : "Already paid and have a code?"}
+            </h3>
+            <p className="text-xs text-gray-400 mb-4">
+              {isZh ? "在这里绑定到当前账号" : "Bind it to this account below"}
+            </p>
+            <form onSubmit={handleRedeem} className="space-y-3">
+              <div>
+                <label className="block text-xs font-medium text-gray-500 mb-1.5">{isZh ? "兑换码" : "Code"}</label>
+                <input
+                  value={code}
+                  onChange={(e) => setCode(e.target.value)}
+                  required
+                  placeholder="GSC-XXXXXXXX"
+                  className="w-full px-3.5 py-2.5 border border-gray-200 rounded-lg text-sm font-mono uppercase focus:border-[var(--primary)] focus:outline-none"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-medium text-gray-500 mb-1.5">{isZh ? "GitHub 用户名" : "GitHub username"}</label>
+                <input
+                  value={github}
+                  onChange={(e) => setGithub(e.target.value)}
+                  required
+                  placeholder={isZh ? "如 zhuyansen（不带 @）" : "e.g. octocat"}
+                  className="w-full px-3.5 py-2.5 border border-gray-200 rounded-lg text-sm focus:border-[var(--primary)] focus:outline-none"
+                />
+              </div>
+              {redeemError && <p className="text-sm text-red-500">{redeemError}</p>}
+              <button
+                type="submit"
+                disabled={redeeming}
+                className="w-full py-2.5 border border-gray-200 text-gray-700 font-medium rounded-lg hover:border-[var(--primary)] hover:text-[var(--primary)] transition-colors disabled:opacity-50 text-sm"
+              >
+                {redeeming ? (isZh ? "绑定中…" : "Binding…") : (isZh ? "绑定并开通" : "Bind & activate")}
+              </button>
+            </form>
+          </div>
         </div>
       )}
     </div>
