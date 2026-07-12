@@ -112,6 +112,7 @@ export async function POST(request: NextRequest) {
       code,
       paidAt: activatedAt,
       emailError: emailResult.ok ? undefined : emailResult.error,
+      resendId: emailResult.resendId,
     });
 
     return new NextResponse("success");

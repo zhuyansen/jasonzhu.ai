@@ -15,7 +15,7 @@ export async function sendActivationEmail(params: {
   hubKey: string;
   org: string;
   expiresAt: string;
-}): Promise<{ ok: boolean; error?: string }> {
+}): Promise<{ ok: boolean; error?: string; resendId?: string }> {
   if (!RESEND_API_KEY) return { ok: false, error: "RESEND_API_KEY 未配置" };
   const { to, code, github, hubKey, org, expiresAt } = params;
 
@@ -61,12 +61,18 @@ export async function sendActivationEmail(params: {
       }),
       signal: AbortSignal.timeout(10000),
     });
+    const bodyText = await res.text();
     if (!res.ok) {
-      const t = await res.text().catch(() => "");
-      console.error("[resend] sendActivationEmail failed:", res.status, t.slice(0, 300));
-      return { ok: false, error: `Resend ${res.status}: ${t.slice(0, 200)}` };
+      console.error("[resend] sendActivationEmail failed:", res.status, bodyText.slice(0, 300));
+      return { ok: false, error: `Resend ${res.status}: ${bodyText.slice(0, 200)}` };
     }
-    return { ok: true };
+    let resendId: string | undefined;
+    try {
+      resendId = JSON.parse(bodyText).id;
+    } catch {
+      /* 拿不到 id 不影响主流程，只是少一个可追溯的凭证 */
+    }
+    return { ok: true, resendId };
   } catch (e) {
     const msg = e instanceof Error ? e.message : String(e);
     console.error("[resend] sendActivationEmail network error:", msg);
