@@ -18,8 +18,8 @@ const TIERS = [
     priceZh: "¥365",
     priceEn: "¥365",
     earlyBird: "¥199",
-    period: "/年",
-    limitZh: "首发早鸟 ¥199 · 限 7 天",
+    period: "/年（下一年续费 ¥99）",
+    limitZh: "首发早鸟 ¥199 · 限 7 天 · 2026.07.20 截止",
     featured: true,
     forZh: "想用 AI 杠杆做出海的你（一天一块钱）",
     itemsZh: [
