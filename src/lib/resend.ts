@@ -2,7 +2,12 @@ const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const FROM = "GoSail Club <gosail_club@jasonzhu.ai>";
 const SITE_URL = "https://jasonzhu.ai";
 
-/** 发送激活确认邮件（兑换码 + Hub Key + GitHub 邀请链接），失败静默忽略——邮件是备份，不是激活的必要条件 */
+/**
+ * 发送激活确认邮件（兑换码 + Hub Key + GitHub 邀请链接）。
+ * 邮件失败不阻塞激活流程（调用方不因此报错），但返回结果供调用方记录诊断信息——
+ * 之前这里只 catch 网络层异常，Resend 返回 4xx/5xx 时 fetch 不会 throw，
+ * 导致"发信失败"永远看起来像"成功"，只能靠 Resend 后台记录才能发现。
+ */
 export async function sendActivationEmail(params: {
   to: string;
   code: string;
@@ -10,8 +15,8 @@ export async function sendActivationEmail(params: {
   hubKey: string;
   org: string;
   expiresAt: string;
-}): Promise<void> {
-  if (!RESEND_API_KEY) return;
+}): Promise<{ ok: boolean; error?: string }> {
+  if (!RESEND_API_KEY) return { ok: false, error: "RESEND_API_KEY 未配置" };
   const { to, code, github, hubKey, org, expiresAt } = params;
 
   const html = `
@@ -45,7 +50,7 @@ export async function sendActivationEmail(params: {
     </div>`;
 
   try {
-    await fetch("https://api.resend.com/emails", {
+    const res = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: { Authorization: `Bearer ${RESEND_API_KEY}`, "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -56,7 +61,15 @@ export async function sendActivationEmail(params: {
       }),
       signal: AbortSignal.timeout(10000),
     });
-  } catch {
-    /* 邮件是备份，失败不阻塞激活流程 */
+    if (!res.ok) {
+      const t = await res.text().catch(() => "");
+      console.error("[resend] sendActivationEmail failed:", res.status, t.slice(0, 300));
+      return { ok: false, error: `Resend ${res.status}: ${t.slice(0, 200)}` };
+    }
+    return { ok: true };
+  } catch (e) {
+    const msg = e instanceof Error ? e.message : String(e);
+    console.error("[resend] sendActivationEmail network error:", msg);
+    return { ok: false, error: msg };
   }
 }

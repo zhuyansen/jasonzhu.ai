@@ -93,21 +93,25 @@ export async function POST(request: NextRequest) {
       console.error("[xunhupay] member_codes insert failed (non-fatal):", order.tradeOrderId, e);
     }
 
-    await saveOrder({
-      ...order,
-      status: "completed",
-      hubKey: issued.key,
-      code,
-      paidAt: activatedAt,
-    });
-
-    await sendActivationEmail({
+    const emailResult = await sendActivationEmail({
       to: order.email,
       code,
       github: order.github,
       hubKey: issued.key,
       org: GITHUB_ORG,
       expiresAt: expiresAtIso.slice(0, 10),
+    });
+    if (!emailResult.ok) {
+      console.error("[xunhupay] activation email failed (non-fatal):", order.tradeOrderId, emailResult.error);
+    }
+
+    await saveOrder({
+      ...order,
+      status: "completed",
+      hubKey: issued.key,
+      code,
+      paidAt: activatedAt,
+      emailError: emailResult.ok ? undefined : emailResult.error,
     });
 
     return new NextResponse("success");

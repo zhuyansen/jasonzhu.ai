@@ -19,6 +19,7 @@ export interface CheckoutOrder {
   hubKey?: string;
   code?: string; // 支付成功后生成的 GSC- 兑换码，写进 member_codes 做会员中心自动认领的桥
   error?: string;
+  emailError?: string; // 确认邮件发送失败的具体原因（不阻塞开通，只做诊断）
   createdAt: string;
   paidAt?: string;
 }
