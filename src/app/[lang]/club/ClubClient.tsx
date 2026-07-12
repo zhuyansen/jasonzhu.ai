@@ -23,7 +23,7 @@ const TIERS = [
     featured: true,
     forZh: "想用 AI 杠杆做出海的你（一天一块钱）",
     itemsZh: [
-      "🔍 AgentSkillsHub Pro 三件套：全库深度搜索 + 社区精选榜 + 每周 Top3 解读",
+      "🔍 AgentSkillsHub Pro 三件套：全库深度搜索（最新 skills 捕捉、场景 skills 交付 — FDE 首选）+ 社区精选榜 + 每周 Top3 解读",
       "🔧 内容一键分发 Skill：写一次，公众号/小红书/X 三平台同步发",
       "🔥 X 热点雷达 Skill：捕捉热点 → 生成推文 → 发布，全自动涨粉引擎",
       "📖 AIP 出海手册会员版（105 页，1000+ 人实战验证，持续更新）",
