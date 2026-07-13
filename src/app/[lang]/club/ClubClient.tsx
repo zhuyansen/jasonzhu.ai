@@ -308,8 +308,12 @@ export default function ClubClient({ lang }: Props) {
               </h3>
               <p className="text-sm text-gray-500">
                 {isZh
-                  ? "我们会通过微信/邮箱联系你。启航版申请通常当天处理，付款后发兑换码自动开通。"
-                  : "We'll reach out via WeChat/email shortly."}
+                  ? selectedTier === "l2"
+                    ? "进阶版是审核制，Jason 会在 3 个工作日内通过微信/邮箱联系你，审核通过后再付款。"
+                    : "启航版无需审核，可以直接在上面的定价卡点「立即加入」付款开通，不用等这个申请。"
+                  : selectedTier === "l2"
+                    ? "Pro is reviewed manually — Jason will reach out via WeChat/email within 3 business days."
+                    : "Starter needs no review — just click \"Join now\" on the pricing card above to pay and activate instantly."}
               </p>
             </div>
           ) : (

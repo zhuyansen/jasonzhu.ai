@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getSupabase } from "@/lib/supabase";
 import { rateLimit } from "@/lib/rate-limit";
+import { sendClubApplicationNotification } from "@/lib/resend";
 
 export const dynamic = "force-dynamic";
 
@@ -92,6 +93,12 @@ export async function POST(request: NextRequest) {
 
     if (!sbOk && !kvOk) {
       return NextResponse.json({ error: "提交失败，请稍后重试" }, { status: 500 });
+    }
+
+    // 通知 Jason（best-effort，失败不影响申请提交本身）
+    const notified = await sendClubApplicationNotification(record);
+    if (!notified.ok) {
+      console.error("[club-apply] notification email failed:", notified.error);
     }
 
     return NextResponse.json({ success: true });

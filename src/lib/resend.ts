@@ -1,6 +1,40 @@
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const FROM = "GoSail Club <gosail_club@jasonzhu.ai>";
 const SITE_URL = "https://jasonzhu.ai";
+// 进阶版申请审核通知收件人——目前站内唯一管理员邮箱，跟"📊 数据日报"用的是同一个
+const ADMIN_EMAIL = "m17551076169@gmail.com";
+
+async function sendEmail(params: {
+  to: string[];
+  subject: string;
+  html: string;
+}): Promise<{ ok: boolean; error?: string; resendId?: string }> {
+  if (!RESEND_API_KEY) return { ok: false, error: "RESEND_API_KEY 未配置" };
+  try {
+    const res = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${RESEND_API_KEY}`, "Content-Type": "application/json" },
+      body: JSON.stringify({ from: FROM, to: params.to, subject: params.subject, html: params.html }),
+      signal: AbortSignal.timeout(10000),
+    });
+    const bodyText = await res.text();
+    if (!res.ok) {
+      console.error("[resend] sendEmail failed:", res.status, bodyText.slice(0, 300));
+      return { ok: false, error: `Resend ${res.status}: ${bodyText.slice(0, 200)}` };
+    }
+    let resendId: string | undefined;
+    try {
+      resendId = JSON.parse(bodyText).id;
+    } catch {
+      /* 拿不到 id 不影响主流程，只是少一个可追溯的凭证 */
+    }
+    return { ok: true, resendId };
+  } catch (e) {
+    const msg = e instanceof Error ? e.message : String(e);
+    console.error("[resend] sendEmail network error:", msg);
+    return { ok: false, error: msg };
+  }
+}
 
 /**
  * 发送激活确认邮件（兑换码 + Hub Key + GitHub 邀请链接）。
@@ -49,33 +83,45 @@ export async function sendActivationEmail(params: {
       <img src="${SITE_URL}/wechat-qr.jpg" alt="Jason Zhu 微信二维码" width="140" style="display:block;border-radius:8px" />
     </div>`;
 
-  try {
-    const res = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: { Authorization: `Bearer ${RESEND_API_KEY}`, "Content-Type": "application/json" },
-      body: JSON.stringify({
-        from: FROM,
-        to: [to],
-        subject: "🎉 GoSail Club 会员开通成功 — 兑换码 + Hub Key 在这里",
-        html,
-      }),
-      signal: AbortSignal.timeout(10000),
-    });
-    const bodyText = await res.text();
-    if (!res.ok) {
-      console.error("[resend] sendActivationEmail failed:", res.status, bodyText.slice(0, 300));
-      return { ok: false, error: `Resend ${res.status}: ${bodyText.slice(0, 200)}` };
-    }
-    let resendId: string | undefined;
-    try {
-      resendId = JSON.parse(bodyText).id;
-    } catch {
-      /* 拿不到 id 不影响主流程，只是少一个可追溯的凭证 */
-    }
-    return { ok: true, resendId };
-  } catch (e) {
-    const msg = e instanceof Error ? e.message : String(e);
-    console.error("[resend] sendActivationEmail network error:", msg);
-    return { ok: false, error: msg };
-  }
+  return sendEmail({
+    to: [to],
+    subject: "🎉 GoSail Club 会员开通成功 — 兑换码 + Hub Key 在这里",
+    html,
+  });
+}
+
+/** 有人提交入会申请（主要是进阶版审核制）时通知 Jason——之前这里完全没通知，申请全靠人工翻 Supabase 表才能看到。 */
+export async function sendClubApplicationNotification(params: {
+  name: string;
+  wechat: string;
+  email: string;
+  role: string;
+  tier: string;
+  project: string;
+  needs: string;
+  referral: string;
+}): Promise<{ ok: boolean; error?: string; resendId?: string }> {
+  const { name, wechat, email, role, tier, project, needs, referral } = params;
+  const tierLabel = tier === "l2" ? "进阶版（审核制）" : tier === "l1" ? "启航版" : tier;
+
+  const html = `
+    <div style="font-family:-apple-system,sans-serif;max-width:520px;margin:0 auto;color:#111">
+      <p>📥 新的 GoSail Club 入会申请 —— <b>${tierLabel}</b></p>
+      <table style="border-collapse:collapse;font-size:13px;color:#374151;margin-top:12px">
+        <tr><td style="padding:4px 12px 4px 0;color:#888">姓名</td><td>${name}</td></tr>
+        <tr><td style="padding:4px 12px 4px 0;color:#888">微信</td><td>${wechat}</td></tr>
+        <tr><td style="padding:4px 12px 4px 0;color:#888">邮箱</td><td>${email}</td></tr>
+        <tr><td style="padding:4px 12px 4px 0;color:#888">角色</td><td>${role || "—"}</td></tr>
+        <tr><td style="padding:4px 12px 4px 0;color:#888">在做什么</td><td>${project || "—"}</td></tr>
+        <tr><td style="padding:4px 12px 4px 0;color:#888">想对接的资源</td><td>${needs || "—"}</td></tr>
+        <tr><td style="padding:4px 12px 4px 0;color:#888">推荐人</td><td>${referral || "—"}</td></tr>
+      </table>
+      <p style="color:#888;font-size:12px;margin-top:16px">去 Supabase club_applications 表可以看到完整记录。</p>
+    </div>`;
+
+  return sendEmail({
+    to: [ADMIN_EMAIL],
+    subject: `📥 新入会申请 · ${tierLabel} · ${name}`,
+    html,
+  });
 }
