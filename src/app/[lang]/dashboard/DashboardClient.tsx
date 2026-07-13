@@ -284,7 +284,7 @@ export default function DashboardClient({ lang, initialUser, initialProfile, sug
           {/* 已付款、手上有码的人走这里，视觉上明显弱于上面的主 CTA */}
           <div className="bg-white border border-gray-100 rounded-2xl p-6">
             <h3 className="text-sm font-semibold text-gray-700 mb-1">
-              {isZh ? "已经付款，有兑换码？" : "Already paid and have a code?"}
+              {isZh ? "已经付款，有兑换码？（可以查看邮箱邮件）" : "Already paid and have a code? (check your email)"}
             </h3>
             <p className="text-xs text-gray-400 mb-4">
               {isZh ? "在这里绑定到当前账号" : "Bind it to this account below"}
