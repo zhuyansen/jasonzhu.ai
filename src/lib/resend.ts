@@ -57,7 +57,7 @@ export async function sendActivationEmail(params: {
     <div style="font-family:-apple-system,sans-serif;max-width:520px;margin:0 auto;color:#111">
       <p>🎉 恭喜，GoSail Club 会员开通成功${github ? `，<b>@${github}</b> 已加入 <b>${org}</b> GitHub 组织` : ""}，有效期至 <b>${expiresAt}</b>。</p>
 
-      <h3 style="margin:24px 0 8px;font-size:14px">① 你的兑换码（已使用，仅作凭证留存）</h3>
+      <h3 style="margin:24px 0 8px;font-size:14px">① 你的会员凭证码</h3>
       <code style="display:inline-block;padding:6px 10px;background:#f3f4f6;color:#374151;border-radius:6px;font-size:13px">${code}</code>
       <p style="color:#888;font-size:12px;margin-top:4px">遇到问题联系 Jason 时报这个码，方便核对你的开通记录。</p>
 
@@ -69,7 +69,9 @@ export async function sendActivationEmail(params: {
         <li>CLI：<code style="background:#f3f4f6;padding:1px 4px;border-radius:3px;font-size:12px">ASH_PRO_KEY=${hubKey} npx @agentskillshub/cli search "关键词"</code></li>
         <li>MCP（Claude Code）：<code style="background:#f3f4f6;padding:1px 4px;border-radius:3px;font-size:12px">claude mcp add agentskillshub -e ASH_PRO_KEY=${hubKey} -- npx -y @agentskillshub/mcp</code>，配好后 agent 会自动用 pro_search 工具做深度检索。</li>
       </ol>
-      <p style="color:#888;font-size:12px;margin-top:10px">怎么再次查看：这封邮件是唯一明文备份，请自行保存；以后 <a href="https://jasonzhu.ai/zh/dashboard">jasonzhu.ai 会员中心</a>登录后也能查看。</p>
+      <p style="color:#888;font-size:12px;margin-top:10px">这封邮件是唯一明文备份，请自行保存。</p>
+      <a href="https://jasonzhu.ai/zh/dashboard" style="display:inline-block;margin-top:12px;padding:10px 20px;background:#2563eb;color:#fff;text-decoration:none;border-radius:8px;font-size:13px;font-weight:600">去会员中心 →</a>
+      <p style="color:#888;font-size:12px;margin-top:6px">用这个邮箱登录 jasonzhu.ai 即可自动关联这次开通记录。</p>
 
       <h3 style="margin:24px 0 8px;font-size:14px">③ 接下来</h3>
       <ol style="line-height:1.8;padding-left:20px;margin:0">
