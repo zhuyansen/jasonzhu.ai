@@ -247,10 +247,16 @@ export default function XunhupayCheckoutModal({ lang, onClose }: Props) {
               <button onClick={copyKey} className="flex-1 py-2.5 border border-gray-200 rounded-lg text-sm hover:border-[var(--primary)] hover:text-[var(--primary)]">
                 {isZh ? "复制 Key" : "Copy key"}
               </button>
-              <a href={`/${lang}/dashboard`} className="flex-1 py-2.5 bg-[var(--primary)] text-white rounded-lg text-sm text-center hover:opacity-90">
+              <a
+                href={`/${lang}/login?mode=signup&email=${encodeURIComponent(email)}`}
+                className="flex-1 py-2.5 bg-[var(--primary)] text-white rounded-lg text-sm text-center hover:opacity-90"
+              >
                 {isZh ? "去会员中心" : "Dashboard"}
               </a>
             </div>
+            <p className="text-xs text-gray-300 mt-3">
+              {isZh ? "第一次去？用这个邮箱设个密码注册一下就能登录了" : "First time? Set a password for this email to sign up"}
+            </p>
           </div>
         )}
       </div>

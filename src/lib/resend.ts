@@ -70,8 +70,8 @@ export async function sendActivationEmail(params: {
         <li>MCP（Claude Code）：<code style="background:#f3f4f6;padding:1px 4px;border-radius:3px;font-size:12px">claude mcp add agentskillshub -e ASH_PRO_KEY=${hubKey} -- npx -y @agentskillshub/mcp</code>，配好后 agent 会自动用 pro_search 工具做深度检索。</li>
       </ol>
       <p style="color:#888;font-size:12px;margin-top:10px">这封邮件是唯一明文备份，请自行保存。</p>
-      <a href="https://jasonzhu.ai/zh/dashboard" style="display:inline-block;margin-top:12px;padding:10px 20px;background:#2563eb;color:#fff;text-decoration:none;border-radius:8px;font-size:13px;font-weight:600">去会员中心 →</a>
-      <p style="color:#888;font-size:12px;margin-top:6px">用这个邮箱登录 jasonzhu.ai 即可自动关联这次开通记录。</p>
+      <a href="https://jasonzhu.ai/zh/login?mode=signup&email=${encodeURIComponent(to)}" style="display:inline-block;margin-top:12px;padding:10px 20px;background:#2563eb;color:#fff;text-decoration:none;border-radius:8px;font-size:13px;font-weight:600">去会员中心 →</a>
+      <p style="color:#888;font-size:12px;margin-top:6px">第一次去？用这个邮箱设个密码注册一下就能登录、自动关联这次开通记录（如果已经有账号了，直接登录就行）。</p>
 
       <h3 style="margin:24px 0 8px;font-size:14px">③ 接下来</h3>
       <ol style="line-height:1.8;padding-left:20px;margin:0">

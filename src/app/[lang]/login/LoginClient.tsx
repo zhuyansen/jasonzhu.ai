@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { createClient } from "@/lib/supabase-browser";
 
 interface Props {
@@ -11,10 +12,13 @@ type Mode = "signin" | "signup";
 
 export default function LoginClient({ lang }: Props) {
   const isZh = lang === "zh";
+  const searchParams = useSearchParams();
   const [oauthLoading, setOauthLoading] = useState<"google" | "github" | null>(null);
 
-  const [mode, setMode] = useState<Mode>("signin");
-  const [email, setEmail] = useState("");
+  // 虎皮椒/兑换码这类访客结账从没设过密码，第一次登录必须走"注册"（同一个邮箱设个新密码），
+  // 不是"登录"——默认停在登录页会让人对着"邮箱或密码不对"卡住。带 ?mode=signup&email= 直接跳过这一步。
+  const [mode, setMode] = useState<Mode>(searchParams.get("mode") === "signup" ? "signup" : "signin");
+  const [email, setEmail] = useState(searchParams.get("email") || "");
   const [password, setPassword] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
@@ -108,6 +112,14 @@ export default function LoginClient({ lang }: Props) {
           {isZh ? "查看会员状态、Hub Key 和权益入口" : "View your membership, Hub Key, and benefits"}
         </p>
       </div>
+
+      {searchParams.get("mode") === "signup" && (
+        <div className="mb-6 px-4 py-3 bg-blue-50 border border-blue-100 rounded-lg text-xs text-blue-700">
+          {isZh
+            ? "刚付款完？用这个邮箱设个新密码注册一下（不用跟别的密码一样），会员中心会自动关联你的开通记录。"
+            : "Just paid? Set a new password for this email to sign up — your membership will link automatically."}
+        </div>
+      )}
 
       <div className="space-y-3">
         <button

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import LoginClient from "./LoginClient";
 
 const SITE_URL = "https://jasonzhu.ai";
@@ -27,5 +28,9 @@ export default async function LoginPage({
   params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
-  return <LoginClient lang={lang === "en" ? "en" : "zh"} />;
+  return (
+    <Suspense>
+      <LoginClient lang={lang === "en" ? "en" : "zh"} />
+    </Suspense>
+  );
 }
