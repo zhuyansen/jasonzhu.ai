@@ -48,3 +48,6 @@ supabase/.temp/
 # symlink for Obsidian image preview
 /blog
 .gstack/
+
+# 敏感本地记录（兑换码名单等），公开仓库不进 git
+/private/
