@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ClubClient from "./ClubClient";
+import { createClient } from "@/lib/supabase-server";
 
 const SITE_URL = "https://jasonzhu.ai";
 
@@ -34,5 +35,28 @@ export default async function ClubPage({
   params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
-  return <ClubClient lang={lang === "en" ? "en" : "zh"} />;
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  let isMember = false;
+  if (user) {
+    const { data: profile } = await supabase
+      .from("profiles")
+      .select("role")
+      .eq("id", user.id)
+      .single();
+    isMember = Boolean(profile && profile.role !== "free");
+  }
+
+  return (
+    <ClubClient
+      lang={lang === "en" ? "en" : "zh"}
+      initialEmail={user?.email ?? ""}
+      suggestedGithub={typeof user?.user_metadata?.user_name === "string" ? user.user_metadata.user_name : ""}
+      isLoggedIn={Boolean(user)}
+      isMember={isMember}
+    />
+  );
 }

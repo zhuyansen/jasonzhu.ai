@@ -5,6 +5,10 @@ import XunhupayCheckoutModal from "@/components/XunhupayCheckoutModal";
 
 interface Props {
   lang: "zh" | "en";
+  initialEmail?: string;
+  suggestedGithub?: string;
+  isLoggedIn?: boolean;
+  isMember?: boolean;
 }
 
 // 实际扣费金额（早鸟 ¥199 / 原价 ¥365）由 /api/checkout/xunhupay/create 按日期算好返回，
@@ -67,7 +71,7 @@ const TIERS = [
   },
 ];
 
-export default function ClubClient({ lang }: Props) {
+export default function ClubClient({ lang, initialEmail = "", suggestedGithub = "", isLoggedIn = false, isMember = false }: Props) {
   const isZh = lang === "zh";
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
@@ -155,12 +159,21 @@ export default function ClubClient({ lang }: Props) {
               </div>
             ))}
           </div>
-          <button
-            onClick={() => setCheckoutOpen(true)}
-            className="px-10 py-3.5 bg-[var(--primary)] text-white font-semibold rounded-xl hover:opacity-90 transition-opacity"
-          >
-            {isZh ? "申请加入 →" : "Apply →"}
-          </button>
+          {isMember ? (
+            <a
+              href={`/${lang}/dashboard`}
+              className="inline-block px-10 py-3.5 bg-[var(--primary)] text-white font-semibold rounded-xl hover:opacity-90 transition-opacity"
+            >
+              {isZh ? "去会员中心 →" : "Go to Dashboard →"}
+            </a>
+          ) : (
+            <button
+              onClick={() => setCheckoutOpen(true)}
+              className="px-10 py-3.5 bg-[var(--primary)] text-white font-semibold rounded-xl hover:opacity-90 transition-opacity"
+            >
+              {isZh ? "申请加入 →" : "Apply →"}
+            </button>
+          )}
         </div>
       </section>
 
@@ -251,12 +264,21 @@ export default function ClubClient({ lang }: Props) {
               </ul>
               <div className="text-xs text-center text-gray-400 mb-4 py-2 bg-gray-50 rounded-lg">{isZh ? t.gateZh : ""}</div>
               {t.id === "l1" ? (
-                <button
-                  onClick={() => setCheckoutOpen(true)}
-                  className="w-full py-3 rounded-xl text-sm font-semibold text-center bg-[var(--primary)] text-white hover:opacity-90 transition-all"
-                >
-                  {isZh ? "立即加入 · 早鸟 ¥199 →" : "Join now · ¥199 →"}
-                </button>
+                isMember ? (
+                  <a
+                    href={`/${lang}/dashboard`}
+                    className="block w-full py-3 rounded-xl text-sm font-semibold text-center bg-[var(--primary)] text-white hover:opacity-90 transition-all"
+                  >
+                    {isZh ? "已是会员 · 去会员中心 →" : "Already a member · Dashboard →"}
+                  </a>
+                ) : (
+                  <button
+                    onClick={() => setCheckoutOpen(true)}
+                    className="w-full py-3 rounded-xl text-sm font-semibold text-center bg-[var(--primary)] text-white hover:opacity-90 transition-all"
+                  >
+                    {isZh ? "立即加入 · 早鸟 ¥199 →" : "Join now · ¥199 →"}
+                  </button>
+                )
               ) : (
                 <button
                   onClick={() => scrollToApply(t.id)}
@@ -408,7 +430,15 @@ export default function ClubClient({ lang }: Props) {
         </div>
       </section>
 
-      {checkoutOpen && <XunhupayCheckoutModal lang={lang} onClose={() => setCheckoutOpen(false)} />}
+      {checkoutOpen && (
+        <XunhupayCheckoutModal
+          lang={lang}
+          onClose={() => setCheckoutOpen(false)}
+          initialEmail={initialEmail}
+          initialGithub={suggestedGithub}
+          isLoggedIn={isLoggedIn}
+        />
+      )}
     </div>
   );
 }

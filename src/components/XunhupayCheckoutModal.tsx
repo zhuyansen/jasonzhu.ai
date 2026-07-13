@@ -5,16 +5,19 @@ import { useEffect, useRef, useState } from "react";
 interface Props {
   lang: "zh" | "en";
   onClose: () => void;
+  initialEmail?: string;
+  initialGithub?: string;
+  isLoggedIn?: boolean;
 }
 
 type Step = "form" | "qr" | "expired" | "done" | "error";
 
-export default function XunhupayCheckoutModal({ lang, onClose }: Props) {
+export default function XunhupayCheckoutModal({ lang, onClose, initialEmail = "", initialGithub = "", isLoggedIn = false }: Props) {
   const isZh = lang === "zh";
   const [step, setStep] = useState<Step>("form");
   const [channel, setChannel] = useState<"wechat" | "alipay">("wechat");
-  const [email, setEmail] = useState("");
-  const [github, setGithub] = useState("");
+  const [email, setEmail] = useState(initialEmail);
+  const [github, setGithub] = useState(initialGithub);
   const [submitting, setSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   const [alreadyMember, setAlreadyMember] = useState(false);
@@ -115,11 +118,15 @@ export default function XunhupayCheckoutModal({ lang, onClose }: Props) {
               <input
                 type="email"
                 required
+                readOnly={isLoggedIn}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@example.com"
-                className="w-full px-3.5 py-2.5 border border-gray-200 rounded-lg text-sm focus:border-[var(--primary)] focus:outline-none"
+                className={`w-full px-3.5 py-2.5 border border-gray-200 rounded-lg text-sm focus:border-[var(--primary)] focus:outline-none ${isLoggedIn ? "bg-gray-50 text-gray-500" : ""}`}
               />
+              {isLoggedIn && (
+                <p className="text-xs text-gray-400 mt-1">{isZh ? "已登录账号的邮箱，直接绑定到当前账号" : "Locked to your logged-in account's email"}</p>
+              )}
             </div>
             <div>
               <label className="block text-xs font-medium text-gray-500 mb-1.5">
@@ -248,15 +255,17 @@ export default function XunhupayCheckoutModal({ lang, onClose }: Props) {
                 {isZh ? "复制 Key" : "Copy key"}
               </button>
               <a
-                href={`/${lang}/login?mode=signup&email=${encodeURIComponent(email)}`}
+                href={isLoggedIn ? `/${lang}/dashboard` : `/${lang}/login?mode=signup&email=${encodeURIComponent(email)}`}
                 className="flex-1 py-2.5 bg-[var(--primary)] text-white rounded-lg text-sm text-center hover:opacity-90"
               >
                 {isZh ? "去会员中心" : "Dashboard"}
               </a>
             </div>
-            <p className="text-xs text-gray-300 mt-3">
-              {isZh ? "第一次去？用这个邮箱设个密码注册一下就能登录了" : "First time? Set a password for this email to sign up"}
-            </p>
+            {!isLoggedIn && (
+              <p className="text-xs text-gray-300 mt-3">
+                {isZh ? "第一次去？用这个邮箱设个密码注册一下就能登录了" : "First time? Set a password for this email to sign up"}
+              </p>
+            )}
           </div>
         )}
       </div>
