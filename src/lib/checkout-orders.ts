@@ -12,6 +12,7 @@ export type CheckoutOrderStatus = "pending" | "paid" | "completed" | "failed";
 export interface CheckoutOrder {
   tradeOrderId: string;
   email: string;
+  wechat: string;
   github: string;
   channel: "wechat" | "alipay";
   amount: number;

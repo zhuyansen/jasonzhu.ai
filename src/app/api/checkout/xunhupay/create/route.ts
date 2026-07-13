@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
   if (rateLimited) return rateLimited;
 
   try {
-    const { email, github, channel, website, ts } = await request.json();
+    const { email, wechat, github, channel, website, ts } = await request.json();
 
     // 反 bot：跟站内其它表单同款
     if (website && String(website).trim() !== "") {
@@ -31,11 +31,15 @@ export async function POST(request: NextRequest) {
     }
 
     const emailStr = String(email || "").trim().toLowerCase();
+    const wechatStr = String(wechat || "").trim();
     const ghUser = String(github || "").trim().replace(/^@/, "");
     const channelStr = String(channel || "") as XunhupayChannel;
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailStr)) {
       return NextResponse.json({ error: "请输入有效邮箱" }, { status: 400 });
+    }
+    if (!wechatStr) {
+      return NextResponse.json({ error: "请填写微信号，方便拉你进会员群" }, { status: 400 });
     }
     // GitHub 用户名可选：没有 GitHub 的人不该被挡在付款外面，之后能在会员中心补填
     if (ghUser && !/^[a-zA-Z0-9-]{1,39}$/.test(ghUser)) {
@@ -84,6 +88,7 @@ export async function POST(request: NextRequest) {
     const saved = await saveOrder({
       tradeOrderId,
       email: emailStr,
+      wechat: wechatStr,
       github: ghUser,
       channel: channelStr,
       amount,

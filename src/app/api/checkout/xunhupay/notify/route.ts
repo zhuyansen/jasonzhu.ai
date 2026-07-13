@@ -70,6 +70,7 @@ export async function POST(request: NextRequest) {
     const activation = {
       github: order.github || null,
       email: order.email,
+      wechat: order.wechat,
       hub_key: issued.key,
       activated_at: activatedAt,
       expires_at: expiresAtIso,
@@ -80,10 +81,13 @@ export async function POST(request: NextRequest) {
     await recordActivatedClubCode(code, activation);
     try {
       const supabase = getSupabase();
+      // wechat 列可能还没建（member_codes 表原来没有这个字段），insert 失败就静默——
+      // KV 那份（club_activations 流水 + club_code 记录）已经是权威来源，不阻塞主流程。
       await supabase.from("member_codes").insert({
         code,
         github_username: order.github || null,
         email: order.email,
+        wechat: order.wechat,
         hub_key: issued.key,
         activated_at: activatedAt,
         expires_at: expiresAtIso,

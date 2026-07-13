@@ -17,6 +17,7 @@ export default function XunhupayCheckoutModal({ lang, onClose, initialEmail = ""
   const [step, setStep] = useState<Step>("form");
   const [channel, setChannel] = useState<"wechat" | "alipay">("wechat");
   const [email, setEmail] = useState(initialEmail);
+  const [wechat, setWechat] = useState("");
   const [github, setGithub] = useState(initialGithub);
   const [submitting, setSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
@@ -48,7 +49,7 @@ export default function XunhupayCheckoutModal({ lang, onClose, initialEmail = ""
       const res = await fetch("/api/checkout/xunhupay/create", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, github, channel, ts: mountedAt.current }),
+        body: JSON.stringify({ email, wechat, github, channel, ts: mountedAt.current }),
       });
       const data = await res.json();
       if (!res.ok || !data.success) {
@@ -127,6 +128,16 @@ export default function XunhupayCheckoutModal({ lang, onClose, initialEmail = ""
               {isLoggedIn && (
                 <p className="text-xs text-gray-400 mt-1">{isZh ? "已登录账号的邮箱，直接绑定到当前账号" : "Locked to your logged-in account's email"}</p>
               )}
+            </div>
+            <div>
+              <label className="block text-xs font-medium text-gray-500 mb-1.5">{isZh ? "微信号" : "WeChat ID"}</label>
+              <input
+                required
+                value={wechat}
+                onChange={(e) => setWechat(e.target.value)}
+                placeholder={isZh ? "拉你进会员群用" : "So we can add you to the member group"}
+                className="w-full px-3.5 py-2.5 border border-gray-200 rounded-lg text-sm focus:border-[var(--primary)] focus:outline-none"
+              />
             </div>
             <div>
               <label className="block text-xs font-medium text-gray-500 mb-1.5">
