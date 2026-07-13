@@ -42,45 +42,45 @@ export default async function HomePage({
               </p>
             </div>
 
-            {/* Right: two free-resource cards */}
+            {/* Right: GoSail Club leads, free resources follow */}
             <div className="flex flex-col gap-3 shrink-0 w-full md:w-auto">
-              {/* AI learning guide — broad appeal, primary */}
-              <Link
-                href={`/${lang}/ai-learning-guide`}
-                className="group flex items-center gap-3 px-5 py-4 bg-gradient-to-r from-blue-600 to-blue-500 border border-blue-500 rounded-xl hover:from-blue-700 hover:to-blue-600 hover:shadow-lg hover:shadow-blue-200 transition-all"
-              >
-                <span className="text-2xl">🗺️</span>
-                <div className="flex-1 min-w-0">
-                  <p className="text-sm font-bold text-white">
-                    {lang === "zh" ? "10 大平台 AI 免费学习全景图" : "Free AI Learning Map · 10 Platforms"}
-                  </p>
-                  <p className="text-xs text-blue-100 mt-0.5 hidden sm:block max-w-xs truncate">
-                    {lang === "zh" ? "学 AI 这两年想花的钱，一分都不用花" : "Learn AI for free — here's the full map"}
-                  </p>
-                </div>
-                <span className="text-xs text-white font-semibold whitespace-nowrap bg-white/20 px-3 py-1.5 rounded-lg group-hover:bg-white/30 transition-colors">
-                  {lang === "zh" ? "免费领取" : "Get it"}
-                </span>
-              </Link>
-              {/* GoSail Club — paid community */}
+              {/* GoSail Club — paid community, now the lead CTA */}
               <Link
                 href={`/${lang}/club`}
-                className="group flex items-center gap-3 px-5 py-4 bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-xl hover:border-amber-300 hover:shadow-sm transition-all"
+                className="group flex items-center gap-3 px-5 py-4 bg-gradient-to-r from-amber-500 to-orange-500 border border-amber-500 rounded-xl hover:from-amber-600 hover:to-orange-600 hover:shadow-lg hover:shadow-amber-200 transition-all"
               >
                 <span className="text-2xl">⛵</span>
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm font-bold text-gray-900 truncate">
+                  <p className="text-sm font-bold text-white">
                     {lang === "zh" ? "GoSail Club 启航会" : "GoSail Club"}
                   </p>
-                  <p className="text-xs text-gray-500 mt-0.5 hidden sm:block max-w-xs truncate">
+                  <p className="text-xs text-amber-50 mt-0.5 hidden sm:block max-w-xs truncate">
                     {lang === "zh" ? "AI 出海实战社群 · 首期早鸟 ¥199 限 7 天" : "AI going-global community · early bird open"}
                   </p>
                 </div>
-                <span className="text-xs text-amber-700 font-semibold whitespace-nowrap bg-amber-100 px-3 py-1.5 rounded-lg group-hover:bg-amber-200 transition-colors">
-                  {lang === "zh" ? "申请加入" : "Apply"}
+                <span className="text-xs text-white font-semibold whitespace-nowrap bg-white/20 px-3 py-1.5 rounded-lg group-hover:bg-white/30 transition-colors">
+                  {lang === "zh" ? "立即加入" : "Join now"}
                 </span>
               </Link>
-              {/* Handbook — narrower, secondary */}
+              {/* AI learning guide — free resource, secondary */}
+              <Link
+                href={`/${lang}/ai-learning-guide`}
+                className="group flex items-center gap-3 px-5 py-4 bg-white border border-gray-200 rounded-xl hover:border-blue-300 hover:shadow-sm transition-all"
+              >
+                <span className="text-2xl">🗺️</span>
+                <div className="flex-1 min-w-0">
+                  <p className="text-sm font-bold text-gray-900 truncate">
+                    {lang === "zh" ? "10 大平台 AI 免费学习全景图" : "Free AI Learning Map · 10 Platforms"}
+                  </p>
+                  <p className="text-xs text-gray-400 mt-0.5 hidden sm:block max-w-xs truncate">
+                    {lang === "zh" ? "学 AI 这两年想花的钱，一分都不用花" : "Learn AI for free — here's the full map"}
+                  </p>
+                </div>
+                <span className="text-xs text-[var(--primary)] font-semibold whitespace-nowrap bg-blue-50 px-3 py-1.5 rounded-lg group-hover:bg-blue-100 transition-colors">
+                  {lang === "zh" ? "免费领取" : "Get it"}
+                </span>
+              </Link>
+              {/* Handbook — free resource, secondary */}
               <Link
                 href={`/${lang}/handbook`}
                 className="group flex items-center gap-3 px-5 py-4 bg-white border border-gray-200 rounded-xl hover:border-blue-300 hover:shadow-sm transition-all"
