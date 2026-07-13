@@ -189,6 +189,26 @@ export default function DashboardClient({ lang, initialUser, initialProfile, sug
               </div>
             </div>
 
+            {/* 闭门讨论会 */}
+            <div className="border border-gray-100 rounded-xl p-4">
+              <div className="flex items-center justify-between gap-3 flex-wrap">
+                <div className="min-w-0">
+                  <div className="text-sm font-semibold text-gray-900">🎙 {isZh ? "闭门讨论会" : "Closed-door sessions"}</div>
+                  <p className="text-xs text-gray-500 mt-1">
+                    {isZh
+                      ? "半月度讨论会回放 + 完整逐字稿，按时间和主题归档"
+                      : "Bi-weekly session recordings with full transcripts, archived by date and topic"}
+                  </p>
+                </div>
+                <a
+                  href={`/${lang}/club/sessions`}
+                  className="shrink-0 text-xs px-4 py-2 bg-[var(--primary)] text-white rounded-lg hover:opacity-90 transition-opacity font-medium"
+                >
+                  {isZh ? "去看回放 →" : "Watch →"}
+                </a>
+              </div>
+            </div>
+
             {/* GitHub 会员仓库 */}
             <div className="border border-gray-100 rounded-xl p-4">
               <div className="flex items-center justify-between gap-3 flex-wrap mb-2">
