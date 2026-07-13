@@ -25,22 +25,22 @@ const TIERS = [
     period: "/年（下一年续费 ¥99）",
     limitZh: "首发早鸟 ¥199 · 限 7 天 · 2026.07.20 截止",
     featured: true,
-    forZh: "想用 AI 杠杆做出海的你（一天一块钱）",
+    forZh: "X 涨粉创作者 / FDE 交付工程师（一天一块钱）",
     itemsZh: [
-      { icon: "🔍", title: "AgentSkillsHub Pro 三件套", desc: "全库深度搜索（FDE 驻场交付工程师首选）+ 社区精选榜 + 每周 Top3 解读" },
-      { icon: "🔧", title: "内容一键分发 Skill", desc: "写一次，公众号/小红书/X 三平台同步发" },
-      { icon: "🔥", title: "X 热点雷达 Skill", desc: "捕捉热点 → 生成推文 → 发布，全自动涨粉引擎" },
-      { icon: "📖", title: "AIP 出海手册会员版", desc: "105 页，1000+ 人实战验证，持续更新" },
-      { icon: "🎙", title: "半月度闭门讨论会", desc: "第一手实操 + 专属会员群，内容不对外" },
-      { icon: "🚀", title: "MCN 签约直通车", desc: "500 粉进 GoSail Lab（已执行 campaign 15+），开启你的第一个商单" },
+      { icon: "🔍", title: "AgentSkillsHub Pro 三件套", desc: "全库深度搜索（FDE 驻场交付工程师首选）+ 社区精选榜 + 每周 Top3 解读", tag: "FDE" },
+      { icon: "🔧", title: "内容一键分发 Skill", desc: "写一次，公众号/小红书/X 三平台同步发", tag: "涨粉" },
+      { icon: "🔥", title: "X 热点雷达 Skill", desc: "捕捉热点 → 生成推文 → 发布，全自动涨粉引擎", tag: "涨粉" },
+      { icon: "📖", title: "AIP 出海手册会员版", desc: "105 页，1000+ 人实战验证，持续更新", tag: null },
+      { icon: "🎙", title: "半月度闭门讨论会", desc: "第一手实操 + 专属会员群，内容不对外", tag: null },
+      { icon: "🚀", title: "MCN 签约直通车", desc: "500 粉进 GoSail Lab（已执行 campaign 15+），开启你的第一个商单", tag: "涨粉" },
     ],
     itemsEn: [
-      { icon: "🔍", title: "SkillsHub Pro Suite", desc: "Deep search + curated ranking + weekly Top3" },
-      { icon: "🔧", title: "One-click distribution", desc: "WeChat / RedNote / X, one write, three posts" },
-      { icon: "🔥", title: "X hot-topic radar skill", desc: "Auto growth engine — trend to tweet to post" },
-      { icon: "📖", title: "AIP handbook, member edition", desc: "105 pages, 1,000+ users, updated regularly" },
-      { icon: "🎙", title: "Bi-weekly closed-door sessions", desc: "First-hand playbooks + member group" },
-      { icon: "🚀", title: "MCN fast track", desc: "500 followers → GoSail Lab, land your first deal" },
+      { icon: "🔍", title: "SkillsHub Pro Suite", desc: "Deep search + curated ranking + weekly Top3", tag: "FDE" },
+      { icon: "🔧", title: "One-click distribution", desc: "WeChat / RedNote / X, one write, three posts", tag: "Growth" },
+      { icon: "🔥", title: "X hot-topic radar skill", desc: "Auto growth engine — trend to tweet to post", tag: "Growth" },
+      { icon: "📖", title: "AIP handbook, member edition", desc: "105 pages, 1,000+ users, updated regularly", tag: null },
+      { icon: "🎙", title: "Bi-weekly closed-door sessions", desc: "First-hand playbooks + member group", tag: null },
+      { icon: "🚀", title: "MCN fast track", desc: "500 followers → GoSail Lab, land your first deal", tag: "Growth" },
     ],
     gateZh: "开放加入，无需审核 · GitHub 权限自动开通",
   },
@@ -56,16 +56,16 @@ const TIERS = [
     featured: false,
     forZh: "已有产品/收入，要资源和信息差的你",
     itemsZh: [
-      { icon: "✨", title: "启航版全部权益", desc: "六件套工具与手册全部保留" },
-      { icon: "👥", title: "VIP 小群", desc: "限 50 人，全员实名背景，深度交流" },
-      { icon: "🤝", title: "结构化资源对接", desc: "需求/能力入库撮合，精准牵线" },
-      { icon: "📊", title: "季度线上私享会", desc: "真实数据闭门讲，同行拿不到的一手信息" },
+      { icon: "✨", title: "启航版全部权益", desc: "六件套工具与手册全部保留", tag: null },
+      { icon: "👥", title: "VIP 小群", desc: "限 50 人，全员实名背景，深度交流", tag: null },
+      { icon: "🤝", title: "结构化资源对接", desc: "需求/能力入库撮合，精准牵线", tag: null },
+      { icon: "📊", title: "季度线上私享会", desc: "真实数据闭门讲，同行拿不到的一手信息", tag: null },
     ],
     itemsEn: [
-      { icon: "✨", title: "Everything in Starter", desc: "All six tools and the handbook" },
-      { icon: "👥", title: "VIP group", desc: "Capped at 50, verified real profiles" },
-      { icon: "🤝", title: "Structured matchmaking", desc: "Needs/skills indexed and matched" },
-      { icon: "📊", title: "Quarterly private session", desc: "Closed-door, real data" },
+      { icon: "✨", title: "Everything in Starter", desc: "All six tools and the handbook", tag: null },
+      { icon: "👥", title: "VIP group", desc: "Capped at 50, verified real profiles", tag: null },
+      { icon: "🤝", title: "Structured matchmaking", desc: "Needs/skills indexed and matched", tag: null },
+      { icon: "📊", title: "Quarterly private session", desc: "Closed-door, real data", tag: null },
     ],
     gateZh: "审核制：有上线产品或真实业务",
   },
@@ -142,8 +142,8 @@ export default function ClubClient({ lang, initialEmail = "", suggestedGithub = 
           </h1>
           <p className="text-gray-500 text-base md:text-lg max-w-2xl mx-auto mb-10">
             {isZh
-              ? "AI 出海实战社群：不卖梦想，只交换第一手实操。从工作流改造到公司注册，从内容增长到资源对接。"
-              : "A hands-on community for AI builders going global — first-hand playbooks, not dreams."}
+              ? "两类人在这里：想靠 AI 在 X 上涨粉变现的创作者，想用 AI Skills 更快帮客户交付的 FDE / 技术顾问。不卖梦想，只给能直接用的工具和打法。"
+              : "Built for two kinds of builders: creators growing on X with AI, and FDEs shipping client work faster with AI skills. No hype — just tools you can use today."}
           </p>
           {/* 真实数据，不注水 */}
           <div className="flex flex-wrap justify-center gap-8 md:gap-14 mb-10">
@@ -177,27 +177,47 @@ export default function ClubClient({ lang, initialEmail = "", suggestedGithub = 
         </div>
       </section>
 
-      {/* 谁适合 */}
+      {/* 谁适合：聚焦两类核心人群 */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 py-14">
         <h2 className="text-2xl font-bold text-gray-900 text-center mb-2">
           {isZh ? "谁应该在这里" : "Who is this for"}
         </h2>
         <p className="text-sm text-gray-400 text-center mb-10">
-          {isZh ? "只接纳真的在做出海、且能贡献价值的人" : "Builders actually going global"}
+          {isZh ? "两类人，两套打法" : "Two personas, two playbooks"}
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
-          {[
-            ["🚀", isZh ? "AI 产品创始人" : "Founders", isZh ? "已有海外用户或收入的 AI 产品创始人/独立开发者" : "AI product founders with global users"],
-            ["✍️", isZh ? "内容创作者" : "Creators", isZh ? "想用 AI 杠杆做全球内容 IP 的自媒体人" : "Creators building global IP with AI"],
-            ["📈", isZh ? "增长操盘手" : "Growth", isZh ? "有实战经验的海外增长 / BD / 营销负责人" : "Growth & BD operators"],
-            ["🛠️", isZh ? "出海服务者" : "Enablers", isZh ? "支付、合规、云、投资等出海基础设施提供方" : "Payments, compliance, infra providers"],
-          ].map(([icon, title, desc]) => (
-            <div key={title} className="border border-gray-100 rounded-xl p-6 hover:border-blue-200 hover:shadow-sm transition-all">
-              <div className="text-2xl mb-3">{icon}</div>
-              <h3 className="text-sm font-semibold text-gray-900 mb-1.5">{title}</h3>
-              <p className="text-xs text-gray-500 leading-relaxed">{desc}</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="border border-gray-100 rounded-2xl p-7 hover:border-blue-200 hover:shadow-sm transition-all">
+            <div className="text-3xl mb-3">🐦</div>
+            <h3 className="text-base font-bold text-gray-900 mb-2">
+              {isZh ? "想靠 X 涨粉变现的创作者" : "Creators growing on X"}
+            </h3>
+            <p className="text-sm text-gray-500 leading-relaxed mb-4">
+              {isZh
+                ? "内容创作者、独立开发者、想做个人品牌出海的人——一天一条推文，AI 帮你追热点、写初稿、跨平台分发，把涨粉这件事变成流水线。"
+                : "Creators and indie builders going global — AI tracks trends, drafts posts, and cross-posts for you. Growth on autopilot."}
+            </p>
+            <div className="flex flex-wrap gap-1.5">
+              {[isZh ? "X 热点雷达" : "Trend radar", isZh ? "一键跨平台分发" : "One-click distribution", "MCN"].map((tag) => (
+                <span key={tag} className="text-[11px] px-2 py-1 bg-blue-50 text-[var(--primary)] rounded-md font-medium">{tag}</span>
+              ))}
             </div>
-          ))}
+          </div>
+          <div className="border border-gray-100 rounded-2xl p-7 hover:border-blue-200 hover:shadow-sm transition-all">
+            <div className="text-3xl mb-3">🛠️</div>
+            <h3 className="text-base font-bold text-gray-900 mb-2">
+              {isZh ? "FDE / AI 交付工程师" : "FDEs & AI delivery engineers"}
+            </h3>
+            <p className="text-sm text-gray-500 leading-relaxed mb-4">
+              {isZh
+                ? "驻场交付工程师、技术顾问、自由职业者——客户随口一个需求，AgentSkillsHub 全库深度搜索直接给你能用的 Skill，比自己现搜快得多。"
+                : "Forward-deployed engineers and consultants — deep-search the whole AgentSkillsHub library for a ready-to-use skill, instead of building from scratch."}
+            </p>
+            <div className="flex flex-wrap gap-1.5">
+              {[isZh ? "全库深度搜索" : "Deep search", isZh ? "社区精选榜" : "Curated ranking", "Top3"].map((tag) => (
+                <span key={tag} className="text-[11px] px-2 py-1 bg-blue-50 text-[var(--primary)] rounded-md font-medium">{tag}</span>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -256,7 +276,12 @@ export default function ClubClient({ lang, initialEmail = "", suggestedGithub = 
                       {item.icon}
                     </span>
                     <div className="min-w-0 pt-0.5">
-                      <div className="text-sm font-semibold text-gray-900 leading-snug">{item.title}</div>
+                      <div className="flex items-center gap-1.5 flex-wrap">
+                        <span className="text-sm font-semibold text-gray-900 leading-snug">{item.title}</span>
+                        {item.tag && (
+                          <span className="text-[10px] px-1.5 py-0.5 bg-blue-50 text-[var(--primary)] rounded font-medium shrink-0">{item.tag}</span>
+                        )}
+                      </div>
                       <div className="text-xs text-gray-500 leading-relaxed mt-0.5">{item.desc}</div>
                     </div>
                   </li>
@@ -385,8 +410,9 @@ export default function ClubClient({ lang, initialEmail = "", suggestedGithub = 
                 </label>
                 <select name="role" className="w-full px-3.5 py-2.5 border border-gray-200 rounded-lg text-sm focus:border-[var(--primary)] focus:outline-none bg-white" defaultValue="">
                   <option value="" disabled>{isZh ? "选择最匹配的" : "Select"}</option>
+                  <option value="creator">{isZh ? "内容创作者 · 想涨粉/变现" : "Creator — growing on X"}</option>
+                  <option value="fde">{isZh ? "FDE / AI 交付工程师" : "FDE / AI delivery engineer"}</option>
                   <option value="founder">{isZh ? "AI 产品创始人 / 独立开发者" : "Founder / indie dev"}</option>
-                  <option value="creator">{isZh ? "内容创作者 / 自媒体" : "Creator"}</option>
                   <option value="growth">{isZh ? "海外增长 / BD" : "Growth / BD"}</option>
                   <option value="ecosystem">{isZh ? "出海生态服务方" : "Ecosystem"}</option>
                   <option value="other">{isZh ? "其他" : "Other"}</option>
