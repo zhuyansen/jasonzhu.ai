@@ -15,7 +15,7 @@ for (const l of fs.readFileSync(".env.local", "utf-8").split("\n")) {
   if (v.startsWith('"') && v.endsWith('"')) v = v.slice(1, -1);
   process.env[t.slice(0, e).trim()] = v;
 }
-const KEY = process.env.ANTHROPIC_AUTH_TOKEN, BASE = process.env.ANTHROPIC_BASE_URL || "https://api.aigocode.com";
+const KEY = process.env.ANTHROPIC_AUTH_TOKEN, BASE = process.env.ANTHROPIC_BASE_URL || "https://api.aigocode.app";
 const dir = "src/content/blog";
 
 function call(prompt, maxTok = 8000, timeout = 150) {

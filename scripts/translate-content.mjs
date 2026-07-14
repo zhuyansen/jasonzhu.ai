@@ -28,7 +28,7 @@ for (const envFile of [".env.local", ".env"]) {
 }
 
 const KEY = process.env.ANTHROPIC_AUTH_TOKEN;
-const BASE = process.env.ANTHROPIC_BASE_URL || "https://api.aigocode.com";
+const BASE = process.env.ANTHROPIC_BASE_URL || "https://api.aigocode.app";
 const MODEL = process.env.CLAUDE_MODEL || "claude-sonnet-4-6";
 if (!KEY) { console.error("❌ 缺 ANTHROPIC_AUTH_TOKEN"); process.exit(1); }
 

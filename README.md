@@ -134,7 +134,7 @@ SUPABASE_SERVICE_KEY=             # Supabase Service Role Key (后端写入)
 
 # Claude API (快讯采集)
 ANTHROPIC_AUTH_TOKEN=             # Claude API 密钥 (支持中转站)
-ANTHROPIC_BASE_URL=               # API 地址 (默认 https://api.aigocode.com)
+ANTHROPIC_BASE_URL=               # API 地址 (默认 https://api.aigocode.app)
 ANTHROPIC_API_KEY=                # 备选: 原生 Anthropic API 密钥
 CLAUDE_MODEL=                     # 模型名称 (默认 claude-sonnet-4-6)
 
