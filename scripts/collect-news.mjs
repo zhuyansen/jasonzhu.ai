@@ -525,9 +525,12 @@ ${itemsText}
         errMsg.includes("400") &&
         (errMsg.includes("model is not supported") || errMsg.includes("model_not_found"));
 
-      // aigocode 账号干涸 / 502 网关 / 硬超时 → 立即切下一个 provider（apimart → 官方）
+      // key 失效/无权限（403/401）：换 key 重试没用，直接切下一个 provider
+      const isAuthError = /HTTP (401|403)/.test(errMsg);
+
+      // aigocode 账号干涸 / 502 网关 / 硬超时 / key 无权限 → 立即切下一个 provider（apimart → 官方）
       const shouldFailover =
-        isProxyDry || errMsg.includes("aborted") || isUpstreamTimeout;
+        isProxyDry || errMsg.includes("aborted") || isUpstreamTimeout || isAuthError;
       if (shouldFailover && fallbackIdx < FALLBACKS.length - 1) {
         fallbackIdx++;
         activeClient = FALLBACKS[fallbackIdx];
