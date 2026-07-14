@@ -406,6 +406,21 @@ ${itemsText}
     : ["claude-sonnet-4-6", "claude-sonnet-4-5", "claude-opus-4-5", "claude-3-5-sonnet-latest"];
   let modelIdx = 0;
   let usingFallback = false;
+  // 坏输出（空文本/非 JSON/JSON 解析失败）连续 2 次 → 切下一个 provider。
+  // 7/14 教训：aigocode 正常返回 end_turn 但 JSON 全是坏的（值缺引号之类），
+  // 光靠重试同一家 6 次全废，得换后端。
+  let badOutputCount = 0;
+  const failoverOnBadOutput = () => {
+    badOutputCount++;
+    if (badOutputCount >= 2 && fallbackIdx < FALLBACKS.length - 1) {
+      fallbackIdx++;
+      activeClient = FALLBACKS[fallbackIdx];
+      usingFallback = true;
+      modelIdx = 0;
+      badOutputCount = 0;
+      console.log(`  🔀 连续坏输出 → 切换到 ${activeClient.label} (${activeClient.model || modelChain[0]})`);
+    }
+  };
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
     if (!activeClient) {
       throw new Error("No available API client");
@@ -456,6 +471,7 @@ ${itemsText}
         }
         console.error(`  ⚠️  Attempt ${attempt}: empty text. Content keys: ${JSON.stringify(Object.keys(response.content[0] || {}))}`);
         if (attempt < MAX_RETRIES) {
+          failoverOnBadOutput();
           await sleep(5000 * attempt);
           continue;
         }
@@ -467,6 +483,7 @@ ${itemsText}
       if (!jsonMatch) {
         console.error(`  ⚠️  Attempt ${attempt}: no JSON object found — ${text.slice(0, 100)}`);
         if (attempt < MAX_RETRIES) {
+          failoverOnBadOutput();
           await sleep(5000 * attempt);
           continue;
         }
@@ -494,6 +511,7 @@ ${itemsText}
           }
         }
         if (attempt < MAX_RETRIES) {
+          failoverOnBadOutput();
           await sleep(5000 * attempt);
           continue;
         }
@@ -536,6 +554,7 @@ ${itemsText}
         activeClient = FALLBACKS[fallbackIdx];
         usingFallback = true;
         modelIdx = 0;
+        badOutputCount = 0;
         console.log(`  🔀 ${errMsg.slice(0, 45)} → 切换到 ${activeClient.label} (${activeClient.model || modelChain[0]})`);
         await sleep(2000);
         continue;
