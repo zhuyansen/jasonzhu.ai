@@ -226,7 +226,8 @@ export default function XunhupayCheckoutModal({ lang, onClose, initialEmail = ""
                 {isZh ? "手机端：截图后用微信「扫一扫→相册」识别" : "Mobile: screenshot and scan via WeChat"}
               </p>
             )}
-            {payUrl && (
+            {/* 微信"唤醒跳转支付"官方已关闭（2025-11-06 起），这个跳转链接对微信渠道点了没反应，只有支付宝还能用 */}
+            {channel === "alipay" && payUrl && (
               <a href={payUrl} target="_blank" rel="noopener noreferrer" className="text-xs text-[var(--primary)] hover:underline mt-3 inline-block">
                 {isZh ? "手机上？点这里直接打开" : "On mobile? Tap to open"}
               </a>
