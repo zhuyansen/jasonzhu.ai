@@ -167,12 +167,20 @@ export default function ClubClient({ lang, initialEmail = "", suggestedGithub = 
               {isZh ? "去会员中心 →" : "Go to Dashboard →"}
             </a>
           ) : (
-            <button
-              onClick={() => setCheckoutOpen(true)}
-              className="px-10 py-3.5 bg-[var(--primary)] text-white font-semibold rounded-xl hover:opacity-90 transition-opacity"
-            >
-              {isZh ? "申请加入 →" : "Apply →"}
-            </button>
+            <>
+              <button
+                onClick={() => setCheckoutOpen(true)}
+                className="px-10 py-3.5 bg-[var(--primary)] text-white font-semibold rounded-xl hover:opacity-90 transition-opacity"
+              >
+                {isZh ? "申请加入 →" : "Apply →"}
+              </button>
+              <p className="text-sm text-gray-400 mt-4">
+                {isZh ? "已有兑换码？" : "Have a redemption code? "}
+                <a href={`/${lang}/club/activate`} className="text-[var(--primary)] hover:underline font-medium">
+                  {isZh ? "去激活 →" : "Activate →"}
+                </a>
+              </p>
+            </>
           )}
         </div>
       </section>
@@ -297,12 +305,20 @@ export default function ClubClient({ lang, initialEmail = "", suggestedGithub = 
                     {isZh ? "已是会员 · 去会员中心 →" : "Already a member · Dashboard →"}
                   </a>
                 ) : (
-                  <button
-                    onClick={() => setCheckoutOpen(true)}
-                    className="w-full py-3 rounded-xl text-sm font-semibold text-center bg-[var(--primary)] text-white hover:opacity-90 transition-all"
-                  >
-                    {isZh ? "立即加入 · 早鸟 ¥199 →" : "Join now · ¥199 →"}
-                  </button>
+                  <>
+                    <button
+                      onClick={() => setCheckoutOpen(true)}
+                      className="w-full py-3 rounded-xl text-sm font-semibold text-center bg-[var(--primary)] text-white hover:opacity-90 transition-all"
+                    >
+                      {isZh ? "立即加入 · 早鸟 ¥199 →" : "Join now · ¥199 →"}
+                    </button>
+                    <p className="text-xs text-center text-gray-400 mt-3">
+                      {isZh ? "已有兑换码？" : "Have a code? "}
+                      <a href={`/${lang}/club/activate`} className="text-[var(--primary)] hover:underline">
+                        {isZh ? "去激活 →" : "Activate →"}
+                      </a>
+                    </p>
+                  </>
                 )
               ) : (
                 <button
