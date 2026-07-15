@@ -16,6 +16,7 @@ const FIXES = [
   [/go\s*sell\s*club/gi, "GoSail Club"],
   [/gosell\s*global/gi, "GoSail Global"],
   [/乐点/g, "热点"],
+  [/状号/g, "账号"],
   [/primo/gi, "Premium"],
   [/premote/gi, "Premium"],
   [/plymouth/gi, "Premium"],

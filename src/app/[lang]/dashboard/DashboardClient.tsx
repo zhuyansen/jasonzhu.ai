@@ -176,8 +176,8 @@ export default function DashboardClient({ lang, initialUser, initialProfile, sug
                   <div className="text-sm font-semibold text-gray-900">🎬 {isZh ? "增长视频课" : "Growth video course"}</div>
                   <p className="text-xs text-gray-500 mt-1">
                     {isZh
-                      ? "7 集实操视频 + 完整逐字稿：从 0 搭建你的 X 增长引擎，网页内直接看"
-                      : "7 hands-on episodes with full transcripts — build your X growth engine, watch right in the browser"}
+                      ? "8 集实操视频 + 完整逐字稿：从 0 搭建你的 X 增长引擎，网页内直接看"
+                      : "8 hands-on episodes with full transcripts — build your X growth engine, watch right in the browser"}
                   </p>
                 </div>
                 <a
