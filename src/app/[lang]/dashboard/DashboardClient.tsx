@@ -278,6 +278,30 @@ export default function DashboardClient({ lang, initialUser, initialProfile, sug
                 </li>
               </ol>
             </div>
+
+            {/* 会员微信群：二维码别只藏在邮件里——用户反馈根本找不到 */}
+            <div className="bg-white border border-gray-100 rounded-2xl p-6">
+              <div className="text-sm font-semibold text-gray-900 mb-1.5">💬 {isZh ? "会员微信群" : "Member WeChat group"}</div>
+              <p className="text-xs text-gray-400 mb-4">
+                {isZh
+                  ? "扫码进群：日常讨论、闭门会预告、资源共享都在群里。"
+                  : "Scan to join — discussions, session announcements, and resources."}
+              </p>
+              <div className="flex flex-wrap gap-6">
+                <div className="text-center">
+                  {/* eslint-disable-next-line @next/next/no-img-element -- 静态二维码图，无需 next/image 优化 */}
+                  <img src="/club-wechat-group-qr.jpg" alt={isZh ? "GoSail Club 会员群二维码" : "Member group QR"} width={170} className="rounded-xl border border-gray-100" />
+                  <div className="text-xs text-gray-400 mt-2">{isZh ? "微信扫码进群" : "Scan with WeChat"}</div>
+                </div>
+                <div className="text-center">
+                  {/* eslint-disable-next-line @next/next/no-img-element -- 静态二维码图，无需 next/image 优化 */}
+                  <img src="/wechat-qr.jpg" alt={isZh ? "Jason 个人微信二维码" : "Jason's WeChat QR"} width={170} className="rounded-xl border border-gray-100" />
+                  <div className="text-xs text-gray-400 mt-2">
+                    {isZh ? "群码失效？加 Jason 微信拉你" : "Group QR expired? Add Jason directly"}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       ) : (
