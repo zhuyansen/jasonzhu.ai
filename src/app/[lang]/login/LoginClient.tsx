@@ -23,6 +23,9 @@ export default function LoginClient({ lang }: Props) {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
   const [signupSent, setSignupSent] = useState(false);
+  const [resetSent, setResetSent] = useState(false);
+  const [notConfirmed, setNotConfirmed] = useState(false);
+  const [resendDone, setResendDone] = useState(false);
 
   async function signIn(provider: "google" | "github") {
     setOauthLoading(provider);
@@ -45,9 +48,15 @@ export default function LoginClient({ lang }: Props) {
       if (mode === "signin") {
         const { error } = await supabase.auth.signInWithPassword({ email, password });
         if (error) {
+          if (error.message.includes("Email not confirmed")) {
+            // 注册了但没点确认邮件里的链接——不是密码错，别误导
+            setNotConfirmed(true);
+            setError(isZh ? "这个账号还没验证邮箱，去邮箱点一下确认链接再登录" : "Email not confirmed — click the link in your inbox first");
+            return;
+          }
           setError(
             error.message.includes("Invalid login credentials")
-              ? (isZh ? "邮箱或密码不对" : "Invalid email or password")
+              ? (isZh ? "邮箱或密码不对（忘了密码可以点下面「忘记密码」重置）" : "Invalid email or password — you can reset it below")
               : error.message
           );
           return;
@@ -71,6 +80,15 @@ export default function LoginClient({ lang }: Props) {
           );
           return;
         }
+        // Supabase 防枚举：邮箱已存在时 signUp 也"假装成功"（identities 为空、不发邮件、
+        // 新密码不生效）。不识别这个会让用户对着"查看邮箱"干等，然后用新密码登录报密码错。
+        if (data.user && (data.user.identities?.length ?? 0) === 0) {
+          setMode("signin");
+          setError(isZh
+            ? "这个邮箱已经注册过了，请直接登录；忘了密码就点下面「忘记密码」重置"
+            : "This email is already registered — sign in, or reset your password below");
+          return;
+        }
         // mailer_autoconfirm=false：注册成功但还没验证邮箱，data.session 为空
         if (data.session) {
           window.location.href = `/${lang}/dashboard`;
@@ -83,6 +101,57 @@ export default function LoginClient({ lang }: Props) {
     } finally {
       setSubmitting(false);
     }
+  }
+
+  async function handleForgotPassword() {
+    if (!email) {
+      setError(isZh ? "先在上面填邮箱，再点忘记密码" : "Enter your email above first");
+      return;
+    }
+    setSubmitting(true);
+    setError("");
+    try {
+      const supabase = createClient();
+      await supabase.auth.resetPasswordForEmail(email, {
+        redirectTo: `${window.location.origin}/auth/callback?next=/${lang}/reset-password`,
+      });
+      // 不管邮箱存不存在都显示已发送（Supabase 本身也防枚举）
+      setResetSent(true);
+    } catch {
+      setError(isZh ? "网络错误，请稍后重试" : "Network error, please retry");
+    } finally {
+      setSubmitting(false);
+    }
+  }
+
+  async function handleResendConfirmation() {
+    setSubmitting(true);
+    try {
+      const supabase = createClient();
+      await supabase.auth.resend({
+        type: "signup",
+        email,
+        options: { emailRedirectTo: `${window.location.origin}/auth/callback?next=/${lang}/dashboard` },
+      });
+      setResendDone(true);
+    } catch { /* 静默：下面的提示文案不变 */ }
+    finally { setSubmitting(false); }
+  }
+
+  if (resetSent) {
+    return (
+      <div className="max-w-sm mx-auto px-4 sm:px-6 py-20 text-center">
+        <span className="text-4xl">🔑</span>
+        <h1 className="text-xl font-bold text-gray-900 mt-4 mb-2">
+          {isZh ? "重置邮件已发送" : "Reset email sent"}
+        </h1>
+        <p className="text-sm text-gray-400">
+          {isZh
+            ? `如果 ${email} 注册过，会收到一封重置密码的邮件，点开链接设置新密码即可。没收到就检查一下垃圾箱。`
+            : `If ${email} has an account, a password reset link is on its way. Check spam if you don't see it.`}
+        </p>
+      </div>
+    );
   }
 
   if (signupSent) {
@@ -192,6 +261,20 @@ export default function LoginClient({ lang }: Props) {
           className="w-full px-3.5 py-2.5 border border-gray-200 rounded-lg text-sm focus:border-[var(--primary)] focus:outline-none"
         />
         {error && <p className="text-sm text-red-500">{error}</p>}
+        {notConfirmed && (
+          <p className="text-xs text-gray-400">
+            {resendDone
+              ? (isZh ? "确认邮件已重发，注意查收（含垃圾箱）" : "Confirmation email resent — check your inbox")
+              : (
+                <>
+                  {isZh ? "没收到邮件？" : "Didn't get it? "}
+                  <button type="button" onClick={handleResendConfirmation} disabled={submitting} className="text-[var(--primary)] hover:underline">
+                    {isZh ? "重发确认邮件" : "Resend confirmation"}
+                  </button>
+                </>
+              )}
+          </p>
+        )}
         <button
           type="submit"
           disabled={submitting}
@@ -203,6 +286,13 @@ export default function LoginClient({ lang }: Props) {
               ? (isZh ? "登录" : "Sign in")
               : (isZh ? "创建账号" : "Create account")}
         </button>
+        {mode === "signin" && (
+          <p className="text-xs text-center">
+            <button type="button" onClick={handleForgotPassword} disabled={submitting} className="text-gray-400 hover:text-[var(--primary)] hover:underline">
+              {isZh ? "忘记密码？发送重置邮件" : "Forgot password? Send reset email"}
+            </button>
+          </p>
+        )}
       </form>
 
       <p className="text-xs text-gray-400 text-center mt-8">
