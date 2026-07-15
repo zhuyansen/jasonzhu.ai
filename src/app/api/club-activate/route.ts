@@ -127,17 +127,21 @@ export async function POST(request: NextRequest) {
       `rpush/club_activations/${encodeURIComponent(JSON.stringify({ code: codeStr, ...activation }))}`
     );
 
-    // Supabase 尽力同步（解封前静默失败无妨）
+    // Supabase 尽力同步（解封前静默失败无妨）。
+    // 必须 upsert 不能 update：手动生成的码（generate-club-codes.mjs）只写 KV，
+    // member_codes 里没有行，update 匹配 0 行会静默丢失激活记录，
+    // 导致用户注册后 dashboard 按邮箱认领会员身份失败（7/14 事故：32 人绑不上）。
     try {
       const supabase = getSupabase();
-      await supabase.from("member_codes").update({
+      await supabase.from("member_codes").upsert({
+        code: codeStr,
         github_username: ghUser || null,
         email: emailStr,
         hub_key: hubKey,
         activated_at: activation.activated_at,
         expires_at: activation.expires_at,
         status: "activated",
-      }).eq("code", codeStr);
+      }, { onConflict: "code" });
     } catch { /* Supabase 锁定期忽略 */ }
 
     await sendActivationEmail({ to: emailStr, code: codeStr, github: ghUser, hubKey, org: GITHUB_ORG, expiresAt: activation.expires_at.slice(0, 10) });
