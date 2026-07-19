@@ -77,6 +77,8 @@ export default function ClubClient({ lang, initialEmail = "", suggestedGithub = 
   const [errorMsg, setErrorMsg] = useState("");
   const [selectedTier, setSelectedTier] = useState("l1");
   const [checkoutOpen, setCheckoutOpen] = useState(false);
+  // 申请表里填的邮箱——启航版提交后直接弹付款窗时带过去，不让用户再填一遍
+  const [applyEmail, setApplyEmail] = useState("");
   // time-trap 反 bot：渲染期不可调 Date.now()（react-hooks/purity），挂载后再记时
   const mountedAt = useRef<number>(0);
   useEffect(() => {
@@ -113,6 +115,11 @@ export default function ClubClient({ lang, initialEmail = "", suggestedGithub = 
       const data = await res.json();
       if (res.ok && data.success) {
         setStatus("success");
+        // 启航版无需审核：提交完直接弹付款二维码，别让人填完表就走了
+        if (fd.get("tier") === "l1") {
+          setApplyEmail(String(fd.get("email") || ""));
+          setCheckoutOpen(true);
+        }
       } else {
         setStatus("error");
         setErrorMsg(data.error || (isZh ? "提交失败，请稍后重试" : "Submit failed, please retry"));
@@ -373,10 +380,10 @@ export default function ClubClient({ lang, initialEmail = "", suggestedGithub = 
                 {isZh
                   ? selectedTier === "l2"
                     ? "进阶版是审核制，Jason 会在 3 个工作日内通过微信/邮箱联系你，审核通过后再付款。"
-                    : "启航版无需审核，可以直接在上面的定价卡点「立即加入」付款开通，不用等这个申请。"
+                    : "启航版无需审核，付款窗口已弹出；如果不小心关掉了，点上面定价卡的「立即加入」随时可以继续。"
                   : selectedTier === "l2"
                     ? "Pro is reviewed manually — Jason will reach out via WeChat/email within 3 business days."
-                    : "Starter needs no review — just click \"Join now\" on the pricing card above to pay and activate instantly."}
+                    : "Starter needs no review — the payment window just opened. Closed it? Click \"Join now\" on the pricing card above."}
               </p>
             </div>
           ) : (
@@ -476,7 +483,7 @@ export default function ClubClient({ lang, initialEmail = "", suggestedGithub = 
         <XunhupayCheckoutModal
           lang={lang}
           onClose={() => setCheckoutOpen(false)}
-          initialEmail={initialEmail}
+          initialEmail={initialEmail || applyEmail}
           initialGithub={suggestedGithub}
           isLoggedIn={isLoggedIn}
         />
