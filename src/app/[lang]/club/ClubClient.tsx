@@ -21,9 +21,9 @@ const TIERS = [
     nameEn: "Starter",
     priceZh: "¥365",
     priceEn: "¥365",
-    earlyBird: "¥199",
+    earlyBird: null,
     period: "/年（下一年续费 ¥99）",
-    limitZh: "首发早鸟 ¥199 · 限 7 天 · 2026.07.20 截止",
+    limitZh: "一天一块钱 · 首期招募进行中",
     featured: true,
     forZh: "X 涨粉创作者 / FDE 交付工程师（一天一块钱）",
     itemsZh: [
@@ -317,7 +317,7 @@ export default function ClubClient({ lang, initialEmail = "", suggestedGithub = 
                       onClick={() => setCheckoutOpen(true)}
                       className="w-full py-3 rounded-xl text-sm font-semibold text-center bg-[var(--primary)] text-white hover:opacity-90 transition-all"
                     >
-                      {isZh ? "立即加入 · 早鸟 ¥199 →" : "Join now · ¥199 →"}
+                      {isZh ? "立即加入 · ¥365/年 →" : "Join now · ¥365/yr →"}
                     </button>
                     <p className="text-xs text-center text-gray-400 mt-3">
                       {isZh ? "已有兑换码？" : "Have a code? "}
@@ -422,7 +422,7 @@ export default function ClubClient({ lang, initialEmail = "", suggestedGithub = 
                     onChange={(e) => setSelectedTier(e.target.value)}
                     className="w-full px-3.5 py-2.5 border border-gray-200 rounded-lg text-sm focus:border-[var(--primary)] focus:outline-none bg-white"
                   >
-                    <option value="l1">{isZh ? "启航版 — 早鸟 ¥199/年" : "Starter ¥199/yr"}</option>
+                    <option value="l1">{isZh ? "启航版 — ¥365/年" : "Starter ¥365/yr"}</option>
                     <option value="l2">{isZh ? "进阶版 — ¥2,999/年" : "Pro ¥2,999/yr"}</option>
                   </select>
                 </div>

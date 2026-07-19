@@ -55,7 +55,7 @@ export default async function HomePage({
                     {lang === "zh" ? "GoSail Club 启航会" : "GoSail Club"}
                   </p>
                   <p className="text-xs text-amber-50 mt-0.5 hidden sm:block max-w-xs truncate">
-                    {lang === "zh" ? "AI 出海实战社群 · 首期早鸟 ¥199 限 7 天" : "AI going-global community · early bird open"}
+                    {lang === "zh" ? "AI 出海实战社群 · ¥365/年 一天一块钱" : "AI going-global community · ¥365/yr"}
                   </p>
                 </div>
                 <span className="text-xs text-white font-semibold whitespace-nowrap bg-white/20 px-3 py-1.5 rounded-lg group-hover:bg-white/30 transition-colors">

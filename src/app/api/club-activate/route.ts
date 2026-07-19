@@ -105,7 +105,7 @@ export async function POST(request: NextRequest) {
 
     // 3) 跨站发放真实 Hub Pro Key（失败则不标记码已用，允许安全重试）
     // order_id 传兑换码本身：同一个码重复调用不会重复发码（RPC 侧幂等）
-    const issued = await issueProKey(emailStr, "早鸟199", codeStr);
+    const issued = await issueProKey(emailStr, "兑换码激活", codeStr);
     if (!issued.ok) {
       return NextResponse.json({ error: `GitHub 已开通，但 Hub Key 发放失败：${issued.error}，请重试或联系 Jason` }, { status: 502 });
     }

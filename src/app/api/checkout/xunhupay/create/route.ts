@@ -9,10 +9,9 @@ export const dynamic = "force-dynamic";
 
 const SITE_URL = "https://jasonzhu.ai";
 
-// 启航版早鸟：¥199，2026-07-20 24:00 前；之后恢复 ¥365。跟 ClubClient.tsx 的 TIERS 保持一致。
-const EARLY_BIRD_DEADLINE = new Date("2026-07-21T00:00:00+08:00").getTime();
+// 启航版定价：早鸟 ¥199 已于 2026-07-20 结束，现为标准价 ¥365。跟 ClubClient.tsx 的 TIERS 保持一致。
 function starterPrice(): number {
-  return Date.now() < EARLY_BIRD_DEADLINE ? 199 : 365;
+  return 365;
 }
 
 export async function POST(request: NextRequest) {
