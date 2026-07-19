@@ -46,13 +46,18 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    // GitHub 用户名是可选的：没填就跳过邀请，别把付款流程卡在这一步上
-    if (order.github) {
-      const invite = await inviteToTeam(order.github);
+    // GitHub 用户名是可选的：没填就跳过邀请。
+    // 邀请失败也绝不阻塞发货——"用户名不存在"这类是永久错误，重试也救不回来
+    // （7/19 事故：用户填错 GitHub 名，重试 6 次全败，付了钱什么都没收到）。
+    // 先把会员开通，GitHub 之后去会员中心补填（/api/dashboard/link-github）。
+    let github = order.github;
+    let inviteError: string | undefined;
+    if (github) {
+      const invite = await inviteToTeam(github);
       if (!invite.ok) {
-        await saveOrder({ ...order, status: "paid", error: invite.error });
-        console.error("[xunhupay] github invite failed:", order.tradeOrderId, invite.error);
-        return new NextResponse("github invite failed, retry me", { status: 500 });
+        inviteError = invite.error;
+        github = "";
+        console.error("[xunhupay] github invite failed (non-fatal):", order.tradeOrderId, invite.error);
       }
     }
 
@@ -68,7 +73,7 @@ export async function POST(request: NextRequest) {
     const activatedAt = new Date().toISOString();
     const expiresAtIso = new Date(Date.now() + 365 * 24 * 3600 * 1000).toISOString();
     const activation = {
-      github: order.github || null,
+      github: github || null,
       email: order.email,
       wechat: order.wechat,
       hub_key: issued.key,
@@ -85,7 +90,7 @@ export async function POST(request: NextRequest) {
       // KV 那份（club_activations 流水 + club_code 记录）已经是权威来源，不阻塞主流程。
       await supabase.from("member_codes").insert({
         code,
-        github_username: order.github || null,
+        github_username: github || null,
         email: order.email,
         wechat: order.wechat,
         hub_key: issued.key,
@@ -100,7 +105,7 @@ export async function POST(request: NextRequest) {
     const emailResult = await sendActivationEmail({
       to: order.email,
       code,
-      github: order.github,
+      github,
       hubKey: issued.key,
       org: GITHUB_ORG,
       expiresAt: expiresAtIso.slice(0, 10),
@@ -115,6 +120,8 @@ export async function POST(request: NextRequest) {
       hubKey: issued.key,
       code,
       paidAt: activatedAt,
+      // GitHub 邀请失败时记录原因，但不影响 completed 状态；用户可在会员中心补填
+      error: inviteError,
       emailError: emailResult.ok ? undefined : emailResult.error,
       resendId: emailResult.resendId,
     });
