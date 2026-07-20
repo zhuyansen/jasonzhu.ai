@@ -1,5 +1,107 @@
 [
   {
+    "slug": "2026-07-21",
+    "date": "2026-07-21",
+    "title": "AI 快讯 · 7月21日",
+    "items": [
+      {
+        "title": "MCP 协议迎来易用性大升级：门槛大幅降低",
+        "source": "TechCrunch AI",
+        "category": "Skills 生态",
+        "url": "https://techcrunch.com/2026/07/20/ais-most-important-protocol-is-getting-a-little-bit-easier-to-use/",
+        "summary": "AI 互操作性核心协议 MCP 正迎来重要更新，让开发者更轻松地让 AI 模型安全访问外部数据源和服务。这意味着过去需要工程师手搓的每一条自定义管道，未来将被标准化接口取代——对所有构建 AI Agent 工具的开发者都是利好。",
+        "titleEn": "MCP Protocol Gets Major Usability Overhaul",
+        "summaryEn": "The Model Context Protocol (MCP), the standard that lets AI models securely access external data and services, is getting a significant usability upgrade. This reduces the engineering overhead of connecting AI agents to calendars, databases, and internal tools, making agentic integrations far more accessible for developers."
+      },
+      {
+        "title": "OpenAI 公开长时任务模型安全新挑战与应对方案",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/safety-alignment-long-horizon-models",
+        "summary": "OpenAI 发布长时运行 AI 模型的安全对齐实践报告，揭露了新型风险模式与真实失败案例，并分享了通过迭代部署持续改进防护措施的经验。随着 AI Agent 执行越来越长周期的复杂任务，这份报告对理解下一代模型的安全边界极具参考价值。",
+        "titleEn": "OpenAI Shares Safety Lessons from Long-Horizon AI Deployment",
+        "summaryEn": "OpenAI published lessons learned from deploying long-running agentic models, detailing novel safety risks, observed real-world failures, and iterative safeguards. As AI agents tackle longer-horizon tasks autonomously, this report sets an important baseline for the industry on how to monitor and contain emergent unsafe behaviors."
+      },
+      {
+        "title": "Google 自研新 AI 芯片：专为提升 Gemini 推理效率而生",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/07/20/google-is-working-on-a-new-ai-chip-designed-to-make-gemini-more-efficient/",
+        "summary": "Alphabet 正在研发专用 AI 芯片，目标是大幅提升 Gemini 系列模型的推理效率。此举标志着 Google 在硬件自主化道路上进一步加速，减少对 NVIDIA GPU 的依赖，并有望压低 Gemini API 成本，对下游开发者直接受益。",
+        "titleEn": "Google Builds Custom AI Chip to Supercharge Gemini Efficiency",
+        "summaryEn": "Alphabet is reportedly developing a new custom AI chip purpose-built to run Gemini models more efficiently. This move deepens Google's vertical integration in AI infrastructure, reduces reliance on Nvidia, and could ultimately lower API costs for developers building on Gemini."
+      },
+      {
+        "title": "OpenAI 恐惧开源模型：美国应该跟着怕吗？",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/07/20/openai-is-scared-of-open-weight-models-should-the-us-be/",
+        "summary": "围绕禁止中国开源大模型的讨论持续升温，TechCrunch 深度分析了这场博弈背后的商业逻辑与地缘政治张力。OpenAI 的恐惧折射出开源模型对其商业模式的真实威胁，而美国政府若真出手封禁，反而可能逼退开发者生态、让欧中坐收渔翁之利。",
+        "titleEn": "OpenAI Fears Open-Weight Models — Should the US Government?",
+        "summaryEn": "TechCrunch examines the growing debate around potentially banning Chinese open-weight LLMs, arguing that OpenAI's fear of open-source models reveals a core business model vulnerability. A US ban could paradoxically accelerate developer migration to European and Chinese alternatives, undermining the very competitiveness it aims to protect."
+      },
+      {
+        "title": "SVR-R1：让模型用「自我核查」替代外部验证器做多模态推理",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2607.10966",
+        "summary": "SVR-R1 提出了一种自我验证强化学习框架：模型回答问题后，用同一套权重对自己的答案给出 Yes/No 判断，答错了就再想一次。**对开发者的意义**：这套机制无需外部验证器或标注数据就能训练多模态推理能力，大幅降低构建可靠推理模型的成本门槛。",
+        "titleEn": "SVR-R1: Self-Verification RL for Multimodal Reasoning Without External Verifiers",
+        "summaryEn": "SVR-R1 introduces a multi-turn RL framework where a model self-verifies its own answers using the same weights — a 'No' triggers a rethink before finalizing. For developers, this means training robust multimodal reasoning models without any external verifiers or labeled correctness data, dramatically reducing the cost of building reliable reasoning pipelines."
+      },
+      {
+        "title": "Agon：让两个模型互相当裁判，逼出更好的推理链",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2607.07690",
+        "summary": "现有 GRPO 等强化学习方案只奖励最终答案，导致模型「越写越长却不越想越深」。Agon 让两个模型互当对手+裁判，通过竞争性评分直接优化推理过程质量。**对开发者的意义**：这是训练真正「会思考」而非「会堆字」的推理模型的新范式，有望替代人工标注的思维链。",
+        "titleEn": "Agon: Competitive Cross-Model RL Where Rivals Grade Each Other's Reasoning",
+        "summaryEn": "Current RL methods like GRPO reward only final answers, training models to write more rather than reason better. Agon pairs two competing models that grade each other's reasoning traces, directly optimizing thinking quality. For developers fine-tuning reasoning models, this could replace expensive chain-of-thought annotations with a self-improving competitive dynamic."
+      },
+      {
+        "title": "RESOURCE2SKILL：从教程视频自动蒸馏可复用 Agent 技能库",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2606.29538",
+        "summary": "现有 Agent 技能库大多靠人工手写或从 Agent 执行轨迹提取，教程视频等多模态资源严重浪费。RESOURCE2SKILL 从视频、文章、代码仓库等资源自动蒸馏出可执行技能。**对开发者的意义**：理论上可以把任意软件操作视频转化为 Agent 可直接调用的技能，大幅提速 Agent 能力扩充。",
+        "titleEn": "RESOURCE2SKILL: Distill Executable Agent Skills from Tutorial Videos Automatically",
+        "summaryEn": "RESOURCE2SKILL automatically distills multimodal human resources — tutorial videos, articles, repositories — into executable agent skills, bypassing the need for manual authoring or agent trace collection. For developers building skill libraries, this opens a path to rapidly scaling agent capabilities by converting any how-to video into reusable procedural knowledge."
+      },
+      {
+        "title": "AI 语音钓鱼媲美人类骗子，成本却只是零头",
+        "source": "Hacker News",
+        "category": "AI 工具动态",
+        "url": "https://fredheiding.substack.com/p/ai-voice-phishing-performs-on-par",
+        "summary": "最新研究表明，AI 语音钓鱼在成功率上已与真人骗子持平，但成本极低、可无限扩展。这一发现对企业安全团队和个人用户都构成严峻警示——当 AI 语音合成普及化，传统「听声识人」的防骗直觉将彻底失效，身份验证体系亟需重构。",
+        "titleEn": "AI Voice Phishing Now Matches Human Scammers at a Fraction of the Cost",
+        "summaryEn": "Research shows AI-powered voice phishing attacks now perform on par with human scammers in success rates, while operating at a fraction of the cost and at unlimited scale. This signals a fundamental breakdown of voice-based identity trust, forcing enterprises and individuals to rethink authentication and fraud prevention from the ground up."
+      }
+    ],
+    "funding": [
+      {
+        "company": "Natural",
+        "url": "https://techcrunch.com/2026/07/20/natural-raises-30m-to-reinvent-payments-for-ai-agents-and-take-on-stripe/",
+        "round": "Series A",
+        "amount": "$30M",
+        "valuation": "",
+        "investors": "",
+        "pitch": "专为 AI Agent 自主交易重构支付基础设施，剑指 Stripe。Agent 经济时代的支付层战争正式打响。"
+      },
+      {
+        "company": "Infinity",
+        "url": "https://techcrunch.com/2026/07/20/inference-startup-infinity-raises-15m-from-touring-capital-openai-and-athropic-researchers/",
+        "round": "Seed",
+        "amount": "$15M",
+        "valuation": "$100M",
+        "investors": "Touring Capital、Principal VC，以及来自 OpenAI 和 Anthropic 的研究员",
+        "pitch": "AI 推理基础设施初创公司，由 OpenAI 和 Anthropic 研究员背书投资，聚焦降低大模型推理成本与延迟。"
+      }
+    ],
+    "jasonSays": "今天最值得盯的是 MCP 易用性升级和 Natural 的 Agent 支付赛道——前者决定 Agent 工具生态的天花板，后者意味着 Agent 终于要「真的花钱办事」了，两件事叠加，2026 下半年 Agent 经济的基础设施正在快速就位。",
+    "jasonSaysEn": "Watch MCP's usability upgrade and Natural's agent payments play together — one raises the ceiling for agentic tooling, the other means agents can finally transact autonomously at scale; the infrastructure layer for the agent economy is snapping into place faster than most people realize.",
+    "filename": "2026-07-21.md"
+  },
+  {
     "slug": "2026-07-20",
     "date": "2026-07-20",
     "title": "AI 快讯 · 7月20日",
@@ -184,7 +286,8 @@
     ],
     "jasonSays": "今天最炸的其实是小米：10万小时真实机器人轨迹——这不是PPT，这是真金白银堆出来的壁垒。具身智能的竞争已经进入「数据飞轮」阶段，没有这个量级数据积累的玩家，差距只会越来越大。",
     "jasonSaysEn": "Today's sleeper hit is Xiaomi Robotics-1 — 100K hours of real-world robot trajectories isn't a slide deck, it's a moat. Embodied AI has entered the data flywheel phase, and players without this scale of proprietary data are falling further behind by the day.",
-    "filename": "2026-07-19.md"
+    "filename": "2026-07-19.md",
+    "coverImage": "/news/2026-07-19.png"
   },
   {
     "slug": "2026-07-18",
