@@ -90,7 +90,101 @@
     ],
     "jasonSays": "今天最值得盯的信号：ui-skills 和 PostHog MCP 同日上榜，说明 Skills/MCP 生态正在从「概念」快速走向「工具货架化」——独立开发者不用再自己造轮子，直接插上用就行。这个速度比想象中快得多。",
     "jasonSaysEn": "The real signal today: ui-skills and PostHog MCP both trending simultaneously shows the Skills/MCP ecosystem is rapidly moving from concept to off-the-shelf tooling—indie devs no longer need to build from scratch, and this is happening faster than anyone expected.",
-    "filename": "2026-07-20.md"
+    "filename": "2026-07-20.md",
+    "coverImage": "/news/2026-07-20.png"
+  },
+  {
+    "slug": "2026-07-18",
+    "date": "2026-07-18",
+    "title": "AI 快讯 · 7月18日",
+    "items": [
+      {
+        "title": "Claude Fable 5正式上线：各订阅套餐使用权限全面解析",
+        "source": "Anthropic Support",
+        "category": "AI 工具动态",
+        "url": "https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan",
+        "summary": "Anthropic官方发布Claude Fable 5各套餐使用说明，确认新模型已正式上线并对应不同订阅层级开放访问。结合之前报道Opus 5即将发布，Anthropic正在密集排兵布阵，Fable 5或定位为主力编程/推理旗舰，值得开发者立即关注自己所在套餐的权限变化。",
+        "titleEn": "Claude Fable 5 Launches: Plan-by-Plan Access Breakdown",
+        "summaryEn": "Anthropic officially published plan-specific access details for Claude Fable 5, confirming the new model is live across subscription tiers. With Opus 5 also reportedly imminent, Anthropic is rapidly stacking its model lineup — developers should check their plan access immediately."
+      },
+      {
+        "title": "Kimi K3登场：网络安全能力超越Fable和Sol，中美AI能力差距引热议",
+        "source": "X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://x.com/bindureddy",
+        "summary": "Moonshot AI新发布的Kimi K3在网络安全漏洞发现能力上已超越Claude Fable和GPT Sol。业内人士指出这两款美国模型均被「阉割」，在安全领域已无法竞争。这一现象引发对美国AI监管政策是否正在拖累本土模型竞争力的激烈讨论。",
+        "titleEn": "Kimi K3 Outperforms Fable & Sol on Cybersecurity Benchmarks",
+        "summaryEn": "Kimi K3 from Moonshot AI reportedly outperforms Claude Fable and GPT Sol on cybersecurity vulnerability discovery. Critics argue US models have been over-neutered by policy, raising serious questions about whether American AI regulation is becoming a competitive liability."
+      },
+      {
+        "title": "wigolo：零成本本地优先MCP网络搜索工具，Claude Code等主流Agent均可直连",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/KnockOutEZ/wigolo",
+        "summary": "wigolo是一款本地优先的MCP网络智能工具，支持搜索、抓取、爬取与研究功能，无需API Key、无云依赖、每次查询零成本，兼容Claude Code、Cursor、Codex、Gemini CLI等所有主流AI编程工具。对于重度使用网络搜索的Agent工作流，这是一个值得立即部署的免费基础设施。",
+        "titleEn": "Wigolo: Zero-Cost Local-First Web MCP Tool for AI Coding Agents",
+        "summaryEn": "Wigolo is a local-first MCP web intelligence layer — search, fetch, crawl, and research with no API keys, no cloud, and $0/query. Compatible with Claude Code, Cursor, Codex, Gemini CLI and any MCP client. A compelling free infrastructure upgrade for agent workflows relying on web data."
+      },
+      {
+        "title": "code-review-graph：构建代码库持久化智能图谱，大幅削减AI审查Token消耗",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/tirth8205/code-review-graph",
+        "summary": "这个MCP + CLI工具为代码库构建持久化「知识图谱」，使AI编程工具在Code Review时只读取真正相关的代码，而非反复扫描全量代码库。实测在大型仓库工作流中可显著减少上下文用量，对于在大型项目中使用Claude Code或Cursor的团队，是直接降本提效的基础工具。",
+        "titleEn": "code-review-graph: Persistent Codebase Map to Slash AI Token Costs",
+        "summaryEn": "code-review-graph builds a persistent intelligence map of your codebase for MCP and CLI, so AI tools only read what matters during code reviews. Benchmarked context reductions on large-repo workflows make this a practical cost-cutting tool for teams using Claude Code or Cursor at scale."
+      },
+      {
+        "title": "Voicebox开源：本地语音克隆+语音输入+Agent对话一站式全栈",
+        "source": "GitHub Trending",
+        "category": "AI 工具动态",
+        "url": "https://github.com/jamiepine/voicebox",
+        "summary": "Voicebox是一款本地运行的开源AI语音工作室，支持克隆任意声音、语音生成、语音听写到任何应用，以及用自定义声音与Agent对话。完整的语音I/O全栈本地运行，对隐私敏感的独立开发者和出海产品构建者来说，是替代商业TTS/STT订阅的强力选项。",
+        "titleEn": "Voicebox: Open-Source Local AI Voice Studio for Clone, Dictate & Agents",
+        "summaryEn": "Voicebox is an open-source, local-first AI voice studio supporting voice cloning, TTS generation, dictation into any app, and agent conversations in custom voices. Runs entirely on your machine — a compelling free alternative to commercial TTS/STT subscriptions for privacy-conscious builders."
+      },
+      {
+        "title": "Qwen-Music发布：阿里音乐生成模型支持文本生歌+翻唱，含完整人声",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2607.11699",
+        "summary": "阿里发布Qwen-Music音乐生成模型，支持两大核心任务：通过文本描述+歌词生成完整歌曲（含人声演唱），以及将现有歌曲翻唱为不同风格和声线。对AI音乐创作者和出海音乐SaaS产品开发者来说，这是目前开源生态中能力最完整的音乐生成模型之一，值得重点评测。",
+        "titleEn": "Qwen-Music: Alibaba's Music Gen Model Supports Full Vocal Song Creation",
+        "summaryEn": "Alibaba released Qwen-Music, supporting text-to-song generation with complete vocal singing and cover song creation across different styles. For developers building AI music tools, this is one of the most complete open-source music generation models to date — immediately worth benchmarking."
+      },
+      {
+        "title": "S1-Omni：首个统一科学推理多模态模型，理解+预测+生成三合一",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2607.15686",
+        "summary": "S1-Omni将过去高度碎片化的科学AI能力整合进单一模型：同时处理异构科学数据、建模科学规律和专家知识。简单说，以前做蛋白质预测、材料生成、化学推理各需专用模型，S1-Omni试图一个模型全搞定。对AI4Science方向的开发者和研究者，这是值得关注的「科学领域的GPT-4时刻」雏形。",
+        "titleEn": "S1-Omni: Unified Multimodal Model for Scientific Understanding, Prediction & Generation",
+        "summaryEn": "S1-Omni consolidates fragmented AI-for-science capabilities into one model — handling heterogeneous scientific data, physical laws, and expert knowledge jointly. Think: one model for protein prediction, materials generation, and chemical reasoning. A potential inflection point for AI4Science developers."
+      },
+      {
+        "title": "腾讯云ADP 4.0出海版发布：企业级Agent平台打通LINE/Telegram/Google Workspace",
+        "source": "36Kr",
+        "category": "出海实战",
+        "url": "https://36kr.com/p/3901396207584902?f=rss",
+        "summary": "腾讯云在WAIC正式发布企业级Agent开发平台ADP 4.0国际版，支持一键发布到LINE、Telegram等海外主流社交渠道，深度集成Google Workspace、Confluence、Jira，模型自动跟随用户输入语言响应。中国最大云厂商之一正在将成熟的Agent基础设施输出海外，对出海SaaS开发者是重要竞争参照。",
+        "titleEn": "Tencent Cloud ADP 4.0 Goes Global: Enterprise Agent Platform Hits LINE, Telegram & Google Workspace",
+        "summaryEn": "Tencent Cloud launched ADP 4.0 internationally at WAIC — its enterprise AgentOps platform now natively supports LINE, Telegram, Google Workspace, Confluence, and Jira with auto language-switching. One of China's largest cloud providers is exporting mature agent infrastructure globally, a key competitive benchmark for overseas SaaS builders."
+      }
+    ],
+    "funding": [
+      {
+        "company": "Fireworks AI",
+        "url": "https://news.crunchbase.com/venture/biggest-funding-rounds-ai-defense-fintech-robotics/",
+        "round": "undisclosed",
+        "amount": "$1.5B",
+        "valuation": "",
+        "investors": "",
+        "pitch": "企业级AI推理加速平台，本周融资$15亿领跑全行业，规模印证大模型API基础设施赛道仍是资本最热靶点。"
+      }
+    ],
+    "jasonSays": "今天最值得盯的是Kimi K3在网络安全领域已甩开Claude和GPT这件事——不是因为「中国AI赢了」，而是因为它证明过度的安全审查正在成为美国模型的能力上限，这个趋势对所有要在安全/渗透测试方向做工具的独立开发者影响极大。",
+    "jasonSaysEn": "The most important signal today: Kimi K3 surpassing Fable and Sol on cybersecurity tasks isn't just a China-wins story — it's proof that over-neutering is becoming a hard capability ceiling for US models, and that matters enormously for any developer building security or pen-testing tools.",
+    "filename": "2026-07-18.md"
   },
   {
     "slug": "2026-07-17",
