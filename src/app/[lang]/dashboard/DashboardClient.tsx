@@ -189,6 +189,59 @@ export default function DashboardClient({ lang, initialUser, initialProfile, sug
               </div>
             </div>
 
+            {/* X 增长插件包：课程的配套工具，下载 zip → chrome 开发者模式拖入 */}
+            <div className="border border-gray-100 rounded-xl p-4">
+              <div className="text-sm font-semibold text-gray-900">🧩 {isZh ? "X 增长插件包" : "X growth extensions"}</div>
+              <p className="text-xs text-gray-500 mt-1 mb-3">
+                {isZh
+                  ? "视频课配套的 4 个 Chrome 插件。安装：下载解压 → 打开 chrome://extensions 开启开发者模式 → 把解压后的文件夹拖进去。"
+                  : "4 Chrome extensions that pair with the course. Install: download & unzip → chrome://extensions → enable Developer mode → drag the folder in."}
+              </p>
+              <ul className="space-y-2.5">
+                {[
+                  {
+                    name: isZh ? "对标博主推文分析" : "Competitor tweet analyzer",
+                    desc: isZh ? "扫描指定博主的原创推文，汇总浏览/点赞/转发/评论，按互动排序、可回跳原推" : "Scan any account's tweets, aggregate metrics, sort by engagement",
+                    zip: "https://s3.us-east-1.amazonaws.com/brickrecipes.ai/x-tweet-analyzer-v1.2.zip",
+                    guide: "https://x.com/GoSailGlobal/status/2008853263605776694",
+                  },
+                  {
+                    name: isZh ? "推文分析及优化建议" : "Tweet optimizer",
+                    desc: isZh ? "配合 Grok 用：粘贴推文（草稿或链接），给出优化方向和发布时间建议" : "Works with Grok — paste a draft or link, get rewrite and timing advice",
+                    zip: "https://s3.us-east-1.amazonaws.com/brickrecipes.ai/grok-writing-assistant-v5.zip",
+                    guide: "https://x.com/GoSailGlobal/status/2009106641749463457",
+                  },
+                  {
+                    name: "X-Profile-Builder",
+                    desc: isZh ? "Profile 分析及优化：先找对标账号，再优化你的头像/Bio/置顶" : "Analyze and rebuild your profile from benchmark accounts",
+                    zip: "https://s3.us-east-1.amazonaws.com/brickrecipes.ai/x-profile-builder-extension-v1.2.zip",
+                    guide: "https://x.com/GoSailGlobal/status/2010204153499492425",
+                  },
+                  {
+                    name: isZh ? "Twillot 收藏同步备份" : "Twillot bookmarks export",
+                    desc: isZh ? "导出 Bookmarks，配合 Grok 分析收藏选题、把收藏夹变成选题库" : "Export bookmarks and mine them with Grok as an idea bank",
+                    zip: "https://s3.us-east-1.amazonaws.com/brickrecipes.ai/twillot-extension.zip",
+                    guide: "https://x.com/GoSailGlobal/status/2009437982076620827",
+                  },
+                ].map((p) => (
+                  <li key={p.name} className="flex items-start justify-between gap-3 flex-wrap">
+                    <div className="min-w-0 flex-1">
+                      <div className="text-xs font-medium text-gray-800">{p.name}</div>
+                      <div className="text-xs text-gray-400 mt-0.5">{p.desc}</div>
+                    </div>
+                    <div className="shrink-0 flex gap-2">
+                      <a href={p.zip} className="text-xs px-3 py-1.5 border border-gray-200 rounded-lg hover:border-[var(--primary)] hover:text-[var(--primary)] transition-colors">
+                        {isZh ? "下载" : "Download"}
+                      </a>
+                      <a href={p.guide} target="_blank" rel="noopener noreferrer" className="text-xs px-3 py-1.5 text-gray-400 hover:text-[var(--primary)] transition-colors">
+                        {isZh ? "教程 →" : "Guide →"}
+                      </a>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
             {/* 闭门讨论会 */}
             <div className="border border-gray-100 rounded-xl p-4">
               <div className="flex items-center justify-between gap-3 flex-wrap">
