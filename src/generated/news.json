@@ -1,5 +1,107 @@
 [
   {
+    "slug": "2026-07-24",
+    "date": "2026-07-24",
+    "title": "AI 快讯 · 7月24日",
+    "items": [
+      {
+        "title": "Claude 语音模式升级：能帮你改会议、起草邮件的新声音",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/07/23/anthropic-updates-claude-voice-mode-with-more-capable-models/",
+        "summary": "Anthropic 为 Claude 语音模式接入了更强的底层模型，现在不只是闲聊，还能在对话中直接执行任务——比如帮你重新安排日程或起草一封邮件。语音 AI 从「交互界面」进化为「执行助手」，值得开发者关注其 API 能力边界。",
+        "titleEn": "Anthropic Upgrades Claude Voice Mode With More Capable Models",
+        "summaryEn": "Anthropic has upgraded Claude's voice mode with more capable models, enabling it to take real actions during conversations — like rescheduling meetings or drafting emails. The shift marks voice AI moving from a chat interface toward an actual task executor, with implications for voice-first app developers."
+      },
+      {
+        "title": "ChatGPT Health 向全美开放：接入 Apple Health 和医疗记录",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/07/23/openai-makes-chatgpt-health-available-to-all-u-s-users/",
+        "summary": "OpenAI 将 ChatGPT Health 功能向全体美国用户开放，支持安全接入 Apple Health、Function、MyFitnessPal 等平台的个人数据，提供个性化健康洞察。这是 OpenAI 进军医疗赛道的关键一步，也打开了健康类 AI 应用的新想象空间。",
+        "titleEn": "ChatGPT Health Now Open to All U.S. Users With Medical Record Integration",
+        "summaryEn": "OpenAI has opened ChatGPT Health to all U.S. users, allowing secure integration with Apple Health, Function, and MyFitnessPal for personalized health insights. This marks a significant push into consumer health AI and opens new territory for health-focused app developers."
+      },
+      {
+        "title": "Andrew Ng 开源 OpenWorker：不聊天、直接交付成品的本地 AI 同事",
+        "source": "X/@AndrewYNg",
+        "category": "AI 工具动态",
+        "url": "https://x.com/AndrewYNg",
+        "summary": "Andrew Ng 发布开源 AI Agent 项目 OpenWorker，主打「不聊天只干活」——直接产出润色好的文档、发 Slack 消息、更新日历。本地运行、自带 API key、支持 GPT、Claude Fable、Gemini、Kimi、DeepSeek 等多模型，数据不离机。面向重视隐私和模型自主权的开发者。",
+        "titleEn": "Andrew Ng Launches OpenWorker: Open-Source AI Agent That Delivers Finished Work",
+        "summaryEn": "Andrew Ng open-sourced OpenWorker, an AI agent that skips the chat and delivers finished outputs — polished docs, Slack messages, calendar updates. Runs locally on Mac, supports multiple LLMs (Claude Fable, GPT, Gemini, DeepSeek, Ollama), with all data staying on your machine unless you choose otherwise."
+      },
+      {
+        "title": "Runway 推出 AI 模型路由器：自动选最优生成模型省钱又省心",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/07/23/runway-bets-on-ai-model-routing-as-generative-media-gets-crowded/",
+        "summary": "Runway 发布 Media Router，根据开发者对质量、速度或成本的优先级偏好，自动为图片、视频、音频生成任务选择最佳模型。生成式媒体赛道日趋拥挤，Runway 用「模型路由」策略抢占平台层位置，对需要多模型调度的开发者有直接参考价值。",
+        "titleEn": "Runway Launches Media Router to Auto-Select Best AI Generation Model",
+        "summaryEn": "Runway's new Media Router automatically selects the best image, video, or audio generation model based on whether a developer prioritizes quality, speed, or cost. As generative media gets crowded, Runway bets on owning the routing layer — a useful abstraction for developers juggling multiple model providers."
+      },
+      {
+        "title": "Poolside AI 的 Laguna S 2.1：比 DeepSeek v4 Flash 便宜、比 v4 Pro 更强",
+        "source": "Latent Space",
+        "category": "AI 工具动态",
+        "url": "https://www.latent.space/p/ainews-laguna-s-21-released-cheaper",
+        "summary": "Poolside AI 旗下 Laguna S 2.1 发布，定位代码专用模型，声称性价比超越 DeepSeek v4 Flash，且效果优于 v4 Pro。据悉由小规模精英团队构建的「模型工厂」产出，118B MoE 架构，击败了参数量接近 1T 的开源对手。对用 AI 做开发工具的团队值得关注。",
+        "titleEn": "Poolside's Laguna S 2.1: Cheaper Than DeepSeek v4 Flash, Beats v4 Pro",
+        "summaryEn": "Poolside AI released Laguna S 2.1, a code-focused model claiming better performance than DeepSeek v4 Pro at lower cost than v4 Flash. Built by a small elite team using a 118B MoE architecture, it reportedly beats much larger open-weight models — a notable win for the neolab playbook."
+      },
+      {
+        "title": "AMD Helios 机架级 AI 系统正面挑战英伟达，年内开始交付",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/07/23/amd-takes-on-nvidia-with-its-helios-ai-rack-scale-system/",
+        "summary": "AMD 发布 Helios AI 机架级系统，将于今年晚些时候开始向客户交付，正式在 AI 基础设施层面向英伟达发起挑战。在 AI 训练和推理成本居高不下的背景下，算力竞争格局的多元化对降低开发者使用成本至关重要。",
+        "titleEn": "AMD Helios Rack-Scale AI System Challenges Nvidia, Shipping Later This Year",
+        "summaryEn": "AMD unveiled its Helios rack-scale AI system, set to ship to customers later this year, taking direct aim at Nvidia's dominance in AI infrastructure. Competition at the hardware layer matters for developers: more viable alternatives could meaningfully reduce training and inference costs."
+      },
+      {
+        "title": "DocOps：专为 Agent 操作复杂文档设计的可验证基准",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2607.19865",
+        "summary": "DocOps 提出了一套可确定性验证的 Agent 文档操作评估框架，将现实工作场景中的文档操作分解为原子维度和递进复杂度。对开发者的意义：如果你在构建能处理 Word/PDF/表格的 AI Agent，这是目前最贴近真实工作流的测试基准，能清晰暴露模型在哪个步骤掉链子。",
+        "titleEn": "DocOps: A Verifiable Benchmark for AI Agents in Complex Document Operations",
+        "summaryEn": "DocOps introduces a deterministically verifiable benchmark for AI agents performing complex document operations, decomposing real-world workflows into atomic steps and escalating complexity levels. For developers building document-handling agents, this is the most realistic evaluation framework yet — showing exactly where models fail in practice."
+      },
+      {
+        "title": "超网络注入知识的 Scaling Law：LoRA 适配器让模型精准记住新事实",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2607.19604",
+        "summary": "研究发现，训练一个超网络（Hypernetwork）来生成 LoRA 适配器，可以在训练阶段高效向 LLM 注入大规模事实知识，并且遵循清晰的 Scaling Law。对开发者的意义：这为「无需重训整个大模型就能让它学会新知识」提供了可预测、可量化的工程路径，对知识库类 AI 产品很有价值。",
+        "titleEn": "Scaling Laws for Hypernetwork Knowledge Injection Into LLMs via LoRA Adapters",
+        "summaryEn": "Researchers found that training a hypernetwork to generate LoRA adapters can inject large-scale factual knowledge into LLMs at training time, following predictable scaling laws. For developers: this offers a quantifiable, cost-efficient path to updating model knowledge without full retraining — highly relevant for knowledge-base AI products."
+      }
+    ],
+    "funding": [
+      {
+        "company": "AegisAI",
+        "url": "https://techcrunch.com/2026/07/23/aegisai-founded-by-former-google-security-execs-lands-36m-to-stop-ai-driven-spear-phishing/",
+        "round": "Seed",
+        "amount": "$36M",
+        "valuation": "",
+        "investors": "",
+        "pitch": "前 Google 安全高管创立，用 AI Agent 实时分析邮件中的微小异常来拦截 AI 驱动的鱼叉式网络钓鱼攻击，瞄准企业安全市场最难防的新型威胁。"
+      },
+      {
+        "company": "Imagi",
+        "url": "https://techcrunch.com/2026/07/23/edtech-platform-raises-4-5m-to-help-teach-students-how-to-vibe-code/",
+        "round": "Seed",
+        "amount": "$4.5M",
+        "valuation": "",
+        "investors": "Brighteye Ventures、Day One Capital、Will.i.am",
+        "pitch": "教学生如何用 AI vibe coding 的 EdTech 平台，连音乐人 Will.i.am 都来投，赌的是 AI 编程教育的下一代消费市场。"
+      }
+    ],
+    "jasonSays": "今天最大的信号是 Andrew Ng 亲自下场做开源 Agent——OpenWorker 的核心理念「不聊天只交付成品」，正在成为 2026 下半年 Agent 产品的主旋律。谁还在做对话框，谁就落伍了。",
+    "jasonSaysEn": "The biggest signal today is Andrew Ng personally shipping an open-source agent — OpenWorker's 'no chat, just deliverables' philosophy is fast becoming the defining design principle for agents in H2 2026. If your product still centers on a chat box, you're already behind.",
+    "filename": "2026-07-24.md"
+  },
+  {
     "slug": "2026-07-23",
     "date": "2026-07-23",
     "title": "AI 快讯 · 7月23日",
@@ -108,7 +210,8 @@
     ],
     "jasonSays": "今天最值得盯的信号：Monday.com 裁员 20% All-in AI，不是个例而是 SaaS 行业的系统性预演——当 AI Agent 平台（如 OpenAI Presence）开始抢企业客户，传统 SaaS 的人力模型正在被逐行删除。独立开发者的机会窗口就在这个替换缝隙里。",
     "jasonSaysEn": "Monday.com's 20% layoff isn't a one-off—it's the SaaS industry's first large-scale preview of what happens when AI agent platforms like OpenAI Presence start replacing human workflows at scale. For indie builders, the opportunity window lives exactly in that replacement gap.",
-    "filename": "2026-07-23.md"
+    "filename": "2026-07-23.md",
+    "coverImage": "/news/2026-07-23.png"
   },
   {
     "slug": "2026-07-22",
