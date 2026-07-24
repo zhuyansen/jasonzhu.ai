@@ -1,5 +1,98 @@
 [
   {
+    "slug": "2026-07-25",
+    "date": "2026-07-25",
+    "title": "AI 快讯 · 7月25日",
+    "items": [
+      {
+        "title": "Anthropic 发布 Opus 5：比 Fable 更便宜、限制更少",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/07/24/anthropic-launches-opus-5/",
+        "summary": "Anthropic 正式推出 Opus 5 旗舰模型，定价低于 Fable，同时放宽了使用限制，预计将成为大多数场景的首选。这是 Anthropic 在 Claude Fable 之后推出的新旗舰，更低价格+更少限制意味着开发者迁移成本更低、商业可行性更高。",
+        "titleEn": "Anthropic Launches Opus 5: Cheaper and Less Restrictive Than Fable",
+        "summaryEn": "Anthropic released Opus 5, its new flagship model priced below Fable with fewer usage restrictions. This positions Opus 5 as the go-to choice for most developers and enterprises, lowering the cost of building on Anthropic's ecosystem significantly."
+      },
+      {
+        "title": "Black Forest Labs 发布 FLUX 3：多模态生成力压 Seedance 2.0 和 Gemini Omni",
+        "source": "Latent Space",
+        "category": "AI 工具动态",
+        "url": "https://www.latent.space/p/ainews-black-forest-labs-flux-3-multimodal",
+        "summary": "Black Forest Labs 发布 FLUX 3，采用多模态流模型架构，在生成质量基准上击败 Seedance 2.0、Gemini Omni 和 Grok Imagine，同时还推出了用于机器人操控的视频动作模型 FLUX-mimic。对图像/视频生成开发者来说，这是目前综合最强的开源选项。",
+        "titleEn": "FLUX 3 Launches: Beats Seedance 2.0 and Gemini Omni in Multimodal Generation",
+        "summaryEn": "Black Forest Labs' FLUX 3 multimodal flow model outperforms Seedance 2.0, Gemini Omni, and Grok Imagine on generation benchmarks. It also ships FLUX-mimic, a video-action model for robotics — a major leap for open-source generative AI developers."
+      },
+      {
+        "title": "Cognition 收购 AI 社交应用 Poke：AI「个性」成新护城河",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/07/24/why-cognition-bought-poke-ai-personality-is-becoming-a-competitive-advantage/",
+        "summary": "Devin 母公司 Cognition 以低九位数金额收购 AI 社交应用 Poke，将其「像朋友一样对话」的交互模型融入编程 Agent。这预示 AI 产品竞争从「模型能力」转向「交互体验」，用户粘性将越来越取决于 AI 是否有独特个性。",
+        "titleEn": "Cognition Acquires Poke: AI Personality Becomes a Competitive Moat",
+        "summaryEn": "Cognition (maker of Devin) acquired Poke for a low nine-figure sum to bring its conversational personality to its coding agent. The deal signals a shift: AI differentiation is moving from raw capability to interaction style and user affinity."
+      },
+      {
+        "title": "ego-lite：让你和 AI Agent 在同一浏览器里并行工作的新工具",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/citrolabs/ego-lite",
+        "summary": "ego-lite 是一款专为人机协作设计的浏览器，AI Agent 在独立的 Space 中并行处理浏览器任务，不打扰用户当前标签页，登录状态直接共享、无需重复配置。相比 browser-use 等自动化框架，它让 Agent 更接近「同事」而非「机器人」，对 Claude Code / Cursor 工作流尤其友好。",
+        "titleEn": "ego-lite: A Browser Where You and AI Agents Work in Parallel",
+        "summaryEn": "ego-lite is a browser that lets AI agents run tasks in parallel Spaces while you keep your own tabs. Unlike browser-use or agent-browser frameworks, it shares login state natively and reduces token overhead — a natural fit for Claude Code and Cursor power users."
+      },
+      {
+        "title": "Kronos：首个开源金融 K 线基础模型，覆盖全球 45 家交易所",
+        "source": "GitHub Trending",
+        "category": "AI 论文",
+        "url": "https://github.com/shiyu-coder/Kronos",
+        "summary": "Kronos 是首个专为金融 K 线（蜡烛图）训练的开源基础模型，覆盖超过 45 家全球交易所数据，已被 AAAI 2026 收录。对量化开发者来说，这意味着终于有了一个可以 fine-tune 的金融时序专用大模型，而不必把通用 LLM 硬用在结构化价格数据上。",
+        "titleEn": "Kronos: First Open-Source Foundation Model for Financial Candlestick Data",
+        "summaryEn": "Kronos is the first open-source foundation model trained specifically on financial candlestick (K-line) data from 45+ global exchanges, accepted at AAAI 2026. For quant developers, it's the first serious LLM backbone purpose-built for structured price data — no more forcing GPT onto OHLCV."
+      },
+      {
+        "title": "SANA-Video 2.0：单 GPU 跑 720p 视频生成的高效扩散 Transformer",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2607.21553",
+        "summary": "SANA-Video 2.0 用混合线性注意力机制（O(N) 复杂度 + 周期性 Softmax 锚点）在 5B/14B 规模下实现单 GPU 生成 720p 视频，质量媲美全 Softmax 架构。对独立开发者而言：不需要多卡集群也能跑高清视频生成，部署成本大幅下降。",
+        "titleEn": "SANA-Video 2.0: 720p Video Generation on a Single GPU via Hybrid Attention",
+        "summaryEn": "SANA-Video 2.0 combines gated linear attention with periodic softmax anchors to generate 720p video on a single GPU at 5B and 14B scales, matching full-softmax quality. For indie developers, this dramatically lowers the hardware barrier to high-quality video generation."
+      },
+      {
+        "title": "美国 AI 开源限制争议：英伟达、Mistral 联合呼吁避免一刀切",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/07/24/as-us-weighs-response-to-chinese-ai-industry-urges-against-broad-open-weight-restrictions/",
+        "summary": "在美国政府讨论如何回应中国 AI 崛起（尤其是模型蒸馏指控）之际，包括英伟达和 Mistral 在内的主要 AI 公司联合向政策制定者施压，反对对开源权重模型实施广泛限制。此举将直接影响全球开发者获取顶级开源模型的能力。",
+        "titleEn": "Nvidia and Mistral Urge US Against Broad Open-Weight AI Restrictions",
+        "summaryEn": "As Washington debates responses to Chinese AI and alleged model distillation, Nvidia, Mistral and others are pushing back against broad restrictions on open-weight models. The outcome could reshape global developers' access to top-tier open-source AI."
+      },
+      {
+        "title": "Agent 经验样本高效学习：让 LLM Agent 真正「记住」过去的教训",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2607.21051",
+        "summary": "这篇论文提出将 Agent 自身交互历史通过上下文蒸馏内化进模型权重，解决「上下文清空后经验归零」的问题。对构建长期运行 AI Agent 的开发者来说，这意味着 Agent 可以跨会话积累真正有用的经验，而不是每次重新出发。",
+        "titleEn": "Sample-Efficient Learning from Agent Experience via Context Distillation",
+        "summaryEn": "This paper proposes distilling an agent's interaction history directly into model weights, so learned experience persists after the context window clears. For developers building long-running AI agents, this means agents can genuinely accumulate expertise across sessions — not just within one conversation."
+      }
+    ],
+    "funding": [
+      {
+        "company": "Dimension Capital",
+        "url": "https://techcrunch.com/2026/07/21/dimension-capitals-800m-third-fund-shows-the-intersection-of-science-and-compute-is-booming/",
+        "round": "Fund Close",
+        "amount": "$800M",
+        "valuation": "",
+        "investors": "",
+        "pitch": "专注科学与算力交叉领域的风险基金，第三期规模较上期扩大 60%，重点押注 AI 基础设施与科学计算。"
+      }
+    ],
+    "jasonSays": "Anthropic 一天内推 Opus 5 同时还收到 Poke 被 Cognition 收购的消息——前者让模型更便宜，后者说明 AI 产品的「人格」正在变成真金白银的资产，下一场竞争不只是跑分，而是「你的 AI 够不够有味道」。",
+    "jasonSaysEn": "Opus 5 drops and Cognition buys Poke in the same news cycle — cheaper models are table stakes now; the real moat is whether your AI has a personality worth coming back to.",
+    "filename": "2026-07-25.md"
+  },
+  {
     "slug": "2026-07-24",
     "date": "2026-07-24",
     "title": "AI 快讯 · 7月24日",
@@ -99,7 +192,8 @@
     ],
     "jasonSays": "今天最大的信号是 Andrew Ng 亲自下场做开源 Agent——OpenWorker 的核心理念「不聊天只交付成品」，正在成为 2026 下半年 Agent 产品的主旋律。谁还在做对话框，谁就落伍了。",
     "jasonSaysEn": "The biggest signal today is Andrew Ng personally shipping an open-source agent — OpenWorker's 'no chat, just deliverables' philosophy is fast becoming the defining design principle for agents in H2 2026. If your product still centers on a chat box, you're already behind.",
-    "filename": "2026-07-24.md"
+    "filename": "2026-07-24.md",
+    "coverImage": "/news/2026-07-24.png"
   },
   {
     "slug": "2026-07-23",
