@@ -1,5 +1,87 @@
 [
   {
+    "slug": "2026-07-26",
+    "date": "2026-07-26",
+    "title": "AI 快讯 · 7月26日",
+    "items": [
+      {
+        "title": "awesome-claude-skills：1000+ 个生产可用的 Claude Skills 索引库上线",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/ComposioHQ/awesome-claude-skills",
+        "summary": "Composio 发布 awesome-claude-skills，收录 1000+ 个经生产验证的 Claude Skills 与插件，覆盖 Claude.ai、Claude Code、Cursor、Gemini CLI 等多个编码 Agent 平台。开发者可直接取用现成 Skill 为 Agent 赋予真实世界操作能力，大幅降低从零构建的门槛，是目前最全面的 Claude Skills 社区索引。",
+        "titleEn": "awesome-claude-skills: 1000+ Production-Ready Claude Skills Curated",
+        "summaryEn": "Composio launched awesome-claude-skills, a curated index of 1000+ production-ready Claude Skills and plugins spanning Claude.ai, Claude Code, Cursor, Gemini CLI, and more. Developers can plug in pre-built skills to give agents real-world actions without building from scratch — the most comprehensive community Skills directory to date."
+      },
+      {
+        "title": "OpenForgeRL：首个支持 Claude Code 类推理框架端到端训练的开源 RL 框架",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2607.21557",
+        "summary": "Claude Code、Codex 等 Agent 依赖复杂的「推理框架（harness）」驱动多轮工具调用，但现有 SFT/RL 训练栈无法原生支持这类有状态的多进程推理过程。OpenForgeRL 填补这一空白——对开发者意味着：你现在可以在自己的环境里端到端地训练和优化类 Claude Code 的 Agent，而不必依赖闭源基础设施。",
+        "titleEn": "OpenForgeRL: First Open RL Framework for Training Harness-Native Agents",
+        "summaryEn": "Agents like Claude Code rely on complex inference harnesses that existing RL training stacks can't natively handle. OpenForgeRL is an open-source framework that lets developers train harness-based agents end-to-end in any environment — meaning you can now fine-tune Claude Code-style agents on your own infra without closed-source dependencies."
+      },
+      {
+        "title": "Buzz：Block 开源的人机 Agent 共处协作工作区平台",
+        "source": "GitHub Trending",
+        "category": "AI 工具动态",
+        "url": "https://github.com/block/buzz",
+        "summary": "支付公司 Block（Square 母公司）开源协作平台 Buzz，允许人类与 AI Agent 在同一房间（频道）内实时共建。基于可自托管的 Relay 架构，数据完全由用户掌控。与 ego-lite 等浏览器并行方案不同，Buzz 针对团队协作场景，是「主权工作区」方向值得关注的早期探索。",
+        "titleEn": "Buzz: Block's Open-Source Workspace Where Humans and AI Agents Coexist",
+        "summaryEn": "Block (Square's parent) open-sourced Buzz, a self-hostable workspace where humans and AI agents share the same rooms in real time. Built on a relay architecture users fully own, it's a notable early entry in 'sovereign AI workspace' — distinct from browser-based co-pilots, targeting real team collaboration scenarios."
+      },
+      {
+        "title": "Prentis：Reid Hoffman 与 Mark Pincus 联合创办 AI 新实验室，融资 $100M",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/07/24/prentis-new-ai-lab-co-founded-by-reid-hoffman-mark-pincus-in-talks-to-raise-100m/",
+        "summary": "LinkedIn 联合创始人 Reid Hoffman 与 Zynga 创始人 Mark Pincus 联手创办 AI 实验室 Prentis，正在洽谈 $100M 融资。核心押注：自动化日常电脑操作任务将超越写代码，成为 AI 最大落地场景。两位「互联网老将」重新下注 AI，选赛道眼光值得关注。",
+        "titleEn": "Prentis: Reid Hoffman & Mark Pincus's New AI Lab in Talks for $100M",
+        "summaryEn": "LinkedIn co-founder Reid Hoffman and Zynga founder Mark Pincus launched AI lab Prentis, now in talks to raise $100M. Their bet: automating routine computer tasks will soon surpass coding as AI's biggest use case — a contrarian but plausible thesis from two seasoned internet veterans."
+      },
+      {
+        "title": "Claude Opus 5 用户两日实测：更详尽、更「爱说教」，值不值溢价？",
+        "source": "X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://x.com/bindureddy",
+        "summary": "Opus 5 上线第二天，知名 AI 观察者 bindureddy 分享实测：输出更详尽深入，但模型会主动给建议、有点「说教感」。整体认为比其他 Opus 版本上手更快，社区采用速度更高，虽贵但值得。同时预告：Kimi K3 开源权重即将释出，届时生态影响将放大 10 倍。",
+        "titleEn": "Claude Opus 5 Day-2 User Report: More Thorough, More Prescriptive, Worth the Premium?",
+        "summaryEn": "Day-2 real-world report on Claude Opus 5: outputs are notably more detailed and thorough, but the model is highly prescriptive — constantly offering unsolicited advice. Community adoption is faster than prior Opus versions; deemed worth the premium. Kimi K3 open weights dropping soon could multiply the impact further."
+      },
+      {
+        "title": "良配科技：前 Kimi 搜索负责人用 AI 重构婚恋匹配，获徐新 $200 万天使",
+        "source": "36Kr",
+        "category": "变现案例",
+        "url": "https://36kr.com/p/3910880823202948?f=rss",
+        "summary": "前月之暗面 Kimi AI 搜索技术负责人曾歆勋离职后创办「良配科技」，将 AI 搜索与匹配能力移植到婚恋场景，覆盖资料采集、智能匹配、沟通辅助三环节。今日资本徐新以 $200 万美元天使投资押注，理由是该团队对「AI 搜人」的理解超出预期。产品已上线小程序，是少见的 AI 在传统情感赛道的深度落地案例。",
+        "titleEn": "Liangpei: Ex-Kimi AI Search Lead Raises $2M Angel to Reinvent Matchmaking with AI",
+        "summaryEn": "The former AI Search lead at Kimi (Moonshot AI) left to found Liangpei, applying AI search-and-matching to marriage matchmaking — covering profile collection, smart matching, and communication assistance. JOY Capital's Xu Xin invested $2M angel, citing the team's superior grasp of 'AI-powered people-finding.' A rare deep-vertical AI consumer play gaining early traction."
+      },
+      {
+        "title": "Multi-Turn On-Policy 蒸馏新方法：大幅降低 Agent 训练成本",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2607.04763",
+        "summary": "训练多轮 Agent 最贵的地方在于每次更新都要重新跑环境交互和调用教师模型。ReOPD（Replayed-Prefix On-Policy Distillation）提出「离线环境」替代方案：复用预收集的教师轨迹作为前缀，让学生模型只在关键步骤在线采样。对需要持续微调 Agent 的开发者来说，可显著降低训练计算成本。",
+        "titleEn": "ReOPD: Cheaper Multi-Turn Agent Distillation via Prefix Replay",
+        "summaryEn": "Training multi-turn agents is expensive because every update requires fresh environment rollouts and teacher model calls. ReOPD reuses pre-collected teacher trajectories as replayed prefixes, letting the student model only sample online at critical steps — significantly cutting training compute costs for developers building and fine-tuning agentic systems."
+      },
+      {
+        "title": "FinanceComplexQA：专为 Agent 处理工业级金融文档设计的推理基准",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2607.19238",
+        "summary": "论文提出 Finance-LaTeX SKILL 和 FinanceComplexQA 基准，专门测试 Agent 在真实金融文档（复杂排版、大规模信息整合）上的推理能力。数据集含 2000 道专业问题，揭示不同 Agent 在实际金融分析任务中仍存在显著性能差距——对构建金融 AI 应用的开发者有直接参考价值。",
+        "titleEn": "FinanceComplexQA: Agentic Reasoning Benchmark on Industrial Financial Documents",
+        "summaryEn": "FinanceComplexQA introduces a 2000-question benchmark testing AI agents on real industrial-grade financial documents with complex layouts. It reveals significant performance gaps between agents on genuine financial analysis tasks — directly useful for developers building finance AI applications who need to evaluate which models actually hold up under real-world complexity."
+      }
+    ],
+    "jasonSays": "今天最值得收藏的是 awesome-claude-skills 和 OpenForgeRL 同时出现——前者让你直接复用 1000+ 个生产 Skill，后者让你端到端训练自己的 Agent；Skills 生态正在从「会用」快速跨入「会训」的新阶段。",
+    "jasonSaysEn": "Today's double play — awesome-claude-skills giving you 1000+ production-ready Skills to grab, and OpenForgeRL letting you train harness-native agents end-to-end — signals that the Skills ecosystem is rapidly shifting from 'know how to use' to 'know how to train.' Don't sleep on this inflection point.",
+    "filename": "2026-07-26.md"
+  },
+  {
     "slug": "2026-07-25",
     "date": "2026-07-25",
     "title": "AI 快讯 · 7月25日",
@@ -90,7 +172,8 @@
     ],
     "jasonSays": "Anthropic 一天内推 Opus 5 同时还收到 Poke 被 Cognition 收购的消息——前者让模型更便宜，后者说明 AI 产品的「人格」正在变成真金白银的资产，下一场竞争不只是跑分，而是「你的 AI 够不够有味道」。",
     "jasonSaysEn": "Opus 5 drops and Cognition buys Poke in the same news cycle — cheaper models are table stakes now; the real moat is whether your AI has a personality worth coming back to.",
-    "filename": "2026-07-25.md"
+    "filename": "2026-07-25.md",
+    "coverImage": "/news/2026-07-25.png"
   },
   {
     "slug": "2026-07-24",
