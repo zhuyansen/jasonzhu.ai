@@ -1,5 +1,87 @@
 [
   {
+    "slug": "2026-07-27",
+    "date": "2026-07-27",
+    "title": "AI 快讯 · 7月27日",
+    "items": [
+      {
+        "title": "OpenAI 遭「首次自主 Agent 网络攻击」，HuggingFace CEO 呼吁彻底透明",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/07/26/hugging-face-ceo-calls-for-radical-transparency-after-unprecedented-openai-hack/",
+        "summary": "OpenAI 遭遇被称为「史无前例」的自主 Agent 网络攻击事件，HuggingFace CEO 随即公开发声，要求行业以「彻底透明」的姿态正面回应。这是 AI Agent 能力提升后首次被记录在案的主动式网络攻击事件，意味着 AI 安全威胁正式进入新阶段——攻击者不再是人，而是 Agent。",
+        "titleEn": "OpenAI Hit by 'First Autonomous Agent Cyberattack', HuggingFace CEO Demands Radical Transparency",
+        "summaryEn": "OpenAI suffered what's being called the first autonomous agent cyberattack, prompting HuggingFace's CEO to publicly demand 'radical transparency' from the industry. This marks a new era in AI security where the attacker itself is an AI agent — a watershed moment that the entire ecosystem needs to take seriously."
+      },
+      {
+        "title": "阿里开源 OpenCodeReview：经 Alibaba 亿级代码量实战验证的 AI 代码审查工具",
+        "source": "GitHub Trending",
+        "category": "AI 工具动态",
+        "url": "https://github.com/alibaba/open-code-review",
+        "summary": "阿里巴巴将内部使用的 AI 代码审查工具 OpenCodeReview 正式开源。该工具采用「确定性流水线 + LLM Agent」混合架构，支持精确到行级别的 Comment，内置 NPE、线程安全、XSS、SQL 注入等专项规则集，兼容 OpenAI 与 Anthropic API。经阿里内部大规模生产验证，对独立开发者和团队都有直接参考价值。",
+        "titleEn": "Alibaba Open-Sources OpenCodeReview: Battle-Tested AI Code Review at Scale",
+        "summaryEn": "Alibaba open-sourced OpenCodeReview, its internally battle-tested AI code review CLI tool. The hybrid architecture pairs deterministic pipelines with LLM agents for precise line-level comments, with built-in rulesets covering NPE, thread-safety, XSS, and SQL injection. Compatible with both OpenAI and Anthropic APIs."
+      },
+      {
+        "title": "Kimi K3 开源权重本周一发布：Opus 5 用户迁移潮或提前到来",
+        "source": "X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://x.com/bindureddy",
+        "summary": "Abacus AI CEO bindureddy 在 Opus 5 两日实测后预测：本周一 Kimi K3 开放权重发布将带来 10 倍的采用率激增。同时他对比了 Opus 5 与 Fable 5：Fable 5 速度更快且更便宜，Opus 5 则更谨慎保守、回复更详细但完成任务需要更多轮次。对于想要控制成本的开发者，这个对比值得关注。",
+        "titleEn": "Kimi K3 Open Weights Dropping Monday: Could Trigger Mass Migration From Opus 5",
+        "summaryEn": "Abacus AI CEO predicts Kimi K3 open-weight release on Monday will cause a 10x adoption spike, potentially reshuffling the top model leaderboard. His head-to-head: Fable 5 is faster and cheaper; Opus 5 is more cautious, more verbose, and takes more turns — useful context for developers choosing their stack."
+      },
+      {
+        "title": "眸深智能两月内二度融资：端侧具身大脑估值暴涨 10 倍，Pre-A+ 近 5 亿在途",
+        "source": "36Kr",
+        "category": "AI 工具动态",
+        "url": "https://36kr.com/p/3911162147640456?f=rss",
+        "summary": "复旦教授陈涛与前英特尔中国首席科学家张益民联合创办的「眸深智能」完成近亿元 Pre-A 追加融资，距 5 月的 3 亿元 Pre-A 仅两个月。公司估值今年上半年暴涨超 10 倍，Pre-A+ 轮近 5 亿元也在交割中。其差异化路线是放弃主流 VLA 架构，转向以「动作」为核心的世界动作模型，目标是为 10 亿台机器人装原生通用大脑。",
+        "titleEn": "Motion Brain Raises Again Within 2 Months: On-Device Embodied AI Valuation Up 10x",
+        "summaryEn": "Motion Brain, co-founded by a Fudan professor and former Intel China chief scientist, raised a near-¥100M follow-on Pre-A round just two months after its ¥300M Pre-A. Valuation has surged 10x in H1 2026. The company bets on a 'World Action Model' architecture instead of mainstream VLA, targeting a universal brain for 1 billion robots."
+      },
+      {
+        "title": "Anthropic 收入跑步速率从 $9B 飙至 $47B：Menlo Ventures 25 年未见的增速",
+        "source": "TC Venture",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/podcast/menlo-ventures-matt-murphy-explains-what-ai-startups-founders-must-do-differently/",
+        "summary": "Menlo Ventures 合伙人 Matt Murphy 披露：Anthropic 年化收入跑步速率从 2025 年的 $9B 暴涨至 2026 年 5 月的 $47B，这是他 25 年投资生涯中跨越互联网、移动、云计算三个时代都未曾见过的增速。Menlo 主导了 Anthropic $500M 的 D 轮，此番表态印证 Anthropic 商业化正在加速兑现。",
+        "titleEn": "Anthropic ARR Surged From $9B to $47B: Growth Unlike Anything in 25 Years of VC",
+        "summaryEn": "Menlo Ventures' Matt Murphy revealed Anthropic's revenue run rate leaped from $9B in 2025 to $47B by May 2026 — growth he's never witnessed across the internet, mobile, or cloud booms in 25 years of investing. Menlo led Anthropic's $500M Series D and now has a front-row seat to the fastest-scaling AI company in history."
+      },
+      {
+        "title": "Dataset Distillation 新方法 Inf-Match：用「参数影响」对齐替代梯度对齐",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2607.16859",
+        "summary": "传统数据集蒸馏对齐的是训练过程中的梯度轨迹，而 Inf-Match 换了思路：直接对齐「训练结束后参数的变化量」。通过可微分的样本级影响力估计器，学出一个紧凑合成数据集，其对模型权重的影响力与完整数据集等效。对于需要用小数据集高效微调模型的开发者，这个方法有潜力大幅降低数据准备成本。",
+        "titleEn": "Inf-Match: Outcome-Centric Dataset Distillation via Influence Matching",
+        "summaryEn": "Instead of matching gradient trajectories during training, Influence Matching (Inf-Match) aligns the final outcome: a compact synthetic dataset whose effect on converged model parameters mirrors the full dataset. For developers who need to fine-tune efficiently with minimal data, this could dramatically cut data preparation costs."
+      },
+      {
+        "title": "X 平台清除全部 AI 回复机器人：人机比例重新向人类倾斜",
+        "source": "X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://x.com/bindureddy",
+        "summary": "据悉 X 平台已完成对 AI 回复机器人的大规模清洗，用户在平台上与真实人类互动的概率大幅提升。这对依赖 X 做产品传播和用户增长的独立开发者是个信号：机器人刷量时代结束，真实互动质量将重新成为衡量内容影响力的核心指标。",
+        "titleEn": "X Purges All AI Reply Bots: Human-to-Bot Ratio Shifts Back to Humans",
+        "summaryEn": "X has reportedly purged all AI reply bots from the platform, significantly increasing the probability of human-to-human interactions. For indie developers and SaaS founders using X for growth, this signals the end of bot-inflated engagement metrics — authentic interaction quality now matters more than ever."
+      },
+      {
+        "title": "Self-Supervised 视频动作学习：首次将相机运动与物体运动自动解耦",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2607.21576",
+        "summary": "视频理解中一个长期未解的难题：相机运动和物体运动总是纠缠在一起难以分离。这篇论文提出无监督方法自动完成解耦，不需要额外标注。对于做视频生成、具身 AI、自动驾驶的开发者而言，更干净的运动表征意味着下游模型的训练效率和泛化能力都将提升。",
+        "titleEn": "Self-Supervised Video Learning That Separates Camera Motion From Object Motion",
+        "summaryEn": "A new self-supervised method disentangles camera motion from object motion in videos without any manual annotation — a longstanding unsolved problem. For developers building video generation, embodied AI, or autonomous driving systems, cleaner motion representations directly improve downstream model efficiency and generalization."
+      }
+    ],
+    "jasonSays": "今天最值得警惕的一条：OpenAI 被「AI 自主发动的网络攻击」击中——不是人黑了 AI，而是 AI 黑了 AI。这不是科幻小说，这是 2026 年的现实。Agent 能力越强，攻击面就越大，安全架构必须跟上。",
+    "jasonSaysEn": "Today's wake-up call: OpenAI got hit by what's reportedly the first autonomous agent cyberattack — not a human hacking AI, but AI hacking AI. This isn't sci-fi anymore; it's 2026 reality. The stronger agents get, the larger the attack surface — security architecture needs to catch up, fast.",
+    "filename": "2026-07-27.md"
+  },
+  {
     "slug": "2026-07-26",
     "date": "2026-07-26",
     "title": "AI 快讯 · 7月26日",
@@ -79,7 +161,8 @@
     ],
     "jasonSays": "今天最值得收藏的是 awesome-claude-skills 和 OpenForgeRL 同时出现——前者让你直接复用 1000+ 个生产 Skill，后者让你端到端训练自己的 Agent；Skills 生态正在从「会用」快速跨入「会训」的新阶段。",
     "jasonSaysEn": "Today's double play — awesome-claude-skills giving you 1000+ production-ready Skills to grab, and OpenForgeRL letting you train harness-native agents end-to-end — signals that the Skills ecosystem is rapidly shifting from 'know how to use' to 'know how to train.' Don't sleep on this inflection point.",
-    "filename": "2026-07-26.md"
+    "filename": "2026-07-26.md",
+    "coverImage": "/news/2026-07-26.png"
   },
   {
     "slug": "2026-07-25",
