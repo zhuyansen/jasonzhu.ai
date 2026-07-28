@@ -1,5 +1,107 @@
 [
   {
+    "slug": "2026-07-29",
+    "date": "2026-07-29",
+    "title": "AI 快讯 · 7月29日",
+    "items": [
+      {
+        "title": "Sam Altman 公开表态愿意减速：首次因安全事件感到「切肤之痛」",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/07/28/sam-altman-is-ready-to-decelerate/",
+        "summary": "OpenAI CEO Sam Altman 首次公开表示愿意放慢 AI 发展节奏，起因是近期一次让他「感到非常切肤」的安全事件。这是 Altman 立场的重大转变，曾长期以加速主义著称；此事件也引发社区热议——是真实反思还是配合监管叙事的公关动作？",
+        "titleEn": "Sam Altman ready to decelerate after first visceral security incident",
+        "summaryEn": "OpenAI CEO Sam Altman says he's ready to decelerate AI development, citing a security incident he felt 'very viscerally.' A significant shift from his long-held accelerationist stance, sparking debate on whether it's genuine reflection or regulatory positioning."
+      },
+      {
+        "title": "MCP 创业公司 Runlayer 起诉 Rippling：评估产品后自己抄着做",
+        "source": "TechCrunch AI",
+        "category": "Skills 生态",
+        "url": "https://techcrunch.com/2026/07/28/mcp-startup-runlayer-accuses-rippling-of-stealing-its-product-idea/",
+        "summary": "MCP 网关初创公司 Runlayer 正式起诉企业 HR 软件巨头 Rippling：Rippling 在尽调评估其 MCP 网关产品后，选择自行复刻而非投资或收购。这是 MCP 生态商业化进程中首个重大法律冲突，对做 MCP 工具的独立开发者和创业公司都是一个警示信号。",
+        "titleEn": "MCP startup Runlayer sues Rippling for copying its product after evaluation",
+        "summaryEn": "MCP gateway startup Runlayer is suing Rippling, alleging the HR giant evaluated its product during due diligence then built a copy instead of investing. A landmark legal dispute in the MCP ecosystem, warning signal for indie builders of enterprise AI tooling."
+      },
+      {
+        "title": "Gemini API Managed Agents 重磅更新：引入 Flash 3.6、Hooks 机制等新能力",
+        "source": "Google AI Blog",
+        "category": "AI 工具动态",
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api-3-6-flash-hooks/",
+        "summary": "Google 为 Gemini API Managed Agents 带来多项新功能，包括接入最新的 Gemini Flash 3.6 模型、支持 Hooks 机制（允许在 Agent 执行链路中插入自定义逻辑）。这让 Gemini 在「生产级 Agent 开发」赛道上追平竞争对手，对用 Gemini 构建 Multi-Agent 系统的开发者直接利好。",
+        "titleEn": "Gemini API Managed Agents updated with Flash 3.6, hooks, and more",
+        "summaryEn": "Google expands Gemini API Managed Agents with Gemini Flash 3.6 integration and hooks support, enabling custom logic injection into agent pipelines. Brings Gemini closer to production-grade multi-agent development parity with competitors."
+      },
+      {
+        "title": "Andrew Ng 创办 LearnVector：$1 亿启动资金，要把教育从「一对多」变「一对一」",
+        "source": "X/@AndrewYNg",
+        "category": "AI 工具动态",
+        "url": "https://x.com/AndrewYNg",
+        "summary": "吴恩达宣布创立 LearnVector，获 Coursera $1 亿美元启动投资，目标是用 AI 把教育从「千人一面」改造成「个性化一对一辅导」。明确强调不只是 chatbot，而是能规划学习路径、自适应调整、陪伴到技能掌握的系统。这是 Coursera 时代之后，他对 AI 教育最大力度的一次押注。",
+        "titleEn": "Andrew Ng launches LearnVector with $100M to personalize learning one-to-one",
+        "summaryEn": "Andrew Ng announces LearnVector, backed by $100M from Coursera, to build personalized one-to-one AI learning guides. Explicitly goes beyond chatbots to adaptive path planning and mastery-focused tutoring — his biggest AI education bet since Coursera."
+      },
+      {
+        "title": "OpenAI 研究：ChatGPT 用户正在跨越职能边界承担更多任务类型",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/how-ai-is-expanding-what-people-do-at-work",
+        "summary": "OpenAI 发布新研究，显示 ChatGPT 用户不只是在「本职工作」里提效，而是开始跨越传统职能边界承担其他角色的任务，正在重塑工作边界本身。这对 SaaS 产品设计者和出海工具开发者意味着：用户对 AI 工具的使用深度和广度预期都在快速拔高。",
+        "titleEn": "OpenAI research: ChatGPT users expanding into tasks beyond their job roles",
+        "summaryEn": "New OpenAI research shows ChatGPT users aren't just getting more efficient at their jobs — they're crossing traditional role boundaries and taking on tasks from other functions, actively reshaping how work is defined and organized."
+      },
+      {
+        "title": "Fish Audio 完成 $52M 种子轮：ARR $21M 的 AI 语音模型平台，800 万用户",
+        "source": "TechCrunch AI",
+        "category": "变现案例",
+        "url": "https://techcrunch.com/2026/07/28/fish-audio-raises-50m-seed-to-build-ai-voice-models-for-creators-and-enterprises/",
+        "summary": "AI 语音模型平台 Fish Audio 完成 $52M 种子轮融资，目前已有 800 万用户（开源+托管版本合计），年经常性收入达 $2100 万。种子轮即达到这个 ARR 体量，在当前 AI 语音赛道相当罕见，验证了「开源引流+企业付费」的混合变现路径。",
+        "titleEn": "Fish Audio raises $52M seed with $21M ARR and 8M users for AI voice models",
+        "summaryEn": "Fish Audio closes a $52M seed round boasting 8M users and $21M ARR — rare numbers for a seed-stage AI startup. Validates the open-source-to-enterprise monetization flywheel in the AI voice model space."
+      },
+      {
+        "title": "WorldDiT：无需大型预训练 VLM，机器人动作与视觉世界建模统一扩散架构",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2607.23909",
+        "summary": "WorldDiT 提出用单一扩散 Transformer 同时生成机器人连续动作序列和预测未来相机帧的 RGB 画面，完全不依赖庞大的预训练 VLM。对开发者的意义：大幅降低机器人策略训练的算力门槛，「世界模型 + 动作控制」可以在一个轻量架构里端到端训练，加速具身智能落地。",
+        "titleEn": "WorldDiT: unified diffusion transformer couples robot action with visual world modeling",
+        "summaryEn": "WorldDiT couples action generation and visual world modeling in a single diffusion transformer — no massive pretrained VLM required. Significantly lowers compute barriers for robot policy training and makes end-to-end embodied AI development more accessible."
+      },
+      {
+        "title": "大模型幻觉检测新方法：清理推理链中的「噪声步骤」来提升判断准确率",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2607.22098",
+        "summary": "大型推理模型（LRM）生成答案前的长推理链里，充斥着「无关步骤」和「重复步骤」两类噪声，严重干扰幻觉检测。Reasoning Denoiser 提出先对推理轨迹降噪再做幻觉判断，显著提升检测准确率。对构建 AI Agent 质检流水线和 RAG 可信度验证的开发者有直接参考价值。",
+        "titleEn": "Reasoning Denoiser: cleaning noisy reasoning traces to improve hallucination detection",
+        "summaryEn": "Reasoning Denoiser identifies two noise types in LRM reasoning traces — irrelevant and repetitive steps — and denoises them before hallucination detection. Direct value for developers building quality assurance pipelines for AI agents and RAG systems."
+      }
+    ],
+    "funding": [
+      {
+        "company": "Spur Intelligence",
+        "url": "https://techcrunch.com/2026/07/28/bot-detection-startup-spur-nabs-200m-from-insight/",
+        "round": "Series未披露",
+        "amount": "$200M",
+        "valuation": "",
+        "investors": "Insight Partners",
+        "pitch": "AI 驱动的 Bot 检测与真实人类流量识别平台，AI Agent 泛滥时代反自动化流量需求激增，赛道前景清晰。"
+      },
+      {
+        "company": "德塔智能 (Delta Intelligence)",
+        "url": "https://36kr.com/p/3913213962540164?f=rss",
+        "round": "天使++轮",
+        "amount": "近5亿元人民币",
+        "valuation": "",
+        "investors": "多家上市公司产业方、头部财务机构",
+        "pitch": "专注人形机器人基础模型（HFMs）的初创公司，UCLA 博士团队，成立半年内完成第六轮融资，具身智能赛道热度持续。"
+      }
+    ],
+    "jasonSays": "今天最值得玩味的是 Sam Altman 罕见说「减速」——一个一向押注加速的人突然转向，不管是真心话还是政治表态，AI 监管博弈已经进入新阶段；与此同时 MCP 创业公司被大厂「借鉴」后直接开打官司，说明 MCP 生态已经大到值得抢了。",
+    "jasonSaysEn": "Sam Altman saying 'decelerate' is the most surprising headline of the day — whether genuine or political posturing, it signals AI regulation is entering a new phase; meanwhile the Runlayer vs. Rippling lawsuit proves the MCP ecosystem is now big enough to be worth stealing from.",
+    "filename": "2026-07-29.md"
+  },
+  {
     "slug": "2026-07-28",
     "date": "2026-07-28",
     "title": "AI 快讯 · 7月28日",
@@ -90,7 +192,8 @@
     ],
     "jasonSays": "Claude 私聊被谷歌索引这件事值得每个用 AI 工具处理敏感信息的人警醒：「分享链接」≠「访问控制」，产品设计上的一个 noindex 遗漏，足以让用户最隐私的对话裸奔在搜索结果里——信任是最脆弱的护城河。",
     "jasonSaysEn": "The Claude shared-chat indexing incident is a wake-up call for anyone handling sensitive data with AI tools: 'share link' is not 'access control,' and one missing noindex tag is all it takes to expose your most private conversations to the entire internet—trust is the most fragile moat.",
-    "filename": "2026-07-28.md"
+    "filename": "2026-07-28.md",
+    "coverImage": "/news/2026-07-28.png"
   },
   {
     "slug": "2026-07-27",
