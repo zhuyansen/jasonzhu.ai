@@ -1,5 +1,107 @@
 [
   {
+    "slug": "2026-08-02",
+    "date": "2026-08-02",
+    "title": "AI 快讯 · 8月2日",
+    "items": [
+      {
+        "title": "OpenAI 数学重大突破：同时攻克几何、密码学等十大难题",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/ten-advances-in-mathematics",
+        "summary": "OpenAI 发布在数学与理论计算机科学领域的十项新成果，涵盖几何、密码学、复杂性理论等长期未解的开放性问题。这是 AI 系统首次在如此广度的纯数学领域实现突破，标志着 AI 从「解题工具」向「原创研究者」角色迈进的重要里程碑。",
+        "titleEn": "OpenAI Claims Ten Breakthroughs in Math and Theoretical CS",
+        "summaryEn": "OpenAI announces ten advances on long-standing open problems across geometry, cryptography, and complexity theory. This marks a significant step toward AI acting as an original mathematical researcher rather than just a problem-solving tool, with implications for both academia and future model capabilities."
+      },
+      {
+        "title": "reverse-skill：支持 Claude Code/Cursor 的安全研究技能路由包",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/zhaoxuya520/reverse-skill",
+        "summary": "GitHub 趋势项目 reverse-skill 是一个面向逆向工程、渗透测试与安全研究的 AI 技能路由包，支持 Claude Code、Kiro、Cursor、Cline 等主流 AI 编码客户端。亮点在于 AI 自动路由、按需自举工具链和自动进化经验库，将安全研究工作流深度嵌入 AI 编码环境。",
+        "titleEn": "reverse-skill: Cybersecurity Skills Router for Claude Code and Cursor",
+        "summaryEn": "reverse-skill is a trending GitHub project offering an AI-powered cybersecurity skills router for Claude Code, Kiro, Cursor, and Cline. It features automatic routing, on-demand toolchain bootstrapping, and a self-evolving knowledge base—bringing reverse engineering and penetration testing workflows natively into AI coding clients."
+      },
+      {
+        "title": "last30days-skill：跨平台 AI 情报聚合技能，Reddit/X/HN 一网打尽",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/mvanhorn/last30days-skill",
+        "summary": "last30days 是一个 AI agent 技能包，可跨 Reddit、X、YouTube、HackerNews、Polymarket 及全网研究任意话题，并以点赞数、真实资金等信号加权合成摘要，而非依赖编辑推荐。适合需要快速做竞品分析、市场调研的独立开发者和出海团队。",
+        "titleEn": "last30days-skill: AI Agent Skill for Multi-Platform Topic Research",
+        "summaryEn": "last30days-skill lets AI agents research any topic across Reddit, X, YouTube, HN, Polymarket, and the web, ranking results by upvotes, likes, and real-money signals rather than editorial curation. A practical skill for indie developers needing fast competitive or market research."
+      },
+      {
+        "title": "OpenWork 再获关注：跨工具 Skills 共享层持续登上 GitHub 趋势",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/different-ai/openwork",
+        "summary": "开源项目 OpenWork 连续上榜 GitHub 趋势，定位为 Claude Cowork 的免费替代品，允许用户通过单一 MCP 在 Claude Code、Cursor、Codex 等工具间共享 Skills、MCP 配置与连接服务。跨工具技能复用需求正在快速成为开发者刚需，社区采用势头持续扩大。",
+        "titleEn": "OpenWork Stays on GitHub Trending as Cross-Tool Skills Sharing Layer",
+        "summaryEn": "OpenWork continues trending on GitHub as a free, open-source alternative to Claude Cowork, enabling developers to share skills, MCPs, and connected services across Claude Code, Cursor, and Codex via a single MCP install. Growing community adoption signals cross-tool skill reuse is becoming a core developer need."
+      },
+      {
+        "title": "DeepSeek V4-Flash 0731 发布：新版本性能全面升级",
+        "source": "Latent Space",
+        "category": "AI 工具动态",
+        "url": "https://www.latent.space/p/ainews-not-much-happened-today-038",
+        "summary": "DeepSeek 悄然发布 V4-Flash 0731 新版本，被多位开发者评价为「超棒」的轻量级任务首选模型。已有团队将其作为多 LLM Agent 系统中处理简单任务的默认选项，搭配更强模型处理复杂推理，形成分层调用策略以控制成本。",
+        "titleEn": "DeepSeek V4-Flash 0731 Released with Improved Performance",
+        "summaryEn": "DeepSeek quietly released V4-Flash 0731, earning quick praise from developers as a go-to model for lighter tasks. Early adopters are pairing it with stronger models in tiered multi-LLM agent pipelines, making it a cost-efficient default for simple workloads."
+      },
+      {
+        "title": "Grok 4.6 下周发布：xAI 能否补齐并行工具调用短板？",
+        "source": "X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://x.com/bindureddy",
+        "summary": "xAI 将于下周发布 Grok 4.6，开发者社区最关注的是能否支持并行工具调用和长时任务处理——这两点被认为是当前 Grok 在大规模 Agent 循环中的核心瓶颈。如果实现，将显著提升其在复杂自动化工作流中的竞争力。",
+        "titleEn": "Grok 4.6 Launches Next Week: Can It Handle Parallel Tool Use?",
+        "summaryEn": "xAI is set to launch Grok 4.6 next week. Developers are most focused on whether it will finally support parallel tool use and long-running tasks—currently the main blockers for scaling Grok in complex agentic loops. Delivery on these would mark a meaningful upgrade for automation use cases."
+      },
+      {
+        "title": "See2Think：多模态大模型真的用到了「中间视觉状态」吗？",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2607.26769",
+        "summary": "当多模态模型在推理时画草图、加注释、生成中间图像，它真的在「用」这些视觉状态，还是只是摆样子？See2Think 提出统一评估框架，发现现有模型在视觉推理链路上存在严重「走过场」问题。对做多模态 Agent 和视觉推理产品的开发者来说，这意味着当前模型的视觉中间步骤不可盲目信任。",
+        "titleEn": "See2Think: Do Multimodal Models Really Leverage Intermediate Visual States?",
+        "summaryEn": "See2Think investigates whether multimodal models genuinely rely on intermediate visual states—sketches, annotations, intermediate images—during reasoning, or merely appear to. The study finds significant gaps in how models generate and actually use visual reasoning steps, a critical warning for developers building multimodal agents and visual reasoning pipelines."
+      },
+      {
+        "title": "文件系统作为 Agent 长期记忆：可行吗？新研究给出系统性评估",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2607.26637",
+        "summary": "越来越多部署中的 LLM Agent 用目录树 + Markdown 文件作为长期记忆存储，但这种「默认方案」从未被严格检验。新研究首次系统评估 Agent 能否在记忆不断累积、冲突、过期时维持有序存储，并测试其可持续性。对正在用文件系统做 Agent 记忆层的开发者，这是必读的实证基线。",
+        "titleEn": "Filesystem as LLM Agent Long-Term Memory: A Systematic Evaluation",
+        "summaryEn": "Many deployed LLM agents use directory trees of markdown files as long-term memory, but this default approach has never been rigorously tested. This paper provides the first systematic evaluation of whether agents can keep a growing memory store organized as memories accumulate, conflict, and go stale—essential reading for anyone building file-based agent memory systems."
+      }
+    ],
+    "funding": [
+      {
+        "company": "Index Ventures",
+        "url": "https://techcrunch.com/2026/07/31/fresh-off-its-wiz-payout-index-ventures-raises-2b-across-three-funds/",
+        "round": "Fund Close",
+        "amount": "$2B",
+        "valuation": "",
+        "investors": "",
+        "pitch": "完成 Wiz 退出后再募 20 亿美元跨三支基金，总可投资本达 35 亿美元，AI 初创是核心押注方向之一。"
+      },
+      {
+        "company": "Antora Energy",
+        "url": "https://news.crunchbase.com/clean-tech-and-energy/battery-storage-startup-antora-550m-series-c/",
+        "round": "Series C",
+        "amount": "$550M",
+        "valuation": "",
+        "investors": "",
+        "pitch": "专为 AI 数据中心激增的能源需求而生的热能储能初创，本轮为年度最大清洁科技融资之一，将加速大规模项目部署。"
+      }
+    ],
+    "jasonSays": "今天最让我兴奋的是 OpenAI 同时在十个数学硬题上取得突破——AI 正在从「做题机器」进化成真正的数学研究者，这条路一旦走通，对密码学和复杂性理论的冲击将远超我们的想象。",
+    "jasonSaysEn": "OpenAI's simultaneous breakthroughs on ten open math problems is today's standout—when AI starts doing original research rather than just solving known problems, the downstream disruption to cryptography and complexity theory will be bigger than most people expect.",
+    "filename": "2026-08-02.md"
+  },
+  {
     "slug": "2026-08-01",
     "date": "2026-08-01",
     "title": "AI 快讯 · 8月1日",
@@ -99,7 +201,8 @@
     ],
     "jasonSays": "今天最值得盯的是 OpenWork——一个 MCP 打通 Claude Code、Codex、Cursor 的 Skills 共享层，这才是 AI 工具链「互操作性」真正落地的样子，独立开发者和小团队现在就可以上手试了。",
     "jasonSaysEn": "OpenWork is the sleeper hit today — a single MCP that lets you share Skills and connected services across Claude Code, Codex, and Cursor is exactly the interoperability layer the agentic dev ecosystem has been missing, and it's open source right now.",
-    "filename": "2026-08-01.md"
+    "filename": "2026-08-01.md",
+    "coverImage": "/news/2026-08-01.png"
   },
   {
     "slug": "2026-07-31",
