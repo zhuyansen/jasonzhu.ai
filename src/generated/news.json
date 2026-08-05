@@ -1,5 +1,107 @@
 [
   {
+    "slug": "2026-08-06",
+    "date": "2026-08-06",
+    "title": "AI 快讯 · 8月6日",
+    "items": [
+      {
+        "title": "Jeff Dean 离开 Google 创办 Discovery Loop，剑指 AI 自动化科学发现",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/05/jeff-dean-and-other-top-ai-researchers-are-leaving-google-to-launch-their-own-startup/",
+        "summary": "Google 传奇技术大神 Jeff Dean 携手 Sanjay Ghemawat、Oriol Vinyals、Quoc Le 共同离职，创办公益公司 Discovery Loop，使命是用 AI 自动化机器学习、科学与工程研究，加速人类知识发现进程。这是 AI 领域近年最重量级的人才出走事件之一。",
+        "titleEn": "Jeff Dean leaves Google to found Discovery Loop AI startup",
+        "summaryEn": "Google legend Jeff Dean, alongside Sanjay Ghemawat, Oriol Vinyals, and Quoc Le, has left Google to co-found Discovery Loop, a Public Benefit Corporation aiming to automate ML, science, and engineering to accelerate discoveries. Andrew Ng called it 'amazing.' One of the biggest talent departures in AI history."
+      },
+      {
+        "title": "Meta 发布 Muse Code：专为大型代码库打造的 AI Agent",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/05/meta-launches-muse-code-an-ai-agent-for-large-code-bases/",
+        "summary": "Meta 推出 Muse Code，一款专门处理大型、复杂代码库的 AI 编程 Agent，直接对标 GitHub Copilot Workspace 和 Google 的编程 Agent。Meta 入局企业级 AI 编程赛道，编码 Agent 竞争进一步白热化。",
+        "titleEn": "Meta launches Muse Code agent for large-scale codebases",
+        "summaryEn": "Meta entered the enterprise AI coding arena with Muse Code, an agent designed to handle complex tasks in large-scale codebases. This puts Meta in direct competition with GitHub Copilot Workspace and Google's coding agents, intensifying the race for developer mindshare."
+      },
+      {
+        "title": "Shopify：AI 搜索带来的流量和订单同比翻三倍，未蚕食 Google 流量",
+        "source": "TechCrunch AI",
+        "category": "出海实战",
+        "url": "https://techcrunch.com/2026/08/05/shopify-says-ai-search-is-driving-more-traffic-and-sales-not-replacing-google/",
+        "summary": "Shopify Q2 数据显示，来自 AI 搜索渠道的流量和订单同比增长 3 倍，且并未侵蚀 Google 搜索流量——与媒体出版行业的遭遇截然相反。对独立开发者和出海卖家来说，布局 AI 搜索 SEO 已成增量新渠道，而非零和博弈。",
+        "titleEn": "Shopify: AI search tripled traffic and orders YoY in Q2, not replacing Google",
+        "summaryEn": "Shopify Q2 data shows AI-driven traffic and orders to its stores tripled year over year, without cannibalizing Google search traffic—opposite to what's happened to publishers. For indie developers and DTC sellers, AI search is an additive growth channel worth optimizing for now."
+      },
+      {
+        "title": "ChatGPT Work 新增教育插件，K-12 与大学场景全面覆盖",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/learn-teach-chatgpt-work-codex",
+        "summary": "OpenAI 为 ChatGPT Work 和 Codex 推出教育专属插件，覆盖 K-12 教师备课、大学生科研与编程学习等场景。这是 ChatGPT Work 生态首次正式向教育垂直场景延伸，也为 EdTech 开发者接入 Skills 提供了新示范。",
+        "titleEn": "ChatGPT Work adds education plugins for K-12 teachers and college students",
+        "summaryEn": "OpenAI launched education-specific plugins for ChatGPT Work and Codex, targeting K-12 teachers, college educators, and students for lesson planning, research, and coding. This marks ChatGPT Work's first formal vertical expansion and signals a new surface for EdTech developers building on Skills."
+      },
+      {
+        "title": "Cloudflare Computer：给你的 Agent 一台真正的虚拟电脑",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/cloudflare/computer",
+        "summary": "Cloudflare 开源 Computer 项目，基于 Durable Object 构建虚拟文件系统，通过 SQLite 管理状态并提供可插拔执行环境，支持容器沙箱（FUSE 挂载）等后端。让 Agent 真正拥有持久化文件操作能力，是构建长期运行 Agent 的基础设施利器。",
+        "titleEn": "Cloudflare Computer gives AI agents a real virtual filesystem",
+        "summaryEn": "Cloudflare open-sourced 'Computer,' a virtual filesystem inside a Durable Object backed by SQLite, with pluggable execution surfaces including a container FUSE mount. It gives AI agents persistent, real file system capabilities—a foundational piece for building durable, long-running agents on Cloudflare's edge."
+      },
+      {
+        "title": "LoopX：跨 Codex / Claude Code / Cursor 的长期 Agent 状态内核",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/huangruiteng/loopx",
+        "summary": "LoopX 是一个轻量级本地控制平面，让 Codex、Claude Code、Cursor 等编程 Agent 在长期任务中保持目标、待办、证据日志和交接状态稳定。解决多 Agent 协作中状态丢失、目标漂移的核心痛点，对需要跑多步骤复杂任务的开发者非常实用。",
+        "titleEn": "LoopX: durable goal and state kernel for long-running coding agents",
+        "summaryEn": "LoopX is a lightweight local control plane that keeps objectives, todos, evidence logs, quota, and handoffs stable across Codex, Claude Code, Cursor, and custom runtimes. It solves state drift and goal loss in long-running multi-agent tasks—a practical layer for anyone running complex, multi-session coding workflows."
+      },
+      {
+        "title": "SSI 疑将发布「持续学习」突破：AI 能实时在线学习或成真",
+        "source": "X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://x.com/bindureddy",
+        "summary": "多方消息称 Ilya Sutskever 的 SSI 即将发布重大成果，核心猜测是「持续学习」——即 AI 能在推理时实时更新自身知识，无需重新训练。若属实，将从根本上改变模型部署和 Agent 记忆架构，是近年最具颠覆性的潜在突破之一。",
+        "titleEn": "SSI reportedly set to unveil continual learning breakthrough for AI",
+        "summaryEn": "Speculation is mounting that Ilya Sutskever's SSI is about to drop something major—possibly a continual learning breakthrough enabling AI to update its knowledge on-the-fly during inference, without retraining. If true, this would fundamentally reshape model deployment, agent memory, and knowledge freshness across the industry."
+      },
+      {
+        "title": "ReflectRL：让推理模型从「失败轨迹」中也能学到东西",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2608.03972",
+        "summary": "现有推理模型训练只用成功轨迹做监督，专家模型在难题上失败时这些数据就被丢弃。ReflectRL 提出「黄金负样本轨迹」概念，通过反思式推理将失败过程转化为可学习信号。对开发者意义：训练数据利用率更高，在困难任务上模型鲁棒性提升，尤其适合数据稀缺场景。",
+        "titleEn": "ReflectRL: learning from failed reasoning traces, not just successes",
+        "summaryEn": "ReflectRL introduces 'Golden Negative Trajectories'—failed reasoning traces from expert models that are normally discarded. By converting failures into reflective-to-direct learning signals, it improves model robustness on hard tasks. For developers fine-tuning reasoning models: higher data efficiency and better performance where correct examples are scarce."
+      }
+    ],
+    "funding": [
+      {
+        "company": "Klaviyo / Agency (Elias Torres)",
+        "url": "https://techcrunch.com/2026/08/05/klaviyo-acquires-elias-torres-agency-in-full-circle-reunion-for-tech-founders/",
+        "round": "Acquisition",
+        "amount": "undisclosed",
+        "valuation": "",
+        "investors": "Klaviyo",
+        "pitch": "Klaviyo 收购 Drift 联创 Elias Torres 的 AI Agency，并任命其为 CPO 主导 AI Agent 战略，电商 SaaS 巨头加速 Agent 化布局。"
+      },
+      {
+        "company": "Moove",
+        "url": "https://techcrunch.com/2026/08/05/moove-raises-250m-to-become-the-backbone-of-the-robotaxi-industry/",
+        "round": "Growth",
+        "amount": "$250M",
+        "valuation": "",
+        "investors": "",
+        "pitch": "自动驾驶车队管理平台，为 Waymo 等 Robotaxi 提供后台运营基础设施，2.5 亿美元融资押注自动驾驶商业化规模扩张。"
+      }
+    ],
+    "jasonSays": "Jeff Dean 出走 Google 这件事的震撼程度，不亚于当年 Hinton 离开——当最懂基础设施的人去追「自动化科学发现」，说明 AI 下一个十年的战场已经不在 chatbot，而在实验室。",
+    "jasonSaysEn": "Jeff Dean leaving Google is as seismic as Hinton's departure—when the person who built the infrastructure of modern AI pivots to 'automating scientific discovery,' it's a signal that the next decade of AI won't be won in chatbots, but in labs.",
+    "filename": "2026-08-06.md"
+  },
+  {
     "slug": "2026-08-05",
     "date": "2026-08-05",
     "title": "AI 快讯 · 8月5日",
@@ -79,7 +181,8 @@
     ],
     "jasonSays": "今天最值得盯的信号是双向的：Anthropic 豪掷百亿锁定算力，同时全球 GPU 已在告急——这不是巧合，而是 AI 基础设施争夺战进入白热化的明确信号，下一个卡脖子点就在推理算力。",
     "jasonSaysEn": "Two signals tell one story today: Anthropic locks in $10B of compute while open-source GPU supply is already cracking — the inference infrastructure war just entered its most critical phase, and whoever controls compute controls the roadmap.",
-    "filename": "2026-08-05.md"
+    "filename": "2026-08-05.md",
+    "coverImage": "/news/2026-08-05.png"
   },
   {
     "slug": "2026-08-04",
