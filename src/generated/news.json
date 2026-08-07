@@ -1,5 +1,87 @@
 [
   {
+    "slug": "2026-08-07",
+    "date": "2026-08-07",
+    "title": "AI 快讯 · 8月7日",
+    "items": [
+      {
+        "title": "ChatGPT 免费用户获无限文字对话，GPT-5.6 Sol 精准度全面提升",
+        "source": "TechCrunch AI / OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/06/openai-brings-unlimited-chatgpt-text-chats-to-free-users/",
+        "summary": "OpenAI 宣布 ChatGPT 免费与 Go 用户获得无限文字对话权限，并新增「深度思考」按钮用于复杂查询。同步更新的 GPT-5.6 Sol 在准确性与一致性上有明显提升。此举标志着 OpenAI 将免费层作为规模化入口的战略进一步落地，可能加速竞品压力。",
+        "titleEn": "ChatGPT Free Gets Unlimited Text Chats, GPT-5.6 Sol Upgraded",
+        "summaryEn": "OpenAI is giving ChatGPT free and Go users unlimited text chats, plus a new 'think' button for complex queries. GPT-5.6 Sol also gets accuracy and consistency improvements. This signals OpenAI doubling down on free-tier growth as a strategic moat, putting pressure on competing AI assistants."
+      },
+      {
+        "title": "OpenAI AI 智能音箱定价曝光：售价 300-400 美元剑指高端市场",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/06/openais-new-ai-smart-speaker-will-reportedly-sell-for-between-300-and-400/",
+        "summary": "据报道 OpenAI 即将推出的 AI 智能音箱定价在 300-400 美元区间，远高于 Amazon Echo 等传统智能音箱。此定价策略表明 OpenAI 押注高端用户愿为强大 AI 能力付溢价，也是其硬件战略浮出水面的关键信号。",
+        "titleEn": "OpenAI AI Smart Speaker Reportedly Priced at $300–$400",
+        "summaryEn": "OpenAI's upcoming AI smart speaker is reportedly priced at $300–$400, far above legacy smart speakers. This premium positioning signals OpenAI's bet that consumers will pay a premium for frontier AI hardware — a key signal of its broader consumer device strategy."
+      },
+      {
+        "title": "Naïve 融资 2850 万美元：「Vibe 创业」一键自动化公司注册与运营",
+        "source": "TechCrunch AI",
+        "category": "变现案例",
+        "url": "https://techcrunch.com/2026/08/06/naive-raises-28-5m-to-automate-the-grunt-work-of-setting-up-and-running-a-company/",
+        "summary": "Naïve 完成 2850 万美元融资，将 Vibe Coding 概念延伸到公司运营层：注册、财税、合规等繁琐事务全部交由 AI Agent 自动完成。这是「AI 代替人做非核心工作」赛道的又一强力案例，对独立开发者和出海创业者尤具吸引力。",
+        "titleEn": "Naïve Raises $28.5M to Automate Company Setup and Operations",
+        "summaryEn": "Naïve raised $28.5M to take vibe-coding further — automating not just software, but the grunt work of running a company: registration, compliance, and operations. A compelling signal for solo founders and indie developers that AI can now handle company infrastructure, not just code."
+      },
+      {
+        "title": "Plan Review：为 Claude Code 执行计划加一道独立审查层",
+        "source": "Hacker News",
+        "category": "Skills 生态",
+        "url": "https://github.com/dachev/plan-review",
+        "summary": "开源工具 Plan Review 为 Claude Code 生成的执行计划提供独立审查机制，在 Agent 真正落地执行前增加一道「人类可理解」的校验关卡。对于大型代码库或高风险操作场景，这类安全阀工具正在成为 Claude Code 生态的重要补充。",
+        "titleEn": "Plan Review: Independent Review Layer for Claude Code Plans",
+        "summaryEn": "Plan Review is an open-source tool that adds an independent review layer for Claude Code-generated plans before execution. For high-stakes or large-codebase scenarios, this safety checkpoint tooling is becoming an essential part of the Claude Code ecosystem."
+      },
+      {
+        "title": "腾讯云开源 TencentDB Agent Memory：四类记忆资产让团队 Agent 不再遗忘",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/TencentCloud/TencentDB-Agent-Memory",
+        "summary": "腾讯云开源 TencentDB Agent Memory，为 AI Agent 团队提供团队级记忆中枢，将对话、文档、代码自动整理为聊天记忆、技能、LLM-Wiki、代码图谱四类资产，可跨 Agent 和框架共享复用。解决了多 Agent 协作中「集体失忆」的核心痛点。",
+        "titleEn": "Tencent Open-Sources TencentDB Agent Memory: Team-Level AI Memory Hub",
+        "summaryEn": "Tencent Cloud open-sourced TencentDB Agent Memory, a team-level memory hub that converts conversations, docs, and code into four reusable asset types — shareable across agents and frameworks. Directly addresses the core pain point of collective amnesia in multi-agent collaboration."
+      },
+      {
+        "title": "Self-Evolving Coding Agents：会自我进化的代码 Agent，部署后也能持续成长",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2608.03392",
+        "summary": "这篇论文系统梳理了「自我进化型编码 Agent」的研究进展——Agent 不再在部署后冻结，而是从真实开发反馈（测试失败、代码变更、修复经验）中持续学习。对开发者的意义：未来 Coding Agent 将越用越聪明，而不是每次都从零开始。",
+        "titleEn": "Self-Evolving Coding Agents: Agents That Keep Improving After Deployment",
+        "summaryEn": "This paper surveys self-evolving coding agents — systems that continue improving after deployment by learning from real dev feedback like test failures and repair attempts. The key implication: future coding agents won't stay static; they'll compound experience just like human developers do."
+      },
+      {
+        "title": "Agent 工作流持久化「恢复」语义存在严重缺陷：五大主流框架行为各异",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2608.03836",
+        "summary": "研究对五个主流 Agent 工作流框架的断点续跑语义进行机器验证，发现它们对「恢复」的定义各不相同，且实际行为违反了各自声称的规范。对构建生产级 Agent 系统的开发者是重要警示：你的工作流在崩溃后恢复时，可能并不是你以为的那样运行的。",
+        "titleEn": "Agent Workflow Resume Semantics Are Broken Across 5 Major Frameworks",
+        "summaryEn": "Researchers machine-checked five major agent workflow frameworks and found their crash-resume behavior is inconsistent and violates their own stated contracts. Critical warning for production agent builders: your workflow after a crash may not behave the way you think it does."
+      },
+      {
+        "title": "DeepMind 四大核心离巢引发的深度解读：Google AI 正面临人才地震",
+        "source": "Latent Space",
+        "category": "AI 工具动态",
+        "url": "https://www.latent.space/p/ainews-jeff-sanjay-oriol-and-quoc",
+        "summary": "继 Jeff Dean 之后，Sanjay Ghemawat、Oriol Vinyals、Quoc Le 等 DeepMind 核心人物相继离开。Latent Space 深度分析指出 Google AI 正面临算力内斗、产品方向迷失、顶尖研究者流失三重危机。Demis Hassabis 将转任董事长，组织地震影响深远。",
+        "titleEn": "Jeff, Sanjay, Oriol, Quoc Leave DeepMind — What's Happening at Google AI?",
+        "summaryEn": "Following Jeff Dean, Sanjay Ghemawat, Oriol Vinyals, and Quoc Le have all departed DeepMind. Latent Space's deep-dive highlights a triple crisis at Google AI: compute politics, product strategy confusion, and a brain drain. Demis moves to Chair — the org shift has major industry implications."
+      }
+    ],
+    "jasonSays": "今天最大的信号不是产品更新，而是 DeepMind 四大核心集体出走——当 Jeff Dean、Sanjay、Oriol、Quoc 同时离开，Google AI 的「护城河」到底还剩多少？这场人才地震的涟漪效应才刚刚开始。",
+    "jasonSaysEn": "Today's biggest signal isn't a product update — it's four DeepMind legends leaving simultaneously. When Jeff Dean, Sanjay, Oriol, and Quoc all walk out the door, you have to ask: how much of Google AI's moat was the people, not the infrastructure? The ripple effects are just beginning.",
+    "filename": "2026-08-07.md"
+  },
+  {
     "slug": "2026-08-06",
     "date": "2026-08-06",
     "title": "AI 快讯 · 8月6日",
@@ -99,7 +181,8 @@
     ],
     "jasonSays": "Jeff Dean 出走 Google 这件事的震撼程度，不亚于当年 Hinton 离开——当最懂基础设施的人去追「自动化科学发现」，说明 AI 下一个十年的战场已经不在 chatbot，而在实验室。",
     "jasonSaysEn": "Jeff Dean leaving Google is as seismic as Hinton's departure—when the person who built the infrastructure of modern AI pivots to 'automating scientific discovery,' it's a signal that the next decade of AI won't be won in chatbots, but in labs.",
-    "filename": "2026-08-06.md"
+    "filename": "2026-08-06.md",
+    "coverImage": "/news/2026-08-06.png"
   },
   {
     "slug": "2026-08-05",
