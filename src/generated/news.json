@@ -1,5 +1,87 @@
 [
   {
+    "slug": "2026-08-09",
+    "date": "2026-08-09",
+    "title": "AI 快讯 · 8月9日",
+    "items": [
+      {
+        "title": "OpenAI 收购 PPT 初创 NextSlide，直奔 ChatGPT 演示文稿功能",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/08/openai-acquires-presentation-startup-nextslide/",
+        "summary": "OpenAI 悄悄收购了演示文稿初创公司 NextSlide，团队已全员并入 ChatGPT 产品线。这是继收购 TBPN 媒体后的又一次产品能力补强，意味着 ChatGPT 即将获得原生 PPT 生成与演示功能，直接对标 Microsoft 365 Copilot 和 Google Slides AI。",
+        "titleEn": "OpenAI Acquires Presentation Startup NextSlide for ChatGPT",
+        "summaryEn": "OpenAI quietly acquired presentation startup NextSlide, with its team now working on ChatGPT. This signals ChatGPT is getting native slide-creation capabilities, putting it in direct competition with Microsoft 365 Copilot and Google Slides AI."
+      },
+      {
+        "title": "Sergey Brin 亲自执掌 Google AI，Gemini 能否就此翻盘？",
+        "source": "X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://x.com/bindureddy",
+        "summary": "继 DeepMind 四大核心离职传闻后，谷歌联合创始人 Sergey Brin 据报将亲自领导 Google AI 工作，这是继 Demis Hassabis 据传也有离意的爆料之后出现的重大人事信号。Brin 重新上阵被业界视为 Google 在 AI 竞争中的危机反应与重新集权之举。",
+        "titleEn": "Sergey Brin Takes Direct Lead of Google AI Amid Leadership Exodus",
+        "summaryEn": "Following reports of a leadership exodus including Demis Hassabis potentially wanting to leave, Google co-founder Sergey Brin is reportedly taking direct charge of Google's AI efforts — a dramatic move signaling Google is treating its AI position as a genuine crisis."
+      },
+      {
+        "title": "Amazon 德州超级数据中心或成美国最大碳排放源",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/08/planned-amazon-data-center-could-become-the-biggest-climate-polluter-in-the-u-s/",
+        "summary": "亚马逊计划在德克萨斯州建造一座超大型数据中心，并配套自建发电厂，据报该电厂碳排放量将跃升为全美最高。这直接将 AI 算力扩张与气候责任的矛盾推到了监管和舆论的聚光灯下，或引发新一轮数据中心能源合规审查。",
+        "titleEn": "Amazon's Planned Texas Data Center Could Be U.S.'s Biggest Climate Polluter",
+        "summaryEn": "Amazon's planned Texas data center includes an on-site power plant that could reportedly become the single largest source of climate pollution in the US, putting the AI infrastructure buildout's environmental cost under unprecedented regulatory scrutiny."
+      },
+      {
+        "title": "prime-agent：PrimeIntellect 开源自我改进编码 Agent，上线即登 GitHub 热榜",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/PrimeIntellect-ai/prime-agent",
+        "summary": "PrimeIntellect 开源了 prime-agent，基于「递归语言模型（RLM）」设计，将 prompt 视为可变量、工具调用视为函数递归，专为长周期编码和研究任务打造，支持自我改进循环。与上周已报的 Self-Evolving Coding Agents 论文方向一致，但这是可直接部署的工程实现，登上 GitHub 热榜说明开发者接受度高。",
+        "titleEn": "PrimeIntellect Releases prime-agent: Open-Source Self-Improving Coding Agent",
+        "summaryEn": "PrimeIntellect open-sourced prime-agent, an RLM-based coding agent treating prompts as variables and tools as recursive function calls. Designed for long-running autonomous tasks with a self-improvement loop — a production-ready implementation that immediately trended on GitHub."
+      },
+      {
+        "title": "Activity Frames：让 Agent 记住「用户做了什么」而非只记「用户说了什么」",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2608.05784",
+        "summary": "论文提出一套无需模型参与的确定性管道，将被动捕获的屏幕活动编译成结构化「活动帧」记忆，让 Agent 记录用户真实操作行为而非仅对话内容。对开发者的意义：这意味着 Agent 不再需要每次重新推理用户已做过的操作，显著降低推理成本，是 Agent 长期记忆架构的重要方向。",
+        "titleEn": "Activity Frames: Agents That Remember What You Did, Not Just What You Said",
+        "summaryEn": "This paper compiles passively captured screen activity into structured 'activity frames' using a zero-model deterministic pipeline, giving agents memory of what users actually did — not just said. For developers: agents stop re-deriving routines already performed, dramatically cutting inference costs for long-running automation."
+      },
+      {
+        "title": "机器人学习大综述：冻结权重 vs. 自写技能代码，两条路谁能走远？",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2608.01851",
+        "summary": "HuggingFace 推送的综述论文系统梳理了机器人学习的两条主线：将能力烧进权重的 VLA 模型 vs. 让 Agent 自己写并迭代可执行技能代码。论文重点深挖「代码即策略」方法按自我改进程度的分级，从零样本程序合成到闭环自修复再到持久技能记忆。对 AI Agent 开发者而言，这张全景图直接对应 Skills 生态当下的核心分歧。",
+        "titleEn": "Survey: Frozen-Weight Robot Policies vs. Agents That Write Their Own Skills",
+        "summaryEn": "A comprehensive survey organizing robot learning around the 'weights vs. skills' axis — VLA models that bake competence into frozen weights versus agents that write and refine executable skill code. The deep-dive on self-improvement degrees maps directly onto the current debate in the AI coding agent ecosystem."
+      },
+      {
+        "title": "KVAE：音频、图像、视频三模态统一 Tokenizer 家族开源发布",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2608.05798",
+        "summary": "KVAE 发布了一套覆盖音频（48kHz 全频带）、图像和视频的连续 Tokenizer 系列，专为后续文本条件生成任务设计。Tokenizer 质量直接影响多模态模型的学习速度和生成质量，这套统一架构对构建多模态生成应用的开发者而言是值得跟进的底层基础设施更新。",
+        "titleEn": "KVAE: A Unified Tokenizer Family for Audio, Image, and Video Generation",
+        "summaryEn": "KVAE introduces a unified family of continuous tokenizers covering audio (48kHz full-band), images, and video, all designed for text-conditioned generation. Since tokenizer quality directly determines learning speed and output quality in multimodal models, this is a meaningful infrastructure update for multimodal app developers."
+      },
+      {
+        "title": "HSP GRUPPE 税务咨询用 ChatGPT Enterprise 提效：德国老牌专业服务的 AI 落地实录",
+        "source": "OpenAI Blog",
+        "category": "变现案例",
+        "url": "https://openai.com/index/hsp-gruppe",
+        "summary": "德国税务咨询集团 HSP GRUPPE 分享了使用 ChatGPT Enterprise 的落地案例：通过 AI 处理文档分析、研究摘要等重复性工作，释放顾问更多时间专注高价值客户服务。这是专业服务行业（法律/会计/税务）用 AI 实现人均产能提升的典型样本，对出海 B2B SaaS 有参考价值。",
+        "titleEn": "German Tax Firm HSP GRUPPE Deploys ChatGPT Enterprise for Advisory Productivity",
+        "summaryEn": "German tax advisory group HSP GRUPPE details its ChatGPT Enterprise deployment, using AI to automate document analysis and research summaries, freeing consultants for higher-value client work. A useful case study for B2B SaaS targeting professional services in Europe."
+      }
+    ],
+    "jasonSays": "今天最值得盯的信号是 Sergey Brin 亲自下场接管 Google AI——这不是常规的高管调动，是创始人级别的危机介入。Google 内部的人才地震还没结束，接下来 Gemini 的产品节奏很可能会明显加速，整个行业的竞争烈度将再上一台阶。",
+    "jasonSaysEn": "Sergey Brin personally stepping in to lead Google AI isn't a routine reshuffle — it's a founder-level crisis intervention. The talent earthquake at Google isn't over, and expect Gemini's product velocity to accelerate sharply; the competitive heat in the entire AI industry is about to turn up another notch.",
+    "filename": "2026-08-09.md"
+  },
+  {
     "slug": "2026-08-08",
     "date": "2026-08-08",
     "title": "AI 快讯 · 8月8日",
