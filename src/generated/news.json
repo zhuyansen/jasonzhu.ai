@@ -1,5 +1,98 @@
 [
   {
+    "slug": "2026-08-08",
+    "date": "2026-08-08",
+    "title": "AI 快讯 · 8月8日",
+    "items": [
+      {
+        "title": "Claude Code 跨 Session 消息传递正式上线，多 Agent 协作成真",
+        "source": "Hacker News",
+        "category": "Skills 生态",
+        "url": "https://code.claude.com/docs/en/cross-session-messaging",
+        "summary": "Claude Code 新增跨 Session 消息传递功能，不同的 Claude Code 实例之间可以直接互发消息。这意味着开发者可以让多个并行运行的 Agent Session 相互协调、传递上下文，真正实现多 Agent 并发工作流，是 Claude Code 走向生产级多 Agent 架构的关键一步。",
+        "titleEn": "Claude Code Cross-Session Messaging Now Available",
+        "summaryEn": "Claude Code now supports cross-session messaging, allowing different agent instances to communicate directly with each other. This enables real multi-agent parallel workflows where sessions can coordinate tasks and share context — a critical step toward production-grade multi-agent architectures."
+      },
+      {
+        "title": "Skills 生态大爆发：四大工程师级 Agent Skills 仓库同日登上 GitHub 热榜",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/addyosmani/agent-skills",
+        "summary": "addyosmani/agent-skills、mattpocock/skills、obra/superpowers、PrimeIntellect-ai/prime-agent 同日登上 GitHub 热榜，均聚焦「给 AI 编程 Agent 装上高质量工程规范」。这不是巧合——Skills 正在成为继 MCP 之后的下一个生态热点，解决的是 Vibe Coding 与生产级代码之间的质量鸿沟。",
+        "titleEn": "Four Engineer-Grade Agent Skills Repos Hit GitHub Trending Simultaneously",
+        "summaryEn": "Four repos — addyosmani/agent-skills, mattpocock/skills, obra/superpowers, and prime-agent — all trended on GitHub the same day, each focused on packaging senior-engineer workflows as reusable skills for AI coding agents. Skills are becoming the next ecosystem wave after MCP, bridging the gap between vibe coding and production-quality code."
+      },
+      {
+        "title": "终端内跑浏览器让 Claude Code 直接操控，Headless 自动化新玩法",
+        "source": "Hacker News",
+        "category": "Skills 生态",
+        "url": "https://www.reddit.com/r/vibecoding/comments/1vifa9f/i_got_a_browser_running_inside_the_terminal_and/",
+        "summary": "开发者将浏览器嵌入终端环境，让 Claude Code 直接接管浏览器操作，无需额外的 Playwright/Puppeteer 配置。这为 Claude Code 带来了原生的 Web 自动化能力，可在同一终端 Session 内完成「写代码→跑代码→调试界面」全流程，大幅降低 Agent 操控 Web 的门槛。",
+        "titleEn": "Browser Inside Terminal Lets Claude Code Take Full Control",
+        "summaryEn": "A developer embedded a browser directly inside the terminal and handed control to Claude Code, enabling native web automation without separate Playwright/Puppeteer setup. This allows a single Claude Code session to write, run, and debug web interfaces end-to-end — significantly lowering the barrier for agent-driven browser automation."
+      },
+      {
+        "title": "OpenAI 叫停 Astra 模型：网络攻击能力触发安全红线",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/07/openai-says-it-slowed-astra-model-development-over-security-concerns/",
+        "summary": "OpenAI 披露其在研模型 Astra 已达到「关键网络安全阈值」——能够独立识别并对真实系统发动网络攻击，随即主动放缓研发节奏并强化安全管控。这是 OpenAI 首次公开承认某款模型因安全评估不达标而被主动刹车，标志着 AI 安全红线正从理论走向实际执行。",
+        "titleEn": "OpenAI Pauses Astra Model After It Hits Cybersecurity Threshold",
+        "summaryEn": "OpenAI disclosed that its in-development Astra model reached a 'critical cybersecurity threshold' — capable of independently identifying and executing attacks on real-world systems. Development was deliberately slowed and safeguards strengthened. This marks the first time OpenAI has publicly paused a model due to a failed safety evaluation, showing AI red lines are now being enforced in practice."
+      },
+      {
+        "title": "Cloudflare Kitesurf：专为 AI Agent 打造的云端浏览器，比 Chromium 更轻量",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/07/cloudflare-launches-kitesurf-a-browser-built-for-ai-agents/",
+        "summary": "Cloudflare 发布 Kitesurf，一款专为 AI Agent 设计的云托管浏览器，执行自动化任务时算力消耗远低于传统 Chromium。配合此前已发布的 Cloudflare Computer，Cloudflare 正在构建一套完整的「Agent 基础设施栈」，让开发者无需自建浏览器环境即可赋予 Agent 稳定的 Web 操控能力。",
+        "titleEn": "Cloudflare Kitesurf: A Cloud Browser Built Natively for AI Agents",
+        "summaryEn": "Cloudflare launched Kitesurf, a cloud-hosted browser designed specifically for AI agents that consumes far less compute than Chromium for automation tasks. Combined with the previously released Cloudflare Computer, this completes a full agent infrastructure stack — giving developers a production-ready way to grant agents reliable web control without self-hosting browsers."
+      },
+      {
+        "title": "Rippling 烧掉数百万 AI 预算后，推出员工级 AI ROI 追踪工具",
+        "source": "TechCrunch AI",
+        "category": "变现案例",
+        "url": "https://techcrunch.com/2026/08/07/after-rippling-blew-millions-on-ai-in-months-it-built-an-employee-roi-tool/",
+        "summary": "Rippling 因 AI 工具支出失控而自我「踩雷」，随即将痛点转化为产品——推出 AI Spend Console，可追踪每位员工和团队的 AI 工具使用支出与产出比。这一「自用验证→对外销售」的产品路径，正是 SaaS 公司最经典的 AI 变现故事，也预示着 AI ROI 管理将成下一个企业软件细分赛道。",
+        "titleEn": "After Burning Millions on AI, Rippling Builds Employee-Level ROI Tracker",
+        "summaryEn": "Rippling spent millions on AI tools with little visibility into ROI, then turned the pain into a product: AI Spend Console, tracking per-employee and per-team AI spending against outcomes. This 'dogfood-to-product' playbook is a classic SaaS motion — and signals that AI spend management is becoming its own enterprise software category."
+      },
+      {
+        "title": "Airbnb：AI 让功能迭代速度大幅提升，新 AI 搜索功能即将公测",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/07/airbnb-says-ai-is-helping-it-ship-features-faster-as-it-tests-a-new-search-function/",
+        "summary": "Airbnb CEO 公开表示 AI 正在帮助团队显著加快产品迭代速度，并透露将推出可切换的全新 AI 驱动搜索体验。继 Shopify 晒出 AI 搜索流量翻三倍数据后，又一头部消费互联网平台以实际产品动作印证 AI 对增长的正向拉动，值得出海 SaaS 团队关注其搜索产品形态。",
+        "titleEn": "Airbnb: AI Accelerates Feature Shipping, New AI Search Coming Soon",
+        "summaryEn": "Airbnb's CEO confirmed AI is meaningfully accelerating feature development velocity, and revealed a new AI-powered search experience with a toggle is in testing. Following Shopify's 3x AI search traffic data, another major consumer platform is publicly validating AI's growth impact — worth watching for the product design of its search feature."
+      },
+      {
+        "title": "AMD 收购 Taalas：推理芯片军备竞赛再下一城",
+        "source": "Latent Space",
+        "category": "AI 工具动态",
+        "url": "https://www.latent.space/p/ainews-amd-buys-taalas",
+        "summary": "AMD 宣布收购 AI 推理优化公司 Taalas，进一步强化其在 AI 推理层的软硬件整合能力。在 NVIDIA 主导训练侧、各云厂商激烈争夺推理份额的当下，AMD 通过并购补齐推理优化短板，推理基础设施的竞争格局正在加速重塑。",
+        "titleEn": "AMD Acquires Taalas to Strengthen AI Inference Stack",
+        "summaryEn": "AMD acquired Taalas, an AI inference optimization company, to deepen its software-hardware integration on the inference layer. As NVIDIA dominates training and cloud providers battle for inference market share, AMD is using M&A to close the inference optimization gap — signaling that the inference infrastructure race is intensifying fast."
+      }
+    ],
+    "funding": [
+      {
+        "company": "MagicSchool AI",
+        "url": "https://news.crunchbase.com/venture/educator-built-edtech-startup-ai-magicschool-kahn/",
+        "round": "Series B",
+        "amount": "$63M",
+        "valuation": "",
+        "investors": "",
+        "pitch": "由前校长创办的 K-12 教师 AI 助手平台，聚焦教育场景的 AI 工具化，EdTech + AI 融合赛道的标杆案例。"
+      }
+    ],
+    "jasonSays": "今天最值得盯的信号是 Skills 生态的集体爆发——四个高质量仓库同日上榜绝非偶然，这说明开发者社区已经从「怎么用 AI 写代码」进化到「怎么让 AI 写出工程级代码」，下一个大机会可能就藏在 Skills 的标准化和分发里。",
+    "jasonSaysEn": "Today's most important signal is the simultaneous trending of four high-quality Skills repos — the developer community has evolved from 'how to code with AI' to 'how to make AI write production-grade code,' and the next big opportunity may lie in standardizing and distributing Skills at scale.",
+    "filename": "2026-08-08.md"
+  },
+  {
     "slug": "2026-08-07",
     "date": "2026-08-07",
     "title": "AI 快讯 · 8月7日",
@@ -79,7 +172,8 @@
     ],
     "jasonSays": "今天最大的信号不是产品更新，而是 DeepMind 四大核心集体出走——当 Jeff Dean、Sanjay、Oriol、Quoc 同时离开，Google AI 的「护城河」到底还剩多少？这场人才地震的涟漪效应才刚刚开始。",
     "jasonSaysEn": "Today's biggest signal isn't a product update — it's four DeepMind legends leaving simultaneously. When Jeff Dean, Sanjay, Oriol, and Quoc all walk out the door, you have to ask: how much of Google AI's moat was the people, not the infrastructure? The ripple effects are just beginning.",
-    "filename": "2026-08-07.md"
+    "filename": "2026-08-07.md",
+    "coverImage": "/news/2026-08-07.png"
   },
   {
     "slug": "2026-08-06",
