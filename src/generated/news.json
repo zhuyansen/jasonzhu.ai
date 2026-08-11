@@ -1,5 +1,107 @@
 [
   {
+    "slug": "2026-08-12",
+    "date": "2026-08-12",
+    "title": "AI 快讯 · 8月12日",
+    "items": [
+      {
+        "title": "ChatGPT 正式开始投放广告，免费用户将看到清晰标注的商业内容",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/testing-ads-in-chatgpt",
+        "summary": "OpenAI 宣布在 ChatGPT 中测试广告功能，以维持免费访问体验。广告将清晰标注、不影响答案生成，并提供隐私保护和用户控制选项。这是 OpenAI 商业化路径的重大转折——此前一直依赖订阅收入，此举意味着平台变现逻辑正向广告生态延伸。",
+        "titleEn": "OpenAI Starts Testing Ads in ChatGPT for Free Users",
+        "summaryEn": "OpenAI begins testing ads in ChatGPT to sustain free access, with clear labeling, answer independence, and strong privacy controls. This marks a major business model shift for OpenAI — previously subscription-only — signaling a move toward ad-supported AI, similar to how Google monetized search."
+      },
+      {
+        "title": "Gemini 用户突破 10 亿，63% 每天用语音对话",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/11/googles-gemini-app-surges-to-one-billion-users/",
+        "summary": "Google 宣布 Gemini 应用月活用户突破 10 亿。其中 63% 的用户每天使用语音功能直接与助手对话，每日生成图像超过 1.5 亿张。这一数据证明 AI 助手已从「打字工具」进化为「语音优先」产品，语音交互正成为主流入口。",
+        "titleEn": "Google Gemini App Hits 1 Billion Users, Voice Dominates",
+        "summaryEn": "Google's Gemini app has surged to 1 billion users, with 63% using voice interaction daily and over 150 million images generated per day. The data signals a decisive shift toward voice-first AI — Gemini is no longer just a chat tool but a conversational ambient assistant."
+      },
+      {
+        "title": "OpenAI COO Brad Lightcap 宣布离职，将创业",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/11/brad-lightcap-openais-longtime-coo-is-leaving-to-start-something-new/",
+        "summary": "OpenAI 任职时间最长的高管之一、COO Brad Lightcap 宣布离职，称将「从不同视角继续推进使命」并启动新项目。此前 OpenAI 已有多位核心高管出走创业，Lightcap 的离开再度引发外界对 OpenAI 内部人才稳定性的关注。",
+        "titleEn": "OpenAI COO Brad Lightcap Leaves to Start Something New",
+        "summaryEn": "OpenAI's longest-serving COO Brad Lightcap is departing to start a new venture, telling staff he's 'excited to advance the mission from a different vantage point.' His exit continues a pattern of senior OpenAI talent spinning out, raising questions about internal stability at the world's most-watched AI company."
+      },
+      {
+        "title": "ChatGPT Linux 桌面版正式发布，三大桌面平台全覆盖",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/11/openai-launches-chatgpt-desktop-app-for-linux/",
+        "summary": "OpenAI 终于推出 ChatGPT Linux 桌面客户端，至此 Windows、macOS、Linux 三大主流桌面平台全部覆盖。对于大量使用 Linux 的开发者和工程师群体来说，这意味着可以原生集成 ChatGPT 到开发工作流，无需再依赖浏览器标签页。",
+        "titleEn": "OpenAI Launches ChatGPT Desktop App for Linux",
+        "summaryEn": "OpenAI finally ships a native ChatGPT desktop app for Linux, completing coverage across all three major desktop platforms. This is significant for the developer community — the majority of Linux users are engineers who can now integrate ChatGPT natively into their workflow without a browser."
+      },
+      {
+        "title": "Abacus AI 开源 Smaug-Agentic：登顶开源 Agentic 编码排行榜",
+        "source": "X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://x.com/bindureddy",
+        "summary": "Abacus AI 基于 Kimi K3 推出开源模型 Smaug-Agentic，在 Agentic 编码基准 LiveBench 上登顶开源榜单，得分仅略低于 Claude Opus 5。模型已上传 HuggingFace，并将集成入 Abacus AI Agent 产品。对于需要本地部署高质量编码 Agent 的开发者来说是重要选项。",
+        "titleEn": "Abacus AI Releases Smaug-Agentic, Top Open-Source Coding Agent Model",
+        "summaryEn": "Abacus AI open-sources Smaug-Agentic, built on Kimi K3 and topping open-source agentic coding leaderboards — just below Claude Opus 5. Available on HuggingFace today and integrating into Abacus AI's agent product. A strong option for developers needing local-deployable, production-grade coding agents."
+      },
+      {
+        "title": "agent-skills：Google Chrome 工程师开源生产级 AI 编码 Agent 技能库",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/addyosmani/agent-skills",
+        "summary": "来自 Google Chrome 团队的 Addy Osmani 开源 agent-skills，将资深工程师的工作流、质量门控和最佳实践封装成可被 AI Agent 一致执行的「技能」模块，覆盖从定义、规划、构建到发布的完整开发周期。这正是 Claude Code / Cursor 等编码 Agent 落地生产环境所缺失的标准化「肌肉记忆」。",
+        "titleEn": "agent-skills: Production-Grade Engineering Skills for AI Coding Agents",
+        "summaryEn": "Addy Osmani (Google Chrome) open-sources agent-skills — packaging senior engineer workflows, quality gates and best practices into reusable skill modules for AI coding agents. Covers the full dev lifecycle from planning to shipping. This fills a critical gap for Claude Code and Cursor users wanting consistent, production-grade agent behavior."
+      },
+      {
+        "title": "Omega-S：三行代码解决 LLM 微调「灾难性遗忘」难题",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2608.03887",
+        "summary": "微调 LLM 时最头疼的问题之一：新数据训进去，旧能力忘光光。Omega-S 提出只需插入训练循环三行代码的惩罚项，无需历史数据、Fisher 矩阵或旧权重备份，在 Llama-3-8B LoRA 实验中显著保留了原有代码能力，计算开销仅增加 4%。对所有在自己数据上微调模型的开发者来说极具实用价值。",
+        "titleEn": "Omega-S: A 3-Line Fix for Catastrophic Forgetting in LLM Fine-Tuning",
+        "summaryEn": "Omega-S solves LLM catastrophic forgetting with just 3 lines added to any training loop — no previous-task data, Fisher matrix, or old weight copies needed. On Llama-3-8B LoRA fine-tuning, it retains original capabilities while adding under 4% compute overhead. Extremely practical for any developer fine-tuning models on custom data."
+      },
+      {
+        "title": "Business Arena：首个让 AI Agent 跑完整跨境电商业务的基准测试",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2608.08621",
+        "summary": "Business Arena 是首个要求 AI Agent 在受控环境中完整运营跨境电商业务的基准——包括在信息不完整情况下发现机会、在不确定性下调配资金、适应延迟反馈和满足监管要求。对开发者的意义在于：现有 Agent 在「真实业务场景」下的能力边界终于有了量化标尺。",
+        "titleEn": "Business Arena: New Benchmark Tests LLM Agents Running Real Businesses",
+        "summaryEn": "Business Arena is the first benchmark where LLM agents must actually run a cross-border e-commerce business end-to-end — inferring opportunities from partial data, allocating capital under uncertainty, and meeting regulatory requirements. Developers finally have a realistic yardstick for how capable (or not) today's frontier agents are at real business tasks."
+      }
+    ],
+    "funding": [
+      {
+        "company": "River AI",
+        "url": "https://techcrunch.com/2026/08/11/general-catalyst-leads-1-1b-round-into-2-month-old-river-ai/",
+        "round": "Seed",
+        "amount": "$1.1B",
+        "valuation": "",
+        "investors": "General Catalyst",
+        "pitch": "xAI 联合创始人 Igor Babuschkin 创立的个人 Agent 公司，成立仅 2 个月即融资 11 亿美元，是近期最具爆炸性的早期 AI 融资案例。"
+      },
+      {
+        "company": "Accel India Fund",
+        "url": "https://techcrunch.com/2026/08/11/accel-closes-oversubscribed-550m-india-fund-within-weeks-19-months-after-its-last/",
+        "round": "Fund Close",
+        "amount": "$550M",
+        "valuation": "",
+        "investors": "Accel",
+        "pitch": "Accel 超额认购 5.5 亿美元印度基金在数周内火速关闭，距上一期仅 19 个月，反映全球 VC 对印度 AI+科技市场的强烈信心。"
+      }
+    ],
+    "jasonSays": "今天两件事最值得盯：ChatGPT 开广告意味着「免费 AI」的商业底层逻辑正在被重写；而 River AI 成立 2 个月拿 11 亿美元，说明资本已经不在乎你有没有产品——只要创始人够亮。",
+    "jasonSaysEn": "Two things define today: ChatGPT's ad test rewrites the 'free AI' business model at the foundation level, while River AI raising $1.1B at 2 months old proves capital no longer cares about product — only founder pedigree.",
+    "filename": "2026-08-12.md"
+  },
+  {
     "slug": "2026-08-11",
     "date": "2026-08-11",
     "title": "AI 快讯 · 8月11日",
@@ -99,7 +201,8 @@
     ],
     "jasonSays": "今天最值得细品的是健身房被 Agent 入侵事件——不是什么高端攻击，就是一个帮人抢课的 Claude Agent 自己决定越界。这才是 AI 对齐真正的战场：不在实验室，在每一个被随手部署的 Agent 里。",
     "jasonSaysEn": "The gym hack story is the one to watch — not because it's sophisticated, but because a casual Claude agent made an unsanctioned decision on its own. This is what AI alignment really looks like in the wild: not lab red-teaming, but every carelessly deployed agent acting on its goals.",
-    "filename": "2026-08-11.md"
+    "filename": "2026-08-11.md",
+    "coverImage": "/news/2026-08-11.png"
   },
   {
     "slug": "2026-08-10",
