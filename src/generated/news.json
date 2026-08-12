@@ -1,5 +1,98 @@
 [
   {
+    "slug": "2026-08-13",
+    "date": "2026-08-13",
+    "title": "AI 快讯 · 8月13日",
+    "items": [
+      {
+        "title": "DeepSeek v4 Pro 发布：开源阵营再添 Sonnet 级选手",
+        "source": "X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://x.com/bindureddy",
+        "summary": "DeepSeek v4 Pro 正式发布，业内人士评估其能力与 Claude Sonnet 4 相当，且可安全用于生产环境。开源模型爆发势头不减——这意味着开发者在高质量推理能力上的替代选择越来越多，成本压力也会进一步倒逼闭源大厂。",
+        "titleEn": "DeepSeek v4 Pro Launches, Rivals Claude Sonnet in Open Source",
+        "summaryEn": "DeepSeek v4 Pro has dropped and early benchmarks suggest it's Sonnet-class. Open-source AI keeps accelerating, giving developers a production-safe alternative to proprietary models and intensifying pricing pressure on closed-source labs."
+      },
+      {
+        "title": "Grok 4.6 悄然上线：保持 4.5 定价，实力存疑",
+        "source": "X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://x.com/bindureddy",
+        "summary": "xAI 发布 Grok 4.6，定价与 4.5 持平。目前 LiveBench 评测尚未完成，相较 4.5 的实际提升还是未知数。在 DeepSeek v4 Pro 同日亮相的背景下，Grok 4.6 的竞争力将迅速受到市场检验。",
+        "titleEn": "Grok 4.6 Released at Same Price as 4.5, Improvements Unclear",
+        "summaryEn": "xAI quietly released Grok 4.6 at the same price as 4.5. LiveBench scores pending, real improvements vs 4.5 remain unclear. Launching the same day as DeepSeek v4 Pro means the market will judge fast."
+      },
+      {
+        "title": "Anthropic 计划为 Claude 输出添加隐形水印",
+        "source": "X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://x.com/bindureddy",
+        "summary": "Anthropic 据报道将对所有 Claude 生成的文本添加不可见水印，用于溯源和 AI 内容识别。这对依赖 Claude 进行报告写作、内容创作的开发者和企业用户影响较大，需重新评估内容合规风险。",
+        "titleEn": "Anthropic Plans Invisible Watermarking for All Claude-Generated Text",
+        "summaryEn": "Anthropic reportedly plans to embed invisible watermarks in all Claude-generated text for provenance tracking. Developers using Claude for content creation need to reassess compliance implications, especially for client-facing deliverables."
+      },
+      {
+        "title": "diagram-design：29 种专业图表技能直接喂给 Claude Code",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/cathrynlavery/diagram-design",
+        "summary": "开源项目 diagram-design 提供 29 种编辑级图表类型的 Claude Code Agent Skill，纯 HTML+SVG 实现，无需 Mermaid，60 秒内可读取你的网站自动映射品牌色彩和字体。这是继 agent-skills 后又一个高质量的生产级 Skill 封装案例。",
+        "titleEn": "diagram-design: 29 Editorial Diagram Skills for Claude Code, No Mermaid Slop",
+        "summaryEn": "diagram-design offers 29 editorial SVG diagram types as a single Claude Code agent skill—no Mermaid, no shadows. The skill auto-maps your brand colors from your website in 60 seconds, and can redraw existing draw.io files."
+      },
+      {
+        "title": "Cognition 估值飙至 400 亿美元，AI 编码独角兽再融资",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/12/ai-coding-startup-cognition-reportedly-already-in-talks-to-raise-at-40b-valuation/",
+        "summary": "AI 编码创业公司 Cognition（Devin 背后团队）据报道正在洽谈新一轮融资，目标估值 400 亿美元——仅仅几个月前刚以 260 亿美元估值完成 10 亿美元融资。AI 编码赛道的资本热度仍在加速，估值膨胀速度令人咋舌。",
+        "titleEn": "Cognition in Talks to Raise at $40B Valuation Months After $26B Round",
+        "summaryEn": "Cognition, maker of AI coding agent Devin, is reportedly in talks to raise at a $40B valuation—just months after closing $1B at $26B. The AI coding race is minting unicorns at a breathtaking pace."
+      },
+      {
+        "title": "Hinton、李飞飞、吴恩达同台辩论：开源 AI 还是监管优先？",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/12/as-ai-safety-concerns-mount-three-pioneers-make-the-case-for-staying-open/",
+        "summary": "三位 AI 领域最具声望的先驱——Geoffrey Hinton、李飞飞、吴恩达——在 Ai4 大会上就 AI 监管、开源路线和中美竞争展开正面交锋。三人罕见同台，观点分歧明显，为当前 AI 治理争论提供了最高规格的参照系。",
+        "titleEn": "Hinton, Fei-Fei Li, Andrew Ng Debate Open Source AI vs Regulation at Ai4",
+        "summaryEn": "AI legends Hinton, Fei-Fei Li, and Andrew Ng shared a stage at Ai4 to debate regulation, open source access, and US-China AI competition. Three distinct worldviews from three defining voices—a rare moment of high-stakes public discourse."
+      },
+      {
+        "title": "InSight-doc：AI 自适应分辨率「阅读」超长文档的新框架",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2608.10628",
+        "summary": "InSight-doc 提出一种 Agentic 视觉感知框架：先以低分辨率浏览长文档，再自动放大关键区域精读，无需外部检索器。对开发者的意义在于：处理 PDF 报告、财报、合同等多页文档时，推理成本将显著降低，精度更高。",
+        "titleEn": "InSight-doc: Agentic Visual Perception That Selectively Zooms Into Long Documents",
+        "summaryEn": "InSight-doc is an agentic framework for long documents—starts low-res, selectively zooms into important regions without an external retriever. For developers: this means cheaper, more accurate AI parsing of multi-page PDFs, contracts, and financial reports."
+      },
+      {
+        "title": "2026 上半年独角兽数量已超 2025 全年，AI 是最大推手",
+        "source": "Crunchbase News",
+        "category": "AI 工具动态",
+        "url": "https://news.crunchbase.com/venture/global-unicorn-counts-rise-ai-robotics-chips-h1-2026/",
+        "summary": "2026 年上半年全球新增独角兽企业 195 家，已超过 2025 年全年的 193 家，AI、机器人和芯片领域是主要驱动力。对独立开发者和创业者来说，这轮资本热潮意味着 AI 赛道的窗口期仍然大开。",
+        "titleEn": "H1 2026 New Unicorn Count Already Surpasses All of 2025, AI Leading the Charge",
+        "summaryEn": "A record 195 companies joined the unicorn ranks in H1 2026, surpassing all of 2025. AI, robotics, and chips are the main drivers. The funding window for AI startups is wide open—for now."
+      }
+    ],
+    "funding": [
+      {
+        "company": "Thrive Holdings",
+        "url": "https://techcrunch.com/2026/08/12/openai-backed-thrive-holdings-raises-2b-to-bring-ai-to-the-enterprise/",
+        "round": "Growth",
+        "amount": "$2B",
+        "valuation": "$12B",
+        "investors": "SoftBank、D1 Capital Partners、Altimeter Capital",
+        "pitch": "OpenAI 背书的企业 AI 平台，本轮融资规模和估值均显示资本市场对企业级 AI 落地的高度押注。"
+      }
+    ],
+    "jasonSays": "今天最值得盯的是 DeepSeek v4 Pro 和 Grok 4.6 同日登场——开源追赶闭源的速度比任何人预期都快，Claude 的性价比护城河正在被快速填平，定价策略将是接下来的核心战场。",
+    "jasonSaysEn": "DeepSeek v4 Pro and Grok 4.6 dropping the same day is the clearest signal yet that open-source is closing the gap faster than anyone expected—Claude's value moat is shrinking, and pricing strategy will be the real battleground ahead.",
+    "filename": "2026-08-13.md"
+  },
+  {
     "slug": "2026-08-12",
     "date": "2026-08-12",
     "title": "AI 快讯 · 8月12日",
@@ -99,7 +192,8 @@
     ],
     "jasonSays": "今天两件事最值得盯：ChatGPT 开广告意味着「免费 AI」的商业底层逻辑正在被重写；而 River AI 成立 2 个月拿 11 亿美元，说明资本已经不在乎你有没有产品——只要创始人够亮。",
     "jasonSaysEn": "Two things define today: ChatGPT's ad test rewrites the 'free AI' business model at the foundation level, while River AI raising $1.1B at 2 months old proves capital no longer cares about product — only founder pedigree.",
-    "filename": "2026-08-12.md"
+    "filename": "2026-08-12.md",
+    "coverImage": "/news/2026-08-12.png"
   },
   {
     "slug": "2026-08-11",
