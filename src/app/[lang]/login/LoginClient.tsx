@@ -19,6 +19,9 @@ export default function LoginClient({ lang }: Props) {
   // 不是"登录"——默认停在登录页会让人对着"邮箱或密码不对"卡住。带 ?mode=signup&email= 直接跳过这一步。
   const [mode, setMode] = useState<Mode>(searchParams.get("mode") === "signup" ? "signup" : "signin");
   const [email, setEmail] = useState(searchParams.get("email") || "");
+  // 登录后回跳地址（只允许站内相对路径，防开放重定向）；默认会员中心
+  const rawNext = searchParams.get("next") || "";
+  const nextPath = rawNext.startsWith("/") && !rawNext.startsWith("//") ? rawNext : `/${lang}/dashboard`;
   const [password, setPassword] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
@@ -33,7 +36,7 @@ export default function LoginClient({ lang }: Props) {
     await supabase.auth.signInWithOAuth({
       provider,
       options: {
-        redirectTo: `${window.location.origin}/auth/callback?next=/${lang}/dashboard`,
+        redirectTo: `${window.location.origin}/auth/callback?next=${encodeURIComponent(nextPath)}`,
       },
     });
   }
@@ -61,7 +64,7 @@ export default function LoginClient({ lang }: Props) {
           );
           return;
         }
-        window.location.href = `/${lang}/dashboard`;
+        window.location.href = nextPath;
       } else {
         if (password.length < 6) {
           setError(isZh ? "密码至少 6 位" : "Password must be at least 6 characters");
@@ -70,7 +73,7 @@ export default function LoginClient({ lang }: Props) {
         const { data, error } = await supabase.auth.signUp({
           email,
           password,
-          options: { emailRedirectTo: `${window.location.origin}/auth/callback?next=/${lang}/dashboard` },
+          options: { emailRedirectTo: `${window.location.origin}/auth/callback?next=${encodeURIComponent(nextPath)}` },
         });
         if (error) {
           setError(
@@ -91,7 +94,7 @@ export default function LoginClient({ lang }: Props) {
         }
         // mailer_autoconfirm=false：注册成功但还没验证邮箱，data.session 为空
         if (data.session) {
-          window.location.href = `/${lang}/dashboard`;
+          window.location.href = nextPath;
         } else {
           setSignupSent(true);
         }
@@ -131,7 +134,7 @@ export default function LoginClient({ lang }: Props) {
       await supabase.auth.resend({
         type: "signup",
         email,
-        options: { emailRedirectTo: `${window.location.origin}/auth/callback?next=/${lang}/dashboard` },
+        options: { emailRedirectTo: `${window.location.origin}/auth/callback?next=${encodeURIComponent(nextPath)}` },
       });
       setResendDone(true);
     } catch { /* 静默：下面的提示文案不变 */ }

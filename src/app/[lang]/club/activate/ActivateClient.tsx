@@ -4,6 +4,9 @@ import { useState, useRef, useEffect } from "react";
 
 interface Props {
   lang: "zh" | "en";
+  isLoggedIn?: boolean;
+  userEmail?: string;
+  initialCode?: string;
 }
 
 interface ActivationResult {
@@ -13,12 +16,19 @@ interface ActivationResult {
   org: string;
 }
 
-export default function ActivateClient({ lang }: Props) {
+export default function ActivateClient({ lang, isLoggedIn = false, userEmail = "", initialCode = "" }: Props) {
   const isZh = lang === "zh";
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
   const [result, setResult] = useState<ActivationResult | null>(null);
   const [copied, setCopied] = useState(false);
+  const [code, setCode] = useState(initialCode);
+  const [submittedEmail, setSubmittedEmail] = useState("");
+  // 未登录时默认折叠"直接激活"表单，把注册/登录做成主路径；用户可展开走访客激活
+  const [guestMode, setGuestMode] = useState(false);
+  // 登录后回到本页并保留兑换码
+  const activatePath = `/${lang}/club/activate${code ? `?code=${encodeURIComponent(code)}` : ""}`;
+  const loginHref = `/${lang}/login?mode=signup&next=${encodeURIComponent(activatePath)}`;
   // time-trap 反 bot：渲染期不可调 Date.now()，挂载后再记时
   const mountedAt = useRef<number>(0);
   useEffect(() => {
@@ -29,6 +39,7 @@ export default function ActivateClient({ lang }: Props) {
     e.preventDefault();
     setStatus("loading");
     const fd = new FormData(e.currentTarget);
+    setSubmittedEmail(String(fd.get("email") || ""));
     try {
       const res = await fetch("/api/club-activate", {
         method: "POST",
@@ -77,6 +88,46 @@ export default function ActivateClient({ lang }: Props) {
             : "Enter the code you received after payment"}
         </p>
       </div>
+
+      {/* 未登录：先注册/登录是主路径，激活记录才能直接绑到账号 */}
+      {status !== "success" && !isLoggedIn && (
+        <div className="bg-gradient-to-br from-blue-50 to-white border border-blue-100 rounded-2xl p-6 mb-5">
+          <div className="text-xs font-semibold text-[var(--primary)] mb-3">{isZh ? "两步开通，先做第 1 步" : "Two steps — do step 1 first"}</div>
+          <ol className="space-y-3 text-sm">
+            <li className="flex gap-3 items-start">
+              <span className="shrink-0 w-6 h-6 rounded-full bg-[var(--primary)] text-white font-bold text-xs flex items-center justify-center">1</span>
+              <div>
+                <p className="font-semibold text-gray-900">{isZh ? "先注册 / 登录会员中心" : "Sign up / sign in first"}</p>
+                <p className="text-xs text-gray-500 mt-0.5">
+                  {isZh ? "用你的常用邮箱设个密码（或 Google / GitHub 一键登录），登录后会自动回到这里。" : "Set a password for your email (or use Google / GitHub) — you'll come right back here."}
+                </p>
+              </div>
+            </li>
+            <li className="flex gap-3 items-start">
+              <span className="shrink-0 w-6 h-6 rounded-full bg-blue-100 text-[var(--primary)] font-bold text-xs flex items-center justify-center">2</span>
+              <div>
+                <p className="font-semibold text-gray-700">{isZh ? "回来输入兑换码激活" : "Come back and enter your code"}</p>
+                <p className="text-xs text-gray-500 mt-0.5">{isZh ? "权益直接绑定到你刚登录的账号，会员中心立即可用。" : "Benefits bind straight to your account."}</p>
+              </div>
+            </li>
+          </ol>
+          <a
+            href={loginHref}
+            className="mt-5 block w-full py-3 bg-[var(--primary)] text-white font-semibold rounded-xl text-center hover:opacity-90 transition-opacity"
+          >
+            {isZh ? "第 1 步：去注册 / 登录 →" : "Step 1: Sign up / Sign in →"}
+          </a>
+          {!guestMode && (
+            <button
+              type="button"
+              onClick={() => setGuestMode(true)}
+              className="mt-3 w-full text-xs text-gray-400 hover:text-[var(--primary)] hover:underline"
+            >
+              {isZh ? "不想注册？也可以只用邮箱直接激活（之后用同一邮箱注册即可自动绑定）" : "Skip signup and activate with email only"}
+            </button>
+          )}
+        </div>
+      )}
 
       {status === "success" && result ? (
         <div className="bg-white border border-green-200 rounded-2xl p-8">
@@ -143,19 +194,34 @@ export default function ActivateClient({ lang }: Props) {
               <span className="shrink-0 w-6 h-6 rounded-full bg-blue-50 text-[var(--primary)] font-bold text-xs flex items-center justify-center">3</span>
               <div>
                 <p className="font-semibold text-gray-900 mb-1">
-                  {isZh ? "添加 Jason 微信进会员群" : "Join the member group"}
+                  {isZh ? "进会员中心：看课程、讨论会回放、扫码进群" : "Open your dashboard"}
                 </p>
-                <p>{isZh ? "凭付款记录和 GitHub 用户名入群，参加半月度讨论会。" : "DM Jason with your payment record."}</p>
+                <p className="text-xs text-gray-400">
+                  {isLoggedIn
+                    ? (isZh ? "权益已绑定到当前账号，会员群二维码在会员中心底部。" : "Benefits are bound to your account; the group QR is at the bottom of the dashboard.")
+                    : (isZh ? "用刚才填的邮箱注册一下（设个密码即可），开通记录会自动绑定，会员群二维码在会员中心底部。" : "Sign up with the same email — your membership auto-links; the group QR is in the dashboard.")}
+                </p>
               </div>
             </li>
           </ol>
-          <p className="text-xs text-gray-400 text-center mt-6 pt-4 border-t border-gray-100">
+          <a
+            href={isLoggedIn ? `/${lang}/dashboard` : `/${lang}/login?mode=signup&email=${encodeURIComponent(submittedEmail)}`}
+            className="mt-6 block w-full py-3 bg-[var(--primary)] text-white font-semibold rounded-xl text-center hover:opacity-90 transition-opacity"
+          >
+            {isLoggedIn ? (isZh ? "去会员中心 →" : "Go to Dashboard →") : (isZh ? "用这个邮箱注册 / 登录会员中心 →" : "Sign up with this email →")}
+          </a>
+          <p className="text-xs text-gray-400 text-center mt-4 pt-4 border-t border-gray-100">
             {isZh ? `会员有效期至 ${result.expiresAt}` : `Valid until ${result.expiresAt}`}
           </p>
         </div>
-      ) : (
+      ) : (isLoggedIn || guestMode) ? (
         <form onSubmit={handleSubmit} className="bg-white border border-gray-100 rounded-2xl p-7 space-y-5">
           <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
+          {isLoggedIn && (
+            <div className="px-3.5 py-2.5 bg-green-50 border border-green-100 rounded-lg text-xs text-green-700">
+              {isZh ? `✓ 第 1 步已完成，已登录 ${userEmail}，激活后权益直接绑定到这个账号` : `✓ Signed in as ${userEmail} — benefits will bind to this account`}
+            </div>
+          )}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1.5">
               {isZh ? "兑换码" : "Code"} <span className="text-red-500">*</span>
@@ -163,6 +229,8 @@ export default function ActivateClient({ lang }: Props) {
             <input
               name="code"
               required
+              value={code}
+              onChange={(e) => setCode(e.target.value)}
               placeholder="GSC-XXXXXXXX"
               className="w-full px-3.5 py-2.5 border border-gray-200 rounded-lg text-sm font-mono uppercase focus:border-[var(--primary)] focus:outline-none"
             />
@@ -185,9 +253,16 @@ export default function ActivateClient({ lang }: Props) {
               name="email"
               type="email"
               required
+              readOnly={isLoggedIn}
+              defaultValue={isLoggedIn ? userEmail : ""}
               placeholder="you@example.com"
-              className="w-full px-3.5 py-2.5 border border-gray-200 rounded-lg text-sm focus:border-[var(--primary)] focus:outline-none"
+              className={`w-full px-3.5 py-2.5 border border-gray-200 rounded-lg text-sm focus:border-[var(--primary)] focus:outline-none ${isLoggedIn ? "bg-gray-50 text-gray-500" : ""}`}
             />
+            {!isLoggedIn && (
+              <p className="text-xs text-gray-400 mt-1">
+                {isZh ? "记住这个邮箱：之后用它注册会员中心，开通记录会自动绑定" : "Remember this email — sign up with it later and your membership auto-links"}
+              </p>
+            )}
           </div>
           {status === "error" && <p className="text-sm text-red-500 text-center">{errorMsg}</p>}
           <button
@@ -204,7 +279,7 @@ export default function ActivateClient({ lang }: Props) {
             </a>
           </p>
         </form>
-      )}
+      ) : null}
     </div>
   );
 }
