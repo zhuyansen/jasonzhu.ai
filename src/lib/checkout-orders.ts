@@ -22,6 +22,8 @@ export interface CheckoutOrder {
   error?: string;
   emailError?: string; // 确认邮件发送失败的具体原因（不阻塞开通，只做诊断）
   resendId?: string; // 发信成功时 Resend 返回的邮件 id，方便按 id 直接核对投递状态
+  ref?: string; // 推荐码（分销归因），付款成功后按 REFERRAL_RATE 记返佣
+  refEmail?: string; // 推荐人邮箱（创建订单时已校验：码存在且非自荐）
   createdAt: string;
   paidAt?: string;
 }

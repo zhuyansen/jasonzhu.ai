@@ -4,6 +4,7 @@ import { rateLimit } from "@/lib/rate-limit";
 import { createXunhupayOrder, type XunhupayChannel } from "@/lib/xunhupay";
 import { saveOrder } from "@/lib/checkout-orders";
 import { getSupabase } from "@/lib/supabase";
+import { normalizeRefCode, validateRefForBuyer } from "@/lib/referrals";
 
 export const dynamic = "force-dynamic";
 
@@ -19,7 +20,7 @@ export async function POST(request: NextRequest) {
   if (rateLimited) return rateLimited;
 
   try {
-    const { email, wechat, github, channel, website, ts } = await request.json();
+    const { email, wechat, github, channel, website, ts, ref } = await request.json();
 
     // 反 bot：跟站内其它表单同款
     if (website && String(website).trim() !== "") {
@@ -71,6 +72,10 @@ export async function POST(request: NextRequest) {
     const tradeOrderId = `xh${Date.now()}${crypto.randomBytes(4).toString("hex")}`;
     const amount = starterPrice();
 
+    // 分销归因：推荐码存在且不是自荐才记；无效码静默忽略，绝不阻塞付款
+    const refCode = normalizeRefCode(ref);
+    const refEmail = refCode ? await validateRefForBuyer(refCode, emailStr) : null;
+
     const order = await createXunhupayOrder({
       channel: channelStr,
       tradeOrderId,
@@ -92,6 +97,8 @@ export async function POST(request: NextRequest) {
       channel: channelStr,
       amount,
       status: "pending",
+      ref: refEmail ? refCode : undefined,
+      refEmail: refEmail ?? undefined,
       createdAt: new Date().toISOString(),
     });
     if (!saved) {
@@ -104,6 +111,7 @@ export async function POST(request: NextRequest) {
       amount,
       qrUrl: order.qrUrl,
       payUrl: order.payUrl,
+      refApplied: Boolean(refEmail),
     });
   } catch {
     return NextResponse.json({ error: "服务器错误，请稍后重试" }, { status: 500 });

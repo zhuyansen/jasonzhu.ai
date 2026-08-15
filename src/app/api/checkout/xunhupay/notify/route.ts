@@ -6,6 +6,7 @@ import { issueProKey } from "@/lib/agentskillshub";
 import { sendActivationEmail } from "@/lib/resend";
 import { genClubCode, recordActivatedClubCode } from "@/lib/club-codes";
 import { getSupabase } from "@/lib/supabase";
+import { recordReferral } from "@/lib/referrals";
 
 export const dynamic = "force-dynamic";
 
@@ -100,6 +101,21 @@ export async function POST(request: NextRequest) {
       });
     } catch (e) {
       console.error("[xunhupay] member_codes insert failed (non-fatal):", order.tradeOrderId, e);
+    }
+
+    // 分销记账（幂等，失败不阻塞开通）
+    if (order.ref && order.refEmail) {
+      try {
+        await recordReferral({
+          orderId: order.tradeOrderId,
+          refCode: order.ref,
+          referrerEmail: order.refEmail,
+          buyerEmail: order.email,
+          amount: order.amount,
+        });
+      } catch (e) {
+        console.error("[xunhupay] referral record failed (non-fatal):", order.tradeOrderId, e);
+      }
     }
 
     const emailResult = await sendActivationEmail({

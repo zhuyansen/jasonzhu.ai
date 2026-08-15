@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import DashboardClient from "./DashboardClient";
 import { createClient } from "@/lib/supabase-server";
 import { getSupabase } from "@/lib/supabase";
+import { ensureRefCode, listReferrals, summarize, type ReferralView } from "@/lib/referrals";
 
 const SITE_URL = "https://jasonzhu.ai";
 
@@ -105,12 +106,26 @@ export default async function DashboardPage({
     }
   }
 
+  // 分销：只有已激活会员才有推荐码；顺手把反查映射写进 KV（用户拿到链接的时刻）
+  let referral: { code: string; list: ReferralView[]; count: number; pending: number; settled: number } | null = null;
+  const isMember = Boolean(profile && profile.role !== "free" && profile.hub_key);
+  if (user?.email && isMember) {
+    try {
+      const code = await ensureRefCode(user.email);
+      const list = await listReferrals(code);
+      referral = { code, list, ...summarize(list) };
+    } catch {
+      referral = null;
+    }
+  }
+
   return (
     <DashboardClient
       lang={lang === "en" ? "en" : "zh"}
       initialUser={user ? { id: user.id, email: user.email ?? null } : null}
       initialProfile={profile}
       suggestedGithub={typeof user?.user_metadata?.user_name === "string" ? user.user_metadata.user_name : ""}
+      referral={referral}
     />
   );
 }

@@ -16,11 +16,29 @@ interface Profile {
   expires_at: string | null;
 }
 
+interface ReferralItem {
+  orderId: string;
+  buyerMasked: string;
+  amount: number;
+  commission: number;
+  createdAt: string;
+  status: "pending" | "settled";
+}
+
+interface ReferralData {
+  code: string;
+  list: ReferralItem[];
+  count: number;
+  pending: number;
+  settled: number;
+}
+
 interface Props {
   lang: "zh" | "en";
   initialUser: SimpleUser | null;
   initialProfile: Profile | null;
   suggestedGithub: string;
+  referral?: ReferralData | null;
 }
 
 const ROLE_LABEL: Record<string, string> = {
@@ -30,11 +48,21 @@ const ROLE_LABEL: Record<string, string> = {
   partner: "合伙人",
 };
 
-export default function DashboardClient({ lang, initialUser, initialProfile, suggestedGithub }: Props) {
+export default function DashboardClient({ lang, initialUser, initialProfile, suggestedGithub, referral = null }: Props) {
   const isZh = lang === "zh";
   const user = initialUser;
   const [profile, setProfile] = useState<Profile | null>(initialProfile);
   const [copied, setCopied] = useState(false);
+  const [refCopied, setRefCopied] = useState(false);
+  const refLink = referral ? `https://jasonzhu.ai/${lang}/club?ref=${referral.code}` : "";
+  const copyRefLink = async () => {
+    if (!refLink) return;
+    try {
+      await navigator.clipboard.writeText(refLink);
+      setRefCopied(true);
+      setTimeout(() => setRefCopied(false), 2000);
+    } catch { /* ignore */ }
+  };
 
   // 兑换码绑定表单
   const [code, setCode] = useState("");
@@ -357,6 +385,47 @@ export default function DashboardClient({ lang, initialUser, initialProfile, sug
                 </li>
               </ol>
             </div>
+
+            {/* 分销：推荐有礼。现金返佣 30%，人工月结微信转账 */}
+            {referral && (
+              <div className="border border-amber-200 bg-gradient-to-br from-amber-50/60 to-white rounded-xl p-4">
+                <div className="flex items-center justify-between gap-3 flex-wrap">
+                  <div className="text-sm font-semibold text-gray-900">🎁 {isZh ? "推荐有礼 · 每单返 30%" : "Refer & earn 30%"}</div>
+                  <div className="text-xs text-gray-500">
+                    {isZh ? `已成交 ${referral.count} 单 · 待结算 ¥${referral.pending} · 已结算 ¥${referral.settled}` : `${referral.count} referrals · ¥${referral.pending} pending · ¥${referral.settled} paid`}
+                  </div>
+                </div>
+                <p className="text-xs text-gray-500 mt-1 mb-3">
+                  {isZh
+                    ? "把你的专属链接发给朋友，对方通过链接加入启航版（¥365）后，你得 ¥110 现金。每月月底结算，Jason 微信转账给你。"
+                    : "Share your link; when a friend joins Starter (¥365) through it you earn ¥110. Settled monthly via WeChat."}
+                </p>
+                <div className="flex items-center gap-2 flex-wrap">
+                  <code className="px-3 py-2 bg-white border border-gray-200 rounded-lg text-xs break-all flex-1 min-w-0 text-gray-700">{refLink}</code>
+                  <button onClick={copyRefLink} className="shrink-0 text-xs px-4 py-2 bg-[var(--primary)] text-white rounded-lg hover:opacity-90 transition-opacity font-medium">
+                    {refCopied ? (isZh ? "已复制 ✓" : "Copied ✓") : (isZh ? "复制链接" : "Copy link")}
+                  </button>
+                </div>
+                <p className="text-[11px] text-gray-400 mt-2">
+                  {isZh ? `推荐码 ${referral.code}（朋友结账时也可以手填）· 自己推荐自己不计 · 退款订单不计` : `Code ${referral.code} · self-referrals and refunds excluded`}
+                </p>
+                {referral.list.length > 0 && (
+                  <div className="mt-3 border-t border-amber-100 pt-3 space-y-1.5">
+                    {referral.list.slice(0, 5).map((r) => (
+                      <div key={r.orderId} className="flex items-center justify-between text-xs">
+                        <span className="text-gray-500">{r.createdAt.slice(0, 10)} · {r.buyerMasked}</span>
+                        <span className={r.status === "settled" ? "text-gray-400" : "text-amber-600 font-medium"}>
+                          +¥{r.commission} {r.status === "settled" ? (isZh ? "已结算" : "paid") : (isZh ? "待结算" : "pending")}
+                        </span>
+                      </div>
+                    ))}
+                    {referral.list.length > 5 && (
+                      <div className="text-[11px] text-gray-400">{isZh ? `…共 ${referral.list.length} 单` : `…${referral.list.length} total`}</div>
+                    )}
+                  </div>
+                )}
+              </div>
+            )}
 
             {/* 会员微信群：二维码别只藏在邮件里——用户反馈根本找不到 */}
             <div className="bg-white border border-gray-100 rounded-2xl p-6">

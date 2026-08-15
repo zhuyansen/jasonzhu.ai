@@ -8,17 +8,19 @@ interface Props {
   initialEmail?: string;
   initialGithub?: string;
   isLoggedIn?: boolean;
+  initialRef?: string;
 }
 
 type Step = "form" | "qr" | "expired" | "done" | "error";
 
-export default function XunhupayCheckoutModal({ lang, onClose, initialEmail = "", initialGithub = "", isLoggedIn = false }: Props) {
+export default function XunhupayCheckoutModal({ lang, onClose, initialEmail = "", initialGithub = "", isLoggedIn = false, initialRef = "" }: Props) {
   const isZh = lang === "zh";
   const [step, setStep] = useState<Step>("form");
   const [channel, setChannel] = useState<"wechat" | "alipay">("wechat");
   const [email, setEmail] = useState(initialEmail);
   const [wechat, setWechat] = useState("");
   const [github, setGithub] = useState(initialGithub);
+  const [ref, setRef] = useState(initialRef);
   const [submitting, setSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   const [alreadyMember, setAlreadyMember] = useState(false);
@@ -49,7 +51,7 @@ export default function XunhupayCheckoutModal({ lang, onClose, initialEmail = ""
       const res = await fetch("/api/checkout/xunhupay/create", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, wechat, github, channel, ts: mountedAt.current }),
+        body: JSON.stringify({ email, wechat, github, channel, ref, ts: mountedAt.current }),
       });
       const data = await res.json();
       if (!res.ok || !data.success) {
@@ -149,6 +151,20 @@ export default function XunhupayCheckoutModal({ lang, onClose, initialEmail = ""
                 placeholder={isZh ? "没有就先跳过，之后在会员中心补填" : "Skip if you don't have one — add it later"}
                 className="w-full px-3.5 py-2.5 border border-gray-200 rounded-lg text-sm focus:border-[var(--primary)] focus:outline-none"
               />
+            </div>
+            <div>
+              <label className="block text-xs font-medium text-gray-500 mb-1.5">
+                {isZh ? "推荐码（选填）" : "Referral code (optional)"}
+              </label>
+              <input
+                value={ref}
+                onChange={(e) => setRef(e.target.value.toUpperCase())}
+                placeholder={isZh ? "朋友推荐的话填 TA 的推荐码" : "If a member referred you"}
+                className="w-full px-3.5 py-2.5 border border-gray-200 rounded-lg text-sm font-mono uppercase focus:border-[var(--primary)] focus:outline-none"
+              />
+              {initialRef && ref === initialRef && (
+                <p className="text-xs text-green-600 mt-1">{isZh ? "✓ 已带上推荐关系" : "✓ Referral applied"}</p>
+              )}
             </div>
             <div>
               <label className="block text-xs font-medium text-gray-500 mb-1.5">{isZh ? "支付方式" : "Pay with"}</label>

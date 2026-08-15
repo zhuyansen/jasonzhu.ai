@@ -9,6 +9,7 @@ interface Props {
   suggestedGithub?: string;
   isLoggedIn?: boolean;
   isMember?: boolean;
+  initialRef?: string;
 }
 
 // 实际扣费金额（早鸟 ¥199 / 原价 ¥365）由 /api/checkout/xunhupay/create 按日期算好返回，
@@ -71,7 +72,7 @@ const TIERS = [
   },
 ];
 
-export default function ClubClient({ lang, initialEmail = "", suggestedGithub = "", isLoggedIn = false, isMember = false }: Props) {
+export default function ClubClient({ lang, initialEmail = "", suggestedGithub = "", isLoggedIn = false, isMember = false, initialRef = "" }: Props) {
   const isZh = lang === "zh";
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
@@ -79,6 +80,18 @@ export default function ClubClient({ lang, initialEmail = "", suggestedGithub = 
   const [checkoutOpen, setCheckoutOpen] = useState(false);
   // 申请表里填的邮箱——启航版提交后直接弹付款窗时带过去，不让用户再填一遍
   const [applyEmail, setApplyEmail] = useState("");
+  // 分销归因：?ref= 进来就写 30 天 cookie；结账时优先用 URL 的，其次用 cookie 里的
+  const [refCode, setRefCode] = useState(initialRef);
+  useEffect(() => {
+    const clean = initialRef.trim().toUpperCase().replace(/[^A-Z0-9]/g, "");
+    if (clean) {
+      document.cookie = `gsc_ref=${clean}; path=/; max-age=${30 * 24 * 3600}; SameSite=Lax`;
+      setRefCode(clean);
+      return;
+    }
+    const m = document.cookie.match(/(?:^|;\s*)gsc_ref=([A-Z0-9]+)/);
+    if (m) setRefCode(m[1]);
+  }, [initialRef]);
   // time-trap 反 bot：渲染期不可调 Date.now()（react-hooks/purity），挂载后再记时
   const mountedAt = useRef<number>(0);
   useEffect(() => {
@@ -486,6 +499,7 @@ export default function ClubClient({ lang, initialEmail = "", suggestedGithub = 
           initialEmail={initialEmail || applyEmail}
           initialGithub={suggestedGithub}
           isLoggedIn={isLoggedIn}
+          initialRef={refCode}
         />
       )}
     </div>

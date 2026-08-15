@@ -31,10 +31,13 @@ export async function generateMetadata({
 
 export default async function ClubPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ lang: string }>;
+  searchParams: Promise<{ ref?: string }>;
 }) {
   const { lang } = await params;
+  const { ref } = await searchParams;
   const supabase = await createClient();
   const {
     data: { user },
@@ -57,6 +60,7 @@ export default async function ClubPage({
       suggestedGithub={typeof user?.user_metadata?.user_name === "string" ? user.user_metadata.user_name : ""}
       isLoggedIn={Boolean(user)}
       isMember={isMember}
+      initialRef={typeof ref === "string" ? ref : ""}
     />
   );
 }
