@@ -80,18 +80,13 @@ export default function ClubClient({ lang, initialEmail = "", suggestedGithub = 
   const [checkoutOpen, setCheckoutOpen] = useState(false);
   // 申请表里填的邮箱——启航版提交后直接弹付款窗时带过去，不让用户再填一遍
   const [applyEmail, setApplyEmail] = useState("");
-  // 分销归因：?ref= 进来就写 30 天 cookie；结账时优先用 URL 的，其次用 cookie 里的
-  const [refCode, setRefCode] = useState(initialRef);
+  // 分销归因：?ref= 进来就写 30 天 cookie。结账弹窗挂载时优先用 URL 的，其次读 cookie（弹窗内惰性读，避免 SSR 不一致）
+  const refCode = initialRef.trim().toUpperCase().replace(/[^A-Z0-9]/g, "");
   useEffect(() => {
-    const clean = initialRef.trim().toUpperCase().replace(/[^A-Z0-9]/g, "");
-    if (clean) {
-      document.cookie = `gsc_ref=${clean}; path=/; max-age=${30 * 24 * 3600}; SameSite=Lax`;
-      setRefCode(clean);
-      return;
+    if (refCode) {
+      document.cookie = `gsc_ref=${refCode}; path=/; max-age=${30 * 24 * 3600}; SameSite=Lax`;
     }
-    const m = document.cookie.match(/(?:^|;\s*)gsc_ref=([A-Z0-9]+)/);
-    if (m) setRefCode(m[1]);
-  }, [initialRef]);
+  }, [refCode]);
   // time-trap 反 bot：渲染期不可调 Date.now()（react-hooks/purity），挂载后再记时
   const mountedAt = useRef<number>(0);
   useEffect(() => {

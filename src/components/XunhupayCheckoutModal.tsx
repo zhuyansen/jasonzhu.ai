@@ -20,7 +20,13 @@ export default function XunhupayCheckoutModal({ lang, onClose, initialEmail = ""
   const [email, setEmail] = useState(initialEmail);
   const [wechat, setWechat] = useState("");
   const [github, setGithub] = useState(initialGithub);
-  const [ref, setRef] = useState(initialRef);
+  // 弹窗只在用户点击后于客户端挂载，这里读 cookie 不会有 SSR 水合问题
+  const [ref, setRef] = useState(() => {
+    if (initialRef) return initialRef;
+    if (typeof document === "undefined") return "";
+    const m = document.cookie.match(/(?:^|;\s*)gsc_ref=([A-Z0-9]+)/);
+    return m ? m[1] : "";
+  });
   const [submitting, setSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   const [alreadyMember, setAlreadyMember] = useState(false);
@@ -162,7 +168,7 @@ export default function XunhupayCheckoutModal({ lang, onClose, initialEmail = ""
                 placeholder={isZh ? "朋友推荐的话填 TA 的推荐码" : "If a member referred you"}
                 className="w-full px-3.5 py-2.5 border border-gray-200 rounded-lg text-sm font-mono uppercase focus:border-[var(--primary)] focus:outline-none"
               />
-              {initialRef && ref === initialRef && (
+              {ref && (
                 <p className="text-xs text-green-600 mt-1">{isZh ? "✓ 已带上推荐关系" : "✓ Referral applied"}</p>
               )}
             </div>
