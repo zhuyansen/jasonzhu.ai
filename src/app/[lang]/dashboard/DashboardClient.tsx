@@ -160,6 +160,32 @@ export default function DashboardClient({ lang, initialUser, initialProfile, sug
                 {copied ? (isZh ? "已复制 ✓" : "Copied ✓") : (isZh ? "复制" : "Copy")}
               </button>
             </div>
+            {/* 用户反馈：光给一串 key 不知道拿来干嘛——这里直接说清楚用途 + 给入口 */}
+            <div className="mt-2.5 flex items-start justify-between gap-3 flex-wrap px-3.5 py-2.5 bg-blue-50/60 border border-blue-100 rounded-lg">
+              <p className="text-xs text-gray-600 leading-relaxed min-w-0 flex-1">
+                {isZh ? (
+                  <>
+                    这是你的 <span className="font-medium text-gray-800">AgentSkillsHub Pro 通行证</span>：打开{" "}
+                    <a href="https://agentskillshub.top/pro/" target="_blank" rel="noopener noreferrer" className="text-[var(--primary)] hover:underline font-medium">agentskillshub.top/pro</a>
+                    ，把上面这串 key 粘进去，即可解锁全库 Skills 深度搜索、社区精选榜、每周 Top3 解读——不用注册、不用登录。
+                  </>
+                ) : (
+                  <>
+                    This is your <span className="font-medium text-gray-800">AgentSkillsHub Pro pass</span>: open{" "}
+                    <a href="https://agentskillshub.top/pro/" target="_blank" rel="noopener noreferrer" className="text-[var(--primary)] hover:underline font-medium">agentskillshub.top/pro</a>
+                    , paste the key above to unlock full-library deep search, curated rankings and weekly Top3 — no signup needed.
+                  </>
+                )}
+              </p>
+              <a
+                href="https://agentskillshub.top/pro/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shrink-0 text-xs px-3.5 py-2 bg-[var(--primary)] text-white rounded-lg hover:opacity-90 transition-opacity font-medium"
+              >
+                {isZh ? "去使用 →" : "Use it →"}
+              </a>
+            </div>
           </div>
 
           {profile?.github_username && (
