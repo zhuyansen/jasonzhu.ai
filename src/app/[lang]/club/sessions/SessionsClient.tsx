@@ -19,6 +19,7 @@ interface Session {
   thumbnailUrl: string | null;
   durationSeconds: number | null;
   transcript: TranscriptSegment[];
+  summary?: string;
 }
 
 interface Data {
@@ -38,6 +39,37 @@ function formatTime(sec: number | null): string {
   const m = Math.floor(sec / 60);
   const s = Math.floor(sec % 60);
   return `${m}:${s.toString().padStart(2, "0")}`;
+}
+
+/** 极简 markdown 渲染：## 标题 / 缩进 bullet / **加粗**。纪要来自飞书智能纪要整理版，结构固定，不引入 markdown 依赖。 */
+function renderInline(text: string) {
+  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  return parts.map((p, i) =>
+    p.startsWith("**") && p.endsWith("**") ? <strong key={i} className="text-gray-800 font-semibold">{p.slice(2, -2)}</strong> : <span key={i}>{p}</span>
+  );
+}
+
+function SummaryBlock({ text }: { text: string }) {
+  const lines = text.split("\n");
+  return (
+    <div className="text-sm text-gray-600 leading-relaxed space-y-1">
+      {lines.map((ln, i) => {
+        if (!ln.trim()) return null;
+        if (ln.startsWith("## ")) return <h4 key={i} className="text-sm font-semibold text-gray-700 mt-2">{ln.slice(3)}</h4>;
+        const m = ln.match(/^( *)- (.*)$/);
+        if (m) {
+          const lvl = Math.min(m[1].length / 2, 2);
+          return (
+            <div key={i} className="flex gap-2" style={{ paddingLeft: `${lvl * 1.1}rem` }}>
+              <span className="text-gray-300 shrink-0">{lvl === 0 ? "▪" : "·"}</span>
+              <span className={lvl === 0 ? "text-gray-800" : ""}>{renderInline(m[2])}</span>
+            </div>
+          );
+        }
+        return <p key={i}>{renderInline(ln)}</p>;
+      })}
+    </div>
+  );
 }
 
 export default function SessionsClient({ lang, isLoggedIn, isMember, data }: Props) {
@@ -123,6 +155,17 @@ export default function SessionsClient({ lang, isLoggedIn, isMember, data }: Pro
             <span className="text-xs text-gray-400">{active.date}</span>
           </div>
           <h2 className="text-lg font-semibold text-gray-900 mt-2">{active.title}</h2>
+
+          {active.summary && (
+            <details className="mt-5 border border-amber-100 bg-amber-50/40 rounded-xl p-4" open>
+              <summary className="text-sm font-semibold text-gray-700 cursor-pointer select-none">
+                📝 {isZh ? "会议纪要（AI 生成，速览用）" : "AI meeting notes"}
+              </summary>
+              <div className="mt-3">
+                <SummaryBlock text={active.summary} />
+              </div>
+            </details>
+          )}
 
           {active.transcript.length > 0 && (
             <div className="mt-6 border-t border-gray-100 pt-5">

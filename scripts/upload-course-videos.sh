@@ -12,7 +12,7 @@ CF_ACCOUNT_ID=$(grep "^CLOUDFLARE_STREAM_ACCOUNT_ID=" .env.local | cut -d= -f2-)
 CF_API_TOKEN=$(grep "^CLOUDFLARE_STREAM_API_TOKEN=" .env.local | cut -d= -f2-)
 SRC_DIR="/Users/zhuyansen/Desktop/x增长"
 MANIFEST="scripts/course-videos-manifest.jsonl"
-TUS_VENV="/tmp/tus-venv"
+TUS_VENV="$HOME/.local/tus-venv"
 LIST="scripts/course-videos-final.txt"
 
 if [ -z "$CF_ACCOUNT_ID" ] || [ -z "$CF_API_TOKEN" ]; then

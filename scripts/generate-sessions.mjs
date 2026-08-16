@@ -15,6 +15,7 @@ const ROOT = path.join(import.meta.dirname, "..");
 const LIST_PATH = path.join(ROOT, "scripts/sessions-final.txt");
 const MANIFEST_PATH = path.join(ROOT, "scripts/sessions-manifest.jsonl");
 const TRANSCRIPT_DIR = path.join(ROOT, "scripts/sessions-transcripts");
+const SUMMARY_DIR = path.join(ROOT, "scripts/sessions-summaries"); // 可选：<stem>.md 会议纪要（如飞书智能纪要整理版）
 const OUT_PATH = path.join(ROOT, "src/generated/sessions.json");
 
 const CF_CUSTOMER_CODE = "cnda9ycjoid8ngxv"; // customer-<code>.cloudflarestream.com，跟增长视频课共用同一个 Cloudflare Stream 账号
@@ -70,6 +71,8 @@ const sessions = list
     const transcript = fs.existsSync(srtPath) ? parseSrt(fs.readFileSync(srtPath, "utf-8")) : [];
     const uid = uidByFilename[filename] || null;
     const duration = transcript.length ? Math.round(transcript[transcript.length - 1].end) : null;
+    const summaryPath = path.join(SUMMARY_DIR, `${stem}.md`);
+    const summary = fs.existsSync(summaryPath) ? fs.readFileSync(summaryPath, "utf-8").trim() : "";
 
     return {
       slug: stem.replace(/[^a-zA-Z0-9一-龥]+/g, "-"),
@@ -77,6 +80,7 @@ const sessions = list
       topic,
       title,
       uid,
+      summary,
       hlsUrl: uid ? `https://customer-${CF_CUSTOMER_CODE}.cloudflarestream.com/${uid}/manifest/video.m3u8` : null,
       iframeUrl: uid ? `https://customer-${CF_CUSTOMER_CODE}.cloudflarestream.com/${uid}/iframe` : null,
       thumbnailUrl: uid ? `https://customer-${CF_CUSTOMER_CODE}.cloudflarestream.com/${uid}/thumbnails/thumbnail.jpg` : null,
