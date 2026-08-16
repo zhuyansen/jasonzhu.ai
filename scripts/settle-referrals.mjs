@@ -6,6 +6,7 @@
  *   node scripts/settle-referrals.mjs --all           # 列出全部（含已结算）
  *   node scripts/settle-referrals.mjs --settle <orderId> [orderId...]   # 转账后标记已结
  *   node scripts/settle-referrals.mjs --settle-ref <REFCODE>            # 一次结清某推荐人名下全部待结
+ *   node scripts/settle-referrals.mjs --email         # 把待结算报告发到 ALERT_EMAIL（GitHub Actions 每月 1 号跑）
  *
  * 数据在 KV：referrals_all（流水）、referral_settled:<orderId>（已结标记）。
  * 推荐人微信号从 Supabase member_codes 按邮箱查（付款时填的 wechat）。
@@ -14,7 +15,8 @@
 import fs from "fs";
 import { execFileSync } from "child_process";
 
-for (const l of fs.readFileSync(".env.local", "utf-8").split("\n")) {
+// 本地读 .env.local；GitHub Actions 里没有这个文件，靠 env 注入
+for (const l of (fs.existsSync(".env.local") ? fs.readFileSync(".env.local", "utf-8") : "").split("\n")) {
   const t = l.trim(); if (!t || t.startsWith("#")) continue;
   const e = t.indexOf("="); if (e < 0) continue;
   let v = t.slice(e + 1).trim();
@@ -74,6 +76,9 @@ if (args[0] === "--settle-ref") {
 }
 
 const showAll = args.includes("--all");
+const wantEmail = args.includes("--email");
+const outLines = [];
+const say = (l = "") => { outLines.push(l); console.log(l); };
 const groups = new Map();
 for (const r of all) {
   const settled = isSettled(r.orderId);
@@ -84,17 +89,34 @@ for (const r of all) {
   groups.set(r.refCode, g);
 }
 
-if (!groups.size) { console.log(showAll ? "还没有任何分销记录" : "🎉 没有待结算的返佣"); process.exit(0); }
-
 let total = 0;
-for (const [code, g] of groups) {
-  const wx = wechatOf(g.email);
-  console.log(`\n👤 ${g.email}  推荐码 ${code}  微信：${wx || "（未知，去 member_codes 查）"}`);
-  for (const it of g.items) {
-    console.log(`   ${it.settled ? "✅" : "⏳"} ${it.createdAt.slice(0, 10)}  ${it.orderId}  ${it.buyerEmail}  ¥${it.amount} → 返 ¥${it.commission}`);
+if (!groups.size) {
+  say(showAll ? "还没有任何分销记录" : "🎉 没有待结算的返佣");
+} else {
+  for (const [code, g] of groups) {
+    const wx = wechatOf(g.email);
+    say(`\n👤 ${g.email}  推荐码 ${code}  微信：${wx || "（未知，去 member_codes 查）"}`);
+    for (const it of g.items) {
+      say(`   ${it.settled ? "✅" : "⏳"} ${it.createdAt.slice(0, 10)}  ${it.orderId}  ${it.buyerEmail}  ¥${it.amount} → 返 ¥${it.commission}`);
+    }
+    say(`   待结算 ¥${g.pending}${showAll ? `  已结算 ¥${g.settled}` : ""}`);
+    total += g.pending;
   }
-  console.log(`   待结算 ¥${g.pending}${showAll ? `  已结算 ¥${g.settled}` : ""}`);
-  total += g.pending;
+  say(`\n💰 本期应付合计：¥${total}`);
+  say(`转账后：node scripts/settle-referrals.mjs --settle-ref <推荐码>  或  --settle <orderId>...`);
 }
-console.log(`\n💰 本期应付合计：¥${total}`);
-console.log(`转账后：node scripts/settle-referrals.mjs --settle-ref <推荐码>  或  --settle <orderId>...`);
+
+// ── 月结提醒邮件（GitHub Actions 每月 1 号触发） ──
+if (wantEmail) {
+  const RESEND = process.env.RESEND_API_KEY, TO = process.env.ALERT_EMAIL;
+  if (!RESEND || !TO) { console.error("⚠️ 缺 RESEND_API_KEY / ALERT_EMAIL，跳过发信"); process.exit(0); }
+  const month = new Date(Date.now() - 24 * 3600 * 1000).toISOString().slice(0, 7); // 1 号跑，报上个月
+  const subject = total > 0
+    ? `💰 GoSail Club 推荐费用月结（${month}）：待付 ¥${total}，${groups.size} 位推荐人`
+    : `GoSail Club 推荐费用月结（${month}）：本月无待结算`;
+  const html = `<pre style="font:13px/1.6 -apple-system,Menlo,monospace;white-space:pre-wrap">${outLines.join("\n").replace(/</g, "&lt;")}</pre>
+<p style="color:#666;font-size:12px">按上面的微信号逐个转账后，在本地跑：<code>node scripts/settle-referrals.mjs --settle-ref &lt;推荐码&gt;</code> 标记已结，会员中心会同步显示。</p>`;
+  const body = JSON.stringify({ from: "GoSail Club <gosail_club@jasonzhu.ai>", to: [TO], subject, html });
+  const r = curl(["-X", "POST", "https://api.resend.com/emails", "-H", `Authorization: Bearer ${RESEND}`, "-H", "Content-Type: application/json", "-d", body]);
+  console.log("📧 已发送月结提醒:", r.slice(0, 120));
+}
