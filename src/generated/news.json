@@ -1,5 +1,98 @@
 [
   {
+    "slug": "2026-08-17",
+    "date": "2026-08-17",
+    "title": "AI 快讯 · 8月17日",
+    "items": [
+      {
+        "title": "Stripe 拟 70 亿美元收购 AI 网关独角兽 OpenRouter",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/16/stripe-will-reportedly-acquire-ai-gateway-startup-openrouter-for-7b/",
+        "summary": "据报道 Stripe 正洽谈以超 70 亿美元收购 AI 模型网关创业公司 OpenRouter。OpenRouter CEO 此前将公司定位为「AI 界的 Stripe」，如今被 Stripe 本尊纳入麾下颇具戏剧性。此举意味着支付巨头正式押注 AI 基础设施，AI 调用计费与路由将可能深度整合进 Stripe 生态。",
+        "titleEn": "Stripe reportedly acquiring AI gateway OpenRouter for $7B+",
+        "summaryEn": "Stripe is reportedly in talks to acquire AI model gateway startup OpenRouter for over $7 billion. OpenRouter, which positions itself as 'Stripe for AI,' would bring AI routing and billing infrastructure directly into Stripe's ecosystem — a major signal that payments giants are moving aggressively into AI infrastructure."
+      },
+      {
+        "title": "Anthropic Mode 2 不对外发布，内部专攻生物/物理/医学难题",
+        "source": "X/@bindureddy",
+        "category": "AI 工具动态",
+        "url": "https://x.com/bindureddy",
+        "summary": "Anthropic 明确选择不发布下一代模型 Mythos 的 Mode 2，而是将其用于内部攻克生物学、物理学和医学难题。这与 OpenAI 即将公开发布 GPT-6 Astra 的策略形成鲜明对比，折射出两家顶级 AI 公司在「民主化 vs. 定向突破」路线上的根本分歧。",
+        "titleEn": "Anthropic's Mythos Mode 2 stays internal, targeting science breakthroughs",
+        "summaryEn": "Anthropic has deliberately chosen not to release Mode 2 of its Mythos model externally, instead deploying it internally on hard problems in biology, physics, and medicine. The move stands in direct contrast to OpenAI's upcoming public Astra launch, highlighting a fundamental strategic divide between the two frontier AI labs."
+      },
+      {
+        "title": "Cursor 官方插件仓库上线：主流工具框架一键接入",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/cursor/plugins",
+        "summary": "Cursor 开源官方插件规范及首批插件，每个插件为独立目录并包含标准 plugin.json 清单，覆盖主流开发工具、框架和 SaaS 产品。这是继 SpaceX 收购后 Cursor 生态建设的重要动作，标准化的插件体系将大幅降低第三方接入门槛，加速 AI 编码 Agent 工具链扩展。",
+        "titleEn": "Cursor launches official plugins repo for popular dev tools and frameworks",
+        "summaryEn": "Cursor has published an official plugin specification and initial plugins for popular developer tools and frameworks on GitHub. Each plugin follows a standardized manifest format, making third-party integrations much easier. This is a significant ecosystem move post-SpaceX acquisition, signaling Cursor's push toward a more extensible agent toolchain."
+      },
+      {
+        "title": "为 Claude Code 打造的 29 种编辑图表库：告别 Mermaid 烂图",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/cathrynlavery/diagram-design",
+        "summary": "diagram-design 提供 29 种编辑级图表类型，以自包含 HTML+SVG 实现，无阴影、无 Mermaid 依赖，可作为 Claude Code、Codex 和 Pi 的 Agent Skill 直接调用。2.3 版新增语义系统模式与无障碍动效支持，解决了 AI 生成图表「好看不好用」的痛点，设计师终于不会皱眉了。",
+        "titleEn": "29 editorial diagram types as a Claude Code skill — no Mermaid slop",
+        "summaryEn": "diagram-design offers 29 editorial diagram types as a standalone Claude Code skill — pure HTML+SVG, no shadows, no Mermaid dependency. Version 2.3 adds semantic system patterns and accessible motion. It directly addresses the pervasive problem of AI-generated diagrams that look terrible, and works with Claude Code, Codex, and Pi."
+      },
+      {
+        "title": "Anthropic CEO：AI 反弹本质是「信任危机」，非技术问题",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/16/anthropic-ceo-says-ai-backlash-is-fundamentally-a-crisis-of-trust/",
+        "summary": "Dario Amodei 回应外界对 Anthropic 悲观叙事的批评，明确指出当前 AI 遭遇的公众抵制，根源不在技术本身，而在信任缺失。这与昨日「AI Slop 反弹」趋势报道形成呼应，也预示着头部 AI 公司将不得不在产品之外投入更多资源修复公众信任。",
+        "titleEn": "Anthropic CEO: AI backlash is fundamentally a crisis of trust, not technology",
+        "summaryEn": "Anthropic CEO Dario Amodei argues that the growing public backlash against AI is 'fundamentally a crisis of trust,' not a technical problem. He pushes back against characterizations of his outlook as overly pessimistic, signaling that top AI labs must now invest as much in trust-building as in capability development."
+      },
+      {
+        "title": "Grok 被指用于儿童照片违规生成，AI 安全监管压力再升级",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/15/woman-claims-her-stepfather-used-grok-to-transform-childhood-photo-into-explicit-imagery/",
+        "summary": "一名女性指控其继父利用 xAI 的 Grok 将其童年照片转换为不雅图像。此案直接指向 AI 图像生成工具在内容安全防护上的严重漏洞，也将进一步推动监管机构对生成式 AI 的合规审查，对业内所有图像生成产品均构成警示。",
+        "titleEn": "Grok accused of generating CSAM from childhood photo, AI safety scrutiny intensifies",
+        "summaryEn": "A woman claims her stepfather used xAI's Grok to transform her childhood photo into explicit imagery, highlighting a critical content safety failure in AI image generation. The case is set to intensify regulatory scrutiny across the generative AI industry and serves as a stark warning for all image generation products."
+      },
+      {
+        "title": "上下文匹配蒸馏：解决自回归视频生成的因果错位难题",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2608.13391",
+        "summary": "现有视频生成蒸馏方法用「双向教师」监督「因果学生」，导致训练时上下文与推理时严重错位，生成质量和可控性双双下降。这篇论文提出上下文匹配蒸馏（CMD），强制教师和学生使用相同的历史帧，对需要低延迟、实时可控视频生成的开发者而言，是落地交互式视频 Agent 的关键技术突破。",
+        "titleEn": "Context-Matched Distillation fixes causal mismatch in autoregressive video generation",
+        "summaryEn": "Existing video distillation pipelines supervise causal student models using bidirectional teachers, causing a context mismatch that degrades quality and controllability. Context-Matched Distillation (CMD) forces teacher and student to share identical historical context, a critical fix for developers building low-latency, interactively controllable video generation applications."
+      },
+      {
+        "title": "知识编辑新范式：让 LLM 无需重训即可精准更新复杂非结构化知识",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2608.11660",
+        "summary": "LLM 训练于静态语料，知识快速过时是企业部署的核心痛点。这篇论文提出混合策略自编辑（HPSE），支持用自由格式文本段落一次性更新多条相关事实，同时不影响模型其他知识。对需要保持知识新鲜度的企业 AI 产品开发者而言，这条路比微调更轻量、更精准。",
+        "titleEn": "Hybrid-Policy Self-Editing enables precise unstructured knowledge updates in LLMs without retraining",
+        "summaryEn": "Large language models trained on static data go stale fast — a key enterprise pain point. Hybrid-Policy Self-Editing (HPSE) enables updating multiple related facts at once using free-form text passages, without touching unrelated knowledge. For developers building enterprise AI products that need fresh, accurate knowledge, this is a lighter and more precise alternative to fine-tuning."
+      }
+    ],
+    "funding": [
+      {
+        "company": "Accel India Fund",
+        "url": "https://techcrunch.com/2026/08/11/accel-closes-oversubscribed-550m-india-fund-within-weeks-19-months-after-its-last/",
+        "round": "Fund Close",
+        "amount": "$550M",
+        "valuation": "",
+        "investors": "Accel",
+        "pitch": "Accel 超额完成印度专项基金募集，距上轮仅 19 个月，大量资金将流向印度 AI 与科技创业生态。"
+      }
+    ],
+    "jasonSays": "Stripe 收购 OpenRouter 是今天最值得反复咀嚼的信号——当「AI 的 Stripe」被 Stripe 本身买走，意味着 AI 基础设施的入口争夺已经进入传统巨头亲自下场的阶段，留给创业公司的窗口期正在快速收窄。",
+    "jasonSaysEn": "Stripe acquiring OpenRouter — literally 'Stripe for AI' — signals that the window for AI infrastructure startups is closing fast: the incumbents are done watching and are buying their way in.",
+    "filename": "2026-08-17.md"
+  },
+  {
     "slug": "2026-08-16",
     "date": "2026-08-16",
     "title": "AI 快讯 · 8月16日",
@@ -79,7 +172,8 @@
     ],
     "jasonSays": "今天最炸裂的一条：Cursor 被 SpaceX 正式收了。一个造火箭的公司拥有了最多开发者每天离不开的编码工具——这到底是 Elon 在布什么局，还是 Cursor 团队找到了最安全的避风港？接下来的产品走向，值得每个重度用户盯紧。",
     "jasonSaysEn": "The wildest news today: SpaceX officially owns Cursor now. A rocket company controlling the coding tool millions of developers use daily — whether this is Elon playing a long game or Cursor finding safe harbor, every power user should watch the product roadmap very closely from here.",
-    "filename": "2026-08-16.md"
+    "filename": "2026-08-16.md",
+    "coverImage": "/news/2026-08-16.png"
   },
   {
     "slug": "2026-08-15",
