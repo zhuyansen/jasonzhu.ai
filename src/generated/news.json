@@ -1,5 +1,87 @@
 [
   {
+    "slug": "2026-08-18",
+    "date": "2026-08-18",
+    "title": "AI 快讯 · 8月18日",
+    "items": [
+      {
+        "title": "OpenAI 发布网络安全防御白皮书：AI 正在重塑攻防格局",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/the-defenders-window",
+        "summary": "OpenAI 发布《防御者窗口》报告，系统阐述 AI 如何同时增强攻击者与防御者的能力，并提出安全团队当下可落地的防御策略。在 AI 加速渗透企业的背景下，这份报告对安全团队和开发者都具有直接参考价值。",
+        "titleEn": "OpenAI Publishes Cybersecurity Defense Framework for AI Era",
+        "summaryEn": "OpenAI released 'The Defender's Window,' a cybersecurity framework detailing how AI reshapes both attack and defense capabilities, with actionable strategies for security teams. As AI deepens enterprise penetration, this is a must-read for developers and security practitioners alike."
+      },
+      {
+        "title": "Groq 完成 3.5 亿美元融资：从 AI 芯片商正式转型 Neocloud",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/17/groq-raises-350m-to-fuel-its-pivot-from-ai-chips-to-neocloud/",
+        "summary": "Groq 完成 3.5 亿美元融资，估值 35 亿美元，正式宣告从自研 AI 芯片转型为 Neocloud 服务商，并扩大以 Nvidia GPU 为基础的数据中心规模。这一转型意味着 Groq 放弃硬件差异化路线，转而加入算力云竞争赛道，对 AI 推理市场格局影响不容小觑。",
+        "titleEn": "Groq Raises $350M at $3.5B Valuation, Pivots to Neocloud",
+        "summaryEn": "Groq secured $350M at a $3.5B valuation, officially pivoting from custom AI chips to a neocloud model powered by Nvidia GPUs. The move signals Groq abandoning its hardware differentiation strategy to compete directly in the AI inference cloud market."
+      },
+      {
+        "title": "Nvidia 向 SoftBank 数据中心开发商投资 15 亿美元，锁定 OpenAI 算力订单",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/17/nvidia-investing-1-5b-in-softbank-data-center-developer-behind-openai-project/",
+        "summary": "Nvidia 宣布向 SoftBank 旗下数据中心开发商投资 15 亿美元，作为交换条件，该开发商将为 OpenAI 数据中心项目部署 Nvidia 芯片。这笔投资本质上是 Nvidia 用资本锁定下游算力订单，进一步巩固其在 AI 基础设施生态中的垄断地位。",
+        "titleEn": "Nvidia Invests $1.5B in SoftBank Data Center Dev Powering OpenAI",
+        "summaryEn": "Nvidia is investing $1.5B in SoftBank's data center developer to guarantee its chips power an OpenAI data center. The deal is effectively Nvidia using capital to lock in downstream AI infrastructure orders, cementing its ecosystem dominance."
+      },
+      {
+        "title": "AI 自动化创业公司 Relay 关闭，团队并入 Google Chrome",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/17/ai-automation-startup-relay-shuts-down-staff-joins-googles-chrome-team/",
+        "summary": "AI 自动化工具 Relay 宣告关闭，创始人 Jacob Bank 率团队加入 Google Chrome 部门，并透露将推动 Chrome 与 AI 深度整合以帮助用户完成工作任务。这是近期 AI Acqui-hire 浪潮的又一案例，也预示 Chrome 将迎来更激进的 AI 功能布局。",
+        "titleEn": "AI Automation Startup Relay Shuts Down, Team Joins Google Chrome",
+        "summaryEn": "AI automation startup Relay has shut down, with founder Jacob Bank and staff joining Google's Chrome team. Bank hinted at ambitious plans to integrate AI into Chrome for productivity tasks, signaling another wave of AI acqui-hires reshaping Big Tech's product roadmap."
+      },
+      {
+        "title": "语音 AI 工具 Wispr 完成 2.8 亿美元融资，估值 20 亿美元扩入会议场景",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/17/wispr-raises-280m-at-2b-valuation-as-it-looks-beyond-dictation/",
+        "summary": "语音 AI 工具 Wispr 完成 2.8 亿美元融资，估值达 20 亿美元。公司正在从单一听写功能扩展至会议记录等更广泛场景，推出新版会议笔记工具。语音交互赛道正在从效率工具向全流程会议 AI 演进，值得关注。",
+        "titleEn": "Voice AI Tool Wispr Raises $280M at $2B Valuation, Expands to Meetings",
+        "summaryEn": "Wispr raised $280M at a $2B valuation, expanding beyond dictation into meeting productivity with a new note-taker tool. The move signals a broader shift in voice AI from single-feature tools to full-workflow meeting assistants."
+      },
+      {
+        "title": "推理模型「看起来更像在思考」≠「答对率更高」：Behavioral Lift 量化了这个差距",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2608.13760",
+        "summary": "研究者提出「Behavioral Lift」指标，通过分析 15 个模型的推理轨迹发现：推理训练虽然让模型的思考过程看起来更「深思熟虑」，但这些行为与最终答对率的关联远比想象中弱。对开发者的实际意义：思维链越长不等于越可靠，评估推理模型要看行为是否真正驱动了正确结论，而非表面的「思考感」。",
+        "titleEn": "Reasoning Models Look Deliberative, But Don't Always Reason Correctly",
+        "summaryEn": "Researchers introduce 'Behavioral Lift' to measure whether reasoning behaviors actually drive correct answers across 15 models. Key finding: reasoning-oriented training makes chains-of-thought look more deliberative but doesn't always amplify behaviors tied to correctness—longer thinking ≠ more reliable output."
+      },
+      {
+        "title": "大模型内部自发涌现「模块化认知」：与人脑功能分区惊人相似",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2608.13567",
+        "summary": "研究发现大型语言模型在训练过程中会自发形成类似人脑的功能模块划分——语言、逻辑推理、心智推理、物理推理各由不同区域负责。这一发现表明模块化可能是智能系统的普遍原则而非人类独有，对 AI 可解释性与 Agent 架构设计均有重要启示。",
+        "titleEn": "LLMs Spontaneously Develop Brain-Like Modular Cognitive Architecture",
+        "summaryEn": "A new study finds that LLMs spontaneously develop modular cognitive organization resembling the human brain—distinct networks emerge for language, logical reasoning, theory of mind, and physical reasoning. This suggests modularity may be a universal principle of intelligence, with major implications for AI interpretability and agent architecture."
+      },
+      {
+        "title": "Mimir v1：10 亿参数用全合规数据训练，丹麦语 SOTA 开源模型",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2608.13517",
+        "summary": "Mimir v1 是一个仅用合法授权数据从头训练的 10 亿参数模型，基于 HRM 分层推理架构，在英语任务上表现与同量级模型持平，并在丹麦语上达到新 SOTA。对独立开发者而言，这是一个可以无顾虑商用、无版权风险的开源基础模型选项。",
+        "titleEn": "Mimir v1: 1B-Param Open Model Trained Only on Permissible Data, Achieves Danish SOTA",
+        "summaryEn": "Mimir v1 is a 1B-parameter model trained entirely on permissible data using the Hierarchical Reasoning Model architecture, achieving competitive English performance and a new Danish SOTA. For developers worried about training data legality, it offers a fully auditable, commercially safe open-source foundation model."
+      }
+    ],
+    "jasonSays": "今天最值得警醒的是那篇「推理行为 ≠ 正确率」的论文——我们在为思维链叫好的同时，模型可能只是在表演思考。评估 AI 推理能力，别被长篇大论的 CoT 骗了，看结果。",
+    "jasonSaysEn": "Today's most sobering finding: reasoning models may just be performing deliberation, not actually reasoning better—don't be fooled by long chain-of-thought traces, always measure behavioral lift, not trace length.",
+    "filename": "2026-08-18.md"
+  },
+  {
     "slug": "2026-08-17",
     "date": "2026-08-17",
     "title": "AI 快讯 · 8月17日",
@@ -90,7 +172,8 @@
     ],
     "jasonSays": "Stripe 收购 OpenRouter 是今天最值得反复咀嚼的信号——当「AI 的 Stripe」被 Stripe 本身买走，意味着 AI 基础设施的入口争夺已经进入传统巨头亲自下场的阶段，留给创业公司的窗口期正在快速收窄。",
     "jasonSaysEn": "Stripe acquiring OpenRouter — literally 'Stripe for AI' — signals that the window for AI infrastructure startups is closing fast: the incumbents are done watching and are buying their way in.",
-    "filename": "2026-08-17.md"
+    "filename": "2026-08-17.md",
+    "coverImage": "/news/2026-08-17.png"
   },
   {
     "slug": "2026-08-16",
