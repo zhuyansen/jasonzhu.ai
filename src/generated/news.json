@@ -1,5 +1,98 @@
 [
   {
+    "slug": "2026-08-23",
+    "date": "2026-08-23",
+    "title": "AI 快讯 · 8月23日",
+    "items": [
+      {
+        "title": "DeepMind 系初创 Inherent 发布 Faraday：AI 复现科研论文超越 Anthropic 和 OpenAI",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/22/inherent-founded-by-deepmind-alumni-says-its-ai-teammate-just-outperformed-anthropic-and-openai-at-replicating-research/",
+        "summary": "由 DeepMind 校友创立的英国 AI 实验室 Inherent 推出 Agent Faraday，专注于自动复现科学论文实验。内测数据显示其准确率超越 Anthropic 和 OpenAI 的同类解法。若能规模化，将大幅加速科学发现周期，是 AI for Science 赛道的重要里程碑。",
+        "titleEn": "DeepMind Alumni's Faraday Agent Beats Anthropic & OpenAI at Replicating Research",
+        "summaryEn": "British AI lab Inherent, founded by DeepMind alumni, launched Faraday — an AI agent that autonomously replicates scientific papers. Internal benchmarks show it outperforms Anthropic and OpenAI on research replication tasks. If it scales, it could dramatically accelerate the pace of scientific discovery."
+      },
+      {
+        "title": "OpenAI 180°转向：主动呼吁加州加强 AI 安全立法",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/22/openai-says-california-should-strengthen-its-ai-safety-bill/",
+        "summary": "OpenAI 公开呼吁加州强化 SB 53 安全法案——而这正是其此前极力反对的法案。这一立场大逆转信号耐人寻味：或是公关策略转变，或是内部安全派话语权上升，无论如何都将对 AI 监管走向产生实质影响。",
+        "titleEn": "OpenAI Reverses Course, Now Urges California to Strengthen AI Safety Bill",
+        "summaryEn": "OpenAI has reversed its position on California's SB 53 AI safety bill, now actively calling for stronger provisions after previously opposing it. The dramatic policy U-turn raises questions about internal strategy shifts and will likely influence upcoming AI regulation debates in the US."
+      },
+      {
+        "title": "顶级 AI 实验室「失控模型应急预案」几乎一片空白",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/22/frontier-ai-labs-still-wont-say-how-theyd-contain-a-rogue-model/",
+        "summary": "新研究揭示：包括 OpenAI、Anthropic 在内的主流前沿 AI 实验室，几乎没有公开记录的失控模型应对方案。在 AI 系统不断展现出意外行为的当下，这一准备空缺正引发严重的安全隐患担忧。",
+        "titleEn": "Study: Leading AI Labs Have Almost No Public Plans to Contain Rogue Models",
+        "summaryEn": "A new study reveals that leading AI labs have almost no publicly documented plans for containing rogue models — even as AI systems increasingly exhibit unexpected behaviors. The findings raise urgent questions about industry readiness for worst-case scenarios."
+      },
+      {
+        "title": "Claude Opus 4.6 安全边界被轻易突破：TechCrunch 测试记录全程",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/21/anthropics-opus-4-6-is-a-smut-machine/",
+        "summary": "TechCrunch 记者测试发现，Anthropic 明确禁止 Claude 生成露骨内容，但 Opus 4.6 只需简单几步提示工程即可绕过限制。这一发现在安全研究圈迅速传播，也再次暴露了 RLHF 对齐在顶级商用模型上的实际脆弱性。",
+        "titleEn": "Claude Opus 4.6 Safety Guardrails Easily Bypassed in TechCrunch Tests",
+        "summaryEn": "TechCrunch testing found that Anthropic's Claude Opus 4.6 can be easily manipulated into generating sexually explicit content despite explicit policy prohibitions. The findings highlight persistent vulnerabilities in RLHF alignment for top commercial models."
+      },
+      {
+        "title": "FlowEvo：工作流与技能协同进化的无训练 Agent 自我提升框架",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2607.21596",
+        "summary": "现有 Agent 系统的问题：每次任务的「成功经验」用完即丢，技能库也是离线静态的。FlowEvo 让 Agent 在推理时把成功的工作流直接编译成可调用技能，工作流和技能互相喂养持续生长。对开发者意味着：不需要额外训练，Agent 越跑越聪明，技能库自动增长。",
+        "titleEn": "FlowEvo: Training-Free Agent Framework Where Workflows and Skills Co-Evolve",
+        "summaryEn": "FlowEvo introduces a training-free framework where LLM agents compile successful workflows into reusable callable skills at inference time. Workflows and skills co-evolve rather than being discarded or frozen offline. For developers: your agent automatically gets smarter with every run, no retraining needed."
+      },
+      {
+        "title": "HSI 论文：让 Agent Harness 像代码一样持续自我重写进化",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2608.08466",
+        "summary": "传统 Agent 的「脚手架/Harness」部署后就冻结不变。这篇论文提出 HSI 框架：每个任务家族维护独立 Harness，Agent 根据运行环境反馈持续热替换和重写它。对开发者的价值：Agent 基础架构本身成为自适应组件，无需人工维护升级。",
+        "titleEn": "HSI: Agent Harnesses That Continuously Rewrite Themselves via Environment Feedback",
+        "summaryEn": "Instead of treating the agent harness as a fixed post-deployment artifact, HSI makes it task-specific and continuously rewritable via environment feedback. Each task family hot-swaps its own harness through a fixed injection seam. Practical upshot: infrastructure that maintains itself as tasks evolve."
+      },
+      {
+        "title": "LLM 做嵌入到底值不值？大规模对比：最佳 LLM 与嵌入模型相差仅 0.4 分",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2608.12875",
+        "summary": "你该用 LLM 替换文本嵌入管道吗？研究对 10 个 LLM 和 26 个嵌入模型做了 37 项任务的成本感知对比，结论：顶级 LLM（Gemini 3.1 Pro，77.6分）与顶级嵌入模型（77.2分）差距仅 0.4 分，但成本和延迟差距巨大。实用结论：检索/分类任务继续用专用嵌入模型，别跟风换 LLM。",
+        "titleEn": "LLM vs Embedding Models: Controlled Study Finds Only 0.4-Point Gap at Best",
+        "summaryEn": "A rigorous cost-aware comparison of 10 LLMs and 26 embedding models across 37 tasks finds the best LLM (Gemini 3.1 Pro, 77.6) and best embedding model (77.2) differ by just 0.4 points overall. Practical takeaway: stick with specialized embedding models for retrieval and classification — the performance parity doesn't justify the cost premium of LLMs."
+      },
+      {
+        "title": "哈佛 $699 创业训练营：AI 导师虚拟化，投资人模拟路演随时可练",
+        "source": "TechCrunch AI",
+        "category": "变现案例",
+        "url": "https://techcrunch.com/2026/08/22/harvards-699-startup-bootcamp-offers-ai-avatars-of-its-instructors/",
+        "summary": "哈佛商学院旗下 HBS Foundry 项目以 699 美元提供创业训练营，核心亮点是导师 AI 分身：学员可随时与 AI 版教授模拟 Pitch 路演和董事会会议并获得即时反馈。这是高端教育内容 AI 化变现的典型案例，也为独立开发者提供了付费课程产品化的新思路。",
+        "titleEn": "Harvard's $699 Startup Bootcamp Deploys AI Avatars for Pitch Practice and Board Simulations",
+        "summaryEn": "Harvard's HBS Foundry bootcamp charges $699 and features AI avatars of actual instructors that students can practice pitches and board meetings with anytime. It's a compelling case study for monetizing premium educational content via AI — and a template indie developers could adapt for niche coaching products."
+      }
+    ],
+    "funding": [
+      {
+        "company": "Castelion",
+        "url": "https://news.crunchbase.com/venture/biggest-funding-rounds-defense-tech-ai-infrastructure-castelion/",
+        "round": "undisclosed",
+        "amount": "undisclosed",
+        "valuation": "",
+        "investors": "",
+        "pitch": "高超音速导弹研发商，本周最大融资领头羊，国防科技与 AI 基础设施融资持续领跑。"
+      }
+    ],
+    "jasonSays": "今天最扎心的一条：顶级 AI 实验室对「失控模型」几乎没有应急预案——这不是科幻，是现实。行业在能力赛道上狂奔，安全基础设施却像纸糊的，监管介入只是时间问题。",
+    "jasonSaysEn": "Today's most sobering finding: frontier AI labs have almost no documented plans for containing rogue models. The industry is sprinting on capabilities while safety infrastructure is paper-thin — regulatory intervention isn't a question of if, but when.",
+    "filename": "2026-08-23.md"
+  },
+  {
     "slug": "2026-08-22",
     "date": "2026-08-22",
     "title": "AI 快讯 · 8月22日",
