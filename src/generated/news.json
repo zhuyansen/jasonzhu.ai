@@ -1,5 +1,98 @@
 [
   {
+    "slug": "2026-08-22",
+    "date": "2026-08-22",
+    "title": "AI 快讯 · 8月22日",
+    "items": [
+      {
+        "title": "Poolside 被 NVIDIA 以 120 亿美元「反向收购」：创始人留下拿 10 亿，员工带走 60 亿",
+        "source": "Latent Space",
+        "category": "AI 工具动态",
+        "url": "https://www.latent.space/p/ainews-poolside-gets-12b-reverse",
+        "summary": "NVIDIA 以 120 亿美元对 AI 编程公司 Poolside 实施「反向收购」：创始人留守拿 10 亿美元，员工团队带着 60 亿美元并入 NVIDIA，剩余资金用于扩建 7GW 级新型云基础设施。这笔交易标志着 AI 人才争夺战进入全新量级。",
+        "titleEn": "Poolside Gets $12B Reverse Acqui-hire to NVIDIA",
+        "summaryEn": "NVIDIA executes a $12B reverse acqui-hire of AI coding company Poolside: founders stay for $1B, employees move to NVIDIA for $6B, and the remaining funds scale a 7GW neocloud infrastructure. The deal marks an unprecedented escalation in the AI talent war."
+      },
+      {
+        "title": "智谱 CEO 唐杰：参数量已死，GLM 5.3 证明后训练才是新 Scaling Law",
+        "source": "Latent Space",
+        "category": "AI 工具动态",
+        "url": "https://www.latent.space/p/ainews-death-of-params-zai-ceo-jie",
+        "summary": "智谱（Z.ai）CEO 唐杰公开讨论 GLM 5.3 模型：不再追求更大参数量，转而押注后训练（post-training）作为新的 Scaling Law。这印证了一个行业共识——预训练红利见顶，RLHF、蒸馏、合成数据等后训练技术正成为各家模型拉开差距的关键。",
+        "titleEn": "Z.ai CEO: GLM 5.3 Proves Post-training Is the New Scaling Law",
+        "summaryEn": "Zhipu AI (Z.ai) CEO Jie Tang discusses GLM 5.3, arguing that parameter scaling is dead and post-training is the new scaling law. This aligns with the industry trend: pre-training gains are plateauing, and techniques like RLHF, distillation, and synthetic data are now the real differentiators."
+      },
+      {
+        "title": "Matt Pocock 开源 Claude Code Skills 合集登顶 GitHub Trending",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/mattpocock/skills",
+        "summary": "TypeScript 大神 Matt Pocock 把自己日常使用的 Claude Code Agent Skills 全部开源，包括 /wayfinder（绿地项目规划）、工程评审等多个实用技能。与 GSD/BMAD 等大框架不同，这些 Skills 小而可控，适合「真正的工程师」而非 vibe coding。",
+        "titleEn": "Matt Pocock's Claude Code Skills Repo Tops GitHub Trending",
+        "summaryEn": "TypeScript expert Matt Pocock open-sourced his daily Claude Code Agent Skills, including /wayfinder for greenfield project planning and engineering review. Unlike heavy frameworks like GSD/BMAD, these skills are small and adaptable for real engineering work."
+      },
+      {
+        "title": "Nvidia 研究发现：Agent 编排框架比底层模型更重要",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/21/nvidia-just-showed-that-the-harness-not-the-ai-model-is-now-the-real-hero/",
+        "summary": "Nvidia 最新研究表明，通过精心设计的编排框架（harness）和微调，即使是能力一般的 AI 模型也能在 Agent 任务中表现出色且不会失控。这对独立开发者意味着：与其追最强模型，不如花时间打磨你的 Agent 工作流。",
+        "titleEn": "Nvidia Research: The Harness Matters More Than the AI Model",
+        "summaryEn": "Nvidia research shows AI agents perform well through fine-tuning and a well-designed harness, even when the underlying model isn't top-tier. For indie developers, this means investing in your agent workflow may matter more than chasing the latest model."
+      },
+      {
+        "title": "OpenAI 推出 AI Futures 专栏：探讨 AI 如何重塑权力、治理与经济",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/introducing-ai-futures",
+        "summary": "OpenAI 正式推出 AI Futures 专栏，专门探讨变革性 AI 对权力结构、政府治理、经济体系和个人自由的深远影响。在全球各国加速 AI 监管立法的背景下，OpenAI 主动设置议题框架的意图值得关注。",
+        "titleEn": "OpenAI Launches AI Futures Blog on Governance and Power",
+        "summaryEn": "OpenAI launches AI Futures, a blog exploring how transformative AI could reshape power, governance, the economy, and individual freedom. As global AI regulation accelerates, OpenAI's move to proactively frame the discourse is worth watching."
+      },
+      {
+        "title": "Simile AI CEO 谈「模拟即 Scaling Law」：要为 80 亿人建数字孪生",
+        "source": "Latent Space",
+        "category": "AI 工具动态",
+        "url": "https://www.latent.space/p/simile",
+        "summary": "斯坦福「生成式智能体」论文作者 Joon Sung Park 创立的 Simile AI，正在将模拟（Simulation）打造成新的 Scaling Law——目标是为全球 80 亿人创建数字孪生。从学术探索到严肃商业，AI 模拟在市场营销、政策推演等领域的应用正在加速。",
+        "titleEn": "Simile AI: Simulation as the New Scaling Law for Digital Twins",
+        "summaryEn": "Simile AI CEO Joon Sung Park, author of the viral Generative Agents paper, is building digital twins of all 8 billion humans, positioning simulation as a new scaling law. From academic fun to serious business, AI simulation is accelerating in marketing and policy domains."
+      },
+      {
+        "title": "MoneyPrinterTurbo 登上 GitHub Trending：AI 一键生成短视频的开源方案",
+        "source": "GitHub Trending",
+        "category": "变现案例",
+        "url": "https://github.com/harry0703/MoneyPrinterTurbo",
+        "summary": "这个名字就很直接的开源项目登上 GitHub Trending：输入主题或关键词，自动生成脚本、匹配素材、添加字幕和背景音乐，合成高清短视频。对于想用 AI 批量生产内容的创作者来说，是一个可以直接拿来用的变现工具。",
+        "titleEn": "MoneyPrinterTurbo Trends on GitHub: One-Click AI Video Generation",
+        "summaryEn": "MoneyPrinterTurbo tops GitHub Trending: input a topic or keyword, and it automatically generates scripts, matches footage, adds subtitles and background music, and produces HD short videos. A ready-to-use monetization tool for creators looking to scale content with AI."
+      }
+    ],
+    "funding": [
+      {
+        "company": "Rillet",
+        "url": "https://techcrunch.com/2026/08/21/how-ai-accounting-startup-rillet-raised-100m-and-became-a-unicorn-in-48-hours/",
+        "round": "Series B",
+        "amount": "$100M",
+        "valuation": "$1B+",
+        "investors": "Iconiq、Sequoia 等",
+        "pitch": "AI 会计独角兽，48 小时内从董事会分享数据到融资 1 亿美元成为独角兽——增长数据好到投资人自己追着送钱"
+      },
+      {
+        "company": "Starcloud",
+        "url": "https://techcrunch.com/2026/08/21/starcloud-raises-200-million-for-orbital-data-centers-as-launch-options-dry-up/",
+        "round": "Growth",
+        "amount": "$250M",
+        "valuation": "",
+        "investors": "",
+        "pitch": "轨道数据中心初创，在发射资源紧缺的背景下融资 2.5 亿美元——把 AI 算力搬到太空的赛道正在加速"
+      }
+    ],
+    "jasonSays": "NVIDIA 花 120 亿收编 Poolside，说明 AI 人才的价值已经超过了大多数 AI 公司本身。与其焦虑模型能力，不如做好编排框架——Nvidia 自家研究也证明了这一点。",
+    "jasonSaysEn": "NVIDIA spending $12B to acqui-hire Poolside proves AI talent is now worth more than most AI companies. Instead of chasing model capabilities, build a better harness — Nvidia's own research confirms this.",
+    "filename": "2026-08-22.md"
+  },
+  {
     "slug": "2026-08-21",
     "date": "2026-08-21",
     "title": "AI 快讯 · 8月21日",
@@ -90,7 +183,8 @@
     ],
     "jasonSays": "今天最值得盯的是 SkillGate 这篇论文——Skills 库越来越大，但「选哪个 Skill」的 RL 信号根本不存在，这个结构性漏洞会成为 Agent 长任务可靠性的天花板，现在就该想清楚怎么绕过它。",
     "jasonSaysEn": "SkillGate is the sleeper hit today — as Skills libraries scale into the thousands, the structural inability of RL to train skill selection will become the hard ceiling on long-horizon agent reliability. Developers building Claude Code workflows should read this before that ceiling hits them.",
-    "filename": "2026-08-21.md"
+    "filename": "2026-08-21.md",
+    "coverImage": "/news/2026-08-21.png"
   },
   {
     "slug": "2026-08-20",

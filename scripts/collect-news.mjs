@@ -316,7 +316,7 @@ function getRecentFundingCompanies(days = 4) {
 
 // ─── Step 2: Claude 筛选 + 摘要 ─────────────────────
 
-async function curateWithClaude(rawItems) {
+function buildCurationPrompt(rawItems) {
   const itemsText = rawItems
     .map(
       (item, i) =>
@@ -394,6 +394,12 @@ ${itemsText}
 }
 
 只输出 JSON，不要其他内容。funding 数组如果当天没有合适的融资新闻就给空数组 []。`;
+  return prompt;
+}
+
+async function curateWithClaude(rawItems) {
+  const prompt = buildCurationPrompt(rawItems);
+
 
   // 重试机制：最多 6 次（aigocode 中转站不稳定，524 时拉长等待 + 第 2 次起关掉 thinking 降低上游耗时）
   const MAX_RETRIES = 6;
@@ -714,9 +720,21 @@ async function main() {
     return;
   }
 
+  // 手动模式 A：只采集，把原始 items + 给 Claude 的 prompt 落盘后退出。
+  // 断供应急：由人（或会话里的 Claude）离线完成筛选摘要，再用 INJECT_JSON 续跑。
+  if (process.env.DUMP_ITEMS) {
+    const dump = { date: TODAY, rawItems, prompt: buildCurationPrompt(rawItems) };
+    fs.writeFileSync(process.env.DUMP_ITEMS, JSON.stringify(dump, null, 1), "utf-8");
+    console.log(`📤 已导出 ${rawItems.length} 条原始 items + prompt 到 ${process.env.DUMP_ITEMS}`);
+    return;
+  }
+
   // Step 2: Claude 筛选
   console.log("\n🤖 Step 2: Claude 筛选 + 摘要...");
-  const digest = await curateWithClaude(rawItems);
+  // 手动模式 B：INJECT_JSON 指向人工完成的 digest JSON，跳过 API 调用，后续管线原样走
+  const digest = process.env.INJECT_JSON
+    ? JSON.parse(fs.readFileSync(process.env.INJECT_JSON, "utf-8"))
+    : await curateWithClaude(rawItems);
   console.log(`  筛选出 ${digest.items.length} 条快讯`);
   console.log(`  Jason 说: ${digest.jasonSays}`);
 
