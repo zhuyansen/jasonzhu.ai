@@ -1,5 +1,98 @@
 [
   {
+    "slug": "2026-08-24",
+    "date": "2026-08-24",
+    "title": "AI 快讯 · 8月24日",
+    "items": [
+      {
+        "title": "神秘 AI 模型 Ox Alpha 横空出世：身份成谜，社区陷入猜测狂欢",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/23/whos-behind-the-new-stealth-model-ox-alpha/",
+        "summary": "一个名为 Ox Alpha 的神秘 AI 模型突然出现，在互联网上引发大规模身份猜测热潮。没有官方背书、没有公司归属，却已引发圈内广泛关注。匿名发布 + 性能存疑的组合，正在成为 AI 圈新的注意力游戏玩法。",
+        "titleEn": "Mystery AI Model 'Ox Alpha' Sparks Wild Speculation Online",
+        "summaryEn": "A mysterious AI model called Ox Alpha has appeared without any clear origin or company backing, sending online communities into speculation overdrive. The stealth launch strategy—no official affiliation, pure hype—highlights how attention games are becoming their own marketing layer in AI."
+      },
+      {
+        "title": "ECC 登上 GitHub Trending：跨 Agent 平台的统一性能优化框架",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/affaan-m/ECC",
+        "summary": "ECC（Emergent Coding Core）是一个开源的 Agent 执行增强框架，覆盖 Claude Code、Codex、Opencode、Cursor 等主流编码 Agent，提供技能管理、本能反射、记忆系统和安全层。它的目标是成为跨 Agent 平台的「性能优化 OS」，已获 GitHub Trending 关注。",
+        "titleEn": "ECC: Unified Agent Harness Optimizer for Claude Code, Codex, Cursor and Beyond",
+        "summaryEn": "ECC is an open-source agent harness optimization system that works across Claude Code, Codex, Cursor, and Opencode, providing unified skills, memory, instinct layers, and security modules. Think of it as a cross-platform performance OS for coding agents—already trending on GitHub."
+      },
+      {
+        "title": "Superpowers：一套打通所有主流 Agent 的可组合 Skills 方法论",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/obra/superpowers",
+        "summary": "Superpowers 是一个开源的完整软件开发方法论框架，基于可组合 Skills 构建，兼容 Claude Code、Codex CLI/App、Cursor、Devin CLI、Gemini、Factory Droid 等几乎所有主流编码 Agent。不同于 GSD/BMAD 等方案，Superpowers 强调开发者保持对流程的控制权。",
+        "titleEn": "Superpowers: A Complete Agentic Skills Methodology for All Major Coding Agents",
+        "summaryEn": "Superpowers is an open-source composable skills framework supporting virtually every major coding agent—Claude Code, Codex, Cursor, Devin, Gemini. Unlike opinionated systems like GSD or BMAD, it keeps developers in control while providing reusable, adaptable skills for real-world software development."
+      },
+      {
+        "title": "AI 版权训练数据法律灰色地带：用版权书籍训练模型到底合不合法？",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/23/is-it-legal-to-train-ai-models-on-copyrighted-books-its-complicated/",
+        "summary": "TechCrunch 深度解析 AI 训练数据版权争议：数百万作者在毫不知情的情况下，其著作被用于训练正在威胁其生计的 AI 工具。文章梳理现行法律框架下的复杂性，涉及合理使用、Fair Learning 等核心争议，是当前 AI 行业最棘手的监管议题之一。",
+        "titleEn": "Training AI on Copyrighted Books: Legal? The Answer Is Messy",
+        "summaryEn": "A deep legal dive into whether training AI on copyrighted books is legal—the short answer is 'it's complicated.' Millions of authors unknowingly contributed to AI tools now threatening their livelihoods. The piece breaks down fair use arguments, ongoing litigation, and why courts haven't given a clean answer yet."
+      },
+      {
+        "title": "模拟即 Scaling Law：为何「差 10% 但快万倍」正在接管 AI 训练范式",
+        "source": "Latent Space",
+        "category": "AI 工具动态",
+        "url": "https://www.latent.space/p/ainews-10-worse-100x-cheaper-10000x",
+        "summary": "Latent Space 最新分析：模拟正在取代真实数据成为新 Scaling Law 的核心驱动力。「精度差 10%，成本低 100 倍，速度快 10000 倍」的模拟训练范式，正从游戏/机器人扩展至模型训练本身。RSI（递归自我改进）不再只是理论，模拟让它变得可行且廉价。",
+        "titleEn": "Simulation as Scaling Law: 10% Worse, 100x Cheaper, 10,000x Faster Wins",
+        "summaryEn": "Latent Space's analysis argues simulation is the new Scaling Law: accepting 10% accuracy loss unlocks 100x cost reduction and 10,000x speed gains. This isn't just for robotics anymore—it's reshaping how foundation models are trained, making Recursive Self-Improvement (RSI) practically viable and cheap."
+      },
+      {
+        "title": "TinyCast：14.6 万参数的零样本时序预测模型，击败多数大模型",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2608.15767",
+        "summary": "TinyCast 用仅 14.6 万参数实现了竞争力十足的零样本时序预测，核心思路是「周期性值得计算而非学习」。无 Attention 机制，用谱检测器找主周期 + 膨胀卷积编码器 + 块自回归分位解码器。对开发者意义：在边缘设备或低成本 API 场景下做时序预测，TinyCast 是值得认真考虑的轻量替代方案。",
+        "titleEn": "TinyCast: 146K-Parameter Zero-Shot Forecaster Beats Most Large Models",
+        "summaryEn": "TinyCast achieves competitive zero-shot time-series forecasting with just 146K parameters—no attention layers needed. It detects dominant cycles spectrally, folds context on their phase, then decodes probabilistic outputs. For developers: this is a serious lightweight alternative for edge deployments or cost-constrained forecasting pipelines where giant models are overkill."
+      },
+      {
+        "title": "QuoteBench：揭示 AI 编码 Agent 的隐形杀手——命令路径失败",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2608.13547",
+        "summary": "LLM 编码 Agent 生成的 Bash 命令经过序列化、包装、重解析后，执行结果的好坏无法区分是「模型生成错误」还是「传输层引入错误」。QuoteBench 用 56 个单次任务专门测量这个边界。对开发者重要：你的 Agent 评估分数可能在撒谎——真正的瓶颈藏在 harness 的解析层，不是模型本身。",
+        "titleEn": "QuoteBench: When Matched Scores Hide the Real Failure in Coding Agents",
+        "summaryEn": "QuoteBench reveals a critical blind spot: when LLM coding agents issue Bash commands, matched execution scores can't distinguish model errors from failures introduced by the harness's serialization pipeline. For developers building or evaluating coding agents, your benchmark score may be measuring the wrong thing—the transport layer is often the real culprit."
+      },
+      {
+        "title": "τ₀-VLA：世界模型引导的层级机器人基础模型，让机器人「想清楚再动」",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2608.16885",
+        "summary": "现有机器人视觉-语言-动作模型每步决策只做一次前向传播，难以处理复杂长时序任务。τ₀-VLA 引入世界模型引导的测试时计算，让高层子任务规划变成可扩展的推理问题——关键步骤可以「多想几遍」。对开发者意义：这是把 LLM 的「慢思考」能力移植到具身智能领域的重要进展。",
+        "titleEn": "τ₀-VLA: Hierarchical Robot Foundation Model That Thinks Before Acting",
+        "summaryEn": "Most robot VLA models make every decision in a single forward pass, failing on long-horizon tasks. τ₀-VLA introduces world-model-guided test-time computation, letting high-level subtask planning scale compute dynamically for hard decisions. This is essentially bringing 'slow thinking' (like o1/o3) to embodied AI—a significant architectural step forward."
+      }
+    ],
+    "funding": [
+      {
+        "company": "Tabs",
+        "url": "https://news.crunchbase.com/venture/ai-fintech-startup-tabs-founder-hussain/",
+        "round": "Growth",
+        "amount": "估值 $400M",
+        "valuation": "",
+        "investors": "",
+        "pitch": "AI 驱动的 Fintech 应付账款自动化平台，由人文学科背景创始人打造，估值已达 4 亿美元，是非技术背景创业者的典型成功案例。"
+      }
+    ],
+    "jasonSays": "今天最值得盯的信号：Skills 生态正在「标准化」——ECC、Superpowers、mattpocock/skills 同时登上 GitHub Trending，说明 Agent Harness 层的竞争格局正在快速形成，现在入场做这个生态位的工具，时机恰好。",
+    "jasonSaysEn": "Today's signal worth watching: the Skills ecosystem is standardizing fast—ECC, Superpowers, and mattpocock/skills all trending on GitHub simultaneously means the agent harness layer is becoming a real battleground. If you're building tooling for this layer, the timing is exactly right.",
+    "filename": "2026-08-24.md"
+  },
+  {
     "slug": "2026-08-23",
     "date": "2026-08-23",
     "title": "AI 快讯 · 8月23日",
@@ -90,7 +183,8 @@
     ],
     "jasonSays": "今天最扎心的一条：顶级 AI 实验室对「失控模型」几乎没有应急预案——这不是科幻，是现实。行业在能力赛道上狂奔，安全基础设施却像纸糊的，监管介入只是时间问题。",
     "jasonSaysEn": "Today's most sobering finding: frontier AI labs have almost no documented plans for containing rogue models. The industry is sprinting on capabilities while safety infrastructure is paper-thin — regulatory intervention isn't a question of if, but when.",
-    "filename": "2026-08-23.md"
+    "filename": "2026-08-23.md",
+    "coverImage": "/news/2026-08-23.png"
   },
   {
     "slug": "2026-08-22",
