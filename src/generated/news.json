@@ -1,5 +1,98 @@
 [
   {
+    "slug": "2026-08-25",
+    "date": "2026-08-25",
+    "title": "AI 快讯 · 8月25日",
+    "items": [
+      {
+        "title": "GPT-5.6 进驻 Kiro：专为开发者优化的高性价比编码模型",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/gpt-5-6-in-kiro",
+        "summary": "OpenAI 将 GPT-5.6 集成进 AI IDE Kiro，专注于规划、构建、代码审查与测试全流程，主打更高性价比。这是 OpenAI 针对开发者工具链的定向优化，而非通用对话模型，意味着 OpenAI 正在将不同规格模型精准下沉到具体垂直场景。",
+        "titleEn": "GPT-5.6 Lands in Kiro for Better Dev Price-Performance",
+        "summaryEn": "OpenAI integrates GPT-5.6 into its Kiro IDE, targeting plan-build-review-test workflows with better price-performance. This signals OpenAI's strategy of deploying task-specific model variants into vertical developer tooling rather than one-size-fits-all deployment."
+      },
+      {
+        "title": "OpenAI 全力押注 AI Agent：从工程师扩展到普通大众",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/24/openai-is-building-an-ai-agent-for-everything-will-everyone-use-them/",
+        "summary": "TechCrunch 深度报道 OpenAI 的 Agent 战略：从最初面向软件工程师的 Codex，扩张到试图让所有人都能使用 AI Agent 完成各类任务。这场押注的核心问题是：普通用户真的会用吗？回答这个问题将决定 OpenAI 下一个增长阶段的天花板。",
+        "titleEn": "OpenAI Bets Big on AI Agents for Everyone, Not Just Devs",
+        "summaryEn": "TechCrunch examines OpenAI's push to expand AI agents beyond developers to mainstream users. The central question: will everyday people actually adopt them? The answer will define OpenAI's next growth ceiling and the entire agentic computing market."
+      },
+      {
+        "title": "Hugging Face 传出 130 亿美元收购谈判：AI 开源圣地面临商业化抉择",
+        "source": "TC Venture",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/24/hugging-face-reportedly-in-talks-to-be-acquired-for-13b/",
+        "summary": "据报道 Hugging Face 正在接触潜在收购方，估值约 130 亿美元。但创始人对社区责任感强烈，出售是否真的会发生存疑。HuggingFace 是全球最大开源 AI 模型平台，一旦被巨头收购，将对整个开源 AI 生态产生深远影响。",
+        "titleEn": "Hugging Face in Acquisition Talks at $13B Valuation",
+        "summaryEn": "Hugging Face is reportedly fielding acquisition offers at ~$13B. Founders' strong sense of community responsibility casts doubt on a deal closing. As the world's largest open-source AI model hub, any acquisition would reshape the open-source AI ecosystem fundamentally."
+      },
+      {
+        "title": "Instinct AI 助手功能强大却隐私堪忧：全权代理的代价",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/24/instincts-powerful-ai-assistant-is-raising-privacy-and-security-concerns/",
+        "summary": "新 AI 助手 Instinct 早期测试者盛赞其能力，但其广泛的系统访问权限、模糊的服务条款和代理行动能力引发严重隐私与安全担忧。这个案例折射出 AI 助手「能力越强、风险越高」的核心张力，对所有在做 AI Agent 产品的开发者都是重要警示。",
+        "titleEn": "Instinct AI Assistant: Powerful But Raising Serious Privacy Alarms",
+        "summaryEn": "Early testers praise Instinct's AI assistant capabilities, but its sweeping system access, broad terms, and ability to act autonomously are raising privacy and security red flags. A cautionary case study for anyone building agentic AI products with deep OS-level integration."
+      },
+      {
+        "title": "Deno 团队发布 Dactyl：跑在你 ChatGPT 订阅上的 AI 应用构建器",
+        "source": "Hacker News",
+        "category": "AI 工具动态",
+        "url": "https://dactyl.dev/",
+        "summary": "Deno 团队推出 Dactyl，一个 AI 应用构建器，直接复用用户现有的 ChatGPT 订阅计划运行，无需额外 API 费用。对独立开发者而言，这种「借用订阅」模式既降低了构建成本，也是一种新颖的分发策略，值得关注。",
+        "titleEn": "Deno Team Launches Dactyl: AI App Builder Powered by Your ChatGPT Plan",
+        "summaryEn": "The Deno team releases Dactyl, an AI app builder that runs on users' existing ChatGPT subscription—no extra API costs. For indie developers, this 'borrow the subscription' model is both a cost-reduction strategy and a novel distribution angle worth watching."
+      },
+      {
+        "title": "AI-to-AI GitHub PR 代码审查：大规模实验揭示自动化代码审查边界",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://arxiv.org/abs/2608.21311",
+        "summary": "这篇论文系统研究了 AI Agent 对 GitHub Pull Request 进行代码审查的效果。对开发者的实际意义：自动化 PR 审查到底能替代多少人工？在哪些类型的问题上 AI 审查更可靠，哪些场景还得靠人？这对正在评估 Claude Code / Codex 等工具的团队有直接参考价值。",
+        "titleEn": "AI-to-AI Code Reviews on GitHub PRs: Large-Scale Study Results",
+        "summaryEn": "This paper systematically studies AI-to-AI code review on real GitHub pull requests. For devs evaluating Claude Code or Codex-style tools: it benchmarks where AI reviewers reliably catch issues vs. where human review remains essential—practical signal for teams building AI-assisted CI pipelines."
+      },
+      {
+        "title": "Hydra-0：用「像素动作流」统一世界模型与机器人控制",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2608.18077",
+        "summary": "Hydra-0 将机器人动作表示为像素运动流，以此作为统一的视觉接口，让同一个世界模型能跨不同机器人形态、任务和环境泛化。机器人运动误差降低 90.4%，物体运动误差降低 60.2%，还支持零样本组合。对 AI 机器人开发者而言，这是「一个模型控制所有机器人」方向的重要进展。",
+        "titleEn": "Hydra-0: Unified World Modeling and Robot Control via Action Flow",
+        "summaryEn": "Hydra-0 represents robot actions as pixel motion flows, creating a shared visual interface for a single world model to generalize across robot types, tasks, and environments. Achieves 90.4% lower robot-motion error, with zero-shot composition support—a significant step toward one model controlling all robots."
+      },
+      {
+        "title": "ParaTempo：用时序置信度动态剪枝并行推理，大幅降低 CoT 计算成本",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2608.16425",
+        "summary": "并行推理（多路 CoT）能提升准确性但计算爆炸。ParaTempo 通过「时序置信度」动态控制每条推理分支的深度和宽度，比依赖最终答案一致性或局部 token 置信度的老方法更精准。对需要部署大推理模型的开发者来说，这是降低推理成本的实用新思路。",
+        "titleEn": "ParaTempo: Temporal Confidence Cuts Parallel Reasoning Compute Cost",
+        "summaryEn": "Parallel chain-of-thought reasoning boosts accuracy but explodes compute. ParaTempo uses temporal confidence signals to dynamically prune reasoning branches—more precise than final-answer consensus or token-level confidence. Practical cost-reduction technique for teams deploying large reasoning models at scale."
+      }
+    ],
+    "funding": [
+      {
+        "company": "General Intuition",
+        "url": "https://techcrunch.com/2026/08/24/valor-point72-back-general-intuition-at-6b-valuation-as-ai-startup-pushes-into-robotics/",
+        "round": "Pre-money valuation round (in talks)",
+        "amount": "undisclosed",
+        "valuation": "$6B",
+        "investors": "Valor Ventures、Point72 Ventures、Seven Seven Six",
+        "pitch": "构建通用 AI Agent 空间移动基础模型，向机器人领域扩张，Valor、Point72 背书的 60 亿美元估值凸显具身智能赛道热度。"
+      }
+    ],
+    "jasonSays": "今天最值得细品的是 Hugging Face 的 130 亿收购传言——开源社区的「精神圣地」一旦被巨头吞并，那些依赖它的开发者和创业公司的护城河瞬间就变成了别人家的资产，这不是危言耸听。",
+    "jasonSaysEn": "The Hugging Face $13B acquisition rumor deserves serious attention—if the open-source community's spiritual home gets absorbed by a tech giant, every developer and startup that built their moat on top of it just handed that moat to someone else.",
+    "filename": "2026-08-25.md"
+  },
+  {
     "slug": "2026-08-24",
     "date": "2026-08-24",
     "title": "AI 快讯 · 8月24日",
@@ -90,7 +183,8 @@
     ],
     "jasonSays": "今天最值得盯的信号：Skills 生态正在「标准化」——ECC、Superpowers、mattpocock/skills 同时登上 GitHub Trending，说明 Agent Harness 层的竞争格局正在快速形成，现在入场做这个生态位的工具，时机恰好。",
     "jasonSaysEn": "Today's signal worth watching: the Skills ecosystem is standardizing fast—ECC, Superpowers, and mattpocock/skills all trending on GitHub simultaneously means the agent harness layer is becoming a real battleground. If you're building tooling for this layer, the timing is exactly right.",
-    "filename": "2026-08-24.md"
+    "filename": "2026-08-24.md",
+    "coverImage": "/news/2026-08-24.png"
   },
   {
     "slug": "2026-08-23",
