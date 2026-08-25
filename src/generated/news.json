@@ -1,5 +1,98 @@
 [
   {
+    "slug": "2026-08-26",
+    "date": "2026-08-26",
+    "title": "AI 快讯 · 8月26日",
+    "items": [
+      {
+        "title": "OpenAI 自研推理芯片 Jalapeño 首测：吞吐量与能效双双领先",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/25/openais-jalapeno-chip-is-built-for-fast-inference-at-scale-benchmarks-show/",
+        "summary": "OpenAI 自研推理芯片 Jalapeño 首次公开测试结果出炉。在 SemiAnalysis 的 InferenceX 基准上，Jalapeño 在每用户 token 数和每千瓦吞吐量两项指标上均超越当前最先进芯片。这意味着 OpenAI 有望摆脱对 Nvidia 的硬件依赖，大幅压缩推理成本，直接影响 API 定价。",
+        "titleEn": "OpenAI's Jalapeño Chip Tops Inference Benchmarks in Debut",
+        "summaryEn": "OpenAI's custom inference chip Jalapeño outperforms current state-of-the-art on both tokens-per-user and throughput-per-kilowatt in SemiAnalysis InferenceX benchmarks. This marks OpenAI's first serious step toward hardware independence from Nvidia, with direct implications for future API cost reductions."
+      },
+      {
+        "title": "Claude Cowork 跨界记忆上线：聊天上下文终于打通工作区",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/25/claude-cowork-finally-remembers-what-you-told-the-app-in-chat/",
+        "summary": "Anthropic 为 Claude 推出跨 Chat 与 Cowork 的共享记忆功能。此前用户每次切换界面都要重新介绍项目背景，现在 Claude 能在两个入口间共享偏好、项目信息和历史上下文。对于每天在 Claude 里处理多任务的重度用户，这是生产力的实质提升。",
+        "titleEn": "Claude Cowork Gets Shared Memory Across Chat and Workspace",
+        "summaryEn": "Anthropic has rolled out shared memory between Claude's chat interface and Cowork, eliminating the need to re-brief the AI every time you switch contexts. Users' project preferences and history now persist across both surfaces, a meaningful productivity upgrade for daily power users."
+      },
+      {
+        "title": "Keenable 出stealth：专为 AI Agent 构建的万亿级网页索引",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/25/accel-backed-keenable-is-indexing-the-web-for-ai-agents/",
+        "summary": "Accel 投资的 Keenable 完成 2600 万美元种子轮并正式亮相。与面向人类的搜索引擎不同，Keenable 构建的网页索引专门针对 AI Agent 的查询模式优化，解决 Agent 无法高效实时检索网页信息的核心痛点。随着 Agent 大爆发，底层搜索基础设施将成为关键卡点。",
+        "titleEn": "Keenable Exits Stealth with $26M to Index the Web for AI Agents",
+        "summaryEn": "Accel-backed Keenable exits stealth with a $26M seed round, building a massive web search index purpose-built for AI agents rather than humans. As agentic workflows explode, purpose-built retrieval infrastructure becomes a critical bottleneck—Keenable is betting on owning that layer."
+      },
+      {
+        "title": "Karpathy 经验结晶：一个 CLAUDE.md 文件让 Claude Code 少踩坑",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/multica-ai/andrej-karpathy-skills",
+        "summary": "GitHub Trending 热门项目：开发者将 Andrej Karpathy 对 LLM 编程缺陷的观察提炼成单一 CLAUDE.md 文件，可直接放入项目根目录。涵盖常见代码幻觉、重复逻辑、边界案例处理等问题的应对规则。作者同步开源了 Multica —— 一个管理编码 Agent 与可复用 Skills 的平台。",
+        "titleEn": "One CLAUDE.md File Distills Karpathy's LLM Coding Pitfall Wisdom",
+        "summaryEn": "A GitHub Trending project distills Andrej Karpathy's observations on LLM coding pitfalls into a single CLAUDE.md drop-in file for any project. Covers hallucination patterns, repetitive logic, and edge case failures. The author also open-sourced Multica, a platform for managing coding agents with reusable skills."
+      },
+      {
+        "title": "免费跑 Claude Code 的新姿势：50 个合规 Provider、每月 13 亿 Token",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/Alishahryar1/free-claude-code",
+        "summary": "开源项目 free-claude-code 整合了 50 个符合 ToS 的免费 Provider，让开发者无需付费订阅即可在终端、IDE 或手机端运行 Claude Code、Codex 等工具，每月可用 token 超 13 亿。支持语音输入，是穷游 Claude Code 的合规路线图。",
+        "titleEn": "Run Claude Code Free via 50 ToS-Friendly Providers — 1.3B Tokens/Month",
+        "summaryEn": "Open-source project free-claude-code aggregates 50 ToS-friendly providers, giving developers access to Claude Code, Codex, and more for free—over 1.3 billion tokens per month. Works in terminal, IDE, or mobile with voice support, making it a practical on-ramp for developers not ready to pay."
+      },
+      {
+        "title": "AutoResearch：两段式 AI 科研系统，主动抑制幻觉保证科学严谨性",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2608.17906",
+        "summary": "AutoResearch 将 AI 科研自动化拆成「想法生成」与「想法执行」两阶段，持续整合最新研究信号并通过实验验证闭环。对开发者的意义：这是目前少数认真解决「AI 跑完整个研究流程却产出幻觉结论」问题的系统设计，为构建可靠 AI Research Agent 提供了可复用的架构思路。",
+        "titleEn": "AutoResearch: Two-Stage AI Research System That Actively Suppresses Hallucination",
+        "summaryEn": "AutoResearch introduces a two-stage pipeline separating idea generation from idea execution, with continuous integration of emerging research signals and experimental verification loops. For developers building research agents, this is one of the more rigorous attempts to close the hallucination gap in end-to-end autonomous research workflows."
+      },
+      {
+        "title": "4-bit 量化模型性能崩塌怎么救？Quantization-Aware Healing 给出实用配方",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2608.20953",
+        "summary": "把大模型压缩到 4-bit 量化后，推理、数学、代码能力会明显下降。这篇论文提出「量化感知修复」方案，用软标签替代硬标签重新微调，解决了传统 QAT 收敛慢且容易过峰值崩溃的问题。对想在自有 GPU 上低成本部署 LLM 的开发者，这是一份接地气的工程配方。",
+        "titleEn": "Quantization-Aware Healing: Practical Recovery Recipe for 4-Bit Compressed LLMs",
+        "summaryEn": "Compressing LLMs to 4-bit quantization degrades reasoning, math, and coding enough to require a recovery stage. This paper proposes a soft-label healing recipe that outperforms standard QAT, which collapses past peak performance. A practical engineering fix for developers deploying compressed models on constrained hardware."
+      },
+      {
+        "title": "OpenAI 封禁俄罗斯虚假影响力行动：AI 被用于伪造以色列智库",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/disrupting-malicious-uses-of-ai-influence-campaign-russia",
+        "summary": "OpenAI 封禁了一批俄罗斯来源账号，这些账号利用 AI 工具伪造了一个虚假的以色列智库，并发布「主权指数」内容，系统性地赞扬俄罗斯、批评西方。这是 AI 被用于国家级信息战的最新案例，也再次验证了大模型在内容生产层面的双刃剑属性。",
+        "titleEn": "OpenAI Bans Russian Accounts Running AI-Powered Fake Think Tank Campaign",
+        "summaryEn": "OpenAI banned Russia-origin accounts that used AI to fabricate a fake Israel-based think tank and publish a 'sovereignty index' praising Russia while criticizing the West. The latest documented case of state-level AI-powered influence operations, highlighting the dual-use risks of generative content tools."
+      }
+    ],
+    "funding": [
+      {
+        "company": "Stability AI",
+        "url": "https://techcrunch.com/2026/08/25/stability-ai-maker-of-image-generator-stable-diffusion-raises-76-million-in-fresh-funding/",
+        "round": "Strategic",
+        "amount": "$76M",
+        "valuation": "",
+        "investors": "",
+        "pitch": "Stable Diffusion 母公司完成新一轮 7600 万美元融资，累计融资额升至 2.32 亿美元，试图在开源图像生成赛道重建竞争力。"
+      }
+    ],
+    "jasonSays": "今天最大的信号是 OpenAI 自研芯片 Jalapeño 跑赢了现有最好的推理芯片——这不只是技术秀肌肉，而是 OpenAI 真的在用垂直整合的方式重塑 AI 成本曲线，对所有依赖 API 定价做生意的开发者来说，这是个值得长期跟踪的变量。",
+    "jasonSaysEn": "The real signal today is Jalapeño beating current SOTA inference chips—this isn't just a tech flex, it's OpenAI vertically integrating its way to a fundamentally different cost curve, and every developer building on API pricing should be watching this closely.",
+    "filename": "2026-08-26.md"
+  },
+  {
     "slug": "2026-08-25",
     "date": "2026-08-25",
     "title": "AI 快讯 · 8月25日",
@@ -90,7 +183,8 @@
     ],
     "jasonSays": "今天最值得细品的是 Hugging Face 的 130 亿收购传言——开源社区的「精神圣地」一旦被巨头吞并，那些依赖它的开发者和创业公司的护城河瞬间就变成了别人家的资产，这不是危言耸听。",
     "jasonSaysEn": "The Hugging Face $13B acquisition rumor deserves serious attention—if the open-source community's spiritual home gets absorbed by a tech giant, every developer and startup that built their moat on top of it just handed that moat to someone else.",
-    "filename": "2026-08-25.md"
+    "filename": "2026-08-25.md",
+    "coverImage": "/news/2026-08-25.png"
   },
   {
     "slug": "2026-08-24",
