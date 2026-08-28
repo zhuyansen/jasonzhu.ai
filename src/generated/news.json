@@ -1,5 +1,98 @@
 [
   {
+    "slug": "2026-08-28",
+    "date": "2026-08-28",
+    "title": "AI 快讯 · 8月28日",
+    "items": [
+      {
+        "title": "Anthropic 发布硬件标准：AI Agent 开始接管物理世界",
+        "source": "Hacker News / Ars Technica",
+        "category": "AI 工具动态",
+        "url": "https://arstechnica.com/ai/2026/08/anthropics-new-hardware-standard-lets-ai-agents-control-the-physical-world/",
+        "summary": "Anthropic 推出新硬件标准，允许 AI Agent 直接与物理设备交互并进行控制。这标志着 AI 从纯软件世界向物理世界渗透的关键一步，也意味着 MCP 生态正在向机器人与硬件层延伸，对构建物联网 + AI 产品的开发者意义重大。",
+        "titleEn": "Anthropic's New Hardware Standard Lets AI Agents Control Physical World",
+        "summaryEn": "Anthropic has introduced a new hardware standard enabling AI agents to interface with and control physical devices. This marks a pivotal expansion of the MCP ecosystem into the physical world, with major implications for robotics, IoT, and hardware-AI product builders."
+      },
+      {
+        "title": "Archify：给 Claude Code/Cursor 装上「架构图生成」技能",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/tt-a1i/archify",
+        "summary": "Archify 是一个适配 Claude Code、Cursor、Codex CLI 等 AI 编码工具的 Agent Skill，可将代码库或系统描述自动转化为带动效的交互式架构图、时序图、数据流图，输出为自包含 HTML，可直接导出高清图。让「代码 → 文档」自动化迈出实质一步。",
+        "titleEn": "Archify: Agent Skill for Auto-Generating Interactive Architecture Diagrams",
+        "summaryEn": "Archify is an agent skill for Claude Code, Cursor, and Codex CLI that turns codebases or system descriptions into polished, interactive architecture diagrams rendered as self-contained HTML. Agents produce typed JSON IR; Archify compiles it deterministically — closing the gap between code and living documentation."
+      },
+      {
+        "title": "CaSKG：用因果技能图解决 Agent 技能检索难题",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2608.25500",
+        "summary": "随着 Agent 技能库越来越大，怎么高效找到「对的技能」成了难题。CaSKG 用反事实因果图来建模技能之间的依赖关系，比传统向量检索更准确地还原工作流上下文，同时控制 Context 长度。对构建复杂多步 Agent 系统的开发者来说，这是一套可直接借鉴的技能管理架构。",
+        "titleEn": "CaSKG: Counterfactual-Causal Skill Graphs for Scalable Agent Skill Retrieval",
+        "summaryEn": "As agent skill libraries grow, retrieval becomes the bottleneck. CaSKG uses counterfactual-causal graphs to model skill dependencies, recovering workflow context more accurately than vector search while keeping prompt costs low — a directly applicable architecture for developers building multi-step agent systems."
+      },
+      {
+        "title": "PILOT：让长程 Agent 在运行中实时自我优化",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2608.26530",
+        "summary": "现有 Agent 自我改进方法都在任务结束后才处理经验，无法实时纠偏。PILOT 提出「实时自我改进」框架：在长程任务执行过程中，Agent 可同时用新经验重定向当前运行并更新持久化脚手架。对需要长时间、多步骤执行的 AI 工作流开发者有直接参考价值。",
+        "titleEn": "PILOT: Live Self-Improvement for Long-Horizon Agents During Execution",
+        "summaryEn": "Most agent self-improvement methods only kick in after a task finishes. PILOT enables live self-improvement: agents use emerging experience to redirect the active run and update their persistent harness simultaneously — critical for developers building long-horizon workflows where mid-run course correction matters."
+      },
+      {
+        "title": "TTPO：无需标注数据，测试时动态优化模型推理策略",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2608.27448",
+        "summary": "传统后训练（RL/OPSD）依赖人工标注，而 TTPO 在测试时通过多数投票伪标签进行策略优化，并针对「错误投票污染教师信号」的不对称失效问题做了专项修复。开发者在没有标注预算时，也能在推理阶段持续提升模型数学推理能力。",
+        "titleEn": "TTPO: Test-Time Policy Optimization Without Ground-Truth Labels",
+        "summaryEn": "TTPO enables test-time policy optimization using majority-vote pseudo-labels instead of ground-truth annotations. It specifically addresses the asymmetric failure mode where incorrect votes corrupt the training signal — letting developers boost reasoning performance at inference time without any labeling budget."
+      },
+      {
+        "title": "Google AI Mode 升级：搜索框变身 AI 旅行代理",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/27/googles-ai-mode-can-now-track-flight-prices-help-book-hotels-and-more/",
+        "summary": "Google AI Mode 新增机票价格追踪、酒店预订、里程/积分查看等功能，正式从「找信息」进化为「帮你完成」的 AI 旅行代理模式。这是 Google 将搜索引擎向 Agent 化转型的重要信号，也对 OTA 平台和旅游垂类 AI 产品构成正面竞争压力。",
+        "titleEn": "Google AI Mode Now Tracks Flights, Books Hotels as an AI Travel Agent",
+        "summaryEn": "Google AI Mode now tracks flight prices, books hotels, and displays miles and rewards — shifting from an information-finder to an action-taker. This signals Google's serious push toward agentic search and puts direct competitive pressure on OTA platforms and travel-focused AI startups."
+      },
+      {
+        "title": "百家 AI 巨头联名：呼吁建立对抗「失控 AI」的网络安全防线",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/27/openai-anthropic-google-and-100-other-companies-call-for-action-to-defend-against-rogue-ai/",
+        "summary": "OpenAI、Anthropic、Google 等 100 余家企业联合发声，指出现有网络安全体系难以应对 AI 驱动的新一代威胁，并共同推动一个专门防御「失控 AI」的安全解决方案。这是 AI 行业首次如此大规模地将 AI 安全从学术讨论推向产业联合行动。",
+        "titleEn": "OpenAI, Anthropic, Google and 100+ Companies Unite Against Rogue AI Cyber Threats",
+        "summaryEn": "Over 100 major AI companies including OpenAI, Anthropic, and Google have jointly called out the inadequacy of current cybersecurity against AI-powered threats and are pushing a coordinated solution. This marks the industry's largest collective move to turn AI safety from academic debate into concerted action."
+      },
+      {
+        "title": "Hugging Face 推出 $399 开源鸭子机器人 Microduck",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/27/hugging-face-is-selling-a-cute-399-open-source-duck-robot-microduck/",
+        "summary": "Hugging Face CEO Clem Delangue 宣布推出售价 399 美元的开源机器人 Microduck，用户可通过强化学习「教」它新技能。这是 HF 在硬件+具身智能方向的最新布局，也呼应了 Anthropic 硬件标准发布，AI 开源社区正在向物理世界快速扩张。",
+        "titleEn": "Hugging Face Launches $399 Open-Source Robot Microduck with RL Teaching",
+        "summaryEn": "Hugging Face launched Microduck, a $399 open-source robot that users can teach new tricks via reinforcement learning. It's HF's latest move into embodied AI and physical hardware — echoing Anthropic's new hardware standard and signaling the open-source AI community's rapid expansion into the physical world."
+      }
+    ],
+    "funding": [
+      {
+        "company": "Socure",
+        "url": "https://news.crunchbase.com/venture/socure-raises-acquires-agentic-ai-startup-fravity/",
+        "round": "Strategic Growth + Acquisition",
+        "amount": "$156M",
+        "valuation": "$5.2B",
+        "investors": "",
+        "pitch": "身份验证与欺诈防御公司 Socure 完成 1.56 亿美元融资，并同步收购 Agentic AI 反欺诈初创公司 Fravity，将其整合为 RiskOS_Agents 模块，AI Agent 驱动的金融安全赛道热度持续升温。"
+      }
+    ],
+    "jasonSays": "今天最值得盯的是 Anthropic 硬件标准——MCP 已经从「接 API」进化到「控硬件」，AI Agent 的边界正在物理世界里重新画线，这不是 demo，是下一个产品机会的起跑线。",
+    "jasonSaysEn": "Today's sleeper hit is Anthropic's hardware standard — MCP has evolved from 'connecting APIs' to 'controlling physical devices.' The boundary of AI agents is being redrawn in the physical world, and this isn't a demo; it's the starting line for the next wave of product opportunities.",
+    "filename": "2026-08-28.md"
+  },
+  {
     "slug": "2026-08-27",
     "date": "2026-08-27",
     "title": "AI 快讯 · 8月27日",
@@ -90,7 +183,8 @@
     ],
     "jasonSays": "今天最值得盯的信号：Anthropic 450 亿算力大单 + Amazon GPU 三倍加码，背后是 AI 推理需求正在以超预期速度爆发——「谁先锁定算力，谁就锁定未来」这句话从未像现在这样字面意义成立。",
     "jasonSaysEn": "The real story today: Anthropic's $45B compute deal plus Amazon tripling Nvidia orders signal that AI inference demand is exploding faster than anyone projected—'lock in compute, lock in the future' has never been more literally true.",
-    "filename": "2026-08-27.md"
+    "filename": "2026-08-27.md",
+    "coverImage": "/news/2026-08-27.png"
   },
   {
     "slug": "2026-08-26",
