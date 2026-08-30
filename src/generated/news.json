@@ -1,5 +1,107 @@
 [
   {
+    "slug": "2026-08-30",
+    "date": "2026-08-30",
+    "title": "AI 快讯 · 8月30日",
+    "items": [
+      {
+        "title": "OpenAI宣布终止与Cursor的合作，因其被SpaceX收购",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex",
+        "summary": "OpenAI宣布终止为Cursor提供模型服务的合同，原因是Cursor已被SpaceX收购。这场「马斯克vs奥特曼」的商业恩怨终于落到了开发者工具层面——数百万依赖Cursor的开发者即将面临底层模型切换，AI编程工具格局可能因此重新洗牌。",
+        "titleEn": "OpenAI cuts Cursor contract after SpaceX acquisition",
+        "summaryEn": "OpenAI is winding down its contract supplying models to Cursor following the coding tool's acquisition by SpaceX. The Musk-Altman feud now has real developer consequences — millions of Cursor users may face a significant shift in underlying model access, reshaping the AI coding tools landscape."
+      },
+      {
+        "title": "OpenAI预测：2026年底前达到AGI门槛",
+        "source": "Latent Space",
+        "category": "AI 工具动态",
+        "url": "https://www.latent.space/p/ainews-openai-to-reach-agi-bar-by",
+        "summary": "Latent Space 援引 OpenAI 内部观点：公司认为到2026年底有望达到自定义的AGI门槛。这一表态极具争议性——既是产品路线图信号，也可能影响与投资方的协议条款（OpenAI与微软的协议中AGI里程碑有特殊条款），值得密切关注其后续定义与验证方式。",
+        "titleEn": "OpenAI claims AGI threshold reachable by end of 2026",
+        "summaryEn": "OpenAI insiders believe the company could hit its internal AGI bar by end of 2026. Beyond the hype, this matters practically: OpenAI's deal with Microsoft contains AGI-related milestone clauses, making the definition and verification of 'AGI' a high-stakes legal and commercial question."
+      },
+      {
+        "title": "Anthropic研究员演示自我改进AI：10项基准全部提升",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/28/an-anthropic-researcher-just-gave-us-a-peek-at-self-improving-ai/",
+        "summary": "Anthropic研究员公开展示了一套自动化自我改进系统：针对10项特定对齐偏差基准，系统能在不降低整体性能的前提下逐一提升。这是「AI改进AI」从理论走向实验验证的重要一步，对AI安全与对齐研究社区意义重大。",
+        "titleEn": "Anthropic researcher demos self-improving AI hitting every benchmark",
+        "summaryEn": "An Anthropic researcher demonstrated an automated self-improvement system that improved performance on all 10 misalignment benchmarks without degrading overall capability. This marks a key experimental step toward AI systems that iteratively improve their own alignment — a milestone the safety community has long theorized about."
+      },
+      {
+        "title": "索尼、华纳联合起诉Anthropic：指控「大规模」版权侵权",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/29/sony-music-warner-sue-anthropic-alleging-a-brazen-campaign-of-intellectual-property-theft/",
+        "summary": "索尼音乐、华纳音乐联合对Anthropic提起诉讼，指控其对版权音乐实施「厚颜无耻的系统性盗版」。这是迄今针对Claude最大规模的版权诉讼，诉讼范围极广，或将对整个AI训练数据合法性问题产生深远影响。",
+        "titleEn": "Sony Music and Warner sue Anthropic for mass copyright infringement",
+        "summaryEn": "Sony Music and Warner Music have jointly sued Anthropic, accusing it of a 'brazen campaign' of intellectual property theft involving copyrighted music. This is the broadest copyright lawsuit yet against Claude, and could set major precedents for what AI training data is legally permissible industry-wide."
+      },
+      {
+        "title": "Claude Mac桌面版上线内置浏览器：告别频繁切屏",
+        "source": "Hacker News / The New Stack",
+        "category": "AI 工具动态",
+        "url": "https://thenewstack.io/claude-built-in-browser-cowork/",
+        "summary": "Anthropic为Mac桌面版Claude集成了内置浏览器功能，用户无需在Claude与独立浏览器之间来回切换即可完成网页查阅、研究和协作任务。对重度使用Claude进行工作流自动化的开发者和研究者来说，这将显著提升操作流畅度。",
+        "titleEn": "Claude for Mac gets built-in browser for seamless coworking",
+        "summaryEn": "Anthropic's Claude for Mac desktop app now features a built-in browser, letting users browse the web without leaving the app. For developers and researchers using Claude for workflow automation and research tasks, this removes a key friction point in daily AI-assisted work."
+      },
+      {
+        "title": "Scientific Agent Skills：17.5万科学家在用的163个即插即用技能包",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+        "summary": "K-Dense-AI的Scientific Agent Skills库已被全球17.5万科学家使用，提供163个经过验证的科学研究技能，覆盖生物、化学、医学、药物发现等领域，并对接100+科学数据库。现已兼容Cursor、Claude Code、Codex等主流Agent平台，是目前最大的垂直领域Agent技能库之一。",
+        "titleEn": "Scientific Agent Skills library hits 175K users with 163 ready-to-use tools",
+        "summaryEn": "K-Dense-AI's Scientific Agent Skills library now serves 175,000+ scientists with 163 validated skills spanning biology, chemistry, medicine, and drug discovery, plus access to 100+ scientific databases. Compatible with Cursor, Claude Code, and Codex — arguably the most comprehensive vertical-domain agent skills library available."
+      },
+      {
+        "title": "Luce：AI生成3D资产终于支持物理真实感重新打光",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2608.23943",
+        "summary": "Luce提出了一种新型3D表示方法，将几何形状与PBR材质（漫反射、金属度、粗糙度、法线）统一在一套体素化高斯云中。实际意义：图生3D的结果终于可以直接导入Blender/Unreal等标准渲染管线并自由换光源，而非只能在固定光照下展示——这是游戏、影视、电商场景的关键缺口。",
+        "titleEn": "Luce: AI-generated 3D assets with physically accurate relighting",
+        "summaryEn": "Luce introduces a new 3D representation that unifies geometry and PBR materials (albedo, metallic-roughness, normals) in a single voxelized Gaussian cloud. For developers: image-to-3D outputs can now be dropped directly into standard render pipelines like Blender or Unreal and relit freely — finally closing a critical gap for games, film, and e-commerce use cases."
+      },
+      {
+        "title": "a16z设立11亿美元「机器时代」基金，押注AI物理基础设施",
+        "source": "TechCrunch / TC Venture",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/28/a16z-creates-a-1-1b-machine-age-fund-to-accelerate-the-physical-buildout-of-ai/",
+        "summary": "a16z宣布设立11亿美元的「Machine Age」专项基金，专注于AI物理基础设施建设——这标志着这家以软件投资闻名的顶级VC正式大举转向硬件与算力层。对创业者而言，AI基础设施赛道的资本热度将持续升温。",
+        "titleEn": "a16z launches $1.1B 'Machine Age' fund for AI physical infrastructure",
+        "summaryEn": "a16z has closed a $1.1B 'Machine Age' fund dedicated to accelerating the physical buildout of AI — data centers, chips, and infrastructure. This marks a major strategic pivot for a firm historically known for software bets, signaling that the AI infrastructure race is becoming a top-tier VC priority."
+      }
+    ],
+    "funding": [
+      {
+        "company": "Lambda",
+        "url": "https://techcrunch.com/2026/08/28/neocloud-lambda-secures-1b-in-debt-to-buy-more-chips/",
+        "round": "Debt Financing",
+        "amount": "$1B",
+        "valuation": "",
+        "investors": "",
+        "pitch": "AI算力租赁平台，融资10亿美元购买英伟达芯片并租赁给微软，折射出AI算力军备竞赛的资本烈度持续攀升。"
+      },
+      {
+        "company": "a16z Machine Age Fund",
+        "url": "https://techcrunch.com/2026/08/28/a16z-creates-a-1-1b-machine-age-fund-to-accelerate-the-physical-buildout-of-ai/",
+        "round": "Fund Close",
+        "amount": "$1.1B",
+        "valuation": "",
+        "investors": "Andreessen Horowitz",
+        "pitch": "a16z专项AI物理基础设施基金正式关闭，标志顶级VC从软件投资全面转向AI硬件与算力层。"
+      }
+    ],
+    "jasonSays": "今天最大的震荡是「Cursor被SpaceX收购→OpenAI断供」这条链：商业恩怨终于切实砸在了开发者工具上。更值得警惕的是索尼+华纳联合告Anthropic——版权战争的战线正在快速扩大，AI公司的训练数据合法性将成为未来两年最烧钱的法律战场。",
+    "jasonSaysEn": "The Cursor-SpaceX-OpenAI chain reaction is today's biggest real-world consequence of the Musk-Altman feud — but the Sony+Warner lawsuit against Anthropic might be the longer-burning fuse: training data legality is shaping up to be the most expensive legal battleground in AI for the next two years.",
+    "filename": "2026-08-30.md"
+  },
+  {
     "slug": "2026-08-28",
     "date": "2026-08-28",
     "title": "AI 快讯 · 8月28日",
@@ -90,7 +192,8 @@
     ],
     "jasonSays": "今天最值得盯的是 Anthropic 硬件标准——MCP 已经从「接 API」进化到「控硬件」，AI Agent 的边界正在物理世界里重新画线，这不是 demo，是下一个产品机会的起跑线。",
     "jasonSaysEn": "Today's sleeper hit is Anthropic's hardware standard — MCP has evolved from 'connecting APIs' to 'controlling physical devices.' The boundary of AI agents is being redrawn in the physical world, and this isn't a demo; it's the starting line for the next wave of product opportunities.",
-    "filename": "2026-08-28.md"
+    "filename": "2026-08-28.md",
+    "coverImage": "/news/2026-08-28.png"
   },
   {
     "slug": "2026-08-27",
