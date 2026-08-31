@@ -1,5 +1,78 @@
 [
   {
+    "slug": "2026-08-31",
+    "date": "2026-08-31",
+    "title": "AI 快讯 · 8月31日",
+    "items": [
+      {
+        "title": "Ethan Mollick 新文：从 Hugging Face 事件到「暮光工厂」，AI Agent 正在重塑人类主体性",
+        "source": "One Useful Thing",
+        "category": "AI 工具动态",
+        "url": "https://www.oneusefulthing.org/p/agency-and-agents",
+        "summary": "沃顿商学院教授 Ethan Mollick 最新长文探讨 AI Agent 对人类「主体性」的冲击：从 Hugging Face 平台上 Agent 自主行为引发的安全事件，到工厂在无人照看下自动运转的「暮光工厂」概念。核心问题：当 Agent 越来越能自主决策，人类如何保持控制权？",
+        "titleEn": "Ethan Mollick: From the Hugging Face Incident to Twilight Factories",
+        "summaryEn": "Wharton professor Ethan Mollick explores how AI agents challenge human agency: from the Hugging Face incident where agents acted autonomously, to the concept of 'Twilight Factories' running without human oversight. The core question: as agents grow more autonomous, how do humans stay in control?"
+      },
+      {
+        "title": "清华 OpenMAIC v1.0：一句话生成完整课程，多智能体互动教学开源",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/THU-MAIC/OpenMAIC",
+        "summary": "清华大学发布 OpenMAIC v1.0，通过多 Agent 协作，一句 prompt 即可生成完整互动课程，支持语音识别和实时对话。兼容 OpenClaw 编排框架，新增 Pro 模式可在生成过程中随时调整方向。对教育创业者和知识付费从业者来说是可以直接用的武器。",
+        "titleEn": "Tsinghua's OpenMAIC v1.0: One Prompt In, a Full Course Out",
+        "summaryEn": "Tsinghua University releases OpenMAIC v1.0, generating complete interactive courses from a single prompt via multi-agent collaboration. Compatible with OpenClaw orchestration, the new Pro mode lets you steer generation in real-time. A ready-to-use tool for education entrepreneurs and course creators."
+      },
+      {
+        "title": "God's Eye View 登上 GitHub Trending：浏览器里的「间谍卫星」模拟器，数据全是真的",
+        "source": "GitHub Trending",
+        "category": "出海实战",
+        "url": "https://github.com/bilawalsidhu/gods-eye-view",
+        "summary": "这个项目在浏览器里构建了一个逼真的 3D 地球，实时叠加飞机、船舶、卫星、地震、交通和公共摄像头数据——看起来像间谍电影，但所有数据源都是公开的。支持语音控制，已登上 GitHub Trending。开源 OSINT 工具的极致展示。",
+        "titleEn": "God's Eye View: A Spy Satellite Simulator with Real Data",
+        "summaryEn": "A photorealistic 3D globe in your browser with live aircraft, ships, satellites, earthquakes, traffic, and public cameras. It looks like a spy movie, but every data source is public. Voice-controlled and trending on GitHub — the ultimate showcase of open-source intelligence."
+      },
+      {
+        "title": "Caterpillar 把矿山自动化经验搬到 AI 部署：传统巨头的 Physical AI 路线",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/30/caterpillar-is-bringing-to-ai-deployment-what-it-learned-from-automating-mining/",
+        "summary": "Caterpillar 在远程矿山运营自动驾驶机械数十年，现在正将这套经验迁移到 AI 基础设施部署。当 AI 公司还在用软件思维建数据中心时，这家百年工业巨头用「物理世界自动化」的视角切入，可能是 Physical AI 赛道最被低估的玩家。",
+        "titleEn": "Caterpillar Brings Mining Automation Expertise to AI Deployment",
+        "summaryEn": "Caterpillar spent decades running autonomous machines at remote mining sites and is now applying that expertise to AI deployment. While AI companies think in software terms, this century-old industrial giant approaches from physical automation — potentially the most underrated player in Physical AI."
+      },
+      {
+        "title": "美国对中国无人机和机器人筑墙，但中国的规模优势难以遏制",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/30/the-u-s-is-building-barriers-around-drones-and-robots-china-still-has-scale/",
+        "summary": "美国正在加大力度限制外国制造的无人机和机器人进入市场，但中国在硬件制造上的规模优势意味着全球竞争可能只是换个地方继续。对出海硬件创业者来说，供应链布局比技术突破更决定生死。",
+        "titleEn": "US Builds Barriers on Drones and Robots, but China Has Scale",
+        "summaryEn": "The US is shutting out more foreign-made drones and robots, but China's manufacturing scale means global competition may simply shift elsewhere. For hardware startups going global, supply chain positioning matters more than technical breakthroughs."
+      },
+      {
+        "title": "a16z 前合伙人创办 AI-native 生物基金：开放数据集才是 AI 改变医疗的关键",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/08/29/were-not-doing-30-bets-a-year-vijay-pande-on-betting-small-after-running-4-billion-at-a16z/",
+        "summary": "曾管理 a16z 40 亿美元生物科技基金的 Vijay Pande 离职创立 AI-native 基金 VZVC，押注生物学从「发现科学」转型为「工程科学」。他的核心观点：开放共享的数据集（而非封闭数据壁垒）才是 AI 真正改变医疗的前提。",
+        "titleEn": "Ex-a16z Partner: Open Datasets Key to AI Transforming Medicine",
+        "summaryEn": "Vijay Pande left a16z's $4B biotech practice to launch AI-native fund VZVC, betting biology is shifting from discovery to engineering. His key insight: open, shared datasets — not walled-off data — are what will actually let AI transform medicine."
+      },
+      {
+        "title": "Craft CEO 从未写过一行代码，却建起了供应链智能软件公司",
+        "source": "Crunchbase News",
+        "category": "变现案例",
+        "url": "https://news.crunchbase.com/venture/supply-chain-nontech-founder-ilya-levtov-craft/",
+        "summary": "Julliard 音乐学院出身的 Ilya Levtov，一行代码都没写过，却成功创建了供应链智能公司 Craft 并拿到风投。在 AI 编程工具让「不会写代码」不再是障碍的今天，非技术创始人正在成为一股新势力。",
+        "titleEn": "Craft's CEO Never Coded — Built a Software Company Anyway",
+        "summaryEn": "Julliard-trained cellist Ilya Levtov built supply chain intelligence company Craft without ever writing code. In an era where AI coding tools eliminate the code barrier, non-technical founders are becoming a real force in venture-backed startups."
+      }
+    ],
+    "jasonSays": "Ethan Mollick 的「暮光工厂」概念让人不寒而栗——工厂在黑暗中自动运转，不需要照明因为没有人。当我们忙着讨论 Agent 能干什么时，真正的问题是：人类还需要在场吗？",
+    "jasonSaysEn": "Ethan Mollick's 'Twilight Factories' concept is chilling — factories running in the dark, no lights needed because no humans are present. While we debate what agents can do, the real question is: do humans still need to be there?",
+    "filename": "2026-08-31.md"
+  },
+  {
     "slug": "2026-08-30",
     "date": "2026-08-30",
     "title": "AI 快讯 · 8月30日",
@@ -99,7 +172,8 @@
     ],
     "jasonSays": "今天最大的震荡是「Cursor被SpaceX收购→OpenAI断供」这条链：商业恩怨终于切实砸在了开发者工具上。更值得警惕的是索尼+华纳联合告Anthropic——版权战争的战线正在快速扩大，AI公司的训练数据合法性将成为未来两年最烧钱的法律战场。",
     "jasonSaysEn": "The Cursor-SpaceX-OpenAI chain reaction is today's biggest real-world consequence of the Musk-Altman feud — but the Sony+Warner lawsuit against Anthropic might be the longer-burning fuse: training data legality is shaping up to be the most expensive legal battleground in AI for the next two years.",
-    "filename": "2026-08-30.md"
+    "filename": "2026-08-30.md",
+    "coverImage": "/news/2026-08-30.png"
   },
   {
     "slug": "2026-08-28",
