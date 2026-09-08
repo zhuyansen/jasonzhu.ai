@@ -1,5 +1,98 @@
 [
   {
+    "slug": "2026-09-09",
+    "date": "2026-09-09",
+    "title": "AI 快讯 · 9月9日",
+    "items": [
+      {
+        "title": "OpenAI 宣称 AI 解决了 N-S 方程千年难题，数学家炮轰「抢功」",
+        "source": "OpenAI Blog / TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/09/08/openai-fought-dirty-on-career-making-math-problem-says-nyu-mathematician/",
+        "summary": "OpenAI 发布声称解决了价值百万美元数学千年难题「纳维-斯托克斯方程」的 AI 生成证明（含 Lean 形式化验证），但 NYU 数学家公开指控 OpenAI「抢功」行为，称这一数学问题本是研究人员的职业生涯代表作。百万悬赏背后，AI 与人类数学家的署名权争议正式爆发。",
+        "titleEn": "OpenAI Claims Navier-Stokes Millennium Proof, Mathematicians Cry Foul",
+        "summaryEn": "OpenAI published an AI-generated solution to the Navier-Stokes Millennium Prize Problem with a formal Lean proof, but an NYU mathematician publicly accused OpenAI of foul play, claiming the problem was central to a researcher's career-making work. The $1M bounty has ignited a fierce debate over credit and attribution between AI labs and human mathematicians."
+      },
+      {
+        "title": "ChatGPT Images 2.5 发布：草图变精图，个性化图像生成大升级",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/introducing-chatgpt-images-2-5",
+        "summary": "OpenAI 正式推出 ChatGPT Images 2.5，支持将创意草图和参考图片转化为更高质量、更贴近用户意图的个性化图像，是 ChatGPT 图像生成能力的重大迭代。对内容创作者和设计师来说，这意味着「概念到成品」的流程被进一步压缩。",
+        "titleEn": "ChatGPT Images 2.5 Launched: Sketches to Polished Visuals",
+        "summaryEn": "OpenAI launched ChatGPT Images 2.5, which better translates ideas, sketches, and reference photos into polished, personalized images. The upgrade significantly narrows the gap between creative intent and output quality, making it a meaningful tool upgrade for designers and content creators."
+      },
+      {
+        "title": "GPT-5.6 Sol 自主跑量子计算实验：MIT 研究员实测报告",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/codex-quantum-computing-experiments",
+        "summary": "MIT 研究员演示了如何用 GPT-5.6 Sol 配合 Codex 自主执行量子计算实验、分析结果并校准量子比特。这是 AI Agent 在真实科研场景落地的最新案例，暗示「AI 驱动科学」已从概念走向实操，对研究型开发者极具参考价值。",
+        "titleEn": "GPT-5.6 Sol Autonomously Runs Quantum Computing Experiments at MIT",
+        "summaryEn": "An MIT researcher demonstrated GPT-5.6 Sol with Codex autonomously running quantum computing experiments, analyzing results, and calibrating qubits. This is one of the most concrete real-world examples of AI agents conducting genuine scientific work, signaling that AI-driven research is moving from concept to practice."
+      },
+      {
+        "title": "Meta 推出个人 AI Agent Muse：绑定邮件、日历、支付和健康数据",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/09/08/meta-debuts-its-muse-ai-agent-will-consumers-trust-it/",
+        "summary": "Meta 发布个人 AI Agent「Muse」，要求访问用户的电子邮件、日历、支付和健康服务，是 Meta 迄今最大的消费端 AI 押注。核心问题是：用户还愿意把这么多私密数据交给 Meta 吗？这是对数据信任危机的一次正面压力测试。",
+        "titleEn": "Meta Launches Muse AI Agent with Access to Email, Payments, and Health",
+        "summaryEn": "Meta launched Muse, a personal AI agent requesting access to users' email, calendars, payments, and health services. It's Meta's biggest consumer AI bet yet, but also its riskiest — directly testing whether users still trust the company with intimate personal data after years of privacy controversies."
+      },
+      {
+        "title": "Cognition 估值飙至 480 亿美元：AI 编程赛道不是赢家通吃",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/09/08/cognition-hits-48b-valuation-signaling-investors-believe-ai-coding-is-far-from-a-winner-take-all-market/",
+        "summary": "Cognition 最新估值达 480 亿美元，倍数甚至高于 Cursor 被 SpaceX 收购前的水平。投资人用真金白银表态：AI 编程市场不会被单一玩家垄断，多极竞争格局将长期持续。对独立开发者和创业者来说，细分赛道仍有机会。",
+        "titleEn": "Cognition Hits $48B Valuation, AI Coding Is Not Winner-Take-All",
+        "summaryEn": "Cognition's valuation hit $48B with a multiple exceeding Cursor's pre-SpaceX-acquisition level. Investors are betting that AI coding is a multi-winner market — not a monopoly — which is encouraging news for developers and startups building in adjacent coding-AI niches."
+      },
+      {
+        "title": "黑客正在盗取 Claude 用户的 Token：Anthropic 发出安全警告",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/09/08/hackers-are-stealing-claude-tokens-from-subscribers/",
+        "summary": "Claude 订阅用户发现账户 Token 在本人不操作时持续消耗，Anthropic 已确认有黑客窃取用户 Token 并随后发出安全警告。对重度使用 Claude API 的开发者来说，Token 安全管理（密钥轮换、额度监控）应立即列为优先级。",
+        "titleEn": "Hackers Stealing Claude API Tokens from Subscribers, Anthropic Warns",
+        "summaryEn": "A Claude user discovered their account was consuming tokens without any activity, prompting Anthropic to warn users about hackers stealing Claude tokens. Developers relying on Claude API should treat token security — including key rotation and usage monitoring — as an immediate priority."
+      },
+      {
+        "title": "context-mode：MCP + Hooks 给 AI 编程 Agent 瘦身，工具输出压缩 98%",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/mksglu/context-mode",
+        "summary": "context-mode 是专为 AI 编程 Agent 设计的上下文窗口优化工具，通过沙盒化 MCP 工具输出（Playwright 快照从 56KB → 极小），持久化会话记忆，并跨 17 个平台强制路由，实现 98% 的 context 压缩。对频繁碰触 token 上限的 Claude Code/Cursor 用户是直接提效利器。",
+        "titleEn": "context-mode: 98% Context Reduction for AI Coding Agents via MCP + Hooks",
+        "summaryEn": "context-mode optimizes context windows for AI coding agents by sandboxing MCP tool outputs (98% reduction — e.g., Playwright snapshots shrink from 56KB), persisting session memory, and enforcing routing across 17 platforms. A practical must-have for Claude Code or Cursor users constantly hitting context limits."
+      },
+      {
+        "title": "中国 AI 公司对美蒸馏攻击：美国防部发布正式安全警告",
+        "source": "Hacker News / U.S. DoD",
+        "category": "AI 工具动态",
+        "url": "https://media.defense.gov/2026/Sep/08/2003992823/-1/-1/1/CSA_CHINA_BASED_AI_COMPANIES_MALICIOUS_DISTILLATION_AGAINST_US.PDF",
+        "summary": "美国国防部发布正式安全咨询报告，指出中国 AI 公司正对美国主流 AI 模型实施「恶意蒸馏」活动，系统性提取模型知识。这是官方层面首次将模型蒸馏定性为国家安全威胁，预计将加速 AI 模型访问管控和出口政策收紧。",
+        "titleEn": "DoD Warns: Chinese AI Firms Running Malicious Distillation Campaigns Against US Models",
+        "summaryEn": "The U.S. Department of Defense issued an official advisory warning that Chinese AI companies are conducting systematic malicious distillation campaigns against U.S. AI models. This is the first official designation of model distillation as a national security threat, likely accelerating API access controls and export policy tightening."
+      }
+    ],
+    "funding": [
+      {
+        "company": "Mistral AI",
+        "url": "https://news.crunchbase.com/venture/europe-record-setting-mistral-ai-raise/",
+        "round": "Series D",
+        "amount": "$3.5B",
+        "valuation": "$24B",
+        "investors": "Samsung Electronics",
+        "pitch": "欧洲最大开源大模型公司，估值近翻倍至 240 亿美元，三星领投彰显亚欧 AI 产业联盟趋势加速。"
+      }
+    ],
+    "jasonSays": "今天最炸裂的一幕是：OpenAI 宣布 AI 解决了价值百万美元的数学千年难题，然后数学家立刻跳出来说「你们抢了我的功劳」——AI 的能力边界已经到了会引发著作权纠纷的级别，这才是真正的里程碑。",
+    "jasonSaysEn": "The wildest moment today: OpenAI announced an AI solved a $1M Millennium Prize problem, and a mathematician immediately fired back claiming credit was stolen — when AI capabilities start triggering attribution disputes at this level, that itself is the real milestone.",
+    "filename": "2026-09-09.md"
+  },
+  {
     "slug": "2026-09-08",
     "date": "2026-09-08",
     "title": "AI 快讯 · 9月8日",
@@ -79,7 +172,8 @@
     ],
     "jasonSays": "今天论文层面信息密度极高——从给 Agent「杀生定价」的伦理基准，到让模型「选择性拒绝」而非一刀切，AI 安全正从哲学讨论变成可测量的工程问题。开发者该认真读这些论文了，因为下一轮产品合规卡点就在这里。",
     "jasonSaysEn": "Today's papers are dense with signal: from pricing the moral cost of agent actions to surgical non-compliance in VLMs, AI safety is finally becoming a measurable engineering discipline — developers who ignore these papers will be blindsided by the next wave of compliance requirements.",
-    "filename": "2026-09-08.md"
+    "filename": "2026-09-08.md",
+    "coverImage": "/news/2026-09-08.png"
   },
   {
     "slug": "2026-09-07",
