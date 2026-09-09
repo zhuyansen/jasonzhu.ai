@@ -3,7 +3,8 @@ import { getAllDigests } from "@/lib/news";
 const SITE_URL = "https://jasonzhu.ai";
 
 export async function GET() {
-  const digests = getAllDigests();
+  // 只输出最近 30 期：全量 148 期 ≈ 617KB，RSS 阅读器每小时轮询一次，白白吃流量
+  const digests = getAllDigests().slice(0, 30);
 
   const items = digests
     .map((digest) => {
