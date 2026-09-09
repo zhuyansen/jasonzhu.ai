@@ -46,6 +46,7 @@ Git：commit 后如远程有新提交（cron 会自动 commit 快讯），先 `g
 
 **路由/i18n（app/[lang]/，lang = zh|en）**
 - 无 app/layout.tsx——`app/[lang]/layout.tsx` 就是 root layout（html lang 来自路由参数；admin 有独立 root layout）。不要在 root 层用 headers()，会把全站打回动态渲染（历史事故：曾因此全站 ƒ Dynamic + sitemap 空）。
+- 404 走 `app/global-not-found.tsx`（`experimental.globalNotFound`）+ 各动态段 `dynamicParams = false`。根布局是动态段时 Next 对 `notFound()` 只能客户端渲染 404（HTML body 为空，vercel/next.js#62228），所以不要再加 `[lang]/[...rest]` 兜底或指望 `[lang]/not-found.tsx` 出 SSR 内容。
 - 未翻译内容的 en 页 canonical 指回 zh 版、hreflang 不声明 en；sitemap（app/sitemap.ts，动态生成）只收录真有英文内容的 en URL。
 - 快讯分类标签双语在组件内 `categoryConfig.en` 映射；digestTitle()/digestJasonSays() 做标题/点评本地化。
 

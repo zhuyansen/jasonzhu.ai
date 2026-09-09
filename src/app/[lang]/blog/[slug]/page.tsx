@@ -18,6 +18,9 @@ interface Props {
   params: Promise<{ lang: string; slug: string }>;
 }
 
+// 所有 slug 都在 generateStaticParams 里；未知 slug 直接按未匹配路由 404（走 global-not-found，完整 SSR）
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   const posts = getAllPosts();
   return posts.flatMap((post) => [

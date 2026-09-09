@@ -16,6 +16,9 @@ const categoryConfig: Record<string, { color: string; icon: string; en: string }
   "AI 论文": { color: "bg-indigo-50 text-indigo-700", icon: "📚", en: "AI Papers" },
 };
 
+// 所有 slug 都在 generateStaticParams 里；未知 slug 直接按未匹配路由 404（走 global-not-found，完整 SSR）
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   const digests = getAllDigests();
   const params: { lang: string; slug: string }[] = [];
