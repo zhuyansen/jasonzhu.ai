@@ -9,9 +9,11 @@ import path from "path";
  * 会员专属：返回指定场次的逐字稿 + 会议纪要
  */
 export async function GET(request: NextRequest) {
+  // 会员内容：所有分支（含 401/403）都禁止浏览器和 CDN 缓存
+  const headers = { "Cache-Control": "private, no-store" };
   const slug = request.nextUrl.searchParams.get("slug");
   if (!slug || !/^[\w一-龥-]+$/.test(slug)) {
-    return NextResponse.json({ error: "invalid slug" }, { status: 400 });
+    return NextResponse.json({ error: "invalid slug" }, { status: 400, headers });
   }
 
   // Auth check
@@ -21,7 +23,7 @@ export async function GET(request: NextRequest) {
   } = await supabase.auth.getUser();
 
   if (!user) {
-    return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+    return NextResponse.json({ error: "unauthorized" }, { status: 401, headers });
   }
 
   const { data: profile } = await supabase
@@ -30,7 +32,7 @@ export async function GET(request: NextRequest) {
     .eq("id", user.id)
     .single();
   if (!isPaidRole(profile?.role)) {
-    return NextResponse.json({ error: "members only" }, { status: 403 });
+    return NextResponse.json({ error: "members only" }, { status: 403, headers });
   }
 
   // Read transcript file
@@ -39,9 +41,6 @@ export async function GET(request: NextRequest) {
     "src/generated/sessions-transcripts",
     `${slug}.json`
   );
-
-  // 会员内容：明确禁止浏览器和 CDN 缓存，避免同一 URL 被后续匿名请求命中
-  const headers = { "Cache-Control": "private, no-store" };
 
   if (!fs.existsSync(filePath)) {
     return NextResponse.json({ transcript: [], summary: "" }, { headers });
