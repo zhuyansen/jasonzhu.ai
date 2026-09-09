@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import Header from "@/components/Header";
@@ -122,7 +123,10 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 
 export default async function LangLayout({ children, params }: Props) {
   const { lang: rawLang } = await params;
-  const lang = (rawLang === "en" ? "en" : "zh") as Locale;
+  // 带点的路径（/index.php、/.env、/foo.bak）不经过 middleware 的 locale rewrite，
+  // 会直接以 rawLang="index.php" 命中这里并 200 渲染首页。非 zh/en 一律 404。
+  if (rawLang !== "zh" && rawLang !== "en") notFound();
+  const lang = rawLang as Locale;
   const dict = await getDictionary(lang);
 
   return (
