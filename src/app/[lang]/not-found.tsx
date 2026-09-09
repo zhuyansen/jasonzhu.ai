@@ -10,7 +10,8 @@ import { usePathname } from "next/navigation";
  */
 export default function NotFound() {
   const pathname = usePathname();
-  const lang = pathname?.startsWith("/en") ? "en" : "zh";
+  // 精确匹配 /en 或 /en/…，避免 /english-xxx 之类被误判
+  const lang = pathname === "/en" || pathname?.startsWith("/en/") ? "en" : "zh";
   const isZh = lang === "zh";
 
   const links = isZh

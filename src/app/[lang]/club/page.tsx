@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ClubClient from "./ClubClient";
 import { createClient } from "@/lib/supabase-server";
+import { isPaidRole } from "@/lib/membership";
 
 const SITE_URL = "https://jasonzhu.ai";
 
@@ -50,7 +51,7 @@ export default async function ClubPage({
       .select("role")
       .eq("id", user.id)
       .single();
-    isMember = Boolean(profile && profile.role !== "free");
+    isMember = isPaidRole(profile?.role);
   }
 
   return (

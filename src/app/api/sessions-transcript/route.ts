@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase-server";
+import { isPaidRole } from "@/lib/membership";
 import fs from "fs";
 import path from "path";
 
@@ -28,8 +29,7 @@ export async function GET(request: NextRequest) {
     .select("role")
     .eq("id", user.id)
     .single();
-  const role = profile?.role ?? null;
-  if (!role || role === "free") {
+  if (!isPaidRole(profile?.role)) {
     return NextResponse.json({ error: "members only" }, { status: 403 });
   }
 
@@ -40,10 +40,13 @@ export async function GET(request: NextRequest) {
     `${slug}.json`
   );
 
+  // 会员内容：明确禁止浏览器和 CDN 缓存，避免同一 URL 被后续匿名请求命中
+  const headers = { "Cache-Control": "private, no-store" };
+
   if (!fs.existsSync(filePath)) {
-    return NextResponse.json({ transcript: [], summary: "" });
+    return NextResponse.json({ transcript: [], summary: "" }, { headers });
   }
 
   const data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-  return NextResponse.json(data);
+  return NextResponse.json(data, { headers });
 }

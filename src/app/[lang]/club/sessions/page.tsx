@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import SessionsClient from "./SessionsClient";
 import { createClient } from "@/lib/supabase-server";
+import { isPaidRole } from "@/lib/membership";
 import sessionsData from "@/generated/sessions.json";
 
 const SITE_URL = "https://jasonzhu.ai";
@@ -46,7 +47,7 @@ export default async function SessionsPage({
     role = data?.role ?? null;
   }
 
-  const isMember = Boolean(user) && Boolean(role) && role !== "free";
+  const isMember = Boolean(user) && isPaidRole(role);
 
   return (
     <SessionsClient

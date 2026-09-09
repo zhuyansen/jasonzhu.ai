@@ -290,6 +290,43 @@ export default function NewsListClient({ fullDigests, archiveDigests, lang }: Pr
                   </button>
                 </div>
               )}
+
+              {/* 全部往期的真实 <a href> 索引：按钮翻页对爬虫不可见，
+                  没有这份索引，最早的一期离 /news 有 100+ 跳（只能沿详情页"上一期"链走） */}
+              {archiveDigests.length > ARCHIVE_PAGE_SIZE && (
+                <details className="mt-8 border-t border-gray-100 pt-5">
+                  <summary className="text-xs text-gray-400 cursor-pointer select-none hover:text-gray-600">
+                    {isZh
+                      ? `按日期浏览全部 ${archiveDigests.length} 期往期`
+                      : `Browse all ${archiveDigests.length} past issues by date`}
+                  </summary>
+                  <nav aria-label={isZh ? "全部往期快讯" : "All past issues"} className="mt-4 space-y-3">
+                    {Object.entries(
+                      archiveDigests.reduce<Record<string, NewsDigestSlim[]>>((acc, d) => {
+                        const month = d.date.slice(0, 7);
+                        (acc[month] ||= []).push(d);
+                        return acc;
+                      }, {})
+                    ).map(([month, list]) => (
+                      <div key={month} className="flex gap-3 text-xs">
+                        <span className="text-gray-400 tabular-nums shrink-0 w-14">{month}</span>
+                        <div className="flex flex-wrap gap-x-2 gap-y-1">
+                          {list.map((d) => (
+                            <Link
+                              key={d.slug}
+                              href={`/${lang}/news/${d.slug}`}
+                              className="text-gray-500 hover:text-blue-600 tabular-nums"
+                              title={digestTitle(d, lang)}
+                            >
+                              {parseInt(d.date.slice(8, 10))}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </nav>
+                </details>
+              )}
             </section>
           )}
         </>

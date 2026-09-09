@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import CourseClient from "./CourseClient";
 import { createClient } from "@/lib/supabase-server";
+import { isPaidRole } from "@/lib/membership";
 import courseData from "@/generated/course.json";
 
 const SITE_URL = "https://jasonzhu.ai";
@@ -46,7 +47,7 @@ export default async function CoursePage({
     role = data?.role ?? null;
   }
 
-  const isMember = Boolean(user) && Boolean(role) && role !== "free";
+  const isMember = Boolean(user) && isPaidRole(role);
 
   return (
     <CourseClient
