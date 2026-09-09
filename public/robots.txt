@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /admin
+Disallow: /dashboard
 
 Sitemap: https://jasonzhu.ai/sitemap.xml

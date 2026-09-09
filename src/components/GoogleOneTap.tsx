@@ -60,7 +60,11 @@ export default function GoogleOneTap() {
             if (!error) window.location.reload();
           },
         });
-        window.google.accounts.id.prompt();
+        try {
+          window.google.accounts.id.prompt();
+        } catch {
+          // FedCM NetworkError when user isn't signed into Google — safe to ignore
+        }
       };
       document.head.appendChild(script);
     });

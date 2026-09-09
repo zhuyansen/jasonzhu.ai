@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import { findCrossLinks } from "@/lib/cross-links";
-import { digestTitle, digestJasonSays, type NewsDigest } from "@/lib/news";
+import { digestTitle, digestJasonSays, type NewsDigest, type NewsDigestSlim } from "@/lib/news";
 
 const categoryConfig: Record<string, { color: string; icon: string; en: string }> = {
   "Skills 生态": { color: "bg-purple-50 text-purple-700", icon: "🔥", en: "Skills" },
@@ -15,22 +15,25 @@ const categoryConfig: Record<string, { color: string; icon: string; en: string }
 
 const ALL_CATEGORIES = ["Skills 生态", "出海实战", "AI 工具动态", "变现案例", "AI 论文"];
 
+const ARCHIVE_PAGE_SIZE = 20;
+
 // 分类显示名：en 时取英文标签，回退原中文
 const catLabel = (cat: string, isZh: boolean) =>
   isZh ? cat : categoryConfig[cat]?.en || cat;
 
 interface Props {
-  digests: NewsDigest[];
+  fullDigests: NewsDigest[];
+  archiveDigests: NewsDigestSlim[];
   lang: string;
 }
 
-export default function NewsListClient({ digests, lang }: Props) {
+export default function NewsListClient({ fullDigests, archiveDigests, lang }: Props) {
   const [search, setSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const [archiveVisible, setArchiveVisible] = useState(ARCHIVE_PAGE_SIZE);
 
   const isZh = lang === "zh";
-  const latest = digests[0] || null;
-  const archive = digests.slice(1);
+  const latest = fullDigests[0] || null;
 
   // Filter latest digest items by search + category
   const filteredLatestItems = useMemo(() => {
@@ -45,26 +48,20 @@ export default function NewsListClient({ digests, lang }: Props) {
     });
   }, [latest, search, activeCategory]);
 
-  // Filter archive digests — show digest if any item matches
+  // Filter archive digests — slim version only has categories, no item text
   const filteredArchive = useMemo(() => {
-    if (!search && !activeCategory) return archive;
-    return archive.filter((digest) =>
-      digest.items.some((item) => {
-        const matchesCategory = !activeCategory || item.category === activeCategory;
-        const matchesSearch =
-          !search ||
-          item.title.toLowerCase().includes(search.toLowerCase()) ||
-          item.summary.toLowerCase().includes(search.toLowerCase());
-        return matchesCategory && matchesSearch;
-      })
-    );
-  }, [archive, search, activeCategory]);
+    if (!activeCategory) return archiveDigests;
+    return archiveDigests.filter((d) => d.categories.includes(activeCategory));
+  }, [archiveDigests, activeCategory]);
+
+  const visibleArchive = filteredArchive.slice(0, archiveVisible);
+  const hasMoreArchive = archiveVisible < filteredArchive.length;
 
   return (
     <>
       {/* Search + Filter */}
       <div className="mb-6 space-y-3">
-        {/* Search input */}
+        {/* Search input — only searches latest digest items */}
         <div className="relative">
           <svg
             className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"
@@ -83,7 +80,7 @@ export default function NewsListClient({ digests, lang }: Props) {
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder={isZh ? "搜索快讯..." : "Search news..."}
+            placeholder={isZh ? "搜索最新一期快讯..." : "Search latest issue..."}
             className="w-full pl-10 pr-4 py-2.5 text-sm border border-gray-200 rounded-xl bg-gray-50/50 focus:bg-white focus:border-blue-300 focus:ring-2 focus:ring-blue-100 outline-none transition-all"
           />
           {search && (
@@ -225,7 +222,7 @@ export default function NewsListClient({ digests, lang }: Props) {
             )}
           </section>
 
-          {/* Archive */}
+          {/* Archive — slim data with pagination */}
           {filteredArchive.length > 0 && (
             <section className="mt-14">
               <div className="flex items-center gap-3 mb-6">
@@ -239,7 +236,7 @@ export default function NewsListClient({ digests, lang }: Props) {
               </div>
 
               <div className="space-y-3">
-                {filteredArchive.map((digest) => (
+                {visibleArchive.map((digest) => (
                   <Link
                     key={digest.slug}
                     href={`/${lang}/news/${digest.slug}`}
@@ -260,20 +257,18 @@ export default function NewsListClient({ digests, lang }: Props) {
                       </h3>
                       <p className="text-xs text-gray-400 mt-1 line-clamp-1">
                         {digestJasonSays(digest, lang) ||
-                          `${digest.items.length} ${isZh ? "条快讯" : "items"}`}
+                          `${digest.itemCount} ${isZh ? "条快讯" : "items"}`}
                       </p>
                     </div>
                     <div className="hidden sm:flex items-center gap-1 shrink-0">
-                      {[...new Set(digest.items.map((i) => i.category))]
-                        .slice(0, 4)
-                        .map((cat) => {
-                          const cfg = categoryConfig[cat];
-                          return cfg ? (
-                            <span key={cat} className="text-sm" title={catLabel(cat, isZh)}>
-                              {cfg.icon}
-                            </span>
-                          ) : null;
-                        })}
+                      {digest.categories.slice(0, 4).map((cat) => {
+                        const cfg = categoryConfig[cat];
+                        return cfg ? (
+                          <span key={cat} className="text-sm" title={catLabel(cat, isZh)}>
+                            {cfg.icon}
+                          </span>
+                        ) : null;
+                      })}
                     </div>
                     <span className="text-gray-300 group-hover:text-blue-500 group-hover:translate-x-0.5 transition-all shrink-0">
                       →
@@ -281,6 +276,20 @@ export default function NewsListClient({ digests, lang }: Props) {
                   </Link>
                 ))}
               </div>
+
+              {/* Load more */}
+              {hasMoreArchive && (
+                <div className="mt-6 text-center">
+                  <button
+                    onClick={() => setArchiveVisible((v) => v + ARCHIVE_PAGE_SIZE)}
+                    className="px-6 py-2.5 text-sm font-medium text-gray-600 bg-gray-50 hover:bg-gray-100 rounded-xl transition-colors"
+                  >
+                    {isZh
+                      ? `加载更多（还有 ${filteredArchive.length - archiveVisible} 期）`
+                      : `Load more (${filteredArchive.length - archiveVisible} remaining)`}
+                  </button>
+                </div>
+              )}
             </section>
           )}
         </>

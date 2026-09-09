@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 interface TranscriptSegment {
   start: number;
@@ -8,7 +8,7 @@ interface TranscriptSegment {
   text: string;
 }
 
-interface Session {
+interface SessionMeta {
   slug: string;
   date: string;
   topic: string;
@@ -18,13 +18,13 @@ interface Session {
   iframeUrl: string | null;
   thumbnailUrl: string | null;
   durationSeconds: number | null;
-  transcript: TranscriptSegment[];
-  summary?: string;
+  hasTranscript: boolean;
+  hasSummary: boolean;
 }
 
 interface Data {
   title: string;
-  sessions: Session[];
+  sessions: SessionMeta[];
 }
 
 interface Props {
@@ -76,10 +76,43 @@ export default function SessionsClient({ lang, isLoggedIn, isMember, data }: Pro
   const isZh = lang === "zh";
   const [activeIndex, setActiveIndex] = useState(0);
   const [copied, setCopied] = useState(false);
+
+  // Lazy-loaded transcript + summary per session
+  const [transcriptCache, setTranscriptCache] = useState<
+    Record<string, { transcript: TranscriptSegment[]; summary: string }>
+  >({});
+  const [loadingSlug, setLoadingSlug] = useState<string | null>(null);
+
   const active = data.sessions[activeIndex];
+  const activeData = transcriptCache[active?.slug];
+
+  const loadTranscript = useCallback(async (slug: string) => {
+    if (transcriptCache[slug]) return;
+    setLoadingSlug(slug);
+    try {
+      const res = await fetch(`/api/sessions-transcript?slug=${encodeURIComponent(slug)}`);
+      if (res.ok) {
+        const d = await res.json();
+        setTranscriptCache((prev) => ({ ...prev, [slug]: d }));
+      }
+    } catch {
+      // Network error, ignore
+    } finally {
+      setLoadingSlug(null);
+    }
+  }, [transcriptCache]);
+
+  // Auto-load transcript when active session changes
+  useEffect(() => {
+    if (!isMember || !active) return;
+    if (active.hasTranscript || active.hasSummary) {
+      loadTranscript(active.slug);
+    }
+  }, [active?.slug, isMember]); // eslint-disable-line react-hooks/exhaustive-deps
 
   async function copyTranscript() {
-    const text = active.transcript.map((seg) => `[${formatTime(seg.start)}] ${seg.text}`).join("\n");
+    if (!activeData?.transcript) return;
+    const text = activeData.transcript.map((seg) => `[${formatTime(seg.start)}] ${seg.text}`).join("\n");
     await navigator.clipboard.writeText(text);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
@@ -125,6 +158,8 @@ export default function SessionsClient({ lang, isLoggedIn, isMember, data }: Pro
     );
   }
 
+  const isLoadingActive = loadingSlug === active.slug;
+
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8">
       <h1 className="text-xl font-bold text-gray-900 mb-1">{data.title}</h1>
@@ -156,37 +191,64 @@ export default function SessionsClient({ lang, isLoggedIn, isMember, data }: Pro
           </div>
           <h2 className="text-lg font-semibold text-gray-900 mt-2">{active.title}</h2>
 
-          {active.summary && (
-            <details className="mt-5 border border-amber-100 bg-amber-50/40 rounded-xl p-4" open>
-              <summary className="text-sm font-semibold text-gray-700 cursor-pointer select-none">
-                📝 {isZh ? "会议纪要（AI 生成，速览用）" : "AI meeting notes"}
-              </summary>
-              <div className="mt-3">
-                <SummaryBlock text={active.summary} />
+          {/* Summary — lazy loaded */}
+          {active.hasSummary && (
+            isLoadingActive && !activeData ? (
+              <div className="mt-5 border border-gray-100 rounded-xl p-4 animate-pulse">
+                <div className="h-4 bg-gray-100 rounded w-1/3 mb-3" />
+                <div className="space-y-2">
+                  <div className="h-3 bg-gray-100 rounded w-full" />
+                  <div className="h-3 bg-gray-100 rounded w-5/6" />
+                  <div className="h-3 bg-gray-100 rounded w-4/6" />
+                </div>
               </div>
-            </details>
+            ) : activeData?.summary ? (
+              <details className="mt-5 border border-amber-100 bg-amber-50/40 rounded-xl p-4" open>
+                <summary className="text-sm font-semibold text-gray-700 cursor-pointer select-none">
+                  📝 {isZh ? "会议纪要（AI 生成，速览用）" : "AI meeting notes"}
+                </summary>
+                <div className="mt-3">
+                  <SummaryBlock text={activeData.summary} />
+                </div>
+              </details>
+            ) : null
           )}
 
-          {active.transcript.length > 0 && (
-            <div className="mt-6 border-t border-gray-100 pt-5">
-              <div className="flex items-center justify-between mb-3">
-                <h3 className="text-sm font-semibold text-gray-700">{isZh ? "逐字稿" : "Transcript"}</h3>
-                <button
-                  onClick={copyTranscript}
-                  className="text-xs text-[var(--primary)] hover:underline shrink-0"
-                >
-                  {copied ? (isZh ? "已复制 ✓" : "Copied ✓") : (isZh ? "复制全部" : "Copy all")}
-                </button>
+          {/* Transcript — lazy loaded */}
+          {active.hasTranscript && (
+            isLoadingActive && !activeData ? (
+              <div className="mt-6 border-t border-gray-100 pt-5">
+                <h3 className="text-sm font-semibold text-gray-700 mb-3">{isZh ? "逐字稿" : "Transcript"}</h3>
+                <div className="animate-pulse space-y-2">
+                  {[...Array(6)].map((_, i) => (
+                    <div key={i} className="flex gap-3">
+                      <div className="h-3 bg-gray-100 rounded w-12" />
+                      <div className="h-3 bg-gray-100 rounded flex-1" />
+                    </div>
+                  ))}
+                </div>
               </div>
-              <div className="space-y-2.5 max-h-[500px] overflow-y-auto pr-2">
-                {active.transcript.map((seg, i) => (
-                  <div key={i} className="flex gap-3 text-sm">
-                    <span className="text-gray-300 tabular-nums shrink-0 w-12">{formatTime(seg.start)}</span>
-                    <span className="text-gray-600 leading-relaxed">{seg.text}</span>
-                  </div>
-                ))}
+            ) : activeData?.transcript && activeData.transcript.length > 0 ? (
+              <div className="mt-6 border-t border-gray-100 pt-5">
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="text-sm font-semibold text-gray-700">{isZh ? "逐字稿" : "Transcript"}</h3>
+                  <button
+                    onClick={copyTranscript}
+                    className="text-xs text-[var(--primary)] hover:underline shrink-0"
+                  >
+                    {copied ? (isZh ? "已复制 ✓" : "Copied ✓") : (isZh ? "复制全部" : "Copy all")}
+                  </button>
+                </div>
+                <div className="space-y-2.5 max-h-[500px] overflow-y-auto pr-2">
+                  {activeData.transcript.map((seg, i) => (
+                    <div key={i} className="flex gap-3 text-sm">
+                      <span className="text-gray-300 tabular-nums shrink-0 w-12">{formatTime(seg.start)}</span>
+                      <span className="text-gray-600 leading-relaxed">{seg.text}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
+            ) : null
           )}
         </div>
 

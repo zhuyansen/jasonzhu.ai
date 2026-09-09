@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
-import { getAllDigests } from "@/lib/news";
+import { getDigestsForList } from "@/lib/news";
 import NewsListClient from "@/components/NewsListClient";
 
 const SITE_URL = "https://jasonzhu.ai";
@@ -31,7 +31,7 @@ export default async function NewsPage({
 }) {
   const { lang: rawLang } = await params;
   const lang = (rawLang === "en" ? "en" : "zh") as Locale;
-  const digests = getAllDigests();
+  const { fullDigests, archiveDigests } = getDigestsForList(1);
   const isZh = lang === "zh";
 
   return (
@@ -63,7 +63,7 @@ export default async function NewsPage({
       </div>
 
       {/* Client-side interactive list with search + filter */}
-      <NewsListClient digests={digests} lang={lang} />
+      <NewsListClient fullDigests={fullDigests} archiveDigests={archiveDigests} lang={lang} />
 
       {/* Subscribe CTA */}
       <div className="mt-16 text-center border-t border-gray-100 pt-10">

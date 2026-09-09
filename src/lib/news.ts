@@ -33,6 +33,18 @@ export interface NewsDigest {
   coverImage?: string;
 }
 
+/** 归档列表用精简版：不传 items 全文，只传分类和条数 */
+export interface NewsDigestSlim {
+  slug: string;
+  date: string;
+  title: string;
+  jasonSays: string;
+  jasonSaysEn?: string;
+  itemCount: number;
+  categories: string[];
+  filename: string;
+}
+
 const allDigests: NewsDigest[] = newsData as NewsDigest[];
 
 /** 快讯标题本地化：zh 用原标题（AI 快讯 · 6月13日），en 用日期版 */
@@ -44,12 +56,31 @@ export function digestTitle(
 }
 
 /** jasonSays 本地化：en 优先英文版，回退中文 */
-export function digestJasonSays(d: NewsDigest, lang: string): string {
+export function digestJasonSays(d: NewsDigest | NewsDigestSlim, lang: string): string {
   return lang === "en" && d.jasonSaysEn ? d.jasonSaysEn : d.jasonSays;
 }
 
 export function getAllDigests(): NewsDigest[] {
   return allDigests;
+}
+
+/** 最近 N 期完整数据 + 其余精简版（节省 ~80% RSC payload） */
+export function getDigestsForList(fullCount: number = 1): {
+  fullDigests: NewsDigest[];
+  archiveDigests: NewsDigestSlim[];
+} {
+  const fullDigests = allDigests.slice(0, fullCount);
+  const archiveDigests: NewsDigestSlim[] = allDigests.slice(fullCount).map((d) => ({
+    slug: d.slug,
+    date: d.date,
+    title: d.title,
+    jasonSays: d.jasonSays,
+    jasonSaysEn: d.jasonSaysEn,
+    itemCount: d.items.length,
+    categories: [...new Set(d.items.map((i) => i.category))],
+    filename: d.filename,
+  }));
+  return { fullDigests, archiveDigests };
 }
 
 export function getDigestBySlug(slug: string): NewsDigest | undefined {
