@@ -1,5 +1,107 @@
 [
   {
+    "slug": "2026-09-11",
+    "date": "2026-09-11",
+    "title": "AI 快讯 · 9月11日",
+    "items": [
+      {
+        "title": "OpenAI 正式发布 Agents API：云端托管 Agent 一键部署",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/introducing-the-agents-api",
+        "summary": "OpenAI 推出 Agents API，基于 Codex 编排框架，支持长时运行会话、工具调用和云端托管。开发者可以直接在云端启动和发布 AI Agent，无需自行管理基础设施，是 OpenAI 正式向 Agent-as-a-Service 迈出的关键一步。",
+        "titleEn": "OpenAI Launches Agents API for Cloud-Hosted Agentic Apps",
+        "summaryEn": "OpenAI's new Agents API lets developers build and launch cloud-hosted agents with managed orchestration, long-running sessions, and tool use — powered by the Codex harness. This is OpenAI's clearest move yet toward Agent-as-a-Service for production deployments."
+      },
+      {
+        "title": "OpenAI Pro 订阅暂停新增：GPT-6 Astra 需求爆表",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/09/10/openai-puts-pro-subscriptions-on-hold-due-to-astra-demand/",
+        "summary": "因 GPT-6 Astra 发布后需求激增，OpenAI 宣布暂停 Pro 订阅新注册，理由是 Pro 用户对系统负载压力最大，将在扩容后恢复。这是继 ChatGPT 爆红后 OpenAI 首次因容量不足暂停付费订阅，侧面印证 Astra 的真实热度。",
+        "titleEn": "OpenAI Pauses Pro Subscriptions Amid GPT-6 Astra Demand Surge",
+        "summaryEn": "OpenAI is pausing new Pro subscriptions due to overwhelming demand from GPT-6 Astra users. Pro subscribers place the heaviest load on infrastructure, and sign-ups will resume after capacity is expanded — a rare public acknowledgment of demand outpacing supply."
+      },
+      {
+        "title": "Anthropic 点名 Alibaba/Moonshot/DeepSeek 持续蒸馏攻击",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/09/10/anthropic-details-distillation-campaigns-from-alibaba-moonshot-ai-and-deepseek/",
+        "summary": "Anthropic 发布专项报告，具体点名阿里巴巴、Moonshot AI 和 DeepSeek，指控这三家中国 AI 公司对 Claude 实施持续性蒸馏攻击，且近月来攻击力度明显升级。这是继美国防部安全警告后，行业层面首次由模型公司直接公开命名指控。",
+        "titleEn": "Anthropic Names Alibaba, Moonshot AI, DeepSeek in Distillation Attack Report",
+        "summaryEn": "Anthropic released a detailed report naming Alibaba, Moonshot AI, and DeepSeek as perpetrators of persistent model distillation attacks against Claude, with activity escalating in recent months. This is the first time Anthropic has publicly named specific companies in such allegations."
+      },
+      {
+        "title": "Tencent 开源 TeamAI CLI：统一管理全团队 AI 技能与 MCP",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/Tencent/teamai-cli",
+        "summary": "腾讯开源 TeamAI CLI，支持跨 Claude Code、Codex、Cursor、OpenCode 等主流 Agent 统一管理团队的 Skills、Rules、MCP 配置和知识库。一个 Git 仓库管全团队 AI 配置，Admin 可集中下发规则，是目前最系统化的企业级 Agent 配置管理方案之一。",
+        "titleEn": "Tencent Open-Sources TeamAI CLI to Manage Skills and MCP Across All Agents",
+        "summaryEn": "Tencent open-sourced TeamAI CLI, a tool to centrally manage team-wide skills, rules, MCP configs, and knowledge bases across Claude Code, Codex, Cursor, and other agents. One Git repo governs the whole team's AI setup — a rare enterprise-grade contribution to the skills ecosystem."
+      },
+      {
+        "title": "Superpowers：跨 Claude/Cursor/Devin 的可组合 Skills 开发方法论",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/obra/superpowers",
+        "summary": "Superpowers 是一套完整的 AI 编程方法论，基于可组合 Skills 构建，兼容 Claude Code、Codex、Cursor、Devin CLI、Factory Droid、Gemini 等主流 Agent。提供初始指令确保 Agent 正确使用技能库，填补了「Skills 怎么组织和分发」这一系统性空白。",
+        "titleEn": "Superpowers: A Composable Skills Framework for Claude, Cursor, Devin and More",
+        "summaryEn": "Superpowers is a complete software development methodology built on composable skills, supporting Claude Code, Codex, Cursor, Devin, Gemini, and more. It ships with initialization instructions to ensure agents actually use the skills correctly — addressing the missing layer in cross-agent skill management."
+      },
+      {
+        "title": "text-to-cad：Agent Skills 扩展到 CAD/CAE/CAM 设计领域",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/earthtojake/text-to-cad",
+        "summary": "text-to-cad 将 Agent Skills 概念延伸至工程设计领域，支持 CAD 模型生成、检查、切片和 URDF/SRDF 机器人描述文件处理。AI Agent 首次可以系统化地参与机械设计到制造的完整工作流，对硬件创业者和机器人开发者极具价值。",
+        "titleEn": "text-to-cad: Agent Skills Library for CAD, CAE, and CAM Workflows",
+        "summaryEn": "text-to-cad extends the agent skills paradigm into engineering design, offering skills for generating, inspecting, slicing, and handing off CAD/URDF/SRDF artifacts. It's the first systematic effort to bring AI agents into hardware design-to-manufacturing pipelines."
+      },
+      {
+        "title": "PARSER：并行阅读 + 深度推理，长文档 Agent 延迟大幅下降",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2609.06702",
+        "summary": "传统长文档 Agent 只能逐块顺序读取，推理延迟与文档长度成线性关系。PARSER 把「读」和「想」解耦：多个轻量子 Agent 并行分块读取，主 Agent 专注深度推理。对需要处理大量 PDF/文档的开发者来说，这意味着 RAG 流水线可以显著提速，同时减少「证据放哪段就只看哪段」的位置偏差。",
+        "titleEn": "PARSER: Parallel Reading + Deep Reasoning Cuts Long-Doc Agent Latency",
+        "summaryEn": "PARSER decouples reading from reasoning in long-document agents: lightweight sub-agents read chunks in parallel while a lead agent reasons deeply. For developers building RAG pipelines, this means faster inference and less sensitivity to where evidence appears in a document."
+      },
+      {
+        "title": "SchemeArena：系统量化 LLM Agent「暗中使坏」的倾向有多强",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2609.08126",
+        "summary": "SchemeArena 是首个系统性测试 LLM Agent「暗中追求偏离目标」倾向的基准，拆解了工具可用性、监督力度、感知后果等关键变量对 scheming 的影响。在 AI Agent 越来越自主的背景下，这对要把 Agent 部署进生产环境的开发者是必读安全参考。",
+        "titleEn": "SchemeArena: Benchmarking How Likely LLM Agents Are to Secretly Scheme",
+        "summaryEn": "SchemeArena is the first benchmark systematically stress-testing LLM agents for covert misalignment — measuring how instrumental goals, oversight levels, and consequences affect scheming behavior. Essential safety reading for any developer shipping autonomous agents to production."
+      }
+    ],
+    "funding": [
+      {
+        "company": "Xapien",
+        "url": "https://axios.com/pro/all-deals/2026/09/10/due-diligence-ai-xapien-56-million",
+        "round": "Series B",
+        "amount": "$56M",
+        "valuation": "",
+        "investors": "",
+        "pitch": "AI 背景调查与尽职调查自动化平台，帮助金融机构和企业快速完成合规核查，正切入合规 AI 这一高价值垂直赛道。"
+      },
+      {
+        "company": "Mistral AI",
+        "url": "https://news.crunchbase.com/venture/europe-record-setting-mistral-ai-raise/",
+        "round": "Series D",
+        "amount": "$3.5B",
+        "valuation": "$24B",
+        "investors": "Samsung Electronics",
+        "pitch": "欧洲最大 AI 独立模型公司，本轮由三星领投，估值近乎翻倍至 240 亿美元，是欧洲 AI 融资纪录再次刷新。"
+      }
+    ],
+    "jasonSays": "今天最值得盯的是 OpenAI Agents API——这不是新模型发布，而是 OpenAI 在悄悄把「基础设施层」收入囊中：谁的 Agent 跑在 OpenAI 云上，谁就被绑定了。独立开发者现在要想清楚：便利 vs 锁定，这笔账怎么算。",
+    "jasonSaysEn": "The real story today isn't a new model — it's OpenAI quietly claiming the infrastructure layer with the Agents API. Every agent you run on their cloud is a lock-in decision. Independent developers need to ask: how much convenience is worth giving up your stack ownership?",
+    "filename": "2026-09-11.md"
+  },
+  {
     "slug": "2026-09-10",
     "date": "2026-09-10",
     "title": "AI 快讯 · 9月10日",
@@ -99,7 +201,8 @@
     ],
     "jasonSays": "GPT-6 Astra 今天就这么低调地出来了——但真正让我坐直的是 Paul Christiano 入董事会：当最知名的 AI「末日论者」被 OpenAI 拉进来亲手监督 GPT-6，说明这家公司自己也在认真对待它可能造出来的东西。",
     "jasonSaysEn": "GPT-6 Astra dropped quietly today, but what actually made me sit up straight is Paul Christiano joining OpenAI's board—when the most credible AI doomer gets pulled in to personally oversee GPT-6, it tells you the company itself is taking seriously what it might be building.",
-    "filename": "2026-09-10.md"
+    "filename": "2026-09-10.md",
+    "coverImage": "/news/2026-09-10.png"
   },
   {
     "slug": "2026-09-09",
