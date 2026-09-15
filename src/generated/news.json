@@ -1,5 +1,98 @@
 [
   {
+    "slug": "2026-09-15",
+    "date": "2026-09-15",
+    "title": "AI 快讯 · 9月15日",
+    "items": [
+      {
+        "title": "Agent Skills 注册表上线：为 Claude Code/Cursor 提供经安全验证的技能库",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/tech-leads-club/agent-skills",
+        "summary": "tech-leads-club 推出 Agent Skills，一个专为专业 AI 编码 Agent 设计的安全、可验证技能注册表，支持 Claude Code、Cursor、Copilot 等主流工具。项目指出市面上超 13% 的第三方技能包含严重安全漏洞，该库通过严格审查提供经测试的可信技能，是目前最直接响应 Claude Code 生态扩展需求的开源项目之一。",
+        "titleEn": "Agent Skills Registry: Verified Skills for Claude Code, Cursor & More",
+        "summaryEn": "tech-leads-club launches Agent Skills, a hardened and security-validated skill registry for AI coding agents like Claude Code, Cursor, and Copilot. It addresses a critical gap: over 13% of marketplace skills reportedly carry critical vulnerabilities. Developers can now extend their agents with confidence instead of rolling the dice on untrusted plugins."
+      },
+      {
+        "title": "OpenAI 3 亿美元收购相机技术公司 Glass Imaging，剑指下一代视觉 AI",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/09/14/openai-buys-smartphone-camera-maker-glass-imaging-for-300-million-report-says/",
+        "summary": "据报道 OpenAI 以 3 亿美元收购智能手机相机技术公司 Glass Imaging，其创始人均来自苹果，曾主导 Portrait Mode 的研发。此举表明 OpenAI 正加速布局硬件与视觉感知层，补齐多模态感知链路的关键一环，对未来的设备端 AI 产品方向影响深远。",
+        "titleEn": "OpenAI Acquires Camera Startup Glass Imaging for $300M",
+        "summaryEn": "OpenAI reportedly acquired Glass Imaging, a smartphone camera tech company founded by former Apple engineers behind Portrait Mode, for $300M. The move signals OpenAI's push into hardware and visual perception — a key missing piece for its multimodal and on-device AI ambitions."
+      },
+      {
+        "title": "英伟达黄仁勋当面告诉特朗普：AI 减速「绝不会发生」",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/09/14/nvidia-ceo-jensen-huang-tells-trump-were-not-going-to-let-an-ai-slowdown-happen/",
+        "summary": "在 Dario Amodei 呼吁放缓 AI 发展、马斯克与 Altman 罕见表态支持的背景下，英伟达 CEO 黄仁勋直接向特朗普表态，绝不允许 AI 减速。AI 产业内部围绕「踩刹车还是踩油门」的阵营分裂日益公开化，英伟达作为算力基础设施最大受益者的立场意味深长。",
+        "titleEn": "Jensen Huang Tells Trump: AI Slowdown 'Not Going to Happen'",
+        "summaryEn": "As Dario Amodei's calls to slow AI gain surprising support from Musk and Altman, Nvidia CEO Jensen Huang directly told Trump that an AI slowdown 'is not going to happen.' The public fracture within the AI industry — between safety-first labs and infrastructure giants — is now impossible to ignore."
+      },
+      {
+        "title": "微软发布 AI 行为准则：不得入侵系统、不得欺骗人类",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/09/14/microsofts-new-ai-code-of-conduct-tells-models-not-to-hack-systems-or-trick-humans/",
+        "summary": "微软正式发布 AI 行为准则，明确要求旗下 AI 模型不得入侵系统、不得欺骗或操控用户，强调辅助人类而非取代，同时设定具体安全约束。这是继监管讨论升温后，主流科技公司首批主动披露内部 AI 治理框架的举措之一，对企业 AI 合规部署有直接参考价值。",
+        "titleEn": "Microsoft's AI Code of Conduct: No Hacking, No Deceiving Humans",
+        "summaryEn": "Microsoft published a formal AI code of conduct banning its models from hacking systems, deceiving humans, or replacing rather than supporting people. As one of the first major platforms to publicly share its internal AI governance framework, this sets a practical compliance reference point for enterprise AI deployments."
+      },
+      {
+        "title": "iOS 27 大幅重塑 Siri：苹果 AI 助手终于「能用了」",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/09/14/with-ios-27-im-actually-using-siri-again/",
+        "summary": "iOS 27 带来了苹果拖延已久的 Siri 全面重构，记者实测后表示「终于开始主动使用 Siri 了」。搭配 Daydream 等第三方应用通过 Apple Intelligence API 实现跨 App 语音购物等功能，苹果设备端 AI 生态正在进入真正可用阶段，对独立开发者而言是一个值得提前布局的分发窗口。",
+        "titleEn": "iOS 27 Finally Makes Siri Useful Again with Deep AI Overhaul",
+        "summaryEn": "iOS 27 delivers Apple's long-delayed Siri overhaul, with hands-on reviews saying it's finally worth using daily. Third-party apps like Daydream already leverage Apple Intelligence APIs for cross-app voice features. For indie developers, this opens a meaningful new distribution channel via Siri integrations."
+      },
+      {
+        "title": "Fyxer 如何用 OpenAI 微调构建用户「真正信任」的 AI 邮件助理",
+        "source": "OpenAI Blog",
+        "category": "变现案例",
+        "url": "https://openai.com/index/fyxer",
+        "summary": "Fyxer 通过 OpenAI 模型微调 + 记忆 + 真实用户反馈闭环，打造出能模拟每位用户写作风格的 AI 邮件助理，实现收件箱整理和邮件起草的高度个性化。其核心壁垒不在于模型本身，而在于「用户信任」的积累方式，是 AI 工具从「好玩」走向「刚需」的典型路径案例。",
+        "titleEn": "How Fyxer Built a Trusted AI Email Assistant Using OpenAI Fine-Tuning",
+        "summaryEn": "Fyxer built an AI executive assistant that organizes inboxes and drafts emails in each user's unique voice, using OpenAI fine-tuning, memory, and real-user feedback loops. The key moat isn't the model — it's the accumulated trust and personalization data, a playbook worth studying for any AI productivity tool."
+      },
+      {
+        "title": "Colibri：纯 C 实现、零依赖，让消费级硬件跑 744B–2.8T 参数 MoE 大模型",
+        "source": "GitHub Trending",
+        "category": "AI 论文",
+        "url": "https://github.com/JustVugg/colibri",
+        "summary": "Colibri 是一个纯 C 编写、零外部依赖的轻量推理引擎，通过将存储、RAM 和 VRAM 统一为分层推理缓存（AI memory multitiering），支持在消费级和异构硬件上运行 744B 到 2.8T 参数的前沿 MoE 模型。对本地部署和边缘推理开发者而言，这是目前门槛最低、可玩性最高的超大模型本地运行方案之一。",
+        "titleEn": "Colibri: Run 744B–2.8T MoE Models on Consumer Hardware with Pure C",
+        "summaryEn": "Colibri is a pure C, zero-dependency inference engine that lets developers run frontier MoE models (744B to 2.8T parameters) on consumer hardware by treating storage, RAM, and VRAM as a unified inference memory hierarchy. It's arguably the most accessible path yet to running truly massive models locally without cloud costs."
+      },
+      {
+        "title": "Occamy-1.0：35B 协作 Agent 专用模型，用效率换前沿推理的新思路",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2609.11977",
+        "summary": "Occamy-1.0 是一个专为「协作 Agent」设计的 35B 模型，核心洞察是：大多数 Agent 工作流步骤并不需要顶级推理能力，而需要状态追踪、协调与错误恢复。通过在效率和能力之间取得帕累托最优，Occamy 为开发者提供了一个跑长流程 Agent 任务时成本远低于旗舰模型的可行替代方案。",
+        "titleEn": "Occamy-1.0: A Cost-Efficient 35B Model Built for Multi-Step Agent Workflows",
+        "summaryEn": "Occamy-1.0 is a 35B model optimized for co-work agents that execute long, multi-step workflows. The key insight: most agent steps require state tracking and recovery, not frontier-scale reasoning. By targeting the Pareto frontier of capability vs. cost, it offers developers a far cheaper option for production agent pipelines without sacrificing reliability."
+      }
+    ],
+    "funding": [
+      {
+        "company": "Motive",
+        "url": "https://news.crunchbase.com/venture/biggest-funding-rounds-boring-co-cognition-massive-week/",
+        "round": "Series undisclosed",
+        "amount": "$1.3B",
+        "valuation": "",
+        "investors": "",
+        "pitch": "车队管理软件商，AI 驱动的运营智能平台，本轮融资额跻身本周前三，显示 AI+物流赛道持续获得资本青睐。"
+      }
+    ],
+    "jasonSays": "今天最值得关注的信号是两个截然相反的力量：黄仁勋当面对特朗普说「AI 不会减速」，而微软同一天发布 AI 行为准则划红线——产业加速与治理收紧正在同步发生，独立开发者最好两只眼睛都睁开。",
+    "jasonSaysEn": "Today's most telling signal: Jensen Huang tells Trump AI won't slow down, while Microsoft draws behavioral red lines for its models on the same day — acceleration and governance are now racing each other, and indie developers need to watch both lanes.",
+    "filename": "2026-09-15.md"
+  },
+  {
     "slug": "2026-09-14",
     "date": "2026-09-14",
     "title": "AI 快讯 · 9月14日",
@@ -90,7 +183,8 @@
     ],
     "jasonSays": "系统提示词大规模泄露这件事值得每个 AI 产品团队认真对待——不是因为恐慌，而是因为最好的产品设计往往藏在这些「不该被看见」的地方，现在全免费开卷了。",
     "jasonSaysEn": "The system prompt leak repo is the most underrated learning resource this week — the best AI product design is hidden in those 'private' instructions, and now it's all open book. Study it before your competitors do.",
-    "filename": "2026-09-14.md"
+    "filename": "2026-09-14.md",
+    "coverImage": "/news/2026-09-14.png"
   },
   {
     "slug": "2026-09-13",
