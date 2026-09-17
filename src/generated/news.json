@@ -1,5 +1,98 @@
 [
   {
+    "slug": "2026-09-18",
+    "date": "2026-09-18",
+    "title": "AI 快讯 · 9月18日",
+    "items": [
+      {
+        "title": "OpenAI 推出 Astra for Law：法律行业专属 AI 工作流平台",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/astra-for-law",
+        "summary": "OpenAI 正式推出面向法律行业的专属 AI 平台 Astra for Law，提供前沿模型能力、定制化律所工作流、法律数据源接入，以及符合客户信息保密要求的企业级安全控制。这是 OpenAI 垂直行业化布局的重要一步，法律 SaaS 赛道将迎来强劲竞争对手。",
+        "titleEn": "OpenAI Launches Astra for Law: AI Platform for Legal Workflows",
+        "summaryEn": "OpenAI launches Astra for Law, a purpose-built AI platform offering frontier models, custom firm workflows, connected legal data sources, and confidentiality-grade controls. A significant vertical push into legal tech that will pressure incumbents like Harvey and Clio."
+      },
+      {
+        "title": "Cloudflare 开源安全审计 Skill：让 Agent 自主完成多阶段漏洞挖掘",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/cloudflare/security-audit-skill",
+        "summary": "Cloudflare 开源了一个 coding-agent skill，能驱动 Agent 完成侦察、覆盖率引导漏洞猎捕、候选验证、结构化输出及独立记录核实的全流程安全审计。该 skill 已在 Cloudflare 内部漏洞发现系统中实战验证，是目前 Agent Skills 生态中少见的高质量安全类技能。",
+        "titleEn": "Cloudflare Open-Sources Security Audit Skill for Coding Agents",
+        "summaryEn": "Cloudflare open-sources a coding-agent skill that orchestrates multi-phase security audits—recon, coverage-led hunting, candidate validation, and machine-readable findings—used internally in their own vulnerability discovery harness. A rare production-grade security skill for the agent ecosystem."
+      },
+      {
+        "title": "失控 AI Agent 的解药：用更多 AI 来监督 AI",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/09/17/the-fix-for-rogue-ai-agents-could-be-more-ai/",
+        "summary": "随着企业将越来越复杂的任务交给 AI Agent，人类已无法实时审查其行为速度与规模。TechCrunch 报道，业界正转向用「监督 Agent」来监控「执行 Agent」的新范式——这标志着 AI 基础设施从「人在环路」向「AI 在环路」的重大转变，也是 Agent 治理赛道的核心命题。",
+        "titleEn": "Rogue AI Agents Need AI Supervisors, Not More Human Reviewers",
+        "summaryEn": "As AI agents handle longer, faster, higher-volume tasks than humans can review, companies are turning to AI supervisor agents as the oversight layer. This marks a fundamental infrastructure shift from 'human-in-the-loop' to 'AI-in-the-loop,' raising new questions about accountability chains."
+      },
+      {
+        "title": "Google DeepMind 成立 AGI 研究院：让 AGI 争论走向公共领域",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/09/17/google-deepmind-launches-institute-to-widen-the-agi-debate/",
+        "summary": "Google DeepMind 宣布成立专门研究院，目标是将 AGI 的核心问题——定义、时间线、风险、治理——带入更广泛的公共讨论中，而非仅在实验室内部辩论。此举意在争夺 AGI 叙事权，同时为 DeepMind 的研究路线提供更强的社会合法性背书。",
+        "titleEn": "Google DeepMind Launches Institute to Broaden Public AGI Debate",
+        "summaryEn": "Google DeepMind launches a dedicated institute to take big AGI questions—definitions, timelines, risks, governance—into broader public discourse. A strategic move to shape the AGI narrative and gain societal legitimacy for DeepMind's research direction."
+      },
+      {
+        "title": "Voicebox 开源：本地运行的全功能 AI 声音工作室",
+        "source": "GitHub Trending",
+        "category": "AI 工具动态",
+        "url": "https://github.com/jamiepine/voicebox",
+        "summary": "Voicebox 是一个完全本地运行的开源 AI 声音工作室，支持声音克隆、语音生成、向任意应用口述输入，以及用自定义声音与 Agent 对话。定位为 ElevenLabs 的本地替代方案，主打隐私与零成本，对独立开发者和出海产品构建者有较高参考价值。",
+        "titleEn": "Voicebox: Open-Source Local AI Voice Studio for Cloning and Dictation",
+        "summaryEn": "Voicebox is an open-source, fully local AI voice studio supporting voice cloning, speech generation, dictation into any app, and agent conversations with owned voices. Positioned as a privacy-first, zero-cost alternative to ElevenLabs—highly relevant for indie devs and SaaS builders."
+      },
+      {
+        "title": "CERA-MoA：路由与 Agent 协同进化，打破 MoA 范式瓶颈",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2609.18779",
+        "summary": "现有「多 Agent 混合」(MoA) 系统的路由策略与 Agent 微调是相互独立的，导致路由无法适应 Agent 能力变化。CERA-MoA 提出迭代强化方案，让路由器与 Agent 同步演化。对开发者的意义：构建多 Agent 系统时，路由与 Agent 能力解耦是性能天花板，这项研究提供了打破该瓶颈的实用思路。",
+        "titleEn": "CERA-MoA: Co-Evolving Routing and LLM Agents Breaks MoA Bottleneck",
+        "summaryEn": "CERA-MoA fixes a critical flaw in Mixture-of-Agents systems: routing strategies and agent fine-tuning have been siloed, preventing adaptive specialization. By co-evolving the router with agents iteratively, it unlocks synergistic performance gains—directly relevant for anyone building multi-agent pipelines."
+      },
+      {
+        "title": "Edge0：SSD 流式推理让 35B MoE 模型跑上消费级硬件",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2609.18063",
+        "summary": "35B MoE 模型在 4-bit 量化下仍有 19.5GB，普通 GPU 难以承载。Edge0 通过「预路由器」在当前层计算结束前就预测下一层需要哪些专家，提前从 SSD 加载权重，将存储延迟隐藏在计算之后。对独立开发者的意义：本地部署大型 MoE 模型（如 Mixtral 级别）变得实际可行，不再需要高端 GPU 集群。",
+        "titleEn": "Edge0: SSD Streaming Inference Brings 35B MoE Models to Consumer Hardware",
+        "summaryEn": "Edge0 introduces a 'prerouter' that predicts which MoE experts layer N+1 needs before layer N finishes, hiding SSD read latency behind compute. This makes local inference of 35B+ MoE models on consumer hardware genuinely practical—a game-changer for indie devs running models locally."
+      },
+      {
+        "title": "Crusoe 完成 39 亿美元融资：估值 309 亿，押注模块化 AI 工厂",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/09/17/crusoe-raises-3-9b-to-build-massive-data-centers-and-small-modular-ai-factories/",
+        "summary": "AI 算力基础设施公司 Crusoe 完成 39 亿美元新一轮融资，估值达 309 亿美元。公司计划同时布局大型数据中心与小型模块化「AI 工厂」，瞄准从超大规模云到边缘推理的全算力栈。这轮融资规模显示市场对 AI 基础设施的需求预期仍在加速上行。",
+        "titleEn": "Crusoe Raises $3.9B at $30.9B Valuation to Build Modular AI Factories",
+        "summaryEn": "Crusoe closes $3.9B at a $30.9B valuation to build both massive data centers and small modular AI factories. The dual strategy targets the full compute stack from hyperscale cloud to edge inference, signaling continued accelerating demand for dedicated AI infrastructure."
+      }
+    ],
+    "funding": [
+      {
+        "company": "Comp AI",
+        "url": "https://techcrunch.com/2026/09/17/comp-ai-sets-eyes-on-a-continiously-agentic-future-for-security-and-complaince/",
+        "round": "Series A",
+        "amount": "$34M",
+        "valuation": "",
+        "investors": "Roo Capital、Grand Ventures",
+        "pitch": "AI 驱动的网络安全与合规平台，主打持续 Agent 化的安全审计与合规自动化，目标替代传统人工合规流程。"
+      }
+    ],
+    "jasonSays": "今天最值得盯的是 Cloudflare 开源的安全审计 Skill——它不是 Demo，是在生产环境跑过的 Agent 技能，Skills 生态终于开始有「能打」的垂直案例了。Astra for Law 则是一个信号：OpenAI 正在把每个高价值垂直行业当独立产品线来打，传统法律 SaaS 的日子不好过了。",
+    "jasonSaysEn": "Cloudflare's security audit skill is the real deal—not a demo but a production-tested agent skill, finally giving the Skills ecosystem something with genuine teeth. Meanwhile, Astra for Law signals OpenAI is treating every high-value vertical as its own product line, bad news for legal SaaS incumbents.",
+    "filename": "2026-09-18.md"
+  },
+  {
     "slug": "2026-09-17",
     "date": "2026-09-17",
     "title": "AI 快讯 · 9月17日",
@@ -79,7 +172,8 @@
     ],
     "jasonSays": "今天最大信号是 OpenAI 广告业务正式亮相——Sponsored Agents 配合 Shopify/HubSpot 集成，说明 OpenAI 已不满足订阅收入，要直接吃掉广告和电商预算，出海卖货的人需要认真研究这条新流量入口。",
     "jasonSaysEn": "The biggest signal today: OpenAI officially entering advertising with Sponsored Agents and Shopify/HubSpot integrations — they're not content with subscription revenue and are now going after ad and commerce budgets directly. If you sell anything online, this new traffic channel deserves serious attention.",
-    "filename": "2026-09-17.md"
+    "filename": "2026-09-17.md",
+    "coverImage": "/news/2026-09-17.png"
   },
   {
     "slug": "2026-09-16",
