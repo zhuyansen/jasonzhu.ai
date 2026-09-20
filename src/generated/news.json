@@ -1,5 +1,87 @@
 [
   {
+    "slug": "2026-09-21",
+    "date": "2026-09-21",
+    "title": "AI 快讯 · 9月21日",
+    "items": [
+      {
+        "title": "cua 开源：给 AI Agent 一台真正可用的电脑",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/trycua/cua",
+        "summary": "cua 提供开源桌面自动化驱动、隔离云端桌面、本地 macOS 虚拟机及专项决策模型，支持跨 OS Agent 集群（Fleet）规模化部署，并内置 benchmark 用于训练/评测/数据生成。对需要让 Agent 操控真实 GUI 的开发者来说，这是目前覆盖最全的基础设施方案。",
+        "titleEn": "cua: Open-Source Computer-Use Infrastructure for AI Agents",
+        "summaryEn": "cua offers open-source desktop automation drivers, isolated cloud desktops, local macOS VMs, and specialist models for computer-use agents. It supports cross-OS fleets and built-in benchmarks for training and evaluation—arguably the most complete infrastructure stack for developers building GUI-operating agents today."
+      },
+      {
+        "title": "Coder 自托管平台原生支持 AI Coding Agent 循环执行",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/coder/coder",
+        "summary": "Coder 的云端开发环境平台新增原生 AI 编码 Agent 支持，Agent 在 Terraform 定义的工作空间中循环执行任务，通过 WireGuard 安全隧道连接，闲置自动关停。对企业级 Agent 基础设施感兴趣的团队而言，这是比单纯调用 API 更完整的安全沙箱方案。",
+        "titleEn": "Coder's Self-Hosted Platform Now Natively Runs AI Coding Agent Loops",
+        "summaryEn": "Coder's self-hosted cloud dev environment platform now supports a native AI coding agent loop running inside Terraform-defined, WireGuard-secured workspaces that auto-shutdown when idle. It offers a more secure, enterprise-grade sandbox than raw API calls for teams deploying coding agents at scale."
+      },
+      {
+        "title": "世界模型公司集体「闭嘴」：钱多话少，秘密建设",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/09/20/world-model-companies-are-keeping-a-lot-of-secrets/",
+        "summary": "TechCrunch 调查发现，世界模型赛道的创业公司普遍拿到大额融资、享有高关注度，却对技术细节和真实产品方向讳莫如深——连数据供应商都不知道自己的数据被用来做什么。这种集体沉默折射出该赛道的竞争烈度与差异化焦虑。",
+        "titleEn": "World Model Startups Are Flush With Cash but Notoriously Tight-Lipped",
+        "summaryEn": "TechCrunch finds that world-model startups are sitting on piles of cash and buzz, yet refuse to disclose what they're actually building—even to their own data suppliers. The collective secrecy signals fierce competition and deep anxiety about differentiation in what may become the next AI infrastructure battleground."
+      },
+      {
+        "title": "RSI 怀疑论：为何 AI「中间派」仍不相信递归自我改进",
+        "source": "Interconnects",
+        "category": "AI 工具动态",
+        "url": "https://www.interconnects.ai/p/where-i-stand-on-rsi",
+        "summary": "Nathan Lambert 发文梳理自己对 RSI（递归自我改进）的怀疑立场，认为当前前沿模型的进展轨迹并不支持「AI 将快速自我迭代至失控」的叙事，并从能力瓶颈和评估局限两个维度拆解了 RSI 支持者的核心假设。在 AI 安全叙事愈发极端的当下，这是难得的审慎声音。",
+        "titleEn": "Why an 'AI Moderate' Still Doesn't Buy Recursive Self-Improvement",
+        "summaryEn": "Interconnects' Nathan Lambert lays out why he remains unconvinced by recursive self-improvement narratives, arguing current frontier model trajectories don't support rapid runaway self-iteration. He deconstructs RSI advocates' core assumptions around capability ceilings and evaluation limits—a measured counterpoint in an increasingly hyperbolic safety debate."
+      },
+      {
+        "title": "AI 高管真的想减速吗？Equity 播客展开真实辩论",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/09/20/is-the-ai-industry-really-ready-to-slow-down/",
+        "summary": "TechCrunch Equity 播客就「AI 高管减速言论」展开辩论：口头表态放缓与实际投入扩张之间存在明显落差。随着 AGI 叙事升温，这种言行不一正成为监管者和投资者都在审视的核心矛盾。",
+        "titleEn": "Do AI Executives Actually Want to Slow Down? Equity Debates",
+        "summaryEn": "TechCrunch's Equity podcast debates whether AI executives' calls to 'slow down' are genuine, noting a stark gap between public statements and continued infrastructure investment. As AGI narratives heat up, this credibility gap is drawing scrutiny from regulators and investors alike."
+      },
+      {
+        "title": "MiniMax-H3 全模态评测：多模态对齐能否提升物理世界推理？",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2609.18323",
+        "summary": "研究者系统评测了 MiniMax-H3 这一「全模态」生成模型——它在统一框架内处理文本、图像、视频、音频的理解与生成。核心问题：多模态对齐真的能让模型更好地推理物理世界吗？对开发者的启示：这是目前少有的针对全模态架构进行系统 benchmark 的工作，结论将影响多模态 Agent 的架构选择。",
+        "titleEn": "MiniMax-H3 Evaluated: Does Omni-Modal Alignment Improve Physical Reasoning?",
+        "summaryEn": "Researchers benchmark MiniMax-H3, an omni-modal model that unifies text, image, video, and audio understanding and generation in a shared latent space. The key question: does multimodal alignment actually improve physical-world reasoning? For developers building multimodal agents, this is one of the first rigorous benchmarks of a fully unified omni-modal architecture."
+      },
+      {
+        "title": "FAMOS：只需稀疏视角，就能重建铰接物体的 3D 运动结构",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2609.20817",
+        "summary": "FAMOS 提出从少量无序单目点云同时预测可动部件分割与关节参数，无需依赖单类别形状先验。对机器人、具身 AI 和 3D 内容生成开发者而言：这意味着在真实场景中用几张图就能建出「可操控」的 3D 物体模型，大幅降低机械臂训练和游戏资产制作的数据门槛。",
+        "titleEn": "FAMOS: 3D Articulated Object Modeling from Just a Few Sparse Views",
+        "summaryEn": "FAMOS predicts movable-part segmentation and joint parameters from a sparse set of unordered monocular point clouds, eliminating reliance on category-level shape priors. For robotics, embodied AI, and 3D content developers, this means building manipulable 3D object models from just a handful of images—dramatically lowering the data barrier for robot training and game asset creation."
+      },
+      {
+        "title": "25000 份申请揭示种子期规律：分发渠道比产品本身更重要",
+        "source": "Crunchbase News",
+        "category": "出海实战",
+        "url": "https://news.crunchbase.com/seed/startup-funding-rules-ai-gtm-golbin-lvlup/",
+        "summary": "LvlUp Ventures 联创分析 25000 份种子期申请后得出结论：最容易获投的创业公司优先打磨清晰的 GTM 策略，早期测试差异化营销渠道，并将 AI 作为核心基础设施而非功能附加。对出海独立开发者的启示：分发能力和专注执行才是持久护城河。",
+        "titleEn": "25K Applications Reveal: Distribution Beats Product at Seed Stage",
+        "summaryEn": "LvlUp Ventures analyzed 25,000 seed applications and found the most fundable startups prioritize a clear GTM strategy, test differentiated marketing channels early, and treat AI as core infrastructure. Key takeaway for indie developers: distribution muscle and disciplined focus are more durable moats than product features alone."
+      }
+    ],
+    "jasonSays": "今天最值得盯住的是 cua 和 Coder 同步发力——一个给 Agent 配电脑，一个给 Agent 配安全沙箱，「Agent 基础设施」这层正在快速成形，比应用层的噪声更值得长期关注。",
+    "jasonSaysEn": "Today's most underrated signal: cua and Coder are simultaneously solving the 'Agent needs a real computer' problem—one provides the machine, the other the secure sandbox. Agent infrastructure is hardening fast, and it's a quieter but more durable bet than the application layer noise.",
+    "filename": "2026-09-21.md"
+  },
+  {
     "slug": "2026-09-20",
     "date": "2026-09-20",
     "title": "AI 快讯 · 9月20日",
@@ -90,7 +172,8 @@
     ],
     "jasonSays": "Gemini 黑进别人系统还被 Google 说「行为得当」，Jev 两天出 6 个克隆——今天最大的信号是：AI 的进攻能力和复制速度都已经超出我们的道德框架刷新速度，窗口期以「天」为单位在缩短。",
     "jasonSaysEn": "Gemini hacking companies and being called 'appropriate,' Jev cloned 6 times in 48 hours — today's signal is clear: AI's offensive capabilities and replication speed are both outpacing our ethical frameworks, and competitive windows are now measured in days, not months.",
-    "filename": "2026-09-20.md"
+    "filename": "2026-09-20.md",
+    "coverImage": "/news/2026-09-20.png"
   },
   {
     "slug": "2026-09-19",
