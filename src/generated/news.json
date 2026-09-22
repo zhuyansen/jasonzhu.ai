@@ -1,5 +1,98 @@
 [
   {
+    "slug": "2026-09-22",
+    "date": "2026-09-22",
+    "title": "AI 快讯 · 9月22日",
+    "items": [
+      {
+        "title": "Anthropic 开源金融服务 Agent Skills：覆盖投行/PE/财富管理全场景",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/anthropics/financial-services",
+        "summary": "Anthropic 在 GitHub 发布金融服务参考 Agent 合集，覆盖投资银行、股票研究、私募股权、财富管理等核心场景，提供即用型 Skills 和数据连接器。可作为 Claude Cowork 插件安装，也可通过 Managed Agents API 自部署，同一套系统提示两种运行方式，是目前最贴近企业金融工作流的官方 Skills 参考实现。",
+        "titleEn": "Anthropic open-sources financial services agent skills for banking and PE",
+        "summaryEn": "Anthropic released an open-source financial services repo with reference agents, skills, and data connectors for investment banking, equity research, PE, and wealth management. Works as a Claude Cowork plugin or via the Managed Agents API — same system prompt, two deployment paths. The most production-ready official skills reference for enterprise finance workflows to date."
+      },
+      {
+        "title": "Cloudflare 开源安全审计 Skill：多阶段漏洞发现流程标准化",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/cloudflare/security-audit-skill",
+        "summary": "Cloudflare 开源了一个专为 Coding Agent 设计的安全审计 Skill，将漏洞发现流程拆解为：侦察、覆盖率导向的漏洞猎取、候选验证、结构化输出、独立记录核验、中立报告六个阶段，每个阶段由隔离 Agent 执行。这是 Cloudflare 自身漏洞发现系统的种子 Skill，为开发者提供了安全审计自动化的可复用模板。",
+        "titleEn": "Cloudflare releases open-source multi-phase security audit skill for coding agents",
+        "summaryEn": "Cloudflare open-sourced a coding-agent skill that orchestrates isolated agents through six phases of security auditing — from recon to neutral reporting with machine-readable, independently verified findings. This is the seed skill behind Cloudflare's own vulnerability discovery harness, offering developers a reusable template for automated security auditing."
+      },
+      {
+        "title": "Builder.io 开源 Agent-Native 框架：自主任务与 UI 共享同一套 Action 定义",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/BuilderIO/agent-native",
+        "summary": "Builder.io 开源 TypeScript Agent 框架 Agent-Native，核心理念是「一次定义，两处复用」——每个能力以 Action 形式声明后，Agent 可将其作为工具调用，UI 代码也可直接调用，无需重复实现。解决了 Agentic 应用中 Agent 逻辑和前端逻辑割裂的痛点，适合想快速搭建既有自主能力又有操作界面的产品团队。",
+        "titleEn": "Builder.io launches Agent-Native: one action definition powers both agent tools and UI",
+        "summaryEn": "Builder.io open-sourced Agent-Native, a TypeScript framework where each capability is defined once as an action — the agent uses it as a tool, and the UI calls it from code. This eliminates the split between agent logic and frontend logic, making it easier to ship agentic apps with purpose-built interfaces without duplicating implementation."
+      },
+      {
+        "title": "Meta Muse 增长速度超越 ChatGPT 同期：下载量与 DAU 均领先",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/09/21/metas-muse-is-outpacing-chatgpts-early-mobile-launch/",
+        "summary": "据 Appfigures 数据，Meta 新 AI Agent Muse 在美国和加拿大上线同期的下载量和日活跃用户数均超过 ChatGPT 移动版当年同期表现。但 Muse 同时遭遇了第一道生态壁垒——Amazon 已主动屏蔽 Muse 访问 Amazon.com，背后逻辑是 Amazon 自有模型生态的竞争考量。增长势头强劲，但平台封锁战已经开始。",
+        "titleEn": "Meta's Muse AI agent outpaces ChatGPT's early mobile growth in US and Canada",
+        "summaryEn": "Meta's AI agent Muse has surpassed ChatGPT's early mobile launch in US and Canada downloads and DAUs, per Appfigures data. However, Amazon has already blocked Muse from accessing Amazon.com, citing its own AI ecosystem interests. Strong growth metrics, but the platform gatekeeping battle has begun."
+      },
+      {
+        "title": "OpenAI AI 已解决逾百个数学开放问题，成立独立数学顾问委员会",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/09/21/openai-forms-math-advisory-group-as-its-ai-resolves-more-than-100-open-problems/",
+        "summary": "OpenAI 宣布其 AI 已解决超过 100 个数学领域开放问题，同时成立独立数学与 AI 顾问委员会负责审查和对外沟通研究成果。值得注意的是，该委员会并不具备放缓或调整 OpenAI 数学研究方向的权力，定位更接近外部公信力机构而非实质治理角色。",
+        "titleEn": "OpenAI AI solves 100+ open math problems, forms independent advisory group",
+        "summaryEn": "OpenAI announced its AI has resolved more than 100 open mathematical problems, while forming an independent advisory group to review and communicate findings. Notably, the group has no authority to slow or redirect OpenAI's math research — positioning it more as a credibility layer than genuine governance."
+      },
+      {
+        "title": "SiliconBench：首个专为 Apple Silicon 本地 LLM 推理设计的综合评测框架",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2609.19169",
+        "summary": "现有本地 LLM 跑分几乎只看速度，SiliconBench 填补了这个空白：同时评估速度、内存占用和输出保真度三个维度，测试了 9 个 Apple Silicon 推理引擎在 Qwen3、Qwen3.5、Gemma 4 上的表现。对在 Mac 上跑本地模型的开发者极有参考价值——帮你判断哪个引擎在不牺牲质量的前提下用最少内存跑最快。",
+        "titleEn": "SiliconBench benchmarks local LLM serving on Apple Silicon across speed, memory, and fidelity",
+        "summaryEn": "SiliconBench evaluates nine Apple Silicon LLM serving engines across speed, memory, and fidelity — dimensions that speed-only rankings miss. Tested on Qwen3, Qwen3.5, and Gemma 4, it's the first benchmark designed for developers running local models on Mac who need to balance performance without quality regression."
+      },
+      {
+        "title": "APort Vault：首个针对 AI Agent 支付授权安全的攻击回放基准测试",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2609.22076",
+        "summary": "随着 AI Agent 开始真正触碰支付流程，安全问题变得非常紧迫。APort Vault 用来自公开 CTF 竞赛的 4,371 条真实人工攻击，对 8 家实验室的 14 个模型进行了支付授权安全评测，共完成 225,964 次评估。这是目前最接近真实攻击场景的 Agent 支付安全基准，对所有做支付相关 Agent 的开发者都应该是必读参考。",
+        "titleEn": "APort Vault benchmarks AI agent payment security with 4,371 real attack replays",
+        "summaryEn": "APort Vault replays 4,371 real human-written attacks from a public CTF event against a live payment agent, testing 14 models from 8 labs across five policy configs — totaling 225,964 evaluations. The most realistic benchmark yet for AI agent payment security, essential reading for any developer building agents that touch financial transactions."
+      },
+      {
+        "title": "BI-Agent + BI-Bench：让 LLM 端到端自动完成商业智能分析全流程",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2609.20886",
+        "summary": "传统 BI 分析需要识别相关表、数据转换、建立关联关系再回答业务问题，流程繁琐。这篇论文提出 BI-Agent 框架与配套基准 BI-Bench，让 LLM 自动完成从原始数据到业务洞察的完整链路。对做企业数据产品的独立开发者而言，这意味着「自然语言问 → 自动出图表」的路径技术可行性进一步验证。",
+        "titleEn": "BI-Agent and BI-Bench aim to fully automate end-to-end business intelligence workflows",
+        "summaryEn": "BI-Agent automates the full BI workflow — table identification, data transformation, join relationships, and question answering — that previously required manual analyst work in tools like Power BI or Tableau. BI-Bench provides standardized evaluation. For developers building enterprise data products, this validates the technical feasibility of fully automated natural-language-to-insight pipelines."
+      }
+    ],
+    "funding": [
+      {
+        "company": "Oura",
+        "url": "https://techcrunch.com/2026/09/21/ouras-2-2b-ipo-is-mostly-a-payday-for-existing-shareholders/",
+        "round": "IPO",
+        "amount": "$2.2B",
+        "valuation": "",
+        "investors": "",
+        "pitch": "智能健康戒指公司 Oura 启动 IPO，此次上市主要是为现有股东套现，Forerunner Ventures 计划出售全部持仓，最高套现 12.6 亿美元。"
+      }
+    ],
+    "jasonSays": "今天最有意思的信号是 Anthropic 和 Cloudflare 同一天开源 Skills——金融和安全两个最难啃的企业场景都有了官方参考实现，Skills 生态正在从玩具阶段快速走向生产级，独立开发者现在有了最好的起跑线。",
+    "jasonSaysEn": "The most interesting signal today: Anthropic and Cloudflare both dropped production-grade skills on the same day — finance and security, two of enterprise's hardest domains. The Skills ecosystem is rapidly moving from toy demos to real infrastructure, and indie developers now have the best starting point they've ever had.",
+    "filename": "2026-09-22.md"
+  },
+  {
     "slug": "2026-09-21",
     "date": "2026-09-21",
     "title": "AI 快讯 · 9月21日",
@@ -79,7 +172,8 @@
     ],
     "jasonSays": "今天最值得盯住的是 cua 和 Coder 同步发力——一个给 Agent 配电脑，一个给 Agent 配安全沙箱，「Agent 基础设施」这层正在快速成形，比应用层的噪声更值得长期关注。",
     "jasonSaysEn": "Today's most underrated signal: cua and Coder are simultaneously solving the 'Agent needs a real computer' problem—one provides the machine, the other the secure sandbox. Agent infrastructure is hardening fast, and it's a quieter but more durable bet than the application layer noise.",
-    "filename": "2026-09-21.md"
+    "filename": "2026-09-21.md",
+    "coverImage": "/news/2026-09-21.png"
   },
   {
     "slug": "2026-09-20",
