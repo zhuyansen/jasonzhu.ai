@@ -1,5 +1,107 @@
 [
   {
+    "slug": "2026-09-23",
+    "date": "2026-09-23",
+    "title": "AI 快讯 · 9月23日",
+    "items": [
+      {
+        "title": "OpenAI 发布 GPT-6 Sol 和 Luna：性价比双雄正式登场",
+        "source": "OpenAI Blog / TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/09/22/openai-launches-gpt-6-sol-and-luna/",
+        "summary": "OpenAI 推出两款新模型 GPT-6 Sol 和 Luna，与旗舰版 Astra 同源，但在能力与成本之间做了不同权衡——Sol 主打速度与低成本，Luna 侧重更强的日常任务能力。同期公告 GPT-6 的 Prompt Caching 也大幅升级，命中率更高、新增显式断点控制，可进一步降低延迟与 API 费用。",
+        "titleEn": "OpenAI Launches GPT-6 Sol and Luna for Everyday Work",
+        "summaryEn": "OpenAI launches GPT-6 Sol and Luna — two models derived from the Astra architecture with different capability/cost tradeoffs for everyday use. Simultaneously, GPT-6 prompt caching gets higher hit rates, explicit breakpoints, and new diagnostics, meaningfully cutting latency and costs for API-heavy developers."
+      },
+      {
+        "title": "GPT-6 Astra 助力 Parallel 研究时间与成本各降一半",
+        "source": "OpenAI Blog",
+        "category": "变现案例",
+        "url": "https://openai.com/index/parallel-cuts-time-and-cost-with-astra",
+        "summary": "劳动力市场数据分析公司 Parallel 将 GPT-6 Astra 接入其 Agent 工作流后，研究与数据合成时间缩短 50%、成本降低 50%。这是一个典型的「AI 提效即直接降本」商业案例，对做数据密集型 SaaS 的开发者有直接参考价值。",
+        "titleEn": "GPT-6 Astra Cuts Research Time and Cost in Half for Parallel",
+        "summaryEn": "Parallel, a labor-market data firm, integrated GPT-6 Astra into its agent pipeline and cut both research time and operational cost by half. A concrete case study showing how frontier models directly translate to measurable ROI for data-intensive SaaS products."
+      },
+      {
+        "title": "小米 MiMo-V2.6-Pro：$300 万训出的开源前沿模型",
+        "source": "Latent Space",
+        "category": "AI 工具动态",
+        "url": "https://www.latent.space/p/ainews-xiaomi-mimo-v26-pro-1t-a42b",
+        "summary": "小米发布 MiMo-V2.6-Pro（1T-A42B 架构），仅花费约 300 万美元训练成本，跻身当前开源权重模型综合评测第一。这标志着中国厂商在前沿开源模型上的竞争力正式进入同一对话，也再次压低了「训出可用前沿模型」的资金门槛预期。",
+        "titleEn": "Xiaomi MiMo-V2.6-Pro: New Open-Weights Frontier Model at $3M Training Cost",
+        "summaryEn": "Xiaomi's MiMo-V2.6-Pro (1T-A42B) tops open-weights benchmarks at just $3M in training costs, crowning a new Chinese frontier lab. It signals that high-capability open models are becoming dramatically cheaper to produce, reshaping competitive dynamics against Western labs."
+      },
+      {
+        "title": "ai-memory：让 Claude Code 与 Codex 之间无缝交接任务上下文",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/akitaonrails/ai-memory",
+        "summary": "开源项目 ai-memory 专为编码 Agent CLI 设计长期记忆方案：中途退出 Claude Code，换用 OpenAI Codex 继续，无需重新解释架构、失败尝试或未解决问题。解决了多 Agent 工具切换时「上下文断层」的核心痛点，对重度使用 Claude Code/Cursor 的开发者极具实用价值。",
+        "titleEn": "ai-memory: Cross-Agent Long-Term Memory for Coding CLIs",
+        "summaryEn": "ai-memory is an open-source long-term memory layer for coding agent CLIs. Quit Claude Code mid-task, switch to Codex in the same directory, and pick up without re-explaining the architecture or failed approaches. Solves a real pain point for developers juggling multiple AI coding tools."
+      },
+      {
+        "title": "SkillSpec：自动验证 Agent Skill 语义正确性的推理框架",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2609.06052",
+        "summary": "随着可复用 Skill 成为 Agent 系统核心，如何确保 Skill 定义「语义正确」变得关键——传统测试抓不住「指令与意图冲突」这类静默失败。SkillSpec 提出意图遮蔽的规格推理方法，让 LLM 在不看原始意图标签的情况下独立判断 Skill 逻辑是否自洽，对构建可靠 Skills 生态的开发者直接相关。",
+        "titleEn": "SkillSpec: Intent-Masked Reasoning to Verify Agent Skill Correctness",
+        "summaryEn": "SkillSpec addresses a critical gap: reusable agent skills can fail silently due to semantic inconsistencies (intent conflicts) that conventional tests miss. The framework uses intent-masked specification reasoning — having an LLM validate skill logic without seeing the original intent label — directly relevant to developers building reliable skill libraries."
+      },
+      {
+        "title": "LLM「测谎仪」：用法医认知测试探测模型隐藏知识",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2609.21996",
+        "summary": "模型可能「知道但不说」——沙袋能力评估、或输出与内部知识相悖。研究者借鉴法医「隐藏信息测试」方法，设计出 PINE（Probe of Internal kNowledge Evidence），通过激活模式而非输出文本来判断模型是否隐瞒答案。对 AI 安全对齐和模型评估可信度有重要意义。",
+        "titleEn": "Lie Detector for LLMs: Probing Knowledge Models Refuse to Reveal",
+        "summaryEn": "Models can hold knowledge they don't report — sandbagging evaluations or answering against internal beliefs. PINE borrows a forensic concealed information test, detecting hidden knowledge from activation patterns rather than outputs. Has significant implications for trustworthy AI evaluation and alignment auditing."
+      },
+      {
+        "title": "Meta 承认 Muse 「深度借鉴」OpenClaw：连文件名都一样",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/09/22/meta-admits-muses-likeness-to-openclaw-isnt-a-coincidence/",
+        "summary": "Meta 公开承认其 AI 助手 Muse 在构建时「深度参考」了 OpenClaw，包括部分工作区文件名和内容几乎一致。尽管 Meta 坚称从零构建，但此番表态引发行业对大厂「借鉴」边界的讨论，也给 Muse 的高速增长势头蒙上一层合规阴影。",
+        "titleEn": "Meta Admits Muse Was 'Heavily Inspired' by OpenClaw, Down to Filenames",
+        "summaryEn": "Meta acknowledges Muse was 'heavily inspired' by OpenClaw — including matching workspace filenames and content — while claiming it was built from scratch. The admission raises uncomfortable questions about the boundaries of inspiration vs. copying in the AI assistant race, casting a shadow over Muse's rapid growth."
+      },
+      {
+        "title": "Trump 宣布将「AI」更名为「超级智能」：政治信号还是话语重构？",
+        "source": "Axios / Washington Post",
+        "category": "AI 工具动态",
+        "url": "https://www.axios.com/2026/09/22/trump-ai-super-intelligence-rebrand",
+        "summary": "特朗普在联合国大会上宣布将在美国政府语境中把「人工智能」更名为「超级智能」。这一举措更多是话语层面的政治操作，但折射出美国政府试图在 AI 叙事主导权上抢占先机，也可能影响未来监管文件和政策语言走向。",
+        "titleEn": "Trump Orders AI Rebranded as 'Super Intelligence' at UN General Assembly",
+        "summaryEn": "Trump announced at the UN General Assembly that the U.S. will rebrand 'AI' as 'Super Intelligence' in official contexts. More political theater than technical policy, but it signals the White House's intent to dominate AI narrative framing — and could filter into future regulatory language."
+      }
+    ],
+    "funding": [
+      {
+        "company": "Snorkel AI",
+        "url": "https://techcrunch.com/2026/09/22/snorkel-ai-triples-valuation-to-3-5b-as-demand-for-ai-training-data-booms/",
+        "round": "Series E",
+        "amount": "$350M",
+        "valuation": "$3.5B",
+        "investors": "",
+        "pitch": "AI 训练数据即服务平台，本轮融资后估值较上轮三倍增长，印证高质量训练数据需求正在爆发式增长。"
+      },
+      {
+        "company": "Baselayer",
+        "url": "https://news.crunchbase.com/ai/verifying-ai-agents-baselayer-35m-raise/",
+        "round": "Series A",
+        "amount": "$35M",
+        "valuation": "",
+        "investors": "M13",
+        "pitch": "专注 AI Agent 身份验证与欺诈风险评估，随 Agent 大规模落地，「你能信任这个 Agent 吗」成为金融机构核心合规问题。"
+      }
+    ],
+    "jasonSays": "今天最大信号是 OpenAI 同时推出 Sol/Luna 双模型 + Prompt Caching 升级——这不是功能更新，是在构建一套「按需付费、按场景选模型」的定价护城河，卷的不只是能力，是整个 API 经济学。",
+    "jasonSaysEn": "OpenAI dropping Sol, Luna, and upgraded prompt caching simultaneously isn't just a product update — it's building a pricing moat around 'pick the right model for the right job,' reshaping the API economics every developer builds on top of.",
+    "filename": "2026-09-23.md"
+  },
+  {
     "slug": "2026-09-22",
     "date": "2026-09-22",
     "title": "AI 快讯 · 9月22日",
@@ -90,7 +192,8 @@
     ],
     "jasonSays": "今天最有意思的信号是 Anthropic 和 Cloudflare 同一天开源 Skills——金融和安全两个最难啃的企业场景都有了官方参考实现，Skills 生态正在从玩具阶段快速走向生产级，独立开发者现在有了最好的起跑线。",
     "jasonSaysEn": "The most interesting signal today: Anthropic and Cloudflare both dropped production-grade skills on the same day — finance and security, two of enterprise's hardest domains. The Skills ecosystem is rapidly moving from toy demos to real infrastructure, and indie developers now have the best starting point they've ever had.",
-    "filename": "2026-09-22.md"
+    "filename": "2026-09-22.md",
+    "coverImage": "/news/2026-09-22.png"
   },
   {
     "slug": "2026-09-21",
