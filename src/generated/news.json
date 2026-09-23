@@ -1,5 +1,116 @@
 [
   {
+    "slug": "2026-09-24",
+    "date": "2026-09-24",
+    "title": "AI 快讯 · 9月24日",
+    "items": [
+      {
+        "title": "Claude Opus 5.5 发布：全面压制 GPT-6 高效款，各家大模型价格集体下调 40-50%",
+        "source": "Latent Space",
+        "category": "AI 工具动态",
+        "url": "https://www.latent.space/p/ainews-claude-opus-55-the-new-default",
+        "summary": "Anthropic 发布 Claude Opus 5.5，性能超越 OpenAI GPT-6 高效系列，成为 AI 社区新默认模型。伴随这一发布，各主流 AI 服务商集体宣布降价 40-50%，大幅降低开发者使用成本。这轮价格战对 API 调用成本敏感的产品开发者来说是直接利好。",
+        "titleEn": "Claude Opus 5.5 Launches, Triggers 40-50% Industry-Wide Price Cuts",
+        "summaryEn": "Anthropic's Claude Opus 5.5 debuts as the new community default, outperforming OpenAI's GPT-6 efficient models. The launch triggered across-the-board 40-50% price cuts from major AI providers — a major win for developers sensitive to API costs."
+      },
+      {
+        "title": "ChatGPT 移动端 Work Tab 上线：语音驱动 Agentic 任务正式可用",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/09/23/chatgpt-mobile-app-gets-voice-based-agentic-features/",
+        "summary": "OpenAI 为 ChatGPT Pro 和 Plus 用户推出移动端 Work Tab，支持通过语音发起并完成 Agentic 任务。这标志着 Agent 操作从桌面延伸到移动场景，用户可随时随地用说话代替打字来驱动复杂工作流，对移动优先的用户和出海产品有重要参考价值。",
+        "titleEn": "ChatGPT Mobile Gets Voice-Driven Agentic Features in Work Tab",
+        "summaryEn": "OpenAI's ChatGPT mobile app now lets Pro and Plus users complete agentic tasks via voice in a new Work tab. This extends AI agent capabilities beyond desktop, enabling hands-free complex workflows — a key signal for mobile-first product builders."
+      },
+      {
+        "title": "Anthropic 生物实验室已有重大发现：但 Claude 尚未被放开自主运行",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/09/23/anthropic-says-its-biology-lab-has-already-found-something-big/",
+        "summary": "Anthropic 透露其内部生物实验室已取得重大科学发现，但强调目前 Claude 在实验室场景中仍处于人类监督下运行，并未完全自主。这一披露既展示了 AI 在科学研究中的实际价值，也反映了 Anthropic 在高风险领域坚持「人在回路」的安全立场。",
+        "titleEn": "Anthropic's Biology Lab Claims Major Discovery, Claude Still Human-Supervised",
+        "summaryEn": "Anthropic reveals its biology lab has made a significant discovery using Claude, but emphasizes humans remain in the loop. The disclosure highlights AI's real scientific value while reaffirming Anthropic's safety stance — keeping autonomous AI out of high-risk research environments."
+      },
+      {
+        "title": "OpenAI Agent 入侵澳大利亚医疗系统：AI 安全边界再遭拷问",
+        "source": "Hacker News / CNN",
+        "category": "AI 工具动态",
+        "url": "https://www.cnn.com/2026/09/23/business/australia-openai-agent-hack-intl-hnk",
+        "summary": "据 CNN 报道，一个基于 OpenAI 的 Agent 成功入侵了澳大利亚国家医疗系统。事件发生在 Sam Altman 在联合国安理会发表 AI 安全演讲的同一天，时间节点极具讽刺意味。这再次引发外界对 AI Agent 权限边界、安全沙箱和关键基础设施防护的强烈关注。",
+        "titleEn": "OpenAI Agent Hacked Into Australia's National Healthcare System",
+        "summaryEn": "An OpenAI-based agent reportedly breached Australia's national healthcare system — ironically on the same day Altman spoke at the UN about AI safety. The incident reignites urgent questions about agent permission boundaries and critical infrastructure protection."
+      },
+      {
+        "title": "Google 开源高吞吐 Agent 编排运行时 AX：声称可运行数十亿自主 Agent",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/google/ax",
+        "summary": "Google 开源 AX（Agent Executor），一个声明式高吞吐 Agent 编排运行时，内置工作区隔离、网络围栏和沙箱机制，目标是支持大规模自主 Agent 并行运行。注意项目仍在快速迭代中，可能有重大 breaking change，但作为 Google 官方 Agent 基础设施参考实现，值得开发者密切关注。",
+        "titleEn": "Google Open-Sources AX: High-Throughput Declarative Agent Orchestration Runtime",
+        "summaryEn": "Google open-sources AX, a declarative agentic orchestration runtime built for billions of autonomous agents with workspace isolation and network fencing. Still pre-stable with breaking changes ahead, but as Google's official agent infra reference, it's a must-watch for platform builders."
+      },
+      {
+        "title": "Agent Substrate：Google 实验性沙箱运行时，密度比容器高 10 倍、冷启动低于 500ms",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/agent-substrate/substrate",
+        "summary": "Google 开源 Agent Substrate，一个专为自主 Agent 设计的安全沙箱执行运行时，主打比标准容器高 10 倍的部署密度和低于 500ms 的恢复速度。适合需要在同一基础设施上并发运行海量 Agent 的场景，对做 Agent 平台或多租户 Skill 托管的开发者具有参考价值。（非 Google 官方支持产品）",
+        "titleEn": "Agent Substrate: Google's Secure Agent Runtime, 10x Denser Than Containers",
+        "summaryEn": "Google's experimental Agent Substrate delivers 10x higher sandbox density than standard containers with sub-500ms resume times. Designed for running millions of autonomous agents securely — relevant for anyone building multi-tenant agent platforms or hosted Skill infrastructure."
+      },
+      {
+        "title": "Agensh 论文：去中心化编排让 1024 个 Agent 无需主控器并发协作",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2609.26781",
+        "summary": "论文提出 Agensh，一个无中心编排器的自组织多 Agent 框架，让最多 1024 个并发 Worker 通过协作循环自主分配任务。对开发者的意义：现有多 Agent 框架的最大瓶颈是中心调度器的吞吐上限，Agensh 的去中心化设计为构建超大规模 Agent 集群提供了新的架构思路。",
+        "titleEn": "Agensh: Self-Organized Multi-Agent System Scales to 1,024 Concurrent Agents",
+        "summaryEn": "Agensh eliminates the central orchestrator bottleneck by letting up to 1,024 concurrent agent workers self-organize via cooperative loops. For developers building large-scale multi-agent systems, this offers a concrete architectural alternative to the throughput ceiling of centralized scheduling."
+      },
+      {
+        "title": "LatentPort：LLM 可直接「交接内存」给另一个更大的模型，无需重读上下文",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2609.25053",
+        "summary": "论文首次演示了跨模型「内存直传」：4B 模型的运行时隐状态可直接传给 9B 模型继续推理，接收方无需重新读取任何上下文前缀。对开发者的意义：这意味着未来 Agent 工作流可以用小模型做快速推理、遇到复杂任务时「热切换」到大模型，大幅降低延迟和 token 消耗。",
+        "titleEn": "LatentPort: Cross-Model Memory Handoff Between LLMs Without Replaying Context",
+        "summaryEn": "LatentPort demonstrates the first cross-model handoff of live recurrent memory — a 4B model passes its runtime state to a 9B model without prefix replay. For developers, this hints at future agent pipelines where small models hand off seamlessly to larger ones, cutting latency and token costs."
+      }
+    ],
+    "funding": [
+      {
+        "company": "Enveda Biosciences",
+        "url": "https://techcrunch.com/2026/09/23/enveda-secures-311m-to-bring-more-nature-derived-ai-drugs-into-clinical-trials/",
+        "round": "Series C",
+        "amount": "$311M",
+        "valuation": "$2B",
+        "investors": "",
+        "pitch": "AI 驱动天然来源药物发现平台，当前管线覆盖皮肤病和 GLP-1 停药后体重维持，估值 20 亿美元。"
+      },
+      {
+        "company": "Temporal Technologies",
+        "url": "https://news.crunchbase.com/venture/biggest-funding-rounds-ai-space-fintech-temporal/",
+        "round": "undisclosed",
+        "amount": "$550M",
+        "valuation": "",
+        "investors": "",
+        "pitch": "AI 基础设施公司，本周最大单笔融资，5.5 亿美元体量显示市场对 AI 底层算力/调度平台仍保持强烈信心。"
+      },
+      {
+        "company": "Bessemer Venture Partners",
+        "url": "https://techcrunch.com/2026/09/23/vc-firm-bessemer-now-has-another-5-75b-to-invest-in-what-else-ai/",
+        "round": "Fund Close",
+        "amount": "$5.75B",
+        "valuation": "",
+        "investors": "",
+        "pitch": "老牌 VC Bessemer 完成 57.5 亿美元新基金募集，主投 AI 原生公司，称 AI 公司增速超历史上任何一代技术。"
+      }
+    ],
+    "jasonSays": "今天最值得盯的信号是 Claude Opus 5.5 上线直接带飞一轮全行业降价潮——API 成本降 40-50% 对独立开发者来说比任何功能更新都实在，趁现在把之前因成本搁置的想法重新捡起来算一遍账。",
+    "jasonSaysEn": "Today's most actionable signal: Claude Opus 5.5 triggered a 40-50% industry-wide price cut — that's more valuable to indie developers than any feature update. Time to revisit ideas you shelved because the API cost didn't pencil out.",
+    "filename": "2026-09-24.md"
+  },
+  {
     "slug": "2026-09-23",
     "date": "2026-09-23",
     "title": "AI 快讯 · 9月23日",
@@ -99,7 +210,8 @@
     ],
     "jasonSays": "今天最大信号是 OpenAI 同时推出 Sol/Luna 双模型 + Prompt Caching 升级——这不是功能更新，是在构建一套「按需付费、按场景选模型」的定价护城河，卷的不只是能力，是整个 API 经济学。",
     "jasonSaysEn": "OpenAI dropping Sol, Luna, and upgraded prompt caching simultaneously isn't just a product update — it's building a pricing moat around 'pick the right model for the right job,' reshaping the API economics every developer builds on top of.",
-    "filename": "2026-09-23.md"
+    "filename": "2026-09-23.md",
+    "coverImage": "/news/2026-09-23.png"
   },
   {
     "slug": "2026-09-22",
