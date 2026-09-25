@@ -1,5 +1,98 @@
 [
   {
+    "slug": "2026-09-25",
+    "date": "2026-09-25",
+    "title": "AI 快讯 · 9月25日",
+    "items": [
+      {
+        "title": "Superpowers：为所有主流 Coding Agent 统一的可组合 Skills 框架",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/obra/superpowers",
+        "summary": "Superpowers 是一套跨 Agent 的完整软件开发方法论，提供可组合 Skills + 初始指令，同时支持 Claude Code、Cursor、Codex、Devin、Gemini 等主流 Coding Agent，一套技能定义全平台复用，对需要在多个 Agent 工具间切换的开发者极具吸引力。",
+        "titleEn": "Superpowers: Composable Skills Framework for All Major Coding Agents",
+        "summaryEn": "Superpowers delivers a composable skills framework and development methodology that works across Claude Code, Cursor, Codex, Devin, Gemini, and more. Define skills once, reuse everywhere — a compelling unlock for developers juggling multiple coding agents."
+      },
+      {
+        "title": "claude-code-templates：一键为 Claude Code 注入 Bright Data 网络数据 Skills",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/davila7/claude-code-templates",
+        "summary": "davila7 开发的 CLI 工具 claude-code-templates 已集成 Bright Data 赞助的网络数据 Skill 套件（搜索、爬虫、结构化数据流 + MCP），一条 npx 命令即可让 Claude Code 接入实时网页数据，填补 Claude Code 在数据采集场景的 Skill 空白。",
+        "titleEn": "claude-code-templates: Plug Live Web Data Skills into Claude Code via CLI",
+        "summaryEn": "This CLI tool lets developers inject Bright Data's web-data skill suite — search, scrape, structured feeds, and MCP — into Claude Code with a single npx command, bridging Claude Code's gap in real-time data acquisition workflows."
+      },
+      {
+        "title": "GPT-6 Astra 为 Harvey 法律 AI 提效：上下文感知草稿质量大幅提升",
+        "source": "OpenAI Blog",
+        "category": "变现案例",
+        "url": "https://openai.com/index/harvey-from-context-to-confidence-with-astra",
+        "summary": "法律 AI 独角兽 Harvey 将 GPT-6 Astra 集成进合同起草流程，生成文档结构更严谨、对案例上下文的引用更精准，律师可将精力从草稿写作转移至策略判断。这是继 Parallel 之后 GPT-6 Astra 的又一落地变现案例，Legal Tech 垂直赛道加速卡位。",
+        "titleEn": "GPT-6 Astra Powers Harvey's Legal AI: Context-Aware Drafts Leap Forward",
+        "summaryEn": "Legal AI unicorn Harvey integrated GPT-6 Astra to produce more structured, context-aware legal drafts, freeing lawyers for strategic work. This is the second published GPT-6 Astra monetization case in days, signaling rapid enterprise adoption in vertical AI SaaS."
+      },
+      {
+        "title": "invideo 用 GPT-6 Astra 将调色效率提升 3 倍、单日产出 50 个特效",
+        "source": "OpenAI Blog",
+        "category": "变现案例",
+        "url": "https://openai.com/index/invideo-builds-with-gpt-6-astra",
+        "summary": "视频创作 SaaS invideo 接入 GPT-6 Astra 后，色彩校正与调色精准度提升 3 倍，单日可产出 50 个自定义特效。对独立开发者和出海 SaaS 团队有直接参考价值：多模态理解能力已可实质性压缩创意生产成本。",
+        "titleEn": "invideo 3x Color Grading Speed with GPT-6 Astra, 50 Custom Effects Per Day",
+        "summaryEn": "Video creation SaaS invideo achieved 3x improvement in color grading precision and produces 50 custom effects daily after integrating GPT-6 Astra. A concrete benchmark showing multimodal AI now meaningfully compresses creative production costs for SaaS teams."
+      },
+      {
+        "title": "Sam Altman 在联合国安理会：AI 安全需要全球治理框架",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/sam-altman-un-security-council-remarks",
+        "summary": "OpenAI CEO Sam Altman 在联合国安理会发表演讲，呼吁建立 AI 安全的国际合作机制与人类控制框架。这是 OpenAI 迄今在政治舞台最高级别的公开表态，标志着 AI 治理议题正式进入主权国家最高决策层的议程。",
+        "titleEn": "Sam Altman at UN Security Council: AI Safety Demands Global Governance",
+        "summaryEn": "OpenAI CEO Sam Altman addressed the UN Security Council on AI safety, human control, and international cooperation — the highest-level political stage OpenAI has reached, signaling AI governance is now squarely on sovereign nations' top policy agendas."
+      },
+      {
+        "title": "自组织 Agent 团队论文：无需预设角色，多 Agent 协作可自主涌现分工",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2609.22682",
+        "summary": "SAT（Self-Organizing Agent Teams）论文提出：无需事先指定任务分解或路由规则，Agent 团队可以在解题过程中自发涌现出合理的角色分工。对开发者意味着：未来构建多 Agent 系统时，不必花大量精力手工设计编排协议，模型本身可以学会「自我组织」。",
+        "titleEn": "SAT Paper: Agent Teams Self-Organize Roles Without Preset Protocols",
+        "summaryEn": "The SAT framework shows that fixed teams of AI agents can learn to self-organize roles and division of labor on the fly — no preset routing or explicit task decomposition needed. For developers, this means future multi-agent systems may require far less manual orchestration design."
+      },
+      {
+        "title": "FLEET 论文：用熵引导采样替代温度随机，减少 LLM 重复输出、提升推理效率",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2609.27657",
+        "summary": "FLEET 提出用 logits 熵动态引导生成轨迹，替代传统无记忆的温度采样。核心问题：多次采样时大量结果语义重复，边际收益递减。FLEET 让每次采样都「记住」之前生成的结果再决策，对需要多路推理聚合的 Agent 和代码生成场景有直接提效价值。",
+        "titleEn": "FLEET Paper: Entropy-Guided Sampling Cuts LLM Duplicate Outputs, Boosts Accuracy",
+        "summaryEn": "FLEET replaces memoryless temperature sampling with entropy-aware trajectory guidance, so each new generation is informed by prior outputs. This directly addresses diminishing returns in multi-sample reasoning — highly relevant for agent workflows and code generation that rely on best-of-N sampling."
+      },
+      {
+        "title": "AI Agent 安全 M&A 格局浮现：身份权限与监控成核心争夺点",
+        "source": "Crunchbase News",
+        "category": "AI 工具动态",
+        "url": "https://news.crunchbase.com/ma/emerging-map-ai-agentic-security-sagie/",
+        "summary": "随着 AI Agent 大规模接入企业数据和系统，一类新型「主动身份」安全需求正在催生并购市场：专注于 Agent 权限管控、行为监控与合规审计的初创公司正成为大厂收购目标。对出海 SaaS 创业者而言，这是一个高溢价的细分赛道信号。",
+        "titleEn": "AI Agent Security M&A Map Emerges: Identity, Permissions, and Monitoring Are Key",
+        "summaryEn": "As AI agents gain enterprise access, a new M&A wave is forming around agent identity, permissions, and governance. Startups precisely positioned at these control points are becoming acquisition targets — a high-premium niche signal for B2B SaaS founders to watch."
+      }
+    ],
+    "funding": [
+      {
+        "company": "Dextr AI",
+        "url": "https://news.crunchbase.com/venture/dextr-ai-hospitality-agents-raises-seed-funding/",
+        "round": "Seed",
+        "amount": "$6.7M",
+        "valuation": "",
+        "investors": "",
+        "pitch": "专为酒店场景打造的 AI Agent 平台，覆盖预订、宾客服务、员工协调全流程，酒店垂直行业 Agent 化的早期卡位玩家。"
+      }
+    ],
+    "jasonSays": "今天最值得盯的信号是 GPT-6 Astra 正在被垂直 SaaS（法律、视频）快速落地变现——这说明「模型能力溢出」已经到了可以直接写进产品 Pitch Deck 的阶段，出海 SaaS 创始人该认真测一下自己的场景了。",
+    "jasonSaysEn": "Today's clearest signal: GPT-6 Astra is already shipping as a monetizable feature inside vertical SaaS — if you're building an overseas SaaS, it's time to stop benchmarking and start shipping with it.",
+    "filename": "2026-09-25.md"
+  },
+  {
     "slug": "2026-09-24",
     "date": "2026-09-24",
     "title": "AI 快讯 · 9月24日",
@@ -108,7 +201,8 @@
     ],
     "jasonSays": "今天最值得盯的信号是 Claude Opus 5.5 上线直接带飞一轮全行业降价潮——API 成本降 40-50% 对独立开发者来说比任何功能更新都实在，趁现在把之前因成本搁置的想法重新捡起来算一遍账。",
     "jasonSaysEn": "Today's most actionable signal: Claude Opus 5.5 triggered a 40-50% industry-wide price cut — that's more valuable to indie developers than any feature update. Time to revisit ideas you shelved because the API cost didn't pencil out.",
-    "filename": "2026-09-24.md"
+    "filename": "2026-09-24.md",
+    "coverImage": "/news/2026-09-24.png"
   },
   {
     "slug": "2026-09-23",
