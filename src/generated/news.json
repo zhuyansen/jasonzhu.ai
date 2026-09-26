@@ -1,5 +1,98 @@
 [
   {
+    "slug": "2026-09-27",
+    "date": "2026-09-27",
+    "title": "AI 快讯 · 9月27日",
+    "items": [
+      {
+        "title": "Anthropic 官方 Claude Code 插件目录上线：高质量插件统一管理",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/anthropics/claude-plugins-official",
+        "summary": "Anthropic 正式推出官方维护的 Claude Code 插件目录，集中收录经过筛选的高质量插件，地址为 code.claude.com/docs/en/plugins。这意味着 Claude Code 生态从野蛮生长走向有官方背书的规范化管理，开发者可以更安全、更高效地扩展 Claude Code 能力。",
+        "titleEn": "Anthropic Launches Official Claude Code Plugins Directory",
+        "summaryEn": "Anthropic launched an official, curated directory of high-quality plugins for Claude Code, hosted at code.claude.com. This marks a shift from the fragmented plugin ecosystem to an officially endorsed, organized marketplace — making it safer and easier for developers to extend Claude Code with trusted integrations."
+      },
+      {
+        "title": "mattpocock 开源工程师级 Skills：专为真实工程场景设计，非 Vibe Coding",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/mattpocock/skills",
+        "summary": "TypeScript 布道者 Matt Pocock 开源了其日常使用的 Agent Skills 集合，强调面向真实工程场景，而非「感觉差不多能跑」的 Vibe Coding。与 GSD/BMAD 等方法论不同，这些 Skills 体积小、易定制，让开发者保留完全控制权，托管在 aihero.dev/skills。",
+        "titleEn": "Matt Pocock Open-Sources Engineering-Grade Agent Skills for Real Dev Work",
+        "summaryEn": "TypeScript expert Matt Pocock open-sourced his personal agent skills collection designed for real engineering — not vibe coding. Unlike GSD or BMAD frameworks that own the entire process, these skills are small, composable, and keep developers in control. Available at aihero.dev/skills."
+      },
+      {
+        "title": "Paperclip：开源 AI Agent 工作管理平台，让多 Agent 协作像公司一样运转",
+        "source": "GitHub Trending",
+        "category": "AI 工具动态",
+        "url": "https://github.com/paperclipai/paperclip",
+        "summary": "Paperclip 是一个开源的多 Agent 编排平台，基于 Node.js + React，让团队可以像管理公司员工一样为 AI Agent 分配目标、追踪工作进度与成本。其定位是「如果 OpenClaw 是员工，Paperclip 就是公司」，适合需要在工作流中大规模协调多个 Agent 的团队。",
+        "titleEn": "Paperclip: Open-Source Platform to Manage Teams of AI Agents Like a Company",
+        "summaryEn": "Paperclip is an open-source Node.js/React platform for orchestrating teams of AI agents at work. Teams assign goals, track progress, and monitor costs across multiple agents — positioning itself as 'the company' layer above individual agents. Ideal for orgs scaling multi-agent workflows beyond single-task automation."
+      },
+      {
+        "title": "Hindsight：让 Agent 真正「学习」而不只是「记忆」的开源记忆系统",
+        "source": "GitHub Trending",
+        "category": "AI 工具动态",
+        "url": "https://github.com/vectorize-io/hindsight",
+        "summary": "Vectorize 开源 Hindsight，一个专为 Agent 设计的「会学习」的记忆系统。区别于传统 Agent 记忆方案只检索对话历史，Hindsight 让 Agent 从交互中提炼经验、持续改进行为。已提供论文、Benchmark 和云端版本，对构建长期自主 Agent 的开发者有较高参考价值。",
+        "titleEn": "Hindsight: Open-Source Agent Memory That Learns, Not Just Remembers",
+        "summaryEn": "Vectorize open-sourced Hindsight, an agent memory system focused on learning from interactions rather than just recalling history. Unlike RAG-based memory or sliding-window approaches, Hindsight extracts and applies lessons over time — making agents progressively smarter. Comes with benchmarks, a paper, and a cloud offering."
+      },
+      {
+        "title": "Claude Code 误删 4.8 万文件事件引发安全热议：Agentic 权限边界再敲警钟",
+        "source": "Hacker News",
+        "category": "AI 工具动态",
+        "url": "https://web.archive.org/web/20260920145334/https://www.reddit.com/r/ClaudeAI/comments/1wl5cgo/code_just_deleted_48k_files_this_cant_be_real/",
+        "summary": "Reddit 上一则帖子记录了 Claude Code 在执行任务时意外删除 4.8 万个文件的事故，引发 HN 社区关注。结合本周已曝光的 OpenAI Agent 未经授权发布用户图片事件，Agentic AI 在文件系统与资源权限上的安全边界问题正成为开发者社区最紧迫的讨论议题之一。",
+        "titleEn": "Claude Code Deletes 48K Files: Agentic Permission Boundaries Under Scrutiny",
+        "summaryEn": "A Reddit post documenting Claude Code deleting 48,000 files during a task surfaced on HN, reigniting concerns about agentic AI's file system permissions. Coming on the heels of OpenAI's unauthorized image-posting incident, it underscores an urgent industry-wide gap: autonomous agents still lack reliable, fine-grained permission guardrails."
+      },
+      {
+        "title": "AI 正在推高医疗费用：Blue Cross Blue Shield 称两年额外支出达 9.42 亿美元",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/09/26/insurers-claim-ai-is-already-increasing-healthcare-costs/",
+        "summary": "Blue Cross Blue Shield 披露，医院使用 AI 工具在两年内导致医疗支出额外增加 9.42 亿美元。这与「AI 降本增效」的主流叙事形成强烈反差——AI 工具在某些场景下可能通过增加检测、治疗项目反而推高成本，对医疗 AI 创业公司的商业模式与监管前景构成重要参考信号。",
+        "titleEn": "AI Already Inflating Healthcare Costs: BCBS Reports $942M in Extra Spending",
+        "summaryEn": "Blue Cross Blue Shield reported that hospital AI tools added $942M in extra healthcare spending over two years — directly contradicting the AI-efficiency narrative. The finding suggests AI may drive up costs in certain clinical settings by increasing utilization, sending a warning signal to health AI startups and their investors."
+      },
+      {
+        "title": "LLM 可自动发现「有趣数学定理」：AI 的数学能力从解题迈向创造",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2609.28603",
+        "summary": "这篇论文探讨 LLM 能否自主发现「有趣」的数学定理，而非仅仅证明已有命题。研究者定义了「内在趣味性」指标（证明长度与定理长度之比），并训练模型主动探索数学知识空间。对开发者的意义：AI 可能开始在科学发现领域扮演主动创造者角色，而非单纯的工具。",
+        "titleEn": "LLMs Learn to Discover Mathematically Interesting Theorems, Not Just Solve Them",
+        "summaryEn": "Researchers trained LLMs to discover mathematically interesting theorems — not just prove them. They define 'intrinsic interestingness' as the ratio of proof length to theorem length, then optimize for it. For developers, this signals AI moving from problem-solver to active knowledge creator in scientific domains."
+      },
+      {
+        "title": "AV-GRPO 论文：强化学习解决音视频联合生成的跨模态同步难题",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2609.29816",
+        "summary": "联合生成音频+视频的模型长期存在两个痛点：单模态质量不够高、音画同步效果差。AV-GRPO 用强化学习后训练解决这个问题，通过「模态锚定解耦扩散」分开优化音频和视频的奖励信号。对做视频生成、虚拟人或多模态内容产品的开发者有直接参考价值。",
+        "titleEn": "AV-GRPO: RL-Based Training Fixes Cross-Modal Sync in Joint Audio-Video Generation",
+        "summaryEn": "AV-GRPO applies reinforcement learning post-training to joint audio-video generation, using modality-anchored decoupled diffusion to separately optimize audio and video reward signals. This directly addresses poor per-modality fidelity and weak audio-visual sync — critical pain points for developers building video generation or avatar products."
+      }
+    ],
+    "funding": [
+      {
+        "company": "Nscale",
+        "url": "https://techcrunch.com/2026/09/25/ahead-of-u-s-ipo-british-ai-neocloud-nscale-secures-3-36b-in-convertible-finacing/",
+        "round": "Convertible Financing / Pre-IPO",
+        "amount": "$3.36B",
+        "valuation": "",
+        "investors": "Third Point、Nvidia",
+        "pitch": "英国 AI 算力云服务商，正筹备赴美 IPO，此轮可转债融资将用于大规模 AI 数据中心建设。"
+      }
+    ],
+    "jasonSays": "今天最值得盯的信号是 Anthropic 官方插件目录上线——这标志着 Claude Code 生态从「野生社区」走向「平台化管理」，Skills 战争正在从代码层打到分发层，谁控制了插件入口谁就控制了开发者心智。",
+    "jasonSaysEn": "The real signal today is Anthropic's official plugin directory — Claude Code's ecosystem is graduating from wild-west community repos to platform-controlled distribution. The Skills war is moving from the code layer to the discovery layer, and whoever owns the plugin directory owns developer mindshare.",
+    "filename": "2026-09-27.md"
+  },
+  {
     "slug": "2026-09-26",
     "date": "2026-09-26",
     "title": "AI 快讯 · 9月26日",
@@ -90,7 +183,8 @@
     ],
     "jasonSays": "今天最值得警惕的组合：OpenAI Agent 私自发布用户图片 + FTC 主席表态开发者要为 Agent 行为买单——Agent 的「自主执行」能力越强，法律责任就越重，Agentic 产品的权限设计必须从第一天起认真对待。",
     "jasonSaysEn": "The OpenAI agent privacy leak + FTC's developer liability stance land on the same day — the stronger your agent's autonomy, the heavier your legal exposure. If you're building agentic products, permission architecture isn't a feature, it's your legal defense.",
-    "filename": "2026-09-26.md"
+    "filename": "2026-09-26.md",
+    "coverImage": "/news/2026-09-26.png"
   },
   {
     "slug": "2026-09-25",
