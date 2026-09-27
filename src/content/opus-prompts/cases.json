@@ -1,8 +1,8 @@
 {
  "model": "Claude Opus 5.5",
  "threshold": 5000,
- "updatedAt": "2026-09-27T08:01:53.018Z",
- "statsCheckedAt": "2026-09-27T08:01:53.018Z",
+ "updatedAt": "2026-09-27T10:13:12.507Z",
+ "statsCheckedAt": "2026-09-27T10:13:12.507Z",
  "inclusionRule": "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5.",
  "cases": [
   {
@@ -2905,6 +2905,50 @@
    }
   },
   {
+   "id": "2103184506329170373",
+   "url": "https://x.com/drecamz/status/2103184506329170373",
+   "author": {
+    "handle": "drecamz",
+    "name": "dre"
+   },
+   "postedAt": "2026-09-24T18:07:16.000Z",
+   "lang": "en",
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "AI制作的无露脸YouTube视频服务演示",
+    "en": "AI-produced faceless YouTube video service demo"
+   },
+   "summary": {
+    "zh": "这段宣传视频展示了一款由Claude Opus 5.5驱动的AI视频制作服务，负责为YouTube创作者完成脚本、配音、剪辑和缩略图制作，并在交付前经过人工审核。",
+    "en": "A promotional video for an AI-powered video production service using Claude Opus 5.5 to handle scripting, voice, editing and thumbnails for YouTube creators, with human review before delivery."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 292939,
+    "likes": 153,
+    "replies": 9,
+    "reposts": 7,
+    "bookmarks": 189,
+    "checkedAt": "2026-09-27T10:13:12.507Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2103179469410226176/img/Ww5WUIlpDLeG_YTx.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2103179469410226176/vid/avc1/1280x720/UaM3motV5of_DPZV.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 54
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103861788987068922",
    "url": "https://x.com/Andrew_Blumson/status/2103861788987068922",
    "author": {
@@ -4488,7 +4532,7 @@
    "kind": "work",
    "category": "game",
    "title": {
-    "zh": "浏览器游戏世界(第三版迭代)",
+    "zh": "浏览器游戏世界（第三版迭代）",
     "en": "Browser game world (third iteration)"
    },
    "summary": null,
@@ -6161,6 +6205,52 @@
    }
   },
   {
+   "id": "2103173135944024193",
+   "url": "https://x.com/v16v_vlad/status/2103173135944024193",
+   "author": {
+    "handle": "v16v_vlad",
+    "name": "Vlad Evdokimov"
+   },
+   "postedAt": "2026-09-24T17:22:05.000Z",
+   "lang": "en",
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "心灵感应测试：Opus5.5对比GPT-6 Astra",
+    "en": "Telepathy test: Opus 5.5 vs GPT-6 Astra"
+   },
+   "summary": {
+    "zh": "这段视频对比了Claude Opus 5.5与GPT-6 Astra在“心灵感应”主题测试中的表现。",
+    "en": "A video comparing how Claude Opus 5.5 and GPT-6 Astra handle a telepathy-themed test."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "GPT-6 Astra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 146037,
+    "likes": 100,
+    "replies": 4,
+    "reposts": 8,
+    "bookmarks": 21,
+    "checkedAt": "2026-09-27T10:13:12.507Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/media/HS_4wzLXgAAWDin.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2103173068227022848/vid/avc1/720x1280/U32tap-jmjgW5e7n.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 42
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102854430454669767",
    "url": "https://x.com/arena/status/2102854430454669767",
    "author": {
@@ -7153,6 +7243,50 @@
    }
   },
   {
+   "id": "2103094473882509700",
+   "url": "https://x.com/rameshsrivats/status/2103094473882509700",
+   "author": {
+    "handle": "rameshsrivats",
+    "name": "Ramesh Srivats"
+   },
+   "postedAt": "2026-09-24T12:09:30.000Z",
+   "lang": "en",
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "iPhone Duo双屏钢琴应用概念演示",
+    "en": "iPhone Duo piano app concept demo"
+   },
+   "summary": {
+    "zh": "这是一款为iPhone Duo设计的概念应用，由Claude Opus 5.5制作，内含使用Salamander Grand Piano音源的钢琴功能，作者希望大公司能将其真正开发出来。",
+    "en": "A concept app for the iPhone Duo built with Claude Opus 5.5, including a piano feature using the Salamander Grand Piano sample library, which the creator hopes a major company will actually build."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 129658,
+    "likes": 148,
+    "replies": 26,
+    "reposts": 5,
+    "bookmarks": 35,
+    "checkedAt": "2026-09-27T10:13:12.507Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/media/HS-v7u3aIAAGQf0.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2103092828385787904/vid/avc1/720x720/lodHUnqMJzoHT4J9.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 26
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102503027340988559",
    "url": "https://x.com/LCSlates/status/2102503027340988559",
    "author": {
@@ -7877,6 +8011,52 @@
    }
   },
   {
+   "id": "2103319199817064764",
+   "url": "https://x.com/mmmiyama_D/status/2103319199817064764",
+   "author": {
+    "handle": "mmmiyama_D",
+    "name": "ミヤマ"
+   },
+   "postedAt": "2026-09-25T03:02:29.000Z",
+   "lang": "ja",
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "用Claude编码制作的30秒扁平风宣传视频",
+    "en": "30-second flat design promo video coded with Claude"
+   },
+   "summary": {
+    "zh": "这段为“Miyama家”制作的30秒宣传视频完全由Claude Code的Opus 5.5通过代码生成，未使用任何图像或视频生成工具，呈现扁平化设计风格。",
+    "en": "A 30-second PR video for 'Miyama-san chi' made entirely with Claude Code's Opus 5.5 using only code, without any image or video generation, in a flat design style."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Claude Code"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 112181,
+    "likes": 264,
+    "replies": 9,
+    "reposts": 8,
+    "bookmarks": 284,
+    "checkedAt": "2026-09-27T10:13:12.507Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2103319171530702848/img/mVpibTJGZ1FAjU-l.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2103319171530702848/vid/avc1/1280x720/WHUyrvhOtXH4d2HC.mp4?tag=16",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103643040326008894",
    "url": "https://x.com/ochyai/status/2103643040326008894",
    "author": {
@@ -8304,6 +8484,57 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2103282586055213355",
+   "url": "https://x.com/EnvolDev/status/2103282586055213355",
+   "author": {
+    "handle": "EnvolDev",
+    "name": "Tony"
+   },
+   "postedAt": "2026-09-25T00:37:00.000Z",
+   "lang": "en",
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "夜间列车建造：四模型对比",
+    "en": "Night train build: four-model comparison"
+   },
+   "summary": {
+    "zh": "该测试给Claude Opus 5.5、GPT-6 Astra、GPT-6 Sol和GPT-6 Luna下达相同指令制作夜间列车场景，并使用Three.js渲染成MP4视频进行对比。",
+    "en": "A benchmark comparing Claude Opus 5.5, GPT-6 Astra, GPT-6 Sol and GPT-6 Luna by giving each the same prompt to build a night train, rendered using Three.js as an MP4."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/EnvolDev/status/2103282586055213355",
+    "text": "Build a Night train."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 106998,
+    "likes": 243,
+    "replies": 30,
+    "reposts": 9,
+    "bookmarks": 71,
+    "checkedAt": "2026-09-27T10:13:12.507Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2103247592687853568/img/4_ClauM2ESu9l3iu.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2103247592687853568/vid/avc1/810x720/WcIN1AHcS9Tv3BUt.mp4?tag=29",
+    "width": 810,
+    "height": 720,
+    "durationSec": 25
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -9391,6 +9622,55 @@
    }
   },
   {
+   "id": "2103209293919223872",
+   "url": "https://x.com/superalesha/status/2103209293919223872",
+   "author": {
+    "handle": "superalesha",
+    "name": "Alexey Fateev"
+   },
+   "postedAt": "2026-09-24T19:45:46.000Z",
+   "lang": "en",
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "电脑操作画图测试：Opus5.5对比GPT-6 Sol",
+    "en": "Paint drawing test: Opus 5.5 vs GPT-6 Sol via computer use"
+   },
+   "summary": {
+    "zh": "作者给Opus 5.5和GPT 6 Sol提供了同一张照片，并要求它们通过计算机操作（computer use）在画图软件中画出照片中的人物。",
+    "en": "The creator gave Opus 5.5 and GPT 6 Sol the same photo and asked each to draw the person in MS Paint using computer-use capabilities."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/superalesha/status/2103209293919223872",
+    "text": "draw me in Paint using computer use."
+   },
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 90846,
+    "likes": 185,
+    "replies": 30,
+    "reposts": 3,
+    "bookmarks": 49,
+    "checkedAt": "2026-09-27T10:13:12.507Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2103209071629217792/img/HoX-WQReH_ruLB67.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2103209071629217792/vid/avc1/1280x720/6EnN4FHDVxNDDa-v.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 45
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102792905618276612",
    "url": "https://x.com/cavdivc/status/2102792905618276612",
    "author": {
@@ -9429,6 +9709,52 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2103105995606282719",
+   "url": "https://x.com/akshdeeps_001/status/2103105995606282719",
+   "author": {
+    "handle": "akshdeeps_001",
+    "name": "Aksh"
+   },
+   "postedAt": "2026-09-24T12:55:17.000Z",
+   "lang": "en",
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "3D鹈鹕骑车测试：Opus5.5对比GPT-6 Sol（Blender）",
+    "en": "3D pelican riding bike test: Opus 5.5 vs GPT-6 Sol in Blender"
+   },
+   "summary": {
+    "zh": "该案例对比了Opus 5.5和GPT 6 Sol在Blender中生成骑自行车的3D鹈鹕的表现。",
+    "en": "A comparison test shows Opus 5.5 versus GPT 6 Sol generating a 3D pelican riding a bike in Blender."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 90619,
+    "likes": 270,
+    "replies": 15,
+    "reposts": 7,
+    "bookmarks": 48,
+    "checkedAt": "2026-09-27T10:13:12.507Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2103105973141528576/img/5Lo7He9_yO83Va2W.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2103105973141528576/vid/avc1/1280x720/j_rPOjU-GuU5b5wH.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 10
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -9901,7 +10227,7 @@
    "kind": "comparison",
    "category": "comparison",
    "title": {
-    "zh": "像素骑士:纯模型与技能加持对比",
+    "zh": "像素骑士：纯模型与技能加持对比",
     "en": "Pixel art knight: raw vs skill-assisted"
    },
    "summary": {
@@ -11294,6 +11620,57 @@
    "evidence": {
     "via": "search",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2103423427939897781",
+   "url": "https://x.com/maxt3chno/status/2103423427939897781",
+   "author": {
+    "handle": "maxt3chno",
+    "name": "Max"
+   },
+   "postedAt": "2026-09-25T09:56:39.000Z",
+   "lang": "en",
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "用Three.js制作的孤岛惊魂3风格游戏原型",
+    "en": "Far Cry 3-style playable game prototype in Three.js"
+   },
+   "summary": {
+    "zh": "作者提供详细提示词和照片参考，让Opus 5.5用Three.js制作了一款可玩的类《孤岛惊魂3》热带潟湖生存游戏，包含武器、天气和昼夜系统。",
+    "en": "Using a detailed prompt plus photo references, Opus 5.5 built a playable Far Cry 3-style tropical lagoon survival game in Three.js with weapons, weather, and day/night cycles."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/maxt3chno/status/2103426482026566135",
+    "text": "Create a visually stunning, highly atmospheric, interactive first-person 3D game set in a small tropical lagoon with a jungle survival outpost.\nThe game should capture the feeling of standing alone on a beautiful tropical island, similar in atmosphere and environmental design to Far Cry 3, with modern graphics, cinematic lighting, advanced shaders, and detailed environmental interactions.\nI WILL PROVIDE REFERENCE IMAGES. Use the uploaded images as the primary visual references for the environment, composition, color palette, vegetation, outpost design, lighting, and overall atmosphere. Recreate the visual mood and environmental character of the references as closely as possible.\nThe result should be a playable, polished first-person experience, not a static scene or a simple tech demo.\n1. WORLD AND ENVIRONMENT\nBuild a SMALL but extremely detailed tropical lagoon.\nDo not create a massive open world. Prioritize visual fidelity, environmental density, atmospheric quality, and interactivity over map size.\nThe scene must include:\n\nA beautiful tropical beach with sand, small rocks, driftwood, and scattered vegetation.\nA stunning turquoise ocean with realistic waves and water transparency.\nShallow coastal water transitioning naturally into deeper blue water.\nDense tropical jungle surrounding the lagoon.\nPalm trees, tropical bushes, vines, ferns, tall grass, and exotic plants.\nLarge moss-covered rocks and weathered coastal cliffs.\nA small survival outpost located directly beside the beach, partially surrounded by jungle.\nNatural pathways connecting the beach, outpost, and jungle.\nSmall environmental details that make the location feel authentic and lived-in.\nThe lagoon should feel isolated, peaceful, mysterious, and slightly dangerous.\nThe environmental aesthetic should be strongly inspired by Far Cry 3's tropical island atmosphere, but with the graphical quality and lighting of a modern high-end game.\n2. THE OUTPOST\nCreate a small jungle survival outpost, NOT a large military base.\nIt should resemble a tiny improvised shelter, wooden shack, or canvas tent built by someone surviving on a tropical island.\nThe outpost should feel handmade, worn, and realistic.\nInclude:\n\nA small improvised wooden shelter or tent.\nA simple wooden table.\nA small sleeping cot or military-style bed.\nAn AK-47 lying somewhere inside the outpost.\nA survival knife resting on the table or near the bed.\nAnimal skins and hides hanging from the shelter or lying on the furniture.\nA wooden supply crate that can be opened.\nSmall storage containers.\nOld backpacks and survival equipment.\nRopes, fabric, wooden planks, and improvised construction elements.\nSubtle environmental storytelling through scattered personal belongings.\nEverything should feel physically placed in the environment rather than randomly generated.\nMake the shelter visually interesting through layered materials, shadows, ambient occlusion, fabric simulation, and carefully placed props.\n3. FIRST-PERSON CHARACTER\nThe player controls a character from a FIRST-PERSON perspective.\nThe player's hands and forearms MUST be visible.\nCreate high-quality first-person animations:\n\nIdle breathing.\nNatural hand movement.\nWalking and running animations.\nLooking around.\nPicking up objects.\nHolding a weapon.\nThrowing stones.\nUsing a knife.\nInteracting with the environment.\nThe camera should have subtle, natural movement.\nAvoid excessive camera shaking.\nHands must feel connected to the player's actions. They should not look like floating objects or static models.\n4. STONE THROWING MECHANIC\nOne of the most important features is the ability to pick up and throw small stones into the ocean.\nThe player should be able to:\n\nLook at a small stone on the beach.\nPick it up.\nSee the stone in their hand.\nAim toward the ocean.\nThrow the stone using a natural first-person animation.\nThe stone must have realistic projectile physics.\nWhen the stone hits the ocean, create:\n\nA visible water splash.\nExpanding circular ripples.\nSmall water droplets.\nAppropriate splash sound.\nRealistic interaction between the projectile and water surface.\nStone throwing should feel satisfying and physically believable.\nAllow the player to throw multiple stones without restarting the game.\n5. AK-47 INTERACTION\nPlace an AK-47 inside the outpost.\nThe player must be able to approach the weapon and pick it up.\nWhen equipped:\n\nDisplay the AK-47 in a proper first-person weapon position.\nShow both hands holding the weapon.\nImplement realistic weapon sway.\nImplement a shooting animation.\nAdd muzzle flash.\nAdd recoil.\nAdd shell casing ejection.\nAdd realistic gunshot audio.\nAdd environmental bullet impacts.\nAdd an optional reload animation.\nThe player should be able to shoot at rocks, trees, wooden objects, and other environmental surfaces.\nBullets should create appropriate visual and audio effects depending on the material they hit.\nThere is no need to create enemy AI or a combat campaign. Focus on making the weapon interaction feel polished and satisfying.\n6. KNIFE INTERACTION\nCreate an interactive survival knife inside the shelter.\nThe player can pick it up and equip it.\nImplement:\n\nFirst-person knife holding animation.\nIdle knife animation.\nKnife swing animation.\nSlash animation.\nAppropriate sound effects.\nNatural hand and wrist movement.\nThe knife should feel like a proper usable first-person tool, not a static object attached to the camera.\n7. INTERACTIVE OBJECTS\nMake the environment feel alive and interactive.\nThe player should be able to interact with selected objects.\nImportant interactions include:\nSupply crate\nThe player can approach a wooden crate, interact with it, and open its lid.\nThe lid should animate naturally.\nPlants\nThe player can approach specific tropical plants and harvest them.\nCreate a small first-person harvesting animation.\nAfter harvesting, the plant should disappear from its original location or visibly lose its harvested part.\nThe collected plant must be added to the player's inventory.\nInventory\nCreate a simple but visually polished inventory interface.\nCollected plants and other pickup items should appear in the inventory with their name, icon, and quantity.\nThe inventory must actually work and retain collected items during gameplay.\nOther objects\nAllow selected small objects around the outpost to be picked up or examined when appropriate.\nUse subtle interaction prompts rather than oversized UI elements.\n8. WEATHER SYSTEM\nImplement a functional dynamic weather system.\nThe player should be able to switch between:\n\nClear tropical weather.\nCloudy weather.\nTropical rain.\nHeavy tropical rain.\nRain must affect the entire environment visually.\nWhen rain begins:\n\nRain particles appear.\nRain hits the ocean and creates small surface disturbances.\nSand and rocks become darker.\nLeaves and wooden surfaces become wet.\nWet materials become more reflective.\nPuddles appear where appropriate.\nAtmospheric fog increases.\nRain audio becomes audible.\nOcean and jungle ambience change naturally.\nUse wetness shaders and physically based material transitions.\nThe rain should feel like an actual tropical storm, not simply particles falling in front of the camera.\n9. TIME OF DAY SYSTEM\nAdd a dynamic time-of-day system.\nAllow the player to switch between:\n\nEarly morning.\nBright tropical noon.\nGolden hour / sunset.\nNight.\nEach time of day must produce a noticeably different visual atmosphere.\nMorning should include soft lighting and atmospheric mist.\nNoon should feature strong tropical sunlight, vibrant turquoise water, and deep jungle shadows.\nSunset should have warm orange light, beautiful reflections on the ocean, and cinematic shadows.\nNight should have moonlight, dark jungle silhouettes, subtle ambient lighting, and a peaceful tropical atmosphere.\nWeather and time of day must work together.\nFor example, the player should be able to experience heavy rain at sunset or a cloudy nighttime lagoon.\n10. GRAPHICS AND SHADERS — EXTREMELY IMPORTANT\nVISUAL QUALITY IS ONE OF THE MAIN PRIORITIES.\nMake the game look like a modern, high-quality tropical exploration game.\nUse as many appropriate advanced graphical techniques as possible while maintaining playable performance.\nPrioritize:\n\nPhysically Based Rendering (PBR).\nRealistic water shaders.\nWater refraction.\nScreen-space or equivalent reflections.\nRealistic ocean foam.\nShoreline water interaction.\nSubsurface scattering for vegetation.\nDetailed foliage shaders.\nWind-driven vegetation animation.\nSoft dynamic shadows.\nHigh-quality ambient occlusion.\nCinematic global illumination where supported.\nVolumetric lighting.\nAtmospheric fog.\nSun shafts passing through palm leaves.\nRealistic wetness shaders.\nBeautiful sky and cloud rendering.\nHigh-quality tone mapping and color grading.\nSubtle bloom.\nNatural exposure adaptation.\nHigh-quality material textures.\nRealistic surface roughness and normal mapping.\nMake the ocean and vegetation particularly impressive.\nThe water should look mesmerizing, with vibrant tropical colors, natural wave movement, and beautiful sunlight reflections.\nLeaves and palm trees should move naturally in the wind.\nThe jungle must feel lush, dense, and visually rich.\nAvoid flat lighting, generic low-poly graphics, cartoon-like materials, and empty environments.\nDo not sacrifice the entire frame rate just to enable expensive effects. Use optimized techniques appropriate for the chosen engine.\n11. SOUND DESIGN\nCreate immersive tropical environmental audio.\nInclude:\n\nOcean waves.\nWater moving along the shoreline.\nWind passing through palm leaves.\nJungle birds.\nTropical insects.\nDistant wildlife.\nFootsteps on sand.\nFootsteps on wood.\nStone throwing and water splashes.\nWeapon handling.\nAK-47 gunshots.\nKnife swings.\nCrate opening.\nRain hitting leaves, sand, wood, and water.\nUse spatial audio and environmental sound variations where possible.\nThe lagoon should feel alive even when the player does nothing.\n12. CONTROLS\nImplement intuitive first-person controls.\nWASD — Move.\nMouse — Look around.\nShift — Sprint.\nSpace — Jump.\nE — Interact / pick up objects.\nLeft Mouse Button — Shoot, swing knife, or throw a held stone.\nR — Reload the AK-47.\n1 — Equip AK-47.\n2 — Equip knife.\n3 — Equip stone, if available.\nI — Open inventory.\nT — Change weather.\nN — Change time of day.\nESC — Pause / settings.\nProvide a small, elegant interface for changing weather and time of day.\nDo not clutter the screen with unnecessary HUD elements.\n13. VISUAL ATMOSPHERE AND ART DIRECTION\nThe entire experience should capture this feeling:\nYou are alone in a hidden tropical lagoon.\nThe ocean is crystal clear.\nThe jungle is dense and full of life.\nA small improvised shelter stands beside the beach.\nYour AK-47 rests near your sleeping cot.\nA knife and survival equipment lie on the wooden table.\nAnimal skins hang from the structure.\nSunlight passes through palm trees and reflects from the ocean.\nYou can pick up a stone and throw it into the sea, watching the splash and ripples disappear into the waves.\nYou can explore the shelter, pick up your weapon, examine objects, gather tropical plants, and watch the weather change.\nThe scene should be beautiful enough that the player wants to stand still and admire the environment.\nThe visual identity should combine:\nFar Cry 3 tropical island atmosphere + modern cinematic graphics + realistic water rendering + dense, detailed jungle + immersive first-person interactions.\n14. IMPORTANT DEVELOPMENT REQUIREMENTS\nThis must be a WORKING, PLAYABLE EXPERIENCE.\nDo not simply create a beautiful static 3D render.\nImplement the actual gameplay systems described above.\nPrioritize a small, complete, polished environment rather than a large unfinished game.\nAll important mechanics should work:\n\nFirst-person movement.\nVisible animated hands.\nPickable and throwable stones.\nFunctional water splash effects.\nEquippable and shootable AK-47.\nEquippable and usable knife.\nOpening supply crates.\nHarvesting plants.\nFunctional inventory.\nDynamic rain.\nDynamic time of day.\nAdvanced environmental shaders.\nDo not replace the requested systems with decorative placeholders.\nIf development limitations require prioritization, complete the core mechanics first, then add graphical polish.\n15. REFERENCE IMAGES\nI WILL UPLOAD REFERENCE IMAGES AFTER THIS PROMPT.\nThese images are extremely important.\nAnalyze them carefully and use them as the main visual guide.\nPay particular attention to:\n\nLagoon shape and composition.\nPosition of the ocean relative to the beach.\nTropical vegetation density.\nStructure and scale of the outpost.\nColor palette.\nLighting.\nWater appearance.\nAtmosphere.\nEnvironmental details.\nThe final game should feel like a playable recreation of the location and mood shown in my reference images.\nDo not blindly generate a generic tropical island.\nUse the references to create a distinctive, carefully art-directed, immersive lagoon environment."
+   },
+   "referenceAssets": true,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 72901,
+    "likes": 164,
+    "replies": 11,
+    "reposts": 11,
+    "bookmarks": 131,
+    "checkedAt": "2026-09-27T10:13:12.507Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2103421330649464832/img/BTa-RJyD8BTkHRce.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2103421330649464832/vid/avc1/1280x720/FGPtZZWe3CL-zN9x.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 122
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -13257,6 +13634,57 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2103149526244618682",
+   "url": "https://x.com/goodside/status/2103149526244618682",
+   "author": {
+    "handle": "goodside",
+    "name": "Riley Goodside"
+   },
+   "postedAt": "2026-09-24T15:48:16.000Z",
+   "lang": "en",
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "动画鹈鹕讲解Shell命令",
+    "en": "Animated pelican explains a shell command"
+   },
+   "summary": {
+    "zh": "作者仅在手机端Claude应用中输入一条提示词，让Opus 5.5生成了一段30秒动画视频：一只骑独轮车的鹈鹕边讲解shell命令边玩杂耍，并配有合成语音。",
+    "en": "Claude Opus 5.5 generated a 30-second animated video of a pelican on a unicycle explaining a shell command while juggling fish, with synthesized voice from a single prompt on the Claude phone app."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "post",
+    "sourceUrl": "https://x.com/goodside/status/2103149526244618682",
+    "text": "Create a 30s animated video with sythesized voice where an animated pelican on a unicycle explains the shell command `w | tail -n +3 | cut -d ' ' -f1 | sort -u` with visuals while juggling several fish."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Kokoro TTS"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 64202,
+    "likes": 437,
+    "replies": 21,
+    "reposts": 26,
+    "bookmarks": 160,
+    "checkedAt": "2026-09-27T10:13:12.507Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2103149480165969920/img/8KFAA_IrpBjCSVJF.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2103149480165969920/vid/avc1/1280x720/sVt2iBXGnIY0w4qt.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -15581,6 +16009,54 @@
    }
   },
   {
+   "id": "2103115036369760496",
+   "url": "https://x.com/lambda_funtaro/status/2103115036369760496",
+   "author": {
+    "handle": "lambda_funtaro",
+    "name": "入田 関太郎(らむだ ふぁんたろう)"
+   },
+   "postedAt": "2026-09-24T13:31:13.000Z",
+   "lang": "ja",
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "Opus5.5制作的可扩展服务器我的世界风游戏",
+    "en": "Minecraft-style game with scalable server built by Opus 5.5"
+   },
+   "summary": {
+    "zh": "创作者让Opus 5.5制作了一款类似我的世界的游戏，前端使用Three.js，后端用Cloudflare Workers和Durable Objects实现可水平扩展且低成本的多人服务器。",
+    "en": "A Minecraft-style game with horizontally scalable, low-cost multiplayer servers and far-distance rendering, built by Opus 5.5 with Three.js on the frontend and Cloudflare Workers/Durable Objects for the server backend."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js",
+    "Cloudflare Workers",
+    "Durable Objects"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 54033,
+    "likes": 340,
+    "replies": 4,
+    "reposts": 18,
+    "bookmarks": 170,
+    "checkedAt": "2026-09-27T10:13:12.507Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2103113729999265792/img/07v3MoDf5EVo6_p7.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2103113729999265792/vid/avc1/1398x720/F4AK0j_5f6tE6GlG.mp4?tag=14",
+    "width": 1398,
+    "height": 720,
+    "durationSec": 23
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103501151438323850",
    "url": "https://x.com/javiiarchive/status/2103501151438323850",
    "author": {
@@ -16323,6 +16799,55 @@
    }
   },
   {
+   "id": "2103132260589338762",
+   "url": "https://x.com/jackfriks/status/2103132260589338762",
+   "author": {
+    "handle": "jackfriks",
+    "name": "jack friks"
+   },
+   "postedAt": "2026-09-24T14:39:39.000Z",
+   "lang": "en",
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "小猪寄情书：应用宣传动画",
+    "en": "Pig Love Notes: An Animated App Promo"
+   },
+   "summary": {
+    "zh": "创作者用一句简短提示让Opus 5.5一次性制作了一部9:16竖屏动画短片，视觉和音效均在Claude内完成并直接导出为mp4，内容是小猪给伴侣寄情书。",
+    "en": "A one-shot 9:16 animated short film advertising an app, made entirely inside Claude with sound effects and exported directly to mp4, based on a brief prompt about a pig sending love notes to his partner."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/jackfriks/status/2103134485910892602",
+    "text": "can you help me use the pig assets on new branch of lovelee to make a 9:16 short story animation with sound effects about the pig sending his partner love notes in the mailbox and make it fun and good tease app at end?"
+   },
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 51249,
+    "likes": 161,
+    "replies": 31,
+    "reposts": 2,
+    "bookmarks": 192,
+    "checkedAt": "2026-09-27T10:13:12.507Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2103131986701230082/img/9PcFlH2KPZDZVz_U.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2103131986701230082/vid/avc1/720x1280/PKtoBL0Ue5MOqErn.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 20
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103590367518171295",
    "url": "https://x.com/YoheiN2023/status/2103590367518171295",
    "author": {
@@ -16653,7 +17178,7 @@
    "kind": "work",
    "category": "product",
    "title": {
-    "zh": "SaaS产品发布视频(一次生成)",
+    "zh": "SaaS产品发布视频（一次生成）",
     "en": "SaaS product launch video (one shot)"
    },
    "summary": {
@@ -18004,7 +18529,7 @@
    "kind": "work",
    "category": "education",
    "title": {
-    "zh": "文档转视频讲解(Open Alignment)",
+    "zh": "文档转视频讲解（Open Alignment)",
     "en": "Doc-to-video explainer (Open Alignment)"
    },
    "summary": {
@@ -18325,7 +18850,7 @@
    "kind": "work",
    "category": "game",
    "title": {
-    "zh": "孤岛惊魂3克隆游戏(优化版)",
+    "zh": "孤岛惊魂3克隆游戏（优化版）",
     "en": "Far Cry 3 clone game (polished)"
    },
    "summary": {
@@ -19140,7 +19665,7 @@
    "kind": "work",
    "category": "stories",
    "title": {
-    "zh": "OpenAI破解纳维-斯托克斯方程视频(讽刺)",
+    "zh": "OpenAI破解纳维-斯托克斯方程视频（讽刺）",
     "en": "Video of OpenAI solving Navier-Stokes (satire)"
    },
    "summary": {
@@ -20417,6 +20942,50 @@
    }
   },
   {
+   "id": "2103300490184564849",
+   "url": "https://x.com/op7418/status/2103300490184564849",
+   "author": {
+    "handle": "op7418",
+    "name": "歸藏(guizang.ai)"
+   },
+   "postedAt": "2026-09-25T01:48:08.000Z",
+   "lang": "zh",
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "基于Zed代码库生成的产品宣传视频",
+    "en": "Product promo video generated from Zed codebase"
+   },
+   "summary": {
+    "zh": "创作者用迭代过的Skill让Opus 5.5基于Zed代码库制作了一段产品宣传视频，镜头在编辑器内运动展示各项功能，并与音乐节奏契合。",
+    "en": "A promotional video for the Zed code editor generated by Opus 5.5 using an iterated 'Skill', with camera movement through the editor showcasing features in sync with music."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 35619,
+    "likes": 149,
+    "replies": 24,
+    "reposts": 8,
+    "bookmarks": 133,
+    "checkedAt": "2026-09-27T10:13:12.507Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2103300273041190912/img/Q4o_BnvewCcvr_3D.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2103300273041190912/vid/avc1/1280x720/idP5Hz_F2O_xs9A7.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 51
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102552980818182512",
    "url": "https://x.com/asobodesign/status/2102552980818182512",
    "author": {
@@ -20958,6 +21527,57 @@
    }
   },
   {
+   "id": "2103086714772463953",
+   "url": "https://x.com/oviniciuslana/status/2103086714772463953",
+   "author": {
+    "handle": "oviniciuslana",
+    "name": "Vini Lana"
+   },
+   "postedAt": "2026-09-24T11:38:40.000Z",
+   "lang": "pt",
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "我的世界风格浏览器游戏",
+    "en": "Minecraft-Style Browser Game"
+   },
+   "summary": {
+    "zh": "创作者用一句提示词让Claude Opus 5.5一次性生成了一个类似Minecraft的浏览器游戏，包括引擎、音频和材质，后来发现其中使用了Three.js作为渲染层。",
+    "en": "A Minecraft-style browser game with its own game engine, audio and textures was generated by Claude Opus 5.5 from a single prompt, later found to use Three.js as a thin rendering layer."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/oviniciuslana/status/2103088513348518163",
+    "text": "crie uma engine de jogo ultrarealista sem usar libs e na sequencia crie um jogo estilo minecraft ultrarealista que rode no browser em html"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 34055,
+    "likes": 338,
+    "replies": 30,
+    "reposts": 15,
+    "bookmarks": 98,
+    "checkedAt": "2026-09-27T10:13:12.507Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2103085995549659136/img/vfMrGx8aGvMT8VG1.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2103085995549659136/vid/avc1/1398x720/uZ-EAmNvZYQEY89V.mp4?tag=29",
+    "width": 1398,
+    "height": 720,
+    "durationSec": 65
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103933824606613818",
    "url": "https://x.com/aollivier82/status/2103933824606613818",
    "author": {
@@ -21177,6 +21797,57 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2103181133198639614",
+   "url": "https://x.com/zavrenn/status/2103181133198639614",
+   "author": {
+    "handle": "zavrenn",
+    "name": "Mohamed"
+   },
+   "postedAt": "2026-09-24T17:53:52.000Z",
+   "lang": "en",
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "Blender关节台灯动画",
+    "en": "Articulated Lamp Animation in Blender"
+   },
+   "summary": {
+    "zh": "创作者用同一份详细提示词和参考图，让GPT-6 Astra和Claude Opus 5.5分别在Blender中还原一段台灯动画，Opus耗时更长、消耗的token也远多于Astra。",
+    "en": "A comparison of GPT-6 Astra and Claude Opus 5.5 recreating a lamp animation in Blender from the same detailed prompt and reference images, with Opus taking much longer and using far more tokens."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/zavrenn/status/2103432361815703856",
+    "text": "Create a finished, editable Blender recreation of the six-second animation shown in this workspace’s reference/t\\_\\*.png images.\n\nOpen and inspect the reference images before building. Their filenames give seconds from the start of the animation: t\\_1.20s.png means 1.20 seconds. Use these images as the visual reference and leave them unchanged.\n\nMatch the complete composition: the lamp’s proportions and articulated structure, lettering, interactions, camera framing, materials, lighting, shadows, and final fade. Pay particular attention to jump timing, preparation, landings, settling, and head turns. Preserve the reference’s stylized motion and create coherent movement between the sampled poses. Make reasonable choices for unseen details.\n\nBuild genuine 3D geometry and animation that remain editable. Keep joints connected and contact believable. Do not substitute reference images or footage for geometry, textures, backgrounds, or rendered output. Create the assets yourself using installed tools; do not download assets, browse the web, or use other AI agents or models.\n\nBlender is installed at:\nC:\\Program Files\\Blender Foundation\\Blender 5.2\\blender.exe\n\nPrepare the final scene at 1280×720, 30 fps, frames 1–180, with frame 1 representing time zero. Use Cycles, 64 samples, and denoising. Preserve the reference lettering; add no extra titles, watermarks, interface, comparison layout, or audio.\n\nRender and visually inspect low-resolution previews across the action, including between reference timestamps. Correct visible problems and recheck affected frames. We will render the final video separately.\n\nSave scene.blend with the final render settings and a build\\_scene.py that rebuilds it from scratch. The saved scene must render without external asset dependencies. Verify that it opens and renders in background mode.\n\nWork autonomously through completion, making routine decisions yourself. Finish with a brief report of the saved files, checks actually performed, and remaining limitations."
+   },
+   "referenceAssets": true,
+   "tools": [
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 32243,
+    "likes": 223,
+    "replies": 17,
+    "reposts": 6,
+    "bookmarks": 57,
+    "checkedAt": "2026-09-27T10:13:12.507Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2103179338141093888/img/5LxHy8hJ-HfoOXP8.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2103179338141093888/vid/avc1/720x944/59tl4o1axXTRzj1z.mp4?tag=29",
+    "width": 720,
+    "height": 944,
+    "durationSec": 6
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -21935,6 +22606,52 @@
    }
   },
   {
+   "id": "2103138051165933661",
+   "url": "https://x.com/KanaWorks_AI/status/2103138051165933661",
+   "author": {
+    "handle": "KanaWorks_AI",
+    "name": "KANA｜東京AI映像"
+   },
+   "postedAt": "2026-09-24T15:02:40.000Z",
+   "lang": "ja",
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "用Opus 5.5与Unreal制作的可玩动作角色扮演游戏",
+    "en": "Playable ARPG built with Opus 5.5 and Unreal"
+   },
+   "summary": {
+    "zh": "创作者描述了借助Claude Opus 5.5在Unreal Engine中制作出一款可玩的ARPG，并对能操控角色跑动、翻滚和挥剑感到兴奋。",
+    "en": "The creator describes building a playable ARPG in Unreal Engine with Claude Opus 5.5, expressing excitement at controlling a character with running, rolling, and sword attacks."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Unreal Engine"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 30805,
+    "likes": 348,
+    "replies": 20,
+    "reposts": 29,
+    "bookmarks": 133,
+    "checkedAt": "2026-09-27T10:13:12.507Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2103137269079261184/img/4bndqvSpWJASov_6.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2103137269079261184/vid/avc1/1280x720/Abg0SlVRHTvubEFk.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 51
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102804821623386523",
    "url": "https://x.com/pleometric/status/2102804821623386523",
    "author": {
@@ -21974,6 +22691,53 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2103121980685955247",
+   "url": "https://x.com/akira_papa_IT/status/2103121980685955247",
+   "author": {
+    "handle": "akira_papa_IT",
+    "name": "あきらパパ【生成AI活用エンジニア&３児のパパ】"
+   },
+   "postedAt": "2026-09-24T13:58:48.000Z",
+   "lang": "ja",
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "互动式海啸防灾模拟网站",
+    "en": "Interactive tsunami disaster-preparedness simulation site"
+   },
+   "summary": {
+    "zh": "作者用Opus 5.5重新制作了一个日本海啸模拟网站，用户可以在地图上选取地点，查看基于物理计算的假设海啸如何淹没该地形与建筑，项目已开源。",
+    "en": "A tsunami simulation website for Japanese coastal cities was rebuilt with Opus 5.5, letting users pick a location on a map and see a physically simulated hypothetical tsunami flow over real terrain; the source code was released as open source."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "WebGPU",
+    "TSL"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 30377,
+    "likes": 190,
+    "replies": 0,
+    "reposts": 33,
+    "bookmarks": 144,
+    "checkedAt": "2026-09-27T10:13:12.507Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2103121808182714368/img/BEscVSqHH1TTT3UE.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2103121808182714368/vid/avc1/1232x720/eftIx5WhEN_PAzyR.mp4?tag=29",
+    "width": 1232,
+    "height": 720,
+    "durationSec": 53
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -22433,6 +23197,52 @@
    }
   },
   {
+   "id": "2103159823407722893",
+   "url": "https://x.com/eudaemonea/status/2103159823407722893",
+   "author": {
+    "handle": "eudaemonea",
+    "name": "josh"
+   },
+   "postedAt": "2026-09-24T16:29:11.000Z",
+   "lang": "en",
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "Claude拟人恶搞歌曲动画视频",
+    "en": "Claude parody song animated video"
+   },
+   "summary": {
+    "zh": "作者用Opus 5.5制作了一段名为Bohemian Tokenry的模仿视频，歌词是之前用Sonnet生成的，视频包含五种不同的视觉风格，与Claude的对话记录已发布在GitHub上。",
+    "en": "A parody music video called Bohemian Tokenry was made with Opus 5.5, based on lyrics the creator previously got from Sonnet, rendered in five distinct visual styles; the messages sent to Claude are published on GitHub."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [
+    "https://github.com/ledbetterljoshua/bohemian-tokenry-video"
+   ],
+   "stats": {
+    "views": 29602,
+    "likes": 339,
+    "replies": 15,
+    "reposts": 22,
+    "bookmarks": 182,
+    "checkedAt": "2026-09-27T10:13:12.507Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2103159297613934593/img/99Gmrl5WBNygMWcz.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2103159297613934593/vid/avc1/1280x720/zHH1-Ymnrkn5PK3o.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 362
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102757164158689759",
    "url": "https://x.com/Lucas_IA_/status/2102757164158689759",
    "author": {
@@ -22475,6 +23285,54 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2103410995272020375",
+   "url": "https://x.com/AmirAnonn/status/2103410995272020375",
+   "author": {
+    "handle": "AmirAnonn",
+    "name": "Amir"
+   },
+   "postedAt": "2026-09-25T09:07:15.000Z",
+   "lang": "fa",
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "狐狸游戏动作效果升级展示",
+    "en": "Fox game motion showcase upgrade"
+   },
+   "summary": {
+    "zh": "作者把两个月前用Fable和Blender做的游戏交给Opus 5.5，只给了一个简单的提示让它自由展示能力，结果发现其对物理世界、动作设计和转场的理解明显超过Fable。",
+    "en": "A game previously built with Fable and Blender was handed to Opus 5.5 with just a minimal instruction to show off its own capabilities, and the creator says it improved physics understanding, motion design and transitions beyond Fable."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Fable",
+    "Blender",
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 29548,
+    "likes": 234,
+    "replies": 21,
+    "reposts": 4,
+    "bookmarks": 129,
+    "checkedAt": "2026-09-27T10:13:12.507Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2103410679554199552/img/y_aoF6_KK1fhHMrm.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2103410679554199552/vid/avc1/1108x720/PpbyWyYCb5Bhg7zC.mp4?tag=29",
+    "width": 1108,
+    "height": 720,
+    "durationSec": 20
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -22696,6 +23554,52 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2103176132585717823",
+   "url": "https://x.com/vamonke/status/2103176132585717823",
+   "author": {
+    "handle": "vamonke",
+    "name": "varick lim"
+   },
+   "postedAt": "2026-09-24T17:33:59.000Z",
+   "lang": "en",
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "AI生成城市新闻摄影游戏",
+    "en": "AI city news photography game"
+   },
+   "summary": {
+    "zh": "Newsworthy是一款设定在实时AI生成城市中的新闻摄影游戏，使用Reactor和Opus 5.5制作，灵感来自Headliners等游戏。",
+    "en": "Newsworthy is a news photography game set inside a live AI-generated city, made with Reactor and Opus 5.5, inspired by the games Headliners and World Beyond War Beyond."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Reactor"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 29223,
+    "likes": 112,
+    "replies": 16,
+    "reposts": 2,
+    "bookmarks": 62,
+    "checkedAt": "2026-09-27T10:13:12.507Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2103170778326077440/img/jNu_PkT9ziZtM2V6.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2103170778326077440/vid/avc1/1262x720/ED8lJKGiGNm1zEDY.mp4?tag=29",
+    "width": 1262,
+    "height": 720,
+    "durationSec": 34
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -23421,6 +24325,50 @@
    }
   },
   {
+   "id": "2103290186268365205",
+   "url": "https://x.com/jwuphysics/status/2103290186268365205",
+   "author": {
+    "handle": "jwuphysics",
+    "name": "John F. Wu"
+   },
+   "postedAt": "2026-09-25T01:07:12.000Z",
+   "lang": "en",
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "星系恒星形成率探索器",
+    "en": "Galaxy Star-Formation Explorer"
+   },
+   "summary": {
+    "zh": "作者用几个小时设计了一个展示星系恒星形成率与恒星质量关系及图像切片的交互式天文可视化工具，并由Opus 5.5用约五个小时实现。",
+    "en": "An interactive astronomy data visualization tool showing galaxy star-formation-rate vs stellar-mass relations with image cutouts was designed by the creator over a few hours and implemented by Opus 5.5 over about five hours."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 27044,
+    "likes": 337,
+    "replies": 8,
+    "reposts": 28,
+    "bookmarks": 188,
+    "checkedAt": "2026-09-27T10:13:12.507Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2103289649598717952/img/3tvJPvxO9t3XlqI9.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2103289649598717952/vid/avc1/1280x720/dT75CCWVNyPEKJ41.mp4?tag=14",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 175
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103755997533839416",
    "url": "https://x.com/rehan_shei/status/2103755997533839416",
    "author": {
@@ -23924,6 +24872,53 @@
    }
   },
   {
+   "id": "2103118921024872571",
+   "url": "https://x.com/bridgebench/status/2103118921024872571",
+   "author": {
+    "handle": "bridgebench",
+    "name": "Bridgebench"
+   },
+   "postedAt": "2026-09-24T13:46:39.000Z",
+   "lang": "en",
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "火箭发射视频：模型速度与成本对比",
+    "en": "Rocket launch video: model speed and cost comparison"
+   },
+   "summary": {
+    "zh": "一篇对比帖，展示三个模型（GPT-6 Astra、Claude Opus 5.5、MiMo V2.6 Pro）用同一提示词生成火箭发射视频的成本和耗时对比。",
+    "en": "A comparison of three AI models (GPT-6 Astra, Claude Opus 5.5, MiMo V2.6 Pro) generating a rocket launch video from the same prompt, comparing cost and generation time."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "MiMo V2.6 Pro",
+    "GPT-6 Astra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 25781,
+    "likes": 276,
+    "replies": 34,
+    "reposts": 9,
+    "bookmarks": 39,
+    "checkedAt": "2026-09-27T10:13:12.507Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2103118890549055489/img/ta0RqxxTzkm4ZhGT.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2103118890549055489/vid/avc1/1280x720/o_icqZUWyIOum4cA.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 10
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102504454721347822",
    "url": "https://x.com/nickfromlater/status/2102504454721347822",
    "author": {
@@ -24153,6 +25148,55 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2103275618045686217",
+   "url": "https://x.com/davidmarcus/status/2103275618045686217",
+   "author": {
+    "handle": "davidmarcus",
+    "name": "David Marcus"
+   },
+   "postedAt": "2026-09-25T00:09:18.000Z",
+   "lang": "en",
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "Lightspark产品宣传视频",
+    "en": "Lightspark product promo video"
+   },
+   "summary": {
+    "zh": "作者用一句提示词让Claude Opus 5.5一次性生成了一段为Lightspark制作的宣传短视频，带音效，耗时约5分钟。",
+    "en": "A short promotional video for Lightspark was made one-shot by Claude Opus 5.5, including sound, in about 5 minutes from a single prompt."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/davidmarcus/status/2103275618045686217",
+    "text": "make a punchy and modern short video for social that promotes @lightspark capabilities. Needs to be production grade with sound"
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 25097,
+    "likes": 283,
+    "replies": 20,
+    "reposts": 6,
+    "bookmarks": 276,
+    "checkedAt": "2026-09-27T10:13:12.507Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2103275588102537216/img/XBVUX6UkVQNuB2ek.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2103275588102537216/vid/avc1/720x1280/bySbfMaGFcW9TwG_.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 23
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -24520,6 +25564,52 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2103099960069873856",
+   "url": "https://x.com/ootamato/status/2103099960069873856",
+   "author": {
+    "handle": "ootamato",
+    "name": "大田マト"
+   },
+   "postedAt": "2026-09-24T12:31:18.000Z",
+   "lang": "ja",
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "旋转轴主题工程历史动画",
+    "en": "Engineering history animation on rotation axes"
+   },
+   "summary": {
+    "zh": "作者用Claude Opus 5.5通过JavaScript制作了一段带音效的动画，回顾旋转轴相关工程历史，经过两次指示完成，之后又修正了场景切换部分。",
+    "en": "Claude Opus 5.5 created a JavaScript animation with sound reviewing the history of rotating axle engineering, made with two rounds of instructions and later a scene-transition fix."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "JavaScript"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 24369,
+    "likes": 490,
+    "replies": 6,
+    "reposts": 65,
+    "bookmarks": 160,
+    "checkedAt": "2026-09-27T10:13:12.507Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2103097104692633601/img/ucLCyOo05_JRVPWL.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2103097104692633601/vid/avc1/1280x720/_Al0SN7E61-3oO-B.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 31
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -25321,7 +26411,7 @@
    "kind": "work",
    "category": "art3d",
    "title": {
-    "zh": "纯代码程序化生成的猎豹(Three.js)",
+    "zh": "纯代码程序化生成的猎豹（Three.js)",
     "en": "Procedural cheetah built in Three.js"
    },
    "summary": null,
@@ -29895,7 +30985,7 @@
    "kind": "work",
    "category": "motion",
    "title": {
-    "zh": "AI仿制参考视频(对比呈现)",
+    "zh": "AI仿制参考视频（对比呈现）",
     "en": "AI recreation of reference video (side-by-side)"
    },
    "summary": {
@@ -31443,7 +32533,7 @@
    "kind": "work",
    "category": "production",
    "title": {
-    "zh": "电子音乐(Techno)创作",
+    "zh": "电子音乐（Techno）创作",
     "en": "Techno music composition"
    },
    "summary": null,
@@ -37164,7 +38254,7 @@
    "kind": "work",
    "category": "stories",
    "title": {
-    "zh": "Clawd(Claude吉祥物)的一天",
+    "zh": "Clawd(Claude吉祥物）的一天",
     "en": "Day in the life of Clawd (Claude mascot)"
    },
    "summary": null,
@@ -37336,7 +38426,7 @@
    "kind": "comparison",
    "category": "comparison",
    "title": {
-    "zh": "3D角色制作流程:Opus对比Astra",
+    "zh": "3D角色制作流程：Opus对比Astra",
     "en": "3D character pipeline: Opus vs Astra"
    },
    "summary": null,
@@ -40901,7 +41991,7 @@
    "kind": "comparison",
    "category": "comparison",
    "title": {
-    "zh": "柏青哥特效:Opus5.5版本对比",
+    "zh": "柏青哥特效：Opus5.5版本对比",
     "en": "Pachinko effect: Opus 5.5 version"
    },
    "summary": null,
@@ -42290,7 +43380,7 @@
    "kind": "comparison",
    "category": "comparison",
    "title": {
-    "zh": "Opus对比Astra立体模型制作(Blender)",
+    "zh": "Opus对比Astra立体模型制作（Blender)",
     "en": "Opus vs Astra diorama comparison (Blender)"
    },
    "summary": null,

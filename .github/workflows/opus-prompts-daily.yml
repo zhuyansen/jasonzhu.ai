@@ -1,0 +1,103 @@
+name: Opus 提示词库每日收录
+
+# 每天北京时间 10:30：收录两天前发布、播放过 5000 的新作品，每天最多 40 个（按播放量优先）。
+# Claude 分类并定位提示词 → 代码逐字对账 → 第二家模型审核。
+# 把握大的直接提交到 main 上线；拿不准的进「滚动 PR」（分支 opus-prompts/pending），合并即批准。
+#
+# 需要的 Secrets：TWITTERAPI_IO_KEY（必需）、FLATROUTER_API_KEY（审核用第二模型）；Claude 的几个沿用快讯的。
+on:
+  schedule:
+    - cron: "30 2 * * *"
+  workflow_dispatch:
+    inputs:
+      cap:
+        description: "本次最多处理多少个作品"
+        default: "40"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+# 和每周核验共用一个组：两边都改 data/candidates.json，串行跑避免互相覆盖
+concurrency:
+  group: opus-prompts
+  cancel-in-progress: false
+
+env:
+  DATA: scripts/opus-prompts/data
+  OUTPUTS: src/content/opus-prompts src/generated/opus-prompts.json src/generated/opus-prompts-full.json public/data/opus-prompts
+  PENDING_BRANCH: opus-prompts/pending
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: 采集、判断、审核
+        env:
+          TWITTERAPI_IO_KEY: ${{ secrets.TWITTERAPI_IO_KEY }}
+          FLATROUTER_API_KEY: ${{ secrets.FLATROUTER_API_KEY }}
+          ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
+          ANTHROPIC_BASE_URL: "https://api.aigocode.app"
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          APIMART_API_KEY: ${{ secrets.APIMART_API_KEY }}
+          CAP: ${{ inputs.cap || '40' }}
+        run: |
+          if [ -z "$TWITTERAPI_IO_KEY" ]; then
+            echo "::error::缺少 Secret TWITTERAPI_IO_KEY，无法搜索新帖"
+            exit 1
+          fi
+          if [ -z "$FLATROUTER_API_KEY" ]; then
+            echo "::warning::没配 FLATROUTER_API_KEY：审核会退回到 Claude，等于自己审自己，建议补上"
+          fi
+          node scripts/opus-prompts/daily.mjs
+
+      - name: 组装并编译
+        run: |
+          node scripts/opus-prompts/assemble.mjs --write
+          node scripts/generate-opus-prompts.mjs
+
+      - name: 上线（提交到 main）
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add $DATA $OUTPUTS
+          if git diff --cached --quiet; then
+            echo "没有变化，不提交"
+          else
+            git commit -m "✨ 提示词库每日收录 $(date -u +%F)"
+            git pull --rebase
+            git push
+          fi
+
+      - name: 滚动 PR（拿不准的作品）
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          COUNT=$(node -e 'console.log(JSON.parse(require("fs").readFileSync(process.argv[1],"utf8")).length)' "$DATA/pending.json")
+          PR=$(gh pr list --head "$PENDING_BRANCH" --state open --json number --jq '.[0].number // empty')
+          if [ "$COUNT" = "0" ]; then
+            if [ -n "$PR" ]; then gh pr close "$PR" --delete-branch --comment "待审队列已清空。"; fi
+            echo "待审队列为空"
+            exit 0
+          fi
+          # 每天从最新的 main 重建分支，所以不会和 main 产生冲突
+          git checkout -B "$PENDING_BRANCH"
+          node scripts/opus-prompts/apply-pending.mjs --body "$RUNNER_TEMP/pr-body.md" --apply
+          node scripts/opus-prompts/assemble.mjs --write
+          node scripts/generate-opus-prompts.mjs
+          git add $DATA $OUTPUTS
+          git commit -m "待审核的新作品（$COUNT 个）"
+          git push --force origin "$PENDING_BRANCH"
+          TITLE="提示词库：待审核的新作品（$COUNT 个）"
+          if [ -n "$PR" ]; then
+            gh pr edit "$PR" --title "$TITLE" --body-file "$RUNNER_TEMP/pr-body.md"
+          else
+            gh pr create --base main --head "$PENDING_BRANCH" --title "$TITLE" --body-file "$RUNNER_TEMP/pr-body.md"
+          fi

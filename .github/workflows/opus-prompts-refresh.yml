@@ -11,8 +11,9 @@ on:
 permissions:
   contents: write
 
+# 和每日收录共用一个组：两边都改 data/candidates.json，串行跑避免互相覆盖
 concurrency:
-  group: opus-prompts-refresh
+  group: opus-prompts
   cancel-in-progress: false
 
 jobs:

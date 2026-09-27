@@ -51,3 +51,6 @@ supabase/.temp/
 
 # 敏感本地记录（兑换码名单等），公开仓库不进 git
 /private/
+
+# 提示词库每日收录的断点文件（搜索结果/作者回复的本地缓存）
+scripts/opus-prompts/data/.work/

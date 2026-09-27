@@ -24,6 +24,10 @@ const expand = (text) => text.replace(/https:\/\/t\.co\/\w+/g, (u) => {
   // 指向推文自带媒体的短链不是提示词内容，保留原样以免改动原文
   return t && !/\/\/(x|twitter)\.com\/[^/]+\/status\/\d+\/(photo|video)\//.test(t) ? t : u;
 });
+// 中文里夹着的半角标点统一成全角（模型写中文摘要时经常混用）
+const CJK = "[\\u3400-\\u9fff\\u3000-\\u303f\\uff00-\\uffef]";
+const zhPunct = (t) => !t ? t : [[",", "，"], [";", "；"], [":", "："], ["(", "（"], [")", "）"], ["?", "？"], ["!", "！"]].reduce((acc, [a, b]) =>
+  acc.replace(new RegExp(`(${CJK})\\${a}\\s?`, "g"), `$1${b}`).replace(new RegExp(`\\${a}(?=${CJK})`, "g"), b), t);
 const cases = []; const stat = { keep: 0, text: 0, image: 0, imagePending: 0, link: 0, linkPending: 0, none: 0 };
 for (const c of C) {
   const k = K[c.id]; if (!k || !k.keep || k.original === "repost") continue;
@@ -56,7 +60,7 @@ for (const c of C) {
   if (!prompt) stat.none++;
   const tools = [...new Set([...(e?.tools || k.tools || [])].map(t => String(t).trim()).filter(t => t && !/^(claude )?opus ?5\.5/i.test(t)))].slice(0, 8);
   cases.push({ id: c.id, url: c.url, author: { handle: c.handle, name: c.name }, postedAt: c.createdAt, lang: c.lang, kind: k.kind, category: CUR.category[c.id] || k.category,
-    title, summary: e?.summary_zh ? { zh: e.summary_zh, en: e.summary_en } : null, prompt,
+    title: { zh: zhPunct(title.zh), en: title.en }, summary: e?.summary_zh ? { zh: zhPunct(e.summary_zh), en: e.summary_en } : null, prompt,
     referenceAssets: CUR.referenceAssets.includes(c.id) || !!(e ? e.reference_assets : k.reference_assets), tools, resources,
     stats: { views: c.views, likes: c.likes, replies: c.replies, reposts: c.reposts, bookmarks: c.bookmarks, checkedAt: c.checkedAt },
     video: { poster: c.video.poster, mp4: c.video.mp4, width: c.video.width, height: c.video.height, durationSec: c.video.durationSec },

@@ -20,17 +20,17 @@ for (const id of ids) {
   const all = []; let cursor = "", pages = 0;
   try {
     while (pages < 3) { // 作者自己的串很少超过 60 条
-      const args = ["-sS", "-m", "45", "--retry", "2", "-G", "https://api.twitterapi.io/twitter/tweet/advanced_search", "-H", `X-API-Key: ${KEY}`,
+      const args = ["-sS", "-m", "45", "--retry", "2", "-G", "https://api.twitterapi.io/twitter/tweet/advanced_search", "-K", "-",
         "--data-urlencode", `query=conversation_id:${c.conversationId} from:${c.handle}`, "--data-urlencode", "queryType=Latest"];
       if (cursor) args.push("--data-urlencode", `cursor=${cursor}`);
-      const j = JSON.parse(execFileSync("curl", args, { encoding: "utf8", maxBuffer: 64e6 }));
+      const j = JSON.parse(execFileSync("curl", args, { encoding: "utf8", maxBuffer: 64e6, input: `header = "X-API-Key: ${KEY}"\n`, stdio: ["pipe", "pipe", "pipe"] }));
       const ts = j.tweets || []; pages++; tweets += ts.length;
       const before = all.length; for (const t of ts) if (t.id !== id && !all.some(a => a.id === t.id)) all.push(slim(t));
       if (!j.has_next_page || !j.next_cursor || ts.length === 0 || all.length === before) break;
       cursor = j.next_cursor;
     }
     store[id] = { fetchedAt: new Date().toISOString(), authorTweets: all.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt)) };
-  } catch (e) { store[id] = { error: String(e).slice(0, 160) }; }
+  } catch (e) { store[id] = { error: String(e.stderr || e.code || "").slice(0, 160) }; }
   done++;
   if (done % 20 === 0) { fs.writeFileSync(OUT, JSON.stringify(store)); console.log(`  ${done} cases, ${tweets} tweets ≈ ${tweets * 15} credits`); }
 }

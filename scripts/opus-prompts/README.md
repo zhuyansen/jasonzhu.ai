@@ -28,18 +28,35 @@
 node scripts/opus-prompts/assemble.mjs --write && node scripts/generate-opus-prompts.mjs
 ```
 
-## 自动重跑
+## 自动运行
 
 | 什么 | 在哪 | 频率 | 需要密钥 |
 |---|---|---|---|
-| 数据核验：刷新播放量、修复过期视频地址、下架已删帖 | 本仓库 `.github/workflows/opus-prompts-refresh.yml` → `refresh.mjs` | 每周一 11:00（北京） | 不需要 |
+| **每日收录新作品** | `.github/workflows/opus-prompts-daily.yml` → `daily.mjs` | 每天 10:30（北京） | `TWITTERAPI_IO_KEY`、`FLATROUTER_API_KEY`、Claude 那几个 |
+| 数据核验：刷新播放量、修复过期视频地址、下架已删帖 | `.github/workflows/opus-prompts-refresh.yml` → `refresh.mjs` | 每周一 11:00（北京） | 不需要 |
 | GitHub 合集同步 | `zhuyansen/awesome-opus-5.5-video` 的 `.github/workflows/sync.yml` | 每天 13:00（北京） | 不需要 |
+
+### 每日收录怎么工作
+
+1. **按时间增量搜**：只搜「两天前那 24 小时」发布的帖子（`since_time`/`until_time`），点赞 ≥100。延迟两天是让播放量涨到位。每条帖子只落在一个窗口里，只付一次钱；见过的 ID 记在 `data/seen.json`，永不重新处理。
+2. **限量**：播放 ≥5000 的按播放量取前 40 个（`CAP`）。超出的当天放弃，不补。
+3. **判断**：Claude 分类 → 抓作者回复 → Claude 定位提示词 → `lib/resolve.mjs` 逐字对账，对不上带着报错重试一次，再不行按无提示词处理。
+4. **审核**：第二家模型（flatrouter 上的 GPT）按 `prompts/audit.md` 复核。干活和审核故意用两家，同一个模型不给自己签字。
+5. **裁决**：
+   - 审核 `publish` 且把握 `high` → 直接提交 main 上线；审核否决了提示词的，作品照常收录但不带提示词
+   - 审核 `reject` 且把握 `high` → 丢弃，写进运行摘要
+   - 其余（把握不足、分类把握低、提示词在截图里、审核模型不可用）→ `data/pending.json` → 滚动 PR
+6. **滚动 PR**（分支 `opus-prompts/pending`）：每天从最新 main 重建。合并 = 批准全部；否决某条 = 把 ID 加进 `curation.json` 的 `dropCase`；不管它 = 14 天后自动丢弃。
+
+每次运行的摘要（Actions 页面）会列出 twitterapi.io 消耗和两家模型的 token 用量。
+
+### 其他
 
 两个仓库都是公开的，所以合集仓库自己来拉 `cases.json` 和 `build-repo.mjs` 就行，不用跨仓库推送凭证。
 
 `refresh.mjs` 有保险丝：瞬时错误超过 5%，或一次新增不可用超过 10%，判定为接口异常，不写文件、以非零退出（GitHub 会发失败邮件）。「不可用」要同一轮里隔 20 秒再确认一次才算数。被下架的作品记在 `data/unavailable.json`，帖子恢复后下一轮会自动放回。
 
-**不会自动做的**：发现新作品。那一步要 LLM 分类、提取和人工把关，还要花 twitterapi.io 的 credits，需要手动跑步骤 1–9。
+首次全量采集（步骤 1–9）是手动跑的，日常不需要再跑。
 
 ## 已知的坑
 

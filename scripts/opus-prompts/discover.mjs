@@ -15,14 +15,14 @@ const QUERIES = [
 let fetched = 0;
 function get(query, queryType, cursor) {
   const args = ["-sS", "-m", "45", "--retry", "2", "-G", "https://api.twitterapi.io/twitter/tweet/advanced_search",
-    "-H", `X-API-Key: ${KEY}`, "--data-urlencode", `query=${query}`, "--data-urlencode", `queryType=${queryType}`];
+    "-K", "-", "--data-urlencode", `query=${query}`, "--data-urlencode", `queryType=${queryType}`];
   if (cursor) args.push("--data-urlencode", `cursor=${cursor}`);
-  return JSON.parse(execFileSync("curl", args, { encoding: "utf8", maxBuffer: 64 * 1024 * 1024 }));
+  return JSON.parse(execFileSync("curl", args, { encoding: "utf8", maxBuffer: 64 * 1024 * 1024, input: `header = "X-API-Key: ${KEY}"\n`, stdio: ["pipe", "pipe", "pipe"] }));
 }
 for (const [q, type] of QUERIES) {
   let cursor = "", pages = 0, added = 0, seen = 0, dryPages = 0;
   while (pages < MAX_PAGES && fetched < BUDGET_TWEETS) {
-    let j; try { j = get(q, type, cursor); } catch (e) { console.error("  fetch fail:", String(e).slice(0, 120)); break; }
+    let j; try { j = get(q, type, cursor); } catch (e) { console.error("  fetch fail:", String(e.stderr || e.code || "").slice(0, 120)); break; }
     const ts = j.tweets || []; pages++; fetched += ts.length; seen += ts.length;
     let newHere = 0;
     for (const t of ts) if (!store.tweets[t.id]) { store.tweets[t.id] = t; added++; newHere++; }
