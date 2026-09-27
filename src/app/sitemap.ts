@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllPosts } from "@/lib/mdx";
 import { getAllDigests } from "@/lib/news";
+import { getOpusLibrary } from "@/lib/opus-prompts";
 
 const SITE_URL = "https://jasonzhu.ai";
 const LANGS = ["zh", "en"] as const;
@@ -21,6 +22,7 @@ const STATIC_PATHS = [
   "/handbook",
   "/ai-learning-guide",
   "/club",
+  "/prompts/claude-opus-5-5",
   "/privacy",
   "/terms",
 ];
@@ -64,6 +66,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       entries.push({
         url: `${SITE_URL}/${lang}/news/${digest.slug}`,
         lastModified: lang === "en" ? enLastMod(zhDate) : zhDate,
+        changeFrequency: "monthly",
+        priority: 0.6,
+      });
+    }
+  }
+
+  // Opus 5.5 提示词库详情页：标题/简介中英都是人工写的，zh/en 都收
+  const opus = getOpusLibrary();
+  for (const c of opus.cases) {
+    for (const lang of LANGS) {
+      entries.push({
+        url: `${SITE_URL}/${lang}/prompts/claude-opus-5-5/${c.id}`,
+        lastModified: new Date(opus.updatedAt),
         changeFrequency: "monthly",
         priority: 0.6,
       });

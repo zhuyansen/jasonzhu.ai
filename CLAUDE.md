@@ -17,6 +17,7 @@ npx eslint .                     # lint（.obsidian/ 和 scripts/ 已 ignore）
 # 内容变更后必跑（把 md 编译进 src/generated/）：
 node scripts/generate-posts.mjs  # 博客 md → posts.json + post-content/*.json
 node scripts/generate-news.mjs   # 快讯 md → news.json（含融资段/双语字段解析）
+node scripts/generate-opus-prompts.mjs  # 提示词库 cases.json → generated + public/data
 
 # 快讯手动补日（cron 失败时）：
 CLAUDE_TRANSPORT=curl DATE=2026-XX-XX node scripts/collect-news.mjs --force
@@ -49,6 +50,12 @@ Git：commit 后如远程有新提交（cron 会自动 commit 快讯），先 `g
 - 404 走 `app/global-not-found.tsx`（`experimental.globalNotFound`）+ 各动态段 `dynamicParams = false`。根布局是动态段时 Next 对 `notFound()` 只能客户端渲染 404（HTML body 为空，vercel/next.js#62228），所以不要再加 `[lang]/[...rest]` 兜底或指望 `[lang]/not-found.tsx` 出 SSR 内容。
 - 未翻译内容的 en 页 canonical 指回 zh 版、hreflang 不声明 en；sitemap（app/sitemap.ts，动态生成）只收录真有英文内容的 en URL。
 - 快讯分类标签双语在组件内 `categoryConfig.en` 映射；digestTitle()/digestJasonSays() 做标题/点评本地化。
+
+**提示词库（app/[lang]/prompts/claude-opus-5-5）**
+- 源 `src/content/opus-prompts/cases.json`（全部作品，含无提示词的）→ `generate-opus-prompts.mjs`（已接入 prebuild）→ 站内只上有提示词的。采集管线和已知的坑见 `scripts/opus-prompts/README.md`。
+- 视频和封面是 X 的外链。`video.twimg.com` 拒绝带外站 Referer 的请求，所以 `/prompts/*` 是 `Referrer-Policy: no-referrer`（next.config 响应头 + 页面 metadata），不要删。
+- 客户端组件只能引 `@/lib/opus-prompts-shared`；`@/lib/opus-prompts` 导入整份 JSON，引了会打进 JS 包。
+- 提示词一律原文照录，出处必须可追溯；人工把关记录在 `scripts/opus-prompts/data/curation.json`，下架也走这里。
 
 **订阅（核心引流，4 个入口共用 /api/subscribe）**
 - 反 bot：honeypot(website 字段) + time-trap(ts<1.5s 拒) + Origin 白名单（localhost 任意端口放行）。被判 bot 时静默返回 success。

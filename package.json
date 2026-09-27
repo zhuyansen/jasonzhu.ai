@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/generate-posts.mjs && node scripts/generate-news.mjs",
+    "prebuild": "node scripts/generate-posts.mjs && node scripts/generate-news.mjs && node scripts/generate-opus-prompts.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"

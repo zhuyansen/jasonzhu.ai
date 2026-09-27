@@ -22,6 +22,7 @@ export async function GET() {
     `- [AI 快讯](${SITE_URL}/zh/news): 每日精选 AI 行业动态 + 融资速递`,
     `- [10 大平台 AI 免费学习全景图](${SITE_URL}/zh/blog/ai-free-learning-hub): 系列总目录`,
     `- [AI 工具箱](${SITE_URL}/zh/tools)`,
+    `- [Claude Opus 5.5 提示词库](${SITE_URL}/zh/prompts/claude-opus-5-5): X 上播放过 5000 的 Opus 5.5 作品，附原始提示词、视频与出处`,
     `- [博客 RSS](${SITE_URL}/feed/blog.xml)`,
     `- [快讯 RSS](${SITE_URL}/feed/news.xml)`,
     "",

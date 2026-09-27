@@ -28,6 +28,7 @@ export default function Footer({ lang, dict }: FooterProps) {
               <li><Link href={`/${lang}/blog`} className="text-sm text-gray-500 hover:text-gray-900">{dict.nav.blog}</Link></li>
               <li><Link href={`/${lang}/news`} className="text-sm text-gray-500 hover:text-gray-900">{dict.nav.news}</Link></li>
               <li><Link href={`/${lang}/tools`} className="text-sm text-gray-500 hover:text-gray-900">{dict.nav.tools}</Link></li>
+              <li><Link href={`/${lang}/prompts/claude-opus-5-5`} className="text-sm text-gray-500 hover:text-gray-900">{lang === "zh" ? "Opus 5.5 提示词库" : "Opus 5.5 Prompts"}</Link></li>
               <li><a href="https://agentskillshub.top" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 hover:text-gray-900">Agent Skills Hub</a></li>
               <li><a href="https://gosaillab.com" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 hover:text-gray-900">GoSail Lab</a></li>
             </ul>

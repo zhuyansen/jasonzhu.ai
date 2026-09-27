@@ -6,6 +6,8 @@ const nextConfig: NextConfig = {
   experimental: { globalNotFound: true },
   async redirects() {
     return [
+      // 目前只有一个模型的提示词库，/prompts 先跳过去；以后有第二个再做索引页
+      { source: "/:lang(zh|en)/prompts", destination: "/:lang/prompts/claude-opus-5-5", permanent: false },
       // www → apex 308，统一权重避免双域名收录
       {
         source: "/:path*",
@@ -41,6 +43,12 @@ const nextConfig: NextConfig = {
             value: "camera=(), microphone=(), geolocation=()",
           },
         ],
+      },
+      {
+        // X 的视频 CDN（video.twimg.com）对带外站 Referer 的请求返回 403；
+        // 提示词库要站内播放原视频，这组页面不发 Referer。规则靠后，覆盖上面的全站策略。
+        source: "/:lang(zh|en)/prompts/:path*",
+        headers: [{ key: "Referrer-Policy", value: "no-referrer" }],
       },
     ];
   },
