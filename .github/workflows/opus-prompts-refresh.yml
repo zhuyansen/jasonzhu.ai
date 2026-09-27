@@ -1,0 +1,50 @@
+name: Opus 提示词库数据核验
+
+# 每周一北京时间 11:00：刷新播放量、修复过期的视频地址、下架已删帖的作品。
+# 全程走 FXTwitter，免登录、免费，不需要任何密钥。有变化才提交，提交后 Vercel 自动部署。
+# 配套：zhuyansen/awesome-opus-5.5-video 每天自己来拉 cases.json 重新生成 README。
+on:
+  schedule:
+    - cron: "0 3 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: opus-prompts-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      # 脚本只用 Node 内置模块，不需要 npm install
+      - name: 核验（保险丝触发时非零退出，后面的步骤不会跑）
+        run: node scripts/opus-prompts/refresh.mjs
+
+      - name: 重新组装并编译
+        run: |
+          node scripts/opus-prompts/assemble.mjs --write
+          node scripts/generate-opus-prompts.mjs
+
+      - name: 提交
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add scripts/opus-prompts/data src/content/opus-prompts src/generated/opus-prompts.json src/generated/opus-prompts-full.json public/data/opus-prompts
+          if git diff --cached --quiet; then
+            echo "没有变化，不提交"
+            exit 0
+          fi
+          git commit -m "🔄 提示词库数据核验 $(date -u +%F)"
+          # 快讯 cron 也在往 main 提交，先变基再推
+          git pull --rebase
+          git push

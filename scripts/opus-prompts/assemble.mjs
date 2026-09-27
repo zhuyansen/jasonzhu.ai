@@ -12,6 +12,7 @@ const EXT = Object.fromEntries(rd("extracted.json").map((x) => [x.id, x]));
 const IMG = Object.fromEntries(rd("transcribed-images.json").map((x) => [x.id, x])); // 截图里的提示词，人工转写
 const LNK = Object.fromEntries(rd("from-links.json").map((x) => [x.id, x]));          // 作者外链里的提示词
 const CUR = rd("curation.json");
+const UNAV = fs.existsSync(path.join(D, "unavailable.json")) ? rd("unavailable.json") : {}; // refresh.mjs 标记的已删帖/转私密/视频被移除
 const VIRAL = "makeadynamic15secondmotiongraphicsvideothatshowswhatanincrediblemotiondesigneryouarelikeitsyourshowreelforarésumégoallout";
 const nk = (t) => t.toLowerCase().normalize("NFKC").replace(/[^\p{L}\p{N}]+/gu, "");
 const tcoCache = fs.existsSync(path.join(D, "tco-cache.json")) ? rd("tco-cache.json") : {};
@@ -27,6 +28,7 @@ const cases = []; const stat = { keep: 0, text: 0, image: 0, imagePending: 0, li
 for (const c of C) {
   const k = K[c.id]; if (!k || !k.keep || k.original === "repost") continue;
   if (CUR.dropCase[c.id]) { stat.curatedOut = (stat.curatedOut || 0) + 1; continue; }
+  if (UNAV[c.id]) { stat.unavailable = (stat.unavailable || 0) + 1; continue; }
   stat.keep++;
   const e = EXT[c.id]; let prompt = null;
   if (e?.prompt) {

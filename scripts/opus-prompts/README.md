@@ -28,10 +28,23 @@
 node scripts/opus-prompts/assemble.mjs --write && node scripts/generate-opus-prompts.mjs
 ```
 
+## 自动重跑
+
+| 什么 | 在哪 | 频率 | 需要密钥 |
+|---|---|---|---|
+| 数据核验：刷新播放量、修复过期视频地址、下架已删帖 | 本仓库 `.github/workflows/opus-prompts-refresh.yml` → `refresh.mjs` | 每周一 11:00（北京） | 不需要 |
+| GitHub 合集同步 | `zhuyansen/awesome-opus-5.5-video` 的 `.github/workflows/sync.yml` | 每天 13:00（北京） | 不需要 |
+
+两个仓库都是公开的，所以合集仓库自己来拉 `cases.json` 和 `build-repo.mjs` 就行，不用跨仓库推送凭证。
+
+`refresh.mjs` 有保险丝：瞬时错误超过 5%，或一次新增不可用超过 10%，判定为接口异常，不写文件、以非零退出（GitHub 会发失败邮件）。「不可用」要同一轮里隔 20 秒再确认一次才算数。被下架的作品记在 `data/unavailable.json`，帖子恢复后下一轮会自动放回。
+
+**不会自动做的**：发现新作品。那一步要 LLM 分类、提取和人工把关，还要花 twitterapi.io 的 credits，需要手动跑步骤 1–9。
+
 ## 已知的坑
 
 - **X 视频外链**：`video.twimg.com` 对带外站 Referer 的请求返回 403，不带 Referer 返回 206。所以 `/prompts/*` 必须是 `Referrer-Policy: no-referrer`（`next.config.ts` 响应头 + 页面 metadata 两处都设了）。改动这组页面的 header 前先想清楚。
-- **视频链接会失效**：作者删帖或 X 换地址后视频 404，卡片会退回「去 X 看原视频」。建议每月重跑一次核验。
+- **视频链接会失效**：作者删帖或 X 换地址后视频 404，卡片会退回「去 X 看原视频」。每周的自动核验会修复地址、下架已删帖。
 - **提示词的三种形态**：文字、截图、外链。截图要人工转写（`data/transcribed-images.json`）；外链里真贴了原文的很少，多数是项目 README 或需要登录的页面。
 - **LLM 提取的典型误判**（都靠 `curation.json` 兜住）：把多轮对话里的追问当成提示词；把 Opus 写给别的模型的输出当成给 Opus 的指令；把作者的感想当成指令；把 one-shot 译成「一镜到底」。
 - **同款提示词**：一条爆款提示词会被几十个人复用，成片各不相同。`generate-opus-prompts.mjs` 按开头归组，页面上标「同款提示词 · N 个作品」，统计不同提示词数时只算一次。

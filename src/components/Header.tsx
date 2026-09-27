@@ -16,10 +16,11 @@ export default function Header({ lang, dict }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  const navItems = [
+  const navItems: { href: string; label: string; badge?: string; match?: string }[] = [
     { href: `/${lang}/blog`, label: dict.nav.blog },
     { href: `/${lang}/news`, label: dict.nav.news, badge: "Beta" },
     { href: `/${lang}/tools`, label: dict.nav.tools },
+    { href: `/${lang}/prompts/claude-opus-5-5`, match: `/${lang}/prompts`, label: dict.nav.prompts, badge: "New" },
     { href: `/${lang}/services`, label: dict.nav.services },
     { href: `/${lang}/club`, label: "⛵ GoSail Club" },
     { href: `/${lang}/about`, label: dict.nav.about },
@@ -47,13 +48,13 @@ export default function Header({ lang, dict }: HeaderProps) {
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-1">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors relative ${
-                  pathname.startsWith(item.href)
+                className={`px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-colors relative ${
+                  pathname.startsWith(item.match ?? item.href)
                     ? "text-[var(--primary)] bg-blue-50"
                     : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
                 }`}
@@ -69,7 +70,7 @@ export default function Header({ lang, dict }: HeaderProps) {
             {/* 语言切换（放前面、样式弱化，跟登录按钮拉开视觉层级，防误点） */}
             <Link
               href={switchPath}
-              className="ml-3 px-2.5 py-1.5 rounded-lg text-xs font-medium text-gray-400 hover:text-gray-700 hover:bg-gray-50 transition-colors"
+              className="ml-3 px-2.5 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap text-gray-400 hover:text-gray-700 hover:bg-gray-50 transition-colors"
             >
               {lang === "zh" ? "EN" : "中"}
             </Link>
@@ -80,7 +81,7 @@ export default function Header({ lang, dict }: HeaderProps) {
           </nav>
 
           {/* Mobile: lang switch + login + menu button */}
-          <div className="md:hidden flex items-center gap-2">
+          <div className="lg:hidden flex items-center gap-2">
             <Link
               href={switchPath}
               className="px-2 py-1 rounded text-xs font-medium text-gray-400"
@@ -106,14 +107,14 @@ export default function Header({ lang, dict }: HeaderProps) {
 
         {/* Mobile nav */}
         {menuOpen && (
-          <nav className="md:hidden pb-4 border-t border-gray-100 pt-2">
+          <nav className="lg:hidden pb-4 border-t border-gray-100 pt-2">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
                 className={`block px-3 py-2 rounded-lg text-sm font-medium ${
-                  pathname.startsWith(item.href)
+                  pathname.startsWith(item.match ?? item.href)
                     ? "text-[var(--primary)] bg-blue-50"
                     : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
                 }`}
