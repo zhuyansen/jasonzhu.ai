@@ -1,5 +1,107 @@
 [
   {
+    "slug": "2026-09-28",
+    "date": "2026-09-28",
+    "title": "AI 快讯 · 9月28日",
+    "items": [
+      {
+        "title": "Dario Amodei 将与特朗普共进晚餐：AI 监管格局或迎变局",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/09/27/anthropics-ceo-is-about-to-have-dinner-with-president-trump/",
+        "summary": "Anthropic CEO Dario Amodei 将与美国总统特朗普进行首次一对一会面。这是 Anthropic 在拿下 Akamai 116 亿美元大单后的又一重磅动作，暗示 AI 公司正加速渗透华盛顿权力核心，监管博弈进入新阶段。",
+        "titleEn": "Dario Amodei to Have One-on-One Dinner with Trump",
+        "summaryEn": "Anthropic CEO Dario Amodei is set for his first one-on-one dinner with President Trump. Coming hot on the heels of Anthropic's $11.6B Akamai deal, this signals that AI companies are aggressively courting Washington power circles as regulatory battles intensify."
+      },
+      {
+        "title": "Google 在印度测试 Gemini 直接购买 Flipkart 商品",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/09/26/google-tests-buying-from-walmart-owned-flipkart-through-gemini-and-ai-mode-in-india/",
+        "summary": "Google 在印度测试通过 Gemini 和 AI Mode 直接购买 Walmart 旗下 Flipkart 商品，计划 10 月更大范围推出。AI 搜索直接打通电商闭环，意味着传统搜索→点击→购买的漏斗正在被 AI 会话式购物取代，对出海电商卖家影响深远。",
+        "titleEn": "Google Tests Gemini-Powered Flipkart Shopping in India",
+        "summaryEn": "Google is testing direct product purchases from Walmart-owned Flipkart via Gemini and AI Mode in India, with a broader rollout planned for October. This signals AI assistants are closing the loop on e-commerce, potentially disrupting how shoppers—and sellers—interact with search."
+      },
+      {
+        "title": "NVIDIA Model Optimizer 开源：一站式模型压缩部署工具库",
+        "source": "GitHub Trending",
+        "category": "AI 工具动态",
+        "url": "https://github.com/NVIDIA/Model-Optimizer",
+        "summary": "NVIDIA 开源 Model Optimizer，集量化、蒸馏、剪枝、投机解码等前沿优化技术于一体，可直接对接 TensorRT-LLM、vLLM 等主流部署框架。对独立开发者来说，这意味着用消费级 GPU 跑大模型的成本门槛将大幅降低。",
+        "titleEn": "NVIDIA Open-Sources Model Optimizer for LLM Inference",
+        "summaryEn": "NVIDIA open-sourced Model Optimizer, a unified library covering quantization, distillation, pruning, and speculative decoding, with direct integration into TensorRT-LLM and vLLM. For developers, this dramatically lowers the cost and complexity of deploying large models on consumer-grade hardware."
+      },
+      {
+        "title": "Univer：专为 AI Agent 设计的开源 Office 运行时 SDK",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/dream-num/univer",
+        "summary": "Univer 将电子表格、文档、演示文稿、关系表、画布整合进一个 SDK，定位为「AI Agent 的 Office 底座」。支持浏览器与 Node.js，提供统一 Facade API，让 Agent 直接操控生产力工具，是构建 AI 工作流的重要基础设施。",
+        "titleEn": "Univer: Open-Source Office SDK Built as AI Agent Harness",
+        "summaryEn": "Univer is an open-source Office SDK combining spreadsheets, docs, slides, and relational tables into one runtime designed as a harness for AI agents. With a unified Facade API for browser and Node.js, it gives coding agents direct control over productivity tooling—key infrastructure for AI workflows."
+      },
+      {
+        "title": "AI 对齐检测新方法：单次调用同时评估多个对齐标准",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2609.29429",
+        "summary": "论文提出 Jev，一个用强化学习训练的对齐失败检测模型，核心创新是「一次调用、同时输出多个对齐维度的校准概率」。对开发者的意义：部署 AI 应用时可用更低成本做多维安全审计，而不必为每条标准单独跑一个 judge 模型。",
+        "titleEn": "Jev: RL-Trained Model Detects AI Alignment Failures Zero-Shot",
+        "summaryEn": "Jev is an RL-trained model that detects AI alignment failures zero-shot, answering multiple alignment criteria in a single forward pass with calibrated probabilities. For developers deploying AI apps, this means cheaper, faster multi-dimensional safety auditing without running separate judge models per criterion."
+      },
+      {
+        "title": "机器人双臂操作新架构 DeltaWAM：只预测「变化量」大幅提速",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2609.28811",
+        "summary": "DeltaWAM 论文提出只建模帧间「变化量」而非完整未来帧，解决了现有机器人世界模型反复重建静态背景、推理瓶颈严重的痛点。对 AI 应用开发者的意义：这类「增量推理」思路同样可迁移到视频理解、实时 Agent 决策等场景，大幅降低计算开销。",
+        "titleEn": "DeltaWAM: Robot World Models That Only Predict What Changes",
+        "summaryEn": "DeltaWAM proposes predicting only inter-frame deltas rather than full future frames for bimanual robot control, eliminating redundant computation on static content. The delta-prediction paradigm has broader implications for video understanding and real-time agent decision-making where inference speed is critical."
+      },
+      {
+        "title": "代码 Agent 自动解决机器人任务与运动规划难题",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2609.30233",
+        "summary": "论文验证了 coding agent 可以自动合成通用任务与运动规划（TAMP）代码，无需人工设计领域特定工程。对 AI 开发者的意义：这是 agent 真正接管「需要几何+逻辑双重推理」类任务的有力证据，预示 coding agent 的能力边界正在快速扩展至机器人和复杂决策领域。",
+        "titleEn": "Coding Agents Automate Generalized Task and Motion Planning",
+        "summaryEn": "Researchers show that coding agents can synthesize generalizable task and motion planning (TAMP) solutions without hand-crafted domain engineering. This is strong evidence that coding agents are rapidly expanding into tasks requiring both geometric and logical reasoning—far beyond typical software generation."
+      },
+      {
+        "title": "2026 超大 Series A 浪潮：AI、芯片、机器人领跑百亿美元级融资",
+        "source": "Crunchbase News",
+        "category": "AI 工具动态",
+        "url": "https://news.crunchbase.com/venture/megaround-seriesa-ai-chips-robotics-2026/",
+        "summary": "2026 年全球已有至少 114 笔超过 1 亿美元的 Series A 融资，创历史新高。资金主要流向 AI、芯片、机器人三大方向。对独立开发者和创业者而言，这意味着 AI 赛道的资本窗口依然宽开，但竞争烈度也在同步攀升。",
+        "titleEn": "Jumbo Series A Rounds Hit Record Highs in 2026, Led by AI",
+        "summaryEn": "Global startups have secured at least 114 Series A rounds of $100M+ in 2026, an all-time high, with AI, chips, and robotics leading the charge. For builders, the capital window is wide open—but competition for those dollars is intensifying at record pace."
+      }
+    ],
+    "funding": [
+      {
+        "company": "Island",
+        "url": "https://news.crunchbase.com/venture/biggest-funding-rounds-cybersecurity-ai-health-island-cyera/",
+        "round": "Series（具体轮次未披露）",
+        "amount": "$400M",
+        "valuation": "",
+        "investors": "",
+        "pitch": "企业浏览器安全独角兽，AI 时代员工行为管控的核心基础设施，本周最大融资之一。"
+      },
+      {
+        "company": "Cyera",
+        "url": "https://news.crunchbase.com/venture/biggest-funding-rounds-cybersecurity-ai-health-island-cyera/",
+        "round": "Series（具体轮次未披露）",
+        "amount": "$400M",
+        "valuation": "",
+        "investors": "",
+        "pitch": "AI 驱动的数据安全平台，与 Island 并列本周最大融资，数据治理赛道热度持续。"
+      }
+    ],
+    "jasonSays": "Dario 去白宫吃饭、Google 在印度用 Gemini 卖货——AI 公司正在同时攻克监管和商业化两条战线，2026 下半年最激烈的战场不在模型性能，而在「谁先把 AI 嵌进权力和消费的毛细血管」。",
+    "jasonSaysEn": "Dario dining at the White House and Google selling groceries via Gemini in India—2026's fiercest AI battleground isn't model benchmarks anymore, it's who embeds AI deepest into the capillaries of power and commerce first.",
+    "filename": "2026-09-28.md"
+  },
+  {
     "slug": "2026-09-27",
     "date": "2026-09-27",
     "title": "AI 快讯 · 9月27日",
@@ -90,7 +192,8 @@
     ],
     "jasonSays": "今天最值得盯的信号是 Anthropic 官方插件目录上线——这标志着 Claude Code 生态从「野生社区」走向「平台化管理」，Skills 战争正在从代码层打到分发层，谁控制了插件入口谁就控制了开发者心智。",
     "jasonSaysEn": "The real signal today is Anthropic's official plugin directory — Claude Code's ecosystem is graduating from wild-west community repos to platform-controlled distribution. The Skills war is moving from the code layer to the discovery layer, and whoever owns the plugin directory owns developer mindshare.",
-    "filename": "2026-09-27.md"
+    "filename": "2026-09-27.md",
+    "coverImage": "/news/2026-09-27.png"
   },
   {
     "slug": "2026-09-26",
