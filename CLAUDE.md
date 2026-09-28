@@ -52,7 +52,7 @@ Git：commit 后如远程有新提交（cron 会自动 commit 快讯），先 `g
 - 快讯分类标签双语在组件内 `categoryConfig.en` 映射；digestTitle()/digestJasonSays() 做标题/点评本地化。
 
 **提示词库（app/[lang]/prompts/claude-opus-5-5）**
-- 源 `src/content/opus-prompts/cases.json`（全部作品，含无提示词的）→ `generate-opus-prompts.mjs`（已接入 prebuild）→ 站内只上有提示词的。采集管线和已知的坑见 `scripts/opus-prompts/README.md`。
+- 源 `src/content/opus-prompts/cases.json`（全部作品，含无提示词的）→ `generate-opus-prompts.mjs`（已接入 prebuild）→ 站内收全部作品，和 GitHub 合集一致；没有提示词的作品详情页 noindex、不进 sitemap。采集管线和已知的坑见 `scripts/opus-prompts/README.md`。
 - 视频和封面是 X 的外链。`video.twimg.com` 拒绝带外站 Referer 的请求，所以 `/prompts/*` 是 `Referrer-Policy: no-referrer`（next.config 响应头 + 页面 metadata），不要删。
 - 客户端组件只能引 `@/lib/opus-prompts-shared`；`@/lib/opus-prompts` 导入整份 JSON，引了会打进 JS 包。
 - 提示词一律原文照录，出处必须可追溯；人工把关记录在 `scripts/opus-prompts/data/curation.json`，下架也走这里。

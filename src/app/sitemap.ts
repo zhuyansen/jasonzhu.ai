@@ -74,7 +74,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Opus 5.5 提示词库详情页：标题/简介中英都是人工写的，zh/en 都收
   const opus = getOpusLibrary();
-  for (const c of opus.cases) {
+  for (const c of opus.cases.filter((x) => x.prompt)) { // 无提示词的作品页 noindex，不进 sitemap
     for (const lang of LANGS) {
       entries.push({
         url: `${SITE_URL}/${lang}/prompts/claude-opus-5-5/${c.id}`,

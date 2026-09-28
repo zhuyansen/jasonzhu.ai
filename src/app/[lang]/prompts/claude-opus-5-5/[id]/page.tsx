@@ -27,8 +27,8 @@ export function generateStaticParams() {
 
 const describe = (isZh: boolean, title: string, handle: string, views: number, kind?: string) =>
   isZh
-    ? `${title}：@${handle} 用 Claude Opus 5.5 做的作品，原帖播放 ${formatCount(views, "zh")}。${kind === "full" ? "附完整提示词原文，可复制改写。" : "附作者公开的指令与出处。"}`
-    : `${title} — made with Claude Opus 5.5 by @${handle}, ${formatCount(views, "en")} views on the original post. ${kind === "full" ? "Full original prompt included." : "Includes the creator's brief and source."}`;
+    ? `${title}：@${handle} 用 Claude Opus 5.5 做的作品，原帖播放 ${formatCount(views, "zh")}。${kind === "full" ? "附完整提示词原文，可复制改写。" : kind ? "附作者公开的指令与出处。" : "可直接播放，附原帖出处。"}`
+    : `${title} — made with Claude Opus 5.5 by @${handle}, ${formatCount(views, "en")} views on the original post. ${kind === "full" ? "Full original prompt included." : kind ? "Includes the creator's brief and source." : "Watch it here, with a link to the original post."}`;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang: rawLang, id } = await params;
@@ -36,12 +36,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const c = getOpusCase(id);
   if (!c) return {};
   const isZh = lang === "zh";
-  const title = `${isZh ? c.title.zh : c.title.en}${isZh ? "｜Opus 5.5 提示词" : " | Opus 5.5 Prompt"}`;
+  const title = `${isZh ? c.title.zh : c.title.en}${c.prompt ? (isZh ? "｜Opus 5.5 提示词" : " | Opus 5.5 Prompt") : (isZh ? "｜Opus 5.5 作品" : " | Opus 5.5 Work")}`;
   const description = describe(isZh, isZh ? c.title.zh : c.title.en, c.author.handle, c.stats.views, c.prompt?.kind);
   return {
     title,
     description,
     referrer: "no-referrer",
+    // 没有提示词的作品页只有视频和出处，内容太薄，不进搜索索引（列表页和 GitHub 合集照常展示）
+    ...(c.prompt ? {} : { robots: { index: false, follow: true } }),
     alternates: {
       canonical: `${SITE_URL}/${lang}/${PATH}/${id}`,
       languages: { zh: `${SITE_URL}/zh/${PATH}/${id}`, en: `${SITE_URL}/en/${PATH}/${id}`, "x-default": `${SITE_URL}/zh/${PATH}/${id}` },

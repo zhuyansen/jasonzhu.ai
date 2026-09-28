@@ -33,6 +33,7 @@ export default function PromptLibraryClient({ initial, total, counts, lang }: Pr
   const [category, setCategory] = useState<OpusCategory | null>(null);
   const [sort, setSort] = useState<Sort>("views");
   const [fullOnly, setFullOnly] = useState(false);
+  const [promptOnly, setPromptOnly] = useState(false);
   const [noAssets, setNoAssets] = useState(false);
   const [q, setQ] = useState("");
   const [group, setGroup] = useState<string | null>(null);
@@ -62,6 +63,7 @@ export default function PromptLibraryClient({ initial, total, counts, lang }: Pr
     const list = all.filter((c) => {
       if (group && c.group?.key !== group) return false;
       if (category && c.category !== category) return false;
+      if (promptOnly && !c.prompt) return false;
       if (fullOnly && c.prompt?.kind !== "full") return false;
       if (noAssets && c.referenceAssets) return false;
       if (!needle) return true;
@@ -80,11 +82,11 @@ export default function PromptLibraryClient({ initial, total, counts, lang }: Pr
       latest: (a, b) => (a.postedAt < b.postedAt ? 1 : -1),
     };
     return [...list].sort(by[sort]);
-  }, [all, category, fullOnly, noAssets, q, sort, group]);
+  }, [all, category, fullOnly, promptOnly, noAssets, q, sort, group]);
 
   const reset = () => setVisible(PAGE_SIZE);
   const shown = filtered.slice(0, visible);
-  const isFiltering = Boolean(category || fullOnly || noAssets || q.trim() || group);
+  const isFiltering = Boolean(category || fullOnly || promptOnly || noAssets || q.trim() || group);
   const pill = (active: boolean) =>
     `px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
       active ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200"
@@ -139,6 +141,10 @@ export default function PromptLibraryClient({ initial, total, counts, lang }: Pr
         </div>
 
         <div className="flex flex-wrap gap-x-5 gap-y-2 text-xs text-gray-500">
+          <label className="inline-flex items-center gap-1.5 cursor-pointer">
+            <input type="checkbox" checked={promptOnly} onChange={(e) => { setPromptOnly(e.target.checked); reset(); }} />
+            {isZh ? "只看有提示词" : "With prompt only"}
+          </label>
           <label className="inline-flex items-center gap-1.5 cursor-pointer">
             <input type="checkbox" checked={fullOnly} onChange={(e) => { setFullOnly(e.target.checked); reset(); }} />
             {isZh ? "只看完整提示词" : "Full prompts only"}

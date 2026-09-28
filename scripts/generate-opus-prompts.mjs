@@ -35,10 +35,10 @@ for (const c of src.cases) {
   if (!(c.stats?.views >= src.threshold)) { bad(`播放量 ${c.stats?.views} 低于门槛`); continue; }
   if (!/^https:\/\/video\.twimg\.com\//.test(c.video?.mp4 || "")) bad("视频地址不是 video.twimg.com");
   if (!/^https:\/\/pbs\.twimg\.com\//.test(c.video?.poster || "")) bad("封面地址不是 pbs.twimg.com");
-  // 站内提示词库只收有提示词出处的案例；没有提示词的作品只进 GitHub 合集
-  if (!c.prompt || !(c.prompt.text || "").trim()) continue;
-  if (!["full", "brief"].includes(c.prompt.kind)) bad(`未知 prompt.kind ${c.prompt.kind}`);
-  if (!/^https:\/\//.test(c.prompt.sourceUrl || "")) bad("缺 prompt.sourceUrl");
+  // 收全部作品，和 GitHub 合集 awesome-opus-5.5-video 保持一致；没有提示词的 prompt 为 null
+  if (c.prompt && !(c.prompt.text || "").trim()) c.prompt = null;
+  if (c.prompt && !["full", "brief"].includes(c.prompt.kind)) bad(`未知 prompt.kind ${c.prompt.kind}`);
+  if (c.prompt && !/^https:\/\//.test(c.prompt.sourceUrl || "")) bad("缺 prompt.sourceUrl");
   cases.push(c);
 }
 if (problems.length) {
@@ -57,6 +57,7 @@ const excerpt = (t) => {
 const groupKey = (t) => t.toLowerCase().normalize("NFKC").replace(/https?:\/\/\S+/g, "").replace(/[^\p{L}\p{N}]+/gu, "").slice(0, 48);
 const groups = new Map();
 for (const c of cases) {
+  if (!c.prompt) continue;
   const k = groupKey(c.prompt.text);
   if (k.length < 12) continue; // 太短的不判同款（「have fun」之类碰巧相同没有意义）
   if (!groups.has(k)) groups.set(k, []);
@@ -65,6 +66,7 @@ for (const c of cases) {
 const groupOf = new Map();
 for (const ids of groups.values()) if (ids.length > 1) for (const id of ids) groupOf.set(id, { key: ids[0], size: ids.length });
 
+const withPromptCount = cases.filter((c) => c.prompt).length;
 const slim = cases.map((c) => ({
   id: c.id, url: c.url, author: c.author, postedAt: c.postedAt, lang: c.lang, category: c.category, title: c.title,
   prompt: c.prompt ? { kind: c.prompt.kind, source: c.prompt.source, sourceUrl: c.prompt.sourceUrl, length: c.prompt.text.length, excerpt: excerpt(c.prompt.text) } : null,
@@ -73,8 +75,8 @@ const slim = cases.map((c) => ({
   stats: { views: c.stats.views, likes: c.stats.likes, replies: c.stats.replies, bookmarks: c.stats.bookmarks },
   video: c.video,
 }));
-const distinct = cases.length - [...groupOf.values()].length + new Set([...groupOf.values()].map((g) => g.key)).size;
-const head = { model: src.model, threshold: src.threshold, updatedAt: src.updatedAt, statsCheckedAt: src.statsCheckedAt, distinctPrompts: distinct };
+const distinct = withPromptCount - [...groupOf.values()].length + new Set([...groupOf.values()].map((g) => g.key)).size;
+const head = { model: src.model, threshold: src.threshold, updatedAt: src.updatedAt, statsCheckedAt: src.statsCheckedAt, distinctPrompts: distinct, withPrompt: withPromptCount };
 
 fs.mkdirSync(path.dirname(OUT_LIST), { recursive: true });
 fs.writeFileSync(OUT_LIST, JSON.stringify({ ...head, cases: slim }));
@@ -82,10 +84,10 @@ fs.writeFileSync(OUT_FULL, JSON.stringify(Object.fromEntries(cases.map((c) => [c
 
 fs.rmSync(OUT_PUBLIC, { recursive: true, force: true });
 fs.mkdirSync(OUT_PUBLIC, { recursive: true });
-for (const c of cases) fs.writeFileSync(path.join(OUT_PUBLIC, `${c.id}.json`), JSON.stringify({ id: c.id, prompt: c.prompt.text }));
+for (const c of cases) if (c.prompt) fs.writeFileSync(path.join(OUT_PUBLIC, `${c.id}.json`), JSON.stringify({ id: c.id, prompt: c.prompt.text }));
 // 列表页首屏只带 24 条，筛选/排序/加载更多时再拉这份全量精简索引
 fs.writeFileSync(path.join(OUT_PUBLIC, "index.json"), JSON.stringify(slim));
 
 const withPrompt = cases.filter((c) => c.prompt).length;
-console.log(`✅ Opus 提示词库：${cases.length} 个作品 · ${distinct} 条不同提示词（完整 ${cases.filter((c) => c.prompt?.kind === "full").length}）· 同款分组 ${new Set([...groupOf.values()].map((g) => g.key)).size} 组`);
+console.log(`✅ Opus 提示词库：${cases.length} 个作品（带提示词 ${withPromptCount}）· ${distinct} 条不同提示词（完整 ${cases.filter((c) => c.prompt?.kind === "full").length}）· 同款分组 ${new Set([...groupOf.values()].map((g) => g.key)).size} 组`);
 console.log(`   列表 JSON ${(fs.statSync(OUT_LIST).size / 1024).toFixed(0)}KB · 详情 JSON ${(fs.statSync(OUT_FULL).size / 1024).toFixed(0)}KB`);

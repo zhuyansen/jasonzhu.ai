@@ -8,18 +8,18 @@ const SITE_URL = "https://jasonzhu.ai";
 const PATH = "prompts/claude-opus-5-5";
 const FIRST_PAGE = 24;
 
-const copy = (isZh: boolean, n: number, full: number, threshold: number) => ({
+const copy = (isZh: boolean, n: number, full: number, threshold: number, withPrompt: number) => ({
   title: isZh ? "Claude Opus 5.5 提示词库：视频、动效、3D 与游戏" : "Claude Opus 5.5 Prompt Library: Video, Motion, 3D & Games",
   desc: isZh
-    ? `收录 ${n} 个来自 X 创作者的 Claude Opus 5.5 作品，原帖播放量均过 ${threshold.toLocaleString("en-US")}。保留原始提示词、作品视频与出处，其中 ${full} 条是完整提示词，可直接复制改写。`
-    : `${n} Claude Opus 5.5 works from creators on X, each with ${threshold.toLocaleString("en-US")}+ views on the original post. Original prompts, demo videos and sources preserved — ${full} are full prompts you can copy and adapt.`,
+    ? `收录 ${n} 个来自 X 创作者的 Claude Opus 5.5 作品，原帖播放量均过 ${threshold.toLocaleString("en-US")}，视频可直接播放。其中 ${withPrompt} 个附作者公开的提示词（${full} 条完整提示词），保留原文与出处，可直接复制改写。`
+    : `${n} Claude Opus 5.5 works from creators on X, each with ${threshold.toLocaleString("en-US")}+ views on the original post, playable right here. ${withPrompt} include the prompt the creator shared (${full} full prompts), kept verbatim with its source.`,
 });
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang: rawLang } = await params;
   const lang = (rawLang === "en" ? "en" : "zh") as Locale;
   const lib = getOpusLibrary();
-  const c = copy(lang === "zh", lib.cases.length, lib.cases.filter((x) => x.prompt?.kind === "full").length, lib.threshold);
+  const c = copy(lang === "zh", lib.cases.length, lib.cases.filter((x) => x.prompt?.kind === "full").length, lib.threshold, lib.withPrompt);
   return {
     title: c.title,
     description: c.desc,
@@ -40,7 +40,7 @@ export default async function OpusPromptsPage({ params }: { params: Promise<{ la
   const lib = getOpusLibrary();
   const cases = lib.cases;
   const fullCount = cases.filter((x) => x.prompt?.kind === "full").length;
-  const c = copy(isZh, cases.length, fullCount, lib.threshold);
+  const c = copy(isZh, cases.length, fullCount, lib.threshold, lib.withPrompt);
   const counts: Record<string, number> = {};
   for (const x of cases) counts[x.category] = (counts[x.category] || 0) + 1;
   const initial = [...cases].sort((a, b) => b.stats.views - a.stats.views).slice(0, FIRST_PAGE);
@@ -50,14 +50,14 @@ export default async function OpusPromptsPage({ params }: { params: Promise<{ la
   const faqs = isZh
     ? [
         ["Claude Opus 5.5 能直接生成视频吗？", "不能直接出视频文件。这里的作品都是它写代码做出来的：用 HTML/Canvas、Three.js、Remotion、HyperFrames 渲染画面，或者通过 MCP 操作 Blender、After Effects 这类软件，最后录屏或导出成视频。它不是 Sora、Seedance 那种视频生成模型。"],
-        ["每个案例都有可以直接用的提示词吗？", `本页只收有提示词出处的案例：要么作者在原帖或自己的回复里贴了原文，要么给了指向提示词的链接。${fullCount} 条是完整提示词，其余是作者公开的一句话指令。只有视频、没有任何指令来源的作品不在这里。`],
+        ["每个作品都有提示词吗？", `没有。${cases.length} 个作品里有 ${lib.withPrompt} 个附提示词，都来自作者本人：原帖正文、作者自己的回复、回复里的截图，或作者给的链接。${fullCount} 条是完整提示词，其余是一句话指令。作者没公开指令的作品也收录，方便看效果，可以勾选「只看有提示词」过滤。`],
         ["收录标准是什么？", `原帖播放量不低于 ${lib.threshold.toLocaleString("en-US")}；视频是原帖自带的；帖子明确说作品是用 Opus 5.5 做的。播放量快照取自 ${lib.statsCheckedAt.slice(0, 10)}。模型归属以作者自述为准，本站没有逐条复现。`],
         ["标了「需自备参考素材」是什么意思？", "原作者除了文字提示词，还给了模型图片、视频、音频、文档或代码库作为输入。只复制提示词得不到同样结果，需要准备自己的素材。"],
         ["我是作者，想修改署名或下架怎么办？", "在 X 上私信 @GoSailGlobal 即可，会尽快处理。所有作品版权归原作者，收录不代表获得任何授权。"],
       ]
     : [
         ["Can Claude Opus 5.5 generate video directly?", "Not as a video file. Every work here was produced by code it wrote: rendering with HTML/Canvas, Three.js, Remotion or HyperFrames, or driving tools such as Blender and After Effects through MCP, then recording or exporting. It is not a video generation model like Sora or Seedance."],
-        ["Does every case include a reusable prompt?", `This page only lists cases with a traceable instruction: the creator posted it in the original post or their own replies, or linked to it. ${fullCount} are full prompts; the rest are one-line briefs the creator disclosed. Works with a video but no instruction source are not listed.`],
+        ["Does every work include a prompt?", `No. ${lib.withPrompt} of the ${cases.length} works include one, always from the creator: the post itself, their own replies, a screenshot in those replies, or a link they shared. ${fullCount} are full prompts; the rest are one-line briefs. Works whose creator never shared an instruction are still listed so you can see the result; tick "With prompt only" to filter them out.`],
         ["What is the inclusion rule?", `At least ${lib.threshold.toLocaleString("en-US")} views on the original post, a native video attached to that post, and an explicit statement that it was made with Opus 5.5. View counts were snapshotted on ${lib.statsCheckedAt.slice(0, 10)}. Model attribution is as stated by each creator and was not independently reproduced.`],
         ["What does “needs reference assets” mean?", "Besides the text prompt, the creator gave the model images, video, audio, documents or a codebase. Copying the prompt alone will not reproduce the result; bring your own assets."],
         ["I am the creator. How do I correct attribution or remove my work?", "Send a DM to @GoSailGlobal on X and it will be handled promptly. All works remain the property of their creators; inclusion grants no license."],
@@ -125,7 +125,7 @@ export default async function OpusPromptsPage({ params }: { params: Promise<{ la
         <dl className="flex flex-wrap gap-x-8 gap-y-2 mt-5 text-sm">
           {[
             [isZh ? "作品" : "Works", cases.length.toLocaleString("en-US")],
-            [isZh ? "不同提示词" : "Distinct prompts", lib.distinctPrompts.toLocaleString("en-US")],
+            [isZh ? "带提示词" : "With prompt", lib.withPrompt.toLocaleString("en-US")],
             [isZh ? "完整提示词" : "Full prompts", fullCount.toLocaleString("en-US")],
             [isZh ? "创作者" : "Creators", creators.toLocaleString("en-US")],
             [isZh ? "累计播放" : "Total views", isZh ? `${(totalViews / 1e8).toFixed(2)} 亿` : `${(totalViews / 1e6).toFixed(1)}M`],

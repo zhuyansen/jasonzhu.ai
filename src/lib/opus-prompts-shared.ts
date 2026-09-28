@@ -39,6 +39,8 @@ export interface OpusLibrary {
   statsCheckedAt: string;
   /** 去掉同款后的提示词条数 */
   distinctPrompts: number;
+  /** 带提示词的作品数（其余只有视频和出处） */
+  withPrompt: number;
   cases: OpusCaseSlim[];
 }
 
