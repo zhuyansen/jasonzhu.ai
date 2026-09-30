@@ -1057,5 +1057,247 @@
    "审核拿不准：The post mentions TTS and an AI-edited video, but the linked work is not described well enough to verify its visual nature."
   ],
   "heldAt": "2026-09-30T08:51:55.597Z"
+ },
+ {
+  "candidate": {
+   "id": "2104598205417591120",
+   "url": "https://x.com/chrisjdimarco/status/2104598205417591120",
+   "handle": "chrisjdimarco",
+   "name": "Christopher J. DiMarco",
+   "followers": 1144,
+   "verified": true,
+   "createdAt": "2026-09-28T15:44:48.000Z",
+   "lang": "en",
+   "text": "I'm astonished this can even run in my browser. Opus 5.5 made this possible of course. My mind is just constantly being blown. https://t.co/Y6xM4ipTVI",
+   "links": [],
+   "views": 98419,
+   "likes": 1751,
+   "replies": 42,
+   "reposts": 105,
+   "quotes": 8,
+   "bookmarks": 1146,
+   "conversationId": "2104598205417591120",
+   "quoted": null,
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2104596424121860096/img/w1mCYhHMft8Y2naC.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2104596424121860096/vid/avc1/1148x720/Uh-ULKQmIeZT6EGX.mp4?tag=29",
+    "width": 1148,
+    "height": 720,
+    "durationSec": 100,
+    "aspect": [
+     1482,
+     929
+    ]
+   },
+   "seed": false,
+   "via": "daily",
+   "checkedAt": "2026-09-30T10:02:44.949Z"
+  },
+  "classified": {
+   "id": "2104598205417591120",
+   "kind": "work",
+   "keep": true,
+   "original": "creator",
+   "category": "art3d",
+   "prompt_signal": "none",
+   "reference_assets": false,
+   "tools": [
+    "Three.js",
+    "WebGL",
+    "Astra",
+    "GPT-Image"
+   ],
+   "title_en": "Motorcycle park racing game",
+   "title_zh": "摩托车公园竞速游戏",
+   "confidence": "low"
+  },
+  "extracted": {
+   "id": "2104598205417591120",
+   "prompt": null,
+   "reference_assets": false,
+   "tools": [
+    "Three.js",
+    "WebGL",
+    "Astra",
+    "GPT-Image"
+   ],
+   "summary_en": "A browser-based 3D motorcycle park/racing game built with Three.js and WebGL; the original was made with Astra weeks earlier, then Opus 5.5 in Claude Code's ultra code mode built out five new maps on its own.",
+   "summary_zh": "一款基于Three.js和WebGL的浏览器3D摩托车公园赛车游戏，最初由Astra制作，随后Opus 5.5在Claude Code的Ultra Code模式下独立开发了五张新地图。",
+   "note": ""
+  },
+  "audit": {
+   "id": "2104598205417591120",
+   "verdict": "publish",
+   "confidence": "high",
+   "prompt_ok": null,
+   "issues": [
+    "title_generic"
+   ],
+   "reason": "The creator used Opus to substantially extend a browser game, but the current title is too generic and does not name the game.",
+   "title_en": "Motorcycle park racing game",
+   "title_zh": "摩托车公园竞速游戏"
+  },
+  "reasons": [
+   "分类把握低"
+  ],
+  "heldAt": "2026-09-30T10:02:44.949Z"
+ },
+ {
+  "candidate": {
+   "id": "2104525735713206557",
+   "url": "https://x.com/pratyushrungta/status/2104525735713206557",
+   "handle": "pratyushrungta",
+   "name": "Pratzyy",
+   "followers": 3900,
+   "verified": true,
+   "createdAt": "2026-09-28T10:56:50.000Z",
+   "lang": "en",
+   "text": "Its insane how good Opus 5.5 is, no After Effects, just code 🤯\n\nTook 30 min on max to make full video!! https://t.co/iRVAt5X2z2",
+   "links": [],
+   "views": 92474,
+   "likes": 2267,
+   "replies": 124,
+   "reposts": 182,
+   "quotes": 35,
+   "bookmarks": 983,
+   "conversationId": "2104525735713206557",
+   "quoted": null,
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2104525270296526848/img/_UJR7CPK2hBv-MZh.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2104525270296526848/vid/avc1/1280x720/C5mEJcJh9JpGOFfG.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 210,
+    "aspect": [
+     16,
+     9
+    ]
+   },
+   "seed": false,
+   "via": "daily",
+   "checkedAt": "2026-09-30T10:02:44.949Z"
+  },
+  "classified": {
+   "id": "2104525735713206557",
+   "kind": "work",
+   "keep": true,
+   "original": "creator",
+   "category": "motion",
+   "prompt_signal": "none",
+   "reference_assets": false,
+   "tools": [],
+   "title_en": "Motion graphics video",
+   "title_zh": "动态图形短片",
+   "confidence": "medium"
+  },
+  "extracted": {
+   "id": "2104525735713206557",
+   "prompt": {
+    "kind": "brief",
+    "source": "link",
+    "sourceUrl": "https://x.com/pratyushrungta/status/2104840796931530994",
+    "linkUrl": "https://specimen-and-signal.vercel.app/",
+    "text": null
+   },
+   "reference_assets": false,
+   "tools": [],
+   "summary_en": "A full video was generated using Opus 5.5 purely through code instead of After Effects, taking about 30 minutes on max mode; more videos and the prompt are shared via a linked site.",
+   "summary_zh": "作者仅用代码(而非After Effects)借助Opus 5.5在约30分钟内生成了一整段视频,更多视频及提示词发布在链接的网站上。",
+   "note": "Prompt itself not pasted in the thread; creator links to a site containing more videos and the prompt."
+  },
+  "audit": {
+   "id": "2104525735713206557",
+   "verdict": "publish",
+   "confidence": "medium",
+   "prompt_ok": null,
+   "issues": [
+    "title_generic"
+   ],
+   "reason": "The post indicates a self-made Opus 5.5 video, but gives no visual subject to support a more specific title.",
+   "title_en": "Motion graphics video",
+   "title_zh": "动态图形短片"
+  },
+  "reasons": [
+   "审核把握不足（medium）：The post indicates a self-made Opus 5.5 video, but gives no visual subject to support a more specific title."
+  ],
+  "heldAt": "2026-09-30T10:02:44.949Z"
+ },
+ {
+  "candidate": {
+   "id": "2104624540798099832",
+   "url": "https://x.com/Mortezabihzadeh/status/2104624540798099832",
+   "handle": "Mortezabihzadeh",
+   "name": "Morteza",
+   "followers": 38302,
+   "verified": true,
+   "createdAt": "2026-09-28T17:29:27.000Z",
+   "lang": "en",
+   "text": "Can you believe this was built in just 24 hours?\nOne person + Opus 5.5 just built a dinosaur survival game in Unreal Engine, we're entering a different era of game development!  https://t.co/jh7vQSM5wG",
+   "links": [],
+   "views": 87372,
+   "likes": 260,
+   "replies": 10,
+   "reposts": 22,
+   "quotes": 0,
+   "bookmarks": 3,
+   "conversationId": "2104624540798099832",
+   "quoted": null,
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2104271110854328320/img/MnCuJ7MSQJyEFgSR.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2104271110854328320/vid/avc1/1280x720/tdrxFsvyu9kZ_FGW.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 670,
+    "aspect": [
+     16,
+     9
+    ]
+   },
+   "seed": false,
+   "via": "daily",
+   "checkedAt": "2026-09-30T10:02:44.949Z"
+  },
+  "classified": {
+   "id": "2104624540798099832",
+   "kind": "work",
+   "keep": true,
+   "original": "unclear",
+   "category": "game",
+   "prompt_signal": "none",
+   "reference_assets": false,
+   "tools": [
+    "Unreal Engine"
+   ],
+   "title_en": "Dinosaur survival game",
+   "title_zh": "恐龙生存游戏",
+   "confidence": "medium"
+  },
+  "extracted": {
+   "id": "2104624540798099832",
+   "prompt": null,
+   "reference_assets": false,
+   "tools": [
+    "Unreal Engine"
+   ],
+   "summary_en": "A dinosaur survival game was built in Unreal Engine by one person using Opus 5.5 within 24 hours.",
+   "summary_zh": "作者利用Opus 5.5,在24小时内独自使用Unreal Engine制作出一款恐龙生存游戏。",
+   "note": ""
+  },
+  "audit": {
+   "id": "2104624540798099832",
+   "verdict": "hold",
+   "confidence": "medium",
+   "prompt_ok": null,
+   "issues": [
+    "title_generic"
+   ],
+   "reason": "The post describes a person's game without establishing that the poster created it.",
+   "title_en": "Dinosaur survival game",
+   "title_zh": "恐龙生存游戏"
+  },
+  "reasons": [
+   "审核拿不准：The post describes a person's game without establishing that the poster created it."
+  ],
+  "heldAt": "2026-09-30T10:02:44.949Z"
  }
 ]

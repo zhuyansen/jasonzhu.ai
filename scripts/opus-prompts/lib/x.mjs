@@ -28,7 +28,10 @@ async function paged(query, maxTweets, maxPages = 25) {
   const out = []; let cursor = "";
   for (let p = 0; p < maxPages && out.length < maxTweets; p++) {
     const j = await api("/twitter/tweet/advanced_search", { query, queryType: "Latest", ...(cursor ? { cursor } : {}) });
-    const ts = j.tweets || []; cost.tweets += ts.length; out.push(...ts);
+    // 接口出错（限流、余额、参数）时返回的 JSON 没有 tweets 数组。以前把它当成「0 条」静默继续，
+    // 调用方会照常推进时间窗口，那段时间就被永久跳过了（2026-09-30 差点发生）。
+    if (!Array.isArray(j.tweets)) throw new Error(`search API error: ${JSON.stringify(j).slice(0, 200)}`);
+    const ts = j.tweets; cost.tweets += ts.length; out.push(...ts);
     if (!j.has_next_page || !j.next_cursor || !ts.length) break;
     cursor = j.next_cursor;
   }

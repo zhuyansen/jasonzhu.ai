@@ -63,6 +63,8 @@ const saveCk = () => fs.writeFileSync(ckFile, JSON.stringify(ck));
 if (ck.raw) { from = ck.from; log(`♻️ 复用断点 ${path.basename(ckFile)}：搜索结果 ${ck.raw.length} 条、作者回复 ${Object.keys(ck.threads).length} 个，不重复扣费`); }
 else { ck.raw = await searchWindow({ from, to, minFaves: MIN_FAVES, maxTweets: MAX_SEARCH }); saveCk(); }
 const raw = ck.raw;
+// 一整天窗口搜出 0 条几乎不可能（高峰期一天 200+），多半是接口异常：不推进窗口，下次重试这段时间
+if (!raw.length && to - from >= 12 * 3600e3) { console.error("❌ 窗口内搜索结果为 0，疑似接口异常，不写入、不推进窗口"); fs.rmSync(ckFile, { force: true }); process.exit(1); }
 const truncated = raw.length >= MAX_SEARCH;
 const fresh = raw.filter((t) => !seen.has(t.id));
 for (const t of raw) seen.add(t.id);
