@@ -192,6 +192,13 @@ export default async function OpusCasePage({ params }: Props) {
           <a href={c.url} target="_blank" rel="noopener noreferrer" className="text-[var(--primary)] hover:underline break-all">{c.url}</a>
         </p>
         <p className="mt-1.5">
+          {isZh ? "全部作品数据开源在 " : "All works are open data at "}
+          <a href="https://github.com/zhuyansen/awesome-opus-5.5-video" target="_blank" rel="noopener noreferrer" className="text-[var(--primary)] hover:underline">
+            GitHub · awesome-opus-5.5-video
+          </a>
+          {isZh ? "。" : "."}
+        </p>
+        <p className="mt-1.5">
           {isZh
             ? `模型归属以作者自述为准，本站未独立复现。播放量为 ${lib.statsCheckedAt.slice(0, 10)} 的快照。作品版权归原作者，修改署名或下架请在 X 私信 @GoSailGlobal。`
             : `Model attribution is as stated by the creator and was not independently reproduced. View counts are a snapshot from ${lib.statsCheckedAt.slice(0, 10)}. The work belongs to its creator; DM @GoSailGlobal on X for corrections or removal.`}

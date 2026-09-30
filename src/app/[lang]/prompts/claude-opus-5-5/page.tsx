@@ -7,6 +7,7 @@ import PromptLibraryClient from "./PromptLibraryClient";
 const SITE_URL = "https://jasonzhu.ai";
 const PATH = "prompts/claude-opus-5-5";
 const FIRST_PAGE = 24;
+const REPO = "https://github.com/zhuyansen/awesome-opus-5.5-video";
 
 const copy = (isZh: boolean, n: number, full: number, threshold: number, withPrompt: number) => ({
   title: isZh ? "Claude Opus 5.5 提示词库：视频、动效、3D 与游戏" : "Claude Opus 5.5 Prompt Library: Video, Motion, 3D & Games",
@@ -54,6 +55,7 @@ export default async function OpusPromptsPage({ params }: { params: Promise<{ la
         ["收录标准是什么？", `原帖播放量不低于 ${lib.threshold.toLocaleString("en-US")}；视频是原帖自带的；帖子明确说作品是用 Opus 5.5 做的。播放量快照取自 ${lib.statsCheckedAt.slice(0, 10)}。模型归属以作者自述为准，本站没有逐条复现。`],
         ["标了「需自备参考素材」是什么意思？", "原作者除了文字提示词，还给了模型图片、视频、音频、文档或代码库作为输入。只复制提示词得不到同样结果，需要准备自己的素材。"],
         ["我是作者，想修改署名或下架怎么办？", "在 X 上私信 @GoSailGlobal 即可，会尽快处理。所有作品版权归原作者，收录不代表获得任何授权。"],
+        ["数据可以拿去用吗？", `可以。全部作品的结构化数据（原帖链接、创作者、分类、时长、播放量、提示词出处）开源在 GitHub：${REPO}，每天自动同步，也欢迎在那里提交新作品或更正。`],
       ]
     : [
         ["Can Claude Opus 5.5 generate video directly?", "Not as a video file. Every work here was produced by code it wrote: rendering with HTML/Canvas, Three.js, Remotion or HyperFrames, or driving tools such as Blender and After Effects through MCP, then recording or exporting. It is not a video generation model like Sora or Seedance."],
@@ -61,6 +63,7 @@ export default async function OpusPromptsPage({ params }: { params: Promise<{ la
         ["What is the inclusion rule?", `At least ${lib.threshold.toLocaleString("en-US")} views on the original post, a native video attached to that post, and an explicit statement that it was made with Opus 5.5. View counts were snapshotted on ${lib.statsCheckedAt.slice(0, 10)}. Model attribution is as stated by each creator and was not independently reproduced.`],
         ["What does “needs reference assets” mean?", "Besides the text prompt, the creator gave the model images, video, audio, documents or a codebase. Copying the prompt alone will not reproduce the result; bring your own assets."],
         ["I am the creator. How do I correct attribution or remove my work?", "Send a DM to @GoSailGlobal on X and it will be handled promptly. All works remain the property of their creators; inclusion grants no license."],
+        ["Can I use the data?", `Yes. Structured data for every work (original post, creator, category, length, views, prompt source) is open on GitHub at ${REPO}, synced daily. New works and corrections are welcome there.`],
       ];
 
   const jsonLd = [
@@ -137,6 +140,16 @@ export default async function OpusPromptsPage({ params }: { params: Promise<{ la
             </div>
           ))}
         </dl>
+        <a
+          href={REPO}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 mt-5 px-3.5 py-2 rounded-lg border border-gray-200 bg-white text-sm font-medium text-gray-700 hover:border-gray-300 hover:bg-gray-50 transition-colors"
+        >
+          <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" /></svg>
+          {isZh ? "GitHub 开源合集：awesome-opus-5.5-video" : "Open collection on GitHub: awesome-opus-5.5-video"}
+          <span className="text-gray-400">↗</span>
+        </a>
       </header>
 
       <PromptLibraryClient initial={initial} total={cases.length} counts={counts} lang={lang} />
