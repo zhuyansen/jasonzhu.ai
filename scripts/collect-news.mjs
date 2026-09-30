@@ -409,7 +409,7 @@ async function curateWithClaude(rawItems) {
   // Model fallback chain: 代理对模型名敏感，400 model not supported 时自动降级
   const modelChain = process.env.CLAUDE_MODEL
     ? [process.env.CLAUDE_MODEL]
-    : ["claude-sonnet-5", "claude-opus-5", "claude-sonnet-4-6", "claude-sonnet-4-5", "claude-opus-4-5"];
+    : ["claude-opus-5-5", "claude-sonnet-5", "claude-opus-5", "claude-sonnet-4-6", "claude-sonnet-4-5"];
   let modelIdx = 0;
   let usingFallback = false;
   // 坏输出（空文本/非 JSON/JSON 解析失败）连续 2 次 → 切下一个 provider。
