@@ -1,10 +1,10 @@
 name: Opus 提示词库每日收录
 
 # 每天北京时间 10:30：收录两天前发布、播放过 5000 的新作品，每天最多 40 个（按播放量优先）。
-# Claude 分类并定位提示词 → 代码逐字对账 → 第二家模型审核。
+# Claude 分类并定位提示词 → 代码逐字对账 → Jev 审核 → 拿不准的交 Opus 终审。
 # 把握大的直接提交到 main 上线；拿不准的进「滚动 PR」（分支 opus-prompts/pending），合并即批准。
 #
-# 需要的 Secrets：TWITTERAPI_IO_KEY（必需）、FLATROUTER_API_KEY（审核用第二模型）；Claude 的几个沿用快讯的。
+# 需要的 Secrets：TWITTERAPI_IO_KEY（必需）、OPENROUTER_API_KEY（Jev 审核）、FLATROUTER_API_KEY（Jev 不可用时的 GPT 备用审核）；Claude 的几个沿用快讯的。
 on:
   schedule:
     - cron: "30 2 * * *"
@@ -43,6 +43,7 @@ jobs:
         env:
           TWITTERAPI_IO_KEY: ${{ secrets.TWITTERAPI_IO_KEY }}
           FLATROUTER_API_KEY: ${{ secrets.FLATROUTER_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
           ANTHROPIC_BASE_URL: "https://api.aigocode.app"
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -53,8 +54,8 @@ jobs:
             echo "::error::缺少 Secret TWITTERAPI_IO_KEY，无法搜索新帖"
             exit 1
           fi
-          if [ -z "$FLATROUTER_API_KEY" ]; then
-            echo "::warning::没配 FLATROUTER_API_KEY：审核会退回到 Claude，等于自己审自己，建议补上"
+          if [ -z "$OPENROUTER_API_KEY" ]; then
+            echo "::warning::没配 OPENROUTER_API_KEY：审核会退回到 GPT（flatrouter），Jev 不会启用"
           fi
           node scripts/opus-prompts/daily.mjs
 

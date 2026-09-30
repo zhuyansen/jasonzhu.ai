@@ -32,7 +32,7 @@ node scripts/opus-prompts/assemble.mjs --write && node scripts/generate-opus-pro
 
 | 什么 | 在哪 | 频率 | 需要密钥 |
 |---|---|---|---|
-| **每日收录新作品** | `.github/workflows/opus-prompts-daily.yml` → `daily.mjs` | 每天 10:30（北京） | `TWITTERAPI_IO_KEY`、`FLATROUTER_API_KEY`、Claude 那几个 |
+| **每日收录新作品** | `.github/workflows/opus-prompts-daily.yml` → `daily.mjs` | 每天 10:30（北京） | `TWITTERAPI_IO_KEY`、`OPENROUTER_API_KEY`（Jev）、`FLATROUTER_API_KEY`（备用审核）、Claude 那几个 |
 | 数据核验：刷新播放量、修复过期视频地址、下架已删帖 | `.github/workflows/opus-prompts-refresh.yml` → `refresh.mjs` | 每周一 11:00（北京） | 不需要 |
 | GitHub 合集同步 | `zhuyansen/awesome-opus-5.5-video` 的 `.github/workflows/sync.yml` | 每天 13:00（北京） | 不需要 |
 
@@ -41,7 +41,11 @@ node scripts/opus-prompts/assemble.mjs --write && node scripts/generate-opus-pro
 1. **按时间增量搜**：只搜「两天前那 24 小时」发布的帖子（`since_time`/`until_time`），点赞 ≥100。延迟两天是让播放量涨到位。每条帖子只落在一个窗口里，只付一次钱；见过的 ID 记在 `data/seen.json`，永不重新处理。
 2. **限量**：播放 ≥5000 的按播放量取前 40 个（`CAP`）。超出的当天放弃，不补。
 3. **判断**：Claude 分类 → 抓作者回复 → Claude 定位提示词 → `lib/resolve.mjs` 逐字对账，对不上带着报错重试一次，再不行按无提示词处理。
-4. **审核**：第二家模型（flatrouter 上的 GPT）按 `prompts/audit.md` 复核。干活和审核故意用两家，同一个模型不给自己签字。
+4. **审核**：**TypeSafe Jev**（`lib/jev.mjs`，OpenRouter decisions 接口）对每个作品问两个多选题：这条帖子是什么（本人作品 / 本人做的模型对比 / 转发 / 教程 / 新闻 / 评论 / 非视觉产品），定位到的提示词是什么（可用 / 中途追问 / 片段 / 感想 / 给别的模型写的 / 空洞 / 依赖看不见的附件）。单条约 $0.00003。
+   - 本人作品概率 ≥0.9 → 通过；转发/教程/新闻/非视觉合计 ≥0.9 → 否决；**判为评论或把握不足 → 交 Opus**
+   - 提示词可用概率 ≥0.9 保留、≤0.1 去掉，中间交 Opus
+   - 2026-09-30 评测：提示词好坏（人工真值 259 条）AUC 0.946、阈值 0.9 时零漏放；是不是作品（分类器标注 432 条）AUC 0.929。主要误判是把「Opus 5.5 太强了」这类一句话配视频的本人作品判成评论，所以评论不直接否决
+   - Jev 不可用（或 `OPUS_AUDITOR=gpt`）时退回 GPT 审核（flatrouter，`prompts/audit.md`）
 5. **裁决**：
    - 审核 `publish` 且把握 `high` → 直接提交 main 上线；审核否决了提示词的，作品照常收录但不带提示词
    - 审核 `reject` 且把握 `high` → 丢弃，写进运行摘要

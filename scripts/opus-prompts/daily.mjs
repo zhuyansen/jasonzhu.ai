@@ -19,6 +19,7 @@ import { workerJSON, reviewerJSON, usage } from "./lib/llm.mjs";
 import { searchWindow, authorThread, normalize, cost } from "./lib/x.mjs";
 import { resolvePrompt, bundle } from "./lib/resolve.mjs";
 import { arbitrate, applyDecision } from "./lib/arbitrate.mjs";
+import { jevAudit, jevUsage } from "./lib/jev.mjs";
 
 const D = path.join(import.meta.dirname, "data");
 const P = path.join(import.meta.dirname, "prompts");
@@ -141,15 +142,24 @@ if (picked.length) {
     for (const c of failed) if (ext[c.id].error) { notes.push(`${c.id} 提示词对账两次未通过，按无提示词处理：${ext[c.id].error.slice(0, 100)}`); ext[c.id].prompt = null; }
   }
 
-  // ── 5. 第二模型审核 ──
+  // ── 5. 审核：默认 Jev（封闭问题 + 概率，便宜且可设阈值）；Jev 不可用时退回 GPT 审核 ──
   const audPrompt = fs.readFileSync(path.join(P, "audit.md"), "utf8");
   const headTail = (t) => (t.length <= 1600 ? t : `${t.slice(0, 1100)}\n…[${t.length - 1500} characters omitted]…\n${t.slice(-400)}`);
   const auditInput = (c) => { const e = ext[c.id], k = cls[c.id]; return { id: c.id, handle: c.handle, views: c.views, root_text: c.text.slice(0, 2500),
     thread: bundles[c.id].thread.slice(0, 8).map((t) => t.text.slice(0, 500)), category: k.category, title_en: k.title_en, title_zh: k.title_zh, summary_en: e.raw.summary_en || "",
     prompt: e.prompt?.text ? { kind: e.prompt.kind, source: e.prompt.source, text: headTail(e.prompt.text) } : null }; };
-  const { done: audit, gaveUp: audFail } = await batched(works, { label: "审核", size: 12, bytes: 40000, maxTokens: 6000, call: reviewerJSON,
-    build: (part) => `${audPrompt}\n\n## Input\n\n${JSON.stringify(part.map(auditInput), null, 1)}`,
-    validate: (j) => (j.some((x) => !["publish", "hold", "reject"].includes(x.verdict)) ? "bad verdict" : null) });
+  let audit = null, audFail = {};
+  if (process.env.OPENROUTER_API_KEY && process.env.OPUS_AUDITOR !== "gpt") {
+    try {
+      audit = await jevAudit(works.map((c) => ({ id: c.id, handle: c.handle, text: c.text, thread: bundles[c.id].thread.slice(0, 4).map((t) => t.text), prompt: ext[c.id].prompt?.text || null })));
+      log(`  审核: ${works.length} 条 via Jev（${jevUsage.model}，$${jevUsage.cost.toFixed(4)}）`);
+    } catch (e) { notes.push(`Jev 审核不可用，退回 GPT：${String(e.message).slice(0, 100)}`); audit = null; }
+  }
+  if (!audit) {
+    ({ done: audit, gaveUp: audFail } = await batched(works, { label: "审核", size: 12, bytes: 40000, maxTokens: 6000, call: reviewerJSON,
+      build: (part) => `${audPrompt}\n\n## Input\n\n${JSON.stringify(part.map(auditInput), null, 1)}`,
+      validate: (j) => (j.some((x) => !["publish", "hold", "reject"].includes(x.verdict)) ? "bad verdict" : null) }));
+  }
   // 审核模型不可用时不降级成自审自签：这些作品全部转人工
   for (const [id, why] of Object.entries(audFail)) audit[id] = { verdict: "hold", confidence: "low", issues: [], reason: `审核模型不可用（${why.slice(0, 60)}）` };
 
@@ -200,6 +210,7 @@ const summary = [
   `| twitterapi.io | ${cost.tweets} 条 ≈ ${cost.credits.toLocaleString("en-US")} credits |`,
   `| 干活模型（Claude） | ${usage.worker.calls} 次调用 · 输入 ${usage.worker.in.toLocaleString("en-US")} / 输出 ${usage.worker.out.toLocaleString("en-US")} tokens |`,
   `| 审核模型（${usage.reviewer.provider || "未调用"}） | ${usage.reviewer.calls} 次调用 · 输入 ${usage.reviewer.in.toLocaleString("en-US")} / 输出 ${usage.reviewer.out.toLocaleString("en-US")} tokens |`,
+  `| 审核（Jev） | ${jevUsage.calls} 次调用 · $${jevUsage.cost.toFixed(4)} |`,
   `| 终审模型（${usage.arbiter.model || "未调用"}） | ${usage.arbiter.calls} 次调用 · 输入 ${usage.arbiter.in.toLocaleString("en-US")} / 输出 ${usage.arbiter.out.toLocaleString("en-US")} tokens |`,
   ...[["上线：带提示词", stat.published], ["上线：仅作品", stat.publishedNoPrompt], ["终审通过", stat.arbPublished], ["终审否决", stat.arbRejected], ["进待审队列", stat.held], ["审核否决", stat.rejected], ["备注", notes]].flatMap(([t, l]) => (l.length ? ["", `**${t}**`, ...l.map((s) => `- ${s}`)] : [])),
 ].join("\n");
