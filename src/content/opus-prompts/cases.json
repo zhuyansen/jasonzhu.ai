@@ -1,8 +1,8 @@
 {
  "model": "Claude Opus 5.5",
  "threshold": 5000,
- "updatedAt": "2026-09-29T08:51:29.265Z",
- "statsCheckedAt": "2026-09-29T08:51:29.265Z",
+ "updatedAt": "2026-09-30T08:51:55.597Z",
+ "statsCheckedAt": "2026-09-30T08:51:55.597Z",
  "inclusionRule": "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5.",
  "cases": [
   {
@@ -479,6 +479,55 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2104215873120764032",
+   "url": "https://x.com/DannyLimanseta/status/2104215873120764032",
+   "author": {
+    "handle": "DannyLimanseta",
+    "name": "Danny Limanseta"
+   },
+   "postedAt": "2026-09-27T14:25:33.000Z",
+   "lang": "en",
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "塞尔达风格画笔冒险游戏",
+    "en": "Zelda-style paintbrush adventure game"
+   },
+   "summary": {
+    "zh": "一位父亲和他的孩子们用Claude Opus 5.5共同制作了一款受塞尔达启发的开放世界浏览器游戏，主角用画笔作为武器，包含地下城、飞行机制和最终boss，内容由孩子们构思、父亲负责提示模型完成。",
+    "en": "A father and his sons used Claude Opus 5.5 to build a browser-based Zelda-inspired open-world game with a paintbrush weapon, dungeons, flying mechanics and a final boss, built by prompting based on the kids' ideas."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/DannyLimanseta/status/2104276749479796842",
+    "text": "make a zelda-like game with paintbrush as a weapon and asked it to wow me and use up to 6 agents to build this."
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 1156666,
+    "likes": 4520,
+    "replies": 343,
+    "reposts": 302,
+    "bookmarks": 2937,
+    "checkedAt": "2026-09-30T08:51:55.597Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2104215734662713344/img/aDVqvRdKjo8rrt8A.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2104215734662713344/vid/avc1/1280x720/zAMqnNo_7D1-HZUG.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 104
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -1137,6 +1186,50 @@
    }
   },
   {
+   "id": "2104216601864106226",
+   "url": "https://x.com/brivael/status/2104216601864106226",
+   "author": {
+    "handle": "brivael",
+    "name": "Brivael Le Pogam"
+   },
+   "postedAt": "2026-09-27T14:28:26.000Z",
+   "lang": "en",
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "法国理论分析转成视频",
+    "en": "French theory essay turned into video"
+   },
+   "summary": {
+    "zh": "作者把自己那篇获得8000万浏览量的法国理论分析文章交给Claude Opus 5.5，并让它把文章转化成配有插图的视频。",
+    "en": "The creator gave Claude Opus 5.5 their own viral French theory text analysis and asked it to turn it into a video with illustrations."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 704886,
+    "likes": 2301,
+    "replies": 116,
+    "reposts": 446,
+    "bookmarks": 1087,
+    "checkedAt": "2026-09-30T08:51:55.597Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2104215849825411074/img/yUp4gnsy6FVvyj-9.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2104215849825411074/vid/avc1/1280x720/ECaDE5Cq18iaY0Sf.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 332
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102641525071155565",
    "url": "https://x.com/soyukke_game/status/2102641525071155565",
    "author": {
@@ -1581,6 +1674,55 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2104285370951012504",
+   "url": "https://x.com/vib3coded/status/2104285370951012504",
+   "author": {
+    "handle": "vib3coded",
+    "name": "Vib3Coded"
+   },
+   "postedAt": "2026-09-27T19:01:42.000Z",
+   "lang": "en",
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "果冻西瓜切片模拟",
+    "en": "Jelly watermelon slicing simulation"
+   },
+   "summary": {
+    "zh": "作者用Claude Opus 5.5根据一段详细的结构化提示词，制作了一个基于WebGPU/WGSL的果冻西瓜片交互模拟，可以用手拉扯，也能用带动画效果的刀切成多块。",
+    "en": "The creator used Claude Opus 5.5 to build an interactive WebGPU/WGSL simulation of a gummy watermelon jelly slice that can be pulled and cut into pieces with an animated knife, from a long structured prompt."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/vib3coded/status/2104285700614939103",
+    "text": "Create \"Melon Jelly Knife\" — a single self-contained HTML file (melon-jelly-knife.html) with an interactive, physically simulated gummy watermelon slice that you can pull like jelly AND cut into pieces with a visible steel knife that animates every cut.\n\n── Platform ──\n- WebGPU + WGSL only, all JS/CSS inline, no external libraries. ES module in one <script type=\"module\">.\n- If navigator.gpu / adapter is missing, show an elegant editorial fallback card (\"This specimen needs WebGPU.\") with a specific explanation — never fake it with a lesser renderer. Disable the controls in that state.\n- Recover from device loss (rebuild the renderer up to twice), surface WGSL compile errors via getCompilationInfo.\n- Fixed 60 Hz simulation step with an accumulator (max 3 steps/frame), ¼-speed toggle, pause (Space), keyboard: N nudge, R reset, K toggle knife, H hand.\n\n── Page design (editorial \"material study\") ──\n- Warm paper studio backdrop #E2DFDA; the 3D floor is an infinite studio sweep that tones to exactly this colour.\n- Top-left masthead: small caps label \"MATERIAL STUDIES / NO. 009\", huge italic serif title \"Melon / Jelly.\" (second line indented), and a 3-line serif tagline.\n- Top-right status pill \"WEBGPU · LIVE / PAUSED / UNAVAILABLE\".\n- Right panel (thin 1px borders, translucent paper): Tool (Hand | Knife segmented buttons with small line icons), Variety swatches (Crimson, Golden, Rosé — each recolours flesh, rind, seeds, shadow tint and the UI accent), sliders Firmness (trembling ↔ set) and Internal damping (lively ↔ syrupy), buttons \"Give it a nudge\", Reset, Pause, checkboxes ¼ speed and Show mesh.\n- Bottom-left: tool hint in italic serif, live readouts row (Mass ≈ g, Volume % of rest, Kinetic µJ, Pieces) with an \"illustrative scale\" footnote (1 sim unit ≈ 3.5 cm, gummy 1.3 g/cm³).\n- Bottom-right collapsible \"Inside the experiment\" notes explaining the physics, rendering and the cutting method in plain prose.\n- A dashed SVG guide line while drawing a knife stroke; small toast messages (\"Missed — draw the blade across the slice.\", \"Too thin to cut there.\", \"That's plenty of pieces.\").\n- The camera frames the slice inside the free area between masthead, panel and readouts (lens shift), orbits on empty-space drag, zooms on wheel, double-click resets view, gently follows the slice if it is thrown far.\n- Responsive: under ~860px the layout stacks (masthead, canvas ~58vh, hint, panel) with 44px+ touch targets; prefers-reduced-motion softens the intro and damping.\n\n── The slice ──\n- A thick (T ≈ 0.58) wedge of watermelon: sector with ~32° half-angle, inner radius ~1.62, all corners rounded in plane (ρ = 0.17) and top/bottom edges bevelled (~0.13).\n- Layers by depth from the rind: dark green skin with irregular darker stripes, a pale cream-green band, then translucent red flesh; black teardrop seeds arranged in arcs and a few tiny air bubbles suspended inside.\n- Rendered as translucent candy: screen-space refraction of the scene behind, per-pixel thickness from a back-face depth pass, Beer–Lambert absorption per refracted tap (capped by back thickness so seeds don't halo), jittered blur, subsurface-like scatter and glow toward the key light, Fresnel + GGX highlights, soft studio environment (procedural softboxes).\n- Floor: PCSS-lite soft shadow from a key light behind-left-above (shadow tinted by the flesh colour), contact AO from a top-down height map. MSAA ×4, HDR, PBR-Neutral tone mapping, sRGB, dither.\n\n── Physics (feels like real gummy candy) ──\n- Tetrahedral soft body (Delaunay of a jittered lattice inside the shape), XPBD with small steps (~10 substeps, 1 iteration each):\n• co-rotational per-tet shape matching (mass-weighted covariance, Müller quaternion rotation extraction, uniform stiffness fraction) — no inversions, no ghost torque;\n• per-tet volume constraints (near-incompressible);\n• edge relative-velocity damping controlled by the damping slider; firmness maps to shape compliance on a log scale;\n• floor contact with static/kinetic friction, light air drag, settle-damping when nearly at rest, speed cap, NaN guard with gentle reset.\n- Hand tool: grab anywhere (ray pick on the skinned surface, forgiving screen-space fallback), soft patch attachment (radius ~0.4) that follows the pointer on a camera-facing plane, reach limit, never pushed into the floor; wheel or a second finger twists the held patch. Nudge = a playful impulse. Reset drops the whole slice again.\n- Render mesh is skinned to the tets by barycentric embedding; normals recomputed each frame.\n\n── Cutting into pieces ──\n- The world is a list of pieces. Each piece is a convex polygon I in the slice's rest plane; its outline is I dilated by a disk of radius ρ (rounded corners), extruded to the slice thickness with the same bevels, rind layers, seeds and bubbles (seeds/bubbles kept only where they fit inside).\n- A cut maps a world plane into each crossed piece's rest frame (best-fit rigid frame of the deformed piece), intersects it with the mid-plane → a straight line; clip I into two halves offset by ±ρ so both rebuilt outlines meet exactly at the cut; reject slivers (\"too thin\").\n- All pieces are concatenated into ONE simulation (component id per particle) and ONE render mesh; each piece is its own soft body you can grab, stretch and cut again; pieces collide with each other (AABB-pruned particle–particle pushes, a few mm per pass so fresh faces ease apart instead of popping). Max 14 pieces. Built meshes are cached per piece so Reset is instant.\n- State transfer on every rebuild: new rest particles are embedded in the old tets and take over interpolated positions and velocities.\n\n── The visible knife (the star of this version) ──\n- A small nakiri-style vegetable knife modelled procedurally: rectangular blade (length ~1.72, height ~0.63 — taller than the slice), straight edge with a slight lift and rounded nose at the front, thin ground bevel along the edge, flat grind to a ~0.03 spine, sharp creases (duplicated vertices), polished steel bolster, oval walnut handle that swells slightly with three steel rivets and flat end caps. Local frame: +x toward the tip, edge on y=0.\n- Materials in the scene shader: brushed steel with a product-shot gradient (dark board reflected low, bright sweep high), softbox streaks, satin lighter bevel, mirror bolster; walnut with straight grain, satin oil sheen, rivets. Posed rigidly on the CPU each frame.\n- The knife is drawn in the scene pass (behind the jelly surface), so the part buried in the jelly is seen refracted through it; it casts a shadow but stays out of the AO height map.\n- Behaviour:\n• Hover (knife tool): the knife floats ~0.42 above the slice with its edge exactly under the cursor, blade side-on to the camera, slightly rolled toward the viewer; it drops in from above when the tool is selected; hidden in hand mode.\n• While drawing: it lines up along the stroke, edge just above the jelly, handle always on the left (canonical direction relative to camera right).\n• On release: the stroke read on the surface it was drawn over defines a VERTICAL blade plane; the split is planned and the new pieces + new soft body are pre-built immediately (so the swap later costs only ~10 ms and there is no hitch mid-animation).\n• Choreography (~1.1 s, respects ¼ speed and pause): align (0.16 s) → press: the edge sinks ~0.13 below the top and a physical collider pushes the jelly into a rounded groove under it — it squashes before it gives (to 0.42 s) → break-through: the new world is swapped in, the blade continues to the board while a wedge collider eases the two new faces apart (limited to a few mm per substep, gap growing with depth) and holds the cut lips down at the break-through depth → short hold → lift back to hover, releasing the lips so they spring back with a jiggle.\n• Misses show a toast and the knife stays put; new strokes are ignored while a cut is animating; Reset cancels it.\n\n── Quality bar ──\n- Smooth 60 fps on a mid-range laptop GPU; no allocations in the frame loop except on cuts.\n- Deterministic test hook on window (e.g. __melon with sim, camera, pick, planCut, startCut, advance(seconds), per-piece stats) so the animation can be stepped and screenshotted.\n- Polished, calm, museum-like typography; everything readable on phone and desktop."
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 600004,
+    "likes": 632,
+    "replies": 39,
+    "reposts": 57,
+    "bookmarks": 455,
+    "checkedAt": "2026-09-30T08:51:55.597Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2104285268907859968/img/J8ePMThjFdD0EuEa.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2104285268907859968/vid/avc1/1280x720/LvqwGelhnMI4-kAR.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 18
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -2372,6 +2514,55 @@
    }
   },
   {
+   "id": "2104234974350111108",
+   "url": "https://x.com/rpnickson/status/2104234974350111108",
+   "author": {
+    "handle": "rpnickson",
+    "name": "Roberto Nickson"
+   },
+   "postedAt": "2026-09-27T15:41:27.000Z",
+   "lang": "en",
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "3D打印承重桥梁",
+    "en": "3D-printed load-bearing bridge"
+   },
+   "summary": {
+    "zh": "在系列节目Agent Wars中，包括Claude Opus 5.5的五个AI模型被要求设计并3D打印一座承重桥梁，Opus 5.5以约130磅的承重、最少材料和最短打印时间获胜。",
+    "en": "As part of an 'Agent Wars' series, five AI models including Claude Opus 5.5 were tasked with designing and 3D printing a bridge to hold maximum weight, with Opus 5.5 winning by holding an estimated 130 lbs using the least material and time."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Kimi K3",
+    "Muse Spark 1.3",
+    "GPT-6 Astra",
+    "Grok 4.7"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 444852,
+    "likes": 8034,
+    "replies": 257,
+    "reposts": 704,
+    "bookmarks": 2389,
+    "checkedAt": "2026-09-30T08:51:55.597Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2104233888411193344/img/w3G9mrZZvVv_eqXZ.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2104233888411193344/vid/avc1/720x1280/hyL1ZCobE1zN8ZT5.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 79
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103817034618339682",
    "url": "https://x.com/crvdesign0/status/2103817034618339682",
    "author": {
@@ -2514,6 +2705,57 @@
    }
   },
   {
+   "id": "2104159923886244176",
+   "url": "https://x.com/ann_nnng/status/2104159923886244176",
+   "author": {
+    "handle": "ann_nnng",
+    "name": "Ann Nguyen"
+   },
+   "postedAt": "2026-09-27T10:43:13.000Z",
+   "lang": "en",
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "闪粉贴纸效果对比",
+    "en": "Glitter sticker effect comparison"
+   },
+   "summary": {
+    "zh": "作者让Claude Opus 5.5和GPT-6 Sol分别制作闪粉贴纸效果，并用Opus 5.5生成的效果制作了一套贴纸，现已在网上出售。",
+    "en": "The creator asked both Claude Opus 5.5 and GPT-6 Sol to create a glitter sticker effect, and used the Opus 5.5 result to make a sticker pack now sold online."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/ann_nnng/status/2104159923886244176",
+    "text": "create the glitter sticker effect"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "GPT-6 Sol"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 436248,
+    "likes": 5659,
+    "replies": 73,
+    "reposts": 315,
+    "bookmarks": 4008,
+    "checkedAt": "2026-09-30T08:51:55.597Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2104159876817801216/img/LkZO8nTGzwuKWWAb.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2104159876817801216/vid/avc1/720x954/HfWuPa3aHvQKNzwO.mp4?tag=29",
+    "width": 720,
+    "height": 954,
+    "durationSec": 13
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102681172367323300",
    "url": "https://x.com/NFT_Chen/status/2102681172367323300",
    "author": {
@@ -2550,6 +2792,50 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2104253761137127597",
+   "url": "https://x.com/DilumSanjaya/status/2104253761137127597",
+   "author": {
+    "handle": "DilumSanjaya",
+    "name": "Dilum Sanjaya"
+   },
+   "postedAt": "2026-09-27T16:56:06.000Z",
+   "lang": "en",
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "沙丘沙虫变身机器人概念",
+    "en": "Dune sandworm turned into robot concept"
+   },
+   "summary": {
+    "zh": "作者用Opus 5.5制作了一张将《沙丘》沙虫设计成机器人的概念图，未公开使用的提示词。",
+    "en": "A concept image reimagining a Dune sandworm as a robot, created using Opus 5.5; no prompt text was shared."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 430212,
+    "likes": 4167,
+    "replies": 132,
+    "reposts": 250,
+    "bookmarks": 1311,
+    "checkedAt": "2026-09-30T08:51:55.597Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2104251208441745408/img/aOJMApZi-gbOYp1f.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2104251208441745408/vid/avc1/1250x720/vTmOCfH2zPPBaOzc.mp4?tag=29",
+    "width": 1250,
+    "height": 720,
+    "durationSec": 79
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -2688,6 +2974,52 @@
    }
   },
   {
+   "id": "2104253584737230926",
+   "url": "https://x.com/Rubzem/status/2104253584737230926",
+   "author": {
+    "handle": "Rubzem",
+    "name": "S"
+   },
+   "postedAt": "2026-09-27T16:55:24.000Z",
+   "lang": "en",
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "无缝多星球太空探索游戏",
+    "en": "Seamless multi-planet space exploration game"
+   },
+   "summary": {
+    "zh": "作者在Tesana平台上用Opus 5.5和Three.js，通过一句提示词加一张参考图，制作了一款可无缝探索80多颗星球的类《无人深空》太空游戏，未公开具体提示词内容。",
+    "en": "A fully explorable, seamless No Man's Sky-style space game with over 80 planets, built on the Tesana platform using Opus 5.5 and Three.js from a single prompt plus an image reference; the exact prompt text was not shared."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 407161,
+    "likes": 4007,
+    "replies": 297,
+    "reposts": 271,
+    "bookmarks": 2257,
+    "checkedAt": "2026-09-30T08:51:55.597Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2104252929427615744/img/5CzfzkTJGxkXH4WV.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2104252929427615744/vid/avc1/1260x720/nc4tk4JcSDIZkzf6.mp4?tag=29",
+    "width": 1260,
+    "height": 720,
+    "durationSec": 270
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102572941699354900",
    "url": "https://x.com/pleometric/status/2102572941699354900",
    "author": {
@@ -2775,6 +3107,55 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2104370091672711402",
+   "url": "https://x.com/gauravsbuilding/status/2104370091672711402",
+   "author": {
+    "handle": "gauravsbuilding",
+    "name": "Gaurav"
+   },
+   "postedAt": "2026-09-28T00:38:21.000Z",
+   "lang": "en",
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "动态设计发布视频",
+    "en": "Motion design launch video"
+   },
+   "summary": {
+    "zh": "作者让Opus 5.5在“Ultracode模式”下持续运行12小时，要求它制作尽可能最好的动态设计发布视频，最终产出了这段作品。",
+    "en": "A motion design launch video was generated after Opus 5.5 was set to run in 'Ultracode mode' and asked to make the best possible motion design launch video, producing the result after 12 hours of continuous running."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/gauravsbuilding/status/2104370091672711402",
+    "text": "create the best motion design launch video it possibly could"
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 401084,
+    "likes": 1211,
+    "replies": 130,
+    "reposts": 39,
+    "bookmarks": 1138,
+    "checkedAt": "2026-09-30T08:51:55.597Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2104369848960819200/img/dCn8C4VuKHaL9lp4.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2104369848960819200/vid/avc1/1280x720/2rUBIZmNBhiMcdw9.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 15
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -4059,6 +4440,50 @@
    }
   },
   {
+   "id": "2104406657216237990",
+   "url": "https://x.com/Data01/status/2104406657216237990",
+   "author": {
+    "handle": "Data01",
+    "name": "Daniel Tabár"
+   },
+   "postedAt": "2026-09-28T03:03:39.000Z",
+   "lang": "en",
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "虚拟世界中的热带水面模拟",
+    "en": "Tropical water simulation in virtual world"
+   },
+   "summary": {
+    "zh": "作者用Opus 5.5为Virtual Matter游戏引擎世界打造了热带水面效果，可在浏览器甚至手机上免安装直接体验，未公开具体提示词。",
+    "en": "A tropical water rendering feature was added to the Virtual Matter game engine world using Opus 5.5, playable in browser including on mobile with no install; no prompt text was shared."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 275589,
+    "likes": 277,
+    "replies": 17,
+    "reposts": 20,
+    "bookmarks": 89,
+    "checkedAt": "2026-09-30T08:51:55.597Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2104406581479698434/img/9obNhq1zaT3DEEdH.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2104406581479698434/vid/avc1/1280x720/p2WTzma_BoEwXakG.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 21
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103495232637882858",
    "url": "https://x.com/himanshutwtxs/status/2103495232637882858",
    "author": {
@@ -4108,6 +4533,102 @@
    }
   },
   {
+   "id": "2104320172815503463",
+   "url": "https://x.com/sonia_code/status/2104320172815503463",
+   "author": {
+    "handle": "sonia_code",
+    "name": "ソニア"
+   },
+   "postedAt": "2026-09-27T21:20:00.000Z",
+   "lang": "ja",
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "交互式水面模拟效果",
+    "en": "Interactive water surface simulation"
+   },
+   "summary": {
+    "zh": "创作者用Opus 5.5制作了一个逼真的可交互水面效果，底层用WebGL2和GLSL编写，通过FFT计算波浪起伏，并单独模拟水流带动漂浮的叶子。",
+    "en": "A realistic interactive water surface simulation made with Opus 5.5, using WebGL2 and GLSL shaders with FFT-based wave calculation and separate flow simulation for floating leaves."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "WebGL2",
+    "GLSL"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 270632,
+    "likes": 3640,
+    "replies": 23,
+    "reposts": 340,
+    "bookmarks": 2102,
+    "checkedAt": "2026-09-30T08:51:55.597Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2104142898635931648/img/g_HLrdniD5F6Klbd.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2104142898635931648/vid/avc1/960x720/vWe1zYJngADX0TVu.mp4?tag=29",
+    "width": 960,
+    "height": 720,
+    "durationSec": 18
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2104301990985498783",
+   "url": "https://x.com/mattshumer_/status/2104301990985498783",
+   "author": {
+    "handle": "mattshumer_",
+    "name": "Matt Shumer"
+   },
+   "postedAt": "2026-09-27T20:07:45.000Z",
+   "lang": "en",
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "用逻辑门搭建的可运行电脑及操作系统",
+    "en": "Working computer built from logic gates with OS"
+   },
+   "summary": {
+    "zh": "创作者用一条详细提示，让Opus 5.5在约30小时的ultracode模式下自主构建了一台由27.7万个逻辑门组成的可运行计算机，并在其上搭建了操作系统和可玩的游戏。",
+    "en": "A fully working computer built from 277k logic gates in JavaScript, complete with an OS and playable game, made autonomously by Opus 5.5 from a single detailed prompt over about 30 hours in ultracode mode."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/mattshumer_/status/2104303934760218625",
+    "text": "build a working computer from scratch, entirely in code, starting from individual logic gates. design the CPU, the memory, an assembler, a tiny operating system, and a game that runs on it. everything has to be real, the game has to run on your gates, not in javascript pretending. visualize the whole thing in 3D so i can play the game, then zoom all the way down through the chips into the gates and watch the signals flow while it runs. treat it like you're proving you could have invented computing yourself. go all out."
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 266214,
+    "likes": 1821,
+    "replies": 151,
+    "reposts": 168,
+    "bookmarks": 916,
+    "checkedAt": "2026-09-30T08:51:55.597Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2104301894130667520/img/r0ofpu9hsGz093zu.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2104301894130667520/vid/avc1/1280x720/sRT-s95gyBrIfi4x.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 62
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103906559109787845",
    "url": "https://x.com/HindolSengupta/status/2103906559109787845",
    "author": {
@@ -4144,6 +4665,52 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2104155582555165055",
+   "url": "https://x.com/RyanSael/status/2104155582555165055",
+   "author": {
+    "handle": "RyanSael",
+    "name": "Ryan Sael"
+   },
+   "postedAt": "2026-09-27T10:25:58.000Z",
+   "lang": "en",
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "交互式房间布局与室内设计工具",
+    "en": "Interactive room layout and interior design tool"
+   },
+   "summary": {
+    "zh": "创作者用Opus 5.5做了一个室内设计工具，可以生成和调整房间布局与风格；他表示没有用特定提示词，只是提供了自己的项目文件，并借助Claude Code的缓存读取降低了成本。",
+    "en": "An interior design tool built with Opus 5.5 that lets users generate and adjust room layouts and styles; the creator says no specific prompt was used, just their own project files, and Claude Code's cache efficiency helped keep costs low."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Claude Code"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 262248,
+    "likes": 2505,
+    "replies": 79,
+    "reposts": 169,
+    "bookmarks": 2863,
+    "checkedAt": "2026-09-30T08:51:55.597Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2104154293008056320/img/-I4ke2eZW8E3EQaa.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2104154293008056320/vid/avc1/1280x720/QdjXtPie2LFx-WqN.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 36
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -5242,6 +5809,57 @@
    }
   },
   {
+   "id": "2104405255329132694",
+   "url": "https://x.com/EvoLinkAi/status/2104405255329132694",
+   "author": {
+    "handle": "EvoLinkAi",
+    "name": "EvoLink.ai"
+   },
+   "postedAt": "2026-09-28T02:58:05.000Z",
+   "lang": "en",
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "埃隆·马斯克肖像绘画对比",
+    "en": "Elon Musk portrait drawing comparison"
+   },
+   "summary": {
+    "zh": "创作者对比测试了GPT-6 Sol和Opus 5.5，让两者通过Computer Use在浏览器画图工具中画埃隆·马斯克，并逐笔录制了绘制过程。",
+    "en": "A comparison test where GPT-6 Sol and Opus 5.5 were each given a Computer Use task to draw Elon Musk in a browser-based paint tool, recorded stroke by stroke."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/EvoLinkAi/status/2104405259737006269",
+    "text": "Use GPT-6 Sol or Claude Opus 5.5 to draw Elon Musk using a browser-based drawing tool, and screen-record the process."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "GPT-6 Sol"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 195665,
+    "likes": 273,
+    "replies": 23,
+    "reposts": 10,
+    "bookmarks": 92,
+    "checkedAt": "2026-09-30T08:51:55.597Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2104405220977451008/img/Pi0FzBHIa5aaM8gi.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2104405220977451008/vid/avc1/1280x720/1zr4mBVNqFMR2G-b.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 15
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102513817855094922",
    "url": "https://x.com/_MaxBlade/status/2102513817855094922",
    "author": {
@@ -5378,6 +5996,103 @@
    }
   },
   {
+   "id": "2104206095313215591",
+   "url": "https://x.com/moguzbulbul/status/2104206095313215591",
+   "author": {
+    "handle": "moguzbulbul",
+    "name": "Oğuz B"
+   },
+   "postedAt": "2026-09-27T13:46:42.000Z",
+   "lang": "en",
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "UX决策讲解动画",
+    "en": "UX decision explainer animation"
+   },
+   "summary": {
+    "zh": "创作者用Opus 5.5制作了一段蓝图风格的动画，用来在面试中展示自己的UX设计思路，并将背后使用的skill发布在了一个GitHub仓库中。",
+    "en": "A blueprint-style UX explanation animation made with Opus 5.5 to help present design decisions in interviews, with the underlying skill shared as a GitHub repo."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [
+    "https://github.com/moguzbulbul/blueprint-animation"
+   ],
+   "stats": {
+    "views": 192600,
+    "likes": 2063,
+    "replies": 127,
+    "reposts": 51,
+    "bookmarks": 2875,
+    "checkedAt": "2026-09-30T08:51:55.597Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2104205996960743424/img/bhxe7gk5mhKbgYeG.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2104205996960743424/vid/avc1/960x720/auUKC6G8-dQzC9Ly.mp4?tag=29",
+    "width": 960,
+    "height": 720,
+    "durationSec": 42
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2104381179151753464",
+   "url": "https://x.com/hajimetwi3/status/2104381179151753464",
+   "author": {
+    "handle": "hajimetwi3",
+    "name": "ついはじめ | Hajime Tsui"
+   },
+   "postedAt": "2026-09-28T01:22:25.000Z",
+   "lang": "ja",
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "实时海岸模拟场景",
+    "en": "Real-time coastal simulation scene"
+   },
+   "summary": {
+    "zh": "创作者用Claude Code Opus 5.5在ultracode和Max模式下，使用Three.js制作了一个实时海岸模拟场景，其中镜头上的水滴、水中的鱼和飞鸟都是模型自行添加的效果。",
+    "en": "A real-time coastal simulation made with Claude Code Opus 5.5 in ultracode/Max mode using Three.js, featuring water droplets on the camera, swimming fish, and flying birds that the model added on its own."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/hajimetwi3/status/2104381179151753464",
+    "text": "リアルタイム海岸シミュレーションを作って！！"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 191732,
+    "likes": 1761,
+    "replies": 33,
+    "reposts": 149,
+    "bookmarks": 1177,
+    "checkedAt": "2026-09-30T08:51:55.597Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2104380425934393344/img/_ybliflsQd77FOwm.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2104380425934393344/vid/avc1/1148x720/ozWL4SIzM9JRkwuO.mp4?tag=29",
+    "width": 1148,
+    "height": 720,
+    "durationSec": 122
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102642002613481939",
    "url": "https://x.com/israelfemiojo/status/2102642002613481939",
    "author": {
@@ -5468,6 +6183,50 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2104402407358919124",
+   "url": "https://x.com/thebuggeddev/status/2104402407358919124",
+   "author": {
+    "handle": "thebuggeddev",
+    "name": "The Bugged Dev"
+   },
+   "postedAt": "2026-09-28T02:46:46.000Z",
+   "lang": "en",
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "电磁场可视化演示",
+    "en": "Electromagnetic field visualization"
+   },
+   "summary": {
+    "zh": "作者用Claude Opus 5.5制作了一个可交互的电磁场可视化网站，通过多轮对话从研究电磁场开始，逐步添加参数、磁铁和线圈等功能。",
+    "en": "An interactive electromagnetic field visualization website built with Claude Opus 5.5, created through an iterative back-and-forth starting with research and expanding to more parameters, magnets and coils."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 188071,
+    "likes": 2736,
+    "replies": 65,
+    "reposts": 330,
+    "bookmarks": 1562,
+    "checkedAt": "2026-09-30T08:51:55.597Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2104401569718689792/img/j4f3h3J3x_haomrV.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2104401569718689792/vid/avc1/1158x720/acQuTw8VP7snWvEy.mp4?tag=29",
+    "width": 1158,
+    "height": 720,
+    "durationSec": 71
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -7263,6 +8022,58 @@
    }
   },
   {
+   "id": "2104466170275324190",
+   "url": "https://x.com/vib3coded/status/2104466170275324190",
+   "author": {
+    "handle": "vib3coded",
+    "name": "Vib3Coded"
+   },
+   "postedAt": "2026-09-28T07:00:08.000Z",
+   "lang": "en",
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "软糖章鱼物理效果对比",
+    "en": "Gummy octopus physics comparison"
+   },
+   "summary": {
+    "zh": "作者用一段详细的提示词让Claude Opus 5.5和ChatGPT-6 Astra分别制作一个可在浏览器中拉伸挤压的果冻章鱼网页特效，并比较了两者的效果与API成本。",
+    "en": "A single-file WebGPU gummy octopus that users can grab, stretch and squish, built from a detailed prompt covering art direction, soft-body physics and UI, and compared between Claude Opus 5.5 and ChatGPT-6 Astra with cost estimates."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/vib3coded/status/2104466341298110840",
+    "text": "Create “Octo Jelly” - a beautiful, interactive 3D gummy octopus that users can grab, stretch, and squish directly in their browser. Deliver a complete single-file HTML experience using genuine WebGPU.\nART DIRECTION\nMake the octopus look like a premium translucent gummy candy: a rounded head, eight curled tentacles, small suction cups, and a cute, understated face.\nUse a warm off-white background, soft studio lighting, and a subtle ground shadow. Keep the scene elegant and uncluttered, with the octopus large and centered.\nGEOMETRY AND MATERIAL\n\n* Generate all geometry procedurally. No external models or image files.\n* Connect all eight tentacles smoothly to the body, without visible gaps or floating parts.\n* Add rounded suction cups that stay attached as the tentacles deform.\n* Use glossy, translucent jelly with thickness-dependent color absorption, refraction, soft internal light scattering, and delicate rim highlights.\n* Thick areas should have richer color; thin tentacle tips should transmit more light.\n* Avoid opaque plastic, blown-out highlights, and visible mesh seams.\n\nSOFT-BODY PHYSICS\nUse a stable mass-spring or position-based dynamics system with elastic constraints and approximate volume preservation.\n\n* The head should feel soft but substantial.\n* Tentacles should be more flexible than the head, especially near their tips.\n* Allow users to grab the head or any tentacle at the clicked location.\n* Pulling should deform the nearby geometry first, then elastically pull the rest of the body.\n* On release, the octopus should wobble and gradually settle into its original shape.\n* Tentacles should react independently, with slightly delayed motion.\n* Include gravity, floor collisions, friction, and damping.\n* Prevent tentacles from passing through the floor.\n* Clamp extreme stretching and use fixed simulation steps so strong pulls do not break the model.\n* Do not fake softness by scaling or rotating the entire octopus.\n\nINTERACTION\n\n* Left-click or touch the octopus to grab and stretch it.\n* Right-drag or drag empty space to gently orbit the camera.\n* Support a limited zoom range.\n* Keep camera gestures separate from object dragging.\n* Add “Give it a nudge,” “Reset,” “Pause,” and “Reset view” buttons.\n* Include Firmness and Internal damping sliders.\n* Add “¼ speed” and “Show mesh” toggles.\n* Provide three color presets: Coral, Lagoon, and Grape. Change the material colors without resetting the simulation.\n\nINTERFACE\nUse a minimal editorial layout:\n\n* Top left: small “MATERIAL STUDIES” label.\n* Large italic serif heading: “Octo Jelly.”\n* Caption: “Eight arms. A little wobble. A very soft creature.”\n* Top right: a WebGPU status indicator.\n* Right side: a compact “THE SPECIMEN” control panel.\n* Bottom left: “Grab a tentacle. Pull gently. Let go.”\n\nUse clean sans-serif text for controls, thin borders, and generous whitespace. Avoid heavy panels or decorative UI effects.\nPERFORMANCE AND QUALITY\n\n* Use real WebGPU rendering, not a 2D canvas imitation or prerecorded animation.\n* Reuse geometry and buffers; do not rebuild meshes during dragging.\n* Keep suction cups, eyes, and other details attached to the deforming body.\n* Handle transparency without flickering, disappearing surfaces, or harsh black edges.\n* Support desktop and mobile layouts.\n* Show a clear fallback message if WebGPU is unavailable.\n* Test repeated grabs, strong pulls, releases, floor collisions, palette changes, pause, and reset.\n\nThe result should feel like a little living gummy toy - glossy, squishy, expressive, and satisfying to stretch. Deliver the full working HTML, not a mockup or a code fragment."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "ChatGPT-6 Astra",
+    "WebGPU"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 143903,
+    "likes": 746,
+    "replies": 26,
+    "reposts": 46,
+    "bookmarks": 417,
+    "checkedAt": "2026-09-30T08:51:55.597Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2104466054894309376/img/I2f2bWLJTie4uJYc.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2104466054894309376/vid/avc1/720x960/Qoovr2fW860NPtu9.mp4?tag=29",
+    "width": 720,
+    "height": 960,
+    "durationSec": 18
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102457111787745405",
    "url": "https://x.com/strawhatsu4/status/2102457111787745405",
    "author": {
@@ -7758,6 +8569,50 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2104213208353628597",
+   "url": "https://x.com/bitfish/status/2104213208353628597",
+   "author": {
+    "handle": "bitfish",
+    "name": "DiscusFish"
+   },
+   "postedAt": "2026-09-27T14:14:57.000Z",
+   "lang": "zh",
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "投资杠杆原理讲解视频",
+    "en": "Investment leverage explainer video"
+   },
+   "summary": {
+    "zh": "一段用Claude Opus 5.5生成讲解版，说明“为什么投资的第一原则是不用杠杆”的视频。",
+    "en": "A short video explaining why the first rule of investing is to avoid leverage, presented as an 'Opus 5.5 explainer' version."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 137063,
+    "likes": 541,
+    "replies": 44,
+    "reposts": 109,
+    "bookmarks": 423,
+    "checkedAt": "2026-09-30T08:51:55.597Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2104213056888983552/img/_bR1miCnsEsRMGFN.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2104213056888983552/vid/avc1/1280x720/9AWCSSkE-fdReQ13.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 190
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -9266,6 +10121,50 @@
    }
   },
   {
+   "id": "2104437066755125601",
+   "url": "https://x.com/AndyL5cc/status/2104437066755125601",
+   "author": {
+    "handle": "AndyL5cc",
+    "name": "Andy L"
+   },
+   "postedAt": "2026-09-28T05:04:29.000Z",
+   "lang": "zh",
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "芯片发展简史科普动画",
+    "en": "AI-generated history of computer chips"
+   },
+   "summary": {
+    "zh": "一部用Claude Opus 5.5制作的《芯片简史》视频，从灯丝技术讲到EUV光刻，作者表示制作该视频没有使用提示词。",
+    "en": "A history-of-chips explainer video made with Claude Opus 5.5, covering the progression from filament technology to EUV lithography; the creator states no prompts were used to make the video."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 117533,
+    "likes": 1161,
+    "replies": 116,
+    "reposts": 132,
+    "bookmarks": 870,
+    "checkedAt": "2026-09-30T08:51:55.597Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2104436953773178880/img/Tg68gxZ0Rwxp92Lj.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2104436953773178880/vid/avc1/1280x720/lQ9l2OjqQ_UKDMBs.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 209
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103643040326008894",
    "url": "https://x.com/ochyai/status/2103643040326008894",
    "author": {
@@ -10035,6 +10934,55 @@
    }
   },
   {
+   "id": "2104199889207038132",
+   "url": "https://x.com/hashimoto_no14/status/2104199889207038132",
+   "author": {
+    "handle": "hashimoto_no14",
+    "name": "はしもと社長｜AIエージェント開発・研修・業務実装"
+   },
+   "postedAt": "2026-09-27T13:22:02.000Z",
+   "lang": "ja",
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "户型图转CAD再到3D渲染的工作流",
+    "en": "Floor plan to CAD to 3D render workflow"
+   },
+   "summary": {
+    "zh": "作者使用Claude Code Opus 5.5实现从租赁户型图生成CAD文件（JWW、DXF），再用Blender渲染出高画质效果图，并在网页上分享的完整流程。",
+    "en": "A workflow using Claude Code Opus 5.5 to convert a rental floor plan into CAD files (JWW, DXF), then into a Blender-rendered perspective image, and finally share it on the web."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Claude Code",
+    "Blender",
+    "JWW",
+    "DXF"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 107189,
+    "likes": 854,
+    "replies": 12,
+    "reposts": 62,
+    "bookmarks": 1002,
+    "checkedAt": "2026-09-30T08:51:55.597Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2104199414495813632/img/et2dXMyUXnwbMZ79.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2104199414495813632/vid/avc1/1280x720/MMm7hK--HSWetBsd.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102476831031017581",
    "url": "https://x.com/bridgebench/status/2102476831031017581",
    "author": {
@@ -10171,6 +11119,55 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2104428800134013205",
+   "url": "https://x.com/rauchg/status/2104428800134013205",
+   "author": {
+    "handle": "rauchg",
+    "name": "Guillermo Rauch"
+   },
+   "postedAt": "2026-09-28T04:31:39.000Z",
+   "lang": "en",
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "用Rust和Swift重构的原生迷你浏览器",
+    "en": "Native mini browser rebuilt in Rust and Swift"
+   },
+   "summary": {
+    "zh": "作者将自己的 Mini 网页浏览器从 Electron/Bun 移植到 Rust 和 Swift，使用 Opus 5.5 和 Sol 6 协助开发，并通过 ACP 和 MCP 嵌入代理来控制浏览器。",
+    "en": "The creator ported his Mini web browser from Electron/Bun to Rust and Swift, using Opus 5.5 and Sol 6 to help build it, embedding an agent via ACP and MCP for browser control."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Sol 6",
+    "ACP",
+    "MCP",
+    "cef"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 105362,
+    "likes": 1515,
+    "replies": 148,
+    "reposts": 59,
+    "bookmarks": 959,
+    "checkedAt": "2026-09-30T08:51:55.597Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2104423180136009728/img/LHmZPtJ8KPUd7n84.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2104423180136009728/vid/avc1/1016x720/Bu7oJrnhyBZe_BNN.mp4?tag=29",
+    "width": 1016,
+    "height": 720,
+    "durationSec": 62
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -11169,6 +12166,52 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2104391577091407965",
+   "url": "https://x.com/deedydas/status/2104391577091407965",
+   "author": {
+    "handle": "deedydas",
+    "name": "Deedy"
+   },
+   "postedAt": "2026-09-28T02:03:44.000Z",
+   "lang": "en",
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "SQLite代码库解析视频",
+    "en": "SQLite Codebase Explainer"
+   },
+   "summary": {
+    "zh": "一个关于 SQLite 代码库的7分钟讲解视频，涵盖其架构、查询执行流程和核心抽象概念，完全由 Opus 5.5 生成，并使用 Gemini 3.8 进行语音合成。",
+    "en": "A 7-minute explainer video about the SQLite codebase, covering its architecture, query execution, and core abstractions, generated entirely by Opus 5.5 with Gemini 3.8 for text-to-speech."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Gemini 3.8 TTS"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 94752,
+    "likes": 1766,
+    "replies": 87,
+    "reposts": 126,
+    "bookmarks": 2019,
+    "checkedAt": "2026-09-30T08:51:55.597Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2104388989784612864/img/KMHfp9Kge2AbAG2o.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2104388989784612864/vid/avc1/1280x720/5X7rQFlGPMiKbcpX.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 450
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }

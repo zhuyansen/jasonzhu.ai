@@ -823,5 +823,239 @@
    "审核把握不足（medium）：The post presents a creator-made 3D browser game, but the current title is generic and centered on the model."
   ],
   "heldAt": "2026-09-29T08:51:29.265Z"
+ },
+ {
+  "candidate": {
+   "id": "2104225147184132310",
+   "url": "https://x.com/Rixhabh__/status/2104225147184132310",
+   "handle": "Rixhabh__",
+   "name": "Rishabh",
+   "followers": 109703,
+   "verified": true,
+   "createdAt": "2026-09-27T15:02:24.000Z",
+   "lang": "pt",
+   "text": "GPT-6 Astra Vs Claude Opus 5.5 https://t.co/73iLbsY7Fj",
+   "links": [],
+   "views": 593829,
+   "likes": 2666,
+   "replies": 64,
+   "reposts": 117,
+   "quotes": 8,
+   "bookmarks": 633,
+   "conversationId": "2104225147184132310",
+   "quoted": null,
+   "video": {
+    "poster": "https://pbs.twimg.com/ext_tw_video_thumb/2104039074889715712/pu/img/zFnly_ZND1uBKZpn.jpg",
+    "mp4": "https://video.twimg.com/ext_tw_video/2104039074889715712/pu/vid/avc1/720x960/p6sfSTb72XFdVXBk.mp4?tag=12",
+    "width": 720,
+    "height": 960,
+    "durationSec": 30,
+    "aspect": [
+     3,
+     4
+    ]
+   },
+   "seed": false,
+   "via": "daily",
+   "checkedAt": "2026-09-30T08:51:55.597Z"
+  },
+  "classified": {
+   "id": "2104225147184132310",
+   "kind": "comparison",
+   "keep": true,
+   "original": "unclear",
+   "category": "comparison",
+   "prompt_signal": "none",
+   "reference_assets": false,
+   "tools": [
+    "GPT-6 Astra"
+   ],
+   "title_en": "GPT-6 Astra vs Claude Opus 5.5 comparison",
+   "title_zh": "GPT-6 Astra对比Claude Opus5.5",
+   "confidence": "medium"
+  },
+  "extracted": {
+   "id": "2104225147184132310",
+   "prompt": null,
+   "reference_assets": false,
+   "tools": [
+    "GPT-6 Astra"
+   ],
+   "summary_en": "The creator posted a comparison video between GPT-6 Astra and Claude Opus 5.5 without describing the prompt used.",
+   "summary_zh": "作者发布了一段对比GPT-6 Astra和Claude Opus 5.5的视频,但没有说明所用的提示词。",
+   "note": ""
+  },
+  "audit": {
+   "id": "2104225147184132310",
+   "verdict": "hold",
+   "confidence": "low",
+   "prompt_ok": null,
+   "issues": [
+    "title_generic"
+   ],
+   "reason": "The text names only a model comparison; it does not establish a visual work, creator ownership, or what was made."
+  },
+  "reasons": [
+   "审核拿不准：The text names only a model comparison; it does not establish a visual work, creator ownership, or what was made."
+  ],
+  "heldAt": "2026-09-30T08:51:55.597Z"
+ },
+ {
+  "candidate": {
+   "id": "2104211036534718882",
+   "url": "https://x.com/okota_tsu_/status/2104211036534718882",
+   "handle": "okota_tsu_",
+   "name": "たかつ",
+   "followers": 777,
+   "verified": true,
+   "createdAt": "2026-09-27T14:06:20.000Z",
+   "lang": "ja",
+   "text": "AirDropでiPhoneから送った画像が毎回HEICになってそれを書き出しで変換するのがめんどくさかったので、AirDrop受信を検知して自動で変換できるmac Appを作った。(動画はOpus5.5・サイトはCodexのセンスに任せてロリポップデプロイナウしてみた)\nhttps://t.co/DVLFr94KTG\nhttps://t.co/D2FVohP1qC https://t.co/YRp4cwZKwh",
+   "links": [
+    "https://github.com/yuuki00682200/AirDropConverter?tab=readme-ov-file",
+    "https://airdropconverter.lolipop-now.app/"
+   ],
+   "views": 388158,
+   "likes": 921,
+   "replies": 7,
+   "reposts": 86,
+   "quotes": 42,
+   "bookmarks": 971,
+   "conversationId": "2104211036534718882",
+   "quoted": null,
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2104210871388147713/img/l47EMQLrvVrK7FCP.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2104210871388147713/vid/avc1/1280x720/4W6-FRoca1aOav4G.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 37,
+    "aspect": [
+     16,
+     9
+    ]
+   },
+   "seed": false,
+   "via": "daily",
+   "checkedAt": "2026-09-30T08:51:55.597Z"
+  },
+  "classified": {
+   "id": "2104211036534718882",
+   "kind": "work",
+   "keep": true,
+   "original": "creator",
+   "category": "product",
+   "prompt_signal": "none",
+   "reference_assets": false,
+   "tools": [
+    "Claude Code",
+    "Codex"
+   ],
+   "title_en": "Mac app demo for auto HEIC conversion",
+   "title_zh": "自动转换HEIC的Mac应用演示",
+   "confidence": "medium"
+  },
+  "extracted": {
+   "id": "2104211036534718882",
+   "prompt": null,
+   "reference_assets": false,
+   "tools": [
+    "Claude Code",
+    "Codex"
+   ],
+   "summary_en": "A macOS app that automatically converts HEIC images received via AirDrop, initially started with Claude Code and later completed and deployed (including the site) with Codex; no specific prompt was shared.",
+   "summary_zh": "作者制作了一款可自动检测AirDrop接收并将HEIC图片转换格式的Mac应用,最初用Claude Code开发,后来用Codex完善并部署了网站,未公开具体提示词。",
+   "note": ""
+  },
+  "audit": {
+   "id": "2104211036534718882",
+   "verdict": "publish",
+   "confidence": "medium",
+   "prompt_ok": null,
+   "issues": [],
+   "reason": "The Japanese text explicitly credits Opus for the video, not the app or website; the demo video is the qualifying work."
+  },
+  "reasons": [
+   "审核把握不足（medium）：The Japanese text explicitly credits Opus for the video, not the app or website; the demo video is the qualifying work."
+  ],
+  "heldAt": "2026-09-30T08:51:55.597Z"
+ },
+ {
+  "candidate": {
+   "id": "2104184011820236976",
+   "url": "https://x.com/keitowebai/status/2104184011820236976",
+   "handle": "keitowebai",
+   "name": "KEITO💻AIディレクター",
+   "followers": 46094,
+   "verified": true,
+   "createdAt": "2026-09-27T12:18:56.000Z",
+   "lang": "ja",
+   "text": "Claude Opus 5.5 × Gemini 3.8 Flash TTSの可能性が凄いよ。全部ワンショットです。 https://t.co/1h9iRVE9SX",
+   "links": [],
+   "views": 138237,
+   "likes": 437,
+   "replies": 5,
+   "reposts": 30,
+   "quotes": 8,
+   "bookmarks": 531,
+   "conversationId": "2104184011820236976",
+   "quoted": null,
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2104182893723754496/img/hj5Uq12yIK4aQ6WM.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2104182893723754496/vid/avc1/1280x720/ftf8BkLYlRuUtl1X.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 43,
+    "aspect": [
+     16,
+     9
+    ]
+   },
+   "seed": false,
+   "via": "daily",
+   "checkedAt": "2026-09-30T08:51:55.597Z"
+  },
+  "classified": {
+   "id": "2104184011820236976",
+   "kind": "work",
+   "keep": true,
+   "original": "creator",
+   "category": "production",
+   "prompt_signal": "none",
+   "reference_assets": false,
+   "tools": [
+    "Gemini 3.8 Flash TTS"
+   ],
+   "title_en": "TTS audiovisual showcase",
+   "title_zh": "语音合成视听展示",
+   "confidence": "low"
+  },
+  "extracted": {
+   "id": "2104184011820236976",
+   "prompt": null,
+   "reference_assets": false,
+   "tools": [
+    "Gemini 3.8 Flash TTS"
+   ],
+   "summary_en": "A one-shot generated showcase combining Claude Opus 5.5 with Gemini 3.8 Flash TTS, with the accompanying video also edited using AI.",
+   "summary_zh": "作者展示了结合Claude Opus 5.5与Gemini 3.8 Flash TTS一次性生成的作品，配套视频也是用AI剪辑完成的。",
+   "note": ""
+  },
+  "audit": {
+   "id": "2104184011820236976",
+   "verdict": "hold",
+   "confidence": "medium",
+   "prompt_ok": null,
+   "issues": [
+    "title_generic"
+   ],
+   "reason": "The post mentions TTS and an AI-edited video, but the linked work is not described well enough to verify its visual nature.",
+   "title_en": "TTS audiovisual showcase",
+   "title_zh": "语音合成视听展示"
+  },
+  "reasons": [
+   "分类把握低",
+   "审核拿不准：The post mentions TTS and an AI-edited video, but the linked work is not described well enough to verify its visual nature."
+  ],
+  "heldAt": "2026-09-30T08:51:55.597Z"
  }
 ]
