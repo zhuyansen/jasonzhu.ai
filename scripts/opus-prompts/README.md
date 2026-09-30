@@ -45,8 +45,8 @@ node scripts/opus-prompts/assemble.mjs --write && node scripts/generate-opus-pro
 5. **裁决**：
    - 审核 `publish` 且把握 `high` → 直接提交 main 上线；审核否决了提示词的，作品照常收录但不带提示词
    - 审核 `reject` 且把握 `high` → 丢弃，写进运行摘要
-   - 其余（把握不足、分类把握低、提示词在截图里、审核模型不可用）→ `data/pending.json` → 滚动 PR
-6. **滚动 PR**（分支 `opus-prompts/pending`）：每天从最新 main 重建。合并 = 批准全部；否决某条 = 把 ID 加进 `curation.json` 的 `dropCase`；不管它 = 14 天后自动丢弃。
+   - 其余（把握不足、分类把握低、提示词在截图里）→ **Opus 终审**（`lib/arbitrate.mjs` + `prompts/arbitrate.md`）拍板通过或否决，并决定提示词留不留。模型优先 `claude-opus-5-5`，通道没开通就用 `claude-opus-5`（`OPUS_ARBITER_MODELS` 可覆盖）
+6. **待审队列 / 滚动 PR**（分支 `opus-prompts/pending`）：只有 Opus 终审也不可用时才进这里。合并 = 批准全部；否决某条 = 把 ID 加进 `curation.json` 的 `dropCase`；不管它 = 14 天后自动丢弃。已有队列可用 `node scripts/opus-prompts/arbitrate-pending.mjs` 补跑终审。
 
 每次运行的摘要（Actions 页面）会列出 twitterapi.io 消耗和两家模型的 token 用量。
 

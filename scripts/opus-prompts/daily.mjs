@@ -18,6 +18,7 @@ import path from "node:path";
 import { workerJSON, reviewerJSON, usage } from "./lib/llm.mjs";
 import { searchWindow, authorThread, normalize, cost } from "./lib/x.mjs";
 import { resolvePrompt, bundle } from "./lib/resolve.mjs";
+import { arbitrate, applyDecision } from "./lib/arbitrate.mjs";
 
 const D = path.join(import.meta.dirname, "data");
 const P = path.join(import.meta.dirname, "prompts");
@@ -73,8 +74,9 @@ const qualified = fresh.filter((t) => (t.viewCount || 0) >= THRESHOLD).map((t) =
 const picked = qualified.slice(0, CAP);
 log(`搜索返回 ${raw.length} 条${truncated ? "（触及单次上限，窗口内可能还有更多）" : ""} · 没见过的 ${fresh.length} · 播放≥${THRESHOLD} 且带视频 ${qualified.length} · 本次处理 ${picked.length}`);
 
-const stat = { published: [], publishedNoPrompt: [], held: [], rejected: [], notWork: 0, reposts: 0 };
+const stat = { published: [], publishedNoPrompt: [], held: [], rejected: [], arbPublished: [], arbRejected: [], notWork: 0, reposts: 0 };
 const notes = [];
+const held = [];
 
 if (picked.length) {
   // 模型调用统一走这里：一批失败（输出截断 / JSON 坏了 / 重试用尽）就对半拆开再试，拆到单条还不行才放弃那一条。
@@ -152,6 +154,7 @@ if (picked.length) {
   for (const [id, why] of Object.entries(audFail)) audit[id] = { verdict: "hold", confidence: "low", issues: [], reason: `审核模型不可用（${why.slice(0, 60)}）` };
 
   // ── 6. 裁决 ──
+
   for (const c of works) {
     const k = cls[c.id], e = ext[c.id], a = audit[c.id];
     if (a.title_en && a.title_zh) { k.title_en = a.title_en.slice(0, 80); k.title_zh = a.title_zh.slice(0, 60); }
@@ -167,9 +170,22 @@ if (picked.length) {
     let prompt = e.prompt;
     if (prompt && a.prompt_ok === false && a.confidence === "high") { notes.push(`${c.id} 审核否决了提示词（${(a.issues || []).join(",") || "—"}）：${a.reason}`); prompt = null; }
     const record = { id: c.id, prompt: prompt?.text || prompt?.source === "link" ? prompt : null, reference_assets: k.reference_assets, tools: k.tools, summary_en: e.raw.summary_en || "", summary_zh: e.raw.summary_zh || "", note: e.raw.note || "" };
-    if (reasons.length) { pending.push({ candidate: c, classified: k, extracted: { ...record, prompt: e.prompt }, audit: a, reasons, heldAt: nowISO }); stat.held.push(`${line} — ${reasons.join("；")}`); continue; }
+    if (reasons.length) { held.push({ candidate: c, classified: k, extracted: { ...record, prompt: e.prompt }, audit: a, reasons, thread: bundles[c.id].thread, line }); continue; }
     candidates.push(c); classified[c.id] = k; extracted.push(record); known.add(c.id);
     (record.prompt?.text ? stat.published : stat.publishedNoPrompt).push(line);
+  }
+}
+
+// ── 6b. 终审：审核拿不准的交给 Opus 拍板；Opus 也不可用时才进待审队列 ──
+if (held.length) {
+  const { decisions, failed } = await arbitrate(held, log);
+  for (const x of held) {
+    const c = x.candidate, d = decisions[c.id];
+    if (!d) { const { thread, line, ...rest } = x; pending.push({ ...rest, heldAt: nowISO }); stat.held.push(`${line} — ${x.reasons.join("；")}；终审不可用（${failed[c.id] || "?"}）`); continue; }
+    const rec = applyDecision(x, d);
+    if (!rec) { stat.arbRejected.push(`${x.line} — ${d.reason}`); continue; }
+    candidates.push(c); classified[c.id] = x.classified; extracted.push(rec); known.add(c.id);
+    stat.arbPublished.push(`${x.line}${rec.prompt ? "（带提示词）" : ""} — ${d.reason}`);
   }
 }
 
@@ -179,12 +195,13 @@ const summary = [
   `窗口 ${new Date(from).toISOString().slice(0, 16)}Z → ${new Date(to).toISOString().slice(0, 16)}Z（发布时间）`, "",
   "| 项 | 数量 |", "|---|---|",
   `| 搜索返回 | ${raw.length}${truncated ? "（触及上限）" : ""} |`, `| 没见过的 | ${fresh.length} |`, `| 播放 ≥${THRESHOLD} 且带视频 | ${qualified.length} |`, `| 本次处理（上限 ${CAP}） | ${picked.length} |`,
-  `| **上线：带提示词** | ${stat.published.length} |`, `| **上线：仅作品** | ${stat.publishedNoPrompt.length} |`, `| 转人工（待审队列共 ${pending.length}） | ${stat.held.length} |`, `| 审核否决 | ${stat.rejected.length} |`, `| 非作品 / 转帖 | ${stat.notWork} / ${stat.reposts} |`,
+  `| **上线：带提示词** | ${stat.published.length} |`, `| **上线：仅作品** | ${stat.publishedNoPrompt.length} |`, `| 终审（Opus）通过 / 否决 | ${stat.arbPublished.length} / ${stat.arbRejected.length} |`, `| 进待审队列（共 ${pending.length}） | ${stat.held.length} |`, `| 审核否决 | ${stat.rejected.length} |`, `| 非作品 / 转帖 | ${stat.notWork} / ${stat.reposts} |`,
   "", "| 消耗 | |", "|---|---|",
   `| twitterapi.io | ${cost.tweets} 条 ≈ ${cost.credits.toLocaleString("en-US")} credits |`,
   `| 干活模型（Claude） | ${usage.worker.calls} 次调用 · 输入 ${usage.worker.in.toLocaleString("en-US")} / 输出 ${usage.worker.out.toLocaleString("en-US")} tokens |`,
   `| 审核模型（${usage.reviewer.provider || "未调用"}） | ${usage.reviewer.calls} 次调用 · 输入 ${usage.reviewer.in.toLocaleString("en-US")} / 输出 ${usage.reviewer.out.toLocaleString("en-US")} tokens |`,
-  ...[["上线：带提示词", stat.published], ["上线：仅作品", stat.publishedNoPrompt], ["转人工", stat.held], ["审核否决", stat.rejected], ["备注", notes]].flatMap(([t, l]) => (l.length ? ["", `**${t}**`, ...l.map((s) => `- ${s}`)] : [])),
+  `| 终审模型（${usage.arbiter.model || "未调用"}） | ${usage.arbiter.calls} 次调用 · 输入 ${usage.arbiter.in.toLocaleString("en-US")} / 输出 ${usage.arbiter.out.toLocaleString("en-US")} tokens |`,
+  ...[["上线：带提示词", stat.published], ["上线：仅作品", stat.publishedNoPrompt], ["终审通过", stat.arbPublished], ["终审否决", stat.arbRejected], ["进待审队列", stat.held], ["审核否决", stat.rejected], ["备注", notes]].flatMap(([t, l]) => (l.length ? ["", `**${t}**`, ...l.map((s) => `- ${s}`)] : [])),
 ].join("\n");
 log("\n" + summary);
 if (process.env.GITHUB_STEP_SUMMARY) fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, summary + "\n");

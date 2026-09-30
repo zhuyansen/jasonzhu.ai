@@ -16,7 +16,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const CURL = process.env.CLAUDE_TRANSPORT === "curl";
 
 const redact = (t) => String(t).replace(/(sk-|Bearer\s+)[A-Za-z0-9_\-]{8,}/g, "$1***");
-export const usage = { worker: { calls: 0, in: 0, out: 0 }, reviewer: { calls: 0, in: 0, out: 0, provider: "" } };
+export const usage = { worker: { calls: 0, in: 0, out: 0 }, reviewer: { calls: 0, in: 0, out: 0, provider: "" }, arbiter: { calls: 0, in: 0, out: 0, model: "" } };
 
 const MODELS = (process.env.OPUS_LLM_MODELS || "claude-sonnet-5,claude-sonnet-4-6,claude-sonnet-4-5").split(",").map((s) => s.trim()).filter(Boolean);
 const endpoints = [
@@ -129,4 +129,41 @@ export async function reviewerJSON(prompt, { label = "reviewer", maxTokens = 600
   }
   // 第二模型彻底不可用：不降级成自审自签，让调用方把这批全部转人工
   throw new Error(`reviewer unavailable: ${last?.message}`);
+}
+
+/**
+ * 终审（arbiter）：审核拿不准的作品交给 Opus 拍板。
+ * 优先 claude-opus-5-5，通道没开通（404 not available）就用 claude-opus-5。按通道顺序试：主代理 → 官方。
+ */
+const ARBITER_MODELS = (process.env.OPUS_ARBITER_MODELS || "claude-opus-5-5,claude-opus-5").split(",").map((s) => s.trim()).filter(Boolean);
+const arbiterEndpoints = [
+  process.env.ANTHROPIC_AUTH_TOKEN && { label: "proxy", key: process.env.ANTHROPIC_AUTH_TOKEN, baseURL: process.env.ANTHROPIC_BASE_URL || "https://api.aigocode.app" },
+  process.env.ANTHROPIC_API_KEY && { label: "official", key: process.env.ANTHROPIC_API_KEY, baseURL: "https://api.anthropic.com" },
+].filter(Boolean);
+const unavailable = new Set(); // "label/model" 组合，本次运行内不再尝试
+
+export async function arbiterJSON(prompt, { label = "arbiter", maxTokens = 8000, timeoutMs = 300000, validate } = {}) {
+  let last;
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    for (const ep of arbiterEndpoints) for (const model of ARBITER_MODELS) {
+      const tag = `${ep.label}/${model}`;
+      if (unavailable.has(tag)) continue;
+      try {
+        const { status, text } = await post(`${ep.baseURL}/v1/messages`, { "x-api-key": ep.key, "anthropic-version": "2023-06-01", "content-type": "application/json" },
+          { model, max_tokens: maxTokens, messages: [{ role: "user", content: prompt }] }, timeoutMs);
+        if (status >= 400 && status < 500 && /not available|not_found|does not have access|model/i.test(text)) { unavailable.add(tag); continue; }
+        if (status >= 400 || !text) throw new Error(`${tag} HTTP ${status}: ${redact(text.slice(0, 160))}`);
+        const j = JSON.parse(text);
+        if (j.type === "error") throw new Error(`${tag} API error: ${JSON.stringify(j.error).slice(0, 160)}`);
+        if (j.stop_reason === "max_tokens") { const e = new Error(`${tag} output truncated`); e.tooBig = true; throw e; }
+        usage.arbiter.calls++; usage.arbiter.in += j.usage?.input_tokens || 0; usage.arbiter.out += j.usage?.output_tokens || 0; usage.arbiter.model = tag;
+        const json = parseJSON((j.content || []).filter((b) => b.type === "text").map((b) => b.text).join(""));
+        const problem = validate?.(json);
+        if (problem) throw new Error(`bad output: ${problem}`);
+        return { json, via: tag };
+      } catch (e) { if (e.tooBig) throw e; last = e; console.log(`  ⚠️ ${label}: ${String(e.message).slice(0, 140)}`); }
+    }
+    await sleep(4000 * attempt);
+  }
+  throw new Error(`arbiter unavailable: ${last?.message || "no Opus model available on any endpoint"}`);
 }
