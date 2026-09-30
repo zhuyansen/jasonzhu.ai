@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Opus 5.5 提示词库编译：
+ * Claude 5.5（Opus 5.5 · Sonnet 5.5）提示词库编译：
  *   src/content/opus-prompts/cases.json（源：人工/脚本整理，含完整提示词）
  *   → src/generated/opus-prompts.json          列表用精简版（提示词只留摘要，控制 RSC 体积）
  *   → src/generated/opus-prompts-full.json     详情页服务端用（含完整提示词）
@@ -68,7 +68,7 @@ for (const ids of groups.values()) if (ids.length > 1) for (const id of ids) gro
 
 const withPromptCount = cases.filter((c) => c.prompt).length;
 const slim = cases.map((c) => ({
-  id: c.id, url: c.url, author: c.author, postedAt: c.postedAt, lang: c.lang, category: c.category, title: c.title,
+  id: c.id, url: c.url, author: c.author, postedAt: c.postedAt, lang: c.lang, models: c.models || ["opus-5.5"], category: c.category, title: c.title,
   prompt: c.prompt ? { kind: c.prompt.kind, source: c.prompt.source, sourceUrl: c.prompt.sourceUrl, length: c.prompt.text.length, excerpt: excerpt(c.prompt.text) } : null,
   group: groupOf.get(c.id) || null,
   referenceAssets: !!c.referenceAssets, tools: c.tools || [],
@@ -76,7 +76,8 @@ const slim = cases.map((c) => ({
   video: c.video,
 }));
 const distinct = withPromptCount - [...groupOf.values()].length + new Set([...groupOf.values()].map((g) => g.key)).size;
-const head = { model: src.model, threshold: src.threshold, updatedAt: src.updatedAt, statsCheckedAt: src.statsCheckedAt, distinctPrompts: distinct, withPrompt: withPromptCount };
+const head = { model: src.model, threshold: src.threshold, updatedAt: src.updatedAt, statsCheckedAt: src.statsCheckedAt, distinctPrompts: distinct, withPrompt: withPromptCount,
+  modelCounts: Object.fromEntries(["opus-5.5", "sonnet-5.5"].map((m) => [m, cases.filter((c) => (c.models || ["opus-5.5"]).includes(m)).length])) };
 
 fs.mkdirSync(path.dirname(OUT_LIST), { recursive: true });
 fs.writeFileSync(OUT_LIST, JSON.stringify({ ...head, cases: slim }));

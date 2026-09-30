@@ -1,6 +1,6 @@
-name: Opus 提示词库每日收录
+name: Claude 5.5 提示词库每日收录
 
-# 每天北京时间 10:30：收录两天前发布、播放过 5000 的新作品，每天最多 40 个（按播放量优先）。
+# 每天北京时间 10:30：收录两天前发布、播放过 5000 的 Opus 5.5 / Sonnet 5.5 新作品，每天最多 80 个（按播放量优先）。
 # Claude 分类并定位提示词 → 代码逐字对账 → Jev 审核 → 拿不准的交 Opus 终审。
 # 把握大的直接提交到 main 上线；拿不准的进「滚动 PR」（分支 opus-prompts/pending），合并即批准。
 #
@@ -12,7 +12,7 @@ on:
     inputs:
       cap:
         description: "本次最多处理多少个作品"
-        default: "40"
+        default: "80"
 
 permissions:
   contents: write
@@ -48,7 +48,7 @@ jobs:
           ANTHROPIC_BASE_URL: "https://api.aigocode.app"
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           APIMART_API_KEY: ${{ secrets.APIMART_API_KEY }}
-          CAP: ${{ inputs.cap || '40' }}
+          CAP: ${{ inputs.cap || '80' }}
         run: |
           if [ -z "$TWITTERAPI_IO_KEY" ]; then
             echo "::error::缺少 Secret TWITTERAPI_IO_KEY，无法搜索新帖"

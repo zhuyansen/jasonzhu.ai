@@ -4,11 +4,12 @@
  *
  *   搜索  只搜「两天前那 24 小时」发布的帖子（since_time/until_time），点赞 ≥100。
  *         延迟两天是让播放量涨到位；每条帖子只落在一个窗口里，只付一次钱，已见过的永不重新处理。
- *   限量  播放 ≥5000 的按播放量取前 CAP 个（默认 40）。
+ *   限量  播放 ≥5000 的按播放量取前 CAP 个（默认 80）。
  *   判断  Claude 分类 → 抓作者回复 → Claude 定位提示词 → 代码逐字对账
  *   审核  第二家模型复核；把握大的自动上线，拿不准的进 data/pending.json 等人看
  *
  * 用法：node scripts/opus-prompts/daily.mjs [--dry]
+ * 补跑：WINDOW_FROM=2026-09-28T18:00Z WINDOW_TO=2026-09-29T10:00Z SEARCH_TERMS='"Sonnet 5.5" OR "Sonnet5.5"' node …
  * 环境变量：TWITTERAPI_IO_KEY（必需）· ANTHROPIC_AUTH_TOKEN / APIMART_API_KEY / ANTHROPIC_API_KEY（至少一个）
  *          FLATROUTER_API_KEY（审核用第二模型，强烈建议配）
  *          CAP=40 · MIN_FAVES=100 · DELAY_HOURS=48 · MAX_SEARCH_TWEETS=400 · CLAUDE_TRANSPORT=curl（本机）
@@ -24,7 +25,7 @@ import { jevAudit, jevUsage } from "./lib/jev.mjs";
 const D = path.join(import.meta.dirname, "data");
 const P = path.join(import.meta.dirname, "prompts");
 const DRY = process.argv.includes("--dry");
-const CAP = Number(process.env.CAP || 40);
+const CAP = Number(process.env.CAP || 80);
 const MIN_FAVES = Number(process.env.MIN_FAVES || 100);
 const DELAY = Number(process.env.DELAY_HOURS || 48) * 3600e3;
 const MAX_SEARCH = Number(process.env.MAX_SEARCH_TWEETS || 400);
@@ -51,9 +52,11 @@ pending = pending.filter((p) => !known.has(p.candidate.id) && !curation.dropCase
 if (before !== pending.length) log(`待审队列清理：${before} → ${pending.length}`);
 
 // ── 1. 搜索窗口 ──
-const to = now - DELAY;
-let from = state.windowEnd ? Date.parse(state.windowEnd) : to - 864e5;
-if (to - from > 3 * 864e5) { log(`⚠️ 距上次运行超过 3 天，只补最近 3 天`); from = to - 3 * 864e5; }
+// WINDOW_FROM / WINDOW_TO：补跑指定时间段（比如新模型发布后补首批），此时不读写 state.windowEnd
+const MANUAL = Boolean(process.env.WINDOW_FROM && process.env.WINDOW_TO);
+const to = MANUAL ? Date.parse(process.env.WINDOW_TO) : now - DELAY;
+let from = MANUAL ? Date.parse(process.env.WINDOW_FROM) : state.windowEnd ? Date.parse(state.windowEnd) : to - 864e5;
+if (!MANUAL && to - from > 3 * 864e5) { log(`⚠️ 距上次运行超过 3 天，只补最近 3 天`); from = to - 3 * 864e5; }
 if (to - from < 3600e3) { log("窗口不足 1 小时，今天已经跑过了"); process.exit(0); }
 log(`窗口（按发布时间）：${new Date(from).toISOString()} → ${new Date(to).toISOString()} · 点赞 ≥${MIN_FAVES} · 上限 ${CAP} 个`);
 
@@ -75,6 +78,7 @@ const qualified = fresh.filter((t) => (t.viewCount || 0) >= THRESHOLD).map((t) =
 const picked = qualified.slice(0, CAP);
 log(`搜索返回 ${raw.length} 条${truncated ? "（触及单次上限，窗口内可能还有更多）" : ""} · 没见过的 ${fresh.length} · 播放≥${THRESHOLD} 且带视频 ${qualified.length} · 本次处理 ${picked.length}`);
 
+const TERMS_LOG = process.env.SEARCH_TERMS || "Opus 5.5 + Sonnet 5.5";
 const stat = { published: [], publishedNoPrompt: [], held: [], rejected: [], arbPublished: [], arbRejected: [], notWork: 0, reposts: 0 };
 const notes = [];
 const held = [];
@@ -223,6 +227,6 @@ wr("classified.json", "{\n" + Object.entries(classified).map(([k, v]) => `${JSON
 wr("extracted.json", "[\n" + extracted.map((e) => JSON.stringify(e)).join(",\n") + "\n]\n");
 wr("pending.json", pending);
 wr("seen.json", "[" + [...seen].sort().map((s) => JSON.stringify(s)).join(",") + "]\n");
-wr("state.json", { windowEnd: new Date(to).toISOString(), lastRunAt: nowISO, lastRun: { searched: raw.length, processed: picked.length, published: stat.published.length + stat.publishedNoPrompt.length, held: stat.held.length, credits: cost.credits } });
+if (!MANUAL) wr("state.json", { windowEnd: new Date(to).toISOString(), lastRunAt: nowISO, lastRun: { searched: raw.length, processed: picked.length, published: stat.published.length + stat.publishedNoPrompt.length, held: stat.held.length, credits: cost.credits } });
 fs.rmSync(WORK, { recursive: true, force: true });
 log("\n✅ 已写入 data/");

@@ -3,6 +3,7 @@
 import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
+import { detectModels } from "./lib/models.mjs";
 const D = path.join(import.meta.dirname, "data");
 const rd = (f) => JSON.parse(fs.readFileSync(path.join(D, f), "utf8"));
 const SITE = path.join(import.meta.dirname, "../..");
@@ -59,7 +60,8 @@ for (const c of C) {
   title.zh = title.zh.replace(/一镜到底的?/g, "一次生成的").replace(/陈列片/g, "展示片").replace(/运动设计/g, "动效设计").replace(/动态图形/g, "动效");
   if (!prompt) stat.none++;
   const tools = [...new Set([...(e?.tools || k.tools || [])].map(t => String(t).trim()).filter(t => t && !/^(claude )?opus ?5\.5/i.test(t)))].slice(0, 8);
-  cases.push({ id: c.id, url: c.url, author: { handle: c.handle, name: c.name }, postedAt: c.createdAt, lang: c.lang, kind: k.kind, category: CUR.category[c.id] || k.category,
+  const models = detectModels(c.text, c.quoted?.handle === c.handle ? c.quoted.text : "", prompt?.text);
+  cases.push({ id: c.id, url: c.url, author: { handle: c.handle, name: c.name }, postedAt: c.createdAt, lang: c.lang, models, kind: k.kind, category: CUR.category[c.id] || k.category,
     title: { zh: zhPunct(title.zh), en: title.en }, summary: e?.summary_zh ? { zh: zhPunct(e.summary_zh), en: e.summary_en } : null, prompt,
     referenceAssets: CUR.referenceAssets.includes(c.id) || !!(e ? e.reference_assets : k.reference_assets), tools, resources,
     stats: { views: c.views, likes: c.likes, replies: c.replies, reposts: c.reposts, bookmarks: c.bookmarks, checkedAt: c.checkedAt },
@@ -70,6 +72,6 @@ fs.writeFileSync(path.join(D, "tco-cache.json"), JSON.stringify(tcoCache));
 cases.sort((a, b) => b.stats.views - a.stats.views);
 const now = process.env.OPUS_UPDATED_AT || C.map((c) => c.checkedAt).sort().at(-1);
 const checked = C.map(c => c.checkedAt).sort().at(-1);
-const out = { model: "Claude Opus 5.5", threshold: 5000, updatedAt: now, statsCheckedAt: checked, inclusionRule: "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5.", cases };
+const out = { model: "Claude 5.5 (Opus 5.5 · Sonnet 5.5)", threshold: 5000, updatedAt: now, statsCheckedAt: checked, inclusionRule: "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5 or Claude Sonnet 5.5.", cases };
 if (process.argv.includes("--write")) { fs.mkdirSync(`${SITE}/src/content/opus-prompts`, { recursive: true }); fs.writeFileSync(`${SITE}/src/content/opus-prompts/cases.json`, JSON.stringify(out, null, 1)); }
 console.log(JSON.stringify(stat), "| with prompt:", cases.filter(c => c.prompt).length, "| full:", cases.filter(c => c.prompt?.kind === "full").length, "| t.co expanded:", Object.values(tcoCache).filter(Boolean).length);

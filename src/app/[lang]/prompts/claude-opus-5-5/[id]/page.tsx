@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Locale } from "@/lib/dictionaries";
-import { categoryLabel, formatCount, formatDuration, getOpusCase, getOpusLibrary } from "@/lib/opus-prompts";
+import { MODEL_LABEL, categoryLabel, formatCount, formatDuration, getOpusCase, getOpusLibrary } from "@/lib/opus-prompts";
 import fullData from "@/generated/opus-prompts-full.json";
 import CaseVideo from "../CaseVideo";
 import CopyPrompt from "../CopyPrompt";
@@ -25,10 +25,10 @@ export function generateStaticParams() {
   ]);
 }
 
-const describe = (isZh: boolean, title: string, handle: string, views: number, kind?: string) =>
+const describe = (isZh: boolean, title: string, handle: string, views: number, kind: string | undefined, model: string) =>
   isZh
-    ? `${title}：@${handle} 用 Claude Opus 5.5 做的作品，原帖播放 ${formatCount(views, "zh")}。${kind === "full" ? "附完整提示词原文，可复制改写。" : kind ? "附作者公开的指令与出处。" : "可直接播放，附原帖出处。"}`
-    : `${title} — made with Claude Opus 5.5 by @${handle}, ${formatCount(views, "en")} views on the original post. ${kind === "full" ? "Full original prompt included." : kind ? "Includes the creator's brief and source." : "Watch it here, with a link to the original post."}`;
+    ? `${title}：@${handle} 用 Claude ${model} 做的作品，原帖播放 ${formatCount(views, "zh")}。${kind === "full" ? "附完整提示词原文，可复制改写。" : kind ? "附作者公开的指令与出处。" : "可直接播放，附原帖出处。"}`
+    : `${title} — made with Claude ${model} by @${handle}, ${formatCount(views, "en")} views on the original post. ${kind === "full" ? "Full original prompt included." : kind ? "Includes the creator's brief and source." : "Watch it here, with a link to the original post."}`;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang: rawLang, id } = await params;
@@ -36,8 +36,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const c = getOpusCase(id);
   if (!c) return {};
   const isZh = lang === "zh";
-  const title = `${isZh ? c.title.zh : c.title.en}${c.prompt ? (isZh ? "｜Opus 5.5 提示词" : " | Opus 5.5 Prompt") : (isZh ? "｜Opus 5.5 作品" : " | Opus 5.5 Work")}`;
-  const description = describe(isZh, isZh ? c.title.zh : c.title.en, c.author.handle, c.stats.views, c.prompt?.kind);
+  const modelName = (c.models || ["opus-5.5"]).map((m) => MODEL_LABEL[m]).join(" / ");
+  const title = `${isZh ? c.title.zh : c.title.en}${c.prompt ? (isZh ? `｜${modelName} 提示词` : ` | ${modelName} Prompt`) : (isZh ? `｜${modelName} 作品` : ` | ${modelName} Work`)}`;
+  const description = describe(isZh, isZh ? c.title.zh : c.title.en, c.author.handle, c.stats.views, c.prompt?.kind, modelName);
   return {
     title,
     description,
@@ -59,6 +60,7 @@ export default async function OpusCasePage({ params }: Props) {
   const isZh = lang === "zh";
   const c = getOpusCase(id);
   if (!c) notFound();
+  const modelName = (c.models || ["opus-5.5"]).map((m) => MODEL_LABEL[m]).join(" / ");
   const lib = getOpusLibrary();
   const prompt = full[id]?.prompt ?? null;
   const summary = full[id]?.summary ?? null;
@@ -78,7 +80,7 @@ export default async function OpusCasePage({ params }: Props) {
       "@context": "https://schema.org",
       "@type": "CreativeWork",
       name: title,
-      description: describe(isZh, title, c.author.handle, c.stats.views, c.prompt?.kind),
+      description: describe(isZh, title, c.author.handle, c.stats.views, c.prompt?.kind, modelName),
       url: `${SITE_URL}/${lang}/${PATH}/${id}`,
       inLanguage: isZh ? "zh-CN" : "en",
       datePublished: c.postedAt,
@@ -95,7 +97,7 @@ export default async function OpusCasePage({ params }: Props) {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "JasonZhu.AI", item: `${SITE_URL}/${lang}` },
-        { "@type": "ListItem", position: 2, name: isZh ? "Opus 5.5 提示词库" : "Opus 5.5 Prompt Library", item: `${SITE_URL}/${lang}/${PATH}` },
+        { "@type": "ListItem", position: 2, name: isZh ? "Claude 5.5 提示词库" : "Claude 5.5 Prompt Library", item: `${SITE_URL}/${lang}/${PATH}` },
         { "@type": "ListItem", position: 3, name: title, item: `${SITE_URL}/${lang}/${PATH}/${id}` },
       ],
     },
@@ -114,7 +116,7 @@ export default async function OpusCasePage({ params }: Props) {
 
       <nav className="text-sm text-gray-400 mb-5">
         <Link href={`/${lang}/${PATH}`} className="hover:text-[var(--primary)]">
-          ← {isZh ? "Opus 5.5 提示词库" : "Opus 5.5 Prompt Library"}
+          ← {isZh ? "Claude 5.5 提示词库" : "Claude 5.5 Prompt Library"}
         </Link>
       </nav>
 

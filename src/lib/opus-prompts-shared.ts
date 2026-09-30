@@ -15,8 +15,14 @@ export interface OpusPromptMeta {
   excerpt: string;
 }
 
+export type ClaudeModel = "opus-5.5" | "sonnet-5.5";
+
+export const MODEL_LABEL: Record<ClaudeModel, string> = { "opus-5.5": "Opus 5.5", "sonnet-5.5": "Sonnet 5.5" };
+
 export interface OpusCaseSlim {
   id: string;
+  /** 作者说用了哪个 Claude 5.5 模型；对比帖可能两个都有 */
+  models: ClaudeModel[];
   url: string;
   author: { handle: string; name: string };
   postedAt: string;
@@ -41,6 +47,7 @@ export interface OpusLibrary {
   distinctPrompts: number;
   /** 带提示词的作品数（其余只有视频和出处） */
   withPrompt: number;
+  modelCounts: Record<ClaudeModel, number>;
   cases: OpusCaseSlim[];
 }
 

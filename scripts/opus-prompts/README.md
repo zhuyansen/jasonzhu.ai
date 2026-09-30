@@ -1,4 +1,4 @@
-# Opus 5.5 提示词库 · 采集管线
+# Claude 5.5 提示词库（Opus 5.5 · Sonnet 5.5）· 采集管线
 
 站内页面 `/[lang]/prompts/claude-opus-5-5` 的数据来源。原则：**代码能量的由代码量，模型只做判断，判断结果由代码对账。**
 
@@ -38,8 +38,10 @@ node scripts/opus-prompts/assemble.mjs --write && node scripts/generate-opus-pro
 
 ### 每日收录怎么工作
 
-1. **按时间增量搜**：只搜「两天前那 24 小时」发布的帖子（`since_time`/`until_time`），点赞 ≥100。延迟两天是让播放量涨到位。每条帖子只落在一个窗口里，只付一次钱；见过的 ID 记在 `data/seen.json`，永不重新处理。
-2. **限量**：播放 ≥5000 的按播放量取前 40 个（`CAP`）。超出的当天放弃，不补。
+1. **按时间增量搜**：搜索词 `"Opus 5.5" OR "Sonnet 5.5"`（`lib/x.mjs`，`SEARCH_TERMS` 可覆盖），只搜「两天前那 24 小时」发布的帖子（`since_time`/`until_time`），点赞 ≥100。延迟两天是让播放量涨到位。每条帖子只落在一个窗口里，只付一次钱；见过的 ID 记在 `data/seen.json`，永不重新处理。
+2. **限量**：播放 ≥5000 的按播放量取前 80 个（`CAP`）。超出的当天放弃，不补。
+   **模型标签**：`lib/models.mjs` 按作者文字判断是 Opus 5.5 还是 Sonnet 5.5，两个都提到（对比帖）就都标。
+   **补跑某个时间段**（比如新模型发布后补首批）：`WINDOW_FROM=… WINDOW_TO=… SEARCH_TERMS='"Sonnet 5.5"' node scripts/opus-prompts/daily.mjs`，不会改动 `state.json` 的窗口。
 3. **判断**：Claude 分类 → 抓作者回复 → Claude 定位提示词 → `lib/resolve.mjs` 逐字对账，对不上带着报错重试一次，再不行按无提示词处理。
 4. **审核**：**TypeSafe Jev**（`lib/jev.mjs`，OpenRouter decisions 接口）对每个作品问两个多选题：这条帖子是什么（本人作品 / 本人做的模型对比 / 转发 / 教程 / 新闻 / 评论 / 非视觉产品），定位到的提示词是什么（可用 / 中途追问 / 片段 / 感想 / 给别的模型写的 / 空洞 / 依赖看不见的附件）。单条约 $0.00003。
    - 本人作品概率 ≥0.9 → 通过；转发/教程/新闻/非视觉合计 ≥0.9 → 否决；**判为评论或把握不足 → 交 Opus**

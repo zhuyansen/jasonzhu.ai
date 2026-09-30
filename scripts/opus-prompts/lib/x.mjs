@@ -39,8 +39,10 @@ async function paged(query, maxTweets, maxPages = 25) {
 }
 
 /** 按发布时间窗口搜：每条帖子只会落在一个窗口里，只付一次钱 */
+/** 搜索词：Opus 5.5 + Sonnet 5.5（9/28 发布）。SEARCH_TERMS 可覆盖（补跑单个模型时用） */
+export const TERMS = process.env.SEARCH_TERMS || '"Opus 5.5" OR "Opus5.5" OR "Sonnet 5.5" OR "Sonnet5.5"';
 export const searchWindow = ({ from, to, minFaves, maxTweets }) =>
-  paged(`("Opus 5.5" OR "Opus5.5") filter:native_video min_faves:${minFaves} -filter:replies since_time:${Math.floor(from / 1000)} until_time:${Math.floor(to / 1000)}`, maxTweets);
+  paged(`(${TERMS}) filter:native_video min_faves:${minFaves} -filter:replies since_time:${Math.floor(from / 1000)} until_time:${Math.floor(to / 1000)}`, maxTweets);
 
 export async function authorThread(c) {
   const ts = await paged(`conversation_id:${c.conversationId} from:${c.handle}`, 60, 3);

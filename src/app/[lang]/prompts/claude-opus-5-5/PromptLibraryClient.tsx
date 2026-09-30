@@ -7,6 +7,8 @@ import {
   categoryLabel,
   formatCount,
   formatDuration,
+  MODEL_LABEL,
+  type ClaudeModel,
   type OpusCaseSlim,
   type OpusCategory,
 } from "@/lib/opus-prompts-shared";
@@ -23,10 +25,11 @@ interface Props {
   initial: OpusCaseSlim[];
   total: number;
   counts: Record<string, number>;
+  modelCounts: Record<ClaudeModel, number>;
   lang: string;
 }
 
-export default function PromptLibraryClient({ initial, total, counts, lang }: Props) {
+export default function PromptLibraryClient({ initial, total, counts, modelCounts, lang }: Props) {
   const isZh = lang === "zh";
   const [all, setAll] = useState<OpusCaseSlim[]>(initial);
   const [loaded, setLoaded] = useState(initial.length >= total);
@@ -37,6 +40,7 @@ export default function PromptLibraryClient({ initial, total, counts, lang }: Pr
   const [noAssets, setNoAssets] = useState(false);
   const [q, setQ] = useState("");
   const [group, setGroup] = useState<string | null>(null);
+  const [model, setModel] = useState<ClaudeModel | null>(null);
   const [visible, setVisible] = useState(PAGE_SIZE);
 
   useEffect(() => {
@@ -62,6 +66,7 @@ export default function PromptLibraryClient({ initial, total, counts, lang }: Pr
     const needle = q.trim().toLowerCase();
     const list = all.filter((c) => {
       if (group && c.group?.key !== group) return false;
+      if (model && !c.models?.includes(model)) return false;
       if (category && c.category !== category) return false;
       if (promptOnly && !c.prompt) return false;
       if (fullOnly && c.prompt?.kind !== "full") return false;
@@ -82,11 +87,11 @@ export default function PromptLibraryClient({ initial, total, counts, lang }: Pr
       latest: (a, b) => (a.postedAt < b.postedAt ? 1 : -1),
     };
     return [...list].sort(by[sort]);
-  }, [all, category, fullOnly, promptOnly, noAssets, q, sort, group]);
+  }, [all, category, fullOnly, promptOnly, noAssets, q, sort, group, model]);
 
   const reset = () => setVisible(PAGE_SIZE);
   const shown = filtered.slice(0, visible);
-  const isFiltering = Boolean(category || fullOnly || promptOnly || noAssets || q.trim() || group);
+  const isFiltering = Boolean(category || fullOnly || promptOnly || noAssets || q.trim() || group || model);
   const pill = (active: boolean) =>
     `px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
       active ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200"
@@ -123,6 +128,21 @@ export default function PromptLibraryClient({ initial, total, counts, lang }: Pr
               <option value="bookmarks">{isZh ? "收藏" : "Bookmarks"}</option>
             </select>
           </label>
+        </div>
+
+        <div className="flex flex-wrap gap-2">
+          {([null, "opus-5.5", "sonnet-5.5"] as (ClaudeModel | null)[]).map((m) => (
+            <button
+              key={m ?? "all"}
+              onClick={() => { setModel(m); reset(); }}
+              className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
+                model === m ? "bg-[var(--primary)] text-white" : "bg-blue-50 text-[var(--primary)] hover:bg-blue-100"
+              }`}
+            >
+              {m ? MODEL_LABEL[m] : isZh ? "全部模型" : "All models"}{" "}
+              <span className="opacity-60">{m ? modelCounts[m] : total}</span>
+            </button>
+          ))}
         </div>
 
         <div className="flex flex-wrap gap-2">
@@ -248,6 +268,11 @@ function CaseCard({ c, lang, onGroup }: { c: OpusCaseSlim; lang: string; onGroup
 
       <div className="flex flex-col flex-1 p-4">
         <div className="flex items-center gap-2 text-xs text-gray-400 mb-1.5">
+          {(c.models || ["opus-5.5"]).map((m) => (
+            <span key={m} className={`px-1.5 py-0.5 rounded font-semibold ${m === "sonnet-5.5" ? "bg-amber-50 text-amber-700" : "bg-violet-50 text-violet-700"}`}>
+              {MODEL_LABEL[m]}
+            </span>
+          ))}
           <span className="px-2 py-0.5 rounded-full bg-blue-50 text-[var(--primary)] font-medium">
             {categoryLabel(c.category, lang)}
           </span>
