@@ -41,7 +41,7 @@ Git：commit 后如远程有新提交（cron 会自动 commit 快讯），先 `g
 
 **快讯 cron（.github/workflows/daily-news.yml）**
 - 北京时间清晨 5:30/6:30/7:15 三档重试；`collect-news.mjs` 抓 RSS → Claude 结构化 → 写 md + Supabase → commit。
-- API 容灾链：aigocode（https://api.aigocode.app，注意是 .app）→ apimart（claude-opus-4-6，key 只对这一个模型有权限）→ 官方。任何 5xx/超时/账号干涸自动切。
+- API 容灾链：aigocode（https://api.aigocode.app，注意是 .app）→ apimart → 官方。任何 5xx/超时/账号干涸自动切。主通道模型链 claude-opus-5-5 → claude-sonnet-5 → …（代理开通什么用什么，404「not available for this group」自动换下一个）；apimart 模型列表 claude-sonnet-5-5 → claude-opus-4-6，apimart 的 key 只开通了这两个，`APIMART_MODEL`（逗号分隔）可覆盖。模型被下线时 9/29–9/30 曾因降级条件只认 400 而两天没出快讯。
 - `CLAUDE_TRANSPORT=curl` 仅本地用——本机 Node/undici 连不上代理（UND_ERR_CONNECT_TIMEOUT），curl 加 `--http1.1` 正常。
 - 融资段规则（在 prompt 里）：只收真实到账事件（含已完成收购）、绝不与当天 items 重复、跨天去重（getRecentFundingCompanies 注入近 4 天清单）。Claude 仍偶发把同一公司同时放 items 和 funding——发现就手动删融资卡里那条。
 

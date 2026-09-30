@@ -109,14 +109,15 @@ const PROXY = proxyKey ? { key: proxyKey, baseURL: proxyURL, label: "proxy" } : 
 const OFFICIAL = officialKey ? { key: officialKey, baseURL: officialURL, label: "official" } : null;
 
 // 备用中转站 apimart：aigocode 账号池干涸 / 宕机时自动切到这里。
-// 用自己的模型名（apimart 上是 claude-opus-4-6）。
+// 用自己的模型名（apimart 上是 claude-sonnet-5-5 → claude-opus-4-6）。
 const apimartKey = process.env.APIMART_API_KEY;
 const APIMART = apimartKey
   ? {
       key: apimartKey,
       baseURL: process.env.APIMART_BASE_URL || "https://api.apimart.ai",
       label: "apimart",
-      model: process.env.APIMART_MODEL || "claude-opus-4-6",
+      // 模型列表按顺序降级（401/404 "无权限/不可用"时换下一个）。APIMART_MODEL 可用逗号分隔覆盖。
+      models: (process.env.APIMART_MODEL || "claude-sonnet-5-5,claude-opus-4-6").split(",").map((m) => m.trim()).filter(Boolean),
     }
   : null;
 
@@ -424,7 +425,7 @@ async function curateWithClaude(rawItems) {
       usingFallback = true;
       modelIdx = 0;
       badOutputCount = 0;
-      console.log(`  🔀 连续坏输出 → 切换到 ${activeClient.label} (${activeClient.model || modelChain[0]})`);
+      console.log(`  🔀 连续坏输出 → 切换到 ${activeClient.label} (${(activeClient.models || modelChain)[0]})`);
     }
   };
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
@@ -432,8 +433,9 @@ async function curateWithClaude(rawItems) {
       throw new Error("No available API client");
     }
     try {
-      // 客户端自带模型名优先（apimart 用 opus-4-6），否则走 modelChain
-      const currentModel = activeClient.model || modelChain[modelIdx];
+      // 客户端自带模型列表优先（apimart），否则走 modelChain
+      const chain = activeClient.models || modelChain;
+      const currentModel = chain[Math.min(modelIdx, chain.length - 1)];
       console.log(`  🔄 Claude API 调用 (attempt ${attempt}/${MAX_RETRIES} [${activeClient.label}${disableThinking ? ", no-thinking" : ""}, ${currentModel}])...`);
       const requestParams = {
         model: currentModel,
@@ -548,11 +550,12 @@ async function curateWithClaude(rawItems) {
       // 9/29–9/30 教训：aigocode 下线旧模型后返回 404 "Model ... is not available for this group"，
       // 原条件只认 400，命中不了，在同一个模型上空转 6 次，两天三档 cron 全军覆没。
       const isModelUnsupported =
-        /HTTP (400|404)/.test(errMsg) &&
-        /model is not supported|model_not_found|not_found_error|is not available for this group|does not exist/i.test(errMsg);
+        /HTTP (400|401|403|404)/.test(errMsg) &&
+        /model is not supported|model_not_found|not_found_error|is not available for this group|does not exist|does not have access to model/i.test(errMsg);
 
       // key 失效/无权限（403/401）：换 key 重试没用，直接切下一个 provider
-      const isAuthError = /HTTP (401|403)/.test(errMsg);
+      // 「没有某个模型的权限」是模型问题不是 key 问题：先在本通道内换模型，不要直接跳 provider
+      const isAuthError = /HTTP (401|403)/.test(errMsg) && !/does not have access to model/i.test(errMsg);
 
       // aigocode 账号干涸 / 502 网关 / 硬超时 / key 无权限 → 立即切下一个 provider（apimart → 官方）
       const shouldFailover =
@@ -563,15 +566,16 @@ async function curateWithClaude(rawItems) {
         usingFallback = true;
         modelIdx = 0;
         badOutputCount = 0;
-        console.log(`  🔀 ${errMsg.slice(0, 45)} → 切换到 ${activeClient.label} (${activeClient.model || modelChain[0]})`);
+        console.log(`  🔀 ${errMsg.slice(0, 45)} → 切换到 ${activeClient.label} (${(activeClient.models || modelChain)[0]})`);
         await sleep(2000);
         continue;
       }
 
-      if (isModelUnsupported && modelIdx < modelChain.length - 1) {
+      const activeChain = activeClient.models || modelChain;
+      if (isModelUnsupported && modelIdx < activeChain.length - 1) {
         modelIdx++;
         attempt--; // 换模型不算一次失败
-        console.log(`  🔀 Model 不被支持，降级到 ${modelChain[modelIdx]}`);
+        console.log(`  🔀 Model 不被支持，降级到 ${activeChain[modelIdx]}`);
         continue;
       }
 
