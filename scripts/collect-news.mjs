@@ -409,7 +409,7 @@ async function curateWithClaude(rawItems) {
   // Model fallback chain: 代理对模型名敏感，400 model not supported 时自动降级
   const modelChain = process.env.CLAUDE_MODEL
     ? [process.env.CLAUDE_MODEL]
-    : ["claude-sonnet-4-6", "claude-sonnet-4-5", "claude-opus-4-5", "claude-3-5-sonnet-latest"];
+    : ["claude-sonnet-5", "claude-opus-5", "claude-sonnet-4-6", "claude-sonnet-4-5", "claude-opus-4-5"];
   let modelIdx = 0;
   let usingFallback = false;
   // 坏输出（空文本/非 JSON/JSON 解析失败）连续 2 次 → 切下一个 provider。
@@ -545,9 +545,11 @@ async function curateWithClaude(rawItems) {
         (errMsg.includes("503") && !usingFallback);
 
       // Model 不被代理支持：自动降级到下一个候选 model
+      // 9/29–9/30 教训：aigocode 下线旧模型后返回 404 "Model ... is not available for this group"，
+      // 原条件只认 400，命中不了，在同一个模型上空转 6 次，两天三档 cron 全军覆没。
       const isModelUnsupported =
-        errMsg.includes("400") &&
-        (errMsg.includes("model is not supported") || errMsg.includes("model_not_found"));
+        /HTTP (400|404)/.test(errMsg) &&
+        /model is not supported|model_not_found|not_found_error|is not available for this group|does not exist/i.test(errMsg);
 
       // key 失效/无权限（403/401）：换 key 重试没用，直接切下一个 provider
       const isAuthError = /HTTP (401|403)/.test(errMsg);
@@ -568,7 +570,8 @@ async function curateWithClaude(rawItems) {
 
       if (isModelUnsupported && modelIdx < modelChain.length - 1) {
         modelIdx++;
-        console.log(`  🔀 Model 不被代理支持，降级到 ${modelChain[modelIdx]}`);
+        attempt--; // 换模型不算一次失败
+        console.log(`  🔀 Model 不被支持，降级到 ${modelChain[modelIdx]}`);
         continue;
       }
 

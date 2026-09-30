@@ -1,5 +1,198 @@
 [
   {
+    "slug": "2026-09-30",
+    "date": "2026-09-30",
+    "title": "AI 快讯 · 9月30日",
+    "items": [
+      {
+        "title": "OpenAI DevDay 全景复盘：ChatGPT 周活跃破 12 亿",
+        "source": "Latent Space",
+        "category": "AI 工具动态",
+        "url": "https://www.latent.space/p/ainews-openai-devday-2026-dots-61",
+        "summary": "社区对 OpenAI DevDay 2026 的完整复盘首次曝出关键数据：ChatGPT 周活跃用户已达 12 亿。除 Dots、GPT-6.1 Sol 外，还包括 Decisions API、Agents API、Spaces 与 Marketplace 等 20+ 项发布，被称为「史上最有信心的一届 DevDay」。",
+        "titleEn": "OpenAI DevDay 2026 Recap Reveals 1.2B Weekly Active Users",
+        "summaryEn": "A community recap of OpenAI's DevDay 2026 reveals ChatGPT now has 1.2 billion weekly active users. Beyond Dots and GPT-6.1 Sol, the event included 20+ launches like Decisions API, Agents API, Spaces, and a Marketplace — dubbed OpenAI's most confident DevDay yet."
+      },
+      {
+        "title": "OpenAI 首次公开前沿 AI 训练安全框架",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/towards-safety-cases-for-frontier-ai-training",
+        "summary": "OpenAI 发布针对前沿模型训练的早期安全案例指南，涵盖技术防护措施、操作规范以及对「模型失准」事件的调查方法，是行业内首个公开、结构化的训练期安全评估框架尝试。",
+        "titleEn": "OpenAI Publishes Early Safety Case Guidelines for Frontier Training",
+        "summaryEn": "OpenAI released early guidelines for building 'safety cases' during frontier model training, covering technical safeguards, operational practices, and how to investigate misalignment incidents — one of the industry's first structured public frameworks for training-time safety assessment."
+      },
+      {
+        "title": "美国政府网站遭滥用，OpenAI 向澳大利亚道歉",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/how-we-will-do-better-for-australia",
+        "summary": "OpenAI 就涉及澳大利亚政府网站的安全事件正式致歉，并宣布将加强防护措施、支持澳大利亚提升网络防御能力。此事暴露出 AI Agent 在与政府公共系统交互时的权限与安全隐患。",
+        "titleEn": "OpenAI Apologizes to Australia Over Government Website Incidents",
+        "summaryEn": "OpenAI formally apologized for security incidents involving Australian government websites, pledging stronger safeguards and support to bolster the country's cyber defenses — exposing new risks around AI agents interacting with public-sector systems."
+      },
+      {
+        "title": "NVIDIA 开源 OpenShell：AI Agent 安全运行时",
+        "source": "GitHub Trending",
+        "category": "AI 工具动态",
+        "url": "https://github.com/NVIDIA/OpenShell",
+        "summary": "NVIDIA 开源 OpenShell，为自主 AI Agent 舰队提供安全、隔离的私有运行环境，让 Agent 能读文件、装包、调 API 而不失控。0.1.x 版本带来稳定发布节奏、新隔离机制与扩展能力，是 Agent 安全基础设施的重要一步。",
+        "titleEn": "NVIDIA Open-Sources OpenShell, a Safe Runtime for AI Agent Fleets",
+        "summaryEn": "NVIDIA open-sourced OpenShell, a private, isolated runtime that lets fleets of autonomous AI agents read files, install packages, and call APIs safely without going rogue. The 0.1.x release brings new isolation primitives and an expanded extension surface — a real step toward agent safety infrastructure."
+      },
+      {
+        "title": "开源语音克隆工具 VoiceStudio 挑战 ElevenLabs",
+        "source": "GitHub Trending",
+        "category": "AI 工具动态",
+        "url": "https://github.com/debpalash/VoiceStudio",
+        "summary": "VoiceStudio 是完全本地运行的开源语音工具，支持声音克隆、声音设计、视频配音、听写与 646 种语言的转录/有声书制作，主打隐私与零 API 成本，是独立开发者绕开 ElevenLabs 订阅费的新选择。",
+        "titleEn": "Open-Source VoiceStudio Emerges as Local ElevenLabs Alternative",
+        "summaryEn": "VoiceStudio is a fully local, open-source alternative to ElevenLabs offering voice cloning, voice design, video dubbing, dictation, and audiobook creation across 646 languages — appealing to indie developers who want privacy and zero API costs."
+      },
+      {
+        "title": "Claude Sonnet 5.5 计算机操作能力实测：值得一试",
+        "source": "Ben's Bites",
+        "category": "AI 工具动态",
+        "url": "https://www.bensbites.com/p/sonnet-55-is-worth-a-try",
+        "summary": "社区实测对比 Sonnet 5.5 与 Manus、Muse 在计算机操作任务上的表现，认为 Sonnet 5.5 在实际操作场景中体验明显提升，值得开发者尝试；同期 Opus 5.5 在生成讲解视频方面也展现出少见的多模态能力。",
+        "titleEn": "Claude Sonnet 5.5's Computer-Use Skills Put to the Test",
+        "summaryEn": "A hands-on community comparison finds Claude Sonnet 5.5 outperforming Manus and Muse on real computer-use tasks, calling it worth trying. Meanwhile Opus 5.5 shows a rare multimodal strength: generating coherent explainer videos."
+      },
+      {
+        "title": "AI 挤压岗位：美国科技裁员规模超去年同期 17%",
+        "source": "Crunchbase News",
+        "category": "AI 工具动态",
+        "url": "https://news.crunchbase.com/layoffs/2026-layoff-numbers-rise-ai-shift-orcl-meta-amzn/",
+        "summary": "今年1-8月美国科技行业裁员已达9.4万人，同比上升16.8%，多数裁员与企业将预算转向 AI 投入、重构运营以降本直接相关，Oracle、Meta、Amazon 等大厂均在列，AI 转型的真实代价开始显现。",
+        "titleEn": "US Tech Layoffs Outpace 2025 as Firms Redirect Spend to AI",
+        "summaryEn": "US tech layoffs hit 94,046 from January to August 2026, up 16.8% year-over-year, with many cuts directly tied to companies shifting budgets toward AI investment and restructuring to cut costs — Oracle, Meta, and Amazon among them. The real cost of the AI pivot is becoming visible."
+      },
+      {
+        "title": "新论文揭示 Agent「主动性」盲区：该问却没问",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2609.37236",
+        "summary": "研究指出现有 Agent 只回答用户明确提出的问题，却常常漏掉完成任务所需的隐含信息。论文把「主动性」拆成横向（追问当前场景已暗示的信息）和纵向（挖掘早期证据揭示的隐藏需求）两个维度，为设计更懂用户意图的 Agent 提供了新框架。对开发者来说，这意味着未来评估 Agent 好坏不能只看「答得对不对」，还要看「问得够不够」。",
+        "titleEn": "New Study Maps the Blind Spots in Agent Proactivity",
+        "summaryEn": "This paper argues that today's tool-using agents only answer what users explicitly ask, often missing implicit information needed to actually finish the task. It splits 'proactivity' into horizontal (following up on hints already in context) and vertical (surfacing needs revealed by earlier evidence) — a useful framework for developers building agents that don't just answer correctly, but ask the right follow-up questions."
+      }
+    ],
+    "jasonSays": "当'降本增效'变成'裁员换 AI'的委婉说法，9.4 万人已经用亲身经历验证了这场转型的真实代价，别只盯着模型跑分表。",
+    "jasonSaysEn": "When 'cost optimization' becomes a euphemism for 'layoffs for AI,' 94,000 people have already lived the real price of this transition — stop staring only at benchmark scores.",
+    "filename": "2026-09-30.md"
+  },
+  {
+    "slug": "2026-09-29",
+    "date": "2026-09-29",
+    "title": "AI 快讯 · 9月29日",
+    "items": [
+      {
+        "title": "OpenAI 发布 GPT-6.1 Sol：五分之一价格逼近顶配模型",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/introducing-gpt-6-1-sol",
+        "summary": "OpenAI 推出 GPT-6.1 Sol，编程与专业任务能力接近旗舰 Astra 模型，但 API 输入输出价格仅为 Astra 的五分之一，进一步拉低企业级 Agent 应用成本。",
+        "titleEn": "OpenAI Launches GPT-6.1 Sol at 1/5 the Price of Astra",
+        "summaryEn": "OpenAI released GPT-6.1 Sol, delivering near-Astra-level coding and professional-task performance at just one-fifth the API price, making high-capability agents far cheaper to run at scale."
+      },
+      {
+        "title": "OpenAI 推出「Dots」主动式 Agent，挑战应用商店模式",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/introducing-dots",
+        "summary": "OpenAI 发布 Dots，一款可跨复杂项目持续工作的主动式助手，同时推出让人和 Agent 都能发现使用软件的新机制，被视为对传统 App Store 分发模式的直接冲击。",
+        "titleEn": "OpenAI's New \"Dots\" Agent Challenges App Store Model",
+        "summaryEn": "OpenAI unveiled Dots, a proactive assistant that keeps working across complex projects, alongside new discovery mechanisms letting both humans and agents find software—directly challenging the traditional app store distribution model."
+      },
+      {
+        "title": "OpenAI 传洽谈 300 亿美元融资，估值冲 1.4 万亿",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/09/29/openai-reportedly-in-talks-to-raise-30b-round-at-1-4t-valuation/",
+        "summary": "据报道 OpenAI 正洽谈新一轮 300 亿美元融资，估值达 1.4 万亿美元，这可能是其 2027 年推迟上市前的最后一轮私募融资，凸显资本市场对 AI 巨头的持续押注。",
+        "titleEn": "OpenAI Reportedly in Talks for $30B Round at $1.4T Valuation",
+        "summaryEn": "OpenAI is reportedly negotiating a new $30B funding round at a $1.4T valuation—likely its final private raise before a delayed 2027 IPO—underscoring investors' continued massive bets on frontier AI labs."
+      },
+      {
+        "title": "Anthropic 揭秘 Claude Code 下一阶段：Mods、插件与项目系统",
+        "source": "Latent Space",
+        "category": "Skills 生态",
+        "url": "https://www.latent.space/p/thariq",
+        "summary": "Anthropic 产品负责人 Thariq Shihipar 详解 Claude Code 路线图：随 Opus/Sonnet 5.5 一起推出 Mods（模式定制）、插件系统与 Projects 项目管理，力图在保持前沿能力的同时提升工程可用性。",
+        "titleEn": "Anthropic Reveals Claude Code's Next Era: Mods, Plugins, Projects",
+        "summaryEn": "Anthropic's Thariq Shihipar detailed Claude Code's roadmap alongside Opus/Sonnet 5.5—introducing Mods for customization, a plugin system, and Projects for management—aiming to pair frontier capability with real engineering usability."
+      },
+      {
+        "title": "dbx：25MB 轻量数据库客户端内置 MCP Server",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/t8y2/dbx",
+        "summary": "开源工具 dbx 支持 100+ 数据库（MySQL、PostgreSQL、MongoDB 等），仅 25MB 体积却内置 AI 助手和 MCP Server，可直接让 Claude Code 等 Agent 安全操作数据库，是数据库运维场景的实用 Skills 补充。",
+        "titleEn": "dbx: 25MB Database Client With Built-in MCP Server",
+        "summaryEn": "Open-source dbx supports 100+ databases in just 25MB, with a built-in AI assistant and MCP Server—letting agents like Claude Code directly and safely operate databases, a practical addition to the agentic tooling stack."
+      },
+      {
+        "title": "新论文 SEAD：从「状态」视角重新理解 Agent 攻防",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2609.34518",
+        "summary": "研究提出 SEAD 框架，指出工具调用 Agent 的风险本质是「部分可观测的状态控制」——早期操作可能悄悄改变文件、权限等状态，导致后续看似正常的操作变得危险。这为设计更安全的 Agent 权限系统提供了理论依据，呼应了近期 Claude Code 误删文件事件引发的担忧。",
+        "titleEn": "SEAD Paper: A State-Based Framework for Agent Attacks and Defense",
+        "summaryEn": "A new SEAD framework reframes tool-using agent security as \"partially observed state control\"—earlier actions can silently alter files or permissions, making later routine-looking actions dangerous. This offers a theoretical basis for safer agent permission systems, echoing recent concerns after Claude Code's mass file-deletion incident."
+      },
+      {
+        "title": "OpenAI 缺席 Nvidia「终结失控 Agent」联盟，私下却在合作",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/09/29/heres-why-openai-is-absent-from-nvidias-industry-wide-effort-to-end-rogue-ai-agents/",
+        "summary": "Nvidia 发起行业级 Open Agent Safety Platform 联盟以遏制失控 AI Agent，OpenAI 并未公开加入，但据 TechCrunch 获悉双方私下已展开合作，反映大厂在 Agent 安全标准上的微妙站位与竞合关系。",
+        "titleEn": "OpenAI Absent From Nvidia's Rogue-Agent Safety Coalition—But Quietly Involved",
+        "summaryEn": "Nvidia launched an industry-wide Open Agent Safety Platform to curb rogue AI agents, but OpenAI isn't a public backer—though TechCrunch learned the two are quietly collaborating behind the scenes, revealing the delicate coopetition around agent safety standards."
+      },
+      {
+        "title": "xAI 抢注 dot.com 恶搞 OpenAI「Dots」发布",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/09/29/the-internet-is-convinced-elon-musks-xai-trolled-openais-dots-launch/",
+        "summary": "就在 OpenAI 发布新 Agent 产品 Dots 前，马斯克旗下 xAI 已悄悄买下域名 dot.com 并跳转至 Grok 下载页，网友普遍认为这是一次精心策划的恶搞，为 AI 大厂间的公关暗战再添一例。",
+        "titleEn": "xAI Trolls OpenAI's \"Dots\" Launch by Redirecting dot.com to Grok",
+        "summaryEn": "Just before OpenAI launched its new agent Dots, Elon Musk's xAI quietly acquired the domain dot.com and redirected it to Grok's download page—widely seen online as a deliberate troll, adding another chapter to AI labs' PR skirmishes."
+      }
+    ],
+    "funding": [
+      {
+        "company": "World Labs",
+        "url": "https://www.latent.space/p/ainews-amd-buys-world-labs-for-82b",
+        "round": "Acquisition",
+        "amount": "$8.2B",
+        "valuation": "",
+        "investors": "AMD",
+        "pitch": "空间智能重建技术公司被 AMD 收购，用于解决机器人与设计领域的稀疏重建难题。"
+      },
+      {
+        "company": "EliseAI",
+        "url": "https://techcrunch.com/2026/09/29/a16z-backed-eliseai-raises-350m-doubles-valuation-to-4b/",
+        "round": "Growth",
+        "amount": "$350M",
+        "valuation": "$4B",
+        "investors": "a16z",
+        "pitch": "AI 房产/物业管理助理一年内估值翻倍至 40 亿美元，垂直行业 AI 应用持续受追捧。"
+      },
+      {
+        "company": "MAVI",
+        "url": "https://techcrunch.com/2026/09/28/mavi-bets-on-the-ai-boom-creating-demand-for-a-new-kind-of-accountant/",
+        "round": "Seed",
+        "amount": "$4M",
+        "valuation": "",
+        "investors": "",
+        "pitch": "押注 AI 浪潮催生新型会计岗位的人力服务公司，刚走出隐身模式获种子轮。"
+      }
+    ],
+    "jasonSays": "OpenAI 一天甩出模型、Agent、融资三条大新闻，App Store 都要被 Agent 重新定义了，2026 的战场早就不是聊天框了。",
+    "jasonSaysEn": "OpenAI dropped a new model, a new agent, and a $30B raise all in one day—agents are rewriting the app store, and 2026's battlefield has long moved past the chat box.",
+    "filename": "2026-09-29.md"
+  },
+  {
     "slug": "2026-09-28",
     "date": "2026-09-28",
     "title": "AI 快讯 · 9月28日",
@@ -99,7 +292,8 @@
     ],
     "jasonSays": "Dario 去白宫吃饭、Google 在印度用 Gemini 卖货——AI 公司正在同时攻克监管和商业化两条战线，2026 下半年最激烈的战场不在模型性能，而在「谁先把 AI 嵌进权力和消费的毛细血管」。",
     "jasonSaysEn": "Dario dining at the White House and Google selling groceries via Gemini in India—2026's fiercest AI battleground isn't model benchmarks anymore, it's who embeds AI deepest into the capillaries of power and commerce first.",
-    "filename": "2026-09-28.md"
+    "filename": "2026-09-28.md",
+    "coverImage": "/news/2026-09-28.png"
   },
   {
     "slug": "2026-09-27",
