@@ -1,5 +1,116 @@
 [
   {
+    "slug": "2026-10-01",
+    "date": "2026-10-01",
+    "title": "AI 快讯 · 10月1日",
+    "items": [
+      {
+        "title": "Google 发布 Gemini 4 Argon，主打编程与安全",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/09/30/google-releases-gemini-4-argon-called-its-most-powerful-model-yet/",
+        "summary": "Google 发布 Gemini 4 Argon，官方称其为迄今最强模型，重点强化代码生成与网络安全场景能力，直接对标 GPT-6 Astra 和 Claude 系列的编程竞赛。",
+        "titleEn": "Google Launches Gemini 4 Argon, Its Most Powerful Model",
+        "summaryEn": "Google launched Gemini 4 Argon, calling it its most capable model yet, positioned as a coding and cybersecurity workhorse — a direct shot at GPT-6 Astra and Claude in the enterprise coding race."
+      },
+      {
+        "title": "OpenAI 挫败针对模型推理的蒸馏窃取行动",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign",
+        "summary": "OpenAI 披露并挫败了一次针对其模型「思维链」推理的协同蒸馏攻击，攻击者试图批量提取受保护的推理数据来训练竞品模型，公司同步升级了相关防御机制。",
+        "titleEn": "OpenAI Disrupts Coordinated Model-Distillation Attack",
+        "summaryEn": "OpenAI disclosed and disrupted a coordinated campaign that attempted to extract its protected model reasoning traces via distillation, likely to train competing models — and detailed new defenses it's rolling out against this kind of IP theft."
+      },
+      {
+        "title": "OpenAI Decisions API：为失控 Agent 群装上刹车",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/09/30/openais-jev-clone-could-help-the-frontier-lab-stop-its-swarming-agents/",
+        "summary": "OpenAI 新推出的 Decisions API 被外界视为「Jev」的模仿品，核心是用低成本快速模型给 Agent 群做实时决策裁决，解决多 Agent 并行时容易「跑飞」失控的问题，对企业级 Agent 编排很关键。",
+        "titleEn": "OpenAI's Decisions API Aims to Tame Swarming Agents",
+        "summaryEn": "OpenAI's new Decisions API, dubbed a 'Jev clone,' uses cheap fast-inference models to arbitrate decisions across swarms of agents in real time — a practical fix for the runaway-agent problem that's becoming critical as enterprises scale multi-agent deployments."
+      },
+      {
+        "title": "Reddit 终止 RSS 与公开 API，封堵 AI 爬虫",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/09/30/reddit-is-killing-rss-feeds-ending-public-api-access-because-of-ai-bots/",
+        "summary": "Reddit 宣布将关闭 RSS 订阅与公开 API 访问权限，直接原因是大量 AI 公司通过爬虫批量抓取用户生成内容训练模型，这是继 Twitter、StackOverflow 之后又一个收紧数据闸门的平台。",
+        "titleEn": "Reddit Kills RSS Feeds, Public API Over AI Bot Scraping",
+        "summaryEn": "Reddit is shutting down RSS feeds and public API access, citing rampant scraping by AI companies training on user-generated content — joining Twitter and Stack Overflow in tightening the data spigot that LLMs have relied on."
+      },
+      {
+        "title": "Hindsight 开源发布：让 Agent 记忆真正「学习」",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/vectorize-io/hindsight",
+        "summary": "Hindsight 是一套开源 Agent 记忆系统，区别于只做对话历史检索的传统方案，它让 Agent 能从经验中持续学习，是 Claude Code / 多 Agent 项目搭建长期记忆层的新选项。",
+        "titleEn": "Hindsight: Open-Source Agent Memory That Actually Learns",
+        "summaryEn": "Hindsight is an open-source agent memory system that goes beyond simple conversation recall — it's designed so agents actually learn from past experience over time, offering a new building block for long-term memory in Claude Code or multi-agent stacks."
+      },
+      {
+        "title": "Paperclip 开源：管理 AI Agent 团队的「公司」系统",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/paperclipai/paperclip",
+        "summary": "Paperclip 是一个开源的 Node.js + React 编排平台，用来统一管理多个 AI Agent 分配目标、追踪任务和成本，官方自嘲「如果 OpenClaw 是员工，Paperclip 就是公司」，瞄准企业级多 Agent 运营场景。",
+        "titleEn": "Paperclip: Open-Source Orchestration for AI Agent Teams",
+        "summaryEn": "Paperclip is an open-source Node.js/React orchestration layer for running teams of AI agents — assigning goals, tracking work and cost. The project pitches itself as 'the company' for agent 'employees,' targeting enterprise multi-agent operations."
+      },
+      {
+        "title": "新论文揪出浏览器 Agent 隐私泄露新漏洞",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2609.32915",
+        "summary": "AgentTell 研究发现，Claude Computer Use 这类浏览器操作 Agent 在跨网站执行任务时，会无意间把上一个网站获取的隐私信息（如会员身份）通过行为侧信道泄露到下一个网站，提醒开发者在设计自动化 Agent 时要特别警惕上下文泄露。",
+        "titleEn": "New Paper Exposes Privacy Leaks in Browser-Use Agents",
+        "summaryEn": "The AgentTell paper shows browser-use agents (think Claude Computer Use) can inadvertently leak private info learned on one site — like a user's membership status — through behavioral side channels when acting on another site, a key privacy risk for anyone building browser automation agents."
+      },
+      {
+        "title": "能否让 Agent 为 Agent 设计可复用代码库？",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2609.36730",
+        "summary": "研究提出 LibraryDesignBench 基准，测试 Agent 能否为后续 Agent 设计出简洁、可复用的代码库，而不是每次都重复造轮子——这直接关系到 Claude Code Skills 这类「Agent 写给 Agent 用的工具」生态能不能良性发展。",
+        "titleEn": "Can AI Agents Design Code Libraries for Other Agents?",
+        "summaryEn": "The paper introduces LibraryDesignBench to test whether agents can design clean, reusable libraries for other agents to build on — instead of endlessly reimplementing the same logic. This matters directly for ecosystems like Claude Code Skills, where agents build tools for other agents."
+      }
+    ],
+    "funding": [
+      {
+        "company": "ElevenLabs",
+        "url": "https://techcrunch.com/2026/09/30/ai-voice-startup-elevenlabs-doubles-valuation-to-22b/",
+        "round": "Tender Offer",
+        "amount": "$300M",
+        "valuation": "$22B",
+        "investors": "Wellington、T. Rowe Price",
+        "pitch": "AI 语音克隆独角兽估值一年内翻倍至220亿美元，证明语音赛道热度不减。"
+      },
+      {
+        "company": "Flow Engineering",
+        "url": "https://techcrunch.com/2026/09/30/valor-atreides-and-sequoia-back-ai-startup-flow-engineering-at-750m-valuation/",
+        "round": "融资轮次未披露",
+        "amount": "undisclosed",
+        "valuation": "$750M",
+        "investors": "Valor、Atreides、Sequoia、Roelof Botha",
+        "pitch": "把 AI Agent 用于芯片/硬件设计的新贵，估值7.5亿美元，红杉等重磅加码。"
+      },
+      {
+        "company": "BAG Ventures",
+        "url": "https://techcrunch.com/2026/09/30/bag-ventures-sets-its-eyes-deeper-into-the-ai-stack/",
+        "round": "Fund I",
+        "amount": "$11.3M",
+        "valuation": "",
+        "investors": "两位谷歌前员工创立",
+        "pitch": "两位谷歌老将设立新基金，只押注企业真正愿意付费的 AI 公司。"
+      }
+    ],
+    "jasonSays": "当模型层面还在打参数和定价战，真正决定明年落地效果的是 Agent 记忆、编排和隐私这些「基建」，别只盯着榜单上的大模型。",
+    "jasonSaysEn": "While frontier labs duke it out on model specs and pricing, the real battle for 2027 is agent memory, orchestration, and privacy infrastructure — don't just watch the leaderboard.",
+    "filename": "2026-10-01.md"
+  },
+  {
     "slug": "2026-09-30",
     "date": "2026-09-30",
     "title": "AI 快讯 · 9月30日",
@@ -79,7 +190,8 @@
     ],
     "jasonSays": "当'降本增效'变成'裁员换 AI'的委婉说法，9.4 万人已经用亲身经历验证了这场转型的真实代价，别只盯着模型跑分表。",
     "jasonSaysEn": "When 'cost optimization' becomes a euphemism for 'layoffs for AI,' 94,000 people have already lived the real price of this transition — stop staring only at benchmark scores.",
-    "filename": "2026-09-30.md"
+    "filename": "2026-09-30.md",
+    "coverImage": "/news/2026-09-30.png"
   },
   {
     "slug": "2026-09-29",
