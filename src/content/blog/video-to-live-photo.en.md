@@ -123,13 +123,22 @@ In mainland China there's an extra trap: **17 reviews describe an in-app login o
 
 ## Method 3: Use an online video to Live Photo converter
 
-If you don't want to install an app, or your video is on a computer, an online converter does the same job in the browser: upload an MP4 or MOV, trim it, download the result. Search "video to live photo converter" and you'll find several free ones.
+If you don't want to install an app, or your video is on a computer, there are free online converters. **I tried two in October 2026 with a 5-second test clip, and neither hands you a finished Live Photo in the browser.** They take one of two routes:
 
-What to watch for:
+**Route 1: the website trims, an app finishes.** On livephoto.video you upload the video, keep a 3-second window (the duration can't be changed), pick the aspect ratio and background, and press *Convert*. What you download is a **short video**, and the page tells you to finish in its iPhone app, LivePix. Its own FAQ explains why: iOS only recognizes Live Photos that are packaged on the device.
 
-- **Do it on the iPhone if you can.** A Live Photo is two files that belong together. Converters that run in Safari on the iPhone can save the result straight to Photos; if a converter hands you a ZIP with a JPG and a MOV inside, those two files on their own won't show up as one Live Photo.
-- **Read the limits:** file size caps, watermarks and clip length differ from site to site.
-- **Mind what you upload.** You're sending your video to someone else's server. Fine for a meme, not for private footage.
+![livephoto.video: after converting you get "Download Video" and "Next: finish in LivePix", not a Live Photo](public/blog/video-to-live-photo/online-livephoto-video.png)
+
+**Route 2: the website builds the pair, you move it over.** tools.video says it makes "a real iOS Live Photo" and processes the video in your browser ("0 Uploads"). According to its own instructions, you get a ZIP with **IMG_0001.JPG and IMG_0001.MOV**; you unzip it on a Mac and **AirDrop both files together** to your iPhone, where Photos shows the pair as one Live Photo. It allows clips of **0.5 to 6 seconds**. In my test the page froze in Chrome after the upload, twice, so I couldn't confirm the last step.
+
+![tools.video: free, no ads, no sign-up, and "0 Uploads": the video stays in your browser](public/blog/video-to-live-photo/online-tools-video.png)
+
+What that means for you:
+
+- **An online converter alone rarely finishes the job on an iPhone.** Expect either to install an app anyway (route 1) or to need a Mac and AirDrop (route 2). If you're on the iPhone already, method 2 is fewer steps.
+- **Send the JPG and the MOV together.** Saved one by one (from Files or Safari), they stay a separate photo and video.
+- **Check where the video goes.** Some converters upload it to their server; tools.video says it doesn't. Fine for a meme either way, but think twice with private footage.
+- **Clip length is capped:** 3 seconds by default on livephoto.video, 0.5–6 seconds on tools.video.
 
 ---
 
@@ -168,7 +177,7 @@ Apple's own walkthrough: [Set a Live Photo as your Lock Screen wallpaper](https:
 
 - **The video is on TikTok →** Share → Live Photo. Thirty seconds, nothing to install (it keeps the TikTok logo).
 - **It's your own video on your iPhone →** a converter app. Most control over the trim and the key frame.
-- **It's on your computer, or a one-off →** an online converter, opened on the iPhone if possible.
+- **It's on your Mac →** an online converter that gives you the JPG + MOV pair, then AirDrop both to the iPhone.
 - **You're on Android →** Motion Photos, or skip the conversion and use the video as a live wallpaper directly.
 
 ---
@@ -177,7 +186,7 @@ Apple's own walkthrough: [Set a Live Photo as your Lock Screen wallpaper](https:
 
 ### Can I turn a video into a Live Photo without an app?
 
-Only if the video is on TikTok (Share → Live Photo) or you use an online converter in Safari. The iPhone Photos app itself can't do it — Apple only offers the reverse, [Live Photo to video](https://support.apple.com/en-ca/105029).
+Only if the video is on TikTok (Share → Live Photo). Online converters either send you to an app for the last step or need a Mac and AirDrop (method 3), and the iPhone Photos app itself can't do it — Apple only offers the reverse, [Live Photo to video](https://support.apple.com/en-ca/105029).
 
 ### How long can a Live Photo be?
 
@@ -231,4 +240,4 @@ The Photos app on the Mac doesn't convert videos to Live Photos either. Use an o
 
 ## The One-Line Summary
 
-The iPhone won't turn a video into a Live Photo by itself: use **TikTok's Share → Live Photo** for TikTok clips, a **converter app like intoLive** for your own videos, or an **online converter** in a pinch — then set it as a Lock Screen wallpaper, where it's the only place a Live Photo moves.
+The iPhone won't turn a video into a Live Photo by itself: use **TikTok's Share → Live Photo** for TikTok clips, a **converter app like intoLive** for your own videos, or an **online converter plus a Mac and AirDrop** if the video is on your computer — then set it as a Lock Screen wallpaper, where it's the only place a Live Photo moves.
