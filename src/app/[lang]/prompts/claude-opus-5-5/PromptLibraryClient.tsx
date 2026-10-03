@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
 import Link from "next/link";
 import {
   OPUS_CATEGORIES,
@@ -15,6 +15,12 @@ import {
 } from "@/lib/opus-prompts-shared";
 import CaseVideo from "./CaseVideo";
 import CopyPrompt, { loadPrompt } from "./CopyPrompt";
+
+const noopSubscribe = () => () => {};
+function readUrlModel(): ClaudeModel | null {
+  const v = new URLSearchParams(window.location.search).get("model")?.toLowerCase();
+  return (Object.keys(MODEL_LABEL) as ClaudeModel[]).find((k) => v && (k === v || k.startsWith(v + "-"))) ?? null;
+}
 
 const PAGE_SIZE = 24;
 const BASE = "prompts/claude-opus-5-5";
@@ -41,7 +47,11 @@ export default function PromptLibraryClient({ initial, total, counts, modelCount
   const [noAssets, setNoAssets] = useState(false);
   const [q, setQ] = useState("");
   const [group, setGroup] = useState<string | null>(null);
-  const [model, setModel] = useState<ClaudeModel | null>(null);
+  // undefined = 用户还没点过模型筛选，此时跟随 URL 的 ?model=（fable-5.5 或简写 fable/sonnet/opus），方便宣传时贴直达链接。
+  // 用 useSyncExternalStore 读 URL：服务端渲染时为 null，不用 useSearchParams，免得整页退出静态渲染
+  const [picked, setModel] = useState<ClaudeModel | null | undefined>(undefined);
+  const urlModel = useSyncExternalStore(noopSubscribe, readUrlModel, () => null);
+  const model = picked === undefined ? urlModel : picked;
   const [visible, setVisible] = useState(PAGE_SIZE);
 
   useEffect(() => {
