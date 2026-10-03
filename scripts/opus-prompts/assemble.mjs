@@ -70,9 +70,16 @@ for (const c of C) {
     evidence: { via: c.via, seed: c.seed, modelAttribution: "creator-stated, not independently reproduced" } });
 }
 fs.writeFileSync(path.join(D, "tco-cache.json"), JSON.stringify(tcoCache));
+// 同一个 X 媒体 ID = 同一次上传：后发的帖子是嵌入别人视频的转发（分类器和终审都看不出来，曾漏进 22 条），只留最早那条
+const mediaId = (c) => c.video.mp4?.match(/\/(?:amplify_video|ext_tw_video|tweet_video)\/(\d+)\//)?.[1];
+const firstUpload = new Map();
+for (const c of [...cases].sort((a, b) => a.postedAt.localeCompare(b.postedAt))) { const m = mediaId(c); if (m && !firstUpload.has(m)) firstUpload.set(m, c.id); }
+const before = cases.length;
+cases.splice(0, cases.length, ...cases.filter((c) => { const m = mediaId(c); return !m || firstUpload.get(m) === c.id; }));
+stat.sameMedia = before - cases.length;
 cases.sort((a, b) => b.stats.views - a.stats.views);
 const now = process.env.OPUS_UPDATED_AT || C.map((c) => c.checkedAt).sort().at(-1);
 const checked = C.map(c => c.checkedAt).sort().at(-1);
-const out = { model: "Claude 5.5 (Opus 5.5 · Sonnet 5.5)", threshold: 5000, updatedAt: now, statsCheckedAt: checked, inclusionRule: "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5 or Claude Sonnet 5.5.", cases };
+const out = { model: "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Fable 5.5)", threshold: 5000, updatedAt: now, statsCheckedAt: checked, inclusionRule: "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.", cases };
 if (process.argv.includes("--write")) { fs.mkdirSync(`${SITE}/src/content/opus-prompts`, { recursive: true }); fs.writeFileSync(`${SITE}/src/content/opus-prompts/cases.json`, JSON.stringify(out, null, 1)); }
 console.log(JSON.stringify(stat), "| with prompt:", cases.filter(c => c.prompt).length, "| full:", cases.filter(c => c.prompt?.kind === "full").length, "| t.co expanded:", Object.values(tcoCache).filter(Boolean).length);
