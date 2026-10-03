@@ -19,7 +19,9 @@ def w(s=""):
 
 
 def n(row):
-    """Vercel 聚合行的计数字段名不固定（visits / count…），取第一个非维度的数值字段。"""
+    """Vercel 聚合行带 pageviews 和 visitors，默认取浏览量；字段名变了就退回第一个非维度的数值字段。"""
+    if isinstance(row.get("pageviews"), (int, float)):
+        return row["pageviews"]
     for k, v in row.items():
         if k not in DIM_KEYS and isinstance(v, (int, float)):
             return v
@@ -57,8 +59,10 @@ if site.get("ok"):
     if nw:
         if nw.get("published_today"):
             health.append(f"✅ 今日快讯已发（{nw['items_today']} 条）")
-        else:
+        elif datetime.now(CST).hour >= 8:      # 快讯 cron 5:30–7:15 才跑，8 点前手动跑日报不算异常
             alerts.append(f"今天（{nw.get('today')}）的快讯还没出，最新一期是 {nw.get('latest')}")
+        else:
+            health.append(f"⏳ 今日快讯还没到发布时间（最新一期 {nw.get('latest')}）")
     for wf in site.get("workflows") or []:
         if wf.get("error"):
             health.append(f"❔ {wf['label']}：查不到运行记录（{wf['error']}）")
@@ -106,7 +110,8 @@ if vercel.get("ok"):
     yv = days.get(str(y), 0)
     v7 = sum(days.get(str(today - timedelta(days=i)), 0) for i in range(1, 8))
     p7 = sum(days.get(str(today - timedelta(days=i)), 0) for i in range(8, 15))
-    kpi.append(f"浏览 **{fmt(yv)}**（7 天 {fmt(v7)}，环比 {pct(v7, p7)}）")
+    yu = next((r.get("visitors", 0) for r in vercel.get("daily", []) if r.get("timestamp", "")[:10] == str(y)), 0)
+    kpi.append(f"浏览 **{fmt(yv)}** / 访客 {fmt(yu)}（7 天浏览 {fmt(v7)}，环比 {pct(v7, p7)}）")
 if gsc.get("ok"):
     t, tp = gsc["totals7"], gsc["totals7_prev"]
     kpi.append(f"搜索点击 7 天 **{t['clicks']:,}**（环比 {pct(t['clicks'], tp['clicks'])}）")
