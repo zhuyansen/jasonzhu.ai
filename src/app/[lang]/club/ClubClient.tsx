@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import XunhupayCheckoutModal from "@/components/XunhupayCheckoutModal";
+import { track } from "@/lib/track";
 
 interface Props {
   lang: "zh" | "en";
@@ -122,6 +123,7 @@ export default function ClubClient({ lang, initialEmail = "", suggestedGithub = 
       });
       const data = await res.json();
       if (res.ok && data.success) {
+        track("club_apply_submit", { tier: String(fd.get("tier") || "") });
         setStatus("success");
         // 启航版无需审核：提交完直接弹付款二维码，别让人填完表就走了
         if (fd.get("tier") === "l1") {

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { track } from "@/lib/track";
 
 interface Props {
   /** 已有全文就直接传；否则传 id，点击时从静态 JSON 拉 */
@@ -24,6 +25,7 @@ export default function CopyPrompt({ text, id, isZh, className }: Props) {
       const full = text ?? (id ? await loadPrompt(id) : "");
       await navigator.clipboard.writeText(full);
       setState("copied");
+      track("prompt_copy", { id });
     } catch {
       setState("error");
     }

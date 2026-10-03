@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { track } from "@/lib/track";
 
 interface Props {
   lang: "zh" | "en";
@@ -66,6 +67,7 @@ export default function XunhupayCheckoutModal({ lang, onClose, initialEmail = ""
         setSubmitting(false);
         return;
       }
+      track("checkout_order_created", { channel, amount: data.amount });
       setQrUrl(data.qrUrl);
       setPayUrl(data.payUrl);
       setAmount(data.amount);

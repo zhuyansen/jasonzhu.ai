@@ -4,6 +4,7 @@ import { useState, useRef, useEffect, Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
 import type { Dictionary } from "@/lib/dictionaries";
+import { track } from "@/lib/track";
 
 function HandbookContent({ lang, dict }: { lang: string; dict: Dictionary }) {
   const searchParams = useSearchParams();
@@ -35,6 +36,7 @@ function HandbookContent({ lang, dict }: { lang: string; dict: Dictionary }) {
       });
       const data = await res.json();
       if (res.ok) {
+        track("newsletter_subscribe", { source: "handbook-gate", already: Boolean(data.alreadySubscribed) });
         router.push(`/${lang}/handbook?unlocked=true`);
       } else {
         setStatus("error");

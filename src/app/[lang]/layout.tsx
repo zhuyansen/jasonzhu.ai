@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import GoogleOneTap from "@/components/GoogleOneTap";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
 import "../globals.css";
+import ThirdPartyAnalytics from "@/components/ThirdPartyAnalytics";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -166,6 +167,7 @@ export default async function LangLayout({ children, params }: Props) {
         <Footer lang={lang} dict={dict} />
         <GoogleOneTap />
         <Analytics />
+        <ThirdPartyAnalytics />
       </body>
     </html>
   );

@@ -54,3 +54,9 @@ supabase/.temp/
 
 # 提示词库每日收录的断点文件（搜索结果/作者回复的本地缓存）
 scripts/opus-prompts/data/.work/
+
+# 数据日报：本地凭证与产出
+ops/analytics/.secrets/
+ops/analytics/out/
+ops/analytics/state/
+ops/analytics/__pycache__/

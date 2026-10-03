@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import type { Dictionary } from "@/lib/dictionaries";
+import { track } from "@/lib/track";
 
 interface SubscribeFormProps {
   source?: string;
@@ -56,6 +57,7 @@ export default function SubscribeForm({
       const data = await res.json();
 
       if (res.ok) {
+        track("newsletter_subscribe", { source, already: Boolean(data.alreadySubscribed) });
         setStatus("success");
         setMessage(data.message);
         setEmail("");

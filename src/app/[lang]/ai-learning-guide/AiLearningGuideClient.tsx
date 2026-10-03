@@ -4,6 +4,7 @@ import { useState, useRef, useEffect, Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import type { Locale } from "@/lib/dictionaries";
+import { track } from "@/lib/track";
 
 const PDF_PATH = "/ai-free-learning-guide.pdf";
 
@@ -96,6 +97,7 @@ function GuideContent({ lang }: { lang: Locale }) {
       });
       const data = await res.json();
       if (res.ok) {
+        track("newsletter_subscribe", { source: "ai-learning-guide", already: Boolean(data.alreadySubscribed) });
         window.location.href = `/${lang}/ai-learning-guide?unlocked=true`;
       } else {
         setStatus("error");
