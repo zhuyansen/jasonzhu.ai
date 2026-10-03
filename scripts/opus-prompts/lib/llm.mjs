@@ -18,11 +18,14 @@ const CURL = process.env.CLAUDE_TRANSPORT === "curl";
 const redact = (t) => String(t).replace(/(sk-|Bearer\s+)[A-Za-z0-9_\-]{8,}/g, "$1***");
 export const usage = { worker: { calls: 0, in: 0, out: 0 }, reviewer: { calls: 0, in: 0, out: 0, provider: "" }, arbiter: { calls: 0, in: 0, out: 0, model: "" } };
 
-const MODELS = (process.env.OPUS_LLM_MODELS || "claude-sonnet-5,claude-sonnet-4-6,claude-sonnet-4-5").split(",").map((s) => s.trim()).filter(Boolean);
+const MODELS = (process.env.OPUS_LLM_MODELS || "claude-sonnet-5,claude-sonnet-5-5,claude-opus-5").split(",").map((s) => s.trim()).filter(Boolean);
 const endpoints = [
   process.env.ANTHROPIC_AUTH_TOKEN && { label: "proxy", key: process.env.ANTHROPIC_AUTH_TOKEN, baseURL: process.env.ANTHROPIC_BASE_URL || "https://api.aigocode.app", models: MODELS },
-  process.env.APIMART_API_KEY && { label: "apimart", key: process.env.APIMART_API_KEY, baseURL: process.env.APIMART_BASE_URL || "https://api.apimart.ai", models: [process.env.APIMART_MODEL || "claude-opus-4-6"] },
+  process.env.APIMART_API_KEY && { label: "apimart", key: process.env.APIMART_API_KEY, baseURL: (process.env.APIMART_BASE_URL || "https://api.apimart.ai").replace(/\/v1\/?$/, ""), models: (process.env.APIMART_MODEL || "claude-sonnet-5-5,claude-opus-4-6").split(",") },
   process.env.ANTHROPIC_API_KEY && { label: "official", key: process.env.ANTHROPIC_API_KEY, baseURL: "https://api.anthropic.com", models: MODELS },
+  // 最后一级备用：flatrouter（OpenAI 兼容，只有 GPT）。2026-10-03 评测：逐字定位能用，但比 Claude 更容易漏掉
+  // 夹在正文里的一句话指令，所以只在 Claude 三个通道都不可用时才用
+  process.env.FLATROUTER_API_KEY && { label: "flatrouter", type: "openai", key: process.env.FLATROUTER_API_KEY, baseURL: (process.env.FLATROUTER_BASE_URL || "https://api.flatrouter.com/v1").replace(/\/v1\/?$/, ""), models: (process.env.FLATROUTER_WORKER_MODELS || "gpt-6-astra").split(",") },
 ].filter(Boolean);
 
 async function post(url, headers, body, timeoutMs) {
@@ -63,6 +66,15 @@ async function claudeText(prompt, { maxTokens, timeoutMs }) {
   if (!endpoints.length) throw new Error("没有可用的 Claude 端点（缺 ANTHROPIC_AUTH_TOKEN / APIMART_API_KEY / ANTHROPIC_API_KEY）");
   const ep = endpoints[epIdx];
   const model = ep.models[modelIdx.get(ep.label) || 0];
+  if (ep.type === "openai") {
+    const { status, text } = await post(`${ep.baseURL}/v1/chat/completions`, { Authorization: `Bearer ${ep.key}`, "Content-Type": "application/json" },
+      { model, temperature: 0, max_tokens: maxTokens, messages: [{ role: "user", content: prompt }] }, timeoutMs);
+    if (status >= 400 || !text) { const err = new Error(`${ep.label}/${model} HTTP ${status}: ${redact(text.slice(0, 200))}`); err.modelProblem = status < 500 && /model/i.test(text) && (modelIdx.get(ep.label) || 0) < ep.models.length - 1; throw err; }
+    const j = JSON.parse(text);
+    usage.worker.calls++; usage.worker.in += j.usage?.prompt_tokens || 0; usage.worker.out += j.usage?.completion_tokens || 0;
+    if (j.choices?.[0]?.finish_reason === "length") { const e = new Error(`${ep.label}/${model} output truncated`); e.tooBig = true; throw e; }
+    return { text: (j.choices?.[0]?.message?.content || "").trim(), via: `${ep.label}/${model}` };
+  }
   const { status, text } = await post(`${ep.baseURL}/v1/messages`, { "x-api-key": ep.key, "anthropic-version": "2023-06-01", "content-type": "application/json" },
     { model, max_tokens: maxTokens, messages: [{ role: "user", content: prompt }] }, timeoutMs);
   if (status >= 400 || !text) {

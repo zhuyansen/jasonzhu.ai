@@ -38,11 +38,11 @@ node scripts/opus-prompts/assemble.mjs --write && node scripts/generate-opus-pro
 
 ### 每日收录怎么工作
 
-1. **按时间增量搜**：搜索词 `"Opus 5.5" OR "Sonnet 5.5"`（`lib/x.mjs`，`SEARCH_TERMS` 可覆盖），只搜「两天前那 24 小时」发布的帖子（`since_time`/`until_time`），点赞 ≥100。延迟两天是让播放量涨到位。每条帖子只落在一个窗口里，只付一次钱；见过的 ID 记在 `data/seen.json`，永不重新处理。
+1. **按时间增量搜**（每次最多一天的发布窗口，延迟 24 小时；落后时工作流连跑最多 3 轮自动追上，不需要手动补跑）：搜索词 `"Opus 5.5" OR "Sonnet 5.5"`（`lib/x.mjs`，`SEARCH_TERMS` 可覆盖），只搜「两天前那 24 小时」发布的帖子（`since_time`/`until_time`），点赞 ≥100。延迟两天是让播放量涨到位。每条帖子只落在一个窗口里，只付一次钱；见过的 ID 记在 `data/seen.json`，永不重新处理。
 2. **限量**：播放 ≥5000 的按播放量取前 80 个（`CAP`）。超出的当天放弃，不补。
    **模型标签**：`lib/models.mjs` 按作者文字判断是 Opus 5.5 还是 Sonnet 5.5，两个都提到（对比帖）就都标。
    **补跑某个时间段**（比如新模型发布后补首批）：`WINDOW_FROM=… WINDOW_TO=… SEARCH_TERMS='"Sonnet 5.5"' node scripts/opus-prompts/daily.mjs`，不会改动 `state.json` 的窗口。
-3. **判断**：Claude 分类 → 抓作者回复 → Claude 定位提示词 → `lib/resolve.mjs` 逐字对账，对不上带着报错重试一次，再不行按无提示词处理。
+3. **判断**：Claude 分类（**被筛掉的再让 Jev 过一道**：Jev 判本人作品 ≥0.9 就捞回，分类把握标低，交 Opus 终审定分类）→ 抓作者回复 → Claude 定位提示词 → `lib/resolve.mjs` 逐字对账，对不上带着报错重试一次，再不行按无提示词处理。
 4. **审核**：**TypeSafe Jev**（`lib/jev.mjs`，OpenRouter decisions 接口）对每个作品问两个多选题：这条帖子是什么（本人作品 / 本人做的模型对比 / 转发 / 教程 / 新闻 / 评论 / 非视觉产品），定位到的提示词是什么（可用 / 中途追问 / 片段 / 感想 / 给别的模型写的 / 空洞 / 依赖看不见的附件）。单条约 $0.00003。
    - 本人作品概率 ≥0.9 → 通过；转发/教程/新闻/非视觉合计 ≥0.9 → 否决；**判为评论或把握不足 → 交 Opus**
    - 提示词可用概率 ≥0.9 保留、≤0.1 去掉，中间交 Opus
@@ -53,6 +53,8 @@ node scripts/opus-prompts/assemble.mjs --write && node scripts/generate-opus-pro
    - 审核 `reject` 且把握 `high` → 丢弃，写进运行摘要
    - 其余（把握不足、分类把握低、提示词在截图里）→ **Opus 终审**（`lib/arbitrate.mjs` + `prompts/arbitrate.md`）拍板通过或否决，并决定提示词留不留。模型优先 `claude-opus-5-5`，通道没开通就用 `claude-opus-5`（`OPUS_ARBITER_MODELS` 可覆盖）
 6. **待审队列 / 滚动 PR**（分支 `opus-prompts/pending`）：只有 Opus 终审也不可用时才进这里。合并 = 批准全部；否决某条 = 把 ID 加进 `curation.json` 的 `dropCase`；不管它 = 14 天后自动丢弃。已有队列可用 `node scripts/opus-prompts/arbitrate-pending.mjs` 补跑终审。
+
+干活模型容灾：aigocode（claude-sonnet-5 → sonnet-5-5 → opus-5）→ apimart（sonnet-5-5 → opus-4-6）→ 官方 → flatrouter gpt-6-astra（最后兜底；2026-10-03 评测它比 Claude 更容易漏掉夹在正文里的一句话指令）。
 
 每次运行的摘要（Actions 页面）会列出 twitterapi.io 消耗和两家模型的 token 用量。
 

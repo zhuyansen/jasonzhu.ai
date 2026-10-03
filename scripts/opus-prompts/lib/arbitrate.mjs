@@ -42,6 +42,7 @@ export function applyDecision(x, d) {
   if (d.decision === "reject") return null;
   const k = x.classified;
   if (d.title_en && d.title_zh) { k.title_en = d.title_en.slice(0, 80); k.title_zh = d.title_zh.slice(0, 60); }
+  if (["product", "motion", "education", "stories", "art3d", "game", "production", "comparison"].includes(d.category)) k.category = d.category;
   const pr = x.extracted.prompt;
   const keep = d.keep_prompt && pr && (pr.text || pr.source === "link");
   return { ...x.extracted, prompt: keep ? pr : null, note: [x.extracted.note, `终审 ${d.via}: ${d.reason}`].filter(Boolean).join(" | ") };

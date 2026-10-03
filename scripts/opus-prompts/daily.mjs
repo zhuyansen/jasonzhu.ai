@@ -2,8 +2,8 @@
 /**
  * 每日增量收录新作品。
  *
- *   搜索  只搜「两天前那 24 小时」发布的帖子（since_time/until_time），点赞 ≥100。
- *         延迟两天是让播放量涨到位；每条帖子只落在一个窗口里，只付一次钱，已见过的永不重新处理。
+ *   搜索  按发布时间、每次一天的窗口搜（since_time/until_time），点赞 ≥100，延迟 24 小时。
+ *         延迟是让播放量涨到位；落后时工作流连跑多次逐天追上；每条帖子只落在一个窗口里，只付一次钱，已见过的永不重新处理。
  *   限量  播放 ≥5000 的按播放量取前 CAP 个（默认 80）。
  *   判断  Claude 分类 → 抓作者回复 → Claude 定位提示词 → 代码逐字对账
  *   审核  第二家模型复核；把握大的自动上线，拿不准的进 data/pending.json 等人看
@@ -27,7 +27,7 @@ const P = path.join(import.meta.dirname, "prompts");
 const DRY = process.argv.includes("--dry");
 const CAP = Number(process.env.CAP || 80);
 const MIN_FAVES = Number(process.env.MIN_FAVES || 100);
-const DELAY = Number(process.env.DELAY_HOURS || 48) * 3600e3;
+const DELAY = Number(process.env.DELAY_HOURS || 24) * 3600e3;
 const MAX_SEARCH = Number(process.env.MAX_SEARCH_TWEETS || 400);
 const THRESHOLD = 5000;
 const HOLD_DAYS = 14;
@@ -54,10 +54,12 @@ if (before !== pending.length) log(`待审队列清理：${before} → ${pending
 // ── 1. 搜索窗口 ──
 // WINDOW_FROM / WINDOW_TO：补跑指定时间段（比如新模型发布后补首批），此时不读写 state.windowEnd
 const MANUAL = Boolean(process.env.WINDOW_FROM && process.env.WINDOW_TO);
-const to = MANUAL ? Date.parse(process.env.WINDOW_TO) : now - DELAY;
-let from = MANUAL ? Date.parse(process.env.WINDOW_FROM) : state.windowEnd ? Date.parse(state.windowEnd) : to - 864e5;
-if (!MANUAL && to - from > 3 * 864e5) { log(`⚠️ 距上次运行超过 3 天，只补最近 3 天`); from = to - 3 * 864e5; }
-if (to - from < 3600e3) { log("窗口不足 1 小时，今天已经跑过了"); process.exit(0); }
+let from = MANUAL ? Date.parse(process.env.WINDOW_FROM) : state.windowEnd ? Date.parse(state.windowEnd) : now - DELAY - 864e5;
+// 落后超过 3 天只补最近 3 天（再早的帖子热度已过）
+if (!MANUAL && now - DELAY - from > 3 * 864e5) { log(`⚠️ 落后超过 3 天，只补最近 3 天`); from = now - DELAY - 3 * 864e5; }
+// 每次最多处理一天的发布窗口：落后时工作流会连跑几次，每天各自享有 CAP 个名额，不会挤在一起
+const to = MANUAL ? Date.parse(process.env.WINDOW_TO) : Math.min(now - DELAY, from + 864e5);
+if (to - from < 3600e3) { log("CAUGHT_UP 窗口不足 1 小时，已追上进度"); process.exit(0); }
 log(`窗口（按发布时间）：${new Date(from).toISOString()} → ${new Date(to).toISOString()} · 点赞 ≥${MIN_FAVES} · 上限 ${CAP} 个`);
 
 // 断点文件：搜索结果和作者回复是花钱买的，拿到就落盘。同一窗口重跑（比如模型那步挂了）直接复用，不重复扣费。
@@ -79,7 +81,7 @@ const picked = qualified.slice(0, CAP);
 log(`搜索返回 ${raw.length} 条${truncated ? "（触及单次上限，窗口内可能还有更多）" : ""} · 没见过的 ${fresh.length} · 播放≥${THRESHOLD} 且带视频 ${qualified.length} · 本次处理 ${picked.length}`);
 
 const TERMS_LOG = process.env.SEARCH_TERMS || "Opus 5.5 + Sonnet 5.5";
-const stat = { published: [], publishedNoPrompt: [], held: [], rejected: [], arbPublished: [], arbRejected: [], notWork: 0, reposts: 0 };
+const stat = { published: [], publishedNoPrompt: [], held: [], rejected: [], arbPublished: [], arbRejected: [], rescued: [], notWork: 0, reposts: 0 };
 const notes = [];
 const held = [];
 
@@ -117,6 +119,23 @@ if (picked.length) {
   const CATS = new Set(["product", "motion", "education", "stories", "art3d", "game", "production", "comparison"]);
   const works = picked.filter((c) => { const k = cls[c.id]; if (!k) return false; if (!k.keep || !CATS.has(k.category)) { stat.notWork++; return false; } if (k.original === "repost") { stat.reposts++; return false; } return true; });
   log(`分类结果：作品 ${works.length} · 非作品 ${stat.notWork} · 转帖 ${stat.reposts}`);
+
+  // ── 2b. 筛掉的再让 Jev 过一道：Jev 有把握（本人作品 ≥0.9）就捞回来 ──
+  // 评测里分类器会误筛一些一句话配视频的本人作品，Jev 在这类上判「是作品」通常是对的
+  const dropped = picked.filter((c) => cls[c.id] && !works.includes(c));
+  if (dropped.length && process.env.OPENROUTER_API_KEY) {
+    try {
+      const j = await jevAudit(dropped.map((c) => ({ id: c.id, handle: c.handle, text: c.text, thread: [], prompt: null })));
+      for (const c of dropped) {
+        if ((j[c.id]?.jev?.pIn ?? 0) < 0.9) continue;
+        const k = cls[c.id];
+        if (!CATS.has(k.category)) k.category = j[c.id].jev.kind === "own_comparison" ? "comparison" : "motion"; // 临时值，Opus 终审会给正式分类
+        k.keep = true; k.original = "creator"; k.confidence = "low"; // 分类把握标低：后面的审核拿不准时会交 Opus 终审
+        works.push(c); stat.rescued.push(`@${c.handle} ${c.views.toLocaleString("en-US")} · ${k.title_zh}（分类器判为 ${k.kind}，Jev 作品 ${j[c.id].jev.pIn}）`);
+      }
+      log(`  Jev 复核筛掉的 ${dropped.length} 条：捞回 ${stat.rescued.length} 条`);
+    } catch (e) { notes.push(`Jev 复核筛掉的帖子失败：${String(e.message).slice(0, 100)}`); }
+  }
 
   // ── 3. 作者回复 ──
   const bundles = {};
@@ -209,14 +228,14 @@ const summary = [
   `窗口 ${new Date(from).toISOString().slice(0, 16)}Z → ${new Date(to).toISOString().slice(0, 16)}Z（发布时间）`, "",
   "| 项 | 数量 |", "|---|---|",
   `| 搜索返回 | ${raw.length}${truncated ? "（触及上限）" : ""} |`, `| 没见过的 | ${fresh.length} |`, `| 播放 ≥${THRESHOLD} 且带视频 | ${qualified.length} |`, `| 本次处理（上限 ${CAP}） | ${picked.length} |`,
-  `| **上线：带提示词** | ${stat.published.length} |`, `| **上线：仅作品** | ${stat.publishedNoPrompt.length} |`, `| 终审（Opus）通过 / 否决 | ${stat.arbPublished.length} / ${stat.arbRejected.length} |`, `| 进待审队列（共 ${pending.length}） | ${stat.held.length} |`, `| 审核否决 | ${stat.rejected.length} |`, `| 非作品 / 转帖 | ${stat.notWork} / ${stat.reposts} |`,
+  `| **上线：带提示词** | ${stat.published.length} |`, `| **上线：仅作品** | ${stat.publishedNoPrompt.length} |`, `| 终审（Opus）通过 / 否决 | ${stat.arbPublished.length} / ${stat.arbRejected.length} |`, `| 进待审队列（共 ${pending.length}） | ${stat.held.length} |`, `| 审核否决 | ${stat.rejected.length} |`, `| 非作品 / 转帖 | ${stat.notWork} / ${stat.reposts} |`, `| 其中被 Jev 捞回 | ${stat.rescued.length} |`,
   "", "| 消耗 | |", "|---|---|",
   `| twitterapi.io | ${cost.tweets} 条 ≈ ${cost.credits.toLocaleString("en-US")} credits |`,
   `| 干活模型（Claude） | ${usage.worker.calls} 次调用 · 输入 ${usage.worker.in.toLocaleString("en-US")} / 输出 ${usage.worker.out.toLocaleString("en-US")} tokens |`,
   `| 审核模型（${usage.reviewer.provider || "未调用"}） | ${usage.reviewer.calls} 次调用 · 输入 ${usage.reviewer.in.toLocaleString("en-US")} / 输出 ${usage.reviewer.out.toLocaleString("en-US")} tokens |`,
   `| 审核（Jev） | ${jevUsage.calls} 次调用 · $${jevUsage.cost.toFixed(4)} |`,
   `| 终审模型（${usage.arbiter.model || "未调用"}） | ${usage.arbiter.calls} 次调用 · 输入 ${usage.arbiter.in.toLocaleString("en-US")} / 输出 ${usage.arbiter.out.toLocaleString("en-US")} tokens |`,
-  ...[["上线：带提示词", stat.published], ["上线：仅作品", stat.publishedNoPrompt], ["终审通过", stat.arbPublished], ["终审否决", stat.arbRejected], ["进待审队列", stat.held], ["审核否决", stat.rejected], ["备注", notes]].flatMap(([t, l]) => (l.length ? ["", `**${t}**`, ...l.map((s) => `- ${s}`)] : [])),
+  ...[["上线：带提示词", stat.published], ["上线：仅作品", stat.publishedNoPrompt], ["Jev 捞回的", stat.rescued], ["终审通过", stat.arbPublished], ["终审否决", stat.arbRejected], ["进待审队列", stat.held], ["审核否决", stat.rejected], ["备注", notes]].flatMap(([t, l]) => (l.length ? ["", `**${t}**`, ...l.map((s) => `- ${s}`)] : [])),
 ].join("\n");
 log("\n" + summary);
 if (process.env.GITHUB_STEP_SUMMARY) fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, summary + "\n");

@@ -1,7 +1,8 @@
 name: Claude 5.5 提示词库每日收录
 
-# 每天北京时间 10:30：收录两天前发布、播放过 5000 的 Opus 5.5 / Sonnet 5.5 新作品，每天最多 80 个（按播放量优先）。
-# Claude 分类并定位提示词 → 代码逐字对账 → Jev 审核 → 拿不准的交 Opus 终审。
+# 每天北京时间 10:30：收录 24 小时前发布、播放过 5000 的 Opus 5.5 / Sonnet 5.5 新作品，每天最多 80 个（按播放量优先）。
+# Claude 分类（被筛掉的由 Jev 复核捞回）并定位提示词 → 代码逐字对账 → Jev 审核 → 拿不准的交 Opus 终审。
+# 每次最多处理一天的发布窗口，落后时连跑最多 3 轮自动追上，不需要手动补跑。
 # 把握大的直接提交到 main 上线；拿不准的进「滚动 PR」（分支 opus-prompts/pending），合并即批准。
 #
 # 需要的 Secrets：TWITTERAPI_IO_KEY（必需）、OPENROUTER_API_KEY（Jev 审核）、FLATROUTER_API_KEY（Jev 不可用时的 GPT 备用审核）；Claude 的几个沿用快讯的。
@@ -31,7 +32,7 @@ env:
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 110
     steps:
       - uses: actions/checkout@v4
 
@@ -57,7 +58,12 @@ jobs:
           if [ -z "$OPENROUTER_API_KEY" ]; then
             echo "::warning::没配 OPENROUTER_API_KEY：审核会退回到 GPT（flatrouter），Jev 不会启用"
           fi
-          node scripts/opus-prompts/daily.mjs
+          # 每次最多处理一天的窗口；落后时连跑，逐天追上（最多 3 轮）
+          set -o pipefail  # 否则 tee 会吞掉 daily.mjs 的失败
+          for i in 1 2 3; do
+            node scripts/opus-prompts/daily.mjs | tee "$RUNNER_TEMP/daily-$i.log"
+            if grep -q "CAUGHT_UP" "$RUNNER_TEMP/daily-$i.log"; then break; fi
+          done
 
       - name: 组装并编译
         run: |

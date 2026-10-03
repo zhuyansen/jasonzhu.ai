@@ -48,7 +48,8 @@ Return a JSON array, one object per input case, same order, every `id` exactly o
   "keep_prompt": true | false,
   "reason": "<one plain sentence, max 160 characters>",
   "title_en": "<only if the current title is generic or wrong; max 60 characters>",
-  "title_zh": "<only if replacing; natural Simplified Chinese; max 60 characters>"
+  "title_zh": "<only if replacing; natural Simplified Chinese; max 60 characters>",
+  "category": "<only if the given category is wrong or missing: product | motion | education | stories | art3d | game | production | comparison>"
 }
 ```
 
