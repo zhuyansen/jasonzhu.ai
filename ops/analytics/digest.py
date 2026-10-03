@@ -167,7 +167,10 @@ w()
 
 # ───────────── Vercel 流量 ─────────────
 w("## 🌐 流量（Vercel Analytics，含国内访客）")
-if section_status("vercel", vercel, "Vercel Analytics "):
+if section_status("vercel", vercel, "Vercel Analytics ") and not vercel.get("paths7"):
+    w("> 刚开始采集，近 7 天还没有数据（开关 2026-10-04 才打开）")
+    w()
+elif vercel.get("ok"):
     w("| 页面 | 7 天浏览 |")
     w("|---|--:|")
     for r in vercel.get("paths7", [])[:12]:
