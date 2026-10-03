@@ -18,7 +18,7 @@ Any paid AI bootcamp charging you thousands is essentially reselling repackaged 
 | **Anthropic** | Certification-driven, full-stack | 13 | ✅ $99 cert | A resume-worthy AI engineer certificate |
 | **OpenAI** | Mass adoption, enterprise-friendly | 15+ | ⏳ mid-2026 | Teams figuring out ChatGPT at work |
 | **Google Skills** | Gamified paths, collect badges | Many paths | ✅ Skill Badge | Beginners and procrastinators |
-| **NVIDIA DLI** | Fundamentals + GPU acceleration | 600+ free | ✅ Certificate | Deep learning / CUDA fundamentals |
+| **NVIDIA DLI** | Fundamentals + GPU acceleration | 10 free + open-source | 💰 Certificate on $90 courses | Deep learning / CUDA fundamentals |
 | **Microsoft** | One skill, one credential | Large catalog | ✅ Applied Skills | Stacking credible credentials fast |
 | **AWS** | Biggest catalog, follow the paths | 600 | ✅ Certification | Building AI apps on AWS |
 | **Meta** | PyTorch, the industry standard | All tutorials free | ❌ | Training models from scratch |
@@ -63,7 +63,7 @@ Each guide covers platform positioning, path breakdown, direct official links, a
 1. [Anthropic Claude Certified Architect roadmap](/en/blog/anthropic-claude-certified-architect-roadmap) — certification-driven, $99 engineer cert
 2. [OpenAI Academy vs Anthropic compared](/en/blog/openai-academy-vs-anthropic-learning-paths) — two paths side by side
 3. [Google Skills gamified learning paths](/en/blog/google-skills-ai-learning-paths) — grind quests, collect badges
-4. [NVIDIA DLI free courses guide](/en/blog/nvidia-dli-free-courses) — the only free official CUDA entry point
+4. [NVIDIA DLI free courses guide](/en/blog/nvidia-dli-free-courses) — the 10 courses still free + a free open-source deep learning course (updated Oct 2026)
 5. [Microsoft AI certifications guide](/en/blog/microsoft-learn-ai-certifications) — one skill one credential, AI-901 pitfalls
 6. [AWS Skill Builder free AI courses](/en/blog/aws-skill-builder-free-ai-courses) — 600 free courses, follow the paths
 7. [Meta PyTorch official tutorials](/en/blog/meta-pytorch-tutorials-guide) — train and deploy a transformer in 9 steps

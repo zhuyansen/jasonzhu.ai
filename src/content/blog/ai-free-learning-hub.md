@@ -22,7 +22,7 @@ excerpt: "Anthropic、OpenAI、Google、NVIDIA、微软、AWS、Meta、IBM、Dee
 | **Anthropic** | 认证驱动，全栈覆盖 | 13 门 | ✅ $99 认证 | 想拿能写简历的 AI 工程师证 |
 | **OpenAI** | 全民普及，企业友好 | 15+ 门 | ⏳ 2026 中 | 团队/公司怎么用好 ChatGPT |
 | **Google Skills** | 游戏化副本，拿 Badge | 多条路径 | ✅ Skill Badge | 零基础、拖延症友好 |
-| **NVIDIA DLI** | 底层 + GPU 加速 | 600+ 免费 | ✅ 证书 | 想补深度学习/CUDA 底层 |
+| **NVIDIA DLI** | 底层 + GPU 加速 | 10 门免费 + 开源课 | 💰 证书在 $90 课 | 想补深度学习/CUDA 底层 |
 | **Microsoft** | 一技能一证，发证爽快 | 大量 | ✅ Applied Skills | 想快速攒可信凭证 |
 | **AWS** | 课最多，按路径走 | 600 门 | ✅ 认证 | AWS 生态做 AI 应用 |
 | **Meta** | PyTorch 行业标准 | 教程全免费 | ❌ | 想从零搭训练模型 |
@@ -67,7 +67,7 @@ excerpt: "Anthropic、OpenAI、Google、NVIDIA、微软、AWS、Meta、IBM、Dee
 1. [Anthropic Claude Certified Architect 完整路线图](/zh/blog/anthropic-claude-certified-architect-roadmap) — 认证驱动，$99 拿工程师证
 2. [OpenAI Academy vs Anthropic 完整对比](/zh/blog/openai-academy-vs-anthropic-learning-paths) — 两套路径横向对比
 3. [Google Skills 游戏化学习路径](/zh/blog/google-skills-ai-learning-paths) — 刷副本拿 Badge
-4. [NVIDIA DLI 免费课完整攻略](/zh/blog/nvidia-dli-free-courses) — CUDA 官方唯一免费入口
+4. [NVIDIA DLI 免费课完整攻略](/zh/blog/nvidia-dli-free-courses) — 现在还免费的 10 门课 + 免费开源深度学习课（2026-10 更新）
 5. [微软 AI 认证完整攻略](/zh/blog/microsoft-learn-ai-certifications) — 一技能一证，AI-901 避坑
 6. [AWS Skill Builder 免费 AI 课攻略](/zh/blog/aws-skill-builder-free-ai-courses) — 600 门免费课，按路径走
 7. [Meta PyTorch 官方教程攻略](/zh/blog/meta-pytorch-tutorials-guide) — 9 步搭训练部署 transformer
