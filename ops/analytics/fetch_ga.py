@@ -22,9 +22,10 @@ def flt(bots=False):
 
 
 def main():
-    prop, adc = secret("GA_PROPERTY_ID", "ga_property_id"), secret("GA_ADC_JSON", "ga_adc.json")
+    # 媒体资源 ID 不是密钥（jasonzhu.ai = 557231841，衡量 ID G-CTZ8CEW9QZ），GA_PROPERTY_ID 可覆盖
+    prop, adc = secret("GA_PROPERTY_ID", "ga_property_id") or "557231841", secret("GA_ADC_JSON", "ga_adc.json")
     if not prop or not adc:
-        return save("ga", {"ok": False, "skipped": True, "reason": "没配 GA_PROPERTY_ID / GA_ADC_JSON"})
+        return save("ga", {"ok": False, "skipped": True, "reason": "没配 GA_ADC_JSON"})
     a = json.loads(adc)
     creds = Credentials(None, refresh_token=a["refresh_token"], client_id=a["client_id"], client_secret=a["client_secret"],
                         token_uri="https://oauth2.googleapis.com/token", quota_project_id=a.get("quota_project_id"), scopes=SCOPES)
