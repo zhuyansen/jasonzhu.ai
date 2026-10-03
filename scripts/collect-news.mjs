@@ -695,6 +695,104 @@ function generateMDX(digest) {
   return outputPath;
 }
 
+
+// ─── Step 2b: 融资速递复核（代码层，Claude 生成之后、写入之前）─────────
+// 1) 跨天去重：近 7 天报过的同一公司、同一金额 → 删（以前只在 prompt 里提醒，实际常隔天重复）
+// 2) 与当天正文重复：公司名出现在某条 item 标题里 → 删
+// 3) Jev 判断是否真的已发生：传闻/洽谈/计划/未完成 IPO 合计 ≥0.7 → 删。
+//    VC 基金募资、只有估值变化/老股转让按编辑规则保留。2026-10-03 用 139 张历史卡评测 AUC 0.996、阈值 0.7 零误伤。
+//    Jev 不可用时这一步跳过，不影响出稿。
+const normCo = (s) => String(s || "").toLowerCase().replace(/[（(].*?[)）]/g, "").replace(/[^a-z0-9\u4e00-\u9fff]/g, "");
+const normAmt = (s) => String(s || "").toLowerCase().replace(/[^0-9.bmk亿万]/g, "");
+
+function getRecentFundingCards(days = 4) {
+  const newsDir = path.join(process.cwd(), "src/content/news");
+  const out = [];
+  for (let i = 1; i <= days; i++) {
+    const d = new Date(TODAY); d.setDate(d.getDate() - i);
+    const file = path.join(newsDir, `${d.toISOString().split("T")[0]}.md`);
+    if (!fs.existsSync(file)) continue;
+    const seg = fs.readFileSync(file, "utf-8").split(/###\s*💰[^\n]*融资速递/)[1];
+    if (!seg) continue;
+    for (const m of seg.matchAll(/^-\s+\*\*(?:\[([^\]]+)\]\([^)]*\)|([^*]+))\*\*\s*·?\s*(.*)$/gm)) {
+      out.push({ company: normCo(m[1] || m[2]), meta: m[3] || "" });
+    }
+  }
+  return out;
+}
+
+async function jevFundingKinds(cards) {
+  const key = process.env.OPENROUTER_API_KEY;
+  if (!key || !cards.length) return null;
+  const KIND = {
+    completed_funding: "The company has raised (closed or officially announced) a funding round, including debt or convertible financing",
+    completed_acquisition: "An acquisition that has been agreed or completed",
+    ipo_completed: "The company has listed / priced its IPO and raised the money",
+    ipo_pending: "An IPO that is planned, filed or launched but not yet priced",
+    rumor_or_talks: "Only reported, rumored, in talks, seeking, planning or expected to raise; not confirmed as done",
+    vc_fund: "A venture capital firm closed or raised its own fund, not a startup raising money",
+    secondary_or_valuation: "A tender offer, share sale by existing holders, or a valuation change without new money raised",
+  };
+  const lines = ["Funding cards from a daily AI news digest. The source URL slug often states what happened. Judge each card on its own.", ""];
+  const questions = {};
+  cards.forEach((c, i) => {
+    const k = `c${i + 1}`;
+    lines.push(`${k}: company=${c.company} | round=${c.round || ""} | amount=${c.amount || ""} | valuation=${c.valuation || ""} | investors=${c.investors || ""} | note=${String(c.pitch || "").replace(/\s+/g, " ")} | source=${c.url || ""}`);
+    questions[`${k}_kind`] = { type: "choice", instructions: `What does card ${k} describe?`, criteria: KIND };
+  });
+  const body = JSON.stringify({ model: process.env.JEV_MODEL || "~typesafe/jev-latest", state: lines.join("\n"), questions });
+  let text;
+  if (process.env.CLAUDE_TRANSPORT === "curl") {
+    const { execFileSync } = await import("node:child_process");
+    const os = await import("node:os");
+    const tmp = path.join(os.tmpdir(), `jev-fund-${process.pid}.json`);
+    fs.writeFileSync(tmp, body, { mode: 0o600 });
+    try {
+      // 密钥走 stdin 的 curl 配置，不进命令行
+      text = execFileSync("curl", ["-sS", "-m", "90", "-K", "-", "--data-binary", `@${tmp}`, "https://openrouter.ai/api/alpha/decisions"],
+        { input: `header = "Authorization: Bearer ${key}"\nheader = "Content-Type: application/json"\n`, encoding: "utf-8", maxBuffer: 16e6 });
+    } finally { fs.rmSync(tmp, { force: true }); }
+  } else {
+    const res = await fetch("https://openrouter.ai/api/alpha/decisions", { method: "POST", headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" }, body, signal: AbortSignal.timeout(90000) });
+    if (!res.ok) throw new Error(`Jev HTTP ${res.status}`);
+    text = await res.text();
+  }
+  const o = JSON.parse(text);
+  if (!o.answers) throw new Error(`Jev bad response: ${text.slice(0, 120)}`);
+  return cards.map((_, i) => o.answers[`c${i + 1}_kind`]);
+}
+
+async function reviewFunding(digest) {
+  if (!Array.isArray(digest.funding) || !digest.funding.length) return;
+  const before = digest.funding.length;
+  const recent = getRecentFundingCards(7);
+  const itemTitles = (digest.items || []).map((i) => normCo(`${i.title} ${i.titleEn || ""}`));
+  const kept = [];
+  for (const f of digest.funding) {
+    const co = normCo(f.company);
+    const amt = normAmt(f.amount);
+    const dupDay = co.length >= 3 && recent.find((r) => r.company === co && (!amt || normAmt(r.meta).includes(amt)));
+    if (dupDay) { console.log(`  🧹 融资去重（近 7 天已报）：${f.company} ${f.amount || ""}`); continue; }
+    if (co.length >= 3 && itemTitles.some((t) => t.includes(co))) { console.log(`  🧹 融资去重（与当天正文重复）：${f.company}`); continue; }
+    kept.push(f);
+  }
+  digest.funding = kept;
+  try {
+    const kinds = await jevFundingKinds(kept);
+    if (kinds) {
+      digest.funding = kept.filter((f, i) => {
+        const p = kinds[i]?.probabilities || {};
+        const notYet = (p.rumor_or_talks || 0) + (p.ipo_pending || 0);
+        if (notYet >= 0.7) { console.log(`  🧹 融资复核（Jev：${kinds[i].choice} ${notYet.toFixed(2)}，尚未发生）：${f.company}`); return false; }
+        return true;
+      });
+    }
+  } catch (e) {
+    console.log(`  ⚠️ Jev 融资复核跳过：${String(e.message).slice(0, 100)}`);
+  }
+  console.log(`  💰 融资速递：${before} → ${digest.funding.length} 条`);
+}
+
 // ─── Main ───────────────────────────────────────────
 
 async function main() {
@@ -744,6 +842,7 @@ async function main() {
     : await curateWithClaude(rawItems);
   console.log(`  筛选出 ${digest.items.length} 条快讯`);
   console.log(`  Jason 说: ${digest.jasonSays}`);
+  await reviewFunding(digest);
 
   // 链接清洗：nitter.net 已死链
   // ⚠️ nitter 部分 fork 给出的 status ID 是合成 ID（非真实 X tweet ID），

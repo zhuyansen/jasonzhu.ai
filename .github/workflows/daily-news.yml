@@ -42,6 +42,7 @@ jobs:
           ANTHROPIC_BASE_URL: "https://api.aigocode.app"
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           APIMART_API_KEY: ${{ secrets.APIMART_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}  # Jev 融资复核，缺失时跳过
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
           DATE: ${{ inputs.date }}
