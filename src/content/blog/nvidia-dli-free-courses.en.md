@@ -1,4 +1,5 @@
 ---
+coverImage: "/blog/nvidia-dli-free-courses/cover-en.png"
 title: "NVIDIA DLI Free Courses (2026): What's Still Free, Certificates, and Best Picks"
 excerpt: "Is NVIDIA Deep Learning Institute free? Partly. I re-checked the whole DLI catalog in October 2026: the 10 courses that are free right now, which ones give a certificate, what the $30/$90 courses and $125 certification exams cost, and the free open-source deep learning course most guides miss."
 ---

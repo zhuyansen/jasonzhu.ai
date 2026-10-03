@@ -28,7 +28,7 @@ export function getAllPosts(): BlogPostMeta[] {
 }
 
 /** Return a single post with full content loaded from disk.
- *  lang="en" 且存在 <slug>.en.md 时返回英文版（title/excerpt 同步覆盖），否则回退中文。 */
+ *  lang="en" 且存在 <slug>.en.md 时返回英文版（title/excerpt/coverImage 同步覆盖），否则回退中文。 */
 export function getPostBySlug(slug: string, lang?: "zh" | "en"): BlogPost | undefined {
   const meta = allPostsMeta.find((p) => p.slug === slug);
   if (!meta) return undefined;
@@ -43,6 +43,7 @@ export function getPostBySlug(slug: string, lang?: "zh" | "en"): BlogPost | unde
       ...meta,
       title: en.title || meta.title,
       excerpt: en.excerpt || meta.excerpt,
+      coverImage: en.coverImage || meta.coverImage,
       content: en.content,
     };
   }

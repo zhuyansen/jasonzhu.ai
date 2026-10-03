@@ -53,7 +53,7 @@ for (const post of posts) {
 }
 console.log(`Generated ${posts.length} post content files to ${CONTENT_DIR}`);
 
-// 英文版内容：<slug>.en.json，frontmatter 可覆盖 title/excerpt
+// 英文版内容：<slug>.en.json，frontmatter 可覆盖 title/excerpt/coverImage（英文封面，用于英文页 hero 和 OG 图）
 for (const filename of enFiles) {
   const slug = filename.replace(/\.en\.mdx?$/, "");
   const { data, content } = matter(
@@ -65,6 +65,7 @@ for (const filename of enFiles) {
       content,
       title: data.title || undefined,
       excerpt: data.excerpt || undefined,
+      coverImage: data.coverImage || undefined,
     })
   );
 }
