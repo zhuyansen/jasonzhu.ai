@@ -144,6 +144,26 @@ Yes. MP4 and MOV are what converter apps and online converters accept. The conve
 
 Android's version is called a Motion Photo. It works the same way — a photo with a few seconds of video — but it's a different format, and you'll need a third-party app to make one from an existing video.
 
+### I saved a video from Instagram or YouTube. How do I make it my moving Lock Screen?
+
+Use method 2: open the saved video in a converter app such as intoLive, trim it to the few seconds you want, save it as a Live Photo, then set it in Settings → Wallpaper with the Live Photo button on. Pick a vertical part of the video, since the Lock Screen crops landscape footage.
+
+### The TikTok video has no "Live Photo" button. What can I do?
+
+The button is missing because the creator turned off downloads for that video, and TikTok respects that setting. There's no TikTok option to override it; pick a video that allows downloads, or use a clip you have the right to use.
+
+### Is there a free video to Live Photo converter without a watermark?
+
+Some online converters are free and add no watermark, and converter apps usually let you try the free version first (often watermarked or length-limited). Limits change, so check before you convert: run a short test clip and look at the result in Photos before doing the one you care about.
+
+### Can I make a Live Photo longer than a few seconds?
+
+No. A Live Photo is a short clip around one key photo, and converters trim to a few seconds for that reason. For a longer moving background, the iPhone Lock Screen has no option; Android can use a full video as a live wallpaper.
+
+### Can I do this on a Mac?
+
+The Photos app on the Mac doesn't convert videos to Live Photos either. Use an online converter or a Mac converter app, and make sure the result lands in your Photos library as a Live Photo (with iCloud Photos on, it then appears on your iPhone) rather than as a separate image and video file.
+
 ---
 
 ## The One-Line Summary
