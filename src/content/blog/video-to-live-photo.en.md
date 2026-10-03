@@ -90,6 +90,33 @@ intoLive is rated **4.6 from about 114,000 ratings** in the US App Store, so mos
 
 In mainland China there's an extra trap: **17 reviews describe an in-app login or ad that asks for your phone number and an SMS code, and that code signs you up for a monthly carrier-billed package** (one cites ¥25 a month). Never enter an SMS code inside the app.
 
+#### In users' own words
+
+(Excerpts from App Store reviews, with region, date and app version; Chinese and Japanese ones translated.)
+
+- **Charged after the trial:** "Charged me $10 after I got a free trial." (US, 2026-09-30, v4.4.2); "Forgot to cancel after subscribing, and it charged me seven weeks in a row" (mainland China, 2026-08-18, v4.4.0)
+- **Export fails or crashes:** "Says 'cannot open' when trying to save video as Live Photo." (US, 2026-08-12, v4.4.0); "I waited a whole hour and still haven't been able to export the live wallpaper" (US, 2026-06-07, v4.3.5); "It always crashes on export, right when it's almost done" (mainland China, 2024-10-30, v4.2.2)
+- **Won't work as a wallpaper:** "My phone won't even recognize one of the wallpapers" (US, 2026-09-29, v4.4.1); "After updating to iOS 18.6.2, the exported Live Photo can't be used on the Lock Screen" (mainland China, 2025-08-28, v4.3.4); "Doesn't work on iOS 26, and doesn't move" (Japan, 2026-05-20, v4.3.5)
+- **Free-tier limits:** "live photo is sped up for some reason… slaps their watermark on your export" (UK, 2026-08-19, v4.4.0); "Terrible, it only makes one second" (Taiwan, 2026-03-13, v4.3.5); "You can only make a Live Photo in 1080p maximum" (Australia, 2026-01-11, v4.3.5)
+- **Bought it once, now a subscription:** "I paid ¥18 for it before, why do I have to pay again for a subscription?" (mainland China, 2026-09-26, v4.4.1)
+- **SMS-code carrier billing:** "The page jumps straight to a carrier billing service, and entering the code charges you" (mainland China, 2026-09-15, v4.4.1)
+- **The happy ones:** "Really quick and easy to do" (UK, 2026-09-23); "Downloads really aren't slow, and you don't have to pay to download" (Taiwan, 2026-08-24)
+
+#### How the complaints changed over time
+
+| Period | Written reviews | 1–2★ | Share |
+|---|---|---|---|
+| 2024, Jan–Jun | 131 | 43 | 33% |
+| 2024, Jul–Dec | 201 | 136 | **68%** |
+| 2025, Jan–Jun | 117 | 57 | 49% |
+| 2025, Jul–Dec | 112 | 61 | 54% |
+| 2026, Jan–Jun | 116 | 59 | 51% |
+| 2026, Jul–Sep | 63 | 30 | 48% |
+
+- **The late-2024 peak was one bad release.** On October 2–4, 2024, mainland China got 55 negative reviews of version 4.2.0, 52 of them saying it crashed on launch, shortly after iOS 18 came out. Version 4.2.2 fixed the crash, and the complaints moved to one-to-two-second clips, the watermark and the paywall.
+- **Since 2025 about half the written reviews are negative,** and the complaints have shifted from crashes to charges and to results that won't work as a wallpaper.
+- **Read the shares, not the counts.** Apple's public review feed returns only the latest ~500 reviews per region, so each region covers a different stretch of time (mainland China from April 2024, the US from June 2025), and counts from different periods aren't comparable.
+
 **Bottom line:** for a single TikTok clip, use method 1. If you use intoLive, run the free version on a short test clip, check that the result shows LIVE and works as a wallpaper, and if you do start a trial, set a reminder to cancel it.
 
 ---
