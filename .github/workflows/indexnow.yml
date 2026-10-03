@@ -1,0 +1,57 @@
+name: IndexNow 推送
+
+# 内容改动上线后把 URL 推给 Bing（IndexNow），ChatGPT 搜索部分依赖 Bing 索引。
+# cron 任务用 GITHUB_TOKEN 推的提交不会触发 push 事件，所以另挂 workflow_run。
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/content/blog/**"
+      - "src/content/news/**"
+      - "src/content/opus-prompts/cases.json"
+  workflow_run:
+    workflows: ["Daily AI News Digest", "Claude 5.5 提示词库每日收录"]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      range:
+        description: "git range（留空 = HEAD~1..HEAD）"
+        required: false
+        default: ""
+
+concurrency:
+  group: indexnow
+  cancel-in-progress: false
+
+jobs:
+  indexnow:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 50
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: 推送改动的 URL
+        env:
+          EVENT: ${{ github.event_name }}
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.event.after }}
+          RUN_SHA: ${{ github.event.workflow_run.head_sha }}
+          INPUT_RANGE: ${{ github.event.inputs.range }}
+        run: |
+          case "$EVENT" in
+            push)
+              # 新分支首推时 before 是全 0
+              if [[ "$BEFORE" =~ ^0+$ ]]; then RANGE="HEAD~1..$AFTER"; else RANGE="$BEFORE..$AFTER"; fi ;;
+            workflow_run) RANGE="$RUN_SHA..HEAD" ;;
+            *) RANGE="${INPUT_RANGE:-HEAD~1..HEAD}" ;;
+          esac
+          echo "range: $RANGE"
+          node scripts/indexnow.mjs "$RANGE"

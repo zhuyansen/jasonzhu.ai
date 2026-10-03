@@ -27,6 +27,7 @@ CLAUDE_TRANSPORT=curl node scripts/translate-content.mjs blog|news
 CLAUDE_TRANSPORT=curl node scripts/translate-big-blogs.mjs [slug...]   # 超大文分块翻
 
 node scripts/check-sitemap.mjs   # 线上 sitemap URL 数量断言（防再次静默坏掉）
+node scripts/indexnow.mjs [range|--url u...] [--dry-run]  # 推 Bing IndexNow；.github/workflows/indexnow.yml 在内容 push / 快讯与提示词 cron 后自动跑
 node scripts/reconcile-leads.mjs # Supabase 恢复后把 KV 兜底订阅线索回灌主表
 ```
 
