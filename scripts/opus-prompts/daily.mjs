@@ -74,7 +74,8 @@ const raw = ck.raw;
 if (!raw.length && to - from >= 12 * 3600e3) { console.error("❌ 窗口内搜索结果为 0，疑似接口异常，不写入、不推进窗口"); fs.rmSync(ckFile, { force: true }); process.exit(1); }
 const truncated = raw.length >= MAX_SEARCH;
 const fresh = raw.filter((t) => !seen.has(t.id));
-for (const t of raw) seen.add(t.id);
+// 只记住已达播放门槛的帖子：提前收（窗口离发布不足 24h）时，没到 5000 的以后还能再进来
+for (const t of raw) if ((t.viewCount || 0) >= THRESHOLD) seen.add(t.id);
 const qualified = fresh.filter((t) => (t.viewCount || 0) >= THRESHOLD).map((t) => normalize(t, nowISO)).filter(Boolean)
   .filter((c) => !known.has(c.id) && !pending.some((p) => p.candidate.id === c.id)).sort((a, b) => b.views - a.views);
 const picked = qualified.slice(0, CAP);
