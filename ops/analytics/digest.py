@@ -176,9 +176,6 @@ if section_status("vercel", vercel, "Vercel Analytics "):
     w()
     w("**国家/地区**：" + " · ".join(f"{r.get('country') or '?'} {fmt(n(r))}" for r in vercel.get("countries7", [])[:8]))
     w("**设备**：" + " · ".join(f"{r.get('deviceType') or '?'} {fmt(n(r))}" for r in vercel.get("devices7", [])))
-    utm = [r for r in vercel.get("utm7", []) if r.get("utmSource")]
-    if utm:
-        w("**UTM**：" + " · ".join(f"{r['utmSource']} {fmt(n(r))}" for r in utm[:8]))
     w()
 
 # ───────────── GSC ─────────────

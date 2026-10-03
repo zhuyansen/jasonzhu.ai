@@ -47,7 +47,7 @@ def main():
         "referrers7": agg(tok, "referrerHostname", str(s7), str(y), 40),
         "countries7": agg(tok, "country", str(s7), str(y), 10),
         "devices7": agg(tok, "deviceType", str(s7), str(y), 5),
-        "utm7": agg(tok, "utmSource", str(s7), str(y), 15),
+        # UTM 维度要 Enterprise 或 Web Analytics Plus（402 payment_required），Hobby 拿不到，来源看 referrer
     })
 
 
