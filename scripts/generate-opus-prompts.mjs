@@ -77,7 +77,7 @@ const slim = cases.map((c) => ({
 }));
 const distinct = withPromptCount - [...groupOf.values()].length + new Set([...groupOf.values()].map((g) => g.key)).size;
 const head = { model: src.model, threshold: src.threshold, updatedAt: src.updatedAt, statsCheckedAt: src.statsCheckedAt, distinctPrompts: distinct, withPrompt: withPromptCount,
-  modelCounts: Object.fromEntries(["opus-5.5", "sonnet-5.5"].map((m) => [m, cases.filter((c) => (c.models || ["opus-5.5"]).includes(m)).length])) };
+  modelCounts: Object.fromEntries(["opus-5.5", "sonnet-5.5", "fable-5.5"].map((m) => [m, cases.filter((c) => (c.models || ["opus-5.5"]).includes(m)).length])) };
 
 fs.mkdirSync(path.dirname(OUT_LIST), { recursive: true });
 fs.writeFileSync(OUT_LIST, JSON.stringify({ ...head, cases: slim }));

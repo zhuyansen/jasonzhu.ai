@@ -15,9 +15,12 @@ export interface OpusPromptMeta {
   excerpt: string;
 }
 
-export type ClaudeModel = "opus-5.5" | "sonnet-5.5";
+export type ClaudeModel = "opus-5.5" | "sonnet-5.5" | "fable-5.5";
 
-export const MODEL_LABEL: Record<ClaudeModel, string> = { "opus-5.5": "Opus 5.5", "sonnet-5.5": "Sonnet 5.5" };
+export const MODEL_LABEL: Record<ClaudeModel, string> = { "opus-5.5": "Opus 5.5", "sonnet-5.5": "Sonnet 5.5", "fable-5.5": "Fable 5.5" };
+
+/** 还没官宣、只在内测的模型（卡片和筛选上加标注） */
+export const MODEL_PREVIEW: Partial<Record<ClaudeModel, { zh: string; en: string }>> = { "fable-5.5": { zh: "内测·未官宣", en: "Preview · unannounced" } };
 
 export interface OpusCaseSlim {
   id: string;

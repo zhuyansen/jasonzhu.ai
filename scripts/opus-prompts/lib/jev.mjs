@@ -37,7 +37,7 @@ const HARD_OUT = ["repost", "tutorial_or_talk", "news", "non_visual"]; // 高把
 const clip = (t, n) => (t.length <= n ? t : t.slice(0, n - 200) + " … " + t.slice(-180));
 
 function request(cases) {
-  const lines = ["Posts on X that mention Claude Opus 5.5 or Claude Sonnet 5.5 and have a video attached. Judge each post on its own.", ""];
+  const lines = ["Posts on X that mention Claude Opus 5.5, Sonnet 5.5 or Fable 5.5 and have a video attached. Judge each post on its own.", ""];
   const questions = {};
   cases.forEach((c, i) => {
     const k = `p${i + 1}`;

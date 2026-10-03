@@ -8,6 +8,7 @@ import {
   formatCount,
   formatDuration,
   MODEL_LABEL,
+  MODEL_PREVIEW,
   type ClaudeModel,
   type OpusCaseSlim,
   type OpusCategory,
@@ -131,7 +132,7 @@ export default function PromptLibraryClient({ initial, total, counts, modelCount
         </div>
 
         <div className="flex flex-wrap gap-2">
-          {([null, "opus-5.5", "sonnet-5.5"] as (ClaudeModel | null)[]).map((m) => (
+          {([null, "opus-5.5", "sonnet-5.5", "fable-5.5"] as (ClaudeModel | null)[]).filter((m) => !m || modelCounts[m]).map((m) => (
             <button
               key={m ?? "all"}
               onClick={() => { setModel(m); reset(); }}
@@ -139,7 +140,8 @@ export default function PromptLibraryClient({ initial, total, counts, modelCount
                 model === m ? "bg-[var(--primary)] text-white" : "bg-blue-50 text-[var(--primary)] hover:bg-blue-100"
               }`}
             >
-              {m ? MODEL_LABEL[m] : isZh ? "全部模型" : "All models"}{" "}
+              {m ? MODEL_LABEL[m] : isZh ? "全部模型" : "All models"}
+              {m && MODEL_PREVIEW[m] && <span className="ml-1 font-normal opacity-80">（{isZh ? MODEL_PREVIEW[m]!.zh : MODEL_PREVIEW[m]!.en}）</span>}{" "}
               <span className="opacity-60">{m ? modelCounts[m] : total}</span>
             </button>
           ))}
@@ -269,8 +271,9 @@ function CaseCard({ c, lang, onGroup }: { c: OpusCaseSlim; lang: string; onGroup
       <div className="flex flex-col flex-1 p-4">
         <div className="flex items-center gap-2 text-xs text-gray-400 mb-1.5">
           {(c.models || ["opus-5.5"]).map((m) => (
-            <span key={m} className={`px-1.5 py-0.5 rounded font-semibold ${m === "sonnet-5.5" ? "bg-amber-50 text-amber-700" : "bg-violet-50 text-violet-700"}`}>
-              {MODEL_LABEL[m]}
+            <span key={m} className={`px-1.5 py-0.5 rounded font-semibold ${m === "sonnet-5.5" ? "bg-amber-50 text-amber-700" : m === "fable-5.5" ? "bg-emerald-50 text-emerald-700" : "bg-violet-50 text-violet-700"}`}
+              title={MODEL_PREVIEW[m] ? (isZh ? "Fable 5.5 已在内测，Anthropic 尚未官宣；模型归属以作者自述为准" : "Fable 5.5 is in limited preview and not yet announced by Anthropic; attribution is as stated by the creator") : undefined}>
+              {MODEL_LABEL[m]}{MODEL_PREVIEW[m] && <span className="font-normal">{isZh ? " · 内测" : " · preview"}</span>}
             </span>
           ))}
           <span className="px-2 py-0.5 rounded-full bg-blue-50 text-[var(--primary)] font-medium">

@@ -61,6 +61,7 @@ for (const c of C) {
   if (!prompt) stat.none++;
   const tools = [...new Set([...(e?.tools || k.tools || [])].map(t => String(t).trim()).filter(t => t && !/^(claude )?opus ?5\.5/i.test(t)))].slice(0, 8);
   const models = detectModels(c.text, c.quoted?.handle === c.handle ? c.quoted.text : "", prompt?.text);
+  if (!models.length) { stat.hedged = (stat.hedged || 0) + 1; continue; } // 作者自己都不确定是不是 Fable 5.5
   cases.push({ id: c.id, url: c.url, author: { handle: c.handle, name: c.name }, postedAt: c.createdAt, lang: c.lang, models, kind: k.kind, category: CUR.category[c.id] || k.category,
     title: { zh: zhPunct(title.zh), en: title.en }, summary: e?.summary_zh ? { zh: zhPunct(e.summary_zh), en: e.summary_en } : null, prompt,
     referenceAssets: CUR.referenceAssets.includes(c.id) || !!(e ? e.reference_assets : k.reference_assets), tools, resources,

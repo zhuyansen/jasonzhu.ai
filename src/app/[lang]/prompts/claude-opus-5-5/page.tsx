@@ -10,10 +10,10 @@ const FIRST_PAGE = 24;
 const REPO = "https://github.com/zhuyansen/awesome-opus-5.5-video";
 
 const copy = (isZh: boolean, n: number, full: number, threshold: number, withPrompt: number) => ({
-  title: isZh ? "Claude Opus 5.5 & Sonnet 5.5 提示词库：视频、动效、3D 与游戏" : "Claude Opus 5.5 & Sonnet 5.5 Prompt Library: Video, Motion, 3D & Games",
+  title: isZh ? "Claude 5.5 提示词库（Opus · Sonnet · Fable）：视频、动效、3D 与游戏" : "Claude 5.5 Prompt Library (Opus · Sonnet · Fable): Video, Motion, 3D & Games",
   desc: isZh
-    ? `收录 ${n} 个来自 X 创作者的 Claude Opus 5.5 与 Sonnet 5.5 作品，原帖播放量均过 ${threshold.toLocaleString("en-US")}，视频可直接播放。其中 ${withPrompt} 个附作者公开的提示词（${full} 条完整提示词），保留原文与出处，可直接复制改写。`
-    : `${n} Claude Opus 5.5 and Sonnet 5.5 works from creators on X, each with ${threshold.toLocaleString("en-US")}+ views on the original post, playable right here. ${withPrompt} include the prompt the creator shared (${full} full prompts), kept verbatim with its source.`,
+    ? `收录 ${n} 个来自 X 创作者的 Claude Opus 5.5、Sonnet 5.5 与 Fable 5.5（内测中）作品，原帖播放量均过 ${threshold.toLocaleString("en-US")}，视频可直接播放。其中 ${withPrompt} 个附作者公开的提示词（${full} 条完整提示词），保留原文与出处，可直接复制改写。`
+    : `${n} Claude Opus 5.5, Sonnet 5.5 and Fable 5.5 (preview) works from creators on X, each with ${threshold.toLocaleString("en-US")}+ views on the original post, playable right here. ${withPrompt} include the prompt the creator shared (${full} full prompts), kept verbatim with its source.`,
 });
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -52,7 +52,7 @@ export default async function OpusPromptsPage({ params }: { params: Promise<{ la
     ? [
         ["Claude Opus 5.5 和 Sonnet 5.5 能直接生成视频吗？", "不能直接出视频文件。这里的作品都是模型写代码做出来的：用 HTML/Canvas、Three.js、Remotion、HyperFrames 渲染画面，或者通过 MCP 操作 Blender、After Effects 这类软件，最后录屏或导出成视频。它们不是 Sora、Seedance 那种视频生成模型。"],
         ["每个作品都有提示词吗？", `没有。${cases.length} 个作品里有 ${lib.withPrompt} 个附提示词，都来自作者本人：原帖正文、作者自己的回复、回复里的截图，或作者给的链接。${fullCount} 条是完整提示词，其余是一句话指令。作者没公开指令的作品也收录，方便看效果，可以勾选「只看有提示词」过滤。`],
-        ["收录标准是什么？", `原帖播放量不低于 ${lib.threshold.toLocaleString("en-US")}；视频是原帖自带的；帖子明确说作品是用 Opus 5.5 或 Sonnet 5.5 做的。每个作品标了作者说的模型，对比帖可能两个都标。播放量快照取自 ${lib.statsCheckedAt.slice(0, 10)}。模型归属以作者自述为准，本站没有逐条复现。`],
+        ["收录标准是什么？", `原帖播放量不低于 ${lib.threshold.toLocaleString("en-US")}；视频是原帖自带的；帖子明确说作品是用 Opus 5.5、Sonnet 5.5 或 Fable 5.5 做的。Fable 5.5 截至 10 月初只在内测、Anthropic 还没官宣，作者自己写「可能是」「据说」的不收，收进来的也标了「内测·未官宣」。每个作品标了作者说的模型，对比帖可能两个都标。播放量快照取自 ${lib.statsCheckedAt.slice(0, 10)}。模型归属以作者自述为准，本站没有逐条复现。`],
         ["标了「需自备参考素材」是什么意思？", "原作者除了文字提示词，还给了模型图片、视频、音频、文档或代码库作为输入。只复制提示词得不到同样结果，需要准备自己的素材。"],
         ["我是作者，想修改署名或下架怎么办？", "在 X 上私信 @GoSailGlobal 即可，会尽快处理。所有作品版权归原作者，收录不代表获得任何授权。"],
         ["数据可以拿去用吗？", `可以。全部作品的结构化数据（原帖链接、创作者、分类、时长、播放量、提示词出处）开源在 GitHub：${REPO}，每天自动同步，也欢迎在那里提交新作品或更正。`],
@@ -60,7 +60,7 @@ export default async function OpusPromptsPage({ params }: { params: Promise<{ la
     : [
         ["Can Claude Opus 5.5 or Sonnet 5.5 generate video directly?", "Not as a video file. Every work here was produced by code it wrote: rendering with HTML/Canvas, Three.js, Remotion or HyperFrames, or driving tools such as Blender and After Effects through MCP, then recording or exporting. They are not video generation models like Sora or Seedance."],
         ["Does every work include a prompt?", `No. ${lib.withPrompt} of the ${cases.length} works include one, always from the creator: the post itself, their own replies, a screenshot in those replies, or a link they shared. ${fullCount} are full prompts; the rest are one-line briefs. Works whose creator never shared an instruction are still listed so you can see the result; tick "With prompt only" to filter them out.`],
-        ["What is the inclusion rule?", `At least ${lib.threshold.toLocaleString("en-US")} views on the original post, a native video attached to that post, and an explicit statement that it was made with Opus 5.5 or Sonnet 5.5. Each work is tagged with the model the creator named; comparisons may carry both. View counts were snapshotted on ${lib.statsCheckedAt.slice(0, 10)}. Model attribution is as stated by each creator and was not independently reproduced.`],
+        ["What is the inclusion rule?", `At least ${lib.threshold.toLocaleString("en-US")} views on the original post, a native video attached to that post, and an explicit statement that it was made with Opus 5.5, Sonnet 5.5 or Fable 5.5. As of early October Fable 5.5 is in limited preview and not yet announced; posts where the creator is unsure ("maybe") are excluded and the rest are marked as preview. Each work is tagged with the model the creator named; comparisons may carry both. View counts were snapshotted on ${lib.statsCheckedAt.slice(0, 10)}. Model attribution is as stated by each creator and was not independently reproduced.`],
         ["What does “needs reference assets” mean?", "Besides the text prompt, the creator gave the model images, video, audio, documents or a codebase. Copying the prompt alone will not reproduce the result; bring your own assets."],
         ["I am the creator. How do I correct attribution or remove my work?", "Send a DM to @GoSailGlobal on X and it will be handled promptly. All works remain the property of their creators; inclusion grants no license."],
         ["Can I use the data?", `Yes. Structured data for every work (original post, creator, category, length, views, prompt source) is open on GitHub at ${REPO}, synced daily. New works and corrections are welcome there.`],
@@ -122,7 +122,7 @@ export default async function OpusPromptsPage({ params }: { params: Promise<{ la
           {isZh ? "提示词库" : "Prompt library"}
         </p>
         <h1 className="text-3xl font-bold text-gray-900 mb-3">
-          {isZh ? "Claude Opus 5.5 & Sonnet 5.5 提示词库" : "Claude Opus 5.5 & Sonnet 5.5 Prompt Library"}
+          {isZh ? "Claude 5.5 提示词库" : "Claude 5.5 Prompt Library"}
         </h1>
         <p className="text-gray-500 max-w-3xl leading-relaxed">{c.desc}</p>
         <dl className="flex flex-wrap gap-x-8 gap-y-2 mt-5 text-sm">
@@ -130,6 +130,7 @@ export default async function OpusPromptsPage({ params }: { params: Promise<{ la
             [isZh ? "作品" : "Works", cases.length.toLocaleString("en-US")],
             ["Opus 5.5", lib.modelCounts["opus-5.5"].toLocaleString("en-US")],
             ["Sonnet 5.5", lib.modelCounts["sonnet-5.5"].toLocaleString("en-US")],
+            [isZh ? "Fable 5.5（内测）" : "Fable 5.5 (preview)", (lib.modelCounts["fable-5.5"] || 0).toLocaleString("en-US")],
             [isZh ? "带提示词" : "With prompt", lib.withPrompt.toLocaleString("en-US")],
             [isZh ? "完整提示词" : "Full prompts", fullCount.toLocaleString("en-US")],
             [isZh ? "创作者" : "Creators", creators.toLocaleString("en-US")],
