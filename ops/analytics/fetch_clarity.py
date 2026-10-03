@@ -4,7 +4,7 @@
 """
 import requests
 
-from common import run, save, secret
+from common import run, save, secret, token_shape
 
 API = "https://www.clarity.ms/export-data/api/v1/project-live-insights"
 
@@ -19,6 +19,8 @@ def main():
         r = requests.get(API, params=params, headers={"Authorization": f"Bearer {tok}"}, timeout=60)
         if r.status_code == 429:
             raise RuntimeError("今天 10 次请求额度已用完")
+        if r.status_code in (401, 403):
+            raise RuntimeError(f"HTTP {r.status_code}（token {token_shape(tok)}）: {r.text[:200]}")
         r.raise_for_status()
         out[name] = r.json()
     save("clarity", out)

@@ -67,6 +67,13 @@ def secret(env, filename=None):
 _SECRET_RE = re.compile(r"(Bearer\s+|token=|key=|apikey[:=]\s*)[A-Za-z0-9._\-]{8,}", re.I)
 
 
+def token_shape(tok):
+    """凭证被拒时帮忙判断是不是粘贴出了问题：只报长度和字符特征，不泄露内容。"""
+    odd = sorted({c for c in tok if not (c.isalnum() or c in "-_.")})
+    head = "JWT" if tok.startswith("eyJ") else ("带引号" if tok[:1] in "'\"" else "")
+    return f"长度 {len(tok)}，{tok.count('.') + 1} 段" + (f"，{head}" if head else "") + (f"，含异常字符 {odd!r}" if odd else "")
+
+
 def redact(msg):
     return _SECRET_RE.sub(r"\1***", str(msg))[:400]
 

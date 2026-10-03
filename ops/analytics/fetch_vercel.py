@@ -6,7 +6,7 @@
 """
 import requests
 
-from common import run, save, secret, today_cst
+from common import run, save, secret, today_cst, token_shape
 from datetime import timedelta
 
 PROJECT = "prj_pc30SYxdZgkWJAAPvOQYfjWc9cP2"
@@ -24,7 +24,8 @@ def agg(tok, by, since, until, limit=10):
     if r.status_code == 400 and "web_analytics_not_enabled" in r.text:
         raise NotEnabled()
     if r.status_code >= 300:
-        raise RuntimeError(f"HTTP {r.status_code}: {r.text[:200]}")
+        hint = f"（token {token_shape(tok)}）" if r.status_code in (401, 403) else ""
+        raise RuntimeError(f"HTTP {r.status_code}{hint}: {r.text[:200]}")
     return r.json().get("data", [])
 
 
