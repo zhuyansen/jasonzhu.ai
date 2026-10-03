@@ -75,6 +75,23 @@ Things to know before you pick an app:
 
 This is also the answer to "how to make a video in a Live Photo on iPhone without TikTok": an app like this is the only on-device way.
 
+### What intoLive users run into (2,056 App Store reviews)
+
+intoLive is rated **4.6 from about 114,000 ratings** in the US App Store, so most people get what they came for: the happy reviews say it's "really quick and easy". But I read **2,056 written reviews from seven App Store regions** (US, UK, Canada, Australia, Japan, mainland China, Taiwan; collected October 3, 2026). Of the 740 written since 2024, **386 are one or two stars** — written reviews lean negative, but they show exactly where people get stuck. The recurring problems, and what to do about each:
+
+| What users report | Share of 1–2★ reviews since 2024 | What to do |
+|---|---|---|
+| **Charged after the free trial**, refund refused; weekly plans renewing for weeks | 7% | Before the trial ends: **Settings → your name → Subscriptions → intoLive → Cancel Subscription**. Deleting the app does not cancel it. Already charged? Request a refund at [reportaproblem.apple.com](https://reportaproblem.apple.com). |
+| **Export is slow, fails ("cannot open") or the app crashes** | 18% | Keep the clip to a few seconds, free up storage, update the app; test on a short clip first. |
+| **The result isn't recognized as a Live Photo, or won't work as a wallpaper** (reports from iOS 18.6 and iOS 26) | 8% | Check for the **LIVE** badge in Photos and try it as a wallpaper *before* paying. Reviews don't point to one setting that always works, so test your own clip first. |
+| **Free version: watermark, very short clips (1–2 s), 1080p cap**, some clips sped up | about 5% each | That's the free tier. If you need it clean or longer, that's what the paid plan sells; if not, the TikTok route (method 1) costs nothing. |
+| **Previously bought it once, now asked to subscribe** | 6% | Reviewers say the old purchase didn't carry over. Look for a restore option in the app's settings before paying again, and ask the developer or [Apple](https://reportaproblem.apple.com) if it isn't honored. |
+| **Ads**, including one fake "your iPhone has 72 viruses" ad (Japan) | 13% | Don't tap through in-app ads; close them. |
+
+In mainland China there's an extra trap: **17 reviews describe an in-app login or ad that asks for your phone number and an SMS code, and that code signs you up for a monthly carrier-billed package** (one cites ¥25 a month). Never enter an SMS code inside the app.
+
+**Bottom line:** for a single TikTok clip, use method 1. If you use intoLive, run the free version on a short test clip, check that the result shows LIVE and works as a wallpaper, and if you do start a trial, set a reminder to cancel it.
+
 ---
 
 ## Method 3: Use an online video to Live Photo converter
@@ -170,6 +187,14 @@ Some online converters are free and add no watermark, and converter apps usually
 ### Can I make a Live Photo longer than a few seconds?
 
 No. A Live Photo is a short clip around one key photo, and converters trim to a few seconds for that reason. For a longer moving background, the iPhone Lock Screen has no option; Android can use a full video as a live wallpaper.
+
+### Is intoLive free? Does it add a watermark?
+
+The download is free, and the free version works, but App Store reviewers report a watermark, very short clips (1–2 seconds) and a 1080p cap on it; removing those needs the paid plan, which starts as a free trial that renews automatically. For a TikTok video, TikTok's own Live Photo button (method 1) is free, though it keeps the TikTok logo.
+
+### How do I cancel an intoLive subscription?
+
+On the iPhone: **Settings → your name → Subscriptions → intoLive → Cancel Subscription**, before the trial ends. Deleting the app does not cancel it. If you were already charged, ask Apple for a refund at [reportaproblem.apple.com](https://reportaproblem.apple.com).
 
 ### Can I do this on a Mac?
 
