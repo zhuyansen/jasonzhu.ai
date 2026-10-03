@@ -75,6 +75,18 @@ Git：commit 后如远程有新提交（cron 会自动 commit 快讯），先 `g
 - app/llms.txt/route.ts 动态生成 LLM 爬虫导览；/feed/blog.xml、/feed/news.xml 双 RSS。
 - 博客封面用 next/image + priority（勿改回裸 img，LCP 曾 13.8s）。作者中文名是**祝彦森**（不是朱延森）。
 
+## 上线检查（docs/launch-checklist.html，任何功能上线都走）
+
+总规则：代码写好 ≠ 功能上线，每项在「数据终点」验证（数据真的进来、邮件真的到、接口真的拒绝）。
+- G0 开工：`git status` 有不认识的改动先问；只推自己的提交（可能有别的会话同时在改 main）。
+- G1 代码：tsc + eslint + build，内容页必须还是 ○/●；还原误改的 `src/generated/*`。
+- G2 开关与凭证：控制台开关单独打开（Vercel Analytics 曾经只装了代码、从没采过数据）；secret 让用户用 `gh secret set NAME` 的提示符粘贴，存完看长度/格式；每个查询维度确认套餐支持（402）。
+- G3 数据终点：线上页确认脚本加载、上报请求发出；平台后台看到访问；定时任务手动跑一次，邮件到收件箱。
+- G4 安全：anon key 对每张隐私表查数量，必须 0 或 401/403；隐私表禁止 `FOR SELECT USING (true)`。
+- G5 失败路径：上游出错时任务必须报错停住，不能当 0 条推进进度；降级覆盖 400/401/403/404/429/5xx；抽查 10 条产出，发现一类问题就加代码层结构检查。
+- G6 告警对账：每条告警先和实际情况核对一次；依赖时间的告警加时间条件；总数用平台总数，不自己加。
+- 交付：结论用短句写清通过/未通过；流程改动配图；上线类交付出 HTML 看版。
+
 ## Skill routing
 
 When the user's request matches an available skill, ALWAYS invoke it using the Skill

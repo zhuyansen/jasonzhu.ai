@@ -1,0 +1,235 @@
+<title>jasonzhu.ai 上线检查卡</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* 版式：航空维修工卡（ASD-STE100 的出处）——每道关一张卡，步骤 = 动作 / 验证 / 通过标准 */
+:root{
+  --paper:#f3f5f7; --card:#ffffff; --ink:#14213d; --muted:#5b6578; --rule:#d5dbe3;
+  --accent:#1f5fbf; --caution:#b7791f; --caution-bg:#fdf3e1; --warn:#b42318; --warn-bg:#fdeceb; --ok:#1e7a4c;
+  --code-bg:#eef1f5;
+  --f-display:"Barlow Condensed","Noto Sans SC",system-ui,sans-serif;
+  --f-body:"Noto Sans SC",system-ui,-apple-system,"PingFang SC",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0f1520; --card:#161e2c; --ink:#e4e9f2; --muted:#9aa5b8; --rule:#2a3446;
+  --accent:#6ea2ff; --caution:#e0a645; --caution-bg:#2b2412; --warn:#f07167; --warn-bg:#2d1716; --ok:#4cc38a; --code-bg:#1d2738; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0f1520; --card:#161e2c; --ink:#e4e9f2; --muted:#9aa5b8; --rule:#2a3446;
+  --accent:#6ea2ff; --caution:#e0a645; --caution-bg:#2b2412; --warn:#f07167; --warn-bg:#2d1716; --ok:#4cc38a; --code-bg:#1d2738; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font:15px/1.7 var(--f-body);padding-inline:16px;padding-block:28px 64px}
+.wrap{max-width:880px;margin:0 auto;display:grid;gap:28px}
+h1,h2,h3{text-wrap:balance;margin:0}
+h1{font:700 2.4rem/1.1 var(--f-display);letter-spacing:.01em}
+h2{font:700 1.45rem/1.2 var(--f-display);letter-spacing:.02em}
+.eyebrow{font:600 .78rem var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.lede{color:var(--muted);max-width:65ch;margin:.4rem 0 0}
+.rule-box{border:2px solid var(--ink);padding:16px 18px;display:grid;gap:4px;background:var(--card)}
+.rule-box b{font:700 1.25rem/1.4 var(--f-body)}
+code,.mono{font-family:var(--f-mono);font-size:.86em}
+code{background:var(--code-bg);padding:1px 5px;border-radius:3px;overflow-wrap:anywhere}
+pre.cmd{background:var(--code-bg);padding:10px 12px;margin:6px 0 0;overflow-x:auto;font:13px/1.55 var(--f-mono);border-left:3px solid var(--accent)}
+.diagram{background:var(--card);border:1px solid var(--rule);padding:12px;overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+.tbl{overflow-x:auto;background:var(--card);border:1px solid var(--rule)}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font:600 .75rem var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+td.gate{font:700 .9rem var(--f-mono);color:var(--accent);white-space:nowrap}
+.card{background:var(--card);border:1px solid var(--rule);display:grid}
+.card-head{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;padding:12px 16px;border-bottom:2px solid var(--ink)}
+.card-head .id{font:700 1.5rem/1 var(--f-display);color:var(--accent)}
+.card-head .when{font:500 .8rem var(--f-mono);color:var(--muted);margin-left:auto}
+.steps{list-style:none;margin:0;padding:0}
+.step{display:grid;grid-template-columns:28px 1fr;gap:10px;padding:12px 16px;border-bottom:1px solid var(--rule)}
+.step:last-child{border-bottom:0}
+.step input{width:18px;height:18px;margin-top:4px;accent-color:var(--ok)}
+.step input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.step .body{min-width:0;display:grid;gap:2px}
+.step .act{font-weight:700}
+.kv{display:grid;grid-template-columns:4.5em 1fr;gap:2px 8px;font-size:.92rem}
+.kv dt{color:var(--muted);font:600 .76rem/2 var(--f-mono);letter-spacing:.06em}
+.kv dd{margin:0;min-width:0}
+.step.done .act{text-decoration:line-through;color:var(--muted)}
+.note{padding:10px 14px;font-size:.92rem;display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start}
+.note .tag{font:700 .72rem var(--f-mono);letter-spacing:.1em;padding:2px 6px;border:1.5px solid currentColor}
+.warning{background:var(--warn-bg);color:var(--warn)} .warning p{color:var(--ink);margin:0}
+.caution{background:var(--caution-bg);color:var(--caution)} .caution p{color:var(--ink);margin:0}
+.levels{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.lv{background:var(--card);border:1px solid var(--rule);padding:12px 14px;display:grid;gap:4px;align-content:start}
+.lv .n{font:700 1.1rem var(--f-display);color:var(--accent)}
+.lv p{margin:0;font-size:.9rem;color:var(--muted)}
+.progress{font:600 .85rem var(--f-mono);color:var(--muted)}
+button.reset{font:600 .8rem var(--f-mono);background:none;border:1px solid var(--rule);color:var(--muted);padding:4px 10px;cursor:pointer}
+button.reset:focus-visible{outline:2px solid var(--accent)}
+footer{color:var(--muted);font-size:.85rem}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Task card · jasonzhu.ai · 2026-10-04</div>
+  <h1>上线检查卡</h1>
+  <p class="lede">任何功能上线（埋点、定时任务、数据管线、新页面、新接口）都按这张卡走完 G0–G6 七道关。每一步都写明动作、验证方法、通过标准。写法遵循 ASD-STE100 的原则：一句话只写一个动作，用祈使句，不写「尽量」「可能」。</p>
+</header>
+
+<section class="rule-box" aria-label="总规则">
+  <span class="eyebrow">总规则</span>
+  <b>代码写好了，不等于功能上线了。每一项都要在「数据终点」验证：数据真的进来了、邮件真的到了、接口真的拒绝了。</b>
+  <span style="color:var(--muted)">下面每一次事故，都是因为只验证了代码，没验证终点。</span>
+</section>
+
+<section style="display:grid;gap:10px">
+  <h2>流程图</h2>
+  <div class="diagram">
+<pre class="mermaid">
+flowchart LR
+  G0["G0 开工<br/>同步仓库 · 确认没人同时改"] --> G1["G1 代码<br/>tsc · lint · build 渲染模式"]
+  G1 --> G2["G2 开关与凭证<br/>控制台开关 · secret 形状 · 套餐权限"]
+  G2 --> G3["G3 数据终点<br/>线上真的有数据"]
+  G3 --> G4["G4 安全<br/>匿名 key 读不到隐私数据"]
+  G4 --> G5["G5 失败路径与产出抽检<br/>出错时报错 · 抽查结果"]
+  G5 --> G6["G6 告警对账<br/>每条告警先和实际情况核对"]
+  G6 --> D["交付<br/>HTML 看版 · 不只在终端写一段话"]
+  G3 -. 没数据 .-> G2
+  G6 -. 误报 .-> G5
+</pre>
+  </div>
+</section>
+
+<section style="display:grid;gap:10px">
+  <h2>为什么要这张卡：本项目出过的事故</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>日期</th><th>发生了什么</th><th>根因</th><th>拦截关</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">10-03</td><td>代码里有 Vercel Analytics，但项目从没采过一条数据</td><td>Vercel 控制台的开关没开，只检查了代码</td><td class="gate">G2 G3</td></tr>
+      <tr><td class="mono">10-03</td><td>secret 存错 3 次：9 位占位符、61 位命令原文</td><td>存完没检查长度和格式</td><td class="gate">G2</td></tr>
+      <tr><td class="mono">10-03</td><td>订阅表用公开 anon key 能读到 4,623 个邮箱</td><td>RLS 策略写了 <code>USING (true)</code></td><td class="gate">G4</td></tr>
+      <tr><td class="mono">10-03</td><td>提示词库收进 22 条转帖（嵌入别人的视频）</td><td>只靠模型审核，没做结构去重（媒体 ID）</td><td class="gate">G5</td></tr>
+      <tr><td class="mono">10-03</td><td>Vercel 查询返回 402</td><td>UTM 维度要付费套餐，没提前查</td><td class="gate">G2</td></tr>
+      <tr><td class="mono">10-03</td><td>日报误报 3 次：KV 镜像被当成丢线索、凌晨报「快讯未出」、搜索点击少算 92%</td><td>告警上线前没和实际情况核对</td><td class="gate">G6</td></tr>
+      <tr><td class="mono">10-03</td><td>两个会话同时往 main 推，提交撞车</td><td>开工前没确认有没有别的会话在改</td><td class="gate">G0</td></tr>
+      <tr><td class="mono">09-29</td><td>快讯连续两天没出</td><td>降级只认 400，代理返回的是 404</td><td class="gate">G5</td></tr>
+      <tr><td class="mono">09 月</td><td>搜索接口报错被当成 0 条结果，采集窗口被推进，帖子永久漏收</td><td>错误被吞掉，没有抛出</td><td class="gate">G5</td></tr>
+      <tr><td class="mono">更早</td><td>全站变成动态渲染，sitemap 为空</td><td>根布局用了 <code>headers()</code>，build 输出没看渲染模式</td><td class="gate">G1</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section style="display:grid;gap:14px" id="cards">
+  <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between">
+    <h2>七道关</h2>
+    <span><span class="progress" id="progress">0 / 0</span> <button class="reset" id="reset" type="button">清空勾选</button></span>
+  </div>
+
+  <article class="card">
+    <div class="card-head"><span class="id">G0</span><h3>开工</h3><span class="when">写代码之前</span></div>
+    <ol class="steps">
+      <li class="step"><input type="checkbox" id="g0-1" aria-label="G0-1"><div class="body"><span class="act">同步仓库。</span><dl class="kv"><dt>验证</dt><dd><code>git status</code>，然后 <code>git pull --rebase --autostash</code></dd><dt>通过</dt><dd>工作区里没有不认识的改动。有，就先问是谁在改。</dd></dl></div></li>
+      <li class="step"><input type="checkbox" id="g0-2" aria-label="G0-2"><div class="body"><span class="act">只推自己的提交。</span><dl class="kv"><dt>验证</dt><dd><code>git log origin/main..HEAD</code></dd><dt>通过</dt><dd>列出的提交都是这次任务的。别的会话的提交留给它自己推。</dd></dl></div></li>
+      <li class="step"><input type="checkbox" id="g0-3" aria-label="G0-3"><div class="body"><span class="act">写下「终点」是什么。</span><dl class="kv"><dt>验证</dt><dd>一句话写清楚：上线后在哪里能看到结果（哪个接口、哪个后台、哪封邮件）。</dd><dt>通过</dt><dd>写不出终点，就不开工。</dd></dl></div></li>
+    </ol>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="id">G1</span><h3>代码</h3><span class="when">推送之前</span></div>
+    <ol class="steps">
+      <li class="step"><input type="checkbox" id="g1-1" aria-label="G1-1"><div class="body"><span class="act">跑类型检查和 lint。</span><pre class="cmd">npx tsc --noEmit &amp;&amp; npx eslint .</pre><dl class="kv"><dt>通过</dt><dd>0 个错误。</dd></dl></div></li>
+      <li class="step"><input type="checkbox" id="g1-2" aria-label="G1-2"><div class="body"><span class="act">跑生产构建，看渲染模式。</span><pre class="cmd">npm run build</pre><dl class="kv"><dt>通过</dt><dd>内容页仍然是 ○ / ●（静态）。只有 club、dashboard、api 这类需要登录的页面是 ƒ。</dd></dl></div></li>
+      <li class="step"><input type="checkbox" id="g1-3" aria-label="G1-3"><div class="body"><span class="act">还原构建生成的文件。</span><dl class="kv"><dt>验证</dt><dd><code>git status</code></dd><dt>通过</dt><dd>没有误改的 <code>src/generated/*</code>。有就 <code>git checkout</code> 掉，再提交。</dd></dl></div></li>
+    </ol>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="id">G2</span><h3>开关与凭证</h3><span class="when">推送之后、验证之前</span></div>
+    <div class="note warning"><span class="tag">WARNING</span><p>代码里装了 SDK，不代表平台在收数据。控制台的开关要单独打开，单独验证。</p></div>
+    <ol class="steps">
+      <li class="step"><input type="checkbox" id="g2-1" aria-label="G2-1"><div class="body"><span class="act">打开每个平台的控制台开关。</span><dl class="kv"><dt>清单</dt><dd>Vercel 项目 → Analytics → Enable；GA4 建媒体资源和数据流；Clarity 建项目。</dd><dt>通过</dt><dd>接口不再返回 <code>not_enabled</code> 这类错误。</dd></dl></div></li>
+      <li class="step"><input type="checkbox" id="g2-2" aria-label="G2-2"><div class="body"><span class="act">用提示符存 secret，不用剪贴板命令。</span><pre class="cmd">gh secret set NAME -R zhuyansen/jasonzhu.ai</pre><dl class="kv"><dt>说明</dt><dd>回车后在 <code>? Paste your secret</code> 处粘贴。先复制 token、再复制命令，剪贴板会被覆盖。</dd></dl></div></li>
+      <li class="step"><input type="checkbox" id="g2-3" aria-label="G2-3"><div class="body"><span class="act">检查 secret 的形状。</span><dl class="kv"><dt>验证</dt><dd>跑一次用到它的 workflow。日报被拒时会报 token 长度、段数和异常字符。</dd><dt>通过</dt><dd>Vercel 以 <code>vcp_</code> 开头、约 60 位；Clarity 是 JWT（<code>eyJ</code> 开头，3 段）。9 位、或含空格和 <code>|</code>，就是存错了。</dd></dl></div></li>
+      <li class="step"><input type="checkbox" id="g2-4" aria-label="G2-4"><div class="body"><span class="act">确认套餐支持要用的功能。</span><dl class="kv"><dt>验证</dt><dd>每个查询维度单独请求一次。</dd><dt>通过</dt><dd>没有 402。有 402，就删掉这个维度或者换数据源（例如 UTM 改用 GA4）。</dd></dl></div></li>
+    </ol>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="id">G3</span><h3>数据终点</h3><span class="when">部署完成后</span></div>
+    <ol class="steps">
+      <li class="step"><input type="checkbox" id="g3-1" aria-label="G3-1"><div class="body"><span class="act">在线上页面确认脚本已加载。</span><dl class="kv"><dt>验证</dt><dd>浏览器打开线上页，控制台执行 <code>typeof window.gtag</code>、<code>typeof window.clarity</code>，并检查网络请求。</dd><dt>通过</dt><dd>都不是 <code>undefined</code>，且有发往 google-analytics / clarity.ms 的请求。</dd></dl></div></li>
+      <li class="step"><input type="checkbox" id="g3-2" aria-label="G3-2"><div class="body"><span class="act">在平台后台看到自己的访问。</span><dl class="kv"><dt>验证</dt><dd>GA4「实时」报告；Vercel aggregate 接口；Clarity 两小时后看 Traffic。</dd><dt>通过</dt><dd>能看到这次访问。只看到 0，回到 G2。</dd></dl></div></li>
+      <li class="step"><input type="checkbox" id="g3-3" aria-label="G3-3"><div class="body"><span class="act">触发一次每个转化事件。</span><dl class="kv"><dt>验证</dt><dd>用测试邮箱订阅一次、复制一次提示词，然后看 GA4 DebugView 或实时事件。</dd><dt>通过</dt><dd><code>newsletter_subscribe</code>、<code>prompt_copy</code> 等事件出现，参数正确。</dd></dl></div></li>
+      <li class="step"><input type="checkbox" id="g3-4" aria-label="G3-4"><div class="body"><span class="act">定时任务手动跑一次。</span><pre class="cmd">gh workflow run &lt;file&gt;.yml &amp;&amp; gh run watch</pre><dl class="kv"><dt>通过</dt><dd>每个数据源都是 <code>[ok]</code>，邮件真的到了收件箱。</dd></dl></div></li>
+    </ol>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="id">G4</span><h3>安全</h3><span class="when">涉及数据库或用户数据时</span></div>
+    <div class="note warning"><span class="tag">WARNING</span><p><code>NEXT_PUBLIC_*</code> 的 key 会发到每个访客的浏览器里。它能读到的数据，等于所有人都能读到。</p></div>
+    <ol class="steps">
+      <li class="step"><input type="checkbox" id="g4-1" aria-label="G4-1"><div class="body"><span class="act">用 anon key 对每张含隐私的表查一次数量。</span><pre class="cmd">curl -s -I -H "apikey: $ANON" -H "Authorization: Bearer $ANON" \
+  -H "Prefer: count=exact" "$SUPABASE_URL/rest/v1/&lt;表&gt;?select=id&amp;limit=0"</pre><dl class="kv"><dt>通过</dt><dd>返回 <code>*/0</code> 或 401/403。返回真实数量就是泄露。只查数量，不拉数据。</dd></dl></div></li>
+      <li class="step"><input type="checkbox" id="g4-2" aria-label="G4-2"><div class="body"><span class="act">检查新加的 RLS 策略。</span><dl class="kv"><dt>通过</dt><dd>没有对隐私表写 <code>FOR SELECT USING (true)</code>。需要读的地方走服务端接口和 service key。</dd></dl></div></li>
+      <li class="step"><input type="checkbox" id="g4-3" aria-label="G4-3"><div class="body"><span class="act">扫一遍提交内容里有没有密钥。</span><dl class="kv"><dt>验证</dt><dd><code>git diff --cached | grep -iE "sk-|vcp_|eyJ|refresh_token"</code></dd><dt>通过</dt><dd>命中的只是代码里的字段名，不是真值。</dd></dl></div></li>
+    </ol>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="id">G5</span><h3>失败路径与产出抽检</h3><span class="when">自动化任务上线前</span></div>
+    <ol class="steps">
+      <li class="step"><input type="checkbox" id="g5-1" aria-label="G5-1"><div class="body"><span class="act">让上游出错一次，看任务怎么处理。</span><dl class="kv"><dt>验证</dt><dd>给错 key，或者把接口地址改坏，跑一次。</dd><dt>通过</dt><dd>任务报错并停住，不推进进度、不写空结果。「出错」和「真的没有数据」必须分得开。</dd></dl></div></li>
+      <li class="step"><input type="checkbox" id="g5-2" aria-label="G5-2"><div class="body"><span class="act">把降级条件覆盖到所有状态码。</span><dl class="kv"><dt>通过</dt><dd>400、401、403、404、429、5xx、超时都有明确去向：换模型、换通道，或报错。</dd></dl></div></li>
+      <li class="step"><input type="checkbox" id="g5-3" aria-label="G5-3"><div class="body"><span class="act">抽查 10 条产出。</span><dl class="kv"><dt>验证</dt><dd>打开原始来源逐条比对。</dd><dt>通过</dt><dd>没有重复、没有转帖、没有张冠李戴。发现一类问题，就加一条代码层的结构检查（例如按媒体 ID 去重），不只改提示词。</dd></dl></div></li>
+    </ol>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="id">G6</span><h3>告警对账</h3><span class="when">日报、监控上线前</span></div>
+    <div class="note caution"><span class="tag">CAUTION</span><p>误报多了，真告警就没人看了。每条告警上线前，先和实际情况核对一次。</p></div>
+    <ol class="steps">
+      <li class="step"><input type="checkbox" id="g6-1" aria-label="G6-1"><div class="body"><span class="act">每条告警找一次真实情况核对。</span><dl class="kv"><dt>例子</dt><dd>「KV 有 47 条待回灌」：逐条查过，47 条都已经在 Supabase，所以告警条件改成「KV 有、Supabase 没有」。</dd></dl></div></li>
+      <li class="step"><input type="checkbox" id="g6-2" aria-label="G6-2"><div class="body"><span class="act">给依赖时间的告警加时间条件。</span><dl class="kv"><dt>例子</dt><dd>快讯 cron 7:15 前才跑完，「今日快讯未出」只在北京时间 8 点后才报。</dd></dl></div></li>
+      <li class="step"><input type="checkbox" id="g6-3" aria-label="G6-3"><div class="body"><span class="act">总数用平台给的总数，不自己加。</span><dl class="kv"><dt>例子</dt><dd>GSC 按搜索词加总只有 7 次点击，按日期取是 96 次。Google 会隐去长尾查询。</dd></dl></div></li>
+    </ol>
+  </article>
+</section>
+
+<section style="display:grid;gap:10px">
+  <h2>交付：让人看得懂</h2>
+  <p class="lede" style="margin:0">按卡帕西的建议，交付物从文字往上升级。交付内容越重要，用的级别越高。</p>
+  <div class="levels">
+    <div class="lv"><span class="n">1 · 简化文字</span><b>每次都要</b><p>短句、一句一个动作、写明通过了什么、没通过什么。</p></div>
+    <div class="lv"><span class="n">2 · 图</span><b>流程、架构改动</b><p>一张 mermaid 流程图，标出数据从哪来、到哪去。</p></div>
+    <div class="lv"><span class="n">3 · HTML 看版</span><b>上线、视频、数据管线</b><p>第一屏回答：看哪个版本、哪里有问题、下一步确认什么。</p></div>
+    <div class="lv"><span class="n">4 · 讲解视频</span><b>对外发布</b><p>3Blue1Brown 风格，用来对外讲清楚一个机制。</p></div>
+  </div>
+</section>
+
+<footer>源文件：<code>docs/launch-checklist.html</code>（仓库内）。规则摘要已写进 CLAUDE.md，新会话会自动遵循。勾选状态只保存在你这台浏览器里。</footer>
+</div>
+
+<script>
+(function(){
+  var KEY = "launch-checklist-v1";
+  var boxes = Array.prototype.slice.call(document.querySelectorAll(".step input[type=checkbox]"));
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { saved = {}; }
+  function paint(){
+    var done = 0;
+    boxes.forEach(function(b){ b.closest(".step").classList.toggle("done", b.checked); if (b.checked) done++; });
+    document.getElementById("progress").textContent = done + " / " + boxes.length;
+  }
+  boxes.forEach(function(b){
+    b.checked = !!saved[b.id];
+    b.addEventListener("change", function(){
+      saved[b.id] = b.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {}
+      paint();
+    });
+  });
+  document.getElementById("reset").addEventListener("click", function(){
+    boxes.forEach(function(b){ b.checked = false; }); saved = {};
+    try { localStorage.removeItem(KEY); } catch (e) {}
+    paint();
+  });
+  paint();
+})();
+</script>
