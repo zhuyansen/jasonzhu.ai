@@ -32,14 +32,25 @@ Every method below does those three steps for you. The differences are where the
 
 ## Method 1: Turn a TikTok video into a Live Photo (no extra app)
 
-TikTok has this built in on iPhone:
+TikTok has this built in on iPhone. Tested on an iPhone in October 2026:
 
 1. Open the video in TikTok.
-2. Tap **Share** (the arrow).
-3. In the second row of options, tap **Live Photo**.
-4. It saves to your Photos app as a Live Photo.
+2. Tap **Share** (the arrow on the right).
+3. The share sheet has three rows: people to send to, apps (Repost, Copy link, X, WhatsApp…), and actions. In the **bottom row of actions**, next to **Download**, tap **Live Photo** (the round icon; **动态照片** if your TikTok is in Chinese). Swipe the row sideways if it's off screen.
 
-**If you don't see "Live Photo":** the creator has turned off downloads for that video. The option only appears on videos that can be downloaded.
+![TikTok share sheet: Live Photo sits in the bottom row, next to Download and Share as GIF](public/blog/video-to-live-photo/tiktok-share-live-photo.png)
+
+4. A few seconds later it's in your Photos app. Open it and you'll see the **LIVE** badge in the top-left corner: it's a real Live Photo, ready to set as wallpaper.
+
+![The saved video in the Photos app shows the LIVE badge](public/blog/video-to-live-photo/photos-live-badge.png)
+
+Two things to know:
+
+- **It keeps TikTok's watermark.** The TikTok logo stays in the corner of the Live Photo, and it will show on your Lock Screen too. If you need a clean one, use a video you have without the watermark and method 2.
+
+![The TikTok logo stays in the corner of the saved Live Photo](public/blog/video-to-live-photo/tiktok-watermark.png)
+
+- **If you don't see Live Photo:** the creator has turned off downloads for that video. The option only appears on videos that can be downloaded.
 
 This is the quickest way to make a TikTok video a Live Photo or a live wallpaper, but it only works for TikTok videos — not for clips you shot yourself.
 
@@ -111,7 +122,7 @@ Apple's own walkthrough: [Set a Live Photo as your Lock Screen wallpaper](https:
 
 ## Which method should you use?
 
-- **The video is on TikTok →** Share → Live Photo. Thirty seconds, nothing to install.
+- **The video is on TikTok →** Share → Live Photo. Thirty seconds, nothing to install (it keeps the TikTok logo).
 - **It's your own video on your iPhone →** a converter app. Most control over the trim and the key frame.
 - **It's on your computer, or a one-off →** an online converter, opened on the iPhone if possible.
 - **You're on Android →** Motion Photos, or skip the conversion and use the video as a live wallpaper directly.
