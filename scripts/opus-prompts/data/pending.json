@@ -1,1 +1,856 @@
-[]
+[
+ {
+  "candidate": {
+   "id": "2105973747975094648",
+   "url": "https://x.com/YxzRainy/status/2105973747975094648",
+   "handle": "YxzRainy",
+   "name": "兴雨",
+   "followers": 3822,
+   "verified": true,
+   "createdAt": "2026-10-02T10:50:43.000Z",
+   "lang": "zh",
+   "text": "我企图用astra6 ultra强行复刻Opus5.5的视频\n但对比了 n 次的结论是：\n\n如果 Claude Opus 5.5 的视频能力是 80 分， 那 ChatGPT Astra 6 顶多 8 分…\n\n很难想象，这俩是在提示词几乎一样的情况下生成出来的： https://t.co/zfNToftRmH",
+   "links": [],
+   "views": 55255,
+   "likes": 213,
+   "replies": 48,
+   "reposts": 7,
+   "quotes": 2,
+   "bookmarks": 114,
+   "conversationId": "2105973747975094648",
+   "quoted": null,
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2105973345993003008/img/Fifkxhtv5TrHeBMO.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2105973345993003008/vid/avc1/720x960/g_APGs69pVM8-LuG.mp4?tag=29",
+    "width": 720,
+    "height": 960,
+    "durationSec": 180,
+    "aspect": [
+     3,
+     4
+    ]
+   },
+   "seed": false,
+   "via": "daily",
+   "checkedAt": "2026-10-04T08:38:45.200Z"
+  },
+  "classified": {
+   "id": "2105973747975094648",
+   "kind": "comparison",
+   "keep": true,
+   "original": "creator",
+   "category": "comparison",
+   "prompt_signal": "none",
+   "reference_assets": false,
+   "tools": [
+    "Astra 6 Ultra"
+   ],
+   "title_en": "Video Recreation Comparison",
+   "title_zh": "视频复刻对比",
+   "confidence": "high"
+  },
+  "extracted": {
+   "id": "2105973747975094648",
+   "prompt": null,
+   "reference_assets": false,
+   "tools": [
+    "Astra 6 Ultra"
+   ],
+   "summary_en": "The creator attempted to recreate an Opus 5.5 video with Astra 6 Ultra and compared the results after using nearly identical prompts.",
+   "summary_zh": "作者尝试用 Astra 6 Ultra 复刻 Opus 5.5 制作的视频，并在提示词几乎相同的情况下比较了结果。",
+   "note": ""
+  },
+  "audit": {
+   "id": "2105973747975094648",
+   "verdict": "publish",
+   "confidence": "medium",
+   "prompt_ok": null,
+   "issues": [
+    "title_generic"
+   ],
+   "reason": "The post appears to show the creator's generated video comparison, but the title is too generic.",
+   "title_en": "Video Recreation Comparison",
+   "title_zh": "视频复刻对比"
+  },
+  "reasons": [
+   "审核把握不足（medium）：The post appears to show the creator's generated video comparison, but the title is too generic."
+  ],
+  "heldAt": "2026-10-04T08:38:45.200Z"
+ },
+ {
+  "candidate": {
+   "id": "2106130557310468364",
+   "url": "https://x.com/LuminaBench/status/2106130557310468364",
+   "handle": "LuminaBench",
+   "name": "Lumina",
+   "followers": 12556,
+   "verified": true,
+   "createdAt": "2026-10-02T21:13:49.000Z",
+   "lang": "en",
+   "text": "🚨 Gemini 4 Argon vs Opus 5.5 (SVG Pelican on bike)\n\nThis is from Arena testing over the past few weeks, I had quite a few people asking for comparisons against Anthropic models so I’ll post a few\n\nI can't wait for this to roll out https://t.co/mRBCAloAhQ",
+   "links": [],
+   "views": 35924,
+   "likes": 140,
+   "replies": 13,
+   "reposts": 7,
+   "quotes": 3,
+   "bookmarks": 14,
+   "conversationId": "2106130557310468364",
+   "quoted": {
+    "id": "2105609554851725686",
+    "handle": "LuminaBench",
+    "text": "Gemini 4 Argon outputs from my testing with it\n\nThis is a thread of quite a few examples across different checkpoints\n\nVoxel Pagoda from Gemini 4 Argon Checkpoint 1: https://t.co/eLssVUALAp"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2106127606571515904/img/wIge5Xkamjzt3kAb.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2106127606571515904/vid/avc1/1920x720/bVAnKvPvp1pFSSOw.mp4?tag=29",
+    "width": 1920,
+    "height": 720,
+    "durationSec": 11,
+    "aspect": [
+     8,
+     3
+    ]
+   },
+   "seed": false,
+   "via": "daily",
+   "checkedAt": "2026-10-04T08:38:45.200Z"
+  },
+  "classified": {
+   "id": "2106130557310468364",
+   "kind": "comparison",
+   "keep": true,
+   "original": "creator",
+   "category": "comparison",
+   "prompt_signal": "none",
+   "reference_assets": false,
+   "tools": [],
+   "title_en": "SVG pelican model comparison",
+   "title_zh": "SVG骑车鹈鹕模型对比",
+   "confidence": "high"
+  },
+  "extracted": {
+   "id": "2106130557310468364",
+   "prompt": null,
+   "reference_assets": false,
+   "tools": [],
+   "summary_en": "The post shows an SVG pelican on a bike from Arena testing comparing Gemini 4 Argon with Opus 5.5.",
+   "summary_zh": "这条帖子展示了 Arena 测试中 Gemini 4 Argon 与 Opus 5.5 生成的自行车 SVG 鹈鹕对比。",
+   "note": ""
+  },
+  "audit": {
+   "id": "2106130557310468364",
+   "verdict": "publish",
+   "confidence": "medium",
+   "prompt_ok": null,
+   "issues": [],
+   "reason": "The post identifies the pelican SVG as the creator's output from a model comparison, and it is a visual work."
+  },
+  "reasons": [
+   "审核把握不足（medium）：The post identifies the pelican SVG as the creator's output from a model comparison, and it is a visual work."
+  ],
+  "heldAt": "2026-10-04T08:38:45.200Z"
+ },
+ {
+  "candidate": {
+   "id": "2106060890407915571",
+   "url": "https://x.com/ITangieff/status/2106060890407915571",
+   "handle": "ITangieff",
+   "name": "Ibra Tangieff",
+   "followers": 38,
+   "verified": true,
+   "createdAt": "2026-10-02T16:36:59.000Z",
+   "lang": "en",
+   "text": "AI just created an Interstellar video\n\nOpus 5.5 vs GPT-6.1 Sol Max\n\nwhich model is clearly better here?\n https://t.co/LEjxcmoshR",
+   "links": [],
+   "views": 34183,
+   "likes": 155,
+   "replies": 57,
+   "reposts": 6,
+   "quotes": 0,
+   "bookmarks": 45,
+   "conversationId": "2106060890407915571",
+   "quoted": null,
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2106056356218486789/img/B-a5Lma26WtOZ-6N.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2106056356218486789/vid/avc1/1280x720/Ke0hBFXUufMoUO_i.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 25,
+    "aspect": [
+     16,
+     9
+    ]
+   },
+   "seed": false,
+   "via": "daily",
+   "checkedAt": "2026-10-04T08:38:45.200Z"
+  },
+  "classified": {
+   "id": "2106060890407915571",
+   "kind": "comparison",
+   "keep": true,
+   "original": "unclear",
+   "category": "comparison",
+   "prompt_signal": "none",
+   "reference_assets": false,
+   "tools": [
+    "GPT-6.1 Sol Max"
+   ],
+   "title_en": "Interstellar video model comparison",
+   "title_zh": "星际题材视频模型对比",
+   "confidence": "high"
+  },
+  "extracted": {
+   "id": "2106060890407915571",
+   "prompt": null,
+   "reference_assets": false,
+   "tools": [
+    "GPT-6.1 Sol Max"
+   ],
+   "summary_en": "The post compares an Interstellar-themed video made with Opus 5.5 against one made with GPT-6.1 Sol Max.",
+   "summary_zh": "帖子比较了 Opus 5.5 和 GPT-6.1 Sol Max 制作的星际主题视频。",
+   "note": ""
+  },
+  "audit": {
+   "id": "2106060890407915571",
+   "verdict": "publish",
+   "confidence": "medium",
+   "prompt_ok": null,
+   "issues": [],
+   "reason": "The post presents a visual video comparison involving an Opus-generated Interstellar-themed work."
+  },
+  "reasons": [
+   "审核把握不足（medium）：The post presents a visual video comparison involving an Opus-generated Interstellar-themed work."
+  ],
+  "heldAt": "2026-10-04T08:38:45.200Z"
+ },
+ {
+  "candidate": {
+   "id": "2106156060163620924",
+   "url": "https://x.com/LuminaBench/status/2106156060163620924",
+   "handle": "LuminaBench",
+   "name": "Lumina",
+   "followers": 12556,
+   "verified": true,
+   "createdAt": "2026-10-02T22:55:09.000Z",
+   "lang": "en",
+   "text": "🚨 Gemini 4 Argon vs Opus 5.5 (Voxel Pagoda)\n\nGemini 4 Argon is from arena during the weeks it was in testing, Opus 5.5 is on high here too\n\nFor more context Gemini 4 was around twice as fast too https://t.co/ZywpEt5jyW",
+   "links": [],
+   "views": 29142,
+   "likes": 286,
+   "replies": 14,
+   "reposts": 16,
+   "quotes": 4,
+   "bookmarks": 38,
+   "conversationId": "2106156060163620924",
+   "quoted": {
+    "id": "2106130557310468364",
+    "handle": "LuminaBench",
+    "text": "🚨 Gemini 4 Argon vs Opus 5.5 (SVG Pelican on bike)\n\nThis is from Arena testing over the past few weeks, I had quite a few people asking for comparisons against Anthropic models so I’ll post a few\n\nI can't wait for this to roll out https://t.co/mRBCAloAhQ"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2106153164386775041/img/SzVGT8VlWZDCOJ4H.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2106153164386775041/vid/avc1/1920x720/kL4RGMZKKMa5WUyg.mp4?tag=29",
+    "width": 1920,
+    "height": 720,
+    "durationSec": 21,
+    "aspect": [
+     8,
+     3
+    ]
+   },
+   "seed": false,
+   "via": "daily",
+   "checkedAt": "2026-10-04T08:38:45.200Z"
+  },
+  "classified": {
+   "id": "2106156060163620924",
+   "kind": "comparison",
+   "keep": true,
+   "original": "creator",
+   "category": "comparison",
+   "prompt_signal": "none",
+   "reference_assets": false,
+   "tools": [],
+   "title_en": "Voxel pagoda model comparison",
+   "title_zh": "体素宝塔模型对比",
+   "confidence": "high"
+  },
+  "extracted": {
+   "id": "2106156060163620924",
+   "prompt": null,
+   "reference_assets": false,
+   "tools": [],
+   "summary_en": "The post compares a voxel pagoda made with Opus 5.5 against a Gemini 4 Argon result from arena testing.",
+   "summary_zh": "帖子比较了 Opus 5.5 制作的体素宝塔与 Arena 测试中的 Gemini 4 Argon 结果。",
+   "note": ""
+  },
+  "audit": {
+   "id": "2106156060163620924",
+   "verdict": "publish",
+   "confidence": "medium",
+   "prompt_ok": null,
+   "issues": [],
+   "reason": "The post presents a visual voxel pagoda comparison including an Opus result, with no evidence it is non-visual or unsafe."
+  },
+  "reasons": [
+   "审核把握不足（medium）：The post presents a visual voxel pagoda comparison including an Opus result, with no evidence it is non-visual or unsafe."
+  ],
+  "heldAt": "2026-10-04T08:38:45.200Z"
+ },
+ {
+  "candidate": {
+   "id": "2106268181413429416",
+   "url": "https://x.com/AiwithSaif7/status/2106268181413429416",
+   "handle": "AiwithSaif7",
+   "name": "Saif Ai",
+   "followers": 11077,
+   "verified": true,
+   "createdAt": "2026-10-03T06:20:41.000Z",
+   "lang": "en",
+   "text": "opus 5.5 + seedance 2.5 is unbelievable https://t.co/ZNgj25ylYD",
+   "links": [],
+   "views": 26386,
+   "likes": 587,
+   "replies": 28,
+   "reposts": 137,
+   "quotes": 2,
+   "bookmarks": 221,
+   "conversationId": "2106268181413429416",
+   "quoted": null,
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2106266034562818048/img/8fZjEdDjlMOWrZw3.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2106266034562818048/vid/avc1/1280x720/oEYr8WlVbdq_UWbF.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 46,
+    "aspect": [
+     16,
+     9
+    ]
+   },
+   "seed": false,
+   "via": "daily",
+   "checkedAt": "2026-10-04T08:38:45.200Z"
+  },
+  "classified": {
+   "id": "2106268181413429416",
+   "kind": "work",
+   "keep": true,
+   "original": "unclear",
+   "category": "stories",
+   "prompt_signal": "none",
+   "reference_assets": false,
+   "tools": [
+    "Seedance 2.5"
+   ],
+   "title_en": "Collaborative Short Video",
+   "title_zh": "合作短视频",
+   "confidence": "low"
+  },
+  "extracted": {
+   "id": "2106268181413429416",
+   "prompt": null,
+   "reference_assets": false,
+   "tools": [
+    "Seedance 2.5"
+   ],
+   "summary_en": "The post presents a work made with Opus 5.5 and Seedance 2.5.",
+   "summary_zh": "帖子展示了使用 Opus 5.5 和 Seedance 2.5 制作的作品。",
+   "note": ""
+  },
+  "audit": {
+   "id": "2106268181413429416",
+   "verdict": "publish",
+   "confidence": "medium",
+   "prompt_ok": null,
+   "issues": [
+    "title_generic"
+   ],
+   "reason": "The post presents a creator-associated short video, but the assigned title is an overly generic description.",
+   "title_en": "Collaborative Short Video",
+   "title_zh": "合作短视频"
+  },
+  "reasons": [
+   "分类把握低",
+   "审核把握不足（medium）：The post presents a creator-associated short video, but the assigned title is an overly generic description."
+  ],
+  "heldAt": "2026-10-04T08:38:45.200Z"
+ },
+ {
+  "candidate": {
+   "id": "2106272829150986691",
+   "url": "https://x.com/itsshara_ai/status/2106272829150986691",
+   "handle": "itsshara_ai",
+   "name": "Shara",
+   "followers": 16620,
+   "verified": true,
+   "createdAt": "2026-10-03T06:39:09.000Z",
+   "lang": "en",
+   "text": "OMG!  opus 5.5 &amp; seedance 2.5 is unbelievable https://t.co/4HqOTnBNkv",
+   "links": [],
+   "views": 23004,
+   "likes": 301,
+   "replies": 74,
+   "reposts": 24,
+   "quotes": 2,
+   "bookmarks": 57,
+   "conversationId": "2106272829150986691",
+   "quoted": null,
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2106232786319458304/img/RAlF_ERoEKwYIB1U.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2106232786319458304/vid/avc1/1280x720/io35wp6MHMV6lhdq.mp4?tag=16",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 46,
+    "aspect": [
+     16,
+     9
+    ]
+   },
+   "seed": false,
+   "via": "daily",
+   "checkedAt": "2026-10-04T08:38:45.200Z"
+  },
+  "classified": {
+   "id": "2106272829150986691",
+   "kind": "work",
+   "keep": true,
+   "original": "unclear",
+   "category": "stories",
+   "prompt_signal": "none",
+   "reference_assets": false,
+   "tools": [
+    "Seedance 2.5"
+   ],
+   "title_en": "Short video",
+   "title_zh": "短视频",
+   "confidence": "low"
+  },
+  "extracted": {
+   "id": "2106272829150986691",
+   "prompt": null,
+   "reference_assets": false,
+   "tools": [
+    "Seedance 2.5"
+   ],
+   "summary_en": "The creator presents a work made with Opus 5.5 and Seedance 2.5.",
+   "summary_zh": "创作者展示了一件由 Opus 5.5 和 Seedance 2.5 制作的作品。",
+   "note": ""
+  },
+  "audit": {
+   "id": "2106272829150986691",
+   "verdict": "publish",
+   "confidence": "medium",
+   "prompt_ok": null,
+   "issues": [
+    "title_generic"
+   ],
+   "reason": "The post presents a work made with Opus 5.5 and Seedance, but the title only calls it an AI-generated video.",
+   "title_en": "Short video",
+   "title_zh": "短视频"
+  },
+  "reasons": [
+   "分类把握低",
+   "审核把握不足（medium）：The post presents a work made with Opus 5.5 and Seedance, but the title only calls it an AI-generated video."
+  ],
+  "heldAt": "2026-10-04T08:38:45.200Z"
+ },
+ {
+  "candidate": {
+   "id": "2106125405602123850",
+   "url": "https://x.com/nusretuzman/status/2106125405602123850",
+   "handle": "nusretuzman",
+   "name": "Nusret Uzman",
+   "followers": 9126,
+   "verified": true,
+   "createdAt": "2026-10-02T20:53:21.000Z",
+   "lang": "tr",
+   "text": "Opus 5.5 ile mini animasyonlar eklemeyi çok seviyorum &lt;3 https://t.co/7LoMWNAeTQ",
+   "links": [],
+   "views": 13642,
+   "likes": 222,
+   "replies": 17,
+   "reposts": 4,
+   "quotes": 0,
+   "bookmarks": 209,
+   "conversationId": "2106125405602123850",
+   "quoted": null,
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2106124443013500928/img/n57uS27Dk6s87LdT.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2106124443013500928/vid/avc1/720x900/D_AJZSnPYKyu2bLq.mp4?tag=29",
+    "width": 720,
+    "height": 900,
+    "durationSec": 11,
+    "aspect": [
+     4,
+     5
+    ]
+   },
+   "seed": false,
+   "via": "daily",
+   "checkedAt": "2026-10-04T08:38:45.200Z"
+  },
+  "classified": {
+   "id": "2106125405602123850",
+   "kind": "work",
+   "keep": true,
+   "original": "creator",
+   "category": "motion",
+   "prompt_signal": "none",
+   "reference_assets": false,
+   "tools": [
+    "Opus 5.5"
+   ],
+   "title_en": "Mini Animated Scenes",
+   "title_zh": "迷你动画场景集",
+   "confidence": "medium"
+  },
+  "extracted": {
+   "id": "2106125405602123850",
+   "prompt": null,
+   "reference_assets": false,
+   "tools": [
+    "Opus 5.5"
+   ],
+   "summary_en": "The creator says they enjoy adding mini animations with Opus 5.5.",
+   "summary_zh": "创作者表示很喜欢用 Opus 5.5 添加迷你动画。",
+   "note": ""
+  },
+  "audit": {
+   "id": "2106125405602123850",
+   "verdict": "publish",
+   "confidence": "medium",
+   "prompt_ok": null,
+   "issues": [
+    "title_generic"
+   ],
+   "reason": "The post indicates an Opus-made animation collection, but provides little detail beyond that it contains mini animations.",
+   "title_en": "Mini Animated Scenes",
+   "title_zh": "迷你动画场景集"
+  },
+  "reasons": [
+   "审核把握不足（medium）：The post indicates an Opus-made animation collection, but provides little detail beyond that it contains mini animations."
+  ],
+  "heldAt": "2026-10-04T08:38:45.200Z"
+ },
+ {
+  "candidate": {
+   "id": "2106238699872956427",
+   "url": "https://x.com/imjustnewatai/status/2106238699872956427",
+   "handle": "imjustnewatai",
+   "name": "imjustnewatai",
+   "followers": 10966,
+   "verified": true,
+   "createdAt": "2026-10-03T04:23:32.000Z",
+   "lang": "en",
+   "text": "Asked Claude fable 5.5 for a 3-minute 3D film on how the atomic bomb became possible.\n\nIt had no 3D library to work with, so it wrote its own renderer, drew 5,400 frames, synthesized a soundtrack and sent me an MP4. https://t.co/qkqV42BAv7",
+   "links": [],
+   "views": 9110,
+   "likes": 123,
+   "replies": 11,
+   "reposts": 9,
+   "quotes": 0,
+   "bookmarks": 62,
+   "conversationId": "2106238699872956427",
+   "quoted": null,
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2106238624052158464/img/-Uoj55wHLhBdJvnh.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2106238624052158464/vid/avc1/1280x720/xboKVJ09ZeehX2Hs.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 180,
+    "aspect": [
+     16,
+     9
+    ]
+   },
+   "seed": false,
+   "via": "daily",
+   "checkedAt": "2026-10-04T08:38:45.200Z"
+  },
+  "classified": {
+   "id": "2106238699872956427",
+   "kind": "work",
+   "keep": true,
+   "original": "creator",
+   "category": "education",
+   "prompt_signal": "brief_in_text",
+   "reference_assets": false,
+   "tools": [],
+   "title_en": "Atomic bomb history 3D film",
+   "title_zh": "原子弹历史三维短片",
+   "confidence": "high"
+  },
+  "extracted": {
+   "id": "2106238699872956427",
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/imjustnewatai/status/2106243136938782805",
+    "text": "Okay completely ignore that. I want you to make a video of the nuclear bomb, how it was made and all the research and engineering that went behind it. Make it very jam packed and put in a video how it all happened how it worked and everything and why and everything like that how many people the person who made the most progress etc… truely show how it’s possible in a video\n\n2. Never mind I didn’t like this. Make it where you show a 3d thing fully immersive on how the nuclear bomb. And only make it 3 minutes long like a full 3d reconstruction of how they made it possible and send me the video so I can download on my phone"
+   },
+   "reference_assets": false,
+   "tools": [],
+   "summary_en": "The creator asked Claude Fable 5.5 for a three-minute 3D film explaining how the atomic bomb became possible. Claude wrote its own renderer, produced 5,400 frames, synthesized a soundtrack, and delivered an MP4.",
+   "summary_zh": "创作者让 Claude Fable 5.5 制作一部三分钟的 3D 影片，解释原子弹如何成为可能。Claude 自行编写渲染器，生成了 5400 帧画面，合成配乐并输出 MP4。",
+   "note": ""
+  },
+  "audit": {
+   "id": "2106238699872956427",
+   "verdict": "publish",
+   "confidence": "medium",
+   "prompt_ok": false,
+   "issues": [
+    "prompt_followup"
+   ],
+   "reason": "The work is a creator-made Fable video, but the located text is a continuation containing explicit revisions from an earlier session."
+  },
+  "reasons": [
+   "审核把握不足（medium）：The work is a creator-made Fable video, but the located text is a continuation containing explicit revisions from an earlier session."
+  ],
+  "heldAt": "2026-10-04T08:38:45.200Z"
+ },
+ {
+  "candidate": {
+   "id": "2106083195578122697",
+   "url": "https://x.com/TokenGremlin/status/2106083195578122697",
+   "handle": "TokenGremlin",
+   "name": "Token Gremlin",
+   "followers": 10956,
+   "verified": true,
+   "createdAt": "2026-10-02T18:05:37.000Z",
+   "lang": "en",
+   "text": "Opus 5.5 vs GPT-6.1 Sol in a volcano simulator.\n\nLet’s just say this... to get the kind of result Opus 5.5 gives you in just 1 or 2 rounds, you basically need to pair GPT-6.1 Sol with GPT-6 Astra and iterate a few times.\n\nOpus 5.5 is the KING of Three.js, and Astra is the king of Blender.\n\n(6.1 Sol is basically the attempt to find a middle ground.)",
+   "links": [],
+   "views": 8895,
+   "likes": 111,
+   "replies": 15,
+   "reposts": 3,
+   "quotes": 0,
+   "bookmarks": 27,
+   "conversationId": "2106083195578122697",
+   "quoted": null,
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2106082655045337090/img/shqVKureIMn-KtuU.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2106082655045337090/vid/avc1/720x852/LO8TxtWJJYcSqj61.mp4?tag=29",
+    "width": 720,
+    "height": 852,
+    "durationSec": 61,
+    "aspect": [
+     27,
+     32
+    ]
+   },
+   "seed": false,
+   "via": "daily",
+   "checkedAt": "2026-10-04T08:38:45.200Z"
+  },
+  "classified": {
+   "id": "2106083195578122697",
+   "kind": "comparison",
+   "keep": true,
+   "original": "unclear",
+   "category": "comparison",
+   "prompt_signal": "none",
+   "reference_assets": false,
+   "tools": [
+    "Claude Opus 5.5",
+    "GPT-6.1 Sol",
+    "GPT-6 Astra",
+    "Three.js",
+    "Blender"
+   ],
+   "title_en": "Volcano simulator model comparison",
+   "title_zh": "火山模拟器模型对比",
+   "confidence": "high"
+  },
+  "extracted": {
+   "id": "2106083195578122697",
+   "prompt": null,
+   "reference_assets": false,
+   "tools": [
+    "Claude Opus 5.5",
+    "GPT-6.1 Sol",
+    "GPT-6 Astra",
+    "Three.js",
+    "Blender"
+   ],
+   "summary_en": "The creator compares Opus 5.5 and GPT-6.1 Sol on a volcano simulator, mentioning Three.js and Blender strengths.",
+   "summary_zh": "作者比较了 Opus 5.5 和 GPT-6.1 Sol 制作火山模拟器的效果，并提到 Three.js 和 Blender。",
+   "note": ""
+  },
+  "audit": {
+   "id": "2106083195578122697",
+   "verdict": "publish",
+   "confidence": "medium",
+   "prompt_ok": null,
+   "issues": [],
+   "reason": "The post describes a volcano simulator comparison involving Opus 5.5, which is plausibly a visual work."
+  },
+  "reasons": [
+   "审核把握不足（medium）：The post describes a volcano simulator comparison involving Opus 5.5, which is plausibly a visual work."
+  ],
+  "heldAt": "2026-10-04T08:38:45.200Z"
+ },
+ {
+  "candidate": {
+   "id": "2105949902274453766",
+   "url": "https://x.com/bijanbowen/status/2105949902274453766",
+   "handle": "bijanbowen",
+   "name": "BijanBowen",
+   "followers": 9961,
+   "verified": true,
+   "createdAt": "2026-10-02T09:15:58.000Z",
+   "lang": "en",
+   "text": "Gave Sonnet 5.5 and GPT 6.1 Sol an old robot project and asked them to make new software and marketing materials for it https://t.co/zdO07dtRdK",
+   "links": [],
+   "views": 7312,
+   "likes": 191,
+   "replies": 20,
+   "reposts": 6,
+   "quotes": 2,
+   "bookmarks": 17,
+   "conversationId": "2105949902274453766",
+   "quoted": null,
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2105949018329079808/img/Cw6a6dQS49C5QeOj.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2105949018329079808/vid/avc1/1280x720/xHL4kBqrVrw01gwd.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 181,
+    "aspect": [
+     16,
+     9
+    ]
+   },
+   "seed": false,
+   "via": "daily",
+   "checkedAt": "2026-10-04T08:38:45.200Z"
+  },
+  "classified": {
+   "id": "2105949902274453766",
+   "kind": "comparison",
+   "keep": true,
+   "original": "creator",
+   "category": "comparison",
+   "prompt_signal": "brief_in_text",
+   "reference_assets": true,
+   "tools": [
+    "Sonnet 5.5",
+    "GPT 6.1 Sol",
+    "GPT-4",
+    "Raspberry Pi 4B",
+    "Waveshare round display"
+   ],
+   "title_en": "Robot software and marketing comparison",
+   "title_zh": "机器人软件与营销方案对比",
+   "confidence": "high"
+  },
+  "extracted": {
+   "id": "2105949902274453766",
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/bijanbowen/status/2105949902274453766",
+    "text": "make new software and marketing materials for it"
+   },
+   "reference_assets": true,
+   "tools": [
+    "Sonnet 5.5",
+    "GPT 6.1 Sol",
+    "GPT-4",
+    "Raspberry Pi 4B",
+    "Waveshare round display"
+   ],
+   "summary_en": "The creator gave Sonnet 5.5 and GPT 6.1 Sol an old robot project to produce new software and marketing materials.",
+   "summary_zh": "作者把一个旧机器人项目交给 Sonnet 5.5 和 GPT 6.1 Sol，用于制作新软件和营销材料。",
+   "note": ""
+  },
+  "audit": {
+   "id": "2105949902274453766",
+   "verdict": "publish",
+   "confidence": "medium",
+   "prompt_ok": false,
+   "issues": [
+    "prompt_depends_on_unseen"
+   ],
+   "reason": "The post describes creator-made robot outputs, but the prompt relies on the unspecified prior project through the word 'it'."
+  },
+  "reasons": [
+   "审核把握不足（medium）：The post describes creator-made robot outputs, but the prompt relies on the unspecified prior project through the word 'it'."
+  ],
+  "heldAt": "2026-10-04T08:38:45.200Z"
+ },
+ {
+  "candidate": {
+   "id": "2106313749846249487",
+   "url": "https://x.com/Lattice_Node/status/2106313749846249487",
+   "handle": "Lattice_Node",
+   "name": "Lattice",
+   "followers": 2297,
+   "verified": true,
+   "createdAt": "2026-10-03T09:21:46.000Z",
+   "lang": "ja",
+   "text": "「1%は何回で当たるのか」問題\n勘違いしている人が多いのでOpus5.5に分かり易く解説してもらった https://t.co/06lHp7XLwv",
+   "links": [],
+   "views": 318207,
+   "likes": 1188,
+   "replies": 17,
+   "reposts": 223,
+   "quotes": 30,
+   "bookmarks": 382,
+   "conversationId": "2106313749846249487",
+   "quoted": null,
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2106313471709327360/img/nF0Ye3nsvZAKabwu.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2106313471709327360/vid/avc1/720x900/pGxa1E_inxAY8Hvu.mp4?tag=29",
+    "width": 720,
+    "height": 900,
+    "durationSec": 42,
+    "aspect": [
+     4,
+     5
+    ]
+   },
+   "seed": false,
+   "via": "daily",
+   "checkedAt": "2026-10-04T09:48:50.773Z"
+  },
+  "classified": {
+   "id": "2106313749846249487",
+   "kind": "work",
+   "keep": true,
+   "original": "creator",
+   "category": "education",
+   "prompt_signal": "brief_in_text",
+   "reference_assets": false,
+   "tools": [],
+   "title_en": "Explaining repeated 1% probability",
+   "title_zh": "讲解百分之一概率的重复命中",
+   "confidence": "high"
+  },
+  "extracted": {
+   "id": "2106313749846249487",
+   "prompt": null,
+   "reference_assets": false,
+   "tools": [],
+   "summary_en": "A clear explanation of how many trials are needed for a 1% chance, made with Claude Opus 5.5.",
+   "summary_zh": "作者让 Claude Opus 5.5 清晰解释“1%需要尝试多少次”这一概率问题。",
+   "note": ""
+  },
+  "audit": {
+   "id": "2106313749846249487",
+   "verdict": "hold",
+   "confidence": "low",
+   "prompt_ok": null,
+   "issues": [],
+   "reason": "The post indicates an Opus explanation but does not establish whether the linked result is a visual work."
+  },
+  "reasons": [
+   "审核拿不准：The post indicates an Opus explanation but does not establish whether the linked result is a visual work."
+  ],
+  "heldAt": "2026-10-04T09:48:50.773Z"
+ }
+]
