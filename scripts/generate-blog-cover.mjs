@@ -94,7 +94,7 @@ const submitRes = await fetchWithTimeout(`${APIMART_BASE}/v1/images/generations`
     Authorization: `Bearer ${APIMART_API_KEY}`,
     "Content-Type": "application/json",
   },
-  body: JSON.stringify({ model: "gpt-image-2", prompt, size, n: 1 }),
+  body: JSON.stringify({ model: process.env.APIMART_IMAGE_MODEL || "gpt-image-2.5-flare", prompt, size, n: 1 }), // 2026-10-05 起生图 key 只开通 2.5-flare
 });
 
 if (!submitRes.ok) {

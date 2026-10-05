@@ -1,8 +1,10 @@
 """模型通道体检：每天给快讯 / 提示词库用到的每条通道发一个极小的请求（max_tokens=8），哪条不通就在日报开头告警。
 
 起因：CI 里的 apimart key 4 月起就调不了 Claude，2026-10-04 主代理一限流，备用全挂，11 个作品卡进待审——
-平时没人发现，因为主代理一直在顶着。生图（gpt-image-2）用空 prompt 探测：返回 400 = 有权限，403 = 没权限，不花钱。
+平时没人发现，因为主代理一直在顶着。生图（gpt-image-2.5-flare）用空 prompt 探测：返回 400 = 有权限，403 = 没权限，不花钱。
 """
+import os
+
 import requests
 
 from common import run, save, secret
@@ -10,6 +12,7 @@ from common import run, save, secret
 AIGOCODE = "https://api.aigocode.app"
 APIMART = "https://api.apimart.ai"
 FLATROUTER = "https://api.flatrouter.com"
+IMAGE_MODEL = os.environ.get("APIMART_IMAGE_MODEL") or "gpt-image-2.5-flare"   # 和封面脚本用同一个模型
 
 
 def anthropic_ping(base, key, model):
@@ -49,13 +52,13 @@ def main():
     ai = secret("APIMART_API_KEY")
     if not ai:
         # 生图 key 为空也要报：2026-10-05 一次 `grep … | gh secret set` 没读到值，存进去空串，体检却静默跳过了
-        checks.append({"channel": "apimart 生图", "used_by": "快讯封面 / 博客封面", "model": "gpt-image-2", "ok": False, "status": 0,
+        checks.append({"channel": "apimart 生图", "used_by": "快讯封面 / 博客封面", "model": IMAGE_MODEL, "ok": False, "status": 0,
                        "detail": "APIMART_API_KEY 没配或为空"})
     else:
         # 空 prompt：有权限会因为参数不全返回 400，没权限返回 403，不会真的生成图片
-        add("apimart 生图", "快讯封面 / 博客封面", "gpt-image-2",
+        add("apimart 生图", "快讯封面 / 博客封面", IMAGE_MODEL,
             lambda: (lambda r: (r.status_code, r.text[:160]))(requests.post(f"{APIMART}/v1/images/generations", timeout=60,
-                     headers={"Authorization": f"Bearer {ai}"}, json={"model": "gpt-image-2", "prompt": ""})),
+                     headers={"Authorization": f"Bearer {ai}"}, json={"model": IMAGE_MODEL, "prompt": ""})),
             ok_codes=(200, 400, 422))
     orr = secret("OPENROUTER_API_KEY")
     if orr:

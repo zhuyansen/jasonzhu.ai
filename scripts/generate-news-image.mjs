@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // 基于当天 src/content/news/<date>.md 生成日报图片，保存到 public/news/<date>.png
-// API: apimart gpt-image-2 (异步任务，submit -> poll -> download)
+// API: apimart gpt-image-2.5-flare（APIMART_IMAGE_MODEL 可覆盖）(异步任务，submit -> poll -> download)
 //
 // 用法：node scripts/generate-news-image.mjs [YYYY-MM-DD]
 // 默认：今天 (UTC+8)
@@ -105,7 +105,8 @@ const submitRes = await fetchWithTimeout(`${APIMART_BASE}/v1/images/generations`
     "Content-Type": "application/json",
   },
   body: JSON.stringify({
-    model: "gpt-image-2",
+    // 2026-10-05 起 apimart 生图 key 只开通 gpt-image-2.5-flare；APIMART_IMAGE_MODEL 可覆盖
+    model: process.env.APIMART_IMAGE_MODEL || "gpt-image-2.5-flare",
     prompt,
     size: "1024x1536", // portrait
     n: 1,
