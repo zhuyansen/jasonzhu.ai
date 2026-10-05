@@ -1,8 +1,8 @@
 {
  "model": "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Fable 5.5)",
  "threshold": 5000,
- "updatedAt": "2026-10-04T09:48:50.773Z",
- "statsCheckedAt": "2026-10-04T09:48:50.773Z",
+ "updatedAt": "2026-10-05T09:26:31.189Z",
+ "statsCheckedAt": "2026-10-05T09:26:31.189Z",
  "inclusionRule": "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -1469,6 +1469,58 @@
    "evidence": {
     "via": "search",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2106387548486738010",
+   "url": "https://x.com/GamefxAI/status/2106387548486738010",
+   "author": {
+    "handle": "GamefxAI",
+    "name": "Aymane"
+   },
+   "postedAt": "2026-10-03T14:15:01.000Z",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "英雄联盟与龙珠格斗游戏混合游戏",
+    "en": "League of Legends x Dragon Ball FighterZ Mashup Game"
+   },
+   "summary": {
+    "zh": "作者让Opus 5.5逆向分析《英雄联盟》和《龙珠格斗Z》，并将两者结合制作成一款新游戏。",
+    "en": "The creator asked Opus 5.5 to reverse engineer League of Legends and Dragon Ball FighterZ and combine them into a new game."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/GamefxAI/status/2106387548486738010",
+    "text": "reverse engineer League of Legends And Dragonball FighterZ combine them and make a game out of it"
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 814633,
+    "likes": 4638,
+    "replies": 234,
+    "reposts": 219,
+    "bookmarks": 1213,
+    "checkedAt": "2026-10-05T09:26:31.189Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2106387342000832512/img/LIvZT2Dt-SQD7A7I.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2106387342000832512/vid/avc1/1280x720/XJUFBNwppHhjdOE1.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 103
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -16724,6 +16776,62 @@
    }
   },
   {
+   "id": "2106375041269342691",
+   "url": "https://x.com/0xaxit/status/2106375041269342691",
+   "author": {
+    "handle": "0xaxit",
+    "name": "axit"
+   },
+   "postedAt": "2026-10-03T13:25:19.000Z",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "GTA风格班加罗尔城市构建",
+    "en": "GTA-style Bangalore city build"
+   },
+   "summary": {
+    "zh": "作者用Opus 5.5在自建服务器上调度Blender、Three.js、Higgsfield以及多个编程代理，并参考真实建筑照片，制作出GTA风格的班加罗尔3D场景。",
+    "en": "The creator built a GTA-style 3D model of Bangalore using Opus 5.5 to orchestrate Blender, Three.js, Higgsfield and multiple coding agents on a homelab rig, using real building photos as references."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Blender",
+    "Three.js",
+    "Tailscale",
+    "Higgsfield",
+    "superdoteng orchestrate",
+    "Claude Code",
+    "Codex",
+    "Sonnet 5.5"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 92535,
+    "likes": 812,
+    "replies": 61,
+    "reposts": 50,
+    "bookmarks": 472,
+    "checkedAt": "2026-10-05T09:26:31.189Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2106374936411680768/img/WFH09MQFztmi7tOz.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2106374936411680768/vid/avc1/1280x720/lZdyHYLRJp3CsVXh.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 61
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2104525735713206557",
    "url": "https://x.com/pratyushrungta/status/2104525735713206557",
    "author": {
@@ -17265,6 +17373,56 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2106369769956065518",
+   "url": "https://x.com/HeyAbhishek/status/2106369769956065518",
+   "author": {
+    "handle": "HeyAbhishek",
+    "name": "Abhishek"
+   },
+   "postedAt": "2026-10-03T13:04:22.000Z",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "米洛渡河冒险",
+    "en": "Milo's River Crossing"
+   },
+   "summary": {
+    "zh": "创作者用Opus 5.5撰写角色设定提示词和详细的Seedance 2.5视频提示词，并通过Vidfield.ai依据角色参考图与单一提示词生成了这段企鹅动画短片。",
+    "en": "A cinematic animated penguin short was made with Opus 5.5 writing a character design prompt and a detailed Seedance 2.5 video prompt, with Vidfield.ai rendering the final scene from a character reference sheet and one video prompt."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Seedance 2.5",
+    "Vidfield.ai"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 88473,
+    "likes": 381,
+    "replies": 14,
+    "reposts": 41,
+    "bookmarks": 508,
+    "checkedAt": "2026-10-05T09:26:31.189Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2106369738947649536/img/LKrL2K_XMgfQjQBU.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2106369738947649536/vid/avc1/720x798/k7xtbPcaacZAlm0E.mp4?tag=16",
+    "width": 720,
+    "height": 798,
+    "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -23257,6 +23415,105 @@
    }
   },
   {
+   "id": "2106670299731149160",
+   "url": "https://x.com/GamefxAI/status/2106670299731149160",
+   "author": {
+    "handle": "GamefxAI",
+    "name": "Aymane"
+   },
+   "postedAt": "2026-10-04T08:58:34.000Z",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "英雄联盟与龙珠格斗游戏混合游戏",
+    "en": "League of Legends x Dragon Ball FighterZ Mashup Game"
+   },
+   "summary": {
+    "zh": "创作者让Opus 5.5逆向分析《英雄联盟》和《龙珠搏斗者》的玩法机制，并将两者结合，制作出一款新游戏。",
+    "en": "A game combining League of Legends and Dragonball FighterZ mechanics was created by asking Opus 5.5 to reverse engineer both games and merge them into a new game."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/GamefxAI/status/2106670299731149160",
+    "text": "reverse engineer League of Legends And Dragonball FighterZ combine them and make a game out of it"
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 61096,
+    "likes": 692,
+    "replies": 38,
+    "reposts": 36,
+    "bookmarks": 226,
+    "checkedAt": "2026-10-05T09:26:31.189Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2106658358287552512/img/0bFPw8LVtGF-VhP5.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2106658358287552512/vid/avc1/1280x720/OWg6OKP5GmubVpXx.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 600
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2106369929813594134",
+   "url": "https://x.com/ishuagra02/status/2106369929813594134",
+   "author": {
+    "handle": "ishuagra02",
+    "name": "Ishu Agrawal"
+   },
+   "postedAt": "2026-10-03T13:05:00.000Z",
+   "lang": "en",
+   "models": [
+    "fable-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "随节拍切换的角色短片动画",
+    "en": "Character vignette animation synced to a beat"
+   },
+   "summary": {
+    "zh": "创作者向Fable 5.5提供了一段带有交替角色短片风格的参考视频，并要求它采用该风格制作出这段配合节拍的动画。",
+    "en": "An animated video synced to a Claude-related beat was made with Fable 5.5 by feeding it a reference video with alternating character vignettes and asking it to adopt that visual style."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 61080,
+    "likes": 1284,
+    "replies": 37,
+    "reposts": 65,
+    "bookmarks": 521,
+    "checkedAt": "2026-10-05T09:26:31.189Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2106125175821389824/img/g6YosFFGjYb6Twxr.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2106125175821389824/vid/avc1/1280x720/gDvhk2UnUdv1GLHB.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 51
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103144778481475686",
    "url": "https://x.com/sab8a/status/2103144778481475686",
    "author": {
@@ -24542,6 +24799,53 @@
    "evidence": {
     "via": "fxtwitter",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2106638839666373114",
+   "url": "https://x.com/abhinavflac/status/2106638839666373114",
+   "author": {
+    "handle": "abhinavflac",
+    "name": "Synopsis"
+   },
+   "postedAt": "2026-10-04T06:53:33.000Z",
+   "lang": "en",
+   "models": [
+    "fable-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "用JavaScript重绘的埃米纳姆哥斯拉视频",
+    "en": "Eminem Godzilla video redrawn in JavaScript"
+   },
+   "summary": {
+    "zh": "创作者使用Fable 5.5将原视频的每一帧描摹成扁平色块形状，再用JavaScript从零重绘每一帧，制作出这段配合Eminem歌曲的哥斯拉动画。",
+    "en": "A Godzilla-themed animation synced to an Eminem track was made with Fable 5.5, which traced every frame of the original video into flat color shapes and redrew each frame from scratch in JavaScript."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 56595,
+    "likes": 159,
+    "replies": 12,
+    "reposts": 6,
+    "bookmarks": 82,
+    "checkedAt": "2026-10-05T09:26:31.189Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2106638072540803072/img/FwsnZFX9HlIHR0-R.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2106638072540803072/vid/avc1/1280x720/HeaboCnHmESCCJSE.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 45
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -29671,6 +29975,55 @@
    }
   },
   {
+   "id": "2106604492728967620",
+   "url": "https://x.com/dobokuya77/status/2106604492728967620",
+   "author": {
+    "handle": "dobokuya77",
+    "name": "土木屋77"
+   },
+   "postedAt": "2026-10-04T04:37:04.000Z",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "河道非均匀流可视化",
+    "en": "River Non-Uniform Flow Visualization"
+   },
+   "summary": {
+    "zh": "创作者用Claude Opus 5.5进行河道不等流计算，用Python实现计算，并生成计算书、叠加航拍图的3D模型以及流量热力图，整个应用可在浏览器中运行。",
+    "en": "Claude Opus 5.5 was used to perform non-uniform flow calculations for a river, producing a calculation report, a 3D model overlaid with aerial photos, and a flow-rate heatmap, implemented in Python and running in the browser."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Python"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 44734,
+    "likes": 889,
+    "replies": 19,
+    "reposts": 139,
+    "bookmarks": 390,
+    "checkedAt": "2026-10-05T09:26:31.189Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2106604447296282624/img/NTFPtA47_hOUATmY.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2106604447296282624/vid/avc1/1280x720/A0ujq8lUjBg3gXCB.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 46
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103912457836323096",
    "url": "https://x.com/SebastianRoehl/status/2103912457836323096",
    "author": {
@@ -32638,6 +32991,60 @@
    }
   },
   {
+   "id": "2106363469519872338",
+   "url": "https://x.com/GamefxAI/status/2106363469519872338",
+   "author": {
+    "handle": "GamefxAI",
+    "name": "Aymane"
+   },
+   "postedAt": "2026-10-03T12:39:20.000Z",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "龙珠格斗Three.js MMO移植",
+    "en": "Dragonball FighterZ Three.js MMO port"
+   },
+   "summary": {
+    "zh": "作者用 Opus 5.5 对《龙珠 FighterZ》进行逆向工程，将其移植到 Three.js，并做成了一个可玩的 MMO。",
+    "en": "The creator used Opus 5.5 to reverse engineer Dragon Ball FighterZ, port it to Three.js, and turn it into a playable MMO."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/GamefxAI/status/2106363469519872338",
+    "text": "reverse engineer Dragonball FighterZ port it over to Threejs and make an MMO out of it"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 38710,
+    "likes": 973,
+    "replies": 36,
+    "reposts": 62,
+    "bookmarks": 400,
+    "checkedAt": "2026-10-05T09:26:31.189Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2106363218297765888/img/SuzWEycoqWznjIZD.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2106363218297765888/vid/avc1/1280x720/6KZpMxlmsM7ndwzx.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 46
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103819121821728993",
    "url": "https://x.com/__oQuery/status/2103819121821728993",
    "author": {
@@ -34675,6 +35082,62 @@
     "width": 1280,
     "height": 720,
     "durationSec": 25
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2106396375269134597",
+   "url": "https://x.com/rossaxbt/status/2106396375269134597",
+   "author": {
+    "handle": "rossaxbt",
+    "name": "testarossa"
+   },
+   "postedAt": "2026-10-03T14:50:05.000Z",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "纯代码生成的UI动效展示",
+    "en": "Code-based UI motion design showreel"
+   },
+   "summary": {
+    "zh": "作者用 Opus 5.5 完全用代码生成了一段 UI 动效视频，没有使用 After Effects，并公开了用于制作该作品的完整可复用提示词模板。",
+    "en": "The creator made a fully code-generated UI motion design video with Opus 5.5, with zero After Effects, and shared the full reusable prompt template used to build it."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "post",
+    "sourceUrl": "https://x.com/rossaxbt/status/2106396375269134597",
+    "text": "<inputs>\nAsk me for: 8 to 12 UI states the shape should turn into (e.g. button, loader, player, slider, toggle, tabs, chart, command palette, toast), a pure black-and-white palette or one accent color, and a royalty-free track around 120 BPM (e.g. from Mixkit, free for commercial use).\n</inputs>\n\n<direction>\nDribbble-level UI motion. One shape, no cuts: each state is the same element changing size, radius and color, while its content swaps with a quick blur. A cursor triggers every change through actual clicks and drags. Use a light warm-gray canvas, black-and-white components and one clean UI font (Geist). Springs throughout, with only a slight overshoot. Zoom the camera so each state fills the frame. Match the final frame to the first for a seamless loop.\nBanned: bouncy easing, particle bursts, glows, gradients on UI chrome, inconsistent icon strokes, dead time, anything that feels like a template.\n</direction>\n\n<structure>\n120 BPM, 7 bars, with an action on every beat.\nButton → loader → check → dynamic island → music player with a play/pause morph → scrub the progress bar → it turns into a volume slider that stretches when dragged past max → a toggle switches on the beat → its knob becomes a liquid tab indicator → the tabs expand into a chart that draws itself, with a tooltip on hover → it folds into ⌘K → type to filter → enter → toast → back to the button.\n</structure>\n\n<build>\n1. One HTML file, square 1440x1440. Compute every style from time inside seek(t): no CSS transitions, timers or state carried between frames.\n2. Use closed-form step responses for springs. If a value changes target multiple times, add one spring for each change so it remains a pure function of time.\n3. Give the tab indicator’s two edges separate springs, letting the leading edge stretch ahead of the trailing one. Use the same approach for the toggle knob.\n4. Make drags direct: while the cursor is held down, calculate the value from its position. On release, spring back from that position.\n5. Analyze the song with numpy to find the beat grid and begin on a downbeat. Position each UI sound using its measured peak.\n6. Render with Playwright: 4 subframes per frame, blended with ffmpeg tmix for motion blur at 60fps.\n7. Render one frame per beat before the full render. Fix anything off-grid, cramped or difficult to read.\n</build>\n\n<gotchas>\nDon’t use will-change on anything the camera scales, or the text will look blurry. Text swapping inside a morphing container needs separate enter and exit timing to avoid overlap. Make the final frame identical to the first including cursor position and speed or the loop will stutter.\n</gotchas>\n\n<start>\nAsk me for the inputs, then show me the state list on the beat grid before writing any code.\n</start>"
+   },
+   "referenceAssets": true,
+   "tools": [
+    "Playwright",
+    "ffmpeg",
+    "numpy"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 34171,
+    "likes": 395,
+    "replies": 5,
+    "reposts": 25,
+    "bookmarks": 590,
+    "checkedAt": "2026-10-05T09:26:31.189Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2106366034596839426/img/UUhhRiQYt15hLzy7.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2106366034596839426/vid/avc1/720x720/Oei285aGYMvqAneA.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 14
    },
    "evidence": {
     "via": "daily",
@@ -38253,6 +38716,53 @@
    }
   },
   {
+   "id": "2106623136548720897",
+   "url": "https://x.com/ai_ba_reza/status/2106623136548720897",
+   "author": {
+    "handle": "ai_ba_reza",
+    "name": "Reza Shakeri"
+   },
+   "postedAt": "2026-10-04T05:51:09.000Z",
+   "lang": "fa",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "游戏化仓库管理软件",
+    "en": "Game-like warehouse management software"
+   },
+   "summary": {
+    "zh": "作者用 Opus 5.5 制作了一款像策略游戏一样管理仓库的工业软件，后续回复中分享了 Instagram 和 GitHub 链接，但没有公开提示词。",
+    "en": "The creator built warehouse management software that behaves like a strategy game, made with Opus 5.5, and later shared links to his Instagram and GitHub instead of a prompt."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 28466,
+    "likes": 618,
+    "replies": 23,
+    "reposts": 18,
+    "bookmarks": 517,
+    "checkedAt": "2026-10-05T09:26:31.189Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2106424641959186432/img/3yHxjLeUggq453eF.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2106424641959186432/vid/avc1/1250x720/LF61toOGvkeoIiaL.mp4?tag=29",
+    "width": 1250,
+    "height": 720,
+    "durationSec": 72
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2104805179401068964",
    "url": "https://x.com/AbhinavXJ/status/2104805179401068964",
    "author": {
@@ -40138,6 +40648,59 @@
     "width": 720,
     "height": 1280,
     "durationSec": 23
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2106376222309761094",
+   "url": "https://x.com/Saccc_c/status/2106376222309761094",
+   "author": {
+    "handle": "Saccc_c",
+    "name": "Sac"
+   },
+   "postedAt": "2026-10-03T13:30:00.000Z",
+   "lang": "zh",
+   "models": [
+    "opus-5.5",
+    "fable-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "15秒动效展示",
+    "en": "15-Second Motion Graphics Showcase"
+   },
+   "summary": {
+    "zh": "作者开源了用 Fable 5.5 一次性生成 15 秒动态图形展示视频的提示词，并邀请其他人用它来抽卡尝试。",
+    "en": "The creator open-sourced the single prompt used to generate a 15-second motion graphics showcase video with Fable 5.5 and invited others to try it."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "post",
+    "sourceUrl": "https://x.com/Saccc_c/status/2106376222309761094",
+    "text": "制作一段 15 秒的动态图形视频，展示你是一位多么出色的动态设计师，就像是你简历上的作品集一样，使用任何你认为能产出最佳效果的工具或技术。你拥有完全的创作自由，优先追求卓越的视觉设计、大胆的艺术指导、引人注目的构图和富有力量的动态表现，让每一秒都有价值。全力以赴。"
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 25221,
+    "likes": 351,
+    "replies": 22,
+    "reposts": 36,
+    "bookmarks": 387,
+    "checkedAt": "2026-10-05T09:26:31.189Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2106349987181613056/img/rYFTbsb_ZCSzweqt.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2106349987181613056/vid/avc1/1280x720/fadF-72tY1osCOM_.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 15
    },
    "evidence": {
     "via": "daily",
@@ -43030,6 +43593,55 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2106656783221899534",
+   "url": "https://x.com/L_ARCH_01/status/2106656783221899534",
+   "author": {
+    "handle": "L_ARCH_01",
+    "name": "えうれか先生"
+   },
+   "postedAt": "2026-10-04T08:04:51.000Z",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "UE5中LLM控制的AI虚拟主播测试",
+    "en": "LLM-controlled AI avatar test in UE5"
+   },
+   "summary": {
+    "zh": "作者用Claude Opus 5.5在Unreal Engine 5.8中做了一个简易测试，让LLM伪控制一个3D角色的身体，做成类似AITuber的桌面应用。",
+    "en": "A desktop AITuber-style test where Claude Opus 5.5 pseudo-controls a 3D character's body movements inside Unreal Engine 5.8."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Unreal Engine 5.8"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 20870,
+    "likes": 250,
+    "replies": 3,
+    "reposts": 44,
+    "bookmarks": 160,
+    "checkedAt": "2026-10-05T09:26:31.189Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2106651182571900928/img/3ASMBmkZXFYntgp7.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2106651182571900928/vid/avc1/1280x720/33ofBKf_ARbcydzI.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 22
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -52512,6 +53124,53 @@
    }
   },
   {
+   "id": "2106378121557782950",
+   "url": "https://x.com/konstantinsaifo/status/2106378121557782950",
+   "author": {
+    "handle": "konstantinsaifo",
+    "name": "Konstantin Saifoulline"
+   },
+   "postedAt": "2026-10-03T13:37:33.000Z",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "模拟金属3D打印机打印火箭发动机",
+    "en": "Simulated metal 3D printer for rocket engine"
+   },
+   "summary": {
+    "zh": "作者让Claude Opus 5.5构建了一台金属3D打印机（四激光、单刀片），用铜粉打印带冷却通道的火箭发动机，并提供了可交互的演示链接。",
+    "en": "Claude Opus 5.5 was used to build a metal 3D printer (four lasers, one blade) that prints a copper rocket engine with cooling channels, with an interactive demo linked."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 12411,
+    "likes": 123,
+    "replies": 3,
+    "reposts": 15,
+    "bookmarks": 76,
+    "checkedAt": "2026-10-05T09:26:31.189Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2106377877037981696/img/OURpOp75VxLpMQxD.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2106377877037981696/vid/avc1/1280x720/xwGe6ghheB1DRbGt.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 56
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103948875929358687",
    "url": "https://x.com/iosif_lazaridis/status/2103948875929358687",
    "author": {
@@ -57914,6 +58573,62 @@
    }
   },
   {
+   "id": "2106395987996536913",
+   "url": "https://x.com/maxescu/status/2106395987996536913",
+   "author": {
+    "handle": "maxescu",
+    "name": "Alex Patrascu"
+   },
+   "postedAt": "2026-10-03T14:48:33.000Z",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "自动化制作的AI音乐视频",
+    "en": "AI Music Video with Automated Production"
+   },
+   "summary": {
+    "zh": "一部完全由AI制作的音乐视频，歌曲、画面、剪辑、动态图形和调色均由AI完成，作者用Claude Opus 5.5 Max通过MCP调度多个AI工具制作，创意和艺术指导由人完成。",
+    "en": "A fully AI-made music video including song, visuals, editing, motion graphics, and color grading, produced with Claude Opus 5.5 Max orchestrating many AI tools via MCP, with human idea and art direction."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Higgsfield MCP",
+    "ElevenMusic v2.5",
+    "Seedance 2.5",
+    "Nano Banana Pro",
+    "GPT Image 2.5",
+    "Demucs",
+    "Whisper",
+    "torchaudio"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 8983,
+    "likes": 171,
+    "replies": 31,
+    "reposts": 23,
+    "bookmarks": 159,
+    "checkedAt": "2026-10-05T09:26:31.189Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2106392653386444800/img/xF8nxfJ_7BzYx6qc.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2106392653386444800/vid/avc1/1280x720/dwKAUwNXsP1Yq67u.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 200
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103627106240602357",
    "url": "https://x.com/lemcosmos/status/2103627106240602357",
    "author": {
@@ -59249,6 +59964,55 @@
    }
   },
   {
+   "id": "2106385179006685254",
+   "url": "https://x.com/ai4everyday/status/2106385179006685254",
+   "author": {
+    "handle": "ai4everyday",
+    "name": "AI4Everyday"
+   },
+   "postedAt": "2026-10-03T14:05:36.000Z",
+   "lang": "ar",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "微笑好处动态图解视频",
+    "en": "Smile benefits motion graphics video"
+   },
+   "summary": {
+    "zh": "一部阿拉伯语动态图形视频，内容是关于微笑益处的世界微笑日主题，使用Claude Opus 5.5制作，图片来自Magnific。",
+    "en": "An Arabic motion graphics video about the benefits of smiling for World Smile Day, made with Claude Opus 5.5 and images from Magnific."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Magnific"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 8537,
+    "likes": 124,
+    "replies": 8,
+    "reposts": 8,
+    "bookmarks": 93,
+    "checkedAt": "2026-10-05T09:26:31.189Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2106381051450859520/img/J9VfsqO0QcCUg7gz.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2106381051450859520/vid/avc1/720x1280/regEKEi-faFgjLtE.mp4?tag=14",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 57
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103549280082612377",
    "url": "https://x.com/VincentWei93/status/2103549280082612377",
    "author": {
@@ -59332,6 +60096,53 @@
     "width": 1434,
     "height": 720,
     "durationSec": 99
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2106674469658108379",
+   "url": "https://x.com/vvarrdi/status/2106674469658108379",
+   "author": {
+    "handle": "vvarrdi",
+    "name": "Vadim | Sollas"
+   },
+   "postedAt": "2026-10-04T09:15:08.000Z",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "DeFi 3.0协议展示片",
+    "en": "DeFi 3.0 protocol showreel"
+   },
+   "summary": {
+    "zh": "一部展示DeFi 3.0协议加速代币领取功能的宣传片，使用Opus 5.5制作，结合手工设计输入和持续的提示词迭代。",
+    "en": "A showreel for a DeFi 3.0 protocol demonstrating accelerated token claims, made with Opus 5.5 using hand-made design input and continuous prompting."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 8501,
+    "likes": 119,
+    "replies": 15,
+    "reposts": 3,
+    "bookmarks": 112,
+    "checkedAt": "2026-10-05T09:26:31.189Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2106674438012035072/img/SDEv4CUH8UIkT90O.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2106674438012035072/vid/avc1/1280x720/tJve319aADnrRizD.mp4?tag=16",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 13
    },
    "evidence": {
     "via": "daily",
@@ -60472,6 +61283,53 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2106356636126457894",
+   "url": "https://x.com/dobokuya77/status/2106356636126457894",
+   "author": {
+    "handle": "dobokuya77",
+    "name": "土木屋77"
+   },
+   "postedAt": "2026-10-03T12:12:10.000Z",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "桥梁3D模型材质升级",
+    "en": "Bridge 3D model with upgraded texture"
+   },
+   "summary": {
+    "zh": "作者使用Claude Opus 5.5制作了一座桥梁的3D模型，并提升了其材质质感。",
+    "en": "A 3D model of a bridge with improved texture quality, created using Claude Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 7682,
+    "likes": 132,
+    "replies": 5,
+    "reposts": 5,
+    "bookmarks": 14,
+    "checkedAt": "2026-10-05T09:26:31.189Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2106356492568047616/img/5I8aJGmsi_kUqkAl.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2106356492568047616/vid/avc1/1280x720/zPxbx-m5E1mZCNfe.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 31
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -62663,6 +63521,58 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2106387068070826373",
+   "url": "https://x.com/virtual_amir/status/2106387068070826373",
+   "author": {
+    "handle": "virtual_amir",
+    "name": "Amir"
+   },
+   "postedAt": "2026-10-03T14:13:06.000Z",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "足球传球路线AR分析",
+    "en": "AR soccer passing lane analysis"
+   },
+   "summary": {
+    "zh": "作者在Apple Vision Pro上制作了真实MLS比赛录像的3D回放，标注了传球路线箭头和成功率估计，使用Claude Opus 5.5进行球员和球的追踪，并基于德甲数据训练了传球预测模型。",
+    "en": "A 3D replay on Apple Vision Pro of real MLS game footage with passing lane arrows and completion percentage estimates, made using Claude Opus 5.5 for player/ball tracking and training pass-prediction models on Bundesliga data."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Apple Vision Pro",
+    "RF-DETR",
+    "BoT-SORT",
+    "DINOv2"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 5969,
+    "likes": 118,
+    "replies": 9,
+    "reposts": 17,
+    "bookmarks": 72,
+    "checkedAt": "2026-10-05T09:26:31.189Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2106386897127747584/img/WfiyH6nMNJ6i-eR4.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2106386897127747584/vid/avc1/960x720/s9pkcsS1xFbUMrnN.mp4?tag=29",
+    "width": 960,
+    "height": 720,
+    "durationSec": 31
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
