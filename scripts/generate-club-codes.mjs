@@ -32,6 +32,7 @@ if (process.argv[2] === "--list") {
     const { result } = await vr.json();
     const code = k.replace("club_code:", "");
     if (result === "unused") console.log(`${code}  ⬜ 未使用`);
+    else if (result === "revoked") console.log(`${code}  🚫 已作废（2026-10-05 因 member_codes 表曾公开可读而作废）`);
     else {
       try { const a = JSON.parse(result); console.log(`${code}  ✅ @${a.github} (${a.email}) ${a.activated_at?.slice(0,10)} → ${a.expires_at?.slice(0,10)}`); }
       catch { console.log(`${code}  ❓ ${String(result).slice(0, 40)}`); }
