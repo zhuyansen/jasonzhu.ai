@@ -1,6 +1,6 @@
 /**
  * 模型调用。两个角色故意用两家模型：
- *   - worker（分类、定位提示词）：Claude，走快讯同一条容灾链 aigocode → apimart → 官方
+ *   - worker（分类、定位提示词）：Claude，容灾链 aigocode → flatrouter（GPT）→ apimart → 官方
  *   - reviewer（审核）：flatrouter 上的 GPT；没配 FLATROUTER_API_KEY 时退回 Claude 并在结果里注明
  * 同一个模型不能既干活又给自己签字，所以审核尽量用另一家。
  *
@@ -19,13 +19,16 @@ const redact = (t) => String(t).replace(/(sk-|Bearer\s+)[A-Za-z0-9_\-]{8,}/g, "$
 export const usage = { worker: { calls: 0, in: 0, out: 0 }, reviewer: { calls: 0, in: 0, out: 0, provider: "" }, arbiter: { calls: 0, in: 0, out: 0, model: "" } };
 
 const MODELS = (process.env.OPUS_LLM_MODELS || "claude-sonnet-5,claude-sonnet-5-5,claude-opus-5").split(",").map((s) => s.trim()).filter(Boolean);
+// apimart 调 Claude 用专用 key（APIMART_CLAUDE_KEY），APIMART_API_KEY 是生图用的，两者开通的模型不同
+const APIMART_KEY = process.env.APIMART_CLAUDE_KEY || process.env.APIMART_API_KEY;
 const endpoints = [
   process.env.ANTHROPIC_AUTH_TOKEN && { label: "proxy", key: process.env.ANTHROPIC_AUTH_TOKEN, baseURL: process.env.ANTHROPIC_BASE_URL || "https://api.aigocode.app", models: MODELS },
-  process.env.APIMART_API_KEY && { label: "apimart", key: process.env.APIMART_API_KEY, baseURL: (process.env.APIMART_BASE_URL || "https://api.apimart.ai").replace(/\/v1\/?$/, ""), models: (process.env.APIMART_MODEL || "claude-sonnet-5-5,claude-opus-4-6").split(",") },
+  // 第一备用：flatrouter（OpenAI 兼容，只有 GPT；这个 key 开通了 gpt-6-astra / gpt-5.6-sol）。2026-10-05 用户决定排在 apimart 前面。
+  // 2026-10-03 评测：逐字定位能用，但比 Claude 更容易漏掉夹在正文里的一句话指令——只在主代理不通时顶上
+  process.env.FLATROUTER_API_KEY && { label: "flatrouter", type: "openai", key: process.env.FLATROUTER_API_KEY, baseURL: (process.env.FLATROUTER_BASE_URL || "https://api.flatrouter.com/v1").replace(/\/v1\/?$/, ""), models: (process.env.FLATROUTER_WORKER_MODELS || "gpt-6-astra,gpt-5.6-sol").split(",") },
+  // apimart：2026-10-05 的新 key 只开通 claude-opus-5-5，旧 key 是 sonnet-5-5 / opus-4-6，三个都列上，哪个 key 都能跑
+  APIMART_KEY && { label: "apimart", key: APIMART_KEY, baseURL: (process.env.APIMART_BASE_URL || "https://api.apimart.ai").replace(/\/v1\/?$/, ""), models: (process.env.APIMART_MODEL || "claude-opus-5-5,claude-sonnet-5-5,claude-opus-4-6").split(",") },
   process.env.ANTHROPIC_API_KEY && { label: "official", key: process.env.ANTHROPIC_API_KEY, baseURL: "https://api.anthropic.com", models: MODELS },
-  // 最后一级备用：flatrouter（OpenAI 兼容，只有 GPT）。2026-10-03 评测：逐字定位能用，但比 Claude 更容易漏掉
-  // 夹在正文里的一句话指令，所以只在 Claude 三个通道都不可用时才用
-  process.env.FLATROUTER_API_KEY && { label: "flatrouter", type: "openai", key: process.env.FLATROUTER_API_KEY, baseURL: (process.env.FLATROUTER_BASE_URL || "https://api.flatrouter.com/v1").replace(/\/v1\/?$/, ""), models: (process.env.FLATROUTER_WORKER_MODELS || "gpt-6-astra").split(",") },
 ].filter(Boolean);
 
 async function post(url, headers, body, timeoutMs) {
@@ -63,7 +66,7 @@ let epIdx = 0;
 const modelIdx = new Map();
 
 async function claudeText(prompt, { maxTokens, timeoutMs }) {
-  if (!endpoints.length) throw new Error("没有可用的 Claude 端点（缺 ANTHROPIC_AUTH_TOKEN / APIMART_API_KEY / ANTHROPIC_API_KEY）");
+  if (!endpoints.length) throw new Error("没有可用的模型端点（缺 ANTHROPIC_AUTH_TOKEN / FLATROUTER_API_KEY / APIMART_CLAUDE_KEY / ANTHROPIC_API_KEY）");
   const ep = endpoints[epIdx];
   const model = ep.models[modelIdx.get(ep.label) || 0];
   if (ep.type === "openai") {
@@ -145,15 +148,15 @@ export async function reviewerJSON(prompt, { label = "reviewer", maxTokens = 600
 
 /**
  * 终审（arbiter）：审核拿不准的作品交给 Opus 拍板。
- * 优先 claude-opus-5-5，通道没开通（404 not available）就用 claude-opus-5。按通道顺序试：主代理 → 官方 → apimart（Opus 4.6）。
+ * 优先 claude-opus-5-5，通道没开通（404 not available）就用 claude-opus-5。按通道顺序试：主代理 → 官方 → apimart（Opus 5.5 / 4.6）。
  */
 const ARBITER_MODELS = (process.env.OPUS_ARBITER_MODELS || "claude-opus-5-5,claude-opus-5").split(",").map((s) => s.trim()).filter(Boolean);
 const arbiterEndpoints = [
   process.env.ANTHROPIC_AUTH_TOKEN && { label: "proxy", key: process.env.ANTHROPIC_AUTH_TOKEN, baseURL: process.env.ANTHROPIC_BASE_URL || "https://api.aigocode.app", models: ARBITER_MODELS },
   process.env.ANTHROPIC_API_KEY && { label: "official", key: process.env.ANTHROPIC_API_KEY, baseURL: "https://api.anthropic.com", models: ARBITER_MODELS },
-  // 最后一级：apimart 上的 Opus 4.6（老一代 Opus，但比整批进待审强；2026-10-04 主代理一直 429、官方 key 失效，11 个作品卡进 PR）
-  process.env.APIMART_API_KEY && { label: "apimart", key: process.env.APIMART_API_KEY, baseURL: (process.env.APIMART_BASE_URL || "https://api.apimart.ai").replace(/\/v1\/?$/, ""),
-    models: (process.env.APIMART_ARBITER_MODELS || "claude-opus-4-6").split(",") },
+  // 最后一级：apimart 上的 Opus（新 key 是 Opus 5.5，旧 key 退到 Opus 4.6；比整批进待审强。2026-10-04 主代理一直 429、官方 key 失效，11 个作品卡进 PR）
+  APIMART_KEY && { label: "apimart", key: APIMART_KEY, baseURL: (process.env.APIMART_BASE_URL || "https://api.apimart.ai").replace(/\/v1\/?$/, ""),
+    models: (process.env.APIMART_ARBITER_MODELS || "claude-opus-5-5,claude-opus-4-6").split(",") },
 ].filter(Boolean);
 const unavailable = new Set(); // "label/model" 组合，本次运行内不再尝试
 

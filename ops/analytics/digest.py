@@ -49,7 +49,7 @@ def section_status(name, d, label):
     return False
 
 
-site, gsc, vercel, ga, clarity = load("site"), load("gsc"), load("vercel"), load("ga"), load("clarity")
+site, gsc, vercel, ga, clarity, channels = load("site"), load("gsc"), load("vercel"), load("ga"), load("clarity"), load("channels")
 today = today_cst(); y = today - timedelta(days=1)
 
 # ───────────── 管线健康（先算告警，放第一屏） ─────────────
@@ -95,6 +95,16 @@ if site.get("ok"):
         alerts.append(f"站内数据 {k} 没取到：{e}")
 else:
     alerts.append(f"站内数据整体没取到：{site.get('error')}")
+
+# 模型通道体检：主力还在顶着时，备用通道坏了也没人发现（2026-10-04 教训）
+if channels.get("ok"):
+    for c in channels["checks"]:
+        if c["ok"]:
+            health.append(f"🔌 {c['channel']} · {c['model']} 正常")
+        else:
+            alerts.append(f"模型通道不通：{c['channel']} · {c['model']}（HTTP {c['status']}，影响{c['used_by']}）{c['detail'][:90]}")
+elif not channels.get("skipped"):
+    alerts.append(f"模型通道体检没跑成：{channels.get('error')}")
 
 # ───────────── 头部 KPI ─────────────
 kpi = []

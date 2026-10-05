@@ -109,24 +109,39 @@ const PROXY = proxyKey ? { key: proxyKey, baseURL: proxyURL, label: "proxy" } : 
 const OFFICIAL = officialKey ? { key: officialKey, baseURL: officialURL, label: "official" } : null;
 
 // 备用中转站 apimart：aigocode 账号池干涸 / 宕机时自动切到这里。
-// 用自己的模型名（apimart 上是 claude-sonnet-5-5 → claude-opus-4-6）。
-const apimartKey = process.env.APIMART_API_KEY;
+// 用自己的模型名：2026-10-05 新 key 只开通 claude-opus-5-5；旧 key 是 sonnet-5-5 / opus-4-6，三个都列上。
+// apimart 的 key 按模型分组开通：调 Claude 用 APIMART_CLAUDE_KEY（2026-10-05 起是只开通 opus-5-5 的 key），
+// APIMART_API_KEY 留给生图（gpt-image-2，快讯/博客封面）。没配 CLAUDE 专用 key 时退回通用 key。
+const apimartKey = process.env.APIMART_CLAUDE_KEY || process.env.APIMART_API_KEY;
 const APIMART = apimartKey
   ? {
       key: apimartKey,
       baseURL: process.env.APIMART_BASE_URL || "https://api.apimart.ai",
       label: "apimart",
       // 模型列表按顺序降级（401/404 "无权限/不可用"时换下一个）。APIMART_MODEL 可用逗号分隔覆盖。
-      models: (process.env.APIMART_MODEL || "claude-sonnet-5-5,claude-opus-4-6").split(",").map((m) => m.trim()).filter(Boolean),
+      models: (process.env.APIMART_MODEL || "claude-opus-5-5,claude-sonnet-5-5,claude-opus-4-6").split(",").map((m) => m.trim()).filter(Boolean),
     }
   : null;
 
-// fallback 链：aigocode → apimart → 官方
-const FALLBACKS = [APIMART, OFFICIAL].filter(Boolean);
+// 第一备用 flatrouter：OpenAI 兼容接口，只有 GPT（这个 key 开通了 gpt-6-astra / gpt-5.6-sol）。
+// 2026-10-05 用户决定：Claude（aigocode）继续当主力，aigocode 不通时先切这里，再到 apimart。
+const flatrouterKey = process.env.FLATROUTER_API_KEY;
+const FLATROUTER = flatrouterKey
+  ? {
+      key: flatrouterKey,
+      baseURL: (process.env.FLATROUTER_BASE_URL || "https://api.flatrouter.com/v1").replace(/\/v1\/?$/, ""),
+      label: "flatrouter",
+      type: "openai",
+      models: (process.env.FLATROUTER_NEWS_MODELS || "gpt-6-astra,gpt-5.6-sol").split(",").map((m) => m.trim()).filter(Boolean),
+    }
+  : null;
+
+// fallback 链：aigocode → flatrouter（GPT）→ apimart → 官方
+const FALLBACKS = [FLATROUTER, APIMART, OFFICIAL].filter(Boolean);
 let fallbackIdx = -1;
 let activeClient = PROXY || FALLBACKS[0] || null;
 if (!activeClient) {
-  console.error("❌ 无可用 API 客户端（缺 ANTHROPIC_AUTH_TOKEN / APIMART_API_KEY / ANTHROPIC_API_KEY）");
+  console.error("❌ 无可用 API 客户端（缺 ANTHROPIC_AUTH_TOKEN / FLATROUTER_API_KEY / APIMART_API_KEY / ANTHROPIC_API_KEY）");
   process.exit(1);
 }
 
@@ -137,7 +152,37 @@ console.log(`🔌 API 端点：${activeClient.label} (${activeClient.baseURL})`)
  * 兼容 aigocode 代理（同样的 HTTP 协议）。
  * 返回 { content, stop_reason, ... } 跟 SDK 一致的形状。
  */
-async function callClaudeRaw({ key, baseURL }, body, timeoutMs = 90000) {
+// OpenAI 兼容通道（flatrouter）：把 Messages 请求转成 chat/completions，再把结果转回 Messages 的形状，下游解析不用改
+async function callOpenAICompat({ key, baseURL }, body, timeoutMs) {
+  const req = { model: body.model, max_tokens: body.max_tokens, messages: body.messages };   // thinking 参数 GPT 不认，丢掉
+  const ctl = new AbortController();
+  const t = setTimeout(() => ctl.abort(), timeoutMs);
+  try {
+    const res = await fetch(`${baseURL}/v1/chat/completions`, {
+      method: "POST",
+      headers: { Authorization: `Bearer ${key}`, "content-type": "application/json" },
+      body: JSON.stringify(req),
+      signal: ctl.signal,
+    });
+    if (!res.ok) {
+      const errText = await res.text().catch(() => "");
+      throw new Error(`HTTP ${res.status}: ${errText.slice(0, 300)}`);
+    }
+    const j = await res.json();
+    const choice = j.choices?.[0] || {};
+    return {
+      content: [{ type: "text", text: choice.message?.content || "" }],
+      stop_reason: choice.finish_reason === "length" ? "max_tokens" : "end_turn",
+      model: j.model,
+    };
+  } finally {
+    clearTimeout(t);
+  }
+}
+
+async function callClaudeRaw(client, body, timeoutMs = 90000) {
+  if (client.type === "openai") return callOpenAICompat(client, body, Math.max(timeoutMs, 180000));
+  const { key, baseURL } = client;
   // 本地兜底：某些网络下 Node/undici 连不上代理（UND_ERR_CONNECT_TIMEOUT），
   // 但 curl 正常。设 CLAUDE_TRANSPORT=curl 走 curl（仅本地手动跑用，生产不设此变量）。
   if (process.env.CLAUDE_TRANSPORT === "curl") {
@@ -551,15 +596,17 @@ async function curateWithClaude(rawItems) {
       // 原条件只认 400，命中不了，在同一个模型上空转 6 次，两天三档 cron 全军覆没。
       const isModelUnsupported =
         /HTTP (400|401|403|404)/.test(errMsg) &&
-        /model is not supported|model_not_found|not_found_error|is not available for this group|does not exist|does not have access to model/i.test(errMsg);
+        /model is not supported|model_not_found|not_found_error|is not available for this group|does not exist|does not have access to model|is not allowed for this API key/i.test(errMsg);
 
       // key 失效/无权限（403/401）：换 key 重试没用，直接切下一个 provider
       // 「没有某个模型的权限」是模型问题不是 key 问题：先在本通道内换模型，不要直接跳 provider
-      const isAuthError = /HTTP (401|403)/.test(errMsg) && !/does not have access to model/i.test(errMsg);
+      const isAuthError = /HTTP (401|403)/.test(errMsg) && !/does not have access to model|is not allowed for this API key/i.test(errMsg);
+      // 上游限流：2026-10-04 aigocode 一直 429，同一家重试没用，直接切下一个通道
+      const isRateLimited = /HTTP 429/.test(errMsg);
 
-      // aigocode 账号干涸 / 502 网关 / 硬超时 / key 无权限 → 立即切下一个 provider（apimart → 官方）
+      // aigocode 账号干涸 / 502 网关 / 硬超时 / key 无权限 / 429 限流 → 立即切下一个 provider（flatrouter → apimart → 官方）
       const shouldFailover =
-        isProxyDry || errMsg.includes("aborted") || isUpstreamTimeout || isAuthError;
+        isProxyDry || errMsg.includes("aborted") || isUpstreamTimeout || isAuthError || isRateLimited;
       if (shouldFailover && fallbackIdx < FALLBACKS.length - 1) {
         fallbackIdx++;
         activeClient = FALLBACKS[fallbackIdx];

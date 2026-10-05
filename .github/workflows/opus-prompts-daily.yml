@@ -49,6 +49,7 @@ jobs:
           ANTHROPIC_BASE_URL: "https://api.aigocode.app"
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           APIMART_API_KEY: ${{ secrets.APIMART_API_KEY }}
+          APIMART_CLAUDE_KEY: ${{ secrets.APIMART_CLAUDE_KEY }}  # 调 Claude 专用（只开通 opus-5-5），APIMART_API_KEY 留给生图
           CAP: ${{ inputs.cap || '80' }}
         run: |
           if [ -z "$TWITTERAPI_IO_KEY" ]; then

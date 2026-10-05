@@ -37,6 +37,12 @@ jobs:
       KV_REST_API_URL: ${{ secrets.KV_REST_API_URL }}
       KV_REST_API_TOKEN: ${{ secrets.KV_REST_API_TOKEN }}
       GITHUB_TOKEN: ${{ github.token }}
+      # 模型通道体检用（每条只发 8 token 的探测请求）
+      ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
+      FLATROUTER_API_KEY: ${{ secrets.FLATROUTER_API_KEY }}
+      APIMART_API_KEY: ${{ secrets.APIMART_API_KEY }}
+      APIMART_CLAUDE_KEY: ${{ secrets.APIMART_CLAUDE_KEY }}
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
     steps:
       - uses: actions/checkout@v4
 
@@ -63,6 +69,7 @@ jobs:
           python fetch_vercel.py
           python fetch_ga.py
           python fetch_clarity.py
+          python fetch_channels.py
 
       - name: Save snapshots
         if: always()
