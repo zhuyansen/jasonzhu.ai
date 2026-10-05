@@ -102,10 +102,11 @@ flowchart LR
   <div class="tbl"><table>
     <thead><tr><th>日期</th><th>发生了什么</th><th>根因</th><th>拦截关</th></tr></thead>
     <tbody>
+      <tr><td class="mono">10-05</td><td>收紧 RLS 后订阅、阅读数写不进库（KV 兜住，没丢线索）</td><td>Vercel 里存的「service key」其实是 <code>sb_publishable_</code> 公开 key；存完只看了「存在」，没看前缀、没用功能验证</td><td class="gate">G2 G4</td></tr>
       <tr><td class="mono">10-04</td><td>Clarity 脚本加载了却没启动，一度误判为「浏览器拦截」</td><td>Script 的 <code>id="clarity"</code> 让 <code>window.clarity</code> 变成了 DOM 元素；只查了脚本加载，没查上报请求和控制台报错</td><td class="gate">G3</td></tr>
       <tr><td class="mono">10-03</td><td>代码里有 Vercel Analytics，但项目从没采过一条数据</td><td>Vercel 控制台的开关没开，只检查了代码</td><td class="gate">G2 G3</td></tr>
       <tr><td class="mono">10-03</td><td>secret 存错 3 次：9 位占位符、61 位命令原文</td><td>存完没检查长度和格式</td><td class="gate">G2</td></tr>
-      <tr><td class="mono">10-03</td><td>订阅表用公开 anon key 能读到 4,623 个邮箱</td><td>RLS 策略写了 <code>USING (true)</code></td><td class="gate">G4</td></tr>
+      <tr><td class="mono">10-03</td><td>订阅表用公开 anon key 能读到 4,623 个邮箱；会员码、Club 申请表也能读、能改删（10-05 已修）</td><td>服务端一直用 anon key，策略只好写成 <code>USING (true)</code></td><td class="gate">G4</td></tr>
       <tr><td class="mono">10-03</td><td>提示词库收进 22 条转帖（嵌入别人的视频）</td><td>只靠模型审核，没做结构去重（媒体 ID）</td><td class="gate">G5</td></tr>
       <tr><td class="mono">10-03</td><td>Vercel 查询返回 402</td><td>UTM 维度要付费套餐，没提前查</td><td class="gate">G2</td></tr>
       <tr><td class="mono">10-03</td><td>日报误报 3 次：KV 镜像被当成丢线索、凌晨报「快讯未出」、搜索点击少算 92%</td><td>告警上线前没和实际情况核对</td><td class="gate">G6</td></tr>

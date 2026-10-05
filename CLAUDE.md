@@ -63,6 +63,7 @@ Git：commit 后如远程有新提交（cron 会自动 commit 快讯），先 `g
 
 **订阅（核心引流，4 个入口共用 /api/subscribe）**
 - 反 bot：honeypot(website 字段) + time-trap(ts<1.5s 拒) + Origin 白名单（localhost 任意端口放行）。被判 bot 时静默返回 success。
+- **Supabase 权限（2026-10-05 修复泄露后）**：服务端 `getSupabase()` 用 `SUPABASE_SERVICE_KEY`（Vercel 和 GitHub Actions 各存一份，必须是 `sb_secret_…` 或旧版 service_role JWT——`sb_publishable_…` 是公开 key，等同 anon，曾经存错过一次）。subscribers / member_codes / club_applications 对 anon 完全不开放，news_* / page_views / page_likes 只读；浏览器端只用 Supabase 做登录。管理后台读订阅者和阅读数走 `/api/admin/subscribers`、`/api/admin/page-views`。策略以 `supabase/lock-down-rls.sql` 为准，新建表不要写 `FOR ALL USING (true)`。
 - 容灾：Supabase 主写 + Vercel KV 兜底（src/lib/lead-backup.ts，Upstash REST，list `pending_subscribers`）。Supabase 写失败但 KV 兜住时照常给 PDF、不报错。Supabase 免费档 0.5GB 超限会锁全项目写入且要等下个计费周期才解——见 memory。
 - views/likes API 有 isKnownSlug 白名单（历史上被 bot 灌了 46 万行撑爆过库）。
 
@@ -84,7 +85,7 @@ Git：commit 后如远程有新提交（cron 会自动 commit 快讯），先 `g
 - G1 代码：tsc + eslint + build，内容页必须还是 ○/●；还原误改的 `src/generated/*`。
 - G2 开关与凭证：控制台开关单独打开（Vercel Analytics 曾经只装了代码、从没采过数据）；secret 让用户用 `gh secret set NAME` 的提示符粘贴，存完看长度/格式；每个查询维度确认套餐支持（402）。
 - G3 数据终点：线上页确认脚本加载、上报请求发出；平台后台看到访问；定时任务手动跑一次，邮件到收件箱。
-- G4 安全：anon key 对每张隐私表查数量，必须 0 或 401/403；隐私表禁止 `FOR SELECT USING (true)`。
+- G4 安全：anon key 对每张隐私表查数量，必须 0 或 401/403；隐私表禁止 `USING (true)`；存 service key 后检查前缀是 `sb_secret_`（不是 `sb_publishable_`），并用「只有 service key 才能通过」的功能验证（如订阅重复识别）。
 - G5 失败路径：上游出错时任务必须报错停住，不能当 0 条推进进度；降级覆盖 400/401/403/404/429/5xx；抽查 10 条产出，发现一类问题就加代码层结构检查。
 - G6 告警对账：每条告警先和实际情况核对一次；依赖时间的告警加时间条件；总数用平台总数，不自己加。
 - 交付：结论用短句写清通过/未通过；流程改动配图；上线类交付出 HTML 看版。
