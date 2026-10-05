@@ -9,7 +9,7 @@ const headers = { "Cache-Control": "private, no-store" };
 /**
  * 管理后台读订阅者（替代以前浏览器里直接用 anon key 查 subscribers）。
  * GET ?q=邮箱片段&source=来源&page=0&size=50        → { count, rows, sources }
- * GET ?export=1&q=&source=                         → { rows }（最多 50000 行，导出 CSV 用）
+ * GET ?export=1&q=&source=                         → { rows }（全部匹配行，按 1000 一批取，导出 CSV 用）
  */
 export async function GET(request: NextRequest) {
   const authError = checkAuth(request);
@@ -29,11 +29,17 @@ export async function GET(request: NextRequest) {
   };
 
   if (sp.get("export") === "1") {
-    const { data, error } = await list("email, source, created_at")
-      .order("created_at", { ascending: false })
-      .limit(50000);
-    if (error) return NextResponse.json({ error: error.message }, { status: 500, headers });
-    return NextResponse.json({ rows: data ?? [] }, { headers });
+    // Supabase 单次最多返回 1000 行（max-rows），以前的导出一直只有前 1000 条——按 1000 一批分页取完
+    const rows: unknown[] = [];
+    for (let from = 0; from < 50000; from += 1000) {
+      const { data, error } = await list("email, source, created_at")
+        .order("created_at", { ascending: false })
+        .range(from, from + 999);
+      if (error) return NextResponse.json({ error: error.message }, { status: 500, headers });
+      rows.push(...(data ?? []));
+      if (!data || data.length < 1000) break;
+    }
+    return NextResponse.json({ rows }, { headers });
   }
 
   const page = Math.max(0, Number(sp.get("page") || 0));
