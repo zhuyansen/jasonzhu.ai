@@ -47,7 +47,11 @@ def main():
     if ac:
         add("apimart Claude（第二备用 + 终审兜底）", "快讯 + 提示词库", "claude-opus-5-5", lambda: anthropic_ping(APIMART, ac, "claude-opus-5-5"))
     ai = secret("APIMART_API_KEY")
-    if ai:
+    if not ai:
+        # 生图 key 为空也要报：2026-10-05 一次 `grep … | gh secret set` 没读到值，存进去空串，体检却静默跳过了
+        checks.append({"channel": "apimart 生图", "used_by": "快讯封面 / 博客封面", "model": "gpt-image-2", "ok": False, "status": 0,
+                       "detail": "APIMART_API_KEY 没配或为空"})
+    else:
         # 空 prompt：有权限会因为参数不全返回 400，没权限返回 403，不会真的生成图片
         add("apimart 生图", "快讯封面 / 博客封面", "gpt-image-2",
             lambda: (lambda r: (r.status_code, r.text[:160]))(requests.post(f"{APIMART}/v1/images/generations", timeout=60,
