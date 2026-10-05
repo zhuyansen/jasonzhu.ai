@@ -37,12 +37,9 @@ CREATE POLICY "Allow public read news_digests" ON news_digests
 CREATE POLICY "Allow public read news_items" ON news_items
   FOR SELECT USING (true);
 
--- 允许 service_role 写入（GitHub Actions 使用 service_role key）
-CREATE POLICY "Allow service write news_digests" ON news_digests
-  FOR ALL USING (true) WITH CHECK (true);
-
-CREATE POLICY "Allow service write news_items" ON news_items
-  FOR ALL USING (true) WITH CHECK (true);
+-- 写入不需要策略：GitHub Actions 用 service_role key，本身绕过 RLS。
+-- 2026-10-05 以前这里有两条 FOR ALL USING (true)，注释写「允许 service_role」，但没写 TO service_role，
+-- 实际对 anon 也生效——任何人都能删改快讯数据。见 supabase/lock-down-rls.sql。
 
 -- GoSail Club 入会申请表（2026-07-09 新增；Supabase 解封后在 SQL Editor 跑一次）
 create table if not exists club_applications (
@@ -72,13 +69,10 @@ create table if not exists member_codes (
   created_at timestamptz default now()
 );
 
--- RLS：API 用 anon key 写入，走宽松策略（与 news_items 同款）
+-- RLS：开启且不给 anon 任何策略，只有服务端 SUPABASE_SERVICE_KEY 能读写。
+-- 2026-10-05 以前这里是 for all using (true)：任何人能读出申请人联系方式、伪造/改写会员激活码。见 supabase/lock-down-rls.sql。
 alter table club_applications enable row level security;
-create policy "Allow write club_applications" on club_applications
-  for all using (true) with check (true);
 alter table member_codes enable row level security;
-create policy "Allow write member_codes" on member_codes
-  for all using (true) with check (true);
 
 -- GoSail Club 会员 profiles 表（2026-07-12 新增；Google/GitHub 登录 + Dashboard）
 -- id 直接引用 auth.users，注册时自动建行；role/hub_key 在兑换码绑定时写入

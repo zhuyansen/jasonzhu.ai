@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
-import { createClient } from "@supabase/supabase-js";
 
 type Post = {
   slug: string;
@@ -171,22 +170,15 @@ export default function AdminPage() {
 
         // Fetch view counts only for real post slugs (avoid pulling the
         // bot-polluted 250K+ rows that exceed the default 1000 row limit).
-        const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-        const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+        // 阅读数走服务端接口（浏览器不再直接拿 anon key 查库）；只查真实文章 slug，避开 bot 灌的几十万行
         const realSlugs = (data.posts || []).map((p: Post) => p.slug).filter(Boolean);
-        if (supabaseUrl && supabaseKey && realSlugs.length > 0) {
-          const supabase = createClient(supabaseUrl, supabaseKey);
-          const { data: views } = await supabase
-            .from("page_views")
-            .select("slug, count")
-            .in("slug", realSlugs);
-          if (views) {
-            const counts: Record<string, number> = {};
-            for (const v of views) {
-              counts[v.slug] = v.count;
-            }
-            setViewCounts(counts);
-          }
+        if (realSlugs.length > 0) {
+          const vr = await adminFetch("/api/admin/page-views", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ slugs: realSlugs }),
+          });
+          if (vr.ok) setViewCounts((await vr.json()).counts || {});
         }
       }
     } catch {
@@ -316,56 +308,16 @@ export default function AdminPage() {
   const fetchSubscribers = useCallback(async () => {
     setSubscribersLoading(true);
     try {
-      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-      const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-      if (!supabaseUrl || !supabaseKey) return;
-
-      const supabase = createClient(supabaseUrl, supabaseKey);
-
-      // Build filtered query (used for both count and page data)
-      const buildQuery = (forCount: boolean) => {
-        let q = forCount
-          ? supabase
-              .from("subscribers")
-              .select("*", { count: "exact", head: true })
-          : supabase
-              .from("subscribers")
-              .select("id, email, source, created_at");
-        if (subSearch.trim()) {
-          q = q.ilike("email", `%${subSearch.trim()}%`);
-        }
-        if (subSourceFilter.trim()) {
-          q = q.eq("source", subSourceFilter.trim());
-        }
-        return q;
-      };
-
-      const { count } = await buildQuery(true);
-      setSubscriberCount(count ?? 0);
-
-      // Load distinct sources (only once or when empty)
-      if (allSources.length === 0) {
-        const { data: srcData } = await supabase
-          .from("subscribers")
-          .select("source")
-          .limit(10000);
-        const uniq = Array.from(
-          new Set(
-            ((srcData ?? []) as Array<{ source: string | null }>)
-              .map((r) => r.source || "")
-              .filter(Boolean)
-          )
-        ).sort();
-        setAllSources(uniq);
-      }
-
-      const from = subPage * SUB_PAGE_SIZE;
-      const to = from + SUB_PAGE_SIZE - 1;
-      const { data } = await buildQuery(false)
-        .order("created_at", { ascending: false })
-        .range(from, to);
-
-      setRecentSubscribers((data as Subscriber[]) ?? []);
+      // 订阅者走服务端接口：以前这里用 anon key 直接查 subscribers，等于把全部邮箱开放给任何拿到 anon key 的人
+      const params = new URLSearchParams({ page: String(subPage), size: String(SUB_PAGE_SIZE) });
+      if (subSearch.trim()) params.set("q", subSearch.trim());
+      if (subSourceFilter.trim()) params.set("source", subSourceFilter.trim());
+      const res = await adminFetch(`/api/admin/subscribers?${params}`);
+      if (!res.ok) return;
+      const data = await res.json();
+      setSubscriberCount(data.count ?? 0);
+      if (allSources.length === 0) setAllSources(data.sources ?? []);
+      setRecentSubscribers((data.rows as Subscriber[]) ?? []);
     } catch {
       // ignore
     } finally {
@@ -930,21 +882,12 @@ export default function AdminPage() {
                   <button
                     type="button"
                     onClick={async () => {
-                      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-                      const supabaseKey =
-                        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-                      if (!supabaseUrl || !supabaseKey) return;
-                      const supabase = createClient(supabaseUrl, supabaseKey);
-                      let q = supabase
-                        .from("subscribers")
-                        .select("email, source, created_at");
-                      if (subSearch.trim())
-                        q = q.ilike("email", `%${subSearch.trim()}%`);
-                      if (subSourceFilter.trim())
-                        q = q.eq("source", subSourceFilter.trim());
-                      const { data } = await q
-                        .order("created_at", { ascending: false })
-                        .limit(50000);
+                      const params = new URLSearchParams({ export: "1" });
+                      if (subSearch.trim()) params.set("q", subSearch.trim());
+                      if (subSourceFilter.trim()) params.set("source", subSourceFilter.trim());
+                      const res = await adminFetch(`/api/admin/subscribers?${params}`);
+                      if (!res.ok) return;
+                      const { rows: data } = await res.json();
                       const rows = (data ?? []) as Array<{
                         email: string;
                         source: string | null;
