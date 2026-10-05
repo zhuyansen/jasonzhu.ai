@@ -145,25 +145,31 @@ export async function reviewerJSON(prompt, { label = "reviewer", maxTokens = 600
 
 /**
  * 终审（arbiter）：审核拿不准的作品交给 Opus 拍板。
- * 优先 claude-opus-5-5，通道没开通（404 not available）就用 claude-opus-5。按通道顺序试：主代理 → 官方。
+ * 优先 claude-opus-5-5，通道没开通（404 not available）就用 claude-opus-5。按通道顺序试：主代理 → 官方 → apimart（Opus 4.6）。
  */
 const ARBITER_MODELS = (process.env.OPUS_ARBITER_MODELS || "claude-opus-5-5,claude-opus-5").split(",").map((s) => s.trim()).filter(Boolean);
 const arbiterEndpoints = [
-  process.env.ANTHROPIC_AUTH_TOKEN && { label: "proxy", key: process.env.ANTHROPIC_AUTH_TOKEN, baseURL: process.env.ANTHROPIC_BASE_URL || "https://api.aigocode.app" },
-  process.env.ANTHROPIC_API_KEY && { label: "official", key: process.env.ANTHROPIC_API_KEY, baseURL: "https://api.anthropic.com" },
+  process.env.ANTHROPIC_AUTH_TOKEN && { label: "proxy", key: process.env.ANTHROPIC_AUTH_TOKEN, baseURL: process.env.ANTHROPIC_BASE_URL || "https://api.aigocode.app", models: ARBITER_MODELS },
+  process.env.ANTHROPIC_API_KEY && { label: "official", key: process.env.ANTHROPIC_API_KEY, baseURL: "https://api.anthropic.com", models: ARBITER_MODELS },
+  // 最后一级：apimart 上的 Opus 4.6（老一代 Opus，但比整批进待审强；2026-10-04 主代理一直 429、官方 key 失效，11 个作品卡进 PR）
+  process.env.APIMART_API_KEY && { label: "apimart", key: process.env.APIMART_API_KEY, baseURL: (process.env.APIMART_BASE_URL || "https://api.apimart.ai").replace(/\/v1\/?$/, ""),
+    models: (process.env.APIMART_ARBITER_MODELS || "claude-opus-4-6").split(",") },
 ].filter(Boolean);
 const unavailable = new Set(); // "label/model" 组合，本次运行内不再尝试
 
 export async function arbiterJSON(prompt, { label = "arbiter", maxTokens = 8000, timeoutMs = 300000, validate } = {}) {
-  let last;
+  let last, throttled = false;
   for (let attempt = 1; attempt <= 3; attempt++) {
-    for (const ep of arbiterEndpoints) for (const model of ARBITER_MODELS) {
+    throttled = false;
+    for (const ep of arbiterEndpoints) for (const model of ep.models) {
       const tag = `${ep.label}/${model}`;
       if (unavailable.has(tag)) continue;
       try {
         const { status, text } = await post(`${ep.baseURL}/v1/messages`, { "x-api-key": ep.key, "anthropic-version": "2023-06-01", "content-type": "application/json" },
           { model, max_tokens: maxTokens, messages: [{ role: "user", content: prompt }] }, timeoutMs);
         if (status >= 400 && status < 500 && /not available|not_found|does not have access|model/i.test(text)) { unavailable.add(tag); continue; }
+        if (status === 401) { unavailable.add(tag); throw new Error(`${tag} HTTP 401（key 失效，本次不再尝试这个通道）`); }
+        if (status === 429 || status >= 500) throttled = true;
         if (status >= 400 || !text) throw new Error(`${tag} HTTP ${status}: ${redact(text.slice(0, 160))}`);
         const j = JSON.parse(text);
         if (j.type === "error") throw new Error(`${tag} API error: ${JSON.stringify(j.error).slice(0, 160)}`);
@@ -175,7 +181,8 @@ export async function arbiterJSON(prompt, { label = "arbiter", maxTokens = 8000,
         return { json, via: tag };
       } catch (e) { if (e.tooBig) throw e; last = e; console.log(`  ⚠️ ${label}: ${String(e.message).slice(0, 140)}`); }
     }
-    await sleep(4000 * attempt);
+    // 上游限流（429/5xx）几秒内不会恢复：等 30s、60s 再整轮重试；其他错误照旧短等
+    await sleep(throttled ? 30000 * attempt : 4000 * attempt);
   }
   throw new Error(`arbiter unavailable: ${last?.message || "no Opus model available on any endpoint"}`);
 }
