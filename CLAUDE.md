@@ -40,6 +40,11 @@ Git：commit 后如远程有新提交（cron 会自动 commit 快讯），先 `g
 - 双语约定：`<slug>.en.md` 是英文版（不算独立文章），meta 带 `hasEnglish`；`getPostBySlug(slug, lang)` 在 en 时优先英文、回退中文。frontmatter 支持 `updated`（渲染"更新于" + schema dateModified）。
 - `src/content/news/<日期>.md` → `generate-news.mjs` → `news.json`。解析器把每个 `###` 段解析成结构化 item；特殊行：`- **TitleEN**：`/`- **EN**：`（双语）；`### 💰 AI 融资速递` 段解析成 `funding[]` 结构化卡片（不算 item）。
 
+**快讯收录规则（2026-10-06 起，应对「无人监督批量 AI 内容」审计风险）**
+- 快讯每天 AI 生成、自动发布 + 发邮件不变；但**默认 noindex、不进 sitemap**，`/news` 列表页也 noindex。只有 frontmatter 有 `humanComment`（Jason 本人点评）的那期才 index + 进 sitemap（`isDigestIndexable()`）。
+- AI 生成的那句（字段名沿用 `jasonSays`）在页面 / 列表 / RSS / 邮件上标「AI 摘要」，不再署 Jason 的名；Jason 点评显示为「Jason 说」。生成 prompt 要求客观、不用第一人称。
+- 点评入口：管理后台「快讯点评」标签 → `/api/admin/news` 通过 GitHub API 提交 frontmatter（需 Vercel 的 `GITHUB_CONTENTS_TOKEN`）→ 自动部署。清空点评 = 撤回、重新 noindex。不要再给快讯整体放开收录。
+
 **快讯 cron（.github/workflows/daily-news.yml）**
 - 北京时间清晨 5:30/6:30/7:15 三档重试；`collect-news.mjs` 抓 RSS → Claude 结构化 → 写 md + Supabase → commit。
 - API 容灾链（快讯和提示词库相同）：aigocode（https://api.aigocode.app，注意是 .app，Claude 主力）→ flatrouter（OpenAI 兼容，只有 GPT：gpt-6-astra / gpt-5.6-sol，第一备用）→ apimart（Claude）→ 官方。5xx/超时/账号干涸/429 限流自动切。主通道模型链 claude-opus-5-5 → claude-sonnet-5 → …（代理开通什么用什么，404「not available for this group」自动换下一个）。模型被下线时 9/29–9/30 曾因降级条件只认 400 而两天没出快讯。
