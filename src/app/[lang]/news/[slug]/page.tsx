@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Locale } from "@/lib/dictionaries";
-import { getAllDigests, getDigestBySlug, digestTitle, digestJasonSays } from "@/lib/news";
+import { getAllDigests, getDigestBySlug, digestTitle, digestJasonSays, digestHumanComment, isDigestIndexable } from "@/lib/news";
 import { findCrossLinks } from "@/lib/cross-links";
 import ShareButtons from "@/components/ShareButtons";
 
@@ -51,6 +51,7 @@ export async function generateMetadata({
   return {
     title: mTitle,
     description:
+      digestHumanComment(digest, lang) ||
       digestJasonSays(digest, lang) ||
       (lang === "en" ? `AI News ${digest.date}` : `AI 快讯 ${digest.date}`),
     alternates: {
@@ -71,6 +72,8 @@ export async function generateMetadata({
     },
     openGraph: ogImages ? { images: ogImages, type: "article" } : undefined,
     twitter: ogImages ? { card: "summary_large_image", images: ogImages } : undefined,
+    // 未经 Jason 点评的期数不让搜索引擎收录（AI 每日生成的内容），链接照常可跟
+    ...(isDigestIndexable(digest) ? {} : { robots: { index: false, follow: true } }),
   };
 }
 
@@ -87,7 +90,8 @@ export default async function NewsDetailPage({
   if (!digest) notFound();
 
   const dTitle = digestTitle(digest, lang);
-  const dJasonSays = digestJasonSays(digest, lang);
+  const dJasonSays = digestJasonSays(digest, lang); // AI 摘要
+  const dComment = digestHumanComment(digest, lang); // Jason 本人点评
 
   // Find prev/next digests for navigation
   const allDigests = getAllDigests();
@@ -104,7 +108,7 @@ export default async function NewsDetailPage({
     author: { "@type": "Person", name: "Jason Zhu", url: SITE_URL },
     publisher: { "@type": "Person", name: "Jason Zhu", url: SITE_URL },
     mainEntityOfPage: `${SITE_URL}/${lang}/news/${slug}`,
-    description: dJasonSays || (isZh ? `AI 快讯 ${digest.date}` : `AI News ${digest.date}`),
+    description: dComment || dJasonSays || (isZh ? `AI 快讯 ${digest.date}` : `AI News ${digest.date}`),
   };
 
   return (
@@ -171,18 +175,30 @@ export default async function NewsDetailPage({
         </div>
       )}
 
-      {/* Jason Says — top highlight */}
-      {dJasonSays && (
-        <div className="mb-8 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-5 border border-blue-100">
+      {/* Jason 本人点评（有才显示）——这是人写的，放最上面 */}
+      {dComment && (
+        <div className="mb-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-5 border border-blue-100">
           <div className="flex items-start gap-3">
             <span className="text-xl">💡</span>
             <div>
               <p className="text-xs font-semibold text-blue-700 mb-1.5">Jason {isZh ? "说" : "Says"}</p>
-              <p className="text-sm text-gray-700 leading-relaxed">
-                {dJasonSays}
-              </p>
+              <p className="text-sm text-gray-800 leading-relaxed whitespace-pre-line">{dComment}</p>
             </div>
           </div>
+        </div>
+      )}
+
+      {/* AI 摘要：AI 生成，明确标注，不署 Jason 的名 */}
+      {dJasonSays && (
+        <div className="mb-8 rounded-xl p-4 border border-gray-200 bg-gray-50">
+          <p className="text-xs font-semibold text-gray-500 mb-1">
+            {isZh ? "AI 摘要" : "AI summary"}
+            <span className="font-normal text-gray-400">
+              {isZh ? " · 本期快讯由 AI 整理" : " · this digest is compiled by AI"}
+              {dComment ? "" : isZh ? "，尚未经 Jason 点评" : ", not yet reviewed by Jason"}
+            </span>
+          </p>
+          <p className="text-sm text-gray-600 leading-relaxed">{dJasonSays}</p>
         </div>
       )}
 

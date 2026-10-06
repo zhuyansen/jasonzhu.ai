@@ -26,8 +26,13 @@ export interface NewsDigest {
   title: string;
   items: NewsItem[];
   funding?: FundingItem[];
+  /** AI 生成的一句话摘要（历史字段名保留；页面上标成「AI 摘要」，不署 Jason 的名） */
   jasonSays: string;
   jasonSaysEn?: string;
+  /** Jason 本人写的点评（管理后台写入）。有点评的那期才允许收录 */
+  humanComment?: string;
+  humanCommentEn?: string;
+  reviewedAt?: string;
   filename: string;
   tweetUrl?: string;
   coverImage?: string;
@@ -40,6 +45,8 @@ export interface NewsDigestSlim {
   title: string;
   jasonSays: string;
   jasonSaysEn?: string;
+  humanComment?: string;
+  humanCommentEn?: string;
   itemCount: number;
   categories: string[];
   filename: string;
@@ -55,9 +62,22 @@ export function digestTitle(
   return lang === "en" ? `AI News · ${d.date}` : d.title;
 }
 
-/** jasonSays 本地化：en 优先英文版，回退中文 */
+/** AI 摘要本地化（字段名沿用 jasonSays）：en 优先英文版，回退中文 */
 export function digestJasonSays(d: NewsDigest | NewsDigestSlim, lang: string): string {
   return lang === "en" && d.jasonSaysEn ? d.jasonSaysEn : d.jasonSays;
+}
+
+/** Jason 本人的点评：en 优先英文版，没有就回退中文原话 */
+export function digestHumanComment(d: NewsDigest | NewsDigestSlim, lang: string): string {
+  return (lang === "en" && d.humanCommentEn ? d.humanCommentEn : d.humanComment || "").trim();
+}
+
+/**
+ * 是否允许搜索引擎收录：只有 Jason 写过点评的那期。
+ * 2026-10-06 起：快讯由 AI 每日生成，未经人工点评的页 noindex、不进 sitemap，避免「无人监督批量 AI 内容」。
+ */
+export function isDigestIndexable(d: NewsDigest | NewsDigestSlim): boolean {
+  return Boolean(d.humanComment && d.humanComment.trim());
 }
 
 export function getAllDigests(): NewsDigest[] {
@@ -76,6 +96,8 @@ export function getDigestsForList(fullCount: number = 1): {
     title: d.title,
     jasonSays: d.jasonSays,
     jasonSaysEn: d.jasonSaysEn,
+    humanComment: d.humanComment,
+    humanCommentEn: d.humanCommentEn,
     itemCount: d.items.length,
     categories: [...new Set(d.items.map((i) => i.category))],
     filename: d.filename,

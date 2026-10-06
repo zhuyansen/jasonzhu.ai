@@ -147,8 +147,10 @@ def awesome():
 
 def sitemap():
     blog = [p for p in glob.glob(os.path.join(REPO_ROOT, "src/content/blog/*.md")) if not p.endswith(".en.md")]
-    newsn = len(glob.glob(os.path.join(REPO_ROOT, "src/content/news/*.md")))
-    expected = len(blog) + newsn + 16          # 和 scripts/check-sitemap.mjs 同一个下限
+    # 快讯只有 Jason 点评过的期数进 sitemap（frontmatter 有 humanComment）
+    newsn = sum(1 for f in glob.glob(os.path.join(REPO_ROOT, "src/content/news/*.md"))
+                if re.search(r"^humanComment:\s*\S", open(f, encoding="utf-8").read(), re.M))
+    expected = len(blog) + newsn + 14          # 和 scripts/check-sitemap.mjs 同一个下限
     r = requests.get("https://jasonzhu.ai/sitemap.xml", timeout=60)
     actual = len(re.findall(r"<loc>", r.text)) if r.ok else 0
     return {"status": r.status_code, "urls": actual, "expected_min": expected, "ok": r.ok and actual >= expected}

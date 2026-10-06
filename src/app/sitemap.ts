@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllPosts } from "@/lib/mdx";
-import { getAllDigests } from "@/lib/news";
+import { getAllDigests, isDigestIndexable } from "@/lib/news";
 import { getOpusLibrary } from "@/lib/opus-prompts";
 
 const SITE_URL = "https://jasonzhu.ai";
@@ -15,7 +15,7 @@ const enLastMod = (d: Date) => (d > EN_ADDED ? d : EN_ADDED);
 const STATIC_PATHS = [
   "", // /zh, /en 首页
   "/blog",
-  "/news",
+  // "/news" 列表页 noindex（聚合 AI 每日快讯），不进 sitemap
   "/tools",
   "/services",
   "/about",
@@ -57,8 +57,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  // 快讯：slug 即日期。en 同理，只收录含英文字段的期数。
-  for (const digest of getAllDigests()) {
+  // 快讯：只收 Jason 点评过的期数（其余 noindex，2026-10-06 起）。slug 即日期；en 只收录含英文字段的期数。
+  for (const digest of getAllDigests().filter(isDigestIndexable)) {
     const hasEn = digest.items.some((i) => i.summaryEn);
     const langs = hasEn ? LANGS : (["zh"] as const);
     const zhDate = new Date(digest.date + "T08:00:00+08:00");

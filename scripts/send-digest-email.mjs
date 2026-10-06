@@ -103,7 +103,7 @@ function buildEmailHtml(digest) {
       </td>
     </tr>
 
-    <!-- Jason Says -->
+    <!-- AI 摘要（字段名沿用 jasonSays；邮件在 Jason 点评之前发出，所以只有 AI 摘要） -->
     ${
       digest.jasonSays
         ? `
@@ -112,7 +112,7 @@ function buildEmailHtml(digest) {
         <table width="100%" cellpadding="0" cellspacing="0" style="background: linear-gradient(135deg, #eff6ff, #eef2ff); border-radius: 12px; border: 1px solid #dbeafe;">
           <tr>
             <td style="padding: 16px;">
-              <p style="margin: 0 0 4px; font-size: 12px; font-weight: 600; color: #2563eb;">💡 Jason 说</p>
+              <p style="margin: 0 0 4px; font-size: 12px; font-weight: 600; color: #6b7280;">AI 摘要 · 本期快讯由 AI 整理</p>
               <p style="margin: 0; font-size: 14px; color: #374151; line-height: 1.6;">${digest.jasonSays}</p>
             </td>
           </tr>

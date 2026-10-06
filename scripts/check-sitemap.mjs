@@ -22,8 +22,12 @@ const blogDir = path.join(process.cwd(), "src/content/blog");
 const blogCount = fs.existsSync(blogDir)
   ? fs.readdirSync(blogDir).filter((f) => f.endsWith(".md") && !f.endsWith(".en.md")).length
   : 0;
-const newsCount = count(path.join(process.cwd(), "src/content/news"));
-const MIN_STATIC = 16; // 8 个静态页 × 2 语言的保守下限
+// 快讯只有 Jason 点评过（frontmatter 有 humanComment）的期数进 sitemap
+const newsDir = path.join(process.cwd(), "src/content/news");
+const newsCount = fs.existsSync(newsDir)
+  ? fs.readdirSync(newsDir).filter((f) => f.endsWith(".md") && /^humanComment:\s*\S/m.test(fs.readFileSync(path.join(newsDir, f), "utf8"))).length
+  : 0;
+const MIN_STATIC = 14; // 7 个静态页 × 2 语言的保守下限（/news 列表页已 noindex、不进 sitemap）
 const expected = blogCount + newsCount + MIN_STATIC;
 
 const res = await fetch(SITEMAP_URL);

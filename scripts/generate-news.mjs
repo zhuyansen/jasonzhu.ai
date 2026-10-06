@@ -121,6 +121,10 @@ const digests = files.map((filename) => {
     ...(funding.length ? { funding } : {}),
     jasonSays: data.jasonSays || "",
     ...(data.jasonSaysEn ? { jasonSaysEn: data.jasonSaysEn } : {}),
+    // 人工点评（管理后台「快讯点评」写入）。有它的那期才放开收录 + 进 sitemap；jasonSays 是 AI 摘要
+    ...(data.humanComment ? { humanComment: String(data.humanComment) } : {}),
+    ...(data.humanCommentEn ? { humanCommentEn: String(data.humanCommentEn) } : {}),
+    ...(data.reviewedAt ? { reviewedAt: String(data.reviewedAt).slice(0, 10) } : {}),
     filename,
     ...(data.tweetUrl ? { tweetUrl: data.tweetUrl } : {}),
     ...(hasCover ? { coverImage: `/news/${slug}.png` } : {}),

@@ -21,6 +21,8 @@ export async function generateMetadata({
       canonical: `${SITE_URL}/${lang}/news`,
       languages: { zh: `${SITE_URL}/zh/news`, en: `${SITE_URL}/en/news`, "x-default": `${SITE_URL}/zh/news` },
     },
+    // 列表页聚合的是 AI 每日生成的快讯，不收录；follow 保留，让爬虫顺着链接找到 Jason 点评过的期数
+    robots: { index: false, follow: true },
   };
 }
 

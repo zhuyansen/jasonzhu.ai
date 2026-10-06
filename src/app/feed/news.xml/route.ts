@@ -21,7 +21,8 @@ export async function GET() {
       <guid isPermaLink="true">${SITE_URL}/zh/news/${digest.slug}</guid>
       <pubDate>${new Date(digest.date + "T08:00:00+08:00").toUTCString()}</pubDate>
       <description><![CDATA[
-        <p><strong>💡 Jason Says:</strong> ${digest.jasonSays}</p>
+        ${digest.humanComment ? `<p><strong>💡 Jason Says:</strong> ${digest.humanComment}</p>` : ""}
+        <p><strong>AI 摘要：</strong>${digest.jasonSays}</p>
         <ul>
             ${itemsList}
         </ul>

@@ -435,8 +435,8 @@ ${itemsText}
       "pitch": "一句话产品定位 + 为什么值得关注（30-50字中文）"
     }
   ],
-  "jasonSays": "一句话个人点评，关于今天最值得关注的事（30-60字，有态度、不官腔）",
-  "jasonSaysEn": "English version of jasonSays (one sentence, same attitude)"
+  "jasonSays": "一句话 AI 摘要：今天最值得关注的事是什么、为什么（30-60字，客观准确，不要用第一人称、不要冒充 Jason 的个人观点）",
+  "jasonSaysEn": "English version of jasonSays (one objective sentence, no first person)"
 }
 
 只输出 JSON，不要其他内容。funding 数组如果当天没有合适的融资新闻就给空数组 []。`;

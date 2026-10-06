@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
+import NewsCommentsTab from "./NewsCommentsTab";
 
 type Post = {
   slug: string;
@@ -42,7 +43,7 @@ export default function AdminPage() {
   const [authError, setAuthError] = useState("");
   const [authLoading, setAuthLoading] = useState(false);
   const [activeTab, setActiveTab] = useState<
-    "articles" | "images" | "subscribers"
+    "articles" | "images" | "subscribers" | "news"
   >("articles");
 
   // Articles state
@@ -387,6 +388,7 @@ export default function AdminPage() {
     { key: "articles" as const, label: "Articles" },
     { key: "images" as const, label: "Images" },
     { key: "subscribers" as const, label: "Subscribers" },
+    { key: "news" as const, label: "快讯点评" },
   ];
 
   return (
@@ -811,6 +813,8 @@ export default function AdminPage() {
         )}
 
         {/* ── Subscribers Tab ── */}
+        {activeTab === "news" && <NewsCommentsTab />}
+
         {activeTab === "subscribers" && (
           <div>
             {subscribersLoading ? (

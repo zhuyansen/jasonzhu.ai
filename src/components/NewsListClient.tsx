@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import { findCrossLinks } from "@/lib/cross-links";
-import { digestTitle, digestJasonSays, type NewsDigest, type NewsDigestSlim } from "@/lib/news";
+import { digestTitle, digestJasonSays, digestHumanComment, type NewsDigest, type NewsDigestSlim } from "@/lib/news";
 
 const categoryConfig: Record<string, { color: string; icon: string; en: string }> = {
   "Skills 生态": { color: "bg-purple-50 text-purple-700", icon: "🔥", en: "Skills" },
@@ -206,8 +206,8 @@ export default function NewsListClient({ fullDigests, archiveDigests, lang }: Pr
               </div>
             )}
 
-            {/* Jason Says */}
-            {digestJasonSays(latest, lang) && (
+            {/* Jason 本人点评（有才显示） */}
+            {digestHumanComment(latest, lang) && (
               <div className="mt-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-4 border border-blue-100">
                 <div className="flex items-start gap-3">
                   <span className="text-lg">💡</span>
@@ -215,9 +215,20 @@ export default function NewsListClient({ fullDigests, archiveDigests, lang }: Pr
                     <p className="text-xs font-semibold text-blue-700 mb-1">
                       Jason {isZh ? "说" : "Says"}
                     </p>
-                    <p className="text-sm text-gray-700 leading-relaxed">{digestJasonSays(latest, lang)}</p>
+                    <p className="text-sm text-gray-800 leading-relaxed whitespace-pre-line">{digestHumanComment(latest, lang)}</p>
                   </div>
                 </div>
+              </div>
+            )}
+
+            {/* AI 摘要：AI 生成，明确标注 */}
+            {digestJasonSays(latest, lang) && (
+              <div className="mt-4 rounded-xl p-4 border border-gray-200 bg-gray-50">
+                <p className="text-xs font-semibold text-gray-500 mb-1">
+                  {isZh ? "AI 摘要" : "AI summary"}
+                  <span className="font-normal text-gray-400">{isZh ? " · 本期快讯由 AI 整理" : " · compiled by AI"}</span>
+                </p>
+                <p className="text-sm text-gray-600 leading-relaxed">{digestJasonSays(latest, lang)}</p>
               </div>
             )}
           </section>
@@ -256,8 +267,11 @@ export default function NewsListClient({ fullDigests, archiveDigests, lang }: Pr
                         {digestTitle(digest, lang)}
                       </h3>
                       <p className="text-xs text-gray-400 mt-1 line-clamp-1">
-                        {digestJasonSays(digest, lang) ||
-                          `${digest.itemCount} ${isZh ? "条快讯" : "items"}`}
+                        {digestHumanComment(digest, lang)
+                          ? `💡 ${digestHumanComment(digest, lang)}`
+                          : digestJasonSays(digest, lang)
+                            ? `${isZh ? "AI 摘要：" : "AI summary: "}${digestJasonSays(digest, lang)}`
+                            : `${digest.itemCount} ${isZh ? "条快讯" : "items"}`}
                       </p>
                     </div>
                     <div className="hidden sm:flex items-center gap-1 shrink-0">
