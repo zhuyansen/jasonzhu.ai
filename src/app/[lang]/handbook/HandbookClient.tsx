@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect, Suspense } from "react";
-import Link from "next/link";
+import Link from "@/components/Link";
 import { useSearchParams, useRouter } from "next/navigation";
 import type { Dictionary } from "@/lib/dictionaries";
 import { track } from "@/lib/track";

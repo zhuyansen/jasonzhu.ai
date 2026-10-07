@@ -31,13 +31,8 @@ export async function middleware(request: NextRequest) {
   );
 
   if (pathnameHasLocale) {
-    // Pass the detected locale to the root layout via a request header
-    const locale = locales.find(
-      (l) => pathname.startsWith(`/${l}/`) || pathname === `/${l}`
-    ) || defaultLocale;
-    const response = NextResponse.next({ request });
-    response.headers.set("x-locale", locale);
-    return authRefresh(response);
+    // 带语言前缀：只有会员中心 / 登录页会匹配到这里（见 matcher），刷新 session 即可
+    return authRefresh(NextResponse.next({ request }));
   }
 
   // Rewrite (not redirect) to default locale — avoids flash/flicker
@@ -45,9 +40,7 @@ export async function middleware(request: NextRequest) {
   // 那样触发 trailingSlash 308 归一化，会直接 404
   const url = request.nextUrl.clone();
   url.pathname = `/${defaultLocale}${pathname === "/" ? "" : pathname}`;
-  const response = NextResponse.rewrite(url);
-  response.headers.set("x-locale", defaultLocale);
-  return authRefresh(response);
+  return authRefresh(NextResponse.rewrite(url));
 }
 
 /** 刷新 Supabase auth session cookie，让 Server Component 读到最新登录态 */
@@ -73,6 +66,15 @@ async function refreshSupabaseSession(request: NextRequest, response: NextRespon
 }
 
 export const config = {
-  // Only match page routes, skip all static files and API
-  matcher: ["/((?!_next|api|favicon\\.ico|handbook\\.pdf|.*\\..*).*)"],
+  // 只在需要它的路径上运行（2026-10-07 起）：以前匹配全部页面，每次访问都多一次函数调用，
+  // 叠加链接预加载和爬虫，把 Vercel 免费版额度用光、整站被停用。带 /zh、/en 前缀的公开页面这里什么都不用做。
+  matcher: [
+    "/", // 首页 → rewrite 到 /zh
+    "/admin/:path*",
+    "/auth/:path*",
+    "/(zh|en)/dashboard/:path*", // 会员中心：刷新 Supabase session
+    "/(zh|en)/login",
+    // 不带语言前缀的旧链接（/blog/xxx）→ rewrite 到 /zh/...；跳过 /zh /en 开头、静态文件和 API
+    "/((?!zh\\b|en\\b|_next|api|admin|auth|favicon\\.ico|handbook\\.pdf|.*\\..*).*)",
+  ],
 };

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/Link";
 import { getAllPosts } from "@/lib/mdx";
 import BlogCard from "@/components/BlogCard";
 import SubscribeForm from "@/components/SubscribeForm";

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/Link";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
 import CopyWechatButton from "@/components/CopyWechatButton";
 

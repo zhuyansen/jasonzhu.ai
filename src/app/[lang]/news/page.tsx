@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/Link";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
 import { getDigestsForList } from "@/lib/news";
 import NewsListClient from "@/components/NewsListClient";

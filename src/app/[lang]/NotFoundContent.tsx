@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/Link";
 import { usePathname } from "next/navigation";
 
 /** 纯展示，无 hook：既能当 Suspense 的服务端兜底，也能被客户端语言探测包裹后复用 */

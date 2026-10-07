@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/Link";
 import type { Locale } from "@/lib/dictionaries";
 import { getOpusLibrary } from "@/lib/opus-prompts";
 import { formatCount, type ClaudeModel, type OpusCaseSlim } from "@/lib/opus-prompts-shared";

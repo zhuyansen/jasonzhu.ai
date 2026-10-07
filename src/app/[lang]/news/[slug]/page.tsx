@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/Link";
 import { notFound } from "next/navigation";
 import type { Locale } from "@/lib/dictionaries";
 import { getAllDigests, getDigestBySlug, digestTitle, digestJasonSays, digestHumanComment, isDigestIndexable } from "@/lib/news";

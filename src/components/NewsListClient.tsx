@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import Link from "next/link";
+import Link from "@/components/Link";
 import { findCrossLinks } from "@/lib/cross-links";
 import { digestTitle, digestJasonSays, digestHumanComment, type NewsDigest, type NewsDigestSlim } from "@/lib/news";
 
