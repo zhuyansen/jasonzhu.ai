@@ -50,6 +50,7 @@ def section_status(name, d, label):
 
 
 site, gsc, vercel, ga, clarity, channels = load("site"), load("gsc"), load("vercel"), load("ga"), load("clarity"), load("channels")
+usage = load("vercel_usage")
 today = today_cst(); y = today - timedelta(days=1)
 
 # ───────────── 管线健康（先算告警，放第一屏） ─────────────
@@ -106,6 +107,39 @@ if channels.get("ok"):
 elif not channels.get("skipped"):
     alerts.append(f"模型通道体检没跑成：{channels.get('error')}")
 
+# Vercel 请求额度：2026-10-07 免费版 Edge Requests 超额，整站 402 停用，事先没有任何提醒
+QUOTA = {"pro": 10_000_000, "hobby": 1_000_000}  # 每个账单周期（月）的 Edge Requests
+edge = None
+if usage.get("ok"):
+    full = [d for d in usage["daily"] if d["complete"]]
+    quota = QUOTA.get(usage.get("plan") or "", QUOTA["pro"])
+    yreq = full[-1]["requests"] if full else 0
+    last7 = [d["requests"] for d in full[-7:]]
+    prev7 = [d["requests"] for d in full[-8:-1]]
+    avg7 = sum(last7) / len(last7) if last7 else 0
+    pstart, pend = usage.get("period") or [None, None]
+    used = sum(d["requests"] for d in usage["daily"] if pstart and d["date"] >= pstart)
+    elapsed = (today - datetime.fromisoformat(pstart).date()).days if pstart else 0
+    total_days = (datetime.fromisoformat(pend).date() - datetime.fromisoformat(pstart).date()).days if pstart and pend else 30
+    # 周期刚开始几天按 7 天日均外推，之后按本周期实际用量外推
+    projected = used / elapsed * total_days if elapsed >= 3 else avg7 * total_days
+    edge = {"y": full[-1]["date"] if full else "", "yreq": yreq, "avg7": avg7, "quota": quota, "used": used, "projected": projected,
+            "period": (pstart, pend), "elapsed": elapsed, "total_days": total_days, "full": full}
+    sb = usage.get("soft_block")
+    if sb:
+        alerts.insert(0, f"🚨 Vercel 已经停用站点（{sb.get('reason')}，{sb.get('blockedDueToOverageType') or ''}）——网站现在打不开，去 Vercel 控制台 Usage 页处理")
+    if used >= quota * 0.8:
+        alerts.append(f"Vercel 请求额度本周期已用 {used / quota:.0%}（{fmt(used)} / {fmt(quota)}），超额会整站停用")
+    elif projected >= quota * 0.8:
+        alerts.append(f"Vercel 请求量按现在的速度，本周期预计用到额度的 {projected / quota:.0%}（预计 {fmt(projected)} / {fmt(quota)}；昨天 {fmt(yreq)}，7 天日均 {fmt(avg7)}）")
+    p_avg = sum(prev7) / len(prev7) if prev7 else 0
+    if p_avg and yreq >= 2 * p_avg and yreq >= quota / 30:
+        alerts.append(f"Vercel 请求量昨天突增到 {fmt(yreq)}（前 7 天日均 {fmt(p_avg)} 的 {yreq / p_avg:.1f} 倍）——查爬虫或预加载，`/v4/usage/top` 看路径")
+    if not (used >= quota * 0.8 or projected >= quota * 0.8):
+        health.append(f"📈 Vercel 请求额度正常：本周期已用 {fmt(used)} / {fmt(quota)}，预计 {projected / quota:.0%}")
+elif not usage.get("skipped"):
+    alerts.append(f"Vercel 请求用量没取到：{usage.get('error')}")
+
 # ───────────── 头部 KPI ─────────────
 kpi = []
 sub = site.get("subscribers") if site.get("ok") else None
@@ -122,6 +156,8 @@ if vercel.get("ok"):
     p7 = sum(days.get(str(today - timedelta(days=i)), 0) for i in range(8, 15))
     yu = next((r.get("visitors", 0) for r in vercel.get("daily", []) if r.get("timestamp", "")[:10] == str(y)), 0)
     kpi.append(f"浏览 **{fmt(yv)}** / 访客 {fmt(yu)}（7 天浏览 {fmt(v7)}，环比 {pct(v7, p7)}）")
+if edge:
+    kpi.append(f"Vercel 请求 {fmt(edge['yreq'])}（额度预计 {edge['projected'] / edge['quota']:.0%}）")
 if gsc.get("ok"):
     t, tp = gsc["totals7"], gsc["totals7_prev"]
     kpi.append(f"搜索点击 7 天 **{t['clicks']:,}**（环比 {pct(t['clicks'], tp['clicks'])}）")
@@ -194,6 +230,19 @@ elif vercel.get("ok"):
     w()
     w("**国家/地区**：" + " · ".join(f"{r.get('country') or '?'} {fmt(n(r))}" for r in vercel.get("countries7", [])[:8]))
     w("**设备**：" + " · ".join(f"{r.get('deviceType') or '?'} {fmt(n(r))}" for r in vercel.get("devices7", [])))
+    w()
+
+# ───────────── Vercel 请求额度 ─────────────
+if edge:
+    w("## 📈 Vercel 请求额度（Edge Requests，计费口径）")
+    ps, pe = edge["period"]
+    w(f"本周期 {ps} → {pe}（第 {edge['elapsed'] + 1}/{edge['total_days']} 天）：已用 **{fmt(edge['used'])}** / {fmt(edge['quota'])}"
+      f"（{edge['used'] / edge['quota']:.0%}），按现在速度预计 **{edge['projected'] / edge['quota']:.0%}**；"
+      f"80% 告警线，超额整站停用。")
+    w()
+    w("近 14 天（UTC 日）：" + " · ".join(f"{d['date'][5:].replace('-', '/')} {d['requests'] / 1000:,.0f}k" for d in edge["full"][-14:]))
+    w()
+    w("> 这是 Vercel 计费数，含爬虫、静态资源、预加载，远大于浏览量。全站链接用 `@/components/Link`（默认不预加载），中间件只匹配必要路径。")
     w()
 
 # ───────────── GSC ─────────────
