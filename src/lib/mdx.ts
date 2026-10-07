@@ -13,6 +13,13 @@ export interface BlogPostMeta {
   coverImage?: string;
   tweetUrl?: string;
   hasEnglish?: boolean;
+  /** 英文版标题 / 摘要（有 .en.md 时），博客搜索用 */
+  titleEn?: string;
+  excerptEn?: string;
+  /** 正文小标题（最多 20 个），博客搜索用 */
+  headings?: string[];
+  /** 正文里的英文词 / 产品名（最多 40 个），博客搜索用 */
+  keywords?: string[];
   filename?: string;
 }
 

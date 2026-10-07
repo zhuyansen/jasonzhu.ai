@@ -15,6 +15,34 @@ const enFiles = allFiles.filter((f) => /\.en\.mdx?$/.test(f));
 const files = allFiles.filter((f) => !/\.en\.mdx?$/.test(f));
 const enSlugs = new Set(enFiles.map((f) => f.replace(/\.en\.mdx?$/, "")));
 
+// 博客搜索用：每篇的小标题（## / ###，最多 20 个、每个 40 字）——让正文关键词也能搜到，又不用把全文发给浏览器
+const headingsOf = (content) =>
+  [...content.matchAll(/^#{2,3}\s+(.+)$/gm)]
+    .map((m) => m[1].replace(/[*`_[\]]/g, "").replace(/\(http[^)]*\)/g, "").trim().slice(0, 40))
+    .filter(Boolean)
+    .slice(0, 20);
+// 正文里的英文词 / 产品名 / 带数字的术语（EIN、Mercury、147C、W-8BEN…），按出现次数取前 40 个，进搜索索引
+const STOP = new Set("the and for with you your this that are from have not but can will was all our out use how what when http https www com html png jpg md".split(" "));
+const keywordsOf = (content) => {
+  const body = content.replace(/!?\[[^\]]*\]\([^)]*\)/g, " ").replace(/https?:\/\/\S+/g, " ").replace(/```[\s\S]*?```/g, " ");
+  const counts = new Map();
+  for (const m of body.matchAll(/[A-Za-z][A-Za-z0-9.+-]*[A-Za-z0-9]|\d+[A-Za-z][A-Za-z0-9-]*/g)) {
+    const w = m[0];
+    if (w.length < 3 && !/\d/.test(w)) continue;
+    const k = w.toLowerCase();
+    if (STOP.has(k)) continue;
+    counts.set(k, (counts.get(k) || 0) + 1);
+  }
+  return [...counts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 40).map(([k]) => k);
+};
+// 英文版的标题 / 摘要也进搜索索引，英文页能用英文搜
+const enMeta = new Map(
+  enFiles.map((f) => {
+    const { data } = matter(fs.readFileSync(path.join(BLOG_DIR, f), "utf-8"));
+    return [f.replace(/\.en\.mdx?$/, ""), { titleEn: data.title || undefined, excerptEn: data.excerpt || undefined }];
+  })
+);
+
 const posts = files.map((filename) => {
   const slug = filename.replace(/\.mdx?$/, "");
   const filePath = path.join(BLOG_DIR, filename);
@@ -32,6 +60,9 @@ const posts = files.map((filename) => {
     coverImage: data.coverImage || undefined,
     tweetUrl: data.tweetUrl || undefined,
     hasEnglish: enSlugs.has(slug) || undefined,
+    ...(enMeta.get(slug) || {}),
+    headings: headingsOf(content),
+    keywords: keywordsOf(content),
     content,
     filename,
   };
