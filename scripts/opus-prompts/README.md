@@ -20,10 +20,10 @@
 | 7 提示词定位 | `bundles.mjs` + `prompts/extract.md` | LLM 只给出「在哪条推文、从哪到哪」，不复述原文 |
 | 8 对账 | `verify.mjs` | 每段提示词必须能在源推文里逐字找到，否则打回 |
 | 9 组装 | `assemble.mjs` | 合并 + 人工把关（`data/curation.json`）→ `src/content/opus-prompts/cases.json` |
-
 | 10 编译 | `../generate-opus-prompts.mjs` | → `src/generated/` + `public/data/opus-prompts/`（已接入 prebuild） |
 
 步骤 1–8 的原始抓取数据（约 11MB）不进仓库；仓库里只留 `data/` 下的判断结果和把关记录，够复跑 9–10。
+
 - `data/added.json`：每个作品的**收录日期**（第一次进库，不是 X 发帖日期），assemble 给新作品写当次运行日期；页面「本周新增」横条、NEW 角标（最近 3 天）和「最近收录」排序都用它。2026-10-07 从 cases.json 的 git 历史回填。不要手动改。
 
 ```bash
