@@ -1,0 +1,207 @@
+---
+title: 'I Ran Six Experiments on TypeSafe Jev: What It Can and Can''t Do'
+excerpt: >-
+  Six experiments, five open-source repos, 210,000 judgments: zero-shot Jev is
+  worth a few hundred labels, but its best role is as a feature, not as a model.
+---
+
+On September 16, TypeSafe released Jev. It's very different from the LLMs we're used to: it doesn't write paragraphs, it doesn't do long chains of reasoning, it only answers closed questions. You hand it a chunk of state, plus a few typed questions (yes/no, multiple choice, rating), and in a single forward pass it returns a probability distribution for each one.
+
+The official example is a support ticket: "Is this message urgent? Which team should it go to? How angry is the customer?" Three answers in one call, each with a probability, for a fraction of a cent.
+
+After watching the launch, I had exactly one question in my head: **does this thing actually work on real data?** So I ran six experiments, five of which I packaged into open-source repos — all data, code, and eval sets public. This post is the summary.
+
+The conclusion up front, in three sentences:
+
+1. **Jev is useful only when the signal lives in the semantics, not in your data's statistics.** On a table with meaningful column names it hits 0.83 AUC; on CTR data made of hashed IDs it gets 0.46 (worse than random).
+2. **Zero-shot, it's worth a few hundred labels.** On two completely different cold-start problems, a trained text model needed 150 to 500 labels before it caught up with Jev's zero-shot judgments.
+3. **Once you have labels, its best role is as a feature, not as a model.** Across five projects, Jev used on its own never reliably beat a strong baseline; but adding its answers to the baseline model produced a significant lift every single time.
+
+Let's go through them one by one.
+
+## Experiment 0: Three Opening Probes
+
+Before starting the real projects, I ran three small experiments to feel out its boundaries.
+
+**Avazu ad click-through rate.** 2,000 labeled ad impressions, where every feature is a hash like `site_id=1fbe01fe`. Jev's AUC was **0.46**, and the optimal calibration slope was 0 — i.e. "throw the model away." No surprise: a site's historical CTR exists only in your logs, and no corpus on Earth can tell a model what it is.
+
+**Titanic survival.** Also tabular, also binary classification — but the columns are sex, class, and age. Jev's zero-shot AUC was **0.830**; a trained logistic regression got 0.843. Feeding Jev's probability into the logistic regression as a feature pushed it to **0.854**, higher than either alone. Jev's errors follow a very regular pattern: the direction is always right, the magnitude shrinks toward the middle. The true survival rate for first-class women was 0.97; Jev said 0.79. It knows "women and children first," it just doesn't know how extreme that rule is in this particular dataset.
+
+**Security scanner second pass.** My skills directory site has a regex-based security scanner with lots of false positives. I had Jev review the flagged snippets as a second pass, and tried two different phrasings:
+
+- Asking "is this text dangerous?" (yes/no): AUC **0.70**
+- Asking "what is this text?" (malicious instruction / official installer / documentation reference / negation / placeholder…): AUC **0.94**
+
+Same evidence, different question, a gap of 0.24. Yes/no questions get flattened by the model's cautious prior into the 0.3–0.6 band; the classification framing lets it cleanly separate "official installer" from "malicious instruction." Of the 19 false-positive repos I had previously verified by hand, it got all 19 right.
+
+These three small experiments set the criterion for every project that followed: **ask it questions that common sense can answer; don't ask questions only your data knows.**
+
+## Experiment 1: Search Reranking (D)
+
+> Repo: [jev-search-rerank-eval](https://github.com/zhuyansen/jev-search-rerank-eval)
+
+My skills directory site has a CLI tool called `ash` whose search uses hand-written keyword scoring. The question: can Jev reranking beat embeddings?
+
+I took 164 real queries (Chinese, English, and mixed), merged the top-30 results from four retrievers into 9,831 query–result pairs, and had two independent judges rate relevance from 0 to 3: one was Jev, the other Claude Haiku 4.5. Agreement was κ=0.71. I adjudicated the 30 biggest disagreements by hand.
+
+| System | NDCG@10 |
+|---|---|
+| **Embedding + Jev fusion (RRF)** | **0.864** |
+| Jev reranking embedding's top-30 | 0.785 |
+| bge-m3 embedding | 0.774 |
+| OpenAI text-embedding-3-small | 0.759 |
+| `ash` production keyword ranking | 0.609 |
+
+At first glance, Jev reranking (0.785) edges out embeddings (0.774). But there's a trap here: **Jev is both judge and contestant.** So I recomputed every system against three different label sets:
+
+| Jev rerank − bge-m3 | Delta |
+|---|---|
+| Jev's own labels only | +0.053 |
+| Merged labels | +0.012 (not significant) |
+| **Haiku's labels only** | **−0.028 (significantly negative)** |
+
+Switch to a judge unrelated to Jev, and reranking on its own actually loses. Judge-loop bias is real, and it's quantifiable.
+
+But **the fused system significantly beat embeddings under all three label sets** (+0.064 to +0.090). This was the first appearance of a pattern that kept recurring: Jev alone doesn't win, Jev as a second signal does.
+
+A side finding: `ash`'s real problem isn't ranking, it's recall. Using embeddings to rerank `ash`'s own top-30 actually made things worse, because the relevant results simply weren't in the list.
+
+## Experiment 2: Cold-Start Prior for New Skills (A2)
+
+> Repo: [jev-cold-start-prior](https://github.com/zhuyansen/jev-cold-start-prior)
+
+A new repo has just been indexed and has no star data yet. Can Jev read its README and predict whether it will take off?
+
+I originally wanted to do a backtest: reconstruct each repo's star count on the day it was indexed and 14 days later. Halfway through I discovered that **GitHub's stargazers endpoint now returns 404 for every repo** (even `octocat/Hello-World`), and third-party star-history services had themselves flagged "severely degraded since May 2026." Historical star counts are no longer reconstructable.
+
+So I had to fall back on a proxy experiment: 1,132 genuinely new repos, with the target being "today's star count, adjusted for repo age."
+
+- Jev zero-shot, asked "how many stars will this gain in two weeks": correlation **0.435**
+- A README text model trained on ~900 labels: 0.524
+- **Text model plus Jev's answers: 0.559**, a significant lift
+- Learning curve: the text model needed **100 to 200 labels** to catch up with zero-shot Jev
+
+Two interesting details: whether the README has a demo screenshot was the second-strongest signal (0.324); and "is it built on a currently hot tool (Claude Code, MCP…)" was actually **negatively** correlated. Because 95% of new repos are riding that wave — chasing the trend is the norm, not a differentiator.
+
+The backtest was missing the most important baseline of all, "star count at indexing time," so I added a forward-looking experiment to the directory site's sync pipeline: for every new repo, record Jev's prior and the current star count at index time, then check the answer 14 days later. The first batch of results lands October 2.
+
+## Experiment 3: News Cold Start (A1)
+
+> Repo: [jev-news-cold-start](https://github.com/zhuyansen/jev-news-cold-start)
+
+Was A2's conclusion just a quirk of the small GitHub bubble? I switched to a completely different domain: Microsoft's MIND news recommendation logs — six days of MSN news impression records from 2019, 3,448 articles. Split by time: first three days for training, last three for testing.
+
+| Prediction method | Labels needed | Correlation |
+|---|---|---|
+| Text model + category + Jev | 1,937 | **0.310** |
+| Text model + category | 1,937 | 0.241 |
+| **Jev asked "is this emotional?"** | **0** | **0.210** |
+| Jev asked "will readers click?" | 0 | 0.154 |
+| Category average CTR | 1,937 | 0.078 |
+
+Same conclusion as A2: zero-shot Jev is worth about 500 labels, and adding it to the model gives a significant lift (+0.069). Even more intuitively: **50 labels plus Jev is roughly equivalent to 800 labels without Jev.**
+
+I also ran a cold-start recommendation simulation: each day's new articles are a set of bandit arms, and impressions are allocated via Thompson sampling. Adding Jev's answers to the prior produced **25%** more clicks for the same impression budget, and **73%** more than using no prior at all.
+
+This experiment produced one finding that differed from A2: **descriptive questions beat predictive ones.** Asking "will readers click?" directly (0.154) was worse than asking "is this emotional?" (0.210). That's exactly what happened in the scanner experiment: asking it "what is this" often works better than asking it to make the judgment directly. But in A2, the direct prediction was the stronger one. So my advice is to try both phrasings and compare on your own data.
+
+Two more counterintuitive points: **articles rated "practical" and "broadly relevant" got fewer clicks, not more.**
+
+## Experiment 4: Can GitHub Issue Streams Catch Bad Releases Early? (C2)
+
+> Repo: [jev-issue-pulse](https://github.com/zhuyansen/jev-issue-pulse)
+
+The first three were all ranking/prediction. The last two switch to monitoring and alerting: feed a text stream to Jev for item-by-item classification, aggregate into a time series, and see whether it spots problems earlier than humans do.
+
+I pulled 25,052 issues from the last 60 days across two repos, claude-code and codex, and had Jev classify each one by type (regression / bug / feature request…), frustration level, and whether the user was blocked. Total cost: $0.44.
+
+Ground truth for "bad release" came from the maintainers' own words: a version counts as bad if a later release note says something like "regression in 2.1.269" or "Reverted a 2.1.268 change." Of claude-code's 42 versions, 7 qualified.
+
+**Release-level result: negative.** None of the signals (issue volume, keywords, sentiment, Jev) could distinguish good releases from bad ones, and not one of the 7 bad versions was caught before the fix shipped. The reason is simple: claude-code ships almost daily, and the median time to fix a bad release is just **25 hours** — the maintainers are faster than any aggregate curve.
+
+**Per-issue triage: Jev is clearly better.**
+
+| Against the repo's own labels | Keywords | Jev | Sentiment analysis |
+|---|---|---|---|
+| claude-code `regression` | 0.765 | **0.898** | 0.432 |
+| codex `bug` | 0.642 | **0.965** | 0.331 |
+
+One caveat: roughly 75% of the labels in these two repos were applied by automation bots, so what's being measured here is "how well Jev agrees with another model," not with humans. Sentiment analysis does worse than random, because people filing bug reports usually write quite calmly.
+
+## Experiment 5: Do Support Tweets Beat Official Outage Acknowledgments? (C1)
+
+> Repo: [jev-support-pulse](https://github.com/zhuyansen/jev-support-pulse)
+
+Was C2's negative result just because claude-code fixes things too fast? I switched to a setting where the organization reacts far more slowly: the 2017 customer support tweets dataset on Kaggle — 170,000 customer tweets sent to seven brand support accounts. Jev judged each one for "is the service down?" and "are lots of people hitting this?" Total cost: $1.84.
+
+Ground truth again came from the parties themselves: the moment a brand's support account replied with "your area has an outage" or "this is a known issue." I hit a pitfall here: my first matching rule was far too loose — I read 40 sampled matches by hand and precision was only **22%**, mostly boilerplate like "sorry for the service issues, please DM us." After tightening it and re-reading, precision was **92.5%**. The final set had 62 incidents, including the nationwide Comcast outage on November 6, 2017 — evidence that this definition catches real events.
+
+**Separating "pre-incident" from "normal" hours: all signals performed about the same (~0.6), with Jev no better.**
+
+**But as an alerting system (false alarms capped at 1.76 per week):**
+
+| Signal | Incidents caught (of 62) | Average lead time vs. official acknowledgment |
+|---|---|---|
+| **Jev "service is down × wide impact"** | **17** | **4.1 hours** |
+| Keywords | 12 | 1.7 hours |
+| Tweet volume | 10 | 2.4 hours |
+| Sentiment analysis | 9 | 1.7 hours |
+
+Across all three thresholds, Jev caught more incidents than raw tweet volume, and at one threshold the difference was statistically significant. The reason is that support accounts get busy for all kinds of reasons (game launches, billing changes, sports matches), so volume alone gets drowned out; Jev filters down to tweets where the service really is down, cutting background noise.
+
+But **against a carefully written keyword list, Jev's advantage was never significant.** Outage-reporting tweets use a very concentrated vocabulary (down, no internet, anyone else?), and keywords already catch most of them. I compared 6 signals × 3 thresholds here, so a single significant result should be discounted accordingly.
+
+Taken together, C2 and C1 give a clear conclusion: **whether aggregate alerting helps depends on who's faster, the organization or the customers.** If fixes land faster than complaints accumulate, no signal helps; if the organization lags its customers, Jev-filtered signals can buy you a few hours.
+
+## All Six Experiments Together
+
+| Project | Jev alone | Jev as a feature / filter |
+|---|---|---|
+| Titanic | 0.830, close to the trained model | **0.854, beats both** |
+| D search reranking | On par with embeddings (slightly behind under a neutral judge) | **+0.06 to +0.09 when fused** |
+| A2 skill cold start | Equivalent to 150 labels | **+0.035, significant** |
+| A1 news cold start | Equivalent to 500 labels | **+0.069, 25% more clicks in recommendation** |
+| C2 GitHub issues | Release-level alerting ineffective | **Per-issue triage 0.90 / 0.97** |
+| C1 support tweets | Hour-level ranking ineffective | **70% more incidents caught in alerting** |
+
+About 210,000 judgments in total, with Jev itself costing under $3.
+
+## Six Rules I Took Away
+
+**1. It only helps when the signal is in the semantics.** Titanic works, Avazu doesn't, and the difference isn't the task format — it's whether the answer can be inferred from common sense. Before you use it, ask yourself: could a knowledgeable person, without seeing your historical data, make a decent guess from this text alone?
+
+**2. Zero-shot, it's worth a few hundred labels.** Two domains, two tasks, both in the 150–500 range. That's the value in cold-start situations: a new business line, a new category, day one with no history.
+
+**3. Once you have labels, its best role is as a feature.** Five projects, five significant lifts, no exceptions. It contributes world knowledge that isn't in your training data; your model contributes the actual magnitude of the patterns in your data. The two are complementary.
+
+**4. The phrasing is itself a hyperparameter.** Try both "what is this" and "what will happen." Descriptive questions won in the scanner and news experiments; predictive questions won in skill cold start. The wording of your criteria is a prompt too — rerun on labeled samples every time you change it. Fortunately it's cheap: a few thousand samples costs cents.
+
+**5. Aggregate alerting depends on the time scale.** It's strong at per-item triage every time; turning per-item judgments into alerts only works if problems surface more slowly than the organization reacts.
+
+**6. Sentiment analysis is useless in these scenarios.** In both C2 and C1 it came in below or barely at random. People reporting outages aren't necessarily "angry," and most angry people aren't reporting outages.
+
+## A Few Lessons About Evaluation
+
+Across these six experiments, the traps I fell into are more worth remembering than the conclusions themselves:
+
+- **The judge and the contestant can't be the same model.** If I had only used Jev's own labels, the search reranking conclusion would have been completely reversed. You need at least one unrelated second judge, then check whether the conclusion holds across label sets.
+- **Verify ground-truth precision by hand.** With that support-tweet matching rule, if I hadn't read samples I'd have drawn a pile of conclusions from "ground truth" that was 22% precise.
+- **Bot-applied labels are not human ground truth.** Most bug/regression labels in large GitHub repos come from automated triage.
+- **Flag any metric added after seeing results.** In C2 I added a "share per version" signal that performed slightly better but still not significantly. It's fine to report, but it can't replace the pre-planned conclusion.
+- **Pin the model version.** `~jev-latest` drifts; every result records the version it actually resolved to, `typesafe/jev-1.13-20260917`.
+- **Data disappears.** GitHub's stargazers endpoint and MIND's official download both became unavailable on me within the same week. If you can record it prospectively, don't count on backfilling later.
+
+## When You Should Use Jev
+
+- **Use it for:** cold starts with no labels; per-item triage, routing, and moderation; adding a "world knowledge" feature to an existing model; a cheap second judge or second-pass review.
+- **Don't use it for:** signals that live in your behavioral logs (clicks, conversions, bids); tasks needing exact computation like counting or date comparison; generating content or long reasoning; anything requiring multi-step memory and planning.
+
+All five repos are MIT-licensed, with data and eval sets published wherever possible:
+
+- [jev-search-rerank-eval](https://github.com/zhuyansen/jev-search-rerank-eval): search reranking, with a judge-loop control
+- [jev-cold-start-prior](https://github.com/zhuyansen/jev-cold-start-prior): skill cold-start prior (prospective portion updates October 2)
+- [jev-news-cold-start](https://github.com/zhuyansen/jev-news-cold-start): MIND news cold start + bandit simulation
+- [jev-issue-pulse](https://github.com/zhuyansen/jev-issue-pulse): GitHub issue streams and bad releases (negative result)
+- [jev-support-pulse](https://github.com/zhuyansen/jev-support-pulse): support tweets and outage alerting
+
+This post has no affiliation with TypeSafe; all experiments were self-funded.

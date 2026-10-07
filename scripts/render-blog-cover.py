@@ -90,7 +90,11 @@ def render(spec):
         base = py + 42                  # 编号和文字按同一条基线对齐（字体不同，按顶部对齐会高低不齐）
         d.text((px0, base), num, font=fn, fill=RED, anchor="ls")
         nx = px0 + d.textlength(num, font=fn) + 16
-        d.text((nx, base), p, font=ft, fill=INK, anchor="ls")
+        # 每格文字不能超出本格（col - 40）：太长就逐级缩小字号，避免顶到下一格的编号
+        fp = ft
+        while fp.size > 18 and nx + d.textlength(p, font=fp) > px0 + col - 48:
+            fp = font(HIRA, fp.size - 2, 2)
+        d.text((nx, base), p, font=fp, fill=INK, anchor="ls")
         d.line((px0, py + 58, px0 + col - 40, py + 58), fill=RED, width=2)
 
     # 底栏文字
