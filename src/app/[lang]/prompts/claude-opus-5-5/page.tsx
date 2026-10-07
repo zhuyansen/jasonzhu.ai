@@ -3,6 +3,8 @@ import Link from "next/link";
 import type { Locale } from "@/lib/dictionaries";
 import { OPUS_CATEGORIES, getOpusLibrary } from "@/lib/opus-prompts";
 import PromptLibraryClient from "./PromptLibraryClient";
+import InsightsSection from "./InsightsSection";
+import { computeInsights } from "@/lib/opus-insights";
 
 const SITE_URL = "https://jasonzhu.ai";
 const PATH = "prompts/claude-opus-5-5";
@@ -53,6 +55,13 @@ export default async function OpusPromptsPage({ params }: { params: Promise<{ la
     recentStart: dayOffset(2),
     weekCount: cases.filter((c) => (c.addedAt || "") >= dayOffset(6)).length,
   };
+  // 本周最火 Top 3：本周收录的作品里播放最高的三个；本周不足 3 个就用全库最高的补
+  const weekHot = cases.filter((c) => (c.addedAt || "") >= fresh.weekStart).sort((a, b) => b.stats.views - a.stats.views).slice(0, 3);
+  const featured =
+    weekHot.length === 3
+      ? { title: { zh: "本周最火", en: "Hottest this week" }, cases: weekHot }
+      : { title: { zh: "最受欢迎", en: "Most viewed" }, cases: [...cases].sort((a, b) => b.stats.views - a.stats.views).slice(0, 3) };
+  const insights = computeInsights(cases);
   const totalViews = cases.reduce((s, x) => s + x.stats.views, 0);
   const creators = new Set(cases.map((x) => x.author.handle)).size;
 
@@ -163,7 +172,15 @@ export default async function OpusPromptsPage({ params }: { params: Promise<{ la
         </a>
       </header>
 
-      <PromptLibraryClient initial={initial} total={cases.length} counts={counts} modelCounts={lib.modelCounts} lang={lang} fresh={fresh} />
+      <PromptLibraryClient initial={initial} total={cases.length} counts={counts} modelCounts={lib.modelCounts} lang={lang} fresh={fresh} featured={featured} />
+
+      <InsightsSection ins={insights} lang={lang} scopeZh="全库" scopeEn="works in the library" />
+
+      <p className="mt-6 text-sm">
+        <Link href={`/${lang}/${PATH}/motion-graphics`} className="text-[var(--primary)] hover:underline">
+          {isZh ? "→ 只看动效：Claude 动效提示词精选" : "→ Motion graphics only: Claude motion graphics prompts"}
+        </Link>
+      </p>
 
       {/* 用法 */}
       <section className="mt-16">

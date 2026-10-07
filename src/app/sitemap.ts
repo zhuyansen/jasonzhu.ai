@@ -23,6 +23,7 @@ const STATIC_PATHS = [
   "/ai-learning-guide",
   "/club",
   "/prompts/claude-opus-5-5",
+  "/prompts/claude-opus-5-5/motion-graphics", // 动效落地页（打「Claude motion graphics prompts」）
   "/privacy",
   "/terms",
 ];

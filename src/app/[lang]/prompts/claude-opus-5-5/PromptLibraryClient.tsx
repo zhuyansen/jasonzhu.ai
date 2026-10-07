@@ -14,7 +14,7 @@ import {
   type OpusCategory,
 } from "@/lib/opus-prompts-shared";
 import CaseVideo from "./CaseVideo";
-import CopyPrompt, { loadPrompt } from "./CopyPrompt";
+import CopyPrompt, { loadPrompt, TryInClaude } from "./CopyPrompt";
 
 const noopSubscribe = () => () => {};
 function readUrlModel(): ClaudeModel | null {
@@ -36,13 +36,17 @@ interface Props {
   lang: string;
   /** 新作品口径（按收录日期 addedAt，和库的更新日期比，不用访客时钟——静态页和浏览器结果一致） */
   fresh: { weekStart: string; recentStart: string; weekCount: number };
+  /** 首屏精选（本周最火 Top 3），服务端挑好传进来 */
+  featured?: { title: { zh: string; en: string }; cases: OpusCaseSlim[] };
+  /** 落地页用：固定在某个分类，并隐藏分类筛选（如 motion-graphics 页） */
+  lockCategory?: OpusCategory;
 }
 
-export default function PromptLibraryClient({ initial, total, counts, modelCounts, lang, fresh }: Props) {
+export default function PromptLibraryClient({ initial, total, counts, modelCounts, lang, fresh, featured, lockCategory }: Props) {
   const isZh = lang === "zh";
   const [all, setAll] = useState<OpusCaseSlim[]>(initial);
   const [loaded, setLoaded] = useState(initial.length >= total);
-  const [category, setCategory] = useState<OpusCategory | null>(null);
+  const [category, setCategory] = useState<OpusCategory | null>(lockCategory ?? null);
   const [sort, setSort] = useState<Sort>("views");
   const [fullOnly, setFullOnly] = useState(false);
   const [promptOnly, setPromptOnly] = useState(false);
@@ -108,7 +112,7 @@ export default function PromptLibraryClient({ initial, total, counts, modelCount
 
   const reset = () => setVisible(PAGE_SIZE);
   const shown = filtered.slice(0, visible);
-  const isFiltering = Boolean(category || fullOnly || promptOnly || noAssets || q.trim() || group || model || onlyNew);
+  const isFiltering = Boolean((category && category !== lockCategory) || fullOnly || promptOnly || noAssets || q.trim() || group || model || onlyNew);
   const pill = (active: boolean) =>
     `px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
       active ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200"
@@ -116,6 +120,21 @@ export default function PromptLibraryClient({ initial, total, counts, modelCount
 
   return (
     <>
+      {/* 本周最火 Top 3：第一眼先看到最好的作品 */}
+      {featured && featured.cases.length > 0 && (
+        <section className="mb-8">
+          <h2 className="text-sm font-semibold text-gray-900 mb-3">🔥 {isZh ? featured.title.zh : featured.title.en}</h2>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {featured.cases.map((c, i) => (
+              <div key={c.id} className="relative">
+                <span className="absolute -top-2 -left-2 z-10 w-7 h-7 rounded-full bg-gray-900 text-white text-xs font-bold flex items-center justify-center tabular-nums shadow">{i + 1}</span>
+                <CaseCard c={c} lang={lang} isNew={(c.addedAt || "") >= fresh.recentStart} onGroup={(k) => { setGroup(k); setCategory(lockCategory ?? null); reset(); }} />
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* 本周新增：默认仍按播放量排，这条让访客一眼看出库每天在更新 */}
       {fresh.weekCount > 0 && (
         <button
@@ -191,7 +210,7 @@ export default function PromptLibraryClient({ initial, total, counts, modelCount
           ))}
         </div>
 
-        <div className="flex flex-wrap gap-2">
+        {!lockCategory && <div className="flex flex-wrap gap-2">
           <button onClick={() => { setCategory(null); reset(); }} className={pill(!category)}>
             {isZh ? "全部" : "All"} <span className="opacity-60">{total}</span>
           </button>
@@ -204,7 +223,7 @@ export default function PromptLibraryClient({ initial, total, counts, modelCount
               {c.icon} {isZh ? c.zh : c.en} <span className="opacity-60">{counts[c.key]}</span>
             </button>
           ))}
-        </div>
+        </div>}
 
         <div className="flex flex-wrap gap-x-5 gap-y-2 text-xs text-gray-500">
           <label className="inline-flex items-center gap-1.5 cursor-pointer">
@@ -379,6 +398,7 @@ function CaseCard({ c, lang, isNew, onGroup }: { c: OpusCaseSlim; lang: string; 
             </div>
             <div className="flex items-center gap-2 mt-2.5">
               <CopyPrompt id={c.id} text={full ?? (canExpand ? undefined : p.excerpt)} isZh={isZh} />
+              <TryInClaude id={c.id} text={full ?? (canExpand ? undefined : p.excerpt)} isZh={isZh} />
               {canExpand && (
                 <button
                   onClick={toggle}

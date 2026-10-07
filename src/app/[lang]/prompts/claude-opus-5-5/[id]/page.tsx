@@ -5,7 +5,7 @@ import type { Locale } from "@/lib/dictionaries";
 import { MODEL_LABEL, categoryLabel, formatCount, formatDuration, getOpusCase, getOpusLibrary } from "@/lib/opus-prompts";
 import fullData from "@/generated/opus-prompts-full.json";
 import CaseVideo from "../CaseVideo";
-import CopyPrompt from "../CopyPrompt";
+import CopyPrompt, { TryInClaude } from "../CopyPrompt";
 
 const SITE_URL = "https://jasonzhu.ai";
 const PATH = "prompts/claude-opus-5-5";
@@ -155,6 +155,7 @@ export default async function OpusCasePage({ params }: Props) {
               </span>
             </h2>
             <CopyPrompt text={prompt} isZh={isZh} />
+            <TryInClaude text={prompt} isZh={isZh} />
           </div>
           <pre className="text-sm text-gray-800 leading-relaxed whitespace-pre-wrap break-words font-sans bg-gray-50 border border-gray-100 rounded-xl p-5 max-h-[70vh] overflow-y-auto">
             {prompt}
