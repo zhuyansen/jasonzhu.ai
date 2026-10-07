@@ -25,7 +25,7 @@ function readUrlModel(): ClaudeModel | null {
 const PAGE_SIZE = 24;
 const BASE = "prompts/claude-opus-5-5";
 
-type Sort = "views" | "latest" | "likes" | "bookmarks";
+type Sort = "views" | "latest" | "added" | "likes" | "bookmarks";
 
 interface Props {
   /** 服务端只渲染首屏这一批，其余在挂载后从静态 JSON 补齐（控制 HTML / RSC 体积） */
@@ -34,9 +34,11 @@ interface Props {
   counts: Record<string, number>;
   modelCounts: Record<ClaudeModel, number>;
   lang: string;
+  /** 新作品口径（按收录日期 addedAt，和库的更新日期比，不用访客时钟——静态页和浏览器结果一致） */
+  fresh: { weekStart: string; recentStart: string; weekCount: number };
 }
 
-export default function PromptLibraryClient({ initial, total, counts, modelCounts, lang }: Props) {
+export default function PromptLibraryClient({ initial, total, counts, modelCounts, lang, fresh }: Props) {
   const isZh = lang === "zh";
   const [all, setAll] = useState<OpusCaseSlim[]>(initial);
   const [loaded, setLoaded] = useState(initial.length >= total);
@@ -53,6 +55,7 @@ export default function PromptLibraryClient({ initial, total, counts, modelCount
   const urlModel = useSyncExternalStore(noopSubscribe, readUrlModel, () => null);
   const model = picked === undefined ? urlModel : picked;
   const [visible, setVisible] = useState(PAGE_SIZE);
+  const [onlyNew, setOnlyNew] = useState(false); // 只看本周新增
 
   useEffect(() => {
     if (loaded) return;
@@ -76,6 +79,7 @@ export default function PromptLibraryClient({ initial, total, counts, modelCount
   const filtered = useMemo(() => {
     const needle = q.trim().toLowerCase();
     const list = all.filter((c) => {
+      if (onlyNew && !((c.addedAt || "") >= fresh.weekStart)) return false;
       if (group && c.group?.key !== group) return false;
       if (model && !c.models?.includes(model)) return false;
       if (category && c.category !== category) return false;
@@ -96,13 +100,15 @@ export default function PromptLibraryClient({ initial, total, counts, modelCount
       likes: (a, b) => b.stats.likes - a.stats.likes,
       bookmarks: (a, b) => b.stats.bookmarks - a.stats.bookmarks,
       latest: (a, b) => (a.postedAt < b.postedAt ? 1 : -1),
+      // 最近收录：同一天收录的按播放量
+      added: (a, b) => ((a.addedAt || "") === (b.addedAt || "") ? b.stats.views - a.stats.views : (a.addedAt || "") < (b.addedAt || "") ? 1 : -1),
     };
     return [...list].sort(by[sort]);
-  }, [all, category, fullOnly, promptOnly, noAssets, q, sort, group, model]);
+  }, [all, category, fullOnly, promptOnly, noAssets, q, sort, group, model, onlyNew, fresh.weekStart]);
 
   const reset = () => setVisible(PAGE_SIZE);
   const shown = filtered.slice(0, visible);
-  const isFiltering = Boolean(category || fullOnly || promptOnly || noAssets || q.trim() || group || model);
+  const isFiltering = Boolean(category || fullOnly || promptOnly || noAssets || q.trim() || group || model || onlyNew);
   const pill = (active: boolean) =>
     `px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
       active ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200"
@@ -110,6 +116,33 @@ export default function PromptLibraryClient({ initial, total, counts, modelCount
 
   return (
     <>
+      {/* 本周新增：默认仍按播放量排，这条让访客一眼看出库每天在更新 */}
+      {fresh.weekCount > 0 && (
+        <button
+          type="button"
+          onClick={() => {
+            const next = !onlyNew;
+            setOnlyNew(next);
+            setSort(next ? "added" : "views");
+            reset();
+          }}
+          aria-pressed={onlyNew}
+          className={`w-full mb-4 flex items-center justify-between gap-3 px-4 py-3 rounded-xl border text-sm text-left transition-colors ${
+            onlyNew ? "border-rose-300 bg-rose-50 text-rose-800" : "border-rose-100 bg-rose-50/60 text-rose-700 hover:bg-rose-50"
+          }`}
+        >
+          <span>
+            <span className="inline-block mr-2 px-1.5 py-0.5 rounded bg-rose-500 text-white text-[10px] font-bold tracking-wide align-middle">NEW</span>
+            {isZh ? (
+              <>本周新增 <b className="tabular-nums">{fresh.weekCount}</b> 个作品 · 每天自动收录</>
+            ) : (
+              <><b className="tabular-nums">{fresh.weekCount}</b> new works this week · added daily</>
+            )}
+          </span>
+          <span className="shrink-0 font-medium">{onlyNew ? (isZh ? "看全部 ✕" : "Show all ✕") : isZh ? "只看新增 →" : "Show new →"}</span>
+        </button>
+      )}
+
       {/* 筛选 */}
       <div className="space-y-3 mb-8">
         <div className="flex flex-col sm:flex-row gap-3">
@@ -135,6 +168,7 @@ export default function PromptLibraryClient({ initial, total, counts, modelCount
             >
               <option value="views">{isZh ? "播放量" : "Views"}</option>
               <option value="latest">{isZh ? "最新发布" : "Newest"}</option>
+              <option value="added">{isZh ? "最近收录" : "Recently added"}</option>
               <option value="likes">{isZh ? "点赞" : "Likes"}</option>
               <option value="bookmarks">{isZh ? "收藏" : "Bookmarks"}</option>
             </select>
@@ -208,7 +242,7 @@ export default function PromptLibraryClient({ initial, total, counts, modelCount
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           {shown.map((c) => (
-            <CaseCard key={c.id} c={c} lang={lang} onGroup={(k) => { setGroup(k); setCategory(null); reset(); window.scrollTo({ top: 0, behavior: "smooth" }); }} />
+            <CaseCard key={c.id} c={c} lang={lang} isNew={(c.addedAt || "") >= fresh.recentStart} onGroup={(k) => { setGroup(k); setCategory(null); reset(); window.scrollTo({ top: 0, behavior: "smooth" }); }} />
           ))}
         </div>
       )}
@@ -229,7 +263,7 @@ export default function PromptLibraryClient({ initial, total, counts, modelCount
   );
 }
 
-function CaseCard({ c, lang, onGroup }: { c: OpusCaseSlim; lang: string; onGroup: (key: string) => void }) {
+function CaseCard({ c, lang, isNew, onGroup }: { c: OpusCaseSlim; lang: string; isNew: boolean; onGroup: (key: string) => void }) {
   const isZh = lang === "zh";
   const [full, setFull] = useState<string | null>(null);
   const [open, setOpen] = useState(false);
@@ -273,6 +307,14 @@ function CaseCard({ c, lang, onGroup }: { c: OpusCaseSlim; lang: string; onGroup
           label={`${title} · @${c.author.handle}`}
           isZh={isZh}
         />
+        {isNew && (
+          <span
+            className="pointer-events-none absolute top-2 left-2 px-1.5 py-0.5 rounded bg-rose-500 text-white text-[10px] font-bold tracking-wide shadow"
+            title={isZh ? `${c.addedAt} 收录` : `Added ${c.addedAt}`}
+          >
+            NEW
+          </span>
+        )}
         <span className="pointer-events-none absolute top-2 right-2 px-1.5 py-0.5 rounded bg-black/70 text-white text-[11px] tabular-nums">
           {formatDuration(c.video.durationSec)}
         </span>

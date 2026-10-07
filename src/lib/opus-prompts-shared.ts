@@ -29,6 +29,8 @@ export interface OpusCaseSlim {
   url: string;
   author: { handle: string; name: string };
   postedAt: string;
+  /** 收录日期 YYYY-MM-DD（第一次进库），「本周新增」和 NEW 角标用 */
+  addedAt?: string;
   lang: string;
   category: OpusCategory;
   title: { zh: string; en: string };

@@ -14,6 +14,10 @@ const IMG = Object.fromEntries(rd("transcribed-images.json").map((x) => [x.id, x
 const LNK = Object.fromEntries(rd("from-links.json").map((x) => [x.id, x]));          // 作者外链里的提示词
 const CUR = rd("curation.json");
 const UNAV = fs.existsSync(path.join(D, "unavailable.json")) ? rd("unavailable.json") : {}; // refresh.mjs 标记的已删帖/转私密/视频被移除
+// 收录日期（作品第一次进库的日期，和 X 发帖日期不同）：页面「本周新增」和 NEW 角标用。
+// 2026-10-07 从 cases.json 的 git 历史回填；之后新作品按本次运行日期（UTC）记。
+const ADDED = fs.existsSync(path.join(D, "added.json")) ? rd("added.json") : {};
+const RUN_DAY = (process.env.OPUS_UPDATED_AT || new Date().toISOString()).slice(0, 10);
 const VIRAL = "makeadynamic15secondmotiongraphicsvideothatshowswhatanincrediblemotiondesigneryouarelikeitsyourshowreelforarésumégoallout";
 const nk = (t) => t.toLowerCase().normalize("NFKC").replace(/[^\p{L}\p{N}]+/gu, "");
 const tcoCache = fs.existsSync(path.join(D, "tco-cache.json")) ? rd("tco-cache.json") : {};
@@ -62,7 +66,8 @@ for (const c of C) {
   const tools = [...new Set([...(e?.tools || k.tools || [])].map(t => String(t).trim()).filter(t => t && !/^(claude )?opus ?5\.5/i.test(t)))].slice(0, 8);
   const models = detectModels(c.text, c.quoted?.handle === c.handle ? c.quoted.text : "", prompt?.text);
   if (!models.length) { stat.hedged = (stat.hedged || 0) + 1; continue; } // 作者自己都不确定是不是 Fable 5.5
-  cases.push({ id: c.id, url: c.url, author: { handle: c.handle, name: c.name }, postedAt: c.createdAt, lang: c.lang, models, kind: k.kind, category: CUR.category[c.id] || k.category,
+  if (!ADDED[c.id]) ADDED[c.id] = RUN_DAY;
+  cases.push({ id: c.id, url: c.url, author: { handle: c.handle, name: c.name }, postedAt: c.createdAt, addedAt: ADDED[c.id], lang: c.lang, models, kind: k.kind, category: CUR.category[c.id] || k.category,
     title: { zh: zhPunct(title.zh), en: title.en }, summary: e?.summary_zh ? { zh: zhPunct(e.summary_zh), en: e.summary_en } : null, prompt,
     referenceAssets: CUR.referenceAssets.includes(c.id) || !!(e ? e.reference_assets : k.reference_assets), tools, resources,
     stats: { views: c.views, likes: c.likes, replies: c.replies, reposts: c.reposts, bookmarks: c.bookmarks, checkedAt: c.checkedAt },
@@ -81,5 +86,6 @@ cases.sort((a, b) => b.stats.views - a.stats.views);
 const now = process.env.OPUS_UPDATED_AT || C.map((c) => c.checkedAt).sort().at(-1);
 const checked = C.map(c => c.checkedAt).sort().at(-1);
 const out = { model: "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Fable 5.5)", threshold: 5000, updatedAt: now, statsCheckedAt: checked, inclusionRule: "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.", cases };
+if (process.argv.includes("--write")) fs.writeFileSync(path.join(D, "added.json"), "{\n" + Object.keys(ADDED).sort().map((k) => `${JSON.stringify(k)}: ${JSON.stringify(ADDED[k])}`).join(",\n") + "\n}\n");
 if (process.argv.includes("--write")) { fs.mkdirSync(`${SITE}/src/content/opus-prompts`, { recursive: true }); fs.writeFileSync(`${SITE}/src/content/opus-prompts/cases.json`, JSON.stringify(out, null, 1)); }
 console.log(JSON.stringify(stat), "| with prompt:", cases.filter(c => c.prompt).length, "| full:", cases.filter(c => c.prompt?.kind === "full").length, "| t.co expanded:", Object.values(tcoCache).filter(Boolean).length);

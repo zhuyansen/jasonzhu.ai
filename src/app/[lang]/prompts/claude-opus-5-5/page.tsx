@@ -45,6 +45,14 @@ export default async function OpusPromptsPage({ params }: { params: Promise<{ la
   const counts: Record<string, number> = {};
   for (const x of cases) counts[x.category] = (counts[x.category] || 0) + 1;
   const initial = [...cases].sort((a, b) => b.stats.views - a.stats.views).slice(0, FIRST_PAGE);
+  // 新作品口径：按收录日期，相对库的更新日期（不是访客时钟），最近 7 天 = 本周新增，最近 3 天 = NEW 角标
+  const refDay = new Date(lib.updatedAt.slice(0, 10) + "T00:00:00Z");
+  const dayOffset = (n: number) => new Date(refDay.getTime() - n * 864e5).toISOString().slice(0, 10);
+  const fresh = {
+    weekStart: dayOffset(6),
+    recentStart: dayOffset(2),
+    weekCount: cases.filter((c) => (c.addedAt || "") >= dayOffset(6)).length,
+  };
   const totalViews = cases.reduce((s, x) => s + x.stats.views, 0);
   const creators = new Set(cases.map((x) => x.author.handle)).size;
 
@@ -155,7 +163,7 @@ export default async function OpusPromptsPage({ params }: { params: Promise<{ la
         </a>
       </header>
 
-      <PromptLibraryClient initial={initial} total={cases.length} counts={counts} modelCounts={lib.modelCounts} lang={lang} />
+      <PromptLibraryClient initial={initial} total={cases.length} counts={counts} modelCounts={lib.modelCounts} lang={lang} fresh={fresh} />
 
       {/* 用法 */}
       <section className="mt-16">

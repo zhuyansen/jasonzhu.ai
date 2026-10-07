@@ -68,7 +68,7 @@ for (const ids of groups.values()) if (ids.length > 1) for (const id of ids) gro
 
 const withPromptCount = cases.filter((c) => c.prompt).length;
 const slim = cases.map((c) => ({
-  id: c.id, url: c.url, author: c.author, postedAt: c.postedAt, lang: c.lang, models: c.models || ["opus-5.5"], category: c.category, title: c.title,
+  id: c.id, url: c.url, author: c.author, postedAt: c.postedAt, addedAt: c.addedAt, lang: c.lang, models: c.models || ["opus-5.5"], category: c.category, title: c.title,
   prompt: c.prompt ? { kind: c.prompt.kind, source: c.prompt.source, sourceUrl: c.prompt.sourceUrl, length: c.prompt.text.length, excerpt: excerpt(c.prompt.text) } : null,
   group: groupOf.get(c.id) || null,
   referenceAssets: !!c.referenceAssets, tools: c.tools || [],
