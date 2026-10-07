@@ -25,6 +25,10 @@ export default function BlogCard({
 }) {
   const colorClass = categoryColors[post.category] || "bg-gray-50 text-gray-600";
   const displayCategory = categoryMap?.[post.category] || post.category;
+  // 英文页：有英文版（.en.md）的显示英文标题 / 摘要；没翻译的仍显示中文（点进去也是中文正文）
+  const useEn = lang === "en" && Boolean(post.titleEn);
+  const title = useEn ? post.titleEn! : post.title;
+  const excerpt = useEn ? post.excerptEn || post.excerpt : post.excerpt;
 
   return (
     <Link
@@ -38,10 +42,10 @@ export default function BlogCard({
         <span className="text-xs text-gray-400">{post.date}</span>
       </div>
       <h3 className="text-lg font-semibold text-gray-900 group-hover:text-[var(--primary)] transition-colors mb-2">
-        {post.title}
+        {title}
       </h3>
       <p className="text-sm text-gray-500 leading-relaxed line-clamp-2">
-        {post.excerpt}
+        {excerpt}
       </p>
       {post.tags.length > 0 && (
         <div className="mt-3 flex flex-wrap gap-1">
