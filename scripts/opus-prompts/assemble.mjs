@@ -85,7 +85,7 @@ stat.sameMedia = before - cases.length;
 cases.sort((a, b) => b.stats.views - a.stats.views);
 const now = process.env.OPUS_UPDATED_AT || C.map((c) => c.checkedAt).sort().at(-1);
 const checked = C.map(c => c.checkedAt).sort().at(-1);
-const out = { model: "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Fable 5.5)", threshold: 5000, updatedAt: now, statsCheckedAt: checked, inclusionRule: "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.", cases };
+const out = { model: "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.5)", threshold: 5000, updatedAt: now, statsCheckedAt: checked, inclusionRule: "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.", cases };
 if (process.argv.includes("--write")) fs.writeFileSync(path.join(D, "added.json"), "{\n" + Object.keys(ADDED).sort().map((k) => `${JSON.stringify(k)}: ${JSON.stringify(ADDED[k])}`).join(",\n") + "\n}\n");
 if (process.argv.includes("--write")) { fs.mkdirSync(`${SITE}/src/content/opus-prompts`, { recursive: true }); fs.writeFileSync(`${SITE}/src/content/opus-prompts/cases.json`, JSON.stringify(out, null, 1)); }
 console.log(JSON.stringify(stat), "| with prompt:", cases.filter(c => c.prompt).length, "| full:", cases.filter(c => c.prompt?.kind === "full").length, "| t.co expanded:", Object.values(tcoCache).filter(Boolean).length);

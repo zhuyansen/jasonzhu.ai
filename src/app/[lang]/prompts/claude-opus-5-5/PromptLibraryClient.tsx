@@ -57,7 +57,8 @@ export default function PromptLibraryClient({ initial, total, counts, modelCount
   // 用 useSyncExternalStore 读 URL：服务端渲染时为 null，不用 useSearchParams，免得整页退出静态渲染
   const [picked, setModel] = useState<ClaudeModel | null | undefined>(undefined);
   const urlModel = useSyncExternalStore(noopSubscribe, readUrlModel, () => null);
-  const model = picked === undefined ? urlModel : picked;
+  // 链接里的模型还没有作品（如刚发布的 Haiku 5.5）就显示全部，不给一个空列表
+  const model = picked === undefined ? (urlModel && modelCounts[urlModel] ? urlModel : null) : picked;
   const [visible, setVisible] = useState(PAGE_SIZE);
   const [onlyNew, setOnlyNew] = useState(false); // 只看本周新增
 
@@ -195,7 +196,7 @@ export default function PromptLibraryClient({ initial, total, counts, modelCount
         </div>
 
         <div className="flex flex-wrap gap-2">
-          {([null, "opus-5.5", "sonnet-5.5", "fable-5.5"] as (ClaudeModel | null)[]).filter((m) => !m || modelCounts[m]).map((m) => (
+          {([null, "opus-5.5", "sonnet-5.5", "haiku-5.5", "fable-5.5"] as (ClaudeModel | null)[]).filter((m) => !m || modelCounts[m]).map((m) => (
             <button
               key={m ?? "all"}
               onClick={() => { setModel(m); reset(); }}
@@ -342,7 +343,7 @@ function CaseCard({ c, lang, isNew, onGroup }: { c: OpusCaseSlim; lang: string; 
       <div className="flex flex-col flex-1 p-4">
         <div className="flex items-center gap-2 text-xs text-gray-400 mb-1.5">
           {(c.models || ["opus-5.5"]).map((m) => (
-            <span key={m} className={`px-1.5 py-0.5 rounded font-semibold ${m === "sonnet-5.5" ? "bg-amber-50 text-amber-700" : m === "fable-5.5" ? "bg-emerald-50 text-emerald-700" : "bg-violet-50 text-violet-700"}`}
+            <span key={m} className={`px-1.5 py-0.5 rounded font-semibold ${m === "sonnet-5.5" ? "bg-amber-50 text-amber-700" : m === "fable-5.5" ? "bg-emerald-50 text-emerald-700" : m === "haiku-5.5" ? "bg-sky-50 text-sky-700" : "bg-violet-50 text-violet-700"}`}
               title={MODEL_PREVIEW[m] ? (isZh ? "Fable 5.5 已在内测，Anthropic 尚未官宣；模型归属以作者自述为准" : "Fable 5.5 is in limited preview and not yet announced by Anthropic; attribution is as stated by the creator") : undefined}>
               {MODEL_LABEL[m]}{MODEL_PREVIEW[m] && <span className="font-normal">{isZh ? " · 内测" : " · preview"}</span>}
             </span>

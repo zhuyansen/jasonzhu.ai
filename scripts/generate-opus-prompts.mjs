@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Claude 5.5（Opus 5.5 · Sonnet 5.5）提示词库编译：
+ * Claude 5.5（Opus · Sonnet · Haiku · Fable 5.5）提示词库编译：
  *   src/content/opus-prompts/cases.json（源：人工/脚本整理，含完整提示词）
  *   → src/generated/opus-prompts.json          列表用精简版（提示词只留摘要，控制 RSC 体积）
  *   → src/generated/opus-prompts-full.json     详情页服务端用（含完整提示词）
@@ -77,7 +77,7 @@ const slim = cases.map((c) => ({
 }));
 const distinct = withPromptCount - [...groupOf.values()].length + new Set([...groupOf.values()].map((g) => g.key)).size;
 const head = { model: src.model, threshold: src.threshold, updatedAt: src.updatedAt, statsCheckedAt: src.statsCheckedAt, distinctPrompts: distinct, withPrompt: withPromptCount,
-  modelCounts: Object.fromEntries(["opus-5.5", "sonnet-5.5", "fable-5.5"].map((m) => [m, cases.filter((c) => (c.models || ["opus-5.5"]).includes(m)).length])) };
+  modelCounts: Object.fromEntries(["opus-5.5", "sonnet-5.5", "haiku-5.5", "fable-5.5"].map((m) => [m, cases.filter((c) => (c.models || ["opus-5.5"]).includes(m)).length])) };
 
 fs.mkdirSync(path.dirname(OUT_LIST), { recursive: true });
 fs.writeFileSync(OUT_LIST, JSON.stringify({ ...head, cases: slim }));

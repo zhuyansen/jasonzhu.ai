@@ -59,12 +59,12 @@ Git：commit 后如远程有新提交（cron 会自动 commit 快讯），先 `g
 - 未翻译内容的 en 页 canonical 指回 zh 版、hreflang 不声明 en；sitemap（app/sitemap.ts，动态生成）只收录真有英文内容的 en URL。
 - 快讯分类标签双语在组件内 `categoryConfig.en` 映射；digestTitle()/digestJasonSays() 做标题/点评本地化。
 
-**提示词库（app/[lang]/prompts/claude-opus-5-5，收 Opus 5.5 + Sonnet 5.5 + Fable 5.5（内测·未官宣，`MODEL_PREVIEW` 标注），URL 保留原样）**
+**提示词库（app/[lang]/prompts/claude-opus-5-5，收 Opus 5.5 + Sonnet 5.5 + Haiku 5.5（10/7 发布）+ Fable 5.5（内测·未官宣，`MODEL_PREVIEW` 标注），URL 保留原样）**
 - 源 `src/content/opus-prompts/cases.json`（全部作品，含无提示词的）→ `generate-opus-prompts.mjs`（已接入 prebuild）→ 站内收全部作品，和 GitHub 合集一致；没有提示词的作品详情页 noindex、不进 sitemap。采集管线和已知的坑见 `scripts/opus-prompts/README.md`。
 - 视频和封面是 X 的外链。`video.twimg.com` 拒绝带外站 Referer 的请求，所以 `/prompts/*` 是 `Referrer-Policy: no-referrer`（next.config 响应头 + 页面 metadata），不要删。
 - 客户端组件只能引 `@/lib/opus-prompts-shared`；`@/lib/opus-prompts` 导入整份 JSON，引了会打进 JS 包。
 - 提示词一律原文照录，出处必须可追溯；人工把关记录在 `scripts/opus-prompts/data/curation.json`，下架也走这里。
-- 三条自动任务：每日收录新作品（`opus-prompts-daily.yml`，Opus / Sonnet / Fable 5.5，每天 80 个，Jev 审核、拿不准的交 Opus 终审拍板，终审不可用才进滚动 PR `opus-prompts/pending`）、每周数据核验、GitHub 合集每日同步。细节在 `scripts/opus-prompts/README.md`。
+- 三条自动任务：每日收录新作品（`opus-prompts-daily.yml`，Opus / Sonnet / Haiku / Fable 5.5，每天 80 个，Jev 审核、拿不准的交 Opus 终审拍板，终审不可用才进滚动 PR `opus-prompts/pending`）、每周数据核验、GitHub 合集每日同步。细节在 `scripts/opus-prompts/README.md`。
 
 **订阅（核心引流，4 个入口共用 /api/subscribe）**
 - 反 bot：honeypot(website 字段) + time-trap(ts<1.5s 拒) + Origin 白名单（localhost 任意端口放行）。被判 bot 时静默返回 success。

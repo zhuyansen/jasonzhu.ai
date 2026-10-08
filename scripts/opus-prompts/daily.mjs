@@ -81,7 +81,7 @@ const qualified = fresh.filter((t) => (t.viewCount || 0) >= THRESHOLD).map((t) =
 const picked = qualified.slice(0, CAP);
 log(`搜索返回 ${raw.length} 条${truncated ? "（触及单次上限，窗口内可能还有更多）" : ""} · 没见过的 ${fresh.length} · 播放≥${THRESHOLD} 且带视频 ${qualified.length} · 本次处理 ${picked.length}`);
 
-const TERMS_LOG = process.env.SEARCH_TERMS || "Opus 5.5 + Sonnet 5.5";
+const TERMS_LOG = process.env.SEARCH_TERMS || "Opus / Sonnet / Haiku / Fable 5.5";
 const stat = { published: [], publishedNoPrompt: [], held: [], rejected: [], arbPublished: [], arbRejected: [], rescued: [], notWork: 0, reposts: 0 };
 const notes = [];
 const held = [];

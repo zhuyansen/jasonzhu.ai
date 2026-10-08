@@ -55,7 +55,7 @@ export default async function MotionGraphicsPage({ params }: { params: Promise<{
 
   const byViews = [...cases].sort((a, b) => b.stats.views - a.stats.views);
   const initial = byViews.slice(0, FIRST_PAGE);
-  const modelCounts = (["opus-5.5", "sonnet-5.5", "fable-5.5"] as ClaudeModel[]).reduce(
+  const modelCounts = (["opus-5.5", "sonnet-5.5", "haiku-5.5", "fable-5.5"] as ClaudeModel[]).reduce(
     (o, m) => ({ ...o, [m]: cases.filter((x) => (x.models || ["opus-5.5"]).includes(m)).length }),
     {} as Record<ClaudeModel, number>
   );
@@ -81,14 +81,14 @@ export default async function MotionGraphicsPage({ params }: { params: Promise<{
         ["做这些动效一般用什么工具？", `作者标注最多的配套工具是：${topTools.join("、")}。很多作品只用浏览器渲染 + 录屏就能完成。`],
         ["动效视频多长合适？", `这里动效作品的时长中位数是 ${insights.durationMedian} 秒。时长和播放的关系见页面上的「高播放作品的规律」。`],
         ["怎么复用这些提示词？", "先看视频确认是你想要的效果，再复制提示词：保留画布尺寸、帧率、时长、分镜和验收要求这些骨架，只替换主题、品牌和文案。也可以点「在 Claude 里试试」直接带着提示词打开 Claude。"],
-        ["收录标准是什么？", `原帖播放量至少 ${lib.threshold.toLocaleString("en-US")}、帖子里附原生视频、作者明确说是用 Claude Opus 5.5 / Sonnet 5.5 / Fable 5.5 做的。提示词一律原文照录、注明出处，作品版权归原作者。`],
+        ["收录标准是什么？", `原帖播放量至少 ${lib.threshold.toLocaleString("en-US")}、帖子里附原生视频、作者明确说是用 Claude Opus 5.5 / Sonnet 5.5 / Haiku 5.5 / Fable 5.5 做的。提示词一律原文照录、注明出处，作品版权归原作者。`],
       ]
     : [
         ["Can Claude make motion graphics?", `Yes, though not as a video file. All ${cases.length} works here were made by Claude writing code: rendering with HTML/CSS/Canvas, SVG, Three.js or Remotion, or driving After Effects and Blender through MCP, then recording or exporting.`],
         ["Which tools do creators pair with Claude for motion graphics?", `The most common are ${topTools.join(", ")}. Many pieces need nothing more than a browser render and a screen recording.`],
         ["How long should a motion graphics video be?", `The median length here is ${insights.durationMedian} seconds. See "What the most-viewed works have in common" on this page for how length relates to views.`],
         ["How do I reuse these prompts?", "Watch the video first, then copy the prompt. Keep the skeleton (canvas size, frame rate, duration, shot list, acceptance checks) and swap the subject, brand and copy. Or press “Try in Claude” to open the prompt in Claude directly."],
-        ["How were these chosen?", `At least ${lib.threshold.toLocaleString("en-US")} views on the original post, a native video attached, and the creator stating it was made with Claude Opus 5.5, Sonnet 5.5 or Fable 5.5. Prompts are quoted verbatim with their source; every work belongs to its creator.`],
+        ["How were these chosen?", `At least ${lib.threshold.toLocaleString("en-US")} views on the original post, a native video attached, and the creator stating it was made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5. Prompts are quoted verbatim with their source; every work belongs to its creator.`],
       ];
 
   const jsonLd = [

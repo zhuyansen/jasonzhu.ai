@@ -76,7 +76,7 @@ if site.get("ok"):
     if pl:
         d = f"，较上次日报 {pl['delta']:+d}" if pl.get("delta") is not None else ""
         m = pl.get("models", {})
-        health.append(f"📚 提示词库 {pl['works']:,} 个作品{d}（Opus {m.get('opus-5.5', 0)} · Sonnet {m.get('sonnet-5.5', 0)} · Fable {m.get('fable-5.5', 0)}，带提示词 {pl['with_prompt']}）")
+        health.append(f"📚 提示词库 {pl['works']:,} 个作品{d}（Opus {m.get('opus-5.5', 0)} · Sonnet {m.get('sonnet-5.5', 0)} · Haiku {m.get('haiku-5.5', 0)} · Fable {m.get('fable-5.5', 0)}，带提示词 {pl['with_prompt']}）")
     aw = site.get("awesome")
     if aw:
         s = aw.get("sync") or {}

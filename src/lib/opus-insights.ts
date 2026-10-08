@@ -66,7 +66,7 @@ export function computeInsights(cases: OpusCaseSlim[], threshold?: number): Opus
   const byRate = [...byCategory].sort((a, b) => b.topRate - a.topRate)[0];
   const byMed = [...byCategory].sort((a, b) => b.medianViews - a.medianViews)[0];
 
-  const models = ["opus-5.5", "sonnet-5.5", "fable-5.5"]
+  const models = ["opus-5.5", "sonnet-5.5", "haiku-5.5", "fable-5.5"]
     .map((key) => {
       const g = cases.filter((c) => (c.models || ["opus-5.5"]).includes(key as never));
       const cc = new Map<OpusCategory, number>();

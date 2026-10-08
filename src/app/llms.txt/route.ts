@@ -22,7 +22,7 @@ export async function GET() {
     `- [AI 快讯](${SITE_URL}/zh/news): 每日 AI 行业动态 + 融资速递（由 AI 整理；带「Jason 说」的期数经本人点评）`,
     `- [10 大平台 AI 免费学习全景图](${SITE_URL}/zh/blog/ai-free-learning-hub): 系列总目录`,
     `- [AI 工具箱](${SITE_URL}/zh/tools)`,
-    `- [Claude 5.5 提示词库](${SITE_URL}/zh/prompts/claude-opus-5-5): X 上播放过 5000 的 Opus 5.5 / Sonnet 5.5 / Fable 5.5（内测）作品（含作者公开的原始提示词）、视频与出处`,
+    `- [Claude 5.5 提示词库](${SITE_URL}/zh/prompts/claude-opus-5-5): X 上播放过 5000 的 Opus 5.5 / Sonnet 5.5 / Haiku 5.5 / Fable 5.5（内测）作品（含作者公开的原始提示词）、视频与出处`,
     `- [博客 RSS](${SITE_URL}/feed/blog.xml)`,
     `- [快讯 RSS](${SITE_URL}/feed/news.xml)`,
     "",

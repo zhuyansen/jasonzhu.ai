@@ -11,7 +11,7 @@ const CATS = [["motion", "Motion graphics & UI", "动效设计"], ["product", "P
   ["art3d", "3D worlds & simulations", "3D 场景"], ["game", "Games", "游戏"], ["production", "Music, editing & production", "制作流程"], ["comparison", "Model comparisons", "模型对比"]];
 const cases = src.cases; const withP = cases.filter((c) => c.prompt);
 const esc = (s) => String(s).replace(/\|/g, "\\|").replace(/\n/g, " ");
-const ML = { "opus-5.5": "Opus 5.5", "sonnet-5.5": "Sonnet 5.5", "fable-5.5": "Fable 5.5 (preview)" };
+const ML = { "opus-5.5": "Opus 5.5", "sonnet-5.5": "Sonnet 5.5", "haiku-5.5": "Haiku 5.5", "fable-5.5": "Fable 5.5 (preview)" };
 const mdl = (c) => (c.models || ["opus-5.5"]).map((m) => ML[m]).join(" / ");
 const dur = (s) => `${Math.floor(s / 60)}:${String(Math.round(s % 60)).padStart(2, "0")}`;
 const detail = (c, l) => `${SITE}/${l}/prompts/claude-opus-5-5/${c.id}`;
@@ -42,11 +42,11 @@ const readme = (l) => {
   const zh = l === "zh";
   const sec = CATS.map(([k, en, z]) => { const list = cases.filter((c) => c.category === k); const top = list.filter((c) => c.prompt).slice(0, 8);
     return `## ${zh ? z : en}\n\n${zh ? `${list.length} 个作品 · [完整清单](cases/${k}.zh-CN.md)` : `${list.length} works · [full list](cases/${k}.md)`}\n\n| ${zh ? "作品 | 模型 | 创作者 | 时长 | 提示词" : "Work | Model | Creator | Length | Prompt"} |\n|---|---|---|---|---|\n${top.map((c) => row(c, l)).join("\n")}\n`; }).join("\n");
-  return zh ? `# Awesome Claude 5.5 Video（Opus 5.5 · Sonnet 5.5 · Fable 5.5）
+  return zh ? `# Awesome Claude 5.5 Video（Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.5）
 
 [English](README.md) | 简体中文
 
-X 上用 Claude Opus 5.5、Sonnet 5.5 和 Fable 5.5（内测中、未官宣）做出来的视频、动效、3D 场景和游戏，原帖播放量都过 ${src.threshold.toLocaleString("en-US")}。共 **${cases.length} 个作品**（Opus 5.5 ${mc("opus-5.5")} 个 · Sonnet 5.5 ${mc("sonnet-5.5")} 个 · Fable 5.5 ${mc("fable-5.5")} 个，对比帖各边都计），其中 **${withP.length} 个附提示词**（${withP.filter((c) => c.prompt.kind === "full").length} 条完整提示词）。
+X 上用 Claude Opus 5.5、Sonnet 5.5、Haiku 5.5 和 Fable 5.5（内测中、未官宣）做出来的视频、动效、3D 场景和游戏，原帖播放量都过 ${src.threshold.toLocaleString("en-US")}。共 **${cases.length} 个作品**（Opus 5.5 ${mc("opus-5.5")} 个 · Sonnet 5.5 ${mc("sonnet-5.5")} 个 · Fable 5.5 ${mc("fable-5.5")} 个，对比帖各边都计），其中 **${withP.length} 个附提示词**（${withP.filter((c) => c.prompt.kind === "full").length} 条完整提示词）。
 
 **[在线浏览，可直接播放和复制提示词 →](${SITE}/zh/prompts/claude-opus-5-5)**
 
@@ -57,7 +57,7 @@ ${CATS.map(([k, , z]) => `[${z}](#${encodeURIComponent(z.replace(/ /g, "-")).toL
 ## 收录标准
 
 - 创作者本人的原帖，帖子自带视频，原帖播放量不低于 ${src.threshold.toLocaleString("en-US")}（快照时间 ${src.statsCheckedAt.slice(0, 10)}）。
-- 帖子明确说作品是用 Claude Opus 5.5、Sonnet 5.5 或 Fable 5.5 做的，「模型」一栏按作者的说法标注。**Fable 5.5 截至 10 月初只在内测、尚未官宣**，作者自己说「可能是」的不收。**模型归属以作者自述为准，没有逐条复现。**
+- 帖子明确说作品是用 Claude Opus 5.5、Sonnet 5.5、Haiku 5.5 或 Fable 5.5 做的，「模型」一栏按作者的说法标注。**Fable 5.5 截至 10 月初只在内测、尚未官宣**，作者自己说「可能是」的不收。**模型归属以作者自述为准，没有逐条复现。**
 - 提示词只收有出处的：主帖正文、作者本人的回复、作者回复里的截图、作者给出的链接。提示词一律原文照录，不改写、不翻译。
 - 有视频但找不到指令来源的作品照常收录，提示词一栏留空。
 
@@ -71,11 +71,11 @@ ${sec}
 所有作品版权归原作者，收录不代表获得任何授权。创作者想更正署名或下架，开一个 Issue，或在 X 私信 [@GoSailGlobal](https://x.com/GoSailGlobal)。
 
 由 [JasonZhu.AI](${SITE}) 整理。
-` : `# Awesome Claude 5.5 Video (Opus 5.5 · Sonnet 5.5 · Fable 5.5)
+` : `# Awesome Claude 5.5 Video (Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.5)
 
 English | [简体中文](README.zh-CN.md)
 
-Videos, motion graphics, 3D scenes and games made with Claude Opus 5.5, Sonnet 5.5 and Fable 5.5 (limited preview, not yet announced) and shared on X, each with ${src.threshold.toLocaleString("en-US")}+ views on the original post. **${cases.length} works** (Opus 5.5: ${mc("opus-5.5")} · Sonnet 5.5: ${mc("sonnet-5.5")} · Fable 5.5: ${mc("fable-5.5")}; comparisons count for each), **${withP.length} with a prompt** (${withP.filter((c) => c.prompt.kind === "full").length} full prompts).
+Videos, motion graphics, 3D scenes and games made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 and Fable 5.5 (limited preview, not yet announced) and shared on X, each with ${src.threshold.toLocaleString("en-US")}+ views on the original post. **${cases.length} works** (Opus 5.5: ${mc("opus-5.5")} · Sonnet 5.5: ${mc("sonnet-5.5")} · Fable 5.5: ${mc("fable-5.5")}; comparisons count for each), **${withP.length} with a prompt** (${withP.filter((c) => c.prompt.kind === "full").length} full prompts).
 
 **[Browse online — play the videos and copy the prompts →](${SITE}/en/prompts/claude-opus-5-5)**
 
@@ -86,7 +86,7 @@ ${CATS.map(([k, en]) => `[${en}](#${en.toLowerCase().replace(/[^a-z0-9 ]/g, "").
 ## Inclusion rule
 
 - The creator's own post, with a native video, and at least ${src.threshold.toLocaleString("en-US")} views on that post (snapshot: ${src.statsCheckedAt.slice(0, 10)}).
-- The post states the work was made with Claude Opus 5.5, Sonnet 5.5 or Fable 5.5; the Model column follows the creator's own words. **As of early October Fable 5.5 is in limited preview and not yet announced**; posts where the creator is unsure are excluded. **Model attribution is as stated by each creator and was not independently reproduced.**
+- The post states the work was made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5; the Model column follows the creator's own words. **As of early October Fable 5.5 is in limited preview and not yet announced**; posts where the creator is unsure are excluded. **Model attribution is as stated by each creator and was not independently reproduced.**
 - A prompt is listed only when it has a source: the post itself, the creator's own replies, a screenshot in those replies, or a link the creator shared. Prompts are kept verbatim, never rewritten or translated.
 - Works with a video but no traceable instruction are still listed, with the prompt column left empty.
 
