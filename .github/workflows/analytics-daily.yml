@@ -42,6 +42,7 @@ jobs:
       FLATROUTER_API_KEY: ${{ secrets.FLATROUTER_API_KEY }}
       APIMART_API_KEY: ${{ secrets.APIMART_API_KEY }}
       APIMART_CLAUDE_KEY: ${{ secrets.APIMART_CLAUDE_KEY }}
+      JEV_API_KEY: ${{ secrets.JEV_API_KEY }}
       OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
     steps:
       - uses: actions/checkout@v4

@@ -20,7 +20,7 @@ import { workerJSON, reviewerJSON, usage } from "./lib/llm.mjs";
 import { searchWindow, authorThread, normalize, cost } from "./lib/x.mjs";
 import { resolvePrompt, bundle } from "./lib/resolve.mjs";
 import { arbitrate, applyDecision } from "./lib/arbitrate.mjs";
-import { jevAudit, jevUsage } from "./lib/jev.mjs";
+import { jevAudit, jevAvailable, jevUsage } from "./lib/jev.mjs";
 
 const D = path.join(import.meta.dirname, "data");
 const P = path.join(import.meta.dirname, "prompts");
@@ -124,7 +124,7 @@ if (picked.length) {
   // ── 2b. 筛掉的再让 Jev 过一道：Jev 有把握（本人作品 ≥0.9）就捞回来 ──
   // 评测里分类器会误筛一些一句话配视频的本人作品，Jev 在这类上判「是作品」通常是对的
   const dropped = picked.filter((c) => cls[c.id] && !works.includes(c));
-  if (dropped.length && process.env.OPENROUTER_API_KEY) {
+  if (dropped.length && jevAvailable()) {
     try {
       const j = await jevAudit(dropped.map((c) => ({ id: c.id, handle: c.handle, text: c.text, thread: [], prompt: null })));
       for (const c of dropped) {
@@ -173,7 +173,7 @@ if (picked.length) {
     thread: bundles[c.id].thread.slice(0, 8).map((t) => t.text.slice(0, 500)), category: k.category, title_en: k.title_en, title_zh: k.title_zh, summary_en: e.raw.summary_en || "",
     prompt: e.prompt?.text ? { kind: e.prompt.kind, source: e.prompt.source, text: headTail(e.prompt.text) } : null }; };
   let audit = null, audFail = {};
-  if (process.env.OPENROUTER_API_KEY && process.env.OPUS_AUDITOR !== "gpt") {
+  if (jevAvailable() && process.env.OPUS_AUDITOR !== "gpt") {
     try {
       audit = await jevAudit(works.map((c) => ({ id: c.id, handle: c.handle, text: c.text, thread: bundles[c.id].thread.slice(0, 4).map((t) => t.text), prompt: ext[c.id].prompt?.text || null })));
       log(`  审核: ${works.length} 条 via Jev（${jevUsage.model}，$${jevUsage.cost.toFixed(4)}）`);

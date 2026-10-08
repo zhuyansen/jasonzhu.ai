@@ -34,7 +34,7 @@ node scripts/opus-prompts/assemble.mjs --write && node scripts/generate-opus-pro
 
 | 什么 | 在哪 | 频率 | 需要密钥 |
 |---|---|---|---|
-| **每日收录新作品** | `.github/workflows/opus-prompts-daily.yml` → `daily.mjs` | 每天 10:30（北京） | `TWITTERAPI_IO_KEY`、`OPENROUTER_API_KEY`（Jev）、`FLATROUTER_API_KEY`（备用审核）、Claude 那几个 |
+| **每日收录新作品** | `.github/workflows/opus-prompts-daily.yml` → `daily.mjs` | 每天 10:30（北京） | `TWITTERAPI_IO_KEY`、`JEV_API_KEY`（Jev 官方，`OPENROUTER_API_KEY` 备用）、`FLATROUTER_API_KEY`（备用审核）、Claude 那几个 |
 | 数据核验：刷新播放量、修复过期视频地址、下架已删帖 | `.github/workflows/opus-prompts-refresh.yml` → `refresh.mjs` | 每周一 11:00（北京） | 不需要 |
 | GitHub 合集同步 | `zhuyansen/awesome-opus-5.5-video` 的 `.github/workflows/sync.yml` | 每天 13:00（北京） | 不需要 |
 
@@ -45,7 +45,7 @@ node scripts/opus-prompts/assemble.mjs --write && node scripts/generate-opus-pro
    **模型标签**：`lib/models.mjs` 按作者文字判断是 Opus / Sonnet / Haiku / Fable 5.5，提到几个就标几个。**Fable 5.5 截至 2026-10-03 只在内测、未官宣**：页面和 GitHub 上标「内测·未官宣」；作者对模型本身不确定的（「(maybe) Fable 5.5」「疑似 Fable」）不收（`HEDGED`）。官宣后去掉 `MODEL_PREVIEW` 里的标注即可。
    **补跑某个时间段**（比如新模型发布后补首批）：`WINDOW_FROM=… WINDOW_TO=… SEARCH_TERMS='"Sonnet 5.5"' node scripts/opus-prompts/daily.mjs`，不会改动 `state.json` 的窗口。
 3. **判断**：Claude 分类（**被筛掉的再让 Jev 过一道**：Jev 判本人作品 ≥0.9 就捞回，分类把握标低，交 Opus 终审定分类）→ 抓作者回复 → Claude 定位提示词 → `lib/resolve.mjs` 逐字对账，对不上带着报错重试一次，再不行按无提示词处理。
-4. **审核**：**TypeSafe Jev**（`lib/jev.mjs`，OpenRouter decisions 接口）对每个作品问两个多选题：这条帖子是什么（本人作品 / 本人做的模型对比 / 转发 / 教程 / 新闻 / 评论 / 非视觉产品），定位到的提示词是什么（可用 / 中途追问 / 片段 / 感想 / 给别的模型写的 / 空洞 / 依赖看不见的附件）。单条约 $0.00003。
+4. **审核**：**TypeSafe Jev**（`lib/jev.mjs`：Jev 官方 `api.typesafe.ai/v1/systemone` 优先，失败退回 OpenRouter decisions 接口）对每个作品问两个多选题：这条帖子是什么（本人作品 / 本人做的模型对比 / 转发 / 教程 / 新闻 / 评论 / 非视觉产品），定位到的提示词是什么（可用 / 中途追问 / 片段 / 感想 / 给别的模型写的 / 空洞 / 依赖看不见的附件）。单条约 $0.00003。
    - 本人作品概率 ≥0.9 → 通过；转发/教程/新闻/非视觉合计 ≥0.9 → 否决；**判为评论或把握不足 → 交 Opus**
    - 提示词可用概率 ≥0.9 保留、≤0.1 去掉，中间交 Opus
    - 2026-09-30 评测：提示词好坏（人工真值 259 条）AUC 0.946、阈值 0.9 时零漏放；是不是作品（分类器标注 432 条）AUC 0.929。主要误判是把「Opus 5.5 太强了」这类一句话配视频的本人作品判成评论，所以评论不直接否决

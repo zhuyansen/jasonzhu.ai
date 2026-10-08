@@ -16,6 +16,7 @@ import Parser from "rss-parser";
 import { createClient } from "@supabase/supabase-js";
 import fs from "fs";
 import path from "path";
+import { jevAvailable, jevDecide } from "./opus-prompts/lib/jev.mjs";
 
 // 本地手动跑时自动加载 .env.local（GitHub Actions 直接走系统 env，无影响）
 // 注意：手动解析以强制覆盖已存在的 env（process.loadEnvFile 不覆盖，
@@ -769,8 +770,7 @@ function getRecentFundingCards(days = 4) {
 }
 
 async function jevFundingKinds(cards) {
-  const key = process.env.OPENROUTER_API_KEY;
-  if (!key || !cards.length) return null;
+  if (!jevAvailable() || !cards.length) return null; // Jev 官方优先、OpenRouter 兜底，见 opus-prompts/lib/jev.mjs
   const KIND = {
     completed_funding: "The company has raised (closed or officially announced) a funding round, including debt or convertible financing",
     completed_acquisition: "An acquisition that has been agreed or completed",
@@ -787,26 +787,8 @@ async function jevFundingKinds(cards) {
     lines.push(`${k}: company=${c.company} | round=${c.round || ""} | amount=${c.amount || ""} | valuation=${c.valuation || ""} | investors=${c.investors || ""} | note=${String(c.pitch || "").replace(/\s+/g, " ")} | source=${c.url || ""}`);
     questions[`${k}_kind`] = { type: "choice", instructions: `What does card ${k} describe?`, criteria: KIND };
   });
-  const body = JSON.stringify({ model: process.env.JEV_MODEL || "~typesafe/jev-latest", state: lines.join("\n"), questions });
-  let text;
-  if (process.env.CLAUDE_TRANSPORT === "curl") {
-    const { execFileSync } = await import("node:child_process");
-    const os = await import("node:os");
-    const tmp = path.join(os.tmpdir(), `jev-fund-${process.pid}.json`);
-    fs.writeFileSync(tmp, body, { mode: 0o600 });
-    try {
-      // 密钥走 stdin 的 curl 配置，不进命令行
-      text = execFileSync("curl", ["-sS", "-m", "90", "-K", "-", "--data-binary", `@${tmp}`, "https://openrouter.ai/api/alpha/decisions"],
-        { input: `header = "Authorization: Bearer ${key}"\nheader = "Content-Type: application/json"\n`, encoding: "utf-8", maxBuffer: 16e6 });
-    } finally { fs.rmSync(tmp, { force: true }); }
-  } else {
-    const res = await fetch("https://openrouter.ai/api/alpha/decisions", { method: "POST", headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" }, body, signal: AbortSignal.timeout(90000) });
-    if (!res.ok) throw new Error(`Jev HTTP ${res.status}`);
-    text = await res.text();
-  }
-  const o = JSON.parse(text);
-  if (!o.answers) throw new Error(`Jev bad response: ${text.slice(0, 120)}`);
-  return cards.map((_, i) => o.answers[`c${i + 1}_kind`]);
+  const answers = await jevDecide({ state: lines.join("\n"), questions });
+  return cards.map((_, i) => answers[`c${i + 1}_kind`]);
 }
 
 async function reviewFunding(digest) {

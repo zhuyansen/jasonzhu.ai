@@ -1,5 +1,7 @@
 /**
- * TypeSafe Jev 审核（OpenRouter decisions 接口，~typesafe/jev-latest）。
+ * TypeSafe Jev 审核。通道：Jev 官方（JEV_API_KEY，https://api.typesafe.ai/v1/systemone，模型 jev-latest）优先，
+ * 失败再退回 OpenRouter（OPENROUTER_API_KEY，/api/alpha/decisions，~typesafe/jev-latest）——2026-10-08 OpenRouter 余额用光（402）后加的官方通道。
+ * 两边请求 / 返回格式相同：{ model, state, questions } → { model, answers, usage }。
  * 只问封闭问题、一次前向拿概率分布，单条约 $0.00003。按作者的实验经验，问「这是什么」（多选一）而不是「是不是」。
  *
  * 2026-09-30 用现有标注评测：
@@ -48,30 +50,54 @@ function request(cases) {
     questions[`${k}_kind`] = { type: "choice", instructions: `What is post ${k}?`, criteria: KIND };
     if (c.prompt) questions[`${k}_prompt`] = { type: "choice", instructions: `What is the LOCATED PROMPT of ${k}?`, criteria: PROMPT };
   });
-  return { model: process.env.JEV_MODEL || "~typesafe/jev-latest", state: lines.join("\n"), questions };
+  return { state: lines.join("\n"), questions };
 }
 
-async function call(cases, key) {
-  const file = path.join(os.tmpdir(), `jev-${process.pid}-${Math.random().toString(36).slice(2)}.json`);
-  fs.writeFileSync(file, JSON.stringify(request(cases)), { mode: 0o600 });
-  try {
-    for (let a = 1; a <= 5; a++) {
-      try {
-        // 密钥走 stdin 的 curl 配置，不进命令行
-        const p = run("curl", ["-sS", "-m", "150", "-K", "-", "-w", "\n%{http_code}", "--data-binary", `@${file}`, "https://openrouter.ai/api/alpha/decisions"], { maxBuffer: 64e6 });
-        p.child.stdin.end(`header = "Authorization: Bearer ${key}"\nheader = "Content-Type: application/json"\n`);
-        const { stdout } = await p; const i = stdout.lastIndexOf("\n"); const status = +stdout.slice(i + 1), text = stdout.slice(0, i);
-        if (status === 429 || status >= 500) throw new Error(`HTTP ${status}`);
-        if (status >= 400) { const e = new Error(`HTTP ${status}: ${text.slice(0, 160).replace(/sk-[\w-]{8,}/g, "sk-***")}`); e.fatal = true; throw e; }
-        const o = JSON.parse(text);
-        jevUsage.calls++; jevUsage.cost += +(o.usage?.cost || 0); jevUsage.model = o.model || jevUsage.model;
-        return cases.map((_, j) => ({ kind: o.answers[`p${j + 1}_kind`], prompt: o.answers[`p${j + 1}_prompt`] }));
-      } catch (e) {
-        if (e.fatal || a === 5) throw new Error(String(e.stderr || e.message).slice(0, 160));
-        await new Promise((r) => setTimeout(r, 3000 * a));
+/** 能用的 Jev 通道，按优先级 */
+function providers() {
+  const out = [];
+  if (process.env.JEV_API_KEY) out.push({ name: "Jev 官方", url: "https://api.typesafe.ai/v1/systemone", model: process.env.JEV_MODEL || "jev-latest", key: process.env.JEV_API_KEY });
+  if (process.env.OPENROUTER_API_KEY) out.push({ name: "OpenRouter", url: "https://openrouter.ai/api/alpha/decisions", model: "~typesafe/jev-latest", key: process.env.OPENROUTER_API_KEY });
+  return out;
+}
+export const jevAvailable = () => providers().length > 0;
+
+/** 发一次 Jev 决策请求：{ state, questions } → answers。逐个通道试，429/5xx 在同一通道退避重试，其他 4xx（没钱 402、key 错 401）直接换下一个通道 */
+export async function jevDecide({ state, questions }) {
+  const ps = providers();
+  if (!ps.length) throw new Error("缺 JEV_API_KEY / OPENROUTER_API_KEY");
+  const errs = [];
+  for (const pv of ps) {
+    const file = path.join(os.tmpdir(), `jev-${process.pid}-${Math.random().toString(36).slice(2)}.json`);
+    fs.writeFileSync(file, JSON.stringify({ model: pv.model, state, questions }), { mode: 0o600 });
+    try {
+      for (let a = 1; a <= 5; a++) {
+        try {
+          // 密钥走 stdin 的 curl 配置，不进命令行
+          const p = run("curl", ["-sS", "-m", "150", "-K", "-", "-w", "\n%{http_code}", "--data-binary", `@${file}`, pv.url], { maxBuffer: 64e6 });
+          p.child.stdin.end(`header = "Authorization: Bearer ${pv.key}"\nheader = "Content-Type: application/json"\n`);
+          const { stdout } = await p; const i = stdout.lastIndexOf("\n"); const status = +stdout.slice(i + 1), text = stdout.slice(0, i);
+          if (status === 429 || status >= 500) throw new Error(`HTTP ${status}`);
+          if (status >= 400) { const e = new Error(`HTTP ${status}: ${text.slice(0, 160).replace(/(sk-|apikey_)[\w-]{8,}/g, "$1***")}`); e.fatal = true; throw e; }
+          const o = JSON.parse(text);
+          if (!o.answers) { const e = new Error(`返回里没有 answers：${text.slice(0, 120)}`); e.fatal = true; throw e; }
+          jevUsage.calls++; jevUsage.cost += +(o.usage?.cost || 0); jevUsage.model = `${pv.name} · ${o.model || pv.model}`;
+          return o.answers;
+        } catch (e) {
+          if (e.fatal || a === 5) throw new Error(String(e.stderr || e.message).slice(0, 160));
+          await new Promise((r) => setTimeout(r, 3000 * a));
+        }
       }
-    }
-  } finally { fs.rmSync(file, { force: true }); }
+    } catch (e) {
+      errs.push(`${pv.name} ${e.message}`);
+    } finally { fs.rmSync(file, { force: true }); }
+  }
+  throw new Error(errs.join("；"));
+}
+
+async function call(cases) {
+  const o = await jevDecide(request(cases));
+  return cases.map((_, j) => ({ kind: o[`p${j + 1}_kind`], prompt: o[`p${j + 1}_prompt`] }));
 }
 
 /**
@@ -79,12 +105,11 @@ async function call(cases, key) {
  * @returns Record<id, { verdict, confidence, prompt_ok, issues, reason, jev }>，与 GPT 审核同一形状
  */
 export async function jevAudit(cases) {
-  const key = process.env.OPENROUTER_API_KEY;
-  if (!key) throw new Error("缺 OPENROUTER_API_KEY");
+  if (!jevAvailable()) throw new Error("缺 JEV_API_KEY / OPENROUTER_API_KEY");
   const out = {};
   for (let i = 0; i < cases.length; i += 8) {
     const part = cases.slice(i, i + 8);
-    const ans = await call(part, key);
+    const ans = await call(part);
     part.forEach((c, j) => {
       const k = ans[j].kind, pr = ans[j].prompt, P = k?.probabilities || {};
       const pIn = (P.own_work || 0) + (P.own_comparison || 0);
