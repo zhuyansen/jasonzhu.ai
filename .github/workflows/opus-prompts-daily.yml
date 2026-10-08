@@ -14,6 +14,15 @@ on:
       cap:
         description: "本次最多处理多少个作品"
         default: "80"
+      window_from:
+        description: "补跑：发布时间起点（ISO，如 2026-10-07T00:00Z）；留空 = 正常增量"
+        default: ""
+      window_to:
+        description: "补跑：发布时间终点（ISO）"
+        default: ""
+      search_terms:
+        description: "补跑：只搜这些词（如 \"Haiku 5.5\" OR \"Haiku5.5\"）；留空 = 全部模型"
+        default: ""
 
 permissions:
   contents: write
@@ -51,6 +60,9 @@ jobs:
           APIMART_API_KEY: ${{ secrets.APIMART_API_KEY }}
           APIMART_CLAUDE_KEY: ${{ secrets.APIMART_CLAUDE_KEY }}  # 调 Claude 专用（只开通 opus-5-5），APIMART_API_KEY 留给生图
           CAP: ${{ inputs.cap || '80' }}
+          WINDOW_FROM: ${{ inputs.window_from }}
+          WINDOW_TO: ${{ inputs.window_to }}
+          SEARCH_TERMS: ${{ inputs.search_terms }}
         run: |
           if [ -z "$TWITTERAPI_IO_KEY" ]; then
             echo "::error::缺少 Secret TWITTERAPI_IO_KEY，无法搜索新帖"
@@ -61,7 +73,9 @@ jobs:
           fi
           # 每次最多处理一天的窗口；落后时连跑，逐天追上（最多 3 轮）
           set -o pipefail  # 否则 tee 会吞掉 daily.mjs 的失败
-          for i in 1 2 3; do
+          # 指定了补跑窗口就只跑一轮（daily.mjs 不读写 state 的窗口进度）
+          if [ -n "$WINDOW_FROM" ]; then ROUNDS=1; else ROUNDS="1 2 3"; fi
+          for i in $ROUNDS; do
             node scripts/opus-prompts/daily.mjs | tee "$RUNNER_TEMP/daily-$i.log"
             if grep -q "CAUGHT_UP" "$RUNNER_TEMP/daily-$i.log"; then break; fi
           done
