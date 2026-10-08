@@ -81,6 +81,7 @@ Git：commit 后如远程有新提交（cron 会自动 commit 快讯），先 `g
 **Vercel 请求额度（2026-10-07 事故后，Pro 套餐，每月 1000 万 Edge Requests）**
 - 全站链接一律 `import Link from "@/components/Link"`（默认 `prefetch={false}`），**不要直接用 `next/link`**：默认预加载会让导航 / 页脚 / 提示词卡片每次访问多发十几到几十个请求。2026-10-07 免费版 30 天用到 440 万次（额度 100 万），整站被停用（402 DEPLOYMENT_DISABLED），升级 Pro 才恢复。
 - `middleware.ts` 只匹配 `/`、`/admin`、`/auth`、会员中心 / 登录、不带语言前缀的旧链接；带 `/zh` `/en` 的公开页不经过它，不要改回匹配全部页面。本地 `next dev` 下 `/` 会 404（中间件在开发环境不生效），用生产构建 `next start` 验证 rewrite。
+- `src/app/robots.ts` 构建时生成 robots.txt：AI 训练 / 索引爬虫（GPTBot、ClaudeBot 等）禁止抓**没有提示词**的作品详情页（noindex 页，曾占全站请求 29%）；搜索引擎和 `*-User` 代理不受影响。不要再加回 `public/robots.txt`（会和它冲突）。
 - 用量查询：`GET https://api.vercel.com/v2/usage?teamId=…&type=requests`（按天），`/v4/usage/top?pathType=request_path&sortKey=requests`（按路径）。
 
 **SEO/AI-SEO 已就位的约定**
