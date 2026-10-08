@@ -1,7 +1,6 @@
 /**
- * TypeSafe Jev 审核。通道：Jev 官方（JEV_API_KEY，https://api.typesafe.ai/v1/systemone，模型 jev-latest）优先，
- * 失败再退回 OpenRouter（OPENROUTER_API_KEY，/api/alpha/decisions，~typesafe/jev-latest）——2026-10-08 OpenRouter 余额用光（402）后加的官方通道。
- * 两边请求 / 返回格式相同：{ model, state, questions } → { model, answers, usage }。
+ * TypeSafe Jev 审核，走 Jev 官方接口（JEV_API_KEY，https://api.typesafe.ai/v1/systemone，模型 jev-latest）。
+ * 2026-10-08 前走 OpenRouter 的 /api/alpha/decisions，余额用光（402）后换成官方、OpenRouter key 已删。
  * 只问封闭问题、一次前向拿概率分布，单条约 $0.00003。按作者的实验经验，问「这是什么」（多选一）而不是「是不是」。
  *
  * 2026-09-30 用现有标注评测：
@@ -53,19 +52,18 @@ function request(cases) {
   return { state: lines.join("\n"), questions };
 }
 
-/** 能用的 Jev 通道，按优先级 */
+/** 能用的 Jev 通道（现在只有官方；以后加备用通道就往这里加） */
 function providers() {
   const out = [];
   if (process.env.JEV_API_KEY) out.push({ name: "Jev 官方", url: "https://api.typesafe.ai/v1/systemone", model: process.env.JEV_MODEL || "jev-latest", key: process.env.JEV_API_KEY });
-  if (process.env.OPENROUTER_API_KEY) out.push({ name: "OpenRouter", url: "https://openrouter.ai/api/alpha/decisions", model: "~typesafe/jev-latest", key: process.env.OPENROUTER_API_KEY });
   return out;
 }
 export const jevAvailable = () => providers().length > 0;
 
-/** 发一次 Jev 决策请求：{ state, questions } → answers。逐个通道试，429/5xx 在同一通道退避重试，其他 4xx（没钱 402、key 错 401）直接换下一个通道 */
+/** 发一次 Jev 决策请求：{ state, questions } → answers。429/5xx 退避重试，其他 4xx（没钱 402、key 错 401）直接报错 */
 export async function jevDecide({ state, questions }) {
   const ps = providers();
-  if (!ps.length) throw new Error("缺 JEV_API_KEY / OPENROUTER_API_KEY");
+  if (!ps.length) throw new Error("缺 JEV_API_KEY");
   const errs = [];
   for (const pv of ps) {
     const file = path.join(os.tmpdir(), `jev-${process.pid}-${Math.random().toString(36).slice(2)}.json`);
@@ -105,7 +103,7 @@ async function call(cases) {
  * @returns Record<id, { verdict, confidence, prompt_ok, issues, reason, jev }>，与 GPT 审核同一形状
  */
 export async function jevAudit(cases) {
-  if (!jevAvailable()) throw new Error("缺 JEV_API_KEY / OPENROUTER_API_KEY");
+  if (!jevAvailable()) throw new Error("缺 JEV_API_KEY");
   const out = {};
   for (let i = 0; i < cases.length; i += 8) {
     const part = cases.slice(i, i + 8);

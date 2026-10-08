@@ -51,7 +51,7 @@ Git：commit 后如远程有新提交（cron 会自动 commit 快讯），先 `g
 - apimart 的 key 按模型分组开通，分两个 secret：`APIMART_CLAUDE_KEY` 调 Claude（只开通 claude-opus-5-5；代码模型顺序 opus-5-5 → sonnet-5-5 → opus-4-6，旧 key 也能跑），`APIMART_API_KEY` 只给生图（快讯/博客封面，模型 gpt-image-2.5-flare，`APIMART_IMAGE_MODEL` 可覆盖）。提示词库终审只用 Opus（aigocode → apimart Opus 5.5），不让 GPT 拍板。
 - 数据日报每天做模型通道体检（`ops/analytics/fetch_channels.py`：每条通道 8 token 探测、生图空 prompt 探测），任何通道不通在日报开头告警——2026-10-04 备用 key 坏了几个月没人发现，主代理一限流 11 个作品卡进待审。
 - `CLAUDE_TRANSPORT=curl` 仅本地用——本机 Node/undici 连不上代理（UND_ERR_CONNECT_TIMEOUT），curl 加 `--http1.1` 正常。
-- 融资段规则（在 prompt 里）：只收真实到账事件（含已完成收购）、绝不与当天 items 重复、跨天去重（getRecentFundingCompanies 注入近 4 天清单）。Claude 生成后有代码层复核 `reviewFunding()`：近 7 天同公司同金额去重、与当天正文重复去重、Jev 判传闻/洽谈/未完成 IPO（合计 ≥0.7）删掉；VC 基金募资和只有估值变化的按编辑规则保留。Jev 通道（`scripts/opus-prompts/lib/jev.mjs` 的 `jevDecide`，快讯和提示词库共用）：Jev 官方 `JEV_API_KEY`（`api.typesafe.ai/v1/systemone`，模型 `jev-latest`）优先，失败退回 OpenRouter `OPENROUTER_API_KEY`（2026-10-08 余额用光 402 后加的官方通道）；两个都缺时只跳过 Jev 那一步。
+- 融资段规则（在 prompt 里）：只收真实到账事件（含已完成收购）、绝不与当天 items 重复、跨天去重（getRecentFundingCompanies 注入近 4 天清单）。Claude 生成后有代码层复核 `reviewFunding()`：近 7 天同公司同金额去重、与当天正文重复去重、Jev 判传闻/洽谈/未完成 IPO（合计 ≥0.7）删掉；VC 基金募资和只有估值变化的按编辑规则保留。Jev 通道（`scripts/opus-prompts/lib/jev.mjs` 的 `jevDecide`，快讯和提示词库共用）：Jev 官方 `JEV_API_KEY`（`api.typesafe.ai/v1/systemone`，模型 `jev-latest`）。2026-10-08 前走 OpenRouter，余额用光后换官方、OpenRouter key 已删。缺 key 或调用失败时：快讯只跳过 Jev 那一步，提示词库审核退回 GPT。
 
 **路由/i18n（app/[lang]/，lang = zh|en）**
 - 无 app/layout.tsx——`app/[lang]/layout.tsx` 就是 root layout（html lang 来自路由参数；admin 有独立 root layout）。不要在 root 层用 headers()，会把全站打回动态渲染（历史事故：曾因此全站 ƒ Dynamic + sitemap 空）。

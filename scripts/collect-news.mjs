@@ -770,7 +770,7 @@ function getRecentFundingCards(days = 4) {
 }
 
 async function jevFundingKinds(cards) {
-  if (!jevAvailable() || !cards.length) return null; // Jev 官方优先、OpenRouter 兜底，见 opus-prompts/lib/jev.mjs
+  if (!jevAvailable() || !cards.length) return null; // Jev 官方，见 opus-prompts/lib/jev.mjs
   const KIND = {
     completed_funding: "The company has raised (closed or officially announced) a funding round, including debt or convertible financing",
     completed_acquisition: "An acquisition that has been agreed or completed",

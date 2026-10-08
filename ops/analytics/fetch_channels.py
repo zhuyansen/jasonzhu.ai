@@ -69,17 +69,6 @@ def main():
                               json={"model": "jev-latest", "state": "Card c1: Acme raised $5M in a closed seed round.",
                                     "questions": {"c1": {"type": "choice", "instructions": "What does c1 describe?",
                                                          "criteria": {"done": "A completed funding round", "rumor": "Only rumored"}}}})))
-    orr = secret("OPENROUTER_API_KEY")
-    if orr:
-        # 只查 key 有效会漏掉「余额用光」：2026-10-08 余额 0 时 /key 照样 200，Jev 调用全是 402。余额 < $0.5 判不通
-        def openrouter_balance():
-            r = requests.get("https://openrouter.ai/api/v1/credits", timeout=60, headers={"Authorization": f"Bearer {orr}"})
-            if r.status_code >= 300:
-                return r.status_code, r.text[:160]
-            d = r.json().get("data", {})
-            left = (d.get("total_credits") or 0) - (d.get("total_usage") or 0)
-            return (200 if left >= 0.5 else 402), f"余额 ${left:.2f}" + ("（不足，去 openrouter.ai/settings/credits 充值）" if left < 0.5 else "")
-        add("OpenRouter（Jev 备用）", "Jev 官方不可用时兜底", "余额", openrouter_balance)
     if not checks:
         return save("channels", {"ok": False, "skipped": True, "reason": "没配任何模型通道的 key"})
     save("channels", {"ok": True, "checks": checks})
