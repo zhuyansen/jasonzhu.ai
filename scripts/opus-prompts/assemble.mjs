@@ -3,7 +3,7 @@
 import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
-import { detectModels } from "./lib/models.mjs";
+import { detectModelsPreferPost } from "./lib/models.mjs";
 const D = path.join(import.meta.dirname, "data");
 const rd = (f) => JSON.parse(fs.readFileSync(path.join(D, f), "utf8"));
 const SITE = path.join(import.meta.dirname, "../..");
@@ -64,7 +64,7 @@ for (const c of C) {
   title.zh = title.zh.replace(/一镜到底的?/g, "一次生成的").replace(/陈列片/g, "展示片").replace(/运动设计/g, "动效设计").replace(/动态图形/g, "动效");
   if (!prompt) stat.none++;
   const tools = [...new Set([...(e?.tools || k.tools || [])].map(t => String(t).trim()).filter(t => t && !/^(claude )?opus ?5\.5/i.test(t)))].slice(0, 8);
-  const models = detectModels(c.text, c.quoted?.handle === c.handle ? c.quoted.text : "", prompt?.text);
+  const models = detectModelsPreferPost([c.text, c.quoted?.handle === c.handle ? c.quoted.text : ""], prompt?.text);
   if (!models.length) { stat.hedged = (stat.hedged || 0) + 1; continue; } // 作者自己都不确定是不是 Fable 5.5
   if (!ADDED[c.id]) ADDED[c.id] = RUN_DAY;
   cases.push({ id: c.id, url: c.url, author: { handle: c.handle, name: c.name }, postedAt: c.createdAt, addedAt: ADDED[c.id], lang: c.lang, models, kind: k.kind, category: CUR.category[c.id] || k.category,

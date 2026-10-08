@@ -13,3 +13,13 @@ export function detectModels(...texts) {
   if (hit.includes("fable-5.5") && HEDGED.test(t)) hit = hit.filter((k) => k !== "fable-5.5");
   return hit;
 }
+
+/**
+ * 先只看作者帖子本身（主帖 + 自己引用的帖子）；帖子里一个模型都没提到，才去看提示词。
+ * 提示词里出现的模型名常常是画面内容而不是「用什么做的」——2026-10-08 一支用 Sonnet 5.5 做的发布片，
+ * 提示词写了「展示 OPUS 5.5 / SONNET 5.5 / HAIKU 5.5 家族」，被误标成三个模型。
+ */
+export function detectModelsPreferPost(postTexts, promptText) {
+  const post = postTexts.filter(Boolean).join("\n");
+  return Object.values(MODELS).some((re) => re.test(post)) ? detectModels(post) : detectModels(post, promptText);
+}
