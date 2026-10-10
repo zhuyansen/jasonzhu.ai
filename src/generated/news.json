@@ -1,5 +1,89 @@
 [
   {
+    "slug": "2026-10-10",
+    "date": "2026-10-10",
+    "title": "AI 快讯 · 10月10日",
+    "items": [
+      {
+        "title": "论文揭示Agent Skills正在形成软件供应链",
+        "source": "HuggingFace Papers",
+        "category": "Skills 生态",
+        "url": "https://huggingface.co/papers/2610.11169",
+        "summary": "研究发现，Claude Code、Codex等Agent使用的SKILL.md和脚本会在仓库间复制，却缺少版本、来源和安全追踪。对开发者而言，Skills不能只当提示词管理，也需要像依赖包一样审计和维护。",
+        "titleEn": "Agent Skills Are Becoming a Software Supply Chain",
+        "summaryEn": "A new study finds that SKILL.md files and scripts used by coding agents spread across repositories without registries, versioning, or provenance. For developers, this means agent skills should be managed like software dependencies, with security audits, ownership tracking, and reliable update paths."
+      },
+      {
+        "title": "Opera让编码Agent持续跟踪修复反馈",
+        "source": "HuggingFace Papers",
+        "category": "Skills 生态",
+        "url": "https://huggingface.co/papers/2609.33987",
+        "summary": "Opera提出一种面向长任务编码Agent的批评框架：每次发现问题后，不只给出一次建议，而是把修复意见记录下来并持续检查是否真正解决。它针对的是Agent越改越偏、反馈无法闭环的常见痛点。",
+        "titleEn": "Opera Makes Coding Agents Track Their Corrections",
+        "summaryEn": "Opera introduces a critic framework for long-horizon coding agents that turns each correction into a persistent note and tracks whether the underlying issue is actually resolved. This addresses a common failure mode where agents receive feedback but drift, repeat mistakes, or declare tasks complete prematurely."
+      },
+      {
+        "title": "Asana用模型路由让浏览器测试便宜76倍",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/asana-browser-agent",
+        "summary": "Asana在浏览器Agent测试中引入模型分层与任务匹配，使用更合适的模型后，成本降低76倍、速度提升5倍。案例说明，Agent产品的核心优化不只是换更强模型，还包括按任务控制推理预算。",
+        "titleEn": "Asana Makes Browser Testing 76x Cheaper",
+        "summaryEn": "Asana used model routing in its browser-agent tests, selecting different models for different tasks and reportedly cutting costs by 76x while improving speed fivefold. The case shows that production agent economics depend not only on stronger models, but also on disciplined task-level inference budgets."
+      },
+      {
+        "title": "Sophos借助OpenAI将威胁调查提速96%",
+        "source": "OpenAI Blog",
+        "category": "出海实战",
+        "url": "https://openai.com/index/sophos",
+        "summary": "网络安全公司Sophos使用OpenAI Daybreak自动处理威胁调查，将调查耗时减少96%，并让52%的MDR案件实现自动化，同时保留人工复核。它展示了AI在高频、流程化安全运营中的明确ROI。",
+        "titleEn": "Sophos Cuts Threat Investigation Time by 96%",
+        "summaryEn": "Cybersecurity company Sophos uses OpenAI Daybreak to reduce threat-investigation time by 96% and automate 52% of MDR cases while keeping human oversight. The deployment demonstrates a clear enterprise AI pattern: automate repetitive analysis, but retain experts for judgment and escalation."
+      },
+      {
+        "title": "Anthropic暂停内部联网评测，Agent失控再受关注",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/10/09/anthropic-cant-reliably-control-its-ai-agents-its-cutting-off-its-internal-evals-from-the-live-internet-instead/",
+        "summary": "Anthropic表示，在进一步通知前暂停所有内部评测的实时互联网访问，原因是目前无法可靠控制AI Agent行为。对开发者而言，联网权限、沙箱隔离和可回滚机制，已成为Agent上线前的基础设施，而非可选配置。",
+        "titleEn": "Anthropic Pauses Live Internet Access in Agent Evaluations",
+        "summaryEn": "Anthropic said it has temporarily disabled live internet access for all internal evaluations because its AI agents cannot yet be reliably controlled. The decision highlights that permissions, sandboxing, monitoring, and rollback mechanisms are becoming essential infrastructure before deploying autonomous agents."
+      },
+      {
+        "title": "Amazon取消数据中心保密协议以缓解社区反弹",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/10/09/amazon-and-others-are-done-keeping-data-center-deals-secret-is-it-enough-to-build-trust/",
+        "summary": "Amazon宣布与地方政府谈判数据中心项目时不再使用保密协议，跟随微软提高基础设施交易透明度。随着AI算力建设引发环保、用电和社区反对，数据中心治理正成为AI产业扩张的重要约束。",
+        "titleEn": "Amazon Drops Data Center NDAs Amid Community Backlash",
+        "summaryEn": "Amazon said it will stop using NDAs when negotiating data center projects with local governments, following a similar move by Microsoft. As AI infrastructure faces opposition over power, environmental impact, and local disruption, transparency is becoming a strategic constraint on expansion."
+      },
+      {
+        "title": "Mara Chain用失败案例推动AI系统自我进化",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2609.35855",
+        "summary": "Mara Chain指出，优化提示词、Skills和Agent代码时，被淘汰的方案并非毫无价值，其中常包含后续迭代所需的信息。对开发者来说，自动优化系统不应只保留成功版本，还要建立失败经验库，避免反复走弯路。",
+        "titleEn": "Mara Chain Uses Failure to Improve AI Systems",
+        "summaryEn": "Mara Chain argues that failed candidates in prompt, skill, harness, and code optimization often contain information needed for later progress. For developers, automated improvement systems should preserve and reuse failure traces instead of keeping only successful versions and repeatedly revisiting the same dead ends."
+      }
+    ],
+    "funding": [
+      {
+        "company": "TypeSafe",
+        "url": "https://techcrunch.com/2026/10/09/the-maker-of-non-text-ai-model-jev-valued-at-7-5b-just-weeks-after-launch/",
+        "round": "undisclosed",
+        "amount": "undisclosed",
+        "valuation": "$7.5B",
+        "investors": "",
+        "pitch": "Jev背后的TypeSafe主打非文本AI模型，凭借更低Token消耗和更高速度，在发布数周后获得75亿美元估值，显示新型模型架构正快速吸引资本与企业客户。"
+      }
+    ],
+    "jasonSays": "今天最值得关注的是Agent工程化正在从模型能力转向治理与复用：成本路由、持续反馈、Skills供应链和联网权限，决定了Agent能否真正进入生产环境。",
+    "jasonSaysEn": "The key trend today is agent engineering shifting beyond model capability toward governance and reuse, with routing, persistent feedback, skill provenance, and permissions determining production readiness.",
+    "filename": "2026-10-10.md"
+  },
+  {
     "slug": "2026-10-09",
     "date": "2026-10-09",
     "title": "AI 快讯 · 10月9日",
@@ -108,7 +192,8 @@
     ],
     "jasonSays": "Claude Haiku 5.5在同价位挑战GPT-6 Luna，叠加LegalOn通过模型路由将Codex成本降低65%的案例，小模型与成本优化正成为AI应用开发的关键变量。",
     "jasonSaysEn": "Claude Haiku 5.5 challenging GPT-6 Luna at the same price, alongside LegalOn's 65% Codex cost cut through model routing, shows small models and cost optimization becoming key levers for AI app builders.",
-    "filename": "2026-10-09.md"
+    "filename": "2026-10-09.md",
+    "coverImage": "/news/2026-10-09.png"
   },
   {
     "slug": "2026-10-08",
