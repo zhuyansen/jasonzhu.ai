@@ -9,7 +9,7 @@
  *   node scripts/settle-referrals.mjs --email         # 把待结算报告发到 ALERT_EMAIL（GitHub Actions 每月 1 号跑）
  *
  * 数据在 KV：referrals_all（流水）、referral_settled:<orderId>（已结标记）。
- * 推荐人微信号从 Supabase member_codes 按邮箱查（付款时填的 wechat）。
+ * 推荐人微信号从 Supabase member_codes 按邮箱查（付款时填的 wechat）；没有就看发码备注（club_code_note:<码>）。
  * 走 curl（本机 Node fetch 连不上 Upstash/Supabase）。
  */
 import fs from "fs";
@@ -37,11 +37,15 @@ function wechatOf(email) {
   if (!SB_URL || !SB_KEY) return "";
   try {
     const rows = JSON.parse(curl([
-      `${SB_URL}/rest/v1/member_codes?email=eq.${encodeURIComponent(email)}&status=eq.activated&select=wechat,github_username&limit=1`,
+      `${SB_URL}/rest/v1/member_codes?email=eq.${encodeURIComponent(email)}&status=eq.activated&select=wechat,github_username,code&limit=1`,
       "-H", `apikey: ${SB_KEY}`, "-H", `Authorization: Bearer ${SB_KEY}`,
     ]));
     const r = rows[0] || {};
-    return r.wechat || (r.github_username ? `gh:@${r.github_username}` : "");
+    if (r.wechat) return r.wechat;
+    // 没留微信（站外拿码、只填邮箱激活的）：看发码时记的备注（generate-club-codes.mjs --note）
+    const note = r.code ? kv(`get/${encodeURIComponent("club_code_note:" + r.code)}`) : null;
+    if (note) return `发码备注「${note}」（码 ${r.code}）`;
+    return r.github_username ? `gh:@${r.github_username}` : r.code ? `（未知，码 ${r.code}）` : "";
   } catch { return ""; }
 }
 
