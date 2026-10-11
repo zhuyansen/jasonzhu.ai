@@ -262,7 +262,7 @@ export default function PromptLibraryClient({ initial, total, counts, modelCount
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           {shown.map((c) => (
-            <CaseCard key={c.id} c={c} lang={lang} isNew={(c.addedAt || "") >= fresh.recentStart} onGroup={(k) => { setGroup(k); setCategory(null); reset(); window.scrollTo({ top: 0, behavior: "smooth" }); }} />
+            <CaseCard key={c.id} c={c} lang={lang} isNew={(c.addedAt || "") >= fresh.recentStart} showAdded={sort === "added" || onlyNew} onGroup={(k) => { setGroup(k); setCategory(null); reset(); window.scrollTo({ top: 0, behavior: "smooth" }); }} />
           ))}
         </div>
       )}
@@ -283,7 +283,7 @@ export default function PromptLibraryClient({ initial, total, counts, modelCount
   );
 }
 
-function CaseCard({ c, lang, isNew, onGroup }: { c: OpusCaseSlim; lang: string; isNew: boolean; onGroup: (key: string) => void }) {
+function CaseCard({ c, lang, isNew, showAdded, onGroup }: { c: OpusCaseSlim; lang: string; isNew: boolean; showAdded?: boolean; onGroup: (key: string) => void }) {
   const isZh = lang === "zh";
   const [full, setFull] = useState<string | null>(null);
   const [open, setOpen] = useState(false);
@@ -354,7 +354,14 @@ function CaseCard({ c, lang, isNew, onGroup }: { c: OpusCaseSlim; lang: string; 
           <a href={c.url} target="_blank" rel="noopener noreferrer" className="hover:text-gray-700 truncate">
             @{c.author.handle}
           </a>
-          <span className="shrink-0">{c.postedAt.slice(5, 10)}</span>
+          {/* 按「最近收录」看时显示收录日期：发帖日期比收录晚 2 天，容易被当成「库没更新」 */}
+          {showAdded && c.addedAt ? (
+            <span className="shrink-0" title={isZh ? `发帖 ${c.postedAt.slice(0, 10)}` : `Posted ${c.postedAt.slice(0, 10)}`}>
+              {isZh ? `${c.addedAt.slice(5)} 收录` : `Added ${c.addedAt.slice(5)}`}
+            </span>
+          ) : (
+            <span className="shrink-0">{c.postedAt.slice(5, 10)}</span>
+          )}
         </div>
 
         <h3 className="text-base font-semibold text-gray-900 leading-snug mb-3">
