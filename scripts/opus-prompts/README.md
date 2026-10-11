@@ -34,13 +34,13 @@ node scripts/opus-prompts/assemble.mjs --write && node scripts/generate-opus-pro
 
 | 什么 | 在哪 | 频率 | 需要密钥 |
 |---|---|---|---|
-| **每日收录新作品** | `.github/workflows/opus-prompts-daily.yml` → `daily.mjs` | 每天 10:30（北京） | `TWITTERAPI_IO_KEY`、`JEV_API_KEY`（Jev 官方）、`FLATROUTER_API_KEY`（备用审核）、Claude 那几个 |
+| **每日收录新作品** | `.github/workflows/opus-prompts-daily.yml` → `daily.mjs` | 每天两次，9:17 / 21:17（北京） | `TWITTERAPI_IO_KEY`、`JEV_API_KEY`（Jev 官方）、`FLATROUTER_API_KEY`（备用审核）、Claude 那几个 |
 | 数据核验：刷新播放量、修复过期视频地址、下架已删帖 | `.github/workflows/opus-prompts-refresh.yml` → `refresh.mjs` | 每周一 11:00（北京） | 不需要 |
 | GitHub 合集同步 | `zhuyansen/awesome-opus-5.5-video` 的 `.github/workflows/sync.yml` | 每天 13:00（北京） | 不需要 |
 
 ### 每日收录怎么工作
 
-1. **按时间增量搜**（每次最多一天的发布窗口，延迟 24 小时；落后时工作流连跑最多 3 轮自动追上，不需要手动补跑）：搜索词 `"Opus 5.5" OR "Sonnet 5.5" OR "Haiku 5.5" OR "Fable 5.5"`（`lib/x.mjs`，`SEARCH_TERMS` 可覆盖），只搜「两天前那 24 小时」发布的帖子（`since_time`/`until_time`），点赞 ≥100。延迟两天是让播放量涨到位。每条帖子只落在一个窗口里，只付一次钱；见过的 ID 记在 `data/seen.json`，永不重新处理。
+1. **按时间增量搜**（每次最多一天的发布窗口，延迟 24 小时；落后时工作流连跑最多 3 轮自动追上，不需要手动补跑）：搜索词 `"Opus 5.5" OR "Sonnet 5.5" OR "Haiku 5.5" OR "Fable 5.5"`（`lib/x.mjs`，`SEARCH_TERMS` 可覆盖），只搜「上次搜到的位置 → 24 小时前」这段时间发布的帖子（`since_time`/`until_time`），点赞 ≥100。延迟 24 小时（`DELAY_HOURS`）是让播放量涨到位；一天跑两次，所以帖子发出后 1–1.5 天上线。窗口过去后不会回头再搜，延迟缩得太短会漏掉播放涨得慢的作品。每条帖子只落在一个窗口里，只付一次钱；见过的 ID 记在 `data/seen.json`，永不重新处理。
 2. **限量**：播放 ≥5000 的按播放量取前 80 个（`CAP`）。超出的当天放弃，不补。
    **模型标签**：`lib/models.mjs` 按作者文字判断是 Opus / Sonnet / Haiku / Fable 5.5，提到几个就标几个。**Fable 5.5 截至 2026-10-03 只在内测、未官宣**：页面和 GitHub 上标「内测·未官宣」；作者对模型本身不确定的（「(maybe) Fable 5.5」「疑似 Fable」）不收（`HEDGED`）。官宣后去掉 `MODEL_PREVIEW` 里的标注即可。
    **补跑某个时间段**（比如新模型发布后补首批）：`WINDOW_FROM=… WINDOW_TO=… SEARCH_TERMS='"Sonnet 5.5"' node scripts/opus-prompts/daily.mjs`，不会改动 `state.json` 的窗口。

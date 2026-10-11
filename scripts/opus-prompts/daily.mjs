@@ -2,7 +2,7 @@
 /**
  * 每日增量收录新作品。
  *
- *   搜索  按发布时间、每次一天的窗口搜（since_time/until_time），点赞 ≥100，延迟 24 小时。
+ *   搜索  按发布时间、每次最多一天的窗口搜（工作流一天跑两次，通常每次半天）（since_time/until_time），点赞 ≥100，延迟 24 小时。
  *         延迟是让播放量涨到位；落后时工作流连跑多次逐天追上；每条帖子只落在一个窗口里，只付一次钱，已见过的永不重新处理。
  *   限量  播放 ≥5000 的按播放量取前 CAP 个（默认 80）。
  *   判断  Claude 分类 → 抓作者回复 → Claude 定位提示词 → 代码逐字对账
@@ -12,7 +12,7 @@
  * 补跑：WINDOW_FROM=2026-09-28T18:00Z WINDOW_TO=2026-09-29T10:00Z SEARCH_TERMS='"Sonnet 5.5" OR "Sonnet5.5"' node …
  * 环境变量：TWITTERAPI_IO_KEY（必需）· ANTHROPIC_AUTH_TOKEN / APIMART_API_KEY / ANTHROPIC_API_KEY（至少一个）
  *          FLATROUTER_API_KEY（审核用第二模型，强烈建议配）
- *          CAP=40 · MIN_FAVES=100 · DELAY_HOURS=48 · MAX_SEARCH_TWEETS=400 · CLAUDE_TRANSPORT=curl（本机）
+ *          CAP=40 · MIN_FAVES=100 · DELAY_HOURS=24 · MAX_SEARCH_TWEETS=400 · CLAUDE_TRANSPORT=curl（本机）
  */
 import fs from "node:fs";
 import path from "node:path";

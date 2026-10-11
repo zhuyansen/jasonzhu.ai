@@ -8,7 +8,10 @@ name: Claude 5.5 提示词库每日收录
 # 需要的 Secrets：TWITTERAPI_IO_KEY（必需）、JEV_API_KEY（Jev 官方审核）、FLATROUTER_API_KEY（Jev 不可用时的 GPT 备用审核）；Claude 的几个沿用快讯的。
 on:
   schedule:
-    - cron: "30 2 * * *"
+    # 一天两次（北京 9:17 / 21:17）：每次收「24 小时前」为止的帖子，作品最慢 1.5 天内上线。
+    # 避开整点和半点——原来设 10:30，GitHub 实际拖到 17:00 左右才跑
+    - cron: "17 1 * * *"
+    - cron: "17 13 * * *"
   workflow_dispatch:
     inputs:
       cap:
