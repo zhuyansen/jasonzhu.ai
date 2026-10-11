@@ -1,8 +1,8 @@
 {
  "model": "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.5)",
  "threshold": 5000,
- "updatedAt": "2026-10-11T05:17:47.827Z",
- "statsCheckedAt": "2026-10-11T05:17:47.827Z",
+ "updatedAt": "2026-10-11T18:06:57.785Z",
+ "statsCheckedAt": "2026-10-11T18:06:57.785Z",
  "inclusionRule": "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -3730,6 +3730,59 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2108913484805406859",
+   "url": "https://x.com/hayashimon1/status/2108913484805406859",
+   "author": {
+    "handle": "hayashimon1",
+    "name": "ハヤシモン｜AI × 個人開発"
+   },
+   "postedAt": "2026-10-10T13:32:11.000Z",
+   "addedAt": "2026-10-11",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "Blender制作的雨夜深夜洗衣房3D场景",
+    "en": "Rainy late-night laundromat 3D scene in Blender"
+   },
+   "summary": {
+    "zh": "作者通过Claude Code结合Blender MCP，用日语指令让Claude Opus 5.5搭建了一个深夜自助洗衣店的3D场景，先用ChatGPT生成参考图，再通过反复反馈调整模型、材质和动画。",
+    "en": "Creator used Claude Opus 5.5 via Claude Code with Blender MCP to build a 3D night-time laundromat scene using only Japanese text instructions, starting from a ChatGPT-generated reference image and refining the model, textures and animation through feedback."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Blender",
+    "Claude Code",
+    "ChatGPT",
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 483128,
+    "likes": 3904,
+    "replies": 61,
+    "reposts": 330,
+    "bookmarks": 5083,
+    "checkedAt": "2026-10-11T18:06:57.785Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2108909845613252608/img/Zq8Vx3KsPJYw7yOu.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2108909845613252608/vid/avc1/1280x720/k6tKSQ66yLecrEC0.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 10
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -47198,6 +47251,54 @@
    }
   },
   {
+   "id": "2108905413467079026",
+   "url": "https://x.com/prasenx/status/2108905413467079026",
+   "author": {
+    "handle": "prasenx",
+    "name": "Prasenjit"
+   },
+   "postedAt": "2026-10-10T13:00:06.000Z",
+   "addedAt": "2026-10-11",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "山居钓鱼生活模拟游戏",
+    "en": "Mountain fishing life simulation game"
+   },
+   "summary": {
+    "zh": "作者用Claude Opus 5.5花两天时间制作了一款可以在山中隐居钓鱼的游戏，并将代码开源发布。",
+    "en": "Creator used Claude Opus 5.5 to build a playable mountain-living fishing game over two days and released the code as open source."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 23064,
+    "likes": 538,
+    "replies": 50,
+    "reposts": 26,
+    "bookmarks": 121,
+    "checkedAt": "2026-10-11T18:06:57.785Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2108904701832146944/img/eOIh3Dw17L8sim1J.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2108904701832146944/vid/avc1/1280x720/ENazMD6hkc3dLXla.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 231
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2105356128129597559",
    "url": "https://x.com/aresotik/status/2105356128129597559",
    "author": {
@@ -54393,6 +54494,54 @@
    }
   },
   {
+   "id": "2108930079363637288",
+   "url": "https://x.com/Avenoxai/status/2108930079363637288",
+   "author": {
+    "handle": "Avenoxai",
+    "name": "Avenox"
+   },
+   "postedAt": "2026-10-10T14:38:07.000Z",
+   "addedAt": "2026-10-11",
+   "lang": "tr",
+   "models": [
+    "haiku-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "Haiku 5.5一笔画人脸挑战",
+    "en": "Single-line face drawing challenge by Haiku 5.5"
+   },
+   "summary": {
+    "zh": "作者让Claude Haiku 5.5用一笔不断线的方式画出一张脸，包括所有关卡和对手角色，并分享了完整过程视频。",
+    "en": "Creator had Claude Haiku 5.5 draw a face in a single continuous line without lifting the pen, including all levels and opponent characters, and shared a video of the process."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 17223,
+    "likes": 130,
+    "replies": 9,
+    "reposts": 0,
+    "bookmarks": 53,
+    "checkedAt": "2026-10-11T18:06:57.785Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2108930056588550145/img/rrbwlEG__U33_Kqk.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2108930056588550145/vid/avc1/1280x720/UmF78N2Ode--1AoG.mp4?tag=16",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 21
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103569043836027339",
    "url": "https://x.com/jackclarkSF/status/2103569043836027339",
    "author": {
@@ -56476,6 +56625,57 @@
    }
   },
   {
+   "id": "2108902793797091808",
+   "url": "https://x.com/chetaslua/status/2108902793797091808",
+   "author": {
+    "handle": "chetaslua",
+    "name": "Chetaslua"
+   },
+   "postedAt": "2026-10-10T12:49:42.000Z",
+   "addedAt": "2026-10-11",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "钢琴乐曲与螺旋线自画像的自述网站",
+    "en": "Self-portrait website with piano score and spiral line"
+   },
+   "summary": {
+    "zh": "作者要求Claude Opus 5.5为自己（而非用户）设计并用JavaScript编写一个网站，包含原创钢琴曲和受雕刻家Claude Mellan启发的单线螺旋自画像，并给予模型完全的创作自由。",
+    "en": "Creator asked Claude Opus 5.5 to design and code a website for itself (not for the user), using JavaScript to generate an original piano score and a one-line spiraling self-portrait inspired by engraver Claude Mellan, giving the model full creative freedom."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "JavaScript",
+    "Claude Code"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 15587,
+    "likes": 196,
+    "replies": 20,
+    "reposts": 6,
+    "bookmarks": 67,
+    "checkedAt": "2026-10-11T18:06:57.785Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2108902282276548608/img/oWvnAlECaG4nuYaF.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2108902282276548608/vid/avc1/1280x720/oY_NKKa67jVIACn6.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 53
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103691326088962290",
    "url": "https://x.com/KanaWorks_AI/status/2103691326088962290",
    "author": {
@@ -57103,6 +57303,56 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2108931642542698801",
+   "url": "https://x.com/0xRhinoX/status/2108931642542698801",
+   "author": {
+    "handle": "0xRhinoX",
+    "name": "Rhino"
+   },
+   "postedAt": "2026-10-10T14:44:20.000Z",
+   "addedAt": "2026-10-11",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "用three.js构建的飞行幻想世界",
+    "en": "Flying fantasy world built with three.js"
+   },
+   "summary": {
+    "zh": "作者用Claude Opus 5.5纯靠Three.js代码（不使用任何3D模型）制作了一个阿凡达风格的飞行世界Aeloria，总大小仅370KB，并公开了GitHub仓库。",
+    "en": "Creator used Claude Opus 5.5 to build an Avatar-style flying world called Aeloria entirely in Three.js code with no 3D models, totaling 370 KB, and released the GitHub repo."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 15001,
+    "likes": 386,
+    "replies": 41,
+    "reposts": 30,
+    "bookmarks": 182,
+    "checkedAt": "2026-10-11T18:06:57.785Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2108930839153164288/img/UPd6VLuGqMqD2O3n.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2108930839153164288/vid/avc1/1280x720/ZDN93rOl8L3GBJjN.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 28
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -60029,6 +60279,63 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2108926847442378848",
+   "url": "https://x.com/vib3coded/status/2108926847442378848",
+   "author": {
+    "handle": "vib3coded",
+    "name": "Vib3Coded"
+   },
+   "postedAt": "2026-10-10T14:25:17.000Z",
+   "addedAt": "2026-10-11",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "互动锦鲤池同题对比",
+    "en": "Interactive koi pond side-by-side comparison"
+   },
+   "summary": {
+    "zh": "作者用同一段详细提示词分别让Claude Opus 5.5和GPT-6 Astra制作了一个基于Three.js/WebGL的互动锦鲤池网页，并对比了两者效果。",
+    "en": "An interactive 3D koi pond web app built with Three.js/WebGL, created from a detailed prompt and compared side-by-side with a version made by GPT-6 Astra using the same prompt."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/vib3coded/status/2108927154650038409",
+    "text": "Build a beautiful, full-screen interactive koi pond using Three.js + WebGL. Use a top-down view with clear turquoise water, sunlight, animated caustics on the pond floor, and a convincing sense of depth.\n\nPlace an elegant translucent selection panel at the bottom with four koi varieties: Kohaku, Showa, Golden Ogon, and Platinum. Clicking a card releases that fish into the pond. Dragging a fish from its card lets the user choose exactly where to drop it.\n\nMake each landing feel satisfying: a splash with droplets, a brief depression in the water surface, and expanding ripples. The fish should then dive beneath the surface. Use refraction and depth cues so the koi clearly look submerged.\n\nCreate detailed 3D koi with eyes, scales, fins, and flowing tails. Animate their bodies, tails, and fins together. Each fish should independently change direction and speed, turn smoothly near boundaries, and avoid other fish.\n\nLet users touch and drag across the water to create ripples. Add rain and a movable whirlpool whose current affects the fish. Include Calm, Clear pond, and a control to hide the interface for screen recording.\n\nUse Web Audio to create landing splashes, soft musical droplets, gentle swimming water sounds, rain, and a whirlpool sound. Enable audio through a Sound button, fade it smoothly when muted, and pause it when the browser tab is hidden.\n\nKeep all labels and buttons in English. Make the layout responsive for mobile. Optimize rendering and animation for smooth performance with several dozen fish.\n\nDeliver a complete, working website with polished visuals and functional interactions."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Three.js",
+    "WebGL",
+    "GPT-6 Astra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 12887,
+    "likes": 240,
+    "replies": 35,
+    "reposts": 28,
+    "bookmarks": 119,
+    "checkedAt": "2026-10-11T18:06:57.785Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2108926603006722049/img/4Yh8ay7U9JvPZGd5.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2108926603006722049/vid/avc1/720x910/9UfFIGkxDkakztwN.mp4?tag=29",
+    "width": 720,
+    "height": 910,
+    "durationSec": 15
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -68394,6 +68701,58 @@
    }
   },
   {
+   "id": "2108908117874635170",
+   "url": "https://x.com/old_pgmrs_will/status/2108908117874635170",
+   "author": {
+    "handle": "old_pgmrs_will",
+    "name": "いにしえ@高信頼AIニュース\"NeuralWire.org\"運営｜Will Oldgram"
+   },
+   "postedAt": "2026-10-10T13:10:51.000Z",
+   "addedAt": "2026-10-11",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "全自动生成的三分钟AI新闻解说视频",
+    "en": "Automated three-minute AI news explainer video"
+   },
+   "summary": {
+    "zh": "作者用Grok Bot搭配Claude Opus 5.5，仅用一句简单指令就全自动制作了一段约3分钟的AI新闻解说视频，视频用Grok Imagine生成，配音用Eleven V4。",
+    "en": "A roughly 3-minute AI news explainer video was fully auto-produced by a Grok Bot combined with Opus 5.5, using Grok Imagine for video and Eleven V4 for narration, triggered by a single short instruction."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Grok Imagine",
+    "ElevenLabs",
+    "VOICEVOX"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 8591,
+    "likes": 118,
+    "replies": 4,
+    "reposts": 7,
+    "bookmarks": 160,
+    "checkedAt": "2026-10-11T18:06:57.785Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2108904710912827392/img/rjuMnpWl2gJT9jv6.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2108904710912827392/vid/avc1/960x540/Kwm25DocNhsRD3nC.mp4?tag=29",
+    "width": 960,
+    "height": 540,
+    "durationSec": 173
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2108567673890111948",
    "url": "https://x.com/LexnLin/status/2108567673890111948",
    "author": {
@@ -68775,6 +69134,56 @@
     "width": 1280,
     "height": 720,
     "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2108930097306837030",
+   "url": "https://x.com/Snorlxz/status/2108930097306837030",
+   "author": {
+    "handle": "Snorlxz",
+    "name": "Sagar"
+   },
+   "postedAt": "2026-10-10T14:38:11.000Z",
+   "addedAt": "2026-10-11",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "Opus 5.5制作的儿童iOS小游戏",
+    "en": "Small iOS game for kids built by Opus 5.5"
+   },
+   "summary": {
+    "zh": "作者在不到一小时内用Claude Opus 5.5编写了一款儿童iOS小游戏的全部代码，粘土风格的美术素材由Codex CLI生成。",
+    "en": "A small iOS game for kids was built in under an hour with Claude Opus 5.5 writing the code while Codex CLI generated the clay-style art."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Codex CLI"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 8469,
+    "likes": 150,
+    "replies": 11,
+    "reposts": 6,
+    "bookmarks": 117,
+    "checkedAt": "2026-10-11T18:06:57.785Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2108928243390885888/img/kndJIt4FxJq4Ox2T.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2108928243390885888/vid/avc1/720x720/QarvSdvsd1xuDPV5.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 19
    },
    "evidence": {
     "via": "daily",
@@ -69786,6 +70195,54 @@
     "width": 1280,
     "height": 720,
     "durationSec": 81
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2108896132395061356",
+   "url": "https://x.com/mehmetsongur_/status/2108896132395061356",
+   "author": {
+    "handle": "mehmetsongur_",
+    "name": "Mehmet Songur"
+   },
+   "postedAt": "2026-10-10T12:23:14.000Z",
+   "addedAt": "2026-10-11",
+   "lang": "tr",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "计量经济学模拟讲解视频",
+    "en": "Econometrics explainer with simulations"
+   },
+   "summary": {
+    "zh": "作者与Claude Opus 5.5共同制作了一段12分钟的视频，用模拟演示讲解计量经济学与数据科学的关系。",
+    "en": "A 12-minute video explaining econometrics as a precursor to data science, with simulations, was prepared together with Claude Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 7754,
+    "likes": 165,
+    "replies": 3,
+    "reposts": 25,
+    "bookmarks": 146,
+    "checkedAt": "2026-10-11T18:06:57.785Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2108886353798664192/img/vAOuXCRqbZZPTxX1.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2108886353798664192/vid/avc1/1280x720/fxOiABU-VImBljoX.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 720
    },
    "evidence": {
     "via": "daily",
@@ -71511,6 +71968,57 @@
    }
   },
   {
+   "id": "2108926571021279560",
+   "url": "https://x.com/ann_nnng/status/2108926571021279560",
+   "author": {
+    "handle": "ann_nnng",
+    "name": "Ann Nguyen"
+   },
+   "postedAt": "2026-10-10T14:24:11.000Z",
+   "addedAt": "2026-10-11",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "品牌墨渍效果生成工具",
+    "en": "Ink-bleed brand effect tool"
+   },
+   "summary": {
+    "zh": "作者用Claude Opus 5.5结合Three.js和WebGL制作了一个能把品牌视觉转换成墨渗效果的网页工具。",
+    "en": "A web tool that turns a brand into an ink-bleed visual style was made with Claude Opus 5.5 using Three.js and WebGL."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js",
+    "WebGL"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 6835,
+    "likes": 235,
+    "replies": 15,
+    "reposts": 8,
+    "bookmarks": 95,
+    "checkedAt": "2026-10-11T18:06:57.785Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2108926288299978752/img/deqBil09yltGHR0i.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2108926288299978752/vid/avc1/1112x720/SlRylNNxdFdLX-_k.mp4?tag=29",
+    "width": 1112,
+    "height": 720,
+    "durationSec": 17
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2108264801424269777",
    "url": "https://x.com/Cyphryx/status/2108264801424269777",
    "author": {
@@ -72234,6 +72742,54 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2108914585340428549",
+   "url": "https://x.com/konstantinsaifo/status/2108914585340428549",
+   "author": {
+    "handle": "konstantinsaifo",
+    "name": "Konstantin Saifoulline"
+   },
+   "postedAt": "2026-10-10T13:36:33.000Z",
+   "addedAt": "2026-10-11",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "仓库包裹分拣决策模拟",
+    "en": "Warehouse parcel sorting decision simulation"
+   },
+   "summary": {
+    "zh": "作者让Claude Opus 5.5设计了一个仓库快速决策模型，在三个关口约270毫秒内判断包裹状态，不确定的情况再转交更慢的六摄像头系统二复核。",
+    "en": "Claude Opus 5.5 was used to design a fast 'System 1' decision model for a warehouse that classifies parcels in about 270ms at three gates, routing uncertain cases to a slower six-camera System 2 check."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 6402,
+    "likes": 129,
+    "replies": 1,
+    "reposts": 17,
+    "bookmarks": 104,
+    "checkedAt": "2026-10-11T18:06:57.785Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2108914132762144768/img/vmT7OF0_HFDGPNg3.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2108914132762144768/vid/avc1/1280x720/pIEhjDZSXFajuAy8.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 40
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
