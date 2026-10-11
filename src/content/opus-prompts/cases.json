@@ -1,8 +1,8 @@
 {
  "model": "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.5)",
  "threshold": 5000,
- "updatedAt": "2026-10-10T08:47:33.197Z",
- "statsCheckedAt": "2026-10-10T08:47:33.197Z",
+ "updatedAt": "2026-10-11T05:17:47.827Z",
+ "statsCheckedAt": "2026-10-11T05:17:47.827Z",
  "inclusionRule": "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -4805,6 +4805,56 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2108604020814233606",
+   "url": "https://x.com/nicksaraev/status/2108604020814233606",
+   "author": {
+    "handle": "nicksaraev",
+    "name": "nicksaraev"
+   },
+   "postedAt": "2026-10-09T17:02:29.000Z",
+   "addedAt": "2026-10-11",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "我的世界版进击的巨人模组",
+    "en": "Attack on Titan mod in Minecraft"
+   },
+   "summary": {
+    "zh": "作者让Claude Opus 5.5制作了一个《进击的巨人》主题的类Minecraft多人游戏，耗时约一小时，成本不到25美元，所有提示词都通过链接页面公开。",
+    "en": "Creator asked Claude Opus 5.5 to build a multiplayer Attack on Titan themed Minecraft-style game, taking about an hour and under $25, with all prompts published via a linked benchmark page."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [
+    "https://claude-model-bench.netlify.app/round-5/"
+   ],
+   "stats": {
+    "views": 401618,
+    "likes": 6444,
+    "replies": 245,
+    "reposts": 397,
+    "bookmarks": 3471,
+    "checkedAt": "2026-10-11T05:17:47.827Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2108603026898653184/img/S6dK-12uXD6j1an7.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2108603026898653184/vid/avc1/1280x720/nR8Lx_YSlw9O41zL.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 1406
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -25431,6 +25481,56 @@
    }
   },
   {
+   "id": "2108673427590590971",
+   "url": "https://x.com/0xRafy/status/2108673427590590971",
+   "author": {
+    "handle": "0xRafy",
+    "name": "0xRafy"
+   },
+   "postedAt": "2026-10-09T21:38:17.000Z",
+   "addedAt": "2026-10-11",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "用GrokBot和Opus5.5搭建的动态设计工作室",
+    "en": "Motion design studio built with GrokBot and Opus 5.5"
+   },
+   "summary": {
+    "zh": "作者将Claude Opus 5.5连接到自己的GrokBot上，将其变成了一个动态设计工作室。",
+    "en": "Creator connected Claude Opus 5.5 to their GrokBot to turn it into a motion design studio."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Grok"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 65012,
+    "likes": 468,
+    "replies": 29,
+    "reposts": 23,
+    "bookmarks": 783,
+    "checkedAt": "2026-10-11T05:17:47.827Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2108671886280253440/img/pmVjk-TVsqCGLFSc.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2108671886280253440/vid/avc1/1280x720/1G1yxxjl3qFA8H6i.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 44
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102745622608810010",
    "url": "https://x.com/uiNerd/status/2102745622608810010",
    "author": {
@@ -25926,6 +26026,54 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2108611423421043095",
+   "url": "https://x.com/0xDeniAi/status/2108611423421043095",
+   "author": {
+    "handle": "0xDeniAi",
+    "name": "Deni"
+   },
+   "postedAt": "2026-10-09T17:31:54.000Z",
+   "addedAt": "2026-10-11",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "把马里奥64放进艾尔登法环",
+    "en": "Mario 64 dropped into Elden Ring"
+   },
+   "summary": {
+    "zh": "作者用一句简短提示让Opus 5.5把马里奥64搬进艾尔登法环的世界，生成了马里奥被骑士追逐爬城墙、同时响着欢快马里奥音乐的动画。",
+    "en": "A crossover animation placing Mario 64 inside Elden Ring, with Mario fleeing knights up castle walls while his classic music plays, made with Opus 5.5 from a brief prompt."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 62828,
+    "likes": 472,
+    "replies": 21,
+    "reposts": 31,
+    "bookmarks": 160,
+    "checkedAt": "2026-10-11T05:17:47.827Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2108611340910657537/img/qrRf8aTXi_4Uteud.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2108611340910657537/vid/avc1/1280x720/rl-UNkhduC38QMfC.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 21
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -33320,6 +33468,61 @@
    }
   },
   {
+   "id": "2108625335122026542",
+   "url": "https://x.com/ivanainai/status/2108625335122026542",
+   "author": {
+    "handle": "ivanainai",
+    "name": "Ivana"
+   },
+   "postedAt": "2026-10-09T18:27:10.000Z",
+   "addedAt": "2026-10-11",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "Three.js牛顿摆：Opus对比Astra 6",
+    "en": "Three.js Newton's cradle: Opus vs Astra 6"
+   },
+   "summary": {
+    "zh": "作者给Opus 5.5和另一个名为Astra 6的模型提供了同一个详细提示和参考图片，让它们用Three.js制作带物理效果的牛顿摆单文件网页，并对比了两者的效果。",
+    "en": "A single-file Three.js Newton's cradle simulation with chrome balls and physics, built by Opus 5.5 from a long detailed prompt that included a reference image, compared against another model called Astra 6."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/ivanainai/status/2108625789386121721",
+    "text": "Build a complete, single-file HTML/Three.js experience showing an exceptionally beautiful, interactive Newton’s cradle.\n\nUse the attached image as the reference for the recognizable construction: five polished metal balls suspended inside two parallel chrome frames.\n\nThe result should feel like a luxury product filmed in a real photography studio, with convincing materials, graceful pendulum motion, and working collision physics.\n\nOpen directly into the finished scene. The first rendered frame must already be composed beautifully enough to use as a video thumbnail.\n\nPrioritize three things equally: the beauty of the chrome, the physical construction, and the correctness of the motion.\n\nCreate a square, recording-ready composition that adapts to the browser without stretching. Center one substantial Newton’s cradle on a seamless warm-ivory studio surface.\n\nUse a fixed camera positioned mostly in front of the cradle, slightly above the balls and slightly off-center. Show enough depth to distinguish the front and rear frames, while keeping all five balls easy to count.\n\nUse a restrained product-photography perspective, approximately equivalent to a 70mm lens. Avoid a wide-angle appearance.\n\nThe cradle should fill most of the image. Leave comfortable margins for the full outward swing on both sides. Neither the balls nor the frame may leave the image during normal operation.\n\nKeep the camera stationary throughout. No orbiting, automatic zoom, camera shake, or cuts.\n\nConstruct exactly five identical, perfectly round polished stainless-steel spheres.\n\nAt rest, their centers must form one horizontal row, with neighboring spheres touching. Their diameters, masses, and suspension lengths must match.\n\nUse two slender, parallel, inverted-U chrome support frames with rounded corners, positioned in front of and behind the ball row.\n\nEach ball must hang from two fine, taut suspension wires: one connected to the front support and one to the rear support. These wires constrain its motion to the shared vertical swing plane.\n\nInclude small, believable attachment details. The wires must connect visibly to the balls and frame.\n\nThe support frame and anchors remain completely stationary. Update the suspension geometry from the actual ball positions every frame. Wires must never stretch, disconnect, pass through the spheres, or wave independently.\n\nChoose elegant proportions: substantial spheres, slender tubular supports, and enough suspension length for a satisfying swing. Avoid thick ropes, oversized frames, and a bulky decorative base.\n\nMake the metal look convincingly reflective.\n\nUse physically based metallic materials, high-quality sphere geometry, restrained surface roughness, and a carefully designed reflection environment.\n\nCreate large studio-softbox reflections that wrap naturally around the spheres and curved frame. Include broad bright highlights, darker reflected regions, and subtle warm tones from the studio.\n\nThe spheres must retain readable volume. Avoid flat gray metal, featureless white balls, plastic shading, and excessive bloom.\n\nBuild the reflection environment procedurally inside the file. Do not depend on downloaded HDR images or external texture assets.\n\nUse a large soft key light from the upper-left, gentle fill from the opposite side, and a restrained rim light to define the metal against the background.\n\nAdd soft contact shadows beneath the frame and moving shadows beneath the balls. Shadows should follow the motion and help communicate height.\n\nKeep the background uncluttered, with a very subtle ivory gradient. The overall image should feel calm, precise, and expensive.\n\nImplement a working simplified Newton’s cradle simulation.\n\nRepresent each sphere as an equal-mass pendulum with an angular position and angular velocity. Gravity must drive the swing. Derive the sphere positions from the pendulum geometry.\n\nUse stable time integration and collision handling that can propagate impacts through the full chain of touching balls.\n\nA fixed timestep with sufficient substeps, event-based impacts, or a suitable constraint-aware solver is acceptable. Choose an approach that remains stable at different rendering frame rates.\n\nDo not animate the balls with unrelated sine waves or a prerecorded sequence. The motion must respond to the simulated state and user input.\n\nThe required behavior is:\n\nRelease one outer ball. It swings into the row, transfers its motion through the chain, and approximately one ball swings outward at the opposite end.\nThe outgoing ball returns, strikes the row, and sends the original outer ball outward again.\nRelease two adjacent balls together from one side. Approximately two balls must swing outward together from the opposite side.\nThe remaining balls should stay close to their resting positions, allowing small physically plausible movement during impacts.\nMotion transfers at contact. The outgoing balls must not begin swinging before the incoming balls reach the row.\n\nHandle the chain of contacts consistently. A single order-dependent collision pass must not produce a different result when the direction reverses.\n\nCollisions should approximately conserve momentum and kinetic energy over the brief impact interval, with small losses. Use gentle damping so the swing amplitude decreases gradually.\n\nThe simulation must not gain energy, accelerate indefinitely, visibly interpenetrate, jitter continuously, or send the entire row swinging after every impact.\n\nThe balls should accelerate toward the bottom of their arcs and slow naturally near their turning points. Avoid constant-speed swinging.\n\nStart with the leftmost ball raised approximately 35 degrees and the other four hanging at rest. Hold this initial pose briefly, around 0.4 seconds, then release automatically.\n\nThe experience must immediately demonstrate the classic alternating motion without requiring a click. Continue running without an automatic reset.\n\nAdd a small, elegant control strip near the bottom edge with:\n\n“1 BALL”\n“2 BALLS”\nPause / Resume\nReset\n“0.25×” slow motion\n\nKeep these controls visually secondary. They must not overlap the cradle or its swing paths.\n\nSelecting “1 BALL” or “2 BALLS” should reset the simulation, raise the corresponding leftmost ball or pair to the same release angle, briefly hold, and release.\n\nReset should restore and replay the currently selected mode.\n\nSlow motion must scale simulated time while preserving the same physics. It must not change gravity, collision behavior, or suspension geometry.\n\nAllow the user to drag either outer ball outward within its permitted swing plane, then release it. Clamp the drag angle to a sensible maximum, around 45 degrees. Keep its suspension wires taut throughout.\n\nAdd an “H” keyboard shortcut to hide or reveal the controls for clean recording.\n\nKeep the experience silent. No music, collision sounds, particles, motion trails, impact flashes, explanatory overlays, large titles, model names, or decorative text.\n\nDeliver one complete HTML file with inline CSS and JavaScript. Use one consistently pinned Three.js version and matching modules if needed.\n\nNo build step, backend, external models, external textures, or HDR downloads.\n\nInitialize the renderer, camera, lighting, materials, and starting pose before revealing the canvas. Avoid a visible black startup frame.\n\nSupport browser resizing without distorting the scene. Aim for smooth performance on a normal laptop and cap pixel density sensibly.\n\nBefore finishing, check that:\n\nExactly five spheres remain visible and correctly suspended.\nThe complete frame and maximum swing fit inside the square composition.\nOne-ball mode transfers approximately one ball at each impact.\nTwo-ball mode transfers approximately two balls at each impact.\nPause, reset, slow motion, and dragging work.\nChrome reflections remain readable throughout the motion.\nThe scene appears immediately and produces no runtime errors.\n\nReturn the complete working HTML."
+   },
+   "referenceAssets": true,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 45927,
+    "likes": 165,
+    "replies": 19,
+    "reposts": 4,
+    "bookmarks": 26,
+    "checkedAt": "2026-10-11T05:17:47.827Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2108625224874737664/img/ZjoPil9WgYKlCnEq.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2108625224874737664/vid/avc1/1440x720/Y8W6jIlemCwGbkvh.mp4?tag=29",
+    "width": 1440,
+    "height": 720,
+    "durationSec": 24
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2105355809677001180",
    "url": "https://x.com/marcusyul/status/2105355809677001180",
    "author": {
@@ -35918,6 +36121,61 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2108644023330390194",
+   "url": "https://x.com/Blushneyy/status/2108644023330390194",
+   "author": {
+    "handle": "Blushneyy",
+    "name": "Blushney"
+   },
+   "postedAt": "2026-10-09T19:41:26.000Z",
+   "addedAt": "2026-10-11",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "用Blender制作的钓鱼游戏预告片",
+    "en": "Fishing game trailer made in Blender"
+   },
+   "summary": {
+    "zh": "作者在自己已有的Roblox钓鱼游戏项目环境中，用一句六七个单词的简短提示让Opus 5.5一次性在Blender中生成了完整的游戏预告片。",
+    "en": "A game trailer for the creator's Roblox fishing game, fully produced in Blender by Opus 5.5 in one shot from a short 6-7 word prompt within the creator's existing project environment."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/Blushneyy/status/2108644027532812762",
+    "text": "Make a full trailer based on a blender animated animations."
+   },
+   "referenceAssets": true,
+   "tools": [
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 41274,
+    "likes": 185,
+    "replies": 48,
+    "reposts": 3,
+    "bookmarks": 146,
+    "checkedAt": "2026-10-11T05:17:47.827Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2108643179368976384/img/XH3xVYiD_ykxMW7G.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2108643179368976384/vid/avc1/1280x720/-u8kV0mw5ITumtwI.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 43
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -45770,6 +46028,56 @@
    }
   },
   {
+   "id": "2108696942108938245",
+   "url": "https://x.com/zerozakiyamo/status/2108696942108938245",
+   "author": {
+    "handle": "zerozakiyamo",
+    "name": "零崎業萌"
+   },
+   "postedAt": "2026-10-09T23:11:43.000Z",
+   "addedAt": "2026-10-11",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "AI漫画配音版第一章",
+    "en": "AI manga chapter voiced edition"
+   },
+   "summary": {
+    "zh": "这是一部哈利波特同人AI漫画章节，将马尔福和罗恩女性化，使用ElevenLabs v4生成日语配音并配英文字幕，由Opus 5.5负责制作和演出。",
+    "en": "A voiced AI manga chapter featuring a Harry Potter fan AU with Malfoy and Ron as girls, with Japanese voice from ElevenLabs v4 and English subtitles, produced and directed with Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "ElevenLabs"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 24947,
+    "likes": 1012,
+    "replies": 2,
+    "reposts": 127,
+    "bookmarks": 517,
+    "checkedAt": "2026-10-11T05:17:47.827Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2108696764228513792/img/NBayfn7Go3q2TeBf.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2108696764228513792/vid/avc1/1280x720/0H6P1InaxJrepE33.mp4?tag=16",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 352
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103596524018221133",
    "url": "https://x.com/eryidebiji/status/2103596524018221133",
    "author": {
@@ -48135,6 +48443,54 @@
    }
   },
   {
+   "id": "2108632470551933011",
+   "url": "https://x.com/gxjo_dev/status/2108632470551933011",
+   "author": {
+    "handle": "gxjo_dev",
+    "name": "gxjo"
+   },
+   "postedAt": "2026-10-09T18:55:32.000Z",
+   "addedAt": "2026-10-11",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "依参考视频复刻的动态设计",
+    "en": "Motion design recreated from reference clip"
+   },
+   "summary": {
+    "zh": "作者用Opus 5.5 Extra High，结合一个Pinterest参考视频片段和已准备好的素材，在不到15分钟内复刻出了这段动态设计效果。",
+    "en": "A motion design clip recreated from a Pinterest reference video in under 15 minutes using Opus 5.5 Extra High with reference clips and prepared assets."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 22146,
+    "likes": 408,
+    "replies": 24,
+    "reposts": 16,
+    "bookmarks": 370,
+    "checkedAt": "2026-10-11T05:17:47.827Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2108632379640397824/img/9KsIkKBgAzt69fLc.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2108632379640397824/vid/avc1/1280x720/vKJfvt3hPawp8Sgg.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 19
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103415186086674920",
    "url": "https://x.com/VincentWei93/status/2103415186086674920",
    "author": {
@@ -48178,6 +48534,54 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2108694114476650840",
+   "url": "https://x.com/LexnLin/status/2108694114476650840",
+   "author": {
+    "handle": "LexnLin",
+    "name": "Leon Lin"
+   },
+   "postedAt": "2026-10-09T23:00:29.000Z",
+   "addedAt": "2026-10-11",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "代码生成的海滩场景与音效",
+    "en": "Code-generated beach scene with sound"
+   },
+   "summary": {
+    "zh": "一个完全由代码生成的海滩场景，包括波浪、棕榈树、阴影和声音效果，使用Opus 5.5制作并以Claude artifact链接分享。",
+    "en": "An entirely code-generated beach scene with waves, palm trees, shadows and sound, made with Opus 5.5 and shared as a Claude artifact link."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 21973,
+    "likes": 520,
+    "replies": 34,
+    "reposts": 20,
+    "bookmarks": 240,
+    "checkedAt": "2026-10-11T05:17:47.827Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2108693683654594560/img/hNCzb6pLzo1fNunW.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2108693683654594560/vid/avc1/960x720/2pU9hi8xQmfZh8zp.mp4?tag=29",
+    "width": 960,
+    "height": 720,
+    "durationSec": 18
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -48834,6 +49238,54 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2108582046151180791",
+   "url": "https://x.com/ainunnajib/status/2108582046151180791",
+   "author": {
+    "handle": "ainunnajib",
+    "name": "Ainun Najib"
+   },
+   "postedAt": "2026-10-09T15:35:10.000Z",
+   "addedAt": "2026-10-11",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "Menara Ijazah AI研究解说视频",
+    "en": "Menara Ijazah AI-researched explainer video"
+   },
+   "summary": {
+    "zh": "一张名为“Menara Ijazah”的图片，作者表示是用 Claude Opus 5.5 研究并生成的。",
+    "en": "An image titled 'Menara Ijazah' that the creator says was researched and generated using Claude Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 21017,
+    "likes": 128,
+    "replies": 79,
+    "reposts": 22,
+    "bookmarks": 33,
+    "checkedAt": "2026-10-11T05:17:47.827Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/media/HUMwJfHaMAAs6Mr.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2108581990090092544/vid/avc1/720x720/HNKJEu5Pg5zX5pac.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 139
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -50096,6 +50548,66 @@
    }
   },
   {
+   "id": "2108735367331672201",
+   "url": "https://x.com/Graalitoo/status/2108735367331672201",
+   "author": {
+    "handle": "Graalitoo",
+    "name": "Graalito"
+   },
+   "postedAt": "2026-10-10T01:44:24.000Z",
+   "addedAt": "2026-10-11",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "用Opus 5.5重制的3D游戏",
+    "en": "3D game remake built with Opus 5.5"
+   },
+   "summary": {
+    "zh": "作者用 Claude Opus 5.5 配合自制的“Skill Gauntlet Loop”流程（结合 Blender、Tripo3D、Godot 等工具），将1992年的解包游戏《Dune》重做成第三人称3D冒险游戏，沿用原版音效音乐，并以丹尼斯·维伦纽瓦电影画面作为美术参考。",
+    "en": "The creator used Claude Opus 5.5 with a custom 'Skill Gauntlet Loop' combining Blender, Tripo3D, Godot and other skills to remake a decompiled 1992 PC game (Dune) as a 3D third-person adventure, reusing the original audio and referencing Denis Villeneuve films for visuals."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/Graalitoo/status/2108904792009609615",
+    "text": "remake entirely the decompiled game into third person 3D adventure game, using my /ultimate-gauntlet-loop skill, use the originals BGM & SFX's from the game, use imagegen to turn the 2D characters into reference image for tripo3D (I also have a skill for that). Use the originals visuals and the Denis Villeneuve movies visuals as goal and reference for the artistic direction.\n\nAnd that's it."
+   },
+   "referenceAssets": true,
+   "tools": [
+    "Blender",
+    "Tripo",
+    "Godot",
+    "ElevenLabs",
+    "Mixamo",
+    "Auto Rig Pro"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 19971,
+    "likes": 245,
+    "replies": 18,
+    "reposts": 11,
+    "bookmarks": 107,
+    "checkedAt": "2026-10-11T05:17:47.827Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2108734906608300032/img/XlKvZ9eFKVBL5FB6.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2108734906608300032/vid/avc1/1280x720/RJW9diWOuYCc13p1.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 214
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2107108561851445324",
    "url": "https://x.com/gkxspace/status/2107108561851445324",
    "author": {
@@ -50289,6 +50801,57 @@
    "evidence": {
     "via": "fxtwitter",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2108625504450592923",
+   "url": "https://x.com/julianleiss/status/2108625504450592923",
+   "author": {
+    "handle": "julianleiss",
+    "name": "Julián Leiss"
+   },
+   "postedAt": "2026-10-09T18:27:51.000Z",
+   "addedAt": "2026-10-11",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "博尔赫斯风格双线叙事短片",
+    "en": "Borges-inspired dual narrative short film"
+   },
+   "summary": {
+    "zh": "一个基于博尔赫斯短篇《La trama》的视频创作，用真实档案影像两次呈现同一场景，制作工具包括 Opus 5.5、Paper 和 Midjourney。",
+    "en": "A video exercise based on Jorge Luis Borges' 'La trama', showing the same scene twice using real archive footage, made with Opus 5.5, Paper and Midjourney."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Paper",
+    "Midjourney"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 19665,
+    "likes": 396,
+    "replies": 28,
+    "reposts": 16,
+    "bookmarks": 372,
+    "checkedAt": "2026-10-11T05:17:47.827Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2108625398254755841/img/Zm3wS-N8munSSFfM.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2108625398254755841/vid/avc1/960x720/zEeZP2e8Px1w2sWs.mp4?tag=29",
+    "width": 960,
+    "height": 720,
+    "durationSec": 36
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -55054,6 +55617,59 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2108570705692357094",
+   "url": "https://x.com/rossaxbt/status/2108570705692357094",
+   "author": {
+    "handle": "rossaxbt",
+    "name": "testarossa"
+   },
+   "postedAt": "2026-10-09T14:50:06.000Z",
+   "addedAt": "2026-10-11",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "橙色圆点动态设计系统",
+    "en": "Orange dot kinetic motion system"
+   },
+   "summary": {
+    "zh": "一个15秒、零关键帧的运动设计视频，由单个HTML文件制作而成，作者公开了完整的结构化提示词，使用 Claude Opus 5.5 完成。",
+    "en": "A 15-second zero-keyframe motion design video built from one HTML file with a fully published structured prompt, created using Claude Opus 5.5."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "post",
+    "sourceUrl": "https://x.com/rossaxbt/status/2108570705692357094",
+    "text": "<inputs>\nAsk me for: a short label for the opening toggle, one hero word, a percentage for the graph, the text for the final card, one accent color, and a track with a clear beat.\n</inputs>\n\n<direction>\nA 2D motion design film in 16:9. Use a warm off-white canvas, near-black backgrounds, bold typography and one vivid orange accent. The orange dot connects every scene: it starts in the UI, becomes the dot over a letter, traces a spring graph, grows into a shape and returns on the end card. A cursor makes the opening click feel real. Keep the motion sharp and controlled, with small spring overshoots and no dead time.\nBanned: stock footage, gradients, glows, particle bursts, random transitions and motion that isn't connected to an element already on screen.\n</direction>\n\n<structure>\nAround 15 seconds, with a visual change on every major beat.\nOpen: a cursor clicks the orange toggle beside \"Reduce Motion\". The letters bend and move into place until only \"Motion\" remains, with the orange dot above the \"i\".\nSpring: the dot jumps away from the word and lands on a graph. Its path draws a spring response, overshoots the target and settles beside a \"+22%\" callout.\nShape: the dot shoots across a line, grows into an orange circle and fills the frame. A black rounded square rotates inside it, then stretches into a pill. The scene contracts to a single orange dot on black.\nType: words like \"SPRINGS\", \"EASING\", \"KINETIC TYPE\", \"3D\" and \"SOUND\" orbit the dot. The circle of type opens out into a field of tiny dots.\nReveal: the halftone field expands and flips to black, revealing the final card: \"Opus 5.5\", \"Motion designer.\" and \"0 keyframes\".\nReturn: the orange dot moves back through the halftone, graph and toggle. Match the final frame to the first so the video loops cleanly.\n</structure>\n\n<build>\n1. One HTML file, 1920x1080 at 60fps. Compute every visual from time inside seek(t): no CSS transitions, timers or state carried between frames.\n2. Use closed-form springs for the toggle, bouncing dot and graph. Draw the graph from the same spring function that moves the dot.\n3. Animate letters individually for the \"Reduce Motion\" to \"Motion\" transformation. Keep the orange dot attached to the \"i\" until it begins its jump.\n4. Make the orange circle, rotating square and pill different states of the same shape. Preserve its position and motion through each transformation.\n5. Place the orbiting words along a circular path, then move their letters outward to hand the frame over to the halftone grid.\n6. Draw the halftone as a grid of dots whose sizes respond to the orange dot. Let it grow past the frame edges before revealing the end card.\n7. Sync the click, dot landing, graph peak, shape changes and final title to measured beats. Render one frame per beat to check the pacing before the full export.\n</build>\n\n<gotchas>\nThe graph and dot must follow the same motion or the spring will feel fake. Keep the orange accent consistent across every scene. Give outgoing and incoming text separate timing so letters don't overlap. When a shape fills the screen, scale it past all four corners. Match the cursor, dot and typography in the first and last frames to avoid a loop stutter.\n</gotchas>\n\n<start>\nAsk me for the inputs, then show me the beat map and four stills (toggle, graph, kinetic type, end card) before building the full video.\n</start>"
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 16215,
+    "likes": 252,
+    "replies": 6,
+    "reposts": 17,
+    "bookmarks": 273,
+    "checkedAt": "2026-10-11T05:17:47.827Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2108545224762851328/img/nTtZ_lzf733Ffiuq.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2108545224762851328/vid/avc1/1282x720/3LETku-o1M2mcW1k.mp4?tag=29",
+    "width": 1282,
+    "height": 720,
+    "durationSec": 15
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -60538,6 +61154,57 @@
    }
   },
   {
+   "id": "2108767659873681627",
+   "url": "https://x.com/aniketjart/status/2108767659873681627",
+   "author": {
+    "handle": "aniketjart",
+    "name": "Aniket J"
+   },
+   "postedAt": "2026-10-10T03:52:43.000Z",
+   "addedAt": "2026-10-11",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "Heatsink飞行赛车游戏更新",
+    "en": "Heatsink drone racing game update"
+   },
+   "summary": {
+    "zh": "无人机竞速游戏 Heatsink 的更新版本，新增地图、升级和特技动作，使用 Opus 5.5、Crayon pro 和 Three.js 制作。",
+    "en": "An update to a drone racing game called Heatsink with a new map, upgrades and stunts, created with Opus 5.5, Crayon pro and Three.js."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Crayon",
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 12261,
+    "likes": 214,
+    "replies": 13,
+    "reposts": 19,
+    "bookmarks": 128,
+    "checkedAt": "2026-10-11T05:17:47.827Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2108766717677871104/img/fNt0eWyJPBdI3yGi.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2108766717677871104/vid/avc1/1280x720/iooSwRKFPJz80mFL.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2106130713439256844",
    "url": "https://x.com/ai4everyday/status/2106130713439256844",
    "author": {
@@ -61578,6 +62245,57 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2108595566578192759",
+   "url": "https://x.com/techartist_/status/2108595566578192759",
+   "author": {
+    "handle": "techartist_",
+    "name": "Techartist"
+   },
+   "postedAt": "2026-10-09T16:28:53.000Z",
+   "addedAt": "2026-10-11",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "沿海小镇建造3D游戏",
+    "en": "3D coastal town building game"
+   },
+   "summary": {
+    "zh": "一款正在开发的3D游戏，玩家可以搭建带有层叠房屋、桥梁和灯塔的海滨小镇，夜晚模式下天空会布满灯笼，使用 Claude Opus 5.5 结合 Three.js 和 Blender 制作。",
+    "en": "A 3D game being built where players construct a coastal town with stacked houses, bridges and lighthouses, featuring a night mode with lanterns, made with Claude Opus 5.5 using Three.js and Blender."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js",
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 11718,
+    "likes": 338,
+    "replies": 30,
+    "reposts": 20,
+    "bookmarks": 177,
+    "checkedAt": "2026-10-11T05:17:47.827Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2108594969250582531/img/W020kDlTgRjdn9UY.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2108594969250582531/vid/avc1/1280x720/JR5CqpPvUVtWgsnR.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 25
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -64820,6 +65538,55 @@
    }
   },
   {
+   "id": "2108590346309706221",
+   "url": "https://x.com/notjazii/status/2108590346309706221",
+   "author": {
+    "handle": "notjazii",
+    "name": "J A Z I I"
+   },
+   "postedAt": "2026-10-09T16:08:08.000Z",
+   "addedAt": "2026-10-11",
+   "lang": "en",
+   "models": [
+    "haiku-5.5",
+    "fable-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "带天气、生物和武器的我的世界式沙盒游戏",
+    "en": "Minecraft-style sandbox with weather, mobs and weapons"
+   },
+   "summary": {
+    "zh": "作者使用Fable 5.5制作了一个类似Minecraft的沙盒游戏，加入了天气、怪物、套装和武器等内容，并以可玩的Claude artifact链接分享出来。",
+    "en": "A Minecraft-style sandbox game built with Fable 5.5, featuring added weather, mobs, suits and weapons, shared as a playable Claude artifact link."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 10119,
+    "likes": 257,
+    "replies": 27,
+    "reposts": 6,
+    "bookmarks": 26,
+    "checkedAt": "2026-10-11T05:17:47.827Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2108590182840877056/img/i89L-HXMxVm0r7HO.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2108590182840877056/vid/avc1/1280x720/oD9h2_NdA5GJPBUV.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 69
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103552356495597990",
    "url": "https://x.com/shraddhaha/status/2103552356495597990",
    "author": {
@@ -66187,6 +66954,62 @@
     "width": 1242,
     "height": 720,
     "durationSec": 42
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2108649845405929924",
+   "url": "https://x.com/vib3coded/status/2108649845405929924",
+   "author": {
+    "handle": "vib3coded",
+    "name": "Vib3Coded"
+   },
+   "postedAt": "2026-10-09T20:04:34.000Z",
+   "addedAt": "2026-10-11",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "果冻王国场景对比：Opus对GPT-6 Astra",
+    "en": "Jelly kingdom scene: Opus vs GPT-6 Astra"
+   },
+   "summary": {
+    "zh": "作者用同一段详细提示词，分别让Claude Opus 5.5和GPT-6 Astra生成了一个WebGPU果冻城堡立体景观场景，并进行对比。",
+    "en": "A WebGPU jelly diorama castle scene built with Claude Opus 5.5, generated from the same detailed prompt also run through GPT-6 Astra for comparison."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/vib3coded/status/2108649989098594707",
+    "text": "Build a single-file WebGPU \"material study\" page called \"Castle Jelly\", in the style of my jelly diorama series (Pirate Jelly / Island Jelly): a square block of wobbly jelly lake on a table in a paper studio, cut faces showing candy strata, italic serif masthead \"Castle / Jelly.\", glass control panel on the right, \"How to play\" line at the bottom-left, UI in English, mobile bottom-sheet layout.\nThe diorama: a fairy-tale castle on a cliff. The back-left of the block is a plateau whose front is a sheer wall of candy-striped rock (layer-cake strata that match the block's cut faces, a talus under the lake), meshed from an SDF with surface nets, mossy where it faces up. On the lawn: a cream castle with round towers, glossy pink/lilac/blue cone roofs, gold finials, fluttering pennants, crenellated walls, a great hall, arched windows (dark glass by day, lamplight at night), a gatehouse with a drawbridge, a brazier by the gate, gummy pines, flowering bushes, reeds. A river wells up from a spring, runs past the gate under the drawbridge and pours off the lip as a waterfall that arcs down into the jelly lake — and keeps going inside the jelly: a fraying plume, bubbles driven down then rising, bright threads of current streaming along the lake floor. The falls pound the surface (shallow-water waves, foam, spray, mist). A little royal galleon (blue hull, white sails, crown standard) sails laps of the lake.\nInteractions: Fireworks (rockets off the towers, coloured bursts that light the castle and the lake; automatic at night), Lower/Raise bridge, Royal salute (ship fires, splash), Wishing coins (into the pool under the falls); tap a tower / the gate / the brazier / the ship, drag the water to make waves, tip the block, throw coins and balls, bend the pines. Sliders: Firmness, Waterfall (flow), Wave damping, Time of day (noon → sunset → night with stars). Flavours: Glacier, Rose, Lilac. Shadows, caustics, refraction through the jelly, fixed-step physics."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "GPT-6 Astra",
+    "WebGPU"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 9175,
+    "likes": 245,
+    "replies": 26,
+    "reposts": 26,
+    "bookmarks": 107,
+    "checkedAt": "2026-10-11T05:17:47.827Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2108649604161863680/img/q4PFb-ZFSwAj5K7x.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2108649604161863680/vid/avc1/720x910/iA0Mj88OX1iOaFaq.mp4?tag=29",
+    "width": 720,
+    "height": 910,
+    "durationSec": 18
    },
    "evidence": {
     "via": "daily",
@@ -67563,6 +68386,54 @@
     "width": 1280,
     "height": 720,
     "durationSec": 18
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2108567673890111948",
+   "url": "https://x.com/LexnLin/status/2108567673890111948",
+   "author": {
+    "handle": "LexnLin",
+    "name": "Leon Lin"
+   },
+   "postedAt": "2026-10-09T14:38:03.000Z",
+   "addedAt": "2026-10-11",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "纸艺风格动画短片",
+    "en": "Paper-style stop-motion animation"
+   },
+   "summary": {
+    "zh": "作者用Claude Opus 5.5制作了一段纸艺风格的动画，背景音乐是由Claude从免费音乐库中挑选的。",
+    "en": "A short paper-craft style animation made with Claude Opus 5.5, with background music chosen by Claude from a royalty-free music library."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 8569,
+    "likes": 238,
+    "replies": 19,
+    "reposts": 6,
+    "bookmarks": 91,
+    "checkedAt": "2026-10-11T05:17:47.827Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2108567268820987904/img/1Rv5Fb9y9OaV32Wj.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2108567268820987904/vid/avc1/1280x720/02mf0F_41E2A0QFF.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 30
    },
    "evidence": {
     "via": "daily",
@@ -72783,6 +73654,56 @@
     "width": 600,
     "height": 600,
     "durationSec": 8
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2108606277618413780",
+   "url": "https://x.com/parhelion318/status/2108606277618413780",
+   "author": {
+    "handle": "parhelion318",
+    "name": "Dr. Apolotary"
+   },
+   "postedAt": "2026-10-09T17:11:27.000Z",
+   "addedAt": "2026-10-11",
+   "lang": "ru",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "将辐射3末日镇移植到辐射2的模组",
+    "en": "Fallout 2 mod porting Megaton from Fallout 3"
+   },
+   "summary": {
+    "zh": "作者用Claude Opus 5.5为《辐射2》制作了一个模组，将《辐射3》中的Megaton城市移植进来，并在Blender中制作了新资源和预告片，源码已发布在GitHub上。",
+    "en": "A Fallout 2 mod made with Claude Opus 5.5 that ports the Megaton city from Fallout 3, including new trailers and assets created in Blender, with source code shared on GitHub."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 5137,
+    "likes": 112,
+    "replies": 15,
+    "reposts": 8,
+    "bookmarks": 32,
+    "checkedAt": "2026-10-11T05:17:47.827Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2108606167228485632/img/3-8licnQ1MQcGjSE.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2108606167228485632/vid/avc1/960x720/T7-d9YkYoduhFbj8.mp4?tag=29",
+    "width": 960,
+    "height": 720,
+    "durationSec": 70
    },
    "evidence": {
     "via": "daily",
