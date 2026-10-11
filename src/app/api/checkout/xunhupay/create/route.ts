@@ -1,3 +1,4 @@
+import { ALIPAY_ENABLED } from "@/lib/checkout-config";
 import { NextRequest, NextResponse } from "next/server";
 import crypto from "crypto";
 import { rateLimit } from "@/lib/rate-limit";
@@ -47,6 +48,9 @@ export async function POST(request: NextRequest) {
     }
     if (channelStr !== "wechat" && channelStr !== "alipay") {
       return NextResponse.json({ error: "支付渠道不正确" }, { status: 400 });
+    }
+    if (channelStr === "alipay" && !ALIPAY_ENABLED) {
+      return NextResponse.json({ error: "支付宝暂时维护中，请改用微信支付" }, { status: 400 });
     }
 
     // 下单前查一下这个邮箱是不是已经是会员了，别让人重复付款

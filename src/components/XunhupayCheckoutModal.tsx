@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { track } from "@/lib/track";
+import { ALIPAY_ENABLED } from "@/lib/checkout-config";
 
 interface Props {
   lang: "zh" | "en";
@@ -176,7 +177,7 @@ export default function XunhupayCheckoutModal({ lang, onClose, initialEmail = ""
             </div>
             <div>
               <label className="block text-xs font-medium text-gray-500 mb-1.5">{isZh ? "支付方式" : "Pay with"}</label>
-              <div className="grid grid-cols-2 gap-3">
+              <div className={`grid gap-3 ${ALIPAY_ENABLED ? "grid-cols-2" : "grid-cols-1"}`}>
                 <button
                   type="button"
                   onClick={() => setChannel("wechat")}
@@ -186,16 +187,21 @@ export default function XunhupayCheckoutModal({ lang, onClose, initialEmail = ""
                 >
                   微信支付
                 </button>
-                <button
-                  type="button"
-                  onClick={() => setChannel("alipay")}
-                  className={`py-2.5 rounded-lg text-sm font-medium border transition-colors ${
-                    channel === "alipay" ? "border-blue-500 bg-blue-50 text-blue-700" : "border-gray-200 text-gray-500"
-                  }`}
-                >
-                  支付宝
-                </button>
+                {ALIPAY_ENABLED && (
+                  <button
+                    type="button"
+                    onClick={() => setChannel("alipay")}
+                    className={`py-2.5 rounded-lg text-sm font-medium border transition-colors ${
+                      channel === "alipay" ? "border-blue-500 bg-blue-50 text-blue-700" : "border-gray-200 text-gray-500"
+                    }`}
+                  >
+                    支付宝
+                  </button>
+                )}
               </div>
+              {!ALIPAY_ENABLED && (
+                <p className="text-xs text-gray-400 mt-1.5">{isZh ? "支付宝暂时维护中，请用微信支付" : "Alipay is temporarily unavailable. Please use WeChat Pay."}</p>
+              )}
             </div>
             {errorMsg && (
               <p className="text-sm text-red-500">
