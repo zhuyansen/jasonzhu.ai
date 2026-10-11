@@ -1,5 +1,78 @@
 [
   {
+    "slug": "2026-10-11",
+    "date": "2026-10-11",
+    "title": "AI 快讯 · 10月11日",
+    "items": [
+      {
+        "title": "阿里开源Open Code Review，规则流水线加Agent审代码",
+        "source": "GitHub Trending",
+        "category": "AI 工具动态",
+        "url": "https://github.com/alibaba/open-code-review",
+        "summary": "阿里开源在内部大规模使用过的AI代码审查CLI。它把确定性检查流水线和LLM Agent结合起来，能给出精确到行的评论，内置空指针、线程安全、XSS、SQL注入等多语言规则，兼容OpenAI和Anthropic接口。对想把AI审查接进CI、又担心误报和漏报的团队，这是一个可以直接参考的工程方案。",
+        "titleEn": "Alibaba Open-Sources Hybrid AI Code Review CLI",
+        "summaryEn": "Alibaba open-sourced Open Code Review, an AI code review CLI used at its own scale. It combines deterministic pipelines with an LLM agent to give line-level comments, ships rules for NPE, thread safety, XSS and SQL injection, and works with OpenAI and Anthropic models. It is a practical template for adding reliable AI review to CI."
+      },
+      {
+        "title": "纳德拉：AI模型需要「紧急刹车」机制",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/10/10/microsofts-satya-nadella-says-ai-models-need-an-emergency-brake/",
+        "summary": "微软CEO纳德拉发文表示，现在应该「退一步，重新评估AI的信任架构」，并主张给模型设置紧急刹车。此前业内已在讨论Agent是否可控，这次是头部平台CEO公开表态，可能影响企业部署Agent时的权限设计和合规要求。",
+        "titleEn": "Satya Nadella Says AI Models Need an Emergency Brake",
+        "summaryEn": "Microsoft CEO Satya Nadella wrote that it is time to step back and assess the trust architecture of AI, calling for an emergency brake on models. Coming from a top platform CEO amid wider concern about agent control, the stance may shape enterprise permission design and compliance requirements for agents."
+      },
+      {
+        "title": "苹果招揽AI播客初创Huxe团队并授权其技术",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/10/10/apple-discloses-deal-to-hire-team-and-license-tech-from-personalized-podcast-startup-huxe/",
+        "summary": "苹果披露了一项交易：招入个性化AI播客初创公司Huxe的团队，并获得其技术授权。外界猜测苹果可能要做AI生成的个性化播客。这种「招团队加授权技术」的方式正在成为大厂获取AI能力的常见做法，对做AI音频内容的开发者来说，也意味着赛道竞争会更激烈。",
+        "titleEn": "Apple Hires Huxe Team, Licenses AI Podcast Tech",
+        "summaryEn": "Apple disclosed a deal to hire the team behind personalized podcast startup Huxe and license its technology, hinting at AI-generated podcasts. Hiring a team while licensing its tech is becoming a common way for big tech to acquire AI capability, and it signals more competition for AI audio builders."
+      },
+      {
+        "title": "AI时代护城河：深度嵌入客户工作流",
+        "source": "Crunchbase News",
+        "category": "变现案例",
+        "url": "https://news.crunchbase.com/ma/customer-workflows-moat-ai-era-sagie/",
+        "summary": "科技顾问Itay Sagie认为，模型能力越来越同质化，AI公司真正的壁垒在于嵌入客户的核心工作流。他建议创始人优先追踪可量化的客户依赖程度，比如集成深度、信任关系和工作流访问权限。对出海SaaS和独立开发者来说，提升留存和抗替代性的关键往往在这里，而不只是模型本身。",
+        "titleEn": "Customer Workflows Are Becoming the AI-Era Moat",
+        "summaryEn": "Advisor Itay Sagie argues that as models commoditize, durable AI moats come from embedding in essential customer workflows. He urges founders to track measurable dependence such as integration depth, trust and workflow access. For SaaS builders, retention and defensibility often come from workflow lock-in rather than the model itself."
+      },
+      {
+        "title": "新论文：解码前就能预测扩散与自回归哪种更优",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2610.11216",
+        "summary": "这篇论文把扩散模型、自回归模型和两者之间的混合模型放进同一个统一框架，研究在固定步数下，能否在实际解码前预测某种解码顺序的效果。对开发者的意义是：今后选择生成方式（逐个token生成，还是并行去噪）时，可能不必反复试错，可以先估算速度和质量的取舍。",
+        "titleEn": "Paper Predicts Decoding Schedule Performance Before Generation",
+        "summaryEn": "This paper places diffusion, autoregressive and hybrid models in one unified framework and asks whether a decoding schedule's performance can be predicted before decoding at a fixed step count. For developers, this could let teams estimate the speed and quality trade-off of a generation strategy upfront instead of relying on trial and error."
+      },
+      {
+        "title": "Nathan Lambert：AI会快速进步，但不会走向通用超智能",
+        "source": "Interconnects",
+        "category": "AI 工具动态",
+        "url": "https://www.interconnects.ai/p/i-expect-rapid-progress-but-not-towards",
+        "summary": "Interconnects作者Nathan Lambert回应了「几年内AI将胜过顶尖研究员」的业界说法。他认为AI会在具体任务上快速进步，但未必通向通用超智能。这个观点有助于开发者更务实地规划产品：押注能力持续增强的专用Agent，而不是等待一个全能模型。",
+        "titleEn": "Nathan Lambert: Rapid AI Progress, Not General Superintelligence",
+        "summaryEn": "Nathan Lambert pushes back on claims that AI will outperform top researchers within years. He expects rapid progress on specific tasks but not a path to general superintelligence. The view offers builders a pragmatic framing: bet on steadily improving specialized agents rather than waiting for one all-capable model."
+      },
+      {
+        "title": "Standard Bots拆解工业机器人的可靠执行AI栈",
+        "source": "Latent Space",
+        "category": "AI 工具动态",
+        "url": "https://www.latent.space/p/standard-bots",
+        "summary": "Latent Space深入介绍了Standard Bots的AI技术栈：预训练模型先通过人工演示学会工厂任务，再根据真实部署中的人工纠正持续改进。这种「演示学习加线上纠错」的闭环，对构建需要高可靠性的软件Agent同样有参考价值。",
+        "titleEn": "Standard Bots on Building AI for Reliable Execution",
+        "summaryEn": "Latent Space goes inside Standard Bots' AI stack, where pretrained models learn factory tasks from demonstrations and improve through corrections from real deployments. This loop of learning from demonstrations and fixing errors in production is also a useful blueprint for building software agents that need high reliability."
+      }
+    ],
+    "jasonSays": "今天最值得关注的是阿里开源的Open Code Review：它用确定性规则加Agent的混合架构审代码，为AI代码审查的可靠落地提供了一个可直接复用的工程范例。",
+    "jasonSaysEn": "Today's standout is Alibaba's Open Code Review, whose hybrid design of deterministic rules plus an LLM agent offers a reusable blueprint for reliable AI code review.",
+    "filename": "2026-10-11.md"
+  },
+  {
     "slug": "2026-10-10",
     "date": "2026-10-10",
     "title": "AI 快讯 · 10月10日",
@@ -81,7 +154,8 @@
     ],
     "jasonSays": "今天最值得关注的是Agent工程化正在从模型能力转向治理与复用：成本路由、持续反馈、Skills供应链和联网权限，决定了Agent能否真正进入生产环境。",
     "jasonSaysEn": "The key trend today is agent engineering shifting beyond model capability toward governance and reuse, with routing, persistent feedback, skill provenance, and permissions determining production readiness.",
-    "filename": "2026-10-10.md"
+    "filename": "2026-10-10.md",
+    "coverImage": "/news/2026-10-10.png"
   },
   {
     "slug": "2026-10-09",
