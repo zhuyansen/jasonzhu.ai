@@ -1,8 +1,8 @@
 {
  "model": "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.5)",
  "threshold": 5000,
- "updatedAt": "2026-10-11T18:06:57.785Z",
- "statsCheckedAt": "2026-10-11T18:06:57.785Z",
+ "updatedAt": "2026-10-12T07:20:57.805Z",
+ "statsCheckedAt": "2026-10-12T07:20:57.805Z",
  "inclusionRule": "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -10759,6 +10759,56 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2109034305968336929",
+   "url": "https://x.com/NFT_Chen/status/2109034305968336929",
+   "author": {
+    "handle": "NFT_Chen",
+    "name": "SuSu_酥酥👅"
+   },
+   "postedAt": "2026-10-10T21:32:17.000Z",
+   "addedAt": "2026-10-12",
+   "lang": "zh",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "雨夜便利店游戏",
+    "en": "Rainy night convenience store game"
+   },
+   "summary": {
+    "zh": "一款雨夜日本便利店题材的游戏，包含奔跑少女、积水倒影、日文招牌和细致的3D场景。创作者称其起步只用了三句话提示词，并使用了 Opus 5.5 和 Three.js。",
+    "en": "A rainy-night Japanese convenience-store game with a running girl, reflections, signage and detailed 3D scenes. The creator says it started from three sentences with Opus 5.5 and Three.js."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 166369,
+    "likes": 3136,
+    "replies": 79,
+    "reposts": 341,
+    "bookmarks": 2412,
+    "checkedAt": "2026-10-12T07:20:57.805Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109033230540398592/img/9OkIdBB1hjZ95NrA.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109033230540398592/vid/avc1/1202x720/4UfJbQOKqdxm64qw.mp4?tag=29",
+    "width": 1202,
+    "height": 720,
+    "durationSec": 47
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -41873,6 +41923,113 @@
    }
   },
   {
+   "id": "2109028480629592418",
+   "url": "https://x.com/johnsavage_ai/status/2109028480629592418",
+   "author": {
+    "handle": "johnsavage_ai",
+    "name": "John Savage"
+   },
+   "postedAt": "2026-10-10T21:09:08.000Z",
+   "addedAt": "2026-10-12",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "里加开放世界犯罪游戏",
+    "en": "Riga open-world crime game"
+   },
+   "summary": {
+    "zh": "一款以拉脱维亚里加等真实城市为背景、支持网页和手机运行的 GTA 风格游戏。创作者称其独自使用 Opus 5.5 开发了两周。",
+    "en": "A GTA-style web and mobile game set in real cities, including Riga, Latvia. The creator says it was built alone with Opus 5.5 over two weeks."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 31659,
+    "likes": 353,
+    "replies": 61,
+    "reposts": 14,
+    "bookmarks": 141,
+    "checkedAt": "2026-10-12T07:20:57.805Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109027905619492864/img/yt81dVx_yZ2w1tpN.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109027905619492864/vid/avc1/1280x720/KjDLa-yfS0AxOUFa.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 49
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2109019765134213540",
+   "url": "https://x.com/nikhilbhima/status/2109019765134213540",
+   "author": {
+    "handle": "nikhilbhima",
+    "name": "Nikhil Bhima"
+   },
+   "postedAt": "2026-10-10T20:34:30.000Z",
+   "addedAt": "2026-10-12",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "网页产品发布短片",
+    "en": "Launch film for a web product"
+   },
+   "summary": {
+    "zh": "这是为 Tabi 落地页制作的发布视频，包含动态图形、3D 元素、剪辑、配音、音乐和音效。创作者称由 Claude Code 完成脚本、导演和整体制作，并使用了 Blender、Remotion、Voxtral 与 ElevenLabs。",
+    "en": "A launch film for Tabi's landing page with motion graphics, 3D elements, editing, voices, music and sound effects. The creator says Claude Code handled the script, direction and build, with Blender, Remotion, Voxtral and ElevenLabs."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/nikhilbhima/status/2109365340249706812",
+    "text": "can you make the best possible video for tabi's landing page? think premium motion graphics, made by a product launch expert. people should be astonished, like \"wtf\", when they see your video and skills. dynamic, amazing animations and graphics, no AI slop. it should look like a million dollar funded app made it.\n\nuse templates, inspiration, research, whatever you need. treat this like the world championship for landing page launch videos. this is the one piece you'll be judged on, so don't hold back. use every skill you have and just go.\n\npeople should be hooked and want to download the app instantly. no boring AI slop. every second should amaze. around 40 seconds, but you're the genius, you decide. this should be able to get millions of views.\n\ndon't be lazy, find the best way to do it. any sources, third party tools, anything that helps. if you want a voiceover, you can use Mistral AI voxtral models. i'm okay with anything that makes this a kickass video."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Claude Code",
+    "Blender",
+    "Remotion",
+    "Mistral AI Voxtral",
+    "ElevenLabs"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 31631,
+    "likes": 349,
+    "replies": 18,
+    "reposts": 11,
+    "bookmarks": 450,
+    "checkedAt": "2026-10-12T07:20:57.805Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109017878804725760/img/Ik93bTRX4EcJcuto.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109017878804725760/vid/avc1/1280x720/55Jf2XWfgMO9zZYn.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 44
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103723885204254734",
    "url": "https://x.com/gesoikuo3/status/2103723885204254734",
    "author": {
@@ -42186,6 +42343,62 @@
     "width": 1280,
     "height": 720,
     "durationSec": 62
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2109043294911291886",
+   "url": "https://x.com/Ayu_AI_0912/status/2109043294911291886",
+   "author": {
+    "handle": "Ayu_AI_0912",
+    "name": "アユネオ"
+   },
+   "postedAt": "2026-10-10T22:08:00.000Z",
+   "addedAt": "2026-10-12",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "从船舶图纸到海盗船动画",
+    "en": "Blueprint to animated pirate ship"
+   },
+   "summary": {
+    "zh": "作品围绕一艘虚构的17世纪风格三桅帆船，制作了 CAD 图纸和 Blender 动画，展示建造、下水、航行及开炮过程。提示词还规定了 DXF 图纸、MP4 视频和用 Python 合成音效。",
+    "en": "A fictional 17th-century-style three-masted galleon is presented through CAD drawings and a Blender animation, including its construction, launch, sailing and cannon fire. The prompt specifies DXF drawings, a rendered MP4 and Python-generated sound."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "post",
+    "sourceUrl": "https://x.com/Ayu_AI_0912/status/2109043294911291886",
+    "text": "架空の海賊船（17世紀のガレオン船風・3本マスト・船名なし）について、\nCAD図面と Blender 動画を作ってください。\n\n【図面】2D の DXF のみ（3Dモデルの書き出しは不要）。単位 mm、A2 の図枠と表題欄つき。\n1. 甲板平面図 S=1:100（船の中心線を y=0 にした実際の位置で描く）\n2. 側面図（帆装図）S=1:150\n3. 正面図・船尾図・中央横断面図 S=1:150\n特記事項に「架空の船のイメージで、実在の船の図面ではない」と書く。\n寸法は Python の形状モジュール1つで決め、図面と動画の両方がそれを読み込む。\n\n【動画】Blender（EEVEE）、1920×1080・24fps・本編20秒＋ロゴ3.5秒、音つき MP4。\n1. 羊皮紙の巻物が広がり、セピアのインクで描いた甲板平面図が現れる\n（方位盤・題字・赤い封蝋つき、真上から）\n2. 図面の線が光るワイヤーとして立ち上がる\n3. 竜骨 → 肋材 → 外板（下から1段ずつ）→ 甲板 → 大砲 → マスト → 帆桁 → 索具 → 帆\n→ 金の飾り・角灯・ドクロ旗 の順に組み上がる（カメラは船に寄る）\n4. 紙が消え、下から海が満ちて船が浮かぶ。夕焼けの空と海が現れ、カメラは引いて全景へ\n5. 角灯がともり、帆が風をはらんで進み出す（波に揺れ、航跡が白く伸びる）\n6. 右舷の大砲が三発 → タイトル「海賊船」 → 最後に指定のロゴ\n音は外部素材を使わず Python で合成する（6/8拍子の船乗りの歌、木槌・帆・波・かもめ・船鐘・大砲）。\n\n【進め方】\n- 図面のプレビュー画像を目で見て、文字の重なりを直す\n- 本番の前にテスト静止画を数枚描いて確認する\n- 本番レンダーは軽い設定で、PC を休ませながら回す。始める前に所要時間を伝えて了承を取る"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Blender",
+    "Python"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 30920,
+    "likes": 458,
+    "replies": 4,
+    "reposts": 36,
+    "bookmarks": 468,
+    "checkedAt": "2026-10-12T07:20:57.805Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2108575089151430656/img/gu8nDCBr3n6m9aGo.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2108575089151430656/vid/avc1/1280x720/P1zcrT_yp0abTh2l.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 24
    },
    "evidence": {
     "via": "daily",
@@ -46316,6 +46529,54 @@
     "poster": "https://pbs.twimg.com/amplify_video_thumb/2105275396123975680/img/9WYXCGZ4B7evyTBs.jpg",
     "mp4": "https://video.twimg.com/amplify_video/2105275396123975680/vid/avc1/1280x720/ApM0_A_SHvjhquH3.mp4?tag=29",
     "width": 1280,
+    "height": 720,
+    "durationSec": 10
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2109024841290654186",
+   "url": "https://x.com/premiumtantan/status/2109024841290654186",
+   "author": {
+    "handle": "premiumtantan",
+    "name": "Tân Tân Nguyễn"
+   },
+   "postedAt": "2026-10-10T20:54:40.000Z",
+   "addedAt": "2026-10-12",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "互动字体书籍设计",
+    "en": "Interactive typography book design"
+   },
+   "summary": {
+    "zh": "这是对学生时代排版课程作品的重新设计，加入了翻页交互和纹理效果。创作者称这些新增部分使用了 Opus 5.5。",
+    "en": "A revisited typography book design with page-flipping interactions and added texture. The creator says Opus 5.5 was used for those additions."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 24483,
+    "likes": 653,
+    "replies": 13,
+    "reposts": 70,
+    "bookmarks": 507,
+    "checkedAt": "2026-10-12T07:20:57.805Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/media/HUTComRbYAAHV07.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109024528223633409/vid/avc1/958x720/iDX9OwjBcHIusfcH.mp4?tag=29",
+    "width": 958,
     "height": 720,
     "durationSec": 10
    },
@@ -56529,6 +56790,54 @@
    }
   },
   {
+   "id": "2109001847792890082",
+   "url": "https://x.com/kooshiar/status/2109001847792890082",
+   "author": {
+    "handle": "kooshiar",
+    "name": "kooshiar"
+   },
+   "postedAt": "2026-10-10T19:23:18.000Z",
+   "addedAt": "2026-10-12",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "工业材料问题物理模拟",
+    "en": "Industrial materials problem physics simulation"
+   },
+   "summary": {
+    "zh": "Opus 5.5 使用 GPU 和多个物理模型处理 40 个工业材料问题，帖子展示了其中一个较简单的案例。",
+    "en": "Opus 5.5 worked on 40 industrial materials problems using a GPU and several physics models; the post shows one of the simpler cases."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 15734,
+    "likes": 221,
+    "replies": 16,
+    "reposts": 13,
+    "bookmarks": 30,
+    "checkedAt": "2026-10-12T07:20:57.805Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/media/HUSt9wlXgAAkhHq.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109001802108510208/vid/avc1/720x720/PnyquowxTDSk8d0h.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 53
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2104742106015449428",
    "url": "https://x.com/higgsfield_ai/status/2104742106015449428",
    "author": {
@@ -62312,6 +62621,54 @@
    }
   },
   {
+   "id": "2109029664169541842",
+   "url": "https://x.com/Avenoxai/status/2109029664169541842",
+   "author": {
+    "handle": "Avenoxai",
+    "name": "Avenox"
+   },
+   "postedAt": "2026-10-10T21:13:50.000Z",
+   "addedAt": "2026-10-12",
+   "lang": "tr",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "Opus 3 与 Opus 5.5 任务对比",
+    "en": "Opus 3 versus Opus 5.5 task test"
+   },
+   "summary": {
+    "zh": "创作者让 Opus 3 和 Opus 5.5 执行同一任务，以比较两年半来的能力变化。",
+    "en": "The creator gave Opus 3 and Opus 5.5 the same task to compare their capabilities across two and a half years."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 11782,
+    "likes": 120,
+    "replies": 7,
+    "reposts": 2,
+    "bookmarks": 35,
+    "checkedAt": "2026-10-12T07:20:57.805Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109029531046543361/img/hwj0FVMbrNB8ickr.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109029531046543361/vid/avc1/1280x720/4SGFzgKwQ1dNIHCJ.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 20
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103879008261931055",
    "url": "https://x.com/belltyler/status/2103879008261931055",
    "author": {
@@ -65171,6 +65528,57 @@
    }
   },
   {
+   "id": "2109011691576975632",
+   "url": "https://x.com/IndependentEco/status/2109011691576975632",
+   "author": {
+    "handle": "IndependentEco",
+    "name": "Eco"
+   },
+   "postedAt": "2026-10-10T20:02:25.000Z",
+   "addedAt": "2026-10-12",
+   "lang": "en",
+   "models": [
+    "opus-5.5",
+    "haiku-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "单模型与多代理构建对比",
+    "en": "Solo model versus multi-agent build"
+   },
+   "summary": {
+    "zh": "帖子比较了单独运行的 Opus 5.5，以及由 10 个 Haiku 5.5 子代理协助的 Opus 5.5。",
+    "en": "The post compares a solo Opus 5.5 with Opus 5.5 assisted by 10 Haiku 5.5 subagents in a second round."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Haiku 5.5"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 10463,
+    "likes": 107,
+    "replies": 28,
+    "reposts": 1,
+    "bookmarks": 40,
+    "checkedAt": "2026-10-12T07:20:57.805Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2108981787724587008/img/-B01ibHfltdmPrRe.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2108981787724587008/vid/avc1/1280x720/2f6vz6sFKF4IqjRB.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 233
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2104669620871536998",
    "url": "https://x.com/chaseleantj/status/2104669620871536998",
    "author": {
@@ -65934,6 +66342,62 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2109015574177075610",
+   "url": "https://x.com/vib3coded/status/2109015574177075610",
+   "author": {
+    "handle": "vib3coded",
+    "name": "Vib3Coded"
+   },
+   "postedAt": "2026-10-10T20:17:51.000Z",
+   "addedAt": "2026-10-12",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "果冻潮池三维海岸生态对比",
+    "en": "Tidepool Jelly 3D coastal ecosystem comparison"
+   },
+   "summary": {
+    "zh": "创作者用同一提示词，让 Opus 5.5 和 GPT-6 Astra 制作互动式 3D 果冻潮池世界。",
+    "en": "The creator compared Opus 5.5 and GPT-6 Astra using the same prompt to build interactive 3D jelly tidepool worlds."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/vib3coded/status/2109016138030141473",
+    "text": "Create “Tidepool Jelly” - an interactive 3D miniature coastal ecosystem where everything feels soft, squishy, and made of translucent jelly.\nShow an elevated, cutaway slice of coastline floating against a warm off-white background. Include layered sand and rock beneath the surface, shallow turquoise water, rocky tide pools, rounded pebbles, seashells, and small patches of coastal greenery. Use an orthographic camera with orbit and zoom controls.\nMake the water the star of the scene: convincing waves, spreading ripples, reflections, refraction, underwater caustics, and a wet shoreline. Animate a rising and falling tide that fills and drains the pools. Clicking or dragging through water should create localized ripples that fade naturally.\nPopulate the pools with animated jelly sea creatures: tiny crabs, starfish, sea anemones, snails, mussels, shrimp, and small fish. Give each species distinct movement and behavior. Crabs scuttle around rocks, anemones sway with the current, snails crawl slowly, and fish swim in loose groups. Their bodies should gently wobble and deform as they move.\nLet users click a creature to focus the camera and reveal a compact species card. Allow gentle interactions that trigger a squishy reaction, followed by a smooth return to the original shape.\nAdd a clean, minimal control panel with:\nTide height and automatic tide cycle.\nWave strength and water clarity.\nJelly softness.\nDay and night lighting.\nSpecies visibility toggles.\nPause, reset, and a randomize ecosystem button.\nAt night, introduce subtle bioluminescence in the water and selected creatures.\nUse elegant editorial typography, generous whitespace, and restrained UI styling. Place the “Tidepool Jelly” title in the upper-left corner and controls on the right. The scene should dominate the screen.\nBuild a fully working browser experience using Three.js and custom shaders where useful. Prioritize beautiful water, believable creature movement, tactile jelly materials, and smooth performance. All controls must work. Avoid static mockups, placeholder assets, and oversized interface elements."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "GPT-6 Astra",
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 10042,
+    "likes": 335,
+    "replies": 23,
+    "reposts": 35,
+    "bookmarks": 166,
+    "checkedAt": "2026-10-12T07:20:57.805Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109015456447180800/img/YP5NEgWDtz4eyy9C.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109015456447180800/vid/avc1/720x910/0--zi1anN3thYoWJ.mp4?tag=29",
+    "width": 720,
+    "height": 910,
+    "durationSec": 18
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -72423,6 +72887,54 @@
    }
   },
   {
+   "id": "2109056524496892098",
+   "url": "https://x.com/bonnyxen/status/2109056524496892098",
+   "author": {
+    "handle": "bonnyxen",
+    "name": "Bonny"
+   },
+   "postedAt": "2026-10-10T23:00:34.000Z",
+   "addedAt": "2026-10-12",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "史蒂夫在 GTA V 中遭遇凋零风暴",
+    "en": "Steve in GTA V under a Wither Storm"
+   },
+   "summary": {
+    "zh": "Opus 5.5 将 Steve 放进 GTA V，并在城市上空加入凋灵风暴、激光和飞散的碎片。",
+    "en": "Opus 5.5 put Steve into GTA V with a Wither Storm above the city, lasers, and debris filling the scene."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 6591,
+    "likes": 129,
+    "replies": 2,
+    "reposts": 10,
+    "bookmarks": 66,
+    "checkedAt": "2026-10-12T07:20:57.805Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109055430479470592/img/yPMs0W7qd5I5Z2tM.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109055430479470592/vid/avc1/1280x720/z428GCnxtq6yS1Wl.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 217
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2107698613379838294",
    "url": "https://x.com/Roxx_0x/status/2107698613379838294",
    "author": {
@@ -72843,6 +73355,57 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2109042101019156848",
+   "url": "https://x.com/majidmanzarpour/status/2109042101019156848",
+   "author": {
+    "handle": "majidmanzarpour",
+    "name": "Majid Manzarpour"
+   },
+   "postedAt": "2026-10-10T22:03:15.000Z",
+   "addedAt": "2026-10-12",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "代码生成的特斯拉跑车模型",
+    "en": "Coded Tesla Roadster model"
+   },
+   "summary": {
+    "zh": "Opus 5.5 根据参考图片用代码制作 Tesla Roadster，经过多轮 Gauntlet Loop 和人工反馈，并使用 Three.js 渲染。",
+    "en": "Opus 5.5 built a Tesla Roadster in code from reference images, with several Gauntlet Loop rounds and human feedback; it was rendered in Three.js."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Three.js",
+    "Gauntlet Loop"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 6364,
+    "likes": 133,
+    "replies": 15,
+    "reposts": 5,
+    "bookmarks": 47,
+    "checkedAt": "2026-10-12T07:20:57.805Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109041860924567552/img/_cpLTXKRG7wPJfkw.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109041860924567552/vid/avc1/1280x720/gvY7gjgg-tMI5SlH.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 61
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
