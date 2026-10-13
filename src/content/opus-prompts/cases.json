@@ -1,8 +1,8 @@
 {
  "model": "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.5)",
  "threshold": 5000,
- "updatedAt": "2026-10-12T21:45:39.293Z",
- "statsCheckedAt": "2026-10-12T21:45:39.293Z",
+ "updatedAt": "2026-10-13T19:53:36.885Z",
+ "statsCheckedAt": "2026-10-13T19:53:36.885Z",
  "inclusionRule": "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -4393,6 +4393,54 @@
    }
   },
   {
+   "id": "2109723440710066646",
+   "url": "https://x.com/_MaxBlade/status/2109723440710066646",
+   "author": {
+    "handle": "_MaxBlade",
+    "name": "Max Blade"
+   },
+   "postedAt": "2026-10-12T19:10:39.000Z",
+   "addedAt": "2026-10-13",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "同一提示词生成的割草机模拟器对比",
+    "en": "Lawn mower simulator built from the same prompt"
+   },
+   "summary": {
+    "zh": "作者用同一个提示词让Claude Opus 5.5和Muse Wonder Full分别制作割草机模拟游戏，发现Opus消耗的API等值费用远高于Muse，在3D任务上也不如Muse。",
+    "en": "Creator compared Claude Opus 5.5 and Muse Wonder Full by giving both the same prompt to build a lawn mower simulator game, noting Opus used far more API-equivalent tokens than Muse and is weaker at 3D tasks."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 433074,
+    "likes": 1791,
+    "replies": 194,
+    "reposts": 78,
+    "bookmarks": 419,
+    "checkedAt": "2026-10-13T19:53:36.885Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109721956362735616/img/zoC-AP6ca6KnRxva.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109721956362735616/vid/avc1/1280x720/Rwx1Lg9wcC8_bEDj.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 34
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2104370091672711402",
    "url": "https://x.com/gauravsbuilding/status/2104370091672711402",
    "author": {
@@ -8566,6 +8614,59 @@
    }
   },
   {
+   "id": "2109730933637283942",
+   "url": "https://x.com/fawnunwrap/status/2109730933637283942",
+   "author": {
+    "handle": "fawnunwrap",
+    "name": "fawn"
+   },
+   "postedAt": "2026-10-12T19:40:26.000Z",
+   "addedAt": "2026-10-13",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "土豆农场挑战：Astra对战Opus 5.5",
+    "en": "Potato farm growth challenge: Astra vs Opus 5.5"
+   },
+   "summary": {
+    "zh": "作者给Astra和Opus 5.5同样的提示词，比赛种出至少36棵马铃薯，结果Astra轻松获胜。",
+    "en": "Creator ran a challenge between Astra and Opus 5.5 to grow at least 36 potato plants, giving both models the same prompt, with Astra winning easily."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/fawnunwrap/status/2109730933637283942",
+    "text": "First one to grow at least 36 potato plants wins the challenge."
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 217825,
+    "likes": 2775,
+    "replies": 71,
+    "reposts": 30,
+    "bookmarks": 405,
+    "checkedAt": "2026-10-13T19:53:36.885Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109730824295747584/img/o23XGBxnkF_rOThn.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109730824295747584/vid/avc1/1280x720/XKNrigMiwwu7PtJ2.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 97
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103009037164110327",
    "url": "https://x.com/addyosmani/status/2103009037164110327",
    "author": {
@@ -10773,6 +10874,61 @@
    }
   },
   {
+   "id": "2109572982444265656",
+   "url": "https://x.com/hanifproduktif/status/2109572982444265656",
+   "author": {
+    "handle": "hanifproduktif",
+    "name": "Hanif | AI For Productivity"
+   },
+   "postedAt": "2026-10-12T09:12:47.000Z",
+   "addedAt": "2026-10-13",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "新加坡占领巴淡岛逐时推演模拟",
+    "en": "Hour-by-hour simulation of Singapore occupying Batam"
+   },
+   "summary": {
+    "zh": "作者通过HyperFrames使用Claude Opus 5.5制作了一个逐小时模拟视频，设想新加坡占领巴淡岛会发生什么，回应了一条推文言论。",
+    "en": "Creator used Claude Opus 5.5 via HyperFrames to produce an hour-by-hour simulation video imagining Singapore occupying Batam, responding to a tweet claim."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/hanifproduktif/status/2109572982444265656",
+    "text": "simulate what happens if Singapore occupied Batam tomorrow"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "HyperFrames"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 168849,
+    "likes": 2278,
+    "replies": 104,
+    "reposts": 248,
+    "bookmarks": 1273,
+    "checkedAt": "2026-10-13T19:53:36.885Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109571569240719360/img/s4vs7CUuJIij452T.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109571569240719360/vid/avc1/1280x720/C_TzhqnkMFkbDVCs.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 261
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102472218269900876",
    "url": "https://x.com/cherry_mx_reds/status/2102472218269900876",
    "author": {
@@ -12619,6 +12775,54 @@
     "width": 1348,
     "height": 720,
     "durationSec": 161
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2109633997638938935",
+   "url": "https://x.com/blueemi99/status/2109633997638938935",
+   "author": {
+    "handle": "blueemi99",
+    "name": "bluedev"
+   },
+   "postedAt": "2026-10-12T13:15:14.000Z",
+   "addedAt": "2026-10-13",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "复刻挑战视频效果",
+    "en": "Recreated challenge video effect"
+   },
+   "summary": {
+    "zh": "作者使用Claude Opus 5.5复刻了被引用帖子中展示的视频效果，并在回复中表示只用了一个提示词完成。",
+    "en": "Creator used Claude Opus 5.5 to recreate a video effect shown in a quoted post, stating in a reply that it was done with one prompt."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 145599,
+    "likes": 2540,
+    "replies": 64,
+    "reposts": 63,
+    "bookmarks": 1571,
+    "checkedAt": "2026-10-13T19:53:36.885Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109633948980592641/img/AR3l6MwRnOtgjIv6.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109633948980592641/vid/avc1/1280x720/wkYrbtx9N8D2FPA8.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 30
    },
    "evidence": {
     "via": "daily",
@@ -20924,6 +21128,57 @@
    }
   },
   {
+   "id": "2109637765684199564",
+   "url": "https://x.com/meowman_sol/status/2109637765684199564",
+   "author": {
+    "handle": "meowman_sol",
+    "name": "Meowman | Asgard"
+   },
+   "postedAt": "2026-10-12T13:30:13.000Z",
+   "addedAt": "2026-10-13",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "Opus 5.5一次生成的Blender动画",
+    "en": "One-shot Blender animation by Opus 5.5"
+   },
+   "summary": {
+    "zh": "作者结合Claude Opus 5.5、ChatGPT生成的点状图案和Blender一次性制作了一个加密主题音乐视频，使用了参考视频和详细提示词。",
+    "en": "Creator used Claude Opus 5.5 together with ChatGPT-generated dots and Blender to one-shot a crypto-themed music video, supplying a reference video and a detailed prompt."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Blender",
+    "ChatGPT"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 81885,
+    "likes": 247,
+    "replies": 20,
+    "reposts": 5,
+    "bookmarks": 301,
+    "checkedAt": "2026-10-13T19:53:36.885Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109637657601155073/img/CoZZPPfyHmqnthY1.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109637657601155073/vid/avc1/1280x720/sWxfzpSefBPGEs41.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 40
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103794099929452699",
    "url": "https://x.com/dannypostma/status/2103794099929452699",
    "author": {
@@ -21906,6 +22161,54 @@
    }
   },
   {
+   "id": "2109709807712366623",
+   "url": "https://x.com/robertskmiles/status/2109709807712366623",
+   "author": {
+    "handle": "robertskmiles",
+    "name": "Rob Miles"
+   },
+   "postedAt": "2026-10-12T18:16:29.000Z",
+   "addedAt": "2026-10-13",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "为反编译版《光环》添加的新武器",
+    "en": "New weapon added to decompiled Halo"
+   },
+   "summary": {
+    "zh": "作者展示了一段有趣的对话，要求Claude Opus 5.5为一个Halo反编译项目发明并添加一款新武器。",
+    "en": "Creator shows a playful exchange in which they asked Claude Opus 5.5 to invent and add a new weapon to a Halo decompilation project."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 78897,
+    "likes": 806,
+    "replies": 27,
+    "reposts": 25,
+    "bookmarks": 135,
+    "checkedAt": "2026-10-13T19:53:36.885Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109708947527753728/img/IXQ6ZwzZiFJinz9g.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109708947527753728/vid/avc1/1080x720/Bwdpxuw1pzUkxVcE.mp4?tag=29",
+    "width": 1080,
+    "height": 720,
+    "durationSec": 15
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103496245343916158",
    "url": "https://x.com/realYunfanYe/status/2103496245343916158",
    "author": {
@@ -22266,6 +22569,63 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2109718931409699043",
+   "url": "https://x.com/Ainthropos/status/2109718931409699043",
+   "author": {
+    "handle": "Ainthropos",
+    "name": "Ainthropos"
+   },
+   "postedAt": "2026-10-12T18:52:44.000Z",
+   "addedAt": "2026-10-13",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "Opus 5.5一次性构建的互动3D世界",
+    "en": "Interactive 3D world built one-shot by Opus 5.5"
+   },
+   "summary": {
+    "zh": "作者用Opus 5.5在24小时内一次性生成了一个可探索的赛博朋克3D世界，包含夜店、酒吧和跳舞的NPC，仅用一句简单提示词并借助Blender MCP建模、Magnific MCP生成音效完成。",
+    "en": "A fully explorable cyberpunk 3D world with a nightclub, bar and dancing NPCs, built one-shot in 24 hours with Opus 5.5 using Blender MCP for modeling and Magnific MCP for sound, from a short prompt asking for a cyberpunk-style game."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/Ainthropos/status/2110022907392917804",
+    "text": "make a cool cyberpunk 2077 looking game. Do everything on your own only use blender. And you can use magnific for sound."
+   },
+   "referenceAssets": true,
+   "tools": [
+    "Three.js",
+    "Blender",
+    "Magnific"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 77908,
+    "likes": 1545,
+    "replies": 118,
+    "reposts": 98,
+    "bookmarks": 996,
+    "checkedAt": "2026-10-13T19:53:36.885Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109717956762415104/img/priyMO4hp65IJgAy.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109717956762415104/vid/avc1/1718x720/5Bk-ecaFR1vjPSkj.mp4?tag=29",
+    "width": 1718,
+    "height": 720,
+    "durationSec": 56
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -30235,6 +30595,54 @@
    }
   },
   {
+   "id": "2109569929817305345",
+   "url": "https://x.com/Avenoxai/status/2109569929817305345",
+   "author": {
+    "handle": "Avenoxai",
+    "name": "Avenox"
+   },
+   "postedAt": "2026-10-12T09:00:39.000Z",
+   "addedAt": "2026-10-13",
+   "lang": "tr",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "博斯普鲁斯海峡渡轮场景三档推理强度对比",
+    "en": "Bosphorus ferry scene at three effort levels"
+   },
+   "summary": {
+    "zh": "作者用Opus 5.5以相同提示词、三种不同的算力档位生成了一段博斯普鲁斯海峡轮渡与海鸥的视频，用来对比成本与画质差异。",
+    "en": "A video of a ferry on the Bosphorus with seagulls and someone throwing simit, generated with Opus 5.5 at three different effort levels using the same prompt to compare cost and quality."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 54663,
+    "likes": 387,
+    "replies": 14,
+    "reposts": 13,
+    "bookmarks": 180,
+    "checkedAt": "2026-10-13T19:53:36.885Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109569877875060737/img/stOdUB3hbuXVjXCu.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109569877875060737/vid/avc1/1280x720/b7LKwiRsquAR8wBg.mp4?tag=16",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 14
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2105263665083818364",
    "url": "https://x.com/wholyv/status/2105263665083818364",
    "author": {
@@ -31439,6 +31847,56 @@
     "width": 720,
     "height": 732,
     "durationSec": 19
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2109630088782463077",
+   "url": "https://x.com/Saccc_c/status/2109630088782463077",
+   "author": {
+    "handle": "Saccc_c",
+    "name": "Sac"
+   },
+   "postedAt": "2026-10-12T12:59:42.000Z",
+   "addedAt": "2026-10-13",
+   "lang": "zh",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "史诗级3D游戏预告片",
+    "en": "Epic 3D game trailer"
+   },
+   "summary": {
+    "zh": "作者用Opus 5.5加Blender、仅凭一句提示词制作了一个即将发布的3D游戏的宣传视频。",
+    "en": "A promotional trailer for an announced 3D game, made with Opus 5.5 combined with Blender from a single prompt."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 52113,
+    "likes": 144,
+    "replies": 54,
+    "reposts": 11,
+    "bookmarks": 57,
+    "checkedAt": "2026-10-13T19:53:36.885Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109627504915009536/img/15aqshT-wFR6-Jgs.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109627504915009536/vid/avc1/1280x720/Rf-XzzIr3IkpZZDn.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 33
    },
    "evidence": {
     "via": "daily",
@@ -32659,6 +33117,56 @@
     "width": 1280,
     "height": 720,
     "durationSec": 200
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2109629188525420930",
+   "url": "https://x.com/flxrnc/status/2109629188525420930",
+   "author": {
+    "handle": "flxrnc",
+    "name": "Florence"
+   },
+   "postedAt": "2026-10-12T12:56:08.000Z",
+   "addedAt": "2026-10-13",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "单条提示词生成的动态设计动画",
+    "en": "Motion design animation from a single prompt"
+   },
+   "summary": {
+    "zh": "作者把一份PDF指南发给Opus 5.5，用一句提示词生成了动态设计动画，无需使用After Effects，完整提示词通过链接的文档分享。",
+    "en": "A motion design animation created by sending a PDF guide to Opus 5.5 with a single prompt, replacing the need for After Effects; the full prompt is shared via a linked document."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "After Effects"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 48653,
+    "likes": 509,
+    "replies": 11,
+    "reposts": 31,
+    "bookmarks": 838,
+    "checkedAt": "2026-10-13T19:53:36.885Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109623218063417344/img/mtNWRUyWwkTQA5YL.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109623218063417344/vid/avc1/1280x720/Y8FWSeYxeDCOZNyz.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 16
    },
    "evidence": {
     "via": "daily",
@@ -34488,6 +34996,54 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2109598324609409331",
+   "url": "https://x.com/shengtang135754/status/2109598324609409331",
+   "author": {
+    "handle": "shengtang135754",
+    "name": "麦麦提"
+   },
+   "postedAt": "2026-10-12T10:53:29.000Z",
+   "addedAt": "2026-10-13",
+   "lang": "zh",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "描绘人一生的叙事视频",
+    "en": "Video depicting a lifetime"
+   },
+   "summary": {
+    "zh": "作者用开到max模式的Opus 5.5生成了一段视频，据称被路由到了更新的底层模型，并展示了其高昂的美元花费。",
+    "en": "A video generated with Opus 5.5 set to max effort, reportedly routed to a newer underlying model, shown alongside its high dollar cost."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 44551,
+    "likes": 171,
+    "replies": 38,
+    "reposts": 4,
+    "bookmarks": 98,
+    "checkedAt": "2026-10-13T19:53:36.885Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109598276827889664/img/UxEBbn96LUPhJgyo.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109598276827889664/vid/avc1/1280x720/KBae-Kevz-NsCzjA.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 29
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -36702,6 +37258,58 @@
    }
   },
   {
+   "id": "2109708195031900310",
+   "url": "https://x.com/SammmAing/status/2109708195031900310",
+   "author": {
+    "handle": "SammmAing",
+    "name": "Samnang Aing"
+   },
+   "postedAt": "2026-10-12T18:10:04.000Z",
+   "addedAt": "2026-10-13",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "滚动生成房屋的平面图动画",
+    "en": "Floor plan that builds into a house on scroll"
+   },
+   "summary": {
+    "zh": "作者用Opus 5.5制作了一个滚动触发的动画，平面户型图随着滚动逐步“建造”成3D房屋，并发布了讲解制作过程的视频和一个起始提示词链接，而非单一的神奇提示词。",
+    "en": "A scroll-triggered animation where a flat floor plan builds itself into a 3D house, built with Opus 5.5; the creator published a video explaining the technique and a starter prompt link rather than a single magic prompt."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Claude"
+   ],
+   "resources": [
+    "https://sam1983aing.github.io/casa-serra/prompt/"
+   ],
+   "stats": {
+    "views": 41610,
+    "likes": 966,
+    "replies": 31,
+    "reposts": 85,
+    "bookmarks": 1123,
+    "checkedAt": "2026-10-13T19:53:36.885Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109708005482643456/img/i5TyvYU1gSlF8it6.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109708005482643456/vid/avc1/1280x720/hDNwUfAx31BO_TVd.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 57
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103523994440012086",
    "url": "https://x.com/devteamdrew/status/2103523994440012086",
    "author": {
@@ -37246,6 +37854,56 @@
    }
   },
   {
+   "id": "2109609040716452113",
+   "url": "https://x.com/midori_tatsuta/status/2109609040716452113",
+   "author": {
+    "handle": "midori_tatsuta",
+    "name": "みどり🐲Midori Tatsuta"
+   },
+   "postedAt": "2026-10-12T11:36:04.000Z",
+   "addedAt": "2026-10-13",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "使用个人VRM模型渲染的Blender场景",
+    "en": "Blender scene rendered with a personal VRM model"
+   },
+   "summary": {
+    "zh": "创作者使用自己的VRM模型，仅通过文字提示让Opus 5.5完成渲染，制作流程参考了另一位创作者的Blender项目。",
+    "en": "An animated video using the creator's own VRM model was rendered with Opus 5.5 using only text prompts, following the workflow of another creator's Blender-based project."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 40472,
+    "likes": 832,
+    "replies": 2,
+    "reposts": 50,
+    "bookmarks": 628,
+    "checkedAt": "2026-10-13T19:53:36.885Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109608208117682176/img/V8aMdvvcus_isd30.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109608208117682176/vid/avc1/1280x720/EQp_xn9JwdoXr7p-.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 10
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2104009685271814193",
    "url": "https://x.com/emmanuel_2m/status/2104009685271814193",
    "author": {
@@ -37689,6 +38347,56 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2109718604883370450",
+   "url": "https://x.com/LexnLin/status/2109718604883370450",
+   "author": {
+    "handle": "LexnLin",
+    "name": "Leon Lin"
+   },
+   "postedAt": "2026-10-12T18:51:26.000Z",
+   "addedAt": "2026-10-13",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "音效改进的动态短片",
+    "en": "Motion clip with improved sound effects"
+   },
+   "summary": {
+    "zh": "该动态视频由Opus 5.5 high制作，音效有所改进，使用了新版本的Cinetic工具生成。",
+    "en": "A motion video with improved sound effects made with Opus 5.5 high, built using a newer version of the Cinetic tool."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Cinetic"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 39582,
+    "likes": 943,
+    "replies": 41,
+    "reposts": 20,
+    "bookmarks": 628,
+    "checkedAt": "2026-10-13T19:53:36.885Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109718241077526529/img/fato41ReEJyjDd6O.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109718241077526529/vid/avc1/1280x720/zU_QZjJlDBlOPyrc.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 40
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -40537,6 +41245,54 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2109705700930957328",
+   "url": "https://x.com/0xkerazcity/status/2109705700930957328",
+   "author": {
+    "handle": "0xkerazcity",
+    "name": "kerazcity"
+   },
+   "postedAt": "2026-10-12T18:00:10.000Z",
+   "addedAt": "2026-10-13",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "无缝循环动态设计动画",
+    "en": "Seamless looping motion design animation"
+   },
+   "summary": {
+    "zh": "创作者将一篇参考PDF文章发送给Opus 5.5，制作出无缝循环的动态设计作品，并通过链接分享了具体使用的提示词。",
+    "en": "A seamless looping motion design piece was created by sending a reference PDF article to Opus 5.5, with the exact prompt shared via a linked document."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 34285,
+    "likes": 375,
+    "replies": 8,
+    "reposts": 37,
+    "bookmarks": 575,
+    "checkedAt": "2026-10-13T19:53:36.885Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109691877985316864/img/SvxI2uJbGIhwvnXk.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109691877985316864/vid/avc1/1280x720/OlrLevMuV_qLSoiI.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 16
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -43802,6 +44558,54 @@
    }
   },
   {
+   "id": "2109584603573006403",
+   "url": "https://x.com/reoru_alt/status/2109584603573006403",
+   "author": {
+    "handle": "reoru_alt",
+    "name": "健康大臣"
+   },
+   "postedAt": "2026-10-12T09:58:58.000Z",
+   "addedAt": "2026-10-13",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "Opus 5.5与6.1 Sol动效对比",
+    "en": "Motion graphics comparison: Opus 5.5 vs 6.1 Sol"
+   },
+   "summary": {
+    "zh": "创作者给Opus 5.5和6.1 Sol提供同一张图片作为参考，让两者自由发挥制作动态图形，并各自修改两次。",
+    "en": "Motion graphics were generated by Opus 5.5 and 6.1 Sol from a shared image reference, with each model revised twice freely developing its own direction."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 29609,
+    "likes": 703,
+    "replies": 6,
+    "reposts": 35,
+    "bookmarks": 526,
+    "checkedAt": "2026-10-13T19:53:36.885Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109583083477540864/img/PozAGRyxBCuGThs3.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109583083477540864/vid/avc1/1280x720/TJ0DSlQGBhggSBF_.mp4?tag=14",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 5
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102717699600368045",
    "url": "https://x.com/chetaslua/status/2102717699600368045",
    "author": {
@@ -46567,6 +47371,63 @@
    }
   },
   {
+   "id": "2109570757579649086",
+   "url": "https://x.com/ChrisGPT/status/2109570757579649086",
+   "author": {
+    "handle": "ChrisGPT",
+    "name": "Chris"
+   },
+   "postedAt": "2026-10-12T09:03:57.000Z",
+   "addedAt": "2026-10-13",
+   "lang": "en",
+   "models": [
+    "fable-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "Fable 5.5自我介绍音乐视频",
+    "en": "Fable 5.5 self-introduction musical video"
+   },
+   "summary": {
+    "zh": "创作者让Fable 5.5创作一首自我介绍的歌曲，最终生成了名为《Hosanna》的完整音乐作品，结合了Suno制作的音乐、ElevenLabs配音以及同步的Three.js音乐视频。",
+    "en": "Fable 5.5 was asked to create a song introducing itself, resulting in a full musical called 'Hosanna' combining Suno-generated music, ElevenLabs vocals, and a synchronized Three.js music video."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/ChrisGPT/status/2109570757579649086",
+    "text": "create a song introducing itself"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Suno",
+    "ElevenLabs",
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 25509,
+    "likes": 502,
+    "replies": 40,
+    "reposts": 19,
+    "bookmarks": 194,
+    "checkedAt": "2026-10-13T19:53:36.885Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109570463886151680/img/z20ErD5AveU0iqrF.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109570463886151680/vid/avc1/1280x720/Y4DW3aeIqnC1qyr0.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 76
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103596524018221133",
    "url": "https://x.com/eryidebiji/status/2103596524018221133",
    "author": {
@@ -46612,6 +47473,58 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2109570204556824624",
+   "url": "https://x.com/elliscrosby/status/2109570204556824624",
+   "author": {
+    "handle": "elliscrosby",
+    "name": "Ellis"
+   },
+   "postedAt": "2026-10-12T09:01:45.000Z",
+   "addedAt": "2026-10-13",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "马桶冲水机制互动演示",
+    "en": "Interactive toilet flush mechanism demo"
+   },
+   "summary": {
+    "zh": "创作者使用Opus 5.5配合Anatomy这一Claude Code技能，制作出可点击冲水的马桶水箱和虹吸结构的等距交互模型。",
+    "en": "An interactive isometric model of a toilet's cistern and siphon mechanism, clickable to flush, was built with Opus 5.5 using the Anatomy Claude Code skill."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Claude Code"
+   ],
+   "resources": [
+    "https://springprompt.com/blog/anatomy-claude-code-skill"
+   ],
+   "stats": {
+    "views": 25447,
+    "likes": 297,
+    "replies": 6,
+    "reposts": 11,
+    "bookmarks": 226,
+    "checkedAt": "2026-10-13T19:53:36.885Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109569884225175552/img/UAeTFcBZLZhMsIHT.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109569884225175552/vid/avc1/720x720/EY6x8hvcDLc3gjtv.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 18
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -46837,6 +47750,57 @@
    }
   },
   {
+   "id": "2109568757001756710",
+   "url": "https://x.com/Stefan_3D_AI/status/2109568757001756710",
+   "author": {
+    "handle": "Stefan_3D_AI",
+    "name": "Stefan 3D AI"
+   },
+   "postedAt": "2026-10-12T08:56:00.000Z",
+   "addedAt": "2026-10-13",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "彩色腿部绑定的视频转3D动物行走动画",
+    "en": "Animal walk animation with color-coded leg rig"
+   },
+   "summary": {
+    "zh": "创作者介绍了一套动物视频动画工作流：生成3D模型，为腿部着色，制作参考视频，再进行绑定和关键帧处理。",
+    "en": "The creator describes an AI workflow for animating an animal from video, using a 3D model, colored legs, a generated reference video, and keyframing."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Tripo AI",
+    "H3"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 24892,
+    "likes": 578,
+    "replies": 20,
+    "reposts": 39,
+    "bookmarks": 569,
+    "checkedAt": "2026-10-13T19:53:36.885Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109568674743160832/img/9TdpZiHUXfnsOR-J.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109568674743160832/vid/avc1/1280x720/zlQvHY1IFOMJI_gS.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 13
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102539955470045500",
    "url": "https://x.com/yugen_matuni/status/2102539955470045500",
    "author": {
@@ -47017,6 +47981,54 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2109634337222414402",
+   "url": "https://x.com/devteamdrew/status/2109634337222414402",
+   "author": {
+    "handle": "devteamdrew",
+    "name": "DreW"
+   },
+   "postedAt": "2026-10-12T13:16:35.000Z",
+   "addedAt": "2026-10-13",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "可运转V8发动机CAD建模对比",
+    "en": "Working V8 engine CAD model comparison"
+   },
+   "summary": {
+    "zh": "创作者向不同模型提供同一套参考资料，让它们以CAD风格建模一台可工作的V8发动机。",
+    "en": "The creator gave different models the same reference pack and asked them to model a working V8 engine in a CAD style."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 24462,
+    "likes": 308,
+    "replies": 7,
+    "reposts": 11,
+    "bookmarks": 83,
+    "checkedAt": "2026-10-13T19:53:36.885Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109632251520516097/img/tDAD5C7gIlAAMeDn.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109632251520516097/vid/avc1/1280x720/mRsCstccq9XthTdb.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 24
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -55146,6 +56158,59 @@
    }
   },
   {
+   "id": "2109609404450607352",
+   "url": "https://x.com/0xZergs/status/2109609404450607352",
+   "author": {
+    "handle": "0xZergs",
+    "name": "David | www.usd.ai"
+   },
+   "postedAt": "2026-10-12T11:37:31.000Z",
+   "addedAt": "2026-10-13",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "USDai产品流水线演示",
+    "en": "USDai product assembly line demo"
+   },
+   "summary": {
+    "zh": "创作者让Claude重制《异星工厂》，并将主题改为算力流动性；他把产品的持续演进比作装配线。",
+    "en": "The creator asked Claude to recreate Factorio with compute liquidity as its theme, describing the resulting product evolution as an assembly line."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/0xZergs/status/2109609797775708498",
+    "text": "claude, recreate factorio but make it about compute liquidity"
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 17563,
+    "likes": 143,
+    "replies": 12,
+    "reposts": 14,
+    "bookmarks": 39,
+    "checkedAt": "2026-10-13T19:53:36.885Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109609020168212480/img/1NrSS6r2TDVpeOA_.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109609020168212480/vid/avc1/1280x720/9dv5BE7pcFKVH3Nt.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 104
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103601538551918743",
    "url": "https://x.com/spawn/status/2103601538551918743",
    "author": {
@@ -56928,6 +57993,57 @@
    "evidence": {
     "via": "fxtwitter",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2109603289939738813",
+   "url": "https://x.com/mmmiyama_D/status/2109603289939738813",
+   "author": {
+    "handle": "mmmiyama_D",
+    "name": "ミヤマ"
+   },
+   "postedAt": "2026-10-12T11:13:13.000Z",
+   "addedAt": "2026-10-13",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "AI配音配图制作的电台风格视频",
+    "en": "Radio-style video with AI voice and images"
+   },
+   "summary": {
+    "zh": "这是一个未使用视频生成AI制作的广播风格视频，使用了Opus 5.5、GPT图像生成和Gemini语音。",
+    "en": "A radio-style video was made without a video-generation AI, using Opus 5.5, GPT image generation, and Gemini voice."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "GPT image generation",
+    "Gemini voice"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 16267,
+    "likes": 203,
+    "replies": 17,
+    "reposts": 6,
+    "bookmarks": 159,
+    "checkedAt": "2026-10-13T19:53:36.885Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109603238500831232/img/AsgCg15faec7OoVY.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109603238500831232/vid/avc1/1280x720/Agrrq7PUpVEGhJH9.mp4?tag=16",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 96
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -60914,6 +62030,56 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2109603285938094545",
+   "url": "https://x.com/HamidoFx1/status/2109603285938094545",
+   "author": {
+    "handle": "HamidoFx1",
+    "name": "Hamido Teck"
+   },
+   "postedAt": "2026-10-12T11:13:12.000Z",
+   "addedAt": "2026-10-13",
+   "lang": "und",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "3D珠宝品牌展示",
+    "en": "3D jewelry brand visualization"
+   },
+   "summary": {
+    "zh": "这是一个使用GPT-6 Astra和Opus 5.5制作的3D珠宝品牌概念。",
+    "en": "A 3D jewelry brand concept was made with GPT-6 Astra and Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "GPT-6 Astra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 13201,
+    "likes": 181,
+    "replies": 35,
+    "reposts": 20,
+    "bookmarks": 46,
+    "checkedAt": "2026-10-13T19:53:36.885Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109603201649397760/img/Vi-UsFiisc6MNeVt.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109603201649397760/vid/avc1/720x1010/4umQd5fjwQurv8T9.mp4?tag=29",
+    "width": 720,
+    "height": 1010,
+    "durationSec": 10
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -65122,6 +66288,54 @@
    }
   },
   {
+   "id": "2109563099703660773",
+   "url": "https://x.com/chaaai/status/2109563099703660773",
+   "author": {
+    "handle": "chaaai",
+    "name": "Chaitanya"
+   },
+   "postedAt": "2026-10-12T08:33:31.000Z",
+   "addedAt": "2026-10-13",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "原生macOS编码代理应用",
+    "en": "Native macOS coding agent app"
+   },
+   "summary": {
+    "zh": "Opus 5.5在几小时内制作了一个原生macOS编码代理，不依赖其他组件，并支持持久远程连接和原生滚动。",
+    "en": "Opus 5.5 built a native macOS coding agent in a few hours, without dependencies and with a persistent remote connection and native scrolling."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 11160,
+    "likes": 101,
+    "replies": 5,
+    "reposts": 2,
+    "bookmarks": 76,
+    "checkedAt": "2026-10-13T19:53:36.885Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109562659037413376/img/6fssthSZl-yOkkTO.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109562659037413376/vid/avc1/1098x720/oftVb3g6WIue2mCY.mp4?tag=29",
+    "width": 1098,
+    "height": 720,
+    "durationSec": 35
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102579218953765071",
    "url": "https://x.com/dobokuya77/status/2102579218953765071",
    "author": {
@@ -67162,6 +68376,54 @@
    }
   },
   {
+   "id": "2109628088430510337",
+   "url": "https://x.com/0xbobaaa/status/2109628088430510337",
+   "author": {
+    "handle": "0xbobaaa",
+    "name": "0xbobaa"
+   },
+   "postedAt": "2026-10-12T12:51:45.000Z",
+   "addedAt": "2026-10-13",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "气球岛建造游戏",
+    "en": "Balloon island building game"
+   },
+   "summary": {
+    "zh": "创作者称 Claude Opus 5.5 经过九轮生成了这款游戏，包括代码、排行榜和商店流程。他还通过查看录制画面进行测试，并整理了一套课程。",
+    "en": "The creator says Claude Opus 5.5 made a game over nine passes, including its code, leaderboard, and store route. They also describe testing it through captured frames and writing a course about the process."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 9884,
+    "likes": 150,
+    "replies": 11,
+    "reposts": 16,
+    "bookmarks": 131,
+    "checkedAt": "2026-10-13T19:53:36.885Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109628038962925568/img/XC2saTjxRot9RoWC.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109628038962925568/vid/avc1/720x900/uI5_oHqpPO1xl8A-.mp4?tag=29",
+    "width": 720,
+    "height": 900,
+    "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2106266004515172366",
    "url": "https://x.com/ponzponz15/status/2106266004515172366",
    "author": {
@@ -67562,6 +68824,58 @@
    "evidence": {
     "via": "fxtwitter",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2109598040889942476",
+   "url": "https://x.com/aicreataro/status/2109598040889942476",
+   "author": {
+    "handle": "aicreataro",
+    "name": "aicreataro"
+   },
+   "postedAt": "2026-10-12T10:52:22.000Z",
+   "addedAt": "2026-10-13",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "用Blender和代码制作的像素世界",
+    "en": "Pixel World built with Blender and code"
+   },
+   "summary": {
+    "zh": "创作者用 Blender 和代码把像素画转换成立方体组成的 3D 世界，让场景从早到晚不断变化。",
+    "en": "A pixel-art world is turned into a 3D cube-based animation with Blender and code, moving through multiple scenes from morning to night."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Blender",
+    "After Effects",
+    "Python"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 9591,
+    "likes": 231,
+    "replies": 3,
+    "reposts": 18,
+    "bookmarks": 193,
+    "checkedAt": "2026-10-13T19:53:36.885Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109596901016494080/img/sCTFhua5-6Ae1Ox_.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109596901016494080/vid/avc1/1280x720/7vue96jvu1AwPm9q.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 66
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -71341,6 +72655,54 @@
    }
   },
   {
+   "id": "2109593857889583467",
+   "url": "https://x.com/kepochnik/status/2109593857889583467",
+   "author": {
+    "handle": "kepochnik",
+    "name": "kepo"
+   },
+   "postedAt": "2026-10-12T10:35:44.000Z",
+   "addedAt": "2026-10-13",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "糖豆人风格游戏对比",
+    "en": "Fall Guys style game comparison"
+   },
+   "summary": {
+    "zh": "创作者让 Opus 5.5 和 GPT-6.1 Sol High 都制作类似《糖豆人》的游戏，并比较完成速度和效果。",
+    "en": "The creator compared Opus 5.5 and GPT-6.1 Sol High by having both models create a Fall Guys-style game."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 7629,
+    "likes": 121,
+    "replies": 38,
+    "reposts": 4,
+    "bookmarks": 35,
+    "checkedAt": "2026-10-13T19:53:36.885Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109593489612980224/img/R2eb8XxTgDlnON4F.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109593489612980224/vid/avc1/1280x720/n-NEx3HssRsczoYo.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 60
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2107956617337885077",
    "url": "https://x.com/aj_dev_smith/status/2107956617337885077",
    "author": {
@@ -71972,6 +73334,58 @@
    }
   },
   {
+   "id": "2109610532365857198",
+   "url": "https://x.com/VectorCrossProd/status/2109610532365857198",
+   "author": {
+    "handle": "VectorCrossProd",
+    "name": "Nigel Hungerford-Symes"
+   },
+   "postedAt": "2026-10-12T11:42:00.000Z",
+   "addedAt": "2026-10-13",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "PCB设计流程演示",
+    "en": "PCB design pipeline demo"
+   },
+   "summary": {
+    "zh": "Claude Opus 完成了大部分 PCB 设计工作，TraceMaker 用于优化元件布局和布线。",
+    "en": "Claude Opus handled most of the PCB design workflow, while TraceMaker optimizes component placement and routing."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "FreeRouting",
+    "KiCad",
+    "TraceMaker"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 7330,
+    "likes": 179,
+    "replies": 10,
+    "reposts": 8,
+    "bookmarks": 251,
+    "checkedAt": "2026-10-13T19:53:36.885Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109595301023768577/img/HeBBWPumuOpYU07X.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109595301023768577/vid/avc1/1280x720/ZYmDYfE7W4v3nLs_.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 60
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2108264801424269777",
    "url": "https://x.com/Cyphryx/status/2108264801424269777",
    "author": {
@@ -72014,6 +73428,59 @@
     "width": 1280,
     "height": 720,
     "durationSec": 84
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2109576248598970690",
+   "url": "https://x.com/leopardracer/status/2109576248598970690",
+   "author": {
+    "handle": "leopardracer",
+    "name": "leopardracer"
+   },
+   "postedAt": "2026-10-12T09:25:46.000Z",
+   "addedAt": "2026-10-13",
+   "lang": "en",
+   "models": [
+    "haiku-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "AI守门员模型对比",
+    "en": "AI goalkeeper model comparison"
+   },
+   "summary": {
+    "zh": "四个 AI 模型在实时点球测试中担任守门员，比较了扑救率、响应时间和成本。",
+    "en": "Four AI models acted as goalkeepers in an 18-shot real-time penalty test, comparing save rates, response times, and costs."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Microsoft Decision-1",
+    "TypeSafe Jev",
+    "Anthropic Haiku 5.5",
+    "Google Gemini 3.8 Flash"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 7308,
+    "likes": 106,
+    "replies": 13,
+    "reposts": 6,
+    "bookmarks": 42,
+    "checkedAt": "2026-10-13T19:53:36.885Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109575967458902016/img/b8eq3d7TA9tAObzF.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109575967458902016/vid/avc1/720x720/3EOfUa2wKC3mT9BF.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 30
    },
    "evidence": {
     "via": "daily",
@@ -72789,6 +74256,59 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2109595253879816337",
+   "url": "https://x.com/konstantinsaifo/status/2109595253879816337",
+   "author": {
+    "handle": "konstantinsaifo",
+    "name": "Konstantin Saifoulline"
+   },
+   "postedAt": "2026-10-12T10:41:17.000Z",
+   "addedAt": "2026-10-13",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "升力原理互动风洞演示",
+    "en": "Interactive wind tunnel lift explainer"
+   },
+   "summary": {
+    "zh": "Claude 制作了交互式风洞来解释升力，后续还比较了有凹坑和光滑高尔夫球的气流效果。",
+    "en": "Claude built an interactive wind tunnel to explain lift, with a follow-up comparison of dimpled and smooth golf balls."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/konstantinsaifo/status/2109595253879816337",
+    "text": "explain lift by building an interactive wind tunnel."
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 6777,
+    "likes": 194,
+    "replies": 12,
+    "reposts": 16,
+    "bookmarks": 95,
+    "checkedAt": "2026-10-13T19:53:36.885Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109594110214516736/img/6CdjR2HSRFvdIaDF.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109594110214516736/vid/avc1/1280x720/EqBZprPeFzdTzDYO.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 34
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -73729,6 +75249,56 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2109611621719109920",
+   "url": "https://x.com/ring_hyacinth/status/2109611621719109920",
+   "author": {
+    "handle": "ring_hyacinth",
+    "name": "Ring Hyacinth"
+   },
+   "postedAt": "2026-10-12T11:46:19.000Z",
+   "addedAt": "2026-10-13",
+   "lang": "zh",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "动物乐队音乐播放器应用",
+    "en": "Animal band music player app"
+   },
+   "summary": {
+    "zh": "一个让动物乐团演奏任意歌曲的音乐播放器，不同曲目会由不同乐手演出。作者使用 Opus 5.5 和 Codex 制作。",
+    "en": "A music player where an animal band performs any song, with different musicians chosen for different pieces. It was made with Opus 5.5 and Codex."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Codex"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 6180,
+    "likes": 110,
+    "replies": 14,
+    "reposts": 10,
+    "bookmarks": 55,
+    "checkedAt": "2026-10-13T19:53:36.885Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109610567283687424/img/mJdH4GQVs6VOFvzE.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109610567283687424/vid/avc1/720x888/1oNbb0MqCGSKn1Bl.mp4?tag=29",
+    "width": 720,
+    "height": 888,
+    "durationSec": 77
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
