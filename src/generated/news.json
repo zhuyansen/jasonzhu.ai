@@ -1,5 +1,78 @@
 [
   {
+    "slug": "2026-10-13",
+    "date": "2026-10-13",
+    "title": "AI 快讯 · 10月13日",
+    "items": [
+      {
+        "title": "Meta发布首个前沿模型Muse Wonder",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/10/12/meta-releases-its-first-frontier-model-muse-wonder/",
+        "summary": "Meta推出首个前沿模型Muse Wonder，定位高于此前强调低延迟的Muse Spark，在复杂任务、编程和基准测试上表现更强。Meta正式加入前沿模型竞争，开发者将获得新的模型选择与能力对比对象。",
+        "titleEn": "Meta Launches Its First Frontier Model",
+        "summaryEn": "Meta has launched Muse Wonder, its first frontier model, positioned as a larger and more capable successor to the low-latency Muse Spark. The model reportedly performs better on complex tasks, including coding, giving developers another major option to evaluate in the increasingly crowded frontier-model market."
+      },
+      {
+        "title": "Anthropic用动态工作流协调Claude Agent",
+        "source": "Latent Space",
+        "category": "Skills 生态",
+        "url": "https://www.latent.space/p/claude-dynamic-workflows",
+        "summary": "Anthropic分享Claude动态工作流设计，借鉴Unix和Linux的模块化思想，让多个Agent按需协作处理大型项目。核心价值不是堆叠更多Agent，而是通过任务拆分、调度和结果传递控制复杂度，减少开发者被上下文淹没。",
+        "titleEn": "Anthropic Builds Dynamic Workflows for Claude Agents",
+        "summaryEn": "Anthropic presented dynamic workflows for coordinating Claude agents, drawing lessons from Unix and Linux modularity. The approach decomposes larger projects into manageable tasks and coordinates agents through structured handoffs. For developers, the key lesson is that scalable agent systems depend more on orchestration and interfaces than simply adding more agents."
+      },
+      {
+        "title": "REA用一个MCP逆向分析应用与二进制",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/morluto/rea",
+        "summary": "开源项目REA提供统一MCP接口，可让Agent逆向分析应用行为、运行时过程和原生二进制文件。它把原本分散的反汇编、调试与行为观察工具接入Agent工作流，适合软件兼容、漏洞研究和竞品分析场景。",
+        "titleEn": "REA Brings Reverse Engineering Into One MCP",
+        "summaryEn": "REA provides a unified MCP for agent-assisted reverse engineering across applications, runtime behavior, and native binaries. By connecting disassembly, debugging, and behavioral analysis to an agent workflow, it could make complex software investigation more accessible for compatibility work, security research, and technical analysis."
+      },
+      {
+        "title": "Diagram Design把44种图表做成Agent Skill",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/cathrynlavery/diagram-design",
+        "summary": "Diagram Design面向Claude Code、Codex、Copilot、Cursor等编码Agent提供图表生成Skill，支持44种图表类型，并输出单文件HTML与SVG。它将视觉规范、品牌匹配和可编辑导出封装进Agent，降低了自动产出专业图示的门槛。",
+        "titleEn": "Diagram Design Turns Visuals Into an Agent Skill",
+        "summaryEn": "Diagram Design is an agent skill for Claude Code, Codex, Copilot, Cursor, and other coding agents. It supports 44 diagram types and generates self-contained HTML and SVG files. The project packages visual rules, brand matching, and export workflows into a reusable skill, making consistent diagram generation easier to automate."
+      },
+      {
+        "title": "AI初创Blueprints可数分钟生成合规蓝图",
+        "source": "TechCrunch AI",
+        "category": "出海实战",
+        "url": "https://techcrunch.com/2026/10/12/this-ai-startup-says-it-can-generate-permit-ready-blueprints-in-minutes/",
+        "summary": "Santa Monica的自力更生初创Blueprints AI称，可从照片、PDF或手绘草图生成符合规范、可用于报批的建筑蓝图。它将通用视觉模型落到建筑许可这一高价值垂直流程，体现独立团队通过行业规则和工作流构建产品壁垒的路径。",
+        "titleEn": "Blueprints AI Generates Permit-Ready Building Plans",
+        "summaryEn": "Santa Monica-based bootstrapped startup Blueprints AI says it can generate code-compliant, permit-ready construction blueprints from photos, PDFs, or sketches. The product shows how a small team can apply AI to a high-value vertical workflow, combining visual understanding with industry regulations rather than selling a generic image-generation tool."
+      },
+      {
+        "title": "ARCS用结构化澄清减少Text-to-SQL误解",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2610.09396",
+        "summary": "ARCS提出结构化消歧方法，专门处理用户自然语言提问中隐含的口径和业务语义歧义。相比单纯让用户反复澄清，它尝试把不确定意图拆解并校正，开发者可借此提升数据分析Agent生成SQL的准确率与可控性。",
+        "titleEn": "ARCS Reduces Text-to-SQL Errors Through Disambiguation",
+        "summaryEn": "ARCS introduces structured disambiguation for text-to-SQL systems, targeting subtle domain-specific ambiguities that can silently produce incorrect queries. Instead of relying entirely on repeated user clarification, it structures and resolves uncertain intent. For developers, this offers a practical direction for making analytics agents more accurate and safer in real business databases."
+      },
+      {
+        "title": "研究发现GUI Agent经验并非处处有用",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2609.33304",
+        "summary": "研究发现，GUI Agent检索历史经验能明显改善任务开始时的第一步决策，但对后续每一步并不总有帮助，相关经验甚至可能造成干扰。对开发者而言，关键不是无限扩大记忆，而是根据当前决策阶段精准激活经验。",
+        "titleEn": "GUI Agent Memory Helps Early Decisions Most",
+        "summaryEn": "This study finds that retrieved interaction history strongly improves the opening decision of a personal GUI agent, but its value often declines for later steps and may even introduce distractions. The result suggests that agent memory should be activated selectively by decision stage, rather than indiscriminately appended to every context window."
+      }
+    ],
+    "jasonSays": "今日最值得关注的是Agent基础设施正在从单体调用转向动态编排与可复用Skills，MCP和专用工作流开始把复杂能力真正接入开发者日常。",
+    "jasonSaysEn": "The key development today is the shift from monolithic agent calls toward dynamic orchestration and reusable skills, with MCP and specialized workflows bringing complex capabilities into everyday developer tools.",
+    "filename": "2026-10-13.md"
+  },
+  {
     "slug": "2026-10-12",
     "date": "2026-10-12",
     "title": "AI 快讯 · 10月12日",
@@ -70,7 +143,8 @@
     ],
     "jasonSays": "今天最值得关注的是context-mode：它直击MCP工具输出撑爆上下文的痛点，宣称压缩98%，是长任务编码Agent的实用补丁。",
     "jasonSaysEn": "The standout today is context-mode, which tackles MCP tool output bloating context windows with a claimed 98% reduction, a practical fix for long-running coding agents.",
-    "filename": "2026-10-12.md"
+    "filename": "2026-10-12.md",
+    "coverImage": "/news/2026-10-12.png"
   },
   {
     "slug": "2026-10-11",
