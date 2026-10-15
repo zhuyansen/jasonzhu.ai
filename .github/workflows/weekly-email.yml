@@ -1,0 +1,49 @@
+name: Weekly Email (出海选品周报)
+
+# 手动触发。先用 mode=test 发给 ALERT_EMAIL 看效果，确认后再 mode=all + confirm=SEND 群发。
+on:
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: "文章 slug，如 chuhai-weekly-01"
+        required: true
+      mode:
+        description: "test = 只发 ALERT_EMAIL；all = 全部订阅者"
+        type: choice
+        options: [test, all]
+        default: test
+      confirm:
+        description: "mode=all 时填 SEND，否则留空"
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Send weekly email
+        env:
+          POST_SLUG: ${{ inputs.slug }}
+          MODE: ${{ inputs.mode }}
+          CONFIRM: ${{ inputs.confirm }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          ALERT_EMAIL: ${{ secrets.ALERT_EMAIL }}
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: node scripts/send-weekly-email.mjs
