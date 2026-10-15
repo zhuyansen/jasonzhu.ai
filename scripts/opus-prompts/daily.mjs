@@ -76,10 +76,13 @@ const truncated = raw.length >= MAX_SEARCH;
 // 搜索结果缺视频字段（twitterapi.io 偶发整批不带 extendedEntities）：用 FXTwitter 补。
 // 补不回来就判接口异常——报错停住，不推进窗口、不记 seen，否则这段时间的作品会被永久跳过（2026-10-13～14 漏了 3 段）
 const isFresh = (t) => process.env.IGNORE_SEEN === "1" || !seen.has(t.id);
-const needMedia = raw.filter((t) => (t.viewCount || 0) >= THRESHOLD && !hasVideo(t) && isFresh(t));
+// 判断标准用 normalize 能不能解析出视频，而不只看有没有 extendedEntities：10/15 补跑时字段在、格式不对，hasVideo 判有、normalize 却解析不出
+const needMedia = raw.filter((t) => (t.viewCount || 0) >= THRESHOLD && isFresh(t) && !normalize(t, nowISO));
 if (needMedia.length) {
+  const s0 = needMedia.find(hasVideo) || needMedia[0];
+  log(`  样本 ${s0.id} 的媒体字段：${JSON.stringify(s0.extendedEntities?.media?.[0] ?? s0.extendedEntities ?? s0.media ?? null).slice(0, 400)}`);
   const r = await fillMediaFromFx(needMedia);
-  log(`搜索结果缺视频字段 ${needMedia.length} 条 → FXTwitter 补回 ${r.filled} · 确认没视频 ${r.noVideo} · 查询失败 ${r.failed}`);
+  log(`搜索结果解析不出视频 ${needMedia.length} 条 → FXTwitter 补回 ${r.filled} · 确认没视频 ${r.noVideo} · 查询失败 ${r.failed}`);
   if (r.failed >= 5 && r.failed > needMedia.length / 2) {
     console.error(`❌ ${r.failed}/${needMedia.length} 条缺视频字段且 FXTwitter 也查不到，疑似接口异常：不写入、不推进窗口，下次重试`);
     process.exit(1);
