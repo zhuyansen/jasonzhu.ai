@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "@/components/Link";
 import Image from "next/image";
-import { getAllPosts, getPostBySlug } from "@/lib/mdx";
+import { getAllPosts, getPostBySlug, getWeeklyIssues, WEEKLY_SERIES, type BlogPostMeta } from "@/lib/mdx";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
@@ -91,6 +91,13 @@ export default async function BlogPostPage({ params }: Props) {
   const post = getPostBySlug(slug, lang);
   if (!post) notFound();
 
+  // 出海选品周报的文章属于 /weekly 板块：面包屑、返回链接和期数导航都指向那里
+  const isWeekly = post.series === WEEKLY_SERIES;
+  const issues = isWeekly ? getWeeklyIssues() : [];
+  const section = isWeekly
+    ? { name: lang === "zh" ? "选品周报" : "Weekly", href: `/${lang}/weekly` }
+    : { name: lang === "zh" ? "博客" : "Blog", href: `/${lang}/blog` };
+
   // Related posts: shared tags weighted highest, then same category, newest first
   const relatedPosts = getAllPosts()
     .filter((p) => p.slug !== slug)
@@ -119,8 +126,8 @@ export default async function BlogPostPage({ params }: Props) {
       {
         "@type": "ListItem",
         position: 2,
-        name: lang === "zh" ? "博客" : "Blog",
-        item: `${SITE_URL}/${lang}/blog`,
+        name: section.name,
+        item: `${SITE_URL}${section.href}`,
       },
       {
         "@type": "ListItem",
@@ -193,8 +200,8 @@ export default async function BlogPostPage({ params }: Props) {
           </li>
           <li>/</li>
           <li>
-            <Link href={`/${lang}/blog`} className="hover:text-gray-600">
-              {lang === "zh" ? "博客" : "Blog"}
+            <Link href={section.href} className="hover:text-gray-600">
+              {section.name}
             </Link>
           </li>
           <li>/</li>
@@ -203,13 +210,13 @@ export default async function BlogPostPage({ params }: Props) {
       </nav>
       {/* Back link */}
       <Link
-        href={`/${lang}/blog`}
+        href={section.href}
         className="inline-flex items-center text-sm text-gray-400 hover:text-gray-600 mb-8"
       >
         <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
         </svg>
-        {dict.blog.backToBlog}
+        {isWeekly ? (lang === "zh" ? "返回全部周报" : "All issues") : dict.blog.backToBlog}
       </Link>
 
       {/* Header */}
@@ -261,6 +268,8 @@ export default async function BlogPostPage({ params }: Props) {
         )}
       </header>
 
+      {isWeekly && <WeeklyNav issue={post.issue ?? 0} issues={issues} lang={lang} />}
+
       {/* Cover image (hero) — next/image: 自动 AVIF/WebP + srcset，priority 保 LCP */}
       {post.coverImage && (
         <div className="mb-8 rounded-2xl overflow-hidden border border-gray-100 bg-gray-50">
@@ -298,6 +307,12 @@ export default async function BlogPostPage({ params }: Props) {
           }}
         />
       </div>
+
+      {isWeekly && (
+        <div className="mt-10">
+          <WeeklyNav issue={post.issue ?? 0} issues={issues} lang={lang} />
+        </div>
+      )}
 
       {/* Like Button */}
       <div className="mt-10 flex justify-center">
@@ -358,5 +373,35 @@ export default async function BlogPostPage({ params }: Props) {
         </div>
       </div>
     </article>
+  );
+}
+
+/** 出海选品周报的期数导航：第几期、上一期、全部周报、下一期 */
+function WeeklyNav({ issue, issues, lang }: { issue: number; issues: BlogPostMeta[]; lang: Locale }) {
+  const isZh = lang === "zh";
+  const older = issues.find((p) => p.issue === issue - 1);
+  const newer = issues.find((p) => p.issue === issue + 1);
+  return (
+    <nav
+      aria-label={isZh ? "周报期数" : "Issues"}
+      className="mb-8 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-blue-100 bg-blue-50/50 px-4 py-3 text-sm"
+    >
+      <span className="font-medium text-blue-700">{isZh ? `出海选品周报 · 第 ${issue} 期` : `Weekly · Issue ${issue}`}</span>
+      <span className="flex items-center gap-4 text-gray-500">
+        {older && (
+          <Link href={`/${lang}/blog/${older.slug}`} className="hover:text-gray-900">
+            {isZh ? "← 上一期" : "← Previous"}
+          </Link>
+        )}
+        <Link href={`/${lang}/weekly`} className="hover:text-gray-900">
+          {isZh ? "全部周报" : "All issues"}
+        </Link>
+        {newer && (
+          <Link href={`/${lang}/blog/${newer.slug}`} className="hover:text-gray-900">
+            {isZh ? "下一期 →" : "Next →"}
+          </Link>
+        )}
+      </span>
+    </nav>
   );
 }

@@ -59,6 +59,9 @@ const posts = files.map((filename) => {
     excerpt: data.excerpt || "",
     coverImage: data.coverImage || undefined,
     tweetUrl: data.tweetUrl || undefined,
+    // 系列文章（如出海选品周报：series: chuhai-weekly, issue: 1）：自成板块，见 /[lang]/weekly
+    series: data.series || undefined,
+    issue: data.issue || undefined,
     hasEnglish: enSlugs.has(slug) || undefined,
     ...(enMeta.get(slug) || {}),
     headings: headingsOf(content),

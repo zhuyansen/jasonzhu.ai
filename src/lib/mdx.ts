@@ -12,6 +12,10 @@ export interface BlogPostMeta {
   excerpt: string;
   coverImage?: string;
   tweetUrl?: string;
+  /** 系列名（frontmatter series），如出海选品周报的 "chuhai-weekly" */
+  series?: string;
+  /** 系列里的期数（frontmatter issue） */
+  issue?: number;
   hasEnglish?: boolean;
   /** 英文版标题 / 摘要（有 .en.md 时），博客搜索用 */
   titleEn?: string;
@@ -59,6 +63,16 @@ export function getPostBySlug(slug: string, lang?: "zh" | "en"): BlogPost | unde
     fs.readFileSync(path.join(contentDir, `${slug}.json`), "utf-8")
   );
   return { ...meta, content };
+}
+
+/** 出海选品周报：series 为此值的文章自成 /[lang]/weekly 板块，文章本身仍在 /[lang]/blog/<slug> */
+export const WEEKLY_SERIES = "chuhai-weekly";
+
+/** 出海选品周报的全部期数，最新一期在前 */
+export function getWeeklyIssues(): BlogPostMeta[] {
+  return allPostsMeta
+    .filter((p) => p.series === WEEKLY_SERIES)
+    .sort((a, b) => (b.issue ?? 0) - (a.issue ?? 0));
 }
 
 export function getCategories(): string[] {

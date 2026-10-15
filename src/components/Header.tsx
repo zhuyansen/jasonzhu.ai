@@ -19,6 +19,7 @@ export default function Header({ lang, dict }: HeaderProps) {
   const navItems: { href: string; label: string; badge?: string; match?: string }[] = [
     { href: `/${lang}/blog`, label: dict.nav.blog },
     { href: `/${lang}/news`, label: dict.nav.news, badge: "Beta" },
+    { href: `/${lang}/weekly`, label: dict.nav.weekly, badge: "New" },
     { href: `/${lang}/tools`, label: dict.nav.tools },
     { href: `/${lang}/prompts/claude-opus-5-5`, match: `/${lang}/prompts`, label: dict.nav.prompts, badge: "New" },
     { href: `/${lang}/services`, label: dict.nav.services },

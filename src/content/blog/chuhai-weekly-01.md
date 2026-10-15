@@ -4,6 +4,8 @@ date: "2026-10-15"
 category: "出海"
 tags: ["出海", "出海选品周报", "独立开发", "选品", "海外收款"]
 coverImage: "/blog/chuhai-weekly-01/cover.png"
+series: "chuhai-weekly"
+issue: 1
 excerpt: "10 月 8 日至 14 日：6,457 个新卖家挂上收款链接；本周值得看的 5 个新产品；三个月起量最快的新站；用 Trends 核实过的 4 个需求；同一个工具按语言铺域名的打法；收款平台动态。"
 ---
 

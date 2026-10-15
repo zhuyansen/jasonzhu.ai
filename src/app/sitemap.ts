@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { getAllPosts } from "@/lib/mdx";
+import { getAllPosts, getWeeklyIssues } from "@/lib/mdx";
 import { getAllDigests, isDigestIndexable } from "@/lib/news";
 import { getOpusLibrary } from "@/lib/opus-prompts";
 
@@ -41,6 +41,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       });
     }
   }
+
+  // 出海选品周报目录页：周报只有中文，en 页 canonical 指回 zh，所以只收 zh
+  const latestIssue = getWeeklyIssues()[0];
+  entries.push({
+    url: `${SITE_URL}/zh/weekly`,
+    ...(latestIssue ? { lastModified: new Date(latestIssue.date + "T08:00:00+08:00") } : {}),
+    changeFrequency: "weekly",
+    priority: 0.8,
+  });
 
   // 博客文章：lastmod 用 frontmatter date（真实日期，不造假）。
   // en URL 只收录真正有英文翻译的——未翻译的 en 页是中文内容的逐字节复制，
