@@ -1,8 +1,8 @@
 {
  "model": "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.5)",
  "threshold": 5000,
- "updatedAt": "2026-10-15T11:14:34.918Z",
- "statsCheckedAt": "2026-10-15T11:14:34.918Z",
+ "updatedAt": "2026-10-15T14:22:20.388Z",
+ "statsCheckedAt": "2026-10-15T14:22:20.388Z",
  "inclusionRule": "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -15377,6 +15377,63 @@
    }
   },
   {
+   "id": "2110078803297055212",
+   "url": "https://x.com/Bhavani_00007/status/2110078803297055212",
+   "author": {
+    "handle": "Bhavani_00007",
+    "name": "Bhavy☄️"
+   },
+   "postedAt": "2026-10-13T18:42:44.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "3D鲸鱼跃水场景模型对比",
+    "en": "3D whale breaching scene model comparison"
+   },
+   "summary": {
+    "zh": "该作者让四个AI模型（Argon、Opus 5.5、GPT 6 Astra、Kimi K3）分别生成一个3D鲸鱼跃出水面的场景，并比较它们的真实感和细节表现。",
+    "en": "A comparison of four AI models (Argon, Opus 5.5, GPT 6 Astra, Kimi K3) each asked to build a 3D whale breaching scene, judging photorealism and detail."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/Bhavani_00007/status/2110078803297055212",
+    "text": "build a 3D whale breaching scene"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Gemini 4 Argon",
+    "GPT 6 Astra",
+    "Kimi K3"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 126905,
+    "likes": 709,
+    "replies": 52,
+    "reposts": 65,
+    "bookmarks": 160,
+    "checkedAt": "2026-10-15T14:22:20.388Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110078141389828096/img/-OwYuBX4lBaubMrO.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110078141389828096/vid/avc1/720x720/AkApZXieOkqAruzT.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 20
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2104437066755125601",
    "url": "https://x.com/AndyL5cc/status/2104437066755125601",
    "author": {
@@ -17834,6 +17891,63 @@
    }
   },
   {
+   "id": "2110192618269221048",
+   "url": "https://x.com/rubenssoto_ai/status/2110192618269221048",
+   "author": {
+    "handle": "rubenssoto_ai",
+    "name": "Rubens Soto | AI & SaaS"
+   },
+   "postedAt": "2026-10-14T02:15:00.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "Opus 5.5对比Gemini 4与GPT 6",
+    "en": "Opus 5.5 vs Gemini 4 vs GPT 6 comparison"
+   },
+   "summary": {
+    "zh": "作者用同一个通用提示词（生成一个自包含HTML文件，内含鹈鹕骑自行车的SVG动画）比较了Opus 5.5、Gemini 4 Argon、GPT 6.1 Sol和GPT 6 Astra的表现。",
+    "en": "A comparison of Opus 5.5, Gemini 4 Argon, GPT 6.1 Sol, and GPT 6 Astra using the same generic prompt asking for a self-contained HTML/SVG animation of a pelican riding a bicycle."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/rubenssoto_ai/status/2110477365071819210",
+    "text": "Create a self-contained HTML file with a 2D SVG animation of a pelican riding a bicycle"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Gemini 4 Argon",
+    "GPT 6.1 Sol",
+    "GPT 6 Astra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 108813,
+    "likes": 632,
+    "replies": 87,
+    "reposts": 35,
+    "bookmarks": 87,
+    "checkedAt": "2026-10-15T14:22:20.388Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110178014185041922/img/tMMJdHFu-SzuM6bB.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110178014185041922/vid/avc1/1280x720/jppEQorIT10izn8a.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103632815677944206",
    "url": "https://x.com/Layton_Gott/status/2103632815677944206",
    "author": {
@@ -18719,6 +18833,56 @@
     "width": 1400,
     "height": 720,
     "durationSec": 39
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2109918956358357339",
+   "url": "https://x.com/hanifproduktif/status/2109918956358357339",
+   "author": {
+    "handle": "hanifproduktif",
+    "name": "Hanif | AI For Productivity"
+   },
+   "postedAt": "2026-10-13T08:07:34.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "澳大利亚入侵巴厘岛战争模拟",
+    "en": "Australia invades Bali war simulation"
+   },
+   "summary": {
+    "zh": "作者用Opus 5.5在HyperFrames平台上制作了一个关于澳大利亚入侵巴厘岛的假设性战争模拟视频，并分享了制作流程链接，但未公开具体提示词。",
+    "en": "An hour-by-hour hypothetical Indonesia vs Australia war simulation video created with Opus 5.5 on HyperFrames, with a separate workflow link shared but no prompt text given."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "HyperFrames"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 103054,
+    "likes": 791,
+    "replies": 50,
+    "reposts": 85,
+    "bookmarks": 413,
+    "checkedAt": "2026-10-15T14:22:20.388Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109917568899411968/img/ezx9SSKVpIOuKeuk.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109917568899411968/vid/avc1/1280x720/NH-9RVBviEBVxlf6.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 205
    },
    "evidence": {
     "via": "daily",
@@ -19966,6 +20130,57 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2110154463415558279",
+   "url": "https://x.com/fawnunwrap/status/2110154463415558279",
+   "author": {
+    "handle": "fawnunwrap",
+    "name": "fawn"
+   },
+   "postedAt": "2026-10-13T23:43:23.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "Minecraft下界竞速模型对比",
+    "en": "Minecraft nether race model comparison"
+   },
+   "summary": {
+    "zh": "作者让Gemini 4 Argon、Opus 5.5和Sol 6.1用同一个提示词比赛，看谁的AI代理能最先到达Minecraft的下界，但未公开具体提示词内容。",
+    "en": "A race comparison between Gemini 4 Argon, Opus 5.5, and Sol 6.1 to see which model's agent reaches the Nether first in Minecraft, using the same unspecified prompt."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Gemini 4 Argon",
+    "GPT 6.1 Sol"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 95487,
+    "likes": 878,
+    "replies": 19,
+    "reposts": 5,
+    "bookmarks": 194,
+    "checkedAt": "2026-10-15T14:22:20.388Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110154327218147329/img/qQMK1AxdQ6rmSH4a.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110154327218147329/vid/avc1/1280x720/j-CHQJZoBPhh59W5.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 87
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -21425,6 +21640,61 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2110234900616126769",
+   "url": "https://x.com/ann_nnng/status/2110234900616126769",
+   "author": {
+    "handle": "ann_nnng",
+    "name": "Ann Nguyen"
+   },
+   "postedAt": "2026-10-14T05:03:01.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "鸡尾酒晃动效果模型对比",
+    "en": "Margarita sloshing effect model comparison"
+   },
+   "summary": {
+    "zh": "作者用Gemini 4 Argon、Muse Wonder、Claude Opus 5.5和GPT 6 Astra分别测试了基于Three.js和WebGL实现的玛格丽特酒晃动液体效果，并分享了完整对话链接。",
+    "en": "A test of a margarita sloshing liquid effect built with Three.js/WebGL across Gemini 4 Argon, Muse Wonder, Claude Opus 5.5, and GPT 6 Astra, with the full conversation shared via a link."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Gemini 4 Argon",
+    "Muse Wonder",
+    "GPT 6 Astra",
+    "Three.js"
+   ],
+   "resources": [
+    "https://cloud.typingmind.com/share/778ad886-772a-4e2d-955d-97ba32fcdc48"
+   ],
+   "stats": {
+    "views": 84938,
+    "likes": 1039,
+    "replies": 60,
+    "reposts": 57,
+    "bookmarks": 356,
+    "checkedAt": "2026-10-15T14:22:20.388Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110232579509227520/img/w2c0R7ECo4TZYO6-.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110232579509227520/vid/avc1/720x900/6imkHZjTcEv-klTw.mp4?tag=29",
+    "width": 720,
+    "height": 900,
+    "durationSec": 19
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -23928,6 +24198,58 @@
    }
   },
   {
+   "id": "2110223026549850196",
+   "url": "https://x.com/AdityaJhajhar12/status/2110223026549850196",
+   "author": {
+    "handle": "AdityaJhajhar12",
+    "name": "Aditya Jhajharia"
+   },
+   "postedAt": "2026-10-14T04:15:50.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "Opus 5.5对比Gemini 4与GPT 6",
+    "en": "Opus 5.5 vs Gemini 4 vs GPT 6 comparison"
+   },
+   "summary": {
+    "zh": "这是一篇对比帖，展示了Opus 5.5、Gemini 4 Argon、Gpt 6.1 Sol和Gpt 6 Astra四个模型在同一任务上的输出效果。",
+    "en": "A comparison post showing outputs from Opus 5.5, Gemini 4 Argon, Gpt 6.1 Sol and Gpt 6 Astra on an unspecified task."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Gemini 4 Argon",
+    "Gpt 6.1 Sol",
+    "Gpt 6 Astra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 75851,
+    "likes": 490,
+    "replies": 59,
+    "reposts": 23,
+    "bookmarks": 95,
+    "checkedAt": "2026-10-15T14:22:20.388Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110221532215791616/img/BhyIHgzlMnWrmb9Y.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110221532215791616/vid/avc1/1280x720/MH98An_GGsdoIZxa.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2104040489301295502",
    "url": "https://x.com/bitstein/status/2104040489301295502",
    "author": {
@@ -26177,6 +26499,54 @@
    }
   },
   {
+   "id": "2109920822068654290",
+   "url": "https://x.com/alexcooldev/status/2109920822068654290",
+   "author": {
+    "handle": "alexcooldev",
+    "name": "Alex Nguyen"
+   },
+   "postedAt": "2026-10-13T08:14:59.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "用Opus构建的大亨游戏海滩更新",
+    "en": "Beach update for tycoon game built with Opus"
+   },
+   "summary": {
+    "zh": "作者表示通过口头描述创意和设计，让Claude Opus 5.5为其《商业帝国大亨》游戏编写了海滩更新内容，但未公开具体提示词。",
+    "en": "The creator describes using Claude Opus 5.5 to code a beach update for their Business Empire Tycoon game by describing the idea and design verbally, without pasting a specific prompt."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 69396,
+    "likes": 551,
+    "replies": 28,
+    "reposts": 41,
+    "bookmarks": 411,
+    "checkedAt": "2026-10-15T14:22:20.388Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109920681446305792/img/_2YjNzuJmvoLaoj3.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109920681446305792/vid/avc1/720x1564/yNkdQmamKkep5iLD.mp4?tag=29",
+    "width": 720,
+    "height": 1564,
+    "durationSec": 27
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2110019799342260630",
    "url": "https://x.com/Aykutuces/status/2110019799342260630",
    "author": {
@@ -28271,6 +28641,61 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2109896130188177563",
+   "url": "https://x.com/exploraX_/status/2109896130188177563",
+   "author": {
+    "handle": "exploraX_",
+    "name": "m0h"
+   },
+   "postedAt": "2026-10-13T06:36:52.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "Muse Wonder与Opus5.5大力水手网站对比测试",
+    "en": "Muse Wonder vs Opus 5.5 Popeye website test"
+   },
+   "summary": {
+    "zh": "作者给Muse Wonder和Claude Opus 5.5下达了相同的提示，要求从零构建一个动画版大力水手网站，并对比结果，认为Opus 5.5效果更好且成本更低。",
+    "en": "The creator gave Muse Wonder and Claude Opus 5.5 the same prompt to build an animated Popeye website and compared the results, concluding Opus 5.5 performed better and cheaper."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/exploraX_/status/2109896130188177563",
+    "text": "build an animated Popeye website from scratch"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Muse Wonder"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 62505,
+    "likes": 439,
+    "replies": 42,
+    "reposts": 22,
+    "bookmarks": 344,
+    "checkedAt": "2026-10-15T14:22:20.388Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109894355917942784/img/RBZnJRP9JnSDR6Tv.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109894355917942784/vid/avc1/720x944/BqqYwqxajmVkBvw5.mp4?tag=29",
+    "width": 720,
+    "height": 944,
+    "durationSec": 59
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -30422,6 +30847,56 @@
     "width": 1280,
     "height": 720,
     "durationSec": 46
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2110147080543252556",
+   "url": "https://x.com/0x0SojalSec/status/2110147080543252556",
+   "author": {
+    "handle": "0x0SojalSec",
+    "name": "Md Ismail Šojal 🕷️"
+   },
+   "postedAt": "2026-10-13T23:14:03.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "Opus5.5与Gemini4 Argon效果对比",
+    "en": "Opus 5.5 vs Gemini 4 Argon output comparison"
+   },
+   "summary": {
+    "zh": "这是一篇对比帖，称Opus 5.5和Gemini 4 Argon在相同提示下的输出质量几乎相同，但Argon的成本要低得多。",
+    "en": "A comparison post claiming Opus 5.5 and Gemini 4 Argon produced nearly identical output quality on the same prompt, though Argon is much cheaper."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Gemini 4 Argon"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 57786,
+    "likes": 301,
+    "replies": 30,
+    "reposts": 6,
+    "bookmarks": 90,
+    "checkedAt": "2026-10-15T14:22:20.388Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110146934837235712/img/3zYdylleJG_NRARR.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110146934837235712/vid/avc1/542x706/Y--1D1Ql-V0g_f8y.mp4?tag=29",
+    "width": 542,
+    "height": 706,
+    "durationSec": 17
    },
    "evidence": {
     "via": "daily",
@@ -35818,6 +36293,57 @@
    }
   },
   {
+   "id": "2110087305163854042",
+   "url": "https://x.com/luckeyfaraday/status/2110087305163854042",
+   "author": {
+    "handle": "luckeyfaraday",
+    "name": "Luckey Faraday"
+   },
+   "postedAt": "2026-10-13T19:16:31.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5",
+    "sonnet-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "马里奥3D测试：Gemini 4 Argon对比Opus 5.5",
+    "en": "Mario 3D test: Gemini 4 Argon vs Opus 5.5"
+   },
+   "summary": {
+    "zh": "一段对比视频展示了Gemini 4 Argon与Claude Opus 5.5在同一提示词、无参考图的情况下完成马里奥3D测试的结果，并比较了耗时与成本。",
+    "en": "A comparison video testing Gemini 4 Argon versus Claude Opus 5.5 on a Mario 3D generation task using the same prompt without a reference image, noting the time and cost difference."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Gemini 4 Argon"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 46099,
+    "likes": 202,
+    "replies": 15,
+    "reposts": 10,
+    "bookmarks": 54,
+    "checkedAt": "2026-10-15T14:22:20.388Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110087261584834560/img/XCcTIm5TAxYcpk6M.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110087261584834560/vid/avc1/720x720/baqjWMedSWs5WvDr.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 24
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2108625335122026542",
    "url": "https://x.com/ivanainai/status/2108625335122026542",
    "author": {
@@ -36016,6 +36542,56 @@
    }
   },
   {
+   "id": "2109863248552206567",
+   "url": "https://x.com/snakajima/status/2109863248552206567",
+   "author": {
+    "handle": "snakajima",
+    "name": "Satoshi Nakajima @MulmoCast"
+   },
+   "postedAt": "2026-10-13T04:26:12.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "用Opus 5.5和GPT-6 Astra制作的音乐视频",
+    "en": "Music video made with Opus 5.5 and GPT-6 Astra"
+   },
+   "summary": {
+    "zh": "作者使用Opus 5.5、GPT-6 Astra和开源工具JingleScript制作了一支音乐视频，完整版发布在YouTube，歌曲源码以CC BY 4.0协议公开在GitHub上。",
+    "en": "A music video made using Opus 5.5, GPT-6 Astra, and the open-source tool JingleScript, with the full version shared on YouTube and the song's source code posted on GitHub under CC BY 4.0."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "JingleScript"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 45862,
+    "likes": 222,
+    "replies": 3,
+    "reposts": 17,
+    "bookmarks": 90,
+    "checkedAt": "2026-10-15T14:22:20.388Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109862374694084609/img/ypcyC4M6gAai8bpv.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109862374694084609/vid/avc1/1280x720/lz8jW7cdjGO4lzuw.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 31
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103557735086428547",
    "url": "https://x.com/kloss_xyz/status/2103557735086428547",
    "author": {
@@ -36111,6 +36687,56 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2109903473387201003",
+   "url": "https://x.com/Saccc_c/status/2109903473387201003",
+   "author": {
+    "handle": "Saccc_c",
+    "name": "Sac"
+   },
+   "postedAt": "2026-10-13T07:06:02.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "zh",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "3D游戏预告片段",
+    "en": "3D game teaser footage"
+   },
+   "summary": {
+    "zh": "作者分享了即将发布的3D游戏花絮，该游戏用opus 5.5耗时16天完成开发；被引用的推文提到宣传视频是用opus 5.5加Blender、一句提示词制作的，但未公开具体提示词内容。",
+    "en": "Behind-the-scenes clips for an upcoming 3D game developed over 16 days entirely with Opus 5.5; a quoted post mentions a promo video made with Opus 5.5 and Blender using a single prompt, but the prompt text itself is not shown."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 45398,
+    "likes": 606,
+    "replies": 98,
+    "reposts": 33,
+    "bookmarks": 212,
+    "checkedAt": "2026-10-15T14:22:20.388Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109903352360488960/img/bicPFGdpZFZEYh1I.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109903352360488960/vid/avc1/1280x720/eRkNDnF2UocQMiBf.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 36
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -41794,6 +42420,62 @@
    }
   },
   {
+   "id": "2109993586951663626",
+   "url": "https://x.com/HeyAbhishek/status/2109993586951663626",
+   "author": {
+    "handle": "HeyAbhishek",
+    "name": "Abhishek"
+   },
+   "postedAt": "2026-10-13T13:04:07.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "小熊猫科达与巨型桃子",
+    "en": "Red panda Koda and the giant peach"
+   },
+   "summary": {
+    "zh": "作者先用Opus 5.5生成了一只名为Koda的小熊猫的角色设定图，再用Seedance 2.5根据详细的文字提示词将其制作成30秒的3D动画短片，整个过程通过Vidfield.ai完成。",
+    "en": "A 30-second cinematic 3D animated short about a red panda named Koda chasing a giant peach, made by first generating a character reference sheet with Opus 5.5 and then animating it into video with Seedance 2.5 using a detailed written prompt, created via Vidfield.ai."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/HeyAbhishek/status/2109993619381961069",
+    "text": "Create an exactly 30-second vertical 9:16 premium 3D animated adventure-comedy short. Use the attached @ Koda character sheet as the exact visual reference for Koda. Maintain his identical face, amber-brown eyes, cream facial markings, rust-red fur, dark legs, rounded ears, compact proportions and enormous ringed fluffy tail throughout every frame. The reference defines Koda's appearance only.\nThe entire story takes place on one continuous sunny green mountain hillside surrounded by distant forested mountains. One old peach tree grows from the slope. It has a thick stable trunk, several strong main branches and one thinner flexible outer branch. One enormous ripe golden-orange peach hangs near the end of that thinner branch. A large dense leafy bush grows directly below that side of the tree. A long fallen bamboo pole lies several meters away on the same hillside. Farther downhill, a narrow wooden footbridge crosses a shallow mountain stream. Keep this geography fixed throughout the entire video.\nKoda desperately wants the enormous peach. His first idea is simply to climb the tree. He reaches the fruit but moves too far onto the thin outer branch, causing the branch to bend gradually under his weight. He almost touches the peach, loses traction and slides off into the huge soft bush below. Koda refuses to give up. He returns with the long fallen bamboo pole, places it diagonally against a strong fork in the tree and climbs it like a simple ladder. This time he reaches the peach and pulls it free. The peach is far heavier than expected, drops onto the clearly sloping hillside and begins rolling downhill because of gravity. Koda chases it, jumps onto the rolling fruit and accidentally begins riding it. He becomes thrilled and celebrates until he notices a narrow wooden footbridge directly ahead. The peach is much wider than the bridge entrance. It wedges between the entrance posts, stops instantly and Koda's forward momentum sends him harmlessly into a giant pile of dry leaves beside the bridge.\nOpen at 0:00 with a low wide tracking shot of Koda already sprinting uphill through tall green grass toward the peach tree. His short legs move rapidly and his huge fluffy tail streams naturally behind him. As he reaches the tree, he suddenly looks upward and sees the enormous peach glowing among the leaves. He skids to a stop, stares at it, looks at the trunk and immediately becomes determined.\nFrom 0:02 to 0:05, follow Koda as he rapidly climbs the thick trunk using all four paws. His claws visibly grip the bark while his hind feet push upward. His tail stays naturally attached behind him and reacts only to his body movement. He pulls himself onto a strong main branch and begins moving toward the peach.\nFrom 0:05 to 0:08, show a clear wide side view of Koda carefully stepping from the thick branch onto the thinner outer branch. The peach is just beyond his reach. As Koda moves farther away from the trunk, his weight causes the thin branch to bend downward gradually. The branch does not bend before Koda steps onto it and does not move for any unexplained reason.\nFrom 0:08 to 0:11, Koda slowly stretches one front paw toward the peach. His paw almost reaches it. He leans slightly farther forward and briefly touches the peach's fuzzy surface. He smiles. His rear paws then lose traction on the increasingly sloped branch. Koda freezes, his eyes widen and he begins sliding backward along the branch.\nFrom 0:11 to 0:13, Koda slides completely off the branch and falls directly downward into the large dense bush below. He disappears into the foliage with a huge soft leafy FWUMP. The bush shakes. After a short comedic pause, Koda's head slowly rises from between the leaves. Small leaves cling to his fur. He looks upward toward the peach again and his dazed expression changes into stubborn determination.\nFrom 0:13 to 0:16, Koda jumps from the bush, runs several meters across the same hillside and grabs the end of the long fallen bamboo pole using both front paws. He drags it across the grass toward the peach tree. The bamboo scrapes naturally over the ground. Koda struggles because the pole is much longer than his body, but he never uses or removes his tail as a tool.\nFrom 0:16 to 0:18.5, show the complete setup clearly in one wide shot. Koda positions one end of the bamboo on the grassy ground near the tree. He lifts the other end with both front paws while the grounded end remains in contact with the earth. As Koda walks forward underneath the rising pole, the bamboo rotates upward around its grounded end until the raised end settles securely against a strong fork in the thick tree. The bamboo now forms a stable diagonal climbing pole. Koda steps back, studies it and smiles proudly.\nFrom 0:18.5 to 0:21, Koda climbs the angled bamboo with all four paws. His front paws pull while his hind feet push against the bamboo surface. The bamboo remains stable against the tree. His fluffy tail remains physically connected to his body and trails naturally behind him. He reaches the upper end beside the enormous peach.\nFrom 0:21 to 0:23.5, Koda braces his hind feet against the bamboo and grabs the peach with both front paws. He pulls once and nothing happens. He adjusts his grip and pulls much harder. The short fruit stem stretches under the force. With one final effort the stem breaks with a clear POP. Koda is suddenly holding the enormous peach and gives a huge triumphant smile.\nFrom 0:23.5 to 0:25.5, the peach's weight immediately pulls downward. Koda cannot support it. The peach slips from his paws and drops onto the steep grassy slope below with a heavy THUMP. Because the ground visibly slopes downhill, the peach naturally begins rolling. It starts slowly and then accelerates. Koda quickly descends from the bamboo and runs after it.\nFrom 0:25.5 to 0:27.5, use a dynamic downhill tracking shot. The enormous peach rolls rapidly through the grass. Koda catches up and jumps onto its upper surface. At first he lies belly-first and panics, but after a moment he gets his paws underneath himself and manages to balance on top. His expression changes from fear to pure excitement. He stretches his front paws outward while his huge attached tail streams behind him. Koda begins enjoying the ridiculous ride.\nFrom 0:27.5 to 0:29, track backward in front of the rolling peach. Koda rides proudly with a huge smile while his fur moves in the rushing air. He suddenly looks ahead. His smile disappears. Pull the camera backward enough to reveal the narrow wooden footbridge directly downhill. The entrance is obviously narrower than the giant peach. Koda's eyes widen. He has no time to stop.\nFrom 0:29 to 0:30, show the bridge entrance in a clear wide side view. The rolling peach reaches the two wooden entrance posts and wedges firmly between them with one heavy THUD. The peach stops instantly. Koda's momentum carries him forward off the fruit and into a large soft pile of dry leaves beside the bridge. Leaves burst upward around him. His head immediately rises from the pile, completely unharmed and dazed. One small green peach leaf drifts down and lands gently on top of his head. Koda slowly looks upward with only his eyes. Cut to black.\nUse a premium photorealistic 3D CGI animated-feature aesthetic with detailed soft fur, realistic bark, leaves, grass and peach fuzz, cinematic daylight, rich natural colors and expressive physical comedy. Keep the daylight warm and consistent. Use believable gravity, momentum, friction, collisions and character weight beneath the exaggerated comedy.\nKoda has exactly one fluffy tail, permanently attached to the base of his spine throughout all 30 seconds. Never detach it, duplicate it, turn it into a prop or place it in Koda's paws. Koda manipulates objects only with his paws and body weight.\nThe peach remains attached to the same branch until Koda physically pulls it free. The thin branch bends only because Koda moves his weight farther outward. The bamboo moves only because Koda physically drags and raises it. The peach rolls only after falling onto the visibly downhill slope. The peach continuously travels downhill toward the existing bridge. Do not teleport objects, change geography, create duplicate props or introduce unexplained movement.\nNo humans, no additional animals, no dialogue, no text, no subtitles, no logos and no HUD.\nUse playful adventurous orchestral music throughout. Include rapid soft paw footsteps, mountain wind, grass and leaf movement, claw-on-bark sounds, subtle branch creaking, the soft leafy FWUMP of Koda landing in the bush, bamboo scraping over grass, bamboo contact sounds, the fruit-stem POP, heavy peach THUMP, increasing rolling rumble, stronger wind during the downhill ride, an abrupt musical stop when Koda sees the bridge, a heavy THUD when the peach wedges between the posts, a soft POOF when Koda lands in the leaves, brief silence, gentle leaf flutter and one tiny comedic orchestral note when the peach leaf lands on Koda's head."
+   },
+   "referenceAssets": true,
+   "tools": [
+    "Seedance 2.5",
+    "Vidfield.ai"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 36124,
+    "likes": 638,
+    "replies": 26,
+    "reposts": 80,
+    "bookmarks": 581,
+    "checkedAt": "2026-10-15T14:22:20.388Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109993561349599232/img/XZ-lcotm49MBvIVq.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109993561349599232/vid/avc1/720x800/uU5I8icu2dTvSY0m.mp4?tag=16",
+    "width": 720,
+    "height": 800,
+    "durationSec": 29
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2105070161908957633",
    "url": "https://x.com/aicreataro/status/2105070161908957633",
    "author": {
@@ -43870,6 +44552,56 @@
    }
   },
   {
+   "id": "2109869904551981394",
+   "url": "https://x.com/hanifproduktif/status/2109869904551981394",
+   "author": {
+    "handle": "hanifproduktif",
+    "name": "Hanif | AI For Productivity"
+   },
+   "postedAt": "2026-10-13T04:52:39.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "印尼攻击日本的逐时模拟",
+    "en": "Hour-by-hour simulation of Indonesia attacking Japan"
+   },
+   "summary": {
+    "zh": "作者用Claude Opus 5.5在HyperFrames平台上制作了一段关于印尼为报复而攻击日本的逐小时模拟视频。",
+    "en": "An hour-by-hour simulation video imagining Indonesia attacking Japan for revenge, made with Claude Opus 5.5 on the HyperFrames platform."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "HyperFrames"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 33095,
+    "likes": 342,
+    "replies": 13,
+    "reposts": 46,
+    "bookmarks": 156,
+    "checkedAt": "2026-10-15T14:22:20.388Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109868368211922944/img/omNUo5OE05wd837m.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109868368211922944/vid/avc1/1280x720/TvLXSOG76i8Hdkqz.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 204
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103741544365007124",
    "url": "https://x.com/yoneapp/status/2103741544365007124",
    "author": {
@@ -45918,6 +46650,56 @@
    }
   },
   {
+   "id": "2110073840424358377",
+   "url": "https://x.com/Da7_Tech/status/2110073840424358377",
+   "author": {
+    "handle": "Da7_Tech",
+    "name": "Da7em"
+   },
+   "postedAt": "2026-10-13T18:23:01.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "haiku-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "灯光效果对比：Gemini 4 Argon对比Claude Haiku 5.5",
+    "en": "Lighting comparison: Gemini 4 Argon vs Claude Haiku 5.5"
+   },
+   "summary": {
+    "zh": "一则对比展示了Claude Haiku 5.5在画面效果和光照表现上优于Gemini 4 Argon，且成本更低。",
+    "en": "A comparison showing Claude Haiku 5.5 producing better-looking, more accurately lit output than Gemini 4 Argon at a much lower cost."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Gemini 4 Argon"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 30205,
+    "likes": 413,
+    "replies": 39,
+    "reposts": 15,
+    "bookmarks": 66,
+    "checkedAt": "2026-10-15T14:22:20.388Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110071272088403969/img/lg-_W08m60zA3b_y.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110071272088403969/vid/avc1/720x824/KPv58Y9gq_-tbj7T.mp4?tag=29",
+    "width": 720,
+    "height": 824,
+    "durationSec": 13
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2106281015152976146",
    "url": "https://x.com/YildizDikme/status/2106281015152976146",
    "author": {
@@ -47210,6 +47992,56 @@
    }
   },
   {
+   "id": "2110234309995200610",
+   "url": "https://x.com/Avenoxai/status/2110234309995200610",
+   "author": {
+    "handle": "Avenoxai",
+    "name": "Avenox"
+   },
+   "postedAt": "2026-10-14T05:00:40.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "tr",
+   "models": [
+    "sonnet-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "3D西洋双陆棋游戏对比",
+    "en": "3D backgammon game comparison"
+   },
+   "summary": {
+    "zh": "作者让 Gemini Argon 和 Sonnet 5.5 分别制作一个3D西洋双陆棋游戏，并展示了网页版结果。",
+    "en": "The creator asked both Gemini Argon and Sonnet 5.5 to build a 3D backgammon game and shared the web results."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Gemini Argon"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 28602,
+    "likes": 173,
+    "replies": 19,
+    "reposts": 1,
+    "bookmarks": 104,
+    "checkedAt": "2026-10-15T14:22:20.388Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/ext_tw_video_thumb/2110234171209912320/pu/img/J5Je4A6w3ycug_Or.jpg",
+    "mp4": "https://video.twimg.com/ext_tw_video/2110234171209912320/pu/vid/avc1/1280x720/PZ94jvatNYSQ_FMQ.mp4?tag=12",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2109957002822889591",
    "url": "https://x.com/notjazii/status/2109957002822889591",
    "author": {
@@ -47872,6 +48704,54 @@
    }
   },
   {
+   "id": "2110230768018485522",
+   "url": "https://x.com/AIMind_Ai/status/2110230768018485522",
+   "author": {
+    "handle": "AIMind_Ai",
+    "name": "AiMind"
+   },
+   "postedAt": "2026-10-14T04:46:35.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "颜料气球不同算力等级对比",
+    "en": "Paint balloon effort-level comparison"
+   },
+   "summary": {
+    "zh": "作者用同一个提示让Claude Opus 5.5在五种不同的推理强度下模拟气球砸墙的场景，并对比了成本与效果差异。",
+    "en": "The creator ran Claude Opus 5.5 at five different reasoning/effort levels on the same paint-balloon-vs-wall simulation and compared cost and quality."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 27776,
+    "likes": 106,
+    "replies": 14,
+    "reposts": 4,
+    "bookmarks": 45,
+    "checkedAt": "2026-10-15T14:22:20.388Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110230660086431744/img/Q3JPnAFb5jPpS1I8.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110230660086431744/vid/avc1/720x900/0XSNa1ZglFdjZx0c.mp4?tag=29",
+    "width": 720,
+    "height": 900,
+    "durationSec": 34
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103299308460429602",
    "url": "https://x.com/akokoi1/status/2103299308460429602",
    "author": {
@@ -48514,6 +49394,54 @@
    }
   },
   {
+   "id": "2110019227998683484",
+   "url": "https://x.com/Rutto02/status/2110019227998683484",
+   "author": {
+    "handle": "Rutto02",
+    "name": "Rutto.perps"
+   },
+   "postedAt": "2026-10-13T14:46:00.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "th",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "房屋改造与日照热量模拟",
+    "en": "Home renovation and sunlight heat simulation"
+   },
+   "summary": {
+    "zh": "作者用Claude Opus 5.5进行房屋改造和布局规划，发送了房屋照片并标注日出日落方向，以分析房屋积热问题。",
+    "en": "The creator used Claude Opus 5.5 for home renovation and layout planning, sending a photo of their house along with sunrise/sunset direction to analyze heat buildup."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 26822,
+    "likes": 206,
+    "replies": 3,
+    "reposts": 131,
+    "bookmarks": 139,
+    "checkedAt": "2026-10-15T14:22:20.388Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110018651286024193/img/QJjAjNF6Ynm_AeVa.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110018651286024193/vid/avc1/1084x720/JJbKlw6DdYpJcnvg.mp4?tag=29",
+    "width": 1084,
+    "height": 720,
+    "durationSec": 34
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2105769916288930215",
    "url": "https://x.com/agaviriau/status/2105769916288930215",
    "author": {
@@ -49151,6 +50079,61 @@
     "width": 1280,
     "height": 720,
     "durationSec": 53
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2109915723074097287",
+   "url": "https://x.com/aimikoda/status/2109915723074097287",
+   "author": {
+    "handle": "aimikoda",
+    "name": "Kōda"
+   },
+   "postedAt": "2026-10-13T07:54:43.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "基于生成视频搭建的直播界面",
+    "en": "Live streaming UI built on generated video"
+   },
+   "summary": {
+    "zh": "作者先用Seedance 2.5生成了一段恐怖反转视频，再用Claude Opus 5.5在视频上叠加了直播界面，包括弹幕聊天和观众反应。",
+    "en": "The creator generated a horror-reveal video with Seedance 2.5, then used Claude Opus 5.5 to add a live-streaming UI overlay with chat and viewer reactions on top of the video."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/aimikoda/status/2110023187505242221",
+    "text": "I want you to add a live streaming UI overlay to this video, making it look like tens of thousands of people are watching live. Include realistic viewer reactions, a constantly updating live chat with natural, context-aware comments and actual readable text."
+   },
+   "referenceAssets": true,
+   "tools": [
+    "Seedance 2.5"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 26052,
+    "likes": 589,
+    "replies": 54,
+    "reposts": 51,
+    "bookmarks": 349,
+    "checkedAt": "2026-10-15T14:22:20.388Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109915227869368320/img/CIKOM61Lgt95HaTS.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109915227869368320/vid/avc1/1280x720/6vBeawDvz05j3IwQ.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 30
    },
    "evidence": {
     "via": "daily",
@@ -50024,6 +51007,56 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2109922839671562534",
+   "url": "https://x.com/victormustar/status/2109922839671562534",
+   "author": {
+    "handle": "victormustar",
+    "name": "Victor M"
+   },
+   "postedAt": "2026-10-13T08:23:00.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "Blender拉面店场景",
+    "en": "Blender ramen shop scene"
+   },
+   "summary": {
+    "zh": "作者用Claude Opus 5.5配合Blender制作了一个拉面店场景，并描述了使用参考图和子代理评判的通用工作流程，但未给出具体提示词。",
+    "en": "The creator used Claude Opus 5.5 together with Blender to generate a detailed ramen shop scene, describing a general reference-image and subagent-judging workflow rather than a specific prompt."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 24605,
+    "likes": 645,
+    "replies": 24,
+    "reposts": 22,
+    "bookmarks": 326,
+    "checkedAt": "2026-10-15T14:22:20.388Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109921454422622208/img/iJGnN_DQKsGzGIAO.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109921454422622208/vid/avc1/1072x720/c83mOH5xukfg1SEg.mp4?tag=29",
+    "width": 1072,
+    "height": 720,
+    "durationSec": 15
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -52716,6 +53749,56 @@
    }
   },
   {
+   "id": "2109906127035187408",
+   "url": "https://x.com/Viniai_/status/2109906127035187408",
+   "author": {
+    "handle": "Viniai_",
+    "name": "Vini"
+   },
+   "postedAt": "2026-10-13T07:16:35.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "古代宫廷庭院剑斗短片",
+    "en": "Ancient royal courtyard sword fight"
+   },
+   "summary": {
+    "zh": "作者结合Claude Opus 5.5和Seedance 2.5制作了一段史诗般的王室剑斗视频，并公开了完整的详细提示词。",
+    "en": "The creator used Claude Opus 5.5 with Seedance 2.5 and shared the full detailed video prompt for an epic royal sword fight sequence."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Seedance 2.5"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 22086,
+    "likes": 322,
+    "replies": 102,
+    "reposts": 39,
+    "bookmarks": 116,
+    "checkedAt": "2026-10-15T14:22:20.388Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109906072656060416/img/R_hKPlea0knj47tz.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109906072656060416/vid/avc1/1280x720/-gXP6osw-GWCeEm3.mp4?tag=16",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2105898430967009547",
    "url": "https://x.com/nakazakifam/status/2105898430967009547",
    "author": {
@@ -55027,6 +56110,54 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2109923678607876522",
+   "url": "https://x.com/kaif9998/status/2109923678607876522",
+   "author": {
+    "handle": "kaif9998",
+    "name": "Kaif"
+   },
+   "postedAt": "2026-10-13T08:26:20.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "动态设计动画复刻",
+    "en": "Motion design animation recreation"
+   },
+   "summary": {
+    "zh": "创作者用Claude Opus 5.5回应了他人提出的挑战，在约三小时内复刻出一段动态设计动画，只用了一个简短的提示词。",
+    "en": "Creator used Claude Opus 5.5 to recreate a motion-design animation in response to another user's challenge, finishing in about three hours with a short prompt."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 19958,
+    "likes": 232,
+    "replies": 26,
+    "reposts": 5,
+    "bookmarks": 218,
+    "checkedAt": "2026-10-15T14:22:20.388Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109923446339870720/img/JEyRBNpr5z5En4n4.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109923446339870720/vid/avc1/1280x720/SuW8o7r25pZAM-mS.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 29
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -63927,6 +65058,59 @@
    }
   },
   {
+   "id": "2109932661204517203",
+   "url": "https://x.com/vib3coded/status/2109932661204517203",
+   "author": {
+    "handle": "vib3coded",
+    "name": "Vib3Coded"
+   },
+   "postedAt": "2026-10-13T09:02:01.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "软体果冻猕猴桃块模拟",
+    "en": "Soft-body jelly kiwi wedge simulation"
+   },
+   "summary": {
+    "zh": "创作者用Claude Opus 5.5生成了一个逼真的WebGPU软体猴桃果冻模拟网页（单文件HTML），并与Claude Fable 5.1对比了成本和效果，完整提示词发在了回复中。",
+    "en": "Creator generated a photorealistic WebGPU soft-body kiwi jelly simulation as a single HTML file with Claude Opus 5.5, compared cost and quality against Claude Fable 5.1, and posted the full prompt in a reply."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/vib3coded/status/2109932845774897347",
+    "text": "Build \"Kiwi Jelly Wedge\" — a single self-contained HTML file (inline JS/CSS, no libraries): a real-time WebGPU soft-body gummy kiwi wedge you can grab, stretch, lift and twist.\nObject\nOne sixth of a thick kiwi slice: a pie-shaped wedge with 30° half-angle, radius ≈ 1.8 and thickness 0.56. Rounded corners (iq's exact pie SDF minus a rounding radius) and bevelled top/bottom edges.\nRegions, measured from the tip in rest space:a cream core at the tip with a slightly lobed edge;\nthin pale rays fanning out of the core every 2π/56, each with its own random brightness and length;\na darker, glassier ring around the seeds (blushes red in the Ruby variety);\nbright juicy outer flesh with radial cell grain and a lighter band just under the skin;\na thin brown fuzzy skin on the arc wall.\n\nSeeds:small flattened black teardrops, pointed end toward the core, in radial rows between the rays, at four depths;\nthe face layers break the cut surfaces like real seeds; the others float inside and show through the jelly;\nwet glossy shading.\n\nA few small air bubbles in the outer flesh.\nVarieties: Green, Gold, Ruby.\nPhysics (XPBD tetrahedral soft body)\nMesh: 2D Delaunay of the rounded outline plus a hex lattice, extruded into prisms → tets.\nCo-rotational per-tet shape matching (warm-started quaternion) plus volume constraints.\nStiffer skin and core tets; edge-velocity damping; floor contact with Coulomb friction.\nSoft patch grab with bounded reach; scroll or a second finger twists the held patch.\nFixed 60 Hz step with 10 substeps; gentle settling.\nSeeds and bubbles are separate meshes embedded in the tets by barycentric weights, so they ride with the flesh.\nRendering (WebGPU / WGSL)\nProcedural photo-studio cyclorama with softboxes. Soft PCSS key shadow tinted green, plus contact AO from a top-down height map.\nSeeds and bubbles are drawn in the scene pass. A back-face pass gives the view-ray thickness.\nJelly:refraction of the scene, with per-tap Beer–Lambert absorption by material (flesh, glassy seed ring, milky core and rays, opaque skin);\nscattering, back-lit glow at thin edges, Fresnel studio reflections and GGX highlights;\na velvet sheen on the fuzzy skin;\nsparse sugar glints in the flesh.\n\nPost: exposure, Khronos PBR Neutral tone mapping, sRGB, dither.\nUI (editorial \"Material Studies / No. 028\", English)\nItalic serif title \"Kiwi / Jelly.\" with the caption \"An emerald wedge. A halo of seeds. A gentle wobble.\"\nStatus pill \"WEBGPU · LIVE\".\nPanel \"The Specimen\": variety chips (skin / core / flesh bands); Firmness (\"trembling → set\") and Internal damping (\"lively → syrupy\") sliders; Give it a nudge, Reset, Pause; ¼ speed and Show mesh.\nReadouts: Mass (g, 1 unit ≈ 1.6 cm at 1.3 g/cm³), Volume (% of rest), Kinetic (µJ).\nA collapsible \"Inside the experiment\" with notes on the method.\nFallback \"This kiwi needs WebGPU.\" Stacked mobile layout with no horizontal scroll."
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 14043,
+    "likes": 251,
+    "replies": 33,
+    "reposts": 23,
+    "bookmarks": 101,
+    "checkedAt": "2026-10-15T14:22:20.388Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109932576362106880/img/Is4SUsWGcnGOqsZU.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109932576362106880/vid/avc1/720x912/QrwTXQx4PbbXA7Hr.mp4?tag=29",
+    "width": 720,
+    "height": 912,
+    "durationSec": 17
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103801828744061307",
    "url": "https://x.com/cyrilXBT/status/2103801828744061307",
    "author": {
@@ -65624,6 +66808,57 @@
     "width": 1280,
     "height": 720,
     "durationSec": 313
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2110153216772202945",
+   "url": "https://x.com/thehypedotnews/status/2110153216772202945",
+   "author": {
+    "handle": "thehypedotnews",
+    "name": "thehype."
+   },
+   "postedAt": "2026-10-13T23:38:26.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "Three.js一次生成的两个纽约场景",
+    "en": "Two one-shot New York scenes in Three.js"
+   },
+   "summary": {
+    "zh": "该帖对比了Gemini 4 Argon和Claude Opus 5.5使用同一提示一次性生成的两个纯Three.js代码纽约3D场景，给出了成本和耗时差异，完整提示和细节见文章链接。",
+    "en": "A comparison of Gemini 4 Argon and Claude Opus 5.5 one-shotting two New York 3D scenes in pure Three.js code from the same prompt, noting cost and time differences, with the full prompt and details linked in an article."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js",
+    "Gemini 4 Argon"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 12913,
+    "likes": 117,
+    "replies": 14,
+    "reposts": 7,
+    "bookmarks": 44,
+    "checkedAt": "2026-10-15T14:22:20.388Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110152630370525184/img/quBv2eAAxUrFVtmU.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110152630370525184/vid/avc1/1280x720/TwwixSKEcBUEGdXm.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 56
    },
    "evidence": {
     "via": "daily",
@@ -67961,6 +69196,54 @@
    }
   },
   {
+   "id": "2110110952008069345",
+   "url": "https://x.com/0x0SojalSec/status/2110110952008069345",
+   "author": {
+    "handle": "0x0SojalSec",
+    "name": "Md Ismail Šojal 🕷️"
+   },
+   "postedAt": "2026-10-13T20:50:29.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "无广告流媒体平台克隆",
+    "en": "Ad-free streaming service clone"
+   },
+   "summary": {
+    "zh": "创作者使用Opus 5.5搭建了一个类似Netflix、Prime和Crunchyroll的流媒体克隆网站，拥有完整片库、无广告、无需登录并支持4K播放。",
+    "en": "Creator used Opus 5.5 to build a Netflix/Prime/Crunchyroll-style streaming clone with full catalogs, no ads, no login, and 4K playback."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 11791,
+    "likes": 136,
+    "replies": 3,
+    "reposts": 5,
+    "bookmarks": 125,
+    "checkedAt": "2026-10-15T14:22:20.388Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110110439640272896/img/oT1HT-wPZpEHhR6E.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110110439640272896/vid/avc1/1146x720/Et-mf2uhTEivOVG-.mp4?tag=29",
+    "width": 1146,
+    "height": 720,
+    "durationSec": 23
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103525576912855363",
    "url": "https://x.com/jackfriks/status/2103525576912855363",
    "author": {
@@ -68392,6 +69675,58 @@
     "width": 720,
     "height": 912,
     "durationSec": 17
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2109921298889785836",
+   "url": "https://x.com/elayadesigns/status/2109921298889785836",
+   "author": {
+    "handle": "elayadesigns",
+    "name": "Elaya"
+   },
+   "postedAt": "2026-10-13T08:16:52.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "基于设计技能生成的动画短片",
+    "en": "Design-skill driven animation clip"
+   },
+   "summary": {
+    "zh": "这段动画使用Higgsfield制作，并借助Claude Opus 5.5和作者在GitHub上发布的个人设计技能完成。",
+    "en": "An animation made with Higgsfield, driven by Claude Opus 5.5 using the creator's own design skill published on GitHub."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Higgsfield"
+   ],
+   "resources": [
+    "https://github.com/elayadesign/ai-design-skills"
+   ],
+   "stats": {
+    "views": 11578,
+    "likes": 245,
+    "replies": 3,
+    "reposts": 21,
+    "bookmarks": 227,
+    "checkedAt": "2026-10-15T14:22:20.388Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109918411455401984/img/ZymZgpwrEJEZ1R7y.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109918411455401984/vid/avc1/1280x720/HiHX1ewjfI5kJ5Cl.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 10
    },
    "evidence": {
     "via": "daily",
@@ -68940,6 +70275,57 @@
     "width": 1280,
     "height": 720,
     "durationSec": 125
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2109902063916257466",
+   "url": "https://x.com/badboyfoxy/status/2109902063916257466",
+   "author": {
+    "handle": "badboyfoxy",
+    "name": "badboyfoxy"
+   },
+   "postedAt": "2026-10-13T07:00:26.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "数小时内完成的第一人称开放世界游戏",
+    "en": "First-person open world game built in hours"
+   },
+   "summary": {
+    "zh": "这是一款第一人称开放世界游戏，使用Blender和Three.js在约7小时内制作完成，由Claude Opus 5.5驱动，花费约100美元。",
+    "en": "A first-person open-world game built in about 7 hours using Blender and Three.js, powered by Claude Opus 5.5, at a cost of roughly $100."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Blender",
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 11321,
+    "likes": 265,
+    "replies": 48,
+    "reposts": 16,
+    "bookmarks": 78,
+    "checkedAt": "2026-10-15T14:22:20.388Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/media/HUffWzzX0AAhsLZ.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109900531690778624/vid/avc1/1280x720/Wj5QigItfFrKDUaY.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 152
    },
    "evidence": {
     "via": "daily",
