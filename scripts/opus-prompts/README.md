@@ -70,6 +70,7 @@ node scripts/opus-prompts/assemble.mjs --write && node scripts/generate-opus-pro
 
 ## 已知的坑
 
+- **搜索结果偶尔整批不带视频字段**：2026-10-13～14 twitterapi.io 有 3 次返回的推文都没有 `extendedEntities`，`normalize()` 全判成「没视频」，脚本当成 0 条照常推进窗口、记进 seen，那几段时间的作品全漏了（@Saccc_c 290 万播放的《小王子》3D 游戏就在里面）。现在缺视频字段时先用 FXTwitter 补，补不回来就报错停住、不推进窗口；漏掉的时间段用工作流的 `ignore_seen=1` + 时间窗口补跑。
 - **X 视频外链**：`video.twimg.com` 对带外站 Referer 的请求返回 403，不带 Referer 返回 206。所以 `/prompts/*` 必须是 `Referrer-Policy: no-referrer`（`next.config.ts` 响应头 + 页面 metadata 两处都设了）。改动这组页面的 header 前先想清楚。
 - **视频链接会失效**：作者删帖或 X 换地址后视频 404，卡片会退回「去 X 看原视频」。每周的自动核验会修复地址、下架已删帖。
 - **提示词的三种形态**：文字、截图、外链。截图要人工转写（`data/transcribed-images.json`）；外链里真贴了原文的很少，多数是项目 README 或需要登录的页面。

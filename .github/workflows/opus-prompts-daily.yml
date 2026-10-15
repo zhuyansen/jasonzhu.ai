@@ -23,6 +23,9 @@ on:
       window_to:
         description: "补跑：发布时间终点（ISO）"
         default: ""
+      ignore_seen:
+        description: "补跑：忽略 seen.json（重跑之前漏掉的时间段时填 1）"
+        default: ""
       search_terms:
         description: "补跑：只搜这些词（如 \"Haiku 5.5\" OR \"Haiku5.5\"）；留空 = 全部模型"
         default: ""
@@ -66,6 +69,7 @@ jobs:
           WINDOW_FROM: ${{ inputs.window_from }}
           WINDOW_TO: ${{ inputs.window_to }}
           SEARCH_TERMS: ${{ inputs.search_terms }}
+          IGNORE_SEEN: ${{ inputs.ignore_seen }}
         run: |
           if [ -z "$TWITTERAPI_IO_KEY" ]; then
             echo "::error::缺少 Secret TWITTERAPI_IO_KEY，无法搜索新帖"

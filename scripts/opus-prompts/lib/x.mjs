@@ -63,6 +63,37 @@ function pickMp4(variants) {
   return v.filter((x) => x.w && Math.min(x.w, x.h) <= 720).sort((a, b) => b.bitrate - a.bitrate)[0] || v.sort((a, b) => a.bitrate - b.bitrate)[0];
 }
 
+export const hasVideo = (t) => (t.extendedEntities?.media || []).some((x) => x.type === "video");
+
+/**
+ * 搜索结果缺视频字段时，用 FXTwitter（免费、免登录）补回 extendedEntities。
+ * 2026-10-13～14 twitterapi.io 有 3 次整批返回不带 extendedEntities，normalize 全判成「没视频」，
+ * 那几段时间的作品全漏了（包括 @Saccc_c 290 万播放的《小王子》3D 游戏）。
+ * 返回 { filled, noVideo, failed }：failed = FXTwitter 也没拿到结果的条数（据此判断是不是接口异常）。
+ */
+export async function fillMediaFromFx(tweets) {
+  const out = { filled: 0, noVideo: 0, failed: 0 };
+  for (const t of tweets) {
+    try {
+      const url = `https://api.fxtwitter.com/status/${t.id}`;
+      let text;
+      if (CURL) ({ stdout: text } = await run("curl", ["-sS", "-m", "30", "--retry", "2", "-A", "jasonzhu.ai-collector/1.0", url], { maxBuffer: 32e6 }));
+      else { const r = await fetch(url, { headers: { "User-Agent": "jasonzhu.ai-collector/1.0" }, signal: AbortSignal.timeout(30000) }); if (!r.ok) throw new Error(`HTTP ${r.status}`); text = await r.text(); }
+      const media = JSON.parse(text).tweet?.media?.all || [];
+      const v = media.find((m) => m.type === "video");
+      if (!v) { out.noVideo++; continue; }
+      t.extendedEntities = { media: [{
+        type: "video", media_url_https: v.thumbnail_url,
+        video_info: { duration_millis: Math.round((v.duration || 0) * 1000), aspect_ratio: [v.width, v.height],
+          variants: (v.variants || []).filter((x) => /\.mp4/.test(x.url || "")).map((x) => ({ url: x.url, bitrate: x.bitrate || 0, content_type: "video/mp4" })) },
+      }] };
+      out.filled++;
+    } catch { out.failed++; }
+    await new Promise((r) => setTimeout(r, 300));
+  }
+  return out;
+}
+
 /** twitterapi.io 的推文 → 候选记录（与 data/candidates.json 同构）；没有原生视频返回 null */
 export function normalize(t, now = new Date().toISOString()) {
   const m = (t.extendedEntities?.media || []).find((x) => x.type === "video");

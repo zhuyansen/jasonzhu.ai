@@ -17,7 +17,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { workerJSON, reviewerJSON, usage } from "./lib/llm.mjs";
-import { searchWindow, authorThread, normalize, cost } from "./lib/x.mjs";
+import { searchWindow, authorThread, normalize, cost, hasVideo, fillMediaFromFx } from "./lib/x.mjs";
 import { resolvePrompt, bundle } from "./lib/resolve.mjs";
 import { arbitrate, applyDecision } from "./lib/arbitrate.mjs";
 import { jevAudit, jevAvailable, jevUsage } from "./lib/jev.mjs";
@@ -73,7 +73,20 @@ const raw = ck.raw;
 // 一整天窗口搜出 0 条几乎不可能（高峰期一天 200+），多半是接口异常：不推进窗口，下次重试这段时间
 if (!raw.length && to - from >= 12 * 3600e3) { console.error("❌ 窗口内搜索结果为 0，疑似接口异常，不写入、不推进窗口"); fs.rmSync(ckFile, { force: true }); process.exit(1); }
 const truncated = raw.length >= MAX_SEARCH;
-const fresh = raw.filter((t) => !seen.has(t.id));
+// 搜索结果缺视频字段（twitterapi.io 偶发整批不带 extendedEntities）：用 FXTwitter 补。
+// 补不回来就判接口异常——报错停住，不推进窗口、不记 seen，否则这段时间的作品会被永久跳过（2026-10-13～14 漏了 3 段）
+const needMedia = raw.filter((t) => (t.viewCount || 0) >= THRESHOLD && !hasVideo(t) && !seen.has(t.id));
+if (needMedia.length) {
+  const r = await fillMediaFromFx(needMedia);
+  log(`搜索结果缺视频字段 ${needMedia.length} 条 → FXTwitter 补回 ${r.filled} · 确认没视频 ${r.noVideo} · 查询失败 ${r.failed}`);
+  if (r.failed >= 5 && r.failed > needMedia.length / 2) {
+    console.error(`❌ ${r.failed}/${needMedia.length} 条缺视频字段且 FXTwitter 也查不到，疑似接口异常：不写入、不推进窗口，下次重试`);
+    process.exit(1);
+  }
+  saveCk();
+}
+// IGNORE_SEEN=1：补跑之前漏掉的时间段（那几次已经把帖子记进 seen 了），已入库的作品照样靠 known 去重
+const fresh = raw.filter((t) => process.env.IGNORE_SEEN === "1" || !seen.has(t.id));
 // 只记住已达播放门槛的帖子：提前收（窗口离发布不足 24h）时，没到 5000 的以后还能再进来
 for (const t of raw) if ((t.viewCount || 0) >= THRESHOLD) seen.add(t.id);
 const qualified = fresh.filter((t) => (t.viewCount || 0) >= THRESHOLD).map((t) => normalize(t, nowISO)).filter(Boolean)
