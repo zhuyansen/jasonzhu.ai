@@ -1,8 +1,8 @@
 {
  "model": "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.5)",
  "threshold": 5000,
- "updatedAt": "2026-10-15T10:42:58.024Z",
- "statsCheckedAt": "2026-10-15T10:42:58.024Z",
+ "updatedAt": "2026-10-15T11:14:34.918Z",
+ "statsCheckedAt": "2026-10-15T11:14:34.918Z",
  "inclusionRule": "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -11876,6 +11876,54 @@
    }
   },
   {
+   "id": "2109423417870954979",
+   "url": "https://x.com/rileybrown/status/2109423417870954979",
+   "author": {
+    "handle": "rileybrown",
+    "name": "Riley Brown"
+   },
+   "postedAt": "2026-10-11T23:18:28.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "对Karpathy推文的可视化动画解读",
+    "en": "Visual reading of a Karpathy tweet"
+   },
+   "summary": {
+    "zh": "作者用 Opus 5.5 通过一条提示词制作了对 Karpathy 一条推文的可视化动态演绎，视频以两倍速播放展示。",
+    "en": "An animated visual interpretation of a Karpathy tweet, made with Opus 5.5 using a single prompt, shown at 2x speed."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 159652,
+    "likes": 2055,
+    "replies": 65,
+    "reposts": 155,
+    "bookmarks": 1624,
+    "checkedAt": "2026-10-15T11:14:34.918Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109423196713652224/img/KKOeiaRrWKnYQFKW.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109423196713652224/vid/avc1/720x1280/Pfa1wm0nAPMVsAwM.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 224
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2105808539495354669",
    "url": "https://x.com/imjustnewatai/status/2105808539495354669",
    "author": {
@@ -13542,6 +13590,62 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2109424502237016076",
+   "url": "https://x.com/vib3coded/status/2109424502237016076",
+   "author": {
+    "handle": "vib3coded",
+    "name": "Vib3Coded"
+   },
+   "postedAt": "2026-10-11T23:22:47.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5",
+    "fable-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "果冻材质效果模型对比测试",
+    "en": "Jelly slice material test comparison"
+   },
+   "summary": {
+    "zh": "作者用 Opus 5.5 根据一份详细提示词制作了一个独立 HTML/WebGPU 软体果冻（柑橘切片）模拟，并与 ChatGPT-6 Astra 在效果和成本上进行比较。",
+    "en": "A self-contained HTML/WebGPU soft-body jelly simulation of a citrus slice built with Opus 5.5 from a detailed prompt, compared in quality and cost against ChatGPT-6 Astra."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/vib3coded/status/2109424651340284152",
+    "text": "Build \"Citrus Jelly\" — a single self-contained HTML file (inline JS/CSS, no libraries) with a real-time WebGPU soft-body jelly shaped like a half-moon citrus slice that the user can grab, stretch and let go.\n\nObject\n- A rounded half-moon slice: half-disk profile extruded into a thick slab with softly rounded edges; flat cut edge on the bottom, arc on top.\n- Three material zones by radius: translucent fruit flesh inside, a pale pith band, and a thin glossy rind along the arc (the cut edge is all flesh).\n- Inside the jelly: thin milky radial membranes between the segments (inset from both faces), a few seeds, small air bubbles with a faint rim and a pin-point highlight, and tiny sub-surface glints like sugar crystals.\n\nPhysics (XPBD tetrahedral soft body)\n- Mesh: 2D Bowyer–Watson Delaunay of the profile, extruded into prisms and split into tets. Render mesh embedded in sim tets with barycentric coordinates.\n- Constraints:\n- co-rotational per-tet shape matching (warm-started quaternion, Müller 2016), which recovers inverted tets;\n- tet volume constraints for near-incompressibility;\n- hard edge strain limits (max 1.8×, min 0.35× rest length).\n- Fixed timestep, \"small steps\" XPBD (many substeps, 1 iteration each).\n- Damping: relative-velocity damping along edges, light air drag, and settling that bleeds off residual jitter.\n- Floor contact with Coulomb-style positional friction (static and kinetic). Never crush the held patch into the floor; lift the patch instead.\n- Grab and pull:\n- pick a surface point with the mouse or touch;\n- the patch around it is attached softly;\n- reach is bounded, so stretching is strong but never unbounded;\n- on release the slice wobbles back.\n- Safety: reset gently if any value becomes NaN.\n\nRendering (WebGPU / WGSL)\n- Procedural photo studio: pale cyclorama paper sweep, overhead softbox, back-left strip light, front-right fill card.\n- Jelly material:\n- refraction of the scene through the slice;\n- view-ray thickness from a back-face depth pass, used for Beer–Lambert absorption;\n- Fresnel studio reflections and a key highlight.\n- Soft PCSS-style floor shadows, tinted by the jelly color.\n- Post: exposure, Khronos PBR Neutral tone mapping, sRGB, dither. Optional mesh-overlay debug view.\n\nUI (minimal editorial style, English)\n- Corner label \"Material Studies / No. 010\", big title \"Citrus / Jelly.\", hint \"Grab. Stretch. Let go.\"\n- Variety swatches: Orange, Blood Orange, Lemon. Each changes the flesh, pith and rind colors.\n- Sliders: Firmness (log-mapped edge compliance) and Internal damping.\n- Buttons:\n- \"Give it a nudge\": a small hop with a twist;\n- Reset;\n- Pause.\n- Keys: Space to pause, N to nudge, R to reset.\n- Fallback screen \"This slice needs WebGPU.\" when the browser has no WebGPU.\n- Responsive: works on mobile with touch and no horizontal scroll."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "WebGPU"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 141232,
+    "likes": 1137,
+    "replies": 35,
+    "reposts": 88,
+    "bookmarks": 556,
+    "checkedAt": "2026-10-15T11:14:34.918Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109424031220879360/img/vI6HI65BV14xyLkN.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109424031220879360/vid/avc1/720x910/2AhYMX9uDMvGpg8n.mp4?tag=29",
+    "width": 720,
+    "height": 910,
+    "durationSec": 17
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -20713,6 +20817,65 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2109454493415023080",
+   "url": "https://x.com/condzxyz/status/2109454493415023080",
+   "author": {
+    "handle": "condzxyz",
+    "name": "Condz"
+   },
+   "postedAt": "2026-10-12T01:21:57.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "pt",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "口播视频的动效剪辑",
+    "en": "Talking-head video edited into a motion-graphics cut"
+   },
+   "summary": {
+    "zh": "作者提供原始口播视频和音频，让 Opus 5.5 按照一份详细结构化提示词，利用 Remotion 和 ffmpeg 将其剪辑制作成带动态图形的精美 YouTube 视频。",
+    "en": "A talking-head video fully edited into a polished YouTube video with motion graphics using Opus 5.5 following a detailed structured prompt, built on Remotion and ffmpeg from a raw video and audio transcript."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/condzxyz/status/2109619479302820057",
+    "text": "Edit my talking-head video into a polished YouTube video with explanatory motion graphics.\n\nINPUT\n- Raw video: <path/to/raw.mp4>. Speech is Portuguese; don't translate.\n- Target: at most <6:30>. Style: premium, clean, editorial (\"Anthropic/Apple level\").\n- End card: subscribe + follow me on X (<https://x.com/handle>) + \"comment what you want to see next\".\n- Never cover my face. Never show where I live.\n\nSTACK\n- Remotion (https://remotion.dev/) for the composition, ffmpeg for cuts and encoding, Python for analysis.\n- Transcribe with word timestamps using ElevenLabs Scribe. It has precise word boundaries and marks fillers like \"hã\"/\"é\".\n- If you use Whisper instead: its word ends stretch over pauses, so refine every cut point with the audio energy.\n\n1) PLAN THE CUT\n- Make an indexed transcript (word index → text, start, end).\n- Choose keep-ranges by word index. Remove fillers, false starts, repeated sentences and weak tangents until it fits the target.\n- Put the strongest line (2–4 s) at the very start as a cold-open hook.\n\n2) CUT, FRAME-ACCURATE AND IN SYNC\n- Cut points:\n- Cut in the silence between words, never inside a word.\n- Keep ~50 ms before the first word and ~60 ms after the last word (~160 ms if it ends a sentence).\n- Silences inside kept ranges:\n- Detect them with a 10 ms RMS envelope. A threshold around −38 dBFS worked here; measure your own noise floor first.\n- Shorten any pause over 0.32 s to 0.22 s (0.36 s after a sentence ends).\n- Round every boundary to whole frames (30 fps) and merge touching segments.\n- Video: ffmpeg split → trim(start_frame, end_frame) → concat, plus a light grade (hqdn3d, eq, colorbalance, unsharp) → intermediate at CRF 14.\n- Audio: cut the same boundaries in numpy with 8 ms fades and no overlap. A/V stays in sync.\n- QA: re-transcribe the cut and diff it against the intended text. Fix leaked fragments and clipped word starts, then repeat until clean.\n\n3) FACE TRACK\n- Detect the face every 0.2 s (Apple Vision or MediaPipe).\n- Smooth with a moving average inside each cut segment, never across a jump cut.\n- Use it to frame the camera and to place graphics on the side away from the face.\n\n4) DESIGN SYSTEM\n- One palette: dark warm stage #14120F, ivory \"paper\" #F1ECE2, one accent (clay #D97A4E).\n- Fonts: Fraunces (serif display), Inter Tight (UI), JetBrains Mono (labels). Add subtle grain and soft glows.\n- No gradient text, no neon.\n- Camera layout modes, morphing between them in ~0.7 s (cubic in-out):\n- full frame;\n- split left/right: rounded camera card 856×936, face at 42% of its height, graphics on the other half;\n- PIP: 256 px circle over a full-screen paper sheet, for chapter moments.\n\n5) BEAT SHEET (JSON)\n- Give every sentence group a visual, cued to word start times in the cut timeline:\n- lower third (name/role);\n- big numbers with count-up;\n- lists that reveal on each spoken item;\n- SVG diagrams that draw on;\n- timeline, before→after, comparison cards, quotes;\n- arrows annotating objects in the room.\n- Structure: cold open with kinetic captions → 1.5 s title card → content → end card (CTAs plus a portrait still).\n\n6) BUILD IN REMOTION\n- One composition, 1920×1080 at 30 fps. Put `<OffthreadVideo>` (muted) inside a container whose rect and transform come from the layout keyframes plus the face track.\n- Each graphic is a `<Sequence>` component. Drive reveals with useCurrentFrame + interpolate/spring (opacity, translateY, blur).\n- SVG draw-on: animate strokeDashoffset using the real path length.\n- Jump cuts: alternate zoom 1.0 ↔ 1.075 around the face when the picture jumps. Add a 1–2% slow breathing zoom elsewhere and a punch-in on punchlines.\n- Deterministic only: no Math.random.\n- Check key frames with `npx remotion still`: face uncovered, no clipped text, nothing appearing before its cue.\n\n7) SOUND\n- Voice: highpass 80 Hz, light denoise, −2.5 dB at 280 Hz, +2 dB at 3.6 kHz, de-ess, 3:1 compressor.\n- Music: royalty-free lo-fi (e.g. Mixkit). Change track per section with 4 s crossfades.\n- Duck 9–12 dB under the voice in the speech band, keeping the lows.\n- Louder only on the title and end cards.\n- SFX: very subtle whooshes on layout changes, pops on reveals, ticks on counters.\n- Master: two-pass loudnorm to −14 LUFS, true peak −1.5.\n\n8) RENDER, VERIFY, DELIVER\n- Encode: H.264 CRF 16, AAC 320k, BT.709, +faststart.\n- Verify:\n- duration within the target, −14 LUFS;\n- no frozen stretch over 0.3 s;\n- a 40-frame contact sheet;\n- re-transcribe the final mix: at least 95% of words should match, so the music isn't masking the voice.\n- Deliver the MP4, an .srt from the word timings (max 42 chars per line, 2 lines), and YouTube chapters (first at 0:00, each at least 10 s).\n\nRULES\n- Show numbers and claims exactly as I say them.\n- Check names and spellings on the web before they go on screen.\n- No invented stats or testimonials.\n- Short, concrete on-screen copy with no AI clichés.\n- Don't publish anything without my OK."
+   },
+   "referenceAssets": true,
+   "tools": [
+    "Remotion",
+    "ffmpeg",
+    "ElevenLabs",
+    "Python",
+    "Whisper"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 88696,
+    "likes": 860,
+    "replies": 47,
+    "reposts": 17,
+    "bookmarks": 597,
+    "checkedAt": "2026-10-15T11:14:34.918Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109454288376225792/img/uYyRLTja6RVow6os.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109454288376225792/vid/avc1/1280x720/FpHQQI8A3xeegH-F.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 379
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -28602,6 +28765,60 @@
    }
   },
   {
+   "id": "2109452512160039063",
+   "url": "https://x.com/chongdashu/status/2109452512160039063",
+   "author": {
+    "handle": "chongdashu",
+    "name": "Chong-U"
+   },
+   "postedAt": "2026-10-12T01:14:05.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "带有巨型Boss追逐战的平台跳跃游戏",
+    "en": "Platformer game with giant boss chase"
+   },
+   "summary": {
+    "zh": "作者用 Opus 5.5 进行氛围化编程，制作了一款类似《奥日与黑暗森林》风格、带巨型Boss追逐场景的平台游戏，素材来自 Blender、Tripo、Spriterrific、ElevenLabs 和 GPT Images 2.5。",
+    "en": "A platformer game with an Ori-and-the-Blind-Forest-like atmosphere and a giant boss chase, vibe-coded with Opus 5.5 using assets from Blender, Tripo, Spriterrific, ElevenLabs and GPT Images 2.5."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "GPT Images 2.5",
+    "Blender",
+    "Tripo",
+    "Spriterrific",
+    "ElevenLabs"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 61126,
+    "likes": 1070,
+    "replies": 48,
+    "reposts": 72,
+    "bookmarks": 1206,
+    "checkedAt": "2026-10-15T11:14:34.918Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109452039151562753/img/BpKOZuZFHtOvSZi8.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109452039151562753/vid/avc1/1280x720/_H7Rxv_2nxYvFz_s.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 43
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103395361058664888",
    "url": "https://x.com/PancaSeptiana/status/2103395361058664888",
    "author": {
@@ -33764,6 +33981,56 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2109440153035088100",
+   "url": "https://x.com/KOSAKA_Jun/status/2109440153035088100",
+   "author": {
+    "handle": "KOSAKA_Jun",
+    "name": "小阪淳"
+   },
+   "postedAt": "2026-10-12T00:24:58.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "通过BlenderMCP自动生成的3D影片",
+    "en": "AI-generated 3D movie via BlenderMCP"
+   },
+   "summary": {
+    "zh": "作者通过 Opus 5.5 结合 BlenderMCP 自动操控 Blender 生成了一段 3D 影片，提示词是逐步叠加的，比如先让它在沙发上摆放锡皮机器人，再陆续追加镶头风格等要求。",
+    "en": "A 3D movie automatically generated by Opus 5.5 controlling Blender via BlenderMCP, built up through a series of incremental prompts such as placing robots on a sofa and adjusting camera work."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 49445,
+    "likes": 566,
+    "replies": 18,
+    "reposts": 47,
+    "bookmarks": 498,
+    "checkedAt": "2026-10-15T11:14:34.918Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109439742425337856/img/lsRi7xcNifJITv5W.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109439742425337856/vid/avc1/1280x720/ag9RtQr7XhfskzWt.mp4?tag=14",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 20
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -39918,6 +40185,54 @@
    }
   },
   {
+   "id": "2109511085481197657",
+   "url": "https://x.com/alexcooldev/status/2109511085481197657",
+   "author": {
+    "handle": "alexcooldev",
+    "name": "Alex Nguyen"
+   },
+   "postedAt": "2026-10-12T05:06:50.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "商业帝国经营类游戏原型",
+    "en": "Business empire tycoon game prototype"
+   },
+   "summary": {
+    "zh": "创作者使用Claude Opus 5.5开发了一款跨平台商业帝国经营游戏，并在GitHub上开源了核心游戏源码。",
+    "en": "Creator used Claude Opus 5.5 to build a cross-platform business empire tycoon game, later open-sourcing the core game source code on GitHub."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 38365,
+    "likes": 256,
+    "replies": 44,
+    "reposts": 15,
+    "bookmarks": 149,
+    "checkedAt": "2026-10-15T11:14:34.918Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109510732161355776/img/lG9GRupvztsNcICe.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109510732161355776/vid/avc1/720x1562/uMySfJe48Ew7RzB4.mp4?tag=29",
+    "width": 720,
+    "height": 1562,
+    "durationSec": 109
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103300490184564849",
    "url": "https://x.com/op7418/status/2103300490184564849",
    "author": {
@@ -40499,6 +40814,57 @@
    }
   },
   {
+   "id": "2109401850655182861",
+   "url": "https://x.com/IsekaiBardGuild/status/2109401850655182861",
+   "author": {
+    "handle": "IsekaiBardGuild",
+    "name": "AI Bard Guild"
+   },
+   "postedAt": "2026-10-11T21:52:46.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "参考视频生成的角色行走动作绑定",
+    "en": "Rigged character walk cycle from reference video"
+   },
+   "summary": {
+    "zh": "创作者先用Tripo3d制作3D模型，再用MiniMax H3生成参考行走视频，然后让Claude Opus 5.5据此为模型绑骨并制作行走动作。",
+    "en": "Creator built 3D models in Tripo3d, generated reference walking videos with MiniMax H3, then asked Claude Opus 5.5 to rig and animate the models to match those reference videos."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Tripo3d",
+    "MiniMax H3"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 37390,
+    "likes": 323,
+    "replies": 9,
+    "reposts": 31,
+    "bookmarks": 427,
+    "checkedAt": "2026-10-15T11:14:34.918Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109401824466001920/img/I5Fe11xK_nDQ5pib.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109401824466001920/vid/avc1/720x720/sMJbIpzJbjpvzUFV.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 16
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102552980818182512",
    "url": "https://x.com/asobodesign/status/2102552980818182512",
    "author": {
@@ -40972,6 +41338,56 @@
     "width": 1280,
     "height": 720,
     "durationSec": 157
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2109420193399357665",
+   "url": "https://x.com/NFT_Chen/status/2109420193399357665",
+   "author": {
+    "handle": "NFT_Chen",
+    "name": "SuSu_酥酥👅"
+   },
+   "postedAt": "2026-10-11T23:05:39.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "zh",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "雨夜便利店微缩三维场景",
+    "en": "Rainy night convenience store miniature scene"
+   },
+   "summary": {
+    "zh": "创作者使用Claude Opus 5.5配合Three.js，一到两轮生成出高精细的雨夜日式便利店微缩三维场景。",
+    "en": "Creator used Claude Opus 5.5 with Three.js to generate a detailed rainy night Japanese convenience store 3D diorama scene in one or two generation passes."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 36780,
+    "likes": 251,
+    "replies": 24,
+    "reposts": 39,
+    "bookmarks": 228,
+    "checkedAt": "2026-10-15T11:14:34.918Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109419373555515392/img/OxsHsjrPoU69rK-D.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109419373555515392/vid/avc1/1280x720/qKgDxn3DE2shO6j0.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 113
    },
    "evidence": {
     "via": "daily",
@@ -42845,6 +43261,56 @@
     "width": 1280,
     "height": 720,
     "durationSec": 24
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2109515395749310821",
+   "url": "https://x.com/op7418/status/2109515395749310821",
+   "author": {
+    "handle": "op7418",
+    "name": "歸藏(guizang.ai)"
+   },
+   "postedAt": "2026-10-12T05:23:57.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "zh",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "AI驱动的故事短片与特效编排",
+    "en": "AI-directed short story film with effects"
+   },
+   "summary": {
+    "zh": "创作者将Claude Opus 5.5与即梦CLI视频模型结合制作叙事短片，Opus 5.5负责编排、特效和提示词，即梦CLI负责分镜图片和视频生成。",
+    "en": "Creator combined Claude Opus 5.5 with the Jimeng CLI video model to create a narrative short film, with Opus 5.5 handling editing, effects and prompts while Jimeng CLI generated storyboard images and video."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "即梦 CLI"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 33981,
+    "likes": 333,
+    "replies": 70,
+    "reposts": 39,
+    "bookmarks": 328,
+    "checkedAt": "2026-10-15T11:14:34.918Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109514681971007488/img/Vq5uToY_ZavWGLzt.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109514681971007488/vid/avc1/1280x720/Mv03v9rn5iKYsXg2.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 80
    },
    "evidence": {
     "via": "daily",
@@ -58433,6 +58899,56 @@
    }
   },
   {
+   "id": "2109500565768270102",
+   "url": "https://x.com/sayaka_aiart/status/2109500565768270102",
+   "author": {
+    "handle": "sayaka_aiart",
+    "name": "絵愛さやか🐸AIArtist"
+   },
+   "postedAt": "2026-10-12T04:25:02.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "Live2D二维模型绑定演示",
+    "en": "2D Live2D model rigging demo"
+   },
+   "summary": {
+    "zh": "创作者使用Claude Opus 5.5对已为Live2D拆分好的部件进行2D建模，并自行指定按键联动的动作和摆动效果。",
+    "en": "Creator used Claude Opus 5.5 to perform 2D character modeling from parts already separated for Live2D, manually specifying key-based movement and jiggle effects."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Live2D"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 17515,
+    "likes": 171,
+    "replies": 1,
+    "reposts": 6,
+    "bookmarks": 113,
+    "checkedAt": "2026-10-15T11:14:34.918Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109498645431439360/img/jjbkdyBxlGcDgw7M.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109498645431439360/vid/avc1/1000x720/aj6LSsZvjWIBq5Sq.mp4?tag=29",
+    "width": 1000,
+    "height": 720,
+    "durationSec": 16
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102701111090008066",
    "url": "https://x.com/alin_zone/status/2102701111090008066",
    "author": {
@@ -68669,6 +69185,62 @@
    }
   },
   {
+   "id": "2109515393220083912",
+   "url": "https://x.com/Ayu_AI_0912/status/2109515393220083912",
+   "author": {
+    "handle": "Ayu_AI_0912",
+    "name": "アユネオ"
+   },
+   "postedAt": "2026-10-12T05:23:57.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "虚构火箭CAD图纸与发射动画",
+    "en": "Fictional rocket CAD drawings and launch animation"
+   },
+   "summary": {
+    "zh": "作者用Opus 5.5和Blender制作了一段虚构两级火箭及发射台的CAD图纸与动画视频，提示词详细规定了图纸规格、动画分镜和用Python合成的音效。",
+    "en": "A CAD-drawing-to-Blender animation video of a fictional two-stage rocket with booster and launch pad, generated with Opus 5.5 and Blender using a detailed Japanese prompt specifying drawings, animation sequence and procedurally generated sound."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/Ayu_AI_0912/status/2109515395522781250",
+    "text": "架空の大型ロケット（2段式の液体ロケット＋固体ブースター2本、白い機体、名前なし）と\nその射点について、CAD図面と Blender 動画を作ってください。\n\n【図面】2D の DXF のみ（3Dモデルの書き出しは不要）。単位 mm、A2 の図枠と表題欄つき。\n線は青緑系の「電子の図面」風にし、プレビュー画像は濃紺の背景にする。\n1. 射点配置図 S=1:500（ロケットを原点に置き、実際の位置で描く。\n移動発射台・排煙溝・アンビリカルタワー・避雷塔・照明塔・水タンク・建屋・海岸線）\n2. 射点立面図（南から）S=1:400\n3. ロケット外形図・断面図 S=1:250\n特記事項に「架空の機体・射場のイメージで、実在の図面ではない」と書く。\n寸法は Python の形状モジュール1つで決め、図面と動画の両方がそれを読み込む。\n\n【動画】Blender（EEVEE）、1920×1080・24fps・本編20秒＋ロゴ3.5秒、音つき MP4。\n1. 暗闇の床に、シアンに光る射点配置図が中心から走査されて描かれる（真上から）\n2. 図面の線が光のワイヤーとして立ち上がる\n3. 光の粒（Geometry Nodes）が渦を巻いて昇り、発射台・タワー・ロケットが下から積み上がる\n（積み上がった高さより下だけが実体になる。カメラは寄る）\n4. 図面がマス目ごとにデジタルに溶け、夜の射点が現れる（海・丘・星空。カメラは引く）。\n照明塔が点いて白い機体が浮かび、塔の頂部の赤い灯が明滅する\n5. アクセスアームが離れる → カウントダウン → 点火 → リフトオフ。\n炎は発光する円錐、噴煙は排煙溝と発射台から湧き、上昇する機体の後ろに煙の柱が残る\n6. 上昇するロケットを海の上から見上げたところでタイトル → 最後に指定のロゴ\n音は外部素材を使わず Python で合成する\n（電子音の BGM、波、カウントダウンの電子音、点火から上昇までの轟音、タイトルの和音）。\n\n【進め方】\n- 図面のプレビュー画像を目で見て、文字の重なりを直す\n- 本番の前にテスト静止画を数枚描いて確認する（照明の明るさ、炎や光の白飛び）\n- 本番レンダーは軽い設定で、PC を休ませながら回す。始める前に所要時間を伝えて了承を取る"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Blender",
+    "Python"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 11230,
+    "likes": 161,
+    "replies": 1,
+    "reposts": 9,
+    "bookmarks": 123,
+    "checkedAt": "2026-10-15T11:14:34.918Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109515190823997440/img/NGTatUXd0jV5ufWK.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109515190823997440/vid/avc1/1280x720/SJ_mKZtQw19X_dW2.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 24
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2106960127987474652",
    "url": "https://x.com/JaydenDavisNC/status/2106960127987474652",
    "author": {
@@ -73199,6 +73771,63 @@
    }
   },
   {
+   "id": "2109523901105500260",
+   "url": "https://x.com/badboyfoxy/status/2109523901105500260",
+   "author": {
+    "handle": "badboyfoxy",
+    "name": "badboyfoxy"
+   },
+   "postedAt": "2026-10-12T05:57:45.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5",
+    "fable-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "天堂岛3D场景",
+    "en": "Paradise island 3D scene"
+   },
+   "summary": {
+    "zh": "作者让模型制作一个天堂岛场景，使用Blender和Three.js完成，呈现清澈水面和美丽风景。",
+    "en": "A paradise island scene with clear water, built in Blender and Three.js after the creator asked the model to make a paradise island."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/badboyfoxy/status/2109523901105500260",
+    "text": "make me a paradise island"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Blender",
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 8877,
+    "likes": 189,
+    "replies": 26,
+    "reposts": 8,
+    "bookmarks": 44,
+    "checkedAt": "2026-10-15T11:14:34.918Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109523029046796288/img/TQI7pMkNcYDZzJwp.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109523029046796288/vid/avc1/1362x720/Mr-2qtczRbCAGctZ.mp4?tag=29",
+    "width": 1362,
+    "height": 720,
+    "durationSec": 127
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2110053239425294804",
    "url": "https://x.com/magnific/status/2110053239425294804",
    "author": {
@@ -75284,6 +75913,54 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2109456453262266641",
+   "url": "https://x.com/dobokuya77/status/2109456453262266641",
+   "author": {
+    "handle": "dobokuya77",
+    "name": "土木屋77"
+   },
+   "postedAt": "2026-10-12T01:29:44.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "点云生成地形模型",
+    "en": "Point cloud to terrain model"
+   },
+   "summary": {
+    "zh": "作者将点云数据提供给Claude Opus 5.5，模型通过布料模拟生成地形数据，并能补全稀疏区域、生成含/不含构筑物版本以及进行DEM差分分析。",
+    "en": "A ground terrain model generated by giving Claude Opus 5.5 point cloud data, which used cloth simulation to produce ground data, interpolate sparse areas, and support structure on/off versions and DEM difference analysis."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 7701,
+    "likes": 168,
+    "replies": 5,
+    "reposts": 16,
+    "bookmarks": 83,
+    "checkedAt": "2026-10-15T11:14:34.918Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109456380256206848/img/dN6sask0KsN9Ep34.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109456380256206848/vid/avc1/1280x720/Ybk7r-I0g-lKwGcy.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 31
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -78571,6 +79248,57 @@
    }
   },
   {
+   "id": "2109432722250957122",
+   "url": "https://x.com/beyondwudan/status/2109432722250957122",
+   "author": {
+    "handle": "beyondwudan",
+    "name": "abhinav"
+   },
+   "postedAt": "2026-10-11T23:55:27.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5",
+    "fable-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "单文件Three.js场景",
+    "en": "Single-file Three.js scene"
+   },
+   "summary": {
+    "zh": "作者用Fable 5.5和Three.js制作了一个单文件HTML场景，作为此前Opus 5.5模型路由对比测试的后续展示。",
+    "en": "A single HTML file scene built with Fable 5.5 and Three.js, shown as a follow-up comparison to an earlier Opus 5.5 model routing test."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 5660,
+    "likes": 107,
+    "replies": 5,
+    "reposts": 3,
+    "bookmarks": 36,
+    "checkedAt": "2026-10-15T11:14:34.918Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109429069217746944/img/IXibS5v7Axcxt16t.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109429069217746944/vid/avc1/1280x720/mZRRfUe7YvpkGA1D.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 48
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103581801490809069",
    "url": "https://x.com/GPTabby/status/2103581801490809069",
    "author": {
@@ -79155,6 +79883,54 @@
     "width": 1280,
     "height": 720,
     "durationSec": 40
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2109475963553878392",
+   "url": "https://x.com/Seltaa_/status/2109475963553878392",
+   "author": {
+    "handle": "Seltaa_",
+    "name": "Selta ₊˚"
+   },
+   "postedAt": "2026-10-12T02:47:16.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "思维链讲解动画",
+    "en": "Chain-of-thought explainer animation"
+   },
+   "summary": {
+    "zh": "作者用Opus 5.5制作了一段解释AI思维链（CoT）概念的视频，并附上YouTube链接提供更多细节。",
+    "en": "A video explaining chain-of-thought reasoning in AI, described as made with Opus 5.5, with a linked YouTube video for more detail."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 5120,
+    "likes": 141,
+    "replies": 9,
+    "reposts": 27,
+    "bookmarks": 81,
+    "checkedAt": "2026-10-15T11:14:34.918Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109474315817418752/img/wi_IusauDuDs0lPI.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109474315817418752/vid/avc1/1280x720/7-9-4glpvcgBwuFP.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 302
    },
    "evidence": {
     "via": "daily",
