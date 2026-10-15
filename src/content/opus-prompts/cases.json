@@ -1,8 +1,8 @@
 {
  "model": "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.5)",
  "threshold": 5000,
- "updatedAt": "2026-10-13T19:53:36.885Z",
- "statsCheckedAt": "2026-10-13T19:53:36.885Z",
+ "updatedAt": "2026-10-15T05:54:45.330Z",
+ "statsCheckedAt": "2026-10-15T05:54:45.330Z",
  "inclusionRule": "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -2937,6 +2937,61 @@
     "width": 720,
     "height": 960,
     "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2110131790136401989",
+   "url": "https://x.com/semichenkko/status/2110131790136401989",
+   "author": {
+    "handle": "semichenkko",
+    "name": "Semichenko"
+   },
+   "postedAt": "2026-10-13T22:13:17.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "软糖熊软体物理场景",
+    "en": "Gummy bear soft-body physics scene"
+   },
+   "summary": {
+    "zh": "创作者用同一段提示词让Claude Opus 5.5和Gemini 4 Argon分别制作了一个基于three.js的单文件软糖熊物理模拟网页，对比了两者的果冻质感和物理表现。",
+    "en": "An interactive single-file HTML/three.js scene of translucent, jelly-like gummy bears with soft-body physics was built with Claude Opus 5.5, compared against a stiffer Gemini 4 Argon version using the same prompt."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/semichenkko/status/2110132313182851407",
+    "text": "Build \"Gummy Bears\" - a single self-contained HTML file (three.js from a CDN is the only dependency): a handful of translucent gummy bears on a white table that you can grab, stretch, squash, throw and pour.\n\nThe bears\n- Classic gummy bear silhouette: round head with two ears, short snout, plump body, stubby arms and legs, tiny molded eyes and nose\n- Every part melts smoothly into the next - build the body as an implicit surface (metaballs / marching cubes), not separate spheres\n- Material: real gummy candy. Translucent with transmission and refraction, colored light absorption that gets deeper in thick parts, glossy clearcoat with sharp highlights\n- Colors: cherry red, orange, lemon yellow, apple green, clear pineapple\n- Soft colored shadow under each bear, tinted by the bear's own color\n\nPhysics (this is the whole point - it must feel like jelly, not plastic)\n- Each bear is a soft body: mass points for head, ears, snout, body, belly, hands and feet, held together by volume-preserving shape matching\n- Limbs and neck are rendered as stretchy strands between points, getting thinner as they stretch\n- Grab any part and pull: it stretches like rubber, the rest of the bear leans after it, on release it snaps back with a damped wobble\n- Pull the head up: the neck stretches, the body follows, on release the bear squashes and hops\n- Press down on the head: the bear pancakes, bulges sideways, then launches itself back up\n- Throw a bear: it flies, squashes on landing, bounces and pushes other bears out of the way\n- Bears collide with each other and never pass through one another\n- Idle bears do small random hops with squash and stretch\n- \"Pour more bears\" drops a handful from above into a wobbling, jiggling pile\n\nUI\n- Editorial product-page style on a white background. Large italic serif title \"Gummy / Bears.\", a short subtitle, a minimal card on the right with flavor swatches, a wobble slider, live \"Stretch\" and \"Bounces\" readouts and a \"Pour more bears\" button\n- A subtle circular cursor that grows while grabbing\n- ACES tone mapping, environment reflections, soft key and back light. Smooth 60fps"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 599553,
+    "likes": 3971,
+    "replies": 206,
+    "reposts": 233,
+    "bookmarks": 1218,
+    "checkedAt": "2026-10-15T05:54:45.330Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110131742086500352/img/g1OYPRpR370-gIrm.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110131742086500352/vid/avc1/720x910/tTXQTHdmUbFyS5wv.mp4?tag=29",
+    "width": 720,
+    "height": 910,
+    "durationSec": 13
    },
    "evidence": {
     "via": "daily",
@@ -8404,6 +8459,56 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2110111408364888065",
+   "url": "https://x.com/lucakvlr/status/2110111408364888065",
+   "author": {
+    "handle": "lucakvlr",
+    "name": "lucak"
+   },
+   "postedAt": "2026-10-13T20:52:18.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "pt",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "由代理调用音效库完成的视频剪辑",
+    "en": "Video edit by an agent with a sound-effects library"
+   },
+   "summary": {
+    "zh": "创作者与Claude Opus 5.5和GPT-5.4一起为AI代理开发了一个技能，授予其访问自己音效、特效和插件的权限，并用它完成了一段视频剪辑。",
+    "en": "The creator built a custom AI agent skill with Claude Opus 5.5 and GPT-5.4, giving it access to their sound effects, audio plugins and effects, and used it to edit a video."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "GPT-5.4"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 224409,
+    "likes": 1541,
+    "replies": 72,
+    "reposts": 37,
+    "bookmarks": 687,
+    "checkedAt": "2026-10-15T05:54:45.330Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110109782535245824/img/Z7EfQTHrd1uwMsmJ.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110109782535245824/vid/avc1/1280x720/ekudthyJiyGCfJI3.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 23
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -15743,6 +15848,61 @@
     "width": 1280,
     "height": 720,
     "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2110136719827747181",
+   "url": "https://x.com/vib3coded/status/2110136719827747181",
+   "author": {
+    "handle": "vib3coded",
+    "name": "Vib3Coded"
+   },
+   "postedAt": "2026-10-13T22:32:53.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "瓶中船体素场景",
+    "en": "Voxel ship in a bottle"
+   },
+   "summary": {
+    "zh": "创作者用同一段提示词，分别让Claude Opus 5.5（花费12.06美元）和Gemini 4 Argon（花费0.19美元）生成了一个包含海浪和物理效果的瓶中船体素艺术单文件网页，并对比了两者效果。",
+    "en": "A detailed voxel-art ship-in-a-bottle scene with waves and physics was generated as a single HTML file, comparing Claude Opus 5.5 ($12.06) against Gemini 4 Argon ($0.19) using the identical prompt."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/vib3coded/status/2110136901285957923",
+    "text": "Design and create a very creative, elaborate, and detailed voxel art scene of a intricate ship sailing through the ocean inside of a bottle. Include waves and realistic physics, with the whole scene encapsulated inside of the bottle. Make the scene impressive and varied and use colorful voxels, modeled physics, and interesting props / landscapes all encapsulated inside of the bottle. Use WebGL and whatever libraries to get this done but make sure I can paste it all into a single HTML file and open it in Chrome."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "WebGL"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 120066,
+    "likes": 1480,
+    "replies": 78,
+    "reposts": 105,
+    "bookmarks": 556,
+    "checkedAt": "2026-10-15T05:54:45.330Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110136618275233792/img/1zIXiXzSRLDCwIIm.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110136618275233792/vid/avc1/720x912/5YkqGWlYLtuc9Jup.mp4?tag=29",
+    "width": 720,
+    "height": 912,
+    "durationSec": 18
    },
    "evidence": {
     "via": "daily",
@@ -26904,6 +27064,54 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2110145714659664275",
+   "url": "https://x.com/atomic_chat_hq/status/2110145714659664275",
+   "author": {
+    "handle": "atomic_chat_hq",
+    "name": "atomic.chat"
+   },
+   "postedAt": "2026-10-13T23:08:37.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "三维体素跑车组装动画",
+    "en": "3D voxel sports car assembly animation"
+   },
+   "summary": {
+    "zh": "创作者通过API对比了Gemini 4 Argon与Claude Opus 5.5生成3D体素跑车组装动画的效果与成本差异。",
+    "en": "A 3D voxel sports car assembly animation was generated comparing Gemini 4 Argon against Claude Opus 5.5 via API to show relative cost and quality."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 63738,
+    "likes": 315,
+    "replies": 11,
+    "reposts": 11,
+    "bookmarks": 112,
+    "checkedAt": "2026-10-15T05:54:45.330Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110144789559562241/img/WgpCnuTlEj3sz4fX.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110144789559562241/vid/avc1/720x720/_d1FNlT7fsqpN30-.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 26
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -41500,6 +41708,54 @@
    }
   },
   {
+   "id": "2110131745094029472",
+   "url": "https://x.com/0xProbabillity/status/2110131745094029472",
+   "author": {
+    "handle": "0xProbabillity",
+    "name": "0xProbability"
+   },
+   "postedAt": "2026-10-13T22:13:07.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "菜单栏智能家居应用宣传片",
+    "en": "Promo video for a menu bar smart home app"
+   },
+   "summary": {
+    "zh": "创作者让Claude Opus 5.5为其菜单栏公寓控制应用制作一段视频，模型自主完成了拍摄、剪辑、配音和配乐的全部工作。",
+    "en": "Claude Opus 5.5 was asked to make a video about the creator's menu-bar apartment app, and it filmed, edited, voiced and scored the entire video itself."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 34046,
+    "likes": 676,
+    "replies": 11,
+    "reposts": 26,
+    "bookmarks": 619,
+    "checkedAt": "2026-10-15T05:54:45.330Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110131201277136896/img/0FkLcRcH8_9BJf7j.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110131201277136896/vid/avc1/720x720/B-8woZyyE6T51iXd.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 49
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2109043294911291886",
    "url": "https://x.com/Ayu_AI_0912/status/2109043294911291886",
    "author": {
@@ -45690,6 +45946,61 @@
    }
   },
   {
+   "id": "2110119492076404869",
+   "url": "https://x.com/aimikoda/status/2110119492076404869",
+   "author": {
+    "handle": "aimikoda",
+    "name": "Kōda"
+   },
+   "postedAt": "2026-10-13T21:24:25.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "武术短片改制的动画片头",
+    "en": "Anime opening edit of a martial arts clip"
+   },
+   "summary": {
+    "zh": "创作者先用Seedance 2.5生成了一段武术视频，再交给Claude Opus 5.5将其剪辑成动漫片头风格，重新卡点剪辑、加入冲击帧、运动图形、片头字体、调色，并用代码自作配乐。",
+    "en": "A Seedance 2.5 generated martial arts video was re-edited by Claude Opus 5.5 into an anime-style opening with re-cut shots, impact frames, motion graphics, a title logo, color grading and original music composed in code."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/aimikoda/status/2110120443390709934",
+    "text": "Edit this video in the style of an anime opening. Add color grading, also dynamic cuts, transitions, visual effects, motion graphics and impactful editing to give it that authentic anime opening feel."
+   },
+   "referenceAssets": true,
+   "tools": [
+    "Seedance 2.5"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 27942,
+    "likes": 699,
+    "replies": 59,
+    "reposts": 53,
+    "bookmarks": 552,
+    "checkedAt": "2026-10-15T05:54:45.330Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110118417697054720/img/7Eycu37NGlkJY0FD.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110118417697054720/vid/avc1/1280x720/s4mvd0F_GLtVJd-9.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 32
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2104007585166991778",
    "url": "https://x.com/Avinash25467/status/2104007585166991778",
    "author": {
@@ -48224,6 +48535,54 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2110099864650702928",
+   "url": "https://x.com/Bhavani_00007/status/2110099864650702928",
+   "author": {
+    "handle": "Bhavani_00007",
+    "name": "Bhavy☄️"
+   },
+   "postedAt": "2026-10-13T20:06:26.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "多模型火箭场景生成对比",
+    "en": "Rocket scene comparison across AI models"
+   },
+   "summary": {
+    "zh": "作者对比了四款AI模型，让谷歌的Argon生成一个火箭场景，认为其细节和效率不错，但真实感略逊于Opus和Kimi。",
+    "en": "The creator compared four AI models and asked Google's Argon to generate a detailed rocket scene, noting it was less realistic than Opus or Kimi but efficient."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 24153,
+    "likes": 314,
+    "replies": 28,
+    "reposts": 26,
+    "bookmarks": 69,
+    "checkedAt": "2026-10-15T05:54:45.330Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110099526593966080/img/4Tb8xk1p87pm_dk_.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110099526593966080/vid/avc1/720x960/hN51h0r1EqYonZWG.mp4?tag=29",
+    "width": 720,
+    "height": 960,
+    "durationSec": 20
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -54009,6 +54368,56 @@
    }
   },
   {
+   "id": "2110143242591510835",
+   "url": "https://x.com/xikhar/status/2110143242591510835",
+   "author": {
+    "handle": "xikhar",
+    "name": "Shikhar"
+   },
+   "postedAt": "2026-10-13T22:58:48.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "图像转三维Blender渲染",
+    "en": "Image-to-3D Blender render"
+   },
+   "summary": {
+    "zh": "作者先用图像生成模型做出参考图，再用Opus 5.5据此生成Blender三维场景，称这是基于参考图的单条提示输出。",
+    "en": "The creator used an image-generation reference image combined with Opus 5.5 to produce a 3D Blender scene, describing it as a simple one-prompt output built from that reference."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 18801,
+    "likes": 634,
+    "replies": 26,
+    "reposts": 13,
+    "bookmarks": 364,
+    "checkedAt": "2026-10-15T05:54:45.330Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110139927858208768/img/7_mk_5ijNHSKJdNs.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110139927858208768/vid/avc1/1280x720/BgKDUr5S5_hhJo0r.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 5
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2107443775232438381",
    "url": "https://x.com/kepochnik/status/2107443775232438381",
    "author": {
@@ -57387,6 +57796,62 @@
     "width": 1282,
     "height": 720,
     "durationSec": 15
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2110121002332295599",
+   "url": "https://x.com/techhalla/status/2110121002332295599",
+   "author": {
+    "handle": "techhalla",
+    "name": "TechHalla"
+   },
+   "postedAt": "2026-10-13T21:30:25.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "达芬奇工作室3D复原：双模型对比",
+    "en": "Da Vinci workshop 3D build: Gemini vs Opus"
+   },
+   "summary": {
+    "zh": "作者用同一条提示分别让Gemini 4 Argon和Opus 5.5制作一个可交互的达芬奇工坊三维网页体验，并比较两者效果，认为Opus 5.5更接近预期。",
+    "en": "The creator gave Gemini 4 Argon and Opus 5.5 the same prompt to build an interactive 3D Leonardo da Vinci workshop experience and compared the results, preferring Opus 5.5's output."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/techhalla/status/2110121005201150011",
+    "text": "I want you to create a fully immersive web experience called \"Leonardo da Vinci's Workshop\".\n\nThe core of the experience should be an antique-style book containing Leonardo's actual designs and sketches. Use four of his most iconic inventions.\n\nWhen the user clicks on one of the designs, the original sketch should come to life as a fully interactive 3D model built with Three.js and WebGL.\n\nThe 3D experience should feel polished, visually impressive, and actually demonstrate how the invention works."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Three.js",
+    "WebGL"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 16657,
+    "likes": 124,
+    "replies": 25,
+    "reposts": 8,
+    "bookmarks": 77,
+    "checkedAt": "2026-10-15T05:54:45.330Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110119796457033728/img/gn7uGEhyKPj8auZm.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110119796457033728/vid/avc1/720x900/N8QNe-V3-9wlBLfI.mp4?tag=29",
+    "width": 720,
+    "height": 900,
+    "durationSec": 101
    },
    "evidence": {
     "via": "daily",
