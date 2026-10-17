@@ -3,10 +3,12 @@ import Link from "@/components/Link";
 import SubscribeForm from "@/components/SubscribeForm";
 import { getWeeklyIssues } from "@/lib/mdx";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
+import GoGlobalBreadcrumb from "../Breadcrumb";
 
 const SITE_URL = "https://jasonzhu.ai";
 
-// 出海选品周报板块：每期是一篇 series: chuhai-weekly 的博客文章（/[lang]/blog/<slug>），这里是目录页。
+// 出海选品周报板块（出海专题下，/[lang]/go-global/weekly；旧地址 /[lang]/weekly 在 next.config 里 308 过来）：
+// 每期是一篇 series: chuhai-weekly 的博客文章（/[lang]/blog/<slug>），这里是目录页。
 // 周报只有中文：en 页 canonical 指回 zh、不进 sitemap，和未翻译的博客文章同一规则。
 export async function generateMetadata({
   params,
@@ -20,7 +22,7 @@ export async function generateMetadata({
     description: isZh
       ? "每周一更新：数一遍 Stripe、Gumroad、Lemon Squeezy、Polar、Creem、Dodo、Paddle 上新挂出收款链接的网站，看大家在卖什么、什么起量了、哪些需求还没人做。"
       : "Every Monday: the websites that started taking payments on Stripe, Gumroad, Lemon Squeezy, Polar, Creem, Dodo and Paddle, what they sell, what is taking off, and which demand nobody serves yet. In Chinese.",
-    alternates: { canonical: `${SITE_URL}/zh/weekly` },
+    alternates: { canonical: `${SITE_URL}/zh/go-global/weekly` },
   };
 }
 
@@ -37,6 +39,7 @@ export default async function WeeklyPage({
 
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
+      <GoGlobalBreadcrumb lang={lang} here={isZh ? "选品周报" : "Weekly"} path="/weekly" />
       {/* Header */}
       <header className="mb-8">
         <p className="text-sm font-medium text-blue-600 mb-2">{isZh ? "每周一更新" : "Every Monday"}</p>

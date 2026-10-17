@@ -17,6 +17,9 @@ const STATIC_PATHS = [
   "/blog",
   // "/news" 列表页 noindex（聚合 AI 每日快讯），不进 sitemap
   "/tools",
+  "/go-global", // 出海专题：开户、收款平台选择器、周报
+  "/go-global/payments",
+  "/go-global/open-account",
   "/services",
   "/about",
   "/handbook",
@@ -43,10 +46,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  // 出海选品周报目录页：周报只有中文，en 页 canonical 指回 zh，所以只收 zh
+  // 出海选品周报目录页（出海专题下）：周报只有中文，en 页 canonical 指回 zh，所以只收 zh
   const latestIssue = getWeeklyIssues()[0];
   entries.push({
-    url: `${SITE_URL}/zh/weekly`,
+    url: `${SITE_URL}/zh/go-global/weekly`,
     ...(latestIssue ? { lastModified: new Date(latestIssue.date + "T08:00:00+08:00") } : {}),
     changeFrequency: "weekly",
     priority: 0.8,

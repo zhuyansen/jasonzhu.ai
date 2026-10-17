@@ -65,7 +65,7 @@ export function getPostBySlug(slug: string, lang?: "zh" | "en"): BlogPost | unde
   return { ...meta, content };
 }
 
-/** 出海选品周报：series 为此值的文章自成 /[lang]/weekly 板块，文章本身仍在 /[lang]/blog/<slug> */
+/** 出海选品周报：series 为此值的文章自成 /[lang]/go-global/weekly 板块（出海专题下），文章本身仍在 /[lang]/blog/<slug> */
 export const WEEKLY_SERIES = "chuhai-weekly";
 
 /** 出海选品周报的全部期数，最新一期在前 */

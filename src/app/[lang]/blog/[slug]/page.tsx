@@ -91,12 +91,16 @@ export default async function BlogPostPage({ params }: Props) {
   const post = getPostBySlug(slug, lang);
   if (!post) notFound();
 
-  // 出海选品周报的文章属于 /weekly 板块：面包屑、返回链接和期数导航都指向那里
+  // 出海选品周报的文章属于出海专题下的周报板块：面包屑是 首页 / 出海专题 / 选品周报，返回链接和期数导航指向周报目录
   const isWeekly = post.series === WEEKLY_SERIES;
   const issues = isWeekly ? getWeeklyIssues() : [];
-  const section = isWeekly
-    ? { name: lang === "zh" ? "选品周报" : "Weekly", href: `/${lang}/weekly` }
-    : { name: lang === "zh" ? "博客" : "Blog", href: `/${lang}/blog` };
+  const trail = isWeekly
+    ? [
+        { name: lang === "zh" ? "出海专题" : "Going global", href: `/${lang}/go-global` },
+        { name: lang === "zh" ? "选品周报" : "Weekly", href: `/${lang}/go-global/weekly` },
+      ]
+    : [{ name: lang === "zh" ? "博客" : "Blog", href: `/${lang}/blog` }];
+  const section = trail[trail.length - 1];
 
   // Related posts: shared tags weighted highest, then same category, newest first
   const relatedPosts = getAllPosts()
@@ -123,15 +127,15 @@ export default async function BlogPostPage({ params }: Props) {
         name: lang === "zh" ? "首页" : "Home",
         item: `${SITE_URL}/${lang}`,
       },
+      ...trail.map((t, i) => ({
+        "@type": "ListItem",
+        position: i + 2,
+        name: t.name,
+        item: `${SITE_URL}${t.href}`,
+      })),
       {
         "@type": "ListItem",
-        position: 2,
-        name: section.name,
-        item: `${SITE_URL}${section.href}`,
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
+        position: trail.length + 2,
         name: post.title,
         item: `${SITE_URL}/${lang}/blog/${slug}`,
       },
@@ -198,12 +202,14 @@ export default async function BlogPostPage({ params }: Props) {
               {lang === "zh" ? "首页" : "Home"}
             </Link>
           </li>
-          <li>/</li>
-          <li>
-            <Link href={section.href} className="hover:text-gray-600">
-              {section.name}
-            </Link>
-          </li>
+          {trail.map((t) => (
+            <li key={t.href} className="flex items-center gap-1">
+              <span>/</span>
+              <Link href={t.href} className="hover:text-gray-600">
+                {t.name}
+              </Link>
+            </li>
+          ))}
           <li>/</li>
           <li className="text-gray-600 truncate max-w-[200px]">{post.title}</li>
         </ol>
@@ -393,7 +399,7 @@ function WeeklyNav({ issue, issues, lang }: { issue: number; issues: BlogPostMet
             {isZh ? "← 上一期" : "← Previous"}
           </Link>
         )}
-        <Link href={`/${lang}/weekly`} className="hover:text-gray-900">
+        <Link href={`/${lang}/go-global/weekly`} className="hover:text-gray-900">
           {isZh ? "全部周报" : "All issues"}
         </Link>
         {newer && (

@@ -8,6 +8,8 @@ const nextConfig: NextConfig = {
     return [
       // 目前只有一个模型的提示词库，/prompts 先跳过去；以后有第二个再做索引页
       { source: "/:lang(zh|en)/prompts", destination: "/:lang/prompts/claude-opus-5-5", permanent: false },
+      // 选品周报 10-17 挪进出海专题：旧地址永久跳到 /go-global/weekly（周报各期仍在 /blog/<slug>）
+      { source: "/:lang(zh|en)/weekly", destination: "/:lang/go-global/weekly", permanent: true },
       // www → apex 308，统一权重避免双域名收录
       {
         source: "/:path*",
