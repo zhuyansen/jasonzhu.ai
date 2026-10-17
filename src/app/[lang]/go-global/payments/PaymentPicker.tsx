@@ -176,6 +176,23 @@ function Choices({
   );
 }
 
+/** 平台级的提醒（数据来自 payment-guard 的 warning 字段），附官方来源 */
+function PlatformWarning({ data, lang, platform }: { data: GuardData; lang: Lang; platform: string }) {
+  const p = data.platforms[platform];
+  if (!p.warning) return null;
+  const t = T[lang];
+  return (
+    <p className="mt-3 rounded-lg bg-red-50/70 border border-red-100 px-3 py-2 text-sm text-gray-700 leading-relaxed">
+      ⚠️{" "}
+      <span className="font-medium text-gray-900">
+        {p.name}
+        {t.colon}
+      </span>
+      {p.warning[lang]} <ExternalLink href={p.warning.source}>{t.source}</ExternalLink>
+    </p>
+  );
+}
+
 function TopCard({ data, lang, row }: { data: GuardData; lang: Lang; row: PickRow }) {
   const t = T[lang];
   const p = data.platforms[row.platform];
@@ -196,6 +213,7 @@ function TopCard({ data, lang, row }: { data: GuardData; lang: Lang; row: PickRo
           </span>
         ))}
       </div>
+      <PlatformWarning data={data} lang={lang} platform={row.platform} />
       {COMMUNITY.platforms[row.platform] && (
         <p className="mt-3 rounded-lg bg-white/70 border border-gray-100 px-3 py-2 text-sm text-gray-600">
           <span className="font-medium text-gray-800">
@@ -230,6 +248,11 @@ function PlatformTable({ data, lang, table }: { data: GuardData; lang: Lang; tab
               <tr key={r.platform}>
                 <th scope="row" className="px-3 py-2 text-left font-medium text-gray-900 whitespace-nowrap">
                   {data.platforms[r.platform].name}
+                  {data.platforms[r.platform].warning && (
+                    <span className="ml-1" title={data.platforms[r.platform].warning?.[lang]}>
+                      ⚠️
+                    </span>
+                  )}
                 </th>
                 <td className="px-3 py-2 whitespace-nowrap">{data.words[lang].open[r.open]}</td>
                 <td className="px-3 py-2 whitespace-nowrap">{data.words[lang].fit[r.fit]}</td>
@@ -252,6 +275,9 @@ function PlatformTable({ data, lang, table }: { data: GuardData; lang: Lang; tab
           {table.category_note[lang]}
         </p>
       )}
+      {table.rows.map((r) => (
+        <PlatformWarning key={r.platform} data={data} lang={lang} platform={r.platform} />
+      ))}
     </section>
   );
 }
@@ -341,6 +367,11 @@ function Details({ data, lang, who, rows }: { data: GuardData; lang: Lang; who: 
             <details key={r.platform} className="group rounded-xl border border-gray-100 px-4 py-3">
               <summary className="cursor-pointer font-medium text-gray-900">{p.name}</summary>
               <ul className="mt-3 space-y-1.5 text-sm text-gray-700 leading-relaxed">
+                {p.warning && (
+                  <li>
+                    ⚠️ {p.warning[lang]} <ExternalLink href={p.warning.source}>{t.source}</ExternalLink>
+                  </li>
+                )}
                 <li>
                   <span className="font-medium text-gray-800">
                     {t.rows.opening}

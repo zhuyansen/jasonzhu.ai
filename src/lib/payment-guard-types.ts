@@ -31,6 +31,8 @@ export interface PlatformFacts {
   review_time: Bi;
   chargebacks: Bi;
   notes: Bi<string[]>;
+  /** 平台级的提醒（例如 Lemon Squeezy 在把用户迁到 Stripe Managed Payments），附官方来源；没有就是 null */
+  warning: (Bi & { source: string }) | null;
   entities: Record<string, { status: OpenStatus; source: string; note: Bi }>;
   opening: Opening;
 }

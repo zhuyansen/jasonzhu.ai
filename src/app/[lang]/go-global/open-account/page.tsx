@@ -93,6 +93,12 @@ function PlatformSection({ data, lang, platformKey, p }: { data: GuardData; lang
       <p className="text-sm text-gray-500 mb-3">
         {p.mor ? (isZh ? "代收税（MoR）" : "Merchant of Record") : isZh ? "自己收单，税自己处理" : "Your own merchant account; you handle tax"} · {p.fee[lang]}
       </p>
+      {p.warning && (
+        <p className="mb-3 rounded-lg bg-red-50/70 border border-red-100 px-3 py-2 text-sm text-gray-700 leading-relaxed">
+          ⚠️ {p.warning[lang]}
+          <Source href={p.warning.source} lang={lang} />
+        </p>
+      )}
       <ul className="text-sm text-gray-700 space-y-1 mb-4">
         {Object.entries(p.entities).map(([e, v]) => (
           <li key={e}>
