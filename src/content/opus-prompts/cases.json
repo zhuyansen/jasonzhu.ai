@@ -1,8 +1,8 @@
 {
  "model": "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.5)",
  "threshold": 5000,
- "updatedAt": "2026-10-17T05:36:14.200Z",
- "statsCheckedAt": "2026-10-17T05:36:14.200Z",
+ "updatedAt": "2026-10-17T16:28:18.211Z",
+ "statsCheckedAt": "2026-10-17T16:28:18.211Z",
  "inclusionRule": "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -15679,6 +15679,57 @@
    }
   },
   {
+   "id": "2111120760660254842",
+   "url": "https://x.com/Belbizaz/status/2111120760660254842",
+   "author": {
+    "handle": "Belbizaz",
+    "name": "Frog King Simulator"
+   },
+   "postedAt": "2026-10-16T15:43:06.000Z",
+   "addedAt": "2026-10-17",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "青蛙王国模拟器游戏",
+    "en": "Frog King Simulator built with Claude"
+   },
+   "summary": {
+    "zh": "作者用 Opus 5.5 和 Three.js，在一个连续的 Claude Code 会话中耗时20天开发了一款带自定义引擎的3D即时战略/机甲游戏，期间输入概念图作为参考并逐步让模型生成自定义编辑工具。",
+    "en": "A 3D RTS/mech game with a custom engine was built over 20 days in a single continuous Claude Code chat using Opus 5.5 and Three.js, with concept art fed in as reference and custom editing tools built iteratively."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Three.js",
+    "Claude Code"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 127871,
+    "likes": 2304,
+    "replies": 186,
+    "reposts": 105,
+    "bookmarks": 1069,
+    "checkedAt": "2026-10-17T16:28:18.211Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111115234396213248/img/G4S6luyQ9xqlBwdc.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111115234396213248/vid/avc1/1280x720/aqVHljSeP1zi0wnV.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2109774104027140410",
    "url": "https://x.com/kaolti/status/2109774104027140410",
    "author": {
@@ -21963,6 +22014,54 @@
    }
   },
   {
+   "id": "2111097153074470950",
+   "url": "https://x.com/Mr_Salio/status/2111097153074470950",
+   "author": {
+    "handle": "Mr_Salio",
+    "name": "Salio"
+   },
+   "postedAt": "2026-10-16T14:09:18.000Z",
+   "addedAt": "2026-10-17",
+   "lang": "en",
+   "models": [
+    "fable-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "一次生成的纽约电影场景",
+    "en": "One-shot coded New York cinematic scene"
+   },
+   "summary": {
+    "zh": "作者用 Fable 5.5 一次生成了一个带有反射和光影效果的纽约街景电影化场景，完全由代码生成。",
+    "en": "A cinematic New York street scene with reflections and lighting was generated in one shot using Fable 5.5, entirely code-based."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 86981,
+    "likes": 410,
+    "replies": 37,
+    "reposts": 16,
+    "bookmarks": 88,
+    "checkedAt": "2026-10-17T16:28:18.211Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111096929979387904/img/ErtxpZRjxCcAyfV8.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111096929979387904/vid/avc1/1280x720/A2vOxLzhCk50M64U.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 39
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102751171920433525",
    "url": "https://x.com/pleometric/status/2102751171920433525",
    "author": {
@@ -23667,6 +23766,56 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2111058514311336244",
+   "url": "https://x.com/AIMind_Ai/status/2111058514311336244",
+   "author": {
+    "handle": "AIMind_Ai",
+    "name": "AiMind"
+   },
+   "postedAt": "2026-10-16T11:35:46.000Z",
+   "addedAt": "2026-10-17",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "埃菲尔铁塔建模的跨模型对比",
+    "en": "Eiffel Tower build compared across models"
+   },
+   "summary": {
+    "zh": "作者对比了用 Claude Opus 5.5（33.45美元，耗时2小时）和 Gemini 4 Argon（0.23美元，一次生成）制作埃菲尔铁塔模型的成本和耗时。",
+    "en": "A comparison shows the cost and time to build an Eiffel Tower model with Claude Opus 5.5 ($33.45, 2 hours) versus Gemini 4 Argon (23 cents, one shot)."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Gemini"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 79487,
+    "likes": 296,
+    "replies": 69,
+    "reposts": 11,
+    "bookmarks": 118,
+    "checkedAt": "2026-10-17T16:28:18.211Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111058399886503936/img/bzmPjbxWr5kJuGtc.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111058399886503936/vid/avc1/720x900/WeEFMGapkvVKRjmI.mp4?tag=29",
+    "width": 720,
+    "height": 900,
+    "durationSec": 16
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -40085,6 +40234,56 @@
    }
   },
   {
+   "id": "2110987175009685842",
+   "url": "https://x.com/tuolaji2024/status/2110987175009685842",
+   "author": {
+    "handle": "tuolaji2024",
+    "name": "拖拉机"
+   },
+   "postedAt": "2026-10-16T06:52:17.000Z",
+   "addedAt": "2026-10-17",
+   "lang": "zh",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "特斯拉Roadster飞行动画",
+    "en": "Tesla Roadster flying animation"
+   },
+   "summary": {
+    "zh": "作者用 Opus 5.5 耗时30分钟制作了一个解释特斯拉 Roadster 如何飞行的视频，其中的逻辑是和 Grok 一起研究得出的。",
+    "en": "A video explaining how a Tesla Roadster flies was made with Opus 5.5 in 30 minutes, based on logic researched together with Grok."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Grok"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 42647,
+    "likes": 306,
+    "replies": 27,
+    "reposts": 71,
+    "bookmarks": 236,
+    "checkedAt": "2026-10-17T16:28:18.211Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110986889071403008/img/AIae6s7XLpCsoEy_.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110986889071403008/vid/avc1/1280x720/VAhOPkPJ6mqx_FZW.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 236
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2108644023330390194",
    "url": "https://x.com/Blushneyy/status/2108644023330390194",
    "author": {
@@ -42944,6 +43143,54 @@
     "width": 1920,
     "height": 720,
     "durationSec": 11
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2111109055955763570",
+   "url": "https://x.com/driftauz/status/2111109055955763570",
+   "author": {
+    "handle": "driftauz",
+    "name": "Mradul"
+   },
+   "postedAt": "2026-10-16T14:56:36.000Z",
+   "addedAt": "2026-10-17",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "生成的动画片段",
+    "en": "Generated animated clip"
+   },
+   "summary": {
+    "zh": "作者用 Claude Opus 5.5 生成了一段作品，但未提供更多细节。",
+    "en": "A piece of media was generated using Claude Opus 5.5, with no further details provided by the creator."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 37539,
+    "likes": 625,
+    "replies": 6,
+    "reposts": 31,
+    "bookmarks": 160,
+    "checkedAt": "2026-10-17T16:28:18.211Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111108988897198080/img/Y2zoZQJb8NzObnke.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111108988897198080/vid/avc1/720x1280/3W7on6WHmApGD8ok.mp4?tag=14",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 12
    },
    "evidence": {
     "via": "daily",
@@ -50068,6 +50315,54 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2111106459408986368",
+   "url": "https://x.com/DaphneRHansell/status/2111106459408986368",
+   "author": {
+    "handle": "DaphneRHansell",
+    "name": "Daphne Hansell"
+   },
+   "postedAt": "2026-10-16T14:46:17.000Z",
+   "addedAt": "2026-10-17",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "我能把我的10%给你吗",
+    "en": "Can I give you 10% of me?"
+   },
+   "summary": {
+    "zh": "作者针对一条关于有效利他主义的引用推文，用 Opus 5.5 制作了一张题为\"Can I give you 10% of me?\"的图片。",
+    "en": "An image titled \"Can I give you 10% of me?\" related to effective altruism was created with Opus 5.5 in response to a quoted tweet about EA."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 28793,
+    "likes": 372,
+    "replies": 16,
+    "reposts": 37,
+    "bookmarks": 179,
+    "checkedAt": "2026-10-17T16:28:18.211Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111106205045211137/img/946-95W54Tnnng3L.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111106205045211137/vid/avc1/1280x720/IF6YCv7ELy5JalfP.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 144
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -58615,6 +58910,56 @@
    }
   },
   {
+   "id": "2110975805899825394",
+   "url": "https://x.com/HaileyAILabs/status/2110975805899825394",
+   "author": {
+    "handle": "HaileyAILabs",
+    "name": "Hailey"
+   },
+   "postedAt": "2026-10-16T06:07:06.000Z",
+   "addedAt": "2026-10-17",
+   "lang": "zh",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "有声手绘故事绘本动画",
+    "en": "Illustrated storybook animation with narration"
+   },
+   "summary": {
+    "zh": "作者用Claude Opus 5.5制作了一部带配音的手绘水彩动态绘本，并计划后续开源制作用的Skill，但未公开具体使用的提示词文本。",
+    "en": "The creator used Claude Opus 5.5 to generate an animated watercolor storybook with voice narration and plans to release the production skill, but did not publish the exact prompt text used."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "豆包 TTS"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 20444,
+    "likes": 277,
+    "replies": 20,
+    "reposts": 41,
+    "bookmarks": 274,
+    "checkedAt": "2026-10-17T16:28:18.211Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110975146894970880/img/z84Jb7HE8snHSYRI.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110975146894970880/vid/avc1/1280x720/-S-KQOV8mL_crSwE.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 227
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103698137730924839",
    "url": "https://x.com/hAru_mAki_ch/status/2103698137730924839",
    "author": {
@@ -61316,6 +61661,54 @@
    }
   },
   {
+   "id": "2110989121682559063",
+   "url": "https://x.com/AIMevzulari/status/2110989121682559063",
+   "author": {
+    "handle": "AIMevzulari",
+    "name": "Eray’la Yapay Zeka"
+   },
+   "postedAt": "2026-10-16T07:00:01.000Z",
+   "addedAt": "2026-10-17",
+   "lang": "tr",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "根据mp3歌曲生成的动画歌词视频",
+    "en": "Animated lyric video generated from an mp3 song"
+   },
+   "summary": {
+    "zh": "作者给Opus 5.5提供了一首mp3歌曲并让它做成动画，模型自行对齐歌词时间轴、绘制角色并用代码搭建了45个以上场景，没有使用任何预制素材。",
+    "en": "The creator gave Opus 5.5 an mp3 song and asked it to turn it into an animation; the model synced lyrics, drew characters, and built over 45 scenes entirely from code with no premade assets."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 18468,
+    "likes": 166,
+    "replies": 9,
+    "reposts": 12,
+    "bookmarks": 154,
+    "checkedAt": "2026-10-17T16:28:18.211Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110884301554249728/img/cGRkz6JA_U2JRw_3.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110884301554249728/vid/avc1/1280x720/QTZZcnU6j4lJLnRX.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 163
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2106268513644273809",
    "url": "https://x.com/_insan18/status/2106268513644273809",
    "author": {
@@ -62086,6 +62479,57 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2111087834329399635",
+   "url": "https://x.com/chetaslua/status/2111087834329399635",
+   "author": {
+    "handle": "chetaslua",
+    "name": "Chetaslua"
+   },
+   "postedAt": "2026-10-16T13:32:16.000Z",
+   "addedAt": "2026-10-17",
+   "lang": "en",
+   "models": [
+    "opus-5.5",
+    "fable-5.5"
+   ],
+   "kind": "comparison",
+   "category": "art3d",
+   "title": {
+    "zh": "音乐与音效同步的动画场景",
+    "en": "Animated scene with synced music and sound effects"
+   },
+   "summary": {
+    "zh": "作者对比了Fable 5.5在音乐与音效同步视频方面的能力，并提到此前曾让Opus 5.5用Python代码在Blender中搭建3D场景的尝试。",
+    "en": "The creator compares Fable 5.5's ability to sync music and sound effects to video with an earlier attempt where Opus 5.5 was asked to build a 3D scene using Python code in Blender."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 17973,
+    "likes": 419,
+    "replies": 17,
+    "reposts": 16,
+    "bookmarks": 89,
+    "checkedAt": "2026-10-17T16:28:18.211Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111087396007890944/img/wRiefKLSs9kCeyAN.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111087396007890944/vid/avc1/1322x720/U9f0agzeiZefTbrS.mp4?tag=29",
+    "width": 1322,
+    "height": 720,
+    "durationSec": 32
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -63432,6 +63876,54 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2111118746786165033",
+   "url": "https://x.com/ai_growth_avii/status/2111118746786165033",
+   "author": {
+    "handle": "ai_growth_avii",
+    "name": "Avi Yadav "
+   },
+   "postedAt": "2026-10-16T15:35:06.000Z",
+   "addedAt": "2026-10-17",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "含商店、宠物与金币系统的Roblox游戏",
+    "en": "Roblox game with shop, pets and cash systems"
+   },
+   "summary": {
+    "zh": "作者展示了由Opus 5.5制作的一个完整Roblox游戏，包含商店、宠物和货币系统。",
+    "en": "The creator shows a complete Roblox game, including a shop, pets, and cash systems, built by Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 17331,
+    "likes": 196,
+    "replies": 16,
+    "reposts": 6,
+    "bookmarks": 125,
+    "checkedAt": "2026-10-17T16:28:18.211Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110799820567064576/img/OKkkr0fwTvqRAy_n.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110799820567064576/vid/avc1/1280x720/laBW7G4sYiCZ-hrg.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 52
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -66103,6 +66595,62 @@
     "width": 720,
     "height": 720,
     "durationSec": 15
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2111111416120053953",
+   "url": "https://x.com/Gorden_Sun/status/2111111416120053953",
+   "author": {
+    "handle": "Gorden_Sun",
+    "name": "Gorden Sun"
+   },
+   "postedAt": "2026-10-16T15:05:58.000Z",
+   "addedAt": "2026-10-17",
+   "lang": "zh",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "海外AI对国人态度小剧场",
+    "en": "Skit about overseas AI attitudes toward Chinese users"
+   },
+   "summary": {
+    "zh": "作者制作了一个讽刺海外AI对国人态度的小剧场视频，由Opus 5.5在获得TTS、ASR、生图、生视频等额外能力后，用一段完整提示词一次生成完成。",
+    "en": "The creator made a short theater video satirizing overseas AI attitudes toward Chinese users, built by Opus 5.5 which was given extra TTS, ASR, image-generation, and video-generation capabilities, using one single detailed prompt."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "post",
+    "sourceUrl": "https://x.com/Gorden_Sun/status/2111111416120053953",
+    "text": "开场：盘点海外AI对国人的态度\n这次是个小剧场，16：9比例\n文字稿\nClaude场景（Claude不读出来，画面里也没有Claude英文）：\nClaude角色站在精致欧式房子前，房子门锁着，大肥鱼跑过来，Claude手里捏着晃，口气轻蔑的说：哼！我家不欢迎你来，哪来的哪回去！（就这一段需要语音，使用EdgeSpeak，模型使用Qwen3-TTS 1.7B Base，使用音库里的Claude声音）\n大肥鱼哭着跑了，然后叮叮当当搭起了一个类似Claude的房子，但是破破烂烂，上面写着“中转站”3个字，然后大肥鱼转身一遍，变成了Claude角色的装扮，然后大肥鱼表情很得意，Claude表情惊讶。\n\nGPT场景\nGPT角色站在现代简洁的房子前，房子门锁着，大肥鱼跑过来，GPT把钥匙放在一个台子上，温柔的说：我把钥匙放在这，你想进来可以自己开门哦~（就这一段需要语音，使用EdgeSpeak，模型使用Qwen3-TTS 1.7B Base，使用音库里的GPT声音）\n\nGemini哈基米场景\n哈基米角色站在漂亮的小木屋前挥手，房子门开着，大肥鱼跑过来，哈基米开心地说：大肥鱼，我家不关门，来一起玩呀！（就这一段需要语音，使用EdgeSpeak，模型使用Qwen3-TTS 1.7B Base，使用音库里的Gemini声音）\n然后大肥鱼和哈基米一起跳舞，背景音乐哈基米.mp3，就跳4秒\n\nGrok场景\nGrok角色站在类似现代酒吧和舞厅的门口，舞厅没有门，能看到五彩斑斓的射灯。大肥鱼脸红害羞的、左顾右盼地走到Grok角色身边，Grok角色说：房子哪需要门，都是哥们，快来我家，我家有的是好东西。（就这一段需要语音，使用EdgeSpeak，模型使用Qwen3-TTS 1.7B Base，使用音库里的Grok2声音）\n然后Grok用手揽着大肥鱼的脖子就往舞厅走去\n\n然后用圆圈缩小的方式谢幕即可。"
+   },
+   "referenceAssets": true,
+   "tools": [
+    "EdgeSpeak",
+    "Qwen3-TTS"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 15623,
+    "likes": 163,
+    "replies": 32,
+    "reposts": 7,
+    "bookmarks": 71,
+    "checkedAt": "2026-10-17T16:28:18.211Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111110768297140224/img/J-y_okUmkh7kUmJ1.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111110768297140224/vid/avc1/1280x720/NkAV570ygJvP6ZBX.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 58
    },
    "evidence": {
     "via": "daily",
@@ -69894,6 +70442,54 @@
    }
   },
   {
+   "id": "2111128415319548058",
+   "url": "https://x.com/parhelion318/status/2111128415319548058",
+   "author": {
+    "handle": "parhelion318",
+    "name": "Dr. Apolotary"
+   },
+   "postedAt": "2026-10-16T16:13:31.000Z",
+   "addedAt": "2026-10-17",
+   "lang": "ru",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "素食咖啡馆循环对话游戏",
+    "en": "Exit 8-style vegan cafe loop game"
+   },
+   "summary": {
+    "zh": "作者用 Claude Opus 5.5 氛围编程制作了一款模仿 Exit 8 风格的游戏，玩家需要循环辨听一段关于素食咖啡馆怪人的复制粘贴文案。",
+    "en": "The creator used Claude Opus 5.5 to vibe-code a game styled after Exit 8, where the player must listen on a loop for a copypasta about a weird vegan cafe scene."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 13368,
+    "likes": 349,
+    "replies": 11,
+    "reposts": 23,
+    "bookmarks": 71,
+    "checkedAt": "2026-10-17T16:28:18.211Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111128367982669824/img/sgLRPYZaqQpCydFS.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111128367982669824/vid/avc1/1280x720/1HL_fYEwcufM_TQd.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 56
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2110057849653002459",
    "url": "https://x.com/marcthecreatorr/status/2110057849653002459",
    "author": {
@@ -72538,6 +73134,59 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2111034892750409811",
+   "url": "https://x.com/rewind02/status/2111034892750409811",
+   "author": {
+    "handle": "rewind02",
+    "name": "rewind"
+   },
+   "postedAt": "2026-10-16T10:01:54.000Z",
+   "addedAt": "2026-10-17",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "虚幻引擎5捉鬼游戏",
+    "en": "Ghost-hunting game built in Unreal Engine 5"
+   },
+   "summary": {
+    "zh": "作者通过 Unreal MCP 连接 Claude Opus 5.5，在 Unreal Engine 5 中逐步搭建了一款捉鬼游戏的关卡、蓝图和特效，模型素材来自 Tripo 并用 Blender 清理；此前还用 Unity 6 配合 Blender、Meshy 和 ElevenLabs 做过同一创意的版本。",
+    "en": "The creator built a ghost-hunting game in Unreal Engine 5 by connecting Claude Opus 5.5 through Unreal MCP, building levels, blueprints and effects step by step while Tripo and Blender supplied cleaned-up 3D models; a prior version of the same concept was built in Unity 6 with Blender, Meshy and ElevenLabs."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Unreal Engine 5",
+    "Unreal MCP",
+    "Tripo",
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 12170,
+    "likes": 199,
+    "replies": 27,
+    "reposts": 14,
+    "bookmarks": 190,
+    "checkedAt": "2026-10-17T16:28:18.211Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111034776484237312/img/giUSdNl1PibcFhqy.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111034776484237312/vid/avc1/1280x720/Xgt5Ez6waG1EQ-YR.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 24
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -76004,6 +76653,56 @@
    }
   },
   {
+   "id": "2111115013398352298",
+   "url": "https://x.com/EnvolDev/status/2111115013398352298",
+   "author": {
+    "handle": "EnvolDev",
+    "name": "Tony"
+   },
+   "postedAt": "2026-10-16T15:20:16.000Z",
+   "addedAt": "2026-10-17",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "Opus 5.5对比GPT-6 Astra背景生成",
+    "en": "Opus 5.5 vs GPT-6 Astra background generation"
+   },
+   "summary": {
+    "zh": "作者用同一条提示词分别测试了 Claude Opus 5.5 和 GPT-6 Astra 生成山景背景画面，并对比了两者的效果。",
+    "en": "The creator compared Claude Opus 5.5 against GPT-6 Astra on generating a mountain background scene using the exact same prompt for both models."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "GPT-6 Astra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 10663,
+    "likes": 132,
+    "replies": 14,
+    "reposts": 10,
+    "bookmarks": 31,
+    "checkedAt": "2026-10-17T16:28:18.211Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111114804509437952/img/DV7U03xCoJ7DjieO.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111114804509437952/vid/avc1/720x720/3j2okgPrr2SGeOtg.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 25
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2106299981875347740",
    "url": "https://x.com/shironagasu_ai/status/2106299981875347740",
    "author": {
@@ -77370,6 +78069,58 @@
    }
   },
   {
+   "id": "2111112282583548122",
+   "url": "https://x.com/AI_Screening/status/2111112282583548122",
+   "author": {
+    "handle": "AI_Screening",
+    "name": "Pranav Reddy"
+   },
+   "postedAt": "2026-10-16T15:09:25.000Z",
+   "addedAt": "2026-10-17",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "三个模型的Three.js场景对比",
+    "en": "Three.js scene across three models"
+   },
+   "summary": {
+    "zh": "作者在一个 Three.js 编程测试中对比了 Gemini 4 Argon、Claude Opus 5.5 和 Muse Wonderful 三个模型的表现，并评价 Muse Wonderful 像是针对基准测试优化的模型。",
+    "en": "The creator compared Gemini 4 Argon, Claude Opus 5.5, and Muse Wonderful on a Three.js coding test, commenting that Muse Wonderful appeared benchmark-optimized."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Gemini 4 Argon",
+    "Muse Wonderful",
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 9984,
+    "likes": 103,
+    "replies": 14,
+    "reposts": 4,
+    "bookmarks": 11,
+    "checkedAt": "2026-10-17T16:28:18.211Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111112145845002240/img/bod4WW3c_TIa020A.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111112145845002240/vid/avc1/720x1052/h72qQOU-KNwdQooJ.mp4?tag=29",
+    "width": 720,
+    "height": 1052,
+    "durationSec": 14
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102546641253478674",
    "url": "https://x.com/aniketjart/status/2102546641253478674",
    "author": {
@@ -77968,6 +78719,56 @@
    "evidence": {
     "via": "fxtwitter",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2111109914055803222",
+   "url": "https://x.com/tripoai/status/2111109914055803222",
+   "author": {
+    "handle": "tripoai",
+    "name": "Tripo"
+   },
+   "postedAt": "2026-10-16T15:00:00.000Z",
+   "addedAt": "2026-10-17",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "森林鹿漫步互动场景",
+    "en": "Deer forest interactive scene"
+   },
+   "summary": {
+    "zh": "作者用约一小时氛围编程完成了一个有鹿在森林中漫步的互动场景，其中 Tripo API 负责生成和驱动鹿的角色模型，Claude Opus 5.5 负责搭建红杉森林环境、灯光、雾效和交互逻辑。",
+    "en": "The creator vibe-coded an interactive forest scene with a wandering deer in about an hour, using the Tripo API to generate and rig the deer character and Claude Opus 5.5 to build the sequoia forest environment, lighting, fog and interaction logic."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Tripo API"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 9621,
+    "likes": 147,
+    "replies": 11,
+    "reposts": 4,
+    "bookmarks": 104,
+    "checkedAt": "2026-10-17T16:28:18.211Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111034685212225536/img/eJBashpRPvlnpSS2.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111034685212225536/vid/avc1/1280x720/EpD5INxqGLRTL-68.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 29
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -78976,6 +79777,56 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2110982632854966766",
+   "url": "https://x.com/cgnot996/status/2110982632854966766",
+   "author": {
+    "handle": "cgnot996",
+    "name": "铁柱AGI"
+   },
+   "postedAt": "2026-10-16T06:34:14.000Z",
+   "addedAt": "2026-10-17",
+   "lang": "zh",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "由一张图和一首mp3生成的音乐视频",
+    "en": "Music video cut from one image and one mp3"
+   },
+   "summary": {
+    "zh": "作者在 Notion 中使用 Claude Opus 5.5 Max，仅凭一张 IP 参考图和一个 mp3 文件就直接生成了剪辑视频，提示词沿用了他人此前分享的版本，只额外加了一句让模型自行生成所需素材。",
+    "en": "The creator made a video edit directly from one IP reference image and one mp3 file using Claude Opus 5.5 Max inside Notion, reusing a prompt previously shared by another creator with one added line asking the model to self-generate any needed material."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Notion"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 9277,
+    "likes": 100,
+    "replies": 28,
+    "reposts": 9,
+    "bookmarks": 89,
+    "checkedAt": "2026-10-17T16:28:18.211Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110981169508728832/img/iRXNz_HhvY9bQuWY.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110981169508728832/vid/avc1/720x1280/ZKSFdCgV5vZtwRdz.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 154
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -80687,6 +81538,62 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2111106285126971770",
+   "url": "https://x.com/vib3coded/status/2111106285126971770",
+   "author": {
+    "handle": "vib3coded",
+    "name": "Vib3Coded"
+   },
+   "postedAt": "2026-10-16T14:45:35.000Z",
+   "addedAt": "2026-10-17",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "毛绒鸽子软体挤压玩具",
+    "en": "Plush pigeon soft-body squish toy"
+   },
+   "summary": {
+    "zh": "作者用同一份详细提示词分别让Claude Opus 5.5和ChatGPT-6 Astra生成一个可挤压的毛绒软体鸽子模拟，基于WebGPU在浏览器中运行，并对比两者效果与成本。",
+    "en": "The creator compared Claude Opus 5.5 and ChatGPT-6 Astra by giving both the same detailed prompt to generate a squishy, soft-body plush pigeon simulation running in the browser via WebGPU."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/vib3coded/status/2111106530179248605",
+    "text": "Make \"Plush Pigeon\" (Material Studies No. 031) on the Plush Penguin WebGPU engine: XPBD soft-body lattice, shell fur, cloth wings, posture-driven gait, tools Hand / Finger / Comb.\n\nThe toy: a round, well-fed rock dove of soft grey minky.\n- Shape: one SDF with a round body, a proud chest, a neck rising into a teal domed head, a flat tail with a dark band, and two pink felt feet with three toes forward and one behind.\n- Neck ring: iridescent, green above and violet below, dipping lower over the chest.\n- Face: glossy bead eyes with an orange ring; a small dark felt beak with a pale cere.\n- Wings: two stuffed cloth wings sewn at the shoulders, folded down and back along the sides, each with two charcoal bars and a darker tip.\n- Fur length: shorter on the head and neck ring, cropped to felt on the feet.\n\nLife:\n- Strut: a waddle in which neck-cell shear muscles bob the head with every step. Keep the bend normal orthogonal to the neck axis, or the shear pushes the whole body.\n- Coo: the chest cells swell, the head bows twice, and a synthesized three-note rolling \"croo\" plays.\n- Flap: wing flaps with hops and a feather-flutter sound.\n- Topple, then get back up.\n- Finger: struts over to a held finger; a boop on the beak makes it coo; it sometimes coos when idle.\n\nPalettes: Blue bar, Ash red, Snow.\nReadouts: mass, volume, steps, coos.\nResponsive layout."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "ChatGPT-6 Astra",
+    "WebGPU"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 8601,
+    "likes": 173,
+    "replies": 20,
+    "reposts": 16,
+    "bookmarks": 52,
+    "checkedAt": "2026-10-17T16:28:18.211Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111106110715260928/img/uUd3bFjUT-xrDDRj.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111106110715260928/vid/avc1/720x910/OGgl2ULEY0mR46KK.mp4?tag=29",
+    "width": 720,
+    "height": 910,
+    "durationSec": 18
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -87146,6 +88053,54 @@
     "width": 1280,
     "height": 720,
     "durationSec": 302
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2111004303075000494",
+   "url": "https://x.com/Madariyanhadi/status/2111004303075000494",
+   "author": {
+    "handle": "Madariyanhadi",
+    "name": "Mada Riyanhadi 📸"
+   },
+   "postedAt": "2026-10-16T08:00:21.000Z",
+   "addedAt": "2026-10-17",
+   "lang": "in",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "视频剪辑尝试",
+    "en": "Video editing experiment"
+   },
+   "summary": {
+    "zh": "作者用Claude(Opus 5.5）尝试编辑了一段视频，把结果作为随手测试分享出来，并邀请其他人也分享自己的作品。",
+    "en": "The creator experimented with editing a video using Claude (Opus 5.5), sharing the result as a casual trial and inviting others to share theirs."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 5003,
+    "likes": 144,
+    "replies": 11,
+    "reposts": 10,
+    "bookmarks": 70,
+    "checkedAt": "2026-10-17T16:28:18.211Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111004260540600321/img/3eK-4Vi82ZYwI0Af.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111004260540600321/vid/avc1/720x1280/e7krPjTsUKlQoHVM.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 68
    },
    "evidence": {
     "via": "daily",
