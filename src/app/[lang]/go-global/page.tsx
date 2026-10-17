@@ -4,7 +4,9 @@ import SubscribeForm from "@/components/SubscribeForm";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
 import {
   BACKLINK_SOURCES,
+  BEGINNER_EXTRAS,
   BEGINNER_VIDEOS,
+  CLOUDFLARE_STACK,
   DATA_TOOLS,
   GO_GLOBAL,
   MY_PAYMENT_PICK,
@@ -141,8 +143,8 @@ function Beginners({ isZh }: { isZh: boolean }) {
       <h2 className="text-xl font-semibold text-gray-900 mb-1.5">{isZh ? "新手先看" : "New to this? Start here"}</h2>
       <p className="text-sm text-gray-600 mb-4 leading-relaxed">
         {isZh
-          ? `${c.host}（YouTube「${c.name}」）的两期 AMA，回答读者的出海提问，特别适合刚开始的人。`
-          : `Two AMA episodes from ${c.host} (YouTube channel "${c.name}") answering readers' questions about selling abroad. Made for beginners; in Chinese.`}{" "}
+          ? `刚开始做出海，先看这几样：${c.host}（YouTube「${c.name}」）回答读者提问的两期 AMA，一个从零做出并上线 AI 应用的教程，和一份工具清单。`
+          : `Start with these: two AMA episodes in which ${c.host} (YouTube channel "${c.name}") answers readers' questions, a tutorial that builds and launches an AI app from zero, and a tool list. In Chinese.`}{" "}
         <a href={c.url} {...OUT} className="text-blue-600 hover:underline">
           {isZh ? "频道主页" : "Channel"}
         </a>
@@ -164,6 +166,17 @@ function Beginners({ isZh }: { isZh: boolean }) {
                 {v.duration} · {v.date}
               </span>
             </span>
+          </a>
+        ))}
+      </div>
+      <div className="grid gap-3 sm:grid-cols-2 mt-3">
+        {BEGINNER_EXTRAS.map((x) => (
+          <a key={x.url} href={x.url} {...OUT} className="block rounded-xl bg-white border border-amber-100 p-4 hover:border-amber-300 transition-colors">
+            <span className="block font-semibold text-gray-900">{isZh ? x.title.zh : x.title.en}</span>
+            <span className="block text-xs text-gray-500 mb-1.5">
+              {x.by} · {x.date}
+            </span>
+            <span className="block text-sm text-gray-600 leading-relaxed">{isZh ? x.note.zh : x.note.en}</span>
           </a>
         ))}
       </div>
@@ -304,6 +317,17 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
       >
         <PickList title={isZh ? "我在用的" : "What I use"} picks={STACK} lang={l} />
         <FromMyPost post={MY_POSTS.stack} lang={l} />
+        <div className="mt-3 rounded-2xl border border-gray-100 p-4">
+          <p className="text-sm font-semibold text-gray-900 mb-1">{isZh ? "另一种做法：全放 Cloudflare" : "Another way: everything on Cloudflare"}</p>
+          <p className="text-sm text-gray-600 leading-relaxed">{CLOUDFLARE_STACK.pieces[l]}</p>
+          <p className="mt-2 text-xs text-gray-400">
+            {CLOUDFLARE_STACK.by}{" "}
+            <a href={CLOUDFLARE_STACK.url} {...OUT} className="text-blue-600 hover:underline">
+              {isZh ? "「AI + Cloudflare = 你需要的全部」" : '"AI + Cloudflare is all you need"'}
+            </a>{" "}
+            {CLOUDFLARE_STACK.date}
+          </p>
+        </div>
         <PostLinks slugs={["going-global-email-receiving-cloudflare-routing", "going-global-email-sending-with-resend"]} lang={lang} />
       </Step>
 

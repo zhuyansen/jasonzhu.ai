@@ -132,3 +132,35 @@ export const BACKLINK_SOURCES = [
   { zh: "哥伦布的外链榜", en: "Columbus's backlink rankings" },
   { zh: "公众号里分享的外链表格", en: "A shared spreadsheet from a WeChat account" },
 ];
+
+// 新手先看里的另外两样（用户 10-17 发来）：只链原帖、转述要点，不转贴帖子里别人的推荐链接。
+export const BEGINNER_EXTRAS = [
+  {
+    title: { zh: "零基础 AI 应用构建 + 上线系统教程", en: "Build and launch a first AI app from zero" },
+    by: "木子不写代码",
+    url: "https://x.com/ai_muzi/status/2054471711718879291",
+    date: "2026-05-13",
+    note: {
+      zh: "约 45 分钟的视频：AI 编程工具、Supabase、环境变量、GitHub，一直讲到测试、部署和买域名。",
+      en: "A 45-minute video: AI coding tools, Supabase, environment variables and GitHub, through testing, deployment and buying a domain. In Chinese.",
+    },
+  },
+  {
+    title: { zh: "AI 编程出海工具超级清单（2026 版）", en: "The 2026 tool list for shipping AI products abroad" },
+    by: "小路",
+    url: "https://x.com/xiaoluv12o/status/2044422996539089094",
+    date: "2026-04-15",
+    note: { zh: "域名、托管、AI 编程工具到上线要用的一整套，每样一句话说清用途。", en: "Domains, hosting and AI coding tools, each in a line. In Chinese." },
+  },
+];
+
+/** 建站的另一种做法：全放 Cloudflare（左子祯 2026-03-10） */
+export const CLOUDFLARE_STACK = {
+  by: "左子祯",
+  url: "https://x.com/zuozizhen/status/2031233335050313944",
+  date: "2026-03-10",
+  pieces: {
+    zh: "域名、解析和防护在 Cloudflare 一站搞定；前端放 Pages（自带全球 CDN），后端用 Workers，数据库 D1，文件放 R2（不收出站流量费），缓存 KV，图片和视频用 Images、Stream，监控和统计用自带的。免费额度够大部分人起步。",
+    en: "Domain, DNS and protection in one place; the front end on Pages (with a global CDN), the back end on Workers, D1 for the database, R2 for files (no egress fees), KV for cache, Images and Stream for media, and the built-in analytics. The free tier is enough for most starts.",
+  },
+};
