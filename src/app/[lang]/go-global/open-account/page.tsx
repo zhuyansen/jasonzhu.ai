@@ -123,18 +123,28 @@ function PlatformSection({ data, lang, platformKey, p }: { data: GuardData; lang
       ) : (
         <p className="text-sm text-gray-600 mb-3">{isZh ? "开户步骤还没整理，先看官方说明。" : "The steps are not written up yet; see the official guide."}</p>
       )}
+      {p.opening.entities && (
+        <p className="text-xs text-gray-500 mb-3">
+          {isZh ? "上面的步骤只适用于：" : "These steps hold only for: "}
+          {p.opening.entities.map((e) => data.entities[e]?.[lang] ?? e).join(isZh ? "、" : ", ")}
+        </p>
+      )}
       <p className="text-sm flex flex-wrap gap-x-4 gap-y-1">
         {p.opening.signup && (
           <a href={p.opening.signup} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
             {isZh ? "去注册" : "Sign up"}
           </a>
         )}
-        <a href={p.opening.source || p.review_doc} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
-          {isZh ? "官方开户说明" : "Official onboarding guide"}
-        </a>
-        <a href={p.review_doc} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
-          {isZh ? "网站审核清单" : "Website review list"}
-        </a>
+        {(p.opening.source || p.review_doc) && (
+          <a href={p.opening.source || p.review_doc} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+            {isZh ? "官方开户说明" : "Official onboarding guide"}
+          </a>
+        )}
+        {p.review_doc && p.review_doc !== p.opening.source && (
+          <a href={p.review_doc} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+            {isZh ? "网站审核清单" : "Website review list"}
+          </a>
+        )}
       </p>
     </section>
   );

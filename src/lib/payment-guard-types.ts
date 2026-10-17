@@ -17,6 +17,8 @@ export interface Opening {
   company?: Bi<OpeningSide>;
   signup?: string;
   source?: string;
+  /** 只适用于这些开户主体（PayPal 的步骤是 PayPal.cn 的，只对中国大陆账户成立）；没有就是都适用 */
+  entities?: string[] | null;
 }
 
 export interface PlatformFacts {
@@ -68,6 +70,11 @@ export const GUARD_REPO = "https://github.com/zhuyansen/payment-guard";
 /** 个人（大陆个人）用个人开户步骤，其余主体用公司步骤 —— 和 payment-guard 的 holder() 一致 */
 export function holder(entity: string): "individual" | "company" {
   return entity === "cn-individual" ? "individual" : "company";
+}
+
+/** 这家整理的开户步骤对这个主体成不成立 */
+export function stepsApply(opening: Opening, entity: string): boolean {
+  return !opening.entities || opening.entities.includes(entity);
 }
 
 export function pickTable(data: GuardData, entity: string, product: string): PickTable | undefined {

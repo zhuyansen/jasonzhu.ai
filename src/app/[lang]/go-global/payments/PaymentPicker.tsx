@@ -6,6 +6,7 @@ import {
   GUARD_REPO,
   holder,
   pickTable,
+  stepsApply,
   type GuardData,
   type Lang,
   type PickRow,
@@ -62,6 +63,7 @@ const T = {
     signup: "去注册",
     guide: "官方说明",
     noSteps: "这家的开户步骤还没整理，先看官方说明：",
+    cnOnly: "整理的开户步骤只适用于中国大陆账户（PayPal.cn），其他地区先看官方说明：",
     details: "每家的细节",
     rows: { opening: "开户", fee: "费率", payout: "出款", review: "审核", chargebacks: "拒付" },
     check: "提交审核前，按这家的清单体检网站",
@@ -94,6 +96,7 @@ const T = {
     signup: "Sign up",
     guide: "Official guide",
     noSteps: "These steps are not written up yet; see the official guide: ",
+    cnOnly: "The steps written up here are for China accounts (PayPal.cn) only; elsewhere, see the official pages: ",
     details: "Each platform",
     rows: { opening: "Opening", fee: "Fees", payout: "Payouts", review: "Review", chargebacks: "Chargebacks" },
     check: "Before you apply, check the site against this platform's list",
@@ -279,7 +282,8 @@ function HowToOpen({ data, lang, who, rows }: { data: GuardData; lang: Lang; who
       <div className="grid gap-4 md:grid-cols-3">
         {rows.slice(0, 3).map((r) => {
           const p = data.platforms[r.platform];
-          const side = p.opening[holder(who)]?.[lang];
+          const applies = stepsApply(p.opening, who);
+          const side = applies ? p.opening[holder(who)]?.[lang] : undefined;
           return (
             <div key={r.platform} className="rounded-2xl border border-gray-100 p-4 flex flex-col">
               <p className="font-semibold text-gray-900 mb-2">{p.name}</p>
@@ -306,8 +310,8 @@ function HowToOpen({ data, lang, who, rows }: { data: GuardData; lang: Lang; who
                 </>
               ) : (
                 <p className="text-sm text-gray-600">
-                  {t.noSteps}
-                  <ExternalLink href={p.review_doc}>{t.guide}</ExternalLink>
+                  {applies ? t.noSteps : t.cnOnly}
+                  <ExternalLink href={applies ? p.review_doc : p.entities[who]?.source || p.review_doc}>{t.guide}</ExternalLink>
                 </p>
               )}
             </div>

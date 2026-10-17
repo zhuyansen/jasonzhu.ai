@@ -54,6 +54,7 @@ export const COMMUNITY = {
     paddle: { zh: "群里用的人还少，经验不多", en: "Few in the group use it yet" },
     lemonsqueezy: { zh: "已被 Stripe 收购，审核规则向 Stripe 看齐", en: "Owned by Stripe now; its reviews follow Stripe's rules" },
     polar: { zh: "不支持中国地区", en: "Does not support China" },
+    paypal: { zh: "国内个人身份能注册（选个人卖家）；出事「有商量，可整改」；争议率要控制住，高了会被限制", en: "A mainland ID can sign up (as a personal seller); problems can be talked through and fixed; keep disputes low or the account gets limited" },
   } as Record<string, { zh: string; en: string }>,
   tips: [
     { zh: "别在正式环境自己付款测试，用沙箱：大概率触发风控", en: "Never test with a real payment in live mode; use the sandbox, or risk control will flag you" },

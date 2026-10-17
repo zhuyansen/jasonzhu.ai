@@ -136,14 +136,36 @@ export const BACKLINK_SOURCES = [
 // 新手先看里的另外两样（用户 10-17 发来）：只链原帖、转述要点，不转贴帖子里别人的推荐链接。
 export const BEGINNER_EXTRAS = [
   {
-    title: { zh: "零基础 AI 应用构建 + 上线系统教程", en: "Build and launch a first AI app from zero" },
+    title: { zh: "0 基础做 AI 应用：从想法到上线的终极教程", en: "Build an AI app from zero: from idea to launch" },
     by: "木子不写代码",
-    url: "https://x.com/ai_muzi/status/2054471711718879291",
+    url: "https://www.youtube.com/watch?v=EtTXeQGHgWI",
     date: "2026-05-13",
+    duration: "46:28",
     note: {
-      zh: "约 45 分钟的视频：AI 编程工具、Supabase、环境变量、GitHub，一直讲到测试、部署和买域名。",
-      en: "A 45-minute video: AI coding tools, Supabase, environment variables and GitHub, through testing, deployment and buying a domain. In Chinese.",
+      zh: "一期跟完就能做出并上线自己的第一个 AI 应用，按章节点进去看。",
+      en: "Follow it once and your first AI app is built and live; jump in by chapter. In Chinese.",
     },
+    // YouTube 上的 18 个章节（开始秒数），按帖子里的三段分组
+    stages: [
+      { zh: "基础入门", en: "Basics", chapters: [[42, "AI 编程工具准备", "AI coding tools"], [97, "基本操作和界面", "Basics and the interface"], [271, "智能体插件", "Agent plugins"]] },
+      {
+        zh: "开发流程",
+        en: "Building",
+        chapters: [
+          [423, "用 superpowers 定开发计划", "A plan with superpowers"], [743, "前端和后端", "Front end and back end"], [845, "Supabase", "Supabase"],
+          [886, "API 请求", "API requests"], [968, "子智能体驱动开发", "Sub-agent driven development"], [1031, "环境变量", "Environment variables"],
+          [1321, "GitHub", "GitHub"], [1486, "Supabase 密钥", "Supabase keys"], [1610, "数据库迁移", "Database migrations"],
+        ],
+      },
+      {
+        zh: "上线实战",
+        en: "Launch",
+        chapters: [
+          [1743, "验收功能", "Checking the features"], [1939, "前端设计优化", "Front-end design"], [2061, "端到端测试", "End-to-end tests"],
+          [2234, "网站部署", "Deployment"], [2623, "购买域名", "Buying a domain"], [2682, "总结与展望", "Wrap-up"],
+        ],
+      },
+    ] as { zh: string; en: string; chapters: [number, string, string][] }[],
   },
   {
     title: { zh: "AI 编程出海工具超级清单（2026 版）", en: "The 2026 tool list for shipping AI products abroad" },

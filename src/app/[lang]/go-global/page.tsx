@@ -171,13 +171,40 @@ function Beginners({ isZh }: { isZh: boolean }) {
       </div>
       <div className="grid gap-3 sm:grid-cols-2 mt-3">
         {BEGINNER_EXTRAS.map((x) => (
-          <a key={x.url} href={x.url} {...OUT} className="block rounded-xl bg-white border border-amber-100 p-4 hover:border-amber-300 transition-colors">
-            <span className="block font-semibold text-gray-900">{isZh ? x.title.zh : x.title.en}</span>
+          <div key={x.url} className="rounded-xl bg-white border border-amber-100 p-4">
+            <a href={x.url} {...OUT} className="block font-semibold text-gray-900 hover:text-blue-600">
+              {"stages" in x && "▶ "}
+              {isZh ? x.title.zh : x.title.en}
+            </a>
             <span className="block text-xs text-gray-500 mb-1.5">
-              {x.by} · {x.date}
+              {x.by}
+              {"duration" in x && ` · ${x.duration}`} · {x.date}
             </span>
             <span className="block text-sm text-gray-600 leading-relaxed">{isZh ? x.note.zh : x.note.en}</span>
-          </a>
+            {"stages" in x && x.stages && (
+              <details className="mt-2 text-sm">
+                <summary className="cursor-pointer text-blue-600">{isZh ? "按章节看（18 节）" : "By chapter (18)"}</summary>
+                <div className="mt-2 space-y-2">
+                  {x.stages.map((stage) => (
+                    <p key={stage.en} className="leading-relaxed">
+                      <span className="font-medium text-gray-800">
+                        {isZh ? stage.zh : stage.en}
+                        {isZh ? "：" : ": "}
+                      </span>
+                      {stage.chapters.map(([t, zh, en], i) => (
+                        <span key={t}>
+                          {i > 0 && <span className="text-gray-300"> · </span>}
+                          <a href={`${x.url}&t=${t}s`} {...OUT} className="text-gray-600 hover:text-blue-600 hover:underline">
+                            {isZh ? zh : en}
+                          </a>
+                        </span>
+                      ))}
+                    </p>
+                  ))}
+                </div>
+              </details>
+            )}
+          </div>
         ))}
       </div>
     </section>
