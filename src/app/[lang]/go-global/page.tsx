@@ -11,6 +11,7 @@ import {
   GO_GLOBAL,
   MY_PAYMENT_PICK,
   MY_POSTS,
+  NEWBIE_FAQ,
   NEW_TERM_RADAR,
   POST_GROUPS,
   SEO_SKILLS,
@@ -19,6 +20,7 @@ import {
   postTitle,
   type Pick,
 } from "@/lib/go-global";
+import { faqJsonLd } from "@/lib/faq";
 import { getWeeklyIssues } from "@/lib/mdx";
 import { GUARD_REPO } from "@/lib/payment-guard-types";
 import GoGlobalBreadcrumb from "./Breadcrumb";
@@ -47,9 +49,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 
 const OUT = { target: "_blank", rel: "noopener noreferrer" } as const;
 
-function Step({ n, title, lead, children }: { n: number; title: string; lead: string; children: React.ReactNode }) {
+function Step({ n, id, title, lead, children }: { n: number; id?: string; title: string; lead: string; children: React.ReactNode }) {
   return (
-    <section className="mb-12">
+    <section id={id} className="mb-12 scroll-mt-24">
       <div className="flex items-center gap-3 mb-2">
         <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-600 text-white text-sm font-semibold flex-none">{n}</span>
         <h2 className="text-xl font-semibold text-gray-900">{title}</h2>
@@ -136,6 +138,14 @@ function PostLinks({ slugs, lang }: { slugs: string[]; lang: string }) {
   );
 }
 
+/** 秒数 → mm:ss 或 h:mm:ss */
+function clock(seconds: number): string {
+  const h = Math.floor(seconds / 3600);
+  const m = Math.floor((seconds % 3600) / 60);
+  const sec = String(seconds % 60).padStart(2, "0");
+  return h ? `${h}:${String(m).padStart(2, "0")}:${sec}` : `${String(m).padStart(2, "0")}:${sec}`;
+}
+
 function Beginners({ isZh }: { isZh: boolean }) {
   const c = BEGINNER_VIDEOS.channel;
   return (
@@ -151,24 +161,43 @@ function Beginners({ isZh }: { isZh: boolean }) {
       </p>
       <div className="grid gap-3 sm:grid-cols-2">
         {BEGINNER_VIDEOS.videos.map((v) => (
-          <a
-            key={v.id}
-            href={`https://www.youtube.com/watch?v=${v.id}`}
-            {...OUT}
-            className="flex items-center gap-3 rounded-xl bg-white border border-amber-100 p-4 hover:border-amber-300 transition-colors"
-          >
-            <span aria-hidden="true" className="flex-none inline-flex items-center justify-center w-10 h-10 rounded-full bg-red-600 text-white text-sm">
-              ▶
-            </span>
-            <span>
-              <span className="block font-semibold text-gray-900">{v.title}</span>
-              <span className="block text-xs text-gray-500">
-                {v.duration} · {v.date}
+          <div key={v.id}>
+            <a
+              href={`https://www.youtube.com/watch?v=${v.id}`}
+              {...OUT}
+              className="flex items-center gap-3 rounded-xl bg-white border border-amber-100 p-4 hover:border-amber-300 transition-colors"
+            >
+              <span aria-hidden="true" className="flex-none inline-flex items-center justify-center w-10 h-10 rounded-full bg-red-600 text-white text-sm">
+                ▶
               </span>
-            </span>
-          </a>
+              <span>
+                <span className="block font-semibold text-gray-900">{v.title}</span>
+                <span className="block text-xs text-gray-500">
+                  {v.duration} · {v.date}
+                </span>
+              </span>
+            </a>
+            {v.points.length > 0 && (
+              <details className="mt-2 rounded-xl bg-white/70 border border-amber-100 px-4 py-3 text-sm">
+                <summary className="cursor-pointer text-blue-600">
+                  {isZh ? `看要点（${v.points.length} 条，点时间跳到那一段）` : `Key points (${v.points.length}; click a time to jump there)`}
+                </summary>
+                <ul className="mt-2 space-y-2">
+                  {v.points.map((pt) => (
+                    <li key={pt.t} className="leading-relaxed text-gray-700">
+                      <a href={`https://www.youtube.com/watch?v=${v.id}&t=${pt.t}s`} {...OUT} className="mr-1.5 font-mono text-xs text-blue-600 hover:underline">
+                        {clock(pt.t)}
+                      </a>
+                      {isZh ? pt.zh : pt.en}
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            )}
+          </div>
         ))}
       </div>
+      <p className="mt-2 text-xs text-gray-500">{isZh ? BEGINNER_VIDEOS.timing.zh : BEGINNER_VIDEOS.timing.en}</p>
       <div className="grid gap-3 sm:grid-cols-2 mt-3">
         {BEGINNER_EXTRAS.map((x) => (
           <div key={x.url} className="rounded-xl bg-white border border-amber-100 p-4">
@@ -284,6 +313,45 @@ function Weekly({ lang, isZh }: { lang: string; isZh: boolean }) {
   );
 }
 
+function Faq({ lang, isZh }: { lang: string; isZh: boolean }) {
+  const titles = Object.fromEntries(BEGINNER_VIDEOS.videos.map((v) => [v.id, v.title]));
+  return (
+    <section id="faq" className="mb-12 scroll-mt-24">
+      <h2 className="text-xl font-semibold text-gray-900 mb-4">{isZh ? "新手常见问题" : "Beginner questions"}</h2>
+      <div className="space-y-5">
+        {NEWBIE_FAQ.map((f) => (
+          <div key={f.q.en}>
+            <h3 className="font-semibold text-gray-900 mb-1">{isZh ? f.q.zh : f.q.en}</h3>
+            <p className="text-sm text-gray-700 leading-relaxed">{isZh ? f.a.zh : f.a.en}</p>
+            {f.link && (
+              <p className="mt-1 text-sm">
+                {f.link.href.startsWith("http") ? (
+                  <a href={f.link.href} {...OUT} className="text-blue-600 hover:underline">
+                    {isZh ? f.link.zh : f.link.en}
+                  </a>
+                ) : (
+                  <Link href={`/${lang}${f.link.href}`} className="text-blue-600 hover:underline">
+                    {isZh ? f.link.zh : f.link.en}
+                  </Link>
+                )}
+              </p>
+            )}
+            {f.from && (
+              <p className="mt-1 text-xs text-gray-400">
+                {isZh ? `来自 ${BEGINNER_VIDEOS.channel.host} 的 ` : `From ${BEGINNER_VIDEOS.channel.host}'s `}
+                <a href={`https://www.youtube.com/watch?v=${f.from.video}&t=${f.from.t}s`} {...OUT} className="text-blue-600 hover:underline">
+                  {titles[f.from.video]} {clock(f.from.t)}
+                </a>
+                {isZh ? "（2024 年录制）" : " (recorded in 2024)"}
+              </p>
+            )}
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function Guides({ lang, isZh }: { lang: string; isZh: boolean }) {
   return (
     <section className="mb-12">
@@ -322,6 +390,12 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqJsonLd(NEWBIE_FAQ.map((f) => ({ question: isZh ? f.q.zh : f.q.en, answer: isZh ? f.a.zh : f.a.en })))),
+        }}
+      />
       <GoGlobalBreadcrumb lang={lang} />
       <header className="mb-10">
         <p className="text-sm font-medium text-blue-600 mb-2">{isZh ? "出海专题" : "Going global"}</p>
@@ -339,6 +413,7 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
 
       <Step
         n={1}
+        id="build"
         title={isZh ? "建站：域名、托管、数据库" : "Build: domain, hosting, database"}
         lead={isZh ? "起步几乎不花钱：三样都有免费额度，起量后再升级。" : "Starting costs almost nothing: all three have free tiers; upgrade once traffic comes."}
       >
@@ -421,6 +496,8 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
       >
         <Weekly lang={lang} isZh={isZh} />
       </Step>
+
+      <Faq lang={lang} isZh={isZh} />
 
       <div className="mb-12">
         <Community lang={lang} tips={false} />
