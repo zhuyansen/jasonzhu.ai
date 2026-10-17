@@ -23,6 +23,16 @@ export default function Community({ lang, tips = true }: { lang: string; tips?: 
           <div key={p.who.en} className="rounded-xl bg-gray-50 p-4">
             <p className="text-sm text-gray-500 mb-1">{p.who[l]}</p>
             <p className="text-sm font-medium text-gray-900 leading-relaxed">{p.pick[l]}</p>
+            {"checks" in p &&
+              p.checks?.map((c) => (
+                <p key={c.url} className="mt-2 text-xs text-gray-600 leading-relaxed border-t border-gray-200 pt-2">
+                  <span className="font-medium text-teal-700">{isZh ? "官方核对：" : "Checked: "}</span>
+                  {c[l]}{" "}
+                  <a href={c.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                    {isZh ? "来源" : "source"}
+                  </a>
+                </p>
+              ))}
           </div>
         ))}
       </div>
