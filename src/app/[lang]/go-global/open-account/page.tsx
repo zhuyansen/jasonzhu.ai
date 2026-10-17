@@ -274,6 +274,11 @@ export default async function OpenAccountPage({ params }: { params: Promise<{ la
                   </li>
                 ))}
               </ul>
+              {r.key === "hk" && (
+                <Link href={`/${lang}${GO_GLOBAL}/hk-company`} className="mt-3 inline-block text-sm text-blue-600 hover:underline">
+                  {isZh ? "注册以后每年要做什么 →" : "What it takes every year (in Chinese) →"}
+                </Link>
+              )}
             </div>
           ))}
         </div>

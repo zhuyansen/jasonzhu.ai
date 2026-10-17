@@ -447,6 +447,17 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
             {CLOUDFLARE_STACK.date}
           </p>
         </div>
+        <div className="mt-3">
+          <Card
+            href={`/${lang}${GO_GLOBAL}/extensions`}
+            title={isZh ? "不做网站：插件、App 和 MCP 怎么上架" : "Not a website: shipping extensions, apps and MCP (in Chinese)"}
+            body={
+              isZh
+                ? "我做 Chrome 插件从开发到上架踩过的坑，加上 Chrome、Edge、Firefox、App Store、Google Play、MCP 和 GPT 各家的官方规则。"
+                : "What building and shipping a Chrome extension taught me, plus the official rules of Chrome, Edge, Firefox, the App Store, Google Play, MCP and GPTs."
+            }
+          />
+        </div>
         <PostLinks slugs={["going-global-email-receiving-cloudflare-routing", "going-global-email-sending-with-resend"]} lang={lang} />
       </Step>
 
@@ -482,6 +493,28 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
           {MY_PAYMENT_PICK[l]}
         </p>
         <FromMyPost post={MY_POSTS.stack} lang={l} />
+        <p className="mt-6 mb-2 text-sm font-semibold text-gray-900">{isZh ? "收到钱以后" : "After the money arrives (in Chinese)"}</p>
+        <div className="grid gap-3 md:grid-cols-3">
+          <Card
+            href={`/${lang}${GO_GLOBAL}/cash-out`}
+            title={isZh ? "出金和报税" : "Cashing out and tax"}
+            body={
+              isZh
+                ? "我的出金方案，加上每年 5 万美元的结汇额度、境外所得要不要报个税、CRS 会交换什么。"
+                : "My cash-out routes, the yearly FX quota, tax on income from abroad and what CRS exchanges."
+            }
+          />
+          <Card
+            href={`/${lang}${GO_GLOBAL}/payment-risk`}
+            title={isZh ? "上线以后的风控" : "Payment risk after launch"}
+            body={isZh ? "盗刷和卡测试、拒付率、冻结和保证金，各家收款平台的官方规定。" : "Card testing, dispute rates, reserves and frozen payouts, by each platform's rules."}
+          />
+          <Card
+            href={`/${lang}${GO_GLOBAL}/hk-company`}
+            title={isZh ? "香港公司每年要做什么" : "A Hong Kong company, year by year"}
+            body={isZh ? "周年申报、商业登记、审计报税、公司秘书，一张时间表和每年的最低成本。" : "Annual return, business registration, audit and profits tax, a company secretary, with a calendar and the minimum yearly cost."}
+          />
+        </div>
       </Step>
 
       <Step
@@ -500,6 +533,17 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
         </div>
         <FromMyPost post={MY_POSTS.growth} lang={l} />
         <Backlinks lang={lang} l={l} isZh={isZh} />
+        <div className="mt-3">
+          <Card
+            href={`/${lang}${GO_GLOBAL}/channels`}
+            title={isZh ? "SEO 以外的获客渠道" : "Channels beyond SEO (in Chinese)"}
+            body={
+              isZh
+                ? "Product Hunt、Hacker News、Reddit、X、AI 工具目录站、邮件订阅、联盟分佣和付费广告：每个平台的官方规则和新手最容易踩的坑。"
+                : "Product Hunt, Hacker News, Reddit, X, AI tool directories, email, affiliates and paid ads: each platform's own rules and the usual beginner mistakes."
+            }
+          />
+        </div>
         <PostLinks slugs={["two-seo-audit-skills-comparison", "sitin-going-global-research-tools"]} lang={lang} />
       </Step>
 

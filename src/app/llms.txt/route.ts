@@ -1,4 +1,5 @@
 import { getAllPosts } from "@/lib/mdx";
+import { GUIDES } from "@/lib/go-global-guides";
 
 const SITE_URL = "https://jasonzhu.ai";
 
@@ -25,6 +26,7 @@ export async function GET() {
     `- [出海专题](${SITE_URL}/zh/go-global): 个人还是公司、开哪家收款、出海选品周报`,
     `- [收款平台选择器](${SITE_URL}/zh/go-global/payments): 选身份和产品，给出能开户的平台、到手金额和开户步骤（数据来自各平台官方文档）`,
     `- [个人还是公司：海外收款开户指南](${SITE_URL}/zh/go-global/open-account)`,
+    ...GUIDES.map((g) => `- [${g.short}](${SITE_URL}/zh/go-global/${g.slug}): ${g.description}`),
     `- [Claude 5.5 提示词库](${SITE_URL}/zh/prompts/claude-opus-5-5): X 上播放过 5000 的 Opus 5.5 / Sonnet 5.5 / Haiku 5.5 / Fable 5.5（内测）作品（含作者公开的原始提示词）、视频与出处`,
     `- [博客 RSS](${SITE_URL}/feed/blog.xml)`,
     `- [快讯 RSS](${SITE_URL}/feed/news.xml)`,

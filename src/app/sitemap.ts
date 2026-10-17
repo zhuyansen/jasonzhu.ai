@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { getAllPosts, getWeeklyIssues } from "@/lib/mdx";
 import { getAllDigests, isDigestIndexable } from "@/lib/news";
 import { getOpusLibrary } from "@/lib/opus-prompts";
+import { GUIDES } from "@/lib/go-global-guides";
 
 const SITE_URL = "https://jasonzhu.ai";
 const LANGS = ["zh", "en"] as const;
@@ -54,6 +55,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "weekly",
     priority: 0.8,
   });
+
+  // 出海专题的指南页（出金、风控、香港公司、获客、插件）：只有中文，en 页 canonical 指回 zh，所以只收 zh
+  for (const guide of GUIDES) {
+    entries.push({
+      url: `${SITE_URL}/zh/go-global/${guide.slug}`,
+      lastModified: new Date(guide.checked + "T08:00:00+08:00"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    });
+  }
 
   // 博客文章：lastmod 用 frontmatter date（真实日期，不造假）。
   // en URL 只收录真正有英文翻译的——未翻译的 en 页是中文内容的逐字节复制，
