@@ -1,8 +1,8 @@
 {
  "model": "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.5)",
  "threshold": 5000,
- "updatedAt": "2026-10-16T17:28:12.622Z",
- "statsCheckedAt": "2026-10-16T17:28:12.622Z",
+ "updatedAt": "2026-10-17T05:36:14.200Z",
+ "statsCheckedAt": "2026-10-17T05:36:14.200Z",
  "inclusionRule": "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -464,6 +464,60 @@
     "width": 1280,
     "height": 720,
     "durationSec": 63
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2110941423680061472",
+   "url": "https://x.com/enes_code/status/2110941423680061472",
+   "author": {
+    "handle": "enes_code",
+    "name": "Enes"
+   },
+   "postedAt": "2026-10-16T03:50:29.000Z",
+   "addedAt": "2026-10-17",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "特斯拉跑车飞行原理动画",
+    "en": "Tesla Roadster flight explainer animation"
+   },
+   "summary": {
+    "zh": "一段展示特斯拉Roadster飞行的视频，由Claude Opus 5.5完成研究、脚本、3D场景和物理效果，使用Modal的GPU渲染，ElevenLabs配音，Three.js和FFmpeg合成，模型来自Sketchfab，创作者让Claude逐帧分析直播画面并进行复刻。",
+    "en": "A video showing how the Tesla Roadster can fly, made with Claude Opus 5.5 handling research, script, 3D scene and physics, rendered on Modal GPUs, with ElevenLabs voice and Three.js/FFmpeg assembly, using Sketchfab models; the creator had Claude analyze a livestream frame by frame to replicate it."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "ElevenLabs",
+    "Three.js",
+    "FFmpeg",
+    "Sketchfab",
+    "Modal"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 2480529,
+    "likes": 8445,
+    "replies": 166,
+    "reposts": 1066,
+    "bookmarks": 3734,
+    "checkedAt": "2026-10-17T05:36:14.200Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110941140350308352/img/e4dUAtY-dWjeieD9.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110941140350308352/vid/avc1/720x900/zz2v5ZdgQEk82pnn.mp4?tag=14",
+    "width": 720,
+    "height": 900,
+    "durationSec": 39
    },
    "evidence": {
     "via": "daily",
@@ -35083,6 +35137,57 @@
    }
   },
   {
+   "id": "2110808933074092371",
+   "url": "https://x.com/chetaslua/status/2110808933074092371",
+   "author": {
+    "handle": "chetaslua",
+    "name": "Chetaslua"
+   },
+   "postedAt": "2026-10-15T19:04:01.000Z",
+   "addedAt": "2026-10-17",
+   "lang": "en",
+   "models": [
+    "opus-5.5",
+    "fable-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "用Python在Blender中制作的3D动画",
+    "en": "3D animation built in Blender via Python"
+   },
+   "summary": {
+    "zh": "一段名为“人类的一生”的3D动画，创作者让AI生成Python代码在Blender中制作，渲染过程卡顿并导致创作者的Mac死机。",
+    "en": "A 3D animation titled 'Life of a Human' made by prompting an AI model to generate Python code for Blender, resulting in a stuttering render that crashed the creator's Mac."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 50117,
+    "likes": 610,
+    "replies": 41,
+    "reposts": 25,
+    "bookmarks": 131,
+    "checkedAt": "2026-10-17T05:36:14.200Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110808470601826304/img/gxcffYayE3yWPYAN.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110808470601826304/vid/avc1/1280x720/b9smSjsEryxcbvLc.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 102
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2110287968783179922",
    "url": "https://x.com/xiaohu/status/2110287968783179922",
    "author": {
@@ -41439,6 +41544,61 @@
    }
   },
   {
+   "id": "2110896887096369573",
+   "url": "https://x.com/shion_takk/status/2110896887096369573",
+   "author": {
+    "handle": "shion_takk",
+    "name": "KOBATAKA｜Vibe Modeling"
+   },
+   "postedAt": "2026-10-16T00:53:31.000Z",
+   "addedAt": "2026-10-17",
+   "lang": "ja",
+   "models": [
+    "opus-5.5",
+    "sonnet-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "用Blender制作的虚构书房场景",
+    "en": "Fictional study room interior in Blender"
+   },
+   "summary": {
+    "zh": "创作者使用Opus 5.5通过Blender MCP操作Blender，搭建了一个虚构的书房场景，结合Tripo生成的网格模型、GPT Images 2.5生成的图像，并加入了自己的个人历史资料和照片。",
+    "en": "An imaginary study room built in Blender via Opus 5.5 controlling Blender MCP, combining AI-generated meshes from Tripo, images from GPT Images 2.5, and personal history/photos supplied by the creator."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Blender",
+    "Tripo",
+    "GPT Images 2.5",
+    "Claude Code",
+    "Codex CLI"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 39996,
+    "likes": 699,
+    "replies": 14,
+    "reposts": 68,
+    "bookmarks": 829,
+    "checkedAt": "2026-10-17T05:36:14.200Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110896761904771072/img/qxUnoQfHptG8dfx8.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110896761904771072/vid/avc1/1280x720/P_M0blvOa9R_84zz.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 36
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2108210884799549714",
    "url": "https://x.com/ultimaxbt/status/2108210884799549714",
    "author": {
@@ -42585,6 +42745,61 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2110799218734502048",
+   "url": "https://x.com/0xRhinoX/status/2110799218734502048",
+   "author": {
+    "handle": "0xRhinoX",
+    "name": "Rhino"
+   },
+   "postedAt": "2026-10-15T18:25:25.000Z",
+   "addedAt": "2026-10-17",
+   "lang": "en",
+   "models": [
+    "opus-5.5",
+    "sonnet-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "果冻魔方多模型对比",
+    "en": "Jelly Rubik's cube AI model comparison"
+   },
+   "summary": {
+    "zh": "创作者用同一个提示让四个AI模型生成“果冻质感的魔方”，结果只有Sonnet 5.5和Opus 5.5真正做出了半透明的果冻效果。",
+    "en": "A comparison of four AI models given the same prompt to create a Rubik's cube made of jelly, where only Sonnet 5.5 and Opus 5.5 produced an actual transparent jelly-like cube."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Gemini 4 Argon",
+    "ChatGPT-6 Astra",
+    "Sonnet 5.5"
+   ],
+   "resources": [
+    "https://pokeable.app/jelly/cube"
+   ],
+   "stats": {
+    "views": 37844,
+    "likes": 129,
+    "replies": 24,
+    "reposts": 7,
+    "bookmarks": 48,
+    "checkedAt": "2026-10-17T05:36:14.200Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110798802378534912/img/7VogbIXJIeFpxmgJ.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110798802378534912/vid/avc1/1204x720/eDWmGqmOqVtsMr3t.mp4?tag=29",
+    "width": 1204,
+    "height": 720,
+    "durationSec": 28
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -52397,6 +52612,54 @@
    }
   },
   {
+   "id": "2110798126453846207",
+   "url": "https://x.com/agaviriau/status/2110798126453846207",
+   "author": {
+    "handle": "agaviriau",
+    "name": "Alejandro Gaviria"
+   },
+   "postedAt": "2026-10-15T18:21:04.000Z",
+   "addedAt": "2026-10-17",
+   "lang": "es",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "足球历史迷你纪录片",
+    "en": "Football history mini-documentary"
+   },
+   "summary": {
+    "zh": "一部三分钟的学术迷你纪录片，总结了足球史上的两个重要变化，内容基于创作者之前撰写的两篇量化研究论文，借助Claude Opus 5.5制作完成。",
+    "en": "A three-minute academic mini-documentary summarizing two historical changes in football, based on two quantitative research articles the creator previously wrote, produced with the help of Claude Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 25895,
+    "likes": 472,
+    "replies": 18,
+    "reposts": 89,
+    "bookmarks": 139,
+    "checkedAt": "2026-10-17T05:36:14.200Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110797994123575296/img/dfERGOjPX4CQ2Pve.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110797994123575296/vid/avc1/1280x720/lVzBtvke_k59uK2I.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 210
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103523453810921944",
    "url": "https://x.com/ailker/status/2103523453810921944",
    "author": {
@@ -55514,6 +55777,57 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2110868325052149925",
+   "url": "https://x.com/julianleiss/status/2110868325052149925",
+   "author": {
+    "handle": "julianleiss",
+    "name": "Julián Leiss"
+   },
+   "postedAt": "2026-10-15T23:00:01.000Z",
+   "addedAt": "2026-10-17",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "博尔赫斯棋局氛围短片",
+    "en": "Borges chess story mood piece"
+   },
+   "summary": {
+    "zh": "一部由十五个镶头组成的短片，围绕博尔赫斯的《棋》营造氛围，使用Opus 5.5、Paper进行编辑、Midjourney生成图像，每个镶头均由提示词生成，没有人工剪辑。",
+    "en": "A fifteen-cut short film built around the mood of Borges' 'Ajedrez', made with Opus 5.5, Paper for editorial editing, and Midjourney for imagery, with every cut generated from a prompt and no manual editing."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Paper",
+    "Midjourney"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 22802,
+    "likes": 597,
+    "replies": 44,
+    "reposts": 32,
+    "bookmarks": 658,
+    "checkedAt": "2026-10-17T05:36:14.200Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110846003393777664/img/6QvXDQttwFG9Nb9q.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110846003393777664/vid/avc1/720x1280/x1WSVwE6n9C7Ue4a.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 52
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -69423,6 +69737,61 @@
    }
   },
   {
+   "id": "2110807768550764628",
+   "url": "https://x.com/nik_akki/status/2110807768550764628",
+   "author": {
+    "handle": "nik_akki",
+    "name": "Nikhil Akki"
+   },
+   "postedAt": "2026-10-15T18:59:23.000Z",
+   "addedAt": "2026-10-17",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "Minecraft房屋与羊驼搭建对比",
+    "en": "Minecraft house and llama build comparison"
+   },
+   "summary": {
+    "zh": "作者用同一段提示让Gemini 4 Argon和Opus 5.5分别在Minecraft中搭建一座田园风日式民家并配一只羊驼，比较成本和用时后认为Gemini的细节更好。",
+    "en": "Creator had Gemini 4 Argon and Opus 5.5 each build a cottagecore Japanese minka house with a llama in Minecraft from the same prompt, comparing cost and time; Gemini's result had more attention to detail."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/nik_akki/status/2111042722836734015",
+    "text": "build a cottagecore x japanese minka home in minecraft: steep spruce roof, white plaster, mossy stone, lantern porch and wildflowers. add a grazing llama. golden-hour light. 19s film: 10s build at 4x, 9s cinematic tour. native java, no blender, hud, text or audio."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Gemini 4 Argon"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 13507,
+    "likes": 124,
+    "replies": 10,
+    "reposts": 10,
+    "bookmarks": 40,
+    "checkedAt": "2026-10-17T05:36:14.200Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110800105624535040/img/Hk0Cem5ssUI3NLUn.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110800105624535040/vid/avc1/720x900/Zelnaj9i8PQOJAn6.mp4?tag=29",
+    "width": 720,
+    "height": 900,
+    "durationSec": 19
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2108926847442378848",
    "url": "https://x.com/vib3coded/status/2108926847442378848",
    "author": {
@@ -71568,6 +71937,54 @@
    }
   },
   {
+   "id": "2110950344272527596",
+   "url": "https://x.com/anthrupad/status/2110950344272527596",
+   "author": {
+    "handle": "anthrupad",
+    "name": "w̸͕͂͂a̷͔̗͐t̴̙͗e̵̬̔̕r̴̰̓̊m̵͙͖̓̽a̵̢̗̓͒r̸̲̽ķ̷͔́͝"
+   },
+   "postedAt": "2026-10-16T04:25:56.000Z",
+   "addedAt": "2026-10-17",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "全由AI制作的音乐动画作品",
+    "en": "Full AI-made music and animation piece"
+   },
+   "summary": {
+    "zh": "作者称这段作品的音乐、人声、歌词和3D头部动画全部由Opus 5.5完成，但未公开所用的提示词。",
+    "en": "Creator says Opus 5.5 made the whole piece including music, voice, lyrics and a 3D head animation, without sharing the instructions used."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 12435,
+    "likes": 107,
+    "replies": 20,
+    "reposts": 9,
+    "bookmarks": 28,
+    "checkedAt": "2026-10-17T05:36:14.200Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110950199137034240/img/yxhiGd8lVTiImmFP.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110950199137034240/vid/avc1/720x760/aNhqv6SxK_dZTct8.mp4?tag=29",
+    "width": 720,
+    "height": 760,
+    "durationSec": 52
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102810710791401883",
    "url": "https://x.com/majidmanzarpour/status/2102810710791401883",
    "author": {
@@ -73601,6 +74018,54 @@
    }
   },
   {
+   "id": "2110832228775371226",
+   "url": "https://x.com/maxt3chno/status/2110832228775371226",
+   "author": {
+    "handle": "maxt3chno",
+    "name": "Max"
+   },
+   "postedAt": "2026-10-15T20:36:35.000Z",
+   "addedAt": "2026-10-17",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "浏览器天空云层渲染项目",
+    "en": "Browser sky and cloud rendering project"
+   },
+   "summary": {
+    "zh": "作者用Opus 5.5在浏览器中制作了基于光线行进着色器的云层效果，经过多次迭代修复闪烁、纹理和雾霭等问题，并在集成显卡上实现了较低的每帧渲染开销。",
+    "en": "Creator built a browser-based raymarched shader for realistic clouds using Opus 5.5, noting it required many iterative steps to fix flicker, hatching and haze artifacts, running at low per-frame cost on an integrated GPU."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 11508,
+    "likes": 163,
+    "replies": 49,
+    "reposts": 3,
+    "bookmarks": 44,
+    "checkedAt": "2026-10-17T05:36:14.200Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110831597247164416/img/LzaEvuHplUkFY2Eg.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110831597247164416/vid/avc1/1280x720/U8LR6dnCCdu62nkw.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 99
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103533275834896657",
    "url": "https://x.com/viktoroddy/status/2103533275834896657",
    "author": {
@@ -73753,6 +74218,57 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2110816730163605912",
+   "url": "https://x.com/anxuanng/status/2110816730163605912",
+   "author": {
+    "handle": "anxuanng",
+    "name": "An Xuan"
+   },
+   "postedAt": "2026-10-15T19:35:00.000Z",
+   "addedAt": "2026-10-17",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "可玩的芯片工厂策略模拟",
+    "en": "Playable chip fab strategy simulation"
+   },
+   "summary": {
+    "zh": "作者称Opus 5.5制作了一个可玩的芯片制造策略游戏，其中的扫描仪、晶圆盒和天车等模型用Blender建模并通过three.js渲染。",
+    "en": "Creator says Opus 5.5 built a playable chip fabrication strategy game with scanners, wafer pods and overhead hoists modeled in Blender and rendered in three.js."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Blender",
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 11458,
+    "likes": 310,
+    "replies": 2,
+    "reposts": 26,
+    "bookmarks": 254,
+    "checkedAt": "2026-10-17T05:36:14.200Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110803086260469760/img/FatCFr_BisEjzNEl.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110803086260469760/vid/avc1/1280x720/wfDg3dolufmyhrO3.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -77508,6 +78024,58 @@
    }
   },
   {
+   "id": "2110819776281079978",
+   "url": "https://x.com/anxuanng/status/2110819776281079978",
+   "author": {
+    "handle": "anxuanng",
+    "name": "An Xuan"
+   },
+   "postedAt": "2026-10-15T19:47:06.000Z",
+   "addedAt": "2026-10-17",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "暴风雨灯塔场景模型对比",
+    "en": "Stormy lighthouse scene model comparison"
+   },
+   "summary": {
+    "zh": "作者用同样的需求描述和两轮修改意见，让Opus 5.5和Gemini 4 Argon分别在Blender与three.js中制作同一个暴风雨灯塔场景，Gemini用时更长但路径效果更好，Opus则海面表现更佳。",
+    "en": "Creator compared Opus 5.5 and Gemini 4 Argon building the same stormy lighthouse scene in Blender and three.js from the same brief with two rounds of notes, with Gemini taking longer but producing a better path while Opus rendered the sea better."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Blender",
+    "Three.js",
+    "Gemini 4 Argon"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 9588,
+    "likes": 103,
+    "replies": 7,
+    "reposts": 6,
+    "bookmarks": 30,
+    "checkedAt": "2026-10-17T05:36:14.200Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110819651974492160/img/zR2g6u1mZ1utO7me.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110819651974492160/vid/avc1/1280x720/Egt5k5Mh4mQzy4Ej.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 20
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102702170986463421",
    "url": "https://x.com/vikktorrrre/status/2102702170986463421",
    "author": {
@@ -80124,6 +80692,58 @@
    }
   },
   {
+   "id": "2110795590858571945",
+   "url": "https://x.com/EnvolDev/status/2110795590858571945",
+   "author": {
+    "handle": "EnvolDev",
+    "name": "Tony"
+   },
+   "postedAt": "2026-10-15T18:11:00.000Z",
+   "addedAt": "2026-10-17",
+   "lang": "en",
+   "models": [
+    "opus-5.5",
+    "sonnet-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "太空列车场景模型对比",
+    "en": "Space train scene model comparison"
+   },
+   "summary": {
+    "zh": "作者对比了Gemini 4 Argon、Opus 5.5、Sonnet 5.5和Fable 5.1在同一个太空列车任务上的表现，并认为Opus的效果最好。",
+    "en": "Creator compared Gemini 4 Argon, Opus 5.5, Sonnet 5.5 and Fable 5.1 on the same Space Train task, judging Opus the best result."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Gemini 4 Argon",
+    "Fable"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 8523,
+    "likes": 103,
+    "replies": 22,
+    "reposts": 7,
+    "bookmarks": 36,
+    "checkedAt": "2026-10-17T05:36:14.200Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110780951982989312/img/7GFzjie_5Xx_x4Ey.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110780951982989312/vid/avc1/810x720/W-Ct5ANgrE6OuNuP.mp4?tag=29",
+    "width": 810,
+    "height": 720,
+    "durationSec": 25
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103712991409774609",
    "url": "https://x.com/MindGate_dev/status/2103712991409774609",
    "author": {
@@ -80714,6 +81334,56 @@
    }
   },
   {
+   "id": "2110788460596310311",
+   "url": "https://x.com/rork/status/2110788460596310311",
+   "author": {
+    "handle": "rork",
+    "name": "Rork"
+   },
+   "postedAt": "2026-10-15T17:42:40.000Z",
+   "addedAt": "2026-10-17",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "动画老鹰理财助手演示",
+    "en": "Animated eagle finance assistant demo"
+   },
+   "summary": {
+    "zh": "一只名为Benji的动画老鹰吉祥物用来讲解理财知识，由Claude Opus 5.5制作，配音使用ElevenLabs，角色使用Metal着色器渲染，整体通过Rork完成。",
+    "en": "An animated eagle mascot named Benji that explains personal finance was made with Claude Opus 5.5, ElevenLabs for voice, and a Metal shader for the character, built using Rork."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "ElevenLabs"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 8288,
+    "likes": 109,
+    "replies": 5,
+    "reposts": 9,
+    "bookmarks": 84,
+    "checkedAt": "2026-10-17T05:36:14.200Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110787147418456064/img/CCqz9JsiRO4vCdzz.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110787147418456064/vid/avc1/720x1566/tBOGPvXzt_-SZ-H9.mp4?tag=29",
+    "width": 720,
+    "height": 1566,
+    "durationSec": 76
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2106356636126457894",
    "url": "https://x.com/dobokuya77/status/2106356636126457894",
    "author": {
@@ -81293,6 +81963,57 @@
    }
   },
   {
+   "id": "2110801686923264126",
+   "url": "https://x.com/anxuanng/status/2110801686923264126",
+   "author": {
+    "handle": "anxuanng",
+    "name": "An Xuan"
+   },
+   "postedAt": "2026-10-15T18:35:13.000Z",
+   "addedAt": "2026-10-17",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "可玩的空中交通管制模拟",
+    "en": "Playable air traffic control simulation"
+   },
+   "summary": {
+    "zh": "一个可玩的空中交通管制策略游戏，飞机、塔台、雷达和风暴单元均在Blender中建模并通过Three.js运行，由Claude Opus 5.5构建。",
+    "en": "A playable air traffic control strategy game with jets, towers, radar and storm cells modeled in Blender and running in Three.js was built with Claude Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Blender",
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 7917,
+    "likes": 200,
+    "replies": 1,
+    "reposts": 15,
+    "bookmarks": 130,
+    "checkedAt": "2026-10-17T05:36:14.200Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110801618866515968/img/qGfPnhH7uvEDHXiK.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110801618866515968/vid/avc1/1280x720/9WyjYOxNh4JIe0Fd.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2104717700836753573",
    "url": "https://x.com/bijanbowen/status/2104717700836753573",
    "author": {
@@ -81534,6 +82255,57 @@
     "width": 1280,
     "height": 720,
     "durationSec": 15
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2110845066747007314",
+   "url": "https://x.com/trymirage/status/2110845066747007314",
+   "author": {
+    "handle": "trymirage",
+    "name": "Mirage"
+   },
+   "postedAt": "2026-10-15T21:27:36.000Z",
+   "addedAt": "2026-10-17",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "重制的运动图形效果",
+    "en": "Recreated motion graphic effect"
+   },
+   "summary": {
+    "zh": "作者参考被引用帖子中展示的效果，使用Claude Opus 5.5和Tesseract进行了复刻，并导出到After Effects完成后期处理。",
+    "en": "The creator recreated a visual effect shown in a quoted post using Claude Opus 5.5 and Tesseract, then exported the result to After Effects."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Tesseract",
+    "After Effects"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 7786,
+    "likes": 146,
+    "replies": 5,
+    "reposts": 7,
+    "bookmarks": 105,
+    "checkedAt": "2026-10-17T05:36:14.200Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110844724680568833/img/vFpclTwE6PDCvXqL.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110844724680568833/vid/avc1/1718x720/_s_YK5rGkme_oPP7.mp4?tag=29",
+    "width": 1718,
+    "height": 720,
+    "durationSec": 8
    },
    "evidence": {
     "via": "daily",
@@ -82464,6 +83236,62 @@
     "width": 1280,
     "height": 720,
     "durationSec": 40
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2110931024469540979",
+   "url": "https://x.com/tanabe_fragm/status/2110931024469540979",
+   "author": {
+    "handle": "tanabe_fragm",
+    "name": "タナベ | AI動画 × マーケティング"
+   },
+   "postedAt": "2026-10-16T03:09:10.000Z",
+   "addedAt": "2026-10-17",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "纸拼贴风桃太郎动画",
+    "en": "Paper collage Momotaro animation"
+   },
+   "summary": {
+    "zh": "一段45秒的纸拼贴风格桃太郎动画由Claude Opus 5.5根据详细结构化提示词制作，图像使用Codex生成，旁白与音效使用ElevenLabs完成。",
+    "en": "A 45-second paper-collage style animated video of the Momotaro folktale was made with Claude Opus 5.5 using a detailed structured prompt, with images from Codex and narration/sound effects from ElevenLabs."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/tanabe_fragm/status/2111288502998708582",
+    "text": "Make a 45-second paper-collage animation of Momotaro (the Japanese folktale).\n\n[Look]\nA pop-up picture book: the book opens and paper pieces stand up one by one.\nWashi paper cut-out (kirie) texture. The 3D effect comes from images and code only. Do not use any video-generation AI.\n\n[How to build it]\n1. First, write the script and show it to me (8 scenes, 4-9 seconds each; the only on-screen text is short onomatopoeia such as \"donburako\").\n2. Once I approve the script, write the image-generation prompts:\n- one texture reference image\n- characters and backgrounds as sheets of separate paper cut-outs on transparent backgrounds\n3. I will generate the images and hand them to you. Then animate them in Python:\n- make it look 3D with five tricks: depth, parallax, blur, shadows, and motion blur\n- 1920x1080, 24 fps\n- for each scene, show me 4 still frames first so I can check\n4. Add narration and background music.\n\n[Rules]\n- Do not wobble or shake the pictures. Movement is only slow pushes in and pulls back.\n- Don't give me English-only prompts; add an explanation in my language too.\n\n@ckrtttt @nakazakifam ありがとうございます。\n\n以下のようなプロンプトをClaudeに入力すると作れるはずです。\n役割分担としては、\n・Codexは画像生成\n・ElevenLabsはBGM・ナレーション生成\nです。\nClaudeとMCP連携し、Claude上で依頼する感じです。\n\nMake a 45-second paper-collage animation of Momotaro (the Japanese folktale).\n\n[Look]\nA pop-up picture book: the book opens and paper pieces stand up one by one.\nWashi paper cut-out (kirie) texture. The 3D effect comes from images and code only. Do not use any video-generation AI.\n\n[How to build it]\n1. First, write the script and show it to me (8 scenes, 4-9 seconds each; the only on-screen text is short onomatopoeia such as \"donburako\").\n2. Once I approve the script, write the image-generation prompts:\n- one texture reference image\n- characters and backgrounds as sheets of separate paper cut-outs on transparent backgrounds\n3. I will generate the images and hand them to you. Then animate them in Python:\n- make it look 3D with five tricks: depth, parallax, blur, shadows, and motion blur\n- 1920x1080, 24 fps\n- for each scene, show me 4 still frames first so I can check\n4. Add narration and background music.\n\n[Rules]\n- Do not wobble or shake the pictures. Movement is only slow pushes in and pulls back.\n- Don't give me English-only prompts; add an explanation in my language too."
+   },
+   "referenceAssets": true,
+   "tools": [
+    "Codex",
+    "ElevenLabs"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 7371,
+    "likes": 119,
+    "replies": 5,
+    "reposts": 6,
+    "bookmarks": 147,
+    "checkedAt": "2026-10-17T05:36:14.200Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110930817203732480/img/QqSMOWbJxjflO-FP.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110930817203732480/vid/avc1/1280x720/9zw_vv_Rpk-spfzo.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 46
    },
    "evidence": {
     "via": "daily",
@@ -85277,6 +86105,63 @@
     "width": 1162,
     "height": 720,
     "durationSec": 73
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2110825075729727875",
+   "url": "https://x.com/WalkerAmerica/status/2110825075729727875",
+   "author": {
+    "handle": "WalkerAmerica",
+    "name": "Walker⚡️"
+   },
+   "postedAt": "2026-10-15T20:08:09.000Z",
+   "addedAt": "2026-10-17",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "《Carla Botcoin》音乐视频幕后制作花絮",
+    "en": "Making-of video for Carla Botcoin music video"
+   },
+   "summary": {
+    "zh": "音乐视频《The Making of Carla Botcoin》由Claude Opus 5.5统筹整个制作流程，歌曲和人声来自Suno，图像与视频生成通过Higgsfield等工具连接，最终在Final Cut Pro中手动剪辑完成。",
+    "en": "A music video titled 'The Making of Carla Botcoin' was produced with Claude Opus 5.5 orchestrating the full pipeline, including song writing, connecting to Suno for music and voice, Higgsfield for image/video generation tools, with a manual final edit in Final Cut Pro."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Suno",
+    "Higgsfield",
+    "Seedance",
+    "Kling",
+    "Nano Banana Pro",
+    "ChatGPT",
+    "Demucs",
+    "Whisper"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 5859,
+    "likes": 154,
+    "replies": 23,
+    "reposts": 9,
+    "bookmarks": 60,
+    "checkedAt": "2026-10-17T05:36:14.200Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110824307047694336/img/bS_V4sLPps9detA9.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110824307047694336/vid/avc1/1280x720/X4gHIf0fO3yNaQce.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 61
    },
    "evidence": {
     "via": "daily",
