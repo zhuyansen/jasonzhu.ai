@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
+import { withSocialCards } from "@/lib/social";
 
 export async function generateMetadata({
   params,
@@ -9,14 +10,14 @@ export async function generateMetadata({
   const { lang: rawLang } = await params;
   const lang = (rawLang === "en" ? "en" : "zh") as Locale;
   const dict = await getDictionary(lang);
-  return {
+  return withSocialCards({
     title: dict.about.title,
     description: dict.about.intro,
     alternates: {
       canonical: `https://jasonzhu.ai/${lang}/about`,
       languages: { zh: "https://jasonzhu.ai/zh/about", en: "https://jasonzhu.ai/en/about", "x-default": "https://jasonzhu.ai/zh/about" },
     },
-  };
+  }, rawLang);
 }
 
 export default async function AboutPage({

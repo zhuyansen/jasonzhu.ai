@@ -3,6 +3,7 @@ import CourseClient from "./CourseClient";
 import { createClient } from "@/lib/supabase-server";
 import { isPaidRole } from "@/lib/membership";
 import courseData from "@/generated/course.json";
+import { withSocialCards } from "@/lib/social";
 
 const SITE_URL = "https://jasonzhu.ai";
 
@@ -13,7 +14,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang } = await params;
   const isZh = lang !== "en";
-  return {
+  return withSocialCards({
     title: `${courseData.title} — GoSail Club`,
     description: isZh
       ? "GoSail Club 会员专属：X/Twitter 增长实战视频课，配中文逐字稿。"
@@ -26,7 +27,7 @@ export async function generateMetadata({
         "x-default": `${SITE_URL}/zh/club/course`,
       },
     },
-  };
+  }, lang);
 }
 
 export default async function CoursePage({

@@ -6,6 +6,7 @@ import { getGuardData } from "@/lib/payment-guard";
 import type { GuardData, Lang, PlatformFacts } from "@/lib/payment-guard-types";
 import GoGlobalBreadcrumb from "../Breadcrumb";
 import Community from "../Community";
+import { withSocialCards } from "@/lib/social";
 
 const SITE_URL = "https://jasonzhu.ai";
 const PATH = "/go-global/open-account";
@@ -14,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang: rawLang } = await params;
   const isZh = rawLang !== "en";
   const lang = isZh ? "zh" : "en";
-  return {
+  return withSocialCards({
     title: isZh ? "个人还是公司？海外收款平台开户指南（大陆、香港、美国、英国）" : "Individual or company? Opening a payment account to sell abroad",
     description: isZh
       ? "没注册公司也能收海外的钱：大陆个人能开 Creem、Dodo、Waffo Pancake，开不了 Stripe 和 Polar。各平台对个人和公司的官方要求、开户每一步要准备什么，什么时候值得注册公司。"
@@ -23,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `${SITE_URL}/${lang}${PATH}`,
       languages: { zh: `${SITE_URL}/zh${PATH}`, en: `${SITE_URL}/en${PATH}`, "x-default": `${SITE_URL}/zh${PATH}` },
     },
-  };
+  }, rawLang);
 }
 
 function Source({ href, lang }: { href: string; lang: Lang }) {

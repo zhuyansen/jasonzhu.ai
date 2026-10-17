@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ActivateClient from "./ActivateClient";
 import { createClient } from "@/lib/supabase-server";
+import { withSocialCards } from "@/lib/social";
 
 const SITE_URL = "https://jasonzhu.ai";
 
@@ -11,7 +12,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang } = await params;
   const isZh = lang !== "en";
-  return {
+  return withSocialCards({
     title: isZh ? "会员开通 — GoSail Club" : "Activate — GoSail Club",
     description: isZh
       ? "输入兑换码，30 秒自动开通 GoSail Club 全部会员权益。"
@@ -24,7 +25,7 @@ export async function generateMetadata({
         "x-default": `${SITE_URL}/zh/club/activate`,
       },
     },
-  };
+  }, lang);
 }
 
 export default async function ActivatePage({

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "@/components/Link";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
 import CopyWechatButton from "@/components/CopyWechatButton";
+import { withSocialCards } from "@/lib/social";
 
 export async function generateMetadata({
   params,
@@ -11,14 +12,14 @@ export async function generateMetadata({
   const { lang: rawLang } = await params;
   const lang = (rawLang === "en" ? "en" : "zh") as Locale;
   const dict = await getDictionary(lang);
-  return {
+  return withSocialCards({
     title: dict.services.title,
     description: dict.services.desc,
     alternates: {
       canonical: `https://jasonzhu.ai/${lang}/services`,
       languages: { zh: "https://jasonzhu.ai/zh/services", en: "https://jasonzhu.ai/en/services", "x-default": "https://jasonzhu.ai/zh/services" },
     },
-  };
+  }, rawLang);
 }
 
 export default async function ServicesPage({

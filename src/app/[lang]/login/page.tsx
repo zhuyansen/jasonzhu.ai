@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import LoginClient from "./LoginClient";
+import { withSocialCards } from "@/lib/social";
 
 const SITE_URL = "https://jasonzhu.ai";
 
@@ -11,7 +12,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang } = await params;
   const isZh = lang !== "en";
-  return {
+  return withSocialCards({
     title: isZh ? "登录 — GoSail Club" : "Sign in — GoSail Club",
     description: isZh ? "登录查看你的 GoSail Club 会员中心。" : "Sign in to your GoSail Club dashboard.",
     robots: { index: false, follow: false },
@@ -19,7 +20,7 @@ export async function generateMetadata({
       canonical: `${SITE_URL}/${lang}/login`,
       languages: { zh: `${SITE_URL}/zh/login`, "x-default": `${SITE_URL}/zh/login` },
     },
-  };
+  }, lang);
 }
 
 export default async function LoginPage({

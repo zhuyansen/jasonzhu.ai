@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ClubClient from "./ClubClient";
 import { createClient } from "@/lib/supabase-server";
 import { isPaidRole } from "@/lib/membership";
+import { withSocialCards } from "@/lib/social";
 
 const SITE_URL = "https://jasonzhu.ai";
 
@@ -12,7 +13,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang } = await params;
   const isZh = lang !== "en";
-  return {
+  return withSocialCards({
     title: isZh
       ? "GoSail Club 启航会 — AI 出海实战社群"
       : "GoSail Club — AI Going-Global Community",
@@ -27,7 +28,7 @@ export async function generateMetadata({
         "x-default": `${SITE_URL}/zh/club`,
       },
     },
-  };
+  }, lang);
 }
 
 export default async function ClubPage({

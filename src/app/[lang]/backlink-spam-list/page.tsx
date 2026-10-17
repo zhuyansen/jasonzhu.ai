@@ -9,6 +9,7 @@ import {
   SPAM_LIST_REPORT,
 } from "@/lib/spam-list";
 import SpamListClient from "./SpamListClient";
+import { withSocialCards } from "@/lib/social";
 
 const SITE_URL = "https://jasonzhu.ai";
 // 名单在 GitHub 上由大家共同维护；页面每天最多重读一次（ISR），不用为名单变化重新部署
@@ -22,7 +23,7 @@ export async function generateMetadata({
   const { lang: rawLang } = await params;
   const lang = (rawLang === "en" ? "en" : "zh") as Locale;
   const isZh = lang === "zh";
-  return {
+  return withSocialCards({
     title: isZh
       ? "垃圾外链来源库：卖外链站群的门户域名，每条附公开证据"
       : "Backlink spam list: link networks and link sellers, each with public evidence",
@@ -37,7 +38,7 @@ export async function generateMetadata({
         "x-default": `${SITE_URL}/zh/backlink-spam-list`,
       },
     },
-  };
+  }, rawLang);
 }
 
 export default async function BacklinkSpamListPage({

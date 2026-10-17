@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getAllPosts, getCategories } from "@/lib/mdx";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
 import BlogListClient from "./BlogListClient";
+import { withSocialCards } from "@/lib/social";
 
 
 
@@ -13,14 +14,14 @@ export async function generateMetadata({
   const { lang: rawLang } = await params;
   const lang = (rawLang === "en" ? "en" : "zh") as Locale;
   const dict = await getDictionary(lang);
-  return {
+  return withSocialCards({
     title: dict.blog.title,
     description: dict.blog.desc,
     alternates: {
       canonical: `https://jasonzhu.ai/${lang}/blog`,
       languages: { zh: "https://jasonzhu.ai/zh/blog", en: "https://jasonzhu.ai/en/blog", "x-default": "https://jasonzhu.ai/zh/blog" },
     },
-  };
+  }, rawLang);
 }
 
 export default async function BlogPage({

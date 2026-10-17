@@ -5,6 +5,7 @@ import { OPUS_CATEGORIES, getOpusLibrary } from "@/lib/opus-prompts";
 import PromptLibraryClient from "./PromptLibraryClient";
 import InsightsSection from "./InsightsSection";
 import { computeInsights } from "@/lib/opus-insights";
+import { withSocialCards } from "@/lib/social";
 
 const SITE_URL = "https://jasonzhu.ai";
 const PATH = "prompts/claude-opus-5-5";
@@ -23,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const lang = (rawLang === "en" ? "en" : "zh") as Locale;
   const lib = getOpusLibrary();
   const c = copy(lang === "zh", lib.cases.length, lib.cases.filter((x) => x.prompt?.kind === "full").length, lib.threshold, lib.withPrompt);
-  return {
+  return withSocialCards({
     title: c.title,
     description: c.desc,
     // X 的视频 CDN 拒绝带外站 Referer 的请求，这组页面不发 Referer 才能站内播放
@@ -33,7 +34,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       languages: { zh: `${SITE_URL}/zh/${PATH}`, en: `${SITE_URL}/en/${PATH}`, "x-default": `${SITE_URL}/zh/${PATH}` },
     },
     openGraph: { type: "website", title: c.title, description: c.desc, url: `${SITE_URL}/${lang}/${PATH}` },
-  };
+  }, rawLang);
 }
 
 export default async function OpusPromptsPage({ params }: { params: Promise<{ lang: string }> }) {

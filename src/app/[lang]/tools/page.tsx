@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
 import ToolsClient from "./ToolsClient";
+import { withSocialCards } from "@/lib/social";
 
 const SITE_URL = "https://jasonzhu.ai";
 
@@ -12,7 +13,7 @@ export async function generateMetadata({
   const { lang: rawLang } = await params;
   const lang = (rawLang === "en" ? "en" : "zh") as Locale;
   const dict = await getDictionary(lang);
-  return {
+  return withSocialCards({
     title: dict.tools.title,
     description: dict.tools.desc,
     alternates: {
@@ -23,7 +24,7 @@ export async function generateMetadata({
         "x-default": `${SITE_URL}/zh/tools`,
       },
     },
-  };
+  }, rawLang);
 }
 
 export default async function ToolsPage({

@@ -3,6 +3,7 @@ import SessionsClient from "./SessionsClient";
 import { createClient } from "@/lib/supabase-server";
 import { isPaidRole } from "@/lib/membership";
 import sessionsData from "@/generated/sessions.json";
+import { withSocialCards } from "@/lib/social";
 
 const SITE_URL = "https://jasonzhu.ai";
 
@@ -13,7 +14,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang } = await params;
   const isZh = lang !== "en";
-  return {
+  return withSocialCards({
     title: `${sessionsData.title} — GoSail Club`,
     description: isZh
       ? "GoSail Club 会员专属：半月度闭门讨论会回放，配中文逐字稿。"
@@ -26,7 +27,7 @@ export async function generateMetadata({
         "x-default": `${SITE_URL}/zh/club/sessions`,
       },
     },
-  };
+  }, lang);
 }
 
 export default async function SessionsPage({

@@ -6,6 +6,7 @@ import { formatCount, type ClaudeModel, type OpusCaseSlim } from "@/lib/opus-pro
 import { computeInsights } from "@/lib/opus-insights";
 import PromptLibraryClient from "../PromptLibraryClient";
 import InsightsSection from "../InsightsSection";
+import { withSocialCards } from "@/lib/social";
 
 /**
  * 动效设计落地页：只放「动效设计」分类，标题 / H1 / FAQ 针对「Claude motion graphics prompts」这类搜索词。
@@ -32,7 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const lang = (rawLang === "en" ? "en" : "zh") as Locale;
   const cases = motionCases();
   const c = copy(lang === "zh", cases.length, cases.filter((x) => x.prompt).length);
-  return {
+  return withSocialCards({
     title: c.title,
     description: c.desc,
     referrer: "no-referrer", // X 视频 CDN 拒绝带外站 Referer，和主库同样处理
@@ -41,7 +42,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       languages: { zh: `${SITE_URL}/zh/${PATH}`, en: `${SITE_URL}/en/${PATH}`, "x-default": `${SITE_URL}/zh/${PATH}` },
     },
     openGraph: { type: "website", title: c.title, description: c.desc, url: `${SITE_URL}/${lang}/${PATH}` },
-  };
+  }, rawLang);
 }
 
 export default async function MotionGraphicsPage({ params }: { params: Promise<{ lang: string }> }) {

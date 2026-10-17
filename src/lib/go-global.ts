@@ -171,6 +171,16 @@ export const SEO_SKILLS: Pick[] = [
   { what: { zh: "营销技能合集（CRO、文案、SEO、数据分析）", en: "Marketing skills: CRO, copy, SEO, analytics" }, name: "marketingskills（Corey Haines）", url: "https://github.com/coreyhaines31/marketingskills" },
   { what: { zh: "页面 SEO 体检，新手版和进阶技术版", en: "Page SEO audits, beginner and technical" }, name: "seo-audit-skill（子木）", url: "https://github.com/JeffLi1993/seo-audit-skill" },
   { what: { zh: "按 Google 指南和 Ahrefs 清单做 92 项检查", en: "92 checks from Google's guidelines and the Ahrefs checklist" }, name: "seo-audit（Wonfull）", url: "https://github.com/wonfull888/seo-audit" },
+  // 10-17 实测后加的，不在那条帖子里：在 jasonzhu.ai 和 agentskillshub.top 各查出一个真问题，但误报多
+  {
+    what: { zh: "本地全站技术体检，370 多条规则，能对比改版前后", en: "Local technical crawl, 370+ rules, before/after diffs" },
+    why: {
+      zh: "10 月实测在我两个站各查出一个真问题，但误报多，GEO 和硬门槛类结论只当参考",
+      en: "tested in October, it found a real issue on each of my two sites but raises many false alarms; treat GEO and hard-threshold findings as hints",
+    },
+    name: "seo-audit-skill（SEOmator）",
+    url: "https://github.com/seo-skills/seo-audit-skill",
+  },
 ];
 
 /** 找新词：我的开源工具 new-term-radar（每天从 X、HF、GitHub、竞品 sitemap 抓新名字，再给关键词表） */

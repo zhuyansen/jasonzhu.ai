@@ -5,6 +5,7 @@ import { GUARD_REPO, type Lang } from "@/lib/payment-guard-types";
 import GoGlobalBreadcrumb from "../Breadcrumb";
 import Community from "../Community";
 import PaymentPicker from "./PaymentPicker";
+import { withSocialCards } from "@/lib/social";
 
 const SITE_URL = "https://jasonzhu.ai";
 const PATH = "/go-global/payments";
@@ -13,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang: rawLang } = await params;
   const isZh = rawLang !== "en";
   const lang = isZh ? "zh" : "en";
-  return {
+  return withSocialCards({
     title: isZh
       ? "收款平台选择器：大陆个人、公司能开哪家？Creem、Dodo、Paddle、Stripe 对比"
       : "Payment platform picker: which one can you open? Creem, Dodo, Paddle, Stripe compared",
@@ -24,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `${SITE_URL}/${lang}${PATH}`,
       languages: { zh: `${SITE_URL}/zh${PATH}`, en: `${SITE_URL}/en${PATH}`, "x-default": `${SITE_URL}/zh${PATH}` },
     },
-  };
+  }, rawLang);
 }
 
 export default async function PaymentsPage({ params }: { params: Promise<{ lang: string }> }) {

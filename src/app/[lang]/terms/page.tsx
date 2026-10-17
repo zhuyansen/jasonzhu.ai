@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type { Locale } from "@/lib/dictionaries";
+import { withSocialCards } from "@/lib/social";
 
 export async function generateMetadata({
   params,
@@ -8,7 +9,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang: rawLang } = await params;
   const lang = (rawLang === "en" ? "en" : "zh") as Locale;
-  return {
+  return withSocialCards({
     title: lang === "zh" ? "使用条款" : "Terms of Service",
     description:
       lang === "zh"
@@ -22,7 +23,7 @@ export async function generateMetadata({
         "x-default": "https://jasonzhu.ai/zh/terms",
       },
     },
-  };
+  }, rawLang);
 }
 
 export default async function TermsPage({

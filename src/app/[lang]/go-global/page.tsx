@@ -25,6 +25,7 @@ import { getWeeklyIssues } from "@/lib/mdx";
 import { GUARD_REPO } from "@/lib/payment-guard-types";
 import GoGlobalBreadcrumb from "./Breadcrumb";
 import Community from "./Community";
+import { withSocialCards } from "@/lib/social";
 
 const SITE_URL = "https://jasonzhu.ai";
 const BACKLINK_GUARD = "https://github.com/zhuyansen/backlink-guard";
@@ -35,7 +36,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang: rawLang } = await params;
   const isZh = rawLang !== "en";
   const lang = isZh ? "zh" : "en";
-  return {
+  return withSocialCards({
     title: isZh ? "出海专题：建站、收款、SEO 和外链，独立开发者出海路线图" : "Going global: a roadmap from domain to payments, SEO and backlinks",
     description: isZh
       ? "独立开发者出海一条路走完：域名、托管和数据库怎么选，个人还是公司、开哪家收款，数据查看、技术 SEO 和外链怎么做，再加每周的出海选品周报。"
@@ -44,7 +45,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `${SITE_URL}/${lang}${GO_GLOBAL}`,
       languages: { zh: `${SITE_URL}/zh${GO_GLOBAL}`, en: `${SITE_URL}/en${GO_GLOBAL}`, "x-default": `${SITE_URL}/zh${GO_GLOBAL}` },
     },
-  };
+  }, rawLang);
 }
 
 const OUT = { target: "_blank", rel: "noopener noreferrer" } as const;

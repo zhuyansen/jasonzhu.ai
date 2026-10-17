@@ -3,6 +3,7 @@ import Link from "@/components/Link";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
 import { getDigestsForList } from "@/lib/news";
 import NewsListClient from "@/components/NewsListClient";
+import { withSocialCards } from "@/lib/social";
 
 const SITE_URL = "https://jasonzhu.ai";
 
@@ -14,7 +15,7 @@ export async function generateMetadata({
   const { lang: rawLang } = await params;
   const lang = (rawLang === "en" ? "en" : "zh") as Locale;
   const dict = await getDictionary(lang);
-  return {
+  return withSocialCards({
     title: dict.news.title,
     description: dict.news.desc,
     alternates: {
@@ -23,7 +24,7 @@ export async function generateMetadata({
     },
     // 列表页聚合的是 AI 每日生成的快讯，不收录；follow 保留，让爬虫顺着链接找到 Jason 点评过的期数
     robots: { index: false, follow: true },
-  };
+  }, rawLang);
 }
 
 export default async function NewsPage({

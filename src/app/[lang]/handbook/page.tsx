@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
 import HandbookClient from "./HandbookClient";
+import { withSocialCards } from "@/lib/social";
 
 export async function generateMetadata({
   params,
@@ -10,14 +11,14 @@ export async function generateMetadata({
   const { lang: rawLang } = await params;
   const lang = (rawLang === "en" ? "en" : "zh") as Locale;
   const dict = await getDictionary(lang);
-  return {
+  return withSocialCards({
     title: dict.handbook?.title || "Handbook",
     description: dict.handbook?.subtitle || "Download the AIP Overseas Social Media Playbook",
     alternates: {
       canonical: `https://jasonzhu.ai/${lang}/handbook`,
       languages: { zh: "https://jasonzhu.ai/zh/handbook", en: "https://jasonzhu.ai/en/handbook", "x-default": "https://jasonzhu.ai/zh/handbook" },
     },
-  };
+  }, rawLang);
 }
 
 export default async function HandbookPage({

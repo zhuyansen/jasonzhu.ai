@@ -3,6 +3,7 @@ import DashboardClient from "./DashboardClient";
 import { createClient } from "@/lib/supabase-server";
 import { getSupabase } from "@/lib/supabase";
 import { ensureRefCode, listReferrals, summarize, type ReferralView } from "@/lib/referrals";
+import { withSocialCards } from "@/lib/social";
 
 const SITE_URL = "https://jasonzhu.ai";
 
@@ -13,7 +14,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang } = await params;
   const isZh = lang !== "en";
-  return {
+  return withSocialCards({
     title: isZh ? "会员中心 — GoSail Club" : "Dashboard — GoSail Club",
     description: isZh
       ? "GoSail Club 会员中心：会员状态、Hub Key、权益入口。"
@@ -26,7 +27,7 @@ export async function generateMetadata({
         "x-default": `${SITE_URL}/zh/dashboard`,
       },
     },
-  };
+  }, lang);
 }
 
 interface Profile {

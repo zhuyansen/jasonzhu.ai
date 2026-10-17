@@ -4,6 +4,7 @@ import SubscribeForm from "@/components/SubscribeForm";
 import { getWeeklyIssues } from "@/lib/mdx";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
 import GoGlobalBreadcrumb from "../Breadcrumb";
+import { withSocialCards } from "@/lib/social";
 
 const SITE_URL = "https://jasonzhu.ai";
 
@@ -17,13 +18,13 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang: rawLang } = await params;
   const isZh = rawLang !== "en";
-  return {
+  return withSocialCards({
     title: isZh ? "出海选品周报：每周的新卖家、新产品和验证过的需求" : "Weekly: new sellers, new products and verified demand",
     description: isZh
       ? "每周一更新：数一遍 Stripe、Gumroad、Lemon Squeezy、Polar、Creem、Dodo、Paddle 上新挂出收款链接的网站，看大家在卖什么、什么起量了、哪些需求还没人做。"
       : "Every Monday: the websites that started taking payments on Stripe, Gumroad, Lemon Squeezy, Polar, Creem, Dodo and Paddle, what they sell, what is taking off, and which demand nobody serves yet. In Chinese.",
     alternates: { canonical: `${SITE_URL}/zh/go-global/weekly` },
-  };
+  }, rawLang);
 }
 
 export default async function WeeklyPage({
