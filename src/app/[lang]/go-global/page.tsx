@@ -240,6 +240,21 @@ function Beginners({ isZh }: { isZh: boolean }) {
   );
 }
 
+// 增长这一步的总框架：Jason 的「SEO 水系模型」v4（2026-07-24 的帖子）。只转述框架；帖子里付费客座那条不写进页面（10-06 已停买 dofollow 外链）。
+function SeoSystem({ l, isZh }: { l: "zh" | "en"; isZh: boolean }) {
+  return (
+    <div className="rounded-2xl border border-gray-100 p-4 mb-3">
+      <p className="text-sm font-semibold text-gray-900 mb-1">{isZh ? "SEO 系统：水系模型 v4" : "The SEO system: a water model, v4"}</p>
+      <p className="text-sm text-gray-600 leading-relaxed">
+        {isZh
+          ? "把 SEO 当成一套水系来搭。进水口有三个：传统的外链权威（免费目录只管收录、不传权重，别堆量），被 AI 引用（被提及比被链接更重要），Toolify、Product Hunt 这类平台的收录。效果也要分层看：GSC 和 GA 里的点击只是冰山一角，我实测 AI 引用量是 AI 点击量的 9 倍，被引用却没被点击的那部分，用 Bing 的 AI Performance 和 Clarity 的引用报告补上，都免费。"
+          : "Build SEO as a water system with three inflows: classic link authority (free directories get you indexed but pass no weight, so do not pile them up), citations by AI (being mentioned matters more than being linked), and listings on platforms such as Toolify and Product Hunt. Measure in layers too: clicks in GSC and GA are the tip of the iceberg. I counted nine AI citations for every AI click, and the free Bing AI Performance and Clarity citation reports show the citations that never become clicks."}
+      </p>
+      <FromMyPost post={MY_POSTS.seoSystem} lang={l} />
+    </div>
+  );
+}
+
 function Backlinks({ lang, l, isZh }: { lang: string; l: "zh" | "en"; isZh: boolean }) {
   return (
     <div className="grid gap-3 md:grid-cols-3 mt-4">
@@ -477,6 +492,7 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
             : "Find new terms before others do, read your own and your competitors' data, run a technical SEO check with a skill, and keep backlinks few and good."
         }
       >
+        <SeoSystem l={l} isZh={isZh} />
         <div className="grid gap-3 md:grid-cols-2">
           <PickList title={isZh ? "数据查看" : "Data"} picks={DATA_TOOLS} lang={l} />
           <PickList title={isZh ? "技术 SEO skill" : "Technical SEO skills"} picks={SEO_SKILLS} lang={l} />

@@ -145,6 +145,7 @@ export const MY_POSTS = {
   growth: { url: "https://x.com/GoSailGlobal/status/2093961655747072092", date: "2026-08-30", title: { zh: "补充一些自己在用的出海产品", en: "More tools I use" } },
   backlinks: { url: "https://x.com/GoSailGlobal/status/2090693084317413479", date: "2026-08-21", title: { zh: "免费分享我收集的几大渠道外链", en: "Where I find backlinks" } },
   radar: { url: "https://x.com/GoSailGlobal/status/2109543158761808243", date: "2026-10-12", title: { zh: "直接开源出来新词雷达", en: "Open-sourcing the new-term radar" } },
+  seoSystem: { url: "https://x.com/GoSailGlobal/status/2080588406091022747", date: "2026-07-24", title: { zh: "SEO 水系模型更新到 v4 了", en: "The SEO water model, v4" } },
 };
 
 export const STACK: Pick[] = [
