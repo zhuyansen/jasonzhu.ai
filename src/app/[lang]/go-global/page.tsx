@@ -211,6 +211,16 @@ function GeoNewSite({ l, isZh }: { l: "zh" | "en"; isZh: boolean }) {
       </ul>
       <ByLine post={GEO_NEW_SITE.source} lang={l} />
       <p className="text-xs text-gray-400">{isZh ? "「定页面先后」一段出自他的新文章（帖子配图）。" : "The page-ordering part is from his new article (the image in the post)."}</p>
+      <p className="mt-3 rounded-xl border border-gray-200 bg-gray-50 px-3 py-2 text-xs text-gray-700 leading-relaxed">
+        {GEO_NEW_SITE.official[l]}{" "}
+        <a href={hl(GEO_NEW_SITE.official.guide, l)} {...OUT} className="text-blue-600 hover:underline">
+          {isZh ? "官方指南" : "The guide"}
+        </a>
+        <span className="text-gray-300"> · </span>
+        <a href={hl(GEO_NEW_SITE.official.report, l)} {...OUT} className="text-blue-600 hover:underline">
+          {isZh ? "效果报告说明" : "About the report"}
+        </a>
+      </p>
     </div>
   );
 }

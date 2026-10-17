@@ -325,6 +325,13 @@ export const GEO_NEW_SITE = {
       "Grow from blue-ocean terms to mid-size terms to big ones. A blue-ocean term is not just small: the need is clear, it fits the product, you can deliver the result, the competition is beatable and it can convert.",
     ],
   },
+  // Google 官方对 GEO 的说法（AI 优化指南 2026-07-15 + Search Console 帮助），紧挨着子木的做法放，免得把「用扇出查询找主题」读成「一个词建一页」
+  official: {
+    guide: "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide?hl=zh-cn",
+    report: "https://support.google.com/webmasters/answer/16984139?hl=zh-cn",
+    zh: "Google 的官方说法（2026-07-15）：在 Google 搜索里做 GEO 就是做 SEO；把内容「分块」、llms.txt 这类 AI 专用文件、虚假提及，都可以不管；为每个扇出查询单独建页算规模化内容滥用，所以扇出查询拿来找主题，别一个词建一页。网站在 AI 概览和 AI 模式里被展示了多少次，看 Search Console 的「生成式 AI 效果报告」（2026-08-31 起全球可用）。",
+    en: "Google's own line (2026-07-15): for Google Search, GEO is SEO. Content chunking, AI-only files such as llms.txt and fake mentions can be ignored, and a page per fan-out query counts as scaled content abuse, so use fan-out queries to find topics, not to make one page each. How often AI Overviews and AI Mode show your site is in Search Console's generative AI performance report, live worldwide since 31 August 2026.",
+  },
 };
 
 /** 增长：SEO 关键词工具（用户 10-17 给的分组名「seo关键词」） */
@@ -520,17 +527,18 @@ export const LEARN_SEO = {
         url: "https://developers.google.com/search/docs/fundamentals/creating-helpful-content?hl=zh-cn",
         updated: "2026-10-08",
         why: {
-          zh: "一组自查问题，看内容是写给人看的还是为排名凑的，再从谁写的、怎么写的、为什么写来检查",
-          en: "questions for checking whether content is written for people or for rankings, then by who made it, how and why",
+          zh: "一组自查问题，看内容是写给人看的还是为排名凑的；10 月新加的「主要内容」一节说，只靠 Feed 自动生成页面、用 AI 批量写又没人把关，算几乎没有投入，注明出处也替代不了原创",
+          en: "questions for checking whether content is written for people or for rankings; a section added in October says pages generated from a feed, or AI text in bulk without human review, show next to no effort, and citing sources does not replace original work",
         },
       },
+      // 原来放的是《AI 功能和您的网站》（2025-12-31），换成更新、更完整的这篇
       {
-        title: { zh: "AI 功能和您的网站", en: "AI features and your website" },
-        url: "https://developers.google.com/search/docs/appearance/ai-features?hl=zh-cn",
-        updated: "2025-12-31",
+        title: { zh: "针对 Google 搜索中的生成式 AI 功能优化网站", en: "Optimizing your website for generative AI features on Google Search" },
+        url: "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide?hl=zh-cn",
+        updated: "2026-07-15",
         why: {
-          zh: "AI 概览和 AI 模式怎么运作、怎么出现在里面；官方说不需要额外的特殊优化，照基本 SEO 做就行",
-          en: "how AI Overviews and AI Mode work and how to appear in them; Google says no special optimization is needed beyond basic SEO",
+          zh: "Google 对 GEO 的正式说法：在 Google 搜索里它就是 SEO；哪些 GEO 技巧可以不管，为什么不该给每个扇出查询单独建页",
+          en: "Google's formal line on GEO: for Google Search it is SEO; which GEO tricks to ignore, and why not to build a page per fan-out query",
         },
       },
       {
