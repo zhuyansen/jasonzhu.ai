@@ -346,7 +346,36 @@ export const KEYWORD_TOOLS: SharedPick[] = [
     post: "https://x.com/gefei55/status/2106024221671567671",
     date: "2026-10-02",
   },
+  // Jesse 的「佛系 SEO」只留的两样免费工具（见 JESSE_SEO）
+  {
+    what: { zh: "免费，粗看一个词有多少搜索需求", en: "Free; a rough read of a term's demand" },
+    name: "Backlinko Keyword Tool",
+    url: "https://backlinko.com/tools/keyword",
+    by: "Jesse Lau 遁一子",
+    post: "https://x.com/jesselaunz/status/1871673239644360706",
+    date: "2024-12-24",
+  },
+  {
+    what: { zh: "看一个词的热度怎么走", en: "How interest in a term moves" },
+    name: "Google Trends",
+    url: "https://trends.google.com/trends/",
+    by: "Jesse Lau 遁一子",
+    post: "https://x.com/jesselaunz/status/1871673239644360706",
+    date: "2024-12-24",
+  },
 ];
+
+/** 增长：Jesse Lau 的「佛系 SEO」（用户 10-17 发来，2024-12-24 的帖子）：SEO 就照 Google 的新手指南做，工具只留两样免费的 */
+export const JESSE_SEO = {
+  source: {
+    by: "Jesse Lau 遁一子",
+    url: "https://x.com/jesselaunz/status/1871673239644360706",
+    date: "2024-12-24",
+    title: { zh: "我现在是佛系 SEO", en: "My low-effort SEO" },
+  } as ByPost,
+  zh: "Google 的 SEO 主要就是把 Google 自己的《SEO 新手指南》仔细读完、照着做，别的都不用管。工具从 Ahrefs、Ubersuggest 换成了两样免费的：Backlinko 的关键词工具和 Google Trends，只粗看一个词有多少需求，搜索量小到一天连一块钱都撑不起就不做。Similarweb 只适合打听别人的站，对自己的细分领域没什么用。",
+  en: "Google SEO mostly comes down to reading Google's own SEO starter guide carefully and doing what it says; the rest hardly matters. He swapped Ahrefs and Ubersuggest for two free tools, Backlinko's keyword tool and Google Trends, used only for a rough sense of demand: a term whose searches cannot earn even a dollar a day is dropped. Similarweb is for nosing into other sites and does little for his own niche.",
+};
 
 /** 增长：上线先装的统计（droidHZ） */
 export const ANALYTICS_BASICS = {
@@ -370,6 +399,230 @@ export const ANALYTICS_BASICS = {
   tip: {
     zh: "GA、Plausible 和 Clarity 都是填好信息以后，把官方给的那段代码交给 AI，让它加到网站上。",
     en: "For GA, Plausible and Clarity, fill in the details and hand the snippet they give you to an AI to add to the site.",
+  },
+};
+
+/** 增长：用 GSC 气泡图挑该改的词和页面（用户 10-17 给的分组名「页面优化方案」）：Jesse Lau 的帖子 + Google 官方教程，
+ *  再加同一栏目（监控和调试）里用户发来的两篇官方文档。四个象限的做法两边说法不完全一样，分开写。 */
+export const PAGE_TUNING = {
+  source: {
+    by: "Jesse Lau 遁一子",
+    url: "https://x.com/jesselaunz/status/2109774797928612223",
+    date: "2026-10-12",
+    title: { zh: "Google 官方 SEO 教程里的四象限气泡图", en: "The four-quadrant bubble chart from Google's own SEO guide" },
+  } as ByPost,
+  doc: {
+    url: "https://developers.google.com/search/docs/monitor-debug/bubble-chart-analysis?hl=zh-cn",
+    updated: "2025-12-18",
+    template: "https://datastudio.google.com/reporting/1e5b5f6a-38d7-4547-a54b-69594681a09b/page/xFbeC/preview?hl=zh-cn",
+  },
+  setup: {
+    zh: "在 Looker Studio 里接上 Search Console（选「网站展示」表），每个查询词画成一个气泡：纵轴是平均排名，倒过来放，第 1 名在最上面；横轴是点击率；两个轴都用对数刻度。气泡越大点击越多，颜色区分设备，两条平均线把图分成四块。默认看过去 28 天。",
+    en: "Connect Search Console to Looker Studio (the site impression table) and draw each query as a bubble: average position on the vertical axis, flipped so position 1 is on top, click-through rate on the horizontal one, both on log scales. Bigger bubbles mean more clicks, colours split devices, and two average lines cut the chart into four parts. The default window is the last 28 days.",
+  },
+  quadrants: [
+    { name: { zh: "排名高、点击率高", en: "High rank, high CTR" }, act: { zh: "不用动，现在就很好。", en: "Leave them; they already work." } },
+    {
+      name: { zh: "排名低、点击率高", en: "Low rank, high CTR" },
+      act: {
+        zh: "用户翻到后面还愿意点，说明需要你，但 Google 觉得页面和词不够匹配。有对应的页面就给这个词补内容，没有就专门做一页；这类词排名一上去，效果最明显。",
+        en: "People scroll down and still click, so they want you, but Google sees a weak match. Add content for the query to the page that covers it, or make a page if none does; these gain the most once the rank rises.",
+      },
+    },
+    {
+      name: { zh: "排名低、点击率低", en: "Low rank, low CTR" },
+      act: {
+        zh: "先分相关和不相关。和产品相关的词，内容和标题一起改，这比从零去抢一个还没出现在搜索里的词容易；不相关的放掉，把力气花在能带来对口流量的词上。",
+        en: "Split them first. For queries that fit your product, rework the content and the title, which is easier than starting on a query you do not appear for at all; let the unrelated ones go and spend the effort on queries that bring the right visitors.",
+      },
+    },
+    {
+      name: { zh: "排名高、点击率低", en: "High rank, low CTR" },
+      act: {
+        zh: "Jesse 认为这类词多半被 AI 摘要截走了点击，没太好的办法。Google 给的检查方向：对手是不是用了结构化数据、显示成富媒体结果；这个词是不是用户本来就不想找你；用户是不是在摘要里就拿到了答案。想让人点进来，就改标题和描述。",
+        en: "Jesse thinks AI Overviews take most of these clicks and there is little to do. Google suggests checking whether competitors show rich results from structured data, whether people searching it want something else, and whether the snippet already answers them; if you want the click, rewrite the title and description.",
+      },
+    },
+  ],
+  next: {
+    zh: "挑出词以后，在 Search Console 里按这个查询筛选，找到它对应的页面，再把标题、描述、图片 alt 和小标题改得具体、准确。",
+    en: "Once you have the queries, filter by each one in Search Console to find its pages, then make their titles, descriptions, image alt text and headings specific and accurate.",
+  },
+  more: [
+    {
+      title: { zh: "GSC 和 GA 一起看", en: "Search Console and Analytics together" },
+      url: "https://developers.google.com/search/docs/monitor-debug/google-analytics-search-console?hl=zh-cn",
+      updated: "2026-01-09",
+      template: "https://lookerstudio.google.com/reporting/408e669d-07d1-4353-a1dc-94f06bde27ef/page/Hqrp/preview?hl=zh-cn",
+      note: {
+        zh: "官方模板把 GSC 的点击和 GA 的自然搜索会话并排放。两边数字对不上是正常的，看趋势一不一致；搜索表现以 GSC 为准，站内行为以 GA 为准。",
+        en: "Google's template puts Search Console clicks beside Analytics organic sessions. The numbers never match exactly; check that the trends do. Search Console is the truth for search, Analytics for what people do on the site.",
+      },
+    },
+    {
+      title: { zh: "社交和视频内容在 Google 上的表现", en: "Your social and video posts in Google Search" },
+      url: "https://developers.google.com/search/docs/monitor-debug/analyze-social-video-content?hl=zh-cn",
+      updated: "2026-09-12",
+      note: {
+        zh: "X、YouTube、TikTok、Instagram 账号可以作为「平台资源」加进 Search Console，看别人在 Google 上搜什么词找到你的帖子和视频；有 24 小时过滤，能看新视频是不是在起量，还能对比 YouTube 长视频（/watch）和 Shorts（/shorts/）。",
+        en: "X, YouTube, TikTok and Instagram accounts can be added to Search Console as platform properties, showing which Google searches find your posts and videos. A 24-hour filter shows whether a new video is taking off, and you can compare long YouTube videos (/watch) with Shorts (/shorts/).",
+      },
+    },
+  ] as { title: { zh: string; en: string }; url: string; updated: string; template?: string; note: { zh: string; en: string } }[],
+};
+
+/** 增长：没学过 SEO 先补课（用户 10-17 发来）。Google 搜索中心的官方文档（中文版），加哥飞列的学习顺序。
+ *  web.cafe 是哥飞的付费社群：标题和目录公开、教程正文要会员登录，页面上写明；只链教程本身，不转述正文。 */
+export interface LearnLink {
+  label: string;
+  url: string;
+  /** 有英文版的（比如 Ahrefs 的课程），英文页链英文版 */
+  en?: { label: string; url: string };
+}
+
+export const LEARN_SEO = {
+  google: {
+    home: "https://developers.google.com/search/docs?hl=zh-cn",
+    // 10-17 逐篇打开核过标题和「最后更新时间」
+    reads: [
+      {
+        title: { zh: "SEO 入门指南", en: "SEO Starter Guide" },
+        url: "https://developers.google.com/search/docs/fundamentals/seo-starter-guide?hl=zh-cn",
+        updated: "2025-12-18",
+        why: {
+          zh: "从这篇开始：Google 怎么找到、看懂你的网站，网址、标题、摘要、链接、图片这些基本功，最后一节专讲不用操心的事",
+          en: "start here: how Google finds and understands a site, the basics of URLs, titles, snippets, links and images, and a closing section on what not to worry about",
+        },
+      },
+      {
+        title: { zh: "Google 搜索运作方式的深度指南", en: "How Google Search works, in depth" },
+        url: "https://developers.google.com/search/docs/fundamentals/how-search-works?hl=zh-cn",
+        updated: "2025-12-18",
+        why: { zh: "抓取、编入索引、呈现结果三个阶段，页面没被收录时知道卡在哪一步", en: "crawling, indexing and serving, so you know where a missing page got stuck" },
+      },
+      {
+        title: { zh: "Google 搜索要素", en: "Google Search Essentials" },
+        url: "https://developers.google.com/search/docs/essentials?hl=zh-cn",
+        updated: "2025-12-18",
+        why: { zh: "能进 Google 的门槛：技术要求、垃圾内容政策和几条关键最佳实践", en: "the bar for appearing at all: technical requirements, spam policies and the key best practices" },
+      },
+      {
+        title: { zh: "垃圾内容政策", en: "Spam policies" },
+        url: "https://developers.google.com/search/docs/essentials/spam-policies?hl=zh-cn",
+        updated: "2026-09-02",
+        why: {
+          zh: "哪些做法会被降权甚至移除：买卖链接、批量生成内容、滥用过期域名、借别人网站的声誉等",
+          en: "what gets a site demoted or removed: buying or selling links, scaled content, expired domains, borrowing another site's reputation and more",
+        },
+      },
+      {
+        title: { zh: "创建实用、可靠、以用户为中心的内容", en: "Creating helpful, reliable, people-first content" },
+        url: "https://developers.google.com/search/docs/fundamentals/creating-helpful-content?hl=zh-cn",
+        updated: "2026-10-08",
+        why: {
+          zh: "一组自查问题，看内容是写给人看的还是为排名凑的，再从谁写的、怎么写的、为什么写来检查",
+          en: "questions for checking whether content is written for people or for rankings, then by who made it, how and why",
+        },
+      },
+      {
+        title: { zh: "AI 功能和您的网站", en: "AI features and your website" },
+        url: "https://developers.google.com/search/docs/appearance/ai-features?hl=zh-cn",
+        updated: "2025-12-31",
+        why: {
+          zh: "AI 概览和 AI 模式怎么运作、怎么出现在里面；官方说不需要额外的特殊优化，照基本 SEO 做就行",
+          en: "how AI Overviews and AI Mode work and how to appear in them; Google says no special optimization is needed beyond basic SEO",
+        },
+      },
+      {
+        title: { zh: "Search Console 使用入门", en: "Get started with Search Console" },
+        url: "https://developers.google.com/search/docs/monitor-debug/search-console-start?hl=zh-cn",
+        updated: "2025-12-18",
+        why: {
+          zh: "上线后：验证网站、看收录、提交站点地图、看搜索效果；官方建议大约每月看一次，改了内容再看",
+          en: "after launch: verify the site, check indexing, submit a sitemap, read performance; Google suggests a look about once a month and after changes",
+        },
+      },
+      {
+        title: { zh: "调试 Google 搜索流量下降问题", en: "Debugging drops in Google Search traffic" },
+        url: "https://developers.google.com/search/docs/monitor-debug/debugging-search-traffic-drops?hl=zh-cn",
+        updated: "2025-12-18",
+        why: {
+          zh: "流量掉了先按这篇排查：算法更新、技术问题、安全问题、垃圾内容、季节变化还是改版迁移，再拉 16 个月数据找规律",
+          en: "when traffic drops, check this first: an algorithm update, a technical or security problem, spam, seasonality or a site move, then read 16 months of data for patterns",
+        },
+      },
+    ] as { title: { zh: string; en: string }; url: string; updated: string; why: { zh: string; en: string } }[],
+  },
+  gefei: {
+    steps: [
+      {
+        zh: "先把 Ahrefs 的免费 SEO 课程粗读一遍，不用读懂，知道有哪些概念就行。",
+        en: "Skim Ahrefs' free SEO course once; you only need to know the ideas exist.",
+        links: [{ label: "Ahrefs：SEO 新手指南", url: "https://ahrefs.com/zh/seo", en: { label: "Ahrefs: SEO basics", url: "https://ahrefs.com/seo" } }],
+      },
+      {
+        zh: "再把进阶教程看一遍，这一步也只求了解。",
+        en: "Read through the advanced tutorials, again just for the picture.",
+        links: [{ label: "进阶教程", url: "https://new.web.cafe/tutorial/0c91c83924e9495aa75384becf6304ff" }],
+      },
+      {
+        zh: "回过头读哥飞写的新手入门。",
+        en: "Go back to his beginner tutorials.",
+        links: [{ label: "新手入门", url: "https://new.web.cafe/tutorial/7c36c9a7c6e34d21b8f3efd857d980aa" }],
+      },
+      {
+        zh: "学怎么挖需求、找词。",
+        en: "Learn to find demand and keywords.",
+        links: [
+          { label: "挖掘需求", url: "https://new.web.cafe/tutorial/89afd4d0414d41e6b5f9304ee42df055" },
+          { label: "小白怎么找词", url: "https://new.web.cafe/tutorial/detail/fp0zl0dtob" },
+        ],
+      },
+      {
+        zh: "学怎么判断一个关键词能不能做。",
+        en: "Learn to judge whether a keyword is worth doing.",
+        links: [{ label: "如何判断一个关键词是否能做", url: "https://new.web.cafe/tutorial/detail/7v7tfjneg9" }],
+      },
+      {
+        zh: "网站上线以后做什么，拿一个月收入 5 万美元的站把谷歌排名再讲一遍。",
+        en: "What to do after launch, with Google ranking explained again through a site making $50k a month.",
+        links: [{ label: "上站之后要做什么", url: "https://new.web.cafe/tutorial/detail/sk5je1bj0f" }],
+      },
+      {
+        zh: "工具的落地页怎么设计，从 V1.0 一路改到 V2.0。",
+        en: "How to design a tool's landing page, from V1.0 to V2.0.",
+        links: [{ label: "落地页从 V1.0 到 V2.0", url: "https://new.web.cafe/tutorial/detail/5yyr7zjxk7" }],
+      },
+      {
+        zh: "照精品工具页面的思路做精品工具站。",
+        en: "Build a small, polished tool site, one good tool page at a time.",
+        links: [{ label: "如何做精品工具站", url: "https://new.web.cafe/tutorial/detail/za408lc1q9" }],
+      },
+      {
+        zh: "最后跟着「养网站防老」系列把全流程走一遍（11 篇），可以先通读，再一步步照着做。",
+        en: "Last, walk the whole process with his eleven-part series on a site to retire on: read it once, then follow it step by step.",
+        links: [{ label: "养网站防老", url: "https://new.web.cafe/tutorial/7PG1iQzr3sXx1tyKmf9ZYd" }],
+      },
+      {
+        zh: "外链：哥飞认为博客评论外链依然有用。",
+        en: "Backlinks: he finds blog-comment links still useful.",
+        links: [
+          { label: "博客评论外链怎么找、怎么做", url: "https://new.web.cafe/experience/ao30ki8tzk" },
+          { label: "从博客评论外链想到的找需求思路", url: "https://new.web.cafe/topic/xoi32sha0d" },
+        ],
+      },
+    ] as { zh: string; en: string; links: LearnLink[] }[],
+    all: "https://new.web.cafe/tutorials",
+    note: {
+      zh: "web.cafe 是哥飞的付费社群：标题和目录谁都能看，教程正文要开通会员登录后才能读。第一步的 Ahrefs 课程免费。",
+      en: "web.cafe is 哥飞's paid community: anyone can see the titles and contents, but reading the tutorials needs a membership. The Ahrefs course in step one is free. All in Chinese.",
+    },
+  },
+  // 哥飞推荐博客评论外链；Google 的垃圾链接政策（2026-09-02 更新）点名了自动建链和评论里的优化链接，紧挨着写清楚
+  commentRule: {
+    url: "https://developers.google.com/search/docs/essentials/spam-policies?hl=zh-cn#link-spam",
+    zh: "Google 的垃圾链接政策（2026-09-02 更新）把「用自动程序或服务给网站建链接」和「评论里带优化过的链接」都算作垃圾链接。评论只在相关的博客里认真写，别用工具批量发，也别塞关键词锚文本。",
+    en: "Google's link spam policy (updated 2026-09-02) counts links built with automated programs or services, and comments carrying optimized links, as link spam. Comment only on related blogs and write a real comment; never post in bulk with a tool or stuff keyword anchors.",
   },
 };
 

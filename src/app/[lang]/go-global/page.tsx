@@ -12,11 +12,14 @@ import {
   DOMAIN_TLD,
   GEO_NEW_SITE,
   GO_GLOBAL,
+  JESSE_SEO,
   KEYWORD_TOOLS,
+  LEARN_SEO,
   MY_PAYMENT_PICK,
   MY_POSTS,
   NEWBIE_FAQ,
   NEW_TERM_RADAR,
+  PAGE_TUNING,
   POST_GROUPS,
   SEO_SKILLS,
   STACK,
@@ -208,6 +211,132 @@ function GeoNewSite({ l, isZh }: { l: "zh" | "en"; isZh: boolean }) {
       </ul>
       <ByLine post={GEO_NEW_SITE.source} lang={l} />
       <p className="text-xs text-gray-400">{isZh ? "「定页面先后」一段出自他的新文章（帖子配图）。" : "The page-ordering part is from his new article (the image in the post)."}</p>
+    </div>
+  );
+}
+
+/** Google 文档和 Looker Studio 模板默认链中文版，英文页换成英文版 */
+function hl(url: string, l: "zh" | "en"): string {
+  return l === "en" ? url.replace("hl=zh-cn", "hl=en") : url;
+}
+
+// 没学过 SEO 先补课：左边 Google 官方文档的阅读顺序，右边哥飞列的学习顺序（用户 10-17 发来）
+function LearnSeo({ l, isZh }: { l: "zh" | "en"; isZh: boolean }) {
+  const g = LEARN_SEO.gefei;
+  return (
+    <div className={`${BOX} mb-3`}>
+      <p className="text-sm font-semibold text-gray-900 mb-3">{isZh ? "没学过 SEO？先按这两条路线补课" : "New to SEO? Two ways to learn it"}</p>
+      <div className="grid gap-5 md:grid-cols-2">
+        <div>
+          <p className="text-sm text-gray-500 mb-1.5">
+            <a href={hl(LEARN_SEO.google.home, l)} {...OUT} className="font-medium text-blue-600 hover:underline">
+              {isZh ? "Google 搜索中心文档" : "Google Search Central docs"}
+            </a>
+            {isZh ? "：Google 自己写的规则，有中文版，按这个顺序读：" : ": the rules from Google itself, read in this order:"}
+          </p>
+          <ol className="list-decimal pl-5 space-y-1.5 text-sm text-gray-700 leading-relaxed">
+            {LEARN_SEO.google.reads.map((r) => (
+              <li key={r.url}>
+                <a href={hl(r.url, l)} {...OUT} className="font-medium text-blue-600 hover:underline">
+                  {r.title[l]}
+                </a>
+                <span className="text-gray-500">{isZh ? `：${r.why.zh}` : `: ${r.why.en}`}</span>
+                <span className="ml-1 text-xs text-gray-400 whitespace-nowrap">{isZh ? `${r.updated} 更新` : `updated ${r.updated}`}</span>
+              </li>
+            ))}
+          </ol>
+          <div className="mt-3 rounded-xl border border-gray-200 bg-gray-50 px-3 py-2.5">
+            <p className="text-sm font-medium text-gray-900 mb-0.5">{isZh ? "Jesse 的「佛系 SEO」" : "Jesse's low-effort SEO"}</p>
+            <p className="text-sm text-gray-600 leading-relaxed">{JESSE_SEO[l]}</p>
+            <ByLine post={JESSE_SEO.source} lang={l} />
+          </div>
+        </div>
+        <div>
+          <p className="text-sm text-gray-500 mb-1.5">{isZh ? "哥飞列的学习顺序：" : "The order 哥飞 suggests (in Chinese):"}</p>
+          <ol className="list-decimal pl-5 space-y-1.5 text-sm text-gray-700 leading-relaxed">
+            {g.steps.map((s) => (
+              <li key={s.en}>
+                {s[l]}{" "}
+                {s.links.map((x, i) => (
+                  <span key={x.url}>
+                    {i > 0 && <span className="text-gray-300"> · </span>}
+                    <a href={l === "en" && x.en ? x.en.url : x.url} {...OUT} className="text-blue-600 hover:underline">
+                      {l === "en" && x.en ? x.en.label : x.label}
+                    </a>
+                  </span>
+                ))}
+              </li>
+            ))}
+          </ol>
+          <p className="mt-2 text-sm">
+            <a href={g.all} {...OUT} className="text-blue-600 hover:underline">
+              {isZh ? "教程栏目的其他文章也都值得看 →" : "The rest of his tutorials →"}
+            </a>
+          </p>
+          <p className="mt-2 rounded-xl border border-amber-200 bg-amber-50/60 px-3 py-2 text-xs text-gray-700 leading-relaxed">
+            {LEARN_SEO.commentRule[l]}{" "}
+            <a href={hl(LEARN_SEO.commentRule.url, l)} {...OUT} className="text-blue-600 hover:underline">
+              {isZh ? "政策原文" : "The policy"}
+            </a>
+          </p>
+          <p className="mt-2 text-xs text-gray-400 leading-relaxed">{g.note[l]}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// 页面优化：GSC 气泡图四象限（Jesse Lau 的帖子 + Google 官方教程），加同一栏目的两篇官方文档
+function PageTuning({ l, isZh }: { l: "zh" | "en"; isZh: boolean }) {
+  const t = PAGE_TUNING;
+  return (
+    <div className={`mt-3 ${BOX}`}>
+      <p className="text-sm font-semibold text-gray-900 mb-1">
+        {isZh ? "页面优化：用 GSC 气泡图挑该改的词和页面" : "Page tuning: pick the queries and pages to fix with a bubble chart"}
+      </p>
+      <p className="text-sm text-gray-600 leading-relaxed">
+        {t.setup[l]}{" "}
+        <a href={hl(t.doc.template, l)} {...OUT} className="text-blue-600 hover:underline">
+          {isZh ? "官方示例图表" : "Google's sample chart"}
+        </a>
+      </p>
+      <div className="grid gap-2 sm:grid-cols-2 mt-3">
+        {t.quadrants.map((q, i) => (
+          <div key={q.name.en} className="rounded-xl border border-gray-200 bg-gray-50 p-3">
+            <p className="text-sm font-medium text-gray-900 mb-0.5">
+              {"①②③④"[i]} {q.name[l]}
+            </p>
+            <p className="text-sm text-gray-600 leading-relaxed">{q.act[l]}</p>
+          </div>
+        ))}
+      </div>
+      <p className="mt-3 text-sm text-gray-600 leading-relaxed">{t.next[l]}</p>
+      <ul className="mt-3 pt-3 border-t border-gray-100 space-y-1.5 text-sm text-gray-700 leading-relaxed">
+        {t.more.map((m) => (
+          <li key={m.url}>
+            <a href={hl(m.url, l)} {...OUT} className="font-medium text-blue-600 hover:underline">
+              {m.title[l]}
+            </a>
+            <span className="text-gray-500">
+              {isZh ? `（Google，${m.updated} 更新）：` : ` (Google, updated ${m.updated}): `}
+              {m.note[l]}
+            </span>
+            {m.template && (
+              <a href={hl(m.template, l)} {...OUT} className="ml-1 text-blue-600 hover:underline">
+                {isZh ? "模板" : "Template"}
+              </a>
+            )}
+          </li>
+        ))}
+      </ul>
+      <ByLine post={t.source} lang={l} />
+      <p className="text-xs text-gray-400">
+        {isZh ? "四个象限的做法出自 Google 官方教程" : "The quadrant advice is from Google's guide"}{" "}
+        <a href={hl(t.doc.url, l)} {...OUT} className="text-blue-600 hover:underline">
+          {isZh ? "「利用 Search Console 气泡图改进 SEO 效果」" : '"Using a Search Console bubble chart to improve SEO"'}
+        </a>
+        {isZh ? `（${t.doc.updated} 更新）。` : ` (updated ${t.doc.updated}).`}
+      </p>
     </div>
   );
 }
@@ -620,10 +749,11 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
         title={isZh ? "增长：数据、技术 SEO、外链" : "Grow: data, technical SEO, backlinks"}
         lead={
           isZh
-            ? "先搭好 SEO 系统、分清必做页面和增长页面，再抢在别人之前找新词，看清自己和竞品的数据，用 skill 把技术 SEO 查一遍，外链少而精。"
-            : "Set up the SEO system and split must-have pages from growth pages, then find new terms before others do, read your own and your competitors' data, run a technical SEO check with a skill, and keep backlinks few and good."
+            ? "没学过 SEO 先补课。然后搭好 SEO 系统、分清必做页面和增长页面，抢在别人之前找新词，看清自己和竞品的数据，用气泡图挑出该改的页面，用 skill 把技术 SEO 查一遍，外链少而精。"
+            : "If SEO is new to you, learn it first. Then set up the SEO system and split must-have pages from growth pages, find new terms before others do, read your own and your competitors' data, pick the pages to fix with a bubble chart, run a technical SEO check with a skill, and keep backlinks few and good."
         }
       >
+        <LearnSeo l={l} isZh={isZh} />
         <SeoSystem l={l} isZh={isZh} />
         <GeoNewSite l={l} isZh={isZh} />
         <div className="grid gap-3 md:grid-cols-2">
@@ -638,6 +768,7 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
             tip={ANALYTICS_BASICS.tip}
           />
         </div>
+        <PageTuning l={l} isZh={isZh} />
         <Backlinks lang={lang} l={l} isZh={isZh} />
         <div className="mt-3">
           <Card
