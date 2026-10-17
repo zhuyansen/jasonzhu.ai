@@ -268,6 +268,12 @@ export default async function OpenAccountPage({ params }: { params: Promise<{ la
         <p className="text-sm text-gray-500 mb-4">
           {isZh ? `官方费用和要求，读取于 ${data.opening_checked}；不是法律或税务建议。` : `Official fees and requirements, read on ${data.opening_checked}; not legal or tax advice.`}
         </p>
+        <p className="text-sm text-gray-700 mb-4">
+          {isZh ? "注册完不是结束：香港公司每年要周年申报、续商业登记、审计报税，还要有公司秘书。" : "Registering is not the end: a Hong Kong company files an annual return, renews its business registration, is audited and files profits tax every year, and needs a company secretary."}{" "}
+          <Link href={`/${lang}${GO_GLOBAL}/hk-company`} className="text-blue-600 hover:underline">
+            {isZh ? "香港公司每年要做什么 →" : "A Hong Kong company, year by year (in Chinese) →"}
+          </Link>
+        </p>
         <div className="grid gap-4 md:grid-cols-3">
           {data.registration.map((r) => (
             <div key={r.key} className="rounded-2xl border border-gray-100 p-4">

@@ -9,6 +9,7 @@ const CR_AUDIT_FAQ = "https://cr.gov.hk/en/companies_ordinance/faq_account-audit
 export const HK_COMPANY: Guide = {
   slug: "hk-company",
   short: "香港公司年审",
+  parent: { short: "开户指南", path: "/open-account" },
   title: "香港公司注册以后每年要做什么：周年申报、商业登记、审计报税和费用",
   description:
     "为了开 Stripe 注册了香港公司，之后每年要交周年申报表、续商业登记、做审计报利得税，还要有公司秘书和香港地址。按公司注册处、税务局官方页面整理时间表和每年最低成本。",

@@ -3,12 +3,23 @@ import { GO_GLOBAL } from "@/lib/go-global";
 
 const SITE_URL = "https://jasonzhu.ai";
 
-/** 出海专题各页的面包屑（含 BreadcrumbList JSON-LD）：首页 / 出海专题 / 当前页 */
-export default function GoGlobalBreadcrumb({ lang, here, path }: { lang: string; here?: string; path?: string }) {
+/** 出海专题各页的面包屑（含 BreadcrumbList JSON-LD）：首页 / 出海专题 /（上一级）/ 当前页 */
+export default function GoGlobalBreadcrumb({
+  lang,
+  here,
+  path,
+  parent,
+}: {
+  lang: string;
+  here?: string;
+  path?: string;
+  parent?: { name: string; path: string };
+}) {
   const isZh = lang !== "en";
   const items = [
     { name: isZh ? "首页" : "Home", href: `/${lang}` },
     { name: isZh ? "出海专题" : "Going global", href: `/${lang}${GO_GLOBAL}` },
+    ...(parent ? [{ name: parent.name, href: `/${lang}${GO_GLOBAL}${parent.path}` }] : []),
     ...(here && path ? [{ name: here, href: `/${lang}${GO_GLOBAL}${path}` }] : []),
   ];
   const jsonLd = {

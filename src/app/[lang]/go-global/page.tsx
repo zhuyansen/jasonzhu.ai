@@ -49,22 +49,26 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 }
 
 const OUT = { target: "_blank", rel: "noopener noreferrer" } as const;
+// 每一步是一块浅灰底的面板，面板里的卡片是白底，分区一眼能看出来（用户 10-17 要求「界限分明」）
+const PANEL = "mb-10 scroll-mt-24 rounded-3xl border border-gray-200 bg-gray-100/60 p-5 md:p-6";
+const BOX = "rounded-2xl border border-gray-200 bg-white p-4";
+const CARD = "block rounded-2xl border border-gray-200 bg-white p-4 hover:border-blue-300 hover:bg-blue-50/40 transition-colors";
 
 function Step({ n, id, title, lead, children }: { n: number; id?: string; title: string; lead: string; children: React.ReactNode }) {
   return (
-    <section id={id} className="mb-12 scroll-mt-24">
+    <section id={id} className={PANEL}>
       <div className="flex items-center gap-3 mb-2">
         <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-600 text-white text-sm font-semibold flex-none">{n}</span>
         <h2 className="text-xl font-semibold text-gray-900">{title}</h2>
       </div>
-      <p className="text-sm text-gray-600 leading-relaxed mb-4">{lead}</p>
+      <p className="text-sm text-gray-600 leading-relaxed pb-4 mb-5 border-b border-gray-200">{lead}</p>
       {children}
     </section>
   );
 }
 
 function Card({ href, title, body, external }: { href: string; title: string; body: string; external?: boolean }) {
-  const cls = "block rounded-2xl border border-gray-100 p-4 hover:border-blue-200 hover:bg-blue-50/30 transition-colors";
+  const cls = CARD;
   const inner = (
     <>
       <p className="font-semibold text-gray-900 mb-1">{title}</p>
@@ -82,9 +86,11 @@ function Card({ href, title, body, external }: { href: string; title: string; bo
   );
 }
 
-function PickList({ title, picks, lang }: { title: string; picks: Pick[]; lang: "zh" | "en" }) {
+type PostRef = { url: string; date: string; title: { zh: string; en: string } };
+
+function PickList({ title, picks, lang, source }: { title: string; picks: Pick[]; lang: "zh" | "en"; source?: PostRef }) {
   return (
-    <div className="rounded-2xl border border-gray-100 p-4">
+    <div className={BOX}>
       <p className="text-sm font-semibold text-gray-900 mb-2">{title}</p>
       <ul className="space-y-1.5 text-sm text-gray-700">
         {picks.map((p) => (
@@ -106,11 +112,12 @@ function PickList({ title, picks, lang }: { title: string; picks: Pick[]; lang: 
           </li>
         ))}
       </ul>
+      {source && <FromMyPost post={source} lang={lang} />}
     </div>
   );
 }
 
-function FromMyPost({ post, lang }: { post: { url: string; date: string; title: { zh: string; en: string } }; lang: "zh" | "en" }) {
+function FromMyPost({ post, lang }: { post: PostRef; lang: "zh" | "en" }) {
   return (
     <p className="mt-3 text-xs text-gray-400">
       {lang === "zh" ? "出自我的帖子" : "From my post"}{" "}
@@ -126,16 +133,19 @@ function PostLinks({ slugs, lang }: { slugs: string[]; lang: string }) {
   const posts = groupPosts({ id: "inline", zh: "", en: "", slugs });
   if (!posts.length) return null;
   return (
-    <ul className="mt-4 space-y-1.5">
-      {posts.map((post) => (
-        <li key={post.slug} className="text-sm">
-          <Link href={`/${lang}/blog/${post.slug}`} className="text-gray-700 hover:text-blue-600 hover:underline">
-            {postTitle(post, lang)}
-          </Link>
-          <span className="ml-2 text-xs text-gray-400">{post.date}</span>
-        </li>
-      ))}
-    </ul>
+    <div className="mt-5 pt-4 border-t border-gray-200">
+      <p className="mb-2 text-xs font-medium text-gray-500">{lang === "zh" ? "相关文章" : "Related posts"}</p>
+      <ul className="space-y-1.5">
+        {posts.map((post) => (
+          <li key={post.slug} className="text-sm">
+            <Link href={`/${lang}/blog/${post.slug}`} className="text-gray-700 hover:text-blue-600 hover:underline">
+              {postTitle(post, lang)}
+            </Link>
+            <span className="ml-2 text-xs text-gray-400">{post.date}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
@@ -150,7 +160,7 @@ function clock(seconds: number): string {
 function Beginners({ isZh }: { isZh: boolean }) {
   const c = BEGINNER_VIDEOS.channel;
   return (
-    <section className="mb-12 rounded-2xl bg-amber-50/60 border border-amber-100 p-5">
+    <section className="mb-10 rounded-3xl bg-amber-50/60 border border-amber-200 p-5 md:p-6">
       <h2 className="text-xl font-semibold text-gray-900 mb-1.5">{isZh ? "新手先看" : "New to this? Start here"}</h2>
       <p className="text-sm text-gray-600 mb-4 leading-relaxed">
         {isZh
@@ -244,7 +254,7 @@ function Beginners({ isZh }: { isZh: boolean }) {
 // 增长这一步的总框架：Jason 的「SEO 水系模型」v4（2026-07-24 的帖子）。只转述框架；帖子里付费客座那条不写进页面（10-06 已停买 dofollow 外链）。
 function SeoSystem({ l, isZh }: { l: "zh" | "en"; isZh: boolean }) {
   return (
-    <div className="rounded-2xl border border-gray-100 p-4 mb-3">
+    <div className={`${BOX} mb-3`}>
       <p className="text-sm font-semibold text-gray-900 mb-1">{isZh ? "SEO 系统：水系模型 v4" : "The SEO system: a water model, v4"}</p>
       <p className="text-sm text-gray-600 leading-relaxed">
         {isZh
@@ -259,7 +269,7 @@ function SeoSystem({ l, isZh }: { l: "zh" | "en"; isZh: boolean }) {
 function Backlinks({ lang, l, isZh }: { lang: string; l: "zh" | "en"; isZh: boolean }) {
   return (
     <div className="grid gap-3 md:grid-cols-3 mt-4">
-      <div className="rounded-2xl border border-gray-100 p-4">
+      <div className={BOX}>
         <p className="text-sm font-semibold text-gray-900 mb-1">{isZh ? "找新词：new-term-radar" : "New terms: new-term-radar"}</p>
         <p className="text-sm text-gray-600 leading-relaxed mb-3">
           {isZh
@@ -271,7 +281,7 @@ function Backlinks({ lang, l, isZh }: { lang: string; l: "zh" | "en"; isZh: bool
         </a>
         <FromMyPost post={MY_POSTS.radar} lang={l} />
       </div>
-      <div className="rounded-2xl border border-gray-100 p-4">
+      <div className={BOX}>
         <p className="text-sm font-semibold text-gray-900 mb-1">{isZh ? "外链清单：一个月 DR 从 0 到 15" : "Backlink sources: DR 0 to 15 in a month"}</p>
         <p className="text-xs text-gray-500 mb-2">{isZh ? "外链不能贪多，这几个渠道就够：" : "Do not chase volume; these were enough:"}</p>
         <ul className="list-disc pl-5 space-y-1 text-sm text-gray-700">
@@ -281,7 +291,7 @@ function Backlinks({ lang, l, isZh }: { lang: string; l: "zh" | "en"; isZh: bool
         </ul>
         <FromMyPost post={MY_POSTS.backlinks} lang={l} />
       </div>
-      <div className="rounded-2xl border border-gray-100 p-4">
+      <div className={BOX}>
         <p className="text-sm font-semibold text-gray-900 mb-1">{isZh ? "外链检测：backlink-guard" : "Backlink check: backlink-guard"}</p>
         <p className="text-sm text-gray-600 leading-relaxed mb-3">
           {isZh
@@ -310,7 +320,7 @@ function Weekly({ lang, isZh }: { lang: string; isZh: boolean }) {
           <li key={issue.slug}>
             <Link
               href={`/${lang}/blog/${issue.slug}`}
-              className="block rounded-2xl border border-gray-100 p-4 hover:border-blue-200 hover:bg-blue-50/30 transition-colors"
+              className={CARD}
             >
               <span className="inline-block px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700 mr-2">
                 {isZh ? `第 ${issue.issue} 期` : `Issue ${issue.issue}`}
@@ -333,7 +343,7 @@ function Weekly({ lang, isZh }: { lang: string; isZh: boolean }) {
 function Faq({ lang, isZh }: { lang: string; isZh: boolean }) {
   const titles = Object.fromEntries(BEGINNER_VIDEOS.videos.map((v) => [v.id, v.title]));
   return (
-    <section id="faq" className="mb-12 scroll-mt-24">
+    <section id="faq" className={PANEL}>
       <h2 className="text-xl font-semibold text-gray-900 mb-4">{isZh ? "新手常见问题" : "Beginner questions"}</h2>
       <div className="space-y-5">
         {NEWBIE_FAQ.map((f) => (
@@ -371,7 +381,7 @@ function Faq({ lang, isZh }: { lang: string; isZh: boolean }) {
 
 function Guides({ lang, isZh }: { lang: string; isZh: boolean }) {
   return (
-    <section className="mb-12">
+    <section className={PANEL}>
       <h2 className="text-xl font-semibold text-gray-900 mb-4">{isZh ? "出海实操文章" : "Hands-on guides"}</h2>
       <div className="grid gap-6 md:grid-cols-2">
         {POST_GROUPS.map((group) => {
@@ -434,9 +444,8 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
         title={isZh ? "建站：域名、托管、数据库" : "Build: domain, hosting, database"}
         lead={isZh ? "起步几乎不花钱：三样都有免费额度，起量后再升级。" : "Starting costs almost nothing: all three have free tiers; upgrade once traffic comes."}
       >
-        <PickList title={isZh ? "我在用的" : "What I use"} picks={STACK} lang={l} />
-        <FromMyPost post={MY_POSTS.stack} lang={l} />
-        <div className="mt-3 rounded-2xl border border-gray-100 p-4">
+        <PickList title={isZh ? "我在用的" : "What I use"} picks={STACK} lang={l} source={MY_POSTS.stack} />
+        <div className={`mt-3 ${BOX}`}>
           <p className="text-sm font-semibold text-gray-900 mb-1">{isZh ? "另一种做法：全放 Cloudflare" : "Another way: everything on Cloudflare"}</p>
           <p className="text-sm text-gray-600 leading-relaxed">{CLOUDFLARE_STACK.pieces[l]}</p>
           <p className="mt-2 text-xs text-gray-400">
@@ -466,16 +475,24 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
         title={isZh ? "收钱：个人还是公司、开哪家、过审核" : "Get paid: individual or company, which platform, passing review"}
         lead={isZh ? "没注册公司也能收海外的钱。先定身份，再选平台，提交审核前体检网站。" : "No company is needed to start. Decide who holds the account, pick the platform, then check the site before you apply."}
       >
-        <div className="grid gap-3 md:grid-cols-3">
-          <Card
-            href={`/${lang}${GO_GLOBAL}/open-account`}
-            title={isZh ? "个人还是公司，怎么开户" : "Individual or company, and opening the account"}
-            body={
-              isZh
-                ? "大陆个人和香港、美国、英国公司分别能开哪几家，开户每一步要准备什么，注册公司要花多少。"
-                : "Which platforms an individual in China or a Hong Kong, US or UK company can open, what each step asks for, and what a company costs to register."
-            }
-          />
+        <div className="grid gap-3 md:grid-cols-3 md:items-start">
+          {/* 香港公司年审挂在开户指南下面（用户 10-17 要求），所以和它放在同一栏 */}
+          <div className="space-y-3">
+            <Card
+              href={`/${lang}${GO_GLOBAL}/open-account`}
+              title={isZh ? "个人还是公司，怎么开户" : "Individual or company, and opening the account"}
+              body={
+                isZh
+                  ? "大陆个人和香港、美国、英国公司分别能开哪几家，开户每一步要准备什么，注册公司要花多少。"
+                  : "Which platforms an individual in China or a Hong Kong, US or UK company can open, what each step asks for, and what a company costs to register."
+              }
+            />
+            <Card
+              href={`/${lang}${GO_GLOBAL}/hk-company`}
+              title={isZh ? "香港公司每年要做什么" : "A Hong Kong company, year by year (in Chinese)"}
+              body={isZh ? "周年申报、商业登记、审计报税、公司秘书，一张时间表和每年的最低成本。" : "Annual return, business registration, audit and profits tax, a company secretary, with a calendar and the minimum yearly cost."}
+            />
+          </div>
           <Card
             href={`/${lang}${GO_GLOBAL}/payments`}
             title={isZh ? "收款平台选择器" : "Payment platform picker"}
@@ -488,32 +505,29 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
             body={isZh ? "按各家公开的审核清单逐条查网站，开源，命令行和 Claude Code 都能用。" : "Checks the site line by line against each platform's published list; open source, from the command line or Claude Code."}
           />
         </div>
-        <p className="mt-3 text-sm text-gray-700">
+        <div className={`mt-3 ${BOX} text-sm text-gray-700`}>
           <span className="font-medium">{isZh ? "我的推荐：" : "My pick: "}</span>
           {MY_PAYMENT_PICK[l]}
-        </p>
-        <FromMyPost post={MY_POSTS.stack} lang={l} />
-        <p className="mt-6 mb-2 text-sm font-semibold text-gray-900">{isZh ? "收到钱以后" : "After the money arrives (in Chinese)"}</p>
-        <div className="grid gap-3 md:grid-cols-3">
-          <Card
-            href={`/${lang}${GO_GLOBAL}/cash-out`}
-            title={isZh ? "出金和报税" : "Cashing out and tax"}
-            body={
-              isZh
-                ? "我的出金方案，加上每年 5 万美元的结汇额度、境外所得要不要报个税、CRS 会交换什么。"
-                : "My cash-out routes, the yearly FX quota, tax on income from abroad and what CRS exchanges."
-            }
-          />
-          <Card
-            href={`/${lang}${GO_GLOBAL}/payment-risk`}
-            title={isZh ? "上线以后的风控" : "Payment risk after launch"}
-            body={isZh ? "盗刷和卡测试、拒付率、冻结和保证金，各家收款平台的官方规定。" : "Card testing, dispute rates, reserves and frozen payouts, by each platform's rules."}
-          />
-          <Card
-            href={`/${lang}${GO_GLOBAL}/hk-company`}
-            title={isZh ? "香港公司每年要做什么" : "A Hong Kong company, year by year"}
-            body={isZh ? "周年申报、商业登记、审计报税、公司秘书，一张时间表和每年的最低成本。" : "Annual return, business registration, audit and profits tax, a company secretary, with a calendar and the minimum yearly cost."}
-          />
+          <FromMyPost post={MY_POSTS.stack} lang={l} />
+        </div>
+        <div className="mt-6 pt-5 border-t border-gray-200">
+          <p className="mb-3 text-sm font-semibold text-gray-900">{isZh ? "收到钱以后" : "After the money arrives (in Chinese)"}</p>
+          <div className="grid gap-3 md:grid-cols-2">
+            <Card
+              href={`/${lang}${GO_GLOBAL}/cash-out`}
+              title={isZh ? "出金和报税" : "Cashing out and tax"}
+              body={
+                isZh
+                  ? "我的出金方案，加上每年 5 万美元的结汇额度、境外所得要不要报个税、CRS 会交换什么。"
+                  : "My cash-out routes, the yearly FX quota, tax on income from abroad and what CRS exchanges."
+              }
+            />
+            <Card
+              href={`/${lang}${GO_GLOBAL}/payment-risk`}
+              title={isZh ? "上线以后的风控" : "Payment risk after launch"}
+              body={isZh ? "盗刷和卡测试、拒付率、冻结和保证金，各家收款平台的官方规定。" : "Card testing, dispute rates, reserves and frozen payouts, by each platform's rules."}
+            />
+          </div>
         </div>
       </Step>
 
@@ -528,10 +542,9 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
       >
         <SeoSystem l={l} isZh={isZh} />
         <div className="grid gap-3 md:grid-cols-2">
-          <PickList title={isZh ? "数据查看" : "Data"} picks={DATA_TOOLS} lang={l} />
-          <PickList title={isZh ? "技术 SEO skill" : "Technical SEO skills"} picks={SEO_SKILLS} lang={l} />
+          <PickList title={isZh ? "数据查看" : "Data"} picks={DATA_TOOLS} lang={l} source={MY_POSTS.growth} />
+          <PickList title={isZh ? "技术 SEO skill" : "Technical SEO skills"} picks={SEO_SKILLS} lang={l} source={MY_POSTS.growth} />
         </div>
-        <FromMyPost post={MY_POSTS.growth} lang={l} />
         <Backlinks lang={lang} l={l} isZh={isZh} />
         <div className="mt-3">
           <Card
@@ -561,7 +574,7 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
 
       <Faq lang={lang} isZh={isZh} />
 
-      <div className="mb-12">
+      <div className="mb-10">
         <Community lang={lang} tips={false} />
         <p className="mt-2 text-sm">
           <Link href={`/${lang}${GO_GLOBAL}/payments#community`} className="text-blue-600 hover:underline">

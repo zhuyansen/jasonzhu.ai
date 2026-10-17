@@ -37,6 +37,8 @@ export interface Guide {
   slug: string;
   /** 面包屑和专题首页卡片上的短名 */
   short: string;
+  /** 挂在哪一页下面（面包屑多一级、页尾回到这一页），例如香港公司年审挂在开户指南下 */
+  parent?: { short: string; path: string };
   title: string;
   description: string;
   intro: string;

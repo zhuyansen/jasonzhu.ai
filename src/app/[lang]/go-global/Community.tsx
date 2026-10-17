@@ -5,7 +5,7 @@ export default function Community({ lang, tips = true }: { lang: string; tips?: 
   const isZh = lang !== "en";
   const l = isZh ? "zh" : "en";
   return (
-    <section id="community" className="rounded-2xl border border-gray-100 p-5 scroll-mt-24">
+    <section id="community" className="rounded-3xl border border-gray-200 bg-white p-5 md:p-6 scroll-mt-24">
       <p className="text-sm font-medium text-teal-700 mb-1">{isZh ? "社群经验" : "From the community"}</p>
       <h2 className="text-xl font-semibold text-gray-900 mb-2">
         {isZh ? "哥飞的朋友们一年踩下来，怎么选收款" : "How Gefei's community picks a payment platform, after a year of trying"}

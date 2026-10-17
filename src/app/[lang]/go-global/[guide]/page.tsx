@@ -135,7 +135,12 @@ export default async function GuidePage({ params }: { params: Promise<{ lang: st
 
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
-      <GoGlobalBreadcrumb lang={lang} here={guide.short} path={`/${guide.slug}`} />
+      <GoGlobalBreadcrumb
+        lang={lang}
+        here={guide.short}
+        path={`/${guide.slug}`}
+        parent={guide.parent ? { name: guide.parent.short, path: guide.parent.path } : undefined}
+      />
       <header className="mb-8">
         <p className="text-sm font-medium text-blue-600 mb-2">出海专题</p>
         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">{guide.title}</h1>
@@ -171,8 +176,8 @@ export default async function GuidePage({ params }: { params: Promise<{ lang: st
       )}
       <RelatedPosts slugs={guide.posts} lang={lang} />
       <p className="mb-8 text-sm">
-        <Link href={`/${lang}${GO_GLOBAL}`} className="text-blue-600 hover:underline">
-          ← 回到出海专题
+        <Link href={`/${lang}${GO_GLOBAL}${guide.parent?.path ?? ""}`} className="text-blue-600 hover:underline">
+          ← 回到{guide.parent?.short ?? "出海专题"}
         </Link>
       </p>
       <SubscribeForm source="go-global" lang={lang} dict={dict} />
