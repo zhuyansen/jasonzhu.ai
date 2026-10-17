@@ -236,7 +236,142 @@ export const BEGINNER_EXTRAS = [
     date: "2026-04-15",
     note: { zh: "域名、托管、AI 编程工具到上线要用的一整套，每样一句话说清用途。", en: "Domains, hosting and AI coding tools, each in a line. In Chinese." },
   },
+  {
+    title: { zh: "出海工具链：一个人从需求做到收款", en: "A toolchain for one person, from idea to payment" },
+    by: "sitin",
+    url: "https://x.com/sitinme/status/1994677962990289190",
+    date: "2025-11-29",
+    note: {
+      zh: "按环节分九类：网站分析、趋势和关键词、竞品分析、开发部署、设计原型、模型 API、找需求、域名、收款，每类两三个常用工具。",
+      en: "Nine stages, two or three common tools each: analytics, trends and keywords, competitors, build and deploy, design, model APIs, finding demand, domains, payments. In Chinese.",
+    },
+  },
 ];
+
+// 10-17 用户发来的几条 X 帖子：只转述要点、注明作者和原帖，不带帖子里任何人的推荐或专属链接。
+export interface SharedPick {
+  what: { zh: string; en: string };
+  name: string;
+  url: string;
+  why?: { zh: string; en: string };
+  /** 出处（不同条目出自不同帖子时逐条写） */
+  by?: string;
+  post?: string;
+  date?: string;
+}
+
+export interface ByPost {
+  by: string;
+  url: string;
+  date: string;
+  title: { zh: string; en: string };
+}
+
+/** 建站：域名后缀会不会影响排名（Niko） */
+export const DOMAIN_TLD = {
+  source: {
+    by: "Niko",
+    url: "https://x.com/guishou_56/status/1973971390220153221",
+    date: "2025-10-03",
+    title: { zh: "域名后缀到底会不会影响 SEO 排名？", en: "Does the domain ending affect rankings?" },
+  } as ByPost,
+  points: {
+    zh: [
+      "后缀对排名基本中立，影响的是信任感和点击习惯。",
+      ".com、.net、.org 历史久，信任度和外链点击率更好；国家后缀（.cn、.us、.de）在本地搜索里有加权。",
+      ".xyz、.online、.top、.shop 这类新后缀算法上不吃亏，但垃圾站多，搜索引擎更谨慎，要靠内容和外链证明质量。",
+      "真正决定排名的是内容质量、外链、点击率和停留时间。",
+    ],
+    en: [
+      "The ending is close to neutral for rankings; it changes trust and click habits.",
+      ".com, .net and .org are old and trusted and get more clicks on links; country endings (.cn, .us, .de) get a boost in local results.",
+      "New endings such as .xyz, .online, .top and .shop carry no penalty, but spam sites use them, so search engines are warier and content and links have to prove the site.",
+      "What ranks a site is content, links, click-through and time on page.",
+    ],
+  },
+};
+
+/** 增长：新站做 GEO 和定页面优先级（子木的帖子，优先级一段出自他的新文章） */
+export const GEO_NEW_SITE = {
+  source: {
+    by: "写增长的子木",
+    url: "https://x.com/CoderJeffLee/status/2110992235982737493",
+    date: "2026-10-16",
+    title: { zh: "GEO，讲讲我的实操点 for 新站", en: "GEO for a new site, in practice" },
+  } as ByPost,
+  geo: {
+    zh: [
+      "先在 AI 里建立定位：把产品定位页面做好，让 AI 知道你是什么。",
+      "研究 GEO 的内容主题和信源：看 GEO 做得好的竞品，用 Fan-out Queries（AI 把一个问题拆成的多个子查询）找主题；AI 常采信 Reddit、知乎这类信源，就去那里做内容。",
+      "做 PR 和品牌，让 AI 采用你、推荐你。",
+    ],
+    en: [
+      "Set your position in AI first: build the product pages that tell it what you are.",
+      "Research GEO topics and sources: study competitors that AI already cites and the fan-out queries an AI splits a question into; AI leans on sources such as Reddit and Zhihu, so build content there.",
+      "Work on PR and brand so AI uses and recommends you.",
+    ],
+  },
+  priority: {
+    zh: [
+      "新站资源有限，先后顺序看产品相关性、商业价值、搜索意图、流量潜力、竞争难度和自己能不能交付，不要只按搜索量排。",
+      "SEO 必做型页面：首页、功能页、场景页，以及定价、API、文档页，负责说清产品是什么、能做什么、服务谁。词再难、短期排不上，也要先建好，把标题、H1、介绍和 CTA 对上需求。",
+      "SEO 增长型页面：工具页、长尾场景页、教程、榜单、对比和替代页，这些才按机会排先后。",
+      "增长型按「蓝海词 → 中等词 → 大词」推进。蓝海词不只是搜索量小，还要需求明确、和产品相关、能真正交付结果、竞争可进入、有转化价值。",
+    ],
+    en: [
+      "A new site has little to spend: order the work by product fit, business value, search intent, traffic potential, difficulty and whether you can deliver, not by volume alone.",
+      "Must-have pages (home, feature, use-case, pricing, API and docs) say what the product is, does and serves. Build them first even when the terms are hard, with titles, H1s, copy and CTAs that match the need.",
+      "Growth pages (tools, long-tail use cases, tutorials, lists, comparisons and alternatives) are the ones you order by opportunity.",
+      "Grow from blue-ocean terms to mid-size terms to big ones. A blue-ocean term is not just small: the need is clear, it fits the product, you can deliver the result, the competition is beatable and it can convert.",
+    ],
+  },
+};
+
+/** 增长：SEO 关键词工具（用户 10-17 给的分组名「seo关键词」） */
+export const KEYWORD_TOOLS: SharedPick[] = [
+  {
+    what: { zh: "关键词难度查询", en: "Keyword difficulty lookup" },
+    name: "哥飞的 KD 工具",
+    url: "https://seo.web.cafe/kd/",
+    why: { zh: "非社群用户每天也能查 100 次", en: "100 lookups a day even outside his community" },
+    by: "droidHZ",
+    post: "https://x.com/hezhiyan7/status/2064710884791112052",
+    date: "2026-06-10",
+  },
+  {
+    what: { zh: "SEO Agent", en: "An SEO agent" },
+    name: "哥飞 SEO Agent",
+    url: "https://seo.web.cafe/chat/",
+    by: "哥飞",
+    post: "https://x.com/gefei55/status/2106024221671567671",
+    date: "2026-10-02",
+  },
+];
+
+/** 增长：上线先装的统计（droidHZ） */
+export const ANALYTICS_BASICS = {
+  source: {
+    by: "droidHZ",
+    url: "https://x.com/hezhiyan7/status/1986338996071637054",
+    date: "2025-11-06",
+    title: { zh: "分享一些常见的数据分析工具", en: "Common analytics tools" },
+  } as ByPost,
+  picks: [
+    {
+      what: { zh: "看收录、索引、搜索展示和点击，也在这里请求收录", en: "Indexing, impressions and clicks; request indexing here" },
+      name: "Google Search Console",
+      url: "https://search.google.com/search-console",
+      why: { zh: "填好信息、配一条 DNS 记录就能接入", en: "verified with a DNS record" },
+    },
+    { what: { zh: "访问量、访问时长、退出率等基础数据", en: "Visits, time on site, exits" }, name: "Google Analytics", url: "https://analytics.google.com/analytics/web" },
+    { what: { zh: "同样看访问量、时长和退出率", en: "The same basics" }, name: "Plausible", url: "https://plausible.io/" },
+    { what: { zh: "用户操作录屏和热力图", en: "Session recordings and heatmaps" }, name: "Microsoft Clarity", url: "https://clarity.microsoft.com/" },
+  ] as SharedPick[],
+  tip: {
+    zh: "GA、Plausible 和 Clarity 都是填好信息以后，把官方给的那段代码交给 AI，让它加到网站上。",
+    en: "For GA, Plausible and Clarity, fill in the details and hand the snippet they give you to an AI to add to the site.",
+  },
+};
 
 /** 建站的另一种做法：全放 Cloudflare（左子祯 2026-03-10） */
 export const CLOUDFLARE_STACK = {

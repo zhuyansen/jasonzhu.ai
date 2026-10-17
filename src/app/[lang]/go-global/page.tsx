@@ -3,12 +3,16 @@ import Link from "@/components/Link";
 import SubscribeForm from "@/components/SubscribeForm";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
 import {
+  ANALYTICS_BASICS,
   BACKLINK_SOURCES,
   BEGINNER_EXTRAS,
   BEGINNER_VIDEOS,
   CLOUDFLARE_STACK,
   DATA_TOOLS,
+  DOMAIN_TLD,
+  GEO_NEW_SITE,
   GO_GLOBAL,
+  KEYWORD_TOOLS,
   MY_PAYMENT_PICK,
   MY_POSTS,
   NEWBIE_FAQ,
@@ -18,7 +22,9 @@ import {
   STACK,
   groupPosts,
   postTitle,
+  type ByPost,
   type Pick,
+  type SharedPick,
 } from "@/lib/go-global";
 import { faqJsonLd } from "@/lib/faq";
 import { getWeeklyIssues } from "@/lib/mdx";
@@ -129,6 +135,83 @@ function FromMyPost({ post, lang }: { post: PostRef; lang: "zh" | "en" }) {
   );
 }
 
+/** 别人的帖子：作者「标题」日期 */
+function ByLine({ post, lang }: { post: ByPost; lang: "zh" | "en" }) {
+  return (
+    <p className="mt-3 text-xs text-gray-400">
+      {post.by}{" "}
+      <a href={post.url} {...OUT} className="text-blue-600 hover:underline">
+        「{post.title[lang]}」
+      </a>{" "}
+      {post.date}
+    </p>
+  );
+}
+
+function SharedPickList({ title, picks, lang, source, tip }: { title: string; picks: SharedPick[]; lang: "zh" | "en"; source?: ByPost; tip?: { zh: string; en: string } }) {
+  return (
+    <div className={BOX}>
+      <p className="text-sm font-semibold text-gray-900 mb-2">{title}</p>
+      <ul className="space-y-1.5 text-sm text-gray-700">
+        {picks.map((p) => (
+          <li key={p.name}>
+            <a href={p.url} {...OUT} className="font-medium text-blue-600 hover:underline">
+              {p.name}
+            </a>
+            <span className="text-gray-500">
+              {" · "}
+              {p.what[lang]}
+              {p.why ? (lang === "zh" ? `：${p.why.zh}` : `: ${p.why.en}`) : ""}
+            </span>
+            {p.post && (
+              <a href={p.post} {...OUT} className="ml-1 text-xs text-gray-400 hover:underline">
+                {lang === "zh" ? `（${p.by} ${p.date}）` : `(${p.by}, ${p.date})`}
+              </a>
+            )}
+          </li>
+        ))}
+      </ul>
+      {tip && <p className="mt-2 text-xs text-gray-500 leading-relaxed">{tip[lang]}</p>}
+      {source && <ByLine post={source} lang={lang} />}
+    </div>
+  );
+}
+
+function PointsBox({ title, points, lang, source }: { title: string; points: string[]; lang: "zh" | "en"; source: ByPost }) {
+  return (
+    <div className={`mt-3 ${BOX}`}>
+      <p className="text-sm font-semibold text-gray-900 mb-2">{title}</p>
+      <ul className="space-y-1.5 text-sm text-gray-700 leading-relaxed list-disc pl-5">
+        {points.map((x) => (
+          <li key={x}>{x}</li>
+        ))}
+      </ul>
+      <ByLine post={source} lang={lang} />
+    </div>
+  );
+}
+
+function GeoNewSite({ l, isZh }: { l: "zh" | "en"; isZh: boolean }) {
+  return (
+    <div className={`${BOX} mb-3`}>
+      <p className="text-sm font-semibold text-gray-900 mb-2">{isZh ? "GEO：新站先做什么" : "GEO: what a new site does first"}</p>
+      <ol className="space-y-1.5 text-sm text-gray-700 leading-relaxed list-decimal pl-5">
+        {GEO_NEW_SITE.geo[l].map((x) => (
+          <li key={x}>{x}</li>
+        ))}
+      </ol>
+      <p className="mt-3 mb-1.5 text-sm font-medium text-gray-900">{isZh ? "新站怎么定页面的先后" : "Ordering the pages of a new site"}</p>
+      <ul className="space-y-1.5 text-sm text-gray-700 leading-relaxed list-disc pl-5">
+        {GEO_NEW_SITE.priority[l].map((x) => (
+          <li key={x}>{x}</li>
+        ))}
+      </ul>
+      <ByLine post={GEO_NEW_SITE.source} lang={l} />
+      <p className="text-xs text-gray-400">{isZh ? "「定页面先后」一段出自他的新文章（帖子配图）。" : "The page-ordering part is from his new article (the image in the post)."}</p>
+    </div>
+  );
+}
+
 function PostLinks({ slugs, lang }: { slugs: string[]; lang: string }) {
   const posts = groupPosts({ id: "inline", zh: "", en: "", slugs });
   if (!posts.length) return null;
@@ -164,8 +247,8 @@ function Beginners({ isZh }: { isZh: boolean }) {
       <h2 className="text-xl font-semibold text-gray-900 mb-1.5">{isZh ? "新手先看" : "New to this? Start here"}</h2>
       <p className="text-sm text-gray-600 mb-4 leading-relaxed">
         {isZh
-          ? `刚开始做出海，先看这几样：${c.host}（YouTube「${c.name}」）回答读者提问的两期 AMA（第一期还有一位搭档一起答），一个从零做出并上线 AI 应用的教程，和一份工具清单。`
-          : `Start with these: two AMA episodes in which ${c.host} (YouTube channel "${c.name}") answers readers' questions, joined by a co-host in the first, a tutorial that builds and launches an AI app from zero, and a tool list. In Chinese.`}{" "}
+          ? `刚开始做出海，先看这几样：${c.host}（YouTube「${c.name}」）回答读者提问的两期 AMA（第一期还有一位搭档一起答），一个从零做出并上线 AI 应用的教程，和两份工具清单。`
+          : `Start with these: two AMA episodes in which ${c.host} (YouTube channel "${c.name}") answers readers' questions, joined by a co-host in the first, a tutorial that builds and launches an AI app from zero, and two tool lists. In Chinese.`}{" "}
         <a href={c.url} {...OUT} className="text-blue-600 hover:underline">
           {isZh ? "频道主页" : "Channel"}
         </a>
@@ -445,6 +528,7 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
         lead={isZh ? "起步几乎不花钱：三样都有免费额度，起量后再升级。" : "Starting costs almost nothing: all three have free tiers; upgrade once traffic comes."}
       >
         <PickList title={isZh ? "我在用的" : "What I use"} picks={STACK} lang={l} source={MY_POSTS.stack} />
+        <PointsBox title={isZh ? "域名后缀怎么选" : "Choosing the domain ending"} points={DOMAIN_TLD.points[l]} lang={l} source={DOMAIN_TLD.source} />
         <div className={`mt-3 ${BOX}`}>
           <p className="text-sm font-semibold text-gray-900 mb-1">{isZh ? "另一种做法：全放 Cloudflare" : "Another way: everything on Cloudflare"}</p>
           <p className="text-sm text-gray-600 leading-relaxed">{CLOUDFLARE_STACK.pieces[l]}</p>
@@ -536,14 +620,23 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
         title={isZh ? "增长：数据、技术 SEO、外链" : "Grow: data, technical SEO, backlinks"}
         lead={
           isZh
-            ? "抢在别人之前找到新词，看清自己和竞品的数据，用 skill 把技术 SEO 查一遍，外链少而精。"
-            : "Find new terms before others do, read your own and your competitors' data, run a technical SEO check with a skill, and keep backlinks few and good."
+            ? "先搭好 SEO 系统、分清必做页面和增长页面，再抢在别人之前找新词，看清自己和竞品的数据，用 skill 把技术 SEO 查一遍，外链少而精。"
+            : "Set up the SEO system and split must-have pages from growth pages, then find new terms before others do, read your own and your competitors' data, run a technical SEO check with a skill, and keep backlinks few and good."
         }
       >
         <SeoSystem l={l} isZh={isZh} />
+        <GeoNewSite l={l} isZh={isZh} />
         <div className="grid gap-3 md:grid-cols-2">
           <PickList title={isZh ? "数据查看" : "Data"} picks={DATA_TOOLS} lang={l} source={MY_POSTS.growth} />
           <PickList title={isZh ? "技术 SEO skill" : "Technical SEO skills"} picks={SEO_SKILLS} lang={l} source={MY_POSTS.growth} />
+          <SharedPickList title={isZh ? "SEO 关键词" : "SEO keywords"} picks={KEYWORD_TOOLS} lang={l} />
+          <SharedPickList
+            title={isZh ? "上线先装的统计" : "Analytics to install at launch"}
+            picks={ANALYTICS_BASICS.picks}
+            lang={l}
+            source={ANALYTICS_BASICS.source}
+            tip={ANALYTICS_BASICS.tip}
+          />
         </div>
         <Backlinks lang={lang} l={l} isZh={isZh} />
         <div className="mt-3">
