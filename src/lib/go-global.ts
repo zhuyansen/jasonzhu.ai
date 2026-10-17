@@ -70,7 +70,8 @@ export function postTitle(post: BlogPostMeta, lang: string): string {
   return lang === "en" && post.titleEn ? post.titleEn : post.title;
 }
 
-// 新手先看：John（YouTube「英文SEO实战派」）的每周 AMA，回答读者提问。Jason 推荐给刚开始做出海的人（2026-10-17）。
+// 新手先看：John（YouTube「英文SEO实战派」）的每周 AMA，回答读者提问；第一期 John 和搭档（转写里叫 Span）一起答，第二期一个人。
+// Jason 推荐给刚开始做出海的人（2026-10-17）。
 // 标题、时长、日期取自 YouTube 页面；视频没有字幕，不替它写内容摘要。
 export const BEGINNER_VIDEOS = {
   channel: { name: "英文SEO实战派", host: "John", url: "https://www.youtube.com/@seoactionblog" },
@@ -143,6 +144,7 @@ export const MY_POSTS = {
   stack: { url: "https://x.com/GoSailGlobal/status/2093541050614759662", date: "2026-08-29", title: { zh: "出海网站 SaaS 产品推荐", en: "What I use to run a SaaS site" } },
   growth: { url: "https://x.com/GoSailGlobal/status/2093961655747072092", date: "2026-08-30", title: { zh: "补充一些自己在用的出海产品", en: "More tools I use" } },
   backlinks: { url: "https://x.com/GoSailGlobal/status/2090693084317413479", date: "2026-08-21", title: { zh: "免费分享我收集的几大渠道外链", en: "Where I find backlinks" } },
+  radar: { url: "https://x.com/GoSailGlobal/status/2109543158761808243", date: "2026-10-12", title: { zh: "直接开源出来新词雷达", en: "Open-sourcing the new-term radar" } },
 };
 
 export const STACK: Pick[] = [
@@ -314,8 +316,8 @@ export const NEWBIE_FAQ: FaqEntry[] = [
   {
     q: { zh: "没有外链预算，SEO 还有机会吗？", en: "Is there a chance in SEO without a backlink budget?" },
     a: {
-      zh: "竞争大的词很难：没有外链建设，别的做得再好也很难排上去。外链要少而精，提交之前可以用 backlink-guard 查一下对方的站值不值得发。",
-      en: "Not for competitive terms: without link building the rest rarely gets you there. Keep backlinks few and good, and check a site with backlink-guard before you submit to it.",
+      zh: "竞争大的词很难。John 的看法是：没有外链建设，别的做得再好也很难排上去。我的建议是外链少而精，提交之前用 backlink-guard 查一下对方的站值不值得发。",
+      en: "Not for competitive terms. John's view: without link building the rest rarely gets you there. My advice: keep backlinks few and good, and check a site with backlink-guard before you submit to it.",
     },
     from: { video: "gAT7UDF806Y", t: 1270 },
   },

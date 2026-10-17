@@ -153,8 +153,8 @@ function Beginners({ isZh }: { isZh: boolean }) {
       <h2 className="text-xl font-semibold text-gray-900 mb-1.5">{isZh ? "新手先看" : "New to this? Start here"}</h2>
       <p className="text-sm text-gray-600 mb-4 leading-relaxed">
         {isZh
-          ? `刚开始做出海，先看这几样：${c.host}（YouTube「${c.name}」）回答读者提问的两期 AMA，一个从零做出并上线 AI 应用的教程，和一份工具清单。`
-          : `Start with these: two AMA episodes in which ${c.host} (YouTube channel "${c.name}") answers readers' questions, a tutorial that builds and launches an AI app from zero, and a tool list. In Chinese.`}{" "}
+          ? `刚开始做出海，先看这几样：${c.host}（YouTube「${c.name}」）回答读者提问的两期 AMA（第一期还有一位搭档一起答），一个从零做出并上线 AI 应用的教程，和一份工具清单。`
+          : `Start with these: two AMA episodes in which ${c.host} (YouTube channel "${c.name}") answers readers' questions, joined by a co-host in the first, a tutorial that builds and launches an AI app from zero, and a tool list. In Chinese.`}{" "}
         <a href={c.url} {...OUT} className="text-blue-600 hover:underline">
           {isZh ? "频道主页" : "Channel"}
         </a>
@@ -253,6 +253,7 @@ function Backlinks({ lang, l, isZh }: { lang: string; l: "zh" | "en"; isZh: bool
         <a href={NEW_TERM_RADAR} {...OUT} className="text-sm text-blue-600 hover:underline">
           GitHub →
         </a>
+        <FromMyPost post={MY_POSTS.radar} lang={l} />
       </div>
       <div className="rounded-2xl border border-gray-100 p-4">
         <p className="text-sm font-semibold text-gray-900 mb-1">{isZh ? "外链清单：一个月 DR 从 0 到 15" : "Backlink sources: DR 0 to 15 in a month"}</p>
