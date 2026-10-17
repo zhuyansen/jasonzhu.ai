@@ -1,5 +1,24 @@
 [
   {
+    "slug": "2026-10-18",
+    "date": "2026-10-18",
+    "title": "AI 快讯 · 10月18日",
+    "items": [
+      {
+        "title": "CLI-Anything把几乎所有软件变成智能体工具",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2610.20461",
+        "summary": "semCER重新设计OCR错误评估方式，不再把普通拼写错误和错写人名视为同等严重，而是按错误对读者的实际影响加权。对开发者而言，这能让OCR和视觉语言模型评测更贴近真实业务损失。",
+        "titleEn": "CLI-Anything Makes Software Agent-Native",
+        "summaryEn": "semCER makes OCR evaluation severity-aware by distinguishing harmless typos from damaging errors such as incorrect names. Instead of treating every character edit equally, it weights mistakes by their practical impact on readers, helping developers choose models based on business-relevant quality rather than a single crude error count."
+      }
+    ],
+    "jasonSays": "今天最值得关注的是智能体基础设施正在从单个插件走向可复用生态：软件接口、技能、记忆与验证器开始共同决定AI能否稳定落地。",
+    "jasonSaysEn": "The key development today is that agent infrastructure is evolving from isolated plugins into reusable ecosystems spanning software interfaces, skills, memory, and verification.",
+    "filename": "2026-10-18.md"
+  },
+  {
     "slug": "2026-10-17",
     "date": "2026-10-17",
     "title": "AI 快讯 · 10月17日",
@@ -79,7 +98,8 @@
     ],
     "jasonSays": "Claude Code官方插件目录上线，同日Replit因成本等原因停止与Anthropic合作，编程智能体生态的平台竞争与成本博弈同时升温。",
     "jasonSaysEn": "Anthropic launched an official Claude Code plugins directory on the same day Replit dropped Anthropic over cost and other reasons, showing platform competition and cost pressure intensifying in the coding-agent ecosystem.",
-    "filename": "2026-10-17.md"
+    "filename": "2026-10-17.md",
+    "coverImage": "/news/2026-10-17.png"
   },
   {
     "slug": "2026-10-16",
