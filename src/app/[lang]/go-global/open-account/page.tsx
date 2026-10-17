@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isZh = rawLang !== "en";
   const lang = isZh ? "zh" : "en";
   return {
-    title: isZh ? "个人还是公司？海外收款平台开户指南（大陆、香港、美国）" : "Individual or company? Opening a payment account to sell abroad",
+    title: isZh ? "个人还是公司？海外收款平台开户指南（大陆、香港、美国、英国）" : "Individual or company? Opening a payment account to sell abroad",
     description: isZh
       ? "没注册公司也能收海外的钱：大陆个人能开 Creem、Dodo、Waffo Pancake，开不了 Stripe 和 Polar。各平台对个人和公司的官方要求、开户每一步要准备什么，什么时候值得注册公司。"
       : "No company is needed to start: what each payment platform asks of an individual or a company, every step of opening an account, and when a company is worth it. From the platforms' own pages.",
@@ -246,9 +246,31 @@ export default async function OpenAccountPage({ params }: { params: Promise<{ la
         </p>
       </section>
 
+      <section className="mb-10">
+        <h2 className="text-xl font-semibold text-gray-900 mb-1">{isZh ? "要注册公司的话" : "If you register a company"}</h2>
+        <p className="text-sm text-gray-500 mb-4">
+          {isZh ? `官方费用和要求，读取于 ${data.opening_checked}；不是法律或税务建议。` : `Official fees and requirements, read on ${data.opening_checked}; not legal or tax advice.`}
+        </p>
+        <div className="grid gap-4 md:grid-cols-3">
+          {data.registration.map((r) => (
+            <div key={r.key} className="rounded-2xl border border-gray-100 p-4">
+              <p className="font-semibold text-gray-900 mb-2">{r.name[lang]}</p>
+              <ul className="space-y-1.5 text-sm text-gray-700 leading-relaxed list-disc pl-5">
+                {r.facts.map((f) => (
+                  <li key={f.en}>
+                    {f[lang]}
+                    <Source href={f.source} lang={lang} />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {companyPosts.length > 0 && (
         <section className="mb-10">
-          <h2 className="text-xl font-semibold text-gray-900 mb-3">{isZh ? "要注册公司的话：实操文章" : "If you register a company: hands-on guides"}</h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-3">{isZh ? "注册公司的实操文章" : "Hands-on guides to registering a company"}</h2>
           <ul className="space-y-2">
             {companyPosts.map((post) => (
               <li key={post.slug} className="text-sm">

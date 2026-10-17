@@ -9,6 +9,7 @@ import {
   GO_GLOBAL,
   MY_PAYMENT_PICK,
   MY_POSTS,
+  NEW_TERM_RADAR,
   POST_GROUPS,
   SEO_SKILLS,
   STACK,
@@ -172,7 +173,18 @@ function Beginners({ isZh }: { isZh: boolean }) {
 
 function Backlinks({ lang, l, isZh }: { lang: string; l: "zh" | "en"; isZh: boolean }) {
   return (
-    <div className="grid gap-3 md:grid-cols-2 mt-4">
+    <div className="grid gap-3 md:grid-cols-3 mt-4">
+      <div className="rounded-2xl border border-gray-100 p-4">
+        <p className="text-sm font-semibold text-gray-900 mb-1">{isZh ? "找新词：new-term-radar" : "New terms: new-term-radar"}</p>
+        <p className="text-sm text-gray-600 leading-relaxed mb-3">
+          {isZh
+            ? "每天从 X、Hugging Face、GitHub 和竞品的 sitemap 里抓刚冒出来的新模型、新产品名，赶在关键词工具收录之前，再排出值得做的关键词。开源，命令行、Agent Skill 和 MCP 都能用，要一个 AIsa 的 key。"
+            : "Every day it catches the names of new models and products on X, Hugging Face, GitHub and competitors' sitemaps, before keyword tools list them, and ranks the keywords worth a page. Open source, from the command line, an Agent Skill or MCP; it needs an AIsa key."}
+        </p>
+        <a href={NEW_TERM_RADAR} {...OUT} className="text-sm text-blue-600 hover:underline">
+          GitHub →
+        </a>
+      </div>
       <div className="rounded-2xl border border-gray-100 p-4">
         <p className="text-sm font-semibold text-gray-900 mb-1">{isZh ? "外链清单：一个月 DR 从 0 到 15" : "Backlink sources: DR 0 to 15 in a month"}</p>
         <p className="text-xs text-gray-500 mb-2">{isZh ? "外链不能贪多，这几个渠道就够：" : "Do not chase volume; these were enough:"}</p>
@@ -304,7 +316,11 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
           <Card
             href={`/${lang}${GO_GLOBAL}/open-account`}
             title={isZh ? "个人还是公司，怎么开户" : "Individual or company, and opening the account"}
-            body={isZh ? "大陆个人和香港、美国公司分别能开哪几家，开户每一步要准备什么。" : "Which platforms an individual in China or a Hong Kong or US company can open, and what each step asks for."}
+            body={
+              isZh
+                ? "大陆个人和香港、美国、英国公司分别能开哪几家，开户每一步要准备什么，注册公司要花多少。"
+                : "Which platforms an individual in China or a Hong Kong, US or UK company can open, what each step asks for, and what a company costs to register."
+            }
           />
           <Card
             href={`/${lang}${GO_GLOBAL}/payments`}
@@ -328,7 +344,11 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
       <Step
         n={3}
         title={isZh ? "增长：数据、技术 SEO、外链" : "Grow: data, technical SEO, backlinks"}
-        lead={isZh ? "先看清自己和竞品的数据，用 skill 把技术 SEO 查一遍，外链少而精。" : "Read your own and your competitors' data, run a technical SEO check with a skill, and keep backlinks few and good."}
+        lead={
+          isZh
+            ? "抢在别人之前找到新词，看清自己和竞品的数据，用 skill 把技术 SEO 查一遍，外链少而精。"
+            : "Find new terms before others do, read your own and your competitors' data, run a technical SEO check with a skill, and keep backlinks few and good."
+        }
       >
         <div className="grid gap-3 md:grid-cols-2">
           <PickList title={isZh ? "数据查看" : "Data"} picks={DATA_TOOLS} lang={l} />

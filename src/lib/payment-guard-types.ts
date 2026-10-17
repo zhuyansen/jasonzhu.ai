@@ -57,6 +57,7 @@ export interface GuardData {
   products: Record<string, Bi & { kind: string | null }>;
   words: Record<Lang, { open: Record<OpenStatus, string>; fit: Record<Fit, string> }>;
   advice: { en: string; zh: string; source: string }[];
+  registration: { key: string; name: Bi; facts: { en: string; zh: string; source: string }[] }[];
   platforms: Record<string, PlatformFacts>;
   picks: Record<string, PickTable>;
   usage: { since: string; as_of: string; caveat: Bi; sellers: Record<string, number> };

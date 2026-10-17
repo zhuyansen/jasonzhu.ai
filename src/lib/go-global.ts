@@ -121,6 +121,9 @@ export const SEO_SKILLS: Pick[] = [
   { what: { zh: "按 Google 指南和 Ahrefs 清单做 92 项检查", en: "92 checks from Google's guidelines and the Ahrefs checklist" }, name: "seo-audit（Wonfull）", url: "https://github.com/wonfull888/seo-audit" },
 ];
 
+/** 找新词：我的开源工具 new-term-radar（每天从 X、HF、GitHub、竞品 sitemap 抓新名字，再给关键词表） */
+export const NEW_TERM_RADAR = "https://github.com/zhuyansen/new-term-radar";
+
 /** 外链清单（2026-08-21 那条）：一个月 DR 从 0 做到 15 时用的渠道 */
 export const BACKLINK_SOURCES = [
   { zh: "用 DataForSEO 抓竞品的外链", en: "Competitors' backlinks pulled from DataForSEO" },
