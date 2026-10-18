@@ -22,6 +22,7 @@ import {
   PAGE_TUNING,
   POST_GROUPS,
   SEO_SKILLS,
+  SEO_TOOLS_DIRECTORY,
   STACK,
   groupPosts,
   postTitle,
@@ -777,6 +778,19 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
             source={ANALYTICS_BASICS.source}
             tip={ANALYTICS_BASICS.tip}
           />
+        </div>
+        <div className={`mt-3 ${BOX} text-sm text-gray-700`}>
+          <span className="font-medium">{isZh ? "想看全部 SEO skill：" : "Every SEO skill in one list: "}</span>
+          {isZh
+            ? "我维护的开源合集，收了 242 个 SEO skill、SEO 数据 MCP 和 GEO 工具，按一站式、体检、关键词、AI 搜索可见度、内容、外链分类，每个都读过 README、做了安全评级。"
+            : "the open-source list I maintain: 242 SEO skills, SEO data MCP servers and GEO tools, sorted into all-in-one suites, audits, keywords, AI search visibility, content and links, each read and security-graded."}
+          <a href={SEO_TOOLS_DIRECTORY.hub} {...OUT} className="ml-1 text-blue-600 hover:underline">
+            {isZh ? "网页版（可筛选，每 8 小时更新）" : "Live page (filterable, refreshed every 8 hours)"}
+          </a>
+          <span className="mx-1 text-gray-400">·</span>
+          <a href={SEO_TOOLS_DIRECTORY.repo} {...OUT} className="text-blue-600 hover:underline">
+            GitHub
+          </a>
         </div>
         <PageTuning l={l} isZh={isZh} />
         <Backlinks lang={lang} l={l} isZh={isZh} />

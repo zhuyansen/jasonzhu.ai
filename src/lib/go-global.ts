@@ -183,6 +183,12 @@ export const SEO_SKILLS: Pick[] = [
   },
 ];
 
+/** 上面几个之外的全部：我维护的 Claude SEO skill / MCP / GEO 工具合集（用户 10-18 要求加）。网页版是实时的，GitHub 版是同一份清单 */
+export const SEO_TOOLS_DIRECTORY = {
+  hub: "https://agentskillshub.top/best/seo-tools/",
+  repo: "https://github.com/zhuyansen/awesome-claude-seo-skills",
+};
+
 /** 找新词：我的开源工具 new-term-radar（每天从 X、HF、GitHub、竞品 sitemap 抓新名字，再给关键词表） */
 export const NEW_TERM_RADAR = "https://github.com/zhuyansen/new-term-radar";
 
