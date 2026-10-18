@@ -1,8 +1,8 @@
 {
  "model": "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.5)",
  "threshold": 5000,
- "updatedAt": "2026-10-17T16:28:18.211Z",
- "statsCheckedAt": "2026-10-17T16:28:18.211Z",
+ "updatedAt": "2026-10-18T03:43:31.607Z",
+ "statsCheckedAt": "2026-10-18T03:43:31.607Z",
  "inclusionRule": "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -73492,6 +73492,54 @@
    }
   },
   {
+   "id": "2110068531941527601",
+   "url": "https://x.com/condzxyz/status/2110068531941527601",
+   "author": {
+    "handle": "condzxyz",
+    "name": "Condz"
+   },
+   "postedAt": "2026-10-13T18:01:55.000Z",
+   "addedAt": "2026-10-18",
+   "lang": "pt",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "自动化内容视频剪辑",
+    "en": "Automated content video edit"
+   },
+   "summary": {
+    "zh": "作者称其自动化内容获得了大量播放量和收入，视频完全使用Claude Opus 5.5剪辑完成，但未公开具体提示词。",
+    "en": "The creator claims to have earned views and revenue from automated content, saying the video was edited entirely with Claude Opus 5.5, but does not share the actual prompt."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 11909,
+    "likes": 244,
+    "replies": 3,
+    "reposts": 8,
+    "bookmarks": 191,
+    "checkedAt": "2026-10-18T03:43:31.607Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110067841995018240/img/Ng-XLgeW-Ib_56Z0.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110067841995018240/vid/avc1/1280x720/4XpOf03Du2yDonIJ.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 469
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2106050222828998967",
    "url": "https://x.com/notjazii/status/2106050222828998967",
    "author": {
@@ -77917,6 +77965,55 @@
    }
   },
   {
+   "id": "2110156508097110075",
+   "url": "https://x.com/devteamdrew/status/2110156508097110075",
+   "author": {
+    "handle": "devteamdrew",
+    "name": "DreW"
+   },
+   "postedAt": "2026-10-13T23:51:30.000Z",
+   "addedAt": "2026-10-18",
+   "lang": "en",
+   "models": [
+    "opus-5.5",
+    "fable-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "动画视觉作品",
+    "en": "Animated visual piece"
+   },
+   "summary": {
+    "zh": "该作品使用Opus 5.5（可能还有Fable 5.5）制作，作者表示经过多次调整和重做，而不是一次大型提示完成。",
+    "en": "A work made with Opus 5.5 (possibly Fable 5.5) that the creator says required a lot of tweaking and reworking rather than a single large prompt."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 10088,
+    "likes": 277,
+    "replies": 17,
+    "reposts": 12,
+    "bookmarks": 150,
+    "checkedAt": "2026-10-18T03:43:31.607Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110154069343899648/img/PUiT7Q3GqdnWxDFx.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110154069343899648/vid/avc1/1280x720/YnI5w6m4FSFrl98A.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 65
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103517427749241133",
    "url": "https://x.com/Ben__Springer/status/2103517427749241133",
    "author": {
@@ -78659,6 +78756,56 @@
     "width": 720,
     "height": 910,
     "durationSec": 18
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2110190072628642204",
+   "url": "https://x.com/stxrmye/status/2110190072628642204",
+   "author": {
+    "handle": "stxrmye",
+    "name": "stormy"
+   },
+   "postedAt": "2026-10-14T02:04:53.000Z",
+   "addedAt": "2026-10-18",
+   "lang": "pt",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "基于自定义音效技能的智能体视频剪辑",
+    "en": "Agent-driven video edit with custom SFX skill"
+   },
+   "summary": {
+    "zh": "作者结合Claude Opus 5.5和GPT-5.4为自己的AI代理创建了一项技能，并提供了自己的音效、特效和插件，用来制作这次剪辑。",
+    "en": "The creator built a skill for their AI agent using Claude Opus 5.5 and GPT-5.4, giving it access to their sound effects, audio effects and plugins to produce this edit."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "GPT-5.4"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 9646,
+    "likes": 115,
+    "replies": 11,
+    "reposts": 3,
+    "bookmarks": 31,
+    "checkedAt": "2026-10-18T03:43:31.607Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110189882500907010/img/b85g_Q92ZSQpFfrI.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110189882500907010/vid/avc1/1280x720/ivB4v14Y79DWZuH6.mp4?tag=14",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 31
    },
    "evidence": {
     "via": "daily",
@@ -81254,6 +81401,62 @@
    }
   },
   {
+   "id": "2110014604524896392",
+   "url": "https://x.com/vib3coded/status/2110014604524896392",
+   "author": {
+    "handle": "vib3coded",
+    "name": "Vib3Coded"
+   },
+   "postedAt": "2026-10-13T14:27:38.000Z",
+   "addedAt": "2026-10-18",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "日式神社场景对比",
+    "en": "Japanese shrine scene comparison"
+   },
+   "summary": {
+    "zh": "作者用同一段长且详细的一次性提示，对比Opus 5.5与ChatGPT-6 Astra生成的日本神社主题Three.js WebGL场景，包含水面、四季、锦鲤和时间变化效果。",
+    "en": "The creator compared Opus 5.5 and ChatGPT-6 Astra using the same long, detailed single-shot prompt to generate a procedural Three.js WebGL diorama of a Japanese shrine with water, seasons, koi and time-of-day effects."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/vib3coded/status/2110014758548078979",
+    "text": "Build a single-file interactive WebGL diorama (one index.html, no build step) with Three.js r160 loaded via an import map from https://cdn.jsdelivr.net/, plus OrbitControls and BufferGeometryUtils (mergeVertices, mergeGeometries) from three/examples/jsm. Everything is procedural — no external models or textures.\n\nCONCEPT\n\"Torii at High Tide\": a miniature Japanese shrine island inspired by Itsukushima, inside a 10×10 block of clear water with rounded edges (vertical corner radius ~0.6, top edge radius ~0.26), on a thin sand-colored base slab, on a warm washi-paper background with a soft floor shadow that fades out with distance (so long dusk shadows never streak across the page).\n\nTERRAIN (heightfield ~400×400, clipped to the rounded block, with a boundary \"skirt\" so the cross-section shows through the water)\n- Work in a local frame facing the camera (u = across, v = toward the viewer).\n- A forested dome-shaped hill at the back (~2.4 high), a low sandy shrine terrace at its foot, then a wide, gently sloping tidal flat in front (from ~-0.06 down to ~-0.46), dropping to ~-1.0 at the front and sides.\n- Two rocky granite headlands framing the bay, each with 1–2 leaning bonsai-style pines (segmented trunks + flattened canopy pads).\n- A flattened clearing on the hill flank for the pagoda.\n- Terrain shader: granite rock on steep slopes (speckled, darker wet band just above the waterline, algae-dark below it), sand with a wet line, darker wet intertidal sand below the high-tide mark, moss/grass on the hill and in patches on the terrace, snow on upward-facing surfaces in winter, procedural animated caustics under water. CPU-baked horizon AO per vertex plus canopy-cover darkening.\n\nARCHITECTURE (merge everything into one vertex-colored mesh + one emissive \"glow\" mesh; write a small Builder that adds boxes/cylinders/spheres/custom geometry with a color and a transform, then mergeGeometries)\n- Ryōbu-style torii standing in the bay on the axis of the shrine (~1.9 tall): vermilion tapered main pillars with black base sheaths, four supporting sode-bashira legs with black caps and two connecting beams each, nuki tie beam, central strut with a dark plaque, shimaki, and a curved kasagi (extruded shape with upturned ends) with a black top layer. Pillars must end inside the shimaki, not poke through the kasagi.\n- Shrine on stilts over the tidal flat: plank deck (with plank-gap strips and dark edge beams) on a grid of wooden stilts reaching the seabed; a main hall and a smaller front hall (white walls, vermilion posts and tie beams, shoji-style front panels = glow panels behind a thin dark lattice), a lower front stage with vermilion railings, and two roofed vermilion corridors on stilts running sideways then back to the shore.\n- Roofs: a hip-roof generator with a concave profile and lifted eave corners (top surface dark cypress-bark brown, warm wood underside, pale fascia trim, black ridge cap).\n- A five-storey pagoda on the hill clearing: stone plinth, white walls with vermilion posts, bracket layer, flared roofs decreasing in size, bronze finial with rings.\n- Stone tōrō lanterns on the terrace and on the stage (hexagonal base, post, firebox with emissive windows, small roof, jewel).\n\nVEGETATION\n- ~4–5k canopy blobs (InstancedMesh of icospheres with vertex-noise displacement + fragment bump), clustered 2–4 per tree, per-instance AO from neighbour occlusion, brighter tops.\n- Four kinds via an instance attribute: broadleaf, cherry, maple, pine (flattened pads). Cherries cluster lower on the hill and as 5 feature trees with visible trunks on the terrace; pines dominate the summit and the headlands.\n- Colors come from per-kind dark/light palette uniforms that the JS blends across seasons.\n\nSEASONS (cyclic 0..4 = spring, summer, autumn, winter; animated transition from a dock button)\n- Spring: pink sakura, falling petals. Summer: lush green, no particles. Autumn: red maples, orange/yellow broadleaf, falling maple leaves. Winter: bare-ish brown deciduous blobs shrunk ~38%, snow on canopy tops, roofs, decks, rocks and ground; snowfall that melts instantly on the water.\n\nWATER (realistic, not jelly)\n- Pipeline: opaque scene → MSAA HalfFloat target with DepthTexture; copy to a second target, then draw the water with a custom ShaderMaterial doing a manual depth test; then floating particles; final fullscreen pass with ACES tone mapping, sRGB, subtle tilt-shift. Transparent canvas over the CSS background.\n- Color from real thickness: reconstruct the depth behind each water pixel, Beer–Lambert absorption toward a deep scatter color derived from the user's water color (pale over the flats, blue in the deep; side walls get extra path length so they read as a water volume).\n- Screen-space refraction, Fresnel sky reflection, sun glints from fine animated detail normals.\n- Screen-space reflections (~26 ray-march steps against the depth buffer, fewer on mobile) so the torii, shrine and lit lanterns reflect in the water.\n- Ripples: GPU wave equation on a 256×256 HalfFloat ping-pong target, fixed 60 Hz steps, land-mask texture so waves reflect off the shore. Cursor movement injects capsule drops along its path; a click makes a splash.\n- Shore foam only where the terrain is near the water level AND gently sloped (no white outlines around cliffs, stilts or the torii pillars); foam band width scaled by slope; broken by noise.\n- Tide: a dock toggle animates between high tide (0) and low tide (-0.55): the water block's rim moves and its sides stretch; at low tide the whole flat is exposed and the torii stands on wet sand.\n\nPARTICLES (petals / leaves / snow, ~700 instanced quads, CPU-simulated)\n- Spawn from cherry blobs (spring), deciduous blobs (autumn) or the sky (winter); flutter while falling; a gusting wind blows from the island toward the bay so they reach the water.\n- Landing: on water they become floating (vertex shader lifts them by the same ripple + wave height as the water), drift slowly, get pushed by the cursor's movement and blown away by click splashes, strand when the tide drops, re-float when it rises; on land they rest and fade.\n- Shapes drawn in the fragment shader: notched petal, five-lobed maple leaf, soft snow disc. Manual depth test against the scene depth.\n\nKOI\n- 7 koi (lathe body + forked fan tail + pectoral fins, merged), InstancedMesh with a swimming sway in the vertex shader and procedural patterns per type (kohaku, sanke, showa, ogon, plain orange). They wander, steer away from shallow water and the block walls, and flee the cursor and splashes. Rendered under the water so they are refracted and tinted.\n\nTIME OF DAY (slider, shown as a clock from 11:00 to ~19:10)\n- Sun elevation, color and intensity, hemisphere colors, and the water's sky reflection shift from noon to golden hour; towards dusk the shoji panels and lanterns glow (emissive) and three warm point lights light the shrine, the stage and the torii.\n\nUI (editorial, minimal, English)\nBrand \"shiosai°\" with a small torii mark, headline \"A gate that / stands in the sea.\", eyebrow \"Shrine and tide, in miniature\", a vertical caption \"A study of tide and seasons\", a location label \"Shrine Cove · 34°16′ N · 132°19′ E\", a floating pill dock (reset, season cycle with the current season name, High tide / Low tide toggle, Tune, fullscreen), hints and an adaptive FPS + \"Season · time\" readout in the footer, a glassy settings panel (season, time of day, falling petals; water color, tide level, wave height, ripple strength, clarity, caustics; sun azimuth, tilt-shift), and a \"How it's made\" card. Vermilion accent, light and dark themes via CSS tokens, responsive to 390 px (panel becomes a bottom sheet), prefers-reduced-motion respected, adaptive pixel ratio and a lighter mode for touch devices. Intro: the water fills the block while the camera eases in."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Three.js",
+    "ChatGPT-6 Astra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 8753,
+    "likes": 205,
+    "replies": 21,
+    "reposts": 23,
+    "bookmarks": 114,
+    "checkedAt": "2026-10-18T03:43:31.607Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110014349251084288/img/uC_b9kCbqLuK6swA.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110014349251084288/vid/avc1/720x912/HbgNrL3HDyatwcPX.mp4?tag=29",
+    "width": 720,
+    "height": 912,
+    "durationSec": 17
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102462310224900476",
    "url": "https://x.com/ShadeLurk/status/2102462310224900476",
    "author": {
@@ -81643,6 +81846,109 @@
     "width": 810,
     "height": 720,
     "durationSec": 25
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2109892378383540394",
+   "url": "https://x.com/aicreataro/status/2109892378383540394",
+   "author": {
+    "handle": "aicreataro",
+    "name": "aicreataro"
+   },
+   "postedAt": "2026-10-13T06:21:57.000Z",
+   "addedAt": "2026-10-18",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "Excel定格动画结合Blender制作",
+    "en": "Excel stop-motion animation with Blender"
+   },
+   "summary": {
+    "zh": "作者用Excel的图形逐帧手绘并逐帧截图制作了一段定格动画风格的视频，部分场景用Blender做成立体效果，草图和视频素材来自Midjourney和Kling。",
+    "en": "A stop-motion style video made entirely from Excel shapes, redrawn frame by frame and photographed window by window, with some scenes converted into 3D in Blender; source sketches/video came from Midjourney and Kling."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Excel",
+    "Blender",
+    "Midjourney",
+    "Kling"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 8516,
+    "likes": 118,
+    "replies": 8,
+    "reposts": 9,
+    "bookmarks": 61,
+    "checkedAt": "2026-10-18T03:43:31.607Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109891279203307520/img/2S3nAyEc4gnSnpMJ.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109891279203307520/vid/avc1/1280x720/4Hk3oLtJHrmYtWz9.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 61
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2109778453625020920",
+   "url": "https://x.com/chroman/status/2109778453625020920",
+   "author": {
+    "handle": "chroman",
+    "name": "Christian Roman"
+   },
+   "postedAt": "2026-10-12T22:49:15.000Z",
+   "addedAt": "2026-10-18",
+   "lang": "es",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "Unity杜比全景声可视化工具",
+    "en": "Unity Dolby Atmos visualizer"
+   },
+   "summary": {
+    "zh": "作者用Opus 5.5在一天内用Unity开发了一个杜比全景声电影可视化工具，支持从5.1.2到11.1.8的多种音箱布局，项目已开源在GitHub上。",
+    "en": "A Unity-based Dolby Atmos movie visualizer supporting speaker layouts from 5.1.2 to 11.1.8 was built in under a day with Opus 5.5; the project is open sourced on GitHub."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Unity"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 8505,
+    "likes": 107,
+    "replies": 14,
+    "reposts": 7,
+    "bookmarks": 48,
+    "checkedAt": "2026-10-18T03:43:31.607Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109775616799027200/img/HOwfU14tQBe4hw7N.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109775616799027200/vid/avc1/1280x720/LzGnQXT5IfGPQ7VQ.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 50
    },
    "evidence": {
     "via": "daily",
@@ -82717,6 +83023,58 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2109991235545190801",
+   "url": "https://x.com/XMihura/status/2109991235545190801",
+   "author": {
+    "handle": "XMihura",
+    "name": "Mihura"
+   },
+   "postedAt": "2026-10-13T12:54:46.000Z",
+   "addedAt": "2026-10-18",
+   "lang": "es",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "Hyprland桌面主题定制",
+    "en": "Hyprland desktop theme customization"
+   },
+   "summary": {
+    "zh": "作者称仅用几条提示词，Opus 5.5就搞定了Hyprland窗口管理器的所有配置和壁纸，不过配置底层驱动等他更喜欢用Astra，Fable几乎不用了。",
+    "en": "The creator says Opus 5.5 handled all Hyprland window manager configuration and wallpapers with just a couple of prompts, while they still prefer Astra for infra/driver setup and rarely use Fable."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Hyprland",
+    "Astra",
+    "Fable"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 8064,
+    "likes": 100,
+    "replies": 9,
+    "reposts": 3,
+    "bookmarks": 52,
+    "checkedAt": "2026-10-18T03:43:31.607Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109989897851342848/img/H9bphV4Dxri2tyAT.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109989897851342848/vid/avc1/1280x720/YfUkHogAvZNeaGjN.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 60
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -85290,6 +85648,58 @@
    }
   },
   {
+   "id": "2109834099217285170",
+   "url": "https://x.com/mi7_crypto/status/2109834099217285170",
+   "author": {
+    "handle": "mi7_crypto",
+    "name": "M7［mi7］AI"
+   },
+   "postedAt": "2026-10-13T02:30:22.000Z",
+   "addedAt": "2026-10-18",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "NURSE RIOT AI音乐视频",
+    "en": "NURSE RIOT AI music video"
+   },
+   "summary": {
+    "zh": "为单曲《FEVER SWITCH》（NURSE RIOT）制作的AI音乐视频，舞蹈编排以及歌词动效和特效编辑均使用Opus 5.5配合Seedance2.5和PixVerse CPP完成。",
+    "en": "An AI music video for the single 'FEVER SWITCH' by NURSE RIOT, with dance choreography and lyric motion/gimmick editing done using Opus 5.5 together with Seedance2.5 and PixVerse CPP."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Seedance2.5",
+    "Claude Code",
+    "PixVerse CPP"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 6811,
+    "likes": 167,
+    "replies": 6,
+    "reposts": 16,
+    "bookmarks": 12,
+    "checkedAt": "2026-10-18T03:43:31.607Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109833983525863424/img/ot_ZAufjDOAQUAW5.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109833983525863424/vid/avc1/1280x720/W17X9HC7FAiybnmM.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 60
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2107769950068998375",
    "url": "https://x.com/kepochnik/status/2107769950068998375",
    "author": {
@@ -87466,6 +87876,54 @@
    }
   },
   {
+   "id": "2110218646689599861",
+   "url": "https://x.com/fakharkamario/status/2110218646689599861",
+   "author": {
+    "handle": "fakharkamario",
+    "name": "Fakhar"
+   },
+   "postedAt": "2026-10-14T03:58:25.000Z",
+   "addedAt": "2026-10-18",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "短篇动画",
+    "en": "Short animation"
+   },
+   "summary": {
+    "zh": "作者用Claude Opus 5.5在两分钟内制作了这个作品，但未公开具体使用的提示词。",
+    "en": "A short video or animation made in two minutes using Claude Opus 5.5, with no details on the specific prompt given."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 5640,
+    "likes": 113,
+    "replies": 7,
+    "reposts": 8,
+    "bookmarks": 101,
+    "checkedAt": "2026-10-18T03:43:31.607Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110218580788711424/img/2n69sRRZ8Bz4oJaf.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110218580788711424/vid/avc1/1280x720/t58IkVm89tbyZ4Gw.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 10
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103449301838078098",
    "url": "https://x.com/sino1782013/status/2103449301838078098",
    "author": {
@@ -87698,6 +88156,57 @@
     "width": 960,
     "height": 720,
     "durationSec": 80
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2109982871209304334",
+   "url": "https://x.com/JoshDaws/status/2109982871209304334",
+   "author": {
+    "handle": "JoshDaws",
+    "name": "Josh Daws"
+   },
+   "postedAt": "2026-10-13T12:21:32.000Z",
+   "addedAt": "2026-10-18",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "用Claude Opus重新剪辑的2007年电影预告片",
+    "en": "2007 film trailer re-edited with Claude Opus"
+   },
+   "summary": {
+    "zh": "作者用自己2007年拍摄的电影母版素材，通过Claude Opus 5.5经过14轮修改意见剪辑并混音制作出这部预告片，ElevenLabs负责配乐和音效制作，Topaz用于画面升级，所有画面均为原始素材，没有生成内容。",
+    "en": "A trailer re-cut from the creator's own 2007 feature film masters, edited and mixed by Claude Opus 5.5 over 14 rounds of notes, with ElevenLabs creating the hymn arrangement and sound effects and Topaz used for upscaling; all footage is original, none generated."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "ElevenLabs",
+    "Topaz"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 5414,
+    "likes": 129,
+    "replies": 15,
+    "reposts": 6,
+    "bookmarks": 12,
+    "checkedAt": "2026-10-18T03:43:31.607Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2109981399616798720/img/N8QkqpI7_ZQCBvLC.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2109981399616798720/vid/avc1/1280x720/naP_VcFLGkEv1S3O.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 141
    },
    "evidence": {
     "via": "daily",
@@ -88053,6 +88562,54 @@
     "width": 1280,
     "height": 720,
     "durationSec": 302
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2110235247745052913",
+   "url": "https://x.com/LearnWithSubhan/status/2110235247745052913",
+   "author": {
+    "handle": "LearnWithSubhan",
+    "name": "Subhan Qureshi"
+   },
+   "postedAt": "2026-10-14T05:04:23.000Z",
+   "addedAt": "2026-10-18",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "游戏化仓库管理软件",
+    "en": "Gamified warehouse management software"
+   },
+   "summary": {
+    "zh": "一个仿策略游戏风格的仓库管理软件界面，使用Claude Opus 5.5制作，但未公开具体提示词。",
+    "en": "A warehouse management software interface styled like a strategy game, built with Claude Opus 5.5, with no specific prompt disclosed."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 5089,
+    "likes": 148,
+    "replies": 41,
+    "reposts": 90,
+    "bookmarks": 40,
+    "checkedAt": "2026-10-18T03:43:31.607Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2110235150177148928/img/k5BJnpNO3KzrJA0Y.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2110235150177148928/vid/avc1/1250x720/K1Cu-dmYLz5sd1FL.mp4?tag=16",
+    "width": 1250,
+    "height": 720,
+    "durationSec": 72
    },
    "evidence": {
     "via": "daily",
