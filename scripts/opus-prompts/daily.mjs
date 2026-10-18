@@ -95,7 +95,10 @@ const fresh = raw.filter(isFresh);
 for (const t of raw) if ((t.viewCount || 0) >= THRESHOLD) seen.add(t.id);
 const qualified = fresh.filter((t) => (t.viewCount || 0) >= THRESHOLD).map((t) => normalize(t, nowISO)).filter(Boolean)
   .filter((c) => !known.has(c.id) && !pending.some((p) => p.candidate.id === c.id)).sort((a, b) => b.views - a.views);
-const picked = qualified.slice(0, CAP);
+// SKIP_TOP=N（只在补跑时用）：按播放量跳过前 N 条——上次补跑被 CAP 截掉的那批排在后面，只处理它们，不重复处理已经判过的
+const SKIP_TOP = MANUAL ? Number(process.env.SKIP_TOP || 0) : 0;
+const picked = qualified.slice(SKIP_TOP, SKIP_TOP + CAP);
+if (SKIP_TOP) log(`跳过播放量前 ${SKIP_TOP} 条（补跑），处理第 ${SKIP_TOP + 1}–${SKIP_TOP + picked.length} 条`);
 log(`搜索返回 ${raw.length} 条${truncated ? "（触及单次上限，窗口内可能还有更多）" : ""} · 没见过的 ${fresh.length} · 播放≥${THRESHOLD} 且带视频 ${qualified.length} · 本次处理 ${picked.length}`);
 
 const TERMS_LOG = process.env.SEARCH_TERMS || "Opus / Sonnet / Haiku / Fable 5.5";

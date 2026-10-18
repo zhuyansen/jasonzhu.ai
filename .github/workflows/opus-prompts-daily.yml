@@ -23,6 +23,9 @@ on:
       window_to:
         description: "补跑：发布时间终点（ISO）"
         default: ""
+      skip_top:
+        description: "补跑：按播放量跳过前 N 条（只处理上次被上限截掉的那批）"
+        default: ""
       ignore_seen:
         description: "补跑：忽略 seen.json（重跑之前漏掉的时间段时填 1）"
         default: ""
@@ -70,6 +73,7 @@ jobs:
           WINDOW_TO: ${{ inputs.window_to }}
           SEARCH_TERMS: ${{ inputs.search_terms }}
           IGNORE_SEEN: ${{ inputs.ignore_seen }}
+          SKIP_TOP: ${{ inputs.skip_top }}
         run: |
           if [ -z "$TWITTERAPI_IO_KEY" ]; then
             echo "::error::缺少 Secret TWITTERAPI_IO_KEY，无法搜索新帖"
