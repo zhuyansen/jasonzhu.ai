@@ -1,8 +1,8 @@
 {
  "model": "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.5)",
  "threshold": 5000,
- "updatedAt": "2026-10-18T16:34:37.428Z",
- "statsCheckedAt": "2026-10-18T16:34:37.428Z",
+ "updatedAt": "2026-10-19T06:12:55.215Z",
+ "statsCheckedAt": "2026-10-19T06:12:55.215Z",
  "inclusionRule": "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -3708,6 +3708,58 @@
    }
   },
   {
+   "id": "2111506221048234083",
+   "url": "https://x.com/pontyadayo/status/2111506221048234083",
+   "author": {
+    "handle": "pontyadayo",
+    "name": "T.NAITO"
+   },
+   "postedAt": "2026-10-17T17:14:47.000Z",
+   "addedAt": "2026-10-19",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "触手产卵装置绑定",
+    "en": "Tentacle egg-laying rig"
+   },
+   "summary": {
+    "zh": "作者借助Claude Opus 5.5，在Maya的Bifrost中制作了基于矩阵的Spline IK产卵触手绑定，并在后续推文中对比了其与传统IK节点方案的帧率性能差异。",
+    "en": "A tentacle rig for releasing an egg was built in Maya using Bifrost's matrix-based Spline IK with help from Claude Opus 5.5, and a follow-up post compares its frame-rate performance to a standard IK-node setup."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Maya",
+    "Bifrost",
+    "MCP"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 532066,
+    "likes": 6122,
+    "replies": 12,
+    "reposts": 286,
+    "bookmarks": 2733,
+    "checkedAt": "2026-10-19T06:12:55.215Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111503849890738176/img/Y56a76-JeY6jQDso.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111503849890738176/vid/avc1/1280x720/LUrQJI6O5SKhqmLX.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 40
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2104680817272500562",
    "url": "https://x.com/ericmaskfr/status/2104680817272500562",
    "author": {
@@ -6725,6 +6777,56 @@
    }
   },
   {
+   "id": "2111522732668035503",
+   "url": "https://x.com/luckeyfaraday/status/2111522732668035503",
+   "author": {
+    "handle": "luckeyfaraday",
+    "name": "Luckey Faraday"
+   },
+   "postedAt": "2026-10-17T18:20:24.000Z",
+   "addedAt": "2026-10-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "库巴3D测试对比",
+    "en": "Bowser 3D test comparison"
+   },
+   "summary": {
+    "zh": "作者对比了DeepSeek V4.1 Flash与Claude Opus 5.5在一个3D“库巴”渲染测试中的表现，并指出两者价格差距巨大。",
+    "en": "The creator compares DeepSeek V4.1 Flash against Claude Opus 5.5 on a 3D Bowser rendering test, highlighting the large price gap between the two models."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "DeepSeek V4.1 Flash"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 311703,
+    "likes": 3096,
+    "replies": 147,
+    "reposts": 127,
+    "bookmarks": 693,
+    "checkedAt": "2026-10-19T06:12:55.215Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111522675071811584/img/PfWbBnPkEDvkmQKm.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111522675071811584/vid/avc1/720x720/6DWMUhmGE3DEIrU8.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 24
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2107139558173520177",
    "url": "https://x.com/dylan_ebert_/status/2107139558173520177",
    "author": {
@@ -8983,6 +9085,59 @@
    }
   },
   {
+   "id": "2111519245733654775",
+   "url": "https://x.com/dummerspast39/status/2111519245733654775",
+   "author": {
+    "handle": "dummerspast39",
+    "name": "Binkg"
+   },
+   "postedAt": "2026-10-17T18:06:32.000Z",
+   "addedAt": "2026-10-19",
+   "lang": "en",
+   "models": [
+    "fable-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "SVG自行车骑鹈鹕",
+    "en": "SVG bike riding pelican"
+   },
+   "summary": {
+    "zh": "作者用Fable 5.5生成了一张“自行车骑在塘鹅身上”的SVG图像，并与此前DeepSeek V4.1 Flash生成的版本进行对比。",
+    "en": "The creator used Fable 5.5 to generate an SVG image of a bike riding a pelican, comparing it to an earlier attempt by DeepSeek V4.1 Flash."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/dummerspast39/status/2111519245733654775",
+    "text": "svg of bike riding a pelican"
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 224204,
+    "likes": 2976,
+    "replies": 65,
+    "reposts": 58,
+    "bookmarks": 238,
+    "checkedAt": "2026-10-19T06:12:55.215Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111519199591804929/img/kc4hIVqGKHwhxgWM.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111519199591804929/vid/avc1/1280x720/8yV0FlKQerrk41IO.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 18
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2105353836638744578",
    "url": "https://x.com/devteamdrew/status/2105353836638744578",
    "author": {
@@ -10403,6 +10558,56 @@
    }
   },
   {
+   "id": "2111582260818239777",
+   "url": "https://x.com/LexnLin/status/2111582260818239777",
+   "author": {
+    "handle": "LexnLin",
+    "name": "Leon Lin"
+   },
+   "postedAt": "2026-10-17T22:16:56.000Z",
+   "addedAt": "2026-10-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "纯代码构建的古希腊世界",
+    "en": "Ancient Greek world built in code"
+   },
+   "summary": {
+    "zh": "作者使用Claude Opus 5.5，根据九张参考图和一段详细提示词，用three.js纯代码构建了一个高细节的古希腊3D世界，并在审核通过后渲染出一段电影感展示视频。",
+    "en": "The creator built a detailed, code-only ancient Greek 3D world in three.js with Claude Opus 5.5, feeding it nine reference images and a detailed prompt to match composition, materials and colors before rendering a cinematic showcase video."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 192048,
+    "likes": 3065,
+    "replies": 174,
+    "reposts": 179,
+    "bookmarks": 1243,
+    "checkedAt": "2026-10-19T06:12:55.215Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111581258383794177/img/5dlK_lrTgipJeqHf.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111581258383794177/vid/avc1/1280x720/azf5ZLU0w67bQQGL.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 54
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103683057689522564",
    "url": "https://x.com/dotey/status/2103683057689522564",
    "author": {
@@ -10649,6 +10854,59 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2111577334436319355",
+   "url": "https://x.com/dummerspast39/status/2111577334436319355",
+   "author": {
+    "handle": "dummerspast39",
+    "name": "Binkg"
+   },
+   "postedAt": "2026-10-17T21:57:22.000Z",
+   "addedAt": "2026-10-19",
+   "lang": "en",
+   "models": [
+    "fable-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "SVG递归自行车鹈鹕场景",
+    "en": "SVG recursive bike-pelican scene"
+   },
+   "summary": {
+    "zh": "作者用Fable 5.5生成了一张递归式SVG图像（控制器骑自行车骑塘鹅骑自行车骑塘鹅），并附上Claude artifact链接作为结果证明。",
+    "en": "The creator used Fable 5.5 to generate a recursive SVG of a controller riding a bicycle riding a pelican riding a bicycle riding a pelican, and linked a Claude artifact as proof of the output."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/dummerspast39/status/2111577334436319355",
+    "text": "SVG of a controller riding a bicyle riding a pelican riding a bicycle riding a pelican"
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 185871,
+    "likes": 2354,
+    "replies": 104,
+    "reposts": 97,
+    "bookmarks": 318,
+    "checkedAt": "2026-10-19T06:12:55.215Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111577239674351616/img/MgsF0tkLKUFf8VNg.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111577239674351616/vid/avc1/720x720/b_NgwaxrtjQbFz0F.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 15
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -20769,6 +21027,60 @@
    }
   },
   {
+   "id": "2111652839634456996",
+   "url": "https://x.com/xikhar/status/2111652839634456996",
+   "author": {
+    "handle": "xikhar",
+    "name": "Shikhar"
+   },
+   "postedAt": "2026-10-18T02:57:24.000Z",
+   "addedAt": "2026-10-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "虚幻引擎开放世界构建",
+    "en": "Unreal Engine open world build"
+   },
+   "summary": {
+    "zh": "创作者使用Claude Opus 5.5在Unreal Engine中从零构建了一个大型开放世界场景，地形、高度图及草木资产由Blender制作，并通过参考图片和Claude Code的迭代式工作流来引导生成结果。",
+    "en": "A large open-world environment built from scratch in Unreal Engine using Claude Opus 5.5, with terrain, height maps, grass and shrub assets made in Blender and reference images used to guide the output through iterative Claude Code workflows."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Unreal Engine",
+    "Blender",
+    "Claude Code",
+    "MCP",
+    "GPT Image"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 97931,
+    "likes": 1870,
+    "replies": 82,
+    "reposts": 65,
+    "bookmarks": 523,
+    "checkedAt": "2026-10-19T06:12:55.215Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111647053290098688/img/PftPoTowN3CRPEgi.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111647053290098688/vid/avc1/1152x720/j3gwUKIPflY7yx6U.mp4?tag=29",
+    "width": 1152,
+    "height": 720,
+    "durationSec": 29
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102878288008057171",
    "url": "https://x.com/kevin_t_ngo/status/2102878288008057171",
    "author": {
@@ -21155,6 +21467,58 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2111519266898169925",
+   "url": "https://x.com/aymericrabot/status/2111519266898169925",
+   "author": {
+    "handle": "aymericrabot",
+    "name": "Aymeric Rabot"
+   },
+   "postedAt": "2026-10-17T18:06:38.000Z",
+   "addedAt": "2026-10-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "浏览器多人特斯拉跑车游戏",
+    "en": "Browser multiplayer Tesla Roadster game"
+   },
+   "summary": {
+    "zh": "一款名为Tesla Roadster League的浏览器多人赛车游戏，包含特技公园、竞速、类Rocket League模式和车展展厅，使用Claude Opus 5.5结合Three.js、Rapier物理引擎和Cloudflare实现多人联机。",
+    "en": "A browser-based multiplayer driving game called Tesla Roadster League, with stunt park, time attack, a Rocket League-style mode and a car showroom, built with Claude Opus 5.5 using Three.js, Rapier physics and Cloudflare for multiplayer."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js",
+    "Rapier",
+    "Cloudflare"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 96235,
+    "likes": 730,
+    "replies": 46,
+    "reposts": 85,
+    "bookmarks": 390,
+    "checkedAt": "2026-10-19T06:12:55.215Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111518705137991680/img/YPtVF_RV4v3yESjX.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111518705137991680/vid/avc1/1152x720/kEUbf8hgFYN5pLhV.mp4?tag=29",
+    "width": 1152,
+    "height": 720,
+    "durationSec": 63
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -32161,6 +32525,61 @@
    }
   },
   {
+   "id": "2111513156589629941",
+   "url": "https://x.com/rubenssoto_ai/status/2111513156589629941",
+   "author": {
+    "handle": "rubenssoto_ai",
+    "name": "Rubens Soto | AI & SaaS"
+   },
+   "postedAt": "2026-10-17T17:42:21.000Z",
+   "addedAt": "2026-10-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "电动机3D动画对比",
+    "en": "Electric motor 3D animation comparison"
+   },
+   "summary": {
+    "zh": "一段用Three.js制作的40秒电影级3D动画，讲解特斯拉风格电动马达的工作原理，创作者用同一份详细提示词分别让Opus 5.5和DeepSeek V4.1 Flash生成以作对比。",
+    "en": "A 40-second cinematic 3D animation in Three.js explaining how a Tesla-style electric motor works, generated identically by Opus 5.5 and DeepSeek V4.1 Flash from the same detailed prompt for comparison."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/rubenssoto_ai/status/2111621899000148389",
+    "text": "Create a high-end cinematic and educational 3D animation in Three.js explaining how a Tesla-style electric motor works.\n\nThe animation must have an EXACT FIXED DURATION OF 40 SECONDS.\n\nDo not make the animation shorter or longer than 40 seconds.\n\nFinal output:\nExact duration: 40.0 seconds\nResolution: 1920x1080\nAspect ratio: 16:9\nFrame rate: 30 FPS\nTotal frames: 1200\nHigh-quality anti-aliasing\nHigh-resolution textures\nSmooth deterministic animation\nExtremely realistic visual quality\n\nThe overall visual quality should resemble a premium automotive engineering visualization or a high-end technical product commercial.\n\nBuild a detailed electric motor assembly inspired by the permanent-magnet AC motors used in modern Tesla vehicles. Do not use Tesla logos or branding.\n\nFIXED TIMELINE\n\n0–5 seconds — Hero introduction\nShow the fully assembled electric motor suspended in a dark premium studio environment.\n\nUse:\ncinematic lighting\nrealistic brushed aluminum\ncopper\nsteel\nmagnets\ninsulation\nbearings\nrealistic reflections\nambient occlusion\nrealistic shadows\nsubtle depth of field\n\nUse a slow cinematic orbit around the motor.\n\nDuring the final part of this section, make the outer housing partially transparent to reveal the internal structure.\n\n5–11 seconds — Internal components\nMove the camera closer and reveal the internal motor components.\n\nClearly show:\nstator\ncopper windings\nrotor\npermanent magnets\nmotor shaft\nbearings\nhousing\ncooling channels\nelectrical connections\n\nHighlight the important components one at a time.\n\nUse floating labels with short technical names.\n\nKeep non-highlighted components slightly darker or semi-transparent.\n\n11–19 seconds — Exploded view\nCreate a dramatic and highly detailed exploded-view animation.\n\nSeparate the motor into many individual mechanical components along the motor axis.\n\nInclude:\nouter housing\nfront cover\nrear cover\nbearings\nshaft\nrotor core\nrotor magnets\nstator core\ncopper windings\ncooling components\nseals\nelectrical connectors\nfasteners\n\nKeep every component perfectly aligned.\n\nThe viewer must clearly understand where every piece belongs.\n\nMove the camera slightly through the exploded assembly while highlighting the major components.\n\nNear the end of this section, smoothly begin reassembling the motor.\n\n19–28 seconds — Electromagnetic operation\nFinish reassembling the motor.\n\nExplain how electricity creates rotation.\n\nVisualize three-phase AC current flowing through the stator windings.\n\nUse animated electrical pulses inside the copper coils.\n\nVisualize the rotating magnetic field around the stator using elegant semi-transparent magnetic field lines, arrows, or vector effects.\n\nShow how the rotating magnetic field interacts with the permanent magnets inside the rotor.\n\nClearly visualize magnetic attraction and repulsion.\n\nThe rotor should begin rotating slowly and gradually accelerate.\n\nDisplay these short explanations:\n\n\"Three-phase current creates a rotating magnetic field.\"\n\n\"The magnetic field interacts with the rotor.\"\n\n\"This interaction generates torque.\"\n\n28–34 seconds — Technical close-up and power flow\nShow a close-up cross-section of the stator and rotor.\n\nVisualize:\nmagnetic north and south poles\nrotating stator magnetic field\nrotor magnetic field\nelectric current direction\ntorque direction\nrotor rotation direction\n\nOptionally show three small animated sine waves representing phases A, B, and C, separated by 120 degrees.\n\nThen visualize the complete energy conversion process:\n\nElectrical energy\n→ stator current\n→ rotating magnetic field\n→ electromagnetic torque\n→ rotor rotation\n→ mechanical output through the shaft.\nUse clean animated arrows to show the energy flow.\n34–38 seconds — High-speed operation\nShow the motor operating at high RPM.\nThe rotor should spin smoothly while the stator remains stationary.\nAdd subtle motion blur.\n\nShow cooling flow through the housing using translucent fluid paths.\n\nVisualize heat being removed from the stator and copper windings.\n38–40 seconds — Final hero shot\n\nTransition back to the fully assembled motor.\n\nShow a slow cinematic rotation.\n\nBriefly use a transparent cutaway so the spinning rotor can still be seen inside.\n\nFinish with the text:\n\n\"Electrical energy → Electromagnetic torque → Mechanical rotation\"\nThe animation must end exactly at 40.0 seconds.\n\nVISUAL QUALITY\n\nThe animation should be:\n\nphotorealistic\n\ncinematic\n\ntechnically believable\n\nfuturistic\n\npremium\neducational\nclean and uncluttered\nAvoid cartoon styling.\nUse realistic:\nmachining details\nbolts\nscrews\n\ncopper winding geometry\n\nsegmented magnets\nbearing geometry\ncooling channels\nmetallic surfaces\nmanufacturing details\nUse physically based materials with:\nmetallic properties\nroughness variation\nnormal maps\nrealistic reflections\n\nsubtle surface imperfections\nCAMERA\nUse only smooth cinematic camera movement:\nslow orbit shots\nmacro close-ups\ncontrolled dolly-ins\n\nexploded-view fly-throughs\n\ncross-section shots\n\ninternal motor views\nAvoid:\nshaky camera movement\nsudden cuts\nexcessive zooming\nunrealistic camera acceleration\n\nANIMATION REQUIREMENTS\nAll transitions must be smooth and deliberate.\nThe exploded-view sequence should be one of the main visual highlights.\nAll mechanical components must separate and reassemble with precise motion.\nElectrical currents, magnetic fields, torque indicators, and rotor rotation must remain synchronized.\n\nThe entire animation must use the same fixed 40-second timeline on every execution so the prompt can be used as a repeatable benchmark between different AI coding and 3D generation systems."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 58634,
+    "likes": 851,
+    "replies": 100,
+    "reposts": 60,
+    "bookmarks": 221,
+    "checkedAt": "2026-10-19T06:12:55.215Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111513090248310784/img/M1iqXKLysMP8Gscp.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111513090248310784/vid/avc1/720x916/1ZliP8Hrct-6nFt_.mp4?tag=29",
+    "width": 720,
+    "height": 916,
+    "durationSec": 40
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2106829942206173497",
    "url": "https://x.com/BHolmesDev/status/2106829942206173497",
    "author": {
@@ -32357,6 +32776,55 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2111590674961154433",
+   "url": "https://x.com/Mr_Salio/status/2111590674961154433",
+   "author": {
+    "handle": "Mr_Salio",
+    "name": "Salio"
+   },
+   "postedAt": "2026-10-17T22:50:23.000Z",
+   "addedAt": "2026-10-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5",
+    "fable-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "纯代码构建的蜘蛛侠电影场景",
+    "en": "Spider-Man cinematic scene built in code"
+   },
+   "summary": {
+    "zh": "Fable 5.5花费约七小时纯代码构建了一段蜘蛛侠风格的游戏过场动画场景，创作者提到Fable 5.5底层路由至Opus 5.5。",
+    "en": "A Spider-Man game cinematic scene built entirely from code by Fable 5.5 over roughly seven hours, with the creator noting Fable 5.5 routes under Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 57948,
+    "likes": 327,
+    "replies": 32,
+    "reposts": 10,
+    "bookmarks": 56,
+    "checkedAt": "2026-10-19T06:12:55.215Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111582961078341632/img/y73Q0qSSfXNqz4qb.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111582961078341632/vid/avc1/1280x720/udars2fmdOzAEmpV.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 62
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -32749,6 +33217,56 @@
    "evidence": {
     "via": "search",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2111509918490755394",
+   "url": "https://x.com/higgsfield_ai/status/2111509918490755394",
+   "author": {
+    "handle": "higgsfield_ai",
+    "name": "Higgsfield AI 🧩"
+   },
+   "postedAt": "2026-10-17T17:29:29.000Z",
+   "addedAt": "2026-10-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "浮岛3D模型对比",
+    "en": "Floating island 3D model comparison"
+   },
+   "summary": {
+    "zh": "在Higgsfield平台上进行的3D建模对比测试，展示了DeepSeek V4.1 Flash与Claude Opus 5.5在悬浮岛细节与光照效果上的差异。",
+    "en": "A 3D modelling comparison test of a floating island's detail and lighting, created with DeepSeek V4.1 Flash versus Claude Opus 5.5 on the Higgsfield platform."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Higgsfield"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 57307,
+    "likes": 767,
+    "replies": 44,
+    "reposts": 52,
+    "bookmarks": 196,
+    "checkedAt": "2026-10-19T06:12:55.215Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111509266490396672/img/gBQd7-eQd0liMu9O.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111509266490396672/vid/avc1/720x900/8lzs60OwpyGYblTA.mp4?tag=29",
+    "width": 720,
+    "height": 900,
+    "durationSec": 22
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -33974,6 +34492,56 @@
     "width": 1280,
     "height": 720,
     "durationSec": 14
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2111526194248286413",
+   "url": "https://x.com/higgsfield_ai/status/2111526194248286413",
+   "author": {
+    "handle": "higgsfield_ai",
+    "name": "Higgsfield AI 🧩"
+   },
+   "postedAt": "2026-10-17T18:34:09.000Z",
+   "addedAt": "2026-10-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "四模型动画效果对比",
+    "en": "Four-model animation benchmark"
+   },
+   "summary": {
+    "zh": "在Higgsfield平台上对四个AI模型（Gemini 4 Argon、GPT-6.1 Soul、Claude Opus 5.5、DeepSeek V4.1 Flash）进行了动画效果的对比测试。",
+    "en": "A side-by-side animation test comparing four AI models (Gemini 4 Argon, GPT-6.1 Soul, Claude Opus 5.5, DeepSeek V4.1 Flash) evaluated on the Higgsfield platform."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Higgsfield"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 54609,
+    "likes": 519,
+    "replies": 41,
+    "reposts": 26,
+    "bookmarks": 167,
+    "checkedAt": "2026-10-19T06:12:55.215Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111524851727114240/img/LAfKa84WU-uVz7VI.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111524851727114240/vid/avc1/1280x720/hZRNsdhAx_WZppOl.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 10
    },
    "evidence": {
     "via": "daily",
@@ -40602,6 +41170,54 @@
    }
   },
   {
+   "id": "2111603809848029601",
+   "url": "https://x.com/nikosolenne/status/2111603809848029601",
+   "author": {
+    "handle": "nikosolenne",
+    "name": "niko."
+   },
+   "postedAt": "2026-10-17T23:42:34.000Z",
+   "addedAt": "2026-10-19",
+   "lang": "es",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "交互式室内设计演示",
+    "en": "Interactive interior design demo"
+   },
+   "summary": {
+    "zh": "创作者用Claude Opus 5.5制作了一个室内设计演示，并分享了一个可交互网站的链接。",
+    "en": "An interior design demo made with Claude Opus 5.5, shared via a link to an interactive site."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 43421,
+    "likes": 873,
+    "replies": 14,
+    "reposts": 71,
+    "bookmarks": 769,
+    "checkedAt": "2026-10-19T06:12:55.215Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111603761948880896/img/u2ZEEE2yDsTwR0tR.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111603761948880896/vid/avc1/1280x720/0-1bf8v6Cygudyhx.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 40
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103590659852751268",
    "url": "https://x.com/vinceflibustier/status/2103590659852751268",
    "author": {
@@ -41859,6 +42475,61 @@
    }
   },
   {
+   "id": "2111501344750059978",
+   "url": "https://x.com/vib3coded/status/2111501344750059978",
+   "author": {
+    "handle": "vib3coded",
+    "name": "Vib3Coded"
+   },
+   "postedAt": "2026-10-17T16:55:25.000Z",
+   "addedAt": "2026-10-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "3D西瓜毛发渲染对比",
+    "en": "3D watermelon fur render comparison"
+   },
+   "summary": {
+    "zh": "创作者用同一段详细的Three.js提示词，对比了Claude Opus 5.5和Gemini 4 Argon生成的可交互3D毛绒西瓜效果，并比较了API成本。",
+    "en": "A comparison of Claude Opus 5.5 and Gemini 4 Argon generating an interactive 3D furry watermelon in a browser using the same detailed Three.js prompt, with API cost comparison."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/vib3coded/status/2111502058608050536",
+    "text": "Build a single self-contained HTML page (no build step) showing an interactive 3D \"Fluffy Watermelon\" covered in long fur, rendered with WebGL using three.js r147 (UMD build: https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js). All UI text in English.\n\nSCENE & LOOK\n- Full-screen canvas on a soft watermelon-flesh pink studio background: vertical gradient #ECB3AB → #F7CFC7 (lighter band in the middle) → #E8A9A0, used as the scene background.\n- A big oblong watermelon lying on its side along the X axis: half-length 1.38, radius 0.98, blunt barrel-like ends, small dimples at both ends, slightly flattened belly, subtle surface unevenness. Start in a 3/4 view (about -0.32 rad around Y, 0.1 rad tilt), camera FOV 30°, framed to fill ~80% of the height.\n- Rind pattern under the fur: light green (#A8D66B) with 16 dark green (#1C4D1C) stripes running stem to blossom, with ragged finger-like edges (sine meander + value noise), plus a pale cream \"field spot\" on the underside. Each hair takes the colour of its own root, so the stripes stay crisp through the fur.\n- A short, dried, ribbed stem stub at one end with a slightly domed pale cut cap, and a thin curly helical tendril springing from beside it.\n- One directional light from upper-left-front, wrap diffuse, Kajiya-Kay anisotropic highlight along the hair tangent, darker roots (occlusion by hair height), slight per-hair brightness variation.\n\nFUR (most important: it must look crisp, never blurry)\n- Fur length 0.2 units. Hairs grow out along the normal, then bend: combed from the stem end toward the blossom end and draped down the flanks (no whorls at the ends), plus slight gravity.\n- Undercoat: shell texturing with ~64 instanced shells of the body mesh that reach only 50% of the fur length. Procedural hair cells in UV space (density scaled so one cell is ~3.4 device pixels at the default view), two hair populations (long + fine underfur), hairs gathering into locks toward their tips, analytic anti-aliased coverage, alpha blending, shells write depth. Fade shells out where the surface is seen edge-on and discard faint fragments, so no dotted rim appears at the outline.\n- Guard hairs: ~90,000 individual tapered, camera-facing ribbon strands (instanced, 7 segments each) that follow exactly the same bend function, with a minimum width of ~0.75 px so they stay sharp. Draw them twice: once before the shells and once after (depth-tested), so faint edge fur never hides them and they always lie crisply on top.\n- Always render at the device's full pixel ratio (capped at 2) and NEVER lower it for performance. If frames are slow, reduce the shell count first (down to 32), then the guard-hair count.\n\nINTERACTION\n- Drag to rotate freely (trackball style) with inertia after a flick. The fur lags behind the rotation through a damped spring and flops back. Gentle idle breeze in the fur; after 3 s without input, a slow auto-turn.\n- Mouse wheel / pinch to zoom (smooth dolly). Double-click or \"0\" resets with an eased animation. Arrow keys rotate.\n- Custom cursor: the native grab hand plus a thin dark 46 px ring that follows the pointer and shrinks while dragging. Hovering gently parts the fur under the cursor, as if stroking it.\n- Respect prefers-reduced-motion (no idle spin, no breeze).\n\nUI & ROBUSTNESS\n- Bottom-left caption: \"Fluffy Watermelon\" and a hint \"Drag to rotate · Scroll to zoom · Double-click to reset\" (on touch devices: \"Drag to rotate · Pinch to zoom\") that fades after the first interaction. Font: Onest from Google Fonts with system fallbacks.\n- Guard against a zero-sized container at load: clamp width/height to at least 1 and, every frame, recover from any non-finite camera distance or rotation state.\n- Show a small on-page note if the WebGL context is lost or a shader fails to compile, and a fallback message if WebGL is unavailable."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 41362,
+    "likes": 267,
+    "replies": 41,
+    "reposts": 18,
+    "bookmarks": 79,
+    "checkedAt": "2026-10-19T06:12:55.215Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111501172259401728/img/ie1WUG426dYfuoTw.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111501172259401728/vid/avc1/720x910/RromXVXy38McpR73.mp4?tag=29",
+    "width": 720,
+    "height": 910,
+    "durationSec": 15
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2106067156949520616",
    "url": "https://x.com/RileyRalmuto/status/2106067156949520616",
    "author": {
@@ -42197,6 +42868,59 @@
     "width": 1280,
     "height": 720,
     "durationSec": 64
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2111583999294398792",
+   "url": "https://x.com/sorenxet/status/2111583999294398792",
+   "author": {
+    "handle": "sorenxet",
+    "name": "sorenxet"
+   },
+   "postedAt": "2026-10-17T22:23:51.000Z",
+   "addedAt": "2026-10-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "带昼夜循环的海滩钓鱼游戏",
+    "en": "Beach fishing game with day/night cycle"
+   },
+   "summary": {
+    "zh": "创作者使用Claude Opus 5.5和Unity 6制作了一款本地钓鱼游戏，结合Tripo生成的模型并在Blender中清理，通过分步提示词和自动化测试逐步完成。",
+    "en": "A local fishing game built with Claude Opus 5.5 and Unity 6, combining Tripo-generated models cleaned in Blender, built step by step with iterative prompts and autopilot playtesting."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Unity",
+    "Blender",
+    "Tripo",
+    "Claude Code"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 40852,
+    "likes": 482,
+    "replies": 35,
+    "reposts": 25,
+    "bookmarks": 483,
+    "checkedAt": "2026-10-19T06:12:55.215Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111573968326938624/img/8X5OQQV4Ol6FNfIw.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111573968326938624/vid/avc1/1280x720/kVyf6pNiy1xo7yru.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 63
    },
    "evidence": {
     "via": "daily",
@@ -42757,6 +43481,56 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2111639205470146835",
+   "url": "https://x.com/merkyx9/status/2111639205470146835",
+   "author": {
+    "handle": "merkyx9",
+    "name": "merky"
+   },
+   "postedAt": "2026-10-18T02:03:13.000Z",
+   "addedAt": "2026-10-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "精致的Roblox游戏",
+    "en": "Polished Roblox game"
+   },
+   "summary": {
+    "zh": "创作者表示这款精美的Roblox游戏是用Claude Opus 5.5结合自定义素材和提示词制作的。",
+    "en": "A polished Roblox game made using Claude Opus 5.5 with custom assets and prompting, according to the creator."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Roblox"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 39745,
+    "likes": 614,
+    "replies": 39,
+    "reposts": 16,
+    "bookmarks": 387,
+    "checkedAt": "2026-10-19T06:12:55.215Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111638455897796608/img/5ccspJHHOt26I9pr.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111638455897796608/vid/avc1/1280x720/TrtgWoXciybuKAKi.mp4?tag=14",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 111
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -48233,6 +49007,54 @@
    }
   },
   {
+   "id": "2111580341626687586",
+   "url": "https://x.com/EnvolDev/status/2111580341626687586",
+   "author": {
+    "handle": "EnvolDev",
+    "name": "Tony"
+   },
+   "postedAt": "2026-10-17T22:09:19.000Z",
+   "addedAt": "2026-10-19",
+   "lang": "en",
+   "models": [
+    "haiku-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "埃菲尔铁塔建造模型基准对比",
+    "en": "Eiffel Tower build benchmark across models"
+   },
+   "summary": {
+    "zh": "一次埃菲尔铁塔基准测试，用相同的提示词对比了DeepSeek V4.1 Flash、Gemini 4 Argon、Muse Spark 1.3和Claude Haiku 5.5在成本与耗时上的表现。",
+    "en": "An Eiffel Tower benchmark comparing DeepSeek V4.1 Flash, Gemini 4 Argon, Muse Spark 1.3, and Claude Haiku 5.5 on cost and build time, using the same prompt for all four."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 32442,
+    "likes": 207,
+    "replies": 15,
+    "reposts": 14,
+    "bookmarks": 50,
+    "checkedAt": "2026-10-19T06:12:55.215Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111580062806061056/img/_aLvjTlSfGM6FTqA.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111580062806061056/vid/avc1/810x720/TUoXSrRy7m9XsM_7.mp4?tag=29",
+    "width": 810,
+    "height": 720,
+    "durationSec": 20
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102478608274989225",
    "url": "https://x.com/luccacerf/status/2102478608274989225",
    "author": {
@@ -49924,6 +50746,56 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2111616349071913051",
+   "url": "https://x.com/rileybrown/status/2111616349071913051",
+   "author": {
+    "handle": "rileybrown",
+    "name": "Riley Brown"
+   },
+   "postedAt": "2026-10-18T00:32:24.000Z",
+   "addedAt": "2026-10-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "用Opus和Blender完成单提示词视频剪辑",
+    "en": "Single-prompt video edit with Opus and Blender"
+   },
+   "summary": {
+    "zh": "一段视频剪辑作品，画面围绕一个Blender场景旋转并配有音乐和音效，创作者录制视频后上传给Claude Opus 5.5，利用自己开发了一天的技能完成剪辑。",
+    "en": "A video edit synced with music and sound effects, all rotating around a single scene in Blender, created by recording video and uploading it to Claude Opus 5.5 using a custom skill the creator built."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 30005,
+    "likes": 540,
+    "replies": 109,
+    "reposts": 27,
+    "bookmarks": 540,
+    "checkedAt": "2026-10-19T06:12:55.215Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111615312332197888/img/YmDUaSD9anDxo0A_.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111615312332197888/vid/avc1/720x1280/OdFi44oXFgaaoml2.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 82
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -54648,6 +55520,54 @@
    }
   },
   {
+   "id": "2111552455846556003",
+   "url": "https://x.com/BlackJackieRBLX/status/2111552455846556003",
+   "author": {
+    "handle": "BlackJackieRBLX",
+    "name": "BlackJackie 🍌"
+   },
+   "postedAt": "2026-10-17T20:18:30.000Z",
+   "addedAt": "2026-10-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "由简短提示词一次生成Roblox风格3D模型",
+    "en": "Roblox-style 3D models from tiny prompts"
+   },
+   "summary": {
+    "zh": "创作者正在用Opus 5.5开发一套工作流，只需极简提示词即可一次性生成Roblox风格的3D模型，例如用\"skeleton undead horse\"这句提示生成的模型。",
+    "en": "A workflow for generating Roblox-style 3D models from very short prompts using Opus 5.5, with one example model made from the prompt \"skeleton undead horse\"."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 24601,
+    "likes": 467,
+    "replies": 14,
+    "reposts": 7,
+    "bookmarks": 511,
+    "checkedAt": "2026-10-19T06:12:55.215Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111551238193938432/img/9fuVGHn8k_XAolad.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111551238193938432/vid/avc1/1028x720/eJxNYMGkWwhSpW85.mp4?tag=14",
+    "width": 1028,
+    "height": 720,
+    "durationSec": 38
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103739912591929851",
    "url": "https://x.com/bukuro8810/status/2103739912591929851",
    "author": {
@@ -57087,6 +58007,56 @@
     "width": 720,
     "height": 1280,
     "durationSec": 15
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2111569193347018977",
+   "url": "https://x.com/kevin_t_ngo/status/2111569193347018977",
+   "author": {
+    "handle": "kevin_t_ngo",
+    "name": "Kevin Ngo"
+   },
+   "postedAt": "2026-10-17T21:25:01.000Z",
+   "addedAt": "2026-10-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "逐帧绘制的汉堡制作动画",
+    "en": "Frame-by-frame animation of burger making"
+   },
+   "summary": {
+    "zh": "一段展示汉堡制作过程的动画，每一帧均由Claude Opus 5.5使用JavaScript绘制，其中的图表使用了Pele库制作。",
+    "en": "An animation showing how burgers are made, with every frame drawn by Claude Opus 5.5 using JavaScript; diagrams for the piece were made with the Pele library."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Pele"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 22805,
+    "likes": 573,
+    "replies": 39,
+    "reposts": 34,
+    "bookmarks": 315,
+    "checkedAt": "2026-10-19T06:12:55.215Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111568343379673088/img/zbTrFNy0N9_z7TnY.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111568343379673088/vid/avc1/720x720/1QZkGwB1njIVpXwm.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 64
    },
    "evidence": {
     "via": "daily",
@@ -63973,6 +64943,54 @@
    }
   },
   {
+   "id": "2111582026092470741",
+   "url": "https://x.com/SergioGMN/status/2111582026092470741",
+   "author": {
+    "handle": "SergioGMN",
+    "name": "Pechofusil"
+   },
+   "postedAt": "2026-10-17T22:16:00.000Z",
+   "addedAt": "2026-10-19",
+   "lang": "es",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "讽刺时事的视频",
+    "en": "Satirical video of a current situation"
+   },
+   "summary": {
+    "zh": "一段根据引用的政治言论创作的情景视频，创作者要求Claude Opus 5.5制作该场景的视频，并自行生成了一段配乐。",
+    "en": "A video dramatizing a quoted political statement, generated by Claude Opus 5.5 after being asked to make a video of the situation, including a self-generated dubstep track."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 17829,
+    "likes": 428,
+    "replies": 10,
+    "reposts": 18,
+    "bookmarks": 47,
+    "checkedAt": "2026-10-19T06:12:55.215Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111581828683370496/img/xcvPoRKPinrefysJ.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111581828683370496/vid/avc1/1280x720/XWvD-kgAl7kCqKFQ.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 31
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103890985650422006",
    "url": "https://x.com/immortalhowwl/status/2103890985650422006",
    "author": {
@@ -65303,6 +66321,59 @@
     "width": 1280,
     "height": 720,
     "durationSec": 69
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2111518872272814233",
+   "url": "https://x.com/pankajkumar_dev/status/2111518872272814233",
+   "author": {
+    "handle": "pankajkumar_dev",
+    "name": "Pankaj Kumar"
+   },
+   "postedAt": "2026-10-17T18:05:03.000Z",
+   "addedAt": "2026-10-19",
+   "lang": "en",
+   "models": [
+    "fable-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "花园中漂浮小船的场景",
+    "en": "Boat floating in a garden scene"
+   },
+   "summary": {
+    "zh": "创作者用Fable 5.5生成了一幅花园中漂浮小船的画面，包含水面、树木、山脉、鸟类、桥和夜景灯光，称是一键生成，但回复中提到实际提示词很详细且耗时数小时。",
+    "en": "A creator used Fable 5.5 to generate an image of a boat floating in a garden with water, trees, mountains, birds, a bridge and night lighting, saying it was one-shotted from a brief prompt though a reply notes it was actually detailed and took hours."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/pankajkumar_dev/status/2111518872272814233",
+    "text": "create a boat floating in a garden"
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 17181,
+    "likes": 372,
+    "replies": 22,
+    "reposts": 15,
+    "bookmarks": 115,
+    "checkedAt": "2026-10-19T06:12:55.215Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111517136007086080/img/Ddu21YMM1JDtfFVv.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111517136007086080/vid/avc1/1280x720/NkBjESBItk9IJ_kr.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 57
    },
    "evidence": {
     "via": "daily",
@@ -69478,6 +70549,54 @@
    }
   },
   {
+   "id": "2111593216143216755",
+   "url": "https://x.com/Vywroteczka/status/2111593216143216755",
+   "author": {
+    "handle": "Vywroteczka",
+    "name": "Kizzo 🔌"
+   },
+   "postedAt": "2026-10-17T23:00:28.000Z",
+   "addedAt": "2026-10-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "Roblox脑腐风格角色模型",
+    "en": "Roblox brainrot character model"
+   },
+   "summary": {
+    "zh": "创作者展示了一个由Claude Opus 5.5一键生成的Roblox风格\"brainrot\"角色模型，称关注者可获得提示词，但本帖未公开该提示词。",
+    "en": "A creator shows a Roblox-style 'brainrot' character model one-shotted by Claude Opus 5.5, saying followers would get the prompt but not publishing it in this thread."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 14761,
+    "likes": 250,
+    "replies": 13,
+    "reposts": 9,
+    "bookmarks": 156,
+    "checkedAt": "2026-10-19T06:12:55.215Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111593150053523456/img/FywqI2smVk3hTCMf.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111593150053523456/vid/avc1/1280x720/jqHU6ex4rRg7HOKe.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 11
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2106060047805792415",
    "url": "https://x.com/chetaslua/status/2106060047805792415",
    "author": {
@@ -72568,6 +73687,57 @@
    }
   },
   {
+   "id": "2111546143343890933",
+   "url": "https://x.com/higgsfield_ai/status/2111546143343890933",
+   "author": {
+    "handle": "higgsfield_ai",
+    "name": "Higgsfield AI 🧩"
+   },
+   "postedAt": "2026-10-17T19:53:25.000Z",
+   "addedAt": "2026-10-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "水模拟效果模型对比",
+    "en": "Water simulation model comparison"
+   },
+   "summary": {
+    "zh": "Higgsfield展示了DeepSeek V4.1 Flash与Claude Opus 5.5在水体模拟三维建模评测中的对比效果。",
+    "en": "Higgsfield compares DeepSeek V4.1 Flash and Claude Opus 5.5 on a 3D water simulation modelling evaluation."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "DeepSeek V4.1 Flash",
+    "Higgsfield"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 13164,
+    "likes": 141,
+    "replies": 13,
+    "reposts": 17,
+    "bookmarks": 12,
+    "checkedAt": "2026-10-19T06:12:55.215Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111544673877766144/img/gOgqNPsfnQ1JtIv7.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111544673877766144/vid/avc1/720x900/UDftCZZ7c3YmQJ9f.mp4?tag=29",
+    "width": 720,
+    "height": 900,
+    "durationSec": 20
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103615638208217303",
    "url": "https://x.com/JohnKlerAI/status/2103615638208217303",
    "author": {
@@ -73566,6 +74736,57 @@
     "width": 720,
     "height": 810,
     "durationSec": 53
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2111504436493160773",
+   "url": "https://x.com/higgsfield_ai/status/2111504436493160773",
+   "author": {
+    "handle": "higgsfield_ai",
+    "name": "Higgsfield AI 🧩"
+   },
+   "postedAt": "2026-10-17T17:07:42.000Z",
+   "addedAt": "2026-10-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "悬浮云端运河城市世界对比",
+    "en": "Floating canal city world comparison"
+   },
+   "summary": {
+    "zh": "Higgsfield对比了DeepSeek V4.1 Flash与Claude Opus 5.5构建悬浮云层之上的运河城市的效果。",
+    "en": "Higgsfield compares DeepSeek V4.1 Flash and Claude Opus 5.5 building an elaborate canal city suspended above the clouds."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "DeepSeek V4.1 Flash",
+    "Higgsfield"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 12774,
+    "likes": 130,
+    "replies": 12,
+    "reposts": 13,
+    "bookmarks": 16,
+    "checkedAt": "2026-10-19T06:12:55.215Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111504341580591104/img/jhbFt8hTmGRWMszE.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111504341580591104/vid/avc1/720x720/PsHTumwJt8nhgyRX.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 20
    },
    "evidence": {
     "via": "daily",
@@ -75120,6 +76341,54 @@
     "width": 1280,
     "height": 720,
     "durationSec": 65
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2111668407418650660",
+   "url": "https://x.com/MindGate_dev/status/2111668407418650660",
+   "author": {
+    "handle": "MindGate_dev",
+    "name": "MindGate_dev"
+   },
+   "postedAt": "2026-10-18T03:59:15.000Z",
+   "addedAt": "2026-10-19",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "像素风角色攻击动作补帧",
+    "en": "Pixel art attack animation frame boost"
+   },
+   "summary": {
+    "zh": "一位像素风游戏开发者用Claude Opus 5.5将角色攻击动作从2帧扩展到10帧，方法是按身体部位分色、加入骨架并让AI摆出姿势，再手工修整每一帧；该游戏为Steam上的《MindGate CornerGet》。",
+    "en": "A pixel-art game developer used Claude Opus 5.5 to expand a character's attack animation from 2 frames to 10, by color-coding body parts, adding a rig and having the AI pose it, then hand-finishing every frame; the game is MindGate CornerGet on Steam."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 11949,
+    "likes": 352,
+    "replies": 10,
+    "reposts": 25,
+    "bookmarks": 255,
+    "checkedAt": "2026-10-19T06:12:55.215Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/media/HU4nVlabsAAvEZA.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111668376204673024/vid/avc1/720x720/JxPx_adCTuiSCW8P.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 40
    },
    "evidence": {
     "via": "daily",
@@ -77709,6 +78978,54 @@
    }
   },
   {
+   "id": "2111539098234310975",
+   "url": "https://x.com/_brightmirror/status/2111539098234310975",
+   "author": {
+    "handle": "_brightmirror",
+    "name": "Bright Mirror"
+   },
+   "postedAt": "2026-10-17T19:25:26.000Z",
+   "addedAt": "2026-10-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "最终首领",
+    "en": "Final boss"
+   },
+   "summary": {
+    "zh": "创作者分享了一张用Claude Opus 5.5制作的名为\"FINAL BOSS\"的图像，未说明所用提示词。",
+    "en": "A creator shares an image labeled 'FINAL BOSS' made with Claude Opus 5.5, without describing the prompt used."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 11155,
+    "likes": 321,
+    "replies": 37,
+    "reposts": 43,
+    "bookmarks": 187,
+    "checkedAt": "2026-10-19T06:12:55.215Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111535801947631616/img/hhue2n-sQteHIdyN.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111535801947631616/vid/avc1/1280x720/emDJk8rPT7sdTzYt.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 358
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102579218953765071",
    "url": "https://x.com/dobokuya77/status/2102579218953765071",
    "author": {
@@ -78130,6 +79447,54 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2111652513846026593",
+   "url": "https://x.com/MozeTech/status/2111652513846026593",
+   "author": {
+    "handle": "MozeTech",
+    "name": "Maximus Spritius"
+   },
+   "postedAt": "2026-10-18T02:56:06.000Z",
+   "addedAt": "2026-10-19",
+   "lang": "en",
+   "models": [
+    "fable-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "塞尔达与宝可梦跨界游戏",
+    "en": "Zelda Pokemon crossover game"
+   },
+   "summary": {
+    "zh": "作者用Fable 5.5的重路由功能一次性生成了塞尔达传说旷野之息与宝可梦的融合游戏。",
+    "en": "A Zelda: Breath of the Wild and Pokemon crossover game, created in one shot using Fable 5.5's rerouting feature."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 10855,
+    "likes": 171,
+    "replies": 29,
+    "reposts": 23,
+    "bookmarks": 106,
+    "checkedAt": "2026-10-19T06:12:55.215Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111652188821028865/img/JNU-ZV8IW8M85UmB.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111652188821028865/vid/avc1/1280x720/_se6lK2kHuOtUnQW.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 55
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -78586,6 +79951,102 @@
     "width": 954,
     "height": 720,
     "durationSec": 10
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2111508035482825171",
+   "url": "https://x.com/ksa8Turky/status/2111508035482825171",
+   "author": {
+    "handle": "ksa8Turky",
+    "name": "‏Turky"
+   },
+   "postedAt": "2026-10-17T17:22:00.000Z",
+   "addedAt": "2026-10-19",
+   "lang": "ar",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "Gemini套餐对比图表视频",
+    "en": "Gemini plans comparison chart video"
+   },
+   "summary": {
+    "zh": "作者用Claude Opus 5.5设计了一个对比表格视频，用来解释Gemini不同订阅套餐之间的区别。",
+    "en": "A short video with a comparison table explaining the differences between Gemini subscription tiers, designed using Claude Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 10632,
+    "likes": 146,
+    "replies": 5,
+    "reposts": 7,
+    "bookmarks": 89,
+    "checkedAt": "2026-10-19T06:12:55.215Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111281804611104768/img/SwmQHviVoB56EYHI.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111281804611104768/vid/avc1/1280x720/SMZU8FlDyLv5A_gy.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2111632702445437130",
+   "url": "https://x.com/hx831126/status/2111632702445437130",
+   "author": {
+    "handle": "hx831126",
+    "name": "虎小象"
+   },
+   "postedAt": "2026-10-18T01:37:23.000Z",
+   "addedAt": "2026-10-19",
+   "lang": "zh",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "剔纸动画风格服装宣传片",
+    "en": "Cut-out animation style clothing promo"
+   },
+   "summary": {
+    "zh": "作者用Opus 5.5制作了一段剪纸风格（cut-out animation）的服装宣传片，通过用自然语言描述主角、入场方式、节奏和质感来实现，而非使用技能（Skill）。",
+    "en": "A clothing promo clip made in a cut-out animation style, created with Opus 5.5 by describing the subject, entrance, pacing and texture in plain language rather than using a skill."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 10631,
+    "likes": 161,
+    "replies": 7,
+    "reposts": 18,
+    "bookmarks": 197,
+    "checkedAt": "2026-10-19T06:12:55.215Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111628771107524608/img/QTt1_iduk_GsryX5.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111628771107524608/vid/avc1/720x1280/cUMxfNiILIR9AnRZ.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 52
    },
    "evidence": {
     "via": "daily",
@@ -80009,6 +81470,60 @@
    }
   },
   {
+   "id": "2111525315138781370",
+   "url": "https://x.com/AlicanKiraz0/status/2111525315138781370",
+   "author": {
+    "handle": "AlicanKiraz0",
+    "name": "Alican Kiraz"
+   },
+   "postedAt": "2026-10-17T18:30:40.000Z",
+   "addedAt": "2026-10-19",
+   "lang": "en",
+   "models": [
+    "sonnet-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "AI开发工具对比：港口起重机模拟",
+    "en": "AI harness comparison: port crane simulation"
+   },
+   "summary": {
+    "zh": "作者对比了Pi、OpenCode、Claude Code和Cursor四种开发工具，在同样使用Sonnet 5.5模型的情况下完成港口起重机仿真任务，比较它们的成本、速度和输出质量。",
+    "en": "A benchmark comparing Pi, OpenCode, Claude Code and Cursor harnesses running the same Sonnet 5.5 model on a port crane simulation task, measuring cost, speed and output quality."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Pi",
+    "OpenCode",
+    "Claude Code",
+    "Cursor",
+    "OpenRouter"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 9990,
+    "likes": 126,
+    "replies": 12,
+    "reposts": 9,
+    "bookmarks": 36,
+    "checkedAt": "2026-10-19T06:12:55.215Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111524244513247232/img/Dx4HaL0nFBJSJoqV.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111524244513247232/vid/avc1/1294x720/H2Q8e-cU7yG116zC.mp4?tag=29",
+    "width": 1294,
+    "height": 720,
+    "durationSec": 75
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2111112282583548122",
    "url": "https://x.com/AI_Screening/status/2111112282583548122",
    "author": {
@@ -80053,6 +81568,61 @@
     "width": 720,
     "height": 1052,
     "durationSec": 14
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2111633479599272435",
+   "url": "https://x.com/MrTacticalX/status/2111633479599272435",
+   "author": {
+    "handle": "MrTacticalX",
+    "name": "Mr Tactical"
+   },
+   "postedAt": "2026-10-18T01:40:28.000Z",
+   "addedAt": "2026-10-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "Blender篝火场景：Opus对比GPT-6",
+    "en": "Blender campfire scene: Opus vs GPT-6"
+   },
+   "summary": {
+    "zh": "作者对比了Claude Opus 5.5与GPT-6 Astra，使用相同提示词在Blender中从零构建一个宁静夜晚篝火场景，不使用任何导入素材，均以最高强度运行。",
+    "en": "A side-by-side comparison of Claude Opus 5.5 and GPT-6 Astra building a calm night campfire scene from scratch in Blender with no imported assets, using the same prompt on Extra High effort."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "post",
+    "sourceUrl": "https://x.com/MrTacticalX/status/2111633479599272435",
+    "text": "build a calm night campfire from scratch in Blender. Zero imported assets.\n\nFlames, sparks, smoke and fireflies, all animated with code in a seamless loop."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 9949,
+    "likes": 133,
+    "replies": 22,
+    "reposts": 5,
+    "bookmarks": 27,
+    "checkedAt": "2026-10-19T06:12:55.215Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111632447934791681/img/r0KkJIdxs-BR7kDQ.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111632447934791681/vid/avc1/1280x720/JcEV62bWrHTamKBj.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 20
    },
    "evidence": {
     "via": "daily",
@@ -82166,6 +83736,54 @@
     "width": 1236,
     "height": 720,
     "durationSec": 7
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2111609842184130875",
+   "url": "https://x.com/viktoroddy/status/2111609842184130875",
+   "author": {
+    "handle": "viktoroddy",
+    "name": "Viktor Oddy"
+   },
+   "postedAt": "2026-10-18T00:06:32.000Z",
+   "addedAt": "2026-10-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "飞行跑车警匪追逐网页游戏",
+    "en": "Flying Roadster police chase browser game"
+   },
+   "summary": {
+    "zh": "一个可在浏览器中游玩的游戏，跑车可以飞行，后续还加入了警车，使用Opus 5.5在15分钟内完成。",
+    "en": "A browser-playable game where a Roadster can fly, with cops added later, built in 15 minutes using Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 9155,
+    "likes": 133,
+    "replies": 15,
+    "reposts": 9,
+    "bookmarks": 66,
+    "checkedAt": "2026-10-19T06:12:55.215Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111609105412681728/img/YoMaIiJY7D0BEyv-.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111609105412681728/vid/avc1/1106x720/3VJsx9RrAXMrfEUa.mp4?tag=29",
+    "width": 1106,
+    "height": 720,
+    "durationSec": 19
    },
    "evidence": {
     "via": "daily",
@@ -86429,6 +88047,57 @@
    }
   },
   {
+   "id": "2111543476123042185",
+   "url": "https://x.com/anxuanng/status/2111543476123042185",
+   "author": {
+    "handle": "anxuanng",
+    "name": "An Xuan"
+   },
+   "postedAt": "2026-10-17T19:42:49.000Z",
+   "addedAt": "2026-10-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "可玩的医院急诊科模拟场景",
+    "en": "Playable hospital emergency department sim"
+   },
+   "summary": {
+    "zh": "一个可玩的医院急诊科策略模拟，包含救护车、病床、扫描仪和护士，使用Blender建模并在Three.js中运行，借助Opus 5.5制作。",
+    "en": "A playable strategy-style simulation of a hospital emergency department with ambulances, beds, scanners and nurses, modeled in Blender and run in Three.js, built with Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Blender",
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 7448,
+    "likes": 213,
+    "replies": 7,
+    "reposts": 16,
+    "bookmarks": 149,
+    "checkedAt": "2026-10-19T06:12:55.215Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111543358078558208/img/FzahReu24wY1vSkW.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111543358078558208/vid/avc1/1280x720/sbEY-9DgHcuA0r8-.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102574373886697648",
    "url": "https://x.com/ria_aicreator/status/2102574373886697648",
    "author": {
@@ -88797,6 +90466,62 @@
    }
   },
   {
+   "id": "2111678979413598560",
+   "url": "https://x.com/liu8in/status/2111678979413598560",
+   "author": {
+    "handle": "liu8in",
+    "name": "Bin Liu"
+   },
+   "postedAt": "2026-10-18T04:41:16.000Z",
+   "addedAt": "2026-10-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "常用视频剪辑特效演示",
+    "en": "Common video editing effects showcase"
+   },
+   "summary": {
+    "zh": "一段展示常见剪辑特效（快速变焦、甩镜、动态字幕等）的竖版视频，使用HyperFrames Studio结合Opus 5.5制作，并以HeyGen虚拟形象和参考视频为素材。",
+    "en": "A vertical video showcasing common editing effects (crash zoom, whip pan, kinetic type, etc.) made in HyperFrames Studio with Opus 5.5 using a HeyGen avatar and a reference video."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/liu8in/status/2111678980973863306",
+    "text": "use my HeyGen avatar n make a video about common editing effects in HyperFrames Studio:\nCrash zoom,\nwhip pan,\nzoom-through,\nvertigo,\nrack focus,\ntext behind you,\nkinetic type,\nglass captions,\nchart grow,\nsplit screen,\nglitch cut,\npull-back reveal\n\nuse Reference Any Video tool, learn from:"
+   },
+   "referenceAssets": true,
+   "tools": [
+    "HeyGen",
+    "HyperFrames"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 6412,
+    "likes": 136,
+    "replies": 13,
+    "reposts": 9,
+    "bookmarks": 195,
+    "checkedAt": "2026-10-19T06:12:55.215Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111677004026413056/img/cyzqmcPHh3pzw16t.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111677004026413056/vid/avc1/720x1280/-F9QccB3UwDLruMQ.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 17
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2109042101019156848",
    "url": "https://x.com/majidmanzarpour/status/2109042101019156848",
    "author": {
@@ -88941,6 +90666,56 @@
     "width": 1116,
     "height": 720,
     "durationSec": 26
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2111556784418599403",
+   "url": "https://x.com/BlackJackieRBLX/status/2111556784418599403",
+   "author": {
+    "handle": "BlackJackieRBLX",
+    "name": "BlackJackie 🍌"
+   },
+   "postedAt": "2026-10-17T20:35:42.000Z",
+   "addedAt": "2026-10-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "Roblox模型绑定与动画测试",
+    "en": "Roblox model rigging and animation test"
+   },
+   "summary": {
+    "zh": "作者使用Opus 5.5和Sonnet测试了为Roblox风格3D模型生成骨骼绑定与动画的工作流程，模型是根据简短文字提示一次性生成的，使用旧的有问题的模型时出现了一些小瑕疵。",
+    "en": "The creator tested rigging and animation workflows for Roblox-style 3D models generated from short text prompts using Opus 5.5 and Sonnet, noting some minor issues from reused old 3D models."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Sonnet"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 6334,
+    "likes": 186,
+    "replies": 6,
+    "reposts": 5,
+    "bookmarks": 159,
+    "checkedAt": "2026-10-19T06:12:55.215Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111554862689230848/img/4hkLYxDPFspnqeEk.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111554862689230848/vid/avc1/814x720/y_04SdhC7rYnYDJu.mp4?tag=14",
+    "width": 814,
+    "height": 720,
+    "durationSec": 28
    },
    "evidence": {
     "via": "daily",
@@ -90921,6 +92696,57 @@
     "width": 1250,
     "height": 720,
     "durationSec": 72
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2111528513690026292",
+   "url": "https://x.com/anxuanng/status/2111528513690026292",
+   "author": {
+    "handle": "anxuanng",
+    "name": "An Xuan"
+   },
+   "postedAt": "2026-10-17T18:43:22.000Z",
+   "addedAt": "2026-10-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "可互动游玩的主题公园策略游戏",
+    "en": "Playable theme park strategy game"
+   },
+   "summary": {
+    "zh": "一个可玩的实时主题公园策略游戏，包含过山车、激流勇进、摩天轮和游客，由Opus 5.5制作，模型用Blender建模并在Three.js中运行。",
+    "en": "A live, playable theme-park strategy game with coasters, log flumes, Ferris wheels and guests, built with Opus 5.5 using assets modeled in Blender and rendered in Three.js."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Blender",
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 5046,
+    "likes": 142,
+    "replies": 3,
+    "reposts": 9,
+    "bookmarks": 83,
+    "checkedAt": "2026-10-19T06:12:55.215Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2111528385449234432/img/cBwIcP36a0eghskP.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2111528385449234432/vid/avc1/1280x720/5ghlN8ZKJqY-LOES.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 30
    },
    "evidence": {
     "via": "daily",
