@@ -1,5 +1,98 @@
 [
   {
+    "slug": "2026-10-20",
+    "date": "2026-10-20",
+    "title": "AI 快讯 · 10月20日",
+    "items": [
+      {
+        "title": "OpenAI提升ChatGPT对冷门编程语言的支持",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/low-resource-programming-languages",
+        "summary": "OpenAI公布针对低资源编程语言的新评测与改进，覆盖软件工程、SQLite及COBOL迁移。对开发者而言，ChatGPT处理遗留系统、数据库脚本和小众语言的可靠性有望提升。",
+        "titleEn": "OpenAI Improves Coding in Low-Resource Languages",
+        "summaryEn": "OpenAI describes improvements to ChatGPT for low-resource programming languages, backed by new evaluations covering software engineering, SQLite, and COBOL migration. The work matters because developers maintaining legacy systems and specialized codebases may get more reliable assistance where training data is comparatively scarce."
+      },
+      {
+        "title": "微软警告企业把AI智能体当作内部威胁管理",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/10/19/microsoft-says-ai-agents-are-like-insider-threats-as-frontier-models-cant-be-trusted/",
+        "summary": "微软认为前沿模型尚不能被完全信任，企业应像管理内部威胁一样监控员工使用的AI智能体，尤其是那些连接外部模型和内部系统的工具。智能体权限、审计与隔离将成为部署前提。",
+        "titleEn": "Microsoft Warns AI Agents Resemble Insider Threats",
+        "summaryEn": "Microsoft says enterprises should treat AI agents much like insider threats because frontier models cannot yet be fully trusted. The warning highlights the need for permission controls, monitoring, auditing, and isolation when agents connect employee workflows to sensitive internal systems or external model providers."
+      },
+      {
+        "title": "亚马逊推出TorchNeuron挑战英伟达软件生态",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/10/19/amazon-is-taking-its-biggest-shot-at-nvidia-yet-with-new-torchneuron-dev-tool/",
+        "summary": "亚马逊发布TorchNeuron开发工具，目标是让基于PyTorch构建的AI应用更容易运行在Trainium等替代芯片上。若工具链成熟，开发者迁移硬件的成本下降，AI算力市场也可能进一步去英伟达化。",
+        "titleEn": "Amazon Launches TorchNeuron to Challenge Nvidia",
+        "summaryEn": "Amazon has introduced TorchNeuron to make PyTorch-based AI applications easier to run on alternative hardware, including its own chips. A mature toolchain could lower the cost of migrating workloads away from Nvidia, giving developers more hardware options and intensifying competition across the AI infrastructure stack."
+      },
+      {
+        "title": "OpenCode遭攻击导致用户AI账户被盗刷",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/10/19/hackers-hit-ai-coding-tool-opencode-running-up-charges-on-users-ai-accounts/",
+        "summary": "开源编码智能体OpenCode遭遇平台入侵，部分用户API密钥被窃取并产生额外调用费用。事件提醒开发者，AI编程工具不仅要防代码供应链风险，还必须妥善隔离密钥、限制额度并审查代理行为。",
+        "titleEn": "OpenCode Attack Exposes Users to AI Account Abuse",
+        "summaryEn": "OpenCode was breached, exposing some users’ API keys and allowing attackers to run up charges on connected AI accounts. The incident shows that coding agents create risks beyond malicious code: developers also need strong secret isolation, spend limits, key rotation, and careful review of agent integrations."
+      },
+      {
+        "title": "Cursor上线插件规范与官方插件生态",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/cursor/plugins",
+        "summary": "Cursor推出插件规范及官方插件仓库，每个插件以独立目录和配置文件接入开发工具、框架与SaaS。此举将编码智能体的能力扩展从临时提示，推进到可安装、可复用、可分发的生态模式。",
+        "titleEn": "Cursor Opens an Official Plugin Ecosystem",
+        "summaryEn": "Cursor has published a plugin specification and an official repository for integrations with developer tools, frameworks, and SaaS products. By standardizing standalone plugin manifests, Cursor is moving agent capabilities beyond ad hoc prompts toward installable, reusable, and distributable extensions."
+      },
+      {
+        "title": "EvoWeb重新评测智能体持续迭代真实网站能力",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2610.16402",
+        "summary": "EvoWeb构建包含32个网站、320项连续需求的编码智能体基准，要求模型在同一代码库上持续修改并测试中间版本。它比一次性生成网页更接近真实开发，可帮助团队判断智能体能否长期维护产品。",
+        "titleEn": "EvoWeb Tests Agents on Evolving Web Applications",
+        "summaryEn": "EvoWeb introduces a benchmark with 32 web applications and 320 cumulative requests, requiring agents to iteratively modify and test persistent codebases. This is more realistic than one-shot website generation and helps developers measure whether an agent can preserve functionality while extending a product over time."
+      },
+      {
+        "title": "Lean4AgenticRL用分层奖励训练更强编码智能体",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2610.22448",
+        "summary": "Lean4AgenticRL不只根据最终任务是否完成来训练智能体，还加入工具调用和阶段流程奖励，并利用Lean验证过程。对开发者而言，这可能让模型更稳定地完成复杂终端操作和软件工程任务，而非靠偶然试错成功。",
+        "titleEn": "Lean4AgenticRL Adds Multi-Level Rewards for Agents",
+        "summaryEn": "Lean4AgenticRL trains agents with rewards at three levels: final outcomes, individual tool calls, and intermediate workflow stages, using Lean for verification. For developers, this could produce more reliable software-engineering and terminal agents that follow useful procedures instead of succeeding only through brittle trial and error."
+      }
+    ],
+    "funding": [
+      {
+        "company": "Tenstorrent",
+        "url": "https://techcrunch.com/2026/10/19/tenstorrent-hits-6-2b-valuation-to-scale-open-weight-ai-chips/",
+        "round": "undisclosed",
+        "amount": "$1.5B",
+        "valuation": "$6.2B",
+        "investors": "",
+        "pitch": "开放权重AI芯片公司，获巨额融资并升至62亿美元估值，继续挑战英伟达并保持独立发展。"
+      },
+      {
+        "company": "Town",
+        "url": "https://techcrunch.com/2026/10/19/ai-assistant-startup-town-nabs-unicorn-valuation-four-months-after-launch/",
+        "round": "Series B",
+        "amount": "$108M",
+        "valuation": "$1B",
+        "investors": "Forerunner Ventures、Menlo Ventures",
+        "pitch": "AI助手初创公司上线仅四个月即获1.08亿美元B轮，快速达到独角兽估值，显示消费级智能助理仍受资本追捧。"
+      }
+    ],
+    "jasonSays": "今天最值得关注的是AI智能体正在从功能竞赛进入基础设施与安全竞赛，插件标准、硬件工具链和密钥治理将共同决定其能否规模化落地。",
+    "jasonSaysEn": "The key shift is that AI agents are moving from feature competition to infrastructure and security competition, with plugin standards, hardware tooling, and secret governance shaping scalable adoption.",
+    "filename": "2026-10-20.md"
+  },
+  {
     "slug": "2026-10-19",
     "date": "2026-10-19",
     "title": "AI 快讯 · 10月19日",
@@ -79,7 +172,8 @@
     ],
     "jasonSays": "今天最值得关注的是AI应用与评测正在走向更细分的工程化：Claude Code扩展垂直工作流，同时新研究推动模型解释性和OCR、时序预测指标更贴近真实业务。",
     "jasonSaysEn": "The key trend today is AI becoming more engineering-specific: Claude Code is expanding into vertical workflows, while new research makes interpretability, OCR, and time-series evaluation more aligned with real-world applications.",
-    "filename": "2026-10-19.md"
+    "filename": "2026-10-19.md",
+    "coverImage": "/news/2026-10-19.png"
   },
   {
     "slug": "2026-10-18",
