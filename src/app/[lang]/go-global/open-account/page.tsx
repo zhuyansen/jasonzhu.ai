@@ -274,6 +274,14 @@ export default async function OpenAccountPage({ params }: { params: Promise<{ la
             {isZh ? "香港公司每年要做什么 →" : "A Hong Kong company, year by year (in Chinese) →"}
           </Link>
         </p>
+        <p className="text-sm text-gray-700 mb-4">
+          {isZh
+            ? "手上不止一家公司（比如国内公司、英国公司再加一家美国 LLC）：做 App 和收款各挂哪家，每家每年要报什么。"
+            : "More than one company (say one in China, one in the UK and a US LLC): which one publishes the app and takes the money, and what each files every year."}{" "}
+          <Link href={`/${lang}${GO_GLOBAL}/company-roles`} className="text-blue-600 hover:underline">
+            {isZh ? "三家公司怎么分工 →" : "Who does what (in Chinese) →"}
+          </Link>
+        </p>
         <div className="grid gap-4 md:grid-cols-3">
           {data.registration.map((r) => (
             <div key={r.key} className="rounded-2xl border border-gray-100 p-4">
@@ -289,6 +297,16 @@ export default async function OpenAccountPage({ params }: { params: Promise<{ la
               {r.key === "hk" && (
                 <Link href={`/${lang}${GO_GLOBAL}/hk-company`} className="mt-3 inline-block text-sm text-blue-600 hover:underline">
                   {isZh ? "注册以后每年要做什么 →" : "What it takes every year (in Chinese) →"}
+                </Link>
+              )}
+              {r.key === "us" && (
+                <Link href={`/${lang}${GO_GLOBAL}/company-roles#us-llc`} className="mt-3 inline-block text-sm text-blue-600 hover:underline">
+                  {isZh ? "外国人一人 LLC 每年要报什么 →" : "What a foreign-owned single-member LLC files (in Chinese) →"}
+                </Link>
+              )}
+              {r.key === "uk" && (
+                <Link href={`/${lang}${GO_GLOBAL}/company-roles#overseas-app`} className="mt-3 inline-block text-sm text-blue-600 hover:underline">
+                  {isZh ? "用英国公司上架海外版 App →" : "Publishing the overseas app from a UK company (in Chinese) →"}
                 </Link>
               )}
             </div>

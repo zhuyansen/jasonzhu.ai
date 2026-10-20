@@ -716,6 +716,15 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
               title={isZh ? "香港公司每年要做什么" : "A Hong Kong company, year by year (in Chinese)"}
               body={isZh ? "周年申报、商业登记、审计报税、公司秘书，一张时间表和每年的最低成本。" : "Annual return, business registration, audit and profits tax, a company secretary, with a calendar and the minimum yearly cost."}
             />
+            <Card
+              href={`/${lang}${GO_GLOBAL}/company-roles`}
+              title={isZh ? "国内、英国、美国三家公司怎么分工" : "A China, UK and US company: who does what (in Chinese)"}
+              body={
+                isZh
+                  ? "做 App 时国内版和海外版各挂哪家，美国客户的钱用谁收，三家每年各要报什么，国内公司给英国公司做开发怎么收服务费。"
+                  : "Which company publishes the China app and the overseas one, which takes US payments, what each files every year, and how the China company bills the UK one for development."
+              }
+            />
           </div>
           <Card
             href={`/${lang}${GO_GLOBAL}/payments`}

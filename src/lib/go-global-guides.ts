@@ -1,9 +1,10 @@
-// 出海专题的指南页（/[lang]/go-global/<slug>）：上线以后的出金、风控、香港公司年审，SEO 以外的获客，插件和应用商店。
+// 出海专题的指南页（/[lang]/go-global/<slug>）：上线以后的出金、风控、香港公司年审、三家公司怎么分工，SEO 以外的获客，插件和应用商店。
 // 每条事实都附官方来源（政府、平台自己的帮助和法律页面），核实日期写在 checked；Jason 自己的做法放在 mine，和官方事实分开。
 // 指南只有中文：en 页 canonical 指回 zh、不进 sitemap，和选品周报同一规则。
 
 import { CASH_OUT } from "./guides/cash-out";
 import { CHANNELS } from "./guides/channels";
+import { COMPANY_ROLES } from "./guides/company-roles";
 import { EXTENSIONS } from "./guides/extensions";
 import { HK_COMPANY } from "./guides/hk-company";
 import { PAYMENT_RISK } from "./guides/payment-risk";
@@ -53,7 +54,7 @@ export interface Guide {
   posts?: string[];
 }
 
-export const GUIDES: Guide[] = [CASH_OUT, PAYMENT_RISK, HK_COMPANY, CHANNELS, EXTENSIONS];
+export const GUIDES: Guide[] = [CASH_OUT, PAYMENT_RISK, HK_COMPANY, COMPANY_ROLES, CHANNELS, EXTENSIONS];
 
 export function guideBySlug(slug: string): Guide | undefined {
   return GUIDES.find((g) => g.slug === slug);
