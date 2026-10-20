@@ -1,11 +1,13 @@
 ---
-title: "UK Data Protection Fee: The £40/Year Compliance Must-Pay for SaaS Businesses"
+title: "UK Data Protection Fee: The £52/Year Compliance Must-Pay for SaaS Businesses"
 excerpt: "If your overseas company is registered in the UK and you're running a SaaS business, the data protection fee is a mandatory compliance requirement. Miss the deadline and you're looking at a £4,000 fine."
 ---
 
 ## UK Data Protection Fee
 
-Just paid the annual data protection fee for my UK company — **£40/year**.
+Just paid the annual data protection fee for my UK company — **£40/year** (the November 2024 price).
+
+> **Update, October 2026**: the fee went up on 17 February 2025. Micro-businesses now pay **£52/year**, or £47 by Direct Debit.
 
 If you're like me and have your overseas company registered in the UK while running a SaaS business, this is a mandatory compliance payment. Miss it and you could face a **£4,000 fine**.
 
@@ -16,14 +18,14 @@ Log in to the ICO website and pay online — it's straightforward: [https://ico.
 ## Things to Keep in Mind
 
 - If this is your first time, you'll need to register on the ICO website before you can pay
-- The fee may vary depending on your company size and turnover; small micro-businesses typically pay £40/year
+- The fee is tiered by company size and turnover; micro-businesses (tier 1) now pay £52/year, or £47 by Direct Debit (since February 2025; it was £40 before)
 - Set yourself a reminder so you don't forget to renew and end up getting fined
 
 ## FAQ
 
 ### How much is the UK data protection fee?
 
-For small micro-businesses, it's typically £40/year. The fee varies based on company size and turnover. You can pay directly through the ICO website (ico.org.uk).
+Micro-businesses (10 or fewer staff, or turnover up to £632,000) now pay £52/year, or £47 by Direct Debit; it rose from £40 on 17 February 2025. The fee is tiered by company size and turnover. You can pay directly through the ICO website (ico.org.uk).
 
 ### Which UK companies are required to pay the data protection fee?
 
