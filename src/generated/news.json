@@ -1,5 +1,98 @@
 [
   {
+    "slug": "2026-10-21",
+    "date": "2026-10-21",
+    "title": "AI 快讯 · 10月21日",
+    "items": [
+      {
+        "title": "BonBook推出MCP，在Claude里一键订机票",
+        "source": "Hacker News",
+        "category": "Skills 生态",
+        "url": "https://mcp.bonbook.co/claude-setup",
+        "summary": "BonBook 原本是通过邮件订机票的服务，已处理数万次请求。新推出的 MCP 支持在 Claude 内查询实时航班并直接下单，无需填写表单，积分和会员等级保留，全程约35秒。这是 MCP 从信息查询走向真实交易的一个落地案例，也展示了垂直服务接入 AI 助手的新分发路径。",
+        "titleEn": "BonBook MCP Enables One-Click Flight Booking in Claude",
+        "summaryEn": "BonBook, which began as an email-based flight booking service handling tens of thousands of requests, launched an MCP that searches live flights and books them inside Claude in about 35 seconds, with no forms and loyalty points preserved. It shows MCP moving from information retrieval to real transactions, and opens a new distribution channel for vertical services."
+      },
+      {
+        "title": "ai-memory让编码智能体跨厂商无缝交接任务",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/akitaonrails/ai-memory",
+        "summary": "这个开源项目为编码 CLI 提供长期记忆层。开发者可以中途退出 Claude Code，在同一目录启动 OpenAI Codex 继续工作，不必重新解释架构、失败过的方案和待解决问题。它针对各家智能体记忆互不相通的问题，适合同时使用多个工具或需要规避单一厂商锁定的开发者。",
+        "titleEn": "ai-memory Enables Cross-Vendor Handoff Between Coding Agents",
+        "summaryEn": "This open-source project adds a long-term memory layer for coding CLIs. Developers can quit Claude Code mid-task and continue in OpenAI Codex in the same directory without re-explaining architecture, failed approaches or open questions. It tackles siloed vendor memory and suits developers who mix tools or want to avoid lock-in."
+      },
+      {
+        "title": "HDA论文拆解智能体Harness优化的真实收益",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2610.22466",
+        "summary": "Harness 优化指不改模型权重，只自动调整提示词、Skills、工具和编排代码来提升智能体表现。论文提出 Harness-Delta Attribution，用来区分提升中有多少来自针对评测集的过拟合、有多少来自额外的推理算力、又有多少能真正泛化。对调 Skills 和 Prompt 的开发者来说，它提醒：评测分数上涨不等于线上效果变好。",
+        "titleEn": "HDA Dissects Real Gains From Agent Harness Evolution",
+        "summaryEn": "Harness evolution improves agents by automatically tuning prompts, skills, tools and orchestration code without changing model weights. The paper introduces Harness-Delta Attribution to separate gains caused by benchmark overfitting, by extra inference compute, and by genuine generalization. For developers tuning skills and prompts, it warns that higher benchmark scores may not translate to production."
+      },
+      {
+        "title": "Anthropic云算力合作生变，11月IPO前承压",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/10/20/anthropics-cloud-partnerships-are-getting-messy/",
+        "summary": "据报道，云厂商越来越把 Anthropic 视为竞争对手，导致它难以获得足够算力。与此同时，Anthropic 的基础设施支出持续攀升，并计划于11月 IPO。算力供给直接影响 Claude 的容量、限流和价格，依赖 Claude API 的开发者值得关注。",
+        "titleEn": "Anthropic's Cloud Compute Deals Strain Ahead of IPO",
+        "summaryEn": "Anthropic is reportedly struggling to secure enough compute from cloud providers that increasingly see it as a competitor, while its infrastructure spending balloons ahead of a planned November IPO. Compute supply directly affects Claude's capacity, rate limits and pricing, so developers relying on the Claude API should watch closely."
+      },
+      {
+        "title": "Anthropic提AI安全法案：50人致死风险可禁模型",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/10/20/anthropic-pitches-ai-safety-bill-that-may-block-a-model-if-50-people-could-be-killed/",
+        "summary": "Anthropic 提出一项 AI 安全立法建议：若模型可能导致50人以上死亡，可阻止其发布。TechCrunch 指出，该提案同时规定联邦机构未经法官许可不得阻止模型发布，实际上为模型发布设置了较高的监管门槛。这项提案可能影响美国前沿模型监管的走向。",
+        "titleEn": "Anthropic Pitches AI Safety Bill With 50-Death Threshold",
+        "summaryEn": "Anthropic proposed an AI safety bill that could block a model's release if it might kill 50 or more people. TechCrunch notes the proposal also bars federal agencies from blocking a release without a judge's permission, effectively setting a high bar for regulatory intervention. It could shape how frontier models are regulated in the US."
+      },
+      {
+        "title": "加盟店主用ChatGPT将对账时间缩短94%",
+        "source": "OpenAI Blog",
+        "category": "变现案例",
+        "url": "https://openai.com/index/ted-taylor-restaurant",
+        "summary": "一位独立经营 Schlotzsky's 和 Cinnabon 的加盟商用 ChatGPT Work 搭建工作流：现金对账时间减少94%，菜单调价时间减少95%，预计可释放约10万美元现金流。这是 AI 帮助传统小企业省时省钱的具体案例，对做中小企业 AI 自动化服务的开发者有参考价值。",
+        "titleEn": "Franchisee Cuts Cash Reconciliation Time 94% With ChatGPT",
+        "summaryEn": "An independent Schlotzsky's and Cinnabon franchisee used ChatGPT Work to cut cash reconciliation time by 94% and menu repricing time by 95%, building a workflow that could free up about $100K in cash flow. It is a concrete SMB case and a useful reference for developers selling AI automation to traditional small businesses."
+      },
+      {
+        "title": "DeepSeek V4.1 Flash领衔西方开源模型反击",
+        "source": "Interconnects",
+        "category": "AI 工具动态",
+        "url": "https://www.interconnects.ai/p/latest-open-artifacts-25-deepseek",
+        "summary": "Interconnects 最新一期开源模型盘点覆盖 DeepSeek V4.1 Flash 1017、多款美国自研开源模型，以及中美两国新的监管管控。同期还有 MiniMax M3.1 Flash、Mercury 3 等轻量模型发布。开源模型竞争加剧，开发者在低成本部署上的选择正在变多。",
+        "titleEn": "DeepSeek V4.1 Flash Leads Latest Open Model Wave",
+        "summaryEn": "Interconnects' latest open-artifacts roundup covers DeepSeek V4.1 Flash 1017, a wave of American-made open models, and new regulatory controls in both the US and China. Lightweight models such as MiniMax M3.1 Flash and Mercury 3 also shipped. Competition among open models is intensifying, giving developers more low-cost deployment options."
+      },
+      {
+        "title": "TokenGate让大模型像人一样略读长上下文",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2610.26754",
+        "summary": "TokenGate 是一个可直接接入已训练模型的小组件，让模型学会在处理长输入时只细读关键 token，跳过其余部分。这样能显著加快预填充（prefill，即模型读取输入的阶段）并节省显存。对需要把整个代码仓库或长文档塞进上下文的应用来说，这意味着更低的延迟和推理成本。",
+        "titleEn": "TokenGate Lets LLMs Skim Long Contexts for Faster Prefill",
+        "summaryEn": "TokenGate is a small drop-in component that teaches existing trained models to learn which tokens to prune in long inputs, skimming most of the text and reading only what matters. This speeds up prefill, the stage where the model reads its input, and cuts memory use. For apps feeding whole repos or long documents, it means lower latency and inference cost."
+      }
+    ],
+    "funding": [
+      {
+        "company": "Orchestra Bio",
+        "url": "https://techcrunch.com/2026/10/20/openai-acquires-startup-orchestra-bio%e2%81%a0-to-beef-up-its-biotech-business/",
+        "round": "Acquisition",
+        "amount": "undisclosed",
+        "valuation": "",
+        "investors": "OpenAI",
+        "pitch": "AI驱动的生命科学研发运营平台，并入OpenAI后支持其Rosalind模型与Workbench，标志OpenAI加码生物医药赛道。"
+      }
+    ],
+    "jasonSays": "MCP开始承载订机票这类真实交易，ai-memory则在打通不同编码智能体之间的记忆；与此同时，Anthropic在IPO前面临算力供给压力，可能影响Claude生态的容量与价格。",
+    "jasonSaysEn": "MCP is starting to handle real transactions like flight booking and ai-memory is bridging memory across coding agents, while Anthropic's pre-IPO compute squeeze could affect capacity and pricing across the Claude ecosystem.",
+    "filename": "2026-10-21.md"
+  },
+  {
     "slug": "2026-10-20",
     "date": "2026-10-20",
     "title": "AI 快讯 · 10月20日",
@@ -90,7 +183,8 @@
     ],
     "jasonSays": "今天最值得关注的是AI智能体正在从功能竞赛进入基础设施与安全竞赛，插件标准、硬件工具链和密钥治理将共同决定其能否规模化落地。",
     "jasonSaysEn": "The key shift is that AI agents are moving from feature competition to infrastructure and security competition, with plugin standards, hardware tooling, and secret governance shaping scalable adoption.",
-    "filename": "2026-10-20.md"
+    "filename": "2026-10-20.md",
+    "coverImage": "/news/2026-10-20.png"
   },
   {
     "slug": "2026-10-19",
