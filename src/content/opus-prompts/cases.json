@@ -1,8 +1,8 @@
 {
  "model": "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.5)",
  "threshold": 5000,
- "updatedAt": "2026-10-22T06:07:09.837Z",
- "statsCheckedAt": "2026-10-22T06:07:09.837Z",
+ "updatedAt": "2026-10-22T18:01:11.598Z",
+ "statsCheckedAt": "2026-10-22T18:01:11.598Z",
  "inclusionRule": "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -11774,6 +11774,56 @@
    }
   },
   {
+   "id": "2112940162103615783",
+   "url": "https://x.com/0xMovez/status/2112940162103615783",
+   "author": {
+    "handle": "0xMovez",
+    "name": "Movez"
+   },
+   "postedAt": "2026-10-21T16:12:45.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "互动机器人工程教学网站",
+    "en": "Interactive robotics engineering lesson"
+   },
+   "summary": {
+    "zh": "这是一个互动机器人教育网站，涵盖13种电路板、组装步骤和元件故障模拟。创作者称其使用 Claude Opus 5.5 和 /colorfigures 技能制作。",
+    "en": "An interactive robotics education site covers 13 boards, assembly steps, and component failure simulations. The creator says it was made with Claude Opus 5.5 and the /colorfigures skill."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "colorfigures"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 184489,
+    "likes": 5241,
+    "replies": 89,
+    "reposts": 658,
+    "bookmarks": 6413,
+    "checkedAt": "2026-10-22T18:01:11.598Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112939486963269633/img/fQMnKNKVIw6ETNOc.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112939486963269633/vid/avc1/856x720/xXnOR1FlRn0jLx95.mp4?tag=29",
+    "width": 856,
+    "height": 720,
+    "durationSec": 46
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2112122511509065797",
    "url": "https://x.com/WaterrrMiao/status/2112122511509065797",
    "author": {
@@ -13399,6 +13449,59 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2112805269000646907",
+   "url": "https://x.com/AlleyBo55/status/2112805269000646907",
+   "author": {
+    "handle": "AlleyBo55",
+    "name": "AlleyBoss"
+   },
+   "postedAt": "2026-10-21T07:16:44.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "实时 Solana 卡牌交易浏览器",
+    "en": "Live Solana trading card explorer"
+   },
+   "summary": {
+    "zh": "这是一个宝可梦图鉴风格的 Solana 追踪器，展示实时挂牌、钱包活动、交易解析、机器人和训练师卡片。项目用 Next.js 构建，在 Kiro 中借助 Claude Opus 5.5 完成。",
+    "en": "A Pokédex-style Solana tracker shows live listings, wallet activity, decoded transactions, bots, and Trainer Cards. It uses Next.js and was built in Kiro with Claude Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Next.js",
+    "Kiro",
+    "solanatrackr",
+    "Helius"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 160894,
+    "likes": 223,
+    "replies": 19,
+    "reposts": 41,
+    "bookmarks": 0,
+    "checkedAt": "2026-10-22T18:01:11.598Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112803569200160768/img/yinVWfdh4N1mQZlX.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112803569200160768/vid/avc1/1280x720/pjzCQyc0Pk4QUxq-.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 76
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -20192,6 +20295,54 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2112801199099637785",
+   "url": "https://x.com/konstantinsaifo/status/2112801199099637785",
+   "author": {
+    "handle": "konstantinsaifo",
+    "name": "Konstantin Saifoulline"
+   },
+   "postedAt": "2026-10-21T07:00:34.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "互动卡车装载追踪视图",
+    "en": "Interactive truck load tracking view"
+   },
+   "summary": {
+    "zh": "这是一个货物装载模拟器，展示26批货物、5个停靠点、5辆卡车和车轴检查，并支持拖拽重新装载及合法载荷优化。创作者称其由 Claude Opus 5.5 制作。",
+    "en": "A cargo-loading simulator visualizes 26 loads, five stops, five trucks, and axle checks, with drag-and-drop re-packing and legal-load optimization. The creator says Claude Opus 5.5 built it."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 109533,
+    "likes": 1530,
+    "replies": 38,
+    "reposts": 152,
+    "bookmarks": 1357,
+    "checkedAt": "2026-10-22T18:01:11.598Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112800166180720640/img/jptuATBrhlqx9GtH.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112800166180720640/vid/avc1/1280x720/Zr8QscWsOGPQ-AxD.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 26
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -29467,6 +29618,54 @@
     "width": 1280,
     "height": 720,
     "durationSec": 50
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2112873177185660940",
+   "url": "https://x.com/BreejeAnadkat/status/2112873177185660940",
+   "author": {
+    "handle": "BreejeAnadkat",
+    "name": "Breeje Anadkat"
+   },
+   "postedAt": "2026-10-21T11:46:35.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "流畅界面动画",
+    "en": "Smooth interface animation"
+   },
+   "summary": {
+    "zh": "这是一个强调流畅动画的应用界面。创作者称其完全使用 Claude Opus 5.5 设计和构建，没有使用 Figma。",
+    "en": "The work is an app interface focused on smooth animations. The creator says it was designed and built entirely with Claude Opus 5.5 without using Figma."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 71374,
+    "likes": 2153,
+    "replies": 99,
+    "reposts": 91,
+    "bookmarks": 1508,
+    "checkedAt": "2026-10-22T18:01:11.598Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112872172066881536/img/9VuMFtWOVOF7UAAL.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112872172066881536/vid/avc1/720x1324/xx0jHdDh7geYyrHe.mp4?tag=29",
+    "width": 720,
+    "height": 1324,
+    "durationSec": 11
    },
    "evidence": {
     "via": "daily",
@@ -41127,6 +41326,54 @@
    }
   },
   {
+   "id": "2112896717523681365",
+   "url": "https://x.com/0xwhrrari/status/2112896717523681365",
+   "author": {
+    "handle": "0xwhrrari",
+    "name": "rari"
+   },
+   "postedAt": "2026-10-21T13:20:07.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "基于 PDF 的动效视频",
+    "en": "PDF-driven motion design video"
+   },
+   "summary": {
+    "zh": "创作者称 Opus 5.5 能根据提供的 PDF 生成视频，并在链接的指南中讨论动态图形设计制作。",
+    "en": "The creator says Opus 5.5 can turn a supplied PDF into a video and discusses motion-design production in a linked guide."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 46900,
+    "likes": 593,
+    "replies": 16,
+    "reposts": 35,
+    "bookmarks": 636,
+    "checkedAt": "2026-10-22T18:01:11.598Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112894983002857474/img/6_byoNXmkA0fmsRZ.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112894983002857474/vid/avc1/1282x720/FEREwnyI2igtezrt.mp4?tag=29",
+    "width": 1282,
+    "height": 720,
+    "durationSec": 20
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2104967024812118196",
    "url": "https://x.com/dataX_e/status/2104967024812118196",
    "author": {
@@ -44961,6 +45208,56 @@
    }
   },
   {
+   "id": "2112887335687749657",
+   "url": "https://x.com/kinderlayer/status/2112887335687749657",
+   "author": {
+    "handle": "kinderlayer",
+    "name": "Kinder"
+   },
+   "postedAt": "2026-10-21T12:42:51.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "白虎视频模型对比",
+    "en": "White tiger model comparison"
+   },
+   "summary": {
+    "zh": "创作者比较了 Gemini 4 Argon 和 Claude Opus 5.5 用同一提示生成的白虎宫殿场景。",
+    "en": "The creator compared Gemini 4 Argon and Claude Opus 5.5 generating a white tiger prowling across a palace floor from the same prompt."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Gemini 4 Argon"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 42273,
+    "likes": 125,
+    "replies": 40,
+    "reposts": 7,
+    "bookmarks": 77,
+    "checkedAt": "2026-10-22T18:01:11.598Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112887268285272064/img/3FFPsXZ6R-KAfbYi.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112887268285272064/vid/avc1/720x1280/K4T11TBs_ayqN7Rk.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 15
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102735000177451446",
    "url": "https://x.com/dprophecyguy/status/2102735000177451446",
    "author": {
@@ -46471,6 +46768,63 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2112848340224258550",
+   "url": "https://x.com/MrTacticalX/status/2112848340224258550",
+   "author": {
+    "handle": "MrTacticalX",
+    "name": "Mr Tactical"
+   },
+   "postedAt": "2026-10-21T10:07:53.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5",
+    "sonnet-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "温馨村庄渲染对比",
+    "en": "Cozy village rendering comparison"
+   },
+   "summary": {
+    "zh": "创作者比较了用 Blender 制作的日落村庄动画：一组由单个 Claude Opus 5.5 智能体完成，另一组由十个 Claude Sonnet 5.5 智能体完成，均使用代码且没有素材。",
+    "en": "The creator compared a Blender village animation made by one Claude Opus 5.5 agent with one made by ten Claude Sonnet 5.5 agents, using code and no assets."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/MrTacticalX/status/2112848344414327058",
+    "text": "Make a realistic, cinematic animation of a living cozy village at sunset, entirely from scratch, in Blender. A little village sits in a green valley beside a winding river as the sun goes down: cottages with thatched and tiled roofs, a market square with stalls and lanterns, a stone bridge, a big windmill turning slowly on the hill, and a water wheel turning in the river. Chimney smoke drifts up, horse carts roll along the roads, laundry sways, birds fly home. As the golden sunset fades into a warm blue evening, the street lamps and windows light up one by one, until the whole village glows peacefully under the first stars."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Blender",
+    "Claude Sonnet 5.5"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 39397,
+    "likes": 339,
+    "replies": 20,
+    "reposts": 10,
+    "bookmarks": 166,
+    "checkedAt": "2026-10-22T18:01:11.598Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112848277712285696/img/yuE_nPXJG7xP1wIv.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112848277712285696/vid/avc1/1280x720/_Zq-FTwzzbBRSFU9.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 40
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -49840,6 +50194,58 @@
    }
   },
   {
+   "id": "2112833515037610354",
+   "url": "https://x.com/Pluvio9yte/status/2112833515037610354",
+   "author": {
+    "handle": "Pluvio9yte",
+    "name": "雪踏乌云"
+   },
+   "postedAt": "2026-10-21T09:08:59.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "zh",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "《桃花源记》探险小游戏",
+    "en": "Peach Blossom Spring adventure game"
+   },
+   "summary": {
+    "zh": "创作者将《桃花源记》做成明亮的第三人称探险小游戏，使用了 Claude Code、PINOC、Codex 生图功能和网页 3D 引擎。",
+    "en": "The creator made a bright third-person adventure game based on Peach Blossom Spring, using Claude Code, PINOC, Codex image generation, and a web 3D engine."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Claude Code",
+    "PINOC",
+    "Codex"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 35307,
+    "likes": 242,
+    "replies": 43,
+    "reposts": 20,
+    "bookmarks": 258,
+    "checkedAt": "2026-10-22T18:01:11.598Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112833385177731073/img/gamV4XR8hxl1Fnc-.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112833385177731073/vid/avc1/1446x720/Xu6v7RZG69Rj99Wa.mp4?tag=29",
+    "width": 1446,
+    "height": 720,
+    "durationSec": 23
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103783920248528997",
    "url": "https://x.com/leopardracer/status/2103783920248528997",
    "author": {
@@ -51820,6 +52226,59 @@
     "width": 1280,
     "height": 720,
     "durationSec": 45
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2112890224426553836",
+   "url": "https://x.com/rewind02/status/2112890224426553836",
+   "author": {
+    "handle": "rewind02",
+    "name": "rewind"
+   },
+   "postedAt": "2026-10-21T12:54:19.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "按参考图还原的三维办公室",
+    "en": "Reference-matched 3D office in Blender"
+   },
+   "summary": {
+    "zh": "创作者用参考图、Claude Opus 5.5 和 Blender 构建了一个包含 1,876 个物体的 3D 办公室，并介绍了导入 Unreal Engine 5 的流程。",
+    "en": "The creator built a detailed 3D office from reference shots with Claude Opus 5.5 and Blender, then described a workflow for moving a room into Unreal Engine 5."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Blender",
+    "Blender MCP",
+    "Tripo",
+    "Unreal Engine 5"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 33109,
+    "likes": 786,
+    "replies": 38,
+    "reposts": 80,
+    "bookmarks": 804,
+    "checkedAt": "2026-10-22T18:01:11.598Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112890162858397696/img/iBu5L5F4WmlDC1hA.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112890162858397696/vid/avc1/1280x720/E_rhdHb2MepD-7wU.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 40
    },
    "evidence": {
     "via": "daily",
@@ -53862,6 +54321,54 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2112880050706293081",
+   "url": "https://x.com/tnexplorer/status/2112880050706293081",
+   "author": {
+    "handle": "tnexplorer",
+    "name": "Sabareeswaran Elangovan"
+   },
+   "postedAt": "2026-10-21T12:13:54.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "斯里朗甘无人机素材短片",
+    "en": "Drone footage reel about Srirangam"
+   },
+   "summary": {
+    "zh": "创作者提供斯里兰甘的无人机素材，由 Claude Opus 5.5 核实信息、选择歌曲并完成动画和剪辑。",
+    "en": "The creator supplied drone footage of Srirangam and had Claude Opus 5.5 check facts, choose the song, and build the reel's animations and edit."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 30860,
+    "likes": 294,
+    "replies": 10,
+    "reposts": 14,
+    "bookmarks": 183,
+    "checkedAt": "2026-10-22T18:01:11.598Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112879611965313024/img/uq7BJR9zXZv2-7ok.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112879611965313024/vid/avc1/720x1280/9EOtLwobz1NUklKu.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 57
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -62788,6 +63295,58 @@
    }
   },
   {
+   "id": "2112827697030414461",
+   "url": "https://x.com/sakatayasha/status/2112827697030414461",
+   "author": {
+    "handle": "sakatayasha",
+    "name": "Sakata"
+   },
+   "postedAt": "2026-10-21T08:45:52.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "纸张与织物变形效果对比",
+    "en": "Paper and fabric deformation comparison"
+   },
+   "summary": {
+    "zh": "创作者比较了四个模型模拟纸张和弹性织物在压力下弯曲、起皱与变形的效果。",
+    "en": "The creator compared four models on simulating paper and elastic fabric bending, wrinkling, and deformation under pressure."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "MiniMax M3.1 Flash",
+    "DeepSeek V4.1 Flash",
+    "GLM 5.3 Flash"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 22910,
+    "likes": 183,
+    "replies": 38,
+    "reposts": 7,
+    "bookmarks": 51,
+    "checkedAt": "2026-10-22T18:01:11.598Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112827525038759936/img/MkXQswTLqkJLygPE.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112827525038759936/vid/avc1/576x576/ldRcVuOgLEwmJAy3.mp4?tag=29",
+    "width": 576,
+    "height": 576,
+    "durationSec": 6
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2111974919353544757",
    "url": "https://x.com/kevin_t_ngo/status/2111974919353544757",
    "author": {
@@ -66964,6 +67523,57 @@
    }
   },
   {
+   "id": "2112907086204117270",
+   "url": "https://x.com/M__Houser/status/2112907086204117270",
+   "author": {
+    "handle": "M__Houser",
+    "name": "Mike Houser"
+   },
+   "postedAt": "2026-10-21T14:01:19.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "开放世界奇幻游戏",
+    "en": "Open-world fantasy game"
+   },
+   "summary": {
+    "zh": "Aestra 是一款多人游戏，新职业已被玩家用于终局内容。创作者称游戏使用 Claude Opus 5.5 和 Three.js 制作，TesanaAI 负责资产、多人功能和发布。",
+    "en": "Aestra is a multiplayer game whose new classes are being used in endgame content. The creator says it was built with Claude Opus 5.5 and Three.js, while TesanaAI handled assets, multiplayer, and publishing."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "TesanaAI",
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 19949,
+    "likes": 301,
+    "replies": 29,
+    "reposts": 27,
+    "bookmarks": 198,
+    "checkedAt": "2026-10-22T18:01:11.598Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112905522383032320/img/O560o6Hpo3WkWHpu.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112905522383032320/vid/avc1/1280x720/LY1mLPO1z99AOhkd.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 52
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2111912410131153254",
    "url": "https://x.com/techartist_/status/2111912410131153254",
    "author": {
@@ -69378,6 +69988,54 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2112964568616169890",
+   "url": "https://x.com/Tanjim38/status/2112964568616169890",
+   "author": {
+    "handle": "Tanjim38",
+    "name": "Tanjim"
+   },
+   "postedAt": "2026-10-21T17:49:44.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "es",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "开源任务管理应用",
+    "en": "Open-source task management app"
+   },
+   "summary": {
+    "zh": "创作者展示了一个带网页演示的开源任务管理项目，并表示 Claude 帮助加快了开发速度。",
+    "en": "The creator presents an open-source task-management project with a web demo and says Claude helped speed up development."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 18536,
+    "likes": 451,
+    "replies": 14,
+    "reposts": 19,
+    "bookmarks": 502,
+    "checkedAt": "2026-10-22T18:01:11.598Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112964065655934977/img/mz8UlmnhQ7F9MUev.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112964065655934977/vid/avc1/1140x720/FCRyC6oqpcUXVsdk.mp4?tag=29",
+    "width": 1140,
+    "height": 720,
+    "durationSec": 22
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -72346,6 +73004,58 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2112818987084161227",
+   "url": "https://x.com/badboyfoxy/status/2112818987084161227",
+   "author": {
+    "handle": "badboyfoxy",
+    "name": "badboyfoxy"
+   },
+   "postedAt": "2026-10-21T08:11:15.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5",
+    "fable-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "末日开放世界游戏",
+    "en": "Post-apocalyptic open-world game"
+   },
+   "summary": {
+    "zh": "创作者正在制作一款尚未完成的末日开放世界游戏，使用 Claude Opus 5.5、Blender 和 Godot，目前投入了 17 小时和 118 美元。",
+    "en": "The creator is building an unfinished post-apocalyptic open-world game with Claude Opus 5.5, Blender, and Godot, spending 17 hours and $118 so far."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Blender",
+    "Godot"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 17202,
+    "likes": 240,
+    "replies": 42,
+    "reposts": 5,
+    "bookmarks": 67,
+    "checkedAt": "2026-10-22T18:01:11.598Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112818020158439424/img/AHbHD1sEFnxhNHtq.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112818020158439424/vid/avc1/1284x720/0EqfOjQ7WsQlb6Ja.mp4?tag=29",
+    "width": 1284,
+    "height": 720,
+    "durationSec": 127
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -84129,6 +84839,62 @@
    }
   },
   {
+   "id": "2112861737980494273",
+   "url": "https://x.com/marcthecreatorr/status/2112861737980494273",
+   "author": {
+    "handle": "marcthecreatorr",
+    "name": "Marcel"
+   },
+   "postedAt": "2026-10-21T11:01:08.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "en",
+   "models": [
+    "sonnet-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "HTML三维城堡模型对比",
+    "en": "HTML 3D castle model comparison"
+   },
+   "summary": {
+    "zh": "Sonnet 5.5 和 DeepSeek V4.1 Flash 1017 使用同一要求，在一个 HTML 文件中制作 3D 中世纪城堡；作者比较了两者的耗时和成本。",
+    "en": "Sonnet 5.5 and DeepSeek V4.1 Flash 1017 were given the same task of building a 3D medieval castle in one HTML file. The creator compared their time and cost."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/marcthecreatorr/status/2112861737980494273",
+    "text": "build a 3D medieval castle in one HTML file."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "DeepSeek V4.1 Flash 1017",
+    "Claude Code"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 11779,
+    "likes": 134,
+    "replies": 33,
+    "reposts": 4,
+    "bookmarks": 23,
+    "checkedAt": "2026-10-22T18:01:11.598Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112861575082016768/img/6T7kn3YxmIRoIQZV.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112861575082016768/vid/avc1/1280x720/UiTauTjzbIrUrO8I.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 46
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102586912993116411",
    "url": "https://x.com/majidmanzarpour/status/2102586912993116411",
    "author": {
@@ -86758,6 +87524,54 @@
    }
   },
   {
+   "id": "2112913135782756652",
+   "url": "https://x.com/konstantinsaifo/status/2112913135782756652",
+   "author": {
+    "handle": "konstantinsaifo",
+    "name": "Konstantin Saifoulline"
+   },
+   "postedAt": "2026-10-21T14:25:22.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "特斯拉工厂策略模拟",
+    "en": "Tesla factory strategy simulation"
+   },
+   "summary": {
+    "zh": "这是一个用 Claude Opus 5.5 制作的工厂经营模拟游戏，玩家管理一座年产 5 万辆 Semi 的工厂，并能查看每辆卡车的模拟状态。",
+    "en": "A Claude Opus 5.5 simulation lets users manage a Tesla factory as a strategy game, with 50,000 Semis per year and individual trucks simulated."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 10798,
+    "likes": 158,
+    "replies": 15,
+    "reposts": 16,
+    "bookmarks": 94,
+    "checkedAt": "2026-10-22T18:01:11.598Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112912418036695040/img/j2kbrclE-vStr5l3.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112912418036695040/vid/avc1/1280x720/CmuDBPqLav2O6HbJ.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 35
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103591810253914585",
    "url": "https://x.com/harpreetchatha_/status/2103591810253914585",
    "author": {
@@ -87201,6 +88015,59 @@
    }
   },
   {
+   "id": "2112929520239996946",
+   "url": "https://x.com/RafaCrackYT/status/2112929520239996946",
+   "author": {
+    "handle": "RafaCrackYT",
+    "name": "Rafa"
+   },
+   "postedAt": "2026-10-21T15:30:28.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "AI模型空战生成对比",
+    "en": "AI model jet dogfight comparison"
+   },
+   "summary": {
+    "zh": "作者让四个 AI 模型一次性制作电影感喷气式战斗机空战，并公布了各模型的成本和完成时间。",
+    "en": "Four AI models built a cinematic jet dogfight in a one-shot comparison. The creator reports each model's cost and completion time."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Gemini 4 Argon",
+    "DeepSeek V4.1 Flash 1017",
+    "MiniMax M3.1 Flash",
+    "Claude Code"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 10648,
+    "likes": 109,
+    "replies": 9,
+    "reposts": 9,
+    "bookmarks": 35,
+    "checkedAt": "2026-10-22T18:01:11.598Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112929348911026176/img/sNxueAKpIYcBYITV.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112929348911026176/vid/avc1/1280x720/9mQfcRgioH6sujq8.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103630446202667376",
    "url": "https://x.com/lucky_note_lab/status/2103630446202667376",
    "author": {
@@ -87491,6 +88358,56 @@
     "width": 1280,
     "height": 720,
     "durationSec": 11
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2112861606715814141",
+   "url": "https://x.com/KeWai386772/status/2112861606715814141",
+   "author": {
+    "handle": "KeWai386772",
+    "name": "MSB"
+   },
+   "postedAt": "2026-10-21T11:00:36.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "zh",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "互动式三维作品集书",
+    "en": "Interactive 3D portfolio book"
+   },
+   "summary": {
+    "zh": "作品是一本 3D 立体书形式的作品集模板。作者表示使用 Opus 5.5 和 Claude Code 制作，并分享了工作流及 900 个风格关键词。",
+    "en": "The work is a 3D book-style portfolio template. The creator says it was made with Opus 5.5 and Claude Code, alongside a workflow and a library of 900 style keywords."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Claude Code"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 10581,
+    "likes": 134,
+    "replies": 8,
+    "reposts": 17,
+    "bookmarks": 150,
+    "checkedAt": "2026-10-22T18:01:11.598Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112860807352750080/img/wdMqhwFQagJSFRD6.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112860807352750080/vid/avc1/1244x720/V_bNGGhG_E-_oAoG.mp4?tag=29",
+    "width": 1244,
+    "height": 720,
+    "durationSec": 67
    },
    "evidence": {
     "via": "daily",
@@ -87949,6 +88866,59 @@
    }
   },
   {
+   "id": "2112897537430741143",
+   "url": "https://x.com/ann_nnng/status/2112897537430741143",
+   "author": {
+    "handle": "ann_nnng",
+    "name": "Ann Nguyen"
+   },
+   "postedAt": "2026-10-21T13:23:23.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "铃兰岛屿三维场景",
+    "en": "Lily of the valley island scene"
+   },
+   "summary": {
+    "zh": "作者用 Claude Opus 5.5 通过代码生成了一座铃兰小岛，岛上有两个人正在做饭。",
+    "en": "Claude Opus 5.5 created a small lily-of-the-valley island with two people cooking on it, entirely through code."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/ann_nnng/status/2112897537430741143",
+    "text": "create a lil lily of the valley island, and there's 2 people cooking on it."
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 10338,
+    "likes": 374,
+    "replies": 21,
+    "reposts": 23,
+    "bookmarks": 193,
+    "checkedAt": "2026-10-22T18:01:11.598Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112896934809939968/img/Ta0iRtuzJT50k7DK.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112896934809939968/vid/avc1/768x720/A6GcvEaFNYj4hVb3.mp4?tag=29",
+    "width": 768,
+    "height": 720,
+    "durationSec": 24
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103549280082612377",
    "url": "https://x.com/VincentWei93/status/2103549280082612377",
    "author": {
@@ -88034,6 +89004,63 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2112897791022264814",
+   "url": "https://x.com/olezhavich/status/2112897791022264814",
+   "author": {
+    "handle": "olezhavich",
+    "name": "Olezhka"
+   },
+   "postedAt": "2026-10-21T13:24:23.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "三维喷气发动机模型对比",
+    "en": "3D jet engine model comparison"
+   },
+   "summary": {
+    "zh": "创作者比较了 DeepSeek、Claude Opus 5.5 和 GPT-6.1 Sol，用 Three.js 制作交互式三维喷气发动机剖面展示。",
+    "en": "The creator compared DeepSeek, Claude Opus 5.5, and GPT-6.1 Sol on an interactive 3D jet-engine cutaway built in Three.js."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/olezhavich/status/2112897884186177661",
+    "text": "Create a visually impressive interactive 3D cutaway jet engine experience in Three.js.\nThe result should feel like a premium technical visualization or futuristic engineering showcase.\nThe first few seconds must have a strong wow effect and immediately hook the viewer.\nCore idea:\nBuild a detailed jet engine in 3D with a clean outer shell, and let the viewer explore the inside through cutaway, x-ray, and exploded-style views.\nMain requirements:\nBuild a full 3D jet engine from scratch in code\nNo pre-made 3D models\nUse Three.js\nPrefer a single HTML file unless a few small extra files are truly necessary\nThe project must run locally in the browser\nThe engine should include:\nfront fan blades\ncompressor stages\ncombustion chamber\nturbine stages\nexhaust section\nouter shell / nacelle\ninternal shaft structure\nvisible airflow path\nInteractions / modes:\nassembled mode\ncutaway mode\nx-ray mode\nexploded view mode\nairflow visualization on/off\nthrottle or power slider\nauto-rotate camera option\norbit controls\nAnimation ideas:\nengine startup sequence\nfan spins up first\ninner stages accelerate\ncombustion chamber ignites\nhot glowing section appears in the core\nexhaust flow becomes visible\nsubtle vibration / mechanical life\nVisual quality:\npolished lighting\npremium materials\ngood contrast between outer shell and internals\nsmooth transitions between modes\nreadable labels or callouts for key engine parts\ncinematic presentation\nstrong sense of depth\nThe first seconds should feel especially strong:\nfor example, begin with a clean hero shot of the engine, then smoothly reveal the cutaway and ignite the core.\nMake it feel detailed, technical, and visually satisfying rather than toy-like."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Three.js",
+    "DeepSeek V4.1 Flash 1017",
+    "GPT-6.1 Sol"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 10315,
+    "likes": 144,
+    "replies": 13,
+    "reposts": 5,
+    "bookmarks": 41,
+    "checkedAt": "2026-10-22T18:01:11.598Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112897415829209088/img/7Gd4VsYr8xNE5hkS.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112897415829209088/vid/avc1/720x1216/K8bkHj6aDN1yTM6Z.mp4?tag=29",
+    "width": 720,
+    "height": 1216,
+    "durationSec": 29
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -89484,6 +90511,54 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2112802541327331552",
+   "url": "https://x.com/konstantinsaifo/status/2112802541327331552",
+   "author": {
+    "handle": "konstantinsaifo",
+    "name": "Konstantin Saifoulline"
+   },
+   "postedAt": "2026-10-21T07:05:54.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "实时三维物流模拟",
+    "en": "Live 3D delivery simulation"
+   },
+   "summary": {
+    "zh": "Claude Opus 5.5 制作了一个三维物流可视化，展示货物、停靠点和每次卸货后的车轴检查。",
+    "en": "Claude Opus 5.5 built a 3D logistics visualization showing truck loads, stops, and axle checks."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 9718,
+    "likes": 221,
+    "replies": 5,
+    "reposts": 21,
+    "bookmarks": 152,
+    "checkedAt": "2026-10-22T18:01:11.598Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112802450746867712/img/wOoSv4uHD_B-BxfD.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112802450746867712/vid/avc1/1280x720/3P3RpbrEjRtk5ko2.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 9
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -94271,6 +95346,58 @@
    }
   },
   {
+   "id": "2112882581809025189",
+   "url": "https://x.com/N01ennn/status/2112882581809025189",
+   "author": {
+    "handle": "N01ennn",
+    "name": "NO1ennn"
+   },
+   "postedAt": "2026-10-21T12:23:57.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "28秒短片",
+    "en": "28-second short film"
+   },
+   "summary": {
+    "zh": "创作者称这部28秒短片是在Premiere崩溃时通过一次与Opus 5.5的对话完成的，并将提示词发布在Substack上。",
+    "en": "A 28-second film was made in one chat with Opus 5.5 while Premiere was crashing. The creator published the prompt on Substack."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Adobe Premiere"
+   ],
+   "resources": [
+    "https://substack.com/@N01ennn"
+   ],
+   "stats": {
+    "views": 8238,
+    "likes": 142,
+    "replies": 19,
+    "reposts": 9,
+    "bookmarks": 112,
+    "checkedAt": "2026-10-22T18:01:11.598Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112882485738586112/img/9vO8cfCs4UifZZWB.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112882485738586112/vid/avc1/1280x720/hetF3s9agpaStbLa.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 37
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2110704086299341225",
    "url": "https://x.com/hakimieiqbal/status/2110704086299341225",
    "author": {
@@ -97455,6 +98582,57 @@
    }
   },
   {
+   "id": "2112877982239096988",
+   "url": "https://x.com/kevin_t_ngo/status/2112877982239096988",
+   "author": {
+    "handle": "kevin_t_ngo",
+    "name": "Kevin Ngo"
+   },
+   "postedAt": "2026-10-21T12:05:40.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "非官方Theranos广告",
+    "en": "Unofficial Theranos commercial"
+   },
+   "summary": {
+    "zh": "创作者让 Claude Opus 5.5 制作一支非官方 Theranos 广告，并用 Python 制作动画、用 Blender 渲染。",
+    "en": "The creator asked Claude Opus 5.5 to make an unofficial Theranos commercial, animated with Python and rendered in Blender."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Python",
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 6978,
+    "likes": 133,
+    "replies": 11,
+    "reposts": 1,
+    "bookmarks": 41,
+    "checkedAt": "2026-10-22T18:01:11.598Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112876162053726208/img/TIv7QvS8MR--6O9z.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112876162053726208/vid/avc1/720x720/j0ZHnMLHHITcnHp4.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 64
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2111957286620930535",
    "url": "https://x.com/dummerspast39/status/2111957286620930535",
    "author": {
@@ -97595,6 +98773,62 @@
     "width": 720,
     "height": 888,
     "durationSec": 77
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2112923979002368406",
+   "url": "https://x.com/semichenkko/status/2112923979002368406",
+   "author": {
+    "handle": "semichenkko",
+    "name": "Semichenko"
+   },
+   "postedAt": "2026-10-21T15:08:27.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "果冻眼球模型对比",
+    "en": "Jelly eyeball model comparison"
+   },
+   "summary": {
+    "zh": "这是一个用来比较MiniMax M3.1和Opus 5.5的果冻眼球交互场景。提示词要求制作单文件Three.js HTML页面，包含可变形物理效果和交互控件。",
+    "en": "A jelly eyeball interactive scene compares MiniMax M3.1 and Opus 5.5. The prompt specifies a Three.js single-file HTML scene with deformable physics and interactive controls."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/semichenkko/status/2112941229641965730",
+    "text": "Build a single-file HTML + Three.js interactive scene called \"Jelly / Eyeball.\"\n\nLook: premium product render on a clean white background. One large gummy eyeball sits on the floor in the center - milky translucent jelly sclera with fine red veins, a glowing blue iris with radial fibers, a glossy black pupil and a clear wet cornea bulge on top. A red gummy optic nerve trails behind it on the floor. Soft colored glow and a soft shadow underneath. Around the edges: small jelly pumpkins (purple, green, orange), jelly beans and candy corn, all glossy and translucent. Physically based materials (transmission, clearcoat), environment reflections, ACES tone mapping, soft shadows.\n\nThe eye is a real soft body - deformation happens in the vertex shader so the sclera, iris, pupil and cornea all bend together:\n1. It always watches the cursor, and keeps finding you even after it rolls.\n2. Tap it - a gooey dent with a ripple, jelly eyelids blink, the pupil contracts, and it does a small hop.\n3. Grab and drag it - the grabbed spot stretches toward the cursor like taffy into a teardrop. Lift it up and it dangles and sways with gravity.\n4. Flick and release - it gets thrown with the hand's velocity plus a slingshot recoil from the stretch. It squashes and stretches along its velocity in flight, splats on the floor and walls with a big squash, bounces, rolls (the iris rolls with it), then wobbles and rights itself to look back at you.\n5. Pull it sideways and let go - it snaps back like a slingshot.\n6. Grab the nerve - it is a verlet rope, so you can lift the eye by it and swing it around.\n7. Double-tap - hypnotized: the pupil dilates and the gaze spins in circles.\n8. Hard landings make it dizzy - its eyes wander for a moment.\n\nJelly secondary motion everywhere: volume-preserving squash on impacts, shear wobble when it accelerates, ripples from pokes.\n\nUI: elegant serif italic title \"Jelly /\" with \"Eyeball.\" in the iris color top-left, small kicker \"Nº 12 / Soft goods · October\", short grey subtitle. Small white control panel top-right: iris color swatches (changes the iris and title color), sliders for Pupil and Wobble, a live \"Mood\" status (Curious / Startled / Stretched / Airborne / Dizzy / Dangling / Hypnotized), a \"Blink\" button and a \"Pour candy\" button that rains gummies that bounce off the eye and dent it. Bottom hints: \"Drag to stretch · Flick to throw · Tap to poke · Pull the nerve\". Price \"2.90 €\" bottom-right.\n\nSmooth 60fps."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "MiniMax M3.1",
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 6892,
+    "likes": 100,
+    "replies": 21,
+    "reposts": 1,
+    "bookmarks": 30,
+    "checkedAt": "2026-10-22T18:01:11.598Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112923941119447040/img/gQiFyv8uIffxmZ_X.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112923941119447040/vid/avc1/720x992/TUrVM-FaxvV2LGG5.mp4?tag=29",
+    "width": 720,
+    "height": 992,
+    "durationSec": 32
    },
    "evidence": {
     "via": "daily",
