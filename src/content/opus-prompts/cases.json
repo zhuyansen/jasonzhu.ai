@@ -1,8 +1,8 @@
 {
  "model": "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.5)",
  "threshold": 5000,
- "updatedAt": "2026-10-21T18:06:00.446Z",
- "statsCheckedAt": "2026-10-21T18:06:00.446Z",
+ "updatedAt": "2026-10-22T06:07:09.837Z",
+ "statsCheckedAt": "2026-10-22T06:07:09.837Z",
  "inclusionRule": "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -5381,6 +5381,54 @@
     "width": 720,
     "height": 900,
     "durationSec": 16
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2112607156088299774",
+   "url": "https://x.com/ivanainai/status/2112607156088299774",
+   "author": {
+    "handle": "ivanainai",
+    "name": "Ivana"
+   },
+   "postedAt": "2026-10-20T18:09:31.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "薄荷糖模拟效果变化",
+    "en": "Mentos simulation over time"
+   },
+   "summary": {
+    "zh": "作者用同一个曼妥思模拟提示词，相隔20天在 Opus 5.5 上各跑了一次，对比两次结果，质疑模型是否被暗中削弱。提示词本身没有公开。",
+    "en": "A comparison of two runs of the same Mentos simulation prompt on Opus 5.5, made 20 days apart. The creator asks whether the model has been degraded. The prompt itself is not shared."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 405275,
+    "likes": 2285,
+    "replies": 282,
+    "reposts": 72,
+    "bookmarks": 433,
+    "checkedAt": "2026-10-22T06:07:09.837Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112606927192543232/img/AVB6De0xnNqmirXD.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112606927192543232/vid/avc1/720x890/7Q0eUeA2gNOFnEVC.mp4?tag=29",
+    "width": 720,
+    "height": 890,
+    "durationSec": 20
    },
    "evidence": {
     "via": "daily",
@@ -27663,6 +27711,59 @@
    }
   },
   {
+   "id": "2112653827644301328",
+   "url": "https://x.com/mickeyxfriedman/status/2112653827644301328",
+   "author": {
+    "handle": "mickeyxfriedman",
+    "name": "mickey friedman"
+   },
+   "postedAt": "2026-10-20T21:14:58.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "用低成本片段合成的鱿鱼游戏场景",
+    "en": "Squid Game scene assembled from low-cost clips"
+   },
+   "summary": {
+    "zh": "一段鱿鱼游戏主题的演示短片。Opus 5.5 作为编程智能体写分镜和镜头提示词，调用自托管的 fastH3-omni 生成片段，检查并重拍有问题的镜头，最后剪成一个完整场景。",
+    "en": "A Squid Game-themed demo scene. Opus 5.5, running as a coding agent, wrote the storyboard and shot prompts, generated clips with self-hosted fastH3-omni, reviewed and reshot takes, then edited them into one scene."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Seedance",
+    "MiniMax H3",
+    "fastH3-omni",
+    "Claude Code"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 76257,
+    "likes": 251,
+    "replies": 28,
+    "reposts": 10,
+    "bookmarks": 259,
+    "checkedAt": "2026-10-22T06:07:09.837Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112651411179917312/img/vm2bKUxRs_Jc2qCa.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112651411179917312/vid/avc1/810x720/-YslkgbURdebLeIo.mp4?tag=29",
+    "width": 810,
+    "height": 720,
+    "durationSec": 60
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2104040489301295502",
    "url": "https://x.com/bitstein/status/2104040489301295502",
    "author": {
@@ -31529,6 +31630,59 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2112709928771277158",
+   "url": "https://x.com/xikhar/status/2112709928771277158",
+   "author": {
+    "handle": "xikhar",
+    "name": "Shikhar"
+   },
+   "postedAt": "2026-10-21T00:57:53.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "游戏中的城市建造",
+    "en": "City built inside a game"
+   },
+   "summary": {
+    "zh": "用 Opus 5.5 在游戏里搭建城市的早期预览。项目在 Unreal Engine 中从零制作，配合 Blender 建模，并用 ImageGen 生成参考图。",
+    "en": "An early preview of a city built inside a game with Opus 5.5. It was made in Unreal Engine from scratch, using Blender and reference images generated with ImageGen."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Unreal Engine",
+    "Blender",
+    "ImageGen",
+    "Tripo"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 66133,
+    "likes": 1584,
+    "replies": 106,
+    "reposts": 71,
+    "bookmarks": 730,
+    "checkedAt": "2026-10-22T06:07:09.837Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112709538264784896/img/atuxVnANRtiGf_Vo.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112709538264784896/vid/avc1/1152x720/wFzr32yLYkkeKoCR.mp4?tag=29",
+    "width": 1152,
+    "height": 720,
+    "durationSec": 41
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -35548,6 +35702,61 @@
    }
   },
   {
+   "id": "2112656453685367004",
+   "url": "https://x.com/emollick/status/2112656453685367004",
+   "author": {
+    "handle": "emollick",
+    "name": "Ethan Mollick"
+   },
+   "postedAt": "2026-10-20T21:25:24.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "在飞机上使用无线网络的水獭",
+    "en": "Otter on a plane using Wi-Fi"
+   },
+   "summary": {
+    "zh": "作者让 Opus 5.5 针对他常用的“水獭在飞机上用 wifi”测试做出终极回应，模型做了一段视频。配音时，模型自行选用了作者此前在 ElevenLabs 上克隆好的声音。",
+    "en": "A video Opus 5.5 made in response to the creator's otter-on-a-plane-using-wifi test. The model chose on its own to use an existing ElevenLabs clone of the creator's voice for narration."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/emollick/status/2112656453685367004",
+    "text": "create the ultimate response to the test I use for all AI image generation models (make a picture of \"an otter on a plane using wifi\")"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "ElevenLabs"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 56898,
+    "likes": 802,
+    "replies": 140,
+    "reposts": 60,
+    "bookmarks": 311,
+    "checkedAt": "2026-10-22T06:07:09.837Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112655781908885504/img/h9k8sbyhep7dKfVB.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112655781908885504/vid/avc1/1280x720/s3UKBPJmuhToOYxS.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 110
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102501773705670994",
    "url": "https://x.com/chetaslua/status/2102501773705670994",
    "author": {
@@ -38047,6 +38256,60 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2112671240964219290",
+   "url": "https://x.com/MrTacticalX/status/2112671240964219290",
+   "author": {
+    "handle": "MrTacticalX",
+    "name": "Mr Tactical"
+   },
+   "postedAt": "2026-10-20T22:24:10.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5",
+    "sonnet-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "穿越五个世界的动画角色",
+    "en": "Animated journey through five worlds"
+   },
+   "summary": {
+    "zh": "用同一提示词对比 Opus 5.5 和 Sonnet 5.5：纯代码制作一段24秒动态设计视频，Claude 小角色穿越五个世界。两者使用相同的时间轴，帖子列出了各自的耗时和成本。",
+    "en": "Opus 5.5 and Sonnet 5.5 compared on the same prompt: a code-only 24-second motion design video of a Claude character travelling through five worlds. Both used the same timeline, and the post gives each model's time and cost."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/MrTacticalX/status/2112671524712821037",
+    "text": "Make a short, fast, stunning animated motion design video, entirely from scratch, in code: \"Claude's Journey\". Claude, a cute rounded terracotta-orange cube character with two dot eyes, travels through five worlds (ocean, city, space, forest, neon), transforming to fit each one. Every transition is a seamless match-cut where Claude morphs into the next world's look exactly on the beat."
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 52229,
+    "likes": 353,
+    "replies": 22,
+    "reposts": 4,
+    "bookmarks": 174,
+    "checkedAt": "2026-10-22T06:07:09.837Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112670940442025984/img/2irEj1xQriBIeSaT.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112670940442025984/vid/avc1/1280x720/RjklgTz-28o5Bned.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 24
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -48812,6 +49075,61 @@
    }
   },
   {
+   "id": "2112756630203011516",
+   "url": "https://x.com/MrTacticalX/status/2112756630203011516",
+   "author": {
+    "handle": "MrTacticalX",
+    "name": "Mr Tactical"
+   },
+   "postedAt": "2026-10-21T04:03:28.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "不同努力等级制作的鬼屋",
+    "en": "Haunted house at different effort levels"
+   },
+   "summary": {
+    "zh": "Opus 5.5 用代码在 Blender 中从零制作的鬼屋动画。同一提示词分别以 Low 和 Extra High 两档推理强度运行，帖子对比了两者的耗时和成本。",
+    "en": "A haunted house animation built entirely in Blender through code by Opus 5.5. The same prompt was run at Low and Extra High effort, and the post compares their time and cost."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/MrTacticalX/status/2112756632950129083",
+    "text": "Make a realistic, cinematic \"haunted house\" animation, entirely from scratch, in Blender. An old crooked wooden house stands on a small hill at night under a full moon, surrounded by a broken fence, dead trees and a pumpkin patch. Over the animation the house wakes up: the jack-o'-lanterns light up one by one, fog rolls across the ground, bats burst out of the chimney, ghostly shapes drift past the windows, and the front door slowly creaks open with an eerie glow inside. Then everything fades back to a quiet, misty night."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 36352,
+    "likes": 335,
+    "replies": 33,
+    "reposts": 5,
+    "bookmarks": 140,
+    "checkedAt": "2026-10-22T06:07:09.837Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112756299720986624/img/TgD3DHUj1rtJijpE.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112756299720986624/vid/avc1/1280x720/vDszoCev9MsUwrfl.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 46
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2109705700930957328",
    "url": "https://x.com/0xkerazcity/status/2109705700930957328",
    "author": {
@@ -50121,6 +50439,54 @@
     "width": 1280,
     "height": 720,
     "durationSec": 60
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2112700824220832140",
+   "url": "https://x.com/DanielZambrini/status/2112700824220832140",
+   "author": {
+    "handle": "DanielZambrini",
+    "name": "Daniel Zambrini"
+   },
+   "postedAt": "2026-10-21T00:21:43.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "motion",
+   "title": {
+    "zh": "火柴人打斗动画",
+    "en": "Stickman fight animation"
+   },
+   "summary": {
+    "zh": "作者重新跑了一遍自己的火柴人打斗测试，用 Opus 5.5 生成了一段打斗动画。他认为效果和刚发布时一样好，只是消耗的 token 更多。",
+    "en": "A stickman fight animation made by rerunning the creator's earlier Opus 5.5 test. The creator says the result matches launch-day quality but used more tokens."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 34624,
+    "likes": 201,
+    "replies": 29,
+    "reposts": 8,
+    "bookmarks": 129,
+    "checkedAt": "2026-10-22T06:07:09.837Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112680246868627456/img/g4iWZH3Uqs9J6oL_.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112680246868627456/vid/avc1/720x896/HudgPmmp-eCUIqjj.mp4?tag=29",
+    "width": 720,
+    "height": 896,
+    "durationSec": 15
    },
    "evidence": {
     "via": "daily",
@@ -55862,6 +56228,58 @@
    }
   },
   {
+   "id": "2112624828767154621",
+   "url": "https://x.com/KaladinOG/status/2112624828767154621",
+   "author": {
+    "handle": "KaladinOG",
+    "name": "ball-zee"
+   },
+   "postedAt": "2026-10-20T19:19:44.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "拖车公园大战网页射击游戏",
+    "en": "Trailer Park Warfare browser shooter game"
+   },
+   "summary": {
+    "zh": "《Trailer Park Warfare: Neck Beard Edition》是作者用 Opus 5.5 一天做出的网页游戏。游戏基于 Three.js，3D 素材来自 Fal，音效来自 ElevenLabs，整体由 Opus 统一调度。",
+    "en": "Trailer Park Warfare: Neck Beard Edition is a browser game built with Opus 5.5 in one day. It runs on Three.js, with 3D assets from Fal and sounds from ElevenLabs, all orchestrated by Opus."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js",
+    "Fal",
+    "ElevenLabs"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 28374,
+    "likes": 301,
+    "replies": 44,
+    "reposts": 42,
+    "bookmarks": 94,
+    "checkedAt": "2026-10-22T06:07:09.837Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112624362545094656/img/-qHXBlj3RHBaju2X.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112624362545094656/vid/avc1/1280x720/CtpzubyzNcQ_86_u.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 52
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2110658162214785351",
    "url": "https://x.com/algekalipso/status/2110658162214785351",
    "author": {
@@ -57578,6 +57996,54 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2112654123669639665",
+   "url": "https://x.com/konstantinsaifo/status/2112654123669639665",
+   "author": {
+    "handle": "konstantinsaifo",
+    "name": "Konstantin Saifoulline"
+   },
+   "postedAt": "2026-10-20T21:16:08.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "一张 Shopify 订单从下单到送达的全过程",
+    "en": "Journey of a Shopify order from click to doorstep"
+   },
+   "summary": {
+    "zh": "这是一个用 Claude Opus 5.5 做的交互式仓库模拟，追踪一笔 Shopify 订单从下单到送达的全过程。用户可以点击任意员工查看其工作，还能切换改动来对比结果。",
+    "en": "An interactive warehouse simulation made with Claude Opus 5.5 that follows one Shopify order from click to delivery. Users can click any worker to see what they do and toggle changes to compare outcomes."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 26712,
+    "likes": 159,
+    "replies": 11,
+    "reposts": 15,
+    "bookmarks": 107,
+    "checkedAt": "2026-10-22T06:07:09.837Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112653137144070144/img/b-Hjbk0TxmaQSmpe.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112653137144070144/vid/avc1/1280x720/YDoUG8PiIjOa6oEe.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 44
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -60617,6 +61083,54 @@
    }
   },
   {
+   "id": "2112708402367639740",
+   "url": "https://x.com/MrTacticalX/status/2112708402367639740",
+   "author": {
+    "handle": "MrTacticalX",
+    "name": "Mr Tactical"
+   },
+   "postedAt": "2026-10-21T00:51:50.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "含首领战与火山地图的3D塔防游戏",
+    "en": "3D tower defense game with bosses and volcano maps"
+   },
+   "summary": {
+    "zh": "这是一款用 Claude Opus 5.5 开发的 3D 塔防游戏，有 5 张地图、14 种防御塔、Boss 战和成群的敌人。作者表示这是几周的工作成果，并非一条提示词就能做出来。",
+    "en": "A 3D tower defense game built with Claude Opus 5.5, with 5 maps, 14 towers, boss fights and large enemy hordes. The creator says it took weeks of work, not a single prompt."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 24187,
+    "likes": 502,
+    "replies": 45,
+    "reposts": 23,
+    "bookmarks": 373,
+    "checkedAt": "2026-10-22T06:07:09.837Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112707198799245312/img/-dKCcj9pJ8tGYPDo.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112707198799245312/vid/avc1/1280x720/mbNb5WlZdFSiusyD.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 60
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2106656783221899534",
    "url": "https://x.com/L_ARCH_01/status/2106656783221899534",
    "author": {
@@ -62708,6 +63222,58 @@
    "evidence": {
     "via": "fxtwitter",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2112725241319301315",
+   "url": "https://x.com/ashen_one/status/2112725241319301315",
+   "author": {
+    "handle": "ashen_one",
+    "name": "ashen"
+   },
+   "postedAt": "2026-10-21T01:58:44.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "《恶霸鲁尼》移植虚幻引擎：全地图、载具与武器",
+    "en": "Bully port in Unreal with full map, vehicles, weapons"
+   },
+   "summary": {
+    "zh": "作者把《Bully》移植到虚幻引擎的第四部分，加入了完整地图、载具和武器。他通过 Devin AI 或 Claude 订阅调用 Opus 5.5，从自己正版游戏中提取素材导入引擎，项目已开源。",
+    "en": "Part 4 of porting Bully into Unreal Engine, adding the full map, vehicles and weapons. Opus 5.5, run on Devin AI or a Claude subscription, takes assets from the creator's owned copy of the game; the project is open source."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Unreal Engine",
+    "Devin AI",
+    "Fish Audio"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 22708,
+    "likes": 411,
+    "replies": 27,
+    "reposts": 23,
+    "bookmarks": 137,
+    "checkedAt": "2026-10-22T06:07:09.837Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112723875263897600/img/OoXqKcHMf7UsqwKr.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112723875263897600/vid/avc1/1244x720/zyVfp0BQykQO-kk8.mp4?tag=29",
+    "width": 1244,
+    "height": 720,
+    "durationSec": 250
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -67607,6 +68173,57 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2112615679379616081",
+   "url": "https://x.com/k1rallik/status/2112615679379616081",
+   "author": {
+    "handle": "k1rallik",
+    "name": "BuBBliK"
+   },
+   "postedAt": "2026-10-20T18:43:23.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "Blender 中组装火星车的模型对比",
+    "en": "Mars rover assembly in Blender, two models compared"
+   },
+   "summary": {
+    "zh": "作者在 Blender 中用同一个预先准备好的 NASA/JPL 火星车模型和同一份组装说明，对比 Claude Opus 5.5 与 Grok Bot 的耗时和花费。",
+    "en": "Compares Claude Opus 5.5 and Grok Bot assembling the same prepared NASA/JPL rover asset inside Blender from the same brief, with time and cost for each."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Blender",
+    "Grok Bot"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 19042,
+    "likes": 161,
+    "replies": 11,
+    "reposts": 16,
+    "bookmarks": 113,
+    "checkedAt": "2026-10-22T06:07:09.837Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112614333318410240/img/TKwTOoV0zz-f2B4u.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112614333318410240/vid/avc1/720x752/7cJP-d1EGLmqrzB5.mp4?tag=29",
+    "width": 720,
+    "height": 752,
+    "durationSec": 26
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -74543,6 +75160,54 @@
    }
   },
   {
+   "id": "2112614086932611107",
+   "url": "https://x.com/Solvaix/status/2112614086932611107",
+   "author": {
+    "handle": "Solvaix",
+    "name": "Solvaix"
+   },
+   "postedAt": "2026-10-20T18:37:03.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "两层别墅机电管线设计三维演示",
+    "en": "MEP systems layout for a two-story villa"
+   },
+   "summary": {
+    "zh": "Claude Opus 5.5 为一栋两层别墅做了 Revit 风格的机电设计，包括暖通、给排水、消防喷淋和照明，按美国规范布置，并修正了风管穿梁的冲突。",
+    "en": "Claude Opus 5.5 produced a Revit-style MEP design for a two-story villa covering HVAC, plumbing, sprinklers and lighting to US code. It also fixed a clash between a duct and a beam."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 15398,
+    "likes": 230,
+    "replies": 5,
+    "reposts": 23,
+    "bookmarks": 240,
+    "checkedAt": "2026-10-22T06:07:09.837Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112612317670096896/img/ei2H8tKRrKzKGGtN.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112612317670096896/vid/avc1/1280x720/yKg30FcMtO7ZtqfU.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 71
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2111365849793593530",
    "url": "https://x.com/pegonch/status/2111365849793593530",
    "author": {
@@ -78597,6 +79262,56 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2112665300608929807",
+   "url": "https://x.com/kentasakurajima/status/2112665300608929807",
+   "author": {
+    "handle": "kentasakurajima",
+    "name": "Kenta"
+   },
+   "postedAt": "2026-10-20T22:00:33.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "Roblox 场景地图",
+    "en": "Roblox environment map"
+   },
+   "summary": {
+    "zh": "一张海贼王主题的 Roblox 地图，作者称由 Opus 5.5 一次生成，用时约五分钟。提示词需要评论索取。",
+    "en": "A One Piece-themed Roblox map that the creator says Opus 5.5 built in one shot in about five minutes. The prompt is offered to people who comment."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Roblox"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 13434,
+    "likes": 215,
+    "replies": 24,
+    "reposts": 5,
+    "bookmarks": 112,
+    "checkedAt": "2026-10-22T06:07:09.837Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112665141305081856/img/emYfMAmmd3A3NBjn.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112665141305081856/vid/avc1/1280x720/Z88CI6DuklW8SL9M.mp4?tag=14",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 22
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -84705,6 +85420,54 @@
    }
   },
   {
+   "id": "2112694762436186118",
+   "url": "https://x.com/_MaxBlade/status/2112694762436186118",
+   "author": {
+    "handle": "_MaxBlade",
+    "name": "Max Blade"
+   },
+   "postedAt": "2026-10-20T23:57:37.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "可在浏览器游玩的Nuketown地图复刻",
+    "en": "Browser-playable Nuketown map clone"
+   },
+   "summary": {
+    "zh": "一个可在浏览器中游玩的 Nuketown 地图复刻，由作者睡前设置好的 Opus 5.5 工作代理和审查代理连夜协作完成。",
+    "en": "A browser-playable clone of the Nuketown map, built overnight by Opus 5.5 worker and review agents that the creator set up before bed."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 11315,
+    "likes": 169,
+    "replies": 25,
+    "reposts": 9,
+    "bookmarks": 96,
+    "checkedAt": "2026-10-22T06:07:09.837Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112693457932181504/img/qCuswoMck79x1tFh.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112693457932181504/vid/avc1/720x1280/SaIsctIZexXXaV1A.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 47
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103650801684262994",
    "url": "https://x.com/GoSailGlobal/status/2103650801684262994",
    "author": {
@@ -85588,6 +86351,60 @@
    }
   },
   {
+   "id": "2112624894680645801",
+   "url": "https://x.com/EnvolDev/status/2112624894680645801",
+   "author": {
+    "handle": "EnvolDev",
+    "name": "Tony"
+   },
+   "postedAt": "2026-10-20T19:20:00.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5",
+    "sonnet-5.5",
+    "haiku-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "低价模型阿尔卑斯飞行场景对比测试",
+    "en": "Alpine flight scene benchmark across budget models"
+   },
+   "summary": {
+    "zh": "作者用同一个阿尔卑斯场景提示词，对比 Haiku 5.5 等几款低价模型的生成效果、速度和成本。",
+    "en": "A benchmark comparing budget models, including Haiku 5.5, on the same Alpine scene prompt, looking at result quality, speed and cost."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "DeepSeek V4.1 Flash",
+    "MiniMax M3.1 Flash",
+    "Muse Spark 1.3"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 11020,
+    "likes": 124,
+    "replies": 16,
+    "reposts": 3,
+    "bookmarks": 36,
+    "checkedAt": "2026-10-22T06:07:09.837Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112599108435492865/img/8NznyYcG2mEiT_36.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112599108435492865/vid/avc1/810x720/kJT3b7Q4LOpjJs__.mp4?tag=29",
+    "width": 810,
+    "height": 720,
+    "durationSec": 25
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2107821059772661912",
    "url": "https://x.com/konstantinsaifo/status/2107821059772661912",
    "author": {
@@ -86079,6 +86896,61 @@
     "width": 1280,
     "height": 720,
     "durationSec": 180
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2112648375619502411",
+   "url": "https://x.com/keydol123/status/2112648375619502411",
+   "author": {
+    "handle": "keydol123",
+    "name": "Harry Jackson"
+   },
+   "postedAt": "2026-10-20T20:53:18.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "萤火虫夜晚森林网页效果对比",
+    "en": "Night forest website with fireflies comparison"
+   },
+   "summary": {
+    "zh": "作者用同一句提示词，让 GPT Astra 6 和 Opus 5.5 各自制作一个有萤火虫的魔幻夜间森林网站，并进行对比。",
+    "en": "A side-by-side of GPT Astra 6 and Opus 5.5 each building a magical night forest website with fireflies from the same one-line prompt."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/keydol123/status/2112648375619502411",
+    "text": "Build a magical night forest website with fireflies"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "GPT Astra 6"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 10726,
+    "likes": 117,
+    "replies": 9,
+    "reposts": 12,
+    "bookmarks": 45,
+    "checkedAt": "2026-10-22T06:07:09.837Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112648135562649600/img/3jGOozy-FjIMmv9F.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112648135562649600/vid/avc1/1280x720/y5eT2xIQdp1Bq_RY.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 24
    },
    "evidence": {
     "via": "daily",
@@ -86773,6 +87645,61 @@
     "width": 1280,
     "height": 720,
     "durationSec": 69
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2112638127483343162",
+   "url": "https://x.com/vib3coded/status/2112638127483343162",
+   "author": {
+    "handle": "vib3coded",
+    "name": "Vib3Coded"
+   },
+   "postedAt": "2026-10-20T20:12:35.000Z",
+   "addedAt": "2026-10-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "可切开的果冻西瓜物理互动",
+    "en": "Sliceable jelly watermelon physics toy"
+   },
+   "summary": {
+    "zh": "一个浏览器小玩具：可以用刀切开果冻质感的西瓜块，切下的碎块能抓取、拉扯和抛掷，并持续弹动。作者用 Claude Opus 5.5 制作，称总花费为 12.46 美元。",
+    "en": "A browser toy where a soft-body jelly watermelon wedge can be sliced with a knife and the bouncing pieces grabbed and thrown, built with Claude Opus 5.5 for a stated total cost of $12.46."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/vib3coded/status/2112638899965001772",
+    "text": "Build a real-time WebGPU soft-body \"jelly\" study of a watermelon wedge that you can cut with a steel knife, in an editorial \"Material Studies\" page style (serif title \"Melon Jelly.\", muted paper backdrop, side panel, English UI, mobile-friendly). Geometry: a thick triangular watermelon wedge with a rounded green rind, a pale white layer, and translucent red flesh with dark seeds and a few air bubbles. Sim: CPU XPBD on a tetrahedral mesh, fixed 60 Hz step with 10 substeps. Each tet uses a co-rotational shape-matching constraint with finite compliance, which also flips inverted elements back out, plus a near-incompressible volume constraint so a stretched slice necks in. The rind is about 3× stiffer than the flesh. Damping acts only on relative velocity along edges. Floor contact uses Coulomb friction. Grabbing is a soft, reach-limited attachment to a patch of particles, and scroll or a second finger twists it.\n\nTwo tools, Hand and Knife:\n- Knife: the user draws a stroke across the slice. Read on the surface, that stroke defines a vertical blade plane. Every piece is stored as a rounded convex outline in the slice's rest plane. For each piece the plane crosses, fit the piece's current pose with a best rotation, carry the plane back to rest space as a straight line, and split the outline along it.\n- The cut: prebuild both halves as fresh tet meshes on release. An animated steel knife lines up over the stroke, comes down, and first presses a groove into the jelly. When it breaks through, swap in the new pieces, which inherit the position and velocity of the flesh they came from, and the blade wedges the faces apart on its way to the board. Draw the blade behind the jelly surface so the buried part is seen refracted.\n- Pieces: every piece is its own soft body that can be grabbed, stretched and cut again, and pieces collide with each other instead of passing through.\n\nRender: a smooth surface mesh plus the seeds and bubbles, each vertex embedded in a tet by barycentric weights so they ride the wobble. WGSL passes:\n- floor, seeds and bubbles first;\n- back faces, to get the thickness each view ray crosses;\n- front faces with refraction by that thickness, Beer–Lambert absorption, milky scattering in the pale layer, a back-lit glow at thin edges, Fresnel reflections of a procedural studio, and GGX highlights;\n- a soft key shadow on the floor tinted by the jelly, plus contact AO from a top-down height map.\n\nVarieties: Crimson, Golden, Rosé. Controls: Hand/Knife tool toggle, firmness and internal damping sliders, \"Give it a nudge\", Reset, Pause, ¼ speed, Show mesh, plus mass/volume/kinetic readouts and an \"Inside the experiment\" notes drawer explaining the physics, cutting and rendering."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "WebGPU"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 10529,
+    "likes": 169,
+    "replies": 28,
+    "reposts": 15,
+    "bookmarks": 65,
+    "checkedAt": "2026-10-22T06:07:09.837Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112638040594079744/img/BsH6r3x0wr-Pns-b.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112638040594079744/vid/avc1/1136x720/T4_ZsekDcDy2qoUN.mp4?tag=29",
+    "width": 1136,
+    "height": 720,
+    "durationSec": 17
    },
    "evidence": {
     "via": "daily",
