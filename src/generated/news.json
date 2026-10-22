@@ -1,5 +1,107 @@
 [
   {
+    "slug": "2026-10-22",
+    "date": "2026-10-22",
+    "title": "AI 快讯 · 10月22日",
+    "items": [
+      {
+        "title": "Cloudflare开源安全审计Skill，让编码智能体分阶段查漏洞",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/cloudflare/security-audit-skill",
+        "summary": "Cloudflare开源面向编码智能体的安全审计Skill，将侦察、覆盖率扫描、漏洞验证和结构化报告拆成多阶段流程，并通过独立代理复核结果。开发者可直接复用这套可验证的安全检查Harness。",
+        "titleEn": "Cloudflare Open-Sources an Agent Security Audit Skill",
+        "summaryEn": "Cloudflare open-sourced a coding-agent skill for multi-phase security audits. It coordinates reconnaissance, coverage-led hunting, candidate validation, structured reporting, and independent verification. Developers can reuse the workflow to make agent-generated security findings more reliable, machine-readable, and easier to integrate into existing vulnerability-management processes."
+      },
+      {
+        "title": "Ponytail压缩智能体代码，测试覆盖率反而提升",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/DietrichGebert/ponytail",
+        "summary": "Ponytail是面向Claude Code的编码Skill，主张让智能体像资深开发者一样少写代码、先复用和验证。项目称在39项任务中减少53%代码、41%时间和26%成本，同时让高风险逻辑测试覆盖率从68%升至98%。",
+        "titleEn": "Ponytail Cuts Agent Code While Improving Tests",
+        "summaryEn": "Ponytail is a Claude Code skill designed to make agents behave like experienced engineers: reuse more, write less, and validate risky logic. Its benchmark claims 53% less code, 41% less time, and 26% lower cost across 39 tasks, while increasing test coverage for risky logic from 68% to 98%."
+      },
+      {
+        "title": "Anthropic预览Claude Duet，面向专业工作的智能体",
+        "source": "Reuters",
+        "category": "AI 工具动态",
+        "url": "https://www.reuters.com/technology/anthropic-unveils-claude-duet-ai-agent-app-2026-10-21/",
+        "summary": "Anthropic开启Claude Duet研究预览，将Claude包装成面向专业人士的任务型智能体。它代表产品竞争正从单轮问答转向可持续执行复杂工作流，但目前仍处于早期预览阶段，实际能力和适用边界有待验证。",
+        "titleEn": "Anthropic Previews Claude Duet for Professional Work",
+        "summaryEn": "Anthropic has opened a research preview of Claude Duet, positioning Claude as an agent for professional work. The launch reflects a broader shift from chat-based assistance toward agents that execute multi-step workflows. Because it remains an early preview, users will need to evaluate reliability, autonomy, and the boundaries of delegated work."
+      },
+      {
+        "title": "OpenAI模型与Codex工作流登陆Google Cloud",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/openai-models-google-cloud",
+        "summary": "OpenAI宣布与Google Cloud合作，将前沿模型及Codex工作流接入Gemini Model Garden，并通过Google Cloud Marketplace提供。企业可以在现有云采购、权限和治理体系内使用OpenAI能力，模型分发竞争进一步平台化。",
+        "titleEn": "OpenAI Models and Codex Workflows Reach Google Cloud",
+        "summaryEn": "OpenAI and Google Cloud will make OpenAI frontier models and Codex workflows available through Gemini’s Model Garden and Google Cloud Marketplace. The partnership lets enterprises adopt OpenAI capabilities within existing cloud procurement, identity, and governance systems, intensifying competition among major clouds to become the distribution layer for AI models."
+      },
+      {
+        "title": "Walmart向购物智能体开放下单，亚马逊反向拦截",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/10/21/while-amazon-blocks-ai-agents-walmart-rolls-out-the-welcome-mat/",
+        "summary": "Walmart推出支持AI智能体代客购物的技术，并加入消费限额和交易审批控制；亚马逊则选择阻止智能体访问购物流程。两种策略的分歧说明，未来电商入口可能从人工页面竞争转向对智能体协议、权限和交易分成的争夺。",
+        "titleEn": "Walmart Welcomes Shopping Agents as Amazon Blocks Them",
+        "summaryEn": "Walmart is introducing technology that lets AI agents purchase products on customers’ behalf, with spending limits and transaction approvals. Amazon is taking the opposite approach by blocking shopping agents. The split highlights an emerging battle over agent access, transaction permissions, and who controls the interface between consumers and commerce."
+      },
+      {
+        "title": "Recursive发布Flint，笔记本可运行且主要由AI打造",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/10/21/recursive-launches-flint-a-laptop-coding-model-it-says-was-largely-built-by-ai/",
+        "summary": "Recursive发布免费编码模型Flint，定位为可在笔记本电脑运行的轻量模型，并称其大部分研发由自家AI研究系统完成。它同时展示了端侧编码模型的可用性，以及AI参与模型研发、迭代自身工具链的新路径。",
+        "titleEn": "Recursive Launches Flint, an AI-Built Laptop Coding Model",
+        "summaryEn": "Recursive released Flint, a free coding model designed to run on laptops, and says it was largely developed by its own AI research system. The project is notable both for bringing coding assistance to local hardware and for demonstrating a workflow in which AI systems contribute substantially to the research and development of successor models."
+      },
+      {
+        "title": "ATEST让推理模型按难度和GPU负载动态花算力",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2610.25519",
+        "summary": "ATEST针对推理时多次采样的浪费问题，根据问题难度、额外答案带来的预期收益和当前GPU负载动态分配计算预算。研究发现同样采样四次，GPU拥堵时能耗最高可增4.1倍，对部署推理模型的成本控制很有价值。",
+        "titleEn": "ATEST Makes Test-Time Compute Resource-Aware",
+        "summaryEn": "ATEST dynamically decides whether additional reasoning samples are worth their cost, considering query difficulty and live GPU contention. The paper reports that the same four-sample query can consume up to 4.1 times more energy under heavy load. For developers, this points toward inference systems that trade off answer quality, latency, and operating cost in real time."
+      },
+      {
+        "title": "ChatGPT广告扩展至26国，使用品牌已超10万家",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/chatgpt-ads-expands-26-new-countries",
+        "summary": "OpenAI宣布ChatGPT广告业务新增26个国家和地区，累计已有超过10万家广告主使用。广告将出现在用户探索、比较和决策商品的场景中，意味着AI问答入口正在成为新的商业流量分发渠道，品牌需要适应对话式转化。",
+        "titleEn": "ChatGPT Ads Expand to 26 More Countries",
+        "summaryEn": "OpenAI says ChatGPT Ads are expanding to 26 additional countries, with more than 100,000 advertisers having used the platform. Ads appear as users explore, compare, and decide what to buy, signaling that conversational AI interfaces are becoming a new commercial distribution channel for brands and performance marketers."
+      }
+    ],
+    "funding": [
+      {
+        "company": "Legora",
+        "url": "https://techcrunch.com/2026/10/21/legal-ai-startup-legora-raises-550m-series-e-at-8-8b-valuation/",
+        "round": "Series E",
+        "amount": "$550M",
+        "valuation": "$8.8B",
+        "investors": "",
+        "pitch": "法律AI平台，获5.5亿美元E轮并达到88亿美元估值，显示专业知识工作自动化正获得超大规模资本验证。"
+      },
+      {
+        "company": "Blacksmith",
+        "url": "https://techcrunch.com/2026/10/21/blacksmith-hits-unicorn-valuation-after-sequoia-leads-series-c/",
+        "round": "Series C",
+        "amount": "$66M",
+        "valuation": "$1B",
+        "investors": "Sequoia",
+        "pitch": "帮助企业构建和测试AI代码的平台，Sequoia领投6600万美元C轮并晋升独角兽，切入AI原生软件开发基础设施。"
+      }
+    ],
+    "jasonSays": "今天最值得关注的是AI智能体开始争夺真实交易入口：从企业工作流、代码安全到电商下单，竞争焦点正由模型能力转向权限、治理与执行闭环。",
+    "jasonSaysEn": "The key shift today is that AI agents are moving into real transaction and workflow entry points, making permissions, governance, and execution reliability as important as model capability.",
+    "filename": "2026-10-22.md"
+  },
+  {
     "slug": "2026-10-21",
     "date": "2026-10-21",
     "title": "AI 快讯 · 10月21日",
@@ -90,7 +192,8 @@
     ],
     "jasonSays": "MCP开始承载订机票这类真实交易，ai-memory则在打通不同编码智能体之间的记忆；与此同时，Anthropic在IPO前面临算力供给压力，可能影响Claude生态的容量与价格。",
     "jasonSaysEn": "MCP is starting to handle real transactions like flight booking and ai-memory is bridging memory across coding agents, while Anthropic's pre-IPO compute squeeze could affect capacity and pricing across the Claude ecosystem.",
-    "filename": "2026-10-21.md"
+    "filename": "2026-10-21.md",
+    "coverImage": "/news/2026-10-21.png"
   },
   {
     "slug": "2026-10-20",
