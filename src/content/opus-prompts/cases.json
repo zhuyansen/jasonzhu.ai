@@ -1,8 +1,8 @@
 {
  "model": "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.5)",
  "threshold": 5000,
- "updatedAt": "2026-10-22T18:01:11.598Z",
- "statsCheckedAt": "2026-10-22T18:01:11.598Z",
+ "updatedAt": "2026-10-23T06:02:29.683Z",
+ "statsCheckedAt": "2026-10-23T06:02:29.683Z",
  "inclusionRule": "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -468,6 +468,56 @@
    "evidence": {
     "via": "search",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2113115471327457666",
+   "url": "https://x.com/bindureddy/status/2113115471327457666",
+   "author": {
+    "handle": "bindureddy",
+    "name": "Bindu Reddy"
+   },
+   "postedAt": "2026-10-22T03:49:22.000Z",
+   "addedAt": "2026-10-23",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "动画互动数据故事",
+    "en": "Animated interactive data stories"
+   },
+   "summary": {
+    "zh": "演示一种替代传统幻灯片的动画交互式叙事，内含实时数据图表。作者称这是用 Argon 和 Opus 5.5 根据提示词生成的。",
+    "en": "A demo of animated, interactive stories with live data graphs, offered as a replacement for slide decks. The creator says it is generated from a prompt using Argon and Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Argon"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 3458308,
+    "likes": 1888,
+    "replies": 41,
+    "reposts": 99,
+    "bookmarks": 443,
+    "checkedAt": "2026-10-23T06:02:29.683Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113113974707482624/img/gGpamj3y8KhLX9Zp.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113113974707482624/vid/avc1/1280x720/Yq867RgQQ_9vKLQ4.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 46
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -10959,6 +11009,56 @@
     "width": 960,
     "height": 720,
     "durationSec": 111
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2113077084528779288",
+   "url": "https://x.com/matabee_GTO/status/2113077084528779288",
+   "author": {
+    "handle": "matabee_GTO",
+    "name": "またべえ＠AI副業アニメクリエイター"
+   },
+   "postedAt": "2026-10-22T01:16:50.000Z",
+   "addedAt": "2026-10-23",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "Blender 生成的视频",
+    "en": "Blender-generated video"
+   },
+   "summary": {
+    "zh": "一段用 Blender 制作的三维动画视频，作者全程没有打开 Blender 界面，而是通过 Opus 5.5 完成。作者称场景和镜头都是自己边和 AI 商量边指示做出来的。",
+    "en": "A 3D animated video made in Blender through Opus 5.5 without the creator ever opening the Blender interface. The creator says they directed the scenes and cuts while working through it with the AI."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 196886,
+    "likes": 176,
+    "replies": 10,
+    "reposts": 17,
+    "bookmarks": 155,
+    "checkedAt": "2026-10-23T06:02:29.683Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113077001410195456/img/1sHaolb0gizt_CFD.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113077001410195456/vid/avc1/1280x720/_O4NcZgdurfPmvd3.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 65
    },
    "evidence": {
     "via": "daily",
@@ -28123,6 +28223,56 @@
    }
   },
   {
+   "id": "2112979473788477905",
+   "url": "https://x.com/Belbizaz/status/2112979473788477905",
+   "author": {
+    "handle": "Belbizaz",
+    "name": "Frog King Simulator"
+   },
+   "postedAt": "2026-10-21T18:48:58.000Z",
+   "addedAt": "2026-10-23",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "历时一个月打造的Three.js动作游戏",
+    "en": "Three.js action game built over a month"
+   },
+   "summary": {
+    "zh": "作者用一个月时间，全程在 Claude 终端里借助 Opus 5.5 和 Three.js 开发了这款游戏。作者在回复中提到，曾让 Claude 生成激光音效，并做一个带滑块的调节工具供手动微调。",
+    "en": "Game footage built over a month entirely in the Claude terminal with Opus 5.5 and Three.js. In replies the creator explains asking Claude to generate laser sounds and to build tools with sliders for manual tweaking."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 75214,
+    "likes": 1212,
+    "replies": 120,
+    "reposts": 67,
+    "bookmarks": 511,
+    "checkedAt": "2026-10-23T06:02:29.683Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112979267835613184/img/-a3Ugn9uEUjWKmtC.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112979267835613184/vid/avc1/1280x720/bLEl1LZg6z3upcrk.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 47
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103823130057757180",
    "url": "https://x.com/Saeiid/status/2103823130057757180",
    "author": {
@@ -32531,6 +32681,57 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2113044115130867828",
+   "url": "https://x.com/usecrayon/status/2113044115130867828",
+   "author": {
+    "handle": "usecrayon",
+    "name": "Crayon"
+   },
+   "postedAt": "2026-10-21T23:05:50.000Z",
+   "addedAt": "2026-10-23",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "《Rolling Republic》生存游戏",
+    "en": "Rolling Republic survival game"
+   },
+   "summary": {
+    "zh": "《Rolling Republic》是一款 3D 生存策略网页游戏，玩家要建造一座会行走的城市，带领队伍穿越废土。游戏由 Crayon Pro、Opus 5.5 和 Three.js 制作。",
+    "en": "Rolling Republic is a 3D survival strategy web game in which the player builds a walking city and leads a crew across a wasteland. It was built with Crayon Pro, Opus 5.5 and Three.js."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Crayon Pro",
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 63542,
+    "likes": 234,
+    "replies": 11,
+    "reposts": 20,
+    "bookmarks": 127,
+    "checkedAt": "2026-10-23T06:02:29.683Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113042013167992832/img/9AS9Sl6pmd-36sRe.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113042013167992832/vid/avc1/1280x720/BlA3ivdWEHvKZyfv.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -51055,6 +51256,54 @@
    }
   },
   {
+   "id": "2113025231732224063",
+   "url": "https://x.com/LexnLin/status/2113025231732224063",
+   "author": {
+    "handle": "LexnLin",
+    "name": "Leon Lin"
+   },
+   "postedAt": "2026-10-21T21:50:48.000Z",
+   "addedAt": "2026-10-23",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "剪纸风狐狸短片",
+    "en": "Paper-cut fox film"
+   },
+   "summary": {
+    "zh": "一部由 Opus 5.5 制作的剪纸风格狐狸短片。作者称整部片子完全用 JavaScript 编写，没有使用任何素材。",
+    "en": "A short paper-cut style film about a fox made by Opus 5.5. The creator says it was written entirely in JavaScript with no assets."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 34507,
+    "likes": 871,
+    "replies": 48,
+    "reposts": 57,
+    "bookmarks": 586,
+    "checkedAt": "2026-10-23T06:02:29.683Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113024275653206016/img/7l99rCAoYI1Z_Dwe.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113024275653206016/vid/avc1/1280x720/-HEnk6mAuVbFU7Wf.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 60
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2105756266211729596",
    "url": "https://x.com/DanielZambrini/status/2105756266211729596",
    "author": {
@@ -54724,6 +54973,59 @@
     "width": 720,
     "height": 824,
     "durationSec": 13
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2113049209742274903",
+   "url": "https://x.com/ercwl/status/2113049209742274903",
+   "author": {
+    "handle": "ercwl",
+    "name": "Eric Wall"
+   },
+   "postedAt": "2026-10-21T23:26:04.000Z",
+   "addedAt": "2026-10-23",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "Richard Heart 被捕事件视频",
+    "en": "Richard Heart arrest video"
+   },
+   "summary": {
+    "zh": "一段关于 Richard Heart 被捕的视频。作者称只用一句话让 Opus 5.5 生成了它。",
+    "en": "A video about Richard Heart's arrest. The creator says Opus 5.5 made it from a one-line request."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/ercwl/status/2113049209742274903",
+    "text": "make me a video about Richard Heart’s arrest"
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 30556,
+    "likes": 589,
+    "replies": 134,
+    "reposts": 85,
+    "bookmarks": 79,
+    "checkedAt": "2026-10-23T06:02:29.683Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113049043752357888/img/qNhg1Ob1Fy7zF0aV.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113049043752357888/vid/avc1/720x720/kXKfSD8Euw6BS3SY.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 194
    },
    "evidence": {
     "via": "daily",
@@ -66415,6 +66717,61 @@
    }
   },
   {
+   "id": "2113025837565870162",
+   "url": "https://x.com/luccacerf/status/2113025837565870162",
+   "author": {
+    "handle": "luccacerf",
+    "name": "Lucca Cerf"
+   },
+   "postedAt": "2026-10-21T21:53:12.000Z",
+   "addedAt": "2026-10-23",
+   "lang": "en",
+   "models": [
+    "opus-5.5",
+    "fable-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "自动化3D角色生产管线导入Unity",
+    "en": "Automated 3D character pipeline into Unity"
+   },
+   "summary": {
+    "zh": "作者用 Fable 5.5 搭配多个 Opus 5.5 智能体，花两天搭建了一条 3D 角色生产流水线，依次串联 Tripo P2、Blender、Cartwheel、Cascadeur 和 Unity CLI。",
+    "en": "A 3D character-production pipeline built over two days with Fable 5.5 and several Opus 5.5 agents. It chains Tripo P2, Blender, Cartwheel, Cascadeur and Unity CLI."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Tripo P2",
+    "Blender",
+    "Cartwheel",
+    "Cascadeur",
+    "Unity CLI"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 20766,
+    "likes": 319,
+    "replies": 11,
+    "reposts": 7,
+    "bookmarks": 477,
+    "checkedAt": "2026-10-23T06:02:29.683Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113025460900704256/img/rDaVZm8rInLfdTVI.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113025460900704256/vid/avc1/1384x720/dhxhqa0NqKhXoYUv.mp4?tag=29",
+    "width": 1384,
+    "height": 720,
+    "durationSec": 103
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103117722741854377",
    "url": "https://x.com/FantasistaAI/status/2103117722741854377",
    "author": {
@@ -71891,6 +72248,56 @@
    }
   },
   {
+   "id": "2113061393541050715",
+   "url": "https://x.com/AlchainHust/status/2113061393541050715",
+   "author": {
+    "handle": "AlchainHust",
+    "name": "花叔"
+   },
+   "postedAt": "2026-10-22T00:14:29.000Z",
+   "addedAt": "2026-10-23",
+   "lang": "zh",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "Claude Duet宣传片重制版",
+    "en": "Claude Duet promo video remake"
+   },
+   "summary": {
+    "zh": "作者用 Opus 5.5 和 huashu-motion 制作了一支 Claude Duet 宣传片，并拿它和官方发布的视频做对比。",
+    "en": "A promotional video for Claude Duet, made with Opus 5.5 and huashu-motion. The creator compares it with the official announcement video."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "huashu-motion"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 17741,
+    "likes": 109,
+    "replies": 35,
+    "reposts": 4,
+    "bookmarks": 79,
+    "checkedAt": "2026-10-23T06:02:29.683Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113061259310714880/img/qmggqDTGsmtb9ZZO.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113061259310714880/vid/avc1/1280x720/ys8m__iL4KSsbem6.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 29
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103555455700336882",
    "url": "https://x.com/promptowy/status/2103555455700336882",
    "author": {
@@ -72652,6 +73059,61 @@
     "width": 1280,
     "height": 720,
     "durationSec": 57
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2112989996366102944",
+   "url": "https://x.com/vib3coded/status/2112989996366102944",
+   "author": {
+    "handle": "vib3coded",
+    "name": "Vib3Coded"
+   },
+   "postedAt": "2026-10-21T19:30:47.000Z",
+   "addedAt": "2026-10-23",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "可切换昼夜与雨天的像素篮球场微缩场景",
+    "en": "Pixel-art basketball court diorama with weather"
+   },
+   "summary": {
+    "zh": "Claude Opus 5.5 花费 10.1 美元做出的像素风等距街头篮球场小场景。场上由 AI 球员进行 2v2 比赛，可以缩放视角、切换昼夜和开启下雨。",
+    "en": "A pixel-art isometric diorama of a street basketball court, built by Claude Opus 5.5 for $10.1. AI players play 2v2, and users can zoom, change the time of day and turn on rain."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/vib3coded/status/2112990235453985198",
+    "text": "Build \"Corner Court\" — a single-file, real-time three.js (r160, ES module via import map from jsDelivr) page: an isometric diorama of an original street basketball half court on a floating city block, rendered as crisp pixel art. UI text in English.\n\nRENDER PIPELINE\n- Orthographic camera at ~31° elevation, azimuth 45° + 90° steps (animated; drag sideways or buttons), wheel/pinch zoom; fit the whole slab into the free screen area.\n- Render into a small target (screen / pixel size) with no anti-aliasing; snap the camera to whole pixels.\n- Post pass:\n- depth outlines (darken a pixel >0.55 m in front of a neighbour);\n- nearest colour of a fixed ~54-colour city palette in OKLab (concrete/asphalt greys, sky and night blues, court teal, terracotta/orange, reds, yellows, leaf greens, skin/wood, dusk purples, neon pink); optional 4×4 Bayer dither;\n- whole-pixel upscale via texelFetch; the background (depth = 1) is the page colour.\n- Hard shadows (BasicShadowMap); flat-shaded Lambert low-poly.\n- Puddle reflections: render the scene mirrored about the ground (scene.scale.y = -1, ground meshes and rain hidden) into a second target, sampled at gl_FragCoord in the ground shader.\n- \"Raw 3D\" mode: the same scene at full resolution with MSAA.\n\nSCENE\n- A ragged-edged slab: grass over soil over rock.\n- An asphalt pad painted texel-by-texel at 10 px/m: teal inside the 6 m arc (straight corner lines), terracotta key, white lines, free-throw and restricted circles, cracks, worn paint, a stencilled \"COURT 7\".\n- Hoop: padded navy pole, arm, backboard with its square, orange torus rim, and a line-segment net that sways when the ball goes through.\n- Chain-link fence behind the hoop (alpha-tested diamond texture).\n- A brick corner shop with an awning, lit windows, a pink \"OPEN\" neon sign and a vending machine.\n- A long wall with an original sunset-city mural.\n- A sidewalk with a bench and two seated spectators.\n- Floodlights, a streetlight, low-poly trees, hedges, a dumpster, a fountain, a bike rack with two bikes, a hydrant.\n- Pigeons that peck and fly off when players or the ball come near.\n\nPLAYERS — procedural rigs of ~17 boxes\n- Two-bone IK for legs (running stride, defensive slide, tucked jumps) and arms: dribble hand following the ball, jump-shot set point with release and gooseneck follow-through, layup reach, two-hand dunk, chest pass, rebound/contest reach, celebration.\n- Spectators sit, cheer on makes and open umbrellas in the rain.\n\nGAME — streetball 2v2 half court\n- Make it take it; 1s inside the arc, 2s beyond; first to 11; win counter.\n- Check ball at the top (pass to the defender and back). A change of possession must be cleared beyond the arc.\n- Offence AI: dribble to spots, drive when the lane is open, pull-up jumpers when open, layups/dunks at the rim, passes when pressured; the off-ball player spots up or cuts. Man-to-man defence with stance, gap control, steals and contested jumps (blocks).\n- Ball physics with substeps: bounces on asphalt, sphere vs torus rim and backboard box, net drag, pole, fences, wall, slab edge.\n- Jumpers aimed on a ballistic arc (~50°) with speed/aim noise growing with distance and contest.\n- Layups lofted to a peak above the rim so they drop in.\n- Rebounds with jumps; out of bounds goes to the other team.\n- Score, possession and status messages (\"SWISH\", \"BLOCKED!\", \"TAKE IT BACK\", …) on a lit scoreboard.\n- Clicks: the ball handler shoots, his teammate gets a pass, the court sends the handler there. Shoot/Pass buttons.\n\nWEATHER AND TIME\n- Day / Dusk / Night lighting presets blended over ~1.6 s; floodlights, streetlight, neon and windows at night.\n- Dry / Drizzle / Downpour: rain as short line streaks with splashes. A wetness value rises and slowly dries: the asphalt darkens, puddles spread from low spots in a precomputed depth map and mirror the scene, rain rings flicker in them; feet and the ball splash.\n\nUI\n- Pixel display font (Silkscreen) and a clean body font; light/dark themes via tokens.\n- Controls: Time, Weather (with a court wetness bar), Shoot, Pass, New game, Pause, Turn left/right, Pixel art/Raw 3D, Pixel size, Palette/Dither/Outlines.\n- A \"How it's drawn\" panel; a stacked mobile layout with no horizontal scroll."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 17324,
+    "likes": 496,
+    "replies": 40,
+    "reposts": 42,
+    "bookmarks": 353,
+    "checkedAt": "2026-10-23T06:02:29.683Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112989542760267776/img/erWwTGewgbNkMafL.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112989542760267776/vid/avc1/1152x720/9MLMfRR0Ew-Grdzv.mp4?tag=29",
+    "width": 1152,
+    "height": 720,
+    "durationSec": 18
    },
    "evidence": {
     "via": "daily",
@@ -73641,6 +74103,54 @@
    }
   },
   {
+   "id": "2113048970838634772",
+   "url": "https://x.com/Stinkysunstep/status/2113048970838634772",
+   "author": {
+    "handle": "Stinkysunstep",
+    "name": "stink-O"
+   },
+   "postedAt": "2026-10-21T23:25:07.000Z",
+   "addedAt": "2026-10-23",
+   "lang": "en",
+   "models": [
+    "sonnet-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "Rust版Minecraft轨道打击炮模组",
+    "en": "Orbital strike cannon mod for a Rust Minecraft rewrite"
+   },
+   "summary": {
+    "zh": "为 Rust 重写版 Minecraft 制作的轨道打击炮模组，由 Sonnet 5.5 在现有开源代码库上花 25 分钟写成。",
+    "en": "An orbital strike cannon mod for a Rust rewrite of Minecraft, written by Sonnet 5.5 in 25 minutes on top of an existing open-source codebase."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 16695,
+    "likes": 357,
+    "replies": 10,
+    "reposts": 6,
+    "bookmarks": 145,
+    "checkedAt": "2026-10-23T06:02:29.683Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113048604365426688/img/qKM-g56ep5S9GaCz.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113048604365426688/vid/avc1/1280x720/_Ixcx1-NPGEWe0l5.mp4?tag=14",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 25
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103666159916638384",
    "url": "https://x.com/JaydenDavisNC/status/2103666159916638384",
    "author": {
@@ -74391,6 +74901,56 @@
     "width": 720,
     "height": 780,
     "durationSec": 10
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2113062105901658126",
+   "url": "https://x.com/higgsfield_ai/status/2113062105901658126",
+   "author": {
+    "handle": "higgsfield_ai",
+    "name": "Higgsfield AI 🧩"
+   },
+   "postedAt": "2026-10-22T00:17:19.000Z",
+   "addedAt": "2026-10-23",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "Duet角色的代码驱动3D动画",
+    "en": "Code-based 3D animation of the Duet character"
+   },
+   "summary": {
+    "zh": "Claude Duet 角色的 3D 动画，由 Opus 5.5 配合 Higgsfield 完全用代码生成。",
+    "en": "A 3D animation of the Claude Duet character, built entirely in code by Opus 5.5 together with Higgsfield."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Higgsfield"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 16198,
+    "likes": 185,
+    "replies": 28,
+    "reposts": 33,
+    "bookmarks": 47,
+    "checkedAt": "2026-10-23T06:02:29.683Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113061234115530752/img/LG1qUav0BQsQVtv-.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113061234115530752/vid/avc1/720x1000/s0r6TjJOIdUYMlBA.mp4?tag=29",
+    "width": 720,
+    "height": 1000,
+    "durationSec": 20
    },
    "evidence": {
     "via": "daily",
@@ -77503,6 +78063,55 @@
     "width": 720,
     "height": 910,
     "durationSec": 15
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2112995029337936362",
+   "url": "https://x.com/EnvolDev/status/2112995029337936362",
+   "author": {
+    "handle": "EnvolDev",
+    "name": "Tony"
+   },
+   "postedAt": "2026-10-21T19:50:47.000Z",
+   "addedAt": "2026-10-23",
+   "lang": "en",
+   "models": [
+    "opus-5.5",
+    "sonnet-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "四个模型生成灯塔场景对比",
+    "en": "Lighthouse scene built by four models"
+   },
+   "summary": {
+    "zh": "用同一提示词、XHigh 推理强度，对比 Gemini 4 Argon、Claude Sonnet 5.5、Claude Opus 5.5 和 GPT-6 Astra 生成的灯塔场景，并列出各自的费用和耗时。",
+    "en": "A lighthouse scene benchmark comparing Gemini 4 Argon, Claude Sonnet 5.5, Claude Opus 5.5 and GPT-6 Astra on the same prompt at XHigh effort, with cost and time for each."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 14689,
+    "likes": 153,
+    "replies": 28,
+    "reposts": 8,
+    "bookmarks": 32,
+    "checkedAt": "2026-10-23T06:02:29.683Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112994531318939648/img/BrpQWjDFm8G8Ku1l.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112994531318939648/vid/avc1/810x720/yclCAiaTzOEikecM.mp4?tag=29",
+    "width": 810,
+    "height": 720,
+    "durationSec": 25
    },
    "evidence": {
     "via": "daily",
@@ -83155,6 +83764,54 @@
    }
   },
   {
+   "id": "2112973736244588940",
+   "url": "https://x.com/flxrnc/status/2112973736244588940",
+   "author": {
+    "handle": "flxrnc",
+    "name": "Florence"
+   },
+   "postedAt": "2026-10-21T18:26:10.000Z",
+   "addedAt": "2026-10-23",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "基于PDF说明生成的动态设计短片",
+    "en": "Motion design animation from a PDF brief"
+   },
+   "summary": {
+    "zh": "用 Opus 5.5 制作的动效设计动画，作者将其视为 After Effects 的替代方案。提示词以 PDF 形式放在 Google Drive 上分享。",
+    "en": "A motion design animation made with Opus 5.5, presented as an alternative to After Effects. The prompt is shared as a PDF on Google Drive."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 12315,
+    "likes": 121,
+    "replies": 6,
+    "reposts": 6,
+    "bookmarks": 146,
+    "checkedAt": "2026-10-23T06:02:29.683Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112970488188153856/img/1x2Y_NWEOm3R8vlm.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112970488188153856/vid/avc1/1280x720/J3reycZrb_Qnc614.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 18
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103484611531866467",
    "url": "https://x.com/antonioleivag/status/2103484611531866467",
    "author": {
@@ -87362,6 +88019,59 @@
     "width": 1280,
     "height": 720,
     "durationSec": 55
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2112978719069598181",
+   "url": "https://x.com/MrTacticalX/status/2112978719069598181",
+   "author": {
+    "handle": "MrTacticalX",
+    "name": "Mr Tactical"
+   },
+   "postedAt": "2026-10-21T18:45:58.000Z",
+   "addedAt": "2026-10-23",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "两代模型生成3D屋顶玻璃泳池对比",
+    "en": "Interactive 3D rooftop glass pool, two model versions"
+   },
+   "summary": {
+    "zh": "用代码构建的交互式 3D 网页场景：日落时分的楼顶玻璃泳池。作者用同一提示词对比了 Claude Opus 5.5 与 Opus 5 的耗时和成本。",
+    "en": "An interactive 3D web scene of a rooftop glass pool at sunset, built in code. It compares Claude Opus 5.5 and Opus 5 on the same prompt, with time and cost for each."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/MrTacticalX/status/2112978721736892528",
+    "text": "Make a stunning, highly detailed interactive 3D web scene, entirely from scratch in code: a rooftop glass swimming pool at sunset. A swimming pool with thick clear glass walls sits on the roof of a skyscraper, high above a city skyline. Floating in the pool are a detailed toy pirate ship, an inflatable pink flamingo, a glossy rubber duck, a beach ball and a swim ring. Over 30 seconds the sunset fades into a warm night."
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 10890,
+    "likes": 148,
+    "replies": 13,
+    "reposts": 10,
+    "bookmarks": 33,
+    "checkedAt": "2026-10-23T06:02:29.683Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2112978190071169024/img/PUUcN8yPUvX7w6IS.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2112978190071169024/vid/avc1/720x898/j2qKpMybJvPTyDDN.mp4?tag=29",
+    "width": 720,
+    "height": 898,
+    "durationSec": 30
    },
    "evidence": {
     "via": "daily",
@@ -91656,6 +92366,62 @@
    }
   },
   {
+   "id": "2113119946599272680",
+   "url": "https://x.com/MrTacticalX/status/2113119946599272680",
+   "author": {
+    "handle": "MrTacticalX",
+    "name": "Mr Tactical"
+   },
+   "postedAt": "2026-10-22T04:07:09.000Z",
+   "addedAt": "2026-10-23",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "暴风雪中的二战山地要塞Blender场景",
+    "en": "WWII mountain fortress in a blizzard, Blender scene"
+   },
+   "summary": {
+    "zh": "在 Blender 中用 Python 从零制作的电影感动画，场景是暴风雪中的二战山地要塞，未使用任何素材。作者用同一个一次性提示词对比了 Claude Opus 5.5 和 Fable 5.1。",
+    "en": "A cinematic animation of a WWII-era mountain fortress in a blizzard, built in Blender with Python and no assets. It compares Claude Opus 5.5 and Fable 5.1 on the same one-shot prompt."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/MrTacticalX/status/2113119949199745372",
+    "text": "Make a realistic, cinematic animation of a massive WWII-era mountain fortress, entirely from scratch, in Blender. A grim stone castle-fortress is carved into a snowy Alpine peak at night: towers, battlements, bunkers, a cable car to the valley, a rail tunnel, radio masts and anti-aircraft guns. Over the animation a blizzard rolls in, searchlights sweep the sky, the cable car glides up through the snow, a steam train thunders out of the tunnel, the guns turn and fire flak into the clouds, and finally the storm clears to reveal the fortress glowing under the northern lights.\n\nNo flags, symbols or text. Original, fictional fortress. No time limit. Keep improving until you’d be proud to have it compared publicly."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Blender",
+    "Python"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 9448,
+    "likes": 108,
+    "replies": 14,
+    "reposts": 3,
+    "bookmarks": 26,
+    "checkedAt": "2026-10-23T06:02:29.683Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113119279017062400/img/-683LhLa2VNqxwV2.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113119279017062400/vid/avc1/1280x720/dHfzJL3bRDHk3otI.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 46
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2112554053175554078",
    "url": "https://x.com/vib3coded/status/2112554053175554078",
    "author": {
@@ -93569,6 +94335,61 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2113037013326627200",
+   "url": "https://x.com/N1njaCodex/status/2113037013326627200",
+   "author": {
+    "handle": "N1njaCodex",
+    "name": "NinjaCodex"
+   },
+   "postedAt": "2026-10-21T22:37:36.000Z",
+   "addedAt": "2026-10-23",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "像素风3D足球场模拟：孩子与偷球的狗",
+    "en": "Pixel-art 3D football yard simulation with kids and dog"
+   },
+   "summary": {
+    "zh": "Claude Opus 5.5 用 three.js 制作的像素风 3D 网页小玩具，内容是院子里的足球比赛，花费 6.06 美元。场景里有 AI 控制的孩子、球的物理效果，还有一只会抢球的狗。",
+    "en": "A pixel-art 3D web toy of a courtyard football game, built by Claude Opus 5.5 with three.js for $6.06. It has AI kids, ball physics and a dog that steals the ball."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/N1njaCodex/status/2113037132092887163",
+    "text": "Build a single-page web toy called \"Yard Box\": a real-time 3D scene rendered as pixel art, showing a courtyard football box behind a four-storey panel apartment block on a floating island. Use three.js r160 (ES module via import map from jsDelivr, plus BufferGeometryUtils). English UI. Original design only — no real brands, places or logos.\n\nRENDERING PIPELINE (the core look)\n- Orthographic camera at an isometric angle (elevation ≈31°, azimuth π/4, rotatable in 90° steps with smooth easing; drag sideways or buttons to turn; wheel/pinch zoom 0.7–2.6).\n- Render into a small WebGLRenderTarget (half-float, nearest filtering, depth texture) — about 480×300 art pixels at pixel size 3 — no anti-aliasing. Fit the island + the top of the block into the screen area left free by the UI, and snap the camera so the world origin lands on a whole art pixel (static things never shimmer).\n- Post-pass ShaderMaterial: texelFetch whole-pixel upscale; depth-based outlines (a pixel > ~0.5 m in front of a neighbour darkens ×0.5); quantize every pixel to the nearest of a fixed ~60-colour palette in OKLab (lightness weighted ×1.35); optional 4×4 Bayer dither (off by default); empty depth = page background colour.\n- \"Raw 3D\" toggle shows the full-resolution MSAA render without steps above. Controls: pixel size slider 2–6, palette / dither / outlines checkboxes.\n- Palette: warm concrete greys, cool greys for snow in shade/moonlight, snow and sky blues, turf greens, autumn olives, yellows/oranges/rusts, team reds and blues, skin and wood tones, lamp/window yellows, dusk violets, mint for the boards.\n\nLIGHT AND TIME\n- Directional sun/moon with hard BasicShadowMap (2048), hemisphere fill, point lights for two streetlamps (decay 2) and weak doorway lamps. Presets Day / Dusk / Night blended over 1.6 s. Glow materials lerp between on/off colours.\n- The block's facade uses an emissive map drawn on a canvas; at night windows glow warm or cool, and random flats switch lights on and off.\n\nWORLD (all boxes, cylinders, extrusions; textures drawn texel by texel on canvases)\n- Rounded floating slab: grass top over soil over rock.\n- Football box: rounded-rectangle boards (22×12 m, mint green, plank lines, a gate with an open door), netting on posts above the boards at both ends, mini goals (3 m × 2 m) with alpha-tested nets, turf texture with mowing stripes, worn goalmouths/centre and white markings.\n- Panel block along one long side: 4 floors, facade drawn panel by panel with windows and curtains, two entrances with canopies, random balconies, roof details; an asphalt strip with two benches and hedges.\n- Dollhouse cut: when the camera looks from the block's side, hide the floors, roof, balconies and canopies and show a section of the ground floor instead — low cut walls with a dark cap, rooms with coloured floors, rugs, sofas, tables, wardrobes, TVs (glowing at night), pot plants, stairwells with steps and post boxes; room floors glow warm at night.\n- Playground (swing that actually swings, slide, sandbox), birches with white trunks and dark marks, painted-tyre flower beds, a parked car, a washing line with swaying sheets, two lamp posts.\n\nPEOPLE AND DOG\n- Kids as rigs of ~17 boxes (bigger heads), posed every frame with two-bone IK: running stride, kicks keyed as back-swing → strike → follow-through, keeper stance, sideways dives, catch/hold/throw, goal celebrations (airplane arms).\n- Three grandmothers sitting on the benches (cheer on goals), a small kid on the swing.\n- A box-built dog that lives by the benches.\n\nGAME LOGIC\n- 3v3: two field players + one keeper per team (RED attacks +x, BLUE −x), first to 5, then a new game; scoreboard with score, game number, status line and games won.\n- Kick-off from the centre; open play with dribbling by small touches, passes leading the receiver, shots aimed inside a post at random height with angular error growing with distance and pressure, tackles; players get behind the ball before kicking (feed-forward on a rolling ball), squeeze in at an angle when the ball is against the boards, avoid goal frames; a scramble poke if nobody can reach a still ball for 3.5 s.\n- Keepers hold position, come out for slow loose balls, read shots after a 0.1–0.3 s reaction delay with some error, dive, catch or parry.\n- Ball physics in 4 substeps: gravity, ground bounce (lower in winter), boards (lively below rail height, dead in the netting above), posts and crossbar, the goal net, legs in the way. Status flashes: GOAL!, SAVED!, WHAT A SAVE!, OFF THE POST!, OFF THE BOARDS, TACKLE.\n- Every 100–170 s (or on a button) the dog runs in through the gate, grabs the ball, runs loops away from the kids for ~5 s, drops it and trots home; it gives up if the game resets.\n\nSEASONS (Summer / Autumn / Winter)\n- Summer: poplar fluff drifting. Autumn: yellow/orange canopies, leaves falling from the birches, leaf litter on the ground, olive grass. Winter: snow on the ground, roofs, benches, car and boards; bare trees; falling snow and kicked-up snow spray; kids wear hats; the ball turns orange.\n\nINPUT AND UI\n- Click the player on the ball to shoot, his teammate to pass, the pitch to make him dribble there; keys S, P, D, Space, Q/E or arrows.\n- Layout: title and caption top-left, lit pixel-font scoreboard top-centre, a narrow control rail on the right (Time, Season, Game, View), a hint bottom-left, a fold-out \"How it's drawn\" panel bottom-right. Fonts: Silkscreen, Rubik, JetBrains Mono. Light and dark themes via CSS tokens; on phones everything stacks under the scene. WebGL2 fallback card."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 8801,
+    "likes": 353,
+    "replies": 15,
+    "reposts": 33,
+    "bookmarks": 238,
+    "checkedAt": "2026-10-23T06:02:29.683Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113036952471498752/img/4qXKW1bgvbN37-Zj.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113036952471498752/vid/avc1/1152x720/TbhqfwSZdoXx7scg.mp4?tag=29",
+    "width": 1152,
+    "height": 720,
+    "durationSec": 19
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -97796,6 +98617,56 @@
    }
   },
   {
+   "id": "2113137522561741180",
+   "url": "https://x.com/GabLattanzio/status/2113137522561741180",
+   "author": {
+    "handle": "GabLattanzio",
+    "name": "Gabriel Lattanzio"
+   },
+   "postedAt": "2026-10-22T05:17:00.000Z",
+   "addedAt": "2026-10-23",
+   "lang": "fr",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "30人同时参与的气候政策课堂游戏",
+    "en": "30-player climate policy classroom game"
+   },
+   "summary": {
+    "zh": "作者为气候法律英语课程制作的30人同时在线政治游戏，学生用手机做决策，教师投屏显示主画面，角色有部长、学生和退休者等。使用Opus 5.5和PixelLab制作。",
+    "en": "A 30-player simultaneous political game for a course on climate legal English. Players decide on smartphones while a central screen is shown. Made with Opus 5.5 and PixelLab."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "PixelLab"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 7307,
+    "likes": 113,
+    "replies": 8,
+    "reposts": 8,
+    "bookmarks": 44,
+    "checkedAt": "2026-10-23T06:02:29.683Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113015059479674880/img/cyVioUX2m8hdcKfA.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113015059479674880/vid/avc1/1280x720/GsE8wF7-JLwtO9ad.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 49
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2111471324816404683",
    "url": "https://x.com/anxuanng/status/2111471324816404683",
    "author": {
@@ -101428,6 +102299,54 @@
     "width": 1146,
     "height": 720,
     "durationSec": 220
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2113022598368067751",
+   "url": "https://x.com/icreatelife/status/2113022598368067751",
+   "author": {
+    "handle": "icreatelife",
+    "name": "Kris Kashtanova"
+   },
+   "postedAt": "2026-10-21T21:40:20.000Z",
+   "addedAt": "2026-10-23",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "划船收集汉字的日语学习小游戏",
+    "en": "Cozy boat game for learning Japanese kanji"
+   },
+   "summary": {
+    "zh": "一款学习日语汉字的休闲网页游戏：玩家驾小船在秋日湖面航行，收集漂浮在对应事物上方的汉字。作者用Claude Opus 5.5制作，花费约6美元。",
+    "en": "A cozy browser game for learning Japanese kanji: the player sails a boat on an autumn lake and collects kanji floating over the things they mean. Built with Claude Opus 5.5 for about $6."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 5512,
+    "likes": 171,
+    "replies": 40,
+    "reposts": 13,
+    "bookmarks": 25,
+    "checkedAt": "2026-10-23T06:02:29.683Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113022029997686784/img/zkqeScTqunp0qYNY.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113022029997686784/vid/avc1/1280x720/KFu5dqb3B0Fb35tS.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 145
    },
    "evidence": {
     "via": "daily",
