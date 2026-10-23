@@ -1,5 +1,98 @@
 [
   {
+    "slug": "2026-10-23",
+    "date": "2026-10-23",
+    "title": "AI 快讯 · 10月23日",
+    "items": [
+      {
+        "title": "Claude Mods反转智能体Harness，让界面面向人而非机器",
+        "source": "Latent Space",
+        "category": "Skills 生态",
+        "url": "https://www.latent.space/p/claude-mods",
+        "summary": "Claude Mods提出一种“面向人”的智能体交互层：不再只让Harness适配机器和工具，而是围绕人的注意力、决策与工作流组织任务。它预示着Skills生态将从提示词扩展到完整的人机协作界面。",
+        "titleEn": "Claude Mods Reimagines the Agent Harness",
+        "summaryEn": "Claude Mods proposes an agent interface designed around humans rather than machines and tools. Instead of treating the harness as an invisible execution layer, it organizes tasks around user attention, decisions, and workflows. The concept suggests that the Skills ecosystem may evolve beyond prompts into complete human-agent collaboration interfaces."
+      },
+      {
+        "title": "OpenAI推出Decisions API，让应用低成本调用专用决策模型",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/decisions-api",
+        "summary": "OpenAI发布Decisions API，定位是快速、聚焦且低成本的应用决策接口，适合分类、路由、审核等无需长篇生成的任务。它让开发者可以把简单判断从通用大模型调用中拆出，降低延迟与推理成本。",
+        "titleEn": "OpenAI Launches a Low-Cost Decisions API",
+        "summaryEn": "OpenAI has launched the Decisions API for fast, focused, and low-cost decisions inside applications. It targets tasks such as classification, routing, and moderation that do not require long-form generation. Developers can use it to separate lightweight judgments from general-purpose model calls, reducing latency and inference costs."
+      },
+      {
+        "title": "1Password推出代理登录，智能体可代办但看不到密码",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/10/22/1password-launches-a-way-for-ai-agents-to-log-in-on-your-behalf-without-seeing-your-password/",
+        "summary": "1Password推出面向AI智能体的登录能力，代理可以代表用户进入个人账户，却无法直接读取或暴露底层密码。该机制解决了智能体执行真实操作时的凭证泄露风险，是代理走向支付、办公和个人服务自动化的重要基础设施。",
+        "titleEn": "1Password Lets Agents Log In Without Password Access",
+        "summaryEn": "1Password has introduced a way for AI agents to log into personal accounts on a user’s behalf without exposing the underlying password. The design addresses credential leakage as agents begin performing real-world actions, creating important infrastructure for safer automation across payments, productivity, and consumer services."
+      },
+      {
+        "title": "Canva首发自研图像模型，全面开放并主打低成本可控生成",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/10/22/canva-releases-its-first-image-generation-model/",
+        "summary": "Canva发布首个自研图像生成模型，并向所有用户开放，强调更高可控性、更强定制能力和更低成本。对设计师与独立开发者而言，图像生成正从外部插件变成设计平台内置能力，内容生产链路将进一步缩短。",
+        "titleEn": "Canva Releases Its First Image Generation Model",
+        "summaryEn": "Canva has released its first in-house image generation model and made it available to all users. The company emphasizes improved customization, controllability, and lower costs. For designers and indie developers, image generation is becoming a native platform capability rather than an external add-on, shortening the path from concept to finished content."
+      },
+      {
+        "title": "Uber向3万员工开放ChatGPT Work，覆盖研究分析与复杂流程",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/uber-chatgpt-work-rollout",
+        "summary": "Uber将ChatGPT Work推广至超过3万名员工，用于研究、数据分析、演示文稿制作和复杂工作流执行。大规模部署说明企业采购重点正从单点聊天工具转向可嵌入部门流程、并能持续提升生产率的通用智能体平台。",
+        "titleEn": "Uber Rolls Out ChatGPT Work to 30,000 Employees",
+        "summaryEn": "Uber is rolling out ChatGPT Work to more than 30,000 employees for research, data analysis, presentation creation, and complex workflows. The deployment shows enterprise AI adoption moving beyond isolated chat use cases toward general-purpose agent platforms embedded in departmental processes and measured through productivity gains."
+      },
+      {
+        "title": "DeepSeek DeepInfer开源推理据称日处理155万亿Token",
+        "source": "Latent Space",
+        "category": "变现案例",
+        "url": "https://www.latent.space/p/ainews-deepseek-deepinfer-open-source",
+        "summary": "Latent Space报道称，DeepSeek DeepInfer以开源方式实现单集群每日处理约155万亿Token，并带来约2200万美元日收入、约80%毛利率。若数据成立，它展示了开源推理基础设施通过规模化服务实现高额现金流的路径。",
+        "titleEn": "DeepSeek DeepInfer Targets Massive Open Inference Scale",
+        "summaryEn": "Latent Space reports that DeepSeek DeepInfer can process roughly 155 trillion tokens per cluster per day, generating about $22 million in daily revenue at an estimated 80% margin. If accurate, it demonstrates how open-source inference infrastructure can turn extreme serving scale into substantial cash flow."
+      },
+      {
+        "title": "工具输出被压缩后，智能体为何会答错？新研究给出实测",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2610.26836",
+        "summary": "研究在可复现的地球化学模拟任务上测试智能体发现：即使模型算出了正确结果，把冗长工具输出移出上下文、改为按需检索，也可能让最终答案出错。对开发者而言，节省Token不能只看成本，还必须验证关键信息是否被正确取回。",
+        "titleEn": "Study Shows Retrieved Tool Output Can Hurt Agent Accuracy",
+        "summaryEn": "A study using a deterministic geochemistry simulator found that agents can compute the correct result yet answer incorrectly when long tool outputs are moved out of context and retrieved on demand. For developers, the lesson is that context compression must be evaluated for information recovery and answer accuracy, not only token savings."
+      },
+      {
+        "title": "FrontierCS 2测试智能体能否在真实代码库里做计算机研究",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2610.29932",
+        "summary": "FrontierCS 2构建48项开放式计算机科学研发任务，让智能体进入已有代码仓库，补全被删除的论文贡献，并以作者发布的真实实现作为标准。它比只评估单段代码更接近真实研发，可帮助团队判断智能体是否具备持续研究与迭代能力。",
+        "titleEn": "FrontierCS 2 Tests Agents on Open-Ended CS Research",
+        "summaryEn": "FrontierCS 2 introduces 48 open-ended computer science research tasks in which agents work inside existing repositories and reconstruct deleted paper contributions. Grounding evaluation in the authors’ released implementations makes it more realistic than single-program benchmarks and helps teams assess sustained research and iteration capabilities."
+      }
+    ],
+    "funding": [
+      {
+        "company": "Slingshot Insurance",
+        "url": "https://news.crunchbase.com/fintech-ecommerce/insuretech/startup-slingshot-insurance-seed-funding-genteman/",
+        "round": "Seed",
+        "amount": "$27M",
+        "valuation": "",
+        "investors": "Rally Ventures、Skyward Group",
+        "pitch": "AI原生嵌入式保险平台，把小额保单直接嵌入结账流程；27万美元种子轮显示保险分销正借助AI走向场景化和自动化。"
+      }
+    ],
+    "jasonSays": "今天最值得关注的是代理基础设施正在补齐：从低成本决策、无密码登录到上下文检索评测，AI正从聊天能力走向可控、可执行的真实工作流。",
+    "jasonSaysEn": "The key trend today is the maturation of agent infrastructure, spanning low-cost decisions, passwordless delegated login, and context-retrieval evaluation as AI moves from chat toward controllable real-world workflows.",
+    "filename": "2026-10-23.md"
+  },
+  {
     "slug": "2026-10-22",
     "date": "2026-10-22",
     "title": "AI 快讯 · 10月22日",
@@ -99,7 +192,8 @@
     ],
     "jasonSays": "今天最值得关注的是AI智能体开始争夺真实交易入口：从企业工作流、代码安全到电商下单，竞争焦点正由模型能力转向权限、治理与执行闭环。",
     "jasonSaysEn": "The key shift today is that AI agents are moving into real transaction and workflow entry points, making permissions, governance, and execution reliability as important as model capability.",
-    "filename": "2026-10-22.md"
+    "filename": "2026-10-22.md",
+    "coverImage": "/news/2026-10-22.png"
   },
   {
     "slug": "2026-10-21",
