@@ -1,8 +1,8 @@
 {
  "model": "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.5)",
  "threshold": 5000,
- "updatedAt": "2026-10-23T17:53:55.391Z",
- "statsCheckedAt": "2026-10-23T17:53:55.391Z",
+ "updatedAt": "2026-10-24T05:52:10.655Z",
+ "statsCheckedAt": "2026-10-24T05:52:10.655Z",
  "inclusionRule": "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -3364,6 +3364,59 @@
    }
   },
   {
+   "id": "2113427367477878971",
+   "url": "https://x.com/aniketjart/status/2113427367477878971",
+   "author": {
+    "handle": "aniketjart",
+    "name": "Aniket J"
+   },
+   "postedAt": "2026-10-23T00:28:44.000Z",
+   "addedAt": "2026-10-24",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "龙珠主题跑酷游戏",
+    "en": "Dragon Ball fan runner game"
+   },
+   "summary": {
+    "zh": "一款以包子山为背景的《龙珠》粉丝跑酷游戏，使用 Opus 5.5、usecrayon 和 Three.js 制作；复杂资产和角色使用了 Blender 与 Tripo。",
+    "en": "A Dragon Ball fan runner game set at Mount Paozu, made with Opus 5.5 and usecrayon on Three.js. Blender and Tripo were used for complex assets and characters."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Three.js",
+    "Blender",
+    "Tripo",
+    "usecrayon"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 597657,
+    "likes": 5193,
+    "replies": 139,
+    "reposts": 559,
+    "bookmarks": 2223,
+    "checkedAt": "2026-10-24T05:52:10.655Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113425564321325057/img/SoYVQUfAlqoCcHMp.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113425564321325057/vid/avc1/1092x720/5AC_69JurImCCY5W.mp4?tag=29",
+    "width": 1092,
+    "height": 720,
+    "durationSec": 58
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2104406657216237990",
    "url": "https://x.com/Data01/status/2104406657216237990",
    "author": {
@@ -3903,6 +3956,65 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2113392757548941441",
+   "url": "https://x.com/Skoorbkaz/status/2113392757548941441",
+   "author": {
+    "handle": "Skoorbkaz",
+    "name": "ʞɔɐ𝘡"
+   },
+   "postedAt": "2026-10-22T22:11:12.000Z",
+   "addedAt": "2026-10-24",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "反乌托邦人工智能短片",
+    "en": "Dystopian AI short film"
+   },
+   "summary": {
+    "zh": "一部关于近未来最坏情境的 11 分钟黑暗影片。Opus 4.6 编写剧本，Opus 5.5 制作影片，画面、配乐和旁白分别由代码与本地模型生成。",
+    "en": "An 11-minute dark film about a possible near-future worst case. Opus 4.6 wrote the script, Opus 5.5 made the film, and code generated the frames, score, and local-model narration."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/Skoorbkaz/status/2113392757548941441",
+    "text": "show me the worst case of what the next couple of years could look like if nobody listens."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Opus 4.6",
+    "Remotion",
+    "TypeScript",
+    "Python",
+    "local voice models"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 513626,
+    "likes": 2148,
+    "replies": 157,
+    "reposts": 360,
+    "bookmarks": 3623,
+    "checkedAt": "2026-10-24T05:52:10.655Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113391734423977986/img/7-Nju3rB4NowJMGD.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113391734423977986/vid/avc1/1280x720/DhMYX8MOROYg8zWz.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 700
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -9891,6 +10003,57 @@
     "width": 1148,
     "height": 720,
     "durationSec": 122
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2113503273361777086",
+   "url": "https://x.com/chetaslua/status/2113503273361777086",
+   "author": {
+    "handle": "chetaslua",
+    "name": "Chetaslua"
+   },
+   "postedAt": "2026-10-23T05:30:22.000Z",
+   "addedAt": "2026-10-24",
+   "lang": "en",
+   "models": [
+    "fable-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "模型输出并排对比",
+    "en": "Side-by-side model output comparison"
+   },
+   "summary": {
+    "zh": "帖子比较了 Kimi K3.1 Pro 和 Fable 5.5，但没有说明具体作品或制作流程。",
+    "en": "The post compares Kimi K3.1 Pro with Fable 5.5, but does not describe a specific work or production process."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Kimi K3.1 Pro",
+    "Fable 5.5"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 220441,
+    "likes": 1228,
+    "replies": 56,
+    "reposts": 47,
+    "bookmarks": 161,
+    "checkedAt": "2026-10-24T05:52:10.655Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113502609416036352/img/MUThQ9sDBq3vYYcd.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113502609416036352/vid/avc1/848x480/BgL8fXrUzL96hdQz.mp4?tag=29",
+    "width": 848,
+    "height": 480,
+    "durationSec": 10
    },
    "evidence": {
     "via": "daily",
@@ -27569,6 +27732,59 @@
    }
   },
   {
+   "id": "2113360370811470100",
+   "url": "https://x.com/Haleeeemahh/status/2113360370811470100",
+   "author": {
+    "handle": "Haleeeemahh",
+    "name": "Haleemah"
+   },
+   "postedAt": "2026-10-22T20:02:31.000Z",
+   "addedAt": "2026-10-24",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "四模型竞技场对比",
+    "en": "Four-model arena comparison"
+   },
+   "summary": {
+    "zh": "创作者在 arena 中用三个模型对比 Opus 5.5，并更看好 Gemini；帖子提到进行了三次提示词尝试，但未公开提示词内容。",
+    "en": "Three models were tested against Opus 5.5 in an arena, with the creator favoring Gemini. The creator mentions making three prompt attempts."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Gemini 4 Carbon",
+    "Gemini 4 Argon",
+    "Kimi K3.1",
+    "Qwen 4"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 77407,
+    "likes": 276,
+    "replies": 44,
+    "reposts": 10,
+    "bookmarks": 46,
+    "checkedAt": "2026-10-24T05:52:10.655Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113360316046135296/img/_lZkHSfDhpVF1sib.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113360316046135296/vid/avc1/1168x720/Nb57XoNzt-UqwaVy.mp4?tag=29",
+    "width": 1168,
+    "height": 720,
+    "durationSec": 12
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2110223026549850196",
    "url": "https://x.com/AdityaJhajhar12/status/2110223026549850196",
    "author": {
@@ -30220,6 +30436,56 @@
     "mp4": "https://video.twimg.com/amplify_video/2106806404879421440/vid/avc1/720x720/AHmNXPEynTw8YK8s.mp4?tag=29",
     "width": 720,
     "height": 720,
+    "durationSec": 25
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2113414387666927980",
+   "url": "https://x.com/YouArtStudio/status/2113414387666927980",
+   "author": {
+    "handle": "YouArtStudio",
+    "name": "YouArt"
+   },
+   "postedAt": "2026-10-22T23:37:10.000Z",
+   "addedAt": "2026-10-24",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "模型输出并排对比",
+    "en": "Side-by-side model output comparison"
+   },
+   "summary": {
+    "zh": "一则比较 Minimax M3.1 Flash 与 Claude Opus 5.5、讨论开源模型是否正在追赶的帖子。",
+    "en": "A comparison between Minimax M3.1 Flash and Claude Opus 5.5 about whether open-source models are catching up."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Minimax M3.1 Flash"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 70531,
+    "likes": 236,
+    "replies": 7,
+    "reposts": 19,
+    "bookmarks": 118,
+    "checkedAt": "2026-10-24T05:52:10.655Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/ext_tw_video_thumb/2113414352623607808/pu/img/Xo3dt2gX5sffJlxq.jpg",
+    "mp4": "https://video.twimg.com/ext_tw_video/2113414352623607808/pu/vid/avc1/720x960/9lFCWQVr1_sD4xX1.mp4?tag=12",
+    "width": 720,
+    "height": 960,
     "durationSec": 25
    },
    "evidence": {
@@ -39969,6 +40235,58 @@
    }
   },
   {
+   "id": "2113418364353912861",
+   "url": "https://x.com/RafaCrackYT/status/2113418364353912861",
+   "author": {
+    "handle": "RafaCrackYT",
+    "name": "Rafa"
+   },
+   "postedAt": "2026-10-22T23:52:58.000Z",
+   "addedAt": "2026-10-24",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "核打击城市模拟对比",
+    "en": "Nuclear strike simulation comparison"
+   },
+   "summary": {
+    "zh": "作品是在模拟城市中呈现核打击，并比较了四个 AI 模型的生成效果；Opus 用时接近 12 小时。",
+    "en": "A simulated nuclear strike in a city was generated and compared across four AI models, with Opus taking almost 12 hours."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Gemini 4 Argon",
+    "DeepSeek V4.1",
+    "MiniMax M3.1"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 49800,
+    "likes": 273,
+    "replies": 25,
+    "reposts": 12,
+    "bookmarks": 107,
+    "checkedAt": "2026-10-24T05:52:10.655Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113418074816724992/img/2CZKGzz9WaNkTo0V.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113418074816724992/vid/avc1/1280x720/lFYXWRXmri9zhOSq.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2105283486487896448",
    "url": "https://x.com/javiiarchive/status/2105283486487896448",
    "author": {
@@ -44159,6 +44477,56 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2113500611052478632",
+   "url": "https://x.com/bunkaich/status/2113500611052478632",
+   "author": {
+    "handle": "bunkaich",
+    "name": "ぶんかい@AIで遊ぶ人"
+   },
+   "postedAt": "2026-10-23T05:19:47.000Z",
+   "addedAt": "2026-10-24",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "折叠式手机卡片支架设计",
+    "en": "Foldable phone card holder design"
+   },
+   "summary": {
+    "zh": "这是一个可装三张卡、带锁定滑盖并能展开成手机支架的 3D 卡套。作者称其直接在 Claude 应用中通过多次指示完成。",
+    "en": "A 3D phone-mounted card holder has a locking slide, space for three cards, and a folding phone-stand function. The creator says it was made in the Claude app through repeated instructions."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Claude"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 43938,
+    "likes": 288,
+    "replies": 1,
+    "reposts": 21,
+    "bookmarks": 190,
+    "checkedAt": "2026-10-24T05:52:10.655Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113499255424122880/img/9lPg5FosjCJkS6Gh.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113499255424122880/vid/avc1/720x1280/q7dLTdcAsYiaQmMC.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 63
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -49623,6 +49991,60 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2113345392238903325",
+   "url": "https://x.com/Xanderwow_A/status/2113345392238903325",
+   "author": {
+    "handle": "Xanderwow_A",
+    "name": "Xanderwow"
+   },
+   "postedAt": "2026-10-22T19:03:00.000Z",
+   "addedAt": "2026-10-24",
+   "lang": "zh",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "复仇者联盟风格电影短片",
+    "en": "Avengers-inspired cinematic video"
+   },
+   "summary": {
+    "zh": "作者以《复仇者联盟：终局之战》为参考，用 Pollo Recast 生成视频、GPT-Image-2.5 生成图像，并用 GPT-6-Astra 和 Claude Opus 5.5 做后期与提示词处理。",
+    "en": "A video inspired by Avengers: Endgame was generated with Pollo Recast, using GPT-Image-2.5 for images and GPT-6-Astra and Claude Opus 5.5 for post-processing and prompts."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Pollo Recast",
+    "GPT-Image-2.5",
+    "GPT-6-Astra",
+    "Codex",
+    "Claude Code"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 36673,
+    "likes": 597,
+    "replies": 68,
+    "reposts": 61,
+    "bookmarks": 267,
+    "checkedAt": "2026-10-24T05:52:10.655Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113344246564433920/img/vlrZvLlq9Oz2UvQL.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113344246564433920/vid/avc1/1280x720/w5CM35gRetMGE24p.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 173
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -59994,6 +60416,59 @@
    }
   },
   {
+   "id": "2113333862625648715",
+   "url": "https://x.com/LexnLin/status/2113333862625648715",
+   "author": {
+    "handle": "LexnLin",
+    "name": "Leon Lin"
+   },
+   "postedAt": "2026-10-22T18:17:11.000Z",
+   "addedAt": "2026-10-24",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "程序化海洋与水体场景",
+    "en": "Procedural ocean and water scene"
+   },
+   "summary": {
+    "zh": "作者用 Claude Opus 5.5 制作了逼真的海洋和水体场景，称未使用素材，并分享了代码仓库。",
+    "en": "A realistic ocean and water scene was built with Claude Opus 5.5; the creator says no assets were used and shared the repository."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/LexnLin/status/2113333862625648715",
+    "text": "build some very realistic ocean/water"
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 25926,
+    "likes": 596,
+    "replies": 27,
+    "reposts": 27,
+    "bookmarks": 428,
+    "checkedAt": "2026-10-24T05:52:10.655Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113333078340907008/img/hsbEdi-08fRyTdzL.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113333078340907008/vid/avc1/1280x720/8Q3UJRIGFiq0CX96.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 60
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103275618045686217",
    "url": "https://x.com/davidmarcus/status/2103275618045686217",
    "author": {
@@ -67318,6 +67793,54 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2113380380158107985",
+   "url": "https://x.com/0xJarvi/status/2113380380158107985",
+   "author": {
+    "handle": "0xJarvi",
+    "name": "Jarvi"
+   },
+   "postedAt": "2026-10-22T21:22:01.000Z",
+   "addedAt": "2026-10-24",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "《我的世界》军事模组",
+    "en": "Minecraft military mod"
+   },
+   "summary": {
+    "zh": "这是一个《我的世界》军事模组，玩家可以用平板呼叫巡航导弹并查看飞行画面。创作者称其使用 Opus 5.5 制作。",
+    "en": "A Minecraft military mod lets Steve order a cruise missile from a tablet and control its camera during flight. The creator says it was made with Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 20722,
+    "likes": 424,
+    "replies": 13,
+    "reposts": 36,
+    "bookmarks": 175,
+    "checkedAt": "2026-10-24T05:52:10.655Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113380246162411520/img/ko3u04_w0RPAJkEO.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113380246162411520/vid/avc1/720x758/ZabafjYlwbq2XWkY.mp4?tag=29",
+    "width": 720,
+    "height": 758,
+    "durationSec": 19
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -75092,6 +75615,54 @@
    }
   },
   {
+   "id": "2113335762850615298",
+   "url": "https://x.com/jipvandervelde/status/2113335762850615298",
+   "author": {
+    "handle": "jipvandervelde",
+    "name": "Jip"
+   },
+   "postedAt": "2026-10-22T18:24:44.000Z",
+   "addedAt": "2026-10-24",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "禅意花园解谜游戏",
+    "en": "Zen Garden puzzle game"
+   },
+   "summary": {
+    "zh": "《Zen Garden》是一款休闲益智游戏，目标是用一条路径完成 1000 多座花园。创作者称代码、画面、动画和声音都由 Opus 5.5 制作。",
+    "en": "Zen Garden is a relaxing puzzle game about raking through more than 1,000 gardens in a single path. The creator says all code, graphics, animation and sound were made with Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 16320,
+    "likes": 375,
+    "replies": 36,
+    "reposts": 15,
+    "bookmarks": 220,
+    "checkedAt": "2026-10-24T05:52:10.655Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113332917590007808/img/sSp-ImH13rTjUggS.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113332917590007808/vid/avc1/720x1560/mT7LiUYtWPqkGk0D.mp4?tag=29",
+    "width": 720,
+    "height": 1560,
+    "durationSec": 25
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102695787721584792",
    "url": "https://x.com/npaka123/status/2102695787721584792",
    "author": {
@@ -78656,6 +79227,56 @@
     "width": 810,
     "height": 720,
     "durationSec": 25
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2113375394929824221",
+   "url": "https://x.com/Emremorkoc/status/2113375394929824221",
+   "author": {
+    "handle": "Emremorkoc",
+    "name": "Emre"
+   },
+   "postedAt": "2026-10-22T21:02:13.000Z",
+   "addedAt": "2026-10-24",
+   "lang": "tr",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "迷你开放世界驾驶游戏",
+    "en": "Mini open-world driving game"
+   },
+   "summary": {
+    "zh": "创作者正在制作一款类似 GTA 的在线小游戏，计划加入任务、警察、出租车、救护车、竞速和团队战斗等内容。项目使用购买的 Unity 素材包，并由 Opus 5.5 和 Unity 开发。",
+    "en": "The creator is building a small GTA-style online game with missions, police, taxis, ambulances, races and team battles. They use purchased Unity asset packs and develop the game with Opus 5.5 and Unity."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Unity"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 14653,
+    "likes": 119,
+    "replies": 25,
+    "reposts": 9,
+    "bookmarks": 61,
+    "checkedAt": "2026-10-24T05:52:10.655Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113374193668567040/img/F9zcIOVz8ACWDFxZ.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113374193668567040/vid/avc1/1280x720/Dky7b2sUnxVcNM3t.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 198
    },
    "evidence": {
     "via": "daily",
@@ -87205,6 +87826,63 @@
    }
   },
   {
+   "id": "2113401221910253853",
+   "url": "https://x.com/vib3coded/status/2113401221910253853",
+   "author": {
+    "handle": "vib3coded",
+    "name": "Vib3Coded"
+   },
+   "postedAt": "2026-10-22T22:44:51.000Z",
+   "addedAt": "2026-10-24",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "海上果冻立方体场景对比",
+    "en": "Offshore jelly cube diorama comparison"
+   },
+   "summary": {
+    "zh": "作品是一个置于半透明果冻方块中的海上平台、风电场和风暴互动 WebGPU 微缩场景。创作者称 Claude Opus 5.5 和 GPT-6 Astra 使用同一提示词分别制作了版本。",
+    "en": "The work is an interactive WebGPU diorama of an offshore platform, wind farm and storm inside a translucent jelly cube. The creator says Claude Opus 5.5 and GPT-6 Astra made their versions from the same prompt."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/vib3coded/status/2113401353196466400",
+    "text": "Build \"Offshore Jelly\" — a single-file interactive WebGPU diorama in the \"Material Studies\" series: a stretch of North Sea cut out as a cube of translucent jelly, sitting on a studio floor. Everything is procedural (no external assets, no network), one HTML file with inline JS/WGSL.\n\nTHE BLOCK\n- A wobbly jelly cube you can grab by its sides and tip; it springs back. Sliders: firmness, damping, wind (0–20 m/s).\n- Inside: a shallow-water simulation for the sea surface (waves, wakes, foam, whitecaps), seabed with sand ripples, scour rocks, kelp, boulders, starfish, crabs, urchins, a pipeline, cables and a small wreck. Caustics on the seabed. Dragging the water stirs up waves.\n- Waves come from the wind: several wave trains whose height grows with wind speed.\n\nTHE SCENE\n- A production platform on a four-legged steel jacket (braces, risers, conductors, boat landing, marine growth below the waterline): main and cellar decks, process module, derrick, living quarters, lifeboats, a pedestal crane with a laydown area, a flare boom with a flickering flame and smoke.\n- An octagonal helideck with an H, a net, perimeter lights and a windsock.\n- Five offshore wind turbines on monopiles: transition piece with yellow platform, boat landing ladder, davit, tower, nacelle, three-blade rotors with red tips, blinking red aviation lights. Rotor speed and power output (MW) follow the wind.\n- A rocky skerry with a lighthouse whose beam turns; seals haul out on it.\n\nWHAT HAPPENS\n- Supply run: a platform supply vessel comes in from standby, holds station next to the jacket on dynamic positioning (thruster foam), and the crane does four lifts — containers swing on the hook, are set down on the platform and back-loaded onto the boat's deck. Then she sails back to standby.\n- Helicopter: flies in from the west, turns into the wind, lands on the helideck; a deck officer walks out; passengers get off. A second press sends it away (spin-up, lift, outbound). Rotor and tail rotor spin, downwash flattens the water.\n- Crew boat: a small catamaran sails out to a turbine, pushes its bow onto the boat landing, and technicians climb the ladder onto the platform. Next time she picks them up and brings them home.\n- Storm: the wind builds to a gale, waves get big with whitecaps and spray, rain falls, the room darkens, lightning strikes blades, the lighthouse, the derrick or the sea with a flash and thunder. Above cut-out the turbines feather their blades and stop (0 MW); the helicopter is grounded. Then it eases and the turbines restart.\n\nLIFE\n- Schools of fish around the jacket and wrecks, gulls that perch on railings and take off on the horn, gannets that plunge-dive for fish, a pod of porpoises, seals, moon jellyfish, crew walking the decks.\n\nCONTROLS & UI\n- Buttons: Supply run, Helicopter (take-off when landed), Crew boat, Storm. Space = ship's horn. Tapping a turbine switches it on/off, tapping the supply boat or helideck calls them. Orbit by drag, zoom by wheel/pinch.\n- Tallies: Power (MW), Lifts, Flights; status lines for the supply boat, helicopter and crew boat.\n- Flavours (jelly colour palettes): North Sea, Curaçao, Blackcurrant.\n- Sounds are synthesised with WebAudio and only play for events (horn, winch, set-down, bump, rotor, thunder, rain) — no constant background ambience. Sound toggle and pause.\n- Mobile: a bottom sheet with the controls, touch orbit and pinch zoom. Clean fallback message when WebGPU is unavailable.\n- Copy in English: \"Offshore Jelly. A wind farm and a platform working a stretch of North Sea, set in a block of jelly.\" — \"Call in the supply boat. Fly the crew out. Brew up a storm.\""
+   },
+   "referenceAssets": false,
+   "tools": [
+    "GPT-6 Astra",
+    "WebGPU",
+    "WebAudio"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 11460,
+    "likes": 349,
+    "replies": 20,
+    "reposts": 48,
+    "bookmarks": 177,
+    "checkedAt": "2026-10-24T05:52:10.655Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113400858335444992/img/K2JtNt1iQCzxZiP_.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113400858335444992/vid/avc1/720x910/aG2XgC1yb_aq0gHY.mp4?tag=29",
+    "width": 720,
+    "height": 910,
+    "durationSec": 18
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2106960127987474652",
    "url": "https://x.com/JaydenDavisNC/status/2106960127987474652",
    "author": {
@@ -90464,6 +91142,57 @@
     "width": 1280,
     "height": 720,
     "durationSec": 303
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2113497132841799858",
+   "url": "https://x.com/dummerspast39/status/2113497132841799858",
+   "author": {
+    "handle": "dummerspast39",
+    "name": "Binkg"
+   },
+   "postedAt": "2026-10-23T05:05:58.000Z",
+   "addedAt": "2026-10-24",
+   "lang": "fr",
+   "models": [
+    "fable-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "瑞克 SVG 生成对比",
+    "en": "Rick Sanchez SVG comparison"
+   },
+   "summary": {
+    "zh": "这条帖子展示了一个 Rick Sanchez 的 SVG，并比较了 Fable 5.5 与 Gemini 4 Carbon 的效果。",
+    "en": "The post shows an SVG of Rick Sanchez in a comparison between Fable 5.5 and Gemini 4 Carbon."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Fable 5.5",
+    "Gemini 4 Carbon"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 10306,
+    "likes": 124,
+    "replies": 8,
+    "reposts": 3,
+    "bookmarks": 47,
+    "checkedAt": "2026-10-24T05:52:10.655Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113494818680954880/img/xbVzJ3Re1ZKnwRDi.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113494818680954880/vid/avc1/720x720/pEBay-I09O8tQqhw.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 15
    },
    "evidence": {
     "via": "daily",
@@ -95192,6 +95921,56 @@
    }
   },
   {
+   "id": "2113441111742062604",
+   "url": "https://x.com/slashui/status/2113441111742062604",
+   "author": {
+    "handle": "slashui",
+    "name": "洛克船长"
+   },
+   "postedAt": "2026-10-23T01:23:21.000Z",
+   "addedAt": "2026-10-24",
+   "lang": "zh",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "AI剪辑纪录片",
+    "en": "AI-edited documentary"
+   },
+   "summary": {
+    "zh": "创作者用 Opus 5.5 将 19 分钟素材剪成 6 分钟纪录片，并使用 Lemo-Opuscar skill 制作字幕。",
+    "en": "The creator edited 19 minutes of footage into a six-minute documentary with Opus 5.5 and used the Lemo-Opuscar skill for subtitles."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Lemo-Opuscar"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 8799,
+    "likes": 104,
+    "replies": 8,
+    "reposts": 18,
+    "bookmarks": 118,
+    "checkedAt": "2026-10-24T05:52:10.655Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113439704167141376/img/LEqZaG4LmK7Pqbo4.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113439704167141376/vid/avc1/1280x720/UMA5-rk8T3UBy1y9.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 370
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2112476644757639411",
    "url": "https://x.com/N1njaCodex/status/2112476644757639411",
    "author": {
@@ -96821,6 +97600,54 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2113469231308382333",
+   "url": "https://x.com/thebuggeddev/status/2113469231308382333",
+   "author": {
+    "handle": "thebuggeddev",
+    "name": "The Bugged Dev"
+   },
+   "postedAt": "2026-10-23T03:15:05.000Z",
+   "addedAt": "2026-10-24",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "三维蜡封印章",
+    "en": "3D wax seal stamp"
+   },
+   "summary": {
+    "zh": "创作者用 Claude Opus 5.5 制作了一个三维火漆印章，并表示可以向 Claude 提供图像参考和 AI 生成的提示词。",
+    "en": "The creator made a 3D wax seal stamp with Claude Opus 5.5 and says an image reference plus an AI-generated prompt can be provided to Claude."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 8295,
+    "likes": 216,
+    "replies": 9,
+    "reposts": 9,
+    "bookmarks": 87,
+    "checkedAt": "2026-10-24T05:52:10.655Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113468811458560000/img/TftCXhVjbNbXL4Yr.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113468811458560000/vid/avc1/1154x720/IykUaAqPg9Js7NIM.mp4?tag=29",
+    "width": 1154,
+    "height": 720,
+    "durationSec": 55
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -101129,6 +101956,57 @@
    }
   },
   {
+   "id": "2113459522257989724",
+   "url": "https://x.com/aimikoda/status/2113459522257989724",
+   "author": {
+    "handle": "aimikoda",
+    "name": "Kōda"
+   },
+   "postedAt": "2026-10-23T02:36:30.000Z",
+   "addedAt": "2026-10-24",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "冲击帧动画",
+    "en": "Impact-frame animation"
+   },
+   "summary": {
+    "zh": "创作者使用 Seedance 2.5、GPT 6 Astra 和 Opus 5.5 制作了大量冲击帧效果的作品。",
+    "en": "The creator made an impact-frame-heavy work using Seedance 2.5, GPT 6 Astra, and Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Seedance 2.5",
+    "GPT 6 Astra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 6642,
+    "likes": 189,
+    "replies": 26,
+    "reposts": 7,
+    "bookmarks": 54,
+    "checkedAt": "2026-10-24T05:52:10.655Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113458870051917824/img/bfmA_-kCQiY8Agsg.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113458870051917824/vid/avc1/1280x720/fzo3JWgaUYMntRBK.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 58
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103730428901498972",
    "url": "https://x.com/chetanankola/status/2103730428901498972",
    "author": {
@@ -103797,6 +104675,65 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2113344709682663503",
+   "url": "https://x.com/aimikoda/status/2113344709682663503",
+   "author": {
+    "handle": "aimikoda",
+    "name": "Kōda"
+   },
+   "postedAt": "2026-10-22T19:00:17.000Z",
+   "addedAt": "2026-10-24",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "霓虹故障风视频处理",
+    "en": "Neon glitch video treatment"
+   },
+   "summary": {
+    "zh": "创作者用 Opus 5.5、Python 和 ffmpeg 将附带视频处理成深色霓虹故障风动画，并生成无缝循环的 vaporwave 配乐。",
+    "en": "The creator used Opus 5.5 with Python and ffmpeg to transform an attached video into a dark neon glitch animation with a seamless vaporwave soundtrack."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "post",
+    "sourceUrl": "https://x.com/aimikoda/status/2113344709682663503",
+    "text": "Apply a dark neon glitch-art effect to the attached video (Python + ffmpeg, frame by frame):\n\n1. Cut out the subject with rembg (isnet-anime for anime/illustration, isnet-general-use for real footage). Make the background pure black.\n2. Posterize the subject to 5 brightness levels and recolor it with a 3-color palette on black:\nmain color for cool/neutral areas (cyan #14b8f0), mid color (violet #6438c4), accent for warm/red areas (magenta #ff2ad4).\nKeep it dark: most of the image black or navy, only the highlights glow. Let the color-patch edges crawl slightly with noise.\n3. Add a magenta rim light on the subject's left edge.\n4. Datamosh: wherever the current frame is empty, keep the previous frame shifted a few px down and faded (melting ghost trails). Also copy ~3% of 24px blocks from the previous frame with a small random offset.\n5. Vertical drips: in ~30% of the columns, smear bright pixels upward (up to ~300px) and downward (~150px). Mix 2–8px wide drips with thin vertical scratch lines in the palette colors, denser near the subject.\n6. Light grain + vignette. Keep the original resolution and fps, export as H.264 MP4.\n\nGenerate an original vaporwave-glitch soundtrack (~-12 LUFS) / make it a seamless loop where the last 1s drips into the first 1s column by column."
+   },
+   "referenceAssets": true,
+   "tools": [
+    "Python",
+    "ffmpeg",
+    "rembg",
+    "isnet-anime",
+    "isnet-general-use"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 5350,
+    "likes": 136,
+    "replies": 7,
+    "reposts": 8,
+    "bookmarks": 102,
+    "checkedAt": "2026-10-24T05:52:10.655Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113344431055056896/img/CqKi-QFqhVXtn0QB.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113344431055056896/vid/avc1/720x720/k0VHLTyJhd0vHTRp.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 7
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
