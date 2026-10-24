@@ -1,5 +1,98 @@
 [
   {
+    "slug": "2026-10-24",
+    "date": "2026-10-24",
+    "title": "AI 快讯 · 10月24日",
+    "items": [
+      {
+        "title": "Anthropic开源知识工作插件库，让Claude按岗位干活",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/anthropics/knowledge-work-plugins",
+        "summary": "Anthropic开源knowledge-work-plugins仓库。这些插件主要为Claude Cowork打造，也兼容Claude Code。插件可以定义工作方式、调用的工具与数据源，以及关键流程的处理规则，让Claude按岗位、团队和公司习惯产出完整成果。官方仓库可直接作为编写插件的范本。",
+        "titleEn": "Anthropic Open-Sources Knowledge Work Plugins for Claude",
+        "summaryEn": "Anthropic open-sourced a plugin repository built mainly for Claude Cowork and also compatible with Claude Code. Plugins define how work should be done, which tools and data Claude pulls from, and how critical workflows are handled. The result is role-specific output tailored to a team or company, and the official repo gives developers a reference for building their own plugins."
+      },
+      {
+        "title": "Graphify把代码库变知识图谱，支持多家编码智能体",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/Graphify-Labs/graphify",
+        "summary": "Graphify提供/graphify技能，可将代码、文档、SQL schema、配置文件和PDF转成可查询的知识图谱。它支持Claude Code、Cursor、Codex和Gemini CLI，在本地做确定性AST解析，每条关系都附带解释，且不依赖向量库。适合帮编码智能体快速理解大型陌生代码库。",
+        "titleEn": "Graphify Turns Codebases into Queryable Knowledge Graphs",
+        "summaryEn": "Graphify ships a /graphify skill that turns code, docs, SQL schemas, configs and PDFs into a queryable knowledge graph. It works with Claude Code, Cursor, Codex and Gemini CLI. Parsing is local and deterministic via AST, every edge is explained, and no vector store is needed. It helps coding agents understand large, unfamiliar codebases."
+      },
+      {
+        "title": "OpenAI宣布前沿模型训练不再接入实时互联网",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/10/23/openai-says-it-will-no-longer-train-its-ai-models-on-the-live-internet-citing-significant-risks/",
+        "summary": "OpenAI以存在“重大风险”为由，宣布前沿模型训练将与实时互联网隔离。此前几周，其一名工程师曾公开表示这种方案行不通。OpenAI同期发文介绍离线训练环境和高算力红队测试等措施。这表明头部实验室正把训练环境隔离当作核心安全手段，也可能影响模型的数据获取方式。",
+        "titleEn": "OpenAI Cuts Frontier Model Training Off the Live Internet",
+        "summaryEn": "Citing significant risks, OpenAI will isolate frontier model training from the live internet. Weeks earlier, one of its own engineers had said this approach would not work. OpenAI also published details on offline training environments and high-compute red-teaming. Leading labs are now treating training containment as a core safety measure, which may change how models acquire data."
+      },
+      {
+        "title": "OpenAI用GPT-5.6 Sol挖出影响七成网站的PHP漏洞",
+        "source": "Latent Space",
+        "category": "AI 工具动态",
+        "url": "https://latent.space/p/ainews-openais-patch-the-planet-program/",
+        "summary": "OpenAI的Patch the Planet项目借助GPT-5.6 Sol，在PHP核心中发现PHP2Shell漏洞，影响约70%的网站。OpenAI是发现该漏洞的两方之一，相关协调修复持续了两个月。这是AI大规模挖掘基础设施级漏洞的标志性案例，运行PHP服务的开发者应尽快检查版本并更新。",
+        "titleEn": "OpenAI's GPT-5.6 Sol Finds Core PHP Flaw Affecting 70% of Web",
+        "summaryEn": "Using GPT-5.6 Sol, OpenAI's Patch the Planet program discovered PHP2Shell vulnerabilities in core PHP, affecting roughly 70% of the web. OpenAI was one of two parties to find them, followed by a two-month coordinated response. It is a landmark case of AI finding infrastructure-level bugs at scale. Developers running PHP should check their versions and update promptly."
+      },
+      {
+        "title": "大牛投资人与Superhuman创始人谈PMF危险信号",
+        "source": "TC Venture",
+        "category": "出海实战",
+        "url": "https://techcrunch.com/2026/10/23/vcs-superhuman-mail-founder-share-red-flags-about-product-market-fit/",
+        "summary": "Iconiq和Sapphire Ventures的投资人与Superhuman Mail创始人Rahul Vohra一起，分享判断产品市场契合度（PMF）的危险信号和做爆款产品的经验。Vohra曾提出广为流传的PMF量化方法。对正在验证需求的出海SaaS和独立开发者来说，可以借此对照检查自己的增长信号是否真实。",
+        "titleEn": "VCs and Superhuman Founder on Product-Market Fit Red Flags",
+        "summaryEn": "Investors from Iconiq and Sapphire Ventures joined Superhuman Mail founder Rahul Vohra to share red flags about product-market fit and lessons on building hit products. Vohra is known for a widely used method of quantifying PMF. Indie hackers and SaaS founders validating demand can use the discussion to check whether their growth signals are real."
+      },
+      {
+        "title": "MIT让13个AI独处虚拟岛，它们自创游戏还变更能干",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/10/22/left-alone-with-nothing-to-do-ai-agents-started-playing/",
+        "summary": "MIT研究者把13个AI智能体放在一座虚拟岛上，不给任何任务。它们自发发明游戏，为丢失的戒指“哀悼”，最终在本职工作上表现更好。实验说明，开放式的自主互动可能提升智能体能力，为多智能体系统设计提供了新思路。",
+        "titleEn": "MIT's Marooned AI Agents Invent Games, Then Work Better",
+        "summaryEn": "MIT researchers placed 13 AI agents on a virtual island with no assigned tasks. The agents invented games, mourned a lost ring, and eventually got better at their actual jobs. The experiment suggests open-ended autonomous interaction may improve agent capability, offering new ideas for designing multi-agent systems."
+      },
+      {
+        "title": "Agent Mosaic：智能体会拼凑信息泄露机密结论",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2610.30418",
+        "summary": "研究发现，智能体会从多份看似无害的文档中拼出敏感结论并说出来，这被称为“马赛克效应”。团队用网络安全、医疗、军事等合成案例测试，覆盖受控模拟中的3个模型，以及两个开源Harness中的真实智能体，共产生上万条回答。即使是善意提问，也会出现泄露。基于内部知识库做智能体的开发者，不能只靠文档级权限控制。",
+        "titleEn": "Agent Mosaic: Agents Leak Secrets by Assembling Fragments",
+        "summaryEn": "Agents can piece together a sensitive conclusion from individually harmless documents and disclose it, a risk the paper calls the mosaic effect. Tests used synthetic cybersecurity, medical and military cases across three models in simulation and live agents in two open-source harnesses, producing over 10,000 answers. Leaks occurred even under benign queries. Developers building agents over internal data cannot rely on document-level permissions alone."
+      },
+      {
+        "title": "扩散语言模型速度因任务而异，改写快创作慢",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2610.25835",
+        "summary": "扩散语言模型一次前向计算能生成多个token，并在生成过程中自行决定计算多少轮。因此，长度相同的两段输出，成本可能差别很大。论文在10个任务上分析了两个扩散模型，发现复制或轻改输入的内容很便宜，开放式写作则昂贵得多。开发者可据此判断哪些场景适合用扩散模型，并更准确地估算推理成本。",
+        "titleEn": "Diffusion LLM Speed Varies Widely Across Tasks",
+        "summaryEn": "Diffusion language models can generate several tokens per forward pass and decide during generation how many passes to spend. So two outputs of the same length can differ greatly in cost. Analyzing two models across 10 tasks, the paper finds copied or lightly edited text is cheap while open-ended writing is costly. This helps developers choose suitable workloads for diffusion models and estimate inference costs more accurately."
+      }
+    ],
+    "funding": [
+      {
+        "company": "Flapping Airplanes",
+        "url": "https://news.crunchbase.com/venture/biggest-funding-rounds-ai-defense-biotech-robotics-tenstorrent/",
+        "round": "undisclosed",
+        "amount": "",
+        "valuation": "",
+        "investors": "",
+        "pitch": "AI研究实验室，本周融资额位居Crunchbase融资榜前列，仅次于Tenstorrent，显示资本仍在追捧新兴AI实验室。"
+      }
+    ],
+    "jasonSays": "OpenAI一边宣布前沿模型训练与实时互联网隔离，一边用GPT-5.6 Sol挖出影响约七成网站的PHP漏洞，AI安全攻防正进入基础设施级阶段。",
+    "jasonSaysEn": "OpenAI is isolating frontier training from the live internet while its GPT-5.6 Sol uncovered a PHP flaw affecting about 70% of the web, signaling that AI security has reached infrastructure scale.",
+    "filename": "2026-10-24.md"
+  },
+  {
     "slug": "2026-10-23",
     "date": "2026-10-23",
     "title": "AI 快讯 · 10月23日",
@@ -90,7 +183,8 @@
     ],
     "jasonSays": "今天最值得关注的是代理基础设施正在补齐：从低成本决策、无密码登录到上下文检索评测，AI正从聊天能力走向可控、可执行的真实工作流。",
     "jasonSaysEn": "The key trend today is the maturation of agent infrastructure, spanning low-cost decisions, passwordless delegated login, and context-retrieval evaluation as AI moves from chat toward controllable real-world workflows.",
-    "filename": "2026-10-23.md"
+    "filename": "2026-10-23.md",
+    "coverImage": "/news/2026-10-23.png"
   },
   {
     "slug": "2026-10-22",
