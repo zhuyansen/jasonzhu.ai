@@ -1,6 +1,6 @@
 /**
  * 模型调用。两个角色故意用两家模型：
- *   - worker（分类、定位提示词）：Claude，容灾链 aigocode → flatrouter（GPT）→ apimart → 官方
+ *   - worker（分类、定位提示词）：Claude，容灾链 flatrouter（GPT）→ apimart（Claude）→ 官方（2026-10-24 起不用 aigocode；proxy 只在设了 ANTHROPIC_AUTH_TOKEN 时排第一）
  *   - reviewer（审核）：flatrouter 上的 GPT；没配 FLATROUTER_API_KEY 时退回 Claude 并在结果里注明
  * 同一个模型不能既干活又给自己签字，所以审核尽量用另一家。
  *

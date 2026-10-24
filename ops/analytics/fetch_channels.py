@@ -9,7 +9,6 @@ import requests
 
 from common import run, save, secret
 
-AIGOCODE = "https://api.aigocode.app"
 APIMART = "https://api.apimart.ai"
 FLATROUTER = "https://api.flatrouter.com"
 IMAGE_MODEL = os.environ.get("APIMART_IMAGE_MODEL") or "gpt-image-2.5-flare"   # 和封面脚本用同一个模型
@@ -39,16 +38,12 @@ def main():
         checks.append({"channel": channel, "used_by": used_by, "model": model, "ok": code in ok_codes, "status": code,
                        "detail": "" if code in ok_codes else body})
 
-    ag = secret("ANTHROPIC_AUTH_TOKEN")
-    if ag:
-        for m in ("claude-opus-5", "claude-sonnet-5"):
-            add("aigocode（主力）", "快讯 + 提示词库", m, lambda m=m: anthropic_ping(AIGOCODE, ag, m))
     fr = secret("FLATROUTER_API_KEY")
     if fr:
-        add("flatrouter（第一备用）", "快讯 + 提示词库", "gpt-6-astra", lambda: openai_ping(FLATROUTER, fr, "gpt-6-astra"))
+        add("flatrouter（主力）", "快讯 + 提示词库", "gpt-6-astra", lambda: openai_ping(FLATROUTER, fr, "gpt-6-astra"))
     ac = secret("APIMART_CLAUDE_KEY") or secret("APIMART_API_KEY")
     if ac:
-        add("apimart Claude（第二备用 + 终审兜底）", "快讯 + 提示词库", "claude-opus-5-5", lambda: anthropic_ping(APIMART, ac, "claude-opus-5-5"))
+        add("apimart Claude（备用 + 终审）", "快讯 + 提示词库", "claude-opus-5-5", lambda: anthropic_ping(APIMART, ac, "claude-opus-5-5"))
     ai = secret("APIMART_API_KEY")
     if not ai:
         # 生图 key 为空也要报：2026-10-05 一次 `grep … | gh secret set` 没读到值，存进去空串，体检却静默跳过了

@@ -56,7 +56,7 @@ node scripts/opus-prompts/assemble.mjs --write && node scripts/generate-opus-pro
    - 其余（把握不足、分类把握低、提示词在截图里）→ **Opus 终审**（`lib/arbitrate.mjs` + `prompts/arbitrate.md`）拍板通过或否决，并决定提示词留不留。模型优先 `claude-opus-5-5`，通道没开通就用 `claude-opus-5`（`OPUS_ARBITER_MODELS` 可覆盖）
 6. **待审队列 / 滚动 PR**（分支 `opus-prompts/pending`）：只有 Opus 终审也不可用时才进这里。合并 = 批准全部；否决某条 = 把 ID 加进 `curation.json` 的 `dropCase`；不管它 = 14 天后自动丢弃。已有队列可用 `node scripts/opus-prompts/arbitrate-pending.mjs` 补跑终审。
 
-干活模型容灾：aigocode（claude-sonnet-5 → sonnet-5-5 → opus-5）→ apimart（sonnet-5-5 → opus-4-6）→ 官方 → flatrouter gpt-6-astra（最后兜底；2026-10-03 评测它比 Claude 更容易漏掉夹在正文里的一句话指令）。
+干活模型容灾：flatrouter（gpt-6-astra → gpt-5.6-sol）→ apimart Claude（opus-5-5 → sonnet-5-5 → opus-4-6）→ 官方。2026-10-24 起不用 aigocode（余额用完）。2026-10-03 评测 GPT 比 Claude 更容易漏掉夹在正文里的一句话指令，有抽检发现漏收可以考虑把 apimart 调到前面。终审只用 Opus：apimart Opus 5.5。
 
 每次运行的摘要（Actions 页面）会列出 twitterapi.io 消耗和两家模型的 token 用量。
 

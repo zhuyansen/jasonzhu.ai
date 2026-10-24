@@ -63,8 +63,6 @@ jobs:
           TWITTERAPI_IO_KEY: ${{ secrets.TWITTERAPI_IO_KEY }}
           FLATROUTER_API_KEY: ${{ secrets.FLATROUTER_API_KEY }}
           JEV_API_KEY: ${{ secrets.JEV_API_KEY }}  # Jev 官方（优先）
-          ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
-          ANTHROPIC_BASE_URL: "https://api.aigocode.app"
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           APIMART_API_KEY: ${{ secrets.APIMART_API_KEY }}
           APIMART_CLAUDE_KEY: ${{ secrets.APIMART_CLAUDE_KEY }}  # 调 Claude 专用（只开通 opus-5-5），APIMART_API_KEY 留给生图

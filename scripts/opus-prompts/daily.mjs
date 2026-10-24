@@ -10,7 +10,7 @@
  *
  * 用法：node scripts/opus-prompts/daily.mjs [--dry]
  * 补跑：WINDOW_FROM=2026-09-28T18:00Z WINDOW_TO=2026-09-29T10:00Z SEARCH_TERMS='"Sonnet 5.5" OR "Sonnet5.5"' node …
- * 环境变量：TWITTERAPI_IO_KEY（必需）· ANTHROPIC_AUTH_TOKEN / APIMART_API_KEY / ANTHROPIC_API_KEY（至少一个）
+ * 环境变量：TWITTERAPI_IO_KEY（必需）· FLATROUTER_API_KEY / APIMART_CLAUDE_KEY / ANTHROPIC_API_KEY（至少一个；aigocode 2026-10-24 起不用）
  *          FLATROUTER_API_KEY（审核用第二模型，强烈建议配）
  *          CAP=40 · MIN_FAVES=100 · DELAY_HOURS=24 · MAX_SEARCH_TWEETS=400 · CLAUDE_TRANSPORT=curl（本机）
  */

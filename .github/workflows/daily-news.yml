@@ -38,12 +38,10 @@ jobs:
 
       - name: Collect and generate news
         env:
-          ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
-          ANTHROPIC_BASE_URL: "https://api.aigocode.app"
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           APIMART_API_KEY: ${{ secrets.APIMART_API_KEY }}
           APIMART_CLAUDE_KEY: ${{ secrets.APIMART_CLAUDE_KEY }}  # 调 Claude 专用（只开通 opus-5-5），APIMART_API_KEY 留给生图
-          FLATROUTER_API_KEY: ${{ secrets.FLATROUTER_API_KEY }}  # 第一备用（GPT），aigocode 不通时先切这里
+          FLATROUTER_API_KEY: ${{ secrets.FLATROUTER_API_KEY }}  # 主力（GPT）。2026-10-24 起不用 aigocode（余额用完，用户决定去掉）
           JEV_API_KEY: ${{ secrets.JEV_API_KEY }}  # Jev 融资复核，缺失时跳过
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}

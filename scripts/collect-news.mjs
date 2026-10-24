@@ -125,7 +125,7 @@ const APIMART = apimartKey
   : null;
 
 // 第一备用 flatrouter：OpenAI 兼容接口，只有 GPT（这个 key 开通了 gpt-6-astra / gpt-5.6-sol）。
-// 2026-10-05 用户决定：Claude（aigocode）继续当主力，aigocode 不通时先切这里，再到 apimart。
+// 2026-10-05 用户决定排在 apimart 前面；2026-10-24 aigocode 余额用完、用户决定不用了，工作流不再传 ANTHROPIC_AUTH_TOKEN，这里就是主力。
 const flatrouterKey = process.env.FLATROUTER_API_KEY;
 const FLATROUTER = flatrouterKey
   ? {
@@ -137,7 +137,7 @@ const FLATROUTER = flatrouterKey
     }
   : null;
 
-// fallback 链：aigocode → flatrouter（GPT）→ apimart → 官方
+// fallback 链：flatrouter（GPT）→ apimart（Claude）→ 官方。PROXY（ANTHROPIC_AUTH_TOKEN，原 aigocode）只在本地手动设了才会排第一
 const FALLBACKS = [FLATROUTER, APIMART, OFFICIAL].filter(Boolean);
 let fallbackIdx = -1;
 let activeClient = PROXY || FALLBACKS[0] || null;
