@@ -1,8 +1,8 @@
 {
  "model": "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.5)",
  "threshold": 5000,
- "updatedAt": "2026-10-24T05:52:10.655Z",
- "statsCheckedAt": "2026-10-24T05:52:10.655Z",
+ "updatedAt": "2026-10-24T14:40:48.394Z",
+ "statsCheckedAt": "2026-10-24T14:40:48.394Z",
  "inclusionRule": "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -5641,6 +5641,56 @@
     "width": 960,
     "height": 720,
     "durationSec": 90
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2113559786830942326",
+   "url": "https://x.com/ZetoGroovin/status/2113559786830942326",
+   "author": {
+    "handle": "ZetoGroovin",
+    "name": "Zeto"
+   },
+   "postedAt": "2026-10-23T09:14:55.000Z",
+   "addedAt": "2026-10-24",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "把手机贴在电车上的动画短片",
+    "en": "Train phone stunt animation"
+   },
+   "summary": {
+    "zh": "创作者用 Seedance 2.5 制作了把手机贴在电车上移动的风格视频，并用预演确定角色和背景运动。预演由 Claude Opus 5.5 根据语音输入生成。",
+    "en": "The creator made a train-mounted smartphone-style video with Seedance 2.5, using previs for the character and background motion. The previs was made with Claude Opus 5.5 through voice input."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Seedance 2.5"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 399123,
+    "likes": 2639,
+    "replies": 47,
+    "reposts": 222,
+    "bookmarks": 1914,
+    "checkedAt": "2026-10-24T14:40:48.394Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113559755646259200/img/065jA96vmCV6YrcG.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113559755646259200/vid/avc1/776x720/VhiCXOZBDW2N74dG.mp4?tag=29",
+    "width": 776,
+    "height": 720,
+    "durationSec": 29
    },
    "evidence": {
     "via": "daily",
@@ -32793,6 +32843,56 @@
     "width": 720,
     "height": 720,
     "durationSec": 26
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2113581118339662139",
+   "url": "https://x.com/sakatayasha/status/2113581118339662139",
+   "author": {
+    "handle": "sakatayasha",
+    "name": "Sakata"
+   },
+   "postedAt": "2026-10-23T10:39:41.000Z",
+   "addedAt": "2026-10-24",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "浮空城堡场景对比",
+    "en": "Floating castle scene comparison"
+   },
+   "summary": {
+    "zh": "创作者用同一提示词比较 Opus 5.5 和 Kimi K3.1，测试内容是一个城堡漂浮在云层上方的实时 Three.js 场景。",
+    "en": "The creator compared Opus 5.5 and Kimi K3.1 on the same prompt for a real-time Three.js scene showing a castle floating above the clouds."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 64534,
+    "likes": 664,
+    "replies": 71,
+    "reposts": 22,
+    "bookmarks": 141,
+    "checkedAt": "2026-10-24T14:40:48.394Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/media/HVTy0fgaIAAgdat.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113581050828099584/vid/avc1/720x952/cwdtyyvBAaMuHJHi.mp4?tag=29",
+    "width": 720,
+    "height": 952,
+    "durationSec": 29
    },
    "evidence": {
     "via": "daily",
@@ -60780,6 +60880,54 @@
    }
   },
   {
+   "id": "2113535202098372655",
+   "url": "https://x.com/DesignSorceress/status/2113535202098372655",
+   "author": {
+    "handle": "DesignSorceress",
+    "name": "Precious Jimoh"
+   },
+   "postedAt": "2026-10-23T07:37:14.000Z",
+   "addedAt": "2026-10-24",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "Chowdeck 动态广告",
+    "en": "Chowdeck motion advertisement"
+   },
+   "summary": {
+    "zh": "创作者用 Claude Opus 5.5 制作了 Chowdeck 的概念动态广告，并提供应用截图、标志、食物图片和旁白来完成动画与声音同步。",
+    "en": "The creator made a Chowdeck spec motion ad with Claude Opus 5.5, supplying app screenshots, a logo, food images, and voiceover for animation and sound synchronization."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 25806,
+    "likes": 408,
+    "replies": 63,
+    "reposts": 29,
+    "bookmarks": 318,
+    "checkedAt": "2026-10-24T14:40:48.394Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113535114483310592/img/eZ9RyNWd_UKSvrG5.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113535114483310592/vid/avc1/720x1280/scEpChBa4egIAH7g.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 24
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2111118746786165033",
    "url": "https://x.com/ai_growth_avii/status/2111118746786165033",
    "author": {
@@ -67493,6 +67641,56 @@
    }
   },
   {
+   "id": "2113525831876173879",
+   "url": "https://x.com/Octoberry/status/2113525831876173879",
+   "author": {
+    "handle": "Octoberry",
+    "name": "O🌷"
+   },
+   "postedAt": "2026-10-23T07:00:00.000Z",
+   "addedAt": "2026-10-24",
+   "lang": "en",
+   "models": [
+    "opus-5.5",
+    "sonnet-5.5",
+    "fable-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "三维蚂蚁场景对比",
+    "en": "3D ant scene comparison"
+   },
+   "summary": {
+    "zh": "创作者用同一提示词比较 Fable 5.5 和 Opus 5.5，测试内容是一只细节丰富的 3D 蚂蚁图像。",
+    "en": "The creator compared Fable 5.5 and Opus 5.5 on the same prompt for a detailed 3D ant image."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 20944,
+    "likes": 177,
+    "replies": 40,
+    "reposts": 2,
+    "bookmarks": 25,
+    "checkedAt": "2026-10-24T14:40:48.394Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113442757029122048/img/inYOp5LHc2BzpE_s.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113442757029122048/vid/avc1/1150x720/9QX7YzPUh0AuKHCq.mp4?tag=29",
+    "width": 1150,
+    "height": 720,
+    "durationSec": 50
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102746374450094323",
    "url": "https://x.com/mohamedbakuly/status/2102746374450094323",
    "author": {
@@ -68432,6 +68630,57 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2113573386794254715",
+   "url": "https://x.com/rewind02/status/2113573386794254715",
+   "author": {
+    "handle": "rewind02",
+    "name": "rewind"
+   },
+   "postedAt": "2026-10-23T10:08:58.000Z",
+   "addedAt": "2026-10-24",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "将概念图转换为三维关卡",
+    "en": "Concept art turned into a 3D level"
+   },
+   "summary": {
+    "zh": "Claude Opus 5.5 将一张概念图转成 3D 关卡，用 Rust 为 Godot 生成场景，并通过渲染评分与参考图对比迭代调整。",
+    "en": "Claude Opus 5.5 turned one concept art image into a 3D level, generating the level in Rust for Godot and iteratively scoring renders against the reference."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Godot",
+    "Rust"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 20213,
+    "likes": 307,
+    "replies": 19,
+    "reposts": 15,
+    "bookmarks": 361,
+    "checkedAt": "2026-10-24T14:40:48.394Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113573309031776256/img/zTCHDQ92FKhA-zSl.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113573309031776256/vid/avc1/880x720/Tu-ltct2BTmN3YyX.mp4?tag=29",
+    "width": 880,
+    "height": 720,
+    "durationSec": 38
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -74726,6 +74975,57 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2113585622317244526",
+   "url": "https://x.com/francescoinweb3/status/2113585622317244526",
+   "author": {
+    "handle": "francescoinweb3",
+    "name": "Francesco"
+   },
+   "postedAt": "2026-10-23T10:57:35.000Z",
+   "addedAt": "2026-10-24",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "体素小人走过视频工作流的六个房间",
+    "en": "Voxel walkthrough of a video workflow"
+   },
+   "summary": {
+    "zh": "一段24秒的体素风视频把文章中的工作流程呈现为六个房间。创作者称使用 Opus、Remotion 和 FFmpeg 编译出最终视频。",
+    "en": "A 24-second voxel video turns an article workflow into six rooms. The creator says Opus used Remotion and FFmpeg to compile the final video."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Remotion",
+    "FFmpeg"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 17010,
+    "likes": 199,
+    "replies": 20,
+    "reposts": 22,
+    "bookmarks": 242,
+    "checkedAt": "2026-10-24T14:40:48.394Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113585472110747648/img/R6LP1YlLsy2czJBK.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113585472110747648/vid/avc1/720x864/uZ0XhfZU33HUB_C0.mp4?tag=29",
+    "width": 720,
+    "height": 864,
+    "durationSec": 24
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -84002,6 +84302,54 @@
    }
   },
   {
+   "id": "2113612749909418086",
+   "url": "https://x.com/pipeline_os/status/2113612749909418086",
+   "author": {
+    "handle": "pipeline_os",
+    "name": "Pipeline OS"
+   },
+   "postedAt": "2026-10-23T12:45:23.000Z",
+   "addedAt": "2026-10-24",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "战斗机上骑自行车的鸟",
+    "en": "Bird riding a bike on a fighter jet"
+   },
+   "summary": {
+    "zh": "该帖子比较 Opus 5.5、Kimi K3.1 和 DeepSeek V4.1 Flash-1017 生成的骑自行车鸟类与战斗机画面。",
+    "en": "The post compares Opus 5.5, Kimi K3.1 and DeepSeek V4.1 Flash-1017 generating a bird riding a bike on a fighter jet."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 12676,
+    "likes": 147,
+    "replies": 12,
+    "reposts": 11,
+    "bookmarks": 21,
+    "checkedAt": "2026-10-24T14:40:48.394Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113611734745264128/img/1p16uA2IQB6ogwo8.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113611734745264128/vid/avc1/720x960/Z5eWmWDoA_hj4aEA.mp4?tag=29",
+    "width": 720,
+    "height": 960,
+    "durationSec": 11
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2107822293653041659",
    "url": "https://x.com/twoclipping/status/2107822293653041659",
    "author": {
@@ -84773,6 +85121,56 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2113602878288052581",
+   "url": "https://x.com/viktoroddy/status/2113602878288052581",
+   "author": {
+    "handle": "viktoroddy",
+    "name": "Viktor Oddy"
+   },
+   "postedAt": "2026-10-23T12:06:09.000Z",
+   "addedAt": "2026-10-24",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "互动式三维机场运营应用",
+    "en": "Interactive 3D airport operations app"
+   },
+   "summary": {
+    "zh": "一个三维机场运营界面让用户按机位查看飞机、牵引车和行李集装箱。创作者称其使用 Opus 5.5 构建。",
+    "en": "A 3D airport operations interface lets users inspect planes, tugs and baggage containers by stand. The creator says it was built with Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [
+    "https://motionsites.ai"
+   ],
+   "stats": {
+    "views": 12354,
+    "likes": 250,
+    "replies": 13,
+    "reposts": 25,
+    "bookmarks": 128,
+    "checkedAt": "2026-10-24T14:40:48.394Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113602790589435904/img/jd7rjuiklDWR6RPX.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113602790589435904/vid/avc1/1376x720/BbesgdpETccgGnEv.mp4?tag=29",
+    "width": 1376,
+    "height": 720,
+    "durationSec": 26
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -89653,6 +90051,56 @@
    }
   },
   {
+   "id": "2113624961822646351",
+   "url": "https://x.com/0xForem/status/2113624961822646351",
+   "author": {
+    "handle": "0xForem",
+    "name": "Forem"
+   },
+   "postedAt": "2026-10-23T13:33:54.000Z",
+   "addedAt": "2026-10-24",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "互动式机器人工程实验室",
+    "en": "Interactive robotics engineering lab"
+   },
+   "summary": {
+    "zh": "一个互动机器人教育网站展示13种电路板，用户可以组装、焊接并故意损坏元件。创作者称使用 Opus 5.5 和 /colorfigures 技能制作。",
+    "en": "An interactive robotics education site presents 13 boards and lets users assemble, solder and intentionally break components. It uses the /colorfigures skill with Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "colorfigures"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 10764,
+    "likes": 354,
+    "replies": 10,
+    "reposts": 41,
+    "bookmarks": 276,
+    "checkedAt": "2026-10-24T14:40:48.394Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113624914024407040/img/e3eLweseEn-pZCmk.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113624914024407040/vid/avc1/856x720/cWZ2fx4HqCNG5M4q.mp4?tag=29",
+    "width": 856,
+    "height": 720,
+    "durationSec": 46
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103802280617402509",
    "url": "https://x.com/viktoroddy/status/2103802280617402509",
    "author": {
@@ -91290,6 +91738,56 @@
     "width": 1280,
     "height": 720,
     "durationSec": 65
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2113564231065124894",
+   "url": "https://x.com/NEXUS_TO_NOVA/status/2113564231065124894",
+   "author": {
+    "handle": "NEXUS_TO_NOVA",
+    "name": "NΞXUS"
+   },
+   "postedAt": "2026-10-23T09:32:35.000Z",
+   "addedAt": "2026-10-24",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "动画练习作业",
+    "en": "Animation homework"
+   },
+   "summary": {
+    "zh": "创作者称通过与 Opus 对话学习动画，获得文字说明和视觉预演，并用这些内容编写 Seedance 指令。",
+    "en": "The creator describes an animation homework project taught through a conversation with Opus, including text instructions and visual previs, then used to write Seedance instructions."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Seedance"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 10260,
+    "likes": 216,
+    "replies": 25,
+    "reposts": 5,
+    "bookmarks": 82,
+    "checkedAt": "2026-10-24T14:40:48.394Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113562131610173440/img/w-iK-srom8XjLE1G.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113562131610173440/vid/avc1/1280x720/Q6HOgddf8SWsWpHb.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 24
    },
    "evidence": {
     "via": "daily",
@@ -94003,6 +94501,58 @@
    }
   },
   {
+   "id": "2113609472639894013",
+   "url": "https://x.com/Sevas_ae/status/2113609472639894013",
+   "author": {
+    "handle": "Sevas_ae",
+    "name": "SEBASTIAN"
+   },
+   "postedAt": "2026-10-23T12:32:21.000Z",
+   "addedAt": "2026-10-24",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "Fomo 概念广告",
+    "en": "Spec advertisement for Fomo"
+   },
+   "summary": {
+    "zh": "一支 Fomo 概念广告结合了三维场景、动态图形和合成。创作者称 Opus 搭建了场景并协助 Blender 灯光设置，动画主要手工完成。",
+    "en": "A spec ad for Fomo combines 3D scenes, motion graphics and compositing. The creator says Opus set up the scenes and helped with Blender lighting, while animations were made by hand."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "After Effects",
+    "Blender",
+    "MCP"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 9432,
+    "likes": 226,
+    "replies": 20,
+    "reposts": 6,
+    "bookmarks": 197,
+    "checkedAt": "2026-10-24T14:40:48.394Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113609350971330560/img/VnAgEtbwKzlK00wD.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113609350971330560/vid/avc1/1280x720/zYnHdFkb7sX-shWe.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 20
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2112519702987854162",
    "url": "https://x.com/onofumi_AI/status/2112519702987854162",
    "author": {
@@ -95476,6 +96026,58 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2113557631025455294",
+   "url": "https://x.com/0xbobaaa/status/2113557631025455294",
+   "author": {
+    "handle": "0xbobaaa",
+    "name": "0xbobaa"
+   },
+   "postedAt": "2026-10-23T09:06:21.000Z",
+   "addedAt": "2026-10-24",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "互动式人工智能服务器讲解",
+    "en": "Interactive AI server explainer"
+   },
+   "summary": {
+    "zh": "这是一个交互式 AI 服务器模拟器，展示硬件标注、八块 GPU 的 token 流以及组件拆除后的故障。作品使用 Opus 5.5 和 COLORFIGURES 制作。",
+    "en": "An interactive AI server simulation shows labeled hardware, token streaming across eight GPUs, and failures caused by removing components. It was made with Opus 5.5 and COLORFIGURES."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "COLORFIGURES"
+   ],
+   "resources": [
+    "http://april-zhu.com/colorfigures"
+   ],
+   "stats": {
+    "views": 8994,
+    "likes": 223,
+    "replies": 20,
+    "reposts": 22,
+    "bookmarks": 177,
+    "checkedAt": "2026-10-24T14:40:48.394Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113557525006041088/img/nUh0gtVra8ylpLC9.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113557525006041088/vid/avc1/720x900/MUAdjdlB3iGirMYZ.mp4?tag=29",
+    "width": 720,
+    "height": 900,
+    "durationSec": 29
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -98839,6 +99441,60 @@
    }
   },
   {
+   "id": "2113549902084997427",
+   "url": "https://x.com/aicreataro/status/2113549902084997427",
+   "author": {
+    "handle": "aicreataro",
+    "name": "aicreataro"
+   },
+   "postedAt": "2026-10-23T08:35:39.000Z",
+   "addedAt": "2026-10-24",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "融入歌词字幕的三维视频",
+    "en": "Lyrics integrated into a 3D video"
+   },
+   "summary": {
+    "zh": "这是一个把日英歌词融入场景的影像实验，包含动态字幕、字幕与人物互动，以及写在车辆和环境表面的歌词。作品使用 Opus 5.5、Blender、Python、Kling、Midjourney 和 Suno 制作。",
+    "en": "A video experiment integrates Japanese and English lyrics into the scene, including moving captions, physical interactions, and lyrics written across vehicles and environments. It used Opus 5.5, Blender, Python, Kling, Midjourney, and Suno."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Blender",
+    "Python",
+    "Kling",
+    "Midjourney",
+    "Suno"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 7857,
+    "likes": 159,
+    "replies": 10,
+    "reposts": 18,
+    "bookmarks": 111,
+    "checkedAt": "2026-10-24T14:40:48.394Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113548206957297664/img/OxwTfl-ik5uffFhH.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113548206957297664/vid/avc1/1280x720/kk_lkgMay899mOFV.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 25
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2112030342240694323",
    "url": "https://x.com/Kashiko_AIart/status/2112030342240694323",
    "author": {
@@ -99911,6 +100567,63 @@
    }
   },
   {
+   "id": "2113614074990743991",
+   "url": "https://x.com/Asteri_eth/status/2113614074990743991",
+   "author": {
+    "handle": "Asteri_eth",
+    "name": "Asteri"
+   },
+   "postedAt": "2026-10-23T12:50:39.000Z",
+   "addedAt": "2026-10-24",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "体素机器人向橡皮鸭解释程序错误",
+    "en": "Voxel bot explains a bug to a rubber duck"
+   },
+   "summary": {
+    "zh": "这是一个把简短笑话制作成可编辑 Blender 场景和成片短片的体素动画流程。作者介绍了 Opus 5.5、Blender、MCP、Remotion、Poly Haven 和 FFmpeg 的用法。",
+    "en": "A voxel animation pipeline turns a short joke into an editable Blender scene and a finished short. The creator describes using Opus 5.5, Blender, MCP, Remotion, Poly Haven, and FFmpeg."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Blender",
+    "Claude Code",
+    "MCP for Blender",
+    "Blender Python API",
+    "Poly Haven",
+    "Remotion",
+    "React",
+    "FFmpeg"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 7525,
+    "likes": 141,
+    "replies": 20,
+    "reposts": 19,
+    "bookmarks": 154,
+    "checkedAt": "2026-10-24T14:40:48.394Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113613986599944192/img/pBdVQCCZaDZwcBYR.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113613986599944192/vid/avc1/720x864/SiJFD4prKat_3LTA.mp4?tag=29",
+    "width": 720,
+    "height": 864,
+    "durationSec": 15
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103761581871964592",
    "url": "https://x.com/Dan_Kostecki/status/2103761581871964592",
    "author": {
@@ -100745,6 +101458,54 @@
     "width": 1280,
     "height": 720,
     "durationSec": 61
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2113620817649299590",
+   "url": "https://x.com/BreejeAnadkat/status/2113620817649299590",
+   "author": {
+    "handle": "BreejeAnadkat",
+    "name": "Breeje Anadkat"
+   },
+   "postedAt": "2026-10-23T13:17:26.000Z",
+   "addedAt": "2026-10-24",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "动效入职引导界面",
+    "en": "Animated onboarding experience"
+   },
+   "summary": {
+    "zh": "这是一个带有动态界面转场的 onboarding 体验，作者称其完全使用 Opus 5.5 制作，没有使用 Figma。",
+    "en": "An onboarding experience with animated interface transitions was built entirely with Opus 5.5, without Figma."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 7212,
+    "likes": 140,
+    "replies": 11,
+    "reposts": 4,
+    "bookmarks": 132,
+    "checkedAt": "2026-10-24T14:40:48.394Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113619714064945152/img/Lm4vLQOGJP3Pi4PA.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113619714064945152/vid/avc1/720x1344/j63Cf_w6v5aVihCy.mp4?tag=29",
+    "width": 720,
+    "height": 1344,
+    "durationSec": 22
    },
    "evidence": {
     "via": "daily",
@@ -101739,6 +102500,54 @@
    }
   },
   {
+   "id": "2113610341599117427",
+   "url": "https://x.com/anxuanng/status/2113610341599117427",
+   "author": {
+    "handle": "anxuanng",
+    "name": "An Xuan"
+   },
+   "postedAt": "2026-10-23T12:35:49.000Z",
+   "addedAt": "2026-10-24",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "像素风集装箱港口模拟",
+    "en": "Pixel-art container port simulation"
+   },
+   "summary": {
+    "zh": "这是一个像素风格的可运行集装箱船模拟器，并通过剖视图展示货物深入船舱八层。作者称该作品由 Opus 5.5 制作。",
+    "en": "A pixel-style working container ship simulation includes a cutaway view showing cargo extending eight tiers into the holds. The creator says Opus 5.5 built it."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 6811,
+    "likes": 242,
+    "replies": 6,
+    "reposts": 14,
+    "bookmarks": 149,
+    "checkedAt": "2026-10-24T14:40:48.394Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113610194307653633/img/NrxN9FMEyQaSiTzM.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113610194307653633/vid/avc1/1280x720/cEfPqt5-1mQYcBYZ.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103603025579331584",
    "url": "https://x.com/0xValure/status/2103603025579331584",
    "author": {
@@ -102436,6 +103245,62 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2113602050172785117",
+   "url": "https://x.com/vib3coded/status/2113602050172785117",
+   "author": {
+    "handle": "vib3coded",
+    "name": "Vib3Coded"
+   },
+   "postedAt": "2026-10-23T12:02:52.000Z",
+   "addedAt": "2026-10-24",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "Claude与GPT后院游戏对比",
+    "en": "Claude and GPT backyard game comparison"
+   },
+   "summary": {
+    "zh": "这是一个漂浮小岛后院里的3D像素风方格球游戏，包含AI孩子、球体物理、天气和可重绘粉笔线。作者用单个HTML文件和Three.js制作。",
+    "en": "A 3D pixel-art four-square game on a backyard floating island, with AI-controlled kids, ball physics, weather, and redrawable chalk. It was made in one HTML file using Three.js."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/vib3coded/status/2113602161607069911",
+    "text": "Build a single-file HTML + three.js (r160) scene called \"Chalk Square\": four square played with a football in a back yard on a floating island. It is a real 3D scene rendered as crisp pixel art.\n\nRendering: an orthographic isometric camera (drag to turn in 90° steps, scroll or pinch to zoom). Render into a small low-res target with a depth texture, then upscale with texelFetch to whole screen pixels. Add depth-based outlines and quantize every pixel to a fixed ~60-colour palette in OKLab, with an optional Bayer dither. Toggle \"Pixel art / Raw 3D\", with a pixel-size slider and Palette / Dither / Outlines checkboxes.\n\nYard: patched, cracked asphalt with a kerb, grass and dirt around the island edge. Around the asphalt:\n- a row of lock-up garages with painted, numbered doors and a flat roof that overhangs them;\n- a brick transformer booth with a warning sign;\n- a poplar with a bench and a grandmother on it;\n- a chin-up bar, a carpet rack with a rug, bushes;\n- a lamp on a pole and a lamp over a garage door.\nPigeons walk and peck, and flap up onto the roofs when the ball or a kid comes near. A cat on the garage roof follows the ball with its head.\n\nChalk: a data texture over the asphalt. It holds the 4.8 m square split into four zones (King, Queen, Jack, Dunce) with letters and a crown, plus hopscotch and doodles. Each texel stores its order along its stroke, so the lines can be redrawn progressively.\n\nGame (8 kids, each with a skill, power and style: power / trick / safe / lob):\n- Four kids play, four wait in a queue. The King serves by dropping the ball and kicking it after the bounce.\n- The ball must bounce once in your zone, then you kick it into another zone. With the two-touch rule you may first cushion it up.\n- You are out for: a ball that lands out, lands in your own zone, bounces a second time, or (if set) lands on a middle line. Otherwise a ball on the line is replayed.\n- The kid who is out goes to the back of the queue. Everyone below moves up a zone, and the next kid in line enters at Dunce. A kid fetches the ball and throws it to the King.\n\nBall and AI: real ball physics (gravity, bounces, rolling, softer bounces in puddles, the walls). Each receiver simulates the ball forward, picks the moment it is at foot height, runs to stand behind it and kicks. Shots are a drive, a lob, or a dink just over the line, aimed away from the target kid; everyone picks on the King. Aim and power errors grow with a fast ball, a stretched contact and lower skill, and occasionally a kick is shanked.\n\nKids: box-rigged with two-bone IK. Poses: run, ready crouch, a kick that strikes at the ball's height, cushion, hold, throw, clap, argue a call, and a crouched walk while drawing chalk.\n\nTime and weather: Day / Dusk / Night (the lamps light the court), Dry / Rain.\n- Rain: streaks, splashes, darker asphalt, puddles that mirror the yard via a mirrored render pass, and the chalk washing out.\n- The kids shelter under the garage roof. When the asphalt dries, two of them redraw the square and play resumes.\n\nUI (English, light and dark themes, mobile layout):\n- A lit scoreboard with rallies, clock + status, the King's current reign, and the best reign.\n- A side rail with: Time & weather (with asphalt and chalk bars); the ladder (King / Queen / Jack / Dunce plus \"Next up\"); Rules (One/Two touches; Liners: Replay/Out); a feed of calls with \"Gang up on the King\" and Pause; View.\n- Click a kid in the square and everyone aims at them. Original design, no real brands."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Three.js",
+    "GPT-6 Astra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 6444,
+    "likes": 214,
+    "replies": 32,
+    "reposts": 21,
+    "bookmarks": 112,
+    "checkedAt": "2026-10-24T14:40:48.394Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113601799215108097/img/NlxhpC135VtcLGkI.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113601799215108097/vid/avc1/720x910/fda-6YWuzAe5YSXr.mp4?tag=29",
+    "width": 720,
+    "height": 910,
+    "durationSec": 18
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -103349,6 +104214,54 @@
     "width": 720,
     "height": 1280,
     "durationSec": 33
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2113527486869016974",
+   "url": "https://x.com/Greysuki/status/2113527486869016974",
+   "author": {
+    "handle": "Greysuki",
+    "name": "Greysuki"
+   },
+   "postedAt": "2026-10-23T07:06:34.000Z",
+   "addedAt": "2026-10-24",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "扩展地形游戏地图",
+    "en": "Expanded terrain game map"
+   },
+   "summary": {
+    "zh": "作者说，AI扩展了游戏地图并加入了真实地形系统，最终做成了可在浏览器中游玩的演示版。",
+    "en": "The creator says AI expanded the game map and added a real terrain system. The result became a playable browser demo."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 6070,
+    "likes": 129,
+    "replies": 6,
+    "reposts": 10,
+    "bookmarks": 43,
+    "checkedAt": "2026-10-24T14:40:48.394Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2113526758486237184/img/iv8FwNPEfSCAmQPx.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2113526758486237184/vid/avc1/1280x720/tgpa7ALZjatbpJ-d.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 30
    },
    "evidence": {
     "via": "daily",
