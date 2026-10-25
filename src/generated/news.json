@@ -1,5 +1,87 @@
 [
   {
+    "slug": "2026-10-25",
+    "date": "2026-10-25",
+    "title": "AI 快讯 · 10月25日",
+    "items": [
+      {
+        "title": "AWS官方推出智能体工具包，覆盖MCP与Skills",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/aws/agent-toolkit-for-aws",
+        "summary": "AWS 开源官方 Agent Toolkit，打包了 MCP 服务器、Skills 和插件，帮助编码智能体在 AWS 上构建、部署和管理应用，并内置护栏。它兼容 Claude Code、Codex、Cursor、Devin、Kiro 等工具。云厂商亲自下场维护 Skills，说明这一形态正在变成基础设施的标准接入方式。",
+        "titleEn": "AWS Launches Official Agent Toolkit with MCP and Skills",
+        "summaryEn": "AWS open-sourced an official Agent Toolkit that bundles MCP servers, skills and plugins with built-in guardrails, so coding agents can build, deploy and manage apps on AWS. It works with Claude Code, Codex, Cursor, Devin and Kiro. A major cloud vendor maintaining skills itself signals they are becoming a standard integration layer."
+      },
+      {
+        "title": "Together AI开源Hallmark，让AI做的页面不像AI",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/Nutlope/hallmark",
+        "summary": "Hallmark 是 Together AI 出品的设计 Skill，适用于 Claude Code、Codex、Cursor 和 OpenCode。它从 48 套材质主题中挑出 3 套供选择，并围绕访客目标来组织页面，也支持按名称做重设计与审查。用 AI 做落地页的独立开发者，可以借它摆脱千篇一律的模板感。",
+        "titleEn": "Together AI's Hallmark Skill Fights AI-Slop Design",
+        "summaryEn": "Together AI released Hallmark, a design skill for Claude Code, Codex, Cursor and OpenCode built to avoid generic AI-generated looks. It offers three themes drawn from a catalog of 48 and structures pages around visitor intent. It also supports redesigns and audits by name, helping indie builders ship landing pages that don't look templated."
+      },
+      {
+        "title": "Claude Code图解教程走红，周末掌握Skills与MCP",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/luongnv89/claude-howto",
+        "summary": "claude-howto 是一份以图解和示例为主的 Claude Code 教程，从基础命令一路讲到智能体编排、Hooks、Skills 和 MCP 服务器。教程附带可直接复制的模板和学习路径，并提供中文等多语言版本。对想系统上手 Claude Code 工作流的开发者来说，入门门槛明显降低。",
+        "titleEn": "Visual Claude Code Guide Covers Skills, Hooks and MCP",
+        "summaryEn": "claude-howto is a visual, example-driven Claude Code guide that goes from basic commands to orchestrating agents, hooks, skills and MCP servers. It ships copy-paste templates and a guided learning path, with versions in Chinese and other languages. It lowers the barrier for developers adopting Claude Code workflows."
+      },
+      {
+        "title": "NVIDIA OpenShell发布0.1版，为智能体集群提供安全运行时",
+        "source": "GitHub Trending",
+        "category": "AI 工具动态",
+        "url": "https://github.com/NVIDIA/OpenShell",
+        "summary": "NVIDIA 开源的 OpenShell 进入 0.1.x 版本，开始稳定发版，并新增隔离原语、扩展接口和 API。它面向大规模自主智能体：让智能体能读文件、装依赖、调用 API、使用凭证，同时把风险隔离起来。智能体越来越多地拿到真实权限，这类沙箱运行时正在成为刚需。",
+        "titleEn": "NVIDIA OpenShell 0.1 Brings Secure Runtime for Agent Fleets",
+        "summaryEn": "NVIDIA's open-source OpenShell reached 0.1.x, adding a stable release cadence, new isolation primitives, a wider extension surface and new APIs. It is a safe, private runtime that lets fleets of autonomous agents read files, install packages, call APIs and use credentials while containing the risk. Sandboxed runtimes become essential as agents gain real permissions."
+      },
+      {
+        "title": "Kimi 3.1 Pro开源权重，号称与闭源差距缩至一个月",
+        "source": "Latent Space",
+        "category": "AI 工具动态",
+        "url": "https://latent.space/p/ainews-kimi-31/",
+        "summary": "据 Latent Space 报道，Kimi 3.1 Pro 以开源权重发布，总参数约 2.8T、激活参数 104B，被称为 Fable-5.1 级别。报道认为开源与闭源前沿的差距已缩小到约一个月。同时上线的 Pro Highspeed API 据称提速 2-3 倍。对成本敏感的出海产品来说，又多了一个可自部署的高端选项。",
+        "titleEn": "Kimi 3.1 Pro Open Weights Narrow Gap to Closed Models",
+        "summaryEn": "Per Latent Space, Kimi 3.1 Pro ships as open weights with roughly 2.8T total and 104B active parameters, pitched as Fable-5.1-class. The report says the open-weight gap to closed frontier models has shrunk to about one month. A new Pro Highspeed API reportedly runs 2-3× faster, giving cost-sensitive builders another strong self-hostable option."
+      },
+      {
+        "title": "Block发布逼真语音模型，可在MacBook本地运行",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/10/24/blocks-new-voice-model-sounds-eerily-human/",
+        "summary": "支付公司 Block 推出新语音模型，TechCrunch 评价其声音“像人到令人不安”。Block 表示，该模型可在 MacBook M4 Max 上本地运行。高质量语音不再完全依赖云端 API，语音助手和客服类产品有机会在端侧降低成本、保护隐私。",
+        "titleEn": "Block's Human-Like Voice Model Runs Locally on MacBook",
+        "summaryEn": "Block unveiled a new voice model that TechCrunch describes as eerily human, and the company says it runs locally on a MacBook M4 Max. High-quality speech no longer has to depend on cloud APIs. That opens the door to cheaper, more private on-device voice assistants and support agents."
+      },
+      {
+        "title": "研究发现Grok偏向共和党，GPT偏向民主党",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/10/24/forced-to-pick-groks-ai-model-chooses-republicans-openais-picks-democrats/",
+        "summary": "一项新研究让模型在近 500 场选举中被迫选择候选人。结果显示，Grok 压倒性推荐共和党人，OpenAI 的 GPT 则偏向民主党，两者在超过 90% 的选举中意见相反。模型的立场倾向正在成为可量化的风险，把 AI 用于资讯或推荐场景的产品需要格外留意。",
+        "titleEn": "Study: Grok Picks Republicans, OpenAI's GPT Picks Democrats",
+        "summaryEn": "A new study forced AI models to pick candidates across nearly 500 election races. Grok overwhelmingly recommended Republicans while OpenAI's GPT favored Democrats, and the two disagreed in more than 90% of races. Model political bias is now measurable, a real risk for products using AI in news or recommendations."
+      },
+      {
+        "title": "EvalResearchBench测试AI能否自己设计评测集",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2610.04184",
+        "summary": "AI 自我迭代需要反复跑评测，但完整基准既贵又慢。这项研究推出 EvalResearchBench，测试智能体能否像人类专家一样，自动挑选基准子集或设计精简评测集。对开发者而言，这类能力成熟后，评测智能体的成本和迭代周期都有望大幅下降。",
+        "titleEn": "EvalResearchBench Tests Whether Agents Can Design Their Own Evals",
+        "summaryEn": "Self-improving AI needs frequent evaluation, but running full benchmarks is costly and slow. EvalResearchBench tests whether agents can automate what human experts do: pick benchmark subsets or design compact eval suites. If this capability matures, developers could cut both the cost and the iteration time of evaluating their agents."
+      }
+    ],
+    "jasonSays": "AWS 官方下场开源 MCP 与 Skills 工具包，加上 NVIDIA 的智能体运行时和 Kimi 3.1 Pro 开源权重，智能体的接入层、运行层和模型层正同步走向标准化与平价化。",
+    "jasonSaysEn": "With AWS open-sourcing official MCP servers and skills, NVIDIA shipping a secure agent runtime and Kimi 3.1 Pro releasing open weights, the integration, runtime and model layers for agents are standardizing and getting cheaper at the same time.",
+    "filename": "2026-10-25.md"
+  },
+  {
     "slug": "2026-10-24",
     "date": "2026-10-24",
     "title": "AI 快讯 · 10月24日",
@@ -90,7 +172,8 @@
     ],
     "jasonSays": "OpenAI一边宣布前沿模型训练与实时互联网隔离，一边用GPT-5.6 Sol挖出影响约七成网站的PHP漏洞，AI安全攻防正进入基础设施级阶段。",
     "jasonSaysEn": "OpenAI is isolating frontier training from the live internet while its GPT-5.6 Sol uncovered a PHP flaw affecting about 70% of the web, signaling that AI security has reached infrastructure scale.",
-    "filename": "2026-10-24.md"
+    "filename": "2026-10-24.md",
+    "coverImage": "/news/2026-10-24.png"
   },
   {
     "slug": "2026-10-23",
