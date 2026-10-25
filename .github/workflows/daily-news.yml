@@ -14,6 +14,10 @@ on:
         description: "回填日期 YYYY-MM-DD（留空 = 今天）"
         required: false
         default: ""
+      skip_email:
+        description: "填 1 = 只生成快讯、不给订阅者发邮件（比如晚上补跑当天快讯）"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -75,7 +79,7 @@ jobs:
           git push
 
       - name: Send digest email
-        if: steps.changes.outputs.changed == 'true'
+        if: steps.changes.outputs.changed == 'true' && inputs.skip_email != '1'
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
