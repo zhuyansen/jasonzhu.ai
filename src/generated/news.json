@@ -1,5 +1,87 @@
 [
   {
+    "slug": "2026-10-26",
+    "date": "2026-10-26",
+    "title": "AI 快讯 · 10月26日",
+    "items": [
+      {
+        "title": "Cloudflare开源安全审计Skill，编码智能体变身漏洞猎手",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/cloudflare/security-audit-skill",
+        "summary": "Cloudflare 开源了一个编码智能体 Skill，按侦察、覆盖式排查、候选验证、独立复核等阶段调度多个隔离智能体做安全审计，并输出机器可读的结果。它也是 Cloudflare 内部漏洞挖掘框架的起点。开发者可以直接拿来给自家代码做多阶段安全体检。",
+        "titleEn": "Cloudflare Open-Sources Security Audit Skill for Coding Agents",
+        "summaryEn": "Cloudflare released a coding-agent skill that runs isolated agents through reconnaissance, coverage-led hunting, validation and independent verification, producing machine-readable security findings. It seeded Cloudflare's own vulnerability discovery harness, giving developers a ready-made, production-tested workflow for auditing their codebases with agents."
+      },
+      {
+        "title": "Apollo经济学家：AI对多数企业财务回报为零",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/10/25/ai-delivers-zero-financial-payoff-to-most-companies-according-to-apollo-economist/",
+        "summary": "Apollo 首席经济学家指出，尽管投资巨大、炒作盛行，AI 至今没有给科技行业以外的美国企业带来任何财务回报。这一观点给企业 AI 预算敲响警钟，也说明能拿出可量化 ROI 的 AI 产品更容易卖出去。",
+        "titleEn": "Apollo Economist: AI Delivers Zero Payoff to Most Firms",
+        "summaryEn": "Apollo's chief economist argues that despite massive investment and hype, AI has delivered zero financial payoff to corporate America outside tech. The claim challenges enterprise AI budgets and suggests that AI products able to prove measurable ROI will hold a clear sales advantage."
+      },
+      {
+        "title": "Grok公开AI生成版《奥德赛》前七分钟",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/10/25/grok-releases-the-first-seven-minutes-of-its-ai-generated-odyssey/",
+        "summary": "xAI 旗下 Grok 发布了 AI 生成长片《奥德赛》的前七分钟。TechCrunch 评价画面尚可，但缺乏艺术性和人情味。这是 AI 视频从短片走向长篇叙事的一次公开尝试，也暴露出目前长内容在创意层面的短板。",
+        "titleEn": "Grok Releases First Seven Minutes of AI-Generated 'Odyssey'",
+        "summaryEn": "Grok released the first seven minutes of its AI-generated 'Odyssey' film. TechCrunch says the footage looks okay but lacks artistry and human interest. It is a visible test of AI video moving from clips to long-form storytelling, and it highlights the creative gaps that remain."
+      },
+      {
+        "title": "Anthropic IPO前夕，早期投资人账面回报惊人",
+        "source": "TC Venture",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/10/23/what-some-of-anthropics-backers-are-reportedly-worth-before-its-ipo/",
+        "summary": "TechCrunch 梳理了 Anthropic IPO 前各轮投资人的账面回报，早期和跟投机构都已获得巨额收益。与此同时，有评论认为 Anthropic 的上市推迟以及约 2 万亿美元的估值存在泡沫风险。头部 AI 实验室的资本化进程，正在影响整个行业的估值预期。",
+        "titleEn": "Anthropic's Backers Sit on Huge Paper Gains Before IPO",
+        "summaryEn": "TechCrunch tallies the paper returns of Anthropic's early and follow-on investors ahead of its IPO. Separately, critics argue the delayed listing and roughly $2T valuation look bubbly. How top AI labs reach public markets is shaping valuation expectations across the industry."
+      },
+      {
+        "title": "AI墓地清单：盘点失败或未达预期的AI项目",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/10/24/the-ai-graveyard-a-running-list-of-projects-and-startups-that-didnt-make-it/",
+        "summary": "TechCrunch 持续更新一份 AI 项目失败清单，涵盖苹果多次延期的 Siri AI、OpenAI 混乱的“超级应用”发布等关停或不及预期的项目。对独立开发者来说，这是一份现成的避坑参考：可以看清哪些方向容易翻车、为什么翻车。",
+        "titleEn": "The AI Graveyard: Projects and Startups That Failed",
+        "summaryEn": "TechCrunch maintains a running list of AI projects that shut down or missed expectations, from Apple's repeatedly delayed Siri AI to OpenAI's messy super-app launch. For builders, it works as a practical guide to which directions tend to fail and why."
+      },
+      {
+        "title": "IF-MAP：多智能体系统该先优化哪个Agent",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2610.24383",
+        "summary": "多智能体系统里，把每个 Agent 都调优一遍成本太高。IF-MAP 借鉴影响函数的思路，估算优化哪个 Agent 能带来最大的整体收益，而不是只盯着谁该为失败负责。开发者资源有限时，可以据此把提示词和微调预算花在刀刃上。",
+        "titleEn": "IF-MAP Identifies Which Agent to Improve First",
+        "summaryEn": "Improving every agent in a multi-agent system is expensive. IF-MAP uses influence-function ideas to estimate which agent's improvement yields the biggest system-level gain, rather than just assigning blame for failures. It helps developers spend limited prompt-tuning or fine-tuning budget where it matters most."
+      },
+      {
+        "title": "T²Quant：按任务和步骤动态量化扩散语言模型",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2610.31198",
+        "summary": "研究发现，扩散语言模型对量化的敏感度会随任务和去噪步骤变化，而且无需标注就能提前预测。据此提出的 T²Quant 采用混合精度量化，在关键步骤保留高精度。这意味着扩散模型有望在更小显存上部署，同时尽量少掉精度。",
+        "titleEn": "T²Quant: Task- and Time-Aware Quantization for Diffusion LMs",
+        "summaryEn": "Researchers found that diffusion language models' sensitivity to quantization varies by task and denoising step, and that this can be predicted without labels. Their T²Quant method applies mixed precision accordingly, keeping key steps precise. It could let diffusion LMs run on less memory with minimal quality loss."
+      },
+      {
+        "title": "LLM-Attacker：统一评测拆分式大模型的隐私风险",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2610.22722",
+        "summary": "拆分式大模型把原始文本留在客户端，只把中间表示发给服务器，但这些中间表示仍可能被还原成原文。LLM-Attacker 提供统一的红队框架，记录攻击条件并支持复现和对比。做端云协同或隐私敏感应用的开发者，可以用它检验“数据不出端”的承诺是否站得住。",
+        "titleEn": "LLM-Attacker Unifies Privacy Red-Teaming for Split LLMs",
+        "summaryEn": "Split LLMs keep raw text on the client and send only intermediate representations to a server, yet these can still be reconstructed into text. LLM-Attacker offers a unified red-team framework that records attack settings for reproducible comparison, helping developers verify whether 'data stays on device' privacy claims actually hold."
+      }
+    ],
+    "jasonSays": "Cloudflare 开源经过内部实战检验的安全审计 Skill，让编码智能体能做多阶段漏洞挖掘，是今天 Skills 生态最实用的更新。",
+    "jasonSaysEn": "Cloudflare's open-source security audit skill, already proven in its internal vulnerability work, lets coding agents run multi-phase vulnerability hunts and is today's most practical Skills ecosystem update.",
+    "filename": "2026-10-26.md"
+  },
+  {
     "slug": "2026-10-25",
     "date": "2026-10-25",
     "title": "AI 快讯 · 10月25日",
@@ -79,7 +161,8 @@
     ],
     "jasonSays": "AWS 官方下场开源 MCP 与 Skills 工具包，加上 NVIDIA 的智能体运行时和 Kimi 3.1 Pro 开源权重，智能体的接入层、运行层和模型层正同步走向标准化与平价化。",
     "jasonSaysEn": "With AWS open-sourcing official MCP servers and skills, NVIDIA shipping a secure agent runtime and Kimi 3.1 Pro releasing open weights, the integration, runtime and model layers for agents are standardizing and getting cheaper at the same time.",
-    "filename": "2026-10-25.md"
+    "filename": "2026-10-25.md",
+    "coverImage": "/news/2026-10-25.png"
   },
   {
     "slug": "2026-10-24",
