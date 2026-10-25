@@ -91,17 +91,15 @@ const MONTH_DAY = (() => {
 
 // ─── 初始化 ─────────────────────────────────────────
 
-// 主客户端：aigocode 中转站
+// proxy：原 aigocode 中转站（2026-10-24 起工作流不再传 ANTHROPIC_AUTH_TOKEN，只在本地手动设了才用）
 const proxyKey = process.env.ANTHROPIC_AUTH_TOKEN;
 const proxyURL = process.env.ANTHROPIC_BASE_URL || "https://api.aigocode.app";
 
 // 备用客户端：官方 Anthropic API（当中转站不可用时 fallback）
 const officialKey = process.env.ANTHROPIC_API_KEY;
 
-if (!proxyKey && !officialKey) {
-  console.error("❌ Missing ANTHROPIC_AUTH_TOKEN or ANTHROPIC_API_KEY");
-  process.exit(1);
-}
+// 2026-10-25：这里原来要求必须有 ANTHROPIC_AUTH_TOKEN 或 ANTHROPIC_API_KEY，去掉 aigocode 后三次 cron 全在这里退出、没出快讯。
+// 「一个可用通道都没有」的检查在下面 activeClient 那里（覆盖 flatrouter / apimart / 官方），这里不再单独查。
 
 // ⚠️ 已弃用 SDK 直接走 HTTP — SDK 在 aigocode 代理下经常无声 hang 致 cron 超时被 cancel
 // 自己用 fetch + AbortController 90s 超时，能 hard-fail，能 retry
@@ -142,7 +140,7 @@ const FALLBACKS = [FLATROUTER, APIMART, OFFICIAL].filter(Boolean);
 let fallbackIdx = -1;
 let activeClient = PROXY || FALLBACKS[0] || null;
 if (!activeClient) {
-  console.error("❌ 无可用 API 客户端（缺 ANTHROPIC_AUTH_TOKEN / FLATROUTER_API_KEY / APIMART_API_KEY / ANTHROPIC_API_KEY）");
+  console.error("❌ 无可用 API 客户端（缺 FLATROUTER_API_KEY / APIMART_CLAUDE_KEY / ANTHROPIC_API_KEY）");
   process.exit(1);
 }
 
