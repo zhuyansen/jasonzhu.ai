@@ -1,8 +1,8 @@
 {
  "model": "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.5)",
  "threshold": 5000,
- "updatedAt": "2026-10-25T17:04:48.486Z",
- "statsCheckedAt": "2026-10-25T17:04:48.486Z",
+ "updatedAt": "2026-10-26T06:12:30.182Z",
+ "statsCheckedAt": "2026-10-26T06:12:30.182Z",
  "inclusionRule": "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -12989,6 +12989,54 @@
     "width": 1276,
     "height": 718,
     "durationSec": 54
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114188068500508998",
+   "url": "https://x.com/finnardley/status/2114188068500508998",
+   "author": {
+    "handle": "finnardley",
+    "name": "Finn"
+   },
+   "postedAt": "2026-10-25T02:51:29.000Z",
+   "addedAt": "2026-10-26",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "代码制作的科普动画",
+    "en": "Code-built explainer animation"
+   },
+   "summary": {
+    "zh": "创作者用 Claude Opus 5.5 和代码重现了 Kurzgesagt 的视频形式，称整个过程耗时 10 分钟且不花钱。",
+    "en": "The creator recreated the Kurzgesagt video format with Claude Opus 5.5 using code, saying it took 10 minutes and cost nothing."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 171567,
+    "likes": 781,
+    "replies": 108,
+    "reposts": 41,
+    "bookmarks": 1043,
+    "checkedAt": "2026-10-26T06:12:30.182Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114186721071943680/img/kQtdKsmvDyNxbHtR.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114186721071943680/vid/avc1/1280x720/1_k5vhGz4IEK27Vv.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 12
    },
    "evidence": {
     "via": "daily",
@@ -26512,6 +26560,57 @@
    }
   },
   {
+   "id": "2114238361967988747",
+   "url": "https://x.com/theo/status/2114238361967988747",
+   "author": {
+    "handle": "theo",
+    "name": "Theo - t3.gg"
+   },
+   "postedAt": "2026-10-25T06:11:20.000Z",
+   "addedAt": "2026-10-26",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "访客分享功能演示",
+    "en": "Guest sharing feature demo"
+   },
+   "summary": {
+    "zh": "创作者在 T3 Code 的 T3 Connect 中加入了访客分享流程，并称 Claude Opus 5.5 制作了该功能的视频。",
+    "en": "The creator added a guest-sharing flow to T3 Connect in T3 Code and says Claude Opus 5.5 made a video about the feature."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "T3 Code",
+    "T3 Connect"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 82618,
+    "likes": 1653,
+    "replies": 175,
+    "reposts": 29,
+    "bookmarks": 366,
+    "checkedAt": "2026-10-26T06:12:30.182Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114237767379189761/img/3AkgugzX3fHewZBe.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114237767379189761/vid/avc1/1280x720/SKPrzavtkxR0uxmv.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 19
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2107142680782438466",
    "url": "https://x.com/emmanuel_2m/status/2107142680782438466",
    "author": {
@@ -30088,6 +30187,56 @@
     "width": 1280,
     "height": 720,
     "durationSec": 120
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114177518819315897",
+   "url": "https://x.com/phyronnaz/status/2114177518819315897",
+   "author": {
+    "handle": "phyronnaz",
+    "name": "Victor Careil"
+   },
+   "postedAt": "2026-10-25T02:09:34.000Z",
+   "addedAt": "2026-10-26",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "Remarkable 手绘动画",
+    "en": "Remarkable drawing animation"
+   },
+   "summary": {
+    "zh": "创作者改造 reMarkable 设备，测试 Claude Opus 5.5 是否能协助绘画和制作动画。",
+    "en": "The creator hacked a reMarkable device to test whether Claude Opus 5.5 could help draw and animate."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "reMarkable 2"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 72797,
+    "likes": 1256,
+    "replies": 60,
+    "reposts": 60,
+    "bookmarks": 523,
+    "checkedAt": "2026-10-26T06:12:30.182Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114176115048660992/img/f1ICGKkM_Vs_cOs6.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114176115048660992/vid/avc1/954x720/JofcR85LisMqyxg-.mp4?tag=14",
+    "width": 954,
+    "height": 720,
+    "durationSec": 43
    },
    "evidence": {
     "via": "daily",
@@ -41369,6 +41518,57 @@
    }
   },
   {
+   "id": "2114063235083358330",
+   "url": "https://x.com/nicos_ai/status/2114063235083358330",
+   "author": {
+    "handle": "nicos_ai",
+    "name": "Nico"
+   },
+   "postedAt": "2026-10-24T18:35:27.000Z",
+   "addedAt": "2026-10-26",
+   "lang": "es",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "Kimi 与 Opus 场景对比",
+    "en": "Kimi and Opus scene comparison"
+   },
+   "summary": {
+    "zh": "创作者称，Kimi K3.1 用更少的令牌和更低的成本生成了与 Opus 5.5 相同的场景。",
+    "en": "The creator says Kimi K3.1 generated the same scene as Opus 5.5 while using fewer tokens and costing less."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Kimi K3.1",
+    "Astra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 49288,
+    "likes": 427,
+    "replies": 10,
+    "reposts": 15,
+    "bookmarks": 90,
+    "checkedAt": "2026-10-26T06:12:30.182Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114063196780683264/img/18uADEAiBWxn6Y77.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114063196780683264/vid/avc1/720x720/O8kJUMuwdlHF4vE-.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 25
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2106131543752122774",
    "url": "https://x.com/anshuc/status/2106131543752122774",
    "author": {
@@ -46064,6 +46264,56 @@
    }
   },
   {
+   "id": "2114118486859636856",
+   "url": "https://x.com/RoundtableSpace/status/2114118486859636856",
+   "author": {
+    "handle": "RoundtableSpace",
+    "name": "0xMarioNawfal - The Roundtable Show"
+   },
+   "postedAt": "2026-10-24T22:15:00.000Z",
+   "addedAt": "2026-10-26",
+   "lang": "lt",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "模型并排对比",
+    "en": "Side-by-side model comparison"
+   },
+   "summary": {
+    "zh": "这条帖子展示了 Kimi K3.1 Pro 与 Claude Opus 5.5 的对比。",
+    "en": "The post presents a comparison between Kimi K3.1 Pro and Claude Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Kimi K3.1 Pro"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 43205,
+    "likes": 139,
+    "replies": 12,
+    "reposts": 6,
+    "bookmarks": 15,
+    "checkedAt": "2026-10-26T06:12:30.182Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114110226676830208/img/lSFEzP5TJk6aRK-s.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114110226676830208/vid/avc1/720x824/_ZdOa62uNJu1C1Vz.mp4?tag=29",
+    "width": 720,
+    "height": 824,
+    "durationSec": 13
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103862188624785635",
    "url": "https://x.com/patchy_dog/status/2103862188624785635",
    "author": {
@@ -47556,6 +47806,54 @@
     "width": 1280,
     "height": 720,
     "durationSec": 68
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114084671189569767",
+   "url": "https://x.com/ForkedPush/status/2114084671189569767",
+   "author": {
+    "handle": "ForkedPush",
+    "name": "Fork Dev"
+   },
+   "postedAt": "2026-10-24T20:00:38.000Z",
+   "addedAt": "2026-10-26",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "三十天开发的独立游戏",
+    "en": "Indie game built in thirty days"
+   },
+   "summary": {
+    "zh": "创作者用 Claude Opus 5.5 在 30 天内完成了一款游戏，提交了 227 次代码更改。",
+    "en": "The creator built a game over 30 days with 227 commits using Claude Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 40882,
+    "likes": 646,
+    "replies": 52,
+    "reposts": 21,
+    "bookmarks": 267,
+    "checkedAt": "2026-10-26T06:12:30.182Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114083554892173312/img/db8TKRLvcAEamVLb.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114083554892173312/vid/avc1/1280x720/oD1C0zZTrRgXiTO9.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 58
    },
    "evidence": {
     "via": "daily",
@@ -58195,6 +58493,56 @@
    }
   },
   {
+   "id": "2114175291451187460",
+   "url": "https://x.com/killahdev/status/2114175291451187460",
+   "author": {
+    "handle": "killahdev",
+    "name": "killah"
+   },
+   "postedAt": "2026-10-25T02:00:43.000Z",
+   "addedAt": "2026-10-26",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "智能体构建的 Roblox 游戏界面",
+    "en": "Roblox agent-built game interface"
+   },
+   "summary": {
+    "zh": "创作者称，Roblox 游戏构建和界面通过训练好的游戏代理与 Claude Opus 5.5 MCP 在几分钟内完成。",
+    "en": "The creator says Roblox builds and UI were made in minutes through trained game agents using Claude Opus 5.5 MCP."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "MCP"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 29413,
+    "likes": 549,
+    "replies": 38,
+    "reposts": 10,
+    "bookmarks": 448,
+    "checkedAt": "2026-10-26T06:12:30.182Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114173685200277504/img/A9IwPNbVDLHs8rrM.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114173685200277504/vid/avc1/1280x720/HFBMslPDCvSoqfNZ.mp4?tag=14",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 25
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2104779190277181699",
    "url": "https://x.com/mdaman010/status/2104779190277181699",
    "author": {
@@ -60143,6 +60491,56 @@
     "width": 720,
     "height": 1564,
     "durationSec": 50
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114063937109131638",
+   "url": "https://x.com/seeconvm/status/2114063937109131638",
+   "author": {
+    "handle": "seeconvm",
+    "name": "seeco"
+   },
+   "postedAt": "2026-10-24T18:38:14.000Z",
+   "addedAt": "2026-10-26",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "根据 PDF 制作的动效",
+    "en": "PDF-based motion graphic"
+   },
+   "summary": {
+    "zh": "创作者称 Opus 5.5 一次尝试就完成了这个效果，无需使用 After Effects，并提供了包含流程的 PDF 和指南。",
+    "en": "The creator says Opus 5.5 produced the result in one try instead of After Effects, and points to a PDF and guide containing the workflow."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "After Effects"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 27115,
+    "likes": 275,
+    "replies": 19,
+    "reposts": 23,
+    "bookmarks": 318,
+    "checkedAt": "2026-10-26T06:12:30.182Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114063479443214336/img/XeTcXmEaB1FvRNDw.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114063479443214336/vid/avc1/1280x720/P3liFn0PDk07VG_X.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 14
    },
    "evidence": {
     "via": "daily",
@@ -63734,6 +64132,61 @@
     "width": 1280,
     "height": 720,
     "durationSec": 265
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114059647233495351",
+   "url": "https://x.com/0xRhinoX/status/2114059647233495351",
+   "author": {
+    "handle": "0xRhinoX",
+    "name": "Rhino"
+   },
+   "postedAt": "2026-10-24T18:21:11.000Z",
+   "addedAt": "2026-10-26",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "彩虹果冻模型对比",
+    "en": "Rainbow jelly model comparison"
+   },
+   "summary": {
+    "zh": "创作者比较 Kimi K3.1 Pro 和 Opus 5.5 生成彩虹果冻的效果，这种果冻可以切割、钉击和用火炬加热。",
+    "en": "The creator compares Kimi K3.1 Pro and Opus 5.5 generating a rainbow jelly that can be cut, nailed, and torched."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/0xRhinoX/status/2114059647233495351",
+    "text": "rainbow jelly you can cut, nail and torch."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Kimi K3.1 Pro"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 24303,
+    "likes": 380,
+    "replies": 37,
+    "reposts": 20,
+    "bookmarks": 129,
+    "checkedAt": "2026-10-26T06:12:30.182Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114058638440464384/img/ylXAZ205RV_Pxiue.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114058638440464384/vid/avc1/720x864/fVltTZmxUn69YCwL.mp4?tag=29",
+    "width": 720,
+    "height": 864,
+    "durationSec": 28
    },
    "evidence": {
     "via": "daily",
@@ -69227,6 +69680,62 @@
    }
   },
   {
+   "id": "2114167098284839305",
+   "url": "https://x.com/aimikoda/status/2114167098284839305",
+   "author": {
+    "handle": "aimikoda",
+    "name": "Kōda"
+   },
+   "postedAt": "2026-10-25T01:28:10.000Z",
+   "addedAt": "2026-10-26",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "三种海报网格音乐视频效果",
+    "en": "Three poster-grid music video variations"
+   },
+   "summary": {
+    "zh": "创作者分享了三个提示词，用提供的视频和音乐制作带有同步特效与时间变化的海报网格音乐视频。",
+    "en": "The creator shared three prompts for turning supplied video and music into poster-grid music videos with synchronized effects and temporal variations."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "post",
+    "sourceUrl": "https://x.com/aimikoda/status/2114167098284839305",
+    "text": "Create a 1:1 high-energy poster-grid music video, exactly matching the supplied music's duration. Divide the frame into near-square cells with thin grey lines, keeping the original footage as one continuous, clearly recognizable image across the grid. The center ~6 cells play in sync with distinct visual treatments, while outer cells create independent variations. Fill the composition with dense, rapidly evolving effects, layered motion graphics, typography, icons, flashes and rhythmic transitions. Let the footage and music inspire every creative choice. Push visual intensity with frequent beat-driven bursts, but keep the original characters, action and scene consistently recognizable. Effects enhance the footage rather than replace it.\n\n2. Create a 1:1 high-energy poster-grid music video, exactly matching the supplied music's duration. Divide the frame into near-square cells with thin grey lines, preserving one continuous, recognizable image across the grid. The center ~6 cells remain synchronized with distinct visual treatments. Aggressive waves of stylistic transformations spread between neighboring cells, triggering rapid chain reactions, layered effects, graphic explosions and rhythmic resets. Fill the grid with constant visual activity, inventive typography, icons and motion graphics inspired by the footage and soundtrack. Make transformations bold, frequent and visually spectacular, but temporary, always revealing the original characters and action beneath.\n\n3. Create a 1:1 high-energy temporal poster-grid music video, exactly matching the supplied music's duration. Divide the frame into near-square cells with thin grey lines, preserving one continuous, recognizable image across the grid. The center ~6 cells follow the original action in sync while surrounding cells create intense temporal variations. Build dense rhythmic cascades of motion echoes, rapid frame repetitions, time offsets, reversals, impact freezes and layered graphic effects. Sync aggressive temporal bursts, typography, icons and transitions precisely to the music. Let the footage and soundtrack guide every creative decision. Keep the original action clearly identifiable amid the controlled visual chaos."
+   },
+   "referenceAssets": true,
+   "tools": [
+    "Python",
+    "FFmpeg"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 20694,
+    "likes": 629,
+    "replies": 29,
+    "reposts": 48,
+    "bookmarks": 618,
+    "checkedAt": "2026-10-26T06:12:30.182Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114165538637086720/img/sjq2NLLvgzdV6xnr.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114165538637086720/vid/avc1/720x720/Sx3_3kMkQPJ5zhbK.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 39
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102626930977870238",
    "url": "https://x.com/ShadeLurk/status/2102626930977870238",
    "author": {
@@ -69667,6 +70176,63 @@
     "width": 1280,
     "height": 720,
     "durationSec": 90
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114103699148800152",
+   "url": "https://x.com/MiaAI_lab/status/2114103699148800152",
+   "author": {
+    "handle": "MiaAI_lab",
+    "name": "Mia"
+   },
+   "postedAt": "2026-10-24T21:16:14.000Z",
+   "addedAt": "2026-10-26",
+   "lang": "en",
+   "models": [
+    "opus-5.5",
+    "sonnet-5.5",
+    "haiku-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "小熊软糖模型对比",
+    "en": "Gummy bear model comparison"
+   },
+   "summary": {
+    "zh": "这是一个单文件互动场景，半透明软糖熊可以被抓取、拉伸、挤压、投掷和倾倒。创作者用同一提示词比较了多个 Claude 模型。",
+    "en": "A single-file interactive scene with translucent gummy bears that can be grabbed, stretched, squashed, thrown and poured. The creator compared Claude models using the same prompt."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/MiaAI_lab/status/2114240686773907920",
+    "text": "Build \"Gummy Bears\" - a single self-contained HTML file (three.js from a CDN is the only dependency): a handful of translucent gummy bears on a white table that you can grab, stretch, squash, throw and pour.\n\nThe bears\n\n- Classic gummy bear silhouette: round head with two ears, short snout, plump body, stubby arms and legs, tiny molded eyes and nose - Every part melts smoothly into the next - build the body as an implicit surface (metaballs / marching cubes), not separate spheres - Material: real gummy candy. Translucent with transmission and refraction, colored light absorption that gets deeper in thick parts, glossy clearcoat with sharp highlights - Colors: cherry red, orange, lemon yellow, apple green, clear pineapple - Soft colored shadow under each bear, tinted by the bear's own color\n\nPhysics (this is the whole point - it must feel like jelly, not plastic)\n\n- Each bear is a soft body: mass points for head, ears, snout, body, belly, hands and feet, held together by volume-preserving shape matching\n\n- Limbs and neck are rendered as stretchy strands between points, getting thinner as they stretch\n\n- Grab any part and pull: it stretches like rubber, the rest of the bear leans after it, on release it snaps back with a damped wobble\n\n- Pull the head up: the neck stretches, the body follows, on release the bear squashes and hops\n\n- Press down on the head: the bear pancakes, bulges sideways, then launches itself back up\n\n- Throw a bear: it flies, squashes on landing, bounces and pushes other bears out of the way\n\n- Bears collide with each other and never pass through one another\n\n- Idle bears do small random hops with squash and stretch\n\n- \"Pour more bears\" drops a handful from above into a wobbling, jiggling pile\n\nUI\n\n- Editorial product-page style on a white background. Large italic serif title \"Gummy / Bears.\", a short subtitle, a minimal card on the right with flavor swatches, a wobble slider, live \"Stretch\" and \"Bounces\" readouts and a \"Pour more bears\" button\n\n- A subtle circular cursor that grows while grabbing\n\n- ACES tone mapping, environment reflections, soft key and back light. Smooth 60fps"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 20281,
+    "likes": 219,
+    "replies": 25,
+    "reposts": 7,
+    "bookmarks": 45,
+    "checkedAt": "2026-10-26T06:12:30.182Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114102630670635009/img/bWseMDq9ioSiZJ2c.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114102630670635009/vid/avc1/1280x720/Xn5kRf_DwTIR1r6P.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 56
    },
    "evidence": {
     "via": "daily",
@@ -73789,6 +74355,58 @@
    }
   },
   {
+   "id": "2114074078340649183",
+   "url": "https://x.com/marcthecreatorr/status/2114074078340649183",
+   "author": {
+    "handle": "marcthecreatorr",
+    "name": "Marcel"
+   },
+   "postedAt": "2026-10-24T19:18:32.000Z",
+   "addedAt": "2026-10-26",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "浮空王国模型对比",
+    "en": "Floating Kingdom model comparison"
+   },
+   "summary": {
+    "zh": "这篇帖子比较了四个模型制作单文件 HTML 作品《漂浮王国》的结果，并提供了各自的试玩链接。作者认为 DeepSeek 的性价比最高。",
+    "en": "The post compares four models building The Floating Kingdom as a single HTML file, with separate playable links for each result. DeepSeek is described as the best value."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Deepseek V4.1 Flash-1017",
+    "GPT 6 Astra",
+    "Kimi K3.1 Pro"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 18161,
+    "likes": 198,
+    "replies": 22,
+    "reposts": 7,
+    "bookmarks": 78,
+    "checkedAt": "2026-10-26T06:12:30.182Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114073718104162304/img/AZPYdlRimjbSvjLi.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114073718104162304/vid/avc1/1280x720/hnhS9ofFBwCP244I.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 67
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103330796085838252",
    "url": "https://x.com/JavaCoded/status/2103330796085838252",
    "author": {
@@ -75927,6 +76545,62 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114132632166347208",
+   "url": "https://x.com/vib3coded/status/2114132632166347208",
+   "author": {
+    "handle": "vib3coded",
+    "name": "Vib3Coded"
+   },
+   "postedAt": "2026-10-24T23:11:12.000Z",
+   "addedAt": "2026-10-26",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "果冻立方体太空港对比",
+    "en": "Jelly cube spaceport comparison"
+   },
+   "summary": {
+    "zh": "这是一个单文件 WebGPU 立体场景：热带岛屿空间站位于果冻方块中，包含发射、分级、回收、天气和生物模拟。创作者用同一提示词比较了 Claude Opus 5.5 与 GPT-6 Astra。",
+    "en": "A single-file WebGPU diorama depicts a tropical island spaceport inside a jelly cube, with launch, staging, recovery, weather and wildlife simulations. The creator compared Claude Opus 5.5 with GPT-6 Astra using the same prompt."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/vib3coded/status/2114132746645688569",
+    "text": "Build \"Launch Jelly\" — a single-file interactive WebGPU diorama in the \"Material Studies\" series: a spaceport on a low tropical island, cut out as a cube of translucent jelly on a studio floor. Everything procedural (no external assets, no network), one HTML file with inline JS/WGSL.\n\nTHE BLOCK\n- A wobbly jelly cube you can grab by its sides and tip; it springs back. Sliders: firmness, wave damping, wind (0–20 m/s).\n- Shallow-water sim for the sea (wind waves, wakes, foam), sandy seabed with ripples and caustics, seagrass, coral heads, sponges, starfish, conchs, an old rocket engine bell on the bottom. Cut faces show sand, shelly limestone and candy strata. Drag the water to stir it.\n\nTHE SCENE\n- Land along the back and left: dunes, scrub, palms, dune grass, a beach.\n- Launch pad on a concrete berm: mount over a flame trench opening toward the sea, steel deflector, four red-and-white lightning masts with sagging catenary wires, a deluge water tower, tank farm (LOX sphere, kerosene tanks, nitrogen bottles), floodlights.\n- A long hangar with ribbed siding and a vertical-lift door, rails to the pad, a transporter-erector (white lattice strongback on a rail car with hydraulic rams).\n- Landing zone (concrete circle with ring and cross), refurbishment shed, fire truck, a tracking radar dish that follows whatever is flying.\n- Press site: bleachers full of spectators, a flag, a big amber seven-segment countdown clock (T−0:10 … T+0:45).\n- Quay with fenders and bollards, a crawler crane with a long lattice boom, two booster stands, a warehouse.\n- At sea: a drone ship (dark deck with landing target, blast walls, thruster houses), a tug, a fairing-recovery boat with a big net on four arms.\n- The rocket: two stages — booster with nine engines, black interstage, four folding landing legs, four grid fins; upper stage with a long dark vacuum nozzle; a two-piece fairing whose halves carry parafoils.\n\nWHAT HAPPENS\n- Roll out: the hangar door lifts, the erector carries the rocket out horizontally on rails and stands it on the mount; it vents LOX wisps.\n- Launch: 10-second count with beeps and the clock, strongback leans back, deluge water, ignition at T−3 with huge steam clouds boiling out of the trench toward the sea, slow liftoff, the block trembles, the crowd cheers, gulls go up. The rocket pitches downrange and climbs out of sight leaving a billowing exhaust trail; the camera rises with it.\n- Staging: MECO, separation, the upper stage lights a pale blue-violet vacuum flame and leaves. The booster flips, boostback burn, grid fins out, entry burn, steers down, landing burn on one engine, legs swing out, touchdown — on the drone ship or back at the landing zone (toggle, or tap the ship / the pad). Double sonic boom (triple for the landing zone). Boosters come back sooty; the deck and pad get scorched.\n- Recovery: the tug tows the drone ship to the quay; the crane hooks the booster, lifts it (pendulum swing), folds its legs, sets it on a stand; the ship is towed back out. Fairing halves come down under orange-and-white parafoils, circling in: one lands in the boat's net, the other splashes and is fished out; the boat brings them home.\n- Reuse: the next rollout takes a flight-proven booster (\"B1 · flight 2\", soot partly cleaned).\n- Storm: wind, waves, rain, darkened room, lightning on the masts, the crane or the sea. No launches in a storm or above 15 m/s (\"No go · weather / wind\"); a count in progress holds.\n\nLIFE\n- Brown pelicans that circle and plunge-dive for fish, gulls on masts, lamps and roofs, a pod of bottlenose dolphins, manatees grazing the shallows and surfacing to breathe, fish schools, moon jellies; pad crew who leave before the count, hands on the quay, spectators who raise their arms at liftoff and landing.\n\nRENDERING\n- Engine plumes as glowing translucent cones (white-hot core, orange, shock diamonds low down, widening and turning blue-violet in thin air) that light the ground, the smoke and the rocket orange; steam and exhaust as soft lit puffs; soot streaks on flown boosters; shadows, refraction, caustics.\n\nCONTROLS & UI\n- Buttons: Roll out, Launch (Hold during the count), Land on ship / Land at pad, Storm. Space rolls out / launches. Taps: rocket = launch, hangar = roll out, drone ship / landing zone = choose landing site.\n- Tallies: Launches, Landings, Fairings; status lines for the Rocket (T−/T+ timeline: Liftoff, Max Q, Stage separation, Boostback, Entry burn, Landing burn…), the Drone ship and the Fairing boat.\n- Flavours: Lime, Curaçao, Blackcurrant. Sound toggle, pause, reset, view.\n- All sounds synthesised with WebAudio, only for events (door motor, hydraulics, countdown beeps, engine roar loop while burning, sonic booms, touchdown thud, tug horn, winch, net catch, thunder) — no background ambience.\n- Mobile bottom sheet, touch orbit, pinch zoom; a fallback message without WebGPU.\n- Copy: \"Launch Jelly. A spaceport on a low island, its rockets flying and coming home, set in a block of jelly.\" — \"Roll it out. Light it up. Bring the booster home.\""
+   },
+   "referenceAssets": false,
+   "tools": [
+    "WebGPU",
+    "WebAudio"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 17217,
+    "likes": 446,
+    "replies": 25,
+    "reposts": 33,
+    "bookmarks": 186,
+    "checkedAt": "2026-10-26T06:12:30.182Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114132448304910336/img/-AcM6oYYIvbtd9vO.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114132448304910336/vid/avc1/720x910/pFdg0aZpagFZYZgz.mp4?tag=29",
+    "width": 720,
+    "height": 910,
+    "durationSec": 18
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -80021,6 +80695,56 @@
     "width": 1280,
     "height": 720,
     "durationSec": 32
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114173223281783215",
+   "url": "https://x.com/killahdev/status/2114173223281783215",
+   "author": {
+    "handle": "killahdev",
+    "name": "killah"
+   },
+   "postedAt": "2026-10-25T01:52:30.000Z",
+   "addedAt": "2026-10-26",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "Roblox 模拟经营游戏",
+    "en": "Roblox simulator game"
+   },
+   "summary": {
+    "zh": "这是一个 Roblox 模拟器游戏，作者称用 Claude Opus 5.5 在三天内完成，并另外使用了动物和蛋的素材包。",
+    "en": "A Roblox Simulator game was built with Claude Opus 5.5 and released in three days, with animal and egg packs supplied separately."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Roblox"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 14999,
+    "likes": 210,
+    "replies": 13,
+    "reposts": 1,
+    "bookmarks": 145,
+    "checkedAt": "2026-10-26T06:12:30.182Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114173051789078529/img/ClroJgDYUoGjv0Q4.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114173051789078529/vid/avc1/1280x720/ajuZhBdDoPijsOuM.mp4?tag=14",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 38
    },
    "evidence": {
     "via": "daily",
@@ -96325,6 +97049,61 @@
    }
   },
   {
+   "id": "2114084322227503206",
+   "url": "https://x.com/Y0urDumble/status/2114084322227503206",
+   "author": {
+    "handle": "Y0urDumble",
+    "name": "Dumble"
+   },
+   "postedAt": "2026-10-24T19:59:14.000Z",
+   "addedAt": "2026-10-26",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "琥珀玻璃瓶 CGI 产品广告",
+    "en": "Amber glass bottle CGI product ad"
+   },
+   "summary": {
+    "zh": "帖子介绍了从客户需求到多格式成片的 CGI 产品广告流程，使用了 Claude Code、Blender MCP、Blender、Poly Haven、HyperFrames 和 FFmpeg。",
+    "en": "The post describes a CGI product-ad workflow from client brief to multi-format delivery, using Claude Code, Blender MCP, Blender, Poly Haven, HyperFrames and FFmpeg."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Claude Code",
+    "Blender MCP",
+    "Blender",
+    "Poly Haven",
+    "HyperFrames",
+    "FFmpeg"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 9487,
+    "likes": 170,
+    "replies": 19,
+    "reposts": 17,
+    "bookmarks": 207,
+    "checkedAt": "2026-10-26T06:12:30.182Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114084129998282752/img/b-sG7UX_gSsnuVpN.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114084129998282752/vid/avc1/720x900/fUNWEN0MKE2EGn-j.mp4?tag=29",
+    "width": 720,
+    "height": 900,
+    "durationSec": 15
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102650069136933039",
    "url": "https://x.com/studio_veco/status/2102650069136933039",
    "author": {
@@ -101891,6 +102670,54 @@
    }
   },
   {
+   "id": "2114129525466411347",
+   "url": "https://x.com/scottstts/status/2114129525466411347",
+   "author": {
+    "handle": "scottstts",
+    "name": "Scott"
+   },
+   "postedAt": "2026-10-24T22:58:52.000Z",
+   "addedAt": "2026-10-26",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "花厅梦核空间",
+    "en": "Floral Hall liminal 3D scene"
+   },
+   "summary": {
+    "zh": "《Floral Hall》是一件用 Claude Opus 5.5 制作的梦核风格空灵空间作品。",
+    "en": "Floral Hall is a dreamcore liminal-space work made with Claude Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 7842,
+    "likes": 110,
+    "replies": 3,
+    "reposts": 5,
+    "bookmarks": 48,
+    "checkedAt": "2026-10-26T06:12:30.182Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114128473966964736/img/UUR7IWAZ5QfMD7br.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114128473966964736/vid/avc1/1146x720/FL7T1UEwXZoGdJ0k.mp4?tag=29",
+    "width": 1146,
+    "height": 720,
+    "durationSec": 84
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2111421758691827905",
    "url": "https://x.com/kepochnik/status/2111421758691827905",
    "author": {
@@ -104340,6 +105167,56 @@
    }
   },
   {
+   "id": "2114170540391096407",
+   "url": "https://x.com/anxuanng/status/2114170540391096407",
+   "author": {
+    "handle": "anxuanng",
+    "name": "An Xuan"
+   },
+   "postedAt": "2026-10-25T01:41:50.000Z",
+   "addedAt": "2026-10-26",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "三维场景模型对比",
+    "en": "3D scene model comparison"
+   },
+   "summary": {
+    "zh": "作品展示了 Claude Opus 5.5 与 Kimi K3.1 Pro 的一次生成对比，两者使用相同提示词和 3D 文件。",
+    "en": "A 3D work is shown in a one-shot comparison between Claude Opus 5.5 and Kimi K3.1 Pro using the same prompt and 3D files."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Kimi K3.1 Pro"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 7081,
+    "likes": 139,
+    "replies": 5,
+    "reposts": 4,
+    "bookmarks": 57,
+    "checkedAt": "2026-10-26T06:12:30.182Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114170463085875200/img/fVTDFX-6a34HJCLW.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114170463085875200/vid/avc1/720x810/UHDm4Qvuym5H5_Hl.mp4?tag=29",
+    "width": 720,
+    "height": 810,
+    "durationSec": 16
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103617085402407181",
    "url": "https://x.com/cboyack/status/2103617085402407181",
    "author": {
@@ -105099,6 +105976,61 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114202745636852063",
+   "url": "https://x.com/nakazakifam/status/2114202745636852063",
+   "author": {
+    "handle": "nakazakifam",
+    "name": "中崎工房 | AIで1時間の仕事を5分で終わらせる人"
+   },
+   "postedAt": "2026-10-25T03:49:49.000Z",
+   "addedAt": "2026-10-26",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "After Effects 风格动画效果展示",
+    "en": "After Effects-style animation effects showcase"
+   },
+   "summary": {
+    "zh": "这是一个介绍类似 After Effects 动画效果的短视频。创作者称所有效果和剪辑都由 Opus 5.5 仅通过代码制作。",
+    "en": "A short video introduces After Effects-like animation effects. The creator says Opus 5.5 made all effects and editing through code."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "GPT-Image-2.5",
+    "LTX-2.3",
+    "ElevenLabs v4",
+    "Soniox stt v5",
+    "Epidemic Sound",
+    "HyperFrames"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 6739,
+    "likes": 108,
+    "replies": 6,
+    "reposts": 6,
+    "bookmarks": 127,
+    "checkedAt": "2026-10-26T06:12:30.182Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114202490623197184/img/YeWIpRAirQRQpaoS.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114202490623197184/vid/avc1/720x1280/b6ZJl-0io17aqaRG.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 24
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -108693,6 +109625,61 @@
     "width": 1280,
     "height": 720,
     "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114054716959215724",
+   "url": "https://x.com/vib3coded/status/2114054716959215724",
+   "author": {
+    "handle": "vib3coded",
+    "name": "Vib3Coded"
+   },
+   "postedAt": "2026-10-24T18:01:36.000Z",
+   "addedAt": "2026-10-26",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "Vault Street 像素风银行劫案微缩场景",
+    "en": "Vault Street pixel-art bank heist diorama"
+   },
+   "summary": {
+    "zh": "Claude Opus 5.5 制作了一个像素艺术银行劫案立体场景，包含警察追捕、动态交通、昼夜循环、降雨和交互控制。",
+    "en": "Claude Opus 5.5 built a pixel-art bank-heist diorama with a police chase, moving traffic, day/night cycle, rain, and interactive controls."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/vib3coded/status/2114054890011902110",
+    "text": "Build a single-file, original pixel-art diorama called \"Vault Street\": a toy-like bank job on a floating isometric town block, rendered with three.js (r160) at low resolution and upscaled with a post shader (depth outlines, OKLab quantisation to a fixed 64-colour palette, optional Bayer dither, a \"Raw 3D\" toggle). Orthographic camera, drag to rotate, scroll to zoom, whole-pixel snapping. No weapons anywhere: cartoon robbers in striped shirts, beanies and eye masks.\n\nWorld: a two-lane loop road (Main St / South St) with curbs, sidewalks, zebra crossings and a parking bay cut into the far side of South St. Inside the block: a columned bank (\"ACORN SAVINGS\") with a dome, a counter with three teller windows behind glass, a rope line, a manager's desk and a round vault door that rolls aside on a track; everything above knee height is one lid that lifts off while the gang are inside (Auto / Off / On). Also a diner and a park with a fountain. North of Main St: a police station with a beacon, a radio mast, a flag and a three-bay lot (two black-and-white cruisers with red/blue light bars, one impound bay), plus a donut shop with a giant donut on the roof and a hardware store. Street lamps with real lights at night, an alarm bell on a post by the bank, trees, a bus shelter. Day / dusk / night; rain with puddle reflections.\n\nStory loop: a brown sedan waits in the bay → two robbers cross and go in → staff and customers put their hands up → one goes behind the counter and opens the vault → a teller trips the alarm (bell rings, station beacon turns) → four officers run to the cruisers; Car 21 heads for the bank, Car 22 goes the other way and turns across both lanes of Main St → robbers run out with \"$\" sacks, the sedan pulls out and flees round the block with banknotes fluttering from the boot, Car 21 in pursuit → the sedan stops at the roadblock; hands up, or one runs for the park and gets a flying tackle → cuffs, escorted to the station, the loot carried back through the bank's back door → the cruisers back into the lot, the sedan towed into the impound bay → later the gang make bail and drive back to the bay.\n\nTraffic and people: civilian cars keep their distance (people crossing included), pull over for sirens and give up after a while if nothing passes; cruisers go out over the line to pass. Cars wait at a line while anyone reverses out of or pulls into the lot, and lot moves wait for an empty street. Passers-by walk the sidewalks, step round lamps, wait for cars crossing and sometimes use the bank. No deadlocks, no overlapping vehicles.\n\nUI (English): a lit scoreboard (HEISTS · clock + status · ARRESTS, \"LOOT RECOVERED $\"), a rail with Time & weather, Bank roof, Units (Car 21, Car 22, Brown sedan, the bank with live status; \"Start a heist\", Pause, \"Heists happen on their own\"), a Radio log, View controls; click the bank to start a heist; a \"How it's drawn\" note. Responsive, light and dark themes."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 5013,
+    "likes": 150,
+    "replies": 18,
+    "reposts": 15,
+    "bookmarks": 59,
+    "checkedAt": "2026-10-26T06:12:30.182Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114054456681668608/img/DkaMrNb_yFtpFAli.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114054456681668608/vid/avc1/1136x720/92kNv9on0PylRKYL.mp4?tag=29",
+    "width": 1136,
+    "height": 720,
+    "durationSec": 17
    },
    "evidence": {
     "via": "daily",
