@@ -50,6 +50,8 @@ def main():
         "daily": report(["date"], ["sessions", "activeUsers", "screenPageViews"], 28, limit=60),
         "pages7": report(["pagePath"], ["screenPageViews", "sessions", "bounceRate"], 7, "screenPageViews", 20),
         "sources7": report(["sessionSource", "sessionMedium"], ["sessions", "activeUsers"], 7, "sessions", 30),
+        # AI 引荐单独拉「来源 × 落地页」：sources7 只有前 30 个来源，小的 AI 来源会被挤掉，也看不到落在哪页（2026-10-27）
+        "srcLanding7": report(["sessionSource", "landingPage"], ["sessions"], 7, "sessions", 250),
         "events28": report(["eventName"], ["eventCount", "totalUsers"], 28, "eventCount", 40),
         "events7": report(["eventName"], ["eventCount", "totalUsers"], 7, "eventCount", 40),
         "automation28": report(["screenResolution"], ["sessions"], 28, "sessions", 10, bots=True),

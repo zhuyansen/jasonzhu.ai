@@ -140,6 +140,20 @@ if usage.get("ok"):
 elif not usage.get("skipped"):
     alerts.append(f"Vercel 请求用量没取到：{usage.get('error')}")
 
+# AI 引荐以 GA4 为准：ChatGPT 打开外链不带 Referer，Vercel 收不到；GA4 靠链接里的 utm_source=chatgpt.com 认得出来
+def is_ai(src):
+    return any(src.endswith(a) or src.endswith(a.split(".")[0]) for a in AI_REFERRERS)
+
+
+ai_ga = None
+if ga.get("ok") and ga.get("srcLanding7"):
+    by_src, by_page = {}, {}
+    for r in ga["srcLanding7"]["rows"]:
+        if is_ai(r["sessionSource"]):
+            by_src[r["sessionSource"]] = by_src.get(r["sessionSource"], 0) + r["sessions"]
+            by_page[r["landingPage"]] = by_page.get(r["landingPage"], 0) + r["sessions"]
+    ai_ga = {"total": sum(by_src.values()), "src": sorted(by_src.items(), key=lambda x: -x[1]), "pages": sorted(by_page.items(), key=lambda x: -x[1])}
+
 # ───────────── 头部 KPI ─────────────
 kpi = []
 sub = site.get("subscribers") if site.get("ok") else None
@@ -158,6 +172,8 @@ if vercel.get("ok"):
     kpi.append(f"浏览 **{fmt(yv)}** / 访客 {fmt(yu)}（7 天浏览 {fmt(v7)}，环比 {pct(v7, p7)}）")
 if edge:
     kpi.append(f"Vercel 请求 {fmt(edge['yreq'])}（额度预计 {edge['projected'] / edge['quota']:.0%}）")
+if ai_ga is not None:
+    kpi.append(f"AI 引荐 7 天 **{ai_ga['total']:,.0f}** 次会话")
 if gsc.get("ok"):
     t, tp = gsc["totals7"], gsc["totals7_prev"]
     kpi.append(f"搜索点击 7 天 **{t['clicks']:,}**（环比 {pct(t['clicks'], tp['clicks'])}）")
@@ -226,7 +242,8 @@ elif vercel.get("ok"):
     w("**来源（7 天）**：" + " · ".join(f"{h} {fmt(c)}" for h, c in refs[:10]))
     ai = [(h, c) for h, c in refs if any(h.endswith(a) for a in AI_REFERRERS)]
     w()
-    w(f"**AI 引荐（7 天）**：合计 {fmt(sum(c for _, c in ai))}" + (" ← " + " · ".join(f"{h} {fmt(c)}" for h, c in ai) if ai else ""))
+    w(f"**AI 引荐（7 天，Vercel 侧，偏低）**：{fmt(sum(c for _, c in ai))}" + (" ← " + " · ".join(f"{h} {fmt(c)}" for h, c in ai) if ai else "")
+      + "。ChatGPT 打开链接不带来源，这里基本记不到，以 GA4 那节为准")
     w()
     w("**国家/地区**：" + " · ".join(f"{r.get('country') or '?'} {fmt(n(r))}" for r in vercel.get("countries7", [])[:8]))
     w("**设备**：" + " · ".join(f"{r.get('deviceType') or '?'} {fmt(n(r))}" for r in vercel.get("devices7", [])))
@@ -277,9 +294,14 @@ if section_status("ga", ga, "GA4 "):
         w()
     rows = ga["sources7"]["rows"]
     w("**来源（7 天）**：" + " · ".join(f"{r['sessionSource']}/{r['sessionMedium']} {r['sessions']:.0f}" for r in rows[:8]))
-    ai = [r for r in rows if any(r["sessionSource"].endswith(a.split(".")[0]) or r["sessionSource"].endswith(a) for a in AI_REFERRERS)]
-    if ai:
-        w(f"**AI 引荐（7 天）**：" + " · ".join(f"{r['sessionSource']} {r['sessions']:.0f}" for r in ai))
+    if ai_ga is not None:
+        w(f"**AI 引荐（7 天）**：合计 {ai_ga['total']:,.0f} 次会话" + (" ← " + " · ".join(f"{s} {c:.0f}" for s, c in ai_ga["src"]) if ai_ga["src"] else ""))
+        if ai_ga["pages"]:
+            w("**AI 引荐落到的页面**：" + " · ".join(f"{p[:50]} {c:.0f}" for p, c in ai_ga["pages"][:5]))
+    else:
+        ai = [r for r in rows if is_ai(r["sessionSource"])]
+        if ai:
+            w("**AI 引荐（7 天）**：" + " · ".join(f"{r['sessionSource']} {r['sessions']:.0f}" for r in ai))
     w()
     ev28 = {r["eventName"]: r for r in ga["events28"]["rows"]}
     ev7 = {r["eventName"]: r for r in ga["events7"]["rows"]}
