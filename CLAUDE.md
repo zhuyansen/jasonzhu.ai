@@ -46,7 +46,8 @@ Git：commit 后如远程有新提交（cron 会自动 commit 快讯），先 `g
 - 点评入口：管理后台「快讯点评」标签 → `/api/admin/news` 通过 GitHub API 提交 frontmatter（需 Vercel 的 `GITHUB_CONTENTS_TOKEN`）→ 自动部署。清空点评 = 撤回、重新 noindex。不要再给快讯整体放开收录。
 
 **快讯 cron（.github/workflows/daily-news.yml）**
-- 北京时间清晨 5:30/6:30/7:15 三档重试；`collect-news.mjs` 抓 RSS → Claude 结构化 → 写 md + Supabase → commit。今天的快讯已发出（≥3 条）时，后面几档整轮跳过：以前每档都重画封面、多一次提交和部署、给订阅者重复发信（2026-10-27 修）。邮件脚本按北京日期取当期。- API 容灾链（快讯和提示词库相同）：flatrouter（OpenAI 兼容，只有 GPT：gpt-6-astra / gpt-5.6-sol，主力）→ apimart（Claude）→ 官方。2026-10-24 起不用 aigocode（余额用完，用户决定去掉；工作流不再传 `ANTHROPIC_AUTH_TOKEN`，代码里的 proxy 通道只在设了这个变量时才启用）。5xx/超时/账号干涸/429 限流自动切。主通道模型链 claude-opus-5-5 → claude-sonnet-5 → …（代理开通什么用什么，404「not available for this group」自动换下一个）。模型被下线时 9/29–9/30 曾因降级条件只认 400 而两天没出快讯。
+- 北京时间清晨 5:30/6:30/7:15 三档重试；`collect-news.mjs` 抓 RSS → Claude 结构化 → 写 md + Supabase → commit。今天的快讯已发出（≥3 条）时，后面几档整轮跳过：以前每档都重画封面、多一次提交和部署、给订阅者重复发信（2026-10-27 修）。邮件脚本按北京日期取当期。
+- 快讯邮件只发最新的 1000 个订阅者（`send-digest-email.mjs` 没分页，Supabase max-rows 截断；全表约 4,700 个）：2026-10-27 Jason 决定先不扩，要扩先问他。example.com 之类保留域名的测试地址在发信前过滤，否则 Resend 会把整批 50 封一起拒掉。- API 容灾链（快讯和提示词库相同）：flatrouter（OpenAI 兼容，只有 GPT：gpt-6-astra / gpt-5.6-sol，主力）→ apimart（Claude）→ 官方。2026-10-24 起不用 aigocode（余额用完，用户决定去掉；工作流不再传 `ANTHROPIC_AUTH_TOKEN`，代码里的 proxy 通道只在设了这个变量时才启用）。5xx/超时/账号干涸/429 限流自动切。主通道模型链 claude-opus-5-5 → claude-sonnet-5 → …（代理开通什么用什么，404「not available for this group」自动换下一个）。模型被下线时 9/29–9/30 曾因降级条件只认 400 而两天没出快讯。
 - apimart 的 key 按模型分组开通，分两个 secret：`APIMART_CLAUDE_KEY` 调 Claude（只开通 claude-opus-5-5；代码模型顺序 opus-5-5 → sonnet-5-5 → opus-4-6，旧 key 也能跑），`APIMART_API_KEY` 只给生图（快讯/博客封面，模型 gpt-image-2.5-flare，`APIMART_IMAGE_MODEL` 可覆盖）。提示词库终审只用 Opus（apimart Opus 5.5），不让 GPT 拍板。
 - 数据日报每天做模型通道体检（`ops/analytics/fetch_channels.py`：每条通道 8 token 探测、生图空 prompt 探测），任何通道不通在日报开头告警——2026-10-04 备用 key 坏了几个月没人发现，主代理一限流 11 个作品卡进待审。
 - `CLAUDE_TRANSPORT=curl` 仅本地用——本机 Node/undici 连不上代理（UND_ERR_CONNECT_TIMEOUT），curl 加 `--http1.1` 正常。

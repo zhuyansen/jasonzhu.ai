@@ -25,6 +25,9 @@ const MONTH_DAY = (() => {
 
 const SITE_URL = "https://jasonzhu.ai";
 const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "AI快讯 <news@jasonzhu.ai>";
+// 测试订阅留下的保留域名地址（example.com 之类）。Resend 会把含它们的整批 50 封一起拒掉（422），
+// 以前每天第 4、5 批共 100 个真订阅者因此收不到。
+const TEST_ADDRESS = /@(([^@]+\.)?example\.(com|net|org)|[^@]+\.(test|example|invalid|localhost))$/i;
 
 // ─── Check prerequisites ────────────────────────────
 
@@ -168,7 +171,8 @@ async function main() {
 
   const supabase = createClient(supabaseUrl, supabaseKey);
 
-  // Fetch all subscribers
+  // 只读得到最新的 1000 个（Supabase max-rows，这里没分页）。2026-10-27 Jason 决定先不扩到全部
+  // 订阅者（全表约 4,700 个），要改先问他。
   const { data: subscribers, error } = await supabase
     .from("subscribers")
     .select("email")
@@ -184,7 +188,8 @@ async function main() {
     return;
   }
 
-  console.log(`📬 Found ${subscribers.length} subscribers`);
+  const recipients = subscribers.filter((s) => !TEST_ADDRESS.test(s.email || ""));
+  console.log(`📬 Found ${subscribers.length} subscribers, skipped ${subscribers.length - recipients.length} test addresses`);
 
   const html = buildEmailHtml(todayDigest);
   const subject = `AI 快讯 · ${MONTH_DAY} — ${todayDigest.items[0]?.title || "今日精选"}`;
@@ -193,8 +198,8 @@ async function main() {
   const BATCH_SIZE = 50;
   let sent = 0;
 
-  for (let i = 0; i < subscribers.length; i += BATCH_SIZE) {
-    const batch = subscribers.slice(i, i + BATCH_SIZE);
+  for (let i = 0; i < recipients.length; i += BATCH_SIZE) {
+    const batch = recipients.slice(i, i + BATCH_SIZE);
     const emails = batch.map((s) => ({
       from: FROM_EMAIL,
       to: s.email,
@@ -229,7 +234,7 @@ async function main() {
     }
   }
 
-  console.log(`\n✅ Email push complete: ${sent}/${subscribers.length} sent`);
+  console.log(`\n✅ Email push complete: ${sent}/${recipients.length} sent`);
 }
 
 main().catch((err) => {
