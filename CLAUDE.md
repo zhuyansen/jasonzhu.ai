@@ -46,8 +46,7 @@ Git：commit 后如远程有新提交（cron 会自动 commit 快讯），先 `g
 - 点评入口：管理后台「快讯点评」标签 → `/api/admin/news` 通过 GitHub API 提交 frontmatter（需 Vercel 的 `GITHUB_CONTENTS_TOKEN`）→ 自动部署。清空点评 = 撤回、重新 noindex。不要再给快讯整体放开收录。
 
 **快讯 cron（.github/workflows/daily-news.yml）**
-- 北京时间清晨 5:30/6:30/7:15 三档重试；`collect-news.mjs` 抓 RSS → Claude 结构化 → 写 md + Supabase → commit。
-- API 容灾链（快讯和提示词库相同）：flatrouter（OpenAI 兼容，只有 GPT：gpt-6-astra / gpt-5.6-sol，主力）→ apimart（Claude）→ 官方。2026-10-24 起不用 aigocode（余额用完，用户决定去掉；工作流不再传 `ANTHROPIC_AUTH_TOKEN`，代码里的 proxy 通道只在设了这个变量时才启用）。5xx/超时/账号干涸/429 限流自动切。主通道模型链 claude-opus-5-5 → claude-sonnet-5 → …（代理开通什么用什么，404「not available for this group」自动换下一个）。模型被下线时 9/29–9/30 曾因降级条件只认 400 而两天没出快讯。
+- 北京时间清晨 5:30/6:30/7:15 三档重试；`collect-news.mjs` 抓 RSS → Claude 结构化 → 写 md + Supabase → commit。今天的快讯已发出（≥3 条）时，后面几档整轮跳过：以前每档都重画封面、多一次提交和部署、给订阅者重复发信（2026-10-27 修）。邮件脚本按北京日期取当期。- API 容灾链（快讯和提示词库相同）：flatrouter（OpenAI 兼容，只有 GPT：gpt-6-astra / gpt-5.6-sol，主力）→ apimart（Claude）→ 官方。2026-10-24 起不用 aigocode（余额用完，用户决定去掉；工作流不再传 `ANTHROPIC_AUTH_TOKEN`，代码里的 proxy 通道只在设了这个变量时才启用）。5xx/超时/账号干涸/429 限流自动切。主通道模型链 claude-opus-5-5 → claude-sonnet-5 → …（代理开通什么用什么，404「not available for this group」自动换下一个）。模型被下线时 9/29–9/30 曾因降级条件只认 400 而两天没出快讯。
 - apimart 的 key 按模型分组开通，分两个 secret：`APIMART_CLAUDE_KEY` 调 Claude（只开通 claude-opus-5-5；代码模型顺序 opus-5-5 → sonnet-5-5 → opus-4-6，旧 key 也能跑），`APIMART_API_KEY` 只给生图（快讯/博客封面，模型 gpt-image-2.5-flare，`APIMART_IMAGE_MODEL` 可覆盖）。提示词库终审只用 Opus（apimart Opus 5.5），不让 GPT 拍板。
 - 数据日报每天做模型通道体检（`ops/analytics/fetch_channels.py`：每条通道 8 token 探测、生图空 prompt 探测），任何通道不通在日报开头告警——2026-10-04 备用 key 坏了几个月没人发现，主代理一限流 11 个作品卡进待审。
 - `CLAUDE_TRANSPORT=curl` 仅本地用——本机 Node/undici 连不上代理（UND_ERR_CONNECT_TIMEOUT），curl 加 `--http1.1` 正常。
@@ -64,7 +63,7 @@ Git：commit 后如远程有新提交（cron 会自动 commit 快讯），先 `g
 - 视频和封面是 X 的外链。`video.twimg.com` 拒绝带外站 Referer 的请求，所以 `/prompts/*` 是 `Referrer-Policy: no-referrer`（next.config 响应头 + 页面 metadata），不要删。
 - 客户端组件只能引 `@/lib/opus-prompts-shared`；`@/lib/opus-prompts` 导入整份 JSON，引了会打进 JS 包。
 - 提示词一律原文照录，出处必须可追溯；人工把关记录在 `scripts/opus-prompts/data/curation.json`，下架也走这里。
-- 三条自动任务：每日收录新作品（`opus-prompts-daily.yml`，Opus / Sonnet / Haiku / Fable 5.5，一天跑两次、每次最多 80 个，延迟 24 小时，Jev 审核、拿不准的交 Opus 终审拍板，终审不可用才进滚动 PR `opus-prompts/pending`）、每周数据核验、GitHub 合集每日同步。细节在 `scripts/opus-prompts/README.md`。
+- 三条自动任务：每日收录新作品（`opus-prompts-daily.yml`，Opus / Sonnet / Haiku / Fable 5.5，一天跑一次（北京 9:17；每次 push 都是一次 Vercel 部署、约 1.4 GB 按月计存储费，别再加档）、每次最多 80 个，延迟 24 小时，Jev 审核、拿不准的交 Opus 终审拍板，终审不可用才进滚动 PR `opus-prompts/pending`）、每周数据核验、GitHub 合集每日同步。细节在 `scripts/opus-prompts/README.md`。
 
 **订阅（核心引流，4 个入口共用 /api/subscribe）**
 - 反 bot：honeypot(website 字段) + time-trap(ts<1.5s 拒) + Origin 白名单（localhost 任意端口放行）。被判 bot 时静默返回 success。

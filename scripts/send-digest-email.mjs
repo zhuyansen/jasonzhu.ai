@@ -15,10 +15,12 @@ import { createClient } from "@supabase/supabase-js";
 import fs from "fs";
 import path from "path";
 
-const TODAY = new Date().toISOString().split("T")[0];
+// 快讯按北京日期分期（和 collect-news.mjs 一样）。cron 在北京清晨跑，那时 UTC 还是前一天，
+// 以前按 UTC 取「今天」会把昨天那期再发一遍。
+const TODAY = new Date(Date.now() + 8 * 3600 * 1000).toISOString().split("T")[0];
 const MONTH_DAY = (() => {
-  const d = new Date();
-  return `${d.getMonth() + 1}月${d.getDate()}日`;
+  const [, month, day] = TODAY.split("-").map(Number);
+  return `${month}月${day}日`;
 })();
 
 const SITE_URL = "https://jasonzhu.ai";

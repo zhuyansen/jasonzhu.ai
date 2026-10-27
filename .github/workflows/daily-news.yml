@@ -22,6 +22,11 @@ on:
 permissions:
   contents: write
 
+# GitHub 常把三档 cron 推迟几个小时，排队跑，后一档才看得到前一档提交的快讯
+concurrency:
+  group: daily-news
+  cancel-in-progress: false
+
 jobs:
   collect-news:
     runs-on: ubuntu-latest
@@ -31,16 +36,32 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # 定时跑时，今天的快讯已经发出（≥3 条，和 collect-news.mjs 的幂等判断一致）就整轮跳过。
+      # 采集脚本自己会跳过，但封面图每次都会重画、被判成「有变化」，以前每档重试都会
+      # 多一次提交、多一次 Vercel 部署，再给全体订阅者发一封同样的邮件。
+      - name: Skip if today's digest is already out
+        id: done
+        if: github.event_name == 'schedule'
+        run: |
+          FILE="src/content/news/$(TZ=Asia/Shanghai date +%Y-%m-%d).md"
+          if [ -f "$FILE" ] && [ "$(grep -c '^###[[:space:]]' "$FILE")" -ge 3 ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "$FILE 已有，这档不再重画封面、提交和发邮件"
+          fi
+
       - name: Setup Node.js
+        if: steps.done.outputs.skip != 'true'
         uses: actions/setup-node@v4
         with:
           node-version: "22"
           cache: "npm"
 
       - name: Install dependencies
+        if: steps.done.outputs.skip != 'true'
         run: npm ci
 
       - name: Collect and generate news
+        if: steps.done.outputs.skip != 'true'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           APIMART_API_KEY: ${{ secrets.APIMART_API_KEY }}
@@ -53,12 +74,14 @@ jobs:
         run: node scripts/collect-news.mjs
 
       - name: Generate daily news cover image
+        if: steps.done.outputs.skip != 'true'
         continue-on-error: true
         env:
           APIMART_API_KEY: ${{ secrets.APIMART_API_KEY }}
         run: node scripts/generate-news-image.mjs ${{ inputs.date }}
 
       - name: Check for changes
+        if: steps.done.outputs.skip != 'true'
         id: changes
         run: |
           if ! git diff --quiet src/content/news/ src/generated/news.json public/news/; then
