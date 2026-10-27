@@ -1,5 +1,98 @@
 [
   {
+    "slug": "2026-10-27",
+    "date": "2026-10-27",
+    "title": "AI 快讯 · 10月27日",
+    "items": [
+      {
+        "title": "Greptile让AI越过代码审查直测真实工作流",
+        "source": "OpenAI Blog",
+        "category": "Skills 生态",
+        "url": "https://openai.com/index/greptile-code-review-codex-astra",
+        "summary": "Greptile结合GPT-6 Astra测试用户真实工作流，用Daybreak强化安全分析，再由Codex减少修复返工。重点不只是找代码缺陷，而是验证漏洞能否在完整产品流程中被触发。",
+        "titleEn": "Greptile Takes AI Bug Detection Beyond Review",
+        "summaryEn": "Greptile combines GPT-6 Astra, Daybreak, and Codex to test real user workflows, strengthen security analysis, and reduce rework during remediation. The approach moves AI code review beyond static inspection by checking whether vulnerabilities can actually be triggered in complete product flows, making findings more actionable for engineering teams."
+      },
+      {
+        "title": "CodeRabbit用GPT-6.1 Sol审查复杂代码库安全风险",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/gpt-6-1-sol-coderabbit-code-security",
+        "summary": "CodeRabbit将GPT-6.1 Sol用于复杂代码库的安全调查，并通过安全智能体帮助开发者复核风险与修复方案。对开发团队而言，模型开始从解释代码问题走向协助完成安全处置闭环。",
+        "titleEn": "CodeRabbit Expands AI Security Review",
+        "summaryEn": "CodeRabbit uses GPT-6.1 Sol to investigate security risks across complex codebases. Its security agent helps developers review findings and proposed fixes, extending AI assistance from explaining potential issues to supporting the full remediation loop. This could make security review more practical for teams managing large, interconnected repositories."
+      },
+      {
+        "title": "Cindy开源本地智能体可直接操作文件与登录应用",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/makecindy/cindy",
+        "summary": "开源项目Cindy把多种模型、工具和Agent运行框架整合到本地，能读取真实文件并操作已登录应用，开箱即用完成项目任务。它展示了个人智能体从聊天工具走向执行层的路径。",
+        "titleEn": "Cindy Brings Local AI Agents to Real Work",
+        "summaryEn": "Cindy is an open-source local AI agent that combines multiple models, harnesses, and tools to work with real files and logged-in applications. Its out-of-the-box workflow illustrates how personal agents can move beyond chat interfaces and directly execute tasks inside users’ existing projects and software environments."
+      },
+      {
+        "title": "ChatGPT工作版图扩展至百国165类工作活动",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/chatgpt-expanding-world-of-work",
+        "summary": "OpenAI Signals分析近百个国家、165类工作活动中的ChatGPT使用情况，显示用户如何把模型嵌入日常工作，以及使用方式随时间变化。数据可帮助开发者判断哪些岗位最适合优先做AI产品。",
+        "titleEn": "ChatGPT Maps Its Expanding World of Work",
+        "summaryEn": "OpenAI Signals examines ChatGPT usage across 165 work activities in nearly 100 countries, tracking how people incorporate the model into daily work and how patterns change over time. For developers, the dataset offers clues about which professional workflows have the strongest demand for AI-native products and automation."
+      },
+      {
+        "title": "Fanatics用AI搭配推荐让商品互动率提升10%",
+        "source": "OpenAI Blog",
+        "category": "出海实战",
+        "url": "https://openai.com/index/fanatics-streamline-fan-experience",
+        "summary": "Fanatics推出Shop the Look，利用AI帮助球迷搭配比赛日服装，并在约3万件MLB商品测试中实现互动率提升10%。案例说明，电商AI的价值不仅在生成内容，也在缩短用户从灵感到购买的路径。",
+        "titleEn": "Fanatics Boosts Shopping Engagement with AI",
+        "summaryEn": "Fanatics uses an AI-powered Shop the Look experience to help fans assemble game-day outfits. Testing across roughly 30,000 MLB products produced a 10% engagement increase. The case shows that ecommerce AI can create measurable value by shortening the path from product discovery and inspiration to purchase."
+      },
+      {
+        "title": "Kolab基准发现智能体协作胜过一次性自动完成",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2610.21109",
+        "summary": "Kolab专门评估人类与智能体共同完成长期任务的能力。研究发现，专业用户更看重持续对话、修改计划和共同推进，而不是智能体一次性独立完成。对开发者来说，协作体验可能比自动化分数更重要。",
+        "titleEn": "Kolab Benchmarks Human-Agent Collaboration",
+        "summaryEn": "Kolab evaluates human-agent collaboration on long-horizon workflows and finds that professionals value ongoing interaction, plan revision, and shared progress more than one-shot task completion. For developers, the result suggests that agent products should optimize for effective collaboration and recovery, not merely benchmarked automation rates."
+      },
+      {
+        "title": "FLORA把机器人训练所需数据引擎全面开源",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2610.31779",
+        "summary": "FLORA是一套面向机器人基础模型的数据引擎，同时生成结果奖励、过程奖励和带时间戳的训练描述，并用于训练GR00T模型。它把机器人训练中分散、昂贵的数据标注流程标准化，降低开发门槛。",
+        "titleEn": "FLORA Opens a Robotics Data Engine",
+        "summaryEn": "FLORA is an open model suite and data engine for robotics foundation models. It supports outcome rewards, process rewards, and timestamped captions for training and deployment, and has been used with GR00T models. By standardizing fragmented labeling workflows, it could reduce the data bottleneck facing robotics developers."
+      },
+      {
+        "title": "LLM2Cert让大模型生成的安全证明交给Lean验算",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2610.30524",
+        "summary": "LLM2Cert让大模型尝试生成控制系统的稳定性与安全性证明，再交由SMT求解器或Lean进行形式化验证，避免只凭语言模型自我解释。对开发者而言，这为机器人和自动驾驶系统引入可检查的安全保证。",
+        "titleEn": "LLM2Cert Connects Language Models with Formal Verification",
+        "summaryEn": "LLM2Cert uses language models to synthesize stability and safety certificates for control systems, then verifies them with SMT solvers or Lean. This avoids relying on plausible-sounding explanations alone and offers developers a path toward machine-checkable safety guarantees for robotics, autonomous systems, and other high-risk applications."
+      }
+    ],
+    "funding": [
+      {
+        "company": "SpaceX",
+        "url": "https://techcrunch.com/2026/10/26/spacex-locks-in-40b-gpu-financing-deal-with-apollo/",
+        "round": "GPU financing",
+        "amount": "$40B",
+        "valuation": "",
+        "investors": "Apollo",
+        "pitch": "通过Apollo的400亿美元GPU融资扩张AI基础设施，显示大型算力部署正成为独立融资资产。"
+      }
+    ],
+    "jasonSays": "今天最值得关注的是AI正从代码审查和聊天界面深入真实工作流，安全处置、长期协作与机器人数据基础设施成为落地关键。",
+    "jasonSaysEn": "The key trend today is AI moving deeper into real workflows, with security remediation, long-horizon collaboration, and robotics data infrastructure emerging as critical foundations for practical deployment.",
+    "filename": "2026-10-27.md"
+  },
+  {
     "slug": "2026-10-26",
     "date": "2026-10-26",
     "title": "AI 快讯 · 10月26日",
@@ -79,7 +172,8 @@
     ],
     "jasonSays": "Cloudflare 开源经过内部实战检验的安全审计 Skill，让编码智能体能做多阶段漏洞挖掘，是今天 Skills 生态最实用的更新。",
     "jasonSaysEn": "Cloudflare's open-source security audit skill, already proven in its internal vulnerability work, lets coding agents run multi-phase vulnerability hunts and is today's most practical Skills ecosystem update.",
-    "filename": "2026-10-26.md"
+    "filename": "2026-10-26.md",
+    "coverImage": "/news/2026-10-26.png"
   },
   {
     "slug": "2026-10-25",
