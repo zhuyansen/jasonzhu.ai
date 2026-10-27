@@ -114,6 +114,14 @@ export default function PromptLibraryClient({ initial, total, counts, modelCount
   }, [all, category, fullOnly, promptOnly, noAssets, q, sort, group, model, onlyNew, fresh.weekStart]);
 
   const reset = () => setVisible(PAGE_SIZE);
+  // 卡片上的模型 / 分类 / 工具标签点了就筛选（2026-10-27：Clarity 35% 的会话有「点了没反应」，这些标签长得像按钮却点不了）
+  const pick = (f: Pick) => {
+    if (f.model && !lockModel) { setModel(f.model); }
+    if (f.category && !lockCategory) { setCategory(f.category); setGroup(null); }
+    if (f.q) { setQ(f.q); }
+    reset();
+    document.getElementById("library-filters")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
   const shown = filtered.slice(0, visible);
   const isFiltering = Boolean((category && category !== lockCategory) || fullOnly || promptOnly || noAssets || q.trim() || group || (model && model !== lockModel) || onlyNew);
   const pill = (active: boolean) =>
@@ -131,7 +139,7 @@ export default function PromptLibraryClient({ initial, total, counts, modelCount
             {featured.cases.map((c, i) => (
               <div key={c.id} className="relative">
                 <span className="absolute -top-2 -left-2 z-10 w-7 h-7 rounded-full bg-gray-900 text-white text-xs font-bold flex items-center justify-center tabular-nums shadow">{i + 1}</span>
-                <CaseCard c={c} lang={lang} isNew={(c.addedAt || "") >= fresh.recentStart} onGroup={(k) => { setGroup(k); setCategory(lockCategory ?? null); reset(); }} />
+                <CaseCard c={c} lang={lang} isNew={(c.addedAt || "") >= fresh.recentStart} onPick={pick} lockModel={lockModel} lockCategory={lockCategory} onGroup={(k) => { setGroup(k); setCategory(lockCategory ?? null); reset(); }} />
               </div>
             ))}
           </div>
@@ -166,7 +174,7 @@ export default function PromptLibraryClient({ initial, total, counts, modelCount
       )}
 
       {/* 筛选 */}
-      <div className="space-y-3 mb-8">
+      <div id="library-filters" className="space-y-3 mb-8 scroll-mt-20">
         <div className="flex flex-col sm:flex-row gap-3">
           <input
             type="search"
@@ -264,7 +272,7 @@ export default function PromptLibraryClient({ initial, total, counts, modelCount
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           {shown.map((c) => (
-            <CaseCard key={c.id} c={c} lang={lang} isNew={(c.addedAt || "") >= fresh.recentStart} showAdded={sort === "added" || onlyNew} onGroup={(k) => { setGroup(k); setCategory(null); reset(); window.scrollTo({ top: 0, behavior: "smooth" }); }} />
+            <CaseCard key={c.id} c={c} lang={lang} isNew={(c.addedAt || "") >= fresh.recentStart} showAdded={sort === "added" || onlyNew} onPick={pick} lockModel={lockModel} lockCategory={lockCategory} onGroup={(k) => { setGroup(k); setCategory(null); reset(); window.scrollTo({ top: 0, behavior: "smooth" }); }} />
           ))}
         </div>
       )}
@@ -285,7 +293,12 @@ export default function PromptLibraryClient({ initial, total, counts, modelCount
   );
 }
 
-function CaseCard({ c, lang, isNew, showAdded, onGroup }: { c: OpusCaseSlim; lang: string; isNew: boolean; showAdded?: boolean; onGroup: (key: string) => void }) {
+type Pick = { model?: ClaudeModel; category?: OpusCategory; q?: string };
+
+function CaseCard({ c, lang, isNew, showAdded, onGroup, onPick, lockModel, lockCategory }: {
+  c: OpusCaseSlim; lang: string; isNew: boolean; showAdded?: boolean; onGroup: (key: string) => void;
+  onPick: (f: Pick) => void; lockModel?: ClaudeModel; lockCategory?: OpusCategory;
+}) {
   const isZh = lang === "zh";
   const [full, setFull] = useState<string | null>(null);
   const [open, setOpen] = useState(false);
@@ -345,14 +358,20 @@ function CaseCard({ c, lang, isNew, showAdded, onGroup }: { c: OpusCaseSlim; lan
       <div className="flex flex-col flex-1 p-4">
         <div className="flex items-center gap-2 text-xs text-gray-400 mb-1.5">
           {(c.models || ["opus-5.5"]).map((m) => (
-            <span key={m} className={`px-1.5 py-0.5 rounded font-semibold ${m === "sonnet-5.5" ? "bg-amber-50 text-amber-700" : m === "fable-5.5" ? "bg-emerald-50 text-emerald-700" : m === "haiku-5.5" ? "bg-sky-50 text-sky-700" : "bg-violet-50 text-violet-700"}`}
+            <button type="button" key={m} disabled={m === lockModel} onClick={() => onPick({ model: m })} className={`px-1.5 py-0.5 rounded font-semibold enabled:hover:ring-1 enabled:hover:ring-current disabled:cursor-default ${m === "sonnet-5.5" ? "bg-amber-50 text-amber-700" : m === "fable-5.5" ? "bg-emerald-50 text-emerald-700" : m === "haiku-5.5" ? "bg-sky-50 text-sky-700" : "bg-violet-50 text-violet-700"}`}
               title={MODEL_PREVIEW[m] ? (isZh ? "Fable 5.5 已在内测，Anthropic 尚未官宣；模型归属以作者自述为准" : "Fable 5.5 is in limited preview and not yet announced by Anthropic; attribution is as stated by the creator") : undefined}>
               {MODEL_LABEL[m]}{MODEL_PREVIEW[m] && <span className="font-normal">{isZh ? " · 内测" : " · preview"}</span>}
-            </span>
+            </button>
           ))}
-          <span className="px-2 py-0.5 rounded-full bg-blue-50 text-[var(--primary)] font-medium">
+          <button
+            type="button"
+            disabled={c.category === lockCategory}
+            onClick={() => onPick({ category: c.category })}
+            title={isZh ? "只看这个分类" : "Show this category only"}
+            className="px-2 py-0.5 rounded-full bg-blue-50 text-[var(--primary)] font-medium enabled:hover:bg-blue-100 disabled:cursor-default"
+          >
             {categoryLabel(c.category, lang)}
-          </span>
+          </button>
           <a href={c.url} target="_blank" rel="noopener noreferrer" className="hover:text-gray-700 truncate">
             @{c.author.handle}
           </a>
@@ -395,9 +414,11 @@ function CaseCard({ c, lang, isNew, showAdded, onGroup }: { c: OpusCaseSlim; lan
             </div>
             <div className="relative">
               <div
+                onClick={!open && canExpand ? toggle : undefined}
+                title={!open && canExpand ? (isZh ? "点击展开全文" : "Click to show the full prompt") : undefined}
                 className={`text-sm text-gray-700 leading-relaxed whitespace-pre-wrap break-words bg-gray-50 border border-gray-100 rounded-lg p-3 ${
                   open ? "max-h-[420px] overflow-y-auto" : "max-h-32 overflow-hidden"
-                }`}
+                } ${!open && canExpand ? "cursor-pointer hover:border-gray-200" : ""}`}
               >
                 {open && full ? full : p.excerpt}
               </div>
@@ -433,9 +454,15 @@ function CaseCard({ c, lang, isNew, showAdded, onGroup }: { c: OpusCaseSlim; lan
         {c.tools.length > 0 && (
           <div className="flex flex-wrap gap-1.5 mt-3">
             {c.tools.slice(0, 5).map((t) => (
-              <span key={t} className="px-2 py-0.5 rounded-full bg-gray-50 text-gray-500 text-[11px]">
+              <button
+                type="button"
+                key={t}
+                onClick={() => onPick({ q: t })}
+                title={isZh ? `搜「${t}」` : `Search “${t}”`}
+                className="px-2 py-0.5 rounded-full bg-gray-50 text-gray-500 text-[11px] hover:bg-gray-100 hover:text-gray-700"
+              >
                 {t}
-              </span>
+              </button>
             ))}
           </div>
         )}
