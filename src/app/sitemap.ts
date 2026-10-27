@@ -28,6 +28,7 @@ const STATIC_PATHS = [
   "/club",
   "/prompts/claude-opus-5-5",
   "/prompts/claude-opus-5-5/motion-graphics", // 动效落地页（打「Claude motion graphics prompts」）
+  "/prompts/claude-opus-5-5/fable-5-5", // Fable 5.5 落地页（打「fable 5.5」「claude fable 5.5」）
   "/backlink-spam-list", // 垃圾外链来源库（名单在 GitHub zhuyansen/backlink-spam-list，页面每天重读）
   "/privacy",
   "/terms",

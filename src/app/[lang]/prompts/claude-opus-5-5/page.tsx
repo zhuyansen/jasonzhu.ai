@@ -190,6 +190,11 @@ export default async function OpusPromptsPage({ params }: { params: Promise<{ la
           {isZh ? "→ 只看动效：Claude 动效提示词精选" : "→ Motion graphics only: Claude motion graphics prompts"}
         </Link>
       </p>
+      <p className="mt-2 text-sm">
+        <Link href={`/${lang}/${PATH}/fable-5-5`} className="text-[var(--primary)] hover:underline">
+          {isZh ? "→ 只看 Fable 5.5：作品、提示词和发布状态" : "→ Fable 5.5 only: examples, prompts and release status"}
+        </Link>
+      </p>
 
       {/* 用法 */}
       <section className="mt-16">

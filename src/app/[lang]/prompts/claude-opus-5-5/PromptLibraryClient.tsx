@@ -40,9 +40,11 @@ interface Props {
   featured?: { title: { zh: string; en: string }; cases: OpusCaseSlim[] };
   /** 落地页用：固定在某个分类，并隐藏分类筛选（如 motion-graphics 页） */
   lockCategory?: OpusCategory;
+  /** 单一模型的落地页（如 Fable 5.5 专题）：固定只看这个模型，隐藏模型筛选 */
+  lockModel?: ClaudeModel;
 }
 
-export default function PromptLibraryClient({ initial, total, counts, modelCounts, lang, fresh, featured, lockCategory }: Props) {
+export default function PromptLibraryClient({ initial, total, counts, modelCounts, lang, fresh, featured, lockCategory, lockModel }: Props) {
   const isZh = lang === "zh";
   const [all, setAll] = useState<OpusCaseSlim[]>(initial);
   const [loaded, setLoaded] = useState(initial.length >= total);
@@ -58,7 +60,7 @@ export default function PromptLibraryClient({ initial, total, counts, modelCount
   const [picked, setModel] = useState<ClaudeModel | null | undefined>(undefined);
   const urlModel = useSyncExternalStore(noopSubscribe, readUrlModel, () => null);
   // 链接里的模型还没有作品（如刚发布的 Haiku 5.5）就显示全部，不给一个空列表
-  const model = picked === undefined ? (urlModel && modelCounts[urlModel] ? urlModel : null) : picked;
+  const model = lockModel ?? (picked === undefined ? (urlModel && modelCounts[urlModel] ? urlModel : null) : picked);
   const [visible, setVisible] = useState(PAGE_SIZE);
   const [onlyNew, setOnlyNew] = useState(false); // 只看本周新增
 
@@ -113,7 +115,7 @@ export default function PromptLibraryClient({ initial, total, counts, modelCount
 
   const reset = () => setVisible(PAGE_SIZE);
   const shown = filtered.slice(0, visible);
-  const isFiltering = Boolean((category && category !== lockCategory) || fullOnly || promptOnly || noAssets || q.trim() || group || model || onlyNew);
+  const isFiltering = Boolean((category && category !== lockCategory) || fullOnly || promptOnly || noAssets || q.trim() || group || (model && model !== lockModel) || onlyNew);
   const pill = (active: boolean) =>
     `px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
       active ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200"
@@ -195,7 +197,7 @@ export default function PromptLibraryClient({ initial, total, counts, modelCount
           </label>
         </div>
 
-        <div className="flex flex-wrap gap-2">
+        {!lockModel && <div className="flex flex-wrap gap-2">
           {([null, "opus-5.5", "sonnet-5.5", "haiku-5.5", "fable-5.5"] as (ClaudeModel | null)[]).filter((m) => !m || modelCounts[m]).map((m) => (
             <button
               key={m ?? "all"}
@@ -209,7 +211,7 @@ export default function PromptLibraryClient({ initial, total, counts, modelCount
               <span className="opacity-60">{m ? modelCounts[m] : total}</span>
             </button>
           ))}
-        </div>
+        </div>}
 
         {!lockCategory && <div className="flex flex-wrap gap-2">
           <button onClick={() => { setCategory(null); reset(); }} className={pill(!category)}>
