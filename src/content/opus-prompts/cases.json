@@ -1,8 +1,8 @@
 {
  "model": "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.5)",
  "threshold": 5000,
- "updatedAt": "2026-10-26T19:22:00.898Z",
- "statsCheckedAt": "2026-10-26T19:22:00.898Z",
+ "updatedAt": "2026-10-27T06:16:03.823Z",
+ "statsCheckedAt": "2026-10-27T06:16:03.823Z",
  "inclusionRule": "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -7749,6 +7749,58 @@
    }
   },
   {
+   "id": "2114567234857353617",
+   "url": "https://x.com/xikhar/status/2114567234857353617",
+   "author": {
+    "handle": "xikhar",
+    "name": "Shikhar"
+   },
+   "postedAt": "2026-10-26T03:58:10.000Z",
+   "addedAt": "2026-10-27",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "生成式城市环境",
+    "en": "Generated city environment"
+   },
+   "summary": {
+    "zh": "Opus 5.5 在虚幻引擎中创建了整座城市，资产由 Blender 制作。工作流通过 Python 控制无头虚幻编辑器实例，并编写 C++。",
+    "en": "Opus 5.5 created an entire city in Unreal Engine, with assets made in Blender. The workflow controls headless Unreal instances with Python and writes C++."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Unreal Engine",
+    "Blender",
+    "Python"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 320862,
+    "likes": 4324,
+    "replies": 260,
+    "reposts": 209,
+    "bookmarks": 1717,
+    "checkedAt": "2026-10-27T06:16:03.823Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114566866463264769/img/_sdVq0_xtlN2ViPz.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114566866463264769/vid/avc1/1280x720/BnCtiR7jiJT1IDBi.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 59
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2104402407358919124",
    "url": "https://x.com/thebuggeddev/status/2104402407358919124",
    "author": {
@@ -9502,6 +9554,56 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114585876160455057",
+   "url": "https://x.com/WaterrrMiao/status/2114585876160455057",
+   "author": {
+    "handle": "WaterrrMiao",
+    "name": "Miao Yang"
+   },
+   "postedAt": "2026-10-26T05:12:14.000Z",
+   "addedAt": "2026-10-27",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "代码制作的科学科普片",
+    "en": "Code-built science explainer"
+   },
+   "summary": {
+    "zh": "创作者使用 HyperFrames Studio 和代码制作了一部 11 分钟的 Kurzgesagt 风格解说视频，用时约两小时、成本低于 50 美元，并包含完整音效设计。",
+    "en": "The creator made an 11-minute Kurzgesagt-style explainer in about two hours for under $50 using HyperFrames Studio and code, with full sound design."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "HyperFrames"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 248104,
+    "likes": 1008,
+    "replies": 185,
+    "reposts": 55,
+    "bookmarks": 1958,
+    "checkedAt": "2026-10-27T06:16:03.823Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114583237372903424/img/uUsVo8ZxiL9T48eu.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114583237372903424/vid/avc1/1280x720/Bwxj-xS6my9CLXmS.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 692
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -29769,6 +29871,58 @@
    }
   },
   {
+   "id": "2114573844858159372",
+   "url": "https://x.com/rehan_shei/status/2114573844858159372",
+   "author": {
+    "handle": "rehan_shei",
+    "name": "Rehan Sheikh"
+   },
+   "postedAt": "2026-10-26T04:24:26.000Z",
+   "addedAt": "2026-10-27",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "带纹理的村庄地图",
+    "en": "Textured village map"
+   },
+   "summary": {
+    "zh": "Opus 5.5 在 Blender 中创建了村庄灰盒，随后用 FLUX 3 Klein 和 Fibo 2 生成纹理，并将图像投射到地图上。",
+    "en": "Opus 5.5 created a village blockout in Blender, then FLUX 3 Klein and Fibo 2 textured the map by projecting generated images onto it."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Blender",
+    "FLUX 3 Klein",
+    "Fibo 2"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 76113,
+    "likes": 1306,
+    "replies": 61,
+    "reposts": 85,
+    "bookmarks": 1579,
+    "checkedAt": "2026-10-27T06:16:03.823Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114572825671655424/img/6rKj-VhZOXdopjrP.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114572825671655424/vid/avc1/1280x720/Iuzw4tJGFcaULIfs.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 42
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2109920822068654290",
    "url": "https://x.com/alexcooldev/status/2109920822068654290",
    "author": {
@@ -49560,6 +49714,56 @@
     "width": 1280,
     "height": 720,
     "durationSec": 46
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114595597449904465",
+   "url": "https://x.com/cicicic66386703/status/2114595597449904465",
+   "author": {
+    "handle": "cicicic66386703",
+    "name": "MrCici"
+   },
+   "postedAt": "2026-10-26T05:50:52.000Z",
+   "addedAt": "2026-10-27",
+   "lang": "da",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "重制的游戏环境",
+    "en": "Re-rendered game environment"
+   },
+   "summary": {
+    "zh": "创作者使用 Opus 5.5 和虚幻引擎 5 重制了《鸣潮》环境。",
+    "en": "The creator used Opus 5.5 with Unreal Engine 5 to re-render a Wuthering Waves environment."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Unreal Engine 5"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 40646,
+    "likes": 862,
+    "replies": 25,
+    "reposts": 57,
+    "bookmarks": 469,
+    "checkedAt": "2026-10-27T06:16:03.823Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114588103692455936/img/6VaNBeIX7wwMckdQ.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114588103692455936/vid/avc1/1280x720/yPUBtLz1MpgOq-Bv.mp4?tag=14",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 68
    },
    "evidence": {
     "via": "daily",
@@ -70317,6 +70521,61 @@
    }
   },
   {
+   "id": "2114512635249008695",
+   "url": "https://x.com/jan_volad/status/2114512635249008695",
+   "author": {
+    "handle": "jan_volad",
+    "name": "Jan 🌕"
+   },
+   "postedAt": "2026-10-26T00:21:12.000Z",
+   "addedAt": "2026-10-27",
+   "lang": "en",
+   "models": [
+    "sonnet-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "Minecraft 模型对比",
+    "en": "Minecraft model comparison"
+   },
+   "summary": {
+    "zh": "创作者用同一个 Minecraft 建造提示比较了 Qwen4 和 Claude Sonnet 5.5：制作一枚从罐子里发射的酸黄瓜火箭。",
+    "en": "The creator compared Qwen4 and Claude Sonnet 5.5 using the same Minecraft building prompt: a pickle rocket launching from a jar."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/jan_volad/status/2114512635249008695",
+    "text": "a pickle rocket launching out of a jar, built in Minecraft"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Minecraft"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 21344,
+    "likes": 177,
+    "replies": 25,
+    "reposts": 5,
+    "bookmarks": 27,
+    "checkedAt": "2026-10-27T06:16:03.823Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114512196851974144/img/FYJpcdgBntuvW2X4.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114512196851974144/vid/avc1/1150x720/2CGzgIWX_Z7ZrNbD.mp4?tag=29",
+    "width": 1150,
+    "height": 720,
+    "durationSec": 8
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2110665151389003777",
    "url": "https://x.com/SimonasLTU1/status/2110665151389003777",
    "author": {
@@ -74951,6 +75210,59 @@
     "width": 1280,
     "height": 720,
     "durationSec": 8
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114477295574425988",
+   "url": "https://x.com/aimikoda/status/2114477295574425988",
+   "author": {
+    "handle": "aimikoda",
+    "name": "Kōda"
+   },
+   "postedAt": "2026-10-25T22:00:47.000Z",
+   "addedAt": "2026-10-27",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "漫画分格风音乐视频剪辑",
+    "en": "Manga panel music video edit"
+   },
+   "summary": {
+    "zh": "这是一个用于AMV和动画片头的高能漫画风音乐视频，创作者用Opus 5.5将两段视频生成内容和音乐文件剪辑在一起。",
+    "en": "A high-energy manga-style music video for AMVs and anime openings, edited from two video generations and a music file with Opus 5.5."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/aimikoda/status/2114477612525408276",
+    "text": "Create a high-energy 16:9 music video using both supplied video clips, edited to exactly match the full duration of the supplied music.\n\nEDITING:\nAnalyze both clips and the soundtrack. Select the strongest moments, creatively cut, interleave, rearrange and combine footage from both sources. Build a cohesive, fast-paced edit driven by the music's rhythm, energy, transitions and emotional progression. Freely alternate between clips, create visual connections and synchronize key actions with musical accents. Avoid simply playing the clips sequentially.\n\nGRID STRUCTURE:\nUse a dynamic, asymmetrical manga-inspired panel layout with large dominant panels, narrow strips, tilted rectangles and smaller supporting panels separated by clean white gutters. Use the reference image strictly for panel geometry, not its artwork or visual style. Mix moments from both clips across different panels, creating coordinated compositions. On major beats, dynamically rearrange panel sizes, positions and boundaries.\n\nVISUAL EFFECTS:\nBlend aggressive style infections spreading between neighboring panels with temporal variations, motion echoes, frame repetitions, time offsets and impact freezes. Create dense, layered visual effects, rhythmic flashes, graphic symbols and cross-panel chain reactions. Synchronize everything precisely to the soundtrack.\n\nCREATIVE DIRECTION:\nLet the footage and music guide all editing decisions, visual treatments, effects and transitions. Be bold, experimental and visually inventive. Keep the original characters, actions and environments clearly recognizable. Use large panels to maintain visual clarity while smaller panels explore creative variations. Effects should enhance the footage rather than replace it.\n\nAUDIO:\nPreserve the original audio from both clips, including dialogue, sound effects and ambience. Retain relevant sounds from the selected moments and mix them naturally with the supplied music. The soundtrack drives the edit and plays uninterrupted from beginning to end.\nNo typography, text, letters or numbers."
+   },
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 18712,
+    "likes": 494,
+    "replies": 17,
+    "reposts": 30,
+    "bookmarks": 431,
+    "checkedAt": "2026-10-27T06:16:03.823Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114476718438162432/img/4gmsnIIdr39wc9XM.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114476718438162432/vid/avc1/1280x720/5OyYrNOBCvtt9CVv.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 35
    },
    "evidence": {
     "via": "daily",
@@ -80772,6 +81084,56 @@
    }
   },
   {
+   "id": "2114534898237362335",
+   "url": "https://x.com/JohnKlerAI/status/2114534898237362335",
+   "author": {
+    "handle": "JohnKlerAI",
+    "name": "John Kler"
+   },
+   "postedAt": "2026-10-26T01:49:40.000Z",
+   "addedAt": "2026-10-27",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "Roblox视觉特效展示",
+    "en": "Roblox visual effects showcase"
+   },
+   "summary": {
+    "zh": "这是一个Roblox视觉特效，创作者使用包含知识文档、规则和指南的流程，并配合用Opus 5.5在Blender中制作的预构建网格和资产。",
+    "en": "A Roblox visual effect made with a pipeline that uses knowledge documents, rules and guides, plus pre-built meshes and assets created in Blender with Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 16070,
+    "likes": 415,
+    "replies": 8,
+    "reposts": 11,
+    "bookmarks": 252,
+    "checkedAt": "2026-10-27T06:16:03.823Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114533917650796544/img/wMNNaM2K6ErtGnaU.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114533917650796544/vid/avc1/1280x720/OTLTqu65-Pr_UwSn.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 8
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2111756250581270638",
    "url": "https://x.com/ann_nnng/status/2111756250581270638",
    "author": {
@@ -83612,6 +83974,54 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114546079618257104",
+   "url": "https://x.com/SammmAing/status/2114546079618257104",
+   "author": {
+    "handle": "SammmAing",
+    "name": "Samnang Aing"
+   },
+   "postedAt": "2026-10-26T02:34:06.000Z",
+   "addedAt": "2026-10-27",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "滚动式房屋建造概念",
+    "en": "Scrolling house construction concepts"
+   },
+   "summary": {
+    "zh": "这组方案将平面建筑图转化为滚动浏览的三维体验，包括剖面扫描、施工过程和爆炸式房屋等效果。创作者称其使用Opus 5.5制作。",
+    "en": "Seven concepts turn a flat architectural drawing into a 3D scrolling experience, including section sweeps, construction sequences and an exploded house. The creator says it was built with Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 14734,
+    "likes": 379,
+    "replies": 8,
+    "reposts": 28,
+    "bookmarks": 487,
+    "checkedAt": "2026-10-27T06:16:03.823Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114545667829903360/img/Fi6PeTE5Kf6No2uW.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114545667829903360/vid/avc1/1280x720/UedpOz6ahFKHZ8rj.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 120
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -90367,6 +90777,56 @@
     "width": 720,
     "height": 720,
     "durationSec": 141
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114571124944326721",
+   "url": "https://x.com/AldegadWildKim/status/2114571124944326721",
+   "author": {
+    "handle": "AldegadWildKim",
+    "name": "darkest_alex"
+   },
+   "postedAt": "2026-10-26T04:13:37.000Z",
+   "addedAt": "2026-10-27",
+   "lang": "ko",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "像素画并排对比",
+    "en": "Pixel art side-by-side comparison"
+   },
+   "summary": {
+    "zh": "这是一次像素生成对比，左侧为Claude Opus 5.5，右侧为Argon。",
+    "en": "A pixel-generation comparison showing Claude Opus 5.5 on the left and Argon on the right."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Argon"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 12247,
+    "likes": 226,
+    "replies": 3,
+    "reposts": 25,
+    "bookmarks": 197,
+    "checkedAt": "2026-10-27T06:16:03.823Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114571105621217280/img/jYOfVonJ4OP5_0hb.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114571105621217280/vid/avc1/1066x720/PjOMJGOEYf7W2Oxh.mp4?tag=29",
+    "width": 1066,
+    "height": 720,
+    "durationSec": 12
    },
    "evidence": {
     "via": "daily",
@@ -97782,6 +98242,64 @@
    }
   },
   {
+   "id": "2114512807500615723",
+   "url": "https://x.com/vib3coded/status/2114512807500615723",
+   "author": {
+    "handle": "vib3coded",
+    "name": "Vib3Coded"
+   },
+   "postedAt": "2026-10-26T00:21:53.000Z",
+   "addedAt": "2026-10-27",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "互动果冻大坝模拟器",
+    "en": "Interactive jelly dam simulation"
+   },
+   "summary": {
+    "zh": "这是一个单文件WebGPU互动水坝微缩景观，包含水体模拟、涡轮机、鱼类、洪水和控制面板。创作者称其由Opus 5.5根据文字提示制作。",
+    "en": "An interactive single-file WebGPU diorama of a jelly-like dam with water simulation, turbines, fish, floods and controls. The creator says Opus 5.5 built it from a text prompt."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/vib3coded/status/2114512949897547782",
+    "text": "Build \"Dam Jelly\", a new piece in my \"Material Studies\" series: a single-file, self-contained interactive WebGPU diorama (one HTML file, all JS/CSS/WGSL inline, no network requests, no libraries). A mountain valley with a concrete gravity dam is cut out as a wobbly block of jelly sitting on a pale studio table, seen from above at three-quarters.\n\nSCENE (block-local coords, origin at base centre, y up, block ~5.2 × 5.2 units):\n- A river valley running back to front: steep rocky slopes with crags, scree and boulders, conifer and broadleaf woods, grassy shoulders. Where the block is cut, the side faces show layered grey bedrock in tilted beds with joints, a weathered brown band and dark topsoil at the top, and gravel and silt under the water. At the very bottom are thin coloured \"jelly\" strata in the current flavour.\n- A long reservoir behind the dam, with a bare drawdown ring of rock round its shore, a floating log boom of orange and yellow floats in front of the spillway, and a small patrol boat lapping the lake.\n- A concrete gravity dam across the valley, its ends let into rock abutments: a battered downstream face with lift lines, a crest road with railings and lamps, an intake tower with trash racks and three penstocks down the face.\n- A central stepped spillway with three bays between piers. Each bay has a radial (Tainter) gate: a curved skin plate on arms that swing about trunnions on the piers, with hoist houses on top. Below is an ogee crest, a stepped chute, training walls and a plunge pool scoured into the riverbed.\n- A powerhouse at the right toe: a concrete base in the river, a hall of siding and tall windows, tailrace mouths. Above it, a switchyard on a terrace with transformers and gantries, and lattice pylons climbing the right slope with sagging lines.\n- A fish ladder up the left bank: 14 stepped concrete pools with weirs between them from the river up to the lake, an exit gate and a counting hut at the top.\n- A visitor centre on the left abutment, roads with hairpins, a suspension footbridge over the river downstream, rocks, weed and gravel bars in the river.\n\nSIMULATION:\n- Shallow-water heightfield (about 168×168), split into two bodies by the dam (reservoir and river), each with its own still level, separated by flood-fill classification. Sources, sinks and current jets make visible flow: inflow at the back of the lake, a draw toward open gates and the intake, boiling outflow in the plunge pool and tailrace, and drainage at the front edge. Foam advects on the currents.\n- Reservoir level ODE: dL/dt = (Qin − Qspill − Qturbines − Qover) / AREA, where Qspill ∝ gateOpening · (L − sill)^1.5 and Qover ∝ (L − crest)^1.5. The river level rises with total outflow.\n- Head-based power: 3 units × 120 MW, scaled by head.\n- An automatic dam keeper opens the gates (siren first) when the lake nears the crest or a flood is coming, and shuts them again once the water is back down.\n- The jelly block itself wobbles, can be tipped by dragging its side, and settles back.\n\nINTERACTIONS (right-hand glass panel, \"The dam\"):\n- Open spillway: a 3.5 s siren, then the gates swing up over ~9 s, and white water streams down the steps with spray and mist. Press again to shut them.\n- Turbines on/off: the units spin up or down, power rises or falls, the tailrace boils or goes still, and the powerhouse windows glow while running.\n- Salmon run: salmon gather below the dam, try leaping at the falls, then climb the ladder pool by pool (a leap per pool, waiting their turn) and swim out into the lake. A counter tallies fish through. Runs also arrive on their own every few minutes.\n- Flood: a storm builds, blows and eases (rain, darkening, lightning hitting pylons, ridges or the lake). A big inflow surge comes down the valley: the keeper pre-releases, the lake still rises over the crest, and a white overflow sheet pours across the whole dam face. The water turns muddy brown and clears slowly afterwards.\n- Tap a gate, the powerhouse or the ladder to trigger the same actions. Tap the patrol boat for its horn. Space sounds the siren.\n- Tallies: Power (MW), Head (m), Salmon. Status lines: Spillway, Powerhouse, Reservoir (Rising/Falling/Steady/Flood coming in/Over the crest, with level relative to the crest in metres).\n- Drag on water makes waves, drag the block's side tips it, drag empty space or right-drag orbits, wheel or pinch zooms.\n- Flavour swatches (Lime, Curaçao, Blackcurrant) tint the jelly and water. Sliders for Firmness, Wave damping and Wind. Reset, Pause, Sound on/off and View buttons.\n\nLIFE: rainbow trout in the river and lake, salmon, mallards (drakes and hens) paddling and taking off, herons wading and stalking, ospreys circling and plunge-diving for fish, people walking the crest (who pause at the siren), the powerhouse yard, the visitor centre and the footbridge, and a fisherman on the bank. Animals startle at the siren, lightning and splashes.\n\nSOUND (synthesised with WebAudio, events only, no constant ambience): motor siren, gate-hoist clunk and drone, the spillway's rush as the gates lift, turbine spin-up and spin-down whine, a rumble of overtopping, salmon leaps, a chime for each fish counted, osprey splashes, the boat horn, thunder, and wind and rain only while a storm blows.\n\nRENDERING: WebGPU with MSAA, a sun shadow map, caustics on the riverbed, refraction and absorption through the water and the jelly, Fresnel reflections, translucent premultiplied passes for spray and mist puffs, white-water sheets, ladder pools and rain, and a muddy-water tint during floods.\n\nUI and layout: editorial look with an italic serif masthead (\"Material Studies\" eyebrow, \"Dam Jelly.\" title, a one-line description) and a \"How to play\" footer at bottom left. On mobile the controls panel becomes a bottom sheet. If WebGPU is unavailable, show a clear fallback card. Respect prefers-reduced-motion. No page scroll.\n\nQUALITY: keep the sim around 2 ms/frame, no NaNs over long soaks, everything stays inside the block, the boat always afloat. Verify with headless Playwright screenshots (SwiftShader WebGPU) and an end-to-end test that drives every button, tap target, slider and the mobile sheet, and checks for zero console errors."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "WebGPU",
+    "WebAudio",
+    "Playwright",
+    "SwiftShader"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 9850,
+    "likes": 272,
+    "replies": 26,
+    "reposts": 28,
+    "bookmarks": 130,
+    "checkedAt": "2026-10-27T06:16:03.823Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114512714047369217/img/5bsSDko_TUImpNtu.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114512714047369217/vid/avc1/1152x720/Ujqgiurn5ckncdSi.mp4?tag=29",
+    "width": 1152,
+    "height": 720,
+    "durationSec": 18
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2107744155007062101",
    "url": "https://x.com/wtry1102/status/2107744155007062101",
    "author": {
@@ -99810,6 +100328,56 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114570392539107354",
+   "url": "https://x.com/aj_dev_smith/status/2114570392539107354",
+   "author": {
+    "handle": "aj_dev_smith",
+    "name": "A.J."
+   },
+   "postedAt": "2026-10-26T04:10:43.000Z",
+   "addedAt": "2026-10-27",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "程序化像素风游戏重制",
+    "en": "Procedural pixel-art game rebuild"
+   },
+   "summary": {
+    "zh": "一款仍在开发中的像素风游戏，含程序化生成的树木和音乐，用 Opus 5.5 在 Opus 4.7 旧版基础上重做。作者在 Claude Code 中使用多智能体工作流，并提供了概念图和样稿，累计投入约 100 小时。",
+    "en": "An ongoing pixel-art game with procedural trees and music, rebuilt with Opus 5.5 over a previous Opus 4.7 version. The creator used multi-agent workflows in Claude Code, supplied concept art and mockups, and spent about 100 hours on it."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Claude Code"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 9257,
+    "likes": 168,
+    "replies": 19,
+    "reposts": 4,
+    "bookmarks": 119,
+    "checkedAt": "2026-10-27T06:16:03.823Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114569337629728768/img/QlaxEmTAZjUGYdF5.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114569337629728768/vid/avc1/1280x720/orQc5x3HaxNtjXY1.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 57
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -108444,6 +109012,61 @@
    }
   },
   {
+   "id": "2114467181912322353",
+   "url": "https://x.com/N1njaCodex/status/2114467181912322353",
+   "author": {
+    "handle": "N1njaCodex",
+    "name": "NinjaCodex"
+   },
+   "postedAt": "2026-10-25T21:20:35.000Z",
+   "addedAt": "2026-10-27",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "互动像素风游泳俱乐部",
+    "en": "Interactive pixel art swimming club"
+   },
+   "summary": {
+    "zh": "一个像素风 3D 露天游泳俱乐部场景，有泳道里的泳者、跳水塔、天气切换和夜间灯光。作者用一段详细提示词让 Claude Opus 5.5 生成，花费 11.14 美元。",
+    "en": "A 3D pixel-art diorama of an open-air swimming club with lap swimmers, a diving tower, weather changes and night lighting, built by Claude Opus 5.5 for $11.14 from a detailed prompt."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/N1njaCodex/status/2114467376926175288",
+    "text": "Make a pixel-art 3D diorama of an open-air lido on a floating island, the same series and engine as my other pixel dioramas (three.js, orthographic isometric camera turned in quarter steps, small render target with no anti-aliasing snapped to whole pixels, depth-based outlines, a fixed 64-colour palette matched in OKLab, hard sun shadows, day/dusk/night, rain with puddles). Call it \"Deep End\".\n\nThe lido: a 25 m four-lane lap pool (shallow end roped off for children, lane ropes whose floats ride the waves, backstroke flags, starting blocks) and a 5 m deep diving pool, with 1 m and 3 m springboards that bend and a 1930s concrete tower with platforms at 5, 7.5 and 10 m and an open stair. Around them: striped changing cabins with a clock, a kiosk, the judges' table, the lifeguard's high chair, loungers, parasols and umbrella pines.\n\nReal water: each pool is a height field run with the wave equation, so dives, strokes, raindrops and clicks make rings that reflect off the walls. The surface shades from its normals, with sun glints and a mirrored render of the scene; the tiled floor gets caustics.\n\nDives are flown, not animated. The diver takes off with an upward speed and an angular momentum chosen to land the somersaults, the momentum is conserved through tuck, pike and straight shapes, and the body rotates about its real centre of mass, with twists about the spine. Kick-out timing errors tip the entry angle, which sets the splash and five judges' cards; drop the highest and lowest and multiply by DD. Run a six-diver, five-round meet on the 10 m platform or the 3 m springboard (with the approach and hurdle), with standings, then a medal moment, then free swim with pencil jumps, cannonballs and belly flops.\n\nAlso: lap swimmers doing freestyle, breaststroke and backstroke with flip turns; divers who swim to a ladder, shower, sit in the hot tub and climb again; children who get whistled at for running; wet footprints on the deck that dry; pool lights glowing at night. Click the water to make a splash. English UI; must work on phones."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 6455,
+    "likes": 201,
+    "replies": 11,
+    "reposts": 23,
+    "bookmarks": 133,
+    "checkedAt": "2026-10-27T06:16:03.823Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114467119723114497/img/tFmO5H_s9EJAxlYn.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114467119723114497/vid/avc1/1152x720/iQNURuxUreOBuHOe.mp4?tag=29",
+    "width": 1152,
+    "height": 720,
+    "durationSec": 17
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103822799580307674",
    "url": "https://x.com/mizugame_22/status/2103822799580307674",
    "author": {
@@ -109047,6 +109670,57 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114514200735465924",
+   "url": "https://x.com/kinnievfx/status/2114514200735465924",
+   "author": {
+    "handle": "kinnievfx",
+    "name": "kinnie"
+   },
+   "postedAt": "2026-10-26T00:27:25.000Z",
+   "addedAt": "2026-10-27",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "Roblox实时视觉特效",
+    "en": "Roblox real-time visual effects"
+   },
+   "summary": {
+    "zh": "用 Opus 5.5 通过 VFX Forge MCP 制作的 Roblox 视觉特效，同时宣传即将推出的 Forge v3。",
+    "en": "Roblox visual effects made with Opus 5.5 working through the VFX Forge MCP. The post also promotes the upcoming Forge v3."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "VFX Forge MCP",
+    "Roblox"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 6188,
+    "likes": 169,
+    "replies": 5,
+    "reposts": 3,
+    "bookmarks": 161,
+    "checkedAt": "2026-10-27T06:16:03.823Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114512726353436672/img/2Px-rCGGwWav4X-C.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114512726353436672/vid/avc1/1280x720/lBQJWW_daQXNPe_S.mp4?tag=14",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 21
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -110719,6 +111393,63 @@
     "width": 720,
     "height": 1280,
     "durationSec": 68
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114441029638410489",
+   "url": "https://x.com/vib3coded/status/2114441029638410489",
+   "author": {
+    "handle": "vib3coded",
+    "name": "Vib3Coded"
+   },
+   "postedAt": "2026-10-25T19:36:40.000Z",
+   "addedAt": "2026-10-27",
+   "lang": "en",
+   "models": [
+    "opus-5.5",
+    "sonnet-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "果冻猕猴桃模型对比",
+    "en": "Jelly kiwi model comparison"
+   },
+   "summary": {
+    "zh": "作者用同一段提示词让四个模型分别制作一个基于 WebGPU 的软体果冻猕猴桃切块，并列出 API 费用：Opus 5.5 为 8.59 美元，Fable 5.1 为 24.03 美元，Sonnet 5.5 为 6.92 美元，GPT-6.1 Sol 为 1.21 美元。",
+    "en": "A comparison of four models building the same WebGPU soft-body jelly kiwi wedge from one prompt, with API costs listed: Opus 5.5 $8.59, Fable 5.1 $24.03, Sonnet 5.5 $6.92, GPT-6.1 Sol $1.21."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/vib3coded/status/2114441076346081622",
+    "text": "Build \"Kiwi Jelly Wedge\" — a single self-contained HTML file (inline JS/CSS, no libraries): a real-time WebGPU soft-body gummy kiwi wedge you can grab, stretch, lift and twist. Object One sixth of a thick kiwi slice: a pie-shaped wedge with 30° half-angle, radius ≈ 1.8 and thickness 0.56. Rounded corners (iq's exact pie SDF minus a rounding radius) and bevelled top/bottom edges. Regions, measured from the tip in rest space:a cream core at the tip with a slightly lobed edge; thin pale rays fanning out of the core every 2π/56, each with its own random brightness and length; a darker, glassier ring around the seeds (blushes red in the Ruby variety); bright juicy outer flesh with radial cell grain and a lighter band just under the skin; a thin brown fuzzy skin on the arc wall. Seeds:small flattened black teardrops, pointed end toward the core, in radial rows between the rays, at four depths; the face layers break the cut surfaces like real seeds; the others float inside and show through the jelly; wet glossy shading. A few small air bubbles in the outer flesh. Varieties: Green, Gold, Ruby. Physics (XPBD tetrahedral soft body) Mesh: 2D Delaunay of the rounded outline plus a hex lattice, extruded into prisms → tets. Co-rotational per-tet shape matching (warm-started quaternion) plus volume constraints. Stiffer skin and core tets; edge-velocity damping; floor contact with Coulomb friction. Soft patch grab with bounded reach; scroll or a second finger twists the held patch. Fixed 60 Hz step with 10 substeps; gentle settling. Seeds and bubbles are separate meshes embedded in the tets by barycentric weights, so they ride with the flesh. Rendering (WebGPU / WGSL) Procedural photo-studio cyclorama with softboxes. Soft PCSS key shadow tinted green, plus contact AO from a top-down height map. Seeds and bubbles are drawn in the scene pass. A back-face pass gives the view-ray thickness. Jelly:refraction of the scene, with per-tap Beer–Lambert absorption by material (flesh, glassy seed ring, milky core and rays, opaque skin); scattering, back-lit glow at thin edges, Fresnel studio reflections and GGX highlights; a velvet sheen on the fuzzy skin; sparse sugar glints in the flesh. Post: exposure, Khronos PBR Neutral tone mapping, sRGB, dither. UI (editorial \"Material Studies / No. 028\", English) Italic serif title \"Kiwi / Jelly.\" with the caption \"An emerald wedge. A halo of seeds. A gentle wobble.\" Status pill \"WEBGPU · LIVE\". Panel \"The Specimen\": variety chips (skin / core / flesh bands); Firmness (\"trembling → set\") and Internal damping (\"lively → syrupy\") sliders; Give it a nudge, Reset, Pause; ¼ speed and Show mesh. Readouts: Mass (g, 1 unit ≈ 1.6 cm at 1.3 g/cm³), Volume (% of rest), Kinetic (µJ). A collapsible \"Inside the experiment\" with notes on the method. Fallback \"This kiwi needs WebGPU.\" Stacked mobile layout with no horizontal scroll."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "WebGPU",
+    "GPT-6.1 Sol"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 5341,
+    "likes": 129,
+    "replies": 19,
+    "reposts": 11,
+    "bookmarks": 38,
+    "checkedAt": "2026-10-27T06:16:03.823Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114440961233215488/img/3t4774_u__Pbhylr.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114440961233215488/vid/avc1/1114x720/IpMh5QaIBNGXUfnG.mp4?tag=29",
+    "width": 1114,
+    "height": 720,
+    "durationSec": 18
    },
    "evidence": {
     "via": "daily",
