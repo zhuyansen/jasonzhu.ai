@@ -5,6 +5,7 @@ import type { Locale } from "@/lib/dictionaries";
 import { MODEL_LABEL, categoryLabel, formatCount, formatDuration, getOpusCase, getOpusLibrary } from "@/lib/opus-prompts";
 import fullData from "@/generated/opus-prompts-full.json";
 import CaseVideo from "../CaseVideo";
+import PromptsSubscribe from "../PromptsSubscribe";
 import CopyPrompt, { TryInClaude } from "../CopyPrompt";
 
 const SITE_URL = "https://jasonzhu.ai";
@@ -168,6 +169,11 @@ export default async function OpusCasePage({ params }: Props) {
             {isZh ? "。提示词保留原文语言，未做改写。" : ". Kept in its original language, unedited."}
           </p>
         </section>
+      )}
+      {!isZh && prompt && (
+        <div className="mt-6">
+          <PromptsSubscribe lang={lang} where="detail" />
+        </div>
       )}
 
       {c.referenceAssets && (
