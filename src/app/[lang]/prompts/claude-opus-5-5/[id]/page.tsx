@@ -3,6 +3,7 @@ import Link from "@/components/Link";
 import { notFound } from "next/navigation";
 import type { Locale } from "@/lib/dictionaries";
 import { MODEL_LABEL, categoryLabel, formatCount, formatDuration, getOpusCase, getOpusLibrary } from "@/lib/opus-prompts";
+import { relatedEnglishArticles } from "@/lib/related-articles";
 import fullData from "@/generated/opus-prompts-full.json";
 import CaseVideo from "../CaseVideo";
 import PromptsSubscribe from "../PromptsSubscribe";
@@ -71,6 +72,7 @@ export default async function OpusCasePage({ params }: Props) {
     .filter((x) => x.id !== id && x.category === c.category)
     .sort((a, b) => b.stats.views - a.stats.views)
     .slice(0, 6);
+  const articles = isZh ? [] : relatedEnglishArticles(c);
 
   const sourceLabel: Record<string, string> = isZh
     ? { post: "原帖正文", author_reply: "作者在原帖下的回复", image: "作者回复里的截图（人工转写）", link: "作者给出的链接" }
@@ -230,6 +232,22 @@ export default async function OpusCasePage({ params }: Props) {
                   </div>
                   <p className="mt-1.5 text-sm text-gray-700 group-hover:text-[var(--primary)] leading-snug line-clamp-2">{isZh ? r.title.zh : r.title.en}</p>
                   <p className="text-xs text-gray-400 tabular-nums">{formatCount(r.stats.views, lang)} {isZh ? "播放" : "views"}</p>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {articles.length > 0 && (
+        <section className="mt-12">
+          <h2 className="text-lg font-bold text-gray-900 mb-4">Related articles</h2>
+          <ul className="space-y-4">
+            {articles.map((a) => (
+              <li key={a.slug}>
+                <Link href={`/en/blog/${a.slug}`} className="group block">
+                  <p className="text-sm font-medium text-gray-800 group-hover:text-[var(--primary)] leading-snug">{a.titleEn}</p>
+                  {a.excerptEn && <p className="mt-1 text-xs text-gray-500 leading-relaxed line-clamp-2">{a.excerptEn}</p>}
                 </Link>
               </li>
             ))}
