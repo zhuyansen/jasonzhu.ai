@@ -1,8 +1,8 @@
 {
  "model": "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.5)",
  "threshold": 5000,
- "updatedAt": "2026-10-27T06:16:03.823Z",
- "statsCheckedAt": "2026-10-27T06:16:03.823Z",
+ "updatedAt": "2026-10-28T06:51:45.678Z",
+ "statsCheckedAt": "2026-10-28T06:51:45.678Z",
  "inclusionRule": "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -6294,6 +6294,54 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114819508032684289",
+   "url": "https://x.com/gokayfem/status/2114819508032684289",
+   "author": {
+    "handle": "gokayfem",
+    "name": "gokaygokay"
+   },
+   "postedAt": "2026-10-26T20:40:36.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "修正AI视频中的物理错误",
+    "en": "Physics correction of AI-generated videos"
+   },
+   "summary": {
+    "zh": "作者把物理效果有误的 AI 视频交给 Claude Opus 5.5。模型先测出问题所在，再用 CFD 和杆件力学求解，并用独立的有限元求解器校验，最后把正确的物理效果渲染回原场景。项目已在 GitHub 开源。",
+    "en": "A pipeline that takes AI-generated videos with broken physics and renders corrected physics back into the same scene. The creator says Claude Opus 5.5 measured the errors, solved them with CFD and rod mechanics, and checked the results with an independent finite-element solver."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 379975,
+    "likes": 182,
+    "replies": 9,
+    "reposts": 16,
+    "bookmarks": 108,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114818667707867136/img/bjftKum5GlXBDObf.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114818667707867136/vid/avc1/1280x720/y9e6qKzM43L5xf2Q.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 51
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -13398,6 +13446,56 @@
    }
   },
   {
+   "id": "2114728296034226583",
+   "url": "https://x.com/__rockbiter/status/2114728296034226583",
+   "author": {
+    "handle": "__rockbiter",
+    "name": "Gianluca Lomarco"
+   },
+   "postedAt": "2026-10-26T14:38:10.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "纯数学渲染的人眼",
+    "en": "Procedural human eye rendered with math"
+   },
+   "summary": {
+    "zh": "作者借助 Claude Opus 5.5，用 Three.js 程序化渲染出一只人眼。没有用任何贴图、3D 模型或照片，只靠数学、光照和约 400 个参数完成，前后花了 7 天。",
+    "en": "A procedural human eye rendered in Three.js with Claude Opus 5.5, built without textures, 3D models or photos from about 400 parameters. The creator says it took seven days."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 177276,
+    "likes": 3066,
+    "replies": 154,
+    "reposts": 185,
+    "bookmarks": 1654,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114694823621890048/img/eDaHybZoa47lMlmv.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114694823621890048/vid/avc1/1280x720/OH0eqKTjX7X2D90a.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 78
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2106096188915347821",
    "url": "https://x.com/bradmillscan/status/2106096188915347821",
    "author": {
@@ -19821,6 +19919,56 @@
    }
   },
   {
+   "id": "2114834080122761701",
+   "url": "https://x.com/EnvolDev/status/2114834080122761701",
+   "author": {
+    "handle": "EnvolDev",
+    "name": "Tony"
+   },
+   "postedAt": "2026-10-26T21:38:31.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "同一提示词下的模型成本与速度对比",
+    "en": "Same-prompt model cost and speed comparison"
+   },
+   "summary": {
+    "zh": "作者用同一条 Alpine Gold 提示词，让 Opus 5.5、GPT-6.1 Sol 和 GPT-6.1 Terra 分别用 Three.js 写出场景，并对比了三者的花费和耗时。",
+    "en": "A comparison of Opus 5.5, GPT-6.1 Sol and GPT-6.1 Terra, each coding an Alpine Gold scene in Three.js from the same prompt. The creator reports the cost and time of each run."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 120951,
+    "likes": 577,
+    "replies": 112,
+    "reposts": 32,
+    "bookmarks": 147,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114834005019541504/img/lqnrqQdBNngXt6tl.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114834005019541504/vid/avc1/720x862/_jlcNi6gv_HgzuMO.mp4?tag=29",
+    "width": 720,
+    "height": 862,
+    "durationSec": 25
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103749509616648627",
    "url": "https://x.com/Onethirdesigner/status/2103749509616648627",
    "author": {
@@ -23933,6 +24081,57 @@
    }
   },
   {
+   "id": "2114940685082337561",
+   "url": "https://x.com/HaileyAILabs/status/2114940685082337561",
+   "author": {
+    "handle": "HaileyAILabs",
+    "name": "Hailey"
+   },
+   "postedAt": "2026-10-27T04:42:07.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "zh",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "3D二次元少女舞蹈MV",
+    "en": "3D anime girl dance music video"
+   },
+   "summary": {
+    "zh": "一支完成的 3D 二次元少女 MV，分五步制作：GPT 设计角色，Muse 生成舞蹈视频，再由 Claude Opus 5.5 识别动作、按舞步编曲，并用纯代码搭建随节奏变化灯光和特效的 3D 舞台。",
+    "en": "A finished 3D anime dance music video made in five steps. GPT designed the character and Muse generated the dance video, then Claude Opus 5.5 recognized the moves, arranged the music and coded a 3D stage with lighting and effects that follow the beat."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "GPT",
+    "Muse"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 99218,
+    "likes": 1686,
+    "replies": 93,
+    "reposts": 152,
+    "bookmarks": 1698,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114939971643826176/img/_qKlJho5NDrNC6_E.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114939971643826176/vid/avc1/1280x720/3vKuq-T0fB5wICjV.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 20
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102878288008057171",
    "url": "https://x.com/kevin_t_ngo/status/2102878288008057171",
    "author": {
@@ -27322,6 +27521,56 @@
     "width": 1280,
     "height": 720,
     "durationSec": 15
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114678483213234526",
+   "url": "https://x.com/amine_prcs/status/2114678483213234526",
+   "author": {
+    "handle": "amine_prcs",
+    "name": "amine"
+   },
+   "postedAt": "2026-10-26T11:20:13.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "fr",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "订阅管理应用界面设计",
+    "en": "Subscription management app design"
+   },
+   "summary": {
+    "zh": "作者想做一个替代 RevenueCat 的应用，用低档位的 Opus 5.5 接入 10kdesign MCP 生成了应用界面设计。",
+    "en": "An app design meant to replace RevenueCat, vibecoded with Opus 5.5 in low mode connected to the 10kdesign MCP."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "10kdesign MCP"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 82625,
+    "likes": 364,
+    "replies": 10,
+    "reposts": 15,
+    "bookmarks": 674,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114678411570409472/img/SzdGtPKhLgxlhTpj.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114678411570409472/vid/avc1/720x1280/69u1vOVRhR2boTWr.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 46
    },
    "evidence": {
     "via": "daily",
@@ -32289,6 +32538,54 @@
    }
   },
   {
+   "id": "2114762155333689679",
+   "url": "https://x.com/DilumSanjaya/status/2114762155333689679",
+   "author": {
+    "handle": "DilumSanjaya",
+    "name": "Dilum Sanjaya"
+   },
+   "postedAt": "2026-10-26T16:52:42.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "ESP32电路互动入门课",
+    "en": "Interactive ESP32 circuit lessons"
+   },
+   "summary": {
+    "zh": "一个逐个电路讲解 ESP32 硬件的互动学习应用，是作者此前 Arduino 学习应用的续作，用 Opus 5.5 制作。",
+    "en": "An interactive learning app that teaches ESP32 hardware one circuit at a time, a follow-up to the creator's Arduino app, made with Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 69876,
+    "likes": 1949,
+    "replies": 47,
+    "reposts": 251,
+    "bookmarks": 1714,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114760421488123921/img/NpTWibcni2bKtn6_.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114760421488123921/vid/avc1/1250x720/wVW6IeNOhKnwofe_.mp4?tag=29",
+    "width": 1250,
+    "height": 720,
+    "durationSec": 107
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103424524297420829",
    "url": "https://x.com/darel023/status/2103424524297420829",
    "author": {
@@ -35302,6 +35599,57 @@
     "width": 1280,
     "height": 720,
     "durationSec": 43
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114712331896934747",
+   "url": "https://x.com/HaileyAILabs/status/2114712331896934747",
+   "author": {
+    "handle": "HaileyAILabs",
+    "name": "Hailey"
+   },
+   "postedAt": "2026-10-26T13:34:44.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "zh",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "代码生成的二次元少女舞台",
+    "en": "Code-built anime girl dance stage"
+   },
+   "summary": {
+    "zh": "用代码制作的二次元少女跳舞 MV：GPT 设计角色，Muse 生成绿幕舞蹈视频，Claude Opus 5.5 写代码完成抠像、配乐、鼓点同步和 3D 舞台特效。",
+    "en": "A code-built anime girl dance MV. GPT designed the character, Muse generated a green-screen dance video, and Claude Opus 5.5 wrote code for keying, music, beat sync and a 3D stage."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Muse",
+    "GPT"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 62938,
+    "likes": 247,
+    "replies": 12,
+    "reposts": 30,
+    "bookmarks": 274,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114712259591340032/img/mYV0ydYCCSE06txi.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114712259591340032/vid/avc1/720x1280/0wqwfN6_TAXrOrzJ.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 30
    },
    "evidence": {
     "via": "daily",
@@ -41434,6 +41782,59 @@
    }
   },
   {
+   "id": "2114674922802782355",
+   "url": "https://x.com/vib3coded/status/2114674922802782355",
+   "author": {
+    "handle": "vib3coded",
+    "name": "Vib3Coded"
+   },
+   "postedAt": "2026-10-26T11:06:05.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "可交互的果冻鲸鱼",
+    "en": "Interactive squishy jelly whale"
+   },
+   "summary": {
+    "zh": "一个可旋转、挤压和抛掷的 WebGPU 软体果冻鲸鱼互动作品。作者用一段详细描述物理效果的提示词，让 Opus 5.5 一次生成，花费 9.26 美元。",
+    "en": "An interactive WebGPU soft-body jelly whale that can be spun, squished and thrown. Opus 5.5 built it in one go from a detailed physics prompt for $9.26."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/vib3coded/status/2114675119364653309",
+    "text": "Build a single-file interactive WebGPU soft-body study called \"Whale Jelly\" (Material Studies / No. 043), matching the quality of an earlier watermelon-slice jelly study. Subject: a humpback whale cast in two layers of gummy jelly, lying on its belly on a studio table.\n\nGeometry: a signed-distance whale — an elliptical section swept along a curved spine (broad head with a flat crown, deep chest, narrow keeled tail stock), the belly pressed flat on the floor, smoothly joined to notched flukes with a scalloped trailing edge, long flippers with knobs along the leading edge, a small dorsal fin and twin blowhole dimples. Mesh it with surface nets and Newton projection; simulate it with a snapped hex lattice (5 tets per cell, a node layer on the floor) and XPBD (60 Hz, 10 substeps, co-rotational shape matching, volume constraints, edge damping, floor friction). Make the fins firmest and the clear body jelly softest.\n\nLook: clear tinted jelly over a milky layer. The milky layer is its own embedded surface, cut by a wavy line along the flank that rises at the head into the mouth. Light it with key light absorbed through the jelly above it, measured from shadow-map depth. Draw throat pleats, a dark mouth groove, head tubercles and tail-stock knuckles in the shader from rest-space coordinates as bump-mapped relief. Add glossy dark bead eyes and a few trapped air bubbles. Render with refraction plus Beer–Lambert thickness from back-face depth, back-lit glow on the thin fins, a jelly-tinted floor shadow, PCSS soft shadows, contact AO, studio softbox reflections and GGX highlights, then PBR Neutral tone mapping.\n\nInteraction: grab and stretch anywhere, with twist on scroll or a second finger. A \"Blow a spout\" button fires a column of rigid jelly drops from the blowhole along its deformed axis; the drops bounce, roll, land on the whale through its tets, and can be picked up and thrown.\n\nUI (English, editorial style): masthead, live status pill, specimen panel (three colourways — Ocean, Slate, Lagoon; Firmness and Internal damping sliders; Blow / Reset; ¼ speed; Show mesh; Pause), live readouts (mass, volume %, length in cm snout-to-notch, loose drops), \"Inside the experiment\" notes, a WebGPU fallback and a stacked mobile layout."
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 51683,
+    "likes": 988,
+    "replies": 56,
+    "reposts": 73,
+    "bookmarks": 433,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114674840137306112/img/puq2l2jtHYeTeiJb.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114674840137306112/vid/avc1/1152x720/PsEvPqOOrjpeFPpL.mp4?tag=29",
+    "width": 1152,
+    "height": 720,
+    "durationSec": 18
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2109629188525420930",
    "url": "https://x.com/flxrnc/status/2109629188525420930",
    "author": {
@@ -46260,6 +46661,57 @@
    }
   },
   {
+   "id": "2114796689563304192",
+   "url": "https://x.com/rubenssoto_ai/status/2114796689563304192",
+   "author": {
+    "handle": "rubenssoto_ai",
+    "name": "Rubens Soto | AI & SaaS"
+   },
+   "postedAt": "2026-10-26T19:09:56.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "三款模型构建耗时与成本对比",
+    "en": "Three-model build time and cost comparison"
+   },
+   "summary": {
+    "zh": "作者让 Opus 5.5、GPT 6.1 Sol 和 GPT 6.1 Terra 完成同一任务，并对比了各自的耗时和费用。",
+    "en": "A comparison of Opus 5.5, GPT 6.1 Sol and GPT 6.1 Terra on the same task, listing each model's time and cost."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "GPT 6.1 Sol",
+    "GPT 6.1 Terra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 44744,
+    "likes": 272,
+    "replies": 70,
+    "reposts": 9,
+    "bookmarks": 65,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114796547527299072/img/8afJ9jt9hnmnFBv9.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114796547527299072/vid/avc1/720x1280/Gp4h5KNCfvzJ36dI.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 40
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102990431940415738",
    "url": "https://x.com/FxChaos/status/2102990431940415738",
    "author": {
@@ -48454,6 +48906,56 @@
    }
   },
   {
+   "id": "2114609717758820574",
+   "url": "https://x.com/AiwithAlyar/status/2114609717758820574",
+   "author": {
+    "handle": "AiwithAlyar",
+    "name": "Alyar AI"
+   },
+   "postedAt": "2026-10-26T06:46:58.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "AI生成视频短片",
+    "en": "AI-generated video clip"
+   },
+   "summary": {
+    "zh": "作者结合 Opus 5.5 和 Seedance 2.5 制作的作品，帖子未提供更多细节。",
+    "en": "A work made by combining Opus 5.5 with Seedance 2.5. The post gives no further details."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Seedance 2.5"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 42548,
+    "likes": 378,
+    "replies": 23,
+    "reposts": 33,
+    "bookmarks": 176,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114609452582326272/img/2Br9l_-eYEWPuTtV.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114609452582326272/vid/avc1/1280x720/2Ki364V2_U5vNs6A.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 46
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103624187017572421",
    "url": "https://x.com/kloss_xyz/status/2103624187017572421",
    "author": {
@@ -50478,6 +50980,57 @@
    }
   },
   {
+   "id": "2114937668635435233",
+   "url": "https://x.com/_3912657840/status/2114937668635435233",
+   "author": {
+    "handle": "_3912657840",
+    "name": "角煮星丸"
+   },
+   "postedAt": "2026-10-27T04:30:08.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "根据参考图生成的3D建筑模型",
+    "en": "3D building model from reference image"
+   },
+   "summary": {
+    "zh": "用 Opus 5.5 做的建筑 3D 建模。作者在 Astra 里一直做不好这栋楼，于是把 GPT Image 2.5 生成的图片交给 Opus 来做。",
+    "en": "A 3D building model made with Opus 5.5. The creator could not get the building right in Astra, so they gave Opus an image made with GPT Image 2.5."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "GPT Image 2.5",
+    "Astra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 39173,
+    "likes": 488,
+    "replies": 12,
+    "reposts": 39,
+    "bookmarks": 256,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114937184902066176/img/VBONgId1PbD62aUi.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114937184902066176/vid/avc1/1280x720/w1sTzk82xw1GatFc.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 15
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2107022944916709886",
    "url": "https://x.com/tradphi/status/2107022944916709886",
    "author": {
@@ -51894,6 +52447,57 @@
    }
   },
   {
+   "id": "2114859793173324075",
+   "url": "https://x.com/higgsfield_ai/status/2114859793173324075",
+   "author": {
+    "handle": "higgsfield_ai",
+    "name": "Higgsfield AI 🧩"
+   },
+   "postedAt": "2026-10-26T23:20:41.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "四冲程发动机原理讲解对比",
+    "en": "Four-stroke engine explainer comparison"
+   },
+   "summary": {
+    "zh": "对比 GPT-6.1 Terra 和 Claude Opus 5.5 讲解发动机原理：逐个零件拆解，再按顺序演示四个冲程。用 Higgsfield 制作。",
+    "en": "A comparison of GPT-6.1 Terra and Claude Opus 5.5 explaining how an engine works. Each takes the engine apart piece by piece and shows the four strokes in order. Made with Higgsfield."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Higgsfield",
+    "GPT-6.1 Terra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 37564,
+    "likes": 514,
+    "replies": 42,
+    "reposts": 44,
+    "bookmarks": 195,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114859721085898752/img/1JbSPJ-LpP61wojF.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114859721085898752/vid/avc1/720x810/2hxc-SIe4kdpCAxp.mp4?tag=29",
+    "width": 720,
+    "height": 810,
+    "durationSec": 44
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2104114219235090574",
    "url": "https://x.com/sora19ai/status/2104114219235090574",
    "author": {
@@ -51986,6 +52590,57 @@
     "width": 1280,
     "height": 720,
     "durationSec": 15
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114860921579528689",
+   "url": "https://x.com/higgsfield_ai/status/2114860921579528689",
+   "author": {
+    "handle": "higgsfield_ai",
+    "name": "Higgsfield AI 🧩"
+   },
+   "postedAt": "2026-10-26T23:25:10.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "积木拼装汽车并驾驶测试",
+    "en": "Brick-built driving car test"
+   },
+   "summary": {
+    "zh": "让 GPT-6.1 Terra 和 Claude Opus 5.5 比赛拼车：每辆车用 6294 块积木，拼完还得能开起来。用 Higgsfield 制作。",
+    "en": "A car-building test of GPT-6.1 Terra and Claude Opus 5.5. Each car used 6,294 bricks and then had to drive. Made with Higgsfield."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Higgsfield",
+    "GPT-6.1 Terra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 37479,
+    "likes": 169,
+    "replies": 11,
+    "reposts": 17,
+    "bookmarks": 38,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114860563339862016/img/KcaREBmoLCPnx7JC.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114860563339862016/vid/avc1/720x810/c712CW9YeqmmNU2y.mp4?tag=29",
+    "width": 720,
+    "height": 810,
+    "durationSec": 23
    },
    "evidence": {
     "via": "daily",
@@ -55705,6 +56360,58 @@
    }
   },
   {
+   "id": "2114942260353868116",
+   "url": "https://x.com/Saccc_c/status/2114942260353868116",
+   "author": {
+    "handle": "Saccc_c",
+    "name": "Sac"
+   },
+   "postedAt": "2026-10-27T04:48:23.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "zh",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "小王子剪纸风动画短片",
+    "en": "The Little Prince papercut animated short"
+   },
+   "summary": {
+    "zh": "作者用 Opus 5.5 配合花叔（@AlchainHust）的 huashu-art-motion skill，做了一部小王子题材的剪纸风动画短片。",
+    "en": "A papercut-style animated short of The Little Prince, made with Opus 5.5 and @AlchainHust's huashu-art-motion skill."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "huashu-art-motion"
+   ],
+   "resources": [
+    "https://github.com/alchaincyf/huashu-art-motion"
+   ],
+   "stats": {
+    "views": 33748,
+    "likes": 570,
+    "replies": 39,
+    "reposts": 52,
+    "bookmarks": 537,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114937896415485952/img/rQtnlbBaJ1t_OE-z.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114937896415485952/vid/avc1/1280x720/aWoDWngTRs5XDVE7.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 74
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103557833153466403",
    "url": "https://x.com/ismailfahmi/status/2103557833153466403",
    "author": {
@@ -56904,6 +57611,107 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114752456915665236",
+   "url": "https://x.com/0x_fokki/status/2114752456915665236",
+   "author": {
+    "handle": "0x_fokki",
+    "name": "Fokki"
+   },
+   "postedAt": "2026-10-26T16:14:10.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "沙丘下穿行的巨型沙虫循环动画",
+    "en": "Looping sandworm under desert dunes"
+   },
+   "summary": {
+    "zh": "用 Opus 5.5 写代码生成的沙虫循环动画。做法是先把运动写成数学公式再绘制，画面包含装甲环节、牙齿冠和蓝图透视。",
+    "en": "A looping code-built sandworm animation made with Opus 5.5, using a technique where the motion is written as math before anything is drawn. It shows armoured rings, a teeth crown and a blueprint view."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 32354,
+    "likes": 358,
+    "replies": 35,
+    "reposts": 35,
+    "bookmarks": 418,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114752332005064704/img/6zWw7Zzkh-scneB1.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114752332005064704/vid/avc1/1280x720/2NrqprFo-pN34XQq.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 20
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114676265093664978",
+   "url": "https://x.com/iScienceLuvr/status/2114676265093664978",
+   "author": {
+    "handle": "iScienceLuvr",
+    "name": "Tanishq Mathew Abraham, Ph.D."
+   },
+   "postedAt": "2026-10-26T11:11:25.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "JEM自监督学习论文讲解视频",
+    "en": "Explainer video on JEM self-supervised learning paper"
+   },
+   "summary": {
+    "zh": "用 Claude Opus 5.5 为 Meta 的 JEM 自监督学习论文做的讲解视频。作者只发了两轮提示词，没用第三方工具，最终视频时长 25 分钟。",
+    "en": "An explainer video on Meta's JEM self-supervised learning paper, made with Claude Opus 5.5 from two prompts and no third-party tools. The final video runs 25 minutes."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/iScienceLuvr/status/2114677310653898974",
+    "text": "Make a video explaining how JEM works (https://arxiv.org/abs/2610.10013)\n>\n> Make sure it's in depth but also explains it from scratch and first principles without it being too complicated (I don't understand any of the information theoretic math for example, it confuses me)\n\n[it generated a 16 min video but did not cover any of the equations directly]\n\n> This is incredible! The only thing missing is it doesn't walk through the actual math/equations for the losses. You just need to explain how your intuitive description of the losses connect with the math. Please let me know what parts of the video you change to make this clear."
+   },
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 32313,
+    "likes": 613,
+    "replies": 33,
+    "reposts": 55,
+    "bookmarks": 701,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114675884305350657/img/0MNjLXVp4fVZyLks.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114675884305350657/vid/avc1/1280x720/_a3na2ieAVArHq8Q.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 1561
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -60961,6 +61769,62 @@
    }
   },
   {
+   "id": "2114831244936507897",
+   "url": "https://x.com/MrTacticalX/status/2114831244936507897",
+   "author": {
+    "handle": "MrTacticalX",
+    "name": "Mr Tactical"
+   },
+   "postedAt": "2026-10-26T21:27:15.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "en",
+   "models": [
+    "sonnet-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "Blender 夜间迈阿密红色超跑场景对比",
+    "en": "Red supercar driving through Miami at night in Blender"
+   },
+   "summary": {
+    "zh": "作者用同一条提示词让 GPT-6.1 Terra 和 Claude Sonnet 5.5（均为 High 档）在 Blender 里从零制作红色超跑夜驶迈阿密的场景，并列出了两者的耗时和花费。",
+    "en": "A comparison of GPT-6.1 Terra and Claude Sonnet 5.5 on High, each given the same prompt to build a red supercar driving through Miami at night in Blender. The post lists each model's time and cost."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/MrTacticalX/status/2114831244936507897",
+    "text": "a red supercar driving through Miami at night, built from scratch in Blender"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Blender",
+    "GPT-6.1 Terra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 28373,
+    "likes": 135,
+    "replies": 25,
+    "reposts": 4,
+    "bookmarks": 24,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114831064023580672/img/Jeew7FE2hTkfwqw5.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114831064023580672/vid/avc1/720x900/wqKHe-iT3ds69Vlt.mp4?tag=29",
+    "width": 720,
+    "height": 900,
+    "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2112114532763963615",
    "url": "https://x.com/kokushing/status/2112114532763963615",
    "author": {
@@ -61572,6 +62436,61 @@
     "width": 1280,
     "height": 720,
     "durationSec": 15
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114923036516471083",
+   "url": "https://x.com/gkxspace/status/2114923036516471083",
+   "author": {
+    "handle": "gkxspace",
+    "name": "余温"
+   },
+   "postedAt": "2026-10-27T03:31:59.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "zh",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "AI 生成 3D 资产的网页游戏",
+    "en": "Detailed 3D browser game with generated assets"
+   },
+   "summary": {
+    "zh": "作者通宵做出一款网页 3D 游戏：由 Opus 5.5 统筹编排，GPT-Image-2.5 生成多视角参考图，再通过 Hi3D MCP 生成模型并做减面和 Draco 压缩，最后用 Three.js 拼装场景，音效用 WebAudio 实时合成。",
+    "en": "A browser 3D game built overnight. Opus 5.5 orchestrated the work, GPT-Image-2.5 made multi-view reference images, Hi3D MCP generated the models, and Three.js assembled the scene with WebAudio sound."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "GPT-Image-2.5",
+    "Hi3D MCP",
+    "Three.js",
+    "WebGL",
+    "WebAudio",
+    "Draco"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 27853,
+    "likes": 141,
+    "replies": 48,
+    "reposts": 12,
+    "bookmarks": 152,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114917822858252288/img/ArVcLQdogXy1fXFj.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114917822858252288/vid/avc1/1280x720/z_3oCU_7U7BITngw.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 65
    },
    "evidence": {
     "via": "daily",
@@ -62571,6 +63490,63 @@
     "width": 1280,
     "height": 720,
     "durationSec": 60
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114688618313003390",
+   "url": "https://x.com/keshiAIart/status/2114688618313003390",
+   "author": {
+    "handle": "keshiAIart",
+    "name": "keshi"
+   },
+   "postedAt": "2026-10-26T12:00:30.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "猫咪追逐系列四十集合集",
+    "en": "Cat chase series 40-episode compilation"
+   },
+   "summary": {
+    "zh": "这是“和猫追逐”系列短片的 40 集合集。视频用 Seedance 生成，图片用 Midjourney，配乐用 Suno；提示词部分由作者手写、部分由 Claude 生成，剪辑则用 CapCut 和 Claude 完成。",
+    "en": "A 40-episode compilation of a video series about chasing a cat. Video was generated with Seedance, images with Midjourney and music with Suno; prompts were written by hand and with Claude, and editing was done in CapCut and Claude."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Seedance 2.0",
+    "Seedance 2.5",
+    "Midjourney",
+    "CapCut",
+    "Suno",
+    "ArtCraft",
+    "Dreamina",
+    "Runway"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 27134,
+    "likes": 685,
+    "replies": 20,
+    "reposts": 100,
+    "bookmarks": 196,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114366780592578561/img/rcdCGtYmqzVRfX0M.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114366780592578561/vid/avc1/1280x720/_QDiIEv3_dQrD2hx.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 376
    },
    "evidence": {
     "via": "daily",
@@ -63581,6 +64557,57 @@
     "width": 1280,
     "height": 720,
     "durationSec": 165
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114862715550441733",
+   "url": "https://x.com/higgsfield_ai/status/2114862715550441733",
+   "author": {
+    "handle": "higgsfield_ai",
+    "name": "Higgsfield AI 🧩"
+   },
+   "postedAt": "2026-10-26T23:32:18.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "床单随风飘动模拟对比",
+    "en": "Bedsheet in wind simulation test"
+   },
+   "summary": {
+    "zh": "Higgsfield 用自家工具做了一次床单随风飘动的测试，对比 GPT-6.1 Terra 和 Claude Opus 5.5 的表现。",
+    "en": "A bedsheet wind simulation test comparing GPT-6.1 Terra and Claude Opus 5.5, made with Higgsfield."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Higgsfield",
+    "GPT-6.1 Terra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 26448,
+    "likes": 376,
+    "replies": 19,
+    "reposts": 26,
+    "bookmarks": 99,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114862651201449984/img/SSU0cfjl4f9Zl4ey.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114862651201449984/vid/avc1/720x810/jZzrdv5XIrGsOgbe.mp4?tag=29",
+    "width": 720,
+    "height": 810,
+    "durationSec": 30
    },
    "evidence": {
     "via": "daily",
@@ -64872,6 +65899,54 @@
    }
   },
   {
+   "id": "2114717745443127698",
+   "url": "https://x.com/ann_nnng/status/2114717745443127698",
+   "author": {
+    "handle": "ann_nnng",
+    "name": "Ann Nguyen"
+   },
+   "postedAt": "2026-10-26T13:56:14.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "蝴蝶花朵像素风互动作品集",
+    "en": "Interactive pixel art portfolio with butterflies and flowers"
+   },
+   "summary": {
+    "zh": "作者用 Claude Opus 5.5 做了一个带蝴蝶和花朵的像素风交互式作品集网站，附有可直接体验的链接，创意参考了另一位创作者。",
+    "en": "An interactive pixel-art portfolio with butterflies and flowers, made with Claude Opus 5.5. A playable version is linked, and the concept was inspired by another creator."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 25230,
+    "likes": 1152,
+    "replies": 52,
+    "reposts": 51,
+    "bookmarks": 636,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114716361901686784/img/PAUL0Otd47rV0pIk.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114716361901686784/vid/avc1/982x720/qA18--yIZhIgIN3n.mp4?tag=29",
+    "width": 982,
+    "height": 720,
+    "durationSec": 24
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2110385278246654052",
    "url": "https://x.com/MiaAI_lab/status/2110385278246654052",
    "author": {
@@ -65907,6 +66982,62 @@
     "width": 720,
     "height": 900,
     "durationSec": 15
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114758798845841679",
+   "url": "https://x.com/vib3coded/status/2114758798845841679",
+   "author": {
+    "handle": "vib3coded",
+    "name": "Vib3Coded"
+   },
+   "postedAt": "2026-10-26T16:39:22.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "浮岛上的像素风网球俱乐部微缩场景",
+    "en": "Pixel-art tennis club diorama on a floating island"
+   },
+   "summary": {
+    "zh": "作者用同一条提示词让 Claude Opus 5.5 和 GPT-6.1 Sol 各做一个浮岛上的像素风 3D 网球俱乐部场景，要求包含网球物理和自动比赛，两个成品都附了链接。",
+    "en": "Claude Opus 5.5 and GPT-6.1 Sol were given the same prompt to build a pixel-art 3D tennis club diorama on a floating island, with ball physics and simulated matches. Both results are linked."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/vib3coded/status/2114759030795329913",
+    "text": "Make a pixel-art 3D diorama of a small tennis club on a floating island, the same series and engine as my other pixel dioramas (three.js, orthographic isometric camera turned in quarter steps, a small render target with no anti-aliasing snapped to whole pixels, depth-based outlines, a fixed 64-colour palette matched in OKLab, hard sun shadows, day/dusk/night, rain with puddle reflections). Call it \"Love All\".\n\nThe club: one court inside a chain-link fence with low dark-green windscreens reading LOVE ALL, a net that sags from 1.07 m at the posts to 0.914 m at the strap, the umpire's high chair with a sunshade and the players' chairs with parasols, a three-row stand, a clubhouse with a red roof, a clock showing the real time, a flag and a terrace, a groundsman's shed, floodlights (spotlights aimed at the court, so night stays dark around it), poplars and a gravel path. The court can be clay, grass or a hard court, painted to the rule book.\n\nReal ball physics: gravity, drag and the Magnus force of topspin and slice; a different bounce on each surface; net cords that trickle over or drop back. Players predict the ball's flight, pick where the strings can meet it (after the bounce, or on the volley or smash at the net), run there and swing in time. Each figure is a rig of boxes posed with two-bone IK; the racket follows keyed paths for a forehand, a two-handed backhand, a volley, a smash and a serve with toss, trophy pose and jump, and the strings meet the ball at contact. Shot choice comes from the situation (cross court, down the line, sharp angle, slice when stretched, lob or pass against a net rusher, drop shot against a deep player, approach and volley). Each launch is solved to clear the net and land on its target, then thrown a little off, so winners, errors and long rallies come out of the physics. Four players with their own styles play a ladder where the winner stays on: short sets to four games, no-ad scoring, a tiebreak at 3–3 and a match tiebreak to ten.\n\nLife on court: ball kids fetch dead balls and bounce a new one to the server, who bounces it before serving. The umpire watches the ball and calls the score. On clay the ball leaves marks, and on close calls the umpire climbs down to read the mark. Between sets the groundsmen drag the clay; grass wears behind the baselines. In rain the players sit under their parasols and the groundsmen pull a cover over the court. Spectators follow the ball and clap. Click the court to aim the next shot, with buttons for a lob or a drop shot, and a ×3 speed toggle. Show a tennis scoreboard (sets, point, server, serve speed) and the ladder; English UI; it must work on phones."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Three.js",
+    "GPT-6.1 Sol"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 24365,
+    "likes": 461,
+    "replies": 20,
+    "reposts": 31,
+    "bookmarks": 364,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114758731049082880/img/DSD3sn_j7IVfklg_.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114758731049082880/vid/avc1/720x900/YJyCyGBKZ2SCppAn.mp4?tag=29",
+    "width": 720,
+    "height": 900,
+    "durationSec": 18
    },
    "evidence": {
     "via": "daily",
@@ -68728,6 +69859,61 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114840067831128271",
+   "url": "https://x.com/MrTacticalX/status/2114840067831128271",
+   "author": {
+    "handle": "MrTacticalX",
+    "name": "Mr Tactical"
+   },
+   "postedAt": "2026-10-26T22:02:18.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "Blender 日落浮空风车农场岛对比",
+    "en": "Floating windmill farm island at sunset in Blender"
+   },
+   "summary": {
+    "zh": "作者把 GPT-6.1 Terra 和 Claude Opus 5.5 都调到 Extra High，用同一条提示词让它们在 Blender 里从零搭建一座日落时分的 Minecraft 风格浮空风车农场岛，并列出了两者的耗时和花费。",
+    "en": "A comparison of GPT-6.1 Terra and Claude Opus 5.5, both on Extra High, given the same prompt to build a Minecraft-style floating windmill farm island in Blender. The post lists each model's time and cost."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/MrTacticalX/status/2114840067831128271",
+    "text": "build a Minecraft-style floating windmill farm island at sunset, from scratch in Blender."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 22330,
+    "likes": 130,
+    "replies": 41,
+    "reposts": 6,
+    "bookmarks": 44,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114839899761242113/img/UkeGCJL15H64dJc0.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114839899761242113/vid/avc1/720x1280/UX4LSyJOD8BsADLE.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 69
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -72035,6 +73221,61 @@
    }
   },
   {
+   "id": "2114821178959565267",
+   "url": "https://x.com/prasenx/status/2114821178959565267",
+   "author": {
+    "handle": "prasenx",
+    "name": "Prasenjit"
+   },
+   "postedAt": "2026-10-26T20:47:15.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "浏览器中运行的开放世界岛屿",
+    "en": "Open world island running in the browser"
+   },
+   "summary": {
+    "zh": "作者在 Cursor 里用 Claude Opus 5.5 做了一个能在浏览器运行的开放世界岛屿。模型反复把自己的截图和 341 张真实照片对照着调整，游戏可直接在线玩，代码也已开源。",
+    "en": "A browser-based open-world island built by Claude Opus 5.5 in Cursor. The model repeatedly compared its own screenshots against 341 real photos, and the game and its code are public."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/prasenx/status/2114821178959565267",
+    "text": "build an open world island that runs in the browser"
+   },
+   "referenceAssets": true,
+   "tools": [
+    "Cursor"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 20410,
+    "likes": 341,
+    "replies": 27,
+    "reposts": 16,
+    "bookmarks": 153,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114820535502970880/img/BH8nV42-ivNMK5Oc.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114820535502970880/vid/avc1/1280x720/XyAxXZP6jVUEyINT.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2108902793797091808",
    "url": "https://x.com/chetaslua/status/2108902793797091808",
    "author": {
@@ -72684,6 +73925,54 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114805369167843330",
+   "url": "https://x.com/Mr_Salio/status/2114805369167843330",
+   "author": {
+    "handle": "Mr_Salio",
+    "name": "Salio"
+   },
+   "postedAt": "2026-10-26T19:44:25.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "两款模型生成效果并排对比",
+    "en": "Side-by-side model output test"
+   },
+   "summary": {
+    "zh": "一条对比 GPT-6.1 Terra 与 Opus 5.5 的观点帖，作者认为 Terra 速度快但整体表现令人失望，帖子里没有给出提示词。",
+    "en": "An opinion post comparing GPT-6.1 Terra and Opus 5.5, arguing that Terra is fast but disappointing. No prompt is shared."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 19946,
+    "likes": 156,
+    "replies": 25,
+    "reposts": 8,
+    "bookmarks": 10,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114805280290525185/img/kTMjh0k1wztZK3Tm.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114805280290525185/vid/avc1/1280x720/TDZZzXwH8laR80nz.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 32
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -73697,6 +74986,54 @@
     "width": 1280,
     "height": 720,
     "durationSec": 40
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114864217346179511",
+   "url": "https://x.com/higgsfield_ai/status/2114864217346179511",
+   "author": {
+    "handle": "higgsfield_ai",
+    "name": "Higgsfield AI 🧩"
+   },
+   "postedAt": "2026-10-26T23:38:16.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "鹈鹕骑车测试：自行车上越叠越多",
+    "en": "Pelican on a bicycle test with stacked objects"
+   },
+   "summary": {
+    "zh": "用“鹈鹕骑自行车”测试对比 GPT-6.1 Terra 和 Claude Opus 5.5，测试中不断往自行车上叠加更多物件。帖子没有公开提示词。",
+    "en": "A pelican-on-a-bicycle test comparing GPT-6.1 Terra and Claude Opus 5.5, with more and more objects stacked on the bicycle. No prompt is shared."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 19438,
+    "likes": 144,
+    "replies": 24,
+    "reposts": 30,
+    "bookmarks": 15,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114864053546008576/img/TomCW5uRaJ19_1Ku.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114864053546008576/vid/avc1/720x960/qI8_FON9mjTp9Xmu.mp4?tag=29",
+    "width": 720,
+    "height": 960,
+    "durationSec": 12
    },
    "evidence": {
     "via": "daily",
@@ -76280,6 +77617,54 @@
    }
   },
   {
+   "id": "2114756330997055501",
+   "url": "https://x.com/tunguz/status/2114756330997055501",
+   "author": {
+    "handle": "tunguz",
+    "name": "Bojan Tunguz"
+   },
+   "postedAt": "2026-10-26T16:29:34.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "Anthropic上市招股书要点解读视频",
+    "en": "Explainer video on Anthropic's S-1 filing highlights"
+   },
+   "summary": {
+    "zh": "作者用 Opus 5.5 把 Anthropic 长达 400 多页的 S-1 招股文件做成了一支简短的讲解视频，内容涵盖营收、亏损、治理结构和主要风险。",
+    "en": "A short explainer video made with Opus 5.5 that summarizes the highlights of Anthropic's S-1 filing, which runs over 400 pages, including revenue, losses, governance and risks."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 18414,
+    "likes": 137,
+    "replies": 13,
+    "reposts": 20,
+    "bookmarks": 82,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114755590018813953/img/HIfYJSnBA-ygQV8U.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114755590018813953/vid/avc1/1280x720/_5N7lamuk0eRCTNO.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 286
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2110020120865313063",
    "url": "https://x.com/Scenario_gg/status/2110020120865313063",
    "author": {
@@ -77628,6 +79013,56 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114715384310046928",
+   "url": "https://x.com/seeconvm/status/2114715384310046928",
+   "author": {
+    "handle": "seeconvm",
+    "name": "seeco"
+   },
+   "postedAt": "2026-10-26T13:46:51.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "根据PDF指南制作的动效动画",
+    "en": "Motion graphic animation made from a PDF guide"
+   },
+   "summary": {
+    "zh": "作者展示了一段动效作品，说是用 Opus 5.5 而不是 After Effects 做的。提示词以 PDF 形式放在 Google Drive 上，另外还附了一篇讲解制作步骤的文章。",
+    "en": "A motion-graphics piece the creator says was built in Opus 5.5 rather than After Effects. The prompt is shared as a PDF on Google Drive, along with an article describing the steps."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [
+    "https://drive.google.com/file/d/1NPfMGmks_CJxWLJESaM6r2rODUGEi0-3/view?usp=sharing"
+   ],
+   "stats": {
+    "views": 17753,
+    "likes": 122,
+    "replies": 3,
+    "reposts": 15,
+    "bookmarks": 177,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114714360404652032/img/OOsTxNZ89uLk1Znh.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114714360404652032/vid/avc1/1280x720/q8NkygPEZfgdmIPW.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 14
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -79327,6 +80762,56 @@
    }
   },
   {
+   "id": "2114639979703939079",
+   "url": "https://x.com/exploraX_/status/2114639979703939079",
+   "author": {
+    "handle": "exploraX_",
+    "name": "m0h"
+   },
+   "postedAt": "2026-10-26T08:47:13.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "3D生物书：小肠中的消化过程",
+    "en": "3D biology book: digestion in the small intestine"
+   },
+   "summary": {
+    "zh": "一本交互式3D生物书，追踪一个碳原子从粥进入人体、经过植物再回到粥里的全过程。本段展示第3站：小肠消化。作者用 Claude Opus 5.5 和 Three.js 制作。",
+    "en": "An interactive 3D biology book that follows one carbon atom from porridge through digestion, the body, plants and back. This clip shows stop 3, digestion in the small intestine. Built with Claude Opus 5.5 and Three.js."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 16944,
+    "likes": 554,
+    "replies": 12,
+    "reposts": 66,
+    "bookmarks": 491,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114638187511377920/img/V3RRisYsb7ddro3s.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114638187511377920/vid/avc1/1152x720/iOa8ZlZPT24KyppZ.mp4?tag=29",
+    "width": 1152,
+    "height": 720,
+    "durationSec": 53
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2112213850682536223",
    "url": "https://x.com/maxt3chno/status/2112213850682536223",
    "author": {
@@ -79971,6 +81456,57 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114863517526577498",
+   "url": "https://x.com/higgsfield_ai/status/2114863517526577498",
+   "author": {
+    "handle": "higgsfield_ai",
+    "name": "Higgsfield AI 🧩"
+   },
+   "postedAt": "2026-10-26T23:35:29.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "从点亮LED到自动浇花的电子入门课",
+    "en": "Electronics lesson from LED to plant watering"
+   },
+   "summary": {
+    "zh": "对比 GPT-6.1 Terra 和 Claude Opus 5.5 生成的电子学教学内容，从点亮LED讲到自动浇花。两者都通过 Higgsfield 制作。",
+    "en": "A side-by-side comparison of electronics lessons made by GPT-6.1 Terra and Claude Opus 5.5, from lighting an LED to watering a plant. Both were made with Higgsfield."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Higgsfield",
+    "GPT-6.1 Terra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 16427,
+    "likes": 167,
+    "replies": 14,
+    "reposts": 16,
+    "bookmarks": 76,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114862905011400704/img/MT9Oe5yz4iGq8X6B.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114862905011400704/vid/avc1/720x810/OXEtuNUEV_nFtBmp.mp4?tag=29",
+    "width": 720,
+    "height": 810,
+    "durationSec": 40
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -82563,6 +84099,61 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114825374961897939",
+   "url": "https://x.com/aecyydesign/status/2114825374961897939",
+   "author": {
+    "handle": "aecyydesign",
+    "name": "Szymon"
+   },
+   "postedAt": "2026-10-26T21:03:55.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "液态形状路径追踪渲染网页工具",
+    "en": "Browser tool for path-traced liquid shape loops"
+   },
+   "summary": {
+    "zh": "一个在浏览器中运行的 React 液态造型设计工具，采用自研 WebGL2 路径追踪器，并在 WebGPU 上运行 OIDN 降噪，可导出无缝4K循环动画。作者用 Claude Code（Opus 5.5）和 Toolcraft 开发。",
+    "en": "A browser-based React tool for designing liquid shapes. It uses a custom WebGL2 path tracer and the OIDN denoiser on WebGPU, and exports seamless 4K loops. Built with Claude Code (Opus 5.5) and Toolcraft."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Claude Code",
+    "Toolcraft",
+    "React",
+    "WebGL2",
+    "OIDN",
+    "WebGPU"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 15254,
+    "likes": 387,
+    "replies": 31,
+    "reposts": 14,
+    "bookmarks": 286,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114825124348145665/img/nh-GKy5ntNmhMRht.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114825124348145665/vid/avc1/846x720/kZPVSSYVkt-Yz3pN.mp4?tag=29",
+    "width": 846,
+    "height": 720,
+    "durationSec": 10
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -85586,6 +87177,56 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114837324521783564",
+   "url": "https://x.com/notjazii/status/2114837324521783564",
+   "author": {
+    "handle": "notjazii",
+    "name": "J A Z I I"
+   },
+   "postedAt": "2026-10-26T21:51:24.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "en",
+   "models": [
+    "sonnet-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "同一提示词的效果、耗时与成本对比",
+    "en": "Same-prompt build test with time and cost"
+   },
+   "summary": {
+    "zh": "作者用同一提示词、在最高推理档位下分别让 Sonnet 5.5 和 GPT-6.1 Terra 制作游戏并对比结果。Sonnet 耗时1.5小时、花费18美元，Terra 耗时10分钟、花费1美元。",
+    "en": "A comparison of games built by Sonnet 5.5 and GPT-6.1 Terra from the same prompt at the highest reasoning level. Sonnet took 1.5 hours and cost $18; Terra took 10 minutes and cost $1."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "GPT-6.1 Terra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 13938,
+    "likes": 194,
+    "replies": 29,
+    "reposts": 7,
+    "bookmarks": 30,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114837241575116800/img/cJz_fHzXQCouT8nW.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114837241575116800/vid/avc1/1680x720/iHejRiBrksuxTsbn.mp4?tag=29",
+    "width": 1680,
+    "height": 720,
+    "durationSec": 34
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -88763,6 +90404,105 @@
    }
   },
   {
+   "id": "2114775035575496991",
+   "url": "https://x.com/ashen_one/status/2114775035575496991",
+   "author": {
+    "handle": "ashen_one",
+    "name": "ashen"
+   },
+   "postedAt": "2026-10-26T17:43:53.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "《恶霸鲁尼》故事模式移植至虚幻引擎",
+    "en": "Bully story mode with cutscenes ported to Unreal"
+   },
+   "summary": {
+    "zh": "将游戏《恶霸鲁尼》移植到虚幻引擎的第五部分，实现了带原版过场动画的故事模式。作者在 Devin 上使用 Opus 5.5，从自己正版游戏中提取素材导入引擎，代码已在 GitHub 开源。",
+    "en": "Part 5 of porting the game Bully into Unreal Engine, adding a working story mode with the original cutscenes. Opus 5.5 ran on Devin and pulled assets from an owned copy of the game. The code is open source on GitHub."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Unreal Engine",
+    "Devin"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 12853,
+    "likes": 268,
+    "replies": 21,
+    "reposts": 14,
+    "bookmarks": 99,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114772006600081408/img/FwQKefqt6buKZRur.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114772006600081408/vid/avc1/1246x720/pVZLbwhfd7urTCWP.mp4?tag=29",
+    "width": 1246,
+    "height": 720,
+    "durationSec": 354
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114896177099657535",
+   "url": "https://x.com/iScienceLuvr/status/2114896177099657535",
+   "author": {
+    "handle": "iScienceLuvr",
+    "name": "Tanishq Mathew Abraham, Ph.D."
+   },
+   "postedAt": "2026-10-27T01:45:16.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "OpenAI三项新发现讲解视频",
+    "en": "Explainer on OpenAI's three new discoveries"
+   },
+   "summary": {
+    "zh": "由 Claude Opus 5.5 生成的讲解视频，介绍 OpenAI 公布的三项新发现。",
+    "en": "An explainer video generated by Claude Opus 5.5 covering three new discoveries announced by OpenAI."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 12817,
+    "likes": 160,
+    "replies": 16,
+    "reposts": 23,
+    "bookmarks": 115,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114895945523712000/img/trCjAMjkP7LFT_Zu.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114895945523712000/vid/avc1/1280x720/hYIKp2UwoTVK1qwe.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 536
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2112861737980494273",
    "url": "https://x.com/marcthecreatorr/status/2112861737980494273",
    "author": {
@@ -89171,6 +90911,59 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114670214365491269",
+   "url": "https://x.com/TypingMindApp/status/2114670214365491269",
+   "author": {
+    "handle": "TypingMindApp",
+    "name": "TypingMind"
+   },
+   "postedAt": "2026-10-26T10:47:22.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "天空云朵绘制",
+    "en": "Drawing clouds in the sky"
+   },
+   "summary": {
+    "zh": "对比 Kimi K3.1 Pro 与 Claude Opus 5.5 绘制天空云朵的效果，作者附上了完整的对话分享链接。",
+    "en": "A side-by-side comparison of Kimi K3.1 Pro and Claude Opus 5.5 each drawing clouds in the sky. The creator links the full shared chat."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "TypingMind",
+    "Kimi K3.1 Pro"
+   ],
+   "resources": [
+    "https://cloud.typingmind.com/share/b973811b-4c0e-4640-bf71-c13efd3f01fa"
+   ],
+   "stats": {
+    "views": 12741,
+    "likes": 110,
+    "replies": 5,
+    "reposts": 10,
+    "bookmarks": 48,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114669639934603264/img/FUZ0OJKwBbl_aR5w.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114669639934603264/vid/avc1/720x720/s_6eSkjFmJPbL-kF.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 41
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -90069,6 +91862,57 @@
     "width": 1236,
     "height": 720,
     "durationSec": 118
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114683465635655963",
+   "url": "https://x.com/marichaadaisuki/status/2114683465635655963",
+   "author": {
+    "handle": "marichaadaisuki",
+    "name": "まりちゃだいすきクラブ"
+   },
+   "postedAt": "2026-10-26T11:40:01.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "小角色被困高处向人类求救的短片",
+    "en": "Little character stranded up high asks a human for help"
+   },
+   "summary": {
+    "zh": "一段角色被困高处、请求放她下来的短动画视频，作者称用 Opus 5.5、Blender 和 MiniMax H3 制作。",
+    "en": "A short animated video of a character stuck up high asking to be let down, made with Opus 5.5, Blender and MiniMax H3."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Blender",
+    "MiniMax H3"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 12461,
+    "likes": 216,
+    "replies": 4,
+    "reposts": 14,
+    "bookmarks": 62,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/media/HVjdYfBakAESIUW.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114683437718368256/vid/avc1/1280x720/Ba6HzNLY-V6CcB0l.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 33
    },
    "evidence": {
     "via": "daily",
@@ -91285,6 +93129,54 @@
    }
   },
   {
+   "id": "2114819625242529992",
+   "url": "https://x.com/techartist_/status/2114819625242529992",
+   "author": {
+    "handle": "techartist_",
+    "name": "Techartist"
+   },
+   "postedAt": "2026-10-26T20:41:04.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "舞者世界线时间雕塑互动作品",
+    "en": "Interactive dancer worldline time sculpture"
+   },
+   "summary": {
+    "zh": "一个交互演示：舞者摆出的每个姿势都会凝固成身后的雕塑，用户可以抓取、弯曲时间或分出新的未来。作者称用 Opus 5.5 构建，并附在线演示。",
+    "en": "An interactive demo where a dancer's past poses freeze behind her as sculptures, letting users grab, bend or branch moments in time. Built with Opus 5.5, with a live demo link."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 12109,
+    "likes": 306,
+    "replies": 26,
+    "reposts": 31,
+    "bookmarks": 136,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114818160989970432/img/Hq1jz09YLmHf6eZ_.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114818160989970432/vid/avc1/1280x720/bDR-766ILiLw2uDy.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2107826840035635328",
    "url": "https://x.com/KanaWorks_AI/status/2107826840035635328",
    "author": {
@@ -92257,6 +94149,59 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114779295830679998",
+   "url": "https://x.com/flxrnc/status/2114779295830679998",
+   "author": {
+    "handle": "flxrnc",
+    "name": "Florence"
+   },
+   "postedAt": "2026-10-26T18:00:49.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "戴女巫帽吉祥物的万圣节3D循环动画",
+    "en": "Halloween 3D loop with witch-hat mascot and rigged models"
+   },
+   "summary": {
+    "zh": "一段万圣节 3D 循环动画，使用 18 个 Tripo 生成的模型，僵尸和黑猫在 Tripo 中自动绑定，Clawd 的动作由 Opus 5.5 用 Three.js 编写。全部提示词以 PDF 形式分享。",
+    "en": "A Halloween 3D loop using 18 Tripo models, with the zombie and cat auto-rigged in Tripo, and Clawd's animation coded by Opus 5.5 in Three.js. The prompts are shared in a PDF."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Tripo",
+    "Three.js"
+   ],
+   "resources": [
+    "https://drive.google.com/file/d/1VVZAF6YLvx7CDh5mNcTW_SRtyVg0BnJb/view?usp=sharing"
+   ],
+   "stats": {
+    "views": 11793,
+    "likes": 109,
+    "replies": 1,
+    "reposts": 14,
+    "bookmarks": 173,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114772802007863296/img/yG-MlwvYLd06g8j_.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114772802007863296/vid/avc1/1280x720/o5koSKX1R9XJSv-c.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 24
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -94735,6 +96680,58 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114718084418441431",
+   "url": "https://x.com/GlitterPixely/status/2114718084418441431",
+   "author": {
+    "handle": "GlitterPixely",
+    "name": "Glitter Gal"
+   },
+   "postedAt": "2026-10-26T13:57:35.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "装死的小龙短片",
+    "en": "Dragon playing possum short film"
+   },
+   "summary": {
+    "zh": "一段关于龙的短视频，作者称使用 Midjourney、Seedance 2.5、Opus 5.5 和 Topaz 制作，并在跺脚处加了震动效果来掩盖片段间的跳帧。",
+    "en": "A short dragon video made with Midjourney, Seedance 2.5, Opus 5.5 and Topaz; the creator added a shake on a stomp to hide a frame jump between clips."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Midjourney",
+    "Seedance 2.5",
+    "Topaz"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 11032,
+    "likes": 194,
+    "replies": 26,
+    "reposts": 20,
+    "bookmarks": 70,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/media/HVj9EXrX0AADgFW.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114717025574457344/vid/avc1/1280x720/jy3VSGNlBJlGZt-t.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 56
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -100678,6 +102675,54 @@
    }
   },
   {
+   "id": "2114815615156486362",
+   "url": "https://x.com/kevin_t_ngo/status/2114815615156486362",
+   "author": {
+    "handle": "kevin_t_ngo",
+    "name": "Kevin Ngo"
+   },
+   "postedAt": "2026-10-26T20:25:08.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "蚂蚁爬过招股书的代码动画",
+    "en": "Ants crawling over a company filing, coded animation"
+   },
+   "summary": {
+    "zh": "用 Claude Opus 5.5 制作的动画，画面是蚂蚁在 Anthropic 的 S-1 招股书上爬行。作者称音乐和每一帧画面都由代码生成。",
+    "en": "An animation of ants crawling over Anthropic's S-1 filing, made with Claude Opus 5.5. The creator says the music and every frame were written in code."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 9176,
+    "likes": 224,
+    "replies": 17,
+    "reposts": 5,
+    "bookmarks": 59,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114812810744229888/img/9vmmejTQ3QrQvB8v.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114812810744229888/vid/avc1/720x1280/sgDunPlHaNUzmAOC.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 120
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2111431777781010510",
    "url": "https://x.com/VulKan42069/status/2111431777781010510",
    "author": {
@@ -101615,6 +103660,61 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114745463736082828",
+   "url": "https://x.com/aimikoda/status/2114745463736082828",
+   "author": {
+    "handle": "aimikoda",
+    "name": "Kōda"
+   },
+   "postedAt": "2026-10-26T15:46:23.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "用静态图和音乐制作的五条悟动漫混剪",
+    "en": "Satoru Gojo AMV from still images and music"
+   },
+   "summary": {
+    "zh": "用 Claude Opus 5.5 制作的五条悟 AMV 混剪，没有使用视频素材，只用了 Midjourney 生成的图片和一段音乐。作者在回复中公开了完整提示词。",
+    "en": "A Satoru Gojo anime music video edit made with Claude Opus 5.5 from Midjourney images and a music file, with no video footage. The creator shared the full prompt in a reply."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/aimikoda/status/2114745768234144127",
+    "text": "Create a spectacular 4:3 Jujutsu Kaisen AMV centered on Satoru Gojo, using the supplied images and music. Match the final video's duration exactly to the full soundtrack.\n\nEDITING & ANIMATION:\nAnalyze the music's rhythm, structure, energy and emotional progression. Animate the supplied images into dynamic cinematic sequences with expressive character motion, dramatic camera movements, parallax and seamless transitions. Creatively select, crop, reframe, combine and revisit images throughout the edit. Build an intense anime opening with powerful visual storytelling, synchronized precisely to the music.\n\nDYNAMIC GRID:\nUse a constantly evolving manga-inspired grid with variable cell sizes, shapes and arrangements. Mix large hero panels, small square cells, narrow strips, irregular rectangles and occasional diagonal divisions. Freely expand, shrink, split, merge and rearrange cells according to the music. Alternate between dense multi-cell compositions, striking asymmetrical layouts and occasional full-frame hero moments. Allow different images, perspectives and moments to coexist across cells. Keep panel boundaries crisp and compositions visually coherent.\n\nVISUAL EFFECTS:\nCreate intense, layered effects inspired by Gojo Satoru's powers and the visual identity of Jujutsu Kaisen. Explore spatial distortion, Infinity, Six Eyes, cursed energy, Blue, Red and Hollow Purple through inventive motion graphics, impact frames, dimensional fractures and cinematic transitions. Blend style infections spreading across neighboring cells with temporal echoes, frame repetitions, speed ramps, freezes and rhythmic chain reactions. Let effects interact creatively with the grid and occasionally break beyond panel boundaries.\n\nCREATIVE DIRECTION:\nMake this feel like a premium, visually groundbreaking Jujutsu Kaisen anime opening. Capture Gojo's overwhelming power, confidence, elegance and mysterious presence. Let the supplied images and soundtrack guide every creative decision, including pacing, visual treatments, transitions, color grading and effect intensity. Avoid repetitive editing patterns or generic templates. Balance explosive action with striking moments of visual clarity. Preserve Gojo's recognizable identity, facial features, costume and the artistic style of the supplied images.\n\nAUDIO:\nUse the supplied music as the primary soundtrack, uninterrupted from beginning to end. Synchronize animation, grid transformations, camera movements and visual effects to its beats, melodies, transitions and emotional peaks.\nNo typography, text, letters, numbers or watermarks."
+   },
+   "referenceAssets": true,
+   "tools": [
+    "Midjourney"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 8918,
+    "likes": 210,
+    "replies": 25,
+    "reposts": 16,
+    "bookmarks": 162,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114745209930084352/img/OCWHZhwOhK7RXlhh.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114745209930084352/vid/avc1/960x720/eoBcRF3-Mac3QXNb.mp4?tag=29",
+    "width": 960,
+    "height": 720,
+    "durationSec": 33
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -103355,6 +105455,62 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114842660829860045",
+   "url": "https://x.com/vib3coded/status/2114842660829860045",
+   "author": {
+    "handle": "vib3coded",
+    "name": "Vib3Coded"
+   },
+   "postedAt": "2026-10-26T22:12:36.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "像素风乒乓球庭院微缩场景",
+    "en": "Pixel-art table tennis courtyard diorama"
+   },
+   "summary": {
+    "zh": "一个用 Three.js 构建的单文件 HTML 像素风小场景，表现公寓楼院子里的乒乓球对打。作者用同一提示词对比了 Claude Opus 5.5（花费 14.17 美元）和 GPT-6.1 Terra（花费 1.23 美元）。",
+    "en": "A single-file HTML pixel-art diorama of table tennis in an apartment courtyard, built with Three.js. The same prompt was run on Claude Opus 5.5 ($14.17) and GPT-6.1 Terra ($1.23) for comparison."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/vib3coded/status/2114842861766087147",
+    "text": "Build a single-file HTML pixel-art diorama called \"King of the Table\": table tennis in the courtyard of a three-storey pastel panel apartment block, on a small floating island, rendered with three.js (r160 via importmap) as a real 3D scene drawn into a low-res render target (orthographic isometric camera in 90° steps, whole-pixel snapping, depth outlines, a fixed 64-colour palette matched in OKLab, optional dither, Raw 3D toggle).\n\nWorld: the block with three entrances (canopies, numbered plates, lamps), windows, balconies with washing; brick garages; a regulation concrete table (2.74 × 1.525 m, top at 76 cm, steel net 15.25 cm) on a slab pad with a flip score counter on a stool; benches; a playground (swings, slide, sandbox, carousel); washing lines whose sheets flap in the wind; two parked cars; birches, lilac, painted-tyre flower beds, a chalk hopscotch; lamp posts. Merge static meshes by material.\n\nBall physics: 40 mm / 2.7 g ball with strong quadratic drag, Magnus lift from spin (topspin dives, backspin floats), table bounce that converts spin into pace, net and net-cord, ground bounces and rolling, walls, wind with gusts. Shots are solved (bisection over launch angle) to land on a target with a given spin and net clearance, then perturbed by an error model (hurry, incoming pace, risk, wind, mishits). Serves: tossed ≥16 cm from the palm, struck behind the end line, solved so they bounce once on each half; lets.\n\nGame: 4 neighbours with distinct styles (lefty topspin attacker, close blocker, far-back chopper, wild smasher) play king of the table: games to 11, two clear, serve changes every 2 points and every point from 10-all; winner stays, loser to the back of the bench. Players predict the ball's flight, shuffle to meet it after the bounce, and choose forehand/backhand loops, drives, blocks, pushes, flicks, chops, lobs, floated returns and smashes, with keyed bat paths and two-bone IK box-rig bodies. Between points the nearer player fetches the ball wherever it rolled (or takes a new one if it falls off the island), throws it to the server, who bounces it on the table before serving. Yard life via generator coroutines and A*: grandmothers knit and comment, kids swing/slide/ride the carousel/dig/watch, a man walks his dog, pigeons peck and take off when approached. Day/dusk/night, rain (everyone shelters under the canopy, puddle reflections, then the table is wiped), wind calm/breeze/gusty. Clicks: the table aims the next shot; the yard calls the pigeons; buttons call Loop/Push/Smash/Lob. UI: flip-card score board with serve dots, bench ladder with W–L, longest rally, wind readout, comments feed, view controls, \"How it's drawn\" notes, light/dark themes, phone layout."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Three.js",
+    "GPT-6.1 Terra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 8460,
+    "likes": 162,
+    "replies": 25,
+    "reposts": 17,
+    "bookmarks": 75,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114842610950942720/img/bTB9oddCWsxouybR.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114842610950942720/vid/avc1/720x930/uey2kgO4HVwEE1hi.mp4?tag=29",
+    "width": 720,
+    "height": 930,
+    "durationSec": 17
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -106863,6 +109019,54 @@
    }
   },
   {
+   "id": "2114890266192515520",
+   "url": "https://x.com/devteamdrew/status/2114890266192515520",
+   "author": {
+    "handle": "devteamdrew",
+    "name": "DreW"
+   },
+   "postedAt": "2026-10-27T01:21:46.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "片场上的智能体短动画",
+    "en": "Agent on a film set short animation"
+   },
+   "summary": {
+    "zh": "用 Claude Opus 5.5 制作的短视频，以 Haiku 智能体的视角展现 Opus 的“片场”。",
+    "en": "A short video framed as a Haiku agent's point of view on Opus's film set, made with Claude Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 7399,
+    "likes": 182,
+    "replies": 8,
+    "reposts": 16,
+    "bookmarks": 68,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114889297492955137/img/woQM1Ajzvciy94OI.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114889297492955137/vid/avc1/720x720/9ywE98ld8roJOBQv.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 47
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2114316443261002226",
    "url": "https://x.com/rewind02/status/2114316443261002226",
    "author": {
@@ -106960,6 +109164,59 @@
     "width": 1280,
     "height": 720,
     "durationSec": 60
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114863015577465302",
+   "url": "https://x.com/rehan_shei/status/2114863015577465302",
+   "author": {
+    "handle": "rehan_shei",
+    "name": "Rehan Sheikh"
+   },
+   "postedAt": "2026-10-26T23:33:29.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "黏土风格贴图村庄地图",
+    "en": "Clay-style textured village map"
+   },
+   "summary": {
+    "zh": "用 Trompe 和 Opus 5.5 制作的黏土风城堡地图。作者在此前的帖子中介绍了流程：先让 Opus 在 Blender 中搭建白模，再用 FLUX 3 Klein 和 Fibo 2 生成图像并投射到模型上完成贴图。",
+    "en": "A clay-style kasbah map made with Trompe and Opus 5.5. In an earlier post the creator described having Opus build a Blender blockout, then texturing it by projecting images from FLUX 3 Klein and Fibo 2."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Trompe",
+    "Blender",
+    "FLUX 3 Klein",
+    "Fibo 2"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 7357,
+    "likes": 120,
+    "replies": 1,
+    "reposts": 10,
+    "bookmarks": 152,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114862899844075520/img/yLv1nmo4Ms7dbYJD.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114862899844075520/vid/avc1/1280x720/CHr8TfZ1ss3w2eAi.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 18
    },
    "evidence": {
     "via": "daily",
@@ -107311,6 +109568,54 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114703675264291003",
+   "url": "https://x.com/0xwhrrari/status/2114703675264291003",
+   "author": {
+    "handle": "0xwhrrari",
+    "name": "rari🈀"
+   },
+   "postedAt": "2026-10-26T13:00:20.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "146个机器人的黑灯工厂动画",
+    "en": "Animated dark factory with 146 robot workers"
+   },
+   "summary": {
+    "zh": "用 Opus 5.5 制作的动画，表现 Lauren Tan 的“黑灯工厂”和 146 个 Grok 机器人。作者分享了一份可直接拖入 Opus 5.5 使用的 PDF，并附上一篇讲动效设计的文章。",
+    "en": "An Opus 5.5 animation of Lauren Tan's dark factory featuring 146 Grok Bots. The creator shares a PDF to drop into Opus 5.5 and points to an article on motion design."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 7152,
+    "likes": 109,
+    "replies": 11,
+    "reposts": 7,
+    "bookmarks": 87,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114691037423685632/img/McOV9dGFPPZ3zk-T.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114691037423685632/vid/avc1/720x900/H1ECZI6-MWiakrZP.mp4?tag=29",
+    "width": 720,
+    "height": 900,
+    "durationSec": 21
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -107852,6 +110157,54 @@
     "width": 720,
     "height": 888,
     "durationSec": 77
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114675490057273405",
+   "url": "https://x.com/zer0point_eth/status/2114675490057273405",
+   "author": {
+    "handle": "zer0point_eth",
+    "name": "Zero"
+   },
+   "postedAt": "2026-10-26T11:08:20.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "像素风多人合作街机格斗游戏",
+    "en": "Pixel art co-op arcade beat 'em up"
+   },
+   "summary": {
+    "zh": "一款像素风街机清版动作游戏，支持本地多人合作，包含多种职业、巫师商店、法术升级和多阶段 Boss 战。作者称全部通过向 Claude Opus 5.5 提示完成开发。",
+    "en": "A pixel-art arcade beat 'em up with local co-op, hero classes, wizard shops, spell upgrades and boss fights, which the creator says was built entirely through prompts to Claude Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 7017,
+    "likes": 144,
+    "replies": 17,
+    "reposts": 6,
+    "bookmarks": 81,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114675325917356032/img/y3DFkwHeKEgubJOO.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114675325917356032/vid/avc1/1280x720/lk3bKcFiRBqzSryH.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 91
    },
    "evidence": {
     "via": "daily",
@@ -108418,6 +110771,62 @@
     "width": 720,
     "height": 1280,
     "durationSec": 24
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2114894485389791613",
+   "url": "https://x.com/N1njaCodex/status/2114894485389791613",
+   "author": {
+    "handle": "N1njaCodex",
+    "name": "NinjaCodex"
+   },
+   "postedAt": "2026-10-27T01:38:32.000Z",
+   "addedAt": "2026-10-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "像素风冬日冰球场景对比",
+    "en": "Pixel art winter hockey scene comparison"
+   },
+   "summary": {
+    "zh": "一个实时像素风等距视角场景，展示冰封河面上的乡村冰球比赛，用 three.js 做成单个网页。作者把同一段提示词分别交给 GPT-6.1 Terra 和 Claude Opus 5.5，对比了效果和花费。",
+    "en": "A real-time pixel-art isometric diorama of village hockey on a frozen river, built as a single three.js page. The creator gave the same prompt to GPT-6.1 Terra and Claude Opus 5.5 and compared results and cost."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/N1njaCodex/status/2114894686343049263",
+    "text": "Build a real-time pixel-art isometric diorama of hockey on a frozen river, as a single HTML page using three.js (WebGL). A floating winter island: a frozen river crosses it from edge to edge and spills off both ends as icicle falls. On the black ice, a rink has been shovelled out and walled with a ring of snow lumps, with a gap for the bench and a small red-framed net with white mesh at each end. The nets are set in from the walls so players can go behind them. The north bank climbs to a terrace with snow-roofed log houses (smoking chimneys, icicles on the eaves, lit windows), a fence, birches with crows and a sledging slope. The south shore is low: firs, a snowman, a fire and a small bath-house. Add a footbridge upstream and an ice fisherman on a box over his hole downstream. Render at low resolution with an orthographic camera, snap colours to a fixed 64-colour OKLab palette, draw depth outlines, and reflect the scene in the ice.\nPlay three skaters and a goalie a side, village rules: no lines, no offside. The goalies wear felt boots and pads. Skaters have momentum: pushes to accelerate, long glides, limited turning, and hockey stops with a spray of snow. They skate backwards when defending and fall and slide on their backs after collisions. Simulate the puck physically: low friction on ice and high on snow, solved passes (v0² = v² + 2ad), saucer passes over sticks, lifted shots aimed through a spot in the net, soft snow walls that can bury a hard puck, posts and crossbar.\nAI: a chaser chosen by intercept time, attack and defence shapes, a presser and markers, poke checks, dekes, wristers, snapshots, slapshots, backhands, wraparounds and one-timers, plus blocked shots. Goalies read the shot from a forecast, drop into the butterfly, stretch, glove or kick out rebounds, and cover the puck.\nAn old man drops the puck at faceoffs, catches the puck the beaten goalie slides up to him, and tosses spares when a puck is lost in the snow. A dog digs the lost pucks out and brings them back.\nThe rink is a live canvas: skate blades scratch it white, falling snow settles on it and slows the puck, kids clear lanes with snow scoops, and between games the old man floods it from buckets into a mirror.\nVillage life: sledders, the fisherman catching perch, a woman crossing the bridge with a yoke of buckets, fans on a bench who comment, a boy on the snow wall who throws snowballs on click, crows, chimney smoke, breath in the frost. Day/dusk/night lighting with lamps, a string of bulbs and the fire; clear/snow/blizzard weather.\nUI: a scoreboard, a side rail with team ladders, called moves, weather, snow on the ice and spare pucks, and a live feed. Original characters only, English UI, responsive down to phone width."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Three.js",
+    "GPT-6.1 Terra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 6796,
+    "likes": 175,
+    "replies": 10,
+    "reposts": 18,
+    "bookmarks": 102,
+    "checkedAt": "2026-10-28T06:51:45.678Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2114894428850487296/img/GI1alH0Wa-kahkmR.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2114894428850487296/vid/avc1/720x910/i3kOkaYxL1n1n7UM.mp4?tag=29",
+    "width": 720,
+    "height": 910,
+    "durationSec": 16
    },
    "evidence": {
     "via": "daily",
