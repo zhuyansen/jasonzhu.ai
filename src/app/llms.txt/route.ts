@@ -1,5 +1,6 @@
 import { getAllPosts } from "@/lib/mdx";
 import { GUIDES } from "@/lib/go-global-guides";
+import { AUTHOR_ALT_NAME, AUTHOR_NAME, PROFILES } from "@/lib/profiles";
 
 const SITE_URL = "https://jasonzhu.ai";
 
@@ -40,9 +41,8 @@ export async function GET() {
     "",
     "## 作者",
     "",
-    `- Jason Zhu（祝彦森）：前 AI 算法工程师，现全职 AI 博主 / 出海教练`,
-    `- X: https://x.com/GoSailGlobal`,
-    `- GitHub: https://github.com/zhuyansen`,
+    `- ${AUTHOR_NAME}（${AUTHOR_ALT_NAME}）：前 AI 算法工程师，现全职 AI 博主 / 出海教练`,
+    ...PROFILES.map((p) => `- ${p.label}: ${p.url}`),
     "",
   ];
 

@@ -7,6 +7,7 @@ import GoogleOneTap from "@/components/GoogleOneTap";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
 import "../globals.css";
 import ThirdPartyAnalytics from "@/components/ThirdPartyAnalytics";
+import { AUTHOR_ALT_NAME, AUTHOR_NAME, PROFILES } from "@/lib/profiles";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,14 +21,15 @@ const geistMono = Geist_Mono({
 
 const SITE_URL = "https://jasonzhu.ai";
 
-// 全站 JSON-LD：Person + WebSite
+// 全站 JSON-LD：Person + WebSite（中文名和各平台主页见 lib/profiles.ts）
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Jason Zhu",
+  name: AUTHOR_NAME,
+  alternateName: AUTHOR_ALT_NAME,
   url: "https://jasonzhu.ai",
   image: "https://jasonzhu.ai/avatar.jpg",
-  sameAs: ["https://x.com/GoSailGlobal", "https://github.com/zhuyansen"],
+  sameAs: PROFILES.map((p) => p.url),
   jobTitle: "AI Blogger & Trainer",
   description: "前AI算法工程师，现AI博主/MCN/培训师",
 };
