@@ -1,5 +1,98 @@
 [
   {
+    "slug": "2026-10-30",
+    "date": "2026-10-30",
+    "title": "AI 快讯 · 10月30日",
+    "items": [
+      {
+        "title": "OpenAI更新模型规范强调能力与人类自主",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/updated-model-spec",
+        "summary": "OpenAI发布新版Model Spec，以五项核心价值约束更强模型的判断、行为与对用户意图的遵循。对开发者而言，这为Agent的权限边界、用户控制和产品安全设计提供了更明确的参考框架。",
+        "titleEn": "OpenAI Updates Its Model Spec",
+        "summaryEn": "OpenAI released an updated Model Spec built around five core values for guiding more capable models. The document is important for developers because it offers clearer principles for agent permissions, user agency, intent preservation, and safer product behavior as AI systems become more autonomous."
+      },
+      {
+        "title": "OpenAI用分层监控识别前沿模型失配",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/how-we-detect-frontier-model-misalignment",
+        "summary": "OpenAI披露用于发现前沿模型失配和未授权Agent行为的分层监控机制，目标是在风险升级前介入。对开发者的启示是，复杂Agent不能只靠模型自检，还需要运行时观测、告警和人工响应链路。",
+        "titleEn": "OpenAI Details Frontier Model Misalignment Detection",
+        "summaryEn": "OpenAI described a layered monitoring approach for detecting frontier-model misalignment and unauthorized agent behavior before incidents escalate. For developers, the key lesson is that complex agents need runtime observability, alerting, and human response mechanisms rather than relying only on model self-checks."
+      },
+      {
+        "title": "ThinkRail把项目记忆与Skills融入Agent IDE",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/JetBrains/thinkrail",
+        "summary": "JetBrains推出ThinkRail，一款围绕Pi编码Agent构建的智能IDE，通过独立工作区、持续更新的项目规范和可复用Skills保存上下文。它展示了IDE从代码补全工具转向能持续理解项目并扩展能力的方向。",
+        "titleEn": "ThinkRail Builds a Self-Learning Agentic IDE",
+        "summaryEn": "JetBrains introduced ThinkRail, an agentic IDE built around the Pi coding agent. It combines isolated workspaces, living project specifications, durable project knowledge, and reusable skills. The approach points toward IDEs that continuously understand a codebase and improve their capabilities over time."
+      },
+      {
+        "title": "Gemini 4 Carbon登顶评测并开放网络防御",
+        "source": "Latent Space",
+        "category": "AI 工具动态",
+        "url": "https://latent.space/p/ainews-gemini-4-carbon/",
+        "summary": "据Latent Space报道，Google新模型Gemini 4 Carbon在独立评测中领先，并首先向受信任的网络防御人员开放。若表现稳定，意味着前沿模型的首批落地场景可能继续集中在高价值、强监管的安全任务。",
+        "titleEn": "Gemini 4 Carbon Tops Evals for Cyber Defense",
+        "summaryEn": "Latent Space reports that Google’s Gemini 4 Carbon leads independent evaluations and is initially available to trusted cyber defenders. If the results hold, the release suggests that frontier models may continue to enter high-value, tightly controlled environments such as cybersecurity before broad public deployment."
+      },
+      {
+        "title": "OpenAI支持的Thrive 153亿美元收购ADT",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/10/29/openai-backed-thrive-holdings-acquires-adt/",
+        "summary": "OpenAI支持的Thrive Holdings宣布以153亿美元收购ADT，并计划把AI能力引入家庭安防业务。这笔交易显示，AI公司或相关资本正通过收购传统基础设施和服务商，直接获取真实场景、用户入口与数据。",
+        "titleEn": "Thrive Holdings Acquires ADT for $15.3B",
+        "summaryEn": "OpenAI-backed Thrive Holdings is acquiring ADT for $15.3 billion and plans to bring AI into home security. The deal highlights a broader strategy in which AI companies and affiliated capital acquire established service businesses to gain real-world distribution, customer access, operational data, and deployment environments."
+      },
+      {
+        "title": "Know then Draw重构视觉生成训练路线",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2610.37626",
+        "summary": "论文提出“先理解、后绘制”的训练范式：先用自回归模型学习语义知识，再用扩散模型负责高保真渲染。对开发者而言，这提示视觉模型可以拆分为知识理解与像素生成两阶段，以兼顾复杂语义和画面质量。",
+        "titleEn": "Know Then Draw Reworks Visual Generation",
+        "summaryEn": "The paper proposes a “know, then draw” training paradigm: autoregressive pretraining acquires semantic knowledge, while diffusion post-training handles high-fidelity rendering. For developers, the result suggests separating understanding from pixel generation can improve both complex prompt comprehension and visual quality."
+      },
+      {
+        "title": "研究量化大模型同时遵循多少条指令",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2610.36095",
+        "summary": "研究构造可计算答案的独立规则任务，测量模型在指令数量增加时的遵循能力及退化边界。对开发者来说，这有助于解释长系统提示为何会失效，也提醒产品应拆分规则、减少冲突并做压力测试。",
+        "titleEn": "Study Measures Language Models’ Instruction Capacity",
+        "summaryEn": "The study introduces controlled tasks with independent, verifiable rules to measure how instruction following degrades as rule load increases. For developers, it provides a practical way to understand why long system prompts fail and why policies should be modularized, deconflicted, and stress-tested."
+      },
+      {
+        "title": "REALCLI补上CLI智能体协作评测空白",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2610.22507",
+        "summary": "REALCLI提出面向真实命令行任务的评测基准，同时衡量任务是否完成和人机协作质量，不再假设用户指令全程不变。它能帮助开发者评估Agent如何接受中途反馈、调整计划并与用户共同完成长期任务。",
+        "titleEn": "REALCLI Benchmarks Human-Agent CLI Collaboration",
+        "summaryEn": "REALCLI is a benchmark for realistic command-line tasks that evaluates both execution outcomes and human-agent collaboration, rather than assuming fixed instructions. It helps developers assess whether agents can accept runtime feedback, revise plans, communicate effectively, and complete longer-horizon tasks with users."
+      }
+    ],
+    "funding": [
+      {
+        "company": "Dream",
+        "url": "https://techcrunch.com/2026/10/29/ex-palantir-execs-launch-dream-with-17m-from-a16z-to-build-ai-world-models-for-construction/",
+        "round": "Seed",
+        "amount": "$17M",
+        "valuation": "",
+        "investors": "a16z",
+        "pitch": "Dream用建筑许可档案和物理标准训练面向施工的AI世界模型，试图让规划、设计与施工决策拥有可模拟的真实环境。"
+      }
+    ],
+    "jasonSays": "今天最值得关注的是AI能力正从模型本身扩展到安全监控、可持续记忆和真实世界部署，开发者需要同时重视能力边界与运行时治理。",
+    "jasonSaysEn": "The key trend today is AI expanding beyond models into safety monitoring, persistent project memory, and real-world deployment, making both capability design and runtime governance essential for developers.",
+    "filename": "2026-10-30.md"
+  },
+  {
     "slug": "2026-10-29",
     "date": "2026-10-29",
     "title": "AI 快讯 · 10月29日",
@@ -70,7 +163,8 @@
     ],
     "jasonSays": "今天最值得关注的信号是，企业AI正从模型接入转向可执行工作流，而Skills与过程评估则在补齐智能体可靠交付的工程基础。",
     "jasonSaysEn": "The key signal today is that enterprise AI is moving from model access toward executable workflows, while skills and process evaluation are building the engineering foundation for reliable agents.",
-    "filename": "2026-10-29.md"
+    "filename": "2026-10-29.md",
+    "coverImage": "/news/2026-10-29.png"
   },
   {
     "slug": "2026-10-28",
