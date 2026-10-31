@@ -165,5 +165,16 @@ if (!imgRes.ok) {
 }
 const buf = Buffer.from(await imgRes.arrayBuffer());
 await fs.mkdir(outDir, { recursive: true });
-await fs.writeFile(outPath, buf);
-console.log(`✅ 已保存：${outPath} (${(buf.length / 1024).toFixed(1)} KB)`);
+
+// sharp 压缩：生图原图 ~2MB，转调色板 PNG 约一半，保留 .png 路径（快讯页是裸 <img>，读者直接下载这张图）。
+// quality 必须是 100：90 及以下会在米色圆章、深蓝侧栏上压出粉色/浅色噪点（2026-10-31 抽查过全部历史封面）
+let outBuf = buf;
+try {
+  const { default: sharp } = await import("sharp");
+  outBuf = await sharp(buf).png({ palette: true, quality: 100, compressionLevel: 9, effort: 10 }).toBuffer();
+  console.log(`🗜  压缩：${(buf.length / 1024).toFixed(0)}KB → ${(outBuf.length / 1024).toFixed(0)}KB`);
+} catch (e) {
+  console.warn(`⚠️  sharp 压缩跳过（${e.message}），保存原图`);
+}
+await fs.writeFile(outPath, outBuf);
+console.log(`✅ 已保存：${outPath} (${(outBuf.length / 1024).toFixed(1)} KB)`);
