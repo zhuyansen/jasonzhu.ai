@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-import { getDigestBySlug } from "@/lib/news";
+import { getDigestBySlug, digestTitle } from "@/lib/news";
 
 export const alt = "News digest cover";
 export const size = { width: 1200, height: 630 };
@@ -8,12 +8,13 @@ export const contentType = "image/png";
 export default async function OGImage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ lang: string; slug: string }>;
 }) {
-  const { slug } = await params;
+  const { lang, slug } = await params;
   const digest = getDigestBySlug(slug);
 
-  const title = digest?.title ?? "AI News Digest";
+  // 没有封面的那几期分享卡片用这张图：英文页用英文标题
+  const title = digest ? digestTitle(digest, lang) : "AI News Digest";
   const date = digest?.date ?? "";
 
   return new ImageResponse(

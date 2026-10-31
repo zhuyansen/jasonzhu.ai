@@ -40,8 +40,9 @@ export async function generateMetadata({
   if (!digest) return { title: "Not Found" };
 
   const mTitle = digestTitle(digest, lang);
-  const ogImages = digest.coverImage
-    ? [{ url: `${SITE_URL}${digest.coverImage}`, width: 1024, height: 1536, alt: mTitle }]
+  const cover = lang === "en" ? digest.coverImageEn : digest.coverImage;
+  const ogImages = cover
+    ? [{ url: `${SITE_URL}${cover}`, width: 1024, height: 1536, alt: mTitle }]
     : undefined;
 
   // 无英文字段的期数：en 页是中文复制，canonical 指回 zh，
@@ -92,6 +93,8 @@ export default async function NewsDetailPage({
   const dTitle = digestTitle(digest, lang);
   const dJasonSays = digestJasonSays(digest, lang); // AI 摘要
   const dComment = digestHumanComment(digest, lang); // Jason 本人点评
+  // 英文页只用英文封面，没有就不放（不拿中文封面凑）
+  const cover = isZh ? digest.coverImage : digest.coverImageEn;
 
   // Find prev/next digests for navigation
   const allDigests = getAllDigests();
@@ -145,11 +148,11 @@ export default async function NewsDetailPage({
       </div>
 
       {/* Cover image */}
-      {digest.coverImage && (
+      {cover && (
         <div className="mb-8 rounded-2xl overflow-hidden border border-gray-100 bg-gray-50">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={digest.coverImage}
+            src={cover}
             alt={dTitle}
             className="w-full h-auto block"
             loading="lazy"

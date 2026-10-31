@@ -89,6 +89,13 @@ jobs:
           APIMART_CLAUDE_KEY: ${{ secrets.APIMART_CLAUDE_KEY }}
         run: node scripts/translate-content.mjs news && node scripts/generate-news.mjs
 
+      # 英文封面：按英文标题排版（scripts/fonts 里的开源字体，不走 AI 生图、不花钱，同样的输入出同一张图），英文页 /en/news 用。
+      # 放在翻译之后（翻译会补漏掉的英文标题）；失败不挡发布，英文页这期先不放封面。
+      - name: Render English news cover
+        if: steps.done.outputs.skip != 'true'
+        continue-on-error: true
+        run: node scripts/render-news-cover-en.mjs ${{ inputs.date }} && node scripts/generate-news.mjs
+
       - name: Check for changes
         if: steps.done.outputs.skip != 'true'
         id: changes

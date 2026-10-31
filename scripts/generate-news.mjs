@@ -119,6 +119,8 @@ const digests = files.map((filename) => {
   // Auto-detect cover image at public/news/<slug>.png
   const coverImagePath = path.join(process.cwd(), "public/news", `${slug}.png`);
   const hasCover = fs.existsSync(coverImagePath);
+  // 英文封面 public/news/en/<slug>.png（render-news-cover-en.mjs 按英文标题排版），英文页用
+  const hasCoverEn = fs.existsSync(path.join(process.cwd(), "public/news/en", `${slug}.png`));
 
   return {
     slug,
@@ -135,6 +137,7 @@ const digests = files.map((filename) => {
     filename,
     ...(data.tweetUrl ? { tweetUrl: data.tweetUrl } : {}),
     ...(hasCover ? { coverImage: `/news/${slug}.png` } : {}),
+    ...(hasCoverEn ? { coverImageEn: `/news/en/${slug}.png` } : {}),
   };
 });
 

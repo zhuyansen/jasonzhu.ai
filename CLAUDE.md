@@ -39,8 +39,8 @@ Git：commit 后如远程有新提交（cron 会自动 commit 快讯），先 `g
 **内容管线（核心模式：md 是源，generated JSON 是编译产物）**
 - `src/content/blog/<slug>.md` → `generate-posts.mjs` → `src/generated/posts.json`（meta）+ `post-content/<slug>.json`（正文）。页面经 `src/lib/mdx.ts` 读取，MDXRemote 渲染。
 - 双语约定：`<slug>.en.md` 是英文版（不算独立文章），meta 带 `hasEnglish`；`getPostBySlug(slug, lang)` 在 en 时优先英文、回退中文。frontmatter 支持 `updated`（渲染"更新于" + schema dateModified）。
-- 英文页不该出现中文（2026-10-31 全站扫过一遍）：新博客发布时一起写 `.en.md`（选品周报的定时任务已经这么做）；标签在 frontmatter 里保持中文，英文显示名在 `src/lib/tag-labels.ts`，新标签补进去；出海专题指南的英文版在 `src/lib/guides/en/`，改中文指南时同步改。快讯 md 的英文行注入必须按行处理：旧翻译脚本的 `\Z`（JS 里是字面量 Z）和 `String.replace` 注入（标题里的 `$1` 被替换）插坏过 19 期。
-- `src/content/news/<日期>.md` → `generate-news.mjs` → `news.json`。解析器把每个 `###` 段解析成结构化 item；特殊行：`- **TitleEN**：`/`- **EN**：`（双语）；`### 💰 AI 融资速递` 段解析成 `funding[]` 结构化卡片（不算 item）。融资卡的英文版在 frontmatter 的 `fundingEn`（按公司名对应，正文不动），由 daily-news 里的翻译步骤（`translate-content.mjs news`，失败不挡发布）补上。
+- 英文页不该出现中文（2026-10-31 全站扫过一遍）：新博客发布时一起写 `.en.md`（选品周报的定时任务已经这么做）；标签在 frontmatter 里保持中文，英文显示名在 `src/lib/tag-labels.ts`，新标签补进去；出海专题指南的英文版在 `src/lib/guides/en/`，改中文指南时同步改。封面也分中英：博客有封面的文章要出一张英文封面，`.en.md` frontmatter 写 `coverImage`（编辑式封面用 `python3 scripts/render-blog-cover.py spec.json`，spec 里 `"lang": "en"`，输出 `public/blog/<slug>/cover-en.png`）；快讯英文封面 `public/news/en/<日期>.png` 由 `render-news-cover-en.mjs` 按英文标题排版（字体在 `scripts/fonts/`，开源字体，GitHub Actions 上也能跑），`generate-news.mjs` 识别成 `coverImageEn`，英文页只用它，没有就不放封面。快讯 md 的英文行注入必须按行处理：旧翻译脚本的 `\Z`（JS 里是字面量 Z）和 `String.replace` 注入（标题里的 `$1` 被替换）插坏过 19 期。
+- `src/content/news/<日期>.md` → `generate-news.mjs` → `news.json`。解析器把每个 `###` 段解析成结构化 item；特殊行：`- **TitleEN**：`/`- **EN**：`（双语）；`### 💰 AI 融资速递` 段解析成 `funding[]` 结构化卡片（不算 item）。融资卡的英文版在 frontmatter 的 `fundingEn`（按公司名对应，正文不动），由 daily-news 里的翻译步骤（`translate-content.mjs news`，失败不挡发布）补上。翻译之后还有一步出英文封面（`render-news-cover-en.mjs`，同样失败不挡发布）；补历史：`node scripts/render-news-cover-en.mjs --all`。
 
 **快讯收录规则（2026-10-06 起，应对「无人监督批量 AI 内容」审计风险）**
 - 快讯每天 AI 生成、自动发布 + 发邮件不变；但**默认 noindex、不进 sitemap**，`/news` 列表页也 noindex。只有 frontmatter 有 `humanComment`（Jason 本人点评）的那期才 index + 进 sitemap（`isDigestIndexable()`）。

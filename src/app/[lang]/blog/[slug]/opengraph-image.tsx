@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og";
 import { getPostBySlug } from "@/lib/mdx";
+import { getDictionary } from "@/lib/dictionaries";
 
 export const alt = "Blog post cover";
 export const size = { width: 1200, height: 630 };
@@ -8,13 +9,16 @@ export const contentType = "image/png";
 export default async function OGImage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ lang: string; slug: string }>;
 }) {
-  const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const { lang: rawLang, slug } = await params;
+  // 没有封面的文章，分享卡片用这张图：英文页用英文标题和分类名
+  const lang = rawLang === "en" ? "en" : "zh";
+  const post = getPostBySlug(slug, lang);
+  const categoryMap = ((await getDictionary(lang)).blog.categoryMap ?? {}) as Record<string, string>;
 
   const title = post?.title ?? "Blog Post";
-  const category = post?.category ?? "";
+  const category = post ? categoryMap[post.category] || post.category : "";
 
   return new ImageResponse(
     (

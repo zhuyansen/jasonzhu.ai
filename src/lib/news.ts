@@ -38,6 +38,8 @@ export interface NewsDigest {
   filename: string;
   tweetUrl?: string;
   coverImage?: string;
+  /** 英文封面（按英文标题排版），英文页用；没有就不放封面，不拿中文图凑 */
+  coverImageEn?: string;
 }
 
 /** 归档列表用精简版：不传 items 全文，只传分类和条数 */
