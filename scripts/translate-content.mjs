@@ -5,7 +5,8 @@
  *   node scripts/translate-content.mjs news          # 翻最近 30 天缺英文字段的快讯
  *   node scripts/translate-content.mjs news --all     # 所有快讯
  *
- * 本机 Node fetch 不稳，请加 CLAUDE_TRANSPORT=curl。
+ * 本机 Node fetch 不稳，请加 CLAUDE_TRANSPORT=curl。本机没有 apimart 的 Claude key 时用 GitHub Actions：
+ *   gh workflow run translate-content.yml -f mode=news -f all=true
  */
 import fs from "fs";
 import path from "path";
@@ -27,10 +28,14 @@ for (const envFile of [".env.local", ".env"]) {
   }
 }
 
-const KEY = process.env.ANTHROPIC_AUTH_TOKEN;
-const BASE = process.env.ANTHROPIC_BASE_URL || "https://api.aigocode.app";
-const MODEL = process.env.CLAUDE_MODEL || "claude-sonnet-4-6";
-if (!KEY) { console.error("❌ 缺 ANTHROPIC_AUTH_TOKEN"); process.exit(1); }
+// 2026-10-24 起不用 aigocode：默认走 apimart 的 Claude（APIMART_CLAUDE_KEY 只开通 opus-5-5）。
+// 本机没有这个 key，就在 GitHub Actions 里跑（.github/workflows/translate-content.yml）。手动设了 ANTHROPIC_AUTH_TOKEN 时仍走那个代理。
+const KEY = process.env.APIMART_CLAUDE_KEY || process.env.ANTHROPIC_AUTH_TOKEN;
+const BASE = process.env.APIMART_CLAUDE_KEY
+  ? process.env.APIMART_BASE_URL || "https://api.apimart.ai"
+  : process.env.ANTHROPIC_BASE_URL || "https://api.aigocode.app";
+const MODEL = process.env.CLAUDE_MODEL || (process.env.APIMART_CLAUDE_KEY ? "claude-opus-5-5" : "claude-sonnet-4-6");
+if (!KEY) { console.error("❌ 缺 APIMART_CLAUDE_KEY（或 ANTHROPIC_AUTH_TOKEN）"); process.exit(1); }
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -228,6 +233,8 @@ ${items.map((it, i) => `[${i}] ${it.title}\n${it.summary}`).join("\n\n")}`;
     }
   }
   console.log(`✅ 快讯翻译完成 ${done}/${todo.length}`);
+  // 一条都没翻成（key 坏了、通道全挂）时报错停住，别让工作流当成功
+  if (todo.length && !done) process.exit(1);
 }
 
 const mode = process.argv[2];

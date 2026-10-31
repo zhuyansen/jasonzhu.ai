@@ -1,0 +1,48 @@
+name: Translate content to English
+
+# 手动触发：给缺英文的快讯（或博客）补英文版，用 apimart 的 Claude（本机没有这个 key）。
+#   gh workflow run translate-content.yml -f mode=news -f all=true
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "news 或 blog"
+        required: true
+        default: news
+      all:
+        description: "news 才有用：true = 全部快讯，false = 最近的"
+        required: false
+        default: "false"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: translate-content
+  cancel-in-progress: false
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - name: Translate
+        env:
+          APIMART_CLAUDE_KEY: ${{ secrets.APIMART_CLAUDE_KEY }}
+        run: node scripts/translate-content.mjs ${{ inputs.mode }} ${{ inputs.all == 'true' && '--all' || '' }}
+      - name: Regenerate
+        run: node scripts/generate-news.mjs && node scripts/generate-posts.mjs
+      - name: Commit and push
+        run: |
+          if git diff --quiet && [ -z "$(git ls-files --others --exclude-standard src/content src/generated)" ]; then echo "no changes"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/content src/generated
+          git commit -m "🌐 内容补英文版（${{ inputs.mode }}）"
+          for i in 1 2 3; do git pull --rebase && git push && exit 0; sleep 10; done; exit 1
