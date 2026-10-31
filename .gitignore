@@ -60,3 +60,7 @@ ops/analytics/.secrets/
 ops/analytics/out/
 ops/analytics/state/
 ops/analytics/__pycache__/
+
+# 博客素材目录只放图片：发布时误拷进来的生图脚本、源稿会被当成静态文件公开（2026-10-31 删过一份写死 apimart key 的 gen-images.py）
+public/blog/**/*.py
+public/blog/**/*.md
