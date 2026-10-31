@@ -307,11 +307,14 @@ export default async function BlogPostPage({ params }: Props) {
           }}
           components={{
             img: (props) => (
+              // 正文图原图直出（不走 next/image），懒加载：滚到附近才下载，长文不再一打开就下全部图片
               // eslint-disable-next-line @next/next/no-img-element
               <img
                 {...props}
                 alt={props.alt || ""}
                 src={props.src?.replace(/^public\//, "/") || ""}
+                loading="lazy"
+                decoding="async"
               />
             ),
           }}
