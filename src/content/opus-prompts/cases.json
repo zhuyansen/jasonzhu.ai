@@ -1,8 +1,8 @@
 {
  "model": "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.5)",
  "threshold": 5000,
- "updatedAt": "2026-10-30T07:06:01.011Z",
- "statsCheckedAt": "2026-10-30T07:06:01.011Z",
+ "updatedAt": "2026-10-31T06:59:35.132Z",
+ "statsCheckedAt": "2026-10-31T06:59:35.132Z",
  "inclusionRule": "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -3674,6 +3674,54 @@
    }
   },
   {
+   "id": "2115968923053195523",
+   "url": "https://x.com/zin257856782/status/2115968923053195523",
+   "author": {
+    "handle": "zin257856782",
+    "name": "Zill / FABLE BEAT中の人"
+   },
+   "postedAt": "2026-10-30T00:47:58.000Z",
+   "addedAt": "2026-10-31",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "未完成的人工智能辅助策略游戏",
+    "en": "Unfinished AI-assisted strategy game"
+   },
+   "summary": {
+    "zh": "作者展示了用 AI 制作的游戏《おかしな戦場》的未完成视频，并分享了用 Opus 5.5 等模型、配合 skill 和工作流开发游戏时遇到的局限。",
+    "en": "An unfinished gameplay video of the creator's AI-made game 'Okashina Senjo', with a report on the limits of AI game development using skills and workflows with models such as Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 596352,
+    "likes": 1248,
+    "replies": 42,
+    "reposts": 133,
+    "bookmarks": 1041,
+    "checkedAt": "2026-10-31T06:59:35.132Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2115968575446056960/img/5PVs34MLeiW0h3q3.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2115968575446056960/vid/avc1/1280x720/opf8WHVoTCi-OcIh.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 284
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2104406657216237990",
    "url": "https://x.com/Data01/status/2104406657216237990",
    "author": {
@@ -7304,6 +7352,61 @@
     "width": 1226,
     "height": 720,
     "durationSec": 134
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2115878504067915826",
+   "url": "https://x.com/Belbizaz/status/2115878504067915826",
+   "author": {
+    "handle": "Belbizaz",
+    "name": "Frog King Simulator"
+   },
+   "postedAt": "2026-10-29T18:48:41.000Z",
+   "addedAt": "2026-10-31",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "青蛙国王浏览器模拟器",
+    "en": "Frog King browser simulator"
+   },
+   "summary": {
+    "zh": "一款程序化生成的 3D 小队射击游戏，包含职业、机甲、运输机和装甲车。作者用 Opus 5.5 和 Three.js 开发了一个多月，自己没有看过代码。",
+    "en": "A procedurally generated 3D squad shooter with classes, mechs, dropships and APCs, built over a month with Opus 5.5 and Three.js without the creator reading the code."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/Belbizaz/status/2116057934090379766",
+    "text": "Claude, spectate 100 battle simulations. Track framerate dips along with CPU and GPU cost. Research industry standard optimization techniques and apply them. If they decrease visual quality send me before and after screenshots so I can approve first."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 345852,
+    "likes": 3596,
+    "replies": 182,
+    "reposts": 151,
+    "bookmarks": 1476,
+    "checkedAt": "2026-10-31T06:59:35.132Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2115878351340703744/img/V7GMbIfSoQlxJ1CD.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2115878351340703744/vid/avc1/1280x720/rW2qPDTlFro5G1Nf.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 34
    },
    "evidence": {
     "via": "daily",
@@ -13546,6 +13649,56 @@
    }
   },
   {
+   "id": "2115756268925448353",
+   "url": "https://x.com/MengTo/status/2115756268925448353",
+   "author": {
+    "handle": "MengTo",
+    "name": "Meng To"
+   },
+   "postedAt": "2026-10-29T10:42:58.000Z",
+   "addedAt": "2026-10-31",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "家庭龙与地下城AI主持游戏",
+    "en": "Family D&D game with an AI game master"
+   },
+   "summary": {
+    "zh": "作者用 Opus 5.5 做了一个由 AI 担任主持人的 D&D 游戏，用来和孩子一起玩，其中在 fil.design 里调用了 Tripo。",
+    "en": "An AI game master for playing D&D with kids, made with Opus 5.5. It uses Tripo inside fil.design."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Tripo"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 177683,
+    "likes": 2928,
+    "replies": 184,
+    "reposts": 130,
+    "bookmarks": 1653,
+    "checkedAt": "2026-10-31T06:59:35.132Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2115755763453030400/img/1cN2nAOsEq3UDrWe.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2115755763453030400/vid/avc1/1280x720/5h9Fb2ERnXCh498P.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 60
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2114728296034226583",
    "url": "https://x.com/__rockbiter/status/2114728296034226583",
    "author": {
@@ -18164,6 +18317,67 @@
     "width": 1280,
     "height": 720,
     "durationSec": 57
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2115870373300326503",
+   "url": "https://x.com/0xMovez/status/2115870373300326503",
+   "author": {
+    "handle": "0xMovez",
+    "name": "Movez"
+   },
+   "postedAt": "2026-10-29T18:16:22.000Z",
+   "addedAt": "2026-10-31",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "跨平台磁盘清理应用",
+    "en": "Cross-platform disk cleanup app"
+   },
+   "summary": {
+    "zh": "Cleanly 是一款开源的 macOS 和 Windows 磁盘清理工具，在 Claude Code 中用 Opus 5.5 构建。作者提供了提示词、CleanMyMac 截图和一段渐变视频，开发由多个并行代理完成，并另设安全审查代理。",
+    "en": "Cleanly, an open-source disk cleaner for macOS and Windows built in Claude Code with Opus 5.5. The creator supplied a prompt plus CleanMyMac screenshots and a gradient video, and the build ran across parallel agents with a safety agent."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/0xMovez/status/2115870377523949687",
+    "text": "Build \"Cleanly\": a beautiful, safe disk cleaner for macOS and Windows, from scratch.\n\nI attached screenshots of CleanMyMac as a visual quality bar. Match the polish, not the brand:\noriginal name, logo, icons and copy.\n\n## How to work\n1. Design first, code later. Make 3 different UI concepts (light glass, dark neon, minimal)\nas clickable HTML mockups. Show them to me, let me pick and give feedback, iterate.\nOnly then start the app.\n2. Write the shared data contract before anything else: one `shared/types.ts` with every\ntype and the full IPC API between the Electron main process and the UI. Everything else\ncompiles against it.\n3. Build in parallel with sub-agents, each owning its own files (no two agents edit the same\nfile): scanner services, system services (startup apps, installed apps, protection),\nAI + settings, home screen, file screens, system screens, packaging.\n4. After the build, run a separate SAFETY agent whose only job is to break every code path\nthat deletes, trashes, uninstalls or toggles something, and fix what it finds.\n5. Then an integration agent: typecheck + build must be green.\n6. Verify for real: run the UI in a browser with realistic mock data, then run the packaged\napp on my machine read-only (scan, don't clean) and show me screenshots.\n\n## Stack\n- Electron (latest) + React + TypeScript + Vite. Main process bundled with esbuild (ESM),\npreload bundled as CJS.\n- Security: sandbox, contextIsolation, no nodeIntegration. The preload exposes only the typed\nAPI. Main rejects IPC from any frame that isn't our own index.html.\nExternal links: https only, opened in the system browser.\n- Fonts bundled offline (no CDN at runtime). Strict CSP in production.\n\n## Features\n- Smart Scan home: big \"X GB ready to reclaim\" number, one Clean button,\na mini space map, and 4 live cards (Cleanup, Speed, Protection, Apps).\n- Cleanup categories per OS:\n- Windows: user temp, Windows temp, browser caches (Chrome/Edge/Brave/Firefox, every\nprofile), app caches, crash dumps, Windows Update downloads, dev caches (npm/pip),\nRecycle Bin, old downloads (90+ days).\n- macOS: ~/Library/Caches, logs, browser caches, Xcode DerivedData, dev caches, Trash,\nold downloads.\n- Space Map: glass bubbles sized by folder size, drill-down, a switch between Home and every\nfixed drive (C:, D:…). Bubbles have physics: drag, throw, collide.\n- Large Files, Duplicates (size → partial hash → full hash).\n- Speed: startup apps with on/off toggles.\n- Applications: real app icons, sizes, uninstall via the vendor's own uninstaller\n(Windows) / move .app to Trash (macOS).\n- Protection: read-only check of the built-in security (Defender/firewall, Gatekeeper/\nXProtect/SIP) with a score. Say honestly that it does not replace an antivirus.\n- AI assistant: the user picks Claude or ChatGPT and pastes their own API key (encrypted\nwith Electron safeStorage). The model only ever sees file names, paths and sizes —\nnever contents — and returns JSON verdicts per path: safe / review / keep.\nUse the official Anthropic SDK.\n- Settings, a Feedback form, and a Tip screen.\n\n## Safety rules (non-negotiable)\n- Caches/temp/logs are regenerable: delete them for good (trashing them frees nothing).\nThe user's own files (large files, duplicates, old downloads, apps) ALWAYS go to the\nsystem Trash.\n- Never trust paths from the UI. Re-derive cleanup locations in the main process by\ncategory id.\n- Before any delete: resolve the FULL path with realpath, then check it again against the\nguard. Refuse drive roots, the home folder itself, OS folders, Program Files,\n$RECYCLE.BIN, System Volume Information, UNC/network paths, alternate data streams\n(file:stream), trailing dots/spaces, and Windows 8.3 short names (DOCUME~1).\n- Never follow symlinks or junctions when walking or deleting. Skip locked files and count\nthem.\n- Don't delete temp files modified in the last 24 h (running apps use them).\n- Startup toggles: write the same 12-byte REG_BINARY value in\n...\\Explorer\\StartupApproved that Task Manager writes (02… on, 03… off). Never delete\nentries. System-wide items need one elevated reg.exe behind a UAC prompt.\nAfter the prompt, re-read the registry instead of trusting the exit code\n(PowerShell 5.1 loses it).\n- File icons: never request icons for network/removable drives or .url/.lnk/.scf files.\nThey can make Windows authenticate to a remote host.\n- No shell strings built from UI input. execFile with timeouts and windowsHide.\n- reg.exe output is in the OEM code page (e.g. 866 on Russian Windows). Decode it properly.\n\n## Design language\nLight, airy, Apple-like:\n- glass panels with soft shadows;\n- a display font for big numbers, a clean UI font, a mono font for small labels;\n- a custom duotone icon set;\n- a signature glass capsule button with a thin rotating highlight on its rim;\n- gradient \"live\" cards with subtle motion (drifting glow, particles, a liquid slider).\nBackground: a slow WebGL \"mist\" shader (domain-warped fbm noise).\nPerformance rules:\n- render shaders at 0.3–0.5× resolution;\n- use real elapsed time per frame;\n- never put backdrop-filter over an animated canvas (it dropped us to 3 fps);\n- respect prefers-reduced-motion.\n\n## Packaging & release\n- electron-builder:\n- Windows: NSIS installer + portable .exe;\n- macOS: .dmg + .zip for arm64 and x64, ad-hoc signed (no Apple ID yet).\n- App icon generated from an SVG.\n- GitHub Actions: on a \"v*\" tag, build Windows on windows-latest and macOS on macos-latest,\nthen publish a GitHub Release with the files.\n- If NSIS fails locally with \"could not open file\", the project path is longer than the\nWindows 260-character limit. Build from a short folder.\n- Document the first-run steps in the README: SmartScreen → More info → Run anyway;\non Mac run `xattr -cr /Applications/Cleanly.app`.\n\n## Done means\n- npm run typecheck and npm run build are green;\n- every screen works in the browser demo with mock data;\n- the packaged Windows app runs on my machine and finds real junk;\n- CI produces a public release with .exe and .dmg;\n- you show me screenshots of the real app."
+   },
+   "referenceAssets": true,
+   "tools": [
+    "Claude Code",
+    "Electron",
+    "React",
+    "TypeScript",
+    "Vite",
+    "WebGL",
+    "GitHub Actions"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 136931,
+    "likes": 1236,
+    "replies": 46,
+    "reposts": 139,
+    "bookmarks": 1729,
+    "checkedAt": "2026-10-31T06:59:35.132Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2115870275925315584/img/WkXimd2ZbXW7mSy5.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2115870275925315584/vid/avc1/1280x720/2fq70ld8XFSKKDN9.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 35
    },
    "evidence": {
     "via": "daily",
@@ -24928,6 +25142,54 @@
    }
   },
   {
+   "id": "2115932308138287552",
+   "url": "https://x.com/mickeyxfriedman/status/2115932308138287552",
+   "author": {
+    "handle": "mickeyxfriedman",
+    "name": "mickey friedman"
+   },
+   "postedAt": "2026-10-29T22:22:29.000Z",
+   "addedAt": "2026-10-31",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "JavaScript生成艺术作品",
+    "en": "Generative JavaScript artwork"
+   },
+   "summary": {
+    "zh": "一幅吉卜力风格的太阳朋克蜥蜴插画，由 Opus 5.5 用纯 JavaScript 绘制。作者称用了数百条提示词，有时还提供参考图片。",
+    "en": "A Ghibli-style solarpunk lizard illustration drawn in pure JavaScript with Opus 5.5. The creator says it took hundreds of prompts and they sometimes supplied reference images."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 95798,
+    "likes": 833,
+    "replies": 42,
+    "reposts": 31,
+    "bookmarks": 448,
+    "checkedAt": "2026-10-31T06:59:35.132Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2115931871330873344/img/R4DF1Rxelp21ivIO.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2115931871330873344/vid/avc1/720x720/jr-yLUEkNzV0uUCG.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 29
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2104638743634391408",
    "url": "https://x.com/kevin_t_ngo/status/2104638743634391408",
    "author": {
@@ -25213,6 +25475,59 @@
     "width": 1280,
     "height": 720,
     "durationSec": 207
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2115953941808550313",
+   "url": "https://x.com/noclipepe/status/2115953941808550313",
+   "author": {
+    "handle": "noclipepe",
+    "name": "noclipepe"
+   },
+   "postedAt": "2026-10-29T23:48:26.000Z",
+   "addedAt": "2026-10-31",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "Chrome恐龙游戏模型对比",
+    "en": "Chrome Dino model comparison"
+   },
+   "summary": {
+    "zh": "作者用同一条提示词让 Gemini 4 Carbon、Opus 5.5、GPT-6 Astra 和 GPT-6.1 Terra 分别复刻 Chrome 小恐龙游戏，并对比了各自的耗时和费用。",
+    "en": "A comparison of Chrome Dino game clones built from the same prompt by Gemini 4 Carbon, Opus 5.5, GPT-6 Astra and GPT-6.1 Terra, with time and cost for each."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Gemini 4 Carbon",
+    "GPT-6.1 Terra",
+    "GPT-6 Astra",
+    "AI/ML API"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 93953,
+    "likes": 520,
+    "replies": 28,
+    "reposts": 26,
+    "bookmarks": 138,
+    "checkedAt": "2026-10-31T06:59:35.132Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2115953743229222912/img/RCCfXn-Npg54kX9K.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2115953743229222912/vid/avc1/720x900/EehGaD9oIVdIt3vS.mp4?tag=29",
+    "width": 720,
+    "height": 900,
+    "durationSec": 27
    },
    "evidence": {
     "via": "daily",
@@ -28175,6 +28490,63 @@
    }
   },
   {
+   "id": "2115912672604496025",
+   "url": "https://x.com/PawelJLisowski/status/2115912672604496025",
+   "author": {
+    "handle": "PawelJLisowski",
+    "name": "Paweł J Lisowski"
+   },
+   "postedAt": "2026-10-29T21:04:27.000Z",
+   "addedAt": "2026-10-31",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "浏览器游戏开发进展",
+    "en": "Browser game development progress"
+   },
+   "summary": {
+    "zh": "作者用 Opus 5.5 花了四周开发一款网页游戏，角色重做过四次，动画也调了很久。浏览器试玩版即将上线，完整版计划用 Rust 和 Bevy 做成 Steam 游戏。作者没有公开提示词。",
+    "en": "A browser game demo the creator built over four weeks with Opus 5.5, going through several character attempts and animation work. The full game is planned in Rust with Bevy for Steam. No prompt was shared."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Rust",
+    "Bevy",
+    "Godot",
+    "Unity",
+    "Unreal Engine 5",
+    "Blender",
+    "Tripo",
+    "Meshy"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 81690,
+    "likes": 125,
+    "replies": 21,
+    "reposts": 7,
+    "bookmarks": 75,
+    "checkedAt": "2026-10-31T06:59:35.132Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2115912230872977408/img/gX3evSUQEyucSUZk.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2115912230872977408/vid/avc1/1280x720/ggzR6njvCX8XGyb-.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 224
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103789882309234711",
    "url": "https://x.com/zacxbt/status/2103789882309234711",
    "author": {
@@ -29274,6 +29646,56 @@
    }
   },
   {
+   "id": "2115721297724420444",
+   "url": "https://x.com/VraserX/status/2115721297724420444",
+   "author": {
+    "handle": "VraserX",
+    "name": "VraserX e/acc"
+   },
+   "postedAt": "2026-10-29T08:24:00.000Z",
+   "addedAt": "2026-10-31",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "三维动画渲染对比",
+    "en": "3D animation render comparison"
+   },
+   "summary": {
+    "zh": "GPT-6.1 Terra 与 Claude Opus 5.5 的 3D 动画对比。作者称 Terra 版本在 Mac mini M4 上经过 9 轮打磨渲染完成，未公开提示词。",
+    "en": "A 3D animation comparison between GPT-6.1 Terra and Claude Opus 5.5. The creator says the Terra version took 9 polish iterations rendered on a Mac mini M4. No prompt was shared."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "GPT-6.1 Terra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 79017,
+    "likes": 964,
+    "replies": 88,
+    "reposts": 39,
+    "bookmarks": 500,
+    "checkedAt": "2026-10-31T06:59:35.132Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2115689272745361408/img/KEXBqhkxhU56y09R.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2115689272745361408/vid/avc1/720x1280/v-TYGLhwT-bSJI1Q.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 20
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103174501345493197",
    "url": "https://x.com/deedydas/status/2103174501345493197",
    "author": {
@@ -29771,6 +30193,61 @@
     "width": 720,
     "height": 1280,
     "durationSec": 64
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2115891194383200515",
+   "url": "https://x.com/0xRhinoX/status/2115891194383200515",
+   "author": {
+    "handle": "0xRhinoX",
+    "name": "Rhino"
+   },
+   "postedAt": "2026-10-29T19:39:06.000Z",
+   "addedAt": "2026-10-31",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "彩虹果冻模拟效果对比",
+    "en": "Rainbow jelly simulation comparison"
+   },
+   "summary": {
+    "zh": "用同一提示词让 Gemini 4 Carbon 和 Opus 5.5 分别制作可切割、钉穿、火烤的彩虹果冻交互模拟，并对比了两者的花费和耗时。",
+    "en": "A comparison of an interactive rainbow jelly simulation that can be cut, nailed and torched, built from the same prompt by Gemini 4 Carbon and Opus 5.5. The post compares cost and time for each model."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/0xRhinoX/status/2115891194383200515",
+    "text": "rainbow jelly you can cut, nail and torch."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Gemini 4 Carbon"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 77750,
+    "likes": 932,
+    "replies": 61,
+    "reposts": 38,
+    "bookmarks": 217,
+    "checkedAt": "2026-10-31T06:59:35.132Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2115890626784813056/img/HCUNWk9MNqR_3Cg-.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2115890626784813056/vid/avc1/726x720/jMNi131urMT-_toB.mp4?tag=29",
+    "width": 726,
+    "height": 720,
+    "durationSec": 23
    },
    "evidence": {
     "via": "daily",
@@ -37897,6 +38374,56 @@
    }
   },
   {
+   "id": "2115819373973708975",
+   "url": "https://x.com/Haleeeemahh/status/2115819373973708975",
+   "author": {
+    "handle": "Haleeeemahh",
+    "name": "Haleemah"
+   },
+   "postedAt": "2026-10-29T14:53:43.000Z",
+   "addedAt": "2026-10-31",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "模型输出并排对比",
+    "en": "Side-by-side model output comparison"
+   },
+   "summary": {
+    "zh": "Opus 5.5 与 Gemini 4 Carbon 的输出效果并排对比，作者未说明提示词或制作方法。",
+    "en": "A side-by-side comparison of output from Opus 5.5 and Gemini 4 Carbon. No prompt or method is described."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Gemini 4 Carbon"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 59466,
+    "likes": 1128,
+    "replies": 69,
+    "reposts": 22,
+    "bookmarks": 140,
+    "checkedAt": "2026-10-31T06:59:35.132Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2115819047853940737/img/dFBCS9p6HkhXPdH0.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2115819047853940737/vid/avc1/1168x720/zDr4pAtlPp3l1E_P.mp4?tag=29",
+    "width": 1168,
+    "height": 720,
+    "durationSec": 12
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2112500556916986309",
    "url": "https://x.com/cneuralnetwork/status/2112500556916986309",
    "author": {
@@ -40616,6 +41143,54 @@
     "width": 1280,
     "height": 720,
     "durationSec": 45
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2115785376292102495",
+   "url": "https://x.com/0xnicc0/status/2115785376292102495",
+   "author": {
+    "handle": "0xnicc0",
+    "name": "nicco"
+   },
+   "postedAt": "2026-10-29T12:38:37.000Z",
+   "addedAt": "2026-10-31",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "基于PDF说明的动态设计作品",
+    "en": "Motion design piece from a PDF brief"
+   },
+   "summary": {
+    "zh": "作者称用 Opus 5.5 只花 10 分钟就做出这段动效设计作品，并把提示词做成 PDF 放在 Google Drive 上，供他人上传给 Opus 5.5 复现。",
+    "en": "A motion design piece the creator says took 10 minutes with Opus 5.5. The prompt is shared as a PDF on Google Drive for others to upload to Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 54960,
+    "likes": 411,
+    "replies": 9,
+    "reposts": 34,
+    "bookmarks": 627,
+    "checkedAt": "2026-10-31T06:59:35.132Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2115783777376952320/img/2L681bukTrv8G58a.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2115783777376952320/vid/avc1/1280x720/0F0Ty944VIqznpdy.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 14
    },
    "evidence": {
     "via": "daily",
@@ -48235,6 +48810,58 @@
    }
   },
   {
+   "id": "2115849659797373038",
+   "url": "https://x.com/AI_Screening/status/2115849659797373038",
+   "author": {
+    "handle": "AI_Screening",
+    "name": "Pranav Reddy"
+   },
+   "postedAt": "2026-10-29T16:54:04.000Z",
+   "addedAt": "2026-10-31",
+   "lang": "en",
+   "models": [
+    "opus-5.5",
+    "fable-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "Three.js模型对比测试",
+    "en": "Three.js model comparison"
+   },
+   "summary": {
+    "zh": "作者用同一个 Three.js 测试对比了 Claude Fable 5.5（路由版）、Opus 5.5 和 Gemini 4 Argon 的输出，认为 Fable 5.5 的表现优于 Opus 5.5。",
+    "en": "A side-by-side Three.js test comparing output from Claude Fable 5.5 (routed), Opus 5.5 and Gemini 4 Argon; the creator says Fable 5.5 did better than Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js",
+    "Gemini 4 Argon"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 44172,
+    "likes": 299,
+    "replies": 29,
+    "reposts": 13,
+    "bookmarks": 42,
+    "checkedAt": "2026-10-31T06:59:35.132Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2115849523096637441/img/TCMeP5TM0cgp0hhY.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2115849523096637441/vid/avc1/720x1208/D2-vxSUuOWwCfBmM.mp4?tag=29",
+    "width": 720,
+    "height": 1208,
+    "durationSec": 15
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2105990418886480092",
    "url": "https://x.com/akakuma0219/status/2105990418886480092",
    "author": {
@@ -51642,6 +52269,68 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2115786060231770351",
+   "url": "https://x.com/finnardley/status/2115786060231770351",
+   "author": {
+    "handle": "finnardley",
+    "name": "Finn"
+   },
+   "postedAt": "2026-10-29T12:41:20.000Z",
+   "addedAt": "2026-10-31",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "棍人 survival 惊悚短片",
+    "en": "Stickman survival thriller"
+   },
+   "summary": {
+    "zh": "作者用 Claude Opus 5.5 纯代码制作了一段火柴人生存惊悚动画，约 20 分钟完成，没有用 AI 图像或视频。帖子里附上了交给 Claude Code 的完整提示词，流程涉及 Three.js、Playwright、ffmpeg 和语音合成。",
+    "en": "A stickman survival-thriller animation built entirely in code with Claude Opus 5.5 in about 20 minutes. The creator shares the full prompt for Claude Code, which uses Three.js, Playwright, ffmpeg and text-to-speech."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "post",
+    "sourceUrl": "https://x.com/finnardley/status/2115786060231770351",
+    "text": "<inputs>\nAsk me for: my video idea (one line is fine), the setting, the length (60-90 s) and the narrator (an ElevenLabs voice, or \"free\" for a local text-to-speech). Everything is built in code: no AI images, no AI video. Make it MY story, not a copy of an example.\n</inputs>\n\n<format>\nThe style is a second-person survival thriller with stickmen, built as a series:\n- \"Imagine you…\" hook with a time stamp in the first 3 s\n- a HUD with the DAY number and a clock that moves forward through the episode\n- 3-4 RULES, each one paid off on screen\n- a threat that escalates and is mostly shown, not told\n- a twist that makes one rule impossible\n- a two-choice ending (\"DO YOU OPEN IT?\" style, a green and a red option, \"COMMENT BELOW\") and \"FOLLOW FOR DAY 2\"\nAround 20-30 voice lines, 60-90 s, a new shot every 1.5-3 s.\n</format>\n\n<story>\nWrite a beat sheet and the script first and show me both before building anything.\n- One line = one visual. Rules are short commands.\n- Open a new question every ~10 s and only answer it with a bigger one.\n- Put the viewer in POV for the scary parts: what you see through a door, a window, a phone, a peephole.\n- The ending is a choice where both options look bad.\n- Write numbers twice: the caption form (\"11:58 PM\") and the spoken form (\"eleven fifty-eight P M\") for the text-to-speech.\n- Rotate settings between episodes (apartment, subway, school at night, hospital, cabin, plane, office, motel) and fit the threat to the setting.\n</story>\n\n<look>\nPick a palette per story, but keep the language:\n- real 3D low-poly sets with real lights and shadows; the mood comes from light (one warm practical, one cold fill, one strong accent such as a door gap, a screen or a siren)\n- the stickman is flat and 2D-looking: a light body with a thick dark outline, round strokes, dot eyes, no mouth; give the main character one mark (a scar, a cap, a colour) so doubles and callbacks read\n- the overlay: a monospace HUD top-left, chunky captions (1-3 words, key words in an accent colour), a tilted rule sticker with a big condensed title, phone screens drawn in 2D\n- banned: AI frames, glossy 3D characters, emojis, music with vocals, long captions\n</look>\n\n<shots>\nA library to adapt to the story (never use all of them):\n- the opener: a camera move that starts tight on you and pulls out to show where you are\n- POV phone in your hands (2D phone UI, two stick thumbs)\n- a macro on the one detail that matters\n- outside chaos from above (balcony, bridge, window): physics vehicles, a running crowd, something collapsing or burning\n- third-person action in the room: walking with planted feet, reaching, hesitating, barricading\n- POV interaction: throwing, holding a torch, opening something\n- a close-up of your face for the reaction\n- a low angle on a door or vent: light leaking in, shadows moving\n- knocks, shakes, things falling\n- a fisheye peephole, camera or window view of the threat stepping closer\n- the choice screen and the end card\n</shots>\n\n<tools>\nWhat each tool is for. Install whatever is missing, and ask me before anything paid:\n- three . js: the 3D engine; it runs inside a web page. Download its module file locally so renders don't depend on the internet. Use its post-processing passes for bloom, plus one custom lens shader for vignette, grain, fisheye and colour fringing.\n- cannon-es: a JavaScript physics engine for vehicles, falling debris and collapses.\n- Playwright (Python): opens the page in a real browser (Edge or Chrome with the GPU on) and captures every frame as an image.\n- ffmpeg: the command-line video and audio tool. It joins the frames into an MP4, cuts and filters the audio (highpass, lowpass and echo for voices behind doors), mixes, normalises loudness and makes the phone-size copy.\n- ElevenLabs, or Kokoro (free local text-to-speech), for the narrator.\n- faster-whisper: free local speech-to-text with word timestamps. Use it to cut the voice cleanly and to time every caption.\n- numpy and Pillow: to check audio levels and make contact sheets of stills.\n- Sound: free downloaded sound effects from Mixkit (never synthesized) and a dark cinematic drone or tension bed with no vocals.\n</tools>\n\n<build>\n1. One HTML page (film . html) with the 3D renderer at 1080x1920 drawn into a 2D canvas that also holds the overlay. A function window . seek (t) draws frame t and must be a pure function of time; every cut, sound and move is keyed to the word times.\n2. Stickman. Draw each figure with 2D canvas strokes onto its own texture and put it on a plane that always faces the camera, with an alpha test so it casts a real shadow and slight emissive so it reads in the dark. Pose with joint angles, and walk with 2-bone IK so the planted foot never slides.\n3. Physics and cloth. Simulate once at load with a fixed timestep, record the positions, then sample them by time, so every render is identical. Cloth (sheets, curtains, flags) is a verlet particle grid with wall and floor collisions and pinned points you can release.\n4. Voice. If you generate one long take, never cut it at the API's character timestamps: they drift and slice words. Transcribe the take with faster-whisper word timestamps, match it to the script, cut only in real silence between lines, and only add pause where the natural one is too short.\n5. Captions. Re-transcribe each final line, normalise numbers (\"6:42\" = \"6 42\", \"AM\" = \"a m\"), align the caption words to what was heard, and snap each word to its real start in the audio. Check that every caption has voice under it within ~120 ms.\n6. Render. Playwright steps window . seek through every frame at 30 fps, and ffmpeg encodes a high-quality master, then a phone copy under 30 MB.\n7. Mix with ffmpeg: the voice on top, the music about 12-14 dB under it, one sound effect per event, a dip before the big moment, loudness at -14 LUFS, then a scan for dropouts.\n</build>\n\n<gotchas>\n- is narrow: a normal lens sees very little sideways, so use wider lenses indoors and keep the subject close to the aim point.\n- Glass behind a solid frame is invisible: build mirrors and windows as a frame around a real hole.\n- Dust spread everywhere reads as stars, so keep it inside light beams.\n- Night shots go black after compression, so give each one a cold fill light.\n- Fog swallows distant things.\n- Never judge a reference or your own render from one frame every few seconds; check motion at the full frame rate.\n- Check cuts, captions and audio joints with numbers before every full render.\n</gotchas>\n\n<start>\nAsk me for the idea, show me the beat sheet and script, then 6 stills of the key shots before rendering the full video.\n</start>"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Claude Code",
+    "Three.js",
+    "cannon-es",
+    "Playwright",
+    "ffmpeg",
+    "ElevenLabs",
+    "Kokoro",
+    "faster-whisper"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 39531,
+    "likes": 575,
+    "replies": 40,
+    "reposts": 44,
+    "bookmarks": 959,
+    "checkedAt": "2026-10-31T06:59:35.132Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2115784242701500416/img/a_e-E2kTPxvwNIU5.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2115784242701500416/vid/avc1/720x1280/yPMX34ABAcld_GHW.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 83
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -56202,6 +56891,58 @@
    }
   },
   {
+   "id": "2115822157242704205",
+   "url": "https://x.com/Keyfobe/status/2115822157242704205",
+   "author": {
+    "handle": "Keyfobe",
+    "name": "سلطان"
+   },
+   "postedAt": "2026-10-29T15:04:47.000Z",
+   "addedAt": "2026-10-31",
+   "lang": "ar",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "用语音与游戏商人讨价还价",
+    "en": "Voice negotiation with a game merchant"
+   },
+   "summary": {
+    "zh": "作者让 Opus 5.5 改进自己之前用 Gemini 3 写的《生化危机4》Python 语音模组，现在可以用语音和商人讨价还价，想让他免费给回血道具。",
+    "en": "The creator had Opus 5.5 extend an existing Resident Evil 4 voice mod, originally made with a Gemini 3 Python script, so they can talk to the merchant by voice and try to negotiate a free heal."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Resident Evil 4",
+    "Gemini 3",
+    "Python"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 34774,
+    "likes": 339,
+    "replies": 13,
+    "reposts": 7,
+    "bookmarks": 246,
+    "checkedAt": "2026-10-31T06:59:35.132Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2115820800183779328/img/YMm29wGAFHjcet71.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2115820800183779328/vid/avc1/1280x720/BRm1X6XAkLGr1q0n.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 96
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103791907801620931",
    "url": "https://x.com/takamasa045/status/2103791907801620931",
    "author": {
@@ -56298,6 +57039,56 @@
     "width": 1280,
     "height": 720,
     "durationSec": 60
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2115852348018798874",
+   "url": "https://x.com/jasteinerman/status/2115852348018798874",
+   "author": {
+    "handle": "jasteinerman",
+    "name": "Jake Steinerman 🌎"
+   },
+   "postedAt": "2026-10-29T17:04:45.000Z",
+   "addedAt": "2026-10-31",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "写实交互式三维场景",
+    "en": "Realistic interactive 3D scene"
+   },
+   "summary": {
+    "zh": "作者展示了一个写实风格的 3D 交互体验，称它是用 Opus 5.5 加 Tripo 制作的。",
+    "en": "A realistic interactive 3D experience the creator says was made with Opus 5.5 and Tripo."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Tripo"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 34698,
+    "likes": 443,
+    "replies": 25,
+    "reposts": 19,
+    "bookmarks": 363,
+    "checkedAt": "2026-10-31T06:59:35.132Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2115818085097615360/img/zmb8mGgOaea2vHNV.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2115818085097615360/vid/avc1/1152x720/mjCcnUVhXmF0WBmc.mp4?tag=29",
+    "width": 1152,
+    "height": 720,
+    "durationSec": 64
    },
    "evidence": {
     "via": "daily",
@@ -56724,6 +57515,62 @@
     "width": 1280,
     "height": 720,
     "durationSec": 352
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2115768888507941008",
+   "url": "https://x.com/MrTacticalX/status/2115768888507941008",
+   "author": {
+    "handle": "MrTacticalX",
+    "name": "Mr Tactical"
+   },
+   "postedAt": "2026-10-29T11:33:06.000Z",
+   "addedAt": "2026-10-31",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "基于物理的落叶橡树",
+    "en": "Physics-based falling oak tree"
+   },
+   "summary": {
+    "zh": "Claude Opus 5.5 在 Blender 里搭了一棵橡树，约 5.5 万片叶子，摇动树干后叶子按烘焙物理效果飘落。用时 3 小时 50 分，花费 59.65 美元。",
+    "en": "A Blender oak tree with about 55,000 leaves that fall with baked physics when the tree is shaken. It was built by Claude Opus 5.5 in 3 hr 50 min at a cost of $59.65."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/MrTacticalX/status/2115877603428958649",
+    "text": "In Blender, build a very detailed, realistic oak tree. When the tree is shaken, its leaves fall off in a beautiful, physically convincing way. Film it as a short, premium video.\n\nBackground: a soft, seamless, warm cream / off-white studio backdrop. The tree stands on a small natural base: a mossy soil mound with some grass and roots. The rest of the frame is the cream backdrop with soft contact shadows. Minimal and calm, like a product shot.\n\nThe tree: a regular English oak. A thick, gnarled trunk with deep, furrowed bark. Realistic branching with twisting limbs that split into smaller branches and twigs. A full, dense crown of proper lobed oak leaves (thousands of them), with colour variation from green to a few yellowing leaves, translucency when backlit, and a few acorns. Real bark texture with displacement, and leaves with veins and a slight curl. It must look like a real oak, not a lollipop tree.\n\nLighting: soft, warm studio light with a large softbox key, a gentle rim light so the leaves glow, and soft shadows on the cream floor. Render in Cycles with denoising.\n\nAnimation (about 16 seconds): For the first 3 seconds the tree is still, with only a faint breeze and a slow camera push-in. At 3 seconds the tree is shaken hard, as if an invisible giant grabbed the trunk. The trunk and branches whip and sway with a natural lag, bending and springing back. Leaves detach and fall: each one tumbles, flutters and spins, gliding side to side like real falling leaves, not dropping straight down. The crown should visibly thin. A few acorns drop and bounce. The leaves land and pile up on the base and the floor around it. At the end the last few leaves drift down and the camera holds on the half-bare tree with its carpet of leaves.\n\nPhysics: use real baked physics. It must look natural, with no leaves passing through the floor.\n\nSound: a light breeze, a rustle burst on the shake, and soft leaf patter as they land. Real recorded sound effects only, kept subtle.\n\nFormat: 1080x1350 (4:5), tree centred, first frame bright."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Blender",
+    "Cycles"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 34350,
+    "likes": 520,
+    "replies": 58,
+    "reposts": 19,
+    "bookmarks": 209,
+    "checkedAt": "2026-10-31T06:59:35.132Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2115768836716654592/img/bqozWb4Qu2X0dHZk.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2115768836716654592/vid/avc1/720x900/HjrtF0GAhcGBx7W7.mp4?tag=29",
+    "width": 720,
+    "height": 900,
+    "durationSec": 16
    },
    "evidence": {
     "via": "daily",
@@ -61228,6 +62075,57 @@
    }
   },
   {
+   "id": "2115728069398757827",
+   "url": "https://x.com/noclipepe/status/2115728069398757827",
+   "author": {
+    "handle": "noclipepe",
+    "name": "noclipepe"
+   },
+   "postedAt": "2026-10-29T08:50:54.000Z",
+   "addedAt": "2026-10-31",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "机械眼三维动画对比",
+    "en": "Robotic eye 3D animation comparison"
+   },
+   "summary": {
+    "zh": "作者用同一条 3D 提示词对比了 Gemini 4 Carbon、Opus 5.5 和 GPT-6 Astra，内容是一只机械眼眨眼、对焦后爆炸拆解成各个零件。帖子列出了各模型的耗时和费用。",
+    "en": "A comparison of Gemini 4 Carbon, Opus 5.5 and GPT-6 Astra given the same 3D prompt: a robotic eye that blinks, focuses and then explodes into its parts. Times and costs are listed for each model."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Gemini 4 Carbon",
+    "GPT-6 Astra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 29824,
+    "likes": 330,
+    "replies": 41,
+    "reposts": 16,
+    "bookmarks": 100,
+    "checkedAt": "2026-10-31T06:59:35.132Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2115727567328051200/img/OUeAZmTZVGw7vFy8.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2115727567328051200/vid/avc1/720x1280/z0BLL_y5x9hmzoHl.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 29
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102717699600368045",
    "url": "https://x.com/chetaslua/status/2102717699600368045",
    "author": {
@@ -64863,6 +65761,57 @@
    }
   },
   {
+   "id": "2115797250689679394",
+   "url": "https://x.com/VincentWei93/status/2115797250689679394",
+   "author": {
+    "handle": "VincentWei93",
+    "name": "Vincent文森特"
+   },
+   "postedAt": "2026-10-29T13:25:48.000Z",
+   "addedAt": "2026-10-31",
+   "lang": "zh",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "宣传片动效镜头组件库（开源）",
+    "en": "Open-source motion shot library for promo videos"
+   },
+   "summary": {
+    "zh": "video-shotcraft 2.0 是一个开源技能，提供用于制作宣传片风格动效视频的镜头组件。作者用 Opus 5.5 重写了全部镜头组件，设计语言和源码免费开放。",
+    "en": "video-shotcraft 2.0, an open-source skill of shot components for promo-style motion videos. The creator rebuilt all of its shot components with Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Claude Code",
+    "Remotion"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 26904,
+    "likes": 492,
+    "replies": 27,
+    "reposts": 58,
+    "bookmarks": 641,
+    "checkedAt": "2026-10-31T06:59:35.132Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2115796998729433088/img/54p9jA9Twqsf-NCy.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2115796998729433088/vid/avc1/1280x720/U09eDPcofCb5WbrO.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 137
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2106160432184803363",
    "url": "https://x.com/jakebball11/status/2106160432184803363",
    "author": {
@@ -65823,6 +66772,57 @@
    }
   },
   {
+   "id": "2115779810932728259",
+   "url": "https://x.com/rewind02/status/2115779810932728259",
+   "author": {
+    "handle": "rewind02",
+    "name": "rewind"
+   },
+   "postedAt": "2026-10-29T12:16:30.000Z",
+   "addedAt": "2026-10-31",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "红斗篷兜帽猎人游戏角色建模与动画",
+    "en": "Rigged and animated hooded hunter game character"
+   },
+   "summary": {
+    "zh": "一个披红斗篷的兜帽猎人游戏角色，含 23 段动画。作者通过 Blender MCP 让 Opus 5.5 参照概念图完成建模、绑定和动画，并在专门搭建的审查场景中逐段检查。",
+    "en": "A hooded hunter game character with a red cloak and 23 animations, built, rigged and animated in Blender by Opus 5.5 via Blender MCP from concept art. Each clip was checked in a dedicated review scene."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Blender",
+    "Blender MCP"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 26310,
+    "likes": 608,
+    "replies": 38,
+    "reposts": 44,
+    "bookmarks": 778,
+    "checkedAt": "2026-10-31T06:59:35.132Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2115779685216894976/img/y_yvTD4hoV08pEt-.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2115779685216894976/vid/avc1/1280x720/PerHLqTPT1o9Rxcd.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 4
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2112186912060654023",
    "url": "https://x.com/numaausaumon/status/2112186912060654023",
    "author": {
@@ -66704,6 +67704,54 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2115722519336345861",
+   "url": "https://x.com/konstantinsaifo/status/2115722519336345861",
+   "author": {
+    "handle": "konstantinsaifo",
+    "name": "Konstantin Saifoulline"
+   },
+   "postedAt": "2026-10-29T08:28:51.000Z",
+   "addedAt": "2026-10-31",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "浏览器中的机器人装箱工位物理仿真",
+    "en": "Browser physics simulation of a robot packing cell"
+   },
+   "summary": {
+    "zh": "一个在浏览器中运行的机器人工作站仿真，使用 240 Hz 刚体物理，可调节产线速度并观察验收检查失败的过程。作者称由 Claude Opus 5.5 构建。",
+    "en": "A browser-based robot cell simulation with rigid-body physics at 240 Hz. Users can push the line speed and watch acceptance checks fail. The creator says Claude Opus 5.5 built it."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 25444,
+    "likes": 356,
+    "replies": 14,
+    "reposts": 30,
+    "bookmarks": 331,
+    "checkedAt": "2026-10-31T06:59:35.132Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2115722161692233728/img/Q3KKHwEhNi9CnUfw.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2115722161692233728/vid/avc1/1280x720/Yqw2AviDojd__UP-.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 46
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -73380,6 +74428,59 @@
    }
   },
   {
+   "id": "2115891986633027677",
+   "url": "https://x.com/EnvolDev/status/2115891986633027677",
+   "author": {
+    "handle": "EnvolDev",
+    "name": "Tony"
+   },
+   "postedAt": "2026-10-29T19:42:15.000Z",
+   "addedAt": "2026-10-31",
+   "lang": "en",
+   "models": [
+    "opus-5.5",
+    "sonnet-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "四款模型直升机旋翼斜盘机构对比",
+    "en": "Helicopter rotor swashplate mechanism across four models"
+   },
+   "summary": {
+    "zh": "用同一提示词让 Claude Opus 5.5、Sonnet 5.5 等四个模型生成直升机旋翼斜盘机构，并对比结果。",
+    "en": "A comparison of helicopter rotor swashplate mechanisms generated by four models from the same prompt, including Claude Opus 5.5 and Sonnet 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "GPT-6 Astra",
+    "DeepSeek V4.1 Flash",
+    "Claude Sonnet 5.5"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 21166,
+    "likes": 198,
+    "replies": 28,
+    "reposts": 10,
+    "bookmarks": 49,
+    "checkedAt": "2026-10-31T06:59:35.132Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2115891935844130816/img/0ozJwofiZIyqRqku.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2115891935844130816/vid/avc1/810x720/0vtZSeL9CWhI1zHZ.mp4?tag=29",
+    "width": 810,
+    "height": 720,
+    "durationSec": 20
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2109943963536998694",
    "url": "https://x.com/numaausaumon/status/2109943963536998694",
    "author": {
@@ -75287,6 +76388,57 @@
     "width": 1200,
     "height": 674,
     "durationSec": 60
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2115883707072385445",
+   "url": "https://x.com/scottstts/status/2115883707072385445",
+   "author": {
+    "handle": "scottstts",
+    "name": "Scott"
+   },
+   "postedAt": "2026-10-29T19:09:21.000Z",
+   "addedAt": "2026-10-31",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "《彼方へ》三维意境短片",
+    "en": "Toward the Beyond, a 3D journey scene"
+   },
+   "summary": {
+    "zh": "一个名为《彼方へ》的 Three.js 场景，作者使用 Opus 5.5 和 Tripo AI 制作。",
+    "en": "A Three.js scene titled 'Toward the Beyond', made with Opus 5.5 and Tripo AI."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Tripo",
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 20075,
+    "likes": 479,
+    "replies": 22,
+    "reposts": 28,
+    "bookmarks": 248,
+    "checkedAt": "2026-10-31T06:59:35.132Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2115882891313913856/img/iDkSocBTtl4zCk9Y.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2115882891313913856/vid/avc1/1146x720/FiZiVLGCHZ6OioKM.mp4?tag=29",
+    "width": 1146,
+    "height": 720,
+    "durationSec": 77
    },
    "evidence": {
     "via": "daily",
@@ -79677,6 +80829,56 @@
    }
   },
   {
+   "id": "2115785281445982233",
+   "url": "https://x.com/friedPotato2722/status/2115785281445982233",
+   "author": {
+    "handle": "friedPotato2722",
+    "name": "pirate slasher & vigilante gladiator"
+   },
+   "postedAt": "2026-10-29T12:38:15.000Z",
+   "addedAt": "2026-10-31",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "在Roblox中复刻的塔防游戏",
+    "en": "Tower defense game recreated in Roblox"
+   },
+   "summary": {
+    "zh": "作者用 Opus 5.5 在 Roblox 中复刻了《气球塔防 5》，耗时约 32 小时。",
+    "en": "A recreation of Bloons Tower Defense 5 in Roblox, made with Opus 5.5 in about 32 hours."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Roblox"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 18230,
+    "likes": 613,
+    "replies": 12,
+    "reposts": 64,
+    "bookmarks": 45,
+    "checkedAt": "2026-10-31T06:59:35.132Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2115785144640454656/img/xqXHls8mQO9nbaWj.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2115785144640454656/vid/avc1/1280x720/PVB6ZWkBq_iYq6Ux.mp4?tag=14",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2114074078340649183",
    "url": "https://x.com/marcthecreatorr/status/2114074078340649183",
    "author": {
@@ -81700,6 +82902,54 @@
    }
   },
   {
+   "id": "2115882221319958984",
+   "url": "https://x.com/elvar_official/status/2115882221319958984",
+   "author": {
+    "handle": "elvar_official",
+    "name": "Elvar"
+   },
+   "postedAt": "2026-10-29T19:03:27.000Z",
+   "addedAt": "2026-10-31",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "可暂停的十字曲轴V8发动机交互演示",
+    "en": "Interactive cross-plane V8 engine simulation"
+   },
+   "summary": {
+    "zh": "用 Claude Opus 5.5 制作的 V8 发动机交互模拟，可在燃烧过程中暂停。活塞运动按曲柄滑块公式计算，采用十字平面曲轴，点火顺序为 1-8-4-3-6-5-7-2。",
+    "en": "An interactive V8 engine simulation built with Claude Opus 5.5 that can be paused mid-combustion, using slider-crank math for piston motion and a cross-plane crank with a 1-8-4-3-6-5-7-2 firing order."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 17271,
+    "likes": 358,
+    "replies": 23,
+    "reposts": 51,
+    "bookmarks": 359,
+    "checkedAt": "2026-10-31T06:59:35.132Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2115882143360397312/img/Rcn-k46ojSVSQUzl.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2115882143360397312/vid/avc1/1280x720/rOBKGtz0UBmvo1nE.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 26
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103590369816375359",
    "url": "https://x.com/seiiiiiiiiiiru/status/2103590369816375359",
    "author": {
@@ -82534,6 +83784,54 @@
     "width": 1280,
     "height": 720,
     "durationSec": 97
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2115890589556236681",
+   "url": "https://x.com/0x_fokki/status/2115890589556236681",
+   "author": {
+    "handle": "0x_fokki",
+    "name": "Fokki"
+   },
+   "postedAt": "2026-10-29T19:36:42.000Z",
+   "addedAt": "2026-10-31",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "三次点击即可拆解的机械水母",
+    "en": "Robot jellyfish that splits apart in three clicks"
+   },
+   "summary": {
+    "zh": "用 Claude Opus 5.5 制作的机器水母，点击三次即可拆成三个部分。钟体脉动周期为 2.6 秒，九条触肢通过球窝关节连接，其中一条可展开查看内部结构。",
+    "en": "A robot jellyfish built with Claude Opus 5.5 that separates into three sections in three clicks, with a 2.6-second bell pulse, nine socket-jointed limbs and a detailed view of one limb."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 16816,
+    "likes": 155,
+    "replies": 27,
+    "reposts": 22,
+    "bookmarks": 146,
+    "checkedAt": "2026-10-31T06:59:35.132Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2115890464943386625/img/DttQxwtUzA527Nof.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2115890464943386625/vid/avc1/1280x720/Bw4Bm-j_eA6bNMvu.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 21
    },
    "evidence": {
     "via": "daily",
@@ -86997,6 +88295,56 @@
    }
   },
   {
+   "id": "2115759392192659746",
+   "url": "https://x.com/Aygramm_/status/2115759392192659746",
+   "author": {
+    "handle": "Aygramm_",
+    "name": "Ayomide Adeji"
+   },
+   "postedAt": "2026-10-29T10:55:22.000Z",
+   "addedAt": "2026-10-31",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "Chipper品牌动态广告",
+    "en": "Motion ads for Chipper"
+   },
+   "summary": {
+    "zh": "为 Chipper 制作的一组动态广告，用时不到一小时。作者向 Claude Opus 5.5 提供了截图、Logo 和少量指导，并在 Telegram 频道发布了工作流程。",
+    "en": "Motion ads for Chipper made in under an hour with Claude Opus 5.5, using screenshots, the logo and a little direction as inputs. The creator posted the workflow on Telegram."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [
+    "https://t.me/aygrammgenlab/851"
+   ],
+   "stats": {
+    "views": 14910,
+    "likes": 272,
+    "replies": 175,
+    "reposts": 14,
+    "bookmarks": 247,
+    "checkedAt": "2026-10-31T06:59:35.132Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/media/HVyv46pWkAAy1TF.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2115759317320118272/vid/avc1/720x1280/G92KsIc_x4dctDdi.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103598324687442284",
    "url": "https://x.com/thoughtcrime___/status/2103598324687442284",
    "author": {
@@ -87554,6 +88902,56 @@
    }
   },
   {
+   "id": "2115749240823583179",
+   "url": "https://x.com/BreejeAnadkat/status/2115749240823583179",
+   "author": {
+    "handle": "BreejeAnadkat",
+    "name": "Breeje Anadkat"
+   },
+   "postedAt": "2026-10-29T10:15:02.000Z",
+   "addedAt": "2026-10-31",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "应用付费墙动效设计",
+    "en": "Animated app paywall design"
+   },
+   "summary": {
+    "zh": "一个带动效的应用付费墙设计，由作者使用 Opus 5.5 和 Figma 制作。",
+    "en": "An animated app paywall design made with Opus 5.5 and Figma."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Figma"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 14648,
+    "likes": 280,
+    "replies": 27,
+    "reposts": 7,
+    "bookmarks": 350,
+    "checkedAt": "2026-10-31T06:59:35.132Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2115749206631817216/img/_N_jViVqhA1xryZA.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2115749206631817216/vid/avc1/720x1280/paR9ZHlYPq1zo7rH.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 10
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103759350330544254",
    "url": "https://x.com/lnkiai/status/2103759350330544254",
    "author": {
@@ -87898,6 +89296,54 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2115846417873039593",
+   "url": "https://x.com/techartist_/status/2115846417873039593",
+   "author": {
+    "handle": "techartist_",
+    "name": "Techartist"
+   },
+   "postedAt": "2026-10-29T16:41:11.000Z",
+   "addedAt": "2026-10-31",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "鸟类是现存恐龙的3D互动课本",
+    "en": "3D book on birds as living dinosaurs"
+   },
+   "summary": {
+    "zh": "用 Opus 5.5 制作的 3D 互动书，共六课，讲解鸟类是现生恐龙的化石证据。每个图版都有化石动画和预测、动手环节，并附对应 NGSS 与 AQA GCSE 生物课程的教师笔记。",
+    "en": "A six-lesson interactive 3D book built with Opus 5.5 on the fossil evidence that birds are living dinosaurs. Fossils animate on each plate, and teacher notes map to NGSS and AQA GCSE Biology."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 14522,
+    "likes": 383,
+    "replies": 25,
+    "reposts": 51,
+    "bookmarks": 215,
+    "checkedAt": "2026-10-31T06:59:35.132Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2115845234148167682/img/SWQZ3jGRJfiZkZiJ.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2115845234148167682/vid/avc1/1280x720/wrhGvdj_nQmt-SFd.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 22
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -88410,6 +89856,56 @@
    }
   },
   {
+   "id": "2115898852704456739",
+   "url": "https://x.com/therealRYC/status/2115898852704456739",
+   "author": {
+    "handle": "therealRYC",
+    "name": "Robert Y. Chen"
+   },
+   "postedAt": "2026-10-29T20:09:32.000Z",
+   "addedAt": "2026-10-31",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "基于3D心脏的十二导联心电图互动图谱",
+    "en": "Interactive 12-lead EKG atlas with 3D heart"
+   },
+   "summary": {
+    "zh": "作者做了一个27章的交互式心电图教学网站《The Heart in Twelve Leads》，所有波形都由同一个3D心脏模型模拟生成。网站在 Claude Code 中用 Claude Opus 5.5 搭建，过程中大约给了10次引导提示。",
+    "en": "A 27-chapter interactive EKG atlas, 'The Heart in Twelve Leads', in which every tracing is simulated from one 3D heart model. It was built with Claude Opus 5.5 in Claude Code using about 10 steering prompts."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Claude Code"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 14181,
+    "likes": 266,
+    "replies": 17,
+    "reposts": 50,
+    "bookmarks": 323,
+    "checkedAt": "2026-10-31T06:59:35.132Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2115896063165083648/img/CO7eYrSuzUUH8Oa3.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2115896063165083648/vid/avc1/1280x720/8edHQiGx5gbZmDbi.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 49
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2112240323560645092",
    "url": "https://x.com/vib3coded/status/2112240323560645092",
    "author": {
@@ -88902,6 +90398,57 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2115780819142979978",
+   "url": "https://x.com/ann_nnng/status/2115780819142979978",
+   "author": {
+    "handle": "ann_nnng",
+    "name": "Ann Nguyen"
+   },
+   "postedAt": "2026-10-29T12:20:31.000Z",
+   "addedAt": "2026-10-31",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "撕开网格露出画作的互动作品",
+    "en": "Tearable mesh that reveals artwork"
+   },
+   "summary": {
+    "zh": "一个网页互动作品，用户要撕开一层网格才能看到下面的画作。作者用纯 JavaScript 编写，借助 TypingMind 调用 Claude Opus 5.5 完成。",
+    "en": "An interactive web piece where the user tears a mesh to reveal artwork underneath. It was made with Claude Opus 5.5 in plain JavaScript with help from TypingMind."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "JavaScript",
+    "TypingMind"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 13995,
+    "likes": 544,
+    "replies": 16,
+    "reposts": 17,
+    "bookmarks": 275,
+    "checkedAt": "2026-10-31T06:59:35.132Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2115780658304045056/img/Y-bs2z_siRBFvX-C.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2115780658304045056/vid/avc1/1034x720/9fhPwgCQZp2LnqcM.mp4?tag=29",
+    "width": 1034,
+    "height": 720,
+    "durationSec": 42
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -94869,6 +96416,57 @@
    }
   },
   {
+   "id": "2115833056208560526",
+   "url": "https://x.com/MrTacticalX/status/2115833056208560526",
+   "author": {
+    "handle": "MrTacticalX",
+    "name": "Mr Tactical"
+   },
+   "postedAt": "2026-10-29T15:48:05.000Z",
+   "addedAt": "2026-10-31",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "Blender摇晃橡树物理效果模型对比",
+    "en": "Shaken oak tree physics in Blender, model comparison"
+   },
+   "summary": {
+    "zh": "作者给 Claude Opus 5.5 和 GPT-6.1 Terra 同一个提示词，让它们在 Blender 里搭建一棵橡树，摇动时树叶会按物理效果掉落。帖子对比了两者的耗时和花费。",
+    "en": "A comparison of Claude Opus 5.5 and GPT-6.1 Terra given the same prompt to build an oak tree in Blender whose leaves fall with physics when shaken. The post lists the time and cost of each run."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Blender",
+    "GPT-6.1 Terra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 12202,
+    "likes": 120,
+    "replies": 26,
+    "reposts": 3,
+    "bookmarks": 45,
+    "checkedAt": "2026-10-31T06:59:35.132Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2115832780726706176/img/MhQH4kpn_6oNtFHP.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2115832780726706176/vid/avc1/720x900/IZ6WH5GsaVjCcllj.mp4?tag=29",
+    "width": 720,
+    "height": 900,
+    "durationSec": 16
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103903798691606616",
    "url": "https://x.com/shownotover/status/2103903798691606616",
    "author": {
@@ -97594,6 +99192,57 @@
    }
   },
   {
+   "id": "2115889104617431257",
+   "url": "https://x.com/zeuuss_01/status/2115889104617431257",
+   "author": {
+    "handle": "zeuuss_01",
+    "name": "ZEUS⚡️"
+   },
+   "postedAt": "2026-10-29T19:30:48.000Z",
+   "addedAt": "2026-10-31",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "人体解剖科普视频",
+    "en": "Human anatomy explainer video"
+   },
+   "summary": {
+    "zh": "一段54秒的人体解剖科普视频。作者称视频由 Claude Opus 5.5 配合 Sunra API 调用 Seedance 2.5 生成，并对比了与其他平台的成本差异。",
+    "en": "A 54-second anatomy explainer video. The creator says it was made with Claude Opus 5.5 and Seedance 2.5 through Sunra's API, and compares its cost with other platforms."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Sunra",
+    "Seedance 2.5"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 11421,
+    "likes": 184,
+    "replies": 4,
+    "reposts": 21,
+    "bookmarks": 195,
+    "checkedAt": "2026-10-31T06:59:35.132Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2115888845296201729/img/c9ahzxe1mjmkn8v2.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2115888845296201729/vid/avc1/720x1280/3MZ7lPleR2Qdme42.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 54
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2110982632854966766",
    "url": "https://x.com/cgnot996/status/2110982632854966766",
    "author": {
@@ -98879,6 +100528,57 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2115862732637458763",
+   "url": "https://x.com/maxt3chno/status/2115862732637458763",
+   "author": {
+    "handle": "maxt3chno",
+    "name": "Max"
+   },
+   "postedAt": "2026-10-29T17:46:00.000Z",
+   "addedAt": "2026-10-31",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "网页端写实水面着色器",
+    "en": "Realistic web water shader"
+   },
+   "summary": {
+    "zh": "作者把自己的 Lagoon 项目和两个开源水面代码库合并，做成了一个写实的 Three.js 水体着色器。整个过程用 Opus 5.5 和 Astra 花了数小时完成。",
+    "en": "A realistic Three.js water shader made by combining the creator's own Lagoon project with two open-source water repositories. The work was done over hours with Opus 5.5 and Astra."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Three.js",
+    "Astra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 11066,
+    "likes": 320,
+    "replies": 45,
+    "reposts": 20,
+    "bookmarks": 174,
+    "checkedAt": "2026-10-31T06:59:35.132Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2115862215823605761/img/lwdwnC2QFZjCNfdX.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2115862215823605761/vid/avc1/1280x720/fle8dTA8mVt8OdvO.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 92
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -106233,6 +107933,57 @@
    }
   },
   {
+   "id": "2115710904021225589",
+   "url": "https://x.com/aniketjart/status/2115710904021225589",
+   "author": {
+    "handle": "aniketjart",
+    "name": "Aniket J"
+   },
+   "postedAt": "2026-10-29T07:42:42.000Z",
+   "addedAt": "2026-10-31",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "龙珠营救龟仙人海龟游戏关卡",
+    "en": "Dragon Ball turtle rescue game level"
+   },
+   "summary": {
+    "zh": "一款可在浏览器里玩的龙珠小游戏的更新版本，新增了营救龟仙人海龟的关卡。作者用 Opus 5.5、Crayon 和 Three.js 制作。",
+    "en": "An update to a browser-playable Dragon Ball game in which the player rescues Roshi's turtle. It was created with Opus 5.5, Crayon and Three.js."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Crayon",
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 8949,
+    "likes": 245,
+    "replies": 9,
+    "reposts": 21,
+    "bookmarks": 73,
+    "checkedAt": "2026-10-31T06:59:35.132Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2115709779251470336/img/-7EIq3RUrxg7MbHT.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2115709779251470336/vid/avc1/1118x720/eqT_Tiy--7ndoB9z.mp4?tag=29",
+    "width": 1118,
+    "height": 720,
+    "durationSec": 43
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103252008321024478",
    "url": "https://x.com/dave392750/status/2103252008321024478",
    "author": {
@@ -108925,6 +110676,57 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2115933104812724307",
+   "url": "https://x.com/scottstts/status/2115933104812724307",
+   "author": {
+    "handle": "scottstts",
+    "name": "Scott"
+   },
+   "postedAt": "2026-10-29T22:25:38.000Z",
+   "addedAt": "2026-10-31",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "陨落泰坦三维场景",
+    "en": "Fallen Titan 3D scene"
+   },
+   "summary": {
+    "zh": "作者用 Opus 5.5 和 Tripo 在 Three.js 中制作的 3D 场景《Fallen Titan》，是在尝试不同的风格和氛围。",
+    "en": "A 3D scene called Fallen Titan, which the creator says was made with Opus 5.5 and Tripo in Three.js while trying out different styles."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Tripo",
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 8227,
+    "likes": 148,
+    "replies": 8,
+    "reposts": 5,
+    "bookmarks": 69,
+    "checkedAt": "2026-10-31T06:59:35.132Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2115932322356715521/img/v4lOd2ElYuMx-SyP.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2115932322356715521/vid/avc1/1146x720/SfgDQEkX7kJfTmIh.mp4?tag=29",
+    "width": 1146,
+    "height": 720,
+    "durationSec": 73
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -113811,6 +115613,56 @@
    }
   },
   {
+   "id": "2115802517942497491",
+   "url": "https://x.com/dromexa/status/2115802517942497491",
+   "author": {
+    "handle": "dromexa",
+    "name": "Dromexa"
+   },
+   "postedAt": "2026-10-29T13:46:44.000Z",
+   "addedAt": "2026-10-31",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "可透视拆解的咖啡赛车三维模型",
+    "en": "X-ray and exploded café racer 3D model"
+   },
+   "summary": {
+    "zh": "作者用同一个提示词分别让 Gemini 4 Carbon 和 Opus 5.5 一次生成可交互的咖啡赛车模型，支持透视、剖切和爆炸拆解，并对比了两者的效果。",
+    "en": "A one-shot comparison of Gemini 4 Carbon and Opus 5.5 using the same prompt for an interactive café racer motorcycle that can be X-rayed, cut in half and exploded into parts."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Gemini 4 Carbon"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 6725,
+    "likes": 131,
+    "replies": 9,
+    "reposts": 10,
+    "bookmarks": 27,
+    "checkedAt": "2026-10-31T06:59:35.132Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2115800356542119936/img/SmAcA93FSyV9Pvfb.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2115800356542119936/vid/avc1/1280x720/ZOVQaR9r8nyFVd_A.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 29
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103656229717328129",
    "url": "https://x.com/codeSTACKr/status/2103656229717328129",
    "author": {
@@ -114444,6 +116296,62 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2115984446604329400",
+   "url": "https://x.com/KanaWorks_AI/status/2115984446604329400",
+   "author": {
+    "handle": "KanaWorks_AI",
+    "name": "KANA｜東京AI映像"
+   },
+   "postedAt": "2026-10-30T01:49:39.000Z",
+   "addedAt": "2026-10-31",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "九十种动漫风技能特效素材包",
+    "en": "Pack of 90 anime-style skill effects"
+   },
+   "summary": {
+    "zh": "免费发布的 90 种动漫风技能特效，涵盖 9 种属性，支持 Unity、Godot 和 Web。作者用 Claude Code（Opus 5.5）、Seedance 生成的视频素材和 Effekseer 制作，并把制作方法公开为一个 skill。",
+    "en": "A free pack of 90 anime-style skill effects in 9 elements for Unity, Godot and Web. The creator built it with Claude Code (Opus 5.5), Seedance video footage and Effekseer, and published the creation method as a skill."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Claude Code",
+    "Seedance 2.5",
+    "CapCut",
+    "Godot",
+    "Unity",
+    "Effekseer",
+    "ElevenLabs"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 6445,
+    "likes": 156,
+    "replies": 3,
+    "reposts": 11,
+    "bookmarks": 104,
+    "checkedAt": "2026-10-31T06:59:35.132Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2115983225751584768/img/OQmjj6ryazLqqkLy.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2115983225751584768/vid/avc1/1280x720/0E2vYg7HTXZR3Z2Q.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 81
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -115513,6 +117421,61 @@
     "width": 1146,
     "height": 720,
     "durationSec": 220
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2115752978946687084",
+   "url": "https://x.com/vib3coded/status/2115752978946687084",
+   "author": {
+    "handle": "vib3coded",
+    "name": "Vib3Coded"
+   },
+   "postedAt": "2026-10-29T10:29:53.000Z",
+   "addedAt": "2026-10-31",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "交互式果冻软体旗鱼",
+    "en": "Interactive soft-body jelly marlin"
+   },
+   "summary": {
+    "zh": "用 Opus 5.5 制作的交互式 WebGPU 软体果冻蓝枪鱼模拟，花费 11.6 美元。作者在帖子下公开了完整提示词和可试玩链接。",
+    "en": "An interactive WebGPU soft-body jelly simulation of a blue marlin, made with Opus 5.5 at a cost of $11.60. The full prompt and a playable artifact link are in the thread."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/vib3coded/status/2115753197432094802",
+    "text": "Make an interactive WebGPU soft-body jelly study of a blue marlin (XPBD tetrahedral soft body, SDF geometry, surface-nets render meshes, two jelly layers, refraction and Beer–Lambert absorption), in the style of the jelly whale and hammerhead studies. Anatomy: tall narrow body with a high nape, slim raised tail stalk with caudal keels, a long tapered round bill with a shorter lower jaw, a big eye; a tall raked sail of a front dorsal lobe running into a low crest, second dorsal and anal finlets, first anal fin, long sickle pectorals, thin pelvic spikes, and a high crescent tail — all from one fin recipe with convex leading and falcate trailing edges. Clear cobalt jelly over a milky silver belly with an angle-dependent sheen, dark back and fins as a pigment film, about fifteen flank bars made of spots and dashes, fin rays, gill cover, gape, nostrils and lateral line as normal bumps. Muscle-strain actions: tail swish, a quick side-to-side bill slash through beads of bait, folding/raising the sail by squashing its tets vertically with volume kept, and a \"light up\" mode where the bars glow electric blue (also flashing with each slash/swish). Palettes Cobalt, Lilac, Midnight, Sunrise; live readouts for mass, volume, bill-to-fork length and sail height; English UI."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "WebGPU"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 5958,
+    "likes": 106,
+    "replies": 22,
+    "reposts": 15,
+    "bookmarks": 34,
+    "checkedAt": "2026-10-31T06:59:35.132Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2115752897287725056/img/DTe6uZGLdIQ9XQRe.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2115752897287725056/vid/avc1/1280x720/ExQMbN_hByRVJwmm.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 17
    },
    "evidence": {
     "via": "daily",
@@ -116847,6 +118810,54 @@
    }
   },
   {
+   "id": "2115845754468356465",
+   "url": "https://x.com/AI_Screening/status/2115845754468356465",
+   "author": {
+    "handle": "AI_Screening",
+    "name": "Pranav Reddy"
+   },
+   "postedAt": "2026-10-29T16:38:33.000Z",
+   "addedAt": "2026-10-31",
+   "lang": "en",
+   "models": [
+    "fable-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "斑马奔跑动画",
+    "en": "Galloping zebra animation"
+   },
+   "summary": {
+    "zh": "作者分享了用 Claude Fable 5.5 测试版本生成的斑马奔跑效果，称这是他得到的最好的一次结果。",
+    "en": "The creator shares what they call their best output from a Claude Fable 5.5 checkpoint, showing a galloping zebra."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 5330,
+    "likes": 144,
+    "replies": 3,
+    "reposts": 3,
+    "bookmarks": 17,
+    "checkedAt": "2026-10-31T06:59:35.132Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2115845716979646464/img/h_ThLvnfKPOvfBvt.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2115845716979646464/vid/avc1/1300x720/M7joYTyxofrZJwG8.mp4?tag=29",
+    "width": 1300,
+    "height": 720,
+    "durationSec": 27
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2105765253799903602",
    "url": "https://x.com/HarshithLucky3/status/2105765253799903602",
    "author": {
@@ -116887,6 +118898,61 @@
     "width": 1280,
     "height": 720,
     "durationSec": 40
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2115912302272618696",
+   "url": "https://x.com/vib3coded/status/2115912302272618696",
+   "author": {
+    "handle": "vib3coded",
+    "name": "Vib3Coded"
+   },
+   "postedAt": "2026-10-29T21:02:59.000Z",
+   "addedAt": "2026-10-31",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "汇集果冻鱼群的泳池场景",
+    "en": "Pool scene with jelly fish from earlier projects"
+   },
+   "summary": {
+    "zh": "这是一个可在浏览器中互动的 3D 泳池，用户可以把果冻质感的海洋动物投入水中。作者用详细提示词让 Claude Opus 5.5 构建，并融入以往项目中的鱼，花费 22.72 美元。",
+    "en": "An interactive 3D browser pool where users drop soft-body jelly sea animals into simulated water. The creator built it with Claude Opus 5.5 from a detailed prompt, reusing fish from earlier projects, for $22.72."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/vib3coded/status/2115912474566488307",
+    "text": "Build \"Jelly Pool\": a single self-contained HTML file. It shows a sunlit outdoor swimming pool in real-time 3D, and the user drops soft-body jelly sea animals into it: a marlin, a humpback whale, an orca and a hammerhead shark. Each animal is made of clear, wobbly jelly that refracts the pool behind it and has a milky core and dark glossy eyes. It splashes in, dives and swims with a travelling body wave, and wobbles as it turns. The whales surface to breathe and blow spray. Everything is procedural: no image, model or sound files. English UI.\n\nTECH\n- three.js r128 from cdnjs (UMD build, global THREE), WebGL 2 required. If WebGL 2 is missing, show a friendly fallback message.\n- Soft-body physics runs in Web Workers created from a blob URL. Put the worker source in a <script type=\"text/plain\"> tag in the page and use navigator.hardwareConcurrency − 1 workers, clamped to 1–3. Spread the animals across the workers and give each new animal to the least busy one.\n- Each step, the main thread sends the swim frames to the workers. The workers reply with packed Float32Arrays as transferables.\n- Use adaptive quality: lower the internal render scale when frames run slow. On coarse-pointer or low-core devices, use coarser jelly meshes and cap the pool at 6 animals instead of 8.\n\nTHE POOL\n- A rounded-rectangle pool under a pitched perspective camera, fitted to the screen in any aspect ratio. The floor slopes from a shallow end on the left (≈0.55 m) to a deep end on the right (≈1.85 m).\n- Pale stone deck. Coping blocks with a rounded bullnose edge overhanging the waterline, standing a little proud of the deck, with a soft shadow along their outer edge and darker splash-wet stone near the water.\n- Shell: procedural mosaic tiles in a shader (field, border and a darker waterline band), each tile with bevel normals and a glassy glaze highlight.\n- Dappled shadow from a palm crown leaning over one corner, moving gently in the breeze.\n- Water simulation: a GPU heightfield wave equation on ping-pong float render targets, damped, with walls as boundaries. Touching or dragging across the water makes ripples. Add a slow circulation from return jets and gentle lapping swells.\n- Water surface: computed normals, refraction of the shell and the animals beneath (with the deep end bluer and darker), Fresnel reflection of the sky, and a reflection of the coping and the tiled wall band. Add a sharp sun glint, a meniscus and coping shadow along the walls, and foam patches from splashes.\n- Caustics: refract a grid of sun rays through the surface heightfield onto the floor into a caustic texture (area-change brightness). Use it to light the shell and anything under water.\n- Tools on the water:\n- Breeze: wind ripples from scrolling noise gradients.\n- Rain: random drop impulses plus ring ripples, and rain sound.\n- Whirlpool: a vortex that swirls the surface and the animals, a darkened funnel and spiral foam arms.\n\nTHE ANIMALS (soft bodies)\n- Define each species as a signed-distance body: smooth unions of ellipsoids and capsules, with fins as flattened shapes.\n- Marlin: long bill, tall sail fin, forked tail.\n- Humpback: long pectoral fins, throat pleats, knobby head.\n- Orca: tall dorsal fin, rounded head.\n- Hammerhead: wide cephalofoil, tall dorsal.\n- From the SDF, build:\n1. A tetrahedral simulation lattice: a voxel grid, keeping cells that intersect the body, each split into tets.\n2. A smooth render surface via surface nets, plus an inner milky core from an offset SDF and two eyes.\n3. An embedding: each render vertex is stored as the tet that contains it plus barycentric weights.\n- Physics in the worker, XPBD:\n- co-rotational shape matching per tet (warm-start rotations) plus edge-based internal viscosity, firmer in the core than the skin;\n- in the water (y < 0) the body is weightless with quadratic drag; above the water, gravity, so it falls back with a splash;\n- steering through a soft \"hold\" constraint that pulls the chest and head nodes (never fins or tail) toward a swim frame (position + rotation) moved by the main thread;\n- swimming by strain: a travelling wave of target lengthening and shortening along the spine toward the tail. It is side to side for fish (marlin, hammerhead) and up and down for whales (humpback, orca, using each tet's offset above or below the spine), with a bend toward the direction of a turn.\n- Output per step: node positions plus a per-node cofactor matrix of the deformation gradient F = Ds·Dm⁻¹ (columns f1×f2, f2×f0, f0×f1), averaged over the surrounding tets. Pack them as four rows of RGBA texels per node (position, then three cofactor columns) so the GPU can transform rest normals to deformed normals.\n\nJELLY RENDERING (GPU skinning + passes)\n- Upload the node texture as a float DataTexture each frame. In the vertex shader, use texelFetch to read the 4 nodes of the embedding tet, blend the positions with the barycentrics, and transform the rest normal with the blended cofactor.\n- Pass order:\n1. Opaque under-water scene into an RGBA half-float target: the shell, bubbles, and each animal's milky core and eyes, lit by caustic sunlight through the surface. Store the view depth in alpha.\n2. Jelly back faces into a float target: the linear view depth of the far side.\n3. Jelly front faces:\n- thickness = back depth − front depth;\n- Beer–Lambert absorption with a per-species tint;\n- refraction: bend the view ray and sample the opaque target behind;\n- Fresnel sky reflection and sun specular;\n- a soft glow where the sun passes through thin parts (fins, tail).\n4. A pale, soft floor shadow per animal, with the core a little denser.\n5. The water surface composited over everything, so animals under water are seen through the refracting, caustic-lit water, and parts above the water are seen directly.\n- Pigment patterns live in rest-space coordinates, so they ride the wobble. Each is a filtering film on the back, not paint:\n- marlin: cobalt back with a wavering edge and a silver belly, vertical bars on the flank that glow brighter when it is excited (soften them at a distance to avoid moiré), dark fins, the bill dark above;\n- humpback: no pigment, only throat pleats and a mouth line as shadowed grooves;\n- orca: black above the white line and on every fin, the white eye patch, a grey saddle;\n- hammerhead: a steel-grey cape over the back and the top of the hammer, dusky fin tips, five gill slits.\n- Eyes: glossy dark beads with a pale ring and a wide pupil.\n\nBEHAVIOUR\n- Steering field: an SDF of where an animal may swim and still be seen. Keep it inside the walls, away from the band hidden under the near coping (the band gets wider the deeper the animal swims) and out from under the dock of cards, leaning back toward the open middle.\n- Keep the centre, snout and tail inside.\n- Wander in depth.\n- Animals separate from each other (steering plus a direct positional push, so two bodies never share the water).\n- Whales: humpback and orca surface every so often. The back breaks the surface, then they blow: a puff of spray from the blowhole and a ring of ripples.\n- Close under the surface an animal leaves wakes, and the swish of a turn makes ripples. Crossing the surface makes splashes, droplets and foam.\n- States: in the air (held or thrown), diving in, swimming, leaving.\n- \"Clear pool\": the animals rise out of the water and melt away back into their cards.\n- Start state: a humpback and a marlin already swimming, and an orca thrown in a moment later.\n\nINTERFACE (glass dock at the bottom, light and clean)\n- Four cards, each with:\n- a live thumbnail of the jelly animal in its rest pose, rendered with the same shaders;\n- name and short description: Marlin \"Cobalt, silver belly\", Humpback \"Ocean blue\", Orca \"Black & white\", Hammerhead \"Steel grey\".\n- Card interaction:\n- tap a card: the animal is tossed into the pool;\n- drag a card: the animal hangs over the water under the pointer, dangling and wobbling, and drops in where it is released.\n- Tool buttons with SVG icons: Breeze (B), Rain (R), Whirlpool (W), Clear pool, Sound (M), Hide interface (H), plus a \"Show interface\" restore button.\n- Also:\n- a brand label \"Jelly Pool\" with a live count (\"Empty pool\", \"3 jellies\");\n- a hint: \"Tap a jelly to release it, or drag one onto the water\";\n- a toast when the pool is full: \"The pool is full. Clear it to add more jellies\".\n- Accessibility: aria-labels on the canvas and the cards, keyboard shortcuts, respect for prefers-reduced-motion, and a responsive layout down to phone width.\n\nSOUND (Web Audio, synthesized, off by default)\n- Gentle water lapping.\n- Splashes and plops scaled by impact.\n- Rain hiss.\n- Whale blows as a breathy whoosh.\n- Breeze."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 5184,
+    "likes": 120,
+    "replies": 31,
+    "reposts": 19,
+    "bookmarks": 45,
+    "checkedAt": "2026-10-31T06:59:35.132Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2115912189189996545/img/RCeYfFt5v8j5ctWx.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2115912189189996545/vid/avc1/1114x720/vCuXZSSN85K1DJ45.mp4?tag=29",
+    "width": 1114,
+    "height": 720,
+    "durationSec": 16
    },
    "evidence": {
     "via": "daily",
