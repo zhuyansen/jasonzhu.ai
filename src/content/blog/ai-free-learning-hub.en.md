@@ -1,6 +1,7 @@
 ---
 title: "The Complete Map of Free AI Learning: 10 Official Platforms, $0 Total Cost"
 excerpt: "Anthropic, OpenAI, Google, NVIDIA, Microsoft, AWS, Meta, IBM, DeepLearning.AI, Hugging Face — every official AI course from all 10 platforms is free. This is the master index: one comparison table + learning paths by role."
+coverImage: "/blog/ai-free-learning-hub/cover-en.png"
 ---
 
 Over the past few weeks I went through **the official free AI courses of all 10 major platforms**, one by one. The conclusion is simple:

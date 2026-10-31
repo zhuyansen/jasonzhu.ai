@@ -8,6 +8,7 @@ excerpt: >-
   generation, building mini apps with prompts, AI-assisted coding and data
   analysis, and a final project walkthrough. Includes 9 ready-to-use prompt
   templates.
+coverImage: "/blog/wu-enda-prompting-module-3/cover-en.png"
 ---
 
 Module 1 taught you how to "find information." Module 2 taught you how to "let AI think for you." **Module 3 teaches you to let AI actually *make* things for you** — generating images, building apps, and running data analysis.

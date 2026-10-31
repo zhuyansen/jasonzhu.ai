@@ -7,6 +7,7 @@ excerpt: >-
   — 6 lessons plus 7 ready-to-copy prompt templates. The one-sentence takeaway:
   90% of people are still using AI like Google, and they're leaving most of its
   potential on the table.
+coverImage: "/blog/wu-enda-prompting-module-1/cover-en.png"
 ---
 
 Andrew Ng released a new course in 2026 called *AI Prompting for Everyone*, built specifically for a world where AI has advanced far beyond where it stood in 2022. Module 1 is all about **finding information** — the most common use case for most people, and also the one where most people go wrong.

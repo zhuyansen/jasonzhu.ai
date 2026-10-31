@@ -1,6 +1,7 @@
 ---
 title: "Google Skills Complete Roadmap: AI Learning Gamified — Earn Skill Badges to Show Off on LinkedIn"
 excerpt: "Google has rebranded Cloud Skills Boost as Google Skills and reimagined AI learning as a series of 'dungeon runs' — each path has 5–8 activities, and you earn a Skill Badge to display on LinkedIn when you finish. This post covers the 3 paths beginners should take, plus direct links to each."
+coverImage: "/blog/google-skills-ai-learning-paths/cover-en.png"
 ---
 
 Google has **completely rebranded** its veteran learning platform — **Cloud Skills Boost is now Google Skills**.

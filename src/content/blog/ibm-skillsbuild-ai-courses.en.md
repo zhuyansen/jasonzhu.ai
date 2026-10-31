@@ -1,6 +1,7 @@
 ---
 title: "IBM SkillsBuild Free AI Courses: The Most Courses of Any Big Tech Platform (1,000+) — But One Wrong Click at Signup Cuts Your Library in Half"
 excerpt: "IBM SkillsBuild offers more free courses than any other major tech platform — 1,000+ and counting. There's one major trap though: pick the wrong account type at signup and you'll lose access to half the catalog. This guide shows you how to avoid it, walks through the three-stage AI learning path, and explains the official IBM digital badges."
+coverImage: "/blog/ibm-skillsbuild-ai-courses/cover-en.png"
 ---
 
 IBM SkillsBuild is the **undisputed leader in free courses among major tech platforms** — **1,000+ courses**, all completely free.

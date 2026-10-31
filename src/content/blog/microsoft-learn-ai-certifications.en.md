@@ -1,6 +1,7 @@
 ---
 title: "Microsoft Learn AI Certifications: The Big Tech Company That Gives Out Certs Most Generously — One Skill, One Badge"
 excerpt: "Microsoft is the most cert-friendly major tech company in the AI space — one skill gets you one certificate. The Microsoft Learn AI framework has four tiers, but most people only need the first two. This post breaks it down tier by tier, with direct official links and tips to avoid common pitfalls."
+coverImage: "/blog/microsoft-learn-ai-certifications/cover-en.png"
 ---
 
 When it comes to AI certifications, **Microsoft is the most generous of the major tech companies** — you can earn a certificate for each individual skill without having to grind through one massive "all-in-one" exam.

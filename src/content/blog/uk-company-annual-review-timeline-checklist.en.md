@@ -1,6 +1,7 @@
 ---
 title: "UK Company First-Year Filing, DIY: £228 All-In + Two Tax Breaks Most Founders Miss"
 excerpt: "Just completed my UK company's entire first-year compliance solo: Confirmation Statement ✅, Annual Accounts ✅, CT600 pending HMRC activation code. Total cost £228 (vs £200+ for an agent), done in 5 weeks of waiting plus one afternoon of work. Full timeline checklist + two legal tax breaks indie founders usually miss."
+coverImage: "/blog/uk-company-annual-review-timeline-checklist/cover-en.png"
 ---
 
 My earlier guide covered the full methodology. This post is the **real-world timeline log** — I just finished my UK company's entire first-year compliance, completely on my own.

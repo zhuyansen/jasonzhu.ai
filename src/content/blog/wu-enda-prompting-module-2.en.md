@@ -8,6 +8,7 @@ excerpt: >-
   agents, apply deep reasoning, avoid AI sycophancy, iterate on writing, and
   conduct objective reviews. 10 ready-to-use prompt templates you can copy right
   away.
+coverImage: "/blog/wu-enda-prompting-module-2/cover-en.png"
 ---
 
 Module 1 solves the "finding information" problem; Module 2 puts AI to real work—as a thinking partner, an editor, and a reviewer.

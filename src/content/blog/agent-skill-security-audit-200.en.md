@@ -1,6 +1,7 @@
 ---
 title: "I Audited 200+ Open-Source AI Agent Skills — 97.8% Have Never Had a Security Review"
 excerpt: "Who actually reviewed those open-source skills your AI agent installed last week? I put 200+ open-source agent skills through a 5-dimension audit framework and did deep security reviews on a subset. The scariest finding isn't a single number — it's this: out of 100,000+ skills, 97.8% have never been security-audited by anyone."
+coverImage: "/blog/agent-skill-security-audit-200/cover-en.png"
 ---
 
 Your AI agent installed a few open-source skills last week.

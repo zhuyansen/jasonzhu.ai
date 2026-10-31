@@ -1,6 +1,7 @@
 ---
 title: "Meta's Official PyTorch Tutorials: The De Facto 'Deep Learning Field Manual' — 9 Steps from Training to Deployment"
 excerpt: "Meta never built an AI academy, but it turned the official PyTorch tutorials into an industry standard — the de facto deep learning field manual. Completing them is the equivalent of working through a full modern deep learning curriculum. This post maps out the recommended 9-step path plus Llama companion resources."
+coverImage: "/blog/meta-pytorch-tutorials-guide/cover-en.png"
 ---
 
 Unlike the other big tech companies covered in previous posts, **Meta never built an AI academy**.

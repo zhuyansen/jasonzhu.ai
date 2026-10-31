@@ -1,6 +1,7 @@
 ---
 title: "Indie Seller Weekly #1: One in Five New Sellers Is Selling Software"
 excerpt: "October 8–14: 6,457 new sellers put up payment links; 5 new products worth a look; the fastest-growing new sites of the last three months; 4 demand signals checked against Google Trends; one tool, one exact-match domain per language; payment platform news."
+coverImage: "/blog/indie-payments-report-2026/software-share-by-month-en.png"
 ---
 
 Every week I count the websites that just put up a checkout link on one of 7 payment platforms (Stripe, Gumroad, Lemon Squeezy, Polar, Creem, Dodo, Paddle), to see what people are selling, what is taking off, and which needs nobody is serving yet.

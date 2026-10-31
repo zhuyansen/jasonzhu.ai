@@ -1,6 +1,7 @@
 ---
 title: "DeepLearning.AI Complete Course Guide: 120 Courses, Taught by the Authors Themselves — 6 Goal-Based Learning Paths"
 excerpt: "DeepLearning.AI now has 120 courses — more than the previous eight major tech companies combined. What really sets it apart, though, is something no one else can offer: the courses are taught directly by the people who built the models and tools. This guide breaks down course selections across 6 goal-based learning paths."
+coverImage: "/blog/deeplearning-ai-courses-guide/cover-en.png"
 ---
 
 DeepLearning.AI now has **120 courses** — more than Anthropic, OpenAI, Google, NVIDIA, Microsoft, AWS, Meta, and IBM combined.

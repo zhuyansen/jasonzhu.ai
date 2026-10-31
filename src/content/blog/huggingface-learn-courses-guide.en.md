@@ -1,6 +1,7 @@
 ---
 title: "The Complete Hugging Face Learn Guide: 12 Courses to Run, Fine-Tune, and Deploy Models Yourself"
 excerpt: "Hugging Face quietly grew its Learn section to 12 courses this year — half of them brand new. Unlike every other platform out there, HF teaches you how to run, fine-tune, and publish models yourself. You walk away with something real. Here are the 10 courses worth prioritizing."
+coverImage: "/blog/huggingface-learn-courses-guide/cover-en.png"
 ---
 
 Hugging Face's Learn section has **quietly grown to 12 courses this year** — and half of them are brand new.

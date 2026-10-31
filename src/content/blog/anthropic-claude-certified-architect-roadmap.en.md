@@ -1,6 +1,7 @@
 ---
 title: "Anthropic Claude Certified Architect Complete Roadmap: 8 Free Courses + $99 Exam"
 excerpt: "Anthropic launched the Claude Certified Architect certification on March 12, 2026, with 13 self-paced courses — all completely free, no registration required, no paywalls. The exam itself costs just $99. This post walks through a 12-week roadmap covering the 8 key courses in Weeks 1–9, with direct links to each."
+coverImage: "/blog/anthropic-claude-certified-architect-roadmap/cover-en.png"
 ---
 
 Anthropic launched the **Claude Certified Architect** certification on March 12, 2026, along with 13 self-paced courses. Here's what you need to know upfront:

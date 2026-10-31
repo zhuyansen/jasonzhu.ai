@@ -1,6 +1,7 @@
 ---
 title: "Indie Seller Weekly #2: Tools Built Around Coding Agents, Sold as One-Time Purchases"
 excerpt: "October 12–18: 6,152 new sellers put up payment links; the newer payment platforms passed September's total by mid-October; 5 new products worth a look; about 50 new software products built around coding agents; Dodo and Polar news."
+coverImage: "/blog/chuhai-weekly-02/cover-en.png"
 ---
 
 Every week I count the websites that just put up a checkout link on one of 7 payment platforms (Stripe, Gumroad, Lemon Squeezy, Polar, Creem, Dodo, Paddle), to see what people are selling, what is taking off, and which needs nobody is serving yet.
