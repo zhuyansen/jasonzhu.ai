@@ -22,8 +22,11 @@ export async function generateMetadata({
     title: isZh ? "出海选品周报：每周的新卖家、新产品和验证过的需求" : "Weekly: new sellers, new products and verified demand",
     description: isZh
       ? "每周一更新：数一遍 Stripe、Gumroad、Lemon Squeezy、Polar、Creem、Dodo、Paddle 上新挂出收款链接的网站，看大家在卖什么、什么起量了、哪些需求还没人做。"
-      : "Every Monday: the websites that started taking payments on Stripe, Gumroad, Lemon Squeezy, Polar, Creem, Dodo and Paddle, what they sell, what is taking off, and which demand nobody serves yet. In Chinese.",
-    alternates: { canonical: `${SITE_URL}/zh/go-global/weekly` },
+      : "Every Monday: the websites that started taking payments on Stripe, Gumroad, Lemon Squeezy, Polar, Creem, Dodo and Paddle, what they sell, what is taking off, and which demand nobody serves yet.",
+    alternates: {
+      canonical: `${SITE_URL}/${isZh ? "zh" : "en"}/go-global/weekly`,
+      languages: { zh: `${SITE_URL}/zh/go-global/weekly`, en: `${SITE_URL}/en/go-global/weekly`, "x-default": `${SITE_URL}/zh/go-global/weekly` },
+    },
   }, rawLang);
 }
 
@@ -48,7 +51,7 @@ export default async function WeeklyPage({
         <p className="text-gray-600 leading-relaxed">
           {isZh
             ? "每周数一遍 7 家收款平台（Stripe、Gumroad、Lemon Squeezy、Polar、Creem、Dodo、Paddle）上新挂出收款链接的网站：大家在卖什么，什么起量了，哪些需求还没人做。"
-            : "Every week I count the websites that started taking payments on seven platforms (Stripe, Gumroad, Lemon Squeezy, Polar, Creem, Dodo, Paddle): what they sell, what is taking off, and which demand nobody serves yet. Issues are written in Chinese."}
+            : "Every week I count the websites that started taking payments on seven platforms (Stripe, Gumroad, Lemon Squeezy, Polar, Creem, Dodo, Paddle): what they sell, what is taking off, and which demand nobody serves yet. Every issue has an English version."}
         </p>
       </header>
 

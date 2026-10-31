@@ -683,7 +683,7 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
         <div className="mt-3">
           <Card
             href={`/${lang}${GO_GLOBAL}/extensions`}
-            title={isZh ? "不做网站：插件、App 和 MCP 怎么上架" : "Not a website: shipping extensions, apps and MCP (in Chinese)"}
+            title={isZh ? "不做网站：插件、App 和 MCP 怎么上架" : "Not a website: shipping extensions, apps and MCP"}
             body={
               isZh
                 ? "我做 Chrome 插件从开发到上架踩过的坑，加上 Chrome、Edge、Firefox、App Store、Google Play、MCP 和 GPT 各家的官方规则。"
@@ -713,12 +713,12 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
             />
             <Card
               href={`/${lang}${GO_GLOBAL}/hk-company`}
-              title={isZh ? "香港公司每年要做什么" : "A Hong Kong company, year by year (in Chinese)"}
+              title={isZh ? "香港公司每年要做什么" : "A Hong Kong company, year by year"}
               body={isZh ? "周年申报、商业登记、审计报税、公司秘书，一张时间表和每年的最低成本。" : "Annual return, business registration, audit and profits tax, a company secretary, with a calendar and the minimum yearly cost."}
             />
             <Card
               href={`/${lang}${GO_GLOBAL}/company-roles`}
-              title={isZh ? "国内、英国、美国三家公司怎么分工" : "A China, UK and US company: who does what (in Chinese)"}
+              title={isZh ? "国内、英国、美国三家公司怎么分工" : "A China, UK and US company: who does what"}
               body={
                 isZh
                   ? "做 App 时国内版和海外版各挂哪家，美国客户的钱用谁收，三家每年各要报什么，国内公司给英国公司做开发怎么收服务费。"
@@ -744,7 +744,7 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
           <FromMyPost post={MY_POSTS.stack} lang={l} />
         </div>
         <div className="mt-6 pt-5 border-t border-gray-200">
-          <p className="mb-3 text-sm font-semibold text-gray-900">{isZh ? "收到钱以后" : "After the money arrives (in Chinese)"}</p>
+          <p className="mb-3 text-sm font-semibold text-gray-900">{isZh ? "收到钱以后" : "After the money arrives"}</p>
           <div className="grid gap-3 md:grid-cols-2">
             <Card
               href={`/${lang}${GO_GLOBAL}/cash-out`}
@@ -806,7 +806,7 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
         <div className="mt-3">
           <Card
             href={`/${lang}${GO_GLOBAL}/channels`}
-            title={isZh ? "SEO 以外的获客渠道" : "Channels beyond SEO (in Chinese)"}
+            title={isZh ? "SEO 以外的获客渠道" : "Channels beyond SEO"}
             body={
               isZh
                 ? "Product Hunt、Hacker News、Reddit、X、AI 工具目录站、邮件订阅、联盟分佣和付费广告：每个平台的官方规则和新手最容易踩的坑。"
@@ -819,7 +819,7 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
 
       <Step
         n={4}
-        title={isZh ? "每周看数据：出海选品周报" : "Every week: the new-seller weekly (in Chinese)"}
+        title={isZh ? "每周看数据：出海选品周报" : "Every week: the new-seller weekly"}
         lead={
           isZh
             ? "每周一更新：7 家收款平台上新挂出收款链接的网站，大家在卖什么，什么起量了，哪些需求还没人做。"

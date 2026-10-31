@@ -48,23 +48,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  // 出海选品周报目录页（出海专题下）：周报只有中文，en 页 canonical 指回 zh，所以只收 zh
+  // 出海选品周报目录页（出海专题下）：每期都有英文版（2026-10-31 起），中英文都收
   const latestIssue = getWeeklyIssues()[0];
-  entries.push({
-    url: `${SITE_URL}/zh/go-global/weekly`,
-    ...(latestIssue ? { lastModified: new Date(latestIssue.date + "T08:00:00+08:00") } : {}),
-    changeFrequency: "weekly",
-    priority: 0.8,
-  });
-
-  // 出海专题的指南页（出金、风控、香港公司、获客、插件）：只有中文，en 页 canonical 指回 zh，所以只收 zh
-  for (const guide of GUIDES) {
+  for (const lang of LANGS) {
     entries.push({
-      url: `${SITE_URL}/zh/go-global/${guide.slug}`,
-      lastModified: new Date(guide.checked + "T08:00:00+08:00"),
-      changeFrequency: "monthly",
-      priority: 0.7,
+      url: `${SITE_URL}/${lang}/go-global/weekly`,
+      ...(latestIssue ? { lastModified: new Date(latestIssue.date + "T08:00:00+08:00") } : {}),
+      changeFrequency: "weekly",
+      priority: lang === "zh" ? 0.8 : 0.6,
     });
+  }
+
+  // 出海专题的指南页（出金、风控、香港公司、获客、插件）：中英文都有（英文版 2026-10-31 补）
+  for (const guide of GUIDES) {
+    for (const l of LANGS) {
+      entries.push({
+        url: `${SITE_URL}/${l}/go-global/${guide.slug}`,
+        lastModified: new Date(guide.checked + "T08:00:00+08:00"),
+        changeFrequency: "monthly",
+        priority: l === "zh" ? 0.7 : 0.6,
+      });
+    }
   }
 
   // 博客文章：lastmod 用 frontmatter date（真实日期，不造假）。

@@ -11,7 +11,7 @@ import GoGlobalBreadcrumb from "../Breadcrumb";
 const SITE_URL = "https://jasonzhu.ai";
 const OUT = { target: "_blank", rel: "noopener noreferrer" } as const;
 
-// 指南页：内容在 src/lib/guides/*.ts，这里只负责排版。只有中文，en 页 canonical 指回 zh。
+// 指南页：内容在 src/lib/guides/*.ts（英文版在 guides/en/），这里只负责排版。
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
@@ -23,22 +23,24 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string; guide: string }> }): Promise<Metadata> {
   const { lang: rawLang, guide: slug } = await params;
-  const guide = guideBySlug(slug);
+  const lang = rawLang === "en" ? "en" : "zh";
+  const guide = guideBySlug(slug, lang);
   if (!guide) return {};
+  const url = (l: string) => `${SITE_URL}/${l}${GO_GLOBAL}/${guide.slug}`;
   return withSocialCards({
     title: guide.title,
     description: guide.description,
-    alternates: { canonical: `${SITE_URL}/zh${GO_GLOBAL}/${guide.slug}` },
+    alternates: { canonical: url(lang), languages: { zh: url("zh"), en: url("en"), "x-default": url("zh") } },
   }, rawLang);
 }
 
-function Sources({ item }: { item: GuideItem }) {
+function Sources({ item, lang }: { item: GuideItem; lang: Locale }) {
   if (!item.sources?.length) return null;
   return (
     <span className="ml-1 text-xs text-gray-400">
       {item.sources.map((s, i) => (
         <span key={s.url}>
-          {i > 0 && "、"}
+          {i > 0 && (lang === "en" ? ", " : "、")}
           <a href={s.url} {...OUT} className="text-blue-600 hover:underline">
             {s.label}
           </a>
@@ -48,13 +50,13 @@ function Sources({ item }: { item: GuideItem }) {
   );
 }
 
-function Items({ items }: { items: GuideItem[] }) {
+function Items({ items, lang }: { items: GuideItem[]; lang: Locale }) {
   return (
     <ul className="space-y-2 text-sm text-gray-700 leading-relaxed list-disc pl-5">
       {items.map((item) => (
         <li key={item.text}>
           {item.text}
-          <Sources item={item} />
+          <Sources item={item} lang={lang} />
         </li>
       ))}
     </ul>
@@ -96,12 +98,12 @@ function Mine({ mine, lang }: { mine: GuideMine; lang: Locale }) {
   );
 }
 
-function Section({ section }: { section: GuideSection }) {
+function Section({ section, lang }: { section: GuideSection; lang: Locale }) {
   return (
     <section id={section.id} className="mb-10 scroll-mt-24">
       <h2 className="text-xl font-semibold text-gray-900 mb-2">{section.title}</h2>
       {section.lead && <p className="text-sm text-gray-600 leading-relaxed mb-3">{section.lead}</p>}
-      <Items items={section.items} />
+      <Items items={section.items} lang={lang} />
     </section>
   );
 }
@@ -111,7 +113,7 @@ function RelatedPosts({ slugs, lang }: { slugs?: string[]; lang: Locale }) {
   if (!posts.length) return null;
   return (
     <section className="mb-10">
-      <h2 className="text-base font-semibold text-gray-900 mb-2">相关文章</h2>
+      <h2 className="text-base font-semibold text-gray-900 mb-2">{lang === "en" ? "Related posts" : "相关文章"}</h2>
       <ul className="space-y-1.5 text-sm">
         {posts.map((p) => (
           <li key={p.slug}>
@@ -129,8 +131,9 @@ function RelatedPosts({ slugs, lang }: { slugs?: string[]; lang: Locale }) {
 export default async function GuidePage({ params }: { params: Promise<{ lang: string; guide: string }> }) {
   const { lang: rawLang, guide: slug } = await params;
   const lang = (rawLang === "en" ? "en" : "zh") as Locale;
-  const guide = guideBySlug(slug);
+  const guide = guideBySlug(slug, lang);
   if (!guide) notFound();
+  const isZh = lang === "zh";
   const dict = await getDictionary(lang);
 
   return (
@@ -142,31 +145,32 @@ export default async function GuidePage({ params }: { params: Promise<{ lang: st
         parent={guide.parent ? { name: guide.parent.short, path: guide.parent.path } : undefined}
       />
       <header className="mb-8">
-        <p className="text-sm font-medium text-blue-600 mb-2">出海专题</p>
+        <p className="text-sm font-medium text-blue-600 mb-2">{isZh ? "出海专题" : "Going global"}</p>
         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">{guide.title}</h1>
         <p className="text-gray-600 leading-relaxed">{guide.intro}</p>
         <p className="mt-3 text-xs text-gray-400">
-          按官方页面整理，核实于 {guide.checked}。规则会变，办事前以链接里的官方最新页面为准。
-          {lang === "en" && " This guide is in Chinese."}
+          {isZh
+            ? `按官方页面整理，核实于 ${guide.checked}。规则会变，办事前以链接里的官方最新页面为准。`
+            : `Compiled from official pages, checked on ${guide.checked}. Rules change, so go by the latest official page behind each link before you act.`}
         </p>
       </header>
       {guide.mine && <Mine mine={guide.mine} lang={lang} />}
       {guide.warning && (
         <p className="mb-10 rounded-2xl border border-red-100 bg-red-50/60 p-4 text-sm text-gray-700 leading-relaxed">
           ⚠️ {guide.warning.text}
-          <Sources item={guide.warning} />
+          <Sources item={guide.warning} lang={lang} />
         </p>
       )}
       {guide.sections.map((s) => (
-        <Section key={s.id} section={s} />
+        <Section key={s.id} section={s} lang={lang} />
       ))}
       <section className="mb-10">
-        <h2 className="text-xl font-semibold text-gray-900 mb-2">新手最容易踩的坑</h2>
-        <Items items={guide.pitfalls} />
+        <h2 className="text-xl font-semibold text-gray-900 mb-2">{isZh ? "新手最容易踩的坑" : "Common beginner mistakes"}</h2>
+        <Items items={guide.pitfalls} lang={lang} />
       </section>
       {guide.unknowns.length > 0 && (
         <section className="mb-10 rounded-2xl border border-gray-100 bg-gray-50 p-5">
-          <h2 className="text-base font-semibold text-gray-900 mb-2">官方没说清、我们也没查到的</h2>
+          <h2 className="text-base font-semibold text-gray-900 mb-2">{isZh ? "官方没说清、我们也没查到的" : "What the official pages leave unclear, and we could not confirm"}</h2>
           <ul className="space-y-1.5 text-sm text-gray-600 leading-relaxed list-disc pl-5">
             {guide.unknowns.map((u) => (
               <li key={u}>{u}</li>
@@ -177,7 +181,7 @@ export default async function GuidePage({ params }: { params: Promise<{ lang: st
       <RelatedPosts slugs={guide.posts} lang={lang} />
       <p className="mb-8 text-sm">
         <Link href={`/${lang}${GO_GLOBAL}${guide.parent?.path ?? ""}`} className="text-blue-600 hover:underline">
-          ← 回到{guide.parent?.short ?? "出海专题"}
+          ← {isZh ? `回到${guide.parent?.short ?? "出海专题"}` : `Back to ${guide.parent?.short ?? "Going global"}`}
         </Link>
       </p>
       <SubscribeForm source="go-global" lang={lang} dict={dict} />
