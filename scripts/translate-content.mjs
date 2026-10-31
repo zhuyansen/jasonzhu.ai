@@ -147,16 +147,37 @@ ${content}`;
 }
 
 // ─── 快讯翻译 ───
-function parseItems(content) {
-  const items = [];
-  for (const sec of content.split(/^### /m).filter(Boolean)) {
-    const lines = sec.trim().split("\n");
-    const title = lines[0]?.trim();
-    if (!title || title.includes("融资速递")) continue;
-    const summary = lines.slice(1).filter((l) => l.trim() && !l.trim().startsWith("- **")).join(" ").trim();
-    if (title) items.push({ title, summary });
+// 快讯正文按行切成块：每个 "### " 开一个块（💰 融资速递段不算条目）。按行处理、不用正则替换，
+// 2026-10-31 修过两个坑：旧版用 \Z 判断结尾（JS 里是字面量 Z，块在第一个大写 Z 处被截断，英文插到半句中间），
+// 用 String.replace 注入 TitleEN（标题里的 "$1"，比如 $15K，被替换成了链接行）。
+function splitBlocks(content) {
+  const blocks = [];
+  let cur = { head: true, lines: [] };
+  for (const line of content.split("\n")) {
+    if (line.startsWith("### ")) {
+      blocks.push(cur);
+      cur = { head: false, item: !line.startsWith("### 💰") && !line.includes("融资速递"), lines: [line] };
+    } else cur.lines.push(line);
   }
-  return items;
+  blocks.push(cur);
+  return blocks;
+}
+
+const META_RE = /^- \*\*(板块|来源|链接|TitleEN|EN)\*\*[：:]/;
+function itemInfo(b) {
+  const lines = b.lines;
+  return {
+    title: lines[0].slice(4).trim(),
+    summary: lines.slice(1).filter((l) => l.trim() && !l.trim().startsWith("- **")).join(" ").trim(),
+    hasTitleEn: lines.some((l) => /^- \*\*TitleEN\*\*[：:]/.test(l.trim())),
+    hasEn: lines.some((l) => /^- \*\*EN\*\*[：:]/.test(l.trim())),
+  };
+}
+
+function needsNews(raw) {
+  const { data, content } = matter(raw);
+  const items = splitBlocks(content).filter((b) => b.item).map(itemInfo);
+  return items.length > 0 && (!data.jasonSaysEn || items.some((it) => !it.hasTitleEn || !it.hasEn));
 }
 
 async function translateNews(all) {
@@ -165,69 +186,60 @@ async function translateNews(all) {
   const files = fs.readdirSync(dir).filter((f) => f.endsWith(".md") && !f.startsWith("_"))
     .filter((f) => all || f.replace(".md", "") >= cutoff)
     .sort();
-
-  const todo = files.filter((f) => {
-    const c = fs.readFileSync(path.join(dir, f), "utf-8");
-    // 已全部翻译：有 jasonSaysEn 且每个 item 都有 EN 行
-    const items = parseItems(matter(c).content);
-    const enCount = (c.match(/- \*\*EN\*\*[：:]/g) || []).length;
-    return !(c.includes("jasonSaysEn:") && enCount >= items.length && items.length > 0);
-  });
+  const todo = files.filter((f) => needsNews(fs.readFileSync(path.join(dir, f), "utf-8")));
   console.log(`📰 快讯：范围 ${files.length}，待补英文 ${todo.length}`);
 
   let done = 0;
   for (const f of todo) {
     const fp = path.join(dir, f);
-    let raw = fs.readFileSync(fp, "utf-8");
-    const { data, content } = matter(raw);
-    const items = parseItems(content);
-    if (!items.length) { console.log(`  ⏭ ${f}: 无 item`); continue; }
+    const { data, content } = matter(fs.readFileSync(fp, "utf-8"));
+    const blocks = splitBlocks(content);
+    const itemBlocks = blocks.filter((b) => b.item);
+    // 只送缺英文的条目
+    const missing = itemBlocks.map((b) => ({ b, ...itemInfo(b) })).filter((x) => !x.hasTitleEn || !x.hasEn);
+    const needJs = !data.jasonSaysEn && data.jasonSays;
 
     const prompt = `Translate the following Chinese AI-news digest fields to concise, native English. Return ONLY valid JSON, no fences.
 
 Format:
 {"jasonSaysEn":"...","items":[{"titleEn":"5-12 word English title","summaryEn":"40-70 word English summary"}]}
 
-The items array must have EXACTLY ${items.length} entries in the SAME order.
+The items array must have EXACTLY ${missing.length} entries in the SAME order.${needJs ? "" : ' Return "jasonSaysEn":"" (not needed).'}
 
-jasonSays: ${data.jasonSays || ""}
+jasonSays: ${needJs ? data.jasonSays : ""}
 
 items:
-${items.map((it, i) => `[${i}] ${it.title}\n${it.summary}`).join("\n\n")}`;
+${missing.map((it, i) => `[${i}] ${it.title}\n${it.summary}`).join("\n\n")}`;
 
     try {
       const out = stripFence(await callClaude(prompt, 8000));
       const m = out.match(/\{[\s\S]*\}/);
       const parsed = JSON.parse(m[0]);
       const en = parsed.items || [];
-      if (en.length !== items.length) { console.log(`  ❌ ${f}: item 数不匹配 ${en.length}/${items.length}`); continue; }
+      if (en.length !== missing.length) { console.log(`  ❌ ${f}: item 数不匹配 ${en.length}/${missing.length}`); continue; }
 
-      // 注入：frontmatter 加 jasonSaysEn；每个 item 加 TitleEN/EN 行
-      let body = content;
-      // jasonSaysEn 写进 frontmatter（如已存在则跳过）
-      if (!raw.includes("jasonSaysEn:") && parsed.jasonSaysEn) {
-        data.jasonSaysEn = parsed.jasonSaysEn;
-      }
-      // 逐 item 注入（按顺序匹配 ### 标题）
-      let idx = 0;
-      body = body.replace(/^(### (?!💰)(.+)\n(?:[\s\S]*?))(?=^### |\Z)/gm, (block, _b, title) => {
-        if (idx >= en.length) return block;
-        const e = en[idx]; idx++;
-        if (block.includes("- **EN**")) return block; // 已有
-        let b = block.trimEnd();
-        // 在 - **链接** 行后插 TitleEN
-        if (e.titleEn && !b.includes("- **TitleEN**")) {
-          b = b.replace(/(- \*\*链接\*\*[：:][^\n]*\n)/, `$1- **TitleEN**：${e.titleEn}\n`);
+      missing.forEach((x, i) => {
+        const lines = x.b.lines;
+        const e = en[i] || {};
+        const titleEn = (e.titleEn || "").replace(/\s+/g, " ").trim();
+        const summaryEn = (e.summaryEn || "").replace(/\s+/g, " ").trim();
+        if (!x.hasTitleEn && titleEn) {
+          // TitleEN 放在链接行后面；没有链接行就放在 meta 行最后
+          let at = lines.findIndex((l) => /^- \*\*链接\*\*[：:]/.test(l.trim()));
+          if (at < 0) at = lines.reduce((acc, l, j) => (j > 0 && META_RE.test(l.trim()) ? j : acc), 0);
+          lines.splice(at + 1, 0, `- **TitleEN**：${titleEn}`);
         }
-        // 末尾加 EN 摘要
-        if (e.summaryEn) b += `\n\n- **EN**：${e.summaryEn}`;
-        return b + "\n\n";
+        if (!x.hasEn && summaryEn) {
+          while (lines.length && !lines[lines.length - 1].trim()) lines.pop();
+          lines.push("", `- **EN**：${summaryEn}`, "");
+        }
       });
+      if (needJs && parsed.jasonSaysEn) data.jasonSaysEn = parsed.jasonSaysEn;
 
-      const rebuilt = matter.stringify(body, data);
-      fs.writeFileSync(fp, rebuilt, "utf-8");
+      const body = blocks.map((b) => b.lines.join("\n")).join("\n");
+      fs.writeFileSync(fp, matter.stringify(body, data), "utf-8");
       done++;
-      console.log(`  ✅ [${done}/${todo.length}] ${f}`);
+      console.log(`  ✅ [${done}/${todo.length}] ${f}（${missing.length} 条）`);
     } catch (e) {
       console.log(`  ❌ ${f}: ${e.message.slice(0, 80)}`);
     }
