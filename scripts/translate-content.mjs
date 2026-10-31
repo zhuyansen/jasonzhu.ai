@@ -174,10 +174,48 @@ function itemInfo(b) {
   };
 }
 
+// 💰 融资速递段的卡片。解析规则和 generate-news.mjs 一致（公司名就是 fundingEn 的 key）。
+function parseFunding(content) {
+  const out = [];
+  for (const section of content.split(/^### /m).filter(Boolean)) {
+    const lines = section.trim().split("\n");
+    if (!lines[0]?.includes("融资速递")) continue;
+    let cur = null;
+    for (const raw of lines.slice(1)) {
+      const t = raw.trim();
+      if (!t) continue;
+      const top = t.match(/^-\s+\*\*(.+?)\*\*\s*(.*)$/);
+      if (top && !/^\s{2,}-/.test(raw)) {
+        if (cur) out.push(cur);
+        let company = top[1].trim();
+        const link = company.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+        if (link) company = link[1].trim();
+        const segs = top[2].split("·").map((x) => x.trim()).filter(Boolean);
+        cur = { company, round: segs[0] || "", amount: segs[1] || "", valuation: "", investors: "", pitch: "" };
+        for (const seg of segs.slice(2)) {
+          if (seg.startsWith("估值")) cur.valuation = seg.replace(/^估值\s*/, "");
+          else if (!cur.valuation) cur.valuation = seg;
+        }
+      } else if (cur) {
+        const sub = t.replace(/^-\s*/, "").trim();
+        if (sub.startsWith("投资方")) cur.investors = sub.replace(/^投资方[：:]\s*/, "");
+        else cur.pitch = cur.pitch ? cur.pitch + " " + sub : sub;
+      }
+    }
+    if (cur) out.push(cur);
+  }
+  return out;
+}
+
+function missingFunding(data, content) {
+  const have = data.fundingEn && typeof data.fundingEn === "object" ? data.fundingEn : {};
+  return parseFunding(content).filter((f) => !have[f.company]);
+}
+
 function needsNews(raw) {
   const { data, content } = matter(raw);
   const items = splitBlocks(content).filter((b) => b.item).map(itemInfo);
-  return items.length > 0 && (!data.jasonSaysEn || items.some((it) => !it.hasTitleEn || !it.hasEn));
+  return items.length > 0 && (!data.jasonSaysEn || items.some((it) => !it.hasTitleEn || !it.hasEn) || missingFunding(data, content).length > 0);
 }
 
 async function translateNews(all) {
@@ -198,6 +236,7 @@ async function translateNews(all) {
     // 只送缺英文的条目
     const missing = itemBlocks.map((b) => ({ b, ...itemInfo(b) })).filter((x) => !x.hasTitleEn || !x.hasEn);
     const needJs = !data.jasonSaysEn && data.jasonSays;
+    const fundingTodo = missingFunding(data, content);
 
     const prompt = `Translate the following Chinese AI-news digest fields to concise, native English. Return ONLY valid JSON, no fences.
 
@@ -205,11 +244,15 @@ Format:
 {"jasonSaysEn":"...","items":[{"titleEn":"5-12 word English title","summaryEn":"40-70 word English summary"}]}
 
 The items array must have EXACTLY ${missing.length} entries in the SAME order.${needJs ? "" : ' Return "jasonSaysEn":"" (not needed).'}
+${fundingTodo.length ? `Also add "funding": an array of EXACTLY ${fundingTodo.length} objects in the SAME order as the funding cards below, each {"company","round","amount","valuation","investors","pitch"} in English. Keep Latin-script names, rounds and amounts exactly as given; translate only the Chinese parts (未披露 → undisclosed, 传闻 → rumored, 数亿元人民币 → hundreds of millions of RMB). For a company with both a Chinese and an English name use the English name; for a Chinese-only name use its official English name if you know it, otherwise pinyin. Keep empty fields empty. "pitch" is one plain sentence.` : 'Return "funding":[] (not needed).'}
 
 jasonSays: ${needJs ? data.jasonSays : ""}
 
 items:
-${missing.map((it, i) => `[${i}] ${it.title}\n${it.summary}`).join("\n\n")}`;
+${missing.map((it, i) => `[${i}] ${it.title}\n${it.summary}`).join("\n\n")}${fundingTodo.length ? `
+
+funding cards:
+${fundingTodo.map((f, i) => `[${i}] ${JSON.stringify(f)}`).join("\n")}` : ""}`;
 
     try {
       const out = stripFence(await callClaude(prompt, 8000));
@@ -217,6 +260,8 @@ ${missing.map((it, i) => `[${i}] ${it.title}\n${it.summary}`).join("\n\n")}`;
       const parsed = JSON.parse(m[0]);
       const en = parsed.items || [];
       if (en.length !== missing.length) { console.log(`  ❌ ${f}: item 数不匹配 ${en.length}/${missing.length}`); continue; }
+      const fen = Array.isArray(parsed.funding) ? parsed.funding : [];
+      if (fundingTodo.length && fen.length !== fundingTodo.length) { console.log(`  ❌ ${f}: 融资卡数不匹配 ${fen.length}/${fundingTodo.length}`); continue; }
 
       missing.forEach((x, i) => {
         const lines = x.b.lines;
@@ -235,11 +280,20 @@ ${missing.map((it, i) => `[${i}] ${it.title}\n${it.summary}`).join("\n\n")}`;
         }
       });
       if (needJs && parsed.jasonSaysEn) data.jasonSaysEn = parsed.jasonSaysEn;
+      if (fundingTodo.length) {
+        const clean = (v) => (typeof v === "string" ? v.replace(/\s+/g, " ").trim() : "");
+        data.fundingEn = { ...(data.fundingEn || {}) };
+        fundingTodo.forEach((card, i) => {
+          const e = fen[i] || {};
+          const entry = Object.fromEntries(["company", "round", "amount", "valuation", "investors", "pitch"].map((k) => [k, clean(e[k])]).filter(([, v]) => v));
+          if (entry.pitch || entry.company) data.fundingEn[card.company] = entry;
+        });
+      }
 
       const body = blocks.map((b) => b.lines.join("\n")).join("\n");
       fs.writeFileSync(fp, matter.stringify(body, data), "utf-8");
       done++;
-      console.log(`  ✅ [${done}/${todo.length}] ${f}（${missing.length} 条）`);
+      console.log(`  ✅ [${done}/${todo.length}] ${f}（${missing.length} 条${fundingTodo.length ? `，融资卡 ${fundingTodo.length}` : ""}）`);
     } catch (e) {
       console.log(`  ❌ ${f}: ${e.message.slice(0, 80)}`);
     }

@@ -40,7 +40,7 @@ Git：commit 后如远程有新提交（cron 会自动 commit 快讯），先 `g
 - `src/content/blog/<slug>.md` → `generate-posts.mjs` → `src/generated/posts.json`（meta）+ `post-content/<slug>.json`（正文）。页面经 `src/lib/mdx.ts` 读取，MDXRemote 渲染。
 - 双语约定：`<slug>.en.md` 是英文版（不算独立文章），meta 带 `hasEnglish`；`getPostBySlug(slug, lang)` 在 en 时优先英文、回退中文。frontmatter 支持 `updated`（渲染"更新于" + schema dateModified）。
 - 英文页不该出现中文（2026-10-31 全站扫过一遍）：新博客发布时一起写 `.en.md`（选品周报的定时任务已经这么做）；标签在 frontmatter 里保持中文，英文显示名在 `src/lib/tag-labels.ts`，新标签补进去；出海专题指南的英文版在 `src/lib/guides/en/`，改中文指南时同步改。快讯 md 的英文行注入必须按行处理：旧翻译脚本的 `\Z`（JS 里是字面量 Z）和 `String.replace` 注入（标题里的 `$1` 被替换）插坏过 19 期。
-- `src/content/news/<日期>.md` → `generate-news.mjs` → `news.json`。解析器把每个 `###` 段解析成结构化 item；特殊行：`- **TitleEN**：`/`- **EN**：`（双语）；`### 💰 AI 融资速递` 段解析成 `funding[]` 结构化卡片（不算 item）。
+- `src/content/news/<日期>.md` → `generate-news.mjs` → `news.json`。解析器把每个 `###` 段解析成结构化 item；特殊行：`- **TitleEN**：`/`- **EN**：`（双语）；`### 💰 AI 融资速递` 段解析成 `funding[]` 结构化卡片（不算 item）。融资卡的英文版在 frontmatter 的 `fundingEn`（按公司名对应，正文不动），由 daily-news 里的翻译步骤（`translate-content.mjs news`，失败不挡发布）补上。
 
 **快讯收录规则（2026-10-06 起，应对「无人监督批量 AI 内容」审计风险）**
 - 快讯每天 AI 生成、自动发布 + 发邮件不变；但**默认 noindex、不进 sitemap**，`/news` 列表页也 noindex。只有 frontmatter 有 `humanComment`（Jason 本人点评）的那期才 index + 进 sitemap（`isDigestIndexable()`）。

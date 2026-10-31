@@ -109,6 +109,13 @@ const digests = files.map((filename) => {
   funding.length = 0;
   funding.push(...dedupedFunding);
 
+  // 融资卡英文版在 frontmatter 的 fundingEn 里（按公司名对应，translate-content.mjs 写入），不改正文
+  const fundingEn = data.fundingEn && typeof data.fundingEn === "object" ? data.fundingEn : {};
+  for (const f of funding) {
+    const en = fundingEn[f.company];
+    if (en && typeof en === "object") f.en = en;
+  }
+
   // Auto-detect cover image at public/news/<slug>.png
   const coverImagePath = path.join(process.cwd(), "public/news", `${slug}.png`);
   const hasCover = fs.existsSync(coverImagePath);

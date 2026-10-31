@@ -80,6 +80,15 @@ jobs:
           APIMART_API_KEY: ${{ secrets.APIMART_API_KEY }}
         run: node scripts/generate-news-image.mjs ${{ inputs.date }}
 
+      # 融资卡（以及偶尔漏掉的条目）补英文：英文版写进 md 的 frontmatter / 英文行，再重新生成 news.json。
+      # 失败不挡发布（中文照常上线、照常发信），下次跑会再补。
+      - name: Translate funding cards to English
+        if: steps.done.outputs.skip != 'true'
+        continue-on-error: true
+        env:
+          APIMART_CLAUDE_KEY: ${{ secrets.APIMART_CLAUDE_KEY }}
+        run: node scripts/translate-content.mjs news && node scripts/generate-news.mjs
+
       - name: Check for changes
         if: steps.done.outputs.skip != 'true'
         id: changes

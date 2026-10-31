@@ -282,7 +282,10 @@ export default async function NewsDetailPage({
             {isZh ? "AI 融资速递" : "AI Funding Roundup"}
           </h2>
           <div className="space-y-3">
-            {digest.funding.map((f, i) => (
+            {digest.funding.map((card, i) => {
+              // 英文页用英文版字段（缺哪个回退中文）
+              const f = !isZh && card.en ? { ...card, ...Object.fromEntries(Object.entries(card.en).filter(([, v]) => v)) } : card;
+              return (
               <div
                 key={i}
                 className="border border-gray-100 rounded-xl p-4 bg-gradient-to-br from-amber-50/40 to-white"
@@ -332,7 +335,8 @@ export default async function NewsDetailPage({
                   <p className="text-sm text-gray-600 leading-relaxed">{f.pitch}</p>
                 )}
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       )}

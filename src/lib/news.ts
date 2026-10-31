@@ -18,6 +18,8 @@ export interface FundingItem {
   valuation?: string;
   investors?: string;
   pitch?: string;
+  /** 英文版（frontmatter 的 fundingEn），英文页优先用 */
+  en?: Partial<Pick<FundingItem, "company" | "round" | "amount" | "valuation" | "investors" | "pitch">>;
 }
 
 export interface NewsDigest {
