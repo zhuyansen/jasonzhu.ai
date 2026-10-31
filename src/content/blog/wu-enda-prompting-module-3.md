@@ -17,7 +17,7 @@ Module 1 教你「找信息」，Module 2 教你「让 AI 帮你思考」，**Mo
 
 ## Day 1·多模态成本意识：知道什么时候该用哪种输出
 
-![多模态输出成本/时间曲线：text → voice → images → videos 逐级提升](/blog/wu-enda-prompting-module-3/day-1-multimedia.png)
+![多模态输出成本/时间曲线：text → voice → images → videos 逐级提升](/blog/wu-enda-prompting-module-3/day-1-multimedia.webp)
 
 **💡 1 句话解读：** 文字几乎免费几秒出，语音几美分十几秒，图像几十美分几十秒，视频几美元几分钟——**一个简单认知：能用文字描述清楚的，先别让它出图；能用图说清的，先别让它出视频**。
 
@@ -43,7 +43,7 @@ Module 1 教你「找信息」，Module 2 教你「让 AI 帮你思考」，**Mo
 
 ## Day 2·图像理解：AI 看图很粗，看文字很细
 
-![AI 看健身器械混淆 vs 看人形仓鼠跑步机准确](/blog/wu-enda-prompting-module-3/day-2-image-understanding.png)
+![AI 看健身器械混淆 vs 看人形仓鼠跑步机准确](/blog/wu-enda-prompting-module-3/day-2-image-understanding.webp)
 
 **💡 1 句话解读：** AI 看图像是「一眼大概」——区分相似器械（kickback vs hamstring curl）经常错，但识别独特物体（人形仓鼠跑步机）和**读图中文字（手写都能读）**很准。
 
@@ -73,7 +73,7 @@ Step 4·我要的具体动作：[你的需求]
 
 ## Day 3·图像生成：会用「视觉语言」的人才能出好图
 
-![Diffusion 模型生成过程：噪声 → 模糊 → 清晰图像](/blog/wu-enda-prompting-module-3/day-3-image-gen.png)
+![Diffusion 模型生成过程：噪声 → 模糊 → 清晰图像](/blog/wu-enda-prompting-module-3/day-3-image-gen.webp)
 
 **💡 1 句话解读：** AI 出图本质是「从噪声里反向去噪」，prompt 给得越精准，去噪方向越对——艺术词汇（cinematic / watercolor / cyberpunk / anime）比形容词（漂亮/酷）有用 10 倍。
 
@@ -99,7 +99,7 @@ Step 4·我要的具体动作：[你的需求]
 
 ## Day 4·Vibe Coding：一段 prompt 就能造个能跑的 App
 
-![一段 prompt 生成可玩的 fireworks 应用](/blog/wu-enda-prompting-module-3/day-4-build-app.png)
+![一段 prompt 生成可玩的 fireworks 应用](/blog/wu-enda-prompting-module-3/day-4-build-app.webp)
 
 **💡 1 句话解读：** 用 Claude / ChatGPT 写一段 `Goal + Input + Output` 三件套 prompt，就能直接出能在浏览器里跑的 mini app——**简单的事很容易（French 闪卡、计时器、分账计算器），复杂的事仍很难（多人在线、实时 AI 反馈）**。
 
@@ -131,7 +131,7 @@ Step 4·我要的具体动作：[你的需求]
 
 ## Day 5·数据分析：AI 写代码帮你跑数据
 
-![奶茶销量趋势图：AI 自动识别 4 款重点产品并画图](/blog/wu-enda-prompting-module-3/day-5-data-analysis.png)
+![奶茶销量趋势图：AI 自动识别 4 款重点产品并画图](/blog/wu-enda-prompting-module-3/day-5-data-analysis.webp)
 
 **💡 1 句话解读：** 上传 CSV / Excel / PDF 报表，AI 会**自己写 Python 代码**跑分析、画图、找规律——奶茶店例子里它甚至自动跳过平稳产品、聚焦 4 款季节性爆款。但**数字必须人工复核**（仍会幻觉）。
 
@@ -166,7 +166,7 @@ Step 4·结论 + 决策建议
 
 ## Day 6·Final Project：用今天学的全套做一个真东西
 
-![Lab 流程：brainstorm 问题 → 深度调研 → 生成 quiz/infographic 应用](/blog/wu-enda-prompting-module-3/day-6-lab.png)
+![Lab 流程：brainstorm 问题 → 深度调研 → 生成 quiz/infographic 应用](/blog/wu-enda-prompting-module-3/day-6-lab.webp)
 
 **💡 1 句话解读：** 吴恩达官方 lab 的最终项目串起 Module 1-3 全套能力——**brainstorm 问题（M2 头脑风暴）→ deep research（M1 深度调研）→ 生成 mini app（M3 vibe coding）**，跑一遍就能感受到「AI 当全栈搭档」的真实威力。
 

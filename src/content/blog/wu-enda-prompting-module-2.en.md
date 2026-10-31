@@ -21,7 +21,7 @@ Organized in a three-part format: **screenshot + one-line takeaway + one templat
 
 ## Day 1 · Brainstorming: Push AI Out of Its "Obvious Answer" Comfort Zone
 
-![AI output probability curve: common answers are high-probability, creative answers are low-probability](/blog/wu-enda-prompting-module-2/day-1-brainstorm.png)
+![AI output probability curve: common answers are high-probability, creative answers are low-probability](/blog/wu-enda-prompting-module-2/day-1-brainstorm.webp)
 
 **💡 One-line takeaway:** AI defaults to "common answers" (squats, push-ups) because that's what most internet text looks like—if you want creative answers (trampoline breaks, cat-triggered micro-workouts), you need to **provide rich context and iterate across multiple rounds of feedback**.
 
@@ -47,7 +47,7 @@ and you'll generate 5 new options based on that feedback. Repeat for 3 rounds.
 
 ## Day 2 · Context Management: You Have the Equivalent of 4–5 Harry Potter Books
 
-![AI context window capacity = 4–5 Harry Potter books](/blog/wu-enda-prompting-module-2/day-2-context.png)
+![AI context window capacity = 4–5 Harry Potter books](/blog/wu-enda-prompting-module-2/day-2-context.webp)
 
 **💡 One-line takeaway:** Mainstream AI models can hold roughly 750,000 words of context (4–5 Harry Potter books)—most people drastically underestimate this capacity. That said, **always start a new chat when switching topics**; old context will bleed into and distort new answers.
 
@@ -72,7 +72,7 @@ Please answer based on all of the above. Reference specific details where releva
 
 ## Day 3 · Desktop AI Agent: Let It Read Files on Your Computer
 
-![AI desktop agents can read and write local files—grant permissions carefully](/blog/wu-enda-prompting-module-2/day-3-desktop-app.png)
+![AI desktop agents can read and write local files—grant permissions carefully](/blog/wu-enda-prompting-module-2/day-3-desktop-app.webp)
 
 **💡 One-line takeaway:** Claude Cowork / Microsoft Copilot / Google Antigravity can read and write files on your machine—but **always have it propose a plan first, never execute directly**. Deleted files don't go to the recycle bin, and overwritten files have no version history.
 
@@ -148,7 +148,7 @@ Neutral framing checklist:
 
 ## Day 6 · Writing: What AI Slop Looks Like—and How to Avoid It
 
-![Em dash frequency spiked after ChatGPT's launch (Bluesky data)](/blog/wu-enda-prompting-module-2/day-6-writing.png)
+![Em dash frequency spiked after ChatGPT's launch (Bluesky data)](/blog/wu-enda-prompting-module-2/day-6-writing.webp)
 
 **💡 One-line takeaway:** AI slop signatures: overuse of em dashes, "nuanced," "delve," the "not X but Y" construction, and an addiction to three-item lists. The fix is a **progressive outline approach**—outline first, then bullet points, then full prose, with iteration at every stage.
 
@@ -205,7 +205,7 @@ Step 2 · Once I confirm the rubric
 
 ## Day 8 · Lab Exercise: Feel the Score Gap Between "Subjective Prompt" and "Objective Rubric" Firsthand
 
-![Lab screenshot: subjective rubric gives 83; objective rubric gives 75](/blog/wu-enda-prompting-module-2/day-8-lab.png)
+![Lab screenshot: subjective rubric gives 83; objective rubric gives 75](/blog/wu-enda-prompting-module-2/day-8-lab.webp)
 
 **💡 One-line takeaway:** In Andrew Ng's lab, the same sci-fi short story scored 83 under a subjective rubric (all praise) and 75 under an objective rubric with specific criticisms called out. **That 8-point gap is the real feedback you've been leaving on the table.**
 

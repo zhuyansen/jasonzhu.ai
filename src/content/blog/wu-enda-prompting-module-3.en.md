@@ -21,7 +21,7 @@ Each lesson is organized into three parts: **screenshot + one-line takeaway + on
 
 ## Day 1 · Multimodal Cost Awareness: Know When to Use Which Output Type
 
-![Multimodal output cost/time curve: text → voice → images → videos, each step increasing](/blog/wu-enda-prompting-module-3/day-1-multimedia.png)
+![Multimodal output cost/time curve: text → voice → images → videos, each step increasing](/blog/wu-enda-prompting-module-3/day-1-multimedia.webp)
 
 **💡 One-line takeaway:** Text is nearly free and takes seconds; voice costs a few cents and takes tens of seconds; images cost tens of cents and take tens of seconds; video costs dollars and takes minutes. **The key insight: if text can communicate it clearly, don't ask for an image. If an image can do the job, don't ask for a video.**
 
@@ -48,7 +48,7 @@ Recommend an approach and estimate the time and cost.
 
 ## Day 2 · Image Understanding: AI Reads Text in Images Well, but Sees Visuals Roughly
 
-![AI confuses similar gym equipment vs. accurately identifies a human-sized hamster wheel](/blog/wu-enda-prompting-module-3/day-2-image-understanding.png)
+![AI confuses similar gym equipment vs. accurately identifies a human-sized hamster wheel](/blog/wu-enda-prompting-module-3/day-2-image-understanding.webp)
 
 **💡 One-line takeaway:** AI sees images at a "rough glance" level — it frequently misidentifies visually similar equipment (kickback vs. hamstring curl), but it's highly accurate at recognizing distinctive objects (a human-sized hamster wheel) and **reading text inside images, even handwritten text.**
 
@@ -78,7 +78,7 @@ Step 4 · My specific request: [your need]
 
 ## Day 3 · Image Generation: You Need "Visual Language" to Get Good Results
 
-![Diffusion model generation process: noise → blurry → sharp image](/blog/wu-enda-prompting-module-3/day-3-image-gen.png)
+![Diffusion model generation process: noise → blurry → sharp image](/blog/wu-enda-prompting-module-3/day-3-image-gen.webp)
 
 **💡 One-line takeaway:** AI image generation is fundamentally "reverse denoising from noise" — the more precise your prompt, the more accurately it denoises toward your target. Art vocabulary (cinematic / watercolor / cyberpunk / anime) is 10× more useful than vague adjectives (beautiful / cool).
 
@@ -105,7 +105,7 @@ Output 3 prompt options in different styles. I'll pick one, then ask you to gene
 
 ## Day 4 · Vibe Coding: One Prompt Can Build a Working App
 
-![A single prompt generates a playable fireworks application](/blog/wu-enda-prompting-module-3/day-4-build-app.png)
+![A single prompt generates a playable fireworks application](/blog/wu-enda-prompting-module-3/day-4-build-app.webp)
 
 **💡 One-line takeaway:** Using a Goal + Input + Output prompt structure with Claude or ChatGPT, you can generate a mini app that runs directly in the browser. **Simple things are easy (French flashcards, timers, expense splitters). Complex things are still hard (multiplayer features, real-time AI feedback).**
 
@@ -137,7 +137,7 @@ First list 3 feature specs for my approval, then write the code.
 
 ## Day 5 · Data Analysis: AI Writes Code to Run Your Data
 
-![Bubble tea sales trend chart: AI automatically highlights 4 key products and plots them](/blog/wu-enda-prompting-module-3/day-5-data-analysis.png)
+![Bubble tea sales trend chart: AI automatically highlights 4 key products and plots them](/blog/wu-enda-prompting-module-3/day-5-data-analysis.webp)
 
 **💡 One-line takeaway:** Upload a CSV, Excel file, or PDF report and AI will **write Python code on its own** to run analysis, generate charts, and surface patterns. In the bubble tea example, it even automatically skipped stable products and focused on 4 seasonally volatile bestsellers. But **all numbers must be verified by a human** — hallucinations still happen.
 
@@ -172,7 +172,7 @@ Step 4 · Conclusions and action recommendations
 
 ## Day 6 · Final Project: Build Something Real Using Everything You've Learned
 
-![Lab flow: brainstorm questions → deep research → generate quiz/infographic app](/blog/wu-enda-prompting-module-3/day-6-lab.png)
+![Lab flow: brainstorm questions → deep research → generate quiz/infographic app](/blog/wu-enda-prompting-module-3/day-6-lab.webp)
 
 **💡 One-line takeaway:** Andrew Ng's official lab final project chains together the full skill set from Modules 1–3: **brainstorm questions (M2 ideation) → deep research (M1 sourcing) → generate a mini app (M3 vibe coding)**. Running through it once lets you feel what it's really like to have AI as a full-stack collaborator.
 

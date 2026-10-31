@@ -17,7 +17,7 @@ Module 1 解决「找信息」的问题，Module 2 把 AI 真正用起来——�
 
 ## Day 1·头脑风暴：让 AI 走出「常识答案」舒适区
 
-![AI 输出概率曲线：常识答案高概率、创意答案低概率](/blog/wu-enda-prompting-module-2/day-1-brainstorm.png)
+![AI 输出概率曲线：常识答案高概率、创意答案低概率](/blog/wu-enda-prompting-module-2/day-1-brainstorm.webp)
 
 **💡 1 句话解读：** AI 默认给"常识答案"（深蹲、俯卧撑），因为互联网上同类文本最多——想要创意答案（蹦床破节、猫触发微训练），必须**给足上下文 + 多轮迭代反馈**。
 
@@ -43,7 +43,7 @@ Module 1 解决「找信息」的问题，Module 2 把 AI 真正用起来——�
 
 ## Day 2·上下文管理：你拥有的容量是 4-5 本《哈利·波特》
 
-![AI context window 容量 = 4-5 本哈利波特](/blog/wu-enda-prompting-module-2/day-2-context.png)
+![AI context window 容量 = 4-5 本哈利波特](/blog/wu-enda-prompting-module-2/day-2-context.webp)
 
 **💡 1 句话解读：** 主流 AI 的 context 能装下约 75 万词（4-5 本《哈利·波特》），大多数人严重低估这个容量——但**话题切换时一定要新开 chat**，旧上下文会污染新答案。
 
@@ -68,7 +68,7 @@ Module 1 解决「找信息」的问题，Module 2 把 AI 真正用起来——�
 
 ## Day 3·AI 桌面 Agent：让它读你电脑上的文件
 
-![AI 桌面 Agent 可读写本地文件，需谨慎授权](/blog/wu-enda-prompting-module-2/day-3-desktop-app.png)
+![AI 桌面 Agent 可读写本地文件，需谨慎授权](/blog/wu-enda-prompting-module-2/day-3-desktop-app.webp)
 
 **💡 1 句话解读：** Claude Cowork / Microsoft Copilot / Google Antigravity 能读写你电脑文件——但**永远先让它出方案、不要直接执行**，删的文件不进回收站，覆盖的文件没历史。
 
@@ -144,7 +144,7 @@ Step 2：我说"OK"后，按顺序执行
 
 ## Day 6·写作：AI slop 长什么样 + 怎么避免
 
-![Em dash 使用频率在 ChatGPT 发布后激增（Bluesky 数据）](/blog/wu-enda-prompting-module-2/day-6-writing.png)
+![Em dash 使用频率在 ChatGPT 发布后激增（Bluesky 数据）](/blog/wu-enda-prompting-module-2/day-6-writing.webp)
 
 **💡 1 句话解读：** AI slop 的特征：滥用 em dash、"nuanced"、"delve"、"not X but Y" 句式、3 项列表上瘾——避免方法是**渐进式大纲**，先大纲、再要点、最后才正文，每步迭代。
 
@@ -201,7 +201,7 @@ Step 2·我确认 rubric 后
 
 ## Day 8·Lab 实操：亲手感受「主观 prompt vs 客观 rubric」的分差
 
-![Lab 截图：主观 rubric 给 83 分 vs 客观 rubric 给 75 分](/blog/wu-enda-prompting-module-2/day-8-lab.png)
+![Lab 截图：主观 rubric 给 83 分 vs 客观 rubric 给 75 分](/blog/wu-enda-prompting-module-2/day-8-lab.webp)
 
 **💡 1 句话解读：** 吴恩达 lab 里同一篇 sci-fi 短篇——主观 rubric 给 83 分（一通夸），客观 rubric 给 75 分还指出具体问题。**8 分差距 = 你浪费掉的真实反馈**。
 

@@ -48,7 +48,7 @@ Two things to know:
 
 - **It keeps TikTok's watermark.** The TikTok logo stays in the corner of the Live Photo, and it will show on your Lock Screen too. If you need a clean one, use a video you have without the watermark and method 2.
 
-![The TikTok logo stays in the corner of the saved Live Photo](public/blog/video-to-live-photo/tiktok-watermark.png)
+![The TikTok logo stays in the corner of the saved Live Photo](public/blog/video-to-live-photo/tiktok-watermark.webp)
 
 - **If you don't see Live Photo:** the creator has turned off downloads for that video. The option only appears on videos that can be downloaded.
 

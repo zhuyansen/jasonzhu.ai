@@ -51,7 +51,7 @@ iPhone 上的 TikTok 自带这个功能，2026 年 10 月真机实测：
 
 - **会带 TikTok 水印。** 实况照片角落里会留着 TikTok 的标志，设成锁屏也会显示。想要干净的，需要拿到没有水印的视频，用方法 2 来做。
 
-![存下来的实况照片角落保留了 TikTok 标志](public/blog/video-to-live-photo/tiktok-watermark.png)
+![存下来的实况照片角落保留了 TikTok 标志](public/blog/video-to-live-photo/tiktok-watermark.webp)
 
 - **看不到动态照片选项？** 说明作者关闭了这个视频的下载权限，只有允许下载的视频才有这个选项。
 
