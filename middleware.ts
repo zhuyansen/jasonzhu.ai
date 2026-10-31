@@ -1,5 +1,6 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextRequest, NextResponse } from "next/server";
+import { LEAD_MAGNETS, magnetByFile, verifyDownload } from "@/lib/download-link";
 
 const locales = ["zh", "en"];
 const defaultLocale = "zh";
@@ -16,6 +17,10 @@ function needsAuthRefresh(pathname: string): boolean {
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  // Lead magnet PDF：只放行邮件里发出的签名链接（7 天有效），其余跳回对应订阅页
+  if (pathname.startsWith("/downloads/")) return guardDownload(request);
+
   const authRefresh = needsAuthRefresh(pathname)
     ? (response: NextResponse) => refreshSupabaseSession(request, response)
     : (response: NextResponse) => response;
@@ -41,6 +46,19 @@ export async function middleware(request: NextRequest) {
   const url = request.nextUrl.clone();
   url.pathname = `/${defaultLocale}${pathname === "/" ? "" : pathname}`;
   return authRefresh(NextResponse.rewrite(url));
+}
+
+async function guardDownload(request: NextRequest) {
+  const { pathname, searchParams } = request.nextUrl;
+  const file = pathname.slice("/downloads/".length);
+  if (await verifyDownload(file, searchParams.get("exp"), searchParams.get("sig"))) {
+    const res = NextResponse.next();
+    res.headers.set("X-Robots-Tag", "noindex");
+    return res;
+  }
+  const lang = searchParams.get("l") === "en" ? "en" : "zh";
+  const landing = LEAD_MAGNETS[magnetByFile(file) ?? "handbook"].landing;
+  return NextResponse.redirect(new URL(`/${lang}${landing}?expired=1`, request.url));
 }
 
 /** 刷新 Supabase auth session cookie，让 Server Component 读到最新登录态 */
@@ -74,6 +92,7 @@ export const config = {
     "/auth/:path*",
     "/(zh|en)/dashboard/:path*", // 会员中心：刷新 Supabase session
     "/(zh|en)/login",
+    "/downloads/:path*", // lead magnet PDF：校验邮件里的签名链接
     // 不带语言前缀的旧链接（/blog/xxx）→ rewrite 到 /zh/...；跳过 /zh /en 开头、静态文件和 API
     "/((?!zh\\b|en\\b|_next|api|admin|auth|favicon\\.ico|handbook\\.pdf|.*\\..*).*)",
   ],

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { useRouter } from "next/navigation";
 import type { Dictionary } from "@/lib/dictionaries";
 import { track } from "@/lib/track";
 
@@ -18,11 +17,12 @@ export default function SubscribeForm({
   lang = "zh",
   dict,
 }: SubscribeFormProps) {
-  const router = useRouter();
   const [email, setEmail] = useState("");
   const [website, setWebsite] = useState(""); // honeypot
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "sent" | "error">("idle");
   const [message, setMessage] = useState("");
+  const [sentTo, setSentTo] = useState("");
+  const [resend, setResend] = useState<"idle" | "loading" | "done" | "error">("idle");
   // time-trap 反 bot：渲染期不可调 Date.now()（react-hooks/purity），挂载后再记时
   const mountedAt = useRef<number>(0);
   useEffect(() => {
@@ -32,15 +32,26 @@ export default function SubscribeForm({
   // Fallback strings if dict not provided
   const t = dict?.subscribe ?? {
     title: "订阅 Newsletter，免费获取完整手册",
-    desc: "Subscribe即送《AIP出海自媒体实战手册》完整版，还有每周AI精选内容推送",
+    desc: "订阅即送《AIP出海自媒体实战手册》完整版（下载链接发到邮箱），还有每周AI精选内容推送",
     placeholder: "your@email.com",
     placeholderCompact: "输入邮箱，获取完整手册",
     submit: "免费订阅",
     submitting: "提交中...",
     privacy: "我们尊重你的隐私，不会发送垃圾邮件。可随时退订。",
-    successBtn: "立即查看完整手册 →",
+    sentTitle: "手册下载链接已发到你的邮箱",
+    sentDesc: "发到了 {email}，7 天内有效。没收到的话看看垃圾箱。",
+    resend: "重新发送",
+    resent: "已重新发送",
     networkError: "网络错误，请稍后重试",
   };
+
+  // 订阅框送手册：订阅后把 7 天下载链接发到邮箱（2026-10-31 起不再跳 /handbook?unlocked=true）
+  const send = (addr: string) =>
+    fetch("/api/subscribe", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: addr, source, magnet: "handbook", lang, website, ts: mountedAt.current }),
+    });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -48,20 +59,13 @@ export default function SubscribeForm({
 
     setStatus("loading");
     try {
-      const res = await fetch("/api/subscribe", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, source, website, ts: mountedAt.current }),
-      });
-
+      const res = await send(email);
       const data = await res.json();
 
       if (res.ok) {
         track("newsletter_subscribe", { source, already: Boolean(data.alreadySubscribed) });
-        setStatus("success");
-        setMessage(data.message);
-        setEmail("");
-        router.push(`/${lang}/handbook?unlocked=true`);
+        setSentTo(email);
+        setStatus("sent");
       } else {
         setStatus("error");
         setMessage(data.error);
@@ -72,19 +76,36 @@ export default function SubscribeForm({
     }
   };
 
-  if (status === "success") {
+  const handleResend = async () => {
+    setResend("loading");
+    try {
+      const res = await send(sentTo);
+      const data = await res.json();
+      setResend(res.ok ? "done" : "error");
+      if (!res.ok) setMessage(data.error);
+    } catch {
+      setResend("error");
+      setMessage(t.networkError);
+    }
+  };
+
+  if (status === "sent") {
     return (
-      <div className={`rounded-xl border border-green-200 bg-green-50 p-6 ${compact ? "p-4" : "p-6"}`}>
+      <div className={`rounded-xl border border-green-200 bg-green-50 ${compact ? "p-4" : "p-6"}`}>
         <div className="flex items-start gap-3">
-          <span className="text-2xl">🎉</span>
+          <span className="text-2xl">📬</span>
           <div>
-            <p className="font-semibold text-green-800">{message}</p>
-            <a
-              href={`/${lang}/handbook?unlocked=true`}
-              className="mt-2 inline-block px-4 py-2 bg-green-600 text-white rounded-lg text-sm font-medium hover:bg-green-700 transition-colors"
+            <p className="font-semibold text-green-800">{t.sentTitle}</p>
+            <p className="text-sm text-green-700 mt-1">{t.sentDesc.replace("{email}", sentTo)}</p>
+            <button
+              type="button"
+              onClick={handleResend}
+              disabled={resend === "loading" || resend === "done"}
+              className="mt-3 text-sm font-medium text-green-700 underline underline-offset-2 hover:text-green-900 disabled:no-underline disabled:opacity-60"
             >
-              {t.successBtn}
-            </a>
+              {resend === "done" ? t.resent : resend === "loading" ? "..." : t.resend}
+            </button>
+            {resend === "error" && <p className="text-xs text-red-500 mt-1">{message}</p>}
           </div>
         </div>
       </div>

@@ -10,6 +10,9 @@ const nextConfig: NextConfig = {
       { source: "/:lang(zh|en)/prompts", destination: "/:lang/prompts/claude-opus-5-5", permanent: false },
       // 选品周报 10-17 挪进出海专题：旧地址永久跳到 /go-global/weekly（周报各期仍在 /blog/<slug>）
       { source: "/:lang(zh|en)/weekly", destination: "/:lang/go-global/weekly", permanent: true },
+      // lead magnet PDF 2026-10-31 起改成订阅后邮件发 7 天限时链接（文件在 /downloads/，middleware 校验签名），旧直链跳回订阅页
+      { source: "/handbook.pdf", destination: "/zh/handbook", permanent: false },
+      { source: "/ai-free-learning-guide.pdf", destination: "/zh/ai-learning-guide", permanent: false },
       // www → apex 308，统一权重避免双域名收录
       {
         source: "/:path*",

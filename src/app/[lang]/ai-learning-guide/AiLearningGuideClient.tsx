@@ -6,8 +6,6 @@ import { useSearchParams } from "next/navigation";
 import type { Locale } from "@/lib/dictionaries";
 import { track } from "@/lib/track";
 
-const PDF_PATH = "/ai-free-learning-guide.pdf";
-
 const PLATFORMS = [
   "Anthropic", "OpenAI", "Google", "NVIDIA", "Microsoft",
   "AWS", "Meta", "IBM", "DeepLearning.AI", "Hugging Face",
@@ -16,12 +14,15 @@ const PLATFORMS = [
 function GuideContent({ lang }: { lang: Locale }) {
   const isZh = lang === "zh";
   const searchParams = useSearchParams();
-  const isUnlocked = searchParams.get("unlocked") === "true";
+  // 邮件里的下载链接过期或无效时，middleware 带 ?expired=1 跳回这里
+  const expired = searchParams.get("expired") === "1";
 
   const [email, setEmail] = useState("");
   const [website, setWebsite] = useState(""); // honeypot
-  const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "sent" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const [sentTo, setSentTo] = useState("");
+  const [resend, setResend] = useState<"idle" | "loading" | "done" | "error">("idle");
   // time-trap 反 bot：渲染期不可调 Date.now()（react-hooks/purity），挂载后再记时
   const mountedAt = useRef<number>(0);
   useEffect(() => {
@@ -40,19 +41,19 @@ function GuideContent({ lang }: { lang: Locale }) {
           "三条通用学习建议",
         ],
         unlockTitle: "订阅免费领取 PDF",
-        unlockDesc: "输入邮箱即可下载完整 PDF，并获取每周新出的免费 AI 课程更新。",
+        unlockDesc: "输入邮箱，PDF 下载链接会发到你的邮箱（7 天内有效），并获取每周新出的免费 AI 课程更新。",
         unlockBtn: "免费领取",
-        unlocking: "提交中...",
+        unlocking: "发送中...",
         privacy: "我们尊重你的隐私，不会发送垃圾邮件，可随时退订。",
-        successTitle: "领取成功！",
-        successDesc: "你现在可以下载完整 PDF 了。",
-        download: "下载 PDF（346KB · 6 页）",
-        openTab: "新窗口打开",
+        sentTitle: "PDF 下载链接已发到你的邮箱",
+        sentDesc: "发到了 {email}，7 天内有效。没收到的话看看垃圾箱。",
+        resend: "重新发送",
+        resent: "已重新发送",
+        expired: "下载链接已过期或无效，重新输入邮箱就会收到新链接（7 天内有效）",
+        networkError: "网络错误，请重试",
         moreTitle: "想看完整深度攻略？",
         moreDesc: "10 大平台 + 总目录共 11 篇深度文章，每篇含完整课程清单与避坑细节。",
         moreBtn: "阅读完整系列",
-        previewTip: "PDF 内容预览",
-        pdfFilename: "AI-免费学习全景图-JasonZhu.pdf",
       }
     : {
         title: "The Complete Map of Free AI Learning",
@@ -65,92 +66,146 @@ function GuideContent({ lang }: { lang: Locale }) {
           "Three universal learning tips",
         ],
         unlockTitle: "Subscribe to get the free PDF",
-        unlockDesc: "Enter your email to download the full PDF and get weekly free-AI-course updates.",
+        unlockDesc: "Enter your email and we'll send you the PDF download link (valid for 7 days), plus weekly free-AI-course updates.",
         unlockBtn: "Get it free",
-        unlocking: "Submitting...",
+        unlocking: "Sending...",
         privacy: "We respect your privacy. No spam, unsubscribe anytime.",
-        successTitle: "Done!",
-        successDesc: "You can now download the full PDF.",
-        download: "Download PDF (346KB · 6 pages)",
-        openTab: "Open in new tab",
+        sentTitle: "Check your inbox",
+        sentDesc: "We sent the download link to {email}. It works for 7 days. Check your spam folder if you don't see it.",
+        resend: "Resend",
+        resent: "Sent again",
+        expired: "That download link has expired or is invalid. Enter your email to get a new one (valid for 7 days).",
+        networkError: "Network error",
         moreTitle: "Want the full deep-dive series?",
         moreDesc: "11 in-depth articles covering all 10 platforms.",
         moreBtn: "Read the full series",
-        previewTip: "PDF preview",
-        pdfFilename: "Free-AI-Learning-Map-JasonZhu.pdf",
       };
 
-  const handleUnlock = async (e: React.FormEvent) => {
+  // 订阅后把 7 天下载链接发到邮箱（2026-10-31 起 PDF 不再有公开直链）
+  const send = (addr: string) =>
+    fetch("/api/subscribe", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: addr,
+        source: "ai-learning-guide",
+        magnet: "ai-learning-guide",
+        lang,
+        website,
+        ts: mountedAt.current,
+      }),
+    });
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
     setStatus("loading");
     try {
-      const res = await fetch("/api/subscribe", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email,
-          source: "ai-learning-guide",
-          website,
-          ts: mountedAt.current,
-        }),
-      });
+      const res = await send(email);
       const data = await res.json();
       if (res.ok) {
         track("newsletter_subscribe", { source: "ai-learning-guide", already: Boolean(data.alreadySubscribed) });
-        window.location.href = `/${lang}/ai-learning-guide?unlocked=true`;
+        setSentTo(email);
+        setStatus("sent");
       } else {
         setStatus("error");
-        setErrorMsg(data.error || (isZh ? "网络错误，请重试" : "Network error"));
+        setErrorMsg(data.error || t.networkError);
       }
     } catch {
       setStatus("error");
-      setErrorMsg(isZh ? "网络错误，请重试" : "Network error");
+      setErrorMsg(t.networkError);
     }
   };
 
-  // Gate
-  if (!isUnlocked) {
-    return (
-      <div className="max-w-2xl mx-auto px-4 sm:px-6 py-16">
-        <div className="text-center mb-10">
-          <span className="text-5xl mb-4 block">🗺️</span>
-          <h1 className="text-3xl font-bold text-gray-900 mb-3">{t.title}</h1>
-          <p className="text-gray-500">{t.subtitle}</p>
-        </div>
+  const handleResend = async () => {
+    setResend("loading");
+    try {
+      const res = await send(sentTo);
+      const data = await res.json();
+      setResend(res.ok ? "done" : "error");
+      if (!res.ok) setErrorMsg(data.error || t.networkError);
+    } catch {
+      setResend("error");
+      setErrorMsg(t.networkError);
+    }
+  };
 
-        {/* Platform pills */}
-        <div className="flex flex-wrap justify-center gap-2 mb-8">
-          {PLATFORMS.map((p) => (
-            <span
-              key={p}
-              className="px-3 py-1 bg-gray-50 border border-gray-100 rounded-full text-xs text-gray-600"
-            >
-              {p}
-            </span>
+  return (
+    <div className="max-w-2xl mx-auto px-4 sm:px-6 py-16">
+      <div className="text-center mb-10">
+        <span className="text-5xl mb-4 block">🗺️</span>
+        <h1 className="text-3xl font-bold text-gray-900 mb-3">{t.title}</h1>
+        <p className="text-gray-500">{t.subtitle}</p>
+      </div>
+
+      {/* Platform pills */}
+      <div className="flex flex-wrap justify-center gap-2 mb-8">
+        {PLATFORMS.map((p) => (
+          <span
+            key={p}
+            className="px-3 py-1 bg-gray-50 border border-gray-100 rounded-full text-xs text-gray-600"
+          >
+            {p}
+          </span>
+        ))}
+      </div>
+
+      {/* What's inside */}
+      <div className="bg-gray-50 rounded-2xl p-6 mb-8">
+        <h3 className="text-sm font-semibold text-gray-900 mb-4">{t.chaptersTitle}</h3>
+        <div className="space-y-2">
+          {t.chapters.map((ch) => (
+            <div key={ch} className="flex items-start gap-2 text-sm text-gray-600">
+              <svg className="w-4 h-4 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+              {ch}
+            </div>
           ))}
         </div>
+      </div>
 
-        {/* What's inside */}
-        <div className="bg-gray-50 rounded-2xl p-6 mb-8">
-          <h3 className="text-sm font-semibold text-gray-900 mb-4">{t.chaptersTitle}</h3>
-          <div className="space-y-2">
-            {t.chapters.map((ch) => (
-              <div key={ch} className="flex items-start gap-2 text-sm text-gray-600">
-                <svg className="w-4 h-4 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                {ch}
-              </div>
-            ))}
+      {status === "sent" ? (
+        <>
+          {/* Sent: the download link is in the inbox */}
+          <div className="bg-green-50 rounded-2xl border border-green-200 p-8 text-center">
+            <span className="text-4xl mb-3 block">📬</span>
+            <h3 className="text-lg font-bold text-green-800 mb-2">{t.sentTitle}</h3>
+            <p className="text-sm text-green-700">{t.sentDesc.replace("{email}", sentTo)}</p>
+            <button
+              type="button"
+              onClick={handleResend}
+              disabled={resend === "loading" || resend === "done"}
+              className="mt-4 text-sm font-medium text-green-700 underline underline-offset-2 hover:text-green-900 disabled:no-underline disabled:opacity-60"
+            >
+              {resend === "done" ? t.resent : resend === "loading" ? "..." : t.resend}
+            </button>
+            {resend === "error" && <p className="text-sm text-red-500 mt-2">{errorMsg}</p>}
           </div>
-        </div>
 
-        {/* Subscribe */}
+          {/* CTA to full series */}
+          <div className="mt-8 bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 text-center text-white">
+            <h2 className="text-2xl font-bold mb-3">{t.moreTitle}</h2>
+            <p className="text-blue-100 mb-6">{t.moreDesc}</p>
+            <Link
+              href={`/${lang}/blog/ai-free-learning-hub`}
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-blue-700 rounded-lg text-sm font-medium hover:bg-blue-50 transition-colors"
+            >
+              {t.moreBtn}
+            </Link>
+          </div>
+        </>
+      ) : (
+        /* Subscribe: the download link is emailed */
         <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl border border-blue-100 p-8">
+          {expired && (
+            <p className="mb-6 rounded-xl bg-amber-50 border border-amber-200 px-4 py-3 text-sm text-amber-800 text-center">
+              {t.expired}
+            </p>
+          )}
           <h3 className="text-lg font-bold text-gray-900 mb-2 text-center">{t.unlockTitle}</h3>
           <p className="text-sm text-gray-500 text-center mb-6">{t.unlockDesc}</p>
-          <form onSubmit={handleUnlock}>
+          <form onSubmit={handleSubmit}>
             {/* Honeypot */}
             <input
               type="text"
@@ -185,88 +240,7 @@ function GuideContent({ lang }: { lang: Locale }) {
             <p className="text-xs text-gray-400 mt-3 text-center">{t.privacy}</p>
           </form>
         </div>
-      </div>
-    );
-  }
-
-  // Unlocked
-  return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12">
-      <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-xl flex items-center justify-between flex-wrap gap-3">
-        <div className="flex items-center gap-3">
-          <span className="text-xl">🎉</span>
-          <div>
-            <p className="text-sm font-medium text-green-800">{t.successTitle}</p>
-            <p className="text-xs text-green-600">{t.successDesc}</p>
-          </div>
-        </div>
-        <a
-          href={PDF_PATH}
-          download={t.pdfFilename}
-          className="px-4 py-2 bg-green-600 text-white rounded-lg text-sm font-medium hover:bg-green-700 transition-colors"
-        >
-          {t.download}
-        </a>
-      </div>
-
-      <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">{t.title}</h1>
-        <p className="text-gray-500">{t.subtitle}</p>
-      </div>
-
-      {/* PDF page previews */}
-      <div className="rounded-2xl border border-gray-200 overflow-hidden bg-gradient-to-b from-gray-50 to-white p-6 sm:p-10">
-        <p className="text-xs text-gray-400 text-center mb-5">{t.previewTip}</p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-          {[1, 2, 3, 4, 5, 6].map((n) => (
-            <div
-              key={n}
-              className="rounded-xl overflow-hidden border border-gray-200 shadow-sm bg-white"
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={`/ai-learning-guide-preview/page-${n}.png`}
-                alt={`${t.title} — page ${n}`}
-                className="w-full h-auto block"
-                loading={n <= 2 ? "eager" : "lazy"}
-              />
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-          <a
-            href={PDF_PATH}
-            download={t.pdfFilename}
-            className="w-full sm:w-auto px-8 py-3.5 bg-[var(--primary)] text-white rounded-xl text-base font-semibold hover:bg-[var(--primary-dark)] transition-colors flex items-center justify-center gap-2 shadow-lg shadow-blue-500/20"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-            </svg>
-            {t.download}
-          </a>
-          <a
-            href={PDF_PATH}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full sm:w-auto px-6 py-3.5 border border-gray-200 text-gray-700 rounded-xl text-base font-medium hover:bg-gray-50 transition-colors flex items-center justify-center gap-2"
-          >
-            {t.openTab}
-          </a>
-        </div>
-      </div>
-
-      {/* CTA to full series */}
-      <div className="mt-12 bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 md:p-12 text-center text-white">
-        <h2 className="text-2xl font-bold mb-3">{t.moreTitle}</h2>
-        <p className="text-blue-100 mb-6">{t.moreDesc}</p>
-        <Link
-          href={`/${lang}/blog/ai-free-learning-hub`}
-          className="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-blue-700 rounded-lg text-sm font-medium hover:bg-blue-50 transition-colors"
-        >
-          {t.moreBtn}
-        </Link>
-      </div>
+      )}
     </div>
   );
 }
