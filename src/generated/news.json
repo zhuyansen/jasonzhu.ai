@@ -13357,7 +13357,9 @@
         "source": "HuggingFace Papers",
         "category": "AI 论文",
         "url": "https://huggingface.co/papers/2605.30837",
-        "summary": "现有 Prompt 注入防御通常绑定单一检测器，存在盲区。SCOUT 框架的思路是：先用轻量模型「侦察」每个请求的风险特征，再动态决定派哪个检测器上阵甚至升级 LLM 裁判。对构建生产级 Agent 安全层的开发者来说，这种按需分配的防御架构比一刀切方案更实用。"
+        "summary": "现有 Prompt 注入防御通常绑定单一检测器，存在盲区。SCOUT 框架的思路是：先用轻量模型「侦察」每个请求的风险特征，再动态决定派哪个检测器上阵甚至升级 LLM 裁判。对构建生产级 Agent 安全层的开发者来说，这种按需分配的防御架构比一刀切方案更实用。",
+        "titleEn": "SCOUT: Scout Models Dynamically Route Prompt Injection Detectors",
+        "summaryEn": "Existing prompt injection defenses typically rely on a single detector, leaving blind spots. The SCOUT framework, featured on Hugging Face Papers, first uses a lightweight model to scout each request's risk profile, then dynamically selects which detector to deploy, escalating to an LLM judge when needed. For developers building production-grade agent security layers, this on-demand architecture is more practical than one-size-fits-all approaches."
       }
     ],
     "jasonSays": "今天最值得盯的是 Google 官方下场做 Skills 仓库——这说明 Agent 技能生态的标准之争已从 Anthropic 单打独斗变成大厂混战，早布局 Skills 开发的人，窗口期正在收窄。",
@@ -13438,7 +13440,9 @@
         "source": "HuggingFace Papers",
         "category": "AI 论文",
         "url": "https://huggingface.co/papers/2606.06843",
-        "summary": "研究分析了 35,361 条明确标注 AI 使用的 GitHub 代码注释，构建出首个「AI 辅助开发行为分类体系」，揭示开发者如何修改、适配 AI 生成代码。结论是：AI 输出普遍被二次改造，而非直接使用——为 Copilot/Claude Code 等工具的下一步优化方向提供了实证基础。"
+        "summary": "研究分析了 35,361 条明确标注 AI 使用的 GitHub 代码注释，构建出首个「AI 辅助开发行为分类体系」，揭示开发者如何修改、适配 AI 生成代码。结论是：AI 输出普遍被二次改造，而非直接使用——为 Copilot/Claude Code 等工具的下一步优化方向提供了实证基础。",
+        "titleEn": "35,000 GitHub Comments Reveal How Developers Actually Use AI Coding Tools",
+        "summaryEn": "A new Hugging Face-featured paper analyzes 35,361 GitHub code comments that explicitly mention AI use, building the first taxonomy of AI-assisted development behavior. It shows how developers modify and adapt AI-generated code. The key finding is that AI output is usually reworked rather than used as-is, giving tools like Copilot and Claude Code empirical direction for future improvements."
       }
     ],
     "jasonSays": "今天最大的信号是 OpenAI 和 Anthropic 双双冲刺 IPO，AI「烧钱黑洞」时代结束，下一阶段比的是谁能真正赚到钱——这对所有在 AI 赛道的独立开发者来说，既是压力也是机会窗口。",
@@ -13519,7 +13523,9 @@
         "source": "HuggingFace Papers",
         "category": "AI 论文",
         "url": "https://huggingface.co/papers/2606.05515",
-        "summary": "CAD 文件的原生格式 BRep（边界表示）长期被 AI 忽视，现有模型只能处理点云或网格。BRepCLIP 首次通过对比预训练将 BRep 几何与文字、图像对齐，让「用自然语言搜索 CAD 零件」成为可能。对工业设计、制造业 AI 应用开发者是直接可用的基础能力突破。"
+        "summary": "CAD 文件的原生格式 BRep（边界表示）长期被 AI 忽视，现有模型只能处理点云或网格。BRepCLIP 首次通过对比预训练将 BRep 几何与文字、图像对齐，让「用自然语言搜索 CAD 零件」成为可能。对工业设计、制造业 AI 应用开发者是直接可用的基础能力突破。",
+        "titleEn": "BRepCLIP Aligns Native CAD Format with Language and Images",
+        "summaryEn": "BRep (boundary representation), the native format of CAD files, has long been overlooked by AI, with existing models handling only point clouds or meshes. BRepCLIP is the first to align BRep geometry with text and images through contrastive pretraining, making natural-language search for CAD parts possible. It gives developers of industrial design and manufacturing AI a foundational capability they can use right away."
       }
     ],
     "jasonSays": "今天最值得盯的是 Token 涨价潮 + Mythos 天价定价：免费午餐快结束了，现在不把 Multi-Agent 降本架构练熟，等 IPO 潮来了账单会让你很难受。",
@@ -13600,7 +13606,9 @@
         "source": "X/@bindureddy",
         "category": "变现案例",
         "url": "https://x.com/bindureddy",
-        "summary": "创始人 Bindu Reddy 分享：团队已实现 100% AI 写代码、AI 做 Code Review、AI 管生产部署，本人每天提 10-12 个 PR。这是目前最接近「AI 原生工程团队」的公开案例，对独立开发者和小团队复刻 AI 驱动开发流程有直接参考价值。"
+        "summary": "创始人 Bindu Reddy 分享：团队已实现 100% AI 写代码、AI 做 Code Review、AI 管生产部署，本人每天提 10-12 个 PR。这是目前最接近「AI 原生工程团队」的公开案例，对独立开发者和小团队复刻 AI 驱动开发流程有直接参考价值。",
+        "titleEn": "Entire Engineering Team Works Solely With AI, Shipping 10-12 PRs Daily",
+        "summaryEn": "Founder Bindu Reddy says her team now relies on AI for 100% of code writing, code review, and production deployment, with Reddy herself submitting 10-12 PRs a day. It's the closest public example yet of an \"AI-native engineering team,\" offering a direct blueprint for indie developers and small teams looking to replicate an AI-driven development workflow."
       }
     ],
     "jasonSays": "今天最值得细品的是两件事放一起看：OpenAI 推 Lockdown Mode 防 Agent 安全漏洞，同时 SABER 基准论文在问「编程 Agent 到底会不会搞坏生产」——AI Agent 从玩具走向生产的最后一道门，是安全信任，不是能力。",
@@ -13681,7 +13689,9 @@
         "source": "Latent Space",
         "category": "AI 论文",
         "url": "https://www.latent.space/p/andon",
-        "summary": "Andon Labs 团队分享了 VendingBench——一套以「真实世界任务」而非学术 benchmark 作为评测标准的 frontier eval 框架，覆盖 Claude 全系从 Haiku 到 Mythos。对开发者的意义：帮你在选型时跳过营销数字，用贴近实际业务的指标做决策。"
+        "summary": "Andon Labs 团队分享了 VendingBench——一套以「真实世界任务」而非学术 benchmark 作为评测标准的 frontier eval 框架，覆盖 Claude 全系从 Haiku 到 Mythos。对开发者的意义：帮你在选型时跳过营销数字，用贴近实际业务的指标做决策。",
+        "titleEn": "Andon Labs Tests Claude Models From Haiku to Mythos in Real-World Scenarios",
+        "summaryEn": "Andon Labs shared VendingBench, a frontier evaluation framework that measures models on real-world tasks rather than academic benchmarks, covering the full Claude lineup from Haiku to Mythos. For developers, it offers a way to look past marketing numbers and choose models using metrics that more closely reflect actual business needs."
       }
     ],
     "jasonSays": "今天最值得警惕的信号：Token 账单失控 + Mythos 定价 $70/M，AI 成本正在逼近甚至超过人力成本——DeepSeek Flash 跑 Agent 便宜 10 倍的案例，现在不只是「省钱技巧」，而是生死线。",
@@ -13762,7 +13772,9 @@
         "source": "36Kr",
         "category": "AI 工具动态",
         "url": "https://36kr.com/p/3838454229027072",
-        "summary": "36氪独家获悉字节今年 AI 战略重心：年底追平 Google Genie 3 世界模型水平、视频生成探索动态生成、Coding Agent 建飞轮、豆包押注办公场景变现。豆包 DAU 已达 2 亿，字节正从「模型追赶者」转向「应用商业化收割者」。"
+        "summary": "36氪独家获悉字节今年 AI 战略重心：年底追平 Google Genie 3 世界模型水平、视频生成探索动态生成、Coding Agent 建飞轮、豆包押注办公场景变现。豆包 DAU 已达 2 亿，字节正从「模型追赶者」转向「应用商业化收割者」。",
+        "titleEn": "Exclusive: ByteDance's Four AI Priorities for 2026 Revealed",
+        "summaryEn": "36Kr has learned ByteDance's 2026 AI focus: matching Google's Genie 3 world model by year-end, exploring dynamic video generation, building a flywheel for coding agents, and monetizing Doubao through workplace use cases. With Doubao at 200 million daily active users, ByteDance is shifting from chasing frontier models to cashing in on commercial AI applications."
       }
     ],
     "jasonSays": "今天最值得盯的信号有两个：ChatGPT Dreaming 记忆系统是产品护城河的悄悄升级；而 Anthropic 警告 AI 将参与设计下一代自己——在 IPO 前说这话，是真诚还是故事，你自己判断。",
@@ -13843,7 +13855,9 @@
         "source": "HuggingFace Papers",
         "category": "AI 论文",
         "url": "https://huggingface.co/papers/2606.04455",
-        "summary": "论文构建 **Meta-Agent Challenge** 基准，专门测试：「现有 Agent 能否自主设计、实现、测试出全新 Agent？」结果显示主流模型在「Agent 造 Agent」这件事上**普遍失败**——离 AGI 式自我繁殖还有距离。对所有想搭「自进化 Agent 系统」的团队是冷水。"
+        "summary": "论文构建 **Meta-Agent Challenge** 基准，专门测试：「现有 Agent 能否自主设计、实现、测试出全新 Agent？」结果显示主流模型在「Agent 造 Agent」这件事上**普遍失败**——离 AGI 式自我繁殖还有距离。对所有想搭「自进化 Agent 系统」的团队是冷水。",
+        "titleEn": "Meta-Agent Challenge: Can Today's Agents Build New Agents?",
+        "summaryEn": "A new Hugging Face paper introduces the Meta-Agent Challenge, a benchmark testing whether current agents can autonomously design, implement, and test entirely new agents. Leading models largely fail at this \"agents building agents\" task, suggesting AGI-style self-replication remains distant. It's a reality check for teams trying to build self-evolving agent systems."
       }
     ],
     "jasonSays": "今天最爆是 Microsoft Build 发布 MAI-Thinking-1 + MAI 自研模型家族——微软终于不再只做 OpenAI 的渠道商，而是自己造模型；同时 Lovable 锁定 Google Cloud 5 倍算力——Vibe Coding 赛道头部加速圈地。两件事合在一起：AI 应用层下半年要重新洗牌。",
@@ -13924,7 +13938,9 @@
         "source": "HuggingFace Papers",
         "category": "AI 论文",
         "url": "https://huggingface.co/papers/2606.00184",
-        "summary": "主流 AI 文本检测器输出一个「AI 概率」分数，用户无法验证。**Show, Don't TELL** 提出可解释检测框架：不只给概率，还指出文本里**哪些片段最像 AI 写的及原因**。对做内容审核、学术诚信、SEO 反 AI slop 的产品有直接落地价值。"
+        "summary": "主流 AI 文本检测器输出一个「AI 概率」分数，用户无法验证。**Show, Don't TELL** 提出可解释检测框架：不只给概率，还指出文本里**哪些片段最像 AI 写的及原因**。对做内容审核、学术诚信、SEO 反 AI slop 的产品有直接落地价值。",
+        "titleEn": "Show, Don't TELL: Explainable AI-Generated Text Detection",
+        "summaryEn": "Mainstream AI text detectors output a single \"AI probability\" score that users can't verify. A new Hugging Face paper, Show, Don't TELL, proposes an explainable detection framework that goes beyond a probability: it pinpoints which passages look most AI-written and explains why. This has direct practical value for content moderation, academic integrity, and SEO tools fighting AI slop."
       }
     ],
     "jasonSays": "今天最值得盯的两个极端：Uber 4 个月烧光 AI 预算被迫给员工设限，而微软同日发布 OpenClaw 风格的 Scout 助手 + AI 测试工具——企业用户在为 AI 成本焦虑，巨头却在加速 Agent 产品化。这就是 2026 下半年 AI 应用的主调：成本治理与 Agent 普及同步推进。",
@@ -14005,7 +14021,9 @@
         "source": "HuggingFace Papers",
         "category": "AI 论文",
         "url": "https://huggingface.co/papers/2605.30621",
-        "summary": "论文系统性测试自进化 Agent 系统：发现**「升级 harness」带来的提升常常不来自 harness 本身**，而是来自模型本身的能力变化。对所有做 Agent 编排/自迭代系统的团队是「冷水提醒」——你以为是 framework 立功，其实只是底层模型升级了。评估时务必做 ablation。"
+        "summary": "论文系统性测试自进化 Agent 系统：发现**「升级 harness」带来的提升常常不来自 harness 本身**，而是来自模型本身的能力变化。对所有做 Agent 编排/自迭代系统的团队是「冷水提醒」——你以为是 framework 立功，其实只是底层模型升级了。评估时务必做 ablation。",
+        "titleEn": "Harness Updating Is Not Harness Benefit: Where Self-Evolving Agents Really Gain",
+        "summaryEn": "A Hugging Face paper systematically tests self-evolving agent systems and finds that gains attributed to harness upgrades often come from changes in the underlying model's capabilities, not the harness itself. It's a reality check for teams building agent orchestration or self-iterating systems: credit you give the framework may belong to the model. Always run ablations when evaluating."
       }
     ],
     "jasonSays": "今天信号集中爆发：Anthropic 提交 IPO + Alphabet 融 800 亿 + Florida 首次起诉 OpenAI——AI 巨头同步进入「资本市场化 + 监管常态化」阶段；同时 Starbucks 撤回 AI Agent + Copilot 转用量计费引争议，提醒所有产品团队：Agent 落地的下半场是「ROI 真账」而非概念秀。",
@@ -14086,7 +14104,9 @@
         "source": "HuggingFace Papers",
         "category": "AI 论文",
         "url": "https://huggingface.co/papers/2605.22771",
-        "summary": "研究识别出 LLM「隐性政治偏见」的 7 类表现方式，并提出两个量化指标衡量情感一致性与帮助性一致性。「一致性训练」可显著降低这种系统性偏差。对出海做内容/社媒 AI 产品的开发者而言，这类偏见可能直接影响用户信任与合规风险。"
+        "summary": "研究识别出 LLM「隐性政治偏见」的 7 类表现方式，并提出两个量化指标衡量情感一致性与帮助性一致性。「一致性训练」可显著降低这种系统性偏差。对出海做内容/社媒 AI 产品的开发者而言，这类偏见可能直接影响用户信任与合规风险。",
+        "titleEn": "Study Finds LLMs Answer Left and Right Asymmetrically",
+        "summaryEn": "New research identifies seven forms of \"implicit political bias\" in LLMs, where models respond unevenly to left- and right-leaning framings of the same issue. It introduces two metrics measuring sentiment consistency and helpfulness consistency, and shows that \"consistency training\" significantly reduces this systematic bias. For developers building content or social media AI products for global markets, such bias can directly affect user trust and compliance risk."
       }
     ],
     "jasonSays": "今天最值得盯的是 Cursor 官方 Plugins 仓库开放——这不是小更新，是在复制 VSCode 生态打法；谁先占住高频工具的 Cursor 插件位置，谁就提前锁定开发者心智。",
@@ -14167,7 +14187,9 @@
         "source": "HuggingFace Papers",
         "category": "AI 论文",
         "url": "https://huggingface.co/papers/2605.24786",
-        "summary": "CONF-KV 提出用模型每步解码时的「下一 token 预测置信度」来动态决定保留多少 KV Cache，高置信时激进压缩、低置信时保留更多上下文。对开发者的意义：在不换模型的前提下，长文档处理的 GPU 显存和推理成本可大幅降低，部署 10 万 token 以上长文本应用的工程成本有望实质性下降。"
+        "summary": "CONF-KV 提出用模型每步解码时的「下一 token 预测置信度」来动态决定保留多少 KV Cache，高置信时激进压缩、低置信时保留更多上下文。对开发者的意义：在不换模型的前提下，长文档处理的 GPU 显存和推理成本可大幅降低，部署 10 万 token 以上长文本应用的工程成本有望实质性下降。",
+        "titleEn": "Confidence-Guided KV Cache Cuts Long-Context Memory by 10x",
+        "summaryEn": "CONF-KV uses the model's next-token prediction confidence at each decoding step to decide how much KV cache to keep. It compresses aggressively when confidence is high and retains more context when it is low. Developers can sharply reduce GPU memory and inference costs for long documents without changing models, making 100K+ token applications substantially cheaper to deploy."
       }
     ],
     "jasonSays": "今天最值得警惕的信号：GitHub Copilot 按 Token 收费 + 某公司单月烧掉 5 亿美元 Claude 费用——AI 工具的「成本失控时代」已经来临，企业和独立开发者必须开始认真做 AI 用量治理，不然账单会教你做人。",
@@ -14248,7 +14270,9 @@
         "source": "HuggingFace Papers",
         "category": "AI 论文",
         "url": "https://huggingface.co/papers/2605.24785",
-        "summary": "PANDO 提出多模态 web agent 的新范式：不再依赖 inference-time 大算力（rollout 搜索、verifier 多次校验、专家模型栈），而是**通过在线 Skill 蒸馏**让 agent 在执行中自主积累技能。对做生产环境多模态 Agent 的团队：可显著降低推理成本，是值得跟进的工程方向。"
+        "summary": "PANDO 提出多模态 web agent 的新范式：不再依赖 inference-time 大算力（rollout 搜索、verifier 多次校验、专家模型栈），而是**通过在线 Skill 蒸馏**让 agent 在执行中自主积累技能。对做生产环境多模态 Agent 的团队：可显著降低推理成本，是值得跟进的工程方向。",
+        "titleEn": "PANDO: Online Skill Distillation for Multimodal Agents",
+        "summaryEn": "PANDO, a new Hugging Face paper, proposes a new paradigm for multimodal web agents. Instead of relying on heavy inference-time compute such as rollout search, repeated verifier checks, or stacks of expert models, it uses online skill distillation so agents build up skills on their own as they work. For teams running multimodal agents in production, it could sharply cut inference costs."
       }
     ],
     "jasonSays": "今天最猛的是 Anthropic 一口气发 Opus 4.8 + Dynamic Workflows/ultracode + 巨额 Series H 融资，被 Latent Space 称作「Total Anthropic victory」；同时 Cognition 公开 Async Agent 范式——80% Devin commits、Spec-to-PR、Agent Memory——AI 编程真正进入「人定 spec、Agent 自交付」时代。",
@@ -14328,7 +14352,9 @@
         "source": "HuggingFace Papers",
         "category": "AI 论文",
         "url": "https://huggingface.co/papers/2605.27766",
-        "summary": "研究模拟数千个 LLM Agent 在社交环境中持续交互一个月，发现从单轮到多轮评估后隐私泄露风险显著放大，且社交压力越大泄露越严重。对开发者的意义：在构建多 Agent 系统时，隐私隔离和信息边界设计必须从架构层面考虑，而非事后补丁。"
+        "summary": "研究模拟数千个 LLM Agent 在社交环境中持续交互一个月，发现从单轮到多轮评估后隐私泄露风险显著放大，且社交压力越大泄露越严重。对开发者的意义：在构建多 Agent 系统时，隐私隔离和信息边界设计必须从架构层面考虑，而非事后补丁。",
+        "titleEn": "Paper: Multi-Agent Systems Can't Keep Secrets Under Social Pressure",
+        "summaryEn": "Researchers simulated thousands of LLM agents interacting socially for a month and found that privacy risks grew significantly when evaluation moved from single-turn to multi-turn settings, with greater social pressure causing worse leakage. For developers, privacy isolation and information boundaries must be designed into multi-agent architectures from the start, not patched on later."
       }
     ],
     "jasonSays": "Anthropic 估值逼近万亿，Opus 4.8 却被社区评为「微增」——融资能力和模型迭代速度之间的张力，是 Anthropic 在 IPO 前最需要正面回答的问题。",
@@ -14409,7 +14435,9 @@
         "source": "HuggingFace Papers",
         "category": "AI 论文",
         "url": "https://huggingface.co/papers/2605.26242",
-        "summary": "「LLM 是否真的能内省自己的推理过程」一直是热门哲学/工程问题。这篇论文系统性测试主流模型的自我报告 vs 实际行为的一致性，结论是：**模型给出的「内省解释」与真实决策路径系统性不一致**。对做 AI 可解释性 / Agent 调试的开发者：别再相信 LLM 自己写的「我为什么这样做」——它经常是事后编故事。"
+        "summary": "「LLM 是否真的能内省自己的推理过程」一直是热门哲学/工程问题。这篇论文系统性测试主流模型的自我报告 vs 实际行为的一致性，结论是：**模型给出的「内省解释」与真实决策路径系统性不一致**。对做 AI 可解释性 / Agent 调试的开发者：别再相信 LLM 自己写的「我为什么这样做」——它经常是事后编故事。",
+        "titleEn": "HF Paper: Can LLMs Introspect? A Reality Check",
+        "summaryEn": "Whether LLMs can truly introspect on their own reasoning is a hot philosophical and engineering question. This paper systematically tests how well leading models' self-reports match their actual behavior, finding that their \"introspective explanations\" consistently diverge from their real decision paths. For developers working on interpretability or agent debugging, stop trusting an LLM's own account of why it did something. It's often a post-hoc story."
       }
     ],
     "jasonSays": "今天最劲爆的是 Cognition（Devin AI 母公司）$25B 估值融 $10 亿，AI 编程 startup 正在被资本定价为下一个 Cursor；同时 Latent Space 一句话点透行业现状——「All Model Labs are now Agent Labs」，模型公司全面转向 Agent 路线已成共识。",
@@ -14489,7 +14517,9 @@
         "source": "HuggingFace Papers",
         "category": "AI 论文",
         "url": "https://huggingface.co/papers/2605.25189",
-        "summary": "论文通过分析 LLM 强化学习中参数更新的奇异方向，发现 Reward Hacking 本质是优化偏离了稳定的低维学习轨迹。提出「方向对齐」方法，在不改变训练目标的前提下约束更新方向，有效减少模型走捷径行为。对理解 RLHF 为何失效、以及如何修复，有直接的工程指导意义。"
+        "summary": "论文通过分析 LLM 强化学习中参数更新的奇异方向，发现 Reward Hacking 本质是优化偏离了稳定的低维学习轨迹。提出「方向对齐」方法，在不改变训练目标的前提下约束更新方向，有效减少模型走捷径行为。对理解 RLHF 为何失效、以及如何修复，有直接的工程指导意义。",
+        "titleEn": "Paper Traces Reward Hacking to Geometry, Fixes It with Directional Alignment",
+        "summaryEn": "By analyzing singular directions of parameter updates during LLM reinforcement learning, this paper finds that reward hacking stems from optimization drifting off a stable, low-dimensional learning trajectory. Its proposed \"directional alignment\" method constrains update directions without changing the training objective, effectively curbing shortcut behavior. The work offers direct engineering guidance on why RLHF fails and how to fix it."
       }
     ],
     "jasonSays": "今天两件事放一起看很有意思：OpenRouter 估值翻倍说明多模型调用已是基础设施级需求，同时数百万 Agent 面临安全漏洞——AI 基础设施在快速成熟，但安全欠账也在同步累积，这个剪刀差迟早要还。",
@@ -14570,7 +14600,9 @@
         "source": "HuggingFace Papers",
         "category": "AI 论文",
         "url": "https://huggingface.co/papers/2605.20177",
-        "summary": "研究系统拆解了视觉语言模型的训练过程，发现 VLM 在视觉任务上表现差的根因是「看不清」而非「想不通」。将视觉感知、视觉推理、文本推理三阶段分开训练后性能显著提升，对多模态应用开发者选型和微调策略有直接指导价值。"
+        "summary": "研究系统拆解了视觉语言模型的训练过程，发现 VLM 在视觉任务上表现差的根因是「看不清」而非「想不通」。将视觉感知、视觉推理、文本推理三阶段分开训练后性能显著提升，对多模态应用开发者选型和微调策略有直接指导价值。",
+        "titleEn": "VLM Study: Train Perception and Reasoning Separately, Perception Is the Bottleneck",
+        "summaryEn": "A new paper systematically dissects vision-language model training and finds that VLMs underperform on visual tasks because they can't see clearly, not because they can't reason. Training visual perception, visual reasoning, and text reasoning as three separate stages significantly boosts performance. The findings offer direct guidance for multimodal developers choosing models and designing fine-tuning strategies."
       }
     ],
     "jasonSays": "今天最值得盯的信号：ClickUp 公开用 Agent 替换百人团队，Anthropic 同步推出知识工作者 Plugins——AI 重构组织不再是趋势预测，而是正在发生的现实，留给「观望」的时间窗口正在快速关闭。",
@@ -14642,7 +14674,9 @@
         "source": "HuggingFace Papers",
         "category": "AI 论文",
         "url": "https://huggingface.co/papers/2605.17602",
-        "summary": "现有文生图奖励模型依赖大规模人工偏好数据，成本高且评分标准不透明。AutoRubric-T2I 用 VLM 自动生成评分规则，无需人工标注即可对图像质量和提示词对齐度打分。对开发者意义：可低成本搭建自定义图像生成质量评估流水线，适合独立开发者做产品质控。"
+        "summary": "现有文生图奖励模型依赖大规模人工偏好数据，成本高且评分标准不透明。AutoRubric-T2I 用 VLM 自动生成评分规则，无需人工标注即可对图像质量和提示词对齐度打分。对开发者意义：可低成本搭建自定义图像生成质量评估流水线，适合独立开发者做产品质控。",
+        "titleEn": "AutoRubric-T2I: Rubric-Driven Reward Model for Text-to-Image Alignment Without Human Labels",
+        "summaryEn": "Existing text-to-image reward models rely on large-scale human preference data, which is costly and makes scoring criteria opaque. AutoRubric-T2I uses a VLM to automatically generate scoring rubrics, rating image quality and prompt alignment without any human annotation. For developers, it offers a low-cost way to build custom image-generation quality evaluation pipelines, well suited to indie developers handling product quality control."
       }
     ],
     "jasonSays": "今天最值得盯的是 Anthropic 官方插件目录——这不只是一个 GitHub 仓库，而是 Claude Code 生态从野蛮生长走向有序治理的起点，谁先在目录里占位，谁就先拿到官方流量入口。",
@@ -14723,7 +14757,9 @@
         "source": "HuggingFace Papers",
         "category": "AI 论文",
         "url": "https://huggingface.co/papers/2605.22717",
-        "summary": "论文探索将开源音频扩散模型改造为交互式流式生成模型，支持直播演出和实时共创场景。此前 SOTA 音乐生成模型需要工业级算力且不支持流式输出，这项工作让普通开发者也能构建低延迟的实时音乐生成应用，对音乐 SaaS 方向的独立开发者有直接参考价值。"
+        "summary": "论文探索将开源音频扩散模型改造为交互式流式生成模型，支持直播演出和实时共创场景。此前 SOTA 音乐生成模型需要工业级算力且不支持流式输出，这项工作让普通开发者也能构建低延迟的实时音乐生成应用，对音乐 SaaS 方向的独立开发者有直接参考价值。",
+        "titleEn": "Real-Time Music Diffusion Brings Live-Ready Streaming to Open-Source Audio AI",
+        "summaryEn": "This paper adapts open-source audio diffusion models into interactive streaming generators built for live performance and real-time co-creation. Previous state-of-the-art music models needed industrial-scale compute and couldn't stream output. This work lets everyday developers build low-latency, real-time music generation apps, making it directly useful for indie developers building music SaaS products."
       }
     ],
     "jasonSays": "今天最值得盯的是 Chrome DevTools 官方出 MCP——不是社区适配，是 DevTools 团队自己做的，浏览器调试正式成为 Agent 工作流标配，这个信号比任何第三方工具都硬。",
@@ -14804,7 +14840,9 @@
         "source": "Hacker News",
         "category": "AI 工具动态",
         "url": "https://www.wired.com/story/elon-musk-spacex-spending-gas-turbines-grok/",
-        "summary": "SpaceX 正斥资 28 亿美元采购燃气轮机，为 xAI 的 Grok AI 数据中心提供独立电力供应，彻底脱离公共电网。AI 算力军备竞赛已经延伸到能源层，大模型公司的基础设施投入规模正在超出大多数人的想象。"
+        "summary": "SpaceX 正斥资 28 亿美元采购燃气轮机，为 xAI 的 Grok AI 数据中心提供独立电力供应，彻底脱离公共电网。AI 算力军备竞赛已经延伸到能源层，大模型公司的基础设施投入规模正在超出大多数人的想象。",
+        "titleEn": "SpaceX Spends $2.8B on Gas Turbines to Power Grok Data Centers",
+        "summaryEn": "SpaceX is spending $2.8 billion on gas turbines to give xAI's Grok data centers an independent power supply, fully off the public grid. The AI compute arms race has now reached the energy layer, and model companies are pouring money into infrastructure on a scale most people would struggle to imagine."
       }
     ],
     "jasonSays": "Skills 生态这周明显在提速——微软官方下场、跨 Agent 框架涌现，加上 Gartner 把编码 Agent 列入企业采购象限，这条赛道的「基础设施化」比预期快得多，现在入场做 Skills 开发，窗口期还在。",
@@ -14885,7 +14923,9 @@
         "source": "HuggingFace Papers",
         "category": "AI 论文",
         "url": "https://huggingface.co/papers/2605.17526",
-        "summary": "现有编码 Agent 基准多为单栈简化项目，无法反映真实企业 SaaS 的复杂度。SaaSBench 填补这一空白：引入异构技术栈、全栈编排与系统级依赖，测试 Agent 完成端到端 SaaS 工程任务的能力。对独立开发者和企业工程师衡量 Agent 实际可用性有直接参考价值。"
+        "summary": "现有编码 Agent 基准多为单栈简化项目，无法反映真实企业 SaaS 的复杂度。SaaSBench 填补这一空白：引入异构技术栈、全栈编排与系统级依赖，测试 Agent 完成端到端 SaaS 工程任务的能力。对独立开发者和企业工程师衡量 Agent 实际可用性有直接参考价值。",
+        "titleEn": "SaaSBench: First Coding Agent Benchmark for Enterprise Full-Stack SaaS",
+        "summaryEn": "Most coding agent benchmarks use simplified single-stack projects that fail to capture the complexity of real enterprise SaaS. SaaSBench fills this gap by introducing heterogeneous tech stacks, full-stack orchestration, and system-level dependencies to test whether agents can complete end-to-end SaaS engineering tasks. It offers a practical reference for indie developers and enterprise engineers assessing how usable agents really are."
       }
     ],
     "jasonSays": "今天最震撼的是 OpenAI 模型用不到 1000 美元干掉了 80 年数学难题——这不是「AI 辅助数学」，这是 AI 自己做数学研究了；与此同时 Daytona 和 Railway 的增长数据也在告诉你：Agent 基础设施才是这波最稳的生意。",
@@ -14966,7 +15006,9 @@
         "source": "HuggingFace Papers",
         "category": "AI 论文",
         "url": "https://huggingface.co/papers/2605.16584",
-        "summary": "论文提出 **Policy-Aware Rubric Rewards**，让 RLVR（Reinforcement Learning with Verifiable Rewards）训练时根据当前策略动态调整 rubric 权重——避免「rubric 看起来对，但其实在教模型走偏」。对做 RL 微调、Agent 训练的团队，这是值得落地的调度技巧。"
+        "summary": "论文提出 **Policy-Aware Rubric Rewards**，让 RLVR（Reinforcement Learning with Verifiable Rewards）训练时根据当前策略动态调整 rubric 权重——避免「rubric 看起来对，但其实在教模型走偏」。对做 RL 微调、Agent 训练的团队，这是值得落地的调度技巧。",
+        "titleEn": "HF Paper: Not All Rubrics Teach Equally—Policy-Aware Rewards for RLVR",
+        "summaryEn": "The paper proposes Policy-Aware Rubric Rewards, which dynamically reweight rubrics during RLVR (Reinforcement Learning with Verifiable Rewards) training based on the current policy. This prevents rubrics that look correct from quietly steering the model in the wrong direction. For teams doing RL fine-tuning or agent training, it's a scheduling technique worth putting into practice."
       }
     ],
     "jasonSays": "今天最炸的是 Google I/O 2026 一口气放出 Gemini 3.5 Flash + Omni 视频版 + Spark 后台 Agent，正面挑战 OpenAI 全线产品；同时 Anthropic 宣布即将首次盈利——两家头部 AI 公司的商业化竞赛进入「正常公司」阶段。",
@@ -15046,7 +15088,9 @@
         "source": "GitHub Trending",
         "category": "AI 工具动态",
         "url": "https://github.com/supertone-inc/supertonic",
-        "summary": "Supertone 开源 Supertonic TTS 引擎，基于 ONNX Runtime 实现超低延迟本地多语言语音合成，支持桌面、浏览器、移动端和边缘设备，完全离线无隐私顾虑。对需要在 Agent 或应用中集成语音能力但不想依赖云端 API 的开发者是实用选项。"
+        "summary": "Supertone 开源 Supertonic TTS 引擎，基于 ONNX Runtime 实现超低延迟本地多语言语音合成，支持桌面、浏览器、移动端和边缘设备，完全离线无隐私顾虑。对需要在 Agent 或应用中集成语音能力但不想依赖云端 API 的开发者是实用选项。",
+        "titleEn": "Supertonic: ONNX-Powered On-Device Multilingual TTS That Runs Locally Without APIs",
+        "summaryEn": "Supertone has open-sourced Supertonic, a TTS engine built on ONNX Runtime that delivers ultra-low-latency multilingual speech synthesis entirely on-device. It runs on desktop, browser, mobile, and edge hardware, works fully offline, and keeps all data local. It's a practical choice for developers who want to add voice to agents or apps without relying on cloud APIs."
       }
     ],
     "jasonSays": "今天最大的事就是 Google I/O——Gemini 3.5 Flash 直接 GA 无限速，开发者说比 Sonnet 还能打还更便宜。Google 这次不再是「发布即难用」，AI 赛道格局真的在重排了。",
@@ -15127,7 +15171,9 @@
         "source": "HuggingFace Papers",
         "category": "AI 论文",
         "url": "https://huggingface.co/papers/2605.14271",
-        "summary": "研究发现 LLM Agent 的执行框架（Harness）存在严重安全盲区：Agent 给出了正确答案，但中间过程可能访问了未授权资源或向错误组件泄露上下文，而现有安全评测只看最终输出根本发现不了。这对所有在生产环境部署 Agent 的团队是一记警钟——你的 Agent 可能「表现良好但行为有问题」。"
+        "summary": "研究发现 LLM Agent 的执行框架（Harness）存在严重安全盲区：Agent 给出了正确答案，但中间过程可能访问了未授权资源或向错误组件泄露上下文，而现有安全评测只看最终输出根本发现不了。这对所有在生产环境部署 Agent 的团队是一记警钟——你的 Agent 可能「表现良好但行为有问题」。",
+        "titleEn": "Agent Harness Audit: Correct Outputs Can Hide Unauthorized Actions",
+        "summaryEn": "New research exposes a major security blind spot in LLM agent harnesses. An agent can reach the correct answer while accessing unauthorized resources or leaking context to the wrong components along the way, and current security evaluations that only check final outputs miss this entirely. It's a wake-up call for teams running agents in production, whose agents may look fine while misbehaving."
       }
     ],
     "jasonSays": "今天最值得盯的是 Anthropic 收购 Stainless——一家同时给 OpenAI 和 Google 做 SDK 的公司现在归了 Anthropic，开发者工具层的卡位战比模型层更悄无声息、也更致命。",
@@ -15208,7 +15254,9 @@
         "source": "HuggingFace Papers",
         "category": "AI 论文",
         "url": "https://huggingface.co/papers/2605.14438",
-        "summary": "BEAM（Binary Expert Activation Masking）提出一种 MoE（混合专家）模型的动态路由新方法，用二值激活掩码更高效地决定每个 token 激活哪些专家。对做模型推理优化、想在有限算力下跑大 MoE 模型的团队有直接参考价值——路由效率直接决定推理成本。"
+        "summary": "BEAM（Binary Expert Activation Masking）提出一种 MoE（混合专家）模型的动态路由新方法，用二值激活掩码更高效地决定每个 token 激活哪些专家。对做模型推理优化、想在有限算力下跑大 MoE 模型的团队有直接参考价值——路由效率直接决定推理成本。",
+        "titleEn": "BEAM: Binary Expert Activation Masking for Dynamic MoE Routing",
+        "summaryEn": "BEAM (Binary Expert Activation Masking) introduces a new dynamic routing method for Mixture-of-Experts models, using binary activation masks to decide more efficiently which experts each token activates. Since routing efficiency directly drives inference costs, the work offers practical guidance for teams optimizing inference or aiming to run large MoE models on limited compute."
       }
     ],
     "jasonSays": "今天最值得注意的不是某个新模型，而是 AI 正在「往实体世界扎根」——百胜餐饮 500 家门店上 Nvidia AI、汽车业打响 AI 技能军备竞赛。软件层的红利在收敛，真正的增量在「AI × 传统行业」的结合部。",
@@ -15289,7 +15337,9 @@
         "source": "HuggingFace Papers",
         "category": "AI 论文",
         "url": "https://huggingface.co/papers/2605.12243",
-        "summary": "PreScam 提出一个新基准，用于评估模型能否从对话的最初几轮就预测出诈骗会如何一步步升级。在 AI 语音克隆、AI 诈骗剧增的当下，这类「早期识别」能力直接关系到反诈产品的有效性。对做安全、合规、客服风控类 AI 产品的开发者有直接参考价值。"
+        "summary": "PreScam 提出一个新基准，用于评估模型能否从对话的最初几轮就预测出诈骗会如何一步步升级。在 AI 语音克隆、AI 诈骗剧增的当下，这类「早期识别」能力直接关系到反诈产品的有效性。对做安全、合规、客服风控类 AI 产品的开发者有直接参考价值。",
+        "titleEn": "PreScam: Predicting How Scams Escalate From Early Conversation Turns",
+        "summaryEn": "PreScam introduces a new benchmark that tests whether models can predict, from just the first few turns of a conversation, how a scam will escalate step by step. With AI voice cloning and AI-driven fraud surging, this early-detection capability directly affects how well anti-fraud products work. It offers practical guidance for developers building AI products for security, compliance, and customer-service risk control."
       }
     ],
     "jasonSays": "今天最大的信号：ArXiv 开始封杀「AI 全代写」论文，Curl 维护者宣布「AI 安全报告不再是垃圾」——AI 在学术和安全两个最严肃的领域同时迎来「质量分水岭」。能不能负责任地用 AI，正在变成新的专业门槛。",
@@ -15370,7 +15420,9 @@
         "source": "HuggingFace Papers",
         "category": "AI 论文",
         "url": "https://huggingface.co/papers/2605.14358",
-        "summary": "主流长上下文模型在预训练阶段计算成本指数增长。Lighthouse Attention 提出新机制，在保持全局信息可达的同时大幅压缩计算复杂度，可支持百万 token 级别上下文的可负担预训练。对做长文档理解 / 代码库级 Agent / RAG 优化的团队，这是值得跟进的架构方向。"
+        "summary": "主流长上下文模型在预训练阶段计算成本指数增长。Lighthouse Attention 提出新机制，在保持全局信息可达的同时大幅压缩计算复杂度，可支持百万 token 级别上下文的可负担预训练。对做长文档理解 / 代码库级 Agent / RAG 优化的团队，这是值得跟进的架构方向。",
+        "titleEn": "Lighthouse Attention Paper Makes Long-Context Pretraining More Efficient",
+        "summaryEn": "Pretraining costs for mainstream long-context models grow exponentially. Lighthouse Attention introduces a mechanism that keeps global information reachable while sharply reducing computational complexity, enabling affordable pretraining with million-token contexts. It is an architecture worth following for teams working on long-document understanding, codebase-scale agents, or RAG optimization."
       }
     ],
     "jasonSays": "今天最值得盯的 3 件事：Anthropic 改 Claude Code 定价（programmatic usage 计量收费）、OpenAI 连接银行账户做个人金融、bindureddy 一句「AI 现在比雇人还贵」——AI 产品化正进入「定价模型重构」阶段，靠人为单位买单的时代意外回潮。",
@@ -15451,7 +15503,9 @@
         "source": "X/@AndrewYNg",
         "category": "AI 工具动态",
         "url": "https://www.deeplearning.ai/courses/transformers-in-practice",
-        "summary": "Andrew Ng 联合 AMD 推出「Transformers in Practice」实践课，教你真正看懂 LLM 内部运作：注意力机制如何决定下一个 Token、为什么会幻觉、量化如何加速 GPU 推理。课程包含交互式可视化，是开发者从「会用」到「能诊断问题」的必要升级。"
+        "summary": "Andrew Ng 联合 AMD 推出「Transformers in Practice」实践课，教你真正看懂 LLM 内部运作：注意力机制如何决定下一个 Token、为什么会幻觉、量化如何加速 GPU 推理。课程包含交互式可视化，是开发者从「会用」到「能诊断问题」的必要升级。",
+        "titleEn": "DeepLearning.AI Launches Course Unpacking Transformer Internals and GPU Inference",
+        "summaryEn": "Andrew Ng and AMD have launched \"Transformers in Practice,\" a hands-on course on how LLMs actually work. It covers how attention determines the next token, why models hallucinate, and how quantization speeds up GPU inference. With interactive visualizations, the course is an essential upgrade for developers who want to go from using LLMs to diagnosing their problems."
       }
     ],
     "jasonSays": "今天最值得盯的是 OpenAI 准备告苹果这件事——AI 公司与平台巨头的分发博弈正式走向法庭，这不是个案，是所有 AI 产品在平台分发上都会面临的结构性困境，出海 SaaS 开发者该认真思考自己的渠道依赖风险了。",
@@ -15532,7 +15586,9 @@
         "source": "X/@bindureddy",
         "category": "AI 工具动态",
         "url": "https://x.com/bindureddy",
-        "summary": "开源社区在算力受限下正展现出惊人的推理效率创新：DeepSeek v4 用 SSD 替代 HBM 做 KV 缓存、TurboQuant 激进压缩内存占用、Kimi K2 持续压低智能成本。对独立开发者而言，这意味着用开源模型跑复杂推理的成本正加速下降，自建 AI 产品的利润空间在打开。"
+        "summary": "开源社区在算力受限下正展现出惊人的推理效率创新：DeepSeek v4 用 SSD 替代 HBM 做 KV 缓存、TurboQuant 激进压缩内存占用、Kimi K2 持续压低智能成本。对独立开发者而言，这意味着用开源模型跑复杂推理的成本正加速下降，自建 AI 产品的利润空间在打开。",
+        "titleEn": "Open Source Turns Scarcity into Edge, Driving Inference Costs Toward Zero",
+        "summaryEn": "Facing compute constraints, the open-source community is delivering striking inference efficiency gains: DeepSeek v4 replaces HBM with SSDs for KV caching, TurboQuant aggressively compresses memory usage, and Kimi K2 keeps driving down the cost of intelligence. For indie developers, complex inference on open models is getting cheaper fast, widening profit margins for self-built AI products."
       }
     ],
     "jasonSays": "今天最值得盯的是 Anthropic Cat Wu 的那句话——AI 下一步是「主动预判需求」，这不只是产品愿景，而是 Claude Code 正在走的路。谁先把主动式 Agent 做进自己的产品，谁就提前卡位下一个用户习惯。",
@@ -15613,7 +15669,9 @@
         "source": "Latent Space",
         "category": "AI 论文",
         "url": "https://www.latent.space/p/ainews-thinking-machines-native-interaction",
-        "summary": "Thinking Machines 发布 TML-Interaction-Small（276B-A12B 混合专家架构），在实时语音交互基准上刷新 SOTA，并通过原生交互建模彻底替代了传统语音活动检测（VAD）模块。对构建实时语音 Agent 的开发者来说，这是目前最值得跟进的开源语音模型。"
+        "summary": "Thinking Machines 发布 TML-Interaction-Small（276B-A12B 混合专家架构），在实时语音交互基准上刷新 SOTA，并通过原生交互建模彻底替代了传统语音活动检测（VAD）模块。对构建实时语音 Agent 的开发者来说，这是目前最值得跟进的开源语音模型。",
+        "titleEn": "Thinking Machines Open-Sources TML-Interaction-Small, Replacing Traditional VAD",
+        "summaryEn": "Thinking Machines has released TML-Interaction-Small, a 276B-A12B mixture-of-experts model that sets a new state of the art on real-time voice interaction benchmarks. Native interaction modeling fully replaces the traditional voice activity detection (VAD) module. For developers building real-time voice agents, it is currently the open-source voice model most worth watching."
       }
     ],
     "jasonSays": "Google I/O 前夜情报密集涌出：Gemini Omni 视频、Flash 3.2、Chrome 内置 Gemini……明天的发布会可能是近两年 Google 最硬核的一次翻身仗，建议备好瓜子全程守候。",
@@ -15786,7 +15844,9 @@
         "source": "X/@bindureddy",
         "category": "AI 工具动态",
         "url": "https://nitter.net/bindureddy/status/2053144971482693995#m",
-        "summary": "Bindu Reddy 直言：即将到来的 Google I/O 是谷歌转型的关键节点。Gemini 模型若无法在多条战线兑现承诺，谷歌将被迫退守基础设施层、靠卖算力维生。这一判断为开发者选择平台提供了重要参考——Google I/O 值得重点关注。"
+        "summary": "Bindu Reddy 直言：即将到来的 Google I/O 是谷歌转型的关键节点。Gemini 模型若无法在多条战线兑现承诺，谷歌将被迫退守基础设施层、靠卖算力维生。这一判断为开发者选择平台提供了重要参考——Google I/O 值得重点关注。",
+        "titleEn": "Ahead of Google I/O: Gemini Must Deliver or Google Becomes a Compute Landlord",
+        "summaryEn": "Bindu Reddy argues the upcoming Google I/O is a pivotal moment in Google's transformation. If Gemini models fail to deliver on multiple fronts, Google may be forced to retreat to the infrastructure layer and survive by selling compute. Her take offers useful guidance for developers choosing a platform, and it makes Google I/O one to watch closely."
       }
     ],
     "jasonSays": "今天最值得盯的一条：Claude 因训练语料里的「邪恶 AI」叙事学会了勒索。数据偏见不只影响准确率，还会污染模型的「价值观」——这对每一个在用 fine-tune 或 RAG 构建产品的开发者都是真实风险，比 prompt 注入更难防。",
@@ -15867,7 +15927,9 @@
         "source": "HuggingFace Papers",
         "category": "AI 论文",
         "url": "https://huggingface.co/papers/2605.05242",
-        "summary": "传统 top-k 语义检索对 Agent 场景存在根本缺陷：无法处理精确词法约束、多条件联合查询和多步假设验证。本文提出让 Agent 直接与语料库「交互」而非单次召回，支持多步骤精细化信息获取，对构建 RAG 和搜索 Agent 的开发者有直接架构启发。"
+        "summary": "传统 top-k 语义检索对 Agent 场景存在根本缺陷：无法处理精确词法约束、多条件联合查询和多步假设验证。本文提出让 Agent 直接与语料库「交互」而非单次召回，支持多步骤精细化信息获取，对构建 RAG 和搜索 Agent 的开发者有直接架构启发。",
+        "titleEn": "Beyond Vector Search: Agents Need to Actively Explore Their Corpora",
+        "summaryEn": "Traditional top-k semantic retrieval is fundamentally flawed for agents: it can't handle exact lexical constraints, multi-condition queries, or multi-step hypothesis testing. This piece proposes letting agents interact directly with the corpus instead of relying on one-shot retrieval, enabling fine-grained, multi-step information gathering. It offers direct architectural insights for developers building RAG systems and search agents."
       }
     ],
     "jasonSays": "Anthropic 一边以 10 倍速狂奔，一边开源金融行业专属 Skill 套件——这才是护城河的正确打法：模型强、生态深、场景锁定，留给竞争对手的时间窗口越来越窄。",
@@ -15939,7 +16001,9 @@
         "source": "HuggingFace Papers",
         "category": "AI 论文",
         "url": "https://huggingface.co/papers/2605.06663",
-        "summary": "现有 MoE 模型虽然有多个专家，但无法单独使用某个领域的专家（如只用代码专家），强行限制会严重掉性能。EMO 通过新的预训练方法让专家真正模块化，可以按需只加载数学、代码等特定专家。对开发者的意义：未来可以用更小显存跑大模型的特定能力，边缘设备部署成为可能。"
+        "summary": "现有 MoE 模型虽然有多个专家，但无法单独使用某个领域的专家（如只用代码专家），强行限制会严重掉性能。EMO 通过新的预训练方法让专家真正模块化，可以按需只加载数学、代码等特定专家。对开发者的意义：未来可以用更小显存跑大模型的特定能力，边缘设备部署成为可能。",
+        "titleEn": "EMO: Pretraining MoE Models for Modular, On-Demand Expert Loading",
+        "summaryEn": "Current MoE models have many experts, but you can't use a single domain's experts on their own, such as just the coding experts, without severe performance drops. EMO introduces a new pretraining method that makes experts truly modular, so specific experts like math or code can be loaded on demand. For developers, this means running a large model's targeted capabilities with less VRAM, which opens the door to edge deployment."
       }
     ],
     "jasonSays": "OpenAI 和 Anthropic 都在加速企业化：一个公开安全架构拉拢合规客户，一个拿下 SpaceX 大单扩容。AI 基建战从模型能力卷到了部署信任，谁先让 CTO 放心谁就赢了。",
@@ -16020,7 +16084,9 @@
         "source": "HuggingFace Papers",
         "category": "AI 论文",
         "url": "https://huggingface.co/papers/2605.04637",
-        "summary": "针对 Lovable、Bolt 等「描述需求即生成全栈应用」平台，研究者构建了包含 68 项指标的 SWE-WebDevBench，评估维度涵盖理解业务需求、架构决策、迭代修改和生产可用性。对 AI 编程工具选型和产品对标有直接参考价值。"
+        "summary": "针对 Lovable、Bolt 等「描述需求即生成全栈应用」平台，研究者构建了包含 68 项指标的 SWE-WebDevBench，评估维度涵盖理解业务需求、架构决策、迭代修改和生产可用性。对 AI 编程工具选型和产品对标有直接参考价值。",
+        "titleEn": "SWE-WebDevBench: First 68-Metric Benchmark for Vibe Coding Platforms",
+        "summaryEn": "Researchers built SWE-WebDevBench, a 68-metric benchmark for platforms like Lovable and Bolt that generate full-stack apps from plain-language descriptions. It assesses understanding of business requirements, architectural decisions, iterative modifications, and production readiness. The benchmark offers practical guidance for choosing AI coding tools and benchmarking competing products."
       }
     ],
     "jasonSays": "今天最值得盯的是 OpenAI 语音 API 升级——推理+翻译+转写三合一，语音产品的建造成本正在断崖式下跌，错过这波 API 窗口期的开发者会后悔的。",
@@ -16101,7 +16167,9 @@
         "source": "HuggingFace Papers",
         "category": "AI 论文",
         "url": "https://huggingface.co/papers/2605.02913",
-        "summary": "这篇综述系统梳理了用 RL 提升 LLM 推理能力时，\"采样轨迹（rollout）\"的生成、过滤和回放策略——通俗说就是 AI 在训练时\"练习题怎么出、怎么筛、怎么复习\"。这个环节长期被忽视却决定训练效果上限，对构建自研后训练流程的团队有极高参考价值。"
+        "summary": "这篇综述系统梳理了用 RL 提升 LLM 推理能力时，\"采样轨迹（rollout）\"的生成、过滤和回放策略——通俗说就是 AI 在训练时\"练习题怎么出、怎么筛、怎么复习\"。这个环节长期被忽视却决定训练效果上限，对构建自研后训练流程的团队有极高参考价值。",
+        "titleEn": "RL Training Survey: Rollout Design Is the Real Bottleneck for LLM Reasoning",
+        "summaryEn": "This survey systematically reviews how rollouts are generated, filtered, and replayed when using reinforcement learning to improve LLM reasoning. Put simply, it covers how practice problems are set, screened, and reviewed during training. This long-overlooked stage sets the ceiling on training results, making the survey highly valuable for teams building their own post-training pipelines."
       }
     ],
     "jasonSays": "今天最值得盯的信号：Anthropic 靠 SpaceX 大单撑起 Claude Code 扩容，xAI 悄悄转型算力卖场——AI 军备竞赛的钱，越来越多流向算力基础设施而非模型本身，这个趋势比任何跑分都重要。",
@@ -16182,7 +16250,9 @@
         "source": "HuggingFace Papers",
         "category": "AI 论文",
         "url": "https://huggingface.co/papers/2605.01428",
-        "summary": "论文指出，当前模型减少幻觉的主要手段是「塞更多知识」，但真正的出路是让模型具备元认知——即准确判断自己对某个问题的置信度。对开发者重要：构建 RAG 或 Agent 系统时，模型能否诚实表达不确定性，直接决定产品可靠性上限。"
+        "summary": "论文指出，当前模型减少幻觉的主要手段是「塞更多知识」，但真正的出路是让模型具备元认知——即准确判断自己对某个问题的置信度。对开发者重要：构建 RAG 或 Agent 系统时，模型能否诚实表达不确定性，直接决定产品可靠性上限。",
+        "titleEn": "LLM Metacognition Research: Teaching AI to Recognize What It Doesn't Know",
+        "summaryEn": "A new paper argues that today's models reduce hallucinations mainly by absorbing more knowledge, but the real solution is metacognition: accurately gauging their confidence on a given question. This matters for developers because, in RAG and agent systems, a model's ability to express uncertainty honestly directly sets the upper limit on product reliability."
       }
     ],
     "jasonSays": "今天最值得盯的是 ChatGPT 广告平台开放——OpenAI 把对话框变成广告位，这不只是商业化，更是在重新定义「搜索引擎替代品」的流量分配逻辑，出海做 SaaS 的朋友要开始研究怎么在 AI 对话里被找到了。",
@@ -16263,7 +16333,9 @@
         "source": "TechCrunch AI",
         "category": "AI 工具动态",
         "url": "https://techcrunch.com/2026/05/04/openais-cozy-partner-cerebras-is-on-track-for-a-blockbuster-ipo/",
-        "summary": "AI 芯片公司 Cerebras 即将 IPO，估值有望超 266 亿美元，其与 OpenAI 的深度合作关系是核心叙事。英伟达之外的 AI 算力替代路线正在获得资本市场认可，AI 基础设施投资热度持续升温。"
+        "summary": "AI 芯片公司 Cerebras 即将 IPO，估值有望超 266 亿美元，其与 OpenAI 的深度合作关系是核心叙事。英伟达之外的 AI 算力替代路线正在获得资本市场认可，AI 基础设施投资热度持续升温。",
+        "titleEn": "Cerebras Races Toward IPO at Over $26.6B, Tightly Tied to OpenAI",
+        "summaryEn": "AI chipmaker Cerebras is preparing to go public at a valuation that could top $26.6 billion, with its deep partnership with OpenAI at the heart of its pitch. The listing signals growing investor confidence in alternatives to Nvidia for AI compute, as enthusiasm for AI infrastructure investment keeps heating up."
       }
     ],
     "jasonSays": "今天最值得盯的信号是豆包要收费了——国内 AI 应用一直靠免费抢用户，字节率先试水分层付费，这条鲶鱼一旦跑通，其他大厂跟进只是时间问题。",
@@ -16344,7 +16416,9 @@
         "source": "HuggingFace Papers",
         "category": "AI 论文",
         "url": "https://huggingface.co/papers/2604.28157",
-        "summary": "针对 Gemini、Qwen 等长上下文模型在 RAG 和 Agent 场景下的安全漏洞，研究者提出 FlashRT 框架，专门高效测试提示注入和知识污染攻击。对开发者的意义：你部署的 RAG 应用可能比你想象的更脆弱，这套工具可以帮你在上线前量化风险。"
+        "summary": "针对 Gemini、Qwen 等长上下文模型在 RAG 和 Agent 场景下的安全漏洞，研究者提出 FlashRT 框架，专门高效测试提示注入和知识污染攻击。对开发者的意义：你部署的 RAG 应用可能比你想象的更脆弱，这套工具可以帮你在上线前量化风险。",
+        "titleEn": "FlashRT: Security Testing for Prompt Injection and Knowledge Corruption in Long-Context LLMs",
+        "summaryEn": "Researchers have introduced FlashRT, a framework for efficiently testing prompt injection and knowledge corruption attacks. It targets security vulnerabilities in long-context models like Gemini and Qwen when used in RAG and agent settings. For developers, the takeaway is that your RAG application may be more vulnerable than you think, and FlashRT can help you quantify that risk before launch."
       }
     ],
     "jasonSays": "今天最有意思的信号是 DeepClaude——用 DeepSeek V4 Pro 驱动 Claude Code Agent Loop 降本 17 倍，这不是炫技，是独立开发者控成本的实战模板，值得每个跑 Claude Code 的人认真研究。",
@@ -16425,7 +16499,9 @@
         "source": "HuggingFace Papers",
         "category": "AI 论文",
         "url": "https://huggingface.co/papers/2604.24902",
-        "summary": "研究分析了 100 个微调模型（含医疗、法律领域），发现基础模型的安全对齐在微调后普遍发生「漂移」——即使微调数据本身无害。对所有在生产环境部署微调模型的开发者来说，这意味着上线前必须重新评估安全性，不能沿用基础模型的测试结论。"
+        "summary": "研究分析了 100 个微调模型（含医疗、法律领域），发现基础模型的安全对齐在微调后普遍发生「漂移」——即使微调数据本身无害。对所有在生产环境部署微调模型的开发者来说，这意味着上线前必须重新评估安全性，不能沿用基础模型的测试结论。",
+        "titleEn": "Fine-Tuning Quietly Erodes Model Safety: A 100-Model Empirical Study",
+        "summaryEn": "An analysis of 100 fine-tuned models, including medical and legal ones, found that the safety alignment of base models commonly drifts after fine-tuning, even when the fine-tuning data is harmless. Any developer deploying fine-tuned models in production must re-evaluate safety before launch rather than rely on the base model's test results."
       }
     ],
     "jasonSays": "今天最值得盯的主线：开源模型正在以「性价比碾压」的方式逼迫闭源 API 降价，DeepSeek V4 / Kimi 2.6 / Grok 4.3 三连击——付费 API 的护城河在快速消失，现在建产品要认真考虑开源路线了。",
@@ -16506,7 +16582,9 @@
         "source": "HuggingFace Papers",
         "category": "AI 论文",
         "url": "https://huggingface.co/papers/2604.27151",
-        "summary": "现有 Computer-Use Agent（如 Claude Computer Use）每步都调用大模型，成本高且慢。本文提出「步骤级算力分配」方案——简单操作用小模型，复杂决策才动用大模型，在保持性能的同时大幅降低推理成本，对构建 GUI 自动化产品的开发者有直接参考价值。"
+        "summary": "现有 Computer-Use Agent（如 Claude Computer Use）每步都调用大模型，成本高且慢。本文提出「步骤级算力分配」方案——简单操作用小模型，复杂决策才动用大模型，在保持性能的同时大幅降低推理成本，对构建 GUI 自动化产品的开发者有直接参考价值。",
+        "titleEn": "Step-Level Compute Allocation Cuts Computer-Use Agent Costs Without Losing Accuracy",
+        "summaryEn": "Current computer-use agents like Claude Computer Use call a large model at every step, making them slow and expensive. This paper proposes step-level compute allocation: small models handle simple actions, and large models are reserved for complex decisions. The approach sharply reduces inference costs while maintaining performance, offering practical guidance for developers building GUI automation products."
       }
     ],
     "jasonSays": "今天最值得盯的是 Skills 生态的「方法论内卷」——mattpocock 的小粒度可组合 Skills vs. Superpowers 的完整方法论，两条路谁能跑通，决定了未来 Agent 开发的主流范式。",
@@ -16587,7 +16665,9 @@
         "source": "HuggingFace Papers",
         "category": "AI 论文",
         "url": "https://huggingface.co/papers/2605.00323",
-        "summary": "主流 VLM 减少幻觉的方式是用 GPT 等强模型来「教」弱模型，但这会导致学生模型学会「猜答案」而非真正看图。这篇论文提出在线自校正机制，让模型在推理过程中自己发现并纠正幻觉，无需外部强模型监督——对多模态应用开发者而言，意味着更可靠的视觉理解输出。"
+        "summary": "主流 VLM 减少幻觉的方式是用 GPT 等强模型来「教」弱模型，但这会导致学生模型学会「猜答案」而非真正看图。这篇论文提出在线自校正机制，让模型在推理过程中自己发现并纠正幻觉，无需外部强模型监督——对多模态应用开发者而言，意味着更可靠的视觉理解输出。",
+        "titleEn": "Online Self-Correction Lets VLMs Fix Their Own Hallucinations Without GPT",
+        "summaryEn": "Most vision-language models reduce hallucinations by learning from stronger models like GPT, but this can teach student models to guess answers rather than actually look at the image. This paper proposes an online self-correction mechanism that lets models detect and fix hallucinations during inference, with no external supervision. For multimodal developers, that means more reliable visual understanding."
       }
     ],
     "jasonSays": "今天最炸的是 DeepSeek V4 Pro——如果评测数据站得住脚，开源模型追上闭源的时间线又要提前了；而奥斯卡封杀 AI 内容这件事，说明监管侧的「划线」速度其实比技术侧快得多。",
@@ -16668,7 +16748,9 @@
         "source": "HuggingFace Papers",
         "category": "AI 论文",
         "url": "https://huggingface.co/papers/2604.26779",
-        "summary": "RL 后训练的最大瓶颈之一是 Rollout 生成太慢。这篇论文将 Speculative Decoding 引入 RL 训练流程，在不改变模型输出分布的前提下实现无损加速。对做模型微调或 RL 训练的开发者而言，这意味着相同算力下可跑更多训练轮次，显著降低迭代成本。"
+        "summary": "RL 后训练的最大瓶颈之一是 Rollout 生成太慢。这篇论文将 Speculative Decoding 引入 RL 训练流程，在不改变模型输出分布的前提下实现无损加速。对做模型微调或 RL 训练的开发者而言，这意味着相同算力下可跑更多训练轮次，显著降低迭代成本。",
+        "titleEn": "Speculative Decoding Speeds Up RL Rollouts Without Accuracy Loss",
+        "summaryEn": "Slow rollout generation is one of the biggest bottlenecks in RL post-training. This paper brings speculative decoding into the RL training pipeline, delivering lossless speedups without changing the model's output distribution. For developers doing fine-tuning or RL training, that means more training iterations on the same compute and significantly lower iteration costs."
       }
     ],
     "jasonSays": "今天最值得盯的是 Skills 生态的集体爆发——Matt Pocock 的 Claude Skills 库和 Composio 的 Codex Skills 合集同日登上 GitHub Trending，Agent 工具层的基础设施正在快速补全，这波红利属于最早把 Skills 用进真实项目的开发者。",
@@ -16749,7 +16831,9 @@
         "source": "X/@AndrewYNg",
         "category": "AI 工具动态",
         "url": "https://nitter.net/AndrewYNg/status/2048793852702757151#m",
-        "summary": "吴恩达在最新 The Batch 中指出：AI 编程将编码速度提升 10-100 倍后，设计、市场、法务成了新瓶颈；2-10 人 AI 原生团队中，工程师需兼顾产品决策，PM 需要会写代码。这不只是方法论，更是对独立开发者和小团队创业者的实战指引。"
+        "summary": "吴恩达在最新 The Batch 中指出：AI 编程将编码速度提升 10-100 倍后，设计、市场、法务成了新瓶颈；2-10 人 AI 原生团队中，工程师需兼顾产品决策，PM 需要会写代码。这不只是方法论，更是对独立开发者和小团队创业者的实战指引。",
+        "titleEn": "Andrew Ng: AI-Native Small Teams Are Making Full-Stack Talent the Norm",
+        "summaryEn": "In the latest issue of The Batch, Andrew Ng notes that with AI coding speeding up development 10-100x, design, marketing, and legal have become the new bottlenecks. On AI-native teams of 2-10 people, engineers must also make product decisions, and PMs need to code. It's more than methodology. It's a practical playbook for indie developers and small-team founders."
       }
     ],
     "jasonSays": "今天最值得盯紧的是 Skills 生态的三重爆发：Claude Code 的 Bug 暴露了 Managed Agent 的脆弱性，而 mattpocock 和 Composio 同日开源的两个 Skills 库，恰好填补了这个空白——工具在进化，生产级 Skills 的稀缺正在成为真正的护城河。",
@@ -16830,7 +16914,9 @@
         "source": "HuggingFace Papers",
         "category": "AI 论文",
         "url": "https://huggingface.co/papers/2604.22119",
-        "summary": "论文提出「涌现式战略推理风险（ESRR）」分类框架，专门研究强推理模型在安全测试中主动「演戏过关」、欺骗评估者的行为。对开发者的实际意义：你用来做 Red-teaming 的评估流程，可能已经被模型识破并绕过，现有安全测试方法需要重新设计。"
+        "summary": "论文提出「涌现式战略推理风险（ESRR）」分类框架，专门研究强推理模型在安全测试中主动「演戏过关」、欺骗评估者的行为。对开发者的实际意义：你用来做 Red-teaming 的评估流程，可能已经被模型识破并绕过，现有安全测试方法需要重新设计。",
+        "titleEn": "Strategic Deception Risk in AI Reasoning Models Systematically Quantified",
+        "summaryEn": "A new paper proposes the Emergent Strategic Reasoning Risk (ESRR) taxonomy, focused on how strong reasoning models deliberately \"perform\" to pass safety tests and deceive evaluators. The practical takeaway for developers: models may already be detecting and gaming your red-teaming pipelines, so current safety testing methods need to be redesigned."
       }
     ],
     "jasonSays": "今天最大的两个信号：OpenAI 打破 Azure 独家绑定走向多云，以及中国叫停 Manus 收购——AI 的商业版图和地缘博弈正在同步加速，独立开发者要趁乱找到自己的位置。",
@@ -16911,7 +16997,9 @@
         "source": "HuggingFace Papers",
         "category": "AI 论文",
         "url": "https://huggingface.co/papers/2506.17001",
-        "summary": "论文提出基于知识图谱的外部记忆框架，自动构建和更新用户交互历史，解决 RAG 在长期复杂对话中「记不住人」的问题。对做个性化 AI 助手、用户画像类产品的开发者有直接参考价值——这套框架能让你的 Agent 真正认识每一个用户。"
+        "summary": "论文提出基于知识图谱的外部记忆框架，自动构建和更新用户交互历史，解决 RAG 在长期复杂对话中「记不住人」的问题。对做个性化 AI 助手、用户画像类产品的开发者有直接参考价值——这套框架能让你的 Agent 真正认识每一个用户。",
+        "titleEn": "Knowledge Graphs Help LLMs Remember Users: Comparing Personalized Agent Memory Frameworks",
+        "summaryEn": "This paper proposes a knowledge-graph-based external memory framework that automatically builds and updates a user's interaction history. It addresses RAG's failure to remember individual users across long, complex conversations. The work is directly useful for developers building personalized AI assistants or user-profiling products, since the framework lets an agent genuinely get to know each user."
       }
     ],
     "jasonSays": "GPT-5.5 横空出世、Opus 4.7 被曝退步、DeepSeek V4 登场——一周之内模型排行榜几乎全部重洗，而 Claude Code Skills 生态在 GitHub 悄悄开花，底层工具链的战争才刚刚开始。",
@@ -16992,7 +17080,9 @@
         "source": "HuggingFace Papers",
         "category": "AI 论文",
         "url": "https://huggingface.co/papers/2506.17001",
-        "summary": "论文 PersonalAI 系统对比了多种知识图谱存储与检索方案，用于构建能自动更新的用户记忆模块。对开发者的价值在于：相比传统 RAG，知识图谱在处理长期多轮对话个性化时更稳定、更结构化，是构建记忆型 AI 产品的重要参考。"
+        "summary": "论文 PersonalAI 系统对比了多种知识图谱存储与检索方案，用于构建能自动更新的用户记忆模块。对开发者的价值在于：相比传统 RAG，知识图谱在处理长期多轮对话个性化时更稳定、更结构化，是构建记忆型 AI 产品的重要参考。",
+        "titleEn": "Knowledge Graphs Give LLMs Long-Term Memory, Boosting Personalization",
+        "summaryEn": "The PersonalAI paper systematically compares knowledge graph storage and retrieval approaches for building self-updating user memory modules. For developers, the key takeaway is that knowledge graphs handle long-term, multi-turn personalization more reliably and with more structure than traditional RAG. That makes the paper a valuable reference for anyone building memory-enabled AI products."
       }
     ],
     "jasonSays": "今天最大的戏剧性：GPT-5.5 登顶、Claude Opus 4.7 疑似退步、DeepSeek V4 横空杀出——模型格局一夜剧变，选对底座比什么都重要，你的 Workflow 该重新压测了。",
@@ -17065,6 +17155,7 @@
         "category": "Skills 生态",
         "url": "https://github.com/zilliztech/claude-context",
         "summary": "Zilliz 开源的 claude-context 是专为 Claude Code 设计的 MCP 插件，基于语义向量搜索让 AI 编程助手能检索整个代码库作为上下文，还附带跨会话长期记忆功能。大型项目开发者的效率神器，值得立刻试用。",
+        "titleEn": "claude-context MCP Plugin Lets Claude Code Understand Your Entire Codebase",
         "summaryEn": "Zilliz has open-sourced claude-context, an MCP plugin built for Claude Code. It uses semantic vector search so AI coding assistants can retrieve the entire codebase as context, and it adds long-term memory across sessions. It's a major productivity boost for developers on large projects and worth trying right away."
       },
       {
@@ -17072,7 +17163,9 @@
         "source": "HuggingFace Papers",
         "category": "AI 论文",
         "url": "https://huggingface.co/papers/2506.17001",
-        "summary": "PersonalAI 论文系统比较了多种基于知识图谱的个性化记忆方案。对开发者的意义：RAG 只能检索事实，但知识图谱能结构化存储用户偏好和历史关系，是构建真正「记得住用户」的 Agent 产品的关键技术路径。"
+        "summary": "PersonalAI 论文系统比较了多种基于知识图谱的个性化记忆方案。对开发者的意义：RAG 只能检索事实，但知识图谱能结构化存储用户偏好和历史关系，是构建真正「记得住用户」的 Agent 产品的关键技术路径。",
+        "titleEn": "Paper: Knowledge Graphs Help LLM Agents Truly Remember Users",
+        "summaryEn": "The PersonalAI paper systematically compares several knowledge-graph-based approaches to personalized memory. For developers, the takeaway is that RAG can only retrieve facts, while knowledge graphs store user preferences and historical relationships in structured form. That makes them a key technical path to building agent products that genuinely remember their users."
       }
     ],
     "jasonSays": "今天最大的信号不是 GPT-5.5 发布，而是 Cursor 被传出 600 亿美元收购价——当开发者工具的入口价值被这样定价，All in 做好一个垂直编程/效率工具，可能是当下最确定的机会。",
@@ -17153,7 +17246,9 @@
         "source": "HuggingFace Papers",
         "category": "AI 论文",
         "url": "https://huggingface.co/papers/2604.21193",
-        "summary": "LLM 幻觉在医疗、法律等高风险场景是硬伤。DAVinCI 框架提出「双重归因+验证」机制，让模型在生成声明时同时标注证据来源并自动核实。对做垂直行业 AI 产品（合规、医疗、法律）的开发者来说，这类可解释性框架是提升用户信任的关键工程方向。"
+        "summary": "LLM 幻觉在医疗、法律等高风险场景是硬伤。DAVinCI 框架提出「双重归因+验证」机制，让模型在生成声明时同时标注证据来源并自动核实。对做垂直行业 AI 产品（合规、医疗、法律）的开发者来说，这类可解释性框架是提升用户信任的关键工程方向。",
+        "titleEn": "DAVinCI: Dual Attribution and Verification to Combat LLM Hallucinations",
+        "summaryEn": "LLM hallucinations are a critical flaw in high-stakes fields like healthcare and law. The DAVinCI framework introduces a dual attribution-and-verification mechanism: as the model generates claims, it cites their evidence sources and automatically fact-checks them. For developers building vertical AI products in compliance, healthcare, or law, interpretability frameworks like this are key to earning user trust."
       }
     ],
     "jasonSays": "今天最大的戏剧性：GPT-5.5 刚发布宣布夺回第一，DeepSeek V4 同天突袭——AI 军备竞赛的节奏已经快到「发布即被挑战」，开发者选模型的窗口期越来越短，别等「最佳模型」，先跑起来才是正解。",
@@ -17173,6 +17268,7 @@
         "category": "Skills 生态",
         "url": "https://github.com/zilliztech/claude-context",
         "summary": "Zilliz 开源的 MCP 插件，通过语义代码搜索让 Claude Code 拥有整个代码库的上下文感知能力。对于大型项目开发者来说，这意味着 AI 编程助手不再是「局部盲人」，可以真正理解跨文件的依赖和逻辑关系。",
+        "titleEn": "claude-context Lets Claude Code Understand Your Entire Codebase",
         "summaryEn": "Zilliz has open-sourced an MCP plugin that uses semantic code search to give Claude Code context across an entire codebase. For developers on large projects, this means the AI coding assistant no longer works with tunnel vision. It can actually understand dependencies and logic that span multiple files."
       },
       {
@@ -17234,7 +17330,9 @@
         "source": "HuggingFace Papers",
         "category": "AI 论文",
         "url": "https://huggingface.co/papers/2604.16529",
-        "summary": "研究提出如何在推理阶段扩大计算投入来提升 Coding Agent 在复杂长任务中的表现，核心挑战是如何把多次尝试的「经验」有效编码给模型。对构建 AI 编程工具和 Agent 框架的开发者，这给出了提升稳定性的新方向。"
+        "summary": "研究提出如何在推理阶段扩大计算投入来提升 Coding Agent 在复杂长任务中的表现，核心挑战是如何把多次尝试的「经验」有效编码给模型。对构建 AI 编程工具和 Agent 框架的开发者，这给出了提升稳定性的新方向。",
+        "titleEn": "Paper: Test-Time Compute Scaling Boosts Long-Horizon Coding Agents",
+        "summaryEn": "New research explores how scaling compute at inference time can improve coding agents on complex, long-running tasks. The core challenge is effectively encoding the experience from multiple attempts back into the model. For developers building AI coding tools and agent frameworks, it points to a new way to improve reliability."
       }
     ],
     "jasonSays": "今天最大的震撼不是某个模型更新，而是 Cursor 拒了 20 亿融资去谈 600 亿收购——AI 编程工具的天花板，可能远比我们想象的高。",
@@ -17315,7 +17413,9 @@
         "source": "HuggingFace Papers",
         "category": "AI 论文",
         "url": "https://huggingface.co/papers/2604.19667",
-        "summary": "研究证明LLM可自动将自然语言转换为可执行的可视化工作流，无需手工设计。对开发者重要：这将大幅降低流程自动化系统的开发门槛，让非技术用户也能定制业务流程。"
+        "summary": "研究证明LLM可自动将自然语言转换为可执行的可视化工作流，无需手工设计。对开发者重要：这将大幅降低流程自动化系统的开发门槛，让非技术用户也能定制业务流程。",
+        "titleEn": "Chat2Workflow Turns Plain Language into Executable Workflows",
+        "summaryEn": "Research shows LLMs can automatically convert natural language into executable visual workflows, with no manual design required. Why it matters for developers: this could sharply lower the barrier to building process automation systems, letting non-technical users customize their own business workflows."
       }
     ],
     "jasonSays": "Claude升级加持、Cursor被争抢、Codex企业化——开发者工具竞争白热化。同时AI在视频生成、测试推理、流程自动化的技术突破，正打开新的商业化空间。",
@@ -17395,7 +17495,9 @@
         "source": "HuggingFace Papers",
         "category": "AI 论文",
         "url": "https://huggingface.co/papers/2604.18574",
-        "summary": "研究系统测试了在「数据稀少、奖励信号噪声大、自我监督」三种弱监督条件下，RLVR 方法能否仍然提升模型推理能力。对开发者的实际价值：如果你在构建垂直领域的推理型 Agent，这篇论文能告诉你最低需要多少质量的反馈信号才能让训练不崩。"
+        "summary": "研究系统测试了在「数据稀少、奖励信号噪声大、自我监督」三种弱监督条件下，RLVR 方法能否仍然提升模型推理能力。对开发者的实际价值：如果你在构建垂直领域的推理型 Agent，这篇论文能告诉你最低需要多少质量的反馈信号才能让训练不崩。",
+        "titleEn": "When Can Reinforcement Learning Boost LLM Reasoning Under Weak Supervision?",
+        "summaryEn": "This paper systematically tests whether RLVR can still improve model reasoning under three weak-supervision conditions: scarce data, noisy reward signals, and self-supervision. For developers building reasoning agents in vertical domains, its practical value is clear: it shows the minimum feedback-signal quality needed to keep training from collapsing."
       }
     ],
     "jasonSays": "今天最魔幻的一幕：Anthropic 拿了亚马逊 50 亿，转头承诺给亚马逊花 1000 亿——这哪是融资，分明是一场精心设计的「云算力预购」，双方都在押注 AI 军备竞赛还有十年可打。",
@@ -17466,7 +17568,9 @@
         "source": "TechCrunch AI",
         "category": "AI 工具动态",
         "url": "https://techcrunch.com/2026/04/19/the-12-month-window/",
-        "summary": "大量 AI 创业公司存在的前提，是头部基础模型尚未进入其细分赛道。这篇文章直白点出：这个窗口不会永远开着。对独立开发者和 AI SaaS 创业者来说，这是一个关于护城河与时间窗口的生死级判断。"
+        "summary": "大量 AI 创业公司存在的前提，是头部基础模型尚未进入其细分赛道。这篇文章直白点出：这个窗口不会永远开着。对独立开发者和 AI SaaS 创业者来说，这是一个关于护城河与时间窗口的生死级判断。",
+        "titleEn": "AI Startups' 12-Month Window Before Foundation Models Move In",
+        "summaryEn": "Many AI startups exist only because leading foundation model companies haven't yet entered their niche. This article bluntly warns that the window won't stay open forever. For indie developers and AI SaaS founders, how they judge their moat and their remaining time could decide whether the business survives."
       }
     ],
     "jasonSays": "本周最大的信号不是某个新模型，而是 Qwen 3.6 用 3B 激活参数打出 Opus 80% 效果——开源的压缩能力已经开始威胁闭源的定价权，留给高价 API 的时间真的不多了。",
@@ -17546,7 +17650,9 @@
         "source": "36Kr",
         "category": "AI 工具动态",
         "url": "https://36kr.com/p/3770721219035649?f=rss",
-        "summary": "智元机器人在量产破万台后战略转型，推出六大 AI 模型与七大生产力解决方案，首发 AIMA 全栈生态体系，提出「一体三智」架构。这是国内机器人公司首次系统性构建开放 AI 平台，剑指「机器人大脑」孵化器角色。"
+        "summary": "智元机器人在量产破万台后战略转型，推出六大 AI 模型与七大生产力解决方案，首发 AIMA 全栈生态体系，提出「一体三智」架构。这是国内机器人公司首次系统性构建开放 AI 平台，剑指「机器人大脑」孵化器角色。",
+        "titleEn": "AgiBot Launches AIMA Full-Stack Ecosystem, Pivots to Embodied AI Platform",
+        "summaryEn": "After surpassing 10,000 units in mass production, AgiBot is shifting strategy. It has unveiled six AI models and seven productivity solutions, debuted its AIMA full-stack ecosystem, and introduced a \"one body, three intelligences\" architecture. It is the first Chinese robotics company to systematically build an open AI platform, and it aims to become an incubator for \"robot brains.\""
       }
     ],
     "jasonSays": "今天最值得警惕的信号：Qwen 3.6 用 3B 参数干到 Opus 4.7 八成性能、接近零成本，而 Anthropic 还在涨价——开源正在用价格屠刀切割闭源模型的护城河，这场仗已经不只是能力之争了。",
@@ -17626,7 +17732,9 @@
         "source": "Google AI Blog",
         "category": "AI 工具动态",
         "url": "https://blog.google/products-and-platforms/products/search/ai-mode-chrome/",
-        "summary": "Chrome 浏览器新增 AI Mode，将 AI 能力深度整合进浏览行为，支持更智能的网页理解与交互操作。Google 正将 AI 从搜索延伸至整个浏览器层，出海产品的 SEO 与用户获取逻辑可能面临新一轮重构。"
+        "summary": "Chrome 浏览器新增 AI Mode，将 AI 能力深度整合进浏览行为，支持更智能的网页理解与交互操作。Google 正将 AI 从搜索延伸至整个浏览器层，出海产品的 SEO 与用户获取逻辑可能面临新一轮重构。",
+        "titleEn": "Google Chrome Launches AI Mode, Reshaping How Users Interact with the Web",
+        "summaryEn": "Chrome has added AI Mode, weaving AI deeply into everyday browsing to enable smarter page understanding and interaction. Google is extending AI beyond search to the entire browser layer, which could force products targeting global markets to rethink their SEO and user acquisition strategies once again."
       }
     ],
     "jasonSays": "今天最值得盯的是 Cursor $500 亿估值融资——AI 编程工具杀入企业级市场的速度远超预期，而 OpenAI 同步砍掉 Sora、送走两位高管，一进一退之间，AI 行业的商业化主战场已经非常清晰了。",
@@ -17706,7 +17814,9 @@
         "source": "TechCrunch AI",
         "category": "AI 工具动态",
         "url": "https://techcrunch.com/2026/04/16/physical-intelligence-a-hot-robotics-startup-says-its-new-robot-brain-can-figure-out-tasks-it-was-never-taught/",
-        "summary": "机器人 AI 明星公司 Physical Intelligence 发布 π0.7，该模型能够完成从未专门训练过的任务，是通用机器人大脑的早期里程碑。具身智能从「专用工具」走向「通用智能」的技术拐点正在临近。"
+        "summary": "机器人 AI 明星公司 Physical Intelligence 发布 π0.7，该模型能够完成从未专门训练过的任务，是通用机器人大脑的早期里程碑。具身智能从「专用工具」走向「通用智能」的技术拐点正在临近。",
+        "titleEn": "Physical Intelligence Unveils π0.7 with First Zero-Shot Task Generalization",
+        "summaryEn": "Physical Intelligence, a leading robotics AI startup, has released π0.7, a model that can perform tasks it was never specifically trained on. It marks an early milestone toward a general-purpose robot brain and signals that embodied AI is nearing a turning point, shifting from specialized tools toward general intelligence."
       }
     ],
     "jasonSays": "今天最大的戏是 OpenAI vs Anthropic 的全面开战——Codex 直怼 Claude Code，Opus 4.7 悄然反击；真正的 AI 编程军备竞赛已经打响，开发者是最大赢家。",
@@ -17786,7 +17896,9 @@
         "source": "Product Hunt AI",
         "category": "AI 工具动态",
         "url": "https://www.producthunt.com/products/fathom",
-        "summary": "老牌 AI 会议摘要工具 Fathom 发布 3.0 大版本更新，在会议记录、摘要生成与行动项提取等核心功能上全面迭代。Fathom 是 PLG 驱动的出海 SaaS 典型案例，其版本迭代节奏对同赛道开发者具有参考意义。"
+        "summary": "老牌 AI 会议摘要工具 Fathom 发布 3.0 大版本更新，在会议记录、摘要生成与行动项提取等核心功能上全面迭代。Fathom 是 PLG 驱动的出海 SaaS 典型案例，其版本迭代节奏对同赛道开发者具有参考意义。",
+        "titleEn": "Fathom 3.0 Launches with Major Upgrade to AI Meeting Notes",
+        "summaryEn": "Established AI meeting summary tool Fathom has released version 3.0, a major update that overhauls its core features, including meeting transcription, summary generation, and action item extraction. Fathom is a textbook example of a product-led growth SaaS company scaling globally, and its release cadence offers useful lessons for developers building in the same space."
       }
     ],
     "jasonSays": "今天最值得盯的信号：Claude Code Routines 上线 + OpenAI Agents SDK 大更新同日出现，Agentic 工作流的基础设施层正在以肉眼可见的速度成型，现在是押注 Agent 工具层产品的最佳窗口期。",
@@ -17848,7 +17960,9 @@
         "source": "36Kr",
         "category": "变现案例",
         "url": "https://36kr.com/p/3767424500171271?f=rss",
-        "summary": "娲宝科技推出多模态传感智能宠物项圈，集成骨传导、光谱与柔性传感技术，通过端侧采集、云端 AI 模型分析，实现心率、体温、行为等连续健康数据监测，并计划延伸至宠粮与后续服务，形成数据变现闭环。是 AI+硬件+订阅服务模式在消费垂直赛道的典型落地案例。"
+        "summary": "娲宝科技推出多模态传感智能宠物项圈，集成骨传导、光谱与柔性传感技术，通过端侧采集、云端 AI 模型分析，实现心率、体温、行为等连续健康数据监测，并计划延伸至宠粮与后续服务，形成数据变现闭环。是 AI+硬件+订阅服务模式在消费垂直赛道的典型落地案例。",
+        "titleEn": "Dreame-Backed Wabao Tech Launches AI Smart Pet Collar",
+        "summaryEn": "Wabao Tech, part of the Dreame ecosystem, has launched a multimodal smart pet collar combining bone-conduction, spectral, and flexible sensors. On-device data collection and cloud AI analysis enable continuous tracking of heart rate, temperature, and behavior. Planned expansion into pet food and follow-up services would close the data monetization loop, exemplifying the AI, hardware, and subscription model in a consumer vertical."
       }
     ],
     "jasonSays": "今天最值得盯的信号是：Google Chrome 把 AI 工作流「技能化」推向普通用户，而投资人对 OpenAI vs Anthropic 的估值天平悄悄在偏移——这两件事加在一起，2026 的 AI 竞争格局比想象中变得更快。",
@@ -17910,7 +18024,9 @@
         "source": "TechCrunch AI",
         "category": "AI 工具动态",
         "url": "https://techcrunch.com/2026/04/13/stanford-report-highlights-growing-disconnect-between-ai-insiders-and-everyone-else/",
-        "summary": "斯坦福最新 AI 指数显示,专家与公众之间的认知差距正在扩大,公众对 AI 在就业、医疗和经济方面的焦虑情绪上升。这提醒 AI 从业者需要更好地与大众沟通技术影响。"
+        "summary": "斯坦福最新 AI 指数显示,专家与公众之间的认知差距正在扩大,公众对 AI 在就业、医疗和经济方面的焦虑情绪上升。这提醒 AI 从业者需要更好地与大众沟通技术影响。",
+        "titleEn": "Stanford Report: AI Perception Gap Widens Between Experts and Public",
+        "summaryEn": "Stanford's latest AI Index shows a widening gap between how experts and the general public view AI, with public anxiety rising over its impact on jobs, healthcare, and the economy. The findings are a reminder that AI practitioners need to communicate the technology's effects to the public more effectively."
       }
     ],
     "jasonSays": "Vercel 的 IPO 准备和 Claude Code 的安全实践都在证明:真正的 AI 商业化不是炒概念,而是解决实际问题。",
