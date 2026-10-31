@@ -148,11 +148,12 @@ if (!imgRes.ok) {
 const buf = Buffer.from(await imgRes.arrayBuffer());
 await fs.mkdir(outDir, { recursive: true });
 
-// sharp 压缩：原始 PNG ~2MB，压成高质量 PNG（保留 .png 路径约定，next/image 再转 AVIF/WebP）
+// sharp 压缩：原始 PNG ~2MB，转调色板 PNG 约一半（保留 .png 路径约定，next/image 再转 AVIF/WebP）。
+// quality 必须是 100：80/90 会在米色、深蓝平涂区压出噪点，next/image 转码后照样带着（2026-10-31 抽查）
 let outBuf = buf;
 try {
   const { default: sharp } = await import("sharp");
-  outBuf = await sharp(buf).png({ quality: 80, compressionLevel: 9, palette: true }).toBuffer();
+  outBuf = await sharp(buf).png({ palette: true, quality: 100, compressionLevel: 9, effort: 10 }).toBuffer();
   console.log(`🗜  压缩：${(buf.length / 1024).toFixed(0)}KB → ${(outBuf.length / 1024).toFixed(0)}KB`);
 } catch (e) {
   console.warn(`⚠️  sharp 压缩跳过（${e.message}），保存原图`);

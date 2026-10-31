@@ -8,7 +8,9 @@ spec.json：{"out": "public/blog/<slug>/cover.png", "lang": "zh"|"en", "headline
 依赖 macOS 自带字体（Songti / Hiragino / Georgia）。
 """
 import json
+import os
 import random
+import subprocess
 import sys
 
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
@@ -106,6 +108,11 @@ def render(spec):
     d.text((W - 56 - d.textlength(right, font=fr), 950), right, font=fr, fill=(255, 255, 255))
 
     im.save(spec["out"], optimize=True)
+    # 转调色板 PNG（约原图四成，画质不变）；没有 node / sharp 时保留原图
+    try:
+        subprocess.run(["node", os.path.join(os.path.dirname(os.path.abspath(__file__)), "compress-png.mjs"), spec["out"]], check=False)
+    except FileNotFoundError:
+        print("⚠️  没找到 node，跳过压缩")
     print("✓", spec["out"])
 
 
