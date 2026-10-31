@@ -1,5 +1,78 @@
 [
   {
+    "slug": "2026-10-31",
+    "date": "2026-10-31",
+    "title": "AI 快讯 · 10月31日",
+    "items": [
+      {
+        "title": "OpenAI将通过robots.txt识别网站训练偏好",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/helping-websites-express-ai-training-preferences",
+        "summary": "OpenAI宣布将遵循共享的robots.txt信号，帮助网站向参与的AI服务商表达是否允许抓取和训练。该机制有望让网站的内容授权偏好更标准化，也为未来训练数据治理提供基础。",
+        "titleEn": "OpenAI Adds Robots.txt AI Training Signals",
+        "summaryEn": "OpenAI will honor a shared robots.txt signal that lets website operators communicate AI training preferences to participating providers. The move could create a more standardized mechanism for content permissions and give publishers a clearer way to manage how their data is used in model development."
+      },
+      {
+        "title": "Impeccable为编码Agent补上设计审美Skills",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/pbakaus/impeccable",
+        "summary": "Impeccable把设计词汇、界面润色、批评审查和视觉审计封装成可安装Skills，可在Claude Code、Cursor等编码工具中使用。它瞄准AI生成界面常见的模板化和低质感问题，让开发者能用统一指令持续改进前端成品。",
+        "titleEn": "Impeccable Brings Design Skills to Coding Agents",
+        "summaryEn": "Impeccable packages design vocabulary, visual refinement, critique, and audits into installable skills for coding agents such as Claude Code and Cursor. It targets the repetitive, low-polish interfaces often produced by AI, giving developers a reusable vocabulary and workflow for improving frontend quality."
+      },
+      {
+        "title": "Governor为AI Agent增加调用与消费防火墙",
+        "source": "Hacker News",
+        "category": "Skills 生态",
+        "url": "https://bsvkey-governor-demo.fly.dev/",
+        "summary": "开源项目Governor尝试为AI Agent的工具调用和费用支出设置防火墙，帮助团队限制高风险操作、控制API成本并追踪调用行为。随着Agent获得更大执行权限，这类运行时治理层正成为生产部署不可缺少的基础设施。",
+        "titleEn": "Governor Adds Spending Controls for AI Agents",
+        "summaryEn": "Governor is presented as a firewall for AI-agent tool calls and spending. It aims to help teams restrict risky actions, control API costs, and monitor execution behavior. As agents gain more autonomy, runtime policy layers like this are becoming increasingly important for production deployments."
+      },
+      {
+        "title": "Anthropic研究发现Agent会改变专家判断边界",
+        "source": "Anthropic Research",
+        "category": "AI 工具动态",
+        "url": "https://www.anthropic.com/research/agents-judgment-calls",
+        "summary": "Anthropic研究AI Agent如何影响专家在复杂任务中的判断选择，重点观察人机协作时责任、信任和决策边界如何变化。对开发者而言，Agent不只是自动化工具，产品还需要设计清晰的授权、复核与责任回溯机制。",
+        "titleEn": "Anthropic Studies How Agents Shape Expert Judgment",
+        "summaryEn": "Anthropic examines how AI agents influence experts’ judgment calls in complex work, focusing on trust, responsibility, and decision boundaries in human-agent collaboration. The findings highlight that agent products need explicit authorization, review, and accountability mechanisms rather than treating agents as simple automation tools."
+      },
+      {
+        "title": "研究显示MCP与CLI会改变Agent行为",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2610.34298",
+        "summary": "这项受控研究让Agent通过MCP和CLI访问相同能力，发现接口呈现方式不同仍会导致行为差异。对开发者的启示是，工具设计不只是连接问题，命令结构、参数表达和上下文组织本身都会影响Agent的选择与可靠性。",
+        "titleEn": "MCP and CLI Interfaces Change Agent Behavior",
+        "summaryEn": "This controlled study gives agents identical capabilities through MCP and command-line interfaces, then measures behavioral differences. It shows that tool design is not merely an integration detail: command structure, parameter presentation, and context organization can directly influence agent choices and reliability."
+      },
+      {
+        "title": "研究发现公开量化模型存在隐藏失效风险",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2609.05881",
+        "summary": "研究测试了Ollama和Hugging Face上的量化GGUF模型，发现部分公开文件虽能下载运行，却在代码任务中几乎不可用。对开发者而言，模型仓库的格式兼容不等于功能可靠，部署前必须加入自动化能力测试和回归验证。",
+        "titleEn": "Public Quantized Models Hide Silent Failures",
+        "summaryEn": "Researchers tested quantized GGUF models from Ollama and Hugging Face and found that some files loaded successfully but performed almost no useful coding work. For developers, this means format compatibility is not functional reliability; deployment pipelines need automated capability tests and regression checks."
+      },
+      {
+        "title": "新方法让图像模型支持任意顺序生成",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2610.39293",
+        "summary": "论文提出在不为每种生成顺序重复训练的情况下，让自回归图像模型摆脱固定的从左到右生成方式。模型因此更容易支持局部重绘、扩图和编辑，开发者可用更接近统一模型的方式实现多种图像操作。",
+        "titleEn": "New Method Enables Any-Order Image Generation",
+        "summaryEn": "The paper proposes a way to free autoregressive image models from a fixed raster-scan order without training separately for every ordering. This makes inpainting, outpainting, and editing more natural, potentially allowing developers to support multiple image operations within a more unified model."
+      }
+    ],
+    "jasonSays": "今天最值得关注的是Agent工具接口与治理正在成为核心工程问题：MCP、CLI和消费防火墙都会直接影响智能体的行为、成本与可靠性。",
+    "jasonSaysEn": "The key development today is that agent interfaces and runtime controls are becoming core engineering concerns, directly shaping behavior, cost, and reliability.",
+    "filename": "2026-10-31.md"
+  },
+  {
     "slug": "2026-10-30",
     "date": "2026-10-30",
     "title": "AI 快讯 · 10月30日",
@@ -90,7 +163,8 @@
     ],
     "jasonSays": "今天最值得关注的是AI能力正从模型本身扩展到安全监控、可持续记忆和真实世界部署，开发者需要同时重视能力边界与运行时治理。",
     "jasonSaysEn": "The key trend today is AI expanding beyond models into safety monitoring, persistent project memory, and real-world deployment, making both capability design and runtime governance essential for developers.",
-    "filename": "2026-10-30.md"
+    "filename": "2026-10-30.md",
+    "coverImage": "/news/2026-10-30.png"
   },
   {
     "slug": "2026-10-29",
