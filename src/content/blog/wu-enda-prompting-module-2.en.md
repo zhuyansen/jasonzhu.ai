@@ -1,9 +1,9 @@
 ---
 title: >-
-  Andrew Ng 2026 《AI Prompt Engineering》Module 2 Complete Notes: Turning AI into
+  Andrew Ng's 2026 'AI Prompting for Everyone' Module 2 Complete Notes: Turning AI into
   Your True Thinking Partner
 excerpt: >-
-  Complete English notes for Andrew Ng's 《AI Prompting for Everyone》Module 2. 8
+  Complete English notes for Andrew Ng's 'AI Prompting for Everyone' Module 2. 8
   lessons covering: how to brainstorm with AI, manage context, use desktop
   agents, apply deep reasoning, avoid AI sycophancy, iterate on writing, and
   conduct objective reviews. 10 ready-to-use prompt templates you can copy right
