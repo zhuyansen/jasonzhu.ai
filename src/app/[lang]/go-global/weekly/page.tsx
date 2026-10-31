@@ -105,8 +105,10 @@ export default async function WeeklyPage({
                     </span>
                     <span className="text-sm text-gray-400">{issue.date}</span>
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900 leading-snug">{issue.title}</h3>
-                  {issue.excerpt && <p className="mt-2 text-sm text-gray-500 leading-relaxed">{issue.excerpt}</p>}
+                  <h3 className="text-lg font-semibold text-gray-900 leading-snug">{!isZh && issue.titleEn ? issue.titleEn : issue.title}</h3>
+                  {issue.excerpt && (
+                    <p className="mt-2 text-sm text-gray-500 leading-relaxed">{!isZh && issue.excerptEn ? issue.excerptEn : issue.excerpt}</p>
+                  )}
                 </Link>
               </li>
             ))}

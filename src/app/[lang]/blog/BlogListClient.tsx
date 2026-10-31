@@ -4,15 +4,16 @@ import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from "reac
 import BlogCard from "@/components/BlogCard";
 import type { BlogPostMeta } from "@/lib/mdx";
 import type { Dictionary } from "@/lib/dictionaries";
+import { tagLabel } from "@/lib/tag-labels";
 
 // 搜索词放在 URL 的 ?q= 里，搜索结果可以直接分享。用 useSyncExternalStore 读 URL：
 // 服务端渲染时为空串，不用 useSearchParams，免得整页退出静态渲染。
 const noopSubscribe = () => () => {};
 const readUrlQuery = () => new URLSearchParams(window.location.search).get("q") || "";
 
-/** 把一篇文章能被搜到的文字拼在一起：标题、摘要、标签、分类、小标题、正文英文关键词（含英文版标题 / 摘要） */
+/** 把一篇文章能被搜到的文字拼在一起：标题、摘要、标签（含英文名）、分类、小标题、正文英文关键词（含英文版标题 / 摘要） */
 function haystack(p: BlogPostMeta, categoryName: string): string {
-  return [p.title, p.excerpt, p.titleEn, p.excerptEn, p.category, categoryName, ...(p.tags || []), ...(p.headings || []), ...(p.keywords || [])]
+  return [p.title, p.excerpt, p.titleEn, p.excerptEn, p.category, categoryName, ...(p.tags || []), ...(p.tags || []).map((t) => tagLabel(t, "en")), ...(p.headings || []), ...(p.keywords || [])]
     .filter(Boolean)
     .join("\n")
     .toLowerCase();

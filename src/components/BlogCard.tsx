@@ -1,5 +1,6 @@
 import Link from "@/components/Link";
 import type { BlogPostMeta } from "@/lib/mdx";
+import { tagLabel } from "@/lib/tag-labels";
 
 const categoryColors: Record<string, string> = {
   "AI工具": "bg-blue-50 text-blue-700",
@@ -51,7 +52,7 @@ export default function BlogCard({
         <div className="mt-3 flex flex-wrap gap-1">
           {post.tags.slice(0, 3).map((tag) => (
             <span key={tag} className="text-xs text-gray-400">
-              #{tag}
+              #{tagLabel(tag, lang)}
             </span>
           ))}
         </div>

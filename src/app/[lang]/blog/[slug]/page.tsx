@@ -12,6 +12,7 @@ import LikeButton from "@/components/LikeButton";
 import GiscusComments from "@/components/GiscusComments";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
 import { extractFaq, faqJsonLd } from "@/lib/faq";
+import { tagLabel } from "@/lib/tag-labels";
 import type { Metadata } from "next";
 
 interface Props {
@@ -69,7 +70,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       publishedTime: post.date,
       modifiedTime: post.updated || post.date,
       authors: ["Jason Zhu"],
-      tags: post.tags,
+      tags: post.tags.map((t) => tagLabel(t, lang)),
       ...(post.coverImage
         ? { images: [{ url: `${SITE_URL}${post.coverImage}`, width: 1536, height: 1024, alt: post.title }] }
         : {}),
@@ -101,6 +102,9 @@ export default async function BlogPostPage({ params }: Props) {
       ]
     : [{ name: lang === "zh" ? "博客" : "Blog", href: `/${lang}/blog` }];
   const section = trail[trail.length - 1];
+  // 英文页：分类显示英文名；相关文章有英文版的显示英文标题
+  const categoryMap = (dict.blog.categoryMap ?? {}) as Record<string, string>;
+  const catLabel = (c: string) => categoryMap[c] || c;
 
   // Related posts: shared tags weighted highest, then same category, newest first
   const relatedPosts = getAllPosts()
@@ -166,7 +170,7 @@ export default async function BlogPostPage({ params }: Props) {
     image: post.coverImage
       ? `${SITE_URL}${post.coverImage}`
       : `${SITE_URL}/${lang}/blog/${slug}/opengraph-image`,
-    keywords: post.tags.join(", "),
+    keywords: post.tags.map((t) => tagLabel(t, lang)).join(", "),
   };
 
   // FAQPage JSON-LD：文章含「## 常见问题」段落时自动生成
@@ -229,7 +233,7 @@ export default async function BlogPostPage({ params }: Props) {
       <header className="mb-8">
         <div className="flex items-center gap-2 mb-4">
           <span className="inline-block px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700">
-            {post.category}
+            {catLabel(post.category)}
           </span>
           <span className="text-sm text-gray-400">{post.date}</span>
           {post.updated && post.updated !== post.date && (
@@ -249,7 +253,7 @@ export default async function BlogPostPage({ params }: Props) {
                 key={tag}
                 className="px-2.5 py-0.5 bg-gray-100 text-gray-500 rounded-full text-xs"
               >
-                #{tag}
+                #{tagLabel(tag, lang)}
               </span>
             ))}
           </div>
@@ -344,10 +348,10 @@ export default async function BlogPostPage({ params }: Props) {
                 className="block p-4 rounded-lg border border-gray-200 hover:border-[var(--primary)] hover:shadow-sm transition-all"
               >
                 <span className="inline-block px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded-full mb-2">
-                  {rp.category}
+                  {catLabel(rp.category)}
                 </span>
                 <p className="text-sm font-medium text-gray-900 line-clamp-2 leading-snug">
-                  {rp.title}
+                  {lang === "en" && rp.titleEn ? rp.titleEn : rp.title}
                 </p>
                 <p className="text-xs text-gray-400 mt-2">{rp.date}</p>
               </Link>
