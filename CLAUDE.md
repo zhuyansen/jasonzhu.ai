@@ -22,9 +22,10 @@ node scripts/generate-opus-prompts.mjs  # 提示词库 cases.json → generated 
 # 快讯手动补日（cron 失败时）：
 CLAUDE_TRANSPORT=curl DATE=2026-XX-XX node scripts/collect-news.mjs --force
 
-# 批量翻译：
-CLAUDE_TRANSPORT=curl node scripts/translate-content.mjs blog|news
-CLAUDE_TRANSPORT=curl node scripts/translate-big-blogs.mjs [slug...]   # 超大文分块翻
+# 批量翻译（走 apimart 的 Claude，key 只在 GitHub secret 里，本机跑不了 → 用工作流）：
+gh workflow run translate-content.yml -f mode=news -f all=true   # 给缺英文的快讯条目补 TitleEN / EN
+CLAUDE_TRANSPORT=curl node scripts/translate-big-blogs.mjs [slug...]   # 超大文分块翻（需本地有 APIMART_CLAUDE_KEY）
+node scripts/check-tag-labels.mjs   # 博客新用的中文标签有没有英文显示名
 
 node scripts/check-sitemap.mjs   # 线上 sitemap URL 数量断言（防再次静默坏掉）
 node scripts/indexnow.mjs [range|--url u...] [--dry-run]  # 推 Bing IndexNow；.github/workflows/indexnow.yml 在内容 push / 快讯与提示词 cron 后自动跑
@@ -38,6 +39,7 @@ Git：commit 后如远程有新提交（cron 会自动 commit 快讯），先 `g
 **内容管线（核心模式：md 是源，generated JSON 是编译产物）**
 - `src/content/blog/<slug>.md` → `generate-posts.mjs` → `src/generated/posts.json`（meta）+ `post-content/<slug>.json`（正文）。页面经 `src/lib/mdx.ts` 读取，MDXRemote 渲染。
 - 双语约定：`<slug>.en.md` 是英文版（不算独立文章），meta 带 `hasEnglish`；`getPostBySlug(slug, lang)` 在 en 时优先英文、回退中文。frontmatter 支持 `updated`（渲染"更新于" + schema dateModified）。
+- 英文页不该出现中文（2026-10-31 全站扫过一遍）：新博客发布时一起写 `.en.md`（选品周报的定时任务已经这么做）；标签在 frontmatter 里保持中文，英文显示名在 `src/lib/tag-labels.ts`，新标签补进去；出海专题指南的英文版在 `src/lib/guides/en/`，改中文指南时同步改。快讯 md 的英文行注入必须按行处理：旧翻译脚本的 `\Z`（JS 里是字面量 Z）和 `String.replace` 注入（标题里的 `$1` 被替换）插坏过 19 期。
 - `src/content/news/<日期>.md` → `generate-news.mjs` → `news.json`。解析器把每个 `###` 段解析成结构化 item；特殊行：`- **TitleEN**：`/`- **EN**：`（双语）；`### 💰 AI 融资速递` 段解析成 `funding[]` 结构化卡片（不算 item）。
 
 **快讯收录规则（2026-10-06 起，应对「无人监督批量 AI 内容」审计风险）**

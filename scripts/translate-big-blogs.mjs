@@ -15,7 +15,10 @@ for (const l of fs.readFileSync(".env.local", "utf-8").split("\n")) {
   if (v.startsWith('"') && v.endsWith('"')) v = v.slice(1, -1);
   process.env[t.slice(0, e).trim()] = v;
 }
-const KEY = process.env.ANTHROPIC_AUTH_TOKEN, BASE = process.env.ANTHROPIC_BASE_URL || "https://api.aigocode.app";
+// 2026-10-24 起不用 aigocode：有 APIMART_CLAUDE_KEY 时走 apimart 的 Claude（本机没有这个 key，见 translate-content.mjs 的说明）
+const KEY = process.env.APIMART_CLAUDE_KEY || process.env.ANTHROPIC_AUTH_TOKEN;
+const BASE = process.env.APIMART_CLAUDE_KEY ? process.env.APIMART_BASE_URL || "https://api.apimart.ai" : process.env.ANTHROPIC_BASE_URL || "https://api.aigocode.app";
+const MODEL = process.env.CLAUDE_MODEL || (process.env.APIMART_CLAUDE_KEY ? "claude-opus-5-5" : "claude-sonnet-4-6"); // apimart 的 key 只开通了 opus-5-5
 const dir = "src/content/blog";
 
 function call(prompt, maxTok = 8000, timeout = 150) {
@@ -25,7 +28,7 @@ function call(prompt, maxTok = 8000, timeout = 150) {
         "-sS", "--http1.1", "--max-time", String(timeout), `${BASE}/v1/messages`,
         "-H", `x-api-key: ${KEY}`, "-H", "anthropic-version: 2023-06-01",
         "-H", "content-type: application/json", "-H", "Connection: close", "-d", "@-",
-      ], { input: JSON.stringify({ model: "claude-sonnet-4-6", max_tokens: maxTok, messages: [{ role: "user", content: prompt }] }), maxBuffer: 80 * 1024 * 1024, encoding: "utf-8" });
+      ], { input: JSON.stringify({ model: MODEL, max_tokens: maxTok, messages: [{ role: "user", content: prompt }] }), maxBuffer: 80 * 1024 * 1024, encoding: "utf-8" });
       const s = out.split(/\bdata:\s*/)[0].trim();
       const j = JSON.parse(s.slice(s.indexOf("{")));
       if (j.type === "error") throw new Error(JSON.stringify(j.error).slice(0, 60));
