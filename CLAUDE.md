@@ -47,6 +47,7 @@ Git：commit 后如远程有新提交（cron 会自动 commit 快讯），先 `g
 - 快讯每天 AI 生成、自动发布 + 发邮件不变；但**默认 noindex、不进 sitemap**，`/news` 列表页也 noindex。只有 frontmatter 有 `humanComment`（Jason 本人点评）的那期才 index + 进 sitemap（`isDigestIndexable()`）。
 - AI 生成的那句（字段名沿用 `jasonSays`）在页面 / 列表 / RSS / 邮件上标「AI 摘要」，不再署 Jason 的名；Jason 点评显示为「Jason 说」。生成 prompt 要求客观、不用第一人称。
 - 点评入口：管理后台「快讯点评」标签 → `/api/admin/news` 通过 GitHub API 提交 frontmatter（需 Vercel 的 `GITHUB_CONTENTS_TOKEN`）→ 自动部署。清空点评 = 撤回、重新 noindex。不要再给快讯整体放开收录。
+- 署名（2026-11-01 起）：快讯的作者是站点，JSON-LD 写 Organization「JasonZhu.AI」，`<meta name="author">` 和 `article:author` 同；有 `humanComment` 的那期再加 Person「Jason Zhu」，两项分开写。publisher 始终是 Jason。日期后的署名行「JasonZhu.AI · AI 整理 · Jason Zhu 点评」和它对应。不要改回全署 Jason（AI 写的内容署个人，属于 Google 说的误导性作者信息）。
 
 **快讯 cron（.github/workflows/daily-news.yml）**
 - 北京时间清晨 5:30/6:30/7:15 三档重试；`collect-news.mjs` 抓 RSS → Claude 结构化 → 写 md + Supabase → commit。今天的快讯已发出（≥3 条）时，后面几档整轮跳过：以前每档都重画封面、多一次提交和部署、给订阅者重复发信（2026-10-27 修）。邮件脚本按北京日期取当期。

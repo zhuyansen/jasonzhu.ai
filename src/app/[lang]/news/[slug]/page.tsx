@@ -4,9 +4,20 @@ import { notFound } from "next/navigation";
 import type { Locale } from "@/lib/dictionaries";
 import { getAllDigests, getDigestBySlug, digestTitle, digestJasonSays, digestHumanComment, isDigestIndexable } from "@/lib/news";
 import { findCrossLinks } from "@/lib/cross-links";
+import { AUTHOR_NAME } from "@/lib/profiles";
 import ShareButtons from "@/components/ShareButtons";
 
 const SITE_URL = "https://jasonzhu.ai";
+const SITE_NAME = "JasonZhu.AI";
+
+/**
+ * 快讯的作者：AI 整理的部分署站点（Organization），Jason 点评过的那期再加上他本人（Person）。
+ * JSON-LD、<meta name="author">、article:author 都按这个输出，日期后的署名行和它对应；publisher 始终是 Jason
+ */
+function digestAuthors(hasComment: boolean) {
+  const site = { "@type": "Organization", name: SITE_NAME, url: SITE_URL };
+  return hasComment ? [site, { "@type": "Person", name: AUTHOR_NAME, url: SITE_URL }] : [site];
+}
 
 const categoryConfig: Record<string, { color: string; icon: string; en: string }> = {
   "Skills 生态": { color: "bg-purple-50 text-purple-700", icon: "🔥", en: "Skills" },
@@ -48,13 +59,17 @@ export async function generateMetadata({
   // 无英文字段的期数：en 页是中文复制，canonical 指回 zh，
   // 避免 GSC「重复网页，Google 选择的规范网页与用户指定的不同」
   const hasEn = digest.items.some((i) => i.summaryEn);
+  const comment = digestHumanComment(digest, lang);
+  const authorNames = digestAuthors(Boolean(comment)).map((a) => a.name);
 
   return {
     title: mTitle,
     description:
-      digestHumanComment(digest, lang) ||
+      comment ||
       digestJasonSays(digest, lang) ||
       (lang === "en" ? `AI News ${digest.date}` : `AI 快讯 ${digest.date}`),
+    // <meta name="author">：根布局默认是 Jason Zhu，快讯换成站点（点评期加上 Jason）
+    authors: authorNames.map((name) => ({ name })),
     alternates: {
       canonical:
         lang === "en" && !hasEn
@@ -71,7 +86,8 @@ export async function generateMetadata({
             "x-default": `${SITE_URL}/zh/news/${slug}`,
           },
     },
-    openGraph: ogImages ? { images: ogImages, type: "article" } : undefined,
+    // 不写 images 时用同目录 opengraph-image 生成的图
+    openGraph: { type: "article", authors: authorNames, ...(ogImages ? { images: ogImages } : {}) },
     twitter: ogImages ? { card: "summary_large_image", images: ogImages } : undefined,
     // 未经 Jason 点评的期数不让搜索引擎收录（AI 每日生成的内容），链接照常可跟
     ...(isDigestIndexable(digest) ? {} : { robots: { index: false, follow: true } }),
@@ -102,13 +118,15 @@ export default async function NewsDetailPage({
   const prevDigest = currentIndex < allDigests.length - 1 ? allDigests[currentIndex + 1] : null;
   const nextDigest = currentIndex > 0 ? allDigests[currentIndex - 1] : null;
 
+  const authors = digestAuthors(Boolean(dComment));
   const newsArticleJsonLd = {
     "@context": "https://schema.org",
     "@type": "NewsArticle",
     headline: dTitle,
     datePublished: digest.date,
     dateModified: digest.date,
-    author: { "@type": "Person", name: "Jason Zhu", url: SITE_URL },
+    // 点评期两位作者各占一项（Google 要求多作者分开写）
+    author: authors.length > 1 ? authors : authors[0],
     publisher: { "@type": "Person", name: "Jason Zhu", url: SITE_URL },
     mainEntityOfPage: `${SITE_URL}/${lang}/news/${slug}`,
     description: dComment || dJasonSays || (isZh ? `AI 快讯 ${digest.date}` : `AI News ${digest.date}`),
@@ -136,7 +154,26 @@ export default async function NewsDetailPage({
             <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
               {dTitle}
             </h1>
-            <time className="text-sm text-gray-400">{digest.date}</time>
+            {/* 署名行，和结构化数据的 author 对应。每段不拆开，手机上只在 · 处换行 */}
+            <p className="text-sm text-gray-400">
+              <time className="whitespace-nowrap">{digest.date}</time>
+              {" · "}
+              <span className="whitespace-nowrap">{SITE_NAME}</span>
+              {" · "}
+              <span className="whitespace-nowrap">{isZh ? "AI 整理" : "Compiled by AI"}</span>
+              {dComment && (
+                <>
+                  {" · "}
+                  <span className="whitespace-nowrap">
+                    {!isZh && "Comment by "}
+                    <Link href={`/${lang}/about`} className="text-gray-600 hover:text-blue-600 transition-colors">
+                      {AUTHOR_NAME}
+                    </Link>
+                    {isZh && " 点评"}
+                  </span>
+                </>
+              )}
+            </p>
           </div>
           <ShareButtons
             url={`${SITE_URL}/${lang}/news/${slug}`}
