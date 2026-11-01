@@ -119,16 +119,21 @@ export default async function NewsDetailPage({
   const nextDigest = currentIndex > 0 ? allDigests[currentIndex - 1] : null;
 
   const authors = digestAuthors(Boolean(dComment));
+  // Jason 加点评那天页面变了。reviewedAt 是 UTC 日期，清早点评会比期号早一天，所以取较晚的
+  const modified =
+    dComment && digest.reviewedAt && digest.reviewedAt > digest.date ? digest.reviewedAt : digest.date;
   const newsArticleJsonLd = {
     "@context": "https://schema.org",
     "@type": "NewsArticle",
     headline: dTitle,
     datePublished: digest.date,
-    dateModified: digest.date,
+    dateModified: modified,
     // 点评期两位作者各占一项（Google 要求多作者分开写）
     author: authors.length > 1 ? authors : authors[0],
     publisher: { "@type": "Person", name: "Jason Zhu", url: SITE_URL },
     mainEntityOfPage: `${SITE_URL}/${lang}/news/${slug}`,
+    // 和页面上的封面一致；没封面的期用同目录 opengraph-image 生成的图
+    image: cover ? `${SITE_URL}${cover}` : `${SITE_URL}/${lang}/news/${slug}/opengraph-image`,
     description: dComment || dJasonSays || (isZh ? `AI 快讯 ${digest.date}` : `AI News ${digest.date}`),
   };
 
