@@ -32,6 +32,7 @@ export async function GET() {
     })
     .join("\n");
 
+  // 频道图用导航栏同款头像（原来指向不存在的 /logo.png，404）。RSS 规定图宽不超过 144，头像 400×400 按 144 显示
   const feed = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
@@ -42,9 +43,11 @@ export async function GET() {
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <atom:link href="${SITE_URL}/feed/news.xml" rel="self" type="application/rss+xml"/>
     <image>
-      <url>${SITE_URL}/logo.png</url>
+      <url>${SITE_URL}/avatar.jpg</url>
       <title>JasonZhu.AI</title>
       <link>${SITE_URL}</link>
+      <width>144</width>
+      <height>144</height>
     </image>
 ${items}
   </channel>
