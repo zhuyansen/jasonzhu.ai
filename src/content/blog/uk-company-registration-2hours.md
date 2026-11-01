@@ -1,7 +1,7 @@
 ---
 title: "2025年最新：2小时完成英国公司注册，只需50英镑"
 date: "2025-10-31"
-updated: "2026-06-13"
+updated: "2026-11-02"
 category: "出海"
 tags: ["英国公司", "公司注册", "出海", "独立开发者"]
 excerpt: "不用代理，直接去英国官网注册公司，2小时搞定，总费用只需50英镑+400元注册地址。"
@@ -67,3 +67,5 @@ excerpt: "不用代理，直接去英国官网注册公司，2小时搞定，总
 ---
 
 **撰稿人**: [饼干哥哥AGI](https://x.com/bggg_ai) | [原文链接](https://x.com/bggg_ai/status/1984069875996967213)
+
+> **2026-11 更新**：2026 年 2 月 1 日起，Companies House 网上注册公司的费用从 50 英镑涨到 **100 英镑**，文中的 50 英镑是原作者注册时的价格。以[官方页面](https://www.gov.uk/limited-company-formation/register-your-company)为准。

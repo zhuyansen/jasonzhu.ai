@@ -63,3 +63,5 @@ A complete, first-hand walkthrough covering everything from registration to annu
 ---
 
 **Author**: [饼干哥哥AGI](https://x.com/bggg_ai) | [Original Post](https://x.com/bggg_ai/status/1984069875996967213)
+
+> **Update, November 2026**: since 1 February 2026, registering a company online with Companies House costs **£100**, up from £50. The £50 above is what the author paid at the time. Check the [official page](https://www.gov.uk/limited-company-formation/register-your-company) for the current fee.
