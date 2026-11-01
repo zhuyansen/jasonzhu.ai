@@ -35,6 +35,22 @@ const keywordsOf = (content) => {
   }
   return [...counts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 40).map(([k]) => k);
 };
+// 文章作者：投稿文记撰稿人，Jason 自己写的不记（页面和结构化数据按站点作者 Jason Zhu 输出）。
+// 先看 frontmatter 的 author / authorUrl（没有撰稿人行、要手动指定作者时用），再看文末「**撰稿人**: [名字](主页) | [原文链接](…)」那一行。
+const SITE_AUTHOR_NAMES = new Set(["Jason Zhu", "祝彦森"]); // 同 src/lib/profiles.ts
+const authorOf = (data, content) => {
+  let name = data.author;
+  let url = data.authorUrl;
+  if (!name) {
+    const line = content.match(/^\*\*撰稿人(?:\*\*\s*[:：]|[:：]\*\*)\s*(.+)$/m)?.[1];
+    const link = line?.match(/^\[([^\]]+)\]\(([^)\s]+)\)/);
+    name = link ? link[1] : line?.split("|")[0];
+    url = link?.[2];
+  }
+  name = name?.trim();
+  if (!name || SITE_AUTHOR_NAMES.has(name)) return undefined;
+  return { name, url: url || undefined };
+};
 // 英文版的标题 / 摘要也进搜索索引，英文页能用英文搜
 const enMeta = new Map(
   enFiles.map((f) => {
@@ -59,6 +75,7 @@ const posts = files.map((filename) => {
     excerpt: data.excerpt || "",
     coverImage: data.coverImage || undefined,
     tweetUrl: data.tweetUrl || undefined,
+    author: authorOf(data, content),
     // 系列文章（如出海选品周报：series: chuhai-weekly, issue: 1）：自成板块，见 /[lang]/go-global/weekly
     series: data.series || undefined,
     issue: data.issue || undefined,

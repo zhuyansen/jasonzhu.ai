@@ -13,6 +13,7 @@ import GiscusComments from "@/components/GiscusComments";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
 import { extractFaq, faqJsonLd } from "@/lib/faq";
 import { tagLabel } from "@/lib/tag-labels";
+import { AUTHOR_NAME } from "@/lib/profiles";
 import type { Metadata } from "next";
 
 interface Props {
@@ -32,18 +33,28 @@ export async function generateStaticParams() {
 
 const SITE_URL = "https://jasonzhu.ai";
 
+/** 撰稿人主页是 X 账号时取出 @handle，给 twitter:creator 用 */
+function xHandle(url?: string) {
+  const m = url?.match(/^https?:\/\/(?:www\.)?(?:x|twitter)\.com\/([A-Za-z0-9_]+)\/?$/);
+  return m ? `@${m[1]}` : undefined;
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang, slug } = await params;
   const post = getPostBySlug(slug, lang === "en" ? "en" : "zh");
   if (!post) return {};
 
+  // 投稿文的作者是撰稿人（post.author），其余是站点作者
+  const byline = post.author ? `${post.author.name} 的投稿文章` : `${AUTHOR_NAME} 的博客文章`;
   const description = post.excerpt && post.excerpt.length >= 50
     ? post.excerpt
-    : `${post.title} - Jason Zhu 的博客文章，涵盖${post.category}领域的深度分析与实战经验分享。`;
+    : `${post.title} - ${byline}，涵盖${post.category}领域的深度分析与实战经验分享。`;
 
   return {
     title: post.title,
     description,
+    // <meta name="author">：根布局默认是 Jason Zhu，投稿文换成撰稿人
+    ...(post.author ? { authors: [{ name: post.author.name, url: post.author.url }] } : {}),
     alternates: {
       // 未翻译的 en 页是中文内容的复制，canonical 指回 zh 版，
       // 避免 GSC「重复网页，Google 选择的规范网页与用户指定的不同」
@@ -69,7 +80,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `${SITE_URL}/${lang}/blog/${slug}`,
       publishedTime: post.date,
       modifiedTime: post.updated || post.date,
-      authors: ["Jason Zhu"],
+      authors: [post.author?.name ?? AUTHOR_NAME],
       tags: post.tags.map((t) => tagLabel(t, lang)),
       ...(post.coverImage
         ? { images: [{ url: `${SITE_URL}${post.coverImage}`, width: 1536, height: 1024, alt: post.title }] }
@@ -79,7 +90,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: "summary_large_image",
       title: post.title,
       description,
-      creator: "@GoSailGlobal",
+      creator: post.author ? xHandle(post.author.url) : "@GoSailGlobal",
       ...(post.coverImage ? { images: [`${SITE_URL}${post.coverImage}`] } : {}),
     },
   };
@@ -154,11 +165,10 @@ export default async function BlogPostPage({ params }: Props) {
     description: post.excerpt || post.title,
     datePublished: post.date,
     dateModified: post.updated || post.date,
-    author: {
-      "@type": "Person",
-      name: "Jason Zhu",
-      url: "https://jasonzhu.ai",
-    },
+    // 投稿文的作者是撰稿人（主页未知就没有 url）；publisher 始终是站点
+    author: post.author
+      ? { "@type": "Person", name: post.author.name, url: post.author.url }
+      : { "@type": "Person", name: AUTHOR_NAME, url: SITE_URL },
     publisher: {
       "@type": "Person",
       name: "Jason Zhu",
@@ -175,6 +185,16 @@ export default async function BlogPostPage({ params }: Props) {
 
   // FAQPage JSON-LD：文章含「## 常见问题」段落时自动生成
   const faqItems = extractFaq(post.content);
+
+  // 文末作者卡：投稿文是撰稿人（链到撰稿人主页），不显示 Jason 的
+  const authorCard = post.author
+    ? {
+        name: post.author.name,
+        title: lang === "zh" ? "投稿作者" : "Guest author",
+        href: post.author.url,
+        cta: lang === "zh" ? "作者主页" : "Author's profile",
+      }
+    : { name: AUTHOR_NAME, title: dict.blog.authorTitle, href: "https://x.com/GoSailGlobal", cta: dict.blog.followOnX };
 
   return (
     <article className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
@@ -246,6 +266,24 @@ export default async function BlogPostPage({ params }: Props) {
         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
           {post.title}
         </h1>
+        {/* 投稿文：标题下写明撰稿人（Jason 自己的文章不加这行，作者卡在文末） */}
+        {post.author && (
+          <p className="mt-3 text-sm text-gray-500">
+            {lang === "zh" ? "撰稿人：" : "Author: "}
+            {post.author.url ? (
+              <a
+                href={post.author.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-gray-700 hover:text-gray-900 hover:underline"
+              >
+                {post.author.name}
+              </a>
+            ) : (
+              <span className="font-medium text-gray-700">{post.author.name}</span>
+            )}
+          </p>
+        )}
         {post.tags.length > 0 && (
           <div className="mt-4 flex flex-wrap gap-2">
             {post.tags.map((tag) => (
@@ -372,17 +410,19 @@ export default async function BlogPostPage({ params }: Props) {
       <div className="mt-8 pt-8 border-t border-gray-100">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm font-medium text-gray-900">Jason Zhu</p>
-            <p className="text-sm text-gray-500">{dict.blog.authorTitle}</p>
+            <p className="text-sm font-medium text-gray-900">{authorCard.name}</p>
+            <p className="text-sm text-gray-500">{authorCard.title}</p>
           </div>
-          <a
-            href="https://x.com/GoSailGlobal"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-[var(--primary)] hover:underline"
-          >
-            {dict.blog.followOnX}
-          </a>
+          {authorCard.href && (
+            <a
+              href={authorCard.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-[var(--primary)] hover:underline"
+            >
+              {authorCard.cta}
+            </a>
+          )}
         </div>
       </div>
     </article>
