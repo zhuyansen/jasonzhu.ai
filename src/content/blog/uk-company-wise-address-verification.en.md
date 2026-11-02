@@ -46,7 +46,7 @@ It's part of the KYC (Know Your Customer) compliance process. UK company account
 
 A complete, hands-on journey for indie developers — from incorporation to annual filings. Every post is a firsthand account:
 
-- [Register a UK Company in 2 Hours for Just £50](/en/blog/uk-company-registration-2hours)
+- [Register a UK Company in 2 Hours for Just £100](/en/blog/uk-company-registration-2hours)
 - [Opening a Wise Business Account: No Monthly Fees, Multi-Currency Payments](/en/blog/uk-company-wise-business-account)
 - [Data Protection Fee: The £40/Year Compliance Must-Pay for SaaS Businesses Going Global](/en/blog/uk-company-data-protection-fee)
 - [Annual Filing for £148: DIY vs. Taobao Services — A Like-for-Like Comparison](/en/blog/uk-company-annual-review-diy-guide)

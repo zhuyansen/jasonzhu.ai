@@ -49,7 +49,7 @@ Around €122 (¥1000): 1st Formations Confirmation Statement filing €76 + reg
 
 A complete, first-hand walkthrough from incorporation to annual compliance — every post is based on real experience:
 
-- [Register a UK Company in 2 Hours for Just £50](/en/blog/uk-company-registration-2hours)
+- [Register a UK Company in 2 Hours for Just £100](/en/blog/uk-company-registration-2hours)
 - [Opening a Wise Business Account: No Monthly Fees, Multi-Currency Payments](/en/blog/uk-company-wise-business-account)
 - [Wise Address Verification: Your Documents Must Include the Company Name](/en/blog/uk-company-wise-address-verification)
 - [Data Protection Fee: A Required £40/Year Compliance Cost for SaaS Businesses](/en/blog/uk-company-data-protection-fee)

@@ -125,7 +125,7 @@ Taobao providers often default to filing Dormant (nil) returns to keep their cos
 
 A complete, first-hand walkthrough from incorporation to annual review for independent developers:
 
-- [Register a UK Company in 2 Hours for Just £50](/en/blog/uk-company-registration-2hours)
+- [Register a UK Company in 2 Hours for Just £100](/en/blog/uk-company-registration-2hours)
 - [Open a Wise Business Account: No Monthly Fee, Multi-Currency](/en/blog/uk-company-wise-business-account)
 - [Wise Address Verification: Your Document Must Include the Company Name](/en/blog/uk-company-wise-address-verification)
 - [Data Protection Fee: The £40/Year Compliance Must-Pay for SaaS](/en/blog/uk-company-data-protection-fee)

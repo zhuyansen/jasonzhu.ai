@@ -43,7 +43,7 @@ excerpt: "如果你的海外公司注册在英国且做SaaS业务，数据保护
 
 独立开发者从注册到年审的完整实操路径，每篇都是第一手记录：
 
-- [2 小时注册英国公司，只需 £50](/zh/blog/uk-company-registration-2hours)
+- [2 小时注册英国公司，只需 £100](/zh/blog/uk-company-registration-2hours)
 - [注册 Wise 企业银行账户：无月费、多币种收款](/zh/blog/uk-company-wise-business-account)
 - [Wise 地址验证：证明文件要含公司名](/zh/blog/uk-company-wise-address-verification)
 - [£148 搞定年审：DIY vs 淘宝同口径对比](/zh/blog/uk-company-annual-review-diy-guide)

@@ -49,7 +49,7 @@ Absolutely. A Wise business account lets you apply for Stripe for Business, whic
 
 A complete, first-hand walkthrough for indie developers — from incorporation to annual filings:
 
-- [Register a UK Company in 2 Hours for Just £50](/en/blog/uk-company-registration-2hours)
+- [Register a UK Company in 2 Hours for Just £100](/en/blog/uk-company-registration-2hours)
 - [Wise Address Verification: Your Document Must Include the Company Name](/en/blog/uk-company-wise-address-verification)
 - [Data Protection Fee: The £40/Year Compliance Must-Pay for SaaS](/en/blog/uk-company-data-protection-fee)
 - [£148 for Annual Renewal: DIY vs. Taobao Services — A Side-by-Side Comparison](/en/blog/uk-company-annual-review-diy-guide)

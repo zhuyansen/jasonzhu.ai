@@ -39,7 +39,7 @@ Pay online through the ICO website. First-timers will need to complete their reg
 
 A complete, hands-on walkthrough from incorporation to annual review — every post is based on firsthand experience:
 
-- [Register a UK Company in 2 Hours for Just £50](/en/blog/uk-company-registration-2hours)
+- [Register a UK Company in 2 Hours for Just £100](/en/blog/uk-company-registration-2hours)
 - [Opening a Wise Business Account: No Monthly Fees, Multi-Currency Payments](/en/blog/uk-company-wise-business-account)
 - [Wise Address Verification: Your Documents Must Include the Company Name](/en/blog/uk-company-wise-address-verification)
 - [£148 to Complete Your Annual Review: DIY vs. Outsourcing — A Direct Comparison](/en/blog/uk-company-annual-review-diy-guide)

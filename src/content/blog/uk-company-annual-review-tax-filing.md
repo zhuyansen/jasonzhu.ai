@@ -53,7 +53,7 @@ excerpt: "英国公司年审+零申报淘宝报价2000，自己通过1stFormatio
 
 独立开发者从注册到年审的完整实操路径，每篇都是第一手记录：
 
-- [2 小时注册英国公司，只需 £50](/zh/blog/uk-company-registration-2hours)
+- [2 小时注册英国公司，只需 £100](/zh/blog/uk-company-registration-2hours)
 - [注册 Wise 企业银行账户：无月费、多币种收款](/zh/blog/uk-company-wise-business-account)
 - [Wise 地址验证：证明文件要含公司名](/zh/blog/uk-company-wise-address-verification)
 - [数据保护费：SaaS 出海合规必缴 £40/年](/zh/blog/uk-company-data-protection-fee)
