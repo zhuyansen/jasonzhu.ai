@@ -39,7 +39,7 @@ Pay the **£50** filing fee and your company registration is done.
 
 ### How much does it cost to register a UK company?
 
-£50 for the official registration fee + ~¥400 on Taobao for a UK registered address, coming to roughly ¥800 RMB total. The whole process takes about 2 hours.
+The official registration fee is now £100 (since 1 February 2026; it was £50 before), plus ~¥400 on Taobao for a UK registered address. The whole process takes about 2 hours.
 
 ### Do I need to use an agent to register a UK company?
 
