@@ -52,7 +52,7 @@ Wise 的地址验证是 KYC（了解你的客户）流程的一部分，对于�
 
 - [2 小时注册英国公司，只需 £50](/zh/blog/uk-company-registration-2hours)
 - [注册 Wise 企业银行账户：无月费、多币种收款](/zh/blog/uk-company-wise-business-account)
-- [数据保护费：SaaS 出海合规必缴 £40/年](/zh/blog/uk-company-data-protection-fee)
+- [数据保护费：SaaS 出海合规必缴 £52/年](/zh/blog/uk-company-data-protection-fee)
 - [£148 搞定年审：DIY vs 淘宝同口径对比](/zh/blog/uk-company-annual-review-diy-guide)
 - [年审 + 零申报：自己办省一半费用](/zh/blog/uk-company-annual-review-tax-filing)
 - [年审实战 Timeline：£228 全程 + 省税信息差](/zh/blog/uk-company-annual-review-timeline-checklist)

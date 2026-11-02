@@ -55,7 +55,7 @@ A complete, first-hand walkthrough covering everything from registration to annu
 
 - [Open a Wise Business Bank Account: No Monthly Fees, Multi-Currency Payments](/en/blog/uk-company-wise-business-account)
 - [Wise Address Verification: Your Document Must Include the Company Name](/en/blog/uk-company-wise-address-verification)
-- [Data Protection Fee: Required £40/Year Compliance for SaaS Businesses](/en/blog/uk-company-data-protection-fee)
+- [Data Protection Fee: Required £52/Year Compliance for SaaS Businesses](/en/blog/uk-company-data-protection-fee)
 - [Annual Filing for £148: DIY vs. Taobao Services — an Apples-to-Apples Comparison](/en/blog/uk-company-annual-review-diy-guide)
 - [Annual Filing + Dormant Accounts: Do It Yourself and Cut the Cost in Half](/en/blog/uk-company-annual-review-tax-filing)
 - [Annual Filing Timeline in Practice: £228 Full Walkthrough + Tax-Saving Tips](/en/blog/uk-company-annual-review-timeline-checklist)

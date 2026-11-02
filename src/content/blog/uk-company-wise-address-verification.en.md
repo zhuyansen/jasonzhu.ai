@@ -48,7 +48,7 @@ A complete, hands-on journey for indie developers — from incorporation to annu
 
 - [Register a UK Company in 2 Hours for Just £50](/en/blog/uk-company-registration-2hours)
 - [Opening a Wise Business Account: No Monthly Fees, Multi-Currency Payments](/en/blog/uk-company-wise-business-account)
-- [Data Protection Fee: The £40/Year Compliance Must-Pay for SaaS Businesses Going Global](/en/blog/uk-company-data-protection-fee)
+- [Data Protection Fee: The £52/Year Compliance Must-Pay for SaaS Businesses Going Global](/en/blog/uk-company-data-protection-fee)
 - [Annual Filing for £148: DIY vs. Taobao Services — A Like-for-Like Comparison](/en/blog/uk-company-annual-review-diy-guide)
 - [Annual Filing + Nil Return: Do It Yourself and Cut the Cost in Half](/en/blog/uk-company-annual-review-tax-filing)
 - [Annual Filing in Practice — Timeline: £228 Total Cost + Tax-Saving Tips You Might Not Know](/en/blog/uk-company-annual-review-timeline-checklist)

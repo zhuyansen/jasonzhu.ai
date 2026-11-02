@@ -52,7 +52,7 @@ A complete, first-hand walkthrough from incorporation to annual compliance — e
 - [Register a UK Company in 2 Hours for Just £50](/en/blog/uk-company-registration-2hours)
 - [Opening a Wise Business Account: No Monthly Fees, Multi-Currency Payments](/en/blog/uk-company-wise-business-account)
 - [Wise Address Verification: Your Documents Must Include the Company Name](/en/blog/uk-company-wise-address-verification)
-- [Data Protection Fee: A Required £40/Year Compliance Cost for SaaS Businesses](/en/blog/uk-company-data-protection-fee)
+- [Data Protection Fee: A Required £52/Year Compliance Cost for SaaS Businesses](/en/blog/uk-company-data-protection-fee)
 - [Annual Review for £148: DIY vs. Agent — A Side-by-Side Comparison](/en/blog/uk-company-annual-review-diy-guide)
 - [Annual Review Timeline: Full £228 Walkthrough + Where to Save](/en/blog/uk-company-annual-review-timeline-checklist)
 

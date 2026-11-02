@@ -128,7 +128,7 @@ A complete, first-hand walkthrough from incorporation to annual review for indep
 - [Register a UK Company in 2 Hours for Just £50](/en/blog/uk-company-registration-2hours)
 - [Open a Wise Business Account: No Monthly Fee, Multi-Currency](/en/blog/uk-company-wise-business-account)
 - [Wise Address Verification: Your Document Must Include the Company Name](/en/blog/uk-company-wise-address-verification)
-- [Data Protection Fee: The £40/Year Compliance Must-Pay for SaaS](/en/blog/uk-company-data-protection-fee)
+- [Data Protection Fee: The £52/Year Compliance Must-Pay for SaaS](/en/blog/uk-company-data-protection-fee)
 - [Annual Review + Nil Filing: DIY and Cut the Cost in Half](/en/blog/uk-company-annual-review-tax-filing)
 - [Annual Review Timeline in Practice: £228 End-to-End + Tax-Saving Tips](/en/blog/uk-company-annual-review-timeline-checklist)
 

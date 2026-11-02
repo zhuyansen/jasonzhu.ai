@@ -59,7 +59,7 @@ excerpt: "不用代理，直接去英国官网注册公司，2小时搞定，总
 
 - [注册 Wise 企业银行账户：无月费、多币种收款](/zh/blog/uk-company-wise-business-account)
 - [Wise 地址验证：证明文件要含公司名](/zh/blog/uk-company-wise-address-verification)
-- [数据保护费：SaaS 出海合规必缴 £40/年](/zh/blog/uk-company-data-protection-fee)
+- [数据保护费：SaaS 出海合规必缴 £52/年](/zh/blog/uk-company-data-protection-fee)
 - [£148 搞定年审：DIY vs 淘宝同口径对比](/zh/blog/uk-company-annual-review-diy-guide)
 - [年审 + 零申报：自己办省一半费用](/zh/blog/uk-company-annual-review-tax-filing)
 - [年审实战 Timeline：£228 全程 + 省税信息差](/zh/blog/uk-company-annual-review-timeline-checklist)
