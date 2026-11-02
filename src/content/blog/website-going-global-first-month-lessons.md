@@ -31,7 +31,7 @@ excerpt: "第一次用 AI 做全栈网站出海（brickrecipes.ai）的一个月
 
 我走的是英国公司 + Wise + Stripe 这条路，具体步骤见：
 
-- [2 小时完成英国公司注册，只需 100 英镑](/zh/blog/uk-company-registration-2hours)
+- [2 小时完成英国公司注册，只需 50 英镑](/zh/blog/uk-company-registration-2hours)
 - [英国公司注册 Wise 企业银行账户](/zh/blog/uk-company-wise-business-account)
 
 ### 3. 不断学习迭代

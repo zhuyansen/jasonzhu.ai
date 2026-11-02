@@ -35,7 +35,7 @@ A friend of mine used a personal Stripe account to collect payments and got $3,0
 
 I went the UK company + Wise + Stripe route. For the step-by-step details, see:
 
-- [Register a UK Company in 2 Hours for Just £100](/en/blog/uk-company-registration-2hours)
+- [Register a UK Company in 2 Hours for Just £50](/en/blog/uk-company-registration-2hours)
 - [Opening a Wise Business Account for a UK Company](/en/blog/uk-company-wise-business-account)
 
 ### 3. Constantly Learning and Iterating

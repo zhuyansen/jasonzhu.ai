@@ -1,6 +1,6 @@
 ---
-title: "2025 Update: Register a UK Company in 2 Hours for Just £100"
-excerpt: "Skip the agents — register directly on the official UK government website in about 2 hours, for a total cost of just £100 + ~¥400 for a registered address."
+title: "2025 Update: Register a UK Company in 2 Hours for Just £50"
+excerpt: "Skip the agents — register directly on the official UK government website in about 2 hours, for a total cost of just £50 + ~¥400 for a registered address."
 ---
 
 ## Why Choose a UK Company?
