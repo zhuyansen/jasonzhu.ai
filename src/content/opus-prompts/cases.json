@@ -1,8 +1,8 @@
 {
  "model": "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.5)",
  "threshold": 5000,
- "updatedAt": "2026-11-03T07:54:26.663Z",
- "statsCheckedAt": "2026-11-03T07:54:26.663Z",
+ "updatedAt": "2026-11-04T07:29:23.732Z",
+ "statsCheckedAt": "2026-11-04T07:29:23.732Z",
  "inclusionRule": "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -920,6 +920,60 @@
     "width": 1250,
     "height": 720,
     "durationSec": 115
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2117169796290916732",
+   "url": "https://x.com/chetaslua/status/2117169796290916732",
+   "author": {
+    "handle": "chetaslua",
+    "name": "Chetaslua"
+   },
+   "postedAt": "2026-11-02T08:19:49.000Z",
+   "addedAt": "2026-11-04",
+   "lang": "en",
+   "models": [
+    "opus-5.5",
+    "fable-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "日出时苏醒的苔藓巨型机器人",
+    "en": "Moss-Covered Giant Robot Awakens at Sunrise"
+   },
+   "summary": {
+    "zh": "一段纯代码实现的二维动画场景：长满青苔的巨型机器人在日出森林中苏醒并升空，最终输出为单个 HTML 文件。作者称由 Fable 5.5 一次生成，未使用任何外部素材，代码已发布在 GitHub。",
+    "en": "A coded 2D anime-style scene of a moss-covered giant robot rising from a forest at sunrise, delivered as a single HTML file. The creator says Fable 5.5 one-shot it with no external assets and shared the code on GitHub."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/chetaslua/status/2117169800271270124",
+    "text": "Create a 2D anime scene for the web. It must look completely like real Japanese anime, as if it were taken directly from a finished theatrical anime film. This is traditional-looking, hand-drawn 2D anime, not a 3D animation, a moving illustration, or a stylized web graphic.\n\nDeliver the final result as a single, self-contained HTML file. Use any tools, libraries, references, guides, literally anything etc.\n\nUse Studio Ghibli films as the art style reference for the design, line work, painted backgrounds, color, and atmosphere. Create an original giant robot as the main character. No people appear in the scene. Use any tools or techniques you want, including 3D, as long as the final result looks 100% like hand-drawn 2D anime.\n\nSCENE\nAt sunrise, mist hangs over an abandoned forest. A giant robot has knelt here for so long that moss, wildflowers, and old trees have grown over its body. A small bird lands on its shoulder as the first ray of sunlight reaches its weathered face. Deep inside its chest, a faint light flickers on. The ground trembles and birds burst from the treetops. With a deep, creaking groan, the robot slowly rises as soil, vines, and leaves pour from its armor. It lifts its head toward a gap in the canopy. The engines ignite, sending a great ring of wind across the forest. The robot tears into the golden sky, leaving a curving trail of light and mist as leaves spiral down through the sunbeams.\n\nANIME QUALITY STANDARD\nEvery frame must look as if it was drawn by professional anime animators and painted by master background artists for a finished theatrical film.\n\nRobot: A hand-drawn anime mecha that feels heavy, ancient, and full of personality, with cel-colored forms, chipped paint, rust, moss, and believable weathering. Keep it on-model from every angle, and let its posture and glowing eyes express emotion.\nLine art: Confident, delicate, hand-inked anime line work with subtle variation in thickness and pressure.\nColoring: Traditional anime cel coloring with clean color areas, simple hard-edged shadows, and a soft, natural palette.\nBackgrounds: Richly detailed, hand-painted anime backgrounds in a gouache style, with visible brushwork, natural color variation, layered foliage, and real depth.\nLighting: Golden sunrise light, colorful shadows, glowing mist, and soft atmosphere that unite the robot and background.\nAnimation: Authentic hand-drawn anime timing with real weight, strong key poses, natural holds, and overlapping movement in vines, grass, leaves, birds, and falling debris. The robot should rise slowly and feel massive, then launch with explosive power.\nDirection: Cinematic anime shots, beautiful composition, thoughtful staging, and pacing that starts quietly, builds tension, and ends in a soaring climax.\nIT MUST NOT LOOK LIKE\n- 3D: No plastic materials, CGI shading, visible polygons, game-engine lighting, or computer-perfect perspective.\n- SVG or vector art: No simple geometric shapes, perfect curves, uniform outlines, flat corporate illustration, or basic gradients.\n- Web animation: No sliding layers, constant bobbing, floating parts, smooth software easing, or puppet-like joint rotation.\n\nYou are free to change any part of the prompt, if it would result, in better results.\n- AI art: No warped shapes, melted details, flickering, or changing robot designs.\n- Non-anime art: No Western cartoon designs, realistic rendering, soft painterly shading on the robot, or generic digital illustration.\n- Amateur work: No stiff poses, empty backgrounds, repeated trees, muddy colors, clip art, placeholders, or unfinished details.\n\nThe result should feel awe-inspiring, nostalgic, and full of wonder, like the moment an old forgotten dream comes back to life. Before finishing, inspect random frames as still images. If any frame does not look completely like real 2D anime, keep improving it. Do not stop until every frame could pass as a still from a theatrical anime film."
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 1571861,
+    "likes": 7848,
+    "replies": 350,
+    "reposts": 480,
+    "bookmarks": 5387,
+    "checkedAt": "2026-11-04T07:29:23.732Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2117167031636393985/img/CKADDY4IjwF3_y0c.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2117167031636393985/vid/avc1/1328x720/FzvPw55u1rFMVqaS.mp4?tag=29",
+    "width": 1328,
+    "height": 720,
+    "durationSec": 81
    },
    "evidence": {
     "via": "daily",
@@ -6595,6 +6649,62 @@
    "evidence": {
     "via": "search",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2117224839010459987",
+   "url": "https://x.com/chetaslua/status/2117224839010459987",
+   "author": {
+    "handle": "chetaslua",
+    "name": "Chetaslua"
+   },
+   "postedAt": "2026-11-02T11:58:32.000Z",
+   "addedAt": "2026-11-04",
+   "lang": "en",
+   "models": [
+    "opus-5.5",
+    "fable-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "小红狐唤醒被遗忘的图书馆",
+    "en": "Red Fox Wakes a Forgotten Library"
+   },
+   "summary": {
+    "zh": "一部66秒的二维动画短片，讲述一只小狐狸唤醒沉睡图书馆的故事，以单个 HTML 文件呈现，分辨率1920×804、24帧。作者称 Fable 5.5 自行编写 Python 生成全部画面和音效，自主运行约2小时40分钟。",
+    "en": "A 66-second 2D animated short about a fox waking a forgotten library, delivered as a single HTML file at 1920x804, 24fps. The creator says Fable 5.5 wrote Python to generate every frame and sound over about 2h40m of autonomous work."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/chetaslua/status/2117224843661980093",
+    "text": "Create a launch film for Fable 5.5 as a 2D anime short for the web. It must look completely like real Japanese anime, as if it were taken directly from a finished theatrical anime film. This is traditional-looking, hand-drawn 2D anime, not a 3D animation, a moving illustration, a stylized web graphic, or a tech-company product ad. Deliver the final result as a single, self-contained HTML file with sound. Use any tools, libraries, references, guides, literally anything. Pre-rendering the film and embedding it in the file is allowed. All artwork and audio must be original. The page should be a black, letterboxed cinema frame with one quiet play button (browsers block autoplay with sound) and nothing else on screen. Use Studio Ghibli films as the art style reference for the design, line work, painted backgrounds, color, and atmosphere, without copying any existing character or shot. No people appear in the film. The main character is an original small red fox, because fables have always been told through animals. Use any tools or techniques you want, including 3D for layout, as long as the final result looks 100% like hand-drawn 2D anime. THE FILM: \"THE LAST PAGE\" (about 60 seconds, 24 fps) The idea: Fable means story. A forgotten library holds every story ever written, and it has been asleep for a very long time. One small fox wakes it up. Shot 1, Before Dawn (0:00–0:07). Black. The sound of wind comes first. Fade up on a vast blue-violet sea of clouds at the last hour of night. An ancient stone library tower stands on a cliff above the clouds, with a cracked copper dome gone green, wrapped in ivy and old pines. One small warm light moves across a window. Pampas grass sways in the foreground. Almost nothing else moves. Hold. Shot 2, The Reading Hall (0:07–0:14). Inside, shelves climb into darkness, holding thousands of unique books: leaning, sagging, sun-faded, some with moss growing along the spines. Moonlight falls in one dusty shaft. Tiny against all of this, the fox pads in from the left, carrying a small paper lantern in its mouth. It stops, sets the lantern down, and looks up. Shot 3, The Fox (0:14–0:18). Close-up. Ears swivel one at a time. It sniffs, then blinks, a real anime blink with a hold on the closed frame. Lantern light shows in its eyes. It is curious and a little afraid, and the audience should fall in love with it here. Shot 4, The Blank Book (0:18–0:25). An enormous open book rests on a lectern, its pages empty and yellowed. The fox hops up and places one paw on the page. Silence. A single line of ink appears under the paw and begins to draw itself in one confident brushstroke. It becomes a tiny sketched bird. The bird shivers, then peels off the page and flaps into the air, still made of ink and paper. Shot 5, The Library Stirs (0:25–0:32). A book on a high shelf trembles. Then a whole row. Dust sifts down in thin streams. A deep, low creak travels up through the tower. The lantern flame leans sideways with no wind to move it. The fox flattens its ears. Cut between shelves on hard, held key poses as the tension builds. Hold one beat of total stillness. Shot 6, The Pages Burst (0:32–0:39). Every book flies open at once. Thousands of pages tear free, folding into paper birds mid-air on sharp drawn frames. Cut to a dramatic low angle looking straight up the circular stairwell as the flock spirals in a huge rising vortex toward the dome. The dome's old copper shutters break open and the first gold light crashes down the shaft. Shot 7, Sunrise (0:39–0:44). Outside, the sun clears the sea of clouds. The fox has climbed out onto a stone balcony, fur and grass whipping in the wind, tiny against the sky. It looks up with its mouth slightly open. A great ring of wind rolls outward across the clouds. Shot 8, The Great Bird (0:44–0:52). This is the climax. High in the golden sky, the flock pulls together into one colossal bird made of a hundred thousand pages, with handwriting and old illustrations visible across its wings. It gives one enormous wingbeat with real weight, then tears across the sky in a sweeping arc, leaving a curving trail of light, mist, and loose paper. Make this the widest, most awe-inspiring image in the film. Shot 9, The Last Page (0:52–1:00). Quiet returns. Pages spiral down through sunbeams onto the balcony. One lands at the fox's paws. It is the only page still blank. The fox looks at it, then at us, and places its paw down. Ink blooms from under the paw and writes, in one hand-brushed stroke: Fable 5.5 Below it, a small red hanko seal reading 寓話 presses into the paper, followed by one line in smaller brushed lettering: \"Every story begins with a blank page.\" Hold on the title. The fox's tail flicks once. Fade to paper, then black. Do not add logos, feature lists, benchmarks, or any product claims. ANIME QUALITY STANDARD Every frame must look as if it was drawn by professional anime animators and painted by master background artists for a finished theatrical film. Fox: A hand-drawn anime character with a simple, appealing, solid design, cel-colored forms, and clear silhouettes. Keep it on-model from every angle, and let its ears, tail, posture, and eyes express emotion without any words. Paper birds and the great bird: Hand-drawn with real paper character, including creases, curled corners, and faded ink. The great bird must keep a consistent design and feel immense. Line art: Confident, delicate, hand-inked anime line work with subtle variation in thickness and pressure. Coloring: Traditional anime cel coloring with clean color areas, simple hard-edged shadows, and a soft, natural palette. Backgrounds: Richly detailed, hand-painted anime backgrounds in a gouache style, with visible brushwork, natural color variation, layered depth, and individually considered books, stones, foliage, and clouds. Lighting: The film travels from cool moonlit blue and warm lantern amber to overwhelming golden sunrise. Use colorful shadows, glowing mist, drifting dust, and soft atmosphere that unite characters and background. Animation: Authentic hand-drawn anime timing, mostly on twos and threes, with real weight, strong key poses, natural holds, smears on the fastest frames, and overlapping movement in fur, grass, ivy, paper, and dust. The film should build slowly, then release with explosive power. Direction: Cinematic anime shots, beautiful composition, thoughtful staging, and pacing that starts quietly, builds tension, and ends in a soaring climax, followed by one small, tender moment. Text: All text must look brushed in ink on paper and appear only in the final shot, with no web fonts sitting on top of the picture. SOUND Create an original score and sound design, with no borrowed melodies. Start with wind and near-silence, then add a lone felt piano motif when the fox appears. Bring in low strings and creaking wood during the tremor, then a sudden roar of fluttering paper, and a full orchestral swell at sunrise. At the climax, the piano motif returns at full scale. End with a single soft piano note as the ink touches the final page. Sound effects should include paw steps, lantern flame, ink, dust, page rustle, and the huge wingbeat. IT MUST NOT LOOK LIKE - 3D: No plastic materials, CGI shading, visible polygons, game-engine lighting, or computer-perfect perspective. - SVG or vector art: No simple geometric shapes, perfect curves, uniform outlines, flat corporate illustration, or basic gradients. - Web animation: No sliding layers, constant bobbing, floating parts, smooth software easing, or puppet-like joint rotation. - AI art: No warped shapes, melted details, flickering, garbled text, or changing character designs. - Non-anime art: No Western cartoon designs, realistic rendering, soft painterly shading on the characters, or generic digital illustration. - Tech advertising: No glowing neural networks, circuit patterns, chat bubbles, UI mockups, futuristic HUDs, particle-logo reveals, or typed-out text effects. - Amateur work: No stiff poses, empty backgrounds, repeated books or trees, identical paper birds, muddy colors, clip art, placeholders, or unfinished details. You are free to change any part of this prompt if it would produce a better result. The result should feel awe-inspiring, nostalgic, and full of wonder, like the moment a story you loved as a child comes back to you. Before finishing, inspect random frames as still images from every shot. If any frame does not look completely like real 2D anime, keep improving it. Do not stop until every frame could pass as a still from a theatrical anime film."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Python"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 376859,
+    "likes": 2693,
+    "replies": 151,
+    "reposts": 192,
+    "bookmarks": 1491,
+    "checkedAt": "2026-11-04T07:29:23.732Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2117224259433242625/img/QYxtIO20PzrG8agu.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2117224259433242625/vid/avc1/1320x720/LspBzvK63dktMcTe.mp4?tag=29",
+    "width": 1320,
+    "height": 720,
+    "durationSec": 58
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -13897,6 +14007,61 @@
    }
   },
   {
+   "id": "2117374984192512391",
+   "url": "https://x.com/levelsio/status/2117374984192512391",
+   "author": {
+    "handle": "levelsio",
+    "name": "@levelsio"
+   },
+   "postedAt": "2026-11-02T21:55:09.000Z",
+   "addedAt": "2026-11-04",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "《战地1942》浏览器多人移植版",
+    "en": "Battlefield 1942 Browser Port with Multiplayer"
+   },
+   "summary": {
+    "zh": "把《战地1942》共享版试玩版移植到浏览器并支持多人联机。作者称用 Opus 5.5 驱动 Claude Code 反汇编 x86 程序、转写成 C 代码，再用 Emscripten 编译为 WebAssembly，并将 Direct3D 和 Windows 接口改写为 WebGL 2，联网部分改用 WebSocket 实现。",
+    "en": "A browser port of the Battlefield 1942 shareware demo with multiplayer. The creator says Claude Code with Opus 5.5 disassembled the x86 binary, translated it into C and compiled it to WebAssembly, replacing Direct3D and Windows calls with WebGL 2 and a WebSocket network stack."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Claude Code",
+    "Emscripten",
+    "WebAssembly",
+    "WebGL 2",
+    "OpenGL",
+    "WebSockets"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 180577,
+    "likes": 1591,
+    "replies": 109,
+    "reposts": 78,
+    "bookmarks": 913,
+    "checkedAt": "2026-11-04T07:29:23.732Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2117374770253565952/img/6WkHxBF81dMfyKCf.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2117374770253565952/vid/avc1/720x1280/5mRWy6_1mGNhnHKY.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 121
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103137597631701188",
    "url": "https://x.com/ego_agent/status/2103137597631701188",
    "author": {
@@ -19139,6 +19304,54 @@
    }
   },
   {
+   "id": "2117261864904351848",
+   "url": "https://x.com/notjazii/status/2117261864904351848",
+   "author": {
+    "handle": "notjazii",
+    "name": "J A Z I I"
+   },
+   "postedAt": "2026-11-02T14:25:40.000Z",
+   "addedAt": "2026-11-04",
+   "lang": "en",
+   "models": [
+    "fable-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "战斗动画",
+    "en": "Combat animation"
+   },
+   "summary": {
+    "zh": "用 Fable 5.5 制作的一段战斗动画。作者没有公开提示词，也没有说明制作过程。",
+    "en": "A combat animation made with Fable 5.5. The creator does not share the prompt or describe how it was made."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 133562,
+    "likes": 689,
+    "replies": 74,
+    "reposts": 25,
+    "bookmarks": 244,
+    "checkedAt": "2026-11-04T07:29:23.732Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2117261825205256192/img/UJgrMY3JiYBnKean.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2117261825205256192/vid/avc1/1280x720/z7wwnzx6zTYcGGCl.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2114343004471460341",
    "url": "https://x.com/Khazix0918/status/2114343004471460341",
    "author": {
@@ -20403,6 +20616,59 @@
     "width": 1280,
     "height": 720,
     "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2117276551247278264",
+   "url": "https://x.com/SahilPanhotra/status/2117276551247278264",
+   "author": {
+    "handle": "SahilPanhotra",
+    "name": "Sahil Panhotra | Indie Builder"
+   },
+   "postedAt": "2026-11-02T15:24:01.000Z",
+   "addedAt": "2026-11-04",
+   "lang": "en",
+   "models": [
+    "fable-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "巨型机器人动画场景模型对比",
+    "en": "Giant Robot Anime Scene Model Comparison"
+   },
+   "summary": {
+    "zh": "对比 Fable 5.5 与 Gemini 4 Argon。两者用同一段提示词，生成吉卜力风格的 2D 动画场景：长满青苔的巨型机器人在日出时起身，成品为单个 HTML 文件。",
+    "en": "A side-by-side comparison of Fable 5.5 and Gemini 4 Argon. Each model made a Ghibli-style 2D anime scene of an overgrown giant robot rising at sunrise, delivered as a single HTML file from the same prompt."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/SahilPanhotra/status/2117510541023555705",
+    "text": "Create a 2D anime scene for the web. It must look completely like real Japanese anime, as if it were taken directly from a finished theatrical anime film. This is traditional-looking, hand-drawn 2D anime, not a 3D animation, a moving illustration, or a stylized web graphic. Deliver the final result as a single, self-contained HTML file. Use any tools, libraries, references, guides, literally anything etc. Use Studio Ghibli films as the art style reference for the design, line work, painted backgrounds, color, and atmosphere. Create an original giant robot as the main character. No people appear in the scene. Use any tools or techniques you want, including 3D, as long as the final result looks 100% like hand-drawn 2D anime. SCENE At sunrise, mist hangs over an abandoned forest. A giant robot has knelt here for so long that moss, wildflowers, and old trees have grown over its body. A small bird lands on its shoulder as the first ray of sunlight reaches its weathered face. Deep inside its chest, a faint light flickers on. The ground trembles and birds burst from the treetops. With a deep, creaking groan, the robot slowly rises as soil, vines, and leaves pour from its armor. It lifts its head toward a gap in the canopy. The engines ignite, sending a great ring of wind across the forest. The robot tears into the golden sky, leaving a curving trail of light and mist as leaves spiral down through the sunbeams. ANIME QUALITY STANDARD Every frame must look as if it was drawn by professional anime animators and painted by master background artists for a finished theatrical film. Robot: A hand-drawn anime mecha that feels heavy, ancient, and full of personality, with cel-colored forms, chipped paint, rust, moss, and believable weathering. Keep it on-model from every angle, and let its posture and glowing eyes express emotion. Line art: Confident, delicate, hand-inked anime line work with subtle variation in thickness and pressure. Coloring: Traditional anime cel coloring with clean color areas, simple hard-edged shadows, and a soft, natural palette. Backgrounds: Richly detailed, hand-painted anime backgrounds in a gouache style, with visible brushwork, natural color variation, layered foliage, and real depth. Lighting: Golden sunrise light, colorful shadows, glowing mist, and soft atmosphere that unite the robot and background. Animation: Authentic hand-drawn anime timing with real weight, strong key poses, natural holds, and overlapping movement in vines, grass, leaves, birds, and falling debris. The robot should rise slowly and feel massive, then launch with explosive power. Direction: Cinematic anime shots, beautiful composition, thoughtful staging, and pacing that starts quietly, builds tension, and ends in a soaring climax. IT MUST NOT LOOK LIKE - 3D: No plastic materials, CGI shading, visible polygons, game-engine lighting, or computer-perfect perspective. - SVG or vector art: No simple geometric shapes, perfect curves, uniform outlines, flat corporate illustration, or basic gradients. - Web animation: No sliding layers, constant bobbing, floating parts, smooth software easing, or puppet-like joint rotation. You are free to change any part of the prompt, if it would result, in better results. - AI art: No warped shapes, melted details, flickering, or changing robot designs. - Non-anime art: No Western cartoon designs, realistic rendering, soft painterly shading on the robot, or generic digital illustration. - Amateur work: No stiff poses, empty backgrounds, repeated trees, muddy colors, clip art, placeholders, or unfinished details. The result should feel awe-inspiring, nostalgic, and full of wonder, like the moment an old forgotten dream comes back to life. Before finishing, inspect random frames as still images. If any frame does not look completely like real 2D anime, keep improving it. Do not stop until every frame could pass as a still from a theatrical anime film."
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 125168,
+    "likes": 1395,
+    "replies": 117,
+    "reposts": 42,
+    "bookmarks": 396,
+    "checkedAt": "2026-11-04T07:29:23.732Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2117276182257553408/img/GidNEbWi_hca4iM_.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2117276182257553408/vid/avc1/720x720/x1PyR_7VRMt02CHD.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 81
    },
    "evidence": {
     "via": "daily",
@@ -23498,6 +23764,56 @@
    }
   },
   {
+   "id": "2117313324576821613",
+   "url": "https://x.com/naometzger/status/2117313324576821613",
+   "author": {
+    "handle": "naometzger",
+    "name": "Naomi Metzger"
+   },
+   "postedAt": "2026-11-02T17:50:09.000Z",
+   "addedAt": "2026-11-04",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "贝多芬失聪纪录短片",
+    "en": "Documentary reel on Beethoven going deaf"
+   },
+   "summary": {
+    "zh": "用 Opus 5.5 制作的 Vox 风格纪录短片，讲贝多芬失聪的故事。作者花几天打磨了一个技能，模型在对话中写好脚本，用 Nano Banana 生成图片，再用代码为每个场景做动画。",
+    "en": "A Vox-style documentary reel about Beethoven going deaf made with Opus 5.5. The model wrote the script, generated images in Nano Banana and animated each scene in code within the chat, using a skill the creator built over several days."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Nano Banana"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 107941,
+    "likes": 1561,
+    "replies": 786,
+    "reposts": 85,
+    "bookmarks": 2167,
+    "checkedAt": "2026-11-04T07:29:23.732Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2117313273796460544/img/bEMVwvl5Qj6orbL-.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2117313273796460544/vid/avc1/720x1280/OlDAAqcN5vfVsnFD.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 28
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103177715125752176",
    "url": "https://x.com/0xMovez/status/2103177715125752176",
    "author": {
@@ -24427,6 +24743,59 @@
     "width": 720,
     "height": 778,
     "durationSec": 42
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2117359490257629331",
+   "url": "https://x.com/zealcaiden/status/2117359490257629331",
+   "author": {
+    "handle": "zealcaiden",
+    "name": "zeal"
+   },
+   "postedAt": "2026-11-02T20:53:35.000Z",
+   "addedAt": "2026-11-04",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "以《制高点》为题材的超流行音乐视频",
+    "en": "Hyperpop music video based on The Commanding Heights"
+   },
+   "summary": {
+    "zh": "Opus 5.5 用 86.2 个智能体小时做出的一支 hyperpop 音乐视频。作者提供了长文《The Commanding Heights》和角色设定，并让它调用 Suno、Arcmira、Midjourney 与 OpenRouter。",
+    "en": "A hyperpop music video made by Opus 5.5 over 86.2 agent hours. The creator gave it the essay The Commanding Heights, character concepts, and access to Suno, Arcmira, Midjourney and OpenRouter."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Suno",
+    "Arcmira",
+    "Midjourney",
+    "OpenRouter"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 103172,
+    "likes": 1218,
+    "replies": 32,
+    "reposts": 27,
+    "bookmarks": 308,
+    "checkedAt": "2026-11-04T07:29:23.732Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2117357816961028096/img/FYDArOOltijrFjrD.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2117357816961028096/vid/avc1/1280x720/5U-kcdEqI_ieuuXL.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 145
    },
    "evidence": {
     "via": "daily",
@@ -27376,6 +27745,54 @@
    }
   },
   {
+   "id": "2117221957104239010",
+   "url": "https://x.com/notjazii/status/2117221957104239010",
+   "author": {
+    "handle": "notjazii",
+    "name": "J A Z I I"
+   },
+   "postedAt": "2026-11-02T11:47:05.000Z",
+   "addedAt": "2026-11-04",
+   "lang": "en",
+   "models": [
+    "fable-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "让人感受到 AGI 的动画",
+    "en": "Animation Meant to Feel Like AGI"
+   },
+   "summary": {
+    "zh": "Fable 5.5 用纯代码、不借助任何外部素材做的动画，耗时约一小时。作者让它做一段能让人感觉是 AGI 的动画，提示词以截图形式发布。",
+    "en": "An animation made with Fable 5.5 in pure code with no external assets, taking about an hour. The creator asked for an animation that makes them feel it is AGI and posted the prompt as a screenshot."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 91640,
+    "likes": 990,
+    "replies": 109,
+    "reposts": 50,
+    "bookmarks": 375,
+    "checkedAt": "2026-11-04T07:29:23.732Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2117220360735313921/img/pc7G7C2JSi71JEOa.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2117220360735313921/vid/avc1/1280x720/8sCTjBM0wApHwJcw.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 263
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103506875165859922",
    "url": "https://x.com/akakuma0219/status/2103506875165859922",
    "author": {
@@ -28019,6 +28436,104 @@
     "width": 1280,
     "height": 720,
     "durationSec": 15
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2117381015069212910",
+   "url": "https://x.com/ChrisGPT/status/2117381015069212910",
+   "author": {
+    "handle": "ChrisGPT",
+    "name": "Chris"
+   },
+   "postedAt": "2026-11-02T22:19:07.000Z",
+   "addedAt": "2026-11-04",
+   "lang": "en",
+   "models": [
+    "fable-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "风格化三维动画测试（含合成音效）",
+    "en": "Stylized 3D animation test with synthesized sound"
+   },
+   "summary": {
+    "zh": "在手机端用 Fable 5.5 做的动画测试，只用一条提示词，耗时约一个半小时。建模、贴图、自写渲染器、一拍二动画和音效合成都由模型完成，没有使用外部素材。",
+    "en": "An animation test made with Fable 5.5 from one prompt in the mobile app, taking about an hour and a half. The model modeled, textured, wrote its own renderer, animated on 2s and synthesized the sound, with no outside assets."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 88523,
+    "likes": 1098,
+    "replies": 60,
+    "reposts": 49,
+    "bookmarks": 386,
+    "checkedAt": "2026-11-04T07:29:23.732Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2117380949671292928/img/rqCTh_0GR66cOsbO.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2117380949671292928/vid/avc1/1280x720/LVFhDsHXIq5p7b5F.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 9
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2117230395406364857",
+   "url": "https://x.com/LexnLin/status/2117230395406364857",
+   "author": {
+    "handle": "LexnLin",
+    "name": "Leon Lin"
+   },
+   "postedAt": "2026-11-02T12:20:37.000Z",
+   "addedAt": "2026-11-04",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "云上世界无人机视角飞行影片",
+    "en": "Drone Fly-Through of a World Above the Clouds"
+   },
+   "summary": {
+    "zh": "用 Opus 5.5 在 Three.js 中制作的云上 3D 世界航拍式镜头视频，带音效。作者公开了 GitHub 仓库和一句话指令。",
+    "en": "A cinematic drone-style fly-through video with sound of a 3D world above the clouds, built by Opus 5.5 in Three.js. The creator shared the GitHub repo and the one-line instruction."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 88116,
+    "likes": 1407,
+    "replies": 87,
+    "reposts": 55,
+    "bookmarks": 589,
+    "checkedAt": "2026-11-04T07:29:23.732Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2117228866473246720/img/ICPiLPaoSzU6TpQj.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2117228866473246720/vid/avc1/1280x720/XrwCIQeKPgqJFjmf.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 45
    },
    "evidence": {
     "via": "daily",
@@ -51592,6 +52107,64 @@
    }
   },
   {
+   "id": "2117222592536789149",
+   "url": "https://x.com/noclipepe/status/2117222592536789149",
+   "author": {
+    "handle": "noclipepe",
+    "name": "noclipepe"
+   },
+   "postedAt": "2026-11-02T11:49:36.000Z",
+   "addedAt": "2026-11-04",
+   "lang": "en",
+   "models": [
+    "opus-5.5",
+    "fable-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "《Ember Vale》3D开放世界动作RPG对比",
+    "en": "Ember Vale 3D open-world action RPG"
+   },
+   "summary": {
+    "zh": "作者用同一段提示词让 Fable 5.5、GPT-6.2 Astra、Opus 5.5 和 Fable 5.1 分别制作 3D 开放世界动作 RPG，并对比打分。",
+    "en": "A comparison of 3D open-world action RPGs built from one prompt by Fable 5.5, GPT-6.2 Astra, Opus 5.5 and Fable 5.1, with the creator's rating of each."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/noclipepe/status/2117383726602866953",
+    "text": "Build a standalone playable 3D action RPG in the current folder: \"Ember Vale\", a small open-world fantasy valley you can explore and fight in. Initialize a git repo here. All code, file names and UI text in English.\n\nWORLD\n- One open valley: a village with houses and a well, a forest, a river with a bridge, ancient ruins on a hill, and a boss arena at the ruins.\n- Living details: grass and trees sway, smoke from chimneys, birds, fireflies at night, a full day-night cycle.\n\nPLAYER\n- Third-person hero with a sword. WASD to move, Shift to sprint, Space to dodge roll, left click to attack (3-hit combo), right click to block, 1–2 for spells (fireball, frost nova).\n- HP, stamina and mana bars. Hit reactions, knockback, damage numbers, a hit-stop on heavy hits.\n\nRPG\n- Enemies: wolves in the forest, skeletons at the ruins, each with simple AI (patrol, chase, attack, flee at low HP).\n- XP and level-ups, loot drops, an inventory with equippable sword and armor that change the hero's look.\n- One quest chain from a villager NPC with dialogue: clear the wolves → find the key in the ruins → defeat the boss.\n- Boss: a giant stone golem with 2 phases, a slam attack with a telegraphed shockwave, and a health bar at the top of the screen.\n- HUD: minimap, quest tracker, hotbar.\n\nLOOK\n- Stylized, polished, soft lighting with shadows, fog in the distance, glowing spell effects, particles on hits.\n- Camera: smooth third-person follow, drag to orbit, scroll to zoom."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "GPT-6.2 Astra",
+    "Fable 5.1",
+    "AI/ML API"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 43904,
+    "likes": 214,
+    "replies": 28,
+    "reposts": 22,
+    "bookmarks": 95,
+    "checkedAt": "2026-11-04T07:29:23.732Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2117218725535318017/img/ApIocC6RjYCFOoXU.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2117218725535318017/vid/avc1/1280x720/E1edyMtTwzv-WAby.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 48
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103293477912268813",
    "url": "https://x.com/adocomplete/status/2103293477912268813",
    "author": {
@@ -54113,6 +54686,54 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2117336381630435666",
+   "url": "https://x.com/thegreatola/status/2117336381630435666",
+   "author": {
+    "handle": "thegreatola",
+    "name": "Ola Ξlixir"
+   },
+   "postedAt": "2026-11-02T19:21:46.000Z",
+   "addedAt": "2026-11-04",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "产品概念短片",
+    "en": "Product concept video"
+   },
+   "summary": {
+    "zh": "作者用 Opus 5.5 制作的概念视频。作者称依靠自建的表情包、音效和特效素材库，并不断完善保存技能，背景音乐由自己挑选。",
+    "en": "A concept video made with Opus 5.5. The creator says it relies on their own libraries of memes, sounds and effects plus refined saved skills, and that the background music was chosen by hand."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 40466,
+    "likes": 248,
+    "replies": 61,
+    "reposts": 16,
+    "bookmarks": 176,
+    "checkedAt": "2026-11-04T07:29:23.732Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2117336333249134592/img/W7lHtiRiMQRxxaTV.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2117336333249134592/vid/avc1/1280x720/8as8K22w11Goe62R.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 13
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -67468,6 +68089,58 @@
    }
   },
   {
+   "id": "2117325961578614798",
+   "url": "https://x.com/xikhar/status/2117325961578614798",
+   "author": {
+    "handle": "xikhar",
+    "name": "Shikhar"
+   },
+   "postedAt": "2026-11-02T18:40:21.000Z",
+   "addedAt": "2026-11-04",
+   "lang": "en",
+   "models": [
+    "fable-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "单HTML文件实现的复杂2D着色器动画",
+    "en": "Complex 2D shader animation in one HTML file"
+   },
+   "summary": {
+    "zh": "一个单 HTML 文件实现的复杂 2D 动画，使用 WebGL、GLSL 着色器和 2D Canvas。作者称提示词是借助 ChatGPT 写成的详细纯文本描述，没有用参考素材，运行时为 high 档推理强度。",
+    "en": "A complex 2D animation in a single HTML file built with WebGL, GLSL shaders and 2D Canvas. The creator says it came from a detailed text-only prompt they wrote with ChatGPT, run on high effort."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "WebGL",
+    "GLSL",
+    "ChatGPT"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 27960,
+    "likes": 386,
+    "replies": 32,
+    "reposts": 22,
+    "bookmarks": 175,
+    "checkedAt": "2026-11-04T07:29:23.732Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2117325673039888384/img/ZNVm-Ua3wnl4w9Eg.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2117325673039888384/vid/avc1/1280x720/i0tO-EFwYeobaLFg.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2111816222811541641",
    "url": "https://x.com/Mr_Salio/status/2111816222811541641",
    "author": {
@@ -68463,6 +69136,54 @@
    }
   },
   {
+   "id": "2117298037261550073",
+   "url": "https://x.com/thebuggeddev/status/2117298037261550073",
+   "author": {
+    "handle": "thebuggeddev",
+    "name": "The Bugged Dev"
+   },
+   "postedAt": "2026-11-02T16:49:24.000Z",
+   "addedAt": "2026-11-04",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "带风与海浪的三维世界场景",
+    "en": "3D landscape with wind and waves"
+   },
+   "summary": {
+    "zh": "在 Claude Chat 中用 Claude Opus 5.5 生成的 3D 世界场景。作者提供了一张参考图和详细提示词，之后又迭代了几轮，补上风和海浪效果。",
+    "en": "A 3D world made with Claude Opus 5.5 in Claude Chat. The creator says they gave it a reference image and a detailed prompt, then iterated a few times to add wind and waves."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 27249,
+    "likes": 719,
+    "replies": 32,
+    "reposts": 34,
+    "bookmarks": 352,
+    "checkedAt": "2026-11-04T07:29:23.732Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2117297637032607744/img/6X6Dr-901WGSly8F.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2117297637032607744/vid/avc1/1160x720/OChwqSD5ntXgzXe2.mp4?tag=29",
+    "width": 1160,
+    "height": 720,
+    "durationSec": 42
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2110471008285282669",
    "url": "https://x.com/higgsfield_ai/status/2110471008285282669",
    "author": {
@@ -68822,6 +69543,67 @@
    }
   },
   {
+   "id": "2117253593371922601",
+   "url": "https://x.com/Nenlyonis/status/2117253593371922601",
+   "author": {
+    "handle": "Nenlyonis",
+    "name": "Nenly"
+   },
+   "postedAt": "2026-11-02T13:52:47.000Z",
+   "addedAt": "2026-11-04",
+   "lang": "zh",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "铅笔草稿世界主题的浏览器3D动作游戏",
+    "en": "Browser 3D action game with sketch-world theme"
+   },
+   "summary": {
+    "zh": "作者用 Claude Code（Opus 5.5）基于事先准备好的 2D、3D 素材，做出一个在浏览器里运行的动作冒险游戏 Demo。3D 模型来自 Miora 中的 Tripo，前后迭代了七八个会话，总耗时不到 24 小时。",
+    "en": "A browser-based action-adventure game demo built with Claude Code and Opus 5.5 from a folder of prepared 2D and 3D assets. 3D models came from Tripo in Miora, and the demo was refined over 7-8 sessions in under 24 hours."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "post",
+    "sourceUrl": "https://x.com/Nenlyonis/status/2117253593371922601",
+    "text": "Hi CLAUDE，我需要为Miora的一个线下活动设计一个演示用的游戏Demo，体现他们的资产生成能力。所有相关IP形象和内容已经放在 D:\\Downloads\\Miora Assets 了。这个案例我希望是非常富有视觉冲击力和交互可玩性的，题材可以由你来规划组织（但我倾向于是轻度战斗和冒险的）。我到时候需要在我的MacBook上演示，建议是用HTML+threejs这样的模式，比较有通用性。"
+   },
+   "referenceAssets": true,
+   "tools": [
+    "Claude Code",
+    "Tripo 3D",
+    "Miora",
+    "GPT Image 2.5",
+    "Seedance 2.5",
+    "Three.js",
+    "GPT 6 Astra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 27083,
+    "likes": 243,
+    "replies": 23,
+    "reposts": 15,
+    "bookmarks": 267,
+    "checkedAt": "2026-11-04T07:29:23.732Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2117250909910761472/img/fmEg22xeou7SzQRh.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2117250909910761472/vid/avc1/1280x720/a5cALp8kk4gIpNDQ.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 198
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2105769916288930215",
    "url": "https://x.com/agaviriau/status/2105769916288930215",
    "author": {
@@ -69106,6 +69888,56 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2117210973576765462",
+   "url": "https://x.com/Smlay_ero/status/2117210973576765462",
+   "author": {
+    "handle": "Smlay_ero",
+    "name": "smlay"
+   },
+   "postedAt": "2026-11-02T11:03:26.000Z",
+   "addedAt": "2026-11-04",
+   "lang": "en",
+   "models": [
+    "fable-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "纯前端代码动画效果对比",
+    "en": "Front-end code animation comparison"
+   },
+   "summary": {
+    "zh": "对比 GPT-6.2 Astra 和 Fable 5.5 用纯前端代码生成的动画效果。作者认为 Fable 5.5 在动画细节和脚本设计上更胜一筹。",
+    "en": "A side-by-side comparison of front-end code animations generated by GPT-6.2 Astra and Fable 5.5. The creator judges Fable 5.5 stronger on animation detail and script design."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "GPT-6.2 Astra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 26820,
+    "likes": 211,
+    "replies": 44,
+    "reposts": 18,
+    "bookmarks": 82,
+    "checkedAt": "2026-11-04T07:29:23.732Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2117209138287558656/img/tJoRS0e3iZWXMpp5.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2117209138287558656/vid/avc1/720x680/IR4865YudIn9kKov.mp4?tag=29",
+    "width": 720,
+    "height": 680,
+    "durationSec": 62
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -70520,6 +71352,54 @@
     "poster": "https://pbs.twimg.com/amplify_video_thumb/2103097104692633601/img/ucLCyOo05_JRVPWL.jpg",
     "mp4": "https://video.twimg.com/amplify_video/2103097104692633601/vid/avc1/1280x720/_Al0SN7E61-3oO-B.mp4?tag=29",
     "width": 1280,
+    "height": 720,
+    "durationSec": 31
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2117319579018088681",
+   "url": "https://x.com/yogesharc/status/2117319579018088681",
+   "author": {
+    "handle": "yogesharc",
+    "name": "Yogesh"
+   },
+   "postedAt": "2026-11-02T18:15:00.000Z",
+   "addedAt": "2026-11-04",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "迭代打磨的网站设计",
+    "en": "Iteratively refined website design"
+   },
+   "summary": {
+    "zh": "用 Opus 5.5 做的网页设计。作者先让模型给出几种不同的设计方向并选定一种，再为每个版块生成多个变体，逐步挑选和修改。",
+    "en": "A web design made with Opus 5.5. The creator asked for several design directions, picked one, then generated variations of each section and refined them iteratively."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 25666,
+    "likes": 734,
+    "replies": 15,
+    "reposts": 8,
+    "bookmarks": 558,
+    "checkedAt": "2026-11-04T07:29:23.732Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2117271310615429120/img/xYAszAESgqMWtIVk.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2117271310615429120/vid/avc1/1152x720/_Ar8S1_XRrLCzGkl.mp4?tag=29",
+    "width": 1152,
     "height": 720,
     "durationSec": 31
    },
@@ -73280,6 +74160,54 @@
     "width": 1280,
     "height": 720,
     "durationSec": 90
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2117495471346176156",
+   "url": "https://x.com/ChrisGPT/status/2117495471346176156",
+   "author": {
+    "handle": "ChrisGPT",
+    "name": "Chris"
+   },
+   "postedAt": "2026-11-03T05:53:56.000Z",
+   "addedAt": "2026-11-04",
+   "lang": "en",
+   "models": [
+    "fable-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "宇航员骑鹈鹕骑自行车的SVG动画",
+    "en": "Animated SVG astronaut on pelican riding a bicycle"
+   },
+   "summary": {
+    "zh": "Claude Fable 5.5 / Opus 5.6 生成的 SVG 插画，画面是宇航员骑着鹈鹕、鹈鹕骑着自行车在月球上。作者提到自行车结构写实、传动部件联动、阴影方向正确，而且全程没有联网。",
+    "en": "An SVG by Claude Fable 5.5 / Opus 5.6 of an astronaut riding a pelican riding a bicycle on the Moon. The creator notes realistic bike geometry, geared parts and correct shadows, made without web access."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 24198,
+    "likes": 479,
+    "replies": 33,
+    "reposts": 20,
+    "bookmarks": 35,
+    "checkedAt": "2026-11-04T07:29:23.732Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2117495442283925504/img/GukFA5AZYxlk4vi0.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2117495442283925504/vid/avc1/1062x720/6l0HL1tUiOq1Dnh2.mp4?tag=29",
+    "width": 1062,
+    "height": 720,
+    "durationSec": 9
    },
    "evidence": {
     "via": "daily",
@@ -78914,6 +79842,105 @@
    }
   },
   {
+   "id": "2117391948348817828",
+   "url": "https://x.com/naometzger/status/2117391948348817828",
+   "author": {
+    "handle": "naometzger",
+    "name": "Naomi Metzger"
+   },
+   "postedAt": "2026-11-02T23:02:34.000Z",
+   "addedAt": "2026-11-04",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "motion",
+   "title": {
+    "zh": "Vox风格纪录短片：Remotion与自制技能对比",
+    "en": "Vox-style documentary reel: Remotion vs custom skill"
+   },
+   "summary": {
+    "zh": "作者用同一提示词对比两种做法制作 Vox 风格纪录短片：Opus 5.5 配合 Remotion，以及 Opus 5.5 配合作者自制的 skill。脚本由模型撰写，配图用 Nano Banana 生成，各场景用代码做成动画。",
+    "en": "Compares Vox-style documentary reels made with Opus 5.5 plus Remotion against Opus 5.5 plus the creator's own skill, using the same prompt. The model wrote the script, generated images in Nano Banana and animated scenes in code."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Remotion",
+    "Nano Banana"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 20982,
+    "likes": 389,
+    "replies": 14,
+    "reposts": 16,
+    "bookmarks": 506,
+    "checkedAt": "2026-11-04T07:29:23.732Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2117390132806574080/img/teKfoZmmrkvo2Tvc.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2117390132806574080/vid/avc1/480x852/BlZ6fprALiCJ6Qzv.mp4?tag=29",
+    "width": 480,
+    "height": 852,
+    "durationSec": 28
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2117231169301369311",
+   "url": "https://x.com/0xnicc0/status/2117231169301369311",
+   "author": {
+    "handle": "0xnicc0",
+    "name": "nicco"
+   },
+   "postedAt": "2026-11-02T12:23:41.000Z",
+   "addedAt": "2026-11-04",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "把想法变成动效",
+    "en": "Ideas turned into motion graphics"
+   },
+   "summary": {
+    "zh": "作者把一份 PDF 提示词粘贴进 Opus 5.5，让模型把想法做成动态图形，提示词以 Google Drive 文件形式分享。",
+    "en": "Motion graphics that animate ideas, made by pasting a PDF prompt into Opus 5.5. The creator shares the prompt as a Google Drive file."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 20977,
+    "likes": 169,
+    "replies": 6,
+    "reposts": 10,
+    "bookmarks": 199,
+    "checkedAt": "2026-11-04T07:29:23.732Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2117210302710185984/img/W_-AQpsNZOfmeKjC.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2117210302710185984/vid/avc1/1280x720/H7P8gnpaqzipd6bl.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 14
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2111353123646427556",
    "url": "https://x.com/HaileyAILabs/status/2111353123646427556",
    "author": {
@@ -80364,6 +81391,57 @@
    }
   },
   {
+   "id": "2117254471566622824",
+   "url": "https://x.com/PawelJLisowski/status/2117254471566622824",
+   "author": {
+    "handle": "PawelJLisowski",
+    "name": "Paweł J Lisowski"
+   },
+   "postedAt": "2026-11-02T13:56:17.000Z",
+   "addedAt": "2026-11-04",
+   "lang": "en",
+   "models": [
+    "opus-5.5",
+    "fable-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "单条提示词生成的纯代码动画",
+    "en": "Pure code animation from a single prompt"
+   },
+   "summary": {
+    "zh": "作者用 Opus 5.5 最高推理强度，凭一条提示词运行约两小时，生成一段纯代码实现的森林动画场景，HTML 已发布在 GitHub。",
+    "en": "A pure-code animated forest scene built by Opus 5.5 at max effort from a single prompt over about two hours. The HTML is published on GitHub."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "DeepSeek V4.1 Flash"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 20066,
+    "likes": 232,
+    "replies": 22,
+    "reposts": 13,
+    "bookmarks": 117,
+    "checkedAt": "2026-11-04T07:29:23.732Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2117254017117990912/img/ZpdT2LR2chX3L1Ok.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2117254017117990912/vid/avc1/1280x720/xtDM06Mdiczlroi6.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 77
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103518455404396927",
    "url": "https://x.com/threeaus/status/2103518455404396927",
    "author": {
@@ -81070,6 +82148,61 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2117367865632227543",
+   "url": "https://x.com/vib3coded/status/2117367865632227543",
+   "author": {
+    "handle": "vib3coded",
+    "name": "Vib3Coded"
+   },
+   "postedAt": "2026-11-02T21:26:52.000Z",
+   "addedAt": "2026-11-04",
+   "lang": "en",
+   "models": [
+    "sonnet-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "3D像素风室内排球游戏",
+    "en": "3D pixel-art indoor volleyball game"
+   },
+   "summary": {
+    "zh": "作者用 Sonnet 5.5 和 Three.js 做出单文件 HTML 像素风 3D 室内排球游戏，包含 6 对 6 模拟比赛、教练操作和录像回放，耗时 2 小时 40 分钟，API 费用 68.08 美元。",
+    "en": "A single-file HTML pixel-art 3D indoor volleyball game with simulated 6v6 matches, coach controls and video reviews, built with Sonnet 5.5 and Three.js. It took 2 hours 40 minutes and $68.08 in API costs."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/vib3coded/status/2117368516898865361",
+    "text": "Build me a single-file HTML artifact: a pixel-art 3D indoor volleyball final, in the same visual and technical style as my earlier pixel works (Hollybrook Open tennis, School Yard Futsal, Bramley Oval cricket). Reuse their rendering approach, but give this page its own identity.\n\nNAME AND IDENTITY\n- Title: \"Lighthouse Cup\". Header kicker: \"Grand Final\" and \"Marlowe Arena\". Invented teams, players and sponsors only, seeded so they are identical on every load.\n- Page look: the match-day programme of a sports hall. Warm maple paper background, deep navy for ink and selection, signal orange (the colour of court markings) for everything live or chosen. The header has a navy boundary line with a dashed orange attack-line under it, a small logo (an orange ball with navy seams) and a big uppercase condensed title. The match sits in a framed plate with a hard navy offset shadow (no blur). Section titles in the control panel carry a small orange court-corner glyph. Buttons and headings are uppercase condensed.\n- Fonts: Barlow Condensed (display, headings, scoreboard numerals, buttons) and Barlow (all reading text). Light theme by default; dark theme (\"an evening in the hall\") with navy-black paper and a lighter orange. All colours as tokens, explicit body background, 16px gutters, no horizontal scroll at 400px, controls stacked under a sticky picture on phones.\n\nRENDERING (same pipeline as my other works)\n- three.js r128 from cdnjs, real 3D geometry only (no sprites), orthographic isometric camera.\n- Render to a tiny low-res target (pixel size slider 1-6 px, default 2), depth-based outlines, then snap every pixel to one fixed 90-colour palette in OKLab with ordered dither. Procedural sky shader.\n- Scene: an indoor sports hall as a diorama on a floating island. Court 18 x 9 m with lines, net with antennae and posts, referee stand, line judges, bench areas, scoreboard, banners, tiered stands with an instanced crowd that reacts to points and big rallies, light columns, big windows letting in sky.\n- Hall lights: Day / Evening / \"Show\" with eased transitions; four light columns switch on in the later modes. Real shadows.\n- Floor types (default maple) that change texture, bounce and shoe squeak, with two live gauges (Bounce, Squeak) updated from the ball.\n- Blocky rigged players in team kits, a libero in a different shirt colour, a referee, line judges, a coach per bench. Poses: ready stance, run, jump serve, float serve, spike, block (arms up over the net), dig, set, dive, celebrate, dejected, referee signals.\n- Cameras: TV follow (tracks the ball), Whole hall, Close-up. Drag to turn, wheel/pinch to zoom, Q/E turn, 1/2/3 cameras, R reset, right-drag or Shift-drag pans, plus pixel size, outlines, dither, raw-3D toggles.\n\nGAME (simulated, not scripted)\n- Leagues (e.g. women's and men's) each with several invented teams and rosters of 12 (six on court, a libero, bench). Formats: Quick set to 15, One set to 25, Best of 3, Best of 5.\n- Real volleyball scoring: rally point, sets to 25 (15 in the decider) won by two, the serving team rotates through the six positions after each side-out, libero rules (back row only, replaces a middle blocker), two timeouts and two substitutions logic per set, two video challenges per set. Toss and teams walk-out ceremony, set breaks, final result.\n- Ball physics for serves, passes, sets, attacks, blocks and floor contact, so that every point (ace, kill, block, dig, net touch, out ball, service error) comes from where the ball and players actually are. Serve speed shown in km/h.\n- Rally logic: receive, set, attack, block and dig decisions driven by player ratings (serve, receive, set, attack, block, defence, stamina), rotation position, and the coach's tactics. Players tire over a long match.\n- Coach panel for the team the user picks, the other team is AI:\n- Serve: four options (for example float, jump, short, aggressive), applied to the next serves.\n- Attack: five options (for example power, tip, line, cross, quick middle) applied to the next attacks.\n- Block: two options (for example read, commit).\n- \"Aim next attack\": click a spot on the opponent's half to direct the next attack or serve.\n- Timeout (2 per set) called at the next dead ball with a countdown banner, which also affects momentum.\n- Substitution: pick a court player and a bench player from chips, then confirm.\n- Video challenge (2 per set): a ring countdown button appears after a close line call, then a \"Video check\" overlay tracks the ball and shows IN or OUT, overturning the call if it was wrong.\n- Controls: New match, Skip ceremony, speed 1/2x to 4x, pause, auto-next match, sound toggle (synthesised Web Audio, no audio files), key shortcuts (N new, K skip, T timeout, C challenge, A aim, S floor, L lights, Space pause).\n\nHUD\n- A navy scoreboard bug over the picture: header line with the set number and a \"Set point/Match point\" flag, one row per team with a serving-ball dot, a kit chip, three-letter name, timeout pips, set scores, current points, and a six-cell rotation diagram per team (libero highlighted, server marked). Serve-speed pill, skewed orange event captions (ACE, KILL, BLOCK, SET POINT), a one-line live commentary strip, state chips (Live/Paused, speed, camera).\n\nMATCH CENTRE\n- Set-by-set score table with the serving team marked, result banner, comparison stats (aces, kills, blocks, errors, serve/receive quality), top performers per team, rosters with positions, libero and \"on court\" markers, commentary feed newest first with varied phrasing.\n\nTUNING\n- Rallies of realistic length (mostly 2-6 contacts, occasional long rallies), side-out about 60-65 percent, aces 5-8 percent, a set to 25 lasting 4-6 minutes at 1x. Close sets should happen often.\n\nQUALITY BAR\n- Test in headless Chromium (local three.js via route interception, software WebGL). Run dozens of full matches without rendering in every format to catch exceptions and tune balance from outcome statistics. Screenshot day, evening, show, mobile and dark theme. Test coach actions, substitutions, timeouts, the video challenge and auto-next. Fix every bug you find; do not stop at the first working render.\n- Publish as one HTML file with a short description, and tell me what you did not verify (real GPU, audio by ear, real touch device)."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 19795,
+    "likes": 532,
+    "replies": 31,
+    "reposts": 40,
+    "bookmarks": 391,
+    "checkedAt": "2026-11-04T07:29:23.732Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2117367762284683264/img/D3tTlienMDDpFaiC.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2117367762284683264/vid/avc1/1152x720/VxJsW9_DOM7aGlG-.mp4?tag=29",
+    "width": 1152,
+    "height": 720,
+    "durationSec": 17
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -87175,6 +88308,56 @@
    }
   },
   {
+   "id": "2117214268483576266",
+   "url": "https://x.com/studio_oneroom/status/2117214268483576266",
+   "author": {
+    "handle": "studio_oneroom",
+    "name": "AIスタジオワンルーム（AIアニメ、動画、漫画）"
+   },
+   "postedAt": "2026-11-02T11:16:32.000Z",
+   "addedAt": "2026-11-04",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "带自定义界面的 Three.js 机器人网页",
+    "en": "Three.js robot web page with custom UI"
+   },
+   "summary": {
+    "zh": "作者让 Opus 5.5 全部用代码写出一个 Three.js 机器人网页，并改了界面，最后录成视频，过程中没有用 Blender 等 3D 软件。",
+    "en": "A Three.js robot web page written entirely in code by Opus 5.5, with a customized UI, recorded as a video. No Blender or other 3D software was used."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 17331,
+    "likes": 456,
+    "replies": 14,
+    "reposts": 45,
+    "bookmarks": 265,
+    "checkedAt": "2026-11-04T07:29:23.732Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2117210844077690880/img/zX_LPabzfXuM6bp6.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2117210844077690880/vid/avc1/1280x720/_O_uoENkRFKpnAgz.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 47
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2105310327886029275",
    "url": "https://x.com/achxvi/status/2105310327886029275",
    "author": {
@@ -88780,6 +89963,56 @@
    }
   },
   {
+   "id": "2117293762153951564",
+   "url": "https://x.com/theparuchh/status/2117293762153951564",
+   "author": {
+    "handle": "theparuchh",
+    "name": "Paruchh"
+   },
+   "postedAt": "2026-11-02T16:32:24.000Z",
+   "addedAt": "2026-11-04",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "背负苔藓花园的巨兽动画",
+    "en": "Moss-covered garden creature animation"
+   },
+   "summary": {
+    "zh": "作者用 Claude Opus 5.5 在 Blender 中为自己的游戏制作了带骨骼动画的生物模型「苔背行者」，包含 389 个部件、73 根骨骼和 8 段动画。作者称只用了一条日常语言提示词，并让 Claude 逐帧自检。",
+    "en": "A rigged and animated creature model, the Mossback Strider, built by Claude Opus 5.5 in Blender for the creator's game. It has 389 parts, 73 bones and 8 animations. The creator says it came from one plain-language prompt, with frame-by-frame self-checks by Claude."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 16484,
+    "likes": 230,
+    "replies": 22,
+    "reposts": 4,
+    "bookmarks": 204,
+    "checkedAt": "2026-11-04T07:29:23.732Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2117293712875081728/img/YMwvhwf850rO7D_k.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2117293712875081728/vid/avc1/1280x720/-TTfwlWqIuBgfQ5R.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 113
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2110360021988982817",
    "url": "https://x.com/aimikoda/status/2110360021988982817",
    "author": {
@@ -89786,6 +91019,57 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2117381588694757863",
+   "url": "https://x.com/stspanho/status/2117381588694757863",
+   "author": {
+    "handle": "stspanho",
+    "name": "Stijn Spanhove"
+   },
+   "postedAt": "2026-11-02T22:21:24.000Z",
+   "addedAt": "2026-11-04",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "GTA V 混合现实扩展层",
+    "en": "Mixed reality layer for GTA V"
+   },
+   "summary": {
+    "zh": "作者与合作者用 Opus 5.5 在 Specs 眼镜上为 GTA V 打造了混合现实图层。可以从手掌中召出车辆、把地图拿在手中，还可随时调用 Gemini。",
+    "en": "A mixed-reality layer for GTA V built with Opus 5.5 on Specs glasses. It shows cars from your palm and the map in your hand, with Gemini available on call."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Specs",
+    "Gemini"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 16170,
+    "likes": 237,
+    "replies": 22,
+    "reposts": 37,
+    "bookmarks": 83,
+    "checkedAt": "2026-11-04T07:29:23.732Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2117380835380809728/img/Z5XY3uo-7iCrp4Cx.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2117380835380809728/vid/avc1/960x720/0wMC6J1qNwp4d5Ry.mp4?tag=29",
+    "width": 960,
+    "height": 720,
+    "durationSec": 89
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -95109,6 +96393,56 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2117294773081882838",
+   "url": "https://x.com/Aygramm_/status/2117294773081882838",
+   "author": {
+    "handle": "Aygramm_",
+    "name": "Ayomide Adeji"
+   },
+   "postedAt": "2026-11-02T16:36:25.000Z",
+   "addedAt": "2026-11-04",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "60 帧动效短片",
+    "en": "60fps motion graphics reel"
+   },
+   "summary": {
+    "zh": "这是一段动态图形短视频，作者用 Claude Opus 5.5 制作，再用 HyperFrames 以 60fps 渲染。具体流程放在作者的 Telegram 频道，也可以私信索取。",
+    "en": "A motion graphics reel made with Claude Opus 5.5 and rendered at 60fps with HyperFrames. The creator offers the workflow by DM or through a Telegram channel post."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "HyperFrames"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 14079,
+    "likes": 187,
+    "replies": 104,
+    "reposts": 17,
+    "bookmarks": 310,
+    "checkedAt": "2026-11-04T07:29:23.732Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/media/HWIkQ2zXsAA_Svc.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2117294646829223937/vid/avc1/720x1280/dAwVax08cpkbyogn.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 48
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -100516,6 +101850,65 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2117273092284112963",
+   "url": "https://x.com/0xKense1/status/2117273092284112963",
+   "author": {
+    "handle": "0xKense1",
+    "name": "Kensei"
+   },
+   "postedAt": "2026-11-02T15:10:16.000Z",
+   "addedAt": "2026-11-04",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "由概念设定图制作的划船游戏角色",
+    "en": "Rigged rowing-game character from a concept sheet"
+   },
+   "summary": {
+    "zh": "作者分享了用 Opus 5.5 制作可直接用于游戏的 3D 角色的流程。先把概念设定图切成多个视角，用 Tripo 生成模型，再通过 Claude Code 编写 Python 脚本在 Blender 中完成绑骨和动画，最后用于一款 Unity 网页游戏。",
+    "en": "A workflow for making game-ready 3D characters with Opus 5.5. A concept sheet is split into views, turned into a model in Tripo, rigged and animated in Blender through Python scripts in Claude Code, and used in a Unity browser game."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/0xKense1/status/2117419925253894285",
+    "text": "rig model.glb for animation. run blender headless with python scripts only and save every script so you can rerun it\n1. apply all transforms, merge duplicate verts, scale to [height] m, feet on the floor\n2. render orthographic front and side views with a grid, open them and write the joint positions (hips, spine, neck, head, shoulders, elbows, wrists, knees, ankles) to joints.json\n3. build the armature on those joints. long cloth below the hips (cape, coat skirt) gets 2 bones of its own, front and back, children of the hips\n4. bind with automatic weights, then fix them with rules in code: torso, collar, scarf and coat get 0 on the arm bones, the head bone moves only the head and hair, belt and pouches go 100% on the hips, the skirt goes on the cape bones, max 4 bones per vertex, normalize\n5. pose test: arms up 90, arms forward 60, a step with each leg, a head turn. render each pose front and side, open the renders, list every spot where the mesh tears or stretches, fix the weights there and render again, max 3 rounds\n6. export fbx"
+   },
+   "referenceAssets": true,
+   "tools": [
+    "Claude Code",
+    "Blender",
+    "Tripo",
+    "Unity",
+    "Python"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 12456,
+    "likes": 236,
+    "replies": 16,
+    "reposts": 18,
+    "bookmarks": 376,
+    "checkedAt": "2026-11-04T07:29:23.732Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2117270192719855616/img/OKyya82d7PhTmew4.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2117270192719855616/vid/avc1/1280x720/W1iljNhKfEurF-be.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 28
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
