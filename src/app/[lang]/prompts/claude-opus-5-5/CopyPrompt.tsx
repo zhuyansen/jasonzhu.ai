@@ -9,20 +9,22 @@ interface Props {
   id?: string;
   isZh: boolean;
   className?: string;
+  /** 全文所在目录：Claude 库 /data/opus-prompts，ChatGPT Images 2.6 合集 /data/image-prompts */
+  dataPath?: string;
 }
 
-export async function loadPrompt(id: string): Promise<string> {
-  const res = await fetch(`/data/opus-prompts/${id}.json`);
+export async function loadPrompt(id: string, dataPath = "/data/opus-prompts"): Promise<string> {
+  const res = await fetch(`${dataPath}/${id}.json`);
   if (!res.ok) throw new Error(String(res.status));
   return (await res.json()).prompt as string;
 }
 
-export default function CopyPrompt({ text, id, isZh, className }: Props) {
+export default function CopyPrompt({ text, id, isZh, className, dataPath }: Props) {
   const [state, setState] = useState<"idle" | "copied" | "error">("idle");
 
   async function copy() {
     try {
-      const full = text ?? (id ? await loadPrompt(id) : "");
+      const full = text ?? (id ? await loadPrompt(id, dataPath) : "");
       await navigator.clipboard.writeText(full);
       setState("copied");
       track("prompt_copy", { id });

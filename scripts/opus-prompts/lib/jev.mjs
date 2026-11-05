@@ -37,8 +37,9 @@ const PROMPT = {
 const HARD_OUT = ["repost", "tutorial_or_talk", "news", "non_visual"]; // 高把握时可直接否决的类型（commentary 不在内）
 const clip = (t, n) => (t.length <= n ? t : t.slice(0, n - 200) + " … " + t.slice(-180));
 
-function request(cases) {
-  const lines = ["Posts on X that mention Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5 and have a video attached. Judge each post on its own.", ""];
+// profile：别的提示词库（scripts/image-prompts）换自己的开场白和选项说明；键名不变，下面的阈值逻辑照用
+function request(cases, profile = {}) {
+  const lines = [profile.intro || "Posts on X that mention Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5 and have a video attached. Judge each post on its own.", ""];
   const questions = {};
   cases.forEach((c, i) => {
     const k = `p${i + 1}`;
@@ -46,8 +47,8 @@ function request(cases) {
     if (c.thread?.length) lines.push(`CREATOR'S OWN REPLIES: ${clip(c.thread.join(" / "), 700)}`);
     if (c.prompt) lines.push(`LOCATED PROMPT: ${clip(c.prompt, 900)}`);
     lines.push("");
-    questions[`${k}_kind`] = { type: "choice", instructions: `What is post ${k}?`, criteria: KIND };
-    if (c.prompt) questions[`${k}_prompt`] = { type: "choice", instructions: `What is the LOCATED PROMPT of ${k}?`, criteria: PROMPT };
+    questions[`${k}_kind`] = { type: "choice", instructions: `What is post ${k}?`, criteria: profile.kind || KIND };
+    if (c.prompt) questions[`${k}_prompt`] = { type: "choice", instructions: `What is the LOCATED PROMPT of ${k}?`, criteria: profile.prompt || PROMPT };
   });
   return { state: lines.join("\n"), questions };
 }
@@ -93,8 +94,8 @@ export async function jevDecide({ state, questions }) {
   throw new Error(errs.join("；"));
 }
 
-async function call(cases) {
-  const o = await jevDecide(request(cases));
+async function call(cases, profile) {
+  const o = await jevDecide(request(cases, profile));
   return cases.map((_, j) => ({ kind: o[`p${j + 1}_kind`], prompt: o[`p${j + 1}_prompt`] }));
 }
 
@@ -102,12 +103,12 @@ async function call(cases) {
  * @param cases [{ id, handle, text, thread: string[], prompt?: string }]
  * @returns Record<id, { verdict, confidence, prompt_ok, issues, reason, jev }>，与 GPT 审核同一形状
  */
-export async function jevAudit(cases) {
+export async function jevAudit(cases, profile) {
   if (!jevAvailable()) throw new Error("缺 JEV_API_KEY");
   const out = {};
   for (let i = 0; i < cases.length; i += 8) {
     const part = cases.slice(i, i + 8);
-    const ans = await call(part);
+    const ans = await call(part, profile);
     part.forEach((c, j) => {
       const k = ans[j].kind, pr = ans[j].prompt, P = k?.probabilities || {};
       const pIn = (P.own_work || 0) + (P.own_comparison || 0);

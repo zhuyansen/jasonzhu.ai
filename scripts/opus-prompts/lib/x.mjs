@@ -24,7 +24,7 @@ async function api(pathname, params) {
   }
 }
 
-async function paged(query, maxTweets, maxPages = 25) {
+export async function paged(query, maxTweets, maxPages = 25) {
   const out = []; let cursor = "";
   for (let p = 0; p < maxPages && out.length < maxTweets; p++) {
     const j = await api("/twitter/tweet/advanced_search", { query, queryType: "Latest", ...(cursor ? { cursor } : {}) });
@@ -54,8 +54,8 @@ export async function authorThread(c) {
   })).sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
 }
 
-// 选 ≤720p 里码率最高的 mp4
-function pickMp4(variants) {
+// 选 ≤720p 里码率最高的 mp4（图片库 scripts/image-prompts 也用）
+export function pickMp4(variants) {
   const v = (variants || []).filter((x) => /mp4/.test(x.content_type || "") || /\.mp4/.test(x.url || ""))
     .map((x) => { const m = x.url.match(/\/(\d+)x(\d+)\//); return { url: x.url, bitrate: x.bitrate || 0, w: Number(m?.[1] || 0), h: Number(m?.[2] || 0) }; })
     .filter((x) => /^https:\/\/video\.twimg\.com\//.test(x.url));

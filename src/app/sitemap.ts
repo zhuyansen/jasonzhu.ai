@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { getAllPosts, getWeeklyIssues } from "@/lib/mdx";
 import { getAllDigests, isDigestIndexable } from "@/lib/news";
 import { getOpusLibrary } from "@/lib/opus-prompts";
+import { getImageLibrary } from "@/lib/image-prompts";
 import { GUIDES } from "@/lib/go-global-guides";
 
 const SITE_URL = "https://jasonzhu.ai";
@@ -26,9 +27,11 @@ const STATIC_PATHS = [
   "/handbook",
   "/ai-learning-guide",
   "/club",
+  "/prompts", // 提示词库总览
   "/prompts/claude-opus-5-5",
   "/prompts/claude-opus-5-5/motion-graphics", // 动效落地页（打「Claude motion graphics prompts」）
   "/prompts/claude-opus-5-5/fable-5-5", // Fable 5.5 落地页（打「fable 5.5」「claude fable 5.5」）
+  "/prompts/chatgpt-images-2-6", // ChatGPT Images 2.6 合集（2026-11-05）
   "/backlink-spam-list", // 垃圾外链来源库（名单在 GitHub zhuyansen/backlink-spam-list，页面每天重读）
   "/privacy",
   "/terms",
@@ -109,6 +112,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       entries.push({
         url: `${SITE_URL}/${lang}/prompts/claude-opus-5-5/${c.id}`,
         lastModified: new Date(opus.updatedAt),
+        changeFrequency: "monthly",
+        priority: 0.6,
+      });
+    }
+  }
+
+  // ChatGPT Images 2.6 合集详情页：只有带提示词的作品有详情页，zh/en 都收
+  const images = getImageLibrary();
+  for (const c of images.cases.filter((x) => x.prompt)) {
+    for (const lang of LANGS) {
+      entries.push({
+        url: `${SITE_URL}/${lang}/prompts/chatgpt-images-2-6/${c.id}`,
+        lastModified: new Date(c.addedAt || images.updatedAt || Date.now()),
         changeFrequency: "monthly",
         priority: 0.6,
       });

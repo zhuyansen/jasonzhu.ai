@@ -41,6 +41,7 @@ export async function GET() {
     `- [个人还是公司：海外收款开户指南](${SITE_URL}/zh/go-global/open-account)`,
     ...GUIDES.map((g) => `- [${g.short}](${SITE_URL}/zh/go-global/${g.slug}): ${g.description}`),
     `- [Claude 5.5 提示词库](${SITE_URL}/zh/prompts/claude-opus-5-5): X 上播放过 5000 的 Opus 5.5 / Sonnet 5.5 / Haiku 5.5 / Fable 5.5（内测）作品（含作者公开的原始提示词）、视频与出处`,
+    `- [ChatGPT Images 2.6 提示词合集](${SITE_URL}/zh/prompts/chatgpt-images-2-6): X 上浏览过 5000 的 ChatGPT Images 2.6（GPT-Image-2.6）图片、GIF 作品，含作者公开的原始提示词与出处，每天更新`,
     `- [博客 RSS](${SITE_URL}/feed/blog.xml)`,
     `- [快讯 RSS](${SITE_URL}/feed/news.xml)`,
     "",

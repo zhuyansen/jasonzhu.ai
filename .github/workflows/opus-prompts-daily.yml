@@ -1,9 +1,12 @@
-name: Claude 5.5 提示词库每日收录
+name: 提示词库每日收录（Claude 5.5 + ChatGPT Images 2.6）
 
 # 每天北京时间 9:17：收录 24 小时前发布、播放过 5000 的 Opus 5.5 / Sonnet 5.5 新作品，每天最多 80 个（按播放量优先）。
 # Claude 分类（被筛掉的由 Jev 复核捞回）并定位提示词 → 代码逐字对账 → Jev 审核 → 拿不准的交 Opus 终审。
 # 每次最多处理一天的发布窗口，落后时连跑最多 3 轮自动追上，不需要手动补跑。
 # 把握大的直接提交到 main 上线；拿不准的进「滚动 PR」（分支 opus-prompts/pending），合并即批准。
+#
+# 2026-11-05 起同一次运行接着收 ChatGPT Images 2.6 合集（scripts/image-prompts，流程相同、换成图片 / GIF），两个库一起提交一次，不多一次部署；
+# 图片库那步失败不挡 Claude 库上线。它拿不准的作品留在自己的 pending.json，下次运行先交 Opus 终审（没有滚动 PR）。
 #
 # 需要的 Secrets：TWITTERAPI_IO_KEY（必需）、JEV_API_KEY（Jev 官方审核）、FLATROUTER_API_KEY（Jev 不可用时的 GPT 备用审核）；Claude 的几个沿用快讯的。
 on:
@@ -32,6 +35,9 @@ on:
       search_terms:
         description: "补跑：只搜这些词（如 \"Haiku 5.5\" OR \"Haiku5.5\"）；留空 = 全部模型"
         default: ""
+      only:
+        description: "只跑一个库：claude / images；留空 = 两个都跑（上面的补跑参数只作用于选中的库，两个都跑时只给 Claude 库）"
+        default: ""
 
 permissions:
   contents: write
@@ -46,6 +52,8 @@ env:
   DATA: scripts/opus-prompts/data
   OUTPUTS: src/content/opus-prompts src/generated/opus-prompts.json src/generated/opus-prompts-full.json public/data/opus-prompts
   PENDING_BRANCH: opus-prompts/pending
+  IMG_DATA: scripts/image-prompts/data
+  IMG_OUTPUTS: src/content/image-prompts src/generated/image-prompts.json src/generated/image-prompts-full.json public/data/image-prompts
 
 jobs:
   collect:
@@ -59,6 +67,7 @@ jobs:
           node-version: "22"
 
       - name: 采集、判断、审核
+        if: inputs.only != 'images'
         env:
           TWITTERAPI_IO_KEY: ${{ secrets.TWITTERAPI_IO_KEY }}
           FLATROUTER_API_KEY: ${{ secrets.FLATROUTER_API_KEY }}
@@ -89,16 +98,45 @@ jobs:
             if grep -q "CAUGHT_UP" "$RUNNER_TEMP/daily-$i.log"; then break; fi
           done
 
+      - name: ChatGPT Images 2.6 合集：采集、判断、审核
+        if: inputs.only != 'claude'
+        continue-on-error: true  # 新库出问题不挡 Claude 库上线
+        env:
+          TWITTERAPI_IO_KEY: ${{ secrets.TWITTERAPI_IO_KEY }}
+          FLATROUTER_API_KEY: ${{ secrets.FLATROUTER_API_KEY }}
+          JEV_API_KEY: ${{ secrets.JEV_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          APIMART_CLAUDE_KEY: ${{ secrets.APIMART_CLAUDE_KEY }}
+          CAP: ${{ inputs.cap || '80' }}
+          # 补跑参数只在 only=images 时给图片库（否则会拿 Claude 的搜索词去搜图片）
+          WINDOW_FROM: ${{ inputs.only == 'images' && inputs.window_from || '' }}
+          WINDOW_TO: ${{ inputs.only == 'images' && inputs.window_to || '' }}
+          SEARCH_TERMS: ${{ inputs.only == 'images' && inputs.search_terms || '' }}
+          IGNORE_SEEN: ${{ inputs.only == 'images' && inputs.ignore_seen || '' }}
+          SKIP_TOP: ${{ inputs.only == 'images' && inputs.skip_top || '' }}
+        run: |
+          set -o pipefail
+          if [ -n "$WINDOW_FROM" ]; then ROUNDS=1; else ROUNDS="1 2 3"; fi
+          for i in $ROUNDS; do
+            node scripts/image-prompts/daily.mjs | tee "$RUNNER_TEMP/images-$i.log"
+            if grep -q "CAUGHT_UP" "$RUNNER_TEMP/images-$i.log"; then break; fi
+          done
+
       - name: 组装并编译
         run: |
-          node scripts/opus-prompts/assemble.mjs --write
-          node scripts/generate-opus-prompts.mjs
+          if [ "${{ inputs.only }}" != "images" ]; then
+            node scripts/opus-prompts/assemble.mjs --write
+            node scripts/generate-opus-prompts.mjs
+          fi
+          if [ "${{ inputs.only }}" != "claude" ]; then
+            node scripts/image-prompts/assemble.mjs --write && node scripts/generate-image-prompts.mjs || echo "::warning::ChatGPT Images 2.6 合集组装失败，这次不更新它"
+          fi
 
       - name: 上线（提交到 main）
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add $DATA $OUTPUTS
+          git add $DATA $OUTPUTS $IMG_DATA $IMG_OUTPUTS
           if git diff --cached --quiet; then
             echo "没有变化，不提交"
           else
@@ -108,6 +146,7 @@ jobs:
           fi
 
       - name: 滚动 PR（拿不准的作品）
+        if: inputs.only != 'images'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |

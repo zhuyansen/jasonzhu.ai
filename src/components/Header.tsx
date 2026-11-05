@@ -21,7 +21,7 @@ export default function Header({ lang, dict }: HeaderProps) {
     { href: `/${lang}/news`, label: dict.nav.news, badge: "Beta" },
     { href: `/${lang}/go-global`, label: dict.nav.goGlobal, badge: "New" },
     { href: `/${lang}/tools`, label: dict.nav.tools },
-    { href: `/${lang}/prompts/claude-opus-5-5`, match: `/${lang}/prompts`, label: dict.nav.prompts, badge: "New" },
+    { href: `/${lang}/prompts`, match: `/${lang}/prompts`, label: dict.nav.prompts, badge: "New" },
     { href: `/${lang}/services`, label: dict.nav.services },
     { href: `/${lang}/club`, label: "⛵ GoSail Club" },
     { href: `/${lang}/about`, label: dict.nav.about },

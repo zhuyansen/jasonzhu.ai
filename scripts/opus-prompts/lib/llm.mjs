@@ -65,13 +65,16 @@ export function parseJSON(text) {
 let epIdx = 0;
 const modelIdx = new Map();
 
-async function claudeText(prompt, { maxTokens, timeoutMs }) {
+// images：可选的图片（图片库看图起标题用），每项是地址或 { url, label }，label 是放在那张图前面的一行字（标明属于哪个作品）。
+// 不传就是纯文字，和原来完全一样。
+const withImages = (prompt, images, part) => (images.length ? [{ type: "text", text: prompt }, ...images.flatMap((im) => { const { url, label } = typeof im === "string" ? { url: im } : im; return [...(label ? [{ type: "text", text: label }] : []), part(url)]; })] : prompt);
+async function claudeText(prompt, { maxTokens, timeoutMs, images = [] }) {
   if (!endpoints.length) throw new Error("没有可用的模型端点（缺 ANTHROPIC_AUTH_TOKEN / FLATROUTER_API_KEY / APIMART_CLAUDE_KEY / ANTHROPIC_API_KEY）");
   const ep = endpoints[epIdx];
   const model = ep.models[modelIdx.get(ep.label) || 0];
   if (ep.type === "openai") {
     const { status, text } = await post(`${ep.baseURL}/v1/chat/completions`, { Authorization: `Bearer ${ep.key}`, "Content-Type": "application/json" },
-      { model, temperature: 0, max_tokens: maxTokens, messages: [{ role: "user", content: prompt }] }, timeoutMs);
+      { model, temperature: 0, max_tokens: maxTokens, messages: [{ role: "user", content: withImages(prompt, images, (url) => ({ type: "image_url", image_url: { url, detail: "low" } })) }] }, timeoutMs);
     if (status >= 400 || !text) { const err = new Error(`${ep.label}/${model} HTTP ${status}: ${redact(text.slice(0, 200))}`); err.modelProblem = status < 500 && /model/i.test(text) && (modelIdx.get(ep.label) || 0) < ep.models.length - 1; throw err; }
     const j = JSON.parse(text);
     usage.worker.calls++; usage.worker.in += j.usage?.prompt_tokens || 0; usage.worker.out += j.usage?.completion_tokens || 0;
@@ -79,7 +82,7 @@ async function claudeText(prompt, { maxTokens, timeoutMs }) {
     return { text: (j.choices?.[0]?.message?.content || "").trim(), via: `${ep.label}/${model}` };
   }
   const { status, text } = await post(`${ep.baseURL}/v1/messages`, { "x-api-key": ep.key, "anthropic-version": "2023-06-01", "content-type": "application/json" },
-    { model, max_tokens: maxTokens, messages: [{ role: "user", content: prompt }] }, timeoutMs);
+    { model, max_tokens: maxTokens, messages: [{ role: "user", content: withImages(prompt, images, (url) => ({ type: "image", source: { type: "url", url } })) }] }, timeoutMs);
   if (status >= 400 || !text) {
     const err = new Error(`${ep.label}/${model} HTTP ${status}: ${redact(text.slice(0, 200))}`);
     // 代理对模型名敏感：4xx 且报模型问题 → 换下一个模型，不算一次失败
@@ -116,8 +119,8 @@ async function withFailover(label, fn, validate) {
   throw new Error(`${label} failed after retries: ${last?.message}`);
 }
 
-export const workerJSON = (prompt, { label = "worker", maxTokens = 8000, timeoutMs = 240000, validate } = {}) =>
-  withFailover(label, () => claudeText(prompt, { maxTokens, timeoutMs }), validate);
+export const workerJSON = (prompt, { label = "worker", maxTokens = 8000, timeoutMs = 240000, validate, images } = {}) =>
+  withFailover(label, () => claudeText(prompt, { maxTokens, timeoutMs, images }), validate);
 
 export async function reviewerJSON(prompt, { label = "reviewer", maxTokens = 6000, timeoutMs = 240000, validate } = {}) {
   const key = process.env.FLATROUTER_API_KEY;
@@ -159,6 +162,8 @@ const arbiterEndpoints = [
     models: (process.env.APIMART_ARBITER_MODELS || "claude-opus-5-5,claude-opus-4-6").split(",") },
 ].filter(Boolean);
 const unavailable = new Set(); // "label/model" 组合，本次运行内不再尝试
+/** 有没有配任何终审通道（本机通常没有）：没有就不必一批批重试空等 */
+export const arbiterAvailable = () => arbiterEndpoints.length > 0;
 
 export async function arbiterJSON(prompt, { label = "arbiter", maxTokens = 8000, timeoutMs = 300000, validate } = {}) {
   let last, throttled = false;

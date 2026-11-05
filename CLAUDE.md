@@ -69,6 +69,7 @@ Git：commit 后如远程有新提交（cron 会自动 commit 快讯），先 `g
 - 客户端组件只能引 `@/lib/opus-prompts-shared`；`@/lib/opus-prompts` 导入整份 JSON，引了会打进 JS 包。
 - 提示词一律原文照录，出处必须可追溯；人工把关记录在 `scripts/opus-prompts/data/curation.json`，下架也走这里。
 - 三条自动任务：每日收录新作品（`opus-prompts-daily.yml`，Opus / Sonnet / Haiku / Fable 5.5，一天跑一次（北京 9:17；每次 push 都是一次 Vercel 部署、约 1.4 GB 按月计存储费，别再加档）、每次最多 80 个，延迟 24 小时，Jev 审核、拿不准的交 Opus 终审拍板，终审不可用才进滚动 PR `opus-prompts/pending`）、每周数据核验、GitHub 合集每日同步。细节在 `scripts/opus-prompts/README.md`。
+- **第二个库：ChatGPT Images 2.6 合集（2026-11-05 起，`app/[lang]/prompts/chatgpt-images-2-6`）**：OpenAI 11-04 发布的图像模型，收 X 上浏览 ≥5000、作者说用 Images 2.6 做的图片 / GIF / 视频。管线在 `scripts/image-prompts/`（流程同 Claude 库，共用 `opus-prompts/lib`，共用模块只加了可选参数，不传就是原行为），每天在同一个工作流里接着 Claude 库跑、一起提交一次（失败不挡 Claude 库）。源 `src/content/image-prompts/chatgpt-images-2-6.json` → `generate-image-prompts.mjs`（已接入 prebuild）。没有提示词的作品不建详情页，卡片直链原帖，别加回 noindex 详情页（robots.txt 会再涨）。分类之后有一步看图（第一张图 + 帖子文字交给能看图的 GPT）：重写标题、核对视觉分类，也是唯一看像素的安全检查；看图写的标题终审不能改。`/prompts` 是两个库的总览页（以前直接跳 Claude 库），导航「提示词」指向它。GitHub 合集 `zhuyansen/awesome-chatgpt-images-2.6`。细节见 `scripts/image-prompts/README.md`。
 
 **订阅（核心引流，4 个入口共用 /api/subscribe）**
 - 反 bot：honeypot(website 字段) + time-trap(ts<1.5s 拒) + Origin 白名单（localhost 任意端口放行）。被判 bot 时静默返回 success。
