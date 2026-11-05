@@ -30,21 +30,23 @@ fs.writeFileSync(path.join(OUT, "cases.json"), JSON.stringify({
 const row = (c, l) => `| [${esc(l === "zh" ? c.title.zh : c.title.en)}](${c.url}) | ${kinds(c)} | [@${c.author.handle}](https://x.com/${c.author.handle}) | ${c.prompt ? `[${c.prompt.kind === "full" ? (l === "zh" ? "完整提示词" : "Full prompt") : (l === "zh" ? "一句话指令" : "Brief")}](${detail(c, l)})` : "—"} |`;
 for (const [k, en, zh] of CATS) {
   const list = cases.filter((c) => c.category === k);
+  if (!list.length) continue; // 没有作品的分类不出空表（README 也只列有作品的）
   for (const l of ["en", "zh"]) {
-    const head = l === "zh" ? `# ${zh}\n\n共 ${list.length} 个作品，其中 ${list.filter((c) => c.prompt).length} 个附提示词。标题链接到 X 原帖，提示词链接到带原文和出处的页面。\n\n| 作品 | 类型 | 创作者 | 提示词 |\n|---|---|---|---|`
-      : `# ${en}\n\n${list.length} works, ${list.filter((c) => c.prompt).length} with a prompt. Titles link to the original post on X; prompt links open the page with the original text and its source.\n\n| Work | Type | Creator | Prompt |\n|---|---|---|---|`;
+    const head = l === "zh" ? `# ${zh}\n\n共 ${list.length} 个作品${list.some((c) => c.prompt) ? `，其中 ${list.filter((c) => c.prompt).length} 个附提示词` : ""}。标题链接到 X 原帖，提示词链接到带原文和出处的页面。\n\n| 作品 | 类型 | 创作者 | 提示词 |\n|---|---|---|---|`
+      : `# ${en}\n\n${list.length} works${list.some((c) => c.prompt) ? `, ${list.filter((c) => c.prompt).length} with a prompt` : ""}. Titles link to the original post on X; prompt links open the page with the original text and its source.\n\n| Work | Type | Creator | Prompt |\n|---|---|---|---|`;
     fs.writeFileSync(path.join(OUT, "cases", `${k}${l === "zh" ? ".zh-CN" : ""}.md`), head + "\n" + list.map((c) => row(c, l)).join("\n") + "\n");
   }
 }
-const featured = withP.slice(0, 8);
-const grid = (l) => !featured.length ? "" : "<table>\n" + [0, 4].filter((o) => featured.length > o).map((o) => "  <tr>\n" + featured.slice(o, o + 4).map((c) => `    <td width="25%" align="center"><a href="${detail(c, l)}"><img src="${thumb(c.media[0])}" width="200" alt="${(l === "zh" ? c.title.zh : c.title.en).replace(/"/g, "&quot;")}"></a><br><sub>${l === "zh" ? c.title.zh : c.title.en}</sub></td>`).join("\n") + "\n  </tr>").join("\n") + "\n</table>";
+// 首屏 8 个：带提示词的优先，不够用浏览量最高的作品补（没有提示词的链到 X 原帖）
+const featured = [...withP, ...cases.filter((c) => !c.prompt).sort((a, b) => b.stats.views - a.stats.views)].slice(0, 8);
+const grid = (l) => !featured.length ? "" : "<table>\n" + [0, 4].filter((o) => featured.length > o).map((o) => "  <tr>\n" + featured.slice(o, o + 4).map((c) => `    <td width="25%" align="center"><a href="${c.prompt ? detail(c, l) : c.url}"><img src="${thumb(c.media[0])}" width="200" alt="${(l === "zh" ? c.title.zh : c.title.en).replace(/"/g, "&quot;")}"></a><br><sub>${l === "zh" ? c.title.zh : c.title.en}</sub></td>`).join("\n") + "\n  </tr>").join("\n") + "\n</table>";
 const count = (k) => cases.filter((c) => c.category === k).length;
 const date = (src.updatedAt || "").slice(0, 10);
 const readme = (l) => l === "zh" ? `# ChatGPT Images 2.6 提示词合集
 
 [English](README.md) | 简体中文
 
-X 上用 **ChatGPT Images 2.6**（OpenAI 2026-11-04 发布，API 名 GPT-Image-2.6 Flare / Sunburst）做的图片和 GIF 作品，**${cases.length}** 个，其中 **${withP.length}** 个附作者公开的提示词。每天自动更新（最近一次：${date}）。
+X 上用 **ChatGPT Images 2.6**（OpenAI 2026-11-04 发布，API 名 GPT-Image-2.6 Flare / Sunburst）做的图片和 GIF 作品，**${cases.length}** 个，${withP.length ? `其中 **${withP.length}** 个附作者公开的提示词` : "作者公开了提示词的原文照录"}。每天自动更新（最近一次：${date}）。
 
 在线浏览（GIF 可直接播放、提示词一键复制）：**[jasonzhu.ai/zh/prompts/chatgpt-images-2-6](${SITE}/zh/prompts/chatgpt-images-2-6)**
 
@@ -67,7 +69,7 @@ ${CATS.filter(([k]) => count(k)).map(([k, , zh]) => `- [${zh}](cases/${k}.zh-CN.
 
 English | [简体中文](README.zh-CN.md)
 
-Images and GIFs made with **ChatGPT Images 2.6** (OpenAI, released 2026-11-04; GPT-Image-2.6 Flare / Sunburst in the API) by creators on X: **${cases.length}** works, **${withP.length}** with the prompt the creator shared. Updated daily (last update: ${date}).
+Images and GIFs made with **ChatGPT Images 2.6** (OpenAI, released 2026-11-04; GPT-Image-2.6 Flare / Sunburst in the API) by creators on X: **${cases.length}** works${withP.length ? `, **${withP.length}** with the prompt the creator shared` : ", with the prompt kept verbatim whenever the creator shared one"}. Updated daily (last update: ${date}).
 
 Browse with playable GIFs and one-click copy: **[jasonzhu.ai/en/prompts/chatgpt-images-2-6](${SITE}/en/prompts/chatgpt-images-2-6)**
 
