@@ -6,6 +6,7 @@ import { getImageCase, getImageLibrary, IMAGE_LIBRARY_PATH, imageCategoryLabel, 
 import fullData from "@/generated/image-prompts-full.json";
 import { withSocialCards } from "@/lib/social";
 import CopyPrompt from "../../claude-opus-5-5/CopyPrompt";
+import PromptsSubscribe from "../../claude-opus-5-5/PromptsSubscribe";
 import CaseMedia from "../CaseMedia";
 
 const SITE_URL = "https://jasonzhu.ai";
@@ -139,6 +140,13 @@ export default async function ImageCasePage({ params }: { params: Promise<{ lang
           <p className="text-xs text-gray-400 mt-2">
             {isZh ? "模型归属以作者自述为准。作品版权归原作者，要更正署名或下架请私信 @GoSailGlobal。" : "Model attribution is as stated by the creator. The work belongs to its creator; DM @GoSailGlobal to fix credit or remove it."}
           </p>
+
+          {/* 英文详情页的订阅入口，和 Claude 库英文详情页一样放在提示词下面（2026-11-06） */}
+          {!isZh && (
+            <div className="mt-6">
+              <PromptsSubscribe lang={lang} where="detail" library="images" />
+            </div>
+          )}
         </div>
       </div>
 

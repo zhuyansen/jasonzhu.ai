@@ -28,6 +28,9 @@ const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "AI快讯 <news@jasonzhu.ai>
 // 测试订阅留下的保留域名地址（example.com 之类）。Resend 会把含它们的整批 50 封一起拒掉（422），
 // 以前每天第 4、5 批共 100 个真订阅者因此收不到。
 const TEST_ADDRESS = /@(([^@]+\.)?example\.(com|net|org)|[^@]+\.(test|example|invalid|localhost))$/i;
+// 英文提示词库的订阅者（来源以 prompts-en 开头）：订阅时只答应「有值得一试的新提示词才发」，不发中文快讯。
+// 2026-10-27 到 11-06 这批人（83 个）每天都收到了中文快讯，11-06 起剔除。先取最新 1000 个再剔，名单范围不变、不会多发给谁。
+const ENGLISH_LIST = /^prompts-en/;
 
 // ─── Check prerequisites ────────────────────────────
 
@@ -175,7 +178,7 @@ async function main() {
   // 订阅者（全表约 4,700 个），要改先问他。
   const { data: subscribers, error } = await supabase
     .from("subscribers")
-    .select("email")
+    .select("email, source")
     .order("subscribed_at", { ascending: false });
 
   if (error) {
@@ -188,8 +191,13 @@ async function main() {
     return;
   }
 
-  const recipients = subscribers.filter((s) => !TEST_ADDRESS.test(s.email || ""));
-  console.log(`📬 Found ${subscribers.length} subscribers, skipped ${subscribers.length - recipients.length} test addresses`);
+  const isTest = (s) => TEST_ADDRESS.test(s.email || "");
+  const isEnglish = (s) => ENGLISH_LIST.test(s.source || "");
+  const recipients = subscribers.filter((s) => !isTest(s) && !isEnglish(s));
+  console.log(
+    `📬 Found ${subscribers.length} subscribers, skipped ${subscribers.filter(isTest).length} test addresses` +
+      ` and ${subscribers.filter((s) => !isTest(s) && isEnglish(s)).length} English prompt-library subscribers`
+  );
 
   const html = buildEmailHtml(todayDigest);
   const subject = `AI 快讯 · ${MONTH_DAY} — ${todayDigest.items[0]?.title || "今日精选"}`;

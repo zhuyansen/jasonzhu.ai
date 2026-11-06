@@ -161,10 +161,13 @@ async function recipients() {
   if (!supabaseUrl || !supabaseKey) fail("Supabase not configured");
   const { data, error } = await createClient(supabaseUrl, supabaseKey)
     .from("subscribers")
-    .select("email")
+    .select("email, source")
     .order("subscribed_at", { ascending: false });
   if (error) fail(`failed to fetch subscribers: ${error.message}`);
-  return (data || []).map((s) => s.email);
+  // 和快讯邮件一样：剔除 example.com 之类的测试地址（Resend 会把含它们的整批 50 封一起拒掉），
+  // 也剔除英文提示词库的订阅者（来源以 prompts-en 开头，订阅时只答应发新提示词，不发中文周报）
+  const TEST_ADDRESS = /@(([^@]+\.)?example\.(com|net|org)|[^@]+\.(test|example|invalid|localhost))$/i;
+  return (data || []).filter((s) => !TEST_ADDRESS.test(s.email || "") && !/^prompts-en/.test(s.source || "")).map((s) => s.email);
 }
 
 async function send(to, subject, html) {
