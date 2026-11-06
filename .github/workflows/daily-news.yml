@@ -36,28 +36,49 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 定时跑时，今天的快讯已经发出（≥3 条，和 collect-news.mjs 的幂等判断一致）就整轮跳过。
+      # 今天的快讯已经发出（≥3 条，和 collect-news.mjs 的幂等判断一致）时，定时跑不再采集、重画封面、提交（skip）。
       # 采集脚本自己会跳过，但封面图每次都会重画、被判成「有变化」，以前每档重试都会
       # 多一次提交、多一次 Vercel 部署，再给全体订阅者发一封同样的邮件。
-      - name: Skip if today's digest is already out
+      # 邮件看发信账本（KV 的 digest-email:<日期>，scripts/lib/digest-email-ledger.mjs）：前一档发信失败、只发了一部分、
+      # 或发信那步根本没跑到（none），这档补发邮件（retry_email；发信脚本只补没收到的人）。已发完 / 按要求不发：不发。
+      # 停在「发送中」（上次发到一半没收尾，不知道发到哪了）：不自动重发，最后一档告警等人处理。
+      # 手动跑（date 留空）也看账本：告警之后修好原因、手动跑一次就会补发（采集、封面照旧跑）。
+      - name: Check whether today's digest and email are out
         id: done
-        if: github.event_name == 'schedule'
+        if: github.event_name == 'schedule' || inputs.date == ''
+        env:
+          EVENT: ${{ github.event_name }}
+          KV_REST_API_URL: ${{ secrets.KV_REST_API_URL }}
+          KV_REST_API_TOKEN: ${{ secrets.KV_REST_API_TOKEN }}
         run: |
           FILE="src/content/news/$(TZ=Asia/Shanghai date +%Y-%m-%d).md"
           if [ -f "$FILE" ] && [ "$(grep -c '^###[[:space:]]' "$FILE")" -ge 3 ]; then
-            echo "skip=true" >> "$GITHUB_OUTPUT"
-            echo "$FILE 已有，这档不再重画封面、提交和发邮件"
+            if [ "$EVENT" = "schedule" ]; then
+              echo "skip=true" >> "$GITHUB_OUTPUT"
+              echo "$FILE 已有，这档不再采集、重画封面、提交"
+            fi
+            # 账本脚本不依赖 npm 包，runner 自带的 node 就能跑；读不到账本打印 unknown（交给发信脚本自己再查一遍）
+            EMAIL=$(node scripts/lib/digest-email-ledger.mjs status || echo unknown)
+            case "$EMAIL" in
+              sent|skipped)
+                echo "邮件已经处理完（$EMAIL），不再发" ;;
+              sending)
+                echo "::warning::上一次发信停在半路没收尾，不自动重发（最后一档会告警）" ;;
+              *)
+                echo "retry_email=true" >> "$GITHUB_OUTPUT"
+                echo "邮件还没发完（账本：$EMAIL），这档补发" ;;
+            esac
           fi
 
       - name: Setup Node.js
-        if: steps.done.outputs.skip != 'true'
+        if: steps.done.outputs.skip != 'true' || steps.done.outputs.retry_email == 'true'
         uses: actions/setup-node@v4
         with:
           node-version: "22"
           cache: "npm"
 
       - name: Install dependencies
-        if: steps.done.outputs.skip != 'true'
+        if: steps.done.outputs.skip != 'true' || steps.done.outputs.retry_email == 'true'
         run: npm ci
 
       - name: Collect and generate news
@@ -117,34 +138,69 @@ jobs:
           git commit -m "📰 AI 快讯自动采集 ${DATE_LABEL}"
           git push
 
+      # 发信脚本先看账本：今天这期已发完就什么都不做（手动重跑也不会再发一遍）；上次没发完就只补发没收到的人。
+      # 还有批次没发出去就以失败退出（这档标红），交给下一档补发。
       - name: Send digest email
-        if: steps.changes.outputs.changed == 'true' && inputs.skip_email != '1'
+        if: inputs.skip_email != '1' && (steps.changes.outputs.changed == 'true' || steps.done.outputs.retry_email == 'true')
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
           UNSUBSCRIBE_SECRET: ${{ secrets.UNSUBSCRIBE_SECRET }}  # 每封邮件的退订链接签名，和 Vercel 上的同一个值；缺了脚本报错、不发
+          KV_REST_API_URL: ${{ secrets.KV_REST_API_URL }}  # 发信账本；不通就不发
+          KV_REST_API_TOKEN: ${{ secrets.KV_REST_API_TOKEN }}
+          GH_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: node scripts/send-digest-email.mjs
 
-      # 失败通知 —— 三次都挂才发，避免噪音
-      - name: Notify on final failure (last retry)
-        if: failure() && github.event.schedule == '15 23 * * *'
+      # 手动跑、选了不发邮件：记进账本，免得之后的定时档当成「没发成」给订阅者补发
+      - name: Record that this digest is not emailed
+        if: inputs.skip_email == '1' && steps.changes.outputs.changed == 'true'
+        env:
+          KV_REST_API_URL: ${{ secrets.KV_REST_API_URL }}
+          KV_REST_API_TOKEN: ${{ secrets.KV_REST_API_TOKEN }}
+          GH_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          RUN_DATE: ${{ inputs.date }}  # 留空 = 今天
+        run: node scripts/lib/digest-email-ledger.mjs skip "$RUN_DATE"
+
+      # 告警只在最后一档发，避免噪音。不管这档成功、失败还是整轮跳过都检查一遍：
+      # 今天的快讯还没生成，或者生成了但邮件没发完（账本不是 sent / skipped），就给 ALERT_EMAIL 发一封。
+      - name: Alert if today's digest or email is not out (last retry)
+        if: always() && github.event.schedule == '15 23 * * *'
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           ALERT_EMAIL: ${{ secrets.ALERT_EMAIL }}
+          KV_REST_API_URL: ${{ secrets.KV_REST_API_URL }}
+          KV_REST_API_TOKEN: ${{ secrets.KV_REST_API_TOKEN }}
           GH_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          JOB_STATUS: ${{ job.status }}
         run: |
           if [ -z "$RESEND_API_KEY" ] || [ -z "$ALERT_EMAIL" ]; then
             echo "⚠️ RESEND_API_KEY / ALERT_EMAIL 未设置，跳过告警邮件"
             exit 0
           fi
           DATE=$(TZ=Asia/Shanghai date +%Y-%m-%d)
-          curl -s -X POST https://api.resend.com/emails \
-            -H "Authorization: Bearer $RESEND_API_KEY" \
-            -H "Content-Type: application/json" \
-            -d "{
-              \"from\": \"alerts@jasonzhu.ai\",
-              \"to\": [\"$ALERT_EMAIL\"],
-              \"subject\": \"⚠️ AI 快讯 cron 三次全失败 ($DATE)\",
-              \"html\": \"今天三次 cron（北京 05:30 / 06:30 / 07:15）全部失败，请手动检查：<br><a href='$GH_RUN_URL'>查看日志</a>\"
-            }"
+          FILE="src/content/news/$DATE.md"
+          LOG="<a href='$GH_RUN_URL'>这档的运行日志</a>"
+          if [ -f "$FILE" ] && [ "$(grep -c '^###[[:space:]]' "$FILE")" -ge 3 ]; then
+            EMAIL=$(node scripts/lib/digest-email-ledger.mjs status || echo unknown)
+            case "$EMAIL" in
+              sent|skipped) echo "今天的快讯和邮件都处理完了（$EMAIL），不告警"; exit 0 ;;
+            esac
+            # 账本说明里可能带 Resend 的报错原文，转义后再放进 HTML
+            DETAIL=$( (node scripts/lib/digest-email-ledger.mjs summary "$DATE" 2>&1 || echo "账本说明读不出来") |
+              sed -e 's/&/\&amp;/g' -e 's/</\&lt;/g' -e 's/>/\&gt;/g')
+            SUBJECT="⚠️ AI 快讯邮件没发完 ($DATE)"
+            HTML="今天的快讯已经发布，但订阅邮件没发完（账本：$EMAIL）。<br><br>$DETAIL<br><br>"
+            HTML="$HTML原因修好后，在 Actions 里手动 Run workflow（date 留空）：只补发还没收到的人，同一批用原来的 Idempotency-Key，不会重复发。<br>"
+            HTML="$HTML停在 sending（发到一半没收尾）的，要先看日志和 Resend 后台，再用 <code>node --env-file=.env.local scripts/lib/digest-email-ledger.mjs set $DATE sent|failed</code> 改账本。<br>$LOG"
+          else
+            SUBJECT="⚠️ AI 快讯今天没生成 ($DATE)"
+            HTML="三档 cron（北京 05:30 / 06:30 / 07:15，常被 GitHub 推迟几小时）都跑过了，今天的快讯还没生成（这档结果：$JOB_STATUS），请手动检查：<br>$LOG"
+          fi
+          echo "$SUBJECT"
+          jq -n --arg to "$ALERT_EMAIL" --arg subject "$SUBJECT" --arg html "$HTML" \
+            '{from: "alerts@jasonzhu.ai", to: [$to], subject: $subject, html: $html}' |
+            curl -sS --fail-with-body -X POST https://api.resend.com/emails \
+              -H "Authorization: Bearer $RESEND_API_KEY" \
+              -H "Content-Type: application/json" \
+              --data-binary @-
