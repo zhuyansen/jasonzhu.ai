@@ -2,18 +2,19 @@
 
 - 订阅：Supabase subscribers（只取 source / created_at / unsubscribed_at，不取邮箱）+ KV 兜底队列积压（订阅、退订）
 - 文章阅读：Supabase page_views 是累计计数，和上次快照（state/page_views.json，CI 用 actions/cache 带过来）做差得到当日增量
-- 管线：今日快讯有没有出、提示词库每日收录、GitHub 合集同步、各 workflow 最近一次结果、线上 sitemap 条数
+- 管线：今日快讯有没有出、昨天那期的邮件发完没有（KV 发信账本）、提示词库每日收录、GitHub 合集同步、各 workflow 最近一次结果、线上 sitemap 条数
 """
 import glob
 import json
 import os
 import re
+import time
 from collections import Counter
 from datetime import datetime, timedelta
 
 import requests
 
-from common import CST, REPO_ROOT, STATE, run, save, secret, today_cst
+from common import CST, REPO_ROOT, STATE, redact, run, save, secret, today_cst
 
 WORKFLOWS = {"daily-news.yml": "快讯采集", "opus-prompts-daily.yml": "提示词库每日收录",
              "opus-prompts-refresh.yml": "提示词库每周核验", "indexnow.yml": "IndexNow 推送"}
@@ -105,16 +106,65 @@ def kv_pending(get):
     return {"queued": len(emails), "missing": len(emails) - present, "unsub_queued": int(u.json().get("result") or 0)}
 
 
+def kv_get(key):
+    """Upstash REST 读一个 key（没有返回 None）。网络错误 / 5xx / 429 再试两次，和 scripts/lib/digest-email-ledger.mjs 一样。"""
+    url, tok = secret("KV_REST_API_URL"), secret("KV_REST_API_TOKEN")
+    for attempt in (1, 2, 3):
+        try:
+            r = requests.get(f"{url.rstrip('/')}/get/{key}", headers={"Authorization": f"Bearer {tok}"}, timeout=15)
+            if r.status_code < 500 and r.status_code != 429:
+                r.raise_for_status()
+                return r.json().get("result")
+            problem = f"HTTP {r.status_code}"
+        except (requests.ConnectionError, requests.Timeout) as e:
+            problem = e
+        if attempt == 3:
+            raise RuntimeError(f"KV GET {key}：{problem}")
+        time.sleep(2 * attempt)
+
+
+def digest_email(date):
+    """某天那期快讯邮件发到哪了：KV digest-email:<北京日期>，scripts/lib/digest-email-ledger.mjs 写的发信账本（2026-11-06 起）。
+    daily-news 最后一档没发完会给 ALERT_EMAIL 告警，但那档被 GitHub 丢掉、或 runner 中途没了，就没人告警，日报这里兜底。
+    只读；pending 里的订阅者 id 只留人数（out/ 会传到 Actions artifact）。读不到不抛错，记 status=unknown，日报照样告警：读不到 = 没法确认发没发。"""
+    url = secret("KV_REST_API_URL")
+    if not url or not secret("KV_REST_API_TOKEN"):
+        return {"status": "unknown", "read_error": "没配 KV_REST_API_URL / KV_REST_API_TOKEN"}
+    # 日报全文也写进 Actions 运行摘要（公开仓库谁都看得到）：报错里的 KV 主机名、邮箱地址抹掉，换行压成一行
+    host = re.sub(r"^\w+://|[/:].*$", "", url)
+
+    def clean(s, n):
+        s = str(s).replace(host, "kv-host") if host else str(s)
+        return re.sub(r"\s+", " ", re.sub(r"[\w.+-]+@[\w-]+(\.[\w-]+)+", "***@***", s))[:n]
+
+    try:
+        raw = kv_get(f"digest-email:{date}")
+        if raw is None:
+            return {"status": "none"}
+        rec = json.loads(raw)
+        pending = rec.get("pending") or []
+        return {"status": rec.get("status"), "total": rec.get("total"), "sent": rec.get("sent"), "dropped": rec.get("dropped") or 0,
+                "pending_batches": len(pending), "pending_people": sum(len(b.get("ids") or []) for b in pending),
+                "attempts": rec.get("attempts"), "run": rec.get("run"), "started_at": rec.get("startedAt"),
+                "manual_fix": rec.get("manualFix"), "error": clean(rec["error"], 300) if rec.get("error") else None}
+    except Exception as e:  # noqa: BLE001 — KV 不通、不是 JSON：都算读不到
+        return {"status": "unknown", "read_error": clean(redact(f"{type(e).__name__}: {e}"), 200)}
+
+
 def news():
     files = sorted(glob.glob(os.path.join(REPO_ROOT, "src/content/news/*.md")))
     latest = os.path.basename(files[-1])[:-3] if files else None
-    today = str(today_cst())
+    today = today_cst()
     items = 0
-    if latest == today:
+    if latest == str(today):
         txt = open(files[-1]).read()
         body = txt.split("### 💰")[0]
         items = len(re.findall(r"^### ", body, re.M))
-    return {"today": today, "latest": latest, "published_today": latest == today, "items_today": items}
+    # 邮件看昨天那期：快讯 cron 常被 GitHub 推迟几小时（11-06 那天 9:44–11:26 才跑），日报 8:20 跑时今天的还没发完，昨天的已经是最终结果
+    yday = str(today - timedelta(days=1))
+    return {"today": str(today), "latest": latest, "published_today": latest == str(today), "items_today": items,
+            "yesterday": {"date": yday, "published": os.path.exists(os.path.join(REPO_ROOT, f"src/content/news/{yday}.md")),
+                          "email": digest_email(yday)}}
 
 
 def prompt_library():

@@ -49,6 +49,49 @@ def section_status(name, d, label):
     return False
 
 
+def digest_email(yd):
+    """昨天那期快讯邮件的最终状态（fetch_site 读的 KV 发信账本）→（管线一行, 告警或 None）。
+    daily-news 最后一档没发完会给 ALERT_EMAIL 告警；那档被 GitHub 丢掉、或 runner 中途没了，就靠日报这里兜底。"""
+    d, md, e = yd["date"], yd["date"][5:], yd.get("email") or {}
+    st, run = e.get("status"), str(e.get("run") or "")
+    log = f"[运行日志]({run})" if run.startswith("http") else run
+    head = f"昨日快讯邮件（{md}）"
+    late = "。自动补发只管当天那期，昨天这期不会再补；按日志修好原因，免得今天也发不出去"
+    if not yd.get("published"):
+        return (f"⚠️ 昨日快讯（{md}）没有生成，没发邮件",
+                f"昨天（{d}）的快讯没有生成，订阅者那天没收到邮件：daily-news 三档都没跑成（被 GitHub 丢了或都失败了），最后一档的告警可能也没发出——去 Actions 看 daily-news")
+    if st == "sent":
+        if e.get("manual_fix"):
+            return f"✅ {head}：人工标记为发完（账本里确认发出 {e.get('sent')}/{e.get('total')}）", None
+        drop = f"，{e['dropped']} 人补发前退订或被挤出最新 1000 个、没补发" if e.get("dropped") else ""
+        return f"✅ {head}：已发 {e.get('sent')}/{e.get('total')}{drop}", None
+    if st == "skipped":
+        return f"⏭ {head}：按要求不发（手动跑选了 skip_email）", None
+    if st == "failed":
+        if e.get("total") is None:
+            return (f"⚠️ {head}：一封都没发",
+                    f"昨天（{d}）的快讯邮件一封都没发：{e.get('error')}（第 {e.get('attempts')} 次，{log}）{late}")
+        return (f"⚠️ {head}：没发完，已发 {e.get('sent')}/{e.get('total')}",
+                f"昨天（{d}）的快讯邮件没发完：已发 {e.get('sent')}/{e.get('total')}，还有 {e.get('pending_batches')} 批 {e.get('pending_people')} 人没发出去；"
+                f"最近一次报错：{e.get('error')}（第 {e.get('attempts')} 次，{log}）{late}")
+    if st == "sending":
+        s = e.get("started_at")
+        try:   # 账本是另一个脚本写的，时间格式不对也不能让整封日报挂掉
+            at = datetime.fromisoformat(s.replace("Z", "+00:00")).astimezone(CST).strftime("%m-%d %H:%M")
+        except (AttributeError, TypeError, ValueError):
+            at = s or "?"
+        return (f"⚠️ {head}：停在「发送中」，账本里确认发出 {e.get('sent')}/{e.get('total')}",
+                f"昨天（{d}）的快讯邮件停在「发送中」没收尾：{at} 开始发（{log}），账本里确认发出 {e.get('sent')}/{e.get('total')}"
+                f"（发到一半进程没了，或发完了但账本没记上）——看运行日志和 Resend 后台，确认订阅者收到没有")
+    if st == "none":
+        return (f"⚠️ {head}：没有发信记录",
+                f"昨天（{d}）的快讯发布了，但没有发信记录，订阅者多半没收到：发信那一步没跑到，或在记账前就退出了"
+                f"（比如缺 RESEND_API_KEY / UNSUBSCRIBE_SECRET / KV 配置）——看 daily-news 那天的运行日志")
+    if st == "unknown":
+        return f"❔ {head}：读不到发信账本", f"读不到昨天（{d}）的快讯发信账本，没法确认邮件发没发：{e.get('read_error')}"
+    return f"⚠️ {head}：账本状态看不懂（{st}）", f"昨天（{d}）的快讯发信账本状态看不懂：{st}"
+
+
 site, gsc, vercel, ga, clarity, channels = load("site"), load("gsc"), load("vercel"), load("ga"), load("clarity"), load("channels")
 usage = load("vercel_usage")
 today = today_cst(); y = today - timedelta(days=1)
@@ -64,6 +107,11 @@ if site.get("ok"):
             alerts.append(f"今天（{nw.get('today')}）的快讯还没出，最新一期是 {nw.get('latest')}")
         else:
             health.append(f"⏳ 今日快讯还没到发布时间（最新一期 {nw.get('latest')}）")
+        if nw.get("yesterday"):
+            line, problem = digest_email(nw["yesterday"])
+            health.append(line)
+            if problem:
+                alerts.append(problem)
     for wf in site.get("workflows") or []:
         if wf.get("error"):
             health.append(f"❔ {wf['label']}：查不到运行记录（{wf['error']}）")
