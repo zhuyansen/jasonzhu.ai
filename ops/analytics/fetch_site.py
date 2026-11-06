@@ -160,7 +160,8 @@ def news():
         txt = open(files[-1]).read()
         body = txt.split("### 💰")[0]
         items = len(re.findall(r"^### ", body, re.M))
-    # 邮件看昨天那期：快讯 cron 常被 GitHub 推迟几小时（11-06 那天 9:44–11:26 才跑），日报 8:20 跑时今天的还没发完，昨天的已经是最终结果
+    # 邮件看昨天那期：快讯和日报的 cron 都常被 GitHub 推迟好几个小时（11-06 快讯 9:44–11:26 才跑；日报排在 8:20，实际 14:58 才跑），
+    # 日报跑的时候今天这期不一定发完，昨天的已经定了
     yday = str(today - timedelta(days=1))
     return {"today": str(today), "latest": latest, "published_today": latest == str(today), "items_today": items,
             "yesterday": {"date": yday, "published": os.path.exists(os.path.join(REPO_ROOT, f"src/content/news/{yday}.md")),

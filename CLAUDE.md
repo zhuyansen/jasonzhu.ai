@@ -94,7 +94,7 @@ Git：commit 后如远程有新提交（cron 会自动 commit 快讯），先 `g
 **数据日报（.github/workflows/analytics-daily.yml，北京 8:20 邮件）**
 - `ops/analytics/`（Python）：fetch_site（订阅 / 文章阅读增量 / KV 漏回灌 / 管线健康）、fetch_gsc、fetch_vercel、fetch_ga、fetch_clarity → digest.py → send_email.py（Resend）。一个源失败只在日报里标 ⚠️，没配凭证的源写「未接入」。
 - KV `pending_subscribers` 是每次订阅都双写的镜像，有积压不代表丢线索；只有「KV 有、Supabase 没有」才需要跑 reconcile-leads。
-- 「昨日快讯邮件」一行（2026-11-06 起）：只读 KV 发信账本 `digest-email:<昨天>`，给 daily-news 最后一档的告警兜底（那档被 GitHub 丢掉、或 runner 中途没了，就没人告警）。昨天的快讯没生成，或生成了但账本没有记录 / failed / sending / 读不到，日报开头告警。看昨天不看今天：快讯 cron 常被推迟几小时，8:20 时今天这期还没发完。
+- 「昨日快讯邮件」一行（2026-11-06 起）：只读 KV 发信账本 `digest-email:<昨天>`，给 daily-news 最后一档的告警兜底（那档被 GitHub 丢掉、或 runner 中途没了，就没人告警）。昨天的快讯没生成，或生成了但账本没有记录 / failed / sending / 读不到，日报开头告警。看昨天不看今天：快讯和日报的 cron 都常被 GitHub 推迟好几个小时（11-06 快讯 9:44–11:26 才跑；日报排在 8:20，近 10 天实际 13:54–14:59 才跑），日报跑的时候今天这期不一定发完，昨天的已经定了。
 - 转化事件统一走 `src/lib/track.ts` 的 `track()`，事件名和 digest.py 的 CONVERSIONS 对应；GA4/Clarity ID 没填时不加载任何第三方脚本。
 - Vercel Web Analytics 用官方 `/v1/query/web-analytics/visits/aggregate`，前提是项目里 Analytics 开关已打开。
 
