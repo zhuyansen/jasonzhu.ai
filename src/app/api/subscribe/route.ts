@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getSupabase } from "@/lib/supabase";
 import { rateLimit } from "@/lib/rate-limit";
-import { backupLead } from "@/lib/lead-backup";
+import { backupLead, clearPendingUnsubscribe } from "@/lib/lead-backup";
 import { isLeadMagnet, LINK_TTL_DAYS, type LinkLang } from "@/lib/download-link";
 import { overLimit, sendLeadMagnetEmail } from "@/lib/lead-magnet-email";
 
@@ -128,7 +128,19 @@ export async function POST(request: NextRequest) {
       .eq("email", addr)
       .single();
 
-    if (existing) return reply(true);
+    if (existing) {
+      // 退订过的人自己又来订阅（2026-11-06 起有退订）：视为重新同意，清空 unsubscribed_at。subscribed_at 不动，
+      // 不会因此挪进或挪出群发的「最新 1000 个」。还没跑迁移（没有这一列）时 update 报错，当普通的已订阅处理。
+      const { data: resumed } = await supabase
+        .from("subscribers")
+        .update({ unsubscribed_at: null })
+        .eq("id", existing.id)
+        .not("unsubscribed_at", "is", null)
+        .select("id");
+      // Supabase 写失败时记进 KV 的退订也撤掉，免得之后回灌又把人退订了
+      await clearPendingUnsubscribe(existing.id);
+      return reply(!resumed?.length);
+    }
 
     // Insert new subscriber (primary: Supabase)
     const { error } = await supabase.from("subscribers").insert({

@@ -43,3 +43,35 @@ export async function backupLead(
     return false;
   }
 }
+
+// ─── 退订兜底（2026-11-06）────────────────────────────────────────────
+// Supabase 写不进去时（比如 6 月那次超额被锁成只读），退订先记在 KV hash `pending_unsubscribes`（订阅者 id → 退订时间），
+// 页面照常显示「已退订」；Supabase 恢复后跑 scripts/reconcile-leads.mjs 写回主表，日报里有积压告警。
+const PENDING_UNSUBSCRIBES = "pending_unsubscribes";
+
+async function kvCommand(command: string[]): Promise<boolean> {
+  if (!KV_URL || !KV_TOKEN) return false;
+  try {
+    const res = await fetch(`${KV_URL}/pipeline`, {
+      method: "POST",
+      headers: { Authorization: `Bearer ${KV_TOKEN}`, "Content-Type": "application/json" },
+      body: JSON.stringify([command]),
+      signal: AbortSignal.timeout(5000),
+    });
+    if (!res.ok) return false;
+    const out = (await res.json()) as { result?: unknown; error?: string }[];
+    return Array.isArray(out) && !out[0]?.error;
+  } catch {
+    return false;
+  }
+}
+
+/** 记一条待写回的退订。成功返回 true，失败/未配置返回 false。 */
+export function backupUnsubscribe(id: string): Promise<boolean> {
+  return kvCommand(["HSET", PENDING_UNSUBSCRIBES, id, new Date().toISOString()]);
+}
+
+/** 重新订阅时撤掉还没写回主表的退订，免得回灌时又把人退订了（best-effort） */
+export function clearPendingUnsubscribe(id: string): Promise<boolean> {
+  return kvCommand(["HDEL", PENDING_UNSUBSCRIBES, id]);
+}

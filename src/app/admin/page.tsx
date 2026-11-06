@@ -23,6 +23,7 @@ type Subscriber = {
   email: string;
   source: string;
   created_at: string;
+  unsubscribed_at?: string | null;
 };
 
 async function adminFetch(url: string, options?: RequestInit) {
@@ -896,13 +897,15 @@ export default function AdminPage() {
                         email: string;
                         source: string | null;
                         created_at: string;
+                        unsubscribed_at: string | null;
                       }>;
+                      // unsubscribed_at 有值 = 已退订，别拿去群发
                       const csv =
-                        "email,source,created_at\n" +
+                        "email,source,created_at,unsubscribed_at\n" +
                         rows
                           .map(
                             (r) =>
-                              `"${r.email}","${r.source ?? ""}","${r.created_at}"`
+                              `"${r.email}","${r.source ?? ""}","${r.created_at}","${r.unsubscribed_at ?? ""}"`
                           )
                           .join("\n");
                       const blob = new Blob([csv], {
@@ -962,6 +965,14 @@ export default function AdminPage() {
                         >
                           <td className="px-4 py-2.5 text-gray-900">
                             {sub.email}
+                            {sub.unsubscribed_at && (
+                              <span
+                                className="ml-2 inline-block px-2 py-0.5 bg-red-50 text-red-600 text-xs rounded-full"
+                                title={`退订于 ${new Date(sub.unsubscribed_at).toLocaleString("zh-CN")}`}
+                              >
+                                已退订
+                              </span>
+                            )}
                           </td>
                           <td className="px-4 py-2.5">
                             <span className="inline-block px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded-full">

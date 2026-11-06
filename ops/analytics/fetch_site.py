@@ -1,6 +1,6 @@
 """站内一手数据 + 自动化管线健康
 
-- 订阅：Supabase subscribers（只取 source / created_at，不取邮箱）+ KV 兜底队列积压
+- 订阅：Supabase subscribers（只取 source / created_at / unsubscribed_at，不取邮箱）+ KV 兜底队列积压（订阅、退订）
 - 文章阅读：Supabase page_views 是累计计数，和上次快照（state/page_views.json，CI 用 actions/cache 带过来）做差得到当日增量
 - 管线：今日快讯有没有出、提示词库每日收录、GitHub 合集同步、各 workflow 最近一次结果、线上 sitemap 条数
 """
@@ -49,7 +49,20 @@ def subscribers(get):
         by_day[str(d)] += 1
         if cut7 <= d < today_cst():
             by_src7[r.get("source") or "website"] += 1
-    return {"total": total, "by_day": dict(by_day), "by_source7": by_src7.most_common()}
+    return {"total": total, "by_day": dict(by_day), "by_source7": by_src7.most_common(), "unsub": unsubscribes(get, since)}
+
+
+def unsubscribes(get, since):
+    """退订（2026-11-06 起）：累计退订数 + 近 29 天每天的退订数。还没跑 supabase/add-unsubscribed-at.sql（没有这一列）时返回 None。"""
+    try:
+        r = get("subscribers", params={"select": "unsubscribed_at", "unsubscribed_at": f"gte.{since.isoformat()}", "limit": 1000})
+        r.raise_for_status()
+        tot = get("subscribers", params={"select": "id", "unsubscribed_at": "not.is.null", "limit": 0}, headers={"Prefer": "count=exact"})
+        tot.raise_for_status()
+    except requests.RequestException:
+        return None
+    by_day = Counter(str(datetime.fromisoformat(x["unsubscribed_at"].replace("Z", "+00:00")).astimezone(CST).date()) for x in r.json())
+    return {"total": int(tot.headers.get("content-range", "*/0").split("/")[-1]), "by_day": dict(by_day)}
 
 
 def page_views(get):
@@ -86,7 +99,10 @@ def kv_pending(get):
         q = get("subscribers", params={"select": "id", "email": f"in.({chunk})"})
         q.raise_for_status()
         present += len(q.json())
-    return {"queued": len(emails), "missing": len(emails) - present}
+    # 退订兜底（2026-11-06 起）：/api/unsubscribe 写 Supabase 失败时记在这个 hash 里，有积压就要跑 reconcile-leads.mjs
+    u = requests.get(f"{url}/hlen/pending_unsubscribes", headers={"Authorization": f"Bearer {tok}"}, timeout=30)
+    u.raise_for_status()
+    return {"queued": len(emails), "missing": len(emails) - present, "unsub_queued": int(u.json().get("result") or 0)}
 
 
 def news():

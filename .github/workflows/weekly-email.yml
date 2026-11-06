@@ -46,4 +46,5 @@ jobs:
           ALERT_EMAIL: ${{ secrets.ALERT_EMAIL }}
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          UNSUBSCRIBE_SECRET: ${{ secrets.UNSUBSCRIBE_SECRET }}  # 每封邮件的退订链接签名，和 Vercel 上的同一个值；缺了脚本报错、不发
         run: node scripts/send-weekly-email.mjs

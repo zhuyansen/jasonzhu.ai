@@ -32,7 +32,8 @@ export async function GET(request: NextRequest) {
     // Supabase 单次最多返回 1000 行（max-rows），以前的导出一直只有前 1000 条——按 1000 一批分页取完
     const rows: unknown[] = [];
     for (let from = 0; from < 50000; from += 1000) {
-      const { data, error } = await list("email, source, created_at")
+      // 带上 unsubscribed_at（2026-11-06 起）：导出去别处群发时，已退订的人不能再发
+      const { data, error } = await list("email, source, created_at, unsubscribed_at")
         .order("created_at", { ascending: false })
         .range(from, from + 999);
       if (error) return NextResponse.json({ error: error.message }, { status: 500, headers });
@@ -47,7 +48,7 @@ export async function GET(request: NextRequest) {
 
   const [{ count, error: countError }, { data: rows, error: rowsError }, { data: srcRows }] = await Promise.all([
     list("*", { count: "exact", head: true }),
-    list("id, email, source, created_at")
+    list("id, email, source, created_at, unsubscribed_at")
       .order("created_at", { ascending: false })
       .range(page * size, page * size + size - 1),
     supabase.from("subscribers").select("source").limit(10000),

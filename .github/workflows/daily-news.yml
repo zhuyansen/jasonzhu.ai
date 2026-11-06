@@ -123,6 +123,7 @@ jobs:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          UNSUBSCRIBE_SECRET: ${{ secrets.UNSUBSCRIBE_SECRET }}  # 每封邮件的退订链接签名，和 Vercel 上的同一个值；缺了脚本报错、不发
         run: node scripts/send-digest-email.mjs
 
       # 失败通知 —— 三次都挂才发，避免噪音

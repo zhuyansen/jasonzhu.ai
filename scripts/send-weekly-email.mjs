@@ -6,22 +6,33 @@
  *
  * 模式（MODE）：
  *   preview - 只把邮件 HTML 写到 PREVIEW_OUT（默认 /tmp/weekly-email.html），不发送，不需要任何密钥
- *   test    - 只发给 ALERT_EMAIL（默认）
- *   all     - 发给全部订阅者；必须同时设置 CONFIRM=SEND，防止误发
+ *   test    - 只发给 ALERT_EMAIL（默认）。退订链接用 ALERT_EMAIL 在订阅者表里的那一行，点开能走完整个退订流程
+ *   all     - 发给订阅者（最新 1000 个里剔掉已退订、测试地址、英文库订阅者，规则在 scripts/lib/newsletter.mjs）；
+ *             必须同时设置 CONFIRM=SEND，防止误发
+ * 每封都带收件人自己的退订链接（邮件头一键退订 + 页脚链接）。
  *
  * 环境变量：
  *   POST_SLUG                 - 文章 slug，如 chuhai-weekly-01（必填）
  *   SECTIONS                  - 放进邮件的二级标题，逗号分隔（默认：本周数字,本周值得看的 5 个新产品）
  *   RESEND_API_KEY            - Resend API 密钥（test / all）
+ *   UNSUBSCRIBE_SECRET        - 退订链接签名，和 Vercel 上的同一个值（test / all）；缺了报错、不发
  *   ALERT_EMAIL               - test 模式的收件人
- *   NEXT_PUBLIC_SUPABASE_URL  - Supabase URL（all）
- *   SUPABASE_SERVICE_KEY      - Supabase Service Role Key（all）
+ *   NEXT_PUBLIC_SUPABASE_URL  - Supabase URL（all；test 用来查 ALERT_EMAIL 的订阅者 id）
+ *   SUPABASE_SERVICE_KEY      - Supabase Service Role Key（同上）
  *   RESEND_FROM_EMAIL         - 发件人（默认 出海选品周报 <news@jasonzhu.ai>）
  */
 
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import {
+  PREVIEW_RECIPIENT,
+  UNSUBSCRIBE_PLACEHOLDER,
+  fetchSubscribers,
+  personalize,
+  pickRecipients,
+  requireUnsubscribeSecret,
+} from "./lib/newsletter.mjs";
 
 const SITE_URL = "https://jasonzhu.ai";
 const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "出海选品周报 <news@jasonzhu.ai>";
@@ -126,7 +137,7 @@ function emailHtml(post) {
           <a href="${SITE_URL}/zh/blog" style="color: #6b7280;">博客</a> ·
           <a href="${SITE_URL}/zh/news" style="color: #6b7280;">AI 快讯</a>
         </p>
-        <p style="margin: 8px 0 0; font-size: 11px; color: #d1d5db;">您收到此邮件是因为订阅了 JasonZhu.AI。</p>
+        <p style="margin: 8px 0 0; font-size: 11px; color: #9ca3af;">您收到此邮件是因为订阅了 JasonZhu.AI。不想再收到？<a href="${UNSUBSCRIBE_PLACEHOLDER}" style="color: #6b7280; text-decoration: underline;">退订</a></p>
       </td>
     </tr>
   </table>
@@ -148,43 +159,57 @@ function loadPost() {
 
 // ─── Recipients & sending ──────────────────────────
 
+// 收件人是订阅者表里的行（id + email），退订链接要用 id
 async function recipients() {
   if (MODE === "test") {
     if (!process.env.ALERT_EMAIL) fail("ALERT_EMAIL not set: test mode has nobody to send to");
-    return [process.env.ALERT_EMAIL];
+    return [await testRecipient(process.env.ALERT_EMAIL)];
   }
   if (MODE !== "all") fail(`unknown MODE: ${MODE}`);
   if (process.env.CONFIRM !== "SEND") fail("MODE=all sends to every subscriber: set CONFIRM=SEND to go ahead");
-  const { createClient } = await import("@supabase/supabase-js");
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const supabaseKey = process.env.SUPABASE_SERVICE_KEY;
-  if (!supabaseUrl || !supabaseKey) fail("Supabase not configured");
-  const { data, error } = await createClient(supabaseUrl, supabaseKey)
-    .from("subscribers")
-    .select("email, source")
-    .order("subscribed_at", { ascending: false });
-  if (error) fail(`failed to fetch subscribers: ${error.message}`);
-  // 和快讯邮件一样：剔除 example.com 之类的测试地址（Resend 会把含它们的整批 50 封一起拒掉），
-  // 也剔除英文提示词库的订阅者（来源以 prompts-en 开头，订阅时只答应发新提示词，不发中文周报）
-  const TEST_ADDRESS = /@(([^@]+\.)?example\.(com|net|org)|[^@]+\.(test|example|invalid|localhost))$/i;
-  return (data || []).filter((s) => !TEST_ADDRESS.test(s.email || "") && !/^prompts-en/.test(s.source || "")).map((s) => s.email);
+  let rows;
+  try {
+    rows = await fetchSubscribers();
+  } catch (err) {
+    fail(err.message);
+  }
+  const { recipients: picked, skipped } = pickRecipients(rows);
+  console.log(
+    `📬 ${rows.length} subscribers, skipped ${skipped.unsubscribed} unsubscribed, ${skipped.test} test addresses ` +
+      `and ${skipped.english} English prompt-library subscribers`
+  );
+  return picked;
 }
 
-async function send(to, subject, html) {
+// test 模式：退订链接用 ALERT_EMAIL 自己那一行；不在表里（或没配 Supabase）就用假 id，点开显示「链接无效」
+async function testRecipient(email) {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseKey = process.env.SUPABASE_SERVICE_KEY;
+  if (supabaseUrl && supabaseKey) {
+    const { createClient } = await import("@supabase/supabase-js");
+    const { data } = await createClient(supabaseUrl, supabaseKey)
+      .from("subscribers")
+      .select("id, email")
+      .eq("email", email.trim().toLowerCase())
+      .maybeSingle();
+    if (data) return data;
+  }
+  console.log("⚠️  ALERT_EMAIL 不在订阅者表里（或没配 Supabase）：退订链接用假 id，点开会显示「链接无效」");
+  return { id: PREVIEW_RECIPIENT.id, email };
+}
+
+async function send(rows, subject, html) {
   const resendKey = process.env.RESEND_API_KEY;
   if (!resendKey) fail("RESEND_API_KEY not set");
   let sent = 0;
-  for (let i = 0; i < to.length; i += BATCH_SIZE) {
-    const batch = to.slice(i, i + BATCH_SIZE).map((email) => ({
-      from: FROM_EMAIL,
-      to: email,
-      subject,
-      html,
-      headers: {
-        "List-Unsubscribe": `<${SITE_URL}/zh/blog>`,
-        "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
-      },
-    }));
+  for (let i = 0; i < rows.length; i += BATCH_SIZE) {
+    // 每封的页脚和邮件头带收件人自己的退订链接
+    const batch = await Promise.all(
+      rows.slice(i, i + BATCH_SIZE).map(async (row) => {
+        const own = await personalize(html, row);
+        return { from: FROM_EMAIL, to: row.email, subject, html: own.html, headers: own.headers };
+      })
+    );
     try {
       const res = await fetch("https://api.resend.com/emails/batch", {
         method: "POST",
@@ -209,9 +234,18 @@ async function main() {
   const html = emailHtml(post);
   if (MODE === "preview") {
     const out = process.env.PREVIEW_OUT || "/tmp/weekly-email.html";
-    fs.writeFileSync(out, html);
+    // 假收件人 + 没配 secret 时用占位密钥：链接格式和真的一样，点开是「链接无效」
+    const sample = await personalize(html, PREVIEW_RECIPIENT, { secret: process.env.UNSUBSCRIBE_SECRET || "preview-only" });
+    fs.writeFileSync(out, sample.html);
     console.log(`📝 preview written: ${out}`);
+    for (const [name, value] of Object.entries(sample.headers)) console.log(`   ${name}: ${value}`);
     return;
+  }
+  // 发出去的邮件必须带能用的退订链接：缺 secret 就不发
+  try {
+    requireUnsubscribeSecret();
+  } catch (err) {
+    fail(err.message);
   }
   const to = await recipients();
   console.log(`\n📧 周报邮件 — ${SLUG} — mode ${MODE}, ${to.length} recipient(s)\n`);

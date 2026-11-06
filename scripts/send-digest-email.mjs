@@ -1,23 +1,42 @@
 /**
  * 快讯邮件推送
  *
- * 读取今日生成的快讯 MDX，发送给所有订阅者。
- * 在 collect-news.mjs 之后运行。
+ * 读取今日生成的快讯，发给订阅者：最新 1000 个里剔掉已退订、测试地址、英文库订阅者（规则在 scripts/lib/newsletter.mjs）。
+ * 每封带收件人自己的退订链接（邮件头一键退订 + 页脚链接）。在 collect-news.mjs 之后运行。
+ *
+ * 模式（MODE）：
+ *   不设     - 发给订阅者（daily-news.yml 的 cron 就是这样跑）
+ *   preview  - 只把邮件 HTML 写到 PREVIEW_OUT（默认 /tmp/digest-email.html），不读名单、不发信、不需要任何密钥；
+ *              默认今天这期，DATE=YYYY-MM-DD 换一期
  *
  * 环境变量：
  *   RESEND_API_KEY            - Resend API 密钥
  *   NEXT_PUBLIC_SUPABASE_URL  - Supabase URL
  *   SUPABASE_SERVICE_KEY      - Supabase Service Role Key
+ *   UNSUBSCRIBE_SECRET        - 退订链接签名，和 Vercel 上的同一个值；缺了报错退出、不发
  *   RESEND_FROM_EMAIL         - 发件人邮箱（默认 news@jasonzhu.ai）
  */
 
-import { createClient } from "@supabase/supabase-js";
 import fs from "fs";
 import path from "path";
+import {
+  PREVIEW_RECIPIENT,
+  UNSUBSCRIBE_PLACEHOLDER,
+  fetchSubscribers,
+  personalize,
+  pickRecipients,
+  requireUnsubscribeSecret,
+} from "./lib/newsletter.mjs";
+
+const MODE = process.env.MODE || "send";
+if (MODE !== "send" && MODE !== "preview") {
+  console.error(`❌ unknown MODE: ${MODE}（不设 = 发给订阅者，preview = 只写 HTML）`);
+  process.exit(1);
+}
 
 // 快讯按北京日期分期（和 collect-news.mjs 一样）。cron 在北京清晨跑，那时 UTC 还是前一天，
-// 以前按 UTC 取「今天」会把昨天那期再发一遍。
-const TODAY = new Date(Date.now() + 8 * 3600 * 1000).toISOString().split("T")[0];
+// 以前按 UTC 取「今天」会把昨天那期再发一遍。DATE 只在 preview 时生效，发信永远是今天这期。
+const TODAY = (MODE === "preview" && process.env.DATE) || new Date(Date.now() + 8 * 3600 * 1000).toISOString().split("T")[0];
 const MONTH_DAY = (() => {
   const [, month, day] = TODAY.split("-").map(Number);
   return `${month}月${day}日`;
@@ -25,26 +44,26 @@ const MONTH_DAY = (() => {
 
 const SITE_URL = "https://jasonzhu.ai";
 const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "AI快讯 <news@jasonzhu.ai>";
-// 测试订阅留下的保留域名地址（example.com 之类）。Resend 会把含它们的整批 50 封一起拒掉（422），
-// 以前每天第 4、5 批共 100 个真订阅者因此收不到。
-const TEST_ADDRESS = /@(([^@]+\.)?example\.(com|net|org)|[^@]+\.(test|example|invalid|localhost))$/i;
-// 英文提示词库的订阅者（来源以 prompts-en 开头）：订阅时只答应「有值得一试的新提示词才发」，不发中文快讯。
-// 2026-10-27 到 11-06 这批人（83 个）每天都收到了中文快讯，11-06 起剔除。先取最新 1000 个再剔，名单范围不变、不会多发给谁。
-const ENGLISH_LIST = /^prompts-en/;
 
 // ─── Check prerequisites ────────────────────────────
 
 const resendKey = process.env.RESEND_API_KEY;
-if (!resendKey) {
-  console.log("⚠️  RESEND_API_KEY not set, skipping email push");
-  process.exit(0);
-}
-
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseKey = process.env.SUPABASE_SERVICE_KEY;
-if (!supabaseUrl || !supabaseKey) {
-  console.log("⚠️  Supabase not configured, skipping email push");
-  process.exit(0);
+if (MODE === "send") {
+  if (!resendKey) {
+    console.log("⚠️  RESEND_API_KEY not set, skipping email push");
+    process.exit(0);
+  }
+  if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SERVICE_KEY) {
+    console.log("⚠️  Supabase not configured, skipping email push");
+    process.exit(0);
+  }
+  // 发出去的邮件必须带能用的退订链接：缺 secret 就整次不发（报错，工作流标红）
+  try {
+    requireUnsubscribeSecret();
+  } catch (err) {
+    console.error(`❌ ${err.message}`);
+    process.exit(1);
+  }
 }
 
 // ─── Load today's digest ────────────────────────────
@@ -157,8 +176,8 @@ function buildEmailHtml(digest) {
           <a href="${SITE_URL}/zh/tools" style="color: #6b7280;">AI 工具</a> ·
           <a href="${SITE_URL}/zh/blog" style="color: #6b7280;">博客</a>
         </p>
-        <p style="margin: 8px 0 0; font-size: 11px; color: #d1d5db;">
-          您收到此邮件是因为订阅了 JasonZhu.AI 快讯。
+        <p style="margin: 8px 0 0; font-size: 11px; color: #9ca3af;">
+          您收到此邮件是因为订阅了 JasonZhu.AI 快讯。不想再收到？<a href="${UNSUBSCRIBE_PLACEHOLDER}" style="color: #6b7280; text-decoration: underline;">退订</a>
         </p>
       </td>
     </tr>
@@ -170,37 +189,40 @@ function buildEmailHtml(digest) {
 // ─── Fetch subscribers & send ───────────────────────
 
 async function main() {
+  const html = buildEmailHtml(todayDigest);
+  const subject = `AI 快讯 · ${MONTH_DAY} — ${todayDigest.items[0]?.title || "今日精选"}`;
+
+  if (MODE === "preview") {
+    const out = process.env.PREVIEW_OUT || "/tmp/digest-email.html";
+    // 假收件人 + 没配 secret 时用占位密钥：链接格式和真的一样，点开是「链接无效」
+    const sample = await personalize(html, PREVIEW_RECIPIENT, { secret: process.env.UNSUBSCRIBE_SECRET || "preview-only" });
+    fs.writeFileSync(out, sample.html);
+    console.log(`📝 preview written: ${out}`);
+    console.log(`   Subject: ${subject}`);
+    for (const [name, value] of Object.entries(sample.headers)) console.log(`   ${name}: ${value}`);
+    return;
+  }
+
   console.log(`\n📧 快讯邮件推送 — ${TODAY}\n`);
 
-  const supabase = createClient(supabaseUrl, supabaseKey);
-
-  // 只读得到最新的 1000 个（Supabase max-rows，这里没分页）。2026-10-27 Jason 决定先不扩到全部
-  // 订阅者（全表约 4,700 个），要改先问他。
-  const { data: subscribers, error } = await supabase
-    .from("subscribers")
-    .select("email, source")
-    .order("subscribed_at", { ascending: false });
-
-  if (error) {
-    console.error("❌ Failed to fetch subscribers:", error.message);
+  let subscribers;
+  try {
+    subscribers = await fetchSubscribers();
+  } catch (err) {
+    console.error(`❌ ${err.message}`);
     process.exit(1);
   }
 
-  if (!subscribers || subscribers.length === 0) {
+  if (subscribers.length === 0) {
     console.log("⚠️  No subscribers found");
     return;
   }
 
-  const isTest = (s) => TEST_ADDRESS.test(s.email || "");
-  const isEnglish = (s) => ENGLISH_LIST.test(s.source || "");
-  const recipients = subscribers.filter((s) => !isTest(s) && !isEnglish(s));
+  const { recipients, skipped } = pickRecipients(subscribers);
   console.log(
-    `📬 Found ${subscribers.length} subscribers, skipped ${subscribers.filter(isTest).length} test addresses` +
-      ` and ${subscribers.filter((s) => !isTest(s) && isEnglish(s)).length} English prompt-library subscribers`
+    `📬 Found ${subscribers.length} subscribers, skipped ${skipped.unsubscribed} unsubscribed, ` +
+      `${skipped.test} test addresses and ${skipped.english} English prompt-library subscribers`
   );
-
-  const html = buildEmailHtml(todayDigest);
-  const subject = `AI 快讯 · ${MONTH_DAY} — ${todayDigest.items[0]?.title || "今日精选"}`;
 
   // Send in batches of 50 (Resend batch limit)
   const BATCH_SIZE = 50;
@@ -208,16 +230,13 @@ async function main() {
 
   for (let i = 0; i < recipients.length; i += BATCH_SIZE) {
     const batch = recipients.slice(i, i + BATCH_SIZE);
-    const emails = batch.map((s) => ({
-      from: FROM_EMAIL,
-      to: s.email,
-      subject,
-      html,
-      headers: {
-        "List-Unsubscribe": `<${SITE_URL}/zh/news>`,
-        "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
-      },
-    }));
+    // 每封的页脚和邮件头带收件人自己的退订链接
+    const emails = await Promise.all(
+      batch.map(async (s) => {
+        const own = await personalize(html, s);
+        return { from: FROM_EMAIL, to: s.email, subject, html: own.html, headers: own.headers };
+      })
+    );
 
     try {
       const res = await fetch("https://api.resend.com/emails/batch", {

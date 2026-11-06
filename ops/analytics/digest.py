@@ -92,6 +92,8 @@ if site.get("ok"):
     kv = site.get("kv_pending") or {}
     if kv.get("missing"):
         alerts.append(f"有 {kv['missing']} 条订阅只在 KV 兜底里、Supabase 主表没有 → 跑 `node scripts/reconcile-leads.mjs`")
+    if kv.get("unsub_queued"):
+        alerts.append(f"有 {kv['unsub_queued']} 条退订只记在 KV 兜底里（Supabase 当时写不进），这些人还会收到邮件 → 跑 `node scripts/reconcile-leads.mjs`")
     for k, e in (site.get("errors") or {}).items():
         alerts.append(f"站内数据 {k} 没取到：{e}")
 else:
@@ -163,6 +165,10 @@ if sub:
     w7 = sum(bd.get(str(today - timedelta(days=i)), 0) for i in range(1, 8))
     p7 = sum(bd.get(str(today - timedelta(days=i)), 0) for i in range(8, 15))
     kpi.append(f"新订阅 **{y_n}**（7 天 {w7}，环比 {pct(w7, p7)}，累计 {sub['total']:,}）")
+    un = sub.get("unsub")  # 2026-11-06 起有退订；累计订阅数含已退订的
+    if un:
+        u7 = sum(un["by_day"].get(str(today - timedelta(days=i)), 0) for i in range(1, 8))
+        kpi.append(f"退订 {un['by_day'].get(str(y), 0)}（7 天 {u7}，累计 {un['total']:,}）")
 if vercel.get("ok"):
     days = {r.get("timestamp", "")[:10]: n(r) for r in vercel.get("daily", [])}
     yv = days.get(str(y), 0)
