@@ -128,6 +128,25 @@ function RelatedPosts({ slugs, lang }: { slugs?: string[]; lang: Locale }) {
   );
 }
 
+/** 专题里的相关页面（其他指南、收款选择器、开户指南）：path 接在 /[lang]/go-global 后面 */
+function RelatedPages({ related, lang }: { related?: { label: string; path: string }[]; lang: Locale }) {
+  if (!related?.length) return null;
+  return (
+    <section className="mb-10">
+      <h2 className="text-base font-semibold text-gray-900 mb-2">{lang === "en" ? "Related pages in this guide" : "专题里的相关页面"}</h2>
+      <ul className="space-y-1.5 text-sm">
+        {related.map((r) => (
+          <li key={r.path}>
+            <Link href={`/${lang}${GO_GLOBAL}${r.path}`} className="text-blue-600 hover:underline">
+              {r.label} →
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
 export default async function GuidePage({ params }: { params: Promise<{ lang: string; guide: string }> }) {
   const { lang: rawLang, guide: slug } = await params;
   const lang = (rawLang === "en" ? "en" : "zh") as Locale;
@@ -178,6 +197,7 @@ export default async function GuidePage({ params }: { params: Promise<{ lang: st
           </ul>
         </section>
       )}
+      <RelatedPages related={guide.related} lang={lang} />
       <RelatedPosts slugs={guide.posts} lang={lang} />
       <p className="mb-8 text-sm">
         <Link href={`/${lang}${GO_GLOBAL}${guide.parent?.path ?? ""}`} className="text-blue-600 hover:underline">

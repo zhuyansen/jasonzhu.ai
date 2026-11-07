@@ -1,19 +1,32 @@
-// 出海专题的指南页（/[lang]/go-global/<slug>）：上线以后的出金、风控、香港公司年审、三家公司怎么分工，SEO 以外的获客，插件和应用商店。
+// 出海专题的指南页（/[lang]/go-global/<slug>）：上线以后的出金、风控、香港公司年审、三家公司怎么分工，SEO 以外的获客，插件和应用商店；
+// 2026-11-07 加了按市场看的 6 篇：先讨好哪个搜索引擎、域名、站长后台和收录、买家怎么付钱、数字产品的税、各市场的 AI 助手。
 // 每条事实都附官方来源（政府、平台自己的帮助和法律页面），核实日期写在 checked；Jason 自己的做法放在 mine，和官方事实分开。
 // 英文版在 guides/en/*.ts（2026-10-31 补），结构和中文版一一对应；改中文指南时同步改英文版。
 
+import { AI_ASSISTANTS } from "./guides/ai-assistants";
 import { CASH_OUT } from "./guides/cash-out";
 import { CHANNELS } from "./guides/channels";
 import { COMPANY_ROLES } from "./guides/company-roles";
+import { DIGITAL_TAX } from "./guides/digital-tax";
+import { DOMAINS } from "./guides/domains";
 import { EXTENSIONS } from "./guides/extensions";
 import { HK_COMPANY } from "./guides/hk-company";
+import { INDEXING } from "./guides/indexing";
+import { LOCAL_PAYMENTS } from "./guides/local-payments";
 import { PAYMENT_RISK } from "./guides/payment-risk";
+import { SEARCH_ENGINES } from "./guides/search-engines";
+import { AI_ASSISTANTS_EN } from "./guides/en/ai-assistants";
 import { CASH_OUT_EN } from "./guides/en/cash-out";
 import { CHANNELS_EN } from "./guides/en/channels";
 import { COMPANY_ROLES_EN } from "./guides/en/company-roles";
+import { DIGITAL_TAX_EN } from "./guides/en/digital-tax";
+import { DOMAINS_EN } from "./guides/en/domains";
 import { EXTENSIONS_EN } from "./guides/en/extensions";
 import { HK_COMPANY_EN } from "./guides/en/hk-company";
+import { INDEXING_EN } from "./guides/en/indexing";
+import { LOCAL_PAYMENTS_EN } from "./guides/en/local-payments";
 import { PAYMENT_RISK_EN } from "./guides/en/payment-risk";
+import { SEARCH_ENGINES_EN } from "./guides/en/search-engines";
 
 export interface GuideSource {
   label: string;
@@ -58,11 +71,39 @@ export interface Guide {
   unknowns: string[];
   /** 站内相关文章的 slug */
   posts?: string[];
+  /** 专题里的相关页面，path 接在 /[lang]/go-global 后面，例如 "/payments"、"/domains" */
+  related?: { label: string; path: string }[];
 }
 
-export const GUIDES: Guide[] = [CASH_OUT, PAYMENT_RISK, HK_COMPANY, COMPANY_ROLES, CHANNELS, EXTENSIONS];
+export const GUIDES: Guide[] = [
+  CASH_OUT,
+  PAYMENT_RISK,
+  HK_COMPANY,
+  COMPANY_ROLES,
+  CHANNELS,
+  EXTENSIONS,
+  SEARCH_ENGINES,
+  DOMAINS,
+  INDEXING,
+  LOCAL_PAYMENTS,
+  DIGITAL_TAX,
+  AI_ASSISTANTS,
+];
 
-const GUIDES_EN: Guide[] = [CASH_OUT_EN, PAYMENT_RISK_EN, HK_COMPANY_EN, COMPANY_ROLES_EN, CHANNELS_EN, EXTENSIONS_EN];
+const GUIDES_EN: Guide[] = [
+  CASH_OUT_EN,
+  PAYMENT_RISK_EN,
+  HK_COMPANY_EN,
+  COMPANY_ROLES_EN,
+  CHANNELS_EN,
+  EXTENSIONS_EN,
+  SEARCH_ENGINES_EN,
+  DOMAINS_EN,
+  INDEXING_EN,
+  LOCAL_PAYMENTS_EN,
+  DIGITAL_TAX_EN,
+  AI_ASSISTANTS_EN,
+];
 
 export function guideBySlug(slug: string, lang: string = "zh"): Guide | undefined {
   return (lang === "en" ? GUIDES_EN : GUIDES).find((g) => g.slug === slug);

@@ -669,6 +669,17 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
       >
         <PickList title={isZh ? "我在用的" : "What I use"} picks={STACK} lang={l} source={MY_POSTS.stack} />
         <PointsBox title={isZh ? "域名后缀怎么选" : "Choosing the domain ending"} points={DOMAIN_TLD.points[l]} lang={l} source={DOMAIN_TLD.source} />
+        <div className="mt-3">
+          <Card
+            href={`/${lang}${GO_GLOBAL}/domains`}
+            title={isZh ? "按市场选域名：.com 还是国家后缀，谁能注册" : "Domains by market: .com or a country ending, and who may register"}
+            body={
+              isZh
+                ? "Google 怎么看 .ai、.io 和国家后缀；美国、印尼、越南、日本、韩国、俄罗斯、中国、欧洲的后缀谁能注册、要什么材料；便宜后缀在收录和邮件上的风险。"
+                : "How Google treats .ai, .io and country endings; who may register in the US, Indonesia, Vietnam, Japan, Korea, Russia, China and Europe, and what they ask for; what cheap endings do to indexing and email."
+            }
+          />
+        </div>
         <div className={`mt-3 ${BOX}`}>
           <p className="text-sm font-semibold text-gray-900 mb-1">{isZh ? "另一种做法：全放 Cloudflare" : "Another way: everything on Cloudflare"}</p>
           <p className="text-sm text-gray-600 leading-relaxed">{CLOUDFLARE_STACK.pieces[l]}</p>
@@ -744,6 +755,29 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
           <FromMyPost post={MY_POSTS.stack} lang={l} />
         </div>
         <div className="mt-6 pt-5 border-t border-gray-200">
+          <p className="mb-3 text-sm font-semibold text-gray-900">{isZh ? "按买家所在的市场" : "By the buyer's market"}</p>
+          <div className="grid gap-3 md:grid-cols-2">
+            <Card
+              href={`/${lang}${GO_GLOBAL}/local-payments`}
+              title={isZh ? "各市场的买家怎么付钱" : "How buyers pay, by market"}
+              body={
+                isZh
+                  ? "印尼用电子钱包和 QRIS，荷兰用 iDEAL，韩国走本土卡网络，俄罗斯基本收不了：Stripe、Paddle、Lemon Squeezy、PayPal 各能收哪些、能不能做订阅。"
+                  : "E-wallets and QRIS in Indonesia, iDEAL in the Netherlands, domestic card networks in Korea, Russia mostly closed: what Stripe, Paddle, Lemon Squeezy and PayPal can take, and which support subscriptions."
+              }
+            />
+            <Card
+              href={`/${lang}${GO_GLOBAL}/digital-tax`}
+              title={isZh ? "卖数字产品要交的税" : "Tax on selling digital products"}
+              body={
+                isZh
+                  ? "欧盟和英国从第一笔就要交，日本、韩国、印尼、越南、俄罗斯给境外卖家的规定，美国各州的销售税，以及代收平台替你交了哪些。"
+                  : "The EU and UK tax the first sale; the rules for foreign sellers in Japan, Korea, Indonesia, Vietnam and Russia; US state sales tax; and what payment platforms pay for you."
+              }
+            />
+          </div>
+        </div>
+        <div className="mt-6 pt-5 border-t border-gray-200">
           <p className="mb-3 text-sm font-semibold text-gray-900">{isZh ? "收到钱以后" : "After the money arrives"}</p>
           <div className="grid gap-3 md:grid-cols-2">
             <Card
@@ -769,10 +803,44 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
         title={isZh ? "增长：数据、技术 SEO、外链" : "Grow: data, technical SEO, backlinks"}
         lead={
           isZh
-            ? "没学过 SEO 先补课。然后搭好 SEO 系统、分清必做页面和增长页面，抢在别人之前找新词，看清自己和竞品的数据，用气泡图挑出该改的页面，用 skill 把技术 SEO 查一遍，外链少而精。"
-            : "If SEO is new to you, learn it first. Then set up the SEO system and split must-have pages from growth pages, find new terms before others do, read your own and your competitors' data, pick the pages to fix with a bubble chart, run a technical SEO check with a skill, and keep backlinks few and good."
+            ? "先按市场定好讨好哪个搜索引擎。没学过 SEO 先补课。然后搭好 SEO 系统、分清必做页面和增长页面，抢在别人之前找新词，看清自己和竞品的数据，用气泡图挑出该改的页面，用 skill 把技术 SEO 查一遍，外链少而精。"
+            : "First decide, market by market, which search engine to please. If SEO is new to you, learn it first. Then set up the SEO system and split must-have pages from growth pages, find new terms before others do, read your own and your competitors' data, pick the pages to fix with a bubble chart, run a technical SEO check with a skill, and keep backlinks few and good."
         }
       >
+        <div className="mb-6">
+          <p className="mb-3 text-sm font-semibold text-gray-900">
+            {isZh ? "先按市场：讨好哪个搜索引擎，怎么被收录，被哪些 AI 引用" : "First, by market: which search engine, getting indexed, and which AI cites you"}
+          </p>
+          <div className="grid gap-3 md:grid-cols-3">
+            <Card
+              href={`/${lang}${GO_GLOBAL}/search-engines`}
+              title={isZh ? "先讨好哪个搜索引擎" : "Which search engine first"}
+              body={
+                isZh
+                  ? "美国在 Google 之外还有约 14% 走 Bing 的索引，日本电脑端一半以上用 Bing，韩国先做 Naver，俄罗斯看 Yandex，中国看百度。"
+                  : "Beyond Google, about 14% of US search runs on Bing's index; over half of desktop search in Japan is Bing; Korea means Naver, Russia Yandex, China Baidu."
+              }
+            />
+            <Card
+              href={`/${lang}${GO_GLOBAL}/indexing`}
+              title={isZh ? "站长后台和收录提交" : "Webmaster consoles and indexing"}
+              body={
+                isZh
+                  ? "Google、Bing、Yandex、Naver、百度、Seznam 怎么注册和验证，每天能交多少，IndexNow 覆盖哪几家，各家新出的 AI 引用报告。"
+                  : "Signing up and verifying on Google, Bing, Yandex, Naver, Baidu and Seznam, daily submission limits, which engines IndexNow reaches, and the new AI citation reports."
+              }
+            />
+            <Card
+              href={`/${lang}${GO_GLOBAL}/ai-assistants`}
+              title={isZh ? "各市场的 AI 助手" : "AI assistants by market"}
+              body={
+                isZh
+                  ? "每个市场用哪个 AI、它联网时从哪个索引取资料，robots.txt 里训练用和搜索用的爬虫怎么分开放行。"
+                  : "Which AI each market uses, which index it searches, and how to set training and search crawlers separately in robots.txt."
+              }
+            />
+          </div>
+        </div>
         <LearnSeo l={l} isZh={isZh} />
         <SeoSystem l={l} isZh={isZh} />
         <GeoNewSite l={l} isZh={isZh} />
