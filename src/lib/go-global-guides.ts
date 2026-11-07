@@ -1,30 +1,41 @@
 // 出海专题的指南页（/[lang]/go-global/<slug>）：上线以后的出金、风控、香港公司年审、三家公司怎么分工，SEO 以外的获客，插件和应用商店；
-// 2026-11-07 加了按市场看的 6 篇：先讨好哪个搜索引擎、域名、站长后台和收录、买家怎么付钱、数字产品的税、各市场的 AI 助手。
+// 2026-11-07 加了按市场看的 6 篇：先讨好哪个搜索引擎、域名、站长后台和收录、买家怎么付钱、数字产品的税、各市场的 AI 助手；
+// 同日又加 5 篇：上线前的合规页面、服务器放哪和能不能打开、语言和本地化、当地推广渠道、广告和联盟变现。
 // 每条事实都附官方来源（政府、平台自己的帮助和法律页面），核实日期写在 checked；Jason 自己的做法放在 mine，和官方事实分开。
 // 英文版在 guides/en/*.ts（2026-10-31 补），结构和中文版一一对应；改中文指南时同步改英文版。
 
+import { ADS_AFFILIATE } from "./guides/ads-affiliate";
 import { AI_ASSISTANTS } from "./guides/ai-assistants";
 import { CASH_OUT } from "./guides/cash-out";
 import { CHANNELS } from "./guides/channels";
 import { COMPANY_ROLES } from "./guides/company-roles";
+import { COMPLIANCE } from "./guides/compliance";
 import { DIGITAL_TAX } from "./guides/digital-tax";
 import { DOMAINS } from "./guides/domains";
 import { EXTENSIONS } from "./guides/extensions";
 import { HK_COMPANY } from "./guides/hk-company";
+import { HOSTING } from "./guides/hosting";
 import { INDEXING } from "./guides/indexing";
+import { LOCAL_CHANNELS } from "./guides/local-channels";
 import { LOCAL_PAYMENTS } from "./guides/local-payments";
+import { LOCALIZATION } from "./guides/localization";
 import { PAYMENT_RISK } from "./guides/payment-risk";
 import { SEARCH_ENGINES } from "./guides/search-engines";
+import { ADS_AFFILIATE_EN } from "./guides/en/ads-affiliate";
 import { AI_ASSISTANTS_EN } from "./guides/en/ai-assistants";
 import { CASH_OUT_EN } from "./guides/en/cash-out";
 import { CHANNELS_EN } from "./guides/en/channels";
 import { COMPANY_ROLES_EN } from "./guides/en/company-roles";
+import { COMPLIANCE_EN } from "./guides/en/compliance";
 import { DIGITAL_TAX_EN } from "./guides/en/digital-tax";
 import { DOMAINS_EN } from "./guides/en/domains";
 import { EXTENSIONS_EN } from "./guides/en/extensions";
 import { HK_COMPANY_EN } from "./guides/en/hk-company";
+import { HOSTING_EN } from "./guides/en/hosting";
 import { INDEXING_EN } from "./guides/en/indexing";
+import { LOCAL_CHANNELS_EN } from "./guides/en/local-channels";
 import { LOCAL_PAYMENTS_EN } from "./guides/en/local-payments";
+import { LOCALIZATION_EN } from "./guides/en/localization";
 import { PAYMENT_RISK_EN } from "./guides/en/payment-risk";
 import { SEARCH_ENGINES_EN } from "./guides/en/search-engines";
 
@@ -88,6 +99,11 @@ export const GUIDES: Guide[] = [
   LOCAL_PAYMENTS,
   DIGITAL_TAX,
   AI_ASSISTANTS,
+  COMPLIANCE,
+  HOSTING,
+  LOCALIZATION,
+  LOCAL_CHANNELS,
+  ADS_AFFILIATE,
 ];
 
 const GUIDES_EN: Guide[] = [
@@ -103,6 +119,11 @@ const GUIDES_EN: Guide[] = [
   LOCAL_PAYMENTS_EN,
   DIGITAL_TAX_EN,
   AI_ASSISTANTS_EN,
+  COMPLIANCE_EN,
+  HOSTING_EN,
+  LOCALIZATION_EN,
+  LOCAL_CHANNELS_EN,
+  ADS_AFFILIATE_EN,
 ];
 
 export function guideBySlug(slug: string, lang: string = "zh"): Guide | undefined {

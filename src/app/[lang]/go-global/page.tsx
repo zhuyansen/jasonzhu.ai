@@ -670,15 +670,47 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
         <PickList title={isZh ? "我在用的" : "What I use"} picks={STACK} lang={l} source={MY_POSTS.stack} />
         <PointsBox title={isZh ? "域名后缀怎么选" : "Choosing the domain ending"} points={DOMAIN_TLD.points[l]} lang={l} source={DOMAIN_TLD.source} />
         <div className="mt-3">
-          <Card
-            href={`/${lang}${GO_GLOBAL}/domains`}
-            title={isZh ? "按市场选域名：.com 还是国家后缀，谁能注册" : "Domains by market: .com or a country ending, and who may register"}
-            body={
-              isZh
-                ? "Google 怎么看 .ai、.io 和国家后缀；美国、印尼、越南、日本、韩国、俄罗斯、中国、欧洲的后缀谁能注册、要什么材料；便宜后缀在收录和邮件上的风险。"
-                : "How Google treats .ai, .io and country endings; who may register in the US, Indonesia, Vietnam, Japan, Korea, Russia, China and Europe, and what they ask for; what cheap endings do to indexing and email."
-            }
-          />
+          <p className="mb-3 text-sm font-semibold text-gray-900">
+            {isZh ? "按目标市场：域名、服务器、语言、合规" : "By target market: domain, hosting, language, compliance"}
+          </p>
+          <div className="grid gap-3 md:grid-cols-2">
+            <Card
+              href={`/${lang}${GO_GLOBAL}/domains`}
+              title={isZh ? "按市场选域名：.com 还是国家后缀，谁能注册" : "Domains by market: .com or a country ending, and who may register"}
+              body={
+                isZh
+                  ? "Google 怎么看 .ai、.io 和国家后缀；美国、印尼、越南、日本、韩国、俄罗斯、中国、欧洲的后缀谁能注册、要什么材料；便宜后缀在收录和邮件上的风险。"
+                  : "How Google treats .ai, .io and country endings; who may register in the US, Indonesia, Vietnam, Japan, Korea, Russia, China and Europe, and what they ask for; what cheap endings do to indexing and email."
+              }
+            />
+            <Card
+              href={`/${lang}${GO_GLOBAL}/hosting`}
+              title={isZh ? "服务器放哪、当地用户能不能打开" : "Where to host, and whether it loads"}
+              body={
+                isZh
+                  ? "vercel.app 在大陆被封、GA 在大陆悄悄丢数据，俄罗斯对 Cloudflare 上的网站限速到 16KB，越南海缆常断；各家 CDN 在当地有没有节点，数据要不要存在境内。"
+                  : "vercel.app is blocked in mainland China and GA quietly loses data there, Russia throttles Cloudflare sites to 16 KB, Vietnam's cables keep breaking; which CDNs have local nodes, and where data must stay."
+              }
+            />
+            <Card
+              href={`/${lang}${GO_GLOBAL}/localization`}
+              title={isZh ? "语言和本地化细节" : "Language and localisation details"}
+              body={
+                isZh
+                  ? "Google 认哪些 hreflang、机器翻译页面的风险、日语韩语德语怎么称呼用户、台湾和香港的繁体用词，以及俄罗斯、法国、印尼对语言的硬性要求。"
+                  : "Which hreflang codes Google accepts, the risk of machine-translated pages, how to address users in Japanese, Korean and German, Taiwan and Hong Kong wording, and the language laws of Russia, France and Indonesia."
+              }
+            />
+            <Card
+              href={`/${lang}${GO_GLOBAL}/compliance`}
+              title={isZh ? "上线前必备的合规页面" : "Pages and filings before launch"}
+              body={
+                isZh
+                  ? "隐私政策和 cookie、日本特商法表记、德国 Impressum、欧盟和英国代表、印尼 PSE 登记、俄罗斯数据本地化，以及欧盟的 14 天撤回和撤回按钮。"
+                  : "Privacy policy and cookies, Japan's commercial transactions notice, Germany's Impressum, EU and UK representatives, Indonesia's PSE registration, Russian data localisation, and the EU's 14-day withdrawal and withdrawal button."
+              }
+            />
+          </div>
         </div>
         <div className={`mt-3 ${BOX}`}>
           <p className="text-sm font-semibold text-gray-900 mb-1">{isZh ? "另一种做法：全放 Cloudflare" : "Another way: everything on Cloudflare"}</p>
@@ -755,8 +787,10 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
           <FromMyPost post={MY_POSTS.stack} lang={l} />
         </div>
         <div className="mt-6 pt-5 border-t border-gray-200">
-          <p className="mb-3 text-sm font-semibold text-gray-900">{isZh ? "按买家所在的市场" : "By the buyer's market"}</p>
-          <div className="grid gap-3 md:grid-cols-2">
+          <p className="mb-3 text-sm font-semibold text-gray-900">
+            {isZh ? "按市场：买家怎么付钱、要交的税、流量怎么变现" : "By market: how buyers pay, the tax due, earning from traffic"}
+          </p>
+          <div className="grid gap-3 md:grid-cols-3">
             <Card
               href={`/${lang}${GO_GLOBAL}/local-payments`}
               title={isZh ? "各市场的买家怎么付钱" : "How buyers pay, by market"}
@@ -773,6 +807,15 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
                 isZh
                   ? "欧盟和英国从第一笔就要交，日本、韩国、印尼、越南、俄罗斯给境外卖家的规定，美国各州的销售税，以及代收平台替你交了哪些。"
                   : "The EU and UK tax the first sale; the rules for foreign sellers in Japan, Korea, Indonesia, Vietnam and Russia; US state sales tax; and what payment platforms pay for you."
+              }
+            />
+            <Card
+              href={`/${lang}${GO_GLOBAL}/ads-affiliate`}
+              title={isZh ? "广告和联盟变现" : "Ads and affiliate income"}
+              body={
+                isZh
+                  ? "AdSense 在各市场的限制和中国站长的收款方式，亚马逊、A8.net、Kakao AdFit、Yandex 广告网络收不收境外站长，欧洲流量的同意管理要求。"
+                  : "AdSense limits by market and payouts for publishers in China; whether Amazon, A8.net, Kakao AdFit and the Yandex network take foreign publishers; consent rules for European traffic."
               }
             />
           </div>
@@ -871,7 +914,7 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
         </div>
         <PageTuning l={l} isZh={isZh} />
         <Backlinks lang={lang} l={l} isZh={isZh} />
-        <div className="mt-3">
+        <div className="mt-3 grid gap-3 md:grid-cols-2">
           <Card
             href={`/${lang}${GO_GLOBAL}/channels`}
             title={isZh ? "SEO 以外的获客渠道" : "Channels beyond SEO"}
@@ -879,6 +922,15 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
               isZh
                 ? "Product Hunt、Hacker News、Reddit、X、AI 工具目录站、邮件订阅、联盟分佣和付费广告：每个平台的官方规则和新手最容易踩的坑。"
                 : "Product Hunt, Hacker News, Reddit, X, AI tool directories, email, affiliates and paid ads: each platform's own rules and the usual beginner mistakes."
+            }
+          />
+          <Card
+            href={`/${lang}${GO_GLOBAL}/local-channels`}
+            title={isZh ? "各市场的本地推广渠道" : "Local channels by market"}
+            body={
+              isZh
+                ? "日本的 X 和 Qiita、韩国的 KakaoTalk 和 GeekNews、越南的 Zalo、俄罗斯的 VK 和 Habr、中国的公众号和 V2EX：用户量、官方号要不要当地执照、能不能发推广。"
+                : "X and Qiita in Japan, KakaoTalk and GeekNews in Korea, Zalo in Vietnam, VK and Habr in Russia, WeChat and V2EX in China: audience size, whether official accounts need a local licence, and what you may promote."
             }
           />
         </div>
