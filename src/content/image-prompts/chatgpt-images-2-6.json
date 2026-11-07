@@ -3,8 +3,8 @@
  "model": "ChatGPT Images 2.6",
  "released": "2026-11-04T23:35:14Z",
  "threshold": 5000,
- "updatedAt": "2026-11-05T16:32:09.076Z",
- "statsCheckedAt": "2026-11-05T16:32:09.076Z",
+ "updatedAt": "2026-11-07T07:43:33.410Z",
+ "statsCheckedAt": "2026-11-07T07:43:33.410Z",
  "inclusionRule": "Original post by the creator, images / GIF / video attached, >= 5000 views on that post, creator states it was made with ChatGPT Images 2.6 (GPT-Image-2.6). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -164,6 +164,132 @@
    }
   },
   {
+   "id": "2118446768006541800",
+   "url": "https://x.com/alexcooldev/status/2118446768006541800",
+   "author": {
+    "handle": "alexcooldev",
+    "name": "Alex Nguyen"
+   },
+   "postedAt": "2026-11-05T20:54:02.000Z",
+   "addedAt": "2026-11-07",
+   "lang": "en",
+   "kind": "work",
+   "category": "illustration",
+   "title": {
+    "zh": "温馨语言学习农场游戏界面",
+    "en": "Cozy language-learning farm game interface"
+   },
+   "summary": {
+    "zh": "这是一个用于学习语言的温馨农场游戏，包含 AI 生成的美术；创作者称其使用 Opus 5.5 和 GPT-Image-2.6 构建。",
+    "en": "A cozy farming game for learning languages, with AI-generated art; the creator says it was built with Opus 5.5 and GPT-Image-2.6."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Opus 5.5"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 70817,
+    "likes": 1025,
+    "replies": 66,
+    "reposts": 51,
+    "bookmarks": 953,
+    "checkedAt": "2026-11-07T07:43:33.410Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2118443795964706816/vid/avc1/1318x720/4a2Mkpo4lYGuRwUa.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2118443795964706816/img/hgTpqVMxu-b98P32.jpg",
+     "width": 3840,
+     "height": 2096,
+     "durationSec": 173
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2118360718554894395",
+   "url": "https://x.com/gbroai/status/2118360718554894395",
+   "author": {
+    "handle": "gbroai",
+    "name": "狗哥笔记"
+   },
+   "postedAt": "2026-11-05T15:12:07.000Z",
+   "addedAt": "2026-11-07",
+   "lang": "zh",
+   "kind": "work",
+   "category": "gif",
+   "title": {
+    "zh": "四色纹理背景循环 GIF",
+    "en": "Four-color textured background loops"
+   },
+   "summary": {
+    "zh": "四条拼贴 B-roll GIF 由 Codex 调用 Image 2.6 制作，全程没有运行视频模型；流程还提到用 Gemini Omni Flash 组装动画。",
+    "en": "Four collage B-roll GIFs were made by Codex calling Image 2.6, without running a video model. The workflow also mentions Gemini Omni Flash for animation assembly."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Codex",
+    "Opus 5.5",
+    "Gemini Omni Flash"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 50563,
+    "likes": 859,
+    "replies": 47,
+    "reposts": 64,
+    "bookmarks": 981,
+    "checkedAt": "2026-11-07T07:43:33.410Z"
+   },
+   "media": [
+    {
+     "type": "gif",
+     "url": "https://video.twimg.com/tweet_video/HWXtylSbkAABo9L.mp4",
+     "poster": "https://pbs.twimg.com/tweet_video_thumb/HWXtylSbkAABo9L.jpg",
+     "width": 360,
+     "height": 640,
+     "durationSec": 0
+    },
+    {
+     "type": "gif",
+     "url": "https://video.twimg.com/tweet_video/HWXtylWbsAAK359.mp4",
+     "poster": "https://pbs.twimg.com/tweet_video_thumb/HWXtylWbsAAK359.jpg",
+     "width": 360,
+     "height": 640,
+     "durationSec": 0
+    },
+    {
+     "type": "gif",
+     "url": "https://video.twimg.com/tweet_video/HWXtylUaUAAPHpX.mp4",
+     "poster": "https://pbs.twimg.com/tweet_video_thumb/HWXtylUaUAAPHpX.jpg",
+     "width": 360,
+     "height": 640,
+     "durationSec": 0
+    },
+    {
+     "type": "gif",
+     "url": "https://video.twimg.com/tweet_video/HWXtylSawAAl85x.mp4",
+     "poster": "https://pbs.twimg.com/tweet_video_thumb/HWXtylSawAAl85x.jpg",
+     "width": 450,
+     "height": 800,
+     "durationSec": 0
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2118188273134915596",
    "url": "https://x.com/aisumeragi/status/2118188273134915596",
    "author": {
@@ -267,6 +393,70 @@
    }
   },
   {
+   "id": "2118375194507219052",
+   "url": "https://x.com/hx831126/status/2118375194507219052",
+   "author": {
+    "handle": "hx831126",
+    "name": "虎小象"
+   },
+   "postedAt": "2026-11-05T16:09:38.000Z",
+   "addedAt": "2026-11-07",
+   "lang": "zh",
+   "kind": "work",
+   "category": "portrait",
+   "title": {
+    "zh": "城市场景中的写实女性时尚肖像",
+    "en": "Realistic female fashion portraits in urban settings"
+   },
+   "summary": {
+    "zh": "这是一名使用 GPT Image 2.6 通过五官兜底方式生成的女性。创作者讨论了“东方特征”等模糊描述可能产生不同理解。",
+    "en": "A woman was generated with GPT Image 2.6 using a facial-feature fallback approach. The creator discusses how vague descriptions such as “Eastern features” can be interpreted differently."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 40140,
+    "likes": 188,
+    "replies": 5,
+    "reposts": 12,
+    "bookmarks": 157,
+    "checkedAt": "2026-11-07T07:43:33.410Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HWX7ADMakAAz-s8.jpg",
+     "width": 2338,
+     "height": 1504
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HWX7ADGa8AE_76C.jpg",
+     "width": 2318,
+     "height": 1578
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HWX7ADHacAAtICe.jpg",
+     "width": 2322,
+     "height": 1572
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HWX7AC_aIAA8M3c.jpg",
+     "width": 2352,
+     "height": 1558
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2118150226330734787",
    "url": "https://x.com/nima2qisi2/status/2118150226330734787",
    "author": {
@@ -309,6 +499,134 @@
      "url": "https://pbs.twimg.com/media/HWUs6utbwAAgLxv.jpg",
      "width": 1024,
      "height": 1536
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2118381855166881928",
+   "url": "https://x.com/NovaXCode/status/2118381855166881928",
+   "author": {
+    "handle": "NovaXCode",
+    "name": "Nova"
+   },
+   "postedAt": "2026-11-05T16:36:06.000Z",
+   "addedAt": "2026-11-07",
+   "lang": "en",
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "两种图像模型的翠鸟入水对比",
+    "en": "Kingfisher diving comparison across two image models"
+   },
+   "summary": {
+    "zh": "创作者使用一幅写实的翠鸟野生动物场景，对比 ChatGPT Image 2.6 和 Nano Banana 2.1 的效果。",
+    "en": "The creator compares ChatGPT Image 2.6 with Nano Banana 2.1 using a photorealistic kingfisher wildlife scene."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/NovaXCode/status/2118383239392075848",
+    "text": "An ultra-photorealistic wildlife photograph capturing the exact split second a vibrant blue-and-orange kingfisher dives vertically into a calm lake to catch a small fish.\n\nIts long, sharp beak has just broken through the water surface, creating a tiny circular splash with delicate water droplets suspended in mid-air.\n\nThe kingfisher's wings are fully extended symmetrically, revealing hundreds of individually detailed feathers. Its reflection is visible beneath the water, slightly distorted by expanding ripples.\n\nWarm golden-hour sunlight illuminates the feathers from behind, creating beautiful translucent feather edges. Dark, creamy green and golden bokeh background.\n\nExtreme wildlife photography, shot on a professional 600mm telephoto lens, incredibly sharp subject, realistic water physics, natural anatomy, precise details, cinematic depth of field.\n\nThe exact instant of impact, not before or after. No illustration, no CGI appearance.\n\nRatio: 1:1"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Nano Banana 2.1"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 38330,
+    "likes": 226,
+    "replies": 50,
+    "reposts": 8,
+    "bookmarks": 36,
+    "checkedAt": "2026-11-07T07:43:33.410Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HWYBDXJboAAM73l.jpg",
+     "width": 1254,
+     "height": 1254
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HWYBD5RbEAAY_Ti.jpg",
+     "width": 3295,
+     "height": 3295
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2118308538564989025",
+   "url": "https://x.com/devteamdrew/status/2118308538564989025",
+   "author": {
+    "handle": "devteamdrew",
+    "name": "DreW"
+   },
+   "postedAt": "2026-11-05T11:44:46.000Z",
+   "addedAt": "2026-11-07",
+   "lang": "en",
+   "kind": "work",
+   "category": "gif",
+   "title": {
+    "zh": "循环 GIF 动图中的旅行风景插画组",
+    "en": "Illustrated travel scenes in a looping GIF set"
+   },
+   "summary": {
+    "zh": "创作者发布了三条中世纪水粉旅行海报风格的循环风景 GIF 提示词，主题分别是金门大桥、罗马斗兽场和富士山。",
+    "en": "The creator published prompts for three looping scenic GIFs in a mid-century gouache travel-poster style: the Golden Gate Bridge, the Colosseum, and Mount Fuji."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/devteamdrew/status/2118538745175503130",
+    "text": "A living mid-century gouache travel-poster painting of the Golden Gate Bridge seen from a beach, static locked-off camera, seamless looping animation. The bridge is rust-orange with two tall towers, fine suspension cables and vertical hangers, spanning to a hazy grey-blue headland on the left and a tan-grey rocky cliff on the right. In the foreground deep cobalt and teal surf rolls in with white foam lines onto a sweeping beach of sandy beige scratchy dry-brush strokes, with dark rocks, a driftwood log and tiny figures in coral, navy and mustard. Warm cream sky with fine paper grain fills the upper half. Matte opaque gouache, ragged flaking edges, visible bristle streaks, speckled worn texture. Gentle motion only: waves wash and recede, foam shimmers, seagulls glide across the sky, tiny people wander. Soft hazy daylight, vertical 3:4, perfect loop."
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 38248,
+    "likes": 537,
+    "replies": 17,
+    "reposts": 36,
+    "bookmarks": 343,
+    "checkedAt": "2026-11-07T07:43:33.410Z"
+   },
+   "media": [
+    {
+     "type": "gif",
+     "url": "https://video.twimg.com/tweet_video/HWW9tuiWsAArMUF.mp4",
+     "poster": "https://pbs.twimg.com/tweet_video_thumb/HWW9tuiWsAArMUF.jpg",
+     "width": 1080,
+     "height": 1440,
+     "durationSec": 0
+    },
+    {
+     "type": "gif",
+     "url": "https://video.twimg.com/tweet_video/HWW9tudXoAAnmUr.mp4",
+     "poster": "https://pbs.twimg.com/tweet_video_thumb/HWW9tudXoAAnmUr.jpg",
+     "width": 1080,
+     "height": 1440,
+     "durationSec": 0
+    },
+    {
+     "type": "gif",
+     "url": "https://video.twimg.com/tweet_video/HWW9tuiXoAATLhp.mp4",
+     "poster": "https://pbs.twimg.com/tweet_video_thumb/HWW9tuiXoAATLhp.jpg",
+     "width": 1080,
+     "height": 1440,
+     "durationSec": 0
     }
    ],
    "evidence": {
@@ -414,6 +732,120 @@
    }
   },
   {
+   "id": "2118408795026043260",
+   "url": "https://x.com/cocktailpeanut/status/2118408795026043260",
+   "author": {
+    "handle": "cocktailpeanut",
+    "name": "cocktail peanut"
+   },
+   "postedAt": "2026-11-05T18:23:09.000Z",
+   "addedAt": "2026-11-07",
+   "lang": "en",
+   "kind": "work",
+   "category": "gif",
+   "title": {
+    "zh": "灰色走廊变木门的动画视频",
+    "en": "Grayscale corridor to wooden door, animated video"
+   },
+   "summary": {
+    "zh": "创作者先在 ChatGPT 中制作并延展 15 秒 GIF，再通过 Maestro 将其作为参考视频输入 Minimax H3。",
+    "en": "The creator made a 15-second animated GIF in ChatGPT, extended it, and fed it as reference video to Minimax H3 through Maestro."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/cocktailpeanut/status/2118408801812643957",
+    "text": "Generate a 5-second animated GIF consisting of 10 evenly spaced animation frames. Make it look like a crude gray Blender viewport animation, not cinematic footage. A single continuous shot inside a rectangular hallway with a tiled floor and simple gray walls. The camera slowly advances toward a doorway. A black humanoid mannequin with unusually long arms emerges from behind the doorway. The camera suddenly whips right, falls onto its side, and stops. The mannequin slowly walks toward and past the fallen camera. Maintain consistent 3D geometry, character proportions, doorway placement, and spatial relationships. No cuts, no teleportation, no scene changes, no added props. Focus on exact camera movement, depth, and timing. The animation should play once as a complete sequence, not return to its starting pose."
+   },
+   "referenceAssets": true,
+   "tools": [
+    "Minimax H3",
+    "Maestro"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 27570,
+    "likes": 274,
+    "replies": 20,
+    "reposts": 17,
+    "bookmarks": 316,
+    "checkedAt": "2026-11-07T07:43:33.410Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2118405386575269888/vid/avc1/960x480/MrC84Dmqb1ePgKnK.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2118405386575269888/img/IhQYvdATP4n1FINn.jpg",
+     "width": 960,
+     "height": 480,
+     "durationSec": 16
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2118265895613346263",
+   "url": "https://x.com/vastxie/status/2118265895613346263",
+   "author": {
+    "handle": "vastxie",
+    "name": "弎水"
+   },
+   "postedAt": "2026-11-05T08:55:19.000Z",
+   "addedAt": "2026-11-07",
+   "lang": "zh",
+   "kind": "work",
+   "category": "sticker",
+   "title": {
+    "zh": "古代官员与淡定藏狐微信动态表情包",
+    "en": "Ancient official and stoic fox animated sticker packs"
+   },
+   "summary": {
+    "zh": "创作者用锚点图配合 edits 接口生成透明微信动态表情包，最后用 Python 处理 GIF 打包。",
+    "en": "The creator generated transparent animated WeChat sticker sets by using an anchor image with the edits interface, then processed the GIFs with Python."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Python"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 26958,
+    "likes": 107,
+    "replies": 11,
+    "reposts": 10,
+    "bookmarks": 161,
+    "checkedAt": "2026-11-07T07:43:33.410Z"
+   },
+   "media": [
+    {
+     "type": "gif",
+     "url": "https://video.twimg.com/tweet_video/HWWWOb2aYAEmz-B.mp4",
+     "poster": "https://pbs.twimg.com/tweet_video_thumb/HWWWOb2aYAEmz-B.jpg",
+     "width": 950,
+     "height": 1014,
+     "durationSec": 0
+    },
+    {
+     "type": "gif",
+     "url": "https://video.twimg.com/tweet_video/HWWWQkDaEAAfLWG.mp4",
+     "poster": "https://pbs.twimg.com/tweet_video_thumb/HWWWQkDaEAAfLWG.jpg",
+     "width": 950,
+     "height": 1014,
+     "durationSec": 0
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2118181775688241456",
    "url": "https://x.com/op7418/status/2118181775688241456",
    "author": {
@@ -493,6 +925,60 @@
    }
   },
   {
+   "id": "2118332926769480091",
+   "url": "https://x.com/ash_twtz/status/2118332926769480091",
+   "author": {
+    "handle": "ash_twtz",
+    "name": "Mr Ash"
+   },
+   "postedAt": "2026-11-05T13:21:41.000Z",
+   "addedAt": "2026-11-07",
+   "lang": "en",
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "两种图像模型的咖啡馆人像对比",
+    "en": "Café portraits compared across two image models"
+   },
+   "summary": {
+    "zh": "创作者发布了 Nano Banana Pro 与 ChatGPT Images 2.6 的对比。",
+    "en": "The creator posted a comparison between Nano Banana Pro and ChatGPT Images 2.6."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Nano Banana"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 19882,
+    "likes": 123,
+    "replies": 89,
+    "reposts": 2,
+    "bookmarks": 17,
+    "checkedAt": "2026-11-07T07:43:33.410Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HWXUjuMbgAA_i8F.jpg",
+     "width": 1074,
+     "height": 1912
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HWXUkPvbAAAs5NV.jpg",
+     "width": 1079,
+     "height": 1607
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2118186638228816322",
    "url": "https://x.com/k_matsumaru/status/2118186638228816322",
    "author": {
@@ -535,6 +1021,58 @@
      "width": 1920,
      "height": 1080,
      "durationSec": 81
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2118462563331735755",
+   "url": "https://x.com/mmmiyama_D/status/2118462563331735755",
+   "author": {
+    "handle": "mmmiyama_D",
+    "name": "ミヤマ"
+   },
+   "postedAt": "2026-11-05T21:56:48.000Z",
+   "addedAt": "2026-11-07",
+   "lang": "ja",
+   "kind": "work",
+   "category": "illustration",
+   "title": {
+    "zh": "生活方式拼贴与圣诞老人熊猫节日手绘",
+    "en": "Lifestyle collage and Santa-Panda holiday drawing"
+   },
+   "summary": {
+    "zh": "创作者表示会把设计提示词陆续收录到线上资料库，并分享了 note 链接。",
+    "en": "The creator said the design prompts would be stored in an online library and shared a note link."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 17194,
+    "likes": 143,
+    "replies": 5,
+    "reposts": 5,
+    "bookmarks": 49,
+    "checkedAt": "2026-11-07T07:43:33.410Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HWZKeMeaUAA6bnl.jpg",
+     "width": 1122,
+     "height": 1402
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HWZKeXkaUAA5xSQ.jpg",
+     "width": 1179,
+     "height": 1179
     }
    ],
    "evidence": {
@@ -699,6 +1237,190 @@
    }
   },
   {
+   "id": "2118343700929753503",
+   "url": "https://x.com/YU_TAI2414/status/2118343700929753503",
+   "author": {
+    "handle": "YU_TAI2414",
+    "name": "ゆたい"
+   },
+   "postedAt": "2026-11-05T14:04:29.000Z",
+   "addedAt": "2026-11-07",
+   "lang": "ja",
+   "kind": "work",
+   "category": "gif",
+   "title": {
+    "zh": "角色弹跳登场 GIF",
+    "en": "Bouncing character entrance GIF"
+   },
+   "summary": {
+    "zh": "创作者让 ChatGPT 把图片中的女孩做成从画面外可爱登场的 GIF，但觉得成品像流水线批量生产的效果。",
+    "en": "The creator asked ChatGPT to animate the girl in an image entering from off-screen as a GIF, but said the result looked mass-produced."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/YU_TAI2414/status/2118343700929753503",
+    "text": "この画像の女の子を可愛く画面外から登場するGIFを作ってみて！"
+   },
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 13562,
+    "likes": 1111,
+    "replies": 11,
+    "reposts": 76,
+    "bookmarks": 17,
+    "checkedAt": "2026-11-07T07:43:33.410Z"
+   },
+   "media": [
+    {
+     "type": "gif",
+     "url": "https://video.twimg.com/tweet_video/HWXeWpaaYAE5ik9.mp4",
+     "poster": "https://pbs.twimg.com/tweet_video_thumb/HWXeWpaaYAE5ik9.jpg",
+     "width": 768,
+     "height": 1008,
+     "durationSec": 0
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2118407355859878352",
+   "url": "https://x.com/xikhar/status/2118407355859878352",
+   "author": {
+    "handle": "xikhar",
+    "name": "Shikhar"
+   },
+   "postedAt": "2026-11-05T18:17:26.000Z",
+   "addedAt": "2026-11-07",
+   "lang": "en",
+   "kind": "work",
+   "category": "gif",
+   "title": {
+    "zh": "战士、宝剑、摩托车与猫的四组动图参考",
+    "en": "Four animated reference concepts: warrior, sword, bike and cat"
+   },
+   "summary": {
+    "zh": "创作者提出用快速生成的旋转 GIF 作为 3D 游戏资产参考，并提到可用 Tripo、Meshy、Pixal3D、Claude Code 或 Blender 继续生成。",
+    "en": "The creator suggests using quick GIFs as references for spinning 3D game assets, with possible follow-up generation in tools such as Tripo, Meshy, Pixal3D, Claude Code, or Blender."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/xikhar/status/2118409026044403849",
+    "text": "create a gif of a \"3d dwarf game model carrying a huge axe on his shoulders\" spinning full 360 degrees"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Tripo",
+    "Meshy",
+    "Pixal3D",
+    "Claude Code",
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 13512,
+    "likes": 147,
+    "replies": 25,
+    "reposts": 8,
+    "bookmarks": 65,
+    "checkedAt": "2026-11-07T07:43:33.410Z"
+   },
+   "media": [
+    {
+     "type": "gif",
+     "url": "https://video.twimg.com/tweet_video/HWYWl_RaIAA6hH9.mp4",
+     "poster": "https://pbs.twimg.com/tweet_video_thumb/HWYWl_RaIAA6hH9.jpg",
+     "width": 358,
+     "height": 358,
+     "durationSec": 0
+    },
+    {
+     "type": "gif",
+     "url": "https://video.twimg.com/tweet_video/HWYWn7JbsAA_KhQ.mp4",
+     "poster": "https://pbs.twimg.com/tweet_video_thumb/HWYWn7JbsAA_KhQ.jpg",
+     "width": 358,
+     "height": 346,
+     "durationSec": 0
+    },
+    {
+     "type": "gif",
+     "url": "https://video.twimg.com/tweet_video/HWYWouobcAEDjC1.mp4",
+     "poster": "https://pbs.twimg.com/tweet_video_thumb/HWYWouobcAEDjC1.jpg",
+     "width": 358,
+     "height": 356,
+     "durationSec": 0
+    },
+    {
+     "type": "gif",
+     "url": "https://video.twimg.com/tweet_video/HWYWqLLaMAAbku9.mp4",
+     "poster": "https://pbs.twimg.com/tweet_video_thumb/HWYWqLLaMAAbku9.jpg",
+     "width": 476,
+     "height": 354,
+     "durationSec": 0
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2118519274482586001",
+   "url": "https://x.com/midori_tatsuta/status/2118519274482586001",
+   "author": {
+    "handle": "midori_tatsuta",
+    "name": "みどり🐲Midori Tatsuta"
+   },
+   "postedAt": "2026-11-06T01:42:09.000Z",
+   "addedAt": "2026-11-07",
+   "lang": "ja",
+   "kind": "work",
+   "category": "gif",
+   "title": {
+    "zh": "绿发 Q 版女学生循环 GIF",
+    "en": "Green-haired chibi schoolgirl loop GIF"
+   },
+   "summary": {
+    "zh": "作者先上传人物图片生成 Q 版角色，再让 ChatGPT 根据指定动作制作循环 GIF。",
+    "en": "The creator made a chibi-character loop GIF by attaching a person image, generating a character image, and asking ChatGPT to create a looping GIF with a chosen movement."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 13170,
+    "likes": 213,
+    "replies": 11,
+    "reposts": 15,
+    "bookmarks": 152,
+    "checkedAt": "2026-11-07T07:43:33.410Z"
+   },
+   "media": [
+    {
+     "type": "gif",
+     "url": "https://video.twimg.com/tweet_video/HWZ8wYabEAAIaZ3.mp4",
+     "poster": "https://pbs.twimg.com/tweet_video_thumb/HWZ8wYabEAAIaZ3.jpg",
+     "width": 1024,
+     "height": 1024,
+     "durationSec": 0
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2118164732989608405",
    "url": "https://x.com/798145343h/status/2118164732989608405",
    "author": {
@@ -755,6 +1477,179 @@
    }
   },
   {
+   "id": "2118332327902470228",
+   "url": "https://x.com/ann_nnng/status/2118332327902470228",
+   "author": {
+    "handle": "ann_nnng",
+    "name": "Ann Nguyen"
+   },
+   "postedAt": "2026-11-05T13:19:18.000Z",
+   "addedAt": "2026-11-07",
+   "lang": "en",
+   "kind": "work",
+   "category": "edit",
+   "title": {
+    "zh": "东京街景水彩翻页动画",
+    "en": "Animated watercolor flipbook of Tokyo scenes"
+   },
+   "summary": {
+    "zh": "创作者使用日本旅行照片、Claude Opus 5.5 和 GPT Image 2.6 制作了水彩风格的动画翻页书。",
+    "en": "The creator made an animated watercolor flipbook from Japan trip photos using Claude Opus 5.5 and GPT Image 2.6."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Claude Opus 5.5"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 11584,
+    "likes": 490,
+    "replies": 21,
+    "reposts": 24,
+    "bookmarks": 287,
+    "checkedAt": "2026-11-07T07:43:33.410Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2118331629534126080/vid/avc1/898x720/CZUoJ-TWTsva_Vq-.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2118331629534126080/img/lUPM2b4ebfcVEEtF.jpg",
+     "width": 1890,
+     "height": 1514,
+     "durationSec": 20
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2118513591490163168",
+   "url": "https://x.com/MiraMusic_AI/status/2118513591490163168",
+   "author": {
+    "handle": "MiraMusic_AI",
+    "name": "MiraMusic"
+   },
+   "postedAt": "2026-11-06T01:19:34.000Z",
+   "addedAt": "2026-11-07",
+   "lang": "ja",
+   "kind": "work",
+   "category": "gif",
+   "title": {
+    "zh": "操控悬浮球体的动漫女孩",
+    "en": "Anime girl controlling a floating sphere"
+   },
+   "summary": {
+    "zh": "创作者以附加图片为起始帧，生成了角色操控球体的 6 秒动画，由 100 张图组成，并强调动画十二原则。",
+    "en": "The creator generated a six-second animation of a character controlling a sphere, composed of 100 images and based on an attached starting frame."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/MiraMusic_AI/status/2118513591490163168",
+    "text": "添付画像を開始フレームとして球体をコントロールするキャラクター。\n画像生成で6秒尺。100枚で構成。\nケレン味がありアニメーション12原則を意識した動き。"
+   },
+   "referenceAssets": true,
+   "tools": [
+    "Suno",
+    "ElevenLabs"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 11433,
+    "likes": 144,
+    "replies": 9,
+    "reposts": 13,
+    "bookmarks": 93,
+    "checkedAt": "2026-11-07T07:43:33.410Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HWZ43tjbkAAJYlh.jpg",
+     "width": 1280,
+     "height": 720
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2118543259257712714",
+   "url": "https://x.com/buusk4/status/2118543259257712714",
+   "author": {
+    "handle": "buusk4",
+    "name": "AIでもっと妄想世界🚀🌍️"
+   },
+   "postedAt": "2026-11-06T03:17:28.000Z",
+   "addedAt": "2026-11-07",
+   "lang": "ja",
+   "kind": "work",
+   "category": "portrait",
+   "title": {
+    "zh": "四张写实日本女性办公室随拍",
+    "en": "Four photoreal office snapshots of a Japanese woman"
+   },
+   "summary": {
+    "zh": "创作者提供了两组提示词，用于生成 9:16 竖幅写实图片：一组为普通实拍照片，另一组为手机画质快照，主体都是日本办公室中的成年女性。",
+    "en": "The creator provides prompts for vertical 9:16 photorealistic images of an adult Japanese woman in a typical Japanese office, including a smartphone-quality snapshot variant."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/buusk4/status/2118543259257712714",
+    "text": "縦長9:16の超写実的な実写写真。\n成人日本人女性。日本の一般的なオフィス。"
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 10075,
+    "likes": 152,
+    "replies": 0,
+    "reposts": 7,
+    "bookmarks": 96,
+    "checkedAt": "2026-11-07T07:43:33.410Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HWaT17cbUAADHCj.jpg",
+     "width": 941,
+     "height": 1672
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HWaT2XqbIAAOT_N.jpg",
+     "width": 941,
+     "height": 1672
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HWaT2wha8AAk7st.jpg",
+     "width": 941,
+     "height": 1672
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HWaT3Nca0AEcwmP.jpg",
+     "width": 941,
+     "height": 1672
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2118138826212385225",
    "url": "https://x.com/testingcatalog/status/2118138826212385225",
    "author": {
@@ -794,6 +1689,54 @@
      "width": 414,
      "height": 414,
      "durationSec": 0
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2118355858208010412",
+   "url": "https://x.com/Mayz1169/status/2118355858208010412",
+   "author": {
+    "handle": "Mayz1169",
+    "name": "Kiki"
+   },
+   "postedAt": "2026-11-05T14:52:48.000Z",
+   "addedAt": "2026-11-07",
+   "lang": "en",
+   "kind": "work",
+   "category": "sticker",
+   "title": {
+    "zh": "猫耳女孩日常情绪贴纸包",
+    "en": "Catgirl daily mood sticker sheet"
+   },
+   "summary": {
+    "zh": "创作者分享了以 Miss Malfoid 日常情绪为主题的一组贴纸，并说明使用了 GPT Image 2.6 制作。",
+    "en": "The creator shared a collection showing Miss Malfoid's daily moods as stickers, made with GPT Image 2.6."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 9242,
+    "likes": 843,
+    "replies": 10,
+    "reposts": 94,
+    "bookmarks": 221,
+    "checkedAt": "2026-11-07T07:43:33.410Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2118352349601370112/vid/avc1/1080x720/uyocIPV59bEevYMi.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2118352349601370112/img/ntls6XBEczzdZPnO.jpg",
+     "width": 1440,
+     "height": 960,
+     "durationSec": 8
     }
    ],
    "evidence": {
