@@ -1,5 +1,112 @@
 [
   {
+    "slug": "2026-11-07",
+    "date": "2026-11-07",
+    "title": "AI 快讯 · 11月7日",
+    "items": [
+      {
+        "title": "OpenAI推出湿实验Agent基准测试",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science",
+        "summary": "OpenAI发布BioBasicsBench，包含100项任务，用于评估AI Agent读取原始实验数据、理解实验流程并处理日常湿实验室工作的能力。它为科研Agent提供了更贴近真实工作的测评标准，也暴露出模型从文本推理走向可验证科学操作的差距。",
+        "titleEn": "OpenAI Benchmarks AI Agents in Wet Labs",
+        "summaryEn": "OpenAI introduced BioBasicsBench, a 100-task benchmark for evaluating AI agents on everyday wet-lab science, including raw experimental data interpretation and experimental procedures. It gives developers a more realistic way to measure scientific agents beyond text-only reasoning, while highlighting the gap between understanding experiments and reliably supporting real laboratory workflows."
+      },
+      {
+        "title": "Cult.fit用Codex重构跨团队工具开发",
+        "source": "OpenAI Blog",
+        "category": "出海实战",
+        "url": "https://openai.com/index/cultfit-builds-with-codex",
+        "summary": "印度健身与健康平台Cult.fit正在用Codex帮助不同职能团队构建内部工具、加快交付，并改变非工程岗位参与软件开发的方式。案例显示，编程Agent的价值不只在替代程序员，也在于把定制工具能力扩展到运营和业务团队。",
+        "titleEn": "Cult.fit Uses Codex Across Business Teams",
+        "summaryEn": "Indian fitness and wellness platform Cult.fit is using Codex across business functions to build internal tools and accelerate delivery. The case shows that coding agents can create value beyond replacing developer tasks: they can expand software-building capabilities to operations, product, and other non-engineering teams."
+      },
+      {
+        "title": "Goethe让自托管模型像Vercel一样部署",
+        "source": "Hacker News",
+        "category": "AI 工具动态",
+        "url": "https://github.com/meshapplied/Goethe",
+        "summary": "开源项目Goethe面向自有硬件部署AI模型，自动管理模型与机器并提供安全API，定位类似AI领域的Vercel。它试图降低本地或私有云推理的运维门槛，让开发者无需深度掌握硬件调度，也能快速把模型变成可调用服务。",
+        "titleEn": "Goethe Brings Vercel-Like Deployment to AI",
+        "summaryEn": "Goethe is an open-source platform for deploying AI models on hardware users control themselves. It manages models and machines, selects suitable inference setups, and exposes secure APIs, aiming to provide a Vercel-like experience for self-hosted AI. Its appeal is reducing the operational burden of private and on-premise inference."
+      },
+      {
+        "title": "NVIDIA Auto Ontology为Agent补上语义层",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/NVIDIA/auto-ontology",
+        "summary": "NVIDIA开源Auto Ontology，用图结构语义层描述数据的位置、含义与使用方式，帮助Agent生成更可靠的查询和检索上下文。对开发者而言，它解决了Agent能找到数据却未必理解指标口径的问题，可提升企业分析、RAG和数据库问答的准确性。",
+        "titleEn": "NVIDIA Adds Semantic Context to AI Agents",
+        "summaryEn": "NVIDIA released Auto Ontology, a Python framework that builds semantic graph layers over enterprise data. It helps agents understand where data lives, what metrics mean, and how they should be queried, enabling more deterministic retrieval and explainable reasoning. Developers can use it as a context layer for analytics agents, RAG systems, and database assistants."
+      },
+      {
+        "title": "离线RAG签名知识包仍可能被向量劫持",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2611.06498",
+        "summary": "论文发现，离线RAG使用签名知识包时，签名只能证明文件来自可信发布者，却不能保证文本与预计算向量匹配。攻击者若篡改向量，可能操纵检索结果。对开发者的启示是：更新包校验不能只验签名，还要重新计算并核对Embedding。",
+        "titleEn": "Signed RAG Packs Still Face Vector Hijacking",
+        "summaryEn": "The paper shows that signatures on offline RAG knowledge packs prove publisher identity but not whether embeddings actually match the signed text. An attacker controlling vectors may redirect retrieval toward malicious content. Developers deploying edge or offline RAG systems should verify both signatures and text-vector consistency instead of trusting signed metadata alone."
+      },
+      {
+        "title": "SwarmEvolve用低成本Agent群加速算法搜索",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2611.08483",
+        "summary": "SwarmEvolve让数百个低成本Agent以群体方式并行改进程序，并在潜在空间中推理，减少反复生成长链式思考文本的开销。它为数学和计算问题的自动优化提供了更高吞吐路径，开发者可借鉴其群体搜索思路构建代码优化与实验探索系统。",
+        "titleEn": "SwarmEvolve Speeds Search with Agent Swarms",
+        "summaryEn": "SwarmEvolve uses hundreds of inexpensive agents in parallel to evolve programs for mathematical and computational tasks. Instead of repeatedly producing long reasoning traces, agents search in latent space, reducing cost and latency. The approach suggests a practical architecture for high-throughput code optimization, experiment discovery, and automated algorithm search."
+      },
+      {
+        "title": "Artex数百AI黑客工具服务器被暴露",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/11/06/hundreds-of-artex-ai-hacking-tools-found-publicly-exposed-to-the-web/",
+        "summary": "安全研究人员发现，数百台运行渗透测试工具Artex的服务器直接暴露在公网，任何人都可能访问这些AI黑客工具。事件再次说明，Agent和安全自动化工具若缺乏网络隔离、身份认证与权限控制，可能迅速从防御能力变成可滥用的攻击基础设施。",
+        "titleEn": "Hundreds of Artex AI Hacking Servers Exposed",
+        "summaryEn": "Security researchers found hundreds of servers running the Artex penetration-testing tool exposed directly to the public internet. Anyone could potentially access the AI-assisted hacking capability. The incident highlights a growing operational risk: security agents and automation tools require strict network isolation, authentication, and permission controls to avoid becoming attack infrastructure."
+      }
+    ],
+    "funding": [
+      {
+        "company": "Shield AI",
+        "url": "https://news.crunchbase.com/venture/biggest-startup-rounds-ai-defense-space-tech-shield-zipline/",
+        "round": "Growth round",
+        "amount": "$2B",
+        "valuation": "",
+        "investors": "",
+        "pitch": "专注自主飞行与国防AI系统，获得本周最大融资，显示AI驱动的防务与实体自主系统仍是资本重点。",
+        "en": {
+          "company": "Shield AI",
+          "round": "Growth round",
+          "amount": "$2B",
+          "pitch": "Shield AI builds autonomous flight and defense AI systems and landed the week's largest raise, showing that AI-driven defense and physical autonomy remain a top priority for investors."
+        }
+      },
+      {
+        "company": "Zipline International",
+        "url": "https://news.crunchbase.com/venture/biggest-startup-rounds-ai-defense-space-tech-shield-zipline/",
+        "round": "Growth round",
+        "amount": "$1.5B",
+        "valuation": "",
+        "investors": "",
+        "pitch": "以AI和自主无人机提供配送服务，完成大额融资，反映智能硬件与现实物流场景的商业化潜力。",
+        "en": {
+          "company": "Zipline International",
+          "round": "Growth round",
+          "amount": "$1.5B",
+          "pitch": "Zipline delivers goods using AI and autonomous drones, and its large raise reflects the commercial potential of smart hardware in real-world logistics."
+        }
+      }
+    ],
+    "jasonSays": "今天最值得关注的是AI Agent开始进入科研、企业数据和自托管基础设施，但安全问题也同步升级，开发者需要同时重视能力扩展与权限、数据完整性防护。",
+    "jasonSaysEn": "The key development is that AI agents are expanding into science, enterprise data, and self-hosted infrastructure while security risks grow, making capability deployment and integrity controls equally important.",
+    "filename": "2026-11-07.md",
+    "coverImage": "/news/2026-11-07.png",
+    "coverImageEn": "/news/en/2026-11-07.png"
+  },
+  {
     "slug": "2026-11-06",
     "date": "2026-11-06",
     "title": "AI 快讯 · 11月6日",
