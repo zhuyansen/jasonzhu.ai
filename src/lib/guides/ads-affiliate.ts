@@ -109,7 +109,7 @@ export const ADS_AFFILIATE: Guide = {
     },
     {
       id: "id",
-      title: "印尼：电商联盟多，提现要印尼税号",
+      title: "印尼：电商联盟多，Shopee 提现要印尼税号",
       items: [
         {
           text: "Shopee 印尼联盟提现要填 16 位税号，也就是和税号绑定的印尼身份号码（NIK），Shopee 每笔按所得税自动扣。没有印尼身份的站长提不了现。",

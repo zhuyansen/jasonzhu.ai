@@ -236,7 +236,7 @@ export const LOCAL_CHANNELS_EN: Guide = {
     },
     {
       id: "cn",
-      title: "Mainland China: WeChat official accounts, Bilibili and V2EX, all with real names",
+      title: "Mainland China: WeChat official accounts, Bilibili and V2EX; WeChat and Zhihu need real names",
       items: [
         {
           text: "1.125 billion internet users (December 2025); WeChat and Weixin together have 1.439 billion monthly users (including abroad), Bilibili 371 million.",

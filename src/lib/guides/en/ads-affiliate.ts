@@ -110,7 +110,7 @@ export const ADS_AFFILIATE_EN: Guide = {
     },
     {
       id: "id",
-      title: "Indonesia: plenty of shopping affiliates, but payouts need an Indonesian tax ID",
+      title: "Indonesia: plenty of shopping affiliates; Shopee payouts need an Indonesian tax ID",
       items: [
         {
           text: "Shopee Affiliate Indonesia requires a 16-digit tax number, the Indonesian ID number (NIK) linked to a tax account, before you can withdraw; Shopee withholds income tax on each payout. Without an Indonesian ID you cannot cash out.",

@@ -234,7 +234,7 @@ export const LOCAL_CHANNELS: Guide = {
     },
     {
       id: "cn",
-      title: "中国大陆：公众号、B 站、V2EX，都要实名",
+      title: "中国大陆：公众号、B 站、V2EX，公众号和知乎要实名",
       items: [
         {
           text: "网民 11.25 亿（2025 年 12 月）；微信和 WeChat 合计月活 14.39 亿（含海外），B 站月活 3.71 亿。",
