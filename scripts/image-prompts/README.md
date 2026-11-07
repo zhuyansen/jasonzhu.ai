@@ -32,7 +32,7 @@ GitHub 公开合集 `zhuyansen/awesome-chatgpt-images-2.6` 的 `.github/workflow
 ## 本机跑
 
 ```bash
-# 需要 TWITTERAPI_IO_KEY、JEV_API_KEY、FLATROUTER_API_KEY；本机没有 Opus 终审通道，拿不准的进 pending.json
+# 需要 AISA_API_KEY 或 TWITTERAPI_IO_KEY（X 数据，先 AIsa 后直连，见 ../opus-prompts/lib/x.mjs）、JEV_API_KEY、FLATROUTER_API_KEY；本机没有 Opus 终审通道，拿不准的进 pending.json
 OPUS_TRANSPORT=curl WINDOW_FROM=2026-11-04T23:00Z WINDOW_TO=2026-11-05T16:30Z node scripts/image-prompts/daily.mjs --dry
 node scripts/image-prompts/assemble.mjs --write && node scripts/generate-image-prompts.mjs
 ```

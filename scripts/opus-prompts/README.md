@@ -34,7 +34,7 @@ node scripts/opus-prompts/assemble.mjs --write && node scripts/generate-opus-pro
 
 | 什么 | 在哪 | 频率 | 需要密钥 |
 |---|---|---|---|
-| **每日收录新作品** | `.github/workflows/opus-prompts-daily.yml` → `daily.mjs` | 每天两次，9:17 / 21:17（北京） | `TWITTERAPI_IO_KEY`、`JEV_API_KEY`（Jev 官方）、`FLATROUTER_API_KEY`（备用审核）、Claude 那几个 |
+| **每日收录新作品** | `.github/workflows/opus-prompts-daily.yml` → `daily.mjs` | 每天一次，9:17（北京） | `AISA_API_KEY`（X 数据主通道）+ `TWITTERAPI_IO_KEY`（备用），`JEV_API_KEY`（Jev 官方）、`FLATROUTER_API_KEY`（备用审核）、Claude 那几个 |
 | 数据核验：刷新播放量、修复过期视频地址、下架已删帖 | `.github/workflows/opus-prompts-refresh.yml` → `refresh.mjs` | 每周一 11:00（北京） | 不需要 |
 | GitHub 合集同步 | `zhuyansen/awesome-opus-5.5-video` 的 `.github/workflows/sync.yml` | 每天 13:00（北京） | 不需要 |
 
@@ -58,7 +58,9 @@ node scripts/opus-prompts/assemble.mjs --write && node scripts/generate-opus-pro
 
 干活模型容灾：flatrouter（gpt-6-astra → gpt-5.6-sol）→ apimart Claude（opus-5-5 → sonnet-5-5 → opus-4-6）→ 官方。2026-10-24 起不用 aigocode（余额用完）。2026-10-03 评测 GPT 比 Claude 更容易漏掉夹在正文里的一句话指令，有抽检发现漏收可以考虑把 apimart 调到前面。终审只用 Opus：apimart Opus 5.5。
 
-每次运行的摘要（Actions 页面）会列出 twitterapi.io 消耗和两家模型的 token 用量。
+X 数据通道（2026-11-07 起，`lib/x.mjs`）：先走 AIsa 的 tool router（工具 `get_twitter_tweet_advanced_search`），出错就在这次运行里改走 twitterapi.io 直连。余额不足（402）、key 不对（401/403）不重试，直接切；限流、5xx、超时先重试两次再切。AIsa 的 X 工具底层就是 twitterapi.io，参数、返回格式、价格都一样（每条 $0.00015），只是从 AIsa 余额里扣。两个钱包互为备用：11-06 twitterapi.io 余额用完，两个库停了一天。数据日报每天查两边余额，不到 $1 就告警。`threads.mjs`、`discover.mjs` 这两个手动脚本还是直连 twitterapi.io。
+
+每次运行的摘要（Actions 页面）会列出 X 数据两个通道各用了多少（AIsa 按美元，直连按 credits；AIsa 没用上会写原因），以及两家模型的 token 用量。
 
 ### 其他
 

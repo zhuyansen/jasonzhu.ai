@@ -42,6 +42,9 @@ jobs:
       APIMART_API_KEY: ${{ secrets.APIMART_API_KEY }}
       APIMART_CLAUDE_KEY: ${{ secrets.APIMART_CLAUDE_KEY }}
       JEV_API_KEY: ${{ secrets.JEV_API_KEY }}
+      # X 数据两条通道只查余额（提示词库收录：AIsa 为主，twitterapi.io 直连备用）
+      AISA_API_KEY: ${{ secrets.AISA_API_KEY }}
+      TWITTERAPI_IO_KEY: ${{ secrets.TWITTERAPI_IO_KEY }}
     steps:
       - uses: actions/checkout@v4
 

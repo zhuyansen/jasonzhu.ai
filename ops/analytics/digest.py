@@ -147,15 +147,16 @@ if site.get("ok"):
 else:
     alerts.append(f"站内数据整体没取到：{site.get('error')}")
 
-# 模型通道体检：主力还在顶着时，备用通道坏了也没人发现（2026-10-04 教训）
+# 通道体检（模型 + X 数据余额）：主力还在顶着时，备用通道坏了也没人发现（2026-10-04 教训）
 if channels.get("ok"):
     for c in channels["checks"]:
         if c["ok"]:
             health.append(f"🔌 {c['channel']} · {c['model']} 正常")
         else:
-            alerts.append(f"模型通道不通：{c['channel']} · {c['model']}（HTTP {c['status']}，影响{c['used_by']}）{c['detail'][:90]}")
+            http = f"HTTP {c['status']}，" if c["status"] not in (0, 200) else ""
+            alerts.append(f"通道异常：{c['channel']} · {c['model']}（{http}影响{c['used_by']}）{c['detail'][:90]}")
 elif not channels.get("skipped"):
-    alerts.append(f"模型通道体检没跑成：{channels.get('error')}")
+    alerts.append(f"通道体检没跑成：{channels.get('error')}")
 
 # Vercel 请求额度：2026-10-07 免费版 Edge Requests 超额，整站 402 停用，事先没有任何提醒
 QUOTA = {"pro": 10_000_000, "hobby": 1_000_000}  # 每个账单周期（月）的 Edge Requests

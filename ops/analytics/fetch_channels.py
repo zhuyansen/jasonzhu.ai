@@ -2,6 +2,9 @@
 
 起因：CI 里的 apimart key 4 月起就调不了 Claude，2026-10-04 主代理一限流，备用全挂，11 个作品卡进待审——
 平时没人发现，因为主代理一直在顶着。生图（gpt-image-2.5-flare）用空 prompt 探测：返回 400 = 有权限，403 = 没权限，不花钱。
+
+X 数据（2026-11-07 起）：提示词库先走 AIsa，出错再直连 twitterapi.io（scripts/opus-prompts/lib/x.mjs）。两边都查余额，
+任一边不到 MIN_USD 就告警。11-06 twitterapi.io 余额用完，两个库停了一天，第二天下午才在日报里看到失败。
 """
 import os
 
@@ -12,6 +15,9 @@ from common import run, save, secret
 APIMART = "https://api.apimart.ai"
 FLATROUTER = "https://api.flatrouter.com"
 IMAGE_MODEL = os.environ.get("APIMART_IMAGE_MODEL") or "gpt-image-2.5-flare"   # 和封面脚本用同一个模型
+AISA_BALANCE = "https://api.aisa.one/v1/credits/balance"
+TWITTERAPI_INFO = "https://api.twitterapi.io/oapi/my/info"
+MIN_USD = 1.0   # 主通道一天约 0.1 美元，低于 1 美元时还够用一周多，留出充值的时间
 
 
 def anthropic_ping(base, key, model):
@@ -27,6 +33,18 @@ def openai_ping(base, key, model):
     return r.status_code, r.text[:160]
 
 
+def aisa_balance(key):
+    r = requests.get(AISA_BALANCE, timeout=30, headers={"Authorization": f"Bearer {key}"})
+    micros = r.json().get("available_balance_micros_usd") if r.status_code == 200 else None
+    return r.status_code, (micros / 1e6 if isinstance(micros, (int, float)) else None), r.text[:160]
+
+
+def twitterapi_balance(key):
+    r = requests.get(TWITTERAPI_INFO, timeout=30, headers={"X-API-Key": key})
+    credits = r.json().get("recharge_credits") if r.status_code == 200 else None
+    return r.status_code, (credits / 100000 if isinstance(credits, (int, float)) else None), r.text[:160]   # 100,000 credits = $1
+
+
 def main():
     checks = []
 
@@ -37,6 +55,21 @@ def main():
             code, body = 0, f"{type(e).__name__}: {e}"[:160]
         checks.append({"channel": channel, "used_by": used_by, "model": model, "ok": code in ok_codes, "status": code,
                        "detail": "" if code in ok_codes else body})
+
+    def add_balance(channel, used_by, env, fetch):
+        """查余额：key 没配、请求失败、余额不到 MIN_USD 都算异常"""
+        key = secret(env)
+        if not key:
+            checks.append({"channel": channel, "used_by": used_by, "model": "余额", "ok": False, "status": 0, "detail": f"{env} 没配或为空"})
+            return
+        try:
+            code, usd, body = fetch(key)
+        except Exception as e:  # noqa: BLE001
+            code, usd, body = 0, None, f"{type(e).__name__}: {e}"[:160]
+        ok = code == 200 and usd is not None and usd >= MIN_USD
+        detail = "" if ok else (f"余额只剩 ${usd:.2f}，不到 ${MIN_USD:.0f}，该充值了" if code == 200 and usd is not None else body)
+        checks.append({"channel": channel, "used_by": used_by, "model": f"余额 ${usd:,.2f}" if usd is not None else "余额",
+                       "ok": ok, "status": code, "detail": detail})
 
     fr = secret("FLATROUTER_API_KEY")
     if fr:
@@ -64,6 +97,9 @@ def main():
                               json={"model": "jev-latest", "state": "Card c1: Acme raised $5M in a closed seed round.",
                                     "questions": {"c1": {"type": "choice", "instructions": "What does c1 describe?",
                                                          "criteria": {"done": "A completed funding round", "rumor": "Only rumored"}}}})))
+    # X 数据两条通道（提示词库收录用）只查余额
+    add_balance("AIsa · X 数据（主）", "提示词库收录", "AISA_API_KEY", aisa_balance)
+    add_balance("twitterapi.io · X 数据（备）", "提示词库收录（AIsa 出错时）", "TWITTERAPI_IO_KEY", twitterapi_balance)
     if not checks:
         return save("channels", {"ok": False, "skipped": True, "reason": "没配任何模型通道的 key"})
     save("channels", {"ok": True, "checks": checks})

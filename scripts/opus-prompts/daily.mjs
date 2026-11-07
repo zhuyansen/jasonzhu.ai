@@ -10,14 +10,15 @@
  *
  * 用法：node scripts/opus-prompts/daily.mjs [--dry]
  * 补跑：WINDOW_FROM=2026-09-28T18:00Z WINDOW_TO=2026-09-29T10:00Z SEARCH_TERMS='"Sonnet 5.5" OR "Sonnet5.5"' node …
- * 环境变量：TWITTERAPI_IO_KEY（必需）· FLATROUTER_API_KEY / APIMART_CLAUDE_KEY / ANTHROPIC_API_KEY（至少一个；aigocode 2026-10-24 起不用）
+ * 环境变量：AISA_API_KEY（X 数据主通道）/ TWITTERAPI_IO_KEY（备用直连），至少一个，见 lib/x.mjs
+ *          FLATROUTER_API_KEY / APIMART_CLAUDE_KEY / ANTHROPIC_API_KEY（至少一个；aigocode 2026-10-24 起不用）
  *          FLATROUTER_API_KEY（审核用第二模型，强烈建议配）
  *          CAP=40 · MIN_FAVES=100 · DELAY_HOURS=24 · MAX_SEARCH_TWEETS=400 · CLAUDE_TRANSPORT=curl（本机）
  */
 import fs from "node:fs";
 import path from "node:path";
 import { workerJSON, reviewerJSON, usage } from "./lib/llm.mjs";
-import { searchWindow, authorThread, normalize, cost, hasVideo, fillMediaFromFx } from "./lib/x.mjs";
+import { searchWindow, authorThread, normalize, cost, costRows, hasVideo, fillMediaFromFx } from "./lib/x.mjs";
 import { resolvePrompt, bundle } from "./lib/resolve.mjs";
 import { arbitrate, applyDecision } from "./lib/arbitrate.mjs";
 import { jevAudit, jevAvailable, jevUsage } from "./lib/jev.mjs";
@@ -251,7 +252,7 @@ const summary = [
   `| 搜索返回 | ${raw.length}${truncated ? "（触及上限）" : ""} |`, `| 没见过的 | ${fresh.length} |`, `| 播放 ≥${THRESHOLD} 且带视频 | ${qualified.length} |`, `| 本次处理（上限 ${CAP}） | ${picked.length} |`,
   `| **上线：带提示词** | ${stat.published.length} |`, `| **上线：仅作品** | ${stat.publishedNoPrompt.length} |`, `| 终审（Opus）通过 / 否决 | ${stat.arbPublished.length} / ${stat.arbRejected.length} |`, `| 进待审队列（共 ${pending.length}） | ${stat.held.length} |`, `| 审核否决 | ${stat.rejected.length} |`, `| 非作品 / 转帖 | ${stat.notWork} / ${stat.reposts} |`, `| 其中被 Jev 捞回 | ${stat.rescued.length} |`,
   "", "| 消耗 | |", "|---|---|",
-  `| twitterapi.io | ${cost.tweets} 条 ≈ ${cost.credits.toLocaleString("en-US")} credits |`,
+  ...costRows(),
   `| 干活模型（Claude） | ${usage.worker.calls} 次调用 · 输入 ${usage.worker.in.toLocaleString("en-US")} / 输出 ${usage.worker.out.toLocaleString("en-US")} tokens |`,
   `| 审核模型（${usage.reviewer.provider || "未调用"}） | ${usage.reviewer.calls} 次调用 · 输入 ${usage.reviewer.in.toLocaleString("en-US")} / 输出 ${usage.reviewer.out.toLocaleString("en-US")} tokens |`,
   `| 审核（Jev） | ${jevUsage.calls} 次调用 · $${jevUsage.cost.toFixed(4)} |`,
@@ -267,6 +268,6 @@ wr("classified.json", "{\n" + Object.entries(classified).map(([k, v]) => `${JSON
 wr("extracted.json", "[\n" + extracted.map((e) => JSON.stringify(e)).join(",\n") + "\n]\n");
 wr("pending.json", pending);
 wr("seen.json", "[" + [...seen].sort().map((s) => JSON.stringify(s)).join(",") + "]\n");
-if (!MANUAL) wr("state.json", { windowEnd: new Date(to).toISOString(), lastRunAt: nowISO, lastRun: { searched: raw.length, processed: picked.length, published: stat.published.length + stat.publishedNoPrompt.length, held: stat.held.length, credits: cost.credits } });
+if (!MANUAL) wr("state.json", { windowEnd: new Date(to).toISOString(), lastRunAt: nowISO, lastRun: { searched: raw.length, processed: picked.length, published: stat.published.length + stat.publishedNoPrompt.length, held: stat.held.length, credits: (cost.aisa.tweets + cost.direct.tweets) * 15, xData: { aisa: cost.aisa.tweets, direct: cost.direct.tweets, ...(cost.aisaDown ? { aisaDown: cost.aisaDown } : {}) } } });
 fs.rmSync(WORK, { recursive: true, force: true });
 log("\n✅ 已写入 data/");

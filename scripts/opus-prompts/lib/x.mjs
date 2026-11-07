@@ -1,27 +1,112 @@
-/** X 数据：twitterapi.io（搜索、作者回复，约 15 credits/条）+ 归一化。本机设 OPUS_TRANSPORT=curl。 */
+/**
+ * X 数据（搜索、作者回复）+ 归一化。本机设 OPUS_TRANSPORT=curl。
+ *
+ * 两个通道（2026-11-07 起）：先走 AIsa（AISA_API_KEY），出错就改走 twitterapi.io 直连（TWITTERAPI_IO_KEY），
+ * 余额不足、限流、超时都算出错。AIsa 的 X 工具底层就是 twitterapi.io：参数、返回格式都一样，价格也一样
+ * （每条 $0.00015 = 15 credits），只是从 AIsa 的余额里扣。两边各有各的钱包，一边用完另一边顶上
+ * （11-06 twitterapi.io 余额用完，两个库停了一天）。
+ */
 import { execFile } from "node:child_process";
 import { promisify } from "node:util";
 const run = promisify(execFile);
 const CURL = process.env.OPUS_TRANSPORT === "curl" || process.env.CLAUDE_TRANSPORT === "curl";
 const KEY = process.env.TWITTERAPI_IO_KEY;
-export const cost = { tweets: 0, get credits() { return this.tweets * 15; } };
+const AISA_KEY = process.env.AISA_API_KEY;
+const AISA_URL = `${(process.env.AISA_ROUTER_BASE_URL || "https://tools.aisa.one").replace(/\/+$/, "")}/v1/tool-router/aisa-batch-use`;
+// twitterapi.io 的接口路径 → AIsa 上对应的工具
+const AISA_TOOLS = { "/twitter/tweet/advanced_search": "get_twitter_tweet_advanced_search" };
 
-async function api(pathname, params) {
-  if (!KEY) throw new Error("缺 TWITTERAPI_IO_KEY");
+/** 用量，两个通道分开记。aisaDown：这次运行里 AIsa 为什么没用上（没配 key，或者出错后改走直连） */
+export const cost = { aisa: { tweets: 0, usd: 0 }, direct: { tweets: 0 }, aisaDown: "" };
+/** 运行摘要里的两行用量（两个库共用） */
+export const costRows = () => [
+  `| X 数据：AIsa（主） | ${cost.aisa.tweets} 条 · $${cost.aisa.usd.toFixed(4)} |`,
+  `| X 数据：twitterapi.io 直连（备） | ${cost.direct.tweets} 条 ≈ ${(cost.direct.tweets * 15).toLocaleString("en-US")} credits${cost.aisaDown ? `（AIsa 没用上：${cost.aisaDown.slice(0, 100)}）` : ""} |`,
+];
+
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+// 401 / 402 / 403：key 不对、余额不足、没权限，重试没用（twitterapi.io 文档也让遇到 402 就停）
+const fatal = (status) => status === 401 || status === 402 || status === 403;
+const fail = (msg, status) => Object.assign(new Error(msg), { fatal: fatal(status) });
+// 报错原文取出人话：twitterapi.io 是 {"error":"Unauthorized","message":"Credits is not enough…"}，
+// AIsa 常在 message 里再套一段 JSON（{"message":"{\"code\":…,\"error\":\"…\"}"}）
+const reason = (v) => {
+  let s = typeof v === "string" ? v : JSON.stringify(v ?? "");
+  for (let i = 0; i < 2; i++) {
+    let j; try { j = JSON.parse(s); } catch { break; }
+    const err = typeof j?.error === "string" ? j.error : j?.error?.message;
+    const msg = typeof j?.message === "string" ? j.message : j?.msg;
+    if (typeof msg === "string" && /^\s*\{/.test(msg)) { s = msg; continue; }
+    const parts = [err, msg].filter((x) => typeof x === "string" && x);
+    if (parts.length) s = parts.join("：");
+    break;
+  }
+  return s.slice(0, 160);
+};
+
+/** 发一个请求，返回 { status, text }。key 只放在请求头里：curl 模式从 stdin 传配置，不进命令行（execFile 失败时命令行会被写进报错） */
+async function http(url, { header, body }) {
+  if (CURL) {
+    const args = ["-sS", "-m", "60", "-K", "-", "-w", "\n%{http_code}"];
+    if (body) args.push("-X", "POST", "-H", "Content-Type: application/json", "--data-binary", body);
+    const p = run("curl", [...args, url], { maxBuffer: 64e6 });
+    p.child.stdin.end(`header = "${header}"\n`);
+    let out;
+    try { ({ stdout: out } = await p); } catch (e) { throw new Error(`curl failed (exit ${e.code ?? "?"}): ${String(e.stderr || "").trim().slice(0, 160)}`); }
+    const i = out.lastIndexOf("\n");
+    return { status: Number(out.slice(i + 1)), text: out.slice(0, i) };
+  }
+  const i = header.indexOf(": ");
+  const headers = { [header.slice(0, i)]: header.slice(i + 2), ...(body ? { "Content-Type": "application/json" } : {}) };
+  const r = await fetch(url, { method: body ? "POST" : "GET", headers, body, signal: AbortSignal.timeout(60000) });
+  return { status: r.status, text: await r.text() };
+}
+
+/** AIsa tool router：一次调一个工具，data 就是 twitterapi.io 原样的返回 */
+async function viaAisa(tool, params) {
+  const body = JSON.stringify({ calls: [{ call_id: "x", tool, arguments: params }] });
+  for (let attempt = 1; ; attempt++) {
+    try {
+      const { status, text } = await http(AISA_URL, { header: `Authorization: Bearer ${AISA_KEY}`, body });
+      if (status !== 200) throw fail(`HTTP ${status}：${reason(text)}`, status);
+      const r = JSON.parse(text).results?.[0];
+      if (!r?.successful || !Array.isArray(r.data?.tweets)) {
+        throw fail(`HTTP ${r?.upstream_status ?? "?"}：${reason(r?.error ?? r?.data ?? r ?? text)}`, r?.upstream_status);
+      }
+      cost.aisa.tweets += r.data.tweets.length;
+      cost.aisa.usd += (r.customer_cost_micros_usd || 0) / 1e6;
+      return r.data;
+    } catch (e) { if (e.fatal || attempt >= 3) throw e; await sleep(2000 * attempt); }
+  }
+}
+
+async function viaDirect(pathname, params) {
   const url = `https://api.twitterapi.io${pathname}?${new URLSearchParams(params)}`;
   for (let attempt = 1; ; attempt++) {
     try {
-      let text;
-      if (CURL) {
-        // 密钥走 stdin 的 curl 配置，不进命令行（execFile 失败时命令行会被写进报错）
-        const p = run("curl", ["-sS", "-m", "45", "-K", "-", url], { maxBuffer: 64e6 });
-        p.child.stdin.end(`header = "X-API-Key: ${KEY}"\n`);
-        try { ({ stdout: text } = await p); } catch (e) { throw new Error(`curl failed (exit ${e.code ?? "?"}): ${String(e.stderr || "").trim().slice(0, 160)}`); }
-      }
-      else { const r = await fetch(url, { headers: { "X-API-Key": KEY }, signal: AbortSignal.timeout(45000) }); text = await r.text(); if (!r.ok) throw new Error(`HTTP ${r.status}: ${text.slice(0, 120)}`); }
-      return JSON.parse(text);
-    } catch (e) { if (attempt >= 3) throw e; await new Promise((r) => setTimeout(r, 2000 * attempt)); }
+      const { status, text } = await http(url, { header: `X-API-Key: ${KEY}` });
+      if (status !== 200) throw fail(`HTTP ${status}：${reason(text)}`, status);
+      const j = JSON.parse(text);
+      if (Array.isArray(j.tweets)) cost.direct.tweets += j.tweets.length;
+      return j;
+    } catch (e) { if (e.fatal || attempt >= 3) throw e; await sleep(2000 * attempt); }
   }
+}
+
+async function api(pathname, params) {
+  const tool = AISA_TOOLS[pathname];
+  if (!AISA_KEY) cost.aisaDown ||= "没配 AISA_API_KEY";
+  else if (tool && !cost.aisaDown) {
+    try { return await viaAisa(tool, params); }
+    catch (e) {
+      // 一次出错就整次运行改走直连：两边同价，不必每页都先撞一次 AIsa；下次运行再先试 AIsa
+      cost.aisaDown = String(e.message).slice(0, 200);
+      if (!KEY) throw new Error(`AIsa 出错，也没配 TWITTERAPI_IO_KEY：${cost.aisaDown}`);
+      console.log(`::warning::X 数据：AIsa 出错（${cost.aisaDown.slice(0, 120)}），这次运行改走 twitterapi.io 直连`);
+    }
+  }
+  if (!KEY) throw new Error("AISA_API_KEY 和 TWITTERAPI_IO_KEY 都没配，取不了 X 数据");
+  return viaDirect(pathname, params);
 }
 
 export async function paged(query, maxTweets, maxPages = 25) {
@@ -31,7 +116,7 @@ export async function paged(query, maxTweets, maxPages = 25) {
     // 接口出错（限流、余额、参数）时返回的 JSON 没有 tweets 数组。以前把它当成「0 条」静默继续，
     // 调用方会照常推进时间窗口，那段时间就被永久跳过了（2026-09-30 差点发生）。
     if (!Array.isArray(j.tweets)) throw new Error(`search API error: ${JSON.stringify(j).slice(0, 200)}`);
-    const ts = j.tweets; cost.tweets += ts.length; out.push(...ts);
+    const ts = j.tweets; out.push(...ts);
     if (!j.has_next_page || !j.next_cursor || !ts.length) break;
     cursor = j.next_cursor;
   }
