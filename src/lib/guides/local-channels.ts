@@ -121,7 +121,7 @@ export const LOCAL_CHANNELS: Guide = {
     },
     {
       id: "jp",
-      title: "日本：X 比别的市场强得多，开发者社区只收技术文",
+      title: "日本：X 比别的市场强得多，开发者社区不收宣传文",
       items: [
         {
           text: "总务省 2025 年 12 月调查（13–79 岁）：用 LINE 的 92.9%、YouTube 81.5%、Instagram 54.8%、X 44.7%、TikTok 36.7%、Facebook 27.0%。",

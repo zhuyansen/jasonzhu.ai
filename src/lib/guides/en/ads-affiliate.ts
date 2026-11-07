@@ -128,7 +128,7 @@ export const ADS_AFFILIATE_EN: Guide = {
     },
     {
       id: "vn",
-      title: "Vietnam: Accesstrade is easy to join, local ad networks are not",
+      title: "Vietnam: Accesstrade is easy to join; Admicro wants a million page views a month",
       items: [
         {
           text: "Accesstrade Vietnam takes individuals and organisations as publishers and withholds personal income tax for individuals; its terms (version 5, updated 4 November 2026) say nothing about nationality, ID or a Vietnamese bank account.",
@@ -142,7 +142,7 @@ export const ADS_AFFILIATE_EN: Guide = {
     },
     {
       id: "jp",
-      title: "Japan: local programmes want a Japanese bank account, and nend has closed",
+      title: "Japan: A8.net wants a Japanese bank account, and nend has closed",
       items: [
         {
           text: "A8.net: you can join while living abroad if you have an account at a Japanese bank and a Japanese address where you can be reached; ads may only go on Japanese-language sites.",
@@ -176,7 +176,7 @@ export const ADS_AFFILIATE_EN: Guide = {
     },
     {
       id: "kr",
-      title: "Korea: local programmes are hard to join, and disclosure goes first",
+      title: "Korea: Kakao AdFit is by approval or invitation, and disclosure goes first",
       items: [
         {
           text: "Kakao AdFit only serves media that were approved or invited in advance; signing up needs a code from your contact there, and company accounts must verify a Korean business registration number.",

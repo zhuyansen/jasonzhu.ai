@@ -72,9 +72,9 @@ export const HOSTING_EN: Guide = {
   short: "Hosting and access",
   title: "Where to host and whether local users can open your site: blocking and throttling in each market, third-party resources that fail to load, CDN locations and data localisation",
   description:
-    "Hosting and access problems for overseas sites, market by market: vercel.app is blocked in mainland China and GA quietly loses data there, Russia throttles sites on Cloudflare to 16KB, Vietnam's international undersea cables often break, Korea's network fees are high and its CDN locations few, and in Spain sites get caught in IP blocks during football matches; plus whether each CDN has locations in each market, and what the EU, Russia and Vietnam require about where data is stored.",
+    "Hosting and access problems for overseas sites, market by market: vercel.app is blocked in mainland China and GA quietly loses data there, Russia throttles sites on Cloudflare to 16KB, Vietnam's international undersea cables often break, Korea's network fees are high and Cloudflare has only one location there, in Seoul, and in Spain sites get caught in IP blocks during football matches; plus whether each CDN has locations in each market, and what the EU, Russia and Vietnam require about where data is stored.",
   intro:
-    "Most overseas sites sit in a US region of Vercel, Cloudflare or AWS and open fine in the US, Japan and Europe, but a few markets need a separate look: mainland China blocks vercel.app and most Google services, Russia throttles sites on Cloudflare so that only 16KB loads, Vietnam's international undersea cables often break, and Korea's network fees mean few CDN locations. Below, market by market: whether the site opens, which third-party resources break, whether each CDN has locations there, and whether data has to be stored in the country.",
+    "Most overseas sites sit in a US region of Vercel, Cloudflare or AWS and open fine in the US, Japan and Europe, but a few markets need a separate look: mainland China blocks vercel.app and most Google services, Russia throttles sites on Cloudflare so that only 16KB loads, Vietnam's international undersea cables often break, and Korea's network fees are high and Cloudflare has only a Seoul location. Below, market by market: whether the site opens, which third-party resources break, whether each CDN has locations there, and whether data has to be stored in the country.",
   checked: "2026-11-07",
   sections: [
     {
@@ -154,7 +154,7 @@ export const HOSTING_EN: Guide = {
     },
     {
       id: "vn",
-      title: "Vietnam: international undersea cables often break; sites hosted in the country are unaffected",
+      title: "Vietnam: international undersea cables often break; sites hosted in the country are expected to be unaffected",
       items: [
         {
           text: "According to Voice of Vietnam, two undersea cables, SJC2 and AAE-1, failed almost at the same time on 25 August 2026; with the ones not yet repaired, 4 of the 8 international cables had problems, and access to sites abroad slowed at peak times. Websites and services hosted in Vietnam were expected to be unaffected.",
@@ -257,7 +257,7 @@ export const HOSTING_EN: Guide = {
     },
     {
       id: "cn",
-      title: "Mainland China: default domains are blocked, and most Google resources do not load",
+      title: "Mainland China: platform default domains are often blocked, and most Google resources do not load",
       items: [
         {
           text: "On 17 September 2026 we used Globalping to measure connection times to port 443 from 8 probes in mainland China, Cloudflare's Free plan against GitHub Pages: medians of 1,054 ms against 167 ms on China Unicom, 348 against 103 on China Mobile, and 274 against 930 on China Telecom (on China Telecom, Cloudflare was actually faster). The sample is small, and only the connection handshake was measured.",

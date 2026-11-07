@@ -243,7 +243,7 @@ export const COMPLIANCE_EN: Guide = {
     },
     {
       id: "cn",
-      title: "Mainland China: the Personal Information Protection Law reaches abroad, and paid services need an operating licence",
+      title: "Mainland China: the Personal Information Protection Law reaches abroad, and paid information services need an operating licence",
       items: [
         {
           text: "For ICP filing, see the domain guide. The filing number must be shown at the bottom centre of the home page; operating without a filing is fined CNY 10,000.",

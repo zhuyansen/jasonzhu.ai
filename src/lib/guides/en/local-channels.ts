@@ -123,7 +123,7 @@ export const LOCAL_CHANNELS_EN: Guide = {
     },
     {
       id: "jp",
-      title: "Japan: X is far stronger than elsewhere, and developer communities only take technical posts",
+      title: "Japan: X is far stronger than elsewhere, and developer communities do not take promotional posts",
       items: [
         {
           text: "The Ministry of Internal Affairs and Communications' December 2025 survey (ages 13–79): LINE 92.9%, YouTube 81.5%, Instagram 54.8%, X 44.7%, TikTok 36.7%, Facebook 27.0%.",

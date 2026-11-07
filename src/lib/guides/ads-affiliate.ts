@@ -127,7 +127,7 @@ export const ADS_AFFILIATE: Guide = {
     },
     {
       id: "vn",
-      title: "越南：Accesstrade 门槛低，本地广告网络门槛高",
+      title: "越南：Accesstrade 门槛低，Admicro 要月浏览量过百万",
       items: [
         {
           text: "Accesstrade 越南站：个人和机构都能做站长，个人的个税由平台代扣；条款没写国籍、证件和是否要越南银行账户（2026 年 11 月 4 日更新到第 5 版）。",
@@ -141,7 +141,7 @@ export const ADS_AFFILIATE: Guide = {
     },
     {
       id: "jp",
-      title: "日本：本地联盟要日本银行账户，nend 已经关了",
+      title: "日本：A8.net 要日本银行账户，nend 已经关了",
       items: [
         {
           text: "A8.net：住在日本以外也能注册，前提是有日本国内的银行账户和日本国内能联系上的地址；只能放在日文网站上。",
@@ -175,7 +175,7 @@ export const ADS_AFFILIATE: Guide = {
     },
     {
       id: "kr",
-      title: "韩国：本地联盟难进，披露要放在开头",
+      title: "韩国：Kakao AdFit 要批准或受邀，披露要放在开头",
       items: [
         {
           text: "Kakao AdFit 只给事先批准或受邀的媒体用，注册要填对接人给的认证码；公司账户要核验韩国营业登记号。",
