@@ -1,4 +1,5 @@
 name: 提示词库每日收录（Claude 5.5 + ChatGPT Images 2.6）
+# 注意：indexnow.yml 的 workflow_run 按这个 name 挂钩。改 name 要同步改那边，否则收录上线后不推 IndexNow，也不报错。
 
 # 每天北京时间 9:17：收录 24 小时前发布、播放过 5000 的 Opus 5.5 / Sonnet 5.5 新作品，每天最多 80 个（按播放量优先）。
 # Claude 分类（被筛掉的由 Jev 复核捞回）并定位提示词 → 代码逐字对账 → Jev 审核 → 拿不准的交 Opus 终审。

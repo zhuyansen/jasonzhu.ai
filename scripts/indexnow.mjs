@@ -20,6 +20,12 @@ const DRY_RUN = process.argv.includes("--dry-run");
 
 const args = process.argv.slice(2).filter((a) => a !== "--dry-run");
 
+/** 提示词库：public/data 下的目录名 → 站内路径（作品详情页 = 路径/<推文 ID>） */
+const PROMPT_LIBS = {
+  "opus-prompts": "/prompts/claude-opus-5-5",
+  "image-prompts": "/prompts/chatgpt-images-2-6",
+};
+
 /** 改动的文件路径 → 候选 URL（zh/en 都列上，交给 sitemap 过滤） */
 function urlsForFile(file) {
   const both = (p) => [`${SITE_URL}/zh${p}`, `${SITE_URL}/en${p}`];
@@ -27,7 +33,15 @@ function urlsForFile(file) {
   if (blog) return [...both(`/blog/${blog[1]}`), ...both("/blog"), ...both("")];
   const news = file.match(/^src\/content\/news\/(\d{4}-\d{2}-\d{2})\.md$/);
   if (news) return [...both(`/news/${news[1]}`), ...both("/news"), ...both("")];
-  if (file === "src/content/opus-prompts/cases.json") return both("/prompts/claude-opus-5-5");
+  // 提示词库源文件变了：推列表页和 /prompts 总览（总览上有两个库的作品数）
+  if (file === "src/content/opus-prompts/cases.json")
+    return [...both(PROMPT_LIBS["opus-prompts"]), ...both("/prompts")];
+  if (file === "src/content/image-prompts/chatgpt-images-2-6.json")
+    return [...both(PROMPT_LIBS["image-prompts"]), ...both("/prompts")];
+  // 作品详情页按 public/data/<库>/<id>.json 推：生成脚本只给有提示词的作品写这个文件，正好是有详情页、进 sitemap 的那些
+  // （Claude 库没提示词的详情页 noindex，图片库没提示词的没有详情页、卡片直链 X）。文件只含提示词全文，数据核验改播放量不会动它。
+  const work = file.match(/^public\/data\/(opus-prompts|image-prompts)\/(\d{15,})\.json$/);
+  if (work) return both(`${PROMPT_LIBS[work[1]]}/${work[2]}`);
   return [];
 }
 
@@ -58,14 +72,15 @@ if (candidates.length === 0) {
   process.exit(0);
 }
 
-// 等部署：直到所有「属于内容页」的候选都出现在 sitemap，或超时
+// 等部署：直到所有「内容页」（博客 / 快讯文章页、提示词库作品详情页）的候选都出现在 sitemap，或超时
 let live = await fetchSitemapUrls();
 const deadline = Date.now() + WAIT_MINUTES * 60_000;
-const isContentPage = (u) => /\/(blog|news)\/[^/]+$/.test(u);
+const isContentPage = (u) => /\/(blog|news)\/[^/]+$/.test(u) || /\/prompts\/[^/]+\/\d{15,}$/.test(u);
 const pending = () =>
   candidates.filter((u) => isContentPage(u) && u.includes("/zh/") && !live.has(u));
 while (!urlMode && pending().length > 0 && Date.now() < deadline) {
-  console.log(`等待部署上线：${pending().join(", ")}`);
+  const p = pending();
+  console.log(`等待部署上线（${p.length} 个）：${p.slice(0, 5).join(", ")}${p.length > 5 ? " …" : ""}`);
   await new Promise((r) => setTimeout(r, 30_000));
   live = await fetchSitemapUrls();
 }

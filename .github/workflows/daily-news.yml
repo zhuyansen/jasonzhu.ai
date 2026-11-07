@@ -1,4 +1,5 @@
 name: Daily AI News Digest
+# 注意：indexnow.yml 的 workflow_run 按这个 name 挂钩。改 name 要同步改那边，否则快讯上线后不推 IndexNow，也不报错。
 
 on:
   schedule:
