@@ -49,7 +49,8 @@ export async function backupLead(
 // 页面照常显示「已退订」；Supabase 恢复后跑 scripts/reconcile-leads.mjs 写回主表，日报里有积压告警。
 const PENDING_UNSUBSCRIBES = "pending_unsubscribes";
 
-async function kvCommand(command: string[]): Promise<boolean> {
+/** 执行一条 Upstash Redis 命令（如 ["SET", key, value]）。成功返回 true；没配 KV、出错、5 秒超时返回 false，不抛错。 */
+export async function kvCommand(command: string[]): Promise<boolean> {
   if (!KV_URL || !KV_TOKEN) return false;
   try {
     const res = await fetch(`${KV_URL}/pipeline`, {

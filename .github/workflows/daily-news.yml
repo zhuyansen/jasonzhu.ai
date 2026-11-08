@@ -2,6 +2,8 @@ name: Daily AI News Digest
 # 注意：indexnow.yml 的 workflow_run 按这个 name 挂钩。改 name 要同步改那边，否则快讯上线后不推 IndexNow，也不报错。
 
 on:
+  # 2026-11-09 起由 Vercel Cron 按点触发三档（vercel.json → /api/cron/news-1|2|3，带 cron_tier）：GitHub 自己的定时常晚 3–5 小时。
+  # 下面的 schedule 留着当备用：Vercel 那边没触发成，晚几小时还有它；今天已经发布就跳过（见 Check 那步），不会重复发邮件。
   schedule:
     # 主跑：北京时间 05:30 (UTC 21:30 前一天) — 留足缓冲，确保 8:00 前内容就绪
     - cron: "30 21 * * *"
@@ -17,6 +19,10 @@ on:
         default: ""
       skip_email:
         description: "填 1 = 只生成快讯、不给订阅者发邮件（比如晚上补跑当天快讯）"
+        required: false
+        default: ""
+      cron_tier:
+        description: "Vercel 定时触发专用（1 / 2 / 3 = 第几档）：按定时档处理，今天已发布就跳过，第 3 档检查并告警。手动跑留空"
         required: false
         default: ""
 
@@ -37,7 +43,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 今天的快讯已经发出（≥3 条，和 collect-news.mjs 的幂等判断一致）时，定时跑不再采集、重画封面、提交（skip）。
+      # 今天的快讯已经发出（≥3 条，和 collect-news.mjs 的幂等判断一致）时，定时跑（GitHub schedule，或 Vercel 定时带 cron_tier）
+      # 不再采集、重画封面、提交（skip）。
       # 采集脚本自己会跳过，但封面图每次都会重画、被判成「有变化」，以前每档重试都会
       # 多一次提交、多一次 Vercel 部署，再给全体订阅者发一封同样的邮件。
       # 邮件看发信账本（KV 的 digest-email:<日期>，scripts/lib/digest-email-ledger.mjs）：前一档发信失败、只发了一部分、
@@ -49,12 +56,13 @@ jobs:
         if: github.event_name == 'schedule' || inputs.date == ''
         env:
           EVENT: ${{ github.event_name }}
+          CRON_TIER: ${{ inputs.cron_tier }}  # Vercel 定时触发的档，和 schedule 一样处理
           KV_REST_API_URL: ${{ secrets.KV_REST_API_URL }}
           KV_REST_API_TOKEN: ${{ secrets.KV_REST_API_TOKEN }}
         run: |
           FILE="src/content/news/$(TZ=Asia/Shanghai date +%Y-%m-%d).md"
           if [ -f "$FILE" ] && [ "$(grep -c '^###[[:space:]]' "$FILE")" -ge 3 ]; then
-            if [ "$EVENT" = "schedule" ]; then
+            if [ "$EVENT" = "schedule" ] || [ -n "$CRON_TIER" ]; then
               echo "skip=true" >> "$GITHUB_OUTPUT"
               echo "$FILE 已有，这档不再采集、重画封面、提交"
             fi
@@ -163,10 +171,10 @@ jobs:
           RUN_DATE: ${{ inputs.date }}  # 留空 = 今天
         run: node scripts/lib/digest-email-ledger.mjs skip "$RUN_DATE"
 
-      # 告警只在最后一档发，避免噪音。不管这档成功、失败还是整轮跳过都检查一遍：
+      # 告警只在最后一档发（Vercel 的第 3 档；GitHub 晚到的 7:15 那档再查一次），避免噪音。不管这档成功、失败还是整轮跳过都检查一遍：
       # 今天的快讯还没生成，或者生成了但邮件没发完（账本不是 sent / skipped），就给 ALERT_EMAIL 发一封。
       - name: Alert if today's digest or email is not out (last retry)
-        if: always() && github.event.schedule == '15 23 * * *'
+        if: always() && (github.event.schedule == '15 23 * * *' || inputs.cron_tier == '3')
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           ALERT_EMAIL: ${{ secrets.ALERT_EMAIL }}
@@ -196,7 +204,7 @@ jobs:
             HTML="$HTML停在 sending（发到一半没收尾）的，要先看日志和 Resend 后台，再用 <code>node --env-file=.env.local scripts/lib/digest-email-ledger.mjs set $DATE sent|failed</code> 改账本。<br>$LOG"
           else
             SUBJECT="⚠️ AI 快讯今天没生成 ($DATE)"
-            HTML="三档 cron（北京 05:30 / 06:30 / 07:15，常被 GitHub 推迟几小时）都跑过了，今天的快讯还没生成（这档结果：$JOB_STATUS），请手动检查：<br>$LOG"
+            HTML="三档定时（北京 05:30 / 06:30 / 07:15，Vercel 按点触发；GitHub 自己的定时晚几小时再兜底一遍）都跑过了，今天的快讯还没生成（这档结果：$JOB_STATUS），请手动检查：<br>$LOG"
           fi
           echo "$SUBJECT"
           jq -n --arg to "$ALERT_EMAIL" --arg subject "$SUBJECT" --arg html "$HTML" \

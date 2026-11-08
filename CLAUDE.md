@@ -54,6 +54,12 @@ Git：commit 后如远程有新提交（cron 会自动 commit 快讯），先 `g
 - 署名（2026-11-01 起）：快讯的作者是站点，JSON-LD 写 Organization「JasonZhu.AI」，`<meta name="author">` 和 `article:author` 同；有 `humanComment` 的那期再加 Person「Jason Zhu」，两项分开写。publisher 始终是 Jason。日期后的署名行「JasonZhu.AI · AI 整理 · Jason Zhu 点评」和它对应。不要改回全署 Jason（AI 写的内容署个人，属于 Google 说的误导性作者信息）。
 
 **快讯 cron（.github/workflows/daily-news.yml）**
+- **定时触发（2026-11-09 起，快讯 / 数据日报 / 提示词库三个任务）**：GitHub 自己的 schedule 常晚 3–7 小时（10 月实测：快讯 5:30 → 8:19–11:00，日报 8:20 → 12:39–14:59，提示词库 9:17 → 14:51–15:54）。现在由 Vercel Cron 按点调 `/api/cron/<job>`（定时表在 `vercel.json`，接口在 `src/app/api/cron/[job]/route.ts`），接口再用 GitHub API 手动触发工作流，几秒内开跑。
+  - 需要 Vercel 生产环境的 `CRON_SECRET`，以及 `GITHUB_CONTENTS_TOKEN`（fine-grained，本仓库 Contents + Actions 读写）。
+  - 各工作流的 schedule 留着当备用：快讯晚到的几档看到已发布就跳过；日报、提示词库有 guard job，今天已经跑过就跳过，不多发一封日报、不多一次部署。
+  - 快讯 Vercel 三档带 `cron_tier` 输入，按定时档处理（已发布就跳过，第 3 档检查并告警）。手动跑别填它。
+  - 每次触发的结果记在 KV `cron:dispatch:<job>`。日报「⏰ 按点触发」一行据此告警：没按点触发、token 14 天内到期。
+  - 改时间要同时改三处：`vercel.json`、工作流里的 schedule、`ops/analytics/fetch_site.py` 的 `CRON_SLOTS`。
 - 北京时间清晨 5:30/6:30/7:15 三档重试；`collect-news.mjs` 抓 RSS → Claude 结构化 → 写 md + Supabase → commit。今天的快讯已发出（≥3 条）时，后面几档不再采集、重画封面、提交：以前每档都重画封面、多一次提交和部署、给订阅者重复发信（2026-10-27 修）。邮件脚本按北京日期取当期。
 - 发信账本（2026-11-06 起）：KV `digest-email:<北京日期>` 记这期邮件发到哪（`scripts/lib/digest-email-ledger.mjs`）。发信前先记「发送中」和按 50 人一批固定的名单，每批带 Resend `Idempotency-Key`（24 小时内同一个 key 不会再发），5xx / 429 / 超时当场重试；还有批次没发出去就以失败退出（以前一批被拒照样算成功，10 月每天 100 人收不到没人发现）。后面两档看到「快讯已发布、邮件没发完」只补发没发出的批次；已发完再跑（包括手动重跑）不会再发。最后一档快讯没生成、或邮件没发完（账本不是 sent / skipped），给 ALERT_EMAIL 告警。KV 不通就不发；停在「发送中」（发到一半进程没了，或收尾记账失败）不自动重发，看运行日志和 Resend 后台后用 `node --env-file=.env.local scripts/lib/digest-email-ledger.mjs set <日期> sent|failed` 改。补发：原因修好后在 Actions 里手动 Run workflow（date 留空），手动跑也看账本、只补没收到的人（别用 Re-run：它检出的是原来那次的提交，可能还没有今天的快讯）。手动跑选了 skip_email 会记成 skipped，之后的定时档不补发。
 - 快讯邮件只发最新的 1000 个订阅者（`send-digest-email.mjs` 没分页，Supabase max-rows 截断；全表约 4,700 个）：2026-10-27 Jason 决定先不扩，要扩先问他。example.com 之类保留域名的测试地址在发信前过滤，否则 Resend 会把整批 50 封一起拒掉。英文提示词库的订阅者（来源 `prompts-en*`）也在这 1000 个里剔掉，不发中文快讯（周报同样）。已退订的同样在这 1000 个里剔掉（先取再剔，有人退订不会把第 1001 个人补进来），规则都在 `scripts/lib/newsletter.mjs`，见下面订阅段的「退订」。
@@ -95,7 +101,7 @@ Git：commit 后如远程有新提交（cron 会自动 commit 快讯），先 `g
 **数据日报（.github/workflows/analytics-daily.yml，北京 8:20 邮件）**
 - `ops/analytics/`（Python）：fetch_site（订阅 / 文章阅读增量 / KV 漏回灌 / 管线健康）、fetch_gsc、fetch_vercel、fetch_ga、fetch_clarity → digest.py → send_email.py（Resend）。一个源失败只在日报里标 ⚠️，没配凭证的源写「未接入」。
 - KV `pending_subscribers` 是每次订阅都双写的镜像，有积压不代表丢线索；只有「KV 有、Supabase 没有」才需要跑 reconcile-leads。
-- 「昨日快讯邮件」一行（2026-11-06 起）：只读 KV 发信账本 `digest-email:<昨天>`，给 daily-news 最后一档的告警兜底（那档被 GitHub 丢掉、或 runner 中途没了，就没人告警）。昨天的快讯没生成，或生成了但账本没有记录 / failed / sending / 读不到，日报开头告警。看昨天不看今天：快讯和日报的 cron 都常被 GitHub 推迟好几个小时（11-06 快讯 9:44–11:26 才跑；日报排在 8:20，近 10 天实际 13:54–14:59 才跑），日报跑的时候今天这期不一定发完，昨天的已经定了。
+- 「昨日快讯邮件」一行（2026-11-06 起）：只读 KV 发信账本 `digest-email:<昨天>`，给 daily-news 最后一档的告警兜底（那档被 GitHub 丢掉、或 runner 中途没了，就没人告警）。昨天的快讯没生成，或生成了但账本没有记录 / failed / sending / 读不到，日报开头告警。看昨天不看今天：快讯和日报的 cron 都常被 GitHub 推迟好几个小时（11-06 快讯 9:44–11:26 才跑；日报排在 8:20，近 10 天实际 13:54–14:59 才跑），日报跑的时候今天这期不一定发完，昨天的已经定了。2026-11-09 起三个任务都由 Vercel 按点触发（见快讯 cron 段），GitHub 定时只当备用，照样看昨天。
 - 转化事件统一走 `src/lib/track.ts` 的 `track()`，事件名和 digest.py 的 CONVERSIONS 对应；GA4/Clarity ID 没填时不加载任何第三方脚本。
 - Vercel Web Analytics 用官方 `/v1/query/web-analytics/visits/aggregate`，前提是项目里 Analytics 开关已打开。
 

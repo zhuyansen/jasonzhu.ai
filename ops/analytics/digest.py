@@ -120,6 +120,38 @@ if site.get("ok"):
         elif wf.get("conclusion") == "success":
             at = datetime.fromisoformat(wf["at"].replace("Z", "+00:00")).astimezone(CST).strftime("%m-%d %H:%M")
             health.append(f"✅ {wf['label']}（{at}）")
+    # 定时触发：Vercel Cron 按点触发三个任务（2026-11-09 起）；没按点就是落回了 GitHub 自己晚几小时的定时
+    ct = site.get("cron_triggers")
+    if ct:
+        good = []
+        for s in ct.get("slots") or []:
+            if s["ok"]:
+                good.append(f"{s['label']} {s['slot'][-5:]}")
+                continue
+            if not s.get("event"):
+                what = "到现在还没跑"
+            elif s["event"] == "schedule":
+                what = f"是 GitHub 自己的定时晚 {s['late_min']} 分钟补跑的"
+            else:
+                what = f"第一次运行晚了 {s['late_min']} 分钟（{s['event']}）"
+            d = s.get("dispatch") or {}
+            if not d.get("at") or d["at"] < s["slot_utc"]:
+                why = "这个点接口没被调用：Vercel 定时没生效，或 CRON_SECRET 不对（接口直接拒绝，不留记录）"
+            elif not d.get("ok"):
+                why = f"接口调了但触发失败：HTTP {d.get('status')} {(d.get('error') or '')[:160]}（token 没有 Actions 读写权限或过期最常见）"
+            else:
+                why = "接口当时触发成功了，但运行没按时出现，去 Actions 看看"
+            alerts.append(f"{s['label']} {s['slot']} 没按点触发，{what}。{why}")
+        exp = ct.get("token_expires")
+        try:
+            days = (datetime.strptime(exp, "%Y-%m-%d").date() - today).days if exp else None
+        except ValueError:
+            days = None
+        if days is not None and days <= 14:
+            alerts.append(f"触发工作流用的 GitHub token（Vercel 的 GITHUB_CONTENTS_TOKEN）{exp} 到期，还剩 {days} 天：到 GitHub 续期，"
+                          f"重新生成的话要更新 Vercel 环境变量")
+        if good:
+            health.append(f"⏰ 按点触发：{' · '.join(good)}" + (f"（GitHub token {exp} 到期）" if exp else ""))
     pl = site.get("prompt_library")
     if pl:
         d = f"，较上次日报 {pl['delta']:+d}" if pl.get("delta") is not None else ""

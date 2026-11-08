@@ -34,7 +34,7 @@ node scripts/opus-prompts/assemble.mjs --write && node scripts/generate-opus-pro
 
 | 什么 | 在哪 | 频率 | 需要密钥 |
 |---|---|---|---|
-| **每日收录新作品** | `.github/workflows/opus-prompts-daily.yml` → `daily.mjs` | 每天一次，9:17（北京） | `AISA_API_KEY`（X 数据主通道）+ `TWITTERAPI_IO_KEY`（备用），`JEV_API_KEY`（Jev 官方）、`FLATROUTER_API_KEY`（备用审核）、Claude 那几个 |
+| **每日收录新作品** | `.github/workflows/opus-prompts-daily.yml` → `daily.mjs` | 每天一次，9:17（北京）。2026-11-09 起由 Vercel Cron 按点触发（`vercel.json` → `/api/cron/prompts`），GitHub 自己的定时只当备用，今天跑过就跳过 | `AISA_API_KEY`（X 数据主通道）+ `TWITTERAPI_IO_KEY`（备用），`JEV_API_KEY`（Jev 官方）、`FLATROUTER_API_KEY`（备用审核）、Claude 那几个 |
 | 数据核验：刷新播放量、修复过期视频地址、下架已删帖 | `.github/workflows/opus-prompts-refresh.yml` → `refresh.mjs` | 每周一 11:00（北京） | 不需要 |
 | GitHub 合集同步 | `zhuyansen/awesome-opus-5.5-video` 的 `.github/workflows/sync.yml` | 每天 13:00（北京） | 不需要 |
 

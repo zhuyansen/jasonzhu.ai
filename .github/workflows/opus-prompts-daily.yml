@@ -12,6 +12,8 @@ name: 提示词库每日收录（Claude 5.5 + ChatGPT Images 2.6）
 # 需要的 Secrets：AISA_API_KEY（X 数据主通道）和 TWITTERAPI_IO_KEY（AIsa 出错时直连）至少一个，两个都配才有备用；
 # JEV_API_KEY（Jev 官方审核）、FLATROUTER_API_KEY（Jev 不可用时的 GPT 备用审核）；Claude 的几个沿用快讯的。
 on:
+  # 2026-11-09 起由 Vercel Cron 按点触发（vercel.json → /api/cron/prompts）：GitHub 自己的定时常晚 5–7 小时（9:17 → 14:51–15:54）。
+  # 下面的 schedule 留着当备用，今天已经收录过就跳过（guard），不会一天跑两轮、多一次提交和部署。
   schedule:
     # 一天一次（北京 9:17）：每次收「24 小时前」为止的帖子，作品最慢 2 天内上线。
     # 2026-10-27 起去掉 21:17 那档：每次提交都触发一次 Vercel 部署，每次部署约 1.4 GB 按月计存储费。
@@ -58,7 +60,33 @@ env:
   IMG_OUTPUTS: src/content/image-prompts src/generated/image-prompts.json src/generated/image-prompts-full.json public/data/image-prompts
 
 jobs:
+  # 只管 GitHub 自己的定时（备用）：今天（北京）已经正常收录过一次就跳过。
+  # 看 main 上最新的 state.json 的 lastRunAt（手动补跑某个时间段不写它，所以补跑不算）。不用 checkout：
+  # 排队等前一次跑完时，checkout 拿到的还是排队那一刻的提交，看不到前一次刚提交的 state。
+  guard:
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      skip: ${{ steps.check.outputs.skip }}
+    steps:
+      - id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          LAST=$(gh api -H "Accept: application/vnd.github.raw" "repos/$GITHUB_REPOSITORY/contents/$DATA/state.json?ref=main" | jq -r '.lastRunAt // empty')
+          TODAY=$(TZ=Asia/Shanghai date +%F)
+          if [ -n "$LAST" ] && [ "$(TZ=Asia/Shanghai date -d "$LAST" +%F)" = "$TODAY" ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "今天（$TODAY）已经收录过（lastRunAt $LAST），这次 GitHub 定时跳过"
+          else
+            echo "今天还没收录过（lastRunAt ${LAST:-无}），照常跑"
+          fi
+
   collect:
+    needs: guard
+    # guard 跳过（不是 GitHub 定时）或出错时照常跑：宁可多跑一次，不漏一天
+    if: ${{ !cancelled() && needs.guard.outputs.skip != 'true' }}
     runs-on: ubuntu-latest
     timeout-minutes: 110
     steps:

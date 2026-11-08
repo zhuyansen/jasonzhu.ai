@@ -10,7 +10,7 @@ import os
 import re
 import time
 from collections import Counter
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 import requests
 
@@ -19,6 +19,15 @@ from common import CST, REPO_ROOT, STATE, redact, run, save, secret, today_cst
 WORKFLOWS = {"daily-news.yml": "快讯采集", "opus-prompts-daily.yml": "提示词库每日收录",
              "opus-prompts-refresh.yml": "提示词库每周核验", "indexnow.yml": "IndexNow 推送"}
 AWESOME = "zhuyansen/awesome-opus-5.5-video"
+
+# 定时触发（2026-11-09 起）：Vercel Cron 按点调 /api/cron/<job>（src/app/api/cron/[job]/route.ts），它再手动触发工作流；
+# GitHub 自己的 schedule 只当备用（常晚几个小时）。看每个任务最近一个该触发的点：点后第一次运行是不是手动触发（workflow_dispatch）、
+# 晚了几分钟。没有运行、或是 GitHub 定时补跑的 = Vercel 没按点触发成。原因看接口记在 KV cron:dispatch:<job> 的结果：
+# token 没有 Actions 权限、过期，会记下 GitHub 的报错；CRON_SECRET 不对时接口直接拒绝，不留记录。
+CRON_SLOTS = (("快讯", "news-1", "daily-news.yml", 5, 30), ("日报", "report", "analytics-daily.yml", 8, 20),
+              ("提示词库", "prompts", "opus-prompts-daily.yml", 9, 17))
+CRON_SINCE = datetime(2026, 11, 9, tzinfo=CST)   # 这之前的点还是 GitHub 定时，不查
+CRON_LATE_MIN = 20
 
 
 def supa():
@@ -204,6 +213,35 @@ def workflows():
     return out
 
 
+def cron_triggers():
+    repo = os.environ.get("GITHUB_REPOSITORY", "zhuyansen/jasonzhu.ai")
+    now = datetime.now(CST)
+    slots, expires = [], []
+    for label, job, wf, h, m in CRON_SLOTS:
+        slot = now.replace(hour=h, minute=m, second=0, microsecond=0)
+        if slot > now - timedelta(minutes=5):      # 今天这个点还没到（日报查自己时也是这样）：看昨天的
+            slot -= timedelta(days=1)
+        try:
+            raw = kv_get(f"cron:dispatch:{job}")
+            rec = json.loads(raw) if raw else None
+        except Exception:  # noqa: BLE001 — KV 读不到，只是少了原因，运行记录照样查
+            rec = None
+        if rec and rec.get("tokenExpires"):
+            expires.append(str(rec["tokenExpires"])[:10])
+        if slot < CRON_SINCE:
+            continue
+        slot_utc = slot.astimezone(timezone.utc)
+        since = (slot_utc - timedelta(minutes=2)).strftime("%Y-%m-%dT%H:%M:%SZ")
+        runs = gh(f"repos/{repo}/actions/workflows/{wf}/runs?per_page=30&created=%3E%3D{since}").get("workflow_runs", [])
+        first = min(runs, key=lambda r: r["created_at"]) if runs else None
+        late = round((datetime.fromisoformat(first["created_at"].replace("Z", "+00:00")) - slot).total_seconds() / 60) if first else None
+        slots.append({"label": label, "slot": slot.strftime("%m-%d %H:%M"), "slot_utc": since, "event": first and first["event"],
+                      "late_min": late, "url": first and first["html_url"],
+                      "ok": bool(first) and first["event"] == "workflow_dispatch" and late <= CRON_LATE_MIN,
+                      "dispatch": rec and {k: rec.get(k) for k in ("at", "ok", "status", "error")}})
+    return {"slots": slots, "token_expires": min(expires) if expires else None}
+
+
 def awesome():
     repo = gh(f"repos/{AWESOME}")
     runs = gh(f"repos/{AWESOME}/actions/runs?per_page=3").get("workflow_runs", [])
@@ -228,7 +266,7 @@ def main():
     get = supa()
     for key, fn in (("subscribers", lambda: subscribers(get) if get else None), ("page_views", lambda: page_views(get) if get else None),
                     ("kv_pending", lambda: kv_pending(get) if get else None), ("news", news), ("prompt_library", prompt_library),
-                    ("workflows", workflows), ("awesome", awesome), ("sitemap", sitemap)):
+                    ("workflows", workflows), ("cron_triggers", cron_triggers), ("awesome", awesome), ("sitemap", sitemap)):
         try:
             out[key] = fn()
         except Exception as e:  # noqa: BLE001 — 单项失败只标这一项

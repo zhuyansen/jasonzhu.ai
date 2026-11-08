@@ -4,7 +4,9 @@ name: 数据日报
 # 再加上自动化管线健康（快讯、提示词库、GitHub 合集、sitemap）。一个源失败不影响其他源，日报照发并在开头标出来。
 # 只读：不往 main 推任何东西。
 #
-# 00:20 UTC = 北京 08:20；GitHub 定时任务常晚 0–40 分钟，实际 8:30–9:00 到。快讯 cron（5:30–7:15）此时已跑完。
+# 00:20 UTC = 北京 08:20。2026-11-09 起由 Vercel Cron 按点触发（vercel.json → /api/cron/report）：GitHub 自己的定时
+# 常晚 4–7 小时（10 月实际 12:39–14:59 才到）。下面的 schedule 留着当备用，今天已经发过日报就跳过（guard），不会收到两封。
+# 快讯三档（5:30 / 6:30 / 7:15）也是 Vercel 按点触发，日报跑的时候已经跑完。
 
 on:
   schedule:
@@ -20,7 +22,31 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # 只管 GitHub 自己的定时（备用）：今天（北京）已经成功跑过一次（发过日报）就跳过
+  guard:
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      skip: ${{ steps.check.outputs.skip }}
+    steps:
+      - id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          SINCE=$(date -u -d "$(TZ=Asia/Shanghai date +%F) 00:00 +0800" +%Y-%m-%dT%H:%M:%SZ)
+          N=$(gh run list -R "$GITHUB_REPOSITORY" --workflow analytics-daily.yml --status success --created ">=$SINCE" --json databaseId --jq length)
+          if [ "${N:-0}" -gt 0 ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "今天已经发过日报（北京 0 点后成功 $N 次），这次 GitHub 定时跳过"
+          else
+            echo "今天还没发过日报，照常跑"
+          fi
+
   digest:
+    needs: guard
+    # guard 跳过（不是 GitHub 定时）或出错时照常跑：宁可多一封，不漏一天
+    if: ${{ !cancelled() && needs.guard.outputs.skip != 'true' }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
     defaults:
