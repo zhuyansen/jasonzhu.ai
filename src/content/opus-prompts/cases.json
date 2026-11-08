@@ -1,8 +1,8 @@
 {
  "model": "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.5)",
  "threshold": 5000,
- "updatedAt": "2026-11-07T07:25:17.070Z",
- "statsCheckedAt": "2026-11-07T07:25:17.070Z",
+ "updatedAt": "2026-11-08T07:18:15.251Z",
+ "statsCheckedAt": "2026-11-08T07:18:15.251Z",
  "inclusionRule": "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -10232,6 +10232,56 @@
    }
   },
   {
+   "id": "2118742203371573615",
+   "url": "https://x.com/EnvolDev/status/2118742203371573615",
+   "author": {
+    "handle": "EnvolDev",
+    "name": "Tony"
+   },
+   "postedAt": "2026-11-06T16:28:00.000Z",
+   "addedAt": "2026-11-08",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "夜行列车Three.js短片四档推理强度对比",
+    "en": "Night Train Three.js Film at Four Effort Levels"
+   },
+   "summary": {
+    "zh": "Opus 编写 Three.js 场景并渲染成一段 25 秒影片，作者比较了四种工作强度设置。",
+    "en": "A 25-second film generated from a Three.js scene written by Opus, compared across four effort settings."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 247147,
+    "likes": 1675,
+    "replies": 103,
+    "reposts": 56,
+    "bookmarks": 804,
+    "checkedAt": "2026-11-08T07:18:15.251Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2118408951108943872/img/IK8r-g1J5uNC6YWZ.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2118408951108943872/vid/avc1/810x720/HUxr87MW6t9He2RP.mp4?tag=29",
+    "width": 810,
+    "height": 720,
+    "durationSec": 25
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102528632598274244",
    "url": "https://x.com/_MaxBlade/status/2102528632598274244",
    "author": {
@@ -13419,6 +13469,54 @@
    }
   },
   {
+   "id": "2118847014071120179",
+   "url": "https://x.com/apekshik/status/2118847014071120179",
+   "author": {
+    "handle": "apekshik",
+    "name": "apek"
+   },
+   "postedAt": "2026-11-06T23:24:29.000Z",
+   "addedAt": "2026-11-08",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "无限自我演化的后室游戏",
+    "en": "Infinite self-evolving Backrooms game"
+   },
+   "summary": {
+    "zh": "一个无限自我演化的浏览器后室游戏，Opus 在共享世界中持续扩展房间、角色、实体和体验。",
+    "en": "An infinite, self-evolving Backrooms browser game where Opus expands a shared world with rooms, characters, entities, and experiences."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 196295,
+    "likes": 3308,
+    "replies": 103,
+    "reposts": 301,
+    "bookmarks": 3033,
+    "checkedAt": "2026-11-08T07:18:15.251Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2118846003684184064/img/QMo2z45FyJ3Q1ZdL.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2118846003684184064/vid/avc1/1280x720/IU1bVqt0Gdn27JaZ.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 100
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103108967194833310",
    "url": "https://x.com/bradmillscan/status/2103108967194833310",
    "author": {
@@ -16578,6 +16676,58 @@
     "width": 1280,
     "height": 720,
     "durationSec": 190
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2118659661394035007",
+   "url": "https://x.com/tapehead_Lab/status/2118659661394035007",
+   "author": {
+    "handle": "tapehead_Lab",
+    "name": "tapehead.lab"
+   },
+   "postedAt": "2026-11-06T11:00:00.000Z",
+   "addedAt": "2026-11-08",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "《火箭》音乐视频制作流程",
+    "en": "Rocket music video workflow"
+   },
+   "summary": {
+    "zh": "一支减少视频生成使用量的音乐视频，作者用 Opus 5.5 制作了自定义动作和剪辑工具。",
+    "en": "A music video made with limited video generation, using custom motion and editing tools built with Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Suno V6",
+    "Seedance 2.5",
+    "Minimax H3"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 153268,
+    "likes": 1017,
+    "replies": 26,
+    "reposts": 109,
+    "bookmarks": 673,
+    "checkedAt": "2026-11-08T07:18:15.251Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2118650119952474112/img/2NkMUXfznWPOnX_m.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2118650119952474112/vid/avc1/1280x720/BKUaEg_HVC0ByF7F.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 166
    },
    "evidence": {
     "via": "daily",
@@ -27698,6 +27848,58 @@
    }
   },
   {
+   "id": "2118631442066682205",
+   "url": "https://x.com/dhruvalgolakiya/status/2118631442066682205",
+   "author": {
+    "handle": "dhruvalgolakiya",
+    "name": "Dhruval"
+   },
+   "postedAt": "2026-11-06T09:07:52.000Z",
+   "addedAt": "2026-11-08",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "绑定骨骼的3D角色动画",
+    "en": "Rigged 3D Character Animation"
+   },
+   "summary": {
+    "zh": "作者用 Codex 生成角色图像，借助 Tripo3D 创建网格和纹理，再在 Blender 中绑定和制作动画。",
+    "en": "A character animation workflow using Codex image generation, Tripo3D for meshes and textures, and Blender for rigging and animation."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Codex",
+    "Tripo3D",
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 93894,
+    "likes": 1377,
+    "replies": 33,
+    "reposts": 63,
+    "bookmarks": 1599,
+    "checkedAt": "2026-11-08T07:18:15.251Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2118630129169838080/img/2t2VCYfwvzEJ1Nzx.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2118630129169838080/vid/avc1/1280x720/0s0_Gc1vjQN-pJbN.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 8
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102479924032577686",
    "url": "https://x.com/jerryjliu0/status/2102479924032577686",
    "author": {
@@ -35065,6 +35267,58 @@
     "width": 1280,
     "height": 720,
     "durationSec": 50
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2118631658979250631",
+   "url": "https://x.com/chetanankola/status/2118631658979250631",
+   "author": {
+    "handle": "chetanankola",
+    "name": "Chetan Ankola"
+   },
+   "postedAt": "2026-11-06T09:08:44.000Z",
+   "addedAt": "2026-11-08",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "带雾效系统的3D场景",
+    "en": "Fog system 3D scene"
+   },
+   "summary": {
+    "zh": "一个使用 Opus 5.5、Astra、Three.js 和 Blender 制作的场景，更新了雾效系统。",
+    "en": "A Three.js and Blender scene made with Opus 5.5 and Astra, featuring an updated fog system."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js",
+    "Blender",
+    "Astra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 71946,
+    "likes": 1981,
+    "replies": 80,
+    "reposts": 79,
+    "bookmarks": 643,
+    "checkedAt": "2026-11-08T07:18:15.251Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2118630465443921920/img/xyxETkegrCc__sv5.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2118630465443921920/vid/avc1/894x720/1BconEZcQmm0lh1F.mp4?tag=29",
+    "width": 894,
+    "height": 720,
+    "durationSec": 23
    },
    "evidence": {
     "via": "daily",
@@ -49797,6 +50051,59 @@
    }
   },
   {
+   "id": "2118943445842804929",
+   "url": "https://x.com/Dstudio_ai/status/2118943445842804929",
+   "author": {
+    "handle": "Dstudio_ai",
+    "name": "Nano(ナノ)"
+   },
+   "postedAt": "2026-11-07T05:47:40.000Z",
+   "addedAt": "2026-11-08",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "3D角色舞台舞蹈视频",
+    "en": "3D Character Dance Stage Video"
+   },
+   "summary": {
+    "zh": "作者使用 Tripo、Claude Opus 5.5 和 Charakuru 制作了 3D 角色与舞蹈视频，并用 ChatGPT 生成概念图、用 X-STAGE 提供动作。",
+    "en": "The creator made a 3D character and dance video with Tripo, Claude Opus 5.5 and Charakuru, using ChatGPT for concept art and X-STAGE motion."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Tripo",
+    "ChatGPT",
+    "X-STAGE",
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 47400,
+    "likes": 1010,
+    "replies": 8,
+    "reposts": 101,
+    "bookmarks": 1058,
+    "checkedAt": "2026-11-08T07:18:15.251Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2118943155949367296/img/6yOHiEgGGwK0MyFw.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2118943155949367296/vid/avc1/1280x720/f39MmdPEBvZ130od.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 74
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2116945827738665060",
    "url": "https://x.com/abhinavflac/status/2116945827738665060",
    "author": {
@@ -54510,6 +54817,56 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2118689081475703236",
+   "url": "https://x.com/lucianlamp/status/2118689081475703236",
+   "author": {
+    "handle": "lucianlamp",
+    "name": "LUCIAN｜AI × Blockchain"
+   },
+   "postedAt": "2026-11-06T12:56:55.000Z",
+   "addedAt": "2026-11-08",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "由单张图片生成的可行走 3D 世界",
+    "en": "Walkable 3D world from one image"
+   },
+   "summary": {
+    "zh": "作者用 Claude Opus 5.5 和 GPT Image 将一张图片转换为可行走的本地 3D 空间，没有使用外部资产或生成的 3D 模型。",
+    "en": "The creator generated a locally processed, walkable 3D space from one image with Claude Opus 5.5 and GPT Image, without external assets or generated 3D models."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "GPT Image"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 42587,
+    "likes": 462,
+    "replies": 12,
+    "reposts": 37,
+    "bookmarks": 385,
+    "checkedAt": "2026-11-08T07:18:15.251Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2118689026291216385/img/vG-5QJgar4Q8_1t7.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2118689026291216385/vid/avc1/1280x720/epVUVSB_h915lRqf.mp4?tag=16",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 42
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -76399,6 +76756,54 @@
    }
   },
   {
+   "id": "2118917596980666793",
+   "url": "https://x.com/parhelion318/status/2118917596980666793",
+   "author": {
+    "handle": "parhelion318",
+    "name": "Dr. Apolotary"
+   },
+   "postedAt": "2026-11-07T04:04:57.000Z",
+   "addedAt": "2026-11-08",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "带内置视觉效果的合成器",
+    "en": "Synthesizer with built-in visuals"
+   },
+   "summary": {
+    "zh": "作者用 Opus 5.5 编写了一台内置视觉效果和突入式效果的合成器。",
+    "en": "The creator used Opus 5.5 to vibecode a synthesizer with built-in visuals and punch-in effects."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 24166,
+    "likes": 921,
+    "replies": 18,
+    "reposts": 68,
+    "bookmarks": 546,
+    "checkedAt": "2026-11-08T07:18:15.251Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2118917135535878144/img/SVDMdmjGaREXlkGn.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2118917135535878144/vid/avc1/720x1220/ytZqPfuE7NGC2hHx.mp4?tag=29",
+    "width": 720,
+    "height": 1220,
+    "durationSec": 28
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2104039850060173761",
    "url": "https://x.com/utkarshbuilds_/status/2104039850060173761",
    "author": {
@@ -78956,6 +79361,62 @@
     "width": 720,
     "height": 900,
     "durationSec": 27
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2118700618915397795",
+   "url": "https://x.com/anstapnever/status/2118700618915397795",
+   "author": {
+    "handle": "anstapnever",
+    "name": "anstap"
+   },
+   "postedAt": "2026-11-06T13:42:45.000Z",
+   "addedAt": "2026-11-08",
+   "lang": "en",
+   "models": [
+    "fable-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "代码渲染的港口巨型机甲动画短片",
+    "en": "Harbour Mech Anime Short Rendered in Code"
+   },
+   "summary": {
+    "zh": "作者用 Fable 5.5、并行代理、Blender 和 Python 制作了 92 秒动画短片，共 43 个镜头，并通过代码渲染和检查。",
+    "en": "The creator made a 92-second anime film with Fable 5.5 using parallel agents, Blender and Python, with 43 shots rendered and checked by code."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/anstapnever/status/2118700623004848474",
+    "text": "Create a 2D anime short. It must look completely like real Japanese anime, as if it were taken directly from a finished theatrical anime film. This is traditional-looking, hand-drawn 2D anime, not a 3D animation, a moving illustration, or a stylized web graphic.\n\nBuild everything in Blender from Python, render it in Eevee, then ink and paint every frame in a second pass. Deliver one 1920x1080, 24 fps MP4 with a synthesized soundtrack. Use any tools, libraries, references, guides, literally anything, as long as the final result looks 100% like hand-drawn 2D anime.\n\nUse theatrical anime as the art style reference for the design, line work, painted backgrounds, color and atmosphere. The film is 90 seconds long, in 43 shots. Its hero is a giant harbour mech. No people appear in the film.\n\nHERO\nUnit 07, an 80 m harbour mech that has slept in a dry dock for decades: chipped safety-yellow paint, rust runs, moss and hanging vines, one wide dark visor with two amber eye lights, a lightning-rod antenna, big hands with three fingers and a thumb, and a gull nesting on its head. It moves on twos, slow and heavy, and its feet never slide.\n\nWORLD\nHigh Harbor, a floating island-city 320-530 m above a bay, held by one colossal stud-link chain anchored to the seabed: windmills, a bell tower, white houses with terracotta roofs, waterfalls pouring off the rim into the void, blue levitation crystals underneath and an iron collar at the bottom tip. Below it, a working port at real scale: a dry dock, container cranes, fishing boats, a hillside town, a breakwater with tetrapods and a red-and-white lighthouse at its tip, and on the seabed a giant anchor overgrown with coral.\n\nSTORY\nSunrise over the city. A storm rolls in from the west and a waterspout forms. Lightning strikes the chain, the discharge runs down to the anchor, the shackle pin shears and the chain whips free: the city starts to drift toward the waterspout. The free end smashes a crane by the dry dock, lightning hits the mech's antenna and its visor lights. It rises tearing vines and rust, wades out, runs along the breakwater past the lighthouse, leaps, catches the last link, is dragged through the sea, winds the chain round the lighthouse like a bollard and holds. The waterspout passes the city by metres. The clouds tear open, the gull returns to its nest, the visor dims.\n\nLIGHT\nHigh-key anime light, never murky: a low morning sun from the east, a saturated cobalt sky, white cumulus with lavender shadows, a cobalt-turquoise sea with drawn whitecaps. The storm brings indigo cloud and lightning; light only changes with a cause you can see. Cel light with hard shadows, gouache backgrounds, ink lines on every machine and building, effects drawn on twos: water as inked sheets with foam crowns, never particle mush.\n\nSOUND\nA synthesized orchestra on a 150 bpm grid, so every cut lands on an 8th note: a hopeful theme on flute and horn, the storm in D minor, a 12/8 chase with one beat per footfall, a heavy 3/4 for the hold. 18 hits land exactly on the picture: the strikes, the snap, the catch.\n\nFORMAT\nWrite the film as a Python story clock: one state per frame for every pose, camera, chain link, effect and sound cue.\n\nCHECKS\nBefore the final render a script tests every frame on the real meshes: the mech never goes through itself, the chain, the dock, the breakwater or the lighthouse; chain links never pass through each other; the camera never enters a mesh, the city rock or the sea; nothing jumps between frames."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Blender",
+    "Python"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 22781,
+    "likes": 389,
+    "replies": 24,
+    "reposts": 41,
+    "bookmarks": 410,
+    "checkedAt": "2026-11-08T07:18:15.251Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2118699406379843584/img/20HMkCM5Mwj2Yfve.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2118699406379843584/vid/avc1/1280x720/xTOiaktxpfjF8a9f.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 92
    },
    "evidence": {
     "via": "daily",
@@ -82079,6 +82540,58 @@
    }
   },
   {
+   "id": "2118815935582863486",
+   "url": "https://x.com/0xKense1/status/2118815935582863486",
+   "author": {
+    "handle": "0xKense1",
+    "name": "Kensei"
+   },
+   "postedAt": "2026-11-06T21:20:59.000Z",
+   "addedAt": "2026-11-08",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "一天内制作的Unity 3D游戏",
+    "en": "Unity 3D Game Built in a Day"
+   },
+   "summary": {
+    "zh": "作者使用 Opus 5.5、Tripo、Blender 和 Unity，在不到 24 小时内制作了一款游戏，并称文章中介绍了完整流程。",
+    "en": "The creator made a game in less than 24 hours with Opus 5.5, Tripo, Blender and Unity, and says the step-by-step setup is in an article."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Tripo",
+    "Blender",
+    "Unity"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 20995,
+    "likes": 215,
+    "replies": 19,
+    "reposts": 23,
+    "bookmarks": 301,
+    "checkedAt": "2026-11-08T07:18:15.251Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2118815498963935233/img/ru5Inw1fz0kG19DG.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2118815498963935233/vid/avc1/1280x720/8ro2t570r3UHk5_Q.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 45
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2117391948348817828",
    "url": "https://x.com/naometzger/status/2117391948348817828",
    "author": {
@@ -84024,6 +84537,54 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2118760592731484271",
+   "url": "https://x.com/blueemi99/status/2118760592731484271",
+   "author": {
+    "handle": "blueemi99",
+    "name": "bluedev"
+   },
+   "postedAt": "2026-11-06T17:41:04.000Z",
+   "addedAt": "2026-11-08",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "用 Claude 制作的短视频",
+    "en": "Short video made with Claude"
+   },
+   "summary": {
+    "zh": "创作者分享了一个使用 Claude Opus 5.5 制作的视频。",
+    "en": "The creator shared another video made with Claude Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 19909,
+    "likes": 647,
+    "replies": 18,
+    "reposts": 21,
+    "bookmarks": 316,
+    "checkedAt": "2026-11-08T07:18:15.251Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2118760491229020161/img/PekgZtEfxGNBTPYz.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2118760491229020161/vid/avc1/1280x720/g01RaYQqQte9Mc8Y.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 24
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -89339,6 +89900,60 @@
    }
   },
   {
+   "id": "2118836711480508631",
+   "url": "https://x.com/midn1ghtexigent/status/2118836711480508631",
+   "author": {
+    "handle": "midn1ghtexigent",
+    "name": "Mercer 🌙"
+   },
+   "postedAt": "2026-11-06T22:43:32.000Z",
+   "addedAt": "2026-11-08",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "24小时制作的原创Three.js游戏",
+    "en": "Original Three.js Game Built in 24 Hours"
+   },
+   "summary": {
+    "zh": "创作者用 Claude Opus 5.5、Flux 3 Max、GPT Image、Tripo、Blender 和 Three.js 在 24 小时内制作了一款原创游戏。",
+    "en": "The creator made a full original game in 24 hours using Claude Opus 5.5, Flux 3 Max, GPT Image, Tripo, Blender and Three.js."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Flux 3 Max",
+    "GPT Image",
+    "Tripo",
+    "Blender",
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 17948,
+    "likes": 113,
+    "replies": 11,
+    "reposts": 10,
+    "bookmarks": 33,
+    "checkedAt": "2026-11-08T07:18:15.251Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2117080134528405504/img/xd5ut85gUgMiHM45.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2117080134528405504/vid/avc1/1280x720/ypawcsSBkFXVbLJa.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2106848736609808531",
    "url": "https://x.com/VoidStateKate/status/2106848736609808531",
    "author": {
@@ -92257,6 +92872,63 @@
     "width": 1280,
     "height": 720,
     "durationSec": 136
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2118924098516488591",
+   "url": "https://x.com/JoshDaws/status/2118924098516488591",
+   "author": {
+    "handle": "JoshDaws",
+    "name": "Josh Daws"
+   },
+   "postedAt": "2026-11-07T04:30:47.000Z",
+   "addedAt": "2026-11-08",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "圣诞老人和迷路的小星星",
+    "en": "Santa and the Little Lost Star"
+   },
+   "summary": {
+    "zh": "创作者在本地制作了一部 22 秒的圣诞动画短片，由 Opus 5.5 指挥流程，并用本地模型生成画面、声音和片头片尾。",
+    "en": "The creator made a 22-second Christmas cartoon locally with Opus 5.5 directing the workflow and local models generating the video, audio and titles."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Imagination Studio",
+    "MiniMax H3",
+    "Studio 1939 LoRA",
+    "MOSS-Image",
+    "FLUX3-K",
+    "Qwen-Image 2.1",
+    "Fish Audio Drama 3",
+    "MiniMax Music 3"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 16744,
+    "likes": 246,
+    "replies": 53,
+    "reposts": 13,
+    "bookmarks": 170,
+    "checkedAt": "2026-11-08T07:18:15.251Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2118923979628871680/img/IoPhKwOBZDhgWydS.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2118923979628871680/vid/avc1/1280x720/B-19eNySdR_18hIe.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 22
    },
    "evidence": {
     "via": "daily",
@@ -97836,6 +98508,62 @@
    }
   },
   {
+   "id": "2118728540976009336",
+   "url": "https://x.com/camperaigg/status/2118728540976009336",
+   "author": {
+    "handle": "camperaigg",
+    "name": "camper 🦎🎣"
+   },
+   "postedAt": "2026-11-06T15:33:42.000Z",
+   "addedAt": "2026-11-08",
+   "lang": "en",
+   "models": [
+    "fable-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "慢动作火柴燃烧模拟",
+    "en": "Slow-motion match combustion simulation"
+   },
+   "summary": {
+    "zh": "创作者在 Claude Code 中让 Claude Fable 5.5 用 Three.js 制作 44 倍慢动作的火柴点燃场景，并生成模拟效果、画面和声音。",
+    "en": "The creator asked Claude Fable 5.5 in Claude Code to create a 44× slow-motion match-striking scene in Three.js, including simulation, visuals and sound."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/camperaigg/status/2118728540976009336",
+    "text": "strike a match at 44× slow motion in three.js"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Three.js",
+    "Claude Code"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 14734,
+    "likes": 248,
+    "replies": 30,
+    "reposts": 8,
+    "bookmarks": 72,
+    "checkedAt": "2026-11-08T07:18:15.251Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2118728297026912256/img/5lw4d4mrs4GnI4r5.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2118728297026912256/vid/avc1/1280x720/YcFmRliFLq8iuBAQ.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 27
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2114377433369739331",
    "url": "https://x.com/thebuggeddev/status/2114377433369739331",
    "author": {
@@ -98951,6 +99679,57 @@
     "width": 1280,
     "height": 720,
     "durationSec": 28
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2118809236046246316",
+   "url": "https://x.com/deweytn/status/2118809236046246316",
+   "author": {
+    "handle": "deweytn",
+    "name": "Claudia Galeán (💫,💫)"
+   },
+   "postedAt": "2026-11-06T20:54:22.000Z",
+   "addedAt": "2026-11-08",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "动效模型对比",
+    "en": "Motion graphics model comparison"
+   },
+   "summary": {
+    "zh": "帖子比较了 Gemini 4 Hydrogen 和 Gemini 3.8 Flash 生成的动态图形，并附带一次 Opus 5.5 的运行结果，同时报告了生成耗时。",
+    "en": "The post compares motion-graphics outputs from Gemini 4 Hydrogen and Gemini 3.8 Flash, with an Opus 5.5 run as a bonus. It reports their generation times."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Gemini 4 Hydrogen",
+    "Gemini 3.8 Flash"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 14261,
+    "likes": 165,
+    "replies": 4,
+    "reposts": 4,
+    "bookmarks": 61,
+    "checkedAt": "2026-11-08T07:18:15.251Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2118808656166682624/img/ufROIdABFBKkgA2d.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2118808656166682624/vid/avc1/1280x720/F7XCgyE1llQK7O-1.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 43
    },
    "evidence": {
     "via": "daily",
@@ -104955,6 +105734,62 @@
     "width": 720,
     "height": 720,
     "durationSec": 141
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2118870207045529812",
+   "url": "https://x.com/SamGCoder/status/2118870207045529812",
+   "author": {
+    "handle": "SamGCoder",
+    "name": "SamG"
+   },
+   "postedAt": "2026-11-07T00:56:38.000Z",
+   "addedAt": "2026-11-08",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "Nanite风格WebGPU渲染引擎",
+    "en": "Nanite-style WebGPU rendering engine"
+   },
+   "summary": {
+    "zh": "创作者用 Opus 5.5 Medium 从零构建了一个 Rust/WebGPU 渲染库，目标是在浏览器中实现类似 Nanite 的几何处理和 Unreal 级别的光照。",
+    "en": "The creator used Opus 5.5 Medium to build a Rust/WebGPU rendering library with Nanite-style geometry and Unreal-quality lighting in the browser."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "post",
+    "sourceUrl": "https://x.com/SamGCoder/status/2118870207045529812",
+    "text": "What I want you to do is create a library that is the basis for how Unreal Engine Works for lighting and nanites.\n\nI want you to use WebGPU in Rust.\n\nWe need to create really clean code/system\n\n/goal can unreal quality in the browser."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "WebGPU",
+    "Rust"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 12665,
+    "likes": 277,
+    "replies": 12,
+    "reposts": 11,
+    "bookmarks": 281,
+    "checkedAt": "2026-11-08T07:18:15.251Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2118869080732323840/img/LIHw1cGiWBLH9GQE.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2118869080732323840/vid/avc1/1280x720/o5YiWDT461IISEo0.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 83
    },
    "evidence": {
     "via": "daily",
@@ -112570,6 +113405,61 @@
    }
   },
   {
+   "id": "2118765227584246106",
+   "url": "https://x.com/vib3coded/status/2118765227584246106",
+   "author": {
+    "handle": "vib3coded",
+    "name": "Vib3Coded"
+   },
+   "postedAt": "2026-11-06T17:59:29.000Z",
+   "addedAt": "2026-11-08",
+   "lang": "en",
+   "models": [
+    "sonnet-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "像素风浮岛游乐园",
+    "en": "Pixel-art floating island park"
+   },
+   "summary": {
+    "zh": "创作者称 Sonnet 5.5 制作了一个浏览器中的像素艺术游乐园，包含三条带物理效果的过山车、多种镜头、音效和响应式控制。",
+    "en": "The creator says Sonnet 5.5 built a browser-based pixel-art fairground with three physics-driven roller coasters, multiple cameras, sound, and responsive controls."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/vib3coded/status/2118765349701116393",
+    "text": "Build a single self-contained HTML page (three.js r128 from cdnjs, no other dependencies): \"Cinderpine Express\", a pixel-art 3D fairground diorama on a floating autumn island with three ready-made roller coasters (no track editor).\n\nRENDERING\n- Orthographic isometric camera (31° elevation, quarter-turn orbit) drawn into a low-resolution target (art pixel = 2 CSS px, adjustable 1-6 px with a slider). Post shader: depth-based outlines, snap to a fixed 90-colour OKLab palette, Bayer dither, sky/clouds/stars drawn in the shader.\n- Autumn palette (dry grass, plum rock, brick, brass, cherry red). Day / Dusk / Night with dynamic lamp lights, glowing windows, fireworks at night.\n- A second, perspective camera feeding the same pipeline for chase and first-person.\n\nPARK\nFloating island slab with cliff rim, entrance gate with sign, switchback queue, ~6 stalls, cafe, fountain, ferris wheel, carousel, trees, falling leaves, bunting, lamp posts, ~140 instanced box-people who stroll, queue, sit, eat and cheer when the train passes.\n\nCOASTERS\nAuthor each as a \"turtle\" program (straights, pitch easing, turns, hills, vertical loop, helix, tunnel) closed into a circuit by a numeric solver, then smoothed and resampled every 0.5 m. All inside a 76 x 50 m zone next to the station.\n1. Old Pinewood: wood, diagonal chain lift, big first drop, camelback airtime hill, trim brake, banked helix, final brake.\n2. Cinderloop: steel, east-side lift, vertical loop (sideways spiral so the strands never touch), trim brake.\n3. Ember Mine Run: mine train, short lift, double dip, S-curve through a tunnel under a rock hill.\nPhysics: energy-based speed profile (friction, drag, chain lift, brakes, station stop), banking from the force vector (zero lateral g, works upside down), felt vertical g, airtime flag, stats and ratings (excitement / intensity / nausea).\nVisuals: rails, ties, supports down to the ground (timber trestle / steel lattice / stone piers), chain with moving dogs, brake fins, station with canopy and gates, 5-car train with 20 riders who raise their arms on drops, headlamp at night.\n\nRIDE AND CAMERAS\nState machine: unload, board, dispatch (lever / Space / auto after ~13 s), lift, drop, brake, arrive. Events drive sound and toasts (\"Loop!\", \"Airtime!\").\nCameras: Park (drag orbit, wheel/pinch zoom), Follow, Chase, First-person from the front seat (drag to look around, FOV widens with speed, low car nose so the rails stay visible).\n\nSOUND\nWebAudio only, starts on first tap: calliope music, crowd ambience, chain clank, wheels, wind, screams, brakes, station bell, fireworks.\n\nUI\nTicket-booth identity: cream ride tickets with perforations and an \"ON THE TRACK\" stamp, a cherry dispatch lever, a dark marquee HUD (speed, height, g gauge, section name, lap time), toasts. Ride speed x1/x2/x4 and a pixel-size slider always visible. Phone layout with a bottom sheet, light/dark themes, keyboard shortcuts (1-4 cameras, Space, Q/E, [ ], X). Fonts: Bevan + Hanken Grotesk.\n\nQUALITY BAR\nEvery coaster closes with < 1 m error, max g <= 4.5, no stalls, no console errors, smooth on a phone. Test with headless Chromium screenshots (all cameras, day/night, phone). Publish as an artifact and also give a standalone .html.\n\nHOW TO WORK\nFirst write a contract file (coordinates, palette keys, TRACK/RIDE API, events, light slots). Then build the coaster physics and ride yourself and run three parallel agents: park + guests + fx, rails + station + train, audio. Integrate and test last."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 10820,
+    "likes": 242,
+    "replies": 30,
+    "reposts": 21,
+    "bookmarks": 139,
+    "checkedAt": "2026-11-08T07:18:15.251Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2118764939376480256/img/HeiKkWkihMmBge8_.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2118764939376480256/vid/avc1/1136x720/acScTNL6zQQlM1CC.mp4?tag=29",
+    "width": 1136,
+    "height": 720,
+    "durationSec": 17
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2110474945704903065",
    "url": "https://x.com/i2cjak/status/2110474945704903065",
    "author": {
@@ -113522,6 +114412,57 @@
    }
   },
   {
+   "id": "2118811269079695372",
+   "url": "https://x.com/trymirage/status/2118811269079695372",
+   "author": {
+    "handle": "trymirage",
+    "name": "Mirage"
+   },
+   "postedAt": "2026-11-06T21:02:26.000Z",
+   "addedAt": "2026-11-08",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "权游风格片头动画",
+    "en": "Game of Thrones-style title sequence"
+   },
+   "summary": {
+    "zh": "创作者介绍了如何从空白的 Tesseract 场景开始，用 Opus 5.5、路径追踪光照和 Rodin 生成的网格制作类似《权力的游戏》的片头。",
+    "en": "The creator describes building a Game of Thrones–style opening from an empty Tesseract scene with Opus 5.5, path-traced lighting, and Rodin-generated meshes."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Tesseract",
+    "Rodin"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 10579,
+    "likes": 202,
+    "replies": 10,
+    "reposts": 12,
+    "bookmarks": 203,
+    "checkedAt": "2026-11-08T07:18:15.251Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2118806844168699904/img/6ZOVUoDDMR6vPXcg.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2118806844168699904/vid/avc1/1280x720/_IjUT12mjLsUuW7_.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 39
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103745537455673700",
    "url": "https://x.com/__oQuery/status/2103745537455673700",
    "author": {
@@ -114063,6 +115004,57 @@
    }
   },
   {
+   "id": "2118685753299349699",
+   "url": "https://x.com/sorenxet/status/2118685753299349699",
+   "author": {
+    "handle": "sorenxet",
+    "name": "sorenxet"
+   },
+   "postedAt": "2026-11-06T12:43:41.000Z",
+   "addedAt": "2026-11-08",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "可用于游戏的绑定动画角色",
+    "en": "Rigged and animated game-ready hero"
+   },
+   "summary": {
+    "zh": "创作者通过 MCP 将 Opus 5.5 连接到 Blender，并依据三张概念图完成游戏角色的建模、绑定、动画、检查和导出。",
+    "en": "The creator connected Opus 5.5 to Blender through MCP and used three concept images to model, rig, animate, review, and export a game-ready hero."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Blender",
+    "MCP"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 10373,
+    "likes": 182,
+    "replies": 13,
+    "reposts": 9,
+    "bookmarks": 172,
+    "checkedAt": "2026-11-08T07:18:15.251Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2118680269234278400/img/KFUMd-G2R9yJmPYv.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2118680269234278400/vid/avc1/1280x720/X9Yie8cO7f8whVYr.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 4
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2109628088430510337",
    "url": "https://x.com/0xbobaaa/status/2109628088430510337",
    "author": {
@@ -114348,6 +115340,61 @@
     "width": 1280,
     "height": 720,
     "durationSec": 9
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2118860490734707053",
+   "url": "https://x.com/LexnLin/status/2118860490734707053",
+   "author": {
+    "handle": "LexnLin",
+    "name": "Leon Lin"
+   },
+   "postedAt": "2026-11-07T00:18:02.000Z",
+   "addedAt": "2026-11-08",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "AI 笔记应用落地页",
+    "en": "AI note-taking app landing page"
+   },
+   "summary": {
+    "zh": "创作者用 Opus 5.5 Medium 和 design-taste-frontend 技能，通过一次提示生成了一个 AI 笔记应用的落地页。",
+    "en": "The creator used Opus 5.5 Medium and the design-taste-frontend skill to generate a landing page for an AI note-taking app in one prompt."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/LexnLin/status/2118860490734707053",
+    "text": "I need a landing page for my ai note taking app, use the design-taste-frontend skill"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "TasteSkill"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 10263,
+    "likes": 283,
+    "replies": 22,
+    "reposts": 7,
+    "bookmarks": 195,
+    "checkedAt": "2026-11-08T07:18:15.251Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2118857873153294336/img/9MbbsO6fSJKI_iAU.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2118857873153294336/vid/avc1/1232x720/1PckBebKeFyHHXQg.mp4?tag=29",
+    "width": 1232,
+    "height": 720,
+    "durationSec": 29
    },
    "evidence": {
     "via": "daily",
@@ -117863,6 +118910,56 @@
    }
   },
   {
+   "id": "2118799847293608416",
+   "url": "https://x.com/stevenvan_/status/2118799847293608416",
+   "author": {
+    "handle": "stevenvan_",
+    "name": "Steven Van"
+   },
+   "postedAt": "2026-11-06T20:17:03.000Z",
+   "addedAt": "2026-11-08",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "AI 编辑的短视频",
+    "en": "AI-edited short-form video"
+   },
+   "summary": {
+    "zh": "创作者称，他用 Opus 5.5 和 AI Producer 插件完成了整条短视频的剪辑，只修改了一次并重新以最高强度运行。",
+    "en": "The creator says an entire short-form video was edited with Opus 5.5 and the AI Producer plugin, with one revision rerun on Max effort."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "AI Producer"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 9347,
+    "likes": 104,
+    "replies": 4,
+    "reposts": 9,
+    "bookmarks": 160,
+    "checkedAt": "2026-11-08T07:18:15.251Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2118799823352557568/img/9RItwCpU1W6Sc63i.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2118799823352557568/vid/avc1/1240x720/I9WOwjGGHXdOtfih.mp4?tag=29",
+    "width": 1240,
+    "height": 720,
+    "durationSec": 56
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103627106240602357",
    "url": "https://x.com/lemcosmos/status/2103627106240602357",
    "author": {
@@ -121010,6 +122107,56 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2118800755595292961",
+   "url": "https://x.com/AmirMushich/status/2118800755595292961",
+   "author": {
+    "handle": "AmirMushich",
+    "name": "AmirMušić"
+   },
+   "postedAt": "2026-11-06T20:20:40.000Z",
+   "addedAt": "2026-11-08",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "浏览器渲染的瓶身设计",
+    "en": "Browser-rendered bottle design"
+   },
+   "summary": {
+    "zh": "创作者用 Opus 5.5 和 Three.js 制作了一个在浏览器中渲染的瓶子设计，并以单个 HTML 文件开源。",
+    "en": "The creator built a browser-rendered bottle design with Opus 5.5 and Three.js, and published it as an open-source single HTML file."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 8671,
+    "likes": 140,
+    "replies": 18,
+    "reposts": 13,
+    "bookmarks": 162,
+    "checkedAt": "2026-11-08T07:18:15.251Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2118799863659769857/img/4WYVBv3sImTpUkBG.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2118799863659769857/vid/avc1/1026x720/s0cY2ezF9bmAu-Te.mp4?tag=29",
+    "width": 1026,
+    "height": 720,
+    "durationSec": 21
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -124205,6 +125352,54 @@
     "width": 720,
     "height": 900,
     "durationSec": 21
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2118888042115277111",
+   "url": "https://x.com/JohnKlerAI/status/2118888042115277111",
+   "author": {
+    "handle": "JohnKlerAI",
+    "name": "John Kler"
+   },
+   "postedAt": "2026-11-07T02:07:30.000Z",
+   "addedAt": "2026-11-08",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "Roblox 游戏原型",
+    "en": "Roblox game prototype"
+   },
+   "summary": {
+    "zh": "这条帖子展示了一个用 Opus 5.5 在约 30 分钟内完成的作品，并标注了 Roblox 开发。",
+    "en": "The post presents a work made with Opus 5.5 in about 30 minutes and tags Roblox development."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 7745,
+    "likes": 116,
+    "replies": 3,
+    "reposts": 4,
+    "bookmarks": 50,
+    "checkedAt": "2026-11-08T07:18:15.251Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2118888005100343297/img/QUNaLiX-TFxnOHFz.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2118888005100343297/vid/avc1/1280x720/I0-jCCZpi8nagf1i.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 7
    },
    "evidence": {
     "via": "daily",
@@ -127879,6 +129074,54 @@
    }
   },
   {
+   "id": "2118674355735667135",
+   "url": "https://x.com/basit_designs/status/2118674355735667135",
+   "author": {
+    "handle": "basit_designs",
+    "name": "Basit A. Khan"
+   },
+   "postedAt": "2026-11-06T11:58:24.000Z",
+   "addedAt": "2026-11-08",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "液态玻璃动效实验",
+    "en": "Liquid glass motion experiment"
+   },
+   "summary": {
+    "zh": "创作者展示了一个在 Opus 5.5 中使用单个技能制作的动画，包含液态玻璃色散效果。",
+    "en": "The creator presents an animation made in Opus 5.5 using one skill, featuring a liquid glass dispersion effect."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 6585,
+    "likes": 145,
+    "replies": 3,
+    "reposts": 7,
+    "bookmarks": 161,
+    "checkedAt": "2026-11-08T07:18:15.251Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2118674184369061888/img/_KI0TS1KEsFvgrii.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2118674184369061888/vid/avc1/1280x720/uU26uTfg4dmVkVUM.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 38
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2106000055706784118",
    "url": "https://x.com/ishuagra02/status/2106000055706784118",
    "author": {
@@ -129336,6 +130579,54 @@
    }
   },
   {
+   "id": "2118888671097114810",
+   "url": "https://x.com/Pumpnasterr/status/2118888671097114810",
+   "author": {
+    "handle": "Pumpnasterr",
+    "name": "Abbi"
+   },
+   "postedAt": "2026-11-07T02:10:00.000Z",
+   "addedAt": "2026-11-08",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "冬日女妖游戏角色",
+    "en": "Winter Banshee game character"
+   },
+   "summary": {
+    "zh": "创作者花了数小时使用 Opus 5.5 制作了一款包含独特英雄、背景故事、不同玩法和游戏内过场动画的游戏。",
+    "en": "The creator spent many hours with Opus 5.5 building a game with unique heroes, backstories, different gameplay, and an in-game cinematic."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 6004,
+    "likes": 111,
+    "replies": 34,
+    "reposts": 10,
+    "bookmarks": 26,
+    "checkedAt": "2026-11-08T07:18:15.251Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2118886268465553408/img/AqrSb0HivVgInBQl.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2118886268465553408/vid/avc1/1280x720/aWjAfa6Z7EL_66Xm.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 46
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2118159125398061237",
    "url": "https://x.com/LidaMidorin/status/2118159125398061237",
    "author": {
@@ -129393,6 +130684,68 @@
    }
   },
   {
+   "id": "2118665193479659569",
+   "url": "https://x.com/shmidtqq/status/2118665193479659569",
+   "author": {
+    "handle": "shmidtqq",
+    "name": "shmidt"
+   },
+   "postedAt": "2026-11-06T11:21:59.000Z",
+   "addedAt": "2026-11-08",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "三维查找界面概念",
+    "en": "3D Find My interface concept"
+   },
+   "summary": {
+    "zh": "创作者把 Apple“查找”的粗略草图交给 Claude，让它制作了一个可交互的三维找钥匙体验。",
+    "en": "The creator gave Claude a rough sketch of Apple's Find My and had it build an interactive 3D lost-keys experience."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/shmidtqq/status/2118665197334237616",
+    "text": "ROLE\nYou are a principal frontend engineer, 3D creative developer, and senior product designer specializing in premium interactive experiences.\n\nMISSION\nTransform my attached hand-drawn sketch into a polished, functional, interactive 3D application prototype.\n\nThe sketch is the source of truth for the interface and product concept. Preserve its core layout, elements, and interactions, but elevate the execution to the quality of a premium consumer app.\n\nDo not simply recreate the drawing as an image. Build a real browser-based prototype that users can interact with.\n\nPROJECT\nBuild a Find My-inspired 3D experience that helps a user locate a lost set of keys.\n\n01. VISUAL DIRECTION\n\nCreate a sophisticated, mobile-first interface with:\n\n- A detailed 3D city environment\n- An angled, cinematic map camera\n- Procedurally generated buildings, streets, sidewalks, trees, and crosswalks\n- Realistic lighting, ambient shadows, and depth\n- Smooth camera movement and transitions\n- Beautifully designed floating interface cards\n- Refined typography and consistent spacing\n- Subtle microinteractions and responsive animations\n\nUse a restrained visual language with neutral surfaces, natural greens, and carefully chosen accent colors.\n\nPrioritize visual hierarchy, realism within the chosen art style, and coherent interaction design.\n\n02. CORE USER EXPERIENCE\n\nImplement four connected stages.\n\nSTAGE A: MAP VIEW\n\nShow a 3D neighborhood from an elevated perspective.\n\nDisplay a tracked item marker with a visible location radius.\n\nAdd a floating card containing:\n\nItem: Keys\nLocation: Avenue Marceau\nDistance: 14 m\nActions: Play Sound / Find\n\nMake the map interactive with camera rotation, zoom, and smooth transitions.\n\nSTAGE B: FINDING MODE\n\nWhen the user selects Find:\n\n- Animate the camera toward the tracked item\n- Highlight a navigational path\n- Display directional indicators\n- Transition into a closer perspective\n- Show an updating distance indicator\n- Maintain spatial consistency throughout the animation\n\nSTAGE C: NEARBY SEARCH\n\nCreate an AR-inspired close-up search experience.\n\nShow a realistic 3D environment with a set of keys resting on a small round table.\n\nDisplay:\n\nFinding Keys\nDistance: 1 m\nAnimated directional arrow\n\nMake the experience feel like the user is approaching the actual object.\n\nSTAGE D: FOUND\n\nLet the user select the keys to complete the search.\n\nPlay a subtle success animation, update the interface, and provide an option to restart.\n\n03. INTERACTION REQUIREMENTS\n\nEvery visible control must have meaningful behavior.\n\nImplement:\n\n- Interactive camera controls\n- Animated item selection\n- Functional navigation between stages\n- A browser-generated sound preview\n- Simulated distance updates\n- Interactive object selection\n- Back and restart actions\n- Loading and transition states\n\nUse deterministic simulated tracking data. Do not claim to access real AirTags, GPS, or Apple Find My services.\n\n04. TECHNICAL STACK\n\nUse:\n\n- React\n- TypeScript\n- Vite\n- Three.js\n- React Three Fiber\n- Drei\n- Motion for UI animations\n- Lucide icons\n- Modern CSS\n\nBuild the environment procedurally.\n\nAvoid paid APIs, API keys, backend dependencies, and external assets that could break the demo.\n\nKeep the code modular, readable, and maintainable.\n\n05. RESPONSIVENESS AND PERFORMANCE\n\nOptimize primarily for a 9:16 mobile viewport while preserving desktop compatibility.\n\nTarget smooth animation performance.\n\nUse efficient geometry, instancing where appropriate, controlled pixel ratios, and careful scene cleanup.\n\nProvide accessible controls and respect reduced-motion preferences.\n\n06. DESIGN QUALITY RULES\n\nAvoid:\n\n- Generic dashboard layouts\n- Excessive gradients\n- Random decorative elements\n- Unnecessary floating panels\n- Inconsistent component styling\n- Abrupt camera transitions\n- Fake interactions\n- Static screenshots disguised as apps\n- Unimplemented buttons\n\nEvery visual element should contribute to usability, spatial understanding, or atmosphere.\n\n07. DELIVERY REQUIREMENTS\n\nDeliver a complete runnable project.\n\nInclude:\n\n- The full project file structure\n- All implementation files\n- Complete dependency configuration\n- Setup and execution commands\n- A short explanation of the architecture\n- Clear disclosure of simulated functionality\n\nDo not use pseudocode, unfinished components, or placeholder implementations.\n\nBefore finishing, review the code for TypeScript errors, broken imports, missing dependencies, invalid state transitions, and obvious performance issues.\n\nIf your environment supports execution, run the application and fix errors.\n\nSUCCESS CRITERIA\n\nThe result must allow a user to open a browser, explore a 3D neighborhood, select lost keys, follow an animated navigation experience, locate the keys, and complete the interaction.\n\nIt should feel like a cohesive, thoughtfully designed product prototype rather than an isolated visual demonstration.\n\nStart implementing immediately. Make reasonable decisions without asking clarifying questions."
+   },
+   "referenceAssets": true,
+   "tools": [
+    "Figma",
+    "React",
+    "Vite",
+    "Three.js",
+    "React Three Fiber",
+    "Drei",
+    "Motion",
+    "Lucide"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 5956,
+    "likes": 133,
+    "replies": 23,
+    "reposts": 2,
+    "bookmarks": 72,
+    "checkedAt": "2026-11-08T07:18:15.251Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2118665053679370240/img/K0QTNo5qyzGtCe-K.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2118665053679370240/vid/avc1/720x1280/s5cQ0sSLNcBWRMVk.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 16
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2114054716959215724",
    "url": "https://x.com/vib3coded/status/2114054716959215724",
    "author": {
@@ -129440,6 +130793,60 @@
     "width": 1136,
     "height": 720,
     "durationSec": 17
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2118735703119159514",
+   "url": "https://x.com/Heavy935/status/2118735703119159514",
+   "author": {
+    "handle": "Heavy935",
+    "name": "Kasane Strauss"
+   },
+   "postedAt": "2026-11-06T16:02:10.000Z",
+   "addedAt": "2026-11-08",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "24小时制作的原创Three.js游戏",
+    "en": "Original Three.js game built in 24 hours"
+   },
+   "summary": {
+    "zh": "创作者使用 Opus 5.5、图像生成工具、Tripo、Blender 和 Three.js，在 24 小时内制作了一款原创游戏。",
+    "en": "The creator made an original game in 24 hours using Opus 5.5, image-generation tools, Tripo, Blender, and Three.js."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Flux 3 Max",
+    "GPT Image",
+    "Tripo",
+    "Blender",
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 5942,
+    "likes": 100,
+    "replies": 5,
+    "reposts": 15,
+    "bookmarks": 19,
+    "checkedAt": "2026-11-08T07:18:15.251Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2118735658676035584/img/tN6geYDUL2ELJjnB.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2118735658676035584/vid/avc1/1280x720/Q33hniSuh2Wp-ZPg.mp4?tag=14",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 27
    },
    "evidence": {
     "via": "daily",
@@ -130443,6 +131850,57 @@
    }
   },
   {
+   "id": "2118718007362920489",
+   "url": "https://x.com/theparuchh/status/2118718007362920489",
+   "author": {
+    "handle": "theparuchh",
+    "name": "Paruchh"
+   },
+   "postedAt": "2026-11-06T14:51:51.000Z",
+   "addedAt": "2026-11-08",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "冰原生物动画",
+    "en": "Animated frozen plains creature"
+   },
+   "summary": {
+    "zh": "创作者用付费服务生成生物外形，再用 Claude 和 Blender 制作骨骼、绑定、权重及动画。",
+    "en": "The creator used a paid service for the creature's shape, then used Claude and Blender to build its skeleton, rigging, weights, and animations."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Tripo",
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 5580,
+    "likes": 100,
+    "replies": 10,
+    "reposts": 6,
+    "bookmarks": 64,
+    "checkedAt": "2026-11-08T07:18:15.251Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2118717977398841344/img/-TQdsKWdyE3n0BN3.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2118717977398841344/vid/avc1/1280x720/XUCjh1uGe-fvwkf9.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 38
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2111528513690026292",
    "url": "https://x.com/anxuanng/status/2111528513690026292",
    "author": {
@@ -130486,6 +131944,57 @@
     "width": 1280,
     "height": 720,
     "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2118782889806467483",
+   "url": "https://x.com/Solvaix/status/2118782889806467483",
+   "author": {
+    "handle": "Solvaix",
+    "name": "Solvaix"
+   },
+   "postedAt": "2026-11-06T19:09:40.000Z",
+   "addedAt": "2026-11-08",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "吊顶管线碰撞自动重排",
+    "en": "Ceiling services clash rerouting"
+   },
+   "summary": {
+    "zh": "Claude Opus 5.5 在一个办公室吊顶示意场景中重新规划了 52 条系统管线，将 78 处碰撞降为零。",
+    "en": "Claude Opus 5.5 rerouted 52 building-system runs in an illustrative office ceiling scene, reducing 78 clashes to zero."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Revit",
+    "MCP"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 5540,
+    "likes": 101,
+    "replies": 1,
+    "reposts": 17,
+    "bookmarks": 85,
+    "checkedAt": "2026-11-08T07:18:15.251Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2118778068869292033/img/c_pKxjZIq9pjkU1w.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2118778068869292033/vid/avc1/1280x720/VQNmDKtsWu16Yfzp.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 66
    },
    "evidence": {
     "via": "daily",
@@ -130790,6 +132299,57 @@
    }
   },
   {
+   "id": "2118674610078233016",
+   "url": "https://x.com/CHIBIKURO_QnQ/status/2118674610078233016",
+   "author": {
+    "handle": "CHIBIKURO_QnQ",
+    "name": "チビクロ🍀四刀流AI錬金術士"
+   },
+   "postedAt": "2026-11-06T11:59:24.000Z",
+   "addedAt": "2026-11-08",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "卡通培根蛋面料理节目",
+    "en": "Animated carbonara cooking show"
+   },
+   "summary": {
+    "zh": "创作者用 DomoAI 和 Seedance 2.5 制作了介绍培根蛋面做法的料理动画，并用 Opus 5.5 剪辑视频。",
+    "en": "The creator made a cooking anime about carbonara with DomoAI and Seedance 2.5, then edited the video with Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "DomoAI",
+    "Seedance 2.5"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 5299,
+    "likes": 129,
+    "replies": 4,
+    "reposts": 111,
+    "bookmarks": 1,
+    "checkedAt": "2026-11-08T07:18:15.251Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2118674292133289985/img/6-OZYMnvT32qfqbr.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2118674292133289985/vid/avc1/1280x720/SeJlV7AQIGkEFiLq.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 50
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2105765253799903602",
    "url": "https://x.com/HarshithLucky3/status/2105765253799903602",
    "author": {
@@ -130880,6 +132440,54 @@
     "width": 720,
     "height": 1280,
     "durationSec": 115
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2118874479862419640",
+   "url": "https://x.com/kylebrussell/status/2118874479862419640",
+   "author": {
+    "handle": "kylebrussell",
+    "name": "Kyle Russell"
+   },
+   "postedAt": "2026-11-07T01:13:37.000Z",
+   "addedAt": "2026-11-08",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "Game Boy 风格万智牌卡牌游戏",
+    "en": "Game Boy-style Magic: The Gathering card game"
+   },
+   "summary": {
+    "zh": "这是一款采用 Game Boy 风格的《万智牌》游戏，包含早期规则、约158张经典卡牌和可开启的补充包。创作者称其灵感来自2023年的 Reddit 概念视频，并在 Opus 5.5 发布后将其实现。",
+    "en": "A Game Boy-style Magic: The Gathering game with early-era rules, about 158 classic cards, and collectible boosters. The creator says they made it after Opus 5.5 launched, based on a 2023 Reddit concept video."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 5043,
+    "likes": 100,
+    "replies": 9,
+    "reposts": 5,
+    "bookmarks": 46,
+    "checkedAt": "2026-11-08T07:18:15.251Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2118874441677410304/img/TRK0L8Noc4aQROqs.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2118874441677410304/vid/avc1/1280x720/r5qWHzw526hiwQPY.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 44
    },
    "evidence": {
     "via": "daily",
