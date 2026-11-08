@@ -4,7 +4,9 @@ export const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "G-CTZ8CEW9QZ";
 export const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_ID || "ys0uj89osn";
 
 // 转化事件名和 ops/analytics/digest.py 的 CONVERSIONS 对应，改名两边一起改
-export type TrackEvent = "newsletter_subscribe" | "club_apply_submit" | "checkout_order_created" | "prompt_copy" | "prompt_try_claude";
+export type TrackEvent = "newsletter_subscribe" | "club_apply_submit" | "checkout_order_created" | "prompt_copy" | "prompt_try_claude"
+  // 提示词宇宙（不是转化，看点击用）：点星打开作品、点「全屏看」
+  | "universe_star" | "universe_fullscreen";
 
 declare global {
   interface Window {

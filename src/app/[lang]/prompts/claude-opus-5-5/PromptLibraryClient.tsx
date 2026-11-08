@@ -14,6 +14,7 @@ import {
   type OpusCategory,
 } from "@/lib/opus-prompts-shared";
 import CaseVideo from "./CaseVideo";
+import UniverseFrame from "./UniverseFrame";
 import CopyPrompt, { loadPrompt, TryInClaude } from "./CopyPrompt";
 
 const noopSubscribe = () => () => {};
@@ -38,13 +39,15 @@ interface Props {
   fresh: { weekStart: string; recentStart: string; weekCount: number };
   /** 首屏精选（本周最火 Top 3），服务端挑好传进来 */
   featured?: { title: { zh: string; en: string }; cases: OpusCaseSlim[] };
+  /** 主库页顶部放提示词宇宙（2026-11-08 起替换「本周最火」：GA4 里那三张卡一周只被点开 9 次） */
+  universe?: boolean;
   /** 落地页用：固定在某个分类，并隐藏分类筛选（如 motion-graphics 页） */
   lockCategory?: OpusCategory;
   /** 单一模型的落地页（如 Fable 5.5 专题）：固定只看这个模型，隐藏模型筛选 */
   lockModel?: ClaudeModel;
 }
 
-export default function PromptLibraryClient({ initial, total, counts, modelCounts, lang, fresh, featured, lockCategory, lockModel }: Props) {
+export default function PromptLibraryClient({ initial, total, counts, modelCounts, lang, fresh, featured, universe, lockCategory, lockModel }: Props) {
   const isZh = lang === "zh";
   const [all, setAll] = useState<OpusCaseSlim[]>(initial);
   const [loaded, setLoaded] = useState(initial.length >= total);
@@ -131,7 +134,9 @@ export default function PromptLibraryClient({ initial, total, counts, modelCount
 
   return (
     <>
-      {/* 本周最火 Top 3：第一眼先看到最好的作品 */}
+      {universe && <UniverseFrame lang={isZh ? "zh" : "en"} total={total} />}
+
+      {/* 本周最火 Top 3：第一眼先看到最好的作品（专题页还在用；主库页换成了上面的提示词宇宙） */}
       {featured && featured.cases.length > 0 && (
         <section className="mb-8">
           <h2 className="text-sm font-semibold text-gray-900 mb-3">🔥 {isZh ? featured.title.zh : featured.title.en}</h2>

@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<!-- 提示词宇宙：jasonzhu.ai 的 Opus 5.5 作品星图。?lang=en 英文界面；?embed=1 嵌在提示词页顶部用（外面的 UniverseFrame.tsx）。星表由 scripts/generate-opus-prompts.mjs 生成 -->
+<title>Opus 5.5 提示词宇宙</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700&family=Noto+Sans+SC:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Libre+Baskerville:ital@1&display=swap">
+<style>
+  /* 天文台星图：深空近黑，琥珀色是光（选中、按钮、数字），象牙色细线和字像雕版星图。书名竖排在左（敦煌星图的版式），天球坐标环穿过八个星座，
+     右上搜索 + 观测设置，左下星座表，右下时间，点星后右侧星表条目（手机在底部）。只做深色：星空本来就在夜里看 */
+  :root {
+    color-scheme: dark;
+    --void: #06060e; --deep: #0d1226; --ink: #ede6d3; --dim: #a59e8c; --faint: #6b665b;
+    --hair: rgba(237, 230, 211, .13); --hair2: rgba(237, 230, 211, .28); --glass: rgba(8, 9, 20, .72);
+    --amber: #e0af40; --amber-ink: #1c1303; --amber-glow: rgba(224, 175, 64, .35);
+    --serif: "Noto Serif SC", "Songti SC", "STSong", serif;
+    --latin: "Libre Baskerville", "Baskerville", Georgia, serif;
+    --sans: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    --mono: "IBM Plex Mono", "SF Mono", ui-monospace, Menlo, monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  [hidden] { display: none !important; }   /* 卡片、观测设置面板自己写了 display，没有这条 hidden 就失效 */
+  html, body { height: 100%; }
+  body { margin: 0; overflow: hidden; color: var(--ink); font: 13px/1.6 var(--sans);
+    background: radial-gradient(90% 70% at 64% 46%, var(--deep) 0%, var(--void) 64%), var(--void); }
+  #sky { position: fixed; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; outline: none; }
+  /* 望远镜视野：暗角 + 细颗粒 */
+  body::after { content: ""; position: fixed; inset: 0; z-index: 1; pointer-events: none;
+    background: radial-gradient(120% 95% at 50% 50%, transparent 55%, rgba(0, 0, 0, .55) 100%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  button { font: inherit; }
+  .ui { position: fixed; z-index: 4; }
+  .k { font: 500 10px/1.4 var(--mono); letter-spacing: .2em; color: var(--dim); text-transform: uppercase; }
+  @keyframes rise { from { transform: translateY(10px); } to { transform: none; } }   /* 只做上浮，不从透明开始：后台打开、截缩略图时界面也完整 */
+  .intro { animation: rise .9s cubic-bezier(.2, .7, .2, 1) both; }
+  @media (prefers-reduced-motion: reduce) { .intro { animation: none; } }
+
+  /* 左侧竖排书名 */
+  .mast { top: calc(env(safe-area-inset-top, 0px) + 28px); left: max(26px, env(safe-area-inset-left, 0px)); display: flex; gap: 14px; pointer-events: none; animation-delay: .1s; }
+  .mast h1 { writing-mode: vertical-rl; margin: 0; font: 700 40px/1 var(--serif); letter-spacing: .28em; color: var(--ink); text-shadow: 0 0 30px rgba(224, 175, 64, .15); }
+  .mast .side { writing-mode: vertical-rl; display: flex; gap: 10px; padding-top: 4px; }
+  .mast .side span { font: 10.5px var(--mono); letter-spacing: .24em; color: var(--dim); }
+  .mast .side em { font: italic 13px var(--latin); color: var(--amber); letter-spacing: .04em; }
+  .rule { width: 1px; background: linear-gradient(var(--hair2), transparent); }
+
+  /* 右上：搜索 + 观测设置 */
+  .ctl { top: calc(env(safe-area-inset-top, 0px) + 24px); right: max(24px, env(safe-area-inset-right, 0px)); display: grid; justify-items: end; gap: 7px; animation-delay: .35s; }
+  .bar1 { display: flex; gap: 8px; align-items: center; }
+  .search { display: flex; align-items: center; gap: 9px; height: 38px; padding: 0 15px; border: 1px solid var(--hair2); border-radius: 999px; background: var(--glass); backdrop-filter: blur(12px); transition: border-color .2s; }
+  .search svg { flex: none; }
+  .search input { all: unset; width: min(13.5rem, 46vw); color: var(--ink); font: 13px var(--sans); caret-color: var(--amber); }
+  .search input::placeholder { color: var(--faint); }
+  .search:focus-within { border-color: var(--amber); }
+  .pill { all: unset; cursor: pointer; height: 38px; padding: 0 16px; display: inline-flex; align-items: center; gap: 7px; border: 1px solid var(--hair2); border-radius: 999px; background: var(--glass); color: var(--ink); backdrop-filter: blur(12px); transition: border-color .2s, color .2s; }
+  .pill:hover { border-color: var(--amber); }
+  .pill[aria-expanded="true"], .pill.on { border-color: var(--amber); color: var(--amber); }
+  .pill .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--amber); box-shadow: 0 0 8px var(--amber); }
+  .count { font: 11px var(--mono); color: var(--amber); min-height: 1em; letter-spacing: .04em; }
+  .pop { top: calc(env(safe-area-inset-top, 0px) + 72px); right: max(24px, env(safe-area-inset-right, 0px)); width: min(25.5rem, calc(100% - 48px)); max-height: calc(100% - 190px); overflow-y: auto;
+    padding: 18px; border: 1px solid var(--hair2); border-radius: 16px; background: var(--glass); backdrop-filter: blur(18px); display: grid; gap: 18px; box-shadow: 0 24px 70px rgba(0, 0, 0, .5); }
+  .pop:not([hidden]) { animation: rise .25s ease-out both; }
+  .seg { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 9px; }
+  .seg button { all: unset; cursor: pointer; padding: 6px 11px; border-radius: 999px; border: 1px solid var(--hair); color: var(--dim); font-size: 12.5px; transition: border-color .2s, color .2s; }
+  .seg button:hover { border-color: var(--hair2); color: var(--ink); }
+  .seg button[aria-pressed="true"] { border-color: var(--amber); color: var(--amber-ink); background: var(--amber); font-weight: 500; box-shadow: 0 0 18px var(--amber-glow); }
+  .scale { display: flex; align-items: flex-end; gap: 18px; margin-top: 12px; font: 10.5px var(--mono); color: var(--dim); min-height: 40px; }
+  .scale span { display: grid; justify-items: center; gap: 4px; }
+  .scale i { display: block; border-radius: 50%; background: radial-gradient(circle, #fff 0 9%, rgba(255, 236, 200, .85) 16%, rgba(224, 175, 64, .22) 40%, transparent 70%); }
+  .tog { display: flex; align-items: center; justify-content: space-between; gap: 10px; cursor: pointer; padding: 10px 0; border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair); }
+  .tog input { appearance: none; width: 34px; height: 20px; border-radius: 999px; background: rgba(237, 230, 211, .14); position: relative; cursor: pointer; transition: background .2s; margin: 0; }
+  .tog input::after { content: ""; position: absolute; top: 3px; left: 3px; width: 14px; height: 14px; border-radius: 50%; background: var(--ink); transition: transform .2s; }
+  .tog input:checked { background: var(--amber); }
+  .tog input:checked::after { transform: translateX(14px); background: var(--amber-ink); }
+  .tog em { font: normal 11px var(--mono); color: var(--dim); margin-left: 6px; }
+  .brights { display: grid; margin-top: 6px; }
+  .brights button { all: unset; cursor: pointer; display: grid; grid-template-columns: 4.6rem 1fr; gap: 10px; align-items: baseline; padding: 6px 0; border-bottom: 1px solid var(--hair); }
+  .brights .v { font: 11px var(--mono); color: var(--amber); font-variant-numeric: tabular-nums; }
+  .brights .t { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-family: var(--serif); }
+  .brights button:hover .t { color: #fff; }
+
+  /* 左下：星座表 */
+  .atlas { left: max(24px, env(safe-area-inset-left, 0px)); bottom: calc(env(safe-area-inset-bottom, 0px) + 24px); animation-delay: .55s; }
+  .atlas .k { margin: 0 0 6px 8px; }
+  .atlas .list { display: grid; gap: 0; }
+  .atlas button { all: unset; cursor: pointer; display: grid; grid-template-columns: 14px 6.4em 2.8em; align-items: center; gap: 8px; padding: 3px 8px; border-radius: 6px; transition: background .2s; }
+  .atlas .g { justify-self: center; width: 9px; height: 9px; background: currentColor; clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%); filter: drop-shadow(0 0 4px currentColor); }
+  .atlas .nm { font: 500 13px var(--serif); letter-spacing: .1em; color: var(--ink); }
+  .atlas .n { font: 10.5px var(--mono); color: var(--faint); text-align: right; font-variant-numeric: tabular-nums; }
+  .atlas button:hover { background: rgba(237, 230, 211, .06); }
+  .atlas.solo button:not([aria-pressed="true"]) { opacity: .4; }
+  .atlas button[aria-pressed="true"] .nm { color: var(--amber); }
+  html[lang="en"] .atlas button { grid-template-columns: 14px 8.8em 2.8em; }   /* 英文分类名长，别折行 */
+  html[lang="en"] .atlas .nm { letter-spacing: .02em; white-space: nowrap; }
+
+  /* 右下：时间 */
+  .clock { right: max(24px, env(safe-area-inset-right, 0px)); bottom: calc(env(safe-area-inset-bottom, 0px) + 26px); display: flex; align-items: center; gap: 14px; animation-delay: .7s; }
+  .play { all: unset; cursor: pointer; width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; background: var(--amber); color: var(--amber-ink); box-shadow: 0 0 26px var(--amber-glow); transition: transform .2s; }
+  .play:hover { transform: scale(1.06); }
+  .play svg { margin-left: 2px; }
+  .date { font: 12px var(--mono); color: var(--ink); font-variant-numeric: tabular-nums; letter-spacing: .02em; }
+  .date small { color: var(--dim); font-size: 10.5px; }
+  .track { width: 10rem; height: 1px; background: var(--hair2); margin-top: 7px; position: relative; }
+  .track i { position: absolute; inset: 0 auto 0 0; width: 100%; background: var(--amber); box-shadow: 0 0 8px var(--amber); }
+  .hint { position: fixed; z-index: 3; left: 50%; transform: translateX(-50%); bottom: calc(env(safe-area-inset-bottom, 0px) + 30px); font: 10.5px var(--mono); color: var(--faint); letter-spacing: .14em; pointer-events: none; }
+
+  /* 天空里的字：星座名、α 星、准星、悬停 */
+  .lbl { position: fixed; z-index: 2; pointer-events: none; transform: translate(-50%, -100%); text-align: center; white-space: nowrap; }
+  .lbl b { display: block; font: 500 13px var(--serif); letter-spacing: .36em; padding-left: .36em; }
+  .lbl small { font: 9.5px var(--mono); color: var(--dim); letter-spacing: .16em; }
+  .alpha { position: fixed; z-index: 2; pointer-events: none; transform: translate(12px, -50%); white-space: nowrap; font: 12px var(--serif); color: var(--ink); text-shadow: 0 0 10px #000, 0 0 3px #000; }
+  .alpha i { font: italic 13px var(--latin); color: var(--amber); margin-right: 5px; }
+  .reticle { position: fixed; z-index: 3; pointer-events: none; width: 44px; height: 44px; margin: -22px 0 0 -22px; border: 1px solid var(--amber); border-radius: 50%; box-shadow: 0 0 20px var(--amber-glow); }
+  .reticle::before, .reticle::after { content: ""; position: absolute; background: var(--amber); }
+  .reticle::before { left: 50%; top: -12px; bottom: -12px; width: 1px; -webkit-mask: linear-gradient(#000 0 12px, transparent 12px calc(100% - 12px), #000 calc(100% - 12px)); mask: linear-gradient(#000 0 12px, transparent 12px calc(100% - 12px), #000 calc(100% - 12px)); }
+  .reticle::after { top: 50%; left: -12px; right: -12px; height: 1px; -webkit-mask: linear-gradient(90deg, #000 0 12px, transparent 12px calc(100% - 12px), #000 calc(100% - 12px)); mask: linear-gradient(90deg, #000 0 12px, transparent 12px calc(100% - 12px), #000 calc(100% - 12px)); }
+  .tip { position: fixed; z-index: 5; pointer-events: none; transform: translate(16px, 14px); max-width: 17rem; padding: 9px 12px; border: 1px solid var(--hair2); border-radius: 10px; background: var(--glass); backdrop-filter: blur(12px); }
+  .tip .t { font: 13px/1.45 var(--serif); }
+  .tip .m { font: 10px var(--mono); color: var(--dim); margin-top: 3px; letter-spacing: .04em; }
+
+  /* 星表条目（卡片） */
+  .card { right: max(24px, env(safe-area-inset-right, 0px)); top: calc(env(safe-area-inset-top, 0px) + 78px); width: min(24rem, calc(100% - 48px)); max-height: calc(100% - 176px); overflow-y: auto;
+    padding: 20px 20px 18px; border: 1px solid var(--hair2); border-radius: 18px; background: var(--glass); backdrop-filter: blur(20px); display: grid; gap: 13px; box-shadow: 0 30px 80px rgba(0, 0, 0, .55); }
+  .card:not([hidden]) { animation: rise .35s cubic-bezier(.2, .7, .2, 1) both; }
+  .card .top { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+  .card .des { font: 500 12px var(--serif); letter-spacing: .24em; color: var(--amber); }
+  .x { all: unset; cursor: pointer; color: var(--dim); font-size: 19px; line-height: 1; padding: 0 4px; }
+  .x:hover { color: var(--ink); }
+  .card h2 { margin: 0; font: 700 19px/1.45 var(--serif); text-wrap: balance; }
+  .card .en { margin: -9px 0 0; color: var(--dim); font: italic 12.5px/1.5 var(--latin); }
+  .card .meta { font: 10.5px/1.75 var(--mono); color: var(--dim); letter-spacing: .02em; }
+  .card .meta b { color: var(--ink); font-weight: 500; }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair); }
+  .stats div { padding: 10px 0 9px; text-align: center; }
+  .stats div + div { border-left: 1px solid var(--hair); }
+  .stats b { display: block; font: 500 15px var(--mono); font-variant-numeric: tabular-nums; }
+  .stats span { font-size: 11px; color: var(--dim); }
+  .stats .on b { color: var(--amber); text-shadow: 0 0 12px var(--amber-glow); }
+  .prompt { font: 11.5px/1.75 var(--mono); color: #dcd5c2; background: rgba(237, 230, 211, .045); border-radius: 10px; padding: 11px 13px; overflow-wrap: anywhere; }
+  .prompt .k { display: block; margin-bottom: 5px; }
+  .links { display: flex; gap: 8px; flex-wrap: wrap; }
+  .links a { text-decoration: none; padding: 9px 16px; border-radius: 999px; font-size: 12.5px; border: 1px solid var(--hair2); color: var(--ink); transition: border-color .2s; }
+  .links a:hover { border-color: var(--amber); }
+  .links a.go { background: var(--amber); border-color: var(--amber); color: var(--amber-ink); font-weight: 500; box-shadow: 0 0 22px var(--amber-glow); }
+  :is(.pill, .play, .x, .atlas button, .seg button, .brights button, .links a, .tog input):focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+  .err { position: fixed; inset: 0; z-index: 9; display: grid; place-items: center; color: var(--dim); padding: 24px; text-align: center; }
+
+  @media (max-width: 720px) {
+    .mast { top: calc(env(safe-area-inset-top, 0px) + 18px); left: max(16px, env(safe-area-inset-left, 0px)); flex-direction: column; gap: 4px; }
+    .mast h1, .mast .side { writing-mode: horizontal-tb; }
+    .mast h1 { font-size: 28px; letter-spacing: .16em; }
+    .mast .side { gap: 8px; padding: 0; flex-wrap: wrap; } .rule { display: none; }
+    .ctl { top: calc(env(safe-area-inset-top, 0px) + 92px); left: max(16px, env(safe-area-inset-left, 0px)); right: max(16px, env(safe-area-inset-right, 0px)); justify-items: stretch; }
+    .bar1 .search { flex: 1; } .search input { width: 100%; }
+    .pop { top: calc(env(safe-area-inset-top, 0px) + 140px); right: max(16px, env(safe-area-inset-right, 0px)); width: calc(100% - 32px); max-height: 56%; }
+    .atlas { left: 0; right: 0; bottom: calc(env(safe-area-inset-bottom, 0px) + 12px); }
+    .atlas .k { display: none; }
+    .atlas .list { display: flex; overflow-x: auto; gap: 5px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); scrollbar-width: none; }
+    .atlas .list::-webkit-scrollbar { display: none; }
+    .atlas button { flex: none; grid-template-columns: 10px auto auto; border: 1px solid var(--hair); border-radius: 999px; padding: 6px 12px; background: var(--glass); }
+    .clock { right: auto; left: max(16px, env(safe-area-inset-left, 0px)); bottom: calc(env(safe-area-inset-bottom, 0px) + 62px); }
+    .hint { display: none; }
+    .card { top: auto; bottom: calc(env(safe-area-inset-bottom, 0px) + 118px); right: max(16px, env(safe-area-inset-right, 0px)); width: calc(100% - 32px); max-height: 50%; }
+  }
+  /* 嵌在提示词页顶部（?embed=1）：只留星空、星座表和提示；滚轮、手指上下划交给外面的页面 */
+  .embed .mast, .embed .ctl, .embed .pop, .embed .clock { display: none !important; }
+  .embed .atlas { left: 14px; bottom: 14px; }
+  .embed .hint { bottom: 18px; }
+  .embed .card { top: 14px; right: 14px; max-height: calc(100% - 28px); width: min(22rem, calc(100% - 28px)); }
+  .embed #sky { touch-action: pan-y; }
+  .embed .card { gap: 10px; padding: 16px 16px 14px; }
+  .embed .card .links { order: 1; }   /* 横幅只有 460 高：按钮提到提示词前面，不用滚动就能点 */
+  .embed .card .prompt { order: 2; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+  @media (max-width: 720px) {
+    .embed .atlas { left: 0; right: 0; bottom: 10px; }
+    .embed .card { top: 10px; bottom: auto; right: 10px; width: calc(100% - 20px); max-height: calc(100% - 62px); }
+  }
+</style>
+</head>
+<body>
+
+<canvas id="sky" tabindex="0" aria-label="提示词宇宙：每颗星是一条案例，拖动旋转，滚轮缩放，点击查看"></canvas>
+<div class="ui mast intro"><h1 id="h1">提示词宇宙</h1><div class="rule" aria-hidden="true"></div><div class="side"><em>An Atlas of Prompts</em><span>JASONZHU.AI</span><span id="sub"></span></div></div>
+<div class="ui ctl intro">
+  <div class="bar1">
+    <label class="search"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5.2" fill="none" stroke="#e0af40" stroke-width="1.3"/><path d="M11 11l3.6 3.6" stroke="#e0af40" stroke-width="1.3" stroke-linecap="round"/></svg><input id="q" type="search" placeholder="搜标题、作者、工具" autocomplete="off" aria-label="搜索案例"></label>
+    <button class="pill" id="filterBtn" aria-expanded="false" aria-controls="pop">观测设置</button>
+  </div>
+  <div class="count" id="count" aria-live="polite"></div>
+</div>
+<div class="ui pop" id="pop" hidden>
+  <div><div class="k" id="kMetric">亮度按</div><div class="seg" id="metric" role="group" aria-label="星点大小和亮度按哪个数据"></div><div class="scale" id="scale" aria-hidden="true"></div></div>
+  <label class="tog"><span><span id="kOnly">只看有提示词</span><em id="nPrompt"></em></span><input id="onlyPrompt" type="checkbox" role="switch"></label>
+  <div><div class="k" id="brightsHead"></div><div class="brights" id="brights"></div></div>
+</div>
+<nav class="ui atlas intro" aria-label="八个星座"><div class="k" id="kAtlas">星座表</div><div class="list" id="atlas"></div></nav>
+<div class="ui clock intro"><button class="play" id="play" aria-label="播放：看星空从第一天长到今天"><svg width="13" height="14" viewBox="0 0 13 14" aria-hidden="true"><path d="M1 1.2v11.6L12 7z" fill="currentColor"/></svg></button><div><div class="date" id="day"></div><div class="track" aria-hidden="true"><i id="fill"></i></div></div></div>
+<div class="hint" id="hint">拖动旋转　滚轮缩放　点一颗星看案例</div>
+<div class="tip" id="tip" hidden></div>
+<div class="reticle" id="reticle" hidden></div>
+<aside class="ui card" id="card" hidden aria-live="polite"></aside>
+
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+// —— 常量、小工具 ——
+const Q = new URLSearchParams(location.search), EN = Q.get('lang') === 'en', EMBED = Q.has('embed'), LANG = EN ? 'en' : 'zh';
+document.documentElement.lang = LANG; if (EMBED) document.body.classList.add('embed');
+const CATS = [   // 同 jasonzhu.ai 的八个分类（OPUS_CATEGORIES 的顺序）；颜色压淡，在深空里像星光而不是霓虹
+  { key: 'motion', zh: '动效设计', en: 'Motion graphics', col: '#f1cf7c' }, { key: 'product', zh: '产品广告', en: 'Product & ads', col: '#f2a27f' },
+  { key: 'education', zh: '科普讲解', en: 'Explainers', col: '#86dbcb' }, { key: 'stories', zh: '角色故事', en: 'Stories', col: '#ee9fc6' },
+  { key: 'art3d', zh: '3D 场景', en: '3D worlds', col: '#95bcff' }, { key: 'game', zh: '游戏', en: 'Games', col: '#bbe390' },
+  { key: 'production', zh: '制作流程', en: 'Production', col: '#c6afff' }, { key: 'comparison', zh: '模型对比', en: 'Comparisons', col: '#e1e4ec' },
+];
+const METRIC = EN ? { v: 'Views', new: 'Newest', add: 'Recently added', l: 'Likes', b: 'Bookmarks' } : { v: '播放量', new: '最新发布', add: '最近收录', l: '点赞', b: '收藏' };   // 同网站「排序」的五个选项和顺序
+const S = EN ? {
+  h1: 'Prompt Universe', search: 'Search titles, creators, tools', filter: 'Display', kMetric: 'Brightness by', kOnly: 'With prompts only', kAtlas: 'Constellations',
+  hint: EMBED ? 'Drag to rotate · click a star to open the work' : 'Drag to rotate · scroll to zoom · click a star', canvas: 'Prompt Universe: one star per work. Drag to rotate, click a star to open it',
+  play: 'Play: watch the sky grow from day one', err: "The star catalog didn't load. Try refreshing.", stars: n => `${n.toLocaleString('en-US')} stars`, consts: n => `${n} constellations`,
+  lit: n => `${n} lit`, cname: c => c.en, top5: (m, t) => t ? `5 latest by ${m.toLowerCase()}` : `5 brightest by ${m.toLowerCase()}`, ticks: ['Earlier', 'Middle', 'Newest'],
+  full: (n, f) => `Full prompt · ${n.toLocaleString('en-US')} chars${f ? ' · needs reference files' : ''}`, brief: 'One-line instruction', none: 'No public prompt',
+  noneBody: "The creator didn't share a prompt. The video and the making-of are still on the page.", posted: (d, a) => `Posted ${d} · added ${a}`,
+  st: ['Bookmarks', 'Likes', 'Views', 'Replies'], open: 'Open this work →', orig: 'Original post ↗', close: 'Close', grow: e => `Sep 22 → ${e} · watch it grow`,
+} : {
+  h1: '提示词宇宙', search: '搜标题、作者、工具', filter: '观测设置', kMetric: '亮度按', kOnly: '只看有提示词', kAtlas: '星座表',
+  hint: EMBED ? '拖动旋转　点一颗星打开作品' : '拖动旋转　滚轮缩放　点一颗星看案例', canvas: '提示词宇宙：每颗星是一条案例，拖动旋转，点击查看',
+  play: '播放：看星空从第一天长到今天', err: '星表没加载出来，刷新一下试试。', stars: n => `${n.toLocaleString('zh-CN')} 颗星`, consts: n => `${n} 个星座`,
+  lit: n => `亮着 ${n} 颗`, cname: c => c.zh + '座', top5: (m, t) => t ? `${m}最晚的 5 颗` : `按${m}最亮的 5 颗`, ticks: ['较早', '居中', '最新'],
+  full: (n, f) => `完整提示词 · ${n.toLocaleString('zh-CN')} 字${f ? ' · 要配参考素材' : ''}`, brief: '一句话指令', none: '没有公开提示词',
+  noneBody: '作者没有公开提示词，可以看视频和做法。', posted: (d, a) => `${d} 发布 · ${a} 收录`,
+  st: ['收藏', '点赞', '播放', '回复'], open: '看这个作品 →', orig: '原帖 ↗', close: '关闭', grow: e => `9 月 22 日 → ${e} <small>· 看它长出来</small>`,
+};
+for (const k of ['h1', 'kMetric', 'kOnly', 'kAtlas', 'hint']) document.getElementById(k).textContent = S[k];
+document.getElementById('q').placeholder = S.search; document.getElementById('filterBtn').textContent = S.filter;
+document.getElementById('sky').setAttribute('aria-label', S.canvas); document.getElementById('play').setAttribute('aria-label', S.play);
+const GREEK = [...'αβγδεζηθικλμνξοπρστυφχψω'];
+const MODEL = { O: 'Opus 5.5', S: 'Sonnet 5.5', H: 'Haiku 5.5', F: 'Fable 5.5' };
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches, NARROW = innerWidth <= 720, introSkip = document.hidden;
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[m]));
+const MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const fmt = n => EN ? (n >= 1e6 ? (n / 1e6).toFixed(1).replace(/\.0$/, '') + 'M' : n >= 1e3 ? (n / 1e3).toFixed(1).replace(/\.0$/, '') + 'K' : String(n))
+  : n >= 1e4 ? (n / 1e4).toFixed(n >= 1e5 ? 0 : 1).replace(/\.0$/, '') + ' 万' : n.toLocaleString('zh-CN');
+const md = s => !s ? '' : EN ? `${MON[+s.slice(5, 7) - 1]} ${+s.slice(8, 10)}` : `${+s.slice(5, 7)} 月 ${+s.slice(8, 10)} 日`;
+const rng = seed => () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; };
+const gauss = r => Math.sqrt(-2 * Math.log(r() + 1e-9)) * Math.cos(2 * Math.PI * r());
+const ease = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+let D, sel = null, solo = -1, metric = 'b', flight = null, grow = null, morph = null;
+
+try { D = await (await fetch('/data/opus-prompts/universe.json')).json(); D.forEach(c => { if (c.c < 0) c.c = 7; }); }
+catch (e) { document.body.insertAdjacentHTML('beforeend', `<div class="err">${S.err}</div>`); throw e; }
+
+// —— 星表：发布日、星表编号（按发布先后）、拜耳名（每个星座按收藏前 24 名用希腊字母，α 是收藏最多的那条）——
+const T0 = Date.parse('2026-09-22'), day = s => Math.max(0, (Date.parse(s) - T0) / 864e5 || 0);
+D.forEach(c => { c.day = day(c.d); c.on = true; });
+const SPAN = Math.max(...D.map(c => c.day));
+[...D].sort((a, b) => a.day - b.day || a.i.localeCompare(b.i)).forEach((c, k) => { c.cat = 'JZ ' + String(k + 1).padStart(4, '0'); });
+const byCat = CATS.map((_, k) => D.filter(c => c.c === k));
+byCat.forEach(l => [...l].sort((a, b) => b.b - a.b).slice(0, GREEK.length).forEach((c, k) => { c.bk = k; }));
+const desig = c => c.bk !== undefined ? (EN ? `${GREEK[c.bk]} ${CATS[c.c].en}` : `${CATS[c.c].zh}座 ${GREEK[c.bk]}`) : c.cat;
+const title = c => EN ? c.e || c.t : c.t, title2 = c => EN ? c.t : c.e;
+$('sub').textContent = `${S.stars(D.length)} · ${S.consts(CATS.length)}`;
+$('nPrompt').textContent = D.filter(c => c.k > 0).length;
+
+// —— 场景 ——
+const canvas = $('sky'), renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2)); renderer.setClearColor(0x000000, 0);
+const scene = new THREE.Scene(), camera = new THREE.PerspectiveCamera(50, 1, 0.1, 2400);
+const controls = new OrbitControls(camera, canvas); controls.enableDamping = true; controls.dampingFactor = 0.07;
+controls.minDistance = 5; controls.maxDistance = 560; controls.autoRotate = !reduce; controls.autoRotateSpeed = 0.25;
+// 嵌在页面里：滚轮不缩放（让页面能滚），触屏不接管手指（上下划还是滚页面，点星照样能点）
+if (EMBED) { controls.enableZoom = false; if (matchMedia('(pointer: coarse)').matches) controls.enabled = false; }
+const HOME = EMBED ? new THREE.Vector3(0, 6, 0) : NARROW ? new THREE.Vector3(0, 42, 0) : new THREE.Vector3(-14, 4, 0), HOMED = EMBED ? (NARROW ? 300 : 212) : NARROW ? 350 : 255;
+controls.target.copy(HOME); camera.position.copy(HOME).add(new THREE.Vector3(0, 0.44, 1).setLength(HOMED));
+
+// 八个星座排在天球坐标环上；每个星座是一个旋涡盘：越早发布越靠中心，越晚越往外（星空随时间长大）
+const RING = 80, centers = CATS.map((_, k) => { const a = k / CATS.length * Math.PI * 2; return new THREE.Vector3(RING * Math.cos(a), Math.sin(k * 1.7) * 14, RING * Math.sin(a)); });
+const radius = byCat.map(l => 7 + Math.sqrt(l.length) * 0.85);
+const tilt = CATS.map((_, k) => { const r = rng(91 + k * 7); return new THREE.Euler((r() - .5) * 1.3, r() * Math.PI * 2, (r() - .5) * 1.3); });
+const N = D.length, pos = new Float32Array(N * 3), col = new Float32Array(N * 3), size = new Float32Array(N), alpha = new Float32Array(N).fill(1),
+  phase = new Float32Array(N), born = new Float32Array(N), spike = new Float32Array(N), delay = new Float32Array(N);
+const tmp = new THREE.Vector3(), white = new THREE.Color('#ffffff');
+D.forEach((c, n) => {
+  const r = rng([...c.i].reduce((h, ch) => Math.imul(h ^ ch.charCodeAt(0), 16777619), 2166136261)), k = c.c, R = radius[k], arms = 2 + (k % 2);
+  const tau = SPAN ? c.day / SPAN : 0, rr = R * (0.06 + 0.94 * Math.pow(Math.min(1, tau * 0.82 + r() * 0.18), 0.85));
+  const ph = Math.floor(r() * arms) * (Math.PI * 2 / arms) + rr / R * 3.3 + gauss(r) * 0.32;
+  tmp.set(rr * Math.cos(ph), gauss(r) * (1.5 - tau * 0.7), rr * Math.sin(ph)).applyEuler(tilt[k]).add(centers[k]);
+  c.p = tmp.clone(); pos.set([tmp.x, tmp.y, tmp.z], n * 3); c.tint = r(); phase[n] = r() * 6.283; born[n] = c.day; c.idx = n;
+  delay[n] = reduce || document.hidden ? -9 : 0.25 + k * 0.22 + rr / R * 0.7 + r() * 0.25;   // 开场：星座一个接一个从四成亮到全亮，各自从中心往外（后台打开就直接全亮）
+});
+const geo = new THREE.BufferGeometry();
+for (const [k, a, d] of [['position', pos, 3], ['color', col, 3], ['size', size, 1], ['alpha', alpha, 1], ['phase', phase, 1], ['born', born, 1], ['spike', spike, 1], ['delay', delay, 1]]) geo.setAttribute(k, new THREE.BufferAttribute(a, d));
+const uni = { uTime: { value: 0 }, uScale: { value: 400 }, uDay: { value: 1e9 }, uTw: { value: reduce ? 0 : 1 } };
+scene.add(new THREE.Points(geo, new THREE.ShaderMaterial({
+  uniforms: uni, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
+  vertexShader: `attribute float size, alpha, phase, born, spike, delay; attribute vec3 color; uniform float uTime, uScale, uDay, uTw; varying vec3 vC; varying float vA, vS;
+    void main() { vec4 mv = modelViewMatrix * vec4(position, 1.); float grow = clamp((uDay - born) * 1.5, 0., 1.) * mix(.42, 1., smoothstep(delay, delay + .9, uTime));
+      float tw = 1. - uTw * .14 * (.5 + .5 * sin(uTime * 1.3 + phase));
+      gl_PointSize = clamp(size * uScale * tw * (.4 + .6 * grow) / -mv.z, 2., 64.); gl_Position = projectionMatrix * mv; vC = color; vA = alpha * grow; vS = spike; }`,
+  fragmentShader: `varying vec3 vC; varying float vA, vS;
+    void main() { vec2 p = gl_PointCoord - .5; float d2 = dot(p, p);
+      float core = exp(-d2 * 230.), halo = exp(-d2 * 20.) * .48;                                      // 亮核 + 柔光
+      float sp = vS * (exp(-abs(p.x) * 75.) * exp(-abs(p.y) * 6.) + exp(-abs(p.y) * 75.) * exp(-abs(p.x) * 6.));   // 最亮的星：十字星芒
+      float a = (core + halo + sp * .85) * vA * smoothstep(.25, .2, d2); if (a < .004) discard;
+      gl_FragColor = vec4(mix(vC, vec3(1.), clamp(core + sp * .5, 0., 1.)), a); }`,
+})));
+
+// 天球坐标环：穿过八个星座中心的赤道环 + 每 5° 一个刻度、每 45° 一根长刻度，再加一圈倾斜的黄道环（雕版星图的味道）
+{ const P = [], ring = (r, tiltX, n = 360) => { for (let i = 0; i < n; i++) { const a0 = i / n * Math.PI * 2, a1 = (i + 1) / n * Math.PI * 2;
+      const p0 = new THREE.Vector3(r * Math.cos(a0), 0, r * Math.sin(a0)).applyAxisAngle(new THREE.Vector3(1, 0, 0), tiltX), p1 = new THREE.Vector3(r * Math.cos(a1), 0, r * Math.sin(a1)).applyAxisAngle(new THREE.Vector3(1, 0, 0), tiltX);
+      P.push(p0.x, p0.y, p0.z, p1.x, p1.y, p1.z); } };
+  ring(RING * 1.32, 0); ring(RING * 1.32, 0.41, 240);
+  for (let d = 0; d < 360; d += 5) { const a = d / 180 * Math.PI, l = d % 45 ? 2.2 : 6, r0 = RING * 1.32; P.push(r0 * Math.cos(a), 0, r0 * Math.sin(a), (r0 + l) * Math.cos(a), 0, (r0 + l) * Math.sin(a)); }
+  const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(P, 3));
+  scene.add(new THREE.LineSegments(g, new THREE.LineBasicMaterial({ color: '#ede6d3', transparent: true, opacity: .09, depthWrite: false }))); }
+
+// 星座连线：每个星座最亮的 7 颗，用最小生成树连起来（像真星图里的星座图形）；换「亮度按」时重连
+const lineGeo = new THREE.BufferGeometry(), lines = new THREE.LineSegments(lineGeo, new THREE.LineBasicMaterial({ vertexColors: true, transparent: true, opacity: .34, depthWrite: false, blending: THREE.AdditiveBlending }));
+scene.add(lines);
+function relink() {
+  const P = [], C = [];
+  byCat.forEach((l, k) => { const top = [...l].sort((a, b) => b.sc - a.sc).slice(0, 7), inT = [top[0]], cc = new THREE.Color(CATS[k].col);
+    while (inT.length < top.length) { let best = null, bd = 1e9, from = null;
+      for (const a of inT) for (const b of top) if (!inT.includes(b)) { const d = a.p.distanceToSquared(b.p); if (d < bd) { bd = d; best = b; from = a; } }
+      inT.push(best); P.push(from.p.x, from.p.y, from.p.z, best.p.x, best.p.y, best.p.z); C.push(cc.r, cc.g, cc.b, cc.r, cc.g, cc.b); } });
+  lineGeo.setAttribute('position', new THREE.Float32BufferAttribute(P, 3)); lineGeo.setAttribute('color', new THREE.Float32BufferAttribute(C, 3));
+}
+
+// 远处的尘埃星（压成一条银河带）+ 每个星座一团淡淡的同色星云
+{ const r = rng(7), M = 5200, p = new Float32Array(M * 3);
+  for (let i = 0; i < M; i++) { const v = new THREE.Vector3(gauss(r), gauss(r) * .35, gauss(r)).normalize().multiplyScalar(420 + r() * 620).applyAxisAngle(new THREE.Vector3(0, 0, 1), 0.5); p.set([v.x, v.y, v.z], i * 3); }
+  const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.BufferAttribute(p, 3));
+  scene.add(new THREE.Points(g, new THREE.PointsMaterial({ color: '#d3d0c4', size: 1.15, sizeAttenuation: false, transparent: true, opacity: .42, depthWrite: false }))); }
+const neb = (() => { const cv = document.createElement('canvas'); cv.width = cv.height = 256; const x = cv.getContext('2d'), gr = x.createRadialGradient(128, 128, 0, 128, 128, 128);
+  gr.addColorStop(0, 'rgba(255,255,255,.7)'); gr.addColorStop(.4, 'rgba(255,255,255,.16)'); gr.addColorStop(1, 'rgba(255,255,255,0)'); x.fillStyle = gr; x.fillRect(0, 0, 256, 256); return new THREE.CanvasTexture(cv); })();
+CATS.forEach((c, k) => { const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: neb, color: c.col, transparent: true, opacity: .09, blending: THREE.AdditiveBlending, depthWrite: false }));
+  s.position.copy(centers[k]); s.scale.setScalar(radius[k] * 3.6); scene.add(s); });
+
+// —— 亮度按：计数用对数刻度（几颗两万收藏的星不会把其余压成看不见的点）；时间按先后排名，越新越亮 ——
+const tsize = s => 0.5 + 6.2 * Math.pow(s, 1.8);
+const tcol = (c, s, out) => out.set(CATS[c.c].col).lerp(white, 0.04 + 0.36 * Math.pow(s, 3) + c.tint * 0.06);
+const val = (c, m) => m === 'new' ? md(c.d) : m === 'add' ? md(c.ad) : fmt(c[m]);
+function scores(m) {
+  if (m === 'new' || m === 'add') { const key = m === 'new' ? 'd' : 'ad', o = [...D].sort((a, b) => (a[key] || '').localeCompare(b[key] || '')), rank = new Map(o.map((c, k) => [c, k / (o.length - 1)]));
+    return D.map(c => rank.get(c)); }
+  const mx = Math.max(...D.map(c => c[m])); return D.map(c => Math.log10(c[m] + 1) / Math.log10(mx + 1));
+}
+const from = { s: new Float32Array(N), c: new Float32Array(N * 3) }, to = { s: new Float32Array(N), c: new Float32Array(N * 3) };
+let ticks = [];
+function setMetric(m, animate) {
+  metric = m; const sc = scores(m), cc = new THREE.Color();
+  D.forEach((c, n) => { c.sc = sc[n]; to.s[n] = tsize(c.sc); tcol(c, c.sc, cc); to.c.set([cc.r, cc.g, cc.b], n * 3); spike[n] = c.sc > .8 ? Math.min(1, (c.sc - .8) * 6) : 0; });
+  geo.attributes.spike.needsUpdate = true;
+  if (!animate || reduce) { size.set(to.s); col.set(to.c); geo.attributes.size.needsUpdate = geo.attributes.color.needsUpdate = true; morph = null; }
+  else { from.s.set(size); from.c.set(col); morph = { t0: performance.now(), d: 650 }; }
+  relink();
+  document.querySelectorAll('#metric button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.m === m)));
+  const timey = m === 'new' || m === 'add';
+  $('brightsHead').textContent = S.top5(METRIC[m], timey);
+  $('brights').innerHTML = '';
+  [...D].sort((a, b) => b.sc - a.sc || b.b - a.b).slice(0, 5).forEach(c => { const b = document.createElement('button');
+    b.innerHTML = `<span class="v">${val(c, m)}</span><span class="t">${esc(title(c))}</span>`; b.title = `${desig(c)} · ${METRIC[m]} ${val(c, m)}`; b.onclick = () => { togglePop(false); select(c); }; $('brights').appendChild(b); });
+  const mx = timey ? 0 : Math.max(...D.map(c => c[m]));
+  ticks = timey ? [[0.1, S.ticks[0]], [0.5, S.ticks[1]], [0.98, S.ticks[2]]] : (m === 'v' ? [1e4, 1e5, 1e6] : [100, 1000, 1e4]).filter(x => x < mx).map(x => [Math.log10(x + 1) / Math.log10(mx + 1), fmt(x)]);
+  drawScale(true);
+  if (sel) select(sel, 'keep');
+}
+// 刻度：按镜头到当前焦点的距离，算这几档的星在屏幕上实际多大（拉近拉远跟着变），画法同星点
+let scaleKey = '';
+function drawScale(force) {
+  const dist = camera.position.distanceTo(controls.target), px = s => Math.max(3, Math.min(34, tsize(s) * uni.uScale.value * 0.93 / dist));
+  const key = metric + ticks.map(([s]) => px(s).toFixed(0)).join(',');
+  if (!force && key === scaleKey) return; scaleKey = key;
+  $('scale').innerHTML = ticks.map(([s, t]) => { const d = (px(s) * 1.3).toFixed(0); return `<span><i style="width:${d}px;height:${d}px"></i>${t}</span>`; }).join('');
+}
+
+// —— 星座名、α 星（HTML，跟着投影走）——
+const lbls = CATS.map((c, k) => { const el = document.createElement('div'); el.className = 'lbl'; el.style.color = c.col; el.innerHTML = `<b>${S.cname(c)}</b><small>${S.stars(byCat[k].length)}</small>`; document.body.appendChild(el); return el; });
+const alphas = byCat.map(l => { const a = l.find(c => c.bk === 0), el = document.createElement('div'); el.className = 'alpha'; el.innerHTML = `<i>${GREEK[0]}</i>${esc(title(a))}`; document.body.appendChild(el); return { c: a, el }; });
+
+// —— 控件：亮度按、观测设置、星座表 ——
+Object.entries(METRIC).forEach(([m, t]) => { const b = document.createElement('button'); b.textContent = t; b.dataset.m = m; b.onclick = () => setMetric(m, true); $('metric').appendChild(b); });
+const togglePop = open => { open = open ?? $('pop').hidden; $('pop').hidden = !open; $('filterBtn').setAttribute('aria-expanded', String(open)); };
+$('filterBtn').onclick = () => togglePop();
+CATS.forEach((c, k) => { const b = document.createElement('button'); b.style.color = c.col; b.setAttribute('aria-pressed', 'false');
+  b.innerHTML = `<span class="g"></span><span class="nm">${S.cname(c)}</span><span class="n">${byCat[k].length}</span>`;
+  b.onclick = () => { solo = solo === k ? -1 : k; document.querySelector('.atlas').classList.toggle('solo', solo >= 0);
+    document.querySelectorAll('#atlas button').forEach((x, j) => x.setAttribute('aria-pressed', String(j === solo)));
+    applyFilter(); deselect(); if (solo >= 0) fly(centers[solo], radius[solo] * 2.7); else fly(HOME, HOMED); };
+  $('atlas').appendChild(b); });
+
+// —— 筛选：搜索、只看有提示词、单看一个星座 ——
+function applyFilter() {
+  const q = $('q').value.trim().toLowerCase(), only = $('onlyPrompt').checked; let hit = 0;
+  D.forEach(c => { const ok = (!q || c.t.toLowerCase().includes(q) || c.e.toLowerCase().includes(q) || c.a.toLowerCase().includes(q) || c.o.some(t => t.toLowerCase().includes(q)))
+      && (!only || c.k > 0) && (solo < 0 || c.c === solo); c.on = ok; alpha[c.idx] = ok ? 1 : 0.05; if (ok) hit++; });
+  geo.attributes.alpha.needsUpdate = true;
+  $('count').textContent = q || only || solo >= 0 ? S.lit(hit) : '';
+  $('filterBtn').classList.toggle('on', only);
+}
+$('q').addEventListener('input', applyFilter); $('onlyPrompt').addEventListener('change', applyFilter);
+$('q').addEventListener('keydown', e => { if (e.key === 'Enter') { const best = D.filter(c => c.on).sort((a, b) => b.b - a.b)[0]; if (best) select(best); } });
+
+// —— 飞过去；卡片打开时画面中心往左让出半张卡片（手机上卡片在底部，不用让）——
+function fly(target, dist) {
+  const dir = camera.position.clone().sub(controls.target).normalize(), to = target.clone().add(dir.multiplyScalar(dist));
+  if (reduce) { controls.target.copy(target); camera.position.copy(to); return; }
+  flight = { t0: performance.now(), d: 1300, ft: controls.target.clone(), fp: camera.position.clone(), tt: target.clone(), tp: to };
+}
+function offset() {
+  const w = canvas.clientWidth, h = canvas.clientHeight, cw = $('card').hidden || w <= 720 ? 0 : $('card').offsetWidth + 24;
+  if (cw) camera.setViewOffset(w, h, cw / 2, 0, w, h); else camera.clearViewOffset();
+}
+
+// —— 选中一颗星：星表条目 + 准星；#c<编号> 可以直接分享这颗星 ——
+const excerpt = {};
+async function loadExcerpt(c) {   // 星表里不带提示词，点开再取同一份 /data/opus-prompts/<id>.json（详情页也用它）
+  if (!c.k || excerpt[c.i] !== undefined) return;
+  try { const j = await (await fetch(`/data/opus-prompts/${c.i}.json`)).json(); excerpt[c.i] = String(j.prompt || '').slice(0, 220); } catch (e) { excerpt[c.i] = ''; }
+  if (sel === c) select(c, 'keep');
+}
+function select(c, from) {
+  sel = c; controls.autoRotate = false; if (from !== 'keep') fly(c.p, 14 + 9 * (1 - (c.sc ?? 0)));
+  const kind = c.k === 2 ? S.full(c.n, c.f) : c.k === 1 ? S.brief : S.none, ex = excerpt[c.i];
+  const href = `/${LANG}/prompts/claude-opus-5-5/${c.i}`;
+  const card = $('card'); card.hidden = false;
+  card.innerHTML = `<div class="top"><span class="des">${desig(c)}</span><button class="x" id="close" aria-label="${S.close}">×</button></div>
+    <h2>${esc(title(c))}</h2><p class="en">${esc(title2(c))}</p>
+    <div class="meta"><b>@${esc(c.a)}</b>${c.m ? ' · ' + [...c.m].map(x => MODEL[x]).join(EN ? ', ' : '、') : ''}${c.o.length ? ' · ' + c.o.map(esc).join(EN ? ', ' : '、') : ''}<br>${S.posted(c.d, c.ad)} · ${c.cat}</div>
+    <div class="stats">${[['b', 0], ['l', 1], ['v', 2], ['r', 3]].map(([k, j]) => `<div class="${metric === k ? 'on' : ''}"><b>${fmt(c[k])}</b><span>${S.st[j]}</span></div>`).join('')}</div>
+    <div class="prompt"><span class="k">${kind}</span>${c.k ? (ex === undefined ? '…' : esc(ex) + (c.n > ex.length ? '…' : '')) : S.noneBody}</div>
+    <div class="links"><a class="go" id="go" href="${href}" target="_top">${S.open}</a><a href="https://x.com/${encodeURIComponent(c.a)}/status/${c.i}" target="_blank" rel="noopener">${S.orig}</a></div>`;
+  $('close').onclick = deselect; offset();
+  $('go').onclick = () => { try { if (parent !== window) parent.postMessage({ type: 'universe:open', id: c.i }, location.origin); } catch (e) {} };
+  if (from !== 'hash' && from !== 'keep') { try { history.replaceState(null, '', '#c' + c.i); } catch (e) {} }
+  loadExcerpt(c);
+}
+function deselect() { sel = null; $('card').hidden = true; $('reticle').hidden = true; offset(); try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {} }
+addEventListener('keydown', e => { if (e.key === 'Escape') { if (!$('pop').hidden) togglePop(false); else deselect(); } });
+const fromHash = () => { const m = location.hash.match(/^#c(\d+)$/), c = m && D.find(x => x.i === m[1]); if (c) select(c, 'hash'); };
+addEventListener('hashchange', fromHash);
+
+// —— 指向和点击：把星投到屏幕上找最近的（比射线检测稳，也照顾大小不一的星）——
+const v = new THREE.Vector3(), mv = new THREE.Vector3();
+function pick(x, y) { const w = canvas.clientWidth, h = canvas.clientHeight; let best = -1, bd = 1e9;
+  for (let n = 0; n < N; n++) { if (alpha[n] < .5 || born[n] > uni.uDay.value) continue;
+    v.fromArray(pos, n * 3).project(camera); if (v.z > 1) continue;
+    const dx = (v.x + 1) / 2 * w - x, dy = (1 - v.y) / 2 * h - y, d = dx * dx + dy * dy; if (d > 2500) continue;
+    mv.fromArray(pos, n * 3).applyMatrix4(camera.matrixWorldInverse); const rad = Math.max(9, Math.min(size[n] * uni.uScale.value / -mv.z, 64) * .4);
+    if (d < rad * rad && d < bd) { bd = d; best = n; } }
+  return best >= 0 ? D[best] : null; }
+let down = null;
+canvas.addEventListener('pointerdown', e => { down = [e.clientX, e.clientY]; if (controls.enabled) controls.autoRotate = false; togglePop(false); });
+canvas.addEventListener('pointerup', e => { if (down && Math.hypot(e.clientX - down[0], e.clientY - down[1]) < 5) { const c = pick(e.clientX, e.clientY); if (c) select(c); } down = null; });
+canvas.addEventListener('pointermove', e => { const tip = $('tip'); if (e.pointerType !== 'mouse' || e.buttons) { tip.hidden = true; return; }
+  const c = pick(e.clientX, e.clientY); canvas.style.cursor = c ? 'pointer' : ''; tip.hidden = !c; if (!c) return;
+  tip.style.left = e.clientX + 'px'; tip.style.top = e.clientY + 'px';
+  tip.innerHTML = `<div class="t">${esc(title(c))}</div><div class="m">${desig(c)} · @${esc(c.a)} · ${METRIC[metric]} ${val(c, metric)}</div>`; });
+canvas.addEventListener('pointerleave', () => { $('tip').hidden = true; });
+
+// —— 时间：从第一天长到最后一天 ——
+const setDay = d => { uni.uDay.value = d; $('fill').style.width = (Math.min(1, Math.max(0, d / SPAN)) * 100).toFixed(1) + '%';
+  const t = new Date(T0 + Math.min(d, SPAN) * 864e5); $('day').innerHTML = `${EN ? MON[t.getMonth()] + ' ' + t.getDate() : (t.getMonth() + 1) + ' 月 ' + t.getDate() + ' 日'} <small>· ${S.stars(D.filter(c => c.day <= d).length)}</small>`; };
+const resting = () => { uni.uDay.value = 1e9; $('fill').style.width = '100%'; const e = new Date(T0 + SPAN * 864e5); $('day').innerHTML = S.grow(EN ? `${MON[e.getMonth()]} ${e.getDate()}` : `${e.getMonth() + 1} 月 ${e.getDate()} 日`); };
+$('play').onclick = () => { deselect(); togglePop(false); fly(HOME, HOMED); lines.visible = false; grow = { t0: performance.now(), d: reduce ? 1 : 9000 }; controls.autoRotate = !reduce; };
+resting();
+
+// —— 主循环 ——
+function resize() { const w = canvas.clientWidth, h = canvas.clientHeight; renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix(); uni.uScale.value = h * 0.85; offset(); }
+addEventListener('resize', resize); resize();
+setMetric('b', false);
+const clock = new THREE.Clock(); let lastScale = 0;
+function frame(now) {
+  uni.uTime.value = clock.getElapsedTime(); lines.material.opacity = .34 * (reduce || introSkip ? 1 : Math.max(.35, Math.min(1, (uni.uTime.value - 2.2) / 1.2)));
+  if (flight) { const k = Math.min(1, (now - flight.t0) / flight.d), e = ease(k); controls.target.lerpVectors(flight.ft, flight.tt, e); camera.position.lerpVectors(flight.fp, flight.tp, e); if (k >= 1) flight = null; }
+  if (morph) { const k = Math.min(1, (now - morph.t0) / morph.d), e = ease(k);
+    for (let n = 0; n < N; n++) size[n] = from.s[n] + (to.s[n] - from.s[n]) * e; for (let n = 0; n < N * 3; n++) col[n] = from.c[n] + (to.c[n] - from.c[n]) * e;
+    geo.attributes.size.needsUpdate = geo.attributes.color.needsUpdate = true; if (k >= 1) morph = null; }
+  if (grow) { const k = Math.min(1, (now - grow.t0) / grow.d); setDay(-0.5 + k * (SPAN + 1)); if (k >= 1) { grow = null; resting(); lines.visible = true; } }
+  controls.update(); renderer.render(scene, camera);
+  const w = canvas.clientWidth, h = canvas.clientHeight, put = (el, p, show) => { v.copy(p).project(camera); const ok = show && v.z < 1 && Math.abs(v.x) < 1.05 && Math.abs(v.y) < 1.05;
+    el.style.display = ok ? '' : 'none'; if (ok) { el.style.left = ((v.x + 1) / 2 * w) + 'px'; el.style.top = ((1 - v.y) / 2 * h) + 'px'; } return ok; };
+  const lit = k => reduce || introSkip ? 1 : Math.max(.45, Math.min(1, (uni.uTime.value - 0.6 - k * 0.22) / 0.8));   // 星座名跟着开场的星一起亮
+  CATS.forEach((_, k) => { const d = camera.position.distanceTo(centers[k]);
+    lbls[k].style.opacity = (Math.max(.35, Math.min(1, (d - 25) / 90)) * lit(k)).toFixed(2);
+    put(lbls[k], centers[k].clone().add(new THREE.Vector3(0, radius[k] * 0.78 + 4, 0)), solo < 0 || solo === k);
+    put(alphas[k].el, alphas[k].c.p, d < 95 && (solo < 0 || solo === k) && !grow && alphas[k].c.on); });
+  if (sel) $('reticle').hidden = !put($('reticle'), sel.p, true);
+  if (now - lastScale > 200) { lastScale = now; drawScale(false); }
+  requestAnimationFrame(frame);
+}
+frame(performance.now());   // 先同步画一帧：页面在后台打开时，没有动画帧也能看到星空
+fromHash();
+</script>
+</body>
+</html>

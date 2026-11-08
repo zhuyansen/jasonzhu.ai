@@ -88,6 +88,15 @@ fs.mkdirSync(OUT_PUBLIC, { recursive: true });
 for (const c of cases) if (c.prompt) fs.writeFileSync(path.join(OUT_PUBLIC, `${c.id}.json`), JSON.stringify({ id: c.id, prompt: c.prompt.text }));
 // 列表页首屏只带 24 条，筛选/排序/加载更多时再拉这份全量精简索引
 fs.writeFileSync(path.join(OUT_PUBLIC, "index.json"), JSON.stringify(slim));
+// 提示词宇宙（public/universe/）的星表：每个作品一颗星，字段压成短名；提示词摘要不放这里，点开一颗星时再取 <id>.json；原帖地址由作者和 id 拼出来，也不放
+const UNI_CATS = ["motion", "product", "education", "stories", "art3d", "game", "production", "comparison"];
+const MODEL_LETTER = { "opus-5.5": "O", "sonnet-5.5": "S", "haiku-5.5": "H", "fable-5.5": "F" };
+fs.writeFileSync(path.join(OUT_PUBLIC, "universe.json"), JSON.stringify(slim.map((c) => ({
+  i: c.id, t: c.title.zh, e: c.title.en, c: UNI_CATS.indexOf(c.category), a: c.author.handle, d: (c.postedAt || "").slice(0, 10), ad: c.addedAt || "",
+  v: c.stats.views, l: c.stats.likes, b: c.stats.bookmarks, r: c.stats.replies,
+  k: c.prompt ? (c.prompt.kind === "full" ? 2 : 1) : 0, n: c.prompt?.length || 0,
+  m: c.models.map((m) => MODEL_LETTER[m] || "").join(""), o: c.tools, f: c.referenceAssets ? 1 : 0,
+}))));
 
 const withPrompt = cases.filter((c) => c.prompt).length;
 console.log(`✅ Opus 提示词库：${cases.length} 个作品（带提示词 ${withPromptCount}）· ${distinct} 条不同提示词（完整 ${cases.filter((c) => c.prompt?.kind === "full").length}）· 同款分组 ${new Set([...groupOf.values()].map((g) => g.key)).size} 组`);
