@@ -1,8 +1,8 @@
 {
  "model": "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.5)",
  "threshold": 5000,
- "updatedAt": "2026-11-08T07:18:15.251Z",
- "statsCheckedAt": "2026-11-08T07:18:15.251Z",
+ "updatedAt": "2026-11-08T09:39:36.452Z",
+ "statsCheckedAt": "2026-11-08T09:39:36.452Z",
  "inclusionRule": "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -132440,6 +132440,54 @@
     "width": 720,
     "height": 1280,
     "durationSec": 115
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2118342622884384895",
+   "url": "https://x.com/m4lkxx/status/2118342622884384895",
+   "author": {
+    "handle": "m4lkxx",
+    "name": "m4lka"
+   },
+   "postedAt": "2026-11-05T14:00:12.000Z",
+   "addedAt": "2026-11-08",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "同一汽车镜头的四档预算版本",
+    "en": "Same car shot at four budget levels"
+   },
+   "summary": {
+    "zh": "作品用代码展示同一汽车镜头在50美元、500美元、5000美元和5万美元预算下的四个版本，并将PDF提供给Opus 5.5制作。",
+    "en": "The work shows four coded versions of the same car shot at $50, $500, $5,000, and $50,000 budgets, using a PDF supplied to Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 5096,
+    "likes": 110,
+    "replies": 14,
+    "reposts": 6,
+    "bookmarks": 69,
+    "checkedAt": "2026-11-08T09:39:36.452Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2118338526030790657/img/62Qqc-bz77imbIay.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2118338526030790657/vid/avc1/720x900/dpOSj6KvsbysH5Z2.mp4?tag=29",
+    "width": 720,
+    "height": 900,
+    "durationSec": 28
    },
    "evidence": {
     "via": "daily",
