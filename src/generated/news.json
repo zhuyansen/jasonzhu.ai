@@ -1,5 +1,80 @@
 [
   {
+    "slug": "2026-11-08",
+    "date": "2026-11-08",
+    "title": "AI 快讯 · 11月8日",
+    "items": [
+      {
+        "title": "OpenAI联手Hacktron测试前沿模型安全",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/partnering-with-hacktron",
+        "summary": "OpenAI与安全公司Hacktron合作，专门寻找其系统漏洞、测试模型与第三方服务的连接，并利用前沿AI强化防御。这意味着模型安全测试正从内部评估扩展到更系统的外部红队和真实集成场景。",
+        "titleEn": "OpenAI Partners With Hacktron on AI Security",
+        "summaryEn": "OpenAI is partnering with security company Hacktron to identify vulnerabilities, test integrations with third-party services, and improve defenses using frontier AI. The partnership signals a broader move toward external red-teaming and realistic integration testing as AI systems become more deeply connected to production tools and services."
+      },
+      {
+        "title": "Google接手Crusoe受困的怀俄明AI数据中心项目",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/11/06/crusoe-sells-troubled-wyoming-data-center-project-to-google/",
+        "summary": "云基础设施公司Crusoe将陷入困境的怀俄明大型数据中心项目出售给Google。交易暴露出AI算力基础设施建设在电力、融资和交付周期上的高风险，也显示超大云厂商正在接手更复杂的算力资产。",
+        "titleEn": "Google Takes Over Crusoe’s Troubled Wyoming Data Center",
+        "summaryEn": "Cloud infrastructure company Crusoe is selling its troubled Wyoming data center project to Google. The deal highlights the risks of building massive AI infrastructure, including power availability, financing pressure, and long delivery timelines, while showing how hyperscalers may increasingly absorb or rescue strategically important compute projects."
+      },
+      {
+        "title": "Inkling 2 Small仅用68小时完成大模型训练",
+        "source": "Latent Space",
+        "category": "AI 工具动态",
+        "url": "https://latent.space/p/ainews-inkling-2-small-17a-594b-trained-in-68-hours-on-12t-tokens-beating-muse-spark/",
+        "summary": "Inkling 2 Small据报道在68小时内、使用12万亿token完成训练，并在测试中超过Muse Spark。对开发者而言，重点不只是模型分数，而是训练流程和硬件利用率可能进一步压低中小模型的迭代成本。",
+        "titleEn": "Inkling 2 Small Trains in Just 68 Hours",
+        "summaryEn": "Inkling 2 Small reportedly completed training in 68 hours on 12 trillion tokens and outperformed Muse Spark in evaluations. For developers, the important takeaway is not only benchmark performance, but the possibility that more efficient training pipelines and hardware utilization can reduce iteration costs for smaller, specialized models."
+      },
+      {
+        "title": "新方法让Agent以潜在表示压缩工具输出",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2611.06500",
+        "summary": "论文提出让Agent直接消费工具输出的潜在表示，而不是把完整文本塞回上下文，从而减少多步任务中的token开销和噪声。若工程化成熟，复杂工作流可获得更长有效上下文、更低推理成本和更稳定的注意力分配。",
+        "titleEn": "New Method Compresses Agent Tool Outputs Latently",
+        "summaryEn": "The paper proposes representing tool observations in latent space instead of appending raw text to the model context. This could substantially reduce token usage and distraction during long agent workflows, giving developers longer effective context windows, lower inference costs, and more reliable attention allocation in multi-step tasks."
+      },
+      {
+        "title": "StepX重新设计扩散模型的多教师蒸馏流程",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2611.04386",
+        "summary": "StepX指出，扩散模型在完成能力蒸馏后再压缩到少步采样，往往会明显损失指令遵循、文字渲染和审美质量，并重新设计多教师训练流程。对开发者的价值在于，低步数图像生成不应只追求速度，还需控制能力退化。",
+        "titleEn": "StepX Rethinks Multi-Teacher Diffusion Distillation",
+        "summaryEn": "StepX shows that compressing a capable diffusion model into few-step sampling can significantly degrade instruction following, text rendering, and visual quality. It redesigns multi-teacher distillation to address this tradeoff, reminding developers that fast image generation must be evaluated for capability retention, not speed alone."
+      },
+      {
+        "title": "TB-MathModel为数学建模Agent提供可验证基准",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2611.08237",
+        "summary": "TB-MathModel面向完整数学建模任务评估Agent：从现实问题抽象、提出假设，到计算解答并给出可辩护建议，同时检查答案是否可信且符合物理约束。它比只评估某一步或依赖LLM裁判更接近真实应用质量。",
+        "titleEn": "TB-MathModel Benchmarks Verifiable Modeling Agents",
+        "summaryEn": "TB-MathModel evaluates agents on complete mathematical modeling tasks, including abstraction, assumptions, computation, and defensible recommendations, while checking credibility and physical feasibility. Compared with fragment-based tests or LLM-only judging, it offers developers a more realistic way to measure whether an agent can solve end-to-end analytical problems."
+      },
+      {
+        "title": "Muir用敏感度门控改进线性注意力记忆",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2611.08376",
+        "summary": "Muir提出按更新敏感度分配门控，并改进线性注意力的匹配滤波读出机制，针对固定状态记忆在长上下文中的信息写入和擦除问题。若验证有效，可帮助开发者构建更低显存、近似线性复杂度的长序列模型。",
+        "titleEn": "Muir Improves Linear Attention Memory Updates",
+        "summaryEn": "Muir introduces sensitivity-aware gating and matched-filter readout for linear attention, targeting how information is erased and written into fixed-size memory states. If validated in larger systems, the approach could help developers build long-context models with lower memory use and near-linear computational scaling."
+      }
+    ],
+    "jasonSays": "今天最值得关注的是Agent工具输出的潜在压缩方向，它可能同时降低长流程推理成本、缓解上下文噪声，并推动Agent基础设施从文本拼接走向更高效的表示层。",
+    "jasonSaysEn": "The most notable development is latent compression for agent tool outputs, which could reduce long-horizon inference costs, limit context noise, and move agent infrastructure beyond raw text concatenation.",
+    "filename": "2026-11-08.md",
+    "coverImage": "/news/2026-11-08.png",
+    "coverImageEn": "/news/en/2026-11-08.png"
+  },
+  {
     "slug": "2026-11-07",
     "date": "2026-11-07",
     "title": "AI 快讯 · 11月7日",
