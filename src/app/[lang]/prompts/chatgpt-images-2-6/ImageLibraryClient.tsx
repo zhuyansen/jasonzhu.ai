@@ -91,6 +91,10 @@ export default function ImageLibraryClient({ lang, initial, total, withPrompt, c
                     <span className="px-2 py-0.5 rounded-full bg-gray-50 text-gray-600">{imageCategoryLabel(c.category, lang)}</span>
                     <span>{formatCount(c.stats.views, lang)} {isZh ? "浏览" : "views"}</span>
                     <span>♥ {formatCount(c.stats.likes, lang)}</span>
+                    {/* 发帖日期；按「最近收录」看时换成收录日期（同 Claude 库）。卡片上没日期，看不出库每天有没有更新 */}
+                    <span className="ml-auto shrink-0" title={isZh ? `发帖 ${c.postedAt.slice(0, 10)} · ${c.addedAt || ""} 收录` : `Posted ${c.postedAt.slice(0, 10)} · added ${c.addedAt || ""}`}>
+                      {sort === "added" && c.addedAt ? (isZh ? `${c.addedAt.slice(5)} 收录` : `Added ${c.addedAt.slice(5)}`) : c.postedAt.slice(5, 10)}
+                    </span>
                   </div>
                   {c.prompt ? (
                     <Link href={href} className="font-semibold text-gray-900 leading-snug hover:text-[var(--primary)]">{title}</Link>
