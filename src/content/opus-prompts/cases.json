@@ -1,8 +1,8 @@
 {
  "model": "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.5)",
  "threshold": 5000,
- "updatedAt": "2026-11-08T09:39:36.452Z",
- "statsCheckedAt": "2026-11-08T09:39:36.452Z",
+ "updatedAt": "2026-11-09T01:17:15.203Z",
+ "statsCheckedAt": "2026-11-09T01:17:15.203Z",
  "inclusionRule": "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -26390,6 +26390,58 @@
    }
   },
   {
+   "id": "2119052253982306393",
+   "url": "https://x.com/camperaigg/status/2119052253982306393",
+   "author": {
+    "handle": "camperaigg",
+    "name": "camper 🦎🎣"
+   },
+   "postedAt": "2026-11-07T13:00:02.000Z",
+   "addedAt": "2026-11-09",
+   "lang": "en",
+   "models": [
+    "fable-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "闪电模拟镜头之旅",
+    "en": "Lightning bolt simulation ride"
+   },
+   "summary": {
+    "zh": "Fable 5.5 用 Three.js 和 Taichi 制作了一镜到底的闪电骑行，包含风暴、电击穿、声音合成和草地渲染。",
+    "en": "Fable 5.5 generated a one-shot lightning-bolt ride with a storm simulation, dielectric breakdown, sound synthesis, and grass rendering in Three.js and Taichi."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js",
+    "Taichi",
+    "Claude Code"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 99716,
+    "likes": 2101,
+    "replies": 51,
+    "reposts": 102,
+    "bookmarks": 795,
+    "checkedAt": "2026-11-09T01:17:15.203Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2119016604457717761/img/_Ec7-HtzCr2bnnCF.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2119016604457717761/vid/avc1/1280x720/qUC654hFkSXGom_h.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 28
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2104122905961595267",
    "url": "https://x.com/yihui_indie/status/2104122905961595267",
    "author": {
@@ -29874,6 +29926,56 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2119103146974957675",
+   "url": "https://x.com/MengTo/status/2119103146974957675",
+   "author": {
+    "handle": "MengTo",
+    "name": "Meng To"
+   },
+   "postedAt": "2026-11-07T16:22:15.000Z",
+   "addedAt": "2026-11-09",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "Three.js 还原的动画房间",
+    "en": "Animated Three.js recreation of a room"
+   },
+   "summary": {
+    "zh": "Opus 5.5 用 Three.js 重现了作者的房间，用于制作教程视频中的动画。",
+    "en": "Opus 5.5 recreated the creator's room in Three.js so it could be animated for tutorial videos."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 85023,
+    "likes": 1427,
+    "replies": 80,
+    "reposts": 51,
+    "bookmarks": 1481,
+    "checkedAt": "2026-11-09T01:17:15.203Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2119102740232286208/img/1-WeZnjl0QYTb4Jd.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2119102740232286208/vid/avc1/1280x720/e43UfjVwTCB9yFqo.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 24
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -51051,6 +51153,61 @@
    }
   },
   {
+   "id": "2119052317227987018",
+   "url": "https://x.com/seeconvm/status/2119052317227987018",
+   "author": {
+    "handle": "seeconvm",
+    "name": "seeco"
+   },
+   "postedAt": "2026-11-07T13:00:17.000Z",
+   "addedAt": "2026-11-09",
+   "lang": "en",
+   "models": [
+    "fable-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "巨型机器人接住陨石",
+    "en": "Giant robot catches a meteor"
+   },
+   "summary": {
+    "zh": "Fable 5.5 完全用代码制作了一部 82 秒、36 个镜头的动画短片，并在 Three.js 中渲染画面和合成声音。",
+    "en": "Fable 5.5 created an 82-second, 36-shot anime short entirely in code, rendering frames and synthesizing sound in Three.js."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/seeconvm/status/2119052321795551415",
+    "text": "Create a 2D anime short for the web. It must look completely like real Japanese anime, as if it were taken directly from a finished theatrical anime film. This is traditional-looking, hand-drawn 2D anime, not a 3D animation, a moving illustration, or a stylized web graphic.\n\nBuild it in three.js, render every frame in code and synthesize every sound. No video models, no image models, no stock art, no audio samples. Deliver one 1920x1080, 24 fps MP4 and a single self-contained HTML file that plays the film offline. Use any tools, libraries, references, guides, literally anything, as long as the final result looks 100% like hand-drawn 2D anime.\n\nUse bright summer theatrical anime and classic super-robot anime as the art style reference for the design, line work, painted backgrounds, color and atmosphere. The film is 82 seconds long, in 36 shots, with no dialogue. Its heroes are a tiny creature called Clawd and MEGA CLAWD, a giant robot built in his exact shape. No people appear in the film.\n\nHEROES\n\nClawd: a small terracotta vinyl-toy creature. One wide rounded block is his head and body, with a flat face, two big glossy black eyes, a small mouth, two round side nubs for arms and four short stubby legs. All his acting is in the face and the squash of his body.\n\nMEGA CLAWD: a 120 m anime mecha in Clawd's exact silhouette. Overlapping terracotta armor plates with cream and charcoal panels, bronze joints, bolts, vents and hand-lettered markings CLAWD-01 and 巨神. A dark glass visor where Clawd's eyes glow amber, a faceted crystal reactor that glows blue, blue thrusters in the soles. Its nubs unfold into big armored arms with clamp hands. It has slept for decades on the seabed under barnacles and kelp.\n\nWORLD\n\nAn original Japanese seaside town on green hills: kawara tile roofs, laundry on balconies, telephone wires, a vermilion torii on the hill, a calico cat asleep on hot roof tiles, a glass wind chime on a porch. A harbour with a seawall, tetrapods, red and white lighthouses, small fishing boats and a wooden pier. A paper cup of blue shaved ice.\n\nSTORY\n\nA blazing summer day. Clawd sits at the end of the pier eating blue shaved ice. A glint flares in the syrup: high above the clouds, a meteor ignites and comes down burning. The gulls burst from the wires and the wind chime stops. Clawd looks up, sets the cup carefully on a bollard and dives into the sea.\n\nThrough luminous cyan water he sinks toward a colossal shape on the seabed. Its visor lights up with his eyes. He drops through a hatch into the cockpit, grabs the two levers, and the reactor ignites. The bay boils into a white dome and MEGA CLAWD rises, sheets of water pouring off every plate, towering over the town. The ice cup trembles on the bollard.\n\nThe meteor splits a cumulus massif in two. MEGA CLAWD crouches, its arms unfold, and it launches in a ring of spray, climbing through the clouds to the edge of space. Near silence. The hands catch the meteor in a white flash. The armor glows hot, plates buckle, alarms go red in the cockpit while Clawd strains at the levers. The reactor surges, blue light runs into the arms, the meteor cracks with lightning and bursts into thousands of glowing fragments.\n\nAt dusk they fall over the town as shooting stars and the cat sits up to watch. MEGA CLAWD falls back smoking and crashes into the bay, and a wave breaks over the seawall. The giant kneels in the water, its visor eyes soften into a smile. Soaked, Clawd climbs back onto the pier, finds his cup, the ice has melted into blue water, and drinks it anyway, happy. End card: \"Fable 5.5\" in brush lettering, a red seal, the title MEGA CLAWD 巨神.\n\nLIGHT\n\nHigh-key anime light, never murky: a deep-blue summer sky, towering white cumulus with lavender shadows, a cobalt-to-turquoise sea with sun glitter. Underwater is luminous cyan with god rays, never black. The ending is a warm, colorful dusk. Cel shading with two hard tones and a crisp highlight, confident ink lines, gouache painted backgrounds, effects drawn like hand-painted effect cels.\n\nSOUND\n\nAn original orchestral score on one summer theme: felt piano and strings at the start, the meteor cuts it off, a choir underwater, the theme returns as a heroic brass call when MEGA CLAWD rises, near silence before the impact, then a colossal hit, a glory chord on the shatter, and it resolves exactly on Clawd's sip. Surf, cicadas, gulls, the wind chime, splashes, the reactor, thrusters, alarms and lightning, all timed to the picture.\n\nIT MUST NOT LOOK LIKE\n\n- 3D: no plastic materials, CGI shading or game-engine lighting.\n- Boxes: no plain blocks for houses, no sphere meteor, no scaled-up toy as the mecha.\n- Vector art: no flat fills without paint, ink and volume.\n- Murk: nothing dark, grey or muddy, no black ocean.\n- Web animation: no floating, sliding, smooth software easing or 60 fps floaty motion.\n- Particle mush for fire, water or energy.\n\nCHECKS\n\nEvery frame is a pure function of film time. Before the final render, test every frame: nothing passes through anything, the cup sits on the bollard, the hands grip the levers and the meteor, Clawd stays terracotta in every light.\n\nThe result should feel huge, warm and beautiful, a summer blockbuster in bright anime colors. Before finishing, inspect random frames as still images. If any frame does not look completely like real 2D anime, keep improving it. Do not stop until every frame could pass as a still from a theatrical anime film."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 46234,
+    "likes": 691,
+    "replies": 30,
+    "reposts": 64,
+    "bookmarks": 594,
+    "checkedAt": "2026-11-09T01:17:15.203Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2118987638866591744/img/gjrzAXFyvF8gcjDD.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2118987638866591744/vid/avc1/1280x720/GT3yarPOmIxhb5Am.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 82
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2114937668635435233",
    "url": "https://x.com/_3912657840/status/2114937668635435233",
    "author": {
@@ -62065,6 +62222,63 @@
    }
   },
   {
+   "id": "2119039736002249212",
+   "url": "https://x.com/TheAhmadOsman/status/2119039736002249212",
+   "author": {
+    "handle": "TheAhmadOsman",
+    "name": "Ahmad"
+   },
+   "postedAt": "2026-11-07T12:10:17.000Z",
+   "addedAt": "2026-11-09",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "自动化语录视频制作",
+    "en": "Automated quote video production"
+   },
+   "summary": {
+    "zh": "Claude Code 从作者的素材中选择引语和片段，完成剪辑节奏、音乐、文字叠加与放大处理，使用本地流程运行。",
+    "en": "Claude Code assembled a video from the creator's clips, selecting quotes and cuts, adding pacing, music, overlays, and upscaling through a local pipeline."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Claude Code",
+    "FFmpeg",
+    "SeedVR2-7B",
+    "Real-ESRGAN x2plus",
+    "SeedVR2-3B",
+    "DeepFilterNet3",
+    "MossFormer2",
+    "ClearerVoice"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 34839,
+    "likes": 294,
+    "replies": 56,
+    "reposts": 14,
+    "bookmarks": 241,
+    "checkedAt": "2026-11-09T01:17:15.203Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2119039233931587584/img/Cduk4CnDTOu8joQM.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2119039233931587584/vid/avc1/1280x720/xuap8dfKDYT3vU3U.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 159
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2108696942108938245",
    "url": "https://x.com/zerozakiyamo/status/2108696942108938245",
    "author": {
@@ -69942,6 +70156,54 @@
    }
   },
   {
+   "id": "2119054710170669360",
+   "url": "https://x.com/oguzthedev/status/2119054710170669360",
+   "author": {
+    "handle": "oguzthedev",
+    "name": "Oguz"
+   },
+   "postedAt": "2026-11-07T13:09:47.000Z",
+   "addedAt": "2026-11-09",
+   "lang": "tr",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "代码制作的手机游戏",
+    "en": "Code-built mobile game"
+   },
+   "summary": {
+    "zh": "一款使用 Claude Opus 5.5 制作的游戏已上架 App Store。作者称游戏的资产和机制完全通过代码制作。",
+    "en": "A game made with Claude Opus 5.5 is now on the App Store. The creator says its assets and mechanics were made entirely with code."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 28101,
+    "likes": 172,
+    "replies": 26,
+    "reposts": 9,
+    "bookmarks": 149,
+    "checkedAt": "2026-11-09T01:17:15.203Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2119054525357019136/img/mBZI0L795Ufoa8JC.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2119054525357019136/vid/avc1/720x1556/4M4Vpm4iO2MbKkqh.mp4?tag=29",
+    "width": 720,
+    "height": 1556,
+    "durationSec": 22
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2107018580265201724",
    "url": "https://x.com/seiiiiiiiiiiru/status/2107018580265201724",
    "author": {
@@ -76852,6 +77114,57 @@
    }
   },
   {
+   "id": "2119024722516029898",
+   "url": "https://x.com/maxt3chno/status/2119024722516029898",
+   "author": {
+    "handle": "maxt3chno",
+    "name": "Max"
+   },
+   "postedAt": "2026-11-07T11:10:38.000Z",
+   "addedAt": "2026-11-09",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "三维动画复刻对比",
+    "en": "3D animation recreation comparison"
+   },
+   "summary": {
+    "zh": "作者使用 Opus 5.5 和 Sol 6.1，在 Blender 中从头重现了一段随机找到的 Instagram 动画，并进行了多轮迭代。",
+    "en": "The creator recreated a randomly found Instagram animation from scratch in Blender using Opus 5.5 and Sol 6.1, with multiple iterations."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Sol 6.1",
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 24111,
+    "likes": 365,
+    "replies": 40,
+    "reposts": 14,
+    "bookmarks": 299,
+    "checkedAt": "2026-11-09T01:17:15.203Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2119024571751837696/img/pu0Jbhy1nafayNP6.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2119024571751837696/vid/avc1/810x720/Yuyfr7aQDe4rnwzq.mp4?tag=29",
+    "width": 810,
+    "height": 720,
+    "durationSec": 16
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2109001847792890082",
    "url": "https://x.com/kooshiar/status/2109001847792890082",
    "author": {
@@ -81982,6 +82295,57 @@
    }
   },
   {
+   "id": "2119071023937032420",
+   "url": "https://x.com/0xKense1/status/2119071023937032420",
+   "author": {
+    "handle": "0xKense1",
+    "name": "Kensei"
+   },
+   "postedAt": "2026-11-07T14:14:37.000Z",
+   "addedAt": "2026-11-09",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "绑定骨骼的三维游戏角色",
+    "en": "Rigged 3D game character"
+   },
+   "summary": {
+    "zh": "作者使用 Claude Opus 5.5、Tripo 和 Blender 制作了游戏角色。Opus 清理并绑定了 Tripo 生成的模型，还制作了剑和盾。",
+    "en": "The creator made a game character with Claude Opus 5.5, Tripo, and Blender. Opus cleaned up and rigged a Tripo generation, including its sword and shield."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Tripo",
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 21422,
+    "likes": 258,
+    "replies": 10,
+    "reposts": 20,
+    "bookmarks": 443,
+    "checkedAt": "2026-11-09T01:17:15.203Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2119068434042413056/img/sVI5X-HvZvNQd7h6.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2119068434042413056/vid/avc1/1280x720/TT_un5mO1aQp60Ls.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 28
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2114173223281783215",
    "url": "https://x.com/killahdev/status/2114173223281783215",
    "author": {
@@ -83178,6 +83542,54 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2119075448449581197",
+   "url": "https://x.com/thebuggeddev/status/2119075448449581197",
+   "author": {
+    "handle": "thebuggeddev",
+    "name": "The Bugged Dev"
+   },
+   "postedAt": "2026-11-07T14:32:12.000Z",
+   "addedAt": "2026-11-09",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "三维液压原理讲解",
+    "en": "3D hydraulics explainer"
+   },
+   "summary": {
+    "zh": "作者使用 Claude Opus 5.5 制作了液压原理的 3D 可视化。",
+    "en": "The creator made a 3D visualization of how hydraulics work with Claude Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 20723,
+    "likes": 717,
+    "replies": 14,
+    "reposts": 71,
+    "bookmarks": 564,
+    "checkedAt": "2026-11-09T01:17:15.203Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2119074616043843585/img/stOvxpoXuPcxcyzG.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2119074616043843585/vid/avc1/1160x720/fatlGhYAbI28Eopw.mp4?tag=29",
+    "width": 1160,
+    "height": 720,
+    "durationSec": 51
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -100652,6 +101064,62 @@
    }
   },
   {
+   "id": "2119140493091094672",
+   "url": "https://x.com/ChrisGPT/status/2119140493091094672",
+   "author": {
+    "handle": "ChrisGPT",
+    "name": "Chris"
+   },
+   "postedAt": "2026-11-07T18:50:39.000Z",
+   "addedAt": "2026-11-09",
+   "lang": "en",
+   "models": [
+    "opus-5.5",
+    "fable-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "森林中的女孩与机器人动画",
+    "en": "Girl and robot forest animation"
+   },
+   "summary": {
+    "zh": "作者让模型在移动应用中制作一段动画：森林里，一名女孩和一个机器人被逐魂者追赶；制作未使用资产或参考资料。",
+    "en": "The creator asked the model to make a mobile-app animation about a girl and robot chased by a skinwalker in a forest, without assets or references."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/ChrisGPT/status/2119140493091094672",
+    "text": "make an animation in the mobile app about a girl and a robot in the forest who are chased by a skinwalker."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Fable 5.5"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 14039,
+    "likes": 322,
+    "replies": 30,
+    "reposts": 11,
+    "bookmarks": 57,
+    "checkedAt": "2026-11-09T01:17:15.203Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2119140402657640448/img/6TSYMDoEJFcbcFtu.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2119140402657640448/vid/avc1/1718x720/6N1rdAhcItQ46Am1.mp4?tag=29",
+    "width": 1718,
+    "height": 720,
+    "durationSec": 60
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103801828744061307",
    "url": "https://x.com/cyrilXBT/status/2103801828744061307",
    "author": {
@@ -114214,6 +114682,60 @@
    }
   },
   {
+   "id": "2119053573526901001",
+   "url": "https://x.com/AIMind_Ai/status/2119053573526901001",
+   "author": {
+    "handle": "AIMind_Ai",
+    "name": "AiMind"
+   },
+   "postedAt": "2026-11-07T13:05:16.000Z",
+   "addedAt": "2026-11-09",
+   "lang": "en",
+   "models": [
+    "opus-5.5",
+    "fable-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "3D像素艺术橱窗对比",
+    "en": "3D pixel art shop window comparison"
+   },
+   "summary": {
+    "zh": "创作者用“3D像素艺术圣诞橱窗”这一提示词比较了 Claude Fable 5.5 和 Opus 5.5 的表现。",
+    "en": "The creator compared Claude Fable 5.5 and Opus 5.5 using a prompt for a 3D pixel-art Christmas shop window."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/AIMind_Ai/status/2119053573526901001",
+    "text": "a Christmas shop window in 3D pixel art."
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 10637,
+    "likes": 105,
+    "replies": 29,
+    "reposts": 11,
+    "bookmarks": 33,
+    "checkedAt": "2026-11-09T01:17:15.203Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2119053367003467776/img/tgbxM-kfSVwue0AM.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2119053367003467776/vid/avc1/720x900/Bz3Bf8AM5HTDRyjP.mp4?tag=29",
+    "width": 720,
+    "height": 900,
+    "durationSec": 20
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103465304039076319",
    "url": "https://x.com/thebuggeddev/status/2103465304039076319",
    "author": {
@@ -121160,6 +121682,57 @@
    }
   },
   {
+   "id": "2119035947211685947",
+   "url": "https://x.com/rewind02/status/2119035947211685947",
+   "author": {
+    "handle": "rewind02",
+    "name": "rewind"
+   },
+   "postedAt": "2026-11-07T11:55:14.000Z",
+   "addedAt": "2026-11-09",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "Blender绑定基础角色",
+    "en": "Rigged base character in Blender"
+   },
+   "summary": {
+    "zh": "创作者通过 MCP 将 Claude Opus 5.5 接入 Blender，并提供正面、侧面和背面参考图，制作并绑定了可复用的人体模型基础。",
+    "en": "The creator used Claude Opus 5.5 with Blender via MCP and front, side, and back references to build and rig a reusable mannequin base."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Blender",
+    "MCP"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 8887,
+    "likes": 188,
+    "replies": 23,
+    "reposts": 8,
+    "bookmarks": 158,
+    "checkedAt": "2026-11-09T01:17:15.203Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2119035928710643712/img/DTvKeCFP-EeBZngq.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2119035928710643712/vid/avc1/1280x720/BwQ5Zta7ZKSvP5FL.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 4
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103582509699313804",
    "url": "https://x.com/JohnKlerAI/status/2103582509699313804",
    "author": {
@@ -123506,6 +124079,56 @@
    }
   },
   {
+   "id": "2119042707943494127",
+   "url": "https://x.com/ann_nnng/status/2119042707943494127",
+   "author": {
+    "handle": "ann_nnng",
+    "name": "Ann Nguyen"
+   },
+   "postedAt": "2026-11-07T12:22:06.000Z",
+   "addedAt": "2026-11-09",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "互动光学错觉盒",
+    "en": "Interactive optical illusion box"
+   },
+   "summary": {
+    "zh": "创作者让 Claude Opus 5.5 指导制作一个 DIY 视觉错觉盒子，并用 Three.js 完成了作品。",
+    "en": "The creator asked Claude Opus 5.5 to guide the making of a DIY optical illusion box, built with Three.js."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 8297,
+    "likes": 254,
+    "replies": 20,
+    "reposts": 17,
+    "bookmarks": 144,
+    "checkedAt": "2026-11-09T01:17:15.203Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2119042043507027968/img/NwmuCzZvuiQurJLQ.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2119042043507027968/vid/avc1/540x880/MOXO0glOQlxHwMWT.mp4?tag=29",
+    "width": 540,
+    "height": 880,
+    "durationSec": 21
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103898861177880665",
    "url": "https://x.com/AidinShahi/status/2103898861177880665",
    "author": {
@@ -123690,6 +124313,56 @@
     "width": 1280,
     "height": 720,
     "durationSec": 10
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2119085076939948251",
+   "url": "https://x.com/elvar_official/status/2119085076939948251",
+   "author": {
+    "handle": "elvar_official",
+    "name": "Elvar"
+   },
+   "postedAt": "2026-11-07T15:10:27.000Z",
+   "addedAt": "2026-11-09",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "机械鱿鱼拆解动画",
+    "en": "Exploded robot squid animation"
+   },
+   "summary": {
+    "zh": "创作者提供了一张图片并输入“build it”，Claude 用 Three.js 生成了一个可拆解、带动画的机器鱿鱼。",
+    "en": "The creator supplied one picture and typed “build it”; Claude produced a destructible, animated robot squid implemented in Three.js."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 8233,
+    "likes": 141,
+    "replies": 34,
+    "reposts": 14,
+    "bookmarks": 104,
+    "checkedAt": "2026-11-09T01:17:15.203Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2119083296244072448/img/cZhkBlraYrZgiQ2i.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2119083296244072448/vid/avc1/1280x720/FDgYq7U4KDERD0Qj.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 24
    },
    "evidence": {
     "via": "daily",
@@ -124132,6 +124805,56 @@
     "width": 1280,
     "height": 720,
     "durationSec": 45
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2119134904600654279",
+   "url": "https://x.com/chetaslua/status/2119134904600654279",
+   "author": {
+    "handle": "chetaslua",
+    "name": "Chetaslua"
+   },
+   "postedAt": "2026-11-07T18:28:27.000Z",
+   "addedAt": "2026-11-09",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "纸片人悟空对战贝吉塔",
+    "en": "Paper cutout Goku versus Vegeta"
+   },
+   "summary": {
+    "zh": "创作者用纯 JavaScript 制作了悟空和贝吉塔纸片人打斗、变身并从照片中跃出的场景。",
+    "en": "The creator made a JavaScript scene of Goku and Vegeta as paper cutouts that fight with physics and jump out of a photo."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "JavaScript"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 8125,
+    "likes": 103,
+    "replies": 16,
+    "reposts": 1,
+    "bookmarks": 25,
+    "checkedAt": "2026-11-09T01:17:15.203Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2119134870735847424/img/D3Tsn90hcm3aowCM.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2119134870735847424/vid/avc1/720x720/Rr6lUJCeUCFUsukS.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 22
    },
    "evidence": {
     "via": "daily",
@@ -126705,6 +127428,59 @@
    }
   },
   {
+   "id": "2118996060827701714",
+   "url": "https://x.com/charliejhills/status/2118996060827701714",
+   "author": {
+    "handle": "charliejhills",
+    "name": "Charlie Hills"
+   },
+   "postedAt": "2026-11-07T09:16:44.000Z",
+   "addedAt": "2026-11-09",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "四种推理强度下的风暴灯塔短片",
+    "en": "Lighthouse in a storm at four effort levels"
+   },
+   "summary": {
+    "zh": "创作者用 Claude Opus 5.5 的四种 effort 设置制作了一个 25 秒的暴风雨灯塔 3D 短片，并比较了结果。",
+    "en": "The creator rendered a 25-second 3D lighthouse-in-a-storm film with Claude Opus 5.5 at four effort settings and compared the results."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/charliejhills/status/2118996060827701714",
+    "text": "a 25-second 3D film of a lighthouse in a storm."
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 7478,
+    "likes": 103,
+    "replies": 27,
+    "reposts": 2,
+    "bookmarks": 45,
+    "checkedAt": "2026-11-09T01:17:15.203Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2118995900932759552/img/kn5vBPFb6g_Zsy8P.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2118995900932759552/vid/avc1/1280x720/TdALLwghnjtHFn_h.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 25
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2117629531733332057",
    "url": "https://x.com/BubbleBrain/status/2117629531733332057",
    "author": {
@@ -129170,6 +129946,54 @@
    }
   },
   {
+   "id": "2119120307458097260",
+   "url": "https://x.com/techartist_/status/2119120307458097260",
+   "author": {
+    "handle": "techartist_",
+    "name": "Techartist"
+   },
+   "postedAt": "2026-11-07T17:30:27.000Z",
+   "addedAt": "2026-11-09",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "互动光学学习应用",
+    "en": "Interactive optics learning app"
+   },
+   "summary": {
+    "zh": "这是一个教授 GCSE、IGCSE 光学以及 A-level 干涉内容的应用，涵盖反射、折射、透镜、眼睛和颜色。作者称其使用 Claude Opus 5.5 构建。",
+    "en": "An app teaches GCSE and IGCSE light and optics, including reflection, refraction, lenses, the eye, colour and A-level interference. It was built with Claude Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 6563,
+    "likes": 223,
+    "replies": 6,
+    "reposts": 26,
+    "bookmarks": 140,
+    "checkedAt": "2026-11-09T01:17:15.203Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2119119327706349568/img/Hj9iMUtqi4dgvc-U.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2119119327706349568/vid/avc1/1280x720/mvksWmokWBXRpWIs.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2108206814236184802",
    "url": "https://x.com/thebuggeddev/status/2108206814236184802",
    "author": {
@@ -129905,6 +130729,54 @@
     "width": 1168,
     "height": 720,
     "durationSec": 12
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2119100405892190657",
+   "url": "https://x.com/devteamdrew/status/2119100405892190657",
+   "author": {
+    "handle": "devteamdrew",
+    "name": "DreW"
+   },
+   "postedAt": "2026-11-07T16:11:22.000Z",
+   "addedAt": "2026-11-09",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "线框潜水员动画",
+    "en": "Animated wireframe diver"
+   },
+   "summary": {
+    "zh": "这是一个让潜水员身体动起来的简单线框和绑定动画场景。作者称其使用 Claude Opus 5.5 制作。",
+    "en": "A simple wireframe and rig animate a diver’s body in a scene described as an inconvenient leap of faith. It was made with Claude Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 6323,
+    "likes": 109,
+    "replies": 6,
+    "reposts": 5,
+    "bookmarks": 47,
+    "checkedAt": "2026-11-09T01:17:15.203Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2118847849861369856/img/hc8Qj8yHuH8g-nSO.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2118847849861369856/vid/avc1/720x720/0m2GX2HxFYCJe8W2.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 23
    },
    "evidence": {
     "via": "daily",
@@ -131351,6 +132223,63 @@
    }
   },
   {
+   "id": "2119064903885488187",
+   "url": "https://x.com/sorenxet/status/2119064903885488187",
+   "author": {
+    "handle": "sorenxet",
+    "name": "sorenxet"
+   },
+   "postedAt": "2026-11-07T13:50:18.000Z",
+   "addedAt": "2026-11-09",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "可探索的公寓解谜游戏",
+    "en": "Playable apartment puzzle game"
+   },
+   "summary": {
+    "zh": "这是一个可游玩的公寓解谜游戏，包含三个房间、书房、走廊、厨房和围绕上锁房门展开的谜题链。Opus 管理流程，Astra、Tripo 和 Unreal 分别处理参考图、资产和组装。",
+    "en": "A playable apartment game has three rooms, a study, a hallway, a kitchen and a locked-door puzzle chain. Opus managed the pipeline while Astra, Tripo and Unreal handled references, assets and assembly."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "GPT-6 Astra",
+    "Tripo",
+    "Unreal",
+    "Codex/Astra",
+    "Tripo P2",
+    "Godot",
+    "Blender",
+    "Cascadeur"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 5811,
+    "likes": 147,
+    "replies": 11,
+    "reposts": 6,
+    "bookmarks": 130,
+    "checkedAt": "2026-11-09T01:17:15.203Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2118680016888201216/img/DBbFUVS9tj-_3zTE.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2118680016888201216/vid/avc1/1152x720/24U8QwuRRYCEuktF.mp4?tag=29",
+    "width": 1152,
+    "height": 720,
+    "durationSec": 99
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103613318497997215",
    "url": "https://x.com/makisuo/status/2103613318497997215",
    "author": {
@@ -131787,6 +132716,56 @@
     "width": 1280,
     "height": 720,
     "durationSec": 195
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2119080450287423996",
+   "url": "https://x.com/Aygramm_/status/2119080450287423996",
+   "author": {
+    "handle": "Aygramm_",
+    "name": "Ayomide Adeji"
+   },
+   "postedAt": "2026-11-07T14:52:04.000Z",
+   "addedAt": "2026-11-09",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "汉堡品牌动态广告",
+    "en": "Burger brand motion graphic"
+   },
+   "summary": {
+    "zh": "作者用 Claude Opus 5.5 在不到 30 分钟内为 Jazzy's Burger 制作了一个动态图形，没有使用 After Effects、模板或关键帧，并将工作流程发布到 Telegram。",
+    "en": "A motion graphic for Jazzy's Burger was made in under 30 minutes with Claude Opus 5.5, without After Effects, templates or keyframes. The creator directed viewers to a Telegram post for the workflow."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [
+    "https://t.me/aygrammgenlab/891"
+   ],
+   "stats": {
+    "views": 5603,
+    "likes": 129,
+    "replies": 62,
+    "reposts": 17,
+    "bookmarks": 98,
+    "checkedAt": "2026-11-09T01:17:15.203Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/media/HWh8YyGXQAAk1Xc.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2119080389918576641/vid/avc1/720x720/DqhgKmGKA0g44FDw.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 20
    },
    "evidence": {
     "via": "daily",
