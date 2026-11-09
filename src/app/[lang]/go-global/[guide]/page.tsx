@@ -4,12 +4,21 @@ import Link from "@/components/Link";
 import SubscribeForm from "@/components/SubscribeForm";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
 import { GO_GLOBAL, groupPosts, postTitle } from "@/lib/go-global";
-import { GUIDES, guideBySlug, type GuideItem, type GuideMine, type GuideSection } from "@/lib/go-global-guides";
+import { GUIDES, guideBySlug, type Guide, type GuideItem, type GuideMine, type GuideSection } from "@/lib/go-global-guides";
 import { withSocialCards } from "@/lib/social";
 import GoGlobalBreadcrumb from "../Breadcrumb";
 
 const SITE_URL = "https://jasonzhu.ai";
 const OUT = { target: "_blank", rel: "noopener noreferrer" } as const;
+
+// 页内目录里除了各小节，还有这三块；标题在目录和正文里共用
+const MINE_ID = "mine";
+const PITFALLS = { id: "pitfalls", zh: "新手最容易踩的坑", en: "Common beginner mistakes" };
+const UNKNOWNS = {
+  id: "unknowns",
+  zh: "官方没说清、我们也没查到的",
+  en: "What the official pages leave unclear, and we could not confirm",
+};
 
 // 指南页：内容在 src/lib/guides/*.ts（英文版在 guides/en/），这里只负责排版。
 export const dynamicParams = false;
@@ -81,7 +90,7 @@ function MineLink({ link, lang }: { link: { label: string; url: string }; lang: 
 
 function Mine({ mine, lang }: { mine: GuideMine; lang: Locale }) {
   return (
-    <section className="mb-10 rounded-2xl bg-amber-50/60 border border-amber-100 p-5">
+    <section id={MINE_ID} className="mb-10 scroll-mt-24 rounded-2xl bg-amber-50/60 border border-amber-100 p-5">
       <h2 className="text-base font-semibold text-gray-900 mb-1.5">{mine.title}</h2>
       {mine.lead && <p className="text-sm text-gray-600 mb-3 leading-relaxed">{mine.lead}</p>}
       <ul className="space-y-2 text-sm text-gray-700 leading-relaxed list-disc pl-5">
@@ -95,6 +104,32 @@ function Mine({ mine, lang }: { mine: GuideMine; lang: Locale }) {
         ))}
       </p>
     </section>
+  );
+}
+
+/** 本页目录：每个市场一个锚点链接，读者能直接跳到自己的市场 */
+function Toc({ guide, lang }: { guide: Guide; lang: Locale }) {
+  const entries = [
+    ...(guide.mine ? [{ id: MINE_ID, title: guide.mine.title }] : []),
+    ...guide.sections.map((s) => ({ id: s.id, title: s.title })),
+    { id: PITFALLS.id, title: PITFALLS[lang] },
+    ...(guide.unknowns.length > 0 ? [{ id: UNKNOWNS.id, title: UNKNOWNS[lang] }] : []),
+  ];
+  return (
+    <nav aria-labelledby="toc-title" className="mb-10 rounded-2xl border border-gray-100 p-5">
+      <h2 id="toc-title" className="text-base font-semibold text-gray-900 mb-2">
+        {lang === "en" ? "On this page" : "本页目录"}
+      </h2>
+      <ul className="space-y-1.5 text-sm leading-relaxed list-disc pl-5">
+        {entries.map((e) => (
+          <li key={e.id}>
+            <a href={`#${e.id}`} className="text-blue-600 hover:underline">
+              {e.title}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 }
 
@@ -173,6 +208,7 @@ export default async function GuidePage({ params }: { params: Promise<{ lang: st
             : `Compiled from official pages, checked on ${guide.checked}. Rules change, so go by the latest official page behind each link before you act.`}
         </p>
       </header>
+      <Toc guide={guide} lang={lang} />
       {guide.mine && <Mine mine={guide.mine} lang={lang} />}
       {guide.warning && (
         <p className="mb-10 rounded-2xl border border-red-100 bg-red-50/60 p-4 text-sm text-gray-700 leading-relaxed">
@@ -183,13 +219,13 @@ export default async function GuidePage({ params }: { params: Promise<{ lang: st
       {guide.sections.map((s) => (
         <Section key={s.id} section={s} lang={lang} />
       ))}
-      <section className="mb-10">
-        <h2 className="text-xl font-semibold text-gray-900 mb-2">{isZh ? "新手最容易踩的坑" : "Common beginner mistakes"}</h2>
+      <section id={PITFALLS.id} className="mb-10 scroll-mt-24">
+        <h2 className="text-xl font-semibold text-gray-900 mb-2">{PITFALLS[lang]}</h2>
         <Items items={guide.pitfalls} lang={lang} />
       </section>
       {guide.unknowns.length > 0 && (
-        <section className="mb-10 rounded-2xl border border-gray-100 bg-gray-50 p-5">
-          <h2 className="text-base font-semibold text-gray-900 mb-2">{isZh ? "官方没说清、我们也没查到的" : "What the official pages leave unclear, and we could not confirm"}</h2>
+        <section id={UNKNOWNS.id} className="mb-10 scroll-mt-24 rounded-2xl border border-gray-100 bg-gray-50 p-5">
+          <h2 className="text-base font-semibold text-gray-900 mb-2">{UNKNOWNS[lang]}</h2>
           <ul className="space-y-1.5 text-sm text-gray-600 leading-relaxed list-disc pl-5">
             {guide.unknowns.map((u) => (
               <li key={u}>{u}</li>
