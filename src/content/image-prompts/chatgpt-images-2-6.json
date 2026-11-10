@@ -3,8 +3,8 @@
  "model": "ChatGPT Images 2.6",
  "released": "2026-11-04T23:35:14Z",
  "threshold": 5000,
- "updatedAt": "2026-11-09T01:31:37.150Z",
- "statsCheckedAt": "2026-11-09T01:31:37.150Z",
+ "updatedAt": "2026-11-10T01:42:28.736Z",
+ "statsCheckedAt": "2026-11-10T01:42:28.736Z",
  "inclusionRule": "Original post by the creator, images / GIF / video attached, >= 5000 views on that post, creator states it was made with ChatGPT Images 2.6 (GPT-Image-2.6). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -48,6 +48,54 @@
      "url": "https://pbs.twimg.com/media/HWVnpwHbcAA9WMO.jpg",
      "width": 1218,
      "height": 340
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2119275395736584576",
+   "url": "https://x.com/Leviwoyun/status/2119275395736584576",
+   "author": {
+    "handle": "Leviwoyun",
+    "name": "Levi 卧云"
+   },
+   "postedAt": "2026-11-08T03:46:43.000Z",
+   "addedAt": "2026-11-10",
+   "lang": "zh",
+   "kind": "work",
+   "category": "gif",
+   "title": {
+    "zh": "小熊煮茶的治愈系绘本动画",
+    "en": "Bear makes tea in a gentle picture-book animation"
+   },
+   "summary": {
+    "zh": "创作者展示了适合治愈系短视频的动态绘本风格，并介绍 GIF Factory 已更新绘本技能。",
+    "en": "The creator presents a moving picture-book style for healing short videos and says GIF Factory's picture-book skill has been updated."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 83879,
+    "likes": 811,
+    "replies": 73,
+    "reposts": 79,
+    "bookmarks": 918,
+    "checkedAt": "2026-11-10T01:42:28.736Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2119275356666703872/vid/avc1/1280x720/6GWxBRk2q1v4G9ug.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2119275356666703872/img/kQym4SNpElSYVwI9.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 42
     }
    ],
    "evidence": {
@@ -955,6 +1003,57 @@
    }
   },
   {
+   "id": "2119436039488156158",
+   "url": "https://x.com/kevin_t_ngo/status/2119436039488156158",
+   "author": {
+    "handle": "kevin_t_ngo",
+    "name": "Kevin Ngo"
+   },
+   "postedAt": "2026-11-08T14:25:03.000Z",
+   "addedAt": "2026-11-10",
+   "lang": "en",
+   "kind": "work",
+   "category": "illustration",
+   "title": {
+    "zh": "纸张拼贴风太阳与飞鸟动画",
+    "en": "Paper-collage sun and birds animation"
+   },
+   "summary": {
+    "zh": "绘画和纸张纹理由 GPT Image 2.6 通过 fal 生成，Claude Opus 5.5 负责动画，所有运动都用代码编写。",
+    "en": "Paintings and paper textures were generated with GPT Image 2.6 via fal; Claude Opus 5.5 animated them, with all motion written in code."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Claude Opus 5.5",
+    "fal"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 24920,
+    "likes": 662,
+    "replies": 54,
+    "reposts": 28,
+    "bookmarks": 431,
+    "checkedAt": "2026-11-10T01:42:28.736Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2119433206281977856/vid/avc1/720x720/LzjSgjWafluXcfMf.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2119433206281977856/img/Dz8WtgPP43mu6zEn.jpg",
+     "width": 1080,
+     "height": 1080,
+     "durationSec": 38
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2119088172433109353",
    "url": "https://x.com/MrLarus/status/2119088172433109353",
    "author": {
@@ -1299,6 +1398,104 @@
      "width": 1920,
      "height": 1080,
      "durationSec": 81
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2119293619282567471",
+   "url": "https://x.com/ZaraIrahh/status/2119293619282567471",
+   "author": {
+    "handle": "ZaraIrahh",
+    "name": "Zara"
+   },
+   "postedAt": "2026-11-08T04:59:08.000Z",
+   "addedAt": "2026-11-10",
+   "lang": "en",
+   "kind": "work",
+   "category": "illustration",
+   "title": {
+    "zh": "手绘风雪夜城市爱情动画视频",
+    "en": "Hand-painted snowy city romance, animated video"
+   },
+   "summary": {
+    "zh": "一对情侣在下雪的曼哈顿街头边走边旋转、亲吻，呈现手绘冬日恋爱场景。创作者使用 GPT Image 2.6 和 Seedance 2.5，并提供了人物与地点参考图。",
+    "en": "A hand-painted winter romance follows a couple walking, spinning, and kissing through snowy Manhattan. The creator used GPT Image 2.6 and Seedance 2.5 with character and location references."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Seedance 2.5"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 18370,
+    "likes": 206,
+    "replies": 42,
+    "reposts": 33,
+    "bookmarks": 37,
+    "checkedAt": "2026-11-10T01:42:28.736Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2119292398782349312/vid/avc1/1280x720/tqaySWb2939vg-fx.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2119292398782349312/img/DfsB_Z2Rl6XeEeB4.jpg",
+     "width": 1280,
+     "height": 720,
+     "durationSec": 15
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2119341030248165772",
+   "url": "https://x.com/Untethered_X/status/2119341030248165772",
+   "author": {
+    "handle": "Untethered_X",
+    "name": "不系舟"
+   },
+   "postedAt": "2026-11-08T08:07:31.000Z",
+   "addedAt": "2026-11-10",
+   "lang": "zh",
+   "kind": "work",
+   "category": "gif",
+   "title": {
+    "zh": "《卖火柴的小女孩》动画绘本",
+    "en": "The Little Match Girl, animated picture book"
+   },
+   "summary": {
+    "zh": "创作者用 64 个关键画面制作了《卖火柴的小女孩》绘本视频，并称全程耗时二十多分钟。",
+    "en": "The creator made a picture-book video retelling The Little Match Girl with 64 key frames generated by GPT Images in more than 20 minutes."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 17549,
+    "likes": 138,
+    "replies": 30,
+    "reposts": 13,
+    "bookmarks": 159,
+    "checkedAt": "2026-11-10T01:42:28.736Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2119336803035721728/vid/avc1/1280x720/2Uza2XJl4Y2lcm6K.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2119336803035721728/img/VMuXc39sRLHFScMv.jpg",
+     "width": 1280,
+     "height": 720,
+     "durationSec": 136
     }
    ],
    "evidence": {
@@ -1867,6 +2064,75 @@
    }
   },
   {
+   "id": "2119426684848107773",
+   "url": "https://x.com/MrLarus/status/2119426684848107773",
+   "author": {
+    "handle": "MrLarus",
+    "name": "Larus Canus"
+   },
+   "postedAt": "2026-11-08T13:47:53.000Z",
+   "addedAt": "2026-11-10",
+   "lang": "zh",
+   "kind": "work",
+   "category": "design",
+   "title": {
+    "zh": "文具变成四幅微缩城市插画",
+    "en": "Stationery turned into a four-part miniature city"
+   },
+   "summary": {
+    "zh": "提示词要求制作“桌面城市”海报，把放大的真实文具与微型手绘通勤人物、简约建筑环境结合起来。",
+    "en": "The prompt creates a Desk City poster that combines a photorealistic oversized stationery object with miniature hand-drawn commuters and sparse architectural surroundings."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/MrLarus/status/2119426925521432843",
+    "text": "【核心真实物体】：{回形针 / 铅笔 / 胶带 / 长尾夹 / 其他日常物件}\n【城市功能】：{天桥 / 隧道 / 车站 / 步道 / 公园 / 建筑等}\n【人物动作】：{通勤 / 等车 / 骑车 / 喝咖啡 / 看手机 / 交谈等}\n【主文案】：{一句简短、有画面感的中文短句}\n【强调色】：{黄色 / 砖红 / 藏蓝 / 其他}\n【画幅比例】：{默认 9:16}\n\n创作一张「Desk City｜桌面城市」虚实结合创意海报。\n\n将【核心真实物体】放大几十倍，完整保留它原本熟悉的真实结构、比例和摄影级材质，不要重新设计成普通建筑。利用它本身的形态，让它自然承担【城市功能】：物体仍然一眼可辨，但微型人物已经把它当作城市基础设施正常使用。\n\n核心物体采用高度写实的产品摄影质感，表现真实材质、纹理、重量、边缘、轻微使用痕迹、自然高光和投影。避免塑料 CGI、过度镜面、玻璃、透明折射和科幻质感。\n\n加入 4–7 位微型手绘成年都市人物，与巨大真实物体形成明显尺度反差。人物使用黑灰铅笔线稿、少量彩铅和蜡笔填色，五官简洁、比例自然，穿米白、藏蓝、砖红、焦糖棕等低饱和通勤服装。\n\n人物必须真实使用这个巨大物体：在上面行走、穿过、等待、骑车、休息或交谈，而不是简单站在旁边。人物不看镜头，动作自然生活化，让荒诞的巨物设定看起来像城市里再普通不过的一天。\n\n环境采用极简「桌面城市 / 建筑模型」语言，只保留少量米白几何建筑、小树、道路标记和必要设施。背景大面积使用暖奶油白、浅米灰和纸张质感，主动降低信息密度，让真实巨物成为绝对视觉锚点。\n\n构图强调「一个强大形 + 微型人物 + 大留白」。核心物体必须足够大，在缩略图状态下也能立即识别，并通过透视、圆形负空间、长轴、曲线或几何体块形成清楚的 Stop-scroll 视觉关系。\n\n在留白区域加入【主文案】，使用自然、不完全规整的中文手写字体，像生活手账、建筑草图或绘本旁白。可以增加一句很小的英文旁注，但不要堆放大量装饰文字。\n\n整体光线使用柔和自然日光或暖调午后光，让真实物体、手绘人物和环境共享同一套阴影与空间关系，使摄影材质和手绘线稿真正融合在同一个世界里。\n\n最终效果应同时具有：\n\n真实物体的摄影质感、手绘人物的生活感、巨大尺度带来的现实错位、桌面微缩城市的趣味，以及编辑海报的完整设计感。\n\n第一眼认出熟悉的真实物件，第二眼才发现手绘小人竟然已经把它变成了一座城市。\n\n避免：玻璃、透明材质、折射、纯摄影人物、纯手绘核心物体、把原物完全改造成普通建筑、复杂城市、未来科幻、霓虹灯、大量小人、无意义英文和信息过载。"
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 12844,
+    "likes": 231,
+    "replies": 10,
+    "reposts": 31,
+    "bookmarks": 187,
+    "checkedAt": "2026-11-10T01:42:28.736Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HWm3I_WacAAW8fV.jpg",
+     "width": 941,
+     "height": 1672
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HWm3I_ZbgAEttdC.jpg",
+     "width": 941,
+     "height": 1670
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HWm3KLlacAAhJQ6.jpg",
+     "width": 941,
+     "height": 1672
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HWm3LDNbIAA3pwf.jpg",
+     "width": 941,
+     "height": 1671
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2118164732989608405",
    "url": "https://x.com/798145343h/status/2118164732989608405",
    "author": {
@@ -2018,6 +2284,54 @@
      "url": "https://pbs.twimg.com/media/HWZ43tjbkAAJYlh.jpg",
      "width": 1280,
      "height": 720
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2119432059760566311",
+   "url": "https://x.com/XeroMETAL/status/2119432059760566311",
+   "author": {
+    "handle": "XeroMETAL",
+    "name": "ぽんこつん＠レッチリになりたいマン"
+   },
+   "postedAt": "2026-11-08T14:09:14.000Z",
+   "addedAt": "2026-11-10",
+   "lang": "ja",
+   "kind": "work",
+   "category": "portrait",
+   "title": {
+    "zh": "泳池边身穿泳装的俏皮眨眼肖像",
+    "en": "Poolside swimsuit portrait with a playful wink"
+   },
+   "summary": {
+    "zh": "这条帖子展示了一张与 SummerDays 相关的 AI 作品，作者说自己正在摸索 image2.6。",
+    "en": "The post shows a SummerDays-related AI artwork and says the creator is struggling with image2.6."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 11155,
+    "likes": 505,
+    "replies": 0,
+    "reposts": 16,
+    "bookmarks": 150,
+    "checkedAt": "2026-11-10T01:42:28.736Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2119431686995996672/vid/avc1/448x672/B7j7JErjqkzuxbCG.mp4?tag=25",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2119431686995996672/img/uriqPppNeF6l0D1Z.jpg",
+     "width": 448,
+     "height": 672,
+     "durationSec": 6
     }
    ],
    "evidence": {
@@ -2431,6 +2745,69 @@
      "width": 1920,
      "height": 1080,
      "durationSec": 6
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2119302158936146170",
+   "url": "https://x.com/Diplomeme/status/2119302158936146170",
+   "author": {
+    "handle": "Diplomeme",
+    "name": "ᴍᴜʀᴘʜʏ"
+   },
+   "postedAt": "2026-11-08T05:33:04.000Z",
+   "addedAt": "2026-11-10",
+   "lang": "en",
+   "kind": "work",
+   "category": "design",
+   "title": {
+    "zh": "三个品牌的网约车广告系列",
+    "en": "Three branded ride-hailing campaigns"
+   },
+   "summary": {
+    "zh": "作者分享了一个 GPT image 2.6 提示词，用于制作关于孟买城市出行的 Ola 高端宣传海报，结合编辑风格排版、摄影和品牌图形。",
+    "en": "A GPT image 2.6 prompt creates a premium Ola promotional poster about urban mobility in Mumbai, using editorial typography, photography and brand graphics."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/Diplomeme/status/2119302245233926342",
+    "text": "OLA — INDIA, ON THE MOVE.\n\nPremium Indian Mobility Campaign | Global Agency Art Direction\n\nROLE\n\nAct as a senior advertising creative director, Swiss editorial graphic designer, commercial photographer and social media art director.\n\nCreate a high-end Ola promotional poster that combines contemporary Indian lifestyle photography, powerful typography and sophisticated brand-led graphic design.\n\nThe artwork should feel like a real campaign commissioned by a leading international advertising agency.\n\n⸻\n\nPHASE 1 — CREATIVE CONCEPT\n\nCAMPAIGN HEADLINE:\n\nINDIA,\nON THE MOVE.\n\nCORE IDEA:\n\nIndia never stands still.\n\nFrom early morning office commutes to spontaneous evening plans, millions of everyday journeys keep the country moving.\n\nOla becomes part of this movement.\n\nCreative personality:\n\n* Energetic.\n* Modern.\n* Approachable.\n* Urban.\n* Confident.\n* Culturally connected.\n\nArt direction:\n\nContemporary Swiss editorial design meets authentic Indian street photography.\n\nA premium visual language with strong commercial storytelling.\n\nNo generic cab advertisement aesthetics.\n\n⸻\n\nPHASE 2 — HERO PHOTOGRAPHY\n\nLOCATION: Mumbai, India.\n\nHERO SUBJECT:\n\nA contemporary Ola cab positioned naturally on a busy Mumbai street.\n\nA young Indian professional woman, approximately 25–30 years old, is stepping out of the rear passenger door.\n\nShe carries a structured work bag and looks confidently towards her destination.\n\nThe driver is subtly visible in the front seat.\n\nENVIRONMENT:\n\n* Authentic Mumbai architecture.\n* Contemporary commercial buildings.\n* Realistic Indian traffic.\n* Subtle street activity.\n* Natural afternoon sunlight.\n* Real-world urban atmosphere.\n\nVEHICLE:\n\nModern white sedan with tasteful Ola branding.\n\nAuthentic vehicle proportions, realistic glass reflections, detailed paintwork and correctly positioned wheels.\n\nDo not invent an unsupported vehicle model or product feature.\n\nPHOTOGRAPHY:\n\n* ARRI Alexa Mini LF aesthetic.\n* 50mm prime lens.\n* Natural perspective.\n* Premium automotive lifestyle photography.\n* Realistic human proportions.\n* Detailed textures.\n* Natural cinematic colour grading.\n\nThe photograph should look captured on location, not digitally manufactured.\n\n⸻\n\nPHASE 3 — COLOUR SYSTEM\n\nPRIMARY BRAND COLOURS:\n\nOla’s recognizable black and yellow visual identity.\n\nCOLOUR PALETTE:\n\n* Deep black.\n* Warm yellow.\n* Off-white.\n* Subtle charcoal grey.\n\nCOLOUR APPLICATION:\n\nUse a bold yellow graphic field occupying approximately 25–30% of the poster.\n\nCreate a custom asymmetric yellow panel that partially frames the vehicle.\n\nUse black as the primary typography colour.\n\nMaintain sufficient off-white negative space.\n\nAvoid turning the entire poster into a yellow background.\n\n⸻\n\nPHASE 4 — GRAPHIC LANGUAGE\n\nDevelop a restrained graphic system inspired by urban navigation and movement.\n\nInclude:\n\n* Fine route-line graphics.\n* Minimal location-coordinate annotations.\n* Small editorial numbering.\n* One distinctive yellow geometric intervention.\n* Subtle photographic grain.\n* Thin black dividing lines.\n\nUse movement-inspired lines connecting the headline to the vehicle.\n\nEvery graphic element must serve the composition.\n\nNo random arrows, meaningless doodles, decorative stickers or excessive collage effects.\n\n⸻\n\nPHASE 5 — TYPOGRAPHY SYSTEM\n\nTYPOGRAPHY IS THE MAIN DESIGN FEATURE.\n\nUse an expressive modern grotesk / neo-grotesque sans-serif.\n\nTypeface references:\n\n* Helvetica Now Display.\n* Neue Haas Grotesk.\n* Univers.\n* Similar premium editorial sans-serif families.\n\nMAIN HEADLINE:\n\nINDIA,\nON THE MOVE.\n\nTYPOGRAPHIC TREATMENT:\n\n* Oversized bold display typography.\n* Strong left alignment.\n* Tight controlled leading.\n* High legibility.\n* Black typography against warm off-white.\n* Yellow highlight on selected words.\n* Precise kerning.\n* Editorial scale contrast.\n\nHeadline should occupy approximately 35% of the composition.\n\nSUPPORTING COPY:\n\nEvery destination starts with a journey.\n\nCTA:\n\nBOOK YOUR RIDE →\n\nTypography must look professionally typeset, not like an AI-generated poster.\n\nPreserve the authentic Ola wordmark without distortion.\n\n⸻\n\nPHASE 6 — COMPOSITION\n\nFORMAT: 4:5 vertical Instagram poster.\n\nLAYOUT:\n\nTOP 12%:\nOla wordmark with clean spacing.\n\nMIDDLE 35%:\nLarge headline and supporting copy.\n\nLOWER 43%:\nHero photography of the passenger and vehicle.\n\nBOTTOM 10%:\nCTA and minimal campaign information.\n\nCOMPOSITION RULES:\n\n* Asymmetric editorial balance.\n* Strong grid alignment.\n* Generous negative space.\n* Photography integrated with graphic panels.\n* Clear focal hierarchy.\n* No unnecessary overlapping elements.\n\nThe image and typography should feel designed together.\n\n⸻\n\nPHASE 7 — BRAND INTELLIGENCE\n\nThe campaign must communicate:\n\n* Everyday mobility.\n* Convenience.\n* Urban accessibility.\n* Spontaneous travel.\n* Indian city culture.\n* Human connection.\n\nOla should feel like a familiar mobility brand that understands the rhythm of Indian life.\n\nDo not position Ola as a luxury automobile brand.\n\nDo not invent discounts, fares, arrival guarantees or unsupported app features.\n\n⸻\n\nPHASE 8 — SOCIAL MEDIA EXECUTION\n\nCAMPAIGN IDENTITY:\n\nOLA\nINDIA, ON THE MOVE.\n\nFOOTER:\n\nYour city. Your journey.\n\nTECHNICAL SPECIFICATIONS:\n\n* Aspect ratio: 4:5.\n* Resolution: 2400 × 3000 px minimum.\n* Colour mode: sRGB.\n* Sharp photographic details.\n* Professional typography rendering.\n* Accurate brand identity.\n* Premium advertising finish.\n\n⸻\n\nPHASE 9 — CREATIVE QUALITY CONTROL\n\nSTRICTLY AVOID:\n\n* Generic AI advertising.\n* Cheap stock photography.\n* Fake app interfaces.\n* Incorrect Ola logo.\n* Incorrect brand colours.\n* Fake vehicle branding.\n* Futuristic city environments.\n* Excessive gradients.\n* Random graphic decorations.\n* Overcrowded typography.\n* Artificial 3D text.\n* Unrealistic Indian street environments.\n\nFINAL CREATIVE TEST:\n\nThe poster should look like a genuine Ola brand campaign developed by a top-tier creative agency.\n\nIt must communicate its message within three seconds.\n\nThe memorability should come from the relationship between the photography, headline, colour and composition.\n\nNot from visual clutter."
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 6420,
+    "likes": 128,
+    "replies": 25,
+    "reposts": 3,
+    "bookmarks": 110,
+    "checkedAt": "2026-11-10T01:42:28.736Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HWlFvsIacAErCYT.jpg",
+     "width": 896,
+     "height": 1152
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HWlFvr_bcAA-BVk.jpg",
+     "width": 896,
+     "height": 1152
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HWlFvsFaIAEF68R.jpg",
+     "width": 896,
+     "height": 1152
     }
    ],
    "evidence": {
