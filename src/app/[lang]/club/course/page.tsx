@@ -55,7 +55,8 @@ export default async function CoursePage({
       lang={lang === "en" ? "en" : "zh"}
       isLoggedIn={Boolean(user)}
       isMember={isMember}
-      course={courseData}
+      // 视频地址和逐字稿只发给会员。以前整份 course.json 都进了页面数据，页面上只是不显示
+      course={isMember ? courseData : { title: courseData.title, episodes: [] }}
     />
   );
 }

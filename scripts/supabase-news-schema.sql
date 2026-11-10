@@ -88,11 +88,11 @@ create table if not exists profiles (
 );
 
 alter table profiles enable row level security;
--- 用户只能看/改自己那一行（依赖 auth.uid()，Dashboard 用登录 session 调用）
+-- 用户只能看自己那一行；写入全部走服务端 service key。
+-- 2026-11-10 以前还有一条 for update using (auth.uid() = id)：用户能把自己的 role 改成 member。见 supabase/lock-profiles-update.sql。
 create policy "Users can view own profile" on profiles
   for select using (auth.uid() = id);
-create policy "Users can update own profile" on profiles
-  for update using (auth.uid() = id);
+revoke insert, update, delete on profiles from anon, authenticated;
 
 -- 新用户注册（Google/GitHub OAuth）自动建 profiles 行
 create or replace function public.handle_new_user()

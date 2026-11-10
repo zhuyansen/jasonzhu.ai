@@ -3,12 +3,15 @@ import { createClient } from "@/lib/supabase-server";
 import { getSupabase } from "@/lib/supabase";
 import { rateLimit } from "@/lib/rate-limit";
 import { inviteToTeam, GITHUB_ORG } from "@/lib/github-invite";
+import { isPaidRole } from "@/lib/membership";
 
 export const dynamic = "force-dynamic";
 
 /**
  * 登录会员事后补填 GitHub 用户名（比如虎皮椒结账时跳过了）：
- * 邀请进 org team + 把 github_username 写回 profiles（RLS 只允许改自己那行）。
+ * 邀请进 org team + 把 github_username 写回 profiles。
+ * 只有会员能用：2026-11-10 以前这里只查登录，任何注册账号都能把任意 GitHub 账号拉进付费 team。
+ * profiles 用 service key 写：用户自己不能改 profiles（supabase/lock-profiles-update.sql）。
  */
 export async function POST(request: NextRequest) {
   const rateLimited = rateLimit(request, { limit: 5, prefix: "dashboard-link-github" });
@@ -20,6 +23,10 @@ export async function POST(request: NextRequest) {
   } = await supabase.auth.getUser();
   if (!user) {
     return NextResponse.json({ error: "请先登录" }, { status: 401 });
+  }
+  const { data: profile } = await supabase.from("profiles").select("role").eq("id", user.id).single();
+  if (!isPaidRole(profile?.role)) {
+    return NextResponse.json({ error: "只有 GoSail Club 会员可以绑定 GitHub" }, { status: 403 });
   }
 
   try {
@@ -34,12 +41,13 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: invite.error }, { status: 400 });
     }
 
-    await supabase.from("profiles").update({ github_username: ghUser }).eq("id", user.id);
+    const admin = getSupabase();
+    const { error: profileError } = await admin.from("profiles").update({ github_username: ghUser }).eq("id", user.id);
+    if (profileError) console.error("[link-github] profiles update failed:", user.id, profileError.message);
 
     // member_codes 尽力同步，按邮箱找最近一条已激活记录
     if (user.email) {
       try {
-        const admin = getSupabase();
         await admin
           .from("member_codes")
           .update({ github_username: ghUser })

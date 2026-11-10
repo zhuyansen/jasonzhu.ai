@@ -26,10 +26,14 @@
  *   node scripts/lib/digest-email-ledger.mjs skip [日期]      记成「这期不发」（已有记录就不动）
  *   node scripts/lib/digest-email-ledger.mjs set <日期> sent|failed   人工处理卡在「发送中」的那天
  * 日期默认今天（北京）。本地跑：node --env-file=.env.local scripts/lib/digest-email-ledger.mjs show
+ *
+ * 周报也用这个账本（2026-11-10 起；以前周报没有任何记录，跑两次、或一批失败后重跑，都会给全体再发一遍）：
+ * 上面命令里的日期换成 weekly:<文章 slug>，如 show weekly:chuhai-weekly-05。KV key 是 weekly-email:<slug>，留 180 天。
  */
 import { pathToFileURL } from "node:url";
 
-const LEDGER_TTL = 30 * 24 * 3600; // 账本留 30 天，够查
+const LEDGER_TTL = 30 * 24 * 3600; // 快讯账本留 30 天，够查
+const WEEKLY_TTL = 180 * 24 * 3600; // 周报账本留 180 天：一期只发一次，隔几个月误跑同一期也要挡住
 const LOCK_TTL = 30 * 60; // 发信锁 30 分钟：比 daily-news 的 25 分钟超时长，进程死了锁也会自己过期
 
 /** 北京日期（快讯按北京日期分期，和 collect-news.mjs、send-digest-email.mjs 一样） */
@@ -37,8 +41,13 @@ export function beijingToday() {
   return new Date(Date.now() + 8 * 3600 * 1000).toISOString().slice(0, 10);
 }
 
-export const ledgerKey = (date) => `digest-email:${date}`;
-const lockKey = (date) => `digest-email-lock:${date}`;
+/** 账本 id：北京日期（快讯）或 weekly:<slug>（周报） */
+const WEEKLY = /^weekly:([a-z0-9][a-z0-9-]*)$/;
+const kind = (id) => (WEEKLY.test(id) ? "weekly-email" : "digest-email");
+const bare = (id) => id.replace(/^weekly:/, "");
+export const ledgerKey = (id) => `${kind(id)}:${bare(id)}`;
+const lockKey = (id) => `${kind(id)}-lock:${bare(id)}`;
+const ttlOf = (id) => String(WEEKLY.test(id) ? WEEKLY_TTL : LEDGER_TTL);
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -83,13 +92,13 @@ export async function readLedger(date) {
 
 export async function writeLedger(date, record) {
   const value = JSON.stringify({ ...record, date, updatedAt: new Date().toISOString() });
-  await kv(["SET", ledgerKey(date), value, "EX", String(LEDGER_TTL)]);
+  await kv(["SET", ledgerKey(date), value, "EX", ttlOf(date)]);
 }
 
 /** 记成「这期不发」；已经有记录（发过、发到一半）就不动。返回有没有记上。 */
 export async function markSkipped(date, run) {
   const value = JSON.stringify({ date, status: "skipped", run, updatedAt: new Date().toISOString() });
-  return (await kv(["SET", ledgerKey(date), value, "NX", "EX", String(LEDGER_TTL)])) === "OK";
+  return (await kv(["SET", ledgerKey(date), value, "NX", "EX", ttlOf(date)])) === "OK";
 }
 
 /** 发信锁：同一天同一时刻只让一个进程发（工作流本身是串行的，这把锁防本地手动跑正好撞上）。 */
@@ -139,7 +148,7 @@ const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 
 function pickDate(arg) {
   const date = arg || beijingToday();
-  if (!DATE_RE.test(date)) throw new Error(`not a date: ${date} (want YYYY-MM-DD)`);
+  if (!DATE_RE.test(date) && !WEEKLY.test(date)) throw new Error(`not a date: ${date} (want YYYY-MM-DD, or weekly:<slug> for a weekly issue)`);
   return date;
 }
 
@@ -202,7 +211,8 @@ async function cli([command, ...args]) {
       console.log(`after:  ${describe(updated, date)}`);
       if (status === "failed") {
         console.log(
-          "下一档定时跑（或在 Actions 里手动 Run workflow，date 留空）会补发 pending 里的批次，用原来的 Idempotency-Key：" +
+          (WEEKLY.test(date) ? "在 Actions 里重新跑 Weekly Email（同一个 slug，mode=all）" : "下一档定时跑（或在 Actions 里手动 Run workflow，date 留空）") +
+            "会补发 pending 里的批次，用原来的 Idempotency-Key：" +
             "Resend 只记 24 小时，离那次开始发超过 24 小时，已经发出的批次可能会重复。"
         );
       }

@@ -8,7 +8,10 @@
  *   preview - 只把邮件 HTML 写到 PREVIEW_OUT（默认 /tmp/weekly-email.html），不发送，不需要任何密钥
  *   test    - 只发给 ALERT_EMAIL（默认）。退订链接用 ALERT_EMAIL 在订阅者表里的那一行，点开能走完整个退订流程
  *   all     - 发给订阅者（最新 1000 个里剔掉已退订、测试地址、英文库订阅者，规则在 scripts/lib/newsletter.mjs）；
- *             必须同时设置 CONFIRM=SEND，防止误发
+ *             必须同时设置 CONFIRM=SEND，防止误发。
+ *             走发信账本（KV weekly-email:<slug>，和快讯同一套，见 scripts/lib/digest-email-ledger.mjs）：
+ *             一期只发一次，发完再跑不会再发；有批次没发出去，再跑只补那几批；KV 不通就不发。
+ *             2026-11-10 以前没有账本：跑两次、或一批失败后重跑，全体订阅者都会再收一遍。
  * 每封都带收件人自己的退订链接（邮件头一键退订 + 页脚链接）。
  *
  * 环境变量：
@@ -20,26 +23,24 @@
  *   NEXT_PUBLIC_SUPABASE_URL  - Supabase URL（all；test 用来查 ALERT_EMAIL 的订阅者 id）
  *   SUPABASE_SERVICE_KEY      - Supabase Service Role Key（同上）
  *   RESEND_FROM_EMAIL         - 发件人（默认 出海选品周报 <news@jasonzhu.ai>）
+ *   KV_REST_API_URL / KV_REST_API_TOKEN - 发信账本（all）；不通就不发
  */
 
+import { randomUUID } from "crypto";
 import fs from "fs";
+import os from "os";
 import path from "path";
 import matter from "gray-matter";
-import {
-  PREVIEW_RECIPIENT,
-  UNSUBSCRIBE_PLACEHOLDER,
-  fetchSubscribers,
-  personalize,
-  pickRecipients,
-  requireUnsubscribeSecret,
-} from "./lib/newsletter.mjs";
+import { acquireLock, releaseLock } from "./lib/digest-email-ledger.mjs";
+import { sendWithLedger } from "./lib/ledger-send.mjs";
+import { PREVIEW_RECIPIENT, UNSUBSCRIBE_PLACEHOLDER, personalize, requireUnsubscribeSecret } from "./lib/newsletter.mjs";
+import { sendBatch } from "./lib/resend-batch.mjs";
 
 const SITE_URL = "https://jasonzhu.ai";
 const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "出海选品周报 <news@jasonzhu.ai>";
 const MODE = process.env.MODE || "test";
 const SLUG = process.env.POST_SLUG || "";
 const SECTIONS = (process.env.SECTIONS || "本周数字,本周值得看的 5 个新产品").split(",").map((s) => s.trim());
-const BATCH_SIZE = 50; // Resend batch limit
 
 function fail(message) {
   console.error(`❌ ${message}`);
@@ -159,28 +160,6 @@ function loadPost() {
 
 // ─── Recipients & sending ──────────────────────────
 
-// 收件人是订阅者表里的行（id + email），退订链接要用 id
-async function recipients() {
-  if (MODE === "test") {
-    if (!process.env.ALERT_EMAIL) fail("ALERT_EMAIL not set: test mode has nobody to send to");
-    return [await testRecipient(process.env.ALERT_EMAIL)];
-  }
-  if (MODE !== "all") fail(`unknown MODE: ${MODE}`);
-  if (process.env.CONFIRM !== "SEND") fail("MODE=all sends to every subscriber: set CONFIRM=SEND to go ahead");
-  let rows;
-  try {
-    rows = await fetchSubscribers();
-  } catch (err) {
-    fail(err.message);
-  }
-  const { recipients: picked, skipped } = pickRecipients(rows);
-  console.log(
-    `📬 ${rows.length} subscribers, skipped ${skipped.unsubscribed} unsubscribed, ${skipped.test} test addresses ` +
-      `and ${skipped.english} English prompt-library subscribers`
-  );
-  return picked;
-}
-
 // test 模式：退订链接用 ALERT_EMAIL 自己那一行；不在表里（或没配 Supabase）就用假 id，点开显示「链接无效」
 async function testRecipient(email) {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -198,35 +177,60 @@ async function testRecipient(email) {
   return { id: PREVIEW_RECIPIENT.id, email };
 }
 
-async function send(rows, subject, html) {
+/** test：只发给 ALERT_EMAIL 一封，不记账本（可以反复发） */
+async function sendTest(subject, html) {
   const resendKey = process.env.RESEND_API_KEY;
   if (!resendKey) fail("RESEND_API_KEY not set");
-  let sent = 0;
-  for (let i = 0; i < rows.length; i += BATCH_SIZE) {
-    // 每封的页脚和邮件头带收件人自己的退订链接
-    const batch = await Promise.all(
-      rows.slice(i, i + BATCH_SIZE).map(async (row) => {
-        const own = await personalize(html, row);
-        return { from: FROM_EMAIL, to: row.email, subject, html: own.html, headers: own.headers };
-      })
-    );
-    try {
-      const res = await fetch("https://api.resend.com/emails/batch", {
-        method: "POST",
-        headers: { Authorization: `Bearer ${resendKey}`, "Content-Type": "application/json" },
-        body: JSON.stringify(batch),
-      });
-      if (!res.ok) {
-        console.error(`❌ Batch ${i / BATCH_SIZE + 1} failed: ${res.status} ${await res.text()}`);
-        continue;
-      }
-      sent += batch.length;
-      console.log(`  ✅ Batch ${i / BATCH_SIZE + 1}: sent ${batch.length}`);
-    } catch (err) {
-      console.error(`❌ Batch ${i / BATCH_SIZE + 1} error: ${err.message}`);
+  if (!process.env.ALERT_EMAIL) fail("ALERT_EMAIL not set: test mode has nobody to send to");
+  const row = await testRecipient(process.env.ALERT_EMAIL);
+  const own = await personalize(html, row);
+  console.log(`\n📧 周报邮件 — ${SLUG} — mode test, 1 recipient\n`);
+  // key 每次不一样：test 就是要能反复发
+  const result = await sendBatch(
+    [{ from: FROM_EMAIL, to: row.email, subject, html: own.html, headers: own.headers }],
+    `weekly-email-test/${SLUG}/${randomUUID()}`,
+    "test",
+    resendKey
+  );
+  if (!result.ok) fail(`test email not sent: ${result.error}`);
+  console.log("\n✅ 1/1 sent");
+}
+
+/** all：按账本群发。返回退出码 */
+async function sendAll(subject, html) {
+  const resendKey = process.env.RESEND_API_KEY;
+  if (!resendKey) fail("RESEND_API_KEY not set");
+  if (process.env.CONFIRM !== "SEND") fail("MODE=all sends to every subscriber: set CONFIRM=SEND to go ahead");
+  // 账本按 slug 记：slug 得是小写字母、数字、连字符（和博客文件名一致）
+  if (!/^[a-z0-9][a-z0-9-]*$/.test(SLUG)) fail(`POST_SLUG "${SLUG}" can't be used as a ledger id (want lowercase letters, digits and hyphens)`);
+  const id = `weekly:${SLUG}`;
+  const owner = `${process.env.GITHUB_RUN_ID ? `run ${process.env.GITHUB_RUN_ID}.${process.env.GITHUB_RUN_ATTEMPT || 1}` : os.hostname()} ${randomUUID()}`;
+  console.log(`\n📧 周报邮件 — ${SLUG} — mode all\n`);
+  // 同一期同一时刻只让一个进程发。KV 不通就不发：没法确认这一期之前发没发
+  try {
+    if (!(await acquireLock(id, owner))) {
+      console.error(`❌ Another process is sending ${SLUG} right now, not sending`);
+      return 1;
     }
+  } catch (err) {
+    console.error(`❌ Send ledger unavailable, not sending (can't tell whether this issue already went out): ${err.message}`);
+    return 1;
   }
-  return sent;
+  try {
+    return await sendWithLedger({
+      id,
+      keyPrefix: `weekly-email/${SLUG}`,
+      html,
+      subject,
+      from: FROM_EMAIL,
+      resendKey,
+      run: process.env.GH_RUN_URL || `local (${os.hostname()})`,
+    });
+  } finally {
+    await releaseLock(id, owner).catch((err) =>
+      console.error(`⚠️  Couldn't release the send lock (it expires by itself in 30 minutes): ${err.message}`)
+    );
+  }
 }
 
 async function main() {
@@ -247,11 +251,9 @@ async function main() {
   } catch (err) {
     fail(err.message);
   }
-  const to = await recipients();
-  console.log(`\n📧 周报邮件 — ${SLUG} — mode ${MODE}, ${to.length} recipient(s)\n`);
-  const sent = await send(to, post.title, html);
-  console.log(`\n✅ ${sent}/${to.length} sent`);
-  if (sent < to.length) process.exit(1);
+  if (MODE === "test") return sendTest(post.title, html);
+  if (MODE !== "all") fail(`unknown MODE: ${MODE}`);
+  process.exitCode = await sendAll(post.title, html);
 }
 
 main().catch((err) => fail(`fatal: ${err.message}`));

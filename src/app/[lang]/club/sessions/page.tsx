@@ -55,7 +55,8 @@ export default async function SessionsPage({
       lang={lang === "en" ? "en" : "zh"}
       isLoggedIn={Boolean(user)}
       isMember={isMember}
-      data={sessionsData}
+      // 视频地址只发给会员。以前整份 sessions.json 都进了页面数据，页面上只是不显示
+      data={isMember ? sessionsData : { title: sessionsData.title, sessions: [] }}
     />
   );
 }

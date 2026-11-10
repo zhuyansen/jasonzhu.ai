@@ -23,7 +23,7 @@ export async function issueProKey(
   email: string,
   note: string,
   orderId: string
-): Promise<{ ok: true; key: string; downgradedToStandard: boolean } | { ok: false; error: string }> {
+): Promise<{ ok: true; key: string; downgradedToStandard: boolean } | { ok: false; error: string; alreadyIssued?: boolean }> {
   if (!AGENTSKILLSHUB_SUPABASE_URL || !AGENTSKILLSHUB_ANON_KEY || !AGENTSKILLSHUB_ISSUE_SECRET) {
     return { ok: false, error: "AgentSkillsHub 发码配置缺失" };
   }
@@ -55,7 +55,8 @@ export async function issueProKey(
 
     if (data.status === "already_issued") {
       console.error("[agentskillshub] order already issued, raw key unrecoverable:", orderId);
-      return { ok: false, error: "该订单已发过码（重复请求），明文 key 无法再次获取，请联系 Jason 人工核实" };
+      // alreadyIssued：重试多少次都是这个结果，调用方应该停止重试、转人工
+      return { ok: false, alreadyIssued: true, error: "该订单已发过码（重复请求），明文 key 无法再次获取，请联系 Jason 人工核实" };
     }
 
     if (!data.key || !data.key.startsWith("ash_pro_")) {

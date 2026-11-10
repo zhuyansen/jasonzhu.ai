@@ -44,7 +44,6 @@ interface Profile {
  * 找到就直接把会员状态“认领”过来，不用让他们重新输码（重输也会因为码已用过而失败）。
  */
 async function claimLegacyActivation(
-  supabase: Awaited<ReturnType<typeof createClient>>,
   userId: string,
   email: string
 ): Promise<Profile | null> {
@@ -61,7 +60,8 @@ async function claimLegacyActivation(
 
     if (!legacy) return null;
 
-    const { data: updated } = await supabase
+    // service key 写：用户自己不能改 profiles（supabase/lock-profiles-update.sql）；userId 来自登录 session
+    const { data: updated } = await admin
       .from("profiles")
       .update({
         role: "member",
@@ -102,7 +102,7 @@ export default async function DashboardPage({
     profile = data;
 
     if (profile && profile.role === "free" && user.email) {
-      const claimed = await claimLegacyActivation(supabase, user.id, user.email);
+      const claimed = await claimLegacyActivation(user.id, user.email);
       if (claimed) profile = claimed;
     }
   }

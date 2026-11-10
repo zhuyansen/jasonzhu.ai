@@ -127,3 +127,19 @@ export async function sendClubApplicationNotification(params: {
     html,
   });
 }
+
+/**
+ * 给 Jason 的运维告警（付了钱没发货这类必须有人知道的事）。lines 是纯文本，这里转义。
+ * 返回发没发出去：调用方靠它决定要不要让上游再重试一次。
+ */
+export async function sendOpsAlert(params: {
+  subject: string;
+  lines: string[];
+}): Promise<{ ok: boolean; error?: string; resendId?: string }> {
+  const esc = (t: string) => t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  const html = `
+    <div style="font-family:-apple-system,sans-serif;max-width:560px;margin:0 auto;color:#111;font-size:14px;line-height:1.7">
+      ${params.lines.map((l) => `<p style="margin:0 0 8px">${esc(l)}</p>`).join("")}
+    </div>`;
+  return sendEmail({ to: [ADMIN_EMAIL], subject: params.subject, html });
+}

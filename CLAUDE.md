@@ -98,6 +98,13 @@ Git：commit 后如远程有新提交（cron 会自动 commit 快讯），先 `g
 - 容灾：Supabase 主写 + Vercel KV 兜底（src/lib/lead-backup.ts，Upstash REST，list `pending_subscribers`）。Supabase 写失败但 KV 兜住时照常给 PDF、不报错。Supabase 免费档 0.5GB 超限会锁全项目写入且要等下个计费周期才解——见 memory。
 - views/likes API 有 isKnownSlug 白名单（历史上被 bot 灌了 46 万行撑爆过库）。
 
+**会员 / 支付（2026-11-10 修过一轮，起因是全站隐式状态机排查）**
+- `profiles` 只能由服务端 service key 写（redeem、link-github、会员中心按邮箱认领）；登录用户对自己那行只读。以前用户能把自己的 `role` 改成 member（`supabase/lock-profiles-update.sql`）。新加会写 profiles 的功能也走 `getSupabase()`，不要用登录 session 的客户端写。
+- 会员内容不能只靠页面不显示来挡：课程、讨论会页面在服务端按 `isPaidRole` 决定给不给数据（非会员拿到的是空列表）。以前整份 course.json / sessions.json（12 个视频地址 + 逐字稿）对未登录访客也下发。Cloudflare Stream 上的视频本身还是知道地址就能看（没开 requireSignedURLs）。
+- `/api/dashboard/link-github` 要求会员身份（以前只查登录，任何注册账号都能把任意 GitHub 账号拉进付费 team）。
+- 虎皮椒回调（`checkout/xunhupay/notify`）：KV 读不到订单返回 500 让它重试，不当成「订单不存在」；发 Key 失败、「已发过码」、找不到订单的付款、订单状态写不进，都给 Jason 发告警邮件（`sendOpsAlert`）；同一订单用 KV 锁串行处理；收过钱的订单留 30 天。
+- 周报群发走发信账本（KV `weekly-email:<slug>`，和快讯同一套代码：`scripts/lib/ledger-send.mjs` + `resend-batch.mjs`）：一期只发一次，没发完再跑只补没发出的批次，KV 不通就不发。查看：`node --env-file=.env.local scripts/lib/digest-email-ledger.mjs show weekly:<slug>`。
+
 **数据日报（.github/workflows/analytics-daily.yml，北京 8:20 邮件）**
 - `ops/analytics/`（Python）：fetch_site（订阅 / 文章阅读增量 / KV 漏回灌 / 管线健康）、fetch_gsc、fetch_vercel、fetch_ga、fetch_clarity → digest.py → send_email.py（Resend）。一个源失败只在日报里标 ⚠️，没配凭证的源写「未接入」。
 - KV `pending_subscribers` 是每次订阅都双写的镜像，有积压不代表丢线索；只有「KV 有、Supabase 没有」才需要跑 reconcile-leads。

@@ -104,8 +104,10 @@ export async function POST(request: NextRequest) {
       )}`
     );
 
-    // profiles 绑定当前登录账号（用户自己的 session，RLS 只允许改自己那行）
-    await supabase
+    // profiles 绑定当前登录账号。用 service key 写：用户自己不能改 profiles（否则能把自己的 role 改成 member，
+    // 见 supabase/lock-profiles-update.sql），user.id 来自上面校验过的登录 session。
+    const admin = getSupabase();
+    const { error: profileError } = await admin
       .from("profiles")
       .update({
         role: "member",
@@ -115,10 +117,11 @@ export async function POST(request: NextRequest) {
         expires_at: expiresAt,
       })
       .eq("id", user.id);
+    // 码已经用掉、Key 已发：不报错（邮件里有 Key），记日志；下次打开会员中心会按邮箱从 member_codes 认领
+    if (profileError) console.error("[redeem] profiles update failed:", user.id, codeStr, profileError.message);
 
-    // member_codes 归档（尽力，用 anon key，不阻塞主流程）
+    // member_codes 归档（尽力，不阻塞主流程）
     try {
-      const admin = getSupabase();
       await admin
         .from("member_codes")
         .update({

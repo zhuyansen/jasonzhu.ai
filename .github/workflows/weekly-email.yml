@@ -20,6 +20,11 @@ on:
 permissions:
   contents: read
 
+# 一次只跑一个：两次同时点了 Run，第二次排队，等第一次发完后看账本（已发完就不再发）
+concurrency:
+  group: weekly-email
+  cancel-in-progress: false
+
 jobs:
   send:
     runs-on: ubuntu-latest
@@ -47,4 +52,7 @@ jobs:
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
           UNSUBSCRIBE_SECRET: ${{ secrets.UNSUBSCRIBE_SECRET }}  # 每封邮件的退订链接签名，和 Vercel 上的同一个值；缺了脚本报错、不发
+          KV_REST_API_URL: ${{ secrets.KV_REST_API_URL }}  # 发信账本（weekly-email:<slug>）：一期只发一次；不通就不发
+          KV_REST_API_TOKEN: ${{ secrets.KV_REST_API_TOKEN }}
+          GH_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: node scripts/send-weekly-email.mjs

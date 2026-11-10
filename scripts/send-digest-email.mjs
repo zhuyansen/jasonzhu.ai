@@ -31,13 +31,12 @@ import { randomUUID } from "crypto";
 import fs from "fs";
 import os from "os";
 import path from "path";
-import { acquireLock, describe, readLedger, releaseLock, writeLedger } from "./lib/digest-email-ledger.mjs";
+import { acquireLock, releaseLock } from "./lib/digest-email-ledger.mjs";
+import { sendWithLedger } from "./lib/ledger-send.mjs";
 import {
   PREVIEW_RECIPIENT,
   UNSUBSCRIBE_PLACEHOLDER,
-  fetchSubscribers,
   personalize,
-  pickRecipients,
   requireUnsubscribeSecret,
 } from "./lib/newsletter.mjs";
 
@@ -201,231 +200,9 @@ function buildEmailHtml(digest) {
 
 // ─── Fetch subscribers & send ───────────────────────
 
-const BATCH_SIZE = 50; // Resend 一次最多 100 封
-const RETRY_DELAYS = [2, 5, 15]; // 一批失败后当场重试前等几秒（共 4 次机会，同一个 Idempotency-Key）
 const RUN = process.env.GH_RUN_URL || `local (${os.hostname()})`;
 // 发信锁的持有人，每个进程都不一样
 const LOCK_OWNER = `${process.env.GITHUB_RUN_ID ? `run ${process.env.GITHUB_RUN_ID}.${process.env.GITHUB_RUN_ATTEMPT || 1}` : os.hostname()} ${randomUUID()}`;
-
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
-/**
- * 发一批（≤50 封）。同一批不管当场重试几次、隔几档补发，都用同一个 Idempotency-Key：Resend 24 小时内见过这个 key 只回放结果、不再发。
- * 返回 { ok: true } 或 { ok: false, error, stop }；stop = 这次别再发后面的批次了（密钥 / 额度问题，或 Resend 一直 5xx、超时）。
- */
-async function sendBatch(emails, key, label) {
-  for (let attempt = 1; ; attempt++) {
-    let status = 0;
-    let name = "";
-    let detail = "";
-    let retryAfter = 0;
-    try {
-      const res = await fetch("https://api.resend.com/emails/batch", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${resendKey}`,
-          "Content-Type": "application/json",
-          "Idempotency-Key": key,
-        },
-        body: JSON.stringify(emails),
-        signal: AbortSignal.timeout(30_000),
-      });
-      if (res.ok) return { ok: true };
-      status = res.status;
-      retryAfter = Number(res.headers.get("retry-after")) || 0;
-      detail = await res.text();
-      try {
-        const body = JSON.parse(detail);
-        name = body.name || "";
-        detail = body.message || detail;
-      } catch {
-        // 不是 JSON，原样记下
-      }
-    } catch (err) {
-      // 超时 / 断线：不知道 Resend 收没收到，用同一个 key 重试是安全的
-      detail = `no response: ${err.message}`;
-    }
-    const error = [status || "", name, detail].filter(Boolean).join(" ").replace(/\s+/g, " ").slice(0, 300);
-
-    // 这个 key 之前带着不一样的内容用过（比如补发前这批有人退订、少了一封）：说明这批早就发出去了
-    if (status === 409 && name === "invalid_idempotent_request") return { ok: true, replayed: true };
-
-    const quota = status === 429 && /quota/.test(name);
-    const retryable =
-      !status || status >= 500 || (status === 429 && !quota) || (status === 409 && name === "concurrent_idempotent_requests");
-    if (!retryable) {
-      // 401 / 403（密钥、域名）、额度用完、key 格式不对：后面每批都会一样，这次停下。422 之类只是这一批的问题，接着发下一批
-      const stop = status === 401 || status === 403 || quota || name === "invalid_idempotency_key";
-      return { ok: false, error, stop };
-    }
-    // 一直 5xx / 超时：Resend 多半挂了，剩下的批次交给下一档
-    if (attempt > RETRY_DELAYS.length) return { ok: false, error, stop: true };
-    const wait = Math.min(Math.max(retryAfter, RETRY_DELAYS[attempt - 1]), 60);
-    console.warn(`  ⚠️  ${label}: ${error} — retrying in ${wait}s with the same Idempotency-Key`);
-    await sleep(wait * 1000);
-  }
-}
-
-/** 还没开始发就失败了（比如读不到订阅者）：记进账本（保留上次没发完的批次），交给下一档 */
-async function recordFailure(prev, message) {
-  console.error(`❌ ${message}`);
-  try {
-    await writeLedger(TODAY, {
-      ...(prev || {}),
-      status: "failed",
-      run: RUN,
-      attempts: (prev?.attempts || 0) + 1,
-      error: message.slice(0, 300),
-    });
-  } catch (err) {
-    console.error(`⚠️  Couldn't record the failure in the send ledger either: ${err.message}`);
-  }
-  return 1;
-}
-
-async function sendWithLedger(html, subject) {
-  const prev = await readLedger(TODAY);
-  if (prev?.status === "sent") {
-    console.log(`✅ ${TODAY} 这期已经发过：${describe(prev, TODAY)}。不再发。`);
-    return 0;
-  }
-  if (prev?.status === "skipped") {
-    console.log(`⏭️  ${describe(prev, TODAY)}。不发。`);
-    return 0;
-  }
-  if (prev?.status === "sending") {
-    console.error(`❌ ${describe(prev, TODAY)}`);
-    console.error(
-      "   不知道发到哪了，这次不发。看那次的运行日志和 Resend 后台：全发出去了就改成 sent；没发完就改成 failed 再重跑" +
-        "（补发用原来的 Idempotency-Key，离那次开始发不到 24 小时，Resend 不会重复发）："
-    );
-    console.error(`   node --env-file=.env.local scripts/lib/digest-email-ledger.mjs set ${TODAY} sent|failed`);
-    return 1;
-  }
-  if (prev?.status === "failed") console.log(`🔁 Earlier attempt: ${describe(prev, TODAY)}`);
-
-  let subscribers;
-  try {
-    subscribers = await fetchSubscribers();
-  } catch (err) {
-    return recordFailure(prev, err.message);
-  }
-  // 名单是空的不正常（平时 1000 个）：多半是 key 配错、读到的是 anon 视角，别当成「发完了」
-  if (subscribers.length === 0) return recordFailure(prev, "Supabase returned 0 subscribers (wrong SUPABASE_SERVICE_KEY?)");
-
-  const { recipients, skipped } = pickRecipients(subscribers);
-  console.log(
-    `📬 Found ${subscribers.length} subscribers, skipped ${skipped.unsubscribed} unsubscribed, ` +
-      `${skipped.test} test addresses and ${skipped.english} English prompt-library subscribers`
-  );
-
-  let batches;
-  let total;
-  let sent;
-  let dropped = prev?.dropped || 0;
-  if (prev?.pending?.length) {
-    // 补发：只发上次没发出去的批次，名单和 key 都用上次固定下来的。中间退订的、被新订阅挤出最新 1000 个的不补
-    const eligible = new Map(recipients.map((r) => [r.id, r]));
-    batches = prev.pending.map(({ key, ids }) => {
-      const rows = ids.map((id) => eligible.get(id)).filter(Boolean);
-      dropped += ids.length - rows.length;
-      return { key, rows };
-    });
-    total = prev.total;
-    sent = prev.sent || 0;
-    console.log(`🔁 Resuming: ${sent}/${total} already sent, ${batches.length} batch(es) to go`);
-  } else {
-    batches = [];
-    for (let i = 0; i < recipients.length; i += BATCH_SIZE) {
-      const n = String(batches.length + 1).padStart(2, "0");
-      batches.push({ key: `digest-email/${TODAY}/batch-${n}`, rows: recipients.slice(i, i + BATCH_SIZE) });
-    }
-    total = recipients.length;
-    sent = 0;
-  }
-
-  // 先记「发送中」和这次的名单，记不进去就不发
-  const record = {
-    status: "sending",
-    run: RUN,
-    attempts: (prev?.attempts || 0) + 1,
-    startedAt: new Date().toISOString(),
-    total,
-    sent,
-    dropped,
-    pending: batches.map(({ key, rows }) => ({ key, ids: rows.map((r) => r.id) })),
-  };
-  try {
-    await writeLedger(TODAY, record);
-  } catch (err) {
-    console.error(`❌ Couldn't write the send ledger, not sending: ${err.message}`);
-    return 1;
-  }
-
-  const stillPending = [];
-  let error = null;
-  let stop = false;
-  for (const batch of batches) {
-    const label = batch.key.slice(batch.key.lastIndexOf("/") + 1);
-    const ids = batch.rows.map((r) => r.id);
-    if (stop) {
-      stillPending.push({ key: batch.key, ids });
-      continue;
-    }
-    if (batch.rows.length === 0) {
-      console.log(`  ⏭️  ${label}: everyone in it unsubscribed or left the newest 1000`);
-      continue;
-    }
-    let result;
-    try {
-      // 每封的页脚和邮件头带收件人自己的退订链接
-      const emails = await Promise.all(
-        batch.rows.map(async (s) => {
-          const own = await personalize(html, s);
-          return { from: FROM_EMAIL, to: s.email, subject, html: own.html, headers: own.headers };
-        })
-      );
-      result = await sendBatch(emails, batch.key, label);
-    } catch (err) {
-      result = { ok: false, error: `couldn't build the emails: ${err.message}`, stop: false };
-    }
-    if (result.ok) {
-      sent += batch.rows.length;
-      console.log(`  ✅ ${label}: sent ${batch.rows.length} emails${result.replayed ? " (Resend: this batch had already gone out)" : ""}`);
-    } else {
-      error = `${label}: ${result.error}`;
-      stillPending.push({ key: batch.key, ids });
-      console.error(`❌ ${error}`);
-      if (result.stop) {
-        stop = true;
-        console.error("   Leaving the remaining batches for the next run");
-      }
-    }
-  }
-
-  const done = stillPending.length === 0;
-  const final = { ...record, status: done ? "sent" : "failed", sent, finishedAt: new Date().toISOString() };
-  if (done) delete final.pending;
-  else Object.assign(final, { pending: stillPending, error });
-  try {
-    await writeLedger(TODAY, final);
-  } catch (err) {
-    console.error(`❌ ${done ? "Every email went out" : `${sent}/${total} went out`}, but the send ledger couldn't be updated: ${err.message}`);
-    console.error(
-      `   账本停在「发送中」，后面几档不会自动重发。确认后：node --env-file=.env.local scripts/lib/digest-email-ledger.mjs set ${TODAY} ${done ? "sent" : "failed"}`
-    );
-    return 1;
-  }
-
-  const droppedNote = dropped ? `, ${dropped} unsubscribed or left the newest 1000 before their retry` : "";
-  if (done) {
-    console.log(`\n✅ Email push complete: ${sent}/${total} sent${droppedNote}`);
-    return 0;
-  }
-  console.error(`\n❌ Email push incomplete: ${sent}/${total} sent${droppedNote}`);
-  console.error(`   ${stillPending.length} batch(es) left for the next run; the last run alerts ALERT_EMAIL if they still haven't gone out`);
-  return 1;
-}
 
 async function main() {
   const html = buildEmailHtml(todayDigest);
@@ -455,7 +232,7 @@ async function main() {
     return 1;
   }
   try {
-    return await sendWithLedger(html, subject);
+    return await sendWithLedger({ id: TODAY, keyPrefix: `digest-email/${TODAY}`, html, subject, from: FROM_EMAIL, resendKey, run: RUN });
   } finally {
     await releaseLock(TODAY, LOCK_OWNER).catch((err) =>
       console.error(`⚠️  Couldn't release the send lock (it expires by itself in 30 minutes): ${err.message}`)
