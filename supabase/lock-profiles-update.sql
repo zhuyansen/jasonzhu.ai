@@ -8,10 +8,12 @@
 -- 用户只保留「看自己那一行」。
 --
 -- 顺序：先部署改用 service key 的代码，再跑这个文件（反过来会让兑换码绑定写不进 profiles）。
--- 可以重复跑。
+-- 可以重复跑。2026-11-10 已在生产库执行并核对。
 
 drop policy if exists "Users can update own profile" on public.profiles;
 revoke insert, update, delete on public.profiles from anon, authenticated;
+-- Supabase 建表时默认给的另外几项，网站接口用不到，一并收掉
+revoke truncate, references, trigger on public.profiles from anon, authenticated;
 
 -- 核对（应该只剩 SELECT 一条策略；authenticated 没有 UPDATE）：
 --   select policyname, cmd from pg_policies where tablename = 'profiles';
