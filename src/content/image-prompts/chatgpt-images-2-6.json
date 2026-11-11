@@ -3,8 +3,8 @@
  "model": "ChatGPT Images 2.6",
  "released": "2026-11-04T23:35:14Z",
  "threshold": 5000,
- "updatedAt": "2026-11-10T01:42:28.736Z",
- "statsCheckedAt": "2026-11-10T01:42:28.736Z",
+ "updatedAt": "2026-11-11T01:38:00.134Z",
+ "statsCheckedAt": "2026-11-11T01:38:00.134Z",
  "inclusionRule": "Original post by the creator, images / GIF / video attached, >= 5000 views on that post, creator states it was made with ChatGPT Images 2.6 (GPT-Image-2.6). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -48,6 +48,158 @@
      "url": "https://pbs.twimg.com/media/HWVnpwHbcAA9WMO.jpg",
      "width": 1218,
      "height": 340
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2119841736679686222",
+   "url": "https://x.com/DmytroKrasun/status/2119841736679686222",
+   "author": {
+    "handle": "DmytroKrasun",
+    "name": "Dmytro Krasun"
+   },
+   "postedAt": "2026-11-09T17:17:09.000Z",
+   "addedAt": "2026-11-11",
+   "lang": "en",
+   "kind": "work",
+   "category": "design",
+   "title": {
+    "zh": "特拉维夫-雅法等距插画地图",
+    "en": "Isometric illustrated map of Tel Aviv-Yafo"
+   },
+   "summary": {
+    "zh": "这是一个基于城市开放数据和地理数据制作的特拉维夫雅法等距地图，建筑由 AI 统一绘制风格。作者使用 Claude Code 和 Opus 5.5，通过 218 条提示完成项目。",
+    "en": "An interactive isometric map of Tel Aviv-Yafo was built from open municipal and geographic data, with buildings painted in one AI style. The creator used Claude Code with Opus 5.5 and 218 prompts."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Claude Code",
+    "Opus 5.5"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 101436,
+    "likes": 1281,
+    "replies": 122,
+    "reposts": 58,
+    "bookmarks": 723,
+    "checkedAt": "2026-11-11T01:38:00.134Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2119835474554388480/vid/avc1/720x720/JYvgjOYzv7w1pWv8.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2119835474554388480/img/vXE2wqLKgeYNqcOb.jpg",
+     "width": 1080,
+     "height": 1080,
+     "durationSec": 14
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2119741442012893369",
+   "url": "https://x.com/viktoroddy/status/2119741442012893369",
+   "author": {
+    "handle": "viktoroddy",
+    "name": "Viktor Oddy"
+   },
+   "postedAt": "2026-11-09T10:38:37.000Z",
+   "addedAt": "2026-11-11",
+   "lang": "en",
+   "kind": "work",
+   "category": "design",
+   "title": {
+    "zh": "展示穿搭模特与商品标签的时尚购物界面",
+    "en": "Fashion storefront UI with styled models and product labels"
+   },
+   "summary": {
+    "zh": "这是一个使用 GPT Image 2.6 制作的时尚造型网站，没有进行摄影或使用模特。",
+    "en": "A fashion lookbook website was made with GPT Image 2.6 without a photoshoot or models."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 100646,
+    "likes": 1782,
+    "replies": 63,
+    "reposts": 151,
+    "bookmarks": 1400,
+    "checkedAt": "2026-11-11T01:38:00.134Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2119740731883741184/vid/avc1/1280x720/Y8khAIX5gtZFNFXE.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2119740731883741184/img/-5pJiebzRf-9biOU.jpg",
+     "width": 1440,
+     "height": 810,
+     "durationSec": 7
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2119928374235701452",
+   "url": "https://x.com/VORTEX_Promos/status/2119928374235701452",
+   "author": {
+    "handle": "VORTEX_Promos",
+    "name": "VORTEX: AI Bros & AI Arena, Peak AI Buzz"
+   },
+   "postedAt": "2026-11-09T23:01:25.000Z",
+   "addedAt": "2026-11-11",
+   "lang": "en",
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "五种模型对同一人像进行 15 次编辑的对比",
+    "en": "Five-model comparison of 15 edits to one portrait"
+   },
+   "summary": {
+    "zh": "作者将同一张照片交给五个 AI 图像编辑器反复编辑，改变衣服、发型、背景、眼镜和人物，以比较它们保持人物身份的能力。",
+    "en": "The creator repeatedly edited the same photo with five AI image editors, changing clothing, hair, backgrounds, glasses and people to compare identity preservation."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Dreamina Seedream 5.5",
+    "Ideogram 4.5",
+    "MiniMax H3",
+    "Nano Banana 2.1"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 87767,
+    "likes": 273,
+    "replies": 27,
+    "reposts": 0,
+    "bookmarks": 1,
+    "checkedAt": "2026-11-11T01:38:00.134Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2119928182216269824/vid/avc1/1280x720/C-q5BOAZqFFCb9sP.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2119928182216269824/img/b55Wbl0BXjAM_Okt.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 11
     }
    ],
    "evidence": {
@@ -604,6 +756,58 @@
    }
   },
   {
+   "id": "2119963905380536814",
+   "url": "https://x.com/studio_yebisu/status/2119963905380536814",
+   "author": {
+    "handle": "studio_yebisu",
+    "name": "StudioYebisu"
+   },
+   "postedAt": "2026-11-10T01:22:36.000Z",
+   "addedAt": "2026-11-11",
+   "lang": "ja",
+   "kind": "work",
+   "category": "illustration",
+   "title": {
+    "zh": "黑暗科幻风的“信号丢失”音乐视频",
+    "en": "Dark sci-fi signal-lost music video"
+   },
+   "summary": {
+    "zh": "这是一个未制作分镜、由 Fable5.2 High 一次生成的音乐视频。音乐使用 Suno MCP，图片使用 GPT Image 2.6，视频素材使用 Local Minimax H3。",
+    "en": "A one-shot music video was produced by Fable5.2 High without a storyboard. Music used Suno MCP, images used GPT Image 2.6, and video footage used Local Minimax H3."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Fable5.2",
+    "Suno MCP",
+    "Local Minimax H3"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 38477,
+    "likes": 405,
+    "replies": 5,
+    "reposts": 37,
+    "bookmarks": 289,
+    "checkedAt": "2026-11-11T01:38:00.134Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2119963616359378944/vid/avc1/1280x720/8ydP6UX_qsITKgkv.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2119963616359378944/img/_swgKZgNOoXvFkMd.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 97
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2118381855166881928",
    "url": "https://x.com/NovaXCode/status/2118381855166881928",
    "author": {
@@ -942,6 +1146,64 @@
    }
   },
   {
+   "id": "2119617631422669200",
+   "url": "https://x.com/guishou_56/status/2119617631422669200",
+   "author": {
+    "handle": "guishou_56",
+    "name": "Niko"
+   },
+   "postedAt": "2026-11-09T02:26:38.000Z",
+   "addedAt": "2026-11-11",
+   "lang": "zh",
+   "kind": "work",
+   "category": "design",
+   "title": {
+    "zh": "聚合物与毒性研究信息图组",
+    "en": "Scientific infographics on polymers and toxicity"
+   },
+   "summary": {
+    "zh": "作者用一张复杂图像测试图生 SVG，并表示 GPT Image 2.6 基本保留了全部细节；相比之下，文生 SVG 的效果较差。",
+    "en": "The creator tested image-to-SVG conversion on a highly complex image and reported that GPT Image 2.6 preserved the details closely, unlike text-to-SVG generation."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 26435,
+    "likes": 186,
+    "replies": 18,
+    "reposts": 9,
+    "bookmarks": 243,
+    "checkedAt": "2026-11-11T01:38:00.134Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HWpkDi1bgAABMxE.jpg",
+     "width": 4096,
+     "height": 2228
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HWpkI_Ya4AAfyI6.jpg",
+     "width": 4096,
+     "height": 2109
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HWpkNjDaEAA7Q95.jpg",
+     "width": 4096,
+     "height": 2289
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2118884892427551046",
    "url": "https://x.com/lyraxana/status/2118884892427551046",
    "author": {
@@ -994,6 +1256,74 @@
      "url": "https://pbs.twimg.com/media/HWfKk22W4AEVIdn.jpg",
      "width": 1672,
      "height": 941
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2119803963738357803",
+   "url": "https://x.com/ozansihay/status/2119803963738357803",
+   "author": {
+    "handle": "ozansihay",
+    "name": "Ozan Sihay"
+   },
+   "postedAt": "2026-11-09T14:47:03.000Z",
+   "addedAt": "2026-11-11",
+   "lang": "tr",
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "三种图像模型的四组人物场景对比",
+    "en": "Four portrait scenes across three image models"
+   },
+   "summary": {
+    "zh": "创作者使用相同提示词，对比了 Seedream 5.5、GPT Image 2.6 和 Nano Banana 2.1 生成的图片。",
+    "en": "The creator compared images generated by Seedream 5.5, GPT Image 2.6, and Nano Banana 2.1 using the same prompts."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Seedream 5.5",
+    "Nano Banana 2.1",
+    "Seedance"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 25871,
+    "likes": 135,
+    "replies": 27,
+    "reposts": 1,
+    "bookmarks": 68,
+    "checkedAt": "2026-11-11T01:38:00.134Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HWsOVvMWkAA7plU.jpg",
+     "width": 2267,
+     "height": 4096
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HWsOVvMW8AAQgw3.jpg",
+     "width": 4096,
+     "height": 1917
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HWsOVvKWoAEKPfv.jpg",
+     "width": 4096,
+     "height": 1917
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HWsOVvSWAAAWfqz.jpg",
+     "width": 4096,
+     "height": 1917
     }
    ],
    "evidence": {
@@ -1299,6 +1629,57 @@
      "url": "https://pbs.twimg.com/media/HWcu29FbIAALUNA.jpg",
      "width": 941,
      "height": 1672
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2119627454767829342",
+   "url": "https://x.com/1banana2546/status/2119627454767829342",
+   "author": {
+    "handle": "1banana2546",
+    "name": "バナーナ"
+   },
+   "postedAt": "2026-11-09T03:05:40.000Z",
+   "addedAt": "2026-11-11",
+   "lang": "ja",
+   "kind": "work",
+   "category": "design",
+   "title": {
+    "zh": "多套服装造型参考板",
+    "en": "Multi-outfit costume reference board"
+   },
+   "summary": {
+    "zh": "创作者上传人物参考图，只需一句指令就制作了包含多种服装样式的参考板。",
+    "en": "The creator made a reference board showing multiple outfit patterns by attaching a character reference image and giving a one-step instruction."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/1banana2546/status/2119627454767829342",
+    "text": "色んな衣装のパターンをリファレンスボードにして"
+   },
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 19662,
+    "likes": 113,
+    "replies": 5,
+    "reposts": 3,
+    "bookmarks": 99,
+    "checkedAt": "2026-11-11T01:38:00.134Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HWptt1iagAAKCuj.jpg",
+     "width": 1672,
+     "height": 941
     }
    ],
    "evidence": {
@@ -2397,6 +2778,57 @@
    }
   },
   {
+   "id": "2119859995248312662",
+   "url": "https://x.com/AmirMushich/status/2119859995248312662",
+   "author": {
+    "handle": "AmirMushich",
+    "name": "AmirMušić"
+   },
+   "postedAt": "2026-11-09T18:29:42.000Z",
+   "addedAt": "2026-11-11",
+   "lang": "en",
+   "kind": "work",
+   "category": "design",
+   "title": {
+    "zh": "互动黑胶唱片商店网页",
+    "en": "Interactive vinyl record store website"
+   },
+   "summary": {
+    "zh": "创作者展示了一个交互式音乐商店网页设计，目录会随悬停或移动端点击移动，使用 GPT Sol 和 LTX-2.5 制作。",
+    "en": "The creator presented an interactive music store web design with a catalog that moves on hover or tap, built with GPT Sol and LTX-2.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "GPT Sol",
+    "LTX-2.5"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 10581,
+    "likes": 150,
+    "replies": 18,
+    "reposts": 7,
+    "bookmarks": 129,
+    "checkedAt": "2026-11-11T01:38:00.134Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2119858129689001984/vid/avc1/1280x720/356GnEg0CnDgzx5M.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2119858129689001984/img/HDwpZTLK8aN6Nl_j.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 17
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2118543259257712714",
    "url": "https://x.com/buusk4/status/2118543259257712714",
    "author": {
@@ -2649,6 +3081,75 @@
      "width": 358,
      "height": 356,
      "durationSec": 0
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2119822756347036091",
+   "url": "https://x.com/MrLarus/status/2119822756347036091",
+   "author": {
+    "handle": "MrLarus",
+    "name": "Larus Canus"
+   },
+   "postedAt": "2026-11-09T16:01:44.000Z",
+   "addedAt": "2026-11-11",
+   "lang": "zh",
+   "kind": "work",
+   "category": "illustration",
+   "title": {
+    "zh": "巨型机械零件上的维修工人组图",
+    "en": "Repair workers on giant mechanical parts"
+   },
+   "summary": {
+    "zh": "创作者发布了一个可复用提示词，用写实放大的机械物体搭配微型手绘维修师，制作工业主题创意海报。",
+    "en": "The creator published a reusable prompt for posters combining realistic oversized mechanical objects with miniature hand-drawn repair workers."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/MrLarus/status/2119823488999673856",
+    "text": "【机械物体】：{填写真实机械零件}\n【维修任务】：{填写具体维修动作}\n【人物动作】：{填写人物工作内容}\n【主文案】：{填写中文短句}\n【主色调】：{填写主色}\n【画幅比例】：9:16\n\n创作一张「Tiny Repair Crew｜巨物维修部」虚实结合创意海报。\n\n将真实机械物体放大几十倍，形成一个微型工业维修现场。机械主体采用高度写实的摄影质感，保留真实结构、金属纹理、磨损细节、厚度和自然光影。\n\n安排 4–5 位成年微型手绘维修师，统一穿深蓝工装、黄色安全帽、黄色工具腰包和橙色工作手套。采用黑灰铅笔线稿与少量彩铅上色，保持自然修长的成年人比例。\n\n人物正在执行具体的【维修任务】，通过攀爬、测量、安装、拧紧、检查等动作形成真实协作关系。每个人都有明确工作职责，不要只是站在机械旁边。\n\n背景使用极简工业维修空间，暖奶油白纸张质感，上方留白加入自然中文手写标题【主文案】，搭配少量英文旁注。\n\n采用强透视、近大远小和局部遮挡，突出巨型机械与微型人物之间的尺度差异。\n\n整体使用钢铁灰、深藏蓝、暖米白，搭配芥末黄和橙色点缀。光线自然、有方向性，真实机械与手绘人物共享一致的空间和光影关系。\n\n最终呈现工业摄影质感 × 手绘维修人物 × 编辑海报设计。\n\n避免机械结构错误、塑料 CGI、纯摄影人物、复杂工厂、玻璃透明材质、无意义文字和信息过载。"
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 7781,
+    "likes": 106,
+    "replies": 3,
+    "reposts": 18,
+    "bookmarks": 71,
+    "checkedAt": "2026-11-11T01:38:00.134Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HWsfKioaoAAMbYp.jpg",
+     "width": 941,
+     "height": 1671
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HWsfKinbwAAPsQ0.jpg",
+     "width": 942,
+     "height": 1670
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HWsfK63bAAAw7_L.jpg",
+     "width": 941,
+     "height": 1671
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HWsfUh7aoAALYgk.jpg",
+     "width": 942,
+     "height": 1670
     }
    ],
    "evidence": {
