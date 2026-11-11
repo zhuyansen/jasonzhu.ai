@@ -38,6 +38,8 @@ for (const [k, en, zh] of CATS) {
 const mc = (m) => cases.filter((c) => (c.models || ["opus-5.5"]).includes(m)).length;
 const featured = withP.filter((c) => c.prompt.kind === "full").slice(0, 8);
 const grid = (l) => "<table>\n" + [0, 4].map((o) => "  <tr>\n" + featured.slice(o, o + 4).map((c) => `    <td width="25%" align="center"><a href="${detail(c, l)}"><img src="${c.video.poster}" width="200" alt="${(l === "zh" ? c.title.zh : c.title.en).replace(/"/g, "&quot;")}"></a><br><sub>${l === "zh" ? c.title.zh : c.title.en}</sub></td>`).join("\n") + "\n  </tr>").join("\n") + "\n</table>";
+// 导到 Agent Skills Hub 的 Claude 视频指南（中文版在 zh/ 子路径）
+const HUB_VIDEO = "https://agentskillshub.top/best/claude-video-skills/";
 const readme = (l) => {
   const zh = l === "zh";
   const sec = CATS.map(([k, en, z]) => { const list = cases.filter((c) => c.category === k); const top = list.filter((c) => c.prompt).slice(0, 8);
@@ -49,6 +51,8 @@ const readme = (l) => {
 X 上用 Claude Opus 5.5、Sonnet 5.5、Haiku 5.5 和 Fable 5.5（内测中、未官宣）做出来的视频、动效、3D 场景和游戏，原帖播放量都过 ${src.threshold.toLocaleString("en-US")}。共 **${cases.length} 个作品**（Opus 5.5 ${mc("opus-5.5")} 个 · Sonnet 5.5 ${mc("sonnet-5.5")} 个 · Fable 5.5 ${mc("fable-5.5")} 个，对比帖各边都计），其中 **${withP.length} 个附提示词**（${withP.filter((c) => c.prompt.kind === "full").length} 条完整提示词）。
 
 **[在线浏览，可直接播放和复制提示词 →](${SITE}/zh/prompts/claude-opus-5-5)**
+
+想自己做一条？**[Claude 视频 skill 实测与评级：Agent Skills Hub →](${HUB_VIDEO}zh/)**
 
 ${grid("zh")}
 
@@ -78,6 +82,8 @@ English | [简体中文](README.zh-CN.md)
 Videos, motion graphics, 3D scenes and games made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 and Fable 5.5 (limited preview, not yet announced) and shared on X, each with ${src.threshold.toLocaleString("en-US")}+ views on the original post. **${cases.length} works** (Opus 5.5: ${mc("opus-5.5")} · Sonnet 5.5: ${mc("sonnet-5.5")} · Fable 5.5: ${mc("fable-5.5")}; comparisons count for each), **${withP.length} with a prompt** (${withP.filter((c) => c.prompt.kind === "full").length} full prompts).
 
 **[Browse online — play the videos and copy the prompts →](${SITE}/en/prompts/claude-opus-5-5)**
+
+Want to make one yourself? **[Claude video skills, tested and graded on Agent Skills Hub →](${HUB_VIDEO})**
 
 ${grid("en")}
 
