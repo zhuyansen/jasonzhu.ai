@@ -3,8 +3,8 @@
  "model": "ChatGPT Images 2.6",
  "released": "2026-11-04T23:35:14Z",
  "threshold": 5000,
- "updatedAt": "2026-11-12T01:45:18.257Z",
- "statsCheckedAt": "2026-11-12T01:45:18.257Z",
+ "updatedAt": "2026-11-13T01:28:09.380Z",
+ "statsCheckedAt": "2026-11-13T01:28:09.380Z",
  "inclusionRule": "Original post by the creator, images / GIF / video attached, >= 5000 views on that post, creator states it was made with ChatGPT Images 2.6 (GPT-Image-2.6). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -116,6 +116,70 @@
    }
   },
   {
+   "id": "2120469968060043639",
+   "url": "https://x.com/Leviwoyun/status/2120469968060043639",
+   "author": {
+    "handle": "Leviwoyun",
+    "name": "Levi 卧云"
+   },
+   "postedAt": "2026-11-11T10:53:31.000Z",
+   "addedAt": "2026-11-13",
+   "lang": "zh",
+   "kind": "work",
+   "category": "design",
+   "title": {
+    "zh": "中文书法与大字排版的风景海报",
+    "en": "Scenic Chinese calligraphy posters with bold typography"
+   },
+   "summary": {
+    "zh": "创作者开源了 GPT Image 2.6 大字标题设计技能，包含 40 种字体和排版风格；还提到加入粒子与乐器效果的动态签名技能。",
+    "en": "The creator released a GPT Image 2.6 skill for large-title designs with 40 font and layout styles, and also mentioned an animated signature skill with particle and instrument effects."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 120129,
+    "likes": 1952,
+    "replies": 105,
+    "reposts": 240,
+    "bookmarks": 1933,
+    "checkedAt": "2026-11-13T01:28:09.380Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HW1rljna4AAnSfB.jpg",
+     "width": 2448,
+     "height": 2832
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HW1rnLYaQAAF7xH.jpg",
+     "width": 2448,
+     "height": 2832
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HW1rpydaMAA3whD.jpg",
+     "width": 2459,
+     "height": 2998
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HW1rrDoawAAA5jw.jpg",
+     "width": 2459,
+     "height": 2998
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2119841736679686222",
    "url": "https://x.com/DmytroKrasun/status/2119841736679686222",
    "author": {
@@ -206,6 +270,79 @@
      "width": 1440,
      "height": 810,
      "durationSec": 7
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2120470049672826952",
+   "url": "https://x.com/VibeEverything/status/2120470049672826952",
+   "author": {
+    "handle": "VibeEverything",
+    "name": "LOOPY"
+   },
+   "postedAt": "2026-11-11T10:53:50.000Z",
+   "addedAt": "2026-11-13",
+   "lang": "ko",
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "四种图像模型生成的香港夜景自拍",
+    "en": "Hong Kong night selfies across four image models"
+   },
+   "summary": {
+    "zh": "创作者使用同一提示词，对比了 MiniMax H3 Image、Seedream 5.5、GPT Image 2.6 和 Nano Banana 2.1 生成香港夜景写实自拍。",
+    "en": "The creator compared MiniMax H3 Image, Seedream 5.5, GPT Image 2.6, and Nano Banana 2.1 using the same prompt for a realistic nighttime Hong Kong selfie."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/VibeEverything/status/2120470052919271610",
+    "text": "Create a highly realistic handheld smartphone selfie of an East Asian woman in her early twenties on the balcony of a high-rise hotel in Hong Kong at night. Capture the relaxed, spontaneous feeling of an ordinary travel selfie.\n\nShe has a soft oval face, gently tapered jawline, fair skin with a warm pink undertone, dark brown almond-shaped eyes, a delicate nose, and glossy pink lips. She looks into the camera with slightly lowered eyelids and gently pursed lips. A tiny beauty mark is visible on her cheek on the left side of the image. Her makeup features fine eyeliner, defined lashes, soft pink blush, and glossy rosy lips. Keep her skin natural and lightly luminous.\n\nHer jet-black hair is completely straight, smooth, and waist-length, parted slightly off-center and worn loose over both shoulders. A gentle breeze moves a few fine strands.\n\nShe wears a fitted white short-sleeve crew-neck crop T-shirt and loose, wide-leg gray sweatpants sitting slightly low on her hips. Only the elastic waistband of her Calvin Klein underwear is visible above the pants, with subtle, readable branding. She also wears two layered silver necklaces with small pendants and a chunky silver bracelet with elongated rectangular links. No glasses.\n\nShe faces mostly forward with a slight body angle, gently tilts her head, and lifts her chin toward the camera. Both arms extend toward the camera: one is cropped at the left edge, while the other fills much of the lower-right foreground, with the bracelet visible. Her hands and phone remain outside the frame.\n\nFrame her from slightly above her head to her upper thighs. The camera is held at arm’s length, slightly above eye level and tilted downward, with a subtle diagonal roll. Use a natural wide-angle front-camera perspective with mild foreground enlargement.\n\nBehind her, a glass balcony railing overlooks Victoria Harbour and Hong Kong’s expansive illuminated skyline. City lights reflect on the dark water, and distant buildings remain recognizable with slight atmospheric softness. Include a small section of pale stone flooring and the hotel’s exterior wall or sliding glass door.\n\nSoft frontal light keeps her face bright and clear, while warm light from the hotel room gently illuminates her hair and clothing. Balance the exposure so both she and the nighttime skyline remain visible.\n\nMake it look like an unposed consumer smartphone photo shot with a 24–28mm equivalent lens. Preserve natural skin texture, individual hair strands, realistic fabric, subtle smartphone noise, and moderately deep focus.\n\nNo wavy, curly, brown, or short hair; no pigtails or heavy bangs. No visible phone or hands, extra limbs, distorted anatomy, extreme fisheye, daylight, heavy background blur, plastic skin."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "MiniMax H3 Image",
+    "Seedream 5.5",
+    "Nano Banana 2.1"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 89915,
+    "likes": 794,
+    "replies": 85,
+    "reposts": 81,
+    "bookmarks": 843,
+    "checkedAt": "2026-11-13T01:28:09.380Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HW1o5d1aUAAD7bb.jpg",
+     "width": 2300,
+     "height": 4096
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HW1py_Fa8AAGE2y.jpg",
+     "width": 1536,
+     "height": 2736
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HW1p7o6aMAA7kMZ.jpg",
+     "width": 1152,
+     "height": 2048
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HW1qAnMbsAADkPn.jpg",
+     "width": 1536,
+     "height": 2752
     }
    ],
    "evidence": {
@@ -1619,6 +1756,74 @@
    }
   },
   {
+   "id": "2120567673482543108",
+   "url": "https://x.com/simonecanciello/status/2120567673482543108",
+   "author": {
+    "handle": "simonecanciello",
+    "name": "Simone Canc"
+   },
+   "postedAt": "2026-11-11T17:21:46.000Z",
+   "addedAt": "2026-11-13",
+   "lang": "en",
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "四种图像模型生成的衣帽间趣味自拍",
+    "en": "Playful closet selfies across four image models"
+   },
+   "summary": {
+    "zh": "这条帖子比较了几种图像模型生成的超写实图片，并询问哪一张更好。创作者没有发布提示词。",
+    "en": "The post compares ultra-realistic images made with several AI image models and asks which looks better. The creator does not publish the prompt."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Seedream",
+    "Nano Banana",
+    "Minimax"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 22883,
+    "likes": 196,
+    "replies": 22,
+    "reposts": 10,
+    "bookmarks": 189,
+    "checkedAt": "2026-11-13T01:28:09.380Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HW3FDf-WoAAARPY.jpg",
+     "width": 1157,
+     "height": 2048
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HW3FDf0XYAAgVAB.jpg",
+     "width": 1158,
+     "height": 2048
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HW3FDf1XUAAEdMU.jpg",
+     "width": 1143,
+     "height": 2048
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HW3FDgeWkAAqpqj.jpg",
+     "width": 1150,
+     "height": 2048
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2118181775688241456",
    "url": "https://x.com/op7418/status/2118181775688241456",
    "author": {
@@ -2721,6 +2926,56 @@
      "url": "https://pbs.twimg.com/media/HWm3LDNbIAA3pwf.jpg",
      "width": 941,
      "height": 1671
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2120682994029727756",
+   "url": "https://x.com/Leviwoyun/status/2120682994029727756",
+   "author": {
+    "handle": "Leviwoyun",
+    "name": "Levi 卧云"
+   },
+   "postedAt": "2026-11-12T01:00:00.000Z",
+   "addedAt": "2026-11-13",
+   "lang": "zh",
+   "kind": "work",
+   "category": "design",
+   "title": {
+    "zh": "复古怀表知识卡片",
+    "en": "Vintage pocket watch knowledge card"
+   },
+   "summary": {
+    "zh": "创作者分享了一个用 GPT Image 2.6 制作的知识展示项目，计划用于短视频平台，目前仍在调试，稳定后开源。",
+    "en": "The creator shared a GPT Image 2.6 project for a knowledge showcase in a short-video format and said it was still being debugged before release."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Fable"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 12140,
+    "likes": 112,
+    "replies": 22,
+    "reposts": 5,
+    "bookmarks": 100,
+    "checkedAt": "2026-11-13T01:28:09.380Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2120680813633409024/vid/avc1/720x1280/fC1HfUBv6ScH6QKR.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2120680813633409024/img/L_rHPlJeEEBwsLJe.jpg",
+     "width": 1080,
+     "height": 1920,
+     "durationSec": 52
     }
    ],
    "evidence": {

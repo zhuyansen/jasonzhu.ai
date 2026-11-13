@@ -1,8 +1,8 @@
 {
  "model": "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.5)",
  "threshold": 5000,
- "updatedAt": "2026-11-12T01:17:16.257Z",
- "statsCheckedAt": "2026-11-12T01:17:16.257Z",
+ "updatedAt": "2026-11-13T01:17:15.239Z",
+ "statsCheckedAt": "2026-11-13T01:17:15.239Z",
  "inclusionRule": "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -10099,6 +10099,59 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2120429993755099515",
+   "url": "https://x.com/jasondainter/status/2120429993755099515",
+   "author": {
+    "handle": "jasondainter",
+    "name": "Jason Dainter"
+   },
+   "postedAt": "2026-11-11T08:14:40.000Z",
+   "addedAt": "2026-11-13",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "AI 辅助音乐视频",
+    "en": "AI-assisted music video"
+   },
+   "summary": {
+    "zh": "这是一首配有视频的 AI 音乐作品：用 Claude 写歌词、辅助剪辑和添加字幕，用 Midjourney 制作静帧，Minimax 生成视频，Suno 制作音乐，并在 DaVinci Resolve 中剪辑。",
+    "en": "An AI-made song and video using Claude for lyrics, editing and subtitles, Midjourney for image stills, Minimax for video, Suno for music, and DaVinci Resolve."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Midjourney v8",
+    "Minimax H3",
+    "DaVinci Resolve",
+    "Suno v6"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 268312,
+    "likes": 2700,
+    "replies": 376,
+    "reposts": 324,
+    "bookmarks": 2086,
+    "checkedAt": "2026-11-13T01:17:15.239Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2120429783439847424/img/vzooQbuB0G3IgT74.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2120429783439847424/vid/avc1/1280x720/Um1llbDUTpsP5V52.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 217
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -29908,6 +29961,59 @@
    }
   },
   {
+   "id": "2120498448550023604",
+   "url": "https://x.com/gokayfem/status/2120498448550023604",
+   "author": {
+    "handle": "gokayfem",
+    "name": "gokaygokay"
+   },
+   "postedAt": "2026-11-11T12:46:41.000Z",
+   "addedAt": "2026-11-13",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "不同三角面预算的猫模型重建",
+    "en": "Triangle-budget cat reconstructions"
+   },
+   "summary": {
+    "zh": "创作者将一张猫的照片交给 Fable 5.2 和 Opus 5.5，在 Blender 中制作了四个无纹理低多边形模型，三角形数量分别精确为 100、200、500 和 1000。",
+    "en": "A cat photo was rebuilt in Blender as four textureless low-poly meshes with exact budgets of 100, 200, 500 and 1000 triangles using Fable 5.2 and Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Fable 5.2",
+    "Blender"
+   ],
+   "resources": [
+    "https://github.com/gokayfem/image-to-lowpoly"
+   ],
+   "stats": {
+    "views": 91885,
+    "likes": 106,
+    "replies": 11,
+    "reposts": 8,
+    "bookmarks": 92,
+    "checkedAt": "2026-11-13T01:17:15.239Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2120498214360997888/img/5is4W6Zwl7-OeyR2.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2120498214360997888/vid/avc1/1280x720/ZfbjWw6UPp79QZ3C.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 58
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2117230395406364857",
    "url": "https://x.com/LexnLin/status/2117230395406364857",
    "author": {
@@ -32651,6 +32757,63 @@
     "width": 1280,
     "height": 720,
     "durationSec": 40
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2120489288857252235",
+   "url": "https://x.com/vib3coded/status/2120489288857252235",
+   "author": {
+    "handle": "vib3coded",
+    "name": "Vib3Coded"
+   },
+   "postedAt": "2026-11-11T12:10:17.000Z",
+   "addedAt": "2026-11-13",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "西瓜果冻软体物理模拟对比",
+    "en": "Watermelon jelly soft-body simulation comparison"
+   },
+   "summary": {
+    "zh": "这是一个可交互的 WebGPU 西瓜果冻切片，包含软体变形、渲染、鼠标和触控操作以及控制面板。创作者用同一提示词分别运行了一次 Fable 5.2 和 Opus 5.5。",
+    "en": "An interactive WebGPU watermelon jelly slice simulates soft-body deformation, rendering, touch and mouse interaction, and a responsive control panel. The same prompt was run once with Fable 5.2 and once with Opus 5.5."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/vib3coded/status/2120489343747801312",
+    "text": "Create “Melon Jelly” - a polished, interactive 3D watermelon jelly slice that runs directly in the browser using genuine WebGPU and WGSL shaders.\nDeliver a single, self-contained HTML file with embedded JavaScript and CSS. This must be an actual interactive 3D simulation, not a static render, video, or 2D imitation.\nTHE WATERMELON\nCreate a thick, rounded triangular watermelon wedge with:\nTranslucent ruby-red jelly flesh.\nA pale, slightly translucent layer between the flesh and rind.\nA glossy green outer rind with irregular dark-green stripes.\n\nIndividually modeled dark seeds embedded in both exposed sides.\nSoftly rounded corners and an appealing, substantial thickness.\nMake it look like an expensive gummy candy photographed in a studio. It should feel juicy, soft, and almost edible. Keep the colors rich without overexposing the highlights.\nSOFT-BODY PHYSICS\nUse a volumetric soft-body simulation, such as a tetrahedral mesh with XPBD elastic and volume-preservation constraints.\nThe user must be able to:\nGrab the tip, a corner, the flesh, or the rind.\nStretch, bend, lift, and gently twist the slice.\n\nRelease it and watch it wobble before gradually settling.\nThe slice must visibly deform locally, not simply move or scale as one rigid object. Make the rind slightly firmer than the flesh while keeping the whole slice flexible.\nPreserve volume reasonably during stretching. Prevent inverted elements, explosive motion, and permanent collapse. Use a fixed simulation timestep and bounded substeps for stability.\nAfter release, the motion should decay naturally - no instant snapping back and no endless oscillation.\nKeep seeds attached to the deforming flesh. They must move and rotate with the surface rather than float independently or remain fixed in space.\nInclude ground contact, gentle friction, and soft bouncing. Avoid visible floor penetration.\nRENDERING\nUse native WebGPU with WGSL shaders.\nInclude:\nThickness-dependent light absorption.\nRefraction through the jelly.\n\nFresnel reflections and glossy highlights.\nSoft transmitted light through thin edges.\nSubtle internal details and a few tiny air bubbles.\n\nSoft contact shadows beneath the slice.\nA light, neutral studio background.\nThe flesh, pale rind, and green skin should have distinct material responses. Avoid making everything look like clear glass or opaque plastic.\nKeep the slice large and easy to inspect, with a three-quarter camera angle that reveals the flesh, seeds, and thickness.\nINTERFACE\nUse a minimal editorial layout with generous whitespace, thin borders, restrained controls, and no decorative UI gradients.\nTop left:\n“MATERIAL STUDIES / NO. 009”\nA large italic serif heading split across two lines: “Melon” and “Jelly.”\nSmall caption:\n“A slice of summer.”\n“A little wobble.”\n“Too soft to share.”\nTop right:\nA small status indicator showing “WEBGPU · LIVE” when the renderer is running.\n\nRight-side panel:\n“THE SPECIMEN”\nThree coordinated watermelon-inspired color presets.\nFirmness slider with its current value.\nInternal damping slider with its current value.\n“Give it a nudge” and “Reset” buttons.\n“¼ speed” and “Show mesh” checkboxes.\n\nPause / Resume button.\nBottom left:\nA short hint explaining that the slice can be grabbed and stretched.\nLive mass, relative volume, and kinetic-energy readouts derived from the simulation. Clearly describe illustrative units or approximate values where appropriate.\nBottom right:\n\nA collapsible “Inside the experiment” section briefly explaining the physics and rendering.\nBEHAVIOR AND PERFORMANCE\nSupport both mouse and touch input. Use pointer capture so dragging remains reliable when the pointer leaves the object.\nMake the layout work on desktop and mobile without controls covering the slice.\nReuse buffers and avoid rebuilding geometry or compiling shaders during dragging. Keep interaction smooth and responsive.\nRespect reduced-motion preferences. If WebGPU is unavailable, display a clear explanation instead of silently substituting a fake renderer.\nVALIDATION\nTest dragging from several locations, strong stretches, repeated releases, ground collisions, all sliders, presets, pause, reset, and slow motion.\nCheck that the model returns to a stable resting shape, seeds stay attached, the mesh remains intact, and there are no rendering errors.\nPrioritize the quality of the jelly response and lighting. The result should be something people want to keep grabbing and playing with."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "WebGPU",
+    "WGSL",
+    "Fable 5.2"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 81896,
+    "likes": 630,
+    "replies": 53,
+    "reposts": 37,
+    "bookmarks": 233,
+    "checkedAt": "2026-11-13T01:17:15.239Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2120489157956911104/img/tXJfc0t4GMZQpSEO.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2120489157956911104/vid/avc1/720x932/G596IC7vscc-vyWS.mp4?tag=29",
+    "width": 720,
+    "height": 932,
+    "durationSec": 17
    },
    "evidence": {
     "via": "daily",
@@ -35865,6 +36028,59 @@
     "width": 1280,
     "height": 720,
     "durationSec": 77
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2120635583089234195",
+   "url": "https://x.com/SamgreyAi/status/2120635583089234195",
+   "author": {
+    "handle": "SamgreyAi",
+    "name": "Sam"
+   },
+   "postedAt": "2026-11-11T21:51:37.000Z",
+   "addedAt": "2026-11-13",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "夏日火车生成效果对比",
+    "en": "Summer train generation comparison"
+   },
+   "summary": {
+    "zh": "创作者让 Opus 5.5 制作一列驶过乡间的夏日火车，并用不同设置运行四次后进行并排比较。",
+    "en": "Opus 5.5 was asked to build a summer train rolling through the countryside, and four runs with different settings were compared side by side."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/SamgreyAi/status/2120635583089234195",
+    "text": "build a summer train rolling through the countryside"
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 74659,
+    "likes": 300,
+    "replies": 61,
+    "reposts": 18,
+    "bookmarks": 117,
+    "checkedAt": "2026-11-13T01:17:15.239Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2120631617840451584/img/IGi988hh49N0haIK.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2120631617840451584/vid/avc1/544x544/ycJVvEJ4JOc1UJcy.mp4?tag=29",
+    "width": 544,
+    "height": 544,
+    "durationSec": 10
    },
    "evidence": {
     "via": "daily",
@@ -50307,6 +50523,54 @@
    }
   },
   {
+   "id": "2120448953074286698",
+   "url": "https://x.com/nono_ai_archive/status/2120448953074286698",
+   "author": {
+    "handle": "nono_ai_archive",
+    "name": "노노아카이브"
+   },
+   "postedAt": "2026-11-11T09:30:01.000Z",
+   "addedAt": "2026-11-13",
+   "lang": "ko",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "移动端界面交互设计",
+    "en": "Mobile interface interaction design"
+   },
+   "summary": {
+    "zh": "创作者将现有的图形素材和粗略设计交给 Opus 5.5，用于制作移动端 UI 交互方案和展示设计过程的视频。",
+    "en": "Opus 5.5 turned supplied graphic assets and a rough design into a mobile UI interaction concept and a video showing the design process."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 50858,
+    "likes": 2154,
+    "replies": 9,
+    "reposts": 231,
+    "bookmarks": 1499,
+    "checkedAt": "2026-11-13T01:17:15.239Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2120434982539952128/img/AR6BiNnPje6u33sw.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2120434982539952128/vid/avc1/720x900/PCkUDT6igzc7dmvA.mp4?tag=29",
+    "width": 720,
+    "height": 900,
+    "durationSec": 19
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102796895982878850",
    "url": "https://x.com/peekcell/status/2102796895982878850",
    "author": {
@@ -56196,6 +56460,58 @@
     "width": 720,
     "height": 720,
     "durationSec": 25
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2120520207886061679",
+   "url": "https://x.com/Lummox_eth/status/2120520207886061679",
+   "author": {
+    "handle": "Lummox_eth",
+    "name": "Lummox"
+   },
+   "postedAt": "2026-11-11T14:13:09.000Z",
+   "addedAt": "2026-11-13",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "北极破冰船生成效果对比",
+    "en": "Arctic icebreaker generation comparison"
+   },
+   "summary": {
+    "zh": "帖子比较了四种制作北极海域破冰船场景的 AI 工作流。",
+    "en": "The post compares four AI workflows for building a cinematic icebreaker scene in Arctic waters."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Blender MCP",
+    "Kimi K3.1",
+    "GPT-6 Astra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 44116,
+    "likes": 159,
+    "replies": 28,
+    "reposts": 15,
+    "bookmarks": 157,
+    "checkedAt": "2026-11-13T01:17:15.239Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2120519402554589184/img/zEnmH0bCBZzgc6t5.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2120519402554589184/vid/avc1/720x720/LODrmXJNHNR_gF4u.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 10
    },
    "evidence": {
     "via": "daily",
@@ -63468,6 +63784,57 @@
    }
   },
   {
+   "id": "2120415920761999378",
+   "url": "https://x.com/Toarukanshiin/status/2120415920761999378",
+   "author": {
+    "handle": "Toarukanshiin",
+    "name": "とある / ago"
+   },
+   "postedAt": "2026-11-11T07:18:45.000Z",
+   "addedAt": "2026-11-13",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "形状折叠动效短片",
+    "en": "Shape folding motion graphic"
+   },
+   "summary": {
+    "zh": "这部 37 秒的动态图形作品让圆形、方形和三角形在平面印刷形状与立体形态之间转换，使用 Claude Opus 5.5、After Effects 和 Blender 制作。",
+    "en": "The 37-second motion graphics work moves circles, squares, and triangles between flat printed shapes and 3D forms, made with Claude Opus 5.5, After Effects, and Blender."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "After Effects",
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 36364,
+    "likes": 720,
+    "replies": 4,
+    "reposts": 46,
+    "bookmarks": 587,
+    "checkedAt": "2026-11-13T01:17:15.239Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2120415253465079808/img/w0WdDw-y4UHcLA8P.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2120415253465079808/vid/avc1/1280x720/dw-B2u1Cgvs3csqE.mp4?tag=14",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 37
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2107713497224130638",
    "url": "https://x.com/Michael_Moroz_/status/2107713497224130638",
    "author": {
@@ -67137,6 +67504,56 @@
     "width": 1232,
     "height": 720,
     "durationSec": 53
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2120417834694250522",
+   "url": "https://x.com/Xian0063/status/2120417834694250522",
+   "author": {
+    "handle": "Xian0063",
+    "name": "Xian | 弦"
+   },
+   "postedAt": "2026-11-11T07:26:21.000Z",
+   "addedAt": "2026-11-13",
+   "lang": "zh",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "互动式三维电子手帐",
+    "en": "Interactive 3D paper planner"
+   },
+   "summary": {
+    "zh": "创作者把实体 2027 年手帐做成了可交互的 3D 电子手帐，先用 Opus 5.5 搭建结构和交互，再用 Fable 5.2 精修材质与结构。",
+    "en": "The creator turned a physical 2027 planner into an interactive 3D digital planner, using Opus 5.5 for the structure and interactions and Fable 5.2 for material and structural refinement."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Fable 5.2"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 33128,
+    "likes": 1161,
+    "replies": 25,
+    "reposts": 147,
+    "bookmarks": 691,
+    "checkedAt": "2026-11-13T01:17:15.239Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2120417012791042048/img/DK3nV0o1KBGsc3fK.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2120417012791042048/vid/avc1/1318x720/2f_sUg1UroHZlKVa.mp4?tag=29",
+    "width": 1318,
+    "height": 720,
+    "durationSec": 40
    },
    "evidence": {
     "via": "daily",
@@ -93617,6 +94034,60 @@
    }
   },
   {
+   "id": "2120648796334178374",
+   "url": "https://x.com/JacobMolBio/status/2120648796334178374",
+   "author": {
+    "handle": "JacobMolBio",
+    "name": "Jacob"
+   },
+   "postedAt": "2026-11-11T22:44:07.000Z",
+   "addedAt": "2026-11-13",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "《Better Half》螃蟹动画短片",
+    "en": "Better Half: animated crab short film"
+   },
+   "summary": {
+    "zh": "短片《Better Half》由 Fable 和 Opus 代理使用 Python 在 Blender 中制作，在 fal 云计算上以 4K 渲染，并用 ElevenLabs 制作音乐和声音。",
+    "en": "The short animation Better Half was built in Blender by Fable and Opus agents with Python, rendered in 4K on fal cloud compute, and given music and sound by ElevenLabs."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Blender",
+    "Python",
+    "ElevenLabs",
+    "fal cloud compute",
+    "Fable 5.2"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 18693,
+    "likes": 374,
+    "replies": 19,
+    "reposts": 25,
+    "bookmarks": 234,
+    "checkedAt": "2026-11-13T01:17:15.239Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2120643700003082240/img/RbJvPs9soaiyXvM1.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2120643700003082240/vid/avc1/1280x720/18ICOkavQA-yy04V.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 85
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103649622963237261",
    "url": "https://x.com/chetanankola/status/2103649622963237261",
    "author": {
@@ -100337,6 +100808,54 @@
    }
   },
   {
+   "id": "2120531797008175491",
+   "url": "https://x.com/Ben_escrito/status/2120531797008175491",
+   "author": {
+    "handle": "Ben_escrito",
+    "name": "Ben Pierron"
+   },
+   "postedAt": "2026-11-11T14:59:12.000Z",
+   "addedAt": "2026-11-13",
+   "lang": "es",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "明暗模式切换界面",
+    "en": "Light and dark mode interfaces"
+   },
+   "summary": {
+    "zh": "Claude Opus 5.5 制作了用于切换浅色和深色模式的界面。",
+    "en": "Claude Opus 5.5 created interfaces for switching between light and dark modes."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 16369,
+    "likes": 201,
+    "replies": 12,
+    "reposts": 16,
+    "bookmarks": 115,
+    "checkedAt": "2026-11-13T01:17:15.239Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/ext_tw_video_thumb/2120531769841602560/pu/img/aER_6_lI1MoyShDe.jpg",
+    "mp4": "https://video.twimg.com/ext_tw_video/2120531769841602560/pu/vid/avc1/1146x720/ervr43ruSNgoQp1n.mp4?tag=12",
+    "width": 1146,
+    "height": 720,
+    "durationSec": 49
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2115759392192659746",
    "url": "https://x.com/Aygramm_/status/2115759392192659746",
    "author": {
@@ -101825,6 +102344,56 @@
    }
   },
   {
+   "id": "2120454553216651660",
+   "url": "https://x.com/Lummox_eth/status/2120454553216651660",
+   "author": {
+    "handle": "Lummox_eth",
+    "name": "Lummox"
+   },
+   "postedAt": "2026-11-11T09:52:16.000Z",
+   "addedAt": "2026-11-13",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "水下文明场景对比",
+    "en": "Underwater civilization scene comparison"
+   },
+   "summary": {
+    "zh": "帖子比较了 Claude Opus 5.5 和 Fable 5.2 制作的水下文明场景，其中包含遗迹、拱门、鱼群和潜艇。",
+    "en": "The post compares Claude Opus 5.5 and Fable 5.2 versions of an underwater civilization scene with ruins, arches, fish, and a submarine."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Fable 5.2"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 15679,
+    "likes": 132,
+    "replies": 35,
+    "reposts": 12,
+    "bookmarks": 90,
+    "checkedAt": "2026-11-13T01:17:15.239Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2120454370600865792/img/eriJX8rT05bbJJCS.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2120454370600865792/vid/avc1/720x880/MGDPTbuMaXk_A7x6.mp4?tag=29",
+    "width": 720,
+    "height": 880,
+    "durationSec": 10
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103525847991025776",
    "url": "https://x.com/higgsfield_ai/status/2103525847991025776",
    "author": {
@@ -101869,6 +102438,61 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2120550273810587739",
+   "url": "https://x.com/CelticMatheus/status/2120550273810587739",
+   "author": {
+    "handle": "CelticMatheus",
+    "name": "Matheus Celtic"
+   },
+   "postedAt": "2026-11-11T16:12:37.000Z",
+   "addedAt": "2026-11-13",
+   "lang": "pt",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "二维动画短片对比",
+    "en": "Animated short comparison"
+   },
+   "summary": {
+    "zh": "作品是根据旁白和逐词时间文件生成的竖屏二维动画短片，用于比较 Fable 5.2 和 Opus 5.5。",
+    "en": "A vertical 2D animated short was generated from narration and word-timing files, using Fable 5.2 and Opus 5.5 for comparison."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "post",
+    "sourceUrl": "https://x.com/CelticMatheus/status/2120550273810587739",
+    "text": "Nesta pasta tem uma narração: narracao.mp3 e palavras.json (o tempo de cada palavra). Faça um short animado em 2D para ela, vertical (1080x1920, 30 fps), feito inteiro por código. Capricha de verdade: seja o mais criativo que conseguir e escolha você mesmo o estilo visual. No fim, me entregue um MP4 com a narração."
+   },
+   "referenceAssets": true,
+   "tools": [
+    "Claude Fable 5.2"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 15663,
+    "likes": 208,
+    "replies": 10,
+    "reposts": 5,
+    "bookmarks": 212,
+    "checkedAt": "2026-11-13T01:17:15.239Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2120550062900043776/img/oZsn2AYOv6qKiWZ5.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2120550062900043776/vid/avc1/1280x720/6ITJGF50NxDVj-_r.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 33
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -102159,6 +102783,56 @@
     "width": 1280,
     "height": 720,
     "durationSec": 25
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2120426989702320501",
+   "url": "https://x.com/andriy_uiux/status/2120426989702320501",
+   "author": {
+    "handle": "andriy_uiux",
+    "name": "Andrii Boichuk"
+   },
+   "postedAt": "2026-11-11T08:02:44.000Z",
+   "addedAt": "2026-11-13",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "模型输出并排对比测试",
+    "en": "Side-by-side model output test"
+   },
+   "summary": {
+    "zh": "帖子比较了 Fable 5.2 和 Opus 5.5 的结果，但没有公开提示词。",
+    "en": "The post compares a result from Fable 5.2 with one from Opus 5.5, but no prompt is published."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Fable 5.2"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 15558,
+    "likes": 101,
+    "replies": 16,
+    "reposts": 0,
+    "bookmarks": 51,
+    "checkedAt": "2026-11-13T01:17:15.239Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2120426952578494464/img/CxJsBp2cZb0FYpTV.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2120426952578494464/vid/avc1/1280x720/ns_sKQtuSo_ztYJ2.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 7
    },
    "evidence": {
     "via": "daily",
@@ -108438,6 +109112,57 @@
     "width": 1080,
     "height": 720,
     "durationSec": 7
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2120520242136826183",
+   "url": "https://x.com/0xROAS/status/2120520242136826183",
+   "author": {
+    "handle": "0xROAS",
+    "name": "0x ROAS"
+   },
+   "postedAt": "2026-11-11T14:13:17.000Z",
+   "addedAt": "2026-11-13",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "皮克斯风格动画歌曲广告",
+    "en": "Pixar-style animated song ad"
+   },
+   "summary": {
+    "zh": "这是一个 AI 歌曲广告，工作流会生成歌词、场景、视频和字幕，并完成剪辑。",
+    "en": "An AI-generated song advertisement was produced through an MCP workflow that creates lyrics, scenes, videos, captions, and the final edit."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "AI ads MCP",
+    "Seedance 2.5"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 13573,
+    "likes": 112,
+    "replies": 30,
+    "reposts": 6,
+    "bookmarks": 142,
+    "checkedAt": "2026-11-13T01:17:15.239Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2120520057113411584/img/i55RqVTUc8GPR4fR.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2120520057113411584/vid/avc1/720x1280/ljJAZvfXnuWPggFB.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 111
    },
    "evidence": {
     "via": "daily",
@@ -120453,6 +121178,62 @@
    }
   },
   {
+   "id": "2120508846758400485",
+   "url": "https://x.com/kotohibi_3d/status/2120508846758400485",
+   "author": {
+    "handle": "kotohibi_3d",
+    "name": "kotohibi"
+   },
+   "postedAt": "2026-11-11T13:28:00.000Z",
+   "addedAt": "2026-11-13",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "大范围三维重建场景",
+    "en": "Wide-area 3D reconstruction"
+   },
+   "summary": {
+    "zh": "作品使用密集点云和立方体贴图数据，在 Blender 中生成并渲染了大范围三维模型，过程中使用了 Fable 5.2 和 Opus 5.5。",
+    "en": "A wide-area 3D model was rendered in Blender from dense point-cloud and cubemap data, using Fable 5.2 and Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Fable 5.2",
+    "Blender",
+    "Metashape",
+    "UE 5.9",
+    "Megascan"
+   ],
+   "resources": [
+    "https://x.gd/BjAKh"
+   ],
+   "stats": {
+    "views": 10673,
+    "likes": 131,
+    "replies": 1,
+    "reposts": 19,
+    "bookmarks": 106,
+    "checkedAt": "2026-11-13T01:17:15.239Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2120505795293167616/img/RJB51pdXlthv5lhC.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2120505795293167616/vid/avc1/1280x720/iX_pI-g9NjEJZjwu.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 48
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103574284576977325",
    "url": "https://x.com/dimentary/status/2103574284576977325",
    "author": {
@@ -123049,6 +123830,59 @@
    }
   },
   {
+   "id": "2120611187641434527",
+   "url": "https://x.com/ruben_kostard/status/2120611187641434527",
+   "author": {
+    "handle": "ruben_kostard",
+    "name": "Ruben Kostandyan"
+   },
+   "postedAt": "2026-11-11T20:14:40.000Z",
+   "addedAt": "2026-11-13",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "无人机概念重建测试",
+    "en": "UAV concept reconstruction test"
+   },
+   "summary": {
+    "zh": "创作者让多个模型根据参考图重建紧凑型无人机概念，并比较了它们的结果。",
+    "en": "Several models reconstructed a compact UAV concept from a reference, and the creator compared their results."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "6.1 Sol/Terra Ultra",
+    "Carbon",
+    "Astra",
+    "Fable 5.2"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 10088,
+    "likes": 325,
+    "replies": 5,
+    "reposts": 39,
+    "bookmarks": 233,
+    "checkedAt": "2026-11-13T01:17:15.239Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2120608353525145600/img/5Uc6gw5xiagwpBFc.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2120608353525145600/vid/avc1/1174x720/I8zszk6XKeMOw-qz.mp4?tag=29",
+    "width": 1174,
+    "height": 720,
+    "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2106266004515172366",
    "url": "https://x.com/ponzponz15/status/2106266004515172366",
    "author": {
@@ -123190,6 +124024,58 @@
     "width": 1280,
     "height": 720,
     "durationSec": 69
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2120565971270459430",
+   "url": "https://x.com/prasenx/status/2120565971270459430",
+   "author": {
+    "handle": "prasenx",
+    "name": "Prasenjit"
+   },
+   "postedAt": "2026-11-11T17:15:00.000Z",
+   "addedAt": "2026-11-13",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "骑马游戏原型",
+    "en": "Horse riding game prototype"
+   },
+   "summary": {
+    "zh": "一个骑马游戏在两天内用 Claude Opus 5.5 和 Fable 5.2 制作完成。提示词托管在所链接的 GitHub 仓库中。",
+    "en": "A horse-riding game was built in two days with Claude Opus 5.5 and Fable 5.2. The prompt is hosted in the linked GitHub repository."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Fable 5.2"
+   ],
+   "resources": [
+    "https://github.com/StarKnightt/valley-ride"
+   ],
+   "stats": {
+    "views": 10053,
+    "likes": 162,
+    "replies": 31,
+    "reposts": 2,
+    "bookmarks": 37,
+    "checkedAt": "2026-11-13T01:17:15.239Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2120565553542893568/img/0BtlDlNuqPiU8tbf.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2120565553542893568/vid/avc1/1280x720/zxCY0kejbfMm5lzN.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 131
    },
    "evidence": {
     "via": "daily",
@@ -131601,6 +132487,63 @@
    }
   },
   {
+   "id": "2120542368827097253",
+   "url": "https://x.com/fuckscales/status/2120542368827097253",
+   "author": {
+    "handle": "fuckscales",
+    "name": "F*ck Scales"
+   },
+   "postedAt": "2026-11-11T15:41:13.000Z",
+   "addedAt": "2026-11-13",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "《我的世界》风格故事短片",
+    "en": "Minecraft-style story short"
+   },
+   "summary": {
+    "zh": "这是一个制作竖屏 Minecraft 风格情感短片的可复用流程，包含分屏评论员头像、体素场景、字幕、配音和音效。创作者称其使用 Claude Opus 5.5 制作。",
+    "en": "A reusable pipeline for vertical Minecraft-style emotional storytelling Shorts with split-screen commentator avatars, voxel scenes, captions, voices, and sound. The creator says it was made using Claude Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Claude Code",
+    "Three.js",
+    "Blender Python",
+    "HTML Canvas",
+    "SVG",
+    "FFmpeg",
+    "OpenCV",
+    "Playwright/Chromium"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 7962,
+    "likes": 122,
+    "replies": 9,
+    "reposts": 13,
+    "bookmarks": 203,
+    "checkedAt": "2026-11-13T01:17:15.239Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2120542065096597504/img/QdxDI2fNmnkdeMPF.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2120542065096597504/vid/avc1/720x1280/akXvF8w4yT1Ed_JR.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 81
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2104717700836753573",
    "url": "https://x.com/bijanbowen/status/2104717700836753573",
    "author": {
@@ -133765,6 +134708,56 @@
    }
   },
   {
+   "id": "2120404657541615887",
+   "url": "https://x.com/hamzeh_ux/status/2120404657541615887",
+   "author": {
+    "handle": "hamzeh_ux",
+    "name": "Hamzeh Ghoreyshi"
+   },
+   "postedAt": "2026-11-11T06:34:00.000Z",
+   "addedAt": "2026-11-13",
+   "lang": "fa",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "设计师与开发者切换动画",
+    "en": "Designer-developer toggle animation"
+   },
+   "summary": {
+    "zh": "这是一个重现设计师与前端开发者争议设计的蛋糕与沙发动画。作者用 Claude Opus 5.5 在约十分钟内完成了它。",
+    "en": "A cake-and-couch animation recreates a design that had sparked debate between designers and frontend developers. The creator made it with Claude Opus 5.5 in about ten minutes."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Claude"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 7525,
+    "likes": 117,
+    "replies": 3,
+    "reposts": 4,
+    "bookmarks": 125,
+    "checkedAt": "2026-11-13T01:17:15.239Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2120329934296031232/img/DZgPiPyFS6qP95hQ.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2120329934296031232/vid/avc1/1280x720/Q7fffdUrODdSjE0a.mp4?tag=14",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 16
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103761581871964592",
    "url": "https://x.com/Dan_Kostecki/status/2103761581871964592",
    "author": {
@@ -134913,6 +135906,57 @@
    }
   },
   {
+   "id": "2120485627007558114",
+   "url": "https://x.com/CHIBIKURO_QnQ/status/2120485627007558114",
+   "author": {
+    "handle": "CHIBIKURO_QnQ",
+    "name": "チビクロ🍀四刀流AI錬金術士"
+   },
+   "postedAt": "2026-11-11T11:55:44.000Z",
+   "addedAt": "2026-11-13",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "马丘比丘旅行科普短片",
+    "en": "Machu Picchu travel explainer"
+   },
+   "summary": {
+    "zh": "这是一段由千比蒂酱用关西方言介绍马丘比丘八个景点的旅行视频。视频用 Seedance 2.5 生成，并通过 Flova 使用 Opus 5.5 剪辑。",
+    "en": "A travel video presents eight sightseeing spots in Machu Picchu through Chibity-chan's Kansai dialect narration. It was generated with Seedance 2.5 and edited with Opus 5.5 using Flova."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Seedance 2.5",
+    "Flova"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 7112,
+    "likes": 136,
+    "replies": 0,
+    "reposts": 125,
+    "bookmarks": 1,
+    "checkedAt": "2026-11-13T01:17:15.239Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2120485472346771456/img/CbCka0hiwu8Lllaj.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2120485472346771456/vid/avc1/1280x720/X74gTbiWwOBwlwbG.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 97
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2112220170727080328",
    "url": "https://x.com/numaausaumon/status/2112220170727080328",
    "author": {
@@ -135053,6 +136097,54 @@
     "width": 1280,
     "height": 720,
     "durationSec": 145
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2120356782690443382",
+   "url": "https://x.com/konstantinsaifo/status/2120356782690443382",
+   "author": {
+    "handle": "konstantinsaifo",
+    "name": "Konstantin Saifoulline"
+   },
+   "postedAt": "2026-11-11T03:23:45.000Z",
+   "addedAt": "2026-11-13",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "可玩的 Super Heavy 接取游戏",
+    "en": "Playable Super Heavy catch game"
+   },
+   "summary": {
+    "zh": "这是一个在浏览器中模拟捕捉 Super Heavy 助推器的游戏，玩家需要控制助推器机械臂与轨道的间距。作者称该作品由 Claude Opus 5.5 制作。",
+    "en": "A browser game simulates catching a Super Heavy booster, with players controlling the gap between its arms and the launch rails. The creator says Claude Opus 5.5 built it."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 7041,
+    "likes": 138,
+    "replies": 7,
+    "reposts": 4,
+    "bookmarks": 55,
+    "checkedAt": "2026-11-13T01:17:15.239Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2120356635843665920/img/PKehJLurLlRa84hO.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2120356635843665920/vid/avc1/1280x720/SqIrj_hii-I3uzMg.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 26
    },
    "evidence": {
     "via": "daily",
@@ -135771,6 +136863,56 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2120479775764459951",
+   "url": "https://x.com/marcthecreatorr/status/2120479775764459951",
+   "author": {
+    "handle": "marcthecreatorr",
+    "name": "Marcel"
+   },
+   "postedAt": "2026-11-11T11:32:29.000Z",
+   "addedAt": "2026-11-13",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "体素浮空王国效果对比",
+    "en": "Voxel floating kingdom comparison"
+   },
+   "summary": {
+    "zh": "作者用同一提示词让 Gemini 4 Carbon 和 Claude Opus 5.5 制作一个体素漂浮王国，并比较两者的耗时和成本。",
+    "en": "A voxel floating kingdom was created for a comparison between Gemini 4 Carbon and Claude Opus 5.5 using the same prompt. The post compares their time and cost."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Gemini 4 Carbon"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 6790,
+    "likes": 109,
+    "replies": 21,
+    "reposts": 3,
+    "bookmarks": 20,
+    "checkedAt": "2026-11-13T01:17:15.239Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2120477994527391744/img/Xf2Zn7kQpJ1y4o3-.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2120477994527391744/vid/avc1/1280x720/KJPTlpF43SOSWJWA.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 58
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -136714,6 +137856,63 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2120487739800068571",
+   "url": "https://x.com/taku_studio/status/2120487739800068571",
+   "author": {
+    "handle": "taku_studio",
+    "name": "TAKU"
+   },
+   "postedAt": "2026-11-11T12:04:08.000Z",
+   "addedAt": "2026-11-13",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "撕纸风格音乐短片",
+    "en": "Torn-paper music video"
+   },
+   "summary": {
+    "zh": "歌曲与视频《EVERY PIECE IS ME》把 Claudia 呈现为撕纸拼贴作品。作者用 Opus 5.5 和 Fable 进行创作与编辑，并结合 Midjourney、Suno、LTX-2.5、Blender 等工具。",
+    "en": "A song and video titled “EVERY PIECE IS ME” portray Claudia as a torn-paper collage. The creator used Opus 5.5 and Fable for writing and editing, with Midjourney, Suno, LTX-2.5, Blender, and other tools."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Fable 5.2",
+    "Midjourney",
+    "Suno",
+    "LTX-2.5",
+    "Blender",
+    "Claude Code",
+    "ffmpeg",
+    "earshot"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 6470,
+    "likes": 118,
+    "replies": 16,
+    "reposts": 23,
+    "bookmarks": 35,
+    "checkedAt": "2026-11-13T01:17:15.239Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2120487637438148608/img/kDT5mMsEWcjkLuX1.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2120487637438148608/vid/avc1/1280x720/Gxn91tMlirgEbTY2.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 185
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
