@@ -1,5 +1,128 @@
 [
   {
+    "slug": "2026-11-14",
+    "date": "2026-11-14",
+    "title": "AI 快讯 · 11月14日",
+    "items": [
+      {
+        "title": "ChatGPT Wallet开放，AI代理获授权代购能力",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/introducing-chatgpt-wallet",
+        "summary": "OpenAI推出ChatGPT Wallet，允许ChatGPT Work、Codex和dots中的AI代理在用户确认后完成购买，并沿用现有银行卡保护机制。AI代理由信息处理走向真实交易，权限控制和支付安全将成为落地关键。",
+        "titleEn": "ChatGPT Wallet Brings Purchases to AI Agents",
+        "summaryEn": "OpenAI introduced ChatGPT Wallet, allowing agents in ChatGPT Work, Codex, and dots to complete purchases after user approval while relying on existing card protections. The launch moves agents from handling information to executing real transactions, making authorization, fraud prevention, and payment security central product requirements."
+      },
+      {
+        "title": "Codex Security CLI上线，Agent可自动查修漏洞",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/openai/codex-security",
+        "summary": "OpenAI开源Codex Security CLI与TypeScript SDK，支持发现、验证并修复代码漏洞，也能直接在Codex中调用安全工作流。开发者可把安全扫描接入终端、CI或自定义Agent流程，减少人工排查成本。",
+        "titleEn": "OpenAI Launches Codex Security CLI",
+        "summaryEn": "OpenAI released Codex Security, including a CLI and TypeScript SDK for finding, validating, and fixing vulnerabilities. Developers can invoke security workflows inside Codex or integrate them into terminals, CI pipelines, and custom agents, turning code security from a separate review step into an automatable development workflow."
+      },
+      {
+        "title": "Gondola借助Codex实现营收翻倍",
+        "source": "OpenAI Blog",
+        "category": "变现案例",
+        "url": "https://openai.com/business/customer-stories/gondola",
+        "summary": "创作者服务平台Gondola称，团队使用Codex后营收实现翻倍，首席工程师产出提升约50%，ChatGPT则承担大量日常工作。案例显示，小团队把编码Agent用于产品交付和运营协作，可能直接转化为增长效率。",
+        "titleEn": "Gondola Doubles Revenue with Codex",
+        "summaryEn": "Gondola, a platform helping creatives receive credit and find work, says its revenue doubled as the team adopted Codex. Its lead engineer reported a 50% productivity increase, while ChatGPT simplified daily tasks. The case illustrates how small teams can connect coding-agent productivity directly to shipping speed and business growth."
+      },
+      {
+        "title": "ElevenLabs推出会议纪要与听写一体化应用",
+        "source": "TechCrunch AI",
+        "category": "AI 工具动态",
+        "url": "https://techcrunch.com/2026/11/13/elevenlabs-new-app-combines-meeting-note-taking-and-dictation-for-teams-and-enterprises/",
+        "summary": "ElevenLabs推出面向团队和企业的ElevenAI应用，将会议记录与语音听写整合到同一产品中。其重点不只是转写会议，而是把语音输入延伸到日常工作流，进一步争夺企业生产力软件入口。",
+        "titleEn": "ElevenLabs Launches Unified Meeting App",
+        "summaryEn": "ElevenLabs launched ElevenAI, a team and enterprise app combining meeting note-taking with dictation. The product extends the company’s speech capabilities beyond transcription, positioning voice as a broader workplace input layer and placing it in competition with established productivity and collaboration software."
+      },
+      {
+        "title": "ArtCraft用AI重写Photoshop，目标重建互联网",
+        "source": "Latent Space",
+        "category": "AI 工具动态",
+        "url": "https://latent.space/p/artcraft/",
+        "summary": "ArtCraft利用AI将Photoshop重写为开源软件，创始人还提出进一步重建互联网软件基础设施的愿景。它展示了AI编码从辅助开发转向重构成熟复杂应用的可能性，也引发开源替代与版权边界讨论。",
+        "titleEn": "ArtCraft Rebuilds Photoshop with AI",
+        "summaryEn": "ArtCraft used AI to rewrite Photoshop as open-source software, while its founder outlined a broader ambition to rebuild internet infrastructure. The project demonstrates how AI-assisted development may move beyond incremental features toward recreating complex mature applications, while raising important questions around open-source alternatives, licensing, and software ownership."
+      },
+      {
+        "title": "混合决策模型学会判断何时值得深度思考",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2611.16961",
+        "summary": "论文提出“零次或完整思考”机制：模型对简单问题只进行一次前向计算，遇到值得推理的任务才展开完整思考。对开发者而言，这种按需分配推理预算的方法有望同时降低延迟与Token成本，并保留复杂任务的效果。",
+        "titleEn": "Models Learn When Deep Reasoning Pays",
+        "summaryEn": "The paper proposes a zero-or-full reasoning strategy: a model answers easy queries in a single forward pass and activates lengthy autoregressive reasoning only when worthwhile. For developers, this offers a practical way to reduce latency and token costs on routine tasks while preserving deeper reasoning for difficult cases."
+      },
+      {
+        "title": "经验交接强化学习让Agent持续吸取失败教训",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2611.16409",
+        "summary": "研究提出Experience-Handoff强化学习，将Agent执行过程中的错误日志、环境反馈等细粒度经验整理后交给后续尝试，而不是只保留一个分数。对开发者而言，这能让Agent更有效利用失败轨迹，改善复杂任务的调试与持续优化。",
+        "titleEn": "Experience Handoff Improves Agent Learning",
+        "summaryEn": "Experience-Handoff reinforcement learning passes detailed information from failed trials, such as error logs and environment feedback, into later rollouts instead of reducing each attempt to a scalar reward. This gives developers a more efficient way to train agents from failure traces and improve debugging, planning, and long-horizon task performance."
+      }
+    ],
+    "funding": [
+      {
+        "company": "LangChain",
+        "url": "https://techcrunch.com/2026/11/13/ai-agent-startup-langchain-hits-3b-valuation/",
+        "round": "Valuation",
+        "amount": "undisclosed",
+        "valuation": "$3B",
+        "investors": "",
+        "pitch": "模型无关的Agent管理平台LangSmith已服务7000家客户，3亿美元级估值凸显Agent基础设施的商业化需求。",
+        "en": {
+          "company": "LangChain",
+          "round": "Valuation",
+          "amount": "undisclosed",
+          "valuation": "$3B",
+          "pitch": "LangChain's model-agnostic agent management platform, LangSmith, now serves 7,000 customers, and its $3B valuation highlights commercial demand for agent infrastructure."
+        }
+      },
+      {
+        "company": "Mirendil",
+        "url": "https://news.crunchbase.com/venture/biggest-startup-funding-rounds-agentic-ai-infrastructure-mirendil-mercor/",
+        "round": "Series A",
+        "amount": "$1B",
+        "valuation": "",
+        "investors": "",
+        "pitch": "专注研发流程的Agent公司完成10亿美元A轮，显示AI正从通用聊天深入高价值科研与工程场景。",
+        "en": {
+          "company": "Mirendil",
+          "round": "Series A",
+          "amount": "$1B",
+          "pitch": "Mirendil, an agent company focused on R&D workflows, raised a $1B Series A, showing AI moving beyond general-purpose chat into high-value research and engineering use cases."
+        }
+      },
+      {
+        "company": "Norwest",
+        "url": "https://techcrunch.com/2026/11/12/norwest-pushes-deeper-into-ai-with-new-4b-fund/",
+        "round": "Fund close",
+        "amount": "$4B",
+        "valuation": "",
+        "investors": "",
+        "pitch": "Norwest完成规模达40亿美元的新基金募集并加码AI，反映资本仍在扩大对AI基础设施和应用的长期配置。",
+        "en": {
+          "company": "Norwest",
+          "round": "Fund close",
+          "amount": "$4B",
+          "pitch": "Norwest closed a new $4B fund and is doubling down on AI, reflecting investors' continued long-term commitment to AI infrastructure and applications."
+        }
+      }
+    ],
+    "jasonSays": "ChatGPT Wallet把AI代理从“会回答”推进到“经授权下单”，标志Agent商业化开始触及真实支付环节，同时带来权限与风控新问题。",
+    "jasonSaysEn": "ChatGPT Wallet moves AI agents from answering questions to making authorized purchases, marking a significant step toward agentic commerce while raising new challenges around permissions, fraud prevention, and payment security.",
+    "filename": "2026-11-14.md",
+    "coverImage": "/news/2026-11-14.png",
+    "coverImageEn": "/news/en/2026-11-14.png"
+  },
+  {
     "slug": "2026-11-13",
     "date": "2026-11-13",
     "title": "AI 快讯 · 11月13日",
