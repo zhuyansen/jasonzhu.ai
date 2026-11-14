@@ -3,8 +3,8 @@
  "model": "ChatGPT Images 2.6",
  "released": "2026-11-04T23:35:14Z",
  "threshold": 5000,
- "updatedAt": "2026-11-13T01:28:09.380Z",
- "statsCheckedAt": "2026-11-13T01:28:09.380Z",
+ "updatedAt": "2026-11-14T01:24:29.084Z",
+ "statsCheckedAt": "2026-11-14T01:24:29.084Z",
  "inclusionRule": "Original post by the creator, images / GIF / video attached, >= 5000 views on that post, creator states it was made with ChatGPT Images 2.6 (GPT-Image-2.6). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -2523,6 +2523,74 @@
      "width": 768,
      "height": 560,
      "durationSec": 0
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2120772387348300055",
+   "url": "https://x.com/EEJ_OOXO/status/2120772387348300055",
+   "author": {
+    "handle": "EEJ_OOXO",
+    "name": "OOXO"
+   },
+   "postedAt": "2026-11-12T06:55:13.000Z",
+   "addedAt": "2026-11-14",
+   "lang": "ko",
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "四种模型的女性日常人像对比",
+    "en": "Four-model comparison of a woman's everyday portraits"
+   },
+   "summary": {
+    "zh": "作者使用同一张人脸图片和相同提示词，对四个图像模型在不同场景和色彩处理下的表现进行了比较。",
+    "en": "The creator compares four image models using the same face image and identical prompts across several situations and color treatments."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Seedream",
+    "Nano Banana",
+    "MiniMax H3 Image"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 15751,
+    "likes": 133,
+    "replies": 21,
+    "reposts": 11,
+    "bookmarks": 90,
+    "checkedAt": "2026-11-14T01:24:29.084Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HW5-lcEb0AABhdu.jpg",
+     "width": 2416,
+     "height": 3216
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HW5-lcEbMAAf5ir.jpg",
+     "width": 3856,
+     "height": 2176
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HW5-lcGa0AA39e5.jpg",
+     "width": 3016,
+     "height": 3016
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HW5-lcDagAAcxb-.jpg",
+     "width": 2176,
+     "height": 3856
     }
    ],
    "evidence": {
