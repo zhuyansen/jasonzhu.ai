@@ -1,8 +1,8 @@
 {
  "model": "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.5)",
  "threshold": 5000,
- "updatedAt": "2026-11-14T01:17:17.314Z",
- "statsCheckedAt": "2026-11-14T01:17:17.314Z",
+ "updatedAt": "2026-11-15T01:17:14.399Z",
+ "statsCheckedAt": "2026-11-15T01:17:14.399Z",
  "inclusionRule": "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -66039,6 +66039,59 @@
    }
   },
   {
+   "id": "2121219803268452726",
+   "url": "https://x.com/AIMind_Ai/status/2121219803268452726",
+   "author": {
+    "handle": "AIMind_Ai",
+    "name": "AiMind"
+   },
+   "postedAt": "2026-11-13T12:33:06.000Z",
+   "addedAt": "2026-11-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "切西瓜物理模拟效果对比",
+    "en": "Watermelon slicing physics simulation comparison"
+   },
+   "summary": {
+    "zh": "一个用物理模拟把果冻西瓜依次切成10块、100块、500块的作品。作者在最高推理强度下用同一提示词对比了 Claude Fable 5.2 和 Claude Opus 5.5 的结果。",
+    "en": "A physics simulation of a jelly watermelon being sliced into 10, 100, then 500 pieces. The creator compares Claude Fable 5.2 and Claude Opus 5.5 on the same prompt at max effort."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/AIMind_Ai/status/2121219803268452726",
+    "text": "slice a jelly watermelon into 10, then 100, then 500 pieces with real physics"
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 34661,
+    "likes": 146,
+    "replies": 30,
+    "reposts": 5,
+    "bookmarks": 45,
+    "checkedAt": "2026-11-15T01:17:14.399Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121219596954824704/img/AM4MBU4YXkPCmmlY.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121219596954824704/vid/avc1/720x900/Iu2PRsj8i2hYVr3p.mp4?tag=29",
+    "width": 720,
+    "height": 900,
+    "durationSec": 38
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2117674341533913591",
    "url": "https://x.com/SamgreyAi/status/2117674341533913591",
    "author": {
@@ -78763,6 +78816,56 @@
    }
   },
   {
+   "id": "2121296570872107145",
+   "url": "https://x.com/maxt3chno/status/2121296570872107145",
+   "author": {
+    "handle": "maxt3chno",
+    "name": "Max"
+   },
+   "postedAt": "2026-11-13T17:38:08.000Z",
+   "addedAt": "2026-11-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "程序化海天场景游艇模拟器",
+    "en": "Yacht simulator with procedural water and sky"
+   },
+   "summary": {
+    "zh": "一个不用任何3D模型、基于 Three.js 的游艇模拟器。游艇物理和模拟机制由 Fable 5.2 编写，贴图和光照由 Opus 5.5 完成。",
+    "en": "A Three.js yacht simulator built without 3D models. Fable 5.2 handled the physics and mechanics, and Opus 5.5 handled textures and lighting."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 25714,
+    "likes": 567,
+    "replies": 58,
+    "reposts": 29,
+    "bookmarks": 279,
+    "checkedAt": "2026-11-15T01:17:14.399Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121295707931893760/img/sOHG_15Ht6xjaoTj.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121295707931893760/vid/avc1/1280x720/QTqhh_VAhAXIqx_E.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 96
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102728913579327722",
    "url": "https://x.com/KinasRemek/status/2102728913579327722",
    "author": {
@@ -79435,6 +79538,54 @@
     "width": 1280,
     "height": 720,
     "durationSec": 60
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2121245217152016866",
+   "url": "https://x.com/Lummox_eth/status/2121245217152016866",
+   "author": {
+    "handle": "Lummox_eth",
+    "name": "Lummox"
+   },
+   "postedAt": "2026-11-13T14:14:05.000Z",
+   "addedAt": "2026-11-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "西部峡谷追逐场景多模型对比",
+    "en": "Wild West canyon chase scene comparison"
+   },
+   "summary": {
+    "zh": "用同一提示词让四个模型生成西部荒野场景，包含马匹、火车和峡谷追逐。作者对比了 Fable 5.2、Opus 5.5、GPT-6 Astra 和 Claude 3.7 Sonnet 的花费与耗时。",
+    "en": "A Wild West scene with horses, a train and a canyon chase, generated from the same prompt by four models. Fable 5.2, Opus 5.5, GPT-6 Astra and Claude 3.7 Sonnet are compared on cost and time."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 25459,
+    "likes": 140,
+    "replies": 32,
+    "reposts": 12,
+    "bookmarks": 163,
+    "checkedAt": "2026-11-15T01:17:14.399Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121244847034052608/img/LrcCPNjgnVLOCXPp.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121244847034052608/vid/avc1/720x720/RW8mht68POC9eC3n.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 10
    },
    "evidence": {
     "via": "daily",
@@ -89181,6 +89332,54 @@
    }
   },
   {
+   "id": "2121326233044537688",
+   "url": "https://x.com/noclipepe/status/2121326233044537688",
+   "author": {
+    "handle": "noclipepe",
+    "name": "noclipepe"
+   },
+   "postedAt": "2026-11-13T19:36:00.000Z",
+   "addedAt": "2026-11-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "飞屋房子建模四模型对比测试",
+    "en": "Up house build test across four models"
+   },
+   "summary": {
+    "zh": "作者用同一提示词和参考图，一次性生成电影《飞屋环游记》风格的房子。对比了 Fable 5.2、Opus 5.5、Gemini 4 Carbon 和 Gemini 4 Hydrogen 的耗时和费用。",
+    "en": "An Up-style house test run one-shot with the same prompt and reference. Fable 5.2, Opus 5.5, Gemini 4 Carbon and Gemini 4 Hydrogen are compared on time and cost."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 20600,
+    "likes": 137,
+    "replies": 17,
+    "reposts": 3,
+    "bookmarks": 39,
+    "checkedAt": "2026-11-15T01:17:14.399Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121325889690460160/img/Ej_0aw6X-YRrAMZ9.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121325889690460160/vid/avc1/1080x720/KcFTTJmE24C4xxeM.mp4?tag=29",
+    "width": 1080,
+    "height": 720,
+    "durationSec": 36
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2105723245722812598",
    "url": "https://x.com/majidmanzarpour/status/2105723245722812598",
    "author": {
@@ -89739,6 +89938,57 @@
     "width": 1042,
     "height": 720,
     "durationSec": 93
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2121411942388736142",
+   "url": "https://x.com/DeepDive_KR/status/2121411942388736142",
+   "author": {
+    "handle": "DeepDive_KR",
+    "name": "DeepDive"
+   },
+   "postedAt": "2026-11-14T01:16:35.000Z",
+   "addedAt": "2026-11-15",
+   "lang": "ko",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "Blender制作的真实悬疑纪录片",
+    "en": "True-story mystery documentary rendered in Blender"
+   },
+   "summary": {
+    "zh": "一部正在制作中的真实事件悬疑纪录片，作者用 Opus 5.5 和 Blender 制作，并租用云端 GPU 渲染。",
+    "en": "A true-crime mystery documentary video in progress, made with Opus 5.5 and Blender and rendered on rented cloud GPUs."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Blender",
+    "Codex"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 20285,
+    "likes": 241,
+    "replies": 23,
+    "reposts": 26,
+    "bookmarks": 337,
+    "checkedAt": "2026-11-15T01:17:14.399Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121410445957619712/img/UL3p8jHk7R9_hCPH.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121410445957619712/vid/avc1/1280x720/86bhgtgxXQfdC-iP.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 33
    },
    "evidence": {
     "via": "daily",
@@ -96829,6 +97079,61 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2121290268779618790",
+   "url": "https://x.com/vib3coded/status/2121290268779618790",
+   "author": {
+    "handle": "vib3coded",
+    "name": "Vib3Coded"
+   },
+   "postedAt": "2026-11-13T17:13:06.000Z",
+   "addedAt": "2026-11-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "可互动的果冻鳄鱼软体模拟",
+    "en": "Interactive jelly crocodile soft-body study"
+   },
+   "summary": {
+    "zh": "一个基于 Three.js 的可交互软体果冻鳄鱼，可以拖拽、投喂软糖小鱼，还能让它咬合。作者称由 Claude Opus 5.5 用15分钟、花费3.08美元完成。",
+    "en": "An interactive Three.js soft-body jelly crocodile that can be dragged, fed gummy fish and made to snap. The creator says Claude Opus 5.5 built it in 15 minutes for $3.08."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/vib3coded/status/2121290347196342467",
+    "text": "Build a single-file interactive three.js (r170, ES module via import map) soft-body study called \"Crocodile Jelly\" — No. 069 in a \"Material Studies\" series. A life-size crocodile cast in two layers of jelly lies on its belly on a pale studio table, legs splayed, mouth open.\n\nGeometry (signed distance field, rest pose):\n- Body: a flattened, boxy superellipse section swept along a gently curving Catmull–Rom spine from the tail tip to the snout. The tail is tall and narrow, the body broad and low, then a neck, a flat skull and a long flat snout ending in a rounded nose bulb. The belly is pressed into the table so the footprint is flat.\n- Legs: four short, stocky legs built from tapered capsules (shoulder/hip → elbow/knee → wrist), splayed out sideways. Feet are flat on the table; the front feet have 5 spread toes, the hind feet 4.\n- Tail crest: a double row of upright triangular plates that merges into a single row toward the tip.\n- Back: rows of keeled scutes down the back, with a bigger pair on the nape. Eyes sit on raised bumps on top of the skull.\n- Jaws: the mouth line sits a little below the middle of the head, so the lower jaw is a solid bar about a third of the head's depth. The upper head is built swung up about the corner of the mouth (about 17° open); the lower jaw lies flat and still on the table. The floor of the mouth is nearly flat and filled by a soft tongue pad; the palate is a shallow hollow.\n- Teeth: one row of 13 sugar cones along each jaw edge, upper pointing down and lower pointing up, staggered so they interleave, every fourth one larger.\n- Inside: about 22 small trapped air bubbles in the body, and 6 stomach slots down the middle for swallowed food.\n\nSimulation:\n- Hex lattice with 5 tets per cell, boundary nodes snapped to the surface and a node layer exactly on the floor.\n- CPU XPBD shape matching on a fixed 60 Hz step with 10 substeps. Legs, crest and head are set firmer than the body.\n- Render meshes from surface nets (clear jelly plus a cream core layer), embedded barycentrically in the tets.\n- Two muscles made by rewriting rest shapes:\n(1) the head swings down about the corner of the mouth onto the still lower jaw. It breathes slowly half-open, opens wide when food approaches, and on \"Snap\" opens wide, slams shut and lunges forward;\n(2) a travelling-wave plus steady-turn bend of the spine. The tail sways lazily and the head turns toward the pointer; \"Thrash\" sends a hard wave down the body.\n\nRendering (hand-written ShaderMaterials):\n- Key-light shadow map, a back-face thickness pass, and refraction through the front faces with Beer–Lambert absorption and a scattering tint.\n- The cream layer fills the belly up to a scalloped line low on the flank and rises at the head to just under the mouth line, so the whole lower jaw is solid cream. It carries square belly plates.\n- Clear jelly carries procedural scales in body coordinates (arc length × distance round the section): oblong plates in rows on the back and tail, an irregular cell crackle on the head, darker grooves with a subtle bump. Ragged dark crossbands across the back and tail fade out down the flank; sense-pit dots on the jaws.\n- A soft pink mouth: the tongue, the floor of the mouth, the gums along the jaw rims and the palate.\n- Eyes are glossy beads that are all iris: flecked gold, darker at the rim, with a vertical slit pupil.\n- Teeth are ivory sugar, clearer toward the tip.\n- Khronos PBR Neutral tone mapping and 4× MSAA.\n\nInteraction:\n- Drag any part to pull the jelly; scroll or use a second finger while holding to twist.\n- \"Feed\" tosses 4 gummy fish in flat arcs at the open mouth. Fish are rigid bodies that collide with the jelly and topple flat on the table. A fish resting between the jaws triggers a snap, is swallowed and stays visible in the stomach.\n- Buttons: Feed, Snap, Thrash, Reset. Sliders: Firmness, Internal damping. Checkboxes: ¼ speed, Show mesh. A Pause button.\n\nFive original colourways as swatches, each with its own iris and fish colour:\n- Moss: #5f9e30 over cream (default)\n- Jade: #2aae88\n- Amber: #e89a30 (green eyes)\n- Lilac: #9a74e2\n- Coral: #ef6458\n\nUI:\n- Editorial layout on a warm grey backdrop (#e2dfda): an italic serif title \"Crocodile Jelly.\", the caption \"Low and long and patient, in moss-green jelly, basking with its jaws open on sugar.\", a specimen panel marked \"fig. 69\", and a status pill \"THREE.JS · LIVE\".\n- Live readouts: mass in kg (from enclosed volume at 1.3 g/cm³, scale 1 unit ≈ 1.35 m), length in m measured along the spine, gape in degrees, fish swallowed.\n- A collapsible \"Inside the experiment\" notes section.\n- Responsive stacked layout on phones, a WebGL2 fallback message, prefers-reduced-motion support. English UI throughout."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 17888,
+    "likes": 328,
+    "replies": 44,
+    "reposts": 17,
+    "bookmarks": 151,
+    "checkedAt": "2026-11-15T01:17:14.399Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121290025744678912/img/XTncU0St3T0cQ4lz.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121290025744678912/vid/avc1/1140x720/f4zQsUGE1PBkw1TD.mp4?tag=29",
+    "width": 1140,
+    "height": 720,
+    "durationSec": 17
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -105150,6 +105455,58 @@
    }
   },
   {
+   "id": "2121221667619852660",
+   "url": "https://x.com/marcthecreatorr/status/2121221667619852660",
+   "author": {
+    "handle": "marcthecreatorr",
+    "name": "Marcel"
+   },
+   "postedAt": "2026-11-13T12:40:30.000Z",
+   "addedAt": "2026-11-15",
+   "lang": "en",
+   "models": [
+    "sonnet-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "同一提示词的3D飞船建模对比",
+    "en": "3D ship build comparison with same prompt"
+   },
+   "summary": {
+    "zh": "作者把同一段提示词分别交给 Sonnet 5.5（在 Claude Code 中）和 Gemini 4 Hydrogen（通过 Cursor），各生成一个 3D 飞船场景，并对比了效果、耗时和费用。Hydrogen 需要再改一版才能用。",
+    "en": "The creator gave Sonnet 5.5 (in Claude Code) and Gemini 4 Hydrogen (via Cursor) the same prompt for a 3D ship scene and compared results, time and cost. Hydrogen needed a second pass."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Claude Code",
+    "Cursor",
+    "Gemini 4 Hydrogen"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 14988,
+    "likes": 117,
+    "replies": 37,
+    "reposts": 5,
+    "bookmarks": 27,
+    "checkedAt": "2026-11-15T01:17:14.399Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121221429853134848/img/tmfLYkezKWakHyki.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121221429853134848/vid/avc1/720x720/LcQeSk50ZJgW0jS-.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 54
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2110696310340718884",
    "url": "https://x.com/jumperz/status/2110696310340718884",
    "author": {
@@ -112566,6 +112923,54 @@
    }
   },
   {
+   "id": "2121285909018763358",
+   "url": "https://x.com/oguzthedev/status/2121285909018763358",
+   "author": {
+    "handle": "oguzthedev",
+    "name": "Oguz"
+   },
+   "postedAt": "2026-11-13T16:55:46.000Z",
+   "addedAt": "2026-11-15",
+   "lang": "tr",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "养蜂主题手机游戏",
+    "en": "Beekeeping mobile game"
+   },
+   "summary": {
+    "zh": "作者在 Claude Opus 5.5 发布当天开发的一款养蜂经营手游，现已在安卓和 iOS 平台上架。",
+    "en": "A beekeeping tycoon mobile game the creator made on the day Claude Opus 5.5 launched, now published on Android and iOS."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 12916,
+    "likes": 113,
+    "replies": 10,
+    "reposts": 13,
+    "bookmarks": 107,
+    "checkedAt": "2026-11-15T01:17:14.399Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121285835068674048/img/V0JYbdWXSy0mfZta.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121285835068674048/vid/avc1/720x1280/ILtrntjJeKbrEPn-.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 16
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103591755564085589",
    "url": "https://x.com/Skylartkitchen/status/2103591755564085589",
    "author": {
@@ -113256,6 +113661,56 @@
     "width": 720,
     "height": 910,
     "durationSec": 18
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2121165425052402063",
+   "url": "https://x.com/Hamzaa_i/status/2121165425052402063",
+   "author": {
+    "handle": "Hamzaa_i",
+    "name": "Hamza"
+   },
+   "postedAt": "2026-11-13T08:57:01.000Z",
+   "addedAt": "2026-11-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "Roblox 游戏及预告片",
+    "en": "Roblox game with trailer"
+   },
+   "summary": {
+    "zh": "作者用 Opus 5.5（Medium）配合自己的工作流和技能循环运行，两天做出一款 Roblox 游戏。据作者说，预告片、图片、模型、界面和广告也都由 Claude 完成。",
+    "en": "A Roblox game made in two days with Opus 5.5 (Medium) running in a loop with the creator's own workflows and skills. Per the creator, Claude also produced the trailer, images, models, UI and ads."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Roblox"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 12632,
+    "likes": 248,
+    "replies": 21,
+    "reposts": 14,
+    "bookmarks": 199,
+    "checkedAt": "2026-11-15T01:17:14.399Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121165181594079232/img/apM1sjm-3aqCgHPe.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121165181594079232/vid/avc1/1280x720/MYPVvIFnGYEtMo8Z.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 106
    },
    "evidence": {
     "via": "daily",
@@ -115075,6 +115530,56 @@
     "width": 1280,
     "height": 720,
     "durationSec": 28
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2121097161589039470",
+   "url": "https://x.com/konstantinsaifo/status/2121097161589039470",
+   "author": {
+    "handle": "konstantinsaifo",
+    "name": "Konstantin Saifoulline"
+   },
+   "postedAt": "2026-11-13T04:25:46.000Z",
+   "addedAt": "2026-11-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "十二臂机器人装配单元模拟",
+    "en": "Twelve-arm robot assembly cell simulation"
+   },
+   "summary": {
+    "zh": "Claude Opus 5.5 借助 Airsup 搭建了一个 12 台协作机械臂的仿真产线，每 13 秒组装一把电钻。用户可以移除任意机械臂，观察调度器如何重新分配任务。",
+    "en": "A simulated 12-arm cobot cell that assembles a cordless drill every 13 seconds, built by Claude Opus 5.5 using Airsup. Users can remove arms and see how the planner reassigns jobs."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Airsup"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 12167,
+    "likes": 145,
+    "replies": 7,
+    "reposts": 14,
+    "bookmarks": 102,
+    "checkedAt": "2026-11-15T01:17:14.399Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121096658260017152/img/fCeF3lC98V3KKAK7.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121096658260017152/vid/avc1/1280x720/lNgSTxhnfygI9O0o.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 35
    },
    "evidence": {
     "via": "daily",
@@ -132408,6 +132913,54 @@
     "width": 1280,
     "height": 720,
     "durationSec": 45
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2121219834637627527",
+   "url": "https://x.com/kevserctk/status/2121219834637627527",
+   "author": {
+    "handle": "kevserctk",
+    "name": "Kevser"
+   },
+   "postedAt": "2026-11-13T12:33:13.000Z",
+   "addedAt": "2026-11-15",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "短动画作品",
+    "en": "Short generated animation"
+   },
+   "summary": {
+    "zh": "作者展示了一件作品，称是通过给 Claude Opus 5.5 写提示词生成的，但没有公开提示词，也没有说明制作过程。",
+    "en": "The creator shares a work they say they made by prompting Claude Opus 5.5, without describing the prompt or the process."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 8131,
+    "likes": 312,
+    "replies": 9,
+    "reposts": 7,
+    "bookmarks": 196,
+    "checkedAt": "2026-11-15T01:17:14.399Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121219797148979200/img/KwDwoJnfLxjaNp8C.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121219797148979200/vid/avc1/1280x720/MdzkMwNJObauMgVs.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 7
    },
    "evidence": {
     "via": "daily",

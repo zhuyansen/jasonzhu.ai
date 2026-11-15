@@ -3,8 +3,8 @@
  "model": "ChatGPT Images 2.6",
  "released": "2026-11-04T23:35:14Z",
  "threshold": 5000,
- "updatedAt": "2026-11-14T01:24:29.084Z",
- "statsCheckedAt": "2026-11-14T01:24:29.084Z",
+ "updatedAt": "2026-11-15T01:21:24.804Z",
+ "statsCheckedAt": "2026-11-15T01:21:24.804Z",
  "inclusionRule": "Original post by the creator, images / GIF / video attached, >= 5000 views on that post, creator states it was made with ChatGPT Images 2.6 (GPT-Image-2.6). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -1394,6 +1394,57 @@
      "width": 950,
      "height": 1014,
      "durationSec": 0
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2121361947446677797",
+   "url": "https://x.com/ingi_erlingsson/status/2121361947446677797",
+   "author": {
+    "handle": "ingi_erlingsson",
+    "name": "Ingi Erlingsson 🪄"
+   },
+   "postedAt": "2026-11-13T21:57:55.000Z",
+   "addedAt": "2026-11-15",
+   "lang": "en",
+   "kind": "work",
+   "category": "gif",
+   "title": {
+    "zh": "头戴方巾墨镜的苔藓下巴头像动画",
+    "en": "Moss-chinned head in bandana and shades, animated"
+   },
+   "summary": {
+    "zh": "作者用 GPT Image 2.6 生成环绕旋转的头像 GIF，并制作风格参考图。随后用 Fable 5.2 逐帧拆解，生成纹理在头部流动且前后连贯的关键帧，最后在 ComfyUI 中完成。",
+    "en": "An animated experiment of orbiting heads with moving textures. The creator made orbiting GIFs with GPT Image 2.6 and style reference images, then used Fable 5.2 to extract frames and build temporally consistent keyframes, finishing in ComfyUI."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Fable 5.2",
+    "ComfyUI"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 26724,
+    "likes": 710,
+    "replies": 14,
+    "reposts": 31,
+    "bookmarks": 381,
+    "checkedAt": "2026-11-15T01:21:24.804Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2121361296088014848/vid/avc1/720x720/Xp9tatdAPe_bzRqh.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2121361296088014848/img/SNi_oFbmZIz8nO0o.jpg",
+     "width": 1080,
+     "height": 1080,
+     "durationSec": 9
     }
    ],
    "evidence": {
@@ -3691,6 +3742,52 @@
      "width": 1600,
      "height": 900,
      "durationSec": 7
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2121082378047086863",
+   "url": "https://x.com/DeryaTR_/status/2121082378047086863",
+   "author": {
+    "handle": "DeryaTR_",
+    "name": "Derya Unutmaz, MD"
+   },
+   "postedAt": "2026-11-13T03:27:01.000Z",
+   "addedAt": "2026-11-15",
+   "lang": "en",
+   "kind": "work",
+   "category": "illustration",
+   "title": {
+    "zh": "紫花映雪的小镇街巷刮刀油画",
+    "en": "Snowy village lane with purple blossoms, palette-knife painting"
+   },
+   "summary": {
+    "zh": "作者分享的“每日 AI 画作”，用 GPT Image 2.6 生成。",
+    "en": "An AI painting shared as the creator's painting of the day, made with GPT Image 2.6."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 8638,
+    "likes": 139,
+    "replies": 9,
+    "reposts": 6,
+    "bookmarks": 11,
+    "checkedAt": "2026-11-15T01:21:24.804Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HW-ZKDCWsAE05sj.jpg",
+     "width": 1122,
+     "height": 1402
     }
    ],
    "evidence": {
