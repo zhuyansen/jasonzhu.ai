@@ -156,6 +156,18 @@ jobs:
         if: steps.write.outputs.issue != ''
         run: npm run build > "$RUNNER_TEMP/build.log" 2>&1 || { tail -40 "$RUNNER_TEMP/build.log"; exit 1; }
 
+      - name: 这一期的文件存成 artifact（试跑时人工检查、确认后可直接拿来发布）
+        if: steps.write.outputs.issue != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: chuhai-weekly-${{ steps.write.outputs.issue }}
+          retention-days: 14
+          path: |
+            src/content/blog/chuhai-weekly-${{ steps.write.outputs.issue }}.md
+            src/content/blog/chuhai-weekly-${{ steps.write.outputs.issue }}.en.md
+            public/blog/chuhai-weekly-${{ steps.write.outputs.issue }}/
+            ops/seller-weekly/newsletter/${{ steps.day.outputs.today }}-issue-${{ steps.write.outputs.issue }}*.md
+
       - name: 提交上线（只提交这一期的文件）
         id: push
         if: steps.write.outputs.issue != '' && inputs.publish != '0'
