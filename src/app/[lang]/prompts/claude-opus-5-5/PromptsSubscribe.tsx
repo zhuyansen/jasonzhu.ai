@@ -9,14 +9,15 @@ import { track } from "@/lib/track";
  * 所以订阅奖励换成「Top 50 提示词」合集页，订阅后立刻解锁。现在还没有英文邮件，文案只承诺「有值得一试的新提示词才发」，不承诺每周。
  * 2026-11-06 起 ChatGPT Images 2.6 图片库的英文页也用它（library="images"）：图片库作品还少，没有自己的奖励页，
  * Top 50 当作附赠，文案以「新的图片提示词」为主。
- * 来源都以 prompts-en 开头（Claude 库 prompts-en，图片库 prompts-en-images），以后做英文邮件按这个前缀挑人。
+ * 2026-11-16 起 Gemini 4 库的英文页也用它（library="gemini"），和 Claude 库同类作品，Top 50 直接相关。
+ * 来源都以 prompts-en 开头（Claude 库 prompts-en，图片库 prompts-en-images，Gemini 库 prompts-en-gemini），以后做英文邮件按这个前缀挑人。
  * 中文快讯和周报的发信脚本会剔除这个前缀的订阅者，别让他们收到中文邮件。
  */
 export const TOP50_PATH = "prompts/claude-opus-5-5/top-50";
 
-type Library = "claude" | "images";
+type Library = "claude" | "images" | "gemini";
 
-const SOURCE: Record<Library, string> = { claude: "prompts-en", images: "prompts-en-images" };
+const SOURCE: Record<Library, string> = { claude: "prompts-en", images: "prompts-en-images", gemini: "prompts-en-gemini" };
 
 const COPY: Record<Library, { pitch: React.ReactNode; title: string; body: React.ReactNode; button: string; done: string }> = {
   claude: {
@@ -47,6 +48,23 @@ const COPY: Record<Library, { pitch: React.ReactNode; title: string; body: React
       <>
         We&apos;ll only email you when there&apos;s a new ChatGPT Images 2.6 prompt worth trying. Free right away: the 50 most-viewed Claude 5.5
         video prompts on one page, with the full text, the creator and the post each one came from.
+      </>
+    ),
+    button: "Subscribe",
+    done: "You're in. Here's your bonus, the 50 most-viewed Claude 5.5 video prompts:",
+  },
+  gemini: {
+    pitch: (
+      <>
+        <span className="font-semibold text-gray-900">New Gemini 4 prompts by email</span>, only when one is worth trying. Free bonus: the 50
+        most-viewed Claude 5.5 video prompts.
+      </>
+    ),
+    title: "Get new Gemini 4 prompts by email",
+    body: (
+      <>
+        We&apos;ll only email you when there&apos;s a new Gemini 4 prompt worth trying. Free right away: the 50 most-viewed Claude 5.5 video
+        prompts on one page, the same kind of 3D, physics and game builds, with the full text, the creator and the post each one came from.
       </>
     ),
     button: "Subscribe",

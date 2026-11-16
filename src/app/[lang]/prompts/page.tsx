@@ -3,6 +3,7 @@ import Link from "@/components/Link";
 import type { Locale } from "@/lib/dictionaries";
 import { getOpusLibrary, formatCount } from "@/lib/opus-prompts";
 import { getImageLibrary, IMAGE_LIBRARY_PATH, coverOf } from "@/lib/image-prompts";
+import { getGeminiLibrary, GEMINI_LIBRARY_PATH } from "@/lib/gemini-prompts";
 import { withSocialCards } from "@/lib/social";
 
 const SITE_URL = "https://jasonzhu.ai";
@@ -12,10 +13,10 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang: rawLang } = await params;
   const lang = (rawLang === "en" ? "en" : "zh") as Locale;
   const isZh = lang === "zh";
-  const title = isZh ? "AI 提示词库：Claude 5.5 作品与 ChatGPT Images 2.6 图片提示词" : "AI Prompt Libraries: Claude 5.5 Works and ChatGPT Images 2.6 Prompts";
+  const title = isZh ? "AI 提示词库：Claude 5.5、Gemini 4 作品与 ChatGPT Images 2.6 图片提示词" : "AI Prompt Libraries: Claude 5.5 and Gemini 4 Works, ChatGPT Images 2.6 Prompts";
   const description = isZh
-    ? "X 上创作者公开的 AI 作品和原始提示词，原文照录、注明出处，每天自动更新：Claude 5.5 做的视频、动效、3D 和游戏，ChatGPT Images 2.6 做的 GIF、人像、海报和表情包。"
-    : "AI works and the original prompts creators shared on X, verbatim with sources and updated daily: video, motion, 3D and games made with Claude 5.5, and GIFs, portraits, posters and stickers made with ChatGPT Images 2.6.";
+    ? "X 上创作者公开的 AI 作品和原始提示词，原文照录、注明出处：Claude 5.5 做的视频、动效、3D 和游戏，Gemini 4 写代码做的 3D、物理模拟和同题对比，ChatGPT Images 2.6 做的 GIF、人像、海报和表情包。"
+    : "AI works and the original prompts creators shared on X, verbatim with sources: video, motion, 3D and games made with Claude 5.5, 3D scenes, physics sims and head-to-head comparisons built by Gemini 4, and GIFs, portraits, posters and stickers made with ChatGPT Images 2.6.";
   return withSocialCards({
     title,
     description,
@@ -33,6 +34,7 @@ export default async function PromptsIndexPage({ params }: { params: Promise<{ l
   const isZh = lang === "zh";
   const opus = getOpusLibrary();
   const images = getImageLibrary();
+  const gemini = getGeminiLibrary();
   const libraries = [
     {
       href: `/${lang}${IMAGE_LIBRARY_PATH}`,
@@ -52,6 +54,15 @@ export default async function PromptsIndexPage({ params }: { params: Promise<{ l
       prompts: opus.withPrompt,
       cover: opus.cases[0]?.video.poster || null,
     },
+    {
+      href: `/${lang}${GEMINI_LIBRARY_PATH}`,
+      name: "Gemini 4",
+      badge: "New",
+      desc: isZh ? "Gemini 4（Argon、Carbon）写代码做的 3D 场景、物理模拟、机械动画和游戏，大多是和 Claude、GPT 的同题对比。" : "3D scenes, physics sims, machine cutaways and games built in code by Gemini 4 (Argon, Carbon), mostly same-prompt comparisons against Claude and GPT.",
+      works: gemini.cases.length,
+      prompts: gemini.withPrompt,
+      cover: gemini.cases[0] ? coverOf(gemini.cases[0].media[0]) : null,
+    },
   ];
 
   return (
@@ -62,7 +73,7 @@ export default async function PromptsIndexPage({ params }: { params: Promise<{ l
           ? "收录 X 上播放或浏览过 5000 的作品和创作者本人公开的提示词，原文照录、注明出处，每天自动更新。"
           : "Works with 5,000+ views on X and the prompts their creators shared, verbatim with sources, updated daily."}
       </p>
-      <div className="grid sm:grid-cols-2 gap-6">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {libraries.map((l) => (
           <Link key={l.href} href={l.href} className="group rounded-2xl border border-gray-100 overflow-hidden bg-white shadow-sm hover:shadow-lg transition-shadow">
             <div className="relative aspect-[16/10] bg-gray-100">

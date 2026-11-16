@@ -24,6 +24,7 @@ const args = process.argv.slice(2).filter((a) => a !== "--dry-run");
 const PROMPT_LIBS = {
   "opus-prompts": "/prompts/claude-opus-5-5",
   "image-prompts": "/prompts/chatgpt-images-2-6",
+  "gemini-prompts": "/prompts/gemini-4",
 };
 
 /** 改动的文件路径 → 候选 URL（zh/en 都列上，交给 sitemap 过滤） */
@@ -38,9 +39,11 @@ function urlsForFile(file) {
     return [...both(PROMPT_LIBS["opus-prompts"]), ...both("/prompts")];
   if (file === "src/content/image-prompts/chatgpt-images-2-6.json")
     return [...both(PROMPT_LIBS["image-prompts"]), ...both("/prompts")];
+  if (file === "src/content/gemini-prompts/gemini-4.json")
+    return [...both(PROMPT_LIBS["gemini-prompts"]), ...both("/prompts")];
   // 作品详情页按 public/data/<库>/<id>.json 推：生成脚本只给有提示词的作品写这个文件，正好是有详情页、进 sitemap 的那些
   // （Claude 库没提示词的详情页 noindex，图片库没提示词的没有详情页、卡片直链 X）。文件只含提示词全文，数据核验改播放量不会动它。
-  const work = file.match(/^public\/data\/(opus-prompts|image-prompts)\/(\d{15,})\.json$/);
+  const work = file.match(/^public\/data\/(opus-prompts|image-prompts|gemini-prompts)\/(\d{15,})\.json$/);
   if (work) return both(`${PROMPT_LIBS[work[1]]}/${work[2]}`);
   return [];
 }
