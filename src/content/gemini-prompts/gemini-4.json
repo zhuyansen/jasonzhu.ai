@@ -3,8 +3,8 @@
  "model": "Gemini 4",
  "released": "2026-10-14T00:00:00Z",
  "threshold": 5000,
- "updatedAt": "2026-11-16T17:54:52.574Z",
- "statsCheckedAt": "2026-11-16T10:43:30.012Z",
+ "updatedAt": "2026-11-16T18:07:37.872Z",
+ "statsCheckedAt": "2026-11-16T17:58:53.900Z",
  "inclusionRule": "Original post by the creator, media attached, >= 5000 views on that post, and the creator's own text says Gemini 4 (Argon, Carbon, Hydrogen, Krypton, Pro...) built it in code; same-prompt comparisons against other models included. Seeded on 2026-11-16 from the Claude 5.5 library. Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -471,6 +471,66 @@
    }
   },
   {
+   "id": "2122014257667846338",
+   "url": "https://x.com/fiapp_pro/status/2122014257667846338",
+   "author": {
+    "handle": "fiapp_pro",
+    "name": "索螺丝"
+   },
+   "postedAt": "2026-11-15T17:09:58.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "zh",
+   "kind": "comparison",
+   "models": [
+    "hydrogen"
+   ],
+   "rivals": [
+    "gpt"
+   ],
+   "category": "ui",
+   "title": {
+    "zh": "前端页面复刻对比",
+    "en": "Frontend recreation comparison"
+   },
+   "summary": {
+    "zh": "作者比较了 ChatGPT 6.1 Sol 和 Gemini 4 Hydrogen 用同一提示词生成的前端，并认为 GPT 已经无法使用。",
+    "en": "The creator compared frontends made with the same prompt by ChatGPT 6.1 Sol and Gemini 4 Hydrogen, concluding that GPT was not usable."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "ChatGPT 6.1 Sol"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 189078,
+    "likes": 240,
+    "replies": 74,
+    "reposts": 3,
+    "bookmarks": 93,
+    "checkedAt": "2026-11-16T17:58:53.900Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXLoiTGawAAmMA7.jpg",
+     "width": 2542,
+     "height": 1894
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXLotjYaQAAOvdi.jpg",
+     "width": 2560,
+     "height": 1708
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2110136719827747181",
    "url": "https://x.com/vib3coded/status/2110136719827747181",
    "author": {
@@ -705,6 +765,78 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2121788887823778297",
+   "url": "https://x.com/vamsibatchuk/status/2121788887823778297",
+   "author": {
+    "handle": "vamsibatchuk",
+    "name": "Vamsi Batchu"
+   },
+   "postedAt": "2026-11-15T02:14:26.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "hydrogen"
+   ],
+   "rivals": [],
+   "category": "svg",
+   "title": {
+    "zh": "按参考画风用代码绘制的插画",
+    "en": "Code-drawn illustrations in a reference art style"
+   },
+   "summary": {
+    "zh": "作者提供了一张参考图，让 Gemini 4 Hydrogen 仅用单文件代码创作多种艺术主题，不使用外部仓库或技能。",
+    "en": "Gemini 4 Hydrogen created varied artwork subjects from a supplied reference image using single-file code, without external repositories or skills."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "JavaScript",
+    "p5.js",
+    "Python"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 124694,
+    "likes": 2665,
+    "replies": 130,
+    "reposts": 118,
+    "bookmarks": 1500,
+    "checkedAt": "2026-11-16T17:58:53.900Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXIbfp9XwAAJ_x2.jpg",
+     "width": 1400,
+     "height": 1400
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXIbfq-WMAAyofE.jpg",
+     "width": 1400,
+     "height": 1400
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXIbfqZXYAA8P61.jpg",
+     "width": 1400,
+     "height": 1400
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXIbfqpWYAA3lCQ.jpg",
+     "width": 1400,
+     "height": 1400
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -1540,6 +1672,62 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2121885449509851415",
+   "url": "https://x.com/chetaslua/status/2121885449509851415",
+   "author": {
+    "handle": "chetaslua",
+    "name": "Chetaslua"
+   },
+   "postedAt": "2026-11-15T08:38:08.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "carbon",
+    "hydrogen"
+   ],
+   "rivals": [],
+   "category": "motion",
+   "title": {
+    "zh": "骑自行车的鹈鹕动画",
+    "en": "Pelican riding a bicycle animation"
+   },
+   "summary": {
+    "zh": "作者用纯 JavaScript 制作了一件多媒体艺术作品：鹈鹕骑自行车穿越不同情绪风格，音乐和音效也由代码生成。",
+    "en": "The creator made a JavaScript-only multimedia art piece of a pelican riding a bike between emotional art styles, with music and sound effects also coded."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Antigravity",
+    "JavaScript"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 87776,
+    "likes": 1619,
+    "replies": 117,
+    "reposts": 79,
+    "bookmarks": 582,
+    "checkedAt": "2026-11-16T17:58:53.900Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2121884080593891328/vid/avc1/1280x720/1W2cu7uznJylYAN7.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2121884080593891328/img/wZ-OMut-QRru3s9j.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 110
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -3798,6 +3986,62 @@
    }
   },
   {
+   "id": "2121890724136227182",
+   "url": "https://x.com/noclipepe/status/2121890724136227182",
+   "author": {
+    "handle": "noclipepe",
+    "name": "noclipepe"
+   },
+   "postedAt": "2026-11-15T08:59:06.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "en",
+   "kind": "comparison",
+   "models": [
+    "carbon",
+    "hydrogen",
+    "krypton"
+   ],
+   "rivals": [],
+   "category": "scene3d",
+   "title": {
+    "zh": "《飞屋环游记》房屋三维场景对比",
+    "en": "Up house 3D scene comparison"
+   },
+   "summary": {
+    "zh": "作者用 Up House 测试比较了 Arena 中的 Gemini 4 Krypton、Hydrogen 和 Carbon，并记录了各自的完成时间。",
+    "en": "The creator compared Gemini 4 Krypton in Arena, Hydrogen, and Carbon on an Up House test, recording completion times for each."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Arena"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 29771,
+    "likes": 185,
+    "replies": 21,
+    "reposts": 5,
+    "bookmarks": 43,
+    "checkedAt": "2026-11-16T17:58:53.900Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2121889419103727617/vid/avc1/720x1280/E8ypxwzm0dtroS4a.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2121889419103727617/img/aHmy9O2xCIJNMhPq.jpg",
+     "width": 1080,
+     "height": 1920,
+     "durationSec": 37
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2112583451958538598",
    "url": "https://x.com/anxuanng/status/2112583451958538598",
    "author": {
@@ -4615,6 +4859,58 @@
    }
   },
   {
+   "id": "2121745863827697687",
+   "url": "https://x.com/SidraMiconi/status/2121745863827697687",
+   "author": {
+    "handle": "SidraMiconi",
+    "name": "Sidra Miconi"
+   },
+   "postedAt": "2026-11-14T23:23:28.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "hydrogen"
+   ],
+   "rivals": [],
+   "category": "mechanics",
+   "title": {
+    "zh": "可交互的线粒体分子马达",
+    "en": "Interactive mitochondrial motor"
+   },
+   "summary": {
+    "zh": "Gemini 4 Hydrogen 一次调用生成了可交互的 ATP 合酶应用，形状采用真实冷冻电镜坐标，运动经过简化；作者之后修正了镜头。",
+    "en": "Gemini 4 Hydrogen built an interactive ATP synthase app in one call, using real cryo-EM coordinates for the shape and simplified motion; the creator later fixed the camera."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 25618,
+    "likes": 244,
+    "replies": 3,
+    "reposts": 3,
+    "bookmarks": 85,
+    "checkedAt": "2026-11-16T17:58:53.900Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2121745257624961024/vid/avc1/1280x720/Emll-lzm3w939RmV.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2121745257624961024/img/bvaLM2ww-ippFWba.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 26
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2110385278246654052",
    "url": "https://x.com/MiaAI_lab/status/2110385278246654052",
    "author": {
@@ -4911,6 +5207,78 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2121705327632511240",
+   "url": "https://x.com/lyraxana/status/2121705327632511240",
+   "author": {
+    "handle": "lyraxana",
+    "name": "lyra"
+   },
+   "postedAt": "2026-11-14T20:42:24.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "en",
+   "kind": "comparison",
+   "models": [
+    "argon",
+    "carbon",
+    "krypton"
+   ],
+   "rivals": [],
+   "category": "scene3d",
+   "title": {
+    "zh": "死星三维场景",
+    "en": "Death Star scene"
+   },
+   "summary": {
+    "zh": "作者对比了 Gemini 4 Krypton、Carbon 和 Argon 零样本制作 Death Star 的结果，并展示了 GPT Astra 的 Death Star 结果。",
+    "en": "The creator compared Gemini 4 Krypton, Carbon, and Argon on a zero-shot Death Star task, alongside a GPT Astra Death Star result."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "GPT Astra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 22429,
+    "likes": 378,
+    "replies": 31,
+    "reposts": 12,
+    "bookmarks": 48,
+    "checkedAt": "2026-11-16T17:58:53.900Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2121699641318150144/vid/avc1/1080x720/icEovSOEslRpl96y.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2121699641318150144/img/XmZqbEkefw-GzmPv.jpg",
+     "width": 2400,
+     "height": 1600,
+     "durationSec": 130
+    },
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2121701910688194560/vid/avc1/1080x720/g846SVIbgsUjOrS0.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2121701910688194560/img/mZ8hu6Zz2UqVwgpg.jpg",
+     "width": 2400,
+     "height": 1600,
+     "durationSec": 106
+    },
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2121703796057178112/vid/avc1/1080x720/kewK8t0_qJiS2izK.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2121703796057178112/img/0aSV7lOF8z67UK3v.jpg",
+     "width": 2400,
+     "height": 1600,
+     "durationSec": 81
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -5308,6 +5676,67 @@
    }
   },
   {
+   "id": "2121965512364331497",
+   "url": "https://x.com/ai_for_success/status/2121965512364331497",
+   "author": {
+    "handle": "ai_for_success",
+    "name": "AshutoshShrivastava"
+   },
+   "postedAt": "2026-11-15T13:56:17.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "carbon"
+   ],
+   "rivals": [],
+   "category": "mechanics",
+   "title": {
+    "zh": "阿尔卑斯水车锯木厂与落锤铁匠铺",
+    "en": "Alpine waterwheel sawmill and trip-hammer forge"
+   },
+   "summary": {
+    "zh": "作者使用 Goal、Swarm、Gemini 4 Carbon 和自定义技能，制作了一个带联动水力机械的阿尔卑斯水车锯木厂与铁匠锻造炉 3D 体验。",
+    "en": "The creator used Goal, Swarm, Gemini 4 Carbon, and custom skills to build an interactive 3D Alpine watermill and blacksmith forge with linked water-driven machinery."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/ai_for_success/status/2122005946696413641",
+    "text": "Build an interactive 3D web experience of an Alpine Waterwheel Sawmill & Blacksmith Trip-Hammer Forge set in a sunlit mountain gorge.\n\nThe scene and experience should include:\n\n1. Setting & structures: A weathered stone-and-timber watermill with an adjoining open-bay blacksmith forge beside a rocky mountain stream and flume, framed by gorge rock faces, a small stone footbridge, pine trees, stacked timber logs, mossy boulders, a coal hearth, quench barrel, and workbench tools.\n\n2. Coupled water-to-machine mechanics:\n- An interactive sluice gate control (0% to 100% flow) that regulates water pouring down the wooden flume onto an overshot waterwheel.\n- Water flow physically drives the wheel speed, which in turn drives the interior shaft and gear train powering:\n- A reciprocating frame-saw cutting a timber log on a moving carriage.\n- Pumping forge bellows that brighten the hearth coals as airflow increases.\n- A cam-driven trip-hammer striking a glowing hot iron billet on the anvil with impact sparks when the hammer drops.\n- Closing the sluice gate smoothly coasts the wheel, gears, saw, bellows, and hammer to a stop.\n\n3. Inspection & controls:\n- A cutaway / open-mill toggle that opens the roof and wall shutters so the entire interior gear train, linkages, saw, bellows, and trip-hammer can be inspected clearly in motion, with nothing hidden inside empty shells.\n- Smooth orbit/zoom camera controls plus quick camera presets (wide gorge establishing view, sluice & waterwheel, sawmill mechanism interior, and forge trip-hammer & anvil close-up).\n\nImportant guidance\n\nOriginal imaginary scene: This is a fictional world, not a real-world landmark. Strict 1:1 matching of incidental 2D concept details or ornament counts is not required. Do not waste time nitpicking minor sketch variations. Prioritize convincing 3D craft, crisp close-up materials and lighting, clean focus, and rock-solid working mechanics.\n\nPlan first, wait for go-ahead: Do not start building yet. do your upfront inspection and planning, present the complete plan, and wait for my explicit go-ahead. Once approved, I will let you run unattended."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Goal",
+    "Swarm",
+    "Antigravity"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 18527,
+    "likes": 396,
+    "replies": 35,
+    "reposts": 13,
+    "bookmarks": 100,
+    "checkedAt": "2026-11-16T17:58:53.900Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2121964098971901952/vid/avc1/1280x720/VxhgK2JqIcRRrxmv.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2121964098971901952/img/oQLRmQirDCOGe3Dm.jpg",
+     "width": 3840,
+     "height": 2160,
+     "durationSec": 63
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2112995029337936362",
    "url": "https://x.com/EnvolDev/status/2112995029337936362",
    "author": {
@@ -5360,6 +5789,70 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2121694698267976039",
+   "url": "https://x.com/lyraxana/status/2121694698267976039",
+   "author": {
+    "handle": "lyraxana",
+    "name": "lyra"
+   },
+   "postedAt": "2026-11-14T20:00:09.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "tl",
+   "kind": "comparison",
+   "models": [
+    "argon",
+    "carbon",
+    "krypton"
+   ],
+   "rivals": [],
+   "category": "svg",
+   "title": {
+    "zh": "SVG 绘制的 GTA VI 游戏画面",
+    "en": "GTA VI gameplay in SVG"
+   },
+   "summary": {
+    "zh": "创作者比较了 Gemini 4 Krypton、Carbon 和 Argon 零样本生成 GTA VI 游戏画面 SVG 的效果。",
+    "en": "The creator compared Gemini 4 Krypton, Carbon, and Argon on a zero-shot SVG depicting GTA VI gameplay."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 18154,
+    "likes": 316,
+    "replies": 25,
+    "reposts": 8,
+    "bookmarks": 33,
+    "checkedAt": "2026-11-16T17:58:53.900Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXHF3UvWQAAtD97.jpg",
+     "width": 1920,
+     "height": 1080
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXHF7lLWkAE76w6.jpg",
+     "width": 1920,
+     "height": 1080
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXHGAb_WMAI8mQz.jpg",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -5664,6 +6157,59 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2121803407489200235",
+   "url": "https://x.com/SidraMiconi/status/2121803407489200235",
+   "author": {
+    "handle": "SidraMiconi",
+    "name": "Sidra Miconi"
+   },
+   "postedAt": "2026-11-15T03:12:08.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "carbon",
+    "hydrogen"
+   ],
+   "rivals": [],
+   "category": "scene3d",
+   "title": {
+    "zh": "可互动的雪山寺庙",
+    "en": "Interactive mountain temple"
+   },
+   "summary": {
+    "zh": "Gemini 4 Carbon 制作了可游玩的山间寺庙庭院，敲钟后鸟儿会从积雪覆盖的雪松上飞起；创作者还提到 Hydrogen 正在制作科学世界。",
+    "en": "Gemini 4 Carbon built a playable mountain temple courtyard where ringing the bell makes birds lift off snowy cedars; the creator also mentions Hydrogen building science worlds."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 16638,
+    "likes": 235,
+    "replies": 2,
+    "reposts": 3,
+    "bookmarks": 37,
+    "checkedAt": "2026-11-16T17:58:53.900Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2121803142052597760/vid/avc1/1280x720/mcIPyd_2a7yzypYV.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2121803142052597760/img/IM0uLV0SCLKuakKx.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 16
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -6587,6 +7133,64 @@
    }
   },
   {
+   "id": "2121846407950639541",
+   "url": "https://x.com/vamsibatchuk/status/2121846407950639541",
+   "author": {
+    "handle": "vamsibatchuk",
+    "name": "Vamsi Batchu"
+   },
+   "postedAt": "2026-11-15T06:03:00.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "hydrogen"
+   ],
+   "rivals": [],
+   "category": "motion",
+   "title": {
+    "zh": "帽子被吹走的海鹦动画",
+    "en": "Animated puffin hat sequence"
+   },
+   "summary": {
+    "zh": "Gemini 4 Hydrogen 将第一个单文件 HTML 作为第 0 帧，并在一个自包含 HTML 文件中程序化生成 50 帧动画。创作者展示了一只眨眼、帽子被海鹦叼走的角色。",
+    "en": "Gemini 4 Hydrogen used the first single-file HTML as Frame 0 and procedurally animated 50 frames in one self-contained HTML file. The creator describes a blinking puffin whose hat flies away."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Carbon",
+    "Antigravity",
+    "JavaScript",
+    "p5.js",
+    "Python"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 11908,
+    "likes": 474,
+    "replies": 21,
+    "reposts": 16,
+    "bookmarks": 318,
+    "checkedAt": "2026-11-16T17:58:53.900Z"
+   },
+   "media": [
+    {
+     "type": "gif",
+     "url": "https://video.twimg.com/tweet_video/HXJP03gWYAA1w_C.mp4",
+     "poster": "https://pbs.twimg.com/tweet_video_thumb/HXJP03gWYAA1w_C.jpg",
+     "width": 1400,
+     "height": 1400,
+     "durationSec": 0
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2105300298483019839",
    "url": "https://x.com/abhinavflac/status/2105300298483019839",
    "author": {
@@ -6815,6 +7419,60 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2121877676042682538",
+   "url": "https://x.com/nin222/status/2121877676042682538",
+   "author": {
+    "handle": "nin222",
+    "name": "nin@教育×ICT"
+   },
+   "postedAt": "2026-11-15T08:07:15.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "ja",
+   "kind": "work",
+   "models": [
+    "hydrogen"
+   ],
+   "rivals": [],
+   "category": "ui",
+   "title": {
+    "zh": "互动竖笛指法指南",
+    "en": "Interactive recorder guide"
+   },
+   "summary": {
+    "zh": "Gemini 4 Hydrogen 的 Canvas 应用制作了竖笛指南，无需使用思考模式；创作者表示也可以载入乐谱来制作。",
+    "en": "Gemini 4 Hydrogen's Canvas app built a recorder guide without using thinking mode; the creator says it can also be made by loading sheet music."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Canvas"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 11192,
+    "likes": 176,
+    "replies": 5,
+    "reposts": 14,
+    "bookmarks": 52,
+    "checkedAt": "2026-11-16T17:58:53.900Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2121877246281687040/vid/avc1/1280x720/Ez4l6Lt_NdkghcYL.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2121877246281687040/img/oCqd3oIr9jhy7GZM.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 42
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -7223,6 +7881,78 @@
    }
   },
   {
+   "id": "2121848375998063012",
+   "url": "https://x.com/nemumusitocha/status/2121848375998063012",
+   "author": {
+    "handle": "nemumusitocha",
+    "name": "しとちゃ！🦊🍮"
+   },
+   "postedAt": "2026-11-15T06:10:49.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "ja",
+   "kind": "comparison",
+   "models": [
+    "hydrogen"
+   ],
+   "rivals": [],
+   "category": "scene3d",
+   "title": {
+    "zh": "城堡基准测试三维场景",
+    "en": "Castle benchmark 3D scene"
+   },
+   "summary": {
+    "zh": "创作者用 Gemini 4 Hydrogen 尝试制作城堡长椅，并提到包括 Claude Mythos 5.2 在内的此前模型对比。",
+    "en": "The creator tried a castle bench with Gemini 4 Hydrogen and refers to earlier model comparisons, including Claude Mythos 5.2."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Claude Mythos 5.2"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 9237,
+    "likes": 143,
+    "replies": 5,
+    "reposts": 9,
+    "bookmarks": 30,
+    "checkedAt": "2026-11-16T17:58:53.900Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2121847521651900416/vid/avc1/1280x720/ckXsSQX2jmhVQL9n.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2121847521651900416/img/slVpFByB1CusCHB6.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 10
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXJRghXaQAA7mvr.jpg",
+     "width": 1920,
+     "height": 1080
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXJRghRbQAATIY9.jpg",
+     "width": 1920,
+     "height": 1080
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXJRghgboAEN1oz.jpg",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2111428909203866089",
    "url": "https://x.com/vib3coded/status/2111428909203866089",
    "author": {
@@ -7397,6 +8127,74 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2121909995533205543",
+   "url": "https://x.com/chetaslua/status/2121909995533205543",
+   "author": {
+    "handle": "chetaslua",
+    "name": "Chetaslua"
+   },
+   "postedAt": "2026-11-15T10:15:40.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "fr",
+   "kind": "work",
+   "models": [
+    "carbon"
+   ],
+   "rivals": [],
+   "category": "svg",
+   "title": {
+    "zh": "纯代码绘图",
+    "en": "Pure code sketch"
+   },
+   "summary": {
+    "zh": "Gemini 4 Carbon 制作了一个纯代码草图。",
+    "en": "Gemini 4 Carbon produced a pure-code sketch."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 8628,
+    "likes": 213,
+    "replies": 18,
+    "reposts": 2,
+    "bookmarks": 21,
+    "checkedAt": "2026-11-16T17:58:53.900Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXKF8w3agAAR7L6.png",
+     "width": 1900,
+     "height": 3072
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXKF8w4aUAAz4nt.jpg",
+     "width": 360,
+     "height": 3072
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXKF8wyaEAAE-nK.jpg",
+     "width": 780,
+     "height": 3072
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXKJsEJa8AA1N65.jpg",
+     "width": 360,
+     "height": 3072
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -7579,6 +8377,79 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2121868841345237315",
+   "url": "https://x.com/Lentils80/status/2121868841345237315",
+   "author": {
+    "handle": "Lentils80",
+    "name": "Lentils"
+   },
+   "postedAt": "2026-11-15T07:32:08.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "en",
+   "kind": "comparison",
+   "models": [
+    "argon",
+    "carbon",
+    "krypton"
+   ],
+   "rivals": [],
+   "category": "ui",
+   "title": {
+    "zh": "不同模型版本的前端页面",
+    "en": "Frontend pages across model versions"
+   },
+   "summary": {
+    "zh": "作者比较了 Gemini 4 Krypton、Carbon 和 Argon 的零样本前端输出，并指出 Argon 的文字被背景遮挡。",
+    "en": "The creator compared zero-shot frontend outputs from Gemini 4 Krypton, Carbon, and Argon, noting that Argon's text was obscured by its background."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Carbon",
+    "Argon"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 7128,
+    "likes": 135,
+    "replies": 13,
+    "reposts": 5,
+    "bookmarks": 21,
+    "checkedAt": "2026-11-16T17:58:53.900Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2121867353327636480/vid/avc1/1280x720/d_nFi8NI1Y-OKXJr.mp4?tag=14",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2121867353327636480/img/PlsVvMTkuj9END2c.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 77
+    },
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2121867396826660864/vid/avc1/1280x720/MGJ3bOJ8WbNF6phI.mp4?tag=14",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2121867396826660864/img/_NlnJsoPMOz3FVEy.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 59
+    },
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2121867424056193024/vid/avc1/1280x720/9Yv0VYRCrS11yKJ0.mp4?tag=14",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2121867424056193024/img/0AozmrPXgAvp1aQV.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 48
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
