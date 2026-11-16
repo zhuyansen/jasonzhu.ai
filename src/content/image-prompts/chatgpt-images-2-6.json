@@ -3,8 +3,8 @@
  "model": "ChatGPT Images 2.6",
  "released": "2026-11-04T23:35:14Z",
  "threshold": 5000,
- "updatedAt": "2026-11-15T01:21:24.804Z",
- "statsCheckedAt": "2026-11-15T01:21:24.804Z",
+ "updatedAt": "2026-11-16T01:28:30.682Z",
+ "statsCheckedAt": "2026-11-16T01:28:30.682Z",
  "inclusionRule": "Original post by the creator, images / GIF / video attached, >= 5000 views on that post, creator states it was made with ChatGPT Images 2.6 (GPT-Image-2.6). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -943,6 +943,61 @@
      "width": 1920,
      "height": 1080,
      "durationSec": 8
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2121568922285777298",
+   "url": "https://x.com/kentdhani/status/2121568922285777298",
+   "author": {
+    "handle": "kentdhani",
+    "name": "Kent Dhani"
+   },
+   "postedAt": "2026-11-14T11:40:22.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "en",
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "两种图像模型的电梯自拍对比",
+    "en": "Two-model comparison of elevator selfies"
+   },
+   "summary": {
+    "zh": "创作者比较了 MiniMax H3-Image 和 GPT Image 2.6，并在 RTX 5090 上通过 ComfyUI 本地运行。",
+    "en": "The creator compares MiniMax H3-Image with GPT Image 2.6. Both were run locally on an RTX 5090 in ComfyUI."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "MiniMax H3-Image",
+    "ComfyUI"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 38568,
+    "likes": 304,
+    "replies": 5,
+    "reposts": 16,
+    "bookmarks": 320,
+    "checkedAt": "2026-11-16T01:28:30.682Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXFTBIhboAAqJQ3.jpg",
+     "width": 1904,
+     "height": 2544
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXFTCMyb0AApjAv.jpg",
+     "width": 1254,
+     "height": 1254
     }
    ],
    "evidence": {
@@ -1999,6 +2054,69 @@
      "url": "https://pbs.twimg.com/media/HWXUkPvbAAAs5NV.jpg",
      "width": 1079,
      "height": 1607
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2121679564929958152",
+   "url": "https://x.com/DavidRunsAds/status/2121679564929958152",
+   "author": {
+    "handle": "DavidRunsAds",
+    "name": "David"
+   },
+   "postedAt": "2026-11-14T19:00:01.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "en",
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "三种图像模型的女性自拍对比",
+    "en": "Three-model comparison of a beauty selfie"
+   },
+   "summary": {
+    "zh": "创作者用同一提示词比较 Nano Banana 2.1、GPT Image 2.6 和 Seedance 2.5 方法，并介绍从视频中截取画面来制作角色。",
+    "en": "The creator compares Nano Banana 2.1, GPT Image 2.6 and a Seedance 2.5 method using the same prompt. They describe extracting a frame from a video and using it to build a character."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Nano Banana 2.1",
+    "Seedance 2.5"
+   ],
+   "resources": [
+    "https://t.me/davidrunsadsai"
+   ],
+   "stats": {
+    "views": 19751,
+    "likes": 227,
+    "replies": 16,
+    "reposts": 15,
+    "bookmarks": 334,
+    "checkedAt": "2026-11-16T01:28:30.682Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HW_5aI-WgAANzPM.jpg",
+     "width": 675,
+     "height": 1199
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HW_5aH0XkAA9Jbl.jpg",
+     "width": 670,
+     "height": 1200
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HW_5aH0W8AA17K0.jpg",
+     "width": 678,
+     "height": 1199
     }
    ],
    "evidence": {
@@ -3381,6 +3499,52 @@
    }
   },
   {
+   "id": "2121591769347612821",
+   "url": "https://x.com/DeryaTR_/status/2121591769347612821",
+   "author": {
+    "handle": "DeryaTR_",
+    "name": "Derya Unutmaz, MD"
+   },
+   "postedAt": "2026-11-14T13:11:09.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "en",
+   "kind": "work",
+   "category": "illustration",
+   "title": {
+    "zh": "湖畔猫咪与群山的彩绘风景",
+    "en": "Painted lakeside view with cat and mountains"
+   },
+   "summary": {
+    "zh": "创作者分享了一幅使用 GPT Image 2.6 制作的 AI 画作。",
+    "en": "The creator shared an AI painting made with GPT Image 2.6."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 10808,
+    "likes": 158,
+    "replies": 9,
+    "reposts": 5,
+    "bookmarks": 11,
+    "checkedAt": "2026-11-16T01:28:30.682Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXFodZLbwAEF0r9.jpg",
+     "width": 1536,
+     "height": 1024
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2118991862564262140",
    "url": "https://x.com/Leviwoyun/status/2118991862564262140",
    "author": {
@@ -3797,6 +3961,59 @@
    }
   },
   {
+   "id": "2121647529750311377",
+   "url": "https://x.com/Stefan_3D_AI/status/2121647529750311377",
+   "author": {
+    "handle": "Stefan_3D_AI",
+    "name": "Stefan 3D AI"
+   },
+   "postedAt": "2026-11-14T16:52:44.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "en",
+   "kind": "work",
+   "category": "design",
+   "title": {
+    "zh": "书本展开式游戏菜单",
+    "en": "Animated game book menu"
+   },
+   "summary": {
+    "zh": "创作者在 Blender 中制作了 MegaJam 游戏主菜单，并通过 Higgsfield MCP 结合使用 Claude Fable 5.2、GPT Image 2.6 和 Tripo P2.0。",
+    "en": "The creator made a MegaJam game menu in Blender, combining Claude Fable 5.2, GPT Image 2.6 and Tripo P2.0 through Higgsfield MCP."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Blender",
+    "Claude Fable 5.2",
+    "Tripo P2.0",
+    "Higgsfield MCP"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 8493,
+    "likes": 290,
+    "replies": 31,
+    "reposts": 8,
+    "bookmarks": 112,
+    "checkedAt": "2026-11-16T01:28:30.682Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2121647404839849984/vid/avc1/1280x720/KY3D_swIASkcsaq9.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2121647404839849984/img/V6qmZciN5QE6aiJZ.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 23
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2118135257618657778",
    "url": "https://x.com/DeryaTR_/status/2118135257618657778",
    "author": {
@@ -3836,6 +4053,75 @@
      "width": 358,
      "height": 356,
      "durationSec": 0
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2121485625769763094",
+   "url": "https://x.com/Naiknelofar788/status/2121485625769763094",
+   "author": {
+    "handle": "Naiknelofar788",
+    "name": "simeon-sanai"
+   },
+   "postedAt": "2026-11-14T06:09:23.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "en",
+   "kind": "work",
+   "category": "design",
+   "title": {
+    "zh": "纽约至伊斯坦布尔的四张地标字体海报",
+    "en": "Four typographic landmark posters: New York to Istanbul"
+   },
+   "summary": {
+    "zh": "创作者发布了一段详细提示词，用于制作将地标融入超大字体的建筑艺术海报，采用编辑设计和双重曝光效果。",
+    "en": "The creator published a detailed prompt for collectible architectural posters featuring landmarks integrated into oversized typography, with editorial design and double-exposure effects."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "post",
+    "sourceUrl": "https://x.com/Naiknelofar788/status/2121485625769763094",
+    "text": "Create an exceptionally sophisticated, contemporary architectural art poster featuring [LANDMARK NAME], [CITY], [COUNTRY].\n\n1. GIANT TYPOGRAPHIC COMPOSITION\n\nFeature one enormous, oversized uppercase letter associated with the destination name as the central graphic element.\n\nThe letter should dominate the composition, extending almost across the entire poster.\n\nUse bold, elegant, geometric typography with distinctive curves and negative spaces.\n\n2. LANDMARK INTEGRATION\n\nSeamlessly integrate a highly detailed architectural photograph or realistic architectural illustration of [LANDMARK NAME] into and across the oversized letter.\n\nThe landmark should appear to emerge from the typography, partially overlap its boundaries and interact naturally with its shape.\n\nPreserve the landmark’s authentic architectural details, proportions and recognisable silhouette.\n\nCreate an artistic double-exposure effect where the architecture and typography become one unified visual composition.\n\n3. DISTINCTIVE COLOUR TREATMENT\n\nChoose a unique colour palette inspired by the destination’s cultural identity, national colours and architectural character.\n\nUse two or three contrasting colours within the oversized typography.\n\nApply translucent colour overlays across selected sections of the landmark, creating a beautiful combination of architectural photography, coloured light and graphic shapes.\n\nEvery new destination must receive a different colour combination. Never repeat palettes.\n\n4. TEXTURE & BACKGROUND\n\nUse a warm ivory, soft white or subtle textured paper background.\n\nIntroduce delicate architectural sketch marks, distressed ink textures, faded photographic grain and subtle print imperfections around the central composition.\n\nKeep the surrounding space clean and uncluttered.\n\n5. EDITORIAL TYPOGRAPHY\n\nInclude the following information:\n\n[LANDMARK NAME]\n\n[CITY NAME]\n\n[COUNTRY NAME]\n\nAdd small vertical typography along one side, geographical coordinates and a subtle destination-inspired tagline.\n\nUse sophisticated editorial typography with carefully balanced spacing.\n\n6. ART DIRECTION\n\nLuxury architectural editorial design, experimental typography, architectural double exposure, contemporary Swiss graphic design, oversized letterforms, cinematic monochromatic photography, translucent colour blocking and minimalist gallery poster aesthetics.\n\n7. FINAL PRESENTATION\n\nCreate a visually striking, intellectual and artistic collectible landmark poster.\n\nThe architecture must remain recognisable while becoming an integral part of the oversized letter.\n\nVertical 4:5 composition, premium art-print quality, exceptional visual balance and sophisticated negative space.\n\nAvoid ordinary travel-poster layouts, decorative clutter, excessive colours and generic typography."
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 7784,
+    "likes": 184,
+    "replies": 16,
+    "reposts": 21,
+    "bookmarks": 145,
+    "checkedAt": "2026-11-16T01:28:30.682Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXEH5tuacAAE5j2.jpg",
+     "width": 1122,
+     "height": 1402
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXEH5toaAAAhoB_.jpg",
+     "width": 1199,
+     "height": 1312
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXEH5tlaAAA1MID.jpg",
+     "width": 800,
+     "height": 800
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXEH5tvaoAIrRHH.jpg",
+     "width": 1122,
+     "height": 1402
     }
    ],
    "evidence": {
@@ -4029,6 +4315,70 @@
    }
   },
   {
+   "id": "2121765678382252363",
+   "url": "https://x.com/AIna_artmusic/status/2121765678382252363",
+   "author": {
+    "handle": "AIna_artmusic",
+    "name": "AI.na"
+   },
+   "postedAt": "2026-11-15T00:42:12.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "en",
+   "kind": "work",
+   "category": "illustration",
+   "title": {
+    "zh": "电影感动漫风的《最终幻想 VII》角色群像",
+    "en": "Final Fantasy VII characters in cinematic anime style"
+   },
+   "summary": {
+    "zh": "创作者分享了使用 ChatGPT Image 2.6 制作的《最终幻想 VII》动漫风格角色作品。",
+    "en": "The creator shared anime-style Final Fantasy VII character artwork made with ChatGPT Image 2.6."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 7216,
+    "likes": 264,
+    "replies": 0,
+    "reposts": 28,
+    "bookmarks": 67,
+    "checkedAt": "2026-11-16T01:28:30.682Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXIGnLKWAAEnEcq.jpg",
+     "width": 941,
+     "height": 1672
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXIGnK_XEAEhdwP.jpg",
+     "width": 941,
+     "height": 1672
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXIGnKjXEAAhd_K.jpg",
+     "width": 941,
+     "height": 1672
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXIGnKkWQAACGZY.jpg",
+     "width": 941,
+     "height": 1672
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2118241781074862569",
    "url": "https://x.com/Mayz1169/status/2118241781074862569",
    "author": {
@@ -4181,6 +4531,75 @@
      "url": "https://pbs.twimg.com/media/HWlFvsFaIAEF68R.jpg",
      "width": 896,
      "height": 1152
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2121660880178106681",
+   "url": "https://x.com/Aiwithkami/status/2121660880178106681",
+   "author": {
+    "handle": "Aiwithkami",
+    "name": "Kami AI"
+   },
+   "postedAt": "2026-11-14T17:45:47.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "en",
+   "kind": "work",
+   "category": "design",
+   "title": {
+    "zh": "四幅地标字母构成建筑海报",
+    "en": "Four landmark monogram architectural posters"
+   },
+   "summary": {
+    "zh": "帖子展示了一张结合超大字体、双重曝光和编辑设计的地标建筑海报。创作者发布了完整提示词。",
+    "en": "The post presents a sophisticated landmark architectural poster with oversized typography, double exposure and editorial design. The creator published the full instruction."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "post",
+    "sourceUrl": "https://x.com/Aiwithkami/status/2121660880178106681",
+    "text": "Create an exceptionally sophisticated, contemporary architectural art poster featuring [LANDMARK NAME], [CITY], [COUNTRY].\n\n1. GIANT TYPOGRAPHIC COMPOSITION\n\nFeature one enormous, oversized uppercase letter associated with the destination name as the central graphic element.\n\nThe letter should dominate the composition, extending almost across the entire poster.\n\nUse bold, elegant, geometric typography with distinctive curves and negative spaces.\n\n2. LANDMARK INTEGRATION\n\nSeamlessly integrate a highly detailed architectural photograph or realistic architectural illustration of [LANDMARK NAME] into and across the oversized letter.\n\nThe landmark should appear to emerge from the typography, partially overlap its boundaries and interact naturally with its shape.\n\nPreserve the landmark’s authentic architectural details, proportions and recognisable silhouette.\n\nCreate an artistic double-exposure effect where the architecture and typography become one unified visual composition.\n\n3. DISTINCTIVE COLOUR TREATMENT\n\nChoose a unique colour palette inspired by the destination’s cultural identity, national colours and architectural character.\n\nUse two or three contrasting colours within the oversized typography.\n\nApply translucent colour overlays across selected sections of the landmark, creating a beautiful combination of architectural photography, coloured light and graphic shapes.\n\nEvery new destination must receive a different colour combination. Never repeat palettes.\n\n4. TEXTURE & BACKGROUND\n\nUse a warm ivory, soft white or subtle textured paper background.\n\nIntroduce delicate architectural sketch marks, distressed ink textures, faded photographic grain and subtle print imperfections around the central composition.\n\nKeep the surrounding space clean and uncluttered.\n\n5. EDITORIAL TYPOGRAPHY\n\nInclude the following information:\n\n[LANDMARK NAME]\n\n[CITY NAME]\n\n[COUNTRY NAME]\n\nAdd small vertical typography along one side, geographical coordinates and a subtle destination-inspired tagline.\n\nUse sophisticated editorial typography with carefully balanced spacing.\n\n6. ART DIRECTION\n\nLuxury architectural editorial design, experimental typography, architectural double exposure, contemporary Swiss graphic design, oversized letterforms, cinematic monochromatic photography, translucent colour blocking and minimalist gallery poster aesthetics.\n\n7. FINAL PRESENTATION\n\nCreate a visually striking, intellectual and artistic collectible landmark poster.\n\nThe architecture must remain recognisable while becoming an integral part of the oversized letter.\n\nVertical 4:5 composition, premium art-print quality, exceptional visual balance and sophisticated negative space.\n\nAvoid ordinary travel-poster layouts, decorative clutter, excessive colours and generic typography."
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 5029,
+    "likes": 195,
+    "replies": 16,
+    "reposts": 36,
+    "bookmarks": 111,
+    "checkedAt": "2026-11-16T01:28:30.682Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXGnA-9bIAAW1Ba.jpg",
+     "width": 784,
+     "height": 1168
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXGnGoMaoAA9Zen.jpg",
+     "width": 784,
+     "height": 1168
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXGnONkbgAApZ7k.jpg",
+     "width": 784,
+     "height": 1168
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXGnS8zaQAAxDok.jpg",
+     "width": 784,
+     "height": 1168
     }
    ],
    "evidence": {

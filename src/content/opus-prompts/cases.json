@@ -1,8 +1,8 @@
 {
  "model": "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.5)",
  "threshold": 5000,
- "updatedAt": "2026-11-15T01:17:14.399Z",
- "statsCheckedAt": "2026-11-15T01:17:14.399Z",
+ "updatedAt": "2026-11-16T01:17:18.667Z",
+ "statsCheckedAt": "2026-11-16T01:17:18.667Z",
  "inclusionRule": "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -2030,6 +2030,62 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2121646685319221546",
+   "url": "https://x.com/vib3coded/status/2121646685319221546",
+   "author": {
+    "handle": "vib3coded",
+    "name": "Vib3Coded"
+   },
+   "postedAt": "2026-11-14T16:49:22.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "可交互果冻橙片对比",
+    "en": "Interactive gummy orange slice comparison"
+   },
+   "summary": {
+    "zh": "创作者用同一提示词比较 Fable 5.2 和 Opus 5.5，制作了一个可在浏览器中运行的互动三维果冻橙片。",
+    "en": "The creator compared Fable 5.2 and Opus 5.5 using the same prompt for an interactive 3D gummy orange slice built in the browser."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/vib3coded/status/2121646834611331214",
+    "text": "Create Citrus Jellyy — an interactive 3D scene featuring a gummy orange slice. Everything must run directly in the browser in a single HTML file using WebGPU and WGSL shaders. Build genuine volumetric 3D geometry, not an image or a prerecorded animation.\nAPPEARANCE\nA thick semicircular orange slice with vibrant orange flesh, a pale pith layer, and a firmer outer rind.\nVisible radial segments, thin internal membranes, and tiny bubbles.\nA juicy, translucent gummy material with soft highlights, light refraction, and depth-dependent color.\nAvoid making it look like rigid plastic or glass.\nUse a light cream background, soft studio lighting, and a contact shadow. Avoid overexposure.\nPHYSICS AND INTERACTION\nLet users grab any visible point with a mouse or finger and pull it.\nDeformation must originate at the grab point and propagate naturally through neighboring areas.\nThe flesh should stretch and narrow under tension, while the rind offers more resistance.\nOn release, the slice should spring back gently, with oscillations gradually settling.\nUse a stable soft-body simulation: a spring mesh or volumetric elastic constraints with volume preservation.\nSegments, membranes, and bubbles must deform with the flesh rather than separating or floating independently.\nInclude ground collisions: the slice should squash slightly on impact and wobble afterward.\nPrevent instant snapping back, endless oscillation, and exploding geometry.\nINTERFACE\n\nA minimal editorial layout with generous whitespace.\nA large italic serif heading, “Citrus Jelly.”, on the left.\nA compact control panel on the right with Firmness and Internal damping sliders.\nGive it a nudge, Reset, and Pause buttons.\nShow mesh and ¼ speed toggles.\nThree color presets: Orange, Blood Orange, and Lemon.\nA small interaction hint: “Grab. Stretch. Let go.”\nAll labels in English, with comfortable desktop and mobile controls.\nTECHNICAL REQUIREMENTS\nGenuine WebGPU rendering, not a Canvas 2D substitute.\nGenerate geometry and materials in code without premade models.\nUse a fixed simulation timestep and constraints that prevent excessive stretching.\nMaintain smooth performance during grabbing, dragging, and release.\nDisplay a clear fallback message when WebGPU is unavailable.\nTest different grab locations, strong stretching, oscillation decay, collisions, and reset.\nThe main priority is a convincing gummy feel. The slice should look soft, juicy, and so satisfying in motion that people want to keep stretching it."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "WebGPU",
+    "WGSL shaders"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 1065665,
+    "likes": 1681,
+    "replies": 104,
+    "reposts": 95,
+    "bookmarks": 1004,
+    "checkedAt": "2026-11-16T01:17:18.667Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121646347770015745/img/K08-DO_3Grg3VTTv.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121646347770015745/vid/avc1/720x932/aUpHIeXNfAymTr5B.mp4?tag=29",
+    "width": 720,
+    "height": 932,
+    "durationSec": 17
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -22175,6 +22231,56 @@
    }
   },
   {
+   "id": "2121701704139956250",
+   "url": "https://x.com/EnvolDev/status/2121701704139956250",
+   "author": {
+    "handle": "EnvolDev",
+    "name": "Tony"
+   },
+   "postedAt": "2026-11-14T20:28:00.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "《云端之上》影片对比",
+    "en": "Rio Above the Clouds film comparison"
+   },
+   "summary": {
+    "zh": "创作者比较了四个模型制作《云上里约》，并表示场景由三维代码生成，再录制成视频。",
+    "en": "The creator compared four models on a film called Rio Above the Clouds, saying the scenes were written as 3D code and recorded as video."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 124881,
+    "likes": 322,
+    "replies": 55,
+    "reposts": 9,
+    "bookmarks": 172,
+    "checkedAt": "2026-11-16T01:17:18.667Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121475910901841920/img/wrYF-a81VM_5OH-o.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121475910901841920/vid/avc1/810x720/wPDYNwFD1EPwJR9w.mp4?tag=29",
+    "width": 810,
+    "height": 720,
+    "durationSec": 25
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102876925102555526",
    "url": "https://x.com/goodside/status/2102876925102555526",
    "author": {
@@ -34667,6 +34773,56 @@
    }
   },
   {
+   "id": "2121671659371585638",
+   "url": "https://x.com/MrTacticalX/status/2121671659371585638",
+   "author": {
+    "handle": "MrTacticalX",
+    "name": "Mr Tactical"
+   },
+   "postedAt": "2026-11-14T18:28:37.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "玻璃键盘三维模型",
+    "en": "Glass keyboard 3D model"
+   },
+   "summary": {
+    "zh": "创作者表示，Fable 5.2 统筹三个 Opus 5.5 代理制作了玻璃键盘，所有部件都在 Blender 中从零建模。",
+    "en": "The creator says Fable 5.2 led three Opus 5.5 agents to build a glass keyboard, with every part modelled from scratch in Blender."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 78063,
+    "likes": 462,
+    "replies": 42,
+    "reposts": 21,
+    "bookmarks": 219,
+    "checkedAt": "2026-11-16T01:17:18.667Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121671194457833472/img/WanznRYTLj57DnGW.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121671194457833472/vid/avc1/720x900/YPozB2uMBEEFAXPR.mp4?tag=29",
+    "width": 720,
+    "height": 900,
+    "durationSec": 32
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102592355165782312",
    "url": "https://x.com/Michaelzsguo/status/2102592355165782312",
    "author": {
@@ -35026,6 +35182,58 @@
     "width": 1280,
     "height": 720,
     "durationSec": 128
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2121542419892117928",
+   "url": "https://x.com/Lummox_eth/status/2121542419892117928",
+   "author": {
+    "handle": "Lummox_eth",
+    "name": "Lummox"
+   },
+   "postedAt": "2026-11-14T09:55:03.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "电影感山地卡车场景对比",
+    "en": "Cinematic mountain truck scene comparison"
+   },
+   "summary": {
+    "zh": "创作者比较了四种工作流制作电影感山地场景，内容包括运木卡车、尘土、阳光和周围环境细节。",
+    "en": "The creator compared four workflows for a cinematic mountain scene with logging trucks, dust, sunlight and detailed surroundings."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Blender MCP",
+    "Blender",
+    "GPT-6 Astra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 77675,
+    "likes": 116,
+    "replies": 28,
+    "reposts": 9,
+    "bookmarks": 85,
+    "checkedAt": "2026-11-16T01:17:18.667Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121542339944476672/img/rXzUcNV4pViIwBFG.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121542339944476672/vid/avc1/720x720/0Ayuk1qMACVSAajd.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 9
    },
    "evidence": {
     "via": "daily",
@@ -37398,6 +37606,59 @@
     "width": 720,
     "height": 910,
     "durationSec": 45
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2121714155757441227",
+   "url": "https://x.com/maxt3chno/status/2121714155757441227",
+   "author": {
+    "handle": "maxt3chno",
+    "name": "Max"
+   },
+   "postedAt": "2026-11-14T21:17:28.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "Three.js 与 Blender 中的超级游艇",
+    "en": "Superyacht in Three.js and Blender"
+   },
+   "summary": {
+    "zh": "作品将 Three.js 游艇模拟器与 Blender 游艇渲染进行对比。创作者称水面、天空和模拟器机制由 Opus 5.5 与 Fable 5.2 制作，游艇则通过 MCP 在 Blender 中建模。",
+    "en": "A Three.js yacht simulator is compared with a Blender yacht render. The creator says Opus 5.5 and Fable 5.2 built the water, sky, and simulator mechanics, while the yacht was modeled in Blender via MCP."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Three.js",
+    "Blender",
+    "MCP",
+    "Fable 5.2"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 71597,
+    "likes": 927,
+    "replies": 71,
+    "reposts": 44,
+    "bookmarks": 615,
+    "checkedAt": "2026-11-16T01:17:18.667Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121713738914942976/img/3cuNxGPghDL3brYh.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121713738914942976/vid/avc1/720x900/RXW00SIczx2AjIoU.mp4?tag=29",
+    "width": 720,
+    "height": 900,
+    "durationSec": 52
    },
    "evidence": {
     "via": "daily",
@@ -46190,6 +46451,56 @@
     "width": 1280,
     "height": 720,
     "durationSec": 312
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2121623349386477877",
+   "url": "https://x.com/xKaka1456/status/2121623349386477877",
+   "author": {
+    "handle": "xKaka1456",
+    "name": "卡卡"
+   },
+   "postedAt": "2026-11-14T15:16:39.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "模型输出并排对比",
+    "en": "Side-by-side model output comparison"
+   },
+   "summary": {
+    "zh": "这条帖子比较了 Opus 5.5 和 Gemini 4 Krypton，分别给出 0 分和 100 分。",
+    "en": "The post compares Opus 5.5 with Gemini 4 Krypton, assigning them scores of 0 and 100."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Gemini 4 Krypton"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 56786,
+    "likes": 534,
+    "replies": 55,
+    "reposts": 16,
+    "bookmarks": 93,
+    "checkedAt": "2026-11-16T01:17:18.667Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121620876638703616/img/lpTt70njVWQ-QB6K.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121620876638703616/vid/avc1/720x972/5AzihQHMXIdBvmfL.mp4?tag=29",
+    "width": 720,
+    "height": 972,
+    "durationSec": 12
    },
    "evidence": {
     "via": "daily",
@@ -74126,6 +74437,59 @@
    }
   },
   {
+   "id": "2121614786245104107",
+   "url": "https://x.com/MengTo/status/2121614786245104107",
+   "author": {
+    "handle": "MengTo",
+    "name": "Meng To"
+   },
+   "postedAt": "2026-11-14T14:42:37.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "在 Blender 中复刻的游戏预告片",
+    "en": "Game trailer recreated in Blender"
+   },
+   "summary": {
+    "zh": "Fable 5.2 用 Blender 重制了作者的 Three.js 游戏预告片。工作流通过 RunPod 编排 Opus 5.5 代理。",
+    "en": "Fable 5.2 recreated the creator's Three.js game trailer in Blender. The workflow used RunPod to orchestrate Opus 5.5 agents."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Fable 5.2",
+    "Blender",
+    "Three.js",
+    "RunPod"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 28395,
+    "likes": 473,
+    "replies": 38,
+    "reposts": 31,
+    "bookmarks": 549,
+    "checkedAt": "2026-11-16T01:17:18.667Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121611014877880320/img/TGAbhQyCejUQHOa6.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121611014877880320/vid/avc1/1280x720/nZ4G_afTZhRd5Ig-.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 57
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2112430672090730746",
    "url": "https://x.com/IHayato/status/2112430672090730746",
    "author": {
@@ -76265,6 +76629,54 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2121755214977875978",
+   "url": "https://x.com/GazvodaMatjaz/status/2121755214977875978",
+   "author": {
+    "handle": "GazvodaMatjaz",
+    "name": "Matjaž Gazvoda"
+   },
+   "postedAt": "2026-11-15T00:00:38.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "Claude 生成的视觉作品",
+    "en": "Claude-generated visual work"
+   },
+   "summary": {
+    "zh": "帖子展示了用 Opus 5.5 制作的作品，并提到 Fable 5.2 的能力，但没有说明作品内容或使用的提示词。",
+    "en": "The post shows a work made with Opus 5.5 and mentions what Fable 5.2 can do, but gives no details about the work or its prompt."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 27417,
+    "likes": 154,
+    "replies": 8,
+    "reposts": 1,
+    "bookmarks": 81,
+    "checkedAt": "2026-11-16T01:17:18.667Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121754884479340544/img/vWM9Sn-pS1L6mEkr.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121754884479340544/vid/avc1/1280x720/O4Sf7N96Uh5rC4Z4.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 10
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -86119,6 +86531,56 @@
    }
   },
   {
+   "id": "2121635642836918385",
+   "url": "https://x.com/AstrablueAI/status/2121635642836918385",
+   "author": {
+    "handle": "AstrablueAI",
+    "name": "Astra Blue"
+   },
+   "postedAt": "2026-11-14T16:05:29.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "Fable 时装主题音乐短片",
+    "en": "Fable-inspired fashion music video"
+   },
+   "summary": {
+    "zh": "这是一支一镜到底的 slopcore 音乐视频，歌曲由 Fable 5.2 制作，视频由 Fable 5.2 和 Opus 5.5 子代理制作。",
+    "en": "This is a one-shot slopcore music video, with the song made by Fable 5.2 and the video made by Fable 5.2 with Opus 5.5 subagents."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Fable 5.2"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 21976,
+    "likes": 628,
+    "replies": 58,
+    "reposts": 78,
+    "bookmarks": 297,
+    "checkedAt": "2026-11-16T01:17:18.667Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121631803933102081/img/dkFF5SFKMbOnAYEW.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121631803933102081/vid/avc1/1280x720/MUBbFygpm7U6PJSV.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 238
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2114311579277893791",
    "url": "https://x.com/servasyy_ai/status/2114311579277893791",
    "author": {
@@ -92855,6 +93317,58 @@
     "width": 1280,
     "height": 720,
     "durationSec": 24
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2121627795566567577",
+   "url": "https://x.com/rewind02/status/2121627795566567577",
+   "author": {
+    "handle": "rewind02",
+    "name": "rewind"
+   },
+   "postedAt": "2026-11-14T15:34:19.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "由插画构建的可交互港口",
+    "en": "Interactive harbour from a drawing"
+   },
+   "summary": {
+    "zh": "作者从一张插画出发制作了浏览器中的 3D 港口，使用 Opus、Blender 和 Three.js 完成建模、渲染及交互功能。",
+    "en": "A browser-based 3D harbour was built from a single drawing, with Opus using Blender and Three.js to model, render and add interactive features."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Blender",
+    "MCP",
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 19301,
+    "likes": 498,
+    "replies": 23,
+    "reposts": 34,
+    "bookmarks": 398,
+    "checkedAt": "2026-11-16T01:17:18.667Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121627711550398464/img/b_h9PfLKTmZsKa5j.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121627711550398464/vid/avc1/746x720/kzeIAhVMu85B9LS2.mp4?tag=29",
+    "width": 746,
+    "height": 720,
+    "durationSec": 25
    },
    "evidence": {
     "via": "daily",
@@ -99970,6 +100484,62 @@
    }
   },
   {
+   "id": "2121476982798242112",
+   "url": "https://x.com/MrTacticalX/status/2121476982798242112",
+   "author": {
+    "handle": "MrTacticalX",
+    "name": "Mr Tactical"
+   },
+   "postedAt": "2026-11-14T05:35:02.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "水冷电脑三维模型",
+    "en": "Water-cooled computer model"
+   },
+   "summary": {
+    "zh": "Claude Fable 5.2 带领三个 Opus 5.5 代理制作了水冷电脑，所有部件都在 Blender 中从零建模。",
+    "en": "Claude Fable 5.2 led three Opus 5.5 agents to build a water-cooled computer, with every part modelled from scratch in Blender."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/MrTacticalX/status/2121476982798242112",
+    "text": "build a water-cooled Computer"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Claude Fable 5.2",
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 16899,
+    "likes": 136,
+    "replies": 12,
+    "reposts": 6,
+    "bookmarks": 81,
+    "checkedAt": "2026-11-16T01:17:18.667Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121475610031632384/img/cpKO3uoPfVC0JVJW.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121475610031632384/vid/avc1/720x900/shM2SZlzmOV2A7zd.mp4?tag=29",
+    "width": 720,
+    "height": 900,
+    "durationSec": 41
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103768914551603465",
    "url": "https://x.com/sciencedegens/status/2103768914551603465",
    "author": {
@@ -100816,6 +101386,56 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2121551216329343363",
+   "url": "https://x.com/nono_ai_archive/status/2121551216329343363",
+   "author": {
+    "handle": "nono_ai_archive",
+    "name": "노노아카이브"
+   },
+   "postedAt": "2026-11-14T10:30:01.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "ko",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "宠物狗品牌概念设计",
+    "en": "Pet dog brand concept"
+   },
+   "summary": {
+    "zh": "作者制作了一个可爱的宠物狗品牌概念，包装设计使用 GPT，网站概念使用 Opus 5.5。",
+    "en": "The creator made a cute pet-dog brand concept. GPT was used for the package design and Opus 5.5 for the site concept."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "GPT"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 16512,
+    "likes": 636,
+    "replies": 8,
+    "reposts": 52,
+    "bookmarks": 330,
+    "checkedAt": "2026-11-16T01:17:18.667Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121470941842804736/img/4zIHpuDUFF-PoW_e.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121470941842804736/vid/avc1/720x900/h98NeS7wfPQF8nMW.mp4?tag=29",
+    "width": 720,
+    "height": 900,
+    "durationSec": 29
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -102870,6 +103490,56 @@
     "width": 720,
     "height": 932,
     "durationSec": 15
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2121634005745635683",
+   "url": "https://x.com/LexnLin/status/2121634005745635683",
+   "author": {
+    "handle": "LexnLin",
+    "name": "Leon Lin"
+   },
+   "postedAt": "2026-11-14T15:58:59.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "绘画风格三维世界",
+    "en": "Painted 3D world"
+   },
+   "summary": {
+    "zh": "这是一个用 Three.js 和自定义着色器制作的绘画风格 3D 世界，着色效果会随日落从水粉画变为油画。",
+    "en": "A painted 3D world built with Three.js and custom shaders. The shader shifts from gouache to oil paint as the sun goes down."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 15812,
+    "likes": 426,
+    "replies": 19,
+    "reposts": 20,
+    "bookmarks": 149,
+    "checkedAt": "2026-11-16T01:17:18.667Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121627502737014784/img/SVTVBADLOsoSnMCj.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121627502737014784/vid/avc1/1280x720/jS5qJ7gUMj_4zkGa.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 40
    },
    "evidence": {
     "via": "daily",
@@ -107036,6 +107706,63 @@
    }
   },
   {
+   "id": "2121560021339451523",
+   "url": "https://x.com/dom_gag_96/status/2121560021339451523",
+   "author": {
+    "handle": "dom_gag_96",
+    "name": "Domenico 🐺"
+   },
+   "postedAt": "2026-11-14T11:05:00.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "it",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "可交互的罗马等距城市",
+    "en": "Interactive isometric Rome"
+   },
+   "summary": {
+    "zh": "这是一个基于开放地理数据构建的罗马等距地图，包含建筑、树木、实时交通、天气和灯光。作者在 Claude Code 中使用了 150 多条提示词。",
+    "en": "An isometric Rome built from open geographic data, with painted buildings, mapped trees, real transit, traffic, weather, and lighting. The creator used more than 150 prompts in Claude Code."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Codex",
+    "Claude Code",
+    "Kimi",
+    "Grok",
+    "OpenStreetMap",
+    "ESA WorldCover",
+    "TomTom API",
+    "Open-Meteo"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 14391,
+    "likes": 255,
+    "replies": 18,
+    "reposts": 19,
+    "bookmarks": 110,
+    "checkedAt": "2026-11-16T01:17:18.667Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121347955848290304/img/-VhLSMccFQQVpuhE.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121347955848290304/vid/avc1/1188x720/dQ-CQOIdwvPebLmE.mp4?tag=29",
+    "width": 1188,
+    "height": 720,
+    "durationSec": 55
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2111172786286690324",
    "url": "https://x.com/devteamdrew/status/2111172786286690324",
    "author": {
@@ -108107,6 +108834,60 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2121701481204326632",
+   "url": "https://x.com/papadupapadu/status/2121701481204326632",
+   "author": {
+    "handle": "papadupapadu",
+    "name": "PAPADU PAPADU"
+   },
+   "postedAt": "2026-11-14T20:27:07.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "《战争即世界》短片",
+    "en": "War Is the World short film"
+   },
+   "summary": {
+    "zh": "这是一部战争主题的视频剪辑，由作者与 LoLoLumi88 共同执导，使用了 Midjourney、Seedance、Eleven Music、ElevenLabs、Premiere Pro 和 Claude Opus 5.5。",
+    "en": "A war-themed video cut directed by the creator and LoLoLumi88. It combines Midjourney, Seedance, Eleven Music, ElevenLabs sound effects, manual Premiere Pro editing, and Claude Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Midjourney",
+    "Seedance 2.5",
+    "Eleven Music V2.5",
+    "ElevenLabs",
+    "Premiere Pro"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 14085,
+    "likes": 349,
+    "replies": 16,
+    "reposts": 51,
+    "bookmarks": 156,
+    "checkedAt": "2026-11-16T01:17:18.667Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/media/HXHMWraWEAAHDBS.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121699752291024896/vid/avc1/1280x720/FnUgAtePk0e_DlLN.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 100
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -119198,6 +119979,59 @@
    }
   },
   {
+   "id": "2121569899457708189",
+   "url": "https://x.com/neviannn/status/2121569899457708189",
+   "author": {
+    "handle": "neviannn",
+    "name": "nevian"
+   },
+   "postedAt": "2026-11-14T11:44:15.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "温馨钓鱼游戏",
+    "en": "Cozy fishing game"
+   },
+   "summary": {
+    "zh": "这是一个用 Claude Opus 5.5、Blender 和 Unity 6 制作的休闲钓鱼游戏。作者通过 MCP 连接两款软件，并逐步完成世界、机制和界面。",
+    "en": "A cozy fishing game made with Claude Opus 5.5, Blender, and Unity 6. The creator connected both apps through MCP and built the world, mechanics, and UI incrementally."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Blender",
+    "Unity 6",
+    "Blender MCP",
+    "Unity MCP"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 11400,
+    "likes": 246,
+    "replies": 17,
+    "reposts": 9,
+    "bookmarks": 207,
+    "checkedAt": "2026-11-16T01:17:18.667Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121568294746415104/img/NG6yxEEYMawMj3KT.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121568294746415104/vid/avc1/1280x720/t5yrAFtph1ulw5f-.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 14
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2111115013398352298",
    "url": "https://x.com/EnvolDev/status/2111115013398352298",
    "author": {
@@ -123892,6 +124726,62 @@
    }
   },
   {
+   "id": "2121740651033403745",
+   "url": "https://x.com/cluckworksgames/status/2121740651033403745",
+   "author": {
+    "handle": "cluckworksgames",
+    "name": "Cluckworks 🐔"
+   },
+   "postedAt": "2026-11-14T23:02:45.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "en",
+   "models": [
+    "opus-5.5",
+    "sonnet-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "《Siegebloom》城堡防御游戏",
+    "en": "Siegebloom castle defense game"
+   },
+   "summary": {
+    "zh": "Siegebloom 是为 Epic MegaJam 制作的增量式城堡防御游戏。Fable 负责统筹，Opus 和 Sonnet 执行开发，素材来自资源包、ChatGPT Image 和 Tripo。",
+    "en": "Siegebloom is an incremental castle defense game made for the Epic MegaJam. Fable directed while Opus and Sonnet handled development, with assets from packs, ChatGPT Image, and Tripo."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Fable 5.2",
+    "Claude Sonnet 5.5",
+    "Unreal Engine",
+    "Blender",
+    "ChatGPT Image",
+    "Tripo"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 10295,
+    "likes": 188,
+    "replies": 22,
+    "reposts": 19,
+    "bookmarks": 79,
+    "checkedAt": "2026-11-16T01:17:18.667Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121740098412904448/img/CTezKlcy3IJiTshc.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121740098412904448/vid/avc1/1280x720/t4iGnHhkUW36skCC.mp4?tag=14",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 58
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2110819776281079978",
    "url": "https://x.com/anxuanng/status/2110819776281079978",
    "author": {
@@ -127039,6 +127929,62 @@
     "width": 1280,
     "height": 720,
     "durationSec": 28
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2121565804374180344",
+   "url": "https://x.com/MrTacticalX/status/2121565804374180344",
+   "author": {
+    "handle": "MrTacticalX",
+    "name": "Mr Tactical"
+   },
+   "postedAt": "2026-11-14T11:27:59.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "3D 打印机模型",
+    "en": "3D printer model"
+   },
+   "summary": {
+    "zh": "这是一个由 Claude Fable 5.2 领导三个 Opus 5.5 智能体团队、在 Blender 中从零建模的 3D 打印机。",
+    "en": "A 3D printer modeled from scratch in Blender by a team led by Claude Fable 5.2 and three Opus 5.5 agents."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/MrTacticalX/status/2121565804374180344",
+    "text": "build a 3D Printer"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Claude Fable 5.2",
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 9574,
+    "likes": 198,
+    "replies": 26,
+    "reposts": 9,
+    "bookmarks": 90,
+    "checkedAt": "2026-11-16T01:17:18.667Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121565054017347584/img/In0gmHRknRege1Z0.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121565054017347584/vid/avc1/720x900/rn6vjC4ckNqYDNZO.mp4?tag=29",
+    "width": 720,
+    "height": 900,
+    "durationSec": 42
    },
    "evidence": {
     "via": "daily",
@@ -130338,6 +131284,56 @@
     "width": 1300,
     "height": 720,
     "durationSec": 118
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2121451941624713588",
+   "url": "https://x.com/AdamPrabata/status/2121451941624713588",
+   "author": {
+    "handle": "AdamPrabata",
+    "name": "dr. Adam Prabata"
+   },
+   "postedAt": "2026-11-14T03:55:32.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "in",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "水变成尿液的过程",
+    "en": "How water becomes urine"
+   },
+   "summary": {
+    "zh": "创作者与孩子合作制作了讲解水如何变成尿液的内容，使用了 Claude Opus 5.5 和 ElevenLabs 配音。",
+    "en": "The creator collaborated with a child on an explanation of how water becomes urine, using Claude Opus 5.5 and ElevenLabs for the voice."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "ElevenLabs"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 8779,
+    "likes": 394,
+    "replies": 4,
+    "reposts": 111,
+    "bookmarks": 115,
+    "checkedAt": "2026-11-16T01:17:18.667Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121451833642430465/img/8Pe4oOq7Vo9M4PaR.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121451833642430465/vid/avc1/720x1280/P0qwZVFl4Wx-lTkM.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 30
    },
    "evidence": {
     "via": "daily",
@@ -134078,6 +135074,54 @@
    }
   },
   {
+   "id": "2121665294875894082",
+   "url": "https://x.com/csaba_kissi/status/2121665294875894082",
+   "author": {
+    "handle": "csaba_kissi",
+    "name": "Csaba Kissi"
+   },
+   "postedAt": "2026-11-14T18:03:19.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "抽象元素动画",
+    "en": "Abstract element animation"
+   },
+   "summary": {
+    "zh": "创作者分享了一个使用 Claude Opus 5.5 制作的元素主题作品的新版本。",
+    "en": "The creator shared another iteration of an elements-themed work made with Claude Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 7815,
+    "likes": 160,
+    "replies": 10,
+    "reposts": 8,
+    "bookmarks": 97,
+    "checkedAt": "2026-11-16T01:17:18.667Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121665151984132096/img/7-b6xRNfpEcX3v4T.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121665151984132096/vid/avc1/720x788/W9p3r1THkHVCY8WM.mp4?tag=29",
+    "width": 720,
+    "height": 788,
+    "durationSec": 25
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2113137522561741180",
    "url": "https://x.com/GabLattanzio/status/2113137522561741180",
    "author": {
@@ -135253,6 +136297,57 @@
     "width": 1058,
     "height": 720,
     "durationSec": 14
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2121644728886173704",
+   "url": "https://x.com/theparuchh/status/2121644728886173704",
+   "author": {
+    "handle": "theparuchh",
+    "name": "Paruchh"
+   },
+   "postedAt": "2026-11-14T16:41:36.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "角色动画套装",
+    "en": "Character animation set"
+   },
+   "summary": {
+    "zh": "创作者先在 Tripo 中制作模型，再导入 Claude Code，使用自定义动画子代理制作了 16 组角色动画。",
+    "en": "The creator made a set of 16 character animations by creating a model in Tripo and importing it into Claude Code with a custom animation subagent."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Tripo",
+    "Claude Code"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 7634,
+    "likes": 117,
+    "replies": 9,
+    "reposts": 8,
+    "bookmarks": 119,
+    "checkedAt": "2026-11-16T01:17:18.667Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121644654466617344/img/BQ6UCoGT5dxVJjgz.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121644654466617344/vid/avc1/1280x720/OgtsvomsNh6lOm3d.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 51
    },
    "evidence": {
     "via": "daily",
@@ -137175,6 +138270,54 @@
    }
   },
   {
+   "id": "2121621526902419847",
+   "url": "https://x.com/rubenssoto_ai/status/2121621526902419847",
+   "author": {
+    "handle": "rubenssoto_ai",
+    "name": "Rubens Soto | AI & SaaS"
+   },
+   "postedAt": "2026-11-14T15:09:24.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "模型输出并排对比",
+    "en": "Side-by-side model output comparison"
+   },
+   "summary": {
+    "zh": "创作者比较了 Fable 5.2 和 Claude Opus 5.5，认为 Opus 成本更低但质量更好。",
+    "en": "The creator compares Fable 5.2 and Claude Opus 5.5, arguing that Opus delivers better quality at a lower cost."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 7099,
+    "likes": 127,
+    "replies": 57,
+    "reposts": 6,
+    "bookmarks": 21,
+    "checkedAt": "2026-11-16T01:17:18.667Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121621181463666688/img/mjcJ9Ts2C_IM_eFl.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121621181463666688/vid/avc1/720x810/AZrjF-k35lO91pwj.mp4?tag=29",
+    "width": 720,
+    "height": 810,
+    "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2113022598368067751",
    "url": "https://x.com/icreatelife/status/2113022598368067751",
    "author": {
@@ -137215,6 +138358,59 @@
     "width": 1280,
     "height": 720,
     "durationSec": 145
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2121694414058017157",
+   "url": "https://x.com/bomberfish77/status/2121694414058017157",
+   "author": {
+    "handle": "bomberfish77",
+    "name": "bomberfish 🍁"
+   },
+   "postedAt": "2026-11-14T19:59:02.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "en",
+   "models": [
+    "fable-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "三点钟方向的山药",
+    "en": "Yams at three o'clock"
+   },
+   "summary": {
+    "zh": "创作者发布了一条 Fable 5.5 的简短指令，要求把山药放在三点钟方向，但不要太明显。",
+    "en": "The creator posted a brief Fable 5.5 instruction about making yams appear at the 3 o'clock position without making it obvious."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/bomberfish77/status/2121694414058017157",
+    "text": "fable 5.5 yams 3 o' clock but don't make it too obvious"
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 7067,
+    "likes": 148,
+    "replies": 9,
+    "reposts": 7,
+    "bookmarks": 26,
+    "checkedAt": "2026-11-16T01:17:18.667Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121693756294303744/img/f9OJ0ZOqw46gxoIv.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121693756294303744/vid/avc1/730x418/MH-1sbiDL0nsbQ6s.mp4?tag=29",
+    "width": 730,
+    "height": 418,
+    "durationSec": 3
    },
    "evidence": {
     "via": "daily",
@@ -141462,6 +142658,61 @@
     "width": 1280,
     "height": 720,
     "durationSec": 141
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2121757715881963715",
+   "url": "https://x.com/vib3coded/status/2121757715881963715",
+   "author": {
+    "handle": "vib3coded",
+    "name": "Vib3Coded"
+   },
+   "postedAt": "2026-11-15T00:10:34.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "果冻章鱼软体互动玩具",
+    "en": "Jelly octopus soft-body toy"
+   },
+   "summary": {
+    "zh": "创作者用单文件 three.js 页面制作了一个果冻章鱼互动作品，包含物理效果、喂食、喷墨、变色、声音和响应式控制。",
+    "en": "The creator built a single-file interactive three.js jelly octopus with physics, feeding, ink, color changes, sound, and responsive controls."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/vib3coded/status/2121757817883271496",
+    "text": "Build a single-file interactive three.js (WebGL 2) page \"Octopus Jelly\": a big, chunky soft-body octopus cast in clear jelly, sitting on a table and filling the frame. Generate everything in code from a signed distance field: a round head with two eyes on raised turrets, a big soft mantle leaning back behind it, a siphon on its side, and eight thick tapering arms, each a tube along its own 3D curve — down from the head onto the table, out across it with a gentle wave, and on three of them the last third curled up and back on itself — joined to the head under a webbed skirt (use a grid of arm segments to keep the field fast). Under every arm, two staggered rows of pale sugar suckers (cups with a darker rim and a dark pit) that show through the clear jelly and on the curled tips; glossy golden eyes with dark bar-shaped pupils; trapped bubbles. Shader-drawn skin that stretches with the jelly: soft raised papillae and a mottle of darker chromatophore spots, paler on the underside of the arms.\n\nSimulation: a snapped hex lattice of tetrahedra solved with XPBD on a fixed 60 Hz step with substeps, volume preservation, floor contact; curled arm ends set firmer so they hold their curl. Every arm is a muscle: its centre line is rebuilt each step from its rest segments turned by heading and lift accumulated along the arm (a wave travelling out toward the tip, a slow side-to-side sweep, a tip curl), every node keeps its offset in the arm's frame, and the jelly follows the new rest shape; the mantle breathes. Grab and stretch the jelly anywhere, twist with a second finger or the wheel; orbit by dragging the background.\n\nInteractions: the pupils turn to follow the pointer (or a crab, or the camera). Feed tosses gummy crabs (round body, two claws, six legs) onto the table near the arm tips; they scuttle sideways until an arm catches one, curls, and passes it along to the mouth, after which it shows inside the mantle. Ink squirts a cloud of soft dark billowing puffs from the siphon while the octopus goes pale; Flash sends a wave of darkening chromatophores out from the head along every arm. Four colourways: Coral (default), Blue Ring (golden jelly with glowing blue rings), Violet, Sea Glass. All sounds synthesised live with Web Audio after the first touch: a squish on grab, suckers popping on release, a rush of water and bubbles for ink, a shimmer for the flash, a tick when a crab lands, a pop when it is caught, a gulp when it is eaten.\n\nRendering: key-light shadow map and top-down contact shading, back-face thickness for Beer–Lambert absorption and refraction so thin arm tips glow, studio reflections, Khronos PBR Neutral tone mapping, light warm-grey backdrop. Minimal editorial layout: large italic serif heading \"Octopus Jelly.\" with kicker \"Material Studies / No. 074\", a right-hand panel with colour swatches, Firmness and Internal damping sliders, Feed / Ink / Flash / Reset buttons, ¼ speed, Show mesh and Sound toggles and Pause, live readouts for Mass, Arm span and crabs Eaten, a handling hint and an expandable \"Inside the experiment\" note. English UI, responsive for desktop and mobile, with a clear fallback message without WebGL 2."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 5639,
+    "likes": 135,
+    "replies": 22,
+    "reposts": 10,
+    "bookmarks": 48,
+    "checkedAt": "2026-11-16T01:17:18.667Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121757508985360384/img/0laPw4xUrTIGLSQj.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121757508985360384/vid/avc1/1140x720/p-ebjau227QSr1Px.mp4?tag=29",
+    "width": 1140,
+    "height": 720,
+    "durationSec": 18
    },
    "evidence": {
     "via": "daily",
