@@ -1,0 +1,239 @@
+name: 出海选品周报（每周一）
+
+# 2026-11-16 起替代本机 Claude 桌面版的定时任务 seller-weekly-snapshot（要电脑开机、App 开着；11-16 第 6 期就是这么漏掉的）。
+#
+#   数据  卖家历史库（SQLite，约 135 MB，DataForSEO 数据，条款禁止转载）加密后放在本仓库的草稿 release「seller-state」，
+#         密钥是 secret SELLER_STATE_KEY（Jason 的 Mac 钥匙串里也有一份：服务名 seller-state-key）。草稿 release 不对外公开，
+#         千万别点发布。每次：下载解密 → new-term-radar history update / read（AIsa，约 $1.5–2，上限 $3）→ Jev 分类 →
+#         本周汇总 → 立刻加密传回（写稿失败也不丢数据）。
+#   写稿  Claude Code（claude -p，走 apimart 的 Opus 5.5）按 ops/seller-weekly/WRITE.md：打开 5 个产品首页、查收款平台博客、
+#         写中英文两版、出封面、generate-posts。
+#   发布  完整构建通过才提交（只提交这一期的文件）→ 博客上线 → Typefully 建一条 X 草稿（不定时、不自动发）→ 邮件告诉 Jason。
+#         邮件群发、公众号、付费社群仍要 Jason 另外点头（weekly-email.yml 等）。
+on:
+  schedule:
+    - cron: "7 1 * * 1"   # 北京周一 09:07；GitHub 定时常晚几小时
+  workflow_dispatch:
+    inputs:
+      week_end:
+        description: "这期覆盖到哪天（周日，YYYY-MM-DD）；留空 = 北京时间昨天"
+        default: ""
+      skip_data:
+        description: "填 1：跳过数据步骤（数据已经更新过，只重写稿）"
+        default: ""
+      publish:
+        description: "填 0：只写稿和构建，不提交、不建 X 草稿（试跑用）"
+        default: "1"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: seller-weekly
+  cancel-in-progress: false
+
+env:
+  STATE: ${{ github.workspace }}/../seller-state
+  RADAR_SRC: ${{ github.workspace }}/../radar-src
+  JEV_CLIENT_DIR: ${{ github.workspace }}/../hub/ops/jev-review
+
+jobs:
+  weekly:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 日期和防重复
+        id: day
+        run: |
+          TODAY=$(TZ=Asia/Shanghai date +%F)
+          WEEK_END="${{ inputs.week_end }}"
+          [ -z "$WEEK_END" ] && WEEK_END=$(TZ=Asia/Shanghai date -d yesterday +%F)
+          echo "today=$TODAY" >> "$GITHUB_OUTPUT"
+          echo "week_end=$WEEK_END" >> "$GITHUB_OUTPUT"
+          if ls ops/seller-weekly/newsletter/$TODAY-issue-*.md >/dev/null 2>&1 && [ "${{ inputs.publish }}" != "0" ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "今天（$TODAY）的周报已经写过了，跳过"
+          fi
+          echo "TODAY=$TODAY WEEK_END=$WEEK_END"
+
+      - name: 取 new-term-radar 和 Jev 客户端
+        if: steps.day.outputs.skip != 'true'
+        run: |
+          git clone -q --depth 1 https://github.com/zhuyansen/new-term-radar "$RADAR_SRC"
+          git clone -q --depth 1 --filter=blob:none --sparse https://github.com/zhuyansen/agent-skills-hub "$GITHUB_WORKSPACE/../hub"
+          git -C "$GITHUB_WORKSPACE/../hub" sparse-checkout set ops/jev-review
+
+      - uses: actions/setup-python@v5
+        if: steps.day.outputs.skip != 'true'
+        with:
+          python-version: "3.12"
+
+      - uses: actions/setup-node@v4
+        if: steps.day.outputs.skip != 'true'
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: 封面要用的 rsvg-convert 和中文字体
+        if: steps.day.outputs.skip != 'true'
+        run: sudo apt-get install -y --no-install-recommends librsvg2-bin fonts-noto-cjk > /dev/null
+
+      - name: 取卖家历史库（解密）
+        if: steps.day.outputs.skip != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SELLER_STATE_KEY: ${{ secrets.SELLER_STATE_KEY }}
+        run: |
+          mkdir -p "$STATE"
+          gh release download seller-state -p seller-state.tar.gz.enc -D "$RUNNER_TEMP"
+          openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000 -pass env:SELLER_STATE_KEY -in "$RUNNER_TEMP/seller-state.tar.gz.enc" | tar -xz -C "$STATE"
+          ls -la "$STATE" "$STATE/exports/weekly" | tail -5
+          sqlite3 "$STATE/sellers_history.db" "PRAGMA quick_check;" | head -1
+
+      - name: 数据：新卖家 → 首页 → Jev 分类 → 本周汇总
+        if: steps.day.outputs.skip != 'true' && inputs.skip_data != '1'
+        env:
+          AISA_API_KEY: ${{ secrets.AISA_API_KEY }}
+          TYPESAFE_API_KEY: ${{ secrets.JEV_API_KEY }}
+          SELLER_DB: ${{ env.STATE }}/sellers_history.db
+          SELLER_EXPORTS: ${{ env.STATE }}/exports/weekly
+          WEEK_END: ${{ steps.day.outputs.week_end }}
+        run: |
+          set -o pipefail
+          cd "$RADAR_SRC"
+          echo "== update"; python3 -m radar history update --config config.example.json --state "$STATE" --max-usd 3
+          echo "== read";   python3 -m radar history read --config config.example.json --state "$STATE" --workers 32
+          cd "$GITHUB_WORKSPACE"
+          echo "== kinds";  python3 ops/seller-weekly/jev_kinds.py run
+          echo "== summary"; python3 ops/seller-weekly/weekly_report.py "$WEEK_END"
+
+      - name: 存回卖家历史库（加密）
+        if: steps.day.outputs.skip != 'true' && inputs.skip_data != '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SELLER_STATE_KEY: ${{ secrets.SELLER_STATE_KEY }}
+        run: |
+          cd "$STATE"
+          tar -czf - sellers_history.db exports/weekly | openssl enc -aes-256-cbc -pbkdf2 -iter 200000 -salt -pass env:SELLER_STATE_KEY -out "$RUNNER_TEMP/seller-state.tar.gz.enc"
+          gh release upload seller-state "$RUNNER_TEMP/seller-state.tar.gz.enc" --clobber
+          echo "已存回：$(du -h "$RUNNER_TEMP/seller-state.tar.gz.enc" | cut -f1)"
+
+      - name: 写稿（Claude Code）
+        id: write
+        if: steps.day.outputs.skip != 'true'
+        env:
+          ANTHROPIC_BASE_URL: https://api.apimart.ai
+          ANTHROPIC_API_KEY: ${{ secrets.APIMART_CLAUDE_KEY }}
+          ANTHROPIC_MODEL: claude-opus-5-5
+          ANTHROPIC_DEFAULT_HAIKU_MODEL: claude-opus-5-5
+          ANTHROPIC_SMALL_FAST_MODEL: claude-opus-5-5
+          DISABLE_TELEMETRY: "1"
+          DISABLE_ERROR_REPORTING: "1"
+          TODAY: ${{ steps.day.outputs.today }}
+          WEEK_END: ${{ steps.day.outputs.week_end }}
+          SELLER_DB: ${{ env.STATE }}/sellers_history.db
+          SELLER_EXPORTS: ${{ env.STATE }}/exports/weekly
+        run: |
+          set -o pipefail
+          test -f "$SELLER_EXPORTS/$WEEK_END.md" || { echo "::error::没有本周汇总 $SELLER_EXPORTS/$WEEK_END.md"; exit 1; }
+          npm ci --no-audit --no-fund > /dev/null
+          npm install -g @anthropic-ai/claude-code > /dev/null
+          claude -p "$(cat ops/seller-weekly/WRITE.md)" --dangerously-skip-permissions --max-turns 150 --model claude-opus-5-5 \
+            | tee "$RUNNER_TEMP/write.txt"
+          ISSUE=$(grep -oE '^ISSUE=[0-9]{2}$' "$RUNNER_TEMP/write.txt" | tail -1 | cut -d= -f2)
+          [ -n "$ISSUE" ] || { echo "::error::写稿结果里没有 ISSUE=NN"; exit 1; }
+          for f in "ops/seller-weekly/newsletter/$TODAY-issue-$ISSUE.md" "ops/seller-weekly/newsletter/$TODAY-issue-$ISSUE-x.md" \
+                   "src/content/blog/chuhai-weekly-$ISSUE.md" "src/content/blog/chuhai-weekly-$ISSUE.en.md" \
+                   "public/blog/chuhai-weekly-$ISSUE/cover.png" "public/blog/chuhai-weekly-$ISSUE/cover-en.png"; do
+            test -s "$f" || { echo "::error::缺文件 $f"; exit 1; }
+          done
+          echo "issue=$ISSUE" >> "$GITHUB_OUTPUT"
+          { echo "## 出海选品周报第 $ISSUE 期"; echo; sed '/^ISSUE=/d' "$RUNNER_TEMP/write.txt"; } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: 完整构建（不过就不发布）
+        if: steps.write.outputs.issue != ''
+        run: npm run build > "$RUNNER_TEMP/build.log" 2>&1 || { tail -40 "$RUNNER_TEMP/build.log"; exit 1; }
+
+      - name: 提交上线（只提交这一期的文件）
+        id: push
+        if: steps.write.outputs.issue != '' && inputs.publish != '0'
+        env:
+          N: ${{ steps.write.outputs.issue }}
+          TODAY: ${{ steps.day.outputs.today }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "src/content/blog/chuhai-weekly-$N.md" "src/content/blog/chuhai-weekly-$N.en.md" \
+                  "src/generated/post-content/chuhai-weekly-$N.json" "src/generated/post-content/chuhai-weekly-$N.en.json" \
+                  "public/blog/chuhai-weekly-$N/cover.png" "public/blog/chuhai-weekly-$N/cover-en.png" \
+                  src/generated/posts.json ops/seller-weekly/newsletter/
+          git commit -q -m "出海选品周报第 $((10#$N)) 期"
+          git pull -q --rebase origin main
+          git push -q origin HEAD:main
+          echo "pushed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Typefully 建 X 草稿（不定时、不自动发）
+        id: x
+        if: steps.push.outputs.pushed == 'true'
+        continue-on-error: true
+        env:
+          TYPEFULLY_API_KEY: ${{ secrets.TYPEFULLY_API_KEY }}
+          TYPEFULLY_SOCIAL_SET_ID: ${{ secrets.TYPEFULLY_SOCIAL_SET_ID }}
+          X_FILE: ops/seller-weekly/newsletter/${{ steps.day.outputs.today }}-issue-${{ steps.write.outputs.issue }}-x.md
+        run: |
+          if [ -z "$TYPEFULLY_API_KEY" ] || [ -z "$TYPEFULLY_SOCIAL_SET_ID" ]; then
+            echo "::warning::没配 TYPEFULLY_API_KEY / TYPEFULLY_SOCIAL_SET_ID，跳过 X 草稿"; exit 0
+          fi
+          BODY=$(jq -n --rawfile t "$X_FILE" '{platforms: {x: {enabled: true, posts: [{text: ($t | sub("\\s+$"; ""))}]}}}')
+          RESP=$(curl -sS -w '\n%{http_code}' -X POST "https://api.typefully.com/v2/social-sets/$TYPEFULLY_SOCIAL_SET_ID/drafts" \
+            -H "Authorization: Bearer $TYPEFULLY_API_KEY" -H "Content-Type: application/json" -d "$BODY")
+          CODE=$(echo "$RESP" | tail -n1); JSON=$(echo "$RESP" | sed '$d')
+          [ "$CODE" -ge 200 ] && [ "$CODE" -lt 300 ] || { echo "Typefully HTTP $CODE: $JSON"; exit 1; }
+          URL=$(echo "$JSON" | jq -r '.private_url // .share_url // .url // empty')
+          echo "url=${URL:-https://typefully.com/drafts}" >> "$GITHUB_OUTPUT"
+
+      - name: 等博客上线，发邮件给 Jason
+        if: steps.push.outputs.pushed == 'true'
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          ALERT_EMAIL: ${{ secrets.ALERT_EMAIL }}
+          N: ${{ steps.write.outputs.issue }}
+          X_URL: ${{ steps.x.outputs.url }}
+          X_OUTCOME: ${{ steps.x.outcome }}
+        run: |
+          URL="https://jasonzhu.ai/zh/blog/chuhai-weekly-$N"
+          STATUS=000
+          for i in $(seq 1 20); do STATUS=$(curl -s -o /dev/null -w '%{http_code}' "$URL" || echo 000); [ "$STATUS" = "200" ] && break; sleep 45; done
+          export URL STATUS
+          python3 - <<'PY'
+          import json, os, html, urllib.request
+          n, url, status = os.environ["N"], os.environ["URL"], os.environ["STATUS"]
+          note = open(os.path.join(os.environ["RUNNER_TEMP"], "write.txt"), encoding="utf-8").read()
+          note = "\n".join(l for l in note.splitlines() if not l.startswith("ISSUE="))[-4000:]
+          x = os.environ.get("X_URL") or ""
+          x_line = f"X 草稿在 Typefully 等你点发布：<a href='{x}'>{x}</a>" if x else ("X 草稿没建成（看运行日志）" if os.environ.get("X_OUTCOME") == "failure" else "没配 Typefully，X 草稿跳过了")
+          live = f"博客已上线：<a href='{url}'>{url}</a>" if status == "200" else f"博客还在部署（{status}）：{url}"
+          body = f"<p>{live}</p><p>{x_line}</p><p>邮件群发、公众号、付费社群还等你点头。</p><pre style='white-space:pre-wrap;font-size:14px'>{html.escape(note)}</pre>"
+          req = urllib.request.Request("https://api.resend.com/emails", method="POST",
+              data=json.dumps({"from": "出海选品周报 <news@jasonzhu.ai>", "to": [os.environ["ALERT_EMAIL"]], "subject": f"出海选品周报第 {int(n)} 期已上博客", "html": body}).encode(),
+              headers={"Authorization": "Bearer " + os.environ["RESEND_API_KEY"], "Content-Type": "application/json", "User-Agent": "jasonzhu-seller-weekly"})
+          print(urllib.request.urlopen(req, timeout=30).read().decode())
+          PY
+
+      - name: 失败告警
+        if: failure()
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          ALERT_EMAIL: ${{ secrets.ALERT_EMAIL }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request
+          req = urllib.request.Request("https://api.resend.com/emails", method="POST",
+              data=json.dumps({"from": "出海选品周报 <news@jasonzhu.ai>", "to": [os.environ["ALERT_EMAIL"]], "subject": "⚠️ 出海选品周报这周没发出来",
+                               "html": f"<p>周报工作流失败了（数据步骤成功的话，卖家历史库已经存回）。</p><p><a href='{os.environ['RUN_URL']}'>看运行日志</a></p>"}).encode(),
+              headers={"Authorization": "Bearer " + os.environ["RESEND_API_KEY"], "Content-Type": "application/json", "User-Agent": "jasonzhu-seller-weekly"})
+          print(urllib.request.urlopen(req, timeout=30).read().decode())
+          PY
