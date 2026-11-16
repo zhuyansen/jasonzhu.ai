@@ -87,7 +87,7 @@ jobs:
           SELLER_STATE_KEY: ${{ secrets.SELLER_STATE_KEY }}
         run: |
           mkdir -p "$STATE"
-          gh release download seller-state -p seller-state.tar.gz.enc -D "$RUNNER_TEMP"
+          gh release download seller-state -p seller-state.tar.gz.enc -D "$RUNNER_TEMP" -R "$GITHUB_REPOSITORY"
           openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000 -pass env:SELLER_STATE_KEY -in "$RUNNER_TEMP/seller-state.tar.gz.enc" | tar -xz -C "$STATE"
           ls -la "$STATE" "$STATE/exports/weekly" | tail -5
           sqlite3 "$STATE/sellers_history.db" "PRAGMA quick_check;" | head -1
@@ -100,16 +100,22 @@ jobs:
           SELLER_DB: ${{ env.STATE }}/sellers_history.db
           SELLER_EXPORTS: ${{ env.STATE }}/exports/weekly
           WEEK_END: ${{ steps.day.outputs.week_end }}
+        # 公开仓库的运行日志谁都能看：这几步会打印网站名单（DataForSEO 条款禁止公开），输出全部写进临时文件，
+        # 日志里只留进度；出错时打印最后几行，把域名打码。
         run: |
-          set -o pipefail
+          LOG="$RUNNER_TEMP/data.log"
+          mask() { sed -E 's/[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}/<host>/g'; }
+          step() { echo "== $1"; shift; "$@" >> "$LOG" 2>&1 || { echo "::error::$1 失败"; tail -25 "$LOG" | mask; exit 1; }; }
           cd "$RADAR_SRC"
-          echo "== update"; python3 -m radar history update --config config.example.json --state "$STATE" --max-usd 3
-          echo "== read";   python3 -m radar history read --config config.example.json --state "$STATE" --workers 32
+          step "新卖家（AIsa / DataForSEO）" python3 -m radar history update --config config.example.json --state "$STATE" --max-usd 3
+          step "读首页" python3 -m radar history read --config config.example.json --state "$STATE" --workers 32
           cd "$GITHUB_WORKSPACE"
-          echo "== kinds";  python3 ops/seller-weekly/jev_kinds.py run
-          echo "== summary"; python3 ops/seller-weekly/weekly_report.py "$WEEK_END"
+          step "Jev 分类" python3 ops/seller-weekly/jev_kinds.py run
+          step "本周汇总" python3 ops/seller-weekly/weekly_report.py "$WEEK_END"
+          grep -m1 -E "个卖家第一次挂上收款链接" "$SELLER_EXPORTS/$WEEK_END.md" | mask
 
       - name: 存回卖家历史库（加密）
+        id: save
         if: steps.day.outputs.skip != 'true' && inputs.skip_data != '1'
         env:
           GH_TOKEN: ${{ github.token }}
@@ -117,7 +123,7 @@ jobs:
         run: |
           cd "$STATE"
           tar -czf - sellers_history.db exports/weekly | openssl enc -aes-256-cbc -pbkdf2 -iter 200000 -salt -pass env:SELLER_STATE_KEY -out "$RUNNER_TEMP/seller-state.tar.gz.enc"
-          gh release upload seller-state "$RUNNER_TEMP/seller-state.tar.gz.enc" --clobber
+          gh release upload seller-state "$RUNNER_TEMP/seller-state.tar.gz.enc" --clobber -R "$GITHUB_REPOSITORY"
           echo "已存回：$(du -h "$RUNNER_TEMP/seller-state.tar.gz.enc" | cut -f1)"
 
       - name: 写稿（Claude Code）
@@ -240,12 +246,14 @@ jobs:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           ALERT_EMAIL: ${{ secrets.ALERT_EMAIL }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          SAVED: ${{ steps.save.outcome }}
         run: |
           python3 - <<'PY'
           import json, os, urllib.request
+          saved = "卖家历史库已经存回，重跑时可以选 skip_data=1 跳过数据步骤（不再花 DataForSEO 的钱）。" if os.environ.get("SAVED") == "success" else "卖家历史库这次没有存回，重跑要从数据步骤开始。"
           req = urllib.request.Request("https://api.resend.com/emails", method="POST",
               data=json.dumps({"from": "出海选品周报 <news@jasonzhu.ai>", "to": [os.environ["ALERT_EMAIL"]], "subject": "⚠️ 出海选品周报这周没发出来",
-                               "html": f"<p>周报工作流失败了（数据步骤成功的话，卖家历史库已经存回）。</p><p><a href='{os.environ['RUN_URL']}'>看运行日志</a></p>"}).encode(),
+                               "html": f"<p>周报工作流失败了。{saved}</p><p><a href='{os.environ['RUN_URL']}'>看运行日志</a></p>"}).encode(),
               headers={"Authorization": "Bearer " + os.environ["RESEND_API_KEY"], "Content-Type": "application/json", "User-Agent": "jasonzhu-seller-weekly"})
           print(urllib.request.urlopen(req, timeout=30).read().decode())
           PY
