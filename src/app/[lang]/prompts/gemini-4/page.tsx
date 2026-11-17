@@ -10,6 +10,7 @@ import GeminiLibraryClient from "./GeminiLibraryClient";
 const SITE_URL = "https://jasonzhu.ai";
 const PATH = GEMINI_LIBRARY_PATH.slice(1);
 const FIRST_PAGE = 24;
+const REPO = "https://github.com/zhuyansen/awesome-gemini-4-prompts";
 
 const copy = (isZh: boolean, n: number, withPrompt: number, threshold: number) => ({
   title: isZh ? "Gemini 4 提示词合集：Argon、Carbon 写代码做的 3D、物理模拟、游戏作品与原始提示词" : "Gemini 4 Prompts: 3D Scenes, Physics Sims & Games Built by Argon and Carbon, with Original Prompts",
@@ -60,6 +61,7 @@ export default async function GeminiPromptsPage({ params }: { params: Promise<{ 
         ["每个作品都有提示词吗？", `没有。${lib.withPrompt ? `${cases.length} 个作品里有 ${lib.withPrompt} 个附提示词，` : ""}提示词只收作者本人公开的：原帖正文、作者自己的回复、回复里的截图或作者给的链接，原文照录。没公开提示词的作品也收录，方便看效果，卡片直接链到原帖。`],
         ["收录标准是什么？", `原帖播放不低于 ${lib.threshold.toLocaleString("en-US")}；视频是原帖自带的；作者自己写的帖子正文里说用了 Gemini 4（只在引用别人帖子里提到的不算）。转发、官方演示不收。`],
         ["我是作者，想修改署名或下架怎么办？", "在 X 上私信 @GoSailGlobal 即可，会尽快处理。所有作品版权归原作者，收录不代表获得任何授权。"],
+        ["数据可以拿去用吗？", `可以。全部作品的结构化数据（原帖链接、创作者、分类、版本、对比对象、播放量、提示词出处）开源在 GitHub：${REPO}，每天自动同步。`],
       ]
     : [
         ["What is collected here?", "Visual works that creators had Gemini 4 build in code (Three.js, WebGL, Blender scripts, SVG, web pages): 3D scenes, jelly and soft-body physics, machine cutaways, games and simulations. The videos are mostly screen recordings of the running code rather than clips from a video model."],
@@ -68,6 +70,7 @@ export default async function GeminiPromptsPage({ params }: { params: Promise<{ 
         ["Does every work come with a prompt?", `No. ${lib.withPrompt ? `${lib.withPrompt} of the ${cases.length} works include a prompt. ` : ""}Prompts come only from the creator: the post itself, their own reply, a screenshot in a reply, or a link they shared, kept verbatim. Works without a published prompt are listed too and link straight to the original post.`],
         ["What gets included?", `The original post has ${lib.threshold.toLocaleString("en-US")}+ views, the video is attached to that post, and the creator's own text says it was made with Gemini 4 (a mention only inside a quoted post doesn't count). Reposts and official demos are left out.`],
         ["I'm a creator and want my credit fixed or a work removed.", "Send a DM to @GoSailGlobal on X and it will be handled quickly. All works belong to their creators; listing them here does not imply any license."],
+        ["Can I use the data?", `Yes. Structured data for every work (post link, creator, category, version, rival models, views, prompt source) is open on GitHub at ${REPO} and synced daily.`],
       ];
 
   const jsonLd = [
@@ -153,6 +156,8 @@ export default async function GeminiPromptsPage({ params }: { params: Promise<{ 
           <Link href={`/${lang}/prompts/claude-opus-5-5`} className="text-[var(--primary)] hover:underline">{isZh ? "Claude 5.5 提示词库" : "Claude 5.5 Prompt Library"}</Link>
           {" · "}
           <Link href={`/${lang}/prompts/chatgpt-images-2-6`} className="text-[var(--primary)] hover:underline">{isZh ? "ChatGPT Images 2.6 提示词合集" : "ChatGPT Images 2.6 Prompts"}</Link>
+          {" · "}
+          <a href={REPO} target="_blank" rel="noopener noreferrer" className="text-[var(--primary)] hover:underline">GitHub</a>
         </p>
       </section>
 

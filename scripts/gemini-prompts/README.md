@@ -23,6 +23,8 @@
 
 在 `.github/workflows/opus-prompts-daily.yml` 里接在图片库后面跑（北京 9:17，Vercel Cron 按点触发），三个库一起提交一次，不多一次部署；这一步失败不挡别的库。组装放在 Claude 库组装之后，种子拿到的是当天的 Claude 库。只跑这个库或补跑某段时间：手动运行时 `only=gemini`，再填 `window_from` / `window_to`。
 
+GitHub 公开合集 `zhuyansen/awesome-gemini-4-prompts`（2026-11-17 建）的 `.github/workflows/sync.yml` 每天北京 13:30 拉 `src/content/gemini-prompts/gemini-4.json` 和 `build-repo.mjs` 重新生成，同图片库：新结果少于上一次的八成就不覆盖。本机看生成结果：`node scripts/gemini-prompts/build-repo.mjs /tmp/gemini-repo`。分类、版本、对比对象的名字在 `build-repo.mjs` 里也有一份，新版本名没加也不会出错（按原样首字母大写）。
+
 ```bash
 # 本机跑需要的 key 同图片库（本机没有 Opus 终审通道，拿不准的进 pending.json）
 OPUS_TRANSPORT=curl WINDOW_FROM=2026-11-14T00:00Z WINDOW_TO=2026-11-15T00:00Z node scripts/gemini-prompts/daily.mjs --dry
@@ -45,4 +47,3 @@ node scripts/gemini-prompts/assemble.mjs --write && node scripts/generate-gemini
 
 - 10-14 到 11-14 之间、Claude 库没收到的 Gemini 4 作品（每日收录从建库前一天开始往后收）。要补就手动跑几次 `only=gemini` + `window_from` / `window_to`。
 - 每周核验（刷新播放量、下架已删帖）：种子跟着 Claude 库更新，每日收录的还没有。
-- GitHub 公开合集 `awesome-gemini-4-prompts`（`build-repo.mjs`）。
