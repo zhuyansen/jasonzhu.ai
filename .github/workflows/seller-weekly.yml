@@ -209,7 +209,8 @@ jobs:
             -H "Authorization: Bearer $TYPEFULLY_API_KEY" -H "Content-Type: application/json" -d "$BODY")
           CODE=$(echo "$RESP" | tail -n1); JSON=$(echo "$RESP" | sed '$d')
           [ "$CODE" -ge 200 ] && [ "$CODE" -lt 300 ] || { echo "Typefully HTTP $CODE: $JSON"; exit 1; }
-          URL=$(echo "$JSON" | jq -r '.private_url // .share_url // .url // empty')
+          # Typefully 回的 JSON 里正文换行没转义，jq 会报错，用 Python 宽松解析
+          URL=$(echo "$JSON" | python3 -c 'import sys,json; d=json.loads(sys.stdin.read(), strict=False); print(d.get("private_url") or d.get("share_url") or "")' || true)
           echo "url=${URL:-https://typefully.com/drafts}" >> "$GITHUB_OUTPUT"
 
       - name: 等博客上线，发邮件给 Jason
