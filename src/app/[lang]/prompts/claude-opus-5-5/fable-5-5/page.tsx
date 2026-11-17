@@ -110,7 +110,7 @@ export default async function FablePage({ params }: { params: Promise<{ lang: st
       mainEntity: {
         "@type": "ItemList",
         numberOfItems: cases.length,
-        itemListElement: initial.map((x, i) => ({ "@type": "ListItem", position: i + 1, url: `${SITE_URL}/${lang}/${LIB}/${x.id}`, name: isZh ? x.title.zh : x.title.en })),
+        itemListElement: byViews.filter((x) => x.prompt).slice(0, 20).map((x, i) => ({ "@type": "ListItem", position: i + 1, url: `${SITE_URL}/${lang}/${LIB}/${x.id}`, name: isZh ? x.title.zh : x.title.en })),
       },
     },
     { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })) },

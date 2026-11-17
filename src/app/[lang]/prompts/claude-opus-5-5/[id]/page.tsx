@@ -17,11 +17,11 @@ interface Props {
   params: Promise<{ lang: string; id: string }>;
 }
 
-// 所有 id 都在 generateStaticParams 里；未知 id 按未匹配路由 404（走 global-not-found，完整 SSR）
+// 只有带提示词的作品有详情页（没有提示词的卡片直链 X 原帖，不产生 noindex 页面，见图片库与 Gemini 库）；未知 id 404
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return getOpusLibrary().cases.flatMap((c) => [
+  return getOpusLibrary().cases.filter((c) => c.prompt).flatMap((c) => [
     { lang: "zh", id: c.id },
     { lang: "en", id: c.id },
   ]);
@@ -36,17 +36,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang: rawLang, id } = await params;
   const lang = (rawLang === "en" ? "en" : "zh") as Locale;
   const c = getOpusCase(id);
-  if (!c) return {};
+  if (!c || !c.prompt) return {};
   const isZh = lang === "zh";
   const modelName = (c.models || ["opus-5.5"]).map((m) => MODEL_LABEL[m]).join(" / ");
-  const title = `${isZh ? c.title.zh : c.title.en}${c.prompt ? (isZh ? `｜${modelName} 提示词` : ` | ${modelName} Prompt`) : (isZh ? `｜${modelName} 作品` : ` | ${modelName} Work`)}`;
-  const description = describe(isZh, isZh ? c.title.zh : c.title.en, c.author.handle, c.stats.views, c.prompt?.kind, modelName);
+  const title = `${isZh ? c.title.zh : c.title.en}${isZh ? `｜${modelName} 提示词` : ` | ${modelName} Prompt`}`;
+  const description = describe(isZh, isZh ? c.title.zh : c.title.en, c.author.handle, c.stats.views, c.prompt.kind, modelName);
   return {
     title,
     description,
     referrer: "no-referrer",
-    // 没有提示词的作品页只有视频和出处，内容太薄，不进搜索索引（列表页和 GitHub 合集照常展示）
-    ...(c.prompt ? {} : { robots: { index: false, follow: true } }),
     alternates: {
       canonical: `${SITE_URL}/${lang}/${PATH}/${id}`,
       languages: { zh: `${SITE_URL}/zh/${PATH}/${id}`, en: `${SITE_URL}/en/${PATH}/${id}`, "x-default": `${SITE_URL}/zh/${PATH}/${id}` },
@@ -61,7 +59,7 @@ export default async function OpusCasePage({ params }: Props) {
   const lang = (rawLang === "en" ? "en" : "zh") as Locale;
   const isZh = lang === "zh";
   const c = getOpusCase(id);
-  if (!c) notFound();
+  if (!c || !c.prompt) notFound();
   const modelName = (c.models || ["opus-5.5"]).map((m) => MODEL_LABEL[m]).join(" / ");
   const lib = getOpusLibrary();
   const prompt = full[id]?.prompt ?? null;
@@ -69,7 +67,7 @@ export default async function OpusCasePage({ params }: Props) {
   const title = isZh ? c.title.zh : c.title.en;
 
   const related = lib.cases
-    .filter((x) => x.id !== id && x.category === c.category)
+    .filter((x) => x.id !== id && x.prompt && x.category === c.category)
     .sort((a, b) => b.stats.views - a.stats.views)
     .slice(0, 6);
   const articles = isZh ? [] : relatedEnglishArticles(c);

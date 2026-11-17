@@ -104,7 +104,7 @@ export default async function MotionGraphicsPage({ params }: { params: Promise<{
       mainEntity: {
         "@type": "ItemList",
         numberOfItems: cases.length,
-        itemListElement: initial.map((x, i) => ({
+        itemListElement: byViews.filter((x) => x.prompt).slice(0, 20).map((x, i) => ({
           "@type": "ListItem",
           position: i + 1,
           url: `${SITE_URL}/${lang}/${LIB}/${x.id}`,

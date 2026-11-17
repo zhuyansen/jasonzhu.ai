@@ -224,7 +224,7 @@ const S = EN ? {
   play: 'Play: watch the sky grow from day one', err: "The star catalog didn't load. Try refreshing.", stars: n => `${n.toLocaleString('en-US')} stars`, consts: n => `${n} constellations`,
   lit: n => `${n} lit`, cname: c => c.en, top5: (m, t) => t ? `5 latest by ${m.toLowerCase()}` : `5 brightest by ${m.toLowerCase()}`, ticks: ['Earlier', 'Middle', 'Newest'],
   full: (n, f) => `Full prompt · ${n.toLocaleString('en-US')} chars${f ? ' · needs reference files' : ''}`, brief: 'One-line instruction', none: 'No public prompt',
-  noneBody: "The creator didn't share a prompt. The video and the making-of are still on the page.", posted: (d, a) => `Posted ${d} · added ${a}`,
+  noneBody: "The creator didn't share a prompt. View the original post on X.", posted: (d, a) => `Posted ${d} · added ${a}`,
   st: ['Bookmarks', 'Likes', 'Views', 'Replies'], open: 'Open this work →', orig: 'Original post ↗', close: 'Close', grow: e => `Sep 22 → ${e} · watch it grow`,
 } : {
   h1: '提示词宇宙', search: '搜标题、作者、工具', filter: '观测设置', kMetric: '亮度按', kOnly: '只看有提示词', kAtlas: '星座表',
@@ -232,7 +232,7 @@ const S = EN ? {
   play: '播放：看星空从第一天长到今天', err: '星表没加载出来，刷新一下试试。', stars: n => `${n.toLocaleString('zh-CN')} 颗星`, consts: n => `${n} 个星座`,
   lit: n => `亮着 ${n} 颗`, cname: c => c.zh + '座', top5: (m, t) => t ? `${m}最晚的 5 颗` : `按${m}最亮的 5 颗`, ticks: ['较早', '居中', '最新'],
   full: (n, f) => `完整提示词 · ${n.toLocaleString('zh-CN')} 字${f ? ' · 要配参考素材' : ''}`, brief: '一句话指令', none: '没有公开提示词',
-  noneBody: '作者没有公开提示词，可以看视频和做法。', posted: (d, a) => `${d} 发布 · ${a} 收录`,
+  noneBody: '作者没有公开提示词，可去 X 看原帖。', posted: (d, a) => `${d} 发布 · ${a} 收录`,
   st: ['收藏', '点赞', '播放', '回复'], open: '看这个作品 →', orig: '原帖 ↗', close: '关闭', grow: e => `9 月 22 日 → ${e} <small>· 看它长出来</small>`,
 };
 for (const k of ['h1', 'kMetric', 'kOnly', 'kAtlas', 'hint']) document.getElementById(k).textContent = S[k];
@@ -428,13 +428,17 @@ function select(c, from) {
   sel = c; controls.autoRotate = false; if (from !== 'keep') fly(c.p, 14 + 9 * (1 - (c.sc ?? 0)));
   const kind = c.k === 2 ? S.full(c.n, c.f) : c.k === 1 ? S.brief : S.none, ex = excerpt[c.i];
   const href = `/${LANG}/prompts/claude-opus-5-5/${c.i}`;
+  const xUrl = `https://x.com/${encodeURIComponent(c.a)}/status/${c.i}`;
+  const links = c.k
+    ? `<a class="go" id="go" href="${href}" target="_top">${S.open}</a><a href="${xUrl}" target="_blank" rel="noopener">${S.orig}</a>`
+    : `<a class="go" id="go" href="${xUrl}" target="_blank" rel="noopener">${S.orig}</a>`;
   const card = $('card'); card.hidden = false;
   card.innerHTML = `<div class="top"><span class="des">${desig(c)}</span><button class="x" id="close" aria-label="${S.close}">×</button></div>
     <h2>${esc(title(c))}</h2><p class="en">${esc(title2(c))}</p>
     <div class="meta"><b>@${esc(c.a)}</b>${c.m ? ' · ' + [...c.m].map(x => MODEL[x]).join(EN ? ', ' : '、') : ''}${c.o.length ? ' · ' + c.o.map(esc).join(EN ? ', ' : '、') : ''}<br>${S.posted(c.d, c.ad)} · ${c.cat}</div>
     <div class="stats">${[['b', 0], ['l', 1], ['v', 2], ['r', 3]].map(([k, j]) => `<div class="${metric === k ? 'on' : ''}"><b>${fmt(c[k])}</b><span>${S.st[j]}</span></div>`).join('')}</div>
     <div class="prompt"><span class="k">${kind}</span>${c.k ? (ex === undefined ? '…' : esc(ex) + (c.n > ex.length ? '…' : '')) : S.noneBody}</div>
-    <div class="links"><a class="go" id="go" href="${href}" target="_top">${S.open}</a><a href="https://x.com/${encodeURIComponent(c.a)}/status/${c.i}" target="_blank" rel="noopener">${S.orig}</a></div>`;
+    <div class="links">${links}</div>`;
   $('close').onclick = deselect; offset();
   $('go').onclick = () => { try { if (parent !== window) parent.postMessage({ type: 'universe:open', id: c.i }, location.origin); } catch (e) {} };
   if (from !== 'hash' && from !== 'keep') { try { history.replaceState(null, '', '#c' + c.i); } catch (e) {} }

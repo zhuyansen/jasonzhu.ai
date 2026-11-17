@@ -391,12 +391,18 @@ function CaseCard({ c, lang, isNew, showAdded, onGroup, onPick, lockModel, lockC
         </div>
 
         <h3 className="text-base font-semibold text-gray-900 leading-snug mb-3">
-          <Link href={`/${lang}/${BASE}/${c.id}`} className="hover:text-[var(--primary)] transition-colors">
-            {title}
-          </Link>
+          {p ? (
+            <Link href={`/${lang}/${BASE}/${c.id}`} className="hover:text-[var(--primary)] transition-colors">
+              {title}
+            </Link>
+          ) : (
+            <a href={c.url} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--primary)] transition-colors">
+              {title}
+            </a>
+          )}
         </h3>
 
-        {p && (
+        {p ? (
           <>
             <div className="flex items-center justify-between mb-1.5">
               <span className="text-[11px] font-semibold uppercase tracking-wide text-gray-400">
@@ -446,6 +452,10 @@ function CaseCard({ c, lang, isNew, showAdded, onGroup, onPick, lockModel, lockC
               )}
             </div>
           </>
+        ) : (
+          <a href={c.url} target="_blank" rel="noopener noreferrer" className="text-xs text-gray-400 hover:text-gray-700">
+            {isZh ? "作者没公开提示词 · 去 X 看原帖 ↗" : "No prompt shared · view on X ↗"}
+          </a>
         )}
 
         {c.referenceAssets && (

@@ -92,7 +92,7 @@ export default async function OpusPromptsPage({ params }: { params: Promise<{ la
       mainEntity: {
         "@type": "ItemList",
         numberOfItems: cases.length,
-        itemListElement: initial.map((x, i) => ({
+        itemListElement: cases.filter((x) => x.prompt).slice(0, 20).map((x, i) => ({
           "@type": "ListItem",
           position: i + 1,
           url: `${SITE_URL}/${lang}/${PATH}/${x.id}`,
@@ -221,21 +221,21 @@ export default async function OpusPromptsPage({ params }: { params: Promise<{ la
         </div>
       </section>
 
-      {/* 全部案例的真实链接：按钮翻页对爬虫不可见，这里给每个详情页一个入口 */}
+      {/* 全部带提示词案例的真实链接：按钮翻页对爬虫不可见，这里给每个详情页一个入口 */}
       <section className="mt-14">
         <details className="border-t border-gray-100 pt-5">
           <summary className="text-sm text-gray-500 cursor-pointer select-none hover:text-gray-700">
-            {isZh ? `按分类浏览全部 ${cases.length} 个案例` : `Browse all ${cases.length} cases by category`}
+            {isZh ? `按分类浏览全部 ${lib.withPrompt} 个带提示词案例` : `Browse all ${lib.withPrompt} cases with prompts by category`}
           </summary>
-          <nav aria-label={isZh ? "全部案例" : "All cases"} className="mt-5 space-y-6">
-            {OPUS_CATEGORIES.filter((k) => counts[k.key]).map((k) => (
+          <nav aria-label={isZh ? "全部带提示词案例" : "All cases with prompts"} className="mt-5 space-y-6">
+            {OPUS_CATEGORIES.filter((k) => cases.some((x) => x.prompt && x.category === k.key)).map((k) => (
               <div key={k.key}>
                 <h3 className="text-sm font-semibold text-gray-700 mb-2">
                   {k.icon} {isZh ? k.zh : k.en}
                 </h3>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-1.5">
                   {cases
-                    .filter((x) => x.category === k.key)
+                    .filter((x) => x.prompt && x.category === k.key)
                     .map((x) => (
                       <li key={x.id} className="text-sm truncate">
                         <Link href={`/${lang}/${PATH}/${x.id}`} className="text-gray-500 hover:text-[var(--primary)]">

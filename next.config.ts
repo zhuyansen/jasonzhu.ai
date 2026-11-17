@@ -18,6 +18,13 @@ const nextConfig: NextConfig = {
         destination: "https://jasonzhu.ai/:path*",
         permanent: true,
       },
+      // .vercel.app 默认域名 → apex 308，防止 ChatGPT/Claude/搜索引擎收录并引用 vercel.app 替代主域名
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "jasonzhuai.vercel.app" }],
+        destination: "https://jasonzhu.ai/:path*",
+        permanent: true,
+      },
     ];
   },
   async headers() {
@@ -52,6 +59,12 @@ const nextConfig: NextConfig = {
         // 提示词库要站内播放原视频，这组页面不发 Referer。规则靠后，覆盖上面的全站策略。
         source: "/:lang(zh|en)/prompts/:path*",
         headers: [{ key: "Referrer-Policy", value: "no-referrer" }],
+      },
+      {
+        // Vercel git preview URL（jasonzhuai-*.vercel.app）加 noindex 兜底，避免预览环境被索引
+        source: "/(.*)",
+        has: [{ type: "host", value: ".*\\.vercel\\.app" }],
+        headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
       },
     ];
   },
