@@ -3,8 +3,8 @@
  "model": "Gemini 4",
  "released": "2026-10-14T00:00:00Z",
  "threshold": 5000,
- "updatedAt": "2026-11-16T18:07:37.872Z",
- "statsCheckedAt": "2026-11-16T17:58:53.900Z",
+ "updatedAt": "2026-11-17T01:30:00.332Z",
+ "statsCheckedAt": "2026-11-17T01:27:38.953Z",
  "inclusionRule": "Original post by the creator, media attached, >= 5000 views on that post, and the creator's own text says Gemini 4 (Argon, Carbon, Hydrogen, Krypton, Pro...) built it in code; same-prompt comparisons against other models included. Seeded on 2026-11-16 from the Claude 5.5 library. Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -2633,6 +2633,58 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2122033244627689692",
+   "url": "https://x.com/Saboo_Shubham_/status/2122033244627689692",
+   "author": {
+    "handle": "Saboo_Shubham_",
+    "name": "Shubham Saboo"
+   },
+   "postedAt": "2026-11-15T18:25:25.000Z",
+   "addedAt": "2026-11-17",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "carbon"
+   ],
+   "rivals": [],
+   "category": "ui",
+   "title": {
+    "zh": "无广告个性化电视界面",
+    "en": "Ad-free personalized TV interface"
+   },
+   "summary": {
+    "zh": "创作者使用 Gemini 4 Carbon、Antigravity 和开源 agent.md 文件重新编程电视，制作了个性化界面。",
+    "en": "The creator reprogrammed a TV with a personalized interface using Gemini 4 Carbon in Antigravity and an open-source agent.md file."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Antigravity"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 53814,
+    "likes": 570,
+    "replies": 51,
+    "reposts": 17,
+    "bookmarks": 289,
+    "checkedAt": "2026-11-17T01:27:38.953Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXL2raTawAAFSpV.jpg",
+     "width": 3559,
+     "height": 2262
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -6964,6 +7016,67 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2122105333887934810",
+   "url": "https://x.com/EnvolDev/status/2122105333887934810",
+   "author": {
+    "handle": "EnvolDev",
+    "name": "Tony"
+   },
+   "postedAt": "2026-11-15T23:11:53.000Z",
+   "addedAt": "2026-11-17",
+   "lang": "en",
+   "kind": "comparison",
+   "models": [
+    "carbon",
+    "hydrogen"
+   ],
+   "rivals": [
+    "gpt",
+    "muse"
+   ],
+   "category": "scene3d",
+   "title": {
+    "zh": "冰之大教堂场景",
+    "en": "Ice cathedral scene"
+   },
+   "summary": {
+    "zh": "创作者让 Gemini 4 Hydrogen、Gemini 4 Carbon、GPT-6.1 Sol 和 Muse Spark 1.3 使用同一提示词生成冰之大教堂。GPT-6.1 Sol 速度最快、成本最低。",
+    "en": "The creator compared Gemini 4 Hydrogen, Gemini 4 Carbon, GPT-6.1 Sol, and Muse Spark 1.3 on the same Cathedral of Ice prompt. GPT-6.1 Sol was fastest and cheapest."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "GPT-6.1 Sol",
+    "Muse Spark 1.3",
+    "Codex",
+    "OpenCode"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 13620,
+    "likes": 138,
+    "replies": 13,
+    "reposts": 8,
+    "bookmarks": 22,
+    "checkedAt": "2026-11-17T01:27:38.953Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2122105199422808065/vid/avc1/810x720/jQYkQpEUjMp-nGo3.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2122105199422808065/img/XzzNbWkQDmQQyB0g.jpg",
+     "width": 2160,
+     "height": 1920,
+     "durationSec": 25
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },

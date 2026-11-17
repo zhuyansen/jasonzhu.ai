@@ -1,8 +1,8 @@
 {
  "model": "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.5)",
  "threshold": 5000,
- "updatedAt": "2026-11-16T10:43:30.012Z",
- "statsCheckedAt": "2026-11-16T10:43:30.012Z",
+ "updatedAt": "2026-11-17T01:17:13.595Z",
+ "statsCheckedAt": "2026-11-17T01:17:13.595Z",
  "inclusionRule": "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -3987,6 +3987,58 @@
    }
   },
   {
+   "id": "2121781040360608076",
+   "url": "https://x.com/kohya_tech/status/2121781040360608076",
+   "author": {
+    "handle": "kohya_tech",
+    "name": "Kohya Tech"
+   },
+   "postedAt": "2026-11-15T01:43:15.000Z",
+   "addedAt": "2026-11-17",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "环形XY绘图仪介绍",
+    "en": "Ring XY plotter introduction"
+   },
+   "summary": {
+    "zh": "作者完成了环形 XY 绘图仪。介绍视频由 Opus 5.5 制作，较长版本使用 Fable 5.2，配有 AI 生成的音乐和旁白。",
+    "en": "A ring-based XY plotter was completed. The introduction video was made with Opus 5.5, while the longer video used Fable 5.2, with AI-generated music and narration."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Fable 5.2",
+    "MiniMax-Music3",
+    "Aratako/Irodori-TTS-v4.1-Small"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 583577,
+    "likes": 4768,
+    "replies": 48,
+    "reposts": 1177,
+    "bookmarks": 1433,
+    "checkedAt": "2026-11-17T01:17:13.595Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121780434057277440/img/QaEWSfb3ojdk3ZDw.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121780434057277440/vid/avc1/1280x720/nT4SVrIHLWBptK_7.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 110
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103846928027160609",
    "url": "https://x.com/domenic/status/2103846928027160609",
    "author": {
@@ -4429,6 +4481,58 @@
     "width": 776,
     "height": 720,
     "durationSec": 29
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2122072152686121146",
+   "url": "https://x.com/jony_palino/status/2122072152686121146",
+   "author": {
+    "handle": "jony_palino",
+    "name": "Jony Palino"
+   },
+   "postedAt": "2026-11-15T21:00:02.000Z",
+   "addedAt": "2026-11-17",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "四个模型的输出对比",
+    "en": "Four-model output comparison"
+   },
+   "summary": {
+    "zh": "这篇帖子使用同一个提示词，对比 Gemini 4 Krypton、Claude Fable 5.2、Claude Opus 5.5 和 DeepSeek V4.1 Flash。",
+    "en": "The post compares Gemini 4 Krypton, Claude Fable 5.2, Claude Opus 5.5, and DeepSeek V4.1 Flash using the same prompt."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Gemini 4 Krypton",
+    "Claude Fable 5.2",
+    "DeepSeek V4.1 Flash"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 511233,
+    "likes": 1414,
+    "replies": 177,
+    "reposts": 55,
+    "bookmarks": 383,
+    "checkedAt": "2026-11-17T01:17:13.595Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2122016843397296129/img/Vq-3ma3hifNUzhwJ.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122016843397296129/vid/avc1/720x720/DdCqIuFharzPbLW-.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 17
    },
    "evidence": {
     "via": "daily",
@@ -35492,6 +35596,63 @@
    }
   },
   {
+   "id": "2121896633848017145",
+   "url": "https://x.com/MengTo/status/2121896633848017145",
+   "author": {
+    "handle": "MengTo",
+    "name": "Meng To"
+   },
+   "postedAt": "2026-11-15T09:22:35.000Z",
+   "addedAt": "2026-11-17",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "黑暗之魂风格浏览器游戏",
+    "en": "Dark Souls-inspired browser game"
+   },
+   "summary": {
+    "zh": "作者用 Three.js 和 Claude 智能体制作了一个浏览器运行的黑暗之魂风格游戏，并通过生成 3D 资产、声音和界面进行迭代评审。",
+    "en": "A browser-based Dark Souls-inspired game was made with Three.js and Claude agents, using generated 3D assets, sound, UI, and iterative judging."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Three.js",
+    "Fable 5.2",
+    "Claude Code",
+    "Seedream 5.0 Pro",
+    "Tripo 3D",
+    "dream-loop",
+    "workflow-score-to-target",
+    "design-action-combat"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 77931,
+    "likes": 960,
+    "replies": 163,
+    "reposts": 72,
+    "bookmarks": 986,
+    "checkedAt": "2026-11-17T01:17:13.595Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/ext_tw_video_thumb/2121896455816548352/pu/img/64C320SXAJ7oPGQ8.jpg",
+    "mp4": "https://video.twimg.com/ext_tw_video/2121896455816548352/pu/vid/avc1/1280x720/RU6LuiJL3vKv0LKs.mp4?tag=12",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 99
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103099194693271874",
    "url": "https://x.com/pradeepXkapoor/status/2103099194693271874",
    "author": {
@@ -43966,6 +44127,68 @@
     "width": 1280,
     "height": 720,
     "durationSec": 195
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2121982602122760352",
+   "url": "https://x.com/AmirMushich/status/2121982602122760352",
+   "author": {
+    "handle": "AmirMushich",
+    "name": "AmirMušić"
+   },
+   "postedAt": "2026-11-15T15:04:11.000Z",
+   "addedAt": "2026-11-17",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "机器视觉风格产品检测短片",
+    "en": "Machine-vision product inspection film"
+   },
+   "summary": {
+    "zh": "这是一个完全用代码制作的9.6秒竖屏产品短片，展示物体被拆解检查、承受极限并恢复后循环播放。创作者使用了 Claude Code 和 Blender，并用 Cycles 渲染。",
+    "en": "A 9.6-second vertical product film made entirely in code, showing an object being inspected, stressed, recovering, and looping. The creator used Claude Code and Blender with Cycles rendering."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/AmirMushich/status/2121983534931890604",
+    "text": "# OBJECT STROBE: a product film built entirely in code\n\n> Paste this into Claude Code in an empty folder. Replace `[OBJECT]` once, in the line below. Nothing else needs editing.\n\n**OBJECT = [OBJECT]**\n\nYou are the technical director and the art director on a 9.6-second vertical loop for Instagram Reels. The hero is\n[OBJECT], modelled entirely in code, with no imported models, no stock assets, no logos and no brand names. The film reads as the\noutput of a machine-vision system diagnosing [OBJECT]:\n- the object comes apart and is inspected part by part;\n- it goes back together and is pushed past its limit;\n- it recovers and settles into one clean hero frame that loops into frame 0 without a seam.\n\nUnder the analysis graphics, each part strobes between three passes: **solid** (finished material), **glass**\n(dispersive x-ray), and **field** (a simulation plot of the one physical quantity that matters to [OBJECT]).\n\nWork like a studio, not like a demo: every decision below has a reason, and every number on screen has to be true.\n\n---\n\n## 0. How you work\n\n- Work only inside this folder. Keep scripts in `scripts/`, frames in `renders/`, finished files in `deliver/`, notes in `board/`.\n- **Every frame is a pure function of its frame number.** No accumulated state and no randomness without a seed. Any frame\ncan be re-rendered alone and match its neighbours.\n- **One GPU, one render.** Never run two Blender renders at once. Run anything longer than two minutes in the background.\n- **Ask before installing software, downloading fonts or spending money.** Say what, from where and how big.\n- **Show, then continue.** At each checkpoint (★), build a contact sheet and show it to me before going on:\n- every 6th frame with frame numbers burned in;\n- 100 % crops where detail matters.\n- Write a `README.md` as you go: what each script does and the exact commands to reproduce the result.\n\n## 1. Preflight\n\nCheck, report in one table, and fix what's missing (after asking):\n\n| Need | Check | If missing |\n|---|---|---|\n| Blender ≥ 4.2 (needs the *Khronos PBR Neutral* view transform) | `blender --version`. On Windows also try `C:\\Program Files\\Blender Foundation\\*\\blender.exe`; on macOS `/Applications/Blender.app/Contents/MacOS/Blender` | `winget install BlenderFoundation.Blender` / `brew install --cask blender` / the official .tar.xz from https://blender.org/ on Linux |\n| GPU for Cycles | in Blender's Python: `cycles` prefs `get_devices()`; prefer OPTIX > CUDA > METAL > HIP | CPU works: halve the samples, render at 50 % first, and tell me the time estimate |\n| ffmpeg | `ffmpeg -version` | winget `Gyan.FFmpeg` / brew `ffmpeg` / apt `ffmpeg` |\n| Python 3.10+ with numpy, opencv-python, pillow | make a local `.venv`, install there, never globally | — |\n| Fonts: **Fira Mono** (data) and **Space Grotesk** (tags), both SIL OFL from Google Fonts | look in system or user font folders | ask, then download into `fonts/` and load them by path |\n\nThen render one 540×960 test frame of a cube with the final render settings. Report the device and seconds per frame,\nand project the full render time before you build anything.\n\n## 2. Study the object ★\n\nBefore modelling, write `board/OBJECT.md`:\n\n1. **Anatomy.** List 25–50 real parts of [OBJECT] with their real names: housings, inner mechanism, fasteners, seals, the\nsmall parts people never see. Give each one:\n- a group (shell / core / small);\n- a primary material;\n- an **explode vector** (direction and distance along the object's natural assembly axis; large shells travel farthest).\n2. **The field.** Pick the ONE physical quantity [OBJECT] truly lives with:\n- heat for an engine part;\n- load for a structure;\n- pressure or flow for a valve or a lung;\n- charge for a battery;\n- vibration for a speaker.\n\nName it, give it a unit, a realistic working range and a **limit**. This becomes the story.\n3. **The story in four beats**, specific to [OBJECT]:\n- cold, at rest;\n- working, the field rises in a front across the object, from source to far end;\n- **over the limit**, the most extreme frame of the film;\n- recovery, a front running back.\n4. **Proportions.** Overall size, key diameters and thicknesses, from real-world references you know. Turn them into one\nconstants table that all geometry reads from.\n\n## 3. Build ([OBJECT] in code)\n\n- Model with signed distance functions in numpy and mesh them with surface nets plus a few Newton steps onto the surface\n(crisp edges, no blobby marching-cubes look).\n- Use smooth unions for cast parts, hard booleans for machined ones.\n- Use real threads on fasteners.\n- Use bpy only for assembly and materials.\n- Each part is its own object. Each one stores custom properties: `xv` (explode vector), `grp`, `seed`, `tbase` (field\nvalue 0–1) and `hamp` (field noise amplitude).\n- Cache SDF results to disk. Decimate large shells to a sane vertex budget (≈ 3 M vertices total is fine).\n- **Hero asset bar:** sculpt-level detail on the parts the camera dwells on. Detail density here buys more than more parts:\nbevels, bosses, ribs, casting seams, machined faces. Do not show a primitive blockout as the hero.\n- ★ Look-dev sheet: four configurations (assembled / exploded / core only / close-up) × three passes, rendered at 50 %.\n\n## 4. Look\n\n- **One `Strobe` shader node group** on every part, switched per object through Attribute nodes (OBJECT type): `st` 0 solid,\n1 glass, 2 field.\n- **Glass:** three Glass BSDFs on R, G and B at IOR ≈ 1.47 / 1.51 / 1.57, added together. This is cheap dispersion with\nrainbow edges.\n- **Field:** object-space 4D noise around `tbase`, plus a radial and an axial term, fed through one colour ramp. Emission\nrises with the field value, so hot parts glow and cold ones read as a scan.\n- **The field palette has two hues, never a rainbow:**\n- cold: navy → cobalt → ice;\n- an unlit dark band between them;\n- hot: ember → red → orange → near-white.\n\nNo green and no yellow-green: they read as engineering software, not as a film. Define the ramp once (sRGB hex) and use\nthe same ramp in the shader, the legend and every inset. In the cold acts, damp the noise so the scan stays blue.\n- Studio world: dark ground, two or three hard softboxes. Camera and transmission rays see a pale environment, so the glass\nreads.\n- **Film transparent.** Backdrops are composited later, which lets the backdrop change per act.\n- Khronos PBR Neutral view transform, exposure −1, 16-bit RGBA PNG.\n\n## 5. Timeline: 288 frames = 6 bars at 150 BPM\n\nOne beat is 12 frames and an eighth is 6. **Every cut lands on an eighth.** Act lengths:\n\n| frames | act | configuration | what happens |\n|---|---|---|---|\n| 0–11 | acquire | assembled, glass ghost, **light** backdrop | the hook: the most beautiful material on frame 0 |\n| 12–53 | separation | explode flight | outer parts leave first, small inner parts follow; ease-out, no overshoot |\n| 54–89 | inspection | exploded, slow drift | **one continuous shot** that keeps the flight's framing; only materials strobe |\n| 90–131 | core lock | close-up on the heart part, outer shells hidden | strip light along the edges, f/1.4 depth of field, three field pulses on beats |\n| 132–167 | reassembly | exact reverse order | inner parts seat first, shells close last; the camera follows the shells |\n| 168–215 | working | assembled | the field front runs source → far end, on the same curve the graphics draw |\n| 216–245 | **limit** | assembled | the extreme of the film: everything in the field pass, an alarm flicker on the beat (2.5 Hz) |\n| 246–269 | recovery | assembled | a front runs back; parts return to the solid pass one by one |\n| 270–287 | clean | assembled, solid, **light**, **no graphics** | the product alone; framing, drift and rotation run into frame 0 |\n\n- Material states are random only in the diagnostic acts (blocks of 1–4 frames, seeded per part). In the story acts they\nare **deterministic**: a part's pass follows the front.\n- **Never intercut configurations that read as different assembly states.** Hold one configuration per act.\n- Acts 168–269 are **one continuous camera move**: one slow push and orbit, with no cuts inside the story.\n\n## 6. Camera and motion\n\n- A fixed shot per configuration, with the object's main axis at about −27° on screen and a low, slightly heroic angle.\n- **Auto-framing:** project a subsample of the real mesh vertices (not bounding boxes) and fit the lens to a fill target.\nRe-aim at the visual centre, and compute it once per act so repeated shots match.\n- Place the subject 70 px above centre: the Reels caption covers the bottom.\n- Motion blur from keys at f−0.25, f and f+0.25, computed with that frame's own act, so nothing smears across a cut.\n- **Seam math, not eyeballing:** after the render, export each part's projected 2D box per frame. Measure the spread\n(the mean distance of the part centres from their centroid) across every act boundary.\n- A jump over 2 px means a stutter. Fix it in the camera, not in the edit.\n\n## 7. Render ★\n\n- Run `--track` (timeline JSON) and `--track2d` (per-frame part boxes, depth, pass, field value). Then render all\nframes with Cycles at 128 samples, adaptive threshold 0.03, OptiX denoise.\n- Frames 0–11 are the hook: render them at 512 samples with threshold 0.01. Grain in the glass at 100 % is not acceptable.\n- Render low-res tests of the extremes first (frames 0, 110, 200, 230, 262, 280). Judge the palette on its real backdrop\nbefore spending the full render.\n\n## 8. The vision layer (graphics in Python)\n\nThe graphics are diegetic: they are the machine's own readout, never captions or decoration. Composite them in numpy and\nPIL over the raw RGBA frames.\n\n- **Two backdrops only:** light for frames 0–11 and the clean beat, dark for the whole diagnosis.\n- On light, the object casts a soft offset shadow plus a contact shadow.\n- On dark, glowing parts spill a large, warm, blurred glow onto the ground.\n- Add a touch of bloom and chromatic aberration, and one **static** grain texture (grain that changes every frame looks cheap).\n- **Blend modes:** white vectors use **Exclusion**, so they invert what is under them; apply this to some elements, not\nall. Over mid-grey, where Exclusion disappears, the ink is picked from the actual pixels under each label.\n- **The safe band** (1080×1920): everything readable lives in y 250–1500 and clears the action column on the right\n(x > 930 for y 1000–1500).\n- **Type:**\n- Fira Mono 24 / 28 for data, Space Grotesk 34 for part names;\n- Regular weight only (bold reads cheap);\n- 2 px lines, 4 px for the lead line.\n- Labels never overlap: a placed label shifts, or it drops.\n- **One lead graphic per act:**\n- acquire: a dashed hull filling in;\n- separation: multi-object tracking with velocity labels and short trails, plus a curved dashed node web;\n- inspection: segmentation boxes on a 30 px grid, with the part names;\n- core lock: crosshair, lock box, a thermal inset and a 1-bit dithered edge inset;\n- reassembly: twelve rays converging on the seat point;\n- working: the front line;\n- limit: the alarm plate;\n- recovery: the recovery front;\n- clean: **nothing**.\n- **Glitch with purpose:** datamosh, slice, RGB split or pixel-sort, only *inside* tracked boxes, held for 2–3 frames.\nNever full frame. The bars must sample the part itself, never empty background.\n- **Invert slap:** invert, then black and white, then contrast 1.5. Three frames on, three off, three on, at the separation,\nthe working start and the limit. **One polarity throughout:** the object as a white silhouette on black, graphics white.\n- **Red belongs to the alarm.** It appears only after the limit is truly crossed. Everything else is white.\n- **One scale for every number:** each temperature, pressure or load on screen is computed from that part's real field\nvalue through one function, for example `T = min + (max − min) · v^1.6`.\n- The legend, the insets, the log and the tags all agree.\n- The limit act is the highest reading of the film.\n- Parts the recovery front has passed read as recovered.\n- IDs are consistent everywhere.\n- **The log:** a typewriter with a scrambled leading edge, top left. Lines carry live values, not invented ones.\n\n## 9. Sound (synthesised from the timeline, numpy only)\n\nThree layers with roles:\n- **mechanics:** impacts, the ejection roll, seat clicks, the lock;\n- **machine voice:** the characteristic sound of [OBJECT] at work. Its pitch follows the real state curve from the\ntimeline, about two octaves over the working act;\n- **data:** blips on log lines, ticks. Keep it about 18 dB under the other layers.\n\nEvents:\n- a downbeat sound on frame 0;\n- the separation as a roll, with three accents on the largest parts;\n- near-silence in the inspection;\n- three pulses with the core lock;\n- a reversed swell into the lock at frame 168;\n- one signature double hit for every slap;\n- at the limit, a warning on its first beat and the alarm from the frame the limit is crossed;\n- a release sound into the recovery;\n- one soft air hit when the backdrop turns light.\n\nRender the score twice in a row and keep the second pass, so tails wrap into frame 0. For phones, add harmonics so the\nlow end survives small speakers, and keep everything under 200 Hz centred. Master with gain plus a limiter to −14 LUFS\nintegrated and −1.5 dBTP. Check the mono fold-down.\n\nAlso write `deliver/cues.csv`: time, frame, bar.beat, event, what. Someone may want to redo the sound by hand.\n\n## 10. Finish and delivery\n\n- Encode with an explicit BT.709 conversion (`scale=out_color_matrix=bt709:out_range=tv`) and write all three colour tags\ninto the stream (`h264_metadata` bitstream filter). Untagged files shift gamma on phones.\n- Deliver:\n- `*_ig.mp4`: two-pass H.264, 16 Mb/s, AAC 320k;\n- `*_master.mp4`: CRF 15;\n- `*_clean.mp4`: the same film with no graphics and no slaps, for clients;\n- `audio/`: the mix and its stems;\n- `cues.csv`;\n- five 4K stills (hook, close-up, limit, recovery, clean), composited on their own backdrops;\n- a 1080×1920 cover that holds up as a 3:4 grid crop.\n\n## 11. Quality gates (measure them and report the numbers)\n\n1. **Seams:** spread jump ≤ 2 px at every act boundary; the reassembly spread decreases monotonically.\n2. **Loop:** the object's bounding box on frames 287 and 0 matches within 2 px. Only the material changes at the loop.\n3. **Flashes:** at most 3 full-field luminance flips in any second (aim for far fewer).\n4. **Compression:** re-encode at 720p and 2.5 Mb/s, as the platform will, and check that every label is still readable.\n5. **Safe band:** draw the Reels UI zones over six frames; no readable element inside them.\n6. **Truth:** read every number on six frames aloud against the story. A reading that contradicts the picture is a bug.\n7. **Taste:**\n- one hero per frame;\n- nothing static for long;\n- nothing jittering at random;\n- no green;\n- no red before the alarm;\n- no text outside the HUD;\n- no logos.\n\nFinish with a short report: the files, the measured gates, render time and anything you could not verify."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Claude Code",
+    "Blender",
+    "Fable",
+    "Cycles",
+    "Python",
+    "NumPy",
+    "OpenCV",
+    "Pillow"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 60467,
+    "likes": 1254,
+    "replies": 68,
+    "reposts": 99,
+    "bookmarks": 1113,
+    "checkedAt": "2026-11-17T01:17:13.595Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121977622200471552/img/3xjD8lwPnfMitg45.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121977622200471552/vid/avc1/720x1280/r21nwsyMqNl4JvIP.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 10
    },
    "evidence": {
     "via": "daily",
@@ -76899,6 +77122,56 @@
    }
   },
   {
+   "id": "2121951993212076357",
+   "url": "https://x.com/maxt3chno/status/2121951993212076357",
+   "author": {
+    "handle": "maxt3chno",
+    "name": "Max"
+   },
+   "postedAt": "2026-11-15T13:02:33.000Z",
+   "addedAt": "2026-11-17",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "Three.js水上飞机模型对比",
+    "en": "Three.js seaplane model comparison"
+   },
+   "summary": {
+    "zh": "创作者比较了 Opus 5.5 Ultra 和 Fable 5.2 Ultra 制作 Three.js 水上飞机的表现，Fable 还自行编写了提示词。",
+    "en": "The creator compared Opus 5.5 Ultra and Fable 5.2 Ultra on making a Three.js seaplane, with Fable writing its own prompt."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 27657,
+    "likes": 181,
+    "replies": 46,
+    "reposts": 10,
+    "bookmarks": 77,
+    "checkedAt": "2026-11-17T01:17:13.595Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121951512330977280/img/L-MV6Dxw7jiv90nR.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121951512330977280/vid/avc1/720x900/8sOfzwPsvHy88BgT.mp4?tag=29",
+    "width": 720,
+    "height": 900,
+    "durationSec": 24
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2117210973576765462",
    "url": "https://x.com/Smlay_ero/status/2117210973576765462",
    "author": {
@@ -86925,6 +87198,57 @@
    }
   },
   {
+   "id": "2121933776884269192",
+   "url": "https://x.com/rewind02/status/2121933776884269192",
+   "author": {
+    "handle": "rewind02",
+    "name": "rewind"
+   },
+   "postedAt": "2026-11-15T11:50:10.000Z",
+   "addedAt": "2026-11-17",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "动态斗篷英雄角色",
+    "en": "Animated cloaked hero"
+   },
+   "summary": {
+    "zh": "Claude Opus 5.5 和 Blender 根据正面与背面概念图制作了带斗篷的英雄角色，并完成了绑定、待机和行走循环。",
+    "en": "Claude Opus 5.5 and Blender made a cloaked hero from front and back concept views, including rigging and idle and walk cycles."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Blender",
+    "MCP"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 22288,
+    "likes": 489,
+    "replies": 29,
+    "reposts": 20,
+    "bookmarks": 375,
+    "checkedAt": "2026-11-17T01:17:13.595Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121933672102129664/img/o6aCcT6duOFtP4R5.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121933672102129664/vid/avc1/1280x720/-Ht702sqifR7Wyy7.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 4
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2110305558100128164",
    "url": "https://x.com/masahirochaen/status/2110305558100128164",
    "author": {
@@ -89301,6 +89625,56 @@
     "width": 1234,
     "height": 720,
     "durationSec": 88
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2121936943969898742",
+   "url": "https://x.com/dobokuya77/status/2121936943969898742",
+   "author": {
+    "handle": "dobokuya77",
+    "name": "土木屋77"
+   },
+   "postedAt": "2026-11-15T12:02:45.000Z",
+   "addedAt": "2026-11-17",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "由二维施工计划图生成的 Blender 4D 施工模型",
+    "en": "Blender 4D construction model from a 2D plan"
+   },
+   "summary": {
+    "zh": "作者使用 Claude Fable 5.2，根据二维施工计划图在 Blender 中制作了四维模型视频。",
+    "en": "The creator used Claude Fable 5.2 to create a video of a 4D model in Blender from a 2D construction plan drawing."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 21192,
+    "likes": 204,
+    "replies": 11,
+    "reposts": 22,
+    "bookmarks": 77,
+    "checkedAt": "2026-11-17T01:17:13.595Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121936891062956032/img/VQj9rLDZmszJRX0e.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121936891062956032/vid/avc1/1280x720/bkTvKvSE4YXVYKB5.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 51
    },
    "evidence": {
     "via": "daily",
@@ -97181,6 +97555,54 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2121916952134463637",
+   "url": "https://x.com/aricccq/status/2121916952134463637",
+   "author": {
+    "handle": "aricccq",
+    "name": "Aric"
+   },
+   "postedAt": "2026-11-15T10:43:19.000Z",
+   "addedAt": "2026-11-17",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "可操作的挖掘机模型",
+    "en": "Functional modeled excavator"
+   },
+   "summary": {
+    "zh": "Claude Opus 5.5 根据一个提示词生成了完整建模且可运行的挖掘机。",
+    "en": "Claude Opus 5.5 produced a fully modeled and functional excavator from one prompt."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 18329,
+    "likes": 343,
+    "replies": 25,
+    "reposts": 12,
+    "bookmarks": 170,
+    "checkedAt": "2026-11-17T01:17:13.595Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121916676833001472/img/8icIGryLkTpmP6qr.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121916676833001472/vid/avc1/1280x720/cgr_j-ti9QBwNvvg.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 19
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -107011,6 +107433,56 @@
    }
   },
   {
+   "id": "2121991760825995575",
+   "url": "https://x.com/rewind02/status/2121991760825995575",
+   "author": {
+    "handle": "rewind02",
+    "name": "rewind"
+   },
+   "postedAt": "2026-11-15T15:40:35.000Z",
+   "addedAt": "2026-11-17",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "浏览器中的绘画风 3D 世界",
+    "en": "Painted 3D browser world"
+   },
+   "summary": {
+    "zh": "Opus 5.5 和 Three.js 制作了浏览器中的绘画风格三维世界，画面从白天的水粉风格转为日落时的油画风格。",
+    "en": "Opus 5.5 and Three.js built a painted browser-based 3D world whose visual style shifts from gouache by day to oil paint at sunset."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 14779,
+    "likes": 281,
+    "replies": 26,
+    "reposts": 13,
+    "bookmarks": 198,
+    "checkedAt": "2026-11-17T01:17:13.595Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121991666647109632/img/HIpRXCV-OiPDt3Fl.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121991666647109632/vid/avc1/1280x720/2oAmW73oVybh351J.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 28
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2118809236046246316",
    "url": "https://x.com/deweytn/status/2118809236046246316",
    "author": {
@@ -107308,6 +107780,62 @@
     "width": 1280,
     "height": 720,
     "durationSec": 178
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2121989497252438473",
+   "url": "https://x.com/AiBattle_/status/2121989497252438473",
+   "author": {
+    "handle": "AiBattle_",
+    "name": "AiBattle"
+   },
+   "postedAt": "2026-11-15T15:31:35.000Z",
+   "addedAt": "2026-11-17",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "人形蠕虫群对比",
+    "en": "Humanoid worm swarm comparison"
+   },
+   "summary": {
+    "zh": "Fable 5.2 和 Opus 5.5 被用于比较制作由数百条活虫组成的人形生物，虫子被射出后会爬回并重建身体。",
+    "en": "Fable 5.2 and Opus 5.5 were compared on a humanoid worm swarm made with Unreal Engine and Blender, where shot-off worms return and rebuild the body."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/AiBattle_/status/2121989497252438473",
+    "text": "build a humanoid creature made of hundreds of living worms. When you shoot it, the worms fly off, crawl back, and rebuild the body."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Unreal Engine",
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 14734,
+    "likes": 142,
+    "replies": 8,
+    "reposts": 3,
+    "bookmarks": 43,
+    "checkedAt": "2026-11-17T01:17:13.595Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121985941183074305/img/vbWXcwzyiBvCqhU8.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121985941183074305/vid/avc1/720x960/MfDvJm6es_ejm0MV.mp4?tag=29",
+    "width": 720,
+    "height": 960,
+    "durationSec": 26
    },
    "evidence": {
     "via": "daily",
@@ -113647,6 +114175,58 @@
     "width": 720,
     "height": 1280,
     "durationSec": 34
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2121863059664973915",
+   "url": "https://x.com/aichof21/status/2121863059664973915",
+   "author": {
+    "handle": "aichof21",
+    "name": "aichof"
+   },
+   "postedAt": "2026-11-15T07:09:10.000Z",
+   "addedAt": "2026-11-17",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "预演引导的动作视频",
+    "en": "Previs-guided action video"
+   },
+   "summary": {
+    "zh": "作者将 Opus 5.5 制作的预演视频和角色设定表交给 MiniMax H3，并指定地点，让生成视频遵循预演中的动作。",
+    "en": "A video was generated from an Opus 5.5 previs video and character sheet, with MiniMax H3 following the previs motion and a specified location."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Claude Code",
+    "Three.js",
+    "MiniMax H3"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 13028,
+    "likes": 204,
+    "replies": 14,
+    "reposts": 16,
+    "bookmarks": 173,
+    "checkedAt": "2026-11-17T01:17:13.595Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121862961937719296/img/6feXqSeIqOJqBu8h.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121862961937719296/vid/avc1/720x810/IzsYI7LG3nr5jia7.mp4?tag=29",
+    "width": 720,
+    "height": 810,
+    "durationSec": 10
    },
    "evidence": {
     "via": "daily",
@@ -128531,6 +129111,57 @@
    }
   },
   {
+   "id": "2121879124268437739",
+   "url": "https://x.com/MrTacticalX/status/2121879124268437739",
+   "author": {
+    "handle": "MrTacticalX",
+    "name": "Mr Tactical"
+   },
+   "postedAt": "2026-11-15T08:13:00.000Z",
+   "addedAt": "2026-11-17",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "浓缩咖啡机建模与演示",
+    "en": "Espresso machine model and demo"
+   },
+   "summary": {
+    "zh": "Claude Fable 5.2 负责协调三个 Opus 5.5 代理，在 Blender 中从零建模了一台浓缩咖啡机，并让它完成了制作咖啡的动作。",
+    "en": "Claude Fable 5.2 led three Opus 5.5 agents to model an espresso machine from scratch in Blender, including making coffee."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Blender",
+    "Claude Fable 5.2"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 9448,
+    "likes": 115,
+    "replies": 24,
+    "reposts": 8,
+    "bookmarks": 60,
+    "checkedAt": "2026-11-17T01:17:13.595Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121877600939171840/img/sqJzngc7BEq6ppWS.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121877600939171840/vid/avc1/720x900/6gBFqmSaxMUVZ75C.mp4?tag=29",
+    "width": 720,
+    "height": 900,
+    "durationSec": 53
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2108236225291407435",
    "url": "https://x.com/localhost_5173/status/2108236225291407435",
    "author": {
@@ -131477,6 +132108,56 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2122006586268745841",
+   "url": "https://x.com/csaba_kissi/status/2122006586268745841",
+   "author": {
+    "handle": "csaba_kissi",
+    "name": "Csaba Kissi"
+   },
+   "postedAt": "2026-11-15T16:39:29.000Z",
+   "addedAt": "2026-11-17",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "动态图表与时间线",
+    "en": "Animated charts and timelines"
+   },
+   "summary": {
+    "zh": "作品加入了图表、时间线、仪表盘和流程等元素，作者称其使用 Opus 5.5 制作。",
+    "en": "The work adds chart, timeline, gauge, and flow elements, and was described as created with Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Fable 5.2"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 8836,
+    "likes": 216,
+    "replies": 9,
+    "reposts": 10,
+    "bookmarks": 141,
+    "checkedAt": "2026-11-17T01:17:13.595Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2122006367963676672/img/fVLhbruDrFoKko9s.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122006367963676672/vid/avc1/720x788/7sYhr0tMXJJnfZrP.mp4?tag=29",
+    "width": 720,
+    "height": 788,
+    "durationSec": 25
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -136277,6 +136958,62 @@
     "width": 720,
     "height": 910,
     "durationSec": 16
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2122046713661702211",
+   "url": "https://x.com/PawelJLisowski/status/2122046713661702211",
+   "author": {
+    "handle": "PawelJLisowski",
+    "name": "Paweł J Lisowski"
+   },
+   "postedAt": "2026-11-15T19:18:56.000Z",
+   "addedAt": "2026-11-17",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "沙盒大型多人游戏城镇原型",
+    "en": "Sandbox MMO town prototype"
+   },
+   "summary": {
+    "zh": "Orsande 沙盒 MMO 演示为主城加入了建筑内部和工作的 NPC。作者使用 Three.js，并结合 Opus 5.5、Fable 5.2、Astra 6、Blender、Tripo3D 和 Meshy 制作。",
+    "en": "The Orsande sandbox MMO demo adds building interiors and working NPCs to make its main town feel more alive. The creator used Three.js with Opus 5.5, Fable 5.2, Astra 6, Blender, Tripo3D, and Meshy."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Fable 5.2",
+    "Astra 6",
+    "Three.js",
+    "Blender",
+    "Tripo3D",
+    "Meshy",
+    "Bevy"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 7656,
+    "likes": 197,
+    "replies": 33,
+    "reposts": 11,
+    "bookmarks": 74,
+    "checkedAt": "2026-11-17T01:17:13.595Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2122045303326978049/img/-5eE13wq5tvCUo6Z.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122045303326978049/vid/avc1/1280x720/azyqbVjPXhtaSkwT.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 177
    },
    "evidence": {
     "via": "daily",
@@ -141264,6 +142001,59 @@
     "width": 960,
     "height": 720,
     "durationSec": 21
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2122077126711181465",
+   "url": "https://x.com/hiyouwhatsapp/status/2122077126711181465",
+   "author": {
+    "handle": "hiyouwhatsapp",
+    "name": "Hiyouwhatsapp"
+   },
+   "postedAt": "2026-11-15T21:19:47.000Z",
+   "addedAt": "2026-11-17",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "绑定与动画三维角色",
+    "en": "Rigged and animated 3D character"
+   },
+   "summary": {
+    "zh": "ChatGPT 生成参考图，Tripo AI 制作粗略 3D 模型，Opus 5.5 调用 GPT 6.1 Sol 子代理重建网格并完成绑定和动画。",
+    "en": "ChatGPT generated a reference image, Tripo AI made a rough 3D model, and Opus 5.5 used GPT 6.1 Sol as a sub-agent to recreate, rig, and animate the mesh."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "ChatGPT",
+    "Tripo AI",
+    "GPT 6.1 Sol",
+    "Reason Network"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 6062,
+    "likes": 174,
+    "replies": 4,
+    "reposts": 6,
+    "bookmarks": 114,
+    "checkedAt": "2026-11-17T01:17:13.595Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2122075971595427840/img/3kvAxbcxiWvHjxRa.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122075971595427840/vid/avc1/960x540/c2i7eqdSREog-JU_.mp4?tag=14",
+    "width": 960,
+    "height": 540,
+    "durationSec": 8
    },
    "evidence": {
     "via": "daily",
