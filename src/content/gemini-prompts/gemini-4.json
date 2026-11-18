@@ -3,8 +3,8 @@
  "model": "Gemini 4",
  "released": "2026-10-14T00:00:00Z",
  "threshold": 5000,
- "updatedAt": "2026-11-17T01:30:00.332Z",
- "statsCheckedAt": "2026-11-17T01:27:38.953Z",
+ "updatedAt": "2026-11-18T09:10:53.738Z",
+ "statsCheckedAt": "2026-11-18T09:08:48.493Z",
  "inclusionRule": "Original post by the creator, media attached, >= 5000 views on that post, and the creator's own text says Gemini 4 (Argon, Carbon, Hydrogen, Krypton, Pro...) built it in code; same-prompt comparisons against other models included. Seeded on 2026-11-16 from the Claude 5.5 library. Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -587,6 +587,66 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2122349952403927401",
+   "url": "https://x.com/lengs4189/status/2122349952403927401",
+   "author": {
+    "handle": "lengs4189",
+    "name": "布丁"
+   },
+   "postedAt": "2026-11-16T15:23:54.000Z",
+   "addedAt": "2026-11-18",
+   "lang": "zh",
+   "kind": "comparison",
+   "models": [
+    "carbon"
+   ],
+   "rivals": [
+    "gpt"
+   ],
+   "category": "ui",
+   "title": {
+    "zh": "AI 制作的界面对比",
+    "en": "AI-built interface comparison"
+   },
+   "summary": {
+    "zh": "作者用 ChatGPT 6.1 Sol 开发了一周仍不满意，改用 Gemini 4 Carbon 重新分析，一晚上就改完了，并贴出两版对比。作者认为 Carbon 在耐耗、速度、UI 和推理效果上都胜过 ChatGPT。",
+    "en": "The creator compares an app built over a week with ChatGPT 6.1 Sol to a version reworked in one night with Gemini 4 Carbon. They conclude Carbon did better on endurance, speed, UI and reasoning."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "ChatGPT 6.1 Sol"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 147346,
+    "likes": 318,
+    "replies": 108,
+    "reposts": 7,
+    "bookmarks": 138,
+    "checkedAt": "2026-11-18T08:55:04.095Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXQY8GLa4AAZ-vy.jpg",
+     "width": 2940,
+     "height": 1670
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXQZHvoa8AAt2tT.jpg",
+     "width": 2940,
+     "height": 1670
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -2354,6 +2414,68 @@
    }
   },
   {
+   "id": "2122432152340209964",
+   "url": "https://x.com/EnvolDev/status/2122432152340209964",
+   "author": {
+    "handle": "EnvolDev",
+    "name": "Tony"
+   },
+   "postedAt": "2026-11-16T20:50:32.000Z",
+   "addedAt": "2026-11-18",
+   "lang": "en",
+   "kind": "comparison",
+   "models": [
+    "argon"
+   ],
+   "rivals": [
+    "claude",
+    "gpt",
+    "qwen"
+   ],
+   "category": "scene3d",
+   "title": {
+    "zh": "Alpine Gold 视觉场景",
+    "en": "Alpine Gold visual scene"
+   },
+   "summary": {
+    "zh": "作者用同一个 Alpine Gold 提示词让四个模型各跑一次，用 Three.js 生成场景，并列出了费用和耗时。结论是 Fable 5.2 做出的飞机最好，Argon 最便宜，Astra 最快，Qwen 4 Max 耗时最长、效果最差。",
+    "en": "Four models built a Three.js 'Alpine Gold' scene from the same prompt in one run each, with costs and times reported. Fable 5.2 produced the best plane, Argon was cheapest, Astra fastest, and Qwen 4 Max was slowest and weakest."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Qwen 4 Max",
+    "Fable 5.2",
+    "GPT-6 Astra",
+    "Claude Opus 5.5",
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 62169,
+    "likes": 268,
+    "replies": 39,
+    "reposts": 18,
+    "bookmarks": 126,
+    "checkedAt": "2026-11-18T08:55:04.095Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2122431520111747072/vid/avc1/810x720/kmhhvOA2VATBvs4f.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2122431520111747072/img/xOzUZlGrG0nGuipH.jpg",
+     "width": 2160,
+     "height": 1920,
+     "durationSec": 25
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2110649723497394405",
    "url": "https://x.com/whydeso/status/2110649723497394405",
    "author": {
@@ -2410,6 +2532,68 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2122221106304352257",
+   "url": "https://x.com/analogalok/status/2122221106304352257",
+   "author": {
+    "handle": "analogalok",
+    "name": "Alok"
+   },
+   "postedAt": "2026-11-16T06:51:55.000Z",
+   "addedAt": "2026-11-18",
+   "lang": "en",
+   "kind": "comparison",
+   "models": [
+    "hydrogen"
+   ],
+   "rivals": [
+    "qwen"
+   ],
+   "category": "mechanics",
+   "title": {
+    "zh": "电动机原理剖面动画",
+    "en": "Electric motor cutaway animation"
+   },
+   "summary": {
+    "zh": "作者让 Qwen 4 Max、Qwen 3.8 Max 和 Gemini 4 Hydrogen 各一次性生成电动机工作原理的 HTML 动画。作者认为 Hydrogen 的 3D 真实感和清晰度最好，Qwen 4 Max 的控制面板最丰富，Qwen 3.8 Max 最简单。",
+    "en": "Qwen 4 Max, Qwen 3.8 Max and Gemini 4 Hydrogen each built a one-shot HTML animation of an electric motor. The creator rated Hydrogen best on 3D realism and clarity, Qwen 4 Max richest in controls, and Qwen 3.8 Max simplest."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "post",
+    "sourceUrl": "https://x.com/analogalok/status/2122221106304352257",
+    "text": "create a very realistic animation of how an electric motor works showing everything clearly even the magnetic field, electrons etc. single html file. use any libs via cdn"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Qwen 4 Max",
+    "Qwen 3.8 Max"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 58369,
+    "likes": 499,
+    "replies": 19,
+    "reposts": 30,
+    "bookmarks": 229,
+    "checkedAt": "2026-11-18T08:55:04.095Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2122218654523887617/vid/avc1/720x1080/mJqLnco8XTdTMJH8.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2122218654523887617/img/fiXKOEozYPu62OdX.jpg",
+     "width": 1080,
+     "height": 1620,
+     "durationSec": 13
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -2866,6 +3050,70 @@
    }
   },
   {
+   "id": "2122440859891409372",
+   "url": "https://x.com/SamgreyAi/status/2122440859891409372",
+   "author": {
+    "handle": "SamgreyAi",
+    "name": "Sam"
+   },
+   "postedAt": "2026-11-16T21:25:08.000Z",
+   "addedAt": "2026-11-18",
+   "lang": "en",
+   "kind": "comparison",
+   "models": [
+    "carbon",
+    "hydrogen"
+   ],
+   "rivals": [
+    "claude",
+    "gpt"
+   ],
+   "category": "scene3d",
+   "title": {
+    "zh": "穿过水面的奔马",
+    "en": "Horse galloping through water"
+   },
+   "summary": {
+    "zh": "作者用同一提示词“马在水中奔跑”测试了 Fable 5.2、Gemini 4 Carbon、GPT-6 Astra 和 Gemini 4 Hydrogen。他把 Fable 排第一，Carbon 第二，Astra 第三，Hydrogen 生成的体素马垫底。",
+    "en": "Four models got the same prompt of a horse galloping through water: Fable 5.2, Gemini 4 Carbon, GPT-6 Astra and Gemini 4 Hydrogen. The creator ranked Fable first, with Carbon second, Astra third and Hydrogen's voxel horse last."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/SamgreyAi/status/2122440859891409372",
+    "text": "a horse galloping through water."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Fable 5.2",
+    "GPT-6 Astra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 49191,
+    "likes": 164,
+    "replies": 27,
+    "reposts": 8,
+    "bookmarks": 37,
+    "checkedAt": "2026-11-18T08:55:04.095Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2122062236822765568/vid/avc1/544x544/eagWr0RjPjn8zJCr.mp4?tag=25",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2122062236822765568/img/ADkvxTvjJaei02Po.jpg",
+     "width": 544,
+     "height": 544,
+     "durationSec": 12
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2110087305163854042",
    "url": "https://x.com/luckeyfaraday/status/2110087305163854042",
    "author": {
@@ -3086,6 +3334,71 @@
    }
   },
   {
+   "id": "2122353119749361808",
+   "url": "https://x.com/RezAIT00/status/2122353119749361808",
+   "author": {
+    "handle": "RezAIT00",
+    "name": "Rez"
+   },
+   "postedAt": "2026-11-16T15:36:29.000Z",
+   "addedAt": "2026-11-18",
+   "lang": "en",
+   "kind": "comparison",
+   "models": [
+    "hydrogen"
+   ],
+   "rivals": [
+    "claude",
+    "gpt",
+    "qwen"
+   ],
+   "category": "svg",
+   "title": {
+    "zh": "骑马的斑马与鹈鹕",
+    "en": "Pelican riding a zebra riding a horse"
+   },
+   "summary": {
+    "zh": "作者用同一份详细提示词，让四个模型各画一幅鹈鹕骑斑马、斑马骑马的 SVG 动画。作者公布了各模型的耗时、文件大小和动画部件数，其中 Gemini 4 Hydrogen 最快，约 6 分钟完成。",
+    "en": "Four models each made an animated SVG of a pelican riding a zebra riding a horse from the same detailed prompt. The creator posted times, file sizes and animated part counts, with Gemini 4 Hydrogen the fastest at about 6 minutes."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/RezAIT00/status/2122398998187196848",
+    "text": "Create one animated SVG illustration and save it to:\n<output folder>\\<model>.svg\n\nThe subject\nA pelican riding a zebra, and the zebra is itself riding a horse. That is a three-animal stack: the horse runs along the ground carrying the zebra on its back, and the zebra carries the pelican on its back. All three must be clearly recognisable as what they are.\n\nMake it as detailed as possible\n- This is judged on richness and craft. Flat, simple, icon-like drawings will look weak. Go far beyond basic shapes.\n- Draw real anatomy: the pelican's long bill and throat pouch, plumage, wings and webbed feet; the zebra's stripe pattern over its whole body, mane, ears and muzzle; the horse's musculature, jointed legs, hooves, mane and tail.\n- Use shading, gradients, highlights and shadows so the animals have form and depth. Add tack or props if you like (saddle, reins, goggles), and a full background environment with depth.\n- It will be shown at up to 1080 px, so fine detail is visible and rewarded.\n\nAnimation\n- The horse moves in a believable gait with all four legs jointed and cycling, travelling through the scene (the scenery scrolls past).\n- The riders react to the motion: bodies bob in time, the zebra holds on, the pelican balances. Add secondary motion wherever it helps, such as mane, tail, feathers, pouch, ears, dust, clouds.\n- More motion, and more convincing motion, is better.\n\nTechnical requirements\n- A single self-contained .svg file: no JavaScript, no external images, fonts, stylesheets or links. Animate with SMIL and/or CSS only.\n- The root element uses viewBox=\"0 0 1000 1000\" (square) and has a full opaque background.\n- The animation starts by itself when the file is opened in a browser and loops forever. The whole scene repeats exactly every 6 seconds: every animation's duration must divide evenly into 6 s (for example 0.5 s, 0.6 s, 1 s, 1.5 s, 2 s, 3 s or 6 s), so the frame at 6.0 s matches the frame at 0.0 s.\n- It must render correctly in current Chrome.\n- No text of any kind in the image, and nothing that identifies you, any AI model or any company.\n\nHow to work\n- This is a one-shot test: design and write the complete file once, yourself. Do not render, screenshot or preview it, do not search the web, do not use subagents, and do not revise the design after you have written it.\n- There is no size limit, but a finished file beats an unfinished ambitious one: make sure the file is complete, valid XML and saved. If saving fails for a technical reason you may save again, in several parts if needed, without changing the design.\n- Do not create any other files.\n- When the file is saved, reply with one line: the file path, then a one-sentence description of what you drew."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Qwen 4 Max",
+    "Fable 5.2",
+    "GPT Astra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 43071,
+    "likes": 131,
+    "replies": 25,
+    "reposts": 3,
+    "bookmarks": 47,
+    "checkedAt": "2026-11-18T08:55:04.095Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2122352968217309184/vid/avc1/720x794/VwTqd-Ku5oRcKraj.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2122352968217309184/img/a-Qlvc1nVtniTLI4.jpg",
+     "width": 1080,
+     "height": 1192,
+     "durationSec": 18
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2110382089476407630",
    "url": "https://x.com/0xRhinoX/status/2110382089476407630",
    "author": {
@@ -3192,6 +3505,121 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2122509308797579477",
+   "url": "https://x.com/vamsibatchuk/status/2122509308797579477",
+   "author": {
+    "handle": "vamsibatchuk",
+    "name": "Vamsi Batchu"
+   },
+   "postedAt": "2026-11-17T01:57:08.000Z",
+   "addedAt": "2026-11-18",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "carbon"
+   ],
+   "rivals": [],
+   "category": "game",
+   "title": {
+    "zh": "战术第一人称射击网页游戏",
+    "en": "Tactical FPS browser game"
+   },
+   "summary": {
+    "zh": "20 多个代理构建了一个战术 FPS 浏览器游戏，包含枪战、小队 AI 和 Web Audio，代码超过 3 万行，未使用外部 3D 模型、纹理或音频文件。36 个视觉评审代理检查渲染结果并反馈修改。",
+    "en": "A swarm of 20+ agents built a tactical FPS browser game with squad AI, gunplay, Web Audio, and over 30,000 lines of code, using no external 3D models, textures, or audio files. Thirty-six visual critics reviewed renders and sent fixes to the builders."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Antigravity"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 42005,
+    "likes": 547,
+    "replies": 60,
+    "reposts": 38,
+    "bookmarks": 198,
+    "checkedAt": "2026-11-18T09:08:48.493Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2122506966366822400/vid/avc1/1320x720/ILRk_83g9yy2rYVc.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2122506966366822400/img/2Lwh1GOP10Qpn0aH.jpg",
+     "width": 3840,
+     "height": 2092,
+     "durationSec": 22
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2122290663643353165",
+   "url": "https://x.com/kinderlayer/status/2122290663643353165",
+   "author": {
+    "handle": "kinderlayer",
+    "name": "Kinder"
+   },
+   "postedAt": "2026-11-16T11:28:19.000Z",
+   "addedAt": "2026-11-18",
+   "lang": "en",
+   "kind": "comparison",
+   "models": [
+    "argon"
+   ],
+   "rivals": [
+    "claude"
+   ],
+   "category": "scene3d",
+   "title": {
+    "zh": "冰雕大象",
+    "en": "Elephant sculpted from ice"
+   },
+   "summary": {
+    "zh": "作者给 Claude Fable 5.2 和 Gemini 4 Argon 同一个提示词，让它们生成一头冰雕大象。一个结果光滑透亮，另一个布满裂纹，作者请观众猜哪个模型更贵。",
+    "en": "Claude Fable 5.2 and Gemini 4 Argon got the same prompt to make an elephant sculpted out of ice. One result is smooth and glowing, the other cracked, and the creator asks viewers to guess which model costs more."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/kinderlayer/status/2122290663643353165",
+    "text": "an elephant sculpted entirely out of ice."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Claude Fable 5.2"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 40386,
+    "likes": 167,
+    "replies": 49,
+    "reposts": 6,
+    "bookmarks": 88,
+    "checkedAt": "2026-11-18T08:55:04.095Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2122290612040835072/vid/avc1/720x1280/qdqmS7LowC0wcYDg.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2122290612040835072/img/oknZiXPZJd4lcH5o.jpg",
+     "width": 720,
+     "height": 1280,
+     "durationSec": 30
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -4797,6 +5225,58 @@
    }
   },
   {
+   "id": "2122161392828727738",
+   "url": "https://x.com/Awed_Urshy/status/2122161392828727738",
+   "author": {
+    "handle": "Awed_Urshy",
+    "name": "あうぇっど"
+   },
+   "postedAt": "2026-11-16T02:54:38.000Z",
+   "addedAt": "2026-11-18",
+   "lang": "ja",
+   "kind": "work",
+   "models": [
+    "hydrogen"
+   ],
+   "rivals": [],
+   "category": "ui",
+   "title": {
+    "zh": "自动作曲应用",
+    "en": "Automatic music composition app"
+   },
+   "summary": {
+    "zh": "作者用 Gemini 4 Hydrogen 做了一个自动作曲应用。它能把日语提示词转成英文音乐提示词，再完成 MIDI 作曲、WAV 音频渲染，并生成钢琴卷帘视频。",
+    "en": "The creator built an automatic music composition app with Gemini 4 Hydrogen. It turns a Japanese prompt into an English music prompt, composes MIDI, renders WAV audio and generates a piano-roll video."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 26107,
+    "likes": 117,
+    "replies": 2,
+    "reposts": 19,
+    "bookmarks": 102,
+    "checkedAt": "2026-11-18T08:55:04.095Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2122160955517960193/vid/avc1/1280x720/DYjCXgPhN_XeH3Ou.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2122160955517960193/img/OXLHJmQqwv1JU4ij.jpg",
+     "width": 1280,
+     "height": 720,
+     "durationSec": 55
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2117682945116774562",
    "url": "https://x.com/0xRhinoX/status/2117682945116774562",
    "author": {
@@ -5335,6 +5815,58 @@
    }
   },
   {
+   "id": "2122264764319666388",
+   "url": "https://x.com/chetaslua/status/2122264764319666388",
+   "author": {
+    "handle": "chetaslua",
+    "name": "Chetaslua"
+   },
+   "postedAt": "2026-11-16T09:45:24.000Z",
+   "addedAt": "2026-11-18",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "carbon"
+   ],
+   "rivals": [],
+   "category": "game",
+   "title": {
+    "zh": "体素堆叠帆船游戏",
+    "en": "Voxel-stacked sailing game"
+   },
+   "summary": {
+    "zh": "Gemini 4 Carbon 做了一款航海游戏，采用精灵堆叠技术，把体素物体切成薄层再叠起来，没有用 3D 引擎。作者表示这一技术是在提示词里指定的。",
+    "en": "Gemini 4 Carbon built a sailing game using sprite stacking, where voxel objects are sliced into flat layers and stacked without a 3D engine. The creator says they requested the technique in the prompt."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 22379,
+    "likes": 188,
+    "replies": 29,
+    "reposts": 11,
+    "bookmarks": 62,
+    "checkedAt": "2026-11-18T08:55:04.095Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2122264072754479104/vid/avc1/1280x720/Q5Sy-jIuRKIY03O6.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2122264072754479104/img/lPgORWQMhKARLifi.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 56
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2110305558100128164",
    "url": "https://x.com/masahirochaen/status/2110305558100128164",
    "author": {
@@ -5385,6 +5917,70 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2122387800762810870",
+   "url": "https://x.com/0xRhinoX/status/2122387800762810870",
+   "author": {
+    "handle": "0xRhinoX",
+    "name": "Rhino"
+   },
+   "postedAt": "2026-11-16T17:54:18.000Z",
+   "addedAt": "2026-11-18",
+   "lang": "en",
+   "kind": "comparison",
+   "models": [
+    "krypton"
+   ],
+   "rivals": [
+    "claude",
+    "deepseek"
+   ],
+   "category": "scene3d",
+   "title": {
+    "zh": "极光雪林中的狼",
+    "en": "Wolf in a snowy aurora forest"
+   },
+   "summary": {
+    "zh": "作者用同一提示词“极光下狼在雪林中奔跑”测试了四个模型。他认为只有 Claude Fable 5.2 画出了真正的狼，而 Gemini 4 Krypton 的结果更像一只豪猪。",
+    "en": "Four models got the same prompt of a wolf running through a snowy forest under the aurora. The creator says only Claude Fable 5.2 made a real wolf, while Gemini 4 Krypton produced something resembling a porcupine."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/0xRhinoX/status/2122387800762810870",
+    "text": "a wolf running through a snowy forest under the aurora"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "DeepSeek V4.1 Flash",
+    "Claude Opus 5.5",
+    "Claude Fable 5.2"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 22084,
+    "likes": 122,
+    "replies": 24,
+    "reposts": 7,
+    "bookmarks": 36,
+    "checkedAt": "2026-11-18T08:55:04.095Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2122354336214749184/vid/avc1/720x720/I0Z0QX9HG5QR6FZZ.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2122354336214749184/img/PReEvOGk1CiUdxYZ.jpg",
+     "width": 1080,
+     "height": 1080,
+     "durationSec": 15
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -7134,6 +7730,62 @@
    }
   },
   {
+   "id": "2122469864505798795",
+   "url": "https://x.com/GlitterPixely/status/2122469864505798795",
+   "author": {
+    "handle": "GlitterPixely",
+    "name": "Glitter Gal"
+   },
+   "postedAt": "2026-11-16T23:20:23.000Z",
+   "addedAt": "2026-11-18",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "carbon"
+   ],
+   "rivals": [],
+   "category": "scene3d",
+   "title": {
+    "zh": "带有草地与野花的柔和草甸",
+    "en": "Soft meadow with grass and wildflowers"
+   },
+   "summary": {
+    "zh": "用 Three.js 做的草地氛围场景，包含 18.6 万根草叶、野花、微风和鸟鸣，没有用任何模型、贴图或音频文件，全部由代码生成。作者在 Antigravity 中用 Gemini 4 Orchestrator（Carbon）配合 /Swarm 完成。",
+    "en": "An ambient meadow scene in Three.js with 186k grass blades, wildflowers, breeze and birdsong, all generated in code. Made in Antigravity with Gemini 4 Orchestrator (Carbon) plus /Swarm."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js",
+    "Antigravity",
+    "Swarm"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 12427,
+    "likes": 182,
+    "replies": 33,
+    "reposts": 7,
+    "bookmarks": 76,
+    "checkedAt": "2026-11-18T08:55:04.095Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2122468045566160896/vid/avc1/1280x720/Fk78oBzpNIuLos6i.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2122468045566160896/img/lpBKdM_udcLC3hyg.jpg",
+     "width": 3840,
+     "height": 2160,
+     "durationSec": 84
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2113497132841799858",
    "url": "https://x.com/dummerspast39/status/2113497132841799858",
    "author": {
@@ -8183,6 +8835,60 @@
    }
   },
   {
+   "id": "2122306306409107677",
+   "url": "https://x.com/dummerspast39/status/2122306306409107677",
+   "author": {
+    "handle": "dummerspast39",
+    "name": "Binkg"
+   },
+   "postedAt": "2026-11-16T12:30:28.000Z",
+   "addedAt": "2026-11-18",
+   "lang": "en",
+   "kind": "comparison",
+   "models": [
+    "krypton"
+   ],
+   "rivals": [
+    "claude"
+   ],
+   "category": "svg",
+   "title": {
+    "zh": "SVG 人像对比",
+    "en": "SVG portrait comparison"
+   },
+   "summary": {
+    "zh": "作者用同一提示词让 Gemini 4 Krypton 和 Fable 5.2 Max 生成一位女演员的 SVG 肖像。作者认为 Krypton 明显胜出，皮肤和眼睛的细节尤其好。",
+    "en": "Compares SVG portraits of an actress made by Gemini 4 Krypton and Fable 5.2 Max from the same prompt. The creator concludes Krypton's output is clearly better, especially the skin and eyes."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Fable 5.2 Max"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 9014,
+    "likes": 133,
+    "replies": 22,
+    "reposts": 3,
+    "bookmarks": 17,
+    "checkedAt": "2026-11-18T08:55:04.095Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXPyUd6W0AAPgjy.jpg",
+     "width": 2400,
+     "height": 1497
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2111965632338292943",
    "url": "https://x.com/vib3coded/status/2111965632338292943",
    "author": {
@@ -8433,6 +9139,60 @@
    }
   },
   {
+   "id": "2122337187970879968",
+   "url": "https://x.com/alexanderchen/status/2122337187970879968",
+   "author": {
+    "handle": "alexanderchen",
+    "name": "Alexander Chen"
+   },
+   "postedAt": "2026-11-16T14:33:11.000Z",
+   "addedAt": "2026-11-18",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "carbon"
+   ],
+   "rivals": [],
+   "category": "motion",
+   "title": {
+    "zh": "自定义 MIDI 编辑器中的自行车滑奏",
+    "en": "Bicycle glissando in a custom MIDI editor"
+   },
+   "summary": {
+    "zh": "名为 Bicycle glissando 的音乐作品，使用作者在 Antigravity 中借助 Gemini 4 Carbon 搭建的 MIDI 编辑器制作。和弦、旋律和音色由作者亲手编写，再交给模型一起迭代。",
+    "en": "A musical piece called Bicycle glissando, made with a custom MIDI editor built with Gemini 4 Carbon inside Antigravity. The creator writes the chords, melodies and sound design by hand and iterates with the model."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Antigravity"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 8320,
+    "likes": 153,
+    "replies": 15,
+    "reposts": 8,
+    "bookmarks": 68,
+    "checkedAt": "2026-11-18T08:55:04.095Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2122336072596107264/vid/avc1/720x720/KsfnrxVp82PauM_o.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2122336072596107264/img/78isyNCrfszNTiI1.jpg",
+     "width": 1440,
+     "height": 1440,
+     "durationSec": 38
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2110729405400031495",
    "url": "https://x.com/TypingMindApp/status/2110729405400031495",
    "author": {
@@ -8490,6 +9250,116 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2122357141889777713",
+   "url": "https://x.com/chetaslua/status/2122357141889777713",
+   "author": {
+    "handle": "chetaslua",
+    "name": "Chetaslua"
+   },
+   "postedAt": "2026-11-16T15:52:28.000Z",
+   "addedAt": "2026-11-18",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "carbon"
+   ],
+   "rivals": [],
+   "category": "scene3d",
+   "title": {
+    "zh": "背负微型世界的鹈鹕",
+    "en": "Pelican carrying a miniature world"
+   },
+   "summary": {
+    "zh": "Gemini 4 Carbon 生成的场景：一只鹈鹕背着整个世界。作者说明只用了纯 JS 和 Three.js 高斯泼溅，没有用任何图片、视频或音频文件。",
+    "en": "A scene of a pelican carrying a world on its back, built by Gemini 4 Carbon using pure JS and Three.js Gaussian splats, with no image, video or audio files."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 7557,
+    "likes": 159,
+    "replies": 13,
+    "reposts": 0,
+    "bookmarks": 21,
+    "checkedAt": "2026-11-18T08:55:04.095Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2122356839228874752/vid/avc1/1264x720/vRFTD3av21WHVCUU.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2122356839228874752/img/o7EUla0W55eZxOeE.jpg",
+     "width": 3016,
+     "height": 1716,
+     "durationSec": 37
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2122266495216459841",
+   "url": "https://x.com/marcthecreatorr/status/2122266495216459841",
+   "author": {
+    "handle": "marcthecreatorr",
+    "name": "Marcel"
+   },
+   "postedAt": "2026-11-16T09:52:16.000Z",
+   "addedAt": "2026-11-18",
+   "lang": "en",
+   "kind": "comparison",
+   "models": [
+    "hydrogen"
+   ],
+   "rivals": [
+    "qwen"
+   ],
+   "category": "game",
+   "title": {
+    "zh": "二维沙盒村庄游戏",
+    "en": "2D sandbox village game"
+   },
+   "summary": {
+    "zh": "对比 Qwen 4 Max 和 Gemini 4 Hydrogen 制作 2D 沙盒村庄。Hydrogen 用时 12 分钟，花费约 1.7 美元；Qwen 用时 1 小时 15 分钟，花费约 0.9 美元。作者更喜欢 Hydrogen 的音效和配乐，同时认为 Qwen 速度太慢。",
+    "en": "Compares Qwen 4 Max and Gemini 4 Hydrogen building a 2D sandbox village. Hydrogen took 12 minutes (~$1.7) versus Qwen's 1h15m (~$0.9); the creator preferred Hydrogen's sound design and music."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Qwen 4 Max"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 7472,
+    "likes": 103,
+    "replies": 23,
+    "reposts": 3,
+    "bookmarks": 14,
+    "checkedAt": "2026-11-18T08:55:04.095Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2122266215494152192/vid/avc1/842x720/HHaWpiPGdmLhnpKH.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2122266215494152192/img/le4MZv_XuEqgQqTC.jpg",
+     "width": 1264,
+     "height": 1080,
+     "durationSec": 55
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -8677,6 +9547,58 @@
    }
   },
   {
+   "id": "2122297342350995697",
+   "url": "https://x.com/HarshithLucky3/status/2122297342350995697",
+   "author": {
+    "handle": "HarshithLucky3",
+    "name": "Harshith"
+   },
+   "postedAt": "2026-11-16T11:54:51.000Z",
+   "addedAt": "2026-11-18",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "carbon"
+   ],
+   "rivals": [],
+   "category": "scene3d",
+   "title": {
+    "zh": "通过 MCP 在 Blender 中搭建的三维场景",
+    "en": "3D scene built in Blender via MCP"
+   },
+   "summary": {
+    "zh": "作者展示了用 Gemini 4 Carbon 配合 Blender MCP 制作的作品，没有给出提示词或其他细节。",
+    "en": "The creator shows a result made with Gemini 4 Carbon working through Blender MCP. No prompt or further details are given."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Blender MCP"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 6732,
+    "likes": 239,
+    "replies": 25,
+    "reposts": 6,
+    "bookmarks": 37,
+    "checkedAt": "2026-11-18T08:55:04.095Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXPqLS6bwAEIX07.jpg",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2114392673947709526",
    "url": "https://x.com/Haleeeemahh/status/2114392673947709526",
    "author": {
@@ -8784,6 +9706,61 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2122424240641376674",
+   "url": "https://x.com/SPAC89/status/2122424240641376674",
+   "author": {
+    "handle": "SPAC89",
+    "name": "Iam_"
+   },
+   "postedAt": "2026-11-16T20:19:06.000Z",
+   "addedAt": "2026-11-18",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "hydrogen",
+    "krypton"
+   ],
+   "rivals": [],
+   "category": "scene3d",
+   "title": {
+    "zh": "Blender 三维建模作品",
+    "en": "Blender 3D modeling piece"
+   },
+   "summary": {
+    "zh": "作者在 20 美元套餐下全程用 Gemini 4 Hydrogen xhigh 在 Blender 中完成这件作品。渲染持续两天多，模型每轮逐帧检查，另有一个 Hydrogen 智能体负责改进下一轮的建模。",
+    "en": "The creator made a Blender piece entirely with Gemini 4 Hydrogen xhigh on a $20 plan. Rendering took over two days, with the model reviewing each frame and a second Hydrogen agent improving the modeling between rounds."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 6242,
+    "likes": 145,
+    "replies": 12,
+    "reposts": 6,
+    "bookmarks": 42,
+    "checkedAt": "2026-11-18T08:55:04.095Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2122423875187175424/vid/avc1/1280x720/HN2TOwctcursJ2j2.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2122423875187175424/img/EsKEXc0iVfM8P9yc.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 50
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   }

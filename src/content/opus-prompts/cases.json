@@ -1,8 +1,8 @@
 {
  "model": "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.5)",
  "threshold": 5000,
- "updatedAt": "2026-11-17T01:17:13.595Z",
- "statsCheckedAt": "2026-11-17T01:17:13.595Z",
+ "updatedAt": "2026-11-18T08:44:59.676Z",
+ "statsCheckedAt": "2026-11-18T08:44:59.676Z",
  "inclusionRule": "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -10996,6 +10996,56 @@
     "width": 720,
     "height": 824,
     "durationSec": 13
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2122338680945975589",
+   "url": "https://x.com/embodianalysis/status/2122338680945975589",
+   "author": {
+    "handle": "embodianalysis",
+    "name": "Embodied Analysis"
+   },
+   "postedAt": "2026-11-16T14:39:07.000Z",
+   "addedAt": "2026-11-18",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "人工智能实验室样本选择测试",
+    "en": "AI lab sample selection test"
+   },
+   "summary": {
+    "zh": "这项模拟实验比较 GPT-6 Astra 和 Claude Opus 5.5 会选择蓝色对照样本还是实际的黄色样本。",
+    "en": "A simulated lab test compared whether GPT-6 Astra and Claude Opus 5.5 selected the blue control or the real yellow sample."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "GPT-6 Astra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 247885,
+    "likes": 178,
+    "replies": 5,
+    "reposts": 11,
+    "bookmarks": 12,
+    "checkedAt": "2026-11-18T08:32:08.586Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2122338653758525440/img/Rtsp5dMUaamnLjAu.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122338653758525440/vid/avc1/1280x720/AtOES44-f8ltXDTi.mp4?tag=16",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 26
    },
    "evidence": {
     "via": "daily",
@@ -63058,6 +63108,56 @@
    }
   },
   {
+   "id": "2122194551938891902",
+   "url": "https://x.com/aimlapi/status/2122194551938891902",
+   "author": {
+    "handle": "aimlapi",
+    "name": "AI/ML API"
+   },
+   "postedAt": "2026-11-16T05:06:24.000Z",
+   "addedAt": "2026-11-18",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "体素风格的玩具总动员场景",
+    "en": "Toy Story scene in 3D voxels"
+   },
+   "summary": {
+    "zh": "Qwen 4 Max 和 Claude Opus 5.5 通过 API 对比，将《玩具总动员》场景重制为 3D 体素作品。",
+    "en": "Qwen 4 Max and Claude Opus 5.5 recreated a Toy Story scene as 3D voxels through an API comparison."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Qwen 4 Max"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 38058,
+    "likes": 194,
+    "replies": 14,
+    "reposts": 10,
+    "bookmarks": 50,
+    "checkedAt": "2026-11-18T08:32:08.586Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2122194409030635520/img/hRD6s0i4bnxrRTWT.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122194409030635520/vid/avc1/720x770/2LEkQE0thvKhRdKb.mp4?tag=29",
+    "width": 720,
+    "height": 770,
+    "durationSec": 32
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2114001528562602485",
    "url": "https://x.com/0xwhrrari/status/2114001528562602485",
    "author": {
@@ -65099,6 +65199,56 @@
    }
   },
   {
+   "id": "2122415600802627683",
+   "url": "https://x.com/maxxmalist/status/2122415600802627683",
+   "author": {
+    "handle": "maxxmalist",
+    "name": "MAX"
+   },
+   "postedAt": "2026-11-16T19:44:46.000Z",
+   "addedAt": "2026-11-18",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "医疗产品动画广告对比",
+    "en": "Animated medical product ad comparison"
+   },
+   "summary": {
+    "zh": "Claude Opus 5.5 和 Fable 5.2 根据同一产品及医学研究自动制作动画广告，Fable 还检查了医学声明。",
+    "en": "Claude Opus 5.5 and Fable 5.2 each produced a fully automated animated ad based on a product and medical research; Fable also checked its claims."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Fable 5.2"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 36394,
+    "likes": 560,
+    "replies": 19,
+    "reposts": 35,
+    "bookmarks": 774,
+    "checkedAt": "2026-11-18T08:32:08.586Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2122412495390322689/img/Py-z-U2z9BCsOXR4.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122412495390322689/vid/avc1/720x1280/uv8vvyDd3wkzuHvp.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 59
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2112359668379234684",
    "url": "https://x.com/matabee_GTO/status/2112359668379234684",
    "author": {
@@ -65464,6 +65614,62 @@
     "width": 1022,
     "height": 720,
     "durationSec": 124
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2122384446397768047",
+   "url": "https://x.com/vib3coded/status/2122384446397768047",
+   "author": {
+    "handle": "vib3coded",
+    "name": "Vib3Coded"
+   },
+   "postedAt": "2026-11-16T17:40:58.000Z",
+   "addedAt": "2026-11-18",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "抹香鲸果冻软体物理研究",
+    "en": "Sperm whale jelly soft-body study"
+   },
+   "summary": {
+    "zh": "创作者发布了一个详细的 Three.js 规格，用于制作带物理模拟、渲染效果和交互控件的抹香鲸果冻软体研究作品。",
+    "en": "The creator published a detailed Three.js specification for an interactive soft-body sperm whale jelly study with physics, rendering and controls."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/vib3coded/status/2122384502097846361",
+    "text": "Build \"Sperm Whalee Jelly · Material Studies No. 056\" — a single-page interactive soft-body study in three.js (r170, WebGL2, importmap from jsDelivr), matching the quality, layout and juicy colours of my earlier \"Whale Jelly No. 043\" (humpback).\n\nSubject: a sperm whale cast in two layers of jelly, resting on its belly on a pale studio sweep (#E2DFDA).\n- Shape (signed distance field): a section swept along the spine whose superellipse power rises from 2 (round) behind the head to ~3.4 at it, so the body turns into a great square head with a blunt rounded face. A narrow lower jaw (an elliptical rod of milky jelly) tucked under the head, joined by a crease that reads as the mouth. One blowhole set forward and to the LEFT. A low hump two-thirds back plus a row of knuckles down the tail stock, small paddle flippers, broad triangular flukes with a deep notch. Wrinkled skin behind the head as a normal bump from rest-space coordinates.\n- Inside: a milky layer along the belly with a wavy top line that sinks away under the head; two rows of sugar teeth standing up from the jaw into the clear jelly of the head (visible through the blue); a swallowed squid (mantle, fins, eyes, 8 arms, 2 tentacles) in the clear jelly that glows — warm core, scattered photophore beads, its light filtered blue by the jelly it crosses (lights the jelly, the milk and the table); ~30 trapped bubbles; dark bead eyes.\n- Physics: CPU XPBD tetrahedral soft body (snapped hex lattice, 5 tets per cell, 60 Hz with 10 substeps, per-region compliance: fins firmest, clear jelly softest), barycentric skinning of the render surfaces, grab/drag/twist (wheel or second finger), orbit, zoom.\n- Spout: 72 rigid jelly drops hidden in the blowhole; \"Blow a spout\" fires a bushy column forward-up-left along the blowhole's live axis; the head dips as it exhales; drops bounce, roll, collide with the whale and can be picked up and tossed.\n- Renderer (three.js, custom ShaderMaterials, one THREE.Scene per pass): key-light shadow map with PCSS-lite and tinted jelly shadows, top-down height map for contact AO, scene pass (floor + all inner props, 4x MSAA half-float), back-face depth for thickness, then the jelly front faces with refraction, Beer–Lambert absorption, scattering, back-lit thin fins, Fresnel studio reflections and GGX highlights; Khronos PBR Neutral tone mapping, backdrop inverse-tone-mapped to land exactly on the page colour.\n- Palettes: Ocean (#3f93ea / #1d5fc0), Slate (#8197ab / #3f5468), Lagoon (#2fc2b6 / #0b8282), milky #f3eee4.\n- \"Lights out\" toggle (key L): the room and page fade to near-black, the key light dims, and the glowing squid becomes the only light; poking the jelly near the squid makes it flash.\n- UI (editorial, serif italic masthead, mono readouts): colour swatches, Firmness and Internal damping sliders, Blow a spout, Reset, ¼ speed, Show mesh, Pause, Lights out; live readouts Mass (g), Volume (% of rest), Length (cm), loose Drops; an \"Inside the experiment\" notes panel; status pill \"THREE.JS · LIVE\"; WebGL2 fallback message; stacked layout on phones with no horizontal scroll. English UI, original content only."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Three.js",
+    "Fable 5.2"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 36035,
+    "likes": 356,
+    "replies": 48,
+    "reposts": 26,
+    "bookmarks": 122,
+    "checkedAt": "2026-11-18T08:32:08.586Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2122384302881009665/img/cB8nrIjEXDpYKre8.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122384302881009665/vid/avc1/720x908/lTHPPs-_Rmwpl07l.mp4?tag=29",
+    "width": 720,
+    "height": 908,
+    "durationSec": 17
    },
    "evidence": {
     "via": "daily",
@@ -87763,6 +87969,59 @@
    }
   },
   {
+   "id": "2122387800762810870",
+   "url": "https://x.com/0xRhinoX/status/2122387800762810870",
+   "author": {
+    "handle": "0xRhinoX",
+    "name": "Rhino"
+   },
+   "postedAt": "2026-11-16T17:54:18.000Z",
+   "addedAt": "2026-11-18",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "狼形象生成模型对比",
+    "en": "Wolf generation model comparison"
+   },
+   "summary": {
+    "zh": "创作者比较了多个模型生成“极光下穿过雪林的狼”，其中 Claude Fable 生成的结果最像真正的狼。",
+    "en": "The creator compared several models generating a wolf in a snowy forest under the aurora, with Claude Fable producing the most wolf-like result."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/0xRhinoX/status/2122387800762810870",
+    "text": "a wolf running through a snowy forest under the aurora"
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 22072,
+    "likes": 122,
+    "replies": 24,
+    "reposts": 7,
+    "bookmarks": 36,
+    "checkedAt": "2026-11-18T08:32:08.586Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2122354336214749184/img/PReEvOGk1CiUdxYZ.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122354336214749184/vid/avc1/720x720/I0Z0QX9HG5QR6FZZ.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 15
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2105793038048182737",
    "url": "https://x.com/aniketjart/status/2105793038048182737",
    "author": {
@@ -89675,6 +89934,54 @@
     "width": 1280,
     "height": 720,
     "durationSec": 51
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2122302314476343667",
+   "url": "https://x.com/RalconStudio/status/2122302314476343667",
+   "author": {
+    "handle": "RalconStudio",
+    "name": "Widya Bayu W"
+   },
+   "postedAt": "2026-11-16T12:14:36.000Z",
+   "addedAt": "2026-11-18",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "Lesmana模板预加载动画",
+    "en": "Lesmana template preloader animation"
+   },
+   "summary": {
+    "zh": "这条帖子展示了用 Claude Opus 5.5 制作的预加载动画，并说明它来自 Lesmana 模板。",
+    "en": "The post shows a preloader made with Claude Opus 5.5 and says it comes from the Lesmana template."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 21149,
+    "likes": 432,
+    "replies": 26,
+    "reposts": 18,
+    "bookmarks": 357,
+    "checkedAt": "2026-11-18T08:32:08.586Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2122301928550129664/img/MobtopvsveHlTnX8.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122301928550129664/vid/avc1/1272x720/QYSGUlL6Joq0cLXR.mp4?tag=29",
+    "width": 1272,
+    "height": 720,
+    "durationSec": 9
    },
    "evidence": {
     "via": "daily",
@@ -96254,6 +96561,56 @@
     "width": 1280,
     "height": 720,
     "durationSec": 25
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2122298720955830563",
+   "url": "https://x.com/rewind02/status/2122298720955830563",
+   "author": {
+    "handle": "rewind02",
+    "name": "rewind"
+   },
+   "postedAt": "2026-11-16T12:00:20.000Z",
+   "addedAt": "2026-11-18",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "浏览器中的绘画风三维世界",
+    "en": "Painted 3D world in the browser"
+   },
+   "summary": {
+    "zh": "创作者用 Opus 5.5 和 Three.js 制作了浏览器中的绘画风格 3D 漫步场景，并通过自定义着色器让画面在日落时从水粉变为油画。",
+    "en": "The creator used Opus 5.5 and Three.js to build a painted browser-based 3D walk, with custom shaders changing the style from gouache to oil paint at sunset."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 18770,
+    "likes": 270,
+    "replies": 19,
+    "reposts": 23,
+    "bookmarks": 230,
+    "checkedAt": "2026-11-18T08:32:08.586Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2122298565661708288/img/KWPH0IHFQuaUsNyo.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122298565661708288/vid/avc1/1280x720/kNKetFgIc3iM8Rxt.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 114
    },
    "evidence": {
     "via": "daily",
@@ -110320,6 +110677,57 @@
    }
   },
   {
+   "id": "2122494506566390205",
+   "url": "https://x.com/kallistosiii/status/2122494506566390205",
+   "author": {
+    "handle": "kallistosiii",
+    "name": "Kallistos III"
+   },
+   "postedAt": "2026-11-17T00:58:19.000Z",
+   "addedAt": "2026-11-18",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "未来从侧面抵达",
+    "en": "The Future Arrives Sideways"
+   },
+   "summary": {
+    "zh": "这条帖子展示了名为《The Future Arrives Sideways》的作品，并称制作中使用了 Suno、Grok Imagine 和 Opus 5.5。",
+    "en": "The post presents a work titled “The Future Arrives Sideways” and names Suno, Grok Imagine, and Opus 5.5 as part of its creation."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Suno",
+    "Grok Imagine"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 13978,
+    "likes": 426,
+    "replies": 29,
+    "reposts": 93,
+    "bookmarks": 240,
+    "checkedAt": "2026-11-18T08:32:08.586Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/media/HXSdXm2akAAactH.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122494353323220992/vid/avc1/1280x720/qMG-UqrrwXbjAT14.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 236
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2110807768550764628",
    "url": "https://x.com/nik_akki/status/2110807768550764628",
    "author": {
@@ -111635,6 +112043,57 @@
     "width": 1246,
     "height": 720,
     "durationSec": 354
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2122359334290313441",
+   "url": "https://x.com/NathanWilbanks_/status/2122359334290313441",
+   "author": {
+    "handle": "NathanWilbanks_",
+    "name": "Nathan Wilbanks"
+   },
+   "postedAt": "2026-11-16T16:01:11.000Z",
+   "addedAt": "2026-11-18",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "互动式奥尼尔圆柱世界",
+    "en": "Interactive O'Neill cylinder world"
+   },
+   "summary": {
+    "zh": "这是一个交互式奥尼尔圆柱三维世界，全部放在一个 1064 KB 的 HTML 文件中，使用 agnt.gg、Fable 5.2 和 Opus 5.5 制作。",
+    "en": "An interactive O’Neill cylinder 3D world fits in a single 1064 KB HTML file, built with agnt.gg, Fable 5.2, and Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "agnt.gg",
+    "Fable 5.2"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 13630,
+    "likes": 353,
+    "replies": 27,
+    "reposts": 30,
+    "bookmarks": 270,
+    "checkedAt": "2026-11-18T08:32:08.586Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2122353156512215040/img/GDARhWf041RsLDEU.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122353156512215040/vid/avc1/1280x720/_KMoRS5jSeDC2a-y.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 77
    },
    "evidence": {
     "via": "daily",
@@ -117309,6 +117768,56 @@
    }
   },
   {
+   "id": "2122527161961889959",
+   "url": "https://x.com/KieranWarwick/status/2122527161961889959",
+   "author": {
+    "handle": "KieranWarwick",
+    "name": "Kieran.eth"
+   },
+   "postedAt": "2026-11-17T03:08:04.000Z",
+   "addedAt": "2026-11-18",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "虚幻引擎游戏原型",
+    "en": "Unreal Engine game prototype"
+   },
+   "summary": {
+    "zh": "该项目用 Claude Opus 5.5 和 Unreal Engine 5 在三天内完成，并使用了链接中的免费工业金属音乐包。",
+    "en": "A project built in three days with Claude Opus 5.5 and Unreal Engine 5, using music from a linked free industrial metal music pack."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Unreal Engine 5"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 12266,
+    "likes": 210,
+    "replies": 44,
+    "reposts": 10,
+    "bookmarks": 28,
+    "checkedAt": "2026-11-18T08:44:59.676Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2122526942662696960/img/PpqptkJKwqXBsOqT.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122526942662696960/vid/avc1/1280x720/kiHK8PXRCdF4bVJh.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 38
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103093628230873415",
    "url": "https://x.com/skwp/status/2103093628230873415",
    "author": {
@@ -119363,6 +119872,54 @@
     "width": 720,
     "height": 800,
     "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2122281778140557707",
+   "url": "https://x.com/facetagramai/status/2122281778140557707",
+   "author": {
+    "handle": "facetagramai",
+    "name": "Jake"
+   },
+   "postedAt": "2026-11-16T10:53:00.000Z",
+   "addedAt": "2026-11-18",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "GTA 6主题视频剪辑",
+    "en": "GTA 6 themed video edit"
+   },
+   "summary": {
+    "zh": "这是一个围绕 GTA 6 制作的视频，作者让 Claude 按资深高水平剪辑师的方式完成剪辑。",
+    "en": "A GTA 6 video that Claude was asked to edit as an experienced high-level editor."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 11861,
+    "likes": 167,
+    "replies": 1,
+    "reposts": 3,
+    "bookmarks": 181,
+    "checkedAt": "2026-11-18T08:32:08.586Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2122280879133495296/img/3iqIeTj3cAsW2u41.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122280879133495296/vid/avc1/1282x720/_SRwTARYiwJIufDy.mp4?tag=29",
+    "width": 1282,
+    "height": 720,
+    "durationSec": 61
    },
    "evidence": {
     "via": "daily",
@@ -131196,6 +131753,54 @@
    }
   },
   {
+   "id": "2122329088509739132",
+   "url": "https://x.com/csaba_kissi/status/2122329088509739132",
+   "author": {
+    "handle": "csaba_kissi",
+    "name": "Csaba Kissi"
+   },
+   "postedAt": "2026-11-16T14:01:00.000Z",
+   "addedAt": "2026-11-18",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "表单与列表界面组件合集",
+    "en": "Form and list UI component collection"
+   },
+   "summary": {
+    "zh": "作者测试 Opus 5.5 为一个集合增加更多表单元素和列表。",
+    "en": "The creator tested Opus 5.5 by adding more form elements and lists to a collection."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 9045,
+    "likes": 197,
+    "replies": 5,
+    "reposts": 11,
+    "bookmarks": 147,
+    "checkedAt": "2026-11-18T08:32:08.586Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2122253535379156992/img/tRAYZP5myBKxbM0f.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122253535379156992/vid/avc1/720x788/zOcs0-LbN0w7iU0B.mp4?tag=29",
+    "width": 720,
+    "height": 788,
+    "durationSec": 25
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2111428909203866089",
    "url": "https://x.com/vib3coded/status/2111428909203866089",
    "author": {
@@ -131499,6 +132104,58 @@
     "width": 1280,
     "height": 720,
     "durationSec": 24
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2122348362611486768",
+   "url": "https://x.com/andreintg/status/2122348362611486768",
+   "author": {
+    "handle": "andreintg",
+    "name": "Andrea Intg."
+   },
+   "postedAt": "2026-11-16T15:17:35.000Z",
+   "addedAt": "2026-11-18",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "批量生成的3D服装角色",
+    "en": "Mass-produced 3D clothed characters"
+   },
+   "summary": {
+    "zh": "这是一个批量生成穿衣 3D 角色的智能体工作流，使用图像生成、Three.js 工具和 Unbound Zero。",
+    "en": "An agentic workflow mass-produces clothed 3D characters using image generation, Three.js tooling, and Unbound Zero."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js",
+    "Nano Banana",
+    "Unbound Zero"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 8962,
+    "likes": 161,
+    "replies": 7,
+    "reposts": 10,
+    "bookmarks": 197,
+    "checkedAt": "2026-11-18T08:32:08.586Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2122340641422094337/img/LDb3_A8SHG7CKrAn.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122340641422094337/vid/avc1/1170x720/8sbdtQOVHfLngrTP.mp4?tag=14",
+    "width": 1170,
+    "height": 720,
+    "durationSec": 13
    },
    "evidence": {
     "via": "daily",
@@ -133305,6 +133962,58 @@
    }
   },
   {
+   "id": "2122324810223304734",
+   "url": "https://x.com/RyanSael/status/2122324810223304734",
+   "author": {
+    "handle": "RyanSael",
+    "name": "Ryan Sael"
+   },
+   "postedAt": "2026-11-16T13:44:00.000Z",
+   "addedAt": "2026-11-18",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "WebXR相机对焦镜头实验室",
+    "en": "WebXR camera focus lens lab"
+   },
+   "summary": {
+    "zh": "这是一个交互式相机对焦镜头实验室，先用 Opus 5.5 制作，再通过 Fable 5.2、three.js 和 WebXR 转为 WebXR 体验。",
+    "en": "An interactive camera-focus lens lab was made with Opus 5.5 and turned into a WebXR experience with Fable 5.2, three.js and WebXR."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Fable 5.2",
+    "three.js",
+    "WebXR"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 8504,
+    "likes": 204,
+    "replies": 19,
+    "reposts": 30,
+    "bookmarks": 130,
+    "checkedAt": "2026-11-18T08:32:08.586Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2121992819405733888/img/_OoFDK_z1U-2RHLP.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2121992819405733888/vid/avc1/720x720/nH9dVXUGgfxD50Bv.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 35
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102620856740720761",
    "url": "https://x.com/ShadeLurk/status/2102620856740720761",
    "author": {
@@ -134821,6 +135530,56 @@
     "width": 1280,
     "height": 720,
     "durationSec": 45
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2122163779471569261",
+   "url": "https://x.com/Toarukanshiin/status/2122163779471569261",
+   "author": {
+    "handle": "Toarukanshiin",
+    "name": "とある / ago"
+   },
+   "postedAt": "2026-11-16T03:04:07.000Z",
+   "addedAt": "2026-11-18",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "咖啡订阅服务广告",
+    "en": "Coffee subscription advertisement"
+   },
+   "summary": {
+    "zh": "这是一个 15 秒的虚构咖啡订阅服务动效广告，使用 Claude Opus 5.5 和 Blender 制作。",
+    "en": "A 15-second fictional coffee subscription motion-graphics ad made with Claude Opus 5.5 and Blender."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 8127,
+    "likes": 291,
+    "replies": 1,
+    "reposts": 21,
+    "bookmarks": 181,
+    "checkedAt": "2026-11-18T08:32:08.586Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2122163472419151872/img/5PHPgEaQIvLA-3Sq.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122163472419151872/vid/avc1/1280x720/ovWdMRedbSoHb6NA.mp4?tag=14",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 15
    },
    "evidence": {
     "via": "daily",
@@ -140348,6 +141107,58 @@
    }
   },
   {
+   "id": "2122180195000164838",
+   "url": "https://x.com/aakkshhayy/status/2122180195000164838",
+   "author": {
+    "handle": "aakkshhayy",
+    "name": "Akshay"
+   },
+   "postedAt": "2026-11-16T04:09:21.000Z",
+   "addedAt": "2026-11-18",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "Blender与Three.js三维场景",
+    "en": "Blender and Three.js 3D scene"
+   },
+   "summary": {
+    "zh": "作者表示这个作品由 Opus 5.5、Astra、Blender 和 Three.js 共同完成。",
+    "en": "The creator attributes the work to Opus 5.5, Astra, Blender, and Three.js."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Astra",
+    "Blender",
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 6702,
+    "likes": 278,
+    "replies": 20,
+    "reposts": 9,
+    "bookmarks": 63,
+    "checkedAt": "2026-11-18T08:32:08.586Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2122179973377314816/img/HlupGoA68Q3D_Q5X.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122179973377314816/vid/avc1/894x720/kpC2SI_z-MuiAwhP.mp4?tag=29",
+    "width": 894,
+    "height": 720,
+    "durationSec": 23
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2108206814236184802",
    "url": "https://x.com/thebuggeddev/status/2108206814236184802",
    "author": {
@@ -142054,6 +142865,57 @@
     "width": 960,
     "height": 540,
     "durationSec": 8
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2122305000479052022",
+   "url": "https://x.com/maxt3chno/status/2122305000479052022",
+   "author": {
+    "handle": "maxt3chno",
+    "name": "Max"
+   },
+   "postedAt": "2026-11-16T12:25:17.000Z",
+   "addedAt": "2026-11-18",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "浏览器喷气滑艇小游戏",
+    "en": "Jet ski browser mini-game"
+   },
+   "summary": {
+    "zh": "这是一个在浏览器中运行的水上摩托小游戏，包含特技、巨浪、物理效果、HUD和声音，并用 Three.js 程序化生成部分3D元素。Fable 5.2 制定了七阶段计划，Opus 5.5 完成了编码。",
+    "en": "A browser-based jet ski mini-game with tricks, monster waves, physics, HUD, sounds and procedurally generated 3D elements. Fable 5.2 planned seven stages and Opus 5.5 coded them."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Fable 5.2",
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 6056,
+    "likes": 153,
+    "replies": 32,
+    "reposts": 5,
+    "bookmarks": 58,
+    "checkedAt": "2026-11-18T08:32:08.586Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2122304554133831680/img/HeHi5TGJUtYCHuyy.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122304554133831680/vid/avc1/1280x720/lFjWrb9JM3eRKhcT.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 82
    },
    "evidence": {
     "via": "daily",
