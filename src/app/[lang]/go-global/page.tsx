@@ -943,9 +943,26 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
           />
         </div>
         <div className={`mt-3 ${BOX} text-sm text-gray-700`}>
-          <span className="font-medium">{isZh ? "我的推荐：" : "My pick: "}</span>
-          {MY_PAYMENT_PICK[l]}
+          <p className="leading-relaxed">
+            <span className="font-medium">{isZh ? "我的推荐：" : "My pick: "}</span>
+            {MY_PAYMENT_PICK[l]}
+          </p>
           <FromMyPost post={MY_POSTS.stack} lang={l} />
+          <div className="mt-3 pt-3 border-t border-gray-200 leading-relaxed">
+            <span className="font-medium text-teal-800">
+              {isZh ? "双通道实战（Waffo + Dodo Payments）：" : "Dual-gateway setup (Waffo + Dodo Payments): "}
+            </span>
+            {isZh
+              ? "刘小排 2026-11 实测线上同时接 Waffo + Dodo Payments 防单点风控，并谈下 Dodo 专属费率（3.8%~3.9%+$0.40，免国际卡费和订阅费，前 $200 免手续费；卖 $20 跨国订阅仅扣 $1.18，低于香港 Stripe 的 ~$1.79 和 Lemon Squeezy 的 $2.08），原生支持微信支付与 AI 积分计费。"
+              : "Liu Xiaopai's Nov 2026 setup runs Waffo + Dodo Payments in parallel for failover, with a negotiated Dodo partner rate (3.8%–3.9%+$0.40, 0% international/subscription fee, first $200 fee-free—taking just $1.18 on a $20 subscription vs ~$1.79 on HK Stripe or $2.08 on Lemon Squeezy), native WeChat Pay, and built-in AI credits billing."}{" "}
+            <Link href={`/${lang}/blog/dodo-payments-waffo-ai-saas-fee-comparison`} className="text-blue-600 font-medium hover:underline">
+              {isZh ? "看 $20 订阅真实扣费对比 →" : "See the $20 fee breakdown →"}
+            </Link>
+            {" · "}
+            <a href="https://mp.weixin.qq.com/s/uTtP5zv_exiHa52qSa07BA" {...OUT} className="text-blue-600 hover:underline">
+              {isZh ? "微信原文" : "WeChat source"}
+            </a>
+          </div>
         </div>
         <div className="mt-6 pt-5 border-t border-gray-200">
           <p className="mb-3 text-sm font-semibold text-gray-900">

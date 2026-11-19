@@ -63,7 +63,11 @@ export default async function PaymentsPage({ params }: { params: Promise<{ lang:
           </a>
         </p>
         <p>
-          {isZh ? "8 家平台的完整对比和 20 万卖家的真实选择：" : "All eight platforms compared, and what 200,000 sellers chose: "}
+          {isZh ? "8 家平台的完整对比、20 万卖家的真实选择与 $20 订阅真实扣费实测：" : "All eight platforms compared, what 200,000 sellers chose, and the $20 subscription real fee test: "}
+          <Link href={`/${lang}/blog/dodo-payments-waffo-ai-saas-fee-comparison`} className="text-blue-600 hover:underline">
+            {isZh ? "Waffo + Dodo 双通道与 20 美元订阅真实手续费对比" : "Waffo + Dodo dual gateways & the real cost of a $20 subscription"}
+          </Link>
+          {isZh ? "；" : "; "}
           <Link href={`/${lang}/blog/choose-payment-platform-2026`} className="text-blue-600 hover:underline">
             {isZh ? "独立开发者收款平台怎么选" : "how to choose a payment platform"}
           </Link>

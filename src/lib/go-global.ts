@@ -31,7 +31,12 @@ export const POST_GROUPS: PostGroup[] = [
     id: "payments",
     zh: "收款平台和数据",
     en: "Payment platforms and data",
-    slugs: ["choose-payment-platform-2026", "indie-payments-report-2026", "bitget-u-card-review"],
+    slugs: [
+      "dodo-payments-waffo-ai-saas-fee-comparison",
+      "choose-payment-platform-2026",
+      "indie-payments-report-2026",
+      "bitget-u-card-review",
+    ],
   },
   {
     id: "compliance",
