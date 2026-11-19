@@ -1,5 +1,106 @@
 [
   {
+    "slug": "2026-11-20",
+    "date": "2026-11-20",
+    "title": "AI 快讯 · 11月20日",
+    "items": [
+      {
+        "title": "英伟达开源技能评测框架，支持接入持续集成",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/NVIDIA/SkillEvaluator",
+        "summary": "英伟达开源 SkillEvaluator，覆盖技能与插件的质量门禁、安全扫描、兼容性检查和真实智能体评测，并提供可复用的持续集成模板。开发者可检查技能是否真正改善行为，而不只验证文件格式。",
+        "titleEn": "NVIDIA Open Sources Agent Skill Evaluation Framework",
+        "summaryEn": "NVIDIA's SkillEvaluator evaluates agent skills and plugins through quality gates, security scanning, compatibility checks, semantic overlap detection, and live agent testing. Reusable CI templates help developers bring these checks into their repositories, moving skill validation beyond file structure toward measuring actual effects on agent behavior."
+      },
+      {
+        "title": "Cursor公开插件规范与官方集成仓库",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/cursor/plugins",
+        "summary": "Cursor 官方仓库公开插件规范及面向开发工具、框架和 SaaS 的插件，每个插件通过独立目录与清单文件组织。对技能作者和工具厂商而言，这提供了可参考的集成结构，方便将能力接入编码工作流。",
+        "titleEn": "Cursor Publishes Plugin Specification and Official Integrations",
+        "summaryEn": "Cursor's official repository contains its plugin specification and integrations for developer tools, frameworks, and SaaS products. Each plugin uses a standalone directory and a dedicated manifest. For skill authors and tool vendors, the repository provides a concrete integration structure to study when packaging capabilities for coding workflows."
+      },
+      {
+        "title": "CLI工具社区让现有软件更易被智能体调用",
+        "source": "GitHub Trending",
+        "category": "AI 工具动态",
+        "url": "https://github.com/HKUDS/CLI-Anything",
+        "summary": "CLI-Anything 希望通过命令行接口连接智能体与现有软件，并提供 CLI-Hub，支持浏览、安装和管理社区构建的接口。对开发者而言，这是一条值得评估的工具接入路线，不必所有操作都依赖图形界面。",
+        "titleEn": "CLI Hub Makes Software More Accessible to Agents",
+        "summaryEn": "CLI-Anything aims to connect AI agents with existing software through command-line interfaces. Its CLI-Hub supports browsing, installing, and managing community-built CLIs. For developers building agents, this offers an integration approach worth evaluating alongside GUI automation, although the supplied information does not establish universal software coverage or reliability."
+      },
+      {
+        "title": "Gemini预览工具检索，减少多工具上下文开销",
+        "source": "Google AI Blog",
+        "category": "AI 工具动态",
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/",
+        "summary": "Google 在 Gemini API 中预览 Tool Retrieval，让智能体访问数百个工具时使用更少的 token。对接入大量业务接口的开发者，这有望缓解工具定义带来的上下文与成本压力，但功能目前仍处于预览阶段。",
+        "titleEn": "Gemini API Previews Token-Saving Tool Retrieval",
+        "summaryEn": "Google has introduced Tool Retrieval in preview for the Gemini API, allowing agents to access hundreds of tools while using fewer tokens. For developers connecting many business integrations, the feature could reduce the context and cost burden associated with large tool catalogs. Preview status remains an important deployment consideration."
+      },
+      {
+        "title": "OpenAI用编码智能体持续排查性能问题",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast",
+        "summary": "OpenAI 介绍 Performance Factory，通过 Codex 驱动的工作流发现并修复性能问题，帮助 ChatGPT 保持响应速度。这展示了编码智能体在日常性能维护中的用法，为团队从代码生成扩展到工程运维提供参考。",
+        "titleEn": "OpenAI Uses Codex Workflows to Keep ChatGPT Fast",
+        "summaryEn": "OpenAI describes Performance Factory, a system of Codex-powered workflows that finds and fixes performance issues to help keep ChatGPT fast. The example shows coding agents being applied to ongoing engineering maintenance rather than only feature generation, offering developers a reference for incorporating agents into performance improvement workflows."
+      },
+      {
+        "title": "Gemini新中档模型获智能指数61分",
+        "source": "Latent Space",
+        "category": "AI 工具动态",
+        "url": "https://latent.space/p/ainews-gemini-4-neon-gdm-s-opus-sol-contender/",
+        "summary": "据 Latent Space 报道，Google 中档模型 Gemini 4 Neon 在 Intelligence Index 获得61分，为开发者模型选型增加了新候选。该分数可作为初筛信号，但摘要未提供定价、延迟或具体任务表现，仍需业务实测。",
+        "titleEn": "Gemini 4 Neon Scores 61 on Intelligence Index",
+        "summaryEn": "Latent Space reports that Google's mid-tier Gemini 4 Neon scores 61 on the Intelligence Index, adding another candidate for developers comparing models. The score is a useful screening signal, but the supplied summary does not establish pricing, latency, or task-specific performance, so workload-level testing remains necessary."
+      },
+      {
+        "title": "本地代码模型选型研究比较体积与解题能耗",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2611.17605",
+        "summary": "研究在无风扇 MacBook Air M2 上测试24个 Qwen2.5-Coder 量化文件，以542道任务衡量每次成功解题的能耗。对本地代码助手开发者，价值在于按下载体积与实际解题成本选模型，而非只看参数规模。",
+        "titleEn": "Study Compares Local Coding Models by Size and Energy",
+        "summaryEn": "Researchers tested 24 quantized Qwen2.5-Coder GGUF files on a fanless MacBook Air M2 across 542 EvalPlus tasks, measuring energy per solved task. The resulting selection guide helps local coding-assistant developers compare download size and practical energy costs instead of relying solely on parameter counts or quantization rules of thumb."
+      },
+      {
+        "title": "StatePortal生成检查点直达软件深层测试状态",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2611.23257",
+        "summary": "StatePortal 针对交互软件测试中的难题：目标状态往往需要长串操作才能到达。它让智能体生成检查点，旨在减少重复操作成本；对缺少标准界面结构的自绘软件，这提供了传统界面自动化之外的测试思路。",
+        "titleEn": "StatePortal Synthesizes Checkpoints for Deep Software Testing",
+        "summaryEn": "StatePortal addresses a testing bottleneck in interactive software: reaching states that require long interaction histories. Its agent synthesizes checkpoints intended to reduce repeated setup work across commits. This is especially relevant to developers of self-rendered interfaces, where conventional GUI automation cannot rely on a DOM or accessibility tree."
+      }
+    ],
+    "funding": [
+      {
+        "company": "Anthropic",
+        "url": "https://news.crunchbase.com/public/ipo/anthropic-prices-ipo-ant-above-range/",
+        "round": "IPO",
+        "amount": "undisclosed",
+        "valuation": "",
+        "investors": "",
+        "pitch": "Claude开发商完成IPO，上市首日收涨17%，为此前上市披露带来实际交易层面的新进展。",
+        "en": {
+          "company": "Anthropic",
+          "round": "IPO",
+          "amount": "undisclosed",
+          "pitch": "The Claude developer completed its IPO and closed up 17% on its first trading day, moving its earlier listing disclosure into actual trading."
+        }
+      }
+    ],
+    "jasonSays": "技能评测与工具检索成为今日重点，分别帮助开发者验证智能体能力、控制大规模工具接入的上下文成本。",
+    "jasonSaysEn": "Skill evaluation and tool retrieval stand out today, helping developers validate agent capabilities and control the context costs of large tool catalogs, respectively.",
+    "filename": "2026-11-20.md",
+    "coverImage": "/news/2026-11-20.png",
+    "coverImageEn": "/news/en/2026-11-20.png"
+  },
+  {
     "slug": "2026-11-19",
     "date": "2026-11-19",
     "title": "AI 快讯 · 11月19日",
