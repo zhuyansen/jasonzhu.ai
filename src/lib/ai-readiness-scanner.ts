@@ -1375,3 +1375,40 @@ export const BENCHMARK_HALL_OF_FAME: BenchmarkEntry[] = [
     },
   },
 ];
+
+export interface CheckCatalogItem {
+  key: string;
+  level: number;
+  maxScore: number;
+  title: { zh: string; en: string };
+}
+
+export const CHECK_CATALOG: Record<string, CheckCatalogItem> = {
+  "crawl_permission.robots_txt": { key: "crawl_permission.robots_txt", level: 1, maxScore: 4, title: { zh: "robots.txt 存在且可解析", en: "robots.txt present and parseable" } },
+  "crawl_permission.ai_crawlers": { key: "crawl_permission.ai_crawlers", level: 1, maxScore: 7, title: { zh: "未封禁主流 AI 搜索爬虫", en: "AI crawlers not blocked" } },
+  "crawl_permission.bot_detection": { key: "crawl_permission.bot_detection", level: 1, maxScore: 6, title: { zh: "未被 WAF / 机器人防火墙误杀", en: "Not blocked by bot detection" } },
+  "crawl_permission.content_signals": { key: "crawl_permission.content_signals", level: 1, maxScore: 3, title: { zh: "声明 Content-Signal 机器授权信号", en: "Content Signals declared" } },
+  "readability.no_js": { key: "readability.no_js", level: 2, maxScore: 8, title: { zh: "无需执行 JavaScript 即可读出正文", en: "Content readable without JavaScript" } },
+  "readability.token_budget": { key: "readability.token_budget", level: 2, maxScore: 3, title: { zh: "合理的 HTML 体积与 Token 预算", en: "Reasonable token budget" } },
+  "readability.meta_tags": { key: "readability.meta_tags", level: 2, maxScore: 4, title: { zh: "Title、Description 与 Canonical 齐全", en: "Title, meta description and canonical" } },
+  "readability.headings": { key: "readability.headings", level: 2, maxScore: 3, title: { zh: "清晰的 H1 → H2 → H3 标题层级", en: "Clear heading hierarchy" } },
+  "findability.sitemap_urls": { key: "findability.sitemap_urls", level: 3, maxScore: 5, title: { zh: "Sitemap.xml 正常列出全站 URL", en: "Sitemap lists URLs" } },
+  "findability.sitemap_in_robots": { key: "findability.sitemap_in_robots", level: 3, maxScore: 3, title: { zh: "在 robots.txt 中声明 Sitemap 地址", en: "Sitemap declared in robots.txt" } },
+  "findability.lastmod": { key: "findability.lastmod", level: 3, maxScore: 3, title: { zh: "Sitemap 包含近期更新时间戳（lastmod）", en: "Recent lastmod dates" } },
+  "findability.real_404": { key: "findability.real_404", level: 3, maxScore: 3, title: { zh: "不存在的 URL 返回真实 404 状态码", en: "Real 404 for missing pages" } },
+  "findability.https": { key: "findability.https", level: 3, maxScore: 2, title: { zh: "干净的 HTTPS 规范首页", en: "Clean HTTPS homepage" } },
+  "structured_meaning.json_ld": { key: "structured_meaning.json_ld", level: 4, maxScore: 6, title: { zh: "内嵌 JSON-LD 结构化数据", en: "JSON-LD present" } },
+  "structured_meaning.org_schema": { key: "structured_meaning.org_schema", level: 4, maxScore: 4, title: { zh: "完整的 Organization 品牌实体声明", en: "Complete Organization schema" } },
+  "structured_meaning.same_as": { key: "structured_meaning.same_as", level: 4, maxScore: 2, title: { zh: "sameAs 跨平台权威主页对齐", en: "sameAs links" } },
+  "structured_meaning.multiple_schemas": { key: "structured_meaning.multiple_schemas", level: 4, maxScore: 2, title: { zh: "组合多种 Schema 类型（@graph）", en: "Several schema types" } },
+  "commercial_legibility.trust_pages": { key: "commercial_legibility.trust_pages", level: 5, maxScore: 4, title: { zh: "关于我们、联系方式与隐私/条款链接齐全", en: "About, contact and legal pages linked" } },
+  "commercial_legibility.machine_contact": { key: "commercial_legibility.machine_contact", level: 5, maxScore: 4, title: { zh: "机器可读的真实联系信息（mailto + contactPoint）", en: "Machine-readable contact details" } },
+  "commercial_legibility.pricing": { key: "commercial_legibility.pricing", level: 5, maxScore: 4, title: { zh: "免登录、免 JS 即可读取价格或免费档位说明", en: "Prices reachable without JS or login" } },
+  "agent_native.llms_txt": { key: "agent_native.llms_txt", level: 6, maxScore: 4, title: { zh: "提供 /llms.txt AI 专属索引文件", en: "llms.txt served" } },
+  "agent_native.llms_well_formed": { key: "agent_native.llms_well_formed", level: 6, maxScore: 3, title: { zh: "llms.txt 符合标准 Markdown 语法结构", en: "llms.txt well-formed" } },
+  "agent_native.markdown_negotiation": { key: "agent_native.markdown_negotiation", level: 6, maxScore: 2, title: { zh: "支持 Accept: text/markdown 内容协商直出", en: "Markdown served on request" } },
+  "agent_native.link_headers": { key: "agent_native.link_headers", level: 6, maxScore: 1, title: { zh: "HTTP Link 响应头暴露 llms.txt 与 MCP 发现入口", en: "Link headers" } },
+  "agent_interaction.webmcp_tools": { key: "agent_interaction.webmcp_tools", level: 7, maxScore: 6, title: { zh: "暴露 WebMCP 浏览器端 Agent 可调用工具", en: "WebMCP tools exposed" } },
+  "agent_interaction.mcp_server_card": { key: "agent_interaction.mcp_server_card", level: 7, maxScore: 4, title: { zh: "发布 /.well-known/mcp/server-card.json", en: "MCP Server Card published" } },
+};
+

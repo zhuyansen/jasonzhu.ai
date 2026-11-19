@@ -1,5 +1,5 @@
--- AI 网站急诊室 & 第 1 课通关游戏：用户域名检测记录表
--- 用于沉淀所有来 jasonzhu.ai 做 AI 可见度体检的独立站域名、总分、等级、各关得分、失败项与完整报告。
+-- AI 网站急诊室 & 第 1 课通关游戏：用户域名检测记录表 + 掉分监控订阅表
+-- 用于沉淀所有来 jasonzhu.ai 做 AI 可见度体检的独立站域名、总分、等级、各关得分、失败项、复诊涨分幅度与监控邮箱。
 -- 服务端通过 SUPABASE_SERVICE_KEY 写入与聚合统计（绕过 RLS），不向 anon 暴露原始明细。
 
 CREATE TABLE IF NOT EXISTS ai_readiness_scans (
@@ -9,10 +9,14 @@ CREATE TABLE IF NOT EXISTS ai_readiness_scans (
   score INTEGER NOT NULL CHECK (score >= 0 AND score <= 100),
   grade TEXT NOT NULL,
   label TEXT,
+  previous_score INTEGER,
+  score_delta INTEGER,
   category_scores JSONB NOT NULL DEFAULT '{}'::jsonb,
   failed_checks TEXT[] NOT NULL DEFAULT '{}',
   passed_checks TEXT[] NOT NULL DEFAULT '{}',
   results JSONB NOT NULL DEFAULT '{}'::jsonb,
+  notify_email TEXT,
+  monitor_enabled BOOLEAN DEFAULT FALSE,
   source TEXT DEFAULT 'ai-clinic-game',
   lang TEXT DEFAULT 'zh',
   ip_hash TEXT,
@@ -20,7 +24,13 @@ CREATE TABLE IF NOT EXISTS ai_readiness_scans (
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- 按域名查历史体检记录与进步曲线
+-- 若表已存在，补齐新增字段（幂等）
+ALTER TABLE ai_readiness_scans ADD COLUMN IF NOT EXISTS previous_score INTEGER;
+ALTER TABLE ai_readiness_scans ADD COLUMN IF NOT EXISTS score_delta INTEGER;
+ALTER TABLE ai_readiness_scans ADD COLUMN IF NOT EXISTS notify_email TEXT;
+ALTER TABLE ai_readiness_scans ADD COLUMN IF NOT EXISTS monitor_enabled BOOLEAN DEFAULT FALSE;
+
+-- 按域名查历史体检记录与复诊涨分曲线
 CREATE INDEX IF NOT EXISTS idx_ai_readiness_scans_domain
   ON ai_readiness_scans (domain, created_at DESC);
 
@@ -34,3 +44,22 @@ CREATE INDEX IF NOT EXISTS idx_ai_readiness_scans_created_at
 
 -- 开启 RLS：只允许服务端 SUPABASE_SERVICE_KEY 读写，禁止前端 anon key 直接拖库
 ALTER TABLE ai_readiness_scans ENABLE ROW LEVEL SECURITY;
+
+-- 独立站 AI 可见度掉分守护 & 复诊提醒订阅表
+CREATE TABLE IF NOT EXISTS ai_readiness_monitors (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  domain TEXT NOT NULL,
+  email TEXT NOT NULL,
+  baseline_score INTEGER NOT NULL DEFAULT 0,
+  baseline_grade TEXT NOT NULL DEFAULT 'F',
+  lang TEXT DEFAULT 'zh',
+  active BOOLEAN DEFAULT TRUE,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW(),
+  UNIQUE (domain, email)
+);
+
+CREATE INDEX IF NOT EXISTS idx_ai_readiness_monitors_domain
+  ON ai_readiness_monitors (domain);
+
+ALTER TABLE ai_readiness_monitors ENABLE ROW LEVEL SECURITY;
