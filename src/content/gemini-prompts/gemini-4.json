@@ -3,8 +3,8 @@
  "model": "Gemini 4",
  "released": "2026-10-14T00:00:00Z",
  "threshold": 5000,
- "updatedAt": "2026-11-18T09:10:53.738Z",
- "statsCheckedAt": "2026-11-18T09:08:48.493Z",
+ "updatedAt": "2026-11-19T01:32:08.095Z",
+ "statsCheckedAt": "2026-11-19T01:26:38.868Z",
  "inclusionRule": "Original post by the creator, media attached, >= 5000 views on that post, and the creator's own text says Gemini 4 (Argon, Carbon, Hydrogen, Krypton, Pro...) built it in code; same-prompt comparisons against other models included. Seeded on 2026-11-16 from the Claude 5.5 library. Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -4466,6 +4466,63 @@
    }
   },
   {
+   "id": "2122705177203642485",
+   "url": "https://x.com/chetaslua/status/2122705177203642485",
+   "author": {
+    "handle": "chetaslua",
+    "name": "Chetaslua"
+   },
+   "postedAt": "2026-11-17T14:55:26.000Z",
+   "addedAt": "2026-11-19",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "carbon",
+    "hydrogen"
+   ],
+   "rivals": [
+    "claude"
+   ],
+   "category": "scene3d",
+   "title": {
+    "zh": "由二维画作转换的三维鹈鹕",
+    "en": "3D pelican converted from a 2D drawing"
+   },
+   "summary": {
+    "zh": "创作者用 Carbon 和 Hydrogen swarm 将二维艺术转成三维鹈鹕，作品以 JS 编写，音乐和声音也通过代码制作。",
+    "en": "The creator used Carbon with a Hydrogen swarm to turn 2D art into a 3D pelican, with the piece built in JS and including coded music and sounds."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Antigravity"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 29773,
+    "likes": 650,
+    "replies": 30,
+    "reposts": 22,
+    "bookmarks": 185,
+    "checkedAt": "2026-11-19T01:26:38.868Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2122704491929808896/vid/avc1/1280x720/Tl5OkrwkLAUc110-.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2122704491929808896/img/M9N9lsattT3bYpLR.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 119
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2121890724136227182",
    "url": "https://x.com/noclipepe/status/2121890724136227182",
    "author": {
@@ -7442,6 +7499,63 @@
    }
   },
   {
+   "id": "2122762815757017410",
+   "url": "https://x.com/Angaisb_/status/2122762815757017410",
+   "author": {
+    "handle": "Angaisb_",
+    "name": "Angel 🎄"
+   },
+   "postedAt": "2026-11-17T18:44:28.000Z",
+   "addedAt": "2026-11-19",
+   "lang": "in",
+   "kind": "comparison",
+   "models": [
+    "carbon"
+   ],
+   "rivals": [
+    "gpt"
+   ],
+   "category": "svg",
+   "title": {
+    "zh": "SVG 插画演示",
+    "en": "SVG illustration demo"
+   },
+   "summary": {
+    "zh": "这条帖子使用 Gemini 3.1 Pro 的 SVG 演示，对比了 Gemini 4 Carbon 和 GPT-6.2 Astra。",
+    "en": "The post compares Gemini 4 Carbon with GPT-6.2 Astra using a Gemini 3.1 Pro SVG demo."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "GPT-6.2 Astra",
+    "Gemini 3.1 Pro"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 14204,
+    "likes": 180,
+    "replies": 9,
+    "reposts": 5,
+    "bookmarks": 45,
+    "checkedAt": "2026-11-19T01:26:38.868Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2122762633103265792/vid/avc1/1280x720/z0w8uSFpe10lodGj.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2122762633103265792/img/5KAD24pPWuBXJUj_.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 28
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2116556350130163783",
    "url": "https://x.com/keydol123/status/2116556350130163783",
    "author": {
@@ -7668,6 +7782,58 @@
      "width": 2160,
      "height": 1920,
      "durationSec": 25
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2122766829550764271",
+   "url": "https://x.com/SidraMiconi/status/2122766829550764271",
+   "author": {
+    "handle": "SidraMiconi",
+    "name": "Sidra Miconi"
+   },
+   "postedAt": "2026-11-17T19:00:25.000Z",
+   "addedAt": "2026-11-19",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "hydrogen"
+   ],
+   "rivals": [],
+   "category": "sim",
+   "title": {
+    "zh": "航班中断地图",
+    "en": "Airline disruption flight map"
+   },
+   "summary": {
+    "zh": "创作者用 Gemini 4 Hydrogen 根据真实 ADS-B 航班数据制作了可玩的地图，并手动修正了布局和标签。Hydrogen 与 Argon 使用同一提示进行了比较。",
+    "en": "The creator built a playable map from real ADS-B flight data with Gemini 4 Hydrogen, then made twelve small layout and label fixes. Hydrogen and Argon were compared with the same prompt."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 12604,
+    "likes": 125,
+    "replies": 2,
+    "reposts": 6,
+    "bookmarks": 26,
+    "checkedAt": "2026-11-19T01:26:38.868Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/ext_tw_video/2122766742338543616/pu/vid/avc1/1280x720/J2YW8Vrj7uCu0I9C.mp4?tag=12",
+     "poster": "https://pbs.twimg.com/ext_tw_video_thumb/2122766742338543616/pu/img/J9GDtzqkXUC9yQ2w.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 26
     }
    ],
    "evidence": {
@@ -8296,6 +8462,60 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2122818435381948724",
+   "url": "https://x.com/vamsibatchuk/status/2122818435381948724",
+   "author": {
+    "handle": "vamsibatchuk",
+    "name": "Vamsi Batchu"
+   },
+   "postedAt": "2026-11-17T22:25:29.000Z",
+   "addedAt": "2026-11-19",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "hydrogen"
+   ],
+   "rivals": [],
+   "category": "svg",
+   "title": {
+    "zh": "Google 表格中的代码绘画",
+    "en": "Code drawing in Google Sheets"
+   },
+   "summary": {
+    "zh": "这条帖子展示了 Gemini 4 Hydrogen 在 Google Sheets 中创作艺术作品。",
+    "en": "The post shows Gemini 4 Hydrogen creating art inside Google Sheets."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Google Sheets"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 10758,
+    "likes": 274,
+    "replies": 12,
+    "reposts": 13,
+    "bookmarks": 51,
+    "checkedAt": "2026-11-19T01:26:38.868Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2122807658965086208/vid/avc1/1280x720/Nepdf-eCRGQQtnuP.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2122807658965086208/img/E6w02NyXLZxNuhwX.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 23
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },

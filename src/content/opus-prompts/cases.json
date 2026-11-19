@@ -1,8 +1,8 @@
 {
  "model": "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.5)",
  "threshold": 5000,
- "updatedAt": "2026-11-18T08:44:59.676Z",
- "statsCheckedAt": "2026-11-18T08:44:59.676Z",
+ "updatedAt": "2026-11-19T01:17:14.095Z",
+ "statsCheckedAt": "2026-11-19T01:17:14.095Z",
  "inclusionRule": "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -3843,6 +3843,56 @@
    }
   },
   {
+   "id": "2122856839608177052",
+   "url": "https://x.com/korinVR/status/2122856839608177052",
+   "author": {
+    "handle": "korinVR",
+    "name": "Korin"
+   },
+   "postedAt": "2026-11-18T00:58:05.000Z",
+   "addedAt": "2026-11-19",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "弹幕射击训练视频",
+    "en": "Bullet hell skill training video"
+   },
+   "summary": {
+    "zh": "这是一个据称能帮助观众提高弹幕射击游戏水平的视频，使用 Godot 和 Opus 5.5 制作。",
+    "en": "A video designed to make viewers better at danmaku shooting games was made with Godot and Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Godot"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 602759,
+    "likes": 5554,
+    "replies": 84,
+    "reposts": 1181,
+    "bookmarks": 1977,
+    "checkedAt": "2026-11-19T01:17:14.095Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2122856337004765184/img/hqTLF13I4mdzIZNK.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122856337004765184/vid/avc1/720x960/P2Ef6jq5JNvjCsqk.mp4?tag=29",
+    "width": 720,
+    "height": 960,
+    "durationSec": 38
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2104406657216237990",
    "url": "https://x.com/Data01/status/2104406657216237990",
    "author": {
@@ -4434,6 +4484,54 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2122759994672120184",
+   "url": "https://x.com/Solvaix/status/2122759994672120184",
+   "author": {
+    "handle": "Solvaix",
+    "name": "Solvaix"
+   },
+   "postedAt": "2026-11-17T18:33:16.000Z",
+   "addedAt": "2026-11-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "住宅机电管线布置模拟",
+    "en": "Residential MEP routing simulation"
+   },
+   "summary": {
+    "zh": "Claude Opus 5.5 为一栋 1792 平方英尺的房屋布置了机电系统，并依据多项建筑规范检查布局。",
+    "en": "Claude Opus 5.5 routed the MEP systems for a 1,792-square-foot house and checked the layout against several building codes."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 524020,
+    "likes": 3283,
+    "replies": 87,
+    "reposts": 237,
+    "bookmarks": 4924,
+    "checkedAt": "2026-11-19T01:17:14.095Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2122759917291347968/img/DPvZpJknErqT6OdT.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122759917291347968/vid/avc1/1280x720/YlQrb8Y7nznvCHgD.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 28
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -13593,6 +13691,54 @@
    }
   },
   {
+   "id": "2122718134679298058",
+   "url": "https://x.com/mazeincoding/status/2122718134679298058",
+   "author": {
+    "handle": "mazeincoding",
+    "name": "Maze"
+   },
+   "postedAt": "2026-11-17T15:46:56.000Z",
+   "addedAt": "2026-11-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "测试清理技能宣传视频",
+    "en": "Promo video for a test-pruning skill"
+   },
+   "summary": {
+    "zh": "“/prune-tests”技能会查找并删除会随代码变化、检查已删除功能，或永远不会失败的测试。",
+    "en": "The /prune-tests skill finds and removes tests that change with the code, verify deleted features are absent, or can never fail."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 202714,
+    "likes": 3953,
+    "replies": 79,
+    "reposts": 111,
+    "bookmarks": 5874,
+    "checkedAt": "2026-11-19T01:17:14.095Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2122718054593216512/img/p_G_9i91_sijYRsY.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122718054593216512/vid/avc1/1280x720/mlnXVKfVYd5c-xXR.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 11
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102803889183736141",
    "url": "https://x.com/aj_dev_smith/status/2102803889183736141",
    "author": {
@@ -15409,6 +15555,61 @@
    }
   },
   {
+   "id": "2122770271828631554",
+   "url": "https://x.com/tcballard/status/2122770271828631554",
+   "author": {
+    "handle": "tcballard",
+    "name": "Tom Ballard"
+   },
+   "postedAt": "2026-11-17T19:14:06.000Z",
+   "addedAt": "2026-11-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "Astra与Opus效果对比",
+    "en": "Astra and Opus output comparison"
+   },
+   "summary": {
+    "zh": "创作者用同一提示词，让 Astra 6.2 和 Opus 5.5 制作一段 15 秒的 Omarchy 动态图形简历展示片并进行比较。",
+    "en": "The creator compared Astra 6.2 and Opus 5.5 on a 15-second Omarchy motion-graphics showreel using the same prompt."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/tcballard/status/2122771468320944464",
+    "text": "make a dynamic 15-second motion graphics video that shows what an incredible motion designer you are, like it's your showreel for a résumé. go all out. It should be focused on Omarchy and use the official SVG"
+   },
+   "referenceAssets": true,
+   "tools": [
+    "Astra 6.2"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 181979,
+    "likes": 825,
+    "replies": 93,
+    "reposts": 13,
+    "bookmarks": 522,
+    "checkedAt": "2026-11-19T01:17:14.095Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2122769834081398784/img/RRQ546plr5pVH9M-.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122769834081398784/vid/avc1/1280x720/euscuVsSe9vIeM2b.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 15
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103444180861178199",
    "url": "https://x.com/AI_DVD6/status/2103444180861178199",
    "author": {
@@ -16522,6 +16723,59 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2122803967272866254",
+   "url": "https://x.com/EnvolDev/status/2122803967272866254",
+   "author": {
+    "handle": "EnvolDev",
+    "name": "Tony"
+   },
+   "postedAt": "2026-11-17T21:28:00.000Z",
+   "addedAt": "2026-11-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "四模型飞机场景对比",
+    "en": "Four-model aircraft scene comparison"
+   },
+   "summary": {
+    "zh": "四个模型使用同一个 Alpine Gold 提示词制作飞机场景，各自编写 Three.js 代码并渲染成 4K 影片。",
+    "en": "Four models created a detailed plane scene from the same Alpine Gold prompt, with each writing Three.js code that was rendered into a 4K film."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "GPT-6.2 Astra",
+    "GPT-6.2 Sol",
+    "Fable 5.2",
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 169100,
+    "likes": 966,
+    "replies": 102,
+    "reposts": 55,
+    "bookmarks": 344,
+    "checkedAt": "2026-11-19T01:17:14.095Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2122801610845982720/img/pjrDJrtzUujYGxyz.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122801610845982720/vid/avc1/810x720/E43KJPCWYiZ5GfVh.mp4?tag=29",
+    "width": 810,
+    "height": 720,
+    "durationSec": 25
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -30619,6 +30873,58 @@
    }
   },
   {
+   "id": "2122682962647122403",
+   "url": "https://x.com/xikhar/status/2122682962647122403",
+   "author": {
+    "handle": "xikhar",
+    "name": "Shikhar"
+   },
+   "postedAt": "2026-11-17T13:27:10.000Z",
+   "addedAt": "2026-11-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "互动纸艺世界",
+    "en": "Interactive papercraft world"
+   },
+   "summary": {
+    "zh": "Papertrails 是一个运行在浏览器中的无尽纸艺世界，使用 Fable 5.2、Opus 5.5 和 Three.js 制作，并参考了生成图像和真实立体纸艺照片。",
+    "en": "Papertrails is an endless browser-based papercraft world built with Fable 5.2, Opus 5.5, and Three.js, using generated and real pop-up references."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Fable 5.2",
+    "Three.js",
+    "GPT Image"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 91657,
+    "likes": 2173,
+    "replies": 135,
+    "reposts": 154,
+    "bookmarks": 2005,
+    "checkedAt": "2026-11-19T01:17:14.095Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2122681462378139648/img/tOK8vGnGhVJhI0E7.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122681462378139648/vid/avc1/1280x720/amN-9HAk0OpwuCs0.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 54
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103506875165859922",
    "url": "https://x.com/akakuma0219/status/2103506875165859922",
    "author": {
@@ -30770,6 +31076,58 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2122740421256474787",
+   "url": "https://x.com/0xmurasame/status/2122740421256474787",
+   "author": {
+    "handle": "0xmurasame",
+    "name": "Murasame"
+   },
+   "postedAt": "2026-11-17T17:15:29.000Z",
+   "addedAt": "2026-11-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "山地卡车场景对比",
+    "en": "Mountain truck scene comparison"
+   },
+   "summary": {
+    "zh": "Fable 5.2 通过 Opus 5.5 和 Blender MCP 制作了山地伐木卡车场景，并与 GPT-6 Astra 进行了比较。",
+    "en": "Fable 5.2 built a mountain logging-truck scene through Opus 5.5 and Blender MCP, then compared it with GPT-6 Astra."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Fable 5.2",
+    "Blender MCP",
+    "GPT-6 Astra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 90630,
+    "likes": 122,
+    "replies": 13,
+    "reposts": 6,
+    "bookmarks": 140,
+    "checkedAt": "2026-11-19T01:17:14.095Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2122740326297141248/img/CJVtB4hPxUwVCLFo.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122740326297141248/vid/avc1/720x720/PJaxw9rlHg4eBHAX.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 9
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -41871,6 +42229,56 @@
     "width": 1280,
     "height": 720,
     "durationSec": 20
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2122794828266377538",
+   "url": "https://x.com/camperaigg/status/2122794828266377538",
+   "author": {
+    "handle": "camperaigg",
+    "name": "camper 🦎🎣"
+   },
+   "postedAt": "2026-11-17T20:51:41.000Z",
+   "addedAt": "2026-11-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "程序化火焰模拟对比",
+    "en": "Procedural fire simulation comparison"
+   },
+   "summary": {
+    "zh": "创作者比较了 Opus 5.5 和 GPT 6.2 Sol 制作的程序化火焰、碎片、慢动作与声音效果。",
+    "en": "The creator compared Opus 5.5 and GPT 6.2 Sol on procedurally generated fire, fragments, slow motion, and sound."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "GPT 6.2 Sol"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 65028,
+    "likes": 220,
+    "replies": 36,
+    "reposts": 3,
+    "bookmarks": 76,
+    "checkedAt": "2026-11-19T01:17:14.095Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2122794767960752128/img/aNAMzj8oR3DXdJRh.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122794767960752128/vid/avc1/720x900/eGbnsJbV1r56vIgX.mp4?tag=29",
+    "width": 720,
+    "height": 900,
+    "durationSec": 24
    },
    "evidence": {
     "via": "daily",
@@ -53648,6 +54056,62 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2122788867694858629",
+   "url": "https://x.com/EnvolDev/status/2122788867694858629",
+   "author": {
+    "handle": "EnvolDev",
+    "name": "Tony"
+   },
+   "postedAt": "2026-11-17T20:28:00.000Z",
+   "addedAt": "2026-11-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "飞机场景成本对比",
+    "en": "Aircraft scene cost comparison"
+   },
+   "summary": {
+    "zh": "创作者用 Three.js 编写并制作了水上飞机动画场景，对 GPT-6.2 Sol 和 Opus 5.5 进行了基准比较。",
+    "en": "The creator benchmarked GPT-6.2 Sol and Opus 5.5 on a coded, animated floatplane scene in Three.js."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/EnvolDev/status/2122856073245892987",
+    "text": "build and animate a floatplane scene in Three.js."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "GPT-6.2 Sol",
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 48004,
+    "likes": 282,
+    "replies": 22,
+    "reposts": 15,
+    "bookmarks": 87,
+    "checkedAt": "2026-11-19T01:17:14.095Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2122787106263289856/img/Jv0KdyEXHJGyXZoS.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122787106263289856/vid/avc1/720x720/5cEguGYCBJQ2ljDJ.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 25
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -67856,6 +68320,56 @@
    }
   },
   {
+   "id": "2122623281375133941",
+   "url": "https://x.com/nono_ai_archive/status/2122623281375133941",
+   "author": {
+    "handle": "nono_ai_archive",
+    "name": "노노아카이브"
+   },
+   "postedAt": "2026-11-17T09:30:01.000Z",
+   "addedAt": "2026-11-19",
+   "lang": "ko",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "海鲜市场品牌概念",
+    "en": "Seafood market brand concept"
+   },
+   "summary": {
+    "zh": "创作者用 GPT 和 Opus 5.5 扩展一个图形母题，制作了海鲜市场品牌与网页界面概念。",
+    "en": "The creator made a seafood-market brand and UI concept by expanding a graphic motif with GPT and Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "GPT"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 34182,
+    "likes": 1111,
+    "replies": 16,
+    "reposts": 100,
+    "bookmarks": 680,
+    "checkedAt": "2026-11-19T01:17:14.095Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2122544317982220288/img/szAJwHbW5SbhGy5I.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122544317982220288/vid/avc1/720x900/fWkwz_RtVRq_kdOw.mp4?tag=29",
+    "width": 720,
+    "height": 900,
+    "durationSec": 19
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103597420873646509",
    "url": "https://x.com/Groovy_HQ/status/2103597420873646509",
    "author": {
@@ -80890,6 +81404,68 @@
    }
   },
   {
+   "id": "2122793788087193650",
+   "url": "https://x.com/rubenssoto_ai/status/2122793788087193650",
+   "author": {
+    "handle": "rubenssoto_ai",
+    "name": "Rubens Soto | AI & SaaS"
+   },
+   "postedAt": "2026-11-17T20:47:33.000Z",
+   "addedAt": "2026-11-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "GPT与Opus效果对比",
+    "en": "GPT and Opus result comparison"
+   },
+   "summary": {
+    "zh": "创作者比较 Astra 和 Opus 5.5 制作的 30 秒代码生成视频，内容是高速列车穿越春季阿尔卑斯山景观。",
+    "en": "The creator compared Astra and Opus 5.5 on a code-generated 30-second bullet-train journey through an Alpine spring landscape."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/rubenssoto_ai/status/2122812937501016279",
+    "text": "Create a stunning 30-second cinematic 3D video of a high-speed bullet train traveling through a colorful Alpine landscape in spring.\n\nThe final result should feel like a beautiful aerial travel film, with a strong sense of speed, scale, and discovery. Make the landscape bright and inviting: vivid green valleys, turquoise water, colorful wildflowers, snowy mountains, and warm sunlight. Aim for a realistic cinematic look, not a dark, gloomy, stylized, low-poly, or video-game-like scene.\n\nIMPORTANT: The entire video must be made through code. Generate the scene, models, terrain, materials, animation, visual effects, and audio procedurally. Do not use Blender, Unreal Engine, Unity, stock footage, downloaded 3D models, pre-made textures, prerecorded sound effects, or external asset-generation tools. You may install programming libraries and use command-line tools to render, synthesize audio, and encode the video.\n\nFINAL DELIVERABLE\n- One finished 30-second video, 16:9, 1920×1080, 30 fps.\n- MP4 with H.264 video and stereo AAC audio.\n- Render 900 unique frames. Do not loop footage or freeze frames to fill the duration.\n- No text, captions, logos, watermarks, or borders.\n- Deliver the complete source code and simple instructions to reproduce the video.\n\nTECHNOLOGY\nUse a code-driven 3D rendering pipeline. Recommended stack:\n- Three.js and WebGL 2 for the scene, animation, camera, lighting, and rendering.\n- Custom GLSL shaders and procedural noise for terrain, water, vegetation materials, clouds, atmospheric effects, and other details where useful.\n- JavaScript or TypeScript with a deterministic timeline. Use headless Chromium with Puppeteer or Playwright to render offline at fixed time steps, independent of real-time performance.\n- Python with NumPy and SciPy, or an equivalent code-based approach, to synthesize the soundscape from scratch.\n- FFmpeg to combine the rendered frames and audio into the final MP4.\n\nYou may choose a different fully code-driven stack if it produces a better result. Keep the no-external-assets constraint. Use procedural geometry, instancing, level of detail, and other optimizations as appropriate.\n\nTHE CONCEPT\nA sleek white-and-blue bullet train races through a breathtaking Alpine valley in spring. The camera follows its journey past wildflower meadows, a turquoise lake, mountain villages, and snowy peaks. The visual centerpiece is an enormous stone viaduct over a waterfall. The final shot reveals the train curving through the vast valley, surrounded by all the scenery we have just explored.\n\nThe first seconds should instantly catch attention on X. The whole video should look visually rich and readable even on a phone screen. Make this a coherent landscape and journey, not a disconnected montage of unrelated scenery.\n\nSHOT-BY-SHOT TIMELINE\n\n0:00–0:04 — THE HOOK\nStart immediately with the camera low beside the railway, surrounded by detailed pink, yellow, and white wildflowers. In the distance, a white-and-blue bullet train emerges from between green mountains and approaches rapidly.\n\nThe train rushes past the camera with a powerful sense of speed. Its slipstream bends nearby flowers and lifts petals into the air. The camera transitions smoothly into a chase position without clipping through the train or landscape. The scene is already well lit and colorful from the first frame: no fade from black.\n\n0:04–0:10 — INTO THE VALLEY\nFollow the train from a low aerial angle as it travels through a broad green valley. Reveal a sparkling turquoise lake, forests, small Alpine villages, and distant snow-covered peaks. The railway should be integrated naturally into the terrain.\n\nThe train follows the actual curvature of the tracks. Its cars remain connected and aligned, with plausible spacing and motion. Add foreground trees or flowers for parallax and a strong feeling of speed, but keep the train clearly visible.\n\n0:10–0:17 — THE VIADUCT\nThe camera moves alongside and slightly ahead of the train as it approaches an enormous arched stone viaduct spanning a deep gorge. A wide waterfall cascades beneath and near the bridge, sending mist into the sunlight.\n\nShow the train crossing the viaduct in a spectacular side view. The arches, moving train, waterfall, surrounding cliffs, and distant mountains should all be readable in the same composition. Add a subtle rainbow in the waterfall mist if it looks natural.\n\n0:17–0:24 — ABOVE THE LAKE\nAfter crossing the bridge, the train curves along the edge of the lake. The camera flies above and beside it, revealing sunlit turquoise water, realistic reflections, a village with recognizable Alpine-style houses, and colorful meadows.\n\nShow the train continuing smoothly along the railway. Add subtle environmental motion: water ripples, wind in the grass, drifting petals, and distant birds if they can be animated convincingly.\n\n0:24–0:30 — GRAND REVEAL\nThe camera rises and pulls back to reveal the entire valley in one spectacular wide shot: the curved railway, the train, the stone viaduct, the waterfall, the lake, villages, forests, and the snowy mountains beyond.\n\nKeep the train visible as a small but recognizable moving subject. Maintain motion until the last frame. Finish on a beautiful, balanced composition without fading to black.\n\nVISUAL QUALITY\n- Train: create an original modern high-speed train with an aerodynamic nose, continuous windows, realistic proportions, multiple connected cars, subtle panel details, and believable materials. Avoid toy-like proportions or a generic rectangular train.\n- Railway: use smooth continuous track geometry, rails, sleepers, and sensible curves. The train must follow the track, including on the bridge and around bends. Do not allow wheels, cars, or tracks to float, intersect, or disconnect.\n- Mountains: combine several procedural scales and erosion-inspired ridges. Snow should collect convincingly on higher peaks and appropriate slopes. Avoid repetitive cones or obvious noise-generated shapes.\n- Landscape: use layered trees, terrain variation, paths, grass, and flowers. Populate the valley in a natural way instead of distributing identical objects uniformly. Use instancing and variation for efficiency.\n- Water: the lake should have turquoise color, gentle surface movement, light variation, and plausible reflections. The waterfall should read as continuous falling water, with spray and mist at its base. Avoid a flat animated texture if possible.\n- Viaduct: create a structurally believable stone bridge with repeated arches, proper supports, and enough detail to hold up in the side shot. It must physically connect to the railway at both ends.\n- Village: create small, varied Alpine-style buildings with pitched roofs and sensible placement near roads and terrain. The village should enrich the scale without distracting from the train.\n- Lighting: bright spring afternoon, soft atmospheric perspective, warm sunlight, realistic shadows, restrained bloom, and filmic tone mapping. Preserve detail in bright snow and avoid oversaturated neon colors.\n- Camera: use smooth, intentional cinematic movement. Avoid jitter, sudden cuts, disorienting acceleration, and objects passing through the camera.\n\nSOUND DESIGN — GENERATED ENTIRELY THROUGH CODE\nCreate an original, synchronized stereo soundtrack without downloaded samples or recordings.\n- Train: synthesize the approaching high-speed train, a strong Doppler-style pass-by, rolling and mechanical textures, and a softer continuous presence in the chase shots. Make it powerful without sounding like an airplane or an explosion.\n- Nature: create subtle wind, birds if convincing, and water ambience. Introduce the waterfall sound as the train approaches the gorge, then let it recede naturally.\n- Music: synthesize an original uplifting cinematic instrumental score with a sense of adventure and wonder. Build gently toward the viaduct and final reveal. Do not imitate a recognizable melody.\n- Mix in stereo with appropriate distance and movement. Keep the music below the important environmental and train sounds. Avoid clipping, harsh frequencies, and sudden volume jumps.\n\nIMPLEMENTATION AND QUALITY CONTROL\n1. Build a coherent route and landscape first. Ensure every camera position and train movement matches the same geography.\n2. Use deterministic animation with fixed seeds. Render at fixed time steps so motion is smooth and reproducible.\n3. Generate and inspect test frames for the opening pass, lake, viaduct, waterfall, and final wide shot. Fix composition, obvious procedural repetition, lighting, and train/track alignment.\n4. Produce a short motion preview and inspect it for smooth camera movement, convincing train motion, visible environmental animation, and synchronized audio. Correct major problems before rendering the complete video.\n5. Render in chunks if needed, with safe resume and no missing or duplicated frames. Optimize intelligently instead of silently reducing the requested duration or resolution.\n6. Encode the final video with FFmpeg. Verify the duration, resolution, frame rate, audio, and that the complete file decodes successfully.\n7. Deliver the video, source code, reproduction instructions, and a brief honest note about any significant visual approximations or compromises.\n\nMake creative and technical decisions independently. Do not ask for clarification. Prioritize a beautiful, coherent, polished final result."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "GPT-6.2 Astra",
+    "Three.js",
+    "WebGL 2",
+    "GLSL",
+    "JavaScript",
+    "TypeScript",
+    "Puppeteer",
+    "Playwright"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 25647,
+    "likes": 396,
+    "replies": 83,
+    "reposts": 26,
+    "bookmarks": 52,
+    "checkedAt": "2026-11-19T01:17:14.095Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2122793239052775425/img/r6yZlA4aOWj3QMVL.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122793239052775425/vid/avc1/720x810/sf5Jo88At9LHCrEP.mp4?tag=29",
+    "width": 720,
+    "height": 810,
+    "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103420244018573385",
    "url": "https://x.com/samuelrdt/status/2103420244018573385",
    "author": {
@@ -88426,6 +89002,59 @@
    }
   },
   {
+   "id": "2122724998846775553",
+   "url": "https://x.com/M__Houser/status/2122724998846775553",
+   "author": {
+    "handle": "M__Houser",
+    "name": "Mike Houser"
+   },
+   "postedAt": "2026-11-17T16:14:12.000Z",
+   "addedAt": "2026-11-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "有巨龙和泰坦的开放世界奇幻游戏",
+    "en": "Open-world fantasy game with dragons and titans"
+   },
+   "summary": {
+    "zh": "创作者制作了一款包含280多个3D模型的浏览器游戏，使用AI编写代码，借助Tripo生成资产、Blender制作动画，并用ElevenLabs生成部分音频。",
+    "en": "The creator built a browser game with over 280 3D models, using AI for code, Tripo for assets, Blender for animation, and ElevenLabs for some audio."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Fable 5.2",
+    "Tripo",
+    "Blender",
+    "ElevenLabs"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 21914,
+    "likes": 267,
+    "replies": 31,
+    "reposts": 25,
+    "bookmarks": 220,
+    "checkedAt": "2026-11-19T01:17:14.095Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2122724832546885633/img/V_kdSvM-_4NDM8Dc.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122724832546885633/vid/avc1/1280x720/ooCAYz4G60UMoTF9.mp4?tag=16",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 158
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102772685541347618",
    "url": "https://x.com/cryptomanavan/status/2102772685541347618",
    "author": {
@@ -89781,6 +90410,56 @@
     "width": 852,
     "height": 480,
     "durationSec": 23
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2122612440571756938",
+   "url": "https://x.com/tadako_ai/status/2122612440571756938",
+   "author": {
+    "handle": "tadako_ai",
+    "name": "ただこ（多田勇輝）"
+   },
+   "postedAt": "2026-11-17T08:46:56.000Z",
+   "addedAt": "2026-11-19",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "Meta广告视频原型",
+    "en": "Meta advertising video prototype"
+   },
+   "summary": {
+    "zh": "这是使用Claude Code和Opus 5.5制作的Meta广告视频试作版。创作者表示已将制作方法整理成文章。",
+    "en": "This is a prototype Meta advertisement video made with Claude Code and Opus 5.5. The creator says the process was documented in an article."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Claude Code"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 21265,
+    "likes": 144,
+    "replies": 1,
+    "reposts": 4,
+    "bookmarks": 161,
+    "checkedAt": "2026-11-19T01:17:14.095Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2122611892170674176/img/5wrW1Qp7LAtb-_Kw.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122611892170674176/vid/avc1/720x1280/tSgshtvYPKOP15FI.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 15
    },
    "evidence": {
     "via": "daily",
@@ -91911,6 +92590,63 @@
     "width": 1280,
     "height": 720,
     "durationSec": 51
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2122695064304435566",
+   "url": "https://x.com/0xShoopy/status/2122695064304435566",
+   "author": {
+    "handle": "0xShoopy",
+    "name": "Shoopy"
+   },
+   "postedAt": "2026-11-17T14:15:15.000Z",
+   "addedAt": "2026-11-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "comparison",
+   "title": {
+    "zh": "浮空岛三维网页应用",
+    "en": "Floating island 3D web app"
+   },
+   "summary": {
+    "zh": "创作者制作了一个单文件Three.js 3D网页应用，包含浮空岛以及昼夜、天气、植物生长和爆炸分层等交互状态。Opus编写代码，Fable审核计划和结果。",
+    "en": "The creator built a single-file Three.js 3D web app featuring a floating island and interactive day, weather, growth, and explosion states. Opus wrote the code while Fable reviewed the plan and result."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/0xShoopy/status/2122695112207589602",
+    "text": "Build a single-file interactive 3D web app: “Floating Island” — a stylized low-poly island floating in the sky.\n\nTech: one file, index.html. Use three.js r170 only, loaded with this exact importmap:\n{“imports”:{“three”:”https://unpkg.com/three@0.170.0/build/three.module.js”,”three/addons/”:”https://unpkg.com/three@0.170.0/examples/jsm/”}}\nNo other libraries, no external assets: every model, texture and sound is generated in code.\nThe island:\nLow-poly floating island with grass top, layered rock underside and hanging roots\n\nA waterfall that pours off the edge and dissolves into mist below\n\nA small cottage with a smoking chimney, a spinning windmill, trees that sway in the wind\nClouds drifting past at different depths, birds circling\nControls (bottom bar, clearly labeled buttons):\n“Day / Night”: smooth 3-second transition; at night windows glow, stars appear, fireflies come out\n\n“Weather”: cycles Clear → Rain → Snow, with particles and matching sky color\n\n“Grow”: plants a new tree at a random spot with a growing animation\n“Explode”: the island splits into floating layers with labels, press again to reassemble\nKeyboard shortcuts: D, W, G, E for the same four buttons.\nMouse: drag to orbit, scroll to zoom, gentle auto-rotate when idle.\nQuality bar: soft shadows, fog, tone mapping, smooth 60fps, polished UI with a title card in the top-left. It should look like a finished indie game menu screen, not a demo.\nFinish in one go. Do not ask me questions. When done, tell me the file is ready.\nsetup: fresh folder → /model opus → /advisor fable → paste. Fable on high effort, Opus on medium (its default). costs straight from /usage."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Claude Code",
+    "Three.js",
+    "Fable 5.2"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 20277,
+    "likes": 201,
+    "replies": 26,
+    "reposts": 12,
+    "bookmarks": 205,
+    "checkedAt": "2026-11-19T01:17:14.095Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2122689798037028864/img/RhNEK2ZXekERLfpA.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122689798037028864/vid/avc1/720x900/eZLBDE_16LTLFcXX.mp4?tag=29",
+    "width": 720,
+    "height": 900,
+    "durationSec": 22
    },
    "evidence": {
     "via": "daily",
@@ -95623,6 +96359,63 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2122761185678299602",
+   "url": "https://x.com/thegreatest_sv/status/2122761185678299602",
+   "author": {
+    "handle": "thegreatest_sv",
+    "name": "kiosa"
+   },
+   "postedAt": "2026-11-17T18:38:00.000Z",
+   "addedAt": "2026-11-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "以声音捕猎的洞穴生物",
+    "en": "Sound-hunting cave creature"
+   },
+   "summary": {
+    "zh": "作品是名为Hollow Choir的洞穴捕食者生物。创作者表示这是使用Opus 5.5和Blender 5.3、耗时四小时制作的。",
+    "en": "The work is a Hollow Choir cave predator creature. The creator says it was made with Opus 5.5 and Blender 5.3 over four hours."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Blender 5.3",
+    "Blender MCP",
+    "Blender Skills",
+    "dream-loop",
+    "TRELLIS.2",
+    "SAM 3D Objects",
+    "MeshAnything V2",
+    "UniRig"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 19008,
+    "likes": 292,
+    "replies": 38,
+    "reposts": 31,
+    "bookmarks": 438,
+    "checkedAt": "2026-11-19T01:17:14.095Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2122684462538301440/img/OrzExw7UXdgfKvk4.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122684462538301440/vid/avc1/720x900/rUbP8CxjvIc-uXRw.mp4?tag=29",
+    "width": 720,
+    "height": 900,
+    "durationSec": 22
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -101638,6 +102431,54 @@
    }
   },
   {
+   "id": "2122714974980116893",
+   "url": "https://x.com/exploraX_/status/2122714974980116893",
+   "author": {
+    "handle": "exploraX_",
+    "name": "m0h"
+   },
+   "postedAt": "2026-11-17T15:34:22.000Z",
+   "addedAt": "2026-11-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "用参考图制作的动态网站",
+    "en": "Animated website built from a reference image"
+   },
+   "summary": {
+    "zh": "创作者使用一个提示词和一张参考图片制作了一个动画网站，并公开了制作过程中使用的技能。",
+    "en": "The creator built an animated website with one prompt and a reference image, and open-sourced the skills used to make it."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 16851,
+    "likes": 232,
+    "replies": 10,
+    "reposts": 23,
+    "bookmarks": 308,
+    "checkedAt": "2026-11-19T01:17:14.095Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2122701314899496960/img/U0LdPAV-i-6pfWLs.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122701314899496960/vid/avc1/1280x720/7oyfyxYKexHpcZMn.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 40
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103768914551603465",
    "url": "https://x.com/sciencedegens/status/2103768914551603465",
    "author": {
@@ -105750,6 +106591,56 @@
     "width": 720,
     "height": 960,
     "durationSec": 15
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2122778769597554693",
+   "url": "https://x.com/sshayahmet/status/2122778769597554693",
+   "author": {
+    "handle": "sshayahmet",
+    "name": "Serik"
+   },
+   "postedAt": "2026-11-17T19:47:52.000Z",
+   "addedAt": "2026-11-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "高斯溅射世界模型对比",
+    "en": "Gaussian splat world model comparison"
+   },
+   "summary": {
+    "zh": "创作者将GPT-6.2 Sol与此前用Claude Opus 5.5制作的梵高风格高斯泼溅世界进行比较，并公布了两者的耗时和成本。",
+    "en": "The creator compared GPT-6.2 Sol with a Van Gogh-inspired Gaussian splat world previously made with Claude Opus 5.5, reporting each model's time and cost."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "GPT-6.2 Sol"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 15474,
+    "likes": 147,
+    "replies": 4,
+    "reposts": 9,
+    "bookmarks": 51,
+    "checkedAt": "2026-11-19T01:17:14.095Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2122778178783752192/img/SpeQ_YC1rbkH7M0k.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122778178783752192/vid/avc1/720x1278/mFhWYQ8ks1vLcAI1.mp4?tag=29",
+    "width": 720,
+    "height": 1278,
+    "durationSec": 20
    },
    "evidence": {
     "via": "daily",
@@ -121786,6 +122677,58 @@
    }
   },
   {
+   "id": "2122809542660825292",
+   "url": "https://x.com/fawnunwrap/status/2122809542660825292",
+   "author": {
+    "handle": "fawnunwrap",
+    "name": "fawn"
+   },
+   "postedAt": "2026-11-17T21:50:09.000Z",
+   "addedAt": "2026-11-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "Fawnbench三维建模对比",
+    "en": "Fawnbench 3D modeling comparison"
+   },
+   "summary": {
+    "zh": "Fawnbench 比较了 GPT 6.2 SOL、ASTRA、Opus 5.5 和 Fable 5.2 的 3D 建模表现。作者认为 Claude 系列在 3D 建模上的进步较少。",
+    "en": "Fawnbench compares 3D modeling by GPT 6.2 SOL and ASTRA with Opus 5.5 and Fable 5.2. The creator says the Claudes showed less improvement in 3D modeling."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "GPT 6.2 SOL",
+    "ASTRA",
+    "Fable 5.2"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 11449,
+    "likes": 128,
+    "replies": 9,
+    "reposts": 1,
+    "bookmarks": 19,
+    "checkedAt": "2026-11-19T01:17:14.095Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2122809522817290242/img/dLfojJWnNKte0f8g.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122809522817290242/vid/avc1/720x900/51dPjW36LSogjh6M.mp4?tag=29",
+    "width": 720,
+    "height": 900,
+    "durationSec": 16
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2119053573526901001",
    "url": "https://x.com/AIMind_Ai/status/2119053573526901001",
    "author": {
@@ -130703,6 +131646,58 @@
    }
   },
   {
+   "id": "2122655307780215056",
+   "url": "https://x.com/neviannn/status/2122655307780215056",
+   "author": {
+    "handle": "neviannn",
+    "name": "nevian"
+   },
+   "postedAt": "2026-11-17T11:37:17.000Z",
+   "addedAt": "2026-11-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "温馨钓鱼游戏原型",
+    "en": "Cozy fishing game prototype"
+   },
+   "summary": {
+    "zh": "作者通过聊天制作了一款温馨的钓鱼游戏：Opus 编写游戏逻辑，Blender 制作道具，Unity 组装场景并添加风格化水面。Blender MCP 让模型可以直接操作 Blender。",
+    "en": "A cozy fishing game was built through chat, with Opus handling game logic, Blender creating props, and Unity assembling the scene with stylized water. Blender MCP lets the model drive Blender directly."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Blender",
+    "Unity",
+    "Blender MCP"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 9204,
+    "likes": 171,
+    "replies": 11,
+    "reposts": 13,
+    "bookmarks": 159,
+    "checkedAt": "2026-11-19T01:17:14.095Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2122655056415657984/img/TUdvXV2cmPIvLnA2.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122655056415657984/vid/avc1/1280x720/tCYQdCXyMdFPImUf.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 77
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2111431777781010510",
    "url": "https://x.com/VulKan42069/status/2111431777781010510",
    "author": {
@@ -137717,6 +138712,57 @@
     "width": 720,
     "height": 910,
     "durationSec": 16
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2122678098197959150",
+   "url": "https://x.com/maxt3chno/status/2122678098197959150",
+   "author": {
+    "handle": "maxt3chno",
+    "name": "Max"
+   },
+   "postedAt": "2026-11-17T13:07:50.000Z",
+   "addedAt": "2026-11-19",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "分部件与整体网格三维角色制作对比",
+    "en": "Part-by-part vs single-mesh 3D character builds"
+   },
+   "summary": {
+    "zh": "作者比较了用十个独立部件制作 3D 角色与用一张 4K 多视图图像生成网格的流程。前者更易定制，后者速度更快，适合 NPC。",
+    "en": "The creator compares building 3D characters from ten separate parts with using one 4K multi-view image to create a mesh. The first workflow is more customizable, while the second is faster and suited to NPCs."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Tripo",
+    "Meshy"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 7658,
+    "likes": 112,
+    "replies": 25,
+    "reposts": 6,
+    "bookmarks": 141,
+    "checkedAt": "2026-11-19T01:17:14.095Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2122677650393079808/img/f2nkmXSDTqPJNNy9.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122677650393079808/vid/avc1/1142x720/dJfGRbhvuHip6wqu.mp4?tag=29",
+    "width": 1142,
+    "height": 720,
+    "durationSec": 40
    },
    "evidence": {
     "via": "daily",
