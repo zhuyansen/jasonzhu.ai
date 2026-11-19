@@ -1045,6 +1045,36 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
             />
           </div>
         </div>
+        <div className="mb-6 rounded-2xl border border-blue-200 bg-gradient-to-r from-blue-50/90 via-white to-emerald-50/70 p-4 md:p-5">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <div className="flex items-center gap-2 mb-1">
+                <span className="inline-flex items-center rounded-full bg-blue-600 px-2.5 py-0.5 text-xs font-semibold text-white">
+                  {isZh ? "第 1 课互动通关小游戏 · 免费网站医院" : "Course 1 Interactive Game · Free AI Clinic"}
+                </span>
+                <span className="text-xs font-medium text-emerald-700">
+                  {isZh ? "100 分制 · 7 大关卡 · 26 项真实 HTTP 体检" : "100-Pt Rubric · 7 Levels · 26 Live Checks"}
+                </span>
+              </div>
+              <p className="text-base font-bold text-gray-900">
+                {isZh
+                  ? "🏥 AI 网站急诊室：测测你的网站能不能被 ChatGPT、Claude 和 Google AI 搜到并调用"
+                  : "🏥 AI Website Clinic: Can ChatGPT, Claude & Google AI Find, Read, and Call Your Site?"}
+              </p>
+              <p className="text-sm text-gray-600 mt-0.5 leading-relaxed">
+                {isZh
+                  ? "输入域名 3 秒出诊断报告（A~F 等级）：逐关检查 robots.txt、Content-Signal、无 JS 直出可读性、Sitemap、JSON-LD、商业信任、/llms.txt 与 WebMCP，并一键生成喂给 Cursor / Claude Code 的修复药方 Prompt。"
+                  : "Enter your domain for a live 0–100 score (Grade A–F) across 7 levels, plus one-click Cursor & Claude Code repair prompts."}
+              </p>
+            </div>
+            <Link
+              href={`/${lang}${GO_GLOBAL}/ai-readiness`}
+              className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-blue-700 transition-colors whitespace-nowrap flex-none"
+            >
+              {isZh ? "免费挂号闯关 →" : "Run Free Diagnosis →"}
+            </Link>
+          </div>
+        </div>
         <LearnSeo l={l} isZh={isZh} />
         <SeoSchoolsMap l={l} isZh={isZh} />
         <SeoSystem l={l} isZh={isZh} />

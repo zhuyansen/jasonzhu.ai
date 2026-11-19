@@ -96,6 +96,11 @@ export default async function HtmlSitemapPage({
             </Link>
           </li>
           <li>
+            <Link href={`/${lang}/go-global/ai-readiness`} className="text-[var(--primary)] hover:underline font-medium">
+              {isZh ? "AI 网站急诊室 & 第 1 课 7 关通关游戏 (/go-global/ai-readiness)" : "AI Website Clinic & Course 1 Game (/go-global/ai-readiness)"}
+            </Link>
+          </li>
+          <li>
             <Link href={`/${lang}/go-global/open-account`} className="text-[var(--primary)] hover:underline">
               {isZh ? "个人还是公司：海外收款开户指南" : "Individual vs Company Account Guide"}
             </Link>

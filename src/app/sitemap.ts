@@ -23,6 +23,7 @@ const STATIC_PATHS = [
   "/go-global", // 出海专题：开户、收款平台选择器、周报
   "/go-global/payments",
   "/go-global/open-account",
+  "/go-global/ai-readiness", // AI 网站急诊室 & 第 1 课 7 关通关小游戏
   "/services",
   "/about",
   "/handbook",
