@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Link from "@/components/Link";
 import {
   BENCHMARK_HALL_OF_FAME,
   CATEGORIES,
@@ -14,6 +15,7 @@ interface RecentScanRow {
   score: number;
   grade: string;
   score_delta?: number | null;
+  failed_count?: number;
   created_at: string;
 }
 
@@ -37,6 +39,7 @@ interface SandboxUpgradeItem {
   id: string;
   level: number;
   pts: number;
+  stage: string;
   title: { zh: string; en: string };
   symptom: { zh: string; en: string };
   fixCode: string;
@@ -47,6 +50,7 @@ const SANDBOX_UPGRADES: SandboxUpgradeItem[] = [
     id: "robots_signal",
     level: 1,
     pts: 10,
+    stage: "1. Reach",
     title: {
       zh: "第 1 关药方：放行 GPTBot/ClaudeBot + 声明 Content-Signal",
       en: "Level 1 Fix: Allow AI bots + declare Content-Signal in robots.txt",
@@ -61,6 +65,7 @@ const SANDBOX_UPGRADES: SandboxUpgradeItem[] = [
     id: "ssr_no_js",
     level: 2,
     pts: 12,
+    stage: "1. Reach → 3. Cite",
     title: {
       zh: "第 2 关药方：从空白 CSR 客户端渲染改为 SSR 直出 HTML + Canonical",
       en: "Level 2 Fix: Switch from blank CSR to SSR HTML + Canonical tag",
@@ -75,6 +80,7 @@ const SANDBOX_UPGRADES: SandboxUpgradeItem[] = [
     id: "sitemap_404",
     level: 3,
     pts: 11,
+    stage: "2. Search",
     title: {
       zh: "第 3 关药方：生成带近期 lastmod 的 Sitemap + 修复软 404",
       en: "Level 3 Fix: Publish sitemap.xml with fresh lastmod + real HTTP 404",
@@ -89,6 +95,7 @@ const SANDBOX_UPGRADES: SandboxUpgradeItem[] = [
     id: "jsonld_graph",
     level: 4,
     pts: 14,
+    stage: "4. Describe",
     title: {
       zh: "第 4 关药方：注入 @graph JSON-LD（Organization + sameAs + WebSite）",
       en: "Level 4 Fix: Inject @graph JSON-LD (Organization + sameAs + WebSite)",
@@ -103,6 +110,7 @@ const SANDBOX_UPGRADES: SandboxUpgradeItem[] = [
     id: "commercial_trust",
     level: 5,
     pts: 8,
+    stage: "4. Describe",
     title: {
       zh: "第 5 关药方：页脚补齐 /about /contact /privacy + 静态透明价格",
       en: "Level 5 Fix: Footer trust links + machine-readable email & pricing",
@@ -117,6 +125,7 @@ const SANDBOX_UPGRADES: SandboxUpgradeItem[] = [
     id: "llms_markdown",
     level: 6,
     pts: 10,
+    stage: "3. Cite",
     title: {
       zh: "第 6 关药方：上线标准 /llms.txt + Accept: text/markdown 协商 + Link 头",
       en: "Level 6 Fix: Serve /llms.txt + Markdown content negotiation + HTTP Link header",
@@ -131,6 +140,7 @@ const SANDBOX_UPGRADES: SandboxUpgradeItem[] = [
     id: "webmcp_card",
     level: 7,
     pts: 10,
+    stage: "4. Describe",
     title: {
       zh: "第 7 关终极药方：暴露 WebMCP 工具 + 发布 /.well-known/mcp/server-card.json",
       en: "Level 7 Boss Fix: Expose WebMCP tools + publish MCP Server Card",
@@ -237,12 +247,16 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
   const [onlyFailedFilter, setOnlyFailedFilter] = useState(false);
   const [copiedKey, setCopiedKey] = useState<string | null>(null);
 
+  // 公开病历库检索 & 付费隐藏弹窗状态
+  const [publicSearchQuery, setPublicSearchQuery] = useState("");
+  const [hideModalDomain, setHideModalDomain] = useState<string | null>(null);
+
   // 大盘与实时记录
   const [recentScans, setRecentScans] = useState<RecentScanRow[]>([]);
   const [totalScans, setTotalScans] = useState<number>(BENCHMARK_HALL_OF_FAME.length);
   const [insights, setInsights] = useState<ClinicInsights>({
     analyzedDomainsCount: 6,
-    avgScore: 78,
+    avgScore: 80,
     gradeARate: 50,
     topFailedChecks: [],
   });
@@ -272,8 +286,9 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
   const sandboxGradeInfo = scoreToGrade(sandboxEarned);
   const sandboxClearedCount = Object.values(sandboxChecked).filter(Boolean).length;
 
-  function refreshDashboard() {
-    fetch("/api/ai-readiness")
+  function refreshDashboard(q = "") {
+    const url = q ? `/api/ai-readiness?q=${encodeURIComponent(q)}` : "/api/ai-readiness";
+    fetch(url)
       .then((r) => r.json())
       .then((d) => {
         if (Array.isArray(d?.recentScans)) setRecentScans(d.recentScans);
@@ -289,22 +304,22 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
 
   const scanSteps = isZh
     ? [
-        "第 1 关：检查 /robots.txt、AI 爬虫放行权限与 Content-Signal...",
-        "第 2 关：关闭 JS 抽取原始 HTML 正文并测算 Token 预算...",
-        "第 3 关：探测 /sitemap.xml、lastmod 时间戳与真实 404 响应...",
-        "第 4 关：解析 JSON-LD @graph、Organization 与 sameAs 跨平台身份...",
-        "第 5 关：核验合规三件套、机器可读邮箱与免登录透明价格...",
-        "第 6 关：请求 /llms.txt、Accept: text/markdown 协商与 HTTP Link 头...",
-        "第 7 关：扫描 WebMCP 工具暴露与 /.well-known/mcp/server-card.json...",
+        "Stage 1 (Reach) · 检查 /robots.txt、AI 爬虫放行权限与 Content-Signal...",
+        "Stage 1 (Reach) · 关闭 JS 抽取原始 HTML 正文并测算 Token 预算...",
+        "Stage 2 (Search) · 探测 /sitemap.xml、lastmod 与真实 404 状态码...",
+        "Stage 3 (Cite) · 请求 /llms.txt、Accept: text/markdown 协商与首段切片...",
+        "Stage 4 (Describe) · 解析 JSON-LD @graph、Organization 与跨源实体对齐...",
+        "Stage 4 (Describe) · 核验合规三件套、机器可读邮箱与免登录透明价格...",
+        "Stage 4 & 5 · 扫描 WebMCP 工具、Server Card 并写入公开病历档案库...",
       ]
     : [
-        "Level 1: Checking /robots.txt, AI bot rules & Content-Signal...",
-        "Level 2: Extracting zero-JS HTML text & token budget...",
-        "Level 3: Probing /sitemap.xml, lastmod & real 404 status...",
-        "Level 4: Parsing JSON-LD @graph, Organization & sameAs...",
-        "Level 5: Verifying trust links, contactPoint & public pricing...",
-        "Level 6: Fetching /llms.txt, Accept: text/markdown & Link headers...",
-        "Level 7: Scanning WebMCP tools & /.well-known/mcp/server-card.json...",
+        "Stage 1 (Reach): Checking /robots.txt, AI bot rules & Content-Signal...",
+        "Stage 1 (Reach): Extracting zero-JS HTML text & token budget...",
+        "Stage 2 (Search): Probing /sitemap.xml, lastmod & real 404 status...",
+        "Stage 3 (Cite): Fetching /llms.txt, Markdown negotiation & lead chunk...",
+        "Stage 4 (Describe): Parsing JSON-LD @graph, Organization & entity resolution...",
+        "Stage 4 (Describe): Verifying trust links, contactPoint & public pricing...",
+        "Stage 4 & 5: Scanning WebMCP tools, Server Card & logging public record...",
       ];
 
   async function handleScan(targetDomain?: string) {
@@ -336,7 +351,7 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
         setPreviousScore(typeof data.previousScore === "number" ? data.previousScore : null);
         setScoreDelta(typeof data.scoreDelta === "number" ? data.scoreDelta : null);
         setActiveLevel(null);
-        refreshDashboard();
+        refreshDashboard(publicSearchQuery);
       }
     } catch (e) {
       setError(e instanceof Error ? e.message : isZh ? "网络请求异常" : "Network error");
@@ -391,10 +406,86 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
   return (
     <div className="space-y-10">
       {/* ═══════════════════════════════════════════════════════════════════════
+          付费隐藏域名 / 解锁 L1~L4 内部核心经验 弹窗 (Modal)
+          ═══════════════════════════════════════════════════════════════════════ */}
+      {hideModalDomain && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/70 p-4 backdrop-blur-xs">
+          <div className="relative w-full max-w-lg rounded-3xl border border-slate-700 bg-slate-900 p-6 md:p-7 text-white shadow-2xl">
+            <button
+              type="button"
+              onClick={() => setHideModalDomain(null)}
+              className="absolute top-5 right-5 rounded-full bg-white/10 px-2.5 py-1 text-xs text-slate-300 hover:bg-white/20 cursor-pointer"
+            >
+              ✕
+            </button>
+            <div className="inline-flex items-center gap-2 rounded-full bg-amber-500/20 border border-amber-400/30 px-3 py-1 text-xs font-bold text-amber-300 mb-3">
+              {isZh ? "🔒 隐私保护 & 内部高阶特权" : "🔒 Stealth Privacy & VIP Playbook"}
+            </div>
+            <h3 className="text-xl font-extrabold text-white mb-2">
+              {isZh
+                ? `隐藏「${hideModalDomain}」的公开体检记录 & 解锁内部配方`
+                : `Hide "${hideModalDomain}" from Public Directory & Unlock VIP Playbook`}
+            </h3>
+            <p className="text-sm text-slate-300 leading-relaxed mb-4">
+              {isZh
+                ? "免费急诊室采取「公开透明病历库」机制：所有免费查询的网站默认都会展示在公开档案库中，供全网开发者检索对比。如果你希望保护商业机密："
+                : "Free clinic scans are indexed in our public directory by default. Upgrade to protect your competitive edge:"}
+            </p>
+            <ul className="space-y-2.5 text-xs text-slate-200 mb-6 bg-slate-950/80 border border-white/10 rounded-2xl p-4">
+              <li className="flex items-start gap-2">
+                <span className="text-emerald-400 font-bold">✓</span>
+                <span>
+                  {isZh
+                    ? "【榜单隐身特权】：将你的域名从公开病历库与选品雷达中永久隐藏（is_hidden = true），防止同行窥探你的新站域名与技术短板。"
+                    : "Stealth Delisting: Permanently hide your domain from the public clinic directory."}
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-emerald-400 font-bold">✓</span>
+                <span>
+                  {isZh
+                    ? "【解锁 L1~L4 内部核心经验】：获取对外保密的搜广推/图谱内部参数（新站抓取配额安全线、防折叠阈值、跨语种扇出词槽矩阵与黄金首段切片公式）。"
+                    : "Internal L1–L4 Parameters: Access confidential IR/KG/RAG thresholds and recipes."}
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-emerald-400 font-bold">✓</span>
+                <span>
+                  {isZh
+                    ? "【每周闭环实验带练】：加入 GoSail Club 内部会员或预约 1v1 深度诊断。"
+                    : "Weekly Closed-Loop Lab & 1-on-1 Private Audit."}
+                </span>
+              </li>
+            </ul>
+            <div className="flex flex-wrap items-center justify-end gap-3">
+              <button
+                type="button"
+                onClick={() => setHideModalDomain(null)}
+                className="rounded-xl border border-white/15 px-4 py-2.5 text-xs font-semibold text-slate-300 hover:bg-white/10 cursor-pointer"
+              >
+                {isZh ? "保持公开展示" : "Keep Public"}
+              </button>
+              <Link
+                href={`/${lang}/services`}
+                className="rounded-xl border border-amber-400/50 bg-amber-500/20 px-4 py-2.5 text-xs font-bold text-amber-200 hover:bg-amber-500/30"
+              >
+                {isZh ? "预约 1v1 私密会诊 →" : "1-on-1 Private Audit →"}
+              </Link>
+              <Link
+                href={`/${lang}/club`}
+                className="rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 px-5 py-2.5 text-xs font-bold text-white shadow-lg hover:from-blue-500 hover:to-indigo-500"
+              >
+                {isZh ? "加入 GoSail Club 解锁隐身与内部课 →" : "Join GoSail Club to Hide & Unlock →"}
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ═══════════════════════════════════════════════════════════════════════
           1. 顶部主控舱（双模式切换：实时网站急诊室 vs 7 关闯关模拟器）
           ═══════════════════════════════════════════════════════════════════════ */}
       <div className="relative overflow-hidden rounded-3xl border border-blue-200/80 bg-gradient-to-br from-slate-900 via-slate-900 to-blue-950 text-white p-6 md:p-8 shadow-xl">
-        {/* 装饰背景光晕 */}
         <div className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-blue-500/20 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-emerald-500/15 blur-3xl" />
 
@@ -403,12 +494,14 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
           <div className="flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-500/20 border border-blue-400/30 px-3 py-1 text-xs font-semibold text-blue-200">
               <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-              {isZh ? "第 1 课互动实训 · 7 关 26 项 100 分制" : "Course 1 Interactive Lab · 7 Levels / 26 Checks"}
+              {isZh
+                ? "GEO 五阶段 (Reach → Search → Cite → Describe → Measure) · 100 分制"
+                : "GEO 5-Stage Funnel (Reach → Search → Cite → Describe → Measure)"}
             </span>
             <span className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-slate-300">
               {isZh
-                ? `已累计接诊 ${totalScans} 次 · 全网平均 ${insights.avgScore} 分 · Grade A 达标率 ${insights.gradeARate}%`
-                : `${totalScans} scans · Avg ${insights.avgScore}/100 · ${insights.gradeARate}% Grade A`}
+                ? `公开病历库已收录 ${totalScans} 次检测 · 平均 ${insights.avgScore} 分`
+                : `${totalScans} public scans · Avg ${insights.avgScore}/100`}
             </span>
           </div>
 
@@ -443,13 +536,13 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
             <div className="max-w-3xl mb-6">
               <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-white mb-2">
                 {isZh
-                  ? "输入你的网站域名，3 秒查出 AI 为什么搜不到你"
-                  : "Enter Your Domain: 3-Second Live AI Readiness & WebMCP Diagnosis"}
+                  ? "输入任意网站域名，3 秒透视 AI 五阶段漏斗与 7 关健康分"
+                  : "Enter Any Domain: 3-Second GEO 5-Stage Funnel & 7-Level Diagnosis"}
               </h2>
               <p className="text-sm text-slate-300 leading-relaxed">
                 {isZh
-                  ? "服务端实时发起并发探测（robots.txt、零 JS 渲染、Sitemap、JSON-LD @graph、商业信任、/llms.txt、Markdown 协商、WebMCP 与 MCP Server Card），打出 0~100 分与 A~F 等级，并生成一键喂给 Cursor / Claude Code 的修复药方。"
-                  : "Runs 26 live HTTP probes across 7 levels, grades your domain from A to F (0–100 pts), and generates copy-paste Cursor & Claude Code repair prompts."}
+                  ? "服务端实时并发探测 26 项指标（Reach 访问准入 → Search 检索召回 → Cite 切片引用 → Describe 实体描述与 WebMCP → Measure 持续衡量），既可免费测自己，也可公开查询竞品健康度。"
+                  : "Probes 26 live HTTP signals across the 5 GEO stages (Reach → Search → Cite → Describe → Measure). Free scans are listed in our public clinic directory."}
               </p>
             </div>
 
@@ -478,8 +571,8 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
                   onChange={(e) => setDomainInput(e.target.value)}
                   placeholder={
                     isZh
-                      ? "jasonzhu.ai 或你的独立站域名（无需输 https://）"
-                      : "jasonzhu.ai or your domain"
+                      ? "jasonzhu.ai 或任意你想查询的网站域名"
+                      : "jasonzhu.ai or any domain to inspect"
                   }
                   className="w-full bg-transparent py-3.5 pr-4 text-base font-medium text-gray-900 placeholder:text-gray-400 focus:outline-none"
                   disabled={loading}
@@ -495,15 +588,33 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
                     ? "⚡ 正在会诊闯关..."
                     : "⚡ Diagnosing..."
                   : isZh
-                  ? "🏥 免费挂号体检（开始闯关）"
-                  : "🏥 Run Free Diagnosis"}
+                  ? "🏥 免费公开体检（开始闯关）"
+                  : "🏥 Run Free Public Scan"}
               </button>
             </form>
 
+            {/* 公开查询声明 + 付费隐藏入口 */}
+            <div className="mt-3.5 flex flex-wrap items-center justify-between gap-2 rounded-xl bg-slate-950/50 border border-white/10 px-3.5 py-2 text-xs">
+              <span className="text-slate-300">
+                {isZh
+                  ? "🌐 免费版为「公开病历模式」：检测结果将自动记入下方公开病历库，所有人均可查阅。"
+                  : "🌐 Free scans are recorded in the public directory below for everyone to search."}
+              </span>
+              <button
+                type="button"
+                onClick={() => setHideModalDomain(domainInput || "你的域名")}
+                className="inline-flex items-center gap-1 font-bold text-amber-300 hover:text-amber-200 underline underline-offset-4 cursor-pointer"
+              >
+                {isZh
+                  ? "🔒 不想让同行看见？开启私密体检 / 付费隐藏此域名 →"
+                  : "🔒 Hide my domain / Private VIP Scan (Paid) →"}
+              </button>
+            </div>
+
             {/* 一键点选标杆与反面教材胶囊 */}
-            <div className="mt-5 flex flex-wrap items-center gap-2 text-xs">
+            <div className="mt-4 flex flex-wrap items-center gap-2 text-xs">
               <span className="text-slate-400 font-medium">
-                {isZh ? "👉 一键调阅典型病例（点击即刻实测）：" : "👉 Try a live benchmark case:"}
+                {isZh ? "👉 一键调阅典型公开病例：" : "👉 Try a public benchmark case:"}
               </span>
               {BENCHMARK_HALL_OF_FAME.map((b) => (
                 <button
@@ -538,7 +649,7 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
                     {scanSteps[scanStepIdx]}
                   </span>
                   <span className="font-bold">
-                    {isZh ? `关卡 ${scanStepIdx + 1} / 7` : `Level ${scanStepIdx + 1} / 7`}
+                    {isZh ? `进度 ${scanStepIdx + 1} / 7` : `Step ${scanStepIdx + 1} / 7`}
                   </span>
                 </div>
                 <div className="grid grid-cols-7 gap-1.5">
@@ -562,7 +673,7 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
           </div>
         ) : (
           /* ═══════════════════════════════════════════════════════════════════
-             模式 B：第 1 课 7 关互动模拟器（视觉化 RPG 闯关面板）
+             模式 B：第 1 课 7 关互动模拟器
              ═══════════════════════════════════════════════════════════════════ */
           <div className="relative">
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 mb-6 border-b border-white/10">
@@ -579,12 +690,11 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
                 </h2>
                 <p className="text-sm text-slate-300 leading-relaxed">
                   {isZh
-                    ? "还没有自己的域名？没关系！下面是一位独立开发者刚用 React 写完的初始网站（仅得 25 分 Grade F）。请依次点击下方 7 张关卡药方，亲眼看看每加一项技术配置能涨多少分："
-                    : "No domain yet? Toggle each of the 7 level prescriptions below to watch a 25-pt React SPA evolve into a 100-pt Agent-Ready site:"}
+                    ? "依次点击下方 7 张关卡药方，亲眼看看每打通一个环节（Reach → Search → Cite → Describe），你的网站总分如何从 25 分（Grade F）跃升到 100 分（Grade A）："
+                    : "Toggle each of the 7 level prescriptions below to watch a 25-pt React SPA evolve into a 100-pt Agent-Ready site:"}
                 </p>
               </div>
 
-              {/* 模拟总分仪表台 */}
               <div className="flex items-center gap-5 rounded-2xl bg-white/95 text-gray-900 p-4 shadow-lg flex-none">
                 <ScoreRing score={sandboxEarned} grade={sandboxGradeInfo.grade} />
                 <div>
@@ -643,7 +753,6 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
               </div>
             </div>
 
-            {/* 7 张药方闯关卡片 */}
             <div className="grid gap-3.5 md:grid-cols-2">
               {SANDBOX_UPGRADES.map((item) => {
                 const active = Boolean(sandboxChecked[item.id]);
@@ -670,9 +779,14 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
                         >
                           {active ? "✓" : item.level}
                         </span>
-                        <span className="font-bold text-sm text-white">
-                          {item.title[lang]}
-                        </span>
+                        <div>
+                          <span className="font-bold text-sm text-white block">
+                            {item.title[lang]}
+                          </span>
+                          <span className="text-[10px] font-semibold text-blue-300">
+                            {item.stage}
+                          </span>
+                        </div>
                       </div>
                       <span
                         className={`rounded-full px-2.5 py-0.5 text-xs font-extrabold whitespace-nowrap ${
@@ -697,7 +811,7 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
       </div>
 
       {/* ═══════════════════════════════════════════════════════════════════════
-          2. 实时体检临床报告（圆环仪表盘 + 复诊进步徽章 + 主治医生总处方 + 掉分监控留资 + 7 关明细）
+          2. 实时体检临床报告（含：GEO 五阶段漏斗条 + L1~L4 高阶病灶透视 + 7 关明细）
           ═══════════════════════════════════════════════════════════════════════ */}
       {report && (
         <section className="rounded-3xl border border-gray-200 bg-white p-6 md:p-8 shadow-sm space-y-8">
@@ -736,9 +850,13 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
                           : `📉 ${scoreDelta} pts vs last scan`}
                       </span>
                     )}
-                    <span className="text-xs text-gray-500 font-mono">
-                      {report.finalUrl}
-                    </span>
+                    <button
+                      type="button"
+                      onClick={() => setHideModalDomain(report.domain)}
+                      className="rounded-lg border border-amber-300 bg-amber-50 px-2.5 py-0.5 text-[11px] font-bold text-amber-800 hover:bg-amber-100 cursor-pointer"
+                    >
+                      {isZh ? "🔒 隐藏此站公开记录" : "🔒 Hide Public Record"}
+                    </button>
                   </div>
                   <h3 className="text-2xl md:text-3xl font-extrabold text-gray-900">
                     {report.domain}
@@ -784,6 +902,213 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
               </div>
             </div>
           </div>
+
+          {/* ─────────────────────────────────────────────────────────────────
+              升级 1：GEO 五阶段漏斗雷达条（Reach → Search → Cite → Describe → Measure）
+              ───────────────────────────────────────────────────────────────── */}
+          {report.stages && (
+            <div className="rounded-2xl border border-blue-200/80 bg-gradient-to-r from-blue-50/50 via-white to-indigo-50/40 p-5">
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-3.5">
+                <div>
+                  <span className="text-xs font-extrabold uppercase tracking-wider text-blue-600">
+                    {isZh ? "GEO 五阶段漏斗诊断" : "GEO 5-Stage Funnel Diagnosis"}
+                  </span>
+                  <h4 className="text-base font-bold text-gray-900">
+                    {isZh
+                      ? "Reach（能访问）→ Search（能搜到）→ Cite（会引用）→ Describe（会说对）→ Measure（持续衡量）"
+                      : "Reach → Search → Cite → Describe → Measure"}
+                  </h4>
+                </div>
+                <span className="text-xs text-gray-500">
+                  {isZh ? "哪一阶段掉链子，漏斗就在哪一层断流" : "Identify where your AI visibility funnel breaks"}
+                </span>
+              </div>
+
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+                {report.stages.map((st) => {
+                  const full = st.earned === st.max;
+                  return (
+                    <div
+                      key={st.id}
+                      className="rounded-xl border border-gray-200 bg-white p-3.5 shadow-2xs"
+                    >
+                      <div className="flex items-center justify-between text-xs mb-1">
+                        <span className="font-extrabold text-gray-900">{st.name[lang]}</span>
+                        <span
+                          className={`rounded px-1.5 py-0.5 text-[11px] font-bold ${
+                            full
+                              ? "bg-emerald-100 text-emerald-800"
+                              : st.pct >= 60
+                              ? "bg-blue-100 text-blue-800"
+                              : "bg-amber-100 text-amber-800"
+                          }`}
+                        >
+                          {st.earned}/{st.max} ({st.pct}%)
+                        </span>
+                      </div>
+                      <p className="text-xs text-gray-600 mb-2">{st.question[lang]}</p>
+                      <div className="h-2 w-full rounded-full bg-gray-100 overflow-hidden">
+                        <div
+                          className={`h-full rounded-full ${
+                            full ? "bg-emerald-500" : st.pct >= 60 ? "bg-blue-500" : "bg-amber-500"
+                          }`}
+                          style={{ width: `${st.pct}%` }}
+                        />
+                      </div>
+                    </div>
+                  );
+                })}
+
+                {/* Stage 5: Measure */}
+                <div className="rounded-xl border border-indigo-200 bg-indigo-50/50 p-3.5 shadow-2xs flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center justify-between text-xs mb-1">
+                      <span className="font-extrabold text-indigo-950">5. Measure</span>
+                      <span className="rounded bg-indigo-600 px-1.5 py-0.5 text-[10px] font-bold text-white">
+                        {previousScore !== null
+                          ? isZh
+                            ? "已建闭环"
+                            : "Tracked"
+                          : isZh
+                          ? "初诊建档"
+                          : "Baseline"}
+                      </span>
+                    </div>
+                    <p className="text-xs text-indigo-900/80 mb-1">
+                      {isZh ? "能持续衡量吗？" : "Continuous measurement?"}
+                    </p>
+                  </div>
+                  <p className="text-[11px] font-semibold text-indigo-700">
+                    {previousScore !== null
+                      ? isZh
+                        ? `上次基准 ${previousScore} 分 → 本次 ${report.score} 分`
+                        : `Last ${previousScore} → Now ${report.score}`
+                      : isZh
+                      ? "已存入实验库，复诊自动算涨分"
+                      : "Baseline saved for next re-scan"}
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* ─────────────────────────────────────────────────────────────────
+              升级 2：搜广推 L1~L4 深度病灶透视 + 首段切片预览（内部核心参数保密锁定）
+              ───────────────────────────────────────────────────────────────── */}
+          {report.l1ToL4Signals && (
+            <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 md:p-6 space-y-4">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <div>
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="rounded-full bg-slate-900 px-2.5 py-0.5 text-[11px] font-bold text-white">
+                      {isZh ? "IR + KG + RAG 搜广推四层透视" : "IR + KG + RAG Deep Diagnostics"}
+                    </span>
+                    <span className="text-xs font-semibold text-amber-700">
+                      {isZh ? "🔒 内部核心参数与深层修复配方仅对会员开放" : "🔒 Core internal parameters locked for members"}
+                    </span>
+                  </div>
+                  <h4 className="text-base font-bold text-gray-900">
+                    {isZh
+                      ? "🔬 L1（抓取入库）→ L2（实体本体）→ L3（召回扇出）→ L4（切片重排与品牌归因）"
+                      : "🔬 L1 (Crawl) → L2 (Entity) → L3 (Fan-out) → L4 (Chunking & Attribution)"}
+                  </h4>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setHideModalDomain(report.domain)}
+                  className="rounded-xl bg-slate-900 px-3.5 py-2 text-xs font-bold text-amber-300 hover:bg-slate-800 cursor-pointer"
+                >
+                  {isZh ? "🔒 解锁 L1~L4 内部调优配方 →" : "🔒 Unlock L1–L4 Internal Playbook →"}
+                </button>
+              </div>
+
+              <div className="grid gap-3 md:grid-cols-2">
+                {report.l1ToL4Signals.map((sig) => {
+                  const ok = sig.status === "passed";
+                  return (
+                    <div
+                      key={sig.layer}
+                      className={`rounded-xl border bg-white p-4 ${
+                        ok ? "border-gray-200" : "border-amber-300"
+                      }`}
+                    >
+                      <div className="flex items-center justify-between gap-2 mb-1.5">
+                        <span className="text-sm font-bold text-gray-900">
+                          {sig.title[lang]}
+                        </span>
+                        <span
+                          className={`rounded-md px-2 py-0.5 text-[11px] font-bold whitespace-nowrap ${
+                            ok
+                              ? "bg-emerald-100 text-emerald-800"
+                              : "bg-amber-100 text-amber-800"
+                          }`}
+                        >
+                          {ok ? (isZh ? "✓ 达标" : "✓ Healthy") : isZh ? "⚠️ 发现隐患" : "⚠️ Warning"}
+                        </span>
+                      </div>
+                      <p className="text-xs text-gray-700 leading-relaxed mb-2">
+                        {sig.publicFinding[lang]}
+                      </p>
+                      <div
+                        onClick={() => setHideModalDomain(report.domain)}
+                        className="rounded-lg bg-slate-100 border border-slate-200 px-2.5 py-1.5 text-[11px] font-medium text-slate-600 hover:border-amber-400 hover:text-slate-900 cursor-pointer transition-colors"
+                      >
+                        {sig.lockedHint[lang]}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* L4 首段切片实时预览窗口 */}
+              {report.leadChunkPreview && (
+                <div className="rounded-xl border border-gray-200 bg-white p-4">
+                  <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+                    <span className="text-xs font-bold text-gray-900">
+                      {isZh
+                        ? "✂️ AI 检索器实际从你首页切走的首段文本切片预览（L4 Passage Chunk）："
+                        : "✂️ Actual Lead Passage Chunk Extracted by AI Without JS:"}
+                    </span>
+                    <div className="flex flex-wrap gap-2 text-[11px] font-bold">
+                      <span
+                        className={`rounded-md px-2 py-0.5 ${
+                          report.leadChunkPreview.brandNamedInLead
+                            ? "bg-emerald-100 text-emerald-800"
+                            : "bg-red-100 text-red-700"
+                        }`}
+                      >
+                        {report.leadChunkPreview.brandNamedInLead
+                          ? isZh
+                            ? "✓ 首段已绑定品牌名（防白嫖语料）"
+                            : "✓ Brand Named in Lead Chunk"
+                          : isZh
+                          ? "⚠️ 首段未含品牌名（PAGE CITED ≠ BRAND NAMED 风险）"
+                          : "⚠️ Missing Brand Name in Lead Chunk"}
+                      </span>
+                      <span
+                        className={`rounded-md px-2 py-0.5 ${
+                          report.leadChunkPreview.hasStructuredTable
+                            ? "bg-emerald-100 text-emerald-800"
+                            : "bg-amber-100 text-amber-800"
+                        }`}
+                      >
+                        {report.leadChunkPreview.hasStructuredTable
+                          ? isZh
+                            ? "✓ 含高重排结构化表格/FAQ"
+                            : "✓ Structured Table/FAQ Present"
+                          : isZh
+                          ? "⚠️ 缺结构化对比表/FAQ"
+                          : "⚠️ No Structured Comparison Table"}
+                      </span>
+                    </div>
+                  </div>
+                  <p className="rounded-lg bg-gray-50 border border-gray-200 p-3 text-xs font-mono text-gray-700 leading-relaxed">
+                    &ldquo;{report.leadChunkPreview.excerpt}...&rdquo;
+                  </p>
+                </div>
+              )}
+            </div>
+          )}
 
           {/* 7 关通关进度地图（可点击筛选任意一关） */}
           <div>
@@ -880,17 +1205,17 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 mb-4 border-b border-white/10">
                 <div>
                   <div className="inline-flex items-center gap-2 rounded-full bg-blue-500/20 border border-blue-400/30 px-2.5 py-0.5 text-xs font-semibold text-blue-300 mb-1.5">
-                    {isZh ? "AI 编程代理一键处方笺" : "One-Click Coding Agent Prescription"}
+                    {isZh ? "公开基础协议处方笺" : "Public Protocol Prescription"}
                   </div>
                   <h4 className="text-lg font-bold text-white">
                     {isZh
-                      ? `💊 主治医生总处方：修复这 ${report.failedKeys.length} 项即可冲刺 100 分（Grade A）`
-                      : `💊 Master Prescription: Fix ${report.failedKeys.length} items to reach 100/100 Grade A`}
+                      ? `💊 基础协议处方：修复这 ${report.failedKeys.length} 项公开指标即可冲刺 Grade A`
+                      : `💊 Base Protocol Prescription: Fix ${report.failedKeys.length} checks for Grade A`}
                   </h4>
                   <p className="text-xs text-slate-300 mt-0.5">
                     {isZh
-                      ? "复制下方完整 Prompt 扔给 Cursor 或 Claude Code，让 AI 直接替你写好 robots.txt、JSON-LD、llms.txt 与 WebMCP："
-                      : "Send this master prompt to Cursor or Claude Code to automatically patch your codebase:"}
+                      ? "复制下方基础协议 Prompt 扔给 Cursor 或 Claude Code 自动修改代码（L1~L4 内部核心配方仅在会员课提供）："
+                      : "Send this prompt to Cursor or Claude Code to patch your public protocol checks:"}
                   </p>
                 </div>
 
@@ -953,13 +1278,12 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
             </div>
           )}
 
-          {/* 并排双卡：左卡「🔔 掉分守护 & 复诊提醒留资（第 5 项）」 + 右卡「🏅 认证徽章外链飞轮（第 3 项）」 */}
+          {/* 并排双卡：左卡「🔔 Stage 5 Measure 掉分守护」 + 右卡「🏅 认证徽章外链飞轮」 */}
           <div className="grid gap-4 md:grid-cols-2">
-            {/* 左卡：掉分监控与复诊提醒 */}
             <div className="rounded-2xl border border-indigo-200 bg-gradient-to-br from-indigo-50/70 via-white to-blue-50/40 p-5">
               <div className="flex items-center gap-2 mb-1.5">
                 <span className="rounded-full bg-indigo-600 px-2.5 py-0.5 text-[11px] font-bold text-white">
-                  {isZh ? "免费复诊守护" : "Free Score Guard"}
+                  {isZh ? "Stage 5: Measure 持续衡量" : "Stage 5: Measure Guard"}
                 </span>
                 <span className="text-xs font-semibold text-indigo-700">
                   {report.domain}
@@ -971,17 +1295,13 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
                     ? "🔔 开启 Grade A 掉分告警（防止发版误伤 SEO / MCP）"
                     : "🔔 Enable Grade A Drop Alert"
                   : isZh
-                  ? "🔔 锁定初诊病历 & 开启复诊涨分提醒"
+                  ? "🔔 锁定初诊基准 & 开启每周实验复诊提醒"
                   : "🔔 Save Baseline & Get Re-Scan Reminders"}
               </h4>
               <p className="text-xs text-gray-600 leading-relaxed mb-3.5">
-                {report.score >= 85
-                  ? isZh
-                    ? `当前 ${report.domain} 已达 ${report.score} 分（Grade ${report.grade}）。留下邮箱，若以后部署代码不小心覆盖了 JSON-LD、llms.txt 或被 WAF 误封导致掉分，第一时间邮件通知你。`
-                    : `Lock in your ${report.score}/100 score. We'll email you if a future deploy breaks your JSON-LD, llms.txt, or WebMCP.`
-                  : isZh
-                  ? `已记录 ${report.domain} 初诊得分 ${report.score} 分。留下邮箱保存完整病历，并在你用 Cursor 修好代码回来复诊时自动对比涨分幅度！`
-                  : `Save your ${report.score}/100 baseline report and track your score jump after applying the fixes.`}
+                {isZh
+                  ? `绑定邮箱以建立 ${report.domain} 的 Stage 5 (Measure) 持续衡量基线（当前 ${report.score} 分），掉分或巡检异常时第一时间通知你：`
+                  : `Bind your email to track ${report.domain}'s Stage 5 (Measure) baseline (${report.score}/100):`}
               </p>
 
               <form onSubmit={handleMonitorSubmit} className="flex gap-2">
@@ -1016,13 +1336,11 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
               )}
             </div>
 
-            {/* 右卡：AI Agent-Ready 认证徽章（Markdown + HTML 双格式） */}
             <div className="rounded-2xl border border-emerald-200 bg-gradient-to-br from-emerald-50/70 via-white to-teal-50/40 p-5">
               <div className="flex items-center justify-between gap-2 mb-1.5">
                 <span className="rounded-full bg-emerald-600 px-2.5 py-0.5 text-[11px] font-bold text-white">
                   {isZh ? "通关认证徽章" : "Verified Badge"}
                 </span>
-                {/* 徽章实时视觉预览 */}
                 <span className="inline-flex items-center overflow-hidden rounded-md border border-emerald-300 text-[11px] font-mono shadow-2xs">
                   <span className="bg-slate-800 px-2 py-0.5 text-white">AI Readiness</span>
                   <span className="bg-emerald-600 px-2 py-0.5 font-bold text-white">
@@ -1214,29 +1532,38 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
       )}
 
       {/* ═══════════════════════════════════════════════════════════════════════
-          3. 急诊室独家大数据看板（第 5 项：从数据库实时统计的高频病因 Top 6 + 满分名人堂对比表）
+          3. 全网公开病历档案库（所有人可检索查询任意站点情况 + 站长付费可隐藏记录）
           ═══════════════════════════════════════════════════════════════════════ */}
       <section className="rounded-3xl border border-gray-200 bg-white p-6 md:p-8 shadow-xs space-y-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-5 border-b border-gray-200">
           <div>
-            <span className="inline-block rounded-full bg-purple-100 text-purple-800 px-3 py-0.5 text-xs font-bold mb-2">
-              {isZh ? "急诊室独家一手数据（Supabase 实时聚合）" : "Proprietary Clinic Dataset (Live from Supabase)"}
-            </span>
+            <div className="flex flex-wrap items-center gap-2 mb-2">
+              <span className="inline-block rounded-full bg-purple-100 text-purple-800 px-3 py-0.5 text-xs font-bold">
+                {isZh ? "🌐 全网公开病历档案库（Supabase 实时同步）" : "🌐 Public Website AI Health Directory"}
+              </span>
+              <button
+                type="button"
+                onClick={() => setHideModalDomain(domainInput || "你的域名")}
+                className="inline-flex items-center rounded-full border border-amber-300 bg-amber-50 px-3 py-0.5 text-xs font-bold text-amber-800 hover:bg-amber-100 cursor-pointer"
+              >
+                {isZh ? "🔒 申请隐藏我的网站记录（付费）" : "🔒 Hide My Domain (Paid)"}
+              </button>
+            </div>
             <h2 className="text-xl md:text-2xl font-extrabold text-gray-900">
               {isZh
-                ? "📊 出海站点 AI 就绪度大盘：90% 的独立站都栽在哪几关？"
-                : "📊 Indie Site AI Readiness Benchmark & Top Failure Points"}
+                ? "📊 公开查询任意网站的 AI 就绪度得分 & 常见失分病因"
+                : "📊 Publicly Search Any Website's AI Readiness & Failure Points"}
             </h2>
             <p className="text-sm text-gray-600 mt-1">
               {isZh
-                ? "每一次站长来急诊室挂号体检，系统都会自动沉淀各关卡通过率。以下是当前数据库实测统计的高频失分病因与名人堂榜单："
-                : "Every domain diagnosis is logged to our database. Here are the most common failure points and Hall of Fame benchmarks:"}
+                ? "所有通过免费急诊室检测的网站均在此公开建档，任何人都可以搜索查看各站点的得分与短板；如需隐藏自家域名或获取内部 L1~L4 调优参数，可升级会员开启隐身。"
+                : "All free scans are publicly searchable below. Site owners can upgrade to delist/hide their domain from competitors."}
             </p>
           </div>
 
           <div className="flex gap-3 flex-none">
             <div className="rounded-2xl border border-gray-200 bg-gray-50 px-4 py-2.5 text-center">
-              <p className="text-[11px] text-gray-500">{isZh ? "累计接诊" : "Total Scans"}</p>
+              <p className="text-[11px] text-gray-500">{isZh ? "公开档案数" : "Public Scans"}</p>
               <p className="text-xl font-black text-gray-900">{totalScans}</p>
             </div>
             <div className="rounded-2xl border border-gray-200 bg-gray-50 px-4 py-2.5 text-center">
@@ -1250,12 +1577,135 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
           </div>
         </div>
 
+        {/* 公开病历库实时搜索栏 */}
+        <div className="rounded-2xl border border-gray-200 bg-gray-50/70 p-4">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 mb-4">
+            <div>
+              <h3 className="text-sm font-bold text-gray-900">
+                {isZh
+                  ? "🔍 检索公开病历档案库（点击任意站点可调阅完整 26 项体检报告）"
+                  : "🔍 Search Public Clinic Records (Click any domain to inspect full report)"}
+              </h3>
+              <p className="text-xs text-gray-500">
+                {isZh
+                  ? "支持按域名关键词过滤已接诊站点；若库中尚未收录，可直接点「挂号检测」现场抓出它的底牌。"
+                  : "Filter existing public records or run a live scan on any domain."}
+              </p>
+            </div>
+            <div className="flex gap-2 sm:w-80">
+              <input
+                type="text"
+                value={publicSearchQuery}
+                onChange={(e) => {
+                  const val = e.target.value;
+                  setPublicSearchQuery(val);
+                  refreshDashboard(val);
+                }}
+                placeholder={isZh ? "搜索已收录域名（如 glama、skills...）" : "Filter public domains..."}
+                className="flex-1 rounded-xl border border-gray-300 bg-white px-3 py-2 text-xs text-gray-900 focus:border-blue-500 focus:outline-none"
+              />
+              {publicSearchQuery && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setPublicSearchQuery("");
+                    refreshDashboard("");
+                  }}
+                  className="rounded-xl border border-gray-200 bg-white px-2.5 py-2 text-xs text-gray-500 hover:text-gray-800 cursor-pointer"
+                >
+                  {isZh ? "清空" : "Clear"}
+                </button>
+              )}
+            </div>
+          </div>
+
+          {recentScans.length > 0 ? (
+            <div className="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+              {recentScans.map((r, i) => (
+                <div
+                  key={`${r.domain}-${i}`}
+                  className="flex items-center justify-between gap-2 rounded-xl border border-gray-200 bg-white p-3 hover:border-blue-300 transition-all"
+                >
+                  <div className="min-w-0">
+                    <div className="flex items-center gap-1.5">
+                      <button
+                        type="button"
+                        onClick={() => handleScan(r.domain)}
+                        className="font-bold text-sm text-gray-900 hover:text-blue-600 truncate cursor-pointer"
+                      >
+                        {r.domain}
+                      </button>
+                      {typeof r.score_delta === "number" && r.score_delta > 0 && (
+                        <span className="rounded bg-emerald-50 px-1.5 py-0.2 text-[10px] font-bold text-emerald-700">
+                          +{r.score_delta}
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-[11px] text-gray-500 mt-0.5">
+                      {typeof r.failed_count === "number"
+                        ? isZh
+                          ? `检出 ${r.failed_count} 项失分病灶`
+                          : `${r.failed_count} failed checks`
+                        : isZh
+                        ? "公开档案"
+                        : "Public record"}
+                    </p>
+                  </div>
+
+                  <div className="flex items-center gap-1.5 flex-none">
+                    <span
+                      className={`rounded-lg px-2 py-0.5 text-xs font-extrabold border ${
+                        gradeTheme(r.grade).badge
+                      }`}
+                    >
+                      {r.score} · {r.grade}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => handleScan(r.domain)}
+                      className="rounded-lg border border-blue-200 bg-blue-50 px-2 py-1 text-[11px] font-semibold text-blue-700 hover:bg-blue-100 cursor-pointer"
+                      title={isZh ? "查看完整体检报告" : "Inspect full report"}
+                    >
+                      {isZh ? "查病历" : "Inspect"}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setHideModalDomain(r.domain)}
+                      className="rounded-lg border border-gray-200 bg-gray-50 px-2 py-1 text-[11px] font-medium text-gray-500 hover:border-amber-300 hover:bg-amber-50 hover:text-amber-800 cursor-pointer"
+                      title={isZh ? "付费隐藏此站记录" : "Pay to hide this domain"}
+                    >
+                      🔒
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="rounded-xl border border-dashed border-gray-300 bg-white p-6 text-center text-xs text-gray-500">
+              {isZh
+                ? `公开库中暂未搜到「${publicSearchQuery}」，点击下方按钮即可现场对它发起实时体检：`
+                : `No public record for "${publicSearchQuery}" yet. Run a live scan now:`}
+              {publicSearchQuery && (
+                <div className="mt-3">
+                  <button
+                    type="button"
+                    onClick={() => handleScan(publicSearchQuery)}
+                    className="rounded-xl bg-blue-600 px-4 py-2 text-xs font-bold text-white hover:bg-blue-700 cursor-pointer"
+                  >
+                    {isZh ? `🏥 立即免费检测 ${publicSearchQuery}` : `🏥 Scan ${publicSearchQuery} Now`}
+                  </button>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+
         {/* Top 6 高频失分病因横向条形图 */}
         {insights.topFailedChecks.length > 0 && (
           <div>
             <h3 className="text-sm font-bold text-gray-900 mb-3">
               {isZh
-                ? "🚨 独立站最容易丢分的 Top 6 高频病因（来自真实接诊记录）"
+                ? "🚨 独立站最容易丢分的 Top 6 高频病因（来自真实公开接诊统计）"
                 : "🚨 Top 6 Most Frequently Failed Checks Across Scanned Sites"}
             </h3>
             <div className="grid gap-3 md:grid-cols-2">
@@ -1351,48 +1801,15 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
             </table>
           </div>
         </div>
-
-        {/* 最新实时接诊流水墙 */}
-        {recentScans.length > 0 && (
-          <div className="pt-4 border-t border-gray-100">
-            <p className="text-xs font-bold text-gray-500 mb-2.5">
-              {isZh ? "🕒 急诊室最新实时接诊档案（点击可调阅重测）：" : "🕒 Recent Live Clinic Diagnoses:"}
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {recentScans.map((r, i) => (
-                <button
-                  key={`${r.domain}-${i}`}
-                  type="button"
-                  onClick={() => handleScan(r.domain)}
-                  className="inline-flex items-center gap-2 rounded-xl border border-gray-200 bg-gray-50 px-3 py-1.5 text-xs text-gray-700 hover:border-blue-400 hover:bg-white transition-all cursor-pointer"
-                >
-                  <span className="font-semibold text-gray-900">{r.domain}</span>
-                  <span
-                    className={`rounded-md px-1.5 py-0.5 text-[10px] font-extrabold border ${
-                      gradeTheme(r.grade).badge
-                    }`}
-                  >
-                    {r.score} · {r.grade}
-                  </span>
-                  {typeof r.score_delta === "number" && r.score_delta > 0 && (
-                    <span className="text-[10px] font-bold text-emerald-600">
-                      +{r.score_delta}
-                    </span>
-                  )}
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════════
-          4. 第 1 课 7 关通关教学大纲卡片墙（视觉化展示每一关的分数权重与课程锚点）
+          4. 第 1 课 7 关通关教学大纲卡片墙
           ═══════════════════════════════════════════════════════════════════════ */}
       <section className="rounded-3xl border border-gray-200 bg-gray-100/70 p-6 md:p-8">
         <div className="max-w-3xl mb-6">
           <span className="inline-block rounded-full bg-blue-100 text-blue-800 px-3 py-0.5 text-xs font-bold mb-2">
-            {isZh ? "第 1 课评分标准拆解" : "Course 1 Rubric Breakdown"}
+            {isZh ? "7 关 100 分制标准拆解" : "7-Level 100-Point Rubric"}
           </span>
           <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-1.5">
             {isZh

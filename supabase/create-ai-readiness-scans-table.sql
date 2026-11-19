@@ -17,6 +17,7 @@ CREATE TABLE IF NOT EXISTS ai_readiness_scans (
   results JSONB NOT NULL DEFAULT '{}'::jsonb,
   notify_email TEXT,
   monitor_enabled BOOLEAN DEFAULT FALSE,
+  is_hidden BOOLEAN DEFAULT FALSE,
   source TEXT DEFAULT 'ai-clinic-game',
   lang TEXT DEFAULT 'zh',
   ip_hash TEXT,
@@ -29,6 +30,7 @@ ALTER TABLE ai_readiness_scans ADD COLUMN IF NOT EXISTS previous_score INTEGER;
 ALTER TABLE ai_readiness_scans ADD COLUMN IF NOT EXISTS score_delta INTEGER;
 ALTER TABLE ai_readiness_scans ADD COLUMN IF NOT EXISTS notify_email TEXT;
 ALTER TABLE ai_readiness_scans ADD COLUMN IF NOT EXISTS monitor_enabled BOOLEAN DEFAULT FALSE;
+ALTER TABLE ai_readiness_scans ADD COLUMN IF NOT EXISTS is_hidden BOOLEAN DEFAULT FALSE;
 
 -- 按域名查历史体检记录与复诊涨分曲线
 CREATE INDEX IF NOT EXISTS idx_ai_readiness_scans_domain

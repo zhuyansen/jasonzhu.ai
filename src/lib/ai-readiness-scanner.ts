@@ -47,6 +47,31 @@ export interface CategoryScore {
   checks: CheckResult[];
 }
 
+export interface GeoStageScore {
+  id: "reach" | "search" | "cite" | "describe";
+  step: number;
+  name: { zh: string; en: string };
+  question: { zh: string; en: string };
+  earned: number;
+  max: number;
+  pct: number;
+}
+
+export interface L1ToL4Signal {
+  layer: "L1" | "L2" | "L3" | "L4";
+  title: { zh: string; en: string };
+  stageTag: string;
+  status: "passed" | "warning";
+  publicFinding: { zh: string; en: string };
+  lockedHint: { zh: string; en: string };
+}
+
+export interface LeadChunkPreview {
+  excerpt: string;
+  brandNamedInLead: boolean;
+  hasStructuredTable: boolean;
+}
+
 export interface ScanReport {
   domain: string;
   finalUrl: string;
@@ -55,6 +80,9 @@ export interface ScanReport {
   grade: "A" | "B" | "C" | "D" | "F";
   label: { zh: string; en: string };
   categories: CategoryScore[];
+  stages?: GeoStageScore[];
+  l1ToL4Signals?: L1ToL4Signal[];
+  leadChunkPreview?: LeadChunkPreview;
   passedKeys: string[];
   failedKeys: string[];
   combinedPrompt: { zh: string; en: string };
@@ -1210,6 +1238,210 @@ export async function runAiReadinessScan(rawDomain: string): Promise<ScanReport>
   const failedChecks = checks.filter((c) => c.status !== "passed");
   const failedKeys = failedChecks.map((c) => c.key);
 
+  // ═══════════════════════════════════════════════════════════════════════
+  // GEO 五阶段漏斗映射（Reach → Search → Cite → Describe → Measure）
+  // ═══════════════════════════════════════════════════════════════════════
+  const checkScoreMap = Object.fromEntries(checks.map((c) => [c.key, c.score]));
+  const sumKeys = (keys: string[]) => keys.reduce((s, k) => s + (checkScoreMap[k] || 0), 0);
+
+  const reachEarned = sumKeys([
+    "crawl_permission.robots_txt",
+    "crawl_permission.ai_crawlers",
+    "crawl_permission.bot_detection",
+    "crawl_permission.content_signals",
+    "readability.no_js",
+    "findability.https",
+    "agent_native.link_headers",
+  ]);
+  const searchEarned = sumKeys([
+    "findability.sitemap_urls",
+    "findability.sitemap_in_robots",
+    "findability.lastmod",
+    "findability.real_404",
+    "readability.meta_tags",
+  ]);
+  const citeEarned = sumKeys([
+    "readability.token_budget",
+    "readability.headings",
+    "agent_native.llms_txt",
+    "agent_native.llms_well_formed",
+    "agent_native.markdown_negotiation",
+  ]);
+  const describeEarned = sumKeys([
+    "structured_meaning.json_ld",
+    "structured_meaning.org_schema",
+    "structured_meaning.same_as",
+    "structured_meaning.multiple_schemas",
+    "commercial_legibility.trust_pages",
+    "commercial_legibility.machine_contact",
+    "commercial_legibility.pricing",
+    "agent_interaction.webmcp_tools",
+    "agent_interaction.mcp_server_card",
+  ]);
+
+  const stages: GeoStageScore[] = [
+    {
+      id: "reach",
+      step: 1,
+      name: { zh: "1. Reach", en: "1. Reach" },
+      question: { zh: "AI 能访问吗？", en: "Can AI access it?" },
+      earned: reachEarned,
+      max: 31,
+      pct: Math.round((reachEarned / 31) * 100),
+    },
+    {
+      id: "search",
+      step: 2,
+      name: { zh: "2. Search", en: "2. Search" },
+      question: { zh: "AI 能搜到吗？", en: "Can AI find it?" },
+      earned: searchEarned,
+      max: 18,
+      pct: Math.round((searchEarned / 18) * 100),
+    },
+    {
+      id: "cite",
+      step: 3,
+      name: { zh: "3. Cite", en: "3. Cite" },
+      question: { zh: "AI 会引用吗？", en: "Will AI cite it?" },
+      earned: citeEarned,
+      max: 15,
+      pct: Math.round((citeEarned / 15) * 100),
+    },
+    {
+      id: "describe",
+      step: 4,
+      name: { zh: "4. Describe", en: "4. Describe" },
+      question: { zh: "AI 会把我们说对吗？", en: "Will AI describe us right?" },
+      earned: describeEarned,
+      max: 36,
+      pct: Math.round((describeEarned / 36) * 100),
+    },
+  ];
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // L1 ~ L4 内部高阶诊断（只向外部展示表征结论，核心阈值与配方保密锁定）
+  // ═══════════════════════════════════════════════════════════════════════
+  // L1: 抓取与入库（候选集准入与模板去重风险）
+  const l1Healthy = hasSitemapUrls && locUrls.length <= 2500 && robotsValid && aiAllowed;
+  // L2: 实体与本体（跨源实体对齐一致性）
+  const domainStem = domain.split(".")[0].toLowerCase();
+  const orgUrlStr = String(orgObjs[0]?.["url"] || "").toLowerCase();
+  const orgNameStr = String(orgObjs[0]?.["name"] || "").toLowerCase();
+  const canonicalHostOk = !canonicalMatch || canonicalMatch.toLowerCase().includes(domain);
+  const orgHostOk = !orgUrlStr || orgUrlStr.includes(domain);
+  const l2Healthy = hasJsonLd && orgPts >= 3 && canonicalHostOk && orgHostOk;
+
+  // L3: 召回与扇出（多路检索与跨语种扇出锚点）
+  const hasHreflangEn = /hreflang=["']en(-[a-z]+)?["']/i.test(html) || /<html[^>]+lang=["']en/i.test(html);
+  const hasEnglishAnchor = /[a-zA-Z]{4,}\s+[a-zA-Z]{4,}/.test(`${titleMatch} ${descMatch}`);
+  const l3Healthy = hasSitemapUrls && (hasHreflangEn || hasEnglishAnchor) && metaPts >= 3;
+
+  // L4: 切片重排与生成（首段切片窗口提取 + 品牌归因检测 + 结构化表格检测）
+  const mainBlockMatch =
+    html.match(/<main[^>]*>([\s\S]*?)<\/main>/i)?.[1] ||
+    html.match(/<article[^>]*>([\s\S]*?)<\/article>/i)?.[1] ||
+    html;
+  const mainVisibleText = stripTags(mainBlockMatch);
+  const leadExcerpt = (mainVisibleText || visibleText).slice(0, 260);
+  const brandCandidate = orgNameStr || domainStem;
+  const brandNamedInLead =
+    leadExcerpt.toLowerCase().includes(domainStem) ||
+    (brandCandidate.length >= 2 && leadExcerpt.toLowerCase().includes(brandCandidate));
+  const hasStructuredTable = /<table[\s>]/i.test(html) || Array.from(schemaTypes).some((t) => /faqpage|itemlist|dataset/i.test(t));
+  const l4Healthy = noJsPts === 8 && brandNamedInLead && hasStructuredTable;
+
+  const l1ToL4Signals: L1ToL4Signal[] = [
+    {
+      layer: "L1",
+      title: { zh: "L1：抓取与入库（候选集准入 & 模板去重健康度）", en: "L1: Crawl & Admission Hygiene" },
+      stageTag: "1. Reach → 2. Search",
+      status: l1Healthy ? "passed" : "warning",
+      publicFinding: l1Healthy
+        ? {
+            zh: `候选集准入正常（Sitemap 已收录 ${locUrls.length} 条规范 URL，未触发配额超载或折叠预警）`,
+            en: `Candidate admission healthy (${locUrls.length} sitemap URLs within safe crawl quota)`,
+          }
+        : {
+            zh:
+              locUrls.length > 2500
+                ? `检测到 Sitemap URL 数量偏高（${locUrls.length} 条），存在新站配额稀释与同模板折叠风险`
+                : "检测到候选集准入或 Sitemap 覆盖缺口，部分页面无法进入预训练与检索索引池",
+            en: "Detected crawl quota dilution or candidate admission gap",
+          },
+      lockedHint: {
+        zh: "🔒 内部核心参数：新域名配额安全线与防折叠去重策略（GoSail Club 内部实验课解锁）",
+        en: "🔒 Internal Playbook: Domain quota thresholds & anti-folding rules (Members Only)",
+      },
+    },
+    {
+      layer: "L2",
+      title: { zh: "L2：实体与本体（知识图谱跨源对齐校验）", en: "L2: Entity & Ontology Resolution" },
+      stageTag: "4. Describe",
+      status: l2Healthy ? "passed" : "warning",
+      publicFinding: l2Healthy
+        ? {
+            zh: "Canonical、Organization JSON-LD 与页面主实体标识已对齐，未检测到实体分裂",
+            en: "Canonical, Organization JSON-LD, and primary brand entity are aligned",
+          }
+        : {
+            zh: "存在实体分裂或属性缺失风险：机器在跨源比对时可能将你的品牌识别为多个孤立节点",
+            en: "Entity split risk: missing or inconsistent cross-source entity identifiers",
+          },
+      lockedHint: {
+        zh: "🔒 内部核心参数：三元组唯一性对齐清单与防分裂修复矩阵（GoSail Club 内部实验课解锁）",
+        en: "🔒 Internal Playbook: E-A-V entity resolution matrix (Members Only)",
+      },
+    },
+    {
+      layer: "L3",
+      title: { zh: "L3：召回与扇出（多路改写与跨语种召回锚点）", en: "L3: Retrieval & Query Fan-out" },
+      stageTag: "2. Search",
+      status: l3Healthy ? "passed" : "warning",
+      publicFinding: l3Healthy
+        ? {
+            zh: "已具备多路检索与跨语种召回锚点，可承接 AI 后台改写后的扇出检索请求",
+            en: "Equipped with multi-path and cross-lingual retrieval anchors",
+          }
+        : {
+            zh: "跨语种扇出召回锚点不足：当 AI 在后台将用户提问改写为多路检索词时容易漏召回",
+            en: "Weak fan-out retrieval anchors for rewritten background AI search queries",
+          },
+      lockedHint: {
+        zh: "🔒 内部核心参数：AI 后台改写扇出规律与高召回词槽布局（GoSail Club 内部实验课解锁）",
+        en: "🔒 Internal Playbook: Query fan-out rewrite patterns & slot layout (Members Only)",
+      },
+    },
+    {
+      layer: "L4",
+      title: { zh: "L4：切片重排与生成（首段切片窗口 & 品牌归因绑定）", en: "L4: Chunking, Reranking & Brand Attribution" },
+      stageTag: "3. Cite → 4. Describe",
+      status: l4Healthy ? "passed" : "warning",
+      publicFinding: l4Healthy
+        ? {
+            zh: "首段切片已包含品牌自归因锚点，且页面包含高重排权重结构化区块",
+            en: "Lead passage chunk includes brand self-attribution and structured comparison blocks",
+          }
+        : {
+            zh: !brandNamedInLead
+              ? "⚠️ 检测到「被引用但未点名」风险：首段核心切片内未绑定品牌名，极易沦为大模型免费语料却拿不到品牌曝光"
+              : "缺少高重排权重的结构化对比切片（如参数对比表或结构化 FAQ），在重排阶段容易被竞品挤掉",
+            en: !brandNamedInLead
+              ? "⚠️ Citation without Brand Naming risk: lead passage chunk lacks brand self-attribution"
+              : "Missing high-rerank structured comparison tables or FAQ blocks",
+          },
+      lockedHint: {
+        zh: "🔒 内部核心参数：黄金切片词窗公式与高权重对比矩阵模板（GoSail Club 内部实验课解锁）",
+        en: "🔒 Internal Playbook: Golden chunk window formula & rerank table template (Members Only)",
+      },
+    },
+  ];
+
+  const leadChunkPreview: LeadChunkPreview = {
+    excerpt: leadExcerpt || "（未提取到有效无 JS 首段文本）",
+    brandNamedInLead,
+    hasStructuredTable,
+  };
+
   const combinedPromptZh =
     failedChecks.length === 0
       ? `恭喜！https://${domain} 已通过全部 26 项 AI 可见度与 Agent 就绪度体检（100/100 Grade A）！`
@@ -1240,6 +1472,9 @@ export async function runAiReadinessScan(rawDomain: string): Promise<ScanReport>
     grade,
     label,
     categories,
+    stages,
+    l1ToL4Signals,
+    leadChunkPreview,
     passedKeys,
     failedKeys,
     combinedPrompt: {

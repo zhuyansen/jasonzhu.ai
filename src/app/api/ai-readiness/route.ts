@@ -244,49 +244,60 @@ export async function POST(request: NextRequest) {
   }
 }
 
-export async function GET() {
+export async function GET(request: NextRequest) {
+  const q = (request.nextUrl.searchParams.get("q") || "").trim().toLowerCase();
+
   let recentScans: Array<{
     domain: string;
     score: number;
     grade: string;
     score_delta: number | null;
+    failed_count: number;
     created_at: string;
   }> = [];
   let totalScans = BENCHMARK_HALL_OF_FAME.length;
   let avgScore = 78;
   let gradeARate = 50;
 
-  // 默认高频病因基准（当表里样本较少时与真实扫描结果融合）
   const failCounter: Record<string, number> = {};
   let analyzedDomainsCount = 0;
 
   try {
     const supabase = getSupabase();
-    const { data, count, error } = await supabase
+    let query = supabase
       .from("ai_readiness_scans")
-      .select("domain, score, grade, score_delta, failed_checks, created_at", { count: "exact" })
+      .select("domain, score, grade, score_delta, failed_checks, is_hidden, created_at", { count: "exact" })
+      .or("is_hidden.is.null,is_hidden.eq.false")
       .order("created_at", { ascending: false })
-      .limit(80);
+      .limit(120);
+
+    if (q) {
+      query = query.ilike("domain", `%${q}%`);
+    }
+
+    const { data, count, error } = await query;
 
     if (!error && Array.isArray(data) && data.length > 0) {
       if (typeof count === "number") {
         totalScans = Math.max(count, data.length);
       }
 
-      // 按域名去重取最新一条用于计算独立站大盘指标
+      // 按域名去重取最新一条公开记录
       const latestByDomain = new Map<string, (typeof data)[number]>();
       for (const row of data) {
+        if (row.is_hidden) continue;
         if (!latestByDomain.has(row.domain)) {
           latestByDomain.set(row.domain, row);
         }
       }
 
       const uniqueRows = Array.from(latestByDomain.values());
-      recentScans = uniqueRows.slice(0, 12).map((r) => ({
+      recentScans = uniqueRows.slice(0, 24).map((r) => ({
         domain: r.domain,
         score: r.score,
         grade: r.grade,
         score_delta: r.score_delta ?? null,
+        failed_count: Array.isArray(r.failed_checks) ? r.failed_checks.length : 0,
         created_at: r.created_at,
       }));
 
