@@ -64,17 +64,59 @@ export default function Footer({ lang, dict }: FooterProps) {
                 </a>
               </li>
               <li>
+                <a href="mailto:jason@jasonzhu.ai" className="text-sm text-gray-500 hover:text-gray-900">
+                  jason@jasonzhu.ai
+                </a>
+              </li>
+              <li>
+                <Link href={`/${lang}/contact`} className="text-sm text-gray-500 hover:text-gray-900">
+                  {lang === "zh" ? "联系我们 (Contact)" : "Contact"}
+                </Link>
+              </li>
+              <li>
                 <Link href={`/${lang}/about`} className="text-sm text-gray-500 hover:text-gray-900">{dict.footer.aboutMe}</Link>
               </li>
             </ul>
           </div>
         </div>
 
+        {/* Declarative WebMCP tool form for in-browser AI agents */}
+        <form
+          action={`/${lang}/blog`}
+          method="get"
+          role="search"
+          className="sr-only"
+          {...({
+            toolname: "search_jasonzhu_articles",
+            tooldescription:
+              "Search JasonZhu.AI tutorials, Claude Code / Cursor guides, and going-global playbooks.",
+          } as Record<string, string>)}
+        >
+          <input
+            type="search"
+            name="q"
+            aria-label="Search articles"
+            {...({
+              toolparamdescription: "Keyword or topic to search on JasonZhu.AI",
+            } as Record<string, string>)}
+          />
+          <button type="submit">Search</button>
+        </form>
+
         <div className="border-t border-gray-200 mt-8 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-gray-400">
             &copy; {new Date().getFullYear()} JasonZhu.AI. All rights reserved.
           </p>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center gap-4">
+            <Link href={`/${lang}/sitemap-html`} className="text-sm text-gray-400 hover:text-gray-600">
+              {lang === "zh" ? "全站目录 (HTML Sitemap)" : "HTML Sitemap"}
+            </Link>
+            <Link href={`/${lang}/club`} className="text-sm text-gray-400 hover:text-gray-600">
+              {lang === "zh" ? "会员定价 (Pricing)" : "Pricing"}
+            </Link>
+            <Link href={`/${lang}/contact`} className="text-sm text-gray-400 hover:text-gray-600">
+              {lang === "zh" ? "联系" : "Contact"}
+            </Link>
             <Link href={`/${lang}/privacy`} className="text-sm text-gray-400 hover:text-gray-600">
               {lang === "zh" ? "隐私政策" : "Privacy"}
             </Link>

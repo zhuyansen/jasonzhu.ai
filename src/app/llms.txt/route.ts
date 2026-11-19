@@ -15,7 +15,12 @@ function clip(text: string, max: number) {
  * llms.txt — 给 LLM 爬虫的站点导览（https://llmstxt.org 约定）。
  * 动态生成：站点定位 + 核心入口 + 最新文章清单，让 AI 引用时拿到准确上下文。
  */
-export async function GET() {
+export async function GET(request: Request) {
+  const accept = request.headers.get("accept") || "";
+  const url = new URL(request.url);
+  const wantsMarkdown =
+    accept.toLowerCase().includes("text/markdown") ||
+    url.searchParams.get("format") === "markdown";
   const posts = getAllPosts().slice(0, 30);
   // Every English article, not only the latest: on 10-28 the English posts were the ones
   // no crawler had fetched in two days, and this file used to list Chinese posts only.
@@ -69,7 +74,9 @@ export async function GET() {
 
   return new Response(lines.join("\n"), {
     headers: {
-      "Content-Type": "text/plain; charset=utf-8",
+      "Content-Type": wantsMarkdown
+        ? "text/markdown; charset=utf-8"
+        : "text/plain; charset=utf-8",
       "Cache-Control": "public, max-age=3600, s-maxage=3600",
     },
   });

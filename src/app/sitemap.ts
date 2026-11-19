@@ -35,6 +35,8 @@ const STATIC_PATHS = [
   "/prompts/chatgpt-images-2-6", // ChatGPT Images 2.6 合集（2026-11-05）
   "/prompts/gemini-4", // Gemini 4 合集（2026-11-16，种子来自 Claude 库里的同题对比）
   "/backlink-spam-list", // 垃圾外链来源库（名单在 GitHub zhuyansen/backlink-spam-list，页面每天重读）
+  "/contact",
+  "/sitemap-html",
   "/privacy",
   "/terms",
 ];

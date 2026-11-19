@@ -640,6 +640,238 @@ export const LEARN_SEO = {
   },
 };
 
+export interface SeoSchoolPerson {
+  name: string;
+  handle?: string;
+  url: string;
+  role: { zh: string; en: string };
+}
+
+export interface SeoSchool {
+  id: string;
+  num: string;
+  badge: { zh: string; en: string };
+  color: string;
+  /** 2D 坐标图位置：x (0=纯站内产品/技术, 100=纯站外共识/外链), y (0=顶部长期白帽复利, 100=底部算法套利/灰帽红队) */
+  x: number;
+  y: number;
+  layer: { zh: string; en: string };
+  name: { zh: string; en: string };
+  people: SeoSchoolPerson[];
+  core: { zh: string; en: string };
+  borrow: { zh: string; en: string };
+  caveat: {
+    zh: string;
+    en: string;
+    link?: { label: { zh: string; en: string }; url: string };
+  };
+}
+
+/** 全球 SEO / GEO 六大实战流派地图与去伪存真指南（2026-11-19 整理） */
+export const SEO_SCHOOLS_MAP: {
+  intro: { zh: string; en: string };
+  axes: {
+    xLeft: { zh: string; en: string };
+    xRight: { zh: string; en: string };
+    yTop: { zh: string; en: string };
+    yBottom: { zh: string; en: string };
+  };
+  schools: SeoSchool[];
+} = {
+  intro: {
+    zh: "海内外的 SEO 和 GEO 实战派看起来观点打架，其实是在回答搜索引擎和 AI 检索链条上不同环节的问题。把他们放到「横轴：站内产品与技术 ↔ 站外共识与外链」、「纵轴：长期白帽复利 ↔ 算法实验与红队测试」的坐标系里，就能看清每个人教的是哪一层、哪些能直接抄、哪些要拿 Google 官方文档和实证数据去伪存真：",
+    en: "SEO and GEO practitioners often sound like they contradict one another because each works on a different layer of search and AI retrieval. Mapping them across two axes — On-Site Product & Tech vs. Off-Site Consensus & Links (horizontal) and Long-Term Compounding Moat vs. Algorithm Arbitrage & Red-Team Testing (vertical) — shows what each school teaches, what to borrow, and where to cross-check against Google's official policies:",
+  },
+  axes: {
+    xLeft: { zh: "← 站内：产品库存 / 语义架构 / 页面数学", en: "← On-site: product inventory, semantics & page math" },
+    xRight: { zh: "站外：评测矩阵 / 多席位证据 / 外链共识 →", en: "Off-site: review matrix, multi-seat proof & links →" },
+    yTop: { zh: "↑ 长期白帽复利（抗算法更新护城河）", en: "↑ Long-term compounding moat (white-hat)" },
+    yBottom: { zh: "↓ 算法极限测试与灰帽红队（短期套利 / 需防惩罚）", en: "↓ Algorithm stress-testing & grey-hat red team" },
+  },
+  schools: [
+    {
+      id: "product-led",
+      num: "①",
+      badge: { zh: "产品与工具交互派", en: "Product-Led & Tool UX" },
+      color: "blue",
+      x: 18,
+      y: 18,
+      layer: { zh: "第 1 层：建什么页面（搜索即产品）", en: "Layer 1: What to build (search as a product)" },
+      name: { zh: "产品驱动与新词工具交互派（Product-Led SEO）", en: "Product-Led & Interactive Tool SEO" },
+      people: [
+        { name: "Eli Schwartz", url: "https://www.productledseo.com/t/playbooks", role: { zh: "《Product-Led SEO》作者、前 SurveyMonkey SEO 负责人", en: "Author of Product-Led SEO, former SurveyMonkey SEO lead" } },
+        { name: "哥飞", handle: "@gefei55", url: "https://new.web.cafe/tutorials", role: { zh: "出海新词工具站与广告/订阅变现社群主理人", en: "New-term tool sites & AdSense/subscription community host" } },
+        { name: "大罗SEO", handle: "@daluoseo", url: "https://www.youtube.com/@daluoseo", role: { zh: "Product-Led SEO 中文拆解与程序化落地", en: "Product-Led SEO & programmatic landing pages in Chinese" } },
+        { name: "Joker", handle: "@JokerMayCry_Jun", url: "https://x.com/JokerMayCry_Jun", role: { zh: "细分 Niche 算法差异与 AI 工具首屏交互实战", en: "Niche algorithm differences & above-the-fold tool UX" } },
+      ],
+      core: {
+        zh: "反对按关键词工具导出的词表批量写凑字数的科普长文（Eli 称之为红海 SEO）。核心是把「独家结构化数据、分类页或在线小工具」直接做成满足搜索意图的页面（像 Zillow 给每个门牌号建一页、Zapier 给每对软件建集成页、Drops 零外链零关键词调研靠 37 语种视觉词典拿 3,000 万月曝光）。哥飞专攻抢在新词进词库前 48 小时上线单页工具；Joker 强调不同 Niche 算法权重完全不同，AI 工具词首屏必须直接带可交互功能。",
+        en: "Rejects cranking out long-form filler articles from keyword-tool spreadsheets ('Red Ocean SEO'). Instead, turn structured datasets, taxonomies or interactive utilities directly into pages that solve the query (like Zillow's address pages, Zapier's app-pair pages, or Drops reaching 30M monthly impressions with zero keyword research). Gefei targets brand-new terms with single-page tools before keyword tools list them; Joker stresses that algorithm weights differ by niche and AI tool pages must put an interactive utility above the fold.",
+      },
+      borrow: {
+        zh: "1. 首屏直接给可交互的工具或结构化对比表；2. 改造内链为 Eli 书中第 6 章的「西南航空网格」：除了同分类相关页，加入每日缓存刷新一次的随机高分推荐模块、最新收录模块和页脚纯文本 HTML Sitemap，消灭孤岛页；3. 盯紧 GSC 的曝光量（Impressions）作为最早期领先指标。",
+        en: "1. Put an interactive tool or structured table above the fold; 2. Build a 'Southwest Airlines' mesh internal link graph (related items + daily-refreshed random picks + newest items + a plain HTML sitemap in the footer) so no page is orphaned; 3. Track GSC Impressions as your earliest leading indicator.",
+      },
+      caveat: {
+        zh: "去伪存真：程序化建站最忌盲目铺空壳页。Joker 的检验铁律是「页面增量必须与流量增长成正比」（扩 1,000 页只涨几十流量说明在稀释整站质量）；Eli 在书中也记录过把 100 多个重复度高的汽车站狠心砍到只剩 4 个站，流量反而涨到被罚前的 125%。",
+        en: "Fact-check: Never scale empty programmatic shells. Joker's rule of thumb is that page growth must bring proportional traffic growth; Eli's Panda recovery case study pruned 100+ near-duplicate auto sites down to 4 sites and reached 125% of pre-penalty traffic.",
+        link: {
+          label: { zh: "Google 门户页面与薄弱内容政策", en: "Google doorway & thin content policy" },
+          url: "https://developers.google.com/search/docs/essentials/spam-policies?hl=zh-cn#doorways",
+        },
+      },
+    },
+    {
+      id: "semantic-technical",
+      num: "②",
+      badge: { zh: "语义图谱与多语言技术派", en: "Semantic & Multilingual Tech" },
+      color: "indigo",
+      x: 30,
+      y: 26,
+      layer: { zh: "第 2 层：机器怎么读懂你（实体三元组与 SSR 渲染）", en: "Layer 2: How machines parse you (Entity-Attribute-Value & SSR)" },
+      name: { zh: "语义图谱、本体论与多语言技术架构派（Semantic & Technical SEO）", en: "Semantic Ontology & Multilingual Technical SEO" },
+      people: [
+        { name: "Koray Tuğberk GÜBÜR", url: "https://www.holisticseo.digital/", role: { zh: "Holistic SEO 创始人，语义 SEO 与 Topical Map 体系代表", en: "Founder of Holistic SEO, Topical Authority & Semantic SEO" } },
+        { name: "Marc Moeller", handle: "@moellerseo", url: "https://www.youtube.com/@moellerseo", role: { zh: "本体论（Ontology）与 Schema 实体消歧实战", en: "Ontology & Schema entity disambiguation" } },
+        { name: "Loki Yan", handle: "@loki_yan_seo", url: "https://lokiyan.com/", role: { zh: "First Optimise 联创、Google Search Central APAC 与 Ahrefs Evolve 讲者", en: "First Optimise co-founder, Google Search Central APAC speaker" } },
+      ],
+      core: {
+        zh: "把网站当成喂给搜索引擎和 LLM 的结构化知识库。Koray 强调按 Entity-Attribute-Value（实体-属性-值）三元组覆盖话题全貌；Marc Moeller 专注用严密的 JSON-LD（@id、sameAs、mainEntity）帮机器消除同名歧义；Loki Yan 从与 Tier-1 大站交锋的实战出发，指出「DA 与外链数从来不是 SEO 的牛顿定律」，真正拉开差距的是话题权威度、品牌搜索与原创度，并揭示了 AI 推荐中的「语种非对称性」——欧美大模型底座围绕英文语料构建，非英语品牌不进英文语料生态就会在 AI 推荐中天然吃亏。",
+        en: "Treats a website as a structured knowledge graph for search engines and LLMs. Koray structures content around Entity-Attribute-Value (EAV) triples; Marc Moeller uses strict JSON-LD (@id, sameAs) for entity disambiguation; Loki Yan shows why 'DA and backlink counts were never SEO's Newton's laws' when competing against Tier-1 sites, and highlights the 'Language Asymmetry in AI Recommendation' — Western LLMs are built on English corpora first.",
+      },
+      borrow: {
+        zh: "1. 核心 HTML 文本必须无需执行 JavaScript 即可直出（Loki 在 Google Search Central 演讲的核心教训），并支持 Accept: text/markdown 与 /llms.txt；2. 全站 JSON-LD 用固定 @id 串联 Organization、WebApplication 和 Dataset；3. 做多语言出海时，先打穿英文权威信源，因为 Peec AI 与 Loki 的研究都证实 78% 非英语 AI 提问底层会扇出到英文检索。",
+        en: "1. Serve core text in raw HTML without requiring client-side JavaScript, plus /llms.txt and Markdown negotiation; 2. Connect Organization, WebApplication and Dataset JSON-LD with stable @id URIs; 3. Establish English-language sources even for non-English markets, since Western LLMs fan out to English retrieval.",
+      },
+      caveat: {
+        zh: "去伪存真：别把 JSON-LD 当成排名作弊开关。Google 官方《结构化数据常规指南》明确规定：Schema 标记里的每个字段必须与页面上人类肉眼可见的文本完全一致，隐藏不展示的标记或虚构评分会收到手动处罚。",
+        en: "Fact-check: JSON-LD is not a ranking cheat code. Google's General Structured Data Guidelines require every marked-up property to match visible text on the page; hidden or fabricated markup risks a manual action.",
+        link: {
+          label: { zh: "Google 结构化数据官方指南", en: "Google Structured Data Guidelines" },
+          url: "https://developers.google.com/search/docs/appearance/structured-data/sd-policies?hl=zh-cn",
+        },
+      },
+    },
+    {
+      id: "onpage-math-rag",
+      num: "③",
+      badge: { zh: "页面数学与 RAG 切片派", en: "On-Page Math & RAG Chunks" },
+      color: "emerald",
+      x: 42,
+      y: 44,
+      layer: { zh: "第 3 层：单页怎么排上去并被 AI 抽中（词频位置与切片统计）", en: "Layer 3: How pages rank and get extracted by RAG chunks" },
+      name: { zh: "页面微观数学与 RAG 切片统计派（Mathematical On-Page & RAG）", en: "Mathematical On-Page & RAG Chunking" },
+      people: [
+        { name: "Kyle Roof", handle: "@kylebot1997", url: "https://www.youtube.com/watch?v=n35P_Mjsk3Y&t=2423s", role: { zh: "PageOptimizer Pro 联创，400+ 控制变量实验与 10,937 页 AEO 研究", en: "PageOptimizer Pro co-founder, 400+ controlled tests & 10,937-page study" } },
+        { name: "Michał Suski", url: "https://surferseo.com/", role: { zh: "Surfer SEO 联创，OpenAI 500M 词向量与榜单位置引用率实证", en: "Surfer SEO co-founder, OpenAI 500M vector & listicle citation study" } },
+        { name: "Jabez Reuben", handle: "@jabezreuben", url: "https://www.youtube.com/watch?v=n35P_Mjsk3Y&t=1124s", role: { zh: "LLM Mastery 大会创办人、The Blueprints 创始人", en: "Founder of LLM Mastery conference & The Blueprints" } },
+      ],
+      core: {
+        zh: "用大样本统计和控制变量实验拆解「单页排名的数学位置」与「大模型 RAG 切片抽样规律」。Kyle Roof 对 10,937 个页面的研究指出商业赚钱页（Money Pages）最容易不及格，核心关键词与共现实体必须精准落入 <title>、H1、首段和 H2 四个数学位置；Suski 通过大样本证实 AI 回答高度依赖外部综合盘点榜单（Listicles），且排在榜单前 3~5 名（页面前 30% 切片）拿走了 32%~52% 的点名率；Jabez Reuben 则补充了关键反例：如果排第 1 的段落全是空话，大模型反而会越过第 1 名去抓取后面带有具体统计数字（Concrete Stats）的竞品。",
+        en: "Uses large-sample stats and controlled tests to decode on-page math and RAG chunk extraction. Kyle Roof's 10,937-page study shows Money Pages fail most often and must place primary terms and co-occurring entities in four mathematical zones (<title>, H1, first paragraph, H2s); Suski proved that top 3–5 listicle slots (first 30% of chunks) capture 32%–52% of AI mentions; Jabez Reuben showed that LLMs skip fluff at #1 to cite a lower-ranked entry that carries concrete statistics.",
+      },
+      borrow: {
+        zh: "1. 检查你的首页和核心转化页（Money Pages）的 <title>、H1、首段是否包含完整核心词与关联实体；2. 每个 H2 下先写一段 40~60 词、不依赖上下文就能独立读懂的「自包含答案块（Answer Block）」；3. 无论在自建 /best/ 榜还是投递外部榜单，品牌简介必须带 3 个以上硬核统计数字（如收录量、实测延迟、安全评分）。",
+        en: "1. Audit <title>, H1 and opening paragraph on your Money Pages for primary terms and entities; 2. Place a self-contained 40–60 word Answer Block right under each H2; 3. Include at least three concrete stats in every listicle blurb so RAG rerankers pick your chunk.",
+      },
+      caveat: {
+        zh: "去伪存真：数学位置是给检索器看的，但绝不能写成生硬堆词。Kyle Roof 本人也在清迈圆桌警告：纯 AI 裸写的文章犹如「机械土耳其人」，不经人工校验真实参数与可读性，在搜索引擎里留存极差。",
+        en: "Fact-check: Mathematical placement feeds the retriever, but keyword stuffing kills conversions. Kyle Roof warns that raw, unedited AI text performs poorly without human verification and real data.",
+      },
+    },
+    {
+      id: "affiliate-bofu",
+      num: "④",
+      badge: { zh: "Affiliate 评测与漏斗转化派", en: "Affiliate Matrix & BoFu" },
+      color: "amber",
+      x: 62,
+      y: 24,
+      layer: { zh: "第 4 层：怎么把流量变成钱（以 Info 养 Commercial 与高意图短页）", en: "Layer 4: Turning traffic into revenue (Info-to-Commercial & BoFu pages)" },
+      name: { zh: "英文 Affiliate 评测矩阵与漏斗底部转化派（Affiliate & BoFu SEO）", en: "Affiliate Review Matrix & Bottom-of-Funnel SEO" },
+      people: [
+        { name: "John \"JP\" Zhang（张江鹏）", handle: "@jiangpengzhang", url: "https://www.youtube.com/@seoactionblog", role: { zh: "「英文SEO实战派」主理人、深圳 SEO 大会发起人（16 年英文 SEO 实战）", en: "Host of 'English SEO Action' & founder of Shenzhen SEO Conference" } },
+        { name: "Edward Sturm", handle: "@edwardeachday", url: "https://www.youtube.com/watch?v=n35P_Mjsk3Y", role: { zh: "The Edward Show 日更播客主理人、Compact Keywords 作者", en: "Host of The Edward Show (1,230+ episodes) & Compact Keywords" } },
+        { name: "Davie Fogarty", handle: "@DavieFogarty", url: "https://www.youtube.com/@DavieFogarty", role: { zh: "The Oodie 创始人（5 亿澳元 DTC 品牌），品牌搜索心智与单页 CRO", en: "Founder of The Oodie ($500M+ DTC), branded search demand & CRO" } },
+      ],
+      core: {
+        zh: "一切围绕真实订单和佣金转化设计内容矩阵。John JP 提出经典的「SEO = 内容 + 外链 + 技术端 + 用户交互」四维等式，以及 Affiliate 站三类文章矩阵（Roundup 多品盘点 + Single 单品评测 + Info 干货科普）：因为外部站长不会免费给你的赚钱评测页发外链，必须靠高质量 Info 文章和行业统计数据页作为「链接诱饵」吸引自然外链，再用站内内链把权重精准灌给 Roundup 赚钱页（「以 Info 养 Commercial」）；同时建议独立站自建 Affiliate 分佣计划，发动全球联盟客替你写评测霸屏 Google 和 AI。Edward Sturm 专攻漏斗底部高购买意图的紧凑词（Compact Keywords）；Davie Fogarty 则把 SEO 视为接住社媒种草后的品牌词收割器。",
+        en: "Designs content matrices around orders and affiliate revenue. John JP teaches the four-part equation (Content + Links + Tech + UX) and the 'Info feeds Commercial' architecture: earn natural backlinks to informational guides and statistics pages, then funnel authority via internal links into Roundup and Single-Product review money pages — plus launch your own Affiliate Program so global affiliates write listicles about you. Edward Sturm targets high-intent bottom-of-funnel Compact Keywords; Davie Fogarty pairs social demand generation with high-converting brand and comparison pages.",
+      },
+      borrow: {
+        zh: "1. 用独家行业统计报告（Info 页）吸引媒体与社区自然外链，再用站内内链集中导权给 /best/ 选型页与核心产品页；2. 优先建漏斗底部的对比页（X vs Y、Alternatives、Best for [细分场景]）；3. 核查 ChatGPT 商家后台漏算的「无链接纯品牌点名（Unlinked Mentions）」（Edward 实测官方后台只算带超链接的引用，漏掉一半以上点名）。",
+        en: "1. Publish original data reports (Info pages) to attract natural links, then route internal link equity to your /best/ roundup and money pages; 2. Prioritize bottom-of-funnel comparison pages (X vs Y, Alternatives, Best for [Niche]); 3. Track unlinked brand mentions alongside linked citations.",
+      },
+      caveat: {
+        zh: "去伪存真：2024–2026 年 Google 核心更新与「网站声誉滥用政策（Site Reputation Abuse）」重创了纯洗稿、无真机实测的传统 Affiliate 站。John JP 也强调纯堆词内容站模式已死，评测页必须有第一手实测数据、截图或向 Micro SaaS 工具化转型。",
+        en: "Fact-check: Google's Core Updates and Site Reputation Abuse policy crushed generic, rewritten affiliate sites without first-hand testing. Reviews now require original test data, screenshots, or interactive Micro-SaaS utilities.",
+        link: {
+          label: { zh: "Google 高质量评测指南", en: "Google Reviews System Guidelines" },
+          url: "https://developers.google.com/search/docs/appearance/reviews-system?hl=zh-cn",
+        },
+      },
+    },
+    {
+      id: "consensus-proof",
+      num: "⑤",
+      badge: { zh: "证据链与多席位共识派", en: "Proof Chains & Multi-Seat" },
+      color: "purple",
+      x: 78,
+      y: 38,
+      layer: { zh: "第 5 层：怎么让 AI 采信并推荐你的品牌（站外证据与多平台占座）", en: "Layer 5: How LLMs verify and recommend your brand (proof & multi-seat consensus)" },
+      name: { zh: "站外证据链、细分属性绑定与多席位共识派（Proof & Consensus GEO）", en: "Off-Site Proof Chains, Niche Attributes & Multi-Seat Consensus" },
+      people: [
+        { name: "David G Quaid", handle: "@DavidGQuaid", url: "https://x.com/DavidGQuaid/status/2122356087378829685", role: { zh: "Primary Position 创始人，「外链即 Claim 的证据」与多席位占座", en: "Founder of Primary Position, 'links as proof for claims' & multi-seat math" } },
+        { name: "Kasra Dash", handle: "@Kasra_Dash", url: "https://www.youtube.com/watch?v=n35P_Mjsk3Y&t=4113s", role: { zh: "The Masterminders 创始人，单一细分属性绑定与 AI 评标核验", en: "Founder of The Masterminders, niche attribute binding & AI tender verification" } },
+        { name: "Dennis Yu", url: "https://www.youtube.com/watch?v=n35P_Mjsk3Y&t=960s", role: { zh: "BlitzMetrics 创始人，Wikidata 知识面板闭环与 MCP 无 UI 软件观", en: "Founder of BlitzMetrics, Wikidata Knowledge Panels & MCP 'SaaS without UI'" } },
+        { name: "Hank Chang", url: "https://www.smartanswer.com.tw/", role: { zh: "台湾最準行銷合伙人 / MTSK，Search Everywhere 多平台信任闭环", en: "Partner at Smart Answer Taiwan, Search Everywhere multi-channel trust loop" } },
+      ],
+      core: {
+        zh: "回答「大模型早就知道你存在，凭什么推荐你（Selection）」的问题。David Quaid 点破：AI 检索每次综合约 20 个网页信源，外链在 AI 时代不仅是权重投票，更是「你宣称自己是第一的外部证据（Proof for Claims）」；而且单靠 1 个主站只能占 20 个信源里的 1 个席位，必须在多个高权信源上占座。Kasra Dash 指出「被 AI 认识 ≠ 被 AI 推荐」，必须把品牌死死绑定在一个极细分的属性上（如「最适合 Claude Code 的安全验证 Skill 库」），且所有资质参数必须经得起 AI 交叉核验。Dennis Yu 强调修好 Wikidata + 认领 Google 知识面板，并指出未来 Agent 直接通过 MCP 调用工具（无 UI 的 SaaS）。",
+        en: "Solves the 'Selection' problem in LLMs. David Quaid notes that when an LLM synthesizes ~20 sources, external links and mentions act as 'Proof for Claims', and occupying multiple seats in the top 20 raises citation probability exponentially. Kasra Dash distinguishes being known from being recommended by binding your brand to one specific niche attribute with verifiable facts. Dennis Yu champions Wikidata + Google Knowledge Panel verification and MCP-native 'SaaS without a UI'.",
+      },
+      borrow: {
+        zh: "1. 用「白帽版多席位占座」拿满检索前 20 名的多个席位：主站 + 个人品牌站 + GitHub 开源仓/Awesome 榜 + PyPI/npm 官方包页 + YouTube 6 分钟实测视频（吃 Google AI Overviews 视频槽位）；2. 全网所有简介统一绑定同一个细分属性词与一致的实测数字；3. 用 backlink-guard asked 的贪心集合覆盖算法（Greedy Set Cover）挑出边际覆盖度最高的第三方榜单去争取入榜。",
+        en: "1. Occupy multiple legitimate seats in top-20 retrieval: main site + personal site + GitHub repo/Awesome list + PyPI/npm package page + a 6-minute YouTube demo video (for Google AIO video slots); 2. Bind your brand to one consistent niche attribute and identical stats everywhere; 3. Use backlink-guard asked (Greedy Set Cover) to prioritize high-coverage third-party listicles.",
+      },
+      caveat: {
+        zh: "去伪存真：Quaid 团队测试过的「40 天批量建 65 个 EMD 精确匹配域名卫星站占座」属于灰帽打法，Edward Sturm 当场提醒 Google 能通过注册商、GSC 与主机指纹识别站群连坐。用 GitHub、PyPI、YouTube 等天然高权第三方平台占座既安全又持久。",
+        en: "Fact-check: Spinning up 65 EMD satellite sites in 40 days to occupy retrieval seats risks footprint detection across registrars and GSC. Use legitimate high-authority seats (GitHub, PyPI, YouTube, documentation hubs) instead.",
+      },
+    },
+    {
+      id: "redteam-testing",
+      num: "⑥",
+      badge: { zh: "科学实验与灰帽红队派", en: "Controlled Tests & Red Team" },
+      color: "rose",
+      x: 84,
+      y: 82,
+      layer: { zh: "第 6 层：算法边界在哪里（单变量压力测试与反作弊防守）", en: "Layer 6: Where the algorithm breaks (stress tests & anti-spam defense)" },
+      name: { zh: "科学控制变量实验与灰帽红队压力测试派（Scientific Testing & Red Team）", en: "Controlled Experimentation & Grey/Black-Hat Red Team" },
+      people: [
+        { name: "Matt Diggity", handle: "@mattdiggityseo", url: "https://mattdiggity.com/", role: { zh: "Diggity Marketing / 清迈 SEO 大会（CMSEO）创办人", en: "Founder of Diggity Marketing & Chiang Mai SEO Conference (CMSEO)" } },
+        { name: "Charles Floate", handle: "@Charles_SEO", url: "https://x.com/Charles_SEO", role: { zh: "灰帽/黑帽算法漏洞压力测试与寄生虫 SEO 观察", en: "Grey/black-hat algorithm stress tests & Parasite SEO" } },
+        { name: "Kalin Karakehayov", handle: "@Karakehayov", url: "https://www.youtube.com/watch?v=n35P_Mjsk3Y&t=6645s", role: { zh: "SEO.Domains 创始人（手握 20 万+ 老域名与 3 万站无链接提及网络）", en: "Founder of SEO.Domains (200k+ aged domains & 30k-site mention network)" } },
+      ],
+      core: {
+        zh: "不信官方公关辞令，只信真金白银的测试盘。Matt Diggity 倡导严密的单变量对照测试（Test, Don't Guess），并在大站上用模板页分桶验证 CTR 与停留时长对排名的真实拉动；Charles Floate 与 Kalin Karakehayov 则属于典型的「算法红队」——天天拿测试站试探过期老域名 301、高权非营利站孤岛页寄生（Orphan Page Parasite）以及「3 万个老域名批量发 $14 无超链接纯文本品牌提及」能不能骗过大模型和 Google 反作弊。",
+        en: "Trusts live test sites over PR statements. Matt Diggity runs controlled single-variable experiments; Charles Floate and Kalin Karakehayov act as an algorithmic red team — stress-testing expired domain 301s, orphan-page parasite listicles, and 30,000-site unlinked brand mention networks to see what slips past Google and LLM filters.",
+      },
+      borrow: {
+        zh: "1. 借他们公开发布的「红队测试结论」看清算法当下真实的权重倾斜（例如老站点孤岛页在 Google 两周被封、但在 ChatGPT 仍被引用；无链接品牌提及对 AI 可见度的影响）；2. 在你自己的主站上学习 Matt Diggity 和 Eli Schwartz 的「模板页分桶 A/B 测试」，每次抽样改一批页面的 Title 公式看 GSC 实测涨跌。",
+        en: "1. Read their public red-team findings as an early warning radar for where retrieval weights and spam loopholes currently sit; 2. Apply controlled split-bucket template testing on your own site to measure real GSC click and conversion lift.",
+      },
+      caveat: {
+        zh: "去伪存真（最高红线）：红队博主拿随时可弃的测试站（Churn & Burn）试探漏洞，但你的主品牌站一旦买进站群外链或空心老域名网络，几次核心更新就会被连根拔起。Google 2024–2026《垃圾内容政策》已专门新增「过期域名滥用」与「网站声誉滥用（寄生虫 SEO）」两条重罚红线；提交或采购任何外链前，先用 backlink-guard vet 筛掉空心高 DR 站群。",
+        en: "Fact-check (hard red line): Red-teamers burn disposable test sites, whereas your main brand domain cannot afford a penalty. Google's 2024–2026 Spam Policies explicitly target Expired Domain Abuse and Site Reputation Abuse (Parasite SEO). Always run backlink-guard vet to filter out hollow link farms.",
+        link: {
+          label: { zh: "Google 过期域名与网站声誉滥用政策", en: "Google Expired Domain & Site Reputation Abuse Policy" },
+          url: "https://developers.google.com/search/docs/essentials/spam-policies?hl=zh-cn#site-reputation",
+        },
+      },
+    },
+  ],
+};
+
 /** 建站的另一种做法：全放 Cloudflare（左子祯 2026-03-10） */
 export const CLOUDFLARE_STACK = {
   by: "左子祯",

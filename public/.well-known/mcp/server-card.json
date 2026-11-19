@@ -1,0 +1,45 @@
+{
+  "version": "1.0",
+  "protocolVersion": "2025-06-18",
+  "name": "jasonzhu-ai",
+  "description": "Jason Zhu (祝彦森) — AI tool tutorials, going-global playbooks for indie founders, daily AI news, and GoSail Club community resources.",
+  "url": "https://jasonzhu.ai",
+  "endpoint": "https://jasonzhu.ai/llms.txt",
+  "documentationUrl": "https://jasonzhu.ai/llms.txt",
+  "iconUrl": "https://jasonzhu.ai/favicon.ico",
+  "serverInfo": {
+    "name": "jasonzhu-ai",
+    "title": "JasonZhu.AI Knowledge & Search Tools",
+    "version": "1.0.0"
+  },
+  "transport": {
+    "type": "streamable-http",
+    "endpoint": "https://jasonzhu.ai/llms.txt"
+  },
+  "capabilities": {
+    "tools": {
+      "listChanged": false
+    },
+    "resources": {
+      "subscribe": false,
+      "listChanged": false
+    },
+    "prompts": {
+      "listChanged": false
+    }
+  },
+  "authentication": {
+    "required": false,
+    "schemes": []
+  },
+  "tools": [
+    {
+      "name": "search_jasonzhu_articles",
+      "description": "Search JasonZhu.AI tutorials, going-global guides, and AI tool reviews by keyword."
+    },
+    {
+      "name": "get_going_global_guides",
+      "description": "List going-global playbooks (UK/US company registration, Stripe/Wise payments, SEO & GEO schools map)."
+    }
+  ]
+}

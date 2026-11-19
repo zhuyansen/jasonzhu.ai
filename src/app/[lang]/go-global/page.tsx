@@ -21,6 +21,7 @@ import {
   NEW_TERM_RADAR,
   PAGE_TUNING,
   POST_GROUPS,
+  SEO_SCHOOLS_MAP,
   SEO_SKILLS,
   SEO_TOOLS_DIRECTORY,
   STACK,
@@ -292,6 +293,166 @@ function LearnSeo({ l, isZh }: { l: "zh" | "en"; isZh: boolean }) {
           </p>
           <p className="mt-2 text-xs text-gray-400 leading-relaxed">{g.note[l]}</p>
         </div>
+      </div>
+    </div>
+  );
+}
+
+// 全球 SEO / GEO 六大实战流派地图与去伪存真指南（含 2D 坐标图 + 6 层检索链路 + 20 位实战派代表与官方红线校准）
+function SeoSchoolsMap({ l, isZh }: { l: "zh" | "en"; isZh: boolean }) {
+  const m = SEO_SCHOOLS_MAP;
+  const dotColors: Record<string, string> = {
+    blue: "bg-blue-600 text-white border-blue-700",
+    indigo: "bg-indigo-600 text-white border-indigo-700",
+    emerald: "bg-emerald-600 text-white border-emerald-700",
+    amber: "bg-amber-600 text-white border-amber-700",
+    purple: "bg-purple-600 text-white border-purple-700",
+    rose: "bg-rose-600 text-white border-rose-700",
+  };
+  const badgeColors: Record<string, string> = {
+    blue: "bg-blue-50 text-blue-700 border-blue-200",
+    indigo: "bg-indigo-50 text-indigo-700 border-indigo-200",
+    emerald: "bg-emerald-50 text-emerald-700 border-emerald-200",
+    amber: "bg-amber-50 text-amber-800 border-amber-200",
+    purple: "bg-purple-50 text-purple-700 border-purple-200",
+    rose: "bg-rose-50 text-rose-700 border-rose-200",
+  };
+
+  return (
+    <div id="seo-schools-map" className={`${BOX} mb-3 scroll-mt-24`}>
+      <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+        <p className="text-sm font-semibold text-gray-900">
+          {isZh ? "全球 SEO / GEO 六大实战流派地图与去伪存真指南" : "The 6 SEO & GEO Practitioner Schools: Map & Fact-Check Guide"}
+        </p>
+        <span className="text-xs px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 font-medium">
+          {isZh ? "6 大流派 · 20 位海内外实战派代表" : "6 schools · 20 hands-on practitioners"}
+        </span>
+      </div>
+      <p className="text-sm text-gray-600 leading-relaxed mb-4">{m.intro[l]}</p>
+
+      {/* 2D 视觉坐标图（横轴：站内产品/技术 ↔ 站外评测/外链共识；纵轴：长期白帽复利 ↔ 算法实验/灰帽红队） */}
+      <div className="rounded-2xl border border-gray-200 bg-gradient-to-b from-slate-50 to-white p-3.5 sm:p-4 mb-4">
+        <div className="text-center text-xs font-semibold text-emerald-700 mb-2">{m.axes.yTop[l]}</div>
+        <div className="relative w-full h-72 sm:h-80 rounded-xl border border-gray-200 bg-white overflow-hidden">
+          {/* 象限底色与十字中轴线 */}
+          <div className="absolute inset-0 grid grid-cols-2 grid-rows-2 pointer-events-none">
+            <div className="border-r border-b border-dashed border-gray-200 bg-blue-50/25 p-2">
+              <span className="text-[11px] font-medium text-blue-700/80">
+                {isZh ? "左上：站内产品资产 × 长期复利" : "Top-Left: On-site product moat"}
+              </span>
+            </div>
+            <div className="border-b border-dashed border-gray-200 bg-amber-50/25 p-2 text-right">
+              <span className="text-[11px] font-medium text-amber-800/80">
+                {isZh ? "右上：站外评测共识 × 长期品牌权威" : "Top-Right: Off-site consensus & brand proof"}
+              </span>
+            </div>
+            <div className="border-r border-dashed border-gray-200 bg-emerald-50/20 p-2 flex items-end">
+              <span className="text-[11px] font-medium text-emerald-800/80">
+                {isZh ? "左下：页面数学位置 × RAG 切片控制变量" : "Bottom-Left: On-page math & RAG chunking"}
+              </span>
+            </div>
+            <div className="bg-rose-50/25 p-2 flex items-end justify-end">
+              <span className="text-[11px] font-medium text-rose-700/80">
+                {isZh ? "右下：算法漏洞红队 × 老域名/站群压力测试" : "Bottom-Right: Red-team stress tests & grey-hat"}
+              </span>
+            </div>
+          </div>
+
+          {/* 坐标节点 */}
+          {m.schools.map((s) => (
+            <a
+              key={s.id}
+              href={`#school-${s.id}`}
+              style={{ left: `${s.x}%`, top: `${s.y}%` }}
+              className="group absolute -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col items-center text-center focus:outline-none"
+            >
+              <span
+                className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold shadow-sm border transition-transform group-hover:scale-105 ${dotColors[s.color]}`}
+              >
+                <span>{s.num}</span>
+                <span className="whitespace-nowrap">{s.badge[l]}</span>
+              </span>
+              <span className="mt-1 px-1.5 py-0.5 rounded bg-white/95 border border-gray-200 text-[11px] text-gray-700 shadow-2xs whitespace-nowrap max-w-[170px] sm:max-w-none truncate">
+                {s.people.map((p) => p.name.split("（")[0]).join(" / ")}
+              </span>
+            </a>
+          ))}
+        </div>
+        <div className="flex items-center justify-between text-xs font-medium text-gray-600 mt-2 px-1">
+          <span>{m.axes.xLeft[l]}</span>
+          <span>{m.axes.xRight[l]}</span>
+        </div>
+        <div className="text-center text-xs font-semibold text-rose-700 mt-1">{m.axes.yBottom[l]}</div>
+      </div>
+
+      {/* 6 大流派在搜索与 AI 检索全链路上的分工条 */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 mb-4">
+        {m.schools.map((s) => (
+          <a
+            key={s.id}
+            href={`#school-${s.id}`}
+            className={`rounded-xl border px-2.5 py-2 text-xs transition-colors hover:opacity-90 ${badgeColors[s.color]}`}
+          >
+            <p className="font-semibold truncate">
+              {s.num} {s.badge[l]}
+            </p>
+            <p className="text-[11px] opacity-85 mt-0.5 line-clamp-2">{s.layer[l]}</p>
+          </a>
+        ))}
+      </div>
+
+      {/* 六大流派逐一拆解卡片 */}
+      <div className="space-y-3">
+        {m.schools.map((s) => (
+          <div key={s.id} id={`school-${s.id}`} className="rounded-xl border border-gray-200 bg-gray-50/70 p-3.5 sm:p-4 scroll-mt-24">
+            <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+              <h3 className="text-sm font-semibold text-gray-900">
+                <span className="mr-1.5">{s.num}</span>
+                {s.name[l]}
+              </h3>
+              <span className={`text-xs px-2 py-0.5 rounded-full border font-medium ${badgeColors[s.color]}`}>{s.layer[l]}</span>
+            </div>
+
+            {/* 代表人物链接 */}
+            <div className="flex flex-wrap gap-1.5 mb-2.5">
+              {s.people.map((p) => (
+                <a
+                  key={p.name}
+                  href={p.url}
+                  {...OUT}
+                  className="inline-flex items-center gap-1 rounded-lg bg-white border border-gray-200 px-2.5 py-1 text-xs text-gray-800 hover:border-blue-300 hover:text-blue-600 transition-colors"
+                >
+                  <span className="font-semibold text-blue-600">{p.name}</span>
+                  {p.handle && <span className="text-gray-400 font-mono text-[11px]">{p.handle}</span>}
+                  <span className="text-gray-400">·</span>
+                  <span className="text-gray-600">{p.role[l]}</span>
+                </a>
+              ))}
+            </div>
+
+            <div className="space-y-2 text-sm leading-relaxed">
+              <p className="text-gray-700">
+                <span className="font-semibold text-gray-900">{isZh ? "核心主张：" : "Core thesis: "}</span>
+                {s.core[l]}
+              </p>
+              <p className="text-gray-700">
+                <span className="font-semibold text-emerald-700">{isZh ? "可直接拿来用：" : "What to borrow: "}</span>
+                {s.borrow[l]}
+              </p>
+              <p className="rounded-lg border border-amber-200 bg-amber-50/70 px-3 py-2 text-xs text-gray-700 leading-relaxed">
+                {s.caveat[l]}
+                {s.caveat.link && (
+                  <>
+                    {" "}
+                    <a href={hl(s.caveat.link.url, l)} {...OUT} className="font-medium text-blue-600 hover:underline">
+                      {s.caveat.link.label[l]} →
+                    </a>
+                  </>
+                )}
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -885,6 +1046,7 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
           </div>
         </div>
         <LearnSeo l={l} isZh={isZh} />
+        <SeoSchoolsMap l={l} isZh={isZh} />
         <SeoSystem l={l} isZh={isZh} />
         <GeoNewSite l={l} isZh={isZh} />
         <div className="grid gap-3 md:grid-cols-2">

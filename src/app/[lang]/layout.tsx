@@ -19,19 +19,49 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+import WebMcpRegister from "@/components/WebMcpRegister";
+
 const SITE_URL = "https://jasonzhu.ai";
 
-// 全站 JSON-LD：Person + WebSite（中文名和各平台主页见 lib/profiles.ts）
-const organizationJsonLd = {
+// 全站 JSON-LD：Organization + Person + WebSite + Service/Offer（覆盖 Structured meaning 与 Commercial legibility 全部检测项）
+const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: AUTHOR_NAME,
   alternateName: AUTHOR_ALT_NAME,
   url: "https://jasonzhu.ai",
   image: "https://jasonzhu.ai/avatar.jpg",
+  email: "mailto:jason@jasonzhu.ai",
   sameAs: PROFILES.map((p) => p.url),
   jobTitle: "AI Blogger & Trainer",
   description: "前AI算法工程师，现AI博主/MCN/培训师",
+};
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "JasonZhu.AI (GoSail Global)",
+  legalName: "BRICKAI (GoSailGlobal LLC)",
+  url: "https://jasonzhu.ai",
+  logo: "https://jasonzhu.ai/avatar.jpg",
+  email: "jason@jasonzhu.ai",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "30 N Gould St, Ste N",
+    addressLocality: "Sheridan",
+    addressRegion: "WY",
+    postalCode: "82801",
+    addressCountry: "US",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "customer support",
+    email: "jason@jasonzhu.ai",
+    url: "https://jasonzhu.ai/zh/services",
+    availableLanguage: ["zh-CN", "en"],
+  },
+  founder: { "@type": "Person", name: AUTHOR_NAME },
+  sameAs: PROFILES.map((p) => p.url),
 };
 
 const websiteJsonLd = {
@@ -42,6 +72,26 @@ const websiteJsonLd = {
   description: "AI工具评测、实战教程、行业洞察与出海增长策略",
   author: { "@type": "Person", name: "Jason Zhu" },
   inLanguage: ["zh-CN", "en"],
+};
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "GoSail Club 启航会 & 企业 AI 实战培训",
+  provider: {
+    "@type": "Organization",
+    name: "JasonZhu.AI (GoSail Global)",
+    url: "https://jasonzhu.ai",
+  },
+  description: "AI 出海实战社群（GoSail Club）、企业 AI 培训、MCN 合作与跨境出海技术咨询服务。",
+  offers: {
+    "@type": "Offer",
+    name: "GoSail Club 年度会员",
+    price: "365",
+    priceCurrency: "CNY",
+    availability: "https://schema.org/InStock",
+    url: "https://jasonzhu.ai/zh/club",
+  },
 };
 
 interface Props {
@@ -150,6 +200,18 @@ export default async function LangLayout({ children, params }: Props) {
           title="JasonZhu.AI - 博客 RSS"
           href="/feed/blog.xml"
         />
+        <link
+          rel="describedby"
+          type="text/plain"
+          title="LLMs.txt"
+          href="/llms.txt"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(personJsonLd),
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -162,8 +224,15 @@ export default async function LangLayout({ children, params }: Props) {
             __html: JSON.stringify(websiteJsonLd),
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(serviceJsonLd),
+          }}
+        />
       </head>
       <body className="min-h-full flex flex-col bg-white text-gray-900">
+        <WebMcpRegister />
         <Header lang={lang} dict={dict} />
         <main className="flex-1">{children}</main>
         <Footer lang={lang} dict={dict} />

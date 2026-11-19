@@ -66,6 +66,24 @@ const nextConfig: NextConfig = {
         has: [{ type: "host", value: ".*\\.vercel\\.app" }],
         headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
       },
+      {
+        // RFC 8288 Link header for AI agent discovery (llms.txt + MCP Server Card)
+        source: "/:path(|zh|en)",
+        headers: [
+          {
+            key: "Link",
+            value:
+              '</llms.txt>; rel="describedby"; type="text/plain", </.well-known/mcp/server-card.json>; rel="service-desc"; type="application/json"',
+          },
+        ],
+      },
+      {
+        source: "/.well-known/mcp/server-card.json",
+        headers: [
+          { key: "Content-Type", value: "application/json; charset=utf-8" },
+          { key: "Access-Control-Allow-Origin", value: "*" },
+        ],
+      },
     ];
   },
 };

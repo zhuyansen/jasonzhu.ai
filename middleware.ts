@@ -18,6 +18,18 @@ function needsAuthRefresh(pathname: string): boolean {
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  // Agent-native Markdown negotiation: 当 AI Agent 请求 Accept: text/markdown 时，直接重写到 /llms.txt 并返回 text/markdown
+  const acceptHeader = request.headers.get("accept") || "";
+  if (
+    (pathname === "/" || pathname === "/zh" || pathname === "/en") &&
+    acceptHeader.toLowerCase().includes("text/markdown")
+  ) {
+    const mdUrl = request.nextUrl.clone();
+    mdUrl.pathname = "/llms.txt";
+    mdUrl.searchParams.set("format", "markdown");
+    return NextResponse.rewrite(mdUrl);
+  }
+
   // Lead magnet PDF：只放行邮件里发出的签名链接（7 天有效），其余跳回对应订阅页
   if (pathname.startsWith("/downloads/")) return guardDownload(request);
 
@@ -45,7 +57,14 @@ export async function middleware(request: NextRequest) {
   // 那样触发 trailingSlash 308 归一化，会直接 404
   const url = request.nextUrl.clone();
   url.pathname = `/${defaultLocale}${pathname === "/" ? "" : pathname}`;
-  return authRefresh(NextResponse.rewrite(url));
+  const res = NextResponse.rewrite(url);
+  if (pathname === "/") {
+    res.headers.set(
+      "Link",
+      '</llms.txt>; rel="describedby"; type="text/plain", </.well-known/mcp/server-card.json>; rel="service-desc"; type="application/json"'
+    );
+  }
+  return authRefresh(res);
 }
 
 async function guardDownload(request: NextRequest) {
