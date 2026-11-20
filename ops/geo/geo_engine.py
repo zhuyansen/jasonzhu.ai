@@ -1001,15 +1001,21 @@ def dennis_yu_six_site_entity_audit(
         }
     )
 
-    # 4. GitHub Open-Source Entity Node
+    # 4. GitHub Open-Source Entity Node (Profile + zhuyansen/zhuyansen Profile README + Repo Homepage)
     try:
         gh = http_get_json("https://api.github.com/users/zhuyansen", timeout=10.0)
+        profile_readme = http_get_text("https://raw.githubusercontent.com/zhuyansen/zhuyansen/main/README.md", timeout=10.0)
+        has_domain_in_readme = domain in profile_readme
+        has_doi_in_readme = "10.5281/zenodo.24386243" in profile_readme
         checks.append(
             {
                 "node": "4_GitHub_Developer_Node",
                 "target": "https://github.com/zhuyansen",
-                "status": "VERIFIED",
-                "evidence": f"login={gh.get('login')}, public_repos={gh.get('public_repos')}, blog='{gh.get('blog')}'",
+                "status": "VERIFIED" if has_domain_in_readme and has_doi_in_readme else "PARTIAL",
+                "evidence": (
+                    f"login={gh.get('login')}, public_repos={gh.get('public_repos')}, "
+                    f"profile_readme_links_domain={has_domain_in_readme}, profile_readme_cites_zenodo_dois={has_doi_in_readme}"
+                ),
             }
         )
     except Exception as exc:
