@@ -1,10 +1,12 @@
 "use client";
 
-import { useState, useRef, useEffect, Suspense } from "react";
+import { useState, useRef, useEffect, useSyncExternalStore } from "react";
 import Link from "@/components/Link";
-import { useSearchParams } from "next/navigation";
 import type { Locale } from "@/lib/dictionaries";
 import { track } from "@/lib/track";
+
+// URL 参数在一次访问里不变，不需要订阅
+const noSubscribe = () => () => {};
 
 const PLATFORMS = [
   "Anthropic", "OpenAI", "Google", "NVIDIA", "Microsoft",
@@ -13,9 +15,14 @@ const PLATFORMS = [
 
 function GuideContent({ lang }: { lang: Locale }) {
   const isZh = lang === "zh";
-  const searchParams = useSearchParams();
   // 邮件里的下载链接过期或无效时，middleware 带 ?expired=1 跳回这里
-  const expired = searchParams.get("expired") === "1";
+  // ?expired=1 在浏览器端读、服务端当 false：用 next/navigation 读 URL 参数会让整页退回客户端渲染（服务端 HTML 只剩 "..."，
+  // OpenSEO 2026-11-19 报这两页无 H1、内容过少、互为重复）
+  const expired = useSyncExternalStore(
+    noSubscribe,
+    () => new URLSearchParams(window.location.search).get("expired") === "1",
+    () => false,
+  );
 
   const [email, setEmail] = useState("");
   const [website, setWebsite] = useState(""); // honeypot
@@ -247,8 +254,6 @@ function GuideContent({ lang }: { lang: Locale }) {
 
 export default function AiLearningGuideClient({ lang }: { lang: Locale }) {
   return (
-    <Suspense fallback={<div className="max-w-2xl mx-auto px-4 py-20 text-center text-gray-400">...</div>}>
-      <GuideContent lang={lang} />
-    </Suspense>
+    <GuideContent lang={lang} />
   );
 }

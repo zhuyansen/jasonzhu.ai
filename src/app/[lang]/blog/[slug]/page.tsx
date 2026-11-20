@@ -432,6 +432,9 @@ export default async function BlogPostPage({ params }: Props) {
             },
           }}
           components={{
+            // 页面标题已经是 H1；正文里的「# 标题」（12 篇文章开头重复了一遍标题）降为 H2，一页只有一个 H1
+            // （OpenSEO 2026-11-19 报 12 页多个 H1）
+            h1: (props) => <h2 {...props} />,
             img: (props) => (
               // 正文图原图直出（不走 next/image），懒加载：滚到附近才下载，长文不再一打开就下全部图片
               // eslint-disable-next-line @next/next/no-img-element
