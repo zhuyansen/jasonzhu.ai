@@ -1,0 +1,753 @@
+{
+ "version": "0.1.20261103",
+ "status_code": 20000,
+ "status_message": "Ok.",
+ "time": "29.5414 sec.",
+ "cost": 0.004,
+ "tasks_count": 1,
+ "tasks_error": 0,
+ "tasks": [
+  {
+   "id": "11170800-2225-0629-0000-e22aeb1da3d7",
+   "status_code": 20000,
+   "status_message": "Ok.",
+   "time": "26.3670 sec.",
+   "cost": 0.004,
+   "result_count": 1,
+   "path": [
+    "v3",
+    "ai_optimization",
+    "chat_gpt",
+    "llm_scraper",
+    "live",
+    "advanced"
+   ],
+   "data": {
+    "api": "ai_optimization",
+    "function": "live",
+    "se": "chat_gpt",
+    "keyword": "What does 200,000 checkout links data show about indie developer payment platforms in 2026?",
+    "language_code": "en",
+    "location_code": 2840,
+    "force_web_search": true,
+    "device": "desktop",
+    "os": "windows"
+   },
+   "result": [
+    {
+     "keyword": "What does 200,000 checkout links data show about indie developer payment platforms in 2026?",
+     "location_code": 2840,
+     "language_code": "en",
+     "model": "gpt-6",
+     "check_url": "https://chatgpt.com/?prompt=What%20does%20200%2C000%20checkout%20links%20data%20show%20about%20indie%20developer%20payment%20platforms%20in%202026%3F&hints=search",
+     "datetime": "2026-11-17 08:01:12 +00:00",
+     "markdown": "# What 200,000 checkout links reveal about indie developer payment platforms in 2026\n\nThe biggest takeaway is that **Stripe still dominates in overall adoption, but newer Merchant of Record (MoR) platforms are becoming increasingly popular with software and AI developers.**\n\nA study published October 15, 2026, by Jason Zhu examined approximately **200,000 sellers across 198,000 websites**, tracking checkout links for Stripe, Gumroad, Lemon Squeezy, Polar, Creem, Dodo Payments and Paddle.\n\nIt reveals a changing market: indie developers are increasingly choosing payment providers based on software subscriptions, international tax handling and ease of launching globally—not just transaction fees. [jasonzhuai.vercel.app](https://jasonzhuai.vercel.app/en/blog/indie-payments-report-2026?utm_source=chatgpt.com)[jasonzhuai.vercel.app](https://jasonzhuai.vercel.app/en/blog/choose-payment-platform-2026?utm_source=chatgpt.com)\n\n## 1\\. Indie commerce is growing rapidly\n**New sellers discovered by year**\n\nReported checkout-link discoveries; 2026 data through October 15.\n\n| year | New sellers |\n| --- | --- |\n| 2023 | 21000 |\n| 2024 | 29000 |\n| 2025 | 56000 |\n| 2026* | 82000 |\n\n\n- 2023: 21,000 new sellers\n- 2024: 29,000\n- 2025: 56,000\n- 2026: 82,000 by October 15\n\n2026 had already produced nearly 1.5 times as many newly discovered sellers as all of 2025.\n\nThis suggests a significant expansion in independent online businesses, although the research measures discovered checkout links rather than verified transactions or revenue. [jasonzhuai.vercel.app](https://jasonzhuai.vercel.app/en/blog/indie-payments-report-2026?utm_source=chatgpt.com)[jasonzhuai.vercel.app](https://jasonzhuai.vercel.app/en/blog/choose-payment-platform-2026?utm_source=chatgpt.com)\n\n## 2\\. Software and AI products are gaining ground\n\nOne of the most interesting findings is the changing composition of new sellers.\n\n| Category | 2023 | 2025 | September 2026 |\n|--------|--------|--------|--------|\n| Software sellers | 5% | 8% | 20% |\n| AI product sellers | — | — | 12% |\n\n\nIn September 2026, one in five newly discovered sellers was selling software.\n\nAI products also grew from 2% of new sellers in the earlier period to 12% by September 2026.\n\nThis matters because software and AI products often need\\:\n\n- Recurring subscriptions.\n- International card payments.\n- Automated billing.\n- Global tax compliance.\n- Developer-friendly checkout integrations.\n\nThat creates an opportunity for payment providers built specifically around SaaS and digital products. [jasonzhuai.vercel.app](https://jasonzhuai.vercel.app/en/blog/indie-payments-report-2026?utm_source=chatgpt.com)[jasonzhuai.vercel.app](https://jasonzhuai.vercel.app/en/blog/choose-payment-platform-2026?utm_source=chatgpt.com)\n\n## 3\\. Stripe dominates, but newer platforms attract software developers\n\nThe most revealing comparison is the type of businesses choosing each platform.\n\n| Platform | New sellers since 2025 | Selling software | Selling AI |\n|--------|--------|--------|--------|\n| Stripe | 102,590 | 9% | 7% |\n| Gumroad | 28,860 | 11% | 8% |\n| Lemon Squeezy | 4,637 | 36% | 15% |\n| Polar | 1,664 | 58% | 27% |\n| Dodo Payments | 441 | 71% | 29% |\n| Creem | 249 | 65% | 24% |\n| Paddle\\* | 84 | 56% | 5% |\n\n\n\\*Paddle's figures cover classic checkout links, not its entire merchant base. Source: October 2026 study.\n\n**Share of new sellers selling software**\n\nSelected payment platforms, sellers since 2025.\n\n| platform | Software sellers |\n| --- | --- |\n| Dodo | 71% |\n| Creem | 65% |\n| Polar | 58% |\n| Paddle | 56% |\n| Lemon Squeezy | 36% |\n| Gumroad | 11% |\n| Stripe | 9% |\n\n\nThree particularly interesting challengers\\:\n\n![Polar: Open source monetization platform for developers | Product Hunt](https://images.openai.com/static-rsc-4/0bTZF0LVIRxIKGJMdIuDNaHaZg6LA-RWSpTVp2O_taP-bblQYBPurcntoIMrzYY8DxMUYsc9upZ0pyXQ_48nNzBWVNvuorAwzSkbP2SV8Kaym3CFj1qDwDogMqXIqv_TXaix1NJFcQQe-R4F-bucQMYvQnmCS4_6LvLmPFMeR52IVFZ9n1XSHLzQABxPdtQq?purpose=fullsize)\n\n**Polar**\n\n58% of new sellers sell software, and 27% sell AI products. It has the strongest new-seller momentum among the smaller platforms in the study.\n\n---\n\n![Dodo Payments Affiliate Program for SaaS | Affonso.io](https://images.openai.com/static-rsc-4/SOb97c-stjWM9_0jkUqHFyc6FTJ7C4wMiRui4QgOahJ7Cq2hvUJb1HVbmw-piV_HnzWU-DhnSXDCT7IJVQe1lUwI64GlLtCzQ0UUWSuc2sdd70WtIkCp-kGYPqzxm6ERQl0ATUBYHO4OsP-R2xh2qBYfhX5gfVjprdkWUrWWYwyRz3rnsdcRf9L2-y9defld?purpose=fullsize)\n\n**Dodo Payments**\n\n71% software and 29% AI. It has the highest software concentration in this comparison.\n\n---\n\n![Creem](https://images.openai.com/static-rsc-4/uAi-HwEu2VXddAG9Yy77YNAINxyzye4F6z971-jwz1nKHFXQhEKNYBKDq8IjWe_eWvvuqBfduUzjEz6bmu8pgUXXRg5AqvhOcLCJVnq-3z48-szmQ37Hrmq_ctQzmChKNWtnzp-ZwCfXSbk0njBwXOUiXSLb4yagANLNrUnBKhM6LEX43HRjMrIu9-yj6Xqj?purpose=fullsize)\n\n**Creem**\n\n65% software and 24% AI. Another emerging provider targeting independent software businesses.\n\n[jasonzhuai.vercel.app](https://jasonzhuai.vercel.app/en/blog/indie-payments-report-2026?utm_source=chatgpt.com)[jasonzhuai.vercel.app](https://jasonzhuai.vercel.app/en/blog/choose-payment-platform-2026?utm_source=chatgpt.com)\n\nThe important distinction: Stripe has vastly more sellers, but its audience is much broader. The newer platforms have a much higher concentration of software and AI businesses.\n\n## 4\\. Why developers are choosing alternatives to Stripe\n\nA major differentiator is the Merchant of Record model.\n\nA Merchant of Record generally takes responsibility for handling indirect tax collection and remittance on eligible transactions.\n\nThat means developers can focus more on building products instead of managing international sales-tax obligations.\n\nHere's how the eight platforms compare according to the October 2026 comparison\\:\n\n| Platform | Published base fee | Merchant of Record |\n|--------|--------|--------|\n| Stripe | 2.9% + \\$0.30 (US) | No\\* |\n| Lemon Squeezy | 5% + \\$0.50 | Yes |\n| Polar | 5% + \\$0.50 | Yes |\n| Creem | 3.9% + \\$0.40 | Yes |\n| Paddle | 5% + \\$0.50 | Yes |\n| Gumroad | 10% + \\$0.50 | Yes |\n| Dodo Payments | 4% + \\$0.40 | Yes |\n| Waffo Pancake | 3.9% + \\$0.50 | Yes |\n\n\n*Stripe offers Managed Payments with additional fees for tax-handling services. Other international, currency-conversion and subscription fees may apply.*\n\n[jasonzhuai.vercel.app](https://jasonzhuai.vercel.app/en/blog/indie-payments-report-2026?utm_source=chatgpt.com)[jasonzhuai.vercel.app](https://jasonzhuai.vercel.app/en/blog/choose-payment-platform-2026?utm_source=chatgpt.com)\n\nThe practical trade-off\\:\n\n- **Stripe\\:** Lower basic processing costs and a mature ecosystem, but more tax responsibilities.\n- **Polar\\:** Attractive for SaaS and AI subscriptions.\n- **Creem\\:** Competitive pricing and international seller accessibility.\n- **Dodo\\:** Strong software-focused merchant concentration.\n- **Paddle\\:** Established all-in-one payment and tax infrastructure.\n- **Gumroad\\:** Convenient for creators selling ebooks, courses and templates, but comparatively expensive.\n\n## 5\\. The rise of the one-person software company\n\nAnother fascinating discovery is that developers increasingly operate multiple websites.\n\nThe study identified 276 groups covering 666 websites that appeared to share analytics or advertising accounts.\n\nFour business models emerged\\:\n\n1. Product factories: launching a new small AI or software tool every week or two.\n2. Localized products: selling the same tool through different language-specific websites.\n3. Industry-specific products: adapting one software product to different verticals.\n4. Country-specific websites: creating separate domains for different national markets.\n\nThis points toward an emerging indie business model: one developer, multiple niche products, automated billing and global distribution.\n\n[jasonzhuai.vercel.app](https://jasonzhuai.vercel.app/en/blog/indie-payments-report-2026?utm_source=chatgpt.com)[jasonzhuai.vercel.app](https://jasonzhuai.vercel.app/en/blog/choose-payment-platform-2026?utm_source=chatgpt.com)\n\n## 6\\. What the findings mean for the payment industry\n\nMy interpretation of the research\\:\n\n| Market trend | Implication |\n|--------|--------|\n| Stripe remains dominant | Incumbents retain distribution advantages |\n| Polar, Creem and Dodo attract software sellers | Niche specialization is working |\n| AI sellers cluster on newer platforms | AI-native billing is an opportunity |\n| More developers launch multiple products | Simple integrations become more valuable |\n| International tax compliance matters | MoR providers have a competitive advantage |\n\n\nThere is also an important limitation: checkout links measure adoption signals, not actual payment volume, revenue, profitability or customer retention.\n\nThe dataset excludes sites that removed their checkout links and has some crawler and classification limitations. It should be treated as a market-direction indicator rather than a comprehensive market-share report.\n\n## 7\\. My overall conclusion\n\nI see three distinct competitive positions emerging\\:\n\n- **Stripe owns the broad payment infrastructure market.**\n- **Gumroad owns a convenient creator-oriented selling experience.**\n- **Polar, Creem and Dodo are competing for the next generation of indie software and AI businesses.**\n\nThe most interesting finding isn't that Stripe is losing its dominance. It isn't.\n\nIt's that developers building software and AI products are showing different platform preferences from the broader independent seller population.\n\nThat could become a meaningful competitive shift over the next few years.\n\n**Original research\\:**\n\n- [What 200,000 Checkout Links Say: The 2026 Indie Payments Report](https://jasonzhuai.vercel.app/en/blog/indie-payments-report-2026?utm_source=chatgpt.com)\n- [How to Choose a Payment Platform as an Indie Developer](https://jasonzhuai.vercel.app/en/blog/choose-payment-platform-2026?utm_source=chatgpt.com)\n- [Indie Seller Weekly: November 2026](https://jasonzhuai.vercel.app/en/blog/chuhai-weekly-04?utm_source=chatgpt.com)\n\n---\n\n**One particularly interesting business opportunity\\:** building better infrastructure for independent AI and SaaS developers—subscription billing, usage-based pricing, global tax handling and simpler international payouts. The data suggests this audience is growing rapidly, while its payment-provider preferences are still evolving.",
+     "search_results": [
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://jasonzhuai.vercel.app/en/blog/indie-payments-report-2026",
+       "domain": "jasonzhuai.vercel.app",
+       "title": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report | JasonZhu.AI",
+       "description": null,
+       "breadcrumb": "jasonzhuai.vercel.app"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://jasonzhuai.vercel.app/en/blog/choose-payment-platform-2026",
+       "domain": "jasonzhuai.vercel.app",
+       "title": "How to Choose a Payment Platform as an Indie Developer: 8 Compared, Plus What 200,000 Sellers Picked (2026) | JasonZhu.AI",
+       "description": null,
+       "breadcrumb": "jasonzhuai.vercel.app"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://jasonzhuai.vercel.app/en/blog/chuhai-weekly-04",
+       "domain": "jasonzhuai.vercel.app",
+       "title": "Indie Seller Weekly #4: New Sellers Doubled in October, and AI Front Desks for Small Shops Are Everywhere | JasonZhu.AI",
+       "description": null,
+       "breadcrumb": "jasonzhuai.vercel.app"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://cashflowing.app/en/case-study",
+       "domain": "cashflowing.app",
+       "title": "Where AI gets paid: a study of 15 checkout pages and 22,010 websites",
+       "description": null,
+       "breadcrumb": "cashflowing.app"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://cashflowing.app/en",
+       "domain": "cashflowing.app",
+       "title": "We studied the most cashflowing apps — Cashflowing",
+       "description": null,
+       "breadcrumb": "cashflowing.app"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://githubhelp.com/zhtyyx/new-term-radar?type=intro",
+       "domain": "githubhelp.com",
+       "title": "zhtyyx/new-term-radar - GitHubHelp",
+       "description": null,
+       "breadcrumb": "githubhelp.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://pypi.org/project/new-term-radar/0.6.1/",
+       "domain": "pypi.org",
+       "title": "new-term-radar · PyPI",
+       "description": null,
+       "breadcrumb": "pypi.org"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://pypi.org/project/new-term-radar/0.6.0/",
+       "domain": "pypi.org",
+       "title": "new-term-radar · PyPI",
+       "description": null,
+       "breadcrumb": "pypi.org"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://github.com/zhuyansen/payment-guard/blob/main/README.md",
+       "domain": "github.com",
+       "title": "payment-guard/README.md at main · zhuyansen/payment-guard · GitHub",
+       "description": null,
+       "breadcrumb": "github.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://topcheckouts.000ooo.ooo/en/pro/",
+       "domain": "topcheckouts.000ooo.ooo",
+       "title": "quietmoney data pack ¥29: 15,000 checkout-referring websites plus 606 growth-path dossiers, queryable from Claude Code",
+       "description": null,
+       "breadcrumb": "topcheckouts.000ooo.ooo"
+      }
+     ],
+     "sources": [
+      {
+       "type": "chat_gpt_source",
+       "title": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report",
+       "snippet": null,
+       "domain": "jasonzhuai.vercel.app",
+       "url": "https://jasonzhuai.vercel.app/en/blog/indie-payments-report-2026?utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": "JasonZhu.AI",
+       "publication_date": "2026-10-15 00:00:00 +00:00",
+       "markdown": null
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "How to Choose a Payment Platform as an Indie Developer: 8 Compared, Plus What 200,000 Sellers Picked (2026)",
+       "snippet": null,
+       "domain": "jasonzhuai.vercel.app",
+       "url": "https://jasonzhuai.vercel.app/en/blog/choose-payment-platform-2026?utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": "JasonZhu.AI",
+       "publication_date": "2026-10-15 00:00:00 +00:00",
+       "markdown": null
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Indie Seller Weekly: November 2026",
+       "snippet": null,
+       "domain": "jasonzhuai.vercel.app",
+       "url": "https://jasonzhuai.vercel.app/en/blog/chuhai-weekly-04?utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": null,
+       "publication_date": null,
+       "markdown": "[Indie Seller Weekly: November 2026](https://jasonzhuai.vercel.app/en/blog/chuhai-weekly-04?utm_source=chatgpt.com)"
+      }
+     ],
+     "fan_out_queries": [
+      "\"200,000 checkout links\" payment platforms indie developers 2026",
+      "\"200,000 checkout links\" indie developers payment platforms 2026",
+      "checkout links dataset indie hackers payment platform Stripe Lemon Squeezy Gumroad 2026 200k"
+     ],
+     "brand_entities": [
+      {
+       "type": "chat_gpt_brand_entity",
+       "title": "Merchant of Record payments platform",
+       "category": "software",
+       "markdown": "Polar",
+       "urls": null
+      },
+      {
+       "type": "chat_gpt_brand_entity",
+       "title": "Merchant of Record payment platform",
+       "category": "company",
+       "markdown": "Dodo Payments",
+       "urls": null
+      }
+     ],
+     "se_results_count": 0,
+     "item_types": [
+      "chat_gpt_text",
+      "chat_gpt_table",
+      "chat_gpt_images"
+     ],
+     "items_count": 19,
+     "items": [
+      {
+       "type": "chat_gpt_text",
+       "rank_group": 1,
+       "rank_absolute": 1,
+       "markdown": "# What 200,000 checkout links reveal about indie developer payment platforms in 2026\n\nThe biggest takeaway is that **Stripe still dominates in overall adoption, but newer Merchant of Record (MoR) platforms are becoming increasingly popular with software and AI developers.**\n\nA study published October 15, 2026, by Jason Zhu examined approximately **200,000 sellers across 198,000 websites**, tracking checkout links for Stripe, Gumroad, Lemon Squeezy, Polar, Creem, Dodo Payments and Paddle.\n\nIt reveals a changing market: indie developers are increasingly choosing payment providers based on software subscriptions, international tax handling and ease of launching globally—not just transaction fees. [jasonzhuai.vercel.app](https://jasonzhuai.vercel.app/en/blog/indie-payments-report-2026?utm_source=chatgpt.com)[jasonzhuai.vercel.app](https://jasonzhuai.vercel.app/en/blog/choose-payment-platform-2026?utm_source=chatgpt.com)\n\n## 1\\. Indie commerce is growing rapidly\n",
+       "sources": [
+        {
+         "type": "chat_gpt_source",
+         "title": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report",
+         "snippet": null,
+         "domain": "jasonzhuai.vercel.app",
+         "url": "https://jasonzhuai.vercel.app/en/blog/indie-payments-report-2026?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": "JasonZhu.AI",
+         "publication_date": "2026-10-15 00:00:00 +00:00",
+         "markdown": null
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "How to Choose a Payment Platform as an Indie Developer: 8 Compared, Plus What 200,000 Sellers Picked (2026)",
+         "snippet": null,
+         "domain": "jasonzhuai.vercel.app",
+         "url": "https://jasonzhuai.vercel.app/en/blog/choose-payment-platform-2026?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": "JasonZhu.AI",
+         "publication_date": "2026-10-15 00:00:00 +00:00",
+         "markdown": null
+        }
+       ],
+       "brand_entities": null
+      },
+      {
+       "type": "chat_gpt_table",
+       "rank_group": 1,
+       "rank_absolute": 2,
+       "text": null,
+       "markdown": "**New sellers discovered by year**\n\nReported checkout-link discoveries; 2026 data through October 15.\n\n| year | New sellers |\n| --- | --- |\n| 2023 | 21000 |\n| 2024 | 29000 |\n| 2025 | 56000 |\n| 2026* | 82000 |\n",
+       "table": {
+        "table_header": [
+         "year",
+         "New sellers"
+        ],
+        "table_content": [
+         [
+          "2023",
+          "21000"
+         ],
+         [
+          "2024",
+          "29000"
+         ],
+         [
+          "2025",
+          "56000"
+         ],
+         [
+          "2026*",
+          "82000"
+         ]
+        ]
+       },
+       "brand_entities": null
+      },
+      {
+       "type": "chat_gpt_text",
+       "rank_group": 2,
+       "rank_absolute": 3,
+       "markdown": "\n\n- 2023: 21,000 new sellers\n- 2024: 29,000\n- 2025: 56,000\n- 2026: 82,000 by October 15\n\n2026 had already produced nearly 1.5 times as many newly discovered sellers as all of 2025.\n\nThis suggests a significant expansion in independent online businesses, although the research measures discovered checkout links rather than verified transactions or revenue. [jasonzhuai.vercel.app](https://jasonzhuai.vercel.app/en/blog/indie-payments-report-2026?utm_source=chatgpt.com)[jasonzhuai.vercel.app](https://jasonzhuai.vercel.app/en/blog/choose-payment-platform-2026?utm_source=chatgpt.com)\n\n## 2\\. Software and AI products are gaining ground\n\nOne of the most interesting findings is the changing composition of new sellers.\n\n",
+       "sources": [
+        {
+         "type": "chat_gpt_source",
+         "title": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report",
+         "snippet": null,
+         "domain": "jasonzhuai.vercel.app",
+         "url": "https://jasonzhuai.vercel.app/en/blog/indie-payments-report-2026?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": "JasonZhu.AI",
+         "publication_date": "2026-10-15 00:00:00 +00:00",
+         "markdown": null
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "How to Choose a Payment Platform as an Indie Developer: 8 Compared, Plus What 200,000 Sellers Picked (2026)",
+         "snippet": null,
+         "domain": "jasonzhuai.vercel.app",
+         "url": "https://jasonzhuai.vercel.app/en/blog/choose-payment-platform-2026?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": "JasonZhu.AI",
+         "publication_date": "2026-10-15 00:00:00 +00:00",
+         "markdown": null
+        }
+       ],
+       "brand_entities": null
+      },
+      {
+       "type": "chat_gpt_table",
+       "rank_group": 2,
+       "rank_absolute": 4,
+       "text": null,
+       "markdown": "| Category | 2023 | 2025 | September 2026 |\n|--------|--------|--------|--------|\n| Software sellers | 5% | 8% | 20% |\n| AI product sellers | — | — | 12% |\n\n",
+       "table": {
+        "table_header": [
+         "Category",
+         "2023",
+         "2025",
+         "September 2026"
+        ],
+        "table_content": [
+         [
+          "Software sellers",
+          "5%",
+          "8%",
+          "20%"
+         ],
+         [
+          "AI product sellers",
+          "—",
+          "—",
+          "12%"
+         ]
+        ]
+       },
+       "brand_entities": null
+      },
+      {
+       "type": "chat_gpt_text",
+       "rank_group": 3,
+       "rank_absolute": 5,
+       "markdown": "\nIn September 2026, one in five newly discovered sellers was selling software.\n\nAI products also grew from 2% of new sellers in the earlier period to 12% by September 2026.\n\nThis matters because software and AI products often need\\:\n\n- Recurring subscriptions.\n- International card payments.\n- Automated billing.\n- Global tax compliance.\n- Developer-friendly checkout integrations.\n\nThat creates an opportunity for payment providers built specifically around SaaS and digital products. [jasonzhuai.vercel.app](https://jasonzhuai.vercel.app/en/blog/indie-payments-report-2026?utm_source=chatgpt.com)[jasonzhuai.vercel.app](https://jasonzhuai.vercel.app/en/blog/choose-payment-platform-2026?utm_source=chatgpt.com)\n\n## 3\\. Stripe dominates, but newer platforms attract software developers\n\nThe most revealing comparison is the type of businesses choosing each platform.\n\n",
+       "sources": [
+        {
+         "type": "chat_gpt_source",
+         "title": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report",
+         "snippet": null,
+         "domain": "jasonzhuai.vercel.app",
+         "url": "https://jasonzhuai.vercel.app/en/blog/indie-payments-report-2026?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": "JasonZhu.AI",
+         "publication_date": "2026-10-15 00:00:00 +00:00",
+         "markdown": null
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "How to Choose a Payment Platform as an Indie Developer: 8 Compared, Plus What 200,000 Sellers Picked (2026)",
+         "snippet": null,
+         "domain": "jasonzhuai.vercel.app",
+         "url": "https://jasonzhuai.vercel.app/en/blog/choose-payment-platform-2026?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": "JasonZhu.AI",
+         "publication_date": "2026-10-15 00:00:00 +00:00",
+         "markdown": null
+        }
+       ],
+       "brand_entities": null
+      },
+      {
+       "type": "chat_gpt_table",
+       "rank_group": 3,
+       "rank_absolute": 6,
+       "text": null,
+       "markdown": "| Platform | New sellers since 2025 | Selling software | Selling AI |\n|--------|--------|--------|--------|\n| Stripe | 102,590 | 9% | 7% |\n| Gumroad | 28,860 | 11% | 8% |\n| Lemon Squeezy | 4,637 | 36% | 15% |\n| Polar | 1,664 | 58% | 27% |\n| Dodo Payments | 441 | 71% | 29% |\n| Creem | 249 | 65% | 24% |\n| Paddle\\* | 84 | 56% | 5% |\n\n",
+       "table": {
+        "table_header": [
+         "Platform",
+         "New sellers since 2025",
+         "Selling software",
+         "Selling AI"
+        ],
+        "table_content": [
+         [
+          "Stripe",
+          "102,590",
+          "9%",
+          "7%"
+         ],
+         [
+          "Gumroad",
+          "28,860",
+          "11%",
+          "8%"
+         ],
+         [
+          "Lemon Squeezy",
+          "4,637",
+          "36%",
+          "15%"
+         ],
+         [
+          "Polar",
+          "1,664",
+          "58%",
+          "27%"
+         ],
+         [
+          "Dodo Payments",
+          "441",
+          "71%",
+          "29%"
+         ],
+         [
+          "Creem",
+          "249",
+          "65%",
+          "24%"
+         ],
+         [
+          "Paddle\\*",
+          "84",
+          "56%",
+          "5%"
+         ]
+        ]
+       },
+       "brand_entities": null
+      },
+      {
+       "type": "chat_gpt_text",
+       "rank_group": 4,
+       "rank_absolute": 7,
+       "markdown": "\n\\*Paddle's figures cover classic checkout links, not its entire merchant base. Source: October 2026 study.\n\n",
+       "sources": null,
+       "brand_entities": null
+      },
+      {
+       "type": "chat_gpt_table",
+       "rank_group": 4,
+       "rank_absolute": 8,
+       "text": null,
+       "markdown": "**Share of new sellers selling software**\n\nSelected payment platforms, sellers since 2025.\n\n| platform | Software sellers |\n| --- | --- |\n| Dodo | 71% |\n| Creem | 65% |\n| Polar | 58% |\n| Paddle | 56% |\n| Lemon Squeezy | 36% |\n| Gumroad | 11% |\n| Stripe | 9% |\n",
+       "table": {
+        "table_header": [
+         "platform",
+         "Software sellers"
+        ],
+        "table_content": [
+         [
+          "Dodo",
+          "71%"
+         ],
+         [
+          "Creem",
+          "65%"
+         ],
+         [
+          "Polar",
+          "58%"
+         ],
+         [
+          "Paddle",
+          "56%"
+         ],
+         [
+          "Lemon Squeezy",
+          "36%"
+         ],
+         [
+          "Gumroad",
+          "11%"
+         ],
+         [
+          "Stripe",
+          "9%"
+         ]
+        ]
+       },
+       "brand_entities": null
+      },
+      {
+       "type": "chat_gpt_text",
+       "rank_group": 5,
+       "rank_absolute": 9,
+       "markdown": "\n\nThree particularly interesting challengers\\:\n\n",
+       "sources": null,
+       "brand_entities": null
+      },
+      {
+       "type": "chat_gpt_images",
+       "rank_group": 1,
+       "rank_absolute": 10,
+       "markdown": "![Polar: Open source monetization platform for developers | Product Hunt](https://images.openai.com/static-rsc-4/0bTZF0LVIRxIKGJMdIuDNaHaZg6LA-RWSpTVp2O_taP-bblQYBPurcntoIMrzYY8DxMUYsc9upZ0pyXQ_48nNzBWVNvuorAwzSkbP2SV8Kaym3CFj1qDwDogMqXIqv_TXaix1NJFcQQe-R4F-bucQMYvQnmCS4_6LvLmPFMeR52IVFZ9n1XSHLzQABxPdtQq?purpose=fullsize)",
+       "items": [
+        {
+         "type": "chat_gpt_images_element",
+         "url": "https://www.producthunt.com/products/polar-6",
+         "alt": "Polar: Open source monetization platform for developers | Product Hunt",
+         "image_url": "https://images.openai.com/static-rsc-4/0bTZF0LVIRxIKGJMdIuDNaHaZg6LA-RWSpTVp2O_taP-bblQYBPurcntoIMrzYY8DxMUYsc9upZ0pyXQ_48nNzBWVNvuorAwzSkbP2SV8Kaym3CFj1qDwDogMqXIqv_TXaix1NJFcQQe-R4F-bucQMYvQnmCS4_6LvLmPFMeR52IVFZ9n1XSHLzQABxPdtQq?purpose=fullsize",
+         "markdown": "![Polar: Open source monetization platform for developers | Product Hunt](https://images.openai.com/static-rsc-4/0bTZF0LVIRxIKGJMdIuDNaHaZg6LA-RWSpTVp2O_taP-bblQYBPurcntoIMrzYY8DxMUYsc9upZ0pyXQ_48nNzBWVNvuorAwzSkbP2SV8Kaym3CFj1qDwDogMqXIqv_TXaix1NJFcQQe-R4F-bucQMYvQnmCS4_6LvLmPFMeR52IVFZ9n1XSHLzQABxPdtQq?purpose=fullsize)"
+        }
+       ]
+      },
+      {
+       "type": "chat_gpt_text",
+       "rank_group": 6,
+       "rank_absolute": 11,
+       "markdown": "\n\n**Polar**\n\n58% of new sellers sell software, and 27% sell AI products. It has the strongest new-seller momentum among the smaller platforms in the study.\n\n---\n\n",
+       "sources": null,
+       "brand_entities": [
+        {
+         "type": "chat_gpt_brand_entity",
+         "title": "Merchant of Record payments platform",
+         "category": "software",
+         "markdown": "Polar",
+         "urls": null
+        }
+       ]
+      },
+      {
+       "type": "chat_gpt_images",
+       "rank_group": 2,
+       "rank_absolute": 12,
+       "markdown": "![Dodo Payments Affiliate Program for SaaS | Affonso.io](https://images.openai.com/static-rsc-4/SOb97c-stjWM9_0jkUqHFyc6FTJ7C4wMiRui4QgOahJ7Cq2hvUJb1HVbmw-piV_HnzWU-DhnSXDCT7IJVQe1lUwI64GlLtCzQ0UUWSuc2sdd70WtIkCp-kGYPqzxm6ERQl0ATUBYHO4OsP-R2xh2qBYfhX5gfVjprdkWUrWWYwyRz3rnsdcRf9L2-y9defld?purpose=fullsize)",
+       "items": [
+        {
+         "type": "chat_gpt_images_element",
+         "url": "https://affonso.io/dodo-affiliate-program",
+         "alt": "Dodo Payments Affiliate Program for SaaS | Affonso.io",
+         "image_url": "https://images.openai.com/static-rsc-4/SOb97c-stjWM9_0jkUqHFyc6FTJ7C4wMiRui4QgOahJ7Cq2hvUJb1HVbmw-piV_HnzWU-DhnSXDCT7IJVQe1lUwI64GlLtCzQ0UUWSuc2sdd70WtIkCp-kGYPqzxm6ERQl0ATUBYHO4OsP-R2xh2qBYfhX5gfVjprdkWUrWWYwyRz3rnsdcRf9L2-y9defld?purpose=fullsize",
+         "markdown": "![Dodo Payments Affiliate Program for SaaS | Affonso.io](https://images.openai.com/static-rsc-4/SOb97c-stjWM9_0jkUqHFyc6FTJ7C4wMiRui4QgOahJ7Cq2hvUJb1HVbmw-piV_HnzWU-DhnSXDCT7IJVQe1lUwI64GlLtCzQ0UUWSuc2sdd70WtIkCp-kGYPqzxm6ERQl0ATUBYHO4OsP-R2xh2qBYfhX5gfVjprdkWUrWWYwyRz3rnsdcRf9L2-y9defld?purpose=fullsize)"
+        }
+       ]
+      },
+      {
+       "type": "chat_gpt_text",
+       "rank_group": 7,
+       "rank_absolute": 13,
+       "markdown": "\n\n**Dodo Payments**\n\n71% software and 29% AI. It has the highest software concentration in this comparison.\n\n---\n\n",
+       "sources": null,
+       "brand_entities": [
+        {
+         "type": "chat_gpt_brand_entity",
+         "title": "Merchant of Record payment platform",
+         "category": "company",
+         "markdown": "Dodo Payments",
+         "urls": null
+        }
+       ]
+      },
+      {
+       "type": "chat_gpt_images",
+       "rank_group": 3,
+       "rank_absolute": 14,
+       "markdown": "![Creem](https://images.openai.com/static-rsc-4/uAi-HwEu2VXddAG9Yy77YNAINxyzye4F6z971-jwz1nKHFXQhEKNYBKDq8IjWe_eWvvuqBfduUzjEz6bmu8pgUXXRg5AqvhOcLCJVnq-3z48-szmQ37Hrmq_ctQzmChKNWtnzp-ZwCfXSbk0njBwXOUiXSLb4yagANLNrUnBKhM6LEX43HRjMrIu9-yj6Xqj?purpose=fullsize)",
+       "items": [
+        {
+         "type": "chat_gpt_images_element",
+         "url": "https://www.creem.io/",
+         "alt": "Creem",
+         "image_url": "https://images.openai.com/static-rsc-4/uAi-HwEu2VXddAG9Yy77YNAINxyzye4F6z971-jwz1nKHFXQhEKNYBKDq8IjWe_eWvvuqBfduUzjEz6bmu8pgUXXRg5AqvhOcLCJVnq-3z48-szmQ37Hrmq_ctQzmChKNWtnzp-ZwCfXSbk0njBwXOUiXSLb4yagANLNrUnBKhM6LEX43HRjMrIu9-yj6Xqj?purpose=fullsize",
+         "markdown": "![Creem](https://images.openai.com/static-rsc-4/uAi-HwEu2VXddAG9Yy77YNAINxyzye4F6z971-jwz1nKHFXQhEKNYBKDq8IjWe_eWvvuqBfduUzjEz6bmu8pgUXXRg5AqvhOcLCJVnq-3z48-szmQ37Hrmq_ctQzmChKNWtnzp-ZwCfXSbk0njBwXOUiXSLb4yagANLNrUnBKhM6LEX43HRjMrIu9-yj6Xqj?purpose=fullsize)"
+        }
+       ]
+      },
+      {
+       "type": "chat_gpt_text",
+       "rank_group": 8,
+       "rank_absolute": 15,
+       "markdown": "\n\n**Creem**\n\n65% software and 24% AI. Another emerging provider targeting independent software businesses.\n\n[jasonzhuai.vercel.app](https://jasonzhuai.vercel.app/en/blog/indie-payments-report-2026?utm_source=chatgpt.com)[jasonzhuai.vercel.app](https://jasonzhuai.vercel.app/en/blog/choose-payment-platform-2026?utm_source=chatgpt.com)\n\nThe important distinction: Stripe has vastly more sellers, but its audience is much broader. The newer platforms have a much higher concentration of software and AI businesses.\n\n## 4\\. Why developers are choosing alternatives to Stripe\n\nA major differentiator is the Merchant of Record model.\n\nA Merchant of Record generally takes responsibility for handling indirect tax collection and remittance on eligible transactions.\n\nThat means developers can focus more on building products instead of managing international sales-tax obligations.\n\nHere's how the eight platforms compare according to the October 2026 comparison\\:\n\n",
+       "sources": [
+        {
+         "type": "chat_gpt_source",
+         "title": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report",
+         "snippet": null,
+         "domain": "jasonzhuai.vercel.app",
+         "url": "https://jasonzhuai.vercel.app/en/blog/indie-payments-report-2026?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": "JasonZhu.AI",
+         "publication_date": "2026-10-15 00:00:00 +00:00",
+         "markdown": null
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "How to Choose a Payment Platform as an Indie Developer: 8 Compared, Plus What 200,000 Sellers Picked (2026)",
+         "snippet": null,
+         "domain": "jasonzhuai.vercel.app",
+         "url": "https://jasonzhuai.vercel.app/en/blog/choose-payment-platform-2026?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": "JasonZhu.AI",
+         "publication_date": "2026-10-15 00:00:00 +00:00",
+         "markdown": null
+        }
+       ],
+       "brand_entities": [
+        {
+         "type": "chat_gpt_brand_entity",
+         "title": "Merchant of Record payments platform",
+         "category": "company",
+         "markdown": "Creem",
+         "urls": null
+        }
+       ]
+      },
+      {
+       "type": "chat_gpt_table",
+       "rank_group": 5,
+       "rank_absolute": 16,
+       "text": null,
+       "markdown": "| Platform | Published base fee | Merchant of Record |\n|--------|--------|--------|\n| Stripe | 2.9% + \\$0.30 (US) | No\\* |\n| Lemon Squeezy | 5% + \\$0.50 | Yes |\n| Polar | 5% + \\$0.50 | Yes |\n| Creem | 3.9% + \\$0.40 | Yes |\n| Paddle | 5% + \\$0.50 | Yes |\n| Gumroad | 10% + \\$0.50 | Yes |\n| Dodo Payments | 4% + \\$0.40 | Yes |\n| Waffo Pancake | 3.9% + \\$0.50 | Yes |\n\n",
+       "table": {
+        "table_header": [
+         "Platform",
+         "Published base fee",
+         "Merchant of Record"
+        ],
+        "table_content": [
+         [
+          "Stripe",
+          "2.9% + \\$0.30 (US)",
+          "No\\*"
+         ],
+         [
+          "Lemon Squeezy",
+          "5% + \\$0.50",
+          "Yes"
+         ],
+         [
+          "Polar",
+          "5% + \\$0.50",
+          "Yes"
+         ],
+         [
+          "Creem",
+          "3.9% + \\$0.40",
+          "Yes"
+         ],
+         [
+          "Paddle",
+          "5% + \\$0.50",
+          "Yes"
+         ],
+         [
+          "Gumroad",
+          "10% + \\$0.50",
+          "Yes"
+         ],
+         [
+          "Dodo Payments",
+          "4% + \\$0.40",
+          "Yes"
+         ],
+         [
+          "Waffo Pancake",
+          "3.9% + \\$0.50",
+          "Yes"
+         ]
+        ]
+       },
+       "brand_entities": null
+      },
+      {
+       "type": "chat_gpt_text",
+       "rank_group": 9,
+       "rank_absolute": 17,
+       "markdown": "\n*Stripe offers Managed Payments with additional fees for tax-handling services. Other international, currency-conversion and subscription fees may apply.*\n\n[jasonzhuai.vercel.app](https://jasonzhuai.vercel.app/en/blog/indie-payments-report-2026?utm_source=chatgpt.com)[jasonzhuai.vercel.app](https://jasonzhuai.vercel.app/en/blog/choose-payment-platform-2026?utm_source=chatgpt.com)\n\nThe practical trade-off\\:\n\n- **Stripe\\:** Lower basic processing costs and a mature ecosystem, but more tax responsibilities.\n- **Polar\\:** Attractive for SaaS and AI subscriptions.\n- **Creem\\:** Competitive pricing and international seller accessibility.\n- **Dodo\\:** Strong software-focused merchant concentration.\n- **Paddle\\:** Established all-in-one payment and tax infrastructure.\n- **Gumroad\\:** Convenient for creators selling ebooks, courses and templates, but comparatively expensive.\n\n## 5\\. The rise of the one-person software company\n\nAnother fascinating discovery is that developers increasingly operate multiple websites.\n\nThe study identified 276 groups covering 666 websites that appeared to share analytics or advertising accounts.\n\nFour business models emerged\\:\n\n1. Product factories: launching a new small AI or software tool every week or two.\n2. Localized products: selling the same tool through different language-specific websites.\n3. Industry-specific products: adapting one software product to different verticals.\n4. Country-specific websites: creating separate domains for different national markets.\n\nThis points toward an emerging indie business model: one developer, multiple niche products, automated billing and global distribution.\n\n[jasonzhuai.vercel.app](https://jasonzhuai.vercel.app/en/blog/indie-payments-report-2026?utm_source=chatgpt.com)[jasonzhuai.vercel.app](https://jasonzhuai.vercel.app/en/blog/choose-payment-platform-2026?utm_source=chatgpt.com)\n\n## 6\\. What the findings mean for the payment industry\n\nMy interpretation of the research\\:\n\n",
+       "sources": [
+        {
+         "type": "chat_gpt_source",
+         "title": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report",
+         "snippet": null,
+         "domain": "jasonzhuai.vercel.app",
+         "url": "https://jasonzhuai.vercel.app/en/blog/indie-payments-report-2026?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": "JasonZhu.AI",
+         "publication_date": "2026-10-15 00:00:00 +00:00",
+         "markdown": null
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "How to Choose a Payment Platform as an Indie Developer: 8 Compared, Plus What 200,000 Sellers Picked (2026)",
+         "snippet": null,
+         "domain": "jasonzhuai.vercel.app",
+         "url": "https://jasonzhuai.vercel.app/en/blog/choose-payment-platform-2026?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": "JasonZhu.AI",
+         "publication_date": "2026-10-15 00:00:00 +00:00",
+         "markdown": null
+        }
+       ],
+       "brand_entities": null
+      },
+      {
+       "type": "chat_gpt_table",
+       "rank_group": 6,
+       "rank_absolute": 18,
+       "text": null,
+       "markdown": "| Market trend | Implication |\n|--------|--------|\n| Stripe remains dominant | Incumbents retain distribution advantages |\n| Polar, Creem and Dodo attract software sellers | Niche specialization is working |\n| AI sellers cluster on newer platforms | AI-native billing is an opportunity |\n| More developers launch multiple products | Simple integrations become more valuable |\n| International tax compliance matters | MoR providers have a competitive advantage |\n\n",
+       "table": {
+        "table_header": [
+         "Market trend",
+         "Implication"
+        ],
+        "table_content": [
+         [
+          "Stripe remains dominant",
+          "Incumbents retain distribution advantages"
+         ],
+         [
+          "Polar, Creem and Dodo attract software sellers",
+          "Niche specialization is working"
+         ],
+         [
+          "AI sellers cluster on newer platforms",
+          "AI-native billing is an opportunity"
+         ],
+         [
+          "More developers launch multiple products",
+          "Simple integrations become more valuable"
+         ],
+         [
+          "International tax compliance matters",
+          "MoR providers have a competitive advantage"
+         ]
+        ]
+       },
+       "brand_entities": null
+      },
+      {
+       "type": "chat_gpt_text",
+       "rank_group": 10,
+       "rank_absolute": 19,
+       "markdown": "\nThere is also an important limitation: checkout links measure adoption signals, not actual payment volume, revenue, profitability or customer retention.\n\nThe dataset excludes sites that removed their checkout links and has some crawler and classification limitations. It should be treated as a market-direction indicator rather than a comprehensive market-share report.\n\n## 7\\. My overall conclusion\n\nI see three distinct competitive positions emerging\\:\n\n- **Stripe owns the broad payment infrastructure market.**\n- **Gumroad owns a convenient creator-oriented selling experience.**\n- **Polar, Creem and Dodo are competing for the next generation of indie software and AI businesses.**\n\nThe most interesting finding isn't that Stripe is losing its dominance. It isn't.\n\nIt's that developers building software and AI products are showing different platform preferences from the broader independent seller population.\n\nThat could become a meaningful competitive shift over the next few years.\n\n**Original research\\:**\n\n- [What 200,000 Checkout Links Say: The 2026 Indie Payments Report](https://jasonzhuai.vercel.app/en/blog/indie-payments-report-2026?utm_source=chatgpt.com)\n- [How to Choose a Payment Platform as an Indie Developer](https://jasonzhuai.vercel.app/en/blog/choose-payment-platform-2026?utm_source=chatgpt.com)\n- [Indie Seller Weekly: November 2026](https://jasonzhuai.vercel.app/en/blog/chuhai-weekly-04?utm_source=chatgpt.com)\n\n---\n\n**One particularly interesting business opportunity\\:** building better infrastructure for independent AI and SaaS developers—subscription billing, usage-based pricing, global tax handling and simpler international payouts. The data suggests this audience is growing rapidly, while its payment-provider preferences are still evolving.",
+       "sources": [
+        {
+         "type": "chat_gpt_source",
+         "title": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report",
+         "snippet": null,
+         "domain": "jasonzhuai.vercel.app",
+         "url": "https://jasonzhuai.vercel.app/en/blog/indie-payments-report-2026?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": null,
+         "publication_date": null,
+         "markdown": "[What 200,000 Checkout Links Say: The 2026 Indie Payments Report](https://jasonzhuai.vercel.app/en/blog/indie-payments-report-2026?utm_source=chatgpt.com)"
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "How to Choose a Payment Platform as an Indie Developer",
+         "snippet": null,
+         "domain": "jasonzhuai.vercel.app",
+         "url": "https://jasonzhuai.vercel.app/en/blog/choose-payment-platform-2026?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": null,
+         "publication_date": null,
+         "markdown": "[How to Choose a Payment Platform as an Indie Developer](https://jasonzhuai.vercel.app/en/blog/choose-payment-platform-2026?utm_source=chatgpt.com)"
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "Indie Seller Weekly: November 2026",
+         "snippet": null,
+         "domain": "jasonzhuai.vercel.app",
+         "url": "https://jasonzhuai.vercel.app/en/blog/chuhai-weekly-04?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": null,
+         "publication_date": null,
+         "markdown": "[Indie Seller Weekly: November 2026](https://jasonzhuai.vercel.app/en/blog/chuhai-weekly-04?utm_source=chatgpt.com)"
+        }
+       ],
+       "brand_entities": null
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

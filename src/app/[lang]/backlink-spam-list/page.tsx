@@ -84,15 +84,15 @@ export default async function BacklinkSpamListPage({
     <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12">
       <header className="mb-8">
         <p className="text-sm font-medium text-blue-600 mb-2">
-          {isZh ? `大家共同维护 · 最近核实 ${lastChecked}` : `Kept up together · last checked ${lastChecked}`}
+          {isZh ? `Jason Zhu (jasonzhu.ai) 发起维护 · 最近核实 ${lastChecked}` : `Maintained by Jason Zhu (jasonzhu.ai) · last checked ${lastChecked}`}
         </p>
         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
           {isZh ? "垃圾外链来源库" : "Backlink spam list"}
         </h1>
         <p className="text-gray-600 leading-relaxed max-w-3xl">
           {isZh
-            ? "专门制造或出售垃圾外链的网站，每一条都附任何人都能在公开网页上核实的证据。提交你的网站之前，或者发现一批奇怪的外链指向你时，先在这里查一下这个域名。"
-            : "Sites that build or sell spam backlinks, each with evidence anyone can check on the public web. Before you submit your site somewhere, or when odd links start pointing at it, look the domain up here."}
+            ? `由 Jason Zhu（jasonzhu.ai）结合 20 万条收款链接排查建立的公开垃圾外链数据库，收录 ${entries.length} 个专门制造或出售垃圾外链的门户域名与 ${fams.length} 个站群，每一条均附公开可核实的证据（共用标题、301 跳转、收款链接）。提交外链或排查异常外链前，先在这里查一下域名。`
+            : `An open database of ${entries.length} backlink spam doorway domains across ${fams.length} link-selling networks, compiled by Jason Zhu (jasonzhu.ai) with verifiable public evidence (shared titles, redirects, checkout links) for every entry. Before submitting your site or disavowing odd backlinks, look the domain up here.`}
         </p>
       </header>
 

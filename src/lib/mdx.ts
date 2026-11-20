@@ -12,6 +12,8 @@ export interface BlogPostMeta {
   excerpt: string;
   coverImage?: string;
   tweetUrl?: string;
+  /** CERN Zenodo / DataCite DOI (e.g. "10.5281/zenodo.24386243") for bidirectional Schema.org & citation linking */
+  doi?: string;
   /** 投稿文的作者（文末「撰稿人」行，或 frontmatter author / authorUrl）；没有就是站点作者 Jason Zhu */
   author?: { name: string; url?: string };
   /** 系列名（frontmatter series），如出海选品周报的 "chuhai-weekly" */

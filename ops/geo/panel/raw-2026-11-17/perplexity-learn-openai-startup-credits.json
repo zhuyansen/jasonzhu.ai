@@ -1,0 +1,191 @@
+{
+ "version": "0.1.20261103",
+ "status_code": 20000,
+ "status_message": "Ok.",
+ "time": "4.3339 sec.",
+ "cost": 0.006134,
+ "tasks_count": 1,
+ "tasks_error": 0,
+ "tasks": [
+  {
+   "id": "11170805-2225-0612-0000-5d3ff13df4e6",
+   "status_code": 20000,
+   "status_message": "Ok.",
+   "time": "4.2855 sec.",
+   "cost": 0.006134,
+   "result_count": 1,
+   "path": [
+    "v3",
+    "ai_optimization",
+    "perplexity",
+    "llm_responses",
+    "live"
+   ],
+   "data": {
+    "api": "ai_optimization",
+    "function": "llm_responses",
+    "se": "perplexity",
+    "user_prompt": "How to apply for OpenAI Startup Credits and get up to $2,500 in API credits as an indie founder?",
+    "model_name": "sonar",
+    "web_search_country_iso_code": "US"
+   },
+   "result": [
+    {
+     "model_name": "sonar",
+     "input_tokens": 31,
+     "output_tokens": 503,
+     "reasoning_tokens": 0,
+     "web_search": true,
+     "money_spent": 0.005534,
+     "datetime": "2026-11-17 08:05:31 +00:00",
+     "items": [
+      {
+       "type": "message",
+       "sections": [
+        {
+         "type": "text",
+         "text": "As an indie founder, the most accessible route to **up to $2,500 in OpenAI API credits** appears to be through the **Ramp Founder Stack**, rather than a general OpenAI application. OpenAI’s official startup-credit route is primarily for startups backed by participating VC partners and requires a referral code.[1][2]\n\n## Option 1: Apply through Ramp\n\n1. Create or use an eligible **Ramp** business account.\n2. Complete Ramp’s company verification/KYC process.\n3. Open the **Rewards** or partner-offers marketplace.\n4. Find the OpenAI offer and select **Claim**.\n5. Link your OpenAI API organization when prompted.\n6. Confirm the credit terms, expiration date, and any eligibility restrictions.\n\nThe Ramp route is commonly reported as offering up to **$2,500 in OpenAI API credits**, but availability and eligibility can change, so verify the current offer inside Ramp before relying on it.[6][7]\n\n## Option 2: Use OpenAI’s VC/accelerator route\n\nIf your startup is backed by a participating VC or accelerator:\n\n1. Ask the investor or accelerator whether it participates in OpenAI’s startup program.\n2. Request its unique **OpenAI referral code**.\n3. Prepare:\n   - Product description and API use case\n   - Company name and website\n   - Key team contacts and a valid business email\n   - Basic funding information\n   - OpenAI organization ID\n4. Apply through the OpenAI for Startups page using the referral code.[1][2]\n\nTo find the organization ID, sign in to the OpenAI platform, open **Settings → Organization settings → General**, and copy the listed ID.[2]\n\n## If you are completely bootstrapped\n\nDo not assume that an old “$2,500 direct application” form is still active. OpenAI’s current official guidance says founders should contact their VC to unlock API credits, and the credit amount is not guaranteed or universally fixed.[1][2] For a solo founder, check these alternatives:\n\n- Ramp’s startup or founder offers\n- Hackathons and OpenAI events, which may distribute credits\n- OpenAI accelerator or cohort programs\n- Researcher-access programs, if your project qualifies\n- Cloud startup programs that provide credits usable with hosted AI services\n\nWhen approved, set a spending limit and monitor usage immediately; credits generally cover eligible API usage only and may have expiration dates or program-specific restrictions.",
+         "annotations": [
+          {
+           "title": "Solutions for startups | OpenAI",
+           "url": "https://openai.com/solutions/startups/",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "OpenAI for Startups",
+           "url": "https://openai.com/startups/",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "OpenAI for Startups: what startups get and how to apply",
+           "url": "https://www.getproven.com/openai",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "OpenAI Free Credits: $2,500 in API credits (May 2026) | SaaSOffers",
+           "url": "https://saasoffers.tech/offers/openai",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "How to Get Free OpenAI API Credits",
+           "url": "https://dev.to/preecha/how-to-get-free-openai-api-credits-1gi2",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "How to Apply for OpenAI Startup Credits: Get Up to $2,500 in ...",
+           "url": "https://jasonzhu.ai/en/blog/openai-startup-credits-application-guide",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "OpenAI for Startups",
+           "url": "https://guptadeepak.com/startup-offers/programs/openai-for-startups",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "SMF Clearinghouse",
+           "url": "https://www.smfclearinghouse.com/deals/openai-for-startups/",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "$400K in Free AI API Credits 2026: OpenAI, Anthropic, Mistral ...",
+           "url": "https://klymentiev.com/blog/free-ai-api-credits",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "GitHub - techric/startup-credits-guide: Verified Catalog of ...",
+           "url": "https://github.com/techric/startup-credits-guide",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "fan_out_queries": null,
+     "search_results": [
+      {
+       "title": "Solutions for startups | OpenAI",
+       "url": "https://openai.com/solutions/startups/",
+       "date": "2026-10-30 00:00:00 +00:00",
+       "snippet": "# Shape what’s next\n## Hear from the founders bringing bold ideas to life\n### My startup is backed by a VC. What does that unlock for my startup?\nIf they are, your startup may be eligible for benefits like free API credits, rate limit upgrades, and time with our solutions engineers or other technica..."
+      },
+      {
+       "title": "OpenAI for Startups",
+       "url": "https://openai.com/startups/",
+       "date": "2026-11-14 00:00:00 +00:00",
+       "snippet": "If they are, your startup may be eligible for benefits like free API credits, rate limit upgrades, and time with our solutions engineers or other technical team members.\n...\nYes!\nPlease reach out to your VC to learn how to unlock OpenAI API credits.\n...\n### I’m ready to apply for credits. What shoul..."
+      },
+      {
+       "title": "OpenAI for Startups: what startups get and how to apply",
+       "url": "https://www.getproven.com/openai",
+       "date": "2026-11-16 00:00:00 +00:00",
+       "snippet": "Startups backed by a VC in OpenAI's partner network may be eligible for free API credits, rate limit upgrades and technical support.\n...\n- API credits and dedicated support are for portfolio companies of VCs in OpenAI's partner network\n...\n1. Ask your VC whether it is in OpenAI's partner network and..."
+      },
+      {
+       "title": "OpenAI Free Credits: $2,500 in API credits (May 2026) | SaaSOffers",
+       "url": "https://saasoffers.tech/offers/openai",
+       "date": "2026-11-12 00:00:00 +00:00",
+       "snippet": "OpenAI gives startups free API credits, but not through a public application anymore.\nIn October 2026, the main route is OpenAI's VC partner network: if your startup is backed by a partner firm, you apply with a referral code from your investor and can unlock free API credits, higher rate limits and..."
+      },
+      {
+       "title": "How to Get Free OpenAI API Credits",
+       "url": "https://dev.to/preecha/how-to-get-free-openai-api-credits-1gi2",
+       "date": "2026-11-16 00:00:00 +00:00",
+       "snippet": "### Tier 1: $2,500 Credits\n- Available to all eligible startups\n- No VC referral required\n- Valid for 12 months from approval\n...\nCredits apply to all OpenAI API services: GPT-4o, GPT-4o mini, DALL-E 3, Whisper, embeddings, and fine-tuning.\n...\nYour startup must be less than 5 years old from incorpo..."
+      },
+      {
+       "title": "How to Apply for OpenAI Startup Credits: Get Up to $2,500 in ...",
+       "url": "https://jasonzhu.ai/en/blog/openai-startup-credits-application-guide",
+       "date": "2026-10-31 00:00:00 +00:00",
+       "snippet": "OpenAI for Startups is the official credits program: standard applications typically get you $1,500–$2,500, while VC-backed startups can unlock $10K–$100K+, along with higher rate limits and dedicated support.\n...\nOpenAI's primary channel runs through VC/accelerator referrals.\nGoing in cold has a lo..."
+      },
+      {
+       "title": "OpenAI for Startups",
+       "url": "https://guptadeepak.com/startup-offers/programs/openai-for-startups",
+       "date": "2026-07-29 00:00:00 +00:00",
+       "snippet": "Credits come through separate channels: Ramp partnership ($2,500 API credits, most accessible for non-VC startups), the OpenAI for Startups community (resources, no guaranteed credits), OpenAI Grove (fellowship for pre-idea individuals at OpenAI SF HQ), the Researcher Access Program (up to $1K for r..."
+      },
+      {
+       "title": "SMF Clearinghouse",
+       "url": "https://www.smfclearinghouse.com/deals/openai-for-startups/",
+       "date": "2026-11-17 00:00:00 +00:00",
+       "snippet": "# OpenAI for Startups\nUnlike some competitors, OpenAI does not run one single flagship credit program; credits flow through multiple tracks including Ramp, researcher access, and invitation-only VC paths.\n## What you get\n- **API credits.** Startups can receive up to $2,500 or more in OpenAI API cred..."
+      },
+      {
+       "title": "$400K in Free AI API Credits 2026: OpenAI, Anthropic, Mistral ...",
+       "url": "https://klymentiev.com/blog/free-ai-api-credits",
+       "date": "2026-11-17 00:00:00 +00:00",
+       "snippet": "## OpenAI for Startups\n- **Credits:** Up to $2,500 via VC partner referrals.\n$50,000 via OpenAI Grove (intensive cohort program).\n$25,000 via Codex Open Source Fund.\nUp to $2,500 via Founder Stack (Ramp)\n- **Eligibility:** Standard track requires portfolio company status with a partner VC referral c..."
+      },
+      {
+       "title": "GitHub - techric/startup-credits-guide: Verified Catalog of ...",
+       "url": "https://github.com/techric/startup-credits-guide",
+       "date": "2026-11-15 00:00:00 +00:00",
+       "snippet": "## Cloud and Infrastructure\n### Microsoft for Startups Founders Hub\n**Important update for 2026:** Direct OpenAI credits (the old $2,500 benefit) are no longer broadly available.\nOnly Level 4 startups (top tier) get them.\nHowever, Azure credits fully cover Azure OpenAI Service (GPT-series models bil..."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

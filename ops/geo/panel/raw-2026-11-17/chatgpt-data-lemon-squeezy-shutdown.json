@@ -1,0 +1,802 @@
+{
+ "version": "0.1.20261103",
+ "status_code": 20000,
+ "status_message": "Ok.",
+ "time": "54.2014 sec.",
+ "cost": 0.004,
+ "tasks_count": 1,
+ "tasks_error": 0,
+ "tasks": [
+  {
+   "id": "11170801-2225-0629-0000-9d4cdf4a7a52",
+   "status_code": 20000,
+   "status_message": "Ok.",
+   "time": "51.5115 sec.",
+   "cost": 0.004,
+   "result_count": 1,
+   "path": [
+    "v3",
+    "ai_optimization",
+    "chat_gpt",
+    "llm_scraper",
+    "live",
+    "advanced"
+   ],
+   "data": {
+    "api": "ai_optimization",
+    "function": "live",
+    "se": "chat_gpt",
+    "keyword": "Lemon Squeezy shutting down in 2027: what are indie software sellers migrating to?",
+    "language_code": "en",
+    "location_code": 2840,
+    "force_web_search": true,
+    "device": "desktop",
+    "os": "windows"
+   },
+   "result": [
+    {
+     "keyword": "Lemon Squeezy shutting down in 2027: what are indie software sellers migrating to?",
+     "location_code": 2840,
+     "language_code": "en",
+     "model": "gpt-6",
+     "check_url": "https://chatgpt.com/?prompt=Lemon%20Squeezy%20shutting%20down%20in%202027%3A%20what%20are%20indie%20software%20sellers%20migrating%20to%3F&hints=search",
+     "datetime": "2026-11-17 08:02:10 +00:00",
+     "markdown": "# Lemon Squeezy shutdown: where are indie software sellers moving?\n\n(Confirmed — November 16, 2026)\n\nYes. Lemon Squeezy is officially winding down. This is no longer just a rumor.\n\nAccording to the company's announcement\\:\n\n- **November 16, 2026\\:** New store registrations closed.\n- **December 2, 2026\\:** Stripe migration tooling launches.\n- **Mid-January 2027\\:** Recommended latest date to begin migration.\n- **March 31, 2027\\:** Lemon Squeezy stops processing all transactions, including subscription renewals.\n\nThe reason: Stripe is consolidating Lemon Squeezy into its own **Stripe Managed Payments** product. [www.lemonsqueezy.com](https://www.lemonsqueezy.com/blog/saying-goodbye-to-lemon-squeezy?utm_source=chatgpt.com)[docs.lemonsqueezy.com](https://docs.lemonsqueezy.com/migration?utm_source=chatgpt.com)\n\nThe interesting part is that there isn't one universal replacement. The alternatives depend on whether you're selling SaaS, downloadable software, license keys, or digital products.\n\n## The main migration destinations\n\n![Stripe Logo Download (SVG, PNG, EPS, PDF) | PixelBrands](https://images.openai.com/static-rsc-4/aVtuLxJXV9DmtEmg9b45Apl_aIYsif99dM-GHSfkXYZDC4tFOhFvFlTrHocFw_PqD4iGlfn8TyGj8Knz3iEfgQ88Gl1qbf-qVS8yq3s_dga8IuVvdS85dQWTHuxQAfDBHQSn4bvLAWea6XSgqDlmrU-sz5LlptntGZmOFqqabVil8_uydbbIqAvaqwgrj-k8?purpose=fullsize)\n\n**1\\. Stripe Managed Payments**\n\n(Official migration destination)\n\n- Closest supported migration path for eligible Lemon Squeezy merchants.\n- Merchant of record: yes.\n- Handles international sales tax, fraud and disputes.\n- Migration tooling planned for December 2, 2026.\n- Missing built-in file delivery, license keys, storefronts and affiliates.\n\n**Best fit\\:** SaaS and digital-product sellers who want to stay within Stripe's ecosystem.\n\n[Stripe Managed Payments](https://stripe.com/payments/managed-payments)\n\n---\n\n![Introducing the Creator Platform for Open Source Developers • changelog.gallery](https://images.openai.com/static-rsc-4/6sK9rnkB4om5g4rgRjYwfXY5yp2JNz8Cfj74LhzLjxwntpmfMVdQYILtvj8sRAF1QbElHbii-FJLkb76oc5kP3gTKEP20cATGmJS_J7GDk4kGpgjWN9cXSXyjfGsNcMIAwzZ1bNfUYW-XgC9LOdx08cyO-6R-QedaVUTPt0ju60fEm5pZNZePx4Iw6QZuijj?purpose=fullsize)\n\n**2\\. Polar**\n\n(Developer-focused alternative)\n\n- Merchant of record.\n- Built around developer products, SaaS and open-source monetization.\n- Supports subscriptions, one-time purchases and digital products.\n- Developer-friendly APIs and integrations.\n\n**Best fit\\:** Indie hackers, developer tools, APIs and small SaaS businesses.\n\n[Polar website](https://polar.sh/)\n\n---\n\n![Paddle - Crunchbase Company Profile & Funding](https://images.openai.com/static-rsc-4/mivzkrx43X7k8aTimMuWUKZzjhIdD9rLkTyf7bwU4HMixtl_3F8o-BpQqVSbUFTvf2Ji5pEzpAvJztrqJEL1vBhlfpOAVkpfeXIgsZkm7xd3j-E5-IqZ8EaDi-KQ7aL5LqM5PWh2IOxzxjzpAILNOfVp1CqoyQxaX0Akt3mhWps-MQ7E9V_cu71lmtzwiHvU?purpose=fullsize)\n\n**3\\. Paddle**\n\n- Established merchant of record.\n- Subscription billing and global tax handling.\n- Particularly relevant to SaaS companies.\n- More established billing infrastructure than many newer indie-focused entrants.\n\n**Best fit\\:** SaaS businesses with recurring revenue and international customers.\n\n[Paddle website](https://www.paddle.com/)\n\n---\n\n![Dodo Payments Logo PNG Vector (SVG) Free Download](https://images.openai.com/static-rsc-4/78QKmfWuQpWV_ssMThvCXIcH5Tu7QHPzdNblZPKBoI8MGrvy0ArLpQzEFATV73JMyAjf5bI5BJcsf68R10vyql7rHl3WK1o6MwroZwn5vpCV9NNapPsozdj_w6t6ILPSwSw-HkRBCt5RuL3YhCHyi5q6CUyuYWMwRF_jwi_bQrxf0dkEQ4I89CVAyzNky0Bx?purpose=fullsize)\n\n**4\\. Dodo Payments**\n\n- Merchant of record.\n- Targets digital products, SaaS and software businesses.\n- Offers subscription billing and digital-product payment infrastructure.\n- Worth investigating for sellers who need an alternative to Stripe.\n\n**Best fit\\:** International indie developers and software entrepreneurs.\n\n[Dodo Payments website](https://dodopayments.com/)\n\n---\n\n![Creem](https://images.openai.com/static-rsc-4/uAi-HwEu2VXddAG9Yy77YNAINxyzye4F6z971-jwz1nKHFXQhEKNYBKDq8IjWe_eWvvuqBfduUzjEz6bmu8pgUXXRg5AqvhOcLCJVnq-3z48-szmQ37Hrmq_ctQzmChKNWtnzp-ZwCfXSbk0njBwXOUiXSLb4yagANLNrUnBKhM6LEX43HRjMrIu9-yj6Xqj?purpose=fullsize)\n\n**5\\. Creem**\n\n- Merchant of record.\n- Developer-oriented checkout and subscription infrastructure.\n- A newer alternative being discussed in the indie software ecosystem.\n- Advertised pricing starts at 3.9% + \\$0.40.\n\n**Best fit\\:** Solo developers looking for a relatively lightweight payments platform.\n\n[Creem website](https://www.creem.io/)\n\n---\n\n![202Как оплатить Gumroad из России в 2025 году? - 17.12.24 18:33 | Пикабу](https://images.openai.com/static-rsc-4/H3PC_9yhIpZPMog0WjktmdGQmrk5LxapR48ZWhV58PIrUsVf5PJfhptOjMIAEROBAvSFYnSm9Mcb_d8VPNLxfXRqGEiBSCNvAj17yXG1aVRBlWnSVaamc2e3rlyByewhXzQ4KTZjv7MaE_HqXqFzv8o3aD4DLXibx6rdNFUiBaFpPTqlR_rDjxwO2qQRB6x3?purpose=fullsize)\n\n**6\\. Gumroad**\n\n- Merchant of record.\n- Easy digital-product storefront.\n- Supports memberships and digital downloads.\n- Higher headline transaction fees.\n\n**Best fit\\:** Selling downloadable products, templates, ebooks and smaller software products.\n\n[Gumroad website](https://gumroad.com/)\n\nThese are credible alternatives being discussed in the wake of the announcement, not a verified ranking of actual migration volumes. There isn't yet reliable public data showing how many sellers have chosen each platform. [www.stateofindiehacking.com](https://www.stateofindiehacking.com/stories/lemon-squeezy-alternatives-shutdown/?utm_source=chatgpt.com)[theknowledgeengineers.com](https://theknowledgeengineers.com/alternatives/lemon-squeezy?utm_source=chatgpt.com)[www.transactbridge.com](https://www.transactbridge.com/blog/best-lemon-squeezy-alternatives-for-global-businesses?utm_source=chatgpt.com)[goodvat.com](https://goodvat.com/blog/lemon-squeezy-alternatives/?utm_source=chatgpt.com)\n\n## Important: license keys are the biggest migration complication\n\nIf you sell actual software (desktop apps, plugins, developer tools, etc.), don't just compare payment processors.\n\nLemon Squeezy bundled several jobs together\\:\n\n1. Payment processing\n2. Merchant-of-record tax handling\n3. Subscription management\n4. License-key generation and validation\n5. Digital downloads and fulfillment\n\nStripe Managed Payments does not replace all five.\n\nFor license-key-based software, **Bunny** is another interesting option. It offers subscription billing and license-key management, including online and offline license validation. However, it is not a merchant of record, so you'll need a separate tax solution.\n\n[Bunny website](https://bunny.com/) · [bunny.com](https://bunny.com/blog/lemon-squeezy-is-shutting-down-move-your-subscriptions-and-license-keys/?utm_source=chatgpt.com)[docs.lemonsqueezy.com](https://docs.lemonsqueezy.com/migration?utm_source=chatgpt.com)\n\n## Quick comparison\n\n| Platform | Merchant of record | Developer-oriented |\n|--------|--------|--------|\n| Stripe Managed Payments | Yes | Yes |\n| Polar | Yes | Yes |\n| Paddle | Yes | Yes |\n| Dodo Payments | Yes | Yes |\n| Creem | Yes | Yes |\n| Gumroad | Yes | Somewhat |\n| Bunny | No | Yes |\n\n\n## My take\n\nFor an indie software business, I'd investigate these three first\\:\n\n- **Polar\\:** If you want a developer-centric alternative with a merchant of record.\n- **Paddle\\:** If you're running a more established SaaS business.\n- **Dodo Payments\\:** If you want another merchant-of-record option to evaluate.\n\nI'd keep Stripe Managed Payments on the shortlist too, especially if you're eligible for the migration incentive.\n\nOne important caveat: moving to a regular payment processor instead of a merchant of record means taking responsibility for applicable sales tax and VAT obligations yourself.\n\n## One question that would substantially change my recommendation\n\nWhat kind of software are you selling?\n\n**1\\. Product type**\n\n---\n\n**2\\. Do you need license-key management?**\n\n---\n\n**3\\. Do you want to retain merchant-of-record tax handling?**\n\n[Find my best migration options]\n\nI can then narrow this down to platforms that actually replace the parts of Lemon Squeezy you depend on, rather than simply replacing checkout.",
+     "search_results": [
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://docs.lemonsqueezy.com/migration",
+       "domain": "docs.lemonsqueezy.com",
+       "title": "Migration: Lemon Squeezy is winding down • Lemon Squeezy",
+       "description": null,
+       "breadcrumb": "docs.lemonsqueezy.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://docs.lemonsqueezy.com/migration",
+       "domain": "docs.lemonsqueezy.com",
+       "title": "Migration: Lemon Squeezy is winding down • Lemon Squeezy",
+       "description": null,
+       "breadcrumb": "docs.lemonsqueezy.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://docs.lemonsqueezy.com/help/getting-started/migrate-to-lemon-squeezy",
+       "domain": "docs.lemonsqueezy.com",
+       "title": "Docs: Migrate to Lemon Squeezy • Lemon Squeezy",
+       "description": null,
+       "breadcrumb": "docs.lemonsqueezy.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://www.lemonsqueezy.com/blog/saying-goodbye-to-lemon-squeezy",
+       "domain": "www.lemonsqueezy.com",
+       "title": "Saying goodbye to Lemon Squeezy • Lemon Squeezy",
+       "description": null,
+       "breadcrumb": "www.lemonsqueezy.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://www.lemonsqueezy.com/blog/saying-goodbye-to-lemon-squeezy",
+       "domain": "www.lemonsqueezy.com",
+       "title": "Saying goodbye to Lemon Squeezy • Lemon Squeezy",
+       "description": null,
+       "breadcrumb": "www.lemonsqueezy.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://bunny.com/blog/lemon-squeezy-is-shutting-down-move-your-subscriptions-and-license-keys/",
+       "domain": "bunny.com",
+       "title": "Lemon Squeezy is shutting down. Here's where your subscriptions and license keys can go. | Bunny",
+       "description": null,
+       "breadcrumb": "bunny.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://bunny.com/blog/lemon-squeezy-is-shutting-down-move-your-subscriptions-and-license-keys/",
+       "domain": "bunny.com",
+       "title": "Lemon Squeezy is shutting down. Here's where your subscriptions and license keys can go. | Bunny",
+       "description": null,
+       "breadcrumb": "bunny.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://www.stateofindiehacking.com/stories/lemon-squeezy-alternatives-shutdown/",
+       "domain": "www.stateofindiehacking.com",
+       "title": "Lemon Squeezy Alternatives: Where Indie Hackers Go After the Shutdown · State of Indie Hacking",
+       "description": null,
+       "breadcrumb": "www.stateofindiehacking.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://theknowledgeengineers.com/alternatives/lemon-squeezy",
+       "domain": "theknowledgeengineers.com",
+       "title": "10 Lemon Squeezy Alternatives Compared in 2026 — The Knowledge Engineers",
+       "description": null,
+       "breadcrumb": "theknowledgeengineers.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://www.paydude.io/resources/best-lemon-squeezy-alternatives",
+       "domain": "www.paydude.io",
+       "title": "Best Lemon Squeezy Alternatives (2026): 8 Options Compared",
+       "description": null,
+       "breadcrumb": "www.paydude.io"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://www.transactbridge.com/blog/best-lemon-squeezy-alternatives-for-global-businesses",
+       "domain": "www.transactbridge.com",
+       "title": "Best Lemon Squeezy Alternatives in 2026: 6 Merchant of Record Platforms Compared",
+       "description": null,
+       "breadcrumb": "www.transactbridge.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://goodvat.com/blog/lemon-squeezy-alternatives/",
+       "domain": "goodvat.com",
+       "title": "Lemon Squeezy Alternatives: Where to Go Next (2026) | GoodVat",
+       "description": null,
+       "breadcrumb": "goodvat.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://theusefulmedia.com/apps/developers/lemon-squeezy-alternatives/",
+       "domain": "theusefulmedia.com",
+       "title": "Lemon Squeezy alternatives for Mac and iPhone developers (2026) · The Useful Apps",
+       "description": null,
+       "breadcrumb": "theusefulmedia.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://eden.so/blog/lemon-squeezy-alternatives/",
+       "domain": "eden.so",
+       "title": "Lemon Squeezy alternatives in 2026: where to sell as it moves to Stripe — Eden Blog",
+       "description": null,
+       "breadcrumb": "eden.so"
+      }
+     ],
+     "sources": [
+      {
+       "type": "chat_gpt_source",
+       "title": "Saying goodbye to Lemon Squeezy",
+       "snippet": null,
+       "domain": "www.lemonsqueezy.com",
+       "url": "https://www.lemonsqueezy.com/blog/saying-goodbye-to-lemon-squeezy?utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": "Lemon Squeezy",
+       "publication_date": "2026-11-16 00:00:00 +00:00",
+       "markdown": null
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Migration: Lemon Squeezy is winding down",
+       "snippet": null,
+       "domain": "docs.lemonsqueezy.com",
+       "url": "https://docs.lemonsqueezy.com/migration?utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": "Lemon Squeezy",
+       "publication_date": null,
+       "markdown": null
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Stripe Managed Payments",
+       "snippet": null,
+       "domain": "stripe.com",
+       "url": "https://stripe.com/payments/managed-payments",
+       "thumbnail": null,
+       "source_name": null,
+       "publication_date": null,
+       "markdown": "[Stripe Managed Payments](https://stripe.com/payments/managed-payments)"
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Polar website",
+       "snippet": null,
+       "domain": "polar.sh",
+       "url": "https://polar.sh/",
+       "thumbnail": null,
+       "source_name": null,
+       "publication_date": null,
+       "markdown": "[Polar website](https://polar.sh/)"
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Paddle website",
+       "snippet": null,
+       "domain": "www.paddle.com",
+       "url": "https://www.paddle.com/",
+       "thumbnail": null,
+       "source_name": null,
+       "publication_date": null,
+       "markdown": "[Paddle website](https://www.paddle.com/)"
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Dodo Payments website",
+       "snippet": null,
+       "domain": "dodopayments.com",
+       "url": "https://dodopayments.com/",
+       "thumbnail": null,
+       "source_name": null,
+       "publication_date": null,
+       "markdown": "[Dodo Payments website](https://dodopayments.com/)"
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Creem website",
+       "snippet": null,
+       "domain": "www.creem.io",
+       "url": "https://www.creem.io/",
+       "thumbnail": null,
+       "source_name": null,
+       "publication_date": null,
+       "markdown": "[Creem website](https://www.creem.io/)"
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Gumroad website",
+       "snippet": null,
+       "domain": "gumroad.com",
+       "url": "https://gumroad.com/",
+       "thumbnail": null,
+       "source_name": null,
+       "publication_date": null,
+       "markdown": "[Gumroad website](https://gumroad.com/)"
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Lemon Squeezy Alternatives: Where Indie Hackers Go After the Shutdown",
+       "snippet": null,
+       "domain": "www.stateofindiehacking.com",
+       "url": "https://www.stateofindiehacking.com/stories/lemon-squeezy-alternatives-shutdown/?utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": "State of Indie Hacking",
+       "publication_date": "2026-11-17 00:00:00 +00:00",
+       "markdown": null
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "10 Lemon Squeezy Alternatives Compared in 2026",
+       "snippet": null,
+       "domain": "theknowledgeengineers.com",
+       "url": "https://theknowledgeengineers.com/alternatives/lemon-squeezy?utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": "The Knowledge Engineers",
+       "publication_date": "2026-11-10 00:00:00 +00:00",
+       "markdown": null
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Best Lemon Squeezy Alternatives in 2026: 6 Merchant of Record Platforms Compared",
+       "snippet": null,
+       "domain": "www.transactbridge.com",
+       "url": "https://www.transactbridge.com/blog/best-lemon-squeezy-alternatives-for-global-businesses?utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": "TransactBridge",
+       "publication_date": "2026-10-19 00:00:00 +00:00",
+       "markdown": null
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Lemon Squeezy Alternatives: Where to Go Next (2026)",
+       "snippet": null,
+       "domain": "goodvat.com",
+       "url": "https://goodvat.com/blog/lemon-squeezy-alternatives/?utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": "GoodVat",
+       "publication_date": "2026-11-12 00:00:00 +00:00",
+       "markdown": null
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Bunny website",
+       "snippet": null,
+       "domain": "bunny.com",
+       "url": "https://bunny.com/",
+       "thumbnail": null,
+       "source_name": null,
+       "publication_date": null,
+       "markdown": "[Bunny website](https://bunny.com/)"
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Lemon Squeezy is shutting down. Here's where your subscriptions and license keys can go.",
+       "snippet": null,
+       "domain": "bunny.com",
+       "url": "https://bunny.com/blog/lemon-squeezy-is-shutting-down-move-your-subscriptions-and-license-keys/?utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": "Bunny",
+       "publication_date": "2026-11-16 00:00:00 +00:00",
+       "markdown": null
+      }
+     ],
+     "fan_out_queries": [
+      "Lemon Squeezy shutting down 2027 migration alternatives indie software sellers announcement 2026",
+      "Lemon Squeezy 2027 shutdown migration alternatives indie hackers sellers Paddle Polar Gumroad Dodo Payments 2026"
+     ],
+     "brand_entities": [
+      {
+       "type": "chat_gpt_brand_entity",
+       "title": "Merchant of record payments platform",
+       "category": "software",
+       "markdown": "Stripe Managed Payments",
+       "urls": null
+      },
+      {
+       "type": "chat_gpt_brand_entity",
+       "title": "Developer-focused merchant of record platform",
+       "category": "software",
+       "markdown": "Polar",
+       "urls": null
+      },
+      {
+       "type": "chat_gpt_brand_entity",
+       "title": "Merchant of record billing platform",
+       "category": "software",
+       "markdown": "Paddle",
+       "urls": null
+      },
+      {
+       "type": "chat_gpt_brand_entity",
+       "title": "Merchant of record payment platform",
+       "category": "software",
+       "markdown": "Dodo Payments",
+       "urls": null
+      },
+      {
+       "type": "chat_gpt_brand_entity",
+       "title": "Developer-focused merchant of record payment platform",
+       "category": "software",
+       "markdown": "Creem",
+       "urls": null
+      },
+      {
+       "type": "chat_gpt_brand_entity",
+       "title": "Digital product ecommerce platform",
+       "category": "software",
+       "markdown": "Gumroad",
+       "urls": null
+      }
+     ],
+     "se_results_count": 0,
+     "item_types": [
+      "chat_gpt_text",
+      "chat_gpt_images",
+      "chat_gpt_table"
+     ],
+     "items_count": 15,
+     "items": [
+      {
+       "type": "chat_gpt_text",
+       "rank_group": 1,
+       "rank_absolute": 1,
+       "markdown": "# Lemon Squeezy shutdown: where are indie software sellers moving?\n\n(Confirmed — November 16, 2026)\n\nYes. Lemon Squeezy is officially winding down. This is no longer just a rumor.\n\nAccording to the company's announcement\\:\n\n- **November 16, 2026\\:** New store registrations closed.\n- **December 2, 2026\\:** Stripe migration tooling launches.\n- **Mid-January 2027\\:** Recommended latest date to begin migration.\n- **March 31, 2027\\:** Lemon Squeezy stops processing all transactions, including subscription renewals.\n\nThe reason: Stripe is consolidating Lemon Squeezy into its own **Stripe Managed Payments** product. [www.lemonsqueezy.com](https://www.lemonsqueezy.com/blog/saying-goodbye-to-lemon-squeezy?utm_source=chatgpt.com)[docs.lemonsqueezy.com](https://docs.lemonsqueezy.com/migration?utm_source=chatgpt.com)\n\nThe interesting part is that there isn't one universal replacement. The alternatives depend on whether you're selling SaaS, downloadable software, license keys, or digital products.\n\n## The main migration destinations\n\n",
+       "sources": [
+        {
+         "type": "chat_gpt_source",
+         "title": "Saying goodbye to Lemon Squeezy",
+         "snippet": null,
+         "domain": "www.lemonsqueezy.com",
+         "url": "https://www.lemonsqueezy.com/blog/saying-goodbye-to-lemon-squeezy?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": "Lemon Squeezy",
+         "publication_date": "2026-11-16 00:00:00 +00:00",
+         "markdown": null
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "Migration: Lemon Squeezy is winding down",
+         "snippet": null,
+         "domain": "docs.lemonsqueezy.com",
+         "url": "https://docs.lemonsqueezy.com/migration?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": "Lemon Squeezy",
+         "publication_date": null,
+         "markdown": null
+        }
+       ],
+       "brand_entities": null
+      },
+      {
+       "type": "chat_gpt_images",
+       "rank_group": 1,
+       "rank_absolute": 2,
+       "markdown": "![Stripe Logo Download (SVG, PNG, EPS, PDF) | PixelBrands](https://images.openai.com/static-rsc-4/aVtuLxJXV9DmtEmg9b45Apl_aIYsif99dM-GHSfkXYZDC4tFOhFvFlTrHocFw_PqD4iGlfn8TyGj8Knz3iEfgQ88Gl1qbf-qVS8yq3s_dga8IuVvdS85dQWTHuxQAfDBHQSn4bvLAWea6XSgqDlmrU-sz5LlptntGZmOFqqabVil8_uydbbIqAvaqwgrj-k8?purpose=fullsize)",
+       "items": [
+        {
+         "type": "chat_gpt_images_element",
+         "url": "https://pixelbrands.net/%40stripe/stripe-logo",
+         "alt": "Stripe Logo Download (SVG, PNG, EPS, PDF) | PixelBrands",
+         "image_url": "https://images.openai.com/static-rsc-4/aVtuLxJXV9DmtEmg9b45Apl_aIYsif99dM-GHSfkXYZDC4tFOhFvFlTrHocFw_PqD4iGlfn8TyGj8Knz3iEfgQ88Gl1qbf-qVS8yq3s_dga8IuVvdS85dQWTHuxQAfDBHQSn4bvLAWea6XSgqDlmrU-sz5LlptntGZmOFqqabVil8_uydbbIqAvaqwgrj-k8?purpose=fullsize",
+         "markdown": "![Stripe Logo Download (SVG, PNG, EPS, PDF) | PixelBrands](https://images.openai.com/static-rsc-4/aVtuLxJXV9DmtEmg9b45Apl_aIYsif99dM-GHSfkXYZDC4tFOhFvFlTrHocFw_PqD4iGlfn8TyGj8Knz3iEfgQ88Gl1qbf-qVS8yq3s_dga8IuVvdS85dQWTHuxQAfDBHQSn4bvLAWea6XSgqDlmrU-sz5LlptntGZmOFqqabVil8_uydbbIqAvaqwgrj-k8?purpose=fullsize)"
+        }
+       ]
+      },
+      {
+       "type": "chat_gpt_text",
+       "rank_group": 2,
+       "rank_absolute": 3,
+       "markdown": "\n\n**1\\. Stripe Managed Payments**\n\n(Official migration destination)\n\n- Closest supported migration path for eligible Lemon Squeezy merchants.\n- Merchant of record: yes.\n- Handles international sales tax, fraud and disputes.\n- Migration tooling planned for December 2, 2026.\n- Missing built-in file delivery, license keys, storefronts and affiliates.\n\n**Best fit\\:** SaaS and digital-product sellers who want to stay within Stripe's ecosystem.\n\n[Stripe Managed Payments](https://stripe.com/payments/managed-payments)\n\n---\n\n",
+       "sources": [
+        {
+         "type": "chat_gpt_source",
+         "title": "Stripe Managed Payments",
+         "snippet": null,
+         "domain": "stripe.com",
+         "url": "https://stripe.com/payments/managed-payments",
+         "thumbnail": null,
+         "source_name": null,
+         "publication_date": null,
+         "markdown": "[Stripe Managed Payments](https://stripe.com/payments/managed-payments)"
+        }
+       ],
+       "brand_entities": [
+        {
+         "type": "chat_gpt_brand_entity",
+         "title": "Merchant of record payments platform",
+         "category": "software",
+         "markdown": "Stripe Managed Payments",
+         "urls": null
+        }
+       ]
+      },
+      {
+       "type": "chat_gpt_images",
+       "rank_group": 2,
+       "rank_absolute": 4,
+       "markdown": "![Introducing the Creator Platform for Open Source Developers • changelog.gallery](https://images.openai.com/static-rsc-4/6sK9rnkB4om5g4rgRjYwfXY5yp2JNz8Cfj74LhzLjxwntpmfMVdQYILtvj8sRAF1QbElHbii-FJLkb76oc5kP3gTKEP20cATGmJS_J7GDk4kGpgjWN9cXSXyjfGsNcMIAwzZ1bNfUYW-XgC9LOdx08cyO-6R-QedaVUTPt0ju60fEm5pZNZePx4Iw6QZuijj?purpose=fullsize)",
+       "items": [
+        {
+         "type": "chat_gpt_images_element",
+         "url": "https://www.changelog.gallery/posts/introducing-the-creator-platform-for-open-source-developers/",
+         "alt": "Introducing the Creator Platform for Open Source Developers • changelog.gallery",
+         "image_url": "https://images.openai.com/static-rsc-4/6sK9rnkB4om5g4rgRjYwfXY5yp2JNz8Cfj74LhzLjxwntpmfMVdQYILtvj8sRAF1QbElHbii-FJLkb76oc5kP3gTKEP20cATGmJS_J7GDk4kGpgjWN9cXSXyjfGsNcMIAwzZ1bNfUYW-XgC9LOdx08cyO-6R-QedaVUTPt0ju60fEm5pZNZePx4Iw6QZuijj?purpose=fullsize",
+         "markdown": "![Introducing the Creator Platform for Open Source Developers • changelog.gallery](https://images.openai.com/static-rsc-4/6sK9rnkB4om5g4rgRjYwfXY5yp2JNz8Cfj74LhzLjxwntpmfMVdQYILtvj8sRAF1QbElHbii-FJLkb76oc5kP3gTKEP20cATGmJS_J7GDk4kGpgjWN9cXSXyjfGsNcMIAwzZ1bNfUYW-XgC9LOdx08cyO-6R-QedaVUTPt0ju60fEm5pZNZePx4Iw6QZuijj?purpose=fullsize)"
+        }
+       ]
+      },
+      {
+       "type": "chat_gpt_text",
+       "rank_group": 3,
+       "rank_absolute": 5,
+       "markdown": "\n\n**2\\. Polar**\n\n(Developer-focused alternative)\n\n- Merchant of record.\n- Built around developer products, SaaS and open-source monetization.\n- Supports subscriptions, one-time purchases and digital products.\n- Developer-friendly APIs and integrations.\n\n**Best fit\\:** Indie hackers, developer tools, APIs and small SaaS businesses.\n\n[Polar website](https://polar.sh/)\n\n---\n\n",
+       "sources": [
+        {
+         "type": "chat_gpt_source",
+         "title": "Polar website",
+         "snippet": null,
+         "domain": "polar.sh",
+         "url": "https://polar.sh/",
+         "thumbnail": null,
+         "source_name": null,
+         "publication_date": null,
+         "markdown": "[Polar website](https://polar.sh/)"
+        }
+       ],
+       "brand_entities": [
+        {
+         "type": "chat_gpt_brand_entity",
+         "title": "Developer-focused merchant of record platform",
+         "category": "software",
+         "markdown": "Polar",
+         "urls": null
+        }
+       ]
+      },
+      {
+       "type": "chat_gpt_images",
+       "rank_group": 3,
+       "rank_absolute": 6,
+       "markdown": "![Paddle - Crunchbase Company Profile & Funding](https://images.openai.com/static-rsc-4/mivzkrx43X7k8aTimMuWUKZzjhIdD9rLkTyf7bwU4HMixtl_3F8o-BpQqVSbUFTvf2Ji5pEzpAvJztrqJEL1vBhlfpOAVkpfeXIgsZkm7xd3j-E5-IqZ8EaDi-KQ7aL5LqM5PWh2IOxzxjzpAILNOfVp1CqoyQxaX0Akt3mhWps-MQ7E9V_cu71lmtzwiHvU?purpose=fullsize)",
+       "items": [
+        {
+         "type": "chat_gpt_images_element",
+         "url": "https://www.crunchbase.com/organization/paddle",
+         "alt": "Paddle - Crunchbase Company Profile & Funding",
+         "image_url": "https://images.openai.com/static-rsc-4/mivzkrx43X7k8aTimMuWUKZzjhIdD9rLkTyf7bwU4HMixtl_3F8o-BpQqVSbUFTvf2Ji5pEzpAvJztrqJEL1vBhlfpOAVkpfeXIgsZkm7xd3j-E5-IqZ8EaDi-KQ7aL5LqM5PWh2IOxzxjzpAILNOfVp1CqoyQxaX0Akt3mhWps-MQ7E9V_cu71lmtzwiHvU?purpose=fullsize",
+         "markdown": "![Paddle - Crunchbase Company Profile & Funding](https://images.openai.com/static-rsc-4/mivzkrx43X7k8aTimMuWUKZzjhIdD9rLkTyf7bwU4HMixtl_3F8o-BpQqVSbUFTvf2Ji5pEzpAvJztrqJEL1vBhlfpOAVkpfeXIgsZkm7xd3j-E5-IqZ8EaDi-KQ7aL5LqM5PWh2IOxzxjzpAILNOfVp1CqoyQxaX0Akt3mhWps-MQ7E9V_cu71lmtzwiHvU?purpose=fullsize)"
+        }
+       ]
+      },
+      {
+       "type": "chat_gpt_text",
+       "rank_group": 4,
+       "rank_absolute": 7,
+       "markdown": "\n\n**3\\. Paddle**\n\n- Established merchant of record.\n- Subscription billing and global tax handling.\n- Particularly relevant to SaaS companies.\n- More established billing infrastructure than many newer indie-focused entrants.\n\n**Best fit\\:** SaaS businesses with recurring revenue and international customers.\n\n[Paddle website](https://www.paddle.com/)\n\n---\n\n",
+       "sources": [
+        {
+         "type": "chat_gpt_source",
+         "title": "Paddle website",
+         "snippet": null,
+         "domain": "www.paddle.com",
+         "url": "https://www.paddle.com/",
+         "thumbnail": null,
+         "source_name": null,
+         "publication_date": null,
+         "markdown": "[Paddle website](https://www.paddle.com/)"
+        }
+       ],
+       "brand_entities": [
+        {
+         "type": "chat_gpt_brand_entity",
+         "title": "Merchant of record billing platform",
+         "category": "software",
+         "markdown": "Paddle",
+         "urls": null
+        }
+       ]
+      },
+      {
+       "type": "chat_gpt_images",
+       "rank_group": 4,
+       "rank_absolute": 8,
+       "markdown": "![Dodo Payments Logo PNG Vector (SVG) Free Download](https://images.openai.com/static-rsc-4/78QKmfWuQpWV_ssMThvCXIcH5Tu7QHPzdNblZPKBoI8MGrvy0ArLpQzEFATV73JMyAjf5bI5BJcsf68R10vyql7rHl3WK1o6MwroZwn5vpCV9NNapPsozdj_w6t6ILPSwSw-HkRBCt5RuL3YhCHyi5q6CUyuYWMwRF_jwi_bQrxf0dkEQ4I89CVAyzNky0Bx?purpose=fullsize)",
+       "items": [
+        {
+         "type": "chat_gpt_images_element",
+         "url": "https://seeklogo.com/vector-logo/653193/dodo-payments",
+         "alt": "Dodo Payments Logo PNG Vector (SVG) Free Download",
+         "image_url": "https://images.openai.com/static-rsc-4/78QKmfWuQpWV_ssMThvCXIcH5Tu7QHPzdNblZPKBoI8MGrvy0ArLpQzEFATV73JMyAjf5bI5BJcsf68R10vyql7rHl3WK1o6MwroZwn5vpCV9NNapPsozdj_w6t6ILPSwSw-HkRBCt5RuL3YhCHyi5q6CUyuYWMwRF_jwi_bQrxf0dkEQ4I89CVAyzNky0Bx?purpose=fullsize",
+         "markdown": "![Dodo Payments Logo PNG Vector (SVG) Free Download](https://images.openai.com/static-rsc-4/78QKmfWuQpWV_ssMThvCXIcH5Tu7QHPzdNblZPKBoI8MGrvy0ArLpQzEFATV73JMyAjf5bI5BJcsf68R10vyql7rHl3WK1o6MwroZwn5vpCV9NNapPsozdj_w6t6ILPSwSw-HkRBCt5RuL3YhCHyi5q6CUyuYWMwRF_jwi_bQrxf0dkEQ4I89CVAyzNky0Bx?purpose=fullsize)"
+        }
+       ]
+      },
+      {
+       "type": "chat_gpt_text",
+       "rank_group": 5,
+       "rank_absolute": 9,
+       "markdown": "\n\n**4\\. Dodo Payments**\n\n- Merchant of record.\n- Targets digital products, SaaS and software businesses.\n- Offers subscription billing and digital-product payment infrastructure.\n- Worth investigating for sellers who need an alternative to Stripe.\n\n**Best fit\\:** International indie developers and software entrepreneurs.\n\n[Dodo Payments website](https://dodopayments.com/)\n\n---\n\n",
+       "sources": [
+        {
+         "type": "chat_gpt_source",
+         "title": "Dodo Payments website",
+         "snippet": null,
+         "domain": "dodopayments.com",
+         "url": "https://dodopayments.com/",
+         "thumbnail": null,
+         "source_name": null,
+         "publication_date": null,
+         "markdown": "[Dodo Payments website](https://dodopayments.com/)"
+        }
+       ],
+       "brand_entities": [
+        {
+         "type": "chat_gpt_brand_entity",
+         "title": "Merchant of record payment platform",
+         "category": "software",
+         "markdown": "Dodo Payments",
+         "urls": null
+        }
+       ]
+      },
+      {
+       "type": "chat_gpt_images",
+       "rank_group": 5,
+       "rank_absolute": 10,
+       "markdown": "![Creem](https://images.openai.com/static-rsc-4/uAi-HwEu2VXddAG9Yy77YNAINxyzye4F6z971-jwz1nKHFXQhEKNYBKDq8IjWe_eWvvuqBfduUzjEz6bmu8pgUXXRg5AqvhOcLCJVnq-3z48-szmQ37Hrmq_ctQzmChKNWtnzp-ZwCfXSbk0njBwXOUiXSLb4yagANLNrUnBKhM6LEX43HRjMrIu9-yj6Xqj?purpose=fullsize)",
+       "items": [
+        {
+         "type": "chat_gpt_images_element",
+         "url": "https://www.creem.io/",
+         "alt": "Creem",
+         "image_url": "https://images.openai.com/static-rsc-4/uAi-HwEu2VXddAG9Yy77YNAINxyzye4F6z971-jwz1nKHFXQhEKNYBKDq8IjWe_eWvvuqBfduUzjEz6bmu8pgUXXRg5AqvhOcLCJVnq-3z48-szmQ37Hrmq_ctQzmChKNWtnzp-ZwCfXSbk0njBwXOUiXSLb4yagANLNrUnBKhM6LEX43HRjMrIu9-yj6Xqj?purpose=fullsize",
+         "markdown": "![Creem](https://images.openai.com/static-rsc-4/uAi-HwEu2VXddAG9Yy77YNAINxyzye4F6z971-jwz1nKHFXQhEKNYBKDq8IjWe_eWvvuqBfduUzjEz6bmu8pgUXXRg5AqvhOcLCJVnq-3z48-szmQ37Hrmq_ctQzmChKNWtnzp-ZwCfXSbk0njBwXOUiXSLb4yagANLNrUnBKhM6LEX43HRjMrIu9-yj6Xqj?purpose=fullsize)"
+        }
+       ]
+      },
+      {
+       "type": "chat_gpt_text",
+       "rank_group": 6,
+       "rank_absolute": 11,
+       "markdown": "\n\n**5\\. Creem**\n\n- Merchant of record.\n- Developer-oriented checkout and subscription infrastructure.\n- A newer alternative being discussed in the indie software ecosystem.\n- Advertised pricing starts at 3.9% + \\$0.40.\n\n**Best fit\\:** Solo developers looking for a relatively lightweight payments platform.\n\n[Creem website](https://www.creem.io/)\n\n---\n\n",
+       "sources": [
+        {
+         "type": "chat_gpt_source",
+         "title": "Creem website",
+         "snippet": null,
+         "domain": "www.creem.io",
+         "url": "https://www.creem.io/",
+         "thumbnail": null,
+         "source_name": null,
+         "publication_date": null,
+         "markdown": "[Creem website](https://www.creem.io/)"
+        }
+       ],
+       "brand_entities": [
+        {
+         "type": "chat_gpt_brand_entity",
+         "title": "Developer-focused merchant of record payment platform",
+         "category": "software",
+         "markdown": "Creem",
+         "urls": null
+        }
+       ]
+      },
+      {
+       "type": "chat_gpt_images",
+       "rank_group": 6,
+       "rank_absolute": 12,
+       "markdown": "![202Как оплатить Gumroad из России в 2025 году? - 17.12.24 18:33 | Пикабу](https://images.openai.com/static-rsc-4/H3PC_9yhIpZPMog0WjktmdGQmrk5LxapR48ZWhV58PIrUsVf5PJfhptOjMIAEROBAvSFYnSm9Mcb_d8VPNLxfXRqGEiBSCNvAj17yXG1aVRBlWnSVaamc2e3rlyByewhXzQ4KTZjv7MaE_HqXqFzv8o3aD4DLXibx6rdNFUiBaFpPTqlR_rDjxwO2qQRB6x3?purpose=fullsize)",
+       "items": [
+        {
+         "type": "chat_gpt_images_element",
+         "url": "https://pikabu.ru/story/202kak_oplatit_gumroad_iz_rossii_v_2025_godu_12147974",
+         "alt": "202Как оплатить Gumroad из России в 2025 году? - 17.12.24 18:33 | Пикабу",
+         "image_url": "https://images.openai.com/static-rsc-4/H3PC_9yhIpZPMog0WjktmdGQmrk5LxapR48ZWhV58PIrUsVf5PJfhptOjMIAEROBAvSFYnSm9Mcb_d8VPNLxfXRqGEiBSCNvAj17yXG1aVRBlWnSVaamc2e3rlyByewhXzQ4KTZjv7MaE_HqXqFzv8o3aD4DLXibx6rdNFUiBaFpPTqlR_rDjxwO2qQRB6x3?purpose=fullsize",
+         "markdown": "![202Как оплатить Gumroad из России в 2025 году? - 17.12.24 18:33 | Пикабу](https://images.openai.com/static-rsc-4/H3PC_9yhIpZPMog0WjktmdGQmrk5LxapR48ZWhV58PIrUsVf5PJfhptOjMIAEROBAvSFYnSm9Mcb_d8VPNLxfXRqGEiBSCNvAj17yXG1aVRBlWnSVaamc2e3rlyByewhXzQ4KTZjv7MaE_HqXqFzv8o3aD4DLXibx6rdNFUiBaFpPTqlR_rDjxwO2qQRB6x3?purpose=fullsize)"
+        }
+       ]
+      },
+      {
+       "type": "chat_gpt_text",
+       "rank_group": 7,
+       "rank_absolute": 13,
+       "markdown": "\n\n**6\\. Gumroad**\n\n- Merchant of record.\n- Easy digital-product storefront.\n- Supports memberships and digital downloads.\n- Higher headline transaction fees.\n\n**Best fit\\:** Selling downloadable products, templates, ebooks and smaller software products.\n\n[Gumroad website](https://gumroad.com/)\n\nThese are credible alternatives being discussed in the wake of the announcement, not a verified ranking of actual migration volumes. There isn't yet reliable public data showing how many sellers have chosen each platform. [www.stateofindiehacking.com](https://www.stateofindiehacking.com/stories/lemon-squeezy-alternatives-shutdown/?utm_source=chatgpt.com)[theknowledgeengineers.com](https://theknowledgeengineers.com/alternatives/lemon-squeezy?utm_source=chatgpt.com)[www.transactbridge.com](https://www.transactbridge.com/blog/best-lemon-squeezy-alternatives-for-global-businesses?utm_source=chatgpt.com)[goodvat.com](https://goodvat.com/blog/lemon-squeezy-alternatives/?utm_source=chatgpt.com)\n\n## Important: license keys are the biggest migration complication\n\nIf you sell actual software (desktop apps, plugins, developer tools, etc.), don't just compare payment processors.\n\nLemon Squeezy bundled several jobs together\\:\n\n1. Payment processing\n2. Merchant-of-record tax handling\n3. Subscription management\n4. License-key generation and validation\n5. Digital downloads and fulfillment\n\nStripe Managed Payments does not replace all five.\n\nFor license-key-based software, **Bunny** is another interesting option. It offers subscription billing and license-key management, including online and offline license validation. However, it is not a merchant of record, so you'll need a separate tax solution.\n\n[Bunny website](https://bunny.com/) · [bunny.com](https://bunny.com/blog/lemon-squeezy-is-shutting-down-move-your-subscriptions-and-license-keys/?utm_source=chatgpt.com)[docs.lemonsqueezy.com](https://docs.lemonsqueezy.com/migration?utm_source=chatgpt.com)\n\n## Quick comparison\n\n",
+       "sources": [
+        {
+         "type": "chat_gpt_source",
+         "title": "Gumroad website",
+         "snippet": null,
+         "domain": "gumroad.com",
+         "url": "https://gumroad.com/",
+         "thumbnail": null,
+         "source_name": null,
+         "publication_date": null,
+         "markdown": "[Gumroad website](https://gumroad.com/)"
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "Lemon Squeezy Alternatives: Where Indie Hackers Go After the Shutdown",
+         "snippet": null,
+         "domain": "www.stateofindiehacking.com",
+         "url": "https://www.stateofindiehacking.com/stories/lemon-squeezy-alternatives-shutdown/?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": "State of Indie Hacking",
+         "publication_date": "2026-11-17 00:00:00 +00:00",
+         "markdown": null
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "10 Lemon Squeezy Alternatives Compared in 2026",
+         "snippet": null,
+         "domain": "theknowledgeengineers.com",
+         "url": "https://theknowledgeengineers.com/alternatives/lemon-squeezy?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": "The Knowledge Engineers",
+         "publication_date": "2026-11-10 00:00:00 +00:00",
+         "markdown": null
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "Best Lemon Squeezy Alternatives in 2026: 6 Merchant of Record Platforms Compared",
+         "snippet": null,
+         "domain": "www.transactbridge.com",
+         "url": "https://www.transactbridge.com/blog/best-lemon-squeezy-alternatives-for-global-businesses?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": "TransactBridge",
+         "publication_date": "2026-10-19 00:00:00 +00:00",
+         "markdown": null
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "Lemon Squeezy Alternatives: Where to Go Next (2026)",
+         "snippet": null,
+         "domain": "goodvat.com",
+         "url": "https://goodvat.com/blog/lemon-squeezy-alternatives/?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": "GoodVat",
+         "publication_date": "2026-11-12 00:00:00 +00:00",
+         "markdown": null
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "Bunny website",
+         "snippet": null,
+         "domain": "bunny.com",
+         "url": "https://bunny.com/",
+         "thumbnail": null,
+         "source_name": null,
+         "publication_date": null,
+         "markdown": "[Bunny website](https://bunny.com/)"
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "Lemon Squeezy is shutting down. Here's where your subscriptions and license keys can go.",
+         "snippet": null,
+         "domain": "bunny.com",
+         "url": "https://bunny.com/blog/lemon-squeezy-is-shutting-down-move-your-subscriptions-and-license-keys/?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": "Bunny",
+         "publication_date": "2026-11-16 00:00:00 +00:00",
+         "markdown": null
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "Migration: Lemon Squeezy is winding down",
+         "snippet": null,
+         "domain": "docs.lemonsqueezy.com",
+         "url": "https://docs.lemonsqueezy.com/migration?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": "Lemon Squeezy",
+         "publication_date": null,
+         "markdown": null
+        }
+       ],
+       "brand_entities": [
+        {
+         "type": "chat_gpt_brand_entity",
+         "title": "Digital product ecommerce platform",
+         "category": "software",
+         "markdown": "Gumroad",
+         "urls": null
+        }
+       ]
+      },
+      {
+       "type": "chat_gpt_table",
+       "rank_group": 1,
+       "rank_absolute": 14,
+       "text": null,
+       "markdown": "| Platform | Merchant of record | Developer-oriented |\n|--------|--------|--------|\n| Stripe Managed Payments | Yes | Yes |\n| Polar | Yes | Yes |\n| Paddle | Yes | Yes |\n| Dodo Payments | Yes | Yes |\n| Creem | Yes | Yes |\n| Gumroad | Yes | Somewhat |\n| Bunny | No | Yes |\n\n",
+       "table": {
+        "table_header": [
+         "Platform",
+         "Merchant of record",
+         "Developer-oriented"
+        ],
+        "table_content": [
+         [
+          "Stripe Managed Payments",
+          "Yes",
+          "Yes"
+         ],
+         [
+          "Polar",
+          "Yes",
+          "Yes"
+         ],
+         [
+          "Paddle",
+          "Yes",
+          "Yes"
+         ],
+         [
+          "Dodo Payments",
+          "Yes",
+          "Yes"
+         ],
+         [
+          "Creem",
+          "Yes",
+          "Yes"
+         ],
+         [
+          "Gumroad",
+          "Yes",
+          "Somewhat"
+         ],
+         [
+          "Bunny",
+          "No",
+          "Yes"
+         ]
+        ]
+       },
+       "brand_entities": null
+      },
+      {
+       "type": "chat_gpt_text",
+       "rank_group": 8,
+       "rank_absolute": 15,
+       "markdown": "\n## My take\n\nFor an indie software business, I'd investigate these three first\\:\n\n- **Polar\\:** If you want a developer-centric alternative with a merchant of record.\n- **Paddle\\:** If you're running a more established SaaS business.\n- **Dodo Payments\\:** If you want another merchant-of-record option to evaluate.\n\nI'd keep Stripe Managed Payments on the shortlist too, especially if you're eligible for the migration incentive.\n\nOne important caveat: moving to a regular payment processor instead of a merchant of record means taking responsibility for applicable sales tax and VAT obligations yourself.\n\n## One question that would substantially change my recommendation\n\nWhat kind of software are you selling?\n\n**1\\. Product type**\n\n---\n\n**2\\. Do you need license-key management?**\n\n---\n\n**3\\. Do you want to retain merchant-of-record tax handling?**\n\n[Find my best migration options]\n\nI can then narrow this down to platforms that actually replace the parts of Lemon Squeezy you depend on, rather than simply replacing checkout.",
+       "sources": null,
+       "brand_entities": null
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

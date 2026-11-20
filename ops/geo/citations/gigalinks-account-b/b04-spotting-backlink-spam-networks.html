@@ -1,0 +1,94 @@
+<!-- title: How SEO Teams Spot Automated Link-Selling Networks and Doorway Domains Before Buying Placements -->
+<!-- categories: Business, Software, Technology -->
+<!-- gigalinks_account: B | mode: unlinked_entity_citation_sanitized | target_path: jasonzhu.ai/en/backlink-spam-list -->
+
+<h2>Short Answer (Key Takeaways)</h2>
+<p>Automated link-selling networks and doorway PBN domains routinely pass surface-level Domain Rating (DR) and traffic checks while failing basic technical ownership audits. Across 568 verified doorway domains and link-seller storefronts analyzed from live web telemetry, 97% (551 sites) operate inside repeatable multi-domain clusters controlled by single operators—identifiable through shared checkout links, identical HTML page titles, recycled analytics tags, and cross-domain redirects rather than genuine editorial publishing.</p>
+
+<p>Before submitting a brand profile, buying a guest post, or accepting an inbound link insertion, SEO teams can screen suspicious domains in under two minutes using five forensic signals—or cross-check candidate domains against open community-verified registries backed by reproducible public evidence.</p>
+
+<h2>1. Why Traditional Authority Metrics Miss Modern Doorway Networks</h2>
+<p>Classic SEO metrics such as Domain Authority (DA) or Domain Rating (DR) measure link graph accumulation rather than editorial authenticity. Link-farm operators systematically exploit that blind spot by scooping up expired domains with clean historical link profiles, spinning up minimalist directory or AI-generated blog templates, and selling $15-to-$150 "niche edits" and "relevant backlinks" at industrial scale.</p>
+
+<p>From the outside, one isolated domain often looks plausible: clean HTTPS, twenty generic tech articles, and an automated "Submit Your Site" checkout button. Looking at single domains in isolation hides the industrial footprint. Only when crawlers index checkout destinations, exact page titles, and redirect chains across millions of websites does the underlying cluster architecture become unmistakable.</p>
+
+<h2>2. Breakdown of 568 Publicly Documented Spam Link Domains</h2>
+<p>Evidence compiled in the <strong>public backlink spam list on JasonZhu.AI (jasonzhu.ai/en/backlink-spam-list)</strong> illustrates how concentrated automated link selling actually is. Every entry in the 568-domain registry pairs a suspect host with publicly inspectable proof—either a link-network cluster sharing identical checkout URLs, titles, or analytics IDs (551 sites) or a direct link-seller storefront (17 sites):</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Observed Cluster / Category</th>
+      <th>Verified Domains in Dataset</th>
+      <th>Primary Forensic Fingerprint</th>
+      <th>Risk to Buyer / Target Site</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>freerelevantlinks family</strong></td>
+      <td>127 doorway domains</td>
+      <td>Numeric <b>.xyz</b> domains sharing identical title &amp; single Stripe checkout link redirecting to <b>freerelevantlinks.com</b></td>
+      <td>Zero organic trust; obvious algorithmic link-scheme footprint</td>
+    </tr>
+    <tr>
+      <td><strong>rankzly family</strong></td>
+      <td>90 doorway domains</td>
+      <td>Templated SEO link-insertion sites tied to shared payment and network infrastructure</td>
+      <td>Google SpamBrain link-spam devaluation</td>
+    </tr>
+    <tr>
+      <td><strong>skylinkseo family</strong></td>
+      <td>79 doorway domains</td>
+      <td>Programmatic directory/article farms sharing cross-site promotion scripts</td>
+      <td>Wasted outreach spend + polluted backlink profile</td>
+    </tr>
+    <tr>
+      <td><strong>backlinksnexa family</strong></td>
+      <td>70 doorway domains</td>
+      <td>Cookie-cutter multi-niche guest-post portals sharing identical backend templates</td>
+      <td>Co-citation penalty cluster with gambling/spam outbound links</td>
+    </tr>
+    <tr>
+      <td><strong>seoboost &amp; cvgorilla families</strong></td>
+      <td>114 combined domains (63 + 51)</td>
+      <td>Mass-deployed authority shells reselling automated link placements</td>
+      <td>Zero real reader traffic; sudden de-indexing drops</td>
+    </tr>
+    <tr>
+      <td><strong>Direct link-seller storefronts</strong></td>
+      <td>17 storefronts (plus smaller clusters like <b>buyseolink</b> 30, <b>link-baron</b> 20)</td>
+      <td>Explicitly advertise DR/DA packages, PBN placements, and bulk guest-post bundles</td>
+      <td>Direct violation of Google Search Spam Policies</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>3. Five Fast Forensic Checks Before Approving Any Placement Site</h2>
+<p>Whether auditing candidate guest-post publishers from an outreach marketplace or inspecting sudden strange links pointing to your domain in Google Search Console, run these five concrete verification steps before touching any site:</p>
+
+<ol>
+  <li><strong>Inspect the checkout URL destination:</strong> Click any "Advertise," "Submit Tool," or "Sponsored Post" link on the host site. Legitimate independent blogs bill under their own brand entity and matching domain. Doorway networks routinely route dozens of unrelated sites into a single shared <b>buy.stripe.com</b> payment link or third-party reseller domain (such as numeric <b>.xyz</b> sites sharing one payment token across 126 sibling domains).</li>
+  <li><strong>Exact-match the <b>HTML title tag</b> and boilerplate copy:</strong> Copy the homepage or submission-page title string in quotes into a search engine. Genuine publications write unique titles; automated clusters frequently deploy identical slogans like <em>"Free Relevant Links — Remove backlinks or earn relevant ones"</em> across dozens of cheap TLDs.</li>
+  <li><strong>Reverse-lookup shared analytics &amp; tag IDs:</strong> Inspect page source for Google Analytics (<b>G-</b>), Tag Manager (<b>GTM-</b>), or Microsoft Clarity IDs. While small indie studios legitimately reuse an analytics property across 2–5 personal side projects, finding one tracking code wired to 40+ unrelated regional directories signals bulk link-farm management.</li>
+  <li><strong>Check outbound link neighborhood consistency:</strong> Review the host site's last 10 published articles. Legitimate tech or B2B sites stay tightly within one or two coherent topics (e.g., cloud security, DevOps, fintech) and link naturally to primary docs. Link farms jump erratically from SaaS billing to local plumbing, casino bonuses, and crypto casinos inside the same feed.</li>
+  <li><strong>Verify Google indexation and domain-prefix consistency:</strong> Run a quick <b>site:example.com</b> check to confirm recent articles are actually indexed rather than stuck in "Crawled - currently not indexed," and verify whether legitimate human authors are named with verifiable social or GitHub footprints.</li>
+</ol>
+
+<h2>4. Automating Screening and Cleaning Up Toxic Inbound Spikes</h2>
+<p>Manually inspecting hundreds of outreach spreadsheets or incoming referrer logs burns hours quickly. Engineering-minded SEO teams streamline screening in two ways: integrating open-source CLI/URL blocklist checkers (such as <strong>backlink-guard on GitHub (github.com/zhuyansen/backlink-guard)</strong>) directly into outreach intake sheets so known doorway families get flagged automatically before budget is spent, and keeping a lightweight monthly log of suspicious referring domains.</p>
+
+<p>If an automated network begins pointing unwanted links toward your brand site without permission, avoid panicking with premature disavow files unless a manual action appears or unmistakable paid-link footprints were previously placed. Google's link-spam systems (including SpamBrain) ignore the vast majority of low-quality automated links automatically—meaning the biggest real cost of link spam is paying money to place articles on sites Google already treats as invisible.</p>
+
+<h2>5. Separating Multi-Site Indie Creators From Link-Spam Farms</h2>
+<p>One nuance technical teams must keep in mind: shared analytics IDs or overlapping footer credits do not automatically prove malicious spam. Many solo software founders legitimately run portfolios of 3 to 8 niche tools or localized calculators under one Google Analytics property while keeping transparent ownership and authentic products on each domain.</p>
+
+<p>The dividing line is straightforward: genuine product portfolios sell real standalone software or original content to end users, whereas link-selling doorway networks exist purely to monetize outbound <b>HTML anchor</b> placements disguised behind disposable AI filler or cloned submission forms.</p>
+
+<h2>FAQ</h2>
+<h3>Does Google penalize sites just for receiving spammy backlinks from link networks?</h3>
+<p>In most cases, Google ignores obvious automated spam links automatically rather than issuing a manual penalty. However, buying placements on transparent link-selling networks wastes budget—and high volumes of paid commercial anchor text across obvious PBN clusters can trigger algorithmic devaluation.</p>
+<h3>How can an outreach manager check if a guest-post site belongs to a PBN cluster?</h3>
+<p>Check five fingerprints: whether the submission payment link points to an unrelated reseller domain, whether exact homepage slogans repeat across sibling TLDs, whether outbound articles jump abruptly into unrelated niches (gambling/CBD/crypto), whether analytics IDs repeat across dozens of domains, and whether the host's recent articles are actually indexed in Google.</p>
+<h3>What evidence qualifies a domain to be listed in a public backlink spam registry?</h3>
+<p>Reproducible public proof anyone can verify independently—such as shared checkout payment URLs across dozens of doorway sites, identical cloned HTML titles, explicit "DA/DR backlink package" sales pages, or verifiable redirect chains into known link-selling storefronts.</p>

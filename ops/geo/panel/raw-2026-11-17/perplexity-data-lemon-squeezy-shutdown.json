@@ -1,0 +1,191 @@
+{
+ "version": "0.1.20261103",
+ "status_code": 20000,
+ "status_message": "Ok.",
+ "time": "5.9695 sec.",
+ "cost": 0.006153,
+ "tasks_count": 1,
+ "tasks_error": 0,
+ "tasks": [
+  {
+   "id": "11170803-2225-0612-0000-39055ec8cb8b",
+   "status_code": 20000,
+   "status_message": "Ok.",
+   "time": "4.9123 sec.",
+   "cost": 0.006153,
+   "result_count": 1,
+   "path": [
+    "v3",
+    "ai_optimization",
+    "perplexity",
+    "llm_responses",
+    "live"
+   ],
+   "data": {
+    "api": "ai_optimization",
+    "function": "llm_responses",
+    "se": "perplexity",
+    "user_prompt": "Lemon Squeezy shutting down in 2027: what are indie software sellers migrating to?",
+    "model_name": "sonar",
+    "web_search_country_iso_code": "US"
+   },
+   "result": [
+    {
+     "model_name": "sonar",
+     "input_tokens": 26,
+     "output_tokens": 527,
+     "reasoning_tokens": 0,
+     "web_search": true,
+     "money_spent": 0.005553,
+     "datetime": "2026-11-17 08:03:34 +00:00",
+     "items": [
+      {
+       "type": "message",
+       "sections": [
+        {
+         "type": "text",
+         "text": "Indie software sellers are mainly moving to **Stripe Managed Payments**, Lemon Squeezy’s official successor. Stripe’s migration tooling is scheduled for **December 2, 2026**, and Lemon Squeezy will stop processing payments—including renewals—on **March 31, 2027**.[1][7]\n\nOther frequently mentioned destinations are:\n\n- **Dodo Payments** — merchant of record with storefronts, subscription support, and license-key handling; actively courting Lemon Squeezy migrations.[3]\n- **Paddle** — established merchant-of-record option for SaaS and software businesses.[4][5]\n- **Polar** — popular among developer-focused products, open-source projects, and usage-based SaaS.[8][9]\n- **Creem** — another merchant-of-record alternative, particularly attractive for lower transaction fees and revenue splitting.[8][9]\n- **Gumroad** — mostly for simpler digital products, although its higher fees make it less appealing for substantial software businesses.[5][9]\n- **FastSpring** — considered by larger software and game sellers, generally through custom pricing.[9]\n- **Own Stripe account plus a checkout/tax stack** — sellers become the merchant themselves, using Stripe Checkout or a service such as Checkout Page, with separate tooling for tax, file delivery, licensing, and affiliates.[4]\n\n## The practical split\n\n| Seller profile | Likely destination |\n|---|---|\n| Wants the easiest official migration and is eligible | Stripe Managed Payments |\n| Needs Lemon Squeezy-like all-in-one features | Dodo Payments, Paddle, Polar, or Creem |\n| Sells desktop software, plugins, or license-key products | Dodo, Paddle, Polar, or a dedicated licensing service |\n| Wants maximum control and already uses Stripe | Own Stripe account plus tax, licensing, and delivery tools |\n| Sells ebooks, templates, or lightweight downloads | Gumroad or Payhip |\n\nStripe Managed Payments preserves the merchant-of-record model and handles tax compliance, but it is **not a full feature-for-feature replacement**: storefronts, file delivery, license keys, affiliates, and PayPal are not carried over automatically.[1][4] Sellers using those features are therefore more likely to choose Dodo, Paddle, Polar, or Creem—or assemble their own stack.\n\nThe safest immediate steps are to export customers, orders, and subscriptions; inventory dependencies such as license keys and affiliates; and begin testing the replacement well before Lemon Squeezy’s recommended migration-start target of **mid-January 2027**.[2][8]",
+         "annotations": [
+          {
+           "title": "Migration: Lemon Squeezy is winding down",
+           "url": "https://docs.lemonsqueezy.com/migration",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Lemon Squeezy is shutting down. Here's where your subscriptions and license keys can go.",
+           "url": "https://bunny.com/blog/lemon-squeezy-is-shutting-down-move-your-subscriptions-and-license-keys/",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Indie Seller Weekly #6: Lemon Squeezy Is Shutting Down, and 195 Sellers Just Opened Shop There",
+           "url": "https://jasonzhu.ai/en/blog/chuhai-weekly-06",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Lemon Squeezy shutting down: what to do before March 2027",
+           "url": "https://checkoutpage.com/blog/lemon-squeezy-shutting-down",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Lemon Squeezy is winding down and will stop taking payments in March 2027 - Startup Fortune",
+           "url": "https://startupfortune.com/lemon-squeezy-is-winding-down-and-will-stop-taking-payments-in-march-2027/",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "AGTP on X: \"Lemon Squeezy just announced it is winding down ...",
+           "url": "https://x.com/AGTPinsights/status/2122367652999901457",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Saying goodbye to Lemon Squeezy",
+           "url": "https://www.lemonsqueezy.com/blog/saying-goodbye-to-lemon-squeezy",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Lemon Squeezy Is Shutting Down: What to Do by 31 March 2027",
+           "url": "https://goodvat.com/blog/lemon-squeezy-shutting-down/",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Lemon Squeezy Is Shutting Down: 8 Best Alternatives for SaaS & Digital Product Sellers - Hura Tips",
+           "url": "https://www.huratips.com/business-online/lemon-squeezy-alternatives.html",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Stripe shuts down Lemon Squeezy just two years after ...",
+           "url": "https://techstartups.com/2026/11/16/stripe-shuts-down-lemon-squeezy-just-two-years-after-acquisition-giving-businesses-until-march-2027-to-migrate/",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "fan_out_queries": null,
+     "search_results": [
+      {
+       "title": "Migration: Lemon Squeezy is winding down",
+       "url": "https://docs.lemonsqueezy.com/migration",
+       "date": "2026-11-16 00:00:00 +00:00",
+       "snippet": "# Lemon Squeezy is winding down\n## What’s happening\nLemon Squeezy is winding down and will stop processing transactions on March 31, 2027.\nAll Lemon Squeezy stores need to move off the platform by then, and extensions will not be offered.\nWe recommend moving to Managed Payments, Stripe’s merchant of..."
+      },
+      {
+       "title": "Lemon Squeezy is shutting down. Here's where your subscriptions and license keys can go.",
+       "url": "https://bunny.com/blog/lemon-squeezy-is-shutting-down-move-your-subscriptions-and-license-keys/",
+       "date": "2026-11-16 00:00:00 +00:00",
+       "snippet": "In a post on November 16, CEO JR Farr announced that new store sign-ups have closed and that Lemon Squeezy “will stop processing payments on March 31, 2027.”\nThere’s no wiggle room on that date: “We won’t be able to extend that deadline, so please start planning now.”\nLemon Squeezy was acquired by S..."
+      },
+      {
+       "title": "Indie Seller Weekly #6: Lemon Squeezy Is Shutting Down, and 195 Sellers Just Opened Shop There",
+       "url": "https://jasonzhu.ai/en/blog/chuhai-weekly-06",
+       "date": "2026-11-17 00:00:00 +00:00",
+       "snippet": "## Payment platform news\n**Lemon Squeezy is shutting down**: on November 16, CEO JR Farr announced on the blog that Lemon Squeezy stopped accepting new store sign-ups that day and **will stop processing payments on March 31, 2027**, a deadline that will not be extended.\nThe reason is that Stripe doe..."
+      },
+      {
+       "title": "Lemon Squeezy shutting down: what to do before March 2027",
+       "url": "https://checkoutpage.com/blog/lemon-squeezy-shutting-down",
+       "date": "2026-11-17 00:00:00 +00:00",
+       "snippet": "Stripe, which owns Lemon Squeezy, is moving sellers to Stripe Managed Payments.\nThat route suits many software sellers, but it doesn't cover everything Lemon Squeezy did.\n...\nStripe recommends moving to Stripe Managed Payments, which handles sales tax and VAT for you.\nHowever, it doesn't deliver fil..."
+      },
+      {
+       "title": "Lemon Squeezy is winding down and will stop taking payments in March 2027 - Startup Fortune",
+       "url": "https://startupfortune.com/lemon-squeezy-is-winding-down-and-will-stop-taking-payments-in-march-2027/",
+       "date": "2026-11-16 00:00:00 +00:00",
+       "snippet": "Stripe's Managed Payments, the replacement, carries a promotional 1.5% merchant-of-record rate through December 1, 2027, plus standard processing fees.\nStorefronts, license keys, file delivery and affiliate tools don't carry over, and some countries Lemon Squeezy served aren't covered.\n...\nThe compa..."
+      },
+      {
+       "title": "AGTP on X: \"Lemon Squeezy just announced it is winding down ...",
+       "url": "https://x.com/AGTPinsights/status/2122367652999901457",
+       "date": "2026-11-16 00:00:00 +00:00",
+       "snippet": "# AGTP on X: \"Lemon Squeezy just announced it is winding down, and it closed new store sign-ups today. Here's what you need to know. The company posted on X on Nov 16, 2026 that it will stop processing payments on March 31, 2027. That is about four and a half months away. It says it is reaching out ..."
+      },
+      {
+       "title": "Saying goodbye to Lemon Squeezy",
+       "url": "https://www.lemonsqueezy.com/blog/saying-goodbye-to-lemon-squeezy",
+       "date": "2026-11-16 00:00:00 +00:00",
+       "snippet": "As of today, we’ve closed new store sign-ups, and Lemon Squeezy will stop processing payments on March 31, 2027.\n...\nYou’ll need to move your business off Lemon Squeezy before March 31, 2027.\n...\nYou can continue accepting payments through Lemon Squeezy while you prepare.\n...\nIf it isn’t available w..."
+      },
+      {
+       "title": "Lemon Squeezy Is Shutting Down: What to Do by 31 March 2027",
+       "url": "https://goodvat.com/blog/lemon-squeezy-shutting-down/",
+       "date": "2026-11-17 00:00:00 +00:00",
+       "snippet": "Stripe’s migration tools for **Stripe Managed Payments** arrive on **2 December 2026**, and Lemon Squeezy recommends starting your move by **mid-January 2027**.\nYou have three ways out: follow Lemon Squeezy to Stripe Managed Payments, switch to another service that sells on your behalf, or become th..."
+      },
+      {
+       "title": "Lemon Squeezy Is Shutting Down: 8 Best Alternatives for SaaS & Digital Product Sellers - Hura Tips",
+       "url": "https://www.huratips.com/business-online/lemon-squeezy-alternatives.html",
+       "date": "2026-11-17 00:00:00 +00:00",
+       "snippet": "New store sign-ups are already closed, and the platform will **stop processing payments on March 31, 2027**.\n...\n- **December 2, 2026:** migration tooling to Stripe Managed Payments becomes available.\n- **March 31, 2027:** Lemon Squeezy stops processing all payments.\nThe deadline will not be extende..."
+      },
+      {
+       "title": "Stripe shuts down Lemon Squeezy just two years after ...",
+       "url": "https://techstartups.com/2026/11/16/stripe-shuts-down-lemon-squeezy-just-two-years-after-acquisition-giving-businesses-until-march-2027-to-migrate/",
+       "date": "2026-11-17 00:00:00 +00:00",
+       "snippet": "Lemon Squeezy announced Monday that it has closed new store registrations effective November 16, 2026, and will permanently stop processing payments on March 31, 2027.\nExisting merchants have roughly four and a half months to migrate to Stripe Managed Payments or another provider.\n...\nStripe is enco..."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

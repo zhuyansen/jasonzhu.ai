@@ -1,0 +1,361 @@
+{
+ "version": "0.1.20261103",
+ "status_code": 20000,
+ "status_message": "Ok.",
+ "time": "23.7575 sec.",
+ "cost": 0.004,
+ "tasks_count": 1,
+ "tasks_error": 0,
+ "tasks": [
+  {
+   "id": "11170803-2225-0629-0000-87358474a900",
+   "status_code": 20000,
+   "status_message": "Ok.",
+   "time": "22.1911 sec.",
+   "cost": 0.004,
+   "result_count": 1,
+   "path": [
+    "v3",
+    "ai_optimization",
+    "chat_gpt",
+    "llm_scraper",
+    "live",
+    "advanced"
+   ],
+   "data": {
+    "api": "ai_optimization",
+    "function": "live",
+    "se": "chat_gpt",
+    "keyword": "How to pass Wise business account address verification for a newly registered UK company?",
+    "language_code": "en",
+    "location_code": 2840,
+    "force_web_search": true,
+    "device": "desktop",
+    "os": "windows"
+   },
+   "result": [
+    {
+     "keyword": "How to pass Wise business account address verification for a newly registered UK company?",
+     "location_code": 2840,
+     "language_code": "en",
+     "model": "gpt-6",
+     "check_url": "https://chatgpt.com/?prompt=How%20to%20pass%20Wise%20business%20account%20address%20verification%20for%20a%20newly%20registered%20UK%20company%3F&hints=search",
+     "datetime": "2026-11-17 08:04:13 +00:00",
+     "markdown": "# How to pass Wise Business address verification for a newly registered UK company\n\nIf you've just incorporated a UK limited company through Companies House, the main challenge with Wise Business verification is proving that your company has a **genuine, verifiable business operating address**, rather than simply showing that the company legally exists.\n\nThe important distinction is that Wise may ask you to verify two different things\\:\n\n1. **Registered business address** – the official address recorded at Companies House.\n2. **Trading or operating address** – where your business actually operates or is managed.\n\nThese addresses can be different, but you need to provide the correct evidence for the address Wise is asking you to verify.\n\n## 1\\. Which documents actually work?\n\nAccording to Wise's official [business address verification requirements](https://wise.com/help/articles/2969315/how-does-wise-verify-my-business-address), these are the main acceptable options.\n\n| Document | Wise's requirements |\n|--------|--------|\n| Electricity or gas bill | Issued within 3 months |\n| Broadband or landline bill | Issued within 3 months |\n| Business bank statement | Issued within 3 months |\n| Personal bank statement | Can work for a significant company owner/director |\n| Council tax bill | Official council document |\n| Signed tenancy agreement | Current and signed by both parties |\n| Business insurance | Policy showing the relevant address |\n| HMRC correspondence | Official tax documentation |\n\n\nFor a newly incorporated company, there is an especially useful provision\\:\n\n**If you work from home and don't have bills in your company's name, Wise can accept personal documents in the name of a significant owner or director of the registered company.**\n\nThe personal document must show the same address you've entered as your company's trading address.\n\nSource: [Wise – How does Wise verify my business address?](https://wise.com/help/articles/2969315/how-does-wise-verify-my-business-address?utm_source=chatgpt.com)\\.\n\n## 2\\. The biggest problem: virtual registered office addresses\n\n(Important)\n\nSuppose your company was incorporated using an address from\\:\n\n- 1st Formations\n- Companies Made Simple\n- Rapid Formations\n- Your accountant\n- A virtual office provider\n\nThat address can legitimately be your registered office at Companies House.\n\nHowever, Wise explicitly says that your trading address cannot be\\:\n\n- A virtual office.\n- A mail forwarding service.\n- A PO Box.\n- A company formation agent's address.\n- A solicitor's office.\n\nThis is where many newly incorporated companies encounter problems.\n\n**The solution\\:** Keep your registered office address as it appears on Companies House, but provide your genuine physical working address as your trading address.\n\nWise allows these addresses to be different. [wise.com](https://wise.com/help/articles/2969315/how-does-wise-verify-my-business-address?utm_source=chatgpt.com)[wise.com](https://wise.com/help/articles/ixgxNfPDKgxCHQU2XfuyY/getting-your-business-verified-in-the-uk-and-eea/hjQb2P34NT.midi?utm_source=chatgpt.com)[wise.com](https://wise.com/gb/blog/how-to-get-limited-company-verified-using-wise-business?utm_source=chatgpt.com)[wise.com](https://wise.com/help/articles/2769792/how-can-i-verify-my-business?origin=related-article-2977981&utm_source=chatgpt.com)\n\n## 3\\. Best approach for a newly registered UK Ltd\n\nHere is the practical approach I would recommend\\:\n\n1. **Keep the Companies House registered address**\n   \n   Enter the exact address shown on your incorporation records.\n2. **Use your actual working address as the trading address**\n   \n   If you run the company from home, use your genuine home working address.\n3. **Prepare personal address evidence**\n   \n   If you're a director or significant owner, prepare a recent personal bank statement, utility bill or council tax bill showing that address.\n4. **Prepare company registration evidence**\n   \n   Have your Certificate of Incorporation and Companies House company number available.\n5. **Submit only through Wise's verification request**\n   \n   Upload a clear, complete PDF or image. Ensure the name and address match the information supplied to Wise.\n\nWise also says business registration documents, bank statements and utility bills should generally be less than three months old. [wise.com](https://wise.com/help/articles/2969315/how-does-wise-verify-my-business-address?utm_source=chatgpt.com)[wise.com](https://wise.com/help/articles/2769792/how-can-i-verify-my-business?origin=related-article-2977981&utm_source=chatgpt.com)[wise.com](https://wise.com/help/articles/ixgxNfPDKgxCHQU2XfuyY/getting-your-business-verified-in-the-uk-and-eea/hjQb2P34NT.midi?utm_source=chatgpt.com)\n\n## 4\\. What if your company has just been incorporated and has no bills yet?\n\nThis is perfectly normal.\n\nYou don't necessarily need to wait three months or establish a long business history.\n\nFor example, if\\:\n\n- Your UK Ltd was incorporated recently.\n- You're the sole director and shareholder.\n- You haven't opened a business bank account.\n- You don't have business utility bills.\n- You haven't started generating revenue.\n\nYou can still apply. Wise's UK verification process considers the company registration, directors, owners, business activities and trading address separately. [wise.com](https://wise.com/help/articles/ixgxNfPDKgxCHQU2XfuyY/getting-your-business-verified-in-the-uk-and-eea/hjQb2P34NT.midi?utm_source=chatgpt.com)[wise.com](https://wise.com/gb/blog/how-to-get-limited-company-verified-using-wise-business?utm_source=chatgpt.com)\n\nDon't manufacture documents or use an address where you don't actually operate.\n\n## 5\\. What Wise checks beyond the address\n\nBe prepared for additional verification questions, particularly for a new company\\:\n\n- What products or services does the company provide?\n- Where will customers come from?\n- Which countries will you send and receive payments from?\n- What is your expected monthly transaction volume?\n- What is the source of your initial business funds?\n- Who owns 25% or more of the company?\n\nWise may also request director identification and ownership documentation. [wise.com](https://wise.com/help/articles/2969315/how-does-wise-verify-my-business-address?utm_source=chatgpt.com)[wise.com](https://wise.com/help/articles/2769792/how-can-i-verify-my-business?origin=related-article-2977981&utm_source=chatgpt.com)[wise.com](https://wise.com/help/articles/ixgxNfPDKgxCHQU2XfuyY/getting-your-business-verified-in-the-uk-and-eea/hjQb2P34NT.midi?utm_source=chatgpt.com)\n\n## 6\\. Let me assess your exact situation\n\nThere are a few different scenarios, and the best approach depends on how you incorporated your company and where you actually operate.\n\n**1\\. What type of registered address does your UK company have?**\n\nFormation agent / virtual registered office\n\nAccountant's address\n\nMy UK home address\n\nPhysical office\n\n---\n\n**2\\. Where do you actually operate the company?**\n\nMy home address\n\nVirtual office\n\nCo-working space\n\nPhysical business premises\n\n---\n\n**3\\. Where do you personally live?**\n\nUnited Kingdom\n\nOutside the UK\n\n---\n\n**4\\. Which address document can you provide?**\n\nPersonal bank statement\n\nPersonal utility bill\n\nCouncil tax bill\n\nTenancy agreement\n\nNo address evidence yet\n\n---\n\n**5\\. What is your current Wise verification status?**\n\nAddress rejected\n\nWise is requesting proof\n\nHaven't applied yet\n\nAccount under review\n\n[Assess my verification options]\n\nI can then explain exactly which address to enter, which document to submit, and how to respond to Wise if your proof of address has already been rejected.\n\n**Official reference\\:** [Wise's guide to verifying a UK limited company](https://wise.com/gb/blog/how-to-get-limited-company-verified-using-wise-business?utm_source=chatgpt.com)\\.",
+     "search_results": [
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://wise.com/help/articles/2969315/how-does-wise-verify-my-business-address",
+       "domain": "wise.com",
+       "title": "How does Wise verify my business address? | Wise Help Centre",
+       "description": null,
+       "breadcrumb": "wise.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://wise.com/help/articles/ixgxNfPDKgxCHQU2XfuyY/getting-your-business-verified-in-the-uk-and-eea/hjQb2P34NT.midi",
+       "domain": "wise.com",
+       "title": "Getting your business verified in the UK and EEA | Wise Help Centre",
+       "description": null,
+       "breadcrumb": "wise.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://wise.com/help/articles/2769792/how-can-i-verify-my-business?origin=related-article-2977981",
+       "domain": "wise.com",
+       "title": "How can I verify my business? | Wise Help Centre",
+       "description": null,
+       "breadcrumb": "wise.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://wise.com/gb/blog/how-to-get-limited-company-verified-using-wise-business",
+       "domain": "wise.com",
+       "title": "How to Get a Limited Company Verified Using Wise Business - Wise",
+       "description": null,
+       "breadcrumb": "wise.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://wise.com/help/articles/2953878/how-do-i-verify-my-us-business",
+       "domain": "wise.com",
+       "title": "How do I verify my US business? | Wise Help Centre",
+       "description": null,
+       "breadcrumb": "wise.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://wise.com/help/articles/2953878/how-do-i-verify-my-us-business/%EF%B9%A5%EF%B9%A4%EF%BC%8Fqddnqgscvc",
+       "domain": "wise.com",
+       "title": "How do I verify my US business? | Wise Help Centre",
+       "description": null,
+       "breadcrumb": "wise.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://wise.com/uk/help/articles/2949804/how-do-i-verify-my-address",
+       "domain": "wise.com",
+       "title": "How do I verify my address? | Довідковий центр Wise",
+       "description": null,
+       "breadcrumb": "wise.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://wise.com/gb/blog/wise-business-account-requirements-uk",
+       "domain": "wise.com",
+       "title": "Wise Business Account Requirements in the UK in 2026 - Wise",
+       "description": null,
+       "breadcrumb": "wise.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://wise.com/help/articles/2953878/how-do-i-verify-my-us-business?origin=search-orkin+remittance+address",
+       "domain": "wise.com",
+       "title": "How do I verify my US business? | Wise Help Centre",
+       "description": null,
+       "breadcrumb": "wise.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://wise.com/help/articles/1QaC3bwTbNEHjWJydD79az/how-do-i-update-my-address?origin=related-article-2969315",
+       "domain": "wise.com",
+       "title": "How do I update my address? | Wise Help Centre",
+       "description": null,
+       "breadcrumb": "wise.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://wise.com/help/articles/2949804/how-does-wise-verify-my-address?origin=search-address",
+       "domain": "wise.com",
+       "title": "How do I verify my address? | Wise Help Centre",
+       "description": null,
+       "breadcrumb": "wise.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://wise.com/help/articles/2949804/how-do-i-verify-my-address?origin=related-article-2554102",
+       "domain": "wise.com",
+       "title": "How do I verify my address? | Wise Help Centre",
+       "description": null,
+       "breadcrumb": "wise.com"
+      }
+     ],
+     "sources": [
+      {
+       "type": "chat_gpt_source",
+       "title": "business address verification requirements",
+       "snippet": null,
+       "domain": "wise.com",
+       "url": "https://wise.com/help/articles/2969315/how-does-wise-verify-my-business-address",
+       "thumbnail": null,
+       "source_name": null,
+       "publication_date": null,
+       "markdown": "[business address verification requirements](https://wise.com/help/articles/2969315/how-does-wise-verify-my-business-address)"
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Wise – How does Wise verify my business address?",
+       "snippet": null,
+       "domain": "wise.com",
+       "url": "https://wise.com/help/articles/2969315/how-does-wise-verify-my-business-address?utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": null,
+       "publication_date": null,
+       "markdown": "[Wise – How does Wise verify my business address?](https://wise.com/help/articles/2969315/how-does-wise-verify-my-business-address?utm_source=chatgpt.com)"
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Getting your business verified in the UK and EEA",
+       "snippet": null,
+       "domain": "wise.com",
+       "url": "https://wise.com/help/articles/ixgxNfPDKgxCHQU2XfuyY/getting-your-business-verified-in-the-uk-and-eea/hjQb2P34NT.midi?utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": "Wise Help Centre",
+       "publication_date": null,
+       "markdown": null
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "How to Get a Limited Company Verified Using Wise Business",
+       "snippet": null,
+       "domain": "wise.com",
+       "url": "https://wise.com/gb/blog/how-to-get-limited-company-verified-using-wise-business?utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": "Wise",
+       "publication_date": "2026-09-10 00:00:00 +00:00",
+       "markdown": null
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "How can I verify my business?",
+       "snippet": null,
+       "domain": "wise.com",
+       "url": "https://wise.com/help/articles/2769792/how-can-i-verify-my-business?origin=related-article-2977981&utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": "Wise Help Centre",
+       "publication_date": null,
+       "markdown": null
+      }
+     ],
+     "fan_out_queries": [
+      "Wise Business UK address verification newly registered limited company proof of business address accepted documents official",
+      "site:wise.com/help business address verification UK company registered address proof of address",
+      "site:wise.com/help business verification documents UK business proof of operating address"
+     ],
+     "brand_entities": null,
+     "se_results_count": 0,
+     "item_types": [
+      "chat_gpt_text",
+      "chat_gpt_table"
+     ],
+     "items_count": 3,
+     "items": [
+      {
+       "type": "chat_gpt_text",
+       "rank_group": 1,
+       "rank_absolute": 1,
+       "markdown": "# How to pass Wise Business address verification for a newly registered UK company\n\nIf you've just incorporated a UK limited company through Companies House, the main challenge with Wise Business verification is proving that your company has a **genuine, verifiable business operating address**, rather than simply showing that the company legally exists.\n\nThe important distinction is that Wise may ask you to verify two different things\\:\n\n1. **Registered business address** – the official address recorded at Companies House.\n2. **Trading or operating address** – where your business actually operates or is managed.\n\nThese addresses can be different, but you need to provide the correct evidence for the address Wise is asking you to verify.\n\n## 1\\. Which documents actually work?\n\nAccording to Wise's official [business address verification requirements](https://wise.com/help/articles/2969315/how-does-wise-verify-my-business-address), these are the main acceptable options.\n\n",
+       "sources": [
+        {
+         "type": "chat_gpt_source",
+         "title": "business address verification requirements",
+         "snippet": null,
+         "domain": "wise.com",
+         "url": "https://wise.com/help/articles/2969315/how-does-wise-verify-my-business-address",
+         "thumbnail": null,
+         "source_name": null,
+         "publication_date": null,
+         "markdown": "[business address verification requirements](https://wise.com/help/articles/2969315/how-does-wise-verify-my-business-address)"
+        }
+       ],
+       "brand_entities": null
+      },
+      {
+       "type": "chat_gpt_table",
+       "rank_group": 1,
+       "rank_absolute": 2,
+       "text": null,
+       "markdown": "| Document | Wise's requirements |\n|--------|--------|\n| Electricity or gas bill | Issued within 3 months |\n| Broadband or landline bill | Issued within 3 months |\n| Business bank statement | Issued within 3 months |\n| Personal bank statement | Can work for a significant company owner/director |\n| Council tax bill | Official council document |\n| Signed tenancy agreement | Current and signed by both parties |\n| Business insurance | Policy showing the relevant address |\n| HMRC correspondence | Official tax documentation |\n\n",
+       "table": {
+        "table_header": [
+         "Document",
+         "Wise's requirements"
+        ],
+        "table_content": [
+         [
+          "Electricity or gas bill",
+          "Issued within 3 months"
+         ],
+         [
+          "Broadband or landline bill",
+          "Issued within 3 months"
+         ],
+         [
+          "Business bank statement",
+          "Issued within 3 months"
+         ],
+         [
+          "Personal bank statement",
+          "Can work for a significant company owner/director"
+         ],
+         [
+          "Council tax bill",
+          "Official council document"
+         ],
+         [
+          "Signed tenancy agreement",
+          "Current and signed by both parties"
+         ],
+         [
+          "Business insurance",
+          "Policy showing the relevant address"
+         ],
+         [
+          "HMRC correspondence",
+          "Official tax documentation"
+         ]
+        ]
+       },
+       "brand_entities": null
+      },
+      {
+       "type": "chat_gpt_text",
+       "rank_group": 2,
+       "rank_absolute": 3,
+       "markdown": "\nFor a newly incorporated company, there is an especially useful provision\\:\n\n**If you work from home and don't have bills in your company's name, Wise can accept personal documents in the name of a significant owner or director of the registered company.**\n\nThe personal document must show the same address you've entered as your company's trading address.\n\nSource: [Wise – How does Wise verify my business address?](https://wise.com/help/articles/2969315/how-does-wise-verify-my-business-address?utm_source=chatgpt.com)\\.\n\n## 2\\. The biggest problem: virtual registered office addresses\n\n(Important)\n\nSuppose your company was incorporated using an address from\\:\n\n- 1st Formations\n- Companies Made Simple\n- Rapid Formations\n- Your accountant\n- A virtual office provider\n\nThat address can legitimately be your registered office at Companies House.\n\nHowever, Wise explicitly says that your trading address cannot be\\:\n\n- A virtual office.\n- A mail forwarding service.\n- A PO Box.\n- A company formation agent's address.\n- A solicitor's office.\n\nThis is where many newly incorporated companies encounter problems.\n\n**The solution\\:** Keep your registered office address as it appears on Companies House, but provide your genuine physical working address as your trading address.\n\nWise allows these addresses to be different. [wise.com](https://wise.com/help/articles/2969315/how-does-wise-verify-my-business-address?utm_source=chatgpt.com)[wise.com](https://wise.com/help/articles/ixgxNfPDKgxCHQU2XfuyY/getting-your-business-verified-in-the-uk-and-eea/hjQb2P34NT.midi?utm_source=chatgpt.com)[wise.com](https://wise.com/gb/blog/how-to-get-limited-company-verified-using-wise-business?utm_source=chatgpt.com)[wise.com](https://wise.com/help/articles/2769792/how-can-i-verify-my-business?origin=related-article-2977981&utm_source=chatgpt.com)\n\n## 3\\. Best approach for a newly registered UK Ltd\n\nHere is the practical approach I would recommend\\:\n\n1. **Keep the Companies House registered address**\n   \n   Enter the exact address shown on your incorporation records.\n2. **Use your actual working address as the trading address**\n   \n   If you run the company from home, use your genuine home working address.\n3. **Prepare personal address evidence**\n   \n   If you're a director or significant owner, prepare a recent personal bank statement, utility bill or council tax bill showing that address.\n4. **Prepare company registration evidence**\n   \n   Have your Certificate of Incorporation and Companies House company number available.\n5. **Submit only through Wise's verification request**\n   \n   Upload a clear, complete PDF or image. Ensure the name and address match the information supplied to Wise.\n\nWise also says business registration documents, bank statements and utility bills should generally be less than three months old. [wise.com](https://wise.com/help/articles/2969315/how-does-wise-verify-my-business-address?utm_source=chatgpt.com)[wise.com](https://wise.com/help/articles/2769792/how-can-i-verify-my-business?origin=related-article-2977981&utm_source=chatgpt.com)[wise.com](https://wise.com/help/articles/ixgxNfPDKgxCHQU2XfuyY/getting-your-business-verified-in-the-uk-and-eea/hjQb2P34NT.midi?utm_source=chatgpt.com)\n\n## 4\\. What if your company has just been incorporated and has no bills yet?\n\nThis is perfectly normal.\n\nYou don't necessarily need to wait three months or establish a long business history.\n\nFor example, if\\:\n\n- Your UK Ltd was incorporated recently.\n- You're the sole director and shareholder.\n- You haven't opened a business bank account.\n- You don't have business utility bills.\n- You haven't started generating revenue.\n\nYou can still apply. Wise's UK verification process considers the company registration, directors, owners, business activities and trading address separately. [wise.com](https://wise.com/help/articles/ixgxNfPDKgxCHQU2XfuyY/getting-your-business-verified-in-the-uk-and-eea/hjQb2P34NT.midi?utm_source=chatgpt.com)[wise.com](https://wise.com/gb/blog/how-to-get-limited-company-verified-using-wise-business?utm_source=chatgpt.com)\n\nDon't manufacture documents or use an address where you don't actually operate.\n\n## 5\\. What Wise checks beyond the address\n\nBe prepared for additional verification questions, particularly for a new company\\:\n\n- What products or services does the company provide?\n- Where will customers come from?\n- Which countries will you send and receive payments from?\n- What is your expected monthly transaction volume?\n- What is the source of your initial business funds?\n- Who owns 25% or more of the company?\n\nWise may also request director identification and ownership documentation. [wise.com](https://wise.com/help/articles/2969315/how-does-wise-verify-my-business-address?utm_source=chatgpt.com)[wise.com](https://wise.com/help/articles/2769792/how-can-i-verify-my-business?origin=related-article-2977981&utm_source=chatgpt.com)[wise.com](https://wise.com/help/articles/ixgxNfPDKgxCHQU2XfuyY/getting-your-business-verified-in-the-uk-and-eea/hjQb2P34NT.midi?utm_source=chatgpt.com)\n\n## 6\\. Let me assess your exact situation\n\nThere are a few different scenarios, and the best approach depends on how you incorporated your company and where you actually operate.\n\n**1\\. What type of registered address does your UK company have?**\n\nFormation agent / virtual registered office\n\nAccountant's address\n\nMy UK home address\n\nPhysical office\n\n---\n\n**2\\. Where do you actually operate the company?**\n\nMy home address\n\nVirtual office\n\nCo-working space\n\nPhysical business premises\n\n---\n\n**3\\. Where do you personally live?**\n\nUnited Kingdom\n\nOutside the UK\n\n---\n\n**4\\. Which address document can you provide?**\n\nPersonal bank statement\n\nPersonal utility bill\n\nCouncil tax bill\n\nTenancy agreement\n\nNo address evidence yet\n\n---\n\n**5\\. What is your current Wise verification status?**\n\nAddress rejected\n\nWise is requesting proof\n\nHaven't applied yet\n\nAccount under review\n\n[Assess my verification options]\n\nI can then explain exactly which address to enter, which document to submit, and how to respond to Wise if your proof of address has already been rejected.\n\n**Official reference\\:** [Wise's guide to verifying a UK limited company](https://wise.com/gb/blog/how-to-get-limited-company-verified-using-wise-business?utm_source=chatgpt.com)\\.",
+       "sources": [
+        {
+         "type": "chat_gpt_source",
+         "title": "Wise – How does Wise verify my business address?",
+         "snippet": null,
+         "domain": "wise.com",
+         "url": "https://wise.com/help/articles/2969315/how-does-wise-verify-my-business-address?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": null,
+         "publication_date": null,
+         "markdown": "[Wise – How does Wise verify my business address?](https://wise.com/help/articles/2969315/how-does-wise-verify-my-business-address?utm_source=chatgpt.com)"
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "How does Wise verify my business address?",
+         "snippet": null,
+         "domain": "wise.com",
+         "url": "https://wise.com/help/articles/2969315/how-does-wise-verify-my-business-address?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": "Wise Help Centre",
+         "publication_date": null,
+         "markdown": null
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "Getting your business verified in the UK and EEA",
+         "snippet": null,
+         "domain": "wise.com",
+         "url": "https://wise.com/help/articles/ixgxNfPDKgxCHQU2XfuyY/getting-your-business-verified-in-the-uk-and-eea/hjQb2P34NT.midi?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": "Wise Help Centre",
+         "publication_date": null,
+         "markdown": null
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "How to Get a Limited Company Verified Using Wise Business",
+         "snippet": null,
+         "domain": "wise.com",
+         "url": "https://wise.com/gb/blog/how-to-get-limited-company-verified-using-wise-business?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": "Wise",
+         "publication_date": "2026-09-10 00:00:00 +00:00",
+         "markdown": null
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "How can I verify my business?",
+         "snippet": null,
+         "domain": "wise.com",
+         "url": "https://wise.com/help/articles/2769792/how-can-i-verify-my-business?origin=related-article-2977981&utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": "Wise Help Centre",
+         "publication_date": null,
+         "markdown": null
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "Wise's guide to verifying a UK limited company",
+         "snippet": null,
+         "domain": "wise.com",
+         "url": "https://wise.com/gb/blog/how-to-get-limited-company-verified-using-wise-business?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": null,
+         "publication_date": null,
+         "markdown": "[Wise's guide to verifying a UK limited company](https://wise.com/gb/blog/how-to-get-limited-company-verified-using-wise-business?utm_source=chatgpt.com)"
+        }
+       ],
+       "brand_entities": null
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,191 @@
+{
+ "version": "0.1.20261103",
+ "status_code": 20000,
+ "status_message": "Ok.",
+ "time": "3.2139 sec.",
+ "cost": 0.00588,
+ "tasks_count": 1,
+ "tasks_error": 0,
+ "tasks": [
+  {
+   "id": "11170800-2225-0612-0000-8ce3682f6ff7",
+   "status_code": 20000,
+   "status_message": "Ok.",
+   "time": "3.1739 sec.",
+   "cost": 0.00588,
+   "result_count": 1,
+   "path": [
+    "v3",
+    "ai_optimization",
+    "perplexity",
+    "llm_responses",
+    "live"
+   ],
+   "data": {
+    "api": "ai_optimization",
+    "function": "llm_responses",
+    "se": "perplexity",
+    "user_prompt": "Who is Jason Zhu (jasonzhu.ai) and what does GoSail Club do?",
+    "model_name": "sonar",
+    "web_search_country_iso_code": "US"
+   },
+   "result": [
+    {
+     "model_name": "sonar",
+     "input_tokens": 27,
+     "output_tokens": 253,
+     "reasoning_tokens": 0,
+     "web_search": true,
+     "money_spent": 0.00528,
+     "datetime": "2026-11-17 08:00:25 +00:00",
+     "items": [
+      {
+       "type": "message",
+       "sections": [
+        {
+         "type": "text",
+         "text": "Jason Zhu is a former AI algorithm engineer who now focuses on AI applications, content creation, enterprise AI training, technical consulting, and AI-focused media/MCN operations. He runs JasonZhu.AI, where he publishes AI tool reviews, tutorials, industry news, and guidance for founders building for global markets.[2][3]\n\n## What GoSail Club does\n\nGoSail Club is presented as an **AI “going-global” community** for two main groups:[1]\n\n- **Creators and indie builders growing on X:** It offers AI-assisted trend tracking, post drafting, cross-posting, distribution, and creator/MCN support.\n- **Forward-deployed engineers and AI consultants:** It provides searchable, curated access to reusable agent skills and workflow resources through the AgentSkillsHub library.\n\nThe broader GoSail initiative also includes **GoSail Lab**, an AI MCN and product-promotion operation that helps AI companies with content promotion, KOL collaboration, and international brand expansion.[2][3]\n\nIn short, GoSail Club appears to combine a paid community, AI productivity resources, creator growth services, and support for taking AI products to international markets. The listed membership price on JasonZhu.AI is ¥365 per year.[2]",
+         "annotations": [
+          {
+           "title": "GoSail Club — AI Going-Global Community",
+           "url": "https://jasonzhu.ai/en/club",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "JasonZhu.AI - AI Applications & Practice",
+           "url": "https://jasonzhu.ai/en",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "About Me",
+           "url": "https://jasonzhu.ai/en/about",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "A One-Month Post-Mortem on My \"Unsuccessful\" Global Website Launch: What I Got Right, What I Got Wrong",
+           "url": "https://jasonzhu.ai/en/blog/website-going-global-first-month-lessons",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Terms of Service",
+           "url": "https://jasonzhu.ai/en/terms",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Indie Seller Weekly #3: Guardrails for Agents, Selling the Confidence to Let Go",
+           "url": "https://jasonzhu.ai/en/blog/chuhai-weekly-03",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Jason Zhu — DEV Community Profile",
+           "url": "https://dev.to/gosailglobal",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Blog | JasonZhu.AI",
+           "url": "https://jasonzhu.ai/en/blog",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Indie Seller Weekly #2: Tools Built Around Coding Agents, Sold as One-Time Purchases",
+           "url": "https://jasonzhu.ai/en/blog/chuhai-weekly-02",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Jason Zhu (@GoSailGlobal) on X",
+           "url": "https://x.com/GoSailGlobal/status/2117604205439627428",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "fan_out_queries": null,
+     "search_results": [
+      {
+       "title": "GoSail Club — AI Going-Global Community",
+       "url": "https://jasonzhu.ai/en/club",
+       "date": "2026-11-08 00:00:00 +00:00",
+       "snippet": "GoSail Club — AI Going-Global Community | JasonZhu.AI\nGoSail Club · Founding Cohort\n# GoSail Club\nBuilt for two kinds of builders: creators growing on X with AI, and FDEs shipping client work faster with AI skills.\nNo hype — just tools you can use today.\n...\n## Who is this for\n### Creators growing o..."
+      },
+      {
+       "title": "JasonZhu.AI - AI Applications & Practice",
+       "url": "https://jasonzhu.ai/en",
+       "date": "2026-11-17 00:00:00 +00:00",
+       "snippet": "JasonZhu.AI - AI Applications & Practice | Reviews, Tutorials, Growth\n# Jason Zhu .AI\nAI tool reviews, hands-on tutorials, industry insights, and growth strategies\nGoSail Club\nAI going-global community · ¥365/yr\nFree AI Learning Map · 10 Platforms\n...\n## About This Site\nI'm **Jason Zhu**, a former A..."
+      },
+      {
+       "title": "About Me",
+       "url": "https://jasonzhu.ai/en/about",
+       "date": "2026-10-06 00:00:00 +00:00",
+       "snippet": "# Jason Zhu\nFormer AI algorithm engineer, now focused on AI application and knowledge sharing.\nThrough content creation, enterprise training, and technical consulting, I help more people and businesses understand and apply AI technology.\n## What I Do\n### AI Content Creation\nSharing AI tool reviews, ..."
+      },
+      {
+       "title": "A One-Month Post-Mortem on My \"Unsuccessful\" Global Website Launch: What I Got Right, What I Got Wrong",
+       "url": "https://jasonzhu.ai/en/blog/website-going-global-first-month-lessons",
+       "date": "2026-11-10 00:00:00 +00:00",
+       "snippet": "# A One-Month Post-Mortem on My \"Unsuccessful\" Global Website Launch: What I Got Right, What I Got Wrong\nLessons from one month of an \"unsuccessful\" global website launch: what did I get right?\nWhat did I get wrong?\nThe project is an AI recipe website: brickrecipes.ai.\n## What I Got \"Right\"\n### 1. B..."
+      },
+      {
+       "title": "Terms of Service",
+       "url": "https://jasonzhu.ai/en/terms",
+       "date": "2026-10-17 00:00:00 +00:00",
+       "snippet": "# Terms of Service\n## 1. Service Description\nJasonZhu.AI is Jason Zhu's personal website, providing AI-related blog posts, tool recommendations, industry news, as well as professional services including enterprise AI training, MCN collaboration, and technical consulting.\n...\n## 7. Contact Us\nFor any..."
+      },
+      {
+       "title": "Indie Seller Weekly #3: Guardrails for Agents, Selling the Confidence to Let Go",
+       "url": "https://jasonzhu.ai/en/blog/chuhai-weekly-03",
+       "date": "2026-11-02 00:00:00 +00:00",
+       "snippet": "# Indie Seller Weekly #3: Guardrails for Agents, Selling the Confidence to Let Go\n## Related Posts\nJason Zhu\nEx-AI Engineer | AI Blogger\nFormer AI algorithm engineer, focused on AI applications.\nSharing AI tools, tutorials, and industry insights."
+      },
+      {
+       "title": "Jason Zhu — DEV Community Profile",
+       "url": "https://dev.to/gosailglobal",
+       "date": "2026-10-12 00:00:00 +00:00",
+       "snippet": "# Jason Zhu\nindie hacker\nJoined on Apr 29, 2026\nMore info about @gosailglobal\n### Badges\n#### Writing Debut\nI Indexed 67,000 Open-Source AI Agent Projects.\nHere's What's Actually Inside.\n...\n## I Indexed 67,000 Open-Source AI Agent Projects. Here's What's Actually Inside."
+      },
+      {
+       "title": "Blog | JasonZhu.AI",
+       "url": "https://jasonzhu.ai/en/blog",
+       "date": "2026-11-09 00:00:00 +00:00",
+       "snippet": "Jason Zhu's AI Blog: in-depth AI tool reviews, coding tutorials, global growth strategies, and industry insights with 70+ original articles.\n...\nA complete record of building the JasonZhu.AI personal brand website — from choosing the tech stack to going live, including the full stack, implementation..."
+      },
+      {
+       "title": "Indie Seller Weekly #2: Tools Built Around Coding Agents, Sold as One-Time Purchases",
+       "url": "https://jasonzhu.ai/en/blog/chuhai-weekly-02",
+       "date": "2026-11-09 00:00:00 +00:00",
+       "snippet": "Indie Seller Weekly #2: Tools Built Around Coding Agents, Sold as One-Time Purchases | JasonZhu.AI1.\n...\n# Indie Seller Weekly #2: Tools Built Around Coding Agents, Sold as One-Time Purchases\n## Related Posts\nJason Zhu\nEx-AI Engineer | AI Blogger\nFormer AI algorithm engineer, focused on AI applicati..."
+      },
+      {
+       "title": "Jason Zhu (@GoSailGlobal) on X",
+       "url": "https://x.com/GoSailGlobal/status/2117604205439627428",
+       "date": "2026-11-15 00:00:00 +00:00",
+       "snippet": "# Jason Zhu on X: \"欢迎大家尝试招聘Agent：EasyHire AI https://t.co/5VuoIsPloI 也是用上了jev @typesafeai\"\n## Conversation\n- Jason Zhu\n@GoSailGlobal\nShow translation\n欢迎大家尝试招聘Agent：EasyHire AI easyhireai.com/product-tour/e… 也是用上了jev @typesafeai"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

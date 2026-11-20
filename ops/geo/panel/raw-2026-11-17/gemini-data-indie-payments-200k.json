@@ -1,0 +1,351 @@
+{
+ "version": "0.1.20261103",
+ "status_code": 20000,
+ "status_message": "Ok.",
+ "time": "26.1956 sec.",
+ "cost": 0.004,
+ "tasks_count": 1,
+ "tasks_error": 0,
+ "tasks": [
+  {
+   "id": "11170800-2225-0629-0000-c60e49be1c19",
+   "status_code": 20000,
+   "status_message": "Ok.",
+   "time": "25.4970 sec.",
+   "cost": 0.004,
+   "result_count": 1,
+   "path": [
+    "v3",
+    "ai_optimization",
+    "gemini",
+    "llm_scraper",
+    "live",
+    "advanced"
+   ],
+   "data": {
+    "api": "ai_optimization",
+    "function": "live",
+    "se": "gemini",
+    "keyword": "What does 200,000 checkout links data show about indie developer payment platforms in 2026?",
+    "language_code": "en",
+    "location_code": 2840,
+    "device": "desktop",
+    "os": "windows"
+   },
+   "result": [
+    {
+     "keyword": "What does 200,000 checkout links data show about indie developer payment platforms in 2026?",
+     "location_code": 2840,
+     "language_code": "en",
+     "model": "3.5 Flash-Lite",
+     "datetime": "2026-11-17 08:01:12 +00:00",
+     "markdown": "An analysis of roughly **200,000 checkout links** across nearly 198,000 independent websites (published in the *2026 Indie Payments Report* by Jason Zhu) provides a massive empirical look at how indie developers, solo founders, and micro-SaaS creators are monetizing.[jasonzhu.ai](https://jasonzhu.ai/en/blog/indie-payments-report-2026#:~:text=On%20that%20basis%20I%20counted%20every%20seller,see%20what%20it%20sells.%20The%20short%20version%3A) \n\nThe data reveals a dramatic shift away from traditional infrastructure toward newer developer-focused Merchants of Record (MoRs), an explosion of software and AI tooling, and unusual operational patterns among modern indie builders.\n\n---\n\n### 1. The Great Migration: Stripe Dominates Volume, But Newer Platforms Own AI & SaaS\nWhile **Stripe** remains the legacy heavyweight by sheer cumulative volume (onboarding 103,000 new sellers since 2025), its profile is heavily diluted by non-software projects: only **9% of Stripe's new sellers sell software** and **7% sell AI products**. \n\nIn contrast, newer indie-centric payment platforms and Merchants of Record—such as **Dodo Payments, Polar, and Creem**—have become the default launchpads for modern software creators:\n* **Dodo Payments:** **71%** of new sellers offer software, and **29%** sell AI products.[jasonzhu.ai](https://jasonzhu.ai/en/blog/indie-payments-report-2026#:~:text=Stripe%20has%20by%20far%20the%20most%20sellers,growing%20fastest%3A%20Platform.%20New%20sellers%20in%202024.)\n* **Polar:** **58%** software, **27%** AI products.[jasonzhu.ai](https://jasonzhu.ai/en/blog/indie-payments-report-2026#:~:text=Stripe%20has%20by%20far%20the%20most%20sellers,growing%20fastest%3A%20Platform.%20New%20sellers%20in%202024.)\n* **Creem:** **65%** software, **24%** AI products.[jasonzhu.ai](https://jasonzhu.ai/en/blog/indie-payments-report-2026#:~:text=Stripe%20has%20by%20far%20the%20most%20sellers,growing%20fastest%3A%20Platform.%20New%20sellers%20in%202024.)\n\nThese newer alternatives are growing rapidly because they handle complex global tax/VAT compliance out of the box (acting as the Merchant of Record) and **accept founders from regions like mainland China** where traditional Stripe onboarding is restricted.[anyway.sh](https://anyway.sh/blog/payment-platforms-for-indie-developers-2026#:~:text=A%20processor%20can%20therefore%20be%20cheaper%20at,refunds%2C%20and%20parts%20of%20the%20dispute%20workflow.)\n\n---\n\n### 2. The 2026 Surge in Software and AI Products\nThe composition of what indie developers are building has shifted aggressively toward code and AI:\n* **The Software Boom:** Throughout 2025, software hovered around 6% to 8% of new checkout links. By September 2026, software's share surged to **20%** (one in every five new sellers).[jasonzhu.ai](https://jasonzhu.ai/en/blog/indie-payments-report-2026#:~:text=It%20started%20climbing%20in%20March%202026%20and,sell%20ebooks%2C%20content%20or%20community%20access.%203.) \n* **AI Tooling Clustering:** AI-focused products jumped from 2% to 12% overall among new entrants, and account for up to **24%–29%** of new sellers specifically on platforms like Dodo, Polar, and Creem. \n\nDespite this tech-heavy concentration, non-software projects still make up a substantial baseline: 38% of 2026's new checkout links belong to general services/consulting, 21% to courses and coaching, and 14% to ebooks, content, or community access.[jasonzhu.ai](https://jasonzhu.ai/en/blog/indie-payments-report-2026#:~:text=It%20started%20climbing%20in%20March%202026%20and,sell%20ebooks%2C%20content%20or%20community%20access.%203.)\n\n---\n\n### 3. Rise of the \"Product Factory\" and Multi-Domain Portfolios\nThe data uncovers distinct behavioral patterns among active solo founders, many of whom are no longer building just one monolithic startup:\n* **Product Factories:** Many indie developers now ship a brand-new single-purpose tool every week or two, utilizing free subdomains or separate properties while managing them under a single analytics and business backend.\n* **Language and Industry Slicing:** A common tactic involves cloning a successful micro-tool across exact-match domains tailored for specific countries, languages, or vertical industries (e.g., deploying separate booking apps tailored strictly for kennels, hotels, and marinas).\n\n---\n\n### 4. The \"Grey Side\" of Checkout Links\nOut of the 200,000 analyzed links, about **17,000 websites** shared checkout links that appeared across five or more distinct sites.[jasonzhu.ai](https://jasonzhu.ai/en/blog/indie-payments-report-2026#:~:text=17%2C000%20websites%20carry%20a%20checkout%20link%20that,again%20as%20large%20as%20all%20of%202025.) The data categorizes these shared networks into three groups:\n1. **Legitimate Hit Products:** Viral Mac utilities or developer tools widely recommended by directories and review blogs.\n2. **Backlink Networks:** Programmatic template sites (such as dozens of auto-generated SEO or backlink checkers) cross-linking payment rails.\n3. **Compromised Infrastructure:** Instances where payment links (such as legacy Gumroad setups for adult or gambling offers) were illicitly injected into hacked, dormant websites belonging to schools, local clinics, or cultural institutions.[jasonzhu.ai](https://jasonzhu.ai/en/blog/indie-payments-report-2026#:~:text=Gumroad%20links%20for%20gambling%20or%20adult%20products,the%20sites%20of%20schools%2C%20clinics%20and%20museums.)\n\n---\n\nWant a deep-dive into how Merchants of Record like Dodo, Polar, and Paddle compare on fees and global tax handling? -> Compare Merchants of Record like Dodo Payments, Polar, Lemon Squeezy, and Paddle for an indie developer regarding fees, global tax compliance, and payouts.",
+     "sources": [
+      {
+       "type": "gemini_source",
+       "title": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report",
+       "snippet": null,
+       "domain": "jasonzhu.ai",
+       "url": "https://jasonzhu.ai/en/blog/indie-payments-report-2026",
+       "thumbnail": "https://t0.gstatic.com/faviconV2?url=https://jasonzhu.ai/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "jasonzhu.ai",
+       "publication_date": null,
+       "markdown": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report"
+      },
+      {
+       "type": "gemini_source",
+       "title": "Best Payment Platforms for Indie Developers in 2026 - Anyway",
+       "snippet": null,
+       "domain": "anyway.sh",
+       "url": "https://anyway.sh/blog/payment-platforms-for-indie-developers-2026",
+       "thumbnail": "https://t3.gstatic.com/faviconV2?url=https://anyway.sh/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "anyway.sh",
+       "publication_date": null,
+       "markdown": "Best Payment Platforms for Indie Developers in 2026 - Anyway"
+      },
+      {
+       "type": "gemini_source",
+       "title": "Indie Seller Weekly #5: Bring-Your-Own-Key AI Tools Sold for a One",
+       "snippet": null,
+       "domain": "jasonzhu.ai",
+       "url": "https://jasonzhu.ai/en/blog/chuhai-weekly-05",
+       "thumbnail": "https://t0.gstatic.com/faviconV2?url=https://jasonzhu.ai/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "jasonzhu.ai",
+       "publication_date": null,
+       "markdown": "Indie Seller Weekly #5: Bring-Your-Own-Key AI Tools Sold for a One"
+      },
+      {
+       "type": "gemini_source",
+       "title": "Top 42 payment processors (2026) - Whop",
+       "snippet": null,
+       "domain": "whop.com",
+       "url": "https://whop.com/blog/payment-processors/",
+       "thumbnail": "https://t1.gstatic.com/faviconV2?url=https://whop.com/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "whop.com",
+       "publication_date": null,
+       "markdown": "Top 42 payment processors (2026) - Whop"
+      },
+      {
+       "type": "gemini_source",
+       "title": "8 Agentic Payments Companies Redefining Checkout in 2026",
+       "snippet": null,
+       "domain": "trio.dev",
+       "url": "https://trio.dev/agentic-payments-companies-redefining-checkout/",
+       "thumbnail": "https://t2.gstatic.com/faviconV2?url=https://trio.dev/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "trio.dev",
+       "publication_date": null,
+       "markdown": "8 Agentic Payments Companies Redefining Checkout in 2026"
+      },
+      {
+       "type": "gemini_source",
+       "title": "Indie Hacker Business Statistics (2026) | STARTUP EDITION",
+       "snippet": null,
+       "domain": "blog.mean.ceo",
+       "url": "https://blog.mean.ceo/indie-hacker-business-statistics/",
+       "thumbnail": "https://t1.gstatic.com/faviconV2?url=https://blog.mean.ceo/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "blog.mean.ceo",
+       "publication_date": null,
+       "markdown": "Indie Hacker Business Statistics (2026) | STARTUP EDITION"
+      },
+      {
+       "type": "gemini_source",
+       "title": "Checkout.com reaches $750m in annualised net revenue for 2026",
+       "snippet": null,
+       "domain": "www.checkout.com",
+       "url": "https://www.checkout.com/newsroom/checkout-com-reaches-750m-in-annualised-net-revenue-for-2026-and-increases-profitability",
+       "thumbnail": "https://t3.gstatic.com/faviconV2?url=https://www.checkout.com/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "www.checkout.com",
+       "publication_date": null,
+       "markdown": "Checkout.com reaches $750m in annualised net revenue for 2026"
+      },
+      {
+       "type": "gemini_source",
+       "title": "How much indie hackers make in 2026 and the 97% drop",
+       "snippet": null,
+       "domain": "greyjournal.net",
+       "url": "https://greyjournal.net/hustle/grow/how-much-do-indie-hackers-make-2026/",
+       "thumbnail": "https://t2.gstatic.com/faviconV2?url=https://greyjournal.net/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "greyjournal.net",
+       "publication_date": null,
+       "markdown": "How much indie hackers make in 2026 and the 97% drop"
+      },
+      {
+       "type": "gemini_source",
+       "title": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report",
+       "snippet": " On that basis I counted every seller I could find: about 200,000 sellers \non 198,000 websites. For each one I recorded the day it first linked to a \ncheckout, th...",
+       "domain": "jasonzhu.ai",
+       "url": "https://jasonzhu.ai/en/blog/indie-payments-report-2026#:~:text=On%20that%20basis%20I%20counted%20every%20seller,see%20what%20it%20sells.%20The%20short%20version%3A",
+       "thumbnail": "https://encrypted-tbn3.gstatic.com/favicon-tbn?q=tbn%3AANd9GcQGdGD5-DbElb69C6LbwbbFR9M1KIEqOVxbv4WsT8oqNIQzuAzdGE1hTSo6QoLYVCkIcBgq03g7vkruwg176L7o4ot16-dK",
+       "source_name": "JasonZhu.AI",
+       "publication_date": null,
+       "markdown": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report"
+      },
+      {
+       "type": "gemini_source",
+       "title": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report",
+       "snippet": " Stripe has by far the most sellers (103,000 new since 2025), but only 9% \nof them sell software and 7% AI products. The newer platforms look nothing \nlike that: ...",
+       "domain": "jasonzhu.ai",
+       "url": "https://jasonzhu.ai/en/blog/indie-payments-report-2026#:~:text=Stripe%20has%20by%20far%20the%20most%20sellers,growing%20fastest%3A%20Platform.%20New%20sellers%20in%202024.",
+       "thumbnail": "https://encrypted-tbn3.gstatic.com/favicon-tbn?q=tbn%3AANd9GcQGdGD5-DbElb69C6LbwbbFR9M1KIEqOVxbv4WsT8oqNIQzuAzdGE1hTSo6QoLYVCkIcBgq03g7vkruwg176L7o4ot16-dK",
+       "source_name": "JasonZhu.AI",
+       "publication_date": null,
+       "markdown": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report"
+      },
+      {
+       "type": "gemini_source",
+       "title": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report",
+       "snippet": " Stripe has by far the most sellers (103,000 new since 2025), but only 9% \nof them sell software and 7% AI products. The newer platforms look nothing \nlike that: ...",
+       "domain": "jasonzhu.ai",
+       "url": "https://jasonzhu.ai/en/blog/indie-payments-report-2026#:~:text=Stripe%20has%20by%20far%20the%20most%20sellers,growing%20fastest%3A%20Platform.%20New%20sellers%20in%202024.",
+       "thumbnail": "https://encrypted-tbn3.gstatic.com/favicon-tbn?q=tbn%3AANd9GcQGdGD5-DbElb69C6LbwbbFR9M1KIEqOVxbv4WsT8oqNIQzuAzdGE1hTSo6QoLYVCkIcBgq03g7vkruwg176L7o4ot16-dK",
+       "source_name": "JasonZhu.AI",
+       "publication_date": null,
+       "markdown": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report"
+      },
+      {
+       "type": "gemini_source",
+       "title": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report",
+       "snippet": " Stripe has by far the most sellers (103,000 new since 2025), but only 9% \nof them sell software and 7% AI products. The newer platforms look nothing \nlike that: ...",
+       "domain": "jasonzhu.ai",
+       "url": "https://jasonzhu.ai/en/blog/indie-payments-report-2026#:~:text=Stripe%20has%20by%20far%20the%20most%20sellers,growing%20fastest%3A%20Platform.%20New%20sellers%20in%202024.",
+       "thumbnail": "https://encrypted-tbn3.gstatic.com/favicon-tbn?q=tbn%3AANd9GcQGdGD5-DbElb69C6LbwbbFR9M1KIEqOVxbv4WsT8oqNIQzuAzdGE1hTSo6QoLYVCkIcBgq03g7vkruwg176L7o4ot16-dK",
+       "source_name": "JasonZhu.AI",
+       "publication_date": null,
+       "markdown": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report"
+      },
+      {
+       "type": "gemini_source",
+       "title": "Best Payment Platforms for Indie Developers in 2026 - Anyway",
+       "snippet": "A processor can therefore be cheaper at checkout while requiring additional \ntax software, filings, advisers, and operational time. * Merchants of \nRecord: best w...",
+       "domain": "anyway.sh",
+       "url": "https://anyway.sh/blog/payment-platforms-for-indie-developers-2026#:~:text=A%20processor%20can%20therefore%20be%20cheaper%20at,refunds%2C%20and%20parts%20of%20the%20dispute%20workflow.",
+       "thumbnail": "https://encrypted-tbn3.gstatic.com/favicon-tbn?q=tbn%3AANd9GcRxvVhcCflIcOmwGLWqmU8BYivSG0gYgmQ2rWxhMZlXiuIXHOgHPJgxsMwUjj8I8hIc1jUDfBqBOOfuX36scltGRY0VvA",
+       "source_name": "Anyway",
+       "publication_date": null,
+       "markdown": "Best Payment Platforms for Indie Developers in 2026 - Anyway"
+      },
+      {
+       "type": "gemini_source",
+       "title": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report",
+       "snippet": " It started climbing in March 2026 and reached 20% in September: one new \nseller in five now sells software. AI products rose faster over the same \nperiod, from 5...",
+       "domain": "jasonzhu.ai",
+       "url": "https://jasonzhu.ai/en/blog/indie-payments-report-2026#:~:text=It%20started%20climbing%20in%20March%202026%20and,sell%20ebooks%2C%20content%20or%20community%20access.%203.",
+       "thumbnail": "https://encrypted-tbn3.gstatic.com/favicon-tbn?q=tbn%3AANd9GcQGdGD5-DbElb69C6LbwbbFR9M1KIEqOVxbv4WsT8oqNIQzuAzdGE1hTSo6QoLYVCkIcBgq03g7vkruwg176L7o4ot16-dK",
+       "source_name": "JasonZhu.AI",
+       "publication_date": null,
+       "markdown": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report"
+      },
+      {
+       "type": "gemini_source",
+       "title": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report",
+       "snippet": " It started climbing in March 2026 and reached 20% in September: one new \nseller in five now sells software. AI products rose faster over the same \nperiod, from 5...",
+       "domain": "jasonzhu.ai",
+       "url": "https://jasonzhu.ai/en/blog/indie-payments-report-2026#:~:text=It%20started%20climbing%20in%20March%202026%20and,sell%20ebooks%2C%20content%20or%20community%20access.%203.",
+       "thumbnail": "https://encrypted-tbn3.gstatic.com/favicon-tbn?q=tbn%3AANd9GcQGdGD5-DbElb69C6LbwbbFR9M1KIEqOVxbv4WsT8oqNIQzuAzdGE1hTSo6QoLYVCkIcBgq03g7vkruwg176L7o4ot16-dK",
+       "source_name": "JasonZhu.AI",
+       "publication_date": null,
+       "markdown": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report"
+      },
+      {
+       "type": "gemini_source",
+       "title": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report",
+       "snippet": " 17,000 websites carry a checkout link that also appears on five or more \nother sites: a hit product linked everywhere, a network selling backlinks, \nor a gamblin...",
+       "domain": "jasonzhu.ai",
+       "url": "https://jasonzhu.ai/en/blog/indie-payments-report-2026#:~:text=17%2C000%20websites%20carry%20a%20checkout%20link%20that,again%20as%20large%20as%20all%20of%202025.",
+       "thumbnail": "https://encrypted-tbn3.gstatic.com/favicon-tbn?q=tbn%3AANd9GcQGdGD5-DbElb69C6LbwbbFR9M1KIEqOVxbv4WsT8oqNIQzuAzdGE1hTSo6QoLYVCkIcBgq03g7vkruwg176L7o4ot16-dK",
+       "source_name": "JasonZhu.AI",
+       "publication_date": null,
+       "markdown": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report"
+      },
+      {
+       "type": "gemini_source",
+       "title": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report",
+       "snippet": " Gumroad links for gambling or adult products planted on the sites of \nschools, clinics and museums.",
+       "domain": "jasonzhu.ai",
+       "url": "https://jasonzhu.ai/en/blog/indie-payments-report-2026#:~:text=Gumroad%20links%20for%20gambling%20or%20adult%20products,the%20sites%20of%20schools%2C%20clinics%20and%20museums.",
+       "thumbnail": "https://encrypted-tbn3.gstatic.com/favicon-tbn?q=tbn%3AANd9GcQGdGD5-DbElb69C6LbwbbFR9M1KIEqOVxbv4WsT8oqNIQzuAzdGE1hTSo6QoLYVCkIcBgq03g7vkruwg176L7o4ot16-dK",
+       "source_name": "JasonZhu.AI",
+       "publication_date": null,
+       "markdown": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report"
+      }
+     ],
+     "se_results_count": 0,
+     "item_types": [
+      "gemini_text"
+     ],
+     "items_count": 1,
+     "items": [
+      {
+       "type": "gemini_text",
+       "rank_group": 1,
+       "rank_absolute": 1,
+       "markdown": "An analysis of roughly **200,000 checkout links** across nearly 198,000 independent websites (published in the *2026 Indie Payments Report* by Jason Zhu) provides a massive empirical look at how indie developers, solo founders, and micro-SaaS creators are monetizing.[jasonzhu.ai](https://jasonzhu.ai/en/blog/indie-payments-report-2026#:~:text=On%20that%20basis%20I%20counted%20every%20seller,see%20what%20it%20sells.%20The%20short%20version%3A) \n\nThe data reveals a dramatic shift away from traditional infrastructure toward newer developer-focused Merchants of Record (MoRs), an explosion of software and AI tooling, and unusual operational patterns among modern indie builders.\n\n---\n\n### 1. The Great Migration: Stripe Dominates Volume, But Newer Platforms Own AI & SaaS\nWhile **Stripe** remains the legacy heavyweight by sheer cumulative volume (onboarding 103,000 new sellers since 2025), its profile is heavily diluted by non-software projects: only **9% of Stripe's new sellers sell software** and **7% sell AI products**. \n\nIn contrast, newer indie-centric payment platforms and Merchants of Record—such as **Dodo Payments, Polar, and Creem**—have become the default launchpads for modern software creators:\n* **Dodo Payments:** **71%** of new sellers offer software, and **29%** sell AI products.[jasonzhu.ai](https://jasonzhu.ai/en/blog/indie-payments-report-2026#:~:text=Stripe%20has%20by%20far%20the%20most%20sellers,growing%20fastest%3A%20Platform.%20New%20sellers%20in%202024.)\n* **Polar:** **58%** software, **27%** AI products.[jasonzhu.ai](https://jasonzhu.ai/en/blog/indie-payments-report-2026#:~:text=Stripe%20has%20by%20far%20the%20most%20sellers,growing%20fastest%3A%20Platform.%20New%20sellers%20in%202024.)\n* **Creem:** **65%** software, **24%** AI products.[jasonzhu.ai](https://jasonzhu.ai/en/blog/indie-payments-report-2026#:~:text=Stripe%20has%20by%20far%20the%20most%20sellers,growing%20fastest%3A%20Platform.%20New%20sellers%20in%202024.)\n\nThese newer alternatives are growing rapidly because they handle complex global tax/VAT compliance out of the box (acting as the Merchant of Record) and **accept founders from regions like mainland China** where traditional Stripe onboarding is restricted.[anyway.sh](https://anyway.sh/blog/payment-platforms-for-indie-developers-2026#:~:text=A%20processor%20can%20therefore%20be%20cheaper%20at,refunds%2C%20and%20parts%20of%20the%20dispute%20workflow.)\n\n---\n\n### 2. The 2026 Surge in Software and AI Products\nThe composition of what indie developers are building has shifted aggressively toward code and AI:\n* **The Software Boom:** Throughout 2025, software hovered around 6% to 8% of new checkout links. By September 2026, software's share surged to **20%** (one in every five new sellers).[jasonzhu.ai](https://jasonzhu.ai/en/blog/indie-payments-report-2026#:~:text=It%20started%20climbing%20in%20March%202026%20and,sell%20ebooks%2C%20content%20or%20community%20access.%203.) \n* **AI Tooling Clustering:** AI-focused products jumped from 2% to 12% overall among new entrants, and account for up to **24%–29%** of new sellers specifically on platforms like Dodo, Polar, and Creem. \n\nDespite this tech-heavy concentration, non-software projects still make up a substantial baseline: 38% of 2026's new checkout links belong to general services/consulting, 21% to courses and coaching, and 14% to ebooks, content, or community access.[jasonzhu.ai](https://jasonzhu.ai/en/blog/indie-payments-report-2026#:~:text=It%20started%20climbing%20in%20March%202026%20and,sell%20ebooks%2C%20content%20or%20community%20access.%203.)\n\n---\n\n### 3. Rise of the \"Product Factory\" and Multi-Domain Portfolios\nThe data uncovers distinct behavioral patterns among active solo founders, many of whom are no longer building just one monolithic startup:\n* **Product Factories:** Many indie developers now ship a brand-new single-purpose tool every week or two, utilizing free subdomains or separate properties while managing them under a single analytics and business backend.\n* **Language and Industry Slicing:** A common tactic involves cloning a successful micro-tool across exact-match domains tailored for specific countries, languages, or vertical industries (e.g., deploying separate booking apps tailored strictly for kennels, hotels, and marinas).\n\n---\n\n### 4. The \"Grey Side\" of Checkout Links\nOut of the 200,000 analyzed links, about **17,000 websites** shared checkout links that appeared across five or more distinct sites.[jasonzhu.ai](https://jasonzhu.ai/en/blog/indie-payments-report-2026#:~:text=17%2C000%20websites%20carry%20a%20checkout%20link%20that,again%20as%20large%20as%20all%20of%202025.) The data categorizes these shared networks into three groups:\n1. **Legitimate Hit Products:** Viral Mac utilities or developer tools widely recommended by directories and review blogs.\n2. **Backlink Networks:** Programmatic template sites (such as dozens of auto-generated SEO or backlink checkers) cross-linking payment rails.\n3. **Compromised Infrastructure:** Instances where payment links (such as legacy Gumroad setups for adult or gambling offers) were illicitly injected into hacked, dormant websites belonging to schools, local clinics, or cultural institutions.[jasonzhu.ai](https://jasonzhu.ai/en/blog/indie-payments-report-2026#:~:text=Gumroad%20links%20for%20gambling%20or%20adult%20products,the%20sites%20of%20schools%2C%20clinics%20and%20museums.)\n\n---\n\nWant a deep-dive into how Merchants of Record like Dodo, Polar, and Paddle compare on fees and global tax handling? -> Compare Merchants of Record like Dodo Payments, Polar, Lemon Squeezy, and Paddle for an indie developer regarding fees, global tax compliance, and payouts.",
+       "original_text": "An analysis of roughly **200,000 checkout links** across nearly 198,000 independent websites (published in the *2026 Indie Payments Report* by Jason Zhu) provides a massive empirical look at how indie developers, solo founders, and micro-SaaS creators are monetizing. \n\nThe data reveals a dramatic shift away from traditional infrastructure toward newer developer-focused Merchants of Record (MoRs), an explosion of software and AI tooling, and unusual operational patterns among modern indie builders.\n\n---\n\n### 1. The Great Migration: Stripe Dominates Volume, But Newer Platforms Own AI & SaaS\nWhile **Stripe** remains the legacy heavyweight by sheer cumulative volume (onboarding 103,000 new sellers since 2025), its profile is heavily diluted by non-software projects: only **9% of Stripe's new sellers sell software** and **7% sell AI products**. \n\nIn contrast, newer indie-centric payment platforms and Merchants of Record—such as **Dodo Payments, Polar, and Creem**—have become the default launchpads for modern software creators:\n* **Dodo Payments:** **71%** of new sellers offer software, and **29%** sell AI products.\n* **Polar:** **58%** software, **27%** AI products.\n* **Creem:** **65%** software, **24%** AI products.\n\nThese newer alternatives are growing rapidly because they handle complex global tax/VAT compliance out of the box (acting as the Merchant of Record) and **accept founders from regions like mainland China** where traditional Stripe onboarding is restricted.\n\n---\n\n### 2. The 2026 Surge in Software and AI Products\nThe composition of what indie developers are building has shifted aggressively toward code and AI:\n* **The Software Boom:** Throughout 2025, software hovered around 6% to 8% of new checkout links. By September 2026, software's share surged to **20%** (one in every five new sellers). \n* **AI Tooling Clustering:** AI-focused products jumped from 2% to 12% overall among new entrants, and account for up to **24%–29%** of new sellers specifically on platforms like Dodo, Polar, and Creem. \n\nDespite this tech-heavy concentration, non-software projects still make up a substantial baseline: 38% of 2026's new checkout links belong to general services/consulting, 21% to courses and coaching, and 14% to ebooks, content, or community access.\n\n---\n\n### 3. Rise of the \"Product Factory\" and Multi-Domain Portfolios\nThe data uncovers distinct behavioral patterns among active solo founders, many of whom are no longer building just one monolithic startup:\n* **Product Factories:** Many indie developers now ship a brand-new single-purpose tool every week or two, utilizing free subdomains or separate properties while managing them under a single analytics and business backend.\n* **Language and Industry Slicing:** A common tactic involves cloning a successful micro-tool across exact-match domains tailored for specific countries, languages, or vertical industries (e.g., deploying separate booking apps tailored strictly for kennels, hotels, and marinas).\n\n---\n\n### 4. The \"Grey Side\" of Checkout Links\nOut of the 200,000 analyzed links, about **17,000 websites** shared checkout links that appeared across five or more distinct sites. The data categorizes these shared networks into three groups:\n1. **Legitimate Hit Products:** Viral Mac utilities or developer tools widely recommended by directories and review blogs.\n2. **Backlink Networks:** Programmatic template sites (such as dozens of auto-generated SEO or backlink checkers) cross-linking payment rails.\n3. **Compromised Infrastructure:** Instances where payment links (such as legacy Gumroad setups for adult or gambling offers) were illicitly injected into hacked, dormant websites belonging to schools, local clinics, or cultural institutions.\n\n---\n\nWant a deep-dive into how Merchants of Record like Dodo, Polar, and Paddle compare on fees and global tax handling? -> Compare Merchants of Record like Dodo Payments, Polar, Lemon Squeezy, and Paddle for an indie developer regarding fees, global tax compliance, and payouts.",
+       "sources": [
+        {
+         "type": "gemini_source",
+         "title": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report",
+         "snippet": " On that basis I counted every seller I could find: about 200,000 sellers \non 198,000 websites. For each one I recorded the day it first linked to a \ncheckout, th...",
+         "domain": "jasonzhu.ai",
+         "url": "https://jasonzhu.ai/en/blog/indie-payments-report-2026#:~:text=On%20that%20basis%20I%20counted%20every%20seller,see%20what%20it%20sells.%20The%20short%20version%3A",
+         "thumbnail": "https://encrypted-tbn3.gstatic.com/favicon-tbn?q=tbn%3AANd9GcQGdGD5-DbElb69C6LbwbbFR9M1KIEqOVxbv4WsT8oqNIQzuAzdGE1hTSo6QoLYVCkIcBgq03g7vkruwg176L7o4ot16-dK",
+         "source_name": "JasonZhu.AI",
+         "publication_date": null,
+         "markdown": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report"
+        },
+        {
+         "type": "gemini_source",
+         "title": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report",
+         "snippet": " Stripe has by far the most sellers (103,000 new since 2025), but only 9% \nof them sell software and 7% AI products. The newer platforms look nothing \nlike that: ...",
+         "domain": "jasonzhu.ai",
+         "url": "https://jasonzhu.ai/en/blog/indie-payments-report-2026#:~:text=Stripe%20has%20by%20far%20the%20most%20sellers,growing%20fastest%3A%20Platform.%20New%20sellers%20in%202024.",
+         "thumbnail": "https://encrypted-tbn3.gstatic.com/favicon-tbn?q=tbn%3AANd9GcQGdGD5-DbElb69C6LbwbbFR9M1KIEqOVxbv4WsT8oqNIQzuAzdGE1hTSo6QoLYVCkIcBgq03g7vkruwg176L7o4ot16-dK",
+         "source_name": "JasonZhu.AI",
+         "publication_date": null,
+         "markdown": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report"
+        },
+        {
+         "type": "gemini_source",
+         "title": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report",
+         "snippet": " Stripe has by far the most sellers (103,000 new since 2025), but only 9% \nof them sell software and 7% AI products. The newer platforms look nothing \nlike that: ...",
+         "domain": "jasonzhu.ai",
+         "url": "https://jasonzhu.ai/en/blog/indie-payments-report-2026#:~:text=Stripe%20has%20by%20far%20the%20most%20sellers,growing%20fastest%3A%20Platform.%20New%20sellers%20in%202024.",
+         "thumbnail": "https://encrypted-tbn3.gstatic.com/favicon-tbn?q=tbn%3AANd9GcQGdGD5-DbElb69C6LbwbbFR9M1KIEqOVxbv4WsT8oqNIQzuAzdGE1hTSo6QoLYVCkIcBgq03g7vkruwg176L7o4ot16-dK",
+         "source_name": "JasonZhu.AI",
+         "publication_date": null,
+         "markdown": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report"
+        },
+        {
+         "type": "gemini_source",
+         "title": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report",
+         "snippet": " Stripe has by far the most sellers (103,000 new since 2025), but only 9% \nof them sell software and 7% AI products. The newer platforms look nothing \nlike that: ...",
+         "domain": "jasonzhu.ai",
+         "url": "https://jasonzhu.ai/en/blog/indie-payments-report-2026#:~:text=Stripe%20has%20by%20far%20the%20most%20sellers,growing%20fastest%3A%20Platform.%20New%20sellers%20in%202024.",
+         "thumbnail": "https://encrypted-tbn3.gstatic.com/favicon-tbn?q=tbn%3AANd9GcQGdGD5-DbElb69C6LbwbbFR9M1KIEqOVxbv4WsT8oqNIQzuAzdGE1hTSo6QoLYVCkIcBgq03g7vkruwg176L7o4ot16-dK",
+         "source_name": "JasonZhu.AI",
+         "publication_date": null,
+         "markdown": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report"
+        },
+        {
+         "type": "gemini_source",
+         "title": "Best Payment Platforms for Indie Developers in 2026 - Anyway",
+         "snippet": "A processor can therefore be cheaper at checkout while requiring additional \ntax software, filings, advisers, and operational time. * Merchants of \nRecord: best w...",
+         "domain": "anyway.sh",
+         "url": "https://anyway.sh/blog/payment-platforms-for-indie-developers-2026#:~:text=A%20processor%20can%20therefore%20be%20cheaper%20at,refunds%2C%20and%20parts%20of%20the%20dispute%20workflow.",
+         "thumbnail": "https://encrypted-tbn3.gstatic.com/favicon-tbn?q=tbn%3AANd9GcRxvVhcCflIcOmwGLWqmU8BYivSG0gYgmQ2rWxhMZlXiuIXHOgHPJgxsMwUjj8I8hIc1jUDfBqBOOfuX36scltGRY0VvA",
+         "source_name": "Anyway",
+         "publication_date": null,
+         "markdown": "Best Payment Platforms for Indie Developers in 2026 - Anyway"
+        },
+        {
+         "type": "gemini_source",
+         "title": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report",
+         "snippet": " It started climbing in March 2026 and reached 20% in September: one new \nseller in five now sells software. AI products rose faster over the same \nperiod, from 5...",
+         "domain": "jasonzhu.ai",
+         "url": "https://jasonzhu.ai/en/blog/indie-payments-report-2026#:~:text=It%20started%20climbing%20in%20March%202026%20and,sell%20ebooks%2C%20content%20or%20community%20access.%203.",
+         "thumbnail": "https://encrypted-tbn3.gstatic.com/favicon-tbn?q=tbn%3AANd9GcQGdGD5-DbElb69C6LbwbbFR9M1KIEqOVxbv4WsT8oqNIQzuAzdGE1hTSo6QoLYVCkIcBgq03g7vkruwg176L7o4ot16-dK",
+         "source_name": "JasonZhu.AI",
+         "publication_date": null,
+         "markdown": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report"
+        },
+        {
+         "type": "gemini_source",
+         "title": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report",
+         "snippet": " It started climbing in March 2026 and reached 20% in September: one new \nseller in five now sells software. AI products rose faster over the same \nperiod, from 5...",
+         "domain": "jasonzhu.ai",
+         "url": "https://jasonzhu.ai/en/blog/indie-payments-report-2026#:~:text=It%20started%20climbing%20in%20March%202026%20and,sell%20ebooks%2C%20content%20or%20community%20access.%203.",
+         "thumbnail": "https://encrypted-tbn3.gstatic.com/favicon-tbn?q=tbn%3AANd9GcQGdGD5-DbElb69C6LbwbbFR9M1KIEqOVxbv4WsT8oqNIQzuAzdGE1hTSo6QoLYVCkIcBgq03g7vkruwg176L7o4ot16-dK",
+         "source_name": "JasonZhu.AI",
+         "publication_date": null,
+         "markdown": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report"
+        },
+        {
+         "type": "gemini_source",
+         "title": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report",
+         "snippet": " 17,000 websites carry a checkout link that also appears on five or more \nother sites: a hit product linked everywhere, a network selling backlinks, \nor a gamblin...",
+         "domain": "jasonzhu.ai",
+         "url": "https://jasonzhu.ai/en/blog/indie-payments-report-2026#:~:text=17%2C000%20websites%20carry%20a%20checkout%20link%20that,again%20as%20large%20as%20all%20of%202025.",
+         "thumbnail": "https://encrypted-tbn3.gstatic.com/favicon-tbn?q=tbn%3AANd9GcQGdGD5-DbElb69C6LbwbbFR9M1KIEqOVxbv4WsT8oqNIQzuAzdGE1hTSo6QoLYVCkIcBgq03g7vkruwg176L7o4ot16-dK",
+         "source_name": "JasonZhu.AI",
+         "publication_date": null,
+         "markdown": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report"
+        },
+        {
+         "type": "gemini_source",
+         "title": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report",
+         "snippet": " Gumroad links for gambling or adult products planted on the sites of \nschools, clinics and museums.",
+         "domain": "jasonzhu.ai",
+         "url": "https://jasonzhu.ai/en/blog/indie-payments-report-2026#:~:text=Gumroad%20links%20for%20gambling%20or%20adult%20products,the%20sites%20of%20schools%2C%20clinics%20and%20museums.",
+         "thumbnail": "https://encrypted-tbn3.gstatic.com/favicon-tbn?q=tbn%3AANd9GcQGdGD5-DbElb69C6LbwbbFR9M1KIEqOVxbv4WsT8oqNIQzuAzdGE1hTSo6QoLYVCkIcBgq03g7vkruwg176L7o4ot16-dK",
+         "source_name": "JasonZhu.AI",
+         "publication_date": null,
+         "markdown": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

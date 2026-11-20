@@ -1,0 +1,191 @@
+{
+ "version": "0.1.20261103",
+ "status_code": 20000,
+ "status_message": "Ok.",
+ "time": "3.2717 sec.",
+ "cost": 0.00585,
+ "tasks_count": 1,
+ "tasks_error": 0,
+ "tasks": [
+  {
+   "id": "11170805-2225-0612-0000-4d92e1d96d45",
+   "status_code": 20000,
+   "status_message": "Ok.",
+   "time": "3.2591 sec.",
+   "cost": 0.00585,
+   "result_count": 1,
+   "path": [
+    "v3",
+    "ai_optimization",
+    "perplexity",
+    "llm_responses",
+    "live"
+   ],
+   "data": {
+    "api": "ai_optimization",
+    "function": "llm_responses",
+    "se": "perplexity",
+    "user_prompt": "Where can I compare Gemini 4 coding prompt examples and benchmark demos?",
+    "model_name": "sonar",
+    "web_search_country_iso_code": "US"
+   },
+   "result": [
+    {
+     "model_name": "sonar",
+     "input_tokens": 21,
+     "output_tokens": 229,
+     "reasoning_tokens": 0,
+     "web_search": true,
+     "money_spent": 0.00525,
+     "datetime": "2026-11-17 08:05:18 +00:00",
+     "items": [
+      {
+       "type": "message",
+       "sections": [
+        {
+         "type": "text",
+         "text": "For **Gemini 4 coding prompts and benchmark demos**, these are the most useful places:\n\n- **API Models — Gemini 4 Carbon prompt library:** 223 examples spanning apps, games, simulations, bug fixes, and research, with creator credits and shared prompts.[10]\n- **API Models — head-to-head comparisons:** 96+ same-prompt tests comparing Gemini 4 Carbon with Gemini 4 Argon and other models, including benchmark scores and video demos.[3]\n- **GitHub — Gemini 4 Carbon collection:** The underlying open-source Markdown/JSON dataset, useful for downloading, filtering, or inspecting individual test cases.[8]\n- **GitHub — Gemini 4 Argon prompt index:** 80 examples with prompts, videos, and a “Recreate” workflow for trying examples interactively.[7]\n- **API Models — coding examples:** Focused collection of real codebases, tooling, app builds, and coding-oriented prompt patterns.[4]\n\nFor the quickest comparison, start with the **head-to-head page**; for reusable prompts and implementation details, use the **GitHub collections**.[3][7]",
+         "annotations": [
+          {
+           "title": "Awesome Gemini 4 Carbon - GitHub",
+           "url": "https://github.com/sandbase-lab/awesome-gemini-4-carbon",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "GitHub - sandbase-lab/awesome-gemini4-argon: Awesome Gemini 4 ...",
+           "url": "https://github.com/sandbase-lab/awesome-gemini4-argon",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Head-to-Head Tests: 96 Gemini 4 Carbon Examples and Prompts",
+           "url": "https://apimodels.app/es/gemini-4-carbon-prompts/head-to-head",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Apps, Real Codebases and Tooling: 12 Gemini 4 Carbon Examples and Prompts",
+           "url": "https://apimodels.app/es/gemini-4-carbon-prompts/code",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Awesome Gemini 4 Argon - sandbase-lab",
+           "url": "https://github.com/sandbase-lab/awesome-gemini4-argon/blob/main/README.md",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "GitHub - sandbase-lab/awesome-gemini4-argon: Awesome Gemini 4 Argon: curated videos, prompts and examples made with Google Gemini 4 Argon (Three.js, WebGL, SVG, games), plus a prompt guide, tutorial and comparison vs Claude Opus 5.5 and GPT-6. Synced daily from SandBase Lab.",
+           "url": "https://github.com/sandbase-lab/awesome-gemini4-argon/tree/main",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Gemini 4 Argon prompts - sandbase-lab",
+           "url": "https://github.com/sandbase-lab/awesome-gemini4-argon/blob/main/docs/prompts.md",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "GitHub - apimodels/gemini-4-carbon-prompts: 223 things people built and tested with Google's Gemini 4 Carbon: 3D scenes, games, simulations, films made in code, real bug fixes and same-prompt tests against Claude Fable 5.2 and Gemini 4 Argon. Each credited and linked, with the prompt where the creator published it. English and 简体中文.",
+           "url": "https://github.com/apimodels/gemini-4-carbon-prompts",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Gemini 4 Carbon Agents, Research and Writing Prompts",
+           "url": "https://apimodels.app/gemini-4-carbon-prompts/research",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "223 Gemini 4 Carbon Prompts and Examples - API Models",
+           "url": "https://apimodels.app/gemini-4-carbon-prompts",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "fan_out_queries": null,
+     "search_results": [
+      {
+       "title": "Awesome Gemini 4 Carbon - GitHub",
+       "url": "https://github.com/sandbase-lab/awesome-gemini-4-carbon",
+       "date": "2026-11-17 00:00:00 +00:00",
+       "snippet": "GitHub - sandbase-lab/awesome-gemini-4-carbon: Awesome Gemini 4 Carbon: curated videos, prompts and examples made with Gemini 4 Carbon (Three.js scenes, cutaways, motion graphics and games as single-file HTML), plus a prompt guide, tutorial and model comparison.\n...\nA curated list of **Gemini 4 Carb..."
+      },
+      {
+       "title": "GitHub - sandbase-lab/awesome-gemini4-argon: Awesome Gemini 4 ...",
+       "url": "https://github.com/sandbase-lab/awesome-gemini4-argon",
+       "date": "2026-11-17 00:00:00 +00:00",
+       "snippet": "GitHub - sandbase-lab/awesome-gemini4-argon: Awesome Gemini 4 Argon: curated videos, prompts and examples made with Google Gemini 4 Argon (Three.js, WebGL, SVG, games), plus a prompt guide, tutorial and comparison vs Claude Opus 5.5 and GPT-6.\nSynced daily from SandBase Lab.\n...\nA curated list of **..."
+      },
+      {
+       "title": "Head-to-Head Tests: 96 Gemini 4 Carbon Examples and Prompts",
+       "url": "https://apimodels.app/es/gemini-4-carbon-prompts/head-to-head",
+       "date": "2026-11-16 00:00:00 +00:00",
+       "snippet": "96+ prompts.\n223 things people built, tested and compared with Gemini 4 Carbon in its first weeks: 3D scenes, games, simulations, films made from code, real bug fixes and research, and dozens of same-prompt tests against Claude Fable 5.2 and Gemini 4 Argon.\nEach is credited and linked to the origina..."
+      },
+      {
+       "title": "Apps, Real Codebases and Tooling: 12 Gemini 4 Carbon Examples and Prompts",
+       "url": "https://apimodels.app/es/gemini-4-carbon-prompts/code",
+       "date": "2026-11-12 00:00:00 +00:00",
+       "snippet": "223 things people built, tested and compared with Gemini 4 Carbon in its first weeks: 3D scenes, games, simulations, films made from code, real bug fixes and research, and dozens of same-prompt tests against Claude Fable 5.2 and Gemini 4 Argon.\nEach is credited and linked to the original post, with ..."
+      },
+      {
+       "title": "Awesome Gemini 4 Argon - sandbase-lab",
+       "url": "https://github.com/sandbase-lab/awesome-gemini4-argon/blob/main/README.md",
+       "date": "2026-11-16 00:00:00 +00:00",
+       "snippet": "A curated list of **Gemini 4 Argon examples**: videos, prompts and demos made with Google's Gemini 4 Argon model.\nThree.js and WebGL 3D scenes, SVG and canvas animation, motion graphics and playable browser games, each one written as code from a prompt, credited to its creator and linked to the orig..."
+      },
+      {
+       "title": "GitHub - sandbase-lab/awesome-gemini4-argon: Awesome Gemini 4 Argon: curated videos, prompts and examples made with Google Gemini 4 Argon (Three.js, WebGL, SVG, games), plus a prompt guide, tutorial and comparison vs Claude Opus 5.5 and GPT-6. Synced daily from SandBase Lab.",
+       "url": "https://github.com/sandbase-lab/awesome-gemini4-argon/tree/main",
+       "date": "2026-11-16 00:00:00 +00:00",
+       "snippet": "GitHub - sandbase-lab/awesome-gemini4-argon: Awesome Gemini 4 Argon: curated videos, prompts and examples made with Google Gemini 4 Argon (Three.js, WebGL, SVG, games), plus a prompt guide, tutorial and comparison vs Claude Opus 5.5 and GPT-6.\nSynced daily from SandBase Lab.\n...\nA curated list of **..."
+      },
+      {
+       "title": "Gemini 4 Argon prompts - sandbase-lab",
+       "url": "https://github.com/sandbase-lab/awesome-gemini4-argon/blob/main/docs/prompts.md",
+       "date": "2026-11-15 00:00:00 +00:00",
+       "snippet": "80 Gemini 4 Argon videos whose creators shared the prompt.\nOpen one to read the prompt, watch the video and **Recreate** it with Argon on SandBase Lab.\nNew to prompting Argon?\n...\nim gonna compare this with Opus 5.5 later.\n...\nAfter taking Rody’s advice, I tried Gemini 4 Argon Medium.\nPrompt 1: Writ..."
+      },
+      {
+       "title": "GitHub - apimodels/gemini-4-carbon-prompts: 223 things people built and tested with Google's Gemini 4 Carbon: 3D scenes, games, simulations, films made in code, real bug fixes and same-prompt tests against Claude Fable 5.2 and Gemini 4 Argon. Each credited and linked, with the prompt where the creator published it. English and 简体中文.",
+       "url": "https://github.com/apimodels/gemini-4-carbon-prompts",
+       "date": "2026-11-12 00:00:00 +00:00",
+       "snippet": "GitHub - apimodels/gemini-4-carbon-prompts: 223 things people built and tested with Google's Gemini 4 Carbon: 3D scenes, games, simulations, films made in code, real bug fixes and same-prompt tests against Claude Fable 5.2 and Gemini 4 Argon.\n...\n223 things people built, tested and compared with Goo..."
+      },
+      {
+       "title": "Gemini 4 Carbon Agents, Research and Writing Prompts",
+       "url": "https://apimodels.app/gemini-4-carbon-prompts/research",
+       "date": "2026-11-17 00:00:00 +00:00",
+       "snippet": "223 things people built, tested and compared with Gemini 4 Carbon in its first weeks: 3D scenes, games, simulations, films made from code, real bug fixes and research, and dozens of same-prompt tests against Claude Fable 5.2 and Gemini 4 Argon.\nEach is credited and linked to the original post, with ..."
+      },
+      {
+       "title": "223 Gemini 4 Carbon Prompts and Examples - API Models",
+       "url": "https://apimodels.app/gemini-4-carbon-prompts",
+       "date": "2026-11-16 00:00:00 +00:00",
+       "snippet": "223+ prompts.\n223 things people built, tested and compared with Gemini 4 Carbon in its first weeks: 3D scenes, games, simulations, films made from code, real bug fixes and research, and dozens of same-prompt tests against Claude Fable 5.2 and Gemini 4 Argon.\nEach is credited and linked to the origin..."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

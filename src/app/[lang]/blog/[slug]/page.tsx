@@ -181,6 +181,27 @@ export default async function BlogPostPage({ params }: Props) {
       ? `${SITE_URL}${post.coverImage}`
       : `${SITE_URL}/${lang}/blog/${slug}/opengraph-image`,
     keywords: post.tags.map((t) => tagLabel(t, lang)).join(", "),
+    ...(post.doi
+      ? {
+          sameAs: [
+            `https://doi.org/${post.doi}`,
+            `https://zenodo.org/records/${post.doi.split("zenodo.").pop()}`,
+          ],
+          identifier: {
+            "@type": "PropertyValue",
+            propertyID: "DOI",
+            value: post.doi,
+            url: `https://doi.org/${post.doi}`,
+          },
+          citation: {
+            "@type": "Dataset",
+            "@id": `https://doi.org/${post.doi}`,
+            name: post.title,
+            identifier: `https://doi.org/${post.doi}`,
+            url: `https://zenodo.org/records/${post.doi.split("zenodo.").pop()}`,
+          },
+        }
+      : {}),
   };
 
   // FAQPage JSON-LD：文章含「## 常见问题」段落时自动生成

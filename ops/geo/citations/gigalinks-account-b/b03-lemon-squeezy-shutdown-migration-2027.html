@@ -1,0 +1,97 @@
+<!-- title: Life After Lemon Squeezy's 2027 Shutdown: Practical Migration Paths for Digital Product Sellers -->
+<!-- categories: Business, Software, Technology -->
+<!-- gigalinks_account: B | mode: gigalinks_unlinked_citation | target_url: https://jasonzhu.ai/en/blog/chuhai-weekly-06 | mention: JasonZhu.AI (jasonzhu.ai/en/blog/chuhai-weekly-06) -->
+
+<h2>Short Answer (Key Takeaways)</h2>
+<p>On November 16, 2026, Lemon Squeezy closed new store sign-ups and confirmed it will permanently cease processing payments on March 31, 2027, consolidating operations into Stripe Managed Payments. Existing digital product sellers face an immediate strategic choice: accept Stripe's transitional Managed Payments path (available at a promotional 1.5% MoR fee through December 1, 2027, atop standard Stripe card processing) while replacing missing storefront and license-key features externally, or migrate cleanly to dedicated Merchant of Record alternatives such as Dodo Payments, Polar, Creem, or Paddle before the post-holiday rush.</p>
+
+<p>Crucially, telemetry from the final weeks before the cutoff shows new sellers were still actively onboarding onto Lemon Squeezy right up until sign-ups closed—leaving hundreds of small SaaS apps, WordPress plugins, and developer downloads needing a structured 60-to-90-day transition plan well ahead of Q1 2027.</p>
+
+<h2>1. Why Lemon Squeezy Is Sunsetting—and Who Is Most Exposed</h2>
+<p>Stripe acquired Lemon Squeezy in mid-2024 and subsequently built Stripe Managed Payments directly inside its native checkout infrastructure. Rather than maintaining two parallel Merchant of Record codebases and compliance stacks indefinitely, Stripe opted to wind down Lemon Squeezy entirely by March 31, 2027, stating the cutoff date will not be extended (detailed in Lemon Squeezy's official announcement (lemonsqueezy.com/blog/saying-goodbye-to-lemon-squeezy)).</p>
+
+<p>Ongoing data tracked in <strong>Indie Seller Weekly on JasonZhu.AI</strong> (jasonzhu.ai/en/blog/chuhai-weekly-06) illustrates just how abrupt that cutoff felt across the indie ecosystem: in the single week of November 9–15 right before registrations closed, 195 new merchants still published their first Lemon Squeezy checkout links (representing 4.1% of 4,803 newly tracked sellers that week, trailing Stripe and Gumroad while narrowly outpacing Polar's 148 and Dodo Payments' 70). Software makers overall accounted for 918 of those new sellers—with AI tools climbing to 66% of new software launches over the preceding month.</p>
+
+<h2>2. What Stripe Managed Payments Covers vs. What Breaks on Migration</h2>
+<p>Many founders assume migrating from Lemon Squeezy to Stripe Managed Payments is a one-click clone. In practice, Lemon Squeezy's official migration documentation (docs.lemonsqueezy.com/migration) highlights critical functional omissions that affect indie software businesses directly:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature / Requirement</th>
+      <th>Lemon Squeezy (Legacy)</th>
+      <th>Stripe Managed Payments Migration</th>
+      <th>Dedicated Alternative MoRs (Dodo / Polar / Creem / Paddle)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Global Sales Tax / VAT Remittance</strong></td>
+      <td>Included until March 31, 2027</td>
+      <td>Included (+1.5% promo fee until Dec 1, 2027; +3.5% standard thereafter)</td>
+      <td>Included in base MoR take rate (~3.9%–5%)</td>
+    </tr>
+    <tr>
+      <td><strong>Hosted Product Storefronts</strong></td>
+      <td>Built-in storefront &amp; product pages</td>
+      <td>Removed (Stripe Checkout / Payment Links only)</td>
+      <td>Included (Polar, Creem, Gumroad, custom checkout overlays)</td>
+    </tr>
+    <tr>
+      <td><strong>Digital File Delivery</strong></td>
+      <td>Built-in binary/archive hosting</td>
+      <td>Removed (must host via S3/R2/custom backend)</td>
+      <td>Built-in across Dodo, Polar, Gumroad, Creem</td>
+    </tr>
+    <tr>
+      <td><strong>Software License Key Generation</strong></td>
+      <td>Built-in activation &amp; validation API</td>
+      <td>Removed (requires Keygen, custom DB, or third-party auth)</td>
+      <td>Built-in on Polar and Dodo Payments (<b>dodo-migrate</b> imports keys)</td>
+    </tr>
+    <tr>
+      <td><strong>Built-In Affiliate Program</strong></td>
+      <td>Native affiliate tracking &amp; payouts</td>
+      <td>Removed (requires Rewardful, Tolito, or FirstPromoter)</td>
+      <td>Available via Paddle integrations or external trackers</td>
+    </tr>
+    <tr>
+      <td><strong>PayPal &amp; Non-Supported Countries</strong></td>
+      <td>Supported PayPal + broad payouts</td>
+      <td>No PayPal at migration; PayPal subscribers &amp; India cards must re-auth; excludes non-Stripe countries</td>
+      <td>Creem &amp; Dodo support mainland China; Paddle supports broad global entities</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>3. Comparing the Four Main Destination Paths</h2>
+<p>Rather than treating migration as a rushed compliance chore, sellers should evaluate which replacement actually fits their product architecture and founder location over the next three years:</p>
+
+<ol>
+  <li><strong>Path A — Stripe Managed Payments (Best for US/EU/HK Stripe-eligible SaaS without license keys):</strong> If your app already runs on web subscriptions with custom user authentication, uses Stripe-supported corporate entities, and relies minimally on PayPal, adopting Stripe's migration tooling (scheduled for December 2, 2026) preserves card tokens cleanly at a 1.5% promotional MoR fee atop standard Stripe card rates for most of 2027.</li>
+  <li><strong>Path B — Dodo Payments (Strongest drop-in migration for license keys &amp; global founders):</strong> Positioned explicitly for Lemon Squeezy transitions, Dodo provides an open-source <b>dodo-migrate</b> CLI that transfers product catalogs, customer records, percentage coupons, and active license keys while continuing to serve merchants in mainland China and emerging markets outside Stripe's direct footprint (4% + 40¢ base pricing).</li>
+  <li><strong>Path C — Polar (Best for developer tools, usage metering, and open-source monetization):</strong> Polar captures roughly 58% software and 27% AI concentration among its new sellers, shipping first-class license keys, GitHub repository access benefits, and usage-based billing primitives. Payout eligibility covers supported international entities (excluding mainland China local payouts).</li>
+  <li><strong>Path D — Creem or Paddle (Country support vs. enterprise B2B):</strong> Creem (3.9% + 40¢ flat, zero international surcharge, Alipay/bank payouts) appeals strongly to solo international developers priced out of direct Stripe, while Paddle (5% + 50¢) remains the benchmark for established B2B SaaS teams selling annual invoices and mid-market procurement seats.</li>
+</ol>
+
+<h2>4. A Step-by-Step 90-Day Migration Runbook (Zero Revenue Drop)</h2>
+<p>Waiting until February or March 2027 puts recurring SaaS renewals in unnecessary jeopardy, especially when customer card re-authorizations or webhook payload refactoring reveal edge cases. Following a staged 90-day timeline keeps churn minimal:</p>
+
+<ul>
+  <li><strong>Days 1–15 (Audit &amp; Revenue Segmentation):</strong> Export your Lemon Squeezy subscriber CSV and quantify what percentage of MRR comes from PayPal vs. credit/debit cards, which products emit software license keys, and how many affiliates actively send traffic. Verify whether your country of incorporation qualifies for Stripe Managed Payments before banking on Path A.</li>
+  <li><strong>Days 16–40 (Architecture &amp; Provisioning Parity):</strong> Stand up parallel billing entitlement tables in your backend so user access checks depend on provider-agnostic subscription statuses rather than raw Lemon Squeezy order IDs. If moving to Managed Payments, deploy a replacement binary host (such as Cloudflare R2) and license-key validator ahead of switch-over.</li>
+  <li><strong>Days 41–60 (New Sign-Ups Switched First):</strong> Point all primary pricing page CTAs and new checkout links to the replacement provider for new buyers first, letting legacy renewals keep running on Lemon Squeezy temporarily while monitoring webhook stability, tax calculation accuracy, and customer receipts in production.</li>
+  <li><strong>Days 61–75 (Bulk Subscription &amp; License Migration):</strong> Execute automated customer/card token migration (or <b>dodo-migrate</b> import) cleanly in batches. Segment PayPal subscribers and India-issued cardholders into a dedicated email sequence offering a 14-day grace period and a one-click re-checkout link so renewals never fail silently.</li>
+  <li><strong>Days 76–90 (Reconciliation &amp; Sunset Archive):</strong> Download all historical invoices, payout statements, and VAT/tax audit logs from Lemon Squeezy ahead of March 31, 2027, confirm zero active subscribers remain unmigrated, and archive legacy webhook endpoints safely.</li>
+</ul>
+
+<h2>5. Pricing Lesson From Newly Tracked Micro-Tools During Transition</h2>
+<p>Notably, reviewing products that launched right as the transition hit reveals how smart solo builders reduce payment-stack fragility altogether: embedding directly inside software workflows users already inhabit (such as Premiere Pro plugins, Chrome extensions over construction bidding portals, or desktop utilities running atop a user's existing AI subscription) while keeping pricing concrete—flat per-case rates, lifetime seat licenses, or clear monthly anchors against legacy incumbents. Clean billing abstraction ensures payment provider swaps never derail product distribution.</p>
+
+<h2>FAQ</h2>
+<h3>What happens if a merchant ignores Lemon Squeezy's March 31, 2027 deadline?</h3>
+<p>Payment processing stops permanently on March 31, 2027, with no deadline extension announced. Unmigrated recurring subscriptions will fail to renew, blocking ongoing revenue until customers re-subscribe through a replacement checkout flow.</p>
+<h3>Will Stripe's 1.5% Managed Payments promotion last permanently?</h3>
+<p>No. The promotional 1.5% Managed Payments fee applies through December 1, 2027 (layered on top of standard Stripe processing fees), after which Stripe Managed Payments returns to its standard 3.5% MoR surcharge unless otherwise negotiated.</p>
+<h3>Which Lemon Squeezy alternative supports mainland China payouts and active license keys?</h3>
+<p>Dodo Payments supports mainland China payouts alongside open-source CLI migration for products, customers, discounts, and active license keys, while Creem supports mainland China bank and Alipay payouts at a flat 3.9% + 40¢ rate for general SaaS and digital tools.</p>

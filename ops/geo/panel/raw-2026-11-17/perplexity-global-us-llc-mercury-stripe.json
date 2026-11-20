@@ -1,0 +1,191 @@
+{
+ "version": "0.1.20261103",
+ "status_code": 20000,
+ "status_message": "Ok.",
+ "time": "10.6047 sec.",
+ "cost": 0.007247,
+ "tasks_count": 1,
+ "tasks_error": 0,
+ "tasks": [
+  {
+   "id": "11170803-2225-0612-0000-a77512a31eab",
+   "status_code": 20000,
+   "status_message": "Ok.",
+   "time": "10.3972 sec.",
+   "cost": 0.007247,
+   "result_count": 1,
+   "path": [
+    "v3",
+    "ai_optimization",
+    "perplexity",
+    "llm_responses",
+    "live"
+   ],
+   "data": {
+    "api": "ai_optimization",
+    "function": "llm_responses",
+    "se": "perplexity",
+    "user_prompt": "What is the real cost and step-by-step process to set up a US Wyoming LLC, Mercury bank account, and Stripe from abroad?",
+    "model_name": "sonar",
+    "web_search_country_iso_code": "US"
+   },
+   "result": [
+    {
+     "model_name": "sonar",
+     "input_tokens": 34,
+     "output_tokens": 1613,
+     "reasoning_tokens": 0,
+     "web_search": true,
+     "money_spent": 0.006647,
+     "datetime": "2026-11-17 08:03:39 +00:00",
+     "items": [
+      {
+       "type": "message",
+       "sections": [
+        {
+         "type": "text",
+         "text": "You can do this from abroad, but approval is **not automatic**: Mercury and Stripe assess your country, business model, ownership, addresses, and evidence of real operations. A realistic first-year budget is roughly **$500–$1,500**, excluding tax advice, depending on whether you file yourself or use a formation provider.\n\n## Realistic cost\n\n| Item | Typical cost |\n|---|---:|\n| Wyoming LLC state filing | About $100–$102 initially, depending on filing method |\n| Wyoming annual report | At least $60/year, subject to Wyoming’s calculation rules |\n| Registered agent | $50–$200/year |\n| Operating agreement | $0 DIY or $100–$500 professionally prepared |\n| EIN | $0 from the IRS; paid providers may charge $50–$300 |\n| Mercury account | Usually $0 monthly; paid plans may apply |\n| Stripe account | No setup fee; payment processing fees apply per transaction |\n| US mailing address, if genuinely needed | About $20–$70/month |\n| US tax compliance | Commonly $600–$1,200+/year for a foreign-owned LLC |\n| Form 5472 and pro-forma Form 1120 | Required in many foreign-owned single-member LLC cases; penalties can reach $25,000 for non-filing[1][2] |\n\nFormation providers commonly advertise packages from approximately $300–$850, but the low headline price may exclude annual registered-agent renewals, tax filings, mail handling, and address services.[1][3]\n\n## Step-by-step process\n\n### 1. Confirm that the structure makes sense\n\nBefore forming the LLC, verify:\n\n- Your country is eligible for Mercury and Stripe.\n- Your business activity is permitted and not in a restricted category.\n- Your home-country tax adviser understands US LLC reporting.\n- You genuinely need a US entity rather than a local company or a payment platform available in your country.\n\nDo not use a US LLC merely to conceal residence, avoid taxes, or create a fictitious US presence. Mercury and Stripe may request your real residential address, operating location, source of funds, customer geography, and business activity.[1]\n\n### 2. Prepare your documents\n\nHave these ready:\n\n- Passport for each substantial owner.\n- Proof of each owner’s residential address, generally issued recently.\n- Proposed LLC name.\n- Ownership percentages and management structure.\n- Two- or three-sentence business description.\n- Website, domain email, invoices, contracts, or customer information if available.\n- Expected monthly volume and transaction sizes.\n- Source-of-funds explanation.\n\nMercury commonly requests the filed formation document, EIN evidence, owner identification, owner home addresses, and a description of the company’s actual or planned US activity.[1]\n\n### 3. Form the Wyoming LLC\n\nFile Articles of Organization with the Wyoming Secretary of State and appoint a Wyoming registered agent. Keep the filed Articles or Certificate of Organization.\n\nYou should also create and sign:\n\n- Operating Agreement.\n- Initial member or manager consent.\n- Ownership records.\n- Business resolution authorizing the bank account.\n\nThe registered-agent address is not automatically a substitute for your operating address or residential address. Using a registered-agent address as if it were your real location can cause banking or Stripe verification problems.\n\n### 4. Obtain the EIN\n\nIf you do not have a US Social Security number or ITIN, you generally cannot use the IRS online EIN application. The usual route is Form SS-4 submitted by fax or mail, either directly or through a provider.[1][4]\n\nThe EIN itself is free. Processing time can vary from several business days to several weeks; provider claims of same-week issuance should not be treated as guaranteed. Wait for official IRS EIN evidence, such as the CP 575 notice, 147C letter, or accepted SS-4 documentation, before applying to financial platforms.\n\n### 5. Apply to Mercury\n\nApply only after the LLC and EIN documentation are ready.\n\nUse information consistently across every field:\n\n- LLC legal name exactly as filed.\n- EIN exactly as issued.\n- Your real residential address.\n- Actual business location and operating country.\n- Truthful expected volume.\n- Clear explanation of customers, suppliers, and money flows.\n\nMercury may approve eligible non-US founders, but it can decline applications based on residence, industry, risk profile, or insufficient US business nexus. Approval is a compliance decision, not a legal entitlement. Mercury generally has no monthly fee on its basic offering, while paid plans and international-wire charges can apply.[1]\n\nFund the account with a traceable transfer from an account in your own name or from a clearly documented business source. Do not buy or rent an account, use someone else’s identity, or route unexplained funds through it.\n\n### 6. Create Stripe\n\nAfter Mercury is active, create a Stripe account for the LLC and select the correct US business configuration.\n\nStripe will usually require:\n\n- LLC legal name and EIN.\n- Business address.\n- Owner and controller information.\n- Identity verification.\n- Website or product description.\n- Customer, fulfillment, and refund information.\n- Bank account for payouts.\n- Details about where the business is actually operated.\n\nA US LLC and US bank account do not guarantee Stripe approval. Stripe can ask for evidence that the business is genuine and that customers receive the advertised goods or services. Ensure the website includes accurate product descriptions, pricing, contact information, refund terms, privacy terms, and delivery or fulfillment details.\n\nDo not misrepresent your residence as US-based. Use your actual country of residence when Stripe requests it, even if the company is organized in Wyoming.\n\n### 7. Connect Mercury and Stripe\n\nInside Stripe:\n\n1. Open payout or bank-account settings.\n2. Add the Mercury routing and account numbers.\n3. Complete any ownership or microdeposit verification.\n4. Make a small test payout.\n5. Confirm that the legal business name and account ownership match.\n\nKeep Stripe balances conservative at the beginning. Sudden high-volume transactions, unusual countries, excessive disputes, or missing fulfillment evidence can trigger reserves, payout delays, or account review.\n\n### 8. Handle ongoing compliance\n\nBudget for the following every year:\n\n- Wyoming annual report and state fee.\n- Registered-agent renewal.\n- Federal tax information returns.\n- Bookkeeping and transaction records.\n- Foreign-country personal or corporate tax obligations.\n- Sales-tax or VAT registrations where applicable.\n- Stripe and Mercury verification updates.\n\nA foreign-owned single-member US LLC commonly has information-reporting obligations even when it owes no US income tax. Form 5472 is generally filed with a pro-forma Form 1120 when reportable transactions exist, and professional preparation often costs several hundred dollars or more annually.[2][5]\n\n## Practical total\n\n### Lowest-cost DIY setup\n\nApproximately **$250–$600 initially**, before professional tax work:\n\n- State filing.\n- Registered agent.\n- EIN handled yourself.\n- Free Mercury account.\n- Free Stripe account.\n- No paid US mailbox.\n\n### Safer managed setup\n\nApproximately **$600–$1,500 initially**, plus **$700–$2,000+ per year**:\n\n- Formation provider.\n- EIN assistance.\n- Registered agent.\n- Operating agreement.\n- Address or mail service if appropriate.\n- Tax compliance and Form 5472 preparation.\n\nSome providers quote much higher three-year totals because they include recurring registered-agent fees, mailboxes, compliance subscriptions, and CPA services; the formation fee alone is therefore a poor measure of total cost.[5][6]\n\nThe most important sequence is:\n\n**Wyoming LLC → EIN → Mercury application → Stripe application → payout testing → annual tax and state compliance.**\n\nNever pay for a “guaranteed Mercury approval,” “guaranteed Stripe approval,” fake US address, or pre-opened bank account. Those arrangements can lead to closure, frozen funds, tax complications, and identity-verification failures.",
+         "annotations": [
+          {
+           "title": "Wyoming LLC Bank Account for Non-Residents: 2026 Odds",
+           "url": "https://corpsec.io/bn/jurisdiction/usa-wyoming/guides/business-bank-account",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Mercury Bank Account for Non-Resident LLCs - 2026 Guide",
+           "url": "https://wyomingexperts.com/banking/mercury-bank-non-residents",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "US Company Formation for Non-Residents",
+           "url": "https://wyomingexperts.com/services/form-a-wyoming-llc/",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Wise Business for Non-Residents Owning a US LLC (2026)",
+           "url": "https://wyomingexperts.com/blog/wise-business-non-residents",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Pricing",
+           "url": "https://startinwyoming.com/pricing/",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Wyoming LLC Package for Non-US Residents",
+           "url": "https://mylatinlife.com/wyoming-llc-package/",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "US LLC Setup for Non-US Founders (2026): LLC, EIN, Banking & Stripe",
+           "url": "https://mizufinancial.com/blog/us-llc-setup-non-us-founders",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Cómo abrir una LLC en Estados Unidos siendo no residente en 2026: Maera vs doola vs Stripe Atlas vs Firstbase",
+           "url": "https://maera.com/es/blog/como-abrir-llc-estados-unidos-no-residente-2026-maera-vs-doola-stripe-atlas-firstbase",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Non-US Founder LLC & Mercury Bank Stack: Stripe Atlas vs Doola vs Firstbase.io 3-Year Total Cost of Ownership",
+           "url": "https://dev.to/600me/non-us-founder-llc-mercury-bank-stack-stripe-atlas-vs-doola-vs-firstbaseio-3-year-total-cost-of-430k",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Best LLC Formation Services for Non-Residents (2026)",
+           "url": "https://startfleet.io/guide/best-llc-formation-services",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "fan_out_queries": null,
+     "search_results": [
+      {
+       "title": "Wyoming LLC Bank Account for Non-Residents: 2026 Odds",
+       "url": "https://corpsec.io/bn/jurisdiction/usa-wyoming/guides/business-bank-account",
+       "date": "2026-11-02 00:00:00 +00:00",
+       "snippet": "|Item|What Mercury accepts, per its documents page|\n|--|--|\n|Formation document|State filed Articles of Organization|\n|EIN evidence|Form CP575, Form 147c, or the SS-4 returned by the IRS|\n|Identity|A passport for each owner of 25% or more, and for one person with operating control|\n|Business descrip..."
+      },
+      {
+       "title": "Mercury Bank Account for Non-Resident LLCs - 2026 Guide",
+       "url": "https://wyomingexperts.com/banking/mercury-bank-non-residents",
+       "date": "2026-11-16 00:00:00 +00:00",
+       "snippet": "Mercury is the default US business bank for non-resident LLC owners - no monthly fees, no minimum balance, and full integration with Stripe, Wise and Amazon.\n...\nStart Your Wyoming LLC - From $529 (State Fees Included)\n...\n1. **Certificate of Formation (Wyoming Articles of Organization).** We supply..."
+      },
+      {
+       "title": "US Company Formation for Non-Residents",
+       "url": "https://wyomingexperts.com/services/form-a-wyoming-llc/",
+       "date": "2026-07-31 00:00:00 +00:00",
+       "snippet": "$529\nState Fees Included\nIncludes formation + first year\n...\n$849/year\n...\n2\n### Choose Your Package\nSelect BASIC or Full Compliance based on your needs.\n3\n### We Handle Formation\nWe complete the entire formation process in Wyoming.\n4\n### Start Operating\n...\n**Day 1.** You send your name, passport i..."
+      },
+      {
+       "title": "Wise Business for Non-Residents Owning a US LLC (2026)",
+       "url": "https://wyomingexperts.com/blog/wise-business-non-residents",
+       "date": "2026-07-29 00:00:00 +00:00",
+       "snippet": "### Step 1: collect the founder documents before filing\nStart with the founder documents, not the bank application.\nPassport, home-country address proof, preferred LLC name, ownership details and a plain-English description of what the company will sell.\n...\n### Step 2: form the Wyoming LLC\nThe Wyom..."
+      },
+      {
+       "title": "Pricing",
+       "url": "https://startinwyoming.com/pricing/",
+       "date": "2026-11-13 00:00:00 +00:00",
+       "snippet": "$1500 one-time fee\n...\n- Done-For-You SS-4 Form Faxed to the IRS\n- EIN Confirmation Letter Scanned and Sent to You\n### $500\n...\nStart in Wyoming provides LLC formation for non-US residents, including EIN filing, US business bank account opening guidance, and a physical Wyoming office address with a ..."
+      },
+      {
+       "title": "Wyoming LLC Package for Non-US Residents",
+       "url": "https://mylatinlife.com/wyoming-llc-package/",
+       "date": "2026-10-28 00:00:00 +00:00",
+       "snippet": "1. **Confirmation email** — Stripe receipt and onboarding link within one business day.\n...\n|Item|Typical cost|\n|--|--|\n|MLL package (formation + RA year 1 + EIN + OA)|Shown at checkout|\n|Wyoming state filing fee|~$62|\n|Annual report (ongoing)|~$60/year + registered agent renewal|\n...\n1. **You place..."
+      },
+      {
+       "title": "US LLC Setup for Non-US Founders (2026): LLC, EIN, Banking & Stripe",
+       "url": "https://mizufinancial.com/blog/us-llc-setup-non-us-founders",
+       "date": "2026-10-16 00:00:00 +00:00",
+       "snippet": "**Quick answer:** Forming a US company as a non-US founder is a five-link chain that has to happen in order: file a Wyoming LLC, get an EIN from the IRS, set up a US business phone number and bank account, then connect Stripe.\n...\nA standard setup runs a few weeks, mostly driven by IRS EIN processin..."
+      },
+      {
+       "title": "Cómo abrir una LLC en Estados Unidos siendo no residente en 2026: Maera vs doola vs Stripe Atlas vs Firstbase",
+       "url": "https://maera.com/es/blog/como-abrir-llc-estados-unidos-no-residente-2026-maera-vs-doola-stripe-atlas-firstbase",
+       "date": "2026-10-30 00:00:00 +00:00",
+       "snippet": "### 2. Presenta los Articles of Organization y consigue un agente registrado\nToda LLC necesita un agente registrado con dirección física en su estado.\nTu servicio de formación presenta los documentos y normalmente incluye el primer año de agente registrado.\n### 3. Firma un Operating Agreement\nDefine..."
+      },
+      {
+       "title": "Non-US Founder LLC & Mercury Bank Stack: Stripe Atlas vs Doola vs Firstbase.io 3-Year Total Cost of Ownership",
+       "url": "https://dev.to/600me/non-us-founder-llc-mercury-bank-stack-stripe-atlas-vs-doola-vs-firstbaseio-3-year-total-cost-of-430k",
+       "date": "2026-10-30 00:00:00 +00:00",
+       "snippet": "**The real cost of a US LLC is not the formation fee.\nThe real cost is the 3-year recurring compliance, Registered Agent retainers, state franchise taxes, and mandatory IRS Form 5472 / 1120 filing obligations.**\n...\n|Compliance Item / Fee Dimension|Stripe Atlas|Doola (Standard + Total Compliance)|**..."
+      },
+      {
+       "title": "Best LLC Formation Services for Non-Residents (2026)",
+       "url": "https://startfleet.io/guide/best-llc-formation-services",
+       "date": "2026-11-12 00:00:00 +00:00",
+       "snippet": "The hard parts are the two steps that come after: **getting an EIN without a Social Security Number**, and **actually opening a US bank account from abroad**.\n...\n|What recurs, every year|What it typically costs|\n|--|--|\n|Registered agent|$100–$299/yr|\n|State annual report or franchise tax|Set by th..."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

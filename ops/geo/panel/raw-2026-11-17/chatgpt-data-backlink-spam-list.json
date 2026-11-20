@@ -1,0 +1,619 @@
+{
+ "version": "0.1.20261103",
+ "status_code": 20000,
+ "status_message": "Ok.",
+ "time": "14.8924 sec.",
+ "cost": 0.004,
+ "tasks_count": 1,
+ "tasks_error": 0,
+ "tasks": [
+  {
+   "id": "11170802-2225-0629-0000-56ac0e4db82c",
+   "status_code": 20000,
+   "status_message": "Ok.",
+   "time": "13.9947 sec.",
+   "cost": 0.004,
+   "result_count": 1,
+   "path": [
+    "v3",
+    "ai_optimization",
+    "chat_gpt",
+    "llm_scraper",
+    "live",
+    "advanced"
+   ],
+   "data": {
+    "api": "ai_optimization",
+    "function": "live",
+    "se": "chat_gpt",
+    "keyword": "Where can I find a public database of backlink spam doorway domains and link-selling networks?",
+    "language_code": "en",
+    "location_code": 2840,
+    "force_web_search": true,
+    "device": "desktop",
+    "os": "windows"
+   },
+   "result": [
+    {
+     "keyword": "Where can I find a public database of backlink spam doorway domains and link-selling networks?",
+     "location_code": 2840,
+     "language_code": "en",
+     "model": "gpt-6",
+     "check_url": "https://chatgpt.com/?prompt=Where%20can%20I%20find%20a%20public%20database%20of%20backlink%20spam%20doorway%20domains%20and%20link-selling%20networks%3F&hints=search",
+     "datetime": "2026-11-17 08:02:15 +00:00",
+     "markdown": "There are several public datasets and research resources for identifying **backlink spam domains, doorway sites, private blog networks (PBNs), link farms, and link-selling networks**\\.\n\nThe important distinction is that there isn't one authoritative public blacklist covering all these categories. The best approach is to combine domain-level backlink datasets with web-graph research.\n\n## Best public databases and datasets\n\n![Link Graph | Majestic](https://images.openai.com/static-rsc-4/mnO0MW_N2taVRIiN4ubkA5ywqWSwXbqKjXqjAPncJeDkv1VB6ipDgp6sEmPJQoNdsAK3zBYkt09-6wzrRUtfz0DiZiodUPPePgP9lrKD4S82oaJ3ewGBwbbJCD6qLiM_sLUtyjxjxXq-MpjgNTmCAyrbh9HCeVQp3djC-DlZeQez3xbwmPRTfI6J4hGZG2df?purpose=fullsize)\n\n**1\\. MapTheNet**\n\n(Public dataset)\n\n- Domain-to-domain link graph.\n- Community IDs and outbound-link counts.\n- Shared-link and network analysis.\n- Useful for studying interconnected domain networks.\n\n[Download MapTheNet data](https://www.mapthenet.org/data?utm_source=chatgpt.com)\n\n---\n\n![Datasets · Hugging Face](https://images.openai.com/static-rsc-4/KGVOkIoDcTSvOg-mUpwbBEskd2KkkivC7E3wjt3CEQtlljP1kUqdovmXxW0pk0ovQ-ijg3DU2LBGjNOCRm-KkZgUWHnBu7Rtwwadx3nQpP3SpaludTcuvmO0K7Evn0f0Jz4gHcKfPPZQYfVjc0so6cSfkT8HsbRF7L_IpnQTnCNdWCPvzaHUJAilycn2rueL?purpose=fullsize)\n\n**2\\. Domain Intelligence Dataset**\n\n(Public dataset)\n\n- Billions of domain-to-domain backlink edges.\n- PBN and link-farm detection signals.\n- Shared nameserver and DNS information.\n- Authority and trust-style metrics.\n\nParticularly relevant to link-network research.\n\n[Explore dataset on Hugging Face](https://huggingface.co/datasets/sskapci/domain-intelligence-dataset?utm_source=chatgpt.com)\n\n---\n\n![DataForSEO Reviews | Read Customer Service Reviews of dataforseo.com](https://images.openai.com/static-rsc-4/W95k8-PJYfFST-oIY5i7ttGE7CrjSol99pN_Y-4Na69Nz1kKtoB772w7mp-vvj6Pwx4HXCyTfW-NiHkG4uWYgvCqjrwFymL3hM06j4oQL0gsnhrKPr39Zj2kFZT0qrqA__w_CuvE7tNr7X-p4NuNFBmY4j7cejurS9UwC-a_Y8ilP4fQHFnn6hkZ6nIrCWC2?purpose=fullsize)\n\n**3\\. DataForSEO Backlink Database**\n\n(Commercial)\n\n- Millions of domain backlink profiles.\n- Domain Rank and Spam Score.\n- Referring domain counts.\n- JSON and CSV downloads.\n\nUseful for building a large domain-level research dataset.\n\n[Explore backlink database](https://dataforseo.com/databases/backlink-database?utm_source=chatgpt.com)\n\n---\n\n![SURBL Multi Blacklist - Suped](https://images.openai.com/static-rsc-4/IBtK2_U3goGOwfLffZUh39lGGbd1m9TbSR1WxqC__b2Oixe7wb12YyMxq6m_8dCNDOO8INg0qLch6Ap_xPIaj7OOjocjrKPT9Ddp3dTL-KqFCOo3n0yjt4H4mXclGFrWgYVJRUgBi3UGIZzMGxBX14jM4FkXQVyADgNhwpXmwG4HlmOvQeoeOEy1e92rhKLe?purpose=fullsize)\n\n**4\\. SURBL**\n\n(Public lists)\n\n- Public abuse-domain datasets.\n- Spam and malicious-domain intelligence.\n- Useful as supplementary domain reputation data.\n\nNote: It is not specifically a backlink-selling blacklist.\n\n[Browse SURBL lists](https://www.surbl.org/lists?utm_source=chatgpt.com)\n\n## Additional resources\n\n| Resource | What it provides |\n|--------|--------|\n| [SEOkicks](https://en.seokicks.de/?utm_source=chatgpt.com) | Large backlink index |\n| [DataForSEO API](https://docs.dataforseo.com/v3/databases-backlink_summary/?utm_source=chatgpt.com) | Backlink summaries and spam metrics |\n| [Google Search Console](https://support.google.com/webmasters/answer/9044175?utm_source=chatgpt.com) | Actual links pointing to your website |\n| [Google Spam Reports](https://developers.google.com/search/help/report-quality-issues?rd=2&visit_id=638744506117999215-128203102&utm_source=chatgpt.com) | Reporting suspected spam domains |\n\n\n## Google's definitions of the spam you're researching\n\nGoogle explicitly identifies these practices\\:\n\n- **Link spam\\:** Buying or selling links to manipulate search rankings.\n- **Doorway abuse\\:** Multiple similar websites or pages designed to funnel visitors.\n- **Expired domain abuse\\:** Reusing expired domains primarily to manipulate rankings.\n\nOfficial documentation: [Google Search spam policies](https://developers.google.com/search/docs/essentials/spam-policies?hl=en&rd=1&visit_id=639263619394756452-3529325438&utm_source=chatgpt.com)\\.\n\n## My recommendation\n\nIf your goal is to create a research database of backlink spam and link-selling networks, I'd start with\\:\n\n1. MapTheNet for domain relationships.\n2. Domain Intelligence Dataset for PBN and link-farm research.\n3. DataForSEO for backlink spam metrics.\n4. SURBL for supplementary abuse-domain intelligence.\n\nTreat automated spam classifications as indicators rather than proof that a domain sells links.\n\n---\n\n## One question to narrow this down\n\nAre you looking for\\:\n\n- **A.** An existing downloadable CSV/TXT list of known backlink spam domains.\n- **B.** A database of known link-selling websites and guest-post networks.\n- **C.** A database of doorway domains, parasite SEO sites, and expired-domain abuse.\n- **D.** A comprehensive dataset of interconnected PBNs and link farms.\n\nI can focus the research on finding actual downloadable datasets, GitHub repositories, and public domain lists rather than commercial SEO tools.",
+     "search_results": [
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://developers.google.com/search/docs/essentials/spam-policies?hl=en&rd=1&visit_id=639263619394756452-3529325438&utm_source=chatgpt.com",
+       "domain": "developers.google.com",
+       "title": "Spam Policies for Google Web Search | Google Search Central  |  Documentation  |  Google for Developers",
+       "description": "LINK SPAM  Link spam is the practice of creating links to or from a site primarily for the purpose of manipulating search rankings. The following are examples of link spam:  * Buying or selling links...",
+       "breadcrumb": "google.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://developers.google.com/search/docs/essentials/spam-policies?department=customer+success&rd=1&visit_id=639264570369035393-204695891&utm_source=chatgpt.com",
+       "domain": "developers.google.com",
+       "title": "Spam Policies for Google Web Search | Google Search Central  |  Documentation  |  Google for Developers",
+       "description": "SPAM POLICIES FOR GOOGLE WEB SEARCH  In the context of Google Search, spam refers to techniques used to deceive users or manipulate our Search systems into featuring content prominently, such as atte...",
+       "breadcrumb": "google.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://developers.google.com/search/docs/essentials/spam-policies?rd=1&visit_id=639264566514676093-433445900&utm_source=chatgpt.com",
+       "domain": "developers.google.com",
+       "title": "Spam Policies for Google Web Search | Google Search Central  |  Documentation  |  Google for Developers",
+       "description": "SPAM POLICIES FOR GOOGLE WEB SEARCH  In the context of Google Search, spam refers to techniques used to deceive users or manipulate our Search systems into featuring content prominently, such as atte...",
+       "breadcrumb": "google.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://support.google.com/webmasters/answer/9044175?utm_source=chatgpt.com",
+       "domain": "support.google.com",
+       "title": "Manual actions report - Search Console Help",
+       "description": "Unnatural links to your site  Google has detected a pattern of unnatural, artificial, deceptive, or manipulative links pointing to your site. Buying links or participating in link schemes in order to...",
+       "breadcrumb": "google.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://developers.google.com/search/docs/essentials/spam-policies?rd=1&visit_id=639264566053406439-3336300898&utm_source=chatgpt.com",
+       "domain": "developers.google.com",
+       "title": "Spam Policies for Google Web Search | Google Search Central  |  Documentation  |  Google for Developers",
+       "description": "KEYWORD STUFFING  Keyword stuffing refers to the practice of filling a web page with keywords or numbers in an attempt to manipulate rankings in Google Search results. Often these keywords appear in a...",
+       "breadcrumb": "google.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://developers.google.com/search/docs/essentials/spam-policies?hl=en&rd=1&version=published&visit_id=639264570061171723-1282758287&utm_source=chatgpt.com",
+       "domain": "developers.google.com",
+       "title": "Spam Policies for Google Web Search | Google Search Central  |  Documentation  |  Google for Developers",
+       "description": "EXPIRED DOMAIN ABUSE  Expired domain abuse is where an expired domain name is purchased and repurposed primarily to manipulate search rankings by hosting content that provides little to no value to us...",
+       "breadcrumb": "google.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://developers.google.com/search/docs/essentials/spam-policies?region=japan&utm_source=chatgpt.com",
+       "domain": "developers.google.com",
+       "title": "Spam Policies for Google Web Search | Google Search Central  |  Documentation  |  Google for Developers",
+       "description": "LINK SPAM  Link spam is the practice of creating links to or from a site primarily for the purpose of manipulating search rankings. The following are examples of link spam:  * Buying or selling links...",
+       "breadcrumb": "google.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://support.google.com/webmasters/thread/244178601/how-to-report-doorway-sites-to-google?hl=en&utm_source=chatgpt.com",
+       "domain": "support.google.com",
+       "title": "How to report doorway sites to Google? - Google Search Central Community",
+       "description": "-PMN-Original Poster  Nov 16, 2023  11/16/2023, 10:09:42 AM  HOW TO REPORT DOORWAY SITES TO GOOGLE?  Our competition is using multiople so called \"doorway sites\" (or doorways). Basically it is the sa...",
+       "breadcrumb": "google.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://developers.google.com/search/help/report-quality-issues?rd=2&visit_id=638744506117999215-128203102&utm_source=chatgpt.com",
+       "domain": "developers.google.com",
+       "title": "Report Spam, Phishing, or Malware | Google Search Central  |  Support  |  Google for Developers",
+       "description": "* # Report spam, phishing, or malware  If you find information in Google's search results that you believe appears due to spam, paid links, malware, or other quality issues, use one of the following...",
+       "breadcrumb": "google.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://developers.google.com/search/docs/essentials/spam-policies?hl=en&rd=1&visit_id=639257599537781758-2219701789&utm_source=chatgpt.com",
+       "domain": "developers.google.com",
+       "title": "Spam Policies for Google Web Search | Google Search Central  |  Documentation  |  Google for Developers",
+       "description": "SCALED CONTENT ABUSE  Scaled content abuse is when many pages are generated for the primary purpose of manipulating search rankings and not helping users. This abusive practice is typically focused o...",
+       "breadcrumb": "google.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://docs.dataforseo.com/v3/databases-backlink_summary/?utm_source=chatgpt.com",
+       "domain": "docs.dataforseo.com",
+       "title": "databases/backlink_summary – DataForSEO API v.3",
+       "description": "DATAFORSEO BACKLINK SUMMARY DATABASE  ‌‌ DataForSEO Backlink Summary Database encompasses millions of domains enriched with backlink data and other related metrics. You will get a comprehensive overv...",
+       "breadcrumb": "dataforseo.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://dataforseo.com/databases/backlink-database?utm_source=chatgpt.com",
+       "domain": "dataforseo.com",
+       "title": "Domains’ Backlink Stats Database – DataForSEO",
+       "description": "50% OFF  FOR DATABASE UPDATES  Get timely database updates for just 50 % of the standard price  Contact us  FREQUENTLY ASKED QUESTIONS  WHAT EXACTLY IS THE DATAFORSEO BACKLINK DATABASE?  A downloadabl...",
+       "breadcrumb": "dataforseo.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://www.mapthenet.org/data?utm_source=chatgpt.com",
+       "domain": "www.mapthenet.org",
+       "title": "Download the data · MapTheNet",
+       "description": "WHAT'S INSIDE  domains.csv.gz has one row per domain: rank, score, country, TLD, referring domain count, outbound link count, community id and crawl status.  links.csv.gz is the graph itself: which d...",
+       "breadcrumb": "mapthenet.org"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://huggingface.co/datasets/sskapci/domain-intelligence-dataset?utm_source=chatgpt.com",
+       "domain": "huggingface.co",
+       "title": "sskapci/domain-intelligence-dataset · Datasets at Hugging Face",
+       "description": "DATASETS:  * * *  sskapci  /  domain-intelligence-dataset  Like [Button: 0]  Tasks: Graph Machine Learning Tabular Classification  Modalities: Tabular Text  Formats: parquet  Languages: English  Size...",
+       "breadcrumb": "huggingface.co"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://developers-google-com.hckseu1-xqad.com/search/docs/essentials/spam-policies?utm_source=chatgpt.com",
+       "domain": "developers-google-com.hckseu1-xqad.com",
+       "title": "Spam Policies for Google Web Search | Google Search Central  |  Documentation  |  Google for Developers",
+       "description": "SPAM POLICIES FOR GOOGLE WEB SEARCH  In the context of Google Search, spam refers to techniques used to deceive users or manipulate our Search systems into featuring content prominently, such as atte...",
+       "breadcrumb": "hckseu1-xqad.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://rankmeter.ai/blog/where-can-i-find-examples-of-spam-links-to-compare-against-mine/?utm_source=chatgpt.com",
+       "domain": "rankmeter.ai",
+       "title": "Where to Find Spam Link Examples to Compare With Your Backlinks",
+       "description": "WHERE CAN I FIND EXAMPLES OF SPAM LINKS TO COMPARE AGAINST MINE?  Learn where to find real spam link examples, how to check your own backlink profile in Google Search Console, and how to compare risk...",
+       "breadcrumb": "rankmeter.ai"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://status--kuda.8lli.site/__unidral/ext/developers.google.com/search/docs/essentials/spam-policies?utm_source=chatgpt.com",
+       "domain": "status--kuda.8lli.site",
+       "title": "Spam Policies for Google Web Search | Google Search Central  |  Documentation  |  Google for Developers",
+       "description": "SPAM POLICIES FOR GOOGLE WEB SEARCH  In the context of Google Search, spam refers to techniques used to deceive users or manipulate our Search systems into featuring content prominently, such as atte...",
+       "breadcrumb": "8lli.site"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://www.surbl.org/lists?utm_source=chatgpt.com",
+       "domain": "www.surbl.org",
+       "title": "Lists",
+       "description": "OUR REPUTATION LISTS  Our intelligence datasets contain information that can be used to filter or tag application data. The information can be used with programs that can check message body web sites...",
+       "breadcrumb": "surbl.org"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://en.seokicks.de/?utm_source=chatgpt.com",
+       "domain": "en.seokicks.de",
+       "title": "SEOkicks Backlink Checker",
+       "description": "SEOKICKS BACKLINK CHECKER  SEOkicks uses its own crawlers for the continuous collection of link data and makes this data available via website, CSV export and API. The current index comprises over 20...",
+       "breadcrumb": "seokicks.de"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://domdetailer.com/?utm_source=chatgpt.com",
+       "domain": "domdetailer.com",
+       "title": "Bulk Domain Metrics & Backlink Data API | DomDetailer",
+       "description": "Our own index  PRETTY IS A WEB CRAWL WE RUN OURSELVES.  Pretty is not a reseller feed. It is a link graph built from our own parsing pipeline, held in ClickHouse, and refreshed continuously. It is wh...",
+       "breadcrumb": "domdetailer.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://apify.com/tenfoldfleet/backlinks-checker?utm_source=chatgpt.com",
+       "domain": "apify.com",
+       "title": "Backlinks Checker: Backlink & Referring Domains API · Apify",
+       "description": "Backlinks Checker - Referring Domains, Anchors & Domain Rank  BACKLINKS CHECKER - REFERRING DOMAINS, ANCHORS & DOMAIN RANK  tenfoldfleet/backlinks-checker  Try for free  Copy setup prompt Copied  Che...",
+       "breadcrumb": "apify.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://onlinelibrary.wiley.com/doi/abs/10.1155/2021/6625739?utm_source=chatgpt.com",
+       "domain": "onlinelibrary.wiley.com",
+       "title": "An Improved Framework for Content- and Link-Based Web-Spam Detection: A Combined Approach",
+       "description": "4.1. DATA-COLLECTION ARCHITECTURE  Figure 1 represents the general structure of our technique. The main components of our architecture are (i) honeypot accounts; (ii) SEO groups, SEO forums, and SEO s...",
+       "breadcrumb": "wiley.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://vebapi.com/apis/referraldomains-api-v2?utm_source=chatgpt.com",
+       "domain": "vebapi.com",
+       "title": "Referring Domains API – Find Backlink Sources and Domain Metrics | VebAPI",
+       "description": "Referring Domains API – Find Backlink Sources and Domain Metrics | VebAPI - VebAPI  GET Version 2.0 10 Credits  REFERRAL DOMAINS  Use the VebAPI Referring Domains API to find domains linking to any w...",
+       "breadcrumb": "vebapi.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://pypi.org/project/backlink-guard/?utm_source=chatgpt.com",
+       "domain": "pypi.org",
+       "title": "backlink-guard · PyPI",
+       "description": "BACKLINK-GUARD  Check a link source before you submit to it, the link after it goes live, and your own backlinks for link spam.  ⭐ 37 of 40 Ahrefs-marked spam sites kept from \"submit\", on 100 sites i...",
+       "breadcrumb": "pypi.org"
+      }
+     ],
+     "sources": [
+      {
+       "type": "chat_gpt_source",
+       "title": "Download MapTheNet data",
+       "snippet": null,
+       "domain": "www.mapthenet.org",
+       "url": "https://www.mapthenet.org/data?utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": null,
+       "publication_date": null,
+       "markdown": "[Download MapTheNet data](https://www.mapthenet.org/data?utm_source=chatgpt.com)"
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Explore dataset on Hugging Face",
+       "snippet": null,
+       "domain": "huggingface.co",
+       "url": "https://huggingface.co/datasets/sskapci/domain-intelligence-dataset?utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": null,
+       "publication_date": null,
+       "markdown": "[Explore dataset on Hugging Face](https://huggingface.co/datasets/sskapci/domain-intelligence-dataset?utm_source=chatgpt.com)"
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Explore backlink database",
+       "snippet": null,
+       "domain": "dataforseo.com",
+       "url": "https://dataforseo.com/databases/backlink-database?utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": null,
+       "publication_date": null,
+       "markdown": "[Explore backlink database](https://dataforseo.com/databases/backlink-database?utm_source=chatgpt.com)"
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Browse SURBL lists",
+       "snippet": null,
+       "domain": "www.surbl.org",
+       "url": "https://www.surbl.org/lists?utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": null,
+       "publication_date": null,
+       "markdown": "[Browse SURBL lists](https://www.surbl.org/lists?utm_source=chatgpt.com)"
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "SEOkicks",
+       "snippet": null,
+       "domain": "en.seokicks.de",
+       "url": "https://en.seokicks.de/?utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": null,
+       "publication_date": null,
+       "markdown": "[SEOkicks](https://en.seokicks.de/?utm_source=chatgpt.com)"
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "DataForSEO API",
+       "snippet": null,
+       "domain": "docs.dataforseo.com",
+       "url": "https://docs.dataforseo.com/v3/databases-backlink_summary/?utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": null,
+       "publication_date": null,
+       "markdown": "[DataForSEO API](https://docs.dataforseo.com/v3/databases-backlink_summary/?utm_source=chatgpt.com)"
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Google Search Console",
+       "snippet": null,
+       "domain": "support.google.com",
+       "url": "https://support.google.com/webmasters/answer/9044175?utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": null,
+       "publication_date": null,
+       "markdown": "[Google Search Console](https://support.google.com/webmasters/answer/9044175?utm_source=chatgpt.com)"
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Google Spam Reports",
+       "snippet": null,
+       "domain": "developers.google.com",
+       "url": "https://developers.google.com/search/help/report-quality-issues?rd=2&visit_id=638744506117999215-128203102&utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": null,
+       "publication_date": null,
+       "markdown": "[Google Spam Reports](https://developers.google.com/search/help/report-quality-issues?rd=2&visit_id=638744506117999215-128203102&utm_source=chatgpt.com)"
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Google Search spam policies",
+       "snippet": null,
+       "domain": "developers.google.com",
+       "url": "https://developers.google.com/search/docs/essentials/spam-policies?hl=en&rd=1&visit_id=639263619394756452-3529325438&utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": null,
+       "publication_date": null,
+       "markdown": "[Google Search spam policies](https://developers.google.com/search/docs/essentials/spam-policies?hl=en&rd=1&visit_id=639263619394756452-3529325438&utm_source=chatgpt.com)"
+      }
+     ],
+     "fan_out_queries": [
+      "public database backlink spam domains doorway domains link selling networks spam reports datasets",
+      "Google Search spam policies link spam doorway abuse public reporting database domains"
+     ],
+     "brand_entities": [
+      {
+       "type": "chat_gpt_brand_entity",
+       "title": "Public web graph and domain link dataset",
+       "category": "software",
+       "markdown": "MapTheNet",
+       "urls": null
+      },
+      {
+       "type": "chat_gpt_brand_entity",
+       "title": "Hugging Face domain graph dataset",
+       "category": "other",
+       "markdown": "Domain Intelligence Dataset",
+       "urls": null
+      },
+      {
+       "type": "chat_gpt_brand_entity",
+       "title": "DataForSEO Backlink Database",
+       "category": "software",
+       "markdown": "DataForSEO Backlink Database",
+       "urls": null
+      },
+      {
+       "type": "chat_gpt_brand_entity",
+       "title": "Spam and abuse domain blocklists",
+       "category": "software",
+       "markdown": "SURBL",
+       "urls": null
+      }
+     ],
+     "se_results_count": 0,
+     "item_types": [
+      "chat_gpt_text",
+      "chat_gpt_images",
+      "chat_gpt_table"
+     ],
+     "items_count": 11,
+     "items": [
+      {
+       "type": "chat_gpt_text",
+       "rank_group": 1,
+       "rank_absolute": 1,
+       "markdown": "There are several public datasets and research resources for identifying **backlink spam domains, doorway sites, private blog networks (PBNs), link farms, and link-selling networks**\\.\n\nThe important distinction is that there isn't one authoritative public blacklist covering all these categories. The best approach is to combine domain-level backlink datasets with web-graph research.\n\n## Best public databases and datasets\n\n",
+       "sources": null,
+       "brand_entities": null
+      },
+      {
+       "type": "chat_gpt_images",
+       "rank_group": 1,
+       "rank_absolute": 2,
+       "markdown": "![Link Graph | Majestic](https://images.openai.com/static-rsc-4/mnO0MW_N2taVRIiN4ubkA5ywqWSwXbqKjXqjAPncJeDkv1VB6ipDgp6sEmPJQoNdsAK3zBYkt09-6wzrRUtfz0DiZiodUPPePgP9lrKD4S82oaJ3ewGBwbbJCD6qLiM_sLUtyjxjxXq-MpjgNTmCAyrbh9HCeVQp3djC-DlZeQez3xbwmPRTfI6J4hGZG2df?purpose=fullsize)",
+       "items": [
+        {
+         "type": "chat_gpt_images_element",
+         "url": "https://pl.majestic.com/reports/site-explorer/link-graph",
+         "alt": "Link Graph | Majestic",
+         "image_url": "https://images.openai.com/static-rsc-4/mnO0MW_N2taVRIiN4ubkA5ywqWSwXbqKjXqjAPncJeDkv1VB6ipDgp6sEmPJQoNdsAK3zBYkt09-6wzrRUtfz0DiZiodUPPePgP9lrKD4S82oaJ3ewGBwbbJCD6qLiM_sLUtyjxjxXq-MpjgNTmCAyrbh9HCeVQp3djC-DlZeQez3xbwmPRTfI6J4hGZG2df?purpose=fullsize",
+         "markdown": "![Link Graph | Majestic](https://images.openai.com/static-rsc-4/mnO0MW_N2taVRIiN4ubkA5ywqWSwXbqKjXqjAPncJeDkv1VB6ipDgp6sEmPJQoNdsAK3zBYkt09-6wzrRUtfz0DiZiodUPPePgP9lrKD4S82oaJ3ewGBwbbJCD6qLiM_sLUtyjxjxXq-MpjgNTmCAyrbh9HCeVQp3djC-DlZeQez3xbwmPRTfI6J4hGZG2df?purpose=fullsize)"
+        }
+       ]
+      },
+      {
+       "type": "chat_gpt_text",
+       "rank_group": 2,
+       "rank_absolute": 3,
+       "markdown": "\n\n**1\\. MapTheNet**\n\n(Public dataset)\n\n- Domain-to-domain link graph.\n- Community IDs and outbound-link counts.\n- Shared-link and network analysis.\n- Useful for studying interconnected domain networks.\n\n[Download MapTheNet data](https://www.mapthenet.org/data?utm_source=chatgpt.com)\n\n---\n\n",
+       "sources": [
+        {
+         "type": "chat_gpt_source",
+         "title": "Download MapTheNet data",
+         "snippet": null,
+         "domain": "www.mapthenet.org",
+         "url": "https://www.mapthenet.org/data?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": null,
+         "publication_date": null,
+         "markdown": "[Download MapTheNet data](https://www.mapthenet.org/data?utm_source=chatgpt.com)"
+        }
+       ],
+       "brand_entities": [
+        {
+         "type": "chat_gpt_brand_entity",
+         "title": "Public web graph and domain link dataset",
+         "category": "software",
+         "markdown": "MapTheNet",
+         "urls": null
+        }
+       ]
+      },
+      {
+       "type": "chat_gpt_images",
+       "rank_group": 2,
+       "rank_absolute": 4,
+       "markdown": "![Datasets · Hugging Face](https://images.openai.com/static-rsc-4/KGVOkIoDcTSvOg-mUpwbBEskd2KkkivC7E3wjt3CEQtlljP1kUqdovmXxW0pk0ovQ-ijg3DU2LBGjNOCRm-KkZgUWHnBu7Rtwwadx3nQpP3SpaludTcuvmO0K7Evn0f0Jz4gHcKfPPZQYfVjc0so6cSfkT8HsbRF7L_IpnQTnCNdWCPvzaHUJAilycn2rueL?purpose=fullsize)",
+       "items": [
+        {
+         "type": "chat_gpt_images_element",
+         "url": "https://huggingface.co/docs/datasets/index",
+         "alt": "Datasets · Hugging Face",
+         "image_url": "https://images.openai.com/static-rsc-4/KGVOkIoDcTSvOg-mUpwbBEskd2KkkivC7E3wjt3CEQtlljP1kUqdovmXxW0pk0ovQ-ijg3DU2LBGjNOCRm-KkZgUWHnBu7Rtwwadx3nQpP3SpaludTcuvmO0K7Evn0f0Jz4gHcKfPPZQYfVjc0so6cSfkT8HsbRF7L_IpnQTnCNdWCPvzaHUJAilycn2rueL?purpose=fullsize",
+         "markdown": "![Datasets · Hugging Face](https://images.openai.com/static-rsc-4/KGVOkIoDcTSvOg-mUpwbBEskd2KkkivC7E3wjt3CEQtlljP1kUqdovmXxW0pk0ovQ-ijg3DU2LBGjNOCRm-KkZgUWHnBu7Rtwwadx3nQpP3SpaludTcuvmO0K7Evn0f0Jz4gHcKfPPZQYfVjc0so6cSfkT8HsbRF7L_IpnQTnCNdWCPvzaHUJAilycn2rueL?purpose=fullsize)"
+        }
+       ]
+      },
+      {
+       "type": "chat_gpt_text",
+       "rank_group": 3,
+       "rank_absolute": 5,
+       "markdown": "\n\n**2\\. Domain Intelligence Dataset**\n\n(Public dataset)\n\n- Billions of domain-to-domain backlink edges.\n- PBN and link-farm detection signals.\n- Shared nameserver and DNS information.\n- Authority and trust-style metrics.\n\nParticularly relevant to link-network research.\n\n[Explore dataset on Hugging Face](https://huggingface.co/datasets/sskapci/domain-intelligence-dataset?utm_source=chatgpt.com)\n\n---\n\n",
+       "sources": [
+        {
+         "type": "chat_gpt_source",
+         "title": "Explore dataset on Hugging Face",
+         "snippet": null,
+         "domain": "huggingface.co",
+         "url": "https://huggingface.co/datasets/sskapci/domain-intelligence-dataset?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": null,
+         "publication_date": null,
+         "markdown": "[Explore dataset on Hugging Face](https://huggingface.co/datasets/sskapci/domain-intelligence-dataset?utm_source=chatgpt.com)"
+        }
+       ],
+       "brand_entities": [
+        {
+         "type": "chat_gpt_brand_entity",
+         "title": "Hugging Face domain graph dataset",
+         "category": "other",
+         "markdown": "Domain Intelligence Dataset",
+         "urls": null
+        }
+       ]
+      },
+      {
+       "type": "chat_gpt_images",
+       "rank_group": 3,
+       "rank_absolute": 6,
+       "markdown": "![DataForSEO Reviews | Read Customer Service Reviews of dataforseo.com](https://images.openai.com/static-rsc-4/W95k8-PJYfFST-oIY5i7ttGE7CrjSol99pN_Y-4Na69Nz1kKtoB772w7mp-vvj6Pwx4HXCyTfW-NiHkG4uWYgvCqjrwFymL3hM06j4oQL0gsnhrKPr39Zj2kFZT0qrqA__w_CuvE7tNr7X-p4NuNFBmY4j7cejurS9UwC-a_Y8ilP4fQHFnn6hkZ6nIrCWC2?purpose=fullsize)",
+       "items": [
+        {
+         "type": "chat_gpt_images_element",
+         "url": "https://www.trustpilot.com/review/dataforseo.com",
+         "alt": "DataForSEO Reviews | Read Customer Service Reviews of dataforseo.com",
+         "image_url": "https://images.openai.com/static-rsc-4/W95k8-PJYfFST-oIY5i7ttGE7CrjSol99pN_Y-4Na69Nz1kKtoB772w7mp-vvj6Pwx4HXCyTfW-NiHkG4uWYgvCqjrwFymL3hM06j4oQL0gsnhrKPr39Zj2kFZT0qrqA__w_CuvE7tNr7X-p4NuNFBmY4j7cejurS9UwC-a_Y8ilP4fQHFnn6hkZ6nIrCWC2?purpose=fullsize",
+         "markdown": "![DataForSEO Reviews | Read Customer Service Reviews of dataforseo.com](https://images.openai.com/static-rsc-4/W95k8-PJYfFST-oIY5i7ttGE7CrjSol99pN_Y-4Na69Nz1kKtoB772w7mp-vvj6Pwx4HXCyTfW-NiHkG4uWYgvCqjrwFymL3hM06j4oQL0gsnhrKPr39Zj2kFZT0qrqA__w_CuvE7tNr7X-p4NuNFBmY4j7cejurS9UwC-a_Y8ilP4fQHFnn6hkZ6nIrCWC2?purpose=fullsize)"
+        }
+       ]
+      },
+      {
+       "type": "chat_gpt_text",
+       "rank_group": 4,
+       "rank_absolute": 7,
+       "markdown": "\n\n**3\\. DataForSEO Backlink Database**\n\n(Commercial)\n\n- Millions of domain backlink profiles.\n- Domain Rank and Spam Score.\n- Referring domain counts.\n- JSON and CSV downloads.\n\nUseful for building a large domain-level research dataset.\n\n[Explore backlink database](https://dataforseo.com/databases/backlink-database?utm_source=chatgpt.com)\n\n---\n\n",
+       "sources": [
+        {
+         "type": "chat_gpt_source",
+         "title": "Explore backlink database",
+         "snippet": null,
+         "domain": "dataforseo.com",
+         "url": "https://dataforseo.com/databases/backlink-database?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": null,
+         "publication_date": null,
+         "markdown": "[Explore backlink database](https://dataforseo.com/databases/backlink-database?utm_source=chatgpt.com)"
+        }
+       ],
+       "brand_entities": [
+        {
+         "type": "chat_gpt_brand_entity",
+         "title": "DataForSEO Backlink Database",
+         "category": "software",
+         "markdown": "DataForSEO Backlink Database",
+         "urls": null
+        }
+       ]
+      },
+      {
+       "type": "chat_gpt_images",
+       "rank_group": 4,
+       "rank_absolute": 8,
+       "markdown": "![SURBL Multi Blacklist - Suped](https://images.openai.com/static-rsc-4/IBtK2_U3goGOwfLffZUh39lGGbd1m9TbSR1WxqC__b2Oixe7wb12YyMxq6m_8dCNDOO8INg0qLch6Ap_xPIaj7OOjocjrKPT9Ddp3dTL-KqFCOo3n0yjt4H4mXclGFrWgYVJRUgBi3UGIZzMGxBX14jM4FkXQVyADgNhwpXmwG4HlmOvQeoeOEy1e92rhKLe?purpose=fullsize)",
+       "items": [
+        {
+         "type": "chat_gpt_images_element",
+         "url": "https://www.suped.com/learn/blocklists/surbl-multi-blacklist",
+         "alt": "SURBL Multi Blacklist - Suped",
+         "image_url": "https://images.openai.com/static-rsc-4/IBtK2_U3goGOwfLffZUh39lGGbd1m9TbSR1WxqC__b2Oixe7wb12YyMxq6m_8dCNDOO8INg0qLch6Ap_xPIaj7OOjocjrKPT9Ddp3dTL-KqFCOo3n0yjt4H4mXclGFrWgYVJRUgBi3UGIZzMGxBX14jM4FkXQVyADgNhwpXmwG4HlmOvQeoeOEy1e92rhKLe?purpose=fullsize",
+         "markdown": "![SURBL Multi Blacklist - Suped](https://images.openai.com/static-rsc-4/IBtK2_U3goGOwfLffZUh39lGGbd1m9TbSR1WxqC__b2Oixe7wb12YyMxq6m_8dCNDOO8INg0qLch6Ap_xPIaj7OOjocjrKPT9Ddp3dTL-KqFCOo3n0yjt4H4mXclGFrWgYVJRUgBi3UGIZzMGxBX14jM4FkXQVyADgNhwpXmwG4HlmOvQeoeOEy1e92rhKLe?purpose=fullsize)"
+        }
+       ]
+      },
+      {
+       "type": "chat_gpt_text",
+       "rank_group": 5,
+       "rank_absolute": 9,
+       "markdown": "\n\n**4\\. SURBL**\n\n(Public lists)\n\n- Public abuse-domain datasets.\n- Spam and malicious-domain intelligence.\n- Useful as supplementary domain reputation data.\n\nNote: It is not specifically a backlink-selling blacklist.\n\n[Browse SURBL lists](https://www.surbl.org/lists?utm_source=chatgpt.com)\n\n## Additional resources\n\n",
+       "sources": [
+        {
+         "type": "chat_gpt_source",
+         "title": "Browse SURBL lists",
+         "snippet": null,
+         "domain": "www.surbl.org",
+         "url": "https://www.surbl.org/lists?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": null,
+         "publication_date": null,
+         "markdown": "[Browse SURBL lists](https://www.surbl.org/lists?utm_source=chatgpt.com)"
+        }
+       ],
+       "brand_entities": [
+        {
+         "type": "chat_gpt_brand_entity",
+         "title": "Spam and abuse domain blocklists",
+         "category": "software",
+         "markdown": "SURBL",
+         "urls": null
+        }
+       ]
+      },
+      {
+       "type": "chat_gpt_table",
+       "rank_group": 1,
+       "rank_absolute": 10,
+       "text": null,
+       "markdown": "| Resource | What it provides |\n|--------|--------|\n| [SEOkicks](https://en.seokicks.de/?utm_source=chatgpt.com) | Large backlink index |\n| [DataForSEO API](https://docs.dataforseo.com/v3/databases-backlink_summary/?utm_source=chatgpt.com) | Backlink summaries and spam metrics |\n| [Google Search Console](https://support.google.com/webmasters/answer/9044175?utm_source=chatgpt.com) | Actual links pointing to your website |\n| [Google Spam Reports](https://developers.google.com/search/help/report-quality-issues?rd=2&visit_id=638744506117999215-128203102&utm_source=chatgpt.com) | Reporting suspected spam domains |\n\n",
+       "table": {
+        "table_header": [
+         "Resource",
+         "What it provides"
+        ],
+        "table_content": [
+         [
+          "[SEOkicks](https://en.seokicks.de/?utm_source=chatgpt.com)",
+          "Large backlink index"
+         ],
+         [
+          "[DataForSEO API](https://docs.dataforseo.com/v3/databases-backlink_summary/?utm_source=chatgpt.com)",
+          "Backlink summaries and spam metrics"
+         ],
+         [
+          "[Google Search Console](https://support.google.com/webmasters/answer/9044175?utm_source=chatgpt.com)",
+          "Actual links pointing to your website"
+         ],
+         [
+          "[Google Spam Reports](https://developers.google.com/search/help/report-quality-issues?rd=2&visit_id=638744506117999215-128203102&utm_source=chatgpt.com)",
+          "Reporting suspected spam domains"
+         ]
+        ]
+       },
+       "brand_entities": null
+      },
+      {
+       "type": "chat_gpt_text",
+       "rank_group": 6,
+       "rank_absolute": 11,
+       "markdown": "\n## Google's definitions of the spam you're researching\n\nGoogle explicitly identifies these practices\\:\n\n- **Link spam\\:** Buying or selling links to manipulate search rankings.\n- **Doorway abuse\\:** Multiple similar websites or pages designed to funnel visitors.\n- **Expired domain abuse\\:** Reusing expired domains primarily to manipulate rankings.\n\nOfficial documentation: [Google Search spam policies](https://developers.google.com/search/docs/essentials/spam-policies?hl=en&rd=1&visit_id=639263619394756452-3529325438&utm_source=chatgpt.com)\\.\n\n## My recommendation\n\nIf your goal is to create a research database of backlink spam and link-selling networks, I'd start with\\:\n\n1. MapTheNet for domain relationships.\n2. Domain Intelligence Dataset for PBN and link-farm research.\n3. DataForSEO for backlink spam metrics.\n4. SURBL for supplementary abuse-domain intelligence.\n\nTreat automated spam classifications as indicators rather than proof that a domain sells links.\n\n---\n\n## One question to narrow this down\n\nAre you looking for\\:\n\n- **A.** An existing downloadable CSV/TXT list of known backlink spam domains.\n- **B.** A database of known link-selling websites and guest-post networks.\n- **C.** A database of doorway domains, parasite SEO sites, and expired-domain abuse.\n- **D.** A comprehensive dataset of interconnected PBNs and link farms.\n\nI can focus the research on finding actual downloadable datasets, GitHub repositories, and public domain lists rather than commercial SEO tools.",
+       "sources": [
+        {
+         "type": "chat_gpt_source",
+         "title": "Google Search spam policies",
+         "snippet": null,
+         "domain": "developers.google.com",
+         "url": "https://developers.google.com/search/docs/essentials/spam-policies?hl=en&rd=1&visit_id=639263619394756452-3529325438&utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": null,
+         "publication_date": null,
+         "markdown": "[Google Search spam policies](https://developers.google.com/search/docs/essentials/spam-policies?hl=en&rd=1&visit_id=639263619394756452-3529325438&utm_source=chatgpt.com)"
+        }
+       ],
+       "brand_entities": null
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1119 @@
+{
+ "version": "0.1.20261103",
+ "status_code": 20000,
+ "status_message": "Ok.",
+ "time": "32.9602 sec.",
+ "cost": 0.004,
+ "tasks_count": 1,
+ "tasks_error": 0,
+ "tasks": [
+  {
+   "id": "11170803-2225-0629-0000-d6fa4045f1cd",
+   "status_code": 20000,
+   "status_message": "Ok.",
+   "time": "32.7277 sec.",
+   "cost": 0.004,
+   "result_count": 1,
+   "path": [
+    "v3",
+    "ai_optimization",
+    "chat_gpt",
+    "llm_scraper",
+    "live",
+    "advanced"
+   ],
+   "data": {
+    "api": "ai_optimization",
+    "function": "live",
+    "se": "chat_gpt",
+    "keyword": "What is the real cost and step-by-step process to set up a US Wyoming LLC, Mercury bank account, and Stripe from abroad?",
+    "language_code": "en",
+    "location_code": 2840,
+    "force_web_search": true,
+    "device": "desktop",
+    "os": "windows"
+   },
+   "result": [
+    {
+     "keyword": "What is the real cost and step-by-step process to set up a US Wyoming LLC, Mercury bank account, and Stripe from abroad?",
+     "location_code": 2840,
+     "language_code": "en",
+     "model": "gpt-6",
+     "check_url": "https://chatgpt.com/?prompt=What%20is%20the%20real%20cost%20and%20step-by-step%20process%20to%20set%20up%20a%20US%20Wyoming%20LLC%2C%20Mercury%20bank%20account%2C%20and%20Stripe%20from%20abroad%3F&hints=search",
+     "datetime": "2026-11-17 08:03:46 +00:00",
+     "markdown": "# Setting up a US Wyoming LLC, Mercury and Stripe from abroad\n\n**Yes, a non-US resident can generally establish a Wyoming LLC, apply for a US business bank account with Mercury, and use Stripe to accept international payments without living in the United States.**\n\nHowever, there is an important distinction\\:\n\n- Forming the LLC is relatively easy.\n- Getting Mercury approved is not automatic.\n- Getting Stripe approved is not automatic.\n- Maintaining the company and complying with US tax rules are where many foreign founders underestimate the real cost.\n\nI'll break this down as a practical setup guide, including realistic costs, the order of operations, documents, tax obligations, and potential rejection points.\n\n## 1\\. Realistic startup and maintenance costs\n\nHere is a realistic budget for a single-owner Wyoming LLC operated by a founder living outside the US.\n\n**Initial setup costs**\n\nWyoming state formation fee **\\$100**\n\nRegistered agent (first year) **\\$50–\\$150**\n\nFormation service (optional) **\\$0–\\$200**\n\nEIN application directly with IRS **\\$0**\n\nOperating agreement **\\$0–\\$100**\n\nMailing/address service, if needed **\\$0–\\$150**\n\n---\n\n**Estimated initial total**\n\n# \\$150–\\$700\n\nPlanning estimates in USD, not fixed provider quotes. Some services bundle formation, registered agent and document preparation.\n\nThe Wyoming government's actual LLC formation fee is \\$100. Online filing adds a 2.4% processing fee, with a \\$1 minimum. [wyobiz.wyo.gov](https://wyobiz.wyo.gov/Business/RegistrationInstr.aspx?utm_source=chatgpt.com)[sos.wyo.gov](https://sos.wyo.gov/Business/Docs/BusinessFees.pdf?utm_source=chatgpt.com)\n\n**Annual recurring costs**\n\n| Expense | Estimated annual cost |\n|--------|--------|\n| Registered agent | \\$50–\\$150 |\n| Wyoming annual report | \\$60 minimum |\n| Tax preparation (5472 + 1120) | \\$200–\\$600 |\n| Address/mail service | \\$0–\\$150 |\n| Mercury account | \\$0 for standard banking |\n| Stripe monthly fee | \\$0 for standard pricing |\n| **Estimated annual total** | **\\$310–\\$960** |\n\n\nThe annual report fee is \\$60 or 0.0002 of the relevant Wyoming assets, whichever is greater. It is due on the first day of your LLC's anniversary month. [sos.wyo.gov](https://sos.wyo.gov/FAQs.aspx?root=BUS&utm_source=chatgpt.com)[wyobiz.wyo.gov](https://wyobiz.wyo.gov/Business/AnnualReport.aspx?utm_source=chatgpt.com)\n\nTax preparation costs are market estimates, not government fees. Complex businesses, employees, multiple owners or US-source income can increase them.\n\n**My practical budget recommendation\\:** Have approximately \\$500–\\$800 available to establish the business, and budget \\$400–\\$800 per year for basic maintenance and tax compliance.\n\nThis excludes payment processing fees, income taxes, and any tax obligations in your country of residence.\n\n## 2\\. Step-by-step: forming your Wyoming LLC\n\n1. **Choose your LLC name**\n   \n   Check whether your proposed name is available through the [Wyoming Secretary of State business portal](https://wyobiz.wyo.gov/)\\.\n   \n   It must include LLC or an accepted equivalent.\n2. **Hire a Wyoming registered agent**\n   \n   Wyoming requires an in-state registered agent with a physical Wyoming registered office.\n   \n   The agent receives official legal correspondence and state notices.\n   \n   Examples of providers to investigate include [Northwest Registered Agent](https://www.northwestregisteredagent.com/) and [ZenBusiness](https://www.zenbusiness.com/)\\.\n   \n   Important: a registered agent address is not automatically a valid business operating address for Mercury or Stripe.\n3. **File Articles of Organization**\n   \n   Go to the official [Wyoming filing portal](https://wyobiz.wyo.gov/)\\.\n   \n   You will generally provide\\:\n   \n   - LLC name\n   - Registered agent details\n   - Principal office and mailing information\n   - Organizer information\n   - Contact email\n   \n   Pay the \\$100 filing fee.\n4. **Get your formation documents**\n   \n   Once approved, download and save\\:\n   \n   - Articles of Organization\n   - State filing confirmation\n   - Certificate of organization, if issued\n   - Filing ID and other state records\n5. **Prepare an Operating Agreement**\n   \n   Even for a single-member LLC, prepare an agreement identifying\\:\n   \n   - The owner\n   - Ownership percentage\n   - Management structure\n   - Business activities\n   - Rules for distributions and company operations\n   \n   Keep it signed and dated.\n6. **Obtain your EIN from the IRS**\n   \n   This is your company's federal tax identification number.\n   \n   As a foreign founder without a US principal place of business, you generally cannot use the IRS online EIN application.\n   \n   Instead\\:\n   \n   - Complete IRS Form SS-4.\n   - Apply by calling the international EIN line at +1 267-941-1099.\n   - Alternatively, fax the application to the international fax number.\n   \n   IRS international applicants can obtain an EIN by phone, fax or mail. The EIN itself is free. [www.irs.gov](https://www.irs.gov/businesses/employer-identification-number?utm_source=chatgpt.com)[www.irs.gov](https://www.irs.gov/pub/irs-pdf/iss4.pdf?utm_source=chatgpt.com)\n   \n   Official instructions: [IRS Form SS-4 instructions](https://www.irs.gov/instructions/iss4)\\.\n\n**Get your company records organized**\n\nPrepare a folder containing your EIN confirmation, formation documents, operating agreement, passport and proof of your residential address.\n\nThese documents will be useful for banking and payment processing applications.\n\n## 3\\. Opening a Mercury business bank account\n\n![Mercury submits US national bank charter application to OCC](https://images.openai.com/static-rsc-4/YfZLMuU0b59xaij2ZroFDHprTXxN7dQ9VPM5rH7y9qmfHeRTD_3HU7RTyTTPbXSZ-n_7dD8vWRT9fqg2whHpLfd2FezD6ye1_Lfs4kE129euPL-a-dQL8im64RwFnnBUeO9Tje1zgxOBtLCAdyg8nmMAAsugd_E7yzdBwseyzSPuIOriS3gad7ekmx7QDAjo?purpose=fullsize)\n\n**Mercury**\n\nUS business banking platform\n\n[Official website](https://mercury.com/)\n\n(Foreign founders accepted)\n\nMercury explicitly supports US companies founded by people living abroad. You do not need US citizenship or US residency.\n\nHowever, there are important eligibility requirements. [support.mercury.com](https://support.mercury.com/hc/en-us/articles/28770467511060-Eligibility-and-requirements-for-opening-a-Mercury-account?utm_source=chatgpt.com)[mercury.com](https://mercury.com/llc-banking?utm_source=chatgpt.com)\n\n**What you need\\:**\n\n- Approved Wyoming LLC.\n- EIN confirmation.\n- Articles of Organization.\n- Operating Agreement.\n- Passport or government-issued ID.\n- Residential address in your actual country of residence.\n- Proof of residential address if requested.\n- Business website or other evidence of operations.\n- Description of your business and source of funds.\n- Explanation of existing or planned US business operations.\n\n**The most important issue: your business address.**\n\nMercury requires a physical principal business address. It can be international, but cannot simply be\\:\n\n- A registered agent address.\n- A PO Box.\n- A virtual mailbox or commercial mail-receiving address.\n\nYou can provide your genuine overseas residential or operating address if it accurately represents where the business is run.\n\n**Application process**\n\n1. Go to [Mercury](https://mercury.com/)\\.\n2. Select the option to open a business account.\n3. Enter the LLC's legal details and EIN.\n4. Enter your real residential address.\n5. Upload the requested business and identity documents.\n6. Explain your business model, customers and expected transactions.\n7. Explain your US business connection and planned operations.\n8. Submit the application and respond to any additional verification requests.\n\nMercury's approval is subject to its compliance review and country restrictions.\n\nDo not assume that simply having a Wyoming LLC guarantees an account.\n\n## 4\\. Setting up Stripe\n\n![CardPaymentOptions.com – Merchant account and credit card processing reviews, ratings, and comparisons. Find the best merchant services provider for your business here.](https://images.openai.com/static-rsc-4/ZyZx-kGJMZw-frY74Lp0ngbxxLn259SUwCVVGOs1w20aKyIMId6L9a8Lefu8zLlMx7xnfJ4MU7qPcSfFbO5tVAgdPB1Khq5kNSJbYx1vk3M83mq8t33NR3qOgnaDJXn_nY49IEKKDAg_eN4eUQrXqatPrzUusxUBWQPGwHzhUeEf4Nh96ZP9rKyCEo6DL8AI?purpose=fullsize)\n\n**Stripe**\n\nOnline payment processing\n\n[Official website](https://stripe.com/)\n\nOnce you have your LLC, EIN and business bank account, you can apply for a US Stripe account.\n\n**What you should prepare\\:**\n\n- LLC legal name.\n- EIN.\n- Wyoming formation documents.\n- Business operating address.\n- Owner's passport.\n- Owner's actual residential address.\n- Phone number.\n- Business website.\n- Description of products or services.\n- Bank account for payouts.\n\nStripe specifically requires a registered US business to be registered in the US, but it also asks for the physical location where the majority of business activity takes place. [support.stripe.com](https://support.stripe.com/questions/requirements-for-having-a-us-stripe-account?locale=en-GB&utm_source=chatgpt.com)[support.stripe.com](https://support.stripe.com/questions/requirements-to-open-a-stripe-account-in-another-country?locale=en-GB&utm_source=chatgpt.com)\n\nThis is important: a Wyoming LLC does not make your overseas home or operations magically become US-based.\n\n**Stripe setup process**\n\n1. Visit [Stripe registration](https://dashboard.stripe.com/register)\\.\n2. Register using your business email.\n3. Select the United States as the business country if your company is eligible for a US account.\n4. Select LLC as the legal structure.\n5. Enter your LLC's legal name and EIN.\n6. Provide the real business operating address.\n7. Add the owner and beneficial ownership details.\n8. Describe your products, services and business model.\n9. Connect your Mercury account for payouts.\n10. Complete identity and business verification.\n\nDo not use a fabricated US residential address or someone else's SSN to get approved.\n\n**Stripe processing fees**\n\n# 2.9% + \\$0.30\n\n**Per successful domestic card transaction**\n\n---\n\nAdditional fees listed on standard US pricing\\:\n\n- International card: +1.5%\n- Currency conversion: +1%\n\nStandard published US pricing; payment method, country and additional services can change the actual fees.\n\n[Stripe official pricing](https://stripe.com/pricing) [stripe.com](https://stripe.com/pricing?locale=en-US&utm_source=chatgpt.com)\n\nFor example, on a \\$100 domestic card transaction, the standard processing fee is \\$3.20.\n\nFor an international card transaction requiring currency conversion, the fees can be considerably higher.\n\n## 5\\. The most important part: US taxes and compliance\n\nThis is where you should be especially careful.\n\nA single-member LLC owned by a foreign individual is generally treated as a disregarded entity for US federal income tax purposes by default.\n\nThat does not mean you can ignore US tax filings.\n\n### Form 5472 and pro forma Form 1120\n\nA foreign-owned, single-member US LLC generally has an annual reporting obligation if it has reportable transactions with its foreign owner or other related parties.\n\nYou may need to file\\:\n\n- Form 5472.\n- A pro forma Form 1120 attached to Form 5472.\n\nExamples of potentially reportable transactions include\\:\n\n- Initial capital contributions.\n- Money transferred between you and your LLC.\n- Certain payments to or from related parties.\n- Distributions and other reportable related-party transactions.\n\nThe IRS explicitly requires foreign-owned US disregarded entities to submit the pro forma Form 1120 with Form 5472 when the reporting rules apply. [www.irs.gov](https://www.irs.gov/instructions/i5472?utm_source=chatgpt.com)[www.irs.gov](https://www.irs.gov/instructions/i5472?trk=public_post_comment-text&utm_source=chatgpt.com)\n\n**Important penalty** (High risk)\n\nFailure to file Form 5472 correctly can result in a **\\$25,000 penalty**, with additional penalties possible if the failure continues after IRS notification.\n\nSee the IRS Form 5472 instructions.\n\n[IRS Form 5472 instructions](https://www.irs.gov/instructions/i5472)\n\n### Does your LLC automatically owe US income tax?\n\nNo. But it is also incorrect to assume that a foreign-owned Wyoming LLC is automatically tax-free.\n\nYour tax treatment depends on factors including\\:\n\n- Whether your business has effectively connected income (ECI) with a US trade or business.\n- Whether you perform services physically inside the US.\n- Where your customers are located and where services are performed.\n- Whether you have US employees, offices or other business operations.\n- Whether you have US-source passive income.\n- Any applicable tax treaty.\n\nYour country of tax residence may also tax your worldwide income.\n\n**My recommendation\\:** Before launching, pay a US accountant experienced in foreign-owned single-member LLCs to review your actual business model and determine your filing obligations.\n\n### What about BOI reporting?\n\nThere is an important recent change.\n\nAs of November 2026, FinCEN's August 2026 final rule exempts US-created companies from federal Beneficial Ownership Information reporting. Consequently, a Wyoming LLC formed in the US generally does not need to file a BOI report under the current rule. [www.fincen.gov](https://www.fincen.gov/boi?utm_source=chatgpt.com)[www.govinfo.gov](https://www.govinfo.gov/content/pkg/FR-2026-08-14/html/2026-16576.htm?utm_source=chatgpt.com)\n\nThis is separate from the ownership information that Mercury and Stripe collect for their own compliance checks.\n\n---\n\n## 6\\. Realistic timeline\n\nHere is a reasonable planning estimate, assuming your documents are ready and there are no unusual delays.\n\n1. **Day 1–2: LLC formation**\n   \n   File Articles of Organization and arrange your registered agent.\n2. **Day 2–10: EIN**\n   \n   Apply using the IRS international applicant process. Phone applications can be faster than fax or mail, but availability and processing are not guaranteed.\n3. **Day 5–15: Mercury application**\n   \n   Submit your documents and answer compliance questions.\n4. **Day 7–20: Stripe application**\n   \n   Complete business and identity verification and connect your bank account.\n5. **Day 10–30: Final checks**\n   \n   Test payments, payouts, refunds and bookkeeping.\n\nThese are planning estimates, not guaranteed processing times. EIN, banking and Stripe verification can take longer.\n\n## 7\\. What can cause the entire setup to fail?\n\n| Potential problem | Why it matters |\n|--------|--------|\n| Unsupported country of residence | Mercury may reject the application |\n| No genuine business operations | Mercury may question US business eligibility |\n| Registered agent address used as operating address | May fail verification |\n| Fake US address | Can trigger rejection or account closure |\n| Unclear source of funds | Can trigger additional compliance checks |\n| Restricted business category | Mercury or Stripe may decline the business |\n| Mismatched LLC and bank details | Can delay verification |\n| No functioning website | Stripe may request additional evidence |\n| Missing tax filings | Can create expensive compliance problems |\n\n\nOne particularly important point: **Mercury and Stripe are separate approval decisions.** You could get your LLC and EIN successfully and still be rejected by one or both platforms.\n\n## 8\\. My recommended order of execution\n\nI would follow this sequence to avoid spending money before confirming eligibility.\n\n**Recommended setup checklist**\n\nof  completed %\n\n## 9\\. Official websites and resources\n\nThese are the sites I would use rather than paying an intermediary for everything.\n\n| Purpose | Official resource |\n|--------|--------|\n| Wyoming LLC registration | [Wyoming SOS](https://wyobiz.wyo.gov/) |\n| IRS EIN | [IRS EIN](https://www.irs.gov/businesses/employer-identification-number) |\n| Registered agent | [Northwest](https://www.northwestregisteredagent.com/) |\n| Business banking | [Mercury](https://mercury.com/) |\n| Payment processing | [Stripe](https://stripe.com/) |\n| Foreign-owned LLC tax filing | [IRS Form 5472](https://www.irs.gov/instructions/i5472) |\n| Ownership reporting | [FinCEN](https://www.fincen.gov/boi) |\n\n\n---\n\n## 10\\. Let me calculate the actual cost for your situation\n\nThere are three details that significantly affect whether this setup is practical\\:\n\n1. Your country of residence (this determines banking eligibility and potentially your tax obligations).\n2. Your business model (SaaS, e-commerce, consulting, agency, digital products, etc.).\n3. Whether you are the sole owner or have business partners.\n\n**Which country do you currently live in?**\n\nThat is the most important starting point. I can then assess Mercury eligibility, Stripe eligibility, the appropriate US tax structure, and give you a more accurate first-year and recurring cost estimate rather than a generic Wyoming LLC budget.",
+     "search_results": [
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://wyobiz.wyo.gov/Business/RegistrationInstr.aspx",
+       "domain": "wyobiz.wyo.gov",
+       "title": "Wyoming Secretary of State",
+       "description": null,
+       "breadcrumb": "wyobiz.wyo.gov"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://wyobiz.wyo.gov/Business/AnnualReport.aspx",
+       "domain": "wyobiz.wyo.gov",
+       "title": "Wyoming Secretary of State",
+       "description": null,
+       "breadcrumb": "wyobiz.wyo.gov"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://sos.wyo.gov/Business/Docs/BusinessFees.pdf",
+       "domain": "sos.wyo.gov",
+       "title": "Wyoming Business Division Filing Fee Schedule",
+       "description": null,
+       "breadcrumb": "sos.wyo.gov"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://sos.wyo.gov/Forms/Business/LLC/LLC-ArticlesOrganization.pdf",
+       "domain": "sos.wyo.gov",
+       "title": "LLC-Articles of Organization",
+       "description": null,
+       "breadcrumb": "sos.wyo.gov"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://sos.wyo.gov/FAQs.aspx?root=BUS",
+       "domain": "sos.wyo.gov",
+       "title": "Wyoming Secretary of State",
+       "description": null,
+       "breadcrumb": "sos.wyo.gov"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://sos.wyo.gov/faqs.aspx?root=BUS",
+       "domain": "sos.wyo.gov",
+       "title": "Wyoming Secretary of State",
+       "description": null,
+       "breadcrumb": "sos.wyo.gov"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://sos.wyo.gov/Forms/WyoBiz/Wyoming_Limited_Liability_Company_Act_and_Close_LLC_Supplement.pdf",
+       "domain": "sos.wyo.gov",
+       "title": "W.S. 17-29-101",
+       "description": null,
+       "breadcrumb": "sos.wyo.gov"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://sos.wyo.gov/Business/docs/HowToCreateAWyomingCompany.pdf",
+       "domain": "sos.wyo.gov",
+       "title": "How to Create A Wyoming Company",
+       "description": null,
+       "breadcrumb": "sos.wyo.gov"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://sos.wyo.gov/Forms/WyoBiz/What%27s_Next.pdf",
+       "domain": "sos.wyo.gov",
+       "title": "What's Next Information",
+       "description": null,
+       "breadcrumb": "sos.wyo.gov"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://sos.wyo.gov/FAQS.aspx?root=BUS",
+       "domain": "sos.wyo.gov",
+       "title": "Wyoming Secretary of State",
+       "description": null,
+       "breadcrumb": "sos.wyo.gov"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://support.mercury.com/hc/en-us/articles/28770467511060-Eligibility-and-requirements-for-opening-a-Mercury-account",
+       "domain": "support.mercury.com",
+       "title": "Eligibility and requirements for opening a Mercury account – Mercury",
+       "description": null,
+       "breadcrumb": "support.mercury.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://mercury.com/llc-banking",
+       "domain": "mercury.com",
+       "title": "Business Banking for LLCs | Checking & Savings Accounts | Mercury",
+       "description": null,
+       "breadcrumb": "mercury.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://support.stripe.com/questions/requirements-to-open-a-stripe-account-in-another-country?locale=en-GB",
+       "domain": "support.stripe.com",
+       "title": "Requirements to open a Stripe account in another country : Stripe: Help & Support",
+       "description": null,
+       "breadcrumb": "support.stripe.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://support.stripe.com/questions/requirements-for-having-a-us-stripe-account?locale=en-GB",
+       "domain": "support.stripe.com",
+       "title": "Requirements for having a US Stripe account : Stripe: Help & Support",
+       "description": null,
+       "breadcrumb": "support.stripe.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://www.irs.gov/instructions/i5472?utm_source=",
+       "domain": "www.irs.gov",
+       "title": "Instructions for Form 5472 (12/2024) | Internal Revenue Service",
+       "description": null,
+       "breadcrumb": "www.irs.gov"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://www.irs.gov/instructions/i5472?trk=public_post_comment-text",
+       "domain": "www.irs.gov",
+       "title": "Instructions for Form 5472 (12/2024) | Internal Revenue Service",
+       "description": null,
+       "breadcrumb": "www.irs.gov"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://www.irs.gov/businesses/employer-identification-number",
+       "domain": "www.irs.gov",
+       "title": "Employer identification number | Internal Revenue Service",
+       "description": null,
+       "breadcrumb": "www.irs.gov"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://www.irs.gov/pub/irs-pdf/iss4.pdf",
+       "domain": "www.irs.gov",
+       "title": "Instructions for Form SS-4 (Rev. December 2025)",
+       "description": null,
+       "breadcrumb": "www.irs.gov"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://www.irs.gov/instructions/iss4",
+       "domain": "www.irs.gov",
+       "title": "Instructions for Form SS-4 (12/2025) | Internal Revenue Service",
+       "description": null,
+       "breadcrumb": "www.irs.gov"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://www.irs.gov/instructions/iss4?ref=insight.linkonebiz.com",
+       "domain": "www.irs.gov",
+       "title": "Instructions for Form SS-4 (12/2025) | Internal Revenue Service",
+       "description": null,
+       "breadcrumb": "www.irs.gov"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://www.irs.gov/instructions/iss4?trk=article-ssr-frontend-pulse_little-text-block",
+       "domain": "www.irs.gov",
+       "title": "Instructions for Form SS-4 (12/2025) | Internal Revenue Service",
+       "description": null,
+       "breadcrumb": "www.irs.gov"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://www.irs.gov/businesses/small-businesses-self-employed/how-to-apply-for-an-ein?WT.qs_osrc=ASK-165108010",
+       "domain": "www.irs.gov",
+       "title": "How to Apply for an EIN | Internal Revenue Service",
+       "description": null,
+       "breadcrumb": "www.irs.gov"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://www.irs.gov/businesses/employer-identification-number?ld=APFRLPADirect",
+       "domain": "www.irs.gov",
+       "title": "Employer identification number | Internal Revenue Service",
+       "description": null,
+       "breadcrumb": "www.irs.gov"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://www.fincen.gov/boi",
+       "domain": "www.fincen.gov",
+       "title": "Beneficial Ownership Information Reporting | FinCEN.gov",
+       "description": null,
+       "breadcrumb": "www.fincen.gov"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://public-inspection.federalregister.gov/2026-16576.pdf?1786625110=",
+       "domain": "public-inspection.federalregister.gov",
+       "title": "This document is scheduled to be published in the Federal Register on 2026-08-14 and available online at https://www.federalregister.gov/d/2026-16576, and on https://govinfo.gov.",
+       "description": null,
+       "breadcrumb": "public-inspection.federalregister.gov"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://www.govinfo.gov/content/pkg/FR-2026-08-14/html/2026-16576.htm",
+       "domain": "www.govinfo.gov",
+       "title": "Federal Register, Volume 91 Issue 156 (Friday, August 14, 2026)",
+       "description": null,
+       "breadcrumb": "www.govinfo.gov"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://www.llcwyoming.org/llc-annual-report/",
+       "domain": "www.llcwyoming.org",
+       "title": "Wyoming LLC Annual Report (2026): $60 Minimum, Due 1st of Anniversary Month",
+       "description": null,
+       "breadcrumb": "www.llcwyoming.org"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://stripe.com/pricing?locale=en-US",
+       "domain": "stripe.com",
+       "title": "Pricing & Fees",
+       "description": null,
+       "breadcrumb": "stripe.com"
+      }
+     ],
+     "sources": [
+      {
+       "type": "chat_gpt_source",
+       "title": "Wyoming Secretary of State",
+       "snippet": null,
+       "domain": "wyobiz.wyo.gov",
+       "url": "https://wyobiz.wyo.gov/Business/RegistrationInstr.aspx?utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": "wyobiz.wyo.gov",
+       "publication_date": null,
+       "markdown": null
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Wyoming Business Division Filing Fee Schedule",
+       "snippet": null,
+       "domain": "sos.wyo.gov",
+       "url": "https://sos.wyo.gov/Business/Docs/BusinessFees.pdf?utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": "sos.wyo.gov",
+       "publication_date": "2022-08-05 17:05:22 +00:00",
+       "markdown": null
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Wyoming Secretary of State",
+       "snippet": null,
+       "domain": "sos.wyo.gov",
+       "url": "https://sos.wyo.gov/FAQs.aspx?root=BUS&utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": "sos.wyo.gov",
+       "publication_date": null,
+       "markdown": null
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Wyoming Secretary of State",
+       "snippet": null,
+       "domain": "wyobiz.wyo.gov",
+       "url": "https://wyobiz.wyo.gov/Business/AnnualReport.aspx?utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": "wyobiz.wyo.gov",
+       "publication_date": null,
+       "markdown": null
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Wyoming Secretary of State business portal",
+       "snippet": null,
+       "domain": "wyobiz.wyo.gov",
+       "url": "https://wyobiz.wyo.gov/",
+       "thumbnail": null,
+       "source_name": null,
+       "publication_date": null,
+       "markdown": "[Wyoming Secretary of State business portal](https://wyobiz.wyo.gov/)"
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Northwest Registered Agent",
+       "snippet": null,
+       "domain": "www.northwestregisteredagent.com",
+       "url": "https://www.northwestregisteredagent.com/",
+       "thumbnail": null,
+       "source_name": null,
+       "publication_date": null,
+       "markdown": "[Northwest Registered Agent](https://www.northwestregisteredagent.com/)"
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "ZenBusiness",
+       "snippet": null,
+       "domain": "www.zenbusiness.com",
+       "url": "https://www.zenbusiness.com/",
+       "thumbnail": null,
+       "source_name": null,
+       "publication_date": null,
+       "markdown": "[ZenBusiness](https://www.zenbusiness.com/)"
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Employer identification number",
+       "snippet": null,
+       "domain": "www.irs.gov",
+       "url": "https://www.irs.gov/businesses/employer-identification-number?utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": "Internal Revenue Service",
+       "publication_date": null,
+       "markdown": null
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Instructions for Form SS-4 (Rev. December 2025)",
+       "snippet": null,
+       "domain": "www.irs.gov",
+       "url": "https://www.irs.gov/pub/irs-pdf/iss4.pdf?utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": "IRS",
+       "publication_date": "2025-11-25 17:42:06 +00:00",
+       "markdown": null
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "IRS Form SS-4 instructions",
+       "snippet": null,
+       "domain": "www.irs.gov",
+       "url": "https://www.irs.gov/instructions/iss4",
+       "thumbnail": null,
+       "source_name": null,
+       "publication_date": null,
+       "markdown": "[IRS Form SS-4 instructions](https://www.irs.gov/instructions/iss4)"
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Official website",
+       "snippet": null,
+       "domain": "mercury.com",
+       "url": "https://mercury.com/",
+       "thumbnail": null,
+       "source_name": null,
+       "publication_date": null,
+       "markdown": "[Official website](https://mercury.com/)"
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Eligibility and requirements for opening a Mercury account",
+       "snippet": null,
+       "domain": "support.mercury.com",
+       "url": "https://support.mercury.com/hc/en-us/articles/28770467511060-Eligibility-and-requirements-for-opening-a-Mercury-account?utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": "Mercury",
+       "publication_date": null,
+       "markdown": null
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Business Banking for LLCs | Checking & Savings Accounts",
+       "snippet": null,
+       "domain": "mercury.com",
+       "url": "https://mercury.com/llc-banking?utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": "Mercury",
+       "publication_date": null,
+       "markdown": null
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Official website",
+       "snippet": null,
+       "domain": "stripe.com",
+       "url": "https://stripe.com/",
+       "thumbnail": null,
+       "source_name": null,
+       "publication_date": null,
+       "markdown": "[Official website](https://stripe.com/)"
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Requirements for having a US Stripe account : Stripe: Help & Support",
+       "snippet": null,
+       "domain": "support.stripe.com",
+       "url": "https://support.stripe.com/questions/requirements-for-having-a-us-stripe-account?locale=en-GB&utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": "Stripe Support",
+       "publication_date": null,
+       "markdown": null
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Requirements to open a Stripe account in another country : Stripe: Help & Support",
+       "snippet": null,
+       "domain": "support.stripe.com",
+       "url": "https://support.stripe.com/questions/requirements-to-open-a-stripe-account-in-another-country?locale=en-GB&utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": "Stripe Support",
+       "publication_date": null,
+       "markdown": null
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Stripe registration",
+       "snippet": null,
+       "domain": "dashboard.stripe.com",
+       "url": "https://dashboard.stripe.com/register",
+       "thumbnail": null,
+       "source_name": null,
+       "publication_date": null,
+       "markdown": "[Stripe registration](https://dashboard.stripe.com/register)"
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Stripe official pricing",
+       "snippet": null,
+       "domain": "stripe.com",
+       "url": "https://stripe.com/pricing",
+       "thumbnail": null,
+       "source_name": null,
+       "publication_date": null,
+       "markdown": "[Stripe official pricing](https://stripe.com/pricing)"
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Pricing & Fees",
+       "snippet": null,
+       "domain": "stripe.com",
+       "url": "https://stripe.com/pricing?locale=en-US&utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": "Stripe",
+       "publication_date": null,
+       "markdown": null
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Instructions for Form 5472 (12/2024)",
+       "snippet": null,
+       "domain": "www.irs.gov",
+       "url": "https://www.irs.gov/instructions/i5472?utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": "Internal Revenue Service",
+       "publication_date": "2024-12-01 00:00:00 +00:00",
+       "markdown": null
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Instructions for Form 5472 (12/2024)",
+       "snippet": null,
+       "domain": "www.irs.gov",
+       "url": "https://www.irs.gov/instructions/i5472?trk=public_post_comment-text&utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": "Internal Revenue Service",
+       "publication_date": "2024-12-01 00:00:00 +00:00",
+       "markdown": null
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "IRS Form 5472 instructions",
+       "snippet": null,
+       "domain": "www.irs.gov",
+       "url": "https://www.irs.gov/instructions/i5472",
+       "thumbnail": null,
+       "source_name": null,
+       "publication_date": null,
+       "markdown": "[IRS Form 5472 instructions](https://www.irs.gov/instructions/i5472)"
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Beneficial Ownership Information Reporting",
+       "snippet": null,
+       "domain": "www.fincen.gov",
+       "url": "https://www.fincen.gov/boi?utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": "FinCEN",
+       "publication_date": null,
+       "markdown": null
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Federal Register, Volume 91 Issue 156 (Friday, August 14, 2026)",
+       "snippet": null,
+       "domain": "www.govinfo.gov",
+       "url": "https://www.govinfo.gov/content/pkg/FR-2026-08-14/html/2026-16576.htm?utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": "GovInfo",
+       "publication_date": "2026-08-14 00:00:00 +00:00",
+       "markdown": null
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "IRS EIN",
+       "snippet": null,
+       "domain": "www.irs.gov",
+       "url": "https://www.irs.gov/businesses/employer-identification-number",
+       "thumbnail": null,
+       "source_name": null,
+       "publication_date": null,
+       "markdown": "[IRS EIN](https://www.irs.gov/businesses/employer-identification-number)"
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "FinCEN",
+       "snippet": null,
+       "domain": "www.fincen.gov",
+       "url": "https://www.fincen.gov/boi",
+       "thumbnail": null,
+       "source_name": null,
+       "publication_date": null,
+       "markdown": "[FinCEN](https://www.fincen.gov/boi)"
+      }
+     ],
+     "fan_out_queries": [
+      "2026 Wyoming LLC formation nonresident costs annual report registered agent fee official Wyoming Secretary of State",
+      "IRS foreign-owned single-member LLC Form 5472 1120 pro forma filing deadline EIN responsible party foreign applicant",
+      "Mercury bank account eligibility non-US founders required documents supported countries official",
+      "Stripe US account non-US resident company requirements representative address bank account official Stripe",
+      "FinCEN beneficial ownership reporting domestic US companies 2026 interim final rule official"
+     ],
+     "brand_entities": [
+      {
+       "type": "chat_gpt_brand_entity",
+       "title": "US fintech business banking platform",
+       "category": "company",
+       "markdown": "Mercury",
+       "urls": null
+      },
+      {
+       "type": "chat_gpt_brand_entity",
+       "title": "Online payment processing platform",
+       "category": "company",
+       "markdown": "Stripe",
+       "urls": null
+      }
+     ],
+     "se_results_count": 0,
+     "item_types": [
+      "chat_gpt_text",
+      "chat_gpt_table",
+      "chat_gpt_images"
+     ],
+     "items_count": 11,
+     "items": [
+      {
+       "type": "chat_gpt_text",
+       "rank_group": 1,
+       "rank_absolute": 1,
+       "markdown": "# Setting up a US Wyoming LLC, Mercury and Stripe from abroad\n\n**Yes, a non-US resident can generally establish a Wyoming LLC, apply for a US business bank account with Mercury, and use Stripe to accept international payments without living in the United States.**\n\nHowever, there is an important distinction\\:\n\n- Forming the LLC is relatively easy.\n- Getting Mercury approved is not automatic.\n- Getting Stripe approved is not automatic.\n- Maintaining the company and complying with US tax rules are where many foreign founders underestimate the real cost.\n\nI'll break this down as a practical setup guide, including realistic costs, the order of operations, documents, tax obligations, and potential rejection points.\n\n## 1\\. Realistic startup and maintenance costs\n\nHere is a realistic budget for a single-owner Wyoming LLC operated by a founder living outside the US.\n\n**Initial setup costs**\n\nWyoming state formation fee **\\$100**\n\nRegistered agent (first year) **\\$50–\\$150**\n\nFormation service (optional) **\\$0–\\$200**\n\nEIN application directly with IRS **\\$0**\n\nOperating agreement **\\$0–\\$100**\n\nMailing/address service, if needed **\\$0–\\$150**\n\n---\n\n**Estimated initial total**\n\n# \\$150–\\$700\n\nPlanning estimates in USD, not fixed provider quotes. Some services bundle formation, registered agent and document preparation.\n\nThe Wyoming government's actual LLC formation fee is \\$100. Online filing adds a 2.4% processing fee, with a \\$1 minimum. [wyobiz.wyo.gov](https://wyobiz.wyo.gov/Business/RegistrationInstr.aspx?utm_source=chatgpt.com)[sos.wyo.gov](https://sos.wyo.gov/Business/Docs/BusinessFees.pdf?utm_source=chatgpt.com)\n\n**Annual recurring costs**\n\n",
+       "sources": [
+        {
+         "type": "chat_gpt_source",
+         "title": "Wyoming Secretary of State",
+         "snippet": null,
+         "domain": "wyobiz.wyo.gov",
+         "url": "https://wyobiz.wyo.gov/Business/RegistrationInstr.aspx?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": "wyobiz.wyo.gov",
+         "publication_date": null,
+         "markdown": null
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "Wyoming Business Division Filing Fee Schedule",
+         "snippet": null,
+         "domain": "sos.wyo.gov",
+         "url": "https://sos.wyo.gov/Business/Docs/BusinessFees.pdf?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": "sos.wyo.gov",
+         "publication_date": "2022-08-05 17:05:22 +00:00",
+         "markdown": null
+        }
+       ],
+       "brand_entities": null
+      },
+      {
+       "type": "chat_gpt_table",
+       "rank_group": 1,
+       "rank_absolute": 2,
+       "text": null,
+       "markdown": "| Expense | Estimated annual cost |\n|--------|--------|\n| Registered agent | \\$50–\\$150 |\n| Wyoming annual report | \\$60 minimum |\n| Tax preparation (5472 + 1120) | \\$200–\\$600 |\n| Address/mail service | \\$0–\\$150 |\n| Mercury account | \\$0 for standard banking |\n| Stripe monthly fee | \\$0 for standard pricing |\n| **Estimated annual total** | **\\$310–\\$960** |\n\n",
+       "table": {
+        "table_header": [
+         "Expense",
+         "Estimated annual cost"
+        ],
+        "table_content": [
+         [
+          "Registered agent",
+          "\\$50–\\$150"
+         ],
+         [
+          "Wyoming annual report",
+          "\\$60 minimum"
+         ],
+         [
+          "Tax preparation (5472 + 1120)",
+          "\\$200–\\$600"
+         ],
+         [
+          "Address/mail service",
+          "\\$0–\\$150"
+         ],
+         [
+          "Mercury account",
+          "\\$0 for standard banking"
+         ],
+         [
+          "Stripe monthly fee",
+          "\\$0 for standard pricing"
+         ],
+         [
+          "**Estimated annual total**",
+          "**\\$310–\\$960**"
+         ]
+        ]
+       },
+       "brand_entities": null
+      },
+      {
+       "type": "chat_gpt_text",
+       "rank_group": 2,
+       "rank_absolute": 3,
+       "markdown": "\nThe annual report fee is \\$60 or 0.0002 of the relevant Wyoming assets, whichever is greater. It is due on the first day of your LLC's anniversary month. [sos.wyo.gov](https://sos.wyo.gov/FAQs.aspx?root=BUS&utm_source=chatgpt.com)[wyobiz.wyo.gov](https://wyobiz.wyo.gov/Business/AnnualReport.aspx?utm_source=chatgpt.com)\n\nTax preparation costs are market estimates, not government fees. Complex businesses, employees, multiple owners or US-source income can increase them.\n\n**My practical budget recommendation\\:** Have approximately \\$500–\\$800 available to establish the business, and budget \\$400–\\$800 per year for basic maintenance and tax compliance.\n\nThis excludes payment processing fees, income taxes, and any tax obligations in your country of residence.\n\n## 2\\. Step-by-step: forming your Wyoming LLC\n\n1. **Choose your LLC name**\n   \n   Check whether your proposed name is available through the [Wyoming Secretary of State business portal](https://wyobiz.wyo.gov/)\\.\n   \n   It must include LLC or an accepted equivalent.\n2. **Hire a Wyoming registered agent**\n   \n   Wyoming requires an in-state registered agent with a physical Wyoming registered office.\n   \n   The agent receives official legal correspondence and state notices.\n   \n   Examples of providers to investigate include [Northwest Registered Agent](https://www.northwestregisteredagent.com/) and [ZenBusiness](https://www.zenbusiness.com/)\\.\n   \n   Important: a registered agent address is not automatically a valid business operating address for Mercury or Stripe.\n3. **File Articles of Organization**\n   \n   Go to the official [Wyoming filing portal](https://wyobiz.wyo.gov/)\\.\n   \n   You will generally provide\\:\n   \n   - LLC name\n   - Registered agent details\n   - Principal office and mailing information\n   - Organizer information\n   - Contact email\n   \n   Pay the \\$100 filing fee.\n4. **Get your formation documents**\n   \n   Once approved, download and save\\:\n   \n   - Articles of Organization\n   - State filing confirmation\n   - Certificate of organization, if issued\n   - Filing ID and other state records\n5. **Prepare an Operating Agreement**\n   \n   Even for a single-member LLC, prepare an agreement identifying\\:\n   \n   - The owner\n   - Ownership percentage\n   - Management structure\n   - Business activities\n   - Rules for distributions and company operations\n   \n   Keep it signed and dated.\n6. **Obtain your EIN from the IRS**\n   \n   This is your company's federal tax identification number.\n   \n   As a foreign founder without a US principal place of business, you generally cannot use the IRS online EIN application.\n   \n   Instead\\:\n   \n   - Complete IRS Form SS-4.\n   - Apply by calling the international EIN line at +1 267-941-1099.\n   - Alternatively, fax the application to the international fax number.\n   \n   IRS international applicants can obtain an EIN by phone, fax or mail. The EIN itself is free. [www.irs.gov](https://www.irs.gov/businesses/employer-identification-number?utm_source=chatgpt.com)[www.irs.gov](https://www.irs.gov/pub/irs-pdf/iss4.pdf?utm_source=chatgpt.com)\n   \n   Official instructions: [IRS Form SS-4 instructions](https://www.irs.gov/instructions/iss4)\\.\n\n**Get your company records organized**\n\nPrepare a folder containing your EIN confirmation, formation documents, operating agreement, passport and proof of your residential address.\n\nThese documents will be useful for banking and payment processing applications.\n\n## 3\\. Opening a Mercury business bank account\n\n",
+       "sources": [
+        {
+         "type": "chat_gpt_source",
+         "title": "Wyoming Secretary of State",
+         "snippet": null,
+         "domain": "sos.wyo.gov",
+         "url": "https://sos.wyo.gov/FAQs.aspx?root=BUS&utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": "sos.wyo.gov",
+         "publication_date": null,
+         "markdown": null
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "Wyoming Secretary of State",
+         "snippet": null,
+         "domain": "wyobiz.wyo.gov",
+         "url": "https://wyobiz.wyo.gov/Business/AnnualReport.aspx?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": "wyobiz.wyo.gov",
+         "publication_date": null,
+         "markdown": null
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "Wyoming Secretary of State business portal",
+         "snippet": null,
+         "domain": "wyobiz.wyo.gov",
+         "url": "https://wyobiz.wyo.gov/",
+         "thumbnail": null,
+         "source_name": null,
+         "publication_date": null,
+         "markdown": "[Wyoming Secretary of State business portal](https://wyobiz.wyo.gov/)"
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "Northwest Registered Agent",
+         "snippet": null,
+         "domain": "www.northwestregisteredagent.com",
+         "url": "https://www.northwestregisteredagent.com/",
+         "thumbnail": null,
+         "source_name": null,
+         "publication_date": null,
+         "markdown": "[Northwest Registered Agent](https://www.northwestregisteredagent.com/)"
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "ZenBusiness",
+         "snippet": null,
+         "domain": "www.zenbusiness.com",
+         "url": "https://www.zenbusiness.com/",
+         "thumbnail": null,
+         "source_name": null,
+         "publication_date": null,
+         "markdown": "[ZenBusiness](https://www.zenbusiness.com/)"
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "Wyoming filing portal",
+         "snippet": null,
+         "domain": "wyobiz.wyo.gov",
+         "url": "https://wyobiz.wyo.gov/",
+         "thumbnail": null,
+         "source_name": null,
+         "publication_date": null,
+         "markdown": "[Wyoming filing portal](https://wyobiz.wyo.gov/)"
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "Employer identification number",
+         "snippet": null,
+         "domain": "www.irs.gov",
+         "url": "https://www.irs.gov/businesses/employer-identification-number?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": "Internal Revenue Service",
+         "publication_date": null,
+         "markdown": null
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "Instructions for Form SS-4 (Rev. December 2025)",
+         "snippet": null,
+         "domain": "www.irs.gov",
+         "url": "https://www.irs.gov/pub/irs-pdf/iss4.pdf?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": "IRS",
+         "publication_date": "2025-11-25 17:42:06 +00:00",
+         "markdown": null
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "IRS Form SS-4 instructions",
+         "snippet": null,
+         "domain": "www.irs.gov",
+         "url": "https://www.irs.gov/instructions/iss4",
+         "thumbnail": null,
+         "source_name": null,
+         "publication_date": null,
+         "markdown": "[IRS Form SS-4 instructions](https://www.irs.gov/instructions/iss4)"
+        }
+       ],
+       "brand_entities": null
+      },
+      {
+       "type": "chat_gpt_images",
+       "rank_group": 1,
+       "rank_absolute": 4,
+       "markdown": "![Mercury submits US national bank charter application to OCC](https://images.openai.com/static-rsc-4/YfZLMuU0b59xaij2ZroFDHprTXxN7dQ9VPM5rH7y9qmfHeRTD_3HU7RTyTTPbXSZ-n_7dD8vWRT9fqg2whHpLfd2FezD6ye1_Lfs4kE129euPL-a-dQL8im64RwFnnBUeO9Tje1zgxOBtLCAdyg8nmMAAsugd_E7yzdBwseyzSPuIOriS3gad7ekmx7QDAjo?purpose=fullsize)",
+       "items": [
+        {
+         "type": "chat_gpt_images_element",
+         "url": "https://www.fintechfutures.com/fintech/mercury-applies-for-us-national-bank-charter",
+         "alt": "Mercury submits US national bank charter application to OCC",
+         "image_url": "https://images.openai.com/static-rsc-4/YfZLMuU0b59xaij2ZroFDHprTXxN7dQ9VPM5rH7y9qmfHeRTD_3HU7RTyTTPbXSZ-n_7dD8vWRT9fqg2whHpLfd2FezD6ye1_Lfs4kE129euPL-a-dQL8im64RwFnnBUeO9Tje1zgxOBtLCAdyg8nmMAAsugd_E7yzdBwseyzSPuIOriS3gad7ekmx7QDAjo?purpose=fullsize",
+         "markdown": "![Mercury submits US national bank charter application to OCC](https://images.openai.com/static-rsc-4/YfZLMuU0b59xaij2ZroFDHprTXxN7dQ9VPM5rH7y9qmfHeRTD_3HU7RTyTTPbXSZ-n_7dD8vWRT9fqg2whHpLfd2FezD6ye1_Lfs4kE129euPL-a-dQL8im64RwFnnBUeO9Tje1zgxOBtLCAdyg8nmMAAsugd_E7yzdBwseyzSPuIOriS3gad7ekmx7QDAjo?purpose=fullsize)"
+        }
+       ]
+      },
+      {
+       "type": "chat_gpt_text",
+       "rank_group": 3,
+       "rank_absolute": 5,
+       "markdown": "\n\n**Mercury**\n\nUS business banking platform\n\n[Official website](https://mercury.com/)\n\n(Foreign founders accepted)\n\nMercury explicitly supports US companies founded by people living abroad. You do not need US citizenship or US residency.\n\nHowever, there are important eligibility requirements. [support.mercury.com](https://support.mercury.com/hc/en-us/articles/28770467511060-Eligibility-and-requirements-for-opening-a-Mercury-account?utm_source=chatgpt.com)[mercury.com](https://mercury.com/llc-banking?utm_source=chatgpt.com)\n\n**What you need\\:**\n\n- Approved Wyoming LLC.\n- EIN confirmation.\n- Articles of Organization.\n- Operating Agreement.\n- Passport or government-issued ID.\n- Residential address in your actual country of residence.\n- Proof of residential address if requested.\n- Business website or other evidence of operations.\n- Description of your business and source of funds.\n- Explanation of existing or planned US business operations.\n\n**The most important issue: your business address.**\n\nMercury requires a physical principal business address. It can be international, but cannot simply be\\:\n\n- A registered agent address.\n- A PO Box.\n- A virtual mailbox or commercial mail-receiving address.\n\nYou can provide your genuine overseas residential or operating address if it accurately represents where the business is run.\n\n**Application process**\n\n1. Go to [Mercury](https://mercury.com/)\\.\n2. Select the option to open a business account.\n3. Enter the LLC's legal details and EIN.\n4. Enter your real residential address.\n5. Upload the requested business and identity documents.\n6. Explain your business model, customers and expected transactions.\n7. Explain your US business connection and planned operations.\n8. Submit the application and respond to any additional verification requests.\n\nMercury's approval is subject to its compliance review and country restrictions.\n\nDo not assume that simply having a Wyoming LLC guarantees an account.\n\n## 4\\. Setting up Stripe\n\n",
+       "sources": [
+        {
+         "type": "chat_gpt_source",
+         "title": "Official website",
+         "snippet": null,
+         "domain": "mercury.com",
+         "url": "https://mercury.com/",
+         "thumbnail": null,
+         "source_name": null,
+         "publication_date": null,
+         "markdown": "[Official website](https://mercury.com/)"
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "Eligibility and requirements for opening a Mercury account",
+         "snippet": null,
+         "domain": "support.mercury.com",
+         "url": "https://support.mercury.com/hc/en-us/articles/28770467511060-Eligibility-and-requirements-for-opening-a-Mercury-account?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": "Mercury",
+         "publication_date": null,
+         "markdown": null
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "Business Banking for LLCs | Checking & Savings Accounts",
+         "snippet": null,
+         "domain": "mercury.com",
+         "url": "https://mercury.com/llc-banking?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": "Mercury",
+         "publication_date": null,
+         "markdown": null
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "Mercury",
+         "snippet": null,
+         "domain": "mercury.com",
+         "url": "https://mercury.com/",
+         "thumbnail": null,
+         "source_name": null,
+         "publication_date": null,
+         "markdown": "[Mercury](https://mercury.com/)"
+        }
+       ],
+       "brand_entities": [
+        {
+         "type": "chat_gpt_brand_entity",
+         "title": "US fintech business banking platform",
+         "category": "company",
+         "markdown": "Mercury",
+         "urls": null
+        }
+       ]
+      },
+      {
+       "type": "chat_gpt_images",
+       "rank_group": 2,
+       "rank_absolute": 6,
+       "markdown": "![CardPaymentOptions.com – Merchant account and credit card processing reviews, ratings, and comparisons. Find the best merchant services provider for your business here.](https://images.openai.com/static-rsc-4/ZyZx-kGJMZw-frY74Lp0ngbxxLn259SUwCVVGOs1w20aKyIMId6L9a8Lefu8zLlMx7xnfJ4MU7qPcSfFbO5tVAgdPB1Khq5kNSJbYx1vk3M83mq8t33NR3qOgnaDJXn_nY49IEKKDAg_eN4eUQrXqatPrzUusxUBWQPGwHzhUeEf4Nh96ZP9rKyCEo6DL8AI?purpose=fullsize)",
+       "items": [
+        {
+         "type": "chat_gpt_images_element",
+         "url": "https://www.cardpaymentoptions.com/",
+         "alt": "CardPaymentOptions.com – Merchant account and credit card processing reviews, ratings, and comparisons. Find the best merchant services provider for your business here.",
+         "image_url": "https://images.openai.com/static-rsc-4/ZyZx-kGJMZw-frY74Lp0ngbxxLn259SUwCVVGOs1w20aKyIMId6L9a8Lefu8zLlMx7xnfJ4MU7qPcSfFbO5tVAgdPB1Khq5kNSJbYx1vk3M83mq8t33NR3qOgnaDJXn_nY49IEKKDAg_eN4eUQrXqatPrzUusxUBWQPGwHzhUeEf4Nh96ZP9rKyCEo6DL8AI?purpose=fullsize",
+         "markdown": "![CardPaymentOptions.com – Merchant account and credit card processing reviews, ratings, and comparisons. Find the best merchant services provider for your business here.](https://images.openai.com/static-rsc-4/ZyZx-kGJMZw-frY74Lp0ngbxxLn259SUwCVVGOs1w20aKyIMId6L9a8Lefu8zLlMx7xnfJ4MU7qPcSfFbO5tVAgdPB1Khq5kNSJbYx1vk3M83mq8t33NR3qOgnaDJXn_nY49IEKKDAg_eN4eUQrXqatPrzUusxUBWQPGwHzhUeEf4Nh96ZP9rKyCEo6DL8AI?purpose=fullsize)"
+        }
+       ]
+      },
+      {
+       "type": "chat_gpt_text",
+       "rank_group": 4,
+       "rank_absolute": 7,
+       "markdown": "\n\n**Stripe**\n\nOnline payment processing\n\n[Official website](https://stripe.com/)\n\nOnce you have your LLC, EIN and business bank account, you can apply for a US Stripe account.\n\n**What you should prepare\\:**\n\n- LLC legal name.\n- EIN.\n- Wyoming formation documents.\n- Business operating address.\n- Owner's passport.\n- Owner's actual residential address.\n- Phone number.\n- Business website.\n- Description of products or services.\n- Bank account for payouts.\n\nStripe specifically requires a registered US business to be registered in the US, but it also asks for the physical location where the majority of business activity takes place. [support.stripe.com](https://support.stripe.com/questions/requirements-for-having-a-us-stripe-account?locale=en-GB&utm_source=chatgpt.com)[support.stripe.com](https://support.stripe.com/questions/requirements-to-open-a-stripe-account-in-another-country?locale=en-GB&utm_source=chatgpt.com)\n\nThis is important: a Wyoming LLC does not make your overseas home or operations magically become US-based.\n\n**Stripe setup process**\n\n1. Visit [Stripe registration](https://dashboard.stripe.com/register)\\.\n2. Register using your business email.\n3. Select the United States as the business country if your company is eligible for a US account.\n4. Select LLC as the legal structure.\n5. Enter your LLC's legal name and EIN.\n6. Provide the real business operating address.\n7. Add the owner and beneficial ownership details.\n8. Describe your products, services and business model.\n9. Connect your Mercury account for payouts.\n10. Complete identity and business verification.\n\nDo not use a fabricated US residential address or someone else's SSN to get approved.\n\n**Stripe processing fees**\n\n# 2.9% + \\$0.30\n\n**Per successful domestic card transaction**\n\n---\n\nAdditional fees listed on standard US pricing\\:\n\n- International card: +1.5%\n- Currency conversion: +1%\n\nStandard published US pricing; payment method, country and additional services can change the actual fees.\n\n[Stripe official pricing](https://stripe.com/pricing) [stripe.com](https://stripe.com/pricing?locale=en-US&utm_source=chatgpt.com)\n\nFor example, on a \\$100 domestic card transaction, the standard processing fee is \\$3.20.\n\nFor an international card transaction requiring currency conversion, the fees can be considerably higher.\n\n## 5\\. The most important part: US taxes and compliance\n\nThis is where you should be especially careful.\n\nA single-member LLC owned by a foreign individual is generally treated as a disregarded entity for US federal income tax purposes by default.\n\nThat does not mean you can ignore US tax filings.\n\n### Form 5472 and pro forma Form 1120\n\nA foreign-owned, single-member US LLC generally has an annual reporting obligation if it has reportable transactions with its foreign owner or other related parties.\n\nYou may need to file\\:\n\n- Form 5472.\n- A pro forma Form 1120 attached to Form 5472.\n\nExamples of potentially reportable transactions include\\:\n\n- Initial capital contributions.\n- Money transferred between you and your LLC.\n- Certain payments to or from related parties.\n- Distributions and other reportable related-party transactions.\n\nThe IRS explicitly requires foreign-owned US disregarded entities to submit the pro forma Form 1120 with Form 5472 when the reporting rules apply. [www.irs.gov](https://www.irs.gov/instructions/i5472?utm_source=chatgpt.com)[www.irs.gov](https://www.irs.gov/instructions/i5472?trk=public_post_comment-text&utm_source=chatgpt.com)\n\n**Important penalty** (High risk)\n\nFailure to file Form 5472 correctly can result in a **\\$25,000 penalty**, with additional penalties possible if the failure continues after IRS notification.\n\nSee the IRS Form 5472 instructions.\n\n[IRS Form 5472 instructions](https://www.irs.gov/instructions/i5472)\n\n### Does your LLC automatically owe US income tax?\n\nNo. But it is also incorrect to assume that a foreign-owned Wyoming LLC is automatically tax-free.\n\nYour tax treatment depends on factors including\\:\n\n- Whether your business has effectively connected income (ECI) with a US trade or business.\n- Whether you perform services physically inside the US.\n- Where your customers are located and where services are performed.\n- Whether you have US employees, offices or other business operations.\n- Whether you have US-source passive income.\n- Any applicable tax treaty.\n\nYour country of tax residence may also tax your worldwide income.\n\n**My recommendation\\:** Before launching, pay a US accountant experienced in foreign-owned single-member LLCs to review your actual business model and determine your filing obligations.\n\n### What about BOI reporting?\n\nThere is an important recent change.\n\nAs of November 2026, FinCEN's August 2026 final rule exempts US-created companies from federal Beneficial Ownership Information reporting. Consequently, a Wyoming LLC formed in the US generally does not need to file a BOI report under the current rule. [www.fincen.gov](https://www.fincen.gov/boi?utm_source=chatgpt.com)[www.govinfo.gov](https://www.govinfo.gov/content/pkg/FR-2026-08-14/html/2026-16576.htm?utm_source=chatgpt.com)\n\nThis is separate from the ownership information that Mercury and Stripe collect for their own compliance checks.\n\n---\n\n## 6\\. Realistic timeline\n\nHere is a reasonable planning estimate, assuming your documents are ready and there are no unusual delays.\n\n1. **Day 1–2: LLC formation**\n   \n   File Articles of Organization and arrange your registered agent.\n2. **Day 2–10: EIN**\n   \n   Apply using the IRS international applicant process. Phone applications can be faster than fax or mail, but availability and processing are not guaranteed.\n3. **Day 5–15: Mercury application**\n   \n   Submit your documents and answer compliance questions.\n4. **Day 7–20: Stripe application**\n   \n   Complete business and identity verification and connect your bank account.\n5. **Day 10–30: Final checks**\n   \n   Test payments, payouts, refunds and bookkeeping.\n\nThese are planning estimates, not guaranteed processing times. EIN, banking and Stripe verification can take longer.\n\n## 7\\. What can cause the entire setup to fail?\n\n",
+       "sources": [
+        {
+         "type": "chat_gpt_source",
+         "title": "Official website",
+         "snippet": null,
+         "domain": "stripe.com",
+         "url": "https://stripe.com/",
+         "thumbnail": null,
+         "source_name": null,
+         "publication_date": null,
+         "markdown": "[Official website](https://stripe.com/)"
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "Requirements for having a US Stripe account : Stripe: Help & Support",
+         "snippet": null,
+         "domain": "support.stripe.com",
+         "url": "https://support.stripe.com/questions/requirements-for-having-a-us-stripe-account?locale=en-GB&utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": "Stripe Support",
+         "publication_date": null,
+         "markdown": null
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "Requirements to open a Stripe account in another country : Stripe: Help & Support",
+         "snippet": null,
+         "domain": "support.stripe.com",
+         "url": "https://support.stripe.com/questions/requirements-to-open-a-stripe-account-in-another-country?locale=en-GB&utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": "Stripe Support",
+         "publication_date": null,
+         "markdown": null
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "Stripe registration",
+         "snippet": null,
+         "domain": "dashboard.stripe.com",
+         "url": "https://dashboard.stripe.com/register",
+         "thumbnail": null,
+         "source_name": null,
+         "publication_date": null,
+         "markdown": "[Stripe registration](https://dashboard.stripe.com/register)"
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "Stripe official pricing",
+         "snippet": null,
+         "domain": "stripe.com",
+         "url": "https://stripe.com/pricing",
+         "thumbnail": null,
+         "source_name": null,
+         "publication_date": null,
+         "markdown": "[Stripe official pricing](https://stripe.com/pricing)"
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "Pricing & Fees",
+         "snippet": null,
+         "domain": "stripe.com",
+         "url": "https://stripe.com/pricing?locale=en-US&utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": "Stripe",
+         "publication_date": null,
+         "markdown": null
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "Instructions for Form 5472 (12/2024)",
+         "snippet": null,
+         "domain": "www.irs.gov",
+         "url": "https://www.irs.gov/instructions/i5472?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": "Internal Revenue Service",
+         "publication_date": "2024-12-01 00:00:00 +00:00",
+         "markdown": null
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "Instructions for Form 5472 (12/2024)",
+         "snippet": null,
+         "domain": "www.irs.gov",
+         "url": "https://www.irs.gov/instructions/i5472?trk=public_post_comment-text&utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": "Internal Revenue Service",
+         "publication_date": "2024-12-01 00:00:00 +00:00",
+         "markdown": null
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "IRS Form 5472 instructions",
+         "snippet": null,
+         "domain": "www.irs.gov",
+         "url": "https://www.irs.gov/instructions/i5472",
+         "thumbnail": null,
+         "source_name": null,
+         "publication_date": null,
+         "markdown": "[IRS Form 5472 instructions](https://www.irs.gov/instructions/i5472)"
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "Beneficial Ownership Information Reporting",
+         "snippet": null,
+         "domain": "www.fincen.gov",
+         "url": "https://www.fincen.gov/boi?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": "FinCEN",
+         "publication_date": null,
+         "markdown": null
+        },
+        {
+         "type": "chat_gpt_source",
+         "title": "Federal Register, Volume 91 Issue 156 (Friday, August 14, 2026)",
+         "snippet": null,
+         "domain": "www.govinfo.gov",
+         "url": "https://www.govinfo.gov/content/pkg/FR-2026-08-14/html/2026-16576.htm?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": "GovInfo",
+         "publication_date": "2026-08-14 00:00:00 +00:00",
+         "markdown": null
+        }
+       ],
+       "brand_entities": [
+        {
+         "type": "chat_gpt_brand_entity",
+         "title": "Online payment processing platform",
+         "category": "company",
+         "markdown": "Stripe",
+         "urls": null
+        }
+       ]
+      },
+      {
+       "type": "chat_gpt_table",
+       "rank_group": 2,
+       "rank_absolute": 8,
+       "text": null,
+       "markdown": "| Potential problem | Why it matters |\n|--------|--------|\n| Unsupported country of residence | Mercury may reject the application |\n| No genuine business operations | Mercury may question US business eligibility |\n| Registered agent address used as operating address | May fail verification |\n| Fake US address | Can trigger rejection or account closure |\n| Unclear source of funds | Can trigger additional compliance checks |\n| Restricted business category | Mercury or Stripe may decline the business |\n| Mismatched LLC and bank details | Can delay verification |\n| No functioning website | Stripe may request additional evidence |\n| Missing tax filings | Can create expensive compliance problems |\n\n",
+       "table": {
+        "table_header": [
+         "Potential problem",
+         "Why it matters"
+        ],
+        "table_content": [
+         [
+          "Unsupported country of residence",
+          "Mercury may reject the application"
+         ],
+         [
+          "No genuine business operations",
+          "Mercury may question US business eligibility"
+         ],
+         [
+          "Registered agent address used as operating address",
+          "May fail verification"
+         ],
+         [
+          "Fake US address",
+          "Can trigger rejection or account closure"
+         ],
+         [
+          "Unclear source of funds",
+          "Can trigger additional compliance checks"
+         ],
+         [
+          "Restricted business category",
+          "Mercury or Stripe may decline the business"
+         ],
+         [
+          "Mismatched LLC and bank details",
+          "Can delay verification"
+         ],
+         [
+          "No functioning website",
+          "Stripe may request additional evidence"
+         ],
+         [
+          "Missing tax filings",
+          "Can create expensive compliance problems"
+         ]
+        ]
+       },
+       "brand_entities": null
+      },
+      {
+       "type": "chat_gpt_text",
+       "rank_group": 5,
+       "rank_absolute": 9,
+       "markdown": "\nOne particularly important point: **Mercury and Stripe are separate approval decisions.** You could get your LLC and EIN successfully and still be rejected by one or both platforms.\n\n## 8\\. My recommended order of execution\n\nI would follow this sequence to avoid spending money before confirming eligibility.\n\n**Recommended setup checklist**\n\nof  completed %\n\n## 9\\. Official websites and resources\n\nThese are the sites I would use rather than paying an intermediary for everything.\n\n",
+       "sources": null,
+       "brand_entities": null
+      },
+      {
+       "type": "chat_gpt_table",
+       "rank_group": 3,
+       "rank_absolute": 10,
+       "text": null,
+       "markdown": "| Purpose | Official resource |\n|--------|--------|\n| Wyoming LLC registration | [Wyoming SOS](https://wyobiz.wyo.gov/) |\n| IRS EIN | [IRS EIN](https://www.irs.gov/businesses/employer-identification-number) |\n| Registered agent | [Northwest](https://www.northwestregisteredagent.com/) |\n| Business banking | [Mercury](https://mercury.com/) |\n| Payment processing | [Stripe](https://stripe.com/) |\n| Foreign-owned LLC tax filing | [IRS Form 5472](https://www.irs.gov/instructions/i5472) |\n| Ownership reporting | [FinCEN](https://www.fincen.gov/boi) |\n\n",
+       "table": {
+        "table_header": [
+         "Purpose",
+         "Official resource"
+        ],
+        "table_content": [
+         [
+          "Wyoming LLC registration",
+          "[Wyoming SOS](https://wyobiz.wyo.gov/)"
+         ],
+         [
+          "IRS EIN",
+          "[IRS EIN](https://www.irs.gov/businesses/employer-identification-number)"
+         ],
+         [
+          "Registered agent",
+          "[Northwest](https://www.northwestregisteredagent.com/)"
+         ],
+         [
+          "Business banking",
+          "[Mercury](https://mercury.com/)"
+         ],
+         [
+          "Payment processing",
+          "[Stripe](https://stripe.com/)"
+         ],
+         [
+          "Foreign-owned LLC tax filing",
+          "[IRS Form 5472](https://www.irs.gov/instructions/i5472)"
+         ],
+         [
+          "Ownership reporting",
+          "[FinCEN](https://www.fincen.gov/boi)"
+         ]
+        ]
+       },
+       "brand_entities": null
+      },
+      {
+       "type": "chat_gpt_text",
+       "rank_group": 6,
+       "rank_absolute": 11,
+       "markdown": "\n---\n\n## 10\\. Let me calculate the actual cost for your situation\n\nThere are three details that significantly affect whether this setup is practical\\:\n\n1. Your country of residence (this determines banking eligibility and potentially your tax obligations).\n2. Your business model (SaaS, e-commerce, consulting, agency, digital products, etc.).\n3. Whether you are the sole owner or have business partners.\n\n**Which country do you currently live in?**\n\nThat is the most important starting point. I can then assess Mercury eligibility, Stripe eligibility, the appropriate US tax structure, and give you a more accurate first-year and recurring cost estimate rather than a generic Wyoming LLC budget.",
+       "sources": null,
+       "brand_entities": null
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

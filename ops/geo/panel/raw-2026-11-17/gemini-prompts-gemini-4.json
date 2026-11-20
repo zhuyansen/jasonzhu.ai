@@ -1,0 +1,268 @@
+{
+ "version": "0.1.20261103",
+ "status_code": 20000,
+ "status_message": "Ok.",
+ "time": "24.8947 sec.",
+ "cost": 0.004,
+ "tasks_count": 1,
+ "tasks_error": 0,
+ "tasks": [
+  {
+   "id": "11170805-2225-0629-0000-3b8acc992e46",
+   "status_code": 20000,
+   "status_message": "Ok.",
+   "time": "24.7543 sec.",
+   "cost": 0.004,
+   "result_count": 1,
+   "path": [
+    "v3",
+    "ai_optimization",
+    "gemini",
+    "llm_scraper",
+    "live",
+    "advanced"
+   ],
+   "data": {
+    "api": "ai_optimization",
+    "function": "live",
+    "se": "gemini",
+    "keyword": "Where can I compare Gemini 4 coding prompt examples and benchmark demos?",
+    "language_code": "en",
+    "location_code": 2840,
+    "device": "desktop",
+    "os": "windows"
+   },
+   "result": [
+    {
+     "keyword": "Where can I compare Gemini 4 coding prompt examples and benchmark demos?",
+     "location_code": 2840,
+     "language_code": "en",
+     "model": "3.5 Flash-Lite",
+     "datetime": "2026-11-17 08:05:33 +00:00",
+     "markdown": "To compare **Gemini 4** coding prompt examples, benchmarks, and interactive demos, several primary developer hubs, official model documentation sites, and community showcases host these resources:[aiidelist.com](https://aiidelist.com/blog/gemini-4-carbon-examples-prompts#:~:text=Key%20Takeaways%20*%20Gemini%204%20Carbon%20community,produced%20an%20output.%20*%20Prompt%20availability%20varies.)\n\n### 1. Official Google & DeepMind Resources\n* **Google DeepMind Model Cards:** Provides the official benchmarking sheets, evaluation datasets (such as SWE-sweep, Terminal-Bench, and reasoning suites), and capability breakdowns across the Gemini 4 lineup (**Hydrogen**, **Argon**, and **Carbon**).[www.datacamp.com](https://www.datacamp.com/blog/gemini-4-hydrogen#:~:text=Other%20headline%20results%20Google%20published%3A%20Terminal-Bench%204.1%3A,Knowledge%20Agent%3A%2053.4%25%20Agent%20Arena%3A%20fifth%20place.) \n* **Google AI Studio & Official Blog Showcases:** Google regularly updates its feature posts (such as *Gemini 4 Argon in Action*) with structured walkthroughs, live sandbox embeds, and initial prompt descriptions for complex coding tasks like 3D physics engines, Three.js applications, and repository-scale refactoring.[blog.google](https://blog.google/products-and-platforms/products/gemini/gemini-4-argon-in-action/#:~:text=Googlers%20have%20used%20Argon%20to%20prototype%20complex,physical%20space%20and%20our%20AI%20Studio%20how-to.)\n\n### 2. Specialized Developer & Benchmark Curators\n* **AI IDE List (`aiidelist.com`):** Features deep-dive breakdowns comparing Gemini 4 prompt architectures, including side-by-side analyses of community-shared visual demos (such as interactive voxel environments, procedural animations, and SVG/canvas games) alongside the underlying prompt engineering practices.[aiidelist.com](https://aiidelist.com/blog/best-gemini-4-argon-prompts-examples#:~:text=original%20short%20prompt%20public%20%7C%20%7C%202,Interactive%20soft-body%20physics%20test%20%7C%20Community%20comparison%3B)\n* **PrompTessor:** Publishes practical evaluation guides, comparative prompting templates, and optimization checklists specifically tailored for Gemini 4's reasoning tiers (low, medium, high, and xhigh thinking levels).[promptessor.com](https://promptessor.com/blog/gemini-4-argon-prompting-guide#:~:text=Test%20prompt%20and%20configuration%20changes%20on%20representative,it%20can%20be%20applied%20to%20the%20evidence%3F)\n* **DataCamp & Technical Explainers:** Offers metric-by-metric analyses stacking Gemini 4 models against competing frontier options on software engineering benchmarks.\n\n---\n\nGemini 4 coding demo walkthrough AI Studio - youtube (3)\n\nWant me to pull a specific breakdown of Gemini 4 coding benchmarks compared to other frontier models? -> Provide a detailed comparison table of Gemini 4 coding and agentic benchmark scores against other current frontier models.",
+     "sources": [
+      {
+       "type": "gemini_source",
+       "title": "Gemini 4 Carbon: our next frontier model - Google Blog",
+       "snippet": null,
+       "domain": "blog.google",
+       "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+       "thumbnail": "https://t3.gstatic.com/faviconV2?url=https://blog.google/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "blog.google",
+       "publication_date": null,
+       "markdown": "Gemini 4 Carbon: our next frontier model - Google Blog"
+      },
+      {
+       "type": "gemini_source",
+       "title": "Gemini 4 Hydrogen - Model Card - Google DeepMind",
+       "snippet": null,
+       "domain": "deepmind.google",
+       "url": "https://deepmind.google/models/model-cards/gemini-4-hydrogen/",
+       "thumbnail": "https://t1.gstatic.com/faviconV2?url=https://deepmind.google/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "deepmind.google",
+       "publication_date": null,
+       "markdown": "Gemini 4 Hydrogen - Model Card - Google DeepMind"
+      },
+      {
+       "type": "gemini_source",
+       "title": "25 Gemini 4 Carbon Examples: Demos and Prompts - AI IDE List",
+       "snippet": null,
+       "domain": "aiidelist.com",
+       "url": "https://aiidelist.com/blog/gemini-4-carbon-examples-prompts",
+       "thumbnail": "https://t0.gstatic.com/faviconV2?url=https://aiidelist.com/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "aiidelist.com",
+       "publication_date": null,
+       "markdown": "25 Gemini 4 Carbon Examples: Demos and Prompts - AI IDE List"
+      },
+      {
+       "type": "gemini_source",
+       "title": "Gemini 4 Argon Prompting Guide: Tips & Examples - PrompTessor",
+       "snippet": null,
+       "domain": "promptessor.com",
+       "url": "https://promptessor.com/blog/gemini-4-argon-prompting-guide",
+       "thumbnail": "https://t2.gstatic.com/faviconV2?url=https://promptessor.com/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "promptessor.com",
+       "publication_date": null,
+       "markdown": "Gemini 4 Argon Prompting Guide: Tips & Examples - PrompTessor"
+      },
+      {
+       "type": "gemini_source",
+       "title": "Gemini 4 Hydrogen Explained: Features, Benchmarks & Pricing",
+       "snippet": null,
+       "domain": "www.datacamp.com",
+       "url": "https://www.datacamp.com/blog/gemini-4-hydrogen",
+       "thumbnail": "https://t1.gstatic.com/faviconV2?url=https://www.datacamp.com/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "www.datacamp.com",
+       "publication_date": null,
+       "markdown": "Gemini 4 Hydrogen Explained: Features, Benchmarks & Pricing"
+      },
+      {
+       "type": "gemini_source",
+       "title": "15 Best Gemini 4 Argon Prompts & Examples (2026) - AI IDE List",
+       "snippet": null,
+       "domain": "aiidelist.com",
+       "url": "https://aiidelist.com/blog/best-gemini-4-argon-prompts-examples",
+       "thumbnail": "https://t0.gstatic.com/faviconV2?url=https://aiidelist.com/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "aiidelist.com",
+       "publication_date": null,
+       "markdown": "15 Best Gemini 4 Argon Prompts & Examples (2026) - AI IDE List"
+      },
+      {
+       "type": "gemini_source",
+       "title": "8 examples of Gemini 4 Argon in action - Google Blog",
+       "snippet": null,
+       "domain": "blog.google",
+       "url": "https://blog.google/products-and-platforms/products/gemini/gemini-4-argon-in-action/",
+       "thumbnail": "https://t3.gstatic.com/faviconV2?url=https://blog.google/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "blog.google",
+       "publication_date": null,
+       "markdown": "8 examples of Gemini 4 Argon in action - Google Blog"
+      },
+      {
+       "type": "gemini_source",
+       "title": "25 Gemini 4 Carbon Examples: Demos and Prompts - AI IDE List",
+       "snippet": "Key Takeaways * Gemini 4 Carbon community examples span procedural 3D, \nvoxel environments, SVG illustration, animation, and browser games. The \ncollection below ...",
+       "domain": "aiidelist.com",
+       "url": "https://aiidelist.com/blog/gemini-4-carbon-examples-prompts#:~:text=Key%20Takeaways%20*%20Gemini%204%20Carbon%20community,produced%20an%20output.%20*%20Prompt%20availability%20varies.",
+       "thumbnail": "https://encrypted-tbn3.gstatic.com/favicon-tbn?q=tbn%3AANd9GcQ5CSg_q1lEg2Rao_wgDk2sTJUcZN2fp8uoewwaieXoXhWIONx9qVAJHEQazm-RenMYbimjNVpOjznYmPLxwtZDisYrnsjonjo",
+       "source_name": "AI IDE List",
+       "publication_date": null,
+       "markdown": "25 Gemini 4 Carbon Examples: Demos and Prompts - AI IDE List"
+      },
+      {
+       "type": "gemini_source",
+       "title": "Gemini 4 Hydrogen Explained: Features, Benchmarks & Pricing",
+       "snippet": "Other headline results Google published: Terminal-Bench 4.1: 57.0%, up from \n18.2% for Gemini 3.8 Flash. HLE-Diamond: 58.8%, which Google says leads its \nclass. A...",
+       "domain": "www.datacamp.com",
+       "url": "https://www.datacamp.com/blog/gemini-4-hydrogen#:~:text=Other%20headline%20results%20Google%20published%3A%20Terminal-Bench%204.1%3A,Knowledge%20Agent%3A%2053.4%25%20Agent%20Arena%3A%20fifth%20place.",
+       "thumbnail": "https://encrypted-tbn3.gstatic.com/favicon-tbn?q=tbn%3AANd9GcQJ9R23e3bCDgw6Cu9m_wv1OmwM3YiCW83Z2kKK2JALDc8NLOzpvWnp6j5IeKX0in7W9DAkuGTy6we2bpSIRpwApK_FBs5Fno9qcaY",
+       "source_name": "DataCamp",
+       "publication_date": null,
+       "markdown": "Gemini 4 Hydrogen Explained: Features, Benchmarks & Pricing"
+      },
+      {
+       "type": "gemini_source",
+       "title": "8 examples of Gemini 4 Argon in action - Google Blog",
+       "snippet": "Googlers have used Argon to prototype complex 3D visualizations, \nhigh-fidelity games, and interactive animations. When prompted to build an \napp to overlay shape...",
+       "domain": "blog.google",
+       "url": "https://blog.google/products-and-platforms/products/gemini/gemini-4-argon-in-action/#:~:text=Googlers%20have%20used%20Argon%20to%20prototype%20complex,physical%20space%20and%20our%20AI%20Studio%20how-to.",
+       "thumbnail": "https://encrypted-tbn1.gstatic.com/favicon-tbn?q=tbn%3AANd9GcQIp58q_YSOL5GW8V2l_hQElqgnntSNzxq2kQC44Eqpj-WBhUX4byJ9kwtra2d38r4xFPR1_cnhxiryLMbZPG-uxMH4PKS5",
+       "source_name": "Google Blog",
+       "publication_date": null,
+       "markdown": "8 examples of Gemini 4 Argon in action - Google Blog"
+      },
+      {
+       "type": "gemini_source",
+       "title": "15 Best Gemini 4 Argon Prompts & Examples (2026) - AI IDE List",
+       "snippet": "original short prompt public | | 2 | Desk Racer | Your desk turned into a \nminiature racing game | Google demo and creator walkthrough | | 3 | Pagoda \nTemple | Ph...",
+       "domain": "aiidelist.com",
+       "url": "https://aiidelist.com/blog/best-gemini-4-argon-prompts-examples#:~:text=original%20short%20prompt%20public%20%7C%20%7C%202,Interactive%20soft-body%20physics%20test%20%7C%20Community%20comparison%3B",
+       "thumbnail": "https://encrypted-tbn3.gstatic.com/favicon-tbn?q=tbn%3AANd9GcQ5CSg_q1lEg2Rao_wgDk2sTJUcZN2fp8uoewwaieXoXhWIONx9qVAJHEQazm-RenMYbimjNVpOjznYmPLxwtZDisYrnsjonjo",
+       "source_name": "AI IDE List",
+       "publication_date": null,
+       "markdown": "15 Best Gemini 4 Argon Prompts & Examples (2026) - AI IDE List"
+      },
+      {
+       "type": "gemini_source",
+       "title": "Gemini 4 Argon Prompting Guide: Tips & Examples - PrompTessor",
+       "snippet": "Test prompt and configuration changes on representative tasks before \nadopting them broadly. Gemini 4 Argon Prompting Checklist. Is the objective \nobservable and ...",
+       "domain": "promptessor.com",
+       "url": "https://promptessor.com/blog/gemini-4-argon-prompting-guide#:~:text=Test%20prompt%20and%20configuration%20changes%20on%20representative,it%20can%20be%20applied%20to%20the%20evidence%3F",
+       "thumbnail": "https://encrypted-tbn1.gstatic.com/favicon-tbn?q=tbn%3AANd9GcQTON8zhvwFZvf5aPkFWhSHSP6M2SBgZ3G5Qyrc3hloN6NdSSloCfrxTqeDeaxUXs_PIVx9mekYP76ntAsxIFxXJWRA0NtAcXqnpw",
+       "source_name": "PrompTessor",
+       "publication_date": null,
+       "markdown": "Gemini 4 Argon Prompting Guide: Tips & Examples - PrompTessor"
+      }
+     ],
+     "se_results_count": 0,
+     "item_types": [
+      "gemini_text"
+     ],
+     "items_count": 3,
+     "items": [
+      {
+       "type": "gemini_text",
+       "rank_group": 1,
+       "rank_absolute": 1,
+       "markdown": "To compare **Gemini 4** coding prompt examples, benchmarks, and interactive demos, several primary developer hubs, official model documentation sites, and community showcases host these resources:[aiidelist.com](https://aiidelist.com/blog/gemini-4-carbon-examples-prompts#:~:text=Key%20Takeaways%20*%20Gemini%204%20Carbon%20community,produced%20an%20output.%20*%20Prompt%20availability%20varies.)\n\n### 1. Official Google & DeepMind Resources\n* **Google DeepMind Model Cards:** Provides the official benchmarking sheets, evaluation datasets (such as SWE-sweep, Terminal-Bench, and reasoning suites), and capability breakdowns across the Gemini 4 lineup (**Hydrogen**, **Argon**, and **Carbon**).[www.datacamp.com](https://www.datacamp.com/blog/gemini-4-hydrogen#:~:text=Other%20headline%20results%20Google%20published%3A%20Terminal-Bench%204.1%3A,Knowledge%20Agent%3A%2053.4%25%20Agent%20Arena%3A%20fifth%20place.) \n* **Google AI Studio & Official Blog Showcases:** Google regularly updates its feature posts (such as *Gemini 4 Argon in Action*) with structured walkthroughs, live sandbox embeds, and initial prompt descriptions for complex coding tasks like 3D physics engines, Three.js applications, and repository-scale refactoring.[blog.google](https://blog.google/products-and-platforms/products/gemini/gemini-4-argon-in-action/#:~:text=Googlers%20have%20used%20Argon%20to%20prototype%20complex,physical%20space%20and%20our%20AI%20Studio%20how-to.)\n\n### 2. Specialized Developer & Benchmark Curators\n* **AI IDE List (`aiidelist.com`):** Features deep-dive breakdowns comparing Gemini 4 prompt architectures, including side-by-side analyses of community-shared visual demos (such as interactive voxel environments, procedural animations, and SVG/canvas games) alongside the underlying prompt engineering practices.[aiidelist.com](https://aiidelist.com/blog/best-gemini-4-argon-prompts-examples#:~:text=original%20short%20prompt%20public%20%7C%20%7C%202,Interactive%20soft-body%20physics%20test%20%7C%20Community%20comparison%3B)\n* **PrompTessor:** Publishes practical evaluation guides, comparative prompting templates, and optimization checklists specifically tailored for Gemini 4's reasoning tiers (low, medium, high, and xhigh thinking levels).[promptessor.com](https://promptessor.com/blog/gemini-4-argon-prompting-guide#:~:text=Test%20prompt%20and%20configuration%20changes%20on%20representative,it%20can%20be%20applied%20to%20the%20evidence%3F)\n* **DataCamp & Technical Explainers:** Offers metric-by-metric analyses stacking Gemini 4 models against competing frontier options on software engineering benchmarks.\n\n---",
+       "original_text": "To compare **Gemini 4** coding prompt examples, benchmarks, and interactive demos, several primary developer hubs, official model documentation sites, and community showcases host these resources:\n\n### 1. Official Google & DeepMind Resources\n* **Google DeepMind Model Cards:** Provides the official benchmarking sheets, evaluation datasets (such as SWE-sweep, Terminal-Bench, and reasoning suites), and capability breakdowns across the Gemini 4 lineup (**Hydrogen**, **Argon**, and **Carbon**). \n* **Google AI Studio & Official Blog Showcases:** Google regularly updates its feature posts (such as *Gemini 4 Argon in Action*) with structured walkthroughs, live sandbox embeds, and initial prompt descriptions for complex coding tasks like 3D physics engines, Three.js applications, and repository-scale refactoring.\n\n### 2. Specialized Developer & Benchmark Curators\n* **AI IDE List (`aiidelist.com`):** Features deep-dive breakdowns comparing Gemini 4 prompt architectures, including side-by-side analyses of community-shared visual demos (such as interactive voxel environments, procedural animations, and SVG/canvas games) alongside the underlying prompt engineering practices.\n* **PrompTessor:** Publishes practical evaluation guides, comparative prompting templates, and optimization checklists specifically tailored for Gemini 4's reasoning tiers (low, medium, high, and xhigh thinking levels).\n* **DataCamp & Technical Explainers:** Offers metric-by-metric analyses stacking Gemini 4 models against competing frontier options on software engineering benchmarks.\n\n---",
+       "sources": [
+        {
+         "type": "gemini_source",
+         "title": "25 Gemini 4 Carbon Examples: Demos and Prompts - AI IDE List",
+         "snippet": "Key Takeaways * Gemini 4 Carbon community examples span procedural 3D, \nvoxel environments, SVG illustration, animation, and browser games. The \ncollection below ...",
+         "domain": "aiidelist.com",
+         "url": "https://aiidelist.com/blog/gemini-4-carbon-examples-prompts#:~:text=Key%20Takeaways%20*%20Gemini%204%20Carbon%20community,produced%20an%20output.%20*%20Prompt%20availability%20varies.",
+         "thumbnail": "https://encrypted-tbn3.gstatic.com/favicon-tbn?q=tbn%3AANd9GcQ5CSg_q1lEg2Rao_wgDk2sTJUcZN2fp8uoewwaieXoXhWIONx9qVAJHEQazm-RenMYbimjNVpOjznYmPLxwtZDisYrnsjonjo",
+         "source_name": "AI IDE List",
+         "publication_date": null,
+         "markdown": "25 Gemini 4 Carbon Examples: Demos and Prompts - AI IDE List"
+        },
+        {
+         "type": "gemini_source",
+         "title": "Gemini 4 Hydrogen Explained: Features, Benchmarks & Pricing",
+         "snippet": "Other headline results Google published: Terminal-Bench 4.1: 57.0%, up from \n18.2% for Gemini 3.8 Flash. HLE-Diamond: 58.8%, which Google says leads its \nclass. A...",
+         "domain": "www.datacamp.com",
+         "url": "https://www.datacamp.com/blog/gemini-4-hydrogen#:~:text=Other%20headline%20results%20Google%20published%3A%20Terminal-Bench%204.1%3A,Knowledge%20Agent%3A%2053.4%25%20Agent%20Arena%3A%20fifth%20place.",
+         "thumbnail": "https://encrypted-tbn3.gstatic.com/favicon-tbn?q=tbn%3AANd9GcQJ9R23e3bCDgw6Cu9m_wv1OmwM3YiCW83Z2kKK2JALDc8NLOzpvWnp6j5IeKX0in7W9DAkuGTy6we2bpSIRpwApK_FBs5Fno9qcaY",
+         "source_name": "DataCamp",
+         "publication_date": null,
+         "markdown": "Gemini 4 Hydrogen Explained: Features, Benchmarks & Pricing"
+        },
+        {
+         "type": "gemini_source",
+         "title": "8 examples of Gemini 4 Argon in action - Google Blog",
+         "snippet": "Googlers have used Argon to prototype complex 3D visualizations, \nhigh-fidelity games, and interactive animations. When prompted to build an \napp to overlay shape...",
+         "domain": "blog.google",
+         "url": "https://blog.google/products-and-platforms/products/gemini/gemini-4-argon-in-action/#:~:text=Googlers%20have%20used%20Argon%20to%20prototype%20complex,physical%20space%20and%20our%20AI%20Studio%20how-to.",
+         "thumbnail": "https://encrypted-tbn1.gstatic.com/favicon-tbn?q=tbn%3AANd9GcQIp58q_YSOL5GW8V2l_hQElqgnntSNzxq2kQC44Eqpj-WBhUX4byJ9kwtra2d38r4xFPR1_cnhxiryLMbZPG-uxMH4PKS5",
+         "source_name": "Google Blog",
+         "publication_date": null,
+         "markdown": "8 examples of Gemini 4 Argon in action - Google Blog"
+        },
+        {
+         "type": "gemini_source",
+         "title": "15 Best Gemini 4 Argon Prompts & Examples (2026) - AI IDE List",
+         "snippet": "original short prompt public | | 2 | Desk Racer | Your desk turned into a \nminiature racing game | Google demo and creator walkthrough | | 3 | Pagoda \nTemple | Ph...",
+         "domain": "aiidelist.com",
+         "url": "https://aiidelist.com/blog/best-gemini-4-argon-prompts-examples#:~:text=original%20short%20prompt%20public%20%7C%20%7C%202,Interactive%20soft-body%20physics%20test%20%7C%20Community%20comparison%3B",
+         "thumbnail": "https://encrypted-tbn3.gstatic.com/favicon-tbn?q=tbn%3AANd9GcQ5CSg_q1lEg2Rao_wgDk2sTJUcZN2fp8uoewwaieXoXhWIONx9qVAJHEQazm-RenMYbimjNVpOjznYmPLxwtZDisYrnsjonjo",
+         "source_name": "AI IDE List",
+         "publication_date": null,
+         "markdown": "15 Best Gemini 4 Argon Prompts & Examples (2026) - AI IDE List"
+        },
+        {
+         "type": "gemini_source",
+         "title": "Gemini 4 Argon Prompting Guide: Tips & Examples - PrompTessor",
+         "snippet": "Test prompt and configuration changes on representative tasks before \nadopting them broadly. Gemini 4 Argon Prompting Checklist. Is the objective \nobservable and ...",
+         "domain": "promptessor.com",
+         "url": "https://promptessor.com/blog/gemini-4-argon-prompting-guide#:~:text=Test%20prompt%20and%20configuration%20changes%20on%20representative,it%20can%20be%20applied%20to%20the%20evidence%3F",
+         "thumbnail": "https://encrypted-tbn1.gstatic.com/favicon-tbn?q=tbn%3AANd9GcQTON8zhvwFZvf5aPkFWhSHSP6M2SBgZ3G5Qyrc3hloN6NdSSloCfrxTqeDeaxUXs_PIVx9mekYP76ntAsxIFxXJWRA0NtAcXqnpw",
+         "source_name": "PrompTessor",
+         "publication_date": null,
+         "markdown": "Gemini 4 Argon Prompting Guide: Tips & Examples - PrompTessor"
+        }
+       ]
+      },
+      {
+       "type": "gemini_text",
+       "rank_group": 2,
+       "rank_absolute": 2,
+       "markdown": "Gemini 4 coding demo walkthrough AI Studio - youtube (3)",
+       "original_text": "Gemini 4 coding demo walkthrough AI Studio - youtube (3)",
+       "sources": null
+      },
+      {
+       "type": "gemini_text",
+       "rank_group": 3,
+       "rank_absolute": 3,
+       "markdown": "Want me to pull a specific breakdown of Gemini 4 coding benchmarks compared to other frontier models? -> Provide a detailed comparison table of Gemini 4 coding and agentic benchmark scores against other current frontier models.",
+       "original_text": "Want me to pull a specific breakdown of Gemini 4 coding benchmarks compared to other frontier models? -> Provide a detailed comparison table of Gemini 4 coding and agentic benchmark scores against other current frontier models.",
+       "sources": null
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

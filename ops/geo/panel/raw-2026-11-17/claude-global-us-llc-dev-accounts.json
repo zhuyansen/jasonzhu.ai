@@ -1,0 +1,268 @@
+{
+ "version": "0.1.20261103",
+ "status_code": 20000,
+ "status_message": "Ok.",
+ "time": "33.5825 sec.",
+ "cost": 0.097954,
+ "tasks_count": 1,
+ "tasks_error": 0,
+ "tasks": [
+  {
+   "id": "11170804-2225-0612-0000-880ad31e9f15",
+   "status_code": 20000,
+   "status_message": "Ok.",
+   "time": "33.4024 sec.",
+   "cost": 0.097954,
+   "result_count": 1,
+   "path": [
+    "v3",
+    "ai_optimization",
+    "claude",
+    "llm_responses",
+    "live"
+   ],
+   "data": {
+    "api": "ai_optimization",
+    "function": "llm_responses",
+    "se": "claude",
+    "user_prompt": "How to register a Wyoming LLC, open Mercury bank, and apply for Apple and Google organization developer accounts from China without an SSN?",
+    "model_name": "claude-sonnet-4-5",
+    "web_search": true
+   },
+   "result": [
+    {
+     "model_name": "claude-sonnet-4-5-20250929",
+     "input_tokens": 22193,
+     "output_tokens": 1385,
+     "reasoning_tokens": 0,
+     "web_search": true,
+     "money_spent": 0.097354,
+     "datetime": "2026-11-17 08:05:15 +00:00",
+     "items": [
+      {
+       "type": "message",
+       "sections": [
+        {
+         "type": "text",
+         "text": "I'll search for current information on these processes, particularly focusing on requirements for non-US residents without SSNs.",
+         "annotations": null
+        }
+       ]
+      },
+      {
+       "type": "message",
+       "sections": [
+        {
+         "type": "text",
+         "text": "Let me search for the remaining information about Mercury bank and developer accounts.",
+         "annotations": null
+        }
+       ]
+      },
+      {
+       "type": "message",
+       "sections": [
+        {
+         "type": "text",
+         "text": "Based on the search results I obtained, here's a comprehensive guide for your situation:\n\n## 1. Registering a Wyoming LLC (No SSN Required)\n\n",
+         "annotations": null
+        },
+        {
+         "type": "text",
+         "text": "Wyoming has no residency requirement, so you can form an LLC there from any country without an SSN, an ITIN or a US visit.",
+         "annotations": [
+          {
+           "title": "Wyoming LLC for Non-Residents: No SSN, No Visit (2026)",
+           "url": "https://wyomingllc.co/wyoming-llc-non-residents/",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        },
+        {
+         "type": "text",
+         "text": "\n\n**Steps to form your Wyoming LLC:**\n\n- **Choose a business name** and verify availability\n- **Appoint a registered agent** with a physical Wyoming address (required by law)\n- ",
+         "annotations": null
+        },
+        {
+         "type": "text",
+         "text": "File the Articles of Organization with the Wyoming Secretary of State with the $100 state fee",
+         "annotations": [
+          {
+           "title": "Wyoming LLC for Non Residents",
+           "url": "https://corpbolt.com/help/company-formation/wyoming-llc-for-non-residents/",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        },
+        {
+         "type": "text",
+         "text": "\n- **Create an Operating Agreement** (not filed with the state but important for banking)\n- **Obtain an EIN (Employer Identification Number)** from the IRS\n\n**Getting an EIN without an SSN:**\n",
+         "annotations": null
+        },
+        {
+         "type": "text",
+         "text": "Without an SSN, apply by calling the IRS international line (+1 267-941-1099) to receive it the same day, or fax Form SS-4 to the IRS for processing in approximately 4 business days.",
+         "annotations": [
+          {
+           "title": "US LLC for Non-US Residents — Complete 2026 Guide",
+           "url": "https://llcstarters.com/non-residents/",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        },
+        {
+         "type": "text",
+         "text": "\n\n",
+         "annotations": null
+        },
+        {
+         "type": "text",
+         "text": "On line 7b of Form SS-4, where the form asks for an SSN or ITIN, you write \"Foreign\" - this is explicitly permitted by IRS instructions",
+         "annotations": [
+          {
+           "title": "EIN, SSN, and ITIN: What Every Foreign LLC Owner Actually Needs to Know",
+           "url": "https://wyomingexperts.com/blog/ein-itin-ssn",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        },
+        {
+         "type": "text",
+         "text": "\n\n**Timeline:** ",
+         "annotations": null
+        },
+        {
+         "type": "text",
+         "text": "Wyoming processes Articles of Organization in 1–3 business days.",
+         "annotations": [
+          {
+           "title": "US LLC for Non-US Residents — Complete 2026 Guide",
+           "url": "https://llcstarters.com/non-residents/",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        },
+        {
+         "type": "text",
+         "text": "\n\n## 2. Opening a Mercury Bank Account\n\nUnfortunately, I need to search for more current information about Mercury's specific policies for China-based applicants, as this wasn't covered in my initial search results. However, based on the information I found:\n\n",
+         "annotations": null
+        },
+        {
+         "type": "text",
+         "text": "Mercury and Relay are the most reliable options for non-resident LLC banking. Both accept remote applications without requiring a US visit.",
+         "annotations": [
+          {
+           "title": "Wyoming LLC for Non-Residents: Complete Guide",
+           "url": "https://wyomingllcformation.co/wyoming-llc/non-resident-founders/",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        },
+        {
+         "type": "text",
+         "text": "\n\n**Important note:** Mercury and other US banks have varying policies regarding which countries they accept applications from. China may have specific restrictions due to banking compliance regulations. You should:\n\n1. Have your Wyoming LLC fully formed with EIN\n2. Prepare your Operating Agreement and Articles of Organization\n3. Apply directly through Mercury's website\n4. Be prepared for additional verification requirements\n\nAlternative options mentioned: ",
+         "annotations": null
+        },
+        {
+         "type": "text",
+         "text": "Relay and Wise Business take online applications from non-resident-owned Wyoming LLCs with no SSN and no branch visit",
+         "annotations": [
+          {
+           "title": "Wyoming LLC for Non-Residents: No SSN, No Visit (2026)",
+           "url": "https://wyomingllc.co/wyoming-llc-non-residents/",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        },
+        {
+         "type": "text",
+         "text": "\n\n## 3. Apple Developer Organization Account\n\nFor Apple's organization developer account, you typically need:\n- A D-U-N-S Number for your LLC (free from Dun & Bradstreet)\n- Your LLC's EIN (which you'll have)\n- Legal entity documentation (Articles of Organization)\n- Website or online presence\n\nApple allows organizations to enroll using their EIN instead of an SSN. The process involves:\n1. Apply for a D-U-N-S Number using your Wyoming LLC information\n2. Enroll as an organization through Apple Developer Program\n3. Provide your EIN and business documentation\n4. Pay the $99/year fee\n\n## 4. Google Play Developer Organization Account\n\nGoogle Play Console allows organization accounts with:\n- Your LLC's business information\n- Payment method (credit card or bank account)\n- $25 one-time registration fee\n- Business verification documentation\n\nYou can use your EIN for tax purposes instead of an SSN.\n\n## Key Considerations for China-Based Applicants\n\n1. **Banking challenges:** US banks have varying policies on Chinese residents/IP addresses. Consider using a VPN or working with a formation service that provides banking introductions.\n\n2. **Payment processing:** You may need Stripe or other payment processors, which also have country-specific requirements.\n\n3. **Tax compliance:** As a foreign-owned LLC with no US operations, you'll likely need to file Form 5472 annually with the IRS.\n\n4. **Use formation services:** Companies like Wyoming Experts, HynoGo, or similar can handle the entire process remotely and may have better success rates with banking applications.\n\nWould you like me to search for more specific information about Mercury's policies for China-based applicants or details about the developer account application processes?",
+         "annotations": null
+        }
+       ]
+      }
+     ],
+     "fan_out_queries": [
+      "Wyoming LLC registration non-US resident without SSN 2026",
+      "Mercury bank account foreign LLC no SSN requirements",
+      "Apple Developer organization account without SSN foreign company",
+      "Google Play developer account organization without SSN",
+      "Mercury bank foreign LLC China non-resident 2026",
+      "Apple Developer Program organization EIN foreign company",
+      "Google Play Console organization developer account EIN"
+     ],
+     "search_results": [
+      {
+       "title": "Wyoming LLC for Non-Residents: No SSN, No Visit (2026)",
+       "url": "https://wyomingllc.co/wyoming-llc-non-residents/",
+       "date": "2026-11-08 08:05:15 +00:00",
+       "snippet": null
+      },
+      {
+       "title": "Wyoming LLC for Non-Residents: Complete Guide",
+       "url": "https://wyomingllcformation.co/wyoming-llc/non-resident-founders/",
+       "date": "2026-08-02 08:05:15 +00:00",
+       "snippet": null
+      },
+      {
+       "title": "US LLC for Non-US Residents — Complete 2026 Guide",
+       "url": "https://llcstarters.com/non-residents/",
+       "date": "2026-09-08 08:05:15 +00:00",
+       "snippet": null
+      },
+      {
+       "title": "Wyoming LLC for Non-Residents 2026 — $100 State Fee",
+       "url": "https://hynogo.com/wyoming-llc-for-non-residents",
+       "date": "2026-10-06 08:05:15 +00:00",
+       "snippet": null
+      },
+      {
+       "title": "Gun laws in Wyoming",
+       "url": "https://en.wikipedia.org/wiki/Gun_laws_in_Wyoming",
+       "date": null,
+       "snippet": null
+      },
+      {
+       "title": "What Non-US Founders Need to Know About Forming a Wyoming LLC (2026)",
+       "url": "https://wyomingexperts.com/blog/what-should-i-know-forming-wyoming-llc-non-us-founder",
+       "date": "2026-07-27 08:05:15 +00:00",
+       "snippet": null
+      },
+      {
+       "title": "Wyoming LLC for Non Residents",
+       "url": "https://corpbolt.com/help/company-formation/wyoming-llc-for-non-residents/",
+       "date": "2026-07-27 08:05:15 +00:00",
+       "snippet": null
+      },
+      {
+       "title": "Wyoming LLC for Non-US Residents",
+       "url": "https://wyomingexperts.com/services/form-a-wyoming-llc/non-us-residents",
+       "date": "2026-04-16 08:05:15 +00:00",
+       "snippet": null
+      },
+      {
+       "title": "EIN, SSN, and ITIN: What Every Foreign LLC Owner Actually Needs to Know",
+       "url": "https://wyomingexperts.com/blog/ein-itin-ssn",
+       "date": "2026-09-09 08:05:15 +00:00",
+       "snippet": null
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,191 @@
+{
+ "version": "0.1.20261103",
+ "status_code": 20000,
+ "status_message": "Ok.",
+ "time": "4.4487 sec.",
+ "cost": 0.006152,
+ "tasks_count": 1,
+ "tasks_error": 0,
+ "tasks": [
+  {
+   "id": "11170804-2225-0612-0000-959c4946ba6f",
+   "status_code": 20000,
+   "status_message": "Ok.",
+   "time": "4.4384 sec.",
+   "cost": 0.006152,
+   "result_count": 1,
+   "path": [
+    "v3",
+    "ai_optimization",
+    "perplexity",
+    "llm_responses",
+    "live"
+   ],
+   "data": {
+    "api": "ai_optimization",
+    "function": "llm_responses",
+    "se": "perplexity",
+    "user_prompt": "How to register a UK limited company online from abroad for around 50 pounds?",
+    "model_name": "sonar",
+    "web_search_country_iso_code": "US"
+   },
+   "result": [
+    {
+     "model_name": "sonar",
+     "input_tokens": 23,
+     "output_tokens": 529,
+     "reasoning_tokens": 0,
+     "web_search": true,
+     "money_spent": 0.005552,
+     "datetime": "2026-11-17 08:04:46 +00:00",
+     "items": [
+      {
+       "type": "message",
+       "sections": [
+        {
+         "type": "text",
+         "text": "Yes. A non-UK resident can form a UK private limited company online, but the **official incorporation fee is now £100**, not about £50.[1][2]\n\n## Cheapest practical route\n\n1. **Choose the company jurisdiction**\n   - England and Wales, Scotland, or Northern Ireland.\n   - You need a physical registered office in the same jurisdiction; a PO box is not acceptable.[4]\n\n2. **Choose a company name**\n   - Check that it is available and does not contain restricted words.\n   - Most companies use a name ending in “Limited” or “Ltd.”[5]\n\n3. **Prepare the required information**\n   - At least one director aged 16 or over.\n   - Shareholders and share allocation.\n   - People with significant control (PSC).\n   - Registered office and registered email address.\n   - SIC code describing the business.\n   - Standard model articles are usually sufficient for a simple company.[4][5]\n\n4. **Verify identity**\n   - Directors and relevant PSCs may need to verify their identities and obtain Companies House personal codes.\n   - This can generally be completed online from abroad using GOV.UK One Login or an authorised formation provider.[4]\n\n5. **Apply through the official GOV.UK Companies House service**\n   - Create a Government Gateway account.\n   - Complete the online application.\n   - Pay the **£100 Companies House fee by card**.\n   - Registration is usually completed within 24 hours.[2][4]\n\n6. **Receive the incorporation documents**\n   - Companies House issues a certificate of incorporation and company number.\n   - Corporation Tax registration is normally set up at the same time unless the company is dormant.[2]\n\n## What £50 can and cannot cover\n\n- **£50 is not currently enough for online incorporation**, because the government fee alone is £100.[1][2]\n- £50 may cover an introductory formation-agent service, but check whether the £100 Companies House fee is extra.\n- A UK registered-office address for a non-resident commonly costs extra annually.\n- The annual online confirmation statement currently costs **£50**.[6]\n\n## Likely minimum budget\n\n| Item | Approximate cost |\n|---|---:|\n| Companies House online incorporation | £100 |\n| Registered office service, if needed | Extra; provider-dependent |\n| Annual confirmation statement | £50 per year |\n| Bank account, accounting, tax filings | Extra |\n\nAvoid providers advertising “£50 total” unless they clearly state that the government incorporation fee, registered office, identity checks, and taxes are included.",
+         "annotations": [
+          {
+           "title": "Register a private or public company (IN01) - GOV.UK",
+           "url": "https://www.gov.uk/government/publications/register-a-private-or-public-company-in01",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "limited-company-formation",
+           "url": "https://www.gov.uk/api/content/limited-company-formation",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "How to Start a Business in the UK Step by Step (2026)",
+           "url": "https://binderr.com/marketplace/uk/start-a-business-in-the-uk",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Set up a private limited company: Register your company",
+           "url": "https://www.gov.uk/limited-company-formation/register-your-company",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Set up a private limited company: Limited companies - GOV.UK",
+           "url": "https://www.gov.uk/limited-company-formation/setting-up",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "UK Business Registration, Sole Trader or Ltd (2026 Guide)",
+           "url": "https://www.binderr.com/marketplace/uk/register-a-business-in-the-uk",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Register as an overseas company - GOV.UK",
+           "url": "https://www.gov.uk/register-as-an-overseas-company",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "How to Register a Limited Company in England (2026)",
+           "url": "https://www.binderr.com/marketplace/uk/register-a-company-in-england",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Companies House fees",
+           "url": "https://www.gov.uk/government/publications/companies-house-fees/companies-house-fees",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Register a UK Company as a Non-Resident | Clearfile",
+           "url": "https://eulegalservices.com/business-setup/register-company-uk",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "fan_out_queries": null,
+     "search_results": [
+      {
+       "title": "Register a private or public company (IN01) - GOV.UK",
+       "url": "https://www.gov.uk/government/publications/register-a-private-or-public-company-in01",
+       "date": "2026-11-05 00:00:00 +00:00",
+       "snippet": "Application to register (incorporate) a private or public company within the UK.\n...\nYou can register a private limited company online.\nOur online service costs £100.\n...\nUse our list of nationalities and countries to complete your form.\nWe’ll only accept entries from this standard list."
+      },
+      {
+       "title": "limited-company-formation",
+       "url": "https://www.gov.uk/api/content/limited-company-formation",
+       "date": "2026-10-16 00:00:00 +00:00",
+       "snippet": "ody\":\"<p>When you register your company you need:</p>\\n\\n<ul>\\n  <li>a ‘memorandum of association’ - a legal statement signed by all initial shareholders or guarantors agreeing to form the company</li>\\n  <li>‘articles of association’ - written rules about running the company agreed by the sharehold..."
+      },
+      {
+       "title": "How to Start a Business in the UK Step by Step (2026)",
+       "url": "https://binderr.com/marketplace/uk/start-a-business-in-the-uk",
+       "date": "2026-11-14 00:00:00 +00:00",
+       "snippet": "The harder part is the admin around the filing.\n...\nAn online application at Companies House has cost £100 since the fee change of 1 February 2026, and a paper one £124.\n...\nStarting a UK business as a company follows a clear order: plan the setup, choose the name, verify each director, form the com..."
+      },
+      {
+       "title": "Set up a private limited company: Register your company",
+       "url": "https://www.gov.uk/limited-company-formation/register-your-company",
+       "date": "2026-10-03 00:00:00 +00:00",
+       "snippet": "Use this service to register your company with Companies House.\nYou will usually be set up for Corporation Tax at the same time, unless your company or association is ‘dormant’.\nYou may need the Companies House personal code you received after verifying your identity to register your company.\n...\nYo..."
+      },
+      {
+       "title": "Set up a private limited company: Limited companies - GOV.UK",
+       "url": "https://www.gov.uk/limited-company-formation/setting-up",
+       "date": "2026-10-08 00:00:00 +00:00",
+       "snippet": "3. Choose a company name\n4. Check the rules for registered office addresses and email addresses\n5. Appoint directors and a company secretary\n6. Choose your shareholders for companies limited by shares\n7. Choose guarantors for a company limited by guarantee\n8. Prepare documents agreeing how to run yo..."
+      },
+      {
+       "title": "UK Business Registration, Sole Trader or Ltd (2026 Guide)",
+       "url": "https://www.binderr.com/marketplace/uk/register-a-business-in-the-uk",
+       "date": "2026-11-16 00:00:00 +00:00",
+       "snippet": "The hard part is the paperwork around it.\n...\nA limited company costs £100 to register online with Companies House, or £124 on paper, under the fees in force since 1 February 2026.\n...\nWe confirm the structure with you, usually a private company limited by shares, and check the name against the regi..."
+      },
+      {
+       "title": "Register as an overseas company - GOV.UK",
+       "url": "https://www.gov.uk/register-as-an-overseas-company",
+       "date": "2026-10-02 00:00:00 +00:00",
+       "snippet": "You must register an overseas company with Companies House if you want to set up a place of business in the UK.\n...\nYou must fill in form OS IN01 and send it to Companies House within 1 month of opening for business.\nThe address is on the form along with what documents you need to send.\nYou must sen..."
+      },
+      {
+       "title": "How to Register a Limited Company in England (2026)",
+       "url": "https://www.binderr.com/marketplace/uk/register-a-company-in-england",
+       "date": "2026-10-09 00:00:00 +00:00",
+       "snippet": "Registering a company here is fast, cheap and open to founders from anywhere, and the result is a company that banks and clients around the world know how to deal with.\n...\nTo register a company in England, you verify the people, choose a name and an English or Welsh address, prepare the shares and ..."
+      },
+      {
+       "title": "Companies House fees",
+       "url": "https://www.gov.uk/government/publications/companies-house-fees/companies-house-fees",
+       "date": "2026-10-03 00:00:00 +00:00",
+       "snippet": "|Overseas company|Online|Paper|\n|--|--|--|\n|Registration of a UK establishment of an overseas company| |£124|\n|Change of corporate name or alternative name of an overseas company| |£30|\n|Annual document processing fee payable with the overseas company accounts|£50|£110|"
+      },
+      {
+       "title": "Register a UK Company as a Non-Resident | Clearfile",
+       "url": "https://eulegalservices.com/business-setup/register-company-uk",
+       "date": "2026-11-01 00:00:00 +00:00",
+       "snippet": "A founder living outside the UK can register a private limited company online: directors do not have to be UK residents, but each director must verify identity with Companies House and the company needs a physical UK registered office.\n...\nYes.\nIncorporation is filed online with Companies House, and..."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

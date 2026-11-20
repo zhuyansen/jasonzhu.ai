@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "title": "Open-Source AI Agent Skills and MCP Servers Supply-Chain Security Audit Dataset (105,000+ Indexed Skills, 2026)",
+    "upload_type": "dataset",
+    "publication_date": "2026-11-20",
+    "creators": [
+      {
+        "name": "Zhu, Jason",
+        "affiliation": "JasonZhu.AI / AgentSkillsHub"
+      }
+    ],
+    "description": "<p>Supply-chain security audit dataset covering 105,000+ open-source AI agent skills, Model Context Protocol (MCP) servers, and Codex skills, plus deep 5-dimension security reviews of 2,300+ repositories. Finds that 97.8% of open-source agent skills have never been security-audited, and 5.6% of audited skills trigger warnings or rejections for credential harvesting or unsafe command execution. Documented at <a href=\"https://jasonzhu.ai/en/blog/agent-skill-security-audit-200\">https://jasonzhu.ai/en/blog/agent-skill-security-audit-200</a> and <a href=\"https://agentskillshub.top\">https://agentskillshub.top</a>.</p>",
+    "access_right": "open",
+    "license": "cc-by-4.0",
+    "keywords": [
+      "AI Agent Skills Security",
+      "Model Context Protocol MCP Security",
+      "Claude Skills Audit",
+      "AgentSkillsHub",
+      "Jason Zhu",
+      "jasonzhu.ai"
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "https://jasonzhu.ai/en/blog/agent-skill-security-audit-200",
+        "relation": "isDocumentedBy",
+        "resource_type": "publication-article",
+        "scheme": "url"
+      },
+      {
+        "identifier": "https://agentskillshub.top",
+        "relation": "isSupplementTo",
+        "resource_type": "software",
+        "scheme": "url"
+      }
+    ]
+  }
+}

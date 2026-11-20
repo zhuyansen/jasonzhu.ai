@@ -1,0 +1,191 @@
+{
+ "version": "0.1.20261103",
+ "status_code": 20000,
+ "status_message": "Ok.",
+ "time": "4.2495 sec.",
+ "cost": 0.006105,
+ "tasks_count": 1,
+ "tasks_error": 0,
+ "tasks": [
+  {
+   "id": "11170800-2225-0612-0000-bd7efc610626",
+   "status_code": 20000,
+   "status_message": "Ok.",
+   "time": "4.1912 sec.",
+   "cost": 0.006105,
+   "result_count": 1,
+   "path": [
+    "v3",
+    "ai_optimization",
+    "perplexity",
+    "llm_responses",
+    "live"
+   ],
+   "data": {
+    "api": "ai_optimization",
+    "function": "llm_responses",
+    "se": "perplexity",
+    "user_prompt": "What does 200,000 checkout links data show about indie developer payment platforms in 2026?",
+    "model_name": "sonar",
+    "web_search_country_iso_code": "US"
+   },
+   "result": [
+    {
+     "model_name": "sonar",
+     "input_tokens": 27,
+     "output_tokens": 478,
+     "reasoning_tokens": 0,
+     "web_search": true,
+     "money_spent": 0.005505,
+     "datetime": "2026-11-17 08:00:55 +00:00",
+     "items": [
+      {
+       "type": "message",
+       "sections": [
+        {
+         "type": "text",
+         "text": "The 200,000-checkout-link dataset suggests that **indie software and AI sellers are moving toward newer Merchant-of-Record platforms, while Stripe and Gumroad still dominate overall volume**.\n\n- **The indie seller market is expanding rapidly:** about 21,000 new sellers appeared in 2023, 29,000 in 2024, 56,000 in 2025, and 82,000 through October 15, 2026.[1]\n- **Software is becoming a larger share of new businesses:** it rose from roughly 5% of new sellers in 2023 to 8% in 2025 and about 20% in September 2026. AI products increased from 2% to 12% over the broader period.[1]\n- **Stripe remains the clear volume leader:** it accounted for about 102,590 new sellers since 2025, compared with 28,860 for Gumroad and 4,637 for Lemon Squeezy.[2]\n- **Newer platforms attract a much higher concentration of software and AI products:** among new sellers, software represented 71% on Dodo Payments, 65% on Creem, and 58% on Polar, versus 9% on Stripe and 11% on Gumroad.[2]\n- **AI sellers particularly favor Dodo, Polar, and Creem:** AI products made up 29% of Dodo’s new sellers, 27% of Polar’s, and 24% of Creem’s, compared with 7% on Stripe and 8% on Gumroad.[2]\n- **The likely reason is product fit:** these newer services act as Merchant of Record providers, handling worldwide sales-tax obligations, and some support sellers in countries that Stripe does not, including mainland China for certain platforms.[1]\n- **The data has limitations:** it counts websites displaying recognizable checkout links, not verified companies, revenue, transactions, or unique founders. One seller may operate multiple domains, and duplicated or malicious links can distort counts.[1]\n\n**Bottom line:** Stripe and Gumroad remain the default choices for the broad indie market, but the fastest-growing segment—especially AI and software—is disproportionately choosing specialized platforms such as Dodo Payments, Polar, and Creem for tax handling, international availability, and developer-focused selling features.[1][2]",
+         "annotations": [
+          {
+           "title": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report",
+           "url": "https://jasonzhu.ai/en/blog/indie-payments-report-2026",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "How to Choose a Payment Platform as an Indie Developer",
+           "url": "https://jasonzhu.ai/en/blog/choose-payment-platform-2026",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Blog | JasonZhu.AI",
+           "url": "https://jasonzhu.ai/en/blog",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Indie Seller Weekly #5: Bring-Your-Own-Key AI Tools Sold for a One-Time Price Are Multiplying",
+           "url": "https://jasonzhu.ai/en/blog/chuhai-weekly-05",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Indie Seller Weekly #4: New Sellers Doubled in October, and AI Front Desks for Small Shops Are Everywhere",
+           "url": "https://jasonzhu.ai/en/blog/chuhai-weekly-04",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Indie Seller Weekly #6: Lemon Squeezy Is Shutting Down, and 195 Sellers Just Opened Shop There",
+           "url": "https://jasonzhu.ai/en/blog/chuhai-weekly-06",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "An indie developer's road abroad: build, get paid, grow - JasonZhu.AI",
+           "url": "https://jasonzhu.ai/en/go-global",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Indie Seller Weekly #3: Guardrails for Agents, Selling the Confidence to Let Go",
+           "url": "https://jasonzhu.ai/en/blog/chuhai-weekly-03",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Indie Seller Weekly #2: Tools Built Around Coding Agents, Sold as One-Time Purchases",
+           "url": "https://jasonzhu.ai/en/blog/chuhai-weekly-02",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Indie Seller Weekly #1: One in Five New Sellers Is Selling Software",
+           "url": "https://jasonzhu.ai/en/blog/chuhai-weekly-01",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "fan_out_queries": null,
+     "search_results": [
+      {
+       "title": "What 200,000 Checkout Links Say: The 2026 Indie Payments Report",
+       "url": "https://jasonzhu.ai/en/blog/indie-payments-report-2026",
+       "date": "2026-11-03 00:00:00 +00:00",
+       "snippet": "# What 200,000 Checkout Links Say: The 2026 Indie Payments Report\nIf a website links to a checkout page (a Stripe Payment Link, a Gumroad product, or a Lemon Squeezy, Polar, Creem, Dodo Payments or Paddle checkout), I count it as selling through that platform.\nOn that basis I counted every seller I ..."
+      },
+      {
+       "title": "How to Choose a Payment Platform as an Indie Developer",
+       "url": "https://jasonzhu.ai/en/blog/choose-payment-platform-2026",
+       "date": "2026-11-09 00:00:00 +00:00",
+       "snippet": "# How to Choose a Payment Platform as an Indie Developer: 8 Compared, Plus What 200,000 Sellers Picked (2026)\nThis post puts eight common platforms side by side: their fees, whether they handle sales tax worldwide for you (Merchant of Record, MoR below), and whether a person or company in mainland C..."
+      },
+      {
+       "title": "Blog | JasonZhu.AI",
+       "url": "https://jasonzhu.ai/en/blog",
+       "date": "2026-11-09 00:00:00 +00:00",
+       "snippet": "Fees, Merchant of Record status and whether sellers in mainland China can get paid, for Stripe, Lemon Squeezy, Polar, Creem, Paddle, Gumroad, Dodo and Waffo, plus what 200,000 sellers actually chose: software and AI sellers increasingly go to Dodo, Polar and Creem.\n...\n### What 200,000 Checkout Link..."
+      },
+      {
+       "title": "Indie Seller Weekly #5: Bring-Your-Own-Key AI Tools Sold for a One-Time Price Are Multiplying",
+       "url": "https://jasonzhu.ai/en/blog/chuhai-weekly-05",
+       "date": "2026-11-17 00:00:00 +00:00",
+       "snippet": "Every week I count the websites that newly put up checkout links on 8 payment platforms (Stripe, Gumroad, Lemon Squeezy, Polar, Creem, Dodo, Paddle, Waffo) to see what people are selling, what is picking up, and which needs nobody has served yet.\n## This week's numbers\n- The link graph picked up **4..."
+      },
+      {
+       "title": "Indie Seller Weekly #4: New Sellers Doubled in October, and AI Front Desks for Small Shops Are Everywhere",
+       "url": "https://jasonzhu.ai/en/blog/chuhai-weekly-04",
+       "date": "2026-11-09 00:00:00 +00:00",
+       "snippet": "Every week I count the websites that newly put up checkout links on 8 payment platforms (Stripe, Gumroad, Lemon Squeezy, Polar, Creem, Dodo, Paddle, Waffo) to see what people are selling, what is picking up, and which needs nobody has served yet.\n## This week's numbers\n- The link graph picked up **6..."
+      },
+      {
+       "title": "Indie Seller Weekly #6: Lemon Squeezy Is Shutting Down, and 195 Sellers Just Opened Shop There",
+       "url": "https://jasonzhu.ai/en/blog/chuhai-weekly-06",
+       "date": "2026-11-17 00:00:00 +00:00",
+       "snippet": "Every week I count the websites that newly put up checkout links on 8 payment platforms (Stripe, Gumroad, Lemon Squeezy, Polar, Creem, Dodo, Paddle, Waffo) to see what people are selling, what is picking up, and which needs nobody has served yet.\n## This week's numbers\n- The link graph picked up **4..."
+      },
+      {
+       "title": "An indie developer's road abroad: build, get paid, grow - JasonZhu.AI",
+       "url": "https://jasonzhu.ai/en/go-global",
+       "date": "2026-11-10 00:00:00 +00:00",
+       "snippet": "I counted nine AI citations for every AI click, and the free Bing AI Performance and Clarity citation reports show the citations that never become clicks.\n...\n- How to Choose a Payment Platform as an Indie Developer: 8 Compared, Plus What 200,000 Sellers Picked (2026)2026-10-15\n- What 200,000 Checko..."
+      },
+      {
+       "title": "Indie Seller Weekly #3: Guardrails for Agents, Selling the Confidence to Let Go",
+       "url": "https://jasonzhu.ai/en/blog/chuhai-weekly-03",
+       "date": "2026-11-02 00:00:00 +00:00",
+       "snippet": "Every week I count the websites that just put up a checkout link on one of 8 payment platforms (Stripe, Gumroad, Lemon Squeezy, Polar, Creem, Dodo, Paddle, and starting this week Waffo), to see what people are selling, what is taking off, and which needs nobody is serving yet.\n## This week in number..."
+      },
+      {
+       "title": "Indie Seller Weekly #2: Tools Built Around Coding Agents, Sold as One-Time Purchases",
+       "url": "https://jasonzhu.ai/en/blog/chuhai-weekly-02",
+       "date": "2026-11-09 00:00:00 +00:00",
+       "snippet": "Every week I count the websites that just put up a checkout link on one of 7 payment platforms (Stripe, Gumroad, Lemon Squeezy, Polar, Creem, Dodo, Paddle), to see what people are selling, what is taking off, and which needs nobody is serving yet.\n## This week in numbers\n- The link graph picked up *..."
+      },
+      {
+       "title": "Indie Seller Weekly #1: One in Five New Sellers Is Selling Software",
+       "url": "https://jasonzhu.ai/en/blog/chuhai-weekly-01",
+       "date": "2026-11-02 00:00:00 +00:00",
+       "snippet": "Every week I count the websites that just put up a checkout link on one of 7 payment platforms (Stripe, Gumroad, Lemon Squeezy, Polar, Creem, Dodo, Paddle), to see what people are selling, what is taking off, and which needs nobody is serving yet.\n## This week in numbers\n- The link graph picked up *..."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

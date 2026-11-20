@@ -1,0 +1,186 @@
+{
+ "version": "0.1.20261103",
+ "status_code": 20000,
+ "status_message": "Ok.",
+ "time": "24.5261 sec.",
+ "cost": 0.004,
+ "tasks_count": 1,
+ "tasks_error": 0,
+ "tasks": [
+  {
+   "id": "11170802-2225-0629-0000-33ff0a3ff717",
+   "status_code": 20000,
+   "status_message": "Ok.",
+   "time": "23.9691 sec.",
+   "cost": 0.004,
+   "result_count": 1,
+   "path": [
+    "v3",
+    "ai_optimization",
+    "gemini",
+    "llm_scraper",
+    "live",
+    "advanced"
+   ],
+   "data": {
+    "api": "ai_optimization",
+    "function": "live",
+    "se": "gemini",
+    "keyword": "Where can I find a public database of backlink spam doorway domains and link-selling networks?",
+    "language_code": "en",
+    "location_code": 2840,
+    "device": "desktop",
+    "os": "windows"
+   },
+   "result": [
+    {
+     "keyword": "Where can I find a public database of backlink spam doorway domains and link-selling networks?",
+     "location_code": 2840,
+     "language_code": "en",
+     "model": "3.5 Flash-Lite",
+     "datetime": "2026-11-17 08:02:25 +00:00",
+     "markdown": "Public, continuously updated, standalone databases exclusively tracking \"backlink spam doorway domains\" or \"link-selling networks\" are **rarely published as open-source text lists** by major search engines or security firms. \n\nBecause link-spam networks (such as Private Blog Networks or PBNs, automated doorway generators, and paid link farms) change their infrastructure, hosting providers, and domain names daily to evade algorithmic penalties, static lists become obsolete almost immediately. \n\nInstead of a single centralized registry, security researchers, SEO analysts, and threat intelligence professionals track and uncover these networks using a combination of infrastructure intelligence tools, public telemetry, and heuristic analysis techniques.\n\n---\n\n### 1. Infrastructure & DNS Intelligence Platforms (OSINT)\nAnalysts look for patterns in domain registration, hosting footprints, and naming conventions to map out link-selling rings. You can query these massive public databases for clusters:\n* **Passive Total / RiskIQ / SecurityTrails:** Excellent for reverse-engineering infrastructure. If you identify one doorway domain or link-selling node, you can pivot on shared WHOIS data, nameservers, TLS certificates, or Google Analytics tracking IDs to uncover hundreds of related domains in the same network.\n* **Censys & Shodan:** Useful for identifying web servers running identical vulnerable CMS configurations or custom backlink-insertion scripts scaled across thousands of compromised or low-quality hosts.\n* **urlscan.io:** A public repository where you can search for submitted URLs exhibiting typical link-farming characteristics (e.g., automated hidden text blocks, doorway landing pages, or rapid redirects).\n\n### 2. Threat Intelligence Feeds & Phishing/Malware Repositories\nMany link-selling networks overlap heavily with malware distribution, malvertising, and credential-phishing operations (e.g., hacked WordPress sites used to inject spam links). Open-source threat feeds frequently flag these domains:\n* **AlienVault OTX (Open Threat Exchange):** Crowded-sourced indicators of compromise (IoCs) where security researchers regularly share clusters of malicious or spammy domains.\n* **PhishTank / URLhaus:** While primarily focused on phishing and malware delivery infrastructure, many domains caught in these feeds are concurrently operating SEO spam or pharmaceutical doorway hacks.\n\n### 3. SEO Industry Research & Reverse-Engineering\nRather than looking for a raw database of domains, SEO researchers typically use commercial SEO tools to identify and dissect link-selling networks at scale:\n* **Ahrefs / Semrush / Moz:** By analyzing anomalous backlink profiles, sudden spikes in outbound links, or unnatural anchor-text distributions, analysts export backlink graphs to cluster sites that exhibit coordinated link-manipulation patterns.\n* **Public Case Studies & SEO Research Blogs:** Security researchers at firms like Google's Search Quality team, Sucuri, Wordfence, and various independent SEO audits frequently publish deep dives into newly discovered large-scale PBNs and hack architectures (often highlighting specific signatures used to build automated door generators).\n\n### 4. Search Engine Disclosures\n* **Google Search Central / Spam Updates:** While Google does not publish the underlying database of penalized link networks (to prevent operators from easily bypassing detection), their documentation on **Spam Policies for Web Search** outlines the exact infrastructure patterns they target (such as expired domain abuse, hacked content injection, and automated doorway pages).[developers.google.com](https://developers.google.com/search/docs/essentials/spam-policies)",
+     "sources": [
+      {
+       "type": "gemini_source",
+       "title": "The 13 Must-Follow Threat Intel Feeds | Wiz",
+       "snippet": null,
+       "domain": "www.wiz.io",
+       "url": "https://www.wiz.io/academy/threat-intel/must-follow-threat-intel-feeds",
+       "thumbnail": "https://t3.gstatic.com/faviconV2?url=https://www.wiz.io/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "www.wiz.io",
+       "publication_date": null,
+       "markdown": "The 13 Must-Follow Threat Intel Feeds | Wiz"
+      },
+      {
+       "type": "gemini_source",
+       "title": "Spam Policies for Google Web Search",
+       "snippet": "Cloaking · Doorway abuse · Expired domain abuse · Hacked content · Hidden \ntext and link abuse · Keyword stuffing · Link spam · Machine-generated \ntraffic.",
+       "domain": "developers.google.com",
+       "url": "https://developers.google.com/search/docs/essentials/spam-policies",
+       "thumbnail": "https://t2.gstatic.com/faviconV2?url=https://developers.google.com/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "developers.google.com",
+       "publication_date": null,
+       "markdown": "Spam Policies for Google Web Search"
+      },
+      {
+       "type": "gemini_source",
+       "title": "Threat Intelligence Feeds Defined | CrowdStrike",
+       "snippet": null,
+       "domain": "www.crowdstrike.com",
+       "url": "https://www.crowdstrike.com/en-gb/cybersecurity-101/threat-intelligence/threat-intelligence-feeds/",
+       "thumbnail": "https://t1.gstatic.com/faviconV2?url=https://www.crowdstrike.com/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "www.crowdstrike.com",
+       "publication_date": null,
+       "markdown": "Threat Intelligence Feeds Defined | CrowdStrike"
+      },
+      {
+       "type": "gemini_source",
+       "title": "A List of the Best Open Source Threat Intelligence Feeds | Logz.io",
+       "snippet": null,
+       "domain": "logz.io",
+       "url": "https://logz.io/blog/open-source-threat-intelligence-feeds/",
+       "thumbnail": "https://t0.gstatic.com/faviconV2?url=https://logz.io/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "logz.io",
+       "publication_date": null,
+       "markdown": "A List of the Best Open Source Threat Intelligence Feeds | Logz.io"
+      },
+      {
+       "type": "gemini_source",
+       "title": "12 Free Threat Intelligence Feeds to Follow in 2026 - VMRay",
+       "snippet": null,
+       "domain": "www.vmray.com",
+       "url": "https://www.vmray.com/best-threat-intelligence-feeds/",
+       "thumbnail": "https://t3.gstatic.com/faviconV2?url=https://www.vmray.com/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "www.vmray.com",
+       "publication_date": null,
+       "markdown": "12 Free Threat Intelligence Feeds to Follow in 2026 - VMRay"
+      },
+      {
+       "type": "gemini_source",
+       "title": "Top 15 Free OSINT Tools To Collect Data From Open Sources - Recorded Future",
+       "snippet": null,
+       "domain": "www.recordedfuture.com",
+       "url": "https://www.recordedfuture.com/threat-intelligence-101/tools-and-technologies/osint-tools",
+       "thumbnail": "https://t1.gstatic.com/faviconV2?url=https://www.recordedfuture.com/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "www.recordedfuture.com",
+       "publication_date": null,
+       "markdown": "Top 15 Free OSINT Tools To Collect Data From Open Sources - Recorded Future"
+      },
+      {
+       "type": "gemini_source",
+       "title": "Open Source Intelligence: The Web's Dirty Little Secret - By zvelo",
+       "snippet": null,
+       "domain": "zvelo.com",
+       "url": "https://zvelo.com/open-source-intelligence-the-web-s-dirty-little-secret/",
+       "thumbnail": "https://t3.gstatic.com/faviconV2?url=https://zvelo.com/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "zvelo.com",
+       "publication_date": null,
+       "markdown": "Open Source Intelligence: The Web's Dirty Little Secret - By zvelo"
+      },
+      {
+       "type": "gemini_source",
+       "title": "Top 15 web based OSINT tools (free) Enjoy!! : r/cybersecurity - Reddit",
+       "snippet": null,
+       "domain": "www.reddit.com",
+       "url": "https://www.reddit.com/r/cybersecurity/comments/1ooiz0g/top_15_web_based_osint_tools_free_enjoy/",
+       "thumbnail": "https://t2.gstatic.com/faviconV2?url=https://www.reddit.com/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "www.reddit.com",
+       "publication_date": null,
+       "markdown": "Top 15 web based OSINT tools (free) Enjoy!! : r/cybersecurity - Reddit"
+      },
+      {
+       "type": "gemini_source",
+       "title": "13 Best OSINT (Open Source Intelligence) Tools for 2025 [UPDATED] - Talkwalker",
+       "snippet": null,
+       "domain": "www.talkwalker.com",
+       "url": "https://www.talkwalker.com/blog/best-osint-tools",
+       "thumbnail": "https://t1.gstatic.com/faviconV2?url=https://www.talkwalker.com/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "www.talkwalker.com",
+       "publication_date": null,
+       "markdown": "13 Best OSINT (Open Source Intelligence) Tools for 2025 [UPDATED] - Talkwalker"
+      },
+      {
+       "type": "gemini_source",
+       "title": "How DNSTwister Fits into an OSINT Framework",
+       "snippet": null,
+       "domain": "dnstwister.report",
+       "url": "https://dnstwister.report/guides/how-dnstwister-fits-into-an-osint-framework",
+       "thumbnail": "https://t2.gstatic.com/faviconV2?url=https://dnstwister.report/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "dnstwister.report",
+       "publication_date": null,
+       "markdown": "How DNSTwister Fits into an OSINT Framework"
+      }
+     ],
+     "se_results_count": 0,
+     "item_types": [
+      "gemini_text"
+     ],
+     "items_count": 1,
+     "items": [
+      {
+       "type": "gemini_text",
+       "rank_group": 1,
+       "rank_absolute": 1,
+       "markdown": "Public, continuously updated, standalone databases exclusively tracking \"backlink spam doorway domains\" or \"link-selling networks\" are **rarely published as open-source text lists** by major search engines or security firms. \n\nBecause link-spam networks (such as Private Blog Networks or PBNs, automated doorway generators, and paid link farms) change their infrastructure, hosting providers, and domain names daily to evade algorithmic penalties, static lists become obsolete almost immediately. \n\nInstead of a single centralized registry, security researchers, SEO analysts, and threat intelligence professionals track and uncover these networks using a combination of infrastructure intelligence tools, public telemetry, and heuristic analysis techniques.\n\n---\n\n### 1. Infrastructure & DNS Intelligence Platforms (OSINT)\nAnalysts look for patterns in domain registration, hosting footprints, and naming conventions to map out link-selling rings. You can query these massive public databases for clusters:\n* **Passive Total / RiskIQ / SecurityTrails:** Excellent for reverse-engineering infrastructure. If you identify one doorway domain or link-selling node, you can pivot on shared WHOIS data, nameservers, TLS certificates, or Google Analytics tracking IDs to uncover hundreds of related domains in the same network.\n* **Censys & Shodan:** Useful for identifying web servers running identical vulnerable CMS configurations or custom backlink-insertion scripts scaled across thousands of compromised or low-quality hosts.\n* **urlscan.io:** A public repository where you can search for submitted URLs exhibiting typical link-farming characteristics (e.g., automated hidden text blocks, doorway landing pages, or rapid redirects).\n\n### 2. Threat Intelligence Feeds & Phishing/Malware Repositories\nMany link-selling networks overlap heavily with malware distribution, malvertising, and credential-phishing operations (e.g., hacked WordPress sites used to inject spam links). Open-source threat feeds frequently flag these domains:\n* **AlienVault OTX (Open Threat Exchange):** Crowded-sourced indicators of compromise (IoCs) where security researchers regularly share clusters of malicious or spammy domains.\n* **PhishTank / URLhaus:** While primarily focused on phishing and malware delivery infrastructure, many domains caught in these feeds are concurrently operating SEO spam or pharmaceutical doorway hacks.\n\n### 3. SEO Industry Research & Reverse-Engineering\nRather than looking for a raw database of domains, SEO researchers typically use commercial SEO tools to identify and dissect link-selling networks at scale:\n* **Ahrefs / Semrush / Moz:** By analyzing anomalous backlink profiles, sudden spikes in outbound links, or unnatural anchor-text distributions, analysts export backlink graphs to cluster sites that exhibit coordinated link-manipulation patterns.\n* **Public Case Studies & SEO Research Blogs:** Security researchers at firms like Google's Search Quality team, Sucuri, Wordfence, and various independent SEO audits frequently publish deep dives into newly discovered large-scale PBNs and hack architectures (often highlighting specific signatures used to build automated door generators).\n\n### 4. Search Engine Disclosures\n* **Google Search Central / Spam Updates:** While Google does not publish the underlying database of penalized link networks (to prevent operators from easily bypassing detection), their documentation on **Spam Policies for Web Search** outlines the exact infrastructure patterns they target (such as expired domain abuse, hacked content injection, and automated doorway pages).[developers.google.com](https://developers.google.com/search/docs/essentials/spam-policies)",
+       "original_text": "Public, continuously updated, standalone databases exclusively tracking \"backlink spam doorway domains\" or \"link-selling networks\" are **rarely published as open-source text lists** by major search engines or security firms. \n\nBecause link-spam networks (such as Private Blog Networks or PBNs, automated doorway generators, and paid link farms) change their infrastructure, hosting providers, and domain names daily to evade algorithmic penalties, static lists become obsolete almost immediately. \n\nInstead of a single centralized registry, security researchers, SEO analysts, and threat intelligence professionals track and uncover these networks using a combination of infrastructure intelligence tools, public telemetry, and heuristic analysis techniques.\n\n---\n\n### 1. Infrastructure & DNS Intelligence Platforms (OSINT)\nAnalysts look for patterns in domain registration, hosting footprints, and naming conventions to map out link-selling rings. You can query these massive public databases for clusters:\n* **Passive Total / RiskIQ / SecurityTrails:** Excellent for reverse-engineering infrastructure. If you identify one doorway domain or link-selling node, you can pivot on shared WHOIS data, nameservers, TLS certificates, or Google Analytics tracking IDs to uncover hundreds of related domains in the same network.\n* **Censys & Shodan:** Useful for identifying web servers running identical vulnerable CMS configurations or custom backlink-insertion scripts scaled across thousands of compromised or low-quality hosts.\n* **urlscan.io:** A public repository where you can search for submitted URLs exhibiting typical link-farming characteristics (e.g., automated hidden text blocks, doorway landing pages, or rapid redirects).\n\n### 2. Threat Intelligence Feeds & Phishing/Malware Repositories\nMany link-selling networks overlap heavily with malware distribution, malvertising, and credential-phishing operations (e.g., hacked WordPress sites used to inject spam links). Open-source threat feeds frequently flag these domains:\n* **AlienVault OTX (Open Threat Exchange):** Crowded-sourced indicators of compromise (IoCs) where security researchers regularly share clusters of malicious or spammy domains.\n* **PhishTank / URLhaus:** While primarily focused on phishing and malware delivery infrastructure, many domains caught in these feeds are concurrently operating SEO spam or pharmaceutical doorway hacks.\n\n### 3. SEO Industry Research & Reverse-Engineering\nRather than looking for a raw database of domains, SEO researchers typically use commercial SEO tools to identify and dissect link-selling networks at scale:\n* **Ahrefs / Semrush / Moz:** By analyzing anomalous backlink profiles, sudden spikes in outbound links, or unnatural anchor-text distributions, analysts export backlink graphs to cluster sites that exhibit coordinated link-manipulation patterns.\n* **Public Case Studies & SEO Research Blogs:** Security researchers at firms like Google's Search Quality team, Sucuri, Wordfence, and various independent SEO audits frequently publish deep dives into newly discovered large-scale PBNs and hack architectures (often highlighting specific signatures used to build automated door generators).\n\n### 4. Search Engine Disclosures\n* **Google Search Central / Spam Updates:** While Google does not publish the underlying database of penalized link networks (to prevent operators from easily bypassing detection), their documentation on **Spam Policies for Web Search** outlines the exact infrastructure patterns they target (such as expired domain abuse, hacked content injection, and automated doorway pages).",
+       "sources": [
+        {
+         "type": "gemini_source",
+         "title": "Spam Policies for Google Web Search",
+         "snippet": "Cloaking · Doorway abuse · Expired domain abuse · Hacked content · Hidden \ntext and link abuse · Keyword stuffing · Link spam · Machine-generated \ntraffic.",
+         "domain": "developers.google.com",
+         "url": "https://developers.google.com/search/docs/essentials/spam-policies",
+         "thumbnail": "https://t2.gstatic.com/faviconV2?url=https://developers.google.com/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+         "source_name": "developers.google.com",
+         "publication_date": null,
+         "markdown": "Spam Policies for Google Web Search"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

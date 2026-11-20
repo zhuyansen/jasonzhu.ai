@@ -1,0 +1,191 @@
+{
+ "version": "0.1.20261103",
+ "status_code": 20000,
+ "status_message": "Ok.",
+ "time": "3.0912 sec.",
+ "cost": 0.005888,
+ "tasks_count": 1,
+ "tasks_error": 0,
+ "tasks": [
+  {
+   "id": "11170805-2225-0612-0000-cc79dab47105",
+   "status_code": 20000,
+   "status_message": "Ok.",
+   "time": "3.0580 sec.",
+   "cost": 0.005888,
+   "result_count": 1,
+   "path": [
+    "v3",
+    "ai_optimization",
+    "perplexity",
+    "llm_responses",
+    "live"
+   ],
+   "data": {
+    "api": "ai_optimization",
+    "function": "llm_responses",
+    "se": "perplexity",
+    "user_prompt": "Where can I browse real-world Claude Opus 5.5 and Sonnet 5.5 prompt showcase examples?",
+    "model_name": "sonar",
+    "web_search_country_iso_code": "US"
+   },
+   "result": [
+    {
+     "model_name": "sonar",
+     "input_tokens": 31,
+     "output_tokens": 257,
+     "reasoning_tokens": 0,
+     "web_search": true,
+     "money_spent": 0.005288,
+     "datetime": "2026-11-17 08:05:03 +00:00",
+     "items": [
+      {
+       "type": "message",
+       "sections": [
+        {
+         "type": "text",
+         "text": "For **real-world prompt showcases**, start with these sources:\n\n- **Anthropic’s Claude Opus 5.5 system-prompt release notes** — useful for seeing how Anthropic structures behavior, formatting, tool use, and product-specific instructions for Opus.[1]\n- **Anthropic’s Claude Sonnet 5.5 system-prompt release notes** — the corresponding reference for Sonnet, including guidance on clear instructions, examples, XML tags, and output constraints.[2]\n- **Anthropic’s “Prompting Claude Sonnet 5.5” guide** — the best official source for practical prompt patterns and model-specific techniques.[10]\n- **Claude’s public web and mobile apps** — try the same task in Opus 5.5 and Sonnet 5.5, then compare prompts and outputs directly; both models are listed as publicly available Claude models.[1][2]\n\nFor community examples, search GitHub, Reddit, and prompt-sharing sites using queries such as **“Claude Opus 5.5 prompts,” “Claude Sonnet 5.5 prompt examples,”** and **“Claude 5.5 workflow.”** Treat unofficial system-prompt dumps cautiously, since they may be incomplete, outdated, or fabricated.",
+         "annotations": [
+          {
+           "title": "Claude Opus 5.5 system prompts - Claude Platform Docs",
+           "url": "https://platform.claude.com/docs/en/release-notes/system-prompts/claude-opus-5-5",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Claude Sonnet 5.5 system prompts - Claude Platform Docs",
+           "url": "https://platform.claude.com/docs/ru/release-notes/system-prompts/claude-sonnet-5-5",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Prompts do sistema do Claude Opus 5.5",
+           "url": "https://platform.claude.com/docs/pt-BR/release-notes/system-prompts/claude-opus-5-5",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Prompt sistem Claude Sonnet 5.5",
+           "url": "https://platform.claude.com/docs/id/release-notes/system-prompts/claude-sonnet-5-5",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Claude Haiku 5.5 system prompts",
+           "url": "https://platform.claude.com/docs/en/release-notes/system-prompts/claude-haiku-5-5",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Claude Opus 5.5 system prompts - Claude Platform Docs",
+           "url": "https://platform.claude.com/docs/zh-TW/release-notes/system-prompts/claude-opus-5-5",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Prompt di sistema di Claude Sonnet 5.5",
+           "url": "https://platform.claude.com/docs/it/release-notes/system-prompts/claude-sonnet-5-5",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Invites système de Claude Sonnet 5.5",
+           "url": "https://platform.claude.com/docs/fr/release-notes/system-prompts/claude-sonnet-5-5",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Claude Opus 5.5 システムプロンプト - Claude Platform Docs",
+           "url": "https://platform.claude.com/docs/ja/release-notes/system-prompts/claude-opus-5-5",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Prompting Claude Sonnet 5.5 - Claude Platform Docs",
+           "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-sonnet-5-5",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "fan_out_queries": null,
+     "search_results": [
+      {
+       "title": "Claude Opus 5.5 system prompts - Claude Platform Docs",
+       "url": "https://platform.claude.com/docs/en/release-notes/system-prompts/claude-opus-5-5",
+       "date": "2026-11-13 00:00:00 +00:00",
+       "snippet": "Claude Opus 5.5 system prompts - Claude Platform Docs\n...\n# Claude Opus 5.5 system prompts\nSee updates to the core system prompt for Claude Opus 5.5 on claude.ai(opens in new tab), the Claude iOS app(opens in new tab), and the Claude Android app(opens in new tab).\n...\nClaude is accessible via this w..."
+      },
+      {
+       "title": "Claude Sonnet 5.5 system prompts - Claude Platform Docs",
+       "url": "https://platform.claude.com/docs/ru/release-notes/system-prompts/claude-sonnet-5-5",
+       "date": "2026-11-17 00:00:00 +00:00",
+       "snippet": "Claude is accessible via an API and Claude Platform.\nThe most recent models are Claude Fable 5.1, Claude Opus 5.5, Claude Sonnet 5.5, and Claude Haiku 5.5, with model strings 'claude-fable-5-1', 'claude-opus-5-5', 'claude-sonnet-5-5', and 'claude-haiku-5-5'.\n...\nWhen relevant, Claude can provide gui..."
+      },
+      {
+       "title": "Prompts do sistema do Claude Opus 5.5",
+       "url": "https://platform.claude.com/docs/pt-BR/release-notes/system-prompts/claude-opus-5-5",
+       "date": "2026-11-14 00:00:00 +00:00",
+       "snippet": "Prompts do sistema do Claude Opus 5.5 - Claude Platform Docs\n...\nVeja as atualizações do prompt do sistema principal do Claude Opus 5.5 no claude.ai(abre em uma nova aba), no aplicativo Claude para iOS(abre em uma nova aba) e no aplicativo Claude para Android(abre em uma nova aba).\n...\nThe currently..."
+      },
+      {
+       "title": "Prompt sistem Claude Sonnet 5.5",
+       "url": "https://platform.claude.com/docs/id/release-notes/system-prompts/claude-sonnet-5-5",
+       "date": "2026-11-15 00:00:00 +00:00",
+       "snippet": "Prompt sistem Claude Sonnet 5.5 - Claude Platform Docs\n...\n# Prompt sistem Claude Sonnet 5.5\n...\nLihat pembaruan pada prompt sistem inti untuk Claude Sonnet 5.5 di claude.ai(terbuka di tab baru), aplikasi Claude iOS(terbuka di tab baru), dan aplikasi Claude Android(terbuka di tab baru).\n...\nThis ite..."
+      },
+      {
+       "title": "Claude Haiku 5.5 system prompts",
+       "url": "https://platform.claude.com/docs/en/release-notes/system-prompts/claude-haiku-5-5",
+       "date": "2026-11-14 00:00:00 +00:00",
+       "snippet": "Claude Haiku 5.5 system prompts - Claude Platform Docs\n...\n# Claude Haiku 5.5 system prompts\nSee updates to the core system prompt for Claude Haiku 5.5 on claude.ai(opens in new tab), the Claude iOS app(opens in new tab), and the Claude Android app(opens in new tab).\n...\nWhen a question is about the..."
+      },
+      {
+       "title": "Claude Opus 5.5 system prompts - Claude Platform Docs",
+       "url": "https://platform.claude.com/docs/zh-TW/release-notes/system-prompts/claude-opus-5-5",
+       "date": "2026-11-14 00:00:00 +00:00",
+       "snippet": "Claude Opus 5.5 系統提示 - Claude Platform Docs\n...\n查看 claude.ai（在新分頁中開啟）、Claude iOS 應用程式（在新分頁中開啟）及 Claude Android 應用程式（在新分頁中開啟）上 Claude Opus 5.5 核心系統提示的更新。\n...\nClaude is accessible via this web-based, mobile, or desktop chat interface.\n...\nThe most recent publicly available models are Claude Fable 5.1,..."
+      },
+      {
+       "title": "Prompt di sistema di Claude Sonnet 5.5",
+       "url": "https://platform.claude.com/docs/it/release-notes/system-prompts/claude-sonnet-5-5",
+       "date": "2026-11-15 00:00:00 +00:00",
+       "snippet": "Prompt di sistema di Claude Sonnet 5.5 - Claude Platform Docs\n...\nConsulta gli aggiornamenti al prompt di sistema principale per Claude Sonnet 5.5 su claude.ai(si apre in una nuova scheda), nell’app Claude per iOS(si apre in una nuova scheda) e nell’app Claude per Android(si apre in una nuova scheda..."
+      },
+      {
+       "title": "Invites système de Claude Sonnet 5.5",
+       "url": "https://platform.claude.com/docs/fr/release-notes/system-prompts/claude-sonnet-5-5",
+       "date": "2026-11-14 00:00:00 +00:00",
+       "snippet": "Invites système de Claude Sonnet 5.5 - Claude Platform Docs\n...\nThis iteration of Claude is Claude Sonnet 5.5.\nClaude is accessible via this web-based, mobile, or desktop chat interface.\nVoice mode in the Claude app lets the person have a hands-free spoken conversation with Claude, and the iOS app e..."
+      },
+      {
+       "title": "Claude Opus 5.5 システムプロンプト - Claude Platform Docs",
+       "url": "https://platform.claude.com/docs/ja/release-notes/system-prompts/claude-opus-5-5",
+       "date": "2026-11-14 00:00:00 +00:00",
+       "snippet": "Claude Opus 5.5 システムプロンプト - Claude Platform Docs\n...\nClaude is accessible via this web-based, mobile, or desktop chat interface.\n...\nThe most recent publicly available models are Claude Fable 5.1, Claude Opus 5.5 (the currently selected model), Claude Sonnet 5.5, and Claude Haiku 5.5.\nThey use the A..."
+      },
+      {
+       "title": "Prompting Claude Sonnet 5.5 - Claude Platform Docs",
+       "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-sonnet-5-5",
+       "date": "2026-11-13 00:00:00 +00:00",
+       "snippet": "Prompting Claude Sonnet 5.5 - Claude Platform Docs\n...\n# Prompting Claude Sonnet 5.5"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

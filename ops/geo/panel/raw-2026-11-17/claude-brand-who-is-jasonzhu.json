@@ -1,0 +1,248 @@
+{
+ "version": "0.1.20261103",
+ "status_code": 20000,
+ "status_message": "Ok.",
+ "time": "21.7105 sec.",
+ "cost": 0.051898,
+ "tasks_count": 1,
+ "tasks_error": 0,
+ "tasks": [
+  {
+   "id": "11170800-2225-0612-0000-b458782be6b5",
+   "status_code": 20000,
+   "status_message": "Ok.",
+   "time": "21.6749 sec.",
+   "cost": 0.051898,
+   "result_count": 1,
+   "path": [
+    "v3",
+    "ai_optimization",
+    "claude",
+    "llm_responses",
+    "live"
+   ],
+   "data": {
+    "api": "ai_optimization",
+    "function": "llm_responses",
+    "se": "claude",
+    "user_prompt": "Who is Jason Zhu (jasonzhu.ai) and what does GoSail Club do?",
+    "model_name": "claude-sonnet-4-5",
+    "web_search": true
+   },
+   "result": [
+    {
+     "model_name": "claude-sonnet-4-5-20250929",
+     "input_tokens": 11446,
+     "output_tokens": 464,
+     "reasoning_tokens": 0,
+     "web_search": true,
+     "money_spent": 0.051298,
+     "datetime": "2026-11-17 08:00:44 +00:00",
+     "items": [
+      {
+       "type": "message",
+       "sections": [
+        {
+         "type": "text",
+         "text": "I'll search for information about Jason Zhu and GoSail Club for you.",
+         "annotations": null
+        }
+       ]
+      },
+      {
+       "type": "message",
+       "sections": [
+        {
+         "type": "text",
+         "text": "Based on my search results, here's what I found:\n\n## Jason Zhu (jasonzhu.ai)\n\n",
+         "annotations": null
+        },
+        {
+         "type": "text",
+         "text": "Jason Zhu is a former AI algorithm engineer who now writes about AI full-time and runs enterprise AI training",
+         "annotations": [
+          {
+           "title": "JasonZhu.AI - AI Applications & Practice",
+           "url": "https://jasonzhu.ai/en",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "JasonZhu.AI - AI Applications & Practice",
+           "url": "https://jasonzhu.ai/en",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        },
+        {
+         "type": "text",
+         "text": ". ",
+         "annotations": null
+        },
+        {
+         "type": "text",
+         "text": "He focuses on AI overseas content creation, MCN operations, and enterprise AI training",
+         "annotations": [
+          {
+           "title": "GitHub - zhuyansen/jasonzhu.ai · GitHub",
+           "url": "https://github.com/zhuyansen/jasonzhu.ai",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        },
+        {
+         "type": "text",
+         "text": ".\n\n",
+         "annotations": null
+        },
+        {
+         "type": "text",
+         "text": "His website focuses on practical AI: tool reviews, hands-on tutorials, industry insights, and overseas growth strategy",
+         "annotations": [
+          {
+           "title": "jasonzhu.ai: AI product overview",
+           "url": "https://aitoolly.com/video/jasonzhu-ai-video",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        },
+        {
+         "type": "text",
+         "text": ". ",
+         "annotations": null
+        },
+        {
+         "type": "text",
+         "text": "Beyond articles, Jason Zhu offers enterprise AI training for prompt engineering, AI coding, and content creation, and also works on AI content matrix operations, application development, technical consulting, and solution design",
+         "annotations": [
+          {
+           "title": "jasonzhu.ai: AI product overview",
+           "url": "https://aitoolly.com/video/jasonzhu-ai-video",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        },
+        {
+         "type": "text",
+         "text": ".\n\n## GoSail Club/Lab\n\nFrom the search results, I found references to **GoSail Lab** (not \"Club\") associated with Jason Zhu. ",
+         "annotations": null
+        },
+        {
+         "type": "text",
+         "text": "It's described as an AI MCN & product promotion lab",
+         "annotations": [
+          {
+           "title": "JasonZhu.AI - AI Applications & Practice",
+           "url": "https://jasonzhu.ai/en",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        },
+        {
+         "type": "text",
+         "text": ". ",
+         "annotations": null
+        },
+        {
+         "type": "text",
+         "text": "As MCN Founder, he handles AI product promotion, KOL cooperation, and brand overseas business",
+         "annotations": [
+          {
+           "title": "JasonZhu.AI - AI应用与实践",
+           "url": "https://jasonzhu.ai/zh/about",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        },
+        {
+         "type": "text",
+         "text": ".\n\nThe organization appears to be focused on operating AI content matrices and helping AI products and brands with promotion and international expansion, particularly in the AI space.",
+         "annotations": null
+        }
+       ]
+      }
+     ],
+     "fan_out_queries": [
+      "Jason Zhu jasonzhu.ai",
+      "GoSail Club"
+     ],
+     "search_results": [
+      {
+       "title": "GitHub - zhuyansen/jasonzhu.ai · GitHub",
+       "url": "https://github.com/zhuyansen/jasonzhu.ai",
+       "date": null,
+       "snippet": null
+      },
+      {
+       "title": "Jason Zhu (@GoSailGlobal) on X",
+       "url": "https://x.com/GoSailGlobal",
+       "date": "2025-05-31 08:00:44 +00:00",
+       "snippet": null
+      },
+      {
+       "title": "jasonzhu.ai: AI product overview",
+       "url": "https://aitoolly.com/video/jasonzhu-ai-video",
+       "date": "2026-08-10 08:00:44 +00:00",
+       "snippet": null
+      },
+      {
+       "title": "JasonZhu.AI - AI Applications & Practice",
+       "url": "https://jasonzhu.ai/en",
+       "date": null,
+       "snippet": null
+      },
+      {
+       "title": "JasonZhu.AI - AI应用与实践",
+       "url": "https://jasonzhu.ai/zh/blog",
+       "date": null,
+       "snippet": null
+      },
+      {
+       "title": "JasonZhu.AI - AI应用与实践",
+       "url": "https://jasonzhuai.vercel.app/",
+       "date": null,
+       "snippet": null
+      },
+      {
+       "title": "JasonZhu.AI - AI应用与实践",
+       "url": "https://jasonzhu.ai/zh/about",
+       "date": null,
+       "snippet": null
+      },
+      {
+       "title": "Indie Seller Weekly #5: Bring-Your-Own-Key AI Tools Sold for a One-Time Price Are Multiplying",
+       "url": "https://jasonzhu.ai/en/blog/chuhai-weekly-05",
+       "date": "2026-11-09 08:00:44 +00:00",
+       "snippet": null
+      },
+      {
+       "title": "Tencent Yuanbao's Marketing Tactics Are Infuriating",
+       "url": "https://jasonzhu.ai/en/blog/tencent-yuanbao-marketing-spam",
+       "date": "2026-02-01 08:00:44 +00:00",
+       "snippet": null
+      },
+      {
+       "title": "Why I Say n8n Is Dead? Why SaaS Is Dead?",
+       "url": "https://jasonzhu.ai/en/blog/why-n8n-is-dead",
+       "date": "2026-02-22 08:00:44 +00:00",
+       "snippet": null
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,206 @@
+{
+ "version": "0.1.20261103",
+ "status_code": 20000,
+ "status_message": "Ok.",
+ "time": "29.4489 sec.",
+ "cost": 0.053578,
+ "tasks_count": 1,
+ "tasks_error": 0,
+ "tasks": [
+  {
+   "id": "11170802-2225-0612-0000-61764194d65c",
+   "status_code": 20000,
+   "status_message": "Ok.",
+   "time": "28.2120 sec.",
+   "cost": 0.053578,
+   "result_count": 1,
+   "path": [
+    "v3",
+    "ai_optimization",
+    "claude",
+    "llm_responses",
+    "live"
+   ],
+   "data": {
+    "api": "ai_optimization",
+    "function": "llm_responses",
+    "se": "claude",
+    "user_prompt": "Where can I find a public database of backlink spam doorway domains and link-selling networks?",
+    "model_name": "claude-sonnet-4-5",
+    "web_search": true
+   },
+   "result": [
+    {
+     "model_name": "claude-sonnet-4-5-20250929",
+     "input_tokens": 11156,
+     "output_tokens": 634,
+     "reasoning_tokens": 0,
+     "web_search": true,
+     "money_spent": 0.052978,
+     "datetime": "2026-11-17 08:02:46 +00:00",
+     "items": [
+      {
+       "type": "message",
+       "sections": [
+        {
+         "type": "text",
+         "text": "I'll search for information about public databases of spam domains and link networks.",
+         "annotations": null
+        }
+       ]
+      },
+      {
+       "type": "message",
+       "sections": [
+        {
+         "type": "text",
+         "text": "Based on my search results, here are the main public databases and resources for identifying backlink spam and link-selling networks:\n\n## Public Databases\n\n**1. GitHub - backlink-spam-list**\n",
+         "annotations": null
+        },
+        {
+         "type": "text",
+         "text": "This is a shared list of sites that build or sell spam backlinks with evidence anyone can check, containing 568 entries in list.csv, most of them doorway domains of eleven networks that redirect to storefronts selling backlinks",
+         "annotations": [
+          {
+           "title": "GitHub - zhuyansen/backlink-spam-list: A shared list of sites that build or sell spam backlinks, each with evidence anyone can check · GitHub",
+           "url": "https://github.com/zhuyansen/backlink-spam-list",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        },
+        {
+         "type": "text",
+         "text": ". You can access it at: https://github.com/zhuyansen/backlink-spam-list\n\n",
+         "annotations": null
+        },
+        {
+         "type": "text",
+         "text": "The database identifies domains based on shared titles across multiple domains, redirects to backlink-selling storefronts, shared checkout links or analytics accounts, or titles that sell DR, DA and PBN packages",
+         "annotations": [
+          {
+           "title": "GitHub - zhuyansen/backlink-spam-list: A shared list of sites that build or sell spam backlinks, each with evidence anyone can check · GitHub",
+           "url": "https://github.com/zhuyansen/backlink-spam-list",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        },
+        {
+         "type": "text",
+         "text": ".\n\n**2. Matomo Referrer Spam Blacklist**\n",
+         "annotations": null
+        },
+        {
+         "type": "text",
+         "text": "Matomo maintains a public domain crowdsourced list of spam-associated domains which it uses in automatic filters, containing over 2250 domains as of May 2023",
+         "annotations": [
+          {
+           "title": "Referrer spam",
+           "url": "https://en.wikipedia.org/wiki/Referrer_spam",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Referrer spam",
+           "url": "https://en.wikipedia.org/wiki/Referrer_spam",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        },
+        {
+         "type": "text",
+         "text": ". This is available on GitHub at: https://github.com/matomo-org/referrer-spam-blacklist\n\n## How to Use These Resources\n\nThe backlink-spam-list can be integrated into your workflow - ",
+         "annotations": null
+        },
+        {
+         "type": "text",
+         "text": "you can use a command like `curl -s https://raw.githubusercontent.com/zhuyansen/backlink-spam-list/main/list.csv | grep ',listed,'` to access the data",
+         "annotations": [
+          {
+           "title": "GitHub - zhuyansen/backlink-spam-list: A shared list of sites that build or sell spam backlinks, each with evidence anyone can check · GitHub",
+           "url": "https://github.com/zhuyansen/backlink-spam-list",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        },
+        {
+         "type": "text",
+         "text": ".\n\n## Additional Approaches\n\nWhile not comprehensive public databases, you can also identify spam networks by:\n- Using backlink analysis tools (Ahrefs, Semrush, Majestic) and filtering by spam scores\n- Looking for common patterns like shared IP addresses, similar domain naming conventions, or TLDs commonly associated with spam (.pw, .xyz, .shop, .cyou)\n- Checking for domains with extremely high numbers of linked domains (millions) with zero traffic\n\nThese community-maintained lists are your best bet for publicly accessible spam domain databases, though they require regular updates as new spam networks emerge constantly.",
+         "annotations": null
+        }
+       ]
+      }
+     ],
+     "fan_out_queries": [
+      "public database backlink spam doorway domains",
+      "link selling networks spam database"
+     ],
+     "search_results": [
+      {
+       "title": "GitHub - zhuyansen/backlink-spam-list: A shared list of sites that build or sell spam backlinks, each with evidence anyone can check · GitHub",
+       "url": "https://github.com/zhuyansen/backlink-spam-list",
+       "date": null,
+       "snippet": null
+      },
+      {
+       "title": "databases/backlink_summary",
+       "url": "https://docs.dataforseo.com/v3/databases-backlink_summary/",
+       "date": null,
+       "snippet": null
+      },
+      {
+       "title": "Increase in spam referring domains in August 2026 - Hallam",
+       "url": "https://hallam.agency/blog/hallam-is-seeing-an-increase-in-spam-referring-domains/",
+       "date": "2026-09-25 08:02:46 +00:00",
+       "snippet": null
+      },
+      {
+       "title": "My new backlinks are all ads · dr0",
+       "url": "https://dr0.dev/blog/spam-backlinks/",
+       "date": null,
+       "snippet": null
+      },
+      {
+       "title": "How a Coordinated Backlink Spam Attack Works — and How to Shut It Down",
+       "url": "https://blitzmetrics.com/how-a-coordinated-backlink-spam-attack-works/",
+       "date": "2026-07-20 08:02:46 +00:00",
+       "snippet": null
+      },
+      {
+       "title": "Toxic Backlink Audit: Spam Networks Targeting Your Site",
+       "url": "https://wunderlandmedia.com/toxic-backlink-audit-spam-networks",
+       "date": "2026-08-26 08:02:46 +00:00",
+       "snippet": null
+      },
+      {
+       "title": "Referrer spam",
+       "url": "https://en.wikipedia.org/wiki/Referrer_spam",
+       "date": null,
+       "snippet": null
+      },
+      {
+       "title": "Find and Remove Spammy Backlinks",
+       "url": "https://icyflamestudio.com/find-and-remove-spammy-backlinks/",
+       "date": "2023-07-11 08:02:46 +00:00",
+       "snippet": null
+      },
+      {
+       "title": ".pw",
+       "url": "https://en.wikipedia.org/wiki/.pw",
+       "date": null,
+       "snippet": null
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

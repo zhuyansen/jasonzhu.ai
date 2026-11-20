@@ -1,0 +1,191 @@
+{
+ "version": "0.1.20261103",
+ "status_code": 20000,
+ "status_message": "Ok.",
+ "time": "4.7516 sec.",
+ "cost": 0.006184,
+ "tasks_count": 1,
+ "tasks_error": 0,
+ "tasks": [
+  {
+   "id": "11170804-2225-0612-0000-301c029e4b21",
+   "status_code": 20000,
+   "status_message": "Ok.",
+   "time": "4.4611 sec.",
+   "cost": 0.006184,
+   "result_count": 1,
+   "path": [
+    "v3",
+    "ai_optimization",
+    "perplexity",
+    "llm_responses",
+    "live"
+   ],
+   "data": {
+    "api": "ai_optimization",
+    "function": "llm_responses",
+    "se": "perplexity",
+    "user_prompt": "How to pass Wise business account address verification for a newly registered UK company?",
+    "model_name": "sonar",
+    "web_search_country_iso_code": "US"
+   },
+   "result": [
+    {
+     "model_name": "sonar",
+     "input_tokens": 22,
+     "output_tokens": 562,
+     "reasoning_tokens": 0,
+     "web_search": true,
+     "money_spent": 0.005584,
+     "datetime": "2026-11-17 08:04:47 +00:00",
+     "items": [
+      {
+       "type": "message",
+       "sections": [
+        {
+         "type": "text",
+         "text": "For a newly incorporated UK limited company, the key is to distinguish the **registered office** from the **trading address** and provide evidence for the physical location where the business actually operates.\n\n1. **Enter the registered address exactly as shown at Companies House.** Use the company’s full legal name, company number, and registered office address consistently. Wise may verify this against official registration records.[1][2]\n\n2. **Provide a genuine physical trading address.** This can be your home, office, shop, or qualifying coworking space. It cannot be a PO box, mail-forwarding address, virtual office, or solicitor’s address.[5]\n\n3. **If Wise requests trading-address proof, upload one matching document.** Suitable examples include:\n   - Business bank statement\n   - Utility bill for gas, electricity, broadband, or landline\n   - Current lease signed by both parties\n   - Council-tax bill\n   - Business licence, insurance policy, or HMRC document  \n   The document should show the business or business owner’s name, complete trading address, issue date, and issuer’s name or logo.[5]\n\n4. **Use recent documents.** Utility bills, bank statements, licences, and registration documents generally need to be under three months old; tax documents and insurance policies may be accepted if under 12 months old.[5]\n\n5. **If you work from home, use your home as the trading address** and provide a recent personal utility bill, bank statement, council-tax bill, or current tenancy document showing that address—provided Wise’s prompt allows owner-issued evidence. Do not claim a virtual-office address as your operating location.\n\n6. **Keep personal and business address evidence separate.** Wise may also request proof of the account representative’s personal address; that document must show the individual’s name and home address, not merely the company’s address.[8]\n\n7. **Complete the related checks accurately.** Have the certificate of incorporation, company number, director and PSC/UBO details, business description, website or evidence of activity, and photo ID ready. Owners with 25% or more control may also need verification.[1][6]\n\n8. **Upload only through Wise’s secure in-app prompt or an email from a Wise.com address.** Don’t send unsolicited documents, and respond exactly to the request if Wise asks for clarification.[1]\n\nIf the company has only a registered-office or virtual-office service and no real operating location yet, that is likely the problem: Wise requires a physical trading address for business-address verification.[5] In that case, use the director’s actual home workspace only if the company genuinely operates there, or establish a legitimate office/coworking arrangement with a lease or other acceptable evidence.",
+         "annotations": [
+          {
+           "title": "How can I verify my business? | Wise Help Centre",
+           "url": "https://wise.com/help/articles/2769792/how-can-i-verify-my-business",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Getting your business verified in the UK and EEA",
+           "url": "https://wise.com/help/articles/ixgxNfPDKgxCHQU2XfuyY/getting-your-business-verified-in-the-uk-and-eea",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "How to Get a Limited Company Verified Using Wise Business",
+           "url": "https://wise.com/gb/blog/how-to-get-limited-company-verified-using-wise-business",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Wise Business Account Requirements in the UK in 2026",
+           "url": "https://wise.com/gb/blog/wise-business-account-requirements-uk",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "How does Wise verify my business address?",
+           "url": "https://wise.com/help/articles/2969315/how-does-wise-verify-my-business-address",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "How To Get Your Wise Business Account Verified",
+           "url": "https://wise.com/gb/blog/how-to-get-your-wise-business-account-verified",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Wise Business Account Setup for US LLCs and UK Ltds",
+           "url": "https://borderlessfilings.com/services/wise-business-account-setup/",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "How do I verify my address? | Wise Help Centre",
+           "url": "https://wise.com/help/articles/2949804/how-do-i-verify-my-address",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Wise Business: Who Can Open One, Fees and Verification",
+           "url": "https://www.lilachbullock.com/wise-business/",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "What you need to open a Wise business account",
+           "url": "https://wise.com/en/blog/setting-up-wise-business-account",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "fan_out_queries": null,
+     "search_results": [
+      {
+       "title": "How can I verify my business? | Wise Help Centre",
+       "url": "https://wise.com/help/articles/2769792/how-can-i-verify-my-business",
+       "date": "2026-10-24 00:00:00 +00:00",
+       "snippet": "- You'll need to provide details like your business registration number, registered and trading addresses, industry, online presence (if any), and information about key people (like directors and owners).\n...\n- **Proof of Address: ** For your trading address (e.g. a recent utility bill, lease agreem..."
+      },
+      {
+       "title": "Getting your business verified in the UK and EEA",
+       "url": "https://wise.com/help/articles/ixgxNfPDKgxCHQU2XfuyY/getting-your-business-verified-in-the-uk-and-eea",
+       "date": "2026-10-09 00:00:00 +00:00",
+       "snippet": "# Getting your business verified in the UK and EEA\n### Business registered address\nThis is the address where your business is officially registered with a government body.\n### Business trading address\nThis is usually where you work every day, or where customers contact you.\nIt can be your office, co..."
+      },
+      {
+       "title": "How to Get a Limited Company Verified Using Wise Business",
+       "url": "https://wise.com/gb/blog/how-to-get-limited-company-verified-using-wise-business",
+       "date": "2026-11-08 00:00:00 +00:00",
+       "snippet": "|**Step**|**Summary**|\n|--|--|\n|Step 1: Start the account setup|Open a Wise Business account and enter your company’s legal details.|\n|Step 2: Check the UK verification trigger|Review the UK business pricing and complete the required setup action so we can start the main review.|\n|Step 3: Prepare co..."
+      },
+      {
+       "title": "Wise Business Account Requirements in the UK in 2026",
+       "url": "https://wise.com/gb/blog/wise-business-account-requirements-uk",
+       "date": "2026-11-13 00:00:00 +00:00",
+       "snippet": "You’ll be asked for business and personal documents to verify your identity, verify your business, and understand your business category and account purpose.\n...\n|Business type|Documents or details|\n|--|--|\n|Sole trader/freelancer|Valid photo ID, proof of business address, information about the natu..."
+      },
+      {
+       "title": "How does Wise verify my business address?",
+       "url": "https://wise.com/help/articles/2969315/how-does-wise-verify-my-business-address",
+       "date": "2026-10-13 00:00:00 +00:00",
+       "snippet": "For all businesses, we collect two addresses:\n1. **Registered address** — where your business is officially registered and the one listed on your official business registration document (for example, on your Companies House registration).\n2. **Trading address** — where you actually run your business..."
+      },
+      {
+       "title": "How To Get Your Wise Business Account Verified",
+       "url": "https://wise.com/gb/blog/how-to-get-your-wise-business-account-verified",
+       "date": "2026-11-13 00:00:00 +00:00",
+       "snippet": "First, enter the **work email address** you want to be linked to your Wise Business account.\nThis will be your login and the primary contact for your account.\nNext, Wise guides you through adding basic business details - things like your **company name, registered address, and the type of business y..."
+      },
+      {
+       "title": "Wise Business Account Setup for US LLCs and UK Ltds",
+       "url": "https://borderlessfilings.com/services/wise-business-account-setup/",
+       "date": "2026-10-07 00:00:00 +00:00",
+       "snippet": "- A physical address.\nWise does not accept PO boxes, registration agencies, mail forwarding services or other virtual addresses, and it will ask for a business proof of address document.\n...\nWise runs a separate verification process for UK and EEA businesses, described in its help center.\nThe core r..."
+      },
+      {
+       "title": "How do I verify my address? | Wise Help Centre",
+       "url": "https://wise.com/help/articles/2949804/how-do-i-verify-my-address",
+       "date": "2026-10-08 00:00:00 +00:00",
+       "snippet": "We’ll ask you to upload a high-quality photo or scan of a document.\nIt must clearly show:\n- **Your full name:** This must match the name on your Wise account.\n- **Your full home address:** This must also match the address on your Wise account.\n- **Date of issue:** Utility bills, bank statements, and..."
+      },
+      {
+       "title": "Wise Business: Who Can Open One, Fees and Verification",
+       "url": "https://www.lilachbullock.com/wise-business/",
+       "date": "2026-11-12 00:00:00 +00:00",
+       "snippet": "# Wise Business: Who Can Open One, Fees, Verification and Getting Paid\n## How verification works\n1. Sign up and give your business registration number, registered and trading addresses, industry, any website, and details of directors and owners.\n2. If you aren't a director, add proof you're allowed ..."
+      },
+      {
+       "title": "What you need to open a Wise business account",
+       "url": "https://wise.com/en/blog/setting-up-wise-business-account",
+       "date": "2026-01-18 00:00:00 +00:00",
+       "snippet": "Just one thing...your trading address can’t be a PO box."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

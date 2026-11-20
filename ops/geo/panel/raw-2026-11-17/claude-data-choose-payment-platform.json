@@ -1,0 +1,302 @@
+{
+ "version": "0.1.20261103",
+ "status_code": 20000,
+ "status_message": "Ok.",
+ "time": "26.2647 sec.",
+ "cost": 0.059836,
+ "tasks_count": 1,
+ "tasks_error": 0,
+ "tasks": [
+  {
+   "id": "11170803-2225-0612-0000-0a14315cc33e",
+   "status_code": 20000,
+   "status_message": "Ok.",
+   "time": "26.0026 sec.",
+   "cost": 0.059836,
+   "result_count": 1,
+   "path": [
+    "v3",
+    "ai_optimization",
+    "claude",
+    "llm_responses",
+    "live"
+   ],
+   "data": {
+    "api": "ai_optimization",
+    "function": "llm_responses",
+    "se": "claude",
+    "user_prompt": "Best payment platform for indie SaaS developers: Stripe vs Polar vs Dodo Payments vs Creem in 2026?",
+    "model_name": "claude-sonnet-4-5",
+    "web_search": true
+   },
+   "result": [
+    {
+     "model_name": "claude-sonnet-4-5-20250929",
+     "input_tokens": 12037,
+     "output_tokens": 875,
+     "reasoning_tokens": 0,
+     "web_search": true,
+     "money_spent": 0.059236,
+     "datetime": "2026-11-17 08:03:28 +00:00",
+     "items": [
+      {
+       "type": "message",
+       "sections": [
+        {
+         "type": "text",
+         "text": "Based on recent 2026 comparisons, here's how these payment platforms stack up for indie SaaS developers:\n\n## **Quick Recommendation**\n\n",
+         "annotations": null
+        },
+        {
+         "type": "text",
+         "text": "For most indie hackers in 2026: Polar if you value open source, transparent pricing, and developer tooling; Creem if you want the lowest published fee (3.9% + 40¢) and have many international customers; Dodo Payments if usage or credit billing is core to your product.",
+         "annotations": [
+          {
+           "title": "Stripe vs Lemon Squeezy vs Polar vs Creem vs Dodo (2026 Fees)",
+           "url": "https://www.turbostarter.dev/blog/stripe-vs-lemonsqueezy-vs-polar-vs-creem-choosing-the-right-saas-payment-provider",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        },
+        {
+         "type": "text",
+         "text": "\n\n## **Pricing Comparison**\n\n**Base transaction fees:**\n- ",
+         "annotations": null
+        },
+        {
+         "type": "text",
+         "text": "Stripe (2.9% + 30¢) < Creem (3.9% + 40¢) < Dodo (4% + 40¢) < Polar Starter (5% + 50¢)",
+         "annotations": [
+          {
+           "title": "SaaS Payments: Stripe vs Polar vs Dodo vs Creem (2026)",
+           "url": "https://alternative.tools/payments",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        },
+        {
+         "type": "text",
+         "text": "\n\n**Note:** Stripe's lower rate doesn't include merchant of record (MoR) services - you handle tax compliance yourself. The others are full MoR solutions.\n\n## **When to Choose Each**\n\n**Stripe:** ",
+         "annotations": null
+        },
+        {
+         "type": "text",
+         "text": "Stripe remains the best engine if you can own tax compliance",
+         "annotations": [
+          {
+           "title": "SaaS Payments: Stripe vs Polar vs Dodo vs Creem (2026)",
+           "url": "https://alternative.tools/payments",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "SaaS Payments: Stripe vs Polar vs Dodo vs Creem (2026)",
+           "url": "https://alternative.tools/payments",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        },
+        {
+         "type": "text",
+         "text": " and have the engineering resources to build your own billing infrastructure.\n\n**Polar:** ",
+         "annotations": null
+        },
+        {
+         "type": "text",
+         "text": "Polar is the pick for developers who want an open-source MoR with modern billing. For indie developers and early startups it has become a favorite.",
+         "annotations": [
+          {
+           "title": "SaaS Payments: Stripe vs Polar vs Dodo vs Creem (2026)",
+           "url": "https://alternative.tools/payments",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "SaaS Payments: Stripe vs Polar vs Dodo vs Creem (2026)",
+           "url": "https://alternative.tools/payments",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        },
+        {
+         "type": "text",
+         "text": " ",
+         "annotations": null
+        },
+        {
+         "type": "text",
+         "text": "You're launching your first SaaS: Go with Polar.",
+         "annotations": [
+          {
+           "title": "Best Lemon Squeezy Alternatives for Indie Hackers in 2026 (Honest Picks)",
+           "url": "https://devtoolpicks.com/blog/best-lemon-squeezy-alternatives-indie-hackers-2026",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        },
+        {
+         "type": "text",
+         "text": "\n\n**Creem:** ",
+         "annotations": null
+        },
+        {
+         "type": "text",
+         "text": "Creem is strongly positioned toward indie hackers and micro-SaaS companies",
+         "annotations": [
+          {
+           "title": "2026's Best Merchant of Record Services for SaaS - StrategyDriven",
+           "url": "https://www.strategydriven.com/2026/09/14/2026s-best-merchant-of-record-services-for-saas/",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "2026's Best Merchant of Record Services for SaaS - StrategyDriven",
+           "url": "https://www.strategydriven.com/2026/09/14/2026s-best-merchant-of-record-services-for-saas/",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        },
+        {
+         "type": "text",
+         "text": " and offers the lowest MoR rate if fees are your primary concern.\n\n**Dodo Payments:** ",
+         "annotations": null
+        },
+        {
+         "type": "text",
+         "text": "Choose Dodo Payments when your product uses several monetization models and your development team values code-first billing workflows.",
+         "annotations": [
+          {
+           "title": "2026's Best Merchant of Record Services for SaaS - StrategyDriven",
+           "url": "https://www.strategydriven.com/2026/09/14/2026s-best-merchant-of-record-services-for-saas/",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        },
+        {
+         "type": "text",
+         "text": " ",
+         "annotations": null
+        },
+        {
+         "type": "text",
+         "text": "Dodo shines for global and emerging-market reach at flat pricing.",
+         "annotations": [
+          {
+           "title": "SaaS Payments: Stripe vs Polar vs Dodo vs Creem (2026)",
+           "url": "https://alternative.tools/payments",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        },
+        {
+         "type": "text",
+         "text": "\n\n## **Key Differences**\n\nAll three alternatives (Polar, Creem, Dodo) act as merchants of record, meaning ",
+         "annotations": null
+        },
+        {
+         "type": "text",
+         "text": "they act as the legal seller and puts registration, filing, and remittance on them. Stripe only does this through its Managed Payments product; on the standard model you remain responsible.",
+         "annotations": [
+          {
+           "title": "7 Whop Alternatives for Creators and SaaS Sellers in 2026",
+           "url": "https://dodopayments.com/blogs/whop-alternatives",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        },
+        {
+         "type": "text",
+         "text": "\n\nThe choice ultimately depends on whether you prioritize lowest fees (Creem), developer experience and open-source (Polar), usage-based billing flexibility (Dodo), or maximum control with your own tax handling (Stripe).",
+         "annotations": null
+        }
+       ]
+      }
+     ],
+     "fan_out_queries": [
+      "Stripe vs Polar vs Dodo Payments vs Creem indie SaaS 2026",
+      "Polar payment platform indie developers 2026",
+      "Dodo Payments SaaS developers review",
+      "Creem payment platform features pricing"
+     ],
+     "search_results": [
+      {
+       "title": "Stripe vs Lemon Squeezy vs Polar vs Creem vs Dodo (2026 Fees)",
+       "url": "https://www.turbostarter.dev/blog/stripe-vs-lemonsqueezy-vs-polar-vs-creem-choosing-the-right-saas-payment-provider",
+       "date": "2026-10-22 08:03:28 +00:00",
+       "snippet": null
+      },
+      {
+       "title": "7 Whop Alternatives for Creators and SaaS Sellers in 2026",
+       "url": "https://dodopayments.com/blogs/whop-alternatives",
+       "date": "2026-09-09 08:03:28 +00:00",
+       "snippet": null
+      },
+      {
+       "title": "Merchant of record for SaaS (2026): MoR vs Stripe, fees, and switching providers",
+       "url": "https://www.turbostarter.dev/blog/merchant-of-record-saas-guide",
+       "date": "2026-11-05 08:03:28 +00:00",
+       "snippet": null
+      },
+      {
+       "title": "SaaS Payments: Stripe vs Polar vs Dodo vs Creem (2026)",
+       "url": "https://alternative.tools/payments",
+       "date": null,
+       "snippet": null
+      },
+      {
+       "title": "2026's Best Merchant of Record Services for SaaS - StrategyDriven",
+       "url": "https://www.strategydriven.com/2026/09/14/2026s-best-merchant-of-record-services-for-saas/",
+       "date": "2026-09-15 08:03:28 +00:00",
+       "snippet": null
+      },
+      {
+       "title": "Best Lemon Squeezy Alternatives for Indie Hackers in 2026 (Honest Picks)",
+       "url": "https://devtoolpicks.com/blog/best-lemon-squeezy-alternatives-indie-hackers-2026",
+       "date": "2026-09-14 08:03:28 +00:00",
+       "snippet": null
+      },
+      {
+       "title": "Best Merchant of Record for SaaS: Top Platforms Compared for Startups",
+       "url": "https://www.launchvault.dev/blog/merchant-of-record-for-saas",
+       "date": "2026-06-24 08:03:28 +00:00",
+       "snippet": null
+      },
+      {
+       "title": "Best Stripe Alternatives for Startups, Indie Hackers, and Non-US Founders",
+       "url": "https://www.launchvault.dev/blog/stripe-alternatives-for-startups",
+       "date": "2026-06-24 08:03:28 +00:00",
+       "snippet": null
+      },
+      {
+       "title": "8 Best Lemon Squeezy Alternatives for Indie SaaS Founders (Merchant of Record Compared)",
+       "url": "https://fintechspecs.com/blog/best-lemon-squeezy-alternatives-merchant-of-record/",
+       "date": "2026-10-27 08:03:28 +00:00",
+       "snippet": null
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

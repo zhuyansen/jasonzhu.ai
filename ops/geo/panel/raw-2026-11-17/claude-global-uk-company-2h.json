@@ -1,0 +1,273 @@
+{
+ "version": "0.1.20261103",
+ "status_code": 20000,
+ "status_message": "Ok.",
+ "time": "17.1941 sec.",
+ "cost": 0.053116,
+ "tasks_count": 1,
+ "tasks_error": 0,
+ "tasks": [
+  {
+   "id": "11170804-2225-0612-0000-a54ff70551da",
+   "status_code": 20000,
+   "status_message": "Ok.",
+   "time": "17.0132 sec.",
+   "cost": 0.053116,
+   "result_count": 1,
+   "path": [
+    "v3",
+    "ai_optimization",
+    "claude",
+    "llm_responses",
+    "live"
+   ],
+   "data": {
+    "api": "ai_optimization",
+    "function": "llm_responses",
+    "se": "claude",
+    "user_prompt": "How to register a UK limited company online from abroad for around 50 pounds?",
+    "model_name": "claude-sonnet-4-5",
+    "web_search": true
+   },
+   "result": [
+    {
+     "model_name": "claude-sonnet-4-5-20250929",
+     "input_tokens": 11457,
+     "output_tokens": 543,
+     "reasoning_tokens": 0,
+     "web_search": true,
+     "money_spent": 0.052516,
+     "datetime": "2026-11-17 08:04:59 +00:00",
+     "items": [
+      {
+       "type": "message",
+       "sections": [
+        {
+         "type": "text",
+         "text": "Based on current information, I need to let you know that ",
+         "annotations": null
+        },
+        {
+         "type": "text",
+         "text": "the cost to register a UK company online is now £100",
+         "annotations": [
+          {
+           "title": "Incorporate in UK",
+           "url": "https://www.commenda.io/blog/incorporate-in-uk",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        },
+        {
+         "type": "text",
+         "text": " as of February 2026, not £50. However, here's how to register a UK limited company online from abroad:\n\n## Direct Registration (Cheapest Option - £100)\n\n",
+         "annotations": null
+        },
+        {
+         "type": "text",
+         "text": "Non-UK residents can form and own a UK company entirely from abroad, as the UK has no residency or citizenship requirement for directors or shareholders",
+         "annotations": [
+          {
+           "title": "Incorporate in UK",
+           "url": "https://www.commenda.io/blog/incorporate-in-uk",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        },
+        {
+         "type": "text",
+         "text": ".\n\n**Steps to register directly:**\n\n1. **Prepare required information:**\n   - ",
+         "annotations": null
+        },
+        {
+         "type": "text",
+         "text": "Company name, a UK registered office address you have permission to use, and a company email address",
+         "annotations": [
+          {
+           "title": "How to register a UK limited company as a non-UK resident",
+           "url": "https://swiftlondon.co.uk/resources/company-incorporation-non-residents/",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        },
+        {
+         "type": "text",
+         "text": "\n   - ",
+         "annotations": null
+        },
+        {
+         "type": "text",
+         "text": "Each director's Companies House personal code following identity verification",
+         "annotations": [
+          {
+           "title": "How to register a UK limited company as a non-UK resident",
+           "url": "https://swiftlondon.co.uk/resources/company-incorporation-non-residents/",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        },
+        {
+         "type": "text",
+         "text": "\n   - Shareholder details and share allocations\n\n2. **Register online:** ",
+         "annotations": null
+        },
+        {
+         "type": "text",
+         "text": "Register on GOV.UK and pay the fee, then receive the certificate of incorporation and company number, usually within 24 hours for online applications",
+         "annotations": [
+          {
+           "title": "UK Company Formation for Non-Residents: Open a UK LTD",
+           "url": "https://b2btradeservices.com/blog/uk-company-formation-for-non-residents/",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "UK Company Formation for Non-Residents: Open a UK LTD",
+           "url": "https://b2btradeservices.com/blog/uk-company-formation-for-non-residents/",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        },
+        {
+         "type": "text",
+         "text": "\n\n3. **Pay the fee:** ",
+         "annotations": null
+        },
+        {
+         "type": "text",
+         "text": "Pay the £100 online fee (your card provider may add a currency-conversion charge)",
+         "annotations": [
+          {
+           "title": "How to register a UK limited company as a non-UK resident",
+           "url": "https://swiftlondon.co.uk/resources/company-incorporation-non-residents/",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        },
+        {
+         "type": "text",
+         "text": "\n\n## Formation Agent Options (If You Need Help)\n\nIf you need assistance or don't have a UK address, formation agents offer packages:\n- ",
+         "annotations": null
+        },
+        {
+         "type": "text",
+         "text": "Swift Accountancy charges £75 as a one-off fee, plus the £100 Companies House fee",
+         "annotations": [
+          {
+           "title": "How to register a UK limited company as a non-UK resident",
+           "url": "https://swiftlondon.co.uk/resources/company-incorporation-non-residents/",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        },
+        {
+         "type": "text",
+         "text": "\n- ",
+         "annotations": null
+        },
+        {
+         "type": "text",
+         "text": "Some packages cost £98.48 + £100 Companies House fee",
+         "annotations": [
+          {
+           "title": "Non-Resident UK Company Formation Package",
+           "url": "https://www.yourcompanyformations.co.uk/packages/international/",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        },
+        {
+         "type": "text",
+         "text": "\n\nThe main challenge for registering at £50 is that the official Companies House fee alone is now £100, so you won't be able to register for around £50 anymore.",
+         "annotations": null
+        }
+       ]
+      }
+     ],
+     "fan_out_queries": [
+      "register UK limited company online from abroad cost"
+     ],
+     "search_results": [
+      {
+       "title": "Incorporate in UK",
+       "url": "https://www.commenda.io/blog/incorporate-in-uk",
+       "date": "2026-07-17 08:04:59 +00:00",
+       "snippet": null
+      },
+      {
+       "title": "How to register a company in the UK from the USA",
+       "url": "https://www.commenda.io/incorporation/register-a-company-in-uk-from-usa",
+       "date": "2026-10-21 08:04:59 +00:00",
+       "snippet": null
+      },
+      {
+       "title": "Non-Resident UK Company Formation Package",
+       "url": "https://www.yourcompanyformations.co.uk/packages/international/",
+       "date": "2026-09-08 08:04:59 +00:00",
+       "snippet": null
+      },
+      {
+       "title": "How to Set Up a UK Limited Company in 2026",
+       "url": "https://www.vjmglobal.com/feeds/blog/wise-company-formation-uk-limited-partnership-usa",
+       "date": "2026-09-09 08:04:59 +00:00",
+       "snippet": null
+      },
+      {
+       "title": "How to register a UK limited company as a non-UK resident",
+       "url": "https://swiftlondon.co.uk/resources/company-incorporation-non-residents/",
+       "date": "2026-10-04 08:04:59 +00:00",
+       "snippet": null
+      },
+      {
+       "title": "Non-resident UK Company Formation + Offshore Incorporations",
+       "url": "https://ltd-companies.co.uk/registration-for-non-uk-residents/",
+       "date": "2026-07-22 08:04:59 +00:00",
+       "snippet": null
+      },
+      {
+       "title": "UK Company Formation for Non-Residents: 2026 Guide",
+       "url": "https://www.sevenoakprestige.com/blog/uk-company-formation-for-non-residents",
+       "date": "2026-08-04 08:04:59 +00:00",
+       "snippet": null
+      },
+      {
+       "title": "UK Company Formation for Non-Residents: Open a UK LTD",
+       "url": "https://b2btradeservices.com/blog/uk-company-formation-for-non-residents/",
+       "date": "2026-10-08 08:04:59 +00:00",
+       "snippet": null
+      },
+      {
+       "title": "How to Register a Limited Company in the UK (2026): Steps, Cost & Time",
+       "url": "https://www.businessexpert.co.uk/business-setup/how-to-register-a-uk-company/",
+       "date": "2026-10-07 08:04:59 +00:00",
+       "snippet": null
+      },
+      {
+       "title": "How to Register a UK Limited Company from Abroad",
+       "url": "https://corpenza.com/en/how-to-register-a-uk-limited-company-from-abroad",
+       "date": "2026-06-21 08:04:59 +00:00",
+       "snippet": null
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

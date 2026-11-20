@@ -1,0 +1,307 @@
+{
+ "version": "0.1.20261103",
+ "status_code": 20000,
+ "status_message": "Ok.",
+ "time": "27.4358 sec.",
+ "cost": 0.004,
+ "tasks_count": 1,
+ "tasks_error": 0,
+ "tasks": [
+  {
+   "id": "11170800-2225-0629-0000-b6ef50bacd99",
+   "status_code": 20000,
+   "status_message": "Ok.",
+   "time": "24.8945 sec.",
+   "cost": 0.004,
+   "result_count": 1,
+   "path": [
+    "v3",
+    "ai_optimization",
+    "gemini",
+    "llm_scraper",
+    "live",
+    "advanced"
+   ],
+   "data": {
+    "api": "ai_optimization",
+    "function": "live",
+    "se": "gemini",
+    "keyword": "Who is Jason Zhu (jasonzhu.ai) and what does GoSail Club do?",
+    "language_code": "en",
+    "location_code": 2840,
+    "device": "desktop",
+    "os": "windows"
+   },
+   "result": [
+    {
+     "keyword": "Who is Jason Zhu (jasonzhu.ai) and what does GoSail Club do?",
+     "location_code": 2840,
+     "language_code": "en",
+     "model": "3.5 Flash-Lite",
+     "datetime": "2026-11-17 08:00:47 +00:00",
+     "markdown": "### Who is Jason Zhu (jasonzhu.ai)?\n\n**Jason Zhu** is a former AI algorithm engineer turned tech creator, independent developer, and content entrepreneur.[github.com](https://github.com/zhuyansen/jasonzhu.ai) Operating primarily under the handle **@GoSailGlobal** on platforms like X (Twitter), he focuses on:[www.xiaoyuzhoufm.com](https://www.xiaoyuzhoufm.com/podcast/6540c81e9cb67569a2f99856)\n* **AI Application & Practice:** Publishing reviews, hands-on tutorials, and insights regarding global AI tools and workflows.[jasonzhu.ai](https://jasonzhu.ai/en)\n* **\"Go Global\" (出海) Growth:** Helping creators and developers understand how to build, market, and scale technical products and personal brands internationally. \n* **Content & Communities:** Managing his personal platform **jasonzhu.ai**, which functions as a hub for AI tool databases, prompt engineering handbooks, tutorials, and indie-hacker documentation.\n\n---\n\n### What does GoSail Club do?\n\n**GoSail Club** (frequently associated with his \"GoSail\" ecosystem, which includes *GoSail Lab* and *Ship2Market*) acts as an initiative, studio, or community tied to his overseas growth and AI marketing operations. Specifically, it serves as:\n* **An AI Product & Marketing Lab:** Focusing on helping developers and tech creators take their AI applications to international markets (\"going global\").[ship2market.ai](https://ship2market.ai/en/)\n* **Growth and Go-To-Market Support:** Offering resources, marketing insights, and validation tactics (such as tracking verified demand and new digital products) for independent builders.",
+     "sources": [
+      {
+       "type": "gemini_source",
+       "title": "Jason Zhu",
+       "snippet": null,
+       "domain": "jasonjunjiezhu.com",
+       "url": "https://jasonjunjiezhu.com/",
+       "thumbnail": "https://t0.gstatic.com/faviconV2?url=https://jasonjunjiezhu.com/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "jasonjunjiezhu.com",
+       "publication_date": null,
+       "markdown": "Jason Zhu"
+      },
+      {
+       "type": "gemini_source",
+       "title": "Jason Zhihuai Zhu - PyTorch Conference Europe 2026 - Sched",
+       "snippet": null,
+       "domain": "pytorchconferenceeu2026.sched.com",
+       "url": "https://pytorchconferenceeu2026.sched.com/speaker/jason.zhu1",
+       "thumbnail": "https://t0.gstatic.com/faviconV2?url=https://pytorchconferenceeu2026.sched.com/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "pytorchconferenceeu2026.sched.com",
+       "publication_date": null,
+       "markdown": "Jason Zhihuai Zhu - PyTorch Conference Europe 2026 - Sched"
+      },
+      {
+       "type": "gemini_source",
+       "title": "jasonzhu.ai - zhuyansen - GitHub",
+       "snippet": "Contribute to zhuyansen/jasonzhu.ai development by creating an account on \nGitHub ... AI 出海博主Jason Zhu 的个人网站。前AI 算法工程师，现专注于AI 出海内容创作",
+       "domain": "github.com",
+       "url": "https://github.com/zhuyansen/jasonzhu.ai",
+       "thumbnail": "https://t1.gstatic.com/faviconV2?url=https://github.com/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "GitHub",
+       "publication_date": null,
+       "markdown": "jasonzhu.ai - zhuyansen - GitHub"
+      },
+      {
+       "type": "gemini_source",
+       "title": "Jason (Junjie) Zhu, Ph.D.",
+       "snippet": null,
+       "domain": "www.jasonjunjiezhu.com",
+       "url": "https://www.jasonjunjiezhu.com/docs/current_resume/jason_zhu_phd_resume_2025_v1.pdf",
+       "thumbnail": "https://t3.gstatic.com/faviconV2?url=https://www.jasonjunjiezhu.com/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "www.jasonjunjiezhu.com",
+       "publication_date": null,
+       "markdown": "Jason (Junjie) Zhu, Ph.D."
+      },
+      {
+       "type": "gemini_source",
+       "title": "Jason Zhu - 14th IMPACCT Real-World Evidence Summit",
+       "snippet": null,
+       "domain": "real-world-evidence-pharma.com",
+       "url": "https://real-world-evidence-pharma.com/speaker/jason-zhu/",
+       "thumbnail": "https://t1.gstatic.com/faviconV2?url=https://real-world-evidence-pharma.com/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "real-world-evidence-pharma.com",
+       "publication_date": null,
+       "markdown": "Jason Zhu - 14th IMPACCT Real-World Evidence Summit"
+      },
+      {
+       "type": "gemini_source",
+       "title": "Join the Go Sailing Association",
+       "snippet": null,
+       "domain": "www.gosail.club",
+       "url": "https://www.gosail.club/join-gsa",
+       "thumbnail": "https://t3.gstatic.com/faviconV2?url=https://www.gosail.club/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "www.gosail.club",
+       "publication_date": null,
+       "markdown": "Join the Go Sailing Association"
+      },
+      {
+       "type": "gemini_source",
+       "title": "GO SAILING ASSOCIATION | Affordable UK Sailing Club for All",
+       "snippet": null,
+       "domain": "www.gosail.club",
+       "url": "https://www.gosail.club/",
+       "thumbnail": "https://t3.gstatic.com/faviconV2?url=https://www.gosail.club/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "www.gosail.club",
+       "publication_date": null,
+       "markdown": "GO SAILING ASSOCIATION | Affordable UK Sailing Club for All"
+      },
+      {
+       "type": "gemini_source",
+       "title": "Go Sailing App - iPhone/Android",
+       "snippet": null,
+       "domain": "gosailingapp.com",
+       "url": "https://gosailingapp.com/",
+       "thumbnail": "https://t0.gstatic.com/faviconV2?url=https://gosailingapp.com/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "gosailingapp.com",
+       "publication_date": null,
+       "markdown": "Go Sailing App - iPhone/Android"
+      },
+      {
+       "type": "gemini_source",
+       "title": "Not Yot Sailing Club - GoSail Arizona",
+       "snippet": null,
+       "domain": "gosailaz.com",
+       "url": "https://gosailaz.com/not-yot-sailing-club/",
+       "thumbnail": "https://t3.gstatic.com/faviconV2?url=https://gosailaz.com/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "gosailaz.com",
+       "publication_date": null,
+       "markdown": "Not Yot Sailing Club - GoSail Arizona"
+      },
+      {
+       "type": "gemini_source",
+       "title": "Go Sailing Association - YouTube",
+       "snippet": null,
+       "domain": "www.youtube.com",
+       "url": "https://www.youtube.com/@GoSailingAssociation",
+       "thumbnail": "https://t0.gstatic.com/faviconV2?url=https://www.youtube.com/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "www.youtube.com",
+       "publication_date": null,
+       "markdown": "Go Sailing Association - YouTube"
+      },
+      {
+       "type": "gemini_source",
+       "title": "AI Applications & Practice | Reviews, Tutorials, Growth - JasonZhu.AI",
+       "snippet": "... GoSail ClubAbout中. Sign in. 中. Sign in. JasonZhu.AI. AI tool reviews, \nhands-on tutorials, industry insights, and growth strategies. ⛵. GoSail \nClub. AI going",
+       "domain": "jasonzhu.ai",
+       "url": "https://jasonzhu.ai/en",
+       "thumbnail": "https://t0.gstatic.com/faviconV2?url=https://jasonzhu.ai/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "jasonzhu.ai",
+       "publication_date": null,
+       "markdown": "AI Applications & Practice | Reviews, Tutorials, Growth - JasonZhu.AI"
+      },
+      {
+       "type": "gemini_source",
+       "title": "JasonZhu.AI - AI应用与实践| AI工具评测、教程、出海增长",
+       "snippet": null,
+       "domain": "jasonzhu.ai",
+       "url": "https://jasonzhu.ai/zh",
+       "thumbnail": "https://t0.gstatic.com/faviconV2?url=https://jasonzhu.ai/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "jasonzhu.ai",
+       "publication_date": null,
+       "markdown": "JasonZhu.AI - AI应用与实践| AI工具评测、教程、出海增长"
+      },
+      {
+       "type": "gemini_source",
+       "title": "Weekly: new sellers, new products and verified demand | JasonZhu.AI",
+       "snippet": null,
+       "domain": "jasonzhu.ai",
+       "url": "https://jasonzhu.ai/en/go-global/weekly",
+       "thumbnail": "https://t0.gstatic.com/faviconV2?url=https://jasonzhu.ai/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "jasonzhu.ai",
+       "publication_date": null,
+       "markdown": "Weekly: new sellers, new products and verified demand | JasonZhu.AI"
+      },
+      {
+       "type": "gemini_source",
+       "title": "关于我 - JasonZhu.AI",
+       "snippet": null,
+       "domain": "jasonzhu.ai",
+       "url": "https://jasonzhu.ai/zh/about",
+       "thumbnail": "https://t0.gstatic.com/faviconV2?url=https://jasonzhu.ai/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "jasonzhu.ai",
+       "publication_date": null,
+       "markdown": "关于我 - JasonZhu.AI"
+      },
+      {
+       "type": "gemini_source",
+       "title": "AIP 出海自媒体实战手册 - JasonZhu.AI",
+       "snippet": null,
+       "domain": "jasonzhu.ai",
+       "url": "https://jasonzhu.ai/zh/handbook",
+       "thumbnail": "https://t0.gstatic.com/faviconV2?url=https://jasonzhu.ai/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "jasonzhu.ai",
+       "publication_date": null,
+       "markdown": "AIP 出海自媒体实战手册 - JasonZhu.AI"
+      },
+      {
+       "type": "gemini_source",
+       "title": "Jason Zhu - YouTube",
+       "snippet": null,
+       "domain": "www.youtube.com",
+       "url": "https://www.youtube.com/@JasonZhuGoSail",
+       "thumbnail": "https://t0.gstatic.com/faviconV2?url=https://www.youtube.com/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "www.youtube.com",
+       "publication_date": null,
+       "markdown": "Jason Zhu - YouTube"
+      },
+      {
+       "type": "gemini_source",
+       "title": "Ship2Market Launch Month · You build. We ship it to market.",
+       "snippet": "Jason Zhu ↗X · 33.9k followers · AI creator; AI Daddy ↗X · 28.4k followers \n· AI creator ... We handle going global. GoSail Lab · ship2market.ai. \nPrivacy.",
+       "domain": "ship2market.ai",
+       "url": "https://ship2market.ai/en/",
+       "thumbnail": "https://t0.gstatic.com/faviconV2?url=https://ship2market.ai/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "ship2market.ai",
+       "publication_date": null,
+       "markdown": "Ship2Market Launch Month · You build. We ship it to market."
+      },
+      {
+       "type": "gemini_source",
+       "title": "自由指北| 小宇宙- 听播客",
+       "snippet": "本期对话：Jason Zhu 前AI 算法工程师| 海外推特AI博主（@GoSailGlobal） | GoSail Lab（AI \nMCN）创始人✨收听指南01:29 从大专到大厂，再到AI内容创业：Jason Zhu 是谁",
+       "domain": "www.xiaoyuzhoufm.com",
+       "url": "https://www.xiaoyuzhoufm.com/podcast/6540c81e9cb67569a2f99856",
+       "thumbnail": "https://t2.gstatic.com/faviconV2?url=https://www.xiaoyuzhoufm.com/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+       "source_name": "小宇宙播客",
+       "publication_date": null,
+       "markdown": "自由指北| 小宇宙- 听播客"
+      }
+     ],
+     "se_results_count": 0,
+     "item_types": [
+      "gemini_text"
+     ],
+     "items_count": 1,
+     "items": [
+      {
+       "type": "gemini_text",
+       "rank_group": 1,
+       "rank_absolute": 1,
+       "markdown": "### Who is Jason Zhu (jasonzhu.ai)?\n\n**Jason Zhu** is a former AI algorithm engineer turned tech creator, independent developer, and content entrepreneur.[github.com](https://github.com/zhuyansen/jasonzhu.ai) Operating primarily under the handle **@GoSailGlobal** on platforms like X (Twitter), he focuses on:[www.xiaoyuzhoufm.com](https://www.xiaoyuzhoufm.com/podcast/6540c81e9cb67569a2f99856)\n* **AI Application & Practice:** Publishing reviews, hands-on tutorials, and insights regarding global AI tools and workflows.[jasonzhu.ai](https://jasonzhu.ai/en)\n* **\"Go Global\" (出海) Growth:** Helping creators and developers understand how to build, market, and scale technical products and personal brands internationally. \n* **Content & Communities:** Managing his personal platform **jasonzhu.ai**, which functions as a hub for AI tool databases, prompt engineering handbooks, tutorials, and indie-hacker documentation.\n\n---\n\n### What does GoSail Club do?\n\n**GoSail Club** (frequently associated with his \"GoSail\" ecosystem, which includes *GoSail Lab* and *Ship2Market*) acts as an initiative, studio, or community tied to his overseas growth and AI marketing operations. Specifically, it serves as:\n* **An AI Product & Marketing Lab:** Focusing on helping developers and tech creators take their AI applications to international markets (\"going global\").[ship2market.ai](https://ship2market.ai/en/)\n* **Growth and Go-To-Market Support:** Offering resources, marketing insights, and validation tactics (such as tracking verified demand and new digital products) for independent builders.",
+       "original_text": "### Who is Jason Zhu (jasonzhu.ai)?\n\n**Jason Zhu** is a former AI algorithm engineer turned tech creator, independent developer, and content entrepreneur. Operating primarily under the handle **@GoSailGlobal** on platforms like X (Twitter), he focuses on:\n* **AI Application & Practice:** Publishing reviews, hands-on tutorials, and insights regarding global AI tools and workflows.\n* **\"Go Global\" (出海) Growth:** Helping creators and developers understand how to build, market, and scale technical products and personal brands internationally. \n* **Content & Communities:** Managing his personal platform **jasonzhu.ai**, which functions as a hub for AI tool databases, prompt engineering handbooks, tutorials, and indie-hacker documentation.\n\n---\n\n### What does GoSail Club do?\n\n**GoSail Club** (frequently associated with his \"GoSail\" ecosystem, which includes *GoSail Lab* and *Ship2Market*) acts as an initiative, studio, or community tied to his overseas growth and AI marketing operations. Specifically, it serves as:\n* **An AI Product & Marketing Lab:** Focusing on helping developers and tech creators take their AI applications to international markets (\"going global\").\n* **Growth and Go-To-Market Support:** Offering resources, marketing insights, and validation tactics (such as tracking verified demand and new digital products) for independent builders.",
+       "sources": [
+        {
+         "type": "gemini_source",
+         "title": "jasonzhu.ai - zhuyansen - GitHub",
+         "snippet": "Contribute to zhuyansen/jasonzhu.ai development by creating an account on \nGitHub ... AI 出海博主Jason Zhu 的个人网站。前AI 算法工程师，现专注于AI 出海内容创作",
+         "domain": "github.com",
+         "url": "https://github.com/zhuyansen/jasonzhu.ai",
+         "thumbnail": "https://t1.gstatic.com/faviconV2?url=https://github.com/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+         "source_name": "GitHub",
+         "publication_date": null,
+         "markdown": "jasonzhu.ai - zhuyansen - GitHub"
+        },
+        {
+         "type": "gemini_source",
+         "title": "自由指北| 小宇宙- 听播客",
+         "snippet": "本期对话：Jason Zhu 前AI 算法工程师| 海外推特AI博主（@GoSailGlobal） | GoSail Lab（AI \nMCN）创始人✨收听指南01:29 从大专到大厂，再到AI内容创业：Jason Zhu 是谁",
+         "domain": "www.xiaoyuzhoufm.com",
+         "url": "https://www.xiaoyuzhoufm.com/podcast/6540c81e9cb67569a2f99856",
+         "thumbnail": "https://t2.gstatic.com/faviconV2?url=https://www.xiaoyuzhoufm.com/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+         "source_name": "小宇宙播客",
+         "publication_date": null,
+         "markdown": "自由指北| 小宇宙- 听播客"
+        },
+        {
+         "type": "gemini_source",
+         "title": "AI Applications & Practice | Reviews, Tutorials, Growth - JasonZhu.AI",
+         "snippet": "... GoSail ClubAbout中. Sign in. 中. Sign in. JasonZhu.AI. AI tool reviews, \nhands-on tutorials, industry insights, and growth strategies. ⛵. GoSail \nClub. AI going",
+         "domain": "jasonzhu.ai",
+         "url": "https://jasonzhu.ai/en",
+         "thumbnail": "https://t0.gstatic.com/faviconV2?url=https://jasonzhu.ai/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+         "source_name": "jasonzhu.ai",
+         "publication_date": null,
+         "markdown": "AI Applications & Practice | Reviews, Tutorials, Growth - JasonZhu.AI"
+        },
+        {
+         "type": "gemini_source",
+         "title": "Ship2Market Launch Month · You build. We ship it to market.",
+         "snippet": "Jason Zhu ↗X · 33.9k followers · AI creator; AI Daddy ↗X · 28.4k followers \n· AI creator ... We handle going global. GoSail Lab · ship2market.ai. \nPrivacy.",
+         "domain": "ship2market.ai",
+         "url": "https://ship2market.ai/en/",
+         "thumbnail": "https://t0.gstatic.com/faviconV2?url=https://ship2market.ai/&client=BARD&type=FAVICON&size=256&fallback_opts=TYPE,SIZE,URL",
+         "source_name": "ship2market.ai",
+         "publication_date": null,
+         "markdown": "Ship2Market Launch Month · You build. We ship it to market."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

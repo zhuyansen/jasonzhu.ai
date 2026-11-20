@@ -1,0 +1,496 @@
+{
+ "version": "0.1.20261103",
+ "status_code": 20000,
+ "status_message": "Ok.",
+ "time": "52.2952 sec.",
+ "cost": 0.004,
+ "tasks_count": 1,
+ "tasks_error": 0,
+ "tasks": [
+  {
+   "id": "11170802-2225-0629-0000-710d447a6dad",
+   "status_code": 20000,
+   "status_message": "Ok.",
+   "time": "51.4726 sec.",
+   "cost": 0.004,
+   "result_count": 1,
+   "path": [
+    "v3",
+    "ai_optimization",
+    "chat_gpt",
+    "llm_scraper",
+    "live",
+    "advanced"
+   ],
+   "data": {
+    "api": "ai_optimization",
+    "function": "live",
+    "se": "chat_gpt",
+    "keyword": "Where can I track weekly statistics on new indie SaaS and AI product payment links?",
+    "language_code": "en",
+    "location_code": 2840,
+    "force_web_search": true,
+    "device": "desktop",
+    "os": "windows"
+   },
+   "result": [
+    {
+     "keyword": "Where can I track weekly statistics on new indie SaaS and AI product payment links?",
+     "location_code": 2840,
+     "language_code": "en",
+     "model": "gpt-6",
+     "check_url": "https://chatgpt.com/?prompt=Where%20can%20I%20track%20weekly%20statistics%20on%20new%20indie%20SaaS%20and%20AI%20product%20payment%20links%3F&hints=search",
+     "datetime": "2026-11-17 08:03:08 +00:00",
+     "markdown": "If you're looking to track **new indie SaaS and AI products launching each week, including their pricing, monetization models, and links to purchase or subscribe**, I'd start with these platforms.\n\nThe closest match is **SaaSearch**, which publishes dedicated weekly indie SaaS and AI launch statistics.\n\n## Best platforms to track\n\n![Insighter Lite](https://images.openai.com/static-rsc-4/HTUrZsEwRj-gaQDw5pfDbCqVxZfwknn68sHzZmTjmxbmE82EqmrfEI2QH5C911w2Dyo9iQxIGeejDqhJVnYTI2d2oQ2PrktSDpd9wLsdzhgimBUYx5AVBLkLppj70OCvelKhPAMEvcNKYEBoEsULSVKJ--HJ7xkVNOreVyUk8DdWYBOYNlzyauQ0QAQ6ppWg?purpose=fullsize)\n\n**1\\. SaaSearch**\n\n(Best overall match)\n\nsaasearch.io\n\n- Weekly launch reports, published Mondays.\n- Number of new SaaS and AI products.\n- Median subscription prices.\n- Freemium vs paid pricing models.\n- Category-level trends.\n\n[Explore weekly SaaS reports](https://saasearch.io/reports?utm_source=chatgpt.com)\n\n---\n\n![Launch | IndieAI](https://images.openai.com/static-rsc-4/9XaYsazfGDO00T-m11RrZGClq3OQ7TJbefwO68bnr-xoiq2f8D1W-jcf7bunj3dL_zHMoPE0rf6qqT0znxxbWi3fwFTr08UiY0xl1K_ESQHLOFLjubk4DGZjdBYUzSMUvHhGrCr6KjsZs_0UMBBcb99pbEb_RB_DMJ9s77_CcOS5lnQU-SongcgBd3Z5CvdY?purpose=fullsize)\n\n**2\\. Launch Index**\n\nlaunchindex.ai\n\n- Tracks Product Hunt and Show HN launches.\n- Weekly launch statistics.\n- Product rankings and traction.\n- AI category breakdowns.\n- Free weekly newsletter.\n\n[Explore Launch Index](https://launchindex.ai/?utm_source=chatgpt.com)\n\n---\n\n![Scroll Launch: Launch your product and get discovered by other makers | Product Hunt](https://images.openai.com/static-rsc-4/XceP1icfrQGf3GB60v5hZuchd-0dZP2wszk8Hn0VXFXPIoQsVY1JY1BeRxNBEbOZNlkDH-aH5jQvNQBsw1RFZ9W5iwIdHCqO08M1oYEuTgQPPcAXkuscu_prPSuLK5a3eOeBqs7Zj9f6_rUsbGyAQT3J7HbPVOpRLkCbAJ0LG4ZzeNpoqHxZrjifaHL19hym?purpose=fullsize)\n\n**3\\. ScrollLaunch**\n\nscrolllaunch.com\n\n- Indie product launch statistics.\n- Pricing model breakdowns.\n- AI vs SaaS product categories.\n- Tech stack statistics.\n- Weekly launch archives.\n\n[Explore indie launch statistics](https://www.scrolllaunch.com/research/indie-launches?utm_source=chatgpt.com)\n\n---\n\n![Hunted.Space – AI Tools Directory](https://images.openai.com/static-rsc-4/fCpc43y4GJKtwI52j5L2vjfdYcfNVjNUc0BNlQ6AbNMSpgfYPSrTSIpUnZ4ORtje0Phmfp2-80eKjlfITizfx8zZ6bKaeLOHANoy_df-9WxCKHSQIBvI9pStKtddPDHQYAeSUGwnBFLeAMWW9cnl2wrE2Wlh5LZbQQSsbQG3sQVdFWA1LUA5vtG7d0_5qQoQ?purpose=fullsize)\n\n**4\\. Hunted Space**\n\nhunted.space\n\n- Weekly Product Hunt launch history.\n- Upvotes and comments.\n- Product rankings and launch dashboards.\n- Historical launch comparisons.\n\n[Explore weekly launch history](https://hunted.space/history-weekly?utm_source=chatgpt.com)\n\n## What about actual payment links?\n\nThere is an important distinction\\:\n\n| Metric | Available from these platforms? |\n|--------|--------|\n| New products launched weekly | (Yes) |\n| Subscription prices | (Yes) |\n| Free vs paid products | (Yes) |\n| Checkout/payment URLs | Varies |\n| Actual weekly transactions | (Generally no) |\n| Actual Stripe revenue | (Generally no) |\n\n\nThese directories primarily track launches and publicly listed pricing, not private payment processor data.\n\n## My recommendation\n\nI'd combine SaaSearch and Launch Index\\:\n\n- SaaSearch for pricing, monetization and product discovery.\n- Launch Index for weekly traction and launch performance.\n- ScrollLaunch for indie founder and product trends.\n\n## One question to narrow this down\n\nWhen you say **payment links**, which data are you actually interested in?\n\nCheckout links for newly launched products (Stripe, Lemon Squeezy, Paddle, etc.)\n\nWeekly revenue and sales statistics of indie SaaS products\n\nNew AI and SaaS products with pricing pages\n\nActual payment transaction links and volumes\n\nA weekly database of indie SaaS products and their monetization\n\nSomething else\n\n[Submit]\n\nI can then narrow this down to the best sources that actually provide the payment and monetization data you're after.",
+     "search_results": [
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://saasearch.io/reports",
+       "domain": "saasearch.io",
+       "title": "Indie SaaS Reports & Launch Data | SaaSearch Reports",
+       "description": null,
+       "breadcrumb": "saasearch.io"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://saasearch.io/reports/weekly/2026-w37",
+       "domain": "saasearch.io",
+       "title": "Indie SaaS Launches: Week 37, 2026 | SaaSearch Report",
+       "description": null,
+       "breadcrumb": "saasearch.io"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://saasearch.io/reports/weekly/2026-w38",
+       "domain": "saasearch.io",
+       "title": "Indie SaaS Launches: Week 38, 2026 | SaaSearch Report",
+       "description": null,
+       "breadcrumb": "saasearch.io"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://saasearch.io/reports/weekly/2026-w36",
+       "domain": "saasearch.io",
+       "title": "Indie SaaS Launches: Week 36, 2026 | SaaSearch Report",
+       "description": null,
+       "breadcrumb": "saasearch.io"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://saasearch.io/reports/weekly/2026-w46",
+       "domain": "saasearch.io",
+       "title": "Indie SaaS Launches: Week 46, 2026 | SaaSearch Report",
+       "description": null,
+       "breadcrumb": "saasearch.io"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://saasearch.io/reports/weekly/2026-w45",
+       "domain": "saasearch.io",
+       "title": "Indie SaaS Launches: Week 45, 2026 | SaaSearch Report",
+       "description": null,
+       "breadcrumb": "saasearch.io"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://saasearch.io/reports/weekly/2026-w44",
+       "domain": "saasearch.io",
+       "title": "Indie SaaS Launches: Week 44, 2026 | SaaSearch Report",
+       "description": null,
+       "breadcrumb": "saasearch.io"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://saasearch.io/reports/weekly/2026-w43",
+       "domain": "saasearch.io",
+       "title": "Indie SaaS Launches: Week 43, 2026 | SaaSearch Report",
+       "description": null,
+       "breadcrumb": "saasearch.io"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://saasearch.io/reports",
+       "domain": "saasearch.io",
+       "title": "Indie SaaS Reports & Launch Data | SaaSearch Reports",
+       "description": "Total lines: 97\n",
+       "breadcrumb": "saasearch.io"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://hunted.space/history-weekly",
+       "domain": "hunted.space",
+       "title": "Product Hunt weekly launch history",
+       "description": null,
+       "breadcrumb": "hunted.space"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://hunted.space/stats",
+       "domain": "hunted.space",
+       "title": "Product Hunt statistics & launch day calendar",
+       "description": null,
+       "breadcrumb": "hunted.space"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://www.hunted.space/history-weekly",
+       "domain": "www.hunted.space",
+       "title": "Product Hunt weekly launch history",
+       "description": null,
+       "breadcrumb": "www.hunted.space"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://launchindex.ai/",
+       "domain": "launchindex.ai",
+       "title": "Launch Index: every Product Hunt and Show HN launch, ranked by category",
+       "description": null,
+       "breadcrumb": "launchindex.ai"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://launchindex.ai/",
+       "domain": "launchindex.ai",
+       "title": "Launch Index: every Product Hunt and Show HN launch, ranked by category",
+       "description": "Total lines: 67\n",
+       "breadcrumb": "launchindex.ai"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://www.scrolllaunch.com/research/indie-launches",
+       "domain": "www.scrolllaunch.com",
+       "title": "Indie Launch Statistics 2026: 746 Launches Analyzed",
+       "description": null,
+       "breadcrumb": "www.scrolllaunch.com"
+      },
+      {
+       "type": "chatgpt_search_result",
+       "url": "https://www.scrolllaunch.com/research/indie-launches",
+       "domain": "www.scrolllaunch.com",
+       "title": "Indie Launch Statistics 2026: 654 Launches Analyzed",
+       "description": "Total lines: 352\n",
+       "breadcrumb": "www.scrolllaunch.com"
+      }
+     ],
+     "sources": [
+      {
+       "type": "chat_gpt_source",
+       "title": "Explore weekly SaaS reports",
+       "snippet": null,
+       "domain": "saasearch.io",
+       "url": "https://saasearch.io/reports?utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": null,
+       "publication_date": null,
+       "markdown": "[Explore weekly SaaS reports](https://saasearch.io/reports?utm_source=chatgpt.com)"
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Explore Launch Index",
+       "snippet": null,
+       "domain": "launchindex.ai",
+       "url": "https://launchindex.ai/?utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": null,
+       "publication_date": null,
+       "markdown": "[Explore Launch Index](https://launchindex.ai/?utm_source=chatgpt.com)"
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Explore indie launch statistics",
+       "snippet": null,
+       "domain": "www.scrolllaunch.com",
+       "url": "https://www.scrolllaunch.com/research/indie-launches?utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": null,
+       "publication_date": null,
+       "markdown": "[Explore indie launch statistics](https://www.scrolllaunch.com/research/indie-launches?utm_source=chatgpt.com)"
+      },
+      {
+       "type": "chat_gpt_source",
+       "title": "Explore weekly launch history",
+       "snippet": null,
+       "domain": "hunted.space",
+       "url": "https://hunted.space/history-weekly?utm_source=chatgpt.com",
+       "thumbnail": null,
+       "source_name": null,
+       "publication_date": null,
+       "markdown": "[Explore weekly launch history](https://hunted.space/history-weekly?utm_source=chatgpt.com)"
+      }
+     ],
+     "fan_out_queries": [
+      "track weekly statistics new indie SaaS AI products launches payments revenue stats Product Hunt Indie Hackers 2026",
+      "platform track new SaaS products Stripe payment links weekly statistics indie hackers AI products"
+     ],
+     "brand_entities": [
+      {
+       "type": "chat_gpt_brand_entity",
+       "title": "SaaSearch",
+       "category": "software",
+       "markdown": "SaaSearch",
+       "urls": null
+      },
+      {
+       "type": "chat_gpt_brand_entity",
+       "title": "Launch Index",
+       "category": "software",
+       "markdown": "Launch Index",
+       "urls": null
+      },
+      {
+       "type": "chat_gpt_brand_entity",
+       "title": "ScrollLaunch",
+       "category": "software",
+       "markdown": "ScrollLaunch",
+       "urls": null
+      },
+      {
+       "type": "chat_gpt_brand_entity",
+       "title": "Hunted Space",
+       "category": "software",
+       "markdown": "Hunted Space",
+       "urls": null
+      }
+     ],
+     "se_results_count": 0,
+     "item_types": [
+      "chat_gpt_text",
+      "chat_gpt_images",
+      "chat_gpt_table"
+     ],
+     "items_count": 11,
+     "items": [
+      {
+       "type": "chat_gpt_text",
+       "rank_group": 1,
+       "rank_absolute": 1,
+       "markdown": "If you're looking to track **new indie SaaS and AI products launching each week, including their pricing, monetization models, and links to purchase or subscribe**, I'd start with these platforms.\n\nThe closest match is **SaaSearch**, which publishes dedicated weekly indie SaaS and AI launch statistics.\n\n## Best platforms to track\n\n",
+       "sources": null,
+       "brand_entities": null
+      },
+      {
+       "type": "chat_gpt_images",
+       "rank_group": 1,
+       "rank_absolute": 2,
+       "markdown": "![Insighter Lite](https://images.openai.com/static-rsc-4/HTUrZsEwRj-gaQDw5pfDbCqVxZfwknn68sHzZmTjmxbmE82EqmrfEI2QH5C911w2Dyo9iQxIGeejDqhJVnYTI2d2oQ2PrktSDpd9wLsdzhgimBUYx5AVBLkLppj70OCvelKhPAMEvcNKYEBoEsULSVKJ--HJ7xkVNOreVyUk8DdWYBOYNlzyauQ0QAQ6ppWg?purpose=fullsize)",
+       "items": [
+        {
+         "type": "chat_gpt_images_element",
+         "url": "https://lite.woomy.work/dashboard",
+         "alt": "Insighter Lite",
+         "image_url": "https://images.openai.com/static-rsc-4/HTUrZsEwRj-gaQDw5pfDbCqVxZfwknn68sHzZmTjmxbmE82EqmrfEI2QH5C911w2Dyo9iQxIGeejDqhJVnYTI2d2oQ2PrktSDpd9wLsdzhgimBUYx5AVBLkLppj70OCvelKhPAMEvcNKYEBoEsULSVKJ--HJ7xkVNOreVyUk8DdWYBOYNlzyauQ0QAQ6ppWg?purpose=fullsize",
+         "markdown": "![Insighter Lite](https://images.openai.com/static-rsc-4/HTUrZsEwRj-gaQDw5pfDbCqVxZfwknn68sHzZmTjmxbmE82EqmrfEI2QH5C911w2Dyo9iQxIGeejDqhJVnYTI2d2oQ2PrktSDpd9wLsdzhgimBUYx5AVBLkLppj70OCvelKhPAMEvcNKYEBoEsULSVKJ--HJ7xkVNOreVyUk8DdWYBOYNlzyauQ0QAQ6ppWg?purpose=fullsize)"
+        }
+       ]
+      },
+      {
+       "type": "chat_gpt_text",
+       "rank_group": 2,
+       "rank_absolute": 3,
+       "markdown": "\n\n**1\\. SaaSearch**\n\n(Best overall match)\n\nsaasearch.io\n\n- Weekly launch reports, published Mondays.\n- Number of new SaaS and AI products.\n- Median subscription prices.\n- Freemium vs paid pricing models.\n- Category-level trends.\n\n[Explore weekly SaaS reports](https://saasearch.io/reports?utm_source=chatgpt.com)\n\n---\n\n",
+       "sources": [
+        {
+         "type": "chat_gpt_source",
+         "title": "Explore weekly SaaS reports",
+         "snippet": null,
+         "domain": "saasearch.io",
+         "url": "https://saasearch.io/reports?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": null,
+         "publication_date": null,
+         "markdown": "[Explore weekly SaaS reports](https://saasearch.io/reports?utm_source=chatgpt.com)"
+        }
+       ],
+       "brand_entities": [
+        {
+         "type": "chat_gpt_brand_entity",
+         "title": "SaaSearch",
+         "category": "software",
+         "markdown": "SaaSearch",
+         "urls": null
+        }
+       ]
+      },
+      {
+       "type": "chat_gpt_images",
+       "rank_group": 2,
+       "rank_absolute": 4,
+       "markdown": "![Launch | IndieAI](https://images.openai.com/static-rsc-4/9XaYsazfGDO00T-m11RrZGClq3OQ7TJbefwO68bnr-xoiq2f8D1W-jcf7bunj3dL_zHMoPE0rf6qqT0znxxbWi3fwFTr08UiY0xl1K_ESQHLOFLjubk4DGZjdBYUzSMUvHhGrCr6KjsZs_0UMBBcb99pbEb_RB_DMJ9s77_CcOS5lnQU-SongcgBd3Z5CvdY?purpose=fullsize)",
+       "items": [
+        {
+         "type": "chat_gpt_images_element",
+         "url": "https://indieai.directory/tools/launch/",
+         "alt": "Launch | IndieAI",
+         "image_url": "https://images.openai.com/static-rsc-4/9XaYsazfGDO00T-m11RrZGClq3OQ7TJbefwO68bnr-xoiq2f8D1W-jcf7bunj3dL_zHMoPE0rf6qqT0znxxbWi3fwFTr08UiY0xl1K_ESQHLOFLjubk4DGZjdBYUzSMUvHhGrCr6KjsZs_0UMBBcb99pbEb_RB_DMJ9s77_CcOS5lnQU-SongcgBd3Z5CvdY?purpose=fullsize",
+         "markdown": "![Launch | IndieAI](https://images.openai.com/static-rsc-4/9XaYsazfGDO00T-m11RrZGClq3OQ7TJbefwO68bnr-xoiq2f8D1W-jcf7bunj3dL_zHMoPE0rf6qqT0znxxbWi3fwFTr08UiY0xl1K_ESQHLOFLjubk4DGZjdBYUzSMUvHhGrCr6KjsZs_0UMBBcb99pbEb_RB_DMJ9s77_CcOS5lnQU-SongcgBd3Z5CvdY?purpose=fullsize)"
+        }
+       ]
+      },
+      {
+       "type": "chat_gpt_text",
+       "rank_group": 3,
+       "rank_absolute": 5,
+       "markdown": "\n\n**2\\. Launch Index**\n\nlaunchindex.ai\n\n- Tracks Product Hunt and Show HN launches.\n- Weekly launch statistics.\n- Product rankings and traction.\n- AI category breakdowns.\n- Free weekly newsletter.\n\n[Explore Launch Index](https://launchindex.ai/?utm_source=chatgpt.com)\n\n---\n\n",
+       "sources": [
+        {
+         "type": "chat_gpt_source",
+         "title": "Explore Launch Index",
+         "snippet": null,
+         "domain": "launchindex.ai",
+         "url": "https://launchindex.ai/?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": null,
+         "publication_date": null,
+         "markdown": "[Explore Launch Index](https://launchindex.ai/?utm_source=chatgpt.com)"
+        }
+       ],
+       "brand_entities": [
+        {
+         "type": "chat_gpt_brand_entity",
+         "title": "Launch Index",
+         "category": "software",
+         "markdown": "Launch Index",
+         "urls": null
+        }
+       ]
+      },
+      {
+       "type": "chat_gpt_images",
+       "rank_group": 3,
+       "rank_absolute": 6,
+       "markdown": "![Scroll Launch: Launch your product and get discovered by other makers | Product Hunt](https://images.openai.com/static-rsc-4/XceP1icfrQGf3GB60v5hZuchd-0dZP2wszk8Hn0VXFXPIoQsVY1JY1BeRxNBEbOZNlkDH-aH5jQvNQBsw1RFZ9W5iwIdHCqO08M1oYEuTgQPPcAXkuscu_prPSuLK5a3eOeBqs7Zj9f6_rUsbGyAQT3J7HbPVOpRLkCbAJ0LG4ZzeNpoqHxZrjifaHL19hym?purpose=fullsize)",
+       "items": [
+        {
+         "type": "chat_gpt_images_element",
+         "url": "https://www.producthunt.com/products/scroll-launch",
+         "alt": "Scroll Launch: Launch your product and get discovered by other makers | Product Hunt",
+         "image_url": "https://images.openai.com/static-rsc-4/XceP1icfrQGf3GB60v5hZuchd-0dZP2wszk8Hn0VXFXPIoQsVY1JY1BeRxNBEbOZNlkDH-aH5jQvNQBsw1RFZ9W5iwIdHCqO08M1oYEuTgQPPcAXkuscu_prPSuLK5a3eOeBqs7Zj9f6_rUsbGyAQT3J7HbPVOpRLkCbAJ0LG4ZzeNpoqHxZrjifaHL19hym?purpose=fullsize",
+         "markdown": "![Scroll Launch: Launch your product and get discovered by other makers | Product Hunt](https://images.openai.com/static-rsc-4/XceP1icfrQGf3GB60v5hZuchd-0dZP2wszk8Hn0VXFXPIoQsVY1JY1BeRxNBEbOZNlkDH-aH5jQvNQBsw1RFZ9W5iwIdHCqO08M1oYEuTgQPPcAXkuscu_prPSuLK5a3eOeBqs7Zj9f6_rUsbGyAQT3J7HbPVOpRLkCbAJ0LG4ZzeNpoqHxZrjifaHL19hym?purpose=fullsize)"
+        }
+       ]
+      },
+      {
+       "type": "chat_gpt_text",
+       "rank_group": 4,
+       "rank_absolute": 7,
+       "markdown": "\n\n**3\\. ScrollLaunch**\n\nscrolllaunch.com\n\n- Indie product launch statistics.\n- Pricing model breakdowns.\n- AI vs SaaS product categories.\n- Tech stack statistics.\n- Weekly launch archives.\n\n[Explore indie launch statistics](https://www.scrolllaunch.com/research/indie-launches?utm_source=chatgpt.com)\n\n---\n\n",
+       "sources": [
+        {
+         "type": "chat_gpt_source",
+         "title": "Explore indie launch statistics",
+         "snippet": null,
+         "domain": "www.scrolllaunch.com",
+         "url": "https://www.scrolllaunch.com/research/indie-launches?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": null,
+         "publication_date": null,
+         "markdown": "[Explore indie launch statistics](https://www.scrolllaunch.com/research/indie-launches?utm_source=chatgpt.com)"
+        }
+       ],
+       "brand_entities": [
+        {
+         "type": "chat_gpt_brand_entity",
+         "title": "ScrollLaunch",
+         "category": "software",
+         "markdown": "ScrollLaunch",
+         "urls": null
+        }
+       ]
+      },
+      {
+       "type": "chat_gpt_images",
+       "rank_group": 4,
+       "rank_absolute": 8,
+       "markdown": "![Hunted.Space – AI Tools Directory](https://images.openai.com/static-rsc-4/fCpc43y4GJKtwI52j5L2vjfdYcfNVjNUc0BNlQ6AbNMSpgfYPSrTSIpUnZ4ORtje0Phmfp2-80eKjlfITizfx8zZ6bKaeLOHANoy_df-9WxCKHSQIBvI9pStKtddPDHQYAeSUGwnBFLeAMWW9cnl2wrE2Wlh5LZbQQSsbQG3sQVdFWA1LUA5vtG7d0_5qQoQ?purpose=fullsize)",
+       "items": [
+        {
+         "type": "chat_gpt_images_element",
+         "url": "https://www.verifiedtools.info/tools/hunted-space",
+         "alt": "Hunted.Space – AI Tools Directory",
+         "image_url": "https://images.openai.com/static-rsc-4/fCpc43y4GJKtwI52j5L2vjfdYcfNVjNUc0BNlQ6AbNMSpgfYPSrTSIpUnZ4ORtje0Phmfp2-80eKjlfITizfx8zZ6bKaeLOHANoy_df-9WxCKHSQIBvI9pStKtddPDHQYAeSUGwnBFLeAMWW9cnl2wrE2Wlh5LZbQQSsbQG3sQVdFWA1LUA5vtG7d0_5qQoQ?purpose=fullsize",
+         "markdown": "![Hunted.Space – AI Tools Directory](https://images.openai.com/static-rsc-4/fCpc43y4GJKtwI52j5L2vjfdYcfNVjNUc0BNlQ6AbNMSpgfYPSrTSIpUnZ4ORtje0Phmfp2-80eKjlfITizfx8zZ6bKaeLOHANoy_df-9WxCKHSQIBvI9pStKtddPDHQYAeSUGwnBFLeAMWW9cnl2wrE2Wlh5LZbQQSsbQG3sQVdFWA1LUA5vtG7d0_5qQoQ?purpose=fullsize)"
+        }
+       ]
+      },
+      {
+       "type": "chat_gpt_text",
+       "rank_group": 5,
+       "rank_absolute": 9,
+       "markdown": "\n\n**4\\. Hunted Space**\n\nhunted.space\n\n- Weekly Product Hunt launch history.\n- Upvotes and comments.\n- Product rankings and launch dashboards.\n- Historical launch comparisons.\n\n[Explore weekly launch history](https://hunted.space/history-weekly?utm_source=chatgpt.com)\n\n## What about actual payment links?\n\nThere is an important distinction\\:\n\n",
+       "sources": [
+        {
+         "type": "chat_gpt_source",
+         "title": "Explore weekly launch history",
+         "snippet": null,
+         "domain": "hunted.space",
+         "url": "https://hunted.space/history-weekly?utm_source=chatgpt.com",
+         "thumbnail": null,
+         "source_name": null,
+         "publication_date": null,
+         "markdown": "[Explore weekly launch history](https://hunted.space/history-weekly?utm_source=chatgpt.com)"
+        }
+       ],
+       "brand_entities": [
+        {
+         "type": "chat_gpt_brand_entity",
+         "title": "Hunted Space",
+         "category": "software",
+         "markdown": "Hunted Space",
+         "urls": null
+        }
+       ]
+      },
+      {
+       "type": "chat_gpt_table",
+       "rank_group": 1,
+       "rank_absolute": 10,
+       "text": null,
+       "markdown": "| Metric | Available from these platforms? |\n|--------|--------|\n| New products launched weekly | (Yes) |\n| Subscription prices | (Yes) |\n| Free vs paid products | (Yes) |\n| Checkout/payment URLs | Varies |\n| Actual weekly transactions | (Generally no) |\n| Actual Stripe revenue | (Generally no) |\n\n",
+       "table": {
+        "table_header": [
+         "Metric",
+         "Available from these platforms?"
+        ],
+        "table_content": [
+         [
+          "New products launched weekly",
+          "(Yes)"
+         ],
+         [
+          "Subscription prices",
+          "(Yes)"
+         ],
+         [
+          "Free vs paid products",
+          "(Yes)"
+         ],
+         [
+          "Checkout/payment URLs",
+          "Varies"
+         ],
+         [
+          "Actual weekly transactions",
+          "(Generally no)"
+         ],
+         [
+          "Actual Stripe revenue",
+          "(Generally no)"
+         ]
+        ]
+       },
+       "brand_entities": null
+      },
+      {
+       "type": "chat_gpt_text",
+       "rank_group": 6,
+       "rank_absolute": 11,
+       "markdown": "\nThese directories primarily track launches and publicly listed pricing, not private payment processor data.\n\n## My recommendation\n\nI'd combine SaaSearch and Launch Index\\:\n\n- SaaSearch for pricing, monetization and product discovery.\n- Launch Index for weekly traction and launch performance.\n- ScrollLaunch for indie founder and product trends.\n\n## One question to narrow this down\n\nWhen you say **payment links**, which data are you actually interested in?\n\nCheckout links for newly launched products (Stripe, Lemon Squeezy, Paddle, etc.)\n\nWeekly revenue and sales statistics of indie SaaS products\n\nNew AI and SaaS products with pricing pages\n\nActual payment transaction links and volumes\n\nA weekly database of indie SaaS products and their monetization\n\nSomething else\n\n[Submit]\n\nI can then narrow this down to the best sources that actually provide the payment and monetization data you're after.",
+       "sources": null,
+       "brand_entities": null
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

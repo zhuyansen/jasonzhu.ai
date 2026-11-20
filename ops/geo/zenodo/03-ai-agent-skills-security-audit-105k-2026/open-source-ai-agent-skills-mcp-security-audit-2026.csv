@@ -1,0 +1,4 @@
+audit_tier,skill_count,share_of_total_catalog_pct,share_of_audited_subset_pct,primary_risk_findings,source_url
+unknown (never security reviewed),102690,97.8,N/A,Black-box supply chain dependency with zero security verification,https://jasonzhu.ai/en/blog/agent-skill-security-audit-200
+safe (passed 5-dimension audit),2171,2.07,94.4,Verified credential boundaries and maintainer provenance,https://jasonzhu.ai/en/blog/agent-skill-security-audit-200
+caution / unsafe / reject (flagged),129,0.13,5.6,Unscoped credential access or arbitrary shell execution without guardrails,https://jasonzhu.ai/en/blog/agent-skill-security-audit-200

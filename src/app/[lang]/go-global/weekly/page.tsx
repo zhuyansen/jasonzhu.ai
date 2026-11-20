@@ -50,8 +50,8 @@ export default async function WeeklyPage({
         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">{isZh ? "出海选品周报" : "Going-Global Weekly"}</h1>
         <p className="text-gray-600 leading-relaxed">
           {isZh
-            ? "每周数一遍 7 家收款平台（Stripe、Gumroad、Lemon Squeezy、Polar、Creem、Dodo、Paddle）上新挂出收款链接的网站：大家在卖什么，什么起量了，哪些需求还没人做。"
-            : "Every week I count the websites that started taking payments on seven platforms (Stripe, Gumroad, Lemon Squeezy, Polar, Creem, Dodo, Paddle): what they sell, what is taking off, and which demand nobody serves yet. Every issue has an English version."}
+            ? "由 Jason Zhu（jasonzhu.ai）主理，基于 7 家收款平台（Stripe、Gumroad、Lemon Squeezy、Polar、Creem、Dodo Payments、Paddle）上约 20 万个收款链接，每周一盘点 4,800+ 新挂出结账页的独立卖家：大家在卖什么、哪些 AI 产品起量了、哪些 Google Trends 12 个月验证过的真实需求还没人做。"
+            : "Curated every Monday by Jason Zhu (jasonzhu.ai) from 200,000+ checkout links across 7 payment platforms (Stripe, Gumroad, Lemon Squeezy, Polar, Creem, Dodo Payments, Paddle), tracking 4,800+ new sellers per week: what they sell, what AI products are taking off, and which Google Trends-verified demand nobody serves yet."}
         </p>
       </header>
 

@@ -1,0 +1,191 @@
+{
+ "version": "0.1.20261103",
+ "status_code": 20000,
+ "status_message": "Ok.",
+ "time": "5.5438 sec.",
+ "cost": 0.006485,
+ "tasks_count": 1,
+ "tasks_error": 0,
+ "tasks": [
+  {
+   "id": "11170805-2225-0612-0000-0869e9cff894",
+   "status_code": 20000,
+   "status_message": "Ok.",
+   "time": "5.4959 sec.",
+   "cost": 0.006485,
+   "result_count": 1,
+   "path": [
+    "v3",
+    "ai_optimization",
+    "perplexity",
+    "llm_responses",
+    "live"
+   ],
+   "data": {
+    "api": "ai_optimization",
+    "function": "llm_responses",
+    "se": "perplexity",
+    "user_prompt": "Best free official AI learning roadmaps and courses across 10 platforms with zero cost in 2026?",
+    "model_name": "sonar",
+    "web_search_country_iso_code": "US"
+   },
+   "result": [
+    {
+     "model_name": "sonar",
+     "input_tokens": 28,
+     "output_tokens": 857,
+     "reasoning_tokens": 0,
+     "web_search": true,
+     "money_spent": 0.005885,
+     "datetime": "2026-11-17 08:05:25 +00:00",
+     "items": [
+      {
+       "type": "message",
+       "sections": [
+        {
+         "type": "text",
+         "text": "Here’s a **zero-cost 2026 AI learning roadmap across 10 official platforms**. The courses are free to study; certificates, exams, or advanced labs may sometimes cost extra.\n\n| # | Platform | Best free starting point | Best for | Credential/cost note |\n|---|---|---|---|---|\n| 1 | **Google Skills** | *Introduction to Generative AI* and beginner generative-AI paths | Nontechnical beginners and Google Cloud skills | Many courses provide free skill badges[1][4] |\n| 2 | **OpenAI Academy** | AI foundations, ChatGPT at work, prompting, and building with AI | Practical AI use, workflows, and OpenAI tools | Free self-paced material; credentials vary by course[3][8] |\n| 3 | **Anthropic Academy** | AI Fluency, Claude 101, Claude Code, API, and MCP courses | Claude, responsible AI, and AI engineering | Learning is free; the optional engineer certification may cost $99[1][2] |\n| 4 | **Microsoft Learn** | *Generative AI for Beginners* and AI fundamentals paths | Azure AI, Copilot, agents, and enterprise deployment | Training is free; certification exams are generally paid[7][10] |\n| 5 | **AWS Skill Builder** | AWS AI foundations, generative AI, and Amazon Bedrock learning | Cloud AI and production deployment | More than 1,000 free learning resources; certification exams cost extra[8] |\n| 6 | **IBM SkillsBuild** | *Artificial Intelligence Fundamentals* | AI literacy, ethics, and career changers | Free learning and selected shareable digital credentials[4][9] |\n| 7 | **NVIDIA Deep Learning Institute** | Free introductory deep-learning, CUDA, and generative-AI courses | GPU computing and technical deep learning | Selected courses are free; some instructor-led courses and certificates cost money[1][8] |\n| 8 | **Meta PyTorch** | PyTorch tutorials and beginner-to-advanced model-building material | Training neural networks and learning PyTorch | Tutorials are free; no standard paid certificate is required[1] |\n| 9 | **DeepLearning.AI** | Short courses on prompt engineering, RAG, agents, evaluation, and LLMs | Fast, practical, current AI application skills | Course access is often free; certificates or completion records may require Pro[5][9] |\n| 10 | **Hugging Face Learn** | LLM Course, Agents Course, and transformer tutorials | Running, fine-tuning, evaluating, and publishing open models | Courses are free and some offer free completion certificates[5][7] |\n\n## Recommended order\n\n1. **AI literacy:** Google Skills or IBM SkillsBuild  \n2. **Workplace productivity:** OpenAI Academy or Anthropic AI Fluency  \n3. **Python and machine learning:** Microsoft Learn, Meta PyTorch, or NVIDIA  \n4. **LLMs and applications:** Hugging Face LLM Course and DeepLearning.AI  \n5. **Cloud deployment:** AWS Skill Builder or Microsoft Azure  \n6. **Portfolio building:** Create projects using PyTorch, Hugging Face, an API, and a cloud service\n\n## Best zero-cost tracks by goal\n\n- **Complete beginner:** Google Skills → IBM SkillsBuild → OpenAI Academy\n- **AI-at-work professional:** OpenAI Academy → Anthropic AI Fluency → Microsoft Learn\n- **AI developer:** Python basics → Meta PyTorch → Hugging Face LLM Course → DeepLearning.AI\n- **Cloud AI engineer:** Microsoft Learn → AWS Skill Builder → NVIDIA DLI\n- **Fastest credential path:** IBM SkillsBuild and Google Skills, because selected programs provide free digital badges[4][9]\n- **Most hands-on open-source path:** Meta PyTorch → Hugging Face → DeepLearning.AI[1][7]\n\nAvoid assuming that “free course” means “free certification”: Coursera previews, cloud certification exams, and some completion records remain paid, while the actual learning materials may still be accessible at no cost[4][6][9].",
+         "annotations": [
+          {
+           "title": "jasonzhu.ai › en › blogThe Complete Map of Free AI Learning: 10 Official Platforms ...",
+           "url": "https://jasonzhu.ai/en/blog/ai-free-learning-hub",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "2026's 10 free official AI learning paths… · AGI Hunt",
+           "url": "https://agihunt.info/en/p/1a1c5085fb020ca8be9b499aae7",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "OpenAI Academy vs Anthropic: A Complete Comparison of Two ...",
+           "url": "https://jasonzhu.ai/en/blog/openai-academy-vs-anthropic-learning-paths",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Free AI Courses 2026: Google vs Coursera vs Microsoft ...",
+           "url": "https://www.simpliaxis.com/resources/free-ai-courses-google-coursera-microsoft",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Best AI Courses 2026: Coursera, Google & DeepLearning.AI ...",
+           "url": "https://forzebras.ai/courses/best-ai-courses/",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "150+ Genuinely Free AI Courses, Verified One By One",
+           "url": "https://promptslove.com/blog/free-ai-courses/",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "The No-Hype AI Learning Guide (2026 Edition)",
+           "url": "https://github.com/h9-tec/Awesome_ai_learning",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Best Free AI Courses in 2026: Google, Microsoft, OpenAI ...",
+           "url": "https://www.onedayadvisor.com/2026/09/best-AI-courses.html",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "8 Best Free AI Certifications in 2026 (What's Really $0)",
+           "url": "https://bestaicertifications.com/best-free-ai-certifications/",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "how to learn AI - Microsoft Q&A",
+           "url": "https://learn.microsoft.com/en-in/answers/questions/6070464/how-to-learn-ai",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "fan_out_queries": null,
+     "search_results": [
+      {
+       "title": "jasonzhu.ai › en › blogThe Complete Map of Free AI Learning: 10 Official Platforms ...",
+       "url": "https://jasonzhu.ai/en/blog/ai-free-learning-hub",
+       "date": "2026-10-31 00:00:00 +00:00",
+       "snippet": "Over the past few weeks I went through **the official free AI courses of all 10 major platforms**, one by one.\n...\n> **Everything you need to learn AI over the next two years costs exactly $0.**\n...\n|Platform|One-line positioning|Free courses|Certificates|Best for|\n|--|--|--|--|--|\n|**Anthropic**|Ce..."
+      },
+      {
+       "title": "2026's 10 free official AI learning paths… · AGI Hunt",
+       "url": "https://agihunt.info/en/p/1a1c5085fb020ca8be9b499aae7",
+       "date": "2026-11-10 00:00:00 +00:00",
+       "snippet": "A roundup of 10 free official AI learning paths for 2026 from major AI companies: Anthropic, Google, NVIDIA, Microsoft, DeepLearning.AI, Hugging Face, AWS, IBM, Meta, and OpenAI, plus Oxylabs resources for building AI apps with web data.\nAnthropic's course catalog alone covers Claude 101, Claude Cod..."
+      },
+      {
+       "title": "OpenAI Academy vs Anthropic: A Complete Comparison of Two ...",
+       "url": "https://jasonzhu.ai/en/blog/openai-academy-vs-anthropic-learning-paths",
+       "date": "2026-10-31 00:00:00 +00:00",
+       "snippet": "Two of the world's leading AI companies — OpenAI and Anthropic — have both made their official learning curricula **completely free and open to everyone**.\n...\n- **OpenAI**: Accessibility-driven.\nLive sessions + recorded content + community + resource libraries, covering everyone from individual use..."
+      },
+      {
+       "title": "Free AI Courses 2026: Google vs Coursera vs Microsoft ...",
+       "url": "https://www.simpliaxis.com/resources/free-ai-courses-google-coursera-microsoft",
+       "date": "2026-11-16 00:00:00 +00:00",
+       "snippet": "**Quick Answer:** Google's beginner generative AI courses on Google Skills are free and earn badges, while Google AI Essentials on Coursera is paid after a 7-day trial.\nCoursera now previews only the first module of most courses free, with financial aid available.\nMicrosoft Learn is free, but the AI..."
+      },
+      {
+       "title": "Best AI Courses 2026: Coursera, Google & DeepLearning.AI ...",
+       "url": "https://forzebras.ai/courses/best-ai-courses/",
+       "date": "2026-10-05 00:00:00 +00:00",
+       "snippet": "We evaluated dozens of AI courses across depth of content, teaching quality, price, and what learners actually get out of them.\n...\nLearn to use AI tools in everyday work scenarios.\nFree to audit; Google certificate available with a Coursera subscription.\n...\nThe fastest route from zero Python exper..."
+      },
+      {
+       "title": "150+ Genuinely Free AI Courses, Verified One By One",
+       "url": "https://promptslove.com/blog/free-ai-courses/",
+       "date": "2026-11-11 00:00:00 +00:00",
+       "snippet": "I verified over **150 individual free AI courses and learning paths** across Big Tech, universities, AI-native platforms, and nonprofits, and I am listing every one I could confirm.**\"Free to audit\" is not the same as \"freemium.\"** On edX and similar platforms, audit access includes videos, readings..."
+      },
+      {
+       "title": "The No-Hype AI Learning Guide (2026 Edition)",
+       "url": "https://github.com/h9-tec/Awesome_ai_learning",
+       "date": "2026-11-16 00:00:00 +00:00",
+       "snippet": "4. Zero income promises, zero fear marketing\n...\nThe goal of this track: go from zero to someone who can build, train, evaluate, and ship models.\n...\n|Resource|Level|Cost|Why it earns its place|\n|--|--|--|--|\n|Elements of AI (Univ. of Helsinki)|🟢|Free|The cleanest conceptual intro to AI ever made. B..."
+      },
+      {
+       "title": "Best Free AI Courses in 2026: Google, Microsoft, OpenAI ...",
+       "url": "https://www.onedayadvisor.com/2026/09/best-AI-courses.html",
+       "date": "2026-11-10 00:00:00 +00:00",
+       "snippet": "This updated 2026 guide brings together free or free-to-start AI learning resources from major technology companies and universities, including **Google, Microsoft, OpenAI, NVIDIA, IBM, AWS, Harvard and LinkedIn Learning**.\n...\n|Platform|Best For|Access Model|Credential / Outcome|\n|--|--|--|--|\n|**G..."
+      },
+      {
+       "title": "8 Best Free AI Certifications in 2026 (What's Really $0)",
+       "url": "https://bestaicertifications.com/best-free-ai-certifications/",
+       "date": "2026-11-14 00:00:00 +00:00",
+       "snippet": "|Certification|Best for|Credential|Time|Level|\n|--|--|--|--|--|\n|IBM SkillsBuild — AI Foundations|The most generous genuinely-free option — fundamentals, generative AI and ethics, each ending in a shareable badge.|Free Badge|3–10 hrs|Foundational|\n|Google Cloud — Introduction to Generative AI|A shor..."
+      },
+      {
+       "title": "how to learn AI - Microsoft Q&A",
+       "url": "https://learn.microsoft.com/en-in/answers/questions/6070464/how-to-learn-ai",
+       "date": "2026-11-16 00:00:00 +00:00",
+       "snippet": "If you're a senior government executive with decades of experience, likely the best free starting point is a structured path on Microsoft Learn that combines executive strategy with select, non-coding modules from the AI-901 technical curriculum.\n...\nUse the free self-paced curriculum for Drive AI t..."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

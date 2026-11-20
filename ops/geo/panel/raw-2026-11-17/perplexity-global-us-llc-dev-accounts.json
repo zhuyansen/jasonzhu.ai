@@ -1,0 +1,191 @@
+{
+ "version": "0.1.20261103",
+ "status_code": 20000,
+ "status_message": "Ok.",
+ "time": "9.4162 sec.",
+ "cost": 0.007142,
+ "tasks_count": 1,
+ "tasks_error": 0,
+ "tasks": [
+  {
+   "id": "11170803-2225-0612-0000-264bd039c1c2",
+   "status_code": 20000,
+   "status_message": "Ok.",
+   "time": "9.3667 sec.",
+   "cost": 0.007142,
+   "result_count": 1,
+   "path": [
+    "v3",
+    "ai_optimization",
+    "perplexity",
+    "llm_responses",
+    "live"
+   ],
+   "data": {
+    "api": "ai_optimization",
+    "function": "llm_responses",
+    "se": "perplexity",
+    "user_prompt": "How to register a Wyoming LLC, open Mercury bank, and apply for Apple and Google organization developer accounts from China without an SSN?",
+    "model_name": "sonar",
+    "web_search_country_iso_code": "US"
+   },
+   "result": [
+    {
+     "model_name": "sonar",
+     "input_tokens": 34,
+     "output_tokens": 1508,
+     "reasoning_tokens": 0,
+     "web_search": true,
+     "money_spent": 0.006542,
+     "datetime": "2026-11-17 08:03:13 +00:00",
+     "items": [
+      {
+       "type": "message",
+       "sections": [
+        {
+         "type": "text",
+         "text": "Yes, you can generally do this remotely from China without an SSN, but approval is not automatic. The usual sequence is:\n\n1. Form the Wyoming LLC.\n2. Obtain an IRS EIN.\n3. Apply to Mercury using the LLC documents and your Chinese residential information.\n4. Obtain a D‑U‑N‑S number and enroll in Apple Developer Program as an organization.\n5. Enroll in Google Play Console as an organization.\n\n## 1. Form the Wyoming LLC\n\nUse the Wyoming Secretary of State directly or a reputable formation provider.\n\nPrepare:\n\n- LLC name, checked for availability\n- Wyoming registered agent with a physical Wyoming address\n- Articles of Organization\n- Operating Agreement\n- Ownership and management details\n- A real business address in China where you actually operate\n\nWyoming’s state filing fee is generally **$100**, and the LLC must maintain a registered agent. The registered agent’s address is for legal service; it should not be presented as your actual operating or residential address when a platform asks where the business is conducted.[7]\n\nAfter formation, download and retain:\n\n- Filed Articles of Organization\n- Certificate or approval confirmation\n- Operating Agreement\n- Registered-agent agreement\n- Wyoming annual-report reminders\n\n## 2. Obtain an EIN without an SSN\n\nA foreign owner without an SSN or ITIN normally cannot use the IRS online EIN application. Complete **IRS Form SS‑4** and apply by fax or telephone.\n\nOn Form SS‑4:\n\n- List the LLC’s exact legal name.\n- List yourself as the responsible party.\n- On line 7b, enter **“Foreign”** if you have neither an SSN nor ITIN.\n- Use an international fax number capable of receiving the IRS response.\n- Describe the business accurately and consistently with your LLC documents.\n\nThe IRS may issue an EIN confirmation as a **CP 575** or provide an equivalent **147C verification letter**. Keep the complete IRS document; Mercury specifically requests an IRS-issued EIN document, not merely an EIN typed into an application.[1][4]\n\nDo not obtain an EIN by falsely listing another person as the responsible party. The responsible party should be the person who actually controls the LLC.\n\n## 3. Apply for Mercury\n\nMercury is a financial-technology platform whose banking services are provided by partner banks; account approval depends on eligibility and compliance review.[5]\n\nTypical documents include:\n\n- Articles of Organization\n- EIN confirmation letter\n- Signed Operating Agreement\n- Passport for each owner with at least 25% ownership\n- Passport or identity information for people with control of the company\n- Recent proof of your Chinese residential address\n- Business website, if available\n- Clear description of products, customers, expected transactions, and countries involved\n\nYou do not ordinarily need an SSN or a US visit. Mercury requires a US-formed company, an EIN, government identification, and information about the business and its controlling persons.[1][4]\n\nFor addresses, distinguish carefully between:\n\n- **Registered-agent address:** Wyoming legal-notice address\n- **Company mailing address:** address used for correspondence\n- **Principal operating address:** the real place from which you run the business, potentially your Chinese address\n\nDo not use a registered-agent address as your operating address if Mercury asks for the place where the business is actually conducted. A mismatch can cause rejection or additional verification.[3][8]\n\nMake every name, ownership percentage, address, and business description consistent across:\n\n- Wyoming records\n- Operating Agreement\n- IRS SS‑4\n- Mercury application\n- Website\n- Apple enrollment\n- Google enrollment\n\nApproval is not guaranteed, particularly for businesses involving restricted industries, high-risk payments, cryptocurrency, regulated products, or unclear China–US transaction flows.\n\n## 4. Apple Developer Program organization account\n\nApple organization enrollment generally requires a legal entity and a **D‑U‑N‑S Number**. Apple uses D‑U‑N‑S information to verify the organization’s legal identity and typically checks the company name, address, and phone number.\n\nProcess:\n\n1. Create or use an Apple Account with two-factor authentication.\n2. Use Apple’s D‑U‑N‑S lookup during organization enrollment.\n3. Search using the LLC’s exact legal name and address.\n4. If no record exists, submit the organization’s details to Dun & Bradstreet.\n5. Provide formation documents or other requested evidence.\n6. Wait for the D‑U‑N‑S record to be created or corrected.\n7. Enroll in the Apple Developer Program as an **Organization**, not as an Individual.\n8. Pay Apple’s annual developer-program fee.\n9. Complete Apple’s identity and authority verification.\n\nApple may contact the listed organization phone number or ask the enrolling person to confirm that they have authority to bind the company. Use a phone number that you can reliably answer and ensure the LLC’s D‑U‑N‑S record matches the Apple application.[9]\n\nAn EIN is useful for proving the company’s US tax identity, but an EIN alone does not replace Apple’s organization verification or D‑U‑N‑S process.\n\n## 5. Google Play Console organization account\n\nFor Google Play, create a Google Play Console developer account and select **Organization** as the account type.\n\nPrepare:\n\n- LLC legal name\n- EIN and formation information\n- Organization website\n- Organization email address\n- Business phone number\n- Business address\n- Owner or authorized representative’s passport\n- Proof of authority to represent the LLC\n- Payment method for the registration fee\n- Developer contact information\n\nGoogle may request organization verification, including a D‑U‑N‑S number, government ID, proof of address, or business registration documents. Enter the organization’s legal name exactly as it appears on the Wyoming and IRS records. Do not register as an individual first if the apps will belong to the LLC; changing the account type later can be difficult and may require additional verification.\n\nGoogle can also require verified developer identity, public developer contact details, and app-specific verification depending on the app category and distribution region.\n\n## Recommended document package\n\nCreate a single folder containing:\n\n- Passport\n- Chinese proof of residential address\n- Articles of Organization\n- Certificate of formation or state approval\n- Operating Agreement\n- EIN CP 575 or 147C letter\n- Registered-agent agreement\n- Company website and domain ownership evidence\n- Business plan or two-paragraph business description\n- Invoices, contracts, or product screenshots if the business already operates\n- D‑U‑N‑S correspondence\n- Proof that you control the company phone number and email\n\n## Important limitations\n\n- A Wyoming LLC does not automatically make you eligible for a bank account or developer account.\n- Mercury may restrict applicants based on residence, industry, transaction profile, sanctions screening, or compliance policies; check its current country restrictions before applying.[1][6]\n- Do not claim a US residence, US operations, or a US phone number that you do not actually control.\n- A registered agent is not a substitute for a genuine operating address.\n- A US LLC owned by a nonresident can create US tax filings and possible China tax obligations. Consult a US international-tax professional and a Chinese tax adviser before forming the company.\n- Keep ownership and control information truthful; nominee owners and fabricated addresses can lead to account closure or developer-account termination.",
+         "annotations": [
+          {
+           "title": "FAQs | Pricing, Moving Your Money & More",
+           "url": "https://mercury.com/faq",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Mercury for Non-US Founders (2026): Eligibility & Docs",
+           "url": "https://mizufinancial.com/blog/mercury-bank-account-non-us-founder-2026",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "www.applyright.co › en › guidesCan You Open a Mercury Bank Account Without an SSN? (2026 ...",
+           "url": "https://www.applyright.co/en/guides/open-mercury-without-ssn",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Mercury Bank for Non-Residents: 2026 Guide | AvenueUS",
+           "url": "https://avenueus.com/blog/mercury-bank-non-residents",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "US LLC for Non-US Residents (2026) — Full Guide",
+           "url": "https://llcstarters.com/non-residents/",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Mercury Bank for a Wyoming LLC: Non-Resident Guide 2026",
+           "url": "https://wyomingexperts.com/blog/mercury-bank-wyoming-llc-non-residents",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Wyoming LLC for Non-Residents 2026: Formation, Tax, and Banking...",
+           "url": "https://wyomingllcservice.com/blog/wyoming-llc-for-non-residents-complete-guide/",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "How to Pass Mercury KYC with a Wyoming LLC (2026) - MyStateLLC",
+           "url": "https://www.mystatellc.com/llc/marketplace/mercury/wyoming",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "From Registering a US Company to Applying for Apple and Google ...",
+           "url": "https://jasonzhu.ai/en/blog/us-llc-developer-accounts",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Mercury Bank Account for Non-Resident LLCs - 2026 Guide",
+           "url": "https://wyomingexperts.com/banking/mercury-bank-non-residents",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "fan_out_queries": null,
+     "search_results": [
+      {
+       "title": "FAQs | Pricing, Moving Your Money & More",
+       "url": "https://mercury.com/faq",
+       "date": "2026-11-17 00:00:00 +00:00",
+       "snippet": "# Frequently Asked Questions\n## General\n### What do I need to apply for an account?\nYou’ll need your company’s official formation documents, your IRS-issued EIN document, and a government ID (e.g., a passport or U.S. government identification document – see all acceptable documents here) for at leas..."
+      },
+      {
+       "title": "Mercury for Non-US Founders (2026): Eligibility & Docs",
+       "url": "https://mizufinancial.com/blog/mercury-bank-account-non-us-founder-2026",
+       "date": "2026-11-08 00:00:00 +00:00",
+       "snippet": "# Mercury Account for Non-US Founders (2026): Eligibility & Steps\n## Can a non-resident open a Mercury bank account?\nYes — if you are outside the United States and your country of residence is not on Mercury's prohibited list.\nThe practical requirements are the same for every non-resident: a formed ..."
+      },
+      {
+       "title": "www.applyright.co › en › guidesCan You Open a Mercury Bank Account Without an SSN? (2026 ...",
+       "url": "https://www.applyright.co/en/guides/open-mercury-without-ssn",
+       "date": "2026-10-08 00:00:00 +00:00",
+       "snippet": "Short answer: **Yes, you can open a Mercury account without an SSN.** Mercury is one of the few US business banking platforms designed specifically for non-US founders, and it explicitly does not require a Social Security Number.\n...\n- A US-registered business entity (LLC or C-Corp)\n- EIN (Employer ..."
+      },
+      {
+       "title": "Mercury Bank for Non-Residents: 2026 Guide | AvenueUS",
+       "url": "https://avenueus.com/blog/mercury-bank-non-residents",
+       "date": "2026-11-16 00:00:00 +00:00",
+       "snippet": "The short version of the winning formula: form your US LLC as a non-resident, obtain an EIN, then apply to Mercury with your formation documents and a real business description.\n...\n- **An EIN.** The IRS-issued Employer Identification Number is mandatory.\nYou can get an EIN without an SSN — you do n..."
+      },
+      {
+       "title": "US LLC for Non-US Residents (2026) — Full Guide",
+       "url": "https://llcstarters.com/non-residents/",
+       "date": "2026-11-09 00:00:00 +00:00",
+       "snippet": "Every LLC needs a registered agent with a physical address in the formation state.\nAs a non-resident, you'll use a commercial RA service.\n...\nThis document officially creates your LLC.\nSubmit it to the Secretary of State with the state filing fee.\nWyoming accepts online filings and confirms approval..."
+      },
+      {
+       "title": "Mercury Bank for a Wyoming LLC: Non-Resident Guide 2026",
+       "url": "https://wyomingexperts.com/blog/mercury-bank-wyoming-llc-non-residents",
+       "date": "2026-11-16 00:00:00 +00:00",
+       "snippet": "1. **Is your country of residence on the accepted list?** Mercury publishes restrictions and updates them.\nCheck before applying - a decline on a restricted country is not appealable.\n2. **Is the entity documentation clean?** Filed Articles, EIN confirmation, operating agreement, and details that ma..."
+      },
+      {
+       "title": "Wyoming LLC for Non-Residents 2026: Formation, Tax, and Banking...",
+       "url": "https://wyomingllcservice.com/blog/wyoming-llc-for-non-residents-complete-guide/",
+       "date": "2026-10-09 00:00:00 +00:00",
+       "snippet": "1. Pick a Wyoming registered agent (we are one).\nThe registered agent must have a Wyoming street address.\n2. File the Articles of Organization with the Wyoming Secretary of State, paying the $100 state fee.\nThe non-resident does not appear on the Articles if a third party files as organizer.\n3. Adop..."
+      },
+      {
+       "title": "How to Pass Mercury KYC with a Wyoming LLC (2026) - MyStateLLC",
+       "url": "https://www.mystatellc.com/llc/marketplace/mercury/wyoming",
+       "date": "2026-11-16 00:00:00 +00:00",
+       "snippet": "A Wyoming LLC is generally eligible for Mercury verification, and you will need to provide your Articles of Organization, EIN, identity details for the people Mercury names, and a valid US business address.\n...\nTo open a Mercury account for a Wyoming LLC, you must provide the company's formation doc..."
+      },
+      {
+       "title": "From Registering a US Company to Applying for Apple and Google ...",
+       "url": "https://jasonzhu.ai/en/blog/us-llc-developer-accounts",
+       "date": "2026-10-31 00:00:00 +00:00",
+       "snippet": "I'm based in China, I never went to the US, and I don't have an SSN.\n...\nYou don't need an SSN or ITIN, and you don't need a US address either.\nYou use the registered agent's address.\n...\nA foreigner without an SSN has three options:\n|Method|Cost|Notes|\n|--|--|--|\n|Call the IRS international line at..."
+      },
+      {
+       "title": "Mercury Bank Account for Non-Resident LLCs - 2026 Guide",
+       "url": "https://wyomingexperts.com/banking/mercury-bank-non-residents",
+       "date": "2026-11-16 00:00:00 +00:00",
+       "snippet": "Mercury's onboarding for a foreign-owned Wyoming LLC asks for six items:\n1. **Certificate of Formation (Wyoming Articles of Organization).** We supply this at formation.\n2. **EIN confirmation letter (IRS CP-575 or CP-575A).** We supply this after EIN issuance.\n3. **Operating Agreement signed by all ..."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

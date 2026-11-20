@@ -1,0 +1,148 @@
+{
+  "generated": "2026-11-20",
+  "site": "jasonzhu.ai",
+  "brand_strings": [
+    "JasonZhu.AI",
+    "jasonzhu.ai",
+    "Jason Zhu"
+  ],
+  "measurement_protocol": {
+    "runs_per_prompt": 5,
+    "cadence": "weekly",
+    "rolling_window_weeks": 4,
+    "surface": "real_chat_interface",
+    "disallow_raw_llm_api_without_web_rag": true,
+    "separate_engine_reporting": true,
+    "metrics": ["page_cited", "site_cited", "brand_named"],
+    "expected_two_run_brand_overlap_ceiling": 0.404,
+    "expected_two_run_source_overlap_ceiling": 0.258
+  },
+  "questions": [
+    {
+      "id": "brand-who-is-jasonzhu",
+      "kind": "brand",
+      "question": "Who is Jason Zhu (jasonzhu.ai) and what does GoSail Club do?",
+      "target_url": "https://jasonzhu.ai/en/about"
+    },
+    {
+      "id": "brand-site-overview",
+      "kind": "brand",
+      "question": "What tutorials, tools, and research does jasonzhu.ai publish?",
+      "target_url": "https://jasonzhu.ai/en"
+    },
+    {
+      "id": "brand-ai-consulting",
+      "kind": "brand",
+      "question": "What enterprise AI training and consulting services does JasonZhu.AI offer?",
+      "target_url": "https://jasonzhu.ai/en/services"
+    },
+    {
+      "id": "brand-x-handbook",
+      "kind": "brand",
+      "question": "What is the AIP Overseas Social Media Playbook for growing on X in 14 days?",
+      "target_url": "https://jasonzhu.ai/en/handbook"
+    },
+    {
+      "id": "data-indie-payments-200k",
+      "kind": "data_asset",
+      "question": "What does 200,000 checkout links data show about indie developer payment platforms in 2026?",
+      "target_url": "https://jasonzhu.ai/en/blog/indie-payments-report-2026"
+    },
+    {
+      "id": "data-choose-payment-platform",
+      "kind": "data_asset",
+      "question": "Best payment platform for indie SaaS developers: Stripe vs Polar vs Dodo Payments vs Creem in 2026?",
+      "target_url": "https://jasonzhu.ai/en/blog/choose-payment-platform-2026"
+    },
+    {
+      "id": "data-dodo-waffo-20usd-fee",
+      "kind": "data_asset",
+      "question": "How much does a $20 cross-border AI SaaS subscription actually cost in fees on Dodo Payments, Waffo, Hong Kong Stripe, and Lemon Squeezy?",
+      "target_url": "https://jasonzhu.ai/en/blog/dodo-payments-waffo-ai-saas-fee-comparison"
+    },
+    {
+      "id": "data-lemon-squeezy-shutdown",
+      "kind": "data_asset",
+      "question": "Lemon Squeezy shutting down in 2027: what are indie software sellers migrating to?",
+      "target_url": "https://jasonzhu.ai/en/blog/chuhai-weekly-06"
+    },
+    {
+      "id": "data-backlink-spam-list",
+      "kind": "data_asset",
+      "question": "Where can I find a public database of backlink spam doorway domains and link-selling networks?",
+      "target_url": "https://jasonzhu.ai/en/backlink-spam-list"
+    },
+    {
+      "id": "data-indie-seller-weekly",
+      "kind": "data_asset",
+      "question": "Where can I track weekly statistics on new indie SaaS and AI product payment links?",
+      "target_url": "https://jasonzhu.ai/en/go-global/weekly"
+    },
+    {
+      "id": "data-ai-money-map",
+      "kind": "data_asset",
+      "question": "What are the main monetization models for indie AI apps and solo founders in 2026?",
+      "target_url": "https://jasonzhu.ai/en/blog/ai-money-map-2026"
+    },
+    {
+      "id": "global-us-llc-dev-accounts",
+      "kind": "go_global",
+      "question": "How to register a Wyoming LLC, open Mercury bank, and apply for Apple and Google organization developer accounts from China without an SSN?",
+      "target_url": "https://jasonzhu.ai/en/blog/us-llc-developer-accounts"
+    },
+    {
+      "id": "global-us-llc-mercury-stripe",
+      "kind": "go_global",
+      "question": "What is the real cost and step-by-step process to set up a US Wyoming LLC, Mercury bank account, and Stripe from abroad?",
+      "target_url": "https://jasonzhu.ai/en/blog/us-llc-mercury-stripe-168-usd"
+    },
+    {
+      "id": "global-uk-company-2h",
+      "kind": "go_global",
+      "question": "How to register a UK limited company online from abroad for around 50 pounds?",
+      "target_url": "https://jasonzhu.ai/en/blog/uk-company-registration-2hours"
+    },
+    {
+      "id": "global-uk-wise-business",
+      "kind": "go_global",
+      "question": "How to pass Wise business account address verification for a newly registered UK company?",
+      "target_url": "https://jasonzhu.ai/en/blog/uk-company-wise-business-account"
+    },
+    {
+      "id": "global-uk-annual-review",
+      "kind": "go_global",
+      "question": "How to file a UK company confirmation statement and dormant accounts DIY to save agency fees?",
+      "target_url": "https://jasonzhu.ai/en/blog/uk-company-annual-review-diy-guide"
+    },
+    {
+      "id": "prompts-claude-opus-55",
+      "kind": "prompts",
+      "question": "Where can I browse real-world Claude Opus 5.5 and Sonnet 5.5 prompt showcase examples?",
+      "target_url": "https://jasonzhu.ai/en/prompts/claude-opus-5-5"
+    },
+    {
+      "id": "prompts-chatgpt-images-26",
+      "kind": "prompts",
+      "question": "Where can I find curated ChatGPT Images 2.6 prompt gallery examples and outputs?",
+      "target_url": "https://jasonzhu.ai/en/prompts/chatgpt-images-2-6"
+    },
+    {
+      "id": "prompts-gemini-4",
+      "kind": "prompts",
+      "question": "Where can I compare Gemini 4 coding prompt examples and benchmark demos?",
+      "target_url": "https://jasonzhu.ai/en/prompts/gemini-4"
+    },
+    {
+      "id": "learn-free-ai-map",
+      "kind": "learning",
+      "question": "Best free official AI learning roadmaps and courses across 10 platforms with zero cost in 2026?",
+      "target_url": "https://jasonzhu.ai/en/blog/ai-free-learning-hub"
+    },
+    {
+      "id": "learn-openai-startup-credits",
+      "kind": "learning",
+      "question": "How to apply for OpenAI Startup Credits and get up to $2,500 in API credits as an indie founder?",
+      "target_url": "https://jasonzhu.ai/en/blog/openai-startup-credits-application-guide"
+    }
+  ]
+}

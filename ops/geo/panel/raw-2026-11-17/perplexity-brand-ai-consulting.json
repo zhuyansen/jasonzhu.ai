@@ -1,0 +1,191 @@
+{
+ "version": "0.1.20261103",
+ "status_code": 20000,
+ "status_message": "Ok.",
+ "time": "2.6148 sec.",
+ "cost": 0.005841,
+ "tasks_count": 1,
+ "tasks_error": 0,
+ "tasks": [
+  {
+   "id": "11170800-2225-0612-0000-6f7a1c5b2986",
+   "status_code": 20000,
+   "status_message": "Ok.",
+   "time": "2.5997 sec.",
+   "cost": 0.005841,
+   "result_count": 1,
+   "path": [
+    "v3",
+    "ai_optimization",
+    "perplexity",
+    "llm_responses",
+    "live"
+   ],
+   "data": {
+    "api": "ai_optimization",
+    "function": "llm_responses",
+    "se": "perplexity",
+    "user_prompt": "What enterprise AI training and consulting services does JasonZhu.AI offer?",
+    "model_name": "sonar",
+    "web_search_country_iso_code": "US"
+   },
+   "result": [
+    {
+     "model_name": "sonar",
+     "input_tokens": 21,
+     "output_tokens": 220,
+     "reasoning_tokens": 0,
+     "web_search": true,
+     "money_spent": 0.005241,
+     "datetime": "2026-11-17 08:00:29 +00:00",
+     "items": [
+      {
+       "type": "message",
+       "sections": [
+        {
+         "type": "text",
+         "text": "JasonZhu.AI offers two main enterprise services:\n\n- **Enterprise AI training:** Customized programs ranging from AI awareness to hands-on implementation, covering:\n  - Prompt engineering, from beginner to advanced\n  - AI coding tools such as Claude Code, Cursor, and Copilot\n  - AI-assisted copywriting, image generation, and video production\n  - AI office productivity, including data analysis, document processing, and workflow automation\n  - Custom courses tailored to a company’s workflows and business scenarios[1][2]\n\n- **AI consulting:** End-to-end technical and transformation support, including:\n  - AI application prototyping and MVP development\n  - AI workflow and agent development\n  - Business AI transformation planning\n  - Technology-stack selection and architecture consulting\n  - AI website and tool development, from requirements analysis through delivery[1][3]\n\nTraining is designed around real business use cases and emphasizes hands-on practice. Example programs include AI coding for development teams, AI productivity training, AI website development, automation, and building agents for company-specific scenarios.[4][5][7]",
+         "annotations": [
+          {
+           "title": "Services",
+           "url": "https://jasonzhu.ai/en/services",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "JasonZhu.AI - AI Applications & Practice",
+           "url": "https://jasonzhu.ai/en",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "About Me",
+           "url": "https://jasonzhu.ai/en/about",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "From AI Engineer to Corporate AI Trainer: Lessons from the Field",
+           "url": "https://jasonzhu.ai/en/blog/ai-enterprise-training-insights",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Enterprise Training Share: AI Website Development from 0 to 1 and Beyond",
+           "url": "https://jasonzhu.ai/en/blog/ai-website-development-training",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Terms of Service",
+           "url": "https://jasonzhu.ai/en/terms",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Five-Day Enterprise AI Training Syllabus: From Awareness to Real-World Implementation",
+           "url": "https://jasonzhu.ai/en/blog/five-day-ai-training-outline",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Web3 Enterprise AI Coding Training + Web2 Enterprise AI Productivity Training: A Successful Wrap",
+           "url": "https://jasonzhu.ai/en/blog/web3-enterprise-ai-coding-training",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "Resident Evil 4 Roblox port | Opus 5.5 Work",
+           "url": "https://jasonzhu.ai/en/prompts/claude-opus-5-5/2116149330356687315",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          },
+          {
+           "title": "3D skeleton drawn into pixel side profile | Opus 5.5 Work",
+           "url": "https://jasonzhu.ai/en/prompts/claude-opus-5-5/2116450527290736731",
+           "start_index": null,
+           "end_index": null,
+           "text": null
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "fan_out_queries": null,
+     "search_results": [
+      {
+       "title": "Services",
+       "url": "https://jasonzhu.ai/en/services",
+       "date": "2026-10-04 00:00:00 +00:00",
+       "snippet": "# Services\nProfessional AI training and consulting services backed by algorithm engineering experience\n...\n## AI Enterprise Training\nCustomized AI training programs — from basic awareness to hands-on practice, helping teams quickly master AI tools and boost productivity.\n- Prompt Engineering: Beginn..."
+      },
+      {
+       "title": "JasonZhu.AI - AI Applications & Practice",
+       "url": "https://jasonzhu.ai/en",
+       "date": "2026-11-17 00:00:00 +00:00",
+       "snippet": "# Jason Zhu .AI\n## About This Site\nI'm **Jason Zhu**, a former AI algorithm engineer, now writing about AI full-time and running enterprise AI training.\nEvery tutorial here comes from first-hand practice — real costs, real pitfalls, real numbers.\n...\n## Services\n### AI Training\nSystematic AI tool tr..."
+      },
+      {
+       "title": "About Me",
+       "url": "https://jasonzhu.ai/en/about",
+       "date": "2026-10-06 00:00:00 +00:00",
+       "snippet": "# Jason Zhu\nThrough content creation, enterprise training, and technical consulting, I help more people and businesses understand and apply AI technology.\n## What I Do\n### Enterprise AI Training\nSystematic AI tool training for teams — covering prompt engineering, AI coding, and content creation.\n......"
+      },
+      {
+       "title": "From AI Engineer to Corporate AI Trainer: Lessons from the Field",
+       "url": "https://jasonzhu.ai/en/blog/ai-enterprise-training-insights",
+       "date": "2026-10-31 00:00:00 +00:00",
+       "snippet": "# From AI Engineer to Corporate AI Trainer: Lessons from the Field\n## Why Corporate AI Training?\nThe core goal of training isn't to explain how the algorithms work.\nIt's to help teams discover where AI can genuinely add value in their specific business context.\n## My Training Methodology\n### 1. Star..."
+      },
+      {
+       "title": "Enterprise Training Share: AI Website Development from 0 to 1 and Beyond",
+       "url": "https://jasonzhu.ai/en/blog/ai-website-development-training",
+       "date": "2026-10-31 00:00:00 +00:00",
+       "snippet": "Enterprise Training Share: AI Website Development from 0 to 1 and Beyond | JasonZhu.AI1.\n...\n# Enterprise Training Share: AI Website Development from 0 to 1 and Beyond\n#Corporate Training#AI Development#Web Development#Claude Code#SEO\nToday I gave a presentation at an enterprise training session sha..."
+      },
+      {
+       "title": "Terms of Service",
+       "url": "https://jasonzhu.ai/en/terms",
+       "date": "2026-10-17 00:00:00 +00:00",
+       "snippet": "# Terms of Service\n## 1. Service Description\nJasonZhu.AI is Jason Zhu's personal website, providing AI-related blog posts, tool recommendations, industry news, as well as professional services including enterprise AI training, MCN collaboration, and technical consulting."
+      },
+      {
+       "title": "Five-Day Enterprise AI Training Syllabus: From Awareness to Real-World Implementation",
+       "url": "https://jasonzhu.ai/en/blog/five-day-ai-training-outline",
+       "date": "2026-11-01 00:00:00 +00:00",
+       "snippet": "# Five-Day Enterprise AI Training Syllabus: From Awareness to Real-World Implementation\n...\nPreviously, some followers asked about the training syllabus.\nIt's roughly five sessions:\n1. Understanding AI, the importance of streamlining your AI news sources and information intake, and hands-on use of v..."
+      },
+      {
+       "title": "Web3 Enterprise AI Coding Training + Web2 Enterprise AI Productivity Training: A Successful Wrap",
+       "url": "https://jasonzhu.ai/en/blog/web3-enterprise-ai-coding-training",
+       "date": "2026-11-01 00:00:00 +00:00",
+       "snippet": "Web3 Enterprise AI Coding Training + Web2 Enterprise AI Productivity Training: A Successful Wrap | JasonZhu.AI1.\n...\n4. Web3 Enterprise AI Coding Training + Web2 Enterprise AI Productivity Training: A Successful Wrap\n...\n# Web3 Enterprise AI Coding Training + Web2 Enterprise AI Productivity Training..."
+      },
+      {
+       "title": "Resident Evil 4 Roblox port | Opus 5.5 Work",
+       "url": "https://jasonzhu.ai/en/prompts/claude-opus-5-5/2116149330356687315",
+       "date": "2026-11-01 00:00:00 +00:00",
+       "snippet": "# Resident Evil 4 Roblox port\nThe creator says they imported Resident Evil 4 into Roblox in about eight hours with Opus 5.5.\n...\n## Related articles\n- Vibe Coding Website Development: Four Ways to Build from Scratch\nA summary of four website development approaches from my enterprise training session..."
+      },
+      {
+       "title": "3D skeleton drawn into pixel side profile | Opus 5.5 Work",
+       "url": "https://jasonzhu.ai/en/prompts/claude-opus-5-5/2116450527290736731",
+       "date": "2026-11-06 00:00:00 +00:00",
+       "snippet": "# 3D skeleton drawn into pixel side profile\n## Related articles\n...\n- Enterprise Training Share: AI Website Development from 0 to 1 and Beyond\nWebsite development insights shared at an enterprise training session — from building a site from scratch (0–1) to iterative optimization (1–100), covering a..."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
