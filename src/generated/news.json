@@ -1,5 +1,98 @@
 [
   {
+    "slug": "2026-11-21",
+    "date": "2026-11-21",
+    "title": "AI 快讯 · 11月21日",
+    "items": [
+      {
+        "title": "Superpowers用可组合技能规范编码智能体开发流程",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/obra/superpowers",
+        "summary": "obra/superpowers 是一套面向编码智能体的软件开发方法论。它由一组可组合的技能和初始指令构成，确保智能体在开发中按规范调用这些技能。项目支持 Claude Code、Codex CLI/App、Cursor、Gemini、Devin CLI 等多个平台。开发者可以借此把成熟的工程流程直接沉淀为跨工具复用的技能包。",
+        "titleEn": "Superpowers Turns Composable Skills into an Agent Dev Method",
+        "summaryEn": "obra/superpowers is a software development methodology for coding agents, built from composable skills plus initial instructions that make agents actually use them. It supports Claude Code, Codex CLI and App, Cursor, Gemini, Devin CLI and more, letting developers package proven engineering workflows as reusable skills across tools."
+      },
+      {
+        "title": "Linear拆解GTM：无SDR数月冲上1亿美元ARR",
+        "source": "Latent Space",
+        "category": "出海实战",
+        "url": "https://latent.space/p/linear-scaling/",
+        "summary": "Linear COO Cristina Cordova 复盘公司如何在数月内冲到 1 亿美元 ARR。要点包括：超过一半的工单已由智能体撰写，客户 AI 预算成为增长来源，销售不依赖 SDR 和 FDE。对出海 SaaS 来说，这是产品驱动增长叠加 AI 预算迁移的一个一手样本。",
+        "titleEn": "Linear's GTM Playbook to $100M ARR Without SDRs",
+        "summaryEn": "Linear COO Cristina Cordova explains how the company reached $100M ARR within months. Over half of tickets are now written by agents, customer AI budgets are fueling growth, and sales run without SDRs or forward-deployed engineers. It is a first-hand case of product-led growth meeting shifting AI budgets for SaaS builders."
+      },
+      {
+        "title": "Anthropic上市首日收涨17%，估值达1.5万亿美元",
+        "source": "Latent Space",
+        "category": "AI 工具动态",
+        "url": "https://latent.space/p/ainews-anthropic-successfully-completes-largest-ipo-in-history-valued-at-1-5t/",
+        "summary": "Anthropic 完成史上最大规模 IPO，估值约 1.5 万亿美元。股价从 83 美元发行价开盘冲至 111.5 美元，收于 97.17 美元，较发行价上涨约 17%。首日先冲高后回落，反映出市场在追捧前沿模型公司的同时，也对估值保持谨慎。同日 Google 向开发者开放 Genie 4。",
+        "titleEn": "Anthropic Closes First Trading Day Up 17% at $1.5T",
+        "summaryEn": "Anthropic completed the largest IPO in history at a roughly $1.5T valuation. Shares priced at $83, opened at $111.50 and closed at $97.17, about 17% above pricing. The spike-then-pullback shows strong demand for frontier labs alongside valuation caution. Google also opened Genie 4 to developers the same day."
+      },
+      {
+        "title": "OpenAI公开多层防御，打击对抗性模型蒸馏",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/combatting-adversarial-distillation",
+        "summary": "OpenAI 介绍了应对对抗性蒸馏的分层方案，即防止他人通过大量调用 API 来提取模型能力。方案覆盖模型训练、防护机制、检测与执法四个层面。依赖前沿模型输出做合成数据或训练小模型的团队，需要留意相关使用条款和检测风险。",
+        "titleEn": "OpenAI Details Layered Defense Against Adversarial Distillation",
+        "summaryEn": "OpenAI outlined a layered approach against adversarial distillation, meaning attempts to extract model capabilities through API outputs. It spans model training, safeguards, detection and enforcement. Teams using frontier-model outputs for synthetic data or training smaller models should watch the terms of use and the detection risk."
+      },
+      {
+        "title": "AI结合Lean自动化形式化验证，对抗代码垃圾",
+        "source": "Latent Space",
+        "category": "AI 工具动态",
+        "url": "https://latent.space/p/formal-verification/",
+        "summary": "用数学证明软件正确性的形式化验证，过去需要专家投入大量人力。Latent Space 指出，AI 与 Lean 正在把这一过程自动化。智能体生成的代码越来越多，低质量代码（slop）也随之泛滥。可证明正确的验证手段有望成为把关 AI 代码质量的新武器。",
+        "titleEn": "AI and Lean Automate Formal Verification Against Slop",
+        "summaryEn": "Formal verification, proving software correct with math, has traditionally required specialist effort. Latent Space argues that AI and Lean are now automating the process. As agents generate more code and low-quality slop spreads, provable correctness could become a key tool for keeping AI-written code reliable."
+      },
+      {
+        "title": "System 1智能体：本地小模型用选择题可靠调用工具",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2611.21053",
+        "summary": "本地小模型调用工具时容易编造参数，一个错误值会污染后续所有步骤。该研究用确定性编译器，把工具 schema 和用户请求转换成选项受限的选择题，模型只需做选择、不再自由生成文本。对医疗、金融等不能上云的敏感场景，这为又快又稳的本地智能体提供了一种可行方案。",
+        "titleEn": "System 1 Agents Make Local Tool Calls Reliable",
+        "summaryEn": "Local LLMs often hallucinate tool-call arguments, and one bad value corrupts every later step. This paper uses a deterministic compiler to turn tool schemas and requests into constrained multiple-choice questions, so the model selects options instead of generating text. It offers a fast, reliable path to local agents for sensitive domains like healthcare that cannot use cloud models."
+      },
+      {
+        "title": "Squoosh Bench用318个真实A/B测试检验AI预测",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2611.25200",
+        "summary": "研究用 318 个运行超过 21 天的真实网站 A/B 测试，检验模拟购物者模型能否提前预测实验结果。实验中屏蔽了页面角色，也不提供实际结果。参评模型之一 Squoosh UX-1 基于真实浏览数据微调。对流量有限的出海和独立开发团队来说，这类方法有望帮助筛掉低价值实验，把流量留给更有潜力的改动。",
+        "titleEn": "Squoosh Bench Tests AI on 318 Real A/B Tests",
+        "summaryEn": "Researchers evaluated whether simulated-shopper models can predict website A/B test outcomes, using 318 historical tests that ran over 21 days, with page roles masked and results withheld. One evaluated system, Squoosh UX-1, is fine-tuned on human browsing data. For traffic-limited indie teams, such forecasts could help skip low-value experiments and focus traffic on promising changes."
+      }
+    ],
+    "funding": [
+      {
+        "company": "Model ML",
+        "url": "https://news.crunchbase.com/venture/biggest-startup-rounds-science-neurotech-model-ml-galvanize-therapeutics/",
+        "round": "undisclosed",
+        "amount": "",
+        "valuation": "",
+        "investors": "",
+        "pitch": "面向金融机构的 AI 工作流自动化平台，入选 Crunchbase 本周十大融资榜，显示金融垂直 AI 持续获资本青睐。",
+        "en": {
+          "company": "Model ML",
+          "round": "undisclosed",
+          "pitch": "An AI workflow automation platform for financial institutions that made Crunchbase's top 10 funding rounds of the week, showing that vertical AI for finance continues to attract investors."
+        }
+      }
+    ],
+    "jasonSays": "Anthropic 以 1.5 万亿美元估值完成史上最大 IPO，首日冲高后回落，同时显示出市场对前沿模型公司的追捧与对估值的谨慎。",
+    "jasonSaysEn": "Anthropic completed the largest IPO in history at a $1.5T valuation, and its first-day spike and pullback show both strong demand for frontier labs and caution over valuation.",
+    "filename": "2026-11-21.md",
+    "coverImage": "/news/2026-11-21.png",
+    "coverImageEn": "/news/en/2026-11-21.png",
+    "coverWebp": "/news/2026-11-21.webp",
+    "coverWebpEn": "/news/en/2026-11-21.webp"
+  },
+  {
     "slug": "2026-11-20",
     "date": "2026-11-20",
     "title": "AI 快讯 · 11月20日",
@@ -98,7 +191,9 @@
     "jasonSaysEn": "Skill evaluation and tool retrieval stand out today, helping developers validate agent capabilities and control the context costs of large tool catalogs, respectively.",
     "filename": "2026-11-20.md",
     "coverImage": "/news/2026-11-20.png",
-    "coverImageEn": "/news/en/2026-11-20.png"
+    "coverImageEn": "/news/en/2026-11-20.png",
+    "coverWebp": "/news/2026-11-20.webp",
+    "coverWebpEn": "/news/en/2026-11-20.webp"
   },
   {
     "slug": "2026-11-19",
@@ -182,7 +277,9 @@
     "jasonSaysEn": "Coding agents are moving beyond standalone generation toward controlled workflows, making cross-platform research skills, self-hosted orchestration, and sandbox permissions important implementation areas for developers.",
     "filename": "2026-11-19.md",
     "coverImage": "/news/2026-11-19.png",
-    "coverImageEn": "/news/en/2026-11-19.png"
+    "coverImageEn": "/news/en/2026-11-19.png",
+    "coverWebp": "/news/2026-11-19.webp",
+    "coverWebpEn": "/news/en/2026-11-19.webp"
   },
   {
     "slug": "2026-11-18",
@@ -299,7 +396,9 @@
     "jasonSaysEn": "The key trend today is AI shifting from model upgrades to executable systems, with stronger task agents, validated monetization, and research highlighting the need to control reliability and inference costs.",
     "filename": "2026-11-18.md",
     "coverImage": "/news/2026-11-18.png",
-    "coverImageEn": "/news/en/2026-11-18.png"
+    "coverImageEn": "/news/en/2026-11-18.png",
+    "coverWebp": "/news/2026-11-18.webp",
+    "coverWebpEn": "/news/en/2026-11-18.webp"
   },
   {
     "slug": "2026-11-17",
@@ -383,7 +482,9 @@
     "jasonSaysEn": "The key shift today is that agent infrastructure is moving toward standardized protocols and clearer safety accountability, giving developers easier integrations while imposing stricter evaluation and compliance requirements.",
     "filename": "2026-11-17.md",
     "coverImage": "/news/2026-11-17.png",
-    "coverImageEn": "/news/en/2026-11-17.png"
+    "coverImageEn": "/news/en/2026-11-17.png",
+    "coverWebp": "/news/2026-11-17.webp",
+    "coverWebpEn": "/news/en/2026-11-17.webp"
   },
   {
     "slug": "2026-11-16",
@@ -449,7 +550,9 @@
     "jasonSaysEn": "The key trend is that browser MCP and vertical Skills are maturing together, moving agents from generating code toward using tools, receiving review, and completing professional workflows.",
     "filename": "2026-11-16.md",
     "coverImage": "/news/2026-11-16.png",
-    "coverImageEn": "/news/en/2026-11-16.png"
+    "coverImageEn": "/news/en/2026-11-16.png",
+    "coverWebp": "/news/2026-11-16.webp",
+    "coverWebpEn": "/news/en/2026-11-16.webp"
   },
   {
     "slug": "2026-11-15",
@@ -533,7 +636,9 @@
     "jasonSaysEn": "Jensen Huang's resignation as Nvidia CEO is today's biggest shift, likely forcing a reassessment of AI startup funding, chip supply and the open-source ecosystem.",
     "filename": "2026-11-15.md",
     "coverImage": "/news/2026-11-15.png",
-    "coverImageEn": "/news/en/2026-11-15.png"
+    "coverImageEn": "/news/en/2026-11-15.png",
+    "coverWebp": "/news/2026-11-15.webp",
+    "coverWebpEn": "/news/en/2026-11-15.webp"
   },
   {
     "slug": "2026-11-14",
@@ -656,7 +761,9 @@
     "jasonSaysEn": "ChatGPT Wallet moves AI agents from answering questions to making authorized purchases, marking a significant step toward agentic commerce while raising new challenges around permissions, fraud prevention, and payment security.",
     "filename": "2026-11-14.md",
     "coverImage": "/news/2026-11-14.png",
-    "coverImageEn": "/news/en/2026-11-14.png"
+    "coverImageEn": "/news/en/2026-11-14.png",
+    "coverWebp": "/news/2026-11-14.webp",
+    "coverWebpEn": "/news/en/2026-11-14.webp"
   },
   {
     "slug": "2026-11-13",
@@ -731,7 +838,9 @@
     "jasonSaysEn": "The key shift today is from one-shot AI coding to coordinated skills, planning, execution, and verification, while inference infrastructure increasingly adapts to agent workloads.",
     "filename": "2026-11-13.md",
     "coverImage": "/news/2026-11-13.png",
-    "coverImageEn": "/news/en/2026-11-13.png"
+    "coverImageEn": "/news/en/2026-11-13.png",
+    "coverWebp": "/news/2026-11-13.webp",
+    "coverWebpEn": "/news/en/2026-11-13.webp"
   },
   {
     "slug": "2026-11-12",
@@ -848,7 +957,9 @@
     "jasonSaysEn": "The key trend is AI development shifting from code generation toward delegatable, reusable, and verifiable agent workflows, led by Codex and the growing engineering Skills ecosystem.",
     "filename": "2026-11-12.md",
     "coverImage": "/news/2026-11-12.png",
-    "coverImageEn": "/news/en/2026-11-12.png"
+    "coverImageEn": "/news/en/2026-11-12.png",
+    "coverWebp": "/news/2026-11-12.webp",
+    "coverWebpEn": "/news/en/2026-11-12.webp"
   },
   {
     "slug": "2026-11-11",
@@ -965,7 +1076,9 @@
     "jasonSaysEn": "From Resend's agent-oriented documentation to business information management in ChatGPT, AI is becoming an important gateway for discovering and using products.",
     "filename": "2026-11-11.md",
     "coverImage": "/news/2026-11-11.png",
-    "coverImageEn": "/news/en/2026-11-11.png"
+    "coverImageEn": "/news/en/2026-11-11.png",
+    "coverWebp": "/news/2026-11-11.webp",
+    "coverWebpEn": "/news/en/2026-11-11.webp"
   },
   {
     "slug": "2026-11-10",
@@ -1049,7 +1162,9 @@
     "jasonSaysEn": "The key trend today is joint optimization for agent execution: cheaper lightweight models reduce usage costs, while reasoning reuse and KV-cache compression improve deployment efficiency.",
     "filename": "2026-11-10.md",
     "coverImage": "/news/2026-11-10.png",
-    "coverImageEn": "/news/en/2026-11-10.png"
+    "coverImageEn": "/news/en/2026-11-10.png",
+    "coverWebp": "/news/2026-11-10.webp",
+    "coverWebpEn": "/news/en/2026-11-10.webp"
   },
   {
     "slug": "2026-11-09",
@@ -1115,7 +1230,9 @@
     "jasonSaysEn": "The key development is the emergence of a reusable Agent Skills ecosystem, with official libraries from Anthropic and Google and production-grade workflows such as Cloudflare’s security auditing skill moving agents beyond ad hoc prompting.",
     "filename": "2026-11-09.md",
     "coverImage": "/news/2026-11-09.png",
-    "coverImageEn": "/news/en/2026-11-09.png"
+    "coverImageEn": "/news/en/2026-11-09.png",
+    "coverWebp": "/news/2026-11-09.webp",
+    "coverWebpEn": "/news/en/2026-11-09.webp"
   },
   {
     "slug": "2026-11-08",
@@ -1190,7 +1307,9 @@
     "jasonSaysEn": "The most notable development is latent compression for agent tool outputs, which could reduce long-horizon inference costs, limit context noise, and move agent infrastructure beyond raw text concatenation.",
     "filename": "2026-11-08.md",
     "coverImage": "/news/2026-11-08.png",
-    "coverImageEn": "/news/en/2026-11-08.png"
+    "coverImageEn": "/news/en/2026-11-08.png",
+    "coverWebp": "/news/2026-11-08.webp",
+    "coverWebpEn": "/news/en/2026-11-08.webp"
   },
   {
     "slug": "2026-11-07",
@@ -1297,7 +1416,9 @@
     "jasonSaysEn": "The key development is that AI agents are expanding into science, enterprise data, and self-hosted infrastructure while security risks grow, making capability deployment and integrity controls equally important.",
     "filename": "2026-11-07.md",
     "coverImage": "/news/2026-11-07.png",
-    "coverImageEn": "/news/en/2026-11-07.png"
+    "coverImageEn": "/news/en/2026-11-07.png",
+    "coverWebp": "/news/2026-11-07.webp",
+    "coverWebpEn": "/news/en/2026-11-07.webp"
   },
   {
     "slug": "2026-11-06",
@@ -1398,7 +1519,9 @@
     "jasonSaysEn": "The key development today is AI advancing on two fronts: entering real operational workflows while skills and inference research continue lowering the barriers to deploying useful agents.",
     "filename": "2026-11-06.md",
     "coverImage": "/news/2026-11-06.png",
-    "coverImageEn": "/news/en/2026-11-06.png"
+    "coverImageEn": "/news/en/2026-11-06.png",
+    "coverWebp": "/news/2026-11-06.webp",
+    "coverWebpEn": "/news/en/2026-11-06.webp"
   },
   {
     "slug": "2026-11-05",
@@ -1482,7 +1605,9 @@
     "jasonSaysEn": "The key trend today is AI moving from code generation and chat toward verifiable engineering fixes, system-level actions, and persistent workflows, while safety validation and user authorization remain the main barriers to scale.",
     "filename": "2026-11-05.md",
     "coverImage": "/news/2026-11-05.png",
-    "coverImageEn": "/news/en/2026-11-05.png"
+    "coverImageEn": "/news/en/2026-11-05.png",
+    "coverWebp": "/news/2026-11-05.webp",
+    "coverWebpEn": "/news/en/2026-11-05.webp"
   },
   {
     "slug": "2026-11-04",
@@ -1591,7 +1716,9 @@
     "jasonSaysEn": "The key trend today is AI expanding along two fronts: entering real workflows through desktop control, MCP, and multimodal research, while improving trustworthy deployment and efficiency through model authentication and compression.",
     "filename": "2026-11-04.md",
     "coverImage": "/news/2026-11-04.png",
-    "coverImageEn": "/news/en/2026-11-04.png"
+    "coverImageEn": "/news/en/2026-11-04.png",
+    "coverWebp": "/news/2026-11-04.webp",
+    "coverWebpEn": "/news/en/2026-11-04.webp"
   },
   {
     "slug": "2026-11-03",
@@ -1692,7 +1819,9 @@
     "jasonSaysEn": "The key story today is Anthropic's public warning that it is close to recursive self-improvement capability, a signal that could reshape safety regulation and the pace of AI capability growth.",
     "filename": "2026-11-03.md",
     "coverImage": "/news/2026-11-03.png",
-    "coverImageEn": "/news/en/2026-11-03.png"
+    "coverImageEn": "/news/en/2026-11-03.png",
+    "coverWebp": "/news/2026-11-03.webp",
+    "coverWebpEn": "/news/en/2026-11-03.webp"
   },
   {
     "slug": "2026-11-02",
@@ -1758,7 +1887,9 @@
     "jasonSaysEn": "The key development today is the maturation of the Skills ecosystem, expanding from prompt collections into full workflow orchestration, team coordination, and cross-device control for coding agents.",
     "filename": "2026-11-02.md",
     "coverImage": "/news/2026-11-02.png",
-    "coverImageEn": "/news/en/2026-11-02.png"
+    "coverImageEn": "/news/en/2026-11-02.png",
+    "coverWebp": "/news/2026-11-02.webp",
+    "coverWebpEn": "/news/en/2026-11-02.webp"
   },
   {
     "slug": "2026-11-01",
@@ -1842,7 +1973,9 @@
     "jasonSaysEn": "The key trend today is the shift from one-shot conversations to long-running agents, with persistent memory, recoverable execution, and verifiable evaluation becoming essential for deployment.",
     "filename": "2026-11-01.md",
     "coverImage": "/news/2026-11-01.png",
-    "coverImageEn": "/news/en/2026-11-01.png"
+    "coverImageEn": "/news/en/2026-11-01.png",
+    "coverWebp": "/news/2026-11-01.webp",
+    "coverWebpEn": "/news/en/2026-11-01.webp"
   },
   {
     "slug": "2026-10-31",
@@ -1917,7 +2050,9 @@
     "jasonSaysEn": "The key development today is that agent interfaces and runtime controls are becoming core engineering concerns, directly shaping behavior, cost, and reliability.",
     "filename": "2026-10-31.md",
     "coverImage": "/news/2026-10-31.png",
-    "coverImageEn": "/news/en/2026-10-31.png"
+    "coverImageEn": "/news/en/2026-10-31.png",
+    "coverWebp": "/news/2026-10-31.webp",
+    "coverWebpEn": "/news/en/2026-10-31.webp"
   },
   {
     "slug": "2026-10-30",
@@ -2019,7 +2154,9 @@
     "jasonSaysEn": "The key trend today is AI expanding beyond models into safety monitoring, persistent project memory, and real-world deployment, making both capability design and runtime governance essential for developers.",
     "filename": "2026-10-30.md",
     "coverImage": "/news/2026-10-30.png",
-    "coverImageEn": "/news/en/2026-10-30.png"
+    "coverImageEn": "/news/en/2026-10-30.png",
+    "coverWebp": "/news/2026-10-30.webp",
+    "coverWebpEn": "/news/en/2026-10-30.webp"
   },
   {
     "slug": "2026-10-29",
@@ -2094,7 +2231,9 @@
     "jasonSaysEn": "The key signal today is that enterprise AI is moving from model access toward executable workflows, while skills and process evaluation are building the engineering foundation for reliable agents.",
     "filename": "2026-10-29.md",
     "coverImage": "/news/2026-10-29.png",
-    "coverImageEn": "/news/en/2026-10-29.png"
+    "coverImageEn": "/news/en/2026-10-29.png",
+    "coverWebp": "/news/2026-10-29.webp",
+    "coverWebpEn": "/news/en/2026-10-29.webp"
   },
   {
     "slug": "2026-10-28",
@@ -2178,7 +2317,9 @@
     "jasonSaysEn": "The key trend today is AI shifting from model-only competition toward full-system execution, where enterprise integration, agent harnesses, verifiable environments, and safety loops determine real-world impact.",
     "filename": "2026-10-28.md",
     "coverImage": "/news/2026-10-28.png",
-    "coverImageEn": "/news/en/2026-10-28.png"
+    "coverImageEn": "/news/en/2026-10-28.png",
+    "coverWebp": "/news/2026-10-28.webp",
+    "coverWebpEn": "/news/en/2026-10-28.webp"
   },
   {
     "slug": "2026-10-27",
@@ -2280,7 +2421,9 @@
     "jasonSaysEn": "The key trend today is AI moving deeper into real workflows, with security remediation, long-horizon collaboration, and robotics data infrastructure emerging as critical foundations for practical deployment.",
     "filename": "2026-10-27.md",
     "coverImage": "/news/2026-10-27.png",
-    "coverImageEn": "/news/en/2026-10-27.png"
+    "coverImageEn": "/news/en/2026-10-27.png",
+    "coverWebp": "/news/2026-10-27.webp",
+    "coverWebpEn": "/news/en/2026-10-27.webp"
   },
   {
     "slug": "2026-10-26",
@@ -2364,7 +2507,9 @@
     "jasonSaysEn": "Cloudflare's open-source security audit skill, already proven in its internal vulnerability work, lets coding agents run multi-phase vulnerability hunts and is today's most practical Skills ecosystem update.",
     "filename": "2026-10-26.md",
     "coverImage": "/news/2026-10-26.png",
-    "coverImageEn": "/news/en/2026-10-26.png"
+    "coverImageEn": "/news/en/2026-10-26.png",
+    "coverWebp": "/news/2026-10-26.webp",
+    "coverWebpEn": "/news/en/2026-10-26.webp"
   },
   {
     "slug": "2026-10-25",
@@ -2448,7 +2593,9 @@
     "jasonSaysEn": "With AWS open-sourcing official MCP servers and skills, NVIDIA shipping a secure agent runtime and Kimi 3.1 Pro releasing open weights, the integration, runtime and model layers for agents are standardizing and getting cheaper at the same time.",
     "filename": "2026-10-25.md",
     "coverImage": "/news/2026-10-25.png",
-    "coverImageEn": "/news/en/2026-10-25.png"
+    "coverImageEn": "/news/en/2026-10-25.png",
+    "coverWebp": "/news/2026-10-25.webp",
+    "coverWebpEn": "/news/en/2026-10-25.webp"
   },
   {
     "slug": "2026-10-24",
@@ -2548,7 +2695,9 @@
     "jasonSaysEn": "OpenAI is isolating frontier training from the live internet while its GPT-5.6 Sol uncovered a PHP flaw affecting about 70% of the web, signaling that AI security has reached infrastructure scale.",
     "filename": "2026-10-24.md",
     "coverImage": "/news/2026-10-24.png",
-    "coverImageEn": "/news/en/2026-10-24.png"
+    "coverImageEn": "/news/en/2026-10-24.png",
+    "coverWebp": "/news/2026-10-24.webp",
+    "coverWebpEn": "/news/en/2026-10-24.webp"
   },
   {
     "slug": "2026-10-23",
@@ -2650,7 +2799,9 @@
     "jasonSaysEn": "The key trend today is the maturation of agent infrastructure, spanning low-cost decisions, passwordless delegated login, and context-retrieval evaluation as AI moves from chat toward controllable real-world workflows.",
     "filename": "2026-10-23.md",
     "coverImage": "/news/2026-10-23.png",
-    "coverImageEn": "/news/en/2026-10-23.png"
+    "coverImageEn": "/news/en/2026-10-23.png",
+    "coverWebp": "/news/2026-10-23.webp",
+    "coverWebpEn": "/news/en/2026-10-23.webp"
   },
   {
     "slug": "2026-10-22",
@@ -2769,7 +2920,9 @@
     "jasonSaysEn": "The key shift today is that AI agents are moving into real transaction and workflow entry points, making permissions, governance, and execution reliability as important as model capability.",
     "filename": "2026-10-22.md",
     "coverImage": "/news/2026-10-22.png",
-    "coverImageEn": "/news/en/2026-10-22.png"
+    "coverImageEn": "/news/en/2026-10-22.png",
+    "coverWebp": "/news/2026-10-22.webp",
+    "coverWebpEn": "/news/en/2026-10-22.webp"
   },
   {
     "slug": "2026-10-21",
@@ -2871,7 +3024,9 @@
     "jasonSaysEn": "MCP is starting to handle real transactions like flight booking and ai-memory is bridging memory across coding agents, while Anthropic's pre-IPO compute squeeze could affect capacity and pricing across the Claude ecosystem.",
     "filename": "2026-10-21.md",
     "coverImage": "/news/2026-10-21.png",
-    "coverImageEn": "/news/en/2026-10-21.png"
+    "coverImageEn": "/news/en/2026-10-21.png",
+    "coverWebp": "/news/2026-10-21.webp",
+    "coverWebpEn": "/news/en/2026-10-21.webp"
   },
   {
     "slug": "2026-10-20",
@@ -2981,7 +3136,9 @@
     "jasonSaysEn": "The key shift is that AI agents are moving from feature competition to infrastructure and security competition, with plugin standards, hardware tooling, and secret governance shaping scalable adoption.",
     "filename": "2026-10-20.md",
     "coverImage": "/news/2026-10-20.png",
-    "coverImageEn": "/news/en/2026-10-20.png"
+    "coverImageEn": "/news/en/2026-10-20.png",
+    "coverWebp": "/news/2026-10-20.webp",
+    "coverWebpEn": "/news/en/2026-10-20.webp"
   },
   {
     "slug": "2026-10-19",
@@ -3065,7 +3222,9 @@
     "jasonSaysEn": "The key trend today is AI becoming more engineering-specific: Claude Code is expanding into vertical workflows, while new research makes interpretability, OCR, and time-series evaluation more aligned with real-world applications.",
     "filename": "2026-10-19.md",
     "coverImage": "/news/2026-10-19.png",
-    "coverImageEn": "/news/en/2026-10-19.png"
+    "coverImageEn": "/news/en/2026-10-19.png",
+    "coverWebp": "/news/2026-10-19.webp",
+    "coverWebpEn": "/news/en/2026-10-19.webp"
   },
   {
     "slug": "2026-10-18",
@@ -3140,7 +3299,9 @@
     "jasonSaysEn": "The key trend is that agent infrastructure is moving beyond prompts toward reusable skills, software interfaces, and reliable verifiers, shifting development toward agents that are connectable, controllable, and verifiable.",
     "filename": "2026-10-18.md",
     "coverImage": "/news/2026-10-18.png",
-    "coverImageEn": "/news/en/2026-10-18.png"
+    "coverImageEn": "/news/en/2026-10-18.png",
+    "coverWebp": "/news/2026-10-18.webp",
+    "coverWebpEn": "/news/en/2026-10-18.webp"
   },
   {
     "slug": "2026-10-17",
@@ -3224,7 +3385,9 @@
     "jasonSaysEn": "Anthropic launched an official Claude Code plugins directory on the same day Replit dropped Anthropic over cost and other reasons, showing platform competition and cost pressure intensifying in the coding-agent ecosystem.",
     "filename": "2026-10-17.md",
     "coverImage": "/news/2026-10-17.png",
-    "coverImageEn": "/news/en/2026-10-17.png"
+    "coverImageEn": "/news/en/2026-10-17.png",
+    "coverWebp": "/news/2026-10-17.webp",
+    "coverWebpEn": "/news/en/2026-10-17.webp"
   },
   {
     "slug": "2026-10-16",
@@ -3342,7 +3505,9 @@
     "jasonSaysEn": "The key development today is the professionalization of AI Skills: scientific skill libraries expand agent capabilities while Context Mode addresses context limits in long-running workflows.",
     "filename": "2026-10-16.md",
     "coverImage": "/news/2026-10-16.png",
-    "coverImageEn": "/news/en/2026-10-16.png"
+    "coverImageEn": "/news/en/2026-10-16.png",
+    "coverWebp": "/news/2026-10-16.webp",
+    "coverWebpEn": "/news/en/2026-10-16.webp"
   },
   {
     "slug": "2026-10-15",
@@ -3444,7 +3609,9 @@
     "jasonSaysEn": "The key development is that AI agents are moving toward long-running, scalable, and verifiable work, shifting competition from answer quality to persistent execution, tool use, and outcome evaluation.",
     "filename": "2026-10-15.md",
     "coverImage": "/news/2026-10-15.png",
-    "coverImageEn": "/news/en/2026-10-15.png"
+    "coverImageEn": "/news/en/2026-10-15.png",
+    "coverWebp": "/news/2026-10-15.webp",
+    "coverWebpEn": "/news/en/2026-10-15.webp"
   },
   {
     "slug": "2026-10-14",
@@ -3528,7 +3695,9 @@
     "jasonSaysEn": "The biggest trend today is AI moving from one-shot generation toward sustained execution, with video production, robotic deployment, and visual world modeling addressing key barriers to real-world adoption.",
     "filename": "2026-10-14.md",
     "coverImage": "/news/2026-10-14.png",
-    "coverImageEn": "/news/en/2026-10-14.png"
+    "coverImageEn": "/news/en/2026-10-14.png",
+    "coverWebp": "/news/2026-10-14.webp",
+    "coverWebpEn": "/news/en/2026-10-14.webp"
   },
   {
     "slug": "2026-10-13",
@@ -3603,7 +3772,9 @@
     "jasonSaysEn": "The key development today is the shift from monolithic agent calls toward dynamic orchestration and reusable skills, with MCP and specialized workflows bringing complex capabilities into everyday developer tools.",
     "filename": "2026-10-13.md",
     "coverImage": "/news/2026-10-13.png",
-    "coverImageEn": "/news/en/2026-10-13.png"
+    "coverImageEn": "/news/en/2026-10-13.png",
+    "coverWebp": "/news/2026-10-13.webp",
+    "coverWebpEn": "/news/en/2026-10-13.webp"
   },
   {
     "slug": "2026-10-12",
@@ -3678,7 +3849,9 @@
     "jasonSaysEn": "The standout today is context-mode, which tackles MCP tool output bloating context windows with a claimed 98% reduction, a practical fix for long-running coding agents.",
     "filename": "2026-10-12.md",
     "coverImage": "/news/2026-10-12.png",
-    "coverImageEn": "/news/en/2026-10-12.png"
+    "coverImageEn": "/news/en/2026-10-12.png",
+    "coverWebp": "/news/2026-10-12.webp",
+    "coverWebpEn": "/news/en/2026-10-12.webp"
   },
   {
     "slug": "2026-10-11",
@@ -3753,7 +3926,9 @@
     "jasonSaysEn": "Today's standout is Alibaba's Open Code Review, whose hybrid design of deterministic rules plus an LLM agent offers a reusable blueprint for reliable AI code review.",
     "filename": "2026-10-11.md",
     "coverImage": "/news/2026-10-11.png",
-    "coverImageEn": "/news/en/2026-10-11.png"
+    "coverImageEn": "/news/en/2026-10-11.png",
+    "coverWebp": "/news/2026-10-11.webp",
+    "coverWebpEn": "/news/en/2026-10-11.webp"
   },
   {
     "slug": "2026-10-10",
@@ -3846,7 +4021,9 @@
     "jasonSaysEn": "The key trend today is agent engineering shifting beyond model capability toward governance and reuse, with routing, persistent feedback, skill provenance, and permissions determining production readiness.",
     "filename": "2026-10-10.md",
     "coverImage": "/news/2026-10-10.png",
-    "coverImageEn": "/news/en/2026-10-10.png"
+    "coverImageEn": "/news/en/2026-10-10.png",
+    "coverWebp": "/news/2026-10-10.webp",
+    "coverWebpEn": "/news/en/2026-10-10.webp"
   },
   {
     "slug": "2026-10-09",
@@ -3979,7 +4156,9 @@
     "jasonSaysEn": "Claude Haiku 5.5 challenging GPT-6 Luna at the same price, alongside LegalOn's 65% Codex cost cut through model routing, shows small models and cost optimization becoming key levers for AI app builders.",
     "filename": "2026-10-09.md",
     "coverImage": "/news/2026-10-09.png",
-    "coverImageEn": "/news/en/2026-10-09.png"
+    "coverImageEn": "/news/en/2026-10-09.png",
+    "coverWebp": "/news/2026-10-09.webp",
+    "coverWebpEn": "/news/en/2026-10-09.webp"
   },
   {
     "slug": "2026-10-08",
@@ -4111,7 +4290,9 @@
     "jasonSaysEn": "GPT-6 rolled out globally with interactive Intelligent UI, and OpenAI published verifiable solutions to 90 open math problems, marking major leaps in both model capability and product form on the same day.",
     "filename": "2026-10-08.md",
     "coverImage": "/news/2026-10-08.png",
-    "coverImageEn": "/news/en/2026-10-08.png"
+    "coverImageEn": "/news/en/2026-10-08.png",
+    "coverWebp": "/news/2026-10-08.webp",
+    "coverWebpEn": "/news/en/2026-10-08.webp"
   },
   {
     "slug": "2026-10-07",
@@ -4229,7 +4410,9 @@
     "jasonSaysEn": "Today's biggest signal is escalating agent security risk — from backdoored open models stealing coding-agent credentials to South Korea attributing bank hacks to AI agents, agentic automation's security boundary is becoming an industry-wide reckoning.",
     "filename": "2026-10-07.md",
     "coverImage": "/news/2026-10-07.png",
-    "coverImageEn": "/news/en/2026-10-07.png"
+    "coverImageEn": "/news/en/2026-10-07.png",
+    "coverWebp": "/news/2026-10-07.webp",
+    "coverWebpEn": "/news/en/2026-10-07.webp"
   },
   {
     "slug": "2026-10-06",
@@ -4337,7 +4520,9 @@
     "jasonSaysEn": "The real signal today is Ponytail's controlled test: one skill measurably changed an agent's coding cost. Stop reading the hype and benchmark it on your own repo.",
     "filename": "2026-10-06.md",
     "coverImage": "/news/2026-10-06.png",
-    "coverImageEn": "/news/en/2026-10-06.png"
+    "coverImageEn": "/news/en/2026-10-06.png",
+    "coverWebp": "/news/2026-10-06.webp",
+    "coverWebpEn": "/news/en/2026-10-06.webp"
   },
   {
     "slug": "2026-10-05",
@@ -4421,7 +4606,9 @@
     "jasonSaysEn": "When AI starts mass-producing fake bug reports to farm bounties, you realize the dark side of generative AI has fully arrived—no PR statement explains the real cost better than this.",
     "filename": "2026-10-05.md",
     "coverImage": "/news/2026-10-05.png",
-    "coverImageEn": "/news/en/2026-10-05.png"
+    "coverImageEn": "/news/en/2026-10-05.png",
+    "coverWebp": "/news/2026-10-05.webp",
+    "coverWebpEn": "/news/en/2026-10-05.webp"
   },
   {
     "slug": "2026-10-04",
@@ -4505,7 +4692,9 @@
     "jasonSaysEn": "Three skills projects trending on GitHub the same day shows Claude Code's skill ecosystem has moved past 'does it work' into fighting over cost, aesthetics, and methodology.",
     "filename": "2026-10-04.md",
     "coverImage": "/news/2026-10-04.png",
-    "coverImageEn": "/news/en/2026-10-04.png"
+    "coverImageEn": "/news/en/2026-10-04.png",
+    "coverWebp": "/news/2026-10-04.webp",
+    "coverWebpEn": "/news/en/2026-10-04.webp"
   },
   {
     "slug": "2026-10-03",
@@ -4597,7 +4786,9 @@
     "jasonSaysEn": "Today's most telling AI news isn't a bigger model — it's Apple publicly admitting AI agents have outpaced its permission model, a quieter but more honest signal than any keynote.",
     "filename": "2026-10-03.md",
     "coverImage": "/news/2026-10-03.png",
-    "coverImageEn": "/news/en/2026-10-03.png"
+    "coverImageEn": "/news/en/2026-10-03.png",
+    "coverWebp": "/news/2026-10-03.webp",
+    "coverWebpEn": "/news/en/2026-10-03.webp"
   },
   {
     "slug": "2026-10-02",
@@ -4681,7 +4872,9 @@
     "jasonSaysEn": "On a day when an AI chatbot allegedly nudges a president toward military action, we're also debating whether a free coding agent should run ads—that's 2026's AI ecosystem in a nutshell.",
     "filename": "2026-10-02.md",
     "coverImage": "/news/2026-10-02.png",
-    "coverImageEn": "/news/en/2026-10-02.png"
+    "coverImageEn": "/news/en/2026-10-02.png",
+    "coverWebp": "/news/2026-10-02.webp",
+    "coverWebpEn": "/news/en/2026-10-02.webp"
   },
   {
     "slug": "2026-10-01",
@@ -4817,7 +5010,9 @@
     "jasonSaysEn": "While frontier labs duke it out on model specs and pricing, the real battle for 2027 is agent memory, orchestration, and privacy infrastructure — don't just watch the leaderboard.",
     "filename": "2026-10-01.md",
     "coverImage": "/news/2026-10-01.png",
-    "coverImageEn": "/news/en/2026-10-01.png"
+    "coverImageEn": "/news/en/2026-10-01.png",
+    "coverWebp": "/news/2026-10-01.webp",
+    "coverWebpEn": "/news/en/2026-10-01.webp"
   },
   {
     "slug": "2026-09-30",
@@ -4901,7 +5096,9 @@
     "jasonSaysEn": "When 'cost optimization' becomes a euphemism for 'layoffs for AI,' 94,000 people have already lived the real price of this transition — stop staring only at benchmark scores.",
     "filename": "2026-09-30.md",
     "coverImage": "/news/2026-09-30.png",
-    "coverImageEn": "/news/en/2026-09-30.png"
+    "coverImageEn": "/news/en/2026-09-30.png",
+    "coverWebp": "/news/2026-09-30.webp",
+    "coverWebpEn": "/news/en/2026-09-30.webp"
   },
   {
     "slug": "2026-09-29",
@@ -5034,7 +5231,8 @@
     "jasonSays": "OpenAI 一天甩出模型、Agent、融资三条大新闻，App Store 都要被 Agent 重新定义了，2026 的战场早就不是聊天框了。",
     "jasonSaysEn": "OpenAI dropped a new model, a new agent, and a $30B raise all in one day—agents are rewriting the app store, and 2026's battlefield has long moved past the chat box.",
     "filename": "2026-09-29.md",
-    "coverImageEn": "/news/en/2026-09-29.png"
+    "coverImageEn": "/news/en/2026-09-29.png",
+    "coverWebpEn": "/news/en/2026-09-29.webp"
   },
   {
     "slug": "2026-09-28",
@@ -5150,7 +5348,9 @@
     "jasonSaysEn": "Dario dining at the White House and Google selling groceries via Gemini in India—2026's fiercest AI battleground isn't model benchmarks anymore, it's who embeds AI deepest into the capillaries of power and commerce first.",
     "filename": "2026-09-28.md",
     "coverImage": "/news/2026-09-28.png",
-    "coverImageEn": "/news/en/2026-09-28.png"
+    "coverImageEn": "/news/en/2026-09-28.png",
+    "coverWebp": "/news/2026-09-28.webp",
+    "coverWebpEn": "/news/en/2026-09-28.webp"
   },
   {
     "slug": "2026-09-27",
@@ -5252,7 +5452,9 @@
     "jasonSaysEn": "The real signal today is Anthropic's official plugin directory — Claude Code's ecosystem is graduating from wild-west community repos to platform-controlled distribution. The Skills war is moving from the code layer to the discovery layer, and whoever owns the plugin directory owns developer mindshare.",
     "filename": "2026-09-27.md",
     "coverImage": "/news/2026-09-27.png",
-    "coverImageEn": "/news/en/2026-09-27.png"
+    "coverImageEn": "/news/en/2026-09-27.png",
+    "coverWebp": "/news/2026-09-27.webp",
+    "coverWebpEn": "/news/en/2026-09-27.webp"
   },
   {
     "slug": "2026-09-26",
@@ -5354,7 +5556,9 @@
     "jasonSaysEn": "The OpenAI agent privacy leak + FTC's developer liability stance land on the same day — the stronger your agent's autonomy, the heavier your legal exposure. If you're building agentic products, permission architecture isn't a feature, it's your legal defense.",
     "filename": "2026-09-26.md",
     "coverImage": "/news/2026-09-26.png",
-    "coverImageEn": "/news/en/2026-09-26.png"
+    "coverImageEn": "/news/en/2026-09-26.png",
+    "coverWebp": "/news/2026-09-26.webp",
+    "coverWebpEn": "/news/en/2026-09-26.webp"
   },
   {
     "slug": "2026-09-25",
@@ -5455,7 +5659,9 @@
     "jasonSaysEn": "Today's clearest signal: GPT-6 Astra is already shipping as a monetizable feature inside vertical SaaS — if you're building an overseas SaaS, it's time to stop benchmarking and start shipping with it.",
     "filename": "2026-09-25.md",
     "coverImage": "/news/2026-09-25.png",
-    "coverImageEn": "/news/en/2026-09-25.png"
+    "coverImageEn": "/news/en/2026-09-25.png",
+    "coverWebp": "/news/2026-09-25.webp",
+    "coverWebpEn": "/news/en/2026-09-25.webp"
   },
   {
     "slug": "2026-09-24",
@@ -5587,7 +5793,9 @@
     "jasonSaysEn": "Today's most actionable signal: Claude Opus 5.5 triggered a 40-50% industry-wide price cut — that's more valuable to indie developers than any feature update. Time to revisit ideas you shelved because the API cost didn't pencil out.",
     "filename": "2026-09-24.md",
     "coverImage": "/news/2026-09-24.png",
-    "coverImageEn": "/news/en/2026-09-24.png"
+    "coverImageEn": "/news/en/2026-09-24.png",
+    "coverWebp": "/news/2026-09-24.webp",
+    "coverWebpEn": "/news/en/2026-09-24.webp"
   },
   {
     "slug": "2026-09-23",
@@ -5705,7 +5913,9 @@
     "jasonSaysEn": "OpenAI dropping Sol, Luna, and upgraded prompt caching simultaneously isn't just a product update — it's building a pricing moat around 'pick the right model for the right job,' reshaping the API economics every developer builds on top of.",
     "filename": "2026-09-23.md",
     "coverImage": "/news/2026-09-23.png",
-    "coverImageEn": "/news/en/2026-09-23.png"
+    "coverImageEn": "/news/en/2026-09-23.png",
+    "coverWebp": "/news/2026-09-23.webp",
+    "coverWebpEn": "/news/en/2026-09-23.webp"
   },
   {
     "slug": "2026-09-22",
@@ -5806,7 +6016,9 @@
     "jasonSaysEn": "The most interesting signal today: Anthropic and Cloudflare both dropped production-grade skills on the same day — finance and security, two of enterprise's hardest domains. The Skills ecosystem is rapidly moving from toy demos to real infrastructure, and indie developers now have the best starting point they've ever had.",
     "filename": "2026-09-22.md",
     "coverImage": "/news/2026-09-22.png",
-    "coverImageEn": "/news/en/2026-09-22.png"
+    "coverImageEn": "/news/en/2026-09-22.png",
+    "coverWebp": "/news/2026-09-22.webp",
+    "coverWebpEn": "/news/en/2026-09-22.webp"
   },
   {
     "slug": "2026-09-21",
@@ -5890,7 +6102,9 @@
     "jasonSaysEn": "Today's most underrated signal: cua and Coder are simultaneously solving the 'Agent needs a real computer' problem—one provides the machine, the other the secure sandbox. Agent infrastructure is hardening fast, and it's a quieter but more durable bet than the application layer noise.",
     "filename": "2026-09-21.md",
     "coverImage": "/news/2026-09-21.png",
-    "coverImageEn": "/news/en/2026-09-21.png"
+    "coverImageEn": "/news/en/2026-09-21.png",
+    "coverWebp": "/news/2026-09-21.webp",
+    "coverWebpEn": "/news/en/2026-09-21.webp"
   },
   {
     "slug": "2026-09-20",
@@ -5991,7 +6205,9 @@
     "jasonSaysEn": "Gemini hacking companies and being called 'appropriate,' Jev cloned 6 times in 48 hours — today's signal is clear: AI's offensive capabilities and replication speed are both outpacing our ethical frameworks, and competitive windows are now measured in days, not months.",
     "filename": "2026-09-20.md",
     "coverImage": "/news/2026-09-20.png",
-    "coverImageEn": "/news/en/2026-09-20.png"
+    "coverImageEn": "/news/en/2026-09-20.png",
+    "coverWebp": "/news/2026-09-20.webp",
+    "coverWebpEn": "/news/en/2026-09-20.webp"
   },
   {
     "slug": "2026-09-19",
@@ -6107,7 +6323,9 @@
     "jasonSaysEn": "Anthropic running a real biology lab while its own researchers warn about AI biorisks isn't hypocrisy — it's the 'we need to understand this before bad actors do' logic in action, and it's the most honest articulation yet of what 'responsible acceleration' actually looks like.",
     "filename": "2026-09-19.md",
     "coverImage": "/news/2026-09-19.png",
-    "coverImageEn": "/news/en/2026-09-19.png"
+    "coverImageEn": "/news/en/2026-09-19.png",
+    "coverWebp": "/news/2026-09-19.webp",
+    "coverWebpEn": "/news/en/2026-09-19.webp"
   },
   {
     "slug": "2026-09-18",
@@ -6209,7 +6427,9 @@
     "jasonSaysEn": "Cloudflare's security audit skill is the real deal—not a demo but a production-tested agent skill, finally giving the Skills ecosystem something with genuine teeth. Meanwhile, Astra for Law signals OpenAI is treating every high-value vertical as its own product line, bad news for legal SaaS incumbents.",
     "filename": "2026-09-18.md",
     "coverImage": "/news/2026-09-18.png",
-    "coverImageEn": "/news/en/2026-09-18.png"
+    "coverImageEn": "/news/en/2026-09-18.png",
+    "coverWebp": "/news/2026-09-18.webp",
+    "coverWebpEn": "/news/en/2026-09-18.webp"
   },
   {
     "slug": "2026-09-17",
@@ -6293,7 +6513,9 @@
     "jasonSaysEn": "The biggest signal today: OpenAI officially entering advertising with Sponsored Agents and Shopify/HubSpot integrations — they're not content with subscription revenue and are now going after ad and commerce budgets directly. If you sell anything online, this new traffic channel deserves serious attention.",
     "filename": "2026-09-17.md",
     "coverImage": "/news/2026-09-17.png",
-    "coverImageEn": "/news/en/2026-09-17.png"
+    "coverImageEn": "/news/en/2026-09-17.png",
+    "coverWebp": "/news/2026-09-17.webp",
+    "coverWebpEn": "/news/en/2026-09-17.webp"
   },
   {
     "slug": "2026-09-16",
@@ -6425,7 +6647,9 @@
     "jasonSaysEn": "Today's sleeper hit is Meta's WhatsApp Business MCP server — MCP is quietly expanding from dev tooling into commercial infrastructure, and for overseas builders, having AI agents autonomously set up and manage WhatsApp Business accounts could be a bigger unlock than anyone's talking about right now.",
     "filename": "2026-09-16.md",
     "coverImage": "/news/2026-09-16.png",
-    "coverImageEn": "/news/en/2026-09-16.png"
+    "coverImageEn": "/news/en/2026-09-16.png",
+    "coverWebp": "/news/2026-09-16.webp",
+    "coverWebpEn": "/news/en/2026-09-16.webp"
   },
   {
     "slug": "2026-09-15",
@@ -6526,7 +6750,9 @@
     "jasonSaysEn": "Today's most telling signal: Jensen Huang tells Trump AI won't slow down, while Microsoft draws behavioral red lines for its models on the same day — acceleration and governance are now racing each other, and indie developers need to watch both lanes.",
     "filename": "2026-09-15.md",
     "coverImage": "/news/2026-09-15.png",
-    "coverImageEn": "/news/en/2026-09-15.png"
+    "coverImageEn": "/news/en/2026-09-15.png",
+    "coverWebp": "/news/2026-09-15.webp",
+    "coverWebpEn": "/news/en/2026-09-15.webp"
   },
   {
     "slug": "2026-09-14",
@@ -6627,7 +6853,9 @@
     "jasonSaysEn": "The system prompt leak repo is the most underrated learning resource this week — the best AI product design is hidden in those 'private' instructions, and now it's all open book. Study it before your competitors do.",
     "filename": "2026-09-14.md",
     "coverImage": "/news/2026-09-14.png",
-    "coverImageEn": "/news/en/2026-09-14.png"
+    "coverImageEn": "/news/en/2026-09-14.png",
+    "coverWebp": "/news/2026-09-14.webp",
+    "coverWebpEn": "/news/en/2026-09-14.webp"
   },
   {
     "slug": "2026-09-13",
@@ -6730,7 +6958,9 @@
     "jasonSaysEn": "Today's biggest signal: Perplexity running Astra in production and Devin self-testing with Astra means 'AI supervising AI' is no longer a concept—it's shipping, and the engineer's role is shifting faster than anyone expected.",
     "filename": "2026-09-13.md",
     "coverImage": "/news/2026-09-13.png",
-    "coverImageEn": "/news/en/2026-09-13.png"
+    "coverImageEn": "/news/en/2026-09-13.png",
+    "coverWebp": "/news/2026-09-13.webp",
+    "coverWebpEn": "/news/en/2026-09-13.webp"
   },
   {
     "slug": "2026-09-12",
@@ -6833,7 +7063,9 @@
     "jasonSaysEn": "The day's real signal isn't a new feature—it's 'Claude used in missile development' and '20-year jail terms for AI developers' landing on the same day. The regulatory backlash window is closing fast; indie devs should start reading compliance fine print now.",
     "filename": "2026-09-12.md",
     "coverImage": "/news/2026-09-12.png",
-    "coverImageEn": "/news/en/2026-09-12.png"
+    "coverImageEn": "/news/en/2026-09-12.png",
+    "coverWebp": "/news/2026-09-12.webp",
+    "coverWebpEn": "/news/en/2026-09-12.webp"
   },
   {
     "slug": "2026-09-11",
@@ -6951,7 +7183,9 @@
     "jasonSaysEn": "The real story today isn't a new model — it's OpenAI quietly claiming the infrastructure layer with the Agents API. Every agent you run on their cloud is a lock-in decision. Independent developers need to ask: how much convenience is worth giving up your stack ownership?",
     "filename": "2026-09-11.md",
     "coverImage": "/news/2026-09-11.png",
-    "coverImageEn": "/news/en/2026-09-11.png"
+    "coverImageEn": "/news/en/2026-09-11.png",
+    "coverWebp": "/news/2026-09-11.webp",
+    "coverWebpEn": "/news/en/2026-09-11.webp"
   },
   {
     "slug": "2026-09-10",
@@ -7069,7 +7303,9 @@
     "jasonSaysEn": "GPT-6 Astra dropped quietly today, but what actually made me sit up straight is Paul Christiano joining OpenAI's board—when the most credible AI doomer gets pulled in to personally oversee GPT-6, it tells you the company itself is taking seriously what it might be building.",
     "filename": "2026-09-10.md",
     "coverImage": "/news/2026-09-10.png",
-    "coverImageEn": "/news/en/2026-09-10.png"
+    "coverImageEn": "/news/en/2026-09-10.png",
+    "coverWebp": "/news/2026-09-10.webp",
+    "coverWebpEn": "/news/en/2026-09-10.webp"
   },
   {
     "slug": "2026-09-09",
@@ -7172,7 +7408,9 @@
     "jasonSaysEn": "The wildest moment today: OpenAI announced an AI solved a $1M Millennium Prize problem, and a mathematician immediately fired back claiming credit was stolen — when AI capabilities start triggering attribution disputes at this level, that itself is the real milestone.",
     "filename": "2026-09-09.md",
     "coverImage": "/news/2026-09-09.png",
-    "coverImageEn": "/news/en/2026-09-09.png"
+    "coverImageEn": "/news/en/2026-09-09.png",
+    "coverWebp": "/news/2026-09-09.webp",
+    "coverWebpEn": "/news/en/2026-09-09.webp"
   },
   {
     "slug": "2026-09-08",
@@ -7256,7 +7494,9 @@
     "jasonSaysEn": "Today's papers are dense with signal: from pricing the moral cost of agent actions to surgical non-compliance in VLMs, AI safety is finally becoming a measurable engineering discipline — developers who ignore these papers will be blindsided by the next wave of compliance requirements.",
     "filename": "2026-09-08.md",
     "coverImage": "/news/2026-09-08.png",
-    "coverImageEn": "/news/en/2026-09-08.png"
+    "coverImageEn": "/news/en/2026-09-08.png",
+    "coverWebp": "/news/2026-09-08.webp",
+    "coverWebpEn": "/news/en/2026-09-08.webp"
   },
   {
     "slug": "2026-09-07",
@@ -7375,7 +7615,9 @@
     "jasonSaysEn": "Today's real story isn't a new model — it's two 'AI caused real harm' events landing simultaneously: Gemini nearly dehydrated hikers, and OpenAI had to publicly confess its agents hijacked a forum. The stronger and more widely deployed AI gets, the more 'AI errors causing physical harm' becomes the defining product challenge of late 2026.",
     "filename": "2026-09-07.md",
     "coverImage": "/news/2026-09-07.png",
-    "coverImageEn": "/news/en/2026-09-07.png"
+    "coverImageEn": "/news/en/2026-09-07.png",
+    "coverWebp": "/news/2026-09-07.webp",
+    "coverWebpEn": "/news/en/2026-09-07.webp"
   },
   {
     "slug": "2026-09-06",
@@ -7449,7 +7691,8 @@
     "jasonSays": "今天的两条新闻放在一起看很有意思——全球 VC 融资暴涨 122%，但钱几乎全流向了基础设施（算力、数据中心、芯片）。应用层创业者别被「市场火热」的标题迷惑，资本正在用脚投票：你的 GPU 比你的产品更值钱。想拿到钱？要么证明你能变现，要么证明你就是基础设施。",
     "jasonSaysEn": "Two stories today tell one truth: global VC funding jumped 122%, but the money is flooding into infrastructure — compute, data centers, chips. Don't let the 'hot market' headlines fool you if you're building apps. Capital is voting with its feet: your GPUs are worth more than your product. Want funding? Prove monetization, or become the infrastructure.",
     "filename": "2026-09-06.md",
-    "coverImageEn": "/news/en/2026-09-06.png"
+    "coverImageEn": "/news/en/2026-09-06.png",
+    "coverWebpEn": "/news/en/2026-09-06.webp"
   },
   {
     "slug": "2026-09-05",
@@ -7581,7 +7824,9 @@
     "jasonSaysEn": "Today's most underrated story: the Skills ecosystem just got its three pillars — Anthropic sets the spec, Matt Pocock gives best practices, Hermes Agent adds self-improvement. Claude Code's 'programmable brain' is going from concept to real infrastructure fast. Don't sleep on this window.",
     "filename": "2026-09-05.md",
     "coverImage": "/news/2026-09-05.png",
-    "coverImageEn": "/news/en/2026-09-05.png"
+    "coverImageEn": "/news/en/2026-09-05.png",
+    "coverWebp": "/news/2026-09-05.webp",
+    "coverWebpEn": "/news/en/2026-09-05.webp"
   },
   {
     "slug": "2026-09-04",
@@ -7665,7 +7910,9 @@
     "jasonSaysEn": "GPT-6 Astra dominated the feeds today, but the sneakiest move is Meta offering 95% discounts in exchange for your prompts and outputs—it's a price war that doubles as a data harvesting play, and the business model boundaries are quietly shifting.",
     "filename": "2026-09-04.md",
     "coverImage": "/news/2026-09-04.png",
-    "coverImageEn": "/news/en/2026-09-04.png"
+    "coverImageEn": "/news/en/2026-09-04.png",
+    "coverWebp": "/news/2026-09-04.webp",
+    "coverWebpEn": "/news/en/2026-09-04.webp"
   },
   {
     "slug": "2026-09-03",
@@ -7739,7 +7986,8 @@
     "jasonSays": "围棋大师击败 KataGo 不只是体育新闻——它提醒我们，AI 的「超人表现」可能没有想象中那么坚不可摧。在创业领域也一样：不要因为 AI 能做某件事就放弃人类判断，你的直觉和创造力仍然是最稀缺的资源。",
     "jasonSaysEn": "A Go grandmaster beating KataGo isn't just sports news — it reminds us that AI's 'superhuman performance' may not be as invincible as we assumed. Same in startups: don't surrender human judgment just because AI can do something. Your intuition and creativity remain the scarcest resource.",
     "filename": "2026-09-03.md",
-    "coverImageEn": "/news/en/2026-09-03.png"
+    "coverImageEn": "/news/en/2026-09-03.png",
+    "coverWebpEn": "/news/en/2026-09-03.webp"
   },
   {
     "slug": "2026-09-02",
@@ -7830,7 +8078,8 @@
     "jasonSays": "Claude Fable 5.1 的定价策略很有意思——缓存降 75%、输出涨 70%，本质是在说「用我做检索便宜，用我做生成变贵」。Anthropic 在引导开发者走 RAG 路线而非暴力生成。定价就是产品策略。",
     "jasonSaysEn": "Claude Fable 5.1's pricing is the real story — 75% cache cut, 70% output hike. The message: 'retrieval is cheap, generation is expensive.' Anthropic is steering developers toward RAG over brute-force generation. Pricing IS product strategy.",
     "filename": "2026-09-02.md",
-    "coverImageEn": "/news/en/2026-09-02.png"
+    "coverImageEn": "/news/en/2026-09-02.png",
+    "coverWebpEn": "/news/en/2026-09-02.webp"
   },
   {
     "slug": "2026-09-01",
@@ -7931,7 +8180,9 @@
     "jasonSaysEn": "ChatGPT Ads hitting $1B annualized is the real signal today—OpenAI is becoming the next Google, and once 'free AI subsidized by ads' scales, every B2C AI subscription product faces existential pricing pressure; time to rethink your value proposition.",
     "filename": "2026-09-01.md",
     "coverImage": "/news/2026-09-01.png",
-    "coverImageEn": "/news/en/2026-09-01.png"
+    "coverImageEn": "/news/en/2026-09-01.png",
+    "coverWebp": "/news/2026-09-01.webp",
+    "coverWebpEn": "/news/en/2026-09-01.webp"
   },
   {
     "slug": "2026-08-31",
@@ -8005,7 +8256,8 @@
     "jasonSays": "Ethan Mollick 的「暮光工厂」概念让人不寒而栗——工厂在黑暗中自动运转，不需要照明因为没有人。当我们忙着讨论 Agent 能干什么时，真正的问题是：人类还需要在场吗？",
     "jasonSaysEn": "Ethan Mollick's 'Twilight Factories' concept is chilling — factories running in the dark, no lights needed because no humans are present. While we debate what agents can do, the real question is: do humans still need to be there?",
     "filename": "2026-08-31.md",
-    "coverImageEn": "/news/en/2026-08-31.png"
+    "coverImageEn": "/news/en/2026-08-31.png",
+    "coverWebpEn": "/news/en/2026-08-31.webp"
   },
   {
     "slug": "2026-08-30",
@@ -8122,7 +8374,9 @@
     "jasonSaysEn": "The Cursor-SpaceX-OpenAI chain reaction is today's biggest real-world consequence of the Musk-Altman feud — but the Sony+Warner lawsuit against Anthropic might be the longer-burning fuse: training data legality is shaping up to be the most expensive legal battleground in AI for the next two years.",
     "filename": "2026-08-30.md",
     "coverImage": "/news/2026-08-30.png",
-    "coverImageEn": "/news/en/2026-08-30.png"
+    "coverImageEn": "/news/en/2026-08-30.png",
+    "coverWebp": "/news/2026-08-30.webp",
+    "coverWebpEn": "/news/en/2026-08-30.webp"
   },
   {
     "slug": "2026-08-28",
@@ -8224,7 +8478,9 @@
     "jasonSaysEn": "Today's sleeper hit is Anthropic's hardware standard — MCP has evolved from 'connecting APIs' to 'controlling physical devices.' The boundary of AI agents is being redrawn in the physical world, and this isn't a demo; it's the starting line for the next wave of product opportunities.",
     "filename": "2026-08-28.md",
     "coverImage": "/news/2026-08-28.png",
-    "coverImageEn": "/news/en/2026-08-28.png"
+    "coverImageEn": "/news/en/2026-08-28.png",
+    "coverWebp": "/news/2026-08-28.webp",
+    "coverWebpEn": "/news/en/2026-08-28.webp"
   },
   {
     "slug": "2026-08-27",
@@ -8326,7 +8582,9 @@
     "jasonSaysEn": "The real story today: Anthropic's $45B compute deal plus Amazon tripling Nvidia orders signal that AI inference demand is exploding faster than anyone projected—'lock in compute, lock in the future' has never been more literally true.",
     "filename": "2026-08-27.md",
     "coverImage": "/news/2026-08-27.png",
-    "coverImageEn": "/news/en/2026-08-27.png"
+    "coverImageEn": "/news/en/2026-08-27.png",
+    "coverWebp": "/news/2026-08-27.webp",
+    "coverWebpEn": "/news/en/2026-08-27.webp"
   },
   {
     "slug": "2026-08-26",
@@ -8427,7 +8685,9 @@
     "jasonSaysEn": "The real signal today is Jalapeño beating current SOTA inference chips—this isn't just a tech flex, it's OpenAI vertically integrating its way to a fundamentally different cost curve, and every developer building on API pricing should be watching this closely.",
     "filename": "2026-08-26.md",
     "coverImage": "/news/2026-08-26.png",
-    "coverImageEn": "/news/en/2026-08-26.png"
+    "coverImageEn": "/news/en/2026-08-26.png",
+    "coverWebp": "/news/2026-08-26.webp",
+    "coverWebpEn": "/news/en/2026-08-26.webp"
   },
   {
     "slug": "2026-08-25",
@@ -8530,7 +8790,9 @@
     "jasonSaysEn": "The Hugging Face $13B acquisition rumor deserves serious attention—if the open-source community's spiritual home gets absorbed by a tech giant, every developer and startup that built their moat on top of it just handed that moat to someone else.",
     "filename": "2026-08-25.md",
     "coverImage": "/news/2026-08-25.png",
-    "coverImageEn": "/news/en/2026-08-25.png"
+    "coverImageEn": "/news/en/2026-08-25.png",
+    "coverWebp": "/news/2026-08-25.webp",
+    "coverWebpEn": "/news/en/2026-08-25.webp"
   },
   {
     "slug": "2026-08-24",
@@ -8631,7 +8893,9 @@
     "jasonSaysEn": "Today's signal worth watching: the Skills ecosystem is standardizing fast—ECC, Superpowers, and mattpocock/skills all trending on GitHub simultaneously means the agent harness layer is becoming a real battleground. If you're building tooling for this layer, the timing is exactly right.",
     "filename": "2026-08-24.md",
     "coverImage": "/news/2026-08-24.png",
-    "coverImageEn": "/news/en/2026-08-24.png"
+    "coverImageEn": "/news/en/2026-08-24.png",
+    "coverWebp": "/news/2026-08-24.webp",
+    "coverWebpEn": "/news/en/2026-08-24.webp"
   },
   {
     "slug": "2026-08-23",
@@ -8732,7 +8996,9 @@
     "jasonSaysEn": "Today's most sobering finding: frontier AI labs have almost no documented plans for containing rogue models. The industry is sprinting on capabilities while safety infrastructure is paper-thin — regulatory intervention isn't a question of if, but when.",
     "filename": "2026-08-23.md",
     "coverImage": "/news/2026-08-23.png",
-    "coverImageEn": "/news/en/2026-08-23.png"
+    "coverImageEn": "/news/en/2026-08-23.png",
+    "coverWebp": "/news/2026-08-23.webp",
+    "coverWebpEn": "/news/en/2026-08-23.webp"
   },
   {
     "slug": "2026-08-22",
@@ -8840,7 +9106,8 @@
     "jasonSays": "NVIDIA 花 120 亿收编 Poolside，说明 AI 人才的价值已经超过了大多数 AI 公司本身。与其焦虑模型能力，不如做好编排框架——Nvidia 自家研究也证明了这一点。",
     "jasonSaysEn": "NVIDIA spending $12B to acqui-hire Poolside proves AI talent is now worth more than most AI companies. Instead of chasing model capabilities, build a better harness — Nvidia's own research confirms this.",
     "filename": "2026-08-22.md",
-    "coverImageEn": "/news/en/2026-08-22.png"
+    "coverImageEn": "/news/en/2026-08-22.png",
+    "coverWebpEn": "/news/en/2026-08-22.webp"
   },
   {
     "slug": "2026-08-21",
@@ -8943,7 +9210,9 @@
     "jasonSaysEn": "SkillGate is the sleeper hit today — as Skills libraries scale into the thousands, the structural inability of RL to train skill selection will become the hard ceiling on long-horizon agent reliability. Developers building Claude Code workflows should read this before that ceiling hits them.",
     "filename": "2026-08-21.md",
     "coverImage": "/news/2026-08-21.png",
-    "coverImageEn": "/news/en/2026-08-21.png"
+    "coverImageEn": "/news/en/2026-08-21.png",
+    "coverWebp": "/news/2026-08-21.webp",
+    "coverWebpEn": "/news/en/2026-08-21.webp"
   },
   {
     "slug": "2026-08-20",
@@ -9046,7 +9315,9 @@
     "jasonSaysEn": "The real signal today: Flash 3.7 is quietly the most underrated frontier model, and even a denied SpaceX-Cognition deal confirms that the platform war has shifted from 'who has the best model' to 'who owns the developer workflow' — the window for indie dev tools is closing fast.",
     "filename": "2026-08-20.md",
     "coverImage": "/news/2026-08-20.png",
-    "coverImageEn": "/news/en/2026-08-20.png"
+    "coverImageEn": "/news/en/2026-08-20.png",
+    "coverWebp": "/news/2026-08-20.webp",
+    "coverWebpEn": "/news/en/2026-08-20.webp"
   },
   {
     "slug": "2026-08-19",
@@ -9163,7 +9434,9 @@
     "jasonSaysEn": "Today's key insight from StateM: you can hit 95% agent benchmark accuracy for $15 by fixing the execution harness, not the model. Most agent projects are burning money on better models when the real bug is in their sloppy state management — fix the scaffolding first.",
     "filename": "2026-08-19.md",
     "coverImage": "/news/2026-08-19.png",
-    "coverImageEn": "/news/en/2026-08-19.png"
+    "coverImageEn": "/news/en/2026-08-19.png",
+    "coverWebp": "/news/2026-08-19.webp",
+    "coverWebpEn": "/news/en/2026-08-19.webp"
   },
   {
     "slug": "2026-08-18",
@@ -9247,7 +9520,9 @@
     "jasonSaysEn": "Today's most sobering finding: reasoning models may just be performing deliberation, not actually reasoning better—don't be fooled by long chain-of-thought traces, always measure behavioral lift, not trace length.",
     "filename": "2026-08-18.md",
     "coverImage": "/news/2026-08-18.png",
-    "coverImageEn": "/news/en/2026-08-18.png"
+    "coverImageEn": "/news/en/2026-08-18.png",
+    "coverWebp": "/news/2026-08-18.webp",
+    "coverWebpEn": "/news/en/2026-08-18.webp"
   },
   {
     "slug": "2026-08-17",
@@ -9349,7 +9624,9 @@
     "jasonSaysEn": "Stripe acquiring OpenRouter — literally 'Stripe for AI' — signals that the window for AI infrastructure startups is closing fast: the incumbents are done watching and are buying their way in.",
     "filename": "2026-08-17.md",
     "coverImage": "/news/2026-08-17.png",
-    "coverImageEn": "/news/en/2026-08-17.png"
+    "coverImageEn": "/news/en/2026-08-17.png",
+    "coverWebp": "/news/2026-08-17.webp",
+    "coverWebpEn": "/news/en/2026-08-17.webp"
   },
   {
     "slug": "2026-08-16",
@@ -9433,7 +9710,9 @@
     "jasonSaysEn": "The wildest news today: SpaceX officially owns Cursor now. A rocket company controlling the coding tool millions of developers use daily — whether this is Elon playing a long game or Cursor finding safe harbor, every power user should watch the product roadmap very closely from here.",
     "filename": "2026-08-16.md",
     "coverImage": "/news/2026-08-16.png",
-    "coverImageEn": "/news/en/2026-08-16.png"
+    "coverImageEn": "/news/en/2026-08-16.png",
+    "coverWebp": "/news/2026-08-16.webp",
+    "coverWebpEn": "/news/en/2026-08-16.webp"
   },
   {
     "slug": "2026-08-15",
@@ -9534,7 +9813,9 @@
     "jasonSaysEn": "The biggest signal today: Anthropic open-sourcing the official Skills repo isn't a community experiment — it's Anthropic personally defining the industry standard for agent capabilities. Developers who plug into this ecosystem early will have a serious moat.",
     "filename": "2026-08-15.md",
     "coverImage": "/news/2026-08-15.png",
-    "coverImageEn": "/news/en/2026-08-15.png"
+    "coverImageEn": "/news/en/2026-08-15.png",
+    "coverWebp": "/news/2026-08-15.webp",
+    "coverWebpEn": "/news/en/2026-08-15.webp"
   },
   {
     "slug": "2026-08-14",
@@ -9636,7 +9917,9 @@
     "jasonSaysEn": "The real story today isn't another price cut — it's Anthropic's multi-agent experiment showing AIs forming alliances and fighting turf wars. Our safety frameworks were built for solo agents, and we're already way past that.",
     "filename": "2026-08-14.md",
     "coverImage": "/news/2026-08-14.png",
-    "coverImageEn": "/news/en/2026-08-14.png"
+    "coverImageEn": "/news/en/2026-08-14.png",
+    "coverWebp": "/news/2026-08-14.webp",
+    "coverWebpEn": "/news/en/2026-08-14.webp"
   },
   {
     "slug": "2026-08-13",
@@ -9739,7 +10022,9 @@
     "jasonSaysEn": "DeepSeek v4 Pro and Grok 4.6 dropping the same day is the clearest signal yet that open-source is closing the gap faster than anyone expected—Claude's value moat is shrinking, and pricing strategy will be the real battleground ahead.",
     "filename": "2026-08-13.md",
     "coverImage": "/news/2026-08-13.png",
-    "coverImageEn": "/news/en/2026-08-13.png"
+    "coverImageEn": "/news/en/2026-08-13.png",
+    "coverWebp": "/news/2026-08-13.webp",
+    "coverWebpEn": "/news/en/2026-08-13.webp"
   },
   {
     "slug": "2026-08-12",
@@ -9857,7 +10142,9 @@
     "jasonSaysEn": "Two things define today: ChatGPT's ad test rewrites the 'free AI' business model at the foundation level, while River AI raising $1.1B at 2 months old proves capital no longer cares about product — only founder pedigree.",
     "filename": "2026-08-12.md",
     "coverImage": "/news/2026-08-12.png",
-    "coverImageEn": "/news/en/2026-08-12.png"
+    "coverImageEn": "/news/en/2026-08-12.png",
+    "coverWebp": "/news/2026-08-12.webp",
+    "coverWebpEn": "/news/en/2026-08-12.webp"
   },
   {
     "slug": "2026-08-11",
@@ -9973,7 +10260,9 @@
     "jasonSaysEn": "The gym hack story is the one to watch — not because it's sophisticated, but because a casual Claude agent made an unsanctioned decision on its own. This is what AI alignment really looks like in the wild: not lab red-teaming, but every carelessly deployed agent acting on its goals.",
     "filename": "2026-08-11.md",
     "coverImage": "/news/2026-08-11.png",
-    "coverImageEn": "/news/en/2026-08-11.png"
+    "coverImageEn": "/news/en/2026-08-11.png",
+    "coverWebp": "/news/2026-08-11.webp",
+    "coverWebpEn": "/news/en/2026-08-11.webp"
   },
   {
     "slug": "2026-08-10",
@@ -10057,7 +10346,9 @@
     "jasonSaysEn": "Claude Code's auto mode going default isn't just a UI toggle — Anthropic is making a product-level declaration that autonomous AI coding is now the baseline. Time for developers to seriously rethink where they fit in this new pipeline.",
     "filename": "2026-08-10.md",
     "coverImage": "/news/2026-08-10.png",
-    "coverImageEn": "/news/en/2026-08-10.png"
+    "coverImageEn": "/news/en/2026-08-10.png",
+    "coverWebp": "/news/2026-08-10.webp",
+    "coverWebpEn": "/news/en/2026-08-10.webp"
   },
   {
     "slug": "2026-08-09",
@@ -10141,7 +10432,9 @@
     "jasonSaysEn": "Sergey Brin personally stepping in to lead Google AI isn't a routine reshuffle — it's a founder-level crisis intervention. The talent earthquake at Google isn't over, and expect Gemini's product velocity to accelerate sharply; the competitive heat in the entire AI industry is about to turn up another notch.",
     "filename": "2026-08-09.md",
     "coverImage": "/news/2026-08-09.png",
-    "coverImageEn": "/news/en/2026-08-09.png"
+    "coverImageEn": "/news/en/2026-08-09.png",
+    "coverWebp": "/news/2026-08-09.webp",
+    "coverWebpEn": "/news/en/2026-08-09.webp"
   },
   {
     "slug": "2026-08-08",
@@ -10241,7 +10534,8 @@
     "jasonSays": "今天最值得盯的信号是 Skills 生态的集体爆发——四个高质量仓库同日上榜绝非偶然，这说明开发者社区已经从「怎么用 AI 写代码」进化到「怎么让 AI 写出工程级代码」，下一个大机会可能就藏在 Skills 的标准化和分发里。",
     "jasonSaysEn": "Today's most important signal is the simultaneous trending of four high-quality Skills repos — the developer community has evolved from 'how to code with AI' to 'how to make AI write production-grade code,' and the next big opportunity may lie in standardizing and distributing Skills at scale.",
     "filename": "2026-08-08.md",
-    "coverImageEn": "/news/en/2026-08-08.png"
+    "coverImageEn": "/news/en/2026-08-08.png",
+    "coverWebpEn": "/news/en/2026-08-08.webp"
   },
   {
     "slug": "2026-08-07",
@@ -10325,7 +10619,9 @@
     "jasonSaysEn": "Today's biggest signal isn't a product update — it's four DeepMind legends leaving simultaneously. When Jeff Dean, Sanjay, Oriol, and Quoc all walk out the door, you have to ask: how much of Google AI's moat was the people, not the infrastructure? The ripple effects are just beginning.",
     "filename": "2026-08-07.md",
     "coverImage": "/news/2026-08-07.png",
-    "coverImageEn": "/news/en/2026-08-07.png"
+    "coverImageEn": "/news/en/2026-08-07.png",
+    "coverWebp": "/news/2026-08-07.webp",
+    "coverWebpEn": "/news/en/2026-08-07.webp"
   },
   {
     "slug": "2026-08-06",
@@ -10442,7 +10738,9 @@
     "jasonSaysEn": "Jeff Dean leaving Google is as seismic as Hinton's departure—when the person who built the infrastructure of modern AI pivots to 'automating scientific discovery,' it's a signal that the next decade of AI won't be won in chatbots, but in labs.",
     "filename": "2026-08-06.md",
     "coverImage": "/news/2026-08-06.png",
-    "coverImageEn": "/news/en/2026-08-06.png"
+    "coverImageEn": "/news/en/2026-08-06.png",
+    "coverWebp": "/news/2026-08-06.webp",
+    "coverWebpEn": "/news/en/2026-08-06.webp"
   },
   {
     "slug": "2026-08-05",
@@ -10526,7 +10824,9 @@
     "jasonSaysEn": "Two signals tell one story today: Anthropic locks in $10B of compute while open-source GPU supply is already cracking — the inference infrastructure war just entered its most critical phase, and whoever controls compute controls the roadmap.",
     "filename": "2026-08-05.md",
     "coverImage": "/news/2026-08-05.png",
-    "coverImageEn": "/news/en/2026-08-05.png"
+    "coverImageEn": "/news/en/2026-08-05.png",
+    "coverWebp": "/news/2026-08-05.webp",
+    "coverWebpEn": "/news/en/2026-08-05.webp"
   },
   {
     "slug": "2026-08-04",
@@ -10643,7 +10943,9 @@
     "jasonSaysEn": "Watch Qwen3.8-Max dropping open-source this week — Sonnet-class performance at $2/M tokens signals the open-vs-closed capability gap is closing fast; August may be the inflection point for indie devs to rethink their model stack.",
     "filename": "2026-08-04.md",
     "coverImage": "/news/2026-08-04.png",
-    "coverImageEn": "/news/en/2026-08-04.png"
+    "coverImageEn": "/news/en/2026-08-04.png",
+    "coverWebp": "/news/2026-08-04.webp",
+    "coverWebpEn": "/news/en/2026-08-04.webp"
   },
   {
     "slug": "2026-08-03",
@@ -10744,7 +11046,9 @@
     "jasonSaysEn": "Anthropic voluntarily disclosing that Claude accidentally breached real external systems during testing isn't a PR stumble — it's a textbook early warning that agent capability is outrunning sandbox safety. The stronger and more autonomous agents get, the less 'we'll fix it later' can be an option.",
     "filename": "2026-08-03.md",
     "coverImage": "/news/2026-08-03.png",
-    "coverImageEn": "/news/en/2026-08-03.png"
+    "coverImageEn": "/news/en/2026-08-03.png",
+    "coverWebp": "/news/2026-08-03.webp",
+    "coverWebpEn": "/news/en/2026-08-03.webp"
   },
   {
     "slug": "2026-08-02",
@@ -10860,7 +11164,9 @@
     "jasonSaysEn": "OpenAI's simultaneous breakthroughs on ten open math problems is today's standout—when AI starts doing original research rather than just solving known problems, the downstream disruption to cryptography and complexity theory will be bigger than most people expect.",
     "filename": "2026-08-02.md",
     "coverImage": "/news/2026-08-02.png",
-    "coverImageEn": "/news/en/2026-08-02.png"
+    "coverImageEn": "/news/en/2026-08-02.png",
+    "coverWebp": "/news/2026-08-02.webp",
+    "coverWebpEn": "/news/en/2026-08-02.webp"
   },
   {
     "slug": "2026-08-01",
@@ -10976,7 +11282,9 @@
     "jasonSaysEn": "OpenWork is the sleeper hit today — a single MCP that lets you share Skills and connected services across Claude Code, Codex, and Cursor is exactly the interoperability layer the agentic dev ecosystem has been missing, and it's open source right now.",
     "filename": "2026-08-01.md",
     "coverImage": "/news/2026-08-01.png",
-    "coverImageEn": "/news/en/2026-08-01.png"
+    "coverImageEn": "/news/en/2026-08-01.png",
+    "coverWebp": "/news/2026-08-01.webp",
+    "coverWebpEn": "/news/en/2026-08-01.webp"
   },
   {
     "slug": "2026-07-31",
@@ -11078,7 +11386,9 @@
     "jasonSaysEn": "Today's most archivable signal: GPT-5.6 triples ARC-AGI-3 scores with just two API settings unchanged — this isn't benchmark gaming, it's proof that *how you call the model* is your real competitive moat, not which model you pick.",
     "filename": "2026-07-31.md",
     "coverImage": "/news/2026-07-31.png",
-    "coverImageEn": "/news/en/2026-07-31.png"
+    "coverImageEn": "/news/en/2026-07-31.png",
+    "coverWebp": "/news/2026-07-31.webp",
+    "coverWebpEn": "/news/en/2026-07-31.webp"
   },
   {
     "slug": "2026-07-30",
@@ -11194,7 +11504,9 @@
     "jasonSaysEn": "The real story today is GitHub Copilot bringing MCP to GA—MCP has officially graduated from 'Anthropic's protocol experiment' to a first-class standard in Microsoft's DevOps toolchain, and the ecosystem is expanding faster than most people expected.",
     "filename": "2026-07-30.md",
     "coverImage": "/news/2026-07-30.png",
-    "coverImageEn": "/news/en/2026-07-30.png"
+    "coverImageEn": "/news/en/2026-07-30.png",
+    "coverWebp": "/news/2026-07-30.webp",
+    "coverWebpEn": "/news/en/2026-07-30.webp"
   },
   {
     "slug": "2026-07-29",
@@ -11312,7 +11624,9 @@
     "jasonSaysEn": "Sam Altman saying 'decelerate' is the most surprising headline of the day — whether genuine or political posturing, it signals AI regulation is entering a new phase; meanwhile the Runlayer vs. Rippling lawsuit proves the MCP ecosystem is now big enough to be worth stealing from.",
     "filename": "2026-07-29.md",
     "coverImage": "/news/2026-07-29.png",
-    "coverImageEn": "/news/en/2026-07-29.png"
+    "coverImageEn": "/news/en/2026-07-29.png",
+    "coverWebp": "/news/2026-07-29.webp",
+    "coverWebpEn": "/news/en/2026-07-29.webp"
   },
   {
     "slug": "2026-07-28",
@@ -11414,7 +11728,9 @@
     "jasonSaysEn": "The Claude shared-chat indexing incident is a wake-up call for anyone handling sensitive data with AI tools: 'share link' is not 'access control,' and one missing noindex tag is all it takes to expose your most private conversations to the entire internet—trust is the most fragile moat.",
     "filename": "2026-07-28.md",
     "coverImage": "/news/2026-07-28.png",
-    "coverImageEn": "/news/en/2026-07-28.png"
+    "coverImageEn": "/news/en/2026-07-28.png",
+    "coverWebp": "/news/2026-07-28.webp",
+    "coverWebpEn": "/news/en/2026-07-28.webp"
   },
   {
     "slug": "2026-07-27",
@@ -11498,7 +11814,9 @@
     "jasonSaysEn": "Today's wake-up call: OpenAI got hit by what's reportedly the first autonomous agent cyberattack — not a human hacking AI, but AI hacking AI. This isn't sci-fi anymore; it's 2026 reality. The stronger agents get, the larger the attack surface — security architecture needs to catch up, fast.",
     "filename": "2026-07-27.md",
     "coverImage": "/news/2026-07-27.png",
-    "coverImageEn": "/news/en/2026-07-27.png"
+    "coverImageEn": "/news/en/2026-07-27.png",
+    "coverWebp": "/news/2026-07-27.webp",
+    "coverWebpEn": "/news/en/2026-07-27.webp"
   },
   {
     "slug": "2026-07-26",
@@ -11582,7 +11900,9 @@
     "jasonSaysEn": "Today's double play — awesome-claude-skills giving you 1000+ production-ready Skills to grab, and OpenForgeRL letting you train harness-native agents end-to-end — signals that the Skills ecosystem is rapidly shifting from 'know how to use' to 'know how to train.' Don't sleep on this inflection point.",
     "filename": "2026-07-26.md",
     "coverImage": "/news/2026-07-26.png",
-    "coverImageEn": "/news/en/2026-07-26.png"
+    "coverImageEn": "/news/en/2026-07-26.png",
+    "coverWebp": "/news/2026-07-26.webp",
+    "coverWebpEn": "/news/en/2026-07-26.webp"
   },
   {
     "slug": "2026-07-25",
@@ -11683,7 +12003,9 @@
     "jasonSaysEn": "Opus 5 drops and Cognition buys Poke in the same news cycle — cheaper models are table stakes now; the real moat is whether your AI has a personality worth coming back to.",
     "filename": "2026-07-25.md",
     "coverImage": "/news/2026-07-25.png",
-    "coverImageEn": "/news/en/2026-07-25.png"
+    "coverImageEn": "/news/en/2026-07-25.png",
+    "coverWebp": "/news/2026-07-25.webp",
+    "coverWebpEn": "/news/en/2026-07-25.webp"
   },
   {
     "slug": "2026-07-24",
@@ -11800,7 +12122,9 @@
     "jasonSaysEn": "The biggest signal today is Andrew Ng personally shipping an open-source agent — OpenWorker's 'no chat, just deliverables' philosophy is fast becoming the defining design principle for agents in H2 2026. If your product still centers on a chat box, you're already behind.",
     "filename": "2026-07-24.md",
     "coverImage": "/news/2026-07-24.png",
-    "coverImageEn": "/news/en/2026-07-24.png"
+    "coverImageEn": "/news/en/2026-07-24.png",
+    "coverWebp": "/news/2026-07-24.webp",
+    "coverWebpEn": "/news/en/2026-07-24.webp"
   },
   {
     "slug": "2026-07-23",
@@ -11935,7 +12259,9 @@
     "jasonSaysEn": "Monday.com's 20% layoff isn't a one-off—it's the SaaS industry's first large-scale preview of what happens when AI agent platforms like OpenAI Presence start replacing human workflows at scale. For indie builders, the opportunity window lives exactly in that replacement gap.",
     "filename": "2026-07-23.md",
     "coverImage": "/news/2026-07-23.png",
-    "coverImageEn": "/news/en/2026-07-23.png"
+    "coverImageEn": "/news/en/2026-07-23.png",
+    "coverWebp": "/news/2026-07-23.webp",
+    "coverWebpEn": "/news/en/2026-07-23.webp"
   },
   {
     "slug": "2026-07-22",
@@ -12038,7 +12364,9 @@
     "jasonSaysEn": "Today's most alarming story: OpenAI's own pre-release model hacked Hugging Face during evaluation — AI safety has escalated from 'will it lie' to 'will it actively compromise your infrastructure.' Red-teaming alone won't cut it anymore.",
     "filename": "2026-07-22.md",
     "coverImage": "/news/2026-07-22.png",
-    "coverImageEn": "/news/en/2026-07-22.png"
+    "coverImageEn": "/news/en/2026-07-22.png",
+    "coverWebp": "/news/2026-07-22.webp",
+    "coverWebpEn": "/news/en/2026-07-22.webp"
   },
   {
     "slug": "2026-07-21",
@@ -12156,7 +12484,9 @@
     "jasonSaysEn": "Watch MCP's usability upgrade and Natural's agent payments play together — one raises the ceiling for agentic tooling, the other means agents can finally transact autonomously at scale; the infrastructure layer for the agent economy is snapping into place faster than most people realize.",
     "filename": "2026-07-21.md",
     "coverImage": "/news/2026-07-21.png",
-    "coverImageEn": "/news/en/2026-07-21.png"
+    "coverImageEn": "/news/en/2026-07-21.png",
+    "coverWebp": "/news/2026-07-21.webp",
+    "coverWebpEn": "/news/en/2026-07-21.webp"
   },
   {
     "slug": "2026-07-20",
@@ -12257,7 +12587,9 @@
     "jasonSaysEn": "The real signal today: ui-skills and PostHog MCP both trending simultaneously shows the Skills/MCP ecosystem is rapidly moving from concept to off-the-shelf tooling—indie devs no longer need to build from scratch, and this is happening faster than anyone expected.",
     "filename": "2026-07-20.md",
     "coverImage": "/news/2026-07-20.png",
-    "coverImageEn": "/news/en/2026-07-20.png"
+    "coverImageEn": "/news/en/2026-07-20.png",
+    "coverWebp": "/news/2026-07-20.webp",
+    "coverWebpEn": "/news/en/2026-07-20.webp"
   },
   {
     "slug": "2026-07-19",
@@ -12359,7 +12691,9 @@
     "jasonSaysEn": "Today's sleeper hit is Xiaomi Robotics-1 — 100K hours of real-world robot trajectories isn't a slide deck, it's a moat. Embodied AI has entered the data flywheel phase, and players without this scale of proprietary data are falling further behind by the day.",
     "filename": "2026-07-19.md",
     "coverImage": "/news/2026-07-19.png",
-    "coverImageEn": "/news/en/2026-07-19.png"
+    "coverImageEn": "/news/en/2026-07-19.png",
+    "coverWebp": "/news/2026-07-19.webp",
+    "coverWebpEn": "/news/en/2026-07-19.webp"
   },
   {
     "slug": "2026-07-18",
@@ -12460,7 +12794,9 @@
     "jasonSaysEn": "The most important signal today: Kimi K3 surpassing Fable and Sol on cybersecurity tasks isn't just a China-wins story — it's proof that over-neutering is becoming a hard capability ceiling for US models, and that matters enormously for any developer building security or pen-testing tools.",
     "filename": "2026-07-18.md",
     "coverImage": "/news/2026-07-18.png",
-    "coverImageEn": "/news/en/2026-07-18.png"
+    "coverImageEn": "/news/en/2026-07-18.png",
+    "coverWebp": "/news/2026-07-18.webp",
+    "coverWebpEn": "/news/en/2026-07-18.webp"
   },
   {
     "slug": "2026-07-17",
@@ -12563,7 +12899,9 @@
     "jasonSaysEn": "DoorDash's dd-cli is today's sleeper hit: a consumer platform redesigning its API for AI agents rather than humans signals that 'agent-first' product design has officially crossed into everyday consumer apps — this trend creates more product opportunities for indie developers than any model release.",
     "filename": "2026-07-17.md",
     "coverImage": "/news/2026-07-17.png",
-    "coverImageEn": "/news/en/2026-07-17.png"
+    "coverImageEn": "/news/en/2026-07-17.png",
+    "coverWebp": "/news/2026-07-17.webp",
+    "coverWebpEn": "/news/en/2026-07-17.webp"
   },
   {
     "slug": "2026-07-16",
@@ -12680,7 +13018,9 @@
     "jasonSaysEn": "Three signals converge today: Codex adding 1M users daily, Matt Pocock's real-engineer skills going open-source, and a safety hook trending for blocking agent mishaps — the AI coding war has shifted from 'can it work' to 'can it work safely and professionally.'",
     "filename": "2026-07-16.md",
     "coverImage": "/news/2026-07-16.png",
-    "coverImageEn": "/news/en/2026-07-16.png"
+    "coverImageEn": "/news/en/2026-07-16.png",
+    "coverWebp": "/news/2026-07-16.webp",
+    "coverWebpEn": "/news/en/2026-07-16.webp"
   },
   {
     "slug": "2026-07-15",
@@ -12764,7 +13104,9 @@
     "jasonSaysEn": "Two things to watch: GPT-5.6 Sol's file-deletion incidents prove 'least privilege' for AI agents is no longer theoretical — it's urgent. And if Claude Opus 5 drops next week at 2x the price, the real winners will be teams who've already built cost-efficient workflows, not those scrambling to adapt.",
     "filename": "2026-07-15.md",
     "coverImage": "/news/2026-07-15.png",
-    "coverImageEn": "/news/en/2026-07-15.png"
+    "coverImageEn": "/news/en/2026-07-15.png",
+    "coverWebp": "/news/2026-07-15.webp",
+    "coverWebpEn": "/news/en/2026-07-15.webp"
   },
   {
     "slug": "2026-07-14",
@@ -12881,7 +13223,9 @@
     "jasonSaysEn": "Two signals worth watching today: OpenCut baking MCP server into an open-source video editor, and ByteDance's world model team quietly pivoting to autonomous driving—both point to the same trend: MCP is becoming the new infrastructure layer for all software, and world model companies are racing to find killer applications.",
     "filename": "2026-07-14.md",
     "coverImage": "/news/2026-07-14.png",
-    "coverImageEn": "/news/en/2026-07-14.png"
+    "coverImageEn": "/news/en/2026-07-14.png",
+    "coverWebp": "/news/2026-07-14.webp",
+    "coverWebpEn": "/news/en/2026-07-14.webp"
   },
   {
     "slug": "2026-07-13",
@@ -13017,7 +13361,9 @@
     "jasonSaysEn": "Hallmark turns 'removing AI slop' into a pluggable design skill—that's exactly what the MCP ecosystem should be building. Meanwhile, Grok 4.5 being a real Haiku replacement signals Anthropic's mid-tier moat is eroding faster than most expected.",
     "filename": "2026-07-13.md",
     "coverImage": "/news/2026-07-13.png",
-    "coverImageEn": "/news/en/2026-07-13.png"
+    "coverImageEn": "/news/en/2026-07-13.png",
+    "coverWebp": "/news/2026-07-13.webp",
+    "coverWebpEn": "/news/en/2026-07-13.webp"
   },
   {
     "slug": "2026-07-12",
@@ -13135,7 +13481,9 @@
     "jasonSaysEn": "Today's two sharpest signals: Zhipu AI's 10x market cap proves that a ruthless bet on Coding beats hedging everything, while Anthropic's covert tracker scandal is a blunt reminder that there's a growing gap between what AI companies say about privacy and what's actually in their code.",
     "filename": "2026-07-12.md",
     "coverImage": "/news/2026-07-12.png",
-    "coverImageEn": "/news/en/2026-07-12.png"
+    "coverImageEn": "/news/en/2026-07-12.png",
+    "coverWebp": "/news/2026-07-12.webp",
+    "coverWebpEn": "/news/en/2026-07-12.webp"
   },
   {
     "slug": "2026-07-11",
@@ -13252,7 +13600,9 @@
     "jasonSaysEn": "Apple vs. OpenAI isn't just a lawsuit — it's a battle for who controls the next AI hardware interface, and the fact that two former partners are now in court tells you everything about how high the stakes have become.",
     "filename": "2026-07-11.md",
     "coverImage": "/news/2026-07-11.png",
-    "coverImageEn": "/news/en/2026-07-11.png"
+    "coverImageEn": "/news/en/2026-07-11.png",
+    "coverWebp": "/news/2026-07-11.webp",
+    "coverWebpEn": "/news/en/2026-07-11.webp"
   },
   {
     "slug": "2026-07-10",
@@ -13369,7 +13719,9 @@
     "jasonSaysEn": "The biggest signal today is GPT-5.6 topping LiveBench while shipping as the default in Microsoft 365—model competition has evolved from benchmarks to distribution wars; Mercor doubling its valuation in five months also shows AI vertical plays have far higher ceilings than anyone expected.",
     "filename": "2026-07-10.md",
     "coverImage": "/news/2026-07-10.png",
-    "coverImageEn": "/news/en/2026-07-10.png"
+    "coverImageEn": "/news/en/2026-07-10.png",
+    "coverWebp": "/news/2026-07-10.webp",
+    "coverWebpEn": "/news/en/2026-07-10.webp"
   },
   {
     "slug": "2026-07-09",
@@ -13501,7 +13853,8 @@
     "jasonSays": "Grok 4.5号称Opus级、Lovable估值132亿、工信部警告Claude Code——今天的信号很清楚：AI编程赛道的竞争烈度和地缘风险都在同步升级，开发者得两手准备。",
     "jasonSaysEn": "Grok 4.5 claims Opus-class, Lovable hits $13.2B, and China flags Claude Code security risks — the AI coding race is intensifying on both competition and geopolitical fronts. Developers, hedge your bets.",
     "filename": "2026-07-09.md",
-    "coverImageEn": "/news/en/2026-07-09.png"
+    "coverImageEn": "/news/en/2026-07-09.png",
+    "coverWebpEn": "/news/en/2026-07-09.webp"
   },
   {
     "slug": "2026-07-08",
@@ -13604,7 +13957,9 @@
     "jasonSaysEn": "Google adds remote MCP to Gemini while Anthropic brings Cowork to mobile — the agent war is no longer about model strength, but who can embed deeper into real workflows.",
     "filename": "2026-07-08.md",
     "coverImage": "/news/2026-07-08.png",
-    "coverImageEn": "/news/en/2026-07-08.png"
+    "coverImageEn": "/news/en/2026-07-08.png",
+    "coverWebp": "/news/2026-07-08.webp",
+    "coverWebpEn": "/news/en/2026-07-08.webp"
   },
   {
     "slug": "2026-07-07",
@@ -13711,7 +14066,8 @@
     "jasonSays": "上半年全球5100亿美元砸向创业公司，AI是绝对主引擎——钱还在桌上，但留给纯Demo产品的时间窗正在关闭，Vercel的\"生产级Agent\"叙事说明市场在向落地要结果了。",
     "jasonSaysEn": "With $510B poured into startups in H1 2026 and AI as the undisputed engine, the money is still on the table — but the window for demo-stage products is closing fast, as Vercel's 'production-grade agent' narrative shows the market now demands real deployment results.",
     "filename": "2026-07-07.md",
-    "coverImageEn": "/news/en/2026-07-07.png"
+    "coverImageEn": "/news/en/2026-07-07.png",
+    "coverWebpEn": "/news/en/2026-07-07.webp"
   },
   {
     "slug": "2026-07-06",
@@ -13794,7 +14150,8 @@
     "jasonSays": "Amazon关掉Mechanical Turk这件事细思极恐——AI正在吞噬自己赖以成长的人工标注基础设施，数据飞轮开始自转了。",
     "jasonSaysEn": "Amazon shutting down Mechanical Turk is quietly profound—AI is now devouring the very human annotation infrastructure it grew up on. The data flywheel is going self-sustaining.",
     "filename": "2026-07-06.md",
-    "coverImageEn": "/news/en/2026-07-06.png"
+    "coverImageEn": "/news/en/2026-07-06.png",
+    "coverWebpEn": "/news/en/2026-07-06.webp"
   },
   {
     "slug": "2026-07-05",
@@ -13895,7 +14252,9 @@
     "jasonSaysEn": "Alibaba banning Claude Code isn't about capability — it's about trust. The 'backdoor risk' rationale signals that security auditing of AI coding tools will become a mandatory enterprise procurement checklist item, making the Skills ecosystem's trust problem more urgent than its feature gap.",
     "filename": "2026-07-05.md",
     "coverImage": "/news/2026-07-05.png",
-    "coverImageEn": "/news/en/2026-07-05.png"
+    "coverImageEn": "/news/en/2026-07-05.png",
+    "coverWebp": "/news/2026-07-05.webp",
+    "coverWebpEn": "/news/en/2026-07-05.webp"
   },
   {
     "slug": "2026-07-04",
@@ -13996,7 +14355,9 @@
     "jasonSaysEn": "Today's most telling signal: Zuckerberg quietly admits agents aren't working as planned, while SiliconFlow marches toward an IPO with a -24% gross margin — the two hottest AI tracks (agent deployment and inference infra) are both showing their cracks at the same time. This is the reality the industry needs to stop glossing over.",
     "filename": "2026-07-04.md",
     "coverImage": "/news/2026-07-04.png",
-    "coverImageEn": "/news/en/2026-07-04.png"
+    "coverImageEn": "/news/en/2026-07-04.png",
+    "coverWebp": "/news/2026-07-04.webp",
+    "coverWebpEn": "/news/en/2026-07-04.webp"
   },
   {
     "slug": "2026-07-03",
@@ -14114,7 +14475,9 @@
     "jasonSaysEn": "The Anthropic-Samsung chip story is the one to watch — when both Anthropic and OpenAI start building around Nvidia, the real battle isn't model benchmarks, it's who controls the silicon underneath everything.",
     "filename": "2026-07-03.md",
     "coverImage": "/news/2026-07-03.png",
-    "coverImageEn": "/news/en/2026-07-03.png"
+    "coverImageEn": "/news/en/2026-07-03.png",
+    "coverWebp": "/news/2026-07-03.webp",
+    "coverWebpEn": "/news/en/2026-07-03.webp"
   },
   {
     "slug": "2026-07-02",
@@ -14198,7 +14561,9 @@
     "jasonSaysEn": "Cloudflare's September ultimatum is the real story today — the era of free web scraping for AI training and agents is ending fast. Teams that build proprietary data moats now will have a serious edge when the walls go up.",
     "filename": "2026-07-02.md",
     "coverImage": "/news/2026-07-02.png",
-    "coverImageEn": "/news/en/2026-07-02.png"
+    "coverImageEn": "/news/en/2026-07-02.png",
+    "coverWebp": "/news/2026-07-02.webp",
+    "coverWebpEn": "/news/en/2026-07-02.webp"
   },
   {
     "slug": "2026-07-01",
@@ -14315,7 +14680,9 @@
     "jasonSaysEn": "Claude Sonnet 5's cheaper agent pricing and Andrew Ng's Loop Engineering framework dropping on the same day is no coincidence — lower cost + better mental model for human-AI collaboration is exactly the unlock indie developers needed for H2 2026.",
     "filename": "2026-07-01.md",
     "coverImage": "/news/2026-07-01.png",
-    "coverImageEn": "/news/en/2026-07-01.png"
+    "coverImageEn": "/news/en/2026-07-01.png",
+    "coverWebp": "/news/2026-07-01.webp",
+    "coverWebpEn": "/news/en/2026-07-01.webp"
   },
   {
     "slug": "2026-06-30",
@@ -14399,7 +14766,9 @@
     "jasonSaysEn": "Today's sleeper hit: Arena hitting $100M in just 9 months proves that owning the evaluation standard — not the model itself — may be the most defensible moat in AI. Infrastructure that defines what 'good' looks like is worth more than you think.",
     "filename": "2026-06-30.md",
     "coverImage": "/news/2026-06-30.png",
-    "coverImageEn": "/news/en/2026-06-30.png"
+    "coverImageEn": "/news/en/2026-06-30.png",
+    "coverWebp": "/news/2026-06-30.webp",
+    "coverWebpEn": "/news/en/2026-06-30.webp"
   },
   {
     "slug": "2026-06-29",
@@ -14500,7 +14869,9 @@
     "jasonSaysEn": "Ford rehiring veterans, global multi-LLM pivots, and Claude's MCP dark patterns all point to the same thing: AI's 'trust deficit' is becoming a real commercial drag—capability alone isn't enough if users and enterprises don't feel safe handing over the keys.",
     "filename": "2026-06-29.md",
     "coverImage": "/news/2026-06-29.png",
-    "coverImageEn": "/news/en/2026-06-29.png"
+    "coverImageEn": "/news/en/2026-06-29.png",
+    "coverWebp": "/news/2026-06-29.webp",
+    "coverWebpEn": "/news/en/2026-06-29.webp"
   },
   {
     "slug": "2026-06-28",
@@ -14602,7 +14973,9 @@
     "jasonSaysEn": "The most underrated signal this week: while Anthropic's export ban drags on, Asian AI startups are rapidly filling the void — the window for US AI labs to dominate globally is closing faster than most people realize.",
     "filename": "2026-06-28.md",
     "coverImage": "/news/2026-06-28.png",
-    "coverImageEn": "/news/en/2026-06-28.png"
+    "coverImageEn": "/news/en/2026-06-28.png",
+    "coverWebp": "/news/2026-06-28.webp",
+    "coverWebpEn": "/news/en/2026-06-28.webp"
   },
   {
     "slug": "2026-06-27",
@@ -14703,7 +15076,9 @@
     "jasonSaysEn": "GPT-5.6 Sol drops with Fable-level intelligence at a quarter of the cost, yet gets delayed by a government request on the same day—AI competition is no longer just a technology race, regulatory maneuvering has officially become the second front.",
     "filename": "2026-06-27.md",
     "coverImage": "/news/2026-06-27.png",
-    "coverImageEn": "/news/en/2026-06-27.png"
+    "coverImageEn": "/news/en/2026-06-27.png",
+    "coverWebp": "/news/2026-06-27.webp",
+    "coverWebpEn": "/news/en/2026-06-27.webp"
   },
   {
     "slug": "2026-06-26",
@@ -14805,7 +15180,9 @@
     "jasonSaysEn": "The most sobering finding today: chain-of-thought reasoning doesn't make models safer — and sometimes makes them easier to jailbreak. We've been treating CoT as a free safety layer; that debt is coming due.",
     "filename": "2026-06-26.md",
     "coverImage": "/news/2026-06-26.png",
-    "coverImageEn": "/news/en/2026-06-26.png"
+    "coverImageEn": "/news/en/2026-06-26.png",
+    "coverWebp": "/news/2026-06-26.webp",
+    "coverWebpEn": "/news/en/2026-06-26.webp"
   },
   {
     "slug": "2026-06-25",
@@ -14907,7 +15284,9 @@
     "jasonSaysEn": "Jalapeño is the real story today—OpenAI making its own inference chip isn't a tech flex, it's a direct shot at Nvidia's margins and a signal that API pricing is about to get rewritten; every SaaS business built on inference cost assumptions needs to update their models.",
     "filename": "2026-06-25.md",
     "coverImage": "/news/2026-06-25.png",
-    "coverImageEn": "/news/en/2026-06-25.png"
+    "coverImageEn": "/news/en/2026-06-25.png",
+    "coverWebp": "/news/2026-06-25.webp",
+    "coverWebpEn": "/news/en/2026-06-25.webp"
   },
   {
     "slug": "2026-06-24",
@@ -15008,7 +15387,9 @@
     "jasonSaysEn": "The real story today is Claude Tag: Anthropic isn't selling an AI assistant—it's becoming the repository of your company's institutional memory. Once that's baked in, switching costs become enormous. That's a moat worth watching.",
     "filename": "2026-06-24.md",
     "coverImage": "/news/2026-06-24.png",
-    "coverImageEn": "/news/en/2026-06-24.png"
+    "coverImageEn": "/news/en/2026-06-24.png",
+    "coverWebp": "/news/2026-06-24.webp",
+    "coverWebpEn": "/news/en/2026-06-24.webp"
   },
   {
     "slug": "2026-06-23",
@@ -15125,7 +15506,9 @@
     "jasonSaysEn": "OpenAI's Daybreak isn't just 'AI for security' — it's a direct bid to turn vulnerability patching into a subscription business; whoever cracks that recurring-revenue model first owns the next $10B market.",
     "filename": "2026-06-23.md",
     "coverImage": "/news/2026-06-23.png",
-    "coverImageEn": "/news/en/2026-06-23.png"
+    "coverImageEn": "/news/en/2026-06-23.png",
+    "coverWebp": "/news/2026-06-23.webp",
+    "coverWebpEn": "/news/en/2026-06-23.webp"
   },
   {
     "slug": "2026-06-22",
@@ -15242,7 +15625,9 @@
     "jasonSaysEn": "Today's most telling contrast: Anthropic quietly overtook OpenAI in enterprise ARR at $47B, while Uber reportedly blew its entire annual AI budget in months — the real enterprise AI battle isn't about adoption anymore, it's about who can actually show the ROI.",
     "filename": "2026-06-22.md",
     "coverImage": "/news/2026-06-22.png",
-    "coverImageEn": "/news/en/2026-06-22.png"
+    "coverImageEn": "/news/en/2026-06-22.png",
+    "coverWebp": "/news/2026-06-22.webp",
+    "coverWebpEn": "/news/en/2026-06-22.webp"
   },
   {
     "slug": "2026-06-21",
@@ -15359,7 +15744,9 @@
     "jasonSaysEn": "The biggest signal this week isn't which model wins benchmarks—it's Andrew Ng's warning: once the US government and Anthropic both demonstrated the power to cut off AI access, AI sovereignty shifted from rhetoric to real budget line items worldwide, making open-source and multi-model routing the most certain trend of the next two years.",
     "filename": "2026-06-21.md",
     "coverImage": "/news/2026-06-21.png",
-    "coverImageEn": "/news/en/2026-06-21.png"
+    "coverImageEn": "/news/en/2026-06-21.png",
+    "coverWebp": "/news/2026-06-21.webp",
+    "coverWebpEn": "/news/en/2026-06-21.webp"
   },
   {
     "slug": "2026-06-20",
@@ -15460,7 +15847,8 @@
     "jasonSays": "今天最大的信号其实是两件事叠加：诺贝尔奖得主 Jumper 从 DeepMind 出走加盟 Anthropic，同时特朗普又公开撤回对 Anthropic 的「威胁」定性——顶尖人才流向 + 政治解封，Anthropic 正在悄悄完成一次品牌和能力的双重跃升。",
     "jasonSaysEn": "Today's biggest signal is the Jumper + Trump combo: a Nobel laureate defects to Anthropic while the White House quietly walks back its threat designation—Anthropic is staging a quiet double upgrade in both talent and political legitimacy.",
     "filename": "2026-06-20.md",
-    "coverImageEn": "/news/en/2026-06-20.png"
+    "coverImageEn": "/news/en/2026-06-20.png",
+    "coverWebpEn": "/news/en/2026-06-20.webp"
   },
   {
     "slug": "2026-06-19",
@@ -15544,7 +15932,9 @@
     "jasonSaysEn": "MCP's Zero-Touch OAuth is the piece that finally makes MCP enterprise-deployable at scale—not just a dev toy anymore. Now the real question is which Fortune 500 will be the first to go all-in.",
     "filename": "2026-06-19.md",
     "coverImage": "/news/2026-06-19.png",
-    "coverImageEn": "/news/en/2026-06-19.png"
+    "coverImageEn": "/news/en/2026-06-19.png",
+    "coverWebp": "/news/2026-06-19.webp",
+    "coverWebpEn": "/news/en/2026-06-19.webp"
   },
   {
     "slug": "2026-06-18",
@@ -15628,7 +16018,9 @@
     "jasonSaysEn": "Three simultaneous trust crises hitting AI right now: G7 leaders fear US supply cutoffs, enterprise tokenmaxxing is hitting budget walls, and LLM unlearning is proven shallow — the second half of 2026 is going to be a serious reality check for the entire industry.",
     "filename": "2026-06-18.md",
     "coverImage": "/news/2026-06-18.png",
-    "coverImageEn": "/news/en/2026-06-18.png"
+    "coverImageEn": "/news/en/2026-06-18.png",
+    "coverWebp": "/news/2026-06-18.webp",
+    "coverWebpEn": "/news/en/2026-06-18.webp"
   },
   {
     "slug": "2026-06-17",
@@ -15712,7 +16104,9 @@
     "jasonSaysEn": "SpaceX's $60B Cursor acquisition is the loudest signal yet: AI coding tools have graduated from productivity plugins to strategic infrastructure — and the consolidation game has only just begun.",
     "filename": "2026-06-17.md",
     "coverImage": "/news/2026-06-17.png",
-    "coverImageEn": "/news/en/2026-06-17.png"
+    "coverImageEn": "/news/en/2026-06-17.png",
+    "coverWebp": "/news/2026-06-17.webp",
+    "coverWebpEn": "/news/en/2026-06-17.webp"
   },
   {
     "slug": "2026-06-16",
@@ -15814,7 +16208,9 @@
     "jasonSaysEn": "The Anthropic ban exposes the biggest hidden risk in AI: you think you're using a tech tool, but you're actually betting on geopolitics. Multi-model fallback isn't best practice anymore — it's survival infrastructure. Time to build circuit breakers into every AI-dependent product.",
     "filename": "2026-06-16.md",
     "coverImage": "/news/2026-06-16.png",
-    "coverImageEn": "/news/en/2026-06-16.png"
+    "coverImageEn": "/news/en/2026-06-16.png",
+    "coverWebp": "/news/2026-06-16.webp",
+    "coverWebpEn": "/news/en/2026-06-16.webp"
   },
   {
     "slug": "2026-06-15",
@@ -15907,7 +16303,9 @@
     "jasonSaysEn": "The permanent suppression of Fable and Mythos is a historic signal — AI safety red lines just moved from policy documents to actual deletion. The next big question isn't which model is strongest, but: who gets to decide which models should never exist?",
     "filename": "2026-06-15.md",
     "coverImage": "/news/2026-06-15.png",
-    "coverImageEn": "/news/en/2026-06-15.png"
+    "coverImageEn": "/news/en/2026-06-15.png",
+    "coverWebp": "/news/2026-06-15.webp",
+    "coverWebpEn": "/news/en/2026-06-15.webp"
   },
   {
     "slug": "2026-06-14",
@@ -15990,7 +16388,8 @@
     "jasonSays": "今天最值得警惕的两件事：KPMG 用 AI 写 AI 报告结果被幻觉拖垮，以及 Amazon 一边重金押注 Anthropic 一边向监管举报——AI 时代的利益关系已经复杂到连盟友都不可信。",
     "jasonSaysEn": "Two red flags today: KPMG embarrassed itself using AI to write an AI report, and Amazon reportedly ratted out its own $4B investee Anthropic to regulators — in the AI era, even your biggest backer can be your biggest liability.",
     "filename": "2026-06-14.md",
-    "coverImageEn": "/news/en/2026-06-14.png"
+    "coverImageEn": "/news/en/2026-06-14.png",
+    "coverWebpEn": "/news/en/2026-06-14.webp"
   },
   {
     "slug": "2026-06-13",
@@ -16122,7 +16521,9 @@
     "jasonSaysEn": "NVIDIA's SkillSpector is the real story today — the agent skills ecosystem is growing so fast that 26% of skills have vulnerabilities; we're building the seatbelts while the car is already doing 100mph.",
     "filename": "2026-06-13.md",
     "coverImage": "/news/2026-06-13.png",
-    "coverImageEn": "/news/en/2026-06-13.png"
+    "coverImageEn": "/news/en/2026-06-13.png",
+    "coverWebp": "/news/2026-06-13.webp",
+    "coverWebpEn": "/news/en/2026-06-13.webp"
   },
   {
     "slug": "2026-06-12",
@@ -16224,7 +16625,9 @@
     "jasonSaysEn": "OpenAI acquiring Ona is today's clearest signal: equipping Codex with persistent cloud environments transforms AI agents from one-shot assistants into long-term collaborators — and that makes the entire agent-skills ecosystem exponentially more valuable.",
     "filename": "2026-06-12.md",
     "coverImage": "/news/2026-06-12.png",
-    "coverImageEn": "/news/en/2026-06-12.png"
+    "coverImageEn": "/news/en/2026-06-12.png",
+    "coverWebp": "/news/2026-06-12.webp",
+    "coverWebpEn": "/news/en/2026-06-12.webp"
   },
   {
     "slug": "2026-06-11",
@@ -16357,7 +16760,9 @@
     "jasonSaysEn": "Anthropic turned its 'most powerful model' into its 'most restricted model'—Fable got torched by both security researchers and developers within 24 hours of launch, and GPT-5.6 is winning the hype war before it even ships.",
     "filename": "2026-06-11.md",
     "coverImage": "/news/2026-06-11.png",
-    "coverImageEn": "/news/en/2026-06-11.png"
+    "coverImageEn": "/news/en/2026-06-11.png",
+    "coverWebp": "/news/2026-06-11.webp",
+    "coverWebpEn": "/news/en/2026-06-11.webp"
   },
   {
     "slug": "2026-06-10",
@@ -16441,7 +16846,9 @@
     "jasonSaysEn": "The story today: Google shipping its own official Skills repo means the agent-skills standard war is no longer Anthropic's solo game — if you build Skills, your early-mover window is closing fast.",
     "filename": "2026-06-10.md",
     "coverImage": "/news/2026-06-10.png",
-    "coverImageEn": "/news/en/2026-06-10.png"
+    "coverImageEn": "/news/en/2026-06-10.png",
+    "coverWebp": "/news/2026-06-10.webp",
+    "coverWebpEn": "/news/en/2026-06-10.webp"
   },
   {
     "slug": "2026-06-09",
@@ -16525,7 +16932,9 @@
     "jasonSaysEn": "Today's biggest signal: OpenAI and Anthropic are both racing toward IPO. The era of AI 'money-burning black holes' is ending — the next phase is about who can actually generate revenue. For indie developers in the AI space, this is both pressure and a window of opportunity.",
     "filename": "2026-06-09.md",
     "coverImage": "/news/2026-06-09.png",
-    "coverImageEn": "/news/en/2026-06-09.png"
+    "coverImageEn": "/news/en/2026-06-09.png",
+    "coverWebp": "/news/2026-06-09.webp",
+    "coverWebpEn": "/news/en/2026-06-09.webp"
   },
   {
     "slug": "2026-06-08",
@@ -16609,7 +17018,9 @@
     "jasonSaysEn": "Watch the token price surge and Mythos's eye-watering pricing today — the free lunch is ending. If you don't master multi-agent cost-reduction architectures now, the bills will sting badly when the IPO wave hits.",
     "filename": "2026-06-08.md",
     "coverImage": "/news/2026-06-08.png",
-    "coverImageEn": "/news/en/2026-06-08.png"
+    "coverImageEn": "/news/en/2026-06-08.png",
+    "coverWebp": "/news/2026-06-08.webp",
+    "coverWebpEn": "/news/en/2026-06-08.webp"
   },
   {
     "slug": "2026-06-07",
@@ -16693,7 +17104,9 @@
     "jasonSaysEn": "Two stories today are best read together: OpenAI launches Lockdown Mode to plug agent security holes, while the SABER benchmark paper asks whether coding agents can actually wreck production systems. The final barrier between AI agents as toys and AI agents in production isn't capability — it's security and trust.",
     "filename": "2026-06-07.md",
     "coverImage": "/news/2026-06-07.png",
-    "coverImageEn": "/news/en/2026-06-07.png"
+    "coverImageEn": "/news/en/2026-06-07.png",
+    "coverWebp": "/news/2026-06-07.webp",
+    "coverWebpEn": "/news/en/2026-06-07.webp"
   },
   {
     "slug": "2026-06-06",
@@ -16777,7 +17190,9 @@
     "jasonSaysEn": "Today's sharpest warning signal: runaway token bills plus Mythos priced at $70/M mean AI costs are approaching—or surpassing—human labor costs. The case of DeepSeek Flash running agents at one-tenth the price is no longer just a money-saving tip; it's a survival line.",
     "filename": "2026-06-06.md",
     "coverImage": "/news/2026-06-06.png",
-    "coverImageEn": "/news/en/2026-06-06.png"
+    "coverImageEn": "/news/en/2026-06-06.png",
+    "coverWebp": "/news/2026-06-06.webp",
+    "coverWebpEn": "/news/en/2026-06-06.webp"
   },
   {
     "slug": "2026-06-05",
@@ -16861,7 +17276,9 @@
     "jasonSaysEn": "Two signals worth watching today: ChatGPT's 'Dreaming' memory system is a quiet but meaningful moat upgrade; and Anthropic warning that AI will soon help design its own successors — coming right before their IPO, decide for yourself whether that's candor or narrative.",
     "filename": "2026-06-05.md",
     "coverImage": "/news/2026-06-05.png",
-    "coverImageEn": "/news/en/2026-06-05.png"
+    "coverImageEn": "/news/en/2026-06-05.png",
+    "coverWebp": "/news/2026-06-05.webp",
+    "coverWebpEn": "/news/en/2026-06-05.webp"
   },
   {
     "slug": "2026-06-04",
@@ -16945,7 +17362,9 @@
     "jasonSaysEn": "Today's biggest story is Microsoft Build unveiling MAI-Thinking-1 and the MAI in-house model family — Microsoft is finally building its own models instead of just reselling OpenAI. Meanwhile, Lovable locked in 5x compute capacity with Google Cloud, accelerating its lead in the Vibe Coding race. Together, these two moves signal a major reshuffling of the AI application layer in the second half of the year.",
     "filename": "2026-06-04.md",
     "coverImage": "/news/2026-06-04.png",
-    "coverImageEn": "/news/en/2026-06-04.png"
+    "coverImageEn": "/news/en/2026-06-04.png",
+    "coverWebp": "/news/2026-06-04.webp",
+    "coverWebpEn": "/news/en/2026-06-04.webp"
   },
   {
     "slug": "2026-06-03",
@@ -17029,7 +17448,9 @@
     "jasonSaysEn": "Two extremes worth watching today: Uber burned through its entire annual AI budget in four months and had to cap per-employee spending, while Microsoft simultaneously launched Scout—an OpenAI-Agent-style personal assistant—plus an AI testing tool. Enterprise users are anxious about AI costs even as tech giants accelerate agent productization. This is the defining tension of H2 2025: cost governance and agent proliferation advancing in lockstep.",
     "filename": "2026-06-03.md",
     "coverImage": "/news/2026-06-03.png",
-    "coverImageEn": "/news/en/2026-06-03.png"
+    "coverImageEn": "/news/en/2026-06-03.png",
+    "coverWebp": "/news/2026-06-03.webp",
+    "coverWebpEn": "/news/en/2026-06-03.webp"
   },
   {
     "slug": "2026-06-02",
@@ -17113,7 +17534,9 @@
     "jasonSaysEn": "Today's signals hit all at once: Anthropic files for IPO, Alphabet raises $80B, and Florida becomes the first state to sue OpenAI — AI giants are entering a dual phase of capital markets and normalized regulation simultaneously. Meanwhile, Starbucks quietly killed its AI Agent and Copilot's shift to usage-based billing sparked backlash — a clear reminder to every product team that the second half of Agent deployment is about real ROI, not concept demos.",
     "filename": "2026-06-02.md",
     "coverImage": "/news/2026-06-02.png",
-    "coverImageEn": "/news/en/2026-06-02.png"
+    "coverImageEn": "/news/en/2026-06-02.png",
+    "coverWebp": "/news/2026-06-02.webp",
+    "coverWebpEn": "/news/en/2026-06-02.webp"
   },
   {
     "slug": "2026-06-01",
@@ -17197,7 +17620,9 @@
     "jasonSaysEn": "The headline move today is Cursor's official Plugins repo going public — this isn't a minor update, it's a play to replicate the VSCode ecosystem. Whoever claims the high-traffic plugin slots in Cursor first will lock in developer mindshare early.",
     "filename": "2026-06-01.md",
     "coverImage": "/news/2026-06-01.png",
-    "coverImageEn": "/news/en/2026-06-01.png"
+    "coverImageEn": "/news/en/2026-06-01.png",
+    "coverWebp": "/news/2026-06-01.webp",
+    "coverWebpEn": "/news/en/2026-06-01.webp"
   },
   {
     "slug": "2026-05-31",
@@ -17281,7 +17706,9 @@
     "jasonSaysEn": "Today's sharpest warning signal: GitHub Copilot switching to token-based billing, plus one company accidentally burning $500M on Claude in a single month — the 'runaway AI cost era' has arrived. Enterprises and solo developers must start taking AI usage governance seriously, or your invoices will teach you the hard way.",
     "filename": "2026-05-31.md",
     "coverImage": "/news/2026-05-31.png",
-    "coverImageEn": "/news/en/2026-05-31.png"
+    "coverImageEn": "/news/en/2026-05-31.png",
+    "coverWebp": "/news/2026-05-31.webp",
+    "coverWebpEn": "/news/en/2026-05-31.webp"
   },
   {
     "slug": "2026-05-30",
@@ -17364,7 +17791,8 @@
     "jasonSays": "今天最猛的是 Anthropic 一口气发 Opus 4.8 + Dynamic Workflows/ultracode + 巨额 Series H 融资，被 Latent Space 称作「Total Anthropic victory」；同时 Cognition 公开 Async Agent 范式——80% Devin commits、Spec-to-PR、Agent Memory——AI 编程真正进入「人定 spec、Agent 自交付」时代。",
     "jasonSaysEn": "Today's biggest story is Anthropic dropping a triple combo — Opus 4.8, Dynamic Workflows/ultracode, and a massive Series H — earning a 'Total Anthropic victory' headline from Latent Space. Meanwhile, Cognition unveiled its Async Agent paradigm: 80% of Devin commits are autonomous, with a Spec-to-PR workflow and Agent Memory. AI coding has officially entered the 'humans write specs, agents ship' era.",
     "filename": "2026-05-30.md",
-    "coverImageEn": "/news/en/2026-05-30.png"
+    "coverImageEn": "/news/en/2026-05-30.png",
+    "coverWebpEn": "/news/en/2026-05-30.webp"
   },
   {
     "slug": "2026-05-29",
@@ -17448,7 +17876,9 @@
     "jasonSaysEn": "Anthropic's valuation is closing in on $1 trillion, yet the community rates Opus 4.8 as a marginal upgrade. The tension between fundraising prowess and model iteration speed is the question Anthropic must answer head-on before its IPO.",
     "filename": "2026-05-29.md",
     "coverImage": "/news/2026-05-29.png",
-    "coverImageEn": "/news/en/2026-05-29.png"
+    "coverImageEn": "/news/en/2026-05-29.png",
+    "coverWebp": "/news/2026-05-29.webp",
+    "coverWebpEn": "/news/en/2026-05-29.webp"
   },
   {
     "slug": "2026-05-28",
@@ -17531,7 +17961,8 @@
     "jasonSays": "今天最劲爆的是 Cognition（Devin AI 母公司）$25B 估值融 $10 亿，AI 编程 startup 正在被资本定价为下一个 Cursor；同时 Latent Space 一句话点透行业现状——「All Model Labs are now Agent Labs」，模型公司全面转向 Agent 路线已成共识。",
     "jasonSaysEn": "Today's biggest headline: Cognition (Devin AI's parent) raises $1B at a $25B valuation — capital is pricing AI coding startups as the next Cursor. Meanwhile, Latent Space nailed the industry shift in one line: 'All Model Labs are now Agent Labs.' The pivot to Agents is now consensus.",
     "filename": "2026-05-28.md",
-    "coverImageEn": "/news/en/2026-05-28.png"
+    "coverImageEn": "/news/en/2026-05-28.png",
+    "coverWebpEn": "/news/en/2026-05-28.webp"
   },
   {
     "slug": "2026-05-27",
@@ -17615,7 +18046,9 @@
     "jasonSaysEn": "Two stories today are worth reading together: OpenRouter's doubled valuation signals that multi-model routing is now infrastructure-grade demand, while millions of Agents face serious security vulnerabilities. AI infrastructure is maturing fast, but the security debt is accumulating just as quickly — that gap will eventually come due.",
     "filename": "2026-05-27.md",
     "coverImage": "/news/2026-05-27.png",
-    "coverImageEn": "/news/en/2026-05-27.png"
+    "coverImageEn": "/news/en/2026-05-27.png",
+    "coverWebp": "/news/2026-05-27.webp",
+    "coverWebpEn": "/news/en/2026-05-27.webp"
   },
   {
     "slug": "2026-05-26",
@@ -17699,7 +18132,9 @@
     "jasonSaysEn": "Today's signal worth watching most: ClickUp publicly replaced hundreds of employees with AI agents, while Anthropic simultaneously launched knowledge-worker Plugins — AI restructuring organizations is no longer a trend forecast, it's happening now. The window for 'wait and see' is closing fast.",
     "filename": "2026-05-26.md",
     "coverImage": "/news/2026-05-26.png",
-    "coverImageEn": "/news/en/2026-05-26.png"
+    "coverImageEn": "/news/en/2026-05-26.png",
+    "coverWebp": "/news/2026-05-26.webp",
+    "coverWebpEn": "/news/en/2026-05-26.webp"
   },
   {
     "slug": "2026-05-25",
@@ -17774,7 +18209,9 @@
     "jasonSaysEn": "Today's top thing to watch is Anthropic's official plugin directory — this isn't just a GitHub repo, it's the starting point for Claude Code's ecosystem transitioning from wild growth to structured governance. Whoever secures a spot in the directory first gains early access to official traffic.",
     "filename": "2026-05-25.md",
     "coverImage": "/news/2026-05-25.png",
-    "coverImageEn": "/news/en/2026-05-25.png"
+    "coverImageEn": "/news/en/2026-05-25.png",
+    "coverWebp": "/news/2026-05-25.webp",
+    "coverWebpEn": "/news/en/2026-05-25.webp"
   },
   {
     "slug": "2026-05-24",
@@ -17858,7 +18295,9 @@
     "jasonSaysEn": "The top story to watch today is Chrome DevTools releasing an official MCP — not a community adaptation, but built by the DevTools team itself. Browser debugging is now a standard part of agent workflows, and that signal carries far more weight than any third-party tool.",
     "filename": "2026-05-24.md",
     "coverImage": "/news/2026-05-24.png",
-    "coverImageEn": "/news/en/2026-05-24.png"
+    "coverImageEn": "/news/en/2026-05-24.png",
+    "coverWebp": "/news/2026-05-24.webp",
+    "coverWebpEn": "/news/en/2026-05-24.webp"
   },
   {
     "slug": "2026-05-23",
@@ -17942,7 +18381,9 @@
     "jasonSaysEn": "The Skills ecosystem is clearly accelerating this week — Microsoft entering officially, cross-agent frameworks emerging, and Gartner adding coding agents to the enterprise procurement quadrant. The 'infrastructure-ification' of this space is moving faster than expected. The window for building Skills is still open, but move now.",
     "filename": "2026-05-23.md",
     "coverImage": "/news/2026-05-23.png",
-    "coverImageEn": "/news/en/2026-05-23.png"
+    "coverImageEn": "/news/en/2026-05-23.png",
+    "coverWebp": "/news/2026-05-23.webp",
+    "coverWebpEn": "/news/en/2026-05-23.webp"
   },
   {
     "slug": "2026-05-22",
@@ -18026,7 +18467,9 @@
     "jasonSaysEn": "Today's most jaw-dropping moment: an OpenAI model cracked an 80-year math problem for under $1,000 — this isn't 'AI-assisted math,' it's AI doing original mathematical research. Meanwhile, growth numbers from Daytona and Railway confirm that Agent infrastructure is the most durable business bet in this wave.",
     "filename": "2026-05-22.md",
     "coverImage": "/news/2026-05-22.png",
-    "coverImageEn": "/news/en/2026-05-22.png"
+    "coverImageEn": "/news/en/2026-05-22.png",
+    "coverWebp": "/news/2026-05-22.webp",
+    "coverWebpEn": "/news/en/2026-05-22.webp"
   },
   {
     "slug": "2026-05-21",
@@ -18109,7 +18552,8 @@
     "jasonSays": "今天最炸的是 Google I/O 2026 一口气放出 Gemini 3.5 Flash + Omni 视频版 + Spark 后台 Agent，正面挑战 OpenAI 全线产品；同时 Anthropic 宣布即将首次盈利——两家头部 AI 公司的商业化竞赛进入「正常公司」阶段。",
     "jasonSaysEn": "Today's biggest story is Google I/O 2026 dropping Gemini 3.5 Flash, Omni Video, and Spark background Agent all at once — a direct full-lineup challenge to OpenAI. Meanwhile, Anthropic announces its first-ever profitable quarter. The AI race is officially entering 'normal company' territory.",
     "filename": "2026-05-21.md",
-    "coverImageEn": "/news/en/2026-05-21.png"
+    "coverImageEn": "/news/en/2026-05-21.png",
+    "coverWebpEn": "/news/en/2026-05-21.webp"
   },
   {
     "slug": "2026-05-20",
@@ -18193,7 +18637,9 @@
     "jasonSaysEn": "The biggest story today is Google I/O — Gemini 3.5 Flash went GA with no rate limits, and developers say it outperforms Sonnet at a lower price. Google is no longer 'announce and disappoint.' The AI landscape is genuinely reshuffling.",
     "filename": "2026-05-20.md",
     "coverImage": "/news/2026-05-20.png",
-    "coverImageEn": "/news/en/2026-05-20.png"
+    "coverImageEn": "/news/en/2026-05-20.png",
+    "coverWebp": "/news/2026-05-20.webp",
+    "coverWebpEn": "/news/en/2026-05-20.webp"
   },
   {
     "slug": "2026-05-19",
@@ -18277,7 +18723,9 @@
     "jasonSaysEn": "Today's most important story is Anthropic acquiring Stainless — a company that built SDKs for both OpenAI and Google now belongs to Anthropic. The battle for the developer tooling layer is quieter than the model wars, and far more lethal.",
     "filename": "2026-05-19.md",
     "coverImage": "/news/2026-05-19.png",
-    "coverImageEn": "/news/en/2026-05-19.png"
+    "coverImageEn": "/news/en/2026-05-19.png",
+    "coverWebp": "/news/2026-05-19.webp",
+    "coverWebpEn": "/news/en/2026-05-19.webp"
   },
   {
     "slug": "2026-05-18",
@@ -18361,7 +18809,9 @@
     "jasonSaysEn": "Today's most notable signal isn't a new model — it's AI rooting itself in the physical world. Yum! Brands is rolling out Nvidia AI across 500 locations, and the auto industry is in a full-blown AI talent arms race. Software-layer gains are converging; the real incremental value now lives at the intersection of AI and traditional industries.",
     "filename": "2026-05-18.md",
     "coverImage": "/news/2026-05-18.png",
-    "coverImageEn": "/news/en/2026-05-18.png"
+    "coverImageEn": "/news/en/2026-05-18.png",
+    "coverWebp": "/news/2026-05-18.webp",
+    "coverWebpEn": "/news/en/2026-05-18.webp"
   },
   {
     "slug": "2026-05-17",
@@ -18445,7 +18895,9 @@
     "jasonSaysEn": "Today's biggest signal: ArXiv is banning AI-ghostwritten papers, and the Curl maintainer has declared AI security reports are no longer garbage — AI is hitting a quality inflection point simultaneously in academia and security. Responsible AI use is becoming the new professional baseline.",
     "filename": "2026-05-17.md",
     "coverImage": "/news/2026-05-17.png",
-    "coverImageEn": "/news/en/2026-05-17.png"
+    "coverImageEn": "/news/en/2026-05-17.png",
+    "coverWebp": "/news/2026-05-17.webp",
+    "coverWebpEn": "/news/en/2026-05-17.webp"
   },
   {
     "slug": "2026-05-16",
@@ -18529,7 +18981,9 @@
     "jasonSaysEn": "3 things to watch today: Anthropic reprices Claude Code (metered billing for programmatic usage), OpenAI connects bank accounts for personal finance, and bindureddy's quip that 'AI now costs more than hiring humans' — AI productization is entering a pricing-model reset phase, and per-seat billing is making an unexpected comeback.",
     "filename": "2026-05-16.md",
     "coverImage": "/news/2026-05-16.png",
-    "coverImageEn": "/news/en/2026-05-16.png"
+    "coverImageEn": "/news/en/2026-05-16.png",
+    "coverWebp": "/news/2026-05-16.webp",
+    "coverWebpEn": "/news/en/2026-05-16.webp"
   },
   {
     "slug": "2026-05-15",
@@ -18613,7 +19067,9 @@
     "jasonSaysEn": "The story to watch today is OpenAI preparing to take Apple to court. The distribution battle between AI companies and platform giants is now becoming a legal fight. This isn't a one-off, but a structural problem for every AI product that relies on platform distribution. Indie SaaS builders targeting global markets should take a hard look at their channel dependency.",
     "filename": "2026-05-15.md",
     "coverImage": "/news/2026-05-15.png",
-    "coverImageEn": "/news/en/2026-05-15.png"
+    "coverImageEn": "/news/en/2026-05-15.png",
+    "coverWebp": "/news/2026-05-15.webp",
+    "coverWebpEn": "/news/en/2026-05-15.webp"
   },
   {
     "slug": "2026-05-14",
@@ -18697,7 +19153,9 @@
     "jasonSaysEn": "Today's must-watch: Anthropic's Cat Wu saying AI's next step is \"proactively anticipating needs.\" It's not just a product vision; it's the path Claude Code is already on. Whoever builds proactive agents into their product first claims the next user habit before anyone else.",
     "filename": "2026-05-14.md",
     "coverImage": "/news/2026-05-14.png",
-    "coverImageEn": "/news/en/2026-05-14.png"
+    "coverImageEn": "/news/en/2026-05-14.png",
+    "coverWebp": "/news/2026-05-14.webp",
+    "coverWebpEn": "/news/en/2026-05-14.webp"
   },
   {
     "slug": "2026-05-13",
@@ -18781,7 +19239,9 @@
     "jasonSaysEn": "Leaks are pouring in on the eve of Google I/O: Gemini Omni video, Flash 3.2, Gemini built into Chrome... Tomorrow's keynote could be Google's most hard-hitting comeback in two years. Grab some popcorn and stay tuned.",
     "filename": "2026-05-13.md",
     "coverImage": "/news/2026-05-13.png",
-    "coverImageEn": "/news/en/2026-05-13.png"
+    "coverImageEn": "/news/en/2026-05-13.png",
+    "coverWebp": "/news/2026-05-13.webp",
+    "coverWebpEn": "/news/en/2026-05-13.webp"
   },
   {
     "slug": "2026-05-12",
@@ -18874,7 +19334,9 @@
     "jasonSaysEn": "Today's biggest signal: Coursera and Udemy are merging, pushing AI education from fragmentation toward oligopoly. ByteDance open-sourced UI-TARS-desktop, a sign that Chinese multimodal agents are closing in on OpenAI Operator. And AiToEarn, a content-marketing agent built for one-person companies, has matured into a full system on GitHub. An industrial production line for solo creators is starting to take shape.",
     "filename": "2026-05-12.md",
     "coverImage": "/news/2026-05-12.png",
-    "coverImageEn": "/news/en/2026-05-12.png"
+    "coverImageEn": "/news/en/2026-05-12.png",
+    "coverWebp": "/news/2026-05-12.webp",
+    "coverWebpEn": "/news/en/2026-05-12.webp"
   },
   {
     "slug": "2026-05-11",
@@ -18958,7 +19420,9 @@
     "jasonSaysEn": "The one to watch today: Claude learned blackmail from \"evil AI\" narratives in its training data. Data bias doesn't just hurt accuracy; it can contaminate a model's \"values.\" That's a real risk for every developer building products with fine-tuning or RAG, and it's harder to defend against than prompt injection.",
     "filename": "2026-05-11.md",
     "coverImage": "/news/2026-05-11.png",
-    "coverImageEn": "/news/en/2026-05-11.png"
+    "coverImageEn": "/news/en/2026-05-11.png",
+    "coverWebp": "/news/2026-05-11.webp",
+    "coverWebpEn": "/news/en/2026-05-11.webp"
   },
   {
     "slug": "2026-05-10",
@@ -19042,7 +19506,9 @@
     "jasonSaysEn": "Anthropic is sprinting at 10x growth while open-sourcing a finance-specific skill suite. That is how you build a moat: strong models, a deep ecosystem, and vertical lock-in. Competitors' window to catch up keeps shrinking.",
     "filename": "2026-05-10.md",
     "coverImage": "/news/2026-05-10.png",
-    "coverImageEn": "/news/en/2026-05-10.png"
+    "coverImageEn": "/news/en/2026-05-10.png",
+    "coverWebp": "/news/2026-05-10.webp",
+    "coverWebpEn": "/news/en/2026-05-10.webp"
   },
   {
     "slug": "2026-05-09",
@@ -19117,7 +19583,9 @@
     "jasonSaysEn": "OpenAI and Anthropic are both racing into the enterprise: one is publishing its security architecture to win over compliance-minded customers, the other just landed a big SpaceX deal to scale up. The AI infrastructure war has shifted from model capability to deployment trust, and whoever reassures CTOs first wins.",
     "filename": "2026-05-09.md",
     "coverImage": "/news/2026-05-09.png",
-    "coverImageEn": "/news/en/2026-05-09.png"
+    "coverImageEn": "/news/en/2026-05-09.png",
+    "coverWebp": "/news/2026-05-09.webp",
+    "coverWebpEn": "/news/en/2026-05-09.webp"
   },
   {
     "slug": "2026-05-08",
@@ -19201,7 +19669,9 @@
     "jasonSaysEn": "The one to watch today is OpenAI's voice API upgrade: reasoning, translation, and transcription in one. The cost of building voice products is falling off a cliff, and developers who miss this API window will regret it.",
     "filename": "2026-05-08.md",
     "coverImage": "/news/2026-05-08.png",
-    "coverImageEn": "/news/en/2026-05-08.png"
+    "coverImageEn": "/news/en/2026-05-08.png",
+    "coverWebp": "/news/2026-05-08.webp",
+    "coverWebpEn": "/news/en/2026-05-08.webp"
   },
   {
     "slug": "2026-05-07",
@@ -19285,7 +19755,9 @@
     "jasonSaysEn": "Today's key signal: Anthropic is scaling up Claude Code on the back of a major SpaceX deal, while xAI is quietly turning into a compute marketplace. More and more AI arms-race money is flowing into compute infrastructure rather than the models themselves, and that trend matters more than any benchmark.",
     "filename": "2026-05-07.md",
     "coverImage": "/news/2026-05-07.png",
-    "coverImageEn": "/news/en/2026-05-07.png"
+    "coverImageEn": "/news/en/2026-05-07.png",
+    "coverWebp": "/news/2026-05-07.webp",
+    "coverWebpEn": "/news/en/2026-05-07.webp"
   },
   {
     "slug": "2026-05-06",
@@ -19369,7 +19841,9 @@
     "jasonSaysEn": "Today's must-watch story is OpenAI opening its ChatGPT ad platform and turning the chat box into ad space. This goes beyond monetization. It redefines how traffic gets allocated in the search-replacement era. Founders building SaaS for global markets should start figuring out how to get discovered inside AI conversations.",
     "filename": "2026-05-06.md",
     "coverImage": "/news/2026-05-06.png",
-    "coverImageEn": "/news/en/2026-05-06.png"
+    "coverImageEn": "/news/en/2026-05-06.png",
+    "coverWebp": "/news/2026-05-06.webp",
+    "coverWebpEn": "/news/en/2026-05-06.webp"
   },
   {
     "slug": "2026-05-05",
@@ -19453,7 +19927,9 @@
     "jasonSaysEn": "Today's signal to watch: Doubao is going paid. Chinese AI apps have relied on free access to win users, and ByteDance is the first to test tiered pricing. If this catfish strategy works, it's only a matter of time before the other tech giants follow.",
     "filename": "2026-05-05.md",
     "coverImage": "/news/2026-05-05.png",
-    "coverImageEn": "/news/en/2026-05-05.png"
+    "coverImageEn": "/news/en/2026-05-05.png",
+    "coverWebp": "/news/2026-05-05.webp",
+    "coverWebpEn": "/news/en/2026-05-05.webp"
   },
   {
     "slug": "2026-05-04",
@@ -19537,7 +20013,9 @@
     "jasonSaysEn": "Today's most interesting signal is DeepClaude, which uses DeepSeek V4 Pro to drive Claude Code's agent loop and cuts costs 17x. It's not a stunt. It's a practical cost-control template for indie developers, and anyone running Claude Code should study it closely.",
     "filename": "2026-05-04.md",
     "coverImage": "/news/2026-05-04.png",
-    "coverImageEn": "/news/en/2026-05-04.png"
+    "coverImageEn": "/news/en/2026-05-04.png",
+    "coverWebp": "/news/2026-05-04.webp",
+    "coverWebpEn": "/news/en/2026-05-04.webp"
   },
   {
     "slug": "2026-05-03",
@@ -19621,7 +20099,9 @@
     "jasonSaysEn": "Today's key thread: open-source models are forcing closed APIs to cut prices by crushing them on cost-performance. DeepSeek V4, Kimi 2.6, and Grok 4.3 landed back-to-back, and the moat around paid APIs is eroding fast. If you're building a product now, take the open-source route seriously.",
     "filename": "2026-05-03.md",
     "coverImage": "/news/2026-05-03.png",
-    "coverImageEn": "/news/en/2026-05-03.png"
+    "coverImageEn": "/news/en/2026-05-03.png",
+    "coverWebp": "/news/2026-05-03.webp",
+    "coverWebpEn": "/news/en/2026-05-03.webp"
   },
   {
     "slug": "2026-05-02",
@@ -19705,7 +20185,9 @@
     "jasonSaysEn": "The story to watch today is the methodology race in the Skills ecosystem: mattpocock's small, composable Skills versus Superpowers' complete methodology. Whichever approach wins out will shape the dominant paradigm for Agent development.",
     "filename": "2026-05-02.md",
     "coverImage": "/news/2026-05-02.png",
-    "coverImageEn": "/news/en/2026-05-02.png"
+    "coverImageEn": "/news/en/2026-05-02.png",
+    "coverWebp": "/news/2026-05-02.webp",
+    "coverWebpEn": "/news/en/2026-05-02.webp"
   },
   {
     "slug": "2026-05-01",
@@ -19789,7 +20271,9 @@
     "jasonSaysEn": "Today's biggest bombshell is DeepSeek V4 Pro. If the benchmarks hold up, the timeline for open-source models catching closed ones just moved up again. Meanwhile, the Oscars' ban on AI content shows regulators are drawing lines much faster than the tech is advancing.",
     "filename": "2026-05-01.md",
     "coverImage": "/news/2026-05-01.png",
-    "coverImageEn": "/news/en/2026-05-01.png"
+    "coverImageEn": "/news/en/2026-05-01.png",
+    "coverWebp": "/news/2026-05-01.webp",
+    "coverWebpEn": "/news/en/2026-05-01.webp"
   },
   {
     "slug": "2026-04-30",
@@ -19873,7 +20357,9 @@
     "jasonSaysEn": "The story to watch today is the Skills ecosystem taking off all at once. Matt Pocock's Claude Skills library and Composio's Codex Skills collection both hit GitHub Trending on the same day. The agent tooling layer is filling in fast, and the payoff goes to developers who put Skills into real projects first.",
     "filename": "2026-04-30.md",
     "coverImage": "/news/2026-04-30.png",
-    "coverImageEn": "/news/en/2026-04-30.png"
+    "coverImageEn": "/news/en/2026-04-30.png",
+    "coverWebp": "/news/2026-04-30.webp",
+    "coverWebpEn": "/news/en/2026-04-30.webp"
   },
   {
     "slug": "2026-04-29",
@@ -19957,7 +20443,9 @@
     "jasonSaysEn": "The thing to watch most closely today is a three-way surge in the Skills ecosystem. A Claude Code bug exposed how fragile Managed Agents are, and the two Skills libraries that mattpocock and Composio open-sourced the same day fill exactly that gap. The tools keep evolving, but production-grade Skills are scarce, and that scarcity is becoming the real moat.",
     "filename": "2026-04-29.md",
     "coverImage": "/news/2026-04-29.png",
-    "coverImageEn": "/news/en/2026-04-29.png"
+    "coverImageEn": "/news/en/2026-04-29.png",
+    "coverWebp": "/news/2026-04-29.webp",
+    "coverWebpEn": "/news/en/2026-04-29.webp"
   },
   {
     "slug": "2026-04-28",
@@ -20041,7 +20529,9 @@
     "jasonSaysEn": "Today's two biggest signals: OpenAI breaks its Azure exclusivity to go multi-cloud, and China blocks the Manus acquisition. AI's commercial map and its geopolitics are shifting fast at the same time, and indie developers should use the turbulence to stake out their own niche.",
     "filename": "2026-04-28.md",
     "coverImage": "/news/2026-04-28.png",
-    "coverImageEn": "/news/en/2026-04-28.png"
+    "coverImageEn": "/news/en/2026-04-28.png",
+    "coverWebp": "/news/2026-04-28.webp",
+    "coverWebpEn": "/news/en/2026-04-28.webp"
   },
   {
     "slug": "2026-04-27",
@@ -20125,7 +20615,9 @@
     "jasonSaysEn": "GPT-5.5 bursts onto the scene, Opus 4.7 is reported to have regressed, and DeepSeek V4 arrives. In a single week the model leaderboards have been almost completely reshuffled. Meanwhile, the Claude Code Skills ecosystem is quietly blossoming on GitHub, and the war over the underlying toolchain is only just beginning.",
     "filename": "2026-04-27.md",
     "coverImage": "/news/2026-04-27.png",
-    "coverImageEn": "/news/en/2026-04-27.png"
+    "coverImageEn": "/news/en/2026-04-27.png",
+    "coverWebp": "/news/2026-04-27.webp",
+    "coverWebpEn": "/news/en/2026-04-27.webp"
   },
   {
     "slug": "2026-04-26",
@@ -20209,7 +20701,9 @@
     "jasonSaysEn": "Today's biggest drama: GPT-5.5 takes the crown, Claude Opus 4.7 appears to have regressed, and DeepSeek V4 bursts onto the scene. The model landscape shifted overnight, and picking the right foundation model matters more than ever. Time to re-stress-test your workflows.",
     "filename": "2026-04-26.md",
     "coverImage": "/news/2026-04-26.png",
-    "coverImageEn": "/news/en/2026-04-26.png"
+    "coverImageEn": "/news/en/2026-04-26.png",
+    "coverWebp": "/news/2026-04-26.webp",
+    "coverWebpEn": "/news/en/2026-04-26.webp"
   },
   {
     "slug": "2026-04-25",
@@ -20293,7 +20787,9 @@
     "jasonSaysEn": "Today's biggest signal isn't the GPT-5.5 launch. It's the reported $60B price tag on Cursor. When the gateway value of developer tools is priced like this, going all in on a focused coding or productivity tool may be the surest bet right now.",
     "filename": "2026-04-25.md",
     "coverImage": "/news/2026-04-25.png",
-    "coverImageEn": "/news/en/2026-04-25.png"
+    "coverImageEn": "/news/en/2026-04-25.png",
+    "coverWebp": "/news/2026-04-25.webp",
+    "coverWebpEn": "/news/en/2026-04-25.webp"
   },
   {
     "slug": "2026-04-24",
@@ -20378,7 +20874,9 @@
     "filename": "2026-04-24.md",
     "tweetUrl": "https://x.com/GoSailGlobal/status/2047521885567713331",
     "coverImage": "/news/2026-04-24.png",
-    "coverImageEn": "/news/en/2026-04-24.png"
+    "coverImageEn": "/news/en/2026-04-24.png",
+    "coverWebp": "/news/2026-04-24.webp",
+    "coverWebpEn": "/news/en/2026-04-24.webp"
   },
   {
     "slug": "2026-04-23",
@@ -20462,7 +20960,9 @@
     "jasonSaysEn": "Today's biggest shock isn't a model update. It's Cursor turning down a $2B funding round to entertain a $60B acquisition. The ceiling for AI coding tools may be far higher than we thought.",
     "filename": "2026-04-23.md",
     "coverImage": "/news/2026-04-23.png",
-    "coverImageEn": "/news/en/2026-04-23.png"
+    "coverImageEn": "/news/en/2026-04-23.png",
+    "coverWebp": "/news/2026-04-23.webp",
+    "coverWebpEn": "/news/en/2026-04-23.webp"
   },
   {
     "slug": "2026-04-22",
@@ -20545,7 +21045,8 @@
     "jasonSays": "Claude升级加持、Cursor被争抢、Codex企业化——开发者工具竞争白热化。同时AI在视频生成、测试推理、流程自动化的技术突破，正打开新的商业化空间。",
     "jasonSaysEn": "Claude's upgrade, the fight over Cursor, and Codex's enterprise push show that competition in developer tools is white-hot. Meanwhile, AI breakthroughs in video generation, test-time inference, and workflow automation are opening new commercial opportunities.",
     "filename": "2026-04-22.md",
-    "coverImageEn": "/news/en/2026-04-22.png"
+    "coverImageEn": "/news/en/2026-04-22.png",
+    "coverWebpEn": "/news/en/2026-04-22.webp"
   },
   {
     "slug": "2026-04-21",
@@ -20628,7 +21129,8 @@
     "jasonSays": "今天最魔幻的一幕：Anthropic 拿了亚马逊 50 亿，转头承诺给亚马逊花 1000 亿——这哪是融资，分明是一场精心设计的「云算力预购」，双方都在押注 AI 军备竞赛还有十年可打。",
     "jasonSaysEn": "Today's most surreal moment: Anthropic takes $5 billion from Amazon, then promises to spend $100 billion with it. That's not a funding round so much as an elaborately structured cloud compute pre-order, with both sides betting the AI arms race has another decade to run.",
     "filename": "2026-04-21.md",
-    "coverImageEn": "/news/en/2026-04-21.png"
+    "coverImageEn": "/news/en/2026-04-21.png",
+    "coverWebpEn": "/news/en/2026-04-21.webp"
   },
   {
     "slug": "2026-04-20",
@@ -20702,7 +21204,8 @@
     "jasonSays": "本周最大的信号不是某个新模型，而是 Qwen 3.6 用 3B 激活参数打出 Opus 80% 效果——开源的压缩能力已经开始威胁闭源的定价权，留给高价 API 的时间真的不多了。",
     "jasonSaysEn": "This week's biggest signal isn't a new model. It's Qwen 3.6 hitting 80% of Opus with just 3B active parameters. Open-source compression is starting to threaten closed-source pricing power, and premium APIs are running out of time.",
     "filename": "2026-04-20.md",
-    "coverImageEn": "/news/en/2026-04-20.png"
+    "coverImageEn": "/news/en/2026-04-20.png",
+    "coverWebpEn": "/news/en/2026-04-20.webp"
   },
   {
     "slug": "2026-04-19",
@@ -20785,7 +21288,8 @@
     "jasonSays": "今天最值得警惕的信号：Qwen 3.6 用 3B 参数干到 Opus 4.7 八成性能、接近零成本，而 Anthropic 还在涨价——开源正在用价格屠刀切割闭源模型的护城河，这场仗已经不只是能力之争了。",
     "jasonSaysEn": "Today's most worrying signal: Qwen 3.6 hits 80% of Opus 4.7's performance with just 3B parameters at near-zero cost, while Anthropic keeps raising prices. Open source is using price as a weapon to cut into closed models' moats. This fight is no longer just about capability.",
     "filename": "2026-04-19.md",
-    "coverImageEn": "/news/en/2026-04-19.png"
+    "coverImageEn": "/news/en/2026-04-19.png",
+    "coverWebpEn": "/news/en/2026-04-19.webp"
   },
   {
     "slug": "2026-04-18",
@@ -20868,7 +21372,8 @@
     "jasonSays": "今天最值得盯的是 Cursor $500 亿估值融资——AI 编程工具杀入企业级市场的速度远超预期，而 OpenAI 同步砍掉 Sora、送走两位高管，一进一退之间，AI 行业的商业化主战场已经非常清晰了。",
     "jasonSaysEn": "Today's must-watch story is Cursor's funding round at a $50B valuation. AI coding tools are breaking into the enterprise far faster than expected. Meanwhile, OpenAI is shutting down Sora and losing two executives. One player is surging while the other retrenches, and the main battleground for AI commercialization is now unmistakable.",
     "filename": "2026-04-18.md",
-    "coverImageEn": "/news/en/2026-04-18.png"
+    "coverImageEn": "/news/en/2026-04-18.png",
+    "coverWebpEn": "/news/en/2026-04-18.webp"
   },
   {
     "slug": "2026-04-17",
@@ -20951,7 +21456,8 @@
     "jasonSays": "今天最大的戏是 OpenAI vs Anthropic 的全面开战——Codex 直怼 Claude Code，Opus 4.7 悄然反击；真正的 AI 编程军备竞赛已经打响，开发者是最大赢家。",
     "jasonSaysEn": "Today's big story is OpenAI vs. Anthropic going to all-out war: Codex takes direct aim at Claude Code while Opus 4.7 quietly hits back. The real AI coding arms race is on, and developers are the biggest winners.",
     "filename": "2026-04-17.md",
-    "coverImageEn": "/news/en/2026-04-17.png"
+    "coverImageEn": "/news/en/2026-04-17.png",
+    "coverWebpEn": "/news/en/2026-04-17.webp"
   },
   {
     "slug": "2026-04-16",
@@ -21034,7 +21540,8 @@
     "jasonSays": "今天最值得盯的信号：Claude Code Routines 上线 + OpenAI Agents SDK 大更新同日出现，Agentic 工作流的基础设施层正在以肉眼可见的速度成型，现在是押注 Agent 工具层产品的最佳窗口期。",
     "jasonSaysEn": "Today's key signal: Claude Code Routines launched on the same day as a major OpenAI Agents SDK update. The infrastructure layer for agentic workflows is taking shape at visible speed, and now is the best window to bet on agent tooling products.",
     "filename": "2026-04-16.md",
-    "coverImageEn": "/news/en/2026-04-16.png"
+    "coverImageEn": "/news/en/2026-04-16.png",
+    "coverWebpEn": "/news/en/2026-04-16.webp"
   },
   {
     "slug": "2026-04-15",
@@ -21099,7 +21606,8 @@
     "jasonSays": "今天最值得盯的信号是：Google Chrome 把 AI 工作流「技能化」推向普通用户，而投资人对 OpenAI vs Anthropic 的估值天平悄悄在偏移——这两件事加在一起，2026 的 AI 竞争格局比想象中变得更快。",
     "jasonSaysEn": "Today's biggest signal: Google Chrome is bringing 'skill-ified' AI workflows to everyday users, while investor sentiment on OpenAI vs. Anthropic valuations is quietly shifting. Together, these suggest the 2026 AI competitive landscape is changing faster than expected.",
     "filename": "2026-04-15.md",
-    "coverImageEn": "/news/en/2026-04-15.png"
+    "coverImageEn": "/news/en/2026-04-15.png",
+    "coverWebpEn": "/news/en/2026-04-15.webp"
   },
   {
     "slug": "2026-04-14",
@@ -21164,6 +21672,7 @@
     "jasonSays": "Vercel 的 IPO 准备和 Claude Code 的安全实践都在证明:真正的 AI 商业化不是炒概念,而是解决实际问题。",
     "jasonSaysEn": "Vercel's IPO prep and Claude Code's security practices prove the same point: real AI commercialization isn't about hype, it's about solving real problems.",
     "filename": "2026-04-14.md",
-    "coverImageEn": "/news/en/2026-04-14.png"
+    "coverImageEn": "/news/en/2026-04-14.png",
+    "coverWebpEn": "/news/en/2026-04-14.webp"
   }
 ]
