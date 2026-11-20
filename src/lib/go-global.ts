@@ -229,46 +229,46 @@ export const SEO_TOOLS_DIRECTORY = {
   repo: "https://github.com/zhuyansen/awesome-claude-seo-skills",
 };
 
-/** 通用 SEO 水系模型 v8（2026-10-18 最新版：14 个构件 + 五层水表 + 六道放水闸门 + Jason 6 条排名理论）
- *  源自 ops/seo-watersystem-model.md（v4 → v5 三个月踩坑 → v6 Google 搜索中心技术门与出水口 → v7 Ahrefs 汇水区与 AI 404 回收 → v8 哥飞教程六道节奏闸门） */
+/** 通用 SEO 水系模型 v9（2026-11-20 最新版：14 个构件 + 五层水表 + 六道放水闸门 + Jason 6 条排名理论 + v9 JOKER 6 减不确定性与 6 本海外经典定理）
+ *  源自 ops/geo/seo-watersystem-model.md（v4 → v5 三个月踩坑 → v6 Google 搜索中心技术门与出水口 → v7 Ahrefs 汇水区与 AI 404 回收 → v8 哥飞教程六道节奏闸门 → v9 JOKER 降低机器 6 种不确定性与海外 6 本经典 + geo_engine.py v9.0 24 个子命令） */
 export const SEO_WATER_SYSTEM_V8 = {
   lead: {
-    zh: "把 SEO 当成一套水系来搭：先有源头才有水可流，力气按「最不 AI（人主导）」排序，不是按「最省事（批量造页）」排序。从 7 月的 v4 演进到 10 月的 v8，吸收了三个月实战踩坑（v5）、Google 搜索中心技术门（v6）、Ahrefs 需求汇水区（v7）和哥飞教程六道节奏闸门（v8），共 14 个构件、5 层水表、6 道闸门：",
-    en: "Build SEO as a water system: you need inflows before pipes can carry water, and effort is ordered by what is least automatable (human-led authority), not what is easiest (spinning up pages). Evolved from v4 (July) to v8 (October 2026) across 14 components, 5 layered water meters, and 6 release gates:",
+    zh: "把 SEO 当成一套水系来搭：先有源头才有水可流，力气按「最不 AI（人主导）」排序，不是按「最省事（批量造页）」排序。从 7 月的 v4 演进到 11 月的 v9，吸收了三个月实战踩坑（v5）、Google 搜索中心技术门（v6）、Ahrefs 需求汇水区（v7）、哥飞六道节奏闸门（v8）以及 JOKER「降低机器 6 种不确定性」与海外 6 本前沿经典（v9），共 14 个构件、5 层水表、6 道闸门与 24 个自动化 GEO 体检命令：",
+    en: "Build SEO as a water system: you need inflows before pipes can carry water, and effort is ordered by what is least automatable (human-led authority), not what is easiest (spinning up pages). Evolved from v4 (July) to v9 (November 2026) across 14 components, 5 layered water meters, 6 release gates, and 24 automated GEO engine commands:",
   },
   components: [
     {
       id: "Ⓠ",
-      tag: "v7/v8",
-      name: { zh: "汇水区 · 需求与商业口径", en: "Catchment · Demand & Commercial Proof" },
+      tag: "v7/v8/v9",
+      name: { zh: "汇水区 · 需求、商业口径与三路破圈", en: "Catchment · Demand, Commercial Proof & 3 Discovery Paths" },
       who: { zh: "🤖查 🧑定", en: "🤖 lookup · 🧑 decide" },
       rule: {
-        zh: "雨落在哪里：建页前必填三项——① 搜索意图（看前 10 名的页型、格式、角度，页型跟着结果页走）；② 流量潜力（看排第 1 的页面总流量，不看单词搜索量）；③ 商业潜力（0–3 分，v8 要求必附一条赚钱证据：广告透明中心持续投放、Stripe 收银台引荐、BuiltWith 支付/联盟代码或竞品定价）。意图为零，后面水再多也流不进去。",
-        en: "Where the rain falls: before building a page, record Search Intent (match Top-10 page type/format/angle), Traffic Potential (total traffic of the #1 page, not single-keyword volume), and Business Value (0–3 score backed by hard monetization proof: Ad Transparency active spend, Stripe checkout referrals, BuiltWith payment tags, or competitor pricing).",
+        zh: "雨落在哪里：建页前必填三项——① 搜索意图（看前 10 名的页型、格式、角度）；② 流量潜力（看排第 1 的页面总流量）；③ 商业潜力（0–3 分，v8 要求必附一条赚钱证据：广告透明中心持续投放、Stripe 收银台引荐或竞品定价）。v9 新增（Eli Schwartz + Tim Soulo《DISCOVERABLE》）：分清 SEO 只能「捕获已有需求（Get Found）」，零搜索量的新品类必须同步走社媒打断注意力（Get Noticed）与独有工具/基准数据集口碑（Get Talked About）。",
+        en: "Where the rain falls: record Search Intent, Traffic Potential (#1 page total traffic), and Business Value (0–3 score backed by monetization proof). v9 (Eli Schwartz + Tim Soulo DISCOVERABLE): SEO only captures existing demand (Get Found); unknown categories must pair search with social interruption (Get Noticed) and proprietary tools/benchmarks (Get Talked About).",
       },
       meter: { zh: "三项填齐且带商业证据的词组占比", en: "% of target clusters with intent + traffic potential + revenue proof" },
     },
     {
       id: "①a",
-      tag: "v5/v8",
-      name: { zh: "进水口 · 传统外链权威（两层论）", en: "Inflow 1a · Link Authority (Two-Tier Rule)" },
+      tag: "v5/v8/v9",
+      name: { zh: "进水口 · 传统外链权威与 AI 域名影响指数", en: "Inflow 1a · Link Authority & AI Domain Impact Index" },
       who: { zh: "🧑 人主导", en: "🧑 Human-led" },
       rule: {
-        zh: "外链分两层：权重层 = 自然报道引用 + 可引用数据集/学术凭证（Zenodo DOI 一鱼四吃：CSV → HF/Kaggle 数据集 + DOI + Notebook + Dev.to 文）；发现层 = 免费目录/导航站（只管触发收录和 AI 语料，不传权重，只验收不堆量）。10-06 起停止购买 dofollow 外链；v8 闸门：收录稳定增长后才上第一批外链。",
-        en: "Two tiers: Weight tier = earned media citations + citable datasets/DOIs (1 CSV → HF/Kaggle dataset + CERN Zenodo DOI + Notebook + Dev.to article); Discovery tier = free directories (triggers indexing & AI grounding only; pass no weight, do not pile up). Stopped buying dofollow links on 10-06; v8 gate: build links only after indexing grows steadily.",
+        zh: "外链分两层：权重层 = 自然报道引用 + 可引用数据集/学术凭证（Zenodo DOI 一鱼四吃）；发现层 = 免费目录/导航站（只管触发收录和 AI 语料，不传权重）。10-06 起停止购买 dofollow 外链；v8 闸门：收录稳定增长后才上外链。v9 新增（JOKER + Walker Sands）：① 外链从 Exact Match 锚文本升级为跨 6 类异构平台的 `Brand + Context + Relationship` 外部证据网；② 投 PR/外链前必跑 `geo_engine.py ai-domain-impact --target <domain>`（0–100 分），优先选放行 6 大 AI 爬虫的垂直媒体（如 TechTarget 82 分、Dev.to 94 分），避开屏蔽 AI 爬虫的传统高 DR 门户（如 Forbes 55 分）。",
+        en: "Two tiers: Weight tier = earned media + CERN Zenodo DOI datasets; Discovery tier = directories. v9 (JOKER + Walker Sands): (1) replace exact-match anchors with `Brand + Context + Relationship` proof across 6 platform types; (2) run `geo_engine.py ai-domain-impact --target <domain>` (0–100) before pitching so you target AI-accessible domains (TechTarget 82, Dev.to 94) over high-DR outlets blocking LLM bots (Forbes 55).",
       },
-      meter: { zh: "高权威 referring domains 数", en: "Authoritative referring domains" },
+      meter: { zh: "高权威引荐域数 + 靶站 AI Domain Impact 分（≥75）", en: "Referring domains + target AI Domain Impact score (≥75)" },
     },
     {
       id: "①b",
-      tag: "v5/v7",
-      name: { zh: "进水口 · GEO / AI 引用", en: "Inflow 1b · GEO & AI Citations" },
+      tag: "v5/v7/v9",
+      name: { zh: "进水口 · GEO / AI 引用与多模态路由", en: "Inflow 1b · GEO Citations & Modality Routing" },
       who: { zh: "🤖备料 🧑发送", en: "🤖 prep · 🧑 ship" },
       rule: {
-        zh: "被提及 > 被链接（Ahrefs 7.5 万品牌研究：AI 可见度相关性 YouTube 提及 0.737 > 无链接品牌提及 0.66–0.71 >> 外链数 0.28）。20 题实测 AI 优先引用文档、定价页、数据集和 GitHub，而非泛博客。v7 规则：llms.txt 降为可选（已有留着不再投入）；每月从 GA 筛 AI 来源落到 404 的编造网址，301 接回最相关页。",
-        en: "Being mentioned > being linked (Ahrefs 75K-brand study: YouTube mentions r=0.737 > unlinked brand mentions 0.66–0.71 >> backlinks 0.28). Our 20-prompt test showed AI cites docs, pricing pages, datasets, and GitHub far more than generic blog posts. v7 rule: llms.txt is optional; monthly check GA for hallucinated AI referral URLs hitting 404 and 301-redirect them.",
+        zh: "被提及 > 被链接（Ahrefs 7.5 万品牌研究：AI 可见度相关性 YouTube 提及 0.737 > 无链接品牌提及 0.66–0.71 >> 外链数 0.28）。v7 规则：llms.txt 降为可选；每月从 GA 筛 AI 来源落到 404 的编造网址 301 接回。v9 新增（Mike King《The AI Search Manual》）：Query Fan-out 具有「多模态路由偏好」——对比表格、结构化数据集和 YouTube 视频优先于纯散文；YouTube 被 AI 引用率是其他视频平台的 200 倍、占 ~30% AI Overviews，视频前 30 秒口播/字幕必须直接亮出品牌名、核心定义与实测结论。",
+        en: "Being mentioned > being linked (YouTube mentions r=0.737 >> backlinks 0.28). v7: llms.txt is optional; 301-redirect hallucinated AI 404 URLs monthly. v9 (Mike King The AI Search Manual): Query Fan-out routes by modality — tables, datasets, and YouTube beat prose; YouTube is cited 200x more than other video platforms (~30% of AIOs) via first-30s transcript cosine similarity.",
       },
-      meter: { zh: "AI 引荐会话 + 品牌被提及数 + AI 来访 404 数", en: "AI sessions + brand mentions + AI-referral 404s" },
+      meter: { zh: "AI 引荐会话 + 品牌被提及数 + YouTube 前 30s 字幕覆盖", en: "AI sessions + brand mentions + YouTube 30s transcript coverage" },
     },
     {
       id: "①c",
@@ -283,14 +283,14 @@ export const SEO_WATER_SYSTEM_V8 = {
     },
     {
       id: "②",
-      tag: "v5",
-      name: { zh: "水库 · 品牌实体", en: "Reservoir · Brand Entity" },
+      tag: "v5/v9",
+      name: { zh: "水库 · 品牌实体、跨页 @id 图谱与语义簇共识", en: "Reservoir · Brand Entity, Connected @id KG & Consensus" },
       who: { zh: "🤖织图 🧑定名", en: "🤖 schema · 🧑 naming" },
       rule: {
-        zh: "权重先蓄进实体，管道才有水可分。避开「水库两刀」（通用类目词当品牌名 + .top/.xyz 低信任后缀）；对外统一写「品牌（域名）」，JSON-LD 声明 alternateName，sameAs 只绑同一实体（有 DOI 的数据集单独建 Dataset 实体更稳），终态验收是搜品牌词出现 Sitelinks。",
-        en: "Weight must accumulate in your brand entity first. Avoid generic category names + low-trust TLDs (.top/.xyz); use alternateName in JSON-LD, bind sameAs strictly to the same entity (register DOI datasets as separate Dataset entities), and aim for Google SERP sitelinks on your brand query.",
+        zh: "权重先蓄进实体，管道才有水可分。避开「水库两刀」（通用类目词当品牌名 + .top/.xyz 低信任后缀）；对外统一写「品牌（域名）」，JSON-LD 声明 alternateName，sameAs 只绑同一实体。v9 新增（JOKER + Andrea Volpini）：① 定死 4 元组实体身份证（Official Name / Primary Category / Core Topics / Target Audience），全网描述无需复制粘贴文案，但必须落在同一语义簇（`geo_engine.py brand-consensus`）；② 全站 JSON-LD 必须用唯一固定 `@id`（如 `https://jasonzhu.ai/#person`、`#organization`）跨页互联（`geo_engine.py connected-kg`，Volpini 实测跨页互联 Entity Graph 提升 **+30%** 检索准确率，`RLM-on-KG` 比 GraphRAG 高 **+71%**）。",
+        en: "Weight accumulates in your brand entity first. v9 (JOKER + Andrea Volpini): (1) lock a 4-tuple Entity ID Card (Official Name / Primary Category / Core Topics / Target Audience) and keep all off-site descriptions within the same Semantic Cluster (`geo_engine.py brand-consensus`); (2) connect JSON-LD across pages via shared unique `@id` URIs (`geo_engine.py connected-kg` — Volpini proved connected Entity Graphs boost retrieval accuracy by +30% and RLM-on-KG beats GraphRAG by +71%).",
       },
-      meter: { zh: "品牌词位次 + CTR + SERP Sitelinks", en: "Brand query position, CTR & sitelinks" },
+      meter: { zh: "品牌词位次/Sitelinks + 跨页 @id 连通率（100%）", en: "Brand sitelinks + cross-page @id connectivity (100%)" },
     },
     {
       id: "⓪",
@@ -305,14 +305,14 @@ export const SEO_WATER_SYSTEM_V8 = {
     },
     {
       id: "③",
-      tag: "v5",
-      name: { zh: "分层 · 站点架构", en: "Hierarchy · Site Architecture" },
+      tag: "v5/v9",
+      name: { zh: "分层 · 站点架构与实体核心边界", en: "Hierarchy · Site Architecture & Entity Core Boundary" },
       who: { zh: "🤖 AI", en: "🤖 AI" },
       rule: {
-        zh: "架构先于一切：先定计划收录总页数 N，按 hub → cluster → 子页主题分层；关键词地图严格「一个词组一个网址」，建页前先 grep slug + 查真实 PV 防同站两页自相残杀（Cannibalization）。",
-        en: "Architecture before scale: know your target indexed page count N, structure as hub → cluster → leaf, enforce one keyword cluster per URL, and check existing slugs/traffic before creating pages to prevent cannibalization.",
+        zh: "架构先于一切：先定计划收录总页数 N，按 hub → cluster → 子页主题分层；关键词地图严格「一个词组一个网址」，建页前先 grep slug + 查真实 PV 防同站两页自相残杀。v9 新增（JOKER 实体核心铁律）：站内 Topical Map 的作用是扩大 Query Fan-out 的检索接触面（Retrieval Surface），但**没有围绕 Entity Core（实体核心）的内容做得越多、网站死得越快**（严禁为蹭泛流量发偏离核心品类的水文，任何新页距核心实体 ≤2 跳）。",
+        en: "Architecture before scale: structure as hub → cluster → leaf and enforce one keyword cluster per URL. v9 (JOKER Entity Core law): an on-site Topical Map expands your Query Fan-out Retrieval Surface, but **publishing off-core content unrelated to your Entity Core kills a site faster** (every page must sit ≤2 hops from your core entity).",
       },
-      meter: { zh: "目录层级深度（≤3 跳）+ 同词自相竞争页数", en: "Click depth (≤3 hops) & zero self-cannibalization" },
+      meter: { zh: "目录层级深度（≤3 跳）+ 偏离实体核心页数（目标 0）", en: "Click depth (≤3 hops) & off-core page count (target 0)" },
     },
     {
       id: "④",
@@ -360,14 +360,14 @@ export const SEO_WATER_SYSTEM_V8 = {
     },
     {
       id: "⑩",
-      tag: "v6",
-      name: { zh: "出水口 · 结果页展示与首屏 BLUF", en: "Outlet · SERP Snippet & First-50-Words BLUF" },
+      tag: "v6/v9",
+      name: { zh: "出水口 · 结果页展示、首屏 BLUF 与 H2 检索候选", en: "Outlet · SERP Snippet, 50-Word BLUF & H2 Retrieval Candidates" },
       who: { zh: "🤖 AI", en: "🤖 AI" },
       rule: {
-        zh: "排名之后、点击之前是单独一道工序：① 每页唯一 title（与 H1 一致、用真实搜索词、≤60 字符防改写）与 meta description；② 首页 WebSite schema 声明 name + alternateName；③ H1 正下方首段前 50 词直出 BLUF 断言结论 + 适用人群 + 硬核实测统计（吃透 AI Overview 首段引用与精选摘要）。",
-        en: "Ranking is not clicking: (1) unique title matching H1 with real search terms ≤60 chars + unique meta description; (2) homepage WebSite schema with name + alternateName; (3) opening 50-word BLUF right below H1 stating the verdict, who it is for, and hard stats to win AI Overviews and snippets.",
+        zh: "排名之后、点击之前是单独一道工序：① 每页唯一 title（与 H1 一致、≤60 字符）与 meta description；② 首页 WebSite schema 声明 name + alternateName；③ 首段前 50 词直出 BLUF 断言结论 + 适用人群 + 硬核实测统计。v9 新增（JOKER + Mike King 段落级检索候选铁律）：**内容战略在往上放大（到 Entity），内容执行在往下缩小（到 Passage / Section / Chunk）**——全文每个 `## H2` 都是独立的 Retrieval Candidate（`geo_engine.py section-candidates`：清晰 H2 提问/命题 + 下方首段 35–95 词点名主语且不靠「它/这」指代上文的 Direct Answer + 表格/数字支撑）。",
+        en: "Ranking is not clicking: (1) unique title matching H1 ≤60 chars + unique meta description; (2) homepage WebSite schema with name + alternateName; (3) opening 50-word BLUF right below H1. v9 (JOKER + Mike King Section Retrieval Candidate law): **strategy scales up to the Entity while execution shrinks down to the Section/Passage** — every `## H2` must pass `geo_engine.py section-candidates` (clear H2 heading + 35–95 word self-contained Direct Answer + table/number proof).",
       },
-      meter: { zh: "同位次点击率（改标题 2–4 周回看）+ 首段 BLUF 覆盖率", en: "Same-position CTR (2–4w post-edit) & 50-word BLUF coverage" },
+      meter: { zh: "同位次 CTR + 首段 BLUF 率 + H2 检索候选达标率（100%）", en: "Same-pos CTR + 50-word BLUF + H2 retrieval-ready ratio (100%)" },
     },
     {
       id: "⑧",
@@ -382,12 +382,12 @@ export const SEO_WATER_SYSTEM_V8 = {
     },
     {
       id: "⑨",
-      tag: "v5/v6/v8",
+      tag: "v5/v6/v8/v9",
       name: { zh: "迭代 · 五层水表与每周单实验闭环", en: "Iteration · 5-Layer Meters & Weekly 1-Experiment Loop" },
       who: { zh: "🤖 AI", en: "🤖 AI" },
       rule: {
-        zh: "水表从三层升为五层：① 点击层（GSC + GA 真人会话）· ② 引用层（GSC 生成式 AI 报告 + Bing AI Performance + Clarity 引用 + 20 题多引擎实测，实测 AI 引用量是点击量的 9 倍）· ③ 权威层（DR + 高权威引荐域）· ④ 收录层（N/M/X + 子站点地图读取 + Bing 收录数）· ⑤ 管材层（GSC 实际网址测试 + 404/规范网址一致率）。每周复盘只记「3 胜 3 忧 + 恰好 1 个实验」并写死回看日期；v8 规定每月必查一次 Bing 站长后台扫描报告。",
-        en: "Five layered meters: (1) Clicks (GSC + bot-filtered GA4), (2) AI Citations (GSC Generative AI report + Bing AI Performance + Clarity + 20-prompt live panel — AI citations run 9× AI clicks), (3) Authority (DR & referring domains), (4) Indexing (N/M/X + child sitemap reads + Bing index count), (5) Pipe Health (GSC Live URL test + 404/canonical match). Weekly retro picks 3 wins, 3 worries, and exactly 1 dated experiment; v8 adds a mandatory monthly Bing Webmaster check.",
+        zh: "水表从三层升为五层：① 点击层（GSC + GA 真人会话）· ② 引用层（GSC 生成式 AI 报告 + Bing AI Performance + Clarity 引用 + 20 题多引擎实测，实测 AI 引用量是点击量的 9 倍）· ③ 权威层（DR + 高权威引荐域 + AI Domain Impact 分）· ④ 收录层（N/M/X + 子站点地图读取 + Bing 收录数）· ⑤ 管材层（GSC 实际网址测试 + 404/规范网址一致率 + 跨页 @id 连通率）。每周复盘只记「3 胜 3 忧 + 恰好 1 个实验」并写死回看日期。",
+        en: "Five layered meters: (1) Clicks (GSC + bot-filtered GA4), (2) AI Citations (GSC Generative AI report + Bing AI Performance + Clarity + 20-prompt live panel — AI citations run 9× AI clicks), (3) Authority (DR, referring domains & AI Domain Impact score), (4) Indexing (N/M/X + child sitemap reads + Bing index count), (5) Pipe Health (GSC Live URL test + 404/canonical match + connected @id graph). Weekly retro picks 3 wins, 3 worries, and 1 dated experiment.",
       },
       meter: { zh: "五层月检完成率 + 每周单实验按期回看率", en: "5-layer monthly audit completion & dated experiment follow-through" },
     },
@@ -427,6 +427,22 @@ export const SEO_WATER_SYSTEM_V8 = {
       "Once a site's technical baseline is solid, rankings scale roughly exponentially with brand and social momentum.",
       "Brand and social moats require real assets and outlast anything money can buy in link markets.",
       "Every page needs its own theory and testing rubric ('why these win and how we graded them'); commodity AIGC listicles get wiped out.",
+    ],
+  },
+  v9Evolution: {
+    date: "2026-11-20",
+    formula: "Lower Understanding Cost（更低机器理解成本） + Higher Information Certainty（更高信息确定性） = Better Search / AI Visibility",
+    zh: [
+      "① 实体定义与跨页 @id 互联（构件 ②）：固定 4 元组实体身份证（Official Name / Primary Category / Core Topics / Target Audience），全站 JSON-LD 用唯一 `@id` 跨页互联（Volpini 实测提升 +30% 检索准确率，RLM-on-KG 比 GraphRAG 高 +71%；命令：`geo_engine.py connected-kg`）。",
+      "② 站内主题地图与实体核心红线（构件 ③/⑤）：Topical Map 用于扩大 Query Fan-out 检索接触面，但没有围绕 Entity Core 的泛流量文章发得越多死得越快（新页距核心实体 ≤2 跳）。",
+      "③ 段落级检索候选与多模态路由（构件 ⑩/①b）：战略放大到 Entity，执行缩小到每个 `## H2` 独立构成 Retrieval Candidate（`geo_engine.py section-candidates`）；配合对比表与前 30 秒亮结论的 YouTube 视频（被引率 200x、占 ~30% AIO）。",
+      "④ 站外主题网络、AI 域名影响指数与语义簇共识（构件 ①a/②/⑨）：把官网 Self Claim 变成 6 类异构平台的 `Brand + Context + Relationship` 外部证据；投外链前跑 `geo_engine.py ai-domain-impact` 筛掉屏蔽 AI 爬虫的假高权站（TechTarget 82 vs Forbes 55）；全网描述落在同一语义簇即可（`geo_engine.py brand-consensus`）。",
+    ],
+    en: [
+      "① Entity Definition & Connected @id Graph (Component ②): Lock a 4-tuple Entity ID Card and connect JSON-LD across pages via shared `@id` URIs (+30% retrieval accuracy, RLM-on-KG +71% over GraphRAG; audit via `geo_engine.py connected-kg`).",
+      "② Topical Map & Entity Core Boundary (Component ③/⑤): Expand Query Fan-out Retrieval Surface without drifting off-core — publishing 3,000 generic articles unrelated to your Entity Core kills a site faster.",
+      "③ Section-Level Retrieval Candidates & Modality Routing (Component ⑩/①b): Strategy scales up to the Entity while execution shrinks down to each `## H2` as an independent Retrieval Candidate (`geo_engine.py section-candidates`), paired with tables and first-30s YouTube transcripts (200x citation rate, ~30% AIO share).",
+      "④ External Topical Network, AI Domain Impact & Semantic Consensus (Component ①a/②/⑨): Turn on-site Self Claims into cross-platform `Brand + Context + Relationship` External Evidence; vet publishers with `geo_engine.py ai-domain-impact` (TechTarget 82 vs Forbes 55); verify semantic cluster alignment via `geo_engine.py brand-consensus`.",
     ],
   },
 };
@@ -750,8 +766,8 @@ export const GO_GLOBAL_ARSENAL_2026 = {
         en: "🥇 aaron-marketing-skills (16/16, 0 false claims) + 🥈 squirrelscan (15/16, 310+ local rules) + 🥉 marketingskills (15/16) + AminForou/mcp-gsc",
       },
       add: {
-        zh: "自研 ai-visibility-checker（100 分制 7 关 26 项 AI 网站急诊室）+ geo_engine.py `audit-16-guards`（确定性拦截 HTTP 头 X-Robots-Tag noindex、hreflang→404、canonical 误指首页、JSON-LD 语法错误）+ 首屏前 50 词 BLUF 自动门禁",
-        en: "In-house ai-visibility-checker (100-pt 26-check AI Clinic) + geo_engine.py audit-16-guards (catches X-Robots-Tag noindex, hreflang→404, canonical mismatch) + 50-word BLUF gate",
+        zh: "自研 ai-visibility-checker（100 分制 7 关 26 项 AI 网站急诊室）+ geo_engine.py v9.0 `audit-16-guards`（确定性拦截 HTTP 头 X-Robots-Tag noindex、hreflang→404、canonical 误指首页、JSON-LD 语法错误）+ `section-candidates`（逐个 H2 检验独立检索候选达标率）+ 首屏前 50 词 BLUF 自动门禁",
+        en: "In-house ai-visibility-checker (100-pt 26-check AI Clinic) + geo_engine.py v9.0 audit-16-guards + section-candidates (audits every H2 as an independent Retrieval Candidate) + 50-word BLUF gate",
       },
       drop: {
         zh: "⚠️ 降级 SEOmator seo-audit-skill（64 项里 6 项虚假 PASS 误报）；⚠️ 降级 claude-seo 等 3 款死守 robots.txt 的工具（漏查被拦截目录内全部 bug）；❌ 淘汰把 FAQPage / TOC 当排名灵丹的装饰性做法（Suski 60 万答案证实无效）",
@@ -759,18 +775,18 @@ export const GO_GLOBAL_ARSENAL_2026 = {
       },
     },
     {
-      stage: { zh: "⑤ 外链、权威与 GEO 闭环", en: "⑤ Backlinks, Authority & L1–L5 GEO" },
+      stage: { zh: "⑤ 外链、权威与 L1–L5 GEO 闭环武器库 v9.0", en: "⑤ Backlinks, Authority & L1–L5 GEO Arsenal v9.0" },
       keep: {
         zh: "backlink-guard v0.11.2（10 个 MCP/CLI 工具：find 按访客排外链页、vet 防毒、audit/lost 找带外链的 404 做 301、competitors --early 扒竞品头 90 天发射渠道、cited/asked 测 5 大 AI 引擎引用）+ 学术三连（CERN Zenodo DOI + HF + Kaggle 一鱼四吃）+ GitHub 每日自动更新榜单仓库矩阵",
         en: "backlink-guard v0.11.2 (10 CLI/MCP tools: find, vet, audit, lost 404 recovery, competitors --early, cited/asked 5-engine AI probe) + CERN Zenodo DOI / HF / Kaggle + daily GitHub awesome repos",
       },
       add: {
-        zh: "geo_engine.py L1–L5 全栈命令（`sro-and-recency` / `run-live-panel` / `entity-molecule` / `serp-similarity` / `publisher-finder`）+ `/api/md/...` 零噪 Markdown 端点 + `Dataset` JSON-LD + `/ai-info/` 机器可读签字事实页",
-        en: "geo_engine.py L1–L5 suite (sro-and-recency, run-live-panel, entity-molecule, serp-similarity, publisher-finder) + /api/md/... raw Markdown endpoint + Dataset JSON-LD + /ai-info/ fact page",
+        zh: "geo_engine.py v9.0 全栈 24 个子命令（含 v9 新增 4 大命令：`section-candidates` H2 检索候选体检、`connected-kg` 跨页 @id 实体图谱 +30% 连通审计、`ai-domain-impact` 靶站 0–100 AI 域名影响指数打分、`brand-consensus` 4 元组实体身份证与同语义簇共识检测；配合原有的 `sro-and-recency` / `run-live-panel` / `entity-molecule` / `serp-similarity` / `publisher-finder` / `proprietary-assets`）+ `/api/md/...` 零噪 Markdown 端点 + `Dataset` JSON-LD + `/ai-info/` 机器可读签字事实页",
+        en: "geo_engine.py v9.0 24-command suite (including 4 new v9 auditors: section-candidates, connected-kg +30% @id graph check, ai-domain-impact 0–100 scorer, brand-consensus 4-tuple & semantic cluster check; plus sro-and-recency, run-live-panel, entity-molecule, serp-similarity, publisher-finder, proprietary-assets) + /api/md/... raw Markdown endpoint + Dataset JSON-LD + /ai-info/ fact page",
       },
       drop: {
-        zh: "❌ 10-06 起全面停止购买付费客座与付费目录 dofollow 外链；❌ 永久封存 Stripe Climate 捐赠外链（实测恒为 `ugc nofollow`）与 HARO（已做烂）；❌ 放弃无知名度支撑时强建网站 Wikidata 词条（改用带 DOI 的 Dataset 词条）；⚠️ `llms.txt` 降为可选（保留现有，不再投入精力）",
-        en: "❌ Stopped buying guest-post/directory dofollow links (10-06); ❌ archived Stripe Climate link (always ugc nofollow) & HARO; ❌ dropped premature website Wikidata items in favor of DOI Dataset items; ⚠️ llms.txt demoted to optional",
+        zh: "❌ 10-06 起全面停止购买付费客座与付费目录 dofollow 外链；❌ 淘汰不查 robots.txt 盲投传统高 DR 门户（如 Forbes AI 影响分仅 55 分，不如 TechTarget 82 分 / Dev.to 94 分）；❌ 永久封存 Stripe Climate 捐赠外链（恒为 `ugc nofollow`）与 HARO；⚠️ `llms.txt` 降为可选",
+        en: "❌ Stopped buying guest-post/directory dofollow links (10-06); ❌ stopped pitching high-DR outlets that block LLM bots in robots.txt (e.g., Forbes 55 vs TechTarget 82 / Dev.to 94); ❌ archived Stripe Climate link & HARO; ⚠️ llms.txt demoted to optional",
       },
     },
     {

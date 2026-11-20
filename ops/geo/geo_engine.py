@@ -1,20 +1,20 @@
 #!/usr/bin/env python3
 """
-GEO Closed-Loop Engine (L1 -> L2 -> L3 -> L4 -> L5 Measure)
-Integrates 100% open-source APIs + Suski 50M LLM Answers empirical rules into one executable system.
+GEO Closed-Loop Engine v9.0 (Water System Model v9 · L1 -> L2 -> L3 -> L4 -> L5 · 24 Subcommands)
+Integrates 100% open-source APIs + Suski 50M LLM Answers + JOKER 6 Uncertainty Reductions + 6 Frontier Books.
 
 Modules:
-  1. [L1 Crawl & Pretrain]    Common Crawl CDX API + Wayback CDX + IndexNow real-time push
-  2. [L2 Entity & Ontology]   Wikidata Entity Resolution API + OpenAlex KG API + JSON-LD EAV validator
-  3. [L3 Fan-out & Prompts]   HuggingFace WildChat-1M API + Google Suggest Fan-out + HN Algolia UGC API
-  4. [L4 Chunking & 50-Words] First-50-Words BLUF & Brand Self-Attribution Auditor + Passage Scoring
-  5. [L5 Measure & Gap Audit] Audits ops/geo/panel results for PAGE_CITED != BRAND_NAMED leaks & 8 Tracking Rules
+  1. [L1 Crawl & Pretrain]    Common Crawl CDX API + Three Gates + 16-Planted-Bug Guards (`three-gates`, `audit-16-guards`)
+  2. [L2 Entity & Ontology]   Wikidata/OpenAlex KG + Connected @id Graph (+30%) + 4-Tuple Brand Consensus (`connected-kg`, `brand-consensus`, `entity-molecule`)
+  3. [L3 Fan-out & Prompts]   HF WildChat-1M + Google Suggest Fan-out + SERP Similarity (`fanout`, `serp-similarity`, `goany-trends`)
+  4. [L4 Chunking & Section]  First-50-Words BLUF + H2 Retrieval Candidates + SRO & 90d Recency + 4-7 Proprietary Assets (`section-candidates`, `sro-and-recency`, `proprietary-assets`)
+  5. [L5 Off-Site & Measure]  Publisher-First + AI Domain Impact Index (0-100) + 20-Prompt Live Panel (`publisher-finder`, `ai-domain-impact`, `run-live-panel`, `panel-gap`)
 
 Usage:
-  python3 ops/geo/geo_engine.py full-audit --domain jasonzhu.ai --query "best payment platform for indie saas"
-  python3 ops/geo/geo_engine.py fanout --query "indie saas payment gateway"
-  python3 ops/geo/geo_engine.py audit-blogs
-  python3 ops/geo/geo_engine.py panel-gap
+  python3 ops/geo/geo_engine.py section-candidates
+  python3 ops/geo/geo_engine.py connected-kg
+  python3 ops/geo/geo_engine.py ai-domain-impact --target dev.to
+  python3 ops/geo/geo_engine.py brand-consensus
 """
 
 from __future__ import annotations

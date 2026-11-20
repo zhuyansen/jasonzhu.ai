@@ -665,7 +665,7 @@ function Beginners({ isZh }: { isZh: boolean }) {
   );
 }
 
-// 增长这一步的总框架：Jason 的「通用 SEO 水系模型 v8」（从 2026-07-24 的 v4 演进到 2026-10-18 的 v8：14 个构件 + 五层水表 + 六道放水闸门 + Jason 6 条排名理论）。
+// 增长这一步的总框架：Jason 的「通用 SEO 水系模型 v9」（从 2026-07-24 的 v4 演进到 2026-11-20 的 v9：14 个构件 + 五层水表 + 六道放水闸门 + Jason 6 条排名理论 + v9 JOKER 6 减不确定性与 6 本海外经典定理）。
 function SeoSystem({ l, isZh }: { l: "zh" | "en"; isZh: boolean }) {
   const w = SEO_WATER_SYSTEM_V8;
   return (
@@ -673,11 +673,11 @@ function SeoSystem({ l, isZh }: { l: "zh" | "en"; isZh: boolean }) {
       <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">
         <p className="text-sm font-semibold text-gray-900">
           {isZh
-            ? "SEO 系统：通用 SEO 水系模型 v8（14 构件 · 5 层水表 · 6 道放水闸门）"
-            : "The SEO System: Water System Model v8 (14 Components · 5-Layer Meters · 6 Release Gates)"}
+            ? "SEO 系统：通用 SEO 水系模型 v9（14 构件 · 5 层水表 · 6 道放水闸门 · 6 减不确定性）"
+            : "The SEO System: Water System Model v9 (14 Components · 5-Layer Meters · 6 Gates · 6 Uncertainty Reductions)"}
         </p>
         <span className="text-xs px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 font-medium">
-          {isZh ? "v4 (07-24) → v8 (10-18 最新版)" : "v4 (Jul) → v8 (Oct 2026 Latest)"}
+          {isZh ? "v4 (07-24) → v9 (11-20 最新版)" : "v4 (Jul) → v9 (Nov 20, 2026 Latest)"}
         </span>
       </div>
       <p className="text-sm text-gray-600 leading-relaxed mb-3">{w.lead[l]}</p>
@@ -711,7 +711,7 @@ function SeoSystem({ l, isZh }: { l: "zh" | "en"; isZh: boolean }) {
         <div className="rounded-xl border border-amber-200 bg-amber-50/50 p-3 text-xs leading-relaxed">
           <p className="font-semibold text-gray-900 mb-1.5">
             {isZh
-              ? "🚧 v8 新增六道放水闸门（看到信号再做下一步）"
+              ? "🚧 v8 六道放水闸门（看到信号再做下一步）"
               : "🚧 v8's 6 Release Gates (Wait for the signal before the next step)"}
           </p>
           <ul className="space-y-1 text-gray-700 list-disc pl-4">
@@ -732,6 +732,25 @@ function SeoSystem({ l, isZh }: { l: "zh" | "en"; isZh: boolean }) {
             ))}
           </ol>
         </div>
+      </div>
+
+      {/* v9 新增：JOKER 降低机器 6 种不确定性与海外 6 本前沿经典 4 大增量定理 */}
+      <div className="mt-3 rounded-xl border border-indigo-200 bg-indigo-50/40 p-3 text-xs leading-relaxed">
+        <div className="flex flex-wrap items-center justify-between gap-1.5 mb-1">
+          <p className="font-semibold text-gray-900">
+            {isZh
+              ? `🧠 v9 增量（${w.v9Evolution.date}）：JOKER「降低机器 6 种不确定性」与海外 6 本经典 4 大定理`
+              : `🧠 v9 Evolution (${w.v9Evolution.date}): JOKER's 6 Uncertainty Reductions & 4 Frontier Book Theorems`}
+          </p>
+          <span className="font-mono text-[11px] px-2 py-0.5 rounded bg-white border border-indigo-200 text-indigo-700">
+            {w.v9Evolution.formula}
+          </span>
+        </div>
+        <ul className="space-y-1 text-gray-700 list-disc pl-4 mt-1.5">
+          {w.v9Evolution[l].map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
       </div>
 
       <FromMyPost post={MY_POSTS.seoSystem} lang={l} />

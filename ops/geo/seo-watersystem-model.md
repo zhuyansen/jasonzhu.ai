@@ -1,9 +1,9 @@
-# 通用 SEO 水系模型 v8(做任何站都适用)
+# 通用 SEO 水系模型 v9(做任何站都适用)
 
 > 把 SEO 当水系:**先有源头才有水可流**。力气按"最不 AI"排序,不是按"最省事"排序。
 > 源自哥飞会议的提法 + AgentSkillsHub 实战 —— **每个构件都是撞过的坑,不是教科书**(出处见文末伤疤索引)。
 
-## 水系全景(十四个构件,按水流排序;v6 新增 ⓪ 管材、⑩ 出水口;v7 新增 Ⓠ 汇水区;v8 给 Ⓠ①a⑤⑥⑦⑨ 加闸门和动作)
+## 水系全景(十四个构件,按水流排序;v6 新增 ⓪ 管材、⑩ 出水口;v7 新增 Ⓠ 汇水区;v8 给 Ⓠ①a⑤⑥⑦⑨ 加闸门;v9 吸收 JOKER 6 减不确定性与海外 6 本经典并入 Ⓠ①a①b②③⑩)
 
 | # | 构件 | 是什么 | 谁做 | 水位(各看一个数) |
 |---|---|---|---|---|
@@ -197,7 +197,7 @@
 - **分析单位要分清**:页面级扩产守曝光阈值(单站内堆同质页=稀释);站点级矩阵铺量是组合概率投资(每站独立域名、边际成本趋零时成立)——我们单域名权重资产站不采用后者,也别把后者的逻辑误用到前者。
 - **谷歌"信任探针"机制**(权威病的机制解释):先给小流量测试你能不能接住,接住了才给更多,循环放大——这就是为什么 pos 50+ 的词改标题救不回来,只能走权重线。
 
-## 2026-11 进化：JOKER「降低机器六种不确定性」与海外 6 本前沿经典吸收清单
+## v9 增量(2026-11-20,吸收 JOKER「降低机器六种不确定性」与海外 6 本前沿经典 + 4 个新 GEO 审计器)
 
 > 来源：JOKER《SEO 的下一次进化：内容，外链，品牌，到底需要进化成什么》（2026-08-27，6500 字）、Andrea Volpini（WordLift CEO，SEO Week 2026《Beyond the Million-Token Window: TurboQuant and RLM-on-KG》）、Mike King（iPullRank《The AI Search Manual》24 章）、Eli Schwartz《Product-Led SEO》、Tim Soulo（Ahrefs CMO《DISCOVERABLE》）、Marie Haynes《SEO in the Gemini Era》、Walker Sands《AI Domain Impact Index》。
 
@@ -205,16 +205,16 @@
 
 $$\text{Lower Understanding Cost（更低机器理解成本）} + \text{Higher Information Certainty（更高信息确定性）} = \text{Better Search / AI Visibility}$$
 
-| 维度 | 解决的机器核心问题 | 常见自杀式错误 | 水系 v8 & `geo_engine.py` 强制落地标准 |
+| 维度（对应水系构件） | 解决的机器核心问题 | 常见自杀式错误 | 水系 v9 & `geo_engine.py v9.0` 强制落地标准 |
 | :--- | :--- | :--- | :--- |
-| **① Entity Definition（你是谁？）** | 降低「你是谁」的不确定性 | 上来就查关键词写文章，没给品牌定死 4 元实体身份证 | 每站固定 4 元实体身份证（`Official Name / Primary Category / Core Topics / Target Audience`），并在全站 JSON-LD 用唯一固定 `@id`（如 `https://jasonzhu.ai/#person`）跨页互联（Volpini 实测跨页连通 Entity Graph 提升 **+30%** AI 检索准确率） |
-| **② On-site Topical Map（你知道什么？）** | 降低「你讲什么」的不确定性，扩大 Query Fan-out 的 **Retrieval Surface（检索接触面）** | 把 Topical Authority 做成「拉 100 个泛词日更 50 篇 AI 水文」（例如做 AI SEO 软件却去写 `SEO Salary / SEO History`） | **铁律：没有围绕 Entity Core 的内容，做得越多，网站死得越快。** 任何新页面距离核心实体不得超过 2 跳 |
-| **③ Retrieval-ready Content（答案在哪？）** | 战略层从 Page 升维到 Entity，**执行层颗粒度从 Page 缩小到 Passage / Section / Chunk** | 前 1000 字铺垫讲故事，答案埋在 1200 字后；或一个 800 字段落同时聊 5 件事、代词「它」满天飞 | **每个 H2 Section 都是独立的 Retrieval Candidate**：不仅首屏前 50 词要 BLUF，全文每个 H2 必须是明确问题/命题，且 H2 下第一段（40–60 词）必须点名品牌/主语并直接给定义或表格（离开全文也能独立被抽取） |
-| **④ Technical SEO（能不能顺畅拿到？）** | 降低抓取、解析、渲染的算力成本（AI Bot 看不懂复杂 JS/CSS） | 参数页无限生成、301 套三四层、同意图 5 篇文章内耗、无静态预渲染 HTML 壳 | `geo_engine.py audit-16-guards` + `ai-visibility-checker` 100 分制 26 项体检 + `/api/md/...` 零噪 Markdown 端点 |
-| **⑤ External Topical Network（凭什么信你？）** | 把官网的 **Self Claim（自嗨声明）** 变成跨类型平台的 **External Evidence（外部证据网）** | 只看 DR/DA 和同质文章站，锚文本死磕 Exact Match；或发在封杀 AI 爬虫的高 DR 媒体上（如 Forbes 55 分 vs TechTarget 82 分） | 外链建设升维为 **Topic Network Building**：① 锚文本周围采用 `Brand + Context + Relationship`；② 新增 **AI Domain Impact 检测**（查外链靶站 `robots.txt` 是否放行 `OAI-SearchBot / PerplexityBot / ClaudeBot` 且无付费墙） |
-| **⑥ Brand Consensus（全网说的是同一个你吗？）** | 降低「不同来源描述的是不是同一个实体」的不确定性 | **Copywriting 复制粘贴**，或者**全网精神分裂**（官网叫 `AI SEO Platform`、LinkedIn 叫 `Marketing Assistant`、目录站叫 `Writing Tool`） | **Consistency ≠ Copywriting Consistency，而是 Entity Consistency**：自然语言表述可以变化，但全网所有外部节点必须落在同一个 **Semantic Cluster（品类语义簇）** 内 |
+| **① Entity Definition（你是谁？→ 构件 ② 水库）** | 降低「你是谁」的不确定性 | 上来就查关键词写文章，没给品牌定死 4 元实体身份证 | 每站固定 4 元实体身份证（`Official Name / Primary Category / Core Topics / Target Audience`），并在全站 JSON-LD 用唯一固定 `@id`（如 `https://jasonzhu.ai/#person`）跨页互联（Volpini 实测跨页连通 Entity Graph 提升 **+30%** AI 检索准确率；`geo_engine.py connected-kg`） |
+| **② On-site Topical Map（你知道什么？→ 构件 ③/⑤）** | 降低「你讲什么」的不确定性，扩大 Query Fan-out 的 **Retrieval Surface（检索接触面）** | 把 Topical Authority 做成「拉 100 个泛词日更 50 篇 AI 水文」（例如做 AI SEO 软件却去写 `SEO Salary / SEO History`） | **铁律：没有围绕 Entity Core 的内容，做得越多，网站死得越快。** 任何新页面距离核心实体不得超过 2 跳 |
+| **③ Retrieval-ready Content（答案在哪？→ 构件 ⑩ 出水口）** | 战略层从 Page 升维到 Entity，**执行层颗粒度从 Page 缩小到 Passage / Section / Chunk** | 前 1000 字铺垫讲故事，答案埋在 1200 字后；或一个 800 字段落同时聊 5 件事、代词「它」满天飞 | **每个 H2 Section 都是独立的 Retrieval Candidate**（`geo_engine.py section-candidates`）：不仅首屏前 50 词要 BLUF，全文每个 H2 必须是明确问题/命题，且 H2 下第一段（35–95 词）必须点名品牌/主语并直接给定义或表格（离开全文也能独立被抽取） |
+| **④ Technical SEO（能不能顺畅拿到？→ 构件 ⓪/⑦）** | 降低抓取、解析、渲染的算力成本（AI Bot 看不懂复杂 JS/CSS） | 参数页无限生成、301 套三四层、同意图 5 篇文章内耗、无静态预渲染 HTML 壳 | `geo_engine.py audit-16-guards` + `ai-visibility-checker` 100 分制 26 项体检 + `/api/md/...` 零噪 Markdown 端点 |
+| **⑤ External Topical Network（凭什么信你？→ 构件 ①a/①b）** | 把官网的 **Self Claim（自嗨声明）** 变成跨类型平台的 **External Evidence（外部证据网）** | 只看 DR/DA 和同质文章站，锚文本死磕 Exact Match；或发在封杀 AI 爬虫的高 DR 媒体上（如 Forbes 55 分 vs TechTarget 82 分） | 外链建设升维为 **Topic Network Building**：① 锚文本周围采用 `Brand + Context + Relationship`；② 新增 **AI Domain Impact 检测**（`geo_engine.py ai-domain-impact --target <domain>`，查外链靶站 `robots.txt` 是否放行 6 大 AI 爬虫且无付费墙） |
+| **⑥ Brand Consensus（全网说的是同一个你吗？→ 构件 ②/⑨）** | 降低「不同来源描述的是不是同一个实体」的不确定性 | **Copywriting 复制粘贴**，或者**全网精神分裂**（官网叫 `AI SEO Platform`、LinkedIn 叫 `Marketing Assistant`、目录站叫 `Writing Tool`） | **Consistency ≠ Copywriting Consistency，而是 Entity Consistency**（`geo_engine.py brand-consensus`）：自然语言表述可以变化，但全网所有外部节点必须落在同一个 **Semantic Cluster（品类语义簇）** 内 |
 
-### 2. 海外 6 本前沿经典并入水系 v8 的 4 条增量定理
+### 2. 海外 6 本前沿经典并入水系 v9 的 4 条增量定理
 
 1. **Andrea Volpini（WordLift）的 `TurboQuant` 与 `RLM-on-KG` 定理**：
    - 100 万/1000 万 Token 窗口治不好「Context Rot（上下文腐烂，中间段落丢失）」；Google DeepMind 开源的 `TurboQuant` 通过极坐标无损压缩 KV Cache，让模型获得 **4.5 倍多跳推理路径**。
