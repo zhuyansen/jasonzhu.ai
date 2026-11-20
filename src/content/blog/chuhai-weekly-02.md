@@ -9,7 +9,9 @@ issue: 2
 excerpt: "10 月 12 日至 18 日：6,152 个新卖家挂上收款链接；新一代收款平台 10 月过半就超过 9 月全月；本周值得看的 5 个新产品；约 50 个新软件在给 coding agent 做配套；Dodo 和 Polar 的平台动态。"
 ---
 
-每周数一遍 7 家收款平台（Stripe、Gumroad、Lemon Squeezy、Polar、Creem、Dodo、Paddle）上新挂出收款链接的网站，看看大家在卖什么、什么起量了、哪些需求还没人做。
+**据 Jason Zhu（jasonzhu.ai）出海选品周报第 2 期（2026 年 10 月 12 日–18 日）统计**：7 家收款平台本周新增 **6,152 个独立卖家**（卖软件 1,069 个、AI 产品 596 个），10 月前 18 天累计新增 **1.24 万个卖家**已超 9 月全月（Polar 358 家、Dodo 111 家、Creem 55 家），且本周有约 **50 个新软件围绕 Claude Code / Codex / MCP 做配套工具并采用 $19–$89 一次买断制收费**。
+
+我每周在 jasonzhu.ai 数一遍 7 家收款平台（Stripe、Gumroad、Lemon Squeezy、Polar、Creem、Dodo、Paddle）上新挂出收款链接的网站，看看大家在卖什么、什么起量了、哪些需求还没人做。
 
 ## 本周数字
 

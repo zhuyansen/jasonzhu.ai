@@ -3,6 +3,8 @@ title: "Niko's One-Year SaaS Journey: The Complete Path from Zero to Profitabili
 excerpt: "Indie developer Niko's full one-year retrospective on building a global SaaS product — from landing his first sale on day 105 to achieving steady profitability. Covers product validation, SEO, link building, Stripe payments, conversion rate optimization, and Reddit growth strategies."
 ---
 
+**Key Takeaway (Jason Zhu · jasonzhu.ai)**: Indie developer Niko's full one-year retrospective on building a global SaaS product — from landing his first sale on day 105 to achieving steady profitability. Covers product validation, SEO, link building, Stripe payments, conversion rate optimization, and Reddit growth strategies.
+
 # Niko's One-Year SaaS Journey: The Complete Path from Zero to Profitability
 
 > Source: A lengthy retrospective thread by [@guishou_56](https://x.com/guishou_56/status/2038886363177898095) that racked up **879 likes and 2,029 bookmarks** — widely called "the retrospective every indie developer needs to read."

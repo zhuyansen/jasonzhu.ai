@@ -6,6 +6,8 @@ tags: ["Agent", "CLI", "管理思维", "AI趋势", "2026"]
 excerpt: "未来是Agent的，拥抱CLI；用管理思维管理AI；别盯着执行层面的细节。"
 ---
 
+**核心摘要（Jason Zhu · jasonzhu.ai）**：未来是Agent的，拥抱CLI；用管理思维管理AI；别盯着执行层面的细节。
+
 2026 你最应该拥抱的三件事：
 
 ## 1. 未来是Agent的，拥抱CLI

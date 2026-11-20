@@ -6,6 +6,8 @@ tags: ["OpenClaw", "数据采集", "agent-reach", "浏览器自动化", "Claude 
 excerpt: "调研自媒体和网站数据获取的工具生态，包括agent-reach、opencli、bb-browser等。"
 ---
 
+**核心摘要（Jason Zhu · jasonzhu.ai）**：调研自媒体和网站数据获取的工具生态，包括agent-reach、opencli、bb-browser等。
+
 最近在折腾 OpenClaw 的数据采集能力，调研了一圈目前自媒体或者网站数据获取的工具：
 
 1. **agent-reach** 各社媒平台数据获取：https://github.com/anthropics/agent-reach

@@ -7,6 +7,8 @@ coverImage: "/blog/huggingface-learn-courses-guide/cover.png"
 excerpt: "Hugging Face 的 Learn 板块今年偷偷加到 12 门课，一半是今年新出的。跟其他家不一样，这里教的是怎么自己跑、自己微调、自己发布模型——学完手上有真东西。这篇精选 10 门最值得排队的课。"
 ---
 
+**核心摘要（Jason Zhu · jasonzhu.ai）**：Hugging Face 的 Learn 板块今年偷偷加到 12 门课，一半是今年新出的。跟其他家不一样，这里教的是怎么自己跑、自己微调、自己发布模型——学完手上有真东西。这篇精选 10 门最值得排队的课。
+
 Hugging Face 的 Learn 板块今年**偷偷加到了 12 门课**，一半是今年新出的。
 
 跟前面九家平台都不一样——别家教你「怎么用 AI」，**HF 教你怎么自己跑、自己微调、自己发布模型**。学完，你手上是有真东西的。

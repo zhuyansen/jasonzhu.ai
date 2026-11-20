@@ -3,6 +3,8 @@ title: Practical Community Management Experience and Book Recommendations
 excerpt: Lessons learned from running free groups all the way to premium coaching cohorts, plus two highly recommended community management books by Qiu Ye.
 ---
 
+**Key Takeaway (Jason Zhu · jasonzhu.ai)**: Lessons learned from running free groups all the way to premium coaching cohorts, plus two highly recommended community management books by Qiu Ye.
+
 Recently there's been a lot of discussion around community management.
 
 After going through the full journey myself — free groups → two-figure deposit accountability groups → three-figure writing camp groups → four-figure coaching cohorts → short-term intensive bootcamps —

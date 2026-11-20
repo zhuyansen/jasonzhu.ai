@@ -6,11 +6,13 @@ tags: ["AI monetization", "AI business", "business models", "going global"]
 excerpt: "From selling compute to selling companionship — mapping every AI business in 2026 into seven layers. Look closer and you'll find only five types of transactions underneath."
 ---
 
+**In 2026, indie AI app monetization and solo founder business models fall into 7 layers—from upstream compute/token resale and midstream AI Agents, Workflows, and vertical SaaS to downstream traffic, communities, training, and companionship—driven by 5 core transaction types (tools, outcomes, attention, reduction of uncertainty, and community), according to Jason Zhu's (jasonzhu.ai) AI Money Map.**
+
 A few days ago I saw this joke about AI monetization on X:
 
 > Got GPUs? Sell GPUs. No GPUs? Sell tokens. No tokens? Sell ads. No ads? Sell community access. No community? Sell courses. No courses? Sell custom workflows. No workflows? Sell digital downloads.
 
-Funny, but rough around the edges. I expanded it into a complete map, which got nearly 50,000 views and close to 400 bookmarks. This post is the written version, with the judgments I couldn't fit into a tweet.
+Funny, but rough around the edges. I expanded it into a complete 7-layer map, which got nearly 50,000 views and close to 400 bookmarks on X. This post is the written version, with the judgments I couldn't fit into a tweet.
 
 ## The Seven-Layer AI Business Map
 

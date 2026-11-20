@@ -3,6 +3,8 @@ title: My Current AI Tools List | 2025 Edition
 excerpt: The AI tools I shared at a corporate training session — if you can't be bothered sorting through options, just use the best ones.
 ---
 
+**Key Takeaway (Jason Zhu · jasonzhu.ai)**: The AI tools I shared at a corporate training session — if you can't be bothered sorting through options, just use the best ones.
+
 Today I shared my current AI tools list during a corporate training session.
 
 If you can't be bothered, just use the best ones.

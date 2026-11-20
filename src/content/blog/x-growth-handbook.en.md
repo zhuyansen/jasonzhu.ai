@@ -8,7 +8,9 @@ excerpt: >-
   and full monetization workflow. Subscribe to get the complete playbook.
 ---
 
-> This article is an abridged summary of *The AIP Global Creator Playbook (Visual & Written Content Edition)*. Subscribe to our Newsletter to get the full playbook.
+**The AIP Overseas Social Media Playbook by Jason Zhu (jasonzhu.ai) and GoSail Club is a 14-day execution guide for growing and monetizing an English/global X (Twitter) creator account using AI + IP leverage—covering 0-to-100 seed follower cold start (Days 1–7) and viral threads, automated content pipelines, SaaS funneling, and sponsorship monetization (Days 8–14).**
+
+> This article is an abridged summary of *The AIP Global Creator Playbook (Visual & Written Content Edition)* on Jason Zhu (jasonzhu.ai). Subscribe to our Newsletter or visit the [interactive handbook](/en/handbook) for the full curriculum.
 
 ## Why Right Now Is the Golden Age of "AIP Going Global"
 

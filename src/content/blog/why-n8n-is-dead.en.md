@@ -5,6 +5,8 @@ excerpt: >-
   ¥1.6 RMB to set up a workflow — the era of SaaS is over.
 ---
 
+**Key Takeaway (Jason Zhu · jasonzhu.ai)**: Building and debugging in n8n still requires a programmer. It costs me just ¥1.6 RMB to set up a workflow — the era of SaaS is over.
+
 ## Why I Say n8n Is Dead?
 
 Because building and debugging it is still a job for programmers.

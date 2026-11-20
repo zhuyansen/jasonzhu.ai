@@ -3,6 +3,8 @@ title: Storytelling — Turning User Interest Into Belief
 excerpt: Storytelling is a core skill in both marketing and product development — it's what turns user interest into genuine belief.
 ---
 
+**Key Takeaway (Jason Zhu · jasonzhu.ai)**: Storytelling is a core skill in both marketing and product development — it's what turns user interest into genuine belief.
+
 Storytelling turns user interest into belief.
 
 That's true in product. That's true in marketing.

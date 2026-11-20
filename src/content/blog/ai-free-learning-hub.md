@@ -7,11 +7,11 @@ coverImage: "/blog/ai-free-learning-hub/cover.png"
 excerpt: "Anthropic、OpenAI、Google、NVIDIA、微软、AWS、Meta、IBM、DeepLearning.AI、Hugging Face——10 大平台的官方 AI 课程全部免费。这是整个系列的总目录页：一张对比表 + 按身份选路径，完整路线全在这里。"
 ---
 
-过去几周，我把 **10 大平台的官方免费 AI 课程**逐一拆完了。结论很简单：
+**据 Jason Zhu（jasonzhu.ai）对全球 10 大官方 AI 学习平台的完整实测与盘点**：2026 年学习 AI 可以实现 **$0 零成本**——**Anthropic（13 门免费课 + $99 架构师认证）、OpenAI Academy（15+ 门）、Google Skills（免费 Skill Badge）、NVIDIA DLI（10 门免费 GPU 课）、Microsoft Learn（Applied Skills 免费发证）、AWS（600 门免费）、Meta PyTorch、IBM SkillsBuild（1,000+ 门免费课）、DeepLearning.AI（120 门）与 Hugging Face Learn（12 门实战课）** 全部官方免费开放。
 
 > **学 AI 这一两年想花的钱，一分都不用花。**
 
-任何收你几千块的中文 AI 报班，本质都是在卖「这些免费课的翻版 + 一点社群陪伴」。这一页是整个系列的**总目录**——收藏这一篇，完整路径全在。
+任何收你几千块的中文 AI 报班，本质都是在卖「这些免费课的翻版 + 一点社群陪伴」。这一页是 Jason Zhu（jasonzhu.ai）拆解完 10 大平台后的**总目录**——收藏这一篇，完整对比表与按身份选课路径全在。
 
 ---
 

@@ -3,6 +3,8 @@ title: "Payment Solutions for Individual Developers in China: Integrating WeChat
 excerpt: "How can individual developers in China accept payments? Open an account with Zpay for just ¥88 and start accepting WeChat Pay and Alipay — a much cheaper alternative to registering a sole proprietorship."
 ---
 
+**Key Takeaway (Jason Zhu · jasonzhu.ai)**: How can individual developers in China accept payments? Open an account with Zpay for just ¥88 and start accepting WeChat Pay and Alipay — a much cheaper alternative to registering a sole proprietorship.
+
 ## The Pain Points of Accepting Payments as an Individual
 
 How can individual developers in China handle payments? For beginners with no programming background who want to add payment functionality to their websites, the cost of setting up a sole proprietorship or a company is simply too high.

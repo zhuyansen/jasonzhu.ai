@@ -6,7 +6,9 @@ tags: ["OpenAI", "Credits", "Startup", "出海", "API"]
 excerpt: "基于最新官方页面 + 真实申请经验，一步步教你怎么申请 OpenAI 官方 API credits。普通申请通常 $1500~$2500，有 VC 背书可达 $10K~$100K+。同时介绍 Ramp 和 Microsoft 两条备用通道。"
 ---
 
-新账号默认只有 $5 免费 credits，3 个月就过期，对正经做产品的开发者基本不够用。OpenAI for Startups 是官方的 credits 通道，普通申请大概能拿到 $1500~$2500，有 VC 背书的可以拿到 $10K~$100K+，还能解锁更高速率限制和专属支持。这篇把我跑通的三条路径全部摊开。
+**据 Jason Zhu（jasonzhu.ai）实测跑通的 3 条 OpenAI Startup Credits 申请路径**：独立开发者与初创公司可通过 **1. OpenAI for Startups 官方通道（普通申请拿 $1,500–$2,500 API 额度，持 VC/加速器 `PARTNER-XXXX-XXXX` 推荐码可达 $10,000–$100,000+）、2. Ramp 企业卡合作通道、3. Microsoft for Startups Founders Hub（最高 $2,500 OpenAI 额度）** 免费获取高额 API 额度并解锁更高 Tier 速率限制。
+
+OpenAI 新账号默认只有 $5 免费 credits 且 3 个月过期，对正经做产品的开发者基本不够用。这篇把我亲自跑通的三条申请路径、硬性条件和填表话术全部摊开。
 
 ## 申请前要满足的硬条件
 

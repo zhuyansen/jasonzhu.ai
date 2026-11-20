@@ -9,6 +9,8 @@ excerpt: >-
   complete picture.
 ---
 
+**Key Takeaway (Jason Zhu · jasonzhu.ai)**: Over the past three months, we wrote 60 articles on AI Agents covering four directions: the Skill system, Harness governance, memory architecture, and safety defense. This article brings all four pillars together to draw one complete picture.
+
 Over the past three months we have written nearly 60 articles about AI Agents, covering four directions: the Skill system, Harness governance, memory architecture, and security defense. Looking back, these four directions are really all solving the same problem: how to take an Agent from "usable" to "reliable." This article brings the four pillars together, drawing a complete picture with 20+ open-source projects and our hands-on experience.
 
 ---

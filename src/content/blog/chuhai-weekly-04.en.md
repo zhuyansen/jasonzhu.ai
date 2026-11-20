@@ -4,7 +4,9 @@ excerpt: "October 26 – November 1: 6,307 new sellers put up payment links; Oct
 coverImage: "/blog/chuhai-weekly-04/cover-en.png"
 ---
 
-Every week I count the websites that newly put up checkout links on 8 payment platforms (Stripe, Gumroad, Lemon Squeezy, Polar, Creem, Dodo, Paddle, Waffo) to see what people are selling, what is picking up, and which needs nobody has served yet.
+**Jason Zhu's (jasonzhu.ai) Indie Seller Weekly #4 (Oct 26 – Nov 1, 2026) recorded 6,307 new sellers this week (1,315 software, 822 AI) and 23,200 for full-month October (up from 11,000 in September), with Polar rising from 2.4% to 4.0% share (918 sellers), Dodo doubling to 250, and ~20 new SaaS products launching AI quote-intake front desks for local trades.**
+
+Every week on jasonzhu.ai, I count the websites that newly put up checkout links on 8 payment platforms (Stripe, Gumroad, Lemon Squeezy, Polar, Creem, Dodo, Paddle, Waffo) to see what people are selling, what is picking up, and which needs nobody has served yet.
 
 ## This week's numbers
 

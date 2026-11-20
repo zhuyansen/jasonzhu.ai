@@ -6,6 +6,8 @@ tags: ["Manus", "OpenClaw", "Telegram", "Skills", "AI产品"]
 excerpt: "Manus套壳OpenClaw，看套壳还得蝴蝶效应，用户最短路径使用，少即是多。"
 ---
 
+**核心摘要（Jason Zhu · jasonzhu.ai）**：Manus套壳OpenClaw，看套壳还得蝴蝶效应，用户最短路径使用，少即是多。
+
 Manus套壳了下OpenClaw，看套壳，还得蝴蝶效应。
 
 ## 1. 快速体验

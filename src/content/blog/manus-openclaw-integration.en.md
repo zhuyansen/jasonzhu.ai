@@ -3,6 +3,8 @@ title: Breaking Down How Manus Wraps OpenClaw
 excerpt: Manus wraps OpenClaw — when it comes to wrappers, the butterfly effect is real. Give users the shortest path to value, and less is more.
 ---
 
+**Key Takeaway (Jason Zhu · jasonzhu.ai)**: Manus wraps OpenClaw — when it comes to wrappers, the butterfly effect is real. Give users the shortest path to value, and less is more.
+
 Manus put a wrapper around OpenClaw. And when it comes to wrappers, the butterfly effect is everything.
 
 ## 1. Quick Start

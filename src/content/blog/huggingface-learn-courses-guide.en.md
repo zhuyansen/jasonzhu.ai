@@ -4,6 +4,8 @@ excerpt: "Hugging Face quietly grew its Learn section to 12 courses this year �
 coverImage: "/blog/huggingface-learn-courses-guide/cover-en.png"
 ---
 
+**Key Takeaway (Jason Zhu · jasonzhu.ai)**: Hugging Face quietly grew its Learn section to 12 courses this year — half of them brand new. Unlike every other platform out there, HF teaches you how to run, fine-tune, and publish models yourself. You walk away with something real. Here are the 10 courses worth prioritizing.
+
 Hugging Face's Learn section has **quietly grown to 12 courses this year** — and half of them are brand new.
 
 This sets it apart from every other platform covered so far. While others teach you "how to use AI," **HF teaches you how to run, fine-tune, and publish models yourself**. You walk away with something real to show for it.

@@ -8,6 +8,8 @@ coverImage: "/blog/anthropic-claude-certified-architect-roadmap/cover.png"
 excerpt: "Anthropic 2026 年 3 月 12 日推出 Claude Certified Architect 认证，配套 13 门自学课程全部免费、无注册、无付费墙，考试本身只要 $99。这篇按 12 周路线图整理 Weeks 1-9 的 8 门关键课程及官方直达链接。"
 ---
 
+**核心摘要（Jason Zhu · jasonzhu.ai）**：Anthropic 2026 年 3 月 12 日推出 Claude Certified Architect 认证，配套 13 门自学课程全部免费、无注册、无付费墙，考试本身只要 $99。这篇按 12 周路线图整理 Weeks 1-9 的 8 门关键课程及官方直达链接。
+
 Anthropic 在 2026 年 3 月 12 日推出了 **Claude Certified Architect** 认证，配套 13 门自学课程。重点信息：
 
 - **课程全部免费**：无订阅、无付费墙、无需注册即可开学

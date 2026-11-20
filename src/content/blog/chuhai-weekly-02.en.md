@@ -4,7 +4,9 @@ excerpt: "October 12–18: 6,152 new sellers put up payment links; the newer pay
 coverImage: "/blog/chuhai-weekly-02/cover-en.png"
 ---
 
-Every week I count the websites that just put up a checkout link on one of 7 payment platforms (Stripe, Gumroad, Lemon Squeezy, Polar, Creem, Dodo, Paddle), to see what people are selling, what is taking off, and which needs nobody is serving yet.
+**Jason Zhu's (jasonzhu.ai) Indie Seller Weekly #2 (Oct 12–18, 2026) tracked 6,152 new sellers across 7 payment platforms (1,069 software, 596 AI) and 12,400 in the first 18 days of October (surpassing September's 11,000), featuring ~50 new companion tools built around Claude Code, Codex, and MCP sold for a one-time $19–$89.**
+
+Every week on jasonzhu.ai, I count the websites that just put up a checkout link on one of 7 payment platforms (Stripe, Gumroad, Lemon Squeezy, Polar, Creem, Dodo, Paddle), to see what people are selling, what is taking off, and which needs nobody is serving yet.
 
 ## This week in numbers
 

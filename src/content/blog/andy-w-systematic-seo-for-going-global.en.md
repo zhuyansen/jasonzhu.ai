@@ -3,6 +3,8 @@ title: Andy W's Systematic SEO Strategy Breakdown
 excerpt: SEO is fundamentally a win-win — a value exchange between you and Google. Here's a breakdown of Andy W's systematic approach to SEO.
 ---
 
+**Key Takeaway (Jason Zhu · jasonzhu.ai)**: SEO is fundamentally a win-win — a value exchange between you and Google. Here's a breakdown of Andy W's systematic approach to SEO.
+
 I caught Andy W's talk on systematic SEO today and realized he's actually a member of my own community.
 
 ## The Core of SEO Is Mutual Value

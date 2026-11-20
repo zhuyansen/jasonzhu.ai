@@ -3,6 +3,8 @@ title: "Reddit Indie Hacker Marketing Tips: 7 Practical Pieces of Advice"
 excerpt: A Reddit post summarizing 7 battle-tested tips for indie hackers, covering everything from ideas and experimentation to staying the course.
 ---
 
+**Key Takeaway (Jason Zhu · jasonzhu.ai)**: A Reddit post summarizing 7 battle-tested tips for indie hackers, covering everything from ideas and experimentation to staying the course.
+
 A Reddit post on indie hacker experience:
 
 1. **You don't need an original idea** — Good execution beats a novel idea every time

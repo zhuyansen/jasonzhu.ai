@@ -6,6 +6,8 @@ tags: ["AI工具", "Gemini", "Deepseek", "Claude", "NotebookLM", "豆包", "工�
 excerpt: "企业培训分享的AI工具清单，嫌麻烦只用最好的就行。"
 ---
 
+**核心摘要（Jason Zhu · jasonzhu.ai）**：企业培训分享的AI工具清单，嫌麻烦只用最好的就行。
+
 今天给企业培训分享了一下我目前在使用的AI工具清单
 
 嫌麻烦只用最好的就行

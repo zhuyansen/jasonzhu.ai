@@ -6,6 +6,8 @@ tags: ["AI产品", "营销", "MVP", "waitlist"]
 excerpt: "AI产品营销最轻量的方式：Localhost就演示看市场反馈，填waitlist。"
 ---
 
+**核心摘要（Jason Zhu · jasonzhu.ai）**：AI产品营销最轻量的方式：Localhost就演示看市场反馈，填waitlist。
+
 AI产品营销范本
 
 Localhost就演示看市场反馈，填waitlist。

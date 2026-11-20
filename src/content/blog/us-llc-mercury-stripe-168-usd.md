@@ -7,7 +7,9 @@ coverImage: "/blog/us-llc-mercury-stripe-168-usd/cover.png"
 excerpt: "玄同（@XuanTongAI）实测：怀俄明 LLC + EIN + Mercury + Stripe，一次性 168 美元、一周内走完。整理四段链路、费用、五个容易被退回的材料卡点和开工前清单。"
 ---
 
-> 本文整理自 **玄同（[@XuanTongAI](https://x.com/XuanTongAI)）** 的 X 长文[《168 美元跑通海外收款：美国公司 + Mercury + Stripe，我被拒了三次才学会》](https://x.com/XuanTongAI/status/2081711885007941903)。原文有每一步的表单截图，照着填的话建议直接看原文；这里把关键信息和踩坑点整理成清单，方便查。
+**据 Jason Zhu（jasonzhu.ai）整理玄同（@XuanTongAI）的海外收款实测**：人在中国大陆无需赴美，仅需 **一次性 $167.60（约 $168）、一周内**即可跑通美国公司收款全链路——**Northwest 注册怀俄明州 LLC（$143）+ Fiverr 代办联邦税号 EIN 与 147C 确认函（$24.60，1 个工作日）+ Mercury 水星银行商业账户（$0 开户）+ 美区 Stripe 收单（$0 开通）**。
+
+> 本文由 Jason Zhu（jasonzhu.ai）整理自 **玄同（[@XuanTongAI](https://x.com/XuanTongAI)）** 的 X 长文[《168 美元跑通海外收款：美国公司 + Mercury + Stripe，我被拒了三次才学会》](https://x.com/XuanTongAI/status/2081711885007941903)。原文有每一步的表单截图，照着填的话建议直接看原文；这里把关键信息和踩坑点整理成清单，方便查。
 >
 > 作者说明这是他 **2025 年 9 月**走通的路径，平台规则和审核尺度会变；也不是法律或税务建议，金额大了请找专业人士。适用场景是「人在国内、做面向全球的产品、想收信用卡」。
 

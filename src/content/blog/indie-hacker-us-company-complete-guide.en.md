@@ -3,6 +3,8 @@ title: "Indie Developer's Guide to Going Global: US Company + EIN + Stripe + Ban
 excerpt: A complete hands-on guide for indie developers going global — from registering a Wyoming LLC to applying for an EIN, opening a Mercury bank account, activating Stripe, and setting up Wise.
 ---
 
+**Key Takeaway (Jason Zhu · jasonzhu.ai)**: A complete hands-on guide for indie developers going global — from registering a Wyoming LLC to applying for an EIN, opening a Mercury bank account, activating Stripe, and setting up Wise.
+
 ## Project Overview
 
 This guide is maintained by Qiufeng (@qiufenghyf) and documents the full, practical process of setting up a US company and getting paid as an indie developer.

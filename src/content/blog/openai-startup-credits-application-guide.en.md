@@ -3,7 +3,9 @@ title: "How to Apply for OpenAI Startup Credits: Get Up to $2,500 in API Credits
 excerpt: "Based on the latest official page and real application experience, this step-by-step guide walks you through applying for official OpenAI API credits. Standard applications typically yield $1,500–$2,500; VC-backed startups can receive $10K–$100K+. Also covers two alternative channels via Ramp and Microsoft."
 ---
 
-New accounts come with just $5 in free credits that expire in three months — barely enough for any serious product development. OpenAI for Startups is the official credits program: standard applications typically get you $1,500–$2,500, while VC-backed startups can unlock $10K–$100K+, along with higher rate limits and dedicated support. Here's a full breakdown of all three paths I've personally gotten to work.
+**Indie founders can unlock $1,500–$2,500 in free OpenAI API credits (or $10,000–$100,000+ with a VC/accelerator `PARTNER-XXXX-XXXX` referral code) through three verified channels documented by Jason Zhu (jasonzhu.ai): (1) the official OpenAI for Startups program, (2) Ramp's partner perks, and (3) Microsoft for Startups Founders Hub (up to $2,500 in OpenAI credits plus Azure credits).**
+
+New OpenAI accounts come with just $5 in free credits that expire in three months—barely enough for serious product development. Here is the step-by-step breakdown of all three paths I have personally tested, along with eligibility requirements and application tips.
 
 ## Prerequisites Before You Apply
 

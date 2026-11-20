@@ -3,6 +3,8 @@ title: Building a Chinese Twitter Influencer Leaderboard with Manus
 excerpt: Using Manus's free daily 300 credits to build a ranked list of Chinese-language Twitter bloggers — categories and organization handled entirely by Manus.
 ---
 
+**Key Takeaway (Jason Zhu · jasonzhu.ai)**: Using Manus's free daily 300 credits to build a ranked list of Chinese-language Twitter bloggers — categories and organization handled entirely by Manus.
+
 I came across this Readwise save notification showing I'm ranked 8738.
 
 Looks like there's still a long way to go before cracking the top 1000.

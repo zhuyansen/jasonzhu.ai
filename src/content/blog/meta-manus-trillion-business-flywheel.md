@@ -6,6 +6,8 @@ tags: ["Meta", "Manus", "AI代理", "商业飞轮", "达人经济"]
 excerpt: "Meta + Manus，200万达人库+30亿用户，搭建AI代理的第一个万亿级商业飞轮。"
 ---
 
+**核心摘要（Jason Zhu · jasonzhu.ai）**：Meta + Manus，200万达人库+30亿用户，搭建AI代理的第一个万亿级商业飞轮。
+
 Meta + Manus
 
 200万达人库 + 30亿用户

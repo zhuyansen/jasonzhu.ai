@@ -6,6 +6,8 @@ tags: ["出海工具", "SEO工具", "AITDK", "SEOquake", "Wappalyzer", "竞品�
 excerpt: "三款出海调研必备浏览器插件：AITDK、SEOquake和Wappalyzer，帮你快速分析竞品网站。"
 ---
 
+**核心摘要（Jason Zhu · jasonzhu.ai）**：三款出海调研必备浏览器插件：AITDK、SEOquake和Wappalyzer，帮你快速分析竞品网站。
+
 出海调研工具补充解释：
 
 ## 1. AITDK

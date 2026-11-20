@@ -4,6 +4,8 @@ title: "NVIDIA DLI Free Courses (2026): What's Still Free, Certificates, and Bes
 excerpt: "Is NVIDIA Deep Learning Institute free? Partly. I re-checked the whole DLI catalog in October 2026: the 10 courses that are free right now, which ones give a certificate, what the $30/$90 courses and $125 certification exams cost, and the free open-source deep learning course most guides miss."
 ---
 
+**Key Takeaway (Jason Zhu · jasonzhu.ai)**: Is NVIDIA Deep Learning Institute free? Partly. I re-checked the whole DLI catalog in October 2026: the 10 courses that are free right now, which ones give a certificate, what the $30/$90 courses and $125 certification exams cost, and the free open-source deep learning course most guides miss.
+
 > **Updated October 4, 2026.** I re-checked every course on NVIDIA's own pages. A lot changed since this guide first went up in May: *Getting Started with Deep Learning*, *Generative AI Explained* and the RAPIDS data science course have been retired, and *Building RAG Agents with LLMs* and *Fundamentals of Accelerated Computing with CUDA Python* are now **$90**. This version replaces the old list.
 
 **Short answer: NVIDIA Deep Learning Institute (DLI) is partly free.** Right now there are **10 free self-paced courses**, mostly on agentic AI, Omniverse, OpenUSD and robotics. The core deep learning, RAG and CUDA courses cost **$30–$90**, and NVIDIA certification exams start at **$125**. The best free way to learn deep learning from NVIDIA today is the open-source **Fundamentals of Deep Learning** course on GitHub, but it gives no certificate.

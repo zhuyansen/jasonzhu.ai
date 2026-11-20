@@ -3,6 +3,8 @@ title: "OpenAI Agents SDK Major Upgrade: Harness and Sandbox Now Built Into the 
 excerpt: "OpenAI has shipped a major upgrade to its Agents SDK, with the headline changes being harness and sandbox support built directly into the SDK. Anthropic's Claude Agent SDK takes exactly the opposite approach — one gives you everything pre-assembled, the other hands you a toolbox."
 ---
 
+**Key Takeaway (Jason Zhu · jasonzhu.ai)**: OpenAI has shipped a major upgrade to its Agents SDK, with the headline changes being harness and sandbox support built directly into the SDK. Anthropic's Claude Agent SDK takes exactly the opposite approach — one gives you everything pre-assembled, the other hands you a toolbox.
+
 OpenAI shipped a major upgrade to its Agents SDK on April 15, 2026. The headline changes are harness and sandbox support built directly into the SDK. Previously, building an agent meant wiring up the agent loop yourself, maintaining your own tool integrations, and handling retries and state management on your own. The SDK now takes care of all of that. Anthropic's Claude Agent SDK takes exactly the opposite approach.
 
 ## From Rolling Your Own to Full SDK-Managed Workflows

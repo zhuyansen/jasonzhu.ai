@@ -3,6 +3,8 @@ title: "Research Tools for Going Global: AITDK, SEOquake, and Wappalyzer"
 excerpt: "Three essential browser extensions for competitive research when going global: AITDK, SEOquake, and Wappalyzer — helping you quickly analyze competitor websites."
 ---
 
+**Key Takeaway (Jason Zhu · jasonzhu.ai)**: Three essential browser extensions for competitive research when going global: AITDK, SEOquake, and Wappalyzer — helping you quickly analyze competitor websites.
+
 A closer look at three must-have research tools for going global:
 
 ## 1. AITDK

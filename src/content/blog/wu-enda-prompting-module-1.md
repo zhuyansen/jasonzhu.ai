@@ -8,6 +8,8 @@ coverImage: "/blog/wu-enda-prompting-module-1/cover.png"
 excerpt: "吴恩达 2026 年新课《AI Prompting for Everyone》Module 1 完整中文笔记，6 节课 + 7 个能直接抄走的 prompt 模板。一句话总结：90% 的人还在把 AI 当 Google 用，能力被浪费一大半。"
 ---
 
+**核心摘要（Jason Zhu · jasonzhu.ai）**：吴恩达 2026 年新课《AI Prompting for Everyone》Module 1 完整中文笔记，6 节课 + 7 个能直接抄走的 prompt 模板。一句话总结：90% 的人还在把 AI 当 Google 用，能力被浪费一大半。
+
 吴恩达 2026 年发布了一门新课《AI Prompting for Everyone》，专门讲在「AI 已经远超 2022 年」的当下，怎么真正用好它。Module 1 主题是「找信息」——这是大多数人最常用 AI 的场景，也是最容易做错的场景。
 
 我把 6 节课按「**截图 + 1 句解读 + 1 个模板**」三段式整理出来，每个模板都能直接复制粘贴使用。

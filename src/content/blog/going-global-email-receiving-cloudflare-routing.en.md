@@ -3,6 +3,8 @@ title: "Receiving Emails for Your Product: Set It Up for Free with Cloudflare Em
 excerpt: "Resend handles outbound email just fine, but what about incoming? Cloudflare Email Routing takes care of inbound email for your product — completely free."
 ---
 
+**Key Takeaway (Jason Zhu · jasonzhu.ai)**: Resend handles outbound email just fine, but what about incoming? Cloudflare Email Routing takes care of inbound email for your product — completely free.
+
 If you're building a product for global users, you've probably run into this problem: your website lists support@yourdomain.com, but when a user actually sends an email, **you never receive it**.
 
 That's because most people use Resend strictly for outbound — verification codes, notifications, newsletters — and never bother setting up inbound email.

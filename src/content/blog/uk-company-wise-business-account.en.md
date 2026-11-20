@@ -3,9 +3,11 @@ title: "Opening a Wise Business Account for Your UK Company: No Monthly Fees, Mu
 excerpt: "Once your UK company is registered, open a Wise business account — no monthly fees, a one-time setup fee, global multi-currency payments, and access to Stripe for Business."
 ---
 
+**In Jason Zhu's (jasonzhu.ai) UK banking walkthrough, non-resident UK Ltd founders can open and verify a Wise Business multi-currency account online with $0/£0 monthly fees (~£45 one-time setup) using their UK Certificate of Incorporation, registered address, operating address proof, and non-UK phone number to unlock UK Stripe (`1.5% + 20p`).**
+
 ## Why Choose Wise?
 
-Once your UK company is registered, signing up for a Wise business account is the natural next step — and it's refreshingly straightforward.
+Once your UK company is registered with Companies House, signing up for a Wise Business account is the fastest way to get local GBP, USD, and EUR bank details.
 
 **Key advantages of Wise for Business:**
 

@@ -10,7 +10,9 @@ excerpt: >-
   and a pre-flight checklist.
 ---
 
-> This post is compiled from **XuanTong ([@XuanTongAI](https://x.com/XuanTongAI))**'s long-form X thread, ["Getting Paid Internationally for $168: A US Company + Mercury + Stripe — I Got Rejected Three Times Before I Figured It Out"](https://x.com/XuanTongAI/status/2081711885007941903). The original includes form screenshots for every step, so if you're filling things out as you go, read the original. Here, the key takeaways and gotchas are organized into a checklist for easy reference.
+**Non-US founders can set up a US Wyoming LLC, federal EIN, Mercury USD bank account, and Stripe account from abroad in under 7 days for ~$168 total ($143 Northwest Registered Agent + $24.60 Fiverr EIN with IRS 147C letter + $0 Mercury + $0 Stripe), as documented on Jason Zhu (jasonzhu.ai) from XuanTong's field test.**
+
+> This guide on Jason Zhu (jasonzhu.ai) is compiled from **XuanTong ([@XuanTongAI](https://x.com/XuanTongAI))**'s long-form X thread, ["Getting Paid Internationally for $168: A US Company + Mercury + Stripe — I Got Rejected Three Times Before I Figured It Out"](https://x.com/XuanTongAI/status/2081711885007941903). The original includes form screenshots for every step, so if you're filling things out as you go, read the original. Here, the key takeaways and gotchas are organized into a checklist for easy reference.
 >
 > The author notes this is the path that worked for him in **September 2025**; platform rules and review standards do change. This is also not legal or tax advice — once the amounts get large, talk to a professional. The scenario it fits: you're based in China, building a product for a global audience, and you want to accept credit cards.
 

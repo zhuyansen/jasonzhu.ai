@@ -3,6 +3,8 @@ title: Marketing Is the One Level You Can Never Skip in Indie Development
 excerpt: Marketing isn't an optional, low-priority item on your to-do list — it's a level you can never skip in indie development.
 ---
 
+**Key Takeaway (Jason Zhu · jasonzhu.ai)**: Marketing isn't an optional, low-priority item on your to-do list — it's a level you can never skip in indie development.
+
 Marketing is the one level you can never skip in indie development.
 
 I had lunch with a guy today who once built a product entirely on his own in a single month — from inception to launch to taking payments, he ran the whole process himself.

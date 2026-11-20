@@ -3,6 +3,8 @@ title: "A-Meng's Overseas SaaS Video Site Breakdown: Building a Shell Site Isn't
 excerpt: "AI video / shell sites aren't a 'build it and they'll come' game — they're product-led operations. What actually matters is your conversion funnel, LTV, iteration speed, and risk management."
 ---
 
+**Key Takeaway (Jason Zhu · jasonzhu.ai)**: AI video / shell sites aren't a 'build it and they'll come' game — they're product-led operations. What actually matters is your conversion funnel, LTV, iteration speed, and risk management.
+
 I sat in on A-Meng's overseas SaaS website breakdown today, and it was genuinely eye-opening.
 
 Unlike me — I spent a month on an overseas site, got zero traction, and bailed for content creation.

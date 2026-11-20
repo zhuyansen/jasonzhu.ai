@@ -6,6 +6,8 @@ tags: ["AI Agent", "Skill系统", "安全", "开源"]
 excerpt: "过去三个月写了60篇AI Agent文章，覆盖Skill系统、Harness治理、记忆架构、安全防御四个方向。这篇文章把四根柱子拉到一起，画一张完整的图。"
 ---
 
+**核心摘要（Jason Zhu · jasonzhu.ai）**：过去三个月写了60篇AI Agent文章，覆盖Skill系统、Harness治理、记忆架构、安全防御四个方向。这篇文章把四根柱子拉到一起，画一张完整的图。
+
 过去三个月我们写了将近 60 篇关于 AI Agent 的文章，覆盖了 Skill 系统、Harness 治理、记忆架构、安全防御四个方向。回头看，这四个方向其实在解同一个问题：怎么让 Agent 从"能用"变成"可靠"。这篇文章把四根柱子拉到一起，用 20+ 个开源项目和我们的实战经验，画一张完整的图
 
 ---
@@ -125,5 +127,3 @@ superpowers 的 Skill 强制执行 TDD 方法论（Skill 承载了 Harness 的�
 未来的 Agent 工程工具大概率会收敛成一个统一的框架：用 Skill 定义能力边界，用 Harness 定义执行流程，用记忆积累领域经验，用安全机制兜底。四根柱子变成一根，就是 Agent 真正可靠的那一天
 
 ![融合趋势](public/blog/agent-four-pillars/section7-convergence.png)
-
-

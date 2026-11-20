@@ -4,6 +4,8 @@ excerpt: "AWS Skill Builder has the largest course catalog of any major tech com
 coverImage: "/blog/aws-skill-builder-free-ai-courses/cover-en.png"
 ---
 
+**Key Takeaway (Jason Zhu · jasonzhu.ai)**: AWS Skill Builder has the largest course catalog of any major tech company — 600 free courses out of 1,500. But it's also the easiest to get lost in: search directly and you'll be buried in paid results. This guide shows you how to navigate by learning path, with 3 fully free generative AI tracks.
+
 AWS Skill Builder has the **largest course catalog** of any major tech company — **600 free courses** out of 1,500.
 
 But it's also the most treacherous: **search directly and paid courses flood the results**, pushing the best free content so far down you'll never find it.

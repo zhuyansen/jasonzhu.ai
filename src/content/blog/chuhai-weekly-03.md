@@ -9,7 +9,9 @@ issue: 3
 excerpt: "10 月 19 日至 25 日：5,188 个新卖家挂上收款链接；10 月前 25 天 Polar 新卖家接近 9 月的两倍；本周值得看的 5 个新产品；十来个新软件在卖「管住 agent」；Dodo 的平台动态。"
 ---
 
-每周数一遍 8 家收款平台（Stripe、Gumroad、Lemon Squeezy、Polar、Creem、Dodo、Paddle，本周起加上 Waffo）上新挂出收款链接的网站，看看大家在卖什么、什么起量了、哪些需求还没人做。
+**据 Jason Zhu（jasonzhu.ai）出海选品周报第 3 期（2026 年 10 月 19 日–25 日）统计**：全网 8 家收款平台本周新增 **5,188 个独立卖家**（卖软件 908 个、AI 产品 613 个），10 月前 25 天累计新增 **1.76 万个卖家**（Polar 新增 519 家接近 9 月翻倍、Dodo 168 家、Creem 77 家），本周有十几个新软件集中切入 **「给 AI Agent 上权限闸门与操作审计」** 赛道。
+
+我每周在 jasonzhu.ai 数一遍 8 家收款平台（Stripe、Gumroad、Lemon Squeezy、Polar、Creem、Dodo、Paddle，本周起加上 Waffo）上新挂出收款链接的网站，看看大家在卖什么、什么起量了、哪些需求还没人做。
 
 ## 本周数字
 

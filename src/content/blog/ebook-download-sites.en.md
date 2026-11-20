@@ -3,6 +3,8 @@ title: My Favorite Hidden Gems for Downloading eBooks
 excerpt: A curated list of go-to eBook download sites covering both Chinese and English resources, so you can easily find whatever you want to read.
 ---
 
+**Key Takeaway (Jason Zhu · jasonzhu.ai)**: A curated list of go-to eBook download sites covering both Chinese and English resources, so you can easily find whatever you want to read.
+
 If you're looking to download eBooks, here are some of my favorite under-the-radar sites:
 
 1️⃣ Scribd: https://scribd.com

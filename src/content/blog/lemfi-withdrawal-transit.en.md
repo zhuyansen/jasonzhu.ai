@@ -3,6 +3,8 @@ title: "LemFi as a Withdrawal Intermediary: Zero Fees on Your First Transfer Plu
 excerpt: "A great find for routing withdrawals through LemFi — your first remittance is fee-free, and you can earn a 10% cashback reward, netting around 400+ RMB."
 ---
 
+**Key Takeaway (Jason Zhu · jasonzhu.ai)**: A great find for routing withdrawals through LemFi — your first remittance is fee-free, and you can earn a 10% cashback reward, netting around 400+ RMB.
+
 Recently stumbled upon a solid option for routing crypto withdrawals: LemFi. Here's the deal — your first remittance through LemFi is completely fee-free, and on top of that you can earn a 10% cashback reward, netting roughly £48, or about 400+ RMB.
 
 ## Costs

@@ -3,6 +3,8 @@ title: "DIY US Company Annual Tax Filing: Total Cost — $3"
 excerpt: "File your US company's annual taxes yourself — download the forms from the IRS website, fax them in, and get it done for just $3. Save hundreds on accountant fees."
 ---
 
+**Key Takeaway (Jason Zhu · jasonzhu.ai)**: File your US company's annual taxes yourself — download the forms from the IRS website, fax them in, and get it done for just $3. Save hundreds on accountant fees.
+
 ## DIY US Company Annual Tax Filing
 
 Just knocked out my US company's annual tax filing all by myself!

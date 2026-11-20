@@ -3,6 +3,8 @@ title: Tencent Yuanbao's Marketing Tactics Are Infuriating
 excerpt: Tencent Yuanbao's marketing approach is downright off-putting — mass spamming people is a surefire way to get blocked.
 ---
 
+**Key Takeaway (Jason Zhu · jasonzhu.ai)**: Tencent Yuanbao's marketing approach is downright off-putting — mass spamming people is a surefire way to get blocked.
+
 Tencent Yuanbao's marketing is disgusting.
 
 Anyone who sends it in a group chat gets removed. Anyone who sends it directly to me gets blocked.

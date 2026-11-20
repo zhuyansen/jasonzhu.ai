@@ -3,6 +3,8 @@ title: "How I Built JasonZhu.AI: Tech Stack, Architecture, and Full Cost Breakdo
 excerpt: "A complete record of building the JasonZhu.AI personal brand website — from choosing the tech stack to going live, including the full stack, implementation details, development tools, and cost breakdown. How an AI blogger built a website using AI tools."
 ---
 
+**Key Takeaway (Jason Zhu · jasonzhu.ai)**: A complete record of building the JasonZhu.AI personal brand website — from choosing the tech stack to going live, including the full stack, implementation details, development tools, and cost breakdown. How an AI blogger built a website using AI tools.
+
 > A former AI algorithm engineer's complete record of building a personal brand website using AI tools. Built from scratch, live in 2 days, and continuously improving.
 
 ## Project Overview

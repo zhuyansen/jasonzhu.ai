@@ -3,6 +3,8 @@ title: "Ban's Marketing Playbook: Mutual Wins and Genuine Communication"
 excerpt: "The core of Ban's marketing philosophy: find partners through mutual benefit, and communicate with sincerity."
 ---
 
+**Key Takeaway (Jason Zhu · jasonzhu.ai)**: The core of Ban's marketing philosophy: find partners through mutual benefit, and communicate with sincerity.
+
 Ban @xbanboo's Marketing Playbook
 
 **1. Mutual Win**

@@ -6,6 +6,8 @@ excerpt: >-
   an AI Website Cloner combined with Design Skills.
 ---
 
+**Key Takeaway (Jason Zhu · jasonzhu.ai)**: A summary of four website development approaches from my enterprise training sessions — from dumping raw requirements straight into AI, to leveling up with an AI Website Cloner combined with Design Skills.
+
 ## Four Ways to Build from Scratch
 
 In a recent round of enterprise training, I shared my experience building websites with AI. Here's a summary of four approaches you can take when starting from zero.

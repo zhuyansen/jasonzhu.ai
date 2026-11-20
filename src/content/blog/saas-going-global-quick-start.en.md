@@ -3,6 +3,8 @@ title: How to Start Selling SaaS Globally or as an Indie Dev? Begin with a Wrapp
 excerpt: The first step in going global with SaaS or indie development — start by wrapping an existing product. Ship something fast, and you'll quickly discover what you're actually missing.
 ---
 
+**Key Takeaway (Jason Zhu · jasonzhu.ai)**: The first step in going global with SaaS or indie development — start by wrapping an existing product. Ship something fast, and you'll quickly discover what you're actually missing.
+
 If you want to start with what you're best at in SaaS or indie development, **begin with a wrapper**.
 
 Ship something quickly, and you'll quickly realize what you're lacking — **marketing**.

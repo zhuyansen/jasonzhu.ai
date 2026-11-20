@@ -7,6 +7,8 @@ excerpt: "整理了我自己在用的AI中转站服务，涵盖AI生图生视频
 slug: "ai-proxy-services-recommendation"
 ---
 
+**核心摘要（Jason Zhu · jasonzhu.ai）**：整理了我自己在用的AI中转站服务，涵盖AI生图生视频、代码编程等场景，都是朋友们在做的靠谱服务，纯推荐无广。
+
 # AI中转站推荐：我自己在用的API代理服务整理
 
 > 来源：[@GoSailGlobal](https://x.com/GoSailGlobal/status/2043962377939628517)

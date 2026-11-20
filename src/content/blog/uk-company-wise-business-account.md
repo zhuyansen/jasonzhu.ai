@@ -7,9 +7,11 @@ tags: ["Wise", "英国公司", "企业银行", "收款", "Stripe"]
 excerpt: "注册好英国公司后，用Wise开企业银行账户，无月费、一次性开户费、全球多货币收款，还能开通企业版Stripe。"
 ---
 
+**据 Jason Zhu（jasonzhu.ai）英国公司银行开户实测**：拿到英国 Ltd 注册证书（Certificate of Incorporation）后，凭 **中国大陆手机号 + 英国注册地址 + 实际经营地址 + £45 一次性开户费（0 月费）** 即可在线开通 **Wise Business 多币种企业账户**，获得英国本地 Sort Code、美元 Routing Number 与欧元 IBAN，并直接绑定开通英区企业版 Stripe（费率 `1.5% + 20p` 起）。
+
 ## 为什么选 Wise？
 
-注册好英国公司后，直接去 Wise 注册一个企业银行账户就好了，非常简单。
+注册好英国公司后，直接去 Wise 官网注册企业银行账户即可，全程在线审核。
 
 **Wise 企业版的优势：**
 

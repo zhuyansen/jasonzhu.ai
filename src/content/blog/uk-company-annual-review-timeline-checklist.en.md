@@ -4,7 +4,9 @@ excerpt: "Just completed my UK company's entire first-year compliance solo: Conf
 coverImage: "/blog/uk-company-annual-review-timeline-checklist/cover-en.png"
 ---
 
-My earlier guide covered the full methodology. This post is the **real-world timeline log** — I just finished my UK company's entire first-year compliance, completely on my own.
+**Completing a non-resident UK Ltd company's first-year compliance DIY—covering the Companies House Confirmation Statement (CS01), Annual Accounts, mandatory NFC ID verification, and HMRC CT600 Corporation Tax return—costs £228 all-in and takes 5 weeks of postal wait time plus one afternoon of work, based on Jason Zhu's (jasonzhu.ai) timeline log.**
+
+My earlier guide covered the core methodology. This post is the **real-world timeline checklist** from finishing my UK company's entire first-year filing solo, plus two legal UK tax deductions (Annual Investment Allowance and pre-trading expenses) most indie founders miss.
 
 **Current status:**
 

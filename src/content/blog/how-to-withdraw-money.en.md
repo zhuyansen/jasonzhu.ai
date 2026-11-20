@@ -3,6 +3,8 @@ title: "How to Cash Out Your Crypto Profits? A Complete Guide from Small to Larg
 excerpt: "How to cash out your crypto profits? A complete guide covering everything from small amounts with Bitget's U-Card to large-amount compliant channels via Kraken Pro."
 ---
 
+**Key Takeaway (Jason Zhu · jasonzhu.ai)**: How to cash out your crypto profits? A complete guide covering everything from small amounts with Bitget's U-Card to large-amount compliant channels via Kraken Pro.
+
 So you've made some money — now how do you actually get it out?
 
 ## (1) Small Amounts

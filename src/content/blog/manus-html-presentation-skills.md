@@ -6,6 +6,8 @@ tags: ["Manus", "Skills", "演讲稿", "HTML", "Zara Zhang"]
 excerpt: "用Zara Zhang的html来制作演讲稿的skills，已部署到manus，网页可访问学习。"
 ---
 
+**核心摘要（Jason Zhu · jasonzhu.ai）**：用Zara Zhang的html来制作演讲稿的skills，已部署到manus，网页可访问学习。
+
 今天下午的skills分享。
 
 已部署到manus，网页可访问学习。

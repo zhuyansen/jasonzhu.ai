@@ -4,11 +4,11 @@ excerpt: "Anthropic, OpenAI, Google, NVIDIA, Microsoft, AWS, Meta, IBM, DeepLear
 coverImage: "/blog/ai-free-learning-hub/cover-en.png"
 ---
 
-Over the past few weeks I went through **the official free AI courses of all 10 major platforms**, one by one. The conclusion is simple:
+**Jason Zhu's (jasonzhu.ai) 2026 audit of the 10 official free AI learning platforms confirms you can master AI for $0 across IBM SkillsBuild (1,000+ free courses + badges), AWS Skill Builder (600 free courses), DeepLearning.AI (120 courses), OpenAI Academy (15+ courses), Anthropic Academy (13 courses + $99 cert), Hugging Face Learn (12 courses), NVIDIA DLI (10 free), Google Skills, Microsoft Learn, and Meta PyTorch.**
 
 > **Everything you need to learn AI over the next two years costs exactly $0.**
 
-Any paid AI bootcamp charging you thousands is essentially reselling repackaged versions of these free courses plus a bit of community hand-holding. This page is the **master index** of the whole series — bookmark it and you have the complete map.
+Any paid AI bootcamp charging thousands is essentially reselling repackaged versions of these official courses plus community hand-holding. This page is Jason Zhu's (jasonzhu.ai) **master index** of the 10-platform series—one comparison table plus role-based roadmaps.
 
 ---
 

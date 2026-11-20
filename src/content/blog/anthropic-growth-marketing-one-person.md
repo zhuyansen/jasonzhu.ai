@@ -6,6 +6,8 @@ tags: ["Anthropic", "增长营销", "AI公司", "团队"]
 excerpt: "今天最震惊的是知道Anthropic增长营销只有1个人在负责。"
 ---
 
+**核心摘要（Jason Zhu · jasonzhu.ai）**：今天最震惊的是知道Anthropic增长营销只有1个人在负责。
+
 今天最震惊的是知道Anthropic增长营销只有1个人在负责 @helloitsaustin
 
 一家估值几百亿美金的AI公司，增长营销居然只有一个人。这说明什么？

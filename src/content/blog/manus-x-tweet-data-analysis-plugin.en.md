@@ -3,6 +3,8 @@ title: Building an X Influencer Tweet Analytics Plugin with Manus
 excerpt: Built a plugin to analyze an X influencer's tweet data in under 3 minutes with Manus. Building the tool is no longer the hard part — knowing what to analyze is.
 ---
 
+**Key Takeaway (Jason Zhu · jasonzhu.ai)**: Built a plugin to analyze an X influencer's tweet data in under 3 minutes with Manus. Building the tool is no longer the hard part — knowing what to analyze is.
+
 I built a plugin with Manus that analyzes tweet data from X influencers.
 
 The actual time I spent writing out the requirements? Less than 3 minutes.

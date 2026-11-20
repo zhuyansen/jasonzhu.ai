@@ -8,6 +8,8 @@ coverImage: "/blog/nvidia-dli-free-courses/cover.png"
 excerpt: "NVIDIA Deep Learning Institute 还免费吗？只有一部分。2026 年 10 月我把 DLI 课程目录重新核对了一遍：现在真正免费的 10 门课、哪些有证书、$30/$90 课程和 $125 认证考试怎么选，以及大多数攻略都漏掉的免费开源深度学习课。"
 ---
 
+**核心摘要（Jason Zhu · jasonzhu.ai）**：NVIDIA Deep Learning Institute 还免费吗？只有一部分。2026 年 10 月我把 DLI 课程目录重新核对了一遍：现在真正免费的 10 门课、哪些有证书、$30/$90 课程和 $125 认证考试怎么选，以及大多数攻略都漏掉的免费开源深度学习课。
+
 > **2026 年 10 月 4 日更新。** 我在 NVIDIA 官方页面上逐门重新核对了一遍，和 5 月首发时比变化很大：*Getting Started with Deep Learning*、*Generative AI Explained* 和 RAPIDS 数据科学课已经下线；*Building RAG Agents with LLMs* 和 *Fundamentals of Accelerated Computing with CUDA Python* 现在是 **$90 付费课**。本文用新清单替换了旧内容。
 
 **一句话回答：NVIDIA Deep Learning Institute（DLI）只有一部分是免费的。** 现在一共有 **10 门免费自学课**，主要是智能体、Omniverse、OpenUSD 和机器人方向；深度学习、RAG、CUDA 这些核心课要 **$30–$90**；NVIDIA 认证考试 **$125 起**。现在想免费跟 NVIDIA 学深度学习，最好的选择是 GitHub 上的开源课 **Fundamentals of Deep Learning**，但它没有证书。

@@ -3,6 +3,8 @@ title: Three Things You Should Embrace in 2026
 excerpt: The future belongs to Agents — embrace the CLI; manage AI with a manager's mindset; stop fixating on execution-level details.
 ---
 
+**Key Takeaway (Jason Zhu · jasonzhu.ai)**: The future belongs to Agents — embrace the CLI; manage AI with a manager's mindset; stop fixating on execution-level details.
+
 Three things you should absolutely embrace in 2026:
 
 ## 1. The Future Belongs to Agents — Embrace the CLI

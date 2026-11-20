@@ -3,6 +3,8 @@ title: "Same Name, Different Game: Comparing Two SEO Audit Skills and Which to U
 excerpt: The Claude Code Skills ecosystem is growing fast — fast enough that naming collisions are starting to happen. Two skills both called seo-audit exist, and they take completely different approaches. Here's a side-by-side breakdown and recommendation.
 ---
 
+**Key Takeaway (Jason Zhu · jasonzhu.ai)**: The Claude Code Skills ecosystem is growing fast — fast enough that naming collisions are starting to happen. Two skills both called seo-audit exist, and they take completely different approaches. Here's a side-by-side breakdown and recommendation.
+
 # Same Name, Different Game: Comparing Two SEO Audit Skills and Which to Use
 
 > Source: [@GoSailGlobal](https://x.com/GoSailGlobal/status/2043971983772397720)

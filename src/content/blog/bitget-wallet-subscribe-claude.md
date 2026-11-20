@@ -6,6 +6,8 @@ tags: ["Bitget", "Claude", "订阅", "USDT", "教程"]
 excerpt: "用Bitget Wallet半价订阅Claude的实操教程，IP、地址、卡三件事对齐即可。"
 ---
 
+**核心摘要（Jason Zhu · jasonzhu.ai）**：用Bitget Wallet半价订阅Claude的实操教程，IP、地址、卡三件事对齐即可。
+
 实操 | 用 Bitget Wallet 半价订阅 Claude
 
 很多人卡在 Claude 订阅，其实思路很简单：IP、地址、卡三件事对齐。

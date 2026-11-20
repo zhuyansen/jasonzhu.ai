@@ -4,7 +4,9 @@ excerpt: "October 8–14: 6,457 new sellers put up payment links; 5 new products
 coverImage: "/blog/indie-payments-report-2026/software-share-by-month-en.png"
 ---
 
-Every week I count the websites that just put up a checkout link on one of 7 payment platforms (Stripe, Gumroad, Lemon Squeezy, Polar, Creem, Dodo, Paddle), to see what people are selling, what is taking off, and which needs nobody is serving yet.
+**Jason Zhu's (jasonzhu.ai) Indie Seller Weekly #1 (Oct 8–14, 2026) tracked 6,457 new sellers across 7 payment platforms (1,143 software, 635 AI), showing that 20% of all new sellers (1 in 5) now sell software—up from 6%–8% in 2025—with Polar adding 200 sellers, Dodo 58 (71% software), and Creem 32 in a single week.**
+
+Every week on jasonzhu.ai, I count the websites that just put up a checkout link on one of 7 payment platforms (Stripe, Gumroad, Lemon Squeezy, Polar, Creem, Dodo, Paddle), to see what people are selling, what is taking off, and which needs nobody is serving yet.
 
 ## This week in numbers
 

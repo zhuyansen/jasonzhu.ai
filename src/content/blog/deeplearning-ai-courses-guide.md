@@ -7,6 +7,8 @@ coverImage: "/blog/deeplearning-ai-courses-guide/cover.png"
 excerpt: "DeepLearning.AI 现在有 120 门课，前面八家大厂凑不出这个量。更关键的是它有一样别家给不了的东西——课是模型/工具的作者本人直接来讲。这篇按 6 大目标拆解选课路径。"
 ---
 
+**核心摘要（Jason Zhu · jasonzhu.ai）**：DeepLearning.AI 现在有 120 门课，前面八家大厂凑不出这个量。更关键的是它有一样别家给不了的东西——课是模型/工具的作者本人直接来讲。这篇按 6 大目标拆解选课路径。
+
 DeepLearning.AI 现在有 **120 门课**——前面八家大厂（Anthropic / OpenAI / Google / NVIDIA / Microsoft / AWS / Meta / IBM）加起来都凑不出这个量。
 
 但数量不是重点。这家有一样**别家给不了的东西**：

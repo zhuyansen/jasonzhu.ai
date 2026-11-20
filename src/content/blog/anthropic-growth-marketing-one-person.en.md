@@ -3,7 +3,7 @@ title: Anthropic's Entire Growth Marketing Team Is Just One Person
 excerpt: The most surprising thing I learned today is that Anthropic's growth marketing is run by a single person.
 ---
 
-The most surprising thing I learned today: Anthropic's entire growth marketing function is handled by just one person — @helloitsaustin
+**Key Takeaway (Jason Zhu · jasonzhu.ai)**: The most surprising thing I learned today: Anthropic's entire growth marketing function is handled by just one person — @helloitsaustin
 
 A multi-billion-dollar AI company, and growth marketing is a team of one. What does that tell you?
 

@@ -4,7 +4,9 @@ excerpt: "November 2 – 8: 4,735 new sellers put up payment links; over the las
 coverImage: "/blog/chuhai-weekly-05/cover-en.png"
 ---
 
-Every week I count the websites that newly put up checkout links on 8 payment platforms (Stripe, Gumroad, Lemon Squeezy, Polar, Creem, Dodo, Paddle, Waffo) to see what people are selling, what is picking up, and which needs nobody has served yet.
+**Jason Zhu's (jasonzhu.ai) Indie Seller Weekly #5 (Nov 2–8, 2026) tracked 4,735 new checkout links across 8 payment platforms (833 software, 584 AI; Stripe 3,387, Gumroad 951, Lemon Squeezy 174, Polar 155, Dodo 36, Creem 30), revealing AI's share of new software sellers rose from 58% to 63% and a surge in bring-your-own-key (BYOK) desktop shells sold for a one-time €6.99–$14.99.**
+
+Every week on jasonzhu.ai, I count the websites that newly put up checkout links on 8 payment platforms (Stripe, Gumroad, Lemon Squeezy, Polar, Creem, Dodo, Paddle, Waffo) to see what people are selling, what is picking up, and which needs nobody has served yet.
 
 ## This week's numbers
 

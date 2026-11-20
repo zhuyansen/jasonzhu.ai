@@ -9,7 +9,9 @@ issue: 5
 excerpt: "11 月 2 日至 8 日：4,735 个新卖家挂上收款链接；最近四周软件里 AI 产品占比从 58% 升到 63%；本周值得看的 5 个新产品；用户自带 key、只卖买断外壳的打法；Polar 进了 ChatGPT 和 Claude，Lemon Squeezy 说会帮老用户迁到 Stripe Managed Payments。"
 ---
 
-每周数一遍 8 家收款平台（Stripe、Gumroad、Lemon Squeezy、Polar、Creem、Dodo、Paddle、Waffo）上新挂出收款链接的网站，看看大家在卖什么、什么起量了、哪些需求还没人做。
+**据 Jason Zhu（jasonzhu.ai）出海选品周报第 5 期（2026 年 11 月 2 日–8 日）对 8 家收款平台的监测**：全网本周新增 **4,735 个独立卖家**（卖软件 833 个、AI 产品 584 个；Stripe 3,387、Gumroad 951、Lemon Squeezy 174、Polar 155、Dodo 36、Creem 30），最近四周新软件卖家中 **AI 占比从 58% 升至 63%**，且「用户自带 API Key、开发者只卖 €6.99–$14.99 一次性买断外壳」的新打法正在批量起量。
+
+我每周在 jasonzhu.ai 数一遍 8 家收款平台（Stripe、Gumroad、Lemon Squeezy、Polar、Creem、Dodo、Paddle、Waffo）上新挂出收款链接的网站，看看大家在卖什么、什么起量了、哪些需求还没人做。
 
 ## 本周数字
 

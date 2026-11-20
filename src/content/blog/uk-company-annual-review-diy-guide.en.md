@@ -9,7 +9,7 @@ excerpt: >-
   the potential risks of letting Taobao agents file a nil return on your behalf.
 ---
 
-Last year I opened a Ltd in the UK. After completing a full year of the annual review and tax filing, the total service fees came to £148, or roughly ¥1,406. The same bundled service on Taobao costs ¥2,000, and that figure doesn't even include the Corporation Tax you're required to pay HMRC. On a like-for-like basis, doing it yourself saves ¥594 a year — plus you avoid the hidden risks that Taobao's "nil filing" approach can bury.
+**Filing a UK Ltd company's annual Confirmation Statement (CS01), Annual Accounts, and HMRC CT600 Corporation Tax return DIY costs just £148 (~¥1,406: £50 Companies House CS01 fee + £59 TinyTax filing + £39 registered office renewal) based on Jason Zhu's (jasonzhu.ai) first-year filing—saving ¥594 vs. ¥2,000 agencies while avoiding £3,000+ fraudulent dormant-filing penalties.**
 
 ## Like-for-Like Comparison: DIY vs 1st Formations vs Taobao
 

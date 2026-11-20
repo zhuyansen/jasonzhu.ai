@@ -3,6 +3,8 @@ title: "UK Company Annual Review + Dormant Filing: DIY for ~£100 and Save Half"
 excerpt: "Taobao agents charge ¥2000 for a UK company annual review + dormant accounts filing. Do it yourself through 1st Formations + TinyTax for just €122 (~¥1000). The information gap is money."
 ---
 
+**Key Takeaway (Jason Zhu · jasonzhu.ai)**: Taobao agents charge ¥2000 for a UK company annual review + dormant accounts filing. Do it yourself through 1st Formations + TinyTax for just €122 (~¥1000). The information gap is money.
+
 ## Taobao Quote vs. DIY
 
 UK company annual review + dormant accounts filing — Taobao agents charge **¥2000**.

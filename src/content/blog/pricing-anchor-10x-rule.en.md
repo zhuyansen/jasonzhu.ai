@@ -3,6 +3,8 @@ title: "Marketing Strategy: The 10x Rule of Price Anchoring"
 excerpt: Don't lead with features — lead with money and outcomes. Make sure customers get at least 10x the value of what they pay.
 ---
 
+**Key Takeaway (Jason Zhu · jasonzhu.ai)**: Don't lead with features — lead with money and outcomes. Make sure customers get at least 10x the value of what they pay.
+
 ## Marketing Strategy: The 10x Rule of Price Anchoring
 
 We charge this much because our customers get at least 10x the value in return.

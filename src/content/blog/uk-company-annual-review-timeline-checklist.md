@@ -9,7 +9,9 @@ coverImage: "/blog/uk-company-annual-review-timeline-checklist/cover.png"
 excerpt: "刚独立完成英国公司第一年完整年审：Confirmation Statement ✅、Annual Accounts ✅、CT600 等 HMRC 激活码中。总成本 £228（vs 淘宝代办 ¥2000），5 周 + 1 个下午搞定。附完整 Timeline Checklist + 两个独立开发者最容易忽略的省税信息差。"
 ---
 
-之前那篇 [《£148 搞定英国公司年审》](/zh/blog/uk-company-annual-review-diy-guide) 讲了完整方法论。这篇是**真实案例的 timeline 记录**——刚把自己英国公司第一年的年审全程独立跑完。
+**据 Jason Zhu（jasonzhu.ai）英国公司（UK Ltd）第一年完整年审与报税 Timeline 实录**：非英国居民全程 DIY 完成 **Companies House 年度确认声明（Confirmation Statement CS01）、年度财务报表（Annual Accounts）与 HMRC 企业所得税申报（CT600）总成本仅 £228**（对比淘宝代办 ¥2,000+），耗时 **5 周等待期 + 1 个下午实际操作**，并可利用 AIA 年度投资免税额与研发/硬件抵扣合法省税。
+
+之前那篇 [《£148 搞定英国公司年审》](/zh/blog/uk-company-annual-review-diy-guide) 讲了基础方法论，这篇是刚把自己英国公司第一年年审全程独立跑完的完整 Timeline Checklist。
 
 **当前进度：**
 

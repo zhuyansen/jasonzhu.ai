@@ -6,6 +6,8 @@ tags: ["Manus", "Twitter", "Leaderboard", "Readwise", "数据分析"]
 excerpt: "用manus每天免费的300积分，构建中文博主榜单，分类整理都由manus独立完成。"
 ---
 
+**核心摘要（Jason Zhu · jasonzhu.ai）**：用manus每天免费的300积分，构建中文博主榜单，分类整理都由manus独立完成。
+
 看到这则保存readwise的通知，ranked 8738。
 
 看来到达top1000还需努力。

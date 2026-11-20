@@ -6,6 +6,8 @@ tags: ["电子签名", "合同签署", "腾讯电子签", "SignNow", "OPC"]
 excerpt: "用Manus AI做了一份电子签名平台完整对比调研，国内四家+海外方案，最终选择腾讯电子签和SignNow。"
 ---
 
+**核心摘要（Jason Zhu · jasonzhu.ai）**：用Manus AI做了一份电子签名平台完整对比调研，国内四家+海外方案，最终选择腾讯电子签和SignNow。
+
 ## 背景
 
 听国内天天喊着OPC（One Person Company），签合同这件事可以再简便一些。

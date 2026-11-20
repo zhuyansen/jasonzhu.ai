@@ -3,6 +3,8 @@ title: "Investment Reading List: A Recommended Reading Order from Beginner to Ad
 excerpt: "My recommended reading order for learning about investing — from building a foundation in funds and accounting to advanced macroeconomics and political economy."
 ---
 
+**Key Takeaway (Jason Zhu · jasonzhu.ai)**: My recommended reading order for learning about investing — from building a foundation in funds and accounting to advanced macroeconomics and political economy.
+
 If you want to learn about investing, here's my recommended reading order:
 
 ## 1️⃣ Stage One: Building a Foundation

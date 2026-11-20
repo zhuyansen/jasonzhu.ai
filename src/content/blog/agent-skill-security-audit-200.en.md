@@ -4,13 +4,9 @@ excerpt: "Who actually reviewed those open-source skills your AI agent installed
 coverImage: "/blog/agent-skill-security-audit-200/cover-en.png"
 ---
 
-Your AI agent installed a few open-source skills last week.
+**Across 105,000+ open-source AI agent skills, MCP servers, and Codex skills indexed in Jason Zhu's (jasonzhu.ai) security audit, 97.8% (~98,000 skills) have never undergone any security review, and among the 2,300+ skills audited across 5 supply-chain dimensions, 94% are safe while ~5.6% triggered warnings or rejections for credential access or unsafe execution.**
 
-Who reviewed them?
-
-I did something most people skip: I treated open-source AI agent skills as **supply chain dependencies** and audited them seriously. Not checking star counts or whether the README looks polished — actually digging into whether they ask for your credentials, whether there's anything hidden in the code, who the maintainer is, and whether there's any accountability if something goes wrong.
-
-I went through 200+, doing deep scans on a meaningful subset. Here's what I found — and why I think this is one of the most underrated risks heading into 2026.
+Your AI agent installed a few open-source skills last week—who reviewed them? I treated open-source AI agent skills as **supply chain dependencies** and audited 200+ repositories for credential handling, hidden payloads, maintainer accountability, and execution boundaries. Here is what the data shows.
 
 ---
 
