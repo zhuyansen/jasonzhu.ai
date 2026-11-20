@@ -7,7 +7,7 @@ import GoogleOneTap from "@/components/GoogleOneTap";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
 import "../globals.css";
 import ThirdPartyAnalytics from "@/components/ThirdPartyAnalytics";
-import { AUTHOR_ALT_NAME, AUTHOR_NAME, PROFILES } from "@/lib/profiles";
+import { AUTHOR_ALT_NAME, AUTHOR_ALT_NAMES, AUTHOR_NAME, PROFILES } from "@/lib/profiles";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,23 +23,34 @@ import WebMcpRegister from "@/components/WebMcpRegister";
 
 const SITE_URL = "https://jasonzhu.ai";
 
-// 全站 JSON-LD：Organization + Person + WebSite + Service/Offer（覆盖 Structured meaning 与 Commercial legibility 全部检测项）
+// 全站 JSON-LD：Organization + Person + WebSite + Service/Offer（Jason Barnard Kalicube @id 实体消歧 + CERN Zenodo 学术锚点）
 const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": "https://jasonzhu.ai/#person",
   name: AUTHOR_NAME,
-  alternateName: AUTHOR_ALT_NAME,
+  alternateName: AUTHOR_ALT_NAMES,
   url: "https://jasonzhu.ai",
   image: "https://jasonzhu.ai/avatar.jpg",
   email: "mailto:jason@jasonzhu.ai",
   sameAs: PROFILES.map((p) => p.url),
-  jobTitle: "AI Blogger & Trainer",
-  description: "前AI算法工程师，现AI博主/MCN/培训师",
+  jobTitle: "AI Engineer, Go-Global SaaS Researcher & Founder of GoSail Global",
+  description:
+    "前搜广推与知识图谱算法工程师，现 AI 应用与出海独立开发研究者（jasonzhu.ai / GitHub: zhuyansen）。《20 万条独立开发者收款链接实证报告》（CERN Zenodo DOI: 10.5281/zenodo.24386243）与《105,626 个 AI Agent Skills 安全审计基准》（DOI: 10.5281/zenodo.24387074）作者。",
+  knowsAbout: [
+    "Generative Engine Optimization (GEO)",
+    "Cross-Border Indie SaaS Payment Gateways (Stripe, Dodo Payments, Waffo, Polar, Creem)",
+    "Merchant of Record (MoR) Tax & Fee Benchmarks",
+    "AI Agent Skills & MCP Server Security Auditing",
+    "Information Retrieval, Knowledge Graphs & Entity Resolution",
+  ],
+  worksFor: { "@id": "https://jasonzhu.ai/#organization" },
 };
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://jasonzhu.ai/#organization",
   name: "JasonZhu.AI (GoSail Global)",
   legalName: "BRICKAI (GoSailGlobal LLC)",
   url: "https://jasonzhu.ai",
@@ -60,17 +71,19 @@ const organizationJsonLd = {
     url: "https://jasonzhu.ai/zh/services",
     availableLanguage: ["zh-CN", "en"],
   },
-  founder: { "@type": "Person", name: AUTHOR_NAME },
+  founder: { "@id": "https://jasonzhu.ai/#person", "@type": "Person", name: AUTHOR_NAME },
   sameAs: PROFILES.map((p) => p.url),
 };
 
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": "https://jasonzhu.ai/#website",
   name: "JasonZhu.AI",
   url: "https://jasonzhu.ai",
-  description: "AI工具评测、实战教程、行业洞察与出海增长策略",
-  author: { "@type": "Person", name: "Jason Zhu" },
+  description: "AI工具评测、实战教程、行业洞察与出海增长策略（20万卖家收款基准与10.5万AI Skills安全审计）",
+  author: { "@id": "https://jasonzhu.ai/#person", "@type": "Person", name: "Jason Zhu" },
+  publisher: { "@id": "https://jasonzhu.ai/#organization" },
   inLanguage: ["zh-CN", "en"],
 };
 

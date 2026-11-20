@@ -1151,6 +1151,75 @@ def aare_proprietary_asset_audit(md_path: Path) -> dict[str, Any]:
     }
 
 
+def audit_sro_recency_and_listicle_guard(md_path: Path) -> dict[str, Any]:
+    """L4 Triple Upgrade (Dan Petrovic SRO + Kevin Indig 90-Day Recency + Lily Ray 69% Self-Listicle Guard):
+      1. Dan Petrovic (DEJAN AI) SRO Grounding Budget (~500 words / ~2,000 chars) & Tomek Rudzki (Peec AI) Top-10% Chunk:
+         Measures concrete fact/number density per 100 words in the first 500 words (Gemini grounding budget).
+      2. Kevin Indig (Growth Memo) 90-Day Recency Decay Guard:
+         Flags pages whose frontmatter `date` or `updatedAt` is older than 90 days (3x citation drop threshold).
+      3. Lily Ray (Amsive) 69% Self-Serving Listicle Exclusion Guard:
+         Verifies that on-site commercial comparison pages use neutral "Decision by Buyer Situation" framing + CERN Zenodo DOI
+         rather than self-promotional "#1 Best" claims that trigger LLM self-bias exclusion 69% of the time.
+    """
+    from datetime import datetime, timezone
+
+    raw = md_path.read_text(encoding="utf-8", errors="replace")
+    parts = raw.split("---", 2)
+    fm = parts[1] if len(parts) >= 3 else ""
+    body = parts[2].strip() if len(parts) >= 3 else raw.strip()
+
+    # 1. Dan Petrovic SRO (~500-word grounding window) & Tomek Rudzki First-10% Chunk
+    words = re.findall(r"[\w\.\-%\$]+|[\u4e00-\u9fff]", body)
+    total_tokens = max(len(words), 1)
+    top_10_pct_count = max(int(total_tokens * 0.10), 50)
+    grounding_500_slice = " ".join(words[:500])
+    top_10_slice = " ".join(words[:top_10_pct_count])
+
+    stat_hits_500 = re.findall(r"\b\d+(?:\.\d+)?%|\$\d+(?:\.\d+)?|\b\d{2,3},\d{3}\b|10\.5281/zenodo\.\d+|\b\d+\s*万", grounding_500_slice)
+    stat_hits_top10 = re.findall(r"\b\d+(?:\.\d+)?%|\$\d+(?:\.\d+)?|\b\d{2,3},\d{3}\b|10\.5281/zenodo\.\d+|\b\d+\s*万", top_10_slice)
+    sro_density_per_100w = round(len(stat_hits_500) / min(5.0, max(total_tokens / 100.0, 1.0)), 2)
+
+    # 2. Kevin Indig 90-Day Recency Check
+    m_date = re.search(r"^(?:updatedAt|date):\s*[\"']?(\d{4}-\d{2}-\d{2})[\"']?", fm, re.M)
+    date_str = m_date.group(1) if m_date else None
+    days_since_update = None
+    passes_90d_recency = False
+    if date_str:
+        try:
+            dt = datetime.strptime(date_str, "%Y-%m-%d").replace(tzinfo=timezone.utc)
+            now = datetime.now(timezone.utc)
+            days_since_update = max(0, (now - dt).days)
+            passes_90d_recency = days_since_update <= 90
+        except Exception:
+            pass
+
+    # 3. Lily Ray 69% Self-Serving Listicle Exclusion Guard
+    has_neutral_buyer_matrix = bool(re.search(r"按你的情况选|Decision Matrix|by situation|按场景|Scenario|Decision by", body, re.I))
+    has_zenodo_doi_proof = "10.5281/zenodo." in body
+    has_self_ranked_no1_bias = bool(re.search(r"#1\s+Best\s+is\s+Jason\s+Zhu|We\s+ranked\s+ourselves\s+#1", body, re.I))
+
+    return {
+        "file": md_path.name,
+        "petrovic_sro_500w_grounding": {
+            "concrete_stats_in_first_500_tokens": len(stat_hits_500),
+            "sro_fact_density_per_100_tokens": sro_density_per_100w,
+            "rudzki_top_10pct_chunk_stats_count": len(stat_hits_top10),
+            "passes_sro_high_density": len(stat_hits_500) >= 5,
+        },
+        "indig_90d_recency_guard": {
+            "frontmatter_date": date_str,
+            "days_since_update": days_since_update,
+            "passes_90_day_threshold": passes_90d_recency,
+        },
+        "lily_ray_69pct_self_listicle_guard": {
+            "has_neutral_buyer_situation_matrix": has_neutral_buyer_matrix,
+            "has_external_zenodo_doi_proof": has_zenodo_doi_proof,
+            "free_of_self_ranked_no1_bias": not has_self_ranked_no1_bias,
+            "passes_lily_ray_guard": has_neutral_buyer_matrix and has_zenodo_doi_proof and not has_self_ranked_no1_bias,
+        },
+    }
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="GEO Closed-Loop Engine (L1-L5 Open-Source + Commercial AIsa / DataForSEO / GoAnyAPI)")
     sub = parser.add_subparsers(dest="cmd", required=True)
@@ -1190,6 +1259,7 @@ def main() -> int:
 
     sub.add_parser("verify-entity-experiment", help="Run 4-Layer Quantitative Entity Verification Experiment (Molecule + Google US SERP + Multi-Run Online LLM + Snapshot)")
     sub.add_parser("proprietary-assets", help="L4 Georg Richard Aare & Eli Schwartz 7-Category Proprietary Asset Audit on core BOFU pages")
+    sub.add_parser("sro-and-recency", help="L4 Dan Petrovic SRO Grounding Density + Kevin Indig 90-Day Recency + Lily Ray 69%% Self-Listicle Guard")
 
     p_giga = sub.add_parser("check-gigalinks-index", help="L1 Commercial (GoAnyAPI / DataForSEO): Batch check Google indexing status of Tier-2/3 GIGALinks URLs for Gate 1")
     p_giga.add_argument("--urls", nargs="*", default=[], help="List of GIGALinks URLs to check")
@@ -1212,6 +1282,18 @@ def main() -> int:
 
     args = parser.parse_args()
     brand_tokens = ["Jason Zhu", "jasonzhu.ai", "JasonZhu.AI"]
+
+    if args.cmd == "sro-and-recency":
+        core_files = [
+            BLOG_DIR / "indie-payments-report-2026.md",
+            BLOG_DIR / "indie-payments-report-2026.en.md",
+            BLOG_DIR / "choose-payment-platform-2026.md",
+            BLOG_DIR / "choose-payment-platform-2026.en.md",
+            BLOG_DIR / "dodo-payments-waffo-ai-saas-fee-comparison.md",
+            BLOG_DIR / "dodo-payments-waffo-ai-saas-fee-comparison.en.md",
+        ]
+        print(json.dumps([audit_sro_recency_and_listicle_guard(f) for f in core_files if f.exists()], ensure_ascii=False, indent=2))
+        return 0
 
     if args.cmd == "verify-entity-experiment":
         print(json.dumps(run_entity_verification_experiment(save_snapshot=True), ensure_ascii=False, indent=2))

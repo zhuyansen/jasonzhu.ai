@@ -5,11 +5,17 @@
 
 export const AUTHOR_NAME = "Jason Zhu";
 export const AUTHOR_ALT_NAME = "祝彦森";
+export const AUTHOR_ALT_NAMES = ["祝彦森", "Yansen Zhu", "zhuyansen", "GoSailGlobal", "JasonZhu.AI"];
 
 export const PROFILES: { label: string; url: string }[] = [
   { label: "X", url: "https://x.com/GoSailGlobal" },
   { label: "GitHub", url: "https://github.com/zhuyansen" },
   { label: "YouTube", url: "https://www.youtube.com/channel/UCr8j5m5ebYrKqZoLxCaboBg" },
+  { label: "CERN Zenodo (200k Payments Dataset)", url: "https://doi.org/10.5281/zenodo.24386243" },
+  { label: "CERN Zenodo ($20 MoR Fee Benchmark)", url: "https://doi.org/10.5281/zenodo.24387072" },
+  { label: "CERN Zenodo (105k AI Skills Audit)", url: "https://doi.org/10.5281/zenodo.24387074" },
+  { label: "CERN Zenodo (Backlink Spam Database)", url: "https://doi.org/10.5281/zenodo.24387076" },
+  { label: "Agent Skills Hub", url: "https://www.agentskillshub.top" },
   { label: "B 站", url: "https://space.bilibili.com/266242152" },
   { label: "抖音", url: "https://www.douyin.com/user/MS4wLjABAAAABDQoQfOA67afaoRQ4u79rww04pMm4OoHwwyzJvPWS9E" },
   { label: "小红书", url: "https://www.xiaohongshu.com/user/profile/5bffc7d70000000008003b90" },

@@ -298,9 +298,10 @@ function LearnSeo({ l, isZh }: { l: "zh" | "en"; isZh: boolean }) {
   );
 }
 
-// 全球 SEO / GEO 六大实战流派地图与去伪存真指南（含 2D 坐标图 + 6 层检索链路 + 20 位实战派代表与官方红线校准）
+// 全球 SEO / GEO 六大实战流派地图与去伪存真指南（含 2D 坐标图 + 6 层检索链路 + 35 位实战派代表与官方红线校准）
 function SeoSchoolsMap({ l, isZh }: { l: "zh" | "en"; isZh: boolean }) {
   const m = SEO_SCHOOLS_MAP;
+  const totalPeople = m.schools.reduce((acc, s) => acc + s.people.length, 0);
   const dotColors: Record<string, string> = {
     blue: "bg-blue-600 text-white border-blue-700",
     indigo: "bg-indigo-600 text-white border-indigo-700",
@@ -325,7 +326,7 @@ function SeoSchoolsMap({ l, isZh }: { l: "zh" | "en"; isZh: boolean }) {
           {isZh ? "全球 SEO / GEO 六大实战流派地图与去伪存真指南" : "The 6 SEO & GEO Practitioner Schools: Map & Fact-Check Guide"}
         </p>
         <span className="text-xs px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 font-medium">
-          {isZh ? "6 大流派 · 20 位海内外实战派代表" : "6 schools · 20 hands-on practitioners"}
+          {isZh ? `6 大流派 · ${totalPeople} 位海内外实战派代表` : `6 schools · ${totalPeople} hands-on practitioners`}
         </span>
       </div>
       <p className="text-sm text-gray-600 leading-relaxed mb-4">{m.intro[l]}</p>
@@ -333,7 +334,7 @@ function SeoSchoolsMap({ l, isZh }: { l: "zh" | "en"; isZh: boolean }) {
       {/* 2D 视觉坐标图（横轴：站内产品/技术 ↔ 站外评测/外链共识；纵轴：长期白帽复利 ↔ 算法实验/灰帽红队） */}
       <div className="rounded-2xl border border-gray-200 bg-gradient-to-b from-slate-50 to-white p-3.5 sm:p-4 mb-4">
         <div className="text-center text-xs font-semibold text-emerald-700 mb-2">{m.axes.yTop[l]}</div>
-        <div className="relative w-full h-72 sm:h-80 rounded-xl border border-gray-200 bg-white overflow-hidden">
+        <div className="relative w-full h-80 sm:h-96 rounded-xl border border-gray-200 bg-white overflow-hidden">
           {/* 象限底色与十字中轴线 */}
           <div className="absolute inset-0 grid grid-cols-2 grid-rows-2 pointer-events-none">
             <div className="border-r border-b border-dashed border-gray-200 bg-blue-50/25 p-2">
@@ -359,24 +360,29 @@ function SeoSchoolsMap({ l, isZh }: { l: "zh" | "en"; isZh: boolean }) {
           </div>
 
           {/* 坐标节点 */}
-          {m.schools.map((s) => (
-            <a
-              key={s.id}
-              href={`#school-${s.id}`}
-              style={{ left: `${s.x}%`, top: `${s.y}%` }}
-              className="group absolute -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col items-center text-center focus:outline-none"
-            >
-              <span
-                className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold shadow-sm border transition-transform group-hover:scale-105 ${dotColors[s.color]}`}
+          {m.schools.map((s) => {
+            const topNames = s.people.slice(0, 4).map((p) => p.name.split("（")[0]).join(" / ");
+            const moreCount = s.people.length - 4;
+            return (
+              <a
+                key={s.id}
+                href={`#school-${s.id}`}
+                style={{ left: `${s.x}%`, top: `${s.y}%` }}
+                className="group absolute -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col items-center text-center focus:outline-none"
               >
-                <span>{s.num}</span>
-                <span className="whitespace-nowrap">{s.badge[l]}</span>
-              </span>
-              <span className="mt-1 px-1.5 py-0.5 rounded bg-white/95 border border-gray-200 text-[11px] text-gray-700 shadow-2xs whitespace-nowrap max-w-[170px] sm:max-w-none truncate">
-                {s.people.map((p) => p.name.split("（")[0]).join(" / ")}
-              </span>
-            </a>
-          ))}
+                <span
+                  className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold shadow-sm border transition-transform group-hover:scale-105 ${dotColors[s.color]}`}
+                >
+                  <span>{s.num}</span>
+                  <span className="whitespace-nowrap">{s.badge[l]}</span>
+                </span>
+                <span className="mt-1 px-2 py-0.5 rounded bg-white/95 border border-gray-200 text-[11px] text-gray-700 shadow-2xs whitespace-nowrap max-w-[165px] sm:max-w-[320px] truncate">
+                  {topNames}
+                  {moreCount > 0 ? (isZh ? ` 等 ${s.people.length} 人` : ` +${moreCount}`) : ""}
+                </span>
+              </a>
+            );
+          })}
         </div>
         <div className="flex items-center justify-between text-xs font-medium text-gray-600 mt-2 px-1">
           <span>{m.axes.xLeft[l]}</span>
