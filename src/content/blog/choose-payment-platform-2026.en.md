@@ -1,6 +1,8 @@
 ---
 coverImage: "/blog/indie-payments-report-2026/cover-en.png"
 title: "How to Choose a Payment Platform as an Indie Developer: 8 Compared, Plus What 200,000 Sellers Picked (2026)"
+date: "2026-10-15"
+updated: "2026-11-20"
 excerpt: >-
   Fees, Merchant of Record status and whether sellers in mainland China can get
   paid, for Stripe, Lemon Squeezy, Polar, Creem, Paddle, Gumroad, Dodo and Waffo,

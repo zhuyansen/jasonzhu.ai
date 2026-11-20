@@ -1,5 +1,7 @@
 ---
 title: "AI SaaS Payment Stack in Practice: Running Waffo + Dodo Payments Dual Gateways and the Real Cost of a $20 Subscription"
+date: "2026-11-15"
+updated: "2026-11-20"
 excerpt: "Field notes from Liu Xiaopai on why global AI SaaS builders should run Waffo + Dodo Payments in parallel for failover, plus an itemized fee breakdown of a $20 cross-border subscription across Hong Kong Stripe, Lemon Squeezy, Waffo, and Dodo Payments."
 doi: "10.5281/zenodo.24387072"
 ---
@@ -73,3 +75,11 @@ Most legacy gateways were built for flat monthly SaaS seats, whereas AI products
    - Interactive Fee Calculator: [Payment Platform Picker ($20 Net Payout Calculator)](/en/go-global/payments)
    - Full 8-Platform Benchmark: [How to Choose a Payment Platform as an Indie Developer (2026)](/en/blog/choose-payment-platform-2026)
    - Source attribution: Liu Xiaopai, *[How I Negotiated a Lower Dodo Payments Rate for Everyone](https://mp.weixin.qq.com/s/uTtP5zv_exiHa52qSa07BA)* (2026-11-15)
+
+## 5. Decision Matrix by Buyer Situation
+
+| Seller Entity & Billing Scenario | Recommended Gateway Stack | Net Payout on $20 Subscription & Rationale |
+|---|---|---|
+| **Mainland China individual shipping AI SaaS subscriptions or credit packs** | **Dodo Payments (Partner Rate) + Waffo Dual Stack** | Dodo takes **$1.16–$1.18** (**$18.82–$18.84 net**, $0 payout fee above $1,000); Waffo takes **$1.28** (**$18.72 net**); both include MoR global tax & WeChat/Alipay support |
+| **Hong Kong company considering Stripe HK exclusively** | **Dodo / Waffo Primary + Stripe HK Backup** | Once you add Stripe HK's **2% FX + 0.7% Billing + 0.5% Tax + Radar**, a $20 charge loses **~$1.79** (**~$18.21 net**) plus annual HK audit overhead |
+| **Existing projects on Lemon Squeezy** | **Migrate to Dodo / Waffo / Polar before March 31, 2027** | Lemon Squeezy takes **$2.08** on $20 (**$17.92 net**, >10% loss) and ceases payment processing on March 31, 2027 |

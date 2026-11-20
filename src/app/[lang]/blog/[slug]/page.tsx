@@ -72,6 +72,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             zh: `${SITE_URL}/zh/blog/${slug}`,
             "x-default": `${SITE_URL}/zh/blog/${slug}`,
           },
+      types: {
+        "text/markdown": `${SITE_URL}/api/md/${lang}/blog/${slug}`,
+      },
     },
     openGraph: {
       type: "article",
@@ -160,18 +163,20 @@ export default async function BlogPostPage({ params }: Props) {
   // Article JSON-LD structured data
   const articleJsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": post.doi ? ["Article", "ScholarlyArticle"] : "Article",
     headline: post.title,
     description: post.excerpt || post.title,
     datePublished: post.date,
     dateModified: post.updated || post.date,
-    // 投稿文的作者是撰稿人（主页未知就没有 url）；publisher 始终是站点
+    // 投稿文的作者是撰稿人（主页未知就没有 url）；publisher 始终链接到 Entity Home @id
     author: post.author
       ? { "@type": "Person", name: post.author.name, url: post.author.url }
-      : { "@type": "Person", name: AUTHOR_NAME, url: SITE_URL },
+      : { "@type": "Person", "@id": `${SITE_URL}/#person`, name: AUTHOR_NAME, url: SITE_URL },
     publisher: {
       "@type": "Person",
+      "@id": `${SITE_URL}/#person`,
       name: "Jason Zhu",
+      url: SITE_URL,
     },
     mainEntityOfPage: {
       "@type": "WebPage",
@@ -204,6 +209,60 @@ export default async function BlogPostPage({ params }: Props) {
       : {}),
   };
 
+  // Google Dataset Search 专项 JSON-LD（仅对带 CERN Zenodo DOI 的实证数据集报告生成）
+  const datasetJsonLd = post.doi
+    ? {
+        "@context": "https://schema.org",
+        "@type": "Dataset",
+        "@id": `https://doi.org/${post.doi}`,
+        name: post.title,
+        description: post.excerpt || post.title,
+        url: `${SITE_URL}/${lang}/blog/${slug}`,
+        sameAs: [
+          `https://doi.org/${post.doi}`,
+          `https://zenodo.org/records/${post.doi.split("zenodo.").pop()}`,
+        ],
+        identifier: [
+          `https://doi.org/${post.doi}`,
+          {
+            "@type": "PropertyValue",
+            propertyID: "DOI",
+            value: post.doi,
+            url: `https://doi.org/${post.doi}`,
+          },
+        ],
+        creator: {
+          "@type": "Person",
+          "@id": `${SITE_URL}/#person`,
+          name: AUTHOR_NAME,
+          url: SITE_URL,
+        },
+        publisher: {
+          "@type": "Organization",
+          "@id": `${SITE_URL}/#organization`,
+          name: "Jason Zhu (jasonzhu.ai)",
+          url: SITE_URL,
+        },
+        license: "https://creativecommons.org/licenses/by/4.0/",
+        isAccessibleForFree: true,
+        datePublished: post.date,
+        dateModified: post.updated || post.date,
+        keywords: post.tags.map((t) => tagLabel(t, lang)),
+        distribution: [
+          {
+            "@type": "DataDownload",
+            encodingFormat: "text/markdown",
+            contentUrl: `${SITE_URL}/api/md/${lang}/blog/${slug}`,
+          },
+          {
+            "@type": "DataDownload",
+            encodingFormat: "text/html",
+            contentUrl: `https://zenodo.org/records/${post.doi.split("zenodo.").pop()}`,
+          },
+        ],
+      }
+    : null;
+
   // FAQPage JSON-LD：文章含「## 常见问题」段落时自动生成
   const faqItems = extractFaq(post.content);
 
@@ -231,6 +290,14 @@ export default async function BlogPostPage({ params }: Props) {
           __html: JSON.stringify(articleJsonLd),
         }}
       />
+      {datasetJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(datasetJsonLd),
+          }}
+        />
+      )}
       {faqItems.length > 0 && (
         <script
           type="application/ld+json"

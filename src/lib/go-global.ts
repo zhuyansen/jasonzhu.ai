@@ -173,22 +173,39 @@ export const DATA_TOOLS: Pick[] = [
 ];
 
 export const SEO_SKILLS: Pick[] = [
-  { what: { zh: "营销技能合集（CRO、文案、SEO、数据分析）", en: "Marketing skills: CRO, copy, SEO, analytics" }, name: "marketingskills（Corey Haines）", url: "https://github.com/coreyhaines31/marketingskills" },
+  {
+    what: { zh: "16 项植错唯一 100% 检出且 0 误报（8 大审计门禁：CORE-EEAT / CITE / ROAS）", en: "16/16 planted issues found with 0 false claims (8 auditor gates: CORE-EEAT, CITE, ROAS)" },
+    name: "aaron-marketing-skills（🥇 实测第 1）",
+    url: "https://agentskillshub.top/skill/aaron-he-zhu/aaron-marketing-skills/",
+  },
+  {
+    what: { zh: "本地 CLI 310+ 确定性规则，90 秒检出 15/16 且 0 误报，适合反复回归测试", en: "Local CLI with 310+ deterministic rules; 15/16 found with 0 false claims in 90s" },
+    name: "squirrelscan（🥈 实测第 2）",
+    url: "https://agentskillshub.top/skill/squirrelscan/squirrelscan/",
+  },
+  {
+    what: { zh: "营销技能合集（CRO、文案、SEO、数据分析），60 秒检出 15/16 且 0 误报", en: "Marketing skills: CRO, copy, SEO, analytics; 15/16 found with 0 false claims in 60s" },
+    name: "marketingskills（🥉 Corey Haines）",
+    url: "https://github.com/coreyhaines31/marketingskills",
+  },
+  {
+    what: { zh: "把 Google Search Console / Bing / GA4 直接连进 Claude Code 对话查真实曝光与气泡图词", en: "Connect Google Search Console, Bing & GA4 directly into Claude Code via MCP" },
+    name: "mcp-gsc / search-console-mcp",
+    url: "https://agentskillshub.top/skill/AminForou/mcp-gsc/",
+  },
   { what: { zh: "页面 SEO 体检，新手版和进阶技术版", en: "Page SEO audits, beginner and technical" }, name: "seo-audit-skill（子木）", url: "https://github.com/JeffLi1993/seo-audit-skill" },
-  { what: { zh: "按 Google 指南和 Ahrefs 清单做 92 项检查", en: "92 checks from Google's guidelines and the Ahrefs checklist" }, name: "seo-audit（Wonfull）", url: "https://github.com/wonfull888/seo-audit" },
-  // 10-17 实测后加的，不在那条帖子里：在 jasonzhu.ai 和 agentskillshub.top 各查出一个真问题，但误报多
   {
     what: { zh: "本地全站技术体检，370 多条规则，能对比改版前后", en: "Local technical crawl, 370+ rules, before/after diffs" },
     why: {
-      zh: "10 月实测在我两个站各查出一个真问题，但误报多，GEO 和硬门槛类结论只当参考",
-      en: "tested in October, it found a real issue on each of my two sites but raises many false alarms; treat GEO and hard-threshold findings as hints",
+      zh: "10 月实测在我两个站各查出一个真问题，但 11 月沙盒实测 64 项里有 6 项误报，GEO 和硬门槛类结论只当参考",
+      en: "found a real issue on each of my two sites, though our Nov benchmark flagged 6 false claims among 64 items; treat GEO and hard-threshold findings as hints",
     },
     name: "seo-audit-skill（SEOmator）",
     url: "https://github.com/seo-skills/seo-audit-skill",
   },
 ];
 
-/** 上面几个之外的全部：我维护的 Claude SEO skill / MCP / GEO 工具合集（用户 10-18 要求加）。网页版是实时的，GitHub 版是同一份清单 */
+/** 上面几个之外的全部：我维护的 Claude SEO skill / MCP / GEO 工具合集（11 月已升级至 293 个安全评级 + 16 项植错沙盒横评） */
 export const SEO_TOOLS_DIRECTORY = {
   hub: "https://agentskillshub.top/best/seo-tools/",
   repo: "https://github.com/zhuyansen/awesome-claude-seo-skills",
@@ -345,7 +362,7 @@ export const GEO_NEW_SITE = {
   },
 };
 
-/** 增长：SEO 关键词工具（用户 10-17 给的分组名「seo关键词」） */
+/** 增长：SEO 关键词与哥飞 AI 工具箱（用户 10-17 给的分组名「seo关键词」+ 11-20 补入哥飞开放 API/MCP 与工具箱） */
 export const KEYWORD_TOOLS: SharedPick[] = [
   {
     what: { zh: "关键词难度查询", en: "Keyword difficulty lookup" },
@@ -357,12 +374,22 @@ export const KEYWORD_TOOLS: SharedPick[] = [
     date: "2026-06-10",
   },
   {
-    what: { zh: "SEO Agent", en: "An SEO agent" },
+    what: { zh: "SEO Agent（查词、看对手、审查网站记入待办）", en: "SEO Agent (keyword research, competitor check & site audit to-dos)" },
     name: "哥飞 SEO Agent",
     url: "https://seo.web.cafe/chat/",
     by: "哥飞",
     post: "https://x.com/gefei55/status/2106024221671567671",
     date: "2026-10-02",
+  },
+  {
+    what: { zh: "20+ 免费实战小工具（KGR 评估、需求挖掘机、SERP 解密、外链价值/Spam 查询、AdSense 73 项预检）", en: "20+ free utilities (KGR calculator, demand miner, SERP decoder, backlink spam check, AdSense 73-point precheck)" },
+    name: "哥飞的 SEO 工具箱",
+    url: "https://seo.web.cafe/",
+  },
+  {
+    what: { zh: "36 个接口（16 组装结论 + 16 原始数据 + 4 知识库），支持 HTTP API / MCP / CLI / Claude Skills", en: "36 endpoints (16 analysis + 16 raw data + 4 playbooks) via HTTP API, MCP, CLI & Claude Skills" },
+    name: "哥飞 SEO 开放 API & MCP",
+    url: "https://seo.web.cafe/api/",
   },
   // Jesse 的「佛系 SEO」只留的两样免费工具（见 JESSE_SEO）
   {
@@ -382,6 +409,59 @@ export const KEYWORD_TOOLS: SharedPick[] = [
     date: "2024-12-24",
   },
 ];
+
+/** 建站补充：哥飞 GeFeiSites 建站引擎（https://new.web.cafe/sites#showcase） */
+export const GEFEI_SITES_ENGINE = {
+  url: "https://new.web.cafe/sites#showcase",
+  agentUrl: "https://seo.web.cafe/chat/",
+  zh: "不懂代码或想抢在 48 小时内上线纯前端新词工具站/小游戏站：哥飞的 GeFeiSites 建站引擎把源码一次部署到你自己的 Cloudflare 账号（Pages + Workers + D1 + R2），再用 MCP 连上 Claude Code / Cursor 和哥飞 SEO Agent，一句话建站、自动生成多语言 hreflang、sitemap、/llms.txt 并通过 IndexNow 秒推 Bing（Showcase 案例：4 语种在线拼图 Pimg.app 2 小时上线、Claude Skills 导航站 SkillsBot.org 27 分钟上线 30 页）。注意：目前仅适合免登录的纯前端工具、小游戏和目录内容站，还不支持用户注册登录与在线收款（需要收款的 SaaS 仍用 Vercel + Supabase + Waffo/Dodo）。",
+  en: "For no-code builders or shipping a front-end utility/game site within 48 hours of a new term trending: GeFeiSites deploys once to your own Cloudflare account (Pages + Workers + D1 + R2) and connects via MCP to Claude Code / Cursor and Gefei's SEO Agent — auto-generating multilingual hreflang, sitemaps, /llms.txt, and IndexNow pushes (Showcase: 4-language image editor Pimg.app shipped in 2 hours; SkillsBot.org shipped 30 pages in 27 minutes). Note: designed for login-free tools, games, and directories; SaaS products requiring user auth and checkout should stick with Vercel + Supabase + Waffo/Dodo.",
+};
+
+/** 增长与商业决策：二虎分享的「让 AI 帮你做增长决策，先把这 11 份数据配齐」（模型不缺智商，缺的是数据） */
+export const ERHU_GROWTH_DATA_11 = {
+  lead: {
+    zh: "很多人让 AI（Claude、Codex、Gemini、Manus）分析增长和投放，喂进去的只有一张广告后台截图。模型不缺智商，缺的是全链路数据——1 到 6 是自己的数据，7 和 8 决定它准不准，9 和 10 是别人的盘子，11 是怎么切：",
+    en: "Most people ask AI (Claude, Codex, Gemini, Manus) for growth decisions while feeding it only a single ad-dashboard screenshot. Models do not lack intelligence; they lack full-funnel data — 1 to 6 are your own data, 7 and 8 decide whether it is accurate, 9 and 10 are competitors' data, and 11 is how you slice it:",
+  },
+  groups: [
+    {
+      badge: { zh: "1–6 自己的真实数据（告诉 AI 你做得怎么样）", en: "1–6 Your First-Party Truth (How you are performing)" },
+      color: "blue",
+      items: [
+        { num: "1️⃣", name: { zh: "网站行为", en: "Web Traffic & Behavior" }, tools: "Google Analytics (GA4) / Plausible", desc: { zh: "全站流量从哪来、看了什么、在哪一步走掉（按渠道 × 地区 × 端 × 页面 × 语言叉乘）", en: "Where visitors come from, what they view, and where they drop off (channel × region × device × page × language)" } },
+        { num: "2️⃣", name: { zh: "自然搜索与 AI 表现", en: "Organic & AI Search" }, tools: "Google Search Console / Bing Webmaster Tools", desc: { zh: "用户搜什么词找到你、哪些页有曝光没点击（可用 mcp-gsc 直连 Claude，结合气泡图四象限与生成式 AI 效果报告）", en: "Queries, impressions without clicks, bubble-chart quadrants, and GSC Generative AI performance reports" } },
+        { num: "3️⃣", name: { zh: "移动端 App 归因 (MMP)", en: "Mobile App Attribution" }, tools: "Adjust / AppsFlyer", desc: { zh: "做 App 必配，看移动端安装具体由哪个渠道、哪个 Campaign 带来", en: "Essential for mobile apps to attribute installs to exact channels and campaigns" } },
+        { num: "4️⃣", name: { zh: "产品内行为与留存", en: "In-Product Retention" }, tools: "PostHog / Mixpanel / Amplitude", desc: { zh: "能把人找来不等于能留下来：看用户进来后用了什么核心功能、第几天还在（Cohort 留存）", en: "Getting traffic is not keeping users: track feature adoption and Day-N cohort retention" } },
+        { num: "5️⃣", name: { zh: "付费广告花费", en: "Paid Ad Spend" }, tools: "Meta Ads / Google Ads / TikTok Ads", desc: { zh: "花出去的钱：View、Click、Spend 一路拆到 Campaign、Ad Set 和单条素材（最不缺但也最容易被当成全部的一份）", en: "Money spent broken down to campaign, ad set, and single creative level" } },
+        { num: "6️⃣", name: { zh: "付费真相（真金白银账本）", en: "Payment & Revenue Truth" }, tools: "Waffo / Dodo Payments / Stripe / Paddle / PayPal / Shopify", desc: { zh: "收回来的钱：谁真的付了、付了多少、净到手多少（这是唯一不能造假的终局账本）", en: "Money collected: who actually paid, net revenue after fees, and LTV" } },
+      ],
+    },
+    {
+      badge: { zh: "7–8 校准层（决定上面 6 份数据准不准）", en: "7–8 Calibration Layer (Whether your numbers are trustworthy)" },
+      color: "emerald",
+      items: [
+        { num: "7️⃣", name: { zh: "服务端回传通道", en: "Server-Side Event Loop" }, tools: "Pixel → Meta Conversions API (CAPI) / TikTok Events API (S2S)", desc: { zh: "决定广告系统能学到什么：新手先配好浏览器 Pixel，起量后必须上服务端 S2S 回传真实付费事件", en: "Feeds ad algorithms real purchase signals: start with browser Pixel, graduate to server-to-server CAPI/S2S" } },
+        { num: "8️⃣", name: { zh: "统一归因口径", en: "Attribution Window Alignment" }, tools: "View-through vs. Click-through (1d / 7d / 28d)", desc: { zh: "定功劳算谁的：各平台都按自己口径认领功劳，不统一口径直接让 AI 把几家后台数字加总，结论必错", en: "Each ad platform over-claims credit; align attribution windows before asking AI to sum conversions" } },
+      ],
+    },
+    {
+      badge: { zh: "9–10 别人的盘子（告诉 AI 你还能做成什么样）", en: "9–10 Market & Competitor Intelligence (What is possible)" },
+      color: "amber",
+      items: [
+        { num: "9️⃣", name: { zh: "第三方流量与外链搜索库", en: "3rd-Party Traffic & SEO DBs" }, tools: "Similarweb / Ahrefs / Semrush（或 AIsa / DataForSEO / 哥飞 API）", desc: { zh: "看竞品流量规模、渠道构成、外链与买词（注意：它们都是估算值不是真实账本，适合看趋势比大小）", en: "Estimate competitor traffic mix, backlinks, and paid keywords (use for relative trends, not as an exact ledger)" } },
+        { num: "🔟", name: { zh: "公开竞品投放素材库", en: "Public Ad Creative Libraries" }, tools: "Meta Ad Library / Google Ads Transparency Center / TikTok Creative Center", desc: { zh: "官方免费公开：看对手正在真金白银投什么素材、主打什么痛点卖点、跑了多久没停", en: "Free official libraries showing which competitor creatives and hooks stay live the longest" } },
+      ],
+    },
+    {
+      badge: { zh: "1️⃣1️⃣ 终极决策叉乘表（让 AI 做判断而不是读报表）", en: "1️⃣1️⃣ The Cross-Product Decision Matrix (From reading reports to making calls)" },
+      color: "purple",
+      items: [
+        { num: "1️⃣1️⃣", name: { zh: "六维叉乘切分表", en: "6-Dimension Cross-Slice Table" }, tools: "端 × 国家 × 卖点 × 目标 × SKU × 类别（行业/竞品/场景）", desc: { zh: "把前面 10 份数据叉乘进同一张表，每个格子最后都必须落到两个终局数字：【付费人数】与【付费金额】", en: "Cross-multiply all 10 feeds by Device × Country × Hook × Goal × SKU × Category; every cell must resolve to Paying Users & Net Revenue" } },
+      ],
+    },
+  ],
+};
 
 /** 增长：Jesse Lau 的「佛系 SEO」（用户 10-17 发来，2024-12-24 的帖子）：SEO 就照 Google 的新手指南做，工具只留两样免费的 */
 export const JESSE_SEO = {
@@ -457,14 +537,14 @@ export const PAGE_TUNING = {
     {
       name: { zh: "排名高、点击率低", en: "High rank, low CTR" },
       act: {
-        zh: "Jesse 认为这类词多半被 AI 摘要截走了点击，没太好的办法。Google 给的检查方向：对手是不是用了结构化数据、显示成富媒体结果；这个词是不是用户本来就不想找你；用户是不是在摘要里就拿到了答案。想让人点进来，就改标题和描述。",
-        en: "Jesse thinks AI Overviews take most of these clicks and there is little to do. Google suggests checking whether competitors show rich results from structured data, whether people searching it want something else, and whether the snippet already answers them; if you want the click, rewrite the title and description.",
+        zh: "Jesse 认为这类词多半被 AI 摘要（AI Overviews）截走了点击，传统 SEO 没太好办法；但在 GEO 闭环里，这恰恰是「已经进检索池 Top-10 却没赢下 AI 首段引用/点击」的词——按 Tomek Rudzki 前 10% 铁律 + Suski 前 50 词法则，在该页首段前 50 词直接亮出品牌名 + 3 个硬核统计数字（或交互计算器），把「零点击曝光」转化为「AI 点名推荐 + 富媒体点击」。Google 给的检查方向：对手是不是用了结构化数据、这个词是不是在摘要里就拿到了答案，想让人点进来就改标题和描述。",
+        en: "Jesse notes AI Overviews take most of these clicks. In a GEO loop, however, High Rank + Low CTR means you already passed the Top-10 retrieval gate — apply Tomek Rudzki's top-10% rule and Suski's First-50-Words rule (place your brand name + 3 concrete stats or an interactive calculator in the opening 50 words) to win the AI Overview citation, and sharpen the title, meta description, and Schema rich results to win the click.",
       },
     },
   ],
   next: {
-    zh: "挑出词以后，在 Search Console 里按这个查询筛选，找到它对应的页面，再把标题、描述、图片 alt 和小标题改得具体、准确。",
-    en: "Once you have the queries, filter by each one in Search Console to find its pages, then make their titles, descriptions, image alt text and headings specific and accurate.",
+    zh: "挑出词以后，在 Search Console 里按这个查询筛选（或直接用 AminForou/mcp-gsc 让 Claude Code 自动拉取四象限词表），找到它对应的页面，再把首段前 50 词 BLUF、标题、描述、图片 alt 和小标题改得具体、准确。",
+    en: "Once you have the queries, filter by each one in Search Console (or pull the four quadrants directly into Claude Code via AminForou/mcp-gsc) to find its pages, then sharpen the opening 50-word BLUF, titles, descriptions, image alt text and headings.",
   },
   more: [
     {

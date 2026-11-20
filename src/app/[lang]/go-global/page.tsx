@@ -10,6 +10,8 @@ import {
   CLOUDFLARE_STACK,
   DATA_TOOLS,
   DOMAIN_TLD,
+  ERHU_GROWTH_DATA_11,
+  GEFEI_SITES_ENGINE,
   GEO_NEW_SITE,
   GO_GLOBAL,
   JESSE_SEO,
@@ -641,17 +643,103 @@ function Beginners({ isZh }: { isZh: boolean }) {
   );
 }
 
-// 增长这一步的总框架：Jason 的「SEO 水系模型」v4（2026-07-24 的帖子）。只转述框架；帖子里付费客座那条不写进页面（10-06 已停买 dofollow 外链）。
+// 增长这一步的总框架：Jason 的「SEO 水系模型」v4（2026-07-24 的帖子）+ 与 L1–L5 GEO 工程闭环的合流映射。只转述框架；帖子里付费客座那条不写进页面（10-06 已停买 dofollow 外链）。
 function SeoSystem({ l, isZh }: { l: "zh" | "en"; isZh: boolean }) {
   return (
     <div className={`${BOX} mb-3`}>
-      <p className="text-sm font-semibold text-gray-900 mb-1">{isZh ? "SEO 系统：水系模型 v4" : "The SEO system: a water model, v4"}</p>
+      <p className="text-sm font-semibold text-gray-900 mb-1">
+        {isZh ? "SEO 系统：水系模型 v4 × GEO 五层工程闭环" : "The SEO system: Water Model v4 × L1–L5 GEO Loop"}
+      </p>
       <p className="text-sm text-gray-600 leading-relaxed">
         {isZh
-          ? "把 SEO 当成一套水系来搭。进水口有三个：传统的外链权威（免费目录只管收录、不传权重，别堆量），被 AI 引用（被提及比被链接更重要），Toolify、Product Hunt 这类平台的收录。效果也要分层看：GSC 和 GA 里的点击只是冰山一角，我实测 AI 引用量是 AI 点击量的 9 倍，被引用却没被点击的那部分，用 Bing 的 AI Performance 和 Clarity 的引用报告补上，都免费。"
-          : "Build SEO as a water system with three inflows: classic link authority (free directories get you indexed but pass no weight, so do not pile them up), citations by AI (being mentioned matters more than being linked), and listings on platforms such as Toolify and Product Hunt. Measure in layers too: clicks in GSC and GA are the tip of the iceberg. I counted nine AI citations for every AI click, and the free Bing AI Performance and Clarity citation reports show the citations that never become clicks."}
+          ? "把 SEO 当成一套水系来搭。进水口有三个：传统的外链权威（免费目录只管收录、不传权重，别堆量；重点发 CERN Zenodo 学术 DOI 与 GitHub 开源高证明力节点），被 AI 引用（被提及比被链接更重要），Toolify、Product Hunt 这类平台的收录。效果也要分层看：GSC 和 GA 里的点击只是冰山一角，我实测 AI 引用量是 AI 点击量的 9 倍，被引用却没被点击的那部分，用 Google Search Console 的「生成式 AI 效果报告」、Bing 的 AI Performance 和 Clarity 的引用报告补上，都免费。"
+          : "Build SEO as a water system with three inflows: classic link authority (free directories get you indexed but pass no weight, so do not pile them up; focus on high-proof nodes such as CERN Zenodo DOIs and open-source GitHub repos), citations by AI (being mentioned matters more than being linked), and listings on platforms such as Toolify and Product Hunt. Measure in layers too: clicks in GSC and GA are the tip of the iceberg. I counted nine AI citations for every AI click, and Google Search Console's Generative AI Performance report, Bing AI Performance and Clarity citation reports show the citations that never become clicks."}
       </p>
+      <div className="mt-2.5 grid gap-2 sm:grid-cols-3 text-xs text-gray-700">
+        <div className="rounded-xl border border-gray-200 bg-gray-50 p-2.5">
+          <p className="font-semibold text-gray-900 mb-0.5">
+            {isZh ? "① 三个进水口 → L1/L2/L5 基建" : "① 3 Inflows → L1/L2/L5 Infrastructure"}
+          </p>
+          <p className="text-gray-600 leading-relaxed">
+            {isZh
+              ? "外链权威（Zenodo DOI + GitHub + backlink-guard 防毒）+ AI 检索引用（无噪 Markdown 端点 /api/md/... + Dataset JSON-LD）+ 垂直平台席位（Reddit / YouTube / 行业评测榜）。"
+              : "Link authority (Zenodo DOIs + GitHub + backlink-guard) + AI grounding (/api/md/... raw Markdown + Dataset JSON-LD) + directory/platform seats."}
+          </p>
+        </div>
+        <div className="rounded-xl border border-gray-200 bg-gray-50 p-2.5">
+          <p className="font-semibold text-gray-900 mb-0.5">
+            {isZh ? "② 河道分流防滥用 → L3/L4 页面工程" : "② Channel Routing → L3/L4 On-Page"}
+          </p>
+          <p className="text-gray-600 leading-relaxed">
+            {isZh
+              ? "严守 Google 2026-07-15 官方红线：扇出查询用 SERP 重合率（≥40%）合并进同一篇权威长文，绝不一词一页；首段前 50 词 BLUF + 中立「按你的情况选」矩阵赢下 AI 首段点名。"
+              : "Follow Google's 2026-07-15 rule: merge fan-out queries with ≥40% SERP overlap into one authoritative page; use a 50-word BLUF + neutral buyer matrix to win the citation."}
+          </p>
+        </div>
+        <div className="rounded-xl border border-gray-200 bg-gray-50 p-2.5">
+          <p className="font-semibold text-gray-900 mb-0.5">
+            {isZh ? "③ 分层水表监测 → 9 倍冰山全量可见" : "③ Layered Meters → 9× Citation Iceberg"}
+          </p>
+          <p className="text-gray-600 leading-relaxed">
+            {isZh
+              ? "表层点击看 GSC（气泡图四象限 + mcp-gsc）与 GA4/Plausible；水面下 9 倍未点击的 AI 引用看 GSC 生成式 AI 效果报告 + Bing AI Performance + Clarity AI Citations。"
+              : "Surface clicks via GSC (4-quadrant bubble chart + mcp-gsc) and GA4/Plausible; the 9× underwater AI citations via GSC Generative AI report + Bing AI Performance + Clarity."}
+          </p>
+        </div>
+      </div>
       <FromMyPost post={MY_POSTS.seoSystem} lang={l} />
+    </div>
+  );
+}
+
+// 二虎分享的「想让 AI 帮你做增长决策，先把这 11 份数据配齐」（模型不缺智商，缺的是数据）
+function ErhuGrowthData11({ l, isZh }: { l: "zh" | "en"; isZh: boolean }) {
+  const d = ERHU_GROWTH_DATA_11;
+  const badgeColors: Record<string, string> = {
+    blue: "bg-blue-50 text-blue-700 border-blue-200",
+    emerald: "bg-emerald-50 text-emerald-700 border-emerald-200",
+    amber: "bg-amber-50 text-amber-800 border-amber-200",
+    purple: "bg-purple-50 text-purple-700 border-purple-200",
+  };
+  return (
+    <div id="ai-growth-data-11" className={`mt-3 ${BOX} scroll-mt-24`}>
+      <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">
+        <p className="text-sm font-semibold text-gray-900">
+          {isZh
+            ? "让 AI 帮你做增长决策：先把这 11 份全链路数据配齐（二虎）"
+            : "For AI Growth Decisions: Assemble These 11 Full-Funnel Data Feeds First (Erhu)"}
+        </p>
+        <span className="text-xs px-2.5 py-0.5 rounded-full bg-purple-50 text-purple-700 font-medium">
+          {isZh ? "模型不缺智商，缺的是数据" : "Models don't lack IQ; they lack data"}
+        </span>
+      </div>
+      <p className="text-sm text-gray-600 leading-relaxed mb-3">{d.lead[l]}</p>
+      <div className="space-y-3">
+        {d.groups.map((g) => (
+          <div key={g.badge.en} className="rounded-xl border border-gray-200 bg-gray-50/70 p-3">
+            <span className={`inline-block text-xs px-2.5 py-0.5 rounded-full border font-medium mb-2 ${badgeColors[g.color]}`}>
+              {g.badge[l]}
+            </span>
+            <div className="grid gap-2 sm:grid-cols-2">
+              {g.items.map((item) => (
+                <div
+                  key={item.num}
+                  className={`rounded-lg border border-gray-200 bg-white p-2.5 text-xs leading-relaxed ${
+                    g.items.length === 1 ? "sm:col-span-2" : ""
+                  }`}
+                >
+                  <p className="font-semibold text-gray-900">
+                    <span className="mr-1">{item.num}</span>
+                    {item.name[l]}
+                    <span className="ml-1.5 font-mono text-[11px] font-normal text-blue-600">{item.tools}</span>
+                  </p>
+                  <p className="text-gray-600 mt-0.5">{item.desc[l]}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
@@ -890,6 +978,23 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
             {CLOUDFLARE_STACK.date}
           </p>
         </div>
+        <div className={`mt-3 ${BOX}`}>
+          <p className="text-sm font-semibold text-gray-900 mb-1">
+            {isZh
+              ? "不懂代码 / 48 小时抢新词上站：哥飞 GeFeiSites 建站引擎"
+              : "No-code / 48-hour new-term utility sites: Gefei's GeFeiSites Engine"}
+          </p>
+          <p className="text-sm text-gray-600 leading-relaxed">{GEFEI_SITES_ENGINE[l]}</p>
+          <p className="mt-2 text-xs text-gray-500 flex flex-wrap gap-x-3 gap-y-1">
+            <a href={GEFEI_SITES_ENGINE.url} {...OUT} className="text-blue-600 font-medium hover:underline">
+              {isZh ? "GeFeiSites 建站引擎 & Showcase →" : "GeFeiSites Engine & Showcase →"}
+            </a>
+            <span className="text-gray-300">·</span>
+            <a href={GEFEI_SITES_ENGINE.agentUrl} {...OUT} className="text-blue-600 hover:underline">
+              {isZh ? "哥飞 SEO Agent →" : "Gefei SEO Agent →"}
+            </a>
+          </p>
+        </div>
         <div className="mt-3">
           <Card
             href={`/${lang}${GO_GLOBAL}/extensions`}
@@ -1115,18 +1220,19 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
           />
         </div>
         <div className={`mt-3 ${BOX} text-sm text-gray-700`}>
-          <span className="font-medium">{isZh ? "想看全部 SEO skill：" : "Every SEO skill in one list: "}</span>
+          <span className="font-medium">{isZh ? "想看全部 SEO skill 与 16 项植错沙盒实测：" : "Every SEO skill & our 16-planted-bug benchmark: "}</span>
           {isZh
-            ? "我维护的开源合集，收了 242 个 SEO skill、SEO 数据 MCP 和 GEO 工具，按一站式、体检、关键词、AI 搜索可见度、内容、外链分类，每个都读过 README、做了安全评级。"
-            : "the open-source list I maintain: 242 SEO skills, SEO data MCP servers and GEO tools, sorted into all-in-one suites, audits, keywords, AI search visibility, content and links, each read and security-graded."}
-          <a href={SEO_TOOLS_DIRECTORY.hub} {...OUT} className="ml-1 text-blue-600 hover:underline">
-            {isZh ? "网页版（可筛选，每 8 小时更新）" : "Live page (filterable, refreshed every 8 hours)"}
+            ? "我维护的开源合集，已收 293 个 SEO skill、SEO 数据 MCP 和 GEO 工具，并建了一个埋有 16 处真实 SEO 故障（HTTP 头 noindex、hreflang 指向 404、robots.txt 封锁目录内死链、错误 canonical 等）的 9 页测试站逐一实测——6/13 的工具会出现虚假「PASS」误报，3/13 因死守 robots.txt 漏查被拦截目录。唯一 16/16 全检出且 0 误报的是 aaron-marketing-skills，紧随其后是 squirrelscan（15/16，本地 310+ 规则）与 marketingskills（15/16）。"
+            : "the open-source directory I maintain: 293 security-graded SEO skills, SEO data MCP servers and GEO tools, benchmarked against a 9-page test shop with 16 planted bugs (HTTP-header noindex, hreflang→404, broken links behind robots.txt, wrong canonical). 6 of 13 tools hallucinated false 'PASS' claims; only aaron-marketing-skills found 16/16 with 0 false claims, followed by squirrelscan (15/16) and marketingskills (15/16)."}
+          <a href={SEO_TOOLS_DIRECTORY.hub} {...OUT} className="ml-1 text-blue-600 font-medium hover:underline">
+            {isZh ? "293 个工具榜与 16 项植错横评（每 8 小时更新）→" : "293-Tool Directory & 16-Bug Benchmark →"}
           </a>
           <span className="mx-1 text-gray-400">·</span>
           <a href={SEO_TOOLS_DIRECTORY.repo} {...OUT} className="text-blue-600 hover:underline">
             GitHub
           </a>
         </div>
+        <ErhuGrowthData11 l={l} isZh={isZh} />
         <PageTuning l={l} isZh={isZh} />
         <Backlinks lang={lang} l={l} isZh={isZh} />
         <div className="mt-3 grid gap-3 md:grid-cols-2">

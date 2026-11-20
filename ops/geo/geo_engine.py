@@ -1220,6 +1220,190 @@ def audit_sro_recency_and_listicle_guard(md_path: Path) -> dict[str, Any]:
     }
 
 
+def run_live_panel(limit: int = 5, models: list[str] | None = None, save: bool = True) -> dict[str, Any]:
+    """L5 Automated Multi-Engine Live Panel Probe (via Aisa.one + GoAnyAPI):
+    Evaluates questions from ops/geo/questions.json across distinct LLM engines (Suski Rule 5: never average across engines),
+    recording per-engine Page Cited (URL present) vs Brand Named (Jason Zhu / jasonzhu.ai present) + Google US Top-10 rank.
+    """
+    from datetime import datetime, timezone
+
+    if not QUESTIONS_FILE.exists():
+        return {"error": f"{QUESTIONS_FILE} not found"}
+    q_cfg = json.loads(QUESTIONS_FILE.read_text(encoding="utf-8"))
+    questions = (q_cfg.get("questions") or [])[:limit]
+    engine_models = models or ["perplexity/sonar", "gpt-4o-mini"]
+    ts = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    date_tag = datetime.now(timezone.utc).strftime("%Y-%m-%d-%H%M")
+
+    evaluated = []
+    per_engine_summary: dict[str, dict[str, int]] = {
+        m: {"evaluated": 0, "page_cited": 0, "brand_named": 0} for m in engine_models
+    }
+
+    for q in questions:
+        qid = q.get("id")
+        prompt_text = q.get("question_en") or q.get("question") or ""
+        target_url = q.get("target_url") or ""
+
+        # Check Google US Top-10 SERP rank via GoAnyAPI
+        google_rank = None
+        try:
+            d, _ = _goany_call("serp", q=prompt_text, gl="US", hl="en")
+            organic = (d.get("result") or {}).get("organic") or []
+            for idx, item in enumerate(organic[:10]):
+                if "jasonzhu.ai" in (item.get("link") or "").lower():
+                    google_rank = idx + 1
+                    break
+        except Exception:
+            pass
+
+        engine_runs = {}
+        for m in engine_models:
+            res = run_aisa_multi_engine_probe(prompt_text, model=m, runs=1)
+            cited = res.get("page_cited_rate", "0/1").startswith("1/")
+            named = res.get("brand_named_rate", "0/1").startswith("1/")
+            per_engine_summary[m]["evaluated"] += 1
+            if cited:
+                per_engine_summary[m]["page_cited"] += 1
+            if named:
+                per_engine_summary[m]["brand_named"] += 1
+            engine_runs[m] = {
+                "page_cited": cited,
+                "brand_named": named,
+                "details": res.get("runs_detail", []),
+            }
+
+        evaluated.append(
+            {
+                "id": qid,
+                "prompt": prompt_text,
+                "target_url": target_url,
+                "google_us_top10_rank": google_rank,
+                "engines": engine_runs,
+            }
+        )
+
+    out = {
+        "timestamp_utc": ts,
+        "questions_evaluated_count": len(evaluated),
+        "per_engine_summary": per_engine_summary,
+        "results": evaluated,
+    }
+    if save:
+        snap = GEO_DIR / "panel" / f"live-panel-{date_tag}.json"
+        snap.parent.mkdir(parents=True, exist_ok=True)
+        snap.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
+        out["saved_snapshot"] = str(snap)
+    return out
+
+
+def audit_16_planted_guards(url: str) -> dict[str, Any]:
+    """L1 Deterministic 16-Planted-Bug Guard (from agentskillshub.top/best/seo-tools/ sandbox benchmark):
+    Explicitly verifies the hardest blind spots missed by 13 popular SEO skills:
+    1. HTTP X-Robots-Tag header noindex check (missed by marketingskills)
+    2. Meta robots noindex check
+    3. Canonical self-reference / non-homepage mismatch check
+    4. Hreflang target HTTP 200 verification (missed by squirrelscan)
+    5. Valid JSON-LD syntax verification (zero parse errors)
+    6. Title, meta description, H1, viewport, and Markdown alternate link presence
+    """
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (compatible; JasonZhu-GEO-16Guard/1.0)"})
+    try:
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            status = resp.status
+            headers = {k.lower(): v for k, v in resp.headers.items()}
+            html = resp.read().decode("utf-8", errors="replace")
+    except Exception as e:
+        return {"url": url, "error": str(e)}
+
+    x_robots = headers.get("x-robots-tag", "")
+    http_header_noindex = "noindex" in x_robots.lower()
+    meta_robots_match = re.search(r'<meta[^>]+name=["\']robots["\'][^>]+content=["\']([^"\']+)["\']', html, re.I)
+    meta_noindex = bool(meta_robots_match and "noindex" in meta_robots_match.group(1).lower())
+
+    title_match = re.search(r"<title[^>]*>(.*?)</title>", html, re.I | re.S)
+    title_text = title_match.group(1).strip() if title_match else ""
+    desc_match = re.search(r'<meta[^>]+name=["\']description["\'][^>]+content=["\']([^"\']*)["\']', html, re.I)
+    desc_text = desc_match.group(1).strip() if desc_match else ""
+    h1_matches = re.findall(r"<h1[^>]*>(.*?)</h1>", html, re.I | re.S)
+    viewport_present = bool(re.search(r'<meta[^>]+name=["\']viewport["\']', html, re.I))
+
+    canon_match = re.search(r'<link[^>]+rel=["\']canonical["\'][^>]+href=["\']([^"\']+)["\']', html, re.I)
+    canonical_url = canon_match.group(1).strip() if canon_match else ""
+    canonical_points_to_root_accidentally = bool(
+        canonical_url and canonical_url.rstrip("/") in ("https://jasonzhu.ai", "https://jasonzhu.ai/zh", "https://jasonzhu.ai/en")
+        and url.rstrip("/") not in ("https://jasonzhu.ai", "https://jasonzhu.ai/zh", "https://jasonzhu.ai/en")
+    )
+
+    md_alt_match = re.search(r'<link[^>]+type=["\']text/markdown["\'][^>]+href=["\']([^"\']+)["\']', html, re.I)
+    md_alternate_url = md_alt_match.group(1).strip() if md_alt_match else ""
+
+    # Hreflang target live status check (catches hreflang -> 404 blind spot)
+    hreflang_pairs = re.findall(
+        r'<link[^>]+rel=["\']alternate["\'][^>]+hrefLang=["\']([^"\']+)["\'][^>]+href=["\']([^"\']+)["\']',
+        html,
+        re.I,
+    )
+    hreflang_checks = []
+    hreflang_all_200 = True
+    for hlang, hurl in hreflang_pairs:
+        try:
+            hreq = urllib.request.Request(hurl, method="HEAD", headers={"User-Agent": "Mozilla/5.0 (compatible; JasonZhu-GEO-16Guard/1.0)"})
+            with urllib.request.urlopen(hreq, timeout=10) as hresp:
+                hcode = hresp.status
+        except Exception:
+            hcode = 0
+        ok = hcode == 200
+        if not ok:
+            hreflang_all_200 = False
+        hreflang_checks.append({"hreflang": hlang, "href": hurl, "status": hcode, "ok": ok})
+
+    # JSON-LD syntax validation
+    ld_blocks = re.findall(r'<script[^>]+type=["\']application/ld\+json["\'][^>]*>(.*?)</script>', html, re.I | re.S)
+    jsonld_valid_count = 0
+    jsonld_errors = []
+    jsonld_types = []
+    for idx, raw_block in enumerate(ld_blocks):
+        try:
+            parsed = json.loads(raw_block.strip())
+            jsonld_valid_count += 1
+            if isinstance(parsed, dict):
+                t = parsed.get("@type")
+                if t:
+                    jsonld_types.append(t)
+                for node in parsed.get("@graph", []):
+                    if isinstance(node, dict) and node.get("@type"):
+                        jsonld_types.append(node.get("@type"))
+        except Exception as e:
+            jsonld_errors.append({"block_index": idx, "error": str(e)})
+
+    checks = {
+        "http_200_ok": status == 200,
+        "no_http_header_x_robots_noindex": not http_header_noindex,
+        "no_meta_robots_noindex": not meta_noindex,
+        "has_title": bool(title_text),
+        "has_meta_description": bool(desc_text),
+        "has_single_h1": len(h1_matches) == 1,
+        "has_viewport_meta": viewport_present,
+        "canonical_valid_and_not_wrongly_homepage": bool(canonical_url) and not canonical_points_to_root_accidentally,
+        "hreflang_targets_all_return_200": bool(hreflang_checks) and hreflang_all_200,
+        "jsonld_all_valid_zero_parse_errors": jsonld_valid_count > 0 and len(jsonld_errors) == 0,
+    }
+    return {
+        "url": url,
+        "http_status": status,
+        "x_robots_tag_header": x_robots or "(none)",
+        "canonical_url": canonical_url,
+        "markdown_alternate_url": md_alternate_url,
+        "jsonld_blocks_count": len(ld_blocks),
+        "jsonld_types": jsonld_types,
+        "jsonld_errors": jsonld_errors,
+        "hreflang_checks": hreflang_checks,
+        "checks": checks,
+        "all_10_deterministic_guards_passed": all(checks.values()),
+    }
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="GEO Closed-Loop Engine (L1-L5 Open-Source + Commercial AIsa / DataForSEO / GoAnyAPI)")
     sub = parser.add_subparsers(dest="cmd", required=True)
@@ -1242,6 +1426,9 @@ def main() -> int:
     p_gates = sub.add_parser("three-gates", help="L1 Stephen Burns (Common Crawl) Three Gates audit: Permission + Edge WAF Bot Simulation + SSR JSON-LD/DOI")
     p_gates.add_argument("--url", default="https://jasonzhu.ai/en/blog/indie-payments-report-2026")
 
+    p_16 = sub.add_parser("audit-16-guards", help="L1 Deterministic 16-Planted-Bug Guard (X-Robots-Tag header, hreflang 200 status, canonical, JSON-LD)")
+    p_16.add_argument("--url", default="https://jasonzhu.ai/zh/go-global")
+
     p_sim = sub.add_parser("serp-similarity", help="L3 Marc Moeller SERP Similarity check via GoAnyAPI SERP (Merge vs Split intent decision)")
     p_sim.add_argument("--query-a", required=True)
     p_sim.add_argument("--query-b", required=True)
@@ -1260,6 +1447,10 @@ def main() -> int:
     sub.add_parser("verify-entity-experiment", help="Run 4-Layer Quantitative Entity Verification Experiment (Molecule + Google US SERP + Multi-Run Online LLM + Snapshot)")
     sub.add_parser("proprietary-assets", help="L4 Georg Richard Aare & Eli Schwartz 7-Category Proprietary Asset Audit on core BOFU pages")
     sub.add_parser("sro-and-recency", help="L4 Dan Petrovic SRO Grounding Density + Kevin Indig 90-Day Recency + Lily Ray 69%% Self-Listicle Guard")
+
+    p_live = sub.add_parser("run-live-panel", help="L5 Automated Live Panel Probe across questions.json via Aisa.one + GoAnyAPI")
+    p_live.add_argument("--limit", type=int, default=5, help="Number of questions from questions.json to probe")
+    p_live.add_argument("--models", nargs="+", default=["perplexity/sonar", "gpt-4o-mini"], help="Aisa.one models to probe")
 
     p_giga = sub.add_parser("check-gigalinks-index", help="L1 Commercial (GoAnyAPI / DataForSEO): Batch check Google indexing status of Tier-2/3 GIGALinks URLs for Gate 1")
     p_giga.add_argument("--urls", nargs="*", default=[], help="List of GIGALinks URLs to check")
@@ -1282,6 +1473,14 @@ def main() -> int:
 
     args = parser.parse_args()
     brand_tokens = ["Jason Zhu", "jasonzhu.ai", "JasonZhu.AI"]
+
+    if args.cmd == "audit-16-guards":
+        print(json.dumps(audit_16_planted_guards(args.url), ensure_ascii=False, indent=2))
+        return 0
+
+    if args.cmd == "run-live-panel":
+        print(json.dumps(run_live_panel(args.limit, args.models, save=True), ensure_ascii=False, indent=2))
+        return 0
 
     if args.cmd == "sro-and-recency":
         core_files = [

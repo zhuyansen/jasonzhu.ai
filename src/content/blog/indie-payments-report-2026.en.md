@@ -2,6 +2,8 @@
 coverImage: "/blog/indie-payments-report-2026/cover-en.png"
 doi: "10.5281/zenodo.24386243"
 title: "What 200,000 Checkout Links Say: The 2026 Indie Payments Report"
+date: "2026-10-15"
+updated: "2026-11-20"
 excerpt: >-
   I counted about 200,000 sellers across seven payment platforms. 82,000 started
   selling in 2026 before mid-October, the share selling software has nearly
@@ -83,3 +85,12 @@ If you find a Gumroad or Stripe link on your own site that you don't recognise, 
 - **Excluded:** sites sharing a checkout link with many others (networks and reposts), and the default text of site builders (a Notion page reading "A collaborative AI workspace" is not the seller describing itself).
 - **Registration dates** come from whois and **visits** are estimates, both looked up through GoAnyAPI.
 - **No lists published.** This report gives totals only, not the sites.
+
+## Decision Matrix by Buyer Situation
+
+| Seller Situation & Product Type | Top Platform Pick in Dataset | Empirical Evidence & Rationale |
+|---|---|---|
+| **Mainland China individual without an overseas company selling AI SaaS / credits** | **Dodo Payments / Waffo / Creem** | All three act as MoR handling global VAT/GST and accept mainland IDs; **71% of Dodo's new sellers ship software and 29% ship AI** |
+| **Open-source / GitHub-native AI tool developer** | **Polar / Creem** | **58% of Polar's new sellers ship software (27% AI)** with native GitHub license & subscription workflows |
+| **US LLC or Hong Kong company optimizing for high-volume base card rates** | **Stripe (US / HK)** | Largest seller base (103,000 new sellers since 2025), but non-MoR unless adding 3.5% for Stripe Managed Payments |
+| **Ebooks, courses, Notion templates, or 3D assets** | **Gumroad** | Built-in storefront and Discover marketplace, though highest platform cut (`10% + $0.50` plus processing) |
