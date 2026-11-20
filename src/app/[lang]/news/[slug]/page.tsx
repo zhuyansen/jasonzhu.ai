@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import fs from "fs";
-import path from "path";
 import Link from "@/components/Link";
 import { notFound } from "next/navigation";
 import type { Locale } from "@/lib/dictionaries";
@@ -114,10 +112,8 @@ export default async function NewsDetailPage({
   // 英文页只用英文封面，没有就不放（不拿中文封面凑）
   const cover = isZh ? digest.coverImage : digest.coverImageEn;
   // 页面显示 WebP（约 150KB，PNG 约 1.2MB：Ahrefs 2026-11-19 报 123 张图片过大），点开是 PNG 原图；
-  // 没有 WebP 的退回 PNG（scripts/news-webp.mjs 补）
-  const coverWebp = cover?.replace(/\.png$/, ".webp");
-  const coverShown =
-    coverWebp && coverWebp !== cover && fs.existsSync(path.join(process.cwd(), "public", coverWebp)) ? coverWebp : cover;
+  // 没有 WebP 的退回 PNG。是否存在由 generate-news.mjs 记进 news.json，页面不读文件（见那里的注释）
+  const coverShown = (isZh ? digest.coverWebp : digest.coverWebpEn) || cover;
 
   // Find prev/next digests for navigation
   const allDigests = getAllDigests();

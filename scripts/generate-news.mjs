@@ -121,6 +121,10 @@ const digests = files.map((filename) => {
   const hasCover = fs.existsSync(coverImagePath);
   // 英文封面 public/news/en/<slug>.png（render-news-cover-en.mjs 按英文标题排版），英文页用
   const hasCoverEn = fs.existsSync(path.join(process.cwd(), "public/news/en", `${slug}.png`));
+  // 页面显示的 WebP（scripts/news-webp.mjs），在这里查是否存在：页面里用 fs 查会让 Next 把整个 public/
+  // 打进快讯页函数（336MB，超 Vercel 250MB 上限，2026-11-20 部署失败过）
+  const hasWebp = hasCover && fs.existsSync(path.join(process.cwd(), "public/news", `${slug}.webp`));
+  const hasWebpEn = hasCoverEn && fs.existsSync(path.join(process.cwd(), "public/news/en", `${slug}.webp`));
 
   return {
     slug,
@@ -138,6 +142,8 @@ const digests = files.map((filename) => {
     ...(data.tweetUrl ? { tweetUrl: data.tweetUrl } : {}),
     ...(hasCover ? { coverImage: `/news/${slug}.png` } : {}),
     ...(hasCoverEn ? { coverImageEn: `/news/en/${slug}.png` } : {}),
+    ...(hasWebp ? { coverWebp: `/news/${slug}.webp` } : {}),
+    ...(hasWebpEn ? { coverWebpEn: `/news/en/${slug}.webp` } : {}),
   };
 });
 
