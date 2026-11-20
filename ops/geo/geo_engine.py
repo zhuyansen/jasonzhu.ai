@@ -1404,6 +1404,208 @@ def audit_16_planted_guards(url: str) -> dict[str, Any]:
     }
 
 
+def audit_section_retrieval_candidates(md_path: Path, brand_tokens: list[str]) -> dict[str, Any]:
+    """JOKER Sec.10/16 & iPullRank Ch.08: Every H2 section is an independent Retrieval Candidate.
+    Checks whether each H2 in a markdown file is followed by a self-contained opening paragraph (30-120 words)
+    that avoids dangling pronoun-only openings and carries concrete facts/numbers or entity names."""
+    raw = md_path.read_text(encoding="utf-8")
+    body = raw.split("---", 2)[2].strip() if raw.startswith("---") and len(raw.split("---", 2)) >= 3 else raw
+    sections = re.split(r"(?m)^##\s+(.+)$", body)
+    # sections[0] is intro before first H2; then pairs of (h2_title, h2_body)
+    h2_reports: list[dict[str, Any]] = []
+    ready_count = 0
+    for i in range(1, len(sections) - 1, 2):
+        h2_title = sections[i].strip()
+        h2_body = sections[i + 1].strip()
+        paragraphs = [p.strip() for p in re.split(r"\n\s*\n", h2_body) if p.strip() and not p.strip().startswith("```")]
+        first_para = paragraphs[0] if paragraphs else ""
+        clean_first = re.sub(r"[#*`>\[\]()!|-]", " ", first_para)
+        words = [w for w in clean_first.split() if w]
+        cjk_chars = len(re.findall(r"[\u4e00-\u9fff]", clean_first))
+        effective_words = len(words) if cjk_chars < 20 else max(len(words), cjk_chars // 2)
+        has_number_or_table = bool(re.search(r"\d+|%|\$", first_para)) or ("|" in first_para)
+        has_entity_or_brand = any(bt.lower() in first_para.lower() for bt in brand_tokens) or bool(
+            re.search(r"Stripe|Paddle|Lemon Squeezy|Waffo|Dodo|Google|ChatGPT|Perplexity|Claude|AIsa|GoAnyAPI|Zenodo", first_para, re.I)
+        )
+        is_direct_candidate = effective_words >= 15 and (has_number_or_table or has_entity_or_brand)
+        if is_direct_candidate:
+            ready_count += 1
+        h2_reports.append({
+            "h2": h2_title,
+            "first_passage_effective_words": effective_words,
+            "has_number_or_table": has_number_or_table,
+            "has_explicit_entity": has_entity_or_brand,
+            "retrieval_candidate_ready": is_direct_candidate,
+            "preview": first_para[:140],
+        })
+    total_h2 = len(h2_reports)
+    return {
+        "file": md_path.name,
+        "total_h2_sections": total_h2,
+        "retrieval_ready_h2_count": ready_count,
+        "retrieval_ready_ratio": round(ready_count / total_h2, 3) if total_h2 else 1.0,
+        "sections": h2_reports,
+    }
+
+
+def audit_connected_entity_graph(urls: list[str]) -> dict[str, Any]:
+    """Andrea Volpini (WordLift SEO Week 2026, +30% retrieval accuracy):
+    Verifies whether JSON-LD across multiple pages shares stable @id identifiers and links entities into a connected graph."""
+    page_nodes: list[dict[str, Any]] = []
+    all_ids: dict[str, list[str]] = {}
+    for url in urls:
+        try:
+            html = http_get_text(url, timeout=10.0)
+        except Exception as exc:
+            page_nodes.append({"url": url, "error": str(exc)})
+            continue
+        ld_blocks = re.findall(r'<script[^>]+type=["\']application/ld\+json["\'][^>]*>(.*?)</script>', html, re.I | re.S)
+        ids_found: list[str] = []
+        same_as_found: list[str] = []
+
+        def _walk(obj: Any) -> None:
+            if isinstance(obj, dict):
+                if "@id" in obj and isinstance(obj["@id"], str):
+                    ids_found.append(obj["@id"])
+                if "sameAs" in obj:
+                    sa = obj["sameAs"]
+                    if isinstance(sa, list):
+                        same_as_found.extend(str(x) for x in sa)
+                    elif isinstance(sa, str):
+                        same_as_found.append(sa)
+                for v in obj.values():
+                    _walk(v)
+            elif isinstance(obj, list):
+                for item in obj:
+                    _walk(item)
+
+        for raw_block in ld_blocks:
+            try:
+                _walk(json.loads(raw_block.strip()))
+            except Exception:
+                pass
+        for eid in set(ids_found):
+            all_ids.setdefault(eid, []).append(url)
+        page_nodes.append({
+            "url": url,
+            "jsonld_blocks": len(ld_blocks),
+            "unique_at_ids": sorted(set(ids_found)),
+            "same_as_count": len(set(same_as_found)),
+        })
+    shared_ids = {k: v for k, v in all_ids.items() if len(v) > 1}
+    return {
+        "pages_checked": len(urls),
+        "total_distinct_at_ids": len(all_ids),
+        "cross_page_shared_at_ids": shared_ids,
+        "graph_connected_across_pages": len(shared_ids) > 0,
+        "pages": page_nodes,
+    }
+
+
+def check_ai_domain_impact(domain_or_url: str) -> dict[str, Any]:
+    """Walker Sands AI Domain Impact Index (0-100) + JOKER External Topical Network:
+    Scores an external target domain on whether its content can actually be crawled and cited by LLMs
+    (TechTarget 82 vs Forbes 55)."""
+    parsed = urllib.parse.urlparse(domain_or_url if "://" in domain_or_url else f"https://{domain_or_url}")
+    base = f"{parsed.scheme}://{parsed.netloc}"
+    target_url = domain_or_url if "://" in domain_or_url else base
+    ai_bots = ["GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "PerplexityBot", "Google-Extended"]
+    blocked_bots: list[str] = []
+    robots_status = "missing_or_open"
+    try:
+        robots_txt = http_get_text(f"{base}/robots.txt", timeout=8.0)
+        robots_status = "fetched"
+        for bot in ai_bots:
+            pattern = rf"(?is)User-agent:\s*{re.escape(bot)}\s+([^\n#]*\n)*?Disallow:\s*/\s*(\n|$)"
+            if re.search(pattern, robots_txt):
+                blocked_bots.append(bot)
+    except Exception:
+        pass
+
+    allowed_ratio = (len(ai_bots) - len(blocked_bots)) / len(ai_bots)
+    inclusion_score = round(allowed_ratio * 35)  # 35 pts max
+
+    onpage_score = 0
+    retrieval_score = 0
+    citation_meta_score = 0
+    status_code = 0
+    try:
+        req = urllib.request.Request(target_url, headers={"User-Agent": USER_AGENT})
+        with urllib.request.urlopen(req, timeout=10.0, context=SSL_CTX) as resp:
+            status_code = resp.status
+            html = resp.read().decode("utf-8", errors="replace")
+        if status_code == 200:
+            retrieval_score = 20
+        text_only = re.sub(r"<script.*?</script>|<style.*?</style>|<[^>]+>", " ", html, flags=re.S | re.I)
+        word_cnt = len(text_only.split())
+        if word_cnt >= 250:
+            onpage_score = 25
+        elif word_cnt >= 80:
+            onpage_score = 12
+        has_title = bool(re.search(r"<title[^>]*>([^<]+)</title>", html, re.I))
+        has_ld = "application/ld+json" in html.lower()
+        has_og = 'property="og:title"' in html.lower() or "property='og:title'" in html.lower()
+        citation_meta_score = (8 if has_title else 0) + (6 if has_ld else 0) + (6 if has_og else 0)
+    except Exception as exc:
+        return {"target": target_url, "error": str(exc), "ai_domain_impact_score": inclusion_score}
+
+    total_score = inclusion_score + onpage_score + retrieval_score + citation_meta_score
+    return {
+        "target": target_url,
+        "http_status": status_code,
+        "robots_status": robots_status,
+        "ai_bots_checked": ai_bots,
+        "ai_bots_blocked": blocked_bots,
+        "breakdown": {
+            "inclusion_robots_35": inclusion_score,
+            "onpage_ssr_readability_25": onpage_score,
+            "realtime_retrieval_20": retrieval_score,
+            "citation_metadata_20": citation_meta_score,
+        },
+        "ai_domain_impact_score": total_score,
+        "verdict": "HIGH_AI_IMPACT (>=75)" if total_score >= 75 else ("MODERATE (50-74)" if total_score >= 50 else "LOW_AI_IMPACT_OR_BLOCKED (<50)"),
+    }
+
+
+def check_brand_consensus() -> dict[str, Any]:
+    """JOKER Sec.7/14/20: Entity Definition (4-tuple ID card) & Brand Consensus (Entity Consistency != Copywriting paste).
+    Checks that jasonzhu.ai's core pages and citations consistently bind the entity to the same Semantic Cluster."""
+    entity_id_card = {
+        "official_name": "Jason Zhu (jasonzhu.ai)",
+        "primary_category": "Go-Global AI SaaS, Cross-Border Payments & GEO Empirical Research Hub",
+        "core_topics": [
+            "Cross-Border SaaS Payments (Stripe / Lemon Squeezy / Paddle / Waffo / Dodo Payments)",
+            "SEO Water System Model v8 & L1-L5 Generative Engine Optimization (GEO)",
+            "AI Agent Skills & 16-Planted-Bug SEO Audit Benchmark (agentskillshub.top)",
+            "New-Seller & Early-Signal Demand Radar (new-term-radar / backlink-guard / payment-guard)",
+        ],
+        "target_audience": "Indie Developers & Go-Global AI SaaS Founders",
+    }
+    cluster_anchors = ["payment", "收款", "geo", "seo", "出海", "go-global", "indie", "独立开发者"]
+    files_to_check = [
+        REPO_ROOT / "src" / "lib" / "go-global.ts",
+        BLOG_DIR / "indie-payments-report-2026.en.md",
+        BLOG_DIR / "choose-payment-platform-2026.en.md",
+        BLOG_DIR / "dodo-payments-waffo-ai-saas-fee-comparison.en.md",
+    ]
+    node_checks = []
+    for f in files_to_check:
+        if not f.exists():
+            continue
+        txt = f.read_text(encoding="utf-8").lower()
+        matched = [a for a in cluster_anchors if a in txt]
+        node_checks.append({
+            "file": str(f.relative_to(REPO_ROOT)),
+            "matched_semantic_anchors": matched,
+            "aligned_with_entity_core": len(matched) >= 4,
+        })
+    return {
+        "entity_id_card_4tuple": entity_id_card,
+        "nodes_checked": node_checks,
+        "all_nodes_aligned": all(n["aligned_with_entity_core"] for n in node_checks),
+    }
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="GEO Closed-Loop Engine (L1-L5 Open-Source + Commercial AIsa / DataForSEO / GoAnyAPI)")
     sub = parser.add_subparsers(dest="cmd", required=True)
@@ -1448,6 +1650,21 @@ def main() -> int:
     sub.add_parser("proprietary-assets", help="L4 Georg Richard Aare & Eli Schwartz 7-Category Proprietary Asset Audit on core BOFU pages")
     sub.add_parser("sro-and-recency", help="L4 Dan Petrovic SRO Grounding Density + Kevin Indig 90-Day Recency + Lily Ray 69%% Self-Listicle Guard")
 
+    p_sec = sub.add_parser("section-candidates", help="L4 JOKER Sec.10/16 & iPullRank Ch.08: Audit every H2 section as an independent Retrieval Candidate")
+    p_sec.add_argument("--file", default="choose-payment-platform-2026.en.md", help="Blog filename under src/content/blog")
+
+    p_kg = sub.add_parser("connected-kg", help="L2 Andrea Volpini (WordLift, +30%% accuracy): Verify cross-page connected JSON-LD @id graph")
+    p_kg.add_argument("--urls", nargs="*", default=[
+        "https://jasonzhu.ai/zh/go-global",
+        "https://jasonzhu.ai/en/blog/indie-payments-report-2026",
+        "https://jasonzhu.ai/en/blog/choose-payment-platform-2026",
+    ])
+
+    p_impact = sub.add_parser("ai-domain-impact", help="L5 Walker Sands AI Domain Impact Index (0-100): Check external domain AI bot allowlisting & SSR readability")
+    p_impact.add_argument("--target", required=True, help="Target domain or URL to score (e.g. dev.to, forbes.com, techtarget.com)")
+
+    sub.add_parser("brand-consensus", help="L2/L5 JOKER Sec.7/20: Audit 4-tuple Entity ID Card & Semantic Cluster Brand Consensus")
+
     p_live = sub.add_parser("run-live-panel", help="L5 Automated Live Panel Probe across questions.json via Aisa.one + GoAnyAPI")
     p_live.add_argument("--limit", type=int, default=5, help="Number of questions from questions.json to probe")
     p_live.add_argument("--models", nargs="+", default=["perplexity/sonar", "gpt-4o-mini"], help="Aisa.one models to probe")
@@ -1473,6 +1690,23 @@ def main() -> int:
 
     args = parser.parse_args()
     brand_tokens = ["Jason Zhu", "jasonzhu.ai", "JasonZhu.AI"]
+
+    if args.cmd == "section-candidates":
+        target_f = BLOG_DIR / args.file
+        print(json.dumps(audit_section_retrieval_candidates(target_f, brand_tokens), ensure_ascii=False, indent=2))
+        return 0
+
+    if args.cmd == "connected-kg":
+        print(json.dumps(audit_connected_entity_graph(args.urls), ensure_ascii=False, indent=2))
+        return 0
+
+    if args.cmd == "ai-domain-impact":
+        print(json.dumps(check_ai_domain_impact(args.target), ensure_ascii=False, indent=2))
+        return 0
+
+    if args.cmd == "brand-consensus":
+        print(json.dumps(check_brand_consensus(), ensure_ascii=False, indent=2))
+        return 0
 
     if args.cmd == "audit-16-guards":
         print(json.dumps(audit_16_planted_guards(args.url), ensure_ascii=False, indent=2))

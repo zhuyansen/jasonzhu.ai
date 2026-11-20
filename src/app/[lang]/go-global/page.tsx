@@ -298,6 +298,26 @@ function LearnSeo({ l, isZh }: { l: "zh" | "en"; isZh: boolean }) {
           <p className="mt-2 text-xs text-gray-400 leading-relaxed">{g.note[l]}</p>
         </div>
       </div>
+      <div className="mt-4 pt-3 border-t border-gray-200">
+        <p className="text-xs font-semibold text-gray-900 mb-2">
+          {isZh
+            ? "进阶必读：JOKER「降低机器 6 种不确定性」总纲与海外 6 本 SEO / GEO 前沿专著核心提炼"
+            : "Advanced Reading: JOKER's 6 Uncertainty Reductions & 6 Frontier SEO / GEO Books"}
+        </p>
+        <div className="grid gap-2.5 md:grid-cols-2">
+          {LEARN_SEO.advancedBooks.map((b) => (
+            <div key={b.url} className="rounded-xl border border-gray-200 bg-gray-50/70 px-3 py-2 text-xs leading-relaxed">
+              <div className="flex flex-wrap items-baseline justify-between gap-1 mb-0.5">
+                <a href={b.url} {...OUT} className="font-semibold text-blue-600 hover:underline">
+                  {b.title[l]}
+                </a>
+                <span className="text-[11px] text-gray-400">{b.author}</span>
+              </div>
+              <p className="text-gray-600">{b.takeaway[l]}</p>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

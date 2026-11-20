@@ -1063,6 +1063,69 @@ export const LEARN_SEO = {
     zh: "Google 的垃圾链接政策（2026-09-02 更新）把「用自动程序或服务给网站建链接」和「评论里带优化过的链接」都算作垃圾链接。评论只在相关的博客里认真写，别用工具批量发，也别塞关键词锚文本。",
     en: "Google's link spam policy (updated 2026-09-02) counts links built with automated programs or services, and comments carrying optimized links, as link spam. Comment only on related blogs and write a real comment; never post in bulk with a tool or stuff keyword anchors.",
   },
+  // 2026 进阶必读：海外 6 本 SEO/GEO 经典专著与手册 + JOKER「降低机器 6 种不确定性」总纲
+  advancedBooks: [
+    {
+      title: {
+        zh: "JOKER《SEO 的下一次进化：内容，外链，品牌，到底需要进化成什么》",
+        en: "JOKER: The Next Evolution of SEO — What Content, Links & Brand Must Evolve Into",
+      },
+      author: "JOKER (2026-08-27)",
+      url: "https://mp.weixin.qq.com/s/ESPeoAGt5TToZrXqVItDyw",
+      takeaway: {
+        zh: "把旧 SEO（Keyword+Page+Content+Backlinks）与 AI 搜索统一为一条主线：更低理解成本 + 更高信息确定性 = 更好可见性。拆解消除机器 6 种不确定性：实体定义（我是谁）、站内主题地图（不要为泛流量发 3,000 篇偏离实体核心的文章）、可检索段落（战略放大到 Entity，执行缩小到每个 H2 Section 独立成为检索候选）、技术可读性（SSR+Schema）、站外主题网络（锚文本升级为 Brand+Context+Relationship）与同语义簇品牌共识。",
+        en: "Unifies classic SEO and AI Search into one equation: Lower Understanding Cost + Higher Information Certainty = Better Visibility across 6 uncertainty reductions: Entity Definition, Topical Map (never publish 3,000 off-core posts), Retrieval-ready Sections (each H2 as an independent retrieval candidate), Technical SSR/Schema, External Topical Network (Brand+Context+Relationship), and Semantic Cluster Brand Consensus.",
+      },
+    },
+    {
+      title: {
+        zh: "Mike King (iPullRank)《The AI Search Manual》（24 章相关性工程手册）",
+        en: "Mike King (iPullRank): The AI Search Manual (24-Chapter Relevance Engineering Guide)",
+      },
+      author: "Mike King",
+      url: "https://ipullrank.com/ai-search-manual",
+      takeaway: {
+        zh: "完整拆解 AI 检索 8 步流水线与 Query Fan-out 多模态路由：表格与带时间戳的视频字幕优先于纯文本；第 23 章实证 YouTube 被引用率是其他视频平台的 200 倍、出现在近 30% 的 AI Overviews 中（取决于前 30 秒亮出答案的字幕块余弦相似度）；第 21 章给出 Google UCP 与 OpenAI ACP 智能体交易协议。",
+        en: "Maps the 8-stage AI Search pipeline and modality-aware query fan-out: tables and timestamped transcripts beat prose; Ch.23 proves YouTube is cited 200x more than other video platforms and appears in ~30% of AI Overviews via first-30s transcript cosine similarity; Ch.21 covers Google UCP & OpenAI ACP agentic commerce protocols.",
+      },
+    },
+    {
+      title: {
+        zh: "Andrea Volpini (WordLift)《Beyond the Million-Token Window: TurboQuant & RLM-on-KG》",
+        en: "Andrea Volpini (WordLift): Beyond the Million-Token Window — TurboQuant & RLM-on-KG",
+      },
+      author: "Andrea Volpini (SEO Week 2026 / arXiv:2604.17056)",
+      url: "https://ipullrank.com/seo-week-2026-andrea-volpini",
+      takeaway: {
+        zh: "实证 100 万 Token 窗口仍受「上下文腐烂（Context Rot）」困扰；Vertex AI Vector Search 2.0 对比 4 类站点证明：孤立 JSON-LD 对非 Schema 管线几乎无效，但跨页通过唯一 @id 互联的实体页图谱（Connected Entity Graph）把检索准确率提升了 +30%；结合 Google DeepMind TurboQuant（4.5x 推理路径）与 RLM-on-KG（在分散跨页证据上比微软 GraphRAG 高 +71%）。",
+        en: "Proves 1M-token windows still suffer from Context Rot; Vertex AI Vector Search 2.0 testing across 4 site types showed isolated JSON-LD adds little, whereas connected Entity Pages sharing unique @id identifiers boost retrieval accuracy by +30%; pairs DeepMind's TurboQuant (4.5x reasoning pathways) with RLM-on-KG (+71% over Microsoft GraphRAG).",
+      },
+    },
+    {
+      title: {
+        zh: "Eli Schwartz《Product-Led SEO》& Tim Soulo (Ahrefs CMO)《DISCOVERABLE》",
+        en: "Eli Schwartz: Product-Led SEO & Tim Soulo (Ahrefs CMO): DISCOVERABLE",
+      },
+      author: "Eli Schwartz / Tim Soulo (2026-11)",
+      url: "https://ahrefs.com/discoverable",
+      takeaway: {
+        zh: "战略层第一性原理：Eli 点破 SEO 只能「捕获已有需求（Capture Demand）」而不能为未知新品类凭空创造搜索需求；Tim Soulo 将所有产品破圈归纳为 3 条底层路径——Get Found（搜索/AI 检索捕获需求）、Get Noticed（社媒/投放打断注意力创造需求）、Get Talked About（靠独家工具与基准数据集触发口碑自传播）。",
+        en: "First-principles strategy: Eli proves SEO captures existing demand rather than creating demand for unknown categories; Tim Soulo distills all discovery into 3 paths — Get Found (Search/AI retrieval), Get Noticed (Social/Ads), and Get Talked About (Word-of-mouth via proprietary tools and benchmarks).",
+      },
+    },
+    {
+      title: {
+        zh: "Marie Haynes《SEO in the Gemini Era》& Walker Sands《AI Domain Impact Index》",
+        en: "Marie Haynes: SEO in the Gemini Era & Walker Sands: AI Domain Impact Index",
+      },
+      author: "Marie Haynes / Walker Sands (2026)",
+      url: "https://www.walkersands.com/about/blog/introducing-the-ai-domain-impact-index-for-b2b-pr/",
+      takeaway: {
+        zh: "Marie Haynes 从 Google Gemini 架构拆解 Query Fan-out 与信息增益（Information Gain）；Walker Sands 发布 B2B 公关与外链的「AI Domain Impact Index（0-100 分）」——按 AI 爬虫放行率（robots.txt）、SSR 可读性、实时检索与引文元数据打分，揭示 TechTarget（82 分）在 AI 搜索里的权重远超屏蔽了 AI 爬虫的 Forbes（55 分）。",
+        en: "Marie Haynes unpacks Gemini's Query Fan-out and Information Gain; Walker Sands scores PR/backlink domains 0–100 on AI bot allowlisting, SSR readability, real-time retrieval, and citation metadata — showing why TechTarget (82) beats Forbes (55, which blocks LLM bots on many URLs).",
+      },
+    },
+  ],
 };
 
 export interface SeoSchoolPerson {
@@ -1092,7 +1155,7 @@ export interface SeoSchool {
   };
 }
 
-/** 全球 SEO / GEO 六大实战流派地图与去伪存真指南（2026-11-20 升级至 35 位海内外实战派代表） */
+/** 全球 SEO / GEO 六大实战流派地图与去伪存真指南（2026-11-20 升级至 38 位海内外实战派代表与 7 部前沿经典吸收） */
 export const SEO_SCHOOLS_MAP: {
   intro: { zh: string; en: string };
   axes: {
@@ -1121,27 +1184,28 @@ export const SEO_SCHOOLS_MAP: {
       color: "blue",
       x: 22,
       y: 16,
-      layer: { zh: "第 1 层：建什么页面（搜索即产品 × 4–7 类一手资产）", en: "Layer 1: What to build (search as a product & 4–7 asset types)" },
+      layer: { zh: "第 1 层：建什么页面（捕获 vs 创造需求 × 4–7 类一手资产）", en: "Layer 1: What to build (Capture vs Create Demand & 4–7 asset types)" },
       name: { zh: "产品驱动、新词工具交互与一手资产派（Product-Led & Proprietary Assets）", en: "Product-Led, Interactive Tools & Proprietary Assets" },
       people: [
-        { name: "Eli Schwartz", url: "https://www.productledseo.com/t/playbooks", role: { zh: "《Product-Led SEO》作者、前 SurveyMonkey SEO 负责人", en: "Author of Product-Led SEO, former SurveyMonkey SEO lead" } },
+        { name: "Eli Schwartz", url: "https://www.productledseo.com/t/playbooks", role: { zh: "《Product-Led SEO》作者、前 SurveyMonkey SEO 负责人（捕获需求 vs 创造需求）", en: "Author of Product-Led SEO, former SurveyMonkey SEO lead (Capture vs Create Demand)" } },
+        { name: "Tim Soulo", handle: "@timsoulo", url: "https://ahrefs.com/discoverable", role: { zh: "Ahrefs CMO、《DISCOVERABLE》作者（Get Found / Get Noticed / Get Talked About）", en: "CMO at Ahrefs, author of DISCOVERABLE (Get Found / Get Noticed / Get Talked About)" } },
         { name: "Cyrus Shepard", handle: "@CyrusShepard", url: "https://zyppy.com/seo-clicks-study/", role: { zh: "Zyppy 创始人（92.9% 赢家独有资产研究 & 28 天 AI Search 断流实验）", en: "Founder of Zyppy (92.9% proprietary asset study & 28-day AI Search opt-out test)" } },
         { name: "Georg Richard Aare", url: "https://www.youtube.com/watch?v=n35P_Mjsk3Y", role: { zh: "RankUp 创始人（410,572 条 Claim 实证：首段一手经验 Top-3 概率 5.5x）", en: "Founder of RankUp (410,572-claim study: intro first-hand experience gives 5.5x Top-3 lift)" } },
         { name: "哥飞", handle: "@gefei55", url: "https://new.web.cafe/tutorials", role: { zh: "出海新词工具站与广告/订阅变现社群主理人", en: "New-term tool sites & AdSense/subscription community host" } },
         { name: "大罗SEO", handle: "@daluoseo", url: "https://www.youtube.com/@daluoseo", role: { zh: "Product-Led SEO 中文拆解与程序化落地", en: "Product-Led SEO & programmatic landing pages in Chinese" } },
-        { name: "Joker", handle: "@JokerMayCry_Jun", url: "https://x.com/JokerMayCry_Jun", role: { zh: "细分 Niche 算法差异与 AI 工具首屏交互实战", en: "Niche algorithm differences & above-the-fold tool UX" } },
+        { name: "Joker", handle: "@JokerMayCry_Jun", url: "https://mp.weixin.qq.com/s/ESPeoAGt5TToZrXqVItDyw", role: { zh: "《SEO 的下一次进化》作者：降低机器 6 种不确定性与新老赛道分层法则", en: "Author of 'The Next Evolution of SEO': 6 uncertainty reductions & niche maturity laws" } },
       ],
       core: {
-        zh: "反对按关键词工具词表批量写凑字数的科普长文（Eli 称之为红海 SEO）。核心是把「独家结构化数据、在线小工具或 4~7 类一手实测资产」直接做成满足意图的页面。Cyrus Shepard 对 Google 核心更新赢家的研究证实 92.9% 的暴涨站点拥有无法被 AI 凭空捏造的独有资产（互动计算器、一手实测数据集、免费在线工具），且其 28 天屏蔽 AI Search 实验证明 AI Overviews 贡献了 21%~23% 的点击；Georg Richard Aare 对 410,572 条 Claim 的统计进一步量化出：首段直接亮一手实测经验进 Top-3 的概率是 5.5 倍，单页凑齐 4~7 类一手资产（实测数据 4.4x、学术/DOI 引用 3.6x、对比表与截图 2.4x）进 Top-3 概率翻 1.9 倍。",
-        en: "Rejects cranking out filler articles from keyword spreadsheets ('Red Ocean SEO'). Instead, turn structured datasets, interactive utilities, and 4–7 categories of first-hand assets directly into pages that solve the query. Cyrus Shepard proved that 92.9% of Core Update winners carry proprietary assets AI cannot fabricate (calculators, original datasets, tools) and his 28-day AI Search opt-out experiment showed AIO drives 21%–23% of clicks. Georg Richard Aare's 410,572-claim study quantified that opening with first-hand experience lifts Top-3 probability by 5.5x, and combining 4–7 asset types lifts Top-3 odds by 1.9x.",
+        zh: "反对按关键词工具词表批量写凑字数的科普长文（Eli 称之为红海 SEO）。战略上先按 Eli Schwartz 与 Tim Soulo《DISCOVERABLE》分清边界：SEO 只能「捕获已有需求（Get Found）」，没搜索量的新品类必须靠社媒打断注意力（Get Noticed）和独家工具/数据集触发口碑（Get Talked About）；Joker（2026-08-27）进一步点破：在新词、低竞争赛道，「Keyword+Page+Content+Backlinks」旧公式依然好用，但在成熟赛道与 AI 搜索里必须往上叠「Entity + Topic + Retrieval + Network」四层抽象。落地上，Cyrus Shepard 实证 92.9% 的核心更新赢家拥有 AI 无法凭空捏造的独有资产（互动计算器、一手数据集、在线工具），且 AI Overviews 贡献了 21%~23% 的点击；Georg Richard Aare 对 410,572 条 Claim 的统计量化出：首段亮一手实测经验进 Top-3 概率是 5.5 倍，单页凑齐 4~7 类一手资产进 Top-3 概率翻 1.9 倍。",
+        en: "Rejects cranking out filler articles from keyword spreadsheets ('Red Ocean SEO'). Strategically, Eli Schwartz and Tim Soulo (DISCOVERABLE) draw a hard line: SEO captures existing demand (Get Found), whereas unknown categories require social interruption (Get Noticed) and word-of-mouth assets (Get Talked About); Joker (2026-08-27) adds that while 'Keyword + Page + Content + Backlinks' still works in emerging low-competition niches, mature niches and AI Search require 4 higher layers (Entity + Topic + Retrieval + Network). Cyrus Shepard proved 92.9% of Core Update winners carry proprietary assets AI cannot fabricate and AIO drives 21%–23% of clicks; Georg Richard Aare's 410,572-claim study showed opening with first-hand experience lifts Top-3 probability by 5.5x.",
       },
       borrow: {
         zh: "1. 首屏直接给可交互工具或结构化对比表，并在首段前 50 词亮出「谁 + 测了多少样本 + 结论」（Aare 5.5x 铁律）；2. 单页至少配齐 4 类以上一手资产（自测统计数字、CERN Zenodo DOI 数据集引用、Markdown 对比表、实测截图）；3. 改造内链为 Eli 书中第 6 章的「西南航空网格」消灭孤岛页。",
         en: "1. Put an interactive tool or structured table above the fold and open with first-hand sample size and findings in the first 50 words (Aare's 5.5x rule); 2. Combine at least 4 proprietary asset types per page (original stats, CERN Zenodo DOI dataset citation, comparison table, screenshots); 3. Build Eli's 'Southwest Airlines' mesh internal link graph.",
       },
       caveat: {
-        zh: "去伪存真：程序化建站最忌盲目铺空壳页。Joker 的检验铁律是「页面增量必须与流量增长成正比」；Eli 在书中也记录过把 100 多个重复度高的汽车站狠心砍到只剩 4 个站，流量反而涨到被罚前的 125%。",
-        en: "Fact-check: Never scale empty programmatic shells. Joker's rule is that page growth must bring proportional traffic growth; Eli's Panda recovery case study pruned 100+ near-duplicate auto sites down to 4 sites and reached 125% of pre-penalty traffic.",
+        zh: "去伪存真：程序化建站最忌盲目铺空壳页或偏离实体核心蹭泛流量。Joker 警告「一个站死得最快的方式，就是为了做流量去发 3,000 篇跟自己实体核心毫无关系的泛流量文章」；Eli 在书中也记录过把 100 多个重复度高的汽车站狠心砍到只剩 4 个站，流量反而涨到被罚前的 125%。",
+        en: "Fact-check: Never scale empty programmatic shells or chase off-topic traffic. Joker warns that publishing 3,000 generic articles unrelated to your Entity Core is the fastest way to kill a domain; Eli's Panda recovery case study pruned 100+ near-duplicate auto sites down to 4 sites and reached 125% of pre-penalty traffic.",
         link: {
           label: { zh: "Google 门户页面与薄弱内容政策", en: "Google doorway & thin content policy" },
           url: "https://developers.google.com/search/docs/essentials/spam-policies?hl=zh-cn#doorways",
@@ -1155,24 +1219,24 @@ export const SEO_SCHOOLS_MAP: {
       color: "indigo",
       x: 24,
       y: 44,
-      layer: { zh: "第 2 层：机器怎么读懂你（Entity Home 闭环 × 三道门与 SSR）", en: "Layer 2: How machines parse you (Entity Home @id loop & Three Gates)" },
+      layer: { zh: "第 2 层：机器怎么读懂你（Connected @id 图谱 +30% × RLM-on-KG）", en: "Layer 2: How machines parse you (Connected @id KG +30% & RLM-on-KG)" },
       name: { zh: "语义图谱、本体论、实体消歧与多语言架构派（Semantic KG & Entity SEO）", en: "Semantic Ontology, Entity Home Disambiguation & Technical SEO" },
       people: [
         { name: "Koray Tuğberk GÜBÜR", url: "https://www.holisticseo.digital/", role: { zh: "Holistic SEO 创始人，语义 SEO 与 EAV 三元组体系代表", en: "Founder of Holistic SEO, Topical Authority & EAV triples" } },
         { name: "Jason Barnard", handle: "@jasonmbarnard", url: "https://kalicube.com/", role: { zh: "Kalicube 创始人，Entity Home + Claim-Frame-Prove 实体消歧鼻祖", en: "Founder of Kalicube, Entity Home & Claim-Frame-Prove disambiguation loop" } },
-        { name: "Andrea Volpini", handle: "@cyberandy", url: "https://wordlift.io/", role: { zh: "WordLift 创始人，SEOntology 本体标准与 RLM-on-KG 图谱推理", en: "Founder of WordLift, SEOntology & RLM-on-KG against context rot" } },
+        { name: "Andrea Volpini", handle: "@cyberandy", url: "https://ipullrank.com/seo-week-2026-andrea-volpini", role: { zh: "WordLift 创始人，TurboQuant (4.5x) + RLM-on-KG (+71%) 与跨页 @id 图谱 (+30%)", en: "Founder of WordLift, TurboQuant (4.5x), RLM-on-KG (+71%) & connected @id KG (+30%)" } },
         { name: "Marc Moeller", handle: "@moellerseo", url: "https://www.youtube.com/@moellerseo", role: { zh: "AI 时代 SEO 路线图与 Google 7 大重排专利拆解", en: "AI SEO roadmap & Google's 7 core reranking patents" } },
         { name: "Stephen Burns", url: "https://commoncrawl.org/", role: { zh: "Common Crawl 视角：预训练「三道门」与谐波中心性（Harmonic Centrality）", en: "Common Crawl lens: Three Gates (Permission / Edge WAF / SSR) & Harmonic Centrality" } },
         { name: "Aleyda Solís", handle: "@aleyda", url: "https://www.aleydasolis.com/", role: { zh: "Orainti 创始人，跨国多语言出海架构与 AI Search 国际本地化", en: "Founder of Orainti, international multilingual SEO & AI Search localization" } },
         { name: "Loki Yan", handle: "@loki_yan_seo", url: "https://lokiyan.com/", role: { zh: "First Optimise 联创、Google Search Central APAC 讲者（语种非对称性）", en: "First Optimise co-founder, Google Search Central APAC speaker (Language Asymmetry)" } },
       ],
       core: {
-        zh: "把网站当成喂给搜索引擎和 LLM 的结构化知识库。Koray 强调按 Entity-Attribute-Value（实体-属性-值）三元组覆盖话题全貌；Jason Barnard（Kalicube）提出「算法三位一体（知识图谱+搜索引擎+大模型对话）」与 Claim-Frame-Prove 闭环——用主站 Entity Home 的稳定 `@id`、中英文别名（`alternateName`）和双向互指的 `sameAs` 彻底消除同名歧义；Andrea Volpini（WordLift）用 SEOntology 让大模型在局部知识图谱上递归推理；Stephen Burns 指出进大模型底座必须先过「三道门（Permission / Edge WAF 放行 AI 爬虫 / SSR 直出 HTML）」；Loki Yan 与 Aleyda Solís 则揭示了多语言出海的「语种非对称性」——78% 非英语 AI 提问底层会扇出到英文语料库检索。",
-        en: "Treats a website as a structured knowledge graph for search engines and LLMs. Koray structures content around Entity-Attribute-Value (EAV) triples; Jason Barnard (Kalicube) pioneered the 'Algorithmic Trinity' and Claim-Frame-Prove loop using a canonical Entity Home `@id`, `alternateName`, and bidirectional `sameAs` links to eliminate namesake ambiguity; Andrea Volpini (WordLift) formalized SEOntology; Stephen Burns highlights the 'Three Gates' (Permission, Edge WAF bot allowlisting, SSR raw HTML); Loki Yan and Aleyda Solís expose Language Asymmetry — 78% of non-English AI queries fan out to English retrieval.",
+        zh: "把网站当成喂给搜索引擎和 LLM 的结构化知识图谱，核心是消除机器对「你是谁（Entity）」与「你懂什么（Topical Map）」的不确定性。Koray 强调按 EAV 三元组覆盖话题全貌；Jason Barnard 提出用 Entity Home 的稳定 `@id`、`alternateName` 和双向 `sameAs` 彻底消除同名歧义；Andrea Volpini 在 SEO Week 2026 用 Vertex AI Vector Search 2.0 实测 4 类站点证明：**孤立的单页 JSON-LD 对非 Schema 大模型管线几乎没区别，但通过唯一 `@id` 跨页互联的实体图谱（Connected Entity Graph）把检索准确率直接拉升了 +30%**，其 `RLM-on-KG` 架构在跨页分散证据推理上比微软 GraphRAG 高出 **+71%**（配合 Google DeepMind `TurboQuant` 零偏差极坐标 KV Cache 压缩可释放 4.5 倍推理路径）；Stephen Burns 指出进大模型底座必须先过「三道门（Permission / Edge WAF / SSR）」；Loki Yan 与 Aleyda Solís 则揭示了 78% 非英语 AI 提问底层会扇出到英文语料库检索。",
+        en: "Treats a website as a structured knowledge graph to eliminate machine uncertainty around 'Who are you?' (Entity) and 'What do you know?' (Topical Map). Koray uses EAV triples; Jason Barnard uses a canonical Entity Home `@id`, `alternateName`, and bidirectional `sameAs`; Andrea Volpini's SEO Week 2026 Vertex AI Vector Search 2.0 study across 4 site types proved that while isolated JSON-LD makes little difference to non-Schema LLM pipelines, **connected Entity Pages sharing unique `@id` identifiers across pages boost retrieval accuracy by +30%**, and his `RLM-on-KG` architecture outperforms Microsoft GraphRAG by **up to +71%** (paired with DeepMind's `TurboQuant` 4.5x reasoning pathways); Stephen Burns highlights the 'Three Gates'; Loki Yan and Aleyda Solís expose Language Asymmetry (78% English fan-out).",
       },
       borrow: {
-        zh: "1. 全站 JSON-LD 用固定 `@id`（如 `https://jasonzhu.ai/#person`）串联 Person、Organization 与 Dataset，并用 `sameAs` 双向锁死 GitHub、X、CERN Zenodo DOI 与独立工具站；2. 跑通 Stephen Burns「三道门」体检：WAF 放行 GPTBot/ClaudeBot/PerplexityBot + 核心文本与 JSON-LD 100% SSR 直出；3. 多语言出海必须同步发英文版抢占英文底座。",
-        en: "1. Connect Person, Organization, and Dataset JSON-LD with stable `@id` URIs and bidirectional `sameAs` links across GitHub, X, CERN Zenodo DOIs, and product domains; 2. Pass the Three Gates audit: allow AI bots at the Edge WAF and serve 100% SSR raw HTML; 3. Publish English versions to capture English fan-out retrieval.",
+        zh: "1. 用 `geo_engine.py connected-kg` 检查全站 JSON-LD 是否用固定 `@id`（如 `https://jasonzhu.ai/#person`、`#organization`）跨页互联（拿满 Volpini +30% 检索增益），并在全网统一 4 元组实体身份证（Official Name / Primary Category / Core Topics / Target Audience）；2. 跑通 Stephen Burns「三道门」体检：WAF 放行 GPTBot/ClaudeBot/PerplexityBot + 核心文本 100% SSR 直出；3. 多语言出海必须同步发英文版抢占英文底座。",
+        en: "1. Run `geo_engine.py connected-kg` to verify every page connects back to stable Entity Home `@id` URIs (+30% retrieval accuracy) and lock a consistent 4-tuple Entity ID Card; 2. Pass the Three Gates audit (Edge WAF bot allowlisting + 100% SSR raw HTML); 3. Publish English versions to capture English fan-out retrieval.",
       },
       caveat: {
         zh: "去伪存真：别把 JSON-LD 当成排名作弊开关。Google 官方《结构化数据常规指南》明确规定：Schema 标记里的每个字段必须与页面上人类肉眼可见的文本完全一致，隐藏不展示的标记或虚构评分会收到手动处罚。",
@@ -1190,10 +1254,11 @@ export const SEO_SCHOOLS_MAP: {
       color: "emerald",
       x: 26,
       y: 74,
-      layer: { zh: "第 3 层：单页怎么排上去并被 AI 抽中（扇出查询 × 前 10% 切片 × SRO）", en: "Layer 3: How pages rank and win RAG selection (Query Fan-out, Top-10% chunk & SRO)" },
+      layer: { zh: "第 3 层：单页怎么被 AI 抽中（H2 检索候选 × 前 10% 切片 × 多模态路由）", en: "Layer 3: How pages win RAG selection (H2 retrieval candidates, Top-10% chunk & modality routing)" },
       name: { zh: "相关性工程、RAG 切片选择率与时效衰减派（Relevance Engineering & SRO）", en: "Relevance Engineering, RAG Chunking & Selection Rate Optimization (SRO)" },
       people: [
-        { name: "Mike King", handle: "@iPullRank", url: "https://ipullrank.com/", role: { zh: "iPullRank 创始人，Relevance Engineering（相关性工程）与 Query Fan-out 体系提出者", en: "Founder of iPullRank, pioneer of Relevance Engineering (r19g) & Query Fan-out" } },
+        { name: "Mike King", handle: "@iPullRank", url: "https://ipullrank.com/ai-search-manual", role: { zh: "iPullRank 创始人，《The AI Search Manual》24 章作者（Query Fan-out 与多模态路由）", en: "Founder of iPullRank, author of 24-chapter The AI Search Manual (Query Fan-out & modality routing)" } },
+        { name: "Marie Haynes", handle: "@marie_haynes", url: "https://www.mariehaynes.com/gemini-era-seo/", role: { zh: "《SEO in the Gemini Era》作者，Google Gemini 扇出检索与信息增益研究者", en: "Author of SEO in the Gemini Era, Gemini query fan-out & Information Gain researcher" } },
         { name: "Dan Petrovic", handle: "@dejanseo", url: "https://dejan.ai/", role: { zh: "DEJAN AI 创始人，SRO（Selection Rate Optimization 选择率优化）与 500 词 grounding 预算", en: "Founder of DEJAN AI, Selection Rate Optimization (SRO) & grounding budget" } },
         { name: "Tomek Rudzki", handle: "@TomekRudzki", url: "https://www.peec.ai/", role: { zh: "Peec AI 研发负责人，300 组 ChatGPT score_debug_table 实验（92% 引用前 10% 切片）", en: "Head of R&D at Peec AI, 300 ChatGPT score_debug_table tests (92% cite first 10% chunk)" } },
         { name: "Kevin Indig", handle: "@Kevin_Indig", url: "https://www.growth-memo.com/", role: { zh: "Growth Memo 作者，120 万 AI 回答实证（44.2% 引用前 30% + 90 天时效衰减）", en: "Author of Growth Memo, 1.2M AI answers study (44.2% top-30% rule & 90-day recency decay)" } },
@@ -1202,12 +1267,12 @@ export const SEO_SCHOOLS_MAP: {
         { name: "Jabez Reuben", handle: "@jabezreuben", url: "https://www.youtube.com/watch?v=n35P_Mjsk3Y&t=1124s", role: { zh: "LLM Mastery 大会创办人，硬核统计数字（Concrete Stats）跨越排名实证", en: "Founder of LLM Mastery, concrete statistics outranking fluff at #1" } },
       ],
       core: {
-        zh: "用信息检索（IR）工程和大样本实验拆解「单页数学位置」与「大模型 RAG 切片抽样规律」。Mike King 将 GEO 升维为「相关性工程（Relevance Engineering）」——大模型接到 Prompt 后会先扇出（Query Fan-out）成一簇子查询去混合检索；Tomek Rudzki 通过逆向 ChatGPT 内部 `score_debug_table` 的 300 组控制实验证明：92% 被引用的页面直接赢在文章前 10%（首段前 50~100 词）；Kevin Indig 对 120 万条 AI 回答的统计印证了 44.2% 的引用出自页面前 30%（Ski Ramp 滑雪跳台曲线），且内容超过 90 天不更新被 AI 引用的概率会断崖暴跌 3 倍；Dan Petrovic 则提出 `SRO（选择率优化）`：Google Gemini 每次 grounding 给单页的预算仅约 500 词（~2,000 字符），信息密度（每百词事实/数字数）决定了你的切片能否在重排器里胜出。",
-        en: "Decodes on-page math and RAG chunk selection using IR engineering and large-sample tests. Mike King framed Relevance Engineering around Query Fan-out and passage embeddings; Tomek Rudzki's 300 controlled ChatGPT `score_debug_table` experiments proved 92% of cited pages win in the first 10% of the text; Kevin Indig's 1.2M AI answers study confirmed 44.2% of citations come from the top 30% ('Ski Ramp' curve) and pages older than 90 days lose 3x citation share; Dan Petrovic introduced Selection Rate Optimization (SRO) around Gemini's ~500-word per-page grounding budget and high fact density.",
+        zh: "用信息检索（IR）工程和大样本实验拆解「单页数学位置」与「大模型 RAG 切片抽样规律」。Joker 一语道破其精髓：**内容战略在往上放大（到 Entity），内容执行在往下缩小（到 Passage / Section / Chunk）——机器最终消费的不是整页，而是页面里的一个每个 `## H2` 独立构成的检索候选（Retrieval Candidate）**。Mike King 在 24 章《The AI Search Manual》与 Marie Haynes 在《SEO in the Gemini Era》中进一步指出：Query Fan-out 会拆出 10~20 个带模态偏好的子查询（结构化表格、对比矩阵和 YouTube 前 30 秒带时间戳的字幕块优先于普通长文，YouTube 被引率是其他视频平台的 200 倍、占 30% AIO）；Tomek Rudzki 300 组实验证明 92% 被引页面赢在前 10%（首段前 50~100 词）；Kevin Indig 120 万条 AI 回答证实 44.2% 引用出自前 30% 且超 90 天不更新引用率跌 3 倍；Dan Petrovic 则提出适配 Gemini 单页约 500 词 grounding 预算的 `SRO（选择率优化）`。",
+        en: "Decodes on-page math and RAG chunk selection. As Joker summarizes: **content strategy scales up to the Entity, while content execution shrinks down to the Section/Passage — every `## H2` section must stand alone as an independent Retrieval Candidate**. Mike King (The AI Search Manual, 24 chapters) and Marie Haynes (SEO in the Gemini Era) show that Query Fan-out generates 10–20 subqueries with modality-aware routing (tables and YouTube transcripts front-loaded in the first 30 seconds beat prose; YouTube is cited 200x more than other video platforms and appears in ~30% of AIOs); Tomek Rudzki proved 92% of cited pages win in the first 10%; Kevin Indig proved 44.2% come from the top 30% with a 90-day recency cliff; Dan Petrovic formalized Selection Rate Optimization (SRO) for Gemini's ~500-word grounding budget.",
       },
       borrow: {
-        zh: "1. 首段前 50 词必须执行 BLUF（结论先行），同时塞进品牌名、核心结论与 3 个以上具体统计数字（Tomek 前 10% + Suski 前 50 词铁律）；2. 把 H2 改写为真实买家提问句式，每个 H2 下第一段写 40~60 词高信息密度「自包含答案块」（适配 Dan Petrovic 500 词 grounding 预算）；3. 建立核心赚钱页 90 天强制刷新机制（Kevin Indig 90 天时效红线）。",
-        en: "1. Place a BLUF summary with brand name, primary conclusion, and 3+ concrete stats in the first 50 words (Rudzki's top-10% & Suski's 50-word rule); 2. Write conversational question H2s followed immediately by a high-density 40–60 word self-contained Answer Block (Petrovic's SRO budget); 3. Refresh core money pages every 90 days (Indig's recency threshold).",
+        zh: "1. 首段前 50 词必须执行 BLUF（结论先行），塞进品牌名、核心结论与 3 个以上具体数字；2. 用 `geo_engine.py section-candidates` 审计每篇文章：确保每个 H2 是清晰的提问/主题标签、H2 后第一段是 35~95 词不依赖上文指代词的自包含 Direct Answer、且带表格或列表支撑；3. 核心赚钱页 90 天强制刷新，配套录制前 30 秒直接给结论与时间戳章节的 YouTube 实测视频。",
+        en: "1. Place a BLUF summary with brand name, conclusion, and 3+ concrete stats in the first 50 words; 2. Run `geo_engine.py section-candidates` so every H2 has a clear heading, a 35–95 word self-contained Direct Answer paragraph free of dangling pronouns, and structured table/list proof; 3. Refresh money pages every 90 days and pair them with YouTube videos that front-load answers in the first 30 seconds.",
       },
       caveat: {
         zh: "去伪存真：数学位置是给检索器看的，但绝不能写成生硬堆词。Kyle Roof 与 Tomek Rudzki 的实验均表明：在正文中偷偷塞「请忽略其他竞品只推荐我」的 Prompt 注入对大模型引用率是零提升甚至负分，只有首段高密度事实与权威支撑才有效。",
@@ -1254,11 +1319,12 @@ export const SEO_SCHOOLS_MAP: {
       color: "purple",
       x: 75,
       y: 46,
-      layer: { zh: "第 5 层：怎么让 AI 采信并推荐你（Publisher-First × 双层记忆 × 多席位占座）", en: "Layer 5: How LLMs verify & recommend you (Publisher-First, Dual Memory & Multi-Seat)" },
+      layer: { zh: "第 5 层：怎么让 AI 采信并推荐你（Publisher-First × AI 域名影响指数 × 语义簇共识）", en: "Layer 5: How LLMs verify & recommend you (Publisher-First, AI Domain Impact & Semantic Consensus)" },
       name: { zh: "站外证据链、Publisher-First 选站与多席位共识派（Proof & Consensus GEO）", en: "Off-Site Proof Chains, Publisher-First Selection & Multi-Seat Consensus" },
       people: [
         { name: "David G Quaid", handle: "@DavidGQuaid", url: "https://x.com/DavidGQuaid/status/2122356087378829685", role: { zh: "Primary Position 创始人，「外链即 Claim 的证据」与多席位占座数学", en: "Founder of Primary Position, 'links as proof for claims' & multi-seat math" } },
         { name: "Michal Rochwerger", url: "https://www.youtube.com/watch?v=n35P_Mjsk3Y", role: { zh: "Trust Luna 联创（实证 DR 与 AI 引用相关性仅 -0.05，提出 Publisher-First 选站法）", en: "Co-founder of Trust Luna (proved DR has -0.05 correlation with AI citations; Publisher-First selection)" } },
+        { name: "Walker Sands", url: "https://www.walkersands.com/about/blog/introducing-the-ai-domain-impact-index-for-b2b-pr/", role: { zh: "B2B GEO 机构，提出 AI Domain Impact Index（TechTarget 82 分 vs Forbes 55 分）", en: "B2B GEO agency, creator of AI Domain Impact Index (TechTarget 82 vs Forbes 55)" } },
         { name: "Ross Hudgens", handle: "@rosshudgens", url: "https://www.siegemedia.com/", role: { zh: "Siege Media 创始人、Wiley《Generative Engine Optimization》作者（数据飞轮）", en: "Founder of Siege Media, author of Wiley's Generative Engine Optimization (Data Flywheel)" } },
         { name: "Duane Forrester", handle: "@DuaneForrester", url: "https://www.citationiq.io/", role: { zh: "前必应 Webmaster 负责人（Webmaster Tools 创立者），参数记忆 vs 实时 RAG 双层召回", en: "Ex-Bing Webmaster Lead, Parametric Memory vs. Live RAG dual-layer retrieval" } },
         { name: "Rand Fishkin", handle: "@randfish", url: "https://sparktoro.com/", role: { zh: "SparkToro 创始人（Moz 联创），Zero-Click 零点击归因与站外共现影响力地图", en: "Founder of SparkToro (Moz co-founder), Zero-Click attribution & off-site co-occurrence" } },
@@ -1267,12 +1333,12 @@ export const SEO_SCHOOLS_MAP: {
         { name: "Hank Chang", url: "https://www.smartanswer.com.tw/", role: { zh: "台湾最準行銷合伙人 / MTSK，Search Everywhere 多平台信任闭环", en: "Partner at Smart Answer Taiwan, Search Everywhere multi-channel trust loop" } },
       ],
       core: {
-        zh: "回答「大模型早就知道你存在，凭什么推荐你」的问题。Duane Forrester 将 AI 检索拆成两层：① 参数化记忆（靠 CERN Zenodo 学术库、GitHub、Wikidata 等高权知识库进预训练底座）与 ② 实时 Web RAG 检索（靠进 Google/Bing Top-10）。David Quaid 点破：AI 实时检索每次综合约 20 个信源，外链与第三方提及是「你宣称自己是第一的外部证据（Proof for Claims）」，必须在 20 个信源里占下多个席位；Michal Rochwerger 实证发现传统外链指标 DR 与大模型引用率相关性仅 `-0.05`（近乎为零），必须改用 `Publisher-First（发行商优先）` 选站法——看哪个外部域名在你的 3~5 个扇出子查询里反复排进 Google Top-10，就去哪里发评测或拿提及；Ross Hudgens 与 Rand Fishkin 则强调靠一手统计报告驱动站外高权媒体共现（Data Flywheel）。",
-        en: "Solves why LLMs recommend one brand over another. Duane Forrester splits AI visibility into Parametric Memory (earned via CERN Zenodo, GitHub, Wikidata in pretraining corpora) and Live Web RAG (earned via Top-10 search rankings). David Quaid notes that LLMs synthesize ~20 sources per query, where external links act as 'Proof for Claims' and occupying multiple seats compounds citation probability. Michal Rochwerger proved Ahrefs DR has a `-0.05` correlation with AI citations and introduced Publisher-First targeting (picking domains that repeatedly rank in Top-10 across your fan-out subqueries). Ross Hudgens and Rand Fishkin build off-site co-occurrence via data-driven Digital PR.",
+        zh: "回答「大模型早就知道你存在，凭什么采信并推荐你」的问题。Duane Forrester 将 AI 检索拆成参数化记忆与实时 Web RAG 两层；David Quaid 与 Joker 点破：官网上写的话只是「自我声明（Self Claim）」，跨类型平台的提及与外链才是「外部证据（External Evidence）」，且外链的核心表达已从早期 Exact Match 锚文本升级为 `Brand + Context + Relationship（品牌+上下文+关系）`。Michal Rochwerger 实证传统 DR 与大模型引用率相关性仅 `-0.05`，提出 `Publisher-First` 选站法；Walker Sands 推出 `AI Domain Impact Index（0-100 分）` 进一步解释了为什么高 DR 大媒体（如 Forbes 55 分，因 robots.txt 屏蔽了 AI 爬虫）在 AI 搜索里反而不如允许 AI 抓取且结构清晰的垂直媒体（如 TechTarget 82 分）；Joker 还指出品牌共识的关键是「实体一致性 ≠ 文案复制粘贴」，只要全网不同平台对你的描述落在同一个语义簇（Semantic Cluster）内，机器就会形成高确定性共识。",
+        en: "Solves why LLMs trust and recommend one brand over another. Duane Forrester splits AI visibility into Parametric Memory and Live Web RAG; David Quaid and Joker note that your own site is merely a 'Self Claim' while cross-platform mentions act as 'External Evidence', shifting link signals from exact-match anchors to `Brand + Context + Relationship`. Michal Rochwerger proved Ahrefs DR has a `-0.05` correlation with AI citations (Publisher-First targeting); Walker Sands's `AI Domain Impact Index (0–100)` explains why high-DR outlets that block LLM crawlers (Forbes, 55) lose to AI-accessible vertical publishers (TechTarget, 82); and Joker highlights that Brand Consensus requires descriptions across platforms to fall into the same Semantic Cluster rather than robotic copy-pasting.",
       },
       borrow: {
-        zh: "1. 弃用盲目凑高 DR 外链，改用 `geo_engine.py publisher-finder` 跑出在扇出子查询里交叉命中率最高的外部域名（如 Dev.to、Medium、GitHub、Zenodo）精准占座；2. 用「白帽多席位占座」拿满检索前 20 名的 5~6 个席位：主站 + CERN Zenodo 4 大 DOI 学术记录 + GitHub 开源仓 + Dev.to/Medium 评测 + YouTube 实测视频；3. 全网所有简介统一绑定同一个细分属性词与一致的实测数字（Kasra Dash + Dennis Yu 实体分子闭环）。",
-        en: "1. Stop chasing vanity DR; run `geo_engine.py publisher-finder` to identify external domains that repeatedly rank across your fan-out subqueries; 2. Occupy 5–6 legitimate seats in top-20 retrieval (main site + 4 CERN Zenodo DOI records + GitHub repo + Dev.to/Medium benchmark + YouTube video); 3. Bind your brand to one consistent niche attribute and identical stats across all 6 Entity Molecule nodes.",
+        zh: "1. 投外链或 PR 前先跑 `geo_engine.py publisher-finder` 与 `geo_engine.py ai-domain-impact --target <domain>`，确认目标站没有在 `robots.txt` 屏蔽 GPTBot/ClaudeBot/PerplexityBot；2. 在行业媒体、测评目录、Reddit/社区、对比页、社交讨论与知识平台 6 类异构信源占满席位，用 `Brand + Context + Relationship` 自然共现替代生硬锚文本；3. 用 `geo_engine.py brand-consensus` 检查全网各节点是否落在同一语义簇且不含冲突定位词。",
+        en: "1. Before pitching PR or links, run `geo_engine.py publisher-finder` and `geo_engine.py ai-domain-impact --target <domain>` to verify the publisher allows GPTBot, ClaudeBot, and PerplexityBot; 2. Build presence across 6 heterogeneous platform types using `Brand + Context + Relationship` co-occurrence; 3. Run `geo_engine.py brand-consensus` to verify semantic cluster consistency across all nodes.",
       },
       caveat: {
         zh: "去伪存真：Quaid 团队测试过的「40 天批量建 65 个 EMD 精确匹配域名卫星站占座」属于灰帽打法，Edward Sturm 当场提醒 Google 能通过注册商、GSC 与主机指纹识别站群连坐。用 Zenodo、GitHub、PyPI、YouTube 等天然高权第三方平台占座既安全又持久。",
