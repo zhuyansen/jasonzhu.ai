@@ -211,6 +211,208 @@ export const SEO_TOOLS_DIRECTORY = {
   repo: "https://github.com/zhuyansen/awesome-claude-seo-skills",
 };
 
+/** 通用 SEO 水系模型 v8（2026-10-18 最新版：14 个构件 + 五层水表 + 六道放水闸门 + Jason 6 条排名理论）
+ *  源自 ops/seo-watersystem-model.md（v4 → v5 三个月踩坑 → v6 Google 搜索中心技术门与出水口 → v7 Ahrefs 汇水区与 AI 404 回收 → v8 哥飞教程六道节奏闸门） */
+export const SEO_WATER_SYSTEM_V8 = {
+  lead: {
+    zh: "把 SEO 当成一套水系来搭：先有源头才有水可流，力气按「最不 AI（人主导）」排序，不是按「最省事（批量造页）」排序。从 7 月的 v4 演进到 10 月的 v8，吸收了三个月实战踩坑（v5）、Google 搜索中心技术门（v6）、Ahrefs 需求汇水区（v7）和哥飞教程六道节奏闸门（v8），共 14 个构件、5 层水表、6 道闸门：",
+    en: "Build SEO as a water system: you need inflows before pipes can carry water, and effort is ordered by what is least automatable (human-led authority), not what is easiest (spinning up pages). Evolved from v4 (July) to v8 (October 2026) across 14 components, 5 layered water meters, and 6 release gates:",
+  },
+  components: [
+    {
+      id: "Ⓠ",
+      tag: "v7/v8",
+      name: { zh: "汇水区 · 需求与商业口径", en: "Catchment · Demand & Commercial Proof" },
+      who: { zh: "🤖查 🧑定", en: "🤖 lookup · 🧑 decide" },
+      rule: {
+        zh: "雨落在哪里：建页前必填三项——① 搜索意图（看前 10 名的页型、格式、角度，页型跟着结果页走）；② 流量潜力（看排第 1 的页面总流量，不看单词搜索量）；③ 商业潜力（0–3 分，v8 要求必附一条赚钱证据：广告透明中心持续投放、Stripe 收银台引荐、BuiltWith 支付/联盟代码或竞品定价）。意图为零，后面水再多也流不进去。",
+        en: "Where the rain falls: before building a page, record Search Intent (match Top-10 page type/format/angle), Traffic Potential (total traffic of the #1 page, not single-keyword volume), and Business Value (0–3 score backed by hard monetization proof: Ad Transparency active spend, Stripe checkout referrals, BuiltWith payment tags, or competitor pricing).",
+      },
+      meter: { zh: "三项填齐且带商业证据的词组占比", en: "% of target clusters with intent + traffic potential + revenue proof" },
+    },
+    {
+      id: "①a",
+      tag: "v5/v8",
+      name: { zh: "进水口 · 传统外链权威（两层论）", en: "Inflow 1a · Link Authority (Two-Tier Rule)" },
+      who: { zh: "🧑 人主导", en: "🧑 Human-led" },
+      rule: {
+        zh: "外链分两层：权重层 = 自然报道引用 + 可引用数据集/学术凭证（Zenodo DOI 一鱼四吃：CSV → HF/Kaggle 数据集 + DOI + Notebook + Dev.to 文）；发现层 = 免费目录/导航站（只管触发收录和 AI 语料，不传权重，只验收不堆量）。10-06 起停止购买 dofollow 外链；v8 闸门：收录稳定增长后才上第一批外链。",
+        en: "Two tiers: Weight tier = earned media citations + citable datasets/DOIs (1 CSV → HF/Kaggle dataset + CERN Zenodo DOI + Notebook + Dev.to article); Discovery tier = free directories (triggers indexing & AI grounding only; pass no weight, do not pile up). Stopped buying dofollow links on 10-06; v8 gate: build links only after indexing grows steadily.",
+      },
+      meter: { zh: "高权威 referring domains 数", en: "Authoritative referring domains" },
+    },
+    {
+      id: "①b",
+      tag: "v5/v7",
+      name: { zh: "进水口 · GEO / AI 引用", en: "Inflow 1b · GEO & AI Citations" },
+      who: { zh: "🤖备料 🧑发送", en: "🤖 prep · 🧑 ship" },
+      rule: {
+        zh: "被提及 > 被链接（Ahrefs 7.5 万品牌研究：AI 可见度相关性 YouTube 提及 0.737 > 无链接品牌提及 0.66–0.71 >> 外链数 0.28）。20 题实测 AI 优先引用文档、定价页、数据集和 GitHub，而非泛博客。v7 规则：llms.txt 降为可选（已有留着不再投入）；每月从 GA 筛 AI 来源落到 404 的编造网址，301 接回最相关页。",
+        en: "Being mentioned > being linked (Ahrefs 75K-brand study: YouTube mentions r=0.737 > unlinked brand mentions 0.66–0.71 >> backlinks 0.28). Our 20-prompt test showed AI cites docs, pricing pages, datasets, and GitHub far more than generic blog posts. v7 rule: llms.txt is optional; monthly check GA for hallucinated AI referral URLs hitting 404 and 301-redirect them.",
+      },
+      meter: { zh: "AI 引荐会话 + 品牌被提及数 + AI 来访 404 数", en: "AI sessions + brand mentions + AI-referral 404s" },
+    },
+    {
+      id: "①c",
+      tag: "v5",
+      name: { zh: "进水口 · 平台原生市场", en: "Inflow 1c · Native Platform Search" },
+      who: { zh: "🤖 AI", en: "🤖 AI" },
+      rule: {
+        zh: "GitHub / npm / PyPI / Chrome 商店 / Toolify / Product Hunt 等平台内部搜索算法（仓库名关键词、20 个 GitHub topics 填满、README 结构化、每日自动更新的 awesome 合集仓库署名带域名）——装进终端和 Agent 的 CLI/MCP 是不走搜索的常驻触点。",
+        en: "Internal search engines of GitHub, npm, PyPI, Chrome Web Store, Toolify, and Product Hunt (repo-name keywords, all 20 GitHub topics filled, structured READMEs, daily auto-updated awesome repos with domain attribution, plus CLI/MCP packages).",
+      },
+      meter: { zh: "平台内搜索排位 / 安装量 / GitHub 榜单浏览量", en: "In-platform rank, installs & GitHub repo views" },
+    },
+    {
+      id: "②",
+      tag: "v5",
+      name: { zh: "水库 · 品牌实体", en: "Reservoir · Brand Entity" },
+      who: { zh: "🤖织图 🧑定名", en: "🤖 schema · 🧑 naming" },
+      rule: {
+        zh: "权重先蓄进实体，管道才有水可分。避开「水库两刀」（通用类目词当品牌名 + .top/.xyz 低信任后缀）；对外统一写「品牌（域名）」，JSON-LD 声明 alternateName，sameAs 只绑同一实体（有 DOI 的数据集单独建 Dataset 实体更稳），终态验收是搜品牌词出现 Sitelinks。",
+        en: "Weight must accumulate in your brand entity first. Avoid generic category names + low-trust TLDs (.top/.xyz); use alternateName in JSON-LD, bind sameAs strictly to the same entity (register DOI datasets as separate Dataset entities), and aim for Google SERP sitelinks on your brand query.",
+      },
+      meter: { zh: "品牌词位次 + CTR + SERP Sitelinks", en: "Brand query position, CTR & sitelinks" },
+    },
+    {
+      id: "⓪",
+      tag: "v6",
+      name: { zh: "管材 · 渲染与状态码", en: "Pipe Material · SSR & Status Codes" },
+      who: { zh: "🤖 AI", en: "🤖 AI" },
+      rule: {
+        zh: "Google 处理顺序是「发现→抓取→渲染→索引→排名→展示」。① 每种页型每月抽 1 页用 GSC「测试实际网址」确认正文和内链在初始/渲染 HTML 里；② 多语言必须独立网址 + 双向 hreflang，绝不靠脚本或 Cookie 切语言；③ 站内链接一律 <a href>；④ 不存在的页真返 404/410（防 SPA 软 404）。",
+        en: "Verify Google reads what you see: (1) monthly GSC Live URL Test per template to confirm body copy and links exist in initial/rendered HTML; (2) separate URLs + bidirectional hreflang per language (never JS/cookie text swapping); (3) real <a href> links; (4) true 404/410 for missing pages (no SPA soft-404s).",
+      },
+      meter: { zh: "实际网址抽查通过数 + 404 / 软 404 / 重定向错误数", en: "Live URL test pass rate + 404 / soft-404 / redirect errors" },
+    },
+    {
+      id: "③",
+      tag: "v5",
+      name: { zh: "分层 · 站点架构", en: "Hierarchy · Site Architecture" },
+      who: { zh: "🤖 AI", en: "🤖 AI" },
+      rule: {
+        zh: "架构先于一切：先定计划收录总页数 N，按 hub → cluster → 子页主题分层；关键词地图严格「一个词组一个网址」，建页前先 grep slug + 查真实 PV 防同站两页自相残杀（Cannibalization）。",
+        en: "Architecture before scale: know your target indexed page count N, structure as hub → cluster → leaf, enforce one keyword cluster per URL, and check existing slugs/traffic before creating pages to prevent cannibalization.",
+      },
+      meter: { zh: "目录层级深度（≤3 跳）+ 同词自相竞争页数", en: "Click depth (≤3 hops) & zero self-cannibalization" },
+    },
+    {
+      id: "④",
+      tag: "v5",
+      name: { zh: "流动 · 内链传权", en: "Flow · Internal Link Routing" },
+      who: { zh: "🤖 AI", en: "🤖 AI" },
+      rule: {
+        zh: "把权重从「拿到外链的页（首页/数据报告）」导向「要冲排名的商业场景页（/best/）」。孤儿页 = 断管；内链必须写进服务端静态 HTML（仅靠前端 hydration 渲染的链接爬虫看不见），标签和站内搜索别生成可抓取新网址。",
+        en: "Route authority from link-earning pages (home/reports) to money pages (/best/ scenarios) using keyword-rich anchors in server-rendered HTML. Orphan pages = broken pipes; never let search/tag filters spawn crawlable URLs.",
+      },
+      meter: { zh: "孤儿页数（目标 0）+ 核心页静态内链覆盖率", en: "Orphan page count (target 0) & SSR internal link coverage" },
+    },
+    {
+      id: "⑤",
+      tag: "v5/v8",
+      name: { zh: "撑子页 · 程序化与专题长尾", en: "Sub-Pages · Programmatic & Topic Pages" },
+      who: { zh: "🤖 卡阈值", en: "🤖 Gated" },
+      rule: {
+        zh: "只对有曝光基础（pos 8–20）或 KGR < 0.25 的词建页（pos 50+ 属权威病，盲目造页只稀释整站权重）。页面必须有自己的「交付链理论 + 真实实测区块」，同模板下决定收不收的是有没有第三方之外的独特价值。v8 分批放闸：新页型按 5–10% 一批上，7 天出词率或有点击页占比 ≥1% 才放下一批。",
+        en: "Build sub-pages only for terms at pos 8–20 or KGR < 0.25 (pos 50+ is authority starvation). Every page needs its own methodology and hands-on test block. v8 batch gate: release new page types in 5–10% batches; require ≥1% click-earning or 7-day impression rate before unlocking the next batch.",
+      },
+      meter: { zh: "每批出词率 + 有点击页占已发现页比例（≥1%）", en: "Batch impression rate & click-earning page ratio (≥1%)" },
+    },
+    {
+      id: "⑥",
+      tag: "v5/v8",
+      name: { zh: "活水 · 时效内容流与 48h 抢词", en: "Living Water · Fresh Feeds & 48h SLA" },
+      who: { zh: "🤖 AI", en: "🤖 AI" },
+      rule: {
+        zh: "带日期的活水页（周报/日报/月度不可改写统计快照）让爬虫勤来——实测日报 sitemap 是 Google 读得最勤的子图，最适合挂新页入口。零供给新词寿命约 2.5 周，新工具/新模型发布 48h 内出专页，浪潮退后用带核心词的锚文本把权重汇回泛词主干页。v8 闸门：新页上线 48h 查 GSC 是否出词。",
+        en: "Dated content streams (weekly reports, daily digests, immutable monthly stats snapshots) train crawlers to visit daily. New-term waves last ~2.5 weeks: ship event pages within 48h, link them back to evergreen hub pages, and run a mandatory 48-hour GSC impression check after launch.",
+      },
+      meter: { zh: "新页 48 小时出词率 + 活水子图抓取频次", en: "48-hour new-page impression rate & feed crawl frequency" },
+    },
+    {
+      id: "⑦",
+      tag: "v5/v6/v7/v8",
+      name: { zh: "排水 · 索引卫生与丢链回收", en: "Drainage · Index Hygiene & Link Recovery" },
+      who: { zh: "🤖 AI", en: "🤖 AI" },
+      rule: {
+        zh: "保护整站有用内容评价：① 低质/低星页果断 noindex,follow（排水闸）；② 每月记 N（计划收录）/ M（已收录）/ X（未收录）并确认每个子 sitemap 真被 Google 读取；③ v6 监控「Google 选择的规范网页与用户指定不同」；④ v7 每月筛「有外链 + 404」网址 301 找回权重；⑤ v8 闸门：「已发现/已抓取未索引」连续两月上涨立即停发新页先清淤。",
+        en: "Protect site-wide quality evaluation: (1) noindex,follow thin pages; (2) track N/M/X monthly and verify every child sitemap is actually read; (3) v6 monitor 'Google-selected canonical differs from user'; (4) v7 301-redirect any 404 URL that has backlinks; (5) v8 gate: halt new page creation if Discovered/Crawled-not-indexed rises for 2 consecutive months.",
+      },
+      meter: { zh: "N/M/X 收录比 + 规范不一致数 + 带外链 404 数（目标 0）", en: "N/M/X ratio + canonical mismatches + backlinked 404s (0)" },
+    },
+    {
+      id: "⑩",
+      tag: "v6",
+      name: { zh: "出水口 · 结果页展示与首屏 BLUF", en: "Outlet · SERP Snippet & First-50-Words BLUF" },
+      who: { zh: "🤖 AI", en: "🤖 AI" },
+      rule: {
+        zh: "排名之后、点击之前是单独一道工序：① 每页唯一 title（与 H1 一致、用真实搜索词、≤60 字符防改写）与 meta description；② 首页 WebSite schema 声明 name + alternateName；③ H1 正下方首段前 50 词直出 BLUF 断言结论 + 适用人群 + 硬核实测统计（吃透 AI Overview 首段引用与精选摘要）。",
+        en: "Ranking is not clicking: (1) unique title matching H1 with real search terms ≤60 chars + unique meta description; (2) homepage WebSite schema with name + alternateName; (3) opening 50-word BLUF right below H1 stating the verdict, who it is for, and hard stats to win AI Overviews and snippets.",
+      },
+      meter: { zh: "同位次点击率（改标题 2–4 周回看）+ 首段 BLUF 覆盖率", en: "Same-position CTR (2–4w post-edit) & 50-word BLUF coverage" },
+    },
+    {
+      id: "⑧",
+      tag: "v5",
+      name: { zh: "水车+回流 · 转化、留存与去机房噪声", en: "Waterwheel · Conversion, Retention & Bot Filtering" },
+      who: { zh: "🤖埋 🧑看", en: "🤖 instrument · 🧑 review" },
+      rule: {
+        zh: "埋点看水做不做功（复制安装命令、跑体检、点收银台、表单线索增设「How did you find us?」AI 归因字段），订阅/告警把流过的水收回水库。v5 铁律：读 GA 前必须先剔除机房无头浏览器流量（曾占原始会话 80%+），预渲染静态壳共用单一埋点函数防漏报。",
+        en: "Measure whether water turns the wheel (install copies, audit runs, checkout clicks, lead forms with 'How did you find us?' AI attribution). v5 rule: strip datacenter headless-browser traffic (often 80%+ of raw sessions) before reading GA4, and share one analytics helper across all pre-rendered HTML shells.",
+      },
+      meter: { zh: "真人会话转化率 + 订阅回流数 + 真实收款账本", en: "Human session conversion rate, subscribers & net revenue" },
+    },
+    {
+      id: "⑨",
+      tag: "v5/v6/v8",
+      name: { zh: "迭代 · 五层水表与每周单实验闭环", en: "Iteration · 5-Layer Meters & Weekly 1-Experiment Loop" },
+      who: { zh: "🤖 AI", en: "🤖 AI" },
+      rule: {
+        zh: "水表从三层升为五层：① 点击层（GSC + GA 真人会话）· ② 引用层（GSC 生成式 AI 报告 + Bing AI Performance + Clarity 引用 + 20 题多引擎实测，实测 AI 引用量是点击量的 9 倍）· ③ 权威层（DR + 高权威引荐域）· ④ 收录层（N/M/X + 子站点地图读取 + Bing 收录数）· ⑤ 管材层（GSC 实际网址测试 + 404/规范网址一致率）。每周复盘只记「3 胜 3 忧 + 恰好 1 个实验」并写死回看日期；v8 规定每月必查一次 Bing 站长后台扫描报告。",
+        en: "Five layered meters: (1) Clicks (GSC + bot-filtered GA4), (2) AI Citations (GSC Generative AI report + Bing AI Performance + Clarity + 20-prompt live panel — AI citations run 9× AI clicks), (3) Authority (DR & referring domains), (4) Indexing (N/M/X + child sitemap reads + Bing index count), (5) Pipe Health (GSC Live URL test + 404/canonical match). Weekly retro picks 3 wins, 3 worries, and exactly 1 dated experiment; v8 adds a mandatory monthly Bing Webmaster check.",
+      },
+      meter: { zh: "五层月检完成率 + 每周单实验按期回看率", en: "5-layer monthly audit completion & dated experiment follow-through" },
+    },
+  ],
+  gatesV8: {
+    zh: [
+      "⑤ 分批放闸：新页型按 5–10% 一批上，7 天出词率或有点击页占比 ≥1% 才放下一批。",
+      "⑥ 48 小时出词检查：新页上线 48h 查 GSC 是否出词，没出立刻查渲染、字数、标题与核心词密度。",
+      "⑦ 未索引熔断闸门：「已发现/已抓取未编入索引」连续两月上涨立即停发新页，先合并/noindex/补内容。",
+      "①a 按信号上外链：收录稳定增长后才做第一批外链；8–20 名词变多时先对标前 5 名改内容。",
+      "Ⓠ 商业口径硬化：搜索量统一用 Google Ads API 口径，商业潜力分必须附一条同行真金白银赚钱证据。",
+      "⑨ Bing 月检闸门：每月查一次 Bing 站长后台扫描报告与站点地图读取（防 Bing 曝光暗跌 80% 无人察觉）。",
+    ],
+    en: [
+      "⑤ Batch Release Gate: roll out new page types in 5–10% batches; require ≥1% click-earning or 7-day impression rate before the next batch.",
+      "⑥ 48-Hour Impression Check: verify GSC impressions 48h after publishing; if zero, check SSR HTML, word count, title, and keyword density.",
+      "⑦ Unindexed Circuit Breaker: if Discovered/Crawled-not-indexed rises for 2 straight months, freeze new page creation and clean up first.",
+      "①a Signal-Led Link Building: start backlinks only after indexing grows steadily; when pos 8–20 terms accumulate, upgrade copy against Top-5 first.",
+      "Ⓠ Hard Commercial Proof: standardize volume on Google Ads API and require 1 hard monetization proof per commercial score.",
+      "⑨ Monthly Bing Gate: inspect Bing Webmaster scan reports and sitemap reads monthly so silent Bing drops never go unnoticed.",
+    ],
+  },
+  rankingTheory: {
+    date: "2026-10-07",
+    zh: [
+      "大部分关键词靠页面本身就能进前五甚至前三（前提是意图专一、内容完整、讲清「为什么」；如 DR 13 的 PPT 实测页排进前三）。",
+      "极度卷的词，拼的是页面以外的 PR、品牌、社媒与声量——页面做满只是入场券。",
+      "外链是投票，社媒也是投票（同一机制的不同通道）；会做社媒与品牌声量，就不必迷信外链和 DR。",
+      "网站底子不差的前提下，排名与社媒/品牌声量呈近似指数关系；跨过基准线后外链不再是瓶颈。",
+      "社媒和品牌有壁垒、靠真资源，比能花钱买到的外链值钱得多。",
+      "页面必须有自己的「理论与实测标准」（为什么这些好、按什么交付链标准判），纯搬运或纯 AIGC 列表页迟早被清退。",
+    ],
+    en: [
+      "Most keywords can reach the Top 5 or Top 3 on page quality alone when intent is focused and the page explains 'why' (e.g., our DR 13 PPT benchmark page ranking Top 3).",
+      "Hyper-competitive head terms are won off-page through PR, brand, and social volume — on-page perfection is just the entry ticket.",
+      "Backlinks are votes, and social/brand buzz are votes too; strong social distribution reduces dependence on DR.",
+      "Once a site's technical baseline is solid, rankings scale roughly exponentially with brand and social momentum.",
+      "Brand and social moats require real assets and outlast anything money can buy in link markets.",
+      "Every page needs its own theory and testing rubric ('why these win and how we graded them'); commodity AIGC listicles get wiped out.",
+    ],
+  },
+};
+
 /** 找新词：我的开源工具 new-term-radar（每天从 X、HF、GitHub、竞品 sitemap 抓新名字，再给关键词表） */
 export const NEW_TERM_RADAR = "https://github.com/zhuyansen/new-term-radar";
 

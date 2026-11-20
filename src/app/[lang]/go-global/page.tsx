@@ -26,6 +26,7 @@ import {
   SEO_SCHOOLS_MAP,
   SEO_SKILLS,
   SEO_TOOLS_DIRECTORY,
+  SEO_WATER_SYSTEM_V8,
   STACK,
   groupPosts,
   postTitle,
@@ -643,50 +644,75 @@ function Beginners({ isZh }: { isZh: boolean }) {
   );
 }
 
-// 增长这一步的总框架：Jason 的「SEO 水系模型」v4（2026-07-24 的帖子）+ 与 L1–L5 GEO 工程闭环的合流映射。只转述框架；帖子里付费客座那条不写进页面（10-06 已停买 dofollow 外链）。
+// 增长这一步的总框架：Jason 的「通用 SEO 水系模型 v8」（从 2026-07-24 的 v4 演进到 2026-10-18 的 v8：14 个构件 + 五层水表 + 六道放水闸门 + Jason 6 条排名理论）。
 function SeoSystem({ l, isZh }: { l: "zh" | "en"; isZh: boolean }) {
+  const w = SEO_WATER_SYSTEM_V8;
   return (
-    <div className={`${BOX} mb-3`}>
-      <p className="text-sm font-semibold text-gray-900 mb-1">
-        {isZh ? "SEO 系统：水系模型 v4 × GEO 五层工程闭环" : "The SEO system: Water Model v4 × L1–L5 GEO Loop"}
-      </p>
-      <p className="text-sm text-gray-600 leading-relaxed">
-        {isZh
-          ? "把 SEO 当成一套水系来搭。进水口有三个：传统的外链权威（免费目录只管收录、不传权重，别堆量；重点发 CERN Zenodo 学术 DOI 与 GitHub 开源高证明力节点），被 AI 引用（被提及比被链接更重要），Toolify、Product Hunt 这类平台的收录。效果也要分层看：GSC 和 GA 里的点击只是冰山一角，我实测 AI 引用量是 AI 点击量的 9 倍，被引用却没被点击的那部分，用 Google Search Console 的「生成式 AI 效果报告」、Bing 的 AI Performance 和 Clarity 的引用报告补上，都免费。"
-          : "Build SEO as a water system with three inflows: classic link authority (free directories get you indexed but pass no weight, so do not pile them up; focus on high-proof nodes such as CERN Zenodo DOIs and open-source GitHub repos), citations by AI (being mentioned matters more than being linked), and listings on platforms such as Toolify and Product Hunt. Measure in layers too: clicks in GSC and GA are the tip of the iceberg. I counted nine AI citations for every AI click, and Google Search Console's Generative AI Performance report, Bing AI Performance and Clarity citation reports show the citations that never become clicks."}
-      </p>
-      <div className="mt-2.5 grid gap-2 sm:grid-cols-3 text-xs text-gray-700">
-        <div className="rounded-xl border border-gray-200 bg-gray-50 p-2.5">
-          <p className="font-semibold text-gray-900 mb-0.5">
-            {isZh ? "① 三个进水口 → L1/L2/L5 基建" : "① 3 Inflows → L1/L2/L5 Infrastructure"}
-          </p>
-          <p className="text-gray-600 leading-relaxed">
+    <div id="seo-water-model-v8" className={`${BOX} mb-3 scroll-mt-24`}>
+      <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">
+        <p className="text-sm font-semibold text-gray-900">
+          {isZh
+            ? "SEO 系统：通用 SEO 水系模型 v8（14 构件 · 5 层水表 · 6 道放水闸门）"
+            : "The SEO System: Water System Model v8 (14 Components · 5-Layer Meters · 6 Release Gates)"}
+        </p>
+        <span className="text-xs px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 font-medium">
+          {isZh ? "v4 (07-24) → v8 (10-18 最新版)" : "v4 (Jul) → v8 (Oct 2026 Latest)"}
+        </span>
+      </div>
+      <p className="text-sm text-gray-600 leading-relaxed mb-3">{w.lead[l]}</p>
+
+      {/* 14 个构件全表（按水流顺序：Ⓠ → ①a/①b/①c → ② → ⓪ → ③ → ④ → ⑤ → ⑥ → ⑦ → ⑩ → ⑧ → ⑨） */}
+      <div className="grid gap-2 sm:grid-cols-2 mb-3">
+        {w.components.map((c) => (
+          <div key={c.id} className="rounded-xl border border-gray-200 bg-gray-50/80 p-3 text-xs leading-relaxed">
+            <div className="flex flex-wrap items-center justify-between gap-1.5 mb-1">
+              <p className="font-semibold text-gray-900">
+                <span className="inline-flex items-center justify-center px-1.5 py-0.5 rounded bg-blue-600 text-white font-mono text-[11px] mr-1.5">
+                  {c.id}
+                </span>
+                {c.name[l]}
+              </p>
+              <span className="text-[11px] px-1.5 py-0.5 rounded bg-white border border-gray-200 text-gray-500 font-mono">
+                {c.tag} · {c.who[l]}
+              </span>
+            </div>
+            <p className="text-gray-700">{c.rule[l]}</p>
+            <p className="mt-1.5 text-[11px] text-emerald-800 font-medium">
+              {isZh ? "📊 水位表指标：" : "📊 Water meter: "}
+              <span className="font-normal text-gray-600">{c.meter[l]}</span>
+            </p>
+          </div>
+        ))}
+      </div>
+
+      {/* v8 新增六道放水闸门 + Jason 的 6 条排名理论 */}
+      <div className="grid gap-3 md:grid-cols-2">
+        <div className="rounded-xl border border-amber-200 bg-amber-50/50 p-3 text-xs leading-relaxed">
+          <p className="font-semibold text-gray-900 mb-1.5">
             {isZh
-              ? "外链权威（Zenodo DOI + GitHub + backlink-guard 防毒）+ AI 检索引用（无噪 Markdown 端点 /api/md/... + Dataset JSON-LD）+ 垂直平台席位（Reddit / YouTube / 行业评测榜）。"
-              : "Link authority (Zenodo DOIs + GitHub + backlink-guard) + AI grounding (/api/md/... raw Markdown + Dataset JSON-LD) + directory/platform seats."}
+              ? "🚧 v8 新增六道放水闸门（看到信号再做下一步）"
+              : "🚧 v8's 6 Release Gates (Wait for the signal before the next step)"}
           </p>
+          <ul className="space-y-1 text-gray-700 list-disc pl-4">
+            {w.gatesV8[l].map((g) => (
+              <li key={g}>{g}</li>
+            ))}
+          </ul>
         </div>
-        <div className="rounded-xl border border-gray-200 bg-gray-50 p-2.5">
-          <p className="font-semibold text-gray-900 mb-0.5">
-            {isZh ? "② 河道分流防滥用 → L3/L4 页面工程" : "② Channel Routing → L3/L4 On-Page"}
-          </p>
-          <p className="text-gray-600 leading-relaxed">
+        <div className="rounded-xl border border-blue-200 bg-blue-50/40 p-3 text-xs leading-relaxed">
+          <p className="font-semibold text-gray-900 mb-1.5">
             {isZh
-              ? "严守 Google 2026-07-15 官方红线：扇出查询用 SERP 重合率（≥40%）合并进同一篇权威长文，绝不一词一页；首段前 50 词 BLUF + 中立「按你的情况选」矩阵赢下 AI 首段点名。"
-              : "Follow Google's 2026-07-15 rule: merge fan-out queries with ≥40% SERP overlap into one authoritative page; use a 50-word BLUF + neutral buyer matrix to win the citation."}
+              ? `🧭 Jason 的 6 条排名与声量定律（${w.rankingTheory.date}）`
+              : `🧭 Jason's 6 Ranking & Social-Vote Laws (${w.rankingTheory.date})`}
           </p>
-        </div>
-        <div className="rounded-xl border border-gray-200 bg-gray-50 p-2.5">
-          <p className="font-semibold text-gray-900 mb-0.5">
-            {isZh ? "③ 分层水表监测 → 9 倍冰山全量可见" : "③ Layered Meters → 9× Citation Iceberg"}
-          </p>
-          <p className="text-gray-600 leading-relaxed">
-            {isZh
-              ? "表层点击看 GSC（气泡图四象限 + mcp-gsc）与 GA4/Plausible；水面下 9 倍未点击的 AI 引用看 GSC 生成式 AI 效果报告 + Bing AI Performance + Clarity AI Citations。"
-              : "Surface clicks via GSC (4-quadrant bubble chart + mcp-gsc) and GA4/Plausible; the 9× underwater AI citations via GSC Generative AI report + Bing AI Performance + Clarity."}
-          </p>
+          <ol className="space-y-1 text-gray-700 list-decimal pl-4">
+            {w.rankingTheory[l].map((r) => (
+              <li key={r}>{r}</li>
+            ))}
+          </ol>
         </div>
       </div>
+
       <FromMyPost post={MY_POSTS.seoSystem} lang={l} />
     </div>
   );
