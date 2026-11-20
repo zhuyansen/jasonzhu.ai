@@ -166,42 +166,60 @@ export const MY_PAYMENT_PICK = {
 };
 
 export const DATA_TOOLS: Pick[] = [
-  { what: { zh: "站点数据", en: "Site data" }, name: "AITDK", url: "https://x.com/blankwebdev" },
-  { what: { zh: "站点数据", en: "Site data" }, name: "SiteData", url: "https://x.com/fantexi997" },
-  { what: { zh: "外链和排名数据", en: "Backlink and ranking data" }, name: "哥伦布", url: "https://x.com/jinlv11" },
-  { what: { zh: "外链、流量、DR、社媒数据 API", en: "Backlink, traffic, DR and social data API" }, name: "AIsa", url: "https://go.aisa.one/yansen-zhu", referral: true },
+  {
+    what: { zh: "浏览器插件秒查单站流量、DR 与排名词（日常免费主力，顶替 SiteData / 哥伦布）", en: "Browser extension for instant site traffic, DR & ranking keywords (daily free driver)" },
+    name: "AITDK",
+    url: "https://x.com/blankwebdev",
+  },
+  {
+    what: { zh: "外链、流量、DR、社媒与 Google Ads 搜索量统一按次付费 API（顶替 Ahrefs/Semrush 昂贵月费；实测 10 词搜索量 $0.09、App 竞品 $0.018、ChatGPT/AI Mode 实测 $0.004）", en: "Pay-per-call API for backlinks, traffic, DR, social & Google Ads volume (replaces expensive Ahrefs/Semrush subscriptions: $0.09/10 kw, $0.004/AI probe)" },
+    name: "AIsa",
+    url: "https://go.aisa.one/yansen-zhu",
+    referral: true,
+  },
+  {
+    what: { zh: "SERP 实时快照、Google Trends 日线/上升词、AdSense 同 ID 站群反查与广告透明中心按次 API（$0.001/credit，与 AIsa 互补双底座）", en: "Real-time SERP, Trends daily series, AdSense publisher-ID reverse lookup & Ads Transparency API ($0.001/credit)" },
+    name: "GoAnyAPI",
+    url: "https://goanyapi.com/",
+  },
+  {
+    what: { zh: "经 Stripe / Lemon Squeezy 验证的独立开发者真实 MRR 收入榜 + 1.1 万+ 移动 App 付费墙截图库（立项验真金白银，防被流量估算骗）", en: "Verified indie SaaS MRR leaderboard + 11,000+ mobile app paywall screens with revenue estimates" },
+    name: "TrustMRR + PaywallPro / PaywallScreens",
+    url: "https://trustmrr.com/",
+  },
+  { what: { zh: "站点数据备查", en: "Backup site data lookup" }, name: "SiteData / 哥伦布", url: "https://x.com/fantexi997" },
 ];
 
 export const SEO_SKILLS: Pick[] = [
   {
-    what: { zh: "16 项植错唯一 100% 检出且 0 误报（8 大审计门禁：CORE-EEAT / CITE / ROAS）", en: "16/16 planted issues found with 0 false claims (8 auditor gates: CORE-EEAT, CITE, ROAS)" },
+    what: { zh: "16 项植错唯一 100% 检出且 0 误报（8 大审计门禁：CORE-EEAT / CITE / ROAS）——全站深度体检主力", en: "16/16 planted issues found with 0 false claims (8 auditor gates: CORE-EEAT, CITE, ROAS) — primary deep auditor" },
     name: "aaron-marketing-skills（🥇 实测第 1）",
     url: "https://agentskillshub.top/skill/aaron-he-zhu/aaron-marketing-skills/",
   },
   {
-    what: { zh: "本地 CLI 310+ 确定性规则，90 秒检出 15/16 且 0 误报，适合反复回归测试", en: "Local CLI with 310+ deterministic rules; 15/16 found with 0 false claims in 90s" },
+    what: { zh: "本地 CLI 310+ 确定性规则，90 秒检出 15/16 且 0 误报——部署前快速回归主力（顶替误报多的 SEOmator 与漏查的 Wonfull）", en: "Local CLI with 310+ deterministic rules; 15/16 found with 0 false claims in 90s — primary pre-deploy regression check" },
     name: "squirrelscan（🥈 实测第 2）",
     url: "https://agentskillshub.top/skill/squirrelscan/squirrelscan/",
   },
   {
-    what: { zh: "营销技能合集（CRO、文案、SEO、数据分析），60 秒检出 15/16 且 0 误报", en: "Marketing skills: CRO, copy, SEO, analytics; 15/16 found with 0 false claims in 60s" },
+    what: { zh: "营销技能合集（CRO、文案、SEO、数据分析），60 秒检出 15/16 且 0 误报——落地页转化与文案体检主力", en: "Marketing skills: CRO, copy, SEO, analytics; 15/16 found with 0 false claims in 60s — primary CRO & copy auditor" },
     name: "marketingskills（🥉 Corey Haines）",
     url: "https://github.com/coreyhaines31/marketingskills",
   },
   {
-    what: { zh: "把 Google Search Console / Bing / GA4 直接连进 Claude Code 对话查真实曝光与气泡图词", en: "Connect Google Search Console, Bing & GA4 directly into Claude Code via MCP" },
+    what: { zh: "把 Google Search Console / Bing / GA4 直接连进 Claude Code 对话查真实曝光与气泡图四象限词", en: "Connect Google Search Console, Bing & GA4 directly into Claude Code via MCP" },
     name: "mcp-gsc / search-console-mcp",
     url: "https://agentskillshub.top/skill/AminForou/mcp-gsc/",
   },
-  { what: { zh: "页面 SEO 体检，新手版和进阶技术版", en: "Page SEO audits, beginner and technical" }, name: "seo-audit-skill（子木）", url: "https://github.com/JeffLi1993/seo-audit-skill" },
   {
-    what: { zh: "本地全站技术体检，370 多条规则，能对比改版前后", en: "Local technical crawl, 370+ rules, before/after diffs" },
-    why: {
-      zh: "10 月实测在我两个站各查出一个真问题，但 11 月沙盒实测 64 项里有 6 项误报，GEO 和硬门槛类结论只当参考",
-      en: "found a real issue on each of my two sites, though our Nov benchmark flagged 6 false claims among 64 items; treat GEO and hard-threshold findings as hints",
-    },
-    name: "seo-audit-skill（SEOmator）",
-    url: "https://github.com/seo-skills/seo-audit-skill",
+    what: { zh: "我们自研的 AI 网站急诊室（100 分制 · 7 大类 · 26 项真实 HTTP/SSR/JSON-LD/llms.txt/WebMCP 检查，一键出 Cursor 修复药方）", en: "Our in-house 100-pt, 7-category, 26-check AI Visibility & Agent Readiness scanner with one-click repair prompts" },
+    name: "ai-visibility-checker（自研 26 项 GEO 门禁）",
+    url: "https://jasonzhu.ai/zh/go-global/ai-readiness",
+  },
+  {
+    what: { zh: "淘汰/降级说明：SEOmator（64 项里 6 项虚假 PASS 误报）、claude-seo 等 3 款工具（死守 robots.txt 漏掉被封目录内全部故障）、子木/Wonfull（已被前 3 名零误报工具全面覆盖）", en: "Deprecated/demoted in our Nov benchmark: SEOmator (6 false PASS claims), claude-seo (blinded by robots.txt), and older checklist skills superseded by the top 3 zero-false-claim tools" },
+    name: "⚠️ 16 项植错沙盒淘汰榜（避坑参考）",
+    url: "https://agentskillshub.top/best/seo-tools/",
   },
 ];
 
@@ -564,8 +582,16 @@ export const GEO_NEW_SITE = {
   },
 };
 
-/** 增长：SEO 关键词与哥飞 AI 工具箱（用户 10-17 给的分组名「seo关键词」+ 11-20 补入哥飞开放 API/MCP 与工具箱） */
+/** 增长：SEO 关键词与哥飞 AI 工具箱（用户 10-17 给的分组名「seo关键词」+ 11-20 补入哥飞开放 API/MCP 与工具箱 + 自研 new-term-radar v0.6.1） */
 export const KEYWORD_TOOLS: SharedPick[] = [
+  {
+    what: {
+      zh: "自研 10 信号新词雷达 v0.6.1（比 Google Trends 早 1–3 周抓 X/HF/GitHub 爆发/新注册即排名站/8 大收款平台新卖家/TrustMRR 收入/Reddit 求助，14 天后自动复核信号命中率）",
+      en: "Our 10-signal new-term radar v0.6.1 (catches X, HF, GitHub breakouts, newly ranked domains, 8-gateway new sellers & TrustMRR revenue 1–3 weeks before Google Trends, with 14-day self-review)",
+    },
+    name: "new-term-radar（自研开源 CLI / MCP / Skill）",
+    url: "https://github.com/zhuyansen/new-term-radar",
+  },
   {
     what: { zh: "关键词难度查询", en: "Keyword difficulty lookup" },
     name: "哥飞的 KD 工具",
@@ -603,7 +629,7 @@ export const KEYWORD_TOOLS: SharedPick[] = [
     date: "2024-12-24",
   },
   {
-    what: { zh: "看一个词的热度怎么走", en: "How interest in a term moves" },
+    what: { zh: "看一个词的热度怎么走（在水系 v8 里仅用于 14 天后复核，不作首发信号）", en: "How interest in a term moves (used in Water Model v8 for 14-day validation rather than early discovery)" },
     name: "Google Trends",
     url: "https://trends.google.com/trends/",
     by: "Jesse Lau 遁一子",
@@ -631,10 +657,10 @@ export const ERHU_GROWTH_DATA_11 = {
       badge: { zh: "1–6 自己的真实数据（告诉 AI 你做得怎么样）", en: "1–6 Your First-Party Truth (How you are performing)" },
       color: "blue",
       items: [
-        { num: "1️⃣", name: { zh: "网站行为", en: "Web Traffic & Behavior" }, tools: "Google Analytics (GA4) / Plausible", desc: { zh: "全站流量从哪来、看了什么、在哪一步走掉（按渠道 × 地区 × 端 × 页面 × 语言叉乘）", en: "Where visitors come from, what they view, and where they drop off (channel × region × device × page × language)" } },
-        { num: "2️⃣", name: { zh: "自然搜索与 AI 表现", en: "Organic & AI Search" }, tools: "Google Search Console / Bing Webmaster Tools", desc: { zh: "用户搜什么词找到你、哪些页有曝光没点击（可用 mcp-gsc 直连 Claude，结合气泡图四象限与生成式 AI 效果报告）", en: "Queries, impressions without clicks, bubble-chart quadrants, and GSC Generative AI performance reports" } },
-        { num: "3️⃣", name: { zh: "移动端 App 归因 (MMP)", en: "Mobile App Attribution" }, tools: "Adjust / AppsFlyer", desc: { zh: "做 App 必配，看移动端安装具体由哪个渠道、哪个 Campaign 带来", en: "Essential for mobile apps to attribute installs to exact channels and campaigns" } },
-        { num: "4️⃣", name: { zh: "产品内行为与留存", en: "In-Product Retention" }, tools: "PostHog / Mixpanel / Amplitude", desc: { zh: "能把人找来不等于能留下来：看用户进来后用了什么核心功能、第几天还在（Cohort 留存）", en: "Getting traffic is not keeping users: track feature adoption and Day-N cohort retention" } },
+        { num: "1️⃣", name: { zh: "网站行为", en: "Web Traffic & Behavior" }, tools: "Google Analytics (GA4，剔除机房无头流量) / Vercel Analytics", desc: { zh: "全站流量从哪来、看了什么、在哪一步走掉（按渠道 × 地区 × 端 × 页面 × 语言叉乘；Plausible 因试用锁站已退役）", en: "Where visitors come from, what they view, and where they drop off (channel × region × device × page × language; bot-filtered GA4)" } },
+        { num: "2️⃣", name: { zh: "自然搜索与 AI 表现", en: "Organic & AI Search" }, tools: "Google Search Console / Bing Webmaster Tools / mcp-gsc", desc: { zh: "用户搜什么词找到你、哪些页有曝光没点击（可用 mcp-gsc 直连 Claude，结合气泡图四象限与生成式 AI 效果报告）", en: "Queries, impressions without clicks, bubble-chart quadrants, and GSC Generative AI performance reports" } },
+        { num: "3️⃣", name: { zh: "移动端 App 归因 (MMP)", en: "Mobile App Attribution" }, tools: "Adjust / AppsFlyer + RevenueCat", desc: { zh: "做 App 必配，看移动端安装与订阅具体由哪个渠道、哪个 Campaign 带来", en: "Essential for mobile apps to attribute installs and trials to exact channels and campaigns" } },
+        { num: "4️⃣", name: { zh: "产品内行为与留存", en: "In-Product Retention" }, tools: "PostHog / Mixpanel / Amplitude + Microsoft Clarity", desc: { zh: "能把人找来不等于能留下来：看用户进来后用了什么核心功能、第几天还在（Cohort 留存）+ Clarity 死点击与 AI 引用报告", en: "Getting traffic is not keeping users: track feature adoption, Day-N cohort retention, and Clarity dead-clicks/AI citations" } },
         { num: "5️⃣", name: { zh: "付费广告花费", en: "Paid Ad Spend" }, tools: "Meta Ads / Google Ads / TikTok Ads", desc: { zh: "花出去的钱：View、Click、Spend 一路拆到 Campaign、Ad Set 和单条素材（最不缺但也最容易被当成全部的一份）", en: "Money spent broken down to campaign, ad set, and single creative level" } },
         { num: "6️⃣", name: { zh: "付费真相（真金白银账本）", en: "Payment & Revenue Truth" }, tools: "Waffo / Dodo Payments / Stripe / Paddle / PayPal / Shopify", desc: { zh: "收回来的钱：谁真的付了、付了多少、净到手多少（这是唯一不能造假的终局账本）", en: "Money collected: who actually paid, net revenue after fees, and LTV" } },
       ],
@@ -651,8 +677,8 @@ export const ERHU_GROWTH_DATA_11 = {
       badge: { zh: "9–10 别人的盘子（告诉 AI 你还能做成什么样）", en: "9–10 Market & Competitor Intelligence (What is possible)" },
       color: "amber",
       items: [
-        { num: "9️⃣", name: { zh: "第三方流量与外链搜索库", en: "3rd-Party Traffic & SEO DBs" }, tools: "Similarweb / Ahrefs / Semrush（或 AIsa / DataForSEO / 哥飞 API）", desc: { zh: "看竞品流量规模、渠道构成、外链与买词（注意：它们都是估算值不是真实账本，适合看趋势比大小）", en: "Estimate competitor traffic mix, backlinks, and paid keywords (use for relative trends, not as an exact ledger)" } },
-        { num: "🔟", name: { zh: "公开竞品投放素材库", en: "Public Ad Creative Libraries" }, tools: "Meta Ad Library / Google Ads Transparency Center / TikTok Creative Center", desc: { zh: "官方免费公开：看对手正在真金白银投什么素材、主打什么痛点卖点、跑了多久没停", en: "Free official libraries showing which competitor creatives and hooks stay live the longest" } },
+        { num: "9️⃣", name: { zh: "第三方流量、收入与差评库", en: "3rd-Party Traffic, Revenue & Review DBs" }, tools: "AIsa / GoAnyAPI / 哥飞 API + TrustMRR + App Store RSS / Sensor Tower 下拉", desc: { zh: "用 AIsa + GoAnyAPI 按次付费查竞品词、流量与外链（替代高价月费）；用 TrustMRR 查验证收入；拉 App Store 1–3 星评论 RSS 挖竞品痛点", en: "Pay-per-call competitor keywords/traffic via AIsa + GoAnyAPI; verified revenue via TrustMRR; 1–3 star review gaps via App Store RSS" } },
+        { num: "🔟", name: { zh: "公开竞品投放素材与付费墙库", en: "Public Ad Libraries & Paywall Galleries" }, tools: "Meta Ad Library / Google Ads Transparency / TikTok Creative Center + PaywallScreens", desc: { zh: "官方免费公开：看对手正在真金白银投什么素材、跑了多久没停，再对照 PaywallPro / PaywallScreens 1 万+ 付费墙看它怎么转化", en: "Free official ad libraries showing longest-running creatives, paired with 10,000+ paywall screens from PaywallScreens" } },
       ],
     },
     {
@@ -661,6 +687,106 @@ export const ERHU_GROWTH_DATA_11 = {
       items: [
         { num: "1️⃣1️⃣", name: { zh: "六维叉乘切分表", en: "6-Dimension Cross-Slice Table" }, tools: "端 × 国家 × 卖点 × 目标 × SKU × 类别（行业/竞品/场景）", desc: { zh: "把前面 10 份数据叉乘进同一张表，每个格子最后都必须落到两个终局数字：【付费人数】与【付费金额】", en: "Cross-multiply all 10 feeds by Device × Country × Hook × Goal × SKU × Category; every cell must resolve to Paying Users & Net Revenue" } },
       ],
+    },
+  ],
+};
+
+/** 2026 出海全栈军火库总盘点（优胜劣汰 · 精简 · 补位）：按 6 个环节明确「主力保留 / 新晋补位 / 降级淘汰」 */
+export const GO_GLOBAL_ARSENAL_2026 = {
+  lead: {
+    zh: "把我们过去一年所有自研开源工具、商业 API、293 个 SEO Skill 沙盒横评和踩坑台账放在同一张桌子上做一次优胜劣汰——能用按次 API 顶替高价月费的就砍月费，有误报或死守 robots.txt 的 Skill 一律降级，缺的空白用自研脚本和零成本官方通道补齐：",
+    en: "A full-stack survival-of-the-fittest audit across all our in-house open-source tools, pay-per-call APIs, 293-skill sandbox benchmark, and production logs — replacing expensive monthly SaaS with pay-per-call APIs, retiring noisy/blinded tools, and filling every gap:",
+  },
+  stages: [
+    {
+      stage: { zh: "① 选品与需求雷达", en: "① Demand & Niche Radar" },
+      keep: {
+        zh: "new-term-radar v0.6.1（自研 10 信号：X / HF / GitHub 爆发 / 新站 whois / 8 大收款平台新卖家 / TrustMRR 收入 / Reddit 求助 + 14 天 Trends 自动复核）+ App Store 评论 RSS / Sensor Tower 下拉 + PaywallPro / PaywallScreens（1.1 万+ 付费墙）",
+        en: "new-term-radar v0.6.1 (10 signals + 14-day self-review) + App Store Reviews RSS / Sensor Tower dropdown + PaywallPro / PaywallScreens (11K+ paywalls)",
+      },
+      add: {
+        zh: "哥飞需求挖掘机 & KGR 工具 + GoAnyAPI 广告透明中心新广告主监控（抓「刚决定在某词上投钱」的对手）+ Chrome / YouTube 教程评论痛点抓取（pains 命令）",
+        en: "Gefei Demand Miner & KGR tool + GoAnyAPI Ads Transparency new-advertiser monitor + Chrome/YouTube tutorial comment gap miner (pains CLI)",
+      },
+      drop: {
+        zh: "❌ 淘汰雷达里的「竞品 sitemap diff 信号」（10-27 复盘 165 词 0 命中，已停）；❌ 淘汰 `dataforseo_app_listings_search`（$0.20/次全返 TikTok 等大应用）；⚠️ Google Trends 退居 14 天后复核，不再当首发信号",
+        en: "❌ Dropped competitor sitemap-diff signal (0/165 hits in Oct audit); ❌ dropped dataforseo_app_listings_search ($0.20/call noise); ⚠️ Google Trends demoted to 14-day validation only",
+      },
+    },
+    {
+      stage: { zh: "② 建站与移动开发栈", en: "② Web & Mobile Build Stack" },
+      keep: {
+        zh: "主力 SaaS 栈：Cloudflare（同价域名 + DNS）+ Vercel（SSR 托管）+ Supabase（数据库/Auth）+ Resend（收发信）；移动 App 栈：Expo + Supabase/Convex + RevenueCat + PostHog",
+        en: "Primary SaaS stack: Cloudflare + Vercel + Supabase + Resend; Mobile App stack: Expo + Supabase/Convex + RevenueCat + PostHog",
+      },
+      add: {
+        zh: "哥飞 GeFeiSites 建站引擎（免登录纯前端新词工具站 / 小游戏 48h 抢词：一键部署自有 Cloudflare Pages+Workers+D1+R2，MCP 连 Claude Code 自动生成多语言 hreflang / sitemap / IndexNow）",
+        en: "Gefei GeFeiSites Engine (48h new-term front-end utility/game sites deployed to your own Cloudflare Pages+Workers+D1+R2 via Claude Code MCP)",
+      },
+      drop: {
+        zh: "❌ 淘汰「用脚本/Cookie 切换中英文而共用同一 URL」（Google 只收默认语言，水系 v6 死罪）；❌ 严禁无静态 HTML 预渲染壳的纯客户端 SPA 裸奔（曾致 /analyzer 对 Google 全 404 数月）",
+        en: "❌ Banned JS/cookie language toggling on the same URL (Google indexes only default lang); ❌ banned un-prerendered client-only SPA pages",
+      },
+    },
+    {
+      stage: { zh: "③ 收款、合规与风控", en: "③ Payments, Tax & Risk Guard" },
+      keep: {
+        zh: "payment-guard（上线前按各平台公开清单逐行体检网站）+ 收款平台选择器（/go-global/payments）+ 香港/美国/英国公司年审与双轨开户指南",
+        en: "payment-guard (pre-review compliance CLI/Skill) + Payment Platform Picker (/go-global/payments) + HK/US/UK entity guides",
+      },
+      add: {
+        zh: "Waffo + Dodo Payments 双通道主备冗余（防单点封号，Dodo 3.8%–3.9%+$0.40 免国际卡费与订阅费，$20 订阅仅扣 $1.18，原生支持微信支付与 AI 积分计费）+ 8 大收款平台周报雷达（新增 Waffo / Dodo / Polar / Creem 监控）",
+        en: "Waffo + Dodo Payments dual-gateway failover ($1.18 fee on $20 sub, native WeChat Pay & AI credits) + 8-gateway weekly seller radar",
+      },
+      drop: {
+        zh: "❌ 严禁单收款通道裸奔（水系执行手册红线：线上必须 ≥2 套收款通道热备）；❌ 淘汰「用 `mailto:` 假装收银台」（实测 90 会话 0 转化，换成真实 Stripe/Waffo 支付链接立竿见影）",
+        en: "❌ Banned single-gateway point of failure (always keep ≥2 live gateways); ❌ banned mailto: links in place of real checkout buttons (0/90 conversions)",
+      },
+    },
+    {
+      stage: { zh: "④ 技术 SEO 与页面体检", en: "④ Technical SEO & Page Auditing" },
+      keep: {
+        zh: "🥇 aaron-marketing-skills（16/16 全检出 0 误报）+ 🥈 squirrelscan（本地 310+ 规则 15/16 0 误报）+ 🥉 marketingskills（15/16 0 误报）+ AminForou/mcp-gsc（GSC/Bing/GA4 直连 Claude Code）",
+        en: "🥇 aaron-marketing-skills (16/16, 0 false claims) + 🥈 squirrelscan (15/16, 310+ local rules) + 🥉 marketingskills (15/16) + AminForou/mcp-gsc",
+      },
+      add: {
+        zh: "自研 ai-visibility-checker（100 分制 7 关 26 项 AI 网站急诊室）+ geo_engine.py `audit-16-guards`（确定性拦截 HTTP 头 X-Robots-Tag noindex、hreflang→404、canonical 误指首页、JSON-LD 语法错误）+ 首屏前 50 词 BLUF 自动门禁",
+        en: "In-house ai-visibility-checker (100-pt 26-check AI Clinic) + geo_engine.py audit-16-guards (catches X-Robots-Tag noindex, hreflang→404, canonical mismatch) + 50-word BLUF gate",
+      },
+      drop: {
+        zh: "⚠️ 降级 SEOmator seo-audit-skill（64 项里 6 项虚假 PASS 误报）；⚠️ 降级 claude-seo 等 3 款死守 robots.txt 的工具（漏查被拦截目录内全部 bug）；❌ 淘汰把 FAQPage / TOC 当排名灵丹的装饰性做法（Suski 60 万答案证实无效）",
+        en: "⚠️ Demoted SEOmator (6 false PASS claims) and 3 robots.txt-blinded skills; ❌ retired decorative FAQPage/TOC stuffing (proven 0 impact across 600K AI answers)",
+      },
+    },
+    {
+      stage: { zh: "⑤ 外链、权威与 GEO 闭环", en: "⑤ Backlinks, Authority & L1–L5 GEO" },
+      keep: {
+        zh: "backlink-guard v0.11.2（10 个 MCP/CLI 工具：find 按访客排外链页、vet 防毒、audit/lost 找带外链的 404 做 301、competitors --early 扒竞品头 90 天发射渠道、cited/asked 测 5 大 AI 引擎引用）+ 学术三连（CERN Zenodo DOI + HF + Kaggle 一鱼四吃）+ GitHub 每日自动更新榜单仓库矩阵",
+        en: "backlink-guard v0.11.2 (10 CLI/MCP tools: find, vet, audit, lost 404 recovery, competitors --early, cited/asked 5-engine AI probe) + CERN Zenodo DOI / HF / Kaggle + daily GitHub awesome repos",
+      },
+      add: {
+        zh: "geo_engine.py L1–L5 全栈命令（`sro-and-recency` / `run-live-panel` / `entity-molecule` / `serp-similarity` / `publisher-finder`）+ `/api/md/...` 零噪 Markdown 端点 + `Dataset` JSON-LD + `/ai-info/` 机器可读签字事实页",
+        en: "geo_engine.py L1–L5 suite (sro-and-recency, run-live-panel, entity-molecule, serp-similarity, publisher-finder) + /api/md/... raw Markdown endpoint + Dataset JSON-LD + /ai-info/ fact page",
+      },
+      drop: {
+        zh: "❌ 10-06 起全面停止购买付费客座与付费目录 dofollow 外链；❌ 永久封存 Stripe Climate 捐赠外链（实测恒为 `ugc nofollow`）与 HARO（已做烂）；❌ 放弃无知名度支撑时强建网站 Wikidata 词条（改用带 DOI 的 Dataset 词条）；⚠️ `llms.txt` 降为可选（保留现有，不再投入精力）",
+        en: "❌ Stopped buying guest-post/directory dofollow links (10-06); ❌ archived Stripe Climate link (always ugc nofollow) & HARO; ❌ dropped premature website Wikidata items in favor of DOI Dataset items; ⚠️ llms.txt demoted to optional",
+      },
+    },
+    {
+      stage: { zh: "⑥ 数据监控与增长决策", en: "⑥ Analytics, Water Meters & AI Decisions" },
+      keep: {
+        zh: "五层水表（GSC + 剔除机房流量的 GA4 + GSC 生成式 AI 报告 + Bing AI Performance + Clarity AI Citations/死点击录屏）+ `ops/analytics/digest.py` 每日 Resend 邮件日报（第一屏先报管线告警与 17 家 AI 引荐转化）+ 每周单实验复盘",
+        en: "5-layer water meters (GSC + bot-filtered GA4 + GSC Generative AI report + Bing AI Performance + Clarity AI Citations) + daily Resend digest (ops/analytics/digest.py) + weekly 1-experiment retro",
+      },
+      add: {
+        zh: "二虎 11 份全链路增长数据 × 六维叉乘表（端 × 国家 × 卖点 × 目标 × SKU × 类别 → 付费人数 & 付费金额）+ 线索表单 `How did you find us?` AI 归因字段 + AIsa / GoAnyAPI 按次调用顶替高价月费（Similarweb $0.30/次仅关键站按需查）",
+        en: "Erhu's 11 full-funnel growth feeds × 6D cross-slice matrix (resolving to Paying Users & Net Revenue) + 'How did you find us?' AI lead attribution + AIsa/GoAnyAPI pay-per-call replacing monthly SaaS",
+      },
+      drop: {
+        zh: "❌ 停用 Plausible（试用到期 402 锁站，已由「去机房无头流量的 GA4 + GSC + Vercel Analytics」完全替代）；❌ 严禁不剔除机房流量直接读 GA（曾高达 80%+ 假会话）或未统一归因口径直接让 AI 把多平台广告转化相加",
+        en: "❌ Retired Plausible (replaced by bot-filtered GA4 + GSC + Vercel Analytics); ❌ never read raw GA4 without stripping datacenter headless bots (80%+ noise) or sum unaligned ad-platform conversions",
+      },
     },
   ],
 };
@@ -677,7 +803,7 @@ export const JESSE_SEO = {
   en: "Google SEO mostly comes down to reading Google's own SEO starter guide carefully and doing what it says; the rest hardly matters. He swapped Ahrefs and Ubersuggest for two free tools, Backlinko's keyword tool and Google Trends, used only for a rough sense of demand: a term whose searches cannot earn even a dollar a day is dropped. Similarweb is for nosing into other sites and does little for his own niche.",
 };
 
-/** 增长：上线先装的统计（droidHZ） */
+/** 增长：上线先装的统计（droidHZ + 水系 v8 实战校准：剔除机房无头流量、开通 Bing/Clarity AI 引用报告、Plausible 替代说明） */
 export const ANALYTICS_BASICS = {
   source: {
     by: "droidHZ",
@@ -687,18 +813,30 @@ export const ANALYTICS_BASICS = {
   } as ByPost,
   picks: [
     {
-      what: { zh: "看收录、索引、搜索展示和点击，也在这里请求收录", en: "Indexing, impressions and clicks; request indexing here" },
+      what: { zh: "看收录、索引、搜索展示、点击和「生成式 AI 效果报告」，也在这里请求收录", en: "Indexing, impressions, clicks & Generative AI performance report; request indexing here" },
       name: "Google Search Console",
       url: "https://search.google.com/search-console",
-      why: { zh: "填好信息、配一条 DNS 记录就能接入", en: "verified with a DNS record" },
+      why: { zh: "填好信息、配一条 DNS 记录就能接入；配合 mcp-gsc 可在 Claude Code 里直拉气泡图词表", en: "verified with a DNS record; pair with mcp-gsc in Claude Code" },
     },
-    { what: { zh: "访问量、访问时长、退出率等基础数据", en: "Visits, time on site, exits" }, name: "Google Analytics", url: "https://analytics.google.com/analytics/web" },
-    { what: { zh: "同样看访问量、时长和退出率", en: "The same basics" }, name: "Plausible", url: "https://plausible.io/" },
-    { what: { zh: "用户操作录屏和热力图", en: "Session recordings and heatmaps" }, name: "Microsoft Clarity", url: "https://clarity.microsoft.com/" },
+    {
+      what: { zh: "访问量、时长、退出率与 5 大关键转化事件（⚠️ 水系 v5 铁律：读数前必先剔除机房无头浏览器流量，曾占原始会话 80%+）", en: "Visits, retention & key conversion events (strip datacenter headless-browser bots first — often 80%+ of raw sessions)" },
+      name: "Google Analytics (GA4)",
+      url: "https://analytics.google.com/analytics/web",
+    },
+    {
+      what: { zh: "用户操作录屏、死点击（Dead Clicks）定位 + 免费「AI Visibility Citations」引用水位表（看那 9 倍被 AI 引用却未点击的冰山）", en: "Session recordings, dead-click fixes & free AI Visibility Citations report (tracks the 9× unclicked AI citations)" },
+      name: "Microsoft Clarity + Bing Webmaster Tools",
+      url: "https://clarity.microsoft.com/",
+    },
+    {
+      what: { zh: "轻量无 Cookie 统计（注：付费试用到期会 402 锁站，我们已在主力站停用，改用「去机房流量的 GA4 + Vercel Analytics」替代）", en: "Lightweight analytics (Note: locks with HTTP 402 after trial; we replaced it in production with bot-filtered GA4 + Vercel Analytics)" },
+      name: "Plausible（可选 / 已由 GA4 替代）",
+      url: "https://plausible.io/",
+    },
   ] as SharedPick[],
   tip: {
-    zh: "GA、Plausible 和 Clarity 都是填好信息以后，把官方给的那段代码交给 AI，让它加到网站上。",
-    en: "For GA, Plausible and Clarity, fill in the details and hand the snippet they give you to an AI to add to the site.",
+    zh: "GA、Clarity 和统计埋点都是把官方代码交给 AI 加到网站上；若用静态预渲染壳（SSG），务必让所有生成器共用同一个 analyticsTags() 函数，避免漏掉内联 gtag 导致自然搜索落地页零上报。",
+    en: "Hand the snippet to AI to install; if you use pre-rendered static HTML shells, share a single analyticsTags() helper across all generators so inline gtag bootstrap is never dropped.",
   },
 };
 

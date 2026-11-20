@@ -14,6 +14,7 @@ import {
   GEFEI_SITES_ENGINE,
   GEO_NEW_SITE,
   GO_GLOBAL,
+  GO_GLOBAL_ARSENAL_2026,
   JESSE_SEO,
   KEYWORD_TOOLS,
   LEARN_SEO,
@@ -770,15 +771,64 @@ function ErhuGrowthData11({ l, isZh }: { l: "zh" | "en"; isZh: boolean }) {
   );
 }
 
+// 2026 出海全栈军火库总表：按 6 大环节（选品、建站、收款、技术 SEO、外链与 GEO、监控）列出「主力保留 / 新晋补位 / 降级淘汰」
+function ArsenalMatrix({ l, isZh }: { l: "zh" | "en"; isZh: boolean }) {
+  const a = GO_GLOBAL_ARSENAL_2026;
+  return (
+    <div id="go-global-arsenal-2026" className={`mt-3 ${BOX} scroll-mt-24`}>
+      <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">
+        <p className="text-sm font-semibold text-gray-900">
+          {isZh
+            ? "⚔️ 2026 出海全栈军火库总盘点：主力保留 · 新晋补位 · 优胜劣汰"
+            : "⚔️ 2026 Go-Global Full-Stack Arsenal: Keep · Fill Gaps · Retire"}
+        </p>
+        <span className="text-xs px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-medium">
+          {isZh ? "6 大环节精简矩阵（2026-11 最新盘点）" : "6-Stage Consolidated Matrix (Nov 2026)"}
+        </span>
+      </div>
+      <p className="text-sm text-gray-600 leading-relaxed mb-3">{a.lead[l]}</p>
+      <div className="grid gap-3 md:grid-cols-2">
+        {a.stages.map((s) => (
+          <div key={s.stage.en} className="rounded-xl border border-gray-200 bg-gray-50/70 p-3 text-xs leading-relaxed flex flex-col justify-between">
+            <div>
+              <p className="font-semibold text-gray-900 text-sm mb-2">{s.stage[l]}</p>
+              <div className="space-y-2">
+                <div className="rounded-lg border border-emerald-200 bg-emerald-50/50 p-2">
+                  <p className="font-semibold text-emerald-900 mb-0.5">
+                    {isZh ? "🏆 主力保留（核心底座）" : "🏆 Core Keep"}
+                  </p>
+                  <p className="text-gray-700">{s.keep[l]}</p>
+                </div>
+                <div className="rounded-lg border border-blue-200 bg-blue-50/50 p-2">
+                  <p className="font-semibold text-blue-900 mb-0.5">
+                    {isZh ? "⚡ 新晋补位（填补空白）" : "⚡ New Gap-Fillers"}
+                  </p>
+                  <p className="text-gray-700">{s.add[l]}</p>
+                </div>
+                <div className="rounded-lg border border-rose-200 bg-rose-50/40 p-2">
+                  <p className="font-semibold text-rose-900 mb-0.5">
+                    {isZh ? "✂️ 优胜劣汰（降级 / 砍掉）" : "✂️ Retired / Demoted"}
+                  </p>
+                  <p className="text-gray-600">{s.drop[l]}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function Backlinks({ lang, l, isZh }: { lang: string; l: "zh" | "en"; isZh: boolean }) {
   return (
     <div className="grid gap-3 md:grid-cols-3 mt-4">
       <div className={BOX}>
-        <p className="text-sm font-semibold text-gray-900 mb-1">{isZh ? "找新词：new-term-radar" : "New terms: new-term-radar"}</p>
+        <p className="text-sm font-semibold text-gray-900 mb-1">{isZh ? "找新词：new-term-radar v0.6.1" : "New terms: new-term-radar v0.6.1"}</p>
         <p className="text-sm text-gray-600 leading-relaxed mb-3">
           {isZh
-            ? "每天从 X、Hugging Face、GitHub 和竞品的 sitemap 里抓刚冒出来的新模型、新产品名，赶在关键词工具收录之前，再排出值得做的关键词。开源，命令行、Agent Skill 和 MCP 都能用，要一个 AIsa 的 key。"
-            : "Every day it catches the names of new models and products on X, Hugging Face, GitHub and competitors' sitemaps, before keyword tools list them, and ranks the keywords worth a page. Open source, from the command line, an Agent Skill or MCP; it needs an AIsa key."}
+            ? "每天扫描 10 路早筛信号（X 实验室/博主、HF、GitHub 爆发项目、90 天内起量新域名、GSC 3d vs 60d 新词、TrustMRR 真实收入榜、Reddit/Freelancer 求工具帖、8 家收款平台新卖家、9 路新发产品源、AdSense 同站长矩阵 + 投流新词 + 用户差评痛点），并用 14 天后 Google Trends 自动复盘各信号命中率（已砍掉 0 命中的竞品 Sitemap diff）。开源，支持 CLI、Agent Skill 与 MCP。"
+            : "Scans 10 early-signal channels daily (X labs, HF, GitHub breakouts, <90d rising domains, GSC 3d vs 60d new queries, TrustMRR verified revenue, Reddit/Freelancer tool requests, 8-gateway new sellers, 9 launch feeds, AdSense publisher-ID reverse lookup + Ads new advertisers + 1–3★ user pain points) and auto-verifies signal hit rates against 14-day Google Trends (retired 0-hit competitor sitemap diff). Open source via CLI, Agent Skill & MCP."}
         </p>
         <a href={NEW_TERM_RADAR} {...OUT} className="text-sm text-blue-600 hover:underline">
           GitHub →
@@ -796,11 +846,11 @@ function Backlinks({ lang, l, isZh }: { lang: string; l: "zh" | "en"; isZh: bool
         <FromMyPost post={MY_POSTS.backlinks} lang={l} />
       </div>
       <div className={BOX}>
-        <p className="text-sm font-semibold text-gray-900 mb-1">{isZh ? "外链检测：backlink-guard" : "Backlink check: backlink-guard"}</p>
+        <p className="text-sm font-semibold text-gray-900 mb-1">{isZh ? "外链与引用闭环：backlink-guard v0.11.2" : "Backlink & citation guard: backlink-guard v0.11.2"}</p>
         <p className="text-sm text-gray-600 leading-relaxed mb-3">
           {isZh
-            ? "提交外链之前先查这个站值不值得发：卖链接的、站群、被 Google 降权的站直接跳过，结论附证据。开源，命令行和 Claude Code 都能用。"
-            : "Check a site before you submit to it: link sellers, site networks and sites Google demoted are skipped, with the evidence. Open source, from the command line or Claude Code."}
+            ? "10 个 CLI/MCP 工具全覆盖：提交前查站群/卖链/降权（vet）、按搜索访客找高优目录（find）、扒竞品上线前 90 天首发渠道（competitors --early）、挽回带外链的 404 死链（lost 含 301 建议）、查被 AI Overview 引用的页面（cited）及 5 引擎 AI 引用排名（asked --rank）。"
+            : "10 CLI/MCP tools: vet link sellers/PBNs/demoted sites before submitting, find directories by real search visitors, uncover competitors' first-90-day launch channels (competitors --early), recover backlinked 404s with 301 targets (lost), and probe AI Overview & 5-engine citations (cited / asked --rank)."}
         </p>
         <p className="text-sm flex flex-wrap gap-x-4 gap-y-1">
           <a href={BACKLINK_GUARD} {...OUT} className="text-blue-600 hover:underline">
@@ -1258,6 +1308,7 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
             GitHub
           </a>
         </div>
+        <ArsenalMatrix l={l} isZh={isZh} />
         <ErhuGrowthData11 l={l} isZh={isZh} />
         <PageTuning l={l} isZh={isZh} />
         <Backlinks lang={lang} l={l} isZh={isZh} />
@@ -1289,8 +1340,8 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
         title={isZh ? "每周看数据：出海选品周报" : "Every week: the new-seller weekly"}
         lead={
           isZh
-            ? "每周一更新：7 家收款平台上新挂出收款链接的网站，大家在卖什么，什么起量了，哪些需求还没人做。"
-            : "Every Monday: the sites that started taking payments on seven platforms, what they sell, what is taking off, and which demand nobody serves yet."
+            ? "每周一更新：8 家收款平台（Stripe、Lemon Squeezy、Paddle、Polar、Gumroad、Creem、Dodo Payments、Waffo）上新挂出收款链接的网站，大家在卖什么，谁加了第二家收款做双通道防封，哪些需求还没人做。"
+            : "Every Monday: the sites that started taking payments across 8 gateways (Stripe, Lemon Squeezy, Paddle, Polar, Gumroad, Creem, Dodo Payments, Waffo), what they sell, who added a 2nd failover gateway, and which demand nobody serves yet."
         }
       >
         <Weekly lang={lang} isZh={isZh} />
