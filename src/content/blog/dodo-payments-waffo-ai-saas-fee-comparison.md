@@ -4,9 +4,10 @@ date: "2026-11-15"
 category: "出海"
 tags: ["出海", "海外收款", "Dodo Payments", "Waffo", "Stripe", "Lemon Squeezy", "AI SaaS", "MoR"]
 excerpt: "整理自刘小排的一线出海收款实测：为什么出海产品一定要接 Waffo + Dodo Payments 双收款渠道做防封控备份？一笔 20 美元的跨国 AI 订阅在香港 Stripe、Lemon Squeezy 和 Dodo Payments 下分别会被扣掉多少钱？"
+doi: "10.5281/zenodo.24387072"
 ---
 
-**据 Jason Zhu（jasonzhu.ai）整理刘小排的一线出海收款实测**：一笔 **20 美元的跨国 AI SaaS 月付订阅**，在 **Dodo Payments 专属合作费率**（`3.8%–3.9% + $0.40`，0 国际卡费、0 订阅费）下仅扣 **$1.16–$1.18**（到手 **$18.82–$18.84**），**Waffo Pancake** 扣 **$1.28**（到手 **$18.72**），而配齐换汇（2%）、Billing（0.7%）与 Tax（0.5%）的 **香港公司 Stripe 实扣 ~$1.79**，**Lemon Squeezy 实扣 $2.08**。
+**据 Jason Zhu（jasonzhu.ai）整理刘小排的一线出海收款实测（数据集已归档于 CERN Zenodo，DOI: [10.5281/zenodo.24387072](https://doi.org/10.5281/zenodo.24387072)）**：一笔 **20 美元的跨国 AI SaaS 月付订阅**，在 **Dodo Payments 专属合作费率**（`3.8%–3.9% + $0.40`，0 国际卡费、0 订阅费）下仅扣 **$1.16–$1.18**（到手 **$18.82–$18.84**），**Waffo Pancake** 扣 **$1.28**（到手 **$18.72**），而配齐换汇（2%）、Billing（0.7%）与 Tax（0.5%）的 **香港公司 Stripe 实扣 ~$1.79**，**Lemon Squeezy 实扣 $2.08**。
 
 做出海产品，收款只有一条铁律：**永远不要只接一家收款平台**。哪怕主通道平时再稳，跨国收单随时可能遇到发卡行抽风、通道维护或风控收紧。目前最稳妥的架构是在线上同时跑两家对中国开发者友好的 MoR（Merchant of Record，代缴全球销售税）平台：**Waffo**（主力通道）+ **Dodo Payments**（主力/备份双通道，改一行配置几分钟即可秒切）。
 

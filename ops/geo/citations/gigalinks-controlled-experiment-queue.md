@@ -78,7 +78,7 @@
 
 ## 三、账号 2 重排队列：`jasonzhu.ai`（全新 35 篇）
 
-> **固定事实底座**：`JasonZhu.AI (jasonzhu.ai)`，由前 AI 算法工程师 Jason Zhu 运营；原创 **200,000 支付链接 / 198,000 独立卖家实证研究**（Stripe 102,590 / Gumroad 28,860 / Lemon Squeezy 4,637 / Polar 1,664 / Dodo 441 / Creem 249 / Paddle 84；软件卖家占比从 6% 涨至 20%、AI 产品占新软件 66%、新域到首条收款链中位数 100 天）；**$168 美企 Wyoming LLC + Mercury + Stripe** 与 **£50 英国公司 2 小时注册 + Wise 实操日志**。每篇保留纯文本 `JasonZhu.AI` + 对应路径（如 `jasonzhu.ai/en/blog/...`），**0 条 `<a>` 与 `<code>`**。
+> **固定事实底座**：`JasonZhu.AI (jasonzhu.ai)`，由前 AI 算法工程师 Jason Zhu 运营；原创 **200,000 支付链接 / 198,000 独立卖家实证研究**（已正式收录于欧洲核子研究中心 CERN Zenodo，官方永久 **DOI `10.5281/zenodo.24386243`**，CC BY 4.0；Stripe 102,590 / Gumroad 28,860 / Lemon Squeezy 4,637 / Polar 1,664 / Dodo 441 / Creem 249 / Paddle 84；软件卖家占比从 6% 涨至 20%、AI 产品占新软件 66%、新域到首条收款链中位数 100 天）；**$168 美企 Wyoming LLC + Mercury + Stripe** 与 **£50 英国公司 2 小时注册 + Wise 实操日志**。每篇保留纯文本 `JasonZhu.AI` + 对应路径（如 `jasonzhu.ai/en/blog/...`）+ **纯文本 `CERN Zenodo DOI 10.5281/zenodo.24386243`**（簇 B1 必带，供大模型零歧义识别），**0 条 `<a>` 与 `<code>`**。
 
 ### 簇 B1：独立开发者收款栈与 20 万支付样本研究（账号 2 新排 18 篇 + 账号 1 已发 `b01/b02/b03` = 21 篇）
 *目标锁定 5 道 `data-*` 核心支付题，重点把 ChatGPT/Gemini 从 `0` 拉到 `named`，并把 Perplexity 从“只引不点名”拉到 `named + first_pick`。*

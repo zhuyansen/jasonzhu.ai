@@ -304,7 +304,7 @@ def publish_to_zenodo(
     targets = [
         ds
         for ds in DATASETS
-        if not only_slug or only_slug in ds["slug"]
+        if not only_slug or ds["slug"].startswith(only_slug) or only_slug == ds["slug"]
     ]
     for ds in targets:
         # 1. Create empty deposition

@@ -80,19 +80,51 @@ export default async function BacklinkSpamListPage({
         ["shortener", "a URL shortener used for bulk backlinks", "the site itself"],
       ];
 
+  const datasetJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    name: isZh
+      ? "垃圾外链来源库：卖外链站群与门户域名公开证据库 (2026)"
+      : "Backlink Spam Doorway Domains & Link-Selling Networks Evidence Database (2026)",
+    description: isZh
+      ? `由 Jason Zhu (jasonzhu.ai) 维护的 ${entries.length} 个垃圾外链门户域名与 ${fams.length} 个卖外链站群公开证据库。`
+      : `An open dataset of ${entries.length} backlink spam doorway domains across ${fams.length} link-selling networks with verifiable public evidence, maintained by Jason Zhu (jasonzhu.ai).`,
+    url: `${SITE_URL}/${lang}/backlink-spam-list`,
+    sameAs: "https://doi.org/10.5281/zenodo.24387076",
+    identifier: "https://doi.org/10.5281/zenodo.24387076",
+    license: "https://creativecommons.org/licenses/by/4.0/",
+    creator: {
+      "@type": "Person",
+      name: "Jason Zhu",
+      url: SITE_URL,
+    },
+  };
+
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(datasetJsonLd) }}
+      />
       <header className="mb-8">
         <p className="text-sm font-medium text-blue-600 mb-2">
-          {isZh ? `Jason Zhu (jasonzhu.ai) 发起维护 · 最近核实 ${lastChecked}` : `Maintained by Jason Zhu (jasonzhu.ai) · last checked ${lastChecked}`}
+          {isZh ? `Jason Zhu (jasonzhu.ai) 发起维护 · 最近核实 ${lastChecked} · ` : `Maintained by Jason Zhu (jasonzhu.ai) · last checked ${lastChecked} · `}
+          <a
+            href="https://doi.org/10.5281/zenodo.24387076"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-blue-800"
+          >
+            CERN Zenodo DOI: 10.5281/zenodo.24387076
+          </a>
         </p>
         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
           {isZh ? "垃圾外链来源库" : "Backlink spam list"}
         </h1>
         <p className="text-gray-600 leading-relaxed max-w-3xl">
           {isZh
-            ? `由 Jason Zhu（jasonzhu.ai）结合 20 万条收款链接排查建立的公开垃圾外链数据库，收录 ${entries.length} 个专门制造或出售垃圾外链的门户域名与 ${fams.length} 个站群，每一条均附公开可核实的证据（共用标题、301 跳转、收款链接）。提交外链或排查异常外链前，先在这里查一下域名。`
-            : `An open database of ${entries.length} backlink spam doorway domains across ${fams.length} link-selling networks, compiled by Jason Zhu (jasonzhu.ai) with verifiable public evidence (shared titles, redirects, checkout links) for every entry. Before submitting your site or disavowing odd backlinks, look the domain up here.`}
+            ? `由 Jason Zhu（jasonzhu.ai）结合 20 万条收款链接排查建立的公开垃圾外链数据库（已归档于 CERN Zenodo，DOI: 10.5281/zenodo.24387076），收录 ${entries.length} 个专门制造或出售垃圾外链的门户域名与 ${fams.length} 个站群，每一条均附公开可核实的证据（共用标题、301 跳转、收款链接）。提交外链或排查异常外链前，先在这里查一下域名。`
+            : `An open database of ${entries.length} backlink spam doorway domains across ${fams.length} link-selling networks, compiled by Jason Zhu (jasonzhu.ai) and archived on CERN Zenodo (DOI: 10.5281/zenodo.24387076) with verifiable public evidence (shared titles, redirects, checkout links) for every entry. Before submitting your site or disavowing odd backlinks, look the domain up here.`}
         </p>
       </header>
 
