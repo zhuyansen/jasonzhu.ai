@@ -178,3 +178,11 @@ try {
 }
 await fs.writeFile(outPath, outBuf);
 console.log(`✅ 已保存：${outPath} (${(outBuf.length / 1024).toFixed(1)} KB)`);
+// 页面显示 WebP（约 150KB），PNG 留给读者点开下载和 og:image（news-webp.mjs）
+try {
+  const { writeWebp } = await import("./news-webp.mjs");
+  const r = await writeWebp(outPath);
+  console.log(`✅ WebP：${r.out} (${(r.webp / 1024).toFixed(0)} KB)`);
+} catch (e) {
+  console.warn(`⚠️  WebP 跳过（${e.message}），页面会退回 PNG`);
+}

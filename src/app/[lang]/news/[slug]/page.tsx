@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import fs from "fs";
+import path from "path";
 import Link from "@/components/Link";
 import { notFound } from "next/navigation";
 import type { Locale } from "@/lib/dictionaries";
@@ -111,6 +113,11 @@ export default async function NewsDetailPage({
   const dComment = digestHumanComment(digest, lang); // Jason 本人点评
   // 英文页只用英文封面，没有就不放（不拿中文封面凑）
   const cover = isZh ? digest.coverImage : digest.coverImageEn;
+  // 页面显示 WebP（约 150KB，PNG 约 1.2MB：Ahrefs 2026-11-19 报 123 张图片过大），点开是 PNG 原图；
+  // 没有 WebP 的退回 PNG（scripts/news-webp.mjs 补）
+  const coverWebp = cover?.replace(/\.png$/, ".webp");
+  const coverShown =
+    coverWebp && coverWebp !== cover && fs.existsSync(path.join(process.cwd(), "public", coverWebp)) ? coverWebp : cover;
 
   // Find prev/next digests for navigation
   const allDigests = getAllDigests();
@@ -192,13 +199,15 @@ export default async function NewsDetailPage({
       {/* Cover image */}
       {cover && (
         <div className="mb-8 rounded-2xl overflow-hidden border border-gray-100 bg-gray-50">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={cover}
-            alt={dTitle}
-            className="w-full h-auto block"
-            loading="lazy"
-          />
+          <a href={cover} target="_blank" rel="noopener" title={isZh ? "查看原图" : "View full image"}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={coverShown}
+              alt={dTitle}
+              className="w-full h-auto block"
+              loading="lazy"
+            />
+          </a>
         </div>
       )}
 

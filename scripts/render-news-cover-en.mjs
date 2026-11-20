@@ -157,6 +157,12 @@ async function render(date) {
   const out = path.join(OUT_DIR, `${date}.png`);
   fs.writeFileSync(out, buf);
   console.log(`✅ ${out} (${(buf.length / 1024).toFixed(0)} KB, ${titles.length} 条)`);
+  try {
+    const { writeWebp } = await import("./news-webp.mjs");
+    await writeWebp(out); // 页面显示 WebP，PNG 留给下载和 og:image
+  } catch (e) {
+    console.warn(`⚠️  WebP 跳过（${e.message}），页面会退回 PNG`);
+  }
 }
 
 const args = process.argv.slice(2);
