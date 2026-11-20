@@ -3,8 +3,8 @@
  "model": "Gemini 4",
  "released": "2026-10-14T00:00:00Z",
  "threshold": 5000,
- "updatedAt": "2026-11-19T01:32:08.095Z",
- "statsCheckedAt": "2026-11-19T01:26:38.868Z",
+ "updatedAt": "2026-11-20T01:28:59.664Z",
+ "statsCheckedAt": "2026-11-20T01:23:45.788Z",
  "inclusionRule": "Original post by the creator, media attached, >= 5000 views on that post, and the creator's own text says Gemini 4 (Argon, Carbon, Hydrogen, Krypton, Pro...) built it in code; same-prompt comparisons against other models included. Seeded on 2026-11-16 from the Claude 5.5 library. Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -1317,6 +1317,61 @@
    }
   },
   {
+   "id": "2123168299890704735",
+   "url": "https://x.com/kimmonismus/status/2123168299890704735",
+   "author": {
+    "handle": "kimmonismus",
+    "name": "Chubby♨️"
+   },
+   "postedAt": "2026-11-18T21:35:43.000Z",
+   "addedAt": "2026-11-20",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "game",
+   "title": {
+    "zh": "射击游戏与三维世界交互演示合集",
+    "en": "Interactive demos with shooters and 3D worlds"
+   },
+   "summary": {
+    "zh": "作者用 Antigravity 制作了 17 个交互演示，并测试了代码修复。部分构建需要重试；体素场景在要求的破坏和重置功能之外，还自行加入了建筑和工具。",
+    "en": "The creator built 17 interactive demos in Antigravity and tested code fixes. Some builds needed retries; the voxel arena added structures and tools beyond the requested destruction and reset."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Antigravity",
+    "Flash"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 101511,
+    "likes": 990,
+    "replies": 57,
+    "reposts": 34,
+    "bookmarks": 217,
+    "checkedAt": "2026-11-20T01:23:45.788Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2123168275190439936/vid/avc1/1280x720/5ODAgFLcqYZFpCMj.mp4?tag=16",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2123168275190439936/img/s6ySTfFYUhckQEE8.jpg",
+     "width": 1280,
+     "height": 720,
+     "durationSec": 16
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2116857033659949157",
    "url": "https://x.com/kinderlayer/status/2116857033659949157",
    "author": {
@@ -1674,6 +1729,60 @@
    }
   },
   {
+   "id": "2123219124260315301",
+   "url": "https://x.com/chetaslua/status/2123219124260315301",
+   "author": {
+    "handle": "chetaslua",
+    "name": "Chetaslua"
+   },
+   "postedAt": "2026-11-19T00:57:41.000Z",
+   "addedAt": "2026-11-20",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "motion",
+   "title": {
+    "zh": "代码生成的自我介绍动态图形",
+    "en": "Code-driven self-introduction motion graphics"
+   },
+   "summary": {
+    "zh": "Gemini 用纯 JavaScript 制作了自我介绍动效，没有使用外部素材。",
+    "en": "Gemini made a motion-design self-introduction using only JavaScript and no external assets."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "JavaScript"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 91253,
+    "likes": 1717,
+    "replies": 92,
+    "reposts": 63,
+    "bookmarks": 620,
+    "checkedAt": "2026-11-20T01:23:45.788Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2123218297374347264/vid/avc1/1280x720/lOA1bksPUNgaQdfQ.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2123218297374347264/img/9pyZqbLgRyhI0Rwi.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 15
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2116606788241969445",
    "url": "https://x.com/olezhavich/status/2116606788241969445",
    "author": {
@@ -1910,6 +2019,61 @@
    }
   },
   {
+   "id": "2123170821250400282",
+   "url": "https://x.com/thebuggeddev/status/2123170821250400282",
+   "author": {
+    "handle": "thebuggeddev",
+    "name": "The Bugged Dev"
+   },
+   "postedAt": "2026-11-18T21:45:45.000Z",
+   "addedAt": "2026-11-20",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "carbon"
+   ],
+   "rivals": [],
+   "category": "physics",
+   "title": {
+    "zh": "搭载轨道炮的机器狗步态仿真",
+    "en": "Robotic railgun dog with simulated locomotion"
+   },
+   "summary": {
+    "zh": "作者提供了一张搭载轨道炮的机器狗图片，仅要求做成 3D。Gemini 使用 Three.js WebGPU 加入了刚体物理、逆运动学和步态动画。",
+    "en": "Given one image of a robotic dog with a railgun, Gemini built a Three.js WebGPU model with rigid-body physics, inverse kinematics and gait animation without detailed physics instructions."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Three.js",
+    "WebGPU"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 81992,
+    "likes": 1889,
+    "replies": 52,
+    "reposts": 156,
+    "bookmarks": 999,
+    "checkedAt": "2026-11-20T01:23:45.788Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2123158151495393280/vid/avc1/1106x720/Xj3TdC9nc-mhkj8v.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2123158151495393280/img/H508mhXzQmfMdHw-.jpg",
+     "width": 2828,
+     "height": 1840,
+     "durationSec": 52
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2111058514311336244",
    "url": "https://x.com/AIMind_Ai/status/2111058514311336244",
    "author": {
@@ -2129,6 +2293,117 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2123184113561817370",
+   "url": "https://x.com/chetaslua/status/2123184113561817370",
+   "author": {
+    "handle": "chetaslua",
+    "name": "Chetaslua"
+   },
+   "postedAt": "2026-11-18T22:38:34.000Z",
+   "addedAt": "2026-11-20",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "motion",
+   "title": {
+    "zh": "鹈鹕主题产品动态设计",
+    "en": "Motion design for a pelican product"
+   },
+   "summary": {
+    "zh": "Gemini 为一款鹈鹕产品制作了动效，作者随后分享了 AI Studio 应用链接。",
+    "en": "Gemini made motion design for a pelican product. The creator shared an AI Studio app link in a follow-up."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Google AI Studio"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 73364,
+    "likes": 837,
+    "replies": 34,
+    "reposts": 27,
+    "bookmarks": 238,
+    "checkedAt": "2026-11-20T01:23:45.788Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2123183949128339456/vid/avc1/1336x720/QEpZW4IaTAJJQqYT.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2123183949128339456/img/bUZh5FqvnpPQZqAQ.jpg",
+     "width": 3024,
+     "height": 1628,
+     "durationSec": 14
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2123164032882659819",
+   "url": "https://x.com/AI_Screening/status/2123164032882659819",
+   "author": {
+    "handle": "AI_Screening",
+    "name": "Pranav Reddy"
+   },
+   "postedAt": "2026-11-18T21:18:46.000Z",
+   "addedAt": "2026-11-20",
+   "lang": "en",
+   "kind": "comparison",
+   "models": [
+    "carbon"
+   ],
+   "rivals": [
+    "claude"
+   ],
+   "category": "scene3d",
+   "title": {
+    "zh": "Three.js 渲染测试",
+    "en": "Three.js rendering test"
+   },
+   "summary": {
+    "zh": "作者用 Three.js 测试比较 Neon、Opus 5.5 和 Carbon，认为 Neon 超过了 Opus 5.5，表现接近 Carbon。",
+    "en": "The creator compared Neon, Opus 5.5 and Carbon in a Three.js test, concluding that Neon beat Opus 5.5 and performed close to Carbon."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Claude Opus 5.5",
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 73150,
+    "likes": 350,
+    "replies": 19,
+    "reposts": 14,
+    "bookmarks": 66,
+    "checkedAt": "2026-11-20T01:23:45.788Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2123163888606949376/vid/avc1/720x1102/fy9QKRLKRNviByXv.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2123163888606949376/img/RiY9cEZ3eFHE9CSV.jpg",
+     "width": 2160,
+     "height": 3310,
+     "durationSec": 14
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -2353,6 +2628,70 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2123205954649100424",
+   "url": "https://x.com/jan_volad/status/2123205954649100424",
+   "author": {
+    "handle": "jan_volad",
+    "name": "Jan🌙"
+   },
+   "postedAt": "2026-11-19T00:05:21.000Z",
+   "addedAt": "2026-11-20",
+   "lang": "en",
+   "kind": "comparison",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [
+    "gpt"
+   ],
+   "category": "scene3d",
+   "title": {
+    "zh": "巨型闹鬼吸血鬼大教堂",
+    "en": "Huge haunted vampire cathedral"
+   },
+   "summary": {
+    "zh": "Neon 和 GPT-6.2 Sol 根据同一句简短提示词生成了 Minecraft 闹鬼吸血鬼大教堂，未用参考图或插件。作者没有选出胜者。",
+    "en": "Neon and GPT-6.2 Sol built haunted vampire cathedrals for Minecraft from the same short prompt, without references or plugins. The creator could not pick a winner."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/jan_volad/status/2123205954649100424",
+    "text": "Build a huge haunted vampire cathedral"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "GPT-6.2 Sol",
+    "Minecraft",
+    "Antigravity",
+    "Codex"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 64046,
+    "likes": 612,
+    "replies": 28,
+    "reposts": 11,
+    "bookmarks": 182,
+    "checkedAt": "2026-11-20T01:23:45.788Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2123205744254136320/vid/avc1/1280x720/oSfoRM_5bp_FH3L9.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2123205744254136320/img/8s4mvbLkLqwFAUG1.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 42
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -2873,6 +3212,62 @@
    }
   },
   {
+   "id": "2123010696602391001",
+   "url": "https://x.com/kinderlayer/status/2123010696602391001",
+   "author": {
+    "handle": "kinderlayer",
+    "name": "Kinder"
+   },
+   "postedAt": "2026-11-18T11:09:28.000Z",
+   "addedAt": "2026-11-20",
+   "lang": "en",
+   "kind": "comparison",
+   "models": [
+    "carbon"
+   ],
+   "rivals": [
+    "claude"
+   ],
+   "category": "scene3d",
+   "title": {
+    "zh": "从黑暗中浮现的鳄鱼",
+    "en": "Crocodile rising out of the dark"
+   },
+   "summary": {
+    "zh": "作者用同一提示词让 Claude Fable 5.2 和 Gemini 4 Carbon 制作鳄鱼场景，一个带闪电，另一个从红雾中浮现，并让观众判断哪个更值得付费。",
+    "en": "Claude Fable 5.2 and Gemini 4 Carbon made crocodile scenes from the same prompt. One used lightning, the other red mist; the creator left the cost comparison to viewers."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Claude Fable 5.2"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 52912,
+    "likes": 123,
+    "replies": 37,
+    "reposts": 3,
+    "bookmarks": 63,
+    "checkedAt": "2026-11-20T01:23:45.788Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2123010609411174400/vid/avc1/720x1280/5RW8dDR7ez-vQ_Ge.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2123010609411174400/img/Q0ts3wTEGcFt-EEA.jpg",
+     "width": 720,
+     "height": 1280,
+     "durationSec": 30
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2115849659797373038",
    "url": "https://x.com/AI_Screening/status/2115849659797373038",
    "author": {
@@ -3050,6 +3445,63 @@
    }
   },
   {
+   "id": "2123169627815698522",
+   "url": "https://x.com/Super_Nius/status/2123169627815698522",
+   "author": {
+    "handle": "Super_Nius",
+    "name": "Super Niu"
+   },
+   "postedAt": "2026-11-18T21:41:00.000Z",
+   "addedAt": "2026-11-20",
+   "lang": "zh",
+   "kind": "comparison",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [
+    "gpt"
+   ],
+   "category": "scene3d",
+   "title": {
+    "zh": "雨夜便利店",
+    "en": "Convenience store on a rainy night"
+   },
+   "summary": {
+    "zh": "作者用同一提示词对比 Gemini 4 Neon 和 GPT 6.2 Sol 的雨夜便利店场景，认为 Neon 更快、价格更低，但效果不尽如人意。",
+    "en": "Gemini 4 Neon and GPT 6.2 Sol made rainy-night convenience-store scenes from the same prompt. The creator found Neon faster and cheaper but was dissatisfied with its output."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "GPT 6.2 Sol",
+    "Claude Opus 5.5"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 50607,
+    "likes": 112,
+    "replies": 45,
+    "reposts": 4,
+    "bookmarks": 19,
+    "checkedAt": "2026-11-20T01:23:45.788Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2123169492578738176/vid/avc1/720x778/3LLvQ2GGXyH1P0yH.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2123169492578738176/img/tAT60JuWoowjA5Rq.jpg",
+     "width": 1080,
+     "height": 1168,
+     "durationSec": 24
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2122440859891409372",
    "url": "https://x.com/SamgreyAi/status/2122440859891409372",
    "author": {
@@ -3105,6 +3557,65 @@
      "width": 544,
      "height": 544,
      "durationSec": 12
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2123171830739632189",
+   "url": "https://x.com/SPAC89/status/2123171830739632189",
+   "author": {
+    "handle": "SPAC89",
+    "name": "Iam_"
+   },
+   "postedAt": "2026-11-18T21:49:45.000Z",
+   "addedAt": "2026-11-20",
+   "lang": "en",
+   "kind": "comparison",
+   "models": [
+    "hydrogen"
+   ],
+   "rivals": [
+    "claude",
+    "gpt"
+   ],
+   "category": "scene3d",
+   "title": {
+    "zh": "三维建模测试",
+    "en": "3D modeling tests"
+   },
+   "summary": {
+    "zh": "作者展示了三维建模测试，称 Gemini 4 Neon xhigh 比 GPT 6.2 Astra 和 Fable 5.2 便宜近七成，且结果更好。",
+    "en": "The creator compared 3D modeling tests, reporting Gemini 4 Neon xhigh cost almost 70% less than GPT 6.2 Astra and Fable 5.2 while producing better results."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "GPT 6.2 Astra",
+    "Claude Fable 5.2",
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 47848,
+    "likes": 447,
+    "replies": 28,
+    "reposts": 18,
+    "bookmarks": 110,
+    "checkedAt": "2026-11-20T01:23:45.788Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2123170788958171137/vid/avc1/1280x720/dil3TkJzMzryAJgn.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2123170788958171137/img/07gyFATmB9JAAR0r.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 30
     }
    ],
    "evidence": {
@@ -3220,6 +3731,63 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2123172429791129848",
+   "url": "https://x.com/notjazii/status/2123172429791129848",
+   "author": {
+    "handle": "notjazii",
+    "name": "J A Z I I"
+   },
+   "postedAt": "2026-11-18T21:52:08.000Z",
+   "addedAt": "2026-11-20",
+   "lang": "en",
+   "kind": "comparison",
+   "models": [
+    "carbon",
+    "hydrogen"
+   ],
+   "rivals": [
+    "claude"
+   ],
+   "category": "scene3d",
+   "title": {
+    "zh": "同提示词视觉细节测试",
+    "en": "Same-prompt visual detail test"
+   },
+   "summary": {
+    "zh": "作者在最高推理档位用同一提示词测试 Opus 5.5 和 Gemini 4 Neon。Neon 耗时 20 分钟，Opus 为 18 分钟；Neon 更便宜，但作者认为 Opus 的结果更好。",
+    "en": "Opus 5.5 and Gemini 4 Neon were tested with the same prompt at maximum reasoning. Neon took 20 minutes versus Opus's 18 and cost less; the creator preferred Opus's output."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Claude Opus 5.5"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 46796,
+    "likes": 517,
+    "replies": 60,
+    "reposts": 19,
+    "bookmarks": 145,
+    "checkedAt": "2026-11-20T01:23:45.788Z"
+   },
+   "media": [
+    {
+     "type": "gif",
+     "url": "https://video.twimg.com/tweet_video/HXcEoLAbwAA7XCT.mp4",
+     "poster": "https://pbs.twimg.com/tweet_video_thumb/HXcEoLAbwAA7XCT.jpg",
+     "width": 1152,
+     "height": 1408,
+     "durationSec": 0
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -3797,6 +4365,62 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2122886670240669809",
+   "url": "https://x.com/antiAIvo/status/2122886670240669809",
+   "author": {
+    "handle": "antiAIvo",
+    "name": "纳米AI"
+   },
+   "postedAt": "2026-11-18T02:56:38.000Z",
+   "addedAt": "2026-11-20",
+   "lang": "zh",
+   "kind": "work",
+   "models": [
+    "hydrogen"
+   ],
+   "rivals": [
+    "deepseek"
+   ],
+   "category": "ui",
+   "title": {
+    "zh": "preStep 工作流程交互式可视化",
+    "en": "Interactive visualization of a preStep workflow"
+   },
+   "summary": {
+    "zh": "作者学习 DeepSeek Harness 源码时，用 Gemini 4 Hydrogen 制作动态 HTML 流程图，拆解 preStep() 的执行流程，再转成 GIF 展示。",
+    "en": "The creator used Gemini 4 Hydrogen to make an animated HTML flowchart explaining DeepSeek Harness's preStep() code, then converted it to a GIF for sharing."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "DeepSeek Harness"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 38291,
+    "likes": 406,
+    "replies": 32,
+    "reposts": 45,
+    "bookmarks": 383,
+    "checkedAt": "2026-11-20T01:23:45.788Z"
+   },
+   "media": [
+    {
+     "type": "gif",
+     "url": "https://video.twimg.com/tweet_video/HXX_FPlaMAAp5Yn.mp4",
+     "poster": "https://pbs.twimg.com/tweet_video_thumb/HXX_FPlaMAAp5Yn.jpg",
+     "width": 1560,
+     "height": 852,
+     "durationSec": 0
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
