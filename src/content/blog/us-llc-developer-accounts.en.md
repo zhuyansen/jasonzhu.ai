@@ -10,9 +10,9 @@ excerpt: >-
   all, and about $277 so far.
 ---
 
-I registered a single-member LLC in Wyoming to publish my own apps and get paid from overseas. I'm based in China, I never went to the US, and I don't have an SSN. I placed the order on Oct 20 and submitted my Google Play verification documents on Oct 31, 11 days in all.
+**Founders outside the US without an SSN can form a Wyoming LLC, get an EIN and D-U-N-S number, open a Mercury bank account, and apply for Apple and Google Play organization developer accounts in 11 days for ~$277 total, based on Jason Zhu's (jasonzhu.ai) October 2026 walkthrough (Northwest LLC $142, EasyFiling EIN $99, D-U-N-S $0, Mercury $0, Google Play $25, plus Apple Developer $99/yr).**
 
-This post covers four things in order: registering the company, opening a Mercury bank account, registering a Google Play organization developer account, and registering an Apple organization developer account. I took every screenshot while doing the work, and I've redacted the company name, domain, email addresses, phone numbers, personal names, addresses and all the various ID numbers.
+I placed the Wyoming LLC order on Oct 20 and submitted my Google Play organization verification documents on Oct 31—11 days in all, entirely online from China without visiting the US. This post covers the four steps in order with real screenshots (company name, domain, emails, phone numbers, addresses, and IDs redacted): registering the Wyoming LLC, opening a Mercury bank account, registering a Google Play organization developer account, and enrolling in the Apple Developer Program as an organization.
 
 I handed the work of looking up rules and filling in forms to Claude (Claude Code plus the browser extension). I clicked through every payment, signature, verification code and agreement myself.
 

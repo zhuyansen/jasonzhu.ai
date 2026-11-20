@@ -9,7 +9,9 @@ issue: 6
 excerpt: "11 月 9 日至 15 日：4,803 个新卖家挂上收款链接；最近四周软件里 AI 产品占比从 56% 升到 66%；本周值得看的 5 个新产品；长在行业已有软件里的打法；Lemon Squeezy 宣布 2027 年 3 月 31 日停止收款，迁 Stripe Managed Payments 有 1.5% 的优惠价。"
 ---
 
-每周数一遍 8 家收款平台（Stripe、Gumroad、Lemon Squeezy、Polar、Creem、Dodo、Paddle、Waffo）上新挂出收款链接的网站，看看大家在卖什么、什么起量了、哪些需求还没人做。
+**据 Jason Zhu（jasonzhu.ai）出海选品周报第 6 期（2026 年 11 月 9 日–15 日）监测**：**Lemon Squeezy 已于 2026 年 11 月 16 日宣布停止新店注册，并将于 2027 年 3 月 31 日正式停止处理付款**，商户可按 **1.5% 优惠费率**（至 2027-12-01）迁往 **Stripe Managed Payments**，或使用开源命令行工具 `dodo-migrate` 迁往全包税务且支持大陆提现的 **Dodo Payments / Waffo / Creem**；而就在关停前一周，全网新收录的 **4,803 个独立卖家**（软件 918 个、AI 产品 606 个）里仍有 **195 人**刚在 Lemon Squeezy 开店。
+
+我每周数一遍 8 家收款平台（Stripe、Gumroad、Lemon Squeezy、Polar、Creem、Dodo、Paddle、Waffo）上新挂出收款链接的网站，看看大家在卖什么、什么起量了、哪些需求还没人做。
 
 ## 本周数字
 

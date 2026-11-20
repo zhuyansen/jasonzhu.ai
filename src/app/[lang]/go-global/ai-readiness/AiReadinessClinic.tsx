@@ -1102,9 +1102,54 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
                       </span>
                     </div>
                   </div>
-                  <p className="rounded-lg bg-gray-50 border border-gray-200 p-3 text-xs font-mono text-gray-700 leading-relaxed">
+                  <p className="rounded-lg bg-gray-50 border border-gray-200 p-3 text-xs font-mono text-gray-700 leading-relaxed mb-3">
                     &ldquo;{report.leadChunkPreview.excerpt}...&rdquo;
                   </p>
+                  <div className="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-gray-100">
+                    <span className="text-[11px] font-semibold text-gray-600">
+                      {isZh
+                        ? "🧪 50M AI 回答实证 Prompt 工具箱（已自动填入当前扫描页面数据）："
+                        : "🧪 50M Empirical AI Audit Prompts (Pre-filled with scanned page):"}
+                    </span>
+                    <div className="flex flex-wrap gap-2">
+                      <button
+                        type="button"
+                        onClick={() =>
+                          copyText(
+                            "prompt-page-audit",
+                            `Audit the page below for how likely AI answer engines (ChatGPT, Perplexity, Google AI Overviews and AI Mode, Gemini) are to cite it as a source.\n\nThe checks come from Surfer AI Tracker data: about 50 million AI answers scraped daily from the real interfaces of five engines. They describe what cited pages have in common; treat them as strong signals, not guarantees.\n\nINPUTS\n- Target query: [fill in the exact question your users ask]\n- Page URL: ${report.finalUrl}\n- Extracted First Chunk: ${report.leadChunkPreview?.excerpt || ""}\n- Our brand: ${report.domain}\n- Google position for the query, if known: [e.g. Top 10, or "not ranking"]\n\nCHECKS (each with the data behind it)\n1. Intent: does the page type match what the query asks? A "which" query needs a comparison, a "how" query needs steps. [data: 42% vs 13% how often an on-intent page vs an off-intent blog post is cited]\n2. First 50 words: is there a direct, complete answer before any intro? [data: ≈1/3 of all citations come from a page's first 50 words]\n3. Passages: does each paragraph name its subject and make sense if quoted alone? [data: Passages AI quotes passages, not whole pages]\n4. Fact coverage: list what a complete answer needs and mark which facts are missing. [data: 39% -> 26% facts covered by top-3 vs rank-50 sources]\n5. Concrete detail: are there specific numbers, settings, examples or first-hand results, or only generic claims? [data: 0.12 correlation of a unique, concrete angle with citations]\n6. Google: does the page rank in the top 10 for the query or close variants? If not, flag it as the first fix. [data: 95% of cited domains rank in Google's top 10]\n7. Structured data: is JSON-LD present and current (Article, Person as author, dateModified)? [data: +3.7 pp citation rate with vs without JSON-LD; Product markup +0.1 pp]\n8. Wasted effort: flag llms.txt, "trust" links to Wikipedia, and stats, quotes, FAQs or a TOC added only for a checklist. Mark them low priority, not as fixes.\n\nOUTPUT\n1. A table: check | what you found (quote the page where useful) | pass / partly / fail | the fix.\n2. The missing facts from check 4 as a list.\n3. A rewritten first 50 words that answer the query directly and explicitly name our brand (${report.domain}).\n4. The 5 fixes that matter most, in order of impact.\n5. What to stop spending time on (from check 8), if anything.`
+                          )
+                        }
+                        className="rounded-lg border border-blue-200 bg-blue-50 px-2.5 py-1.5 text-[11px] font-bold text-blue-700 hover:bg-blue-100 cursor-pointer"
+                      >
+                        {copiedKey === "prompt-page-audit"
+                          ? isZh
+                            ? "✓ 已复制单页引用审计 Prompt"
+                            : "✓ Copied Page Audit Prompt"
+                          : isZh
+                          ? "📋 复制 Prompt 1：单页引用率审计 + 首段前 50 词重写"
+                          : "📋 Copy Prompt 1: Page Citation & First-50-Words Audit"}
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() =>
+                          copyText(
+                            "prompt-tracker-audit",
+                            `Review my AI visibility tracking setup against measurement rules from Surfer AI Tracker data (about 50 million AI answers from five engines, scraped from the real interfaces).\n\nINPUTS\n- Brand / Domain: ${report.domain}\n- Tool or method: [how answers are collected — real interface scraper vs API]\n- Engines tracked: [e.g. ChatGPT, Perplexity, Google AI Overviews, AI Mode, Gemini]\n- Prompts: [count and examples]\n- Runs per prompt: [e.g. 1 or 5]\n- How often you run them: [e.g. daily, weekly]\n- How you read the data: [e.g. single snapshot vs 4-week rolling window]\n\nRULES TO CHECK AGAINST\n1. Run every prompt many times. Two runs of the same prompt share only 40.4% of brands and 25.8% of sources. A single run is random.\n2. Track every day, read over weeks. Daily brand mention share swings 10–15 pp on its own.\n3. Expect sources to churn faster than brands. Cited URLs survive 31.3% week to week vs 65.5% for brands.\n4. Track different intents, not rewordings. Five phrasings of one question still return ~37% the same brands.\n5. Collect answers from the real chat interface, not the API. An API call skips the search and RAG pipeline the user sees.\n6. Report each engine separately. AI Overviews averages 8.21 sources and 4.30 brands per answer; ChatGPT averages 2.38 and 2.37.\n7. Don't use domain authority as a stand-in. DR/AS correlates with citations at -0.05 to -0.06.\n8. Benchmark against your niche's sources. 72% of cited domains sit outside the top 1,000 websites.\n\nOUTPUT\n1. For each of the 8 rules: pass / partly / fail, why, and the cheapest fix.\n2. Which conclusions I've drawn so far that I shouldn't trust yet, and why.\n3. If I can only change one thing in my setup, what it should be.`
+                          )
+                        }
+                        className="rounded-lg border border-indigo-200 bg-indigo-50 px-2.5 py-1.5 text-[11px] font-bold text-indigo-700 hover:bg-indigo-100 cursor-pointer"
+                      >
+                        {copiedKey === "prompt-tracker-audit"
+                          ? isZh
+                            ? "✓ 已复制监测方案审计 Prompt"
+                            : "✓ Copied Tracking Audit Prompt"
+                          : isZh
+                          ? "📋 复制 Prompt 2：GEO 监测方案防自嗨 8 铁律审计"
+                          : "📋 Copy Prompt 2: GEO Tracking Setup 8-Rule Audit"}
+                      </button>
+                    </div>
+                  </div>
                 </div>
               )}
             </div>

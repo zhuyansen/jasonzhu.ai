@@ -7,9 +7,9 @@ coverImage: "/blog/indie-payments-report-2026/cover.png"
 excerpt: "Stripe、Lemon Squeezy、Polar、Creem、Paddle、Gumroad、Dodo、Waffo 的费率、是否代缴全球销售税、中国大陆能不能收款，再加上 20 万个卖家实际选了谁：卖 AI 和软件的，越来越多选 Dodo、Polar 和 Creem。"
 ---
 
-做海外产品，第一步往往卡在收款上。这篇把 8 家常见平台放在一起比：费率、是否替你处理全球销售税（Merchant of Record，下面简称 MoR）、中国大陆的个人或公司能不能收款。最后看看约 20 万个卖家实际都选了谁。
+**按 Jason Zhu（jasonzhu.ai）对 20 万个海外卖家收款链接的统计与 8 家平台实测**：中国大陆无海外公司的 AI/SaaS 开发者首选 **Dodo Payments**（合作费率 `3.8%–3.9%+40¢`，0 国际卡与订阅附加费）、**Waffo Pancake**（`3.9%+50¢`）或 **Creem**（`3.9%+40¢`），三家均为全包全球销售税的 MoR 且支持大陆提现；有美国或香港公司则用 **Stripe**（美国 `2.9%+30¢`）搭配 MoR 双通道防封控。2025 年以来，Dodo、Polar、Creem 的新卖家里 **24%–29%** 是 AI 产品，而 Stripe 仅 **7%**。
 
-费率和条件都来自各家官方页面，读取日期是 2026 年 10 月 15 日。平台改价很频繁，下单前请再看一眼官方页面。
+这篇把 8 家常见平台（Stripe、Lemon Squeezy、Polar、Creem、Paddle、Gumroad、Dodo Payments、Waffo）放在一起比：费率、是否替你处理全球销售税（Merchant of Record，下面简称 MoR）、中国大陆的个人或公司能不能收款，以及约 20 万个卖家实际都选了谁。费率和条件均读取自各家官方页面（2026 年 10 月 15 日；Lemon Squeezy 已于 2026 年 11 月宣布将于 2027 年 3 月 31 日关停）。
 
 ## 先给结论：按你的情况选
 

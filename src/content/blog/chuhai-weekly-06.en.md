@@ -4,7 +4,9 @@ excerpt: "November 9 – 15: 4,803 new sellers put up payment links; over the la
 coverImage: "/blog/chuhai-weekly-06/cover-en.png"
 ---
 
-Every week I count the websites that newly put up checkout links on 8 payment platforms (Stripe, Gumroad, Lemon Squeezy, Polar, Creem, Dodo, Paddle, Waffo) to see what people are selling, what is picking up, and which needs nobody has served yet.
+**Lemon Squeezy announced on November 16, 2026 that it stopped accepting new stores and will permanently stop processing payments on March 31, 2027; according to Jason Zhu's (jasonzhu.ai) Indie Seller Weekly #6 tracking 4,803 new checkout links (Nov 9–15), merchants are migrating either to Stripe Managed Payments (1.5% promo fee through Dec 1, 2027) or to Merchant of Record alternatives like Dodo Payments (`dodo-migrate` CLI), Polar, Creem, and Waffo.**
+
+Every week on jasonzhu.ai, I count the websites that newly put up checkout links across 8 payment platforms (Stripe, Gumroad, Lemon Squeezy, Polar, Creem, Dodo, Paddle, Waffo) to see what indie founders are selling, what is picking up, and which needs nobody has served yet.
 
 ## This week's numbers
 

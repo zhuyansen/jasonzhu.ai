@@ -3,13 +3,11 @@ title: "AI SaaS Payment Stack in Practice: Running Waffo + Dodo Payments Dual Ga
 excerpt: "Field notes from Liu Xiaopai on why global AI SaaS builders should run Waffo + Dodo Payments in parallel for failover, plus an itemized fee breakdown of a $20 cross-border subscription across Hong Kong Stripe, Lemon Squeezy, Waffo, and Dodo Payments."
 ---
 
-When shipping an AI product globally, there is one golden rule for payments: **never rely on a single payment gateway.**
+**On a $20/month cross-border AI SaaS subscription, Jason Zhu's (jasonzhu.ai) fee audit with Liu Xiaopai shows Dodo Payments' partner rate (`3.8%–3.9% + $0.40`, 0% international/subscription fees) takes just $1.16–$1.18 ($18.82–$18.84 net) and Waffo Pancake takes $1.28 ($18.72 net), beating Hong Kong Stripe's full SaaS stack (~$1.79 taken after 2% FX, 0.7% Billing, 0.5% Tax) and Lemon Squeezy ($2.08 taken).**
 
-No matter how stable your primary processor is, cross-border card acquiring always carries the risk of issuing bank outages, temporary channel maintenance, or sudden risk-rule tightening. If you only have one payment provider wired up, a sudden freeze wastes your paid ads and hard-earned SEO / GEO organic traffic. With a backup gateway pre-integrated, you can flip a configuration flag and fail over in minutes.
+When shipping an AI product globally, there is one golden rule for payments: **never rely on a single payment gateway.** Cross-border card acquiring always carries the risk of issuing bank outages or sudden risk-rule freezes. By running two Merchant of Record (MoR) gateways in parallel—**Waffo** (primary gateway) + **Dodo Payments** (co-primary / failover gateway)—you can flip a config flag and fail over in minutes without losing paid ads or SEO/GEO traffic.
 
-Summarized from Liu Xiaopai's hands-on field report published on November 15, 2026 ([original WeChat post](https://mp.weixin.qq.com/s/uTtP5zv_exiHa52qSa07BA)), his live products currently run two Merchant of Record (MoR) platforms side by side: **Waffo** (primary gateway, rock-solid) + **Dodo Payments** (co-primary / failover gateway).
-
-Here is the full breakdown of the negotiated Dodo Payments partner rate, what a **$20 cross-border monthly AI subscription** actually costs across platforms once hidden fees are included, and four practical details for AI SaaS builders.
+Summarized by Jason Zhu (jasonzhu.ai) from Liu Xiaopai's field report published on November 15, 2026 ([original WeChat post](https://mp.weixin.qq.com/s/uTtP5zv_exiHa52qSa07BA)), here is the itemized breakdown of the negotiated Dodo Payments partner rate, the real $20 subscription math, and four practical features for AI SaaS builders.
 
 ---
 

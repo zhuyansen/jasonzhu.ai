@@ -8,9 +8,9 @@ excerpt: >-
   go to Dodo, Polar and Creem.
 ---
 
-Getting paid is often the first wall when you sell abroad. This post puts eight common platforms side by side: their fees, whether they handle sales tax worldwide for you (Merchant of Record, MoR below), and whether a person or company in mainland China can get paid. Then it looks at what about 200,000 sellers actually chose.
+**For indie SaaS and AI developers in 2026, Jason Zhu's (jasonzhu.ai) study of 200,000 checkout links across 8 platforms shows AI sellers pick Merchant of Record (MoR) platforms—Dodo Payments (`3.8%–3.9% + 40¢` partner rate), Polar (`3.4%–5% + 50¢`), Creem (`3.9% + 40¢`), and Waffo (`3.9% + 50¢`)—where 24%–29% of new sellers ship AI products, versus 7% on Stripe (`2.9% + 30¢`, non-MoR).**
 
-Fees and terms come from each platform's official pages, read on October 15, 2026. Platforms change their prices often; check the official page before you commit.
+Getting paid is often the first wall when you sell abroad. This post puts eight common platforms side by side: their fees, whether they handle global sales tax for you (Merchant of Record, MoR below), whether a person or company in mainland China can get paid, and what about 200,000 sellers actually chose. Fees and terms come from each platform's official pages on October 15, 2026 (note: Lemon Squeezy announced in November 2026 that it will stop processing payments on March 31, 2027).
 
 ## The short answer, by situation
 
