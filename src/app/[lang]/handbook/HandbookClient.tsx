@@ -88,9 +88,9 @@ function HandbookContent({ lang, dict }: { lang: string; dict: Dictionary }) {
 
       {/* Preview of what's inside */}
       <div className="bg-gray-50 rounded-2xl p-6 mb-8">
-        <h3 className="text-sm font-semibold text-gray-900 mb-4">
+        <h2 className="text-sm font-semibold text-gray-900 mb-4">
           {t.chapters}
-        </h3>
+        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
           {t.chapterList.map((ch) => (
             <div
@@ -121,7 +121,7 @@ function HandbookContent({ lang, dict }: { lang: string; dict: Dictionary }) {
           {/* Sent: the download link is in the inbox */}
           <div className="bg-green-50 rounded-2xl border border-green-200 p-8 text-center">
             <span className="text-4xl mb-3 block">📬</span>
-            <h3 className="text-lg font-bold text-green-800 mb-2">{t.sentTitle}</h3>
+            <h2 className="text-lg font-bold text-green-800 mb-2">{t.sentTitle}</h2>
             <p className="text-sm text-green-700">{t.sentDesc.replace("{email}", sentTo)}</p>
             <button
               type="button"
@@ -172,9 +172,9 @@ function HandbookContent({ lang, dict }: { lang: string; dict: Dictionary }) {
               {t.expired}
             </p>
           )}
-          <h3 className="text-lg font-bold text-gray-900 mb-2 text-center">
+          <h2 className="text-lg font-bold text-gray-900 mb-2 text-center">
             {t.unlockTitle}
-          </h3>
+          </h2>
           <p className="text-sm text-gray-500 text-center mb-6">
             {t.unlockDesc}
           </p>

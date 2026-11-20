@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import type { Locale } from "@/lib/dictionaries";
 import { MODEL_LABEL, categoryLabel, formatCount, formatDuration, getOpusCase, getOpusLibrary } from "@/lib/opus-prompts";
 import { relatedEnglishArticles } from "@/lib/related-articles";
+import { fitTitle } from "@/lib/social";
 import fullData from "@/generated/opus-prompts-full.json";
 import CaseVideo from "../CaseVideo";
 import PromptsSubscribe from "../PromptsSubscribe";
@@ -27,10 +28,16 @@ export function generateStaticParams() {
   ]);
 }
 
-const describe = (isZh: boolean, title: string, handle: string, views: number, kind: string | undefined, model: string) =>
-  isZh
-    ? `${title}：@${handle} 用 Claude ${model} 做的作品，原帖播放 ${formatCount(views, "zh")}。${kind === "full" ? "附完整提示词原文，可复制改写。" : kind ? "附作者公开的指令与出处。" : "可直接播放，附原帖出处。"}`
-    : `${title} — made with Claude ${model} by @${handle}, ${formatCount(views, "en")} views on the original post. ${kind === "full" ? "Full original prompt included." : kind ? "Includes the creator's brief and source." : "Watch it here, with a link to the original post."}`;
+// 结尾那句放得下才带：英文标题长的作品整句会超过 160 个字符（OpenSEO 2026-11-20：这个库 114 页描述过长）
+const describe = (isZh: boolean, title: string, handle: string, views: number, kind: string | undefined, model: string) => {
+  const base = isZh
+    ? `${title}：@${handle} 用 Claude ${model} 做的作品，原帖播放 ${formatCount(views, "zh")}。`
+    : `${title} — made with Claude ${model} by @${handle}, ${formatCount(views, "en")} views on the original post.`;
+  const tail = isZh
+    ? (kind === "full" ? "附完整提示词原文，可复制改写。" : kind ? "附作者公开的指令与出处。" : "可直接播放，附原帖出处。")
+    : (kind === "full" ? " Full original prompt included." : kind ? " Includes the creator's brief and source." : " Watch it here, with a link to the original post.");
+  return (base + tail).length <= 160 ? base + tail : base;
+};
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang: rawLang, id } = await params;
@@ -42,7 +49,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const title = `${isZh ? c.title.zh : c.title.en}${isZh ? `｜${modelName} 提示词` : ` | ${modelName} Prompt`}`;
   const description = describe(isZh, isZh ? c.title.zh : c.title.en, c.author.handle, c.stats.views, c.prompt.kind, modelName);
   return {
-    title,
+    title: fitTitle(title),
     description,
     referrer: "no-referrer",
     alternates: {

@@ -50,5 +50,30 @@ export function withSocialCards(meta: Metadata, lang: string): Metadata {
     images: [DEFAULT_IMAGE],
     ...meta.twitter,
   } as Twitter;
-  return { ...meta, openGraph, twitter };
+  // 标题带站名超过 60 个字符的不带站名（fitTitle）；页面自己写成对象（absolute 等）的不动
+  const fitted = typeof meta.title === "string" ? fitTitle(meta.title) : meta.title;
+  return { ...meta, title: fitted, openGraph, twitter };
+}
+
+const BRAND_SUFFIX = " | JasonZhu.AI";
+const TITLE_MAX = 60;
+const DESCRIPTION_MAX = 160;
+
+/**
+ * 页面标题：加上站名超过 60 个字符时不带站名（搜索结果约显示 60 个字符，站名 Google 会单独显示）。
+ * OpenSEO 2026-11-20 全站审计：813 页标题过长，提示词详情页和博客多数只超出「 | JasonZhu.AI」这一段。
+ */
+export function fitTitle(title: string): NonNullable<Metadata["title"]> {
+  return title.length + BRAND_SUFFIX.length > TITLE_MAX ? { absolute: title } : title;
+}
+
+/** meta description 超过 160 个字符时，截到最后一个完整句子；句子太靠前就按词截断加省略号（同一次审计：478 页描述过长） */
+export function fitDescription(text: string, max = DESCRIPTION_MAX): string {
+  const clean = text.replace(/\s+/g, " ").trim();
+  if (clean.length <= max) return clean;
+  const head = clean.slice(0, max);
+  const end = Math.max(...[". ", "! ", "? ", "。", "！", "？"].map((mark) => head.lastIndexOf(mark)));
+  if (end >= max * 0.6) return head.slice(0, end + 1).trim();
+  const space = head.lastIndexOf(" ", max - 2);
+  return `${(space >= max * 0.6 ? head.slice(0, space) : head.slice(0, max - 1)).replace(/[\s,;:，；：、]+$/, "")}…`;
 }

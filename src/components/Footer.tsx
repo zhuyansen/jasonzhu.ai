@@ -23,7 +23,7 @@ export default function Footer({ lang, dict }: FooterProps) {
 
           {/* Navigation */}
           <div>
-            <h3 className="text-sm font-semibold text-gray-900 mb-3">{dict.footer.nav}</h3>
+            <h2 className="text-sm font-semibold text-gray-900 mb-3">{dict.footer.nav}</h2>
             <ul className="space-y-2">
               <li><Link href={`/${lang}/blog`} className="text-sm text-gray-500 hover:text-gray-900">{dict.nav.blog}</Link></li>
               <li><Link href={`/${lang}/news`} className="text-sm text-gray-500 hover:text-gray-900">{dict.nav.news}</Link></li>
@@ -41,7 +41,7 @@ export default function Footer({ lang, dict }: FooterProps) {
 
           {/* Services */}
           <div>
-            <h3 className="text-sm font-semibold text-gray-900 mb-3">{dict.footer.services}</h3>
+            <h2 className="text-sm font-semibold text-gray-900 mb-3">{dict.footer.services}</h2>
             <ul className="space-y-2">
               <li><Link href={`/${lang}/services`} className="text-sm text-gray-500 hover:text-gray-900">{dict.footer.training}</Link></li>
               <li><Link href={`/${lang}/services`} className="text-sm text-gray-500 hover:text-gray-900">{dict.footer.mcn}</Link></li>
@@ -51,7 +51,7 @@ export default function Footer({ lang, dict }: FooterProps) {
 
           {/* Social */}
           <div>
-            <h3 className="text-sm font-semibold text-gray-900 mb-3">{dict.footer.contact}</h3>
+            <h2 className="text-sm font-semibold text-gray-900 mb-3">{dict.footer.contact}</h2>
             <ul className="space-y-2">
               <li>
                 <a href="https://x.com/GoSailGlobal" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 hover:text-gray-900">

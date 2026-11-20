@@ -17,8 +17,8 @@ export async function generateMetadata({
   return withSocialCards(
     {
       title: isZh
-        ? "全站目录 (HTML Sitemap) — JasonZhu.AI"
-        : "HTML Sitemap & Directory — JasonZhu.AI",
+        ? "全站目录 (HTML Sitemap)"
+        : "HTML Sitemap & Directory",
       description: isZh
         ? "JasonZhu.AI 全站内容分类目录：核心页面、AI 出海实战指南、全部深度教程博客与每日 AI 快讯索引（距首页 1 次点击直达）。"
         : "Complete HTML Sitemap of JasonZhu.AI: core pages, going-global guides, all in-depth AI tutorials, and daily AI news archives.",

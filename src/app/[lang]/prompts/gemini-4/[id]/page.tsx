@@ -6,7 +6,7 @@ import {
   getGeminiCase, getGeminiLibrary, GEMINI_LIBRARY_PATH, GEMINI_RIVALS, geminiCategoryLabel, geminiCaseHref, geminiModelLabel, coverOf, formatCount,
 } from "@/lib/gemini-prompts";
 import fullData from "@/generated/gemini-prompts-full.json";
-import { withSocialCards } from "@/lib/social";
+import { withSocialCards, fitDescription } from "@/lib/social";
 import CopyPrompt from "../../claude-opus-5-5/CopyPrompt";
 import PromptsSubscribe from "../../claude-opus-5-5/PromptsSubscribe";
 import CaseMedia from "../../chatgpt-images-2-6/CaseMedia";
@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const model = geminiModelLabel(c.models[0]);
   const title = isZh ? `${c.title.zh} · ${model} 提示词` : `${c.title.en} · ${model} Prompt`;
   const summary = full[id]?.summary;
-  const description = (isZh ? summary?.zh : summary?.en) || c.prompt.excerpt.slice(0, 150);
+  const description = fitDescription((isZh ? summary?.zh : summary?.en) || c.prompt.excerpt.slice(0, 150));
   const image = coverOf(c.media[0]);
   return withSocialCards({
     title,

@@ -14,6 +14,7 @@ import { getDictionary, type Locale } from "@/lib/dictionaries";
 import { extractFaq, faqJsonLd } from "@/lib/faq";
 import { tagLabel } from "@/lib/tag-labels";
 import { AUTHOR_NAME } from "@/lib/profiles";
+import { fitTitle, fitDescription } from "@/lib/social";
 import type { Metadata } from "next";
 
 interface Props {
@@ -46,12 +47,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   // 投稿文的作者是撰稿人（post.author），其余是站点作者
   const byline = post.author ? `${post.author.name} 的投稿文章` : `${AUTHOR_NAME} 的博客文章`;
-  const description = post.excerpt && post.excerpt.length >= 50
+  const description = fitDescription(post.excerpt && post.excerpt.length >= 50
     ? post.excerpt
-    : `${post.title} - ${byline}，涵盖${post.category}领域的深度分析与实战经验分享。`;
+    : `${post.title} - ${byline}，涵盖${post.category}领域的深度分析与实战经验分享。`);
 
   return {
-    title: post.title,
+    title: fitTitle(post.title),
     description,
     // <meta name="author">：根布局默认是 Jason Zhu，投稿文换成撰稿人
     ...(post.author ? { authors: [{ name: post.author.name, url: post.author.url }] } : {}),

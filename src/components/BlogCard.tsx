@@ -19,10 +19,13 @@ export default function BlogCard({
   post,
   lang = "zh",
   categoryMap,
+  heading: Heading = "h3",
 }: {
   post: BlogPostMeta;
   lang?: string;
   categoryMap?: Record<string, string>;
+  /** 卡片标题的层级：首页放在 h2 小节下面用 h3；博客列表页直接在 h1 下面，用 h2（不跳级） */
+  heading?: "h2" | "h3";
 }) {
   const colorClass = categoryColors[post.category] || "bg-gray-50 text-gray-600";
   const displayCategory = categoryMap?.[post.category] || post.category;
@@ -42,9 +45,9 @@ export default function BlogCard({
         </span>
         <span className="text-xs text-gray-400">{post.date}</span>
       </div>
-      <h3 className="text-lg font-semibold text-gray-900 group-hover:text-[var(--primary)] transition-colors mb-2">
+      <Heading className="text-lg font-semibold text-gray-900 group-hover:text-[var(--primary)] transition-colors mb-2">
         {title}
-      </h3>
+      </Heading>
       <p className="text-sm text-gray-500 leading-relaxed line-clamp-2">
         {excerpt}
       </p>

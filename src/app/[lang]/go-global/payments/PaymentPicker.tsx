@@ -231,7 +231,7 @@ function PlatformTable({ data, lang, table }: { data: GuardData; lang: Lang; tab
   const t = T[lang];
   return (
     <section className="mb-6">
-      <h3 className="text-lg font-semibold text-gray-900 mb-3">{t.all}</h3>
+      <h2 className="text-lg font-semibold text-gray-900 mb-3">{t.all}</h2>
       <div className="overflow-x-auto rounded-xl border border-gray-100">
         <table className="min-w-full text-sm">
           <thead className="bg-gray-50 text-gray-500">
@@ -286,7 +286,7 @@ function LeftOut({ data, lang, table }: { data: GuardData; lang: Lang; table: Pi
   if (!table.excluded.length) return null;
   return (
     <section className="mb-8">
-      <h3 className="text-base font-semibold text-gray-900 mb-2">{T[lang].out}</h3>
+      <h2 className="text-base font-semibold text-gray-900 mb-2">{T[lang].out}</h2>
       <ul className="space-y-1.5 text-sm text-gray-600 list-disc pl-5">
         {table.excluded.map((x) => (
           <li key={x.platform}>
@@ -304,7 +304,7 @@ function HowToOpen({ data, lang, who, rows }: { data: GuardData; lang: Lang; who
   const t = T[lang];
   return (
     <section className="mb-8">
-      <h3 className="text-lg font-semibold text-gray-900 mb-3">{t.open}</h3>
+      <h2 className="text-lg font-semibold text-gray-900 mb-3">{t.open}</h2>
       <div className="grid gap-4 md:grid-cols-3">
         {rows.slice(0, 3).map((r) => {
           const p = data.platforms[r.platform];
@@ -352,7 +352,7 @@ function Details({ data, lang, who, rows }: { data: GuardData; lang: Lang; who: 
   const t = T[lang];
   return (
     <section className="mb-8">
-      <h3 className="text-lg font-semibold text-gray-900 mb-3">{t.details}</h3>
+      <h2 className="text-lg font-semibold text-gray-900 mb-3">{t.details}</h2>
       <div className="space-y-2">
         {rows.map((r) => {
           const p = data.platforms[r.platform];

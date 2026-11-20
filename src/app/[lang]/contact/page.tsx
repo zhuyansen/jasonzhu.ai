@@ -13,7 +13,7 @@ export async function generateMetadata({
   const isZh = lang === "zh";
   return withSocialCards(
     {
-      title: isZh ? "联系我们 — JasonZhu.AI" : "Contact — JasonZhu.AI",
+      title: isZh ? "联系 Jason Zhu" : "Contact Jason Zhu", // 站名由 layout 的标题模板加，这里再写一遍会重复
       description: isZh
         ? "联系 Jason Zhu（祝彦森）：企业 AI 实战培训、出海技术咨询、GoSail Club 社群合作及媒体约稿。"
         : "Contact Jason Zhu for enterprise AI training, going-global technical consulting, GoSail Club partnerships, and media inquiries.",

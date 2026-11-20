@@ -159,7 +159,7 @@ function GuideContent({ lang }: { lang: Locale }) {
 
       {/* What's inside */}
       <div className="bg-gray-50 rounded-2xl p-6 mb-8">
-        <h3 className="text-sm font-semibold text-gray-900 mb-4">{t.chaptersTitle}</h3>
+        <h2 className="text-sm font-semibold text-gray-900 mb-4">{t.chaptersTitle}</h2>
         <div className="space-y-2">
           {t.chapters.map((ch) => (
             <div key={ch} className="flex items-start gap-2 text-sm text-gray-600">
@@ -177,7 +177,7 @@ function GuideContent({ lang }: { lang: Locale }) {
           {/* Sent: the download link is in the inbox */}
           <div className="bg-green-50 rounded-2xl border border-green-200 p-8 text-center">
             <span className="text-4xl mb-3 block">📬</span>
-            <h3 className="text-lg font-bold text-green-800 mb-2">{t.sentTitle}</h3>
+            <h2 className="text-lg font-bold text-green-800 mb-2">{t.sentTitle}</h2>
             <p className="text-sm text-green-700">{t.sentDesc.replace("{email}", sentTo)}</p>
             <button
               type="button"
@@ -210,7 +210,7 @@ function GuideContent({ lang }: { lang: Locale }) {
               {t.expired}
             </p>
           )}
-          <h3 className="text-lg font-bold text-gray-900 mb-2 text-center">{t.unlockTitle}</h3>
+          <h2 className="text-lg font-bold text-gray-900 mb-2 text-center">{t.unlockTitle}</h2>
           <p className="text-sm text-gray-500 text-center mb-6">{t.unlockDesc}</p>
           <form onSubmit={handleSubmit}>
             {/* Honeypot */}

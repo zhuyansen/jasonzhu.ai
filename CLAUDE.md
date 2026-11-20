@@ -124,6 +124,10 @@ Git：commit 后如远程有新提交（cron 会自动 commit 快讯），先 `g
 - 文章里写 `## 常见问题`（或英文 `## FAQ`）段 + `### 问题`，src/lib/faq.ts 自动生成 FAQPage JSON-LD——写内容时优先带上。
 - app/llms.txt/route.ts 动态生成 LLM 爬虫导览；/feed/blog.xml、/feed/news.xml 双 RSS。
 - 博客封面用 next/image + priority（勿改回裸 img，LCP 曾 13.8s）。作者中文名是**祝彦森**（不是朱延森）。
+- 标题：站名由 layout 的标题模板加，页面标题里不要再写「— JasonZhu.AI」（联系页、全站目录页写过，成了「… — JasonZhu.AI | JasonZhu.AI」）。标题加站名超过 60 个字符时自动不带站名：`withSocialCards` 统一处理，没走它的页面（博客文章、Claude 库详情页）自己调 `fitTitle`（`src/lib/social.ts`）。提示词详情页和博客的 meta description 超过 160 个字符时用 `fitDescription` 截到完整句子。
+- 标题层级不跳级（2026-11-20 全站审计后）：H1 下面的小节用 h2。页脚三栏、订阅框（SubscribeForm）、手册 / 学习全景图 / 收款选择器的小节标题都是 h2；BlogCard 默认 h3（首页在 h2 小节下面），博客列表页传 `heading="h2"`。博客正文里的「# 标题」渲染成 h2，一页只有一个 H1。
+- 页面组件里不要用 `fs` 读 `public/`：Next 会把整个 public/ 打进这个页面的函数（2026-11-20 快讯详情页 336MB，超过 Vercel 250MB 上限，之后每次部署都失败）。要知道文件在不在，在 prebuild 脚本里查、记进 generated JSON（快讯封面的 `coverWebp` 就是这样）。也不要在渲染期用 `useSearchParams`：整页会退回客户端渲染，服务端 HTML 没有正文（手册页、学习全景图页出过，被判无 H1、内容过少）；URL 参数用 `useSyncExternalStore` 在浏览器端读。
+- 快讯封面：页面显示 WebP（`public/news/**/<日期>.webp`，约 150KB，两个出图脚本自动生成，补历史用 `node scripts/news-webp.mjs`），图片链接和 og:image 仍是 PNG 原图。
 
 ## 上线检查（docs/launch-checklist.html，任何功能上线都走）
 

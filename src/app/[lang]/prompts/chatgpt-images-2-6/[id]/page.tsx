@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import type { Locale } from "@/lib/dictionaries";
 import { getImageCase, getImageLibrary, IMAGE_LIBRARY_PATH, imageCategoryLabel, imageCaseHref, coverOf, pbsSized, formatCount } from "@/lib/image-prompts";
 import fullData from "@/generated/image-prompts-full.json";
-import { withSocialCards } from "@/lib/social";
+import { withSocialCards, fitDescription } from "@/lib/social";
 import CopyPrompt from "../../claude-opus-5-5/CopyPrompt";
 import PromptsSubscribe from "../../claude-opus-5-5/PromptsSubscribe";
 import CaseMedia from "../CaseMedia";
@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isZh = lang === "zh";
   const title = isZh ? `${c.title.zh} · ChatGPT Images 2.6 提示词` : `${c.title.en} · ChatGPT Images 2.6 Prompt`;
   const summary = full[id]?.summary;
-  const description = (isZh ? summary?.zh : summary?.en) || c.prompt.excerpt.slice(0, 150);
+  const description = fitDescription((isZh ? summary?.zh : summary?.en) || c.prompt.excerpt.slice(0, 150));
   const image = c.media[0].type === "photo" ? pbsSized(c.media[0].url, "large") : coverOf(c.media[0]);
   return withSocialCards({
     title,

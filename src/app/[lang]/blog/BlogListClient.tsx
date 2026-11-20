@@ -163,7 +163,7 @@ export default function BlogListClient({
       {filtered.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {filtered.map((post) => (
-            <BlogCard key={post.slug} post={post} lang={lang} categoryMap={categoryMap} />
+            <BlogCard key={post.slug} post={post} lang={lang} categoryMap={categoryMap} heading="h2" />
           ))}
         </div>
       ) : (

@@ -153,7 +153,7 @@ export default function SubscribeForm({
       <div className="flex items-start gap-3 mb-4">
         <span className="text-3xl">📬</span>
         <div>
-          <h3 className="text-lg font-bold text-gray-900">{t.title}</h3>
+          <h2 className="text-lg font-bold text-gray-900">{t.title}</h2>
           <p className="text-sm text-gray-500 mt-1">{t.desc}</p>
         </div>
       </div>
