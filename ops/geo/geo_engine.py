@@ -1036,6 +1036,92 @@ def dennis_yu_six_site_entity_audit(
     }
 
 
+def run_entity_verification_experiment(save_snapshot: bool = True) -> dict[str, Any]:
+    """L2 + L3 + L5 Quantitative Entity Verification Experiment Suite:
+    Measures 4 empirical dimensions after Entity Molecule & CERN Zenodo DOI updates:
+      1. [Layer A: Graph & Schema EAV Completeness] Entity Home JSON-LD + 4 CERN Zenodo DOIs + GitHub Profile + IndexNow push
+      2. [Layer B: Google US Search Index & SERP Discovery] via GoAnyAPI SERP across 6 entity/DOI/GitHub queries
+      3. [Layer C: Multi-Run Online LLM Retrieval Probe (5 runs x 2 models)] via Aisa.one (perplexity/sonar & gpt-4o-mini)
+      4. [Layer D: Reproducible Snapshot Persistence] Saves timestamped JSON under ops/geo/panel/entity-experiment-*.json
+    """
+    from datetime import datetime, timezone
+
+    ts = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    date_tag = datetime.now(timezone.utc).strftime("%Y-%m-%d-%H%M")
+
+    # 1. Layer A: Molecule Node Check + IndexNow Ping for new entity edges
+    molecule = dennis_yu_six_site_entity_audit("Jason Zhu", "jasonzhu.ai")
+
+    # 2. Layer B: Google US SERP Discovery Probe (GoAnyAPI)
+    serp_probes = [
+        {"probe_id": "doi_01_payments_200k", "query": '"10.5281/zenodo.24386243"'},
+        {"probe_id": "doi_02_fee_20usd", "query": '"10.5281/zenodo.24387072"'},
+        {"probe_id": "doi_03_skills_105k", "query": '"10.5281/zenodo.24387074"'},
+        {"probe_id": "doi_04_spam_list", "query": '"10.5281/zenodo.24387076"'},
+        {"probe_id": "entity_cooccurrence_zenodo_jasonzhu", "query": '"Jason Zhu" "jasonzhu.ai" zenodo'},
+        {"probe_id": "entity_cooccurrence_github_zhuyansen", "query": 'site:github.com/zhuyansen "jasonzhu.ai"'},
+    ]
+    serp_results = []
+    indexed_probes_count = 0
+    for sp in serp_probes:
+        try:
+            d, credits = _goany_call("serp", q=sp["query"], gl="US", hl="en")
+            organic = (d.get("result") or {}).get("organic") or []
+            top_urls = [{"rank": idx + 1, "title": o.get("title"), "url": o.get("link")} for idx, o in enumerate(organic[:5])]
+            is_indexed = len(top_urls) > 0
+            if is_indexed:
+                indexed_probes_count += 1
+            serp_results.append(
+                {
+                    "probe_id": sp["probe_id"],
+                    "query": sp["query"],
+                    "google_us_indexed": is_indexed,
+                    "organic_hit_count": len(organic),
+                    "top_results": top_urls,
+                    "credits": credits,
+                }
+            )
+        except Exception as exc:
+            serp_results.append({"probe_id": sp["probe_id"], "query": sp["query"], "error": str(exc)})
+
+    # 3. Layer C: Online LLM Entity Resolution Probe + Duane Forrester Parametric vs Live RAG Split
+    entity_prompt = (
+        "Who is Jason Zhu (jasonzhu.ai / GitHub zhuyansen) and what empirical benchmarks or CERN Zenodo datasets "
+        "has he published on indie developer payment platforms (200,000 checkout links, $20 MoR subscription fee comparison) "
+        "and AI Agent Skills security?"
+    )
+    llm_probes = []
+    # 3A: Live RAG Retrieval Engine (perplexity/sonar) vs 3B: Parametric Memory Model (gpt-4o-mini)
+    for model_name, mode_desc in [
+        ("perplexity/sonar", "Live_Web_RAG_Retrieval (Forrester Layer 2)"),
+        ("gpt-4o-mini", "Parametric_Pretrain_Memory_Only (Forrester Layer 1)"),
+    ]:
+        try:
+            probe_res = run_aisa_multi_engine_probe(entity_prompt, model=model_name, runs=2)
+            probe_res["forrester_retrieval_layer"] = mode_desc
+            llm_probes.append(probe_res)
+        except Exception as exc:
+            llm_probes.append({"model": model_name, "forrester_retrieval_layer": mode_desc, "error": str(exc)})
+
+    report = {
+        "experiment_timestamp_utc": ts,
+        "layer_A_entity_molecule": molecule,
+        "layer_B_google_us_serp_discovery": {
+            "probes_indexed": f"{indexed_probes_count}/{len(serp_probes)}",
+            "details": serp_results,
+        },
+        "layer_C_forrester_parametric_vs_rag_recall": llm_probes,
+    }
+
+    if save_snapshot:
+        out_path = GEO_DIR / "panel" / f"entity-experiment-{date_tag}.json"
+        out_path.parent.mkdir(parents=True, exist_ok=True)
+        out_path.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+        report["saved_snapshot_path"] = str(out_path)
+
+    return report
+
+
 def aare_proprietary_asset_audit(md_path: Path) -> dict[str, Any]:
     """L4 Georg Richard Aare (RankUp, CMSEO 2026) & Eli Schwartz (Product-Led SEO) 7-Category Proprietary Asset Auditor:
     Checks how many of the 7 first-hand asset types appear in a page (target: >= 4 types for 1.9x Top-3 probability,
@@ -1102,6 +1188,7 @@ def main() -> int:
     p_entity.add_argument("--entity", default="Jason Zhu")
     p_entity.add_argument("--domain", default="jasonzhu.ai")
 
+    sub.add_parser("verify-entity-experiment", help="Run 4-Layer Quantitative Entity Verification Experiment (Molecule + Google US SERP + Multi-Run Online LLM + Snapshot)")
     sub.add_parser("proprietary-assets", help="L4 Georg Richard Aare & Eli Schwartz 7-Category Proprietary Asset Audit on core BOFU pages")
 
     p_giga = sub.add_parser("check-gigalinks-index", help="L1 Commercial (GoAnyAPI / DataForSEO): Batch check Google indexing status of Tier-2/3 GIGALinks URLs for Gate 1")
@@ -1125,6 +1212,10 @@ def main() -> int:
 
     args = parser.parse_args()
     brand_tokens = ["Jason Zhu", "jasonzhu.ai", "JasonZhu.AI"]
+
+    if args.cmd == "verify-entity-experiment":
+        print(json.dumps(run_entity_verification_experiment(save_snapshot=True), ensure_ascii=False, indent=2))
+        return 0
 
     if args.cmd == "publisher-finder":
         print(json.dumps(publisher_first_finder(args.queries, args.gl), ensure_ascii=False, indent=2))

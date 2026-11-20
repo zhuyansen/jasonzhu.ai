@@ -1,0 +1,196 @@
+{
+  "experiment_timestamp_utc": "2026-11-20T05:25:49Z",
+  "layer_A_entity_molecule": {
+    "entity": "Jason Zhu",
+    "domain": "jasonzhu.ai",
+    "molecule_nodes": [
+      {
+        "node": "1_Entity_Home_Domain",
+        "target": "https://jasonzhu.ai/en",
+        "status": "VERIFIED",
+        "evidence": "HTTP 200, JSON-LD present=True, bytes=96280"
+      },
+      {
+        "node": "2_CERN_Zenodo_Academic_Node",
+        "target": "https://zenodo.org/records/24386243",
+        "status": "VERIFIED",
+        "evidence": "Official CERN DOI=10.5281/zenodo.24386243, title='200,000 Indie Developer Checkout Links and Payment Platform '"
+      },
+      {
+        "node": "3_Wikidata_Knowledge_Graph",
+        "target": "Wikidata search: Jason Zhu",
+        "status": "MISSING_WIKIDATA_ITEM",
+        "evidence": "0 Wikidata candidates returned (require explicit sameAs binding to https://jasonzhu.ai/#person)"
+      },
+      {
+        "node": "4_GitHub_Developer_Node",
+        "target": "https://github.com/zhuyansen",
+        "status": "VERIFIED",
+        "evidence": "login=zhuyansen, blog='https://jasonzhu.ai', twitter='GoSailGlobal', public_repos=123, profile_readme_links_domain=True, profile_readme_cites_zenodo_dois=True"
+      }
+    ],
+    "verified_receipt": "Verified: Opened https://jasonzhu.ai/en, https://zenodo.org/api/records/24386243, Wikidata API, and https://api.github.com/users/zhuyansen | Saw JSON-LD + active CERN DOI 10.5281/zenodo.24386243 + GitHub profile | Timestamp: 2026-11-20T05:25:49Z"
+  },
+  "layer_B_google_us_serp_discovery": {
+    "probes_indexed": "3/6",
+    "details": [
+      {
+        "probe_id": "doi_01_payments_200k",
+        "query": "\"10.5281/zenodo.24386243\"",
+        "error": "GoAnyAPI error: HTTP Error 502: Bad Gateway"
+      },
+      {
+        "probe_id": "doi_02_fee_20usd",
+        "query": "\"10.5281/zenodo.24387072\"",
+        "google_us_indexed": false,
+        "organic_hit_count": 0,
+        "top_results": [],
+        "credits": 3
+      },
+      {
+        "probe_id": "doi_03_skills_105k",
+        "query": "\"10.5281/zenodo.24387074\"",
+        "google_us_indexed": false,
+        "organic_hit_count": 0,
+        "top_results": [],
+        "credits": 3
+      },
+      {
+        "probe_id": "doi_04_spam_list",
+        "query": "\"10.5281/zenodo.24387076\"",
+        "google_us_indexed": true,
+        "organic_hit_count": 9,
+        "top_results": [
+          {
+            "rank": 1,
+            "title": "(PDF) A Novel Encoded Particle Technology that Enables ...",
+            "url": "https://www.researchgate.net/publication/8566353_A_Novel_Encoded_Particle_Technology_that_Enables_Simultaneous_Interrogation_of_Multiple_Cell_Types"
+          },
+          {
+            "rank": 2,
+            "title": "Recent uploads",
+            "url": "http://zenodo.org/?support-engineer&uid=6D.C61"
+          },
+          {
+            "rank": 3,
+            "title": "Segmenting functional tissue units across human organs ...",
+            "url": "https://www.google.com/goto?url=CAES9wEBxCJF11sZlbYjH8WcScRKUtVqyUkamxjvKZuexS2WVnzRPLTS7CMZVC18sY_wi0Ep0CbNNpFXKlFxES-D9ar0Z3ZJyoFupve3ANoUNcfzX7bjKocdZUP3mhhWQ5cWRuX3HodzIW1rrns2pmeB57kdsoi-R993fluqoL8650jumfmI6aWkNrGBZEOkDQsL3Lnc0XEYO_hAV-CJNCGXBd_FrbHs2F5NVBsR6iG3nG5Mx3gjIl8TqRTKOgMOeK--rMOJx_kN3TpPXQtbZI_dz_6bIV62S_1uwtFGZkY7BhD42uvDNyCk0EFBOkUllI4efqV2NNvJW8Z4&gsessionid=IpANYCNpHf4E4sV2cccFalsEdXmSQfl6kdbPspCisFaXDtcd4fwe-g"
+          },
+          {
+            "rank": 4,
+            "title": "Recent uploads",
+            "url": "https://www.google.com/goto?url=CAES8QIBxCJF17ESRt-T6Zn8Srj75eLambF5jhFeMNvEaupfYbkPxoYCotnI7SDns2Edn2Ee5SchdcQwYS92IOpLzKcxl6bgAZ8t-mWdAYMijRgKfZh8kox65h7kQ65UlPS1-ktn0mSXZmTjnygcyvAqPC3kdMmSlBfhODnsN9gX9-OESzlXZLNeHHoRKM00XZkMCG9THg6bU_LzoQ8v1QN5zruhXGTX7smQpmAAOxrW1Q6ERNEmE14uEvDzalDNdQFQBrCeY0xfMcVOC5lddWImuc1PTmtzXUg-kM_qYM018UXlwjBZTcv4f9j2JvyR4WMfbOLndLzxFHBUIEjhWmO4BheoR60qd_0YxK-NbyBrHj8ItlsoV5veOdcFxVARXs0FrE9cgwv3kmQJfDHczAemfW7SvSkKwiT8OmRAUI2zzwPu9O0KMHTvbHkhIpxuds4hn57F4yWCRpnLk1oc4lDg5bYHB95XzjLtrl7ZHsMCXyXr9gM&gsessionid=IpANYCNpHf4E4sV2cccFalsEdXmSQfl6kdbPspCisFaXDtcd4fwe-g"
+          },
+          {
+            "rank": 5,
+            "title": "Recent uploads",
+            "url": "https://www.google.com/goto?url=CAES5AEBxCJF1_hl0Me5TaOD0umWz6Dz3s5wf2xi7F6hS4prkQY7gSpSO1BmTAmselxfV9FrK41gxhiZ4_MZ9hgnhYNNadhC_l7P2sNLWCKuGH2ZUc4fIlEpbYRBWseHPyrm6DBPgF5UxBMaiOR4AIRPgIyoYieSeIk5dLGktEcBhcjRsWhCp515zAedDRrodcMzrwcjMhHu9EhGDK599mcL8lhEj95b_RmVQ2yDIxvj_lTkNFWsMCpYYXsBz8LImMvxBfWT_y7hcoCY3ziEXLvhSAh01lA1xi5szpfBMWJpI07H9JIKooU&gsessionid=IpANYCNpHf4E4sV2cccFalsEdXmSQfl6kdbPspCisFaXDtcd4fwe-g"
+          }
+        ],
+        "credits": 3
+      },
+      {
+        "probe_id": "entity_cooccurrence_zenodo_jasonzhu",
+        "query": "\"Jason Zhu\" \"jasonzhu.ai\" zenodo",
+        "google_us_indexed": true,
+        "organic_hit_count": 9,
+        "top_results": [
+          {
+            "rank": 1,
+            "title": "JasonZhu.AI - AI Applications & Practice",
+            "url": "https://jasonzhu.ai/en"
+          },
+          {
+            "rank": 2,
+            "title": "Going-Global Weekly - JasonZhu.AI",
+            "url": "https://jasonzhu.ai/en/go-global/weekly"
+          },
+          {
+            "rank": 3,
+            "title": "Jason (Siyu) Zhu - Senior Staff Research Scientist at LinkedIn",
+            "url": "https://www.google.com/goto?url=CAESYQHEIkXX-9BjZ4cMtOjdrutnvTmZBZWneHdqguwtyOdTrzZL27e74vufAWEdisaCIAQMhiTnA-G-fo1Ei0Ldc_dvTvv6upOsuR5oTWvsncyvStEr6Lz8tMGcvcs7RxzJztM&gsessionid=OGZUv139rB-SaYfmYZnmEx5zHRmRl2VHeaXyyFPDnOiYdKWsAPbs4g"
+          },
+          {
+            "rank": 4,
+            "title": "Enterprise Training Share: AI Website Development from 0 to ...",
+            "url": "https://www.google.com/goto?url=CAESeAHEIkXXXRt_qwL8CLZDO1Kob-NQI-E3PAKtciX-bdLc6ZJd43fp3wlGRhPqTK0Jo9Gqs5zvz_IwzOAJbo3w7r8gzLr4wr8FIDkhaq4td_PCL9wFJXkAH1MX2Oio60KsJJ33ESYefkGU1U5BLMiw5TwWJjFZITAamw&gsessionid=OGZUv139rB-SaYfmYZnmEx5zHRmRl2VHeaXyyFPDnOiYdKWsAPbs4g"
+          },
+          {
+            "rank": 5,
+            "title": "Jason Zhu",
+            "url": "https://www.google.com/goto?url=CAESdgHEIkXX60NR8FH24b9JCaELh3DKfKyguz9Y_VJZhEyCmuRDVt11-laQ4fDKVHJC7oGO0C1ite6BJyBeWC-Ly5NeZFK8fwmgJWXd-RqNprdOGFHapN2uslZSvHwD6HivzDed-cO-dh_IqU11txAZ9w4cM7lm7vY&gsessionid=OGZUv139rB-SaYfmYZnmEx5zHRmRl2VHeaXyyFPDnOiYdKWsAPbs4g"
+          }
+        ],
+        "credits": 3
+      },
+      {
+        "probe_id": "entity_cooccurrence_github_zhuyansen",
+        "query": "site:github.com/zhuyansen \"jasonzhu.ai\"",
+        "google_us_indexed": true,
+        "organic_hit_count": 9,
+        "top_results": [
+          {
+            "rank": 1,
+            "title": "Jason Zhu",
+            "url": "https://www.linkedin.com/in/jason-zhu-3b07a5294"
+          },
+          {
+            "rank": 2,
+            "title": "Jason Zhu - Director - Digital Wealth Management & ...",
+            "url": "https://www.linkedin.com/in/jason-zhu-9457ba215"
+          },
+          {
+            "rank": 3,
+            "title": "Jason Zhu - Engineering at Applied Intuition",
+            "url": "https://www.google.com/goto?url=CAESXQHEIkXXvoeTqgSB1gFI99wz6Lps5cKP4GYW8voIJApB6u-Y37HUGKbIcyGPRPO1QyMhVh1sA3Qwzr6Gv9RPz4TILSCHslpOhBewKX7WjBZUZBbsZaY0fYtv3HsoNA&gsessionid=Ni19TLmoFUmrp-NwXSBQ_iteRTV24L16ZxrMW9fGeQSApQpjR_sFAQ"
+          },
+          {
+            "rank": 4,
+            "title": "Jason Zhu - Staff Software Engineer",
+            "url": "https://www.google.com/goto?url=CAESawHEIkXX6S16tQteE7jqhXhWlLsl5SVGbx9feSbVAVUyn-pPntWqyD_ZjkoKZu2COfePdIO97eWfA43OA3VyBQOOlSg1WcTgg4Ca2lLXXyzlZ-L2LXeBG3eq7aMN43cCdLKaTsqVJugmnPrE&gsessionid=Ni19TLmoFUmrp-NwXSBQ_iteRTV24L16ZxrMW9fGeQSApQpjR_sFAQ"
+          },
+          {
+            "rank": 5,
+            "title": "Jason AI SDR x Revenue Enablement Lab Customer story",
+            "url": "https://www.youtube.com/watch?v=3BH2V5MBQFQ"
+          }
+        ],
+        "credits": 3
+      }
+    ]
+  },
+  "layer_C_forrester_parametric_vs_rag_recall": [
+    {
+      "model": "perplexity/sonar",
+      "forrester_retrieval_layer": "Live_Web_RAG_Retrieval (Forrester Layer 2)",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "model": "gpt-4o-mini",
+      "prompt": "Who is Jason Zhu (jasonzhu.ai / GitHub zhuyansen) and what empirical benchmarks or CERN Zenodo datasets has he published on indie developer payment platforms (200,000 checkout links, $20 MoR subscription fee comparison) and AI Agent Skills security?",
+      "runs": 2,
+      "named_rate": "2/2",
+      "site_cited_rate": "2/2",
+      "zenodo_doi_rate": "0/2",
+      "samples": [
+        {
+          "run": 1,
+          "named": true,
+          "site_cited": true,
+          "zenodo_doi_cited": false,
+          "citations": [],
+          "preview": "As of my last knowledge update in October 2023, there is no widely known information about an individual named Jason Zhu associated with the specific projects or empirical benchmarks you mentioned regarding indie developer payment platforms or AI Agent Skills security. It's possible that he may be a"
+        },
+        {
+          "run": 2,
+          "named": true,
+          "site_cited": true,
+          "zenodo_doi_cited": false,
+          "citations": [],
+          "preview": "As of my last update in October 2023, I do not have specific information about an individual named Jason Zhu, including any particular contributions he may have made to indie developer payment platforms or AI Agent Skills security. It's possible that he has published research or datasets on platform"
+        }
+      ],
+      "forrester_retrieval_layer": "Parametric_Pretrain_Memory_Only (Forrester Layer 1)"
+    }
+  ]
+}
