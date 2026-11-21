@@ -90,13 +90,18 @@ export default function Community({ lang, tips = true }: { lang: string; tips?: 
           <a
             href={dp.partnerUrl}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="sponsored noopener noreferrer"
             className="inline-flex items-center rounded-lg bg-teal-700 px-3 py-1.5 font-semibold text-white hover:bg-teal-800 transition-colors"
           >
             {isZh
               ? "Dodo 专属费率注册入口（3.8%+$0.40，免国际卡/订阅费，前 $200 免手续费）→"
               : "Dodo Partner Rate Signup (3.8%+$0.40, 0% intl/sub fee, first $200 fee-free) →"}
           </a>
+          <span className="text-gray-500">
+            {isZh
+              ? "（这是 Dodo Payments 合作伙伴计划的注册链接，链接持有人可能因你注册获得回报；费率是刘小排谈下来的）"
+              : "(This is a Dodo Payments partner-program signup link; its holder may be rewarded if you sign up through it. Liu Xiaopai negotiated the rate.)"}
+          </span>
           <Link href={`/${isZh ? "zh" : "en"}/blog/${dp.blogSlug}`} className="text-blue-600 font-medium hover:underline">
             {isZh ? "阅读《Waffo + Dodo 双通道与 $20 订阅真实手续费对比》全文 →" : "Read full post: Waffo + Dodo Dual-Gateway & $20 Fee Comparison →"}
           </Link>

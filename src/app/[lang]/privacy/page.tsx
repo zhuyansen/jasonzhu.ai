@@ -41,7 +41,7 @@ export default async function PrivacyPage({
         {isZh ? "隐私政策" : "Privacy Policy"}
       </h1>
       <p className="text-sm text-gray-400 mb-8">
-        {isZh ? "最后更新：2026年4月14日" : "Last updated: April 14, 2026"}
+        {isZh ? "最后更新：2026年11月21日" : "Last updated: November 21, 2026"}
       </p>
 
       <div className="prose prose-gray max-w-none space-y-6">
@@ -62,8 +62,8 @@ export default async function PrivacyPage({
             </li>
             <li>
               {isZh
-                ? "页面浏览数据（匿名统计）"
-                : "Page view data (anonymous analytics)"}
+                ? "访问数据：用 Vercel Analytics（不用 Cookie）、Google Analytics 4 和 Microsoft Clarity 统计访问来源、浏览的页面和站内操作；Clarity 会录下页面上的点击和滚动（会话录屏），表单输入会被遮挡"
+                : "Visit data: we use Vercel Analytics (cookieless), Google Analytics 4 and Microsoft Clarity to see where visits come from, which pages are viewed and what is clicked; Clarity records clicks and scrolling on the page (session replays) with form input masked"}
             </li>
             <li>
               {isZh
@@ -79,8 +79,8 @@ export default async function PrivacyPage({
           </h2>
           <p className="text-gray-600 leading-relaxed">
             {isZh
-              ? "我们收集的信息仅用于以下目的：发送 Newsletter 邮件、改善网站内容和用户体验、统计网站访问数据。我们不会将您的个人信息出售或分享给第三方。"
-              : "We use collected information solely for: sending newsletter emails, improving website content and user experience, and analyzing website traffic. We do not sell or share your personal information with third parties."}
+              ? "我们收集的信息仅用于以下目的：发送 Newsletter 邮件、改善网站内容和用户体验、统计网站访问数据。我们不出售你的个人信息；访问数据由上面列出的统计服务（Google、Microsoft、Vercel）按各自的隐私政策处理。"
+              : "We use collected information solely for: sending newsletter emails, improving website content and user experience, and analyzing website traffic. We do not sell your personal information; visit data is processed by the analytics providers listed above (Google, Microsoft, Vercel) under their own privacy policies."}
           </p>
         </section>
 
@@ -101,8 +101,8 @@ export default async function PrivacyPage({
           </h2>
           <p className="text-gray-600 leading-relaxed">
             {isZh
-              ? "本网站使用 localStorage 存储用户偏好（如点赞状态），不使用第三方跟踪 Cookie。"
-              : "This website uses localStorage to store user preferences (such as like status) and does not use third-party tracking cookies."}
+              ? "本网站用 localStorage 存储你的偏好（如点赞状态和统计同意的选择）。Google Analytics 和 Microsoft Clarity 会写统计 Cookie，用来区分新老访客和统计会话；本站不投广告，不使用广告 Cookie。来自欧洲经济区、英国和瑞士的访客，只有点了页面底部的「同意」才会写统计 Cookie，拒绝也能正常浏览；想改选择，清除本站的浏览器数据后会再次询问。"
+              : "We use localStorage to keep your preferences (such as likes and your analytics consent choice). Google Analytics and Microsoft Clarity set analytics cookies to tell new visits from returning ones and to count sessions. We don't run ads and don't use advertising cookies. For visitors from the European Economic Area, the UK and Switzerland, analytics cookies are set only after you click Accept in the banner at the bottom of the page; declining doesn't affect browsing. To change your choice, clear this site's data in your browser and you'll be asked again."}
           </p>
         </section>
 
