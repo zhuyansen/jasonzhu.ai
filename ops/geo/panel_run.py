@@ -324,7 +324,7 @@ def cmd_run(a) -> int:
     try:
         from backlink_guard import asked as bg
     except ImportError:
-        raise SystemExit("没装 backlink-guard：pip install backlink-guard（要有 gemini_app 引擎的版本）")
+        raise SystemExit("没装 backlink-guard：pip install "backlink-guard>=0.12"")
     day = a.date or datetime.now(CST).strftime("%Y-%m-%d")
     qs = load_questions(a.sets.split(","))
     if a.limit:

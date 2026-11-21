@@ -212,9 +212,9 @@ export const SEO_SKILLS: Pick[] = [
     url: "https://agentskillshub.top/skill/AminForou/mcp-gsc/",
   },
   {
-    what: { zh: "我们的 AI 网站急诊室（100 分制 · 7 大类 · 26 项真实 HTTP/SSR/JSON-LD/llms.txt/WebMCP 检查，一键出 Cursor 修复药方）", en: "Our 100-pt, 7-category, 26-check AI Visibility & Agent Readiness scanner with one-click repair prompts" },
+    what: { zh: "开源命令行 + 网页版 AI 网站急诊室（100 分制 · 7 大类 · 26 项 HTTP/SSR/JSON-LD/llms.txt/WebMCP 检查，出一段给编程 agent 的修复提示词）。检查项和分值对齐 Hostinger 的免费检查工具，代码和文字是自己写的", en: "Open-source CLI plus a web version: 100 points, 7 categories, 26 checks, and a fix prompt for a coding agent. Checks and points follow Hostinger's free checker; code and wording are our own" },
     name: "ai-visibility-checker（26 项 AI 可读性检查）",
-    url: "https://jasonzhu.ai/zh/go-global/ai-readiness",
+    url: "https://github.com/zhuyansen/ai-visibility-checker",
   },
   {
     what: { zh: "淘汰/降级说明：SEOmator（64 项里 6 项虚假 PASS 误报）、claude-seo 等 3 款工具（死守 robots.txt 漏掉被封目录内全部故障）、子木/Wonfull（已被前 3 名零误报工具全面覆盖）", en: "Deprecated/demoted in our Nov benchmark: SEOmator (6 false PASS claims), claude-seo (blinded by robots.txt), and older checklist skills superseded by the top 3 zero-false-claim tools" },
@@ -230,11 +230,11 @@ export const SEO_TOOLS_DIRECTORY = {
 };
 
 /** 通用 SEO 水系模型 v9（2026-11-20 最新版：14 个构件 + 五层水表 + 六道放水闸门 + Jason 6 条排名理论 + v9 JOKER 6 减不确定性与 6 本海外经典定理）
- *  源自 ops/geo/seo-watersystem-model.md（v4 → v5 三个月踩坑 → v6 Google 搜索中心技术门与出水口 → v7 Ahrefs 汇水区与 AI 404 回收 → v8 哥飞教程六道节奏闸门 → v9 JOKER 降低机器 6 种不确定性与海外 6 本经典 + geo_engine.py v9.0 24 个子命令） */
+ *  源自 ops/geo/seo-watersystem-model.md（v4 → v5 三个月踩坑 → v6 Google 搜索中心技术门与出水口 → v7 Ahrefs 汇水区与 AI 404 回收 → v8 哥飞教程六道节奏闸门 → v9 JOKER 降低机器 6 种不确定性与海外 6 本经典 + geo_engine.py v9.0，2026-11-21 起 18 个子命令） */
 export const SEO_WATER_SYSTEM_V8 = {
   lead: {
-    zh: "把 SEO 当成一套水系来搭：先有源头才有水可流，力气按「最不 AI（人主导）」排序，不是按「最省事（批量造页）」排序。从 7 月的 v4 演进到 11 月的 v9，吸收了三个月实战踩坑（v5）、Google 搜索中心技术门（v6）、Ahrefs 需求汇水区（v7）、哥飞六道节奏闸门（v8）以及 JOKER「降低机器 6 种不确定性」与海外 6 本前沿经典（v9），共 14 个构件、5 层水表、6 道闸门与 24 个自动化 GEO 体检命令：",
-    en: "Build SEO as a water system: you need inflows before pipes can carry water, and effort is ordered by what is least automatable (human-led authority), not what is easiest (spinning up pages). Evolved from v4 (July) to v9 (November 2026) across 14 components, 5 layered water meters, 6 release gates, and 24 automated GEO engine commands:",
+    zh: "把 SEO 当成一套水系来搭：先有源头才有水可流，力气按「最不 AI（人主导）」排序，不是按「最省事（批量造页）」排序。从 7 月的 v4 演进到 11 月的 v9，吸收了三个月实战踩坑（v5）、Google 搜索中心技术门（v6）、Ahrefs 需求汇水区（v7）、哥飞六道节奏闸门（v8）以及 JOKER「降低机器 6 种不确定性」与海外 6 本前沿经典（v9），共 14 个构件、5 层水表、6 道闸门与 18 个自动化 GEO 体检命令：",
+    en: "Build SEO as a water system: you need inflows before pipes can carry water, and effort is ordered by what is least automatable (human-led authority), not what is easiest (spinning up pages). Evolved from v4 (July) to v9 (November 2026) across 14 components, 5 layered water meters, 6 release gates, and 18 automated GEO engine commands:",
   },
   components: [
     {
@@ -254,8 +254,8 @@ export const SEO_WATER_SYSTEM_V8 = {
       name: { zh: "进水口 · 传统外链权威与 AI 爬虫放行检查", en: "Inflow 1a · Link Authority & AI Crawler Access" },
       who: { zh: "🧑 人主导", en: "🧑 Human-led" },
       rule: {
-        zh: "外链分两层：权重层 = 自然报道引用 + 可引用数据集/学术凭证（Zenodo DOI 一鱼四吃）；发现层 = 免费目录/导航站（只管触发收录和 AI 语料，不传权重）。10-06 起停止购买 dofollow 外链；v8 闸门：收录稳定增长后才上外链。v9 新增（JOKER + Walker Sands）：① 外链从 Exact Match 锚文本升级为跨 6 类异构平台的 `Brand + Context + Relationship` 外部证据网；② 投 PR/外链前先查目标站有没有屏蔽 AI 爬虫：`geo_engine.py ai-domain-impact --target <domain>` 是我们自己写的快速检查，只看 robots.txt、页面能否抓到和基本元数据，不是 Walker Sands 的指数。Walker Sands 公布的例子是 TechTarget 82 分、Forbes 55 分，原因之一是 Forbes 不让 AI 爬虫抓取很多页面。",
-        en: "Two tiers: Weight tier = earned media + CERN Zenodo DOI datasets; Discovery tier = directories. v9 (JOKER + Walker Sands): (1) replace exact-match anchors with `Brand + Context + Relationship` proof across 6 platform types; (2) before pitching, check whether the target blocks AI crawlers: `geo_engine.py ai-domain-impact --target <domain>` is our own quick check of robots.txt, fetchability and basic metadata, not the Walker Sands index. Walker Sands' published example is TechTarget 82 vs Forbes 55, partly because Forbes keeps LLM crawlers off many of its URLs.",
+        zh: "外链分两层：权重层 = 自然报道引用 + 可引用数据集/学术凭证（Zenodo DOI 一鱼四吃）；发现层 = 免费目录/导航站（只管触发收录和 AI 语料，不传权重）。10-06 起停止购买 dofollow 外链；v8 闸门：收录稳定增长后才上外链。v9 新增（JOKER + Walker Sands）：① 外链从 Exact Match 锚文本升级为跨 6 类异构平台的 `Brand + Context + Relationship` 外部证据网；② 投 PR/外链前先查目标站有没有屏蔽 AI 爬虫：`backlink-guard ai-access <domain>` 是我们自己写的免费检查（robots.txt 按训练、搜索、用户三类 AI 爬虫分开看，再看能不能抓到、正文在不在 HTML 里），不是 Walker Sands 的指数。Walker Sands 公布的例子是 TechTarget 82 分、Forbes 55 分，原因之一是 Forbes 不让 AI 爬虫抓取很多页面。",
+        en: "Two tiers: Weight tier = earned media + CERN Zenodo DOI datasets; Discovery tier = directories. v9 (JOKER + Walker Sands): (1) replace exact-match anchors with `Brand + Context + Relationship` proof across 6 platform types; (2) before pitching, check whether the target blocks AI crawlers: `backlink-guard ai-access <domain>` is our own free check (robots.txt for training, search and user AI crawlers, whether the page can be fetched, whether the text is in the HTML), not the Walker Sands index. Walker Sands' published example is TechTarget 82 vs Forbes 55, partly because Forbes keeps LLM crawlers off many of its URLs.",
       },
       meter: { zh: "高权威引荐域数 + 靶站是否放行 AI 爬虫", en: "Referring domains + whether the target allows AI crawlers" },
     },
@@ -436,13 +436,13 @@ export const SEO_WATER_SYSTEM_V8 = {
       "① 实体定义与跨页 @id 互联（构件 ②）：固定 4 元组实体身份证（Official Name / Primary Category / Core Topics / Target Audience），全站 JSON-LD 用唯一 `@id` 跨页互联（Volpini 实测提升 +30% 检索准确率，RLM-on-KG 比 GraphRAG 高 +71%；命令：`geo_engine.py connected-kg`）。",
       "② 站内主题地图与实体核心红线（构件 ③/⑤）：Topical Map 用于扩大 Query Fan-out 检索接触面，但没有围绕 Entity Core 的泛流量文章发得越多死得越快（新页距核心实体 ≤2 跳）。",
       "③ 段落级检索候选与多模态路由（构件 ⑩/①b）：战略放大到 Entity，执行缩小到每个 `## H2` 独立构成 Retrieval Candidate（`geo_engine.py section-candidates`）；配合对比表与前 30 秒亮结论的 YouTube 视频（被引率 200x、占 ~30% AIO）。",
-      "④ 站外主题网络、AI 域名影响指数与语义簇共识（构件 ①a/②/⑨）：把官网 Self Claim 变成 6 类异构平台的 `Brand + Context + Relationship` 外部证据；投外链前先查目标站有没有屏蔽 AI 爬虫（Walker Sands 的指数里 TechTarget 82、Forbes 55；`geo_engine.py ai-domain-impact` 是我们自己的快速检查）；全网对品牌的描述要落在同一语义簇（站外目前靠人工核对，`geo_engine.py brand-consensus` 只检查本站核心页面）。",
+      "④ 站外主题网络、AI 域名影响指数与语义簇共识（构件 ①a/②/⑨）：把官网 Self Claim 变成 6 类异构平台的 `Brand + Context + Relationship` 外部证据；投外链前先查目标站有没有屏蔽 AI 爬虫（Walker Sands 的指数里 TechTarget 82、Forbes 55；`backlink-guard ai-access` 是我们自己的免费检查）；全网对品牌的描述要落在同一语义簇（站外目前靠人工核对，`geo_engine.py brand-consensus` 只检查本站核心页面）。",
     ],
     en: [
       "① Entity Definition & Connected @id Graph (Component ②): Lock a 4-tuple Entity ID Card and connect JSON-LD across pages via shared `@id` URIs (+30% retrieval accuracy, RLM-on-KG +71% over GraphRAG; audit via `geo_engine.py connected-kg`).",
       "② Topical Map & Entity Core Boundary (Component ③/⑤): Expand Query Fan-out Retrieval Surface without drifting off-core — publishing 3,000 generic articles unrelated to your Entity Core kills a site faster.",
       "③ Section-Level Retrieval Candidates & Modality Routing (Component ⑩/①b): Strategy scales up to the Entity while execution shrinks down to each `## H2` as an independent Retrieval Candidate (`geo_engine.py section-candidates`), paired with tables and first-30s YouTube transcripts (200x citation rate, ~30% AIO share).",
-      "④ External Topical Network, AI Domain Impact & Semantic Consensus (Component ①a/②/⑨): Turn on-site Self Claims into cross-platform `Brand + Context + Relationship` External Evidence; check whether a publisher blocks AI crawlers before pitching (Walker Sands scores TechTarget 82 vs Forbes 55; `geo_engine.py ai-domain-impact` is our own quick check); keep off-site descriptions in one semantic cluster (checked by hand off-site; `geo_engine.py brand-consensus` only covers this site's core pages).",
+      "④ External Topical Network, AI Domain Impact & Semantic Consensus (Component ①a/②/⑨): Turn on-site Self Claims into cross-platform `Brand + Context + Relationship` External Evidence; check whether a publisher blocks AI crawlers before pitching (Walker Sands scores TechTarget 82 vs Forbes 55; `backlink-guard ai-access` is our own free check); keep off-site descriptions in one semantic cluster (checked by hand off-site; `geo_engine.py brand-consensus` only covers this site's core pages).",
     ],
   },
 };
@@ -598,12 +598,12 @@ export const GEO_NEW_SITE = {
   },
 };
 
-/** 增长：SEO 关键词与哥飞 AI 工具箱（用户 10-17 给的分组名「seo关键词」+ 11-20 补入哥飞开放 API/MCP 与工具箱 + 自研 new-term-radar v0.6.1） */
+/** 增长：SEO 关键词与哥飞 AI 工具箱（用户 10-17 给的分组名「seo关键词」+ 11-20 补入哥飞开放 API/MCP 与工具箱 + 自研 new-term-radar v0.7.0） */
 export const KEYWORD_TOOLS: SharedPick[] = [
   {
     what: {
-      zh: "自研 10 信号新词雷达 v0.6.1（比 Google Trends 早 1–3 周抓 X/HF/GitHub 爆发/新注册即排名站/8 大收款平台新卖家/TrustMRR 收入/Reddit 求助，14 天后自动复核信号命中率）",
-      en: "Our 10-signal new-term radar v0.6.1 (catches X, HF, GitHub breakouts, newly ranked domains, 8-gateway new sellers & TrustMRR revenue 1–3 weeks before Google Trends, with 14-day self-review)",
+      zh: "自研 10 信号新词雷达 v0.7.0（比 Google Trends 早 1–3 周抓 X/HF/GitHub 爆发/新注册即排名站/8 大收款平台新卖家/TrustMRR 收入/Reddit 求助，14 天后自动复核信号命中率）",
+      en: "Our 10-signal new-term radar v0.7.0 (catches X, HF, GitHub breakouts, newly ranked domains, 8-gateway new sellers & TrustMRR revenue 1–3 weeks before Google Trends, with 14-day self-review)",
     },
     name: "new-term-radar（自研开源 CLI / MCP / Skill）",
     url: "https://github.com/zhuyansen/new-term-radar",
@@ -717,8 +717,8 @@ export const GO_GLOBAL_ARSENAL_2026 = {
     {
       stage: { zh: "① 选品与需求雷达", en: "① Demand & Niche Radar" },
       keep: {
-        zh: "new-term-radar v0.6.1（自研 10 信号：X / HF / GitHub 爆发 / 新站 whois / 8 大收款平台新卖家 / TrustMRR 收入 / Reddit 求助 + 14 天 Trends 自动复核）+ App Store 评论 RSS / Sensor Tower 下拉 + PaywallPro / PaywallScreens（1.1 万+ 付费墙）",
-        en: "new-term-radar v0.6.1 (10 signals + 14-day self-review) + App Store Reviews RSS / Sensor Tower dropdown + PaywallPro / PaywallScreens (11K+ paywalls)",
+        zh: "new-term-radar v0.7.0（自研 10 信号：X / HF / GitHub 爆发 / 新站 whois / 8 大收款平台新卖家 / TrustMRR 收入 / Reddit 求助 + 14 天 Trends 自动复核）+ App Store 评论 RSS / Sensor Tower 下拉 + PaywallPro / PaywallScreens（1.1 万+ 付费墙）",
+        en: "new-term-radar v0.7.0 (10 signals + 14-day self-review) + App Store Reviews RSS / Sensor Tower dropdown + PaywallPro / PaywallScreens (11K+ paywalls)",
       },
       add: {
         zh: "哥飞需求挖掘机 & KGR 工具 + GoAnyAPI 广告透明中心新广告主监控（抓「刚决定在某词上投钱」的对手）+ Chrome / YouTube 教程评论痛点抓取（pains 命令）",
@@ -777,12 +777,12 @@ export const GO_GLOBAL_ARSENAL_2026 = {
     {
       stage: { zh: "⑤ 外链、权威与 L1–L5 GEO 闭环武器库 v9.0", en: "⑤ Backlinks, Authority & L1–L5 GEO Arsenal v9.0" },
       keep: {
-        zh: "backlink-guard v0.11.2（10 个 MCP/CLI 工具：find 按访客排外链页、vet 防毒、audit/lost 找带外链的 404 做 301、competitors --early 扒竞品头 90 天发射渠道、cited/asked 测 5 大 AI 引擎引用）+ 学术三连（CERN Zenodo DOI + HF + Kaggle 一鱼四吃）+ GitHub 每日自动更新榜单仓库矩阵",
-        en: "backlink-guard v0.11.2 (10 CLI/MCP tools: find, vet, audit, lost 404 recovery, competitors --early, cited/asked 5-engine AI probe) + CERN Zenodo DOI / HF / Kaggle + daily GitHub awesome repos",
+        zh: "backlink-guard v0.12.0（12 个 MCP/CLI 命令：find 按访客排外链页、vet 防毒、ai-access 查 AI 爬虫能不能读到、audit/lost 找带外链的 404 做 301、competitors --early 扒竞品头 90 天发射渠道、cited/asked 测 5 大 AI 引擎引用）+ 学术三连（CERN Zenodo DOI + HF + Kaggle 一鱼四吃）+ GitHub 每日自动更新榜单仓库矩阵",
+        en: "backlink-guard v0.12.0 (12 CLI/MCP commands: find, vet, ai-access, audit, lost 404 recovery, competitors --early, cited/asked 5-engine AI probe) + CERN Zenodo DOI / HF / Kaggle + daily GitHub awesome repos",
       },
       add: {
-        zh: "geo_engine.py v9.0 全栈 24 个子命令（含 v9 新增 4 个命令，都是粗查：`section-candidates` 看每个 H2 首段的长度和有没有数字或具体名称、`connected-kg` 看几个页面的 JSON-LD 是否共用同一个 `@id`、`ai-domain-impact` 看目标站的 robots.txt 是否放行 AI 爬虫及页面能否抓到（自己的检查，不是 Walker Sands 的指数）、`brand-consensus` 看本站核心页面是否覆盖同一组主题词；配合原有的 `sro-and-recency` / `run-live-panel` / `entity-molecule` / `serp-similarity` / `publisher-finder` / `proprietary-assets`）+ `/api/md/...` 零噪 Markdown 端点 + `Dataset` JSON-LD + `/ai-info/` 机器可读签字事实页",
-        en: "geo_engine.py v9.0 24-command suite (including 4 new v9 commands, all rough checks: section-candidates looks at each H2's first paragraph length and whether it has a number or named entity; connected-kg checks whether pages share a JSON-LD `@id`; ai-domain-impact checks a target's robots.txt for AI crawlers and whether the page can be fetched (our own check, not the Walker Sands index); brand-consensus checks that this site's core pages cover the same topic terms; plus sro-and-recency, run-live-panel, entity-molecule, serp-similarity, publisher-finder, proprietary-assets) + /api/md/... raw Markdown endpoint + Dataset JSON-LD + /ai-info/ fact page",
+        zh: "geo_engine.py v9.0 的 18 个子命令（含 v9 新增 3 个命令，都是粗查：`section-candidates` 看每个 H2 首段的长度和有没有数字或具体名称、`connected-kg` 看几个页面的 JSON-LD 是否共用同一个 `@id`、`brand-consensus` 看本站核心页面是否覆盖同一组主题词；配合原有的 `sro-and-recency` / `entity-molecule` / `serp-similarity` / `publisher-finder` / `proprietary-assets`）+ 每周 GEO 引用面板（`ops/geo/panel_run.py`，问 AI 引用了谁统一用它）+ `backlink-guard ai-access`（外站是否放行 AI 爬虫）+ `/api/md/...` 零噪 Markdown 端点 + `Dataset` JSON-LD + `/ai-info/` 机器可读签字事实页",
+        en: "geo_engine.py v9.0's 18 commands (including 3 new v9 commands, all rough checks: section-candidates looks at each H2's first paragraph length and whether it has a number or named entity; connected-kg checks whether pages share a JSON-LD `@id`; brand-consensus checks that this site's core pages cover the same topic terms; plus sro-and-recency, entity-molecule, serp-similarity, publisher-finder, proprietary-assets) + the weekly GEO citation panel (ops/geo/panel_run.py, the one place we ask AI assistants who they cite) + `backlink-guard ai-access` (whether a site lets AI crawlers in) + /api/md/... raw Markdown endpoint + Dataset JSON-LD + /ai-info/ fact page",
       },
       drop: {
         zh: "❌ 10-06 起全面停止购买付费客座与付费目录 dofollow 外链；❌ 淘汰不查 robots.txt 盲投传统高 DR 门户（Walker Sands 的指数里 Forbes 55 分、TechTarget 82 分）；❌ 永久封存 Stripe Climate 捐赠外链（恒为 `ugc nofollow`）与 HARO；⚠️ `llms.txt` 降为可选",
@@ -1353,8 +1353,8 @@ export const SEO_SCHOOLS_MAP: {
         en: "Solves why LLMs trust and recommend one brand over another. Duane Forrester splits AI visibility into Parametric Memory and Live Web RAG; David Quaid and Joker note that your own site is merely a 'Self Claim' while cross-platform mentions act as 'External Evidence', shifting link signals from exact-match anchors to `Brand + Context + Relationship`. Michal Rochwerger proved Ahrefs DR has a `-0.05` correlation with AI citations (Publisher-First targeting); Walker Sands's `AI Domain Impact Index (0–100)` explains why high-DR outlets that block LLM crawlers (Forbes, 55) lose to AI-accessible vertical publishers (TechTarget, 82); and Joker highlights that Brand Consensus requires descriptions across platforms to fall into the same Semantic Cluster rather than robotic copy-pasting.",
       },
       borrow: {
-        zh: "1. 投外链或 PR 前先跑 `geo_engine.py publisher-finder` 与 `geo_engine.py ai-domain-impact --target <domain>`，确认目标站没有在 `robots.txt` 屏蔽 GPTBot/ClaudeBot/PerplexityBot；2. 在行业媒体、测评目录、Reddit/社区、对比页、社交讨论与知识平台 6 类异构信源占满席位，用 `Brand + Context + Relationship` 自然共现替代生硬锚文本；3. 逐个平台核对对品牌的描述是否落在同一语义簇、有没有互相冲突的定位词（目前靠人工；`geo_engine.py brand-consensus` 只检查本站核心页面）。",
-        en: "1. Before pitching PR or links, run `geo_engine.py publisher-finder` and `geo_engine.py ai-domain-impact --target <domain>` to verify the publisher allows GPTBot, ClaudeBot, and PerplexityBot; 2. Build presence across 6 heterogeneous platform types using `Brand + Context + Relationship` co-occurrence; 3. Check each platform's description of the brand for one semantic cluster and no conflicting positioning (manual for now; `geo_engine.py brand-consensus` only covers this site's core pages).",
+        zh: "1. 投外链或 PR 前先跑 `geo_engine.py publisher-finder` 与 `backlink-guard ai-access <domain>`，确认目标站没有在 `robots.txt` 屏蔽 GPTBot/ClaudeBot/PerplexityBot；2. 在行业媒体、测评目录、Reddit/社区、对比页、社交讨论与知识平台 6 类异构信源占满席位，用 `Brand + Context + Relationship` 自然共现替代生硬锚文本；3. 逐个平台核对对品牌的描述是否落在同一语义簇、有没有互相冲突的定位词（目前靠人工；`geo_engine.py brand-consensus` 只检查本站核心页面）。",
+        en: "1. Before pitching PR or links, run `geo_engine.py publisher-finder` and `backlink-guard ai-access <domain>` to verify the publisher allows GPTBot, ClaudeBot, and PerplexityBot; 2. Build presence across 6 heterogeneous platform types using `Brand + Context + Relationship` co-occurrence; 3. Check each platform's description of the brand for one semantic cluster and no conflicting positioning (manual for now; `geo_engine.py brand-consensus` only covers this site's core pages).",
       },
       caveat: {
         zh: "去伪存真：Quaid 团队测试过的「40 天批量建 65 个 EMD 精确匹配域名卫星站占座」属于灰帽打法，Edward Sturm 当场提醒 Google 能通过注册商、GSC 与主机指纹识别站群连坐。用 Zenodo、GitHub、PyPI、YouTube 等天然高权第三方平台占座既安全又持久。",

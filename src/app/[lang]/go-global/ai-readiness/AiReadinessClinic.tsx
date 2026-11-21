@@ -1863,8 +1863,8 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
           </h2>
           <p className="text-sm text-gray-600 leading-relaxed">
             {isZh
-              ? "越靠前的关卡分值越重（第 1 关门卫 20 分 + 第 2 关无 JS 可读 18 分 + 第 3 关地图指路 16 分 = 基础生命线 54 分），越靠后的关卡决定了你能否从 75 分普通站晋级为 95+ 分的 AI Agent 原生标杆站："
-              : "Early levels carry the highest weight (Crawl 20 + Readability 18 + Findability 16 = 54 baseline pts), while Levels 6 & 7 elevate you from a 75-pt site to a 95+ Agent-Ready benchmark:"}
+              ? "越靠前的关卡分值越重（第 1 关门卫 20 分 + 第 2 关无 JS 可读 18 分 + 第 3 关地图指路 16 分 = 基础生命线 54 分），越靠后的关卡决定了你能否从 75 分普通站晋级为 95+ 分的 AI Agent 原生标杆站。7 类 26 项和分值对齐 Hostinger 的免费 AI Visibility Checker，检测代码和文字是我们自己写的，和 Hostinger 无关；命令行版开源在 GitHub（zhuyansen/ai-visibility-checker）："
+              : "Early levels carry the highest weight (Crawl 20 + Readability 18 + Findability 16 = 54 baseline pts), while Levels 6 & 7 elevate you from a 75-pt site to a 95+ Agent-Ready benchmark. The 7 categories, 26 checks and their points follow Hostinger's free AI Visibility Checker; the code and wording are our own, and we are not affiliated with Hostinger. The CLI version is open source on GitHub (zhuyansen/ai-visibility-checker):"}
           </p>
         </div>
 

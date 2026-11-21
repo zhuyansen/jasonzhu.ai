@@ -1,7 +1,8 @@
 /**
  * AI 网站急诊室 & 第 1 课 7 关闯关引擎（100 分制 / 7 大关卡 / 26 项真实 HTTP 检测）
  *
- * 1:1 复刻并升级自 Hostinger AI Visibility Checker 评分体系：
+ * 7 类 26 项和各项分值对齐 Hostinger 的免费 AI Visibility Checker（分数可以和它对着看）；
+ * 检测代码和文字是自己写的，和 Hostinger 无关。命令行版：https://github.com/zhuyansen/ai-visibility-checker
  * - 第 1 关：门卫放行 Crawl Permission（20 分）
  * - 第 2 关：素颜可读 Readability（18 分）
  * - 第 3 关：路牌指路 Findability（16 分）
@@ -1535,7 +1536,7 @@ export const BENCHMARK_HALL_OF_FAME: BenchmarkEntry[] = [
   },
   {
     domain: "hostinger.com",
-    tag: { zh: "这套评分标准的发明者", en: "Creator of the 100-pt Rubric" },
+    tag: { zh: "检查项和分值的出处", en: "Where the checks and points come from" },
     score: 96,
     grade: "A",
     highlight: {

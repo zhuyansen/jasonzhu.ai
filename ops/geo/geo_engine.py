@@ -1,19 +1,21 @@
 #!/usr/bin/env python3
 """
-GEO Closed-Loop Engine v9.0 (Water System Model v9 · L1 -> L2 -> L3 -> L4 -> L5 · 24 Subcommands)
-Integrates 100% open-source APIs + Suski 50M LLM Answers + JOKER 6 Uncertainty Reductions + 6 Frontier Books.
+GEO Closed-Loop Engine v9.0 (Water System Model v9 · L1 -> L2 -> L3 -> L4 -> L5 · 18 Subcommands)
 
 Modules:
-  1. [L1 Crawl & Pretrain]    Common Crawl CDX API + Three Gates + 16-Planted-Bug Guards (`three-gates`, `audit-16-guards`)
-  2. [L2 Entity & Ontology]   Wikidata/OpenAlex KG + Connected @id Graph (+30%) + 4-Tuple Brand Consensus (`connected-kg`, `brand-consensus`, `entity-molecule`)
+  1. [L1 Crawl & Pretrain]    Common Crawl CDX API + 16-Planted-Bug Guards (`audit-16-guards`, `check-gigalinks-index`)
+  2. [L2 Entity & Ontology]   Wikidata/OpenAlex KG + cross-page JSON-LD @id + topic terms on core pages (`connected-kg`, `brand-consensus`, `entity-molecule`)
   3. [L3 Fan-out & Prompts]   HF WildChat-1M + Google Suggest Fan-out + SERP Similarity (`fanout`, `serp-similarity`, `goany-trends`)
-  4. [L4 Chunking & Section]  First-50-Words BLUF + H2 Retrieval Candidates + SRO & 90d Recency + 4-7 Proprietary Assets (`section-candidates`, `sro-and-recency`, `proprietary-assets`)
-  5. [L5 Off-Site & Measure]  Publisher-First + AI Domain Impact Index (0-100) + 20-Prompt Live Panel (`publisher-finder`, `ai-domain-impact`, `run-live-panel`, `panel-gap`)
+  4. [L4 Chunking & Section]  First-50-Words BLUF + H2 first paragraphs + SRO & 90d Recency + Proprietary Assets (`section-candidates`, `sro-and-recency`, `proprietary-assets`)
+  5. [L5 Off-Site]            Publisher-First (`publisher-finder`, `check-top10-and-aio`)
+
+Removed on 2026-11-21 (one implementation each):
+  three-gates, ai-domain-impact                    -> `backlink-guard ai-access <domain>`
+  run-live-panel, aisa-probe, panel-gap, suski-matrix -> `ops/geo/panel_run.py` (weekly citation panel, ops/geo/PANEL.md)
 
 Usage:
   python3 ops/geo/geo_engine.py section-candidates
   python3 ops/geo/geo_engine.py connected-kg
-  python3 ops/geo/geo_engine.py ai-domain-impact --target dev.to
   python3 ops/geo/geo_engine.py brand-consensus
 """
 
@@ -671,65 +673,6 @@ def run_aisa_multi_engine_probe(prompt: str, model: str = "gpt-4o-mini", runs: i
     }
 
 
-def check_three_gates_edge_bots(url: str = "https://jasonzhu.ai/en/blog/indie-payments-report-2026") -> dict[str, Any]:
-    """L1 Stephen Burns (Common Crawl) 'Three Gates' Audit:
-    Gate 1: Permission (robots.txt)
-    Gate 2: Edge WAF / Cloudflare Bot Fight Mode (simulate real CCBot, GPTBot, ClaudeBot, PerplexityBot User-Agents)
-    Gate 3: Server-Side Rendering (SSR HTML contains core text, Schema.org JSON-LD, and CERN Zenodo DOI without JS execution)
-    """
-    bots = {
-        "CCBot": "CCBot/2.0 (https://commoncrawl.org/faq/)",
-        "GPTBot": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; GPTBot/1.0; +https://openai.com/gptbot)",
-        "OAI-SearchBot": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)",
-        "ClaudeBot": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; ClaudeBot/1.0; +claudebot@anthropic.com)",
-        "PerplexityBot": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; PerplexityBot/1.0; +https://perplexity.ai/perplexitybot)",
-        "Google-Extended": "Mozilla/5.0 (compatible; Google-Extended/1.0; +http://www.google.com/bot.html)",
-    }
-
-    parsed = urllib.parse.urlparse(url)
-    base_origin = f"{parsed.scheme}://{parsed.netloc}"
-    try:
-        robots_txt = http_get_text(f"{base_origin}/robots.txt", timeout=10.0)
-        robots_ok = len(robots_txt) > 0
-    except Exception:
-        robots_ok = False
-
-    bot_results = []
-    all_passed = True
-    for bot_name, ua in bots.items():
-        req = urllib.request.Request(url, headers={"User-Agent": ua, "Accept": "text/html,application/xhtml+xml"})
-        try:
-            with urllib.request.urlopen(req, timeout=12.0, context=SSL_CTX) as resp:
-                body = resp.read().decode("utf-8", errors="replace")
-                status = resp.status
-                has_json_ld = "application/ld+json" in body
-                has_doi = "10.5281/zenodo." in body
-                has_h1 = "<h1" in body.lower()
-                cf_blocked = "just a moment..." in body.lower() or "cf-browser-verification" in body.lower()
-                passed = (status == 200) and has_h1 and not cf_blocked
-                if not passed:
-                    all_passed = False
-                bot_results.append(
-                    {
-                        "bot": bot_name,
-                        "http_status": status,
-                        "gate2_edge_waf_passed": status == 200 and not cf_blocked,
-                        "gate3_ssr_h1_present": has_h1,
-                        "gate3_json_ld_present": has_json_ld,
-                        "gate3_zenodo_doi_present": has_doi,
-                        "html_bytes": len(body),
-                    }
-                )
-        except Exception as exc:
-            all_passed = False
-            bot_results.append({"bot": bot_name, "gate2_edge_waf_passed": False, "error": str(exc)})
-
-    return {
-        "target_url": url,
-        "gate1_robots_txt_accessible": robots_ok,
-        "all_bots_passed_three_gates": all_passed,
-        "bot_simulations": bot_results,
-    }
 
 
 def check_serp_similarity(query_a: str, query_b: str, gl: str = "US") -> dict[str, Any]:
@@ -840,62 +783,6 @@ def check_cross_site_fact_consistency() -> dict[str, Any]:
     }
 
 
-def build_suski_panel_matrix() -> dict[str, Any]:
-    """L5 Michał Suski 50M + Marc Moeller Per-Engine Visibility Matrix:
-    - Never merges engines into a single composite score (ChatGPT vs Google AIO correlation = 0.32).
-    - Separates PAGE CITED (`site_cited`) from BRAND NAMED (`named`).
-    - Reports per-engine Cited rate, Named rate, Attribution Gap, and Marc Moeller Per-Engine Visibility Index.
-    """
-    panel_dir = GEO_DIR / "panel"
-    panel_files = sorted(panel_dir.glob("results-*.json")) + sorted(panel_dir.glob("baseline-*.json"))
-    if not panel_files:
-        return {"error": "No panel JSON files found in ops/geo/panel"}
-
-    latest = panel_files[-1]
-    data = json.loads(latest.read_text(encoding="utf-8"))
-    results = data.get("results", [])
-
-    engines: dict[str, dict[str, int]] = {}
-    per_question_matrix = []
-
-    for r in results:
-        eng = r.get("engine", "unknown")
-        st = engines.setdefault(eng, {"total": 0, "page_cited": 0, "brand_named": 0, "cited_not_named_gap": 0, "both": 0})
-        st["total"] += 1
-        cited = bool(r.get("site_cited"))
-        named = bool(r.get("named"))
-        if cited:
-            st["page_cited"] += 1
-        if named:
-            st["brand_named"] += 1
-        if cited and not named:
-            st["cited_not_named_gap"] += 1
-        if cited and named:
-            st["both"] += 1
-
-    engine_rows = []
-    for eng, st in engines.items():
-        tot = max(st["total"], 1)
-        cited_pct = round(st["page_cited"] / tot * 100, 1)
-        named_pct = round(st["brand_named"] / tot * 100, 1)
-        # Marc Moeller per-engine Visibility Index adaptation (50% Brand Named + 35% Page Cited + 15% Both Cited & Named)
-        moeller_per_engine_vi = round(0.50 * named_pct + 0.35 * cited_pct + 0.15 * (st["both"] / tot * 100), 1)
-        engine_rows.append(
-            {
-                "engine": eng,
-                "questions_evaluated": st["total"],
-                "page_cited_count": f"{st['page_cited']}/{st['total']} ({cited_pct}%)",
-                "brand_named_count": f"{st['brand_named']}/{st['total']} ({named_pct}%)",
-                "cited_but_not_named_leakage": st["cited_not_named_gap"],
-                "moeller_per_engine_visibility_index": moeller_per_engine_vi,
-            }
-        )
-
-    return {
-        "panel_file": str(latest),
-        "suski_rule_5_warning": "Engines are strictly separated (ChatGPT vs Google AIO correlation is only 0.32; do NOT average across engines).",
-        "per_engine_split_table": engine_rows,
-    }
 
 
 def publisher_first_finder(queries: list[str], gl: str = "US") -> dict[str, Any]:
@@ -1220,81 +1107,6 @@ def audit_sro_recency_and_listicle_guard(md_path: Path) -> dict[str, Any]:
     }
 
 
-def run_live_panel(limit: int = 5, models: list[str] | None = None, save: bool = True) -> dict[str, Any]:
-    """L5 Automated Multi-Engine Live Panel Probe (via Aisa.one + GoAnyAPI):
-    Evaluates questions from ops/geo/questions.json across distinct LLM engines (Suski Rule 5: never average across engines),
-    recording per-engine Page Cited (URL present) vs Brand Named (Jason Zhu / jasonzhu.ai present) + Google US Top-10 rank.
-    """
-    from datetime import datetime, timezone
-
-    if not QUESTIONS_FILE.exists():
-        return {"error": f"{QUESTIONS_FILE} not found"}
-    q_cfg = json.loads(QUESTIONS_FILE.read_text(encoding="utf-8"))
-    questions = (q_cfg.get("questions") or [])[:limit]
-    engine_models = models or ["perplexity/sonar", "gpt-4o-mini"]
-    ts = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-    date_tag = datetime.now(timezone.utc).strftime("%Y-%m-%d-%H%M")
-
-    evaluated = []
-    per_engine_summary: dict[str, dict[str, int]] = {
-        m: {"evaluated": 0, "page_cited": 0, "brand_named": 0} for m in engine_models
-    }
-
-    for q in questions:
-        qid = q.get("id")
-        prompt_text = q.get("question_en") or q.get("question") or ""
-        target_url = q.get("target_url") or ""
-
-        # Check Google US Top-10 SERP rank via GoAnyAPI
-        google_rank = None
-        try:
-            d, _ = _goany_call("serp", q=prompt_text, gl="US", hl="en")
-            organic = (d.get("result") or {}).get("organic") or []
-            for idx, item in enumerate(organic[:10]):
-                if "jasonzhu.ai" in (item.get("link") or "").lower():
-                    google_rank = idx + 1
-                    break
-        except Exception:
-            pass
-
-        engine_runs = {}
-        for m in engine_models:
-            res = run_aisa_multi_engine_probe(prompt_text, model=m, runs=1)
-            cited = res.get("page_cited_rate", "0/1").startswith("1/")
-            named = res.get("brand_named_rate", "0/1").startswith("1/")
-            per_engine_summary[m]["evaluated"] += 1
-            if cited:
-                per_engine_summary[m]["page_cited"] += 1
-            if named:
-                per_engine_summary[m]["brand_named"] += 1
-            engine_runs[m] = {
-                "page_cited": cited,
-                "brand_named": named,
-                "details": res.get("runs_detail", []),
-            }
-
-        evaluated.append(
-            {
-                "id": qid,
-                "prompt": prompt_text,
-                "target_url": target_url,
-                "google_us_top10_rank": google_rank,
-                "engines": engine_runs,
-            }
-        )
-
-    out = {
-        "timestamp_utc": ts,
-        "questions_evaluated_count": len(evaluated),
-        "per_engine_summary": per_engine_summary,
-        "results": evaluated,
-    }
-    if save:
-        snap = GEO_DIR / "panel" / f"live-panel-{date_tag}.json"
-        snap.parent.mkdir(parents=True, exist_ok=True)
-        snap.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
-        out["saved_snapshot"] = str(snap)
-    return out
 
 
 def audit_16_planted_guards(url: str) -> dict[str, Any]:
@@ -1502,69 +1314,6 @@ def audit_connected_entity_graph(urls: list[str]) -> dict[str, Any]:
     }
 
 
-def check_ai_domain_impact(domain_or_url: str) -> dict[str, Any]:
-    """Walker Sands AI Domain Impact Index (0-100) + JOKER External Topical Network:
-    Scores an external target domain on whether its content can actually be crawled and cited by LLMs
-    (TechTarget 82 vs Forbes 55)."""
-    parsed = urllib.parse.urlparse(domain_or_url if "://" in domain_or_url else f"https://{domain_or_url}")
-    base = f"{parsed.scheme}://{parsed.netloc}"
-    target_url = domain_or_url if "://" in domain_or_url else base
-    ai_bots = ["GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "PerplexityBot", "Google-Extended"]
-    blocked_bots: list[str] = []
-    robots_status = "missing_or_open"
-    try:
-        robots_txt = http_get_text(f"{base}/robots.txt", timeout=8.0)
-        robots_status = "fetched"
-        for bot in ai_bots:
-            pattern = rf"(?is)User-agent:\s*{re.escape(bot)}\s+([^\n#]*\n)*?Disallow:\s*/\s*(\n|$)"
-            if re.search(pattern, robots_txt):
-                blocked_bots.append(bot)
-    except Exception:
-        pass
-
-    allowed_ratio = (len(ai_bots) - len(blocked_bots)) / len(ai_bots)
-    inclusion_score = round(allowed_ratio * 35)  # 35 pts max
-
-    onpage_score = 0
-    retrieval_score = 0
-    citation_meta_score = 0
-    status_code = 0
-    try:
-        req = urllib.request.Request(target_url, headers={"User-Agent": USER_AGENT})
-        with urllib.request.urlopen(req, timeout=10.0, context=SSL_CTX) as resp:
-            status_code = resp.status
-            html = resp.read().decode("utf-8", errors="replace")
-        if status_code == 200:
-            retrieval_score = 20
-        text_only = re.sub(r"<script.*?</script>|<style.*?</style>|<[^>]+>", " ", html, flags=re.S | re.I)
-        word_cnt = len(text_only.split())
-        if word_cnt >= 250:
-            onpage_score = 25
-        elif word_cnt >= 80:
-            onpage_score = 12
-        has_title = bool(re.search(r"<title[^>]*>([^<]+)</title>", html, re.I))
-        has_ld = "application/ld+json" in html.lower()
-        has_og = 'property="og:title"' in html.lower() or "property='og:title'" in html.lower()
-        citation_meta_score = (8 if has_title else 0) + (6 if has_ld else 0) + (6 if has_og else 0)
-    except Exception as exc:
-        return {"target": target_url, "error": str(exc), "ai_domain_impact_score": inclusion_score}
-
-    total_score = inclusion_score + onpage_score + retrieval_score + citation_meta_score
-    return {
-        "target": target_url,
-        "http_status": status_code,
-        "robots_status": robots_status,
-        "ai_bots_checked": ai_bots,
-        "ai_bots_blocked": blocked_bots,
-        "breakdown": {
-            "inclusion_robots_35": inclusion_score,
-            "onpage_ssr_readability_25": onpage_score,
-            "realtime_retrieval_20": retrieval_score,
-            "citation_metadata_20": citation_meta_score,
-        },
-        "ai_domain_impact_score": total_score,
-        "verdict": "HIGH_AI_IMPACT (>=75)" if total_score >= 75 else ("MODERATE (50-74)" if total_score >= 50 else "LOW_AI_IMPACT_OR_BLOCKED (<50)"),
-    }
 
 
 def check_brand_consensus() -> dict[str, Any]:
@@ -1621,11 +1370,7 @@ def main() -> int:
     sub.add_parser("audit-blogs", help="Run L4 Suski 50M First-50-Words audit on core blog posts")
     p_all = sub.add_parser("audit-all-blogs", help="Run L4 First-50-Words audit across all blog posts in src/content/blog")
     p_all.add_argument("--only-missing-brand", action="store_true", help="Only list posts missing brand in first 50 words")
-    sub.add_parser("panel-gap", help="Run L5 Measure audit on ops/geo panel")
-    sub.add_parser("suski-matrix", help="Run L5 Suski 5-Rule + Marc Moeller Per-Engine Split Matrix (Page Cited vs Brand Named)")
 
-    p_gates = sub.add_parser("three-gates", help="L1 Stephen Burns (Common Crawl) Three Gates audit: Permission + Edge WAF Bot Simulation + SSR JSON-LD/DOI")
-    p_gates.add_argument("--url", default="https://jasonzhu.ai/en/blog/indie-payments-report-2026")
 
     p_16 = sub.add_parser("audit-16-guards", help="L1 Deterministic 16-Planted-Bug Guard (X-Robots-Tag header, hreflang 200 status, canonical, JSON-LD)")
     p_16.add_argument("--url", default="https://jasonzhu.ai/zh/go-global")
@@ -1659,14 +1404,9 @@ def main() -> int:
         "https://jasonzhu.ai/en/blog/choose-payment-platform-2026",
     ])
 
-    p_impact = sub.add_parser("ai-domain-impact", help="L5 Walker Sands AI Domain Impact Index (0-100): Check external domain AI bot allowlisting & SSR readability")
-    p_impact.add_argument("--target", required=True, help="Target domain or URL to score (e.g. dev.to, forbes.com, techtarget.com)")
 
     sub.add_parser("brand-consensus", help="L2/L5 JOKER Sec.7/20: Audit 4-tuple Entity ID Card & Semantic Cluster Brand Consensus")
 
-    p_live = sub.add_parser("run-live-panel", help="L5 Automated Live Panel Probe across questions.json via Aisa.one + GoAnyAPI")
-    p_live.add_argument("--limit", type=int, default=5, help="Number of questions from questions.json to probe")
-    p_live.add_argument("--models", nargs="+", default=["perplexity/sonar", "gpt-4o-mini"], help="Aisa.one models to probe")
 
     p_giga = sub.add_parser("check-gigalinks-index", help="L1 Commercial (GoAnyAPI / DataForSEO): Batch check Google indexing status of Tier-2/3 GIGALinks URLs for Gate 1")
     p_giga.add_argument("--urls", nargs="*", default=[], help="List of GIGALinks URLs to check")
@@ -1682,10 +1422,6 @@ def main() -> int:
     p_trends.add_argument("--term", required=True)
     p_trends.add_argument("--geo", default="US")
 
-    p_aisa = sub.add_parser("aisa-probe", help="L5 Commercial (Aisa.one ~/.aisa/key): Run multi-run prompt probe via Aisa.one unified LLM gateway")
-    p_aisa.add_argument("--prompt", required=True)
-    p_aisa.add_argument("--model", default="gpt-4o-mini", help="Model name on Aisa.one")
-    p_aisa.add_argument("--runs", type=int, default=2)
 
     args = parser.parse_args()
     brand_tokens = ["Jason Zhu", "jasonzhu.ai", "JasonZhu.AI"]
@@ -1699,20 +1435,12 @@ def main() -> int:
         print(json.dumps(audit_connected_entity_graph(args.urls), ensure_ascii=False, indent=2))
         return 0
 
-    if args.cmd == "ai-domain-impact":
-        print(json.dumps(check_ai_domain_impact(args.target), ensure_ascii=False, indent=2))
-        return 0
-
     if args.cmd == "brand-consensus":
         print(json.dumps(check_brand_consensus(), ensure_ascii=False, indent=2))
         return 0
 
     if args.cmd == "audit-16-guards":
         print(json.dumps(audit_16_planted_guards(args.url), ensure_ascii=False, indent=2))
-        return 0
-
-    if args.cmd == "run-live-panel":
-        print(json.dumps(run_live_panel(args.limit, args.models, save=True), ensure_ascii=False, indent=2))
         return 0
 
     if args.cmd == "sro-and-recency":
@@ -1749,20 +1477,12 @@ def main() -> int:
         print(json.dumps([aare_proprietary_asset_audit(f) for f in core_files if f.exists()], ensure_ascii=False, indent=2))
         return 0
 
-    if args.cmd == "three-gates":
-        print(json.dumps(check_three_gates_edge_bots(args.url), ensure_ascii=False, indent=2))
-        return 0
-
     if args.cmd == "serp-similarity":
         print(json.dumps(check_serp_similarity(args.query_a, args.query_b, args.gl), ensure_ascii=False, indent=2))
         return 0
 
     if args.cmd == "fact-consistency":
         print(json.dumps(check_cross_site_fact_consistency(), ensure_ascii=False, indent=2))
-        return 0
-
-    if args.cmd == "suski-matrix":
-        print(json.dumps(build_suski_panel_matrix(), ensure_ascii=False, indent=2))
         return 0
 
     if args.cmd == "check-gigalinks-index":
@@ -1778,10 +1498,6 @@ def main() -> int:
 
     if args.cmd == "goany-trends":
         print(json.dumps(check_goany_trends_and_intitle(args.term, args.geo), ensure_ascii=False, indent=2))
-        return 0
-
-    if args.cmd == "aisa-probe":
-        print(json.dumps(run_aisa_multi_engine_probe(args.prompt, args.model, args.runs), ensure_ascii=False, indent=2))
         return 0
 
     if args.cmd == "audit-all-blogs":
@@ -1849,10 +1565,6 @@ def main() -> int:
             if (BLOG_DIR / t).exists()
         ]
         print(json.dumps({"l4_first_50_words_audit": reports}, ensure_ascii=False, indent=2))
-        return 0
-
-    if args.cmd == "panel-gap":
-        print(json.dumps(audit_geo_panel_gaps(), ensure_ascii=False, indent=2))
         return 0
 
     if args.cmd == "full-audit":

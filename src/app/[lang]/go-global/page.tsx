@@ -870,7 +870,7 @@ function Backlinks({ lang, l, isZh }: { lang: string; l: "zh" | "en"; isZh: bool
   return (
     <div className="grid gap-3 md:grid-cols-3 mt-4">
       <div className={BOX}>
-        <p className="text-sm font-semibold text-gray-900 mb-1">{isZh ? "找新词：new-term-radar v0.6.1" : "New terms: new-term-radar v0.6.1"}</p>
+        <p className="text-sm font-semibold text-gray-900 mb-1">{isZh ? "找新词：new-term-radar v0.7.0" : "New terms: new-term-radar v0.7.0"}</p>
         <p className="text-sm text-gray-600 leading-relaxed mb-3">
           {isZh
             ? "每天扫描 10 路早筛信号（X 实验室/博主、HF、GitHub 爆发项目、90 天内起量新域名、GSC 3d vs 60d 新词、TrustMRR 真实收入榜、Reddit/Freelancer 求工具帖、8 家收款平台新卖家、9 路新发产品源、AdSense 同站长矩阵 + 投流新词 + 用户差评痛点），并用 14 天后 Google Trends 自动复盘各信号命中率（已砍掉 0 命中的竞品 Sitemap diff）。开源，支持 CLI、Agent Skill 与 MCP。"
@@ -892,11 +892,11 @@ function Backlinks({ lang, l, isZh }: { lang: string; l: "zh" | "en"; isZh: bool
         <FromMyPost post={MY_POSTS.backlinks} lang={l} />
       </div>
       <div className={BOX}>
-        <p className="text-sm font-semibold text-gray-900 mb-1">{isZh ? "外链与引用闭环：backlink-guard v0.11.2" : "Backlink & citation guard: backlink-guard v0.11.2"}</p>
+        <p className="text-sm font-semibold text-gray-900 mb-1">{isZh ? "外链与引用闭环：backlink-guard v0.12.0" : "Backlink & citation guard: backlink-guard v0.12.0"}</p>
         <p className="text-sm text-gray-600 leading-relaxed mb-3">
           {isZh
-            ? "10 个 CLI/MCP 工具全覆盖：提交前查站群/卖链/降权（vet）、按搜索访客找高优目录（find）、扒竞品上线前 90 天首发渠道（competitors --early）、挽回带外链的 404 死链（lost 含 301 建议）、查被 AI Overview 引用的页面（cited）及 5 引擎 AI 引用排名（asked --rank）。"
-            : "10 CLI/MCP tools: vet link sellers/PBNs/demoted sites before submitting, find directories by real search visitors, uncover competitors' first-90-day launch channels (competitors --early), recover backlinked 404s with 301 targets (lost), and probe AI Overview & 5-engine citations (cited / asked --rank)."}
+            ? "12 个 CLI/MCP 命令：提交前查站群/卖链/降权（vet）、查 AI 爬虫能不能读到一个站（ai-access）、按搜索访客找高优目录（find）、扒竞品上线前 90 天首发渠道（competitors --early）、挽回带外链的 404 死链（lost 含 301 建议）、查被 AI Overview 引用的页面（cited）及 5 引擎 AI 引用排名（asked --rank）。"
+            : "12 CLI/MCP commands: vet link sellers/PBNs/demoted sites before submitting, check whether AI crawlers can read a site (ai-access), find directories by real search visitors, uncover competitors' first-90-day launch channels (competitors --early), recover backlinked 404s with 301 targets (lost), and probe AI Overview & 5-engine citations (cited / asked --rank)."}
         </p>
         <p className="text-sm flex flex-wrap gap-x-4 gap-y-1">
           <a href={BACKLINK_GUARD} {...OUT} className="text-blue-600 hover:underline">

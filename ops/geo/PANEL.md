@@ -64,4 +64,4 @@ python3 ops/geo/panel_run.py run --sets frozen --limit 3 --dry          # 试跑
 python3 ops/geo/panel_run.py summary ops/geo/panel/results-<日期>.json   # 从结果重新出摘要
 ```
 
-本机要先 `pip install backlink-guard`（要有 `gemini_app` 引擎的版本）并 `aisa login`。
+本机要先 `pip install "backlink-guard>=0.12"`（`gemini_app` 引擎从 0.12.0 起有）并 `aisa login`。
