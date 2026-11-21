@@ -3,8 +3,8 @@
  "model": "Gemini 4",
  "released": "2026-10-14T00:00:00Z",
  "threshold": 5000,
- "updatedAt": "2026-11-20T01:28:59.664Z",
- "statsCheckedAt": "2026-11-20T01:23:45.788Z",
+ "updatedAt": "2026-11-21T01:38:26.137Z",
+ "statsCheckedAt": "2026-11-21T01:27:58.126Z",
  "inclusionRule": "Original post by the creator, media attached, >= 5000 views on that post, and the creator's own text says Gemini 4 (Argon, Carbon, Hydrogen, Krypton, Pro...) built it in code; same-prompt comparisons against other models included. Seeded on 2026-11-16 from the Claude 5.5 library. Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -305,6 +305,74 @@
    }
   },
   {
+   "id": "2123324330172129294",
+   "url": "https://x.com/aiiii498/status/2123324330172129294",
+   "author": {
+    "handle": "aiiii498",
+    "name": "Yarry"
+   },
+   "postedAt": "2026-11-19T07:55:44.000Z",
+   "addedAt": "2026-11-21",
+   "lang": "zh",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "motion",
+   "title": {
+    "zh": "代码动画转制的 GIF 动图",
+    "en": "Code-driven animations exported as GIFs"
+   },
+   "summary": {
+    "zh": "作者在 Gemini 网页版中用代码制作动画，再转成 GIF。",
+    "en": "The creator used Gemini's web interface to make a coded animation and converted it to a GIF."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 205945,
+    "likes": 3508,
+    "replies": 180,
+    "reposts": 205,
+    "bookmarks": 2756,
+    "checkedAt": "2026-11-21T01:27:58.126Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2123324307308957696/vid/avc1/460x620/Qb4CjwO-IrqJeUXx.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2123324307308957696/img/BrqZ4r6nqNHFgz8a.jpg",
+     "width": 460,
+     "height": 620,
+     "durationSec": 2
+    },
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2123324307342548992/vid/avc1/460x620/qo_3f-__G3_czpR6.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2123324307342548992/img/E89SVU6DcNgIKIvp.jpg",
+     "width": 460,
+     "height": 620,
+     "durationSec": 2
+    },
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2123324307330019328/vid/avc1/460x620/CPkt-J1C0R-AtoQV.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2123324307330019328/img/YeEU-Air_KZi3uGx.jpg",
+     "width": 460,
+     "height": 620,
+     "durationSec": 2
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103730716853117183",
    "url": "https://x.com/AI_Screening/status/2103730716853117183",
    "author": {
@@ -587,6 +655,70 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2123554016663834933",
+   "url": "https://x.com/motion_so/status/2123554016663834933",
+   "author": {
+    "handle": "motion_so",
+    "name": "Motion"
+   },
+   "postedAt": "2026-11-19T23:08:25.000Z",
+   "addedAt": "2026-11-21",
+   "lang": "en",
+   "kind": "news",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [
+    "claude",
+    "gpt"
+   ],
+   "category": "motion",
+   "title": {
+    "zh": "同一素材的视频剪辑结果",
+    "en": "Video editing results on the same clip"
+   },
+   "summary": {
+    "zh": "作者在 Motion 中用相同素材和提示词比较三款模型，称 Gemini 4 Neon 做出了仪表盘，GPT-6.2 做出了幻灯片，Opus 5.5 则完成了视频剪辑。",
+    "en": "Using the same clip and prompt in Motion, the creator compared Gemini 4 Neon, Opus 5.5 and GPT-6.2: Neon made dashboards, GPT made a slideshow, and Claude made an edit."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Claude Opus 5.5",
+    "GPT-6.2",
+    "Motion",
+    "Adobe Premiere",
+    "Adobe After Effects",
+    "DaVinci Resolve",
+    "Final Cut Pro",
+    "YouTube"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 158465,
+    "likes": 771,
+    "replies": 58,
+    "reposts": 29,
+    "bookmarks": 806,
+    "checkedAt": "2026-11-21T01:27:58.126Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2123553716792180737/vid/avc1/1160x720/biZe0uvHUpAaG90k.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2123553716792180737/img/af8GUvEjNlNx4TtN.jpg",
+     "width": 1620,
+     "height": 1004,
+     "durationSec": 32
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -901,6 +1033,62 @@
    }
   },
   {
+   "id": "2123467103110078747",
+   "url": "https://x.com/ai_for_success/status/2123467103110078747",
+   "author": {
+    "handle": "ai_for_success",
+    "name": "AshutoshShrivastava"
+   },
+   "postedAt": "2026-11-19T17:23:04.000Z",
+   "addedAt": "2026-11-21",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "scene3d",
+   "title": {
+    "zh": "由单张图片生成的交互式霓虹雨景",
+    "en": "Interactive neon rain scene from a single image"
+   },
+   "summary": {
+    "zh": "作者提供一张静态图片，让 Gemini 用 Three.js 制作动画。据称模型在本地运行 Depth Anything V2 生成深度图，再分层并加入雨景、交互和合成音效。",
+    "en": "Gemini turned one supplied image into an interactive Three.js scene. The creator says it ran Depth Anything V2 locally to make layers, adding rain, interactions and synthesized audio."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Three.js",
+    "Depth Anything V2 Large",
+    "Hugging Face"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 124248,
+    "likes": 2188,
+    "replies": 83,
+    "reposts": 148,
+    "bookmarks": 1721,
+    "checkedAt": "2026-11-21T01:27:58.126Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2123466356586868736/vid/avc1/1280x720/i_HrSFrZ_3_36J5H.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2123466356586868736/img/rmwG9F82AnaAJOmM.jpg",
+     "width": 3840,
+     "height": 2160,
+     "durationSec": 49
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2110029722046631985",
    "url": "https://x.com/VulKan42069/status/2110029722046631985",
    "author": {
@@ -1067,6 +1255,65 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2123305001804333337",
+   "url": "https://x.com/lemomo_ai/status/2123305001804333337",
+   "author": {
+    "handle": "lemomo_ai",
+    "name": "Lemomo"
+   },
+   "postedAt": "2026-11-19T06:38:56.000Z",
+   "addedAt": "2026-11-21",
+   "lang": "zh",
+   "kind": "comparison",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [
+    "claude",
+    "gpt"
+   ],
+   "category": "physics",
+   "title": {
+    "zh": "冰冻草莓融化模拟",
+    "en": "Frozen strawberry melting simulation"
+   },
+   "summary": {
+    "zh": "作者用 Gemini 4 Neon、Claude Fable 5.2、Claude Opus 5.5 和 GPT-6.2 Astra 的 High 档位制作冰草莓融化效果，并询问观众更喜欢哪一个。",
+    "en": "Gemini 4 Neon, Claude Fable 5.2, Claude Opus 5.5 and GPT-6.2 Astra made melting frozen-strawberry scenes at High effort. The creator asks viewers which they prefer."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Claude Fable 5.2",
+    "Claude Opus 5.5",
+    "GPT-6.2 Astra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 115432,
+    "likes": 444,
+    "replies": 65,
+    "reposts": 15,
+    "bookmarks": 143,
+    "checkedAt": "2026-11-21T01:27:58.126Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2123304758681448448/vid/avc1/1280x720/jXe0MOOheh9D0iwy.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2123304758681448448/img/5kkje1GFAGCUHR83.jpg",
+     "width": 3840,
+     "height": 2160,
+     "durationSec": 20
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -2577,6 +2824,65 @@
    }
   },
   {
+   "id": "2123305131206967571",
+   "url": "https://x.com/simonw/status/2123305131206967571",
+   "author": {
+    "handle": "simonw",
+    "name": "Simon Willison"
+   },
+   "postedAt": "2026-11-19T06:39:27.000Z",
+   "addedAt": "2026-11-21",
+   "lang": "en",
+   "kind": "comparison",
+   "models": [
+    "carbon",
+    "hydrogen"
+   ],
+   "rivals": [],
+   "category": "svg",
+   "title": {
+    "zh": "骑自行车的鹈鹕",
+    "en": "Pelican riding a bicycle"
+   },
+   "summary": {
+    "zh": "作者用鹈鹕骑自行车测试比较 Gemini 不同版本及推理档位；后续还让 Neon 用 Three.js 制作扬克斯化身巨型机甲、在纽约行走的动画。",
+    "en": "The creator compared Gemini variants and effort levels with a pelican riding a bicycle test. A follow-up used Neon for a Three.js animation of Yonkers as a walking mech."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/simonw/status/2123305792854217049",
+    "text": "Make a three js animation where yonkers stands up as a big mech (cool stand up motion) and stomps around manhattan and queens and Brooklyn, use openstreetmap mapping data"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Three.js",
+    "OpenStreetMap"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 64847,
+    "likes": 676,
+    "replies": 249,
+    "reposts": 25,
+    "bookmarks": 121,
+    "checkedAt": "2026-11-21T01:27:58.126Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXd-upcboAAffgZ.jpg",
+     "width": 1800,
+     "height": 1435
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2115819373973708975",
    "url": "https://x.com/Haleeeemahh/status/2115819373973708975",
    "author": {
@@ -2875,6 +3181,123 @@
    }
   },
   {
+   "id": "2123229845274653112",
+   "url": "https://x.com/seveibar/status/2123229845274653112",
+   "author": {
+    "handle": "seveibar",
+    "name": "Seve"
+   },
+   "postedAt": "2026-11-19T01:40:17.000Z",
+   "addedAt": "2026-11-21",
+   "lang": "en",
+   "kind": "comparison",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [
+    "claude",
+    "gpt"
+   ],
+   "category": "scene3d",
+   "title": {
+    "zh": "蓝牙电动牙刷电路设计",
+    "en": "Bluetooth electric toothbrush circuit design"
+   },
+   "summary": {
+    "zh": "作者比较三个模型在 High 档位下用 tscircuit 制作蓝牙电动牙刷的结果，认为 Gemini 的外观最佳，但指出布线未完成、封装选择不当等问题。",
+    "en": "Gemini 4 Neon, Opus 5.5 and Sol 6.2 were compared on a tscircuit Bluetooth toothbrush task at High effort. The creator preferred Gemini's appearance but noted routing and footprint errors."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Claude Opus 5.5",
+    "Sol 6.2",
+    "tscircuit"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 60308,
+    "likes": 446,
+    "replies": 16,
+    "reposts": 10,
+    "bookmarks": 172,
+    "checkedAt": "2026-11-21T01:27:58.126Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2123229355795259392/vid/avc1/1280x720/VeNA2TpPkQAW9mmB.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2123229355795259392/img/KavTSpnay2VCZvI1.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 133
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2123507543544680797",
+   "url": "https://x.com/ivanainai/status/2123507543544680797",
+   "author": {
+    "handle": "ivanainai",
+    "name": "Ivana"
+   },
+   "postedAt": "2026-11-19T20:03:45.000Z",
+   "addedAt": "2026-11-21",
+   "lang": "en",
+   "kind": "comparison",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [
+    "claude",
+    "gpt"
+   ],
+   "category": "scene3d",
+   "title": {
+    "zh": "纯代码生成的 3D 渲染作品",
+    "en": "Code-built 3D renders"
+   },
+   "summary": {
+    "zh": "作者比较 Opus 5.5、Gemini 4 Neon 和 GPT-6.2 Astra 纯代码生成的作品，未使用预制 3D 素材。帖文称已有胜者，但文字中未说明是谁。",
+    "en": "The creator compared code-only builds from Opus 5.5, Gemini 4 Neon and GPT-6.2 Astra, without premade 3D assets. They announced a winner but did not identify it in the text."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Claude Opus 5.5",
+    "GPT-6.2 Astra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 59887,
+    "likes": 202,
+    "replies": 32,
+    "reposts": 7,
+    "bookmarks": 60,
+    "checkedAt": "2026-11-21T01:27:58.126Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2123503840410415104/vid/avc1/720x1280/beFi_wfxmLAYwA3v.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2123503840410415104/img/db-0aOCHr5Z27f0m.jpg",
+     "width": 1080,
+     "height": 1920,
+     "durationSec": 23
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2122221106304352257",
    "url": "https://x.com/analogalok/status/2122221106304352257",
    "author": {
@@ -2992,6 +3415,65 @@
    }
   },
   {
+   "id": "2123455226191691813",
+   "url": "https://x.com/whydeso/status/2123455226191691813",
+   "author": {
+    "handle": "whydeso",
+    "name": "whydeso"
+   },
+   "postedAt": "2026-11-19T16:35:52.000Z",
+   "addedAt": "2026-11-21",
+   "lang": "en",
+   "kind": "comparison",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [
+    "claude",
+    "gpt"
+   ],
+   "category": "motion",
+   "title": {
+    "zh": "新 AI 模型发布宣传视频",
+    "en": "Launch video for a new AI model"
+   },
+   "summary": {
+    "zh": "作者让 Neon 和 GPT-6.2 制作 Neon 的发布视频。GPT-6.2 做了电影式短片，Neon 则做了一张把自己排在 Claude 和 GPT 之上的图表。",
+    "en": "The creator asked Neon and GPT-6.2 to make Neon's launch video. GPT-6.2 made a cinematic film; Neon made a chart ranking itself above Claude and GPT."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "GPT-6.2",
+    "Claude",
+    "GPT"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 57152,
+    "likes": 325,
+    "replies": 16,
+    "reposts": 3,
+    "bookmarks": 120,
+    "checkedAt": "2026-11-21T01:27:58.126Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2123455178850410496/vid/avc1/1080x720/eiJ39-aIEcKvc44n.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2123455178850410496/img/4MmIxvwHr0PfyxDj.jpg",
+     "width": 1920,
+     "height": 1280,
+     "durationSec": 31
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2116383410335907989",
    "url": "https://x.com/RoundtableSpace/status/2116383410335907989",
    "author": {
@@ -3042,6 +3524,123 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2123269503736070603",
+   "url": "https://x.com/op7418/status/2123269503736070603",
+   "author": {
+    "handle": "op7418",
+    "name": "歸藏(guizang.ai)"
+   },
+   "postedAt": "2026-11-19T04:17:52.000Z",
+   "addedAt": "2026-11-21",
+   "lang": "zh",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [
+    "claude"
+   ],
+   "category": "ui",
+   "title": {
+    "zh": "基于参考图制作的动态界面组件",
+    "en": "Animated UI components based on reference images"
+   },
+   "summary": {
+    "zh": "Neon 基于参考图发散制作了几个组件。作者认为它在设计与动效还原上优于 Opus 5.5 和 Claude，并称 Antigravity 仍是瓶颈，但近期已有改善。",
+    "en": "Neon made UI components by expanding on reference images. The creator says its design and motion reconstruction beat Opus 5.5 and Claude, while Antigravity remains a bottleneck."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Claude Opus 5.5",
+    "Claude",
+    "GPT",
+    "Antigravity"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 56559,
+    "likes": 394,
+    "replies": 131,
+    "reposts": 21,
+    "bookmarks": 216,
+    "checkedAt": "2026-11-21T01:27:58.126Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2123265671043928064/vid/avc1/1280x720/wbsupHqfci5phKTv.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2123265671043928064/img/MoN4dsXxPuuehILe.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 20
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2123513643463815333",
+   "url": "https://x.com/EnvolDev/status/2123513643463815333",
+   "author": {
+    "handle": "EnvolDev",
+    "name": "Tony"
+   },
+   "postedAt": "2026-11-19T20:28:00.000Z",
+   "addedAt": "2026-11-21",
+   "lang": "en",
+   "kind": "comparison",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [
+    "claude",
+    "gpt"
+   ],
+   "category": "scene3d",
+   "title": {
+    "zh": "有悬崖和瀑布的高山风景",
+    "en": "Alpine landscape with cliffs and waterfall"
+   },
+   "summary": {
+    "zh": "Neon、GPT-6.2 Sol 和 Opus 5.5 用同一提示词编写 Alpine Gold 三维场景，再渲染成 4K 影片。Sol 最便宜、最快，Neon 的成本和耗时也低于 Opus。",
+    "en": "Neon, GPT-6.2 Sol and Opus 5.5 coded Alpine Gold 3D scenes from one shared prompt, rendered as 4K films. Sol was cheapest and fastest; Neon cost less and finished sooner than Opus."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "GPT-6.2 Sol",
+    "Claude Opus 5.5"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 54994,
+    "likes": 229,
+    "replies": 30,
+    "reposts": 11,
+    "bookmarks": 94,
+    "checkedAt": "2026-11-21T01:27:58.126Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2123510890821828608/vid/avc1/720x1280/rMQxdpsRhjoelqKE.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2123510890821828608/img/YARA_xtLYCItMJmE.jpg",
+     "width": 1080,
+     "height": 1920,
+     "durationSec": 25
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -3259,6 +3858,117 @@
      "width": 720,
      "height": 1280,
      "durationSec": 30
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2123259795172212871",
+   "url": "https://x.com/thtbee_/status/2123259795172212871",
+   "author": {
+    "handle": "thtbee_",
+    "name": "Bee"
+   },
+   "postedAt": "2026-11-19T03:39:18.000Z",
+   "addedAt": "2026-11-21",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "scene3d",
+   "title": {
+    "zh": "艺术风格蝴蝶场景",
+    "en": "Artistic butterflies"
+   },
+   "summary": {
+    "zh": "Neon 用 Three.js 制作了艺术蝴蝶场景。作者称在 Antigravity 中使用 xHigh 耗时 57 分钟，消耗约 23% 的五小时额度和 7% 的每周额度。",
+    "en": "Neon created an artistic butterfly scene in Three.js. The creator says it took 57 minutes using xHigh in Antigravity, consuming about 23% of the five-hour limit and 7% of the weekly limit."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js",
+    "Antigravity"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 52749,
+    "likes": 584,
+    "replies": 43,
+    "reposts": 22,
+    "bookmarks": 152,
+    "checkedAt": "2026-11-21T01:27:58.126Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2123229086801862656/vid/avc1/1280x720/zTV7j8Mm6EWF50Ko.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2123229086801862656/img/ShwgTurijaxLPMM3.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 53
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2123406931075441111",
+   "url": "https://x.com/ivanainai/status/2123406931075441111",
+   "author": {
+    "handle": "ivanainai",
+    "name": "Ivana"
+   },
+   "postedAt": "2026-11-19T13:23:58.000Z",
+   "addedAt": "2026-11-21",
+   "lang": "en",
+   "kind": "comparison",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [
+    "gpt"
+   ],
+   "category": "mechanics",
+   "title": {
+    "zh": "喷气发动机模型",
+    "en": "Jet engine model"
+   },
+   "summary": {
+    "zh": "Neon 与 GPT-6.2 Astra 用同一提示词生成喷气发动机。作者认为 Astra 的结果像真实发动机，Neon 的像玩具，同时指出 Neon 的 token 价格更低。",
+    "en": "Neon and GPT-6.2 Astra produced jet engines from the same prompt. The creator describes Astra's result as a real engine and Neon's as a toy, while noting Neon's lower token prices."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "GPT-6.2 Astra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 52253,
+    "likes": 286,
+    "replies": 40,
+    "reposts": 6,
+    "bookmarks": 75,
+    "checkedAt": "2026-11-21T01:27:58.126Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2123406866814275584/vid/avc1/720x810/7GSeyF9FGJTIp_KM.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2123406866814275584/img/dwWlnl5fwSBpNPkT.jpg",
+     "width": 1080,
+     "height": 1216,
+     "durationSec": 26
     }
    ],
    "evidence": {
@@ -3792,6 +4502,60 @@
    }
   },
   {
+   "id": "2123411465143009414",
+   "url": "https://x.com/amihai/status/2123411465143009414",
+   "author": {
+    "handle": "amihai",
+    "name": "Amichai Mantinband"
+   },
+   "postedAt": "2026-11-19T13:41:59.000Z",
+   "addedAt": "2026-11-21",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "ui",
+   "title": {
+    "zh": "界面与交互测试",
+    "en": "UI and interaction test"
+   },
+   "summary": {
+    "zh": "作者展示了 Neon 的初步 UI/UX 测试及最终效果，提供了 Brilliant.design 体验链接，并指出背景图会显著影响呈现效果。",
+    "en": "The creator shared an initial Neon UI/UX test and its final result, linked to the Brilliant.design playground, and highlighted the difference a background image makes."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Brilliant.design"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 46475,
+    "likes": 780,
+    "replies": 15,
+    "reposts": 17,
+    "bookmarks": 449,
+    "checkedAt": "2026-11-21T01:27:58.126Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2123409592491110400/vid/avc1/1280x720/aeONZ4nfx7ioxgnT.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2123409592491110400/img/vA6SACZ8Oqf3Lt-B.jpg",
+     "width": 3840,
+     "height": 2160,
+     "durationSec": 25
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2111501344750059978",
    "url": "https://x.com/vib3coded/status/2111501344750059978",
    "author": {
@@ -3898,6 +4662,118 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2123414397980676214",
+   "url": "https://x.com/bijanbowen/status/2123414397980676214",
+   "author": {
+    "handle": "bijanbowen",
+    "name": "BijanBowen"
+   },
+   "postedAt": "2026-11-19T13:53:38.000Z",
+   "addedAt": "2026-11-21",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "game",
+   "title": {
+    "zh": "人类与球瓶互换的恐怖保龄球游戏",
+    "en": "Horror bowling game with humans as pins"
+   },
+   "summary": {
+    "zh": "作者展示了用 Gemini 4 Neon 制作的恐怖游戏，其中保龄球瓶与人类互换角色。",
+    "en": "The creator showed a horror game made with Gemini 4 Neon in which bowling pins and humans swap roles."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 44562,
+    "likes": 1225,
+    "replies": 63,
+    "reposts": 47,
+    "bookmarks": 216,
+    "checkedAt": "2026-11-21T01:27:58.126Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2123413864654016512/vid/avc1/1280x720/0Xbvbtr-e3HHgZhh.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2123413864654016512/img/0HpTwvER6Au4EWfB.jpg",
+     "width": 3840,
+     "height": 2160,
+     "durationSec": 44
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2123565303384932712",
+   "url": "https://x.com/illscience/status/2123565303384932712",
+   "author": {
+    "handle": "illscience",
+    "name": "Anish Acharya"
+   },
+   "postedAt": "2026-11-19T23:53:16.000Z",
+   "addedAt": "2026-11-21",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "ui",
+   "title": {
+    "zh": "双指缩放调整文字详略",
+    "en": "Pinch to change text detail"
+   },
+   "summary": {
+    "zh": "作者用 Gemini 4 Neon 一次生成了“语义缩放”交互，用户可通过双指缩放调整文字内容的详略程度。",
+    "en": "The creator built a semantic zoom interaction in one shot with Gemini 4 Neon, letting users pinch to change the level of detail in prose."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 43113,
+    "likes": 756,
+    "replies": 103,
+    "reposts": 29,
+    "bookmarks": 482,
+    "checkedAt": "2026-11-21T01:27:58.126Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2123565213257732096/vid/avc1/720x1564/qSDgxJGmfayofDXn.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2123565213257732096/img/-buewcSMjlx6oz17.jpg",
+     "width": 1206,
+     "height": 2622,
+     "durationSec": 18
+    },
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2123565243322527744/vid/avc1/720x1564/a2KqtBPHcO5duc7G.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2123565243322527744/img/kIIxLHkD-j0nFBli.jpg",
+     "width": 1206,
+     "height": 2622,
+     "durationSec": 17
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -4868,6 +5744,64 @@
    }
   },
   {
+   "id": "2123279727935033355",
+   "url": "https://x.com/thtbee_/status/2123279727935033355",
+   "author": {
+    "handle": "thtbee_",
+    "name": "Bee"
+   },
+   "postedAt": "2026-11-19T04:58:30.000Z",
+   "addedAt": "2026-11-21",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [
+    "claude"
+   ],
+   "category": "scene3d",
+   "title": {
+    "zh": "像素巫师的世界",
+    "en": "A pixel wizard's world"
+   },
+   "summary": {
+    "zh": "作者在 Antigravity 中提供参考图，让 Gemini 4 Neon 用 Three.js 制作像素巫师世界，并经过三轮打磨；作者还将其能力与 Opus 5.5 作了比较。",
+    "en": "Gemini 4 Neon built a pixel wizard world in Three.js from reference images in Antigravity. The creator refined it over three passes and compared its ability to Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Claude Opus 5.5",
+    "Three.js",
+    "Antigravity"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 32150,
+    "likes": 607,
+    "replies": 43,
+    "reposts": 29,
+    "bookmarks": 231,
+    "checkedAt": "2026-11-21T01:27:58.126Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2123257848532766720/vid/avc1/1280x720/8M7DfIoVDSOlmCmE.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2123257848532766720/img/CUld4giIHy3msH7E.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 40
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2110357629159854196",
    "url": "https://x.com/anxuanng/status/2110357629159854196",
    "author": {
@@ -5030,6 +5964,60 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2123517124169834605",
+   "url": "https://x.com/chetaslua/status/2123517124169834605",
+   "author": {
+    "handle": "chetaslua",
+    "name": "Chetaslua"
+   },
+   "postedAt": "2026-11-19T20:41:50.000Z",
+   "addedAt": "2026-11-21",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "motion",
+   "title": {
+    "zh": "以火柴人演绎的 AI 实验室对决",
+    "en": "AI labs as stick figures"
+   },
+   "summary": {
+    "zh": "作者展示了以 Google DeepMind 对战其他阵营为主题的火柴人场景，称其由多个 Gemini 4 Neon 智能体用纯 JavaScript 制作。",
+    "en": "The creator showed a Google DeepMind versus everyone stickman scene, made by swarms of Gemini 4 Neon using pure JavaScript."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "JavaScript"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 30770,
+    "likes": 728,
+    "replies": 45,
+    "reposts": 40,
+    "bookmarks": 315,
+    "checkedAt": "2026-11-21T01:27:58.126Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2123516860385865728/vid/avc1/1350x720/q6XkAn9an3g7Tiin.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/media/HXg_VWfboAAwRBL.jpg",
+     "width": 2048,
+     "height": 1092,
+     "durationSec": 63
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -5545,6 +6533,58 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2123276863481254210",
+   "url": "https://x.com/DeryaTR_/status/2123276863481254210",
+   "author": {
+    "handle": "DeryaTR_",
+    "name": "Derya Unutmaz, MD"
+   },
+   "postedAt": "2026-11-19T04:47:07.000Z",
+   "addedAt": "2026-11-21",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "game",
+   "title": {
+    "zh": "塔防游戏",
+    "en": "Tower defense game"
+   },
+   "summary": {
+    "zh": "作者用 Gemini 4 Neon 在约 20 分钟内制作了塔防游戏，消耗五小时额度的 2%，并分享了可玩的版本。",
+    "en": "The creator built a tower defense game with Gemini 4 Neon in about 20 minutes, using 2% of a five-hour quota, and shared a playable demo."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 27569,
+    "likes": 521,
+    "replies": 35,
+    "reposts": 38,
+    "bookmarks": 87,
+    "checkedAt": "2026-11-21T01:27:58.126Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2123276141884817408/vid/avc1/1280x720/XJGrOI6QSuJ3QQOO.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2123276141884817408/img/Ue9_5121hi2Q0QHj.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 94
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
