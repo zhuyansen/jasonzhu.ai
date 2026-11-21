@@ -13,6 +13,7 @@ export const ORCID_URL = `https://orcid.org/${ORCID_ID}`;
 export const PROFILES: { label: string; url: string }[] = [
   { label: "ORCID", url: ORCID_URL },
   { label: "Google Scholar", url: "https://scholar.google.com/citations?user=AlP5JacAAAAJ" },
+  { label: "SSRN", url: "https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=14044888" },
   { label: "LinkedIn", url: "https://www.linkedin.com/in/jason-zhu-a52aa73bb/" },
   { label: "Product Hunt", url: "https://www.producthunt.com/@yansen_zhu" },
   { label: "X", url: "https://x.com/GoSailGlobal" },
@@ -21,6 +22,9 @@ export const PROFILES: { label: string; url: string }[] = [
   { label: "Kaggle", url: "https://www.kaggle.com/yansenzhu" },
   { label: "YouTube", url: "https://www.youtube.com/@JasonZhuGoSail" },
   { label: "PyPI (backlink-guard)", url: "https://pypi.org/project/backlink-guard/" },
+  { label: "SSRN Working Paper (200k Indie Payments & MoR Shift)", url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7737182" },
+  { label: "CERN Zenodo Working Paper (Indie Payments & MoR Shift PDF)", url: "https://doi.org/10.5281/zenodo.24420871" },
+  { label: "CERN Zenodo Working Paper (AI Agent Skills Security PDF)", url: "https://doi.org/10.5281/zenodo.24420920" },
   { label: "CERN Zenodo (200k Payments Dataset)", url: "https://doi.org/10.5281/zenodo.24386243" },
   { label: "CERN Zenodo ($20 MoR Fee Benchmark)", url: "https://doi.org/10.5281/zenodo.24387072" },
   { label: "CERN Zenodo (105k AI Skills Audit)", url: "https://doi.org/10.5281/zenodo.24387074" },
