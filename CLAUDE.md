@@ -113,6 +113,12 @@ Git：commit 后如远程有新提交（cron 会自动 commit 快讯），先 `g
 - 转化事件统一走 `src/lib/track.ts` 的 `track()`，事件名和 digest.py 的 CONVERSIONS 对应；GA4/Clarity ID 没填时不加载任何第三方脚本。
 - Vercel Web Analytics 用官方 `/v1/query/web-analytics/visits/aggregate`，前提是项目里 Analytics 开关已打开。
 
+**GEO 引用面板（.github/workflows/geo-panel.yml，每周一北京 11:37，2026-11-21 起）**
+- `ops/geo/panel_run.py` 用 backlink-guard 的 `asked`（AIsa）把题库问一遍：ChatGPT、Gemini App、Google AI Mode、Perplexity 每题 3 次，Claude 每月第一个周一 1 次。记引用本站、引用对应页面、正文点名、排第一四个口径，和上周、和 11-17 的基线比，发邮件给 ALERT_EMAIL。说明在 `ops/geo/PANEL.md`。
+- 题库的题目不要改，要加题就加新 id：`ops/geo/questions.json` 是冻结组（GIGALinks 的实验 12-01、12-15、01-01 用它复测），`questions-real.json` 是不带品牌名的真实问法组。改页面前在 `ops/geo/experiments.json` 记一笔（改了哪些题对应的页面、哪些故意不改），摘要会分组算。
+- 公开仓库只提交分数（`ops/geo/panel/`）。回答原文和别的网站的网址来自付费接口，加密后放草稿 release `geo-panel-state`（密钥 `SELLER_STATE_KEY`），不进仓库，也不打印到 Actions 日志。
+- 同一天跑两次，每家的命中率差 1 到 4 个百分点：周与周之间 5 个百分点以内的变化不算数。
+
 **Vercel 请求额度（2026-10-07 事故后，Pro 套餐，每月 1000 万 Edge Requests）**
 - 全站链接一律 `import Link from "@/components/Link"`（默认 `prefetch={false}`），**不要直接用 `next/link`**：默认预加载会让导航 / 页脚 / 提示词卡片每次访问多发十几到几十个请求。2026-10-07 免费版 30 天用到 440 万次（额度 100 万），整站被停用（402 DEPLOYMENT_DISABLED），升级 Pro 才恢复。
 - `middleware.ts` 只匹配 `/`、`/admin`、`/auth`、会员中心 / 登录、不带语言前缀的旧链接；带 `/zh` `/en` 的公开页不经过它，不要改回匹配全部页面。本地 `next dev` 下 `/` 会 404（中间件在开发环境不生效），用生产构建 `next start` 验证 rewrite。

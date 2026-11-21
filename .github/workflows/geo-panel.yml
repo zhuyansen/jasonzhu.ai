@@ -2,7 +2,7 @@
 #
 #   提问  ops/geo/panel_run.py 调 backlink-guard 的 asked（AIsa 接口，AISA_API_KEY）。平时问 ChatGPT、Gemini App、
 #         Google AI Mode、Perplexity，每题各 3 次；每月第一个周一加问 Claude 1 次（一个回答约 $0.045，是别家的 10 倍）。
-#         21 题一次约 $1.2，加 Claude 约 $2.1。max_usd 封顶，超了的不问。
+#         题库是冻结组 21 题加真实问法组 30 题（2026-11-23 起），一次约 $2.8，加 Claude 约 $5.4。max_usd 封顶（默认 7），超了的不问。
 #   存放  分数提交到 ops/geo/panel/（公开）。回答原文和别的网站的网址来自付费接口，不进仓库、不进日志：
 #         加密后放进草稿 release「geo-panel-state」，密钥用 SELLER_STATE_KEY（和卖家历史库同一把）。
 #         解密：gh release download geo-panel-state -p 'panel-<日期>.json.gz.enc' &&
@@ -10,7 +10,8 @@
 #   通知  摘要发到 ALERT_EMAIL。失败、或有的 AI 有效回答不到一半（结果不完整），也发邮件。
 #   手动  Actions → Run workflow。试跑填 limit=3、publish=0：只问前 3 题，不提交、不存档、不发邮件。
 #   改动  改页面前先在 ops/geo/experiments.json 记一笔（改了哪些题的页面、哪些故意不改），周报会按处理组和对照组分开算。
-#         ops/geo/questions.json 是冻结组，题目不要改：GIGALinks 的实验要在 12-01、12-15、01-01 用同一套题复测。
+#         两套题的题目都不要改，要加题就加新 id：ops/geo/questions.json 是冻结组，GIGALinks 的实验要在 12-01、12-15、01-01
+#         用同一套题复测；ops/geo/questions-real.json 改了题，前后就没法比。
 name: GEO 引用面板（每周）
 
 on:
@@ -26,7 +27,7 @@ on:
         default: ""
       max_usd:
         description: "这次最多花多少美元"
-        default: "4"
+        default: "7"
       limit:
         description: "只问前 N 题（试跑用）；留空 = 全部"
         default: ""
@@ -42,13 +43,13 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  DEFAULT_SETS: frozen
+  DEFAULT_SETS: frozen,real
   DEFAULT_ENGINES: chatgpt:3,gemini_app:3,ai_mode:3,perplexity:3
 
 jobs:
   panel:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
 
@@ -87,7 +88,7 @@ jobs:
             # 每月第一个周一加问 Claude
             [ "$(TZ=Asia/Shanghai date +%-d)" -le 7 ] && ENGINES="$ENGINES,claude:1"
           fi
-          ARGS=(--sets "${IN_SETS:-$DEFAULT_SETS}" --engines "$ENGINES" --max-usd "${IN_MAX_USD:-4}" --date "$DAY"
+          ARGS=(--sets "${IN_SETS:-$DEFAULT_SETS}" --engines "$ENGINES" --max-usd "${IN_MAX_USD:-7}" --date "$DAY"
                 --full "$RUNNER_TEMP/panel-full.json" --appendix "$RUNNER_TEMP/appendix.md")
           [ -f ops/analytics/out/ga.json ] && ARGS+=(--ga ops/analytics/out/ga.json)
           [ -n "$IN_LIMIT" ] && ARGS+=(--limit "$IN_LIMIT")

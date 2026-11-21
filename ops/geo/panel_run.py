@@ -266,10 +266,11 @@ def summary(result: dict, prev: list[dict] | None = None, prev_day: str = "") ->
         out += [f"| {LABEL.get(e, e)} | {pct(*rate(rows, e, 'site_cited', brand))} | {pct(*rate(rows, e, 'site_cited', others))} |"
                 for e in engines_in(rows)] + ["", "带品牌名的题本来就容易被引用，真正要看的是右边一列。", ""]
     exps = json.loads(EXPERIMENTS.read_text(encoding="utf-8")) if EXPERIMENTS.exists() else {}
+    present = {r["question_id"] for r in rows}
     for exp in exps.get("experiments", []):
         exp_base = PANEL / exp["baseline"]
-        if exp["started"] > day or not exp_base.exists():
-            continue
+        if exp["started"] > day or not exp_base.exists() or not present & set(exp["treated"] + exp["control"]):
+            continue                    # 这次没问到实验里的题（比如只跑了真实问法组），这一段不出
         out += [f"## 对照实验：{exp['note']}", "",
                 f"{exp['started']} 开始。处理组 {len(exp['treated'])} 题，对照组 {len(exp['control'])} 题，看的是「引用本站」。", "",
                 "| AI | 处理组 现在 | 处理组 基线 | 对照组 现在 | 对照组 基线 | 净变化 |", "|---|---|---|---|---|---|"]
@@ -451,6 +452,7 @@ def selftest() -> int:
     result = {"date": "2026-11-24", "engines": {"chatgpt": 3}, "cost_usd": 1.0, "rows": rows, "ai_referrals": ai_referrals(ga)}
     text = summary(result, prev=[mk("data-x", False)], prev_day="2026-11-17")
     assert "新出现引用本站的：ChatGPT · data-x" in text and "安全过滤拒答 1 个" in text and "共 3 次会话" in text
+    assert "对照实验" not in text                                  # data-x 不在任何实验的分组里
     assert "other.example" not in text and "other.example" not in json.dumps(rows)              # 公开的部分没有别人的网址
     assert "other.example（2）" in appendix([{"cited": [page("https://other.example/a")], "fan_out": ["Best  X"]},
                                            {"cited": [page("https://other.example/b")], "fan_out": ["best x"]}])
