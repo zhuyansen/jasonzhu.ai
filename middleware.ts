@@ -53,10 +53,11 @@ export async function middleware(request: NextRequest) {
   }
 
   // Rewrite (not redirect) to default locale — avoids flash/flicker
-  // pathname === "/" 时不能拼成 "/zh/"（带尾斜杠），内部 rewrite 不会像真实请求
+  // 根路径 "/" 切到 "/en"（出海英文默认权重）；不带语言前缀的旧中文链接仍回退 "/zh/..." 避免断链。
+  // pathname === "/" 时不能拼成 "/en/"（带尾斜杠），内部 rewrite 不会像真实请求
   // 那样触发 trailingSlash 308 归一化，会直接 404
   const url = request.nextUrl.clone();
-  url.pathname = `/${defaultLocale}${pathname === "/" ? "" : pathname}`;
+  url.pathname = pathname === "/" ? "/en" : `/${defaultLocale}${pathname}`;
   const res = NextResponse.rewrite(url);
   if (pathname === "/") {
     res.headers.set(
@@ -106,7 +107,7 @@ export const config = {
   // 只在需要它的路径上运行（2026-10-07 起）：以前匹配全部页面，每次访问都多一次函数调用，
   // 叠加链接预加载和爬虫，把 Vercel 免费版额度用光、整站被停用。带 /zh、/en 前缀的公开页面这里什么都不用做。
   matcher: [
-    "/", // 首页 → rewrite 到 /zh
+    "/", // 首页 → rewrite 到 /en
     "/admin/:path*",
     "/auth/:path*",
     "/(zh|en)/dashboard/:path*", // 会员中心：刷新 Supabase session

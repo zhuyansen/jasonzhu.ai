@@ -29,7 +29,12 @@ export default function Header({ lang, dict }: HeaderProps) {
 
   // Build the alternate language URL
   const otherLang = lang === "zh" ? "en" : "zh";
-  const switchPath = pathname.replace(`/${lang}`, `/${otherLang}`);
+  const switchPath =
+    pathname === "/"
+      ? `/${otherLang}`
+      : pathname.startsWith(`/${lang}`)
+        ? pathname.replace(`/${lang}`, `/${otherLang}`)
+        : `/${otherLang}${pathname}`;
 
   return (
     <header className="border-b border-gray-100 bg-white/80 backdrop-blur-sm sticky top-0 z-50">

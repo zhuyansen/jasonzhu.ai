@@ -34,6 +34,13 @@ export async function generateStaticParams() {
 
 const SITE_URL = "https://jasonzhu.ai";
 
+/** 核心英文 GEO 落地页的精简 <title>（≤60 字符，避免截断核心词，页面 H1 仍保持完整标题） */
+const EN_SEO_TITLES: Record<string, string> = {
+  "indie-payments-report-2026": "2026 Indie Payments Report: 200,000 Checkout Links Analyzed",
+  "choose-payment-platform-2026": "Best Indie Payment Platforms (2026): 8 Compared + 200K Data",
+  "agent-skill-security-audit-200": "AI Agent Skills Security Audit: 97.8% Never Reviewed (2026)",
+};
+
 /** 撰稿人主页是 X 账号时取出 @handle，给 twitter:creator 用 */
 function xHandle(url?: string) {
   const m = url?.match(/^https?:\/\/(?:www\.)?(?:x|twitter)\.com\/([A-Za-z0-9_]+)\/?$/);
@@ -51,8 +58,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? post.excerpt
     : `${post.title} - ${byline}，涵盖${post.category}领域的深度分析与实战经验分享。`);
 
+  const seoTitle = lang === "en" && EN_SEO_TITLES[slug] ? EN_SEO_TITLES[slug] : post.title;
+
   return {
-    title: fitTitle(post.title),
+    title: fitTitle(seoTitle),
     description,
     // <meta name="author">：根布局默认是 Jason Zhu，投稿文换成撰稿人
     ...(post.author ? { authors: [{ name: post.author.name, url: post.author.url }] } : {}),

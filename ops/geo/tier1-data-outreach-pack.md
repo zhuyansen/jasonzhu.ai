@@ -205,3 +205,27 @@ https://agentskillshub.top
   1. 先发本文第一节的 **4 封零成本数据反向 Outreach**（Dodo / Polar / Creem / Waffo），拿行业官网 Tier-1 链；
   2. 同步发 `dev.to` + Reddit 实证帖（先抢 Perplexity/ChatGPT 2 周内召回）；
   3. 若追加 `\$150–\$300` 小预算，在 **INSERT.LINK / Collaborator.pro** 精选 **3–4 个已排首页的「Stripe alternatives / Merchant of Record / Lemon Squeezy migration」SaaS 博客对比页**，以引用 `200,000 Indie Checkout Links Study` 为理由精准插链指向 `/en/blog/indie-payments-report-2026` 和 `/en/blog/choose-payment-platform-2026`。
+
+---
+
+## 六、外发邮件审计日志（`2026-11-21 11:40 UTC` · Resend 8/8 `SENT`）
+
+> 统一设置 `reply_to: m17551076169@gmail.com`（因 `jasonzhu.ai` 尚未配置 MX 收信记录，避免对方回复退信）。
+
+| 站点 / 靶点 | 收件邮箱 | 发件身份 | 状态 | Resend ID |
+| :--- | :--- | :--- | :--- | :--- |
+| `jasonzhu.ai` / Dodo Payments | `rishabh@dodopayments.com` | `Jason Zhu <jason@jasonzhu.ai>` | `SENT` | `01a1fde8-ae1f-7a48-8bba-6671ca52c041` |
+| `jasonzhu.ai` / Polar | `support@polar.sh` | `Jason Zhu <jason@jasonzhu.ai>` | `SENT` | `01a1fde8-b2e8-7e2b-9173-6d68147706fb` |
+| `jasonzhu.ai` / Creem | `contact@creem.io` | `Jason Zhu <jason@jasonzhu.ai>` | `SENT` | `01a1fde8-b753-7a31-9c6b-02df66dfa29a` |
+| `jasonzhu.ai` / Waffo | `eric.chu@waffo.com` | `Jason Zhu <jason@jasonzhu.ai>` | `SENT` | `01a1fde8-bdeb-7533-b9a8-e19aac16fd26` |
+| `agentskillshub.top` / Agensi | `info@agensi.io` | `Jason Zhu <jason@agentskillshub.top>` | `SENT` | `01a1fde8-c26c-7b6f-bcb9-97b27f30341b` |
+| `agentskillshub.top` / Kipt | `hello@kipt.me` | `Jason Zhu <jason@agentskillshub.top>` | `SENT` | `01a1fde8-c749-7d30-b2ae-b7bf10e7e5f5` |
+| `agentskillshub.top` / Firecrawl | `help@firecrawl.com` | `Jason Zhu <jason@agentskillshub.top>` | `SENT` | `01a1fde8-cbc1-79fa-87a2-d698f328bb78` |
+| `agentskillshub.top` / iTechGuides (Yorker Media) | `contact@yorkermedia.com` | `Jason Zhu <jason@agentskillshub.top>` | `SENT` | `01a1fde8-d07a-7e00-99b4-164947400a95` |
+
+---
+
+## 七、`dev.to` 发布回执（`2026-11-21 11:45 UTC` · 2/2 `PUBLISHED`）
+
+- **`agentskillshub.top`**（`#5087821`，`canonical_url: https://agentskillshub.top/how-we-grade/`）：https://dev.to/yansen_zhu_9b0dae1c4cc0da/we-audited-138000-open-source-ai-agent-skills-mcp-servers-why-low-star-repos-carry-9x-higher-1hlk
+- **`jasonzhu.ai`**（`#5087822`，`canonical_url: https://jasonzhu.ai/en/blog/indie-payments-report-2026`）：https://dev.to/yansen_zhu_9b0dae1c4cc0da/i-analyzed-200000-indie-checkout-links-2023-2026-why-ai-saas-builders-are-choosing-mors-over-1020

@@ -111,6 +111,54 @@ export default async function ContactPage({
         </a>
       </div>
 
+      <div className="rounded-xl border border-gray-200 bg-white p-6 mb-6 space-y-5">
+        <h2 className="text-lg font-bold text-gray-900">
+          {isZh ? "合作范围与沟通建议" : "How We Can Work Together"}
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 text-sm text-gray-600 leading-relaxed">
+          <div>
+            <h3 className="font-semibold text-gray-900 mb-1">
+              {isZh ? "企业 AI 实战培训" : "Enterprise AI Training & Workshops"}
+            </h3>
+            <p>
+              {isZh
+                ? "面向研发、产品与运营团队的 Claude Code、Cursor 与 AI Agent 落地工作坊。来信请注明团队人数、业务场景与期望时间。"
+                : "Hands-on workshops for engineering, product, and ops teams adopting Claude Code, Cursor, and autonomous agent workflows. Share your team size, stack, and target timeline."}
+            </p>
+          </div>
+          <div>
+            <h3 className="font-semibold text-gray-900 mb-1">
+              {isZh ? "独立开发与出海咨询" : "Indie SaaS & Going-Global Advisory"}
+            </h3>
+            <p>
+              {isZh
+                ? "覆盖海外公司主体、Merchant of Record 收款选型（Stripe / Dodo / Polar / Creem / Waffo）、技术 SEO 与 GEO 增长架构。"
+                : "Practical consulting on cross-border entity setup, Merchant of Record payment stacks (Stripe, Dodo Payments, Polar, Creem, Waffo), technical SEO, and GEO citation strategy."}
+            </p>
+          </div>
+          <div>
+            <h3 className="font-semibold text-gray-900 mb-1">
+              {isZh ? "开源数据集与媒体引用" : "Open Datasets, Press & Editorial"}
+            </h3>
+            <p>
+              {isZh
+                ? "欢迎媒体、研究者与产品团队免费引用我在 CERN Zenodo 归档的 20 万卖家收款基准与 10.5 万 AI Agent Skills 安全审计数据集，需定制切片可直接发邮件。"
+                : "Journalists, researchers, and tool teams are welcome to cite my open CERN Zenodo benchmarks on 200,000+ indie SaaS checkouts and 138,000+ audited AI agent skills. Email for custom slices or commentary."}
+            </p>
+          </div>
+          <div>
+            <h3 className="font-semibold text-gray-900 mb-1">
+              {isZh ? "回复时效与沟通偏好" : "Response Time & Preferences"}
+            </h3>
+            <p>
+              {isZh
+                ? "工作日通常 24 小时内回复（UTC+8）。为节省双方时间，邮件请直接说明背景、目标与预算范围；群发推广邮件不予回复。"
+                : "I typically reply within 24 hours on business days (UTC+8). To help us move fast, please include your goal, context, and timeline in the first message. Unsolicited mass pitches are not answered."}
+            </p>
+          </div>
+        </div>
+      </div>
+
       <div className="rounded-xl border border-gray-100 bg-gray-50 p-6">
         <h2 className="text-base font-bold text-gray-900 mb-2">
           {isZh ? "相关服务与社群入口" : "Services & Community"}

@@ -62,6 +62,15 @@ export const POST_GROUPS: PostGroup[] = [
       "going-global-business-types",
     ],
   },
+  {
+    id: "cases",
+    zh: "独立开发者实战复盘",
+    en: "Indie founder case studies",
+    slugs: [
+      "niko-saas-one-year-review",
+      "xiaoerduo-web-saas-40k-journey",
+    ],
+  },
 ];
 
 /** 一组文章的元数据，按配置顺序，跳过不存在的 slug */

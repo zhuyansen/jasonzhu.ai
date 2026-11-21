@@ -29,7 +29,8 @@ function canonicalUrl(alternates: Metadata["alternates"]): string | undefined {
 export function withSocialCards(meta: Metadata, lang: string): Metadata {
   const isZh = lang !== "en";
   const title = plainTitle(meta.title);
-  const description = typeof meta.description === "string" ? meta.description : undefined;
+  const rawDescription = typeof meta.description === "string" ? meta.description : undefined;
+  const description = rawDescription ? fitDescription(rawDescription) : undefined;
   const url = canonicalUrl(meta.alternates);
   const text = { ...(title ? { title } : {}), ...(description ? { description } : {}) };
   const openGraph = {
@@ -52,7 +53,7 @@ export function withSocialCards(meta: Metadata, lang: string): Metadata {
   } as Twitter;
   // 标题带站名超过 60 个字符的不带站名（fitTitle）；页面自己写成对象（absolute 等）的不动
   const fitted = typeof meta.title === "string" ? fitTitle(meta.title) : meta.title;
-  return { ...meta, title: fitted, openGraph, twitter };
+  return { ...meta, title: fitted, ...(description ? { description } : {}), openGraph, twitter };
 }
 
 const BRAND_SUFFIX = " | JasonZhu.AI";
@@ -60,11 +61,21 @@ const TITLE_MAX = 60;
 const DESCRIPTION_MAX = 160;
 
 /**
- * 页面标题：加上站名超过 60 个字符时不带站名（搜索结果约显示 60 个字符，站名 Google 会单独显示）。
- * OpenSEO 2026-11-20 全站审计：813 页标题过长，提示词详情页和博客多数只超出「 | JasonZhu.AI」这一段。
+ * 页面标题：加上站名超过 60 个字符时不带站名；标题本身仍超 60 字符时按子句或词边界截短到 60 字符内，
+ * 避免 SERP 截断与审计报 Title too long（H1 和 OG/Twitter 卡片仍保留完整标题）。
  */
-export function fitTitle(title: string): NonNullable<Metadata["title"]> {
-  return title.length + BRAND_SUFFIX.length > TITLE_MAX ? { absolute: title } : title;
+export function fitTitle(title: string, max = TITLE_MAX): NonNullable<Metadata["title"]> {
+  const clean = title.replace(/\s+/g, " ").trim();
+  if (clean.length + BRAND_SUFFIX.length <= max) return clean;
+  if (clean.length <= max) return { absolute: clean };
+  const head = clean.slice(0, max);
+  const sep = Math.max(...[" — ", " – ", " | ", ": ", " - ", "：", "｜"].map((s) => head.lastIndexOf(s)));
+  if (sep >= max * 0.55) {
+    return { absolute: head.slice(0, sep).replace(/[\s,;:，；：、\-—–|]+$/, "").trim() };
+  }
+  const space = head.lastIndexOf(" ", max - 2);
+  const cut = space >= max * 0.6 ? head.slice(0, space) : head.slice(0, max - 1);
+  return { absolute: `${cut.replace(/[\s,;:，；：、\-—–|]+$/, "")}…` };
 }
 
 /** meta description 超过 160 个字符时，截到最后一个完整句子；句子太靠前就按词截断加省略号（同一次审计：478 页描述过长） */
