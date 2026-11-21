@@ -242,7 +242,11 @@ export default async function BlogPostPage({ params }: Props) {
               ]
             : []),
           ...(post.doi === "10.5281/zenodo.24387074"
-            ? ["https://huggingface.co/datasets/jasonzhuyansen/agent-skills-security-grades"]
+            ? [
+                "https://www.wikidata.org/wiki/Q141735092",
+                "https://huggingface.co/datasets/jasonzhuyansen/agent-skills-security-grades",
+                "https://www.kaggle.com/datasets/yansenzhu/agent-skills-security-grades",
+              ]
             : []),
         ],
         identifier: [

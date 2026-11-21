@@ -85,6 +85,19 @@ function buildSiteJsonLd(lang: Locale) {
       availableLanguage: ["en", "zh-CN"],
     },
     founder: { "@id": "https://jasonzhu.ai/#person", "@type": "Person", name: AUTHOR_NAME },
+    subOrganization: {
+      "@type": "Organization",
+      "@id": "https://agentskillshub.top/#organization",
+      name: "Agent Skills Hub",
+      url: "https://agentskillshub.top/",
+      sameAs: [
+        "https://www.wikidata.org/wiki/Q141986406",
+        "https://www.crunchbase.com/organization/agent-skills-hub",
+        "https://github.com/zhuyansen/agent-skills-hub",
+        "https://www.npmjs.com/package/@agentskillshub/cli",
+        "https://www.npmjs.com/package/@agentskillshub/mcp",
+      ],
+    },
     sameAs: PROFILES.map((p) => p.url),
   };
 
