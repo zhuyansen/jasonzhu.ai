@@ -13,7 +13,7 @@ import requests
 from common import run, save, secret
 
 APIMART = "https://api.apimart.ai"
-FLATROUTER = "https://api.flatrouter.com"
+FLATROUTER = (os.environ.get("FLATROUTER_BASE_URL") or "https://api.apimart.ai/v1").removesuffix("/v1").rstrip("/")
 IMAGE_MODEL = os.environ.get("APIMART_IMAGE_MODEL") or "gpt-image-2.5-flare"   # 和封面脚本用同一个模型
 AISA_BALANCE = "https://api.aisa.one/v1/credits/balance"
 TWITTERAPI_INFO = "https://api.twitterapi.io/oapi/my/info"
@@ -23,13 +23,13 @@ MIN_USD = 1.0   # 主通道一天约 0.1 美元，低于 1 美元时还够用一
 def anthropic_ping(base, key, model):
     r = requests.post(f"{base}/v1/messages", timeout=60,
                       headers={"x-api-key": key, "anthropic-version": "2023-06-01", "content-type": "application/json"},
-                      json={"model": model, "max_tokens": 8, "messages": [{"role": "user", "content": "hi"}]})
+                      json={"model": model, "max_tokens": 8, "stream": False, "messages": [{"role": "user", "content": "hi"}]})
     return r.status_code, r.text[:160]
 
 
 def openai_ping(base, key, model):
     r = requests.post(f"{base}/v1/chat/completions", timeout=60, headers={"Authorization": f"Bearer {key}"},
-                      json={"model": model, "max_tokens": 8, "messages": [{"role": "user", "content": "hi"}]})
+                      json={"model": model, "max_tokens": 8, "stream": False, "messages": [{"role": "user", "content": "hi"}]})
     return r.status_code, r.text[:160]
 
 
@@ -73,7 +73,7 @@ def main():
 
     fr = secret("FLATROUTER_API_KEY")
     if fr:
-        add("flatrouter（主力）", "快讯 + 提示词库", "gpt-6-astra", lambda: openai_ping(FLATROUTER, fr, "gpt-6-astra"))
+        add("apimart（主力）", "快讯 + 提示词库", "gemini-4-hydrogen", lambda: openai_ping(FLATROUTER, fr, "gemini-4-hydrogen"))
     ac = secret("APIMART_CLAUDE_KEY") or secret("APIMART_API_KEY")
     if ac:
         add("apimart Claude（备用 + 终审）", "快讯 + 提示词库", "claude-opus-5-5", lambda: anthropic_ping(APIMART, ac, "claude-opus-5-5"))

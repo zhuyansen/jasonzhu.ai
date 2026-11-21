@@ -128,10 +128,10 @@ const flatrouterKey = process.env.FLATROUTER_API_KEY;
 const FLATROUTER = flatrouterKey
   ? {
       key: flatrouterKey,
-      baseURL: (process.env.FLATROUTER_BASE_URL || "https://api.flatrouter.com/v1").replace(/\/v1\/?$/, ""),
+      baseURL: (process.env.FLATROUTER_BASE_URL || "https://api.apimart.ai/v1").replace(/\/v1\/?$/, ""),
       label: "flatrouter",
       type: "openai",
-      models: (process.env.FLATROUTER_NEWS_MODELS || "gpt-6-astra,gpt-5.6-sol").split(",").map((m) => m.trim()).filter(Boolean),
+      models: (process.env.FLATROUTER_NEWS_MODELS || "gemini-4-hydrogen").split(",").map((m) => m.trim()).filter(Boolean),
     }
   : null;
 
@@ -153,7 +153,7 @@ console.log(`🔌 API 端点：${activeClient.label} (${activeClient.baseURL})`)
  */
 // OpenAI 兼容通道（flatrouter）：把 Messages 请求转成 chat/completions，再把结果转回 Messages 的形状，下游解析不用改
 async function callOpenAICompat({ key, baseURL }, body, timeoutMs) {
-  const req = { model: body.model, max_tokens: body.max_tokens, messages: body.messages };   // thinking 参数 GPT 不认，丢掉
+  const req = { model: body.model, max_tokens: body.max_tokens, stream: false, messages: body.messages };   // thinking 参数 GPT 不认，丢掉
   const ctl = new AbortController();
   const t = setTimeout(() => ctl.abort(), timeoutMs);
   try {

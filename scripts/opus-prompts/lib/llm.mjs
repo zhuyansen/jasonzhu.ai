@@ -25,7 +25,7 @@ const endpoints = [
   process.env.ANTHROPIC_AUTH_TOKEN && { label: "proxy", key: process.env.ANTHROPIC_AUTH_TOKEN, baseURL: process.env.ANTHROPIC_BASE_URL || "https://api.aigocode.app", models: MODELS },
   // 第一备用：flatrouter（OpenAI 兼容，只有 GPT；这个 key 开通了 gpt-6-astra / gpt-5.6-sol）。2026-10-05 用户决定排在 apimart 前面。
   // 2026-10-03 评测：逐字定位能用，但比 Claude 更容易漏掉夹在正文里的一句话指令——只在主代理不通时顶上
-  process.env.FLATROUTER_API_KEY && { label: "flatrouter", type: "openai", key: process.env.FLATROUTER_API_KEY, baseURL: (process.env.FLATROUTER_BASE_URL || "https://api.flatrouter.com/v1").replace(/\/v1\/?$/, ""), models: (process.env.FLATROUTER_WORKER_MODELS || "gpt-6-astra,gpt-5.6-sol").split(",") },
+  process.env.FLATROUTER_API_KEY && { label: "flatrouter", type: "openai", key: process.env.FLATROUTER_API_KEY, baseURL: (process.env.FLATROUTER_BASE_URL || "https://api.apimart.ai/v1").replace(/\/v1\/?$/, ""), models: (process.env.FLATROUTER_WORKER_MODELS || "gemini-4-hydrogen").split(",") },
   // apimart：2026-10-05 的新 key 只开通 claude-opus-5-5，旧 key 是 sonnet-5-5 / opus-4-6，三个都列上，哪个 key 都能跑
   APIMART_KEY && { label: "apimart", key: APIMART_KEY, baseURL: (process.env.APIMART_BASE_URL || "https://api.apimart.ai").replace(/\/v1\/?$/, ""), models: (process.env.APIMART_MODEL || "claude-opus-5-5,claude-sonnet-5-5,claude-opus-4-6").split(",") },
   process.env.ANTHROPIC_API_KEY && { label: "official", key: process.env.ANTHROPIC_API_KEY, baseURL: "https://api.anthropic.com", models: MODELS },
@@ -74,7 +74,7 @@ async function claudeText(prompt, { maxTokens, timeoutMs, images = [] }) {
   const model = ep.models[modelIdx.get(ep.label) || 0];
   if (ep.type === "openai") {
     const { status, text } = await post(`${ep.baseURL}/v1/chat/completions`, { Authorization: `Bearer ${ep.key}`, "Content-Type": "application/json" },
-      { model, temperature: 0, max_tokens: maxTokens, messages: [{ role: "user", content: withImages(prompt, images, (url) => ({ type: "image_url", image_url: { url, detail: "low" } })) }] }, timeoutMs);
+      { model, temperature: 0, stream: false, max_tokens: maxTokens, messages: [{ role: "user", content: withImages(prompt, images, (url) => ({ type: "image_url", image_url: { url, detail: "low" } })) }] }, timeoutMs);
     if (status >= 400 || !text) { const err = new Error(`${ep.label}/${model} HTTP ${status}: ${redact(text.slice(0, 200))}`); err.modelProblem = status < 500 && /model/i.test(text) && (modelIdx.get(ep.label) || 0) < ep.models.length - 1; throw err; }
     const j = JSON.parse(text);
     usage.worker.calls++; usage.worker.in += j.usage?.prompt_tokens || 0; usage.worker.out += j.usage?.completion_tokens || 0;
@@ -128,14 +128,14 @@ export async function reviewerJSON(prompt, { label = "reviewer", maxTokens = 600
     usage.reviewer.provider = "claude (未配置 FLATROUTER_API_KEY，审核与干活是同一家模型)";
     return workerJSON(prompt, { label, maxTokens, timeoutMs, validate });
   }
-  const base = (process.env.FLATROUTER_BASE_URL || "https://api.flatrouter.com/v1").replace(/\/$/, "");
-  const model = process.env.OPUS_REVIEWER_MODEL || "gpt-6-astra";
+  const base = (process.env.FLATROUTER_BASE_URL || "https://api.apimart.ai/v1").replace(/\/$/, "");
+  const model = process.env.OPUS_REVIEWER_MODEL || "gemini-4-hydrogen";
   usage.reviewer.provider = `flatrouter/${model}`;
   let last;
   for (let attempt = 1; attempt <= 4; attempt++) {
     try {
       const { status, text } = await post(`${base}/chat/completions`, { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
-        { model, temperature: 0.1, max_tokens: maxTokens, messages: [{ role: "system", content: "You are a strict content auditor. Output only JSON." }, { role: "user", content: prompt }] }, timeoutMs);
+        { model, temperature: 0.1, stream: false, max_tokens: maxTokens, messages: [{ role: "system", content: "You are a strict content auditor. Output only JSON." }, { role: "user", content: prompt }] }, timeoutMs);
       if (status >= 400 || !text) throw new Error(`HTTP ${status}: ${redact(text.slice(0, 200))}`);
       const j = JSON.parse(text);
       usage.reviewer.calls++; usage.reviewer.in += j.usage?.prompt_tokens || 0; usage.reviewer.out += j.usage?.completion_tokens || 0;
