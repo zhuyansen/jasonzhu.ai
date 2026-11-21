@@ -4,6 +4,7 @@ import { getAllDigests, isDigestIndexable } from "@/lib/news";
 import { getOpusLibrary } from "@/lib/opus-prompts";
 import { getImageLibrary } from "@/lib/image-prompts";
 import { getGeminiLibrary } from "@/lib/gemini-prompts";
+import { getAnimationLibrary } from "@/lib/animation-prompts";
 import { GUIDES } from "@/lib/go-global-guides";
 
 const SITE_URL = "https://jasonzhu.ai";
@@ -39,6 +40,7 @@ const STATIC_PATHS = [
   "/prompts/claude-opus-5-5/universe", // 提示词宇宙全屏页（可收录、有 canonical，2026-11-20 审计发现没进 sitemap）
   "/prompts/chatgpt-images-2-6", // ChatGPT Images 2.6 合集（2026-11-05）
   "/prompts/gemini-4", // Gemini 4 合集（2026-11-16，种子来自 Claude 库里的同题对比）
+  "/prompts/claude-animation", // Claude 动画提示词库（2026-11-21，从 Claude 库挑出来的动画作品）
   "/backlink-spam-list", // 垃圾外链来源库（名单在 GitHub zhuyansen/backlink-spam-list，页面每天重读）
   "/contact",
   "/sitemap-html",
@@ -147,6 +149,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       entries.push({
         url: `${SITE_URL}/${lang}/prompts/gemini-4/${c.id}`,
         lastModified: new Date(c.addedAt || gemini.updatedAt || Date.now()),
+        changeFrequency: "monthly",
+        priority: 0.6,
+      });
+    }
+  }
+
+  // Claude 动画提示词库详情页：同 Gemini 4 库，只有带提示词的作品有详情页
+  const animation = getAnimationLibrary();
+  for (const c of animation.cases.filter((x) => x.prompt)) {
+    for (const lang of LANGS) {
+      entries.push({
+        url: `${SITE_URL}/${lang}/prompts/claude-animation/${c.id}`,
+        lastModified: new Date(c.addedAt || animation.updatedAt || Date.now()),
         changeFrequency: "monthly",
         priority: 0.6,
       });

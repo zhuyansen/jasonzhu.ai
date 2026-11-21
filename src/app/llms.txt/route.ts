@@ -51,6 +51,7 @@ export async function GET(request: Request) {
     `- [Claude 5.5 提示词库](${SITE_URL}/zh/prompts/claude-opus-5-5): X 上播放过 5000 的 Opus 5.5 / Sonnet 5.5 / Haiku 5.5 / Fable 5.5（内测）作品（含作者公开的原始提示词）、视频与出处`,
     `- [ChatGPT Images 2.6 提示词合集](${SITE_URL}/zh/prompts/chatgpt-images-2-6): X 上浏览过 5000 的 ChatGPT Images 2.6（GPT-Image-2.6）图片、GIF 作品，含作者公开的原始提示词与出处，每天更新`,
     `- [Gemini 4 提示词合集](${SITE_URL}/zh/prompts/gemini-4): X 上播放过 5000 的 Gemini 4（Argon、Carbon 等）写代码做的 3D、物理模拟、游戏作品，大多是和 Claude、GPT 的同题对比，含作者公开的原始提示词与出处`,
+    `- [Claude 动画提示词库](${SITE_URL}/zh/prompts/claude-animation): Claude 5.5 做的动画（动效与宣传片、科普讲解、故事与卡通、3D 动画、网页动效、数学与代码艺术），从 Claude 5.5 提示词库挑出，含作者公开的原始提示词与出处；英文版 ${SITE_URL}/en/prompts/claude-animation`,
     `- [博客 RSS](${SITE_URL}/feed/blog.xml)`,
     `- [快讯 RSS](${SITE_URL}/feed/news.xml)`,
     "",

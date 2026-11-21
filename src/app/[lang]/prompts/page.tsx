@@ -4,6 +4,7 @@ import type { Locale } from "@/lib/dictionaries";
 import { getOpusLibrary, formatCount } from "@/lib/opus-prompts";
 import { getImageLibrary, IMAGE_LIBRARY_PATH, coverOf } from "@/lib/image-prompts";
 import { getGeminiLibrary, GEMINI_LIBRARY_PATH } from "@/lib/gemini-prompts";
+import { getAnimationLibrary, ANIMATION_LIBRARY_PATH } from "@/lib/animation-prompts";
 import { withSocialCards } from "@/lib/social";
 
 const SITE_URL = "https://jasonzhu.ai";
@@ -35,6 +36,7 @@ export default async function PromptsIndexPage({ params }: { params: Promise<{ l
   const opus = getOpusLibrary();
   const images = getImageLibrary();
   const gemini = getGeminiLibrary();
+  const animation = getAnimationLibrary();
   const libraries = [
     {
       href: `/${lang}${IMAGE_LIBRARY_PATH}`,
@@ -63,6 +65,16 @@ export default async function PromptsIndexPage({ params }: { params: Promise<{ l
       prompts: gemini.withPrompt,
       cover: gemini.cases[0] ? coverOf(gemini.cases[0].media[0]) : null,
     },
+    {
+      // 2026-11-21：从 Claude 库里挑出来的动画作品，按动画类型分
+      href: `/${lang}${ANIMATION_LIBRARY_PATH}`,
+      name: isZh ? "Claude 动画" : "Claude Animation",
+      badge: "New",
+      desc: isZh ? "Claude 做的动效与宣传片、科普动画、卡通故事、3D 动画和网页动效，按动画类型分，附作者的原始提示词。" : "Motion graphics, animated explainers, cartoon stories, 3D animation and UI motion made with Claude, sorted by type, with the creators' prompts.",
+      works: animation.cases.length,
+      prompts: animation.withPrompt,
+      cover: animation.cases[0] ? coverOf(animation.cases[0].media[0]) : null,
+    },
   ];
 
   return (
@@ -73,7 +85,7 @@ export default async function PromptsIndexPage({ params }: { params: Promise<{ l
           ? "收录 X 上播放或浏览过 5000 的作品和创作者本人公开的提示词，原文照录、注明出处，每天自动更新。"
           : "Works with 5,000+ views on X and the prompts their creators shared, verbatim with sources, updated daily."}
       </p>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid sm:grid-cols-2 gap-6">
         {libraries.map((l) => (
           <Link key={l.href} href={l.href} className="group rounded-2xl border border-gray-100 overflow-hidden bg-white shadow-sm hover:shadow-lg transition-shadow">
             <div className="relative aspect-[16/10] bg-gray-100">

@@ -126,6 +126,11 @@ export default async function HtmlSitemapPage({
             </Link>
           </li>
           <li>
+            <Link href={`/${lang}/prompts/claude-animation`} className="text-[var(--primary)] hover:underline">
+              {isZh ? "Claude 动画提示词库" : "Claude Animation Prompts"}
+            </Link>
+          </li>
+          <li>
             <Link href={`/${lang}/tools`} className="text-[var(--primary)] hover:underline">
               {isZh ? "AI 工具箱 (/tools)" : "AI Tools Directory (/tools)"}
             </Link>
