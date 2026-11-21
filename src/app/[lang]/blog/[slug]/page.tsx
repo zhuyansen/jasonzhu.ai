@@ -259,6 +259,7 @@ export default async function BlogPostPage({ params }: Props) {
         },
         license: "https://creativecommons.org/licenses/by/4.0/",
         isAccessibleForFree: true,
+        inLanguage: lang === "en" ? "en" : "zh-CN",
         datePublished: post.date,
         dateModified: post.updated || post.date,
         keywords: post.tags.map((t) => tagLabel(t, lang)),
@@ -273,6 +274,26 @@ export default async function BlogPostPage({ params }: Props) {
             encodingFormat: "text/html",
             contentUrl: `https://zenodo.org/records/${post.doi.split("zenodo.").pop()}`,
           },
+          ...(post.doi === "10.5281/zenodo.24386243"
+            ? [
+                {
+                  "@type": "DataDownload",
+                  encodingFormat: "text/csv",
+                  contentUrl:
+                    "https://raw.githubusercontent.com/zhuyansen/indie-saas-payments-benchmark-2026/main/data/platform-adoption-200k-2026.csv",
+                },
+              ]
+            : []),
+          ...(post.doi === "10.5281/zenodo.24387072"
+            ? [
+                {
+                  "@type": "DataDownload",
+                  encodingFormat: "text/csv",
+                  contentUrl:
+                    "https://raw.githubusercontent.com/zhuyansen/indie-saas-payments-benchmark-2026/main/data/mor-20usd-subscription-fees-2026.csv",
+                },
+              ]
+            : []),
         ],
       }
     : null;

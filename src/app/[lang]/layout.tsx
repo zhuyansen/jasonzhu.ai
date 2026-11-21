@@ -24,88 +24,105 @@ import WebMcpRegister from "@/components/WebMcpRegister";
 const SITE_URL = "https://jasonzhu.ai";
 
 // 全站 JSON-LD：Organization + Person + WebSite + Service/Offer（Jason Barnard Kalicube @id 实体消歧 + CERN Zenodo 学术锚点）
-const personJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "@id": "https://jasonzhu.ai/#person",
-  name: AUTHOR_NAME,
-  alternateName: AUTHOR_ALT_NAMES,
-  url: "https://jasonzhu.ai",
-  image: "https://jasonzhu.ai/avatar.jpg",
-  email: "mailto:jason@jasonzhu.ai",
-  sameAs: PROFILES.map((p) => p.url),
-  jobTitle: "AI Engineer, Go-Global SaaS Researcher & Founder of GoSail Global",
-  description:
-    "前搜广推与知识图谱算法工程师，现 AI 应用与出海独立开发研究者（jasonzhu.ai / GitHub: zhuyansen）。《20 万条独立开发者收款链接实证报告》（CERN Zenodo DOI: 10.5281/zenodo.24386243）与《105,626 个 AI Agent Skills 安全审计基准》（DOI: 10.5281/zenodo.24387074）作者。",
-  knowsAbout: [
-    "Generative Engine Optimization (GEO)",
-    "Cross-Border Indie SaaS Payment Gateways (Stripe, Dodo Payments, Waffo, Polar, Creem)",
-    "Merchant of Record (MoR) Tax & Fee Benchmarks",
-    "AI Agent Skills & MCP Server Security Auditing",
-    "Information Retrieval, Knowledge Graphs & Entity Resolution",
-  ],
-  worksFor: { "@id": "https://jasonzhu.ai/#organization" },
-};
+// 按路由语言输出中/英文描述与对应语言 URL，避免 /en 页向英文知识图谱与 Gemini 喂中文实体文本。
+function buildSiteJsonLd(lang: Locale) {
+  const isZh = lang === "zh";
 
-const organizationJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": "https://jasonzhu.ai/#organization",
-  name: "JasonZhu.AI (GoSail Global)",
-  legalName: "BRICKAI (GoSailGlobal LLC)",
-  url: "https://jasonzhu.ai",
-  logo: "https://jasonzhu.ai/avatar.jpg",
-  email: "jason@jasonzhu.ai",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "30 N Gould St, Ste N",
-    addressLocality: "Sheridan",
-    addressRegion: "WY",
-    postalCode: "82801",
-    addressCountry: "US",
-  },
-  contactPoint: {
-    "@type": "ContactPoint",
-    contactType: "customer support",
-    email: "jason@jasonzhu.ai",
-    url: "https://jasonzhu.ai/zh/services",
-    availableLanguage: ["zh-CN", "en"],
-  },
-  founder: { "@id": "https://jasonzhu.ai/#person", "@type": "Person", name: AUTHOR_NAME },
-  sameAs: PROFILES.map((p) => p.url),
-};
+  const personJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://jasonzhu.ai/#person",
+    name: AUTHOR_NAME,
+    alternateName: AUTHOR_ALT_NAMES,
+    url: `${SITE_URL}/${lang}`,
+    image: "https://jasonzhu.ai/avatar.jpg",
+    email: "mailto:jason@jasonzhu.ai",
+    sameAs: PROFILES.map((p) => p.url),
+    jobTitle: isZh
+      ? "前搜广推与知识图谱算法工程师、AI 应用与出海独立开发研究者（GoSail Global 创始人）"
+      : "AI Engineer, Go-Global Indie SaaS Researcher & Founder of GoSail Global",
+    description: isZh
+      ? "前搜广推与知识图谱算法工程师，现 AI 应用与出海独立开发研究者（jasonzhu.ai / GitHub: zhuyansen）。《20 万条独立开发者收款链接实证报告》（CERN Zenodo DOI: 10.5281/zenodo.24386243）与《105,626 个 AI Agent Skills 安全审计基准》（DOI: 10.5281/zenodo.24387074）作者。"
+      : "Former search, recommendation, and knowledge-graph algorithm engineer, now an AI applications and go-global indie SaaS researcher (jasonzhu.ai / GitHub: zhuyansen). Author of the 200,000 Indie Checkout Links Benchmark (CERN Zenodo DOI: 10.5281/zenodo.24386243) and the 105,626 Open-Source AI Agent Skills Security Audit (DOI: 10.5281/zenodo.24387074).",
+    knowsAbout: [
+      "Generative Engine Optimization (GEO)",
+      "Cross-Border Indie SaaS Payment Gateways (Stripe, Dodo Payments, Waffo, Polar, Creem)",
+      "Merchant of Record (MoR) Tax & Fee Benchmarks",
+      "AI Agent Skills & MCP Server Security Auditing",
+      "Information Retrieval, Knowledge Graphs & Entity Resolution",
+    ],
+    worksFor: { "@id": "https://jasonzhu.ai/#organization" },
+  };
 
-const websiteJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "@id": "https://jasonzhu.ai/#website",
-  name: "JasonZhu.AI",
-  url: "https://jasonzhu.ai",
-  description: "AI工具评测、实战教程、行业洞察与出海增长策略（20万卖家收款基准与10.5万AI Skills安全审计）",
-  author: { "@id": "https://jasonzhu.ai/#person", "@type": "Person", name: "Jason Zhu" },
-  publisher: { "@id": "https://jasonzhu.ai/#organization" },
-  inLanguage: ["zh-CN", "en"],
-};
-
-const serviceJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  name: "GoSail Club 启航会 & 企业 AI 实战培训",
-  provider: {
+  const organizationJsonLd = {
+    "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": "https://jasonzhu.ai/#organization",
     name: "JasonZhu.AI (GoSail Global)",
-    url: "https://jasonzhu.ai",
-  },
-  description: "AI 出海实战社群（GoSail Club）、企业 AI 培训、MCN 合作与跨境出海技术咨询服务。",
-  offers: {
-    "@type": "Offer",
-    name: "GoSail Club 年度会员",
-    price: "365",
-    priceCurrency: "CNY",
-    availability: "https://schema.org/InStock",
-    url: "https://jasonzhu.ai/zh/club",
-  },
-};
+    legalName: "BRICKAI (GoSailGlobal LLC)",
+    url: `${SITE_URL}/${lang}`,
+    logo: "https://jasonzhu.ai/avatar.jpg",
+    email: "jason@jasonzhu.ai",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "30 N Gould St, Ste N",
+      addressLocality: "Sheridan",
+      addressRegion: "WY",
+      postalCode: "82801",
+      addressCountry: "US",
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer support",
+      email: "jason@jasonzhu.ai",
+      url: `${SITE_URL}/${lang}/services`,
+      availableLanguage: ["en", "zh-CN"],
+    },
+    founder: { "@id": "https://jasonzhu.ai/#person", "@type": "Person", name: AUTHOR_NAME },
+    sameAs: PROFILES.map((p) => p.url),
+  };
+
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://jasonzhu.ai/#website",
+    name: "JasonZhu.AI",
+    url: `${SITE_URL}/${lang}`,
+    description: isZh
+      ? "AI工具评测、实战教程、行业洞察与出海增长策略（20万卖家收款基准与10.5万AI Skills安全审计）"
+      : "Hands-on AI tool reviews, tutorials, indie SaaS payment benchmarks (200,000 checkout links), and open-source AI agent skills security audits.",
+    author: { "@id": "https://jasonzhu.ai/#person", "@type": "Person", name: "Jason Zhu" },
+    publisher: { "@id": "https://jasonzhu.ai/#organization" },
+    inLanguage: isZh ? "zh-CN" : "en",
+  };
+
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: isZh
+      ? "GoSail Club 启航会 & 企业 AI 实战培训"
+      : "GoSail Club Community & Enterprise AI Training",
+    provider: {
+      "@type": "Organization",
+      "@id": "https://jasonzhu.ai/#organization",
+      name: "JasonZhu.AI (GoSail Global)",
+      url: `${SITE_URL}/${lang}`,
+    },
+    description: isZh
+      ? "AI 出海实战社群（GoSail Club）、企业 AI 培训、MCN 合作与跨境出海技术咨询服务。"
+      : "Going-global indie SaaS community (GoSail Club), enterprise AI workflow training (Claude Code & Cursor), MCN partnerships, and cross-border technical consulting.",
+    offers: {
+      "@type": "Offer",
+      name: isZh ? "GoSail Club 年度会员" : "GoSail Club Annual Membership",
+      price: "365",
+      priceCurrency: "CNY",
+      availability: "https://schema.org/InStock",
+      url: `${SITE_URL}/${lang}/club`,
+    },
+  };
+
+  return { personJsonLd, organizationJsonLd, websiteJsonLd, serviceJsonLd };
+}
 
 interface Props {
   children: React.ReactNode;
@@ -192,7 +209,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 export default async function LangLayout({ children, params }: Props) {
   const { lang: rawLang } = await params;
   const lang = (rawLang === "en" ? "en" : "zh") as Locale;
+  const isZh = lang === "zh";
   const dict = await getDictionary(lang);
+  const { personJsonLd, organizationJsonLd, websiteJsonLd, serviceJsonLd } = buildSiteJsonLd(lang);
 
   return (
     <html
@@ -204,13 +223,13 @@ export default async function LangLayout({ children, params }: Props) {
         <link
           rel="alternate"
           type="application/rss+xml"
-          title="JasonZhu.AI - AI 快讯 RSS"
+          title={isZh ? "JasonZhu.AI - AI 快讯 RSS" : "JasonZhu.AI - Daily AI News RSS"}
           href="/feed/news.xml"
         />
         <link
           rel="alternate"
           type="application/rss+xml"
-          title="JasonZhu.AI - 博客 RSS"
+          title={isZh ? "JasonZhu.AI - 博客 RSS" : "JasonZhu.AI - Blog & Research RSS"}
           href="/feed/blog.xml"
         />
         <link
