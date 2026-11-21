@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type { Locale } from "@/lib/dictionaries";
+import { fitDescription, fitTitle } from "@/lib/social";
 import AiLearningGuideClient from "./AiLearningGuideClient";
 
 const SITE_URL = "https://jasonzhu.ai";
@@ -20,8 +21,8 @@ export async function generateMetadata({
     : "10 major platforms' official free AI courses, complete learning paths in one PDF. Subscribe to download free.";
 
   return {
-    title,
-    description,
+    title: fitTitle(title),
+    description: fitDescription(description),
     alternates: {
       canonical: `${SITE_URL}/${lang}/ai-learning-guide`,
       languages: {

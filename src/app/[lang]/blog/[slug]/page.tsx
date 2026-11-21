@@ -53,10 +53,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!post) return {};
 
   // 投稿文的作者是撰稿人（post.author），其余是站点作者
-  const byline = post.author ? `${post.author.name} 的投稿文章` : `${AUTHOR_NAME} 的博客文章`;
-  const description = fitDescription(post.excerpt && post.excerpt.length >= 50
-    ? post.excerpt
-    : `${post.title} - ${byline}，涵盖${post.category}领域的深度分析与实战经验分享。`);
+  const isEn = lang === "en";
+  const byline = isEn
+    ? post.author ? `guest article by ${post.author.name}` : `article by ${AUTHOR_NAME}`
+    : post.author ? `${post.author.name} 的投稿文章` : `${AUTHOR_NAME} 的博客文章`;
+  const fallbackDesc = isEn
+    ? `${post.title} — ${byline}, with hands-on analysis and practical takeaways on ${post.category}.`
+    : `${post.title} - ${byline}，涵盖${post.category}领域的深度分析与实战经验分享。`;
+  const description = fitDescription(post.excerpt && post.excerpt.length >= 50 ? post.excerpt : fallbackDesc);
 
   const seoTitle = lang === "en" && EN_SEO_TITLES[slug] ? EN_SEO_TITLES[slug] : post.title;
 

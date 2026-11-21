@@ -5,6 +5,7 @@ import type { Locale } from "@/lib/dictionaries";
 import { getAllDigests, getDigestBySlug, digestTitle, digestJasonSays, digestHumanComment, isDigestIndexable } from "@/lib/news";
 import { findCrossLinks } from "@/lib/cross-links";
 import { AUTHOR_NAME } from "@/lib/profiles";
+import { fitDescription, fitTitle } from "@/lib/social";
 import ShareButtons from "@/components/ShareButtons";
 
 const SITE_URL = "https://jasonzhu.ai";
@@ -62,12 +63,14 @@ export async function generateMetadata({
   const comment = digestHumanComment(digest, lang);
   const authorNames = digestAuthors(Boolean(comment)).map((a) => a.name);
 
+  const rawDescription =
+    comment ||
+    digestJasonSays(digest, lang) ||
+    (lang === "en" ? `AI News ${digest.date}` : `AI 快讯 ${digest.date}`);
+
   return {
-    title: mTitle,
-    description:
-      comment ||
-      digestJasonSays(digest, lang) ||
-      (lang === "en" ? `AI News ${digest.date}` : `AI 快讯 ${digest.date}`),
+    title: fitTitle(mTitle),
+    description: fitDescription(rawDescription),
     // <meta name="author">：根布局默认是 Jason Zhu，快讯换成站点（点评期加上 Jason）
     authors: authorNames.map((name) => ({ name })),
     alternates: {
