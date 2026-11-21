@@ -90,7 +90,7 @@ export default function Community({ lang, tips = true }: { lang: string; tips?: 
           <a
             href={dp.partnerUrl}
             target="_blank"
-            rel="sponsored noopener noreferrer"
+            rel="nofollow noopener noreferrer"
             className="inline-flex items-center rounded-lg bg-teal-700 px-3 py-1.5 font-semibold text-white hover:bg-teal-800 transition-colors"
           >
             {isZh
@@ -99,8 +99,8 @@ export default function Community({ lang, tips = true }: { lang: string; tips?: 
           </a>
           <span className="text-gray-500">
             {isZh
-              ? "（这是 Dodo Payments 合作伙伴计划的注册链接，链接持有人可能因你注册获得回报；费率是刘小排谈下来的）"
-              : "(This is a Dodo Payments partner-program signup link; its holder may be rewarded if you sign up through it. Liu Xiaopai negotiated the rate.)"}
+              ? "（这是刘小排在原文里公开的 Dodo 邀请链接，费率是他谈下来的；不是本站的推荐链接，本站不拿分成）"
+              : "(This is the Dodo invite link Liu Xiaopai published with his post; he negotiated the rate. It isn't our referral link and we earn nothing from it.)"}
           </span>
           <Link href={`/${isZh ? "zh" : "en"}/blog/${dp.blogSlug}`} className="text-blue-600 font-medium hover:underline">
             {isZh ? "阅读《Waffo + Dodo 双通道与 $20 订阅真实手续费对比》全文 →" : "Read full post: Waffo + Dodo Dual-Gateway & $20 Fee Comparison →"}

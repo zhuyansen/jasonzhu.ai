@@ -20,7 +20,7 @@ Many indie developers previously looked at Dodo Payments and walked away because
 
 - **Official Default Pricing (`6.0% + $0.40` effective)**: `4.0% + $0.40` base fee + `1.5%` international card surcharge + `0.5%` subscription surcharge. On a $20 monthly subscription, that takes **$1.60** (an 8% cut).
 - **Negotiated Partner Pricing (`3.8% ~ 3.9% + $0.40` all-in)**: Negotiated directly with Dodo Payments CEO Rishabh—**base rate reduced to `3.8% ~ 3.9% + $0.40`, `0%` international card fee, `0%` subscription fee, plus the first $200 in volume processed with zero fees**.
-  - Partner signup link: [https://app.dodopayments.com/partners/W5PU4ZrGTK/signup](https://app.dodopayments.com/partners/W5PU4ZrGTK/signup) (signing up through the standard homepage still applies the default `4% + 1.5% + 0.5% + $0.40` rate). This is a Dodo Payments partner-program link; its holder may be rewarded if you sign up through it.
+  - Partner signup link: [https://app.dodopayments.com/partners/W5PU4ZrGTK/signup](https://app.dodopayments.com/partners/W5PU4ZrGTK/signup) (signing up through the standard homepage still applies the default `4% + 1.5% + 0.5% + $0.40` rate). This is the invite link Liu Xiaopai published in his post; it isn't our referral link and we earn nothing from it.
 
 ---
 

@@ -21,7 +21,7 @@ doi: "10.5281/zenodo.24387072"
 
 - **官网默认费率（偏贵）**：基础费率 `4.0% + $0.40` + 国际卡附加费 `1.5%` + 订阅附加费 `0.5%` = **合计 `6.0% + $0.40`**。一笔 20 美元的跨国月付订阅要扣掉 **$1.60**（损耗高达 8%）。
 - **谈下来的专属合作费率**：刘小排直接找 Dodo Payments CEO Rishabh 谈下了专属费率——**基础费率降至 `3.8% ~ 3.9% + $0.40`，国际卡附加费 `0%`（全免），订阅附加费 `0%`（全免），且前 200 美元收款额免手续费**。
-  - 专属注册入口：[https://app.dodopayments.com/partners/W5PU4ZrGTK/signup](https://app.dodopayments.com/partners/W5PU4ZrGTK/signup)（必须通过该合作链接注册才生效，直接从官网首页点注册仍是默认的 `4% + 1.5% + 0.5% + $0.40`）。这是 Dodo Payments 合作伙伴计划的链接，链接持有人可能因你注册获得回报。
+  - 专属注册入口：[https://app.dodopayments.com/partners/W5PU4ZrGTK/signup](https://app.dodopayments.com/partners/W5PU4ZrGTK/signup)（必须通过该合作链接注册才生效，直接从官网首页点注册仍是默认的 `4% + 1.5% + 0.5% + $0.40`）。这是刘小排在原文里公开的邀请链接，不是本站的推荐链接，本站不拿分成。
 
 ---
 
