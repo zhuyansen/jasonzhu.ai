@@ -162,6 +162,11 @@ if site.get("ok"):
         s = aw.get("sync") or {}
         if s.get("conclusion") not in ("success", None):
             alerts.append(f"GitHub 合集同步最近一次 {s.get('conclusion')}")
+        for r in aw.get("repos") or []:
+            if r.get("error"):
+                alerts.append(f"GitHub 合集 {r['repo']} 状态没查到：{r['error']}")
+            elif r.get("conclusion") not in ("success", "skipped", None):
+                alerts.append(f"GitHub 合集 {r['repo']} 同步最近一次 {r.get('conclusion')}")
         health.append(f"⭐ awesome-opus-5.5-video {aw['stars']:,} stars · {aw['forks']} forks")
     sm = site.get("sitemap")
     if sm:

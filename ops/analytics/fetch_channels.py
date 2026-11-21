@@ -45,6 +45,17 @@ def twitterapi_balance(key):
     return r.status_code, (credits / 100000 if isinstance(credits, (int, float)) else None), r.text[:160]   # 100,000 credits = $1
 
 
+def apimart_balance(base, key):
+    r = requests.get(f"{base}/v1/balance", timeout=30, headers={"Authorization": f"Bearer {key}"})
+    d = r.json() if r.status_code == 200 else {}
+    if r.status_code != 200 or not d.get("success"):
+        return r.status_code, None, False, None, r.text[:160]
+    unlim = bool(d.get("unlimited_quota"))
+    rem = float(d.get("remain_balance") or 0)
+    used = float(d.get("used_balance") or 0)
+    return 200, (None if unlim else rem), unlim, used, r.text[:160]
+
+
 def main():
     checks = []
 
@@ -97,6 +108,22 @@ def main():
                               json={"model": "jev-latest", "state": "Card c1: Acme raised $5M in a closed seed round.",
                                     "questions": {"c1": {"type": "choice", "instructions": "What does c1 describe?",
                                                          "criteria": {"done": "A completed funding round", "rumor": "Only rumored"}}}})))
+    # APIMart 余额 / 用量检查（支持无限额度与固定余额两种 key）
+    for label, used_by, base, key in (
+        ("apimart（主力）额度", "快讯 + 提示词库", FLATROUTER, fr),
+        ("apimart 生图额度", "快讯封面 / 博客封面", APIMART, ai),
+    ):
+        if not key:
+            continue
+        try:
+            code, rem, unlim, used, body = apimart_balance(base, key)
+        except Exception as e:  # noqa: BLE001
+            code, rem, unlim, used, body = 0, None, False, None, f"{type(e).__name__}: {e}"[:160]
+        ok = code == 200 and (unlim or (rem is not None and rem >= MIN_USD))
+        model_txt = f"无限额度（已用 ${used:,.2f}）" if (code == 200 and unlim and used is not None) else (
+            f"余额 ${rem:,.2f}（已用 ${used or 0:,.2f}）" if (code == 200 and rem is not None) else "额度")
+        detail = "" if ok else (f"余额只剩 ${rem:.2f}，不到 ${MIN_USD:.0f}，该充值了" if code == 200 and rem is not None else body)
+        checks.append({"channel": label, "used_by": used_by, "model": model_txt, "ok": ok, "status": code, "detail": detail})
     # X 数据两条通道（提示词库收录用）只查余额
     add_balance("AIsa · X 数据（主）", "提示词库收录", "AISA_API_KEY", aisa_balance)
     add_balance("twitterapi.io · X 数据（备）", "提示词库收录（AIsa 出错时）", "TWITTERAPI_IO_KEY", twitterapi_balance)

@@ -17,8 +17,11 @@ import requests
 from common import CST, REPO_ROOT, STATE, redact, run, save, secret, today_cst
 
 WORKFLOWS = {"daily-news.yml": "快讯采集", "opus-prompts-daily.yml": "提示词库每日收录",
-             "opus-prompts-refresh.yml": "提示词库每周核验", "indexnow.yml": "IndexNow 推送"}
+             "opus-prompts-refresh.yml": "提示词库每周核验", "geo-panel.yml": "GEO 引用面板",
+             "seller-weekly.yml": "卖家周报", "referral-monthly.yml": "引荐月报",
+             "indexnow.yml": "IndexNow 推送"}
 AWESOME = "zhuyansen/awesome-opus-5.5-video"
+AWESOME_REPOS = ("zhuyansen/awesome-opus-5.5-video", "zhuyansen/awesome-chatgpt-images-2.6", "zhuyansen/awesome-gemini-4-prompts")
 
 # 定时触发（2026-11-09 起）：Vercel Cron 按点调 /api/cron/<job>（src/app/api/cron/[job]/route.ts），它再手动触发工作流；
 # GitHub 自己的 schedule 只当备用（常晚几个小时）。看每个任务最近一个该触发的点：点后第一次运行是不是手动触发（workflow_dispatch）、
@@ -246,8 +249,16 @@ def awesome():
     repo = gh(f"repos/{AWESOME}")
     runs = gh(f"repos/{AWESOME}/actions/runs?per_page=3").get("workflow_runs", [])
     last = next((r for r in runs if r["status"] == "completed"), None)
+    repos = []
+    for rname in AWESOME_REPOS:
+        try:
+            rruns = gh(f"repos/{rname}/actions/runs?per_page=3").get("workflow_runs", [])
+            rlast = next((r for r in rruns if r["status"] == "completed"), None)
+            repos.append({"repo": rname.split("/")[-1], "conclusion": rlast and rlast["conclusion"], "at": rlast and rlast["created_at"]})
+        except Exception as e:  # noqa: BLE001
+            repos.append({"repo": rname.split("/")[-1], "error": str(e)[:120]})
     return {"stars": repo["stargazers_count"], "forks": repo["forks_count"], "pushed_at": repo["pushed_at"],
-            "sync": last and {"conclusion": last["conclusion"], "at": last["created_at"]}}
+            "sync": last and {"conclusion": last["conclusion"], "at": last["created_at"]}, "repos": repos}
 
 
 def sitemap():
