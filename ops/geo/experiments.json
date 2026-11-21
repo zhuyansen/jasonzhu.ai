@@ -1,0 +1,37 @@
+{
+  "_说明": "改动记录和对照实验，给 ops/geo/panel_run.py 的周报用。每次改页面前先在这里记一笔：改了哪些题对应的页面（treated），哪些同类页故意不改（control）。events 是全站性的改动，没有对照组，只在周报里标出日期。",
+  "events": [
+    { "date": "2026-11-17", "note": "面板第一次测（基线）：20 题，ChatGPT、Gemini App、Perplexity 各 1 次，Claude 只测了 8 题" },
+    { "date": "2026-11-19", "note": "218 个博客文件的开头加了带品牌名的摘要（全站，没有对照组）；同一天给收款数据页加了 Zenodo DOI" },
+    { "date": "2026-11-21", "note": "178 个模板开头撤掉，40 个手写摘要保留（正好是冻结组对应的页面）" }
+  ],
+  "experiments": [
+    {
+      "id": "gigalinks-jasonzhu",
+      "note": "GIGALinks 无链接品牌提及稿",
+      "started": "2026-11-17",
+      "baseline": "results-2026-11-17-baseline.json",
+      "treated": [
+        "data-indie-payments-200k",
+        "data-choose-payment-platform",
+        "data-dodo-waffo-20usd-fee",
+        "data-lemon-squeezy-shutdown",
+        "data-indie-seller-weekly",
+        "global-us-llc-dev-accounts",
+        "global-us-llc-mercury-stripe",
+        "global-uk-company-2h",
+        "global-uk-wise-business",
+        "global-uk-annual-review"
+      ],
+      "control": [
+        "prompts-claude-opus-55",
+        "prompts-chatgpt-images-26",
+        "prompts-gemini-4",
+        "learn-free-ai-map",
+        "learn-openai-startup-credits",
+        "data-ai-money-map"
+      ],
+      "来源": "ops/geo/citations/gigalinks-controlled-experiment-queue.md 的分组；data-backlink-spam-list 只投过 1 篇，两组都不算"
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+# GEO 引用面板：每周一把固定的题库问一遍几家 AI，记下它们有没有引用、点名 jasonzhu.ai，和上周、和 11-17 的基线比。
+#
+#   提问  ops/geo/panel_run.py 调 backlink-guard 的 asked（AIsa 接口，AISA_API_KEY）。平时问 ChatGPT、Gemini App、
+#         Google AI Mode、Perplexity，每题各 3 次；每月第一个周一加问 Claude 1 次（一个回答约 $0.045，是别家的 10 倍）。
+#         21 题一次约 $1.2，加 Claude 约 $2.1。max_usd 封顶，超了的不问。
+#   存放  分数提交到 ops/geo/panel/（公开）。回答原文和别的网站的网址来自付费接口，不进仓库、不进日志：
+#         加密后放进草稿 release「geo-panel-state」，密钥用 SELLER_STATE_KEY（和卖家历史库同一把）。
+#         解密：gh release download geo-panel-state -p 'panel-<日期>.json.gz.enc' &&
+#               openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000 -pass env:SELLER_STATE_KEY -in panel-<日期>.json.gz.enc | gunzip
+#   通知  摘要发到 ALERT_EMAIL。失败、或有的 AI 有效回答不到一半（结果不完整），也发邮件。
+#   手动  Actions → Run workflow。试跑填 limit=3、publish=0：只问前 3 题，不提交、不存档、不发邮件。
+#   改动  改页面前先在 ops/geo/experiments.json 记一笔（改了哪些题的页面、哪些故意不改），周报会按处理组和对照组分开算。
+#         ops/geo/questions.json 是冻结组，题目不要改：GIGALinks 的实验要在 12-01、12-15、01-01 用同一套题复测。
+name: GEO 引用面板（每周）
+
+on:
+  schedule:
+    - cron: "37 3 * * 1"   # 北京周一 11:37；GitHub 定时常晚几小时，这个任务晚了没关系
+  workflow_dispatch:
+    inputs:
+      sets:
+        description: "题库，逗号分隔：frozen（冻结组）、real（真实问法组）；留空 = 定时任务用的那套"
+        default: ""
+      engines:
+        description: "引擎:次数，逗号分隔；留空 = 平时那四家各 3 次，每月第一个周一加 claude:1"
+        default: ""
+      max_usd:
+        description: "这次最多花多少美元"
+        default: "4"
+      limit:
+        description: "只问前 N 题（试跑用）；留空 = 全部"
+        default: ""
+      publish:
+        description: "填 0：不提交、不存档、不发邮件（试跑用）"
+        default: "1"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: geo-panel
+  cancel-in-progress: false
+
+env:
+  DEFAULT_SETS: frozen
+  DEFAULT_ENGINES: chatgpt:3,gemini_app:3,ai_mode:3,perplexity:3
+
+jobs:
+  panel:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 装依赖
+        # backlink-guard 钉在加了 gemini_app 引擎的那个提交上；发了 0.12.0 以后改成 backlink-guard>=0.12
+        run: pip install -q "backlink-guard @ git+https://github.com/zhuyansen/backlink-guard@8c6951452a492cfbd04c10a85a8468f20ef4f4bd" markdown requests google-auth
+
+      - name: 自测
+        run: python ops/geo/panel_run.py --selftest
+
+      - name: GA4 里来自 AI 的访问（拿不到不挡后面）
+        continue-on-error: true
+        env:
+          GA_ADC_JSON: ${{ secrets.GA_ADC_JSON }}
+        run: cd ops/analytics && python fetch_ga.py
+
+      - name: 问一遍、打分
+        id: run
+        env:
+          AISA_API_KEY: ${{ secrets.AISA_API_KEY }}
+          IN_SETS: ${{ inputs.sets }}
+          IN_ENGINES: ${{ inputs.engines }}
+          IN_MAX_USD: ${{ inputs.max_usd }}
+          IN_LIMIT: ${{ inputs.limit }}
+          IN_PUBLISH: ${{ inputs.publish }}
+        run: |
+          DAY=$(TZ=Asia/Shanghai date +%F)
+          echo "day=$DAY" >> "$GITHUB_OUTPUT"
+          ENGINES="$IN_ENGINES"
+          if [ -z "$ENGINES" ]; then
+            ENGINES="$DEFAULT_ENGINES"
+            # 每月第一个周一加问 Claude
+            [ "$(TZ=Asia/Shanghai date +%-d)" -le 7 ] && ENGINES="$ENGINES,claude:1"
+          fi
+          ARGS=(--sets "${IN_SETS:-$DEFAULT_SETS}" --engines "$ENGINES" --max-usd "${IN_MAX_USD:-4}" --date "$DAY"
+                --full "$RUNNER_TEMP/panel-full.json" --appendix "$RUNNER_TEMP/appendix.md")
+          [ -f ops/analytics/out/ga.json ] && ARGS+=(--ga ops/analytics/out/ga.json)
+          [ -n "$IN_LIMIT" ] && ARGS+=(--limit "$IN_LIMIT")
+          [ "$IN_PUBLISH" = "0" ] && ARGS+=(--dry)
+          set +e
+          python ops/geo/panel_run.py run "${ARGS[@]}" > "$RUNNER_TEMP/summary.md"
+          CODE=$?
+          set -e
+          cat "$RUNNER_TEMP/summary.md" >> "$GITHUB_STEP_SUMMARY"
+          echo "code=$CODE" >> "$GITHUB_OUTPUT"
+          # 2 = 结果不完整：照样存档、发邮件，最后一步再把这次运行标成失败
+          [ "$CODE" = "0" ] || [ "$CODE" = "2" ]
+
+      - name: 提交分数
+        if: inputs.publish != '0'
+        env:
+          DAY: ${{ steps.run.outputs.day }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "ops/geo/panel/results-$DAY.json" "ops/geo/panel/summary-$DAY.md"
+          if git diff --cached --quiet; then echo "没有新结果可提交"; exit 0; fi
+          git commit -q -m "GEO 引用面板 $DAY"
+          git pull -q --rebase origin main
+          git push -q origin HEAD:main
+
+      - name: 发邮件
+        if: inputs.publish != '0'
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          ALERT_EMAIL: ${{ secrets.ALERT_EMAIL }}
+          DAY: ${{ steps.run.outputs.day }}
+        run: python ops/geo/panel_run.py mail --summary "ops/geo/panel/summary-$DAY.md" --appendix "$RUNNER_TEMP/appendix.md" --to "$ALERT_EMAIL"
+
+      - name: 完整结果加密存档（不进仓库）
+        if: inputs.publish != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SELLER_STATE_KEY: ${{ secrets.SELLER_STATE_KEY }}
+          DAY: ${{ steps.run.outputs.day }}
+        run: |
+          gh release view geo-panel-state -R "$GITHUB_REPOSITORY" >/dev/null 2>&1 || \
+            gh release create geo-panel-state --draft --title "GEO 面板完整结果（加密）" \
+              --notes "ops/geo/panel_run.py 每次运行的完整结果，含回答原文。用 SELLER_STATE_KEY 解密，见 .github/workflows/geo-panel.yml 开头。" \
+              -R "$GITHUB_REPOSITORY"
+          gzip -c "$RUNNER_TEMP/panel-full.json" | openssl enc -aes-256-cbc -pbkdf2 -iter 200000 -salt -pass env:SELLER_STATE_KEY -out "$RUNNER_TEMP/panel-$DAY.json.gz.enc"
+          gh release upload geo-panel-state "$RUNNER_TEMP/panel-$DAY.json.gz.enc" --clobber -R "$GITHUB_REPOSITORY"
+          echo "已存档：$(du -h "$RUNNER_TEMP/panel-$DAY.json.gz.enc" | cut -f1)"
+
+      - name: 结果不完整，这次运行算失败
+        if: steps.run.outputs.code == '2'
+        run: |
+          echo "::error::有的 AI 有效回答不到应有的一半，看摘要里「没答出来的」一段"
+          exit 1
+
+      - name: 失败告警
+        if: failure() && inputs.publish != '0'
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          ALERT_EMAIL: ${{ secrets.ALERT_EMAIL }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          CODE: ${{ steps.run.outputs.code }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request
+          why = "结果不完整：有的 AI 有效回答不到应有的一半，摘要已经另发。" if os.environ.get("CODE") == "2" else "工作流中途失败了，这周没有结果。"
+          req = urllib.request.Request("https://api.resend.com/emails", method="POST",
+              data=json.dumps({"from": "GEO 引用面板 <news@jasonzhu.ai>", "to": [os.environ["ALERT_EMAIL"]], "subject": "GEO 引用面板这周有问题",
+                               "html": f"<p>{why}</p><p><a href='{os.environ['RUN_URL']}'>看运行日志</a></p>"}).encode(),
+              headers={"Authorization": "Bearer " + os.environ["RESEND_API_KEY"], "Content-Type": "application/json", "User-Agent": "jasonzhu-geo-panel"})
+          print(urllib.request.urlopen(req, timeout=30).read().decode())
+          PY

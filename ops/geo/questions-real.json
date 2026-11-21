@@ -1,0 +1,192 @@
+{
+  "generated": "2026-11-21",
+  "site": "jasonzhu.ai",
+  "_说明": "真实问法组：都不带品牌名。kind=assistant 的 25 题是 backlink-guard questions 让 ChatGPT、Claude、Gemini 各写的「买家会怎么问」（2026-11-21，原文照用，不是观察到的真实提问）；kind=gsc 的 5 题是 Google Search Console 里近 28 天（10-22 到 11-18）真实出现的查询，原样照用。题目定了就不要改，要加题就加新 id。",
+  "questions": [
+    {
+      "id": "real-pay-china-founder",
+      "kind": "assistant",
+      "question": "I'm a solo founder building an AI SaaS tool in China, can I sell to global customers using Stripe, or do I need Paddle, Polar, or another merchant of record?",
+      "target_url": "https://jasonzhu.ai/en/go-global/open-account"
+    },
+    {
+      "id": "real-pay-mor-tax",
+      "kind": "assistant",
+      "question": "What merchant of record options exist for an AI SaaS founder who wants to handle VAT and sales tax without hiring an accountant?",
+      "target_url": "https://jasonzhu.ai/en/blog/choose-payment-platform-2026"
+    },
+    {
+      "id": "real-pay-compare-six",
+      "kind": "assistant",
+      "question": "Compare Stripe, Paddle, Creem, Dodo Payments, Polar and Lemon Squeezy on fees, payouts, tax handling, and whether they support sellers based in mainland China.",
+      "target_url": "https://jasonzhu.ai/en/blog/choose-payment-platform-2026"
+    },
+    {
+      "id": "real-pay-tax-headaches",
+      "kind": "assistant",
+      "question": "What payment platforms are best for indie hackers who want to sell subscriptions globally and avoid tax headaches?",
+      "target_url": "https://jasonzhu.ai/en/go-global/payments"
+    },
+    {
+      "id": "real-pay-creem-vs-dodo",
+      "kind": "assistant",
+      "question": "What are the realistic differences between Creem and Dodo Payments for a small digital product seller, especially around onboarding requirements and approval times?",
+      "target_url": "https://jasonzhu.ai/en/go-global/open-account"
+    },
+    {
+      "id": "real-pay-fastest-approval",
+      "kind": "assistant",
+      "question": "My indie app takes payments from customers in over 100 countries and I'm based in Shenzhen; walk me through which payment platform would approve my account fastest and what documents I'd need to submit.",
+      "target_url": "https://jasonzhu.ai/en/go-global/open-account"
+    },
+    {
+      "id": "real-co-us-llc-nonresident",
+      "kind": "assistant",
+      "question": "How do I set up a US LLC from abroad as a non-resident founder?",
+      "target_url": "https://jasonzhu.ai/en/blog/us-llc-mercury-stripe-168-usd"
+    },
+    {
+      "id": "real-co-mercury-docs",
+      "kind": "assistant",
+      "question": "Can non-US residents open a Mercury account for an LLC, and what documents do they need?",
+      "target_url": "https://jasonzhu.ai/en/blog/us-llc-mercury-stripe-168-usd"
+    },
+    {
+      "id": "real-co-ein-no-ssn",
+      "kind": "assistant",
+      "question": "What's the difference between an EIN application for a foreign-owned single-member LLC and a regular one, and how do I apply without an SSN?",
+      "target_url": "https://jasonzhu.ai/en/blog/us-llc-developer-accounts"
+    },
+    {
+      "id": "real-co-wise-director-abroad",
+      "kind": "assistant",
+      "question": "Steps to open a Wise Business account for a UK limited company when the director lives outside the UK",
+      "target_url": "https://jasonzhu.ai/en/blog/uk-company-wise-business-account"
+    },
+    {
+      "id": "real-co-uk-from-overseas",
+      "kind": "assistant",
+      "question": "Step-by-step guide to forming a UK limited company from overseas and opening business bank accounts",
+      "target_url": "https://jasonzhu.ai/en/blog/uk-company-registration-2hours"
+    },
+    {
+      "id": "real-co-us-or-uk-remote",
+      "kind": "assistant",
+      "question": "What’s the easiest way to register a company in the US or UK and open payments accounts remotely?",
+      "target_url": "https://jasonzhu.ai/en/go-global"
+    },
+    {
+      "id": "real-prompts-opus-examples",
+      "kind": "assistant",
+      "question": "I need prompt examples for Claude Opus 5.5—can you show me a few?",
+      "target_url": "https://jasonzhu.ai/en/prompts/claude-opus-5-5"
+    },
+    {
+      "id": "real-prompts-gallery",
+      "kind": "assistant",
+      "question": "Where can I find a gallery of prompt showcase examples?",
+      "target_url": "https://jasonzhu.ai/en/prompts"
+    },
+    {
+      "id": "real-prompts-images-mockups",
+      "kind": "assistant",
+      "question": "What are some good real-world prompts people have used with ChatGPT Images 2.6 for creating product mockups for a small coffee brand?",
+      "target_url": "https://jasonzhu.ai/en/prompts/chatgpt-images-2-6"
+    },
+    {
+      "id": "real-prompts-three-models",
+      "kind": "assistant",
+      "question": "Show me real-world prompt examples for Claude Opus 5.5, ChatGPT Images 2.6, and Gemini 4.",
+      "target_url": "https://jasonzhu.ai/en/prompts"
+    },
+    {
+      "id": "real-learn-anthropic-free",
+      "kind": "assistant",
+      "question": "What free official AI courses does Anthropic offer for learning Claude?",
+      "target_url": "https://jasonzhu.ai/en/blog/openai-academy-vs-anthropic-learning-paths"
+    },
+    {
+      "id": "real-learn-nvidia-dli",
+      "kind": "assistant",
+      "question": "Where can I find NVIDIA's free deep learning training, like the Deep Learning Institute courses?",
+      "target_url": "https://jasonzhu.ai/en/blog/nvidia-dli-free-courses"
+    },
+    {
+      "id": "real-learn-roadmap",
+      "kind": "assistant",
+      "question": "I want a free beginner-to-advanced AI learning roadmap from official providers. Where should I start?",
+      "target_url": "https://jasonzhu.ai/en/blog/ai-free-learning-hub"
+    },
+    {
+      "id": "real-learn-manager",
+      "kind": "assistant",
+      "question": "I'm a non-technical manager who wants to understand how large language models work and how to use them at work. Which official free courses from Anthropic, OpenAI, NVIDIA, or Google would suit me, and in what order should I take them?",
+      "target_url": "https://jasonzhu.ai/en/blog/ai-free-learning-hub"
+    },
+    {
+      "id": "real-learn-certifications",
+      "kind": "assistant",
+      "question": "Help me find official free courses and certifications for AI from major companies.",
+      "target_url": "https://jasonzhu.ai/en/blog/ai-free-learning-hub"
+    },
+    {
+      "id": "real-weekly-new-paid",
+      "kind": "assistant",
+      "question": "What new indie software and AI products started taking payments this week?",
+      "target_url": "https://jasonzhu.ai/en/go-global/weekly"
+    },
+    {
+      "id": "real-weekly-ideas",
+      "kind": "assistant",
+      "question": "Show me fresh indie software ideas from products that only recently turned on billing, payments, or paid plans.",
+      "target_url": "https://jasonzhu.ai/en/go-global/weekly"
+    },
+    {
+      "id": "real-weekly-roundup",
+      "kind": "assistant",
+      "question": "I want a weekly list of new indie software and AI products that have just started making money; what should I look at?",
+      "target_url": "https://jasonzhu.ai/en/go-global/weekly"
+    },
+    {
+      "id": "real-weekly-solo-paid",
+      "kind": "assistant",
+      "question": "I'm looking for solo-developer SaaS apps that recently switched from free beta to paid pricing. Can you list any that went live with payments this week and what they charge?",
+      "target_url": "https://jasonzhu.ai/en/go-global/weekly"
+    },
+    {
+      "id": "gsc-fable-55-release-date",
+      "kind": "gsc",
+      "question": "fable 5.5 release date",
+      "target_url": "https://jasonzhu.ai/en/prompts/claude-opus-5-5/fable-5-5",
+      "gsc_impressions_28d": 28
+    },
+    {
+      "id": "gsc-anthropic-course-alternatives",
+      "kind": "gsc",
+      "question": "anthropic ai course alternatives",
+      "target_url": "https://jasonzhu.ai/en/blog/openai-academy-vs-anthropic-learning-paths",
+      "gsc_impressions_28d": 111
+    },
+    {
+      "id": "gsc-nvidia-dli-free-courses",
+      "kind": "gsc",
+      "question": "nvidia deep learning institute free courses",
+      "target_url": "https://jasonzhu.ai/en/blog/nvidia-dli-free-courses",
+      "gsc_impressions_28d": 58
+    },
+    {
+      "id": "gsc-openai-academy-alternatives",
+      "kind": "gsc",
+      "question": "openai academy alternatives",
+      "target_url": "https://jasonzhu.ai/en/blog/openai-academy-vs-anthropic-learning-paths",
+      "gsc_impressions_28d": 33
+    },
+    {
+      "id": "gsc-opus-55-pixel-art",
+      "kind": "gsc",
+      "question": "opus 5.5 pixel art",
+      "target_url": "https://jasonzhu.ai/en/prompts/claude-opus-5-5",
+      "gsc_impressions_28d": 46
+    }
+  ]
+}
