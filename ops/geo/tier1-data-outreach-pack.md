@@ -254,17 +254,17 @@ https://agentskillshub.top
 | **P1** | **Kipt** | `hello@kipt.me` | `SENT`（待回） | 同上 |
 | **Closed** | iTechGuides (Yorker Media) | `contact@yorkermedia.com` | `DECLINED`（纯付费租位 `$149/mo`） | 已于 `2026-11-21` 礼貌婉拒（Resend ID: `01a1fe01-585b-72c6-a54f-fb03658b2760`），不再跟进 |
 
-### 3. Day+5（`2026-11-26`）高回复率短跟进模板（附 GitHub 费率核对钩子）
+### 3. Day+5（`2026-11-26`）高回复率短跟进模板（升级版：附 SSRN 工作论文 + Zenodo PDF DOI + GitHub CSV）
 
 - **支付平台组（Dodo / Creem / Polar / Waffo）**：
   - Subject: `Re: [原主题]`
   - Body:
     > Hi [Name / Team],
     >
-    > Quick follow-up — we just published the raw CSVs and the 2026 `$20` MoR fee comparison table on GitHub under CC-BY-4.0 so teams can verify or PR any pricing updates directly:
+    > Quick follow-up — we just released the full 10-page empirical working paper PDF (CC-BY-4.0) on **SSRN** (`https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7737182`) and **CERN Zenodo** (`https://doi.org/10.5281/zenodo.24420871`), alongside the raw CSVs and 2026 `$20` MoR fee comparison table on GitHub:
     > https://github.com/zhuyansen/indie-saas-payments-benchmark-2026
     >
-    > If anything on [Platform]'s fee row or payout terms needs a tweak (especially with Lemon Squeezy sunsetting in March 2027), happy to update it right away — and feel free to embed or cite any of the numbers in your comparison docs.
+    > If anything on [Platform]'s fee row or payout terms needs a tweak (especially with Lemon Squeezy sunsetting in March 2027), happy to update it right away — and feel free to embed or cite any of the numbers or DOI in your comparison docs.
     >
     > Best,  
     > Jason
@@ -274,10 +274,10 @@ https://agentskillshub.top
   - Body:
     > Hi [Name / Team],
     >
-    > Quick bump on this — we also published the full breakdown of the 138,000+ agent skills & MCP security audit on dev.to (alongside the CC-BY Zenodo dataset `10.5281/zenodo.24387074`):
-    > https://dev.to/yansen_zhu_9b0dae1c4cc0da/we-audited-138000-open-source-ai-agent-skills-mcp-servers-why-low-star-repos-carry-9x-higher-1hlk
+    > Quick bump on this — we also released the full 7-page empirical working paper PDF (CC-BY-4.0) on **SSRN** (`https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7737258`) and **CERN Zenodo** (`https://doi.org/10.5281/zenodo.24420920`) alongside the 105K–130K security audit dataset (`https://doi.org/10.5281/zenodo.24387074`):
+    > https://jasonzhu.ai/en/research/ai-agent-skills-mcp-supply-chain-security-2026
     >
-    > Happy to pull a quick safety breakdown for your specific ecosystem/skills if helpful for your docs or blog.
+    > Happy to pull a quick 5-dimension safety breakdown for your specific ecosystem/skills if helpful for your docs or blog.
     >
     > Best,  
     > Jason
