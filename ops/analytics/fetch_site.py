@@ -209,7 +209,7 @@ def workflows():
             runs = gh(f"repos/{repo}/actions/workflows/{f}/runs?per_page=5").get("workflow_runs", [])
         except requests.HTTPError as e:
             out.append({"file": f, "label": label, "error": str(e)[:120]}); continue
-        done = [r for r in runs if r["status"] == "completed"]
+        done = [r for r in runs if r["status"] == "completed" and r.get("conclusion") != "cancelled"]
         last = done[0] if done else None
         out.append({"file": f, "label": label, "conclusion": last and last["conclusion"], "at": last and last["created_at"],
                     "url": last and last["html_url"], "recent_failures": sum(1 for r in done if r["conclusion"] == "failure")})
