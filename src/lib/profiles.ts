@@ -23,6 +23,7 @@ export const PROFILES: { label: string; url: string }[] = [
   { label: "YouTube", url: "https://www.youtube.com/@JasonZhuGoSail" },
   { label: "PyPI (backlink-guard)", url: "https://pypi.org/project/backlink-guard/" },
   { label: "SSRN Working Paper (200k Indie Payments & MoR Shift)", url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7737182" },
+  { label: "SSRN Working Paper (AI Agent Skills & MCP Security)", url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7737258" },
   { label: "CERN Zenodo Working Paper (Indie Payments & MoR Shift PDF)", url: "https://doi.org/10.5281/zenodo.24420871" },
   { label: "CERN Zenodo Working Paper (AI Agent Skills Security PDF)", url: "https://doi.org/10.5281/zenodo.24420920" },
   { label: "CERN Zenodo (200k Payments Dataset)", url: "https://doi.org/10.5281/zenodo.24386243" },
