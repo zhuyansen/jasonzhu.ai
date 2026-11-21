@@ -41,6 +41,9 @@ const STATIC_PATHS = [
   "/prompts/gemini-4", // Gemini 4 合集（2026-11-16，种子来自 Claude 库里的同题对比）
   "/prompts/claude-animation", // Claude 动画提示词库（2026-11-21，从 Claude 库挑出来的动画作品）
   "/backlink-spam-list", // 垃圾外链来源库（名单在 GitHub zhuyansen/backlink-spam-list，页面每天重读）
+  "/research", // 学术工作论文与开源数据集索引（PDF + SSRN + CERN Zenodo DOI + BibTeX）
+  "/research/indie-saas-payments-mor-shift-2026",
+  "/research/ai-agent-skills-mcp-supply-chain-security-2026",
   "/contact",
   "/sitemap-html",
   "/privacy",
