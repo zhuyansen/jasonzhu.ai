@@ -1,0 +1,207 @@
+# Tier-1 免费数据反向 Outreach & Tier-2 多模态分发一键执行包
+
+> **创建日期**：`2026-11-21`
+> **核心策略**：用已经签发 **CERN Zenodo 永久 DOI** 的一手实证数据集（Tier-0），零成本撬动高权重行业官网博客/媒体/榜单（Tier-1）与高召回社区/视频节点（Tier-2）。
+> **DiD 防污染红线（截至 `2026-12-15`）**：本包内所有外联靶点**严禁触碰** `agentskillshub.top` 的 16 道空白对照题与 `jasonzhu.ai` 的 6 道空白对照题（`prompts-*` / `learn-*` / `data-ai-money-map`）。
+
+---
+
+## 一、`jasonzhu.ai` Tier-1 免费数据反向 Outreach（4 家支付平台官网博客/创始人）
+
+**为什么转化率极高？** 在我们的 20 万收款链接研究中，**Dodo Payments（29% AI 卖家 / 71% 软件卖家）、Polar（27% / 58%）、Creem（24% / 65%）、Waffo（26% / 68% & \$1.28 极低实扣）** 的表现大幅领先 Stripe（仅 7% AI / 9% 软件），且数据已归档 **CERN Zenodo DOI**——对他们而言，这是求之不得的第三方中立背书，极易换到**官方博客 / 对比页 / X 官号转发**的顶级 Tier-1 外链与品牌提及。
+
+### 1. Dodo Payments（最优先：数据第 1 名）
+- **核实渠道**：
+  - 创始人邮箱：`rishabh@dodopayments.com`（Rishabh Goel, Co-Founder & CEO）、`ayush@dodopayments.com`（Ayush Agarwal, CPTO）
+  - X：`@garGoel91`、`@dodopayments`
+  - 联系页：`https://dodopayments.com/contact`
+- **邮件主题**：`Data point for your blog: Dodo Payments leads AI SaaS seller share (29% vs Stripe 7%) in our 200k checkout study`
+- **正文（直接复制发送）**：
+```text
+Hi Rishabh,
+
+I just published an open empirical study analyzing ~200,000 indie checkout links across 198,000 websites (2023–2026), archived on CERN Zenodo (CC BY 4.0):
+
+- Full report: https://jasonzhu.ai/en/blog/indie-payments-report-2026
+- Open dataset (DOI): https://doi.org/10.5281/zenodo.24386243
+- $20 AI SaaS real fee audit (DOI): https://doi.org/10.5281/zenodo.24387072
+
+Thought your content team might appreciate two numbers that stood out for Dodo Payments:
+1. 71% of new Dodo sellers ship software and 29% ship AI products — the highest AI concentration among all 8 platforms tracked (versus 7% on Stripe).
+2. On a $20 cross-border AI SaaS subscription, your partner rate ($1.16–$1.18 total cut) beat Hong Kong Stripe's full SaaS stack (~$1.79) and Lemon Squeezy ($2.08).
+
+Feel free to quote any chart or table in your blog, Lemon Squeezy migration guides, or docs (with attribution to Jason Zhu / jasonzhu.ai or the Zenodo DOI). Happy to share the raw CSV slice for Dodo if useful.
+
+Best,
+Jason Zhu
+Founder, JasonZhu.AI (https://jasonzhu.ai)
+```
+
+### 2. Polar（高权威开源开发圈，DR 高、AI 检索权重极强）
+- **核实渠道**：
+  - X DM / 公开 @：`@birk`（Birk Jernström, Founder & CEO）、`@polar_sh`
+  - 邮箱：`support@polar.sh`（转内容/营销团队）
+- **X DM / 邮件模板**：
+```text
+Hi Birk — I analyzed ~200,000 indie checkout links across 198,000 websites (2023–2026) and archived the dataset on CERN Zenodo (DOI: https://doi.org/10.5281/zenodo.24386243, full write-up: https://jasonzhu.ai/en/blog/indie-payments-report-2026).
+
+Polar stood out sharply: 58% of new Polar sellers ship software and 27% ship AI products (vs. 7% on Stripe), with 2,400+ new sellers tracked in 2026 through mid-October.
+
+Sharing in case your team wants an independent, citable dataset for Polar's blog or Lemon Squeezy migration posts. Happy to send the CSV or double-check any Polar fee/product nuance you'd like updated.
+
+— Jason Zhu (jasonzhu.ai)
+```
+
+### 3. Creem（出海独立开发者高重合度）
+- **核实渠道**：
+  - 邮箱：`contact@creem.io`、`info@creem.io`
+  - X：`@sudoferraz`（Gabriel Ferraz, Co-Founder & CEO）、`@creem_io`
+- **邮件主题**：`200k Indie Checkout Study: Creem at 65% software / 24% AI sellers (open Zenodo dataset)`
+- **正文**：
+```text
+Hi Gabriel,
+
+I recently published an open empirical analysis of ~200,000 indie checkout links across 198,000 websites (2023–2026), archived on CERN Zenodo (https://doi.org/10.5281/zenodo.24386243) and written up at https://jasonzhu.ai/en/blog/indie-payments-report-2026.
+
+Two Creem highlights from the data:
+- 65% of new Creem sellers ship software and 24% ship AI products (compared to 7% on Stripe).
+- In our itemized $20 cross-border AI SaaS fee benchmark (DOI: https://doi.org/10.5281/zenodo.24387072), Creem ($1.37 total cut / $18.63 net) ranked top-3 on real founder take-home pay.
+
+Sharing in case your team wants to cite an independent dataset on creem.io/blog or your Lemon Squeezy migration guide. Let me know if any Creem pricing detail has changed recently so I can keep the dataset accurate.
+
+Best,
+Jason Zhu
+https://jasonzhu.ai
+```
+
+### 4. Waffo（$20 实测标准费率全场最低）
+- **核实渠道**：
+  - 官网联系表单（选 Press & Media / Partnerships）：`https://waffo.com` Contact 页
+  - 公开商务邮箱：`eric.chu@waffo.com` / LinkedIn 联系 Frankie Fan (CEO) 或 Steve Shen (CBO)
+- **邮件 / 表单正文**：
+```text
+Hi Waffo team,
+
+I recently published an itemized real-world fee benchmark comparing what an AI SaaS founder actually keeps on a $20/month cross-border subscription across 8 gateways/MoRs, archived on CERN Zenodo (DOI: https://doi.org/10.5281/zenodo.24387072):
+- Full article: https://jasonzhu.ai/en/blog/dodo-payments-waffo-ai-saas-fee-comparison
+- 200k seller adoption study: https://jasonzhu.ai/en/blog/indie-payments-report-2026
+
+Waffo Pancake came out at $1.28 total cut ($18.72 net) — the lowest standard MoR fee in the benchmark, ahead of Paddle ($1.50), Hong Kong Stripe full stack (~$1.79), Polar ($1.80), and Lemon Squeezy ($2.08).
+
+Sharing in case your marketing/editorial team would like to reference the benchmark in Waffo's blog or developer docs. Happy to update any new Pancake fee tier or payout corridor details.
+
+Best regards,
+Jason Zhu (jasonzhu.ai)
+```
+
+---
+
+## 二、`agentskillshub.top` Tier-1 Greedy Set Cover Top 5 编辑靶站外联包
+
+> 注：`Drudley/indexagentica`（Panel A #3）与 `thirtysix/awesome-agent-skills`（Perplexity Q10 & `brand-compare`）已直接走 GitHub PR 提交，无需再发邮件。以下覆盖剩余最高边际收益靶站：
+
+### 1. `mcpservers.org`（Panel A #2 · 独覆盖 `+6` 题 · 已有 listing 直接更新）
+- **动作**：更新已有 `@agentskillshub/mcp` listing 描述，把旧描述替换为含最新实体消歧 + 硬数字的版本：
+```text
+Agent Skills Hub (agentskillshub.top) — Open-source directory and pre-install security trust layer indexing 276,000+ AI agent skills, Claude Code skills, Codex skills, and MCP servers from GitHub (synced every 8 hours). Over 138,000 entries carry automated security grades (Safe / Caution / Unsafe / Reject) across 43 published static rules (agentskillshub.top/how-we-grade/), paired with a free GitHub URL pre-install scanner (/analyzer/), hands-on scenario benchmarks (/best/), and an open CC BY 4.0 dataset on CERN Zenodo (DOI: 10.5281/zenodo.21292799).
+```
+
+### 2. `agensi.io`（Panel B #2 · 3 引擎共 7 次引用 · 跟进 11-06 邮件）
+- **核实渠道**：`info@agensi.io`（Founder & CEO Samuel Rose）
+- **邮件主题**：`Re: Adding Agent Skills Hub (agentskillshub.top) to your 2026 AI Agent Skills Marketplaces guide`
+- **正文**：
+```text
+Hi Samuel,
+
+Quick follow-up on my note earlier this month regarding your guide "Best AI Agent Skills Marketplaces in 2026" (agensi.io/learn/best-ai-agent-skills-marketplaces-2026).
+
+If you're planning a late-November refresh, here is a 1-row comparison table summary you can drop straight in for Agent Skills Hub (agentskillshub.top):
+
+- Name: Agent Skills Hub (agentskillshub.top)
+- Focus: Open-source directory & pre-install security trust layer (MIT, github.com/zhuyansen/agent-skills-hub)
+- Coverage: 276,000+ indexed skills & MCP servers (8-hour GitHub sync)
+- Differentiator: 138,000+ entries security-graded against 43 published rules (/how-we-grade/), free URL scanner (/analyzer/), plus CC BY 4.0 audit dataset on CERN Zenodo (DOI: 10.5281/zenodo.21292799).
+
+Happy to cross-reference Agensi in our directory comparison docs as well.
+
+Best,
+Jason Zhu
+Agent Skills Hub (https://agentskillshub.top)
+```
+
+### 3. `kipt.me`（Panel A #4 · 独覆盖 `+4` 题）
+- **核实渠道**：`hello@kipt.me`
+- **邮件主题**：`Empirical security data for your Claude Code skills & marketplaces guides`
+- **正文**：
+```text
+Hi Kipt team,
+
+Loved your guides on Claude Code skills and agent skills marketplaces (kipt.me/guides/best-claude-code-skills and /guides/agent-skills-marketplaces).
+
+I maintain Agent Skills Hub (agentskillshub.top) — an open-source directory of 276,000+ agent skills and MCP servers where 138,000+ repositories are security-graded against 43 published rules (agentskillshub.top/how-we-grade/). Our latest 117k-repo snapshot (archived on CERN Zenodo, DOI: 10.5281/zenodo.21292799) found that sub-20-star skill repos carry ~9x higher severe security risk.
+
+If you're updating either guide, we'd love to be included in your directories comparison table as the security-graded open index alongside skills.sh and SkillsMP. Happy to provide any benchmark table or summary row.
+
+Best,
+Jason Zhu
+https://agentskillshub.top
+```
+
+### 4. `firecrawl.dev`（跨 Panel A `+4` + Panel B `+3` 双面板顶级杠杆）
+- **核实渠道**：`help@firecrawl.com`（请转 Content/DevRel team）或 Firecrawl 官方 Discord `#community`
+- **内容切入点**：针对 `firecrawl.dev/blog/best-claude-code-skills` —— 指出在我们的 276k 索引库里 `firecrawl/firecrawl` 的 5 个官方 skills 均获得 `Safe` 级评价，提供我们的 43 规则安全分级数据和 CERN Zenodo DOI 作为他们博客“如何安全挑选 Claude Code Skills”小节的可引用数据源。
+
+### 5. `itechguides.com`（Panel A #1 · 独覆盖 `+10` 题）
+- **核实渠道**：`contact@yorkermedia.com`（母公司 Yorker Media，支持编辑合作/目录收录/赞助位）
+- **策略建议**：先以「提供 43 规则安全审计数据 & 免费 `/analyzer/` 预检工具」发免费编辑推荐信；若对方回复仅走 Yorker Media 商业收录报价，再结合第 3 步 `\$150–\$400` 试水预算评估单页流量与 `robots.txt` AI 放行度后再决定是否付费。
+
+---
+
+## 三、Featured / Qwoted 记者报价通用专家档案卡（每周挑 2–3 条回复）
+
+- **Expert Bio（直接填进 Featured / Qwoted 档案）**：
+  > Jason Zhu, Founder of JasonZhu.AI (`jasonzhu.ai`) and Agent Skills Hub (`agentskillshub.top`). Former AI algorithm engineer publishing open empirical datasets archived on CERN Zenodo covering indie SaaS cross-border payments (200,000 checkout links, DOI `10.5281/zenodo.24386243`) and open-source AI agent supply-chain security (138,000+ graded skills/MCP servers, DOI `10.5281/zenodo.21292799`).
+- **高频盯盘关键词**：`Merchant of Record`, `Stripe alternatives`, `Lemon Squeezy`, `AI SaaS pricing`, `MCP security`, `AI agent supply chain`, `Claude Code`.
+
+---
+
+## 四、Tier-2 多模态速效模板（YouTube 60 秒脚本 + Reddit 纯干货帖）
+
+### 1. YouTube Shorts / 60 秒横屏口播脚本（前 30 秒焊死品牌 + 数字 + DOI）
+> **标题**：`I Audited 200,000 Indie Checkout Links — Why AI Founders Are Leaving Stripe (2026 Data)`
+> **描述栏首行**：`Full report: https://jasonzhu.ai/en/blog/indie-payments-report-2026 | CERN Zenodo Open Dataset (DOI): https://doi.org/10.5281/zenodo.24386243 | $20 Fee Audit: https://doi.org/10.5281/zenodo.24387072`
+
+- **0–15s（前 30 秒核心切片，供 AI 字幕抓取）**：
+  "At JasonZhu.AI, I analyzed 200,000 indie checkout links across 198,000 websites between 2023 and late 2026, archived on CERN Zenodo. Software sellers quadrupled from 5% to 20%, and here is the shock: 24% to 29% of new sellers on Dodo Payments, Polar, and Creem are selling AI products, compared to just 7% on Stripe."
+- **15–40s（$20 真实扣费反转）**：
+  "Everyone assumes Stripe's 2.9% is cheaper than a 5% Merchant of Record. Not on cross-border AI SaaS. On a $20 monthly subscription, once you add Hong Kong Stripe's 2% FX, Billing, Tax, and international card fees, you lose about $1.79. Meanwhile Waffo takes $1.28 and Dodo Payments' partner rate takes $1.16 — with global VAT handled."
+- **40–60s（收尾 CTA + 实操建议）**：
+  "With Lemon Squeezy shutting down in March 2027, run a dual-gateway failover stack instead of betting on one processor. The full CSV dataset and 8-platform fee breakdown are free at jasonzhu.ai."
+
+### 2. Reddit 纯干货讨论帖模板（`r/SaaS` 或 `r/indiehackers` —— 零硬广防删版）
+- **标题**：`I scraped 200,000 indie checkout links (2023–2026) to see where AI SaaS founders actually take payments — here is the breakdown`
+- **正文要点**：
+  - 全文直接贴上上面的 **8 平台对比 Markdown 表格** + **`$20` 订阅真实到手对比表格**（让读者不用点出 Reddit 就能看完 90% 价值）。
+  - 结尾只放一行纯参考：`Raw CSV (CC BY 4.0) is archived on Zenodo (DOI 10.5281/zenodo.24386243) and the full methodology/charts are on my blog at jasonzhu.ai/en/blog/indie-payments-report-2026. Happy to answer questions on the dataset or look up specific niches.`
+  - 严禁首楼放 affiliate 链接、严禁多号互顶。
+
+---
+
+## 五、第 3 步：DataForSEO 实测「临门一脚词」与小预算 Tier-1 试水靶心（`2026-11-21` US 英文库）
+
+> 实测来源：DataForSEO `ranked_keywords/live`（US `location_code=2840`, `en`, 排名 `6–25`）。
+
+### 1. `agentskillshub.top`（25 个词卡在第 6–25 名）
+- **最值钱的首页突破口**：
+  - `skills repo`（`vol=260, KD=55`）已在 **第 7 名**（指向 `/`）
+  - `awesome-agent skills github` / `awesome-agent-skills github` / `github awesome skills` 卡在 **第 17–18 名**
+- **试水建议（INSERT.LINK / Collaborator.pro 买 3 条，预算 `\$120–\$250`）**：
+  - 精准筛选**已排首页、放行 AI 爬虫的 Claude Code / MCP / AI Coding 工具对比页**，插链指向 `https://agentskillshub.top/`（锚文本用自然品牌/数据描述：`Agent Skills Hub (agentskillshub.top)`、`open-source AI agent skills security index`）与 `https://agentskillshub.top/how-we-grade/`。
+  - *注：`/best/ppt-presentation/`（`guizang ppt skill` pos 18、`anthropic pptx skill` pos 24）属于 GIGALinks DiD 空白对照组，`2026-12-15` 前先不单独投外链，实验验收后再补链冲前 3。*
+
+### 2. `jasonzhu.ai`（仅 8 个词卡在第 6–25 名，商业支付词尚未进 US Top 25）
+- **核心发现**：目前排在 US 第 10–22 名的全是 `nvidia free courses` / `yunwu api`，说明**核心商业页 `/en/blog/indie-payments-report-2026`、`/en/blog/choose-payment-platform-2026`、`/en/blog/dodo-payments-waffo-ai-saas-fee-comparison` 极缺英文 Tier-1 外部引用域**。
+- **试水建议**：
+  1. 先发本文第一节的 **4 封零成本数据反向 Outreach**（Dodo / Polar / Creem / Waffo），拿行业官网 Tier-1 链；
+  2. 同步发 `dev.to` + Reddit 实证帖（先抢 Perplexity/ChatGPT 2 周内召回）；
+  3. 若追加 `\$150–\$300` 小预算，在 **INSERT.LINK / Collaborator.pro** 精选 **3–4 个已排首页的「Stripe alternatives / Merchant of Record / Lemon Squeezy migration」SaaS 博客对比页**，以引用 `200,000 Indie Checkout Links Study` 为理由精准插链指向 `/en/blog/indie-payments-report-2026` 和 `/en/blog/choose-payment-platform-2026`。

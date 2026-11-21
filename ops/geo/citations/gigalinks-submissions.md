@@ -1,13 +1,13 @@
 # GIGALinks 提交记录、历史档案与宿主域名去重台账
 
 > **账号与积分基线**：`Jason Zhu` 主账号（初始 `35` Bonus Credits，来源：`Event invitation: LLM Mastery`，到期：`2026-12-15 23:59`）。
-> - 当前已扣减：`8` Credits（`#17163`, `#17176`, `#17696`, `#17697`, `#18019`, `#18020`, `#18149`, `#18150` 各 `1` credit），剩余 **`27`** Bonus Credits。
+> - 当前已扣减：`10` Credits（`#17163`, `#17176`, `#17696`, `#17697`, `#18019`, `#18020`, `#18149`, `#18150`, `#18219`, `#18220` 各 `1` credit），剩余 **`25`** Bonus Credits。
 > - **平台实测约束**：`gigalinks.com` 为 **Citations = guest posts without links**，仅允许 `<b>, <i>, <u>, <ul>, <li>, <p>, <strong>, <em>, <h1>–<h6>, <ol>, <table>` 等基础排版标签，严禁 `<a>` 和 `<code>`。提交前需剥离 `<a>`/`<code>` 并保留纯文本品牌实体与路径。
 > - **时区说明**：GIGALinks 后台展示时间为 **UTC+2**（如 `2026-11-18 09:58` 对应 `07:58 UTC` / `02:58 EST`）。
 
 ---
 
-## 一、全部订单流水（截至 2026-11-20 02:29 UTC）
+## 一、全部订单流水（截至 2026-11-21 02:20 UTC）
 
 | 日期 (平台 UTC+2 / UTC) | Order ID | 目标站点 | Project | 渠道 | Categories | 词数 | 宿主域名 | 落地 URL (`gp_url`) | 实时 HTTP | 本地稿件 / 归档 | 状态 |
 | --- | --- | --- | --- | --- | --- | ---: | --- | --- | --- | --- | --- |
@@ -17,23 +17,23 @@
 | `2026-11-18 09:58` (`07:58 UTC`) | `#17697` | `agentskillshub.top` | `agentskillshub.top` | API (`POST /order/citations`) | `Technology`, `Software`, `Programming` | 2,127 | `—`（待 Google 收录反查） | `null`（截至 `2026-11-19 07:06 UTC` 尚未收录） | `—` | [day01-how-developers-evaluate-directories.html](file:///Users/zhuyansen/content/agent-skills-hub/ops/geo/citations/gigalinks-account-a/day01-how-developers-evaluate-directories.html) | `done` |
 | `2026-11-19 09:08` (`07:08 UTC`) | `#18019` | `agentskillshub.top` | `agentskillshub.top` | API (`POST /order/citations`) | `Technology`, `Software`, `Programming` | 1,996 | `—`（待 Google 收录反查） | `null`（待收录反查） | `—` | [day02-untangling-ecosystem-map-disambiguation.html](file:///Users/zhuyansen/content/agent-skills-hub/ops/geo/citations/gigalinks-account-a/day02-untangling-ecosystem-map-disambiguation.html) | `done` |
 | `2026-11-19 09:08` (`07:08 UTC`) | `#18020` | `jasonzhu.ai` | `jasonzhu.ai` | API (`POST /order/citations`) | `Business`, `Software`, `Technology` | 1,258 | `—`（待 Google 收录反查） | `null`（待收录反查） | `—` | [b03-lemon-squeezy-shutdown-migration-2027.html](file:///Users/zhuyansen/%E5%87%BA%E6%B5%B7/jasonzhu.ai/ops/geo/citations/gigalinks-account-b/b03-lemon-squeezy-shutdown-migration-2027.html) | `done` |
-| `2026-11-20 04:28` (`02:28 UTC`) | `#18149` | `agentskillshub.top` | `agentskillshub.top` | API (`POST /order/citations`) | `Technology`, `Software`, `Programming` | 1,925 | `—`（待 Google 收录反查） | `null`（刚完成发布） | `—` | [day03-comparing-directories-smithery-pulsemcp-skillssh.html](file:///Users/zhuyansen/content/agent-skills-hub/ops/geo/citations/gigalinks-account-a/day03-comparing-directories-smithery-pulsemcp-skillssh.html) | `done` |
-| `2026-11-20 04:29` (`02:29 UTC`) | `#18150` | `jasonzhu.ai` | `jasonzhu.ai` | API (`POST /order/citations`) | `Business`, `Software`, `Technology` | 1,151 | `—`（待 Google 收录反查） | `null`（刚完成发布） | `—` | [b04-spotting-backlink-spam-networks.html](file:///Users/zhuyansen/%E5%87%BA%E6%B5%B7/jasonzhu.ai/ops/geo/citations/gigalinks-account-b/b04-spotting-backlink-spam-networks.html) | `done` |
+| `2026-11-20 04:28` (`02:28 UTC`) | `#18149` | `agentskillshub.top` | `agentskillshub.top` | API (`POST /order/citations`) | `Technology`, `Software`, `Programming` | 1,925 | `—`（待 Google 收录反查） | `null`（待收录反查） | `—` | [day03-comparing-directories-smithery-pulsemcp-skillssh.html](file:///Users/zhuyansen/content/agent-skills-hub/ops/geo/citations/gigalinks-account-a/day03-comparing-directories-smithery-pulsemcp-skillssh.html) | `done` |
+| `2026-11-20 04:29` (`02:29 UTC`) | `#18150` | `jasonzhu.ai` | `jasonzhu.ai` | API (`POST /order/citations`) | `Business`, `Software`, `Technology` | 1,151 | `—`（待 Google 收录反查） | `null`（待收录反查） | `—` | [b04-spotting-backlink-spam-networks.html](file:///Users/zhuyansen/%E5%87%BA%E6%B5%B7/jasonzhu.ai/ops/geo/citations/gigalinks-account-b/b04-spotting-backlink-spam-networks.html) | `done` |
+| `2026-11-21 04:20` (`02:20 UTC`) | `#18219` | `agentskillshub.top` | `agentskillshub.top` | API (`POST /order/citations`) | `Technology`, `Software`, `Programming` | 1,906 | `—`（待 Google 收录反查） | `null`（刚完成发布） | `—` | [day04-is-it-safe-to-install-claude-skills-from-github.html](file:///Users/zhuyansen/content/agent-skills-hub/ops/geo/citations/gigalinks-account-a/day04-is-it-safe-to-install-claude-skills-from-github.html) | `done` |
+| `2026-11-21 04:20` (`02:20 UTC`) | `#18220` | `agentskillshub.top` | `agentskillshub.top` | API (`POST /order/citations`) | `Technology`, `Software`, `Programming` | 1,826 | `—`（待 Google 收录反查） | `null`（刚完成发布） | `—` | [day05-free-tools-audit-github-repo-agent-skills.html](file:///Users/zhuyansen/content/agent-skills-hub/ops/geo/citations/gigalinks-account-a/day05-free-tools-audit-github-repo-agent-skills.html) | `done` |
 
 ---
 
-## 二、未发布稿件与待发队列（截至 2026-11-20 02:29 UTC）
+## 二、未发布稿件与待发队列（截至 2026-11-21 02:20 UTC）
 
-> **⚠️ 2026-11-20 实验重排（按此最新队列执行）**：已切换为 **双账号按站彻底隔离 + 站内 2 主题簇打穿 + 同站空白对照（DiD）** 方案，完整 62 篇排期（账号 1 剩 `27` 篇全给 `agentskillshub.top`；账号 2 全新 `35` 篇全给 `jasonzhu.ai`；`b11/b12/b13/b15/b16` 冻结为对照组不投 GIGALinks）见：[gigalinks-controlled-experiment-queue.md](file:///Users/zhuyansen/%E5%87%BA%E6%B5%B7/jasonzhu.ai/ops/geo/citations/gigalinks-controlled-experiment-queue.md)。
+> **⚠️ 2026-11-20 实验重排（按此最新队列执行）**：已切换为 **双账号按站彻底隔离 + 站内 2 主题簇打穿 + 同站空白对照（DiD）** 方案，完整排期（账号 1 剩 `25` 篇全给 `agentskillshub.top`；账号 2 全新 `35` 篇全给 `jasonzhu.ai`；`b11/b12/b13/b15/b16` 冻结为对照组不投 GIGALinks）见：[gigalinks-controlled-experiment-queue.md](file:///Users/zhuyansen/%E5%87%BA%E6%B5%B7/jasonzhu.ai/ops/geo/citations/gigalinks-controlled-experiment-queue.md)。
 
-### Account A（`agentskillshub.top` · 账号 1 专属 · 剩 27 篇）
-- **已成稿待发（8 篇 · 覆盖 `11-21 ~ 11-24` 全部 Stage 1A 排期）**：
+### Account A（`agentskillshub.top` · 账号 1 专属 · 剩 25 篇）
+- **已成稿待发（6 篇 · 覆盖 `11-22 ~ 11-24` 全部 Stage 1A 剩余排期）**：
   | 序号 | 文件 | 标题 | Categories | 词数 | HTML 规范检查 | 排期 / 状态 |
   | --- | --- | --- | --- | ---: | --- | --- |
-  | `day04` (`A-01`) | [day04-is-it-safe-to-install-claude-skills-from-github.html](file:///Users/zhuyansen/content/agent-skills-hub/ops/geo/citations/gigalinks-account-a/day04-is-it-safe-to-install-claude-skills-from-github.html) | *Is It Safe to Install Claude Skills from GitHub? A Pre-Install Verification Framework* | `Technology`, `Software`, `Programming` | 1,906 | **PASS**（已洗净 `<code>` 与示例 URL） | **`11-21` 待发** |
-  | `day05` (`A-02`) | [day05-free-tools-audit-github-repo-agent-skills.html](file:///Users/zhuyansen/content/agent-skills-hub/ops/geo/citations/gigalinks-account-a/day05-free-tools-audit-github-repo-agent-skills.html) | *Free Tools to Audit a GitHub Repository for AI Agent Skill Risks Before Cloning* | `Technology`, `Software`, `Programming` | 1,826 | **PASS**（已洗净 `<code>`） | **`11-21` 待发** |
-  | `day06` (`A-03`) | [day06-a03-interpreting-five-security-grades.html](file:///Users/zhuyansen/content/agent-skills-hub/ops/geo/citations/gigalinks-account-a/day06-a03-interpreting-five-security-grades.html) | *Safe, Caution, Unsafe, Reject, Unaudited: Interpreting Automated AI Skill Security Grades* | `Technology`, `Software`, `Programming` | 2,260 | **PASS**（全项通过） | **`11-22` 待发** |
-  | `day07` (`A-04`) | [day07-a04-low-star-long-tail-skill-risk-117k.html](file:///Users/zhuyansen/content/agent-skills-hub/ops/geo/citations/gigalinks-account-a/day07-a04-low-star-long-tail-skill-risk-117k.html) | *Why Low-Star GitHub AI Skills Carry 9x Higher Security Risk: Evidence from 117,000 Audits* | `Technology`, `Software`, `Programming` | 2,191 | **PASS**（全项通过） | **`11-22` 待发** |
+  | `day06` (`A-03`) | [day06-a03-interpreting-five-security-grades.html](file:///Users/zhuyansen/content/agent-skills-hub/ops/geo/citations/gigalinks-account-a/day06-a03-interpreting-five-security-grades.html) | *Safe, Caution, Unsafe, Reject, Unaudited: Interpreting Automated AI Skill Security Grades* | `Technology`, `Software`, `Programming` | 2,260 | **PASS**（全项通过） | **`11-22` 下一批待发** |
+  | `day07` (`A-04`) | [day07-a04-low-star-long-tail-skill-risk-117k.html](file:///Users/zhuyansen/content/agent-skills-hub/ops/geo/citations/gigalinks-account-a/day07-a04-low-star-long-tail-skill-risk-117k.html) | *Why Low-Star GitHub AI Skills Carry 9x Higher Security Risk: Evidence from 117,000 Audits* | `Technology`, `Software`, `Programming` | 2,191 | **PASS**（全项通过） | **`11-22` 下一批待发** |
   | `day08` (`A-05`) | [day08-a05-open-datasets-agent-supply-chain-zenodo.html](file:///Users/zhuyansen/content/agent-skills-hub/ops/geo/citations/gigalinks-account-a/day08-a05-open-datasets-agent-supply-chain-zenodo.html) | *Using Open Datasets to Benchmark AI Agent Supply-Chain Risk (Zenodo & HuggingFace Guide)* | `Technology`, `Software`, `Programming` | 2,125 | **PASS**（全项通过） | **`11-23` 待发** |
   | `day09` (`A-06`) | [day09-a06-auditing-mcp-configs-and-skill-md-43-rules.html](file:///Users/zhuyansen/content/agent-skills-hub/ops/geo/citations/gigalinks-account-a/day09-a06-auditing-mcp-configs-and-skill-md-43-rules.html) | *Auditing MCP Configs and SKILL.md Files Before Local Execution: 43 Static Checks Explained* | `Technology`, `Software`, `Programming` | 2,145 | **PASS**（全项通过） | **`11-23` 待发** |
   | `day10` (`A-07`) | [day10-a07-blocking-unsafe-skills-in-ci-pull-requests.html](file:///Users/zhuyansen/content/agent-skills-hub/ops/geo/citations/gigalinks-account-a/day10-a07-blocking-unsafe-skills-in-ci-pull-requests.html) | *Blocking Unsafe AI Agent Skills in Pull Requests: Setting Up Automated CI Skill Gates* | `Technology`, `Software`, `Programming` | 2,161 | **PASS**（全项通过） | **`11-24` 待发** |
@@ -63,7 +63,7 @@
 | --- | --- | --- | --- |
 | `tide4javascript.com` | `agentskillshub.top` | `#17163` | 历史未挂 Project，人工去重需额外避开 |
 | `center-expert.org` | `jasonzhu.ai` | `#17176` | 已记入 `jasonzhu.ai` Project 去重池 |
-| *待收录反查（6 笔）* | `jasonzhu.ai` / `agentskillshub.top` | `#17696`, `#17697`, `#18019`, `#18020`, `#18149`, `#18150` | 后台均已 `Done`；GIGALinks API/UI 不直接返回 `gp_url`，待 Google 收录后通过精确标题 SERP 补齐 |
+| *待收录反查（8 笔）* | `jasonzhu.ai` / `agentskillshub.top` | `#17696`, `#17697`, `#18019`, `#18020`, `#18149`, `#18150`, `#18219`, `#18220` | 后台均已 `Done`；GIGALinks API/UI 不直接返回 `gp_url`，待 Google 收录后通过精确标题 SERP 补齐 |
 
 > **注意**：`#17163` 创建于建立 `agentskillshub.top` Project 之前，GIGALinks API 不会把 `tide4javascript.com` 自动记入 `agentskillshub.top` 的已用域名池，后续每次回查 `gp_url` 都必须人工核对不与 `tide4javascript.com` 和 `center-expert.org` 碰撞。
 

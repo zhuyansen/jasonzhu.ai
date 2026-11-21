@@ -90,14 +90,15 @@ flowchart TB
 | 监控时间 | 1. CERN Zenodo | 2. Schema.org Dataset JSON-LD | 3. DataCite 注册局 | 4. DOI.org 根解析 | 5. OpenAIRE 欧盟图谱 | 6. OpenAlex 全球图谱 |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **`2026-11-20 03:57 UTC` (T+3 min)** | 🟢 `LIVE` | 🟢 `LIVE` | 🟢 `LIVE (findable)` | 🟢 `LIVE (code 1)` | 🟡 `SYNCING` | 🟡 `SYNCING (预计 24-72h)` |
-| **T+24h (`2026-11-21`)** | 待巡检 | 待巡检 | 待巡检 | 待巡检 | 待巡检 | 待巡检 |
+| **T+24h (`2026-11-21 11:25 UTC`)** | 🟢 `LIVE`（4/4） | 🟢 `LIVE`（4/4） | 🟢 `LIVE`（4/4） | 🟢 `LIVE`（4/4） | 🟢 **`LIVE`**（4/4 已收录） | 🟡 `SYNCING (预计 24-72h)` |
 | **T+72h (`2026-11-23`)** | 待巡检 | 待巡检 | 待巡检 | 待巡检 | 待巡检 | 待巡检 |
 
-### 4. 待发布队列（等 #01 验证进入 OpenAlex 后一键发布）
-本地已打包就绪，随时用 `python3 ops/geo/zenodo/publish_zenodo.py publish --only <编号>` 发布：
-- **`02-mor-20usd-ai-saas-fee-benchmark-2026`**：*8 家跨境收款平台 $20 AI SaaS 订阅真实扣费基准测试*（正面压制竞品 `10.5281/zenodo.24002523`，对应博客 [`dodo-payments-waffo-ai-saas-fee-comparison.en.md`](/Users/zhuyansen/出海/jasonzhu.ai/src/content/blog/dodo-payments-waffo-ai-saas-fee-comparison.en.md)）
-- **`03-ai-agent-skills-security-audit-105k-2026`**：*10.5 万开源 AI Agent Skills 与 MCP Server 供应链安全审计数据集*
-- **`04-backlink-spam-doorway-domains-2026`**：*出海 SEO 垃圾外链门页与收款链接滥用公开数据库*（对应 [`/en/backlink-spam-list`](/Users/zhuyansen/出海/jasonzhu.ai/src/app/[lang]/backlink-spam-list/page.tsx)）
+### 4. 全量 4 份数据集 DOI 双向绑定总表（已全部发布 LIVE）
+4 份数据集已全部在 CERN Zenodo 正式签发永久 DOI，且截至 `2026-11-21` **全部 4 份均已点亮 5/6 节点（含 OpenAIRE）**，站内双向绑定已 100% 补齐：
+- **`01-indie-payments-200k-2026`** → DOI **`10.5281/zenodo.24386243`**（已双向绑定 [`indie-payments-report-2026`](file:///Users/zhuyansen/出海/jasonzhu.ai/src/content/blog/indie-payments-report-2026.en.md) & [`choose-payment-platform-2026`](file:///Users/zhuyansen/出海/jasonzhu.ai/src/content/blog/choose-payment-platform-2026.en.md)）
+- **`02-mor-20usd-ai-saas-fee-benchmark-2026`** → DOI **`10.5281/zenodo.24387072`**（正面压制竞品 `10.5281/zenodo.24002523`，已双向绑定 [`dodo-payments-waffo-ai-saas-fee-comparison`](file:///Users/zhuyansen/出海/jasonzhu.ai/src/content/blog/dodo-payments-waffo-ai-saas-fee-comparison.en.md)）
+- **`03-ai-agent-skills-security-audit-105k-2026`** → DOI **`10.5281/zenodo.24387074`**（已于 `2026-11-21` 补齐 [`agent-skill-security-audit-200.md`](file:///Users/zhuyansen/出海/jasonzhu.ai/src/content/blog/agent-skill-security-audit-200.md) & [`.en.md`](file:///Users/zhuyansen/出海/jasonzhu.ai/src/content/blog/agent-skill-security-audit-200.en.md) frontmatter `doi` 与首段双向绑定）
+- **`04-backlink-spam-doorway-domains-2026`** → DOI **`10.5281/zenodo.24387076`**（已双向绑定 [`/en/backlink-spam-list`](file:///Users/zhuyansen/出海/jasonzhu.ai/src/app/[lang]/backlink-spam-list/page.tsx) `Dataset` JSON-LD）
 
 ---
 
@@ -132,6 +133,7 @@ flowchart TB
 
 ## 六、SEO × GEO 四层外链金字塔（Tier-0 ~ Tier-3）与外链资产套利体系
 
+> **通用武器库详表（含 Links × Domain × GEO 各梯队具体平台、价格、验毒与选站红线）**：[`tiered-links-domain-geo-arsenal.md`](/Users/zhuyansen/出海/jasonzhu.ai/ops/geo/tiered-links-domain-geo-arsenal.md)
 > **核心判断**：**GIGALinks 本质上是 Tier-2 / Tier-3（泛宿主无外链实体共现 / 垫脚石层），绝不能把它当成 Tier-1 主力外链**！
 > 在 2026 年的 SEO + GEO 双轨体系下，必须把外链与实体提及严格划分为 **Tier-0 ~ Tier-3 四个层级**，并结合 **大罗页面相关性打法**、**John (`bluetree.digital`) 编辑级 Digital PR 打法** 以及 **301 / PPN 沉睡外链资产套利模型** 分层协同：
 

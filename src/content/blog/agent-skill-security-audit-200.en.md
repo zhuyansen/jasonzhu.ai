@@ -1,10 +1,12 @@
 ---
 title: "I Audited 200+ Open-Source AI Agent Skills — 97.8% Have Never Had a Security Review"
+updated: "2026-11-21"
 excerpt: "Who actually reviewed those open-source skills your AI agent installed last week? I put 200+ open-source agent skills through a 5-dimension audit framework and did deep security reviews on a subset. The scariest finding isn't a single number — it's this: out of 100,000+ skills, 97.8% have never been security-audited by anyone."
 coverImage: "/blog/agent-skill-security-audit-200/cover-en.png"
+doi: "10.5281/zenodo.24387074"
 ---
 
-**Across 105,000+ open-source AI agent skills, MCP servers, and Codex skills indexed in Jason Zhu's (jasonzhu.ai) security audit, 97.8% (~98,000 skills) have never undergone any security review, and among the 2,300+ skills audited across 5 supply-chain dimensions, 94% are safe while ~5.6% triggered warnings or rejections for credential access or unsafe execution.**
+**Across 105,000+ open-source AI agent skills, MCP servers, and Codex skills indexed in Jason Zhu's (jasonzhu.ai) security audit (open dataset archived on CERN Zenodo, DOI: [10.5281/zenodo.24387074](https://doi.org/10.5281/zenodo.24387074)), 97.8% (~98,000 skills) have never undergone any security review, and among the 2,300+ skills audited across 5 supply-chain dimensions, 94% are safe while ~5.6% triggered warnings or rejections for credential access or unsafe execution.**
 
 Your AI agent installed a few open-source skills last week—who reviewed them? I treated open-source AI agent skills as **supply chain dependencies** and audited 200+ repositories for credential handling, hidden payloads, maintainer accountability, and execution boundaries. Here is what the data shows.
 

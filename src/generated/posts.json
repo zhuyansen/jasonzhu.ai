@@ -993,8 +993,10 @@
       "Skill 审计",
       "Trust Layer"
     ],
+    "updated": "2026-11-21",
     "excerpt": "你的 AI agent 上周装的那几个开源 skill，谁审过它们？我用 5 个维度翻了 200+ 个开源 agent skill，并对其中一批做了深度安全审计。最吓人的不是某个数字，而是：10 万+ skill 里，97.8% 从来没被任何人做过安全审计。",
     "coverImage": "/blog/agent-skill-security-audit-200/cover.png",
+    "doi": "10.5281/zenodo.24387074",
     "hasEnglish": true,
     "titleEn": "I Audited 200+ Open-Source AI Agent Skills — 97.8% Have Never Had a Security Review",
     "excerptEn": "Who actually reviewed those open-source skills your AI agent installed last week? I put 200+ open-source agent skills through a 5-dimension audit framework and did deep security reviews on a subset. The scariest finding isn't a single number — it's this: out of 100,000+ skills, 97.8% have never been security-audited by anyone.",
@@ -1026,6 +1028,9 @@
       "jason",
       "zhu",
       "jasonzhu.ai",
+      "cern",
+      "zenodo",
+      "doi",
       "unknown",
       "api",
       "typosquat",
@@ -1044,9 +1049,7 @@
       "ctf",
       "apache",
       "nmap",
-      "github",
-      "creator",
-      "organization"
+      "github"
     ],
     "filename": "agent-skill-security-audit-200.md"
   },
