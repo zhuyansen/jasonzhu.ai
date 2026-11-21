@@ -740,7 +740,7 @@ export const ERHU_GROWTH_DATA_11 = {
       badge: { zh: "1–6 自己的真实数据（告诉 AI 你做得怎么样）", en: "1–6 Your First-Party Truth (How you are performing)" },
       color: "blue",
       items: [
-        { num: "1️⃣", name: { zh: "网站行为", en: "Web Traffic & Behavior" }, tools: "Google Analytics (GA4，剔除机房无头流量) / Vercel Analytics", desc: { zh: "全站流量从哪来、看了什么、在哪一步走掉（按渠道 × 地区 × 端 × 页面 × 语言叉乘；Plausible 因试用锁站已退役）", en: "Where visitors come from, what they view, and where they drop off (channel × region × device × page × language; bot-filtered GA4)" } },
+        { num: "1️⃣", name: { zh: "网站行为", en: "Web Traffic & Behavior" }, tools: "Google Analytics (GA4，剔除机房无头流量) / Vercel Analytics", toolsEn: "Google Analytics (GA4, minus data-center headless traffic) / Vercel Analytics", desc: { zh: "全站流量从哪来、看了什么、在哪一步走掉（按渠道 × 地区 × 端 × 页面 × 语言叉乘；Plausible 因试用锁站已退役）", en: "Where visitors come from, what they view, and where they drop off (channel × region × device × page × language; bot-filtered GA4)" } },
         { num: "2️⃣", name: { zh: "自然搜索与 AI 表现", en: "Organic & AI Search" }, tools: "Google Search Console / Bing Webmaster Tools / mcp-gsc", desc: { zh: "用户搜什么词找到你、哪些页有曝光没点击（可用 mcp-gsc 直连 Claude，结合气泡图四象限与生成式 AI 效果报告）", en: "Queries, impressions without clicks, bubble-chart quadrants, and GSC Generative AI performance reports" } },
         { num: "3️⃣", name: { zh: "移动端 App 归因 (MMP)", en: "Mobile App Attribution" }, tools: "Adjust / AppsFlyer + RevenueCat", desc: { zh: "做 App 必配，看移动端安装与订阅具体由哪个渠道、哪个 Campaign 带来", en: "Essential for mobile apps to attribute installs and trials to exact channels and campaigns" } },
         { num: "4️⃣", name: { zh: "产品内行为与留存", en: "In-Product Retention" }, tools: "PostHog / Mixpanel / Amplitude + Microsoft Clarity", desc: { zh: "能把人找来不等于能留下来：看用户进来后用了什么核心功能、第几天还在（Cohort 留存）+ Clarity 死点击与 AI 引用报告", en: "Getting traffic is not keeping users: track feature adoption, Day-N cohort retention, and Clarity dead-clicks/AI citations" } },
@@ -760,7 +760,7 @@ export const ERHU_GROWTH_DATA_11 = {
       badge: { zh: "9–10 别人的盘子（告诉 AI 你还能做成什么样）", en: "9–10 Market & Competitor Intelligence (What is possible)" },
       color: "amber",
       items: [
-        { num: "9️⃣", name: { zh: "第三方流量、收入与差评库", en: "3rd-Party Traffic, Revenue & Review DBs" }, tools: "AIsa / GoAnyAPI / 哥飞 API + TrustMRR + App Store RSS / Sensor Tower 下拉", desc: { zh: "用 AIsa + GoAnyAPI 按次付费查竞品词、流量与外链（替代高价月费）；用 TrustMRR 查验证收入；拉 App Store 1–3 星评论 RSS 挖竞品痛点", en: "Pay-per-call competitor keywords/traffic via AIsa + GoAnyAPI; verified revenue via TrustMRR; 1–3 star review gaps via App Store RSS" } },
+        { num: "9️⃣", name: { zh: "第三方流量、收入与差评库", en: "3rd-Party Traffic, Revenue & Review DBs" }, tools: "AIsa / GoAnyAPI / 哥飞 API + TrustMRR + App Store RSS / Sensor Tower 下拉", toolsEn: "AIsa / GoAnyAPI / Gefei API + TrustMRR + App Store RSS / Sensor Tower dropdown", desc: { zh: "用 AIsa + GoAnyAPI 按次付费查竞品词、流量与外链（替代高价月费）；用 TrustMRR 查验证收入；拉 App Store 1–3 星评论 RSS 挖竞品痛点", en: "Pay-per-call competitor keywords/traffic via AIsa + GoAnyAPI; verified revenue via TrustMRR; 1–3 star review gaps via App Store RSS" } },
         { num: "🔟", name: { zh: "公开竞品投放素材与付费墙库", en: "Public Ad Libraries & Paywall Galleries" }, tools: "Meta Ad Library / Google Ads Transparency / TikTok Creative Center + PaywallScreens", desc: { zh: "官方免费公开：看对手正在真金白银投什么素材、跑了多久没停，再对照 PaywallPro / PaywallScreens 1 万+ 付费墙看它怎么转化", en: "Free official ad libraries showing longest-running creatives, paired with 10,000+ paywall screens from PaywallScreens" } },
       ],
     },
@@ -768,7 +768,7 @@ export const ERHU_GROWTH_DATA_11 = {
       badge: { zh: "1️⃣1️⃣ 终极决策叉乘表（让 AI 做判断而不是读报表）", en: "1️⃣1️⃣ The Cross-Product Decision Matrix (From reading reports to making calls)" },
       color: "purple",
       items: [
-        { num: "1️⃣1️⃣", name: { zh: "六维叉乘切分表", en: "6-Dimension Cross-Slice Table" }, tools: "端 × 国家 × 卖点 × 目标 × SKU × 类别（行业/竞品/场景）", desc: { zh: "把前面 10 份数据叉乘进同一张表，每个格子最后都必须落到两个终局数字：【付费人数】与【付费金额】", en: "Cross-multiply all 10 feeds by Device × Country × Hook × Goal × SKU × Category; every cell must resolve to Paying Users & Net Revenue" } },
+        { num: "1️⃣1️⃣", name: { zh: "六维叉乘切分表", en: "6-Dimension Cross-Slice Table" }, tools: "端 × 国家 × 卖点 × 目标 × SKU × 类别（行业/竞品/场景）", toolsEn: "Device × country × selling point × goal × SKU × category (industry / competitor / use case)", desc: { zh: "把前面 10 份数据叉乘进同一张表，每个格子最后都必须落到两个终局数字：【付费人数】与【付费金额】", en: "Cross-multiply all 10 feeds by Device × Country × Hook × Goal × SKU × Category; every cell must resolve to Paying Users & Net Revenue" } },
       ],
     },
   ],
@@ -1213,6 +1213,8 @@ export const LEARN_SEO = {
 
 export interface SeoSchoolPerson {
   name: string;
+  /** 英文页用的名字（name 是中文时填） */
+  nameEn?: string;
   handle?: string;
   url?: string;
   role: { zh: string; en: string };
@@ -1274,8 +1276,8 @@ export const SEO_SCHOOLS_MAP: {
         { name: "Tim Soulo", handle: "@timsoulo", url: "https://ahrefs.com/discoverable", role: { zh: "Ahrefs CMO、《DISCOVERABLE》作者（Get Found / Get Noticed / Get Talked About）", en: "CMO at Ahrefs, author of DISCOVERABLE (Get Found / Get Noticed / Get Talked About)" } },
         { name: "Cyrus Shepard", handle: "@CyrusShepard", url: "https://zyppy.com/", role: { zh: "Zyppy 创始人（92.9% 赢家独有资产研究 & 28 天 AI Search 断流实验）", en: "Founder of Zyppy (92.9% proprietary asset study & 28-day AI Search opt-out test)" } },
         { name: "Georg Richard Aare", url: "https://www.youtube.com/watch?v=n35P_Mjsk3Y", role: { zh: "RankUp 创始人（410,572 条 Claim 实证：首段一手经验 Top-3 概率 5.5x）", en: "Founder of RankUp (410,572-claim study: intro first-hand experience gives 5.5x Top-3 lift)" } },
-        { name: "哥飞", handle: "@gefei55", url: "https://new.web.cafe/tutorials", role: { zh: "出海新词工具站与广告/订阅变现社群主理人", en: "New-term tool sites & AdSense/subscription community host" } },
-        { name: "大罗SEO", handle: "@daluoseo", url: "https://www.youtube.com/@daluoseo", role: { zh: "Product-Led SEO 中文拆解与程序化落地", en: "Product-Led SEO & programmatic landing pages in Chinese" } },
+        { name: "哥飞", nameEn: "Gefei", handle: "@gefei55", url: "https://new.web.cafe/tutorials", role: { zh: "出海新词工具站与广告/订阅变现社群主理人", en: "New-term tool sites & AdSense/subscription community host" } },
+        { name: "大罗SEO", nameEn: "Daluo SEO", handle: "@daluoseo", url: "https://www.youtube.com/@daluoseo", role: { zh: "Product-Led SEO 中文拆解与程序化落地", en: "Product-Led SEO & programmatic landing pages in Chinese" } },
         { name: "Joker", handle: "@JokerMayCry_Jun", url: "https://mp.weixin.qq.com/s/ESPeoAGt5TToZrXqVItDyw", role: { zh: "《SEO 的下一次进化》作者：降低机器 6 种不确定性与新老赛道分层法则", en: "Author of 'The Next Evolution of SEO': 6 uncertainty reductions & niche maturity laws" } },
       ],
       core: {
@@ -1373,7 +1375,7 @@ export const SEO_SCHOOLS_MAP: {
       name: { zh: "一手信源 E-E-A-T、营收导向 PR 与漏斗转化派（Original Source & BoFu Revenue）", en: "Original Source E-E-A-T, Revenue-First PR & Bottom-of-Funnel Conversion" },
       people: [
         { name: "Lily Ray", handle: "@lilyraynyc", url: "https://www.amsive.com/insights/seo/", role: { zh: "Amsive SEO 副总裁，2,076 域名 E-E-A-T 赢家研究与「自夸榜单 69% 被 AI 剔除」实证", en: "VP of SEO Strategy at Amsive, 2,076-domain E-E-A-T study & '69% self-serving listicle exclusion' study" } },
-        { name: "John \"JP\" Zhang（张江鹏）", handle: "@jiangpengzhang", url: "https://www.youtube.com/@seoactionblog", role: { zh: "「英文SEO实战派」主理人、深圳 SEO 大会发起人（以 Info 养 Commercial）", en: "Host of 'English SEO Action' & founder of Shenzhen SEO Conference ('Info feeds Commercial')" } },
+        { name: "John \"JP\" Zhang（张江鹏）", nameEn: "John \"JP\" Zhang", handle: "@jiangpengzhang", url: "https://www.youtube.com/@seoactionblog", role: { zh: "「英文SEO实战派」主理人、深圳 SEO 大会发起人（以 Info 养 Commercial）", en: "Host of 'English SEO Action' & founder of Shenzhen SEO Conference ('Info feeds Commercial')" } },
         { name: "Alex Galinos", url: "https://www.youtube.com/watch?v=n35P_Mjsk3Y", role: { zh: "Elife Group 顾问（前 Hoppa CMO），营收倒推 Digital PR 与「3 道门内链导权」", en: "Advisor at Elife Group (ex-Hoppa CMO), Revenue-First Digital PR & 3-gate internal link routing" } },
         { name: "Edward Sturm", handle: "@edwardeachday", url: "https://www.youtube.com/watch?v=n35P_Mjsk3Y", role: { zh: "The Edward Show 日更播客主理人、Compact Keywords 高意图短页作者", en: "Host of The Edward Show (1,230+ episodes) & Compact Keywords" } },
         { name: "Davie Fogarty", handle: "@DavieFogarty", url: "https://www.youtube.com/@DavieFogarty", role: { zh: "The Oodie 创始人（5 亿澳元 DTC 品牌），品牌搜索心智与单页 CRO", en: "Founder of The Oodie ($500M+ DTC), branded search demand & CRO" } },

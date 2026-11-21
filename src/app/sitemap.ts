@@ -24,6 +24,9 @@ const STATIC_PATHS = [
   "/go-global/payments",
   "/go-global/open-account",
   "/go-global/ai-readiness", // AI 网站急诊室 & 第 1 课 7 关通关小游戏
+  "/go-global/seo-water-model", // SEO 水系模型（2026-11-21 从出海专题首页拆出）
+  "/go-global/seo-geo-schools", // SEO / GEO 六大流派地图（同上）
+  "/go-global/growth-stack", // 出海全栈工具清单 + 11 份数据（同上）
   "/services",
   "/about",
   "/handbook",
