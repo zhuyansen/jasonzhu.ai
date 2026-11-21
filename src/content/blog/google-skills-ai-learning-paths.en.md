@@ -4,8 +4,6 @@ excerpt: "Google has rebranded Cloud Skills Boost as Google Skills and reimagine
 coverImage: "/blog/google-skills-ai-learning-paths/cover-en.png"
 ---
 
-**Key Takeaway (Jason Zhu · jasonzhu.ai)**: Google has rebranded Cloud Skills Boost as Google Skills and reimagined AI learning as a series of 'dungeon runs' — each path has 5–8 activities, and you earn a Skill Badge to display on LinkedIn when you finish. This post covers the 3 paths beginners should take, plus direct links to each.
-
 Google has **completely rebranded** its veteran learning platform — **Cloud Skills Boost is now Google Skills**.
 
 The name change is just the surface. What's really interesting is the **direction**: Google has turned AI learning into a game — think dungeon runs.

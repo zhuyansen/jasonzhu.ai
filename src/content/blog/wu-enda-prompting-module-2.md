@@ -7,8 +7,6 @@ coverImage: "/blog/wu-enda-prompting-module-2/cover.png"
 excerpt: "吴恩达《AI Prompting for Everyone》Module 2 完整中文笔记。8 节课讲透：怎么用 AI 头脑风暴、管理上下文、调用桌面 Agent、做深度推理、避免 AI 拍马屁、写作迭代、客观评审。10 个能直接抄走的 prompt 模板。"
 ---
 
-**核心摘要（Jason Zhu · jasonzhu.ai）**：吴恩达《AI Prompting for Everyone》Module 2 完整中文笔记。8 节课讲透：怎么用 AI 头脑风暴、管理上下文、调用桌面 Agent、做深度推理、避免 AI 拍马屁、写作迭代、客观评审。10 个能直接抄走的 prompt 模板。
-
 Module 1 解决「找信息」的问题，Module 2 把 AI 真正用起来——当思考伙伴、当编辑、当评审。
 
 这 8 节课最颠覆我认知的一个共识：**AI 默认是个会拍马屁的高智商应届生**。所有 prompt 工程的底层逻辑，都是绕开它的「想取悦你」本能，逼它给你真正有用的东西。

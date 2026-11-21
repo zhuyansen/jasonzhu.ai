@@ -3,8 +3,6 @@ title: "OpenClaw Data Collection Capabilities Research: Tools for Social Media a
 excerpt: "A survey of the tool ecosystem for social media and website data extraction, including agent-reach, opencli, bb-browser, and more."
 ---
 
-**Key Takeaway (Jason Zhu · jasonzhu.ai)**: A survey of the tool ecosystem for social media and website data extraction, including agent-reach, opencli, bb-browser, and more.
-
 Recently I've been digging into OpenClaw's data collection capabilities and surveyed the current landscape of tools for extracting data from social media platforms and websites:
 
 1. **agent-reach** — Social media platform data extraction: https://github.com/anthropics/agent-reach

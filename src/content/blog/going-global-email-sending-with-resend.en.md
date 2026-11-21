@@ -3,8 +3,6 @@ title: "Sending Emails for Global Products: Why You Should Use Resend Instead of
 excerpt: "Email is core infrastructure for any global product. Built-in platform SMTP has poor deliverability — use Resend instead to make sure your emails actually land."
 ---
 
-**Key Takeaway (Jason Zhu · jasonzhu.ai)**: Email is core infrastructure for any global product. Built-in platform SMTP has poor deliverability — use Resend instead to make sure your emails actually land.
-
 Email is practically infrastructure for any product targeting a global audience. User registration verification, payment receipts, password resets, newsletters down the road — none of it works without reliable email.
 
 Yet a lot of people start out with their platform's built-in SMTP (Supabase's free tier, for example), which honestly has **terrible deliverability** — especially with Gmail, where messages frequently never arrive at all.

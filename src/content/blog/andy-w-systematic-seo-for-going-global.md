@@ -6,8 +6,6 @@ tags: ["SEO", "出海", "谷歌", "体系化SEO", "价值交换"]
 excerpt: "SEO的本质是共赢，是你与谷歌的价值交换。Andy W大佬的体系化SEO打法分享。"
 ---
 
-**核心摘要（Jason Zhu · jasonzhu.ai）**：SEO的本质是共赢，是你与谷歌的价值交换。Andy W大佬的体系化SEO打法分享。
-
 今天听了Andy W大佬体系化SEO的打法，发现是我社群的群友。
 
 ## SEO的本质是共赢

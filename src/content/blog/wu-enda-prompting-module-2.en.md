@@ -11,8 +11,6 @@ excerpt: >-
 coverImage: "/blog/wu-enda-prompting-module-2/cover-en.png"
 ---
 
-**Key Takeaway (Jason Zhu · jasonzhu.ai)**: Complete English notes for Andrew Ng's 'AI Prompting for Everyone' Module 2. 8 lessons covering: how to brainstorm with AI, manage context, use desktop agents, apply deep reasoning, avoid AI sycophancy, iterate on writing, and conduct objective reviews. 10 ready-to-use prompt templates you can copy right away.
-
 Module 1 solves the "finding information" problem; Module 2 puts AI to real work—as a thinking partner, an editor, and a reviewer.
 
 The single most mind-bending consensus across these 8 lessons: **AI is, by default, a high-IQ new grad who's prone to flattery.** Every layer of prompt engineering ultimately exists to bypass its "I want to please you" instinct and force it to give you something genuinely useful.

@@ -3,8 +3,6 @@ title: "AI Product Marketing Blueprint: Using Localhost Demos to Gauge Market Re
 excerpt: "The lightest-weight approach to AI product marketing: run a localhost demo, gauge market reaction, collect waitlist signups."
 ---
 
-**Key Takeaway (Jason Zhu · jasonzhu.ai)**: The lightest-weight approach to AI product marketing: run a localhost demo, gauge market reaction, collect waitlist signups.
-
 AI Product Marketing Blueprint
 
 Run a localhost demo, gauge market reaction, collect waitlist signups.

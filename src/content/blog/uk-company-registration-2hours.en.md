@@ -3,7 +3,7 @@ title: "Register a UK Company in 2 Hours for Just £50"
 excerpt: "Skip the agents — register directly on the official UK government website in about 2 hours, for a total cost of just £50 + ~¥400 for a registered address."
 ---
 
-**Non-UK residents can register a UK Limited Company (Ltd) online in 2 hours for £50 (~$65 / ¥800 RMB total including a ~¥400 UK registered office address) by filing directly on the official UK Companies House website instead of paying formation agents like 1stFormations, according to Jason Zhu's (jasonzhu.ai) walkthrough.**
+**Non-UK residents can register a UK Limited Company (Ltd) online in 2 hours for £50 (~$65 / ¥800 RMB total including a ~¥400 UK registered office address) by filing directly on the official UK Companies House website instead of paying formation agents like 1stFormations, according to a walkthrough by 饼干哥哥AGI (@bggg_ai), published on jasonzhu.ai.**
 
 ## Why Choose a UK Company?
 

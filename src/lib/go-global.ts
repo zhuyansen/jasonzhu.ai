@@ -212,8 +212,8 @@ export const SEO_SKILLS: Pick[] = [
     url: "https://agentskillshub.top/skill/AminForou/mcp-gsc/",
   },
   {
-    what: { zh: "我们自研的 AI 网站急诊室（100 分制 · 7 大类 · 26 项真实 HTTP/SSR/JSON-LD/llms.txt/WebMCP 检查，一键出 Cursor 修复药方）", en: "Our in-house 100-pt, 7-category, 26-check AI Visibility & Agent Readiness scanner with one-click repair prompts" },
-    name: "ai-visibility-checker（自研 26 项 GEO 门禁）",
+    what: { zh: "我们的 AI 网站急诊室（100 分制 · 7 大类 · 26 项真实 HTTP/SSR/JSON-LD/llms.txt/WebMCP 检查，一键出 Cursor 修复药方）", en: "Our 100-pt, 7-category, 26-check AI Visibility & Agent Readiness scanner with one-click repair prompts" },
+    name: "ai-visibility-checker（26 项 AI 可读性检查）",
     url: "https://jasonzhu.ai/zh/go-global/ai-readiness",
   },
   {
@@ -251,13 +251,13 @@ export const SEO_WATER_SYSTEM_V8 = {
     {
       id: "①a",
       tag: "v5/v8/v9",
-      name: { zh: "进水口 · 传统外链权威与 AI 域名影响指数", en: "Inflow 1a · Link Authority & AI Domain Impact Index" },
+      name: { zh: "进水口 · 传统外链权威与 AI 爬虫放行检查", en: "Inflow 1a · Link Authority & AI Crawler Access" },
       who: { zh: "🧑 人主导", en: "🧑 Human-led" },
       rule: {
-        zh: "外链分两层：权重层 = 自然报道引用 + 可引用数据集/学术凭证（Zenodo DOI 一鱼四吃）；发现层 = 免费目录/导航站（只管触发收录和 AI 语料，不传权重）。10-06 起停止购买 dofollow 外链；v8 闸门：收录稳定增长后才上外链。v9 新增（JOKER + Walker Sands）：① 外链从 Exact Match 锚文本升级为跨 6 类异构平台的 `Brand + Context + Relationship` 外部证据网；② 投 PR/外链前必跑 `geo_engine.py ai-domain-impact --target <domain>`（0–100 分），优先选放行 6 大 AI 爬虫的垂直媒体（如 TechTarget 82 分、Dev.to 94 分），避开屏蔽 AI 爬虫的传统高 DR 门户（如 Forbes 55 分）。",
-        en: "Two tiers: Weight tier = earned media + CERN Zenodo DOI datasets; Discovery tier = directories. v9 (JOKER + Walker Sands): (1) replace exact-match anchors with `Brand + Context + Relationship` proof across 6 platform types; (2) run `geo_engine.py ai-domain-impact --target <domain>` (0–100) before pitching so you target AI-accessible domains (TechTarget 82, Dev.to 94) over high-DR outlets blocking LLM bots (Forbes 55).",
+        zh: "外链分两层：权重层 = 自然报道引用 + 可引用数据集/学术凭证（Zenodo DOI 一鱼四吃）；发现层 = 免费目录/导航站（只管触发收录和 AI 语料，不传权重）。10-06 起停止购买 dofollow 外链；v8 闸门：收录稳定增长后才上外链。v9 新增（JOKER + Walker Sands）：① 外链从 Exact Match 锚文本升级为跨 6 类异构平台的 `Brand + Context + Relationship` 外部证据网；② 投 PR/外链前先查目标站有没有屏蔽 AI 爬虫：`geo_engine.py ai-domain-impact --target <domain>` 是我们自己写的快速检查，只看 robots.txt、页面能否抓到和基本元数据，不是 Walker Sands 的指数。Walker Sands 公布的例子是 TechTarget 82 分、Forbes 55 分，原因之一是 Forbes 不让 AI 爬虫抓取很多页面。",
+        en: "Two tiers: Weight tier = earned media + CERN Zenodo DOI datasets; Discovery tier = directories. v9 (JOKER + Walker Sands): (1) replace exact-match anchors with `Brand + Context + Relationship` proof across 6 platform types; (2) before pitching, check whether the target blocks AI crawlers: `geo_engine.py ai-domain-impact --target <domain>` is our own quick check of robots.txt, fetchability and basic metadata, not the Walker Sands index. Walker Sands' published example is TechTarget 82 vs Forbes 55, partly because Forbes keeps LLM crawlers off many of its URLs.",
       },
-      meter: { zh: "高权威引荐域数 + 靶站 AI Domain Impact 分（≥75）", en: "Referring domains + target AI Domain Impact score (≥75)" },
+      meter: { zh: "高权威引荐域数 + 靶站是否放行 AI 爬虫", en: "Referring domains + whether the target allows AI crawlers" },
     },
     {
       id: "①b",
@@ -287,8 +287,8 @@ export const SEO_WATER_SYSTEM_V8 = {
       name: { zh: "水库 · 品牌实体、跨页 @id 图谱与语义簇共识", en: "Reservoir · Brand Entity, Connected @id KG & Consensus" },
       who: { zh: "🤖织图 🧑定名", en: "🤖 schema · 🧑 naming" },
       rule: {
-        zh: "权重先蓄进实体，管道才有水可分。避开「水库两刀」（通用类目词当品牌名 + .top/.xyz 低信任后缀）；对外统一写「品牌（域名）」，JSON-LD 声明 alternateName，sameAs 只绑同一实体。v9 新增（JOKER + Andrea Volpini）：① 定死 4 元组实体身份证（Official Name / Primary Category / Core Topics / Target Audience），全网描述无需复制粘贴文案，但必须落在同一语义簇（`geo_engine.py brand-consensus`）；② 全站 JSON-LD 必须用唯一固定 `@id`（如 `https://jasonzhu.ai/#person`、`#organization`）跨页互联（`geo_engine.py connected-kg`，Volpini 实测跨页互联 Entity Graph 提升 **+30%** 检索准确率，`RLM-on-KG` 比 GraphRAG 高 **+71%**）。",
-        en: "Weight accumulates in your brand entity first. v9 (JOKER + Andrea Volpini): (1) lock a 4-tuple Entity ID Card (Official Name / Primary Category / Core Topics / Target Audience) and keep all off-site descriptions within the same Semantic Cluster (`geo_engine.py brand-consensus`); (2) connect JSON-LD across pages via shared unique `@id` URIs (`geo_engine.py connected-kg` — Volpini proved connected Entity Graphs boost retrieval accuracy by +30% and RLM-on-KG beats GraphRAG by +71%).",
+        zh: "权重先蓄进实体，管道才有水可分。避开「水库两刀」（通用类目词当品牌名 + .top/.xyz 低信任后缀）；对外统一写「品牌（域名）」，JSON-LD 声明 alternateName，sameAs 只绑同一实体。v9 新增（JOKER + Andrea Volpini）：① 定死 4 元组实体身份证（Official Name / Primary Category / Core Topics / Target Audience），全网描述无需复制粘贴文案，但必须落在同一语义簇（站外靠人工核对；`geo_engine.py brand-consensus` 只检查本站核心页面）；② 全站 JSON-LD 必须用唯一固定 `@id`（如 `https://jasonzhu.ai/#person`、`#organization`）跨页互联（`geo_engine.py connected-kg`，Volpini 实测跨页互联 Entity Graph 提升 **+30%** 检索准确率，`RLM-on-KG` 比 GraphRAG 高 **+71%**）。",
+        en: "Weight accumulates in your brand entity first. v9 (JOKER + Andrea Volpini): (1) lock a 4-tuple Entity ID Card (Official Name / Primary Category / Core Topics / Target Audience) and keep all off-site descriptions within the same Semantic Cluster (checked by hand off-site; `geo_engine.py brand-consensus` only covers this site's core pages); (2) connect JSON-LD across pages via shared unique `@id` URIs (`geo_engine.py connected-kg` — Volpini proved connected Entity Graphs boost retrieval accuracy by +30% and RLM-on-KG beats GraphRAG by +71%).",
       },
       meter: { zh: "品牌词位次/Sitelinks + 跨页 @id 连通率（100%）", en: "Brand sitelinks + cross-page @id connectivity (100%)" },
     },
@@ -364,8 +364,8 @@ export const SEO_WATER_SYSTEM_V8 = {
       name: { zh: "出水口 · 结果页展示、首屏 BLUF 与 H2 检索候选", en: "Outlet · SERP Snippet, 50-Word BLUF & H2 Retrieval Candidates" },
       who: { zh: "🤖 AI", en: "🤖 AI" },
       rule: {
-        zh: "排名之后、点击之前是单独一道工序：① 每页唯一 title（与 H1 一致、≤60 字符）与 meta description；② 首页 WebSite schema 声明 name + alternateName；③ 首段前 50 词直出 BLUF 断言结论 + 适用人群 + 硬核实测统计。v9 新增（JOKER + Mike King 段落级检索候选铁律）：**内容战略在往上放大（到 Entity），内容执行在往下缩小（到 Passage / Section / Chunk）**——全文每个 `## H2` 都是独立的 Retrieval Candidate（`geo_engine.py section-candidates`：清晰 H2 提问/命题 + 下方首段 35–95 词点名主语且不靠「它/这」指代上文的 Direct Answer + 表格/数字支撑）。",
-        en: "Ranking is not clicking: (1) unique title matching H1 ≤60 chars + unique meta description; (2) homepage WebSite schema with name + alternateName; (3) opening 50-word BLUF right below H1. v9 (JOKER + Mike King Section Retrieval Candidate law): **strategy scales up to the Entity while execution shrinks down to the Section/Passage** — every `## H2` must pass `geo_engine.py section-candidates` (clear H2 heading + 35–95 word self-contained Direct Answer + table/number proof).",
+        zh: "排名之后、点击之前是单独一道工序：① 每页唯一 title（与 H1 一致、≤60 字符）与 meta description；② 首页 WebSite schema 声明 name + alternateName；③ 首段前 50 词直出 BLUF 断言结论 + 适用人群 + 硬核实测统计。v9 新增（JOKER + Mike King 段落级检索候选铁律）：**内容战略在往上放大（到 Entity），内容执行在往下缩小（到 Passage / Section / Chunk）**——全文每个 `## H2` 都是独立的 Retrieval Candidate（写法：清晰 H2 提问/命题 + 下方首段 35–95 词点名主语且不靠「它/这」指代上文的 Direct Answer + 表格/数字支撑。`geo_engine.py section-candidates` 目前只粗查每个 H2 首段的长度和有没有数字或具体名称，其余要人工看）。",
+        en: "Ranking is not clicking: (1) unique title matching H1 ≤60 chars + unique meta description; (2) homepage WebSite schema with name + alternateName; (3) opening 50-word BLUF right below H1. v9 (JOKER + Mike King Section Retrieval Candidate law): **strategy scales up to the Entity while execution shrinks down to the Section/Passage** — every `## H2` should stand alone (clear H2 heading + 35–95 word self-contained Direct Answer + table/number proof). `geo_engine.py section-candidates` only checks the first paragraph's length and whether it has a number or a named entity; the rest is a manual read.",
       },
       meter: { zh: "同位次 CTR + 首段 BLUF 率 + H2 检索候选达标率（100%）", en: "Same-pos CTR + 50-word BLUF + H2 retrieval-ready ratio (100%)" },
     },
@@ -386,8 +386,8 @@ export const SEO_WATER_SYSTEM_V8 = {
       name: { zh: "迭代 · 五层水表与每周单实验闭环", en: "Iteration · 5-Layer Meters & Weekly 1-Experiment Loop" },
       who: { zh: "🤖 AI", en: "🤖 AI" },
       rule: {
-        zh: "水表从三层升为五层：① 点击层（GSC + GA 真人会话）· ② 引用层（GSC 生成式 AI 报告 + Bing AI Performance + Clarity 引用 + 20 题多引擎实测，实测 AI 引用量是点击量的 9 倍）· ③ 权威层（DR + 高权威引荐域 + AI Domain Impact 分）· ④ 收录层（N/M/X + 子站点地图读取 + Bing 收录数）· ⑤ 管材层（GSC 实际网址测试 + 404/规范网址一致率 + 跨页 @id 连通率）。每周复盘只记「3 胜 3 忧 + 恰好 1 个实验」并写死回看日期。",
-        en: "Five layered meters: (1) Clicks (GSC + bot-filtered GA4), (2) AI Citations (GSC Generative AI report + Bing AI Performance + Clarity + 20-prompt live panel — AI citations run 9× AI clicks), (3) Authority (DR, referring domains & AI Domain Impact score), (4) Indexing (N/M/X + child sitemap reads + Bing index count), (5) Pipe Health (GSC Live URL test + 404/canonical match + connected @id graph). Weekly retro picks 3 wins, 3 worries, and 1 dated experiment.",
+        zh: "水表从三层升为五层：① 点击层（GSC + GA 真人会话）· ② 引用层（GSC 生成式 AI 报告 + Bing AI Performance + Clarity 引用 + 20 题多引擎实测，实测 AI 引用量是点击量的 9 倍）· ③ 权威层（DR + 高权威引荐域 + 靶站是否放行 AI 爬虫）· ④ 收录层（N/M/X + 子站点地图读取 + Bing 收录数）· ⑤ 管材层（GSC 实际网址测试 + 404/规范网址一致率 + 跨页 @id 连通率）。每周复盘只记「3 胜 3 忧 + 恰好 1 个实验」并写死回看日期。",
+        en: "Five layered meters: (1) Clicks (GSC + bot-filtered GA4), (2) AI Citations (GSC Generative AI report + Bing AI Performance + Clarity + 20-prompt live panel — AI citations run 9× AI clicks), (3) Authority (DR, referring domains & whether targets allow AI crawlers), (4) Indexing (N/M/X + child sitemap reads + Bing index count), (5) Pipe Health (GSC Live URL test + 404/canonical match + connected @id graph). Weekly retro picks 3 wins, 3 worries, and 1 dated experiment.",
       },
       meter: { zh: "五层月检完成率 + 每周单实验按期回看率", en: "5-layer monthly audit completion & dated experiment follow-through" },
     },
@@ -436,13 +436,13 @@ export const SEO_WATER_SYSTEM_V8 = {
       "① 实体定义与跨页 @id 互联（构件 ②）：固定 4 元组实体身份证（Official Name / Primary Category / Core Topics / Target Audience），全站 JSON-LD 用唯一 `@id` 跨页互联（Volpini 实测提升 +30% 检索准确率，RLM-on-KG 比 GraphRAG 高 +71%；命令：`geo_engine.py connected-kg`）。",
       "② 站内主题地图与实体核心红线（构件 ③/⑤）：Topical Map 用于扩大 Query Fan-out 检索接触面，但没有围绕 Entity Core 的泛流量文章发得越多死得越快（新页距核心实体 ≤2 跳）。",
       "③ 段落级检索候选与多模态路由（构件 ⑩/①b）：战略放大到 Entity，执行缩小到每个 `## H2` 独立构成 Retrieval Candidate（`geo_engine.py section-candidates`）；配合对比表与前 30 秒亮结论的 YouTube 视频（被引率 200x、占 ~30% AIO）。",
-      "④ 站外主题网络、AI 域名影响指数与语义簇共识（构件 ①a/②/⑨）：把官网 Self Claim 变成 6 类异构平台的 `Brand + Context + Relationship` 外部证据；投外链前跑 `geo_engine.py ai-domain-impact` 筛掉屏蔽 AI 爬虫的假高权站（TechTarget 82 vs Forbes 55）；全网描述落在同一语义簇即可（`geo_engine.py brand-consensus`）。",
+      "④ 站外主题网络、AI 域名影响指数与语义簇共识（构件 ①a/②/⑨）：把官网 Self Claim 变成 6 类异构平台的 `Brand + Context + Relationship` 外部证据；投外链前先查目标站有没有屏蔽 AI 爬虫（Walker Sands 的指数里 TechTarget 82、Forbes 55；`geo_engine.py ai-domain-impact` 是我们自己的快速检查）；全网对品牌的描述要落在同一语义簇（站外目前靠人工核对，`geo_engine.py brand-consensus` 只检查本站核心页面）。",
     ],
     en: [
       "① Entity Definition & Connected @id Graph (Component ②): Lock a 4-tuple Entity ID Card and connect JSON-LD across pages via shared `@id` URIs (+30% retrieval accuracy, RLM-on-KG +71% over GraphRAG; audit via `geo_engine.py connected-kg`).",
       "② Topical Map & Entity Core Boundary (Component ③/⑤): Expand Query Fan-out Retrieval Surface without drifting off-core — publishing 3,000 generic articles unrelated to your Entity Core kills a site faster.",
       "③ Section-Level Retrieval Candidates & Modality Routing (Component ⑩/①b): Strategy scales up to the Entity while execution shrinks down to each `## H2` as an independent Retrieval Candidate (`geo_engine.py section-candidates`), paired with tables and first-30s YouTube transcripts (200x citation rate, ~30% AIO share).",
-      "④ External Topical Network, AI Domain Impact & Semantic Consensus (Component ①a/②/⑨): Turn on-site Self Claims into cross-platform `Brand + Context + Relationship` External Evidence; vet publishers with `geo_engine.py ai-domain-impact` (TechTarget 82 vs Forbes 55); verify semantic cluster alignment via `geo_engine.py brand-consensus`.",
+      "④ External Topical Network, AI Domain Impact & Semantic Consensus (Component ①a/②/⑨): Turn on-site Self Claims into cross-platform `Brand + Context + Relationship` External Evidence; check whether a publisher blocks AI crawlers before pitching (Walker Sands scores TechTarget 82 vs Forbes 55; `geo_engine.py ai-domain-impact` is our own quick check); keep off-site descriptions in one semantic cluster (checked by hand off-site; `geo_engine.py brand-consensus` only covers this site's core pages).",
     ],
   },
 };
@@ -766,8 +766,8 @@ export const GO_GLOBAL_ARSENAL_2026 = {
         en: "🥇 aaron-marketing-skills (16/16, 0 false claims) + 🥈 squirrelscan (15/16, 310+ local rules) + 🥉 marketingskills (15/16) + AminForou/mcp-gsc",
       },
       add: {
-        zh: "自研 ai-visibility-checker（100 分制 7 关 26 项 AI 网站急诊室）+ geo_engine.py v9.0 `audit-16-guards`（确定性拦截 HTTP 头 X-Robots-Tag noindex、hreflang→404、canonical 误指首页、JSON-LD 语法错误）+ `section-candidates`（逐个 H2 检验独立检索候选达标率）+ 首屏前 50 词 BLUF 自动门禁",
-        en: "In-house ai-visibility-checker (100-pt 26-check AI Clinic) + geo_engine.py v9.0 audit-16-guards + section-candidates (audits every H2 as an independent Retrieval Candidate) + 50-word BLUF gate",
+        zh: "ai-visibility-checker（100 分制 7 关 26 项 AI 网站急诊室）+ geo_engine.py v9.0 `audit-16-guards`（确定性拦截 HTTP 头 X-Robots-Tag noindex、hreflang→404、canonical 误指首页、JSON-LD 语法错误）+ `section-candidates`（逐个 H2 检验独立检索候选达标率）+ 首屏前 50 词 BLUF 自动门禁",
+        en: "ai-visibility-checker (100-pt 26-check AI Clinic) + geo_engine.py v9.0 audit-16-guards + section-candidates (audits every H2 as an independent Retrieval Candidate) + 50-word BLUF gate",
       },
       drop: {
         zh: "⚠️ 降级 SEOmator seo-audit-skill（64 项里 6 项虚假 PASS 误报）；⚠️ 降级 claude-seo 等 3 款死守 robots.txt 的工具（漏查被拦截目录内全部 bug）；❌ 淘汰把 FAQPage / TOC 当排名灵丹的装饰性做法（Suski 60 万答案证实无效）",
@@ -781,12 +781,12 @@ export const GO_GLOBAL_ARSENAL_2026 = {
         en: "backlink-guard v0.11.2 (10 CLI/MCP tools: find, vet, audit, lost 404 recovery, competitors --early, cited/asked 5-engine AI probe) + CERN Zenodo DOI / HF / Kaggle + daily GitHub awesome repos",
       },
       add: {
-        zh: "geo_engine.py v9.0 全栈 24 个子命令（含 v9 新增 4 大命令：`section-candidates` H2 检索候选体检、`connected-kg` 跨页 @id 实体图谱 +30% 连通审计、`ai-domain-impact` 靶站 0–100 AI 域名影响指数打分、`brand-consensus` 4 元组实体身份证与同语义簇共识检测；配合原有的 `sro-and-recency` / `run-live-panel` / `entity-molecule` / `serp-similarity` / `publisher-finder` / `proprietary-assets`）+ `/api/md/...` 零噪 Markdown 端点 + `Dataset` JSON-LD + `/ai-info/` 机器可读签字事实页",
-        en: "geo_engine.py v9.0 24-command suite (including 4 new v9 auditors: section-candidates, connected-kg +30% @id graph check, ai-domain-impact 0–100 scorer, brand-consensus 4-tuple & semantic cluster check; plus sro-and-recency, run-live-panel, entity-molecule, serp-similarity, publisher-finder, proprietary-assets) + /api/md/... raw Markdown endpoint + Dataset JSON-LD + /ai-info/ fact page",
+        zh: "geo_engine.py v9.0 全栈 24 个子命令（含 v9 新增 4 个命令，都是粗查：`section-candidates` 看每个 H2 首段的长度和有没有数字或具体名称、`connected-kg` 看几个页面的 JSON-LD 是否共用同一个 `@id`、`ai-domain-impact` 看目标站的 robots.txt 是否放行 AI 爬虫及页面能否抓到（自己的检查，不是 Walker Sands 的指数）、`brand-consensus` 看本站核心页面是否覆盖同一组主题词；配合原有的 `sro-and-recency` / `run-live-panel` / `entity-molecule` / `serp-similarity` / `publisher-finder` / `proprietary-assets`）+ `/api/md/...` 零噪 Markdown 端点 + `Dataset` JSON-LD + `/ai-info/` 机器可读签字事实页",
+        en: "geo_engine.py v9.0 24-command suite (including 4 new v9 commands, all rough checks: section-candidates looks at each H2's first paragraph length and whether it has a number or named entity; connected-kg checks whether pages share a JSON-LD `@id`; ai-domain-impact checks a target's robots.txt for AI crawlers and whether the page can be fetched (our own check, not the Walker Sands index); brand-consensus checks that this site's core pages cover the same topic terms; plus sro-and-recency, run-live-panel, entity-molecule, serp-similarity, publisher-finder, proprietary-assets) + /api/md/... raw Markdown endpoint + Dataset JSON-LD + /ai-info/ fact page",
       },
       drop: {
-        zh: "❌ 10-06 起全面停止购买付费客座与付费目录 dofollow 外链；❌ 淘汰不查 robots.txt 盲投传统高 DR 门户（如 Forbes AI 影响分仅 55 分，不如 TechTarget 82 分 / Dev.to 94 分）；❌ 永久封存 Stripe Climate 捐赠外链（恒为 `ugc nofollow`）与 HARO；⚠️ `llms.txt` 降为可选",
-        en: "❌ Stopped buying guest-post/directory dofollow links (10-06); ❌ stopped pitching high-DR outlets that block LLM bots in robots.txt (e.g., Forbes 55 vs TechTarget 82 / Dev.to 94); ❌ archived Stripe Climate link & HARO; ⚠️ llms.txt demoted to optional",
+        zh: "❌ 10-06 起全面停止购买付费客座与付费目录 dofollow 外链；❌ 淘汰不查 robots.txt 盲投传统高 DR 门户（Walker Sands 的指数里 Forbes 55 分、TechTarget 82 分）；❌ 永久封存 Stripe Climate 捐赠外链（恒为 `ugc nofollow`）与 HARO；⚠️ `llms.txt` 降为可选",
+        en: "❌ Stopped buying guest-post/directory dofollow links (10-06); ❌ stopped pitching high-DR outlets that block LLM bots in robots.txt (Walker Sands scores Forbes 55 vs TechTarget 82); ❌ archived Stripe Climate link & HARO; ⚠️ llms.txt demoted to optional",
       },
     },
     {
@@ -1137,8 +1137,8 @@ export const LEARN_SEO = {
       author: "Marie Haynes / Walker Sands (2026)",
       url: "https://www.walkersands.com/about/blog/introducing-the-ai-domain-impact-index-for-b2b-pr/",
       takeaway: {
-        zh: "Marie Haynes 从 Google Gemini 架构拆解 Query Fan-out 与信息增益（Information Gain）；Walker Sands 发布 B2B 公关与外链的「AI Domain Impact Index（0-100 分）」——按 AI 爬虫放行率（robots.txt）、SSR 可读性、实时检索与引文元数据打分，揭示 TechTarget（82 分）在 AI 搜索里的权重远超屏蔽了 AI 爬虫的 Forbes（55 分）。",
-        en: "Marie Haynes unpacks Gemini's Query Fan-out and Information Gain; Walker Sands scores PR/backlink domains 0–100 on AI bot allowlisting, SSR readability, real-time retrieval, and citation metadata — showing why TechTarget (82) beats Forbes (55, which blocks LLM bots on many URLs).",
+        zh: "Marie Haynes 从 Google Gemini 架构拆解 Query Fan-out 与信息增益（Information Gain）；Walker Sands 发布 B2B 公关与外链的「AI Domain Impact Index（0-100 分）」——按五项加权打分：自然搜索与 AI 概览里的出现情况、是否允许 AI 抓取、页面是否容易读懂、实时检索能否访问、引用所需信息是否齐全，算法不公开。它举的例子是 TechTarget 82 分、Forbes 55 分，原因之一是 Forbes 不让 AI 爬虫抓取很多页面。",
+        en: "Marie Haynes unpacks Gemini's Query Fan-out and Information Gain; Walker Sands scores domains 0–100 on five weighted components (organic search and AI Overviews presence, inclusion, on-page readability, real-time retrieval, citation appearance); the method is proprietary. Its example: TechTarget 82 vs Forbes 55, partly because Forbes keeps LLM crawlers off many of its URLs.",
       },
     },
   ],
@@ -1147,7 +1147,7 @@ export const LEARN_SEO = {
 export interface SeoSchoolPerson {
   name: string;
   handle?: string;
-  url: string;
+  url?: string;
   role: { zh: string; en: string };
 }
 
@@ -1205,7 +1205,7 @@ export const SEO_SCHOOLS_MAP: {
       people: [
         { name: "Eli Schwartz", url: "https://www.productledseo.com/t/playbooks", role: { zh: "《Product-Led SEO》作者、前 SurveyMonkey SEO 负责人（捕获需求 vs 创造需求）", en: "Author of Product-Led SEO, former SurveyMonkey SEO lead (Capture vs Create Demand)" } },
         { name: "Tim Soulo", handle: "@timsoulo", url: "https://ahrefs.com/discoverable", role: { zh: "Ahrefs CMO、《DISCOVERABLE》作者（Get Found / Get Noticed / Get Talked About）", en: "CMO at Ahrefs, author of DISCOVERABLE (Get Found / Get Noticed / Get Talked About)" } },
-        { name: "Cyrus Shepard", handle: "@CyrusShepard", url: "https://zyppy.com/seo-clicks-study/", role: { zh: "Zyppy 创始人（92.9% 赢家独有资产研究 & 28 天 AI Search 断流实验）", en: "Founder of Zyppy (92.9% proprietary asset study & 28-day AI Search opt-out test)" } },
+        { name: "Cyrus Shepard", handle: "@CyrusShepard", url: "https://zyppy.com/", role: { zh: "Zyppy 创始人（92.9% 赢家独有资产研究 & 28 天 AI Search 断流实验）", en: "Founder of Zyppy (92.9% proprietary asset study & 28-day AI Search opt-out test)" } },
         { name: "Georg Richard Aare", url: "https://www.youtube.com/watch?v=n35P_Mjsk3Y", role: { zh: "RankUp 创始人（410,572 条 Claim 实证：首段一手经验 Top-3 概率 5.5x）", en: "Founder of RankUp (410,572-claim study: intro first-hand experience gives 5.5x Top-3 lift)" } },
         { name: "哥飞", handle: "@gefei55", url: "https://new.web.cafe/tutorials", role: { zh: "出海新词工具站与广告/订阅变现社群主理人", en: "New-term tool sites & AdSense/subscription community host" } },
         { name: "大罗SEO", handle: "@daluoseo", url: "https://www.youtube.com/@daluoseo", role: { zh: "Product-Led SEO 中文拆解与程序化落地", en: "Product-Led SEO & programmatic landing pages in Chinese" } },
@@ -1342,19 +1342,19 @@ export const SEO_SCHOOLS_MAP: {
         { name: "Michal Rochwerger", url: "https://www.youtube.com/watch?v=n35P_Mjsk3Y", role: { zh: "Trust Luna 联创（实证 DR 与 AI 引用相关性仅 -0.05，提出 Publisher-First 选站法）", en: "Co-founder of Trust Luna (proved DR has -0.05 correlation with AI citations; Publisher-First selection)" } },
         { name: "Walker Sands", url: "https://www.walkersands.com/about/blog/introducing-the-ai-domain-impact-index-for-b2b-pr/", role: { zh: "B2B GEO 机构，提出 AI Domain Impact Index（TechTarget 82 分 vs Forbes 55 分）", en: "B2B GEO agency, creator of AI Domain Impact Index (TechTarget 82 vs Forbes 55)" } },
         { name: "Ross Hudgens", handle: "@rosshudgens", url: "https://www.siegemedia.com/", role: { zh: "Siege Media 创始人、Wiley《Generative Engine Optimization》作者（数据飞轮）", en: "Founder of Siege Media, author of Wiley's Generative Engine Optimization (Data Flywheel)" } },
-        { name: "Duane Forrester", handle: "@DuaneForrester", url: "https://www.citationiq.io/", role: { zh: "前必应 Webmaster 负责人（Webmaster Tools 创立者），参数记忆 vs 实时 RAG 双层召回", en: "Ex-Bing Webmaster Lead, Parametric Memory vs. Live RAG dual-layer retrieval" } },
+        { name: "Duane Forrester", handle: "@DuaneForrester", url: "https://www.duaneforrester.com/", role: { zh: "前必应 Webmaster 负责人（Webmaster Tools 创立者），参数记忆 vs 实时 RAG 双层召回", en: "Ex-Bing Webmaster Lead, Parametric Memory vs. Live RAG dual-layer retrieval" } },
         { name: "Rand Fishkin", handle: "@randfish", url: "https://sparktoro.com/", role: { zh: "SparkToro 创始人（Moz 联创），Zero-Click 零点击归因与站外共现影响力地图", en: "Founder of SparkToro (Moz co-founder), Zero-Click attribution & off-site co-occurrence" } },
         { name: "Kasra Dash", handle: "@Kasra_Dash", url: "https://www.youtube.com/watch?v=n35P_Mjsk3Y&t=4113s", role: { zh: "The Masterminders 创始人，单一细分属性绑定与 AI 评标核验", en: "Founder of The Masterminders, niche attribute binding & AI tender verification" } },
         { name: "Dennis Yu", url: "https://www.youtube.com/watch?v=n35P_Mjsk3Y&t=960s", role: { zh: "BlitzMetrics 创始人，6 大权威节点实体分子与 MCP 无 UI 软件观", en: "Founder of BlitzMetrics, 6-node Entity Molecule & MCP 'SaaS without UI'" } },
-        { name: "Hank Chang", url: "https://www.smartanswer.com.tw/", role: { zh: "台湾最準行銷合伙人 / MTSK，Search Everywhere 多平台信任闭环", en: "Partner at Smart Answer Taiwan, Search Everywhere multi-channel trust loop" } },
+        { name: "Hank Chang", role: { zh: "台湾最準行銷合伙人 / MTSK，Search Everywhere 多平台信任闭环", en: "Partner at Smart Answer Taiwan, Search Everywhere multi-channel trust loop" } },
       ],
       core: {
         zh: "回答「大模型早就知道你存在，凭什么采信并推荐你」的问题。Duane Forrester 将 AI 检索拆成参数化记忆与实时 Web RAG 两层；David Quaid 与 Joker 点破：官网上写的话只是「自我声明（Self Claim）」，跨类型平台的提及与外链才是「外部证据（External Evidence）」，且外链的核心表达已从早期 Exact Match 锚文本升级为 `Brand + Context + Relationship（品牌+上下文+关系）`。Michal Rochwerger 实证传统 DR 与大模型引用率相关性仅 `-0.05`，提出 `Publisher-First` 选站法；Walker Sands 推出 `AI Domain Impact Index（0-100 分）` 进一步解释了为什么高 DR 大媒体（如 Forbes 55 分，因 robots.txt 屏蔽了 AI 爬虫）在 AI 搜索里反而不如允许 AI 抓取且结构清晰的垂直媒体（如 TechTarget 82 分）；Joker 还指出品牌共识的关键是「实体一致性 ≠ 文案复制粘贴」，只要全网不同平台对你的描述落在同一个语义簇（Semantic Cluster）内，机器就会形成高确定性共识。",
         en: "Solves why LLMs trust and recommend one brand over another. Duane Forrester splits AI visibility into Parametric Memory and Live Web RAG; David Quaid and Joker note that your own site is merely a 'Self Claim' while cross-platform mentions act as 'External Evidence', shifting link signals from exact-match anchors to `Brand + Context + Relationship`. Michal Rochwerger proved Ahrefs DR has a `-0.05` correlation with AI citations (Publisher-First targeting); Walker Sands's `AI Domain Impact Index (0–100)` explains why high-DR outlets that block LLM crawlers (Forbes, 55) lose to AI-accessible vertical publishers (TechTarget, 82); and Joker highlights that Brand Consensus requires descriptions across platforms to fall into the same Semantic Cluster rather than robotic copy-pasting.",
       },
       borrow: {
-        zh: "1. 投外链或 PR 前先跑 `geo_engine.py publisher-finder` 与 `geo_engine.py ai-domain-impact --target <domain>`，确认目标站没有在 `robots.txt` 屏蔽 GPTBot/ClaudeBot/PerplexityBot；2. 在行业媒体、测评目录、Reddit/社区、对比页、社交讨论与知识平台 6 类异构信源占满席位，用 `Brand + Context + Relationship` 自然共现替代生硬锚文本；3. 用 `geo_engine.py brand-consensus` 检查全网各节点是否落在同一语义簇且不含冲突定位词。",
-        en: "1. Before pitching PR or links, run `geo_engine.py publisher-finder` and `geo_engine.py ai-domain-impact --target <domain>` to verify the publisher allows GPTBot, ClaudeBot, and PerplexityBot; 2. Build presence across 6 heterogeneous platform types using `Brand + Context + Relationship` co-occurrence; 3. Run `geo_engine.py brand-consensus` to verify semantic cluster consistency across all nodes.",
+        zh: "1. 投外链或 PR 前先跑 `geo_engine.py publisher-finder` 与 `geo_engine.py ai-domain-impact --target <domain>`，确认目标站没有在 `robots.txt` 屏蔽 GPTBot/ClaudeBot/PerplexityBot；2. 在行业媒体、测评目录、Reddit/社区、对比页、社交讨论与知识平台 6 类异构信源占满席位，用 `Brand + Context + Relationship` 自然共现替代生硬锚文本；3. 逐个平台核对对品牌的描述是否落在同一语义簇、有没有互相冲突的定位词（目前靠人工；`geo_engine.py brand-consensus` 只检查本站核心页面）。",
+        en: "1. Before pitching PR or links, run `geo_engine.py publisher-finder` and `geo_engine.py ai-domain-impact --target <domain>` to verify the publisher allows GPTBot, ClaudeBot, and PerplexityBot; 2. Build presence across 6 heterogeneous platform types using `Brand + Context + Relationship` co-occurrence; 3. Check each platform's description of the brand for one semantic cluster and no conflicting positioning (manual for now; `geo_engine.py brand-consensus` only covers this site's core pages).",
       },
       caveat: {
         zh: "去伪存真：Quaid 团队测试过的「40 天批量建 65 个 EMD 精确匹配域名卫星站占座」属于灰帽打法，Edward Sturm 当场提醒 Google 能通过注册商、GSC 与主机指纹识别站群连坐。用 Zenodo、GitHub、PyPI、YouTube 等天然高权第三方平台占座既安全又持久。",

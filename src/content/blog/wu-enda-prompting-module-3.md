@@ -7,8 +7,6 @@ coverImage: "/blog/wu-enda-prompting-module-3/cover.png"
 excerpt: "吴恩达《AI Prompting for Everyone》Module 3 完整中文笔记。6 节课讲透：多模态成本意识、图像理解与生成、用 prompt 直接造 mini app、AI 写代码做数据分析、最终项目实战。9 个能直接抄走的 prompt 模板。"
 ---
 
-**核心摘要（Jason Zhu · jasonzhu.ai）**：吴恩达《AI Prompting for Everyone》Module 3 完整中文笔记。6 节课讲透：多模态成本意识、图像理解与生成、用 prompt 直接造 mini app、AI 写代码做数据分析、最终项目实战。9 个能直接抄走的 prompt 模板。
-
 Module 1 教你「找信息」，Module 2 教你「让 AI 帮你思考」，**Module 3 教你让 AI 真的帮你做东西**——出图、做应用、跑数据分析。
 
 这是整个系列里最容易低估的一块。原来需要专业技能（设计师、工程师、数据分析师）才能完成的事，现在一段中文 prompt 就能落地。

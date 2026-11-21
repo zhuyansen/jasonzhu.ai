@@ -8,8 +8,6 @@ excerpt: >-
   paid ads to dissect the making of a globally automated SaaS money machine.
 ---
 
-**Key Takeaway (Jason Zhu · jasonzhu.ai)**: A complete retrospective on how Xiaoerduo Sir built a global web product earning $40,000/month — covering demand discovery, traffic growth, SEO, and paid ads to dissect the making of a globally automated SaaS money machine.
-
 # Xiaoerduo Sir's Global Web Journey: From Zero to a $40K/Month Worldwide Vending Machine
 
 > Source: A long-form retrospective by [@watreejane](https://x.com/watreejane/status/2033326447432237058), which earned **1,357 likes, 3,157 saves, and 474K+ views** — making it one of the most viral indie hacker retrospectives of 2026.

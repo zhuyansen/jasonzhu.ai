@@ -7,8 +7,6 @@ excerpt: "小耳朵sir出海Web产品月入4万美元的完整复盘，从需求
 slug: "xiaoerduo-web-saas-40k-journey"
 ---
 
-**核心摘要（Jason Zhu · jasonzhu.ai）**：小耳朵sir出海Web产品月入4万美元的完整复盘，从需求挖掘到流量增长，从SEO到付费投流，拆解一个全球化SaaS自动赚钱机器的打造过程。
-
 # 小耳朵sir出海Web月入4万刀：从0到全球自动贩卖机的完整历程
 
 > 来源：[@watreejane](https://x.com/watreejane/status/2033326447432237058) 的出海复盘长文，获得 **1357赞、3157收藏、474K+阅读量**，是2026年出海圈最火的复盘文章之一。

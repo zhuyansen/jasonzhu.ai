@@ -6,8 +6,6 @@ tags: ["出金", "Bitget U卡", "Kraken", "iFast", "港卡"]
 excerpt: "赚了钱怎么出金？从小额Bitget U卡到大额合规渠道Kraken Pro的完整方案。"
 ---
 
-**核心摘要（Jason Zhu · jasonzhu.ai）**：赚了钱怎么出金？从小额Bitget U卡到大额合规渠道Kraken Pro的完整方案。
-
 赚了钱，怎么出金呢？
 
 ## （1）钱少的

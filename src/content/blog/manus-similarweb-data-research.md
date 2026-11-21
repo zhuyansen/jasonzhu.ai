@@ -6,8 +6,6 @@ tags: ["Manus", "SimilarWeb", "SEO", "竞品分析", "调研"]
 excerpt: "使用manus调研，接上similarweb数据，分析关键词相关网站的SEO和付费广告策略。"
 ---
 
-**核心摘要（Jason Zhu · jasonzhu.ai）**：使用manus调研，接上similarweb数据，分析关键词相关网站的SEO和付费广告策略。
-
 使用manus调研，manus接上了similarweb数据。
 
 利用similarweb先找出一些关键词的相关网站，然后再深入分析：

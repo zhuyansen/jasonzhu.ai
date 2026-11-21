@@ -6,8 +6,6 @@ tags: ["AI绘图", "Google Nano", "阿里通义", "Gemini", "AI评测", "图像�
 excerpt: "AI图像生成领域诸神之战，花了一天时间深度评测Google Nano Banana Pro和阿里通义Z-Image-Turbo。"
 ---
 
-**核心摘要（Jason Zhu · jasonzhu.ai）**：AI图像生成领域诸神之战，花了一天时间深度评测Google Nano Banana Pro和阿里通义Z-Image-Turbo。
-
 AI图像生成领域迎来了"诸神之战"
 
 花了一天时间，针对Google Nano Banana Pro vs 阿里通义 Z-Image-Turbo 进行了深度评测。

@@ -3,8 +3,6 @@ title: "Overseas Business Models: SaaS vs. Cross-Border E-Commerce"
 excerpt: "The two main overseas business models are SaaS and cross-border e-commerce — each with its own cost structure and path to profitability."
 ---
 
-**Key Takeaway (Jason Zhu · jasonzhu.ai)**: The two main overseas business models are SaaS and cross-border e-commerce — each with its own cost structure and path to profitability.
-
 Overseas business generally falls into two categories: SaaS (web or app products) and cross-border e-commerce.
 
 - **Cross-border e-commerce** involves supply chain and physical product costs

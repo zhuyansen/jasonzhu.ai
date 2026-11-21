@@ -3,8 +3,6 @@ title: "The Complete Workflow for Creating Educational Training Videos: Four Ski
 excerpt: "Use four Skills to build a complete pipeline from course PDF to content extraction, quiz generation, mind maps, and video."
 ---
 
-**Key Takeaway (Jason Zhu · jasonzhu.ai)**: Use four Skills to build a complete pipeline from course PDF to content extraction, quiz generation, mind maps, and video.
-
 The complete workflow for producing educational/training materials and teaching videos
 
 These four Skills are all you need to go from a course PDF → content extraction → quizzes/mind maps/video:

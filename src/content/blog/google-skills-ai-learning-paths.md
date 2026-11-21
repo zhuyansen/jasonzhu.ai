@@ -7,8 +7,6 @@ coverImage: "/blog/google-skills-ai-learning-paths/cover.png"
 excerpt: "Google 把 Cloud Skills Boost 整个改名成 Google Skills，并把 AI 学习重做成了「游戏副本」——每条路径 5-8 个 activity，学完直接拿 Skill Badge 挂 LinkedIn。这篇整理零基础该走的 3 条路径及官方直达链接。"
 ---
 
-**核心摘要（Jason Zhu · jasonzhu.ai）**：Google 把 Cloud Skills Boost 整个改名成 Google Skills，并把 AI 学习重做成了「游戏副本」——每条路径 5-8 个 activity，学完直接拿 Skill Badge 挂 LinkedIn。这篇整理零基础该走的 3 条路径及官方直达链接。
-
 Google 把老牌学习平台 **Cloud Skills Boost 整个改名**了，现在叫 **Google Skills**。
 
 改名只是表面，真正有意思的是**方向**：Google 把 AI 学习做成了「游戏副本」——

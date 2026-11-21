@@ -7,8 +7,6 @@ coverImage: "/blog/website-going-global-first-month-lessons/cover.png"
 excerpt: "第一次用 AI 做全栈网站出海（brickrecipes.ai）的一个月复盘：注册公司、学 SEO 做对了；需求挖掘不足、域名和服务器花冤枉钱做错了，附 MVP 组件清单和出海资源推荐。"
 ---
 
-**核心摘要（Jason Zhu · jasonzhu.ai）**：第一次用 AI 做全栈网站出海（brickrecipes.ai）的一个月复盘：注册公司、学 SEO 做对了；需求挖掘不足、域名和服务器花冤枉钱做错了，附 MVP 组件清单和出海资源推荐。
-
 一个月网站出海「不成功」的经验：做对了什么？做错了什么？
 
 项目是一个 AI 菜谱网站：[brickrecipes.ai](https://brickrecipes.ai)。

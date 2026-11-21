@@ -7,8 +7,6 @@ coverImage: "/blog/ibm-skillsbuild-ai-courses/cover.png"
 excerpt: "IBM SkillsBuild 是大厂里免费课数量第一的平台，1000+ 门课。但有个大坑：注册时身份选错，课程直接少一半。这篇教你避坑，附三段式 AI 学习路径和官方徽章说明。"
 ---
 
-**核心摘要（Jason Zhu · jasonzhu.ai）**：IBM SkillsBuild 是大厂里免费课数量第一的平台，1000+ 门课。但有个大坑：注册时身份选错，课程直接少一半。这篇教你避坑，附三段式 AI 学习路径和官方徽章说明。
-
 IBM SkillsBuild 是大厂里**免费课数量第一**的平台——**1000+ 门课**，全部免费。
 
 但它有一个**大坑**，很多人踩了都不知道：

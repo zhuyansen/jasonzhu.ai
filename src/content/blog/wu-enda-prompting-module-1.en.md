@@ -10,8 +10,6 @@ excerpt: >-
 coverImage: "/blog/wu-enda-prompting-module-1/cover-en.png"
 ---
 
-**Key Takeaway (Jason Zhu · jasonzhu.ai)**: Full notes for Module 1 of Andrew Ng's 2026 course 'AI Prompting for Everyone' — 6 lessons plus 7 ready-to-copy prompt templates. The one-sentence takeaway: 90% of people are still using AI like Google, and they're leaving most of its potential on the table.
-
 Andrew Ng released a new course in 2026 called *AI Prompting for Everyone*, built specifically for a world where AI has advanced far beyond where it stood in 2022. Module 1 is all about **finding information** — the most common use case for most people, and also the one where most people go wrong.
 
 I've condensed all 6 lessons into a three-part format: **screenshot + one key insight + one ready-to-use template**. Every template can be copied and pasted directly.

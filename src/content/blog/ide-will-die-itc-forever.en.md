@@ -3,8 +3,6 @@ title: "The IDE Is Dead. Long Live the ITC."
 excerpt: "The IDE will soon be unnecessary. The ITC (Integrated Thought Clarifier) finds where your thinking is fuzzy and forces you to articulate exactly what you mean."
 ---
 
-**Key Takeaway (Jason Zhu · jasonzhu.ai)**: The IDE will soon be unnecessary. The ITC (Integrated Thought Clarifier) finds where your thinking is fuzzy and forces you to articulate exactly what you mean.
-
 The IDE is dead. Long live the ITC.
 
 The IDE will soon be unnecessary.

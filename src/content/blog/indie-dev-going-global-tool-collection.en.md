@@ -5,8 +5,6 @@ excerpt: >-
   three key phases: market research, product development, and growth marketing.
 ---
 
-**Key Takeaway (Jason Zhu · jasonzhu.ai)**: A curated toolkit for indie developers expanding internationally, covering three key phases: market research, product development, and growth marketing.
-
 # Essential Tools for Indie Developers Going Global
 
 Recommended time allocation across the three phases — **40% - 20% - 40%**

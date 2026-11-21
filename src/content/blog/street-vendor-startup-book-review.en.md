@@ -3,8 +3,6 @@ title: '"Hustling Your Way to a Business": Solo Companies and Creator Businesses
 excerpt: This book is fundamentally about running a street stall — and the so-called entrepreneurship behind solo companies, SaaS ventures, and content creation is really just that.
 ---
 
-**Key Takeaway (Jason Zhu · jasonzhu.ai)**: This book is fundamentally about running a street stall — and the so-called entrepreneurship behind solo companies, SaaS ventures, and content creation is really just that.
-
 This is a book specifically about running a street stall, and I'd been putting off reading it for a while.
 
 Last weekend, I heard ban总 share a few things, and that prompted me to finally sit down with it this week. Three hours later, I'd finished it — and it was well worth the time.

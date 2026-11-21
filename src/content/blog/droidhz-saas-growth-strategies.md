@@ -7,8 +7,6 @@ excerpt: "独立开发者droidHZ在网站达到阶段性目标后，深度思考
 slug: "droidhz-saas-growth-strategies"
 ---
 
-**核心摘要（Jason Zhu · jasonzhu.ai）**：独立开发者droidHZ在网站达到阶段性目标后，深度思考如何进一步放大流量价值和拓展新增长渠道，分享SaaS增长的实战策略。
-
 # droidHZ出海10个月复盘：SaaS流量放大与增长策略
 
 > 来源：[@hezhiyan7](https://x.com/hezhiyan7/status/2040578155145220108) 的阶段性增长复盘。

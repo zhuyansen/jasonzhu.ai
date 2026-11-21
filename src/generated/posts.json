@@ -84,6 +84,7 @@
       "MoR"
     ],
     "excerpt": "整理自刘小排的一线出海收款实测：为什么出海产品一定要接 Waffo + Dodo Payments 双收款渠道做防封控备份？一笔 20 美元的跨国 AI 订阅在香港 Stripe、Lemon Squeezy 和 Dodo Payments 下分别会被扣掉多少钱？",
+    "doi": "10.5281/zenodo.24387072",
     "hasEnglish": true,
     "titleEn": "AI SaaS Payment Stack in Practice: Running Waffo + Dodo Payments Dual Gateways and the Real Cost of a $20 Subscription",
     "excerptEn": "Field notes from Liu Xiaopai on why global AI SaaS builders should run Waffo + Dodo Payments in parallel for failover, plus an itemized fee breakdown of a $20 cross-border subscription across Hong Kong Stripe, Lemon Squeezy, Waffo, and Dodo Payments.",
@@ -95,30 +96,34 @@
       "2. 提现技巧：攒满 1,000 美元再提现，免 $5 提现费",
       "3. 原生支持微信支付 + 全球 40+ 本地支付方式，统一按美元结算",
       "4. 原生内置 AI Token / 积分（Credits）计费与官方 MCP",
-      "四、给独立开发者的收款配置建议"
+      "四、给独立开发者的收款配置建议",
+      "五、按你的情况选（Decision Matrix by Buyer Situat"
     ],
     "keywords": [
       "dodo",
       "payments",
-      "saas",
       "waffo",
       "stripe",
+      "saas",
       "mor",
       "billing",
       "tax",
-      "pay",
-      "pancake",
       "lemon",
       "squeezy",
+      "radar",
+      "pay",
+      "token",
+      "pancake",
       "merchant",
       "record",
-      "radar",
-      "token",
       "mcp",
       "policy",
       "jason",
       "zhu",
       "jasonzhu.ai",
+      "cern",
+      "zenodo",
+      "doi",
       "ceo",
       "rishabh",
       "paypal",
@@ -134,13 +139,9 @@
       "credits",
       "credit-based",
       "usage-based",
-      "license",
-      "key",
-      "server",
-      "cursor"
+      "license"
     ],
-    "filename": "dodo-payments-waffo-ai-saas-fee-comparison.md",
-    "doi": "10.5281/zenodo.24387072"
+    "filename": "dodo-payments-waffo-ai-saas-fee-comparison.md"
   },
   {
     "slug": "chuhai-weekly-05",
@@ -505,81 +506,6 @@
     "filename": "chuhai-weekly-02.md"
   },
   {
-    "slug": "jev-1-14-review",
-    "title": "Jev 1.14 实测：1.13 的局限、新增的三样能力，以及哪些场景真的值得换",
-    "date": "2026-10-16",
-    "category": "AI工具",
-    "tags": [
-      "TypeSafe Jev",
-      "Jev 1.14",
-      "多模态",
-      "模型评测",
-      "决策模型"
-    ],
-    "excerpt": "图像、box 定位、262k 上下文，三样都是 danger-zone 实验特性。我在官方 API 上逐项实测：哪些是真提升，哪些加了反而变差，钱花在了哪里。",
-    "headings": [
-      "一、1.13 的功能局限",
-      "二、1.14 新增了什么",
-      "图像输入",
-      "box 定位",
-      "长上下文",
-      "别名和价格",
-      "三、1.14 比 1.13 好在哪：同条件实测",
-      "四、哪些场景值得换",
-      "五、局限与坑",
-      "六、如果你要上 1.14，照这个清单",
-      "常见问题",
-      "Jev 1.14 的图像输入要怎么开？",
-      "图像按什么计费？",
-      "box 类型能判断目标不存在吗？",
-      "1.14 比 1.13 准多少？",
-      "现在 jev-latest 是哪个版本？"
-    ],
-    "keywords": [
-      "token",
-      "ascii",
-      "box",
-      "noul",
-      "json",
-      "readme",
-      "confidence",
-      "jev-latest",
-      "jev-preview",
-      "state",
-      "base64",
-      "32k",
-      "true",
-      "jpeg",
-      "typesafe",
-      "jev",
-      "preview",
-      "api",
-      "64k",
-      "auc",
-      "assets",
-      "typesafe-danger-zone-images",
-      "multipart",
-      "9k",
-      "8k",
-      "700px",
-      "120k",
-      "intelligence",
-      "exif",
-      "images",
-      "new",
-      "type",
-      "longer",
-      "context",
-      "builders",
-      "beware",
-      "these",
-      "features",
-      "choice",
-      "score"
-    ],
-    "filename": "jev-1-14-review.md"
-  },
-  {
     "slug": "choose-payment-platform-2026",
     "title": "独立开发者收款平台怎么选：8 家对比，加 20 万卖家的真实选择（2026）",
     "date": "2026-10-15",
@@ -596,6 +522,7 @@
     ],
     "excerpt": "Stripe、Lemon Squeezy、Polar、Creem、Paddle、Gumroad、Dodo、Waffo 的费率、是否代缴全球销售税、中国大陆能不能收款，再加上 20 万个卖家实际选了谁：卖 AI 和软件的，越来越多选 Dodo、Polar 和 Creem。",
     "coverImage": "/blog/indie-payments-report-2026/cover.png",
+    "doi": "10.5281/zenodo.24386243",
     "hasEnglish": true,
     "titleEn": "How to Choose a Payment Platform as an Indie Developer: 8 Compared, Plus What 200,000 Sellers Picked (2026)",
     "excerptEn": "Fees, Merchant of Record status and whether sellers in mainland China can get paid, for Stripe, Lemon Squeezy, Polar, Creem, Paddle, Gumroad, Dodo and Waffo, plus what 200,000 sellers actually chose: software and AI sellers increasingly go to Dodo, Polar and Creem.",
@@ -620,17 +547,19 @@
       "mor",
       "paypal",
       "managed",
+      "doi",
       "saas",
       "jason",
       "zhu",
       "jasonzhu.ai",
+      "cern",
+      "zenodo",
       "merchant",
       "record",
       "ceo",
       "discover"
     ],
-    "filename": "choose-payment-platform-2026.md",
-    "doi": "10.5281/zenodo.24386243"
+    "filename": "choose-payment-platform-2026.md"
   },
   {
     "slug": "chuhai-weekly-01",
@@ -730,34 +659,37 @@
       "4. 一个人做很多个站",
       "5. 从注册域名到开始收钱，中位数 100 天",
       "6. 收款链接的灰色用法",
-      "数据怎么来的，有哪些局限"
+      "数据怎么来的，有哪些局限",
+      "按你的情况选（Decision Matrix by Buyer Situatio"
     ],
     "keywords": [
-      "stripe",
       "creem",
+      "stripe",
       "dodo",
       "polar",
       "gumroad",
       "payments",
+      "mor",
       "lemon",
       "squeezy",
       "dataforseo",
+      "waffo",
       "adsense",
       "checker",
+      "notion",
       "goanyapi",
+      "github",
       "jason",
       "zhu",
       "jasonzhu.ai",
       "cern",
       "zenodo",
       "doi",
-      "mor",
       "payment",
       "link",
       "paddle",
       "merchant",
       "record",
-      "waffo",
       "gtm",
       "clarity",
       "meta",
@@ -770,9 +702,7 @@
       "score",
       "aisa",
       "jev",
-      "typesafe",
-      "notion",
-      "collaborative"
+      "typesafe"
     ],
     "filename": "indie-payments-report-2026.md"
   },
@@ -904,9 +834,6 @@
       "export",
       "livephoto.video",
       "img",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "whatsapp",
       "videotolive",
       "charged",
@@ -920,7 +847,10 @@
       "open",
       "trying",
       "video",
-      "waited"
+      "waited",
+      "whole",
+      "hour",
+      "still"
     ],
     "filename": "video-to-live-photo.md"
   },
@@ -979,9 +909,6 @@
       "stargazers",
       "a1",
       "codex",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "state",
       "ctr",
       "site",
@@ -992,7 +919,10 @@
       "text-embedding-3-small",
       "octocat",
       "hello-world",
-      "demo"
+      "demo",
+      "code",
+      "mcp",
+      "msn"
     ],
     "filename": "jev-six-experiments.md"
   },
@@ -1314,10 +1244,10 @@
       "plan",
       "bedrock",
       "generative",
-      "skill",
-      "builder",
       "free",
       "deepracer",
+      "skill",
+      "builder",
       "price",
       "decision",
       "makers",
@@ -1329,9 +1259,6 @@
       "bases",
       "agents",
       "certified",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "genai",
       "building",
       "applications",
@@ -1411,15 +1338,15 @@
       "machine",
       "vibe",
       "development",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "google",
       "nvidia",
       "microsoft",
       "aws",
       "ibm",
-      "chatgpt"
+      "chatgpt",
+      "prompt",
+      "engineering",
+      "developers"
     ],
     "filename": "deeplearning-ai-courses-guide.md"
   },
@@ -1456,27 +1383,24 @@
     "keywords": [
       "google",
       "skills",
+      "generative",
       "cloud",
       "badge",
-      "generative",
       "gemini",
       "anthropic",
-      "activity",
-      "linkedin",
       "credits",
       "api",
       "openai",
-      "skill",
+      "activity",
+      "linkedin",
       "essentials",
-      "boost",
+      "skill",
       "introduction",
       "responsible",
       "chatgpt",
       "developers",
       "claude",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
+      "boost",
       "path",
       "llm",
       "building",
@@ -1530,9 +1454,9 @@
       "llm",
       "hugging",
       "face",
-      "learn",
       "agent",
       "spaces",
+      "learn",
       "agents",
       "mcp",
       "cookbook",
@@ -1543,9 +1467,6 @@
       "anthropic",
       "robotics",
       "diffusion",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "nlp",
       "transformer",
       "fine-tune",
@@ -1565,7 +1486,10 @@
       "tts",
       "deep",
       "open-source",
-      "notebook"
+      "notebook",
+      "openai",
+      "google",
+      "nvidia"
     ],
     "filename": "huggingface-learn-courses-guide.md"
   },
@@ -1613,9 +1537,6 @@
       "customer",
       "service",
       "marketing",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "developer",
       "data",
       "scientist",
@@ -1660,8 +1581,8 @@
       "pytorch",
       "llama",
       "meta",
-      "tutorials",
       "transformer",
+      "tutorials",
       "colab",
       "torchtune",
       "learn",
@@ -1670,9 +1591,6 @@
       "training",
       "models",
       "onnx",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "quickstart",
       "introduction",
       "youtube",
@@ -1731,18 +1649,15 @@
       "applied",
       "skills",
       "ai-901",
-      "microsoft",
       "ai-900",
       "mcp",
+      "microsoft",
       "ai-102",
-      "learn",
       "azure",
       "business",
       "professional",
+      "learn",
       "agent",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "introduction",
       "fundamentals",
       "generative",
@@ -1814,7 +1729,6 @@
       "omniverse",
       "generative",
       "rag",
-      "institute",
       "getting",
       "started",
       "explained",
@@ -1824,6 +1738,7 @@
       "nca-genl",
       "accelerated",
       "computing",
+      "institute",
       "openusd",
       "agentic",
       "securing",
@@ -1833,16 +1748,16 @@
       "even",
       "easier",
       "introduction",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "rapids",
       "building",
       "3d",
       "course",
       "soon",
       "retired",
-      "notebook"
+      "notebook",
+      "apache",
+      "associate",
+      "multimodal"
     ],
     "filename": "nvidia-dli-free-courses.md"
   },
@@ -1896,9 +1811,9 @@
       "api",
       "mcp",
       "skills",
+      "building",
       "certified",
       "architect",
-      "building",
       "applications",
       "agentic",
       "model",
@@ -1915,9 +1830,6 @@
       "engineering",
       "generative",
       "ai-first",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "framework",
       "delegation",
       "description",
@@ -1927,7 +1839,10 @@
       "introduction",
       "tool",
       "design",
-      "integration"
+      "integration",
+      "advanced",
+      "python",
+      "action"
     ],
     "filename": "anthropic-claude-certified-architect-roadmap.md"
   },
@@ -1978,9 +1893,9 @@
       "chatgpt",
       "anthropic",
       "codex",
-      "academy",
       "claude",
       "prompt",
+      "academy",
       "weeks",
       "skills",
       "prompting",
@@ -2000,9 +1915,6 @@
       "architect",
       "mcp",
       "tool",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "foundations",
       "guide",
       "superassistant",
@@ -2013,7 +1925,10 @@
       "getting",
       "need",
       "resource",
-      "hub"
+      "hub",
+      "workflows",
+      "leveraging",
+      "best"
     ],
     "filename": "openai-academy-vs-anthropic-learning-paths.md"
   },
@@ -2050,21 +1965,16 @@
       "day",
       "rubric",
       "prompt",
-      "module",
       "step",
-      "agent",
+      "module",
       "think",
       "ultrathink",
       "right",
       "slop",
       "lab",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
-      "prompting",
-      "everyone",
       "context",
       "chat",
+      "agent",
       "claude",
       "cowork",
       "microsoft",
@@ -2086,7 +1996,12 @@
       "quite",
       "actually",
       "dash",
-      "nuanced"
+      "nuanced",
+      "delve",
+      "yes",
+      "sci-fi",
+      "code",
+      "mini"
     ],
     "filename": "wu-enda-prompting-module-2.md"
   },
@@ -2121,9 +2036,9 @@
     ],
     "keywords": [
       "prompt",
+      "day",
       "app",
       "module",
-      "day",
       "mini",
       "vibe",
       "coding",
@@ -2134,11 +2049,6 @@
       "research",
       "m1",
       "m3",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
-      "prompting",
-      "everyone",
       "kickback",
       "hamstring",
       "curl",
@@ -2159,7 +2069,8 @@
       "project",
       "lab",
       "brainstorm",
-      "rubric"
+      "rubric",
+      "ultrathink"
     ],
     "filename": "wu-enda-prompting-module-3.md"
   },
@@ -2191,20 +2102,16 @@
       "6 节课浓缩成一句话"
     ],
     "keywords": [
-      "prompt",
       "day",
-      "module",
+      "prompt",
       "deep",
       "research",
-      "prompting",
-      "everyone",
+      "module",
       "rubric",
       "meme",
       "lab",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
-      "google",
+      "prompting",
+      "everyone",
       "mobile",
       "tie-dying",
       "cooking",
@@ -2409,21 +2316,21 @@
       "openai",
       "sandbox",
       "harness",
-      "anthropic",
       "loop",
+      "anthropic",
       "code",
-      "claude",
       "skills",
+      "claude",
       "mcp",
       "tools",
       "compute",
       "subagents",
-      "agents",
       "server",
       "mode",
       "agents.md",
       "apply",
       "patch",
+      "agents",
       "tool",
       "state",
       "web",
@@ -2481,9 +2388,6 @@
       "ofox",
       "neo",
       "agent",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "proxy",
       "key",
       "midjourney",
@@ -2526,22 +2430,19 @@
     ],
     "keywords": [
       "seo",
-      "skill",
       "skills",
+      "skill",
+      "llm",
       "claude",
       "code",
-      "llm",
       "wonfull888",
       "coderjefflee",
       "python+llm",
       "google",
-      "seo-audit",
       "search",
       "console",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "audit",
+      "seo-audit",
       "markdown",
       "e-e-a-t",
       "p0",
@@ -2564,7 +2465,10 @@
       "audit.html",
       "crux",
       "npm",
-      "scope"
+      "scope",
+      "package",
+      "registry",
+      "agent"
     ],
     "filename": "two-seo-audit-skills-comparison.md"
   },
@@ -2612,9 +2516,9 @@
       "code",
       "vercel",
       "markdown",
-      "jasonzhu.ai",
       "obsidian",
       "json",
+      "jasonzhu.ai",
       "github",
       "plan",
       "react",
@@ -2644,9 +2548,9 @@
       "max",
       "add",
       "zsh",
-      "jason",
-      "zhu",
-      "router"
+      "router",
+      "tailwind",
+      "next-mdx-remote"
     ],
     "filename": "jasonzhu-ai-site-building-journey.md"
   },
@@ -2705,16 +2609,16 @@
       "compound-engineering",
       "guard",
       "board.json",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "shell",
       "api",
       "uber",
       "addy",
       "osmani",
       "spec",
-      "obra"
+      "obra",
+      "star",
+      "git",
+      "worktree"
     ],
     "filename": "ai-agent-complete-picture.md"
   },
@@ -2797,11 +2701,7 @@
     "titleEn": "Practical Community Management Experience and Book Recommendations",
     "excerptEn": "Lessons learned from running free groups all the way to premium coaching cohorts, plus two highly recommended community management books by Qiu Ye.",
     "headings": [],
-    "keywords": [
-      "jason",
-      "zhu",
-      "jasonzhu.ai"
-    ],
+    "keywords": [],
     "filename": "community-operation-book-recommendation.md"
   },
   {
@@ -2834,13 +2734,10 @@
       "cloudflare",
       "email",
       "routing",
-      "resend",
       "support",
       "yourdomain.com",
+      "resend",
       "newsletter",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "dashboard",
       "gmail",
       "dns"
@@ -2866,9 +2763,6 @@
     "headings": [],
     "keywords": [
       "100m",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "explorer",
       "world",
       "sleight",
@@ -2902,10 +2796,7 @@
     "headings": [],
     "keywords": [
       "meta",
-      "manus",
-      "jason",
-      "zhu",
-      "jasonzhu.ai"
+      "manus"
     ],
     "filename": "meta-manus-trillion-business-flywheel.md"
   },
@@ -2928,9 +2819,6 @@
     "keywords": [
       "waitlist",
       "localhost",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "demo"
     ],
     "filename": "ai-product-marketing-localhost-demo.md"
@@ -2969,9 +2857,6 @@
       "irs",
       "form",
       "diy",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "faxzero.com"
     ],
     "filename": "us-company-annual-tax-filing-diy.md"
@@ -2999,11 +2884,8 @@
     "headings": [],
     "keywords": [
       "pmf",
-      "youtube",
       "idea",
-      "jason",
-      "zhu",
-      "jasonzhu.ai"
+      "youtube"
     ],
     "filename": "youtube-product-growth-pmf-videos.md"
   },
@@ -3027,9 +2909,6 @@
     "keywords": [
       "ide",
       "itc",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "integrated",
       "thought",
       "clarifier"
@@ -3068,9 +2947,6 @@
     "keywords": [
       "droidhz",
       "saas",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "google",
       "github",
       "landing",
@@ -3107,9 +2983,6 @@
     "excerptEn": "A five-session enterprise AI training syllabus that takes teams from understanding AI to hands-on deployment — helping companies actually put it to work.",
     "headings": [],
     "keywords": [
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "linkin",
       "agent",
       "skill"
@@ -3150,9 +3023,6 @@
       "skill",
       "seo",
       "review",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "prd",
       "front-design",
       "pro",
@@ -3201,13 +3071,9 @@
     "keywords": [
       "skills",
       "cloner",
-      "website",
       "skill",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
-      "design",
       "prd",
+      "website",
       "template",
       "front-design",
       "pro",
@@ -3246,14 +3112,11 @@
     ],
     "keywords": [
       "signnow",
-      "manus",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "opc",
       "one",
       "person",
       "company",
+      "manus",
       "docusign"
     ],
     "filename": "electronic-signature-platform-comparison.md"
@@ -3290,12 +3153,9 @@
     "keywords": [
       "seo",
       "niko",
-      "reddit",
       "saas",
+      "reddit",
       "stripe",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "248k",
       "backlinks",
       "google",
@@ -3331,9 +3191,6 @@
     "keywords": [
       "skills",
       "pdf",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "paddleocr-doc-parsing",
       "wshuyi",
       "remotion-video-skill",
@@ -3362,13 +3219,10 @@
     "excerptEn": "A survey of the tool ecosystem for social media and website data extraction, including agent-reach, opencli, bb-browser, and more.",
     "headings": [],
     "keywords": [
+      "openclaw",
       "agent-reach",
       "opencli",
       "bb-browser",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
-      "openclaw",
       "api",
       "web-access",
       "claude",
@@ -3405,9 +3259,6 @@
       "claude",
       "design",
       "seo",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "markdown",
       "anthropic",
       "front-end",
@@ -3457,19 +3308,15 @@
     ],
     "keywords": [
       "dormant",
-      "tinytax",
       "1st",
       "formations",
       "accounts",
+      "tinytax",
       "companies",
       "house",
       "hmrc",
       "confirmation",
       "statement",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
-      "1stformations",
       "ct600"
     ],
     "filename": "uk-company-annual-review-tax-filing.md"
@@ -3494,11 +3341,6 @@
     "keywords": [
       "skills",
       "manus",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
-      "zara",
-      "zhang",
       "zarazhangrui"
     ],
     "filename": "manus-html-presentation-skills.md"
@@ -3524,9 +3366,6 @@
     ],
     "keywords": [
       "saas",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "app",
       "seo",
       "ugc"
@@ -3556,9 +3395,6 @@
       "claude",
       "bitget",
       "wallet",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "wise",
       "usdt"
     ],
@@ -3588,9 +3424,6 @@
       "未来展望"
     ],
     "keywords": [
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "roi"
     ],
     "filename": "ai-enterprise-training-insights.md"
@@ -3628,15 +3461,12 @@
     "keywords": [
       "saas",
       "web",
-      "sir",
-      "seo",
       "google",
       "ads",
+      "sir",
       "ios",
       "app",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
+      "seo",
       "474k",
       "reddit",
       "quora",
@@ -3676,13 +3506,10 @@
     ],
     "keywords": [
       "resend",
-      "smtp",
       "dkim",
       "spf",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "newsletter",
+      "smtp",
       "supabase",
       "gmail",
       "cloudflare",
@@ -3708,9 +3535,6 @@
     "headings": [],
     "keywords": [
       "anthropic",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "helloitsaustin"
     ],
     "filename": "anthropic-growth-marketing-one-person.md"
@@ -3740,10 +3564,7 @@
       "agent",
       "anthropic",
       "openai",
-      "manus",
-      "jason",
-      "zhu",
-      "jasonzhu.ai"
+      "manus"
     ],
     "filename": "three-agent-frontier-companies.md"
   },
@@ -3770,11 +3591,8 @@
     ],
     "keywords": [
       "cli",
-      "agent",
       "gui",
-      "jason",
-      "zhu",
-      "jasonzhu.ai"
+      "agent"
     ],
     "filename": "three-things-to-embrace-in-2026.md"
   },
@@ -3801,11 +3619,8 @@
     ],
     "keywords": [
       "n8n",
-      "rmb",
       "saas",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
+      "rmb",
       "manus",
       "skills",
       "skill-creator"
@@ -3831,9 +3646,6 @@
     "headings": [],
     "keywords": [
       "manus",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "readwise",
       "ranked",
       "top1000",
@@ -3868,9 +3680,6 @@
     "keywords": [
       "lemfi",
       "ifast",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "kraken",
       "gbp"
     ],
@@ -3900,9 +3709,6 @@
     "keywords": [
       "manus",
       "openclaw",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "get",
       "start",
       "telegram",
@@ -3934,9 +3740,6 @@
     "headings": [],
     "keywords": [
       "ban",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "xbanboo"
     ],
     "filename": "ban-marketing-method-win-win.md"
@@ -3964,11 +3767,8 @@
     "keywords": [
       "kraken",
       "pro",
-      "bitget",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "wechat",
+      "bitget",
       "400u",
       "ifast",
       "xxx"
@@ -3991,11 +3791,7 @@
     "titleEn": "Tencent Yuanbao's Marketing Tactics Are Infuriating",
     "excerptEn": "Tencent Yuanbao's marketing approach is downright off-putting — mass spamming people is a surefire way to get blocked.",
     "headings": [],
-    "keywords": [
-      "jason",
-      "zhu",
-      "jasonzhu.ai"
-    ],
+    "keywords": [],
     "filename": "tencent-yuanbao-marketing-spam.md"
   },
   {
@@ -4018,10 +3814,7 @@
     "keywords": [
       "manus",
       "similarweb",
-      "seo",
-      "jason",
-      "zhu",
-      "jasonzhu.ai"
+      "seo"
     ],
     "filename": "manus-similarweb-data-research.md"
   },
@@ -4047,9 +3840,6 @@
     "keywords": [
       "ltv",
       "saas",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "api"
     ],
     "filename": "ai-video-saas-product-operations.md"
@@ -4075,9 +3865,6 @@
     ],
     "keywords": [
       "manus",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "max",
       "prompt"
     ],
@@ -4101,10 +3888,7 @@
     "excerptEn": "Built a plugin to analyze an X influencer's tweet data in under 3 minutes with Manus. Building the tool is no longer the hard part — knowing what to analyze is.",
     "headings": [],
     "keywords": [
-      "manus",
-      "jason",
-      "zhu",
-      "jasonzhu.ai"
+      "manus"
     ],
     "filename": "manus-x-tweet-data-analysis-plugin.md"
   },
@@ -4130,9 +3914,6 @@
     ],
     "keywords": [
       "manus",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "don"
     ],
     "filename": "philosophy-thinking-in-ai-era.md"
@@ -4155,10 +3936,7 @@
     "excerptEn": "A breakdown of the business models behind the global expansion trio — how template sites, API sites, and knowledge monetization each make money.",
     "headings": [],
     "keywords": [
-      "api",
-      "jason",
-      "zhu",
-      "jasonzhu.ai"
+      "api"
     ],
     "filename": "going-global-three-essentials.md"
   },
@@ -4179,11 +3957,7 @@
     "titleEn": "Indie Developer vs. Businessperson: A Developer Who Can't Market Is Just a Backend Contractor",
     "excerptEn": "Indie developers chase interesting problems to build their dream products, while businesspeople repackage those same products and sell them directly to customers. A developer who can't market is nothing more than a backend contractor.",
     "headings": [],
-    "keywords": [
-      "jason",
-      "zhu",
-      "jasonzhu.ai"
-    ],
+    "keywords": [],
     "filename": "indie-dev-vs-businessman-mindset.md"
   },
   {
@@ -4204,12 +3978,9 @@
     "excerptEn": "The Bitget U-Card supports zero-fee Alipay payments with a free monthly quota of 400U, making it an excellent choice for remote workers.",
     "headings": [],
     "keywords": [
+      "wise",
       "bitget",
-      "400u",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
-      "wise"
+      "400u"
     ],
     "filename": "bitget-u-card-review.md"
   },
@@ -4240,9 +4011,6 @@
       "pro",
       "z-image-turbo",
       "google",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "gemini"
     ],
     "filename": "google-nano-vs-ali-tongyi-image-review.md"
@@ -4279,9 +4047,6 @@
       "reddit",
       "trends",
       "google",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "discovery",
       "inspiration",
       "mining",
@@ -4335,10 +4100,7 @@
       "方案一：没有号的"
     ],
     "keywords": [
-      "premium",
-      "jason",
-      "zhu",
-      "jasonzhu.ai"
+      "premium"
     ],
     "filename": "black-friday-premium-plus-guide.md"
   },
@@ -4362,10 +4124,7 @@
     "keywords": [
       "coding",
       "web3",
-      "web2",
-      "jason",
-      "zhu",
-      "jasonzhu.ai"
+      "web2"
     ],
     "filename": "web3-enterprise-ai-coding-training.md"
   },
@@ -4394,9 +4153,6 @@
     ],
     "keywords": [
       "gemini",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "deepseek",
       "claude",
       "notebooklm",
@@ -4437,9 +4193,6 @@
     "keywords": [
       "giffgaff",
       "sim",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "iphone",
       "pixel"
     ],
@@ -4469,9 +4222,6 @@
       "补充：货币"
     ],
     "keywords": [
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "fintech"
     ],
     "filename": "investment-reading-list.md"
@@ -4497,10 +4247,7 @@
     ],
     "keywords": [
       "seo",
-      "andy",
-      "jason",
-      "zhu",
-      "jasonzhu.ai"
+      "andy"
     ],
     "filename": "andy-w-systematic-seo-for-going-global.md"
   },
@@ -4540,8 +4287,7 @@
       "wise",
       "stripe",
       "paypal",
-      "jason",
-      "zhu",
+      "agi",
       "jasonzhu.ai",
       "ltd",
       "certificate",
@@ -4574,11 +4320,7 @@
     "titleEn": "AI Productivity Tools Guide | 2025 Updated Edition",
     "excerptEn": "A hands-on tested roundup of AI tools covering chat, search, coding, image generation, and audio/video — vetted across the web.",
     "headings": [],
-    "keywords": [
-      "jason",
-      "zhu",
-      "jasonzhu.ai"
-    ],
+    "keywords": [],
     "filename": "ai-productivity-tools-guide-2025.md"
   },
   {
@@ -4597,11 +4339,7 @@
     "titleEn": "Marketing Strategy: The 10x Rule of Price Anchoring",
     "excerptEn": "Don't lead with features — lead with money and outcomes. Make sure customers get at least 10x the value of what they pay.",
     "headings": [],
-    "keywords": [
-      "jason",
-      "zhu",
-      "jasonzhu.ai"
-    ],
+    "keywords": [],
     "filename": "pricing-anchor-10x-rule.md"
   },
   {
@@ -4643,8 +4381,7 @@
       "house",
       "1stformations",
       "wise",
-      "jason",
-      "zhu",
+      "agi",
       "jasonzhu.ai",
       "diy",
       "ltd",
@@ -4670,11 +4407,7 @@
     "titleEn": "Storytelling — Turning User Interest Into Belief",
     "excerptEn": "Storytelling is a core skill in both marketing and product development — it's what turns user interest into genuine belief.",
     "headings": [],
-    "keywords": [
-      "jason",
-      "zhu",
-      "jasonzhu.ai"
-    ],
+    "keywords": [],
     "filename": "storytelling-interest-to-belief.md"
   },
   {
@@ -4705,10 +4438,7 @@
     ],
     "keywords": [
       "wise",
-      "kyc",
-      "jason",
-      "zhu",
-      "jasonzhu.ai"
+      "kyc"
     ],
     "filename": "uk-company-wise-address-verification.md"
   },
@@ -4729,9 +4459,6 @@
     "excerptEn": "The key to programmers succeeding in business — shifting from an employee grind mentality to a marketing mindset, and splitting your revenue ten ways to tie others to your success.",
     "headings": [],
     "keywords": [
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "ban"
     ],
     "filename": "programmer-business-marketing-mindset.md"
@@ -4753,9 +4480,6 @@
     "excerptEn": "A curated list of go-to eBook download sites covering both Chinese and English resources, so you can easily find whatever you want to read.",
     "headings": [],
     "keywords": [
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "scribd",
       "welib",
       "oceanofpdf"
@@ -4783,9 +4507,6 @@
       "reddit",
       "google",
       "top1",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "machinelearning",
       "localllama",
       "chatgpt",
@@ -4826,11 +4547,8 @@
       "seo",
       "aitdk",
       "seoquake",
-      "wappalyzer",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "meta",
+      "wappalyzer",
       "cms"
     ],
     "filename": "sitin-going-global-research-tools.md"
@@ -4853,11 +4571,8 @@
     "excerptEn": "This book is fundamentally about running a street stall — and the so-called entrepreneurship behind solo companies, SaaS ventures, and content creation is really just that.",
     "headings": [],
     "keywords": [
-      "saas",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
-      "ban"
+      "ban",
+      "saas"
     ],
     "filename": "street-vendor-startup-book-review.md"
   },
@@ -4914,10 +4629,6 @@
       "aws",
       "cursor",
       "windsurf",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
-      "brickrecipes.ai",
       "wise",
       "google",
       "ads",
@@ -4938,7 +4649,10 @@
       "coding",
       "v0",
       "prd",
-      "checklist"
+      "checklist",
+      "bigye",
+      "gosail",
+      "logo"
     ],
     "filename": "website-going-global-first-month-lessons.md"
   },
@@ -4958,11 +4672,7 @@
     "titleEn": "Marketing Is the One Level You Can Never Skip in Indie Development",
     "excerptEn": "Marketing isn't an optional, low-priority item on your to-do list — it's a level you can never skip in indie development.",
     "headings": [],
-    "keywords": [
-      "jason",
-      "zhu",
-      "jasonzhu.ai"
-    ],
+    "keywords": [],
     "filename": "marketing-cannot-skip-indie-dev.md"
   },
   {
@@ -4986,9 +4696,6 @@
       "seo",
       "indie",
       "hacker",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "ban"
     ],
     "filename": "going-global-veteran-paths.md"
@@ -5015,9 +4722,6 @@
     ],
     "keywords": [
       "saas",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "weijunext",
       "nexty",
       "stripe",
@@ -5065,16 +4769,13 @@
       "ein",
       "stripe",
       "wyoming",
-      "wise",
       "fiverr",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "qiufenghyf",
       "llc",
       "irs",
       "boi",
       "wyomingagents.com",
+      "wise",
       "form",
       "github",
       "enterprise",
@@ -5107,10 +4808,7 @@
     "headings": [],
     "keywords": [
       "reddit",
-      "idea",
-      "jason",
-      "zhu",
-      "jasonzhu.ai"
+      "idea"
     ],
     "filename": "indie-dev-marketing-experience-reddit.md"
   },
@@ -5135,11 +4833,6 @@
     "excerptEn": "Deep Earn shares a zero-cost global launch toolkit for indie developers, helping you kick off your international project at minimal expense.",
     "headings": [],
     "keywords": [
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
-      "deep",
-      "earn",
       "seo",
       "mvp"
     ],
@@ -5175,9 +4868,6 @@
     "keywords": [
       "ein",
       "stripe",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "princehuang",
       "llc",
       "corp",
@@ -5219,9 +4909,6 @@
     ],
     "keywords": [
       "zpay",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "saas"
     ],
     "filename": "china-individual-payment-zpay.md"
@@ -5260,9 +4947,6 @@
     "keywords": [
       "ico",
       "saas",
-      "jason",
-      "zhu",
-      "jasonzhu.ai",
       "direct",
       "debit",
       "ico.org.uk",

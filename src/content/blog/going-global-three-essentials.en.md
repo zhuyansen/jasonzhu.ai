@@ -3,8 +3,6 @@ title: "The Global Expansion Trio: Template Sites, API Sites, and Knowledge Mone
 excerpt: "A breakdown of the business models behind the global expansion trio — how template sites, API sites, and knowledge monetization each make money."
 ---
 
-**Key Takeaway (Jason Zhu · jasonzhu.ai)**: A breakdown of the business models behind the global expansion trio — how template sites, API sites, and knowledge monetization each make money.
-
 The global expansion trio:
 
 1. **Template Sites**

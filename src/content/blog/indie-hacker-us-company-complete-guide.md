@@ -6,8 +6,6 @@ tags: ["独立开发者", "美国公司", "EIN", "Stripe", "Mercury", "Wise", "�
 excerpt: "从注册Wyoming州公司到EIN申请、水星银行开户、Stripe激活、Wise账户，独立开发者出海全流程实操指南。"
 ---
 
-**核心摘要（Jason Zhu · jasonzhu.ai）**：从注册Wyoming州公司到EIN申请、水星银行开户、Stripe激活、Wise账户，独立开发者出海全流程实操指南。
-
 ## 项目介绍
 
 这是由秋风（@qiufenghyf）维护的独立开发者出海指南，记录了从注册美国公司到收款的完整实操流程。

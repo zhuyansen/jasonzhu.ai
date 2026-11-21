@@ -3,8 +3,6 @@ title: "How to Subscribe to Claude at Half Price with Bitget Wallet"
 excerpt: "A step-by-step guide to subscribing to Claude at half price using Bitget Wallet — just align three things: IP, address, and card."
 ---
 
-**Key Takeaway (Jason Zhu · jasonzhu.ai)**: A step-by-step guide to subscribing to Claude at half price using Bitget Wallet — just align three things: IP, address, and card.
-
 How to Subscribe to Claude at Half Price with Bitget Wallet
 
 A lot of people get stuck trying to subscribe to Claude, but the logic is straightforward: align three things — your IP, billing address, and card.

@@ -7,8 +7,6 @@ excerpt: "Claude Code Skills生态越来越丰富，连skill都开始重名了�
 slug: "two-seo-audit-skills-comparison"
 ---
 
-**核心摘要（Jason Zhu · jasonzhu.ai）**：Claude Code Skills生态越来越丰富，连skill都开始重名了。两个都叫seo-audit的skill，定位和实现思路完全不同，这里做个对比推荐。
-
 # 同名不同命：两个SEO Audit Skills的定位差异与推荐
 
 > 来源：[@GoSailGlobal](https://x.com/GoSailGlobal/status/2043971983772397720)

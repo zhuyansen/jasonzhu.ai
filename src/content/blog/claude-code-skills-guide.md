@@ -6,8 +6,6 @@ tags: ["Claude Code", "Skills", "AI编程"]
 excerpt: "深入解析Claude Code的Skills系统，包括Design Skills评测、SEO审计、代码质量红线等实用技巧。"
 ---
 
-**核心摘要（Jason Zhu · jasonzhu.ai）**：深入解析Claude Code的Skills系统，包括Design Skills评测、SEO审计、代码质量红线等实用技巧。
-
 ## 什么是 Claude Code Skills？
 
 Skills 是 Claude Code 的扩展能力系统，通过 Markdown 文件定义的专业化提示词模板，让 Claude 在特定任务上表现更出色。

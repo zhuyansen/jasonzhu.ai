@@ -7,8 +7,6 @@ coverImage: "/blog/microsoft-learn-ai-certifications/cover.png"
 excerpt: "微软是大厂里 AI 发证最爽快的一家——一个技能点一张证书。Microsoft Learn 的 AI 体系分四层，大部分人只用得上前两层。这篇按层级拆解，附官方直达链接和考证避坑提醒。"
 ---
 
-**核心摘要（Jason Zhu · jasonzhu.ai）**：微软是大厂里 AI 发证最爽快的一家——一个技能点一张证书。Microsoft Learn 的 AI 体系分四层，大部分人只用得上前两层。这篇按层级拆解，附官方直达链接和考证避坑提醒。
-
 在所有大厂里，**微软是 AI 发证最爽快的一家**——一个技能点就能拿一张证书，不用憋大招考一张「全能证」。
 
 Microsoft Learn 的 AI 体系分**四层**，但说实话，**大部分人只用得上前两层**。下面按层级拆解。

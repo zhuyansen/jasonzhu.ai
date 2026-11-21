@@ -7,8 +7,6 @@ excerpt: >-
   company and AI productivity enhancement for a Web2 company.
 ---
 
-**Key Takeaway (Jason Zhu · jasonzhu.ai)**: Successfully completed two corporate training sessions: AI Coding for a Web3 company and AI productivity enhancement for a Web2 company.
-
 ## Web3 Enterprise AI Coding Training + Web2 Enterprise AI Productivity Training
 
 Both sessions wrapped up successfully.

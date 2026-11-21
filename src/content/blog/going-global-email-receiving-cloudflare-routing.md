@@ -6,8 +6,6 @@ tags: ["出海", "邮件", "Cloudflare", "Email Routing", "Resend", "收件"]
 excerpt: "用Resend解决了发件，但收件怎么办？Cloudflare Email Routing免费搞定出海产品的收件问题。"
 ---
 
-**核心摘要（Jason Zhu · jasonzhu.ai）**：用Resend解决了发件，但收件怎么办？Cloudflare Email Routing免费搞定出海产品的收件问题。
-
 做出海产品的应该都遇到过这个问题：网站上写了个 support@yourdomain.com，但用户真发邮件过来，**你收不到**。
 
 因为大部分人用 Resend 只解决了发件（验证码、通知、Newsletter），但收件这块一直没搞。

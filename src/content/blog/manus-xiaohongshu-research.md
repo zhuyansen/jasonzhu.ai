@@ -6,8 +6,6 @@ tags: ["Manus", "小红书", "选题调研", "AI博主", "内容运营"]
 excerpt: "用manus做小红书AI博主选题报告，包括低粉爆款分析和热门话题调研。"
 ---
 
-**核心摘要（Jason Zhu · jasonzhu.ai）**：用manus做小红书AI博主选题报告，包括低粉爆款分析和热门话题调研。
-
 用manus做调研还是不错的，记得用manus 1.6 Max。
 
 ## Prompt提示词

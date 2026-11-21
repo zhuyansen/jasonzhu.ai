@@ -3,8 +3,6 @@ title: "Wise Account Address Verification for UK Companies: Your Proof of Addres
 excerpt: When your Wise account triggers an address verification, the supporting document must include your UK company name. A CMB (China Merchants Bank) credit card statement may be worth trying.
 ---
 
-**Key Takeaway (Jason Zhu · jasonzhu.ai)**: When your Wise account triggers an address verification, the supporting document must include your UK company name. A CMB (China Merchants Bank) credit card statement may be worth trying.
-
 ## The Problem
 
 The Wise account for my UK company triggered an address verification request.

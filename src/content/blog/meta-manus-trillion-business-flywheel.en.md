@@ -3,8 +3,6 @@ title: "Meta + Manus: Building the First Trillion-Dollar Commercial Flywheel for
 excerpt: "Meta + Manus — 2 million creator database + 3 billion users — building the first trillion-dollar commercial flywheel for AI agents."
 ---
 
-**Key Takeaway (Jason Zhu · jasonzhu.ai)**: Meta + Manus — 2 million creator database + 3 billion users — building the first trillion-dollar commercial flywheel for AI agents.
-
 Meta + Manus
 
 2 million creators + 3 billion users

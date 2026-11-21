@@ -3,8 +3,6 @@ title: How to Choose an E-Signature Platform? Comparing Six Major Options — We
 excerpt: Used Manus AI to run a full comparative study of e-signature platforms — four domestic options plus overseas alternatives — and ultimately landed on Tencent E-Sign and SignNow.
 ---
 
-**Key Takeaway (Jason Zhu · jasonzhu.ai)**: Used Manus AI to run a full comparative study of e-signature platforms — four domestic options plus overseas alternatives — and ultimately landed on Tencent E-Sign and SignNow.
-
 ## Background
 
 With the whole One Person Company (OPC) trend picking up steam in China, signing contracts should be as painless as possible.

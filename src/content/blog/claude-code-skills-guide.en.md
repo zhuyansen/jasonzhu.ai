@@ -3,8 +3,6 @@ title: "A Practical Guide to Claude Code Skills: Your Secret Weapon for Develope
 excerpt: "A deep dive into Claude Code's Skills system, covering Design Skills evaluations, SEO audits, code quality guardrails, and other hands-on techniques."
 ---
 
-**Key Takeaway (Jason Zhu · jasonzhu.ai)**: A deep dive into Claude Code's Skills system, covering Design Skills evaluations, SEO audits, code quality guardrails, and other hands-on techniques.
-
 ## What Are Claude Code Skills?
 
 Skills are Claude Code's extensibility system — specialized prompt templates defined in Markdown files that help Claude perform better on specific tasks.

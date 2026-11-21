@@ -3,8 +3,6 @@ title: Using Manus to Research Content Topics for a Xiaohongshu AI Influencer
 excerpt: Using Manus to generate a Xiaohongshu AI influencer topic report, covering low-follower viral post analysis and trending topic research.
 ---
 
-**Key Takeaway (Jason Zhu · jasonzhu.ai)**: Using Manus to generate a Xiaohongshu AI influencer topic report, covering low-follower viral post analysis and trending topic research.
-
 Manus works pretty well for research like this — just make sure you're using Manus 1.6 Max.
 
 ## Prompt

@@ -3,8 +3,6 @@ title: "Enterprise Training Share: AI Website Development from 0 to 1 and Beyond
 excerpt: "Website development insights shared at an enterprise training session — from building a site from scratch (0–1) to iterative optimization (1–100), covering a variety of AI-assisted development approaches."
 ---
 
-**Key Takeaway (Jason Zhu · jasonzhu.ai)**: Website development insights shared at an enterprise training session — from building a site from scratch (0–1) to iterative optimization (1–100), covering a variety of AI-assisted development approaches.
-
 Today I gave a presentation at an enterprise training session sharing my website development experience.
 
 ## 1️⃣ 0–1: Building from Scratch

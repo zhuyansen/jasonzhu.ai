@@ -6,8 +6,6 @@ tags: ["YouTube", "产品", "PMF", "增长", "创业"]
 excerpt: "精选10个YouTube产品干货视频，帮你系统化掌握产品、增长和PMF。"
 ---
 
-**核心摘要（Jason Zhu · jasonzhu.ai）**：精选10个YouTube产品干货视频，帮你系统化掌握产品、增长和PMF。
-
 最近挖到10个超高质量的 YouTube 产品干货视频，帮你系统化掌握产品、增长、PMF，纯干货推荐！
 
 **产品如何找到 PMF**

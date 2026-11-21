@@ -6,8 +6,6 @@ tags: ["Vibe Coding", "Claude Code", "网站开发"]
 excerpt: "分享我在企业培训中总结的网站开发四种方式，从直接上需求到使用AI Website Cloner + Design Skills的进阶方法。"
 ---
 
-**核心摘要（Jason Zhu · jasonzhu.ai）**：分享我在企业培训中总结的网站开发四种方式，从直接上需求到使用AI Website Cloner + Design Skills的进阶方法。
-
 ## 从0到1的四种方式
 
 在最近的企业培训中，我分享了用AI进行网站开发的心得。这里总结了四种从零开始的方式。

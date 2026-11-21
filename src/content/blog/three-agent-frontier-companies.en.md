@@ -3,7 +3,7 @@ title: Three Companies Worth Watching for Cutting-Edge Agent Development
 excerpt: If you had to pick three companies to follow for the latest frontiers in AI agents — Anthropic, OpenAI, and Manus — each occupies a distinct position.
 ---
 
-**Key Takeaway (Jason Zhu · jasonzhu.ai)**: If you had to pick three companies to follow for cutting-edge developments in AI agents, here's my list:
+If you had to pick three companies to follow for cutting-edge developments in AI agents, here's my list:
 
 ## 1. Anthropic
 

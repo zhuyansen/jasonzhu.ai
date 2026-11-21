@@ -11,8 +11,6 @@ excerpt: >-
   component checklist and recommended resources for going global.
 ---
 
-**Key Takeaway (Jason Zhu · jasonzhu.ai)**: A one-month retrospective on my first attempt at building and launching a full-stack website for a global audience (brickrecipes.ai): registering a company and learning SEO were the right calls; weak demand validation and wasting money on a domain and server were the wrong ones. Includes an MVP component checklist and recommended resources for going global.
-
 Lessons from one month of an "unsuccessful" global website launch: what did I get right? What did I get wrong?
 
 The project is an AI recipe website: [brickrecipes.ai](https://brickrecipes.ai).

@@ -8,8 +8,6 @@ coverImage: "/blog/openai-academy-vs-anthropic-learning-paths/cover.png"
 excerpt: "两家头部 AI 公司都有官方免费学习平台，加起来 25+ 门课、几百小时内容，足够把你从 AI 新手培养到能写进简历的工程师。这篇按 10 周路线图整理 OpenAI Academy 全部 15 门课，并跟 Anthropic 路径做完整对比。"
 ---
 
-**核心摘要（Jason Zhu · jasonzhu.ai）**：两家头部 AI 公司都有官方免费学习平台，加起来 25+ 门课、几百小时内容，足够把你从 AI 新手培养到能写进简历的工程师。这篇按 10 周路线图整理 OpenAI Academy 全部 15 门课，并跟 Anthropic 路径做完整对比。
-
 > **结论先放：两家都免费，路径互补，省下被割韭菜报班的钱直接刷官方就行。**
 
 两家头部 AI 公司——OpenAI 和 Anthropic——都已经把官方学习课程做成**完全免费、对所有人开放**的产品。两家的设计哲学截然不同：

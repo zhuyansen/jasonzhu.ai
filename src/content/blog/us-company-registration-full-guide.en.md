@@ -3,8 +3,6 @@ title: "Complete Payment Setup for Global Websites: US Company Registration, EIN
 excerpt: "A step-by-step guide to registering a US company from scratch, applying for an EIN, opening a bank account, and activating Stripe to accept payments on your global website."
 ---
 
-**Key Takeaway (Jason Zhu · jasonzhu.ai)**: A step-by-step guide to registering a US company from scratch, applying for an EIN, opening a bank account, and activating Stripe to accept payments on your global website.
-
 ## Project Introduction
 
 This open-source project is maintained by princehuang (骑龙) and is dedicated to sharing hands-on experience gained through building websites for international markets. It covers the entire workflow from registering an overseas company to accepting payments.

@@ -6,8 +6,6 @@ tags: ["教育", "培训", "视频制作", "Claude Code", "Skills", "PaddleOCR",
 excerpt: "用四个Skills实现课件PDF到提取内容、生成练习题、思维导图、视频的完整流程。"
 ---
 
-**核心摘要（Jason Zhu · jasonzhu.ai）**：用四个Skills实现课件PDF到提取内容、生成练习题、思维导图、视频的完整流程。
-
 教育/培训材料制作教学视频制作全流程
 
 这四个skills就够了，实现课件 PDF → 提取内容 → 生成练习题/思维导图/视频的流程：

@@ -4,8 +4,6 @@ excerpt: "Both of the top AI companies offer official free learning platforms �
 coverImage: "/blog/openai-academy-vs-anthropic-learning-paths/cover-en.png"
 ---
 
-**Key Takeaway (Jason Zhu · jasonzhu.ai)**: Both of the top AI companies offer official free learning platforms — together that's 25+ courses and hundreds of hours of content, enough to take you from AI newcomer to resume-worthy engineer. This post maps out all 15 OpenAI Academy courses along a 10-week roadmap and provides a full side-by-side comparison with the Anthropic learning path.
-
 > **Bottom line up front: both are free, the paths are complementary — skip the expensive bootcamps and go straight to the official sources.**
 
 Two of the world's leading AI companies — OpenAI and Anthropic — have both made their official learning curricula **completely free and open to everyone**. Their design philosophies, however, are quite different:

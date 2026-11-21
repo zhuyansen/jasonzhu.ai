@@ -3,8 +3,6 @@ title: Paths Taken by Those Who've Gone Global — Which One Is Right for You?
 excerpt: A breakdown of the different strategies used by veterans of the global expansion game, to help you find the approach that fits you best.
 ---
 
-**Key Takeaway (Jason Zhu · jasonzhu.ai)**: A breakdown of the different strategies used by veterans of the global expansion game, to help you find the approach that fits you best.
-
 Paths Taken by Those Who've Gone Global — Which One Is Right for You?
 
 Based on my own observations and conversations with fellow builders in the community:

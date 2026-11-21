@@ -5,8 +5,6 @@ excerpt: >-
   master product management, growth, and PMF.
 ---
 
-**Key Takeaway (Jason Zhu · jasonzhu.ai)**: A curated list of 10 high-quality YouTube videos to help you systematically master product management, growth, and PMF.
-
 I recently dug up 10 exceptional YouTube videos on product fundamentals — covering product management, growth, and PMF. Pure signal, no fluff.
 
 **How to Find PMF for Your Product**

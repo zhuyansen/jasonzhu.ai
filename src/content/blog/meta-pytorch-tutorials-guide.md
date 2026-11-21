@@ -7,8 +7,6 @@ coverImage: "/blog/meta-pytorch-tutorials-guide/cover.png"
 excerpt: "Meta 没开 AI 学院，但它把 PyTorch 官方 tutorials 做成了整个行业的标准——事实上的「深度学习实习手册」。跑完一遍等于走完一整套现代深度学习实践。这篇整理 9 步推荐路径 + Llama 配套资源。"
 ---
 
-**核心摘要（Jason Zhu · jasonzhu.ai）**：Meta 没开 AI 学院，但它把 PyTorch 官方 tutorials 做成了整个行业的标准——事实上的「深度学习实习手册」。跑完一遍等于走完一整套现代深度学习实践。这篇整理 9 步推荐路径 + Llama 配套资源。
-
 跟前几篇里的大厂不同，**Meta 没有开 AI 学院**。
 
 但它做了另一件影响更深的事：**把 PyTorch 官方 tutorials 做成了整个行业的标准**。

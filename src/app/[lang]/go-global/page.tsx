@@ -445,19 +445,26 @@ function SeoSchoolsMap({ l, isZh }: { l: "zh" | "en"; isZh: boolean }) {
 
             {/* 代表人物链接 */}
             <div className="flex flex-wrap gap-1.5 mb-2.5">
-              {s.people.map((p) => (
-                <a
-                  key={p.name}
-                  href={p.url}
-                  {...OUT}
-                  className="inline-flex items-center gap-1 rounded-lg bg-white border border-gray-200 px-2.5 py-1 text-xs text-gray-800 hover:border-blue-300 hover:text-blue-600 transition-colors"
-                >
-                  <span className="font-semibold text-blue-600">{p.name}</span>
-                  {p.handle && <span className="text-gray-400 font-mono text-[11px]">{p.handle}</span>}
-                  <span className="text-gray-400">·</span>
-                  <span className="text-gray-600">{p.role[l]}</span>
-                </a>
-              ))}
+              {s.people.map((p) => {
+                const chip = "inline-flex items-center gap-1 rounded-lg bg-white border border-gray-200 px-2.5 py-1 text-xs text-gray-800";
+                const inner = (
+                  <>
+                    <span className={`font-semibold ${p.url ? "text-blue-600" : "text-gray-900"}`}>{p.name}</span>
+                    {p.handle && <span className="text-gray-400 font-mono text-[11px]">{p.handle}</span>}
+                    <span className="text-gray-400">·</span>
+                    <span className="text-gray-600">{p.role[l]}</span>
+                  </>
+                );
+                return p.url ? (
+                  <a key={p.name} href={p.url} {...OUT} className={`${chip} hover:border-blue-300 hover:text-blue-600 transition-colors`}>
+                    {inner}
+                  </a>
+                ) : (
+                  <span key={p.name} className={chip}>
+                    {inner}
+                  </span>
+                );
+              })}
             </div>
 
             <div className="space-y-2 text-sm leading-relaxed">

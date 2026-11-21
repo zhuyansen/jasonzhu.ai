@@ -7,8 +7,6 @@ coverImage: "/blog/aws-skill-builder-free-ai-courses/cover.png"
 excerpt: "AWS Skill Builder 是大厂里课最多的一家——1500 门课里有 600 门免费。但坑也最深：直接搜会被付费课刷屏。这篇教你按学习路径走，附 3 条全免费的生成式 AI 路径。"
 ---
 
-**核心摘要（Jason Zhu · jasonzhu.ai）**：AWS Skill Builder 是大厂里课最多的一家——1500 门课里有 600 门免费。但坑也最深：直接搜会被付费课刷屏。这篇教你按学习路径走，附 3 条全免费的生成式 AI 路径。
-
 AWS Skill Builder 是大厂里**课程数量最多**的一家——1500 门课里有 **600 门免费**。
 
 但它的坑也最深：**直接搜索会被付费课刷屏**，免费的优质课沉在底下根本看不见。

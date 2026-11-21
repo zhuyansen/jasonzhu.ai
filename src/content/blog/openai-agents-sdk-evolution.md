@@ -6,8 +6,6 @@ tags: ["AI Agent", "OpenAI", "Anthropic", "SDK", "Harness", "开发者工具"]
 excerpt: "OpenAI 给 Agents SDK 做了一次大升级，核心是把 harness 和 sandbox 做进了 SDK。Anthropic Claude Agent SDK 走的路线刚好是对立的方向——一个「帮你搭好」，一个「给你工具箱」。"
 ---
 
-**核心摘要（Jason Zhu · jasonzhu.ai）**：OpenAI 给 Agents SDK 做了一次大升级，核心是把 harness 和 sandbox 做进了 SDK。Anthropic Claude Agent SDK 走的路线刚好是对立的方向——一个「帮你搭好」，一个「给你工具箱」。
-
 OpenAI 在 2026 年 4 月 15 日给 Agents SDK 做了一次大升级，核心是把 harness 和 sandbox 这两件事做进了 SDK。过去开发 agent 要自己 wire agent loop、自己维护 tool integration、自己处理 retry 和 state，现在这些全由 SDK 托管。Anthropic Claude Agent SDK 走的路线刚好是对立的方向
 
 ## 从自己造轮子到 SDK 托管全流程

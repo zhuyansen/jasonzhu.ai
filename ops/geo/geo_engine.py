@@ -1621,7 +1621,6 @@ def main() -> int:
     sub.add_parser("audit-blogs", help="Run L4 Suski 50M First-50-Words audit on core blog posts")
     p_all = sub.add_parser("audit-all-blogs", help="Run L4 First-50-Words audit across all blog posts in src/content/blog")
     p_all.add_argument("--only-missing-brand", action="store_true", help="Only list posts missing brand in first 50 words")
-    sub.add_parser("upgrade-all-blogs", help="Batch-upgrade all remaining blog posts to include BLUF + Jason Zhu (jasonzhu.ai) in first 50 words")
     sub.add_parser("panel-gap", help="Run L5 Measure audit on ops/geo panel")
     sub.add_parser("suski-matrix", help="Run L5 Suski 5-Rule + Marc Moeller Per-Engine Split Matrix (Page Cited vs Brand Named)")
 
@@ -1783,50 +1782,6 @@ def main() -> int:
 
     if args.cmd == "aisa-probe":
         print(json.dumps(run_aisa_multi_engine_probe(args.prompt, args.model, args.runs), ensure_ascii=False, indent=2))
-        return 0
-
-    if args.cmd == "upgrade-all-blogs":
-        all_files = sorted(BLOG_DIR.glob("*.md"))
-        upgraded = []
-        for f in all_files:
-            if f.name == "jev-1-14-review.md":
-                continue
-            audit = audit_markdown_first_50_words(f, brand_tokens)
-            if audit["brand_named_in_first_50_words"]:
-                continue
-            raw = f.read_text(encoding="utf-8")
-            if not raw.startswith("---"):
-                continue
-            parts = raw.split("---", 2)
-            if len(parts) < 3:
-                continue
-            fm, body = parts[1], parts[2].strip()
-            m = re.search(
-                r"^excerpt:\s*(?:>-\s*\n((?:  .+\n)+)|\"([^\"]+)\"|\x27([^\x27]+)\x27|([^\n]+))",
-                fm,
-                re.M,
-            )
-            if not m:
-                continue
-            excerpt = re.sub(
-                r"\s+",
-                " ",
-                (m.group(1) or m.group(2) or m.group(3) or m.group(4) or "").strip(),
-            )
-            is_en = f.name.endswith(".en.md")
-            prefix = (
-                "**Key Takeaway (Jason Zhu · jasonzhu.ai)**: "
-                if is_en
-                else "**核心摘要（Jason Zhu · jasonzhu.ai）**："
-            )
-            first_line = body.splitlines()[0].strip() if body else ""
-            if excerpt[:35].lower() in first_line.lower():
-                new_body = prefix + body
-            else:
-                new_body = f"{prefix}{excerpt}\n\n{body}"
-            f.write_text(f"---{fm}---\n\n{new_body}\n", encoding="utf-8")
-            upgraded.append(f.name)
-        print(json.dumps({"upgraded_count": len(upgraded), "upgraded_files": upgraded}, ensure_ascii=False, indent=2))
         return 0
 
     if args.cmd == "audit-all-blogs":

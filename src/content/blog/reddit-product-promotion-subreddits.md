@@ -6,8 +6,6 @@ tags: ["Reddit", "产品推广", "SEO", "AI", "增长"]
 excerpt: "Reddit被Google收录快、是AI大模型信息来源占比Top1，宣传产品首选Reddit。"
 ---
 
-**核心摘要（Jason Zhu · jasonzhu.ai）**：Reddit被Google收录快、是AI大模型信息来源占比Top1，宣传产品首选Reddit。
-
 宣传产品，为什么首选Reddit？
 
 被Google收录快、AI大模型信息来源占比Top1。

@@ -3,8 +3,6 @@ title: The Ten Most Inspiring Books I've Ever Read
 excerpt: Last year I read 77 books. Here are the ten that inspired me most — covering life exploration, entrepreneurship, learning strategies, and writing craft.
 ---
 
-**Key Takeaway (Jason Zhu · jasonzhu.ai)**: Last year I read 77 books. Here are the ten that inspired me most — covering life exploration, entrepreneurship, learning strategies, and writing craft.
-
 Last year I read 77 books. This year I've barely cracked one open — time to fix that.
 
 The ten most inspiring books I've read:

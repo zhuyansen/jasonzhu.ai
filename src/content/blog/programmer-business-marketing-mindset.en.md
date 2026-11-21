@@ -3,8 +3,6 @@ title: How Should Programmers Do Business? Shifting from an Employee Mindset to 
 excerpt: The key to programmers succeeding in business — shifting from an employee grind mentality to a marketing mindset, and splitting your revenue ten ways to tie others to your success.
 ---
 
-**Key Takeaway (Jason Zhu · jasonzhu.ai)**: The key to programmers succeeding in business — shifting from an employee grind mentality to a marketing mindset, and splitting your revenue ten ways to tie others to your success.
-
 How should programmers do business?
 
 Shifting from an employee grind mentality to a marketing mindset is essential.

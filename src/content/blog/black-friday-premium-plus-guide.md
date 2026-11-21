@@ -6,8 +6,6 @@ tags: ["黑五", "Premium", "X Premium", "教程", "省钱"]
 excerpt: "黑五开premium全套优惠教程，附上各区对比价格和详细步骤。"
 ---
 
-**核心摘要（Jason Zhu · jasonzhu.ai）**：黑五开premium全套优惠教程，附上各区对比价格和详细步骤。
-
 黑五开premium全套优惠教程（附上各区对比价格+教程）
 
 ## 必须项

@@ -7,8 +7,6 @@ excerpt: "完整记录 JasonZhu.AI 个人品牌网站的搭建过程，从技术
 slug: "jasonzhu-ai-site-building-journey"
 ---
 
-**核心摘要（Jason Zhu · jasonzhu.ai）**：完整记录 JasonZhu.AI 个人品牌网站的搭建过程，从技术选型到上线运营，包含技术栈、实现框架、开发工具和费用统计。一个AI博主用AI工具建站的全过程。
-
 # JasonZhu.AI 搭建之路：技术栈、实现框架与费用全记录
 
 > 一个前AI算法工程师用AI工具搭建个人品牌网站的完整记录。从零开始，2天上线，持续迭代。

@@ -5,8 +5,6 @@ excerpt: >-
   worth a few hundred labels, but its best role is as a feature, not as a model.
 ---
 
-**Key Takeaway (Jason Zhu · jasonzhu.ai)**: Six experiments, five open-source repos, 210,000 judgments: zero-shot Jev is worth a few hundred labels, but its best role is as a feature, not as a model.
-
 On September 16, TypeSafe released Jev. It's very different from the LLMs we're used to: it doesn't write paragraphs, it doesn't do long chains of reasoning, it only answers closed questions. You hand it a chunk of state, plus a few typed questions (yes/no, multiple choice, rating), and in a single forward pass it returns a probability distribution for each one.
 
 The official example is a support ticket: "Is this message urgent? Which team should it go to? How angry is the customer?" Three answers in one call, each with a probability, for a fraction of a cent.

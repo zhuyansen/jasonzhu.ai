@@ -3,8 +3,6 @@ title: "Philosophy in the Age of AI: The Usefulness of the Useless"
 excerpt: A friend with zero coding experience used Manus to build an image-based location inference website in two days. It's a reminder that philosophy — seemingly impractical — is exactly what gives people an edge.
 ---
 
-**Key Takeaway (Jason Zhu · jasonzhu.ai)**: A friend with zero coding experience used Manus to build an image-based location inference website in two days. It's a reminder that philosophy — seemingly impractical — is exactly what gives people an edge.
-
 A friend of mine shared his philosophy with me recently. He can't write a single line of code.
 
 Yet he spent two days using Manus to build a website that infers geographic locations from photos — think detective-style reasoning, like Conan deducing where a picture was taken — complete with a login system and everything.

@@ -3,8 +3,6 @@ title: "My Go-To AI API Proxy Services: A Curated Roundup"
 excerpt: "A roundup of the AI API proxy services I actually use, covering use cases like AI image/video generation and coding — all recommended by friends I trust, zero paid promotions."
 ---
 
-**Key Takeaway (Jason Zhu · jasonzhu.ai)**: A roundup of the AI API proxy services I actually use, covering use cases like AI image/video generation and coding — all recommended by friends I trust, zero paid promotions.
-
 > Source: [@GoSailGlobal](https://x.com/GoSailGlobal/status/2043962377939628517)
 
 There's no shortage of AI API proxy services out there — the market is flooded with options and it's hard to know what's worth your time. Here's a list of the services **my friends run and that I personally use** (this is a genuine recommendation post, no sponsored content whatsoever).

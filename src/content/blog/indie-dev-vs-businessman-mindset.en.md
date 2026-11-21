@@ -3,8 +3,6 @@ title: "Indie Developer vs. Businessperson: A Developer Who Can't Market Is Just
 excerpt: "Indie developers chase interesting problems to build their dream products, while businesspeople repackage those same products and sell them directly to customers. A developer who can't market is nothing more than a backend contractor."
 ---
 
-**Key Takeaway (Jason Zhu · jasonzhu.ai)**: Indie developers chase interesting problems to build their dream products, while businesspeople repackage those same products and sell them directly to customers. A developer who can't market is nothing more than a backend contractor.
-
 Nowadays there's a weekly training session, a private tutor for the kids—
 
 The indie developer is busy hunting for the perfect use case to build their passion project.

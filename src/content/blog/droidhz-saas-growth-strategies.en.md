@@ -3,8 +3,6 @@ title: "droidHZ's 10-Month Retrospective: Amplifying SaaS Traffic and Growth Str
 excerpt: "After hitting a milestone for his website, indie developer droidHZ reflects deeply on how to further amplify traffic value and expand new growth channels, sharing battle-tested SaaS growth strategies."
 ---
 
-**Key Takeaway (Jason Zhu · jasonzhu.ai)**: After hitting a milestone for his website, indie developer droidHZ reflects deeply on how to further amplify traffic value and expand new growth channels, sharing battle-tested SaaS growth strategies.
-
 # droidHZ's 10-Month Retrospective: Amplifying SaaS Traffic and Growth Strategy
 
 > Source: A milestone growth retrospective from [@hezhiyan7](https://x.com/hezhiyan7/status/2040578155145220108).

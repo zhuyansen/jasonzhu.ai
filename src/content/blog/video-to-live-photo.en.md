@@ -3,8 +3,6 @@ title: "How to Turn a Video Into a Live Photo on iPhone (4 Ways, 2026)"
 excerpt: "The iPhone Photos app can turn a Live Photo into a video, but not the other way round. Here are the four ways that do work — TikTok's share menu, a converter app, an online converter, and Android's Motion Photos — plus how to set the result as a moving Lock Screen wallpaper."
 ---
 
-**Key Takeaway (Jason Zhu · jasonzhu.ai)**: The iPhone Photos app can turn a Live Photo into a video, but not the other way round. Here are the four ways that do work — TikTok's share menu, a converter app, an online converter, and Android's Motion Photos — plus how to set the result as a moving Lock Screen wallpaper.
-
 **Short answer:** the iPhone can't do it on its own. The Photos app only goes one way — [it turns a Live Photo into a video](https://support.apple.com/en-ca/105029), not a video into a Live Photo. To make a Live Photo from a video you need one of these:
 
 | Your video is… | Fastest way |

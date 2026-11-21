@@ -6,8 +6,6 @@ tags: ["Agent", "Anthropic", "OpenAI", "Manus", "AI前沿"]
 excerpt: "如果让你选三家关注Agent前沿的公司：Anthropic、OpenAI、Manus，各有定位。"
 ---
 
-**核心摘要（Jason Zhu · jasonzhu.ai）**：如果让你选三家关注Agent前沿的公司：Anthropic、OpenAI、Manus，各有定位。
-
 如果让你来选三家需要关注Agent前沿动向的公司，我选的是：
 
 ## 1. Anthropic
