@@ -7,9 +7,14 @@ export const AUTHOR_NAME = "Jason Zhu";
 export const AUTHOR_ALT_NAME = "祝彦森";
 export const AUTHOR_ALT_NAMES = ["祝彦森", "Yansen Zhu", "zhuyansen", "GoSailGlobal", "JasonZhu.AI"];
 
+export const ORCID_ID = "0009-0000-2894-6285";
+export const ORCID_URL = `https://orcid.org/${ORCID_ID}`;
+
 export const PROFILES: { label: string; url: string }[] = [
+  { label: "ORCID", url: ORCID_URL },
   { label: "X", url: "https://x.com/GoSailGlobal" },
   { label: "GitHub", url: "https://github.com/zhuyansen" },
+  { label: "Hugging Face", url: "https://huggingface.co/jasonzhuyansen" },
   { label: "YouTube", url: "https://www.youtube.com/channel/UCr8j5m5ebYrKqZoLxCaboBg" },
   { label: "CERN Zenodo (200k Payments Dataset)", url: "https://doi.org/10.5281/zenodo.24386243" },
   { label: "CERN Zenodo ($20 MoR Fee Benchmark)", url: "https://doi.org/10.5281/zenodo.24387072" },

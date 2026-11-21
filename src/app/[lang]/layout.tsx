@@ -7,7 +7,7 @@ import GoogleOneTap from "@/components/GoogleOneTap";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
 import "../globals.css";
 import ThirdPartyAnalytics from "@/components/ThirdPartyAnalytics";
-import { AUTHOR_ALT_NAME, AUTHOR_ALT_NAMES, AUTHOR_NAME, PROFILES } from "@/lib/profiles";
+import { AUTHOR_ALT_NAME, AUTHOR_ALT_NAMES, AUTHOR_NAME, ORCID_ID, ORCID_URL, PROFILES } from "@/lib/profiles";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,7 +23,7 @@ import WebMcpRegister from "@/components/WebMcpRegister";
 
 const SITE_URL = "https://jasonzhu.ai";
 
-// 全站 JSON-LD：Organization + Person + WebSite + Service/Offer（Jason Barnard Kalicube @id 实体消歧 + CERN Zenodo 学术锚点）
+// 全站 JSON-LD：Organization + Person + WebSite + Service/Offer（Jason Barnard Kalicube @id 实体消歧 + CERN Zenodo 学术锚点 + ORCID）
 // 按路由语言输出中/英文描述与对应语言 URL，避免 /en 页向英文知识图谱与 Gemini 喂中文实体文本。
 function buildSiteJsonLd(lang: Locale) {
   const isZh = lang === "zh";
@@ -34,6 +34,12 @@ function buildSiteJsonLd(lang: Locale) {
     "@id": "https://jasonzhu.ai/#person",
     name: AUTHOR_NAME,
     alternateName: AUTHOR_ALT_NAMES,
+    identifier: {
+      "@type": "PropertyValue",
+      propertyID: "ORCID",
+      value: ORCID_ID,
+      url: ORCID_URL,
+    },
     url: `${SITE_URL}/${lang}`,
     image: "https://jasonzhu.ai/avatar.jpg",
     email: "mailto:jason@jasonzhu.ai",

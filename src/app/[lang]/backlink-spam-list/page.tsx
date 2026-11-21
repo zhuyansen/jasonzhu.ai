@@ -83,6 +83,7 @@ export default async function BacklinkSpamListPage({
   const datasetJsonLd = {
     "@context": "https://schema.org",
     "@type": "Dataset",
+    "@id": "https://doi.org/10.5281/zenodo.24387076",
     name: isZh
       ? "垃圾外链来源库：卖外链站群与门户域名公开证据库 (2026)"
       : "Backlink Spam Doorway Domains & Link-Selling Networks Evidence Database (2026)",
@@ -90,14 +91,34 @@ export default async function BacklinkSpamListPage({
       ? `由 Jason Zhu (jasonzhu.ai) 维护的 ${entries.length} 个垃圾外链门户域名与 ${fams.length} 个卖外链站群公开证据库。`
       : `An open dataset of ${entries.length} backlink spam doorway domains across ${fams.length} link-selling networks with verifiable public evidence, maintained by Jason Zhu (jasonzhu.ai).`,
     url: `${SITE_URL}/${lang}/backlink-spam-list`,
-    sameAs: "https://doi.org/10.5281/zenodo.24387076",
+    inLanguage: isZh ? "zh-CN" : "en",
+    sameAs: [
+      "https://doi.org/10.5281/zenodo.24387076",
+      "https://zenodo.org/records/24387076",
+      "https://huggingface.co/datasets/jasonzhuyansen/backlink-spam-doorway-domains-2026",
+      "https://github.com/zhuyansen/backlink-spam-list",
+    ],
     identifier: "https://doi.org/10.5281/zenodo.24387076",
     license: "https://creativecommons.org/licenses/by/4.0/",
+    isAccessibleForFree: true,
     creator: {
       "@type": "Person",
+      "@id": `${SITE_URL}/#person`,
       name: "Jason Zhu",
-      url: SITE_URL,
+      url: `${SITE_URL}/${lang}`,
     },
+    distribution: [
+      {
+        "@type": "DataDownload",
+        encodingFormat: "text/csv",
+        contentUrl: "https://raw.githubusercontent.com/zhuyansen/backlink-spam-list/main/list.csv",
+      },
+      {
+        "@type": "DataDownload",
+        encodingFormat: "text/html",
+        contentUrl: "https://huggingface.co/datasets/jasonzhuyansen/backlink-spam-doorway-domains-2026",
+      },
+    ],
   };
 
   return (
