@@ -96,6 +96,7 @@ export default async function BacklinkSpamListPage({
       "https://doi.org/10.5281/zenodo.24387076",
       "https://zenodo.org/records/24387076",
       "https://huggingface.co/datasets/jasonzhuyansen/backlink-spam-doorway-domains-2026",
+      "https://www.kaggle.com/datasets/yansenzhu/backlink-spam-doorway-domains-2026",
       "https://github.com/zhuyansen/backlink-spam-list",
     ],
     identifier: "https://doi.org/10.5281/zenodo.24387076",

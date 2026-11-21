@@ -98,7 +98,10 @@ function buildSiteJsonLd(lang: Locale) {
         "https://www.npmjs.com/package/@agentskillshub/mcp",
       ],
     },
-    sameAs: PROFILES.map((p) => p.url),
+    sameAs: [
+      "https://www.linkedin.com/company/gosailglobal/",
+      ...PROFILES.map((p) => p.url),
+    ],
   };
 
   const websiteJsonLd = {

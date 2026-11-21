@@ -12,6 +12,9 @@ export const ORCID_URL = `https://orcid.org/${ORCID_ID}`;
 
 export const PROFILES: { label: string; url: string }[] = [
   { label: "ORCID", url: ORCID_URL },
+  { label: "Google Scholar", url: "https://scholar.google.com/citations?user=AlP5JacAAAAJ" },
+  { label: "LinkedIn", url: "https://www.linkedin.com/in/jason-zhu-a52aa73bb/" },
+  { label: "Product Hunt", url: "https://www.producthunt.com/@yansen_zhu" },
   { label: "X", url: "https://x.com/GoSailGlobal" },
   { label: "GitHub", url: "https://github.com/zhuyansen" },
   { label: "Hugging Face", url: "https://huggingface.co/jasonzhuyansen" },

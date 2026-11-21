@@ -238,6 +238,7 @@ export default async function BlogPostPage({ params }: Props) {
           ...(post.doi === "10.5281/zenodo.24386243" || post.doi === "10.5281/zenodo.24387072"
             ? [
                 "https://huggingface.co/datasets/jasonzhuyansen/indie-saas-payments-benchmark-2026",
+                "https://www.kaggle.com/datasets/yansenzhu/indie-saas-payments-benchmark-2026",
                 "https://github.com/zhuyansen/indie-saas-payments-benchmark-2026",
               ]
             : []),
