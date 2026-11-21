@@ -229,3 +229,56 @@ https://agentskillshub.top
 
 - **`agentskillshub.top`**（`#5087821`，`canonical_url: https://agentskillshub.top/how-we-grade/`）：https://dev.to/yansen_zhu_9b0dae1c4cc0da/we-audited-138000-open-source-ai-agent-skills-mcp-servers-why-low-star-repos-carry-9x-higher-1hlk
 - **`jasonzhu.ai`**（`#5087822`，`canonical_url: https://jasonzhu.ai/en/blog/indie-payments-report-2026`）：https://dev.to/yansen_zhu_9b0dae1c4cc0da/i-analyzed-200000-indie-checkout-links-2023-2026-why-ai-saas-builders-are-choosing-mors-over-1020
+
+---
+
+## 八、GitHub 公开数据仓库 + 7 封产品方外联实时追踪与 Day+5（`2026-11-26`）跟进方案
+
+### 1. GitHub Top 2 引用池补强（`2026-11-21` 已上线）
+- **新公开基准仓库**：https://github.com/zhuyansen/indie-saas-payments-benchmark-2026
+  - 覆盖 AI 高频泛词 `Stripe vs Polar vs Dodo Payments vs Creem vs Paddle (2026) pricing & Merchant of Record fees`
+  - 内含 `data/platform-adoption-200k-2026.csv`、`data/mor-20usd-subscription-fees-2026.csv`、CC-BY-4.0、双向互链 `jasonzhu.ai` 与 Zenodo DOI (`10.5281/zenodo.24386243`, `10.5281/zenodo.24387072`)
+- **个人主页锚点升级**：已将上述仓库写入 [`zhuyansen/zhuyansen/README.md`](https://github.com/zhuyansen)（`2026-11-21` 面板显示 `github.com/zhuyansen` 单页被 AI 引用 20 次，全网第 2）。
+- **Reddit 纯干货数据帖**：已定稿 2 篇零硬广帖子保存在 [`ops/geo/reddit-launch-posts-2026-11.md`](reddit-launch-posts-2026-11.md)（`r/SaaS` 支付数据帖 + `r/ClaudeAI` / `r/AI_Agents` 13.8 万 Skills 安全审计帖）。
+
+### 2. 8 封外联实时看板（按 `2026-11-21` AI 引用池权重排序）
+
+| 优先级 | 靶点（`2026-11-21` AI 面板引用数） | 邮箱 | 当前状态 | 下一步动作（默认 `2026-11-26` Day+5） |
+| :--- | :--- | :--- | :--- | :--- |
+| **P0** | **Dodo Payments** (`dodopayments.com`: **22 次**) | `rishabh@dodopayments.com` | `SENT`（待回） | 若 `11-26` 无回复，发下方 Day+5 附 GitHub CSV 核对链接的短跟进 |
+| **P0** | **Creem** (`creem.io`: **16 次**) | `contact@creem.io` | `SENT`（待回） | 同上（邀请 PR 校对 2026 费率行，极易触发产品/增长团队回复） |
+| **P0** | **Polar** (`polar.sh`: **11 次**) | `support@polar.sh` | `SENT`（待回） | 同上（附 GitHub 仓库 + 邀请核对 May 2026 新费率） |
+| **P1** | **Waffo** | `eric.chu@waffo.com` | `SENT`（待回） | 同上（附 GitHub `$20` 实测表，`Waffo $18.72` 排第 2） |
+| **P1** | **Firecrawl** | `help@firecrawl.com` | `SENT`（待回） | 若 `11-26` 无回复，发安全审计数据集 + `dev.to` 文章链接短跟进 |
+| **P1** | **Agensi** | `info@agensi.io` | `SENT`（待回） | 同上 |
+| **P1** | **Kipt** | `hello@kipt.me` | `SENT`（待回） | 同上 |
+| **Closed** | iTechGuides (Yorker Media) | `contact@yorkermedia.com` | `DECLINED`（纯付费租位 `$149/mo`） | 已于 `2026-11-21` 礼貌婉拒（Resend ID: `01a1fe01-585b-72c6-a54f-fb03658b2760`），不再跟进 |
+
+### 3. Day+5（`2026-11-26`）高回复率短跟进模板（附 GitHub 费率核对钩子）
+
+- **支付平台组（Dodo / Creem / Polar / Waffo）**：
+  - Subject: `Re: [原主题]`
+  - Body:
+    > Hi [Name / Team],
+    >
+    > Quick follow-up — we just published the raw CSVs and the 2026 `$20` MoR fee comparison table on GitHub under CC-BY-4.0 so teams can verify or PR any pricing updates directly:
+    > https://github.com/zhuyansen/indie-saas-payments-benchmark-2026
+    >
+    > If anything on [Platform]'s fee row or payout terms needs a tweak (especially with Lemon Squeezy sunsetting in March 2027), happy to update it right away — and feel free to embed or cite any of the numbers in your comparison docs.
+    >
+    > Best,  
+    > Jason
+
+- **Agent 安全组（Firecrawl / Agensi / Kipt）**：
+  - Subject: `Re: [原主题]`
+  - Body:
+    > Hi [Name / Team],
+    >
+    > Quick bump on this — we also published the full breakdown of the 138,000+ agent skills & MCP security audit on dev.to (alongside the CC-BY Zenodo dataset `10.5281/zenodo.24387074`):
+    > https://dev.to/yansen_zhu_9b0dae1c4cc0da/we-audited-138000-open-source-ai-agent-skills-mcp-servers-why-low-star-repos-carry-9x-higher-1hlk
+    >
+    > Happy to pull a quick safety breakdown for your specific ecosystem/skills if helpful for your docs or blog.
+    >
+    > Best,  
+    > Jason
+
