@@ -672,32 +672,61 @@ function Beginners({ isZh }: { isZh: boolean }) {
   );
 }
 
-// 增长这一步的总框架：Jason 的「通用 SEO 水系模型 v9」（从 2026-07-24 的 v4 演进到 2026-11-20 的 v9：14 个构件 + 五层水表 + 六道放水闸门 + Jason 6 条排名理论 + v9 JOKER 6 减不确定性与 6 本海外经典定理）。
+// 增长这一步的总框架：Jason 的「通用 SEO 水系模型 v8」（14 个构件按水流顺序 1–14 + 五层水表 + 六道放水闸门 + Jason 6 条排名理论；v9 的条目待验证）
 function SeoSystem({ l, isZh }: { l: "zh" | "en"; isZh: boolean }) {
   const w = SEO_WATER_SYSTEM_V8;
+  const byId = new Map(w.components.map((c) => [c.id, c]));
+  const badgeBase = "inline-flex items-center justify-center min-w-[1.5rem] px-1 py-0.5 rounded text-white font-mono text-[11px]";
+  const badge = `${badgeBase} bg-blue-600`;
   return (
     <div id="seo-water-model-v8" className={`${BOX} mb-3 scroll-mt-24`}>
       <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">
         <p className="text-sm font-semibold text-gray-900">
           {isZh
-            ? "SEO 系统：通用 SEO 水系模型 v9（14 构件 · 5 层水表 · 6 道放水闸门 · 6 减不确定性）"
-            : "The SEO System: Water System Model v9 (14 Components · 5-Layer Meters · 6 Gates · 6 Uncertainty Reductions)"}
+            ? "SEO 系统：通用 SEO 水系模型 v8（14 个构件 · 5 层水表 · 6 道放水闸门）"
+            : "The SEO System: Water System Model v8 (14 Components · 5-Layer Meters · 6 Release Gates)"}
         </p>
         <span className="text-xs px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 font-medium">
-          {isZh ? "v4 (07-24) → v9 (11-20 最新版)" : "v4 (Jul) → v9 (Nov 20, 2026 Latest)"}
+          {isZh ? "v8 已验证 · v9 待验证" : "v8 tested · v9 pending"}
         </span>
       </div>
       <p className="text-sm text-gray-600 leading-relaxed mb-3">{w.lead[l]}</p>
 
-      {/* 14 个构件全表（按水流顺序：Ⓠ → ①a/①b/①c → ② → ⓪ → ③ → ④ → ⑤ → ⑥ → ⑦ → ⑩ → ⑧ → ⑨） */}
+      {/* 流向图：按水流分 5 段，点编号跳到下面的构件卡片 */}
+      <div className="mb-3 rounded-xl border border-sky-200 bg-sky-50/60 p-3">
+        <ol className="grid gap-4 md:grid-cols-5 md:gap-3">
+          {w.flow.map((f, i) => (
+            <li key={f.stage.en} className="relative rounded-lg border border-sky-100 bg-white p-2.5">
+              <p className="text-[11px] font-semibold uppercase tracking-wide text-sky-700 mb-1.5">{f.stage[l]}</p>
+              <ul className="space-y-1">
+                {f.ids.map((id) => (
+                  <li key={id}>
+                    <a href={`#water-${id}`} className="flex items-start gap-1.5 text-xs text-gray-800 hover:text-blue-600">
+                      <span className={badge}>{id}</span>
+                      <span className="leading-snug">{byId.get(id)?.name[l]}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              {i < w.flow.length - 1 && (
+                <span aria-hidden className="absolute text-sky-400 font-bold left-1/2 -translate-x-1/2 -bottom-4 md:left-auto md:translate-x-0 md:-right-3 md:bottom-auto md:top-1/2 md:-translate-y-1/2">
+                  <span className="md:hidden">↓</span>
+                  <span className="hidden md:inline">→</span>
+                </span>
+              )}
+            </li>
+          ))}
+        </ol>
+        <p className="mt-2.5 text-xs text-sky-900 leading-relaxed">↺ {w.flowLoop[l]}</p>
+      </div>
+
+      {/* 14 个构件，按水流顺序 1–14 */}
       <div className="grid gap-2 sm:grid-cols-2 mb-3">
         {w.components.map((c) => (
-          <div key={c.id} className="rounded-xl border border-gray-200 bg-gray-50/80 p-3 text-xs leading-relaxed">
+          <div key={c.id} id={`water-${c.id}`} className="scroll-mt-24 rounded-xl border border-gray-200 bg-gray-50/80 p-3 text-xs leading-relaxed">
             <div className="flex flex-wrap items-center justify-between gap-1.5 mb-1">
               <p className="font-semibold text-gray-900">
-                <span className="inline-flex items-center justify-center px-1.5 py-0.5 rounded bg-blue-600 text-white font-mono text-[11px] mr-1.5">
-                  {c.id}
-                </span>
+                <span className={`${badge} mr-1.5`}>{c.id}</span>
                 {c.name[l]}
               </p>
               <span className="text-[11px] px-1.5 py-0.5 rounded bg-white border border-gray-200 text-gray-500 font-mono">
@@ -713,7 +742,7 @@ function SeoSystem({ l, isZh }: { l: "zh" | "en"; isZh: boolean }) {
         ))}
       </div>
 
-      {/* v8 新增六道放水闸门 + Jason 的 6 条排名理论 */}
+      {/* v8 的六道放水闸门 + Jason 的 6 条排名理论 */}
       <div className="grid gap-3 md:grid-cols-2">
         <div className="rounded-xl border border-amber-200 bg-amber-50/50 p-3 text-xs leading-relaxed">
           <p className="font-semibold text-gray-900 mb-1.5">
@@ -741,24 +770,28 @@ function SeoSystem({ l, isZh }: { l: "zh" | "en"; isZh: boolean }) {
         </div>
       </div>
 
-      {/* v9 新增：JOKER 降低机器 6 种不确定性与海外 6 本前沿经典 4 大增量定理 */}
-      <div className="mt-3 rounded-xl border border-indigo-200 bg-indigo-50/40 p-3 text-xs leading-relaxed">
-        <div className="flex flex-wrap items-center justify-between gap-1.5 mb-1">
-          <p className="font-semibold text-gray-900">
-            {isZh
-              ? `🧠 v9 增量（${w.v9Evolution.date}）：JOKER「降低机器 6 种不确定性」与海外 6 本经典 4 大定理`
-              : `🧠 v9 Evolution (${w.v9Evolution.date}): JOKER's 6 Uncertainty Reductions & 4 Frontier Book Theorems`}
-          </p>
-          <span className="font-mono text-[11px] px-2 py-0.5 rounded bg-white border border-indigo-200 text-indigo-700">
-            {w.v9Evolution.formula}
-          </span>
-        </div>
-        <ul className="space-y-1 text-gray-700 list-disc pl-4 mt-1.5">
-          {w.v9Evolution[l].map((item) => (
-            <li key={item}>{item}</li>
+      {/* 待验证：v9 候选，转正标准写在 rule 里 */}
+      <div className="mt-3 rounded-xl border border-dashed border-gray-300 bg-white p-3 text-xs leading-relaxed">
+        <p className="font-semibold text-gray-900 mb-1">
+          {isZh ? `🧪 待验证（v9 候选，${w.pending.date} 降级）` : `🧪 Pending (v9 candidates, moved here on ${w.pending.date})`}
+        </p>
+        <p className="text-gray-600 mb-2">{w.pending.rule[l]}</p>
+        <ul className="space-y-1.5">
+          {w.pending.items.map((item) => (
+            <li key={item.en} className="flex items-start gap-1.5 text-gray-700">
+              <span className={`${badgeBase} bg-gray-400 shrink-0`}>{item.id}</span>
+              <span className="flex-1">{item[l]}</span>
+              <span className="shrink-0 text-[11px] px-1.5 py-0.5 rounded bg-gray-100 text-gray-600">{item.status[l]}</span>
+            </li>
           ))}
         </ul>
+        <p className="mt-2 text-gray-500">{w.pending.removed[l]}</p>
       </div>
+
+      <p className="mt-3 text-[11px] text-gray-500 leading-relaxed">
+        {isZh ? "旧编号对照（2026-11-21 起按水流顺序编号）：" : "Old numbers (renumbered in flow order on Nov 21, 2026): "}
+        {w.renumber.map(([n, o]) => `${n} = ${o}`).join(isZh ? "，" : ", ")}
+      </p>
 
       <FromMyPost post={MY_POSTS.seoSystem} lang={l} />
     </div>

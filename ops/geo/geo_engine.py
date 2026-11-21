@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-GEO Closed-Loop Engine v9.0 (Water System Model v9 · L1 -> L2 -> L3 -> L4 -> L5 · 18 Subcommands)
+GEO Closed-Loop Engine v9.0 (L1 -> L2 -> L3 -> L4 -> L5 · 18 Subcommands; the water-system model itself is v8, its v9 rules are pending)
 
 Modules:
   1. [L1 Crawl & Pretrain]    Common Crawl CDX API + 16-Planted-Bug Guards (`audit-16-guards`, `check-gigalinks-index`)
