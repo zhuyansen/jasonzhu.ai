@@ -15,6 +15,7 @@ import CaseMedia from "../../chatgpt-images-2-6/CaseMedia";
 
 const SITE_URL = "https://jasonzhu.ai";
 const PATH = ANIMATION_LIBRARY_PATH.slice(1);
+const CANONICAL_PATH = "prompts/claude-opus-5-5";
 const full = fullData as Record<string, { prompt: string; summary: { zh: string; en: string } | null }>;
 
 // 只有带提示词的作品有详情页（没有提示词的卡片直接链到原帖，不产生 noindex 页面）；未知 id 404
@@ -48,9 +49,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     title,
     description,
     referrer: "no-referrer",
+    // Same work, same prompt as the Claude 5.5 library's page for it: that page is the canonical
+    // one, so the two libraries do not compete with duplicate pages. This library's list page is
+    // what ranks for "Claude animation prompts"; its detail pages stay out of the sitemap.
     alternates: {
-      canonical: `${SITE_URL}/${lang}/${PATH}/${id}`,
-      languages: { zh: `${SITE_URL}/zh/${PATH}/${id}`, en: `${SITE_URL}/en/${PATH}/${id}`, "x-default": `${SITE_URL}/zh/${PATH}/${id}` },
+      canonical: `${SITE_URL}/${lang}/${CANONICAL_PATH}/${id}`,
+      languages: { zh: `${SITE_URL}/zh/${CANONICAL_PATH}/${id}`, en: `${SITE_URL}/en/${CANONICAL_PATH}/${id}`, "x-default": `${SITE_URL}/zh/${CANONICAL_PATH}/${id}` },
     },
     openGraph: { type: "article", title, description, url: `${SITE_URL}/${lang}/${PATH}/${id}`, images: image ? [{ url: image }] : undefined },
   }, rawLang);

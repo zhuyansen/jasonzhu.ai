@@ -4,7 +4,6 @@ import { getAllDigests, isDigestIndexable } from "@/lib/news";
 import { getOpusLibrary } from "@/lib/opus-prompts";
 import { getImageLibrary } from "@/lib/image-prompts";
 import { getGeminiLibrary } from "@/lib/gemini-prompts";
-import { getAnimationLibrary } from "@/lib/animation-prompts";
 import { GUIDES } from "@/lib/go-global-guides";
 
 const SITE_URL = "https://jasonzhu.ai";
@@ -155,18 +154,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  // Claude 动画提示词库详情页：同 Gemini 4 库，只有带提示词的作品有详情页
-  const animation = getAnimationLibrary();
-  for (const c of animation.cases.filter((x) => x.prompt)) {
-    for (const lang of LANGS) {
-      entries.push({
-        url: `${SITE_URL}/${lang}/prompts/claude-animation/${c.id}`,
-        lastModified: new Date(c.addedAt || animation.updatedAt || Date.now()),
-        changeFrequency: "monthly",
-        priority: 0.6,
-      });
-    }
-  }
+  // Claude 动画提示词库的详情页不进 sitemap：canonical 指向 Claude 5.5 库的同一作品页（2026-11-21），
+  // 只有列表页（上面 STATIC_PATHS 里的 /prompts/claude-animation）参与收录。
 
   return entries;
 }
