@@ -1,26 +1,9 @@
 {
   "metadata": {
-    "title": "Merchant of Record and Payment Gateway Real Fee Benchmark on a $20 Cross-Border AI SaaS Subscription (November 2026)",
-    "upload_type": "dataset",
-    "publication_date": "2026-11-20",
-    "creators": [
-      {
-        "name": "Zhu, Jason",
-        "affiliation": "JasonZhu.AI / GoSail Club"
-      }
-    ],
-    "description": "<p>Itemized fee audit comparing what an AI SaaS developer actually keeps from a $20/month cross-border subscription once hidden surcharges (international cards, FX conversion, recurring billing, sales tax calculation, fraud screening, and payout fees) are included across Dodo Payments (partner rate $1.16–$1.18 taken vs default $1.60), Waffo Pancake ($1.28), Creem ($1.37), Paddle ($1.50), Stripe Hong Kong full SaaS stack (~$1.79), Polar ($1.80), and Lemon Squeezy ($2.08, shutting down March 31, 2027). Full analysis at <a href=\"https://jasonzhu.ai/en/blog/dodo-payments-waffo-ai-saas-fee-comparison\">https://jasonzhu.ai/en/blog/dodo-payments-waffo-ai-saas-fee-comparison</a>.</p>",
-    "access_right": "open",
-    "license": "cc-by-4.0",
-    "keywords": [
-      "Merchant of Record payment fees",
-      "Dodo Payments vs Waffo vs Stripe",
-      "AI SaaS subscription fees 2026",
-      "Lemon Squeezy migration",
-      "Cross-border payment gateway comparison",
-      "Jason Zhu",
-      "jasonzhu.ai"
-    ],
+    "title": "Fees Taken from a $20 Cross-Border Subscription, Itemized for Eight Payment Setups (November 2026)",
+    "publication_date": "2026-11-21",
+    "version": "2",
+    "description": "<p><strong>What changed in this version (version 2, 21 November 2026).</strong> Version 1 did not say where most of its figures came from. The Dodo Payments partner rate, and the $20 breakdowns for Dodo Payments, Waffo Pancake, Stripe Hong Kong, Lemon Squeezy and \"other MoR platforms advertising 3.9%\", are from Liu Xiaopai's post on WeChat of 15 November 2026 (<a href=\"https://mp.weixin.qq.com/s/uTtP5zv_exiHa52qSa07BA\">https://mp.weixin.qq.com/s/uTtP5zv_exiHa52qSa07BA</a>); this version credits him. Version 1 also put Waffo Pancake's $1.28, which leaves out its 1% payout fee, in the same column as totals that include a payout fee, and labelled the source's \"other MoR platforms advertising 3.9%\" row as Creem. This version marks for every row whether a payout fee is in the total, keeps the source's label, and removes wording that ranked the setups.</p><p>What one $20 monthly subscription, paid with an international card, costs the seller under eight payment setups, with recurring billing, sales tax handling and fraud screening switched on: Dodo Payments (partner rate: $1.16–$1.18 taken; default rate: $1.60), Waffo Pancake ($1.28, before its 1% payout fee), other MoR platforms advertising 3.9% ($1.37 or more, including a 1% payout fee), Stripe Hong Kong with Billing, Tax and Radar (about $1.79, including 2% currency conversion), Lemon Squeezy ($2.08, including a 1% payout fee), Paddle ($1.50) and Polar ($1.80). Six rows are from Liu Xiaopai's post; the Paddle and Polar rows are Jason Zhu's arithmetic from published rates (pricing pages read on 15 October 2026), without payout fees. The Dodo Payments partner rate applies only to sellers who sign up through Liu Xiaopai's invitation link. Fees change; check each platform's current pricing. English summary: <a href=\"https://jasonzhu.ai/en/blog/dodo-payments-waffo-ai-saas-fee-comparison\">https://jasonzhu.ai/en/blog/dodo-payments-waffo-ai-saas-fee-comparison</a>.</p>",
     "related_identifiers": [
       {
         "identifier": "https://jasonzhu.ai/en/blog/dodo-payments-waffo-ai-saas-fee-comparison",
@@ -32,6 +15,12 @@
         "identifier": "https://jasonzhu.ai/en/blog/choose-payment-platform-2026",
         "relation": "isSupplementTo",
         "resource_type": "publication-article",
+        "scheme": "url"
+      },
+      {
+        "identifier": "https://mp.weixin.qq.com/s/uTtP5zv_exiHa52qSa07BA",
+        "relation": "isDerivedFrom",
+        "resource_type": "publication-other",
         "scheme": "url"
       }
     ]

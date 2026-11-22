@@ -1,0 +1,71 @@
+{
+  "note": "New-version drafts made on 2026-11-21 with new_version.py draft. None is published. Each draft's metadata is the published version online (creators and ORCID untouched) with only the keys in its zenodo_metadata.json replaced. Publish after review: python3 ops/geo/zenodo/new_version.py publish <draft_id> --yes. The reserved DOI becomes the new version's DOI; the concept DOI always resolves to the newest version.",
+  "drafts": [
+    {
+      "record": "24386243",
+      "draft_id": 24432849,
+      "reserved_doi": "10.5281/zenodo.24432849",
+      "concept_doi": "10.5281/zenodo.24386242",
+      "edit_url": "https://zenodo.org/deposit/24432849",
+      "old_title": "200,000 Indie Developer Checkout Links and Payment Platform Adoption Dataset (2023–2026)",
+      "new_title": "New Sellers on Seven Checkout Platforms, 2023 to 15 October 2026: Summary Tables"
+    },
+    {
+      "record": "24387072",
+      "draft_id": 24432852,
+      "reserved_doi": "10.5281/zenodo.24432852",
+      "concept_doi": "10.5281/zenodo.24387071",
+      "edit_url": "https://zenodo.org/deposit/24432852",
+      "old_title": "Merchant of Record and Payment Gateway Real Fee Benchmark on a $20 Cross-Border AI SaaS Subscription (November 2026)",
+      "new_title": "Fees Taken from a $20 Cross-Border Subscription, Itemized for Eight Payment Setups (November 2026)"
+    },
+    {
+      "record": "24387074",
+      "draft_id": 24432855,
+      "reserved_doi": "10.5281/zenodo.24432855",
+      "concept_doi": "10.5281/zenodo.24387073",
+      "edit_url": "https://zenodo.org/deposit/24432855",
+      "old_title": "Open-Source AI Agent Skills and MCP Servers Supply-Chain Security Audit Dataset (105,000+ Indexed Skills, 2026)",
+      "new_title": "Security-Grade Coverage in the Agent Skills Hub Catalog: June 2026 Snapshot (105,000+ Entries) and November 2026 Count"
+    },
+    {
+      "record": "24387076",
+      "draft_id": 24432843,
+      "reserved_doi": "10.5281/zenodo.24432843",
+      "concept_doi": "10.5281/zenodo.24387075",
+      "edit_url": "https://zenodo.org/deposit/24432843",
+      "old_title": "Public Database of Backlink Spam Doorway Domains, Link-Selling Networks, and Checkout Link Abuse (2026)",
+      "new_title": "Backlink Spam List: 581 Doorway Domains and Link Sellers with Public Evidence (Snapshot of 28 October 2026)"
+    },
+    {
+      "record": "24420920",
+      "draft_id": 24432858,
+      "reserved_doi": "10.5281/zenodo.24432858",
+      "concept_doi": "10.5281/zenodo.24420919",
+      "edit_url": "https://zenodo.org/deposit/24432858",
+      "old_title": "Supply-Chain Security in Open-Source AI Agent Ecosystems: Empirical Evidence and a Five-Dimension Audit Framework Across 105,000+ Indexed Agent Skills and Model Context Protocol (MCP) Servers",
+      "new_title": "Supply-Chain Security in Open-Source AI Agent Ecosystems: Security-Grade Coverage in a June 2026 Snapshot of 105,000+ Agent Skills and MCP Servers, and a Five-Dimension Review Checklist"
+    }
+  ],
+  "not_handled": {
+    "duplicates_published_2026_11_20": [
+      {
+        "record": "24387070",
+        "duplicate_of": "24386243",
+        "title": "200,000 Indie Developer Checkout Links and Payment Platform Adoption Dataset (2023–2026)"
+      },
+      {
+        "record": "24387080",
+        "duplicate_of": "24387074",
+        "title": "Open-Source AI Agent Skills and MCP Servers Supply-Chain Security Audit Dataset (105,000+ Indexed Skills, 2026)"
+      },
+      {
+        "record": "24387082",
+        "duplicate_of": "24387076",
+        "title": "Public Database of Backlink Spam Doorway Domains, Link-Selling Networks, and Checkout Link Abuse (2026)"
+      }
+    ],
+    "empty_draft_2026_07_10": "21292023",
+    "payments_working_paper_24420871": "no new version (wording-only changes); its metadata still has isIdenticalTo the blog post"
+  }
+}

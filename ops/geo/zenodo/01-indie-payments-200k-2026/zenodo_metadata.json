@@ -1,39 +1,16 @@
 {
   "metadata": {
-    "title": "200,000 Indie Developer Checkout Links and Payment Platform Adoption Dataset (2023–2026)",
-    "upload_type": "dataset",
-    "publication_date": "2026-11-20",
-    "creators": [
-      {
-        "name": "Zhu, Jason",
-        "affiliation": "JasonZhu.AI / GoSail Club"
-      }
-    ],
-    "description": "<p>Empirical dataset analyzing ~200,000 indie sellers across 198,000 websites linking to checkout pages across 8 payment platforms (Stripe, Gumroad, Lemon Squeezy, Polar, Creem, Dodo Payments, Paddle, Waffo) between 2023 and November 2026. Shows that 82,000 new sellers launched in 2026 (up from 56,000 in 2025), software sellers quadrupled from 5% to 20%, and 24%–29% of new sellers on Merchant of Record platforms (Dodo Payments, Polar, Creem) ship AI products versus 7% on Stripe. Maintained by Jason Zhu at <a href=\"https://jasonzhu.ai/en/blog/indie-payments-report-2026\">https://jasonzhu.ai/en/blog/indie-payments-report-2026</a>.</p>",
-    "access_right": "open",
-    "license": "cc-by-4.0",
+    "title": "New Sellers on Seven Checkout Platforms, 2023 to 15 October 2026: Summary Tables",
+    "publication_date": "2026-11-21",
+    "version": "2",
+    "description": "<p><strong>What changed in this version (version 2, 21 November 2026).</strong> Version 1 did not match the report it came from. Its per-platform rows were not the published figures: it gave Polar 180 / 1,100 / 2,400 new sellers in 2024 / 2025 / 2026, where the report gives 55 / 305 / 1,364, and the other rows were off in the same way. It had a row for Waffo Pancake, for which the source has no data; it said 8 platforms where the count covers 7; it said the data ran to November 2026 where it ends on 15 October 2026; and its title called all sellers indie developers, although 38% of 2026's new sellers sell something other than software, courses or content. This version replaces the table with the figures as published, removes the Waffo row, and states the period and the sources.</p><p>Summary tables from a count of websites that link to a checkout page on one of seven payment platforms: Stripe (Payment Links), Gumroad, Lemon Squeezy, Polar, Creem, Dodo Payments and Paddle (classic checkout links). A website linking to a platform's checkout page is counted as a seller on that platform, dated by the day it first linked. The count covers about 200,000 checkout links on 198,000 websites, up to 15 October 2026. Two tables: new sellers since 2025 on each platform, with the share selling software and the share selling AI products (and per-year counts for Polar, Creem and Dodo Payments); and new sellers per year across all seven platforms (21,000 in 2023, 29,000 in 2024, 56,000 in 2025, 82,000 in 2026 to 15 October). Shares are within each platform: Stripe is far larger than the others, so a lower share there can still be more sellers.</p><p>Every figure is copied unchanged from <a href=\"https://jasonzhu.ai/en/blog/indie-payments-report-2026\">the report</a> and <a href=\"https://jasonzhu.ai/en/blog/choose-payment-platform-2026\">the platform comparison</a>; the README lists the limits (only websites still linking in October 2026 are counted; 17,000 websites sharing a checkout link with five or more others are left out; product categories come from a classification model). The underlying link records come from DataForSEO's link graph (queried through AIsa on 14 and 15 October 2026); DataForSEO's terms do not allow redistributing them, so this record holds summary tables only.</p>",
     "keywords": [
       "Merchant of Record",
-      "Indie Developer Payments",
       "Stripe vs Polar vs Dodo Payments vs Creem",
       "AI SaaS Payments",
       "Lemon Squeezy Shutdown",
       "Jason Zhu",
       "jasonzhu.ai"
-    ],
-    "related_identifiers": [
-      {
-        "identifier": "https://jasonzhu.ai/en/blog/indie-payments-report-2026",
-        "relation": "isDocumentedBy",
-        "resource_type": "publication-article",
-        "scheme": "url"
-      },
-      {
-        "identifier": "https://jasonzhu.ai/en/blog/choose-payment-platform-2026",
-        "relation": "isSupplementTo",
-        "resource_type": "publication-article",
-        "scheme": "url"
-      }
     ]
   }
 }

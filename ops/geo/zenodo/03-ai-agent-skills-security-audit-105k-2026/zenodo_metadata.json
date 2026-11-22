@@ -1,38 +1,8 @@
 {
   "metadata": {
-    "title": "Open-Source AI Agent Skills and MCP Servers Supply-Chain Security Audit Dataset (105,000+ Indexed Skills, 2026)",
-    "upload_type": "dataset",
-    "publication_date": "2026-11-20",
-    "creators": [
-      {
-        "name": "Zhu, Jason",
-        "affiliation": "JasonZhu.AI / AgentSkillsHub"
-      }
-    ],
-    "description": "<p>Supply-chain security audit dataset covering 105,000+ open-source AI agent skills, Model Context Protocol (MCP) servers, and Codex skills, plus deep 5-dimension security reviews of 2,300+ repositories. Finds that 97.8% of open-source agent skills have never been security-audited, and 5.6% of audited skills trigger warnings or rejections for credential harvesting or unsafe command execution. Documented at <a href=\"https://jasonzhu.ai/en/blog/agent-skill-security-audit-200\">https://jasonzhu.ai/en/blog/agent-skill-security-audit-200</a> and <a href=\"https://agentskillshub.top\">https://agentskillshub.top</a>.</p>",
-    "access_right": "open",
-    "license": "cc-by-4.0",
-    "keywords": [
-      "AI Agent Skills Security",
-      "Model Context Protocol MCP Security",
-      "Claude Skills Audit",
-      "AgentSkillsHub",
-      "Jason Zhu",
-      "jasonzhu.ai"
-    ],
-    "related_identifiers": [
-      {
-        "identifier": "https://jasonzhu.ai/en/blog/agent-skill-security-audit-200",
-        "relation": "isDocumentedBy",
-        "resource_type": "publication-article",
-        "scheme": "url"
-      },
-      {
-        "identifier": "https://agentskillshub.top",
-        "relation": "isSupplementTo",
-        "resource_type": "software",
-        "scheme": "url"
-      }
-    ]
+    "title": "Security-Grade Coverage in the Agent Skills Hub Catalog: June 2026 Snapshot (105,000+ Entries) and November 2026 Count",
+    "publication_date": "2026-11-21",
+    "version": "2",
+    "description": "<p><strong>What changed in this version (version 2, 21 November 2026).</strong> Version 1 gave \"105,000+ indexed skills\" and \"97.8% never security-audited\" without a date. They describe the Agent Skills Hub catalog around 10 June 2026, when the original post was written; this version dates them and adds the catalog count of 21 November 2026 as a separate row. Version 1 also called the 2,300+ graded entries a \"5-dimension supply-chain audit\"; they were the entries that had a security grade in the catalog at the time, and the five dimensions are a checklist the author used to review 200+ repositories by hand, which this record does not cover. Version 1's counts per group (102,690 / 2,171 / 129) had been worked back from rounded percentages and are removed.</p><p>Agent Skills Hub (agentskillshub.top) indexes open-source AI agent skills, MCP servers and Codex skills from GitHub and gives some of them a security grade (safe, caution, unsafe, reject). Around 10 June 2026 the catalog held 105,000+ entries; 97.8% had no security grade, 2.1% were graded safe and 0.1% caution, unsafe or reject. Of the 2,300+ graded entries, 94% were safe and about 5.6% caution, unsafe or reject. These figures were read from the catalog database for <a href=\"https://jasonzhu.ai/en/blog/agent-skill-security-audit-200\">a post dated 10 June 2026</a>; the exact time was not recorded.</p><p>On 21 November 2026 the catalog listed 281,000+ entries, 142,000+ of them with a rule-based security grade (<a href=\"https://agentskillshub.top/llms.txt\">agentskillshub.top/llms.txt</a>). The share of graded entries rose because the Hub extended its grading, so the two dates are not a trend in the ecosystem. Per-entry grades for 130,173 entries (6 July 2026) are in a separate dataset, <a href=\"https://doi.org/10.5281/zenodo.21292799\">10.5281/zenodo.21292799</a>. The author founded Agent Skills Hub.</p>"
   }
 }

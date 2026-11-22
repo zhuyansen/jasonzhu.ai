@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "title": "Supply-Chain Security in Open-Source AI Agent Ecosystems: Security-Grade Coverage in a June 2026 Snapshot of 105,000+ Agent Skills and MCP Servers, and a Five-Dimension Review Checklist",
+    "publication_date": "2026-11-21",
+    "version": "1.1",
+    "description": "<p><strong>What changed in this version (version 1.1, 21 November 2026).</strong> Version 1.0 gave the 105,000-entry catalog and its 97.8% ungraded share without a date; they date from around 10 June 2026, and the catalog count of 21 November 2026 (281,000+ entries, 142,000+ with a rule-based grade) now stands beside them. Version 1.0 also listed counts per grade group (102,690 / 2,171 / 129) that had been worked back from rounded percentages, described the 2,300+ graded entries as a five-dimension audit, described the November 2026 count of graded entries (138,000+) as the number indexed, and named a recurring pattern (typosquatted forks) that no data supports. These are corrected or removed, and the findings from the July 2026 snapshot now cite its dataset card. The title says which snapshot the figures describe.</p><p>Autonomous coding agents such as Claude Code, OpenAI Codex and Cursor increasingly rely on community-authored skills and Model Context Protocol (MCP) servers installed directly from GitHub. They run with the host agent's filesystem permissions, shell access and API credentials, yet public marketplaces rank them mostly by GitHub stars. Using the Agent Skills Hub catalog (agentskillshub.top), which the author founded, we report how much of this ecosystem carried any security grade. In a snapshot taken around 10 June 2026 the catalog held 105,000+ entries and 97.8% of them had no security grade; of the 2,300+ entries that had one, 94% were graded safe and about 5.6% caution, unsafe or reject. Coverage has grown since: on 21 November 2026 the catalog listed 281,000+ entries, 142,000+ of them with a rule-based grade, so the June share describes that snapshot only. In a separate snapshot of 6 July 2026 (130,173 entries; DOI 10.5281/zenodo.21292799), the 21,582 repositories with at least 5 GitHub stars were graded by static rules: 3.3% (about 1 in 30) received an UNSAFE or REJECT grade, and that rate was 3.8% for repositories with 5–20 stars against 0.4% for those with 1,000+ stars. We also set out the five-dimension checklist (code layer, credential handling, vendor provenance, dependency supply chain, operational risk) that the author used to review 200+ repositories by hand, and three case studies from that review showing why GitHub stars are a weak proxy for both security and engineering quality.</p>",
+    "related_identifiers": [
+      {
+        "identifier": "10.5281/zenodo.24387073",
+        "relation": "isSupplementedBy",
+        "resource_type": "dataset",
+        "scheme": "doi"
+      },
+      {
+        "identifier": "10.5281/zenodo.21292799",
+        "relation": "isSupplementedBy",
+        "resource_type": "dataset",
+        "scheme": "doi"
+      },
+      {
+        "identifier": "https://jasonzhu.ai/en/blog/agent-skill-security-audit-200",
+        "relation": "references",
+        "resource_type": "publication-article",
+        "scheme": "url"
+      }
+    ]
+  }
+}

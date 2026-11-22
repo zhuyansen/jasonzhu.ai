@@ -1,29 +1,19 @@
 {
   "metadata": {
-    "title": "Public Database of Backlink Spam Doorway Domains, Link-Selling Networks, and Checkout Link Abuse (2026)",
-    "upload_type": "dataset",
-    "publication_date": "2026-11-20",
-    "creators": [
-      {
-        "name": "Zhu, Jason",
-        "affiliation": "JasonZhu.AI / GoSail Club"
-      }
-    ],
-    "description": "<p>Empirical classification of backlink spam doorway domains, link-selling networks, and checkout-link abuse (17,000+ websites carrying shared checkout links across 5+ domains) compiled by Jason Zhu. Live interactive blacklist and detection rules available at <a href=\"https://jasonzhu.ai/en/backlink-spam-list\">https://jasonzhu.ai/en/backlink-spam-list</a>.</p>",
-    "access_right": "open",
-    "license": "cc-by-4.0",
-    "keywords": [
-      "Backlink Spam Database",
-      "Doorway Domains",
-      "Link Selling Networks",
-      "SEO Spam Detection",
-      "Jason Zhu",
-      "jasonzhu.ai"
-    ],
+    "title": "Backlink Spam List: 581 Doorway Domains and Link Sellers with Public Evidence (Snapshot of 28 October 2026)",
+    "publication_date": "2026-11-21",
+    "version": "2",
+    "description": "<p><strong>What changed in this version (version 2, 21 November 2026).</strong> Version 1 was titled as a database of domains but held no domains: its only file described three \"patterns\". One counted 17,000+ websites carrying a shared checkout link as abuse, although that group also includes popular products linked from many sites; the other two (\"expired domain doorway farm\" and \"hacked CMS checkout injection\") had no source in the underlying work. This version replaces that file with the list itself.</p><p>581 domains that make or sell backlink spam, each with evidence anyone can check (a title shared with other listed sites, a redirect to the same storefront, a shared checkout link): 564 domains run as link networks (562 of them in 12 named networks) and 17 link sellers (9 of them the storefronts of those networks). A tool's spam score is not evidence on its own. The file is the list as published on 28 October 2026 at <a href=\"https://jasonzhu.ai/en/backlink-spam-list\">jasonzhu.ai/en/backlink-spam-list</a> and <a href=\"https://github.com/zhuyansen/backlink-spam-list\">github.com/zhuyansen/backlink-spam-list</a> (list.csv at commit d60e53a), byte for byte; the live list can change, since anyone can report a site or dispute an entry there. The networks came to light while counting checkout links for <a href=\"https://jasonzhu.ai/en/blog/indie-payments-report-2026\">a report on payment platforms</a>.</p>",
     "related_identifiers": [
       {
         "identifier": "https://jasonzhu.ai/en/backlink-spam-list",
         "relation": "isDocumentedBy",
+        "resource_type": "dataset",
+        "scheme": "url"
+      },
+      {
+        "identifier": "https://github.com/zhuyansen/backlink-spam-list",
+        "relation": "isDerivedFrom",
         "resource_type": "dataset",
         "scheme": "url"
       }
