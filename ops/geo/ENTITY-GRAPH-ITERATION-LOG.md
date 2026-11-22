@@ -1,6 +1,6 @@
 # 实体图谱迭代记录
 
-方法论和资产清单在 [`ENTITY-GRAPH-INFILTRATION-PLAYBOOK.md`](ENTITY-GRAPH-INFILTRATION-PLAYBOOK.md)。这里记每一轮**发现了什么、改了什么、谁来做、什么时候复查**，最新的在上面。
+方法论和资产清单在 [`entity-consistency-sop.md`](entity-consistency-sop.md)（2026-11-21 由 ENTITY-GRAPH-INFILTRATION-PLAYBOOK.md 改名）。这里记每一轮**发现了什么、改了什么、谁来做、什么时候复查**，最新的在上面。
 
 **怎么查现状：** agent-skills-hub 仓库的 `python3 ops/geo/entity_audit.py --mode molecule --no-save`，一共 8 项。第 7 项查各处事实是否一致，第 8 项查学术索引。第 7、8 项每天也会跑一遍，结果进 ASH 的「数据四件套日报」邮件，有问题时邮件标题会提示。
 
@@ -15,11 +15,56 @@
 | 安全论文 DOI `10.5281/zenodo.24420920`（及上级 concept DOI `24420919`）没登记到 doi.org | Claude 复查，必要时你提工单 | 2026-11-23 22:37（北京时间，发布满 48 小时）；日报第 8 项过了宽限期会报出来 | ⏳ 等登记 |
 | OpenAlex：130K 数据集挂在两个别人名下，你的其余作品拆在两个作者页上 | 你登录 openalex.org | 约 2026-11-24：DataCite 11-22 已改对，等 OpenAlex 刷新（约两天）后再做 | ⏳ 等刷新 |
 | ORCID 加任职 | Claude 在你的 Chrome 里填写，你确认后保存 | 2026-11-22 | ✅ GoSailGlobal LLC · Sheridan, Wyoming, US · BRICKAI / Agent Skills Hub · Founder；开始日期没填；ORCID 公开接口已能查到 |
-| Wikidata：第一批（建人物条目） | 你先注册 Wikidata 账号，再提交 | 随时 | ⬜ 现有两个条目是用临时账号 `~2026-55148-80` 建的（未登录编辑），QuickStatements 只能用正式账号登录 |
-| Wikidata：第二批（6 个作品条目 + 连上 ASH 和 130K 数据集） | 第一批建好后把新 QID 告诉 Claude，或自己跑脚本 | 第一批之后 | ⬜ |
+| Wikidata：第一批（建人物条目） | 你 | **暂缓**：Zenodo 数据纠正发布完，并且有 2–3 个独立来源报道之后再说（Jason 2026-11-22 定） | ⏸ 暂缓。现有两个条目是用临时账号 `~2026-55148-80` 建的；批次文件 `ops/geo/wikidata/2026-11-22-batch1-person.txt` 留着不用 |
+| Wikidata：第二批（6 个作品条目 + 连上 ASH 和 130K 数据集） | 你 | 同上，第一批之后 | ⏸ 暂缓 |
 | 学术外联三封 | 邮件由 Claude 在 Gmail 写信页填好、你点发送；LinkedIn 那条你自己发 | 2026-11-22 | 🟡 两封邮件已发（SkillProbe 一作、NVIDIA 一作），LinkedIn 待发；回复记在本地草稿文件末尾 |
 | 两个 npm 包发布（cli 0.5.1、mcp 0.3.1，修过期数字） | Claude 用你给的 npm token 发布 | 2026-11-22 | ✅ 已上线（npm 先返回 202，处理几分钟后才可见）。用过的两个 token 到 npm 设置里删掉或等 7 天过期 |
 | Zenodo 7 条记录的单位写法不统一 | 不急 | 有空时 | 记下，没改 |
+| Zenodo 纠错新版本：01/02/03/04 四份数据集、两篇工作论文、3 份 11-20 重复记录（24387070、24387080、24387082） | Claude（数据纠错子代理） | 2026-11-22 | 🟡 进行中：草稿已核，Jason 同意发布；发布后站上 DOI 换成 concept DOI |
+| SSRN 两篇论文上传改版 PDF | Claude 在你的 Chrome 里上传，你登录 | Zenodo 新版本发布后 | ⬜ 改版说明在 `ops/geo/papers/SSRN-revision-notes-2026-11-21.md` |
+| 个人档案回链 jasonzhu.ai：Hugging Face、Kaggle、YouTube、B 站没有；X 的 website 字段是 gosaillab.com | 你登录各平台改 | 随时 | ⬜ 清单见下面 2026-11-22 · v2.3 第 4 条 |
+| Google Scholar 个人页设成公开（现在对外 404）；B 站改名、写简介（现在是「香菇的猪」、简介空） | 你 | 随时 | ⬜ 这两条还在 Person 的 sameAs 里 |
+| 每日实体检查 `check-entities.yml` | 自动 | 每天 | ✅ 已上线，手动跑过一次通过（run 44981354838） |
+
+---
+
+## 2026-11-22 · v2.3：关系边拆开，个人站，学术图谱暂停加新东西
+
+### 起因
+
+v2.2 第 5 条：Person 的 sameAs 里混着作品、另一个网站，Organization 复制了同一个列表。另一个会话（「出海基本功 SEO+GEO」）2026-11-21 抓线上 JSON-LD 复核，确认 v2 文档里「已修复」的说法和线上不符：`src/lib/profiles.ts` 只有一份 `PROFILES`，Person 和 Organization 的 sameAs 都读它。
+
+### Jason 的决定（2026-11-21/22）
+
+1. **个人站，不写公司。** JSON-LD 不再有 jasonzhu.ai 的 Organization 节点，网站的发布者、GoSail Club 的提供者都是 #person。
+2. **关系边现在修。**
+3. **数据纠错提前做；纠正完之前不再往学术图谱（ORCID、Scholar、SSRN、Wikidata、OpenAlex）绑新东西。** 所以 Wikidata 两批暂缓。
+
+### 做了什么
+
+- `08fce2d`、`30d3287`、`fe818b4`、`0c830e3`：`PROFILES` 拆成 `PERSON_PROFILES`（13 个个人档案）、`WORKS`（2 篇论文 ScholarlyArticle、5 份 Dataset、4 个 SoftwareSourceCode）、`RELATED_SITES`（AgentSkillsHub，founder → #person，sameAs 只留 Wikidata Q141986406 和 Crunchbase）；博客文章用 citation 指向数据集，不再把 DOI 当自己的 sameAs；llms.txt 分作者、作品、相关网站三段。
+- 新增 `scripts/check-entities.mjs` 和 `.github/workflows/check-entities.yml`：Person 的 sameAs 只能是个人档案；同一网址不能同时出现在 Person 和别的节点；不再引用 jasonzhu.ai 的 #organization；作品 DOI 和博客、research.ts 对得上。
+- playbook 改名为 `entity-consistency-sop.md`，去掉「渗透、入侵」措辞和私人邮箱，第 3 节照实写，Wikidata 人物条目改为暂缓。
+
+### 怎么验证的
+
+部署后用脚本抓线上 JSON-LD：`/en`、`/zh`、`/en/about` 各 4 个节点，Person 的 sameAs 13 条全是个人档案，没有 worksFor；`/en/blog/indie-payments-report-2026`、`/en/research`、`/en/backlink-spam-list` 的作品节点作者都指向 #person；检查脚本 21 页通过。
+
+### 回链核对（补回链要你登录各平台）
+
+| 档案 | 链回 jasonzhu.ai |
+|---|---|
+| ORCID、GitHub | 有 |
+| X | 部分：website 字段是 gosaillab.com，简介正文写了 jasonzhu.ai |
+| Hugging Face、Kaggle、YouTube、B 站 | 没有 |
+| 抖音、小红书 | 不登录看不到 |
+| SSRN、LinkedIn、Product Hunt | 脚本被拦或要登录，没法确认 |
+
+GitHub 简介里「200k Checkout Links & 105k」两个数要等 Zenodo 纠错发布后跟着改。
+
+### 下次看
+
+Zenodo 新版本发布后当天：站上 DOI 换成 concept DOI，跑 `node scripts/check-entities.mjs`；2026-11-24 和 v2.2 的 OpenAlex 复查一起看。
 
 ---
 
