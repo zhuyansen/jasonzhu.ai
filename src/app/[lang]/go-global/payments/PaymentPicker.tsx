@@ -413,9 +413,13 @@ function Details({ data, lang, who, rows }: { data: GuardData; lang: Lang; who: 
   );
 }
 
+const CHECKABLE = new Set(["stripe", "paddle", "lemonsqueezy", "creem", "dodo", "polar", "waffo"]);
+
 function CheckCta({ lang, rows }: { lang: Lang; rows: PickRow[] }) {
   const t = T[lang];
-  const top = rows.filter((r) => r.platform !== "gumroad").slice(0, 3).map((r) => r.platform).join(",");
+  // 只放 payment-guard check 能查的平台（和 payment_guard/__main__.py 的 REVIEWED 一致），
+  // 否则生成的命令一跑就报 unknown platform（例如大陆个人排在前面的 PayPal）。
+  const top = rows.filter((r) => CHECKABLE.has(r.platform)).slice(0, 3).map((r) => r.platform).join(",");
   const command = `payment-guard check ${lang === "zh" ? "你的域名" : "yoursite.com"} --for ${top || "creem,dodo,waffo"}${lang === "zh" ? " --lang zh" : ""}`;
   return (
     <section className="mb-8 rounded-2xl bg-gray-900 text-gray-100 p-5">

@@ -24,6 +24,11 @@ export const COMMUNITY = {
           url: "https://www.paypal.cn/portal/individual-seller",
         },
         {
+          zh: "paypal.com 用户协议「中国大陆」一节：2026 年 6 月 30 日（或 PayPal 另行通知的更晚日期）之后新开的个人账户，除了收亲友的个人转账，不能再作为卖家收款，商品和服务的货款都不行。大陆个人卖货用上一条的 PayPal.cn 个人卖家账户。",
+          en: "PayPal's user agreement, Mainland China section: personal accounts opened after 30 June 2026 (or a later date PayPal announces) can no longer request or accept payments as a seller, goods and services included; only personal payments from friends and family. Mainland individuals who sell use the PayPal.cn personal seller account above.",
+          url: "https://www.paypal.com/c2/legalhub/paypal/useragreement-full",
+        },
+        {
           zh: "Stripe 香港个人开户要香港身份证号；没有的话，要有香港商业登记号，按独资经营开户，还要香港地址和本人名下的香港银行账户。只有护照和香港银行卡不够。",
           en: "Stripe Hong Kong needs an HKID number for an individual; without one, a Hong Kong Business Registration Number as a sole proprietorship, plus a Hong Kong address and a Hong Kong bank account in your name. A passport and a Hong Kong bank card are not enough.",
           url: "https://support.stripe.com/questions/requirements-for-hong-kong-based-businesses",
