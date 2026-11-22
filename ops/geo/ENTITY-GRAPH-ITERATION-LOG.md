@@ -14,10 +14,10 @@
 |---|---|---|---|
 | 安全论文 DOI `10.5281/zenodo.24420920`（及上级 concept DOI `24420919`）没登记到 doi.org | Claude 复查，必要时你提工单 | 2026-11-23 22:37（北京时间，发布满 48 小时）；日报第 8 项过了宽限期会报出来 | ⏳ 等登记 |
 | OpenAlex：130K 数据集挂在两个别人名下，你的其余作品拆在两个作者页上 | 你登录 openalex.org | 约 2026-11-24：DataCite 11-22 已改对，等 OpenAlex 刷新（约两天）后再做 | ⏳ 等刷新 |
-| ORCID 加任职 | 你登录 orcid.org | 随时 | ⬜ |
+| ORCID 加任职 | Claude 在你的 Chrome 里填写，你确认后保存 | 2026-11-22 | ✅ GoSailGlobal LLC · Sheridan, Wyoming, US · BRICKAI / Agent Skills Hub · Founder；开始日期没填；ORCID 公开接口已能查到 |
 | Wikidata：第一批（建人物条目） | 你先注册 Wikidata 账号，再提交 | 随时 | ⬜ 现有两个条目是用临时账号 `~2026-55148-80` 建的（未登录编辑），QuickStatements 只能用正式账号登录 |
 | Wikidata：第二批（6 个作品条目 + 连上 ASH 和 130K 数据集） | 第一批建好后把新 QID 告诉 Claude，或自己跑脚本 | 第一批之后 | ⬜ |
-| 学术外联三封 | 你发 | 随时 | ⬜ |
+| 学术外联三封 | 邮件由 Claude 在 Gmail 写信页填好、你点发送；LinkedIn 那条你自己发 | 2026-11-22 | 🟡 两封邮件已发（SkillProbe 一作、NVIDIA 一作），LinkedIn 待发；回复记在本地草稿文件末尾 |
 | 两个 npm 包发布（cli 0.5.1、mcp 0.3.1，修过期数字） | Claude 用你给的 npm token 发布 | 2026-11-22 | ✅ 已上线（npm 先返回 202，处理几分钟后才可见）。用过的两个 token 到 npm 设置里删掉或等 7 天过期 |
 | Zenodo 7 条记录的单位写法不统一 | 不急 | 有空时 | 记下，没改 |
 
@@ -68,7 +68,7 @@
 | 4 | Person JSON-LD 只留个人主页；Organization 的 sameAs 只留公司 LinkedIn；ASH 节点补 `founder → #person`；论文页出版方改成 `/#organization` | Claude | `src/lib/profiles.ts` 每条标上 `kind`（profile / work / org），新增 `PERSON_SAME_AS`；llms.txt 仍列出全部 | `npx tsc --noEmit` 通过；Vercel 部署后用 curl 核对了线上 jasonzhu.ai/en：Person sameAs 13 条全是个人主页，Organization 只剩 LinkedIn，ASH 节点带 founder → #person，论文页 publisher → /#organization |
 | 5 | 实体审计第 8 项：学术索引 | Claude | ASH `2e95053`：`ops/geo/academic_index.py`，8 项离线测试；作品清单从 ORCID 读，新论文自动纳入；接进 `entity_audit.py` 和每日日报 | 第一次实跑查出第 1–3 条，同一天第 3 项仍显示 VERIFIED |
 | 6 | CITATION.cff | Claude | ASH `18065c3`、backlink-guard `b9909e2`、indie-saas-payments-benchmark-2026 `ac3e3a1`、cli `8dc5974`、mcp `c524704`。不写目录规模、版本、日期，文件不会过时 | 5 份都通过 cffconvert 2.0.0 校验（schema 1.2.0） |
-| 6b | ORCID 加任职 | 你 | 字段见下文 | ORCID 公开接口能看到任职 |
+| 6b | ORCID 加任职 | Claude 用 agent-browser 连上你的 Chrome（你开了远程调试）填写，你确认后保存 | GoSailGlobal 不在 ORCID 机构库里，按手动输入保存，页面显示为 "Unidentified organization" | ORCID 公开接口已能查到这条任职，公开可见 |
 | 7 | Wikidata 人物条目 + 6 个作品条目 | 你提交，Claude 准备 | 脚本 [`wikidata/quickstatements.py`](wikidata/quickstatements.py)；第一批已生成 [`wikidata/2026-11-22-batch1-person.txt`](wikidata/2026-11-22-batch1-person.txt)。所有属性号和条目号都在 wikidata.org 上逐个核过；按 ORCID 查过没有重复条目 | 第 8 项的 Wikidata 覆盖率应从 1/7 升到 6/7 或 7/7 |
 | 8 | 联系同领域三篇论文的作者，SkillProbe 那封问 arXiv cs.CR 背书 | Claude 起草，你发 | 草稿里有对方的邮箱，这个仓库是公开的，所以只存本地：`~/出海/specs/2026-11-22-academic-outreach.md` | 回复记在那份文件末尾的表里 |
 | + | `agentskillshub-mcp` 的 GitHub 仓库简介去掉「100K+」 | Claude | 改成不带数字的版本，和 npm 文案「对 AI 不写数字」的规则一致 | `gh api` 已确认 |
