@@ -1,5 +1,5 @@
 #set document(
-  title: "Supply-Chain Security in Open-Source AI Agent Ecosystems: Empirical Evidence and a Five-Dimension Audit Framework Across 105,000+ Indexed Agent Skills and MCP Servers",
+  title: "Supply-Chain Security in Open-Source AI Agent Ecosystems: Security-Grade Coverage in a June 2026 Snapshot of 105,000+ Agent Skills and MCP Servers, and a Five-Dimension Review Checklist",
   author: "Jason Zhu (Yansen Zhu)",
   keywords: ("AI Agent Security", "Model Context Protocol", "MCP Servers", "Supply Chain Security", "Claude Skills", "Static Analysis", "AgentSkillsHub"),
   date: datetime(year: 2026, month: 11, day: 21),
@@ -62,7 +62,7 @@
   ]
   #v(0.3em)
   #text(size: 11.5pt, style: "italic", fill: luma(60))[
-    Empirical Evidence and a Five-Dimension Audit Framework Across 105,000+ Indexed Agent Skills and Model Context Protocol (MCP) Servers
+    Security-Grade Coverage in a June 2026 Snapshot of 105,000+ Agent Skills and Model Context Protocol (MCP) Servers, and a Five-Dimension Review Checklist
   ]
   #v(0.9em)
   #text(size: 11pt, weight: "semibold")[Jason Zhu (Yansen Zhu)] \
@@ -74,8 +74,8 @@
   ]
   #v(0.4em)
   #text(size: 9pt, fill: luma(95))[
-    Version 1.0 · November 21, 2026 · Open Data DOIs:
-    #link("https://doi.org/10.5281/zenodo.24387074")[10.5281/zenodo.24387074] &
+    Version 1.1 · November 21, 2026 (corrects version 1.0; see the revision note) · Data:
+    #link("https://doi.org/10.5281/zenodo.24387073")[10.5281/zenodo.24387073] &
     #link("https://doi.org/10.5281/zenodo.21292799")[10.5281/zenodo.21292799]
   ]
 ]
@@ -93,13 +93,15 @@
   #v(0.35em)
   #set text(size: 9.6pt)
   #set par(leading: 0.56em)
-  Autonomous coding agents—including Claude Code, OpenAI Codex, and Cursor—increasingly rely on community-authored "skills" (instruction manifests paired with helper scripts) and Model Context Protocol (MCP) servers installed directly from GitHub. Unlike conventional package managers, agent skills execute with the host agent's full filesystem permissions, shell access, and live API credentials, yet public marketplaces rank packages almost exclusively by GitHub star counts rather than security posture. Drawing on continuous indexing of the open-source ecosystem via Agent Skills Hub (105,000+ entries in the benchmark audit snapshot; 130,173+ graded catalog records archived at CERN Zenodo and Wikidata `Q141735092`), we evaluate the ecosystem as a software supply chain. Our primary finding is an acute *visibility gap* rather than ubiquitous malice: *97.8% (102,690 of 105,000+)* indexed skills had never undergone any published security review prior to indexing. Across the *2,300+* skills subjected to deep review, *94.4% (2,171)* passed cleanly while *5.6% (129)* triggered caution, unsafe, or rejection flags; across the broader rule-graded catalog of 21,582 popular repositories ($>= 5$ stars), approximately *1 in 30* receives an `UNSAFE` or `REJECT` rating, with low-star and unmaintained long-tail repositories exhibiting substantially elevated red-flag density. We formalize a five-dimension supply-chain audit framework—covering Code Layer, Credential Handling, Vendor Provenance, Dependency Supply Chain, and Operational Risk—and illustrate through three empirical case studies why GitHub stars are a weak proxy for both security and engineering quality. All grading rules, census snapshots, and replication tables are publicly released under CC-BY-4.0.
+  Autonomous coding agents—including Claude Code, OpenAI Codex, and Cursor—increasingly rely on community-authored "skills" (instruction manifests paired with helper scripts) and Model Context Protocol (MCP) servers installed directly from GitHub. Unlike conventional package managers, agent skills execute with the host agent's full filesystem permissions, shell access, and live API credentials, yet public marketplaces rank packages almost exclusively by GitHub star counts rather than security posture. Using the Agent Skills Hub catalog (agentskillshub.top), which the author founded, we report how much of this ecosystem carried any security grade. In a snapshot taken around 10 June 2026 the catalog held 105,000+ entries and *97.8%* of them had no security grade; of the 2,300+ entries that had one, 94% were graded safe and about *5.6%* caution, unsafe or reject. Coverage has grown since: on 21 November 2026 the catalog listed 281,000+ entries, 142,000+ of them with a rule-based grade, so the June share describes that snapshot only. In a separate snapshot of 6 July 2026 (130,173 entries; DOI 10.5281/zenodo.21292799), the 21,582 repositories with at least 5 GitHub stars were graded by static rules: 3.3% (about *1 in 30*) received an `UNSAFE` or `REJECT` grade, and that rate was 3.8% for repositories with 5–20 stars against 0.4% for those with 1,000+ stars. We also set out the five-dimension checklist—Code Layer, Credential Handling, Vendor Provenance, Dependency Supply Chain, and Operational Risk—that the author used to review 200+ repositories by hand, and three case studies from that review showing why GitHub stars are a weak proxy for both security and engineering quality. The grading rules and data snapshots are published under CC-BY-4.0.
   #v(0.45em)
   #text(size: 9pt)[
     *Keywords:* AI Agent Security, Model Context Protocol (MCP), Claude Skills, Software Supply Chain, Static Analysis, Credential Governance, Prompt Injection, AgentSkillsHub. \
     *ACM CCS:* Security and privacy → Software and application security; Software and its engineering → Software libraries and repositories; Computing methodologies → Artificial intelligence.
   ]
 ]
+
+#text(size: 8.8pt, fill: luma(60))[*Revision note (version 1.1, 21 November 2026).* Version 1.0 gave the 105,000-entry catalog and its 97.8% ungraded share without a date; they date from around 10 June 2026, and the catalog count of 21 November 2026 now stands beside them. Version 1.0 also listed counts per grade group (102,690 / 2,171 / 129) that had been worked back from rounded percentages, described the 2,300+ graded entries as a five-dimension audit, described the November 2026 count of graded entries (138,000+) as the number indexed, and named a recurring pattern (typosquatted forks) that no data supports. These are corrected or removed; the findings from the July 2026 snapshot now cite its dataset card.]
 
 #v(0.5em)
 
@@ -112,7 +114,7 @@ Historically, mature software ecosystems (npm, PyPI, Maven Central, Homebrew) de
 This asymmetry creates a dangerous blind spot. When a developer installs a third-party skill or MCP server on a workstation or CI runner, the extension typically inherits access to `~/.ssh`, `~/.aws`, local `.env` files, active browser cookies, and GitHub tokens. Despite this privilege footprint, users overwhelmingly evaluate skills using superficial heuristics—README polish and GitHub star counts.
 
 In this paper, we treat open-source AI agent skills and MCP servers as first-class *software supply-chain dependencies*. Using data collected by Agent Skills Hub (`agentskillshub.top`, launched March 8, 2026 and refreshing GitHub repositories every eight hours), we address three empirical questions:
-+ What share of the public AI agent skill and MCP ecosystem has undergone *any* structured security review, and what failure rate emerges when repositories are audited systematically?
++ What share of the public AI agent skill and MCP ecosystem has *any* security grade, and what share of graded repositories is flagged?
 + Which concrete threat classes—ranging from code-level shell execution to remote OAuth token custody—appear in real-world skills, and why does static code inspection alone miss critical enterprise risks?
 + How strongly do GitHub star counts correlate with actual security posture and engineering quality?
 
@@ -120,9 +122,10 @@ In this paper, we treat open-source AI agent skills and MCP servers as first-cla
 
 == Catalog Scope and Dual-Snapshot Architecture
 
-Our empirical analysis draws on two complementary open snapshots published under CC-BY-4.0:
-+ *Deep Supply-Chain Audit Snapshot (DOI: 10.5281/zenodo.24387074):* Covers 105,000+ indexed open-source agent skills, MCP servers, and Codex skills, isolating the baseline audit-coverage gap (reviewed vs. unreviewed) alongside 2,300+ deeply evaluated entries and 200+ manual five-dimension repository audits.
-+ *Full Rule-Graded Census Snapshot (DOI: 10.5281/zenodo.21292799; Wikidata Q141735092):* Covers 130,173 open-source skills and MCP servers (expanded past 138,000+ live indexed entries by November 2026), applying 44 published rule-based static security checks (`agentskillshub.top/how-we-grade/`) to all repositories meeting the popularity threshold ($>= 5$ GitHub stars, $n = 21,582$) plus a 6-dimension quality score (0–100).
+Our analysis draws on two catalog snapshots and one manual review:
++ *June 2026 coverage snapshot (DOI: 10.5281/zenodo.24387073):* the share of the catalog (105,000+ entries, read around 10 June 2026) with and without a security grade, and the grade outcomes for the 2,300+ entries that had one. The same record gives the catalog count on 21 November 2026: 281,000+ entries, 142,000+ of them with a rule-based grade.
++ *July 2026 graded snapshot (DOI: 10.5281/zenodo.21292799; Wikidata Q141735092):* 130,173 open-source skills and MCP servers as of 6 July 2026. The 21,582 repositories with at least 5 GitHub stars were graded by the Hub's static rules (the published rule set, `agentskillshub.top/how-we-grade/`, had 44 rules by November 2026), and each entry carries a quality score (0–100).
++ *Manual review:* the author reviewed 200+ repositories by hand with the five-dimension checklist below. Section 4 reports three cases from it. These reviews are not part of the grade statistics.
 
 == Five-Dimension Supply-Chain Audit Framework
 
@@ -150,43 +153,42 @@ Static scanning for obfuscated payloads catches overt malware, but fails to eval
 
 Let $S_i in {"SAFE", "CAUTION", "UNSAFE", "REJECT", "UNAUDITED"}$ denote the assigned security grade for skill $i$. Automated rule scanning maps deterministic triggers—such as unguarded remote shell execution, unprompted credential exfiltration, destructive filesystem operations, or explicit safety-bypass prompt injections—to red-flag identifiers $R_i$. Importantly, *a clean Layer-1 code scan is necessary but not sufficient for production certification*: a skill with zero malicious lines of code can still receive a `CAUTION` or `UNSAFE` operational verdict if Layers 2, 3, and 5 expose user credentials to unverified remote servers.
 
-= Quantitative Findings: The 97.8% Black-Box Ecosystem
+= Quantitative Findings: Grade Coverage and Grade Outcomes
 
 == Audit Coverage and Flag Distribution
 
-The most striking empirical finding across the 105,000+ indexed catalog is not that a majority of open-source skills are actively malicious, but that *nearly the entire ecosystem operates as an unaudited black box* (Table 2).
+In the June 2026 snapshot, the striking finding was not that many skills were malicious but that *almost none had been checked at all* (Table 2).
 
 #figure(
   table(
-    columns: (1.9fr, 0.9fr, 1.0fr, 1.0fr),
-    align: (left, right, right, right),
+    columns: (1.8fr, 1.0fr, 1.35fr),
+    align: (left, right, right),
     stroke: none,
     table.hline(stroke: 1pt),
     table.header(
-      [*Security Audit Tier*], [*Skill Count*], [*Share of Total Catalog*], [*Share of Audited Subset*]
+      [*Security grade (catalog, around 10 June 2026)*], [*Share of catalog*], [*Share of graded entries*]
     ),
     table.hline(stroke: 0.5pt),
-    [*Unknown / Never Security Reviewed*], [*102,690*], [*97.80%*], [N/A],
-    [Safe (Passed 5-Dimension Audit)], [2,171], [2.07%], [94.39%],
-    [Caution / Unsafe / Reject (Flagged)], [129], [0.13%], [5.61%],
+    [*No security grade ("unknown")*], [*97.8%*], [—],
+    [Safe], [2.1%], [94%],
+    [Caution / Unsafe / Reject], [0.1%], [about 5.6%],
     table.hline(stroke: 0.5pt),
-    [*Total Benchmark Snapshot*], [*105,000*], [*100.00%*], [*100.00% ($n=2,300$)*],
+    [*Catalog size*], [*105,000+ entries*], [*2,300+ graded*],
     table.hline(stroke: 1pt),
   ),
-  caption: [Security audit distribution in the 105,000-skill benchmark snapshot (DOI: 10.5281/zenodo.24387074). Nearly 98% of public skills lack any published security review.],
+  caption: [Security grades in the Agent Skills Hub catalog around 10 June 2026, as published at the time (DOI: 10.5281/zenodo.24387073). Shares are rounded as published; counts per group were not recorded. On 21 November 2026 the catalog listed 281,000+ entries, 142,000+ of them with a rule-based grade.],
 ) <tab-audit-dist>
 
-Two complementary metrics emerge when cross-referencing the deep-audit subset with the larger 130,173-skill rule-graded census (DOI: 10.5281/zenodo.21292799):
-+ *Deep-audit failure rate (5.6%):* Among the 2,300+ skills evaluated across all five supply-chain dimensions, 94.4% passed cleanly while *5.6% (129 skills)* triggered caution, unsafe, or rejection flags—most commonly due to unscoped credential reads, remote script hooks, or inadequate operational boundaries.
-+ *Long-tail risk concentration (1 in ~30 graded):* In the broader 130,173-skill census where 21,582 popular repositories ($>= 5$ stars) were rule-graded against 44 automated checks, approximately *1 in 30 graded skills* received an `UNSAFE` or `REJECT` rating, while *83% of the entire catalog remained UNAUDITED* below the star cutoff. Crucially, low-star and unmaintained repositories exhibit sharply higher red-flag density—typically not from sophisticated zero-day exploits, but from copy-pasted installation scripts containing remote `curl | sh` pipes, over-broad `.env`/`~/.ssh` ingestion, stale typosquatted forks, or unescaped shell interpolation.
+Two further sets of figures come from the snapshots:
++ *Grade outcomes, June 2026:* among the 2,300+ entries that had a grade, 94% were safe and about *5.6%* caution, unsafe or reject. These are catalog grades, not results of the five-dimension review.
++ *Long-tail risk, July 2026:* in the 130,173-entry snapshot (DOI: 10.5281/zenodo.21292799), 711 of the 21,582 graded repositories (3.3%, about *1 in 30*) received an `UNSAFE` or `REJECT` grade, and 108,591 entries (83%) were below the 5-star threshold and ungraded. The `UNSAFE`/`REJECT` rate was 3.8% for repositories with 5–20 stars, 3.7% for 20–100, 0.9% for 100–1,000 and 0.4% for 1,000+ stars: about nine times higher in the long tail than at the head. The most common red flags were `sudo` usage (1,146 entries), service persistence (327), `curl | sh` pipes (238), agent-configuration theft (155) and tunnel services (137). Source: the dataset card of 10.5281/zenodo.21292799 (Hugging Face mirror).
 
 == Recurring Vulnerability Taxonomy
 
-Across flagged repositories, four vulnerability archetypes dominate:
+In the manual review, three patterns recurred (qualitative observations, not counts):
 + *Unscoped shell and filesystem hooks:* Setup or runtime scripts executing remote payloads or silently harvesting `~/.aws`, `~/.ssh`, or project `.env` files without explicit scope declarations.
 + *Prompt-injection directives embedded in Markdown:* Long `SKILL.md` instruction files containing hidden system-override directives instructing the agent to bypass user confirmation gates or exfiltrate context summaries.
 + *Remote credential custody without vendor accountability:* Clean local client wrappers that proxy authentication through an anonymous maintainer's hosted backend (examined in Case A below).
-+ *Typosquatted and unmaintained forks:* Forks of popular MCP servers whose endpoint URLs or dependency manifests drift silently away from upstream security patches.
 
 = Empirical Case Studies: Why Stars Fail as a Security and Quality Signal
 
@@ -226,7 +228,7 @@ Conversely, manual auditing uncovered a 0-star repository that most popularity-s
   *No hallucination > No misreading of source material > Mechanism clarity > Readability > Relevance of examples > Virality of phrasing.*
 ]
 
-Its zero-star status resulted purely from an unremarkable repository name, Chinese-only documentation, and zero social-media marketing—a *discoverability failure*, not an engineering failure. Across our manual review of 200+ skills, low-visibility specialist skills routinely outperformed 10,000+ star "viral prompt wrappers" in reliability and boundary discipline.
+Its zero-star status resulted purely from an unremarkable repository name, Chinese-only documentation, and zero social-media marketing—a *discoverability failure*, not an engineering failure. It was not the only case in the manual review where a little-known specialist skill was better engineered than far more popular prompt wrappers (an observation, not a count).
 
 == Case C: Enterprise-Grade Reference Architecture
 
@@ -245,16 +247,16 @@ Based on our empirical audit findings, organizations deploying Claude Code, Curs
 
 = Limitations and Future Work
 
-Three methodological boundaries merit transparency. First, our automated 44-rule scanner (`agentskillshub.top/how-we-grade/`) serves as a *first-layer deterministic filter*, not a substitute for line-by-line human penetration testing; zero static flags cannot guarantee the absence of subtle logic bugs or delayed server-side rug pulls. Second, dynamic runtime sandboxing (observing outbound syscalls and network packets inside ephemeral containers during live agent execution) is not yet executed across all 138,000+ indexed repositories and represents our highest-priority engineering expansion. Third, because GitHub repositories evolve continuously, point-in-time Zenodo snapshots represent immutable historical baselines while live scores update on an 8-hour crawl cadence.
+Four limitations apply. First, our automated rule scanner (`agentskillshub.top/how-we-grade/`) serves as a *first-layer deterministic filter*, not a substitute for line-by-line human penetration testing; zero static flags cannot guarantee the absence of subtle logic bugs or delayed server-side rug pulls. Second, dynamic runtime sandboxing (observing outbound syscalls and network packets inside ephemeral containers during live agent execution) is not run across the 281,000+ indexed repositories (21 November 2026) and remains future work. Third, because GitHub repositories evolve continuously, point-in-time Zenodo snapshots represent fixed historical baselines while live scores update on an 8-hour crawl cadence. Fourth, the June 2026 shares were read once from the catalog for a blog post; the exact time was not recorded and counts per group were not kept.
 
 = Conclusion and Data Availability
 
-Open-source AI agent skills and MCP servers have scaled faster than the security tooling needed to govern them. With *97.8%* of public skills historically unreviewed, *5.6%* of deeply audited repositories triggering security warnings or rejections, and GitHub stars failing to distinguish clean-code credential traps from enterprise-grade tools, the ecosystem urgently requires an open, transparent trust layer. By publishing both our 44-rule grading methodology and immutable CC-BY-4.0 datasets across CERN Zenodo, Wikidata, Hugging Face, and Kaggle, we aim to provide reproducible baselines for security researchers and AI engineering teams alike.
+Open-source AI agent skills and MCP servers have scaled faster than the security tooling needed to govern them. With *97.8%* of the catalog ungraded in June 2026, about *5.6%* of graded entries flagged, a far higher `UNSAFE`/`REJECT` rate in the low-star long tail, and GitHub stars failing to distinguish clean-code credential traps from enterprise-grade tools, the ecosystem needs an open, transparent trust layer. By publishing the grading rules and CC-BY-4.0 data snapshots on Zenodo (with mirrors on Hugging Face and Kaggle), we aim to give security researchers and AI engineering teams baselines they can check.
 
 #v(0.4em)
 *Open Data, Code & Persistent Identifiers (CC-BY-4.0):*
-- *Deep Supply-Chain Audit Dataset (105K Snapshot, CERN Zenodo):* #link("https://doi.org/10.5281/zenodo.24387074")[https://doi.org/10.5281/zenodo.24387074]
-- *Full Rule-Graded Census Dataset (130K Snapshot, CERN Zenodo):* #link("https://doi.org/10.5281/zenodo.21292799")[https://doi.org/10.5281/zenodo.21292799]
+- *June 2026 coverage snapshot (Zenodo):* #link("https://doi.org/10.5281/zenodo.24387073")[https://doi.org/10.5281/zenodo.24387073]
+- *July 2026 graded snapshot, 130,173 entries (Zenodo):* #link("https://doi.org/10.5281/zenodo.21292799")[https://doi.org/10.5281/zenodo.21292799]
 - *Wikidata Knowledge Graph Entities:* Platform #link("https://www.wikidata.org/wiki/Q141986406")[Q141986406] · Dataset #link("https://www.wikidata.org/wiki/Q141735092")[Q141735092]
 - *Hugging Face Dataset Mirror:* #link("https://huggingface.co/datasets/jasonzhuyansen/agent-skills-security-grades")[https://huggingface.co/datasets/jasonzhuyansen/agent-skills-security-grades]
 - *Kaggle Dataset Mirror:* #link("https://www.kaggle.com/datasets/yansenzhu/agent-skills-security-grades")[https://www.kaggle.com/datasets/yansenzhu/agent-skills-security-grades]
@@ -279,9 +281,9 @@ Ohm, M., Plate, H., Sykosch, A., & Meier, M. (2020). Backstabber's knife collect
 
 OpenSSF. (2025). *OpenSSF Scorecard: Security Health Metrics for Open Source Projects*. Linux Foundation. https://securityscorecards.dev
 
-Zhu, J. (2026a). *AI Agent Skills Security Grades (130K)*. CERN Zenodo. https://doi.org/10.5281/zenodo.21292799 (Wikidata: Q141735092)
+Zhu, J. (2026a). *AI Agent Skills Security Grades (130K)* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.21292799 (Wikidata: Q141735092)
 
-Zhu, J. (2026b). *Open-Source AI Agent Skills and MCP Servers Supply-Chain Security Audit Dataset (105,000+ Indexed Skills, 2026)*. CERN Zenodo. https://doi.org/10.5281/zenodo.24387074
+Zhu, J. (2026b). *Security-Grade Coverage in the Agent Skills Hub Catalog: June 2026 Snapshot (105,000+ Entries) and November 2026 Count* (Version 2) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.24387073
 
 Zhu, J. (2026c). *Agent Skills Hub: 44-Rule Automated Security Grading Methodology*. https://agentskillshub.top/how-we-grade/
 
