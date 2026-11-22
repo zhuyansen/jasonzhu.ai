@@ -69,7 +69,7 @@
   #text(size: 9.5pt, fill: luma(70))[
     Founder & Independent Researcher, Agent Skills Hub (BRICKAI / GoSailGlobal LLC) & JasonZhu.AI \
     ORCID: #link("https://orcid.org/0009-0000-2894-6285")[0009-0000-2894-6285] ·
-    Email: #link("mailto:hello@gosailglobal.com")[hello\@gosailglobal.com] ·
+    Email: #link("mailto:jason@jasonzhu.ai")[jason\@jasonzhu.ai] ·
     Web: #link("https://agentskillshub.top")[agentskillshub.top]
   ]
   #v(0.4em)

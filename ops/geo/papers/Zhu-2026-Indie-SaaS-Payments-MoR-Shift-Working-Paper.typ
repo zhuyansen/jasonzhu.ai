@@ -1,5 +1,5 @@
 #set document(
-  title: "The Structural Shift from Payment Gateways to Merchant of Record Platforms Among Independent Software and AI Founders: Evidence from 200,000 Live Checkout Links and a $20 Cross-Border Subscription Fee Audit (2023–2026)",
+  title: "Payment Platforms of New Online Sellers, 2023–2026: AI Sellers Make Up a Far Larger Share on Merchant of Record Platforms than on Stripe (Evidence from 200,000 Checkout Links and a $20 Cross-Border Subscription Fee Comparison)",
   author: "Jason Zhu (Yansen Zhu)",
   keywords: ("Merchant of Record", "Indie SaaS", "Cross-Border Payments", "AI Monetization", "Stripe", "Polar", "Dodo Payments", "Creem", "Paddle", "Waffo"),
   date: datetime(year: 2026, month: 11, day: 21),
@@ -11,7 +11,7 @@
   header: context {
     if counter(page).get().first() > 1 [
       #set text(size: 8.5pt, fill: luma(100), style: "italic")
-      Zhu (2026) — Independent Software & AI Founder Payment Infrastructure (2023–2026)
+      Zhu (2026) — Payment Platforms of New Online Sellers (2023–2026)
       #h(1fr)
       Working Paper
       #v(-4pt)
@@ -59,23 +59,23 @@
   ]
   #v(0.5em)
   #text(size: 16pt, weight: "bold")[
-    The Structural Shift from Payment Gateways to Merchant of Record Platforms Among Independent Software and AI Founders
+    Payment Platforms of New Online Sellers, 2023–2026: AI Sellers Make Up a Far Larger Share on Merchant of Record Platforms than on Stripe
   ]
   #v(0.3em)
   #text(size: 11.5pt, style: "italic", fill: luma(60))[
-    Evidence from 200,000 Live Checkout Links and a \$20 Cross-Border Subscription Fee Audit (2023–2026)
+    Evidence from 200,000 Checkout Links and a \$20 Cross-Border Subscription Fee Comparison
   ]
   #v(0.9em)
   #text(size: 11pt, weight: "semibold")[Jason Zhu (Yansen Zhu)] \
   #text(size: 9.5pt, fill: luma(70))[
     Founder & Independent Researcher, BRICKAI (GoSailGlobal LLC) / JasonZhu.AI \
     ORCID: #link("https://orcid.org/0009-0000-2894-6285")[0009-0000-2894-6285] ·
-    Email: #link("mailto:hello@gosailglobal.com")[hello\@gosailglobal.com] ·
+    Email: #link("mailto:jason@jasonzhu.ai")[jason\@jasonzhu.ai] ·
     Web: #link("https://jasonzhu.ai/en")[jasonzhu.ai/en]
   ]
   #v(0.4em)
   #text(size: 9pt, fill: luma(95))[
-    Version 1.1 · November 21, 2026 (wording corrections to version 1.0; see the revision note) · Data:
+    Version 1.1 · November 22, 2026 (corrects version 1.0; see the revision note) · Data:
     #link("https://doi.org/10.5281/zenodo.24386242")[10.5281/zenodo.24386242] &
     #link("https://doi.org/10.5281/zenodo.24387071")[10.5281/zenodo.24387071]
   ]
@@ -94,7 +94,7 @@
   #v(0.35em)
   #set text(size: 9.6pt)
   #set par(leading: 0.56em)
-  Independent software and artificial intelligence (AI) developers increasingly monetize global audiences from day one, yet empirical evidence on their payment infrastructure choices remains scarce. Using DataForSEO's link graph to count about 200,000 checkout links on 198,000 websites that link directly to hosted checkout pages on seven payment platforms (Stripe Payment Links, Gumroad, Lemon Squeezy, Polar, Dodo Payments, Creem, and classic Paddle links), combined with an itemized fee comparison for a \$20/month international AI SaaS subscription (most rows from Liu Xiaopai's published breakdown, including Waffo Pancake), this paper documents four patterns between 2023 and October 15, 2026. First, after setting aside 17,000 websites whose checkout link also appears on five or more other sites, the number of new sellers per year rose from 21,000 in 2023 and 29,000 in 2024 to 56,000 in 2025 and 82,000 through October 15, 2026 (more than 10,000 new sellers a month in August and September 2026), counting only websites that still linked in October 2026. Second, software's share of new checkout-link sellers broke out of a 6%–8% plateau throughout 2025 to reach 20% in September 2026, while AI products rose from 2% (2023) to 12% (September 2026). Third, AI products make up a far larger share of new sellers on the Merchant of Record (MoR) platforms Dodo Payments (29%), Polar (27%) and Creem (24%) than on Stripe (7%) or Gumroad (8%); because Stripe's seller base is far larger, it still has more AI sellers in absolute numbers. Fourth, on one \$20 international subscription with surcharges, currency conversion, recurring billing and tax handling included, several MoR setups keep more (\$18.82–\$18.84 on Dodo Payments' negotiated partner rate; \$18.72 on Waffo Pancake before its 1% payout fee; \$18.63 on a 3.9% MoR such as Creem after a 1% payout fee; \$18.50 on Paddle) than a Hong Kong Stripe stack with Billing, Tax and Radar (\$18.21, not an MoR) or Lemon Squeezy (\$17.92; it stops processing payments on March 31, 2027). We further document multi-site operator clustering (276 groups spanning 666 domains), a 100-day median from domain registration to first checkout link for newly registered AI domains, and the mix of popular products, link-selling networks and hacked sites among the 17,000 excluded websites. The summary tables are archived on Zenodo under CC-BY-4.0; the underlying link records are DataForSEO's and cannot be redistributed.
+  Independent software and artificial intelligence (AI) developers increasingly monetize global audiences from day one, yet empirical evidence on their payment infrastructure choices remains scarce. Using DataForSEO's link graph to count about 200,000 checkout links on 198,000 websites that link directly to hosted checkout pages on seven payment platforms (Stripe Payment Links, Gumroad, Lemon Squeezy, Polar, Dodo Payments, Creem, and classic Paddle links), combined with an itemized fee comparison for a \$20/month international AI SaaS subscription (most rows from Liu Xiaopai's published breakdown, including Waffo Pancake), this paper documents four patterns between 2023 and October 15, 2026. First, after setting aside 17,000 websites whose checkout link also appears on five or more other sites, the number of new sellers per year rose from 21,000 in 2023 and 29,000 in 2024 to 56,000 in 2025 and 82,000 through October 15, 2026 (more than 10,000 new sellers a month in August and September 2026), counting only websites that still linked in October 2026. Second, software's share of new checkout-link sellers broke out of a 6%–8% plateau throughout 2025 to reach 20% in September 2026, while AI products rose from 2% (2023) to 12% (September 2026). Third, AI products make up a far larger share of new sellers on the Merchant of Record (MoR) platforms Dodo Payments (29%), Polar (27%) and Creem (24%) than on Stripe (7%) or Gumroad (8%); because Stripe's seller base is far larger, it still has more AI sellers in absolute numbers (about 7,200, against 2,354 new sellers of any kind on the three MoR platforms combined). Fourth, on one \$20 international subscription with surcharges, currency conversion, recurring billing and tax handling included, several MoR setups keep more (\$18.82–\$18.84 on Dodo Payments' negotiated partner rate; \$18.72 on Waffo Pancake before its 1% payout fee; \$18.63 on a 3.9% MoR such as Creem after a 1% payout fee; \$18.50 on Paddle) than a Hong Kong Stripe stack with Billing, Tax and Radar (\$18.21, not an MoR) or Lemon Squeezy (\$17.92; it stops processing payments on March 31, 2027). We further document multi-site operator clustering (276 groups spanning 666 domains), a 100-day median from domain registration to first checkout link for newly registered AI domains, and the mix of popular products, link-selling networks and hacked sites among the 17,000 excluded websites. The summary tables are archived on Zenodo under CC-BY-4.0; the underlying link records are DataForSEO's and cannot be redistributed.
   #v(0.45em)
   #text(size: 9pt)[
     *Keywords:* Merchant of Record (MoR), Indie SaaS, Cross-Border Payments, AI Monetization, Payment Gateways, Digital Tax Compliance, Stripe, Polar, Dodo Payments, Creem, Paddle, Waffo. \
@@ -102,7 +102,7 @@
   ]
 ]
 
-#text(size: 8.8pt, fill: luma(60))[*Revision note (version 1.1, 21 November 2026).* No counts, shares or fees were changed. Version 1.0 read the platform shares as AI founders preferring Merchant of Record platforms; the shares describe the mix of sellers within each platform, and Stripe still has more AI sellers in absolute numbers. Version 1.0 also set Waffo Pancake's total, which leaves out its 1% payout fee, beside totals that include one; dated the start of the 2026 rise in the AI share to late 2025; stated Paddle's undercount as a finding rather than an inference; presented Liu Xiaopai's published breakdown as the author's audit with field verification; and described the Zenodo archive as a CERN one. These are corrected.]
+#text(size: 8.8pt, fill: luma(60))[*Revision note (version 1.1, 22 November 2026).* No counts, shares or fees were changed. Version 1.0, titled "The Structural Shift from Payment Gateways to Merchant of Record Platforms Among Independent Software and AI Founders", read the platform shares as AI founders preferring Merchant of Record platforms; the shares describe the mix of sellers within each platform, and Stripe still has more AI sellers in absolute numbers (about 7,200, against 2,354 new sellers of any kind on Dodo Payments, Polar and Creem combined). The title now says what the data show. Version 1.0 also set Waffo Pancake's total, which leaves out its 1% payout fee, beside totals that include one; dated the start of the 2026 rise in the AI share to late 2025; stated Paddle's undercount as a finding rather than an inference; presented Liu Xiaopai's published breakdown as the author's audit with field verification; and described the Zenodo archive as a CERN one. These are corrected.]
 
 #v(0.5em)
 
@@ -221,7 +221,7 @@ Splitting the sellers since 2025 by platform shows a sharp difference in composi
   caption: [Share of new sellers since 2025 selling software and AI products, by platform. The AI share on Dodo Payments, Polar and Creem is three to four times Stripe's.],
 ) <fig-platform-ai>
 
-The contrast in composition is large. While Stripe added 102,590 new checkout-link sellers since 2025, only *9%* sell software and *7%* sell AI products. Conversely, *71%* of Dodo Payments' new sellers, *65%* of Creem's, and *58%* of Polar's sell software—with AI products accounting for *29%*, *24%*, and *27%* of their respective cohorts. These platforms are also growing fastest: between full-year 2025 and mid-October 2026 alone, annual cohort additions multiplied by *4.5×* on Polar (305 to 1,364), *5.5×* on Dodo Payments (68 to 373), and *5.6×* on Creem (38 to 211). Because Stripe's base is so much larger, it still accounts for more new AI sellers in absolute numbers than the three MoR platforms combined: the difference is in composition, not in where most AI sellers are.
+The contrast in composition is large. While Stripe added 102,590 new checkout-link sellers since 2025, only *9%* sell software and *7%* sell AI products. Conversely, *71%* of Dodo Payments' new sellers, *65%* of Creem's, and *58%* of Polar's sell software—with AI products accounting for *29%*, *24%*, and *27%* of their respective cohorts. These platforms are also growing fastest: between full-year 2025 and mid-October 2026 alone, annual cohort additions multiplied by *4.5×* on Polar (305 to 1,364), *5.5×* on Dodo Payments (68 to 373), and *5.6×* on Creem (38 to 211). Because Stripe's base is so much larger, it still accounts for more new AI sellers in absolute numbers: 7% of 102,590 is about 7,200, more than the 2,354 new sellers of any kind on Dodo Payments, Polar and Creem combined. The difference is in composition, not in where most AI sellers are.
 
 Two mechanisms plausibly contribute (we do not measure them):
 + *Turnkey global indirect tax compliance:* Selling AI tools globally triggers immediate VAT/GST registration obligations in the EU, UK, Australia, Japan, and dozens of US states. Standard Stripe is *not* an MoR; merchants who want Stripe to absorb tax liability must enroll in Stripe Managed Payments (generally available since April 2026) at an incremental *+3.5%* surcharge on top of card processing fees.
