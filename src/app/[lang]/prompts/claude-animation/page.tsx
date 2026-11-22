@@ -45,8 +45,6 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return withSocialCards({
     title: c.title,
     description: c.desc,
-    // X 的视频 CDN 拒绝带外站 Referer 的请求，这组页面不发 Referer
-    referrer: "no-referrer",
     alternates: {
       canonical: `${SITE_URL}/${lang}/${PATH}`,
       languages: { zh: `${SITE_URL}/zh/${PATH}`, en: `${SITE_URL}/en/${PATH}`, "x-default": `${SITE_URL}/zh/${PATH}` },

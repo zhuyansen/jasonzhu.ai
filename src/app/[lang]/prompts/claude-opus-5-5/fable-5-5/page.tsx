@@ -29,8 +29,8 @@ function fableCases(): OpusCaseSlim[] {
 const copy = (isZh: boolean, n: number, withPrompt: number, preview: boolean) => ({
   title: isZh ? `Claude Fable 5.5 作品与提示词：${n} 个创作者实测案例${preview ? "（内测）" : ""}` : `Claude Fable 5.5: ${n} Real Examples and Prompts${preview ? " (Preview)" : ""}`,
   desc: isZh
-    ? `${n} 个创作者说用 Claude Fable 5.5 做的视频、动效、3D 和游戏，原帖播放均过 5,000，可直接播放；其中 ${withPrompt} 个附作者公开的原文提示词。${preview ? `截至 ${STATUS_CHECKED}，Anthropic 尚未官宣 Fable 5.5，也没有公布发布日期。` : ""}`
-    : `${n} videos, motion graphics, 3D scenes and games creators say they made with Claude Fable 5.5, each with 5,000+ views and playable here; ${withPrompt} include the creator's prompt, verbatim.${preview ? ` As of ${STATUS_CHECKED}, Anthropic has not announced Fable 5.5 or a release date.` : ""}`,
+    ? `${n} 个创作者说用 Claude Fable 5.5 做的视频、动效、3D 和游戏，原帖播放均过 5,000，点封面去 X 看原视频；其中 ${withPrompt} 个附作者公开的原文提示词。${preview ? `截至 ${STATUS_CHECKED}，Anthropic 尚未官宣 Fable 5.5，也没有公布发布日期。` : ""}`
+    : `${n} videos, motion graphics, 3D scenes and games creators say they made with Claude Fable 5.5, each with 5,000+ views on X; ${withPrompt} include the creator's prompt, verbatim.${preview ? ` As of ${STATUS_CHECKED}, Anthropic has not announced Fable 5.5 or a release date.` : ""}`,
 });
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -41,7 +41,6 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return withSocialCards({
     title: c.title,
     description: c.desc,
-    referrer: "no-referrer", // X 视频 CDN 拒绝带外站 Referer，和主库同样处理
     alternates: {
       canonical: `${SITE_URL}/${lang}/${PATH}`,
       languages: { zh: `${SITE_URL}/zh/${PATH}`, en: `${SITE_URL}/en/${PATH}`, "x-default": `${SITE_URL}/zh/${PATH}` },
@@ -140,8 +139,8 @@ export default async function FablePage({ params }: { params: Promise<{ lang: st
         </h1>
         <p className="text-gray-600 max-w-3xl leading-relaxed">
           {isZh
-            ? `${cases.length} 个创作者说用 Claude Fable 5.5 做的作品，按原帖播放量排序，视频可以直接播放。其中 ${withPrompt} 个附作者公开的原文提示词。`
-            : `${cases.length} works creators say they made with Claude Fable 5.5, ranked by views on the original post and playable here. ${withPrompt} include the creator's own prompt, verbatim.`}
+            ? `${cases.length} 个创作者说用 Claude Fable 5.5 做的作品，按原帖播放量排序，点封面去 X 看原视频。其中 ${withPrompt} 个附作者公开的原文提示词。`
+            : `${cases.length} works creators say they made with Claude Fable 5.5, ranked by views on the original post; click a cover to watch it on X. ${withPrompt} include the creator's own prompt, verbatim.`}
         </p>
         {preview && (
           <p className="mt-4 max-w-3xl rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900 leading-relaxed">

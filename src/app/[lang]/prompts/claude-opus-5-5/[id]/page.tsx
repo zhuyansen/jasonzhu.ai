@@ -34,8 +34,8 @@ const describe = (isZh: boolean, title: string, handle: string, views: number, k
     ? `${title}：@${handle} 用 Claude ${model} 做的作品，原帖播放 ${formatCount(views, "zh")}。`
     : `${title} — made with Claude ${model} by @${handle}, ${formatCount(views, "en")} views on the original post.`;
   const tail = isZh
-    ? (kind === "full" ? "附完整提示词原文，可复制改写。" : kind ? "附作者公开的指令与出处。" : "可直接播放，附原帖出处。")
-    : (kind === "full" ? " Full original prompt included." : kind ? " Includes the creator's brief and source." : " Watch it here, with a link to the original post.");
+    ? (kind === "full" ? "附完整提示词原文，可复制改写。" : kind ? "附作者公开的指令与出处。" : "附原帖链接，去 X 看原视频。")
+    : (kind === "full" ? " Full original prompt included." : kind ? " Includes the creator's brief and source." : " Links to the original video on X.");
   return (base + tail).length <= 160 ? base + tail : base;
 };
 
@@ -51,7 +51,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: fitTitle(title),
     description,
-    referrer: "no-referrer",
     alternates: {
       canonical: `${SITE_URL}/${lang}/${PATH}/${id}`,
       languages: { zh: `${SITE_URL}/zh/${PATH}/${id}`, en: `${SITE_URL}/en/${PATH}/${id}`, "x-default": `${SITE_URL}/zh/${PATH}/${id}` },
@@ -157,7 +156,7 @@ export default async function OpusCasePage({ params }: Props) {
       )}
 
       <div className="relative aspect-video bg-black rounded-xl overflow-hidden">
-        <CaseVideo id={c.id} poster={c.video.poster} mp4={c.video.mp4} postUrl={c.url} label={`${title} · @${c.author.handle}`} isZh={isZh} />
+        <CaseVideo poster={c.video.poster} postUrl={c.url} label={`${title} · @${c.author.handle}`} isZh={isZh} eager />
       </div>
 
       <dl className="grid grid-cols-4 mt-4 text-center border border-gray-100 rounded-xl py-3">
@@ -256,7 +255,7 @@ export default async function OpusCasePage({ params }: Props) {
                 <Link href={`/${lang}/${PATH}/${r.id}`} className="group block">
                   <div className="relative aspect-video bg-gray-900 rounded-lg overflow-hidden">
                     {/* eslint-disable-next-line @next/next/no-img-element -- X 封面外链，不走 next/image 域名白名单 */}
-                    <img src={r.video.poster} alt={isZh ? r.title.zh : r.title.en} loading="lazy" referrerPolicy="no-referrer" className="w-full h-full object-cover group-hover:opacity-90 transition-opacity" />
+                    <img src={r.video.poster} alt={isZh ? r.title.zh : r.title.en} loading="lazy" className="w-full h-full object-cover group-hover:opacity-90 transition-opacity" />
                     <span className="absolute bottom-1 right-1 px-1 rounded bg-black/70 text-white text-[10px] tabular-nums">{formatDuration(r.video.durationSec)}</span>
                   </div>
                   <p className="mt-1.5 text-sm text-gray-700 group-hover:text-[var(--primary)] leading-snug line-clamp-2">{isZh ? r.title.zh : r.title.en}</p>

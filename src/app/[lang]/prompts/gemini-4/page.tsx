@@ -15,8 +15,8 @@ const REPO = "https://github.com/zhuyansen/awesome-gemini-4-prompts";
 const copy = (isZh: boolean, n: number, withPrompt: number, threshold: number) => ({
   title: isZh ? "Gemini 4 提示词合集：Argon、Carbon 写代码做的 3D、物理模拟、游戏作品与原始提示词" : "Gemini 4 Prompts: 3D Scenes, Physics Sims & Games Built by Argon and Carbon, with Original Prompts",
   desc: isZh
-    ? `收录 ${n} 个 X 创作者用 Gemini 4（Argon、Carbon 等）写代码做出来的作品，大多是和 Claude、GPT 的同题对比，原帖播放均过 ${threshold.toLocaleString("en-US")}，视频可直接播放。${withPrompt ? `其中 ${withPrompt} 个附作者公开的提示词` : "作者公开的提示词"}，原文照录、注明出处，可直接复制。`
-    : `${n} works built in code with Gemini 4 (Argon, Carbon and more) by creators on X, most of them same-prompt comparisons against Claude and GPT, each with ${threshold.toLocaleString("en-US")}+ views, playable here. ${withPrompt ? `${withPrompt} include the prompt the creator shared, kept verbatim with its source.` : "Prompts the creators share are kept verbatim with their source."}`,
+    ? `收录 ${n} 个 X 创作者用 Gemini 4（Argon、Carbon 等）写代码做出来的作品，大多是和 Claude、GPT 的同题对比，原帖播放均过 ${threshold.toLocaleString("en-US")}，点封面去 X 看原视频。${withPrompt ? `其中 ${withPrompt} 个附作者公开的提示词` : "作者公开的提示词"}，原文照录、注明出处，可直接复制。`
+    : `${n} works built in code with Gemini 4 (Argon, Carbon and more) by creators on X, most of them same-prompt comparisons against Claude and GPT, each with ${threshold.toLocaleString("en-US")}+ views; click a cover to watch it on X. ${withPrompt ? `${withPrompt} include the prompt the creator shared, kept verbatim with its source.` : "Prompts the creators share are kept verbatim with their source."}`,
 });
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -28,8 +28,6 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return withSocialCards({
     title: c.title,
     description: c.desc,
-    // X 的视频 CDN 拒绝带外站 Referer 的请求，这组页面不发 Referer
-    referrer: "no-referrer",
     alternates: {
       canonical: `${SITE_URL}/${lang}/${PATH}`,
       languages: { zh: `${SITE_URL}/zh/${PATH}`, en: `${SITE_URL}/en/${PATH}`, "x-default": `${SITE_URL}/zh/${PATH}` },

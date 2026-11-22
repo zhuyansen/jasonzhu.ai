@@ -54,12 +54,8 @@ const nextConfig: NextConfig = {
           },
         ],
       },
-      {
-        // X 的视频 CDN（video.twimg.com）对带外站 Referer 的请求返回 403；
-        // 提示词库要站内播放原视频，这组页面不发 Referer。规则靠后，覆盖上面的全站策略。
-        source: "/:lang(zh|en)/prompts/:path*",
-        headers: [{ key: "Referrer-Policy", value: "no-referrer" }],
-      },
+      // 提示词库原来在这里单独发 Referrer-Policy: no-referrer，好让 video.twimg.com 不认出外站引用、站内播放 X 原视频。
+      // X 条款不允许绕开技术限制，2026-11-21 起视频改成封面加去原帖的链接，这组页面和全站一样用上面的策略。
       {
         // Vercel git preview URL（jasonzhuai-*.vercel.app）加 noindex 兜底，避免预览环境被索引
         source: "/(.*)",

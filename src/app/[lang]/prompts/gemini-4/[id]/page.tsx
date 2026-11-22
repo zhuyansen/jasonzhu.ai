@@ -47,7 +47,6 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return withSocialCards({
     title,
     description,
-    referrer: "no-referrer",
     alternates: {
       canonical: `${SITE_URL}/${lang}/${PATH}/${id}`,
       languages: { zh: `${SITE_URL}/zh/${PATH}/${id}`, en: `${SITE_URL}/en/${PATH}/${id}`, "x-default": `${SITE_URL}/zh/${PATH}/${id}` },
@@ -105,7 +104,7 @@ export default async function GeminiCasePage({ params }: { params: Promise<{ lan
       </nav>
 
       <div className="grid lg:grid-cols-2 gap-8">
-        <CaseMedia id={c.id} media={c.media} postUrl={c.url} label={title} isZh={isZh} variant="detail" />
+        <CaseMedia media={c.media} postUrl={c.url} label={title} isZh={isZh} variant="detail" />
 
         <div>
           <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 leading-snug mb-3">{title}</h1>

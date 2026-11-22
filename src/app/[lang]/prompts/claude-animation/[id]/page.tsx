@@ -48,7 +48,6 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return withSocialCards({
     title,
     description,
-    referrer: "no-referrer",
     // Same work, same prompt as the Claude 5.5 library's page for it: that page is the canonical
     // one, so the two libraries do not compete with duplicate pages. This library's list page is
     // what ranks for "Claude animation prompts"; its detail pages stay out of the sitemap.
@@ -110,7 +109,7 @@ export default async function AnimationCasePage({ params }: { params: Promise<{ 
       </nav>
 
       <div className="grid lg:grid-cols-2 gap-8">
-        <CaseMedia id={c.id} media={c.media} postUrl={c.url} label={title} isZh={isZh} variant="detail" />
+        <CaseMedia media={c.media} postUrl={c.url} label={title} isZh={isZh} variant="detail" />
 
         <div>
           <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 leading-snug mb-3">{title}</h1>

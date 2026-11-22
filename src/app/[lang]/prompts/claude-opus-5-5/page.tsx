@@ -16,8 +16,8 @@ const REPO = "https://github.com/zhuyansen/awesome-opus-5.5-video";
 const copy = (isZh: boolean, n: number, full: number, threshold: number, withPrompt: number) => ({
   title: isZh ? "Claude 5.5 提示词库（Opus · Sonnet · Haiku · Fable）：视频、动效、3D 与游戏" : "Claude 5.5 Prompt Library (Opus · Sonnet · Haiku · Fable): Video, Motion, 3D & Games",
   desc: isZh
-    ? `收录 ${n} 个来自 X 创作者的 Claude Opus 5.5、Sonnet 5.5、Haiku 5.5 与 Fable 5.5（内测中）作品，原帖播放量均过 ${threshold.toLocaleString("en-US")}，视频可直接播放。其中 ${withPrompt} 个附作者公开的提示词（${full} 条完整提示词），保留原文与出处，可直接复制改写。`
-    : `${n} Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 and Fable 5.5 (preview) works from creators on X, each with ${threshold.toLocaleString("en-US")}+ views on the original post, playable right here. ${withPrompt} include the prompt the creator shared (${full} full prompts), kept verbatim with its source.`,
+    ? `收录 ${n} 个来自 X 创作者的 Claude Opus 5.5、Sonnet 5.5、Haiku 5.5 与 Fable 5.5（内测中）作品，原帖播放量均过 ${threshold.toLocaleString("en-US")}，点封面去 X 看原视频。其中 ${withPrompt} 个附作者公开的提示词（${full} 条完整提示词），保留原文与出处，可直接复制改写。`
+    : `${n} Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 and Fable 5.5 (preview) works from creators on X, each with ${threshold.toLocaleString("en-US")}+ views on the original post; click a cover to watch it on X. ${withPrompt} include the prompt the creator shared (${full} full prompts), kept verbatim with its source.`,
 });
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -28,8 +28,6 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return withSocialCards({
     title: c.title,
     description: c.desc,
-    // X 的视频 CDN 拒绝带外站 Referer 的请求，这组页面不发 Referer 才能站内播放
-    referrer: "no-referrer",
     alternates: {
       canonical: `${SITE_URL}/${lang}/${PATH}`,
       languages: { zh: `${SITE_URL}/zh/${PATH}`, en: `${SITE_URL}/en/${PATH}`, "x-default": `${SITE_URL}/zh/${PATH}` },

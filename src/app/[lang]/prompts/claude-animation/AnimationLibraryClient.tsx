@@ -110,10 +110,10 @@ export default function AnimationLibraryClient({ lang, initial, total, withPromp
                 <div className="relative">
                   {c.media[0].type === "video" ? (
                     <div className="relative aspect-video bg-black">
-                      <CaseVideo id={c.id} poster={c.media[0].poster || ""} mp4={c.media[0].url} postUrl={c.url} label={title} isZh={isZh} />
+                      <CaseVideo poster={c.media[0].poster || ""} postUrl={c.url} label={title} isZh={isZh} />
                     </div>
                   ) : (
-                    <CaseMedia id={c.id} media={c.media} postUrl={c.url} label={title} isZh={isZh} variant="card" />
+                    <CaseMedia media={c.media} postUrl={c.url} label={title} isZh={isZh} variant="card" />
                   )}
                   {isNew && <span className="absolute top-2 right-2 px-1.5 py-0.5 rounded bg-red-500 text-white text-[10px] font-bold pointer-events-none">NEW</span>}
                 </div>

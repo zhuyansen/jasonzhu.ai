@@ -83,7 +83,7 @@ export default function ImageLibraryClient({ lang, initial, total, withPrompt, c
             return (
               <article key={c.id} className="rounded-2xl border border-gray-100 bg-white overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
                 <div className="relative">
-                  <CaseMedia id={c.id} media={c.media} postUrl={c.url} label={title} isZh={isZh} variant="card" />
+                  <CaseMedia media={c.media} postUrl={c.url} label={title} isZh={isZh} variant="card" />
                   {isNew && <span className="absolute top-2 right-2 px-1.5 py-0.5 rounded bg-red-500 text-white text-[10px] font-bold pointer-events-none">NEW</span>}
                 </div>
                 <div className="p-4 flex flex-col gap-2 flex-1">

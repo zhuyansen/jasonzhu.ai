@@ -21,7 +21,6 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return withSocialCards({
     title,
     description,
-    referrer: "no-referrer",
     alternates: {
       canonical: `${SITE_URL}/${lang}/prompts`,
       languages: { zh: `${SITE_URL}/zh/prompts`, en: `${SITE_URL}/en/prompts`, "x-default": `${SITE_URL}/zh/prompts` },
@@ -51,7 +50,7 @@ export default async function PromptsIndexPage({ params }: { params: Promise<{ l
       href: `/${lang}/prompts/claude-opus-5-5`,
       name: "Claude 5.5",
       badge: null,
-      desc: isZh ? "Opus 5.5、Sonnet 5.5、Haiku 5.5、Fable 5.5 写代码做出来的视频、动效、3D 场景和游戏，视频可直接播放。" : "Video, motion graphics, 3D scenes and games built with code by Opus 5.5, Sonnet 5.5, Haiku 5.5 and Fable 5.5, playable here.",
+      desc: isZh ? "Opus 5.5、Sonnet 5.5、Haiku 5.5、Fable 5.5 写代码做出来的视频、动效、3D 场景和游戏，每个作品都附 X 原帖链接。" : "Video, motion graphics, 3D scenes and games built with code by Opus 5.5, Sonnet 5.5, Haiku 5.5 and Fable 5.5, each linked to its original post on X.",
       works: opus.cases.length,
       prompts: opus.withPrompt,
       cover: opus.cases[0]?.video.poster || null,

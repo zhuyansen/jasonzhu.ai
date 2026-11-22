@@ -351,9 +351,7 @@ function CaseCard({ c, lang, isNew, showAdded, onGroup, onPick, lockModel, lockC
     <article className="flex flex-col bg-white rounded-xl border border-gray-100 overflow-hidden hover:border-gray-200 hover:shadow-sm transition-all">
       <div className="relative aspect-video bg-black">
         <CaseVideo
-          id={c.id}
           poster={c.video.poster}
-          mp4={c.video.mp4}
           postUrl={c.url}
           label={`${title} · @${c.author.handle}`}
           isZh={isZh}

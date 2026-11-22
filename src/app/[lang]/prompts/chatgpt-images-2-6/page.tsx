@@ -15,8 +15,8 @@ const REPO = "https://github.com/zhuyansen/awesome-chatgpt-images-2.6";
 const copy = (isZh: boolean, n: number, withPrompt: number, threshold: number) => ({
   title: isZh ? "ChatGPT Images 2.6 提示词合集：GIF、人像、海报、表情包作品与原始提示词" : "ChatGPT Images 2.6 Prompts: GIFs, Portraits, Posters & Stickers with Original Prompts",
   desc: isZh
-    ? `收录 ${n} 个 X 创作者用 ChatGPT Images 2.6（GPT-Image-2.6）做的作品，原帖浏览均过 ${threshold.toLocaleString("en-US")}，GIF 可直接播放。${withPrompt ? `其中 ${withPrompt} 个附作者公开的提示词` : "作者公开的提示词"}，原文照录、注明出处，可直接复制。每天自动更新。`
-    : `${n} works made with ChatGPT Images 2.6 (GPT-Image-2.6) by creators on X, each with ${threshold.toLocaleString("en-US")}+ views on the original post, GIFs playable here. ${withPrompt ? `${withPrompt} include the prompt the creator shared, kept verbatim with its source.` : "Prompts the creators share are kept verbatim with their source."} Updated daily.`,
+    ? `收录 ${n} 个 X 创作者用 ChatGPT Images 2.6（GPT-Image-2.6）做的作品，原帖浏览均过 ${threshold.toLocaleString("en-US")}，GIF 和视频点封面去 X 看。${withPrompt ? `其中 ${withPrompt} 个附作者公开的提示词` : "作者公开的提示词"}，原文照录、注明出处，可直接复制。每天自动更新。`
+    : `${n} works made with ChatGPT Images 2.6 (GPT-Image-2.6) by creators on X, each with ${threshold.toLocaleString("en-US")}+ views on the original post; GIFs and videos open on X. ${withPrompt ? `${withPrompt} include the prompt the creator shared, kept verbatim with its source.` : "Prompts the creators share are kept verbatim with their source."} Updated daily.`,
 });
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -28,8 +28,6 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return withSocialCards({
     title: c.title,
     description: c.desc,
-    // X 的视频 CDN 拒绝带外站 Referer 的请求（GIF 也是 mp4），这组页面不发 Referer
-    referrer: "no-referrer",
     alternates: {
       canonical: `${SITE_URL}/${lang}/${PATH}`,
       languages: { zh: `${SITE_URL}/zh/${PATH}`, en: `${SITE_URL}/en/${PATH}`, "x-default": `${SITE_URL}/zh/${PATH}` },

@@ -34,7 +34,6 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isZh ? "播放最高的 50 个 Claude 5.5 视频提示词（完整原文）" : "Top 50 Claude 5.5 Video Prompts, Full Text",
     robots: { index: false, follow: true },
-    referrer: "no-referrer",
   };
 }
 
