@@ -164,6 +164,38 @@ export default async function ContactPage({
         </div>
       </div>
 
+      <div className="rounded-xl border border-gray-200 bg-white p-6 mb-6 space-y-4">
+        <h2 className="text-lg font-bold text-gray-900">
+          {isZh ? "发邮件前可以顺带说明" : "Before You Write: Quick Checklist"}
+        </h2>
+        <ul className="space-y-2.5 text-sm text-gray-600 leading-relaxed list-disc pl-5">
+          <li>
+            <strong className="text-gray-900">
+              {isZh ? "企业 AI 内训：" : "Corporate AI workshops:"}
+            </strong>{" "}
+            {isZh
+              ? "说明团队职能（研发 / 产品 / 市场）、人数、当前使用的模型或 IDE，以及希望解决的 1–2 个具体工作流瓶颈，我会在回信中直接给出定制大纲与报价区间。"
+              : "Share your team roles (engineering, product, or growth), headcount, current AI tooling, and one or two workflow bottlenecks you want solved. I will reply with a tailored syllabus and transparent fee range."}
+          </li>
+          <li>
+            <strong className="text-gray-900">
+              {isZh ? "出海收款与增长咨询：" : "Going-global & payment advisory:"}
+            </strong>{" "}
+            {isZh
+              ? "附上你的产品网址、目标客群市场、当前收款方式及遇到的卡点（如主体选择、Stripe / MoR 费率测算、技术 SEO 或 AI 搜索引用诊断），便于我们把 1v1 沟通聚焦在可执行方案上。"
+              : "Include your product URL, target markets, current billing setup, and the exact blocker (entity structure, Stripe vs. Merchant of Record fee math, technical SEO audit, or AI citation visibility) so our call stays focused on concrete next steps."}
+          </li>
+          <li>
+            <strong className="text-gray-900">
+              {isZh ? "GoSail Club 会员与开源数据：" : "GoSail Club & open benchmarks:"}
+            </strong>{" "}
+            {isZh
+              ? "会员激活、发票或权益问题请备注下单邮箱；学术引用或媒体核对 CERN Zenodo 数据集请直接写明所需字段与截稿日期。"
+              : "For GoSail Club membership activation or billing support, include the email used at checkout. For press quotes or academic citations of the CERN Zenodo datasets, mention your deadline and the specific slice you need."}
+          </li>
+        </ul>
+      </div>
+
       <div className="rounded-xl border border-gray-100 bg-gray-50 p-6">
         <h2 className="text-base font-bold text-gray-900 mb-2">
           {isZh ? "相关服务与社群入口" : "Services & Community"}
@@ -180,6 +212,12 @@ export default async function ContactPage({
             className="px-4 py-2 rounded-lg bg-white border border-gray-200 text-sm font-medium text-gray-700 hover:border-blue-300"
           >
             {isZh ? "了解 GoSail Club 启航会 (¥365/年) →" : "GoSail Club Pricing & Benefits →"}
+          </Link>
+          <Link
+            href={`/${lang}/research`}
+            className="px-4 py-2 rounded-lg bg-white border border-gray-200 text-sm font-medium text-gray-700 hover:border-blue-300"
+          >
+            {isZh ? "查看开源研究论文与数据集 →" : "Open Research & Benchmarks →"}
           </Link>
         </div>
       </div>

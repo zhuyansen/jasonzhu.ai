@@ -652,6 +652,25 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
             ? `本页最后核实：${GO_GLOBAL_CHECKED}。法律、税务信息仅供参考，以官方为准。`
             : `Last checked: ${GO_GLOBAL_CHECKED}. Legal and tax information is for reference only; follow the official sources.`}
         </p>
+        <div className="mt-5 rounded-xl border border-gray-200 bg-gray-50/70 px-4 py-3">
+          <p className="text-xs font-semibold text-gray-500 mb-2">
+            {isZh ? "新手先读 & 独立开发者出海复盘" : "Starter reads & founder case studies"}
+          </p>
+          <div className="flex flex-wrap gap-x-4 gap-y-1.5 text-sm">
+            <Link href={`/${lang}/blog/going-global-business-types`} className="text-blue-600 hover:underline">
+              {isZh ? "SaaS 出海 vs 跨境电商怎么选" : "SaaS vs. Cross-Border E-Commerce"}
+            </Link>
+            <Link href={`/${lang}/blog/indie-dev-going-global-tool-collection`} className="text-blue-600 hover:underline">
+              {isZh ? "独立开发出海工具合集" : "Essential Going-Global Tools"}
+            </Link>
+            <Link href={`/${lang}/blog/niko-saas-one-year-review`} className="text-blue-600 hover:underline">
+              {isZh ? "Niko SaaS 出海一年盈利复盘" : "Niko's 1-Year SaaS Case Study"}
+            </Link>
+            <Link href={`/${lang}/blog/xiaoerduo-web-saas-40k-journey`} className="text-blue-600 hover:underline">
+              {isZh ? "Web 出海月入 4 万刀历程" : "$40K/mo Global Web SaaS Journey"}
+            </Link>
+          </div>
+        </div>
       </header>
 
       <Beginners isZh={isZh} />
