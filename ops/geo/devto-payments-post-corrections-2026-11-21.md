@@ -1,4 +1,6 @@
-# dev.to 支付文要改的地方（2026-11-21 整理，Jason 登录后自己改）
+# dev.to 支付文要改的地方（2026-11-21 整理）
+
+> **2026-11-22 已改完**：按下面 13 条用 dev.to 接口改了标题、简介和正文（id 5087822），改完读回核对过：正文和仓库稿逐字相同，网址、标签、canonical_url 都没变。
 
 文章：https://dev.to/yansen_zhu_9b0dae1c4cc0da/i-analyzed-200000-indie-checkout-links-2023-2026-why-ai-saas-builders-are-choosing-mors-over-1020 （#5087822，2026-11-21 11:45 UTC 发布）
 

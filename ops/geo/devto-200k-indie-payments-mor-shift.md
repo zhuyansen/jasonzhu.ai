@@ -49,7 +49,7 @@ Headline pricing (`2.9% + $0.30` vs `5% + $0.50`) misleads almost every first-ti
 | **A "3.9%" MoR such as Creem** | **`$1.37`** | **`$18.63`** | `3.9% + $0.40` + `1%` payout fee |
 | **Paddle (All-In MoR)** | **`$1.50`** | **`$18.50`** | `5.0% + $0.50` flat; payout fees not counted |
 | **Dodo Payments (Default Rate)** | **`$1.60`** | **`$18.40`** | `4.0% + $0.40` + `1.5%` intl + `0.5%` sub |
-| **Stripe Hong Kong (Full SaaS Stack)** | **`~$1.79`** | **`~$18.21`** | `3.4% + $0.30` + `0.5%` intl + `0.7%` Billing + `2.0%` FX + `0.5%` Tax + Radar |
+| **Stripe Hong Kong (Full SaaS Stack)** | **`~$1.79`** | **`~$18.21`** | `3.4% + $0.30` + `0.5%` intl + `0.7%` Billing + `2.0%` FX + `0.5%` Tax |
 | **Polar (Standard MoR)** | **`$1.80`** | **`$18.20`** | `5.0% + $0.50` + `1.5%` intl card; payout fees not counted |
 | **Lemon Squeezy (Legacy MoR)** | **`$2.08`** | **`$17.92`** | `5.0% + $0.50` + `1.5%` intl + `0.5%` sub + `1%` payout |
 
@@ -66,7 +66,7 @@ Headline pricing (`2.9% + $0.30` vs `5% + $0.50`) misleads almost every first-ti
 
 ## 4. Practical Takeaways for 2026–2027 (Especially Post-Lemon Squeezy)
 
-With Lemon Squeezy stopping payment processing on **March 31, 2027** and Stripe Managed Payments covering a limited country list:
+With Lemon Squeezy shutting down on **March 31, 2027** and Stripe Managed Payments covering a limited country list:
 
 1. **Never run a single payment gateway** once you have paid acquisition or SEO traffic. Keep a primary MoR + a warm failover gateway (e.g., Waffo + Dodo Payments, or US Stripe + Polar/Paddle) behind a config flag.
 2. **Audit real net margin on your exact price point** (`$9`, `$20`, `$49`) — fixed `$0.40–$0.50` fees hurt `$9` plans far more than percentage differences.
