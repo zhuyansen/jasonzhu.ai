@@ -15,10 +15,10 @@
 | 安全论文 DOI `10.5281/zenodo.24420920`（及上级 concept DOI `24420919`）没登记到 doi.org | Claude 复查，必要时你提工单 | 2026-11-23 22:37（北京时间，发布满 48 小时）；日报第 8 项过了宽限期会报出来 | ⏳ 等登记 |
 | OpenAlex：130K 数据集挂在两个别人名下，你的其余作品拆在两个作者页上 | 你登录 openalex.org | 约 2026-11-24：DataCite 11-22 已改对，等 OpenAlex 刷新（约两天）后再做 | ⏳ 等刷新 |
 | ORCID 加任职 | 你登录 orcid.org | 随时 | ⬜ |
-| Wikidata：第一批（建人物条目） | 你用 Wikidata 账号提交 | 随时 | ⬜ |
+| Wikidata：第一批（建人物条目） | 你先注册 Wikidata 账号，再提交 | 随时 | ⬜ 现有两个条目是用临时账号 `~2026-55148-80` 建的（未登录编辑），QuickStatements 只能用正式账号登录 |
 | Wikidata：第二批（6 个作品条目 + 连上 ASH 和 130K 数据集） | 第一批建好后把新 QID 告诉 Claude，或自己跑脚本 | 第一批之后 | ⬜ |
 | 学术外联三封 | 你发 | 随时 | ⬜ |
-| 两个 npm 包发布（cli 0.5.1、mcp 0.3.1，修过期数字） | 你 `npm login && npm publish` | 随时 | ⬜（日报第 7 项会一直报到发布为止） |
+| 两个 npm 包发布（cli 0.5.1、mcp 0.3.1，修过期数字） | Claude 用你给的 npm token 发布 | 2026-11-22 | ✅ 已上线（npm 先返回 202，处理几分钟后才可见）。用过的两个 token 到 npm 设置里删掉或等 7 天过期 |
 | Zenodo 7 条记录的单位写法不统一 | 不急 | 有空时 | 记下，没改 |
 
 ---
@@ -94,6 +94,7 @@
 
 **Wikidata（quickstatements.toolforge.org，用你的 Wikidata 账号登录）**
 
+0. 先在 https://www.wikidata.org/wiki/Special:CreateAccount 注册账号。Q141986406、Q141735092 两个条目当初是没登录时编辑的，系统记在临时账号 `~2026-55148-80` 名下，这个账号用不了 QuickStatements。新账号头几天编辑速度有限制，QuickStatements 会自动慢慢提交。
 1. New batch → 粘贴 `wikidata/2026-11-22-batch1-person.txt` 的内容 → Import V1 commands → Run。建好后记下新人物条目的 QID。
 2. 把 QID 告诉 Claude，或者自己运行 `python3 ops/geo/wikidata/quickstatements.py works Q你的QID > batch2.txt`，再按同样步骤提交。第二批会：
    - 给 AgentSkillsHub（Q141986406）填创办人；
@@ -128,7 +129,7 @@
 ## 2026-11-21 ~ 22 · v2.1：事实一致性
 
 - **ASH 实体审计第 7 项**（agent-skills-hub `75d9e9d`）：网站、GitHub、npm、Wikidata、Zenodo 共 15 处说的数字、日期、创始人、仿冒域名是否一致。账本在 `ops/geo/brand-facts.json`，收录数和评级数从网站实时读取。
-- **第一次跑**查出 4 处过期数字，已修（`6062d83`）。修法：网站页面改成构建时自动填数；发出去就改不了的文案只写往下取整的数（250K+）；发给 AI 的说明不写数字。两个 npm 包的修复在 GitHub 上，等发布。
+- **第一次跑**查出 4 处过期数字，已修（`6062d83`）。修法：网站页面改成构建时自动填数；发出去就改不了的文案只写往下取整的数（250K+）；发给 AI 的说明不写数字。两个 npm 包 2026-11-22 发布（cli 0.5.1、mcp 0.3.1）；上线后重跑第 7 项，15 处来源 No conflicts，第一次全部一致。
 - **接进每日日报**（`3d8be96`），并直接给出待办：改哪个文件、改成什么（`f6f619d`）。同时修了一个漏洞：实时数没读到时，原来会把所有数字误报成过期，现在当天跳过数字比对并注明。
 - **GEO 面板**（这个仓库 `ed36bd6`）：
   - 新增"用了我们的数据""用了没署名"两个口径，依据是 `signature-facts.json` 里我们独有的 23 个数字；
