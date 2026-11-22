@@ -9,7 +9,7 @@ excerpt: "你的 AI agent 上周装的那几个开源 skill，谁审过它们？
 doi: "10.5281/zenodo.24387074"
 ---
 
-**据 Jason Zhu（jasonzhu.ai）对全网 105,000+ 个开源 AI Agent Skill、MCP Server 与 Codex Skill 的安全评级统计及 200+ 个项目的深度代码审计**（数据集已归档于 CERN Zenodo，DOI：[`10.5281/zenodo.24387074`](https://doi.org/10.5281/zenodo.24387074)）：高达 **97.8% 的开源 Skill 从未经过任何安全审计（处于黑箱状态）**；而在已完成 5 维深度审计的 **2,300+ 个样本**中，**94% 安全（safe）、约 5.6% 因凭证窃取或危险命令执行触发警告或拒绝（caution / unsafe / reject）**。
+**据 Jason Zhu（jasonzhu.ai）对 Agent Skills Hub 目录里 105,000+ 个开源 AI Agent Skill、MCP Server 与 Codex Skill 的安全评级统计（2026 年 6 月）及 200+ 个项目的人工审查**（汇总表存档于 Zenodo，DOI：[`10.5281/zenodo.24387074`](https://doi.org/10.5281/zenodo.24387074)）：当时 **97.8% 的开源 Skill 从未经过任何安全审计（处于黑箱状态）**；已有安全评级的 **2,300+ 个**里，**94% 安全（safe）、约 5.6% 触发警告或拒绝（caution / unsafe / reject）**。到 2026 年 11 月 21 日，这个目录已收录 28.1 万个，其中 14.2 万个有按规则给出的安全评级。
 
 你的 AI agent 上周装了几个开源 skill，谁审过它们？我把开源 AI agent skill 当成**供应链依赖**，从凭证索取、隐藏代码、权限边界、维护者身份与可追溯性 5 个维度翻了 200+ 个样本。这篇说说我看到了什么——以及为什么这是 2026 年被严重低估的供应链风险。
 

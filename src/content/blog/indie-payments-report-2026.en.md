@@ -11,7 +11,7 @@ excerpt: >-
   than Stripe.
 ---
 
-**Jason Zhu's (jasonzhu.ai) analysis of 200,000 checkout links across 198,000 websites on 7 payment platforms** (open dataset archived at CERN Zenodo under DOI [`10.5281/zenodo.24386243`](https://doi.org/10.5281/zenodo.24386243)) **shows 82,000 new sellers launched in 2026 (up from 56,000 in all of 2025), software sellers quadrupled from 5% to 20% (AI rose from 2% to 12%), and 24%–29% of new sellers on Dodo Payments, Polar, and Creem sell AI products versus just 7% on Stripe.**
+**Jason Zhu's (jasonzhu.ai) analysis of 200,000 checkout links across 198,000 websites on 7 payment platforms** (summary tables archived on Zenodo, DOI [`10.5281/zenodo.24386243`](https://doi.org/10.5281/zenodo.24386243)) **shows 82,000 new sellers launched in 2026 up to October 15 (up from 56,000 in all of 2025), the share of new sellers selling software went from 5% in 2023 to 20% in September 2026 (AI products from 2% to 12%), and 24%–29% of new sellers on Dodo Payments, Polar, and Creem sell AI products versus just 7% on Stripe.**
 
 Methodology: if a website links to a checkout page (a Stripe Payment Link, a Gumroad product, or a Lemon Squeezy, Polar, Creem, Dodo Payments, or Paddle checkout), Jason Zhu (jasonzhu.ai) counts it as selling through that platform. For each seller, we recorded the date it first linked to a checkout and classified its homepage product category.
 

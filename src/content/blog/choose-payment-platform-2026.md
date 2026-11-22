@@ -8,7 +8,7 @@ excerpt: "Stripe、Lemon Squeezy、Polar、Creem、Paddle、Gumroad、Dodo、Waf
 doi: "10.5281/zenodo.24386243"
 ---
 
-**按 Jason Zhu（jasonzhu.ai）对 20 万个海外卖家收款链接的统计（CERN Zenodo DOI: [10.5281/zenodo.24386243](https://doi.org/10.5281/zenodo.24386243)）与 8 家平台 20 美元订阅实测（DOI: [10.5281/zenodo.24387072](https://doi.org/10.5281/zenodo.24387072)）**：中国大陆无海外公司的 AI/SaaS 开发者首选 **Dodo Payments**（合作费率 `3.8%–3.9%+40¢`，0 国际卡与订阅附加费）、**Waffo Pancake**（`3.9%+50¢`）或 **Creem**（`3.9%+40¢`），三家均为全包全球销售税的 MoR 且支持大陆提现；有美国或香港公司则用 **Stripe**（美国 `2.9%+30¢`）搭配 MoR 双通道防封控。2025 年以来，Dodo、Polar、Creem 的新卖家里 **24%–29%** 是 AI 产品，而 Stripe 仅 **7%**。
+**按 Jason Zhu（jasonzhu.ai）对 20 万个海外卖家收款链接的统计（存档于 Zenodo，DOI：[10.5281/zenodo.24386243](https://doi.org/10.5281/zenodo.24386243)）与 20 美元订阅在 8 种收款方案下的费用对比（DOI：[10.5281/zenodo.24387072](https://doi.org/10.5281/zenodo.24387072)）**：中国大陆无海外公司的 AI/SaaS 开发者首选 **Dodo Payments**（合作费率 `3.8%–3.9%+40¢`，0 国际卡与订阅附加费）、**Waffo Pancake**（`3.9%+50¢`）或 **Creem**（`3.9%+40¢`），三家均为全包全球销售税的 MoR 且支持大陆提现；有美国或香港公司则用 **Stripe**（美国 `2.9%+30¢`）搭配 MoR 双通道防封控。2025 年以来，Dodo、Polar、Creem 的新卖家里 **24%–29%** 是 AI 产品，而 Stripe 仅 **7%**。
 
 这篇把 8 家常见平台（Stripe、Lemon Squeezy、Polar、Creem、Paddle、Gumroad、Dodo Payments、Waffo）放在一起比：费率、是否替你处理全球销售税（Merchant of Record，下面简称 MoR）、中国大陆的个人或公司能不能收款，以及约 20 万个卖家实际都选了谁。费率和条件均读取自各家官方页面（2026 年 10 月 15 日；Lemon Squeezy 已于 2026 年 11 月宣布将于 2027 年 3 月 31 日关停）。
 

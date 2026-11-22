@@ -671,8 +671,8 @@ export const GEO_NEW_SITE = {
 export const KEYWORD_TOOLS: SharedPick[] = [
   {
     what: {
-      zh: "自研 10 信号新词雷达 v0.7.0（比 Google Trends 早 1–3 周抓 X/HF/GitHub 爆发/新注册即排名站/8 大收款平台新卖家/TrustMRR 收入/Reddit 求助，14 天后自动复核信号命中率）",
-      en: "Our 10-signal new-term radar v0.7.0 (catches X, HF, GitHub breakouts, newly ranked domains, 8-gateway new sellers & TrustMRR revenue 1–3 weeks before Google Trends, with 14-day self-review)",
+      zh: "自研 10 信号新词雷达 v0.7.0（抓 X/HF/GitHub 爆发/新注册即排名站/8 大收款平台新卖家/TrustMRR 收入/Reddit 求助，14 天后自动复核信号命中率。比趋势曲线早多少，只核对过一个例子：雷达报出 Strata，比它在 DataForSEO Trends 里起量早 3 天，一个例子不代表一般情况）",
+      en: "Our 10-signal new-term radar v0.7.0 (catches X, HF, GitHub breakouts, newly ranked domains, 8-gateway new sellers & TrustMRR revenue, with 14-day self-review. How far ahead of the trend curves it runs has been checked once: it named Strata three days before Strata's rise in DataForSEO Trends, and one example says little about the general case)",
     },
     name: "new-term-radar（自研开源 CLI / MCP / Skill）",
     url: "https://github.com/zhuyansen/new-term-radar",
@@ -846,8 +846,8 @@ export const GO_GLOBAL_ARSENAL_2026 = {
     {
       stage: { zh: "⑤ 外链、权威与 GEO 工具（L1–L5）", en: "⑤ Backlinks, Authority & GEO Tools (L1–L5)" },
       keep: {
-        zh: "backlink-guard v0.12.0（12 个 MCP/CLI 命令：find 按访客排外链页、vet 防毒、ai-access 查 AI 爬虫能不能读到、audit/lost 找带外链的 404 做 301、competitors --early 扒竞品头 90 天发射渠道、cited/asked 测 5 大 AI 引擎引用）+ CERN Zenodo DOI 数据集（本站的数据只发在 Zenodo；Hugging Face 和 Kaggle 上的数据集是 AgentSkillsHub 发的）+ GitHub 每日自动更新榜单仓库矩阵",
-        en: "backlink-guard v0.12.0 (12 CLI/MCP commands: find, vet, ai-access, audit, lost 404 recovery, competitors --early, cited/asked 5-engine AI probe) + CERN Zenodo DOI datasets (this site publishes its data on Zenodo only; the Hugging Face and Kaggle datasets are AgentSkillsHub's) + daily GitHub awesome repos",
+        zh: "backlink-guard v0.12.0（12 个 MCP/CLI 命令：find 按访客排外链页、vet 防毒、ai-access 查 AI 爬虫能不能读到、audit/lost 找带外链的 404 做 301、competitors --early 扒竞品头 90 天发射渠道、cited/asked 测 5 大 AI 引擎引用）+ 存档于 Zenodo 的数据集（有 DOI；部分在 GitHub、Hugging Face、Kaggle 上另有镜像）+ GitHub 每日自动更新榜单仓库矩阵",
+        en: "backlink-guard v0.12.0 (12 CLI/MCP commands: find, vet, ai-access, audit, lost 404 recovery, competitors --early, cited/asked 5-engine AI probe) + datasets archived on Zenodo (with DOIs; some mirrored on GitHub, Hugging Face and Kaggle) + daily GitHub awesome repos",
       },
       add: {
         zh: "geo_engine.py 的 18 个子命令（含 2026-11-20 新加的 3 个命令，都是粗查：`section-candidates` 看每个 H2 首段的长度和有没有数字或具体名称、`connected-kg` 看几个页面的 JSON-LD 是否共用同一个 `@id`、`brand-consensus` 看本站核心页面是否覆盖同一组主题词；配合原有的 `sro-and-recency` / `entity-molecule` / `serp-similarity` / `publisher-finder` / `proprietary-assets`）+ 每周 GEO 引用面板（`ops/geo/panel_run.py`，问 AI 引用了谁统一用它）（geo_engine.py 和 panel_run.py 都是内部脚本，在本站仓库 ops/ 目录，读者不能直接安装）+ `backlink-guard ai-access`（外站是否放行 AI 爬虫）+ `/api/md/...` 零噪 Markdown 端点 + `Dataset` JSON-LD + `/ai-info/` 机器可读签字事实页",
@@ -1339,8 +1339,8 @@ export const SEO_SCHOOLS_MAP: {
         en: "Rejects cranking out filler articles from keyword spreadsheets ('Red Ocean SEO'). Strategically, Eli Schwartz and Tim Soulo (DISCOVERABLE) draw a hard line: SEO captures existing demand (Get Found), whereas unknown categories require social interruption (Get Noticed) and word-of-mouth assets (Get Talked About); Joker (2026-08-27) adds that while 'Keyword + Page + Content + Backlinks' still works in emerging low-competition niches, mature niches and AI Search require 4 higher layers (Entity + Topic + Retrieval + Network). Cyrus Shepard proved 92.9% of Core Update winners carry proprietary assets AI cannot fabricate and AIO drives 21%–23% of clicks; Georg Richard Aare says his 410,572-claim study found that opening with first-hand experience lifts Top-3 probability 5.5x (unverified).",
       },
       borrow: {
-        zh: "1. 首屏直接给可交互工具或结构化对比表，并在首段前 50 词亮出「谁 + 测了多少样本 + 结论」（依据是 Aare 的统计，未核实）；2. 单页至少配齐 4 类以上一手资产（自测统计数字、CERN Zenodo DOI 数据集引用、Markdown 对比表、实测截图）；3. 改造内链为 Eli 书中第 6 章的「西南航空网格」消灭孤岛页。",
-        en: "1. Put an interactive tool or structured table above the fold and open with first-hand sample size and findings in the first 50 words (based on Aare's figures, unverified); 2. Combine at least 4 proprietary asset types per page (original stats, CERN Zenodo DOI dataset citation, comparison table, screenshots); 3. Build Eli's 'Southwest Airlines' mesh internal link graph.",
+        zh: "1. 首屏直接给可交互工具或结构化对比表，并在首段前 50 词亮出「谁 + 测了多少样本 + 结论」（依据是 Aare 的统计，未核实）；2. 单页至少配齐 4 类以上一手资产（自测统计数字、存档于 Zenodo 的数据集及其 DOI、Markdown 对比表、实测截图）；3. 改造内链为 Eli 书中第 6 章的「西南航空网格」消灭孤岛页。",
+        en: "1. Put an interactive tool or structured table above the fold and open with first-hand sample size and findings in the first 50 words (based on Aare's figures, unverified); 2. Combine at least 4 proprietary asset types per page (original stats, a dataset archived on Zenodo with its DOI, comparison table, screenshots); 3. Build Eli's 'Southwest Airlines' mesh internal link graph.",
       },
       caveat: {
         zh: "去伪存真：程序化建站最忌盲目铺空壳页或偏离实体核心蹭泛流量。Joker 警告「一个站死得最快的方式，就是为了做流量去发 3,000 篇跟自己实体核心毫无关系的泛流量文章」；Eli 在书中也记录过把 100 多个重复度高的汽车站狠心砍到只剩 4 个站，流量反而涨到被罚前的 125%。",
@@ -1439,8 +1439,8 @@ export const SEO_SCHOOLS_MAP: {
         en: "Centers on Original Source E-E-A-T and bottom-of-funnel revenue. Lily Ray's 2,076-domain Core Update study and 100-B2B-query study revealed two critical truths: (1) Google and AI engines reward the Original Source of a topic while penalizing off-topic generalists regardless of DR; (2) in AI Overviews for 100 B2B 'best X software' queries (April–June 2026), of 323 self-promotional lists that were cited, **the brand that wrote the list was left out of the actual recommendation 69% of the time**. Being cited is not being recommended, and the study covered AI Overviews only. Pair this with John JP's 'Info feeds Commercial' matrix and Alex Galinos's Revenue-First Digital PR: publish neutral 'Decision by Buyer Situation' benchmarks and datasets on your site to earn links, then route equity to money pages while letting third-party domains rank you #1.",
       },
       borrow: {
-        zh: "1. 主站评测页不写自嗨的「我们是第一名」，改写为「按买家场景对号入座（Decision Matrix by Buyer Situation）」并附上 CERN Zenodo 公开数据集 DOI（Lily Ray 的数据：AI 概览引用的自荐榜单里，69% 的情况品牌本身没被推荐）；2. 用独家行业统计报告（Info 页）吸引自然外链，按 Alex Galinos「三道门」用站内内链集中导权给 `/best/` 选型页与核心产品页；3. 优先建漏斗底部的对比页（`X vs Y`、`Alternatives`）。",
-        en: "1. Replace self-serving 'We are #1' listicles on your own site with neutral 'Decision by Buyer Situation' matrices backed by CERN Zenodo DOIs (Lily Ray's data: in self-ranking lists cited by AI Overviews, the brand itself was left out of the recommendation 69% of the time); 2. Use original data reports (Info pages) to attract natural links and route internal link equity to money pages via Alex Galinos's 3-gate checklist; 3. Build bottom-of-funnel comparison pages (X vs Y, Alternatives).",
+        zh: "1. 主站评测页不写自嗨的「我们是第一名」，改写为「按买家场景对号入座（Decision Matrix by Buyer Situation）」并附上存档于 Zenodo 的数据集 DOI（Lily Ray 的数据：AI 概览引用的自荐榜单里，69% 的情况品牌本身没被推荐）；2. 用独家行业统计报告（Info 页）吸引自然外链，按 Alex Galinos「三道门」用站内内链集中导权给 `/best/` 选型页与核心产品页；3. 优先建漏斗底部的对比页（`X vs Y`、`Alternatives`）。",
+        en: "1. Replace self-serving 'We are #1' listicles on your own site with neutral 'Decision by Buyer Situation' matrices backed by datasets archived on Zenodo, with their DOIs (Lily Ray's data: in self-ranking lists cited by AI Overviews, the brand itself was left out of the recommendation 69% of the time); 2. Use original data reports (Info pages) to attract natural links and route internal link equity to money pages via Alex Galinos's 3-gate checklist; 3. Build bottom-of-funnel comparison pages (X vs Y, Alternatives).",
       },
       caveat: {
         zh: "去伪存真：2024–2026 年 Google 核心更新与「网站声誉滥用政策（Site Reputation Abuse）」重创了纯洗稿、无真机实测的传统 Affiliate 站。Lily Ray 与 John JP 均强调评测页必须有一手实测数据、可验证作者资质或向 Micro SaaS 工具化转型。",
@@ -1480,8 +1480,8 @@ export const SEO_SCHOOLS_MAP: {
         en: "1. Before pitching PR or links, run `geo_engine.py publisher-finder` (our internal script) and `backlink-guard ai-access <domain>` to verify the publisher allows GPTBot, ClaudeBot, and PerplexityBot; 2. Build presence across 6 heterogeneous platform types using `Brand + Context + Relationship` co-occurrence; 3. Check each platform's description of the brand for one semantic cluster and no conflicting positioning (manual for now; `geo_engine.py brand-consensus` only covers this site's core pages).",
       },
       caveat: {
-        zh: "去伪存真：Quaid 团队测试过的「40 天批量建 65 个 EMD 精确匹配域名卫星站占座」属于灰帽打法，Edward Sturm 当场提醒 Google 能通过注册商、GSC 与主机指纹识别站群连坐。用 Zenodo、GitHub、PyPI、YouTube 等天然高权第三方平台占座既安全又持久。",
-        en: "Fact-check: Spinning up 65 EMD satellite sites in 40 days to occupy retrieval seats risks footprint detection across registrars and GSC. Use legitimate high-authority seats (CERN Zenodo, GitHub, PyPI, YouTube) instead.",
+        zh: "去伪存真：Quaid 团队测试过的「40 天批量建 65 个 EMD 精确匹配域名卫星站占座」属于灰帽打法，Edward Sturm 当场提醒 Google 能通过注册商、GSC 与主机指纹识别站群连坐。与其建卫星站，不如把真实的数据、代码和视频放到 Zenodo、GitHub、PyPI、YouTube 这些公开平台上。",
+        en: "Fact-check: Spinning up 65 EMD satellite sites in 40 days to occupy retrieval seats risks footprint detection across registrars and GSC. Put real data, code and video on public platforms such as Zenodo, GitHub, PyPI and YouTube instead.",
       },
     },
     {
