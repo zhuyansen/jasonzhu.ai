@@ -65,7 +65,7 @@
 | 1 | Zenodo 作者统一成一个「Zhu, Jason」并挂 ORCID：21292799（合并重复作者，补单位）、24386243（补 ORCID） | Claude，用 `~/.claude/.env` 里的 Zenodo token 调接口 | 新脚本 [`zenodo/fix_creators.py`](zenodo/fix_creators.py)，默认只预览；只改元数据，DOI、文件和版本都不变 | DataCite 2026-11-22 01:39 UTC 已同步，两条都只剩一个作者并挂着 ORCID；第 8 项不再报作者问题 |
 | 2 | OpenAlex 认领作者页、把作品归到你名下 | 你 | 步骤见下文「你要做的」 | 等 OpenAlex 刷新后看日报第 8 项 |
 | 3 | 24420920 的 DOI | Claude 复查 | 发布满 48 小时前不报；之后日报第 8 项会列为问题并附修法；工单模板见下文 | 2026-11-23 晚 |
-| 4 | Person JSON-LD 只留个人主页；Organization 的 sameAs 只留公司 LinkedIn；ASH 节点补 `founder → #person`；论文页出版方改成 `/#organization` | Claude | `src/lib/profiles.ts` 每条标上 `kind`（profile / work / org），新增 `PERSON_SAME_AS`；llms.txt 仍列出全部 | `npx tsc --noEmit` 通过；sameAs 23 → 13，全是个人主页；部署后用 curl 看线上 |
+| 4 | Person JSON-LD 只留个人主页；Organization 的 sameAs 只留公司 LinkedIn；ASH 节点补 `founder → #person`；论文页出版方改成 `/#organization` | Claude | `src/lib/profiles.ts` 每条标上 `kind`（profile / work / org），新增 `PERSON_SAME_AS`；llms.txt 仍列出全部 | `npx tsc --noEmit` 通过；Vercel 部署后用 curl 核对了线上 jasonzhu.ai/en：Person sameAs 13 条全是个人主页，Organization 只剩 LinkedIn，ASH 节点带 founder → #person，论文页 publisher → /#organization |
 | 5 | 实体审计第 8 项：学术索引 | Claude | ASH `2e95053`：`ops/geo/academic_index.py`，8 项离线测试；作品清单从 ORCID 读，新论文自动纳入；接进 `entity_audit.py` 和每日日报 | 第一次实跑查出第 1–3 条，同一天第 3 项仍显示 VERIFIED |
 | 6 | CITATION.cff | Claude | ASH `18065c3`、backlink-guard `b9909e2`、indie-saas-payments-benchmark-2026 `ac3e3a1`、cli `8dc5974`、mcp `c524704`。不写目录规模、版本、日期，文件不会过时 | 5 份都通过 cffconvert 2.0.0 校验（schema 1.2.0） |
 | 6b | ORCID 加任职 | 你 | 字段见下文 | ORCID 公开接口能看到任职 |
