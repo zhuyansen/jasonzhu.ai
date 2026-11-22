@@ -7,6 +7,7 @@ import { relatedEnglishArticles } from "@/lib/related-articles";
 import { fitTitle } from "@/lib/social";
 import fullData from "@/generated/opus-prompts-full.json";
 import CaseVideo from "../CaseVideo";
+import { isPromptNoindexed, NOINDEX_ROBOTS } from "../../noindex";
 import PromptsSubscribe from "../PromptsSubscribe";
 import CopyPrompt, { TryInClaude } from "../CopyPrompt";
 
@@ -51,6 +52,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: fitTitle(title),
     description,
+    // 短提示词、3 个月零点击的页面不收录（名单和规则见 src/content/opus-prompts/noindex.json）
+    ...(isPromptNoindexed("claude-opus-5-5", id) ? { robots: NOINDEX_ROBOTS } : {}),
     alternates: {
       canonical: `${SITE_URL}/${lang}/${PATH}/${id}`,
       languages: { zh: `${SITE_URL}/zh/${PATH}/${id}`, en: `${SITE_URL}/en/${PATH}/${id}`, "x-default": `${SITE_URL}/zh/${PATH}/${id}` },

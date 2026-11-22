@@ -5,6 +5,7 @@ import { getOpusLibrary } from "@/lib/opus-prompts";
 import { getImageLibrary } from "@/lib/image-prompts";
 import { getGeminiLibrary } from "@/lib/gemini-prompts";
 import { GUIDES } from "@/lib/go-global-guides";
+import { isPromptNoindexed } from "./[lang]/prompts/noindex";
 
 const SITE_URL = "https://jasonzhu.ai";
 const LANGS = ["zh", "en"] as const;
@@ -118,9 +119,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
+  // 提示词库详情页：只有带提示词的作品有详情页。提示词不到 100 字符、3 个月零点击的那批 noindex，不进 sitemap
+  // （名单和规则见 src/content/opus-prompts/noindex.json，2026-11-21）
+
   // Opus 5.5 提示词库详情页：标题/简介中英都是人工写的，zh/en 都收
   const opus = getOpusLibrary();
-  for (const c of opus.cases.filter((x) => x.prompt)) { // 无提示词的作品页 noindex，不进 sitemap
+  for (const c of opus.cases.filter((x) => x.prompt && !isPromptNoindexed("claude-opus-5-5", x.id))) {
     for (const lang of LANGS) {
       entries.push({
         url: `${SITE_URL}/${lang}/prompts/claude-opus-5-5/${c.id}`,
@@ -133,7 +137,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // ChatGPT Images 2.6 合集详情页：只有带提示词的作品有详情页，zh/en 都收
   const images = getImageLibrary();
-  for (const c of images.cases.filter((x) => x.prompt)) {
+  for (const c of images.cases.filter((x) => x.prompt && !isPromptNoindexed("chatgpt-images-2-6", x.id))) {
     for (const lang of LANGS) {
       entries.push({
         url: `${SITE_URL}/${lang}/prompts/chatgpt-images-2-6/${c.id}`,
@@ -146,7 +150,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Gemini 4 合集详情页：同图片库，只有带提示词的作品有详情页
   const gemini = getGeminiLibrary();
-  for (const c of gemini.cases.filter((x) => x.prompt)) {
+  for (const c of gemini.cases.filter((x) => x.prompt && !isPromptNoindexed("gemini-4", x.id))) {
     for (const lang of LANGS) {
       entries.push({
         url: `${SITE_URL}/${lang}/prompts/gemini-4/${c.id}`,

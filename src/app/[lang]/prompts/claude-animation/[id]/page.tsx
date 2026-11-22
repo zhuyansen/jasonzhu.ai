@@ -10,6 +10,7 @@ import { withSocialCards, fitDescription } from "@/lib/social";
 import CopyPrompt from "../../claude-opus-5-5/CopyPrompt";
 import PromptsSubscribe from "../../claude-opus-5-5/PromptsSubscribe";
 import CaseMedia from "../../chatgpt-images-2-6/CaseMedia";
+import { isPromptNoindexed, NOINDEX_ROBOTS } from "../../noindex";
 
 // 结构同 Gemini 4 库的详情页；作品同时也在 Claude 5.5 库里（同一个 id），页面链回那边的条目
 
@@ -48,6 +49,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return withSocialCards({
     title,
     description,
+    // 和 canonical 指向的 Claude 5.5 库那页一起：那页因为短提示词、零点击不收录时，这页也不收录（src/content/opus-prompts/noindex.json）
+    ...(isPromptNoindexed("claude-animation", id) ? { robots: NOINDEX_ROBOTS } : {}),
     // Same work, same prompt as the Claude 5.5 library's page for it: that page is the canonical
     // one, so the two libraries do not compete with duplicate pages. This library's list page is
     // what ranks for "Claude animation prompts"; its detail pages stay out of the sitemap.

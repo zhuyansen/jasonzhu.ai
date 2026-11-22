@@ -8,6 +8,7 @@ import { withSocialCards, fitDescription } from "@/lib/social";
 import CopyPrompt from "../../claude-opus-5-5/CopyPrompt";
 import PromptsSubscribe from "../../claude-opus-5-5/PromptsSubscribe";
 import CaseMedia from "../CaseMedia";
+import { isPromptNoindexed, NOINDEX_ROBOTS } from "../../noindex";
 
 const SITE_URL = "https://jasonzhu.ai";
 const PATH = IMAGE_LIBRARY_PATH.slice(1);
@@ -43,6 +44,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return withSocialCards({
     title,
     description,
+    // 短提示词、3 个月零点击的页面不收录（名单和规则见 src/content/opus-prompts/noindex.json）
+    ...(isPromptNoindexed("chatgpt-images-2-6", id) ? { robots: NOINDEX_ROBOTS } : {}),
     alternates: {
       canonical: `${SITE_URL}/${lang}/${PATH}/${id}`,
       languages: { zh: `${SITE_URL}/zh/${PATH}/${id}`, en: `${SITE_URL}/en/${PATH}/${id}`, "x-default": `${SITE_URL}/zh/${PATH}/${id}` },
