@@ -19,8 +19,8 @@ export default function UniverseFrame({ lang, total, mode = "embed" }: { lang: "
   useEffect(() => {
     if (mode === "full") return;
     const w = window as Window & { requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number; cancelIdleCallback?: (id: number) => void };
-    if (w.requestIdleCallback) { const id = w.requestIdleCallback(() => setSrc(url), { timeout: 1500 }); return () => w.cancelIdleCallback?.(id); }
-    const t = setTimeout(() => setSrc(url), 600);
+    if (w.requestIdleCallback) { const id = w.requestIdleCallback(() => setSrc(url), { timeout: 500 }); return () => w.cancelIdleCallback?.(id); }
+    const t = setTimeout(() => setSrc(url), 250);
     return () => clearTimeout(t);
   }, [url, mode]);
 
@@ -39,7 +39,7 @@ export default function UniverseFrame({ lang, total, mode = "embed" }: { lang: "
       style={{ backgroundImage: "radial-gradient(90% 70% at 60% 45%, #0d1226 0%, #06060e 65%)" }}
     >
       {!ready && (
-        <div className="absolute inset-0 grid place-items-center text-xs tracking-[0.2em] text-[#a59e8c]" aria-hidden="true">
+        <div className="pointer-events-none absolute inset-0 grid place-items-center text-xs tracking-[0.2em] text-[#a59e8c]" aria-hidden="true">
           {isZh ? "星图展开中…" : "Unfolding the star map…"}
         </div>
       )}

@@ -22,6 +22,13 @@ function readUrlModel(): ClaudeModel | null {
   const v = new URLSearchParams(window.location.search).get("model")?.toLowerCase();
   return (Object.keys(MODEL_LABEL) as ClaudeModel[]).find((k) => v && (k === v || k.startsWith(v + "-"))) ?? null;
 }
+function readUrlCategory(): OpusCategory | null {
+  const v = new URLSearchParams(window.location.search).get("category")?.toLowerCase();
+  return OPUS_CATEGORIES.find((c) => c.key === v)?.key ?? null;
+}
+function readUrlQuery(): string {
+  return new URLSearchParams(window.location.search).get("q")?.trim() ?? "";
+}
 
 const PAGE_SIZE = 24;
 const BASE = "prompts/claude-opus-5-5";
@@ -51,12 +58,16 @@ export default function PromptLibraryClient({ initial, total, counts, modelCount
   const isZh = lang === "zh";
   const [all, setAll] = useState<OpusCaseSlim[]>(initial);
   const [loaded, setLoaded] = useState(initial.length >= total);
-  const [category, setCategory] = useState<OpusCategory | null>(lockCategory ?? null);
+  const [pickedCategory, setCategory] = useState<OpusCategory | null | undefined>(undefined);
+  const urlCategory = useSyncExternalStore(noopSubscribe, readUrlCategory, () => null);
+  const category = lockCategory ?? (pickedCategory === undefined ? urlCategory : pickedCategory);
   const [sort, setSort] = useState<Sort>("views");
   const [fullOnly, setFullOnly] = useState(false);
   const [promptOnly, setPromptOnly] = useState(false);
   const [noAssets, setNoAssets] = useState(false);
-  const [q, setQ] = useState("");
+  const [typedQ, setQ] = useState<string | undefined>(undefined);
+  const urlQ = useSyncExternalStore(noopSubscribe, readUrlQuery, () => "");
+  const q = typedQ === undefined ? urlQ : typedQ;
   const [group, setGroup] = useState<string | null>(null);
   // undefined = 用户还没点过模型筛选，此时跟随 URL 的 ?model=（fable-5.5 或简写 fable/sonnet/opus），方便宣传时贴直达链接。
   // 用 useSyncExternalStore 读 URL：服务端渲染时为 null，不用 useSearchParams，免得整页退出静态渲染
@@ -349,13 +360,13 @@ function CaseCard({ c, lang, isNew, showAdded, onGroup, onPick, lockModel, lockC
         />
         {isNew && (
           <span
-            className="pointer-events-none absolute top-2 left-2 px-1.5 py-0.5 rounded bg-rose-500 text-white text-[10px] font-bold tracking-wide shadow"
+            className="pointer-events-none absolute top-2 left-2 z-[2] px-1.5 py-0.5 rounded bg-rose-500 text-white text-[10px] font-bold tracking-wide shadow"
             title={isZh ? `${c.addedAt} 收录` : `Added ${c.addedAt}`}
           >
             NEW
           </span>
         )}
-        <span className="pointer-events-none absolute top-2 right-2 px-1.5 py-0.5 rounded bg-black/70 text-white text-[11px] tabular-nums">
+        <span className="pointer-events-none absolute top-2 right-2 z-[2] px-1.5 py-0.5 rounded bg-black/70 text-white text-[11px] tabular-nums">
           {formatDuration(c.video.durationSec)}
         </span>
       </div>
@@ -438,10 +449,10 @@ function CaseCard({ c, lang, isNew, showAdded, onGroup, onPick, lockModel, lockC
                 <div className="pointer-events-none absolute inset-x-px bottom-px h-10 rounded-b-lg bg-gradient-to-t from-gray-50 to-transparent" />
               )}
             </div>
-            <div className="flex items-center gap-2 mt-2.5">
+            <div className="flex flex-wrap items-center gap-2 mt-2.5">
               <CopyPrompt id={c.id} text={full ?? (canExpand ? undefined : p.excerpt)} isZh={isZh} />
               <TryInClaude id={c.id} text={full ?? (canExpand ? undefined : p.excerpt)} isZh={isZh} />
-              {canExpand && (
+              {canExpand ? (
                 <button
                   onClick={toggle}
                   disabled={loading}
@@ -449,6 +460,13 @@ function CaseCard({ c, lang, isNew, showAdded, onGroup, onPick, lockModel, lockC
                 >
                   {loading ? "…" : open ? (isZh ? "收起" : "Collapse") : isZh ? "展开全文" : "Show all"}
                 </button>
+              ) : (
+                <Link
+                  href={`/${lang}/${BASE}/${c.id}`}
+                  className="px-2.5 py-1.5 text-xs font-medium rounded-lg bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors"
+                >
+                  {isZh ? "详情 →" : "Details →"}
+                </Link>
               )}
             </div>
           </>

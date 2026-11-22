@@ -129,14 +129,32 @@ export default async function OpusCasePage({ params }: Props) {
       </nav>
 
       <div className="flex items-center gap-2 text-xs text-gray-400 mb-2 flex-wrap">
-        <span className="px-2 py-0.5 rounded-full bg-blue-50 text-[var(--primary)] font-medium">{categoryLabel(c.category, lang)}</span>
+        <Link
+          href={`/${lang}/${PATH}?category=${c.category}`}
+          className="px-2 py-0.5 rounded-full bg-blue-50 text-[var(--primary)] font-medium hover:bg-blue-100 transition-colors"
+        >
+          {categoryLabel(c.category, lang)}
+        </Link>
         <a href={c.url} target="_blank" rel="noopener noreferrer" className="hover:text-gray-700">
           {c.author.name} @{c.author.handle}
         </a>
         <span>{c.postedAt.slice(0, 10)}</span>
         <span className="tabular-nums">{formatDuration(c.video.durationSec)}</span>
       </div>
-      <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-5">{title}</h1>
+      <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">{title}</h1>
+
+      {prompt && c.prompt && (
+        <div className="flex flex-wrap items-center gap-2 mb-4">
+          <CopyPrompt text={prompt} isZh={isZh} />
+          <TryInClaude text={prompt} isZh={isZh} />
+          <a
+            href="#full-prompt"
+            className="px-3 py-1.5 text-xs font-medium rounded-lg bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors"
+          >
+            {isZh ? "查看完整提示词 ↓" : "Read prompt ↓"}
+          </a>
+        </div>
+      )}
 
       <div className="relative aspect-video bg-black rounded-xl overflow-hidden">
         <CaseVideo id={c.id} poster={c.video.poster} mp4={c.video.mp4} postUrl={c.url} label={`${title} · @${c.author.handle}`} isZh={isZh} />
@@ -154,7 +172,7 @@ export default async function OpusCasePage({ params }: Props) {
       {summary && <p className="mt-6 text-gray-600 leading-relaxed">{isZh ? summary.zh : summary.en}</p>}
 
       {prompt && c.prompt && (
-        <section className="mt-8">
+        <section id="full-prompt" className="mt-8 scroll-mt-20">
           <div className="flex items-center justify-between gap-3 mb-3">
             <h2 className="text-lg font-bold text-gray-900">
               {c.prompt.kind === "full" ? (isZh ? "完整提示词" : "Full prompt") : isZh ? "作者公开的指令" : "Creator's brief"}
@@ -196,7 +214,13 @@ export default async function OpusCasePage({ params }: Props) {
           <h2 className="text-sm font-semibold text-gray-700 mb-2">{isZh ? "作者提到的工具" : "Tools the creator mentioned"}</h2>
           <div className="flex flex-wrap gap-2">
             {c.tools.map((t) => (
-              <span key={t} className="px-2.5 py-1 rounded-full bg-gray-100 text-gray-600 text-xs">{t}</span>
+              <Link
+                key={t}
+                href={`/${lang}/${PATH}?q=${encodeURIComponent(t)}`}
+                className="px-2.5 py-1 rounded-full bg-gray-100 text-gray-600 text-xs hover:bg-gray-200 hover:text-gray-900 transition-colors"
+              >
+                {t}
+              </Link>
             ))}
           </div>
         </section>

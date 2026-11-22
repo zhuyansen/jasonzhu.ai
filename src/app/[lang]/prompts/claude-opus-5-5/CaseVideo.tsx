@@ -19,11 +19,22 @@ interface Props {
 export default function CaseVideo({ id, poster, mp4, postUrl, label, isZh }: Props) {
   const ref = useRef<HTMLVideoElement>(null);
   const [failed, setFailed] = useState(false);
+  const [started, setStarted] = useState(false);
 
   // 同一时间只播一个，避免多个视频叠音
   const pauseOthers = () => {
     document.querySelectorAll<HTMLVideoElement>("video[data-opus-case]").forEach((v) => {
       if (v !== ref.current && !v.paused) v.pause();
+    });
+  };
+
+  const startPlay = () => {
+    const el = ref.current;
+    if (!el) return;
+    setStarted(true);
+    pauseOthers();
+    el.play().catch(() => {
+      /* 浏览器拦截自动播时保留原生 controls 让用户操作 */
     });
   };
 
@@ -42,18 +53,37 @@ export default function CaseVideo({ id, poster, mp4, postUrl, label, isZh }: Pro
   }
 
   return (
-    <video
-      ref={ref}
-      data-opus-case={id}
-      controls
-      playsInline
-      preload="none"
-      poster={poster}
-      src={mp4}
-      aria-label={label}
-      onPlay={pauseOthers}
-      onError={() => setFailed(true)}
-      className="absolute inset-0 w-full h-full object-contain bg-black"
-    />
+    <>
+      <video
+        ref={ref}
+        data-opus-case={id}
+        controls
+        playsInline
+        preload="none"
+        poster={poster}
+        src={mp4}
+        aria-label={label}
+        onPlay={() => {
+          setStarted(true);
+          pauseOthers();
+        }}
+        onError={() => setFailed(true)}
+        className="absolute inset-0 w-full h-full object-contain bg-black"
+      />
+      {!started && (
+        <button
+          type="button"
+          onClick={startPlay}
+          aria-label={isZh ? `播放视频：${label}` : `Play video: ${label}`}
+          className="group/play absolute inset-0 z-[1] flex items-center justify-center bg-black/15 hover:bg-black/25 transition-colors cursor-pointer"
+        >
+          <span className="flex h-12 w-12 items-center justify-center rounded-full bg-black/70 text-white shadow-lg ring-1 ring-white/25 transition-transform group-hover/play:scale-110">
+            <svg className="h-5 w-5 translate-x-0.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M8 5.14v14l11-7-11-7z" />
+            </svg>
+          </span>
+        </button>
+      )}
+    </>
   );
 }

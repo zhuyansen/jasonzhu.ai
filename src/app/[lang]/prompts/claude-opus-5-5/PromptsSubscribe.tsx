@@ -86,6 +86,7 @@ export default function PromptsSubscribe({
   const [email, setEmail] = useState("");
   const [website, setWebsite] = useState(""); // honeypot
   const [status, setStatus] = useState<"idle" | "loading" | "done" | "error">("idle");
+  const [emailed, setEmailed] = useState(false);
   const [error, setError] = useState("");
   const mountedAt = useRef(0);
   useEffect(() => {
@@ -104,7 +105,7 @@ export default function PromptsSubscribe({
       const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, source, website, ts: mountedAt.current }),
+        body: JSON.stringify({ email, source, lang: "en", website, ts: mountedAt.current }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
@@ -112,6 +113,7 @@ export default function PromptsSubscribe({
         setError(res.status === 400 ? "Please enter a valid email." : "Something went wrong. Please try again.");
         return;
       }
+      setEmailed(Boolean(data.emailed));
       track("newsletter_subscribe", { source: `${source}-${where}`, already: Boolean(data.alreadySubscribed) });
       setStatus("done");
     } catch {
@@ -123,7 +125,10 @@ export default function PromptsSubscribe({
   if (status === "done") {
     return (
       <div className={`rounded-xl border border-green-200 bg-green-50 ${compact ? "px-4 py-3" : "p-5"}`}>
-        <p className="text-sm font-semibold text-green-800">{t.done}</p>
+        <p className="text-sm font-semibold text-green-800">
+          {t.done}
+          {emailed && <span className="ml-1 font-normal text-green-700">(Bookmark also sent to your inbox.)</span>}
+        </p>
         <Link href={href} className="mt-2 inline-block rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
           Open the Top 50 prompts →
         </Link>

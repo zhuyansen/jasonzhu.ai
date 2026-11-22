@@ -3,7 +3,7 @@ import { getSupabase } from "@/lib/supabase";
 import { rateLimit } from "@/lib/rate-limit";
 import { backupLead, clearPendingUnsubscribe } from "@/lib/lead-backup";
 import { isLeadMagnet, LINK_TTL_DAYS, type LinkLang } from "@/lib/download-link";
-import { overLimit, sendLeadMagnetEmail } from "@/lib/lead-magnet-email";
+import { overLimit, sendLeadMagnetEmail, sendPromptsEnWelcomeEmail } from "@/lib/lead-magnet-email";
 
 export const dynamic = "force-dynamic";
 
@@ -15,7 +15,9 @@ export async function POST(request: NextRequest) {
     const { email, source, website, ts, magnet: rawMagnet, lang: rawLang } = await request.json();
     // 送资料的入口（订阅框送手册、handbook、学习全景图）带 magnet：订阅后把 7 天下载链接发到邮箱（2026-10-31 起，PDF 不再有公开直链）
     const magnet = isLeadMagnet(rawMagnet) ? rawMagnet : null;
-    const lang: LinkLang = rawLang === "en" ? "en" : "zh";
+    const sourceStr = typeof source === "string" ? source : "website";
+    const isPromptsEn = !magnet && sourceStr.startsWith("prompts-en");
+    const lang: LinkLang = rawLang === "en" || isPromptsEn ? "en" : "zh";
     const t = (zh: string, en: string) => (lang === "en" ? en : zh);
     // 判成 bot 时静默返回成功：界面照常显示「已发送」，但不写库、不发信
     const fakeOk = () =>
@@ -82,11 +84,26 @@ export async function POST(request: NextRequest) {
 
     const addr = email.toLowerCase();
     // 订阅成功或已订阅都发下载链接；同一邮箱 24 小时最多 3 封。发信失败让用户重试（线索已经存下）
-    const reply = async (alreadySubscribed: boolean) => {
+    const reply = async (alreadySubscribed: boolean, subscriberId: string | null = null) => {
       if (!magnet) {
+        let emailed = false;
+        // 英文提示词库新订阅（或退订后重订）：自动发一封欢迎信（书签 Top 50 + Agent Skills Hub + 200K 支付白皮书）
+        // best-effort：发信限流或异常绝不阻塞订阅成功
+        if (isPromptsEn && !alreadySubscribed) {
+          const ipLimited = await overLimit(`pw:ip:${ip}`, 10, 3600);
+          const emailLimited = await overLimit(`pw:e:${addr}`, 1, 86400);
+          if (!ipLimited && !emailLimited) {
+            try {
+              await sendPromptsEnWelcomeEmail(addr, subscriberId, sourceStr);
+              emailed = true;
+            } catch (e) {
+              console.warn("[subscribe] prompts-en welcome email failed", { email: addr, source: sourceStr, error: String(e) });
+            }
+          }
+        }
         return NextResponse.json({
           success: true,
-          emailed: false,
+          emailed,
           alreadySubscribed,
           message: alreadySubscribed ? t("你已经订阅过了", "You're already subscribed") : t("订阅成功！", "Subscribed!"),
         });
@@ -139,25 +156,29 @@ export async function POST(request: NextRequest) {
         .select("id");
       // Supabase 写失败时记进 KV 的退订也撤掉，免得之后回灌又把人退订了
       await clearPendingUnsubscribe(existing.id);
-      return reply(!resumed?.length);
+      return reply(!resumed?.length, existing.id);
     }
 
     // Insert new subscriber (primary: Supabase)
-    const { error } = await supabase.from("subscribers").insert({
-      email: addr,
-      source: source || "website",
-      subscribed_at: new Date().toISOString(),
-    });
+    const { data: inserted, error } = await supabase
+      .from("subscribers")
+      .insert({
+        email: addr,
+        source: sourceStr,
+        subscribed_at: new Date().toISOString(),
+      })
+      .select("id")
+      .single();
 
     // 双写：独立 KV 备份（best-effort，不阻塞成功路径；Supabase 整库被限制时兜底）
-    const backedUp = await backupLead(email, source);
+    const backedUp = await backupLead(email, sourceStr);
 
     if (error) {
       console.error("Supabase insert error:", error);
       if (backedUp) {
         // 主写失败但 KV 兜住了线索：照常发下载链接，绝不丢线索 / 不显示「订阅失败」
-        console.warn("[subscribe] supabase down, lead captured via KV backup", { email, source });
-        return reply(false);
+        console.warn("[subscribe] supabase down, lead captured via KV backup", { email, source: sourceStr });
+        return reply(false, null);
       }
       return NextResponse.json(
         { error: t("订阅失败，请稍后重试", "Subscription failed. Please try again later.") },
@@ -165,7 +186,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    return reply(false);
+    return reply(false, inserted?.id ?? null);
   } catch {
     return NextResponse.json(
       { error: "服务器错误，请稍后重试 / Server error, please try again later" },
