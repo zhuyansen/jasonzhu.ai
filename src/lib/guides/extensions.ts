@@ -9,7 +9,7 @@ export const EXTENSIONS: Guide = {
   description:
     "不做网站也能出海：Chrome 插件从开发到上架踩过的坑，以及 Chrome 应用商店、Edge、Firefox、App Store、Google Play、MCP 目录和 GPT 商店的上架规则，按官方页面整理。",
   intro: "产品不一定是网站。浏览器插件、手机 App、MCP 服务和 GPT 都有自己的商店，规则各不相同。先看我做插件的经验，再看每家商店的官方规定。",
-  checked: "2026-10-17",
+  checked: "2026-11-21",
   mine: {
     title: "我做 Reply Filter for X 的经验",
     lead: "Reply Filter for X 是我 2026 年 9 月上架 Chrome 应用商店的插件，在 X 上把低质量回复折叠起来，代码开源。",
@@ -127,6 +127,10 @@ export const EXTENSIONS: Guide = {
             { label: "小企业计划", url: "https://developer.apple.com/app-store/small-business-program/" },
             { label: "降佣公告", url: "https://developer.apple.com/news/?id=dadukodv" },
           ],
+        },
+        {
+          text: "美国区可以在 App 里放链接，引导用户去网页付款（比如 Waffo、Dodo 的结账页）。这类购买的佣金要由法院批准：苹果 2026 年 8 月提议标准 App 收 15%（小企业计划 5%），法院批准之前是 0（2025 年 4 月起法院禁止它对这类链接收费）。这是二手报道，官司还没结束，以法院记录为准。",
+          sources: [{ label: "MacRumors（2026-08-13）", url: "https://www.macrumors.com/2026/08/13/app-store-fees-apple-link-outs/" }],
         },
         {
           text: "要在中国大陆店面上架，App 得有 ICP 备案号，缺了或信息不一致就在大陆不可用。只卖海外的，可以在「App 可用性」里取消勾选中国大陆，注意列表底部「未来新增的国家和地区自动上架」那个选项。",

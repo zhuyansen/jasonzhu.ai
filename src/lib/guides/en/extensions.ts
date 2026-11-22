@@ -11,7 +11,7 @@ export const EXTENSIONS_EN: Guide = {
     "You don't need a website to sell overseas. The mistakes I made taking a Chrome extension from code to the store, plus the publishing rules for the Chrome Web Store, Edge, Firefox, the App Store, Google Play, MCP directories and the GPT Store, based on official pages.",
   intro:
     "Your product doesn't have to be a website. Browser extensions, mobile apps, MCP servers and GPTs each have their own stores, and the rules differ. First my experience building an extension, then each store's official rules.",
-  checked: "2026-10-17",
+  checked: "2026-11-21",
   mine: {
     title: "What I learned building Reply Filter for X",
     lead: "Reply Filter for X is an extension I published on the Chrome Web Store in September 2026. It collapses low-quality replies on X, and the code is open source.",
@@ -129,6 +129,10 @@ export const EXTENSIONS_EN: Guide = {
             { label: "Small Business Program", url: "https://developer.apple.com/app-store/small-business-program/" },
             { label: "Commission announcement", url: "https://developer.apple.com/news/?id=dadukodv" },
           ],
+        },
+        {
+          text: "On the US storefront an app may link users out to pay on the web (a Waffo or Dodo checkout page, for example). The commission on those purchases needs a court's approval: in August 2026 Apple proposed 15% for standard apps (5% in the Small Business Program), and until the court approves a rate it is 0 (a court barred any fee on these links in April 2025). This comes from press reports and the case is still going, so the court record decides.",
+          sources: [{ label: "MacRumors (2026-08-13)", url: "https://www.macrumors.com/2026/08/13/app-store-fees-apple-link-outs/" }],
         },
         {
           text: "To be listed on the mainland China storefront, an app needs an ICP filing number. If it's missing or the details don't match, the app is unavailable in mainland China. If you only sell outside China, you can uncheck mainland China under App Availability, and watch the option at the bottom of the list that automatically makes the app available in new countries and regions.",

@@ -20,7 +20,7 @@ export const DIGITAL_TAX_EN: Guide = {
     "The tax a foreign seller owes when selling subscriptions, AI tools or e-books to consumers in each market: the EU and UK tax the first sale, Japan, Korea, Indonesia, Vietnam and Russia have rules aimed at foreign sellers, US states have sales tax, and Paddle, Lemon Squeezy, FastSpring and the app stores pay some of it for you.",
   intro:
     "Digital products sold to consumers are taxed where the buyer is in most markets, and foreign sellers aren't exempt: the EU and the UK tax the first sale, and Japan, South Korea, Indonesia, Vietnam and Russia all have rules aimed at foreign sellers. The easiest route is a merchant of record, which becomes the seller and calculates, collects and pays the tax for you. Below, a foreign seller means one with no company or office in that market.",
-  checked: "2026-11-07",
+  checked: "2026-11-21",
   warning: {
     text: "This page summarises tax authorities' pages and the laws themselves. It is general information, not tax advice; for your own situation, ask a tax adviser in that country.",
   },
@@ -35,10 +35,11 @@ export const DIGITAL_TAX_EN: Guide = {
           sources: [{ label: "Paddle tax", url: PADDLE_TAX }],
         },
         {
-          text: "Lemon Squeezy says only that it collects and pays tax as merchant of record, with no country list, and doesn't sell to Russian buyers. In January 2026 it announced Stripe Managed Payments and plans to move existing users; that service pays tax in more than 80 countries, including the EU, UK, US, Japan, Korea, Indonesia and Vietnam, but not Russia or mainland China.",
+          text: "Lemon Squeezy says only that it collects and pays tax as merchant of record, with no country list, and doesn't sell to Russian buyers. In January 2026 it announced Stripe Managed Payments; on 16 November it announced its shutdown: new store sign-ups closed that day, payment processing stops on 31 March 2027, and migration tooling arrives on 2 December 2026. The tooling moves sellers to Stripe Managed Payments only, which isn't available in every country Lemon Squeezy supports. Managed Payments pays tax in more than 80 countries, including the EU, UK, US, Japan, Korea, Indonesia and Vietnam, but not Russia or mainland China.",
           sources: [
             { label: "Lemon Squeezy tax", url: "https://docs.lemonsqueezy.com/help/payments/sales-tax-vat" },
             { label: "Lemon Squeezy 2026 update", url: "https://www.lemonsqueezy.com/blog/2026-update" },
+            { label: "Lemon Squeezy shutdown (2026-11-16)", url: "https://www.lemonsqueezy.com/blog/saying-goodbye-to-lemon-squeezy" },
             { label: "Stripe Managed Payments", url: STRIPE_MP },
           ],
         },
@@ -273,7 +274,7 @@ export const DIGITAL_TAX_EN: Guide = {
     "Japan: the exact definition of the base period, and other 2024 changes for newly formed foreign companies.",
     "EU: whether e-books qualify for reduced rates differs by country; we didn't check each one.",
     "US: state filing frequencies and local taxes aren't covered, and sources disagree on how many states tax SaaS.",
-    "Paddle's tax page dates from August 2025 and may not reflect Vietnam's move to 10%; Lemon Squeezy hasn't published a timetable for moving to Stripe.",
+    "Paddle's tax page dates from August 2025 and may not reflect Vietnam's move to 10%.",
   ],
   related: [
     { label: "Payment platform picker", path: "/payments" },

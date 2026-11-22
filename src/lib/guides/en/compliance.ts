@@ -59,6 +59,9 @@ const EU_EAA = "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A3201
 const EU_DSA = "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32022R2065";
 const BIPT_DSA =
   "https://bipt.be/consumers/publication/providers-of-intermediary-services-without-an-establishment-in-the-eu-appointment-of-a-legal-representative";
+const EU_AI_ACT_50 = "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-50";
+const EU_AI_ACT_113 = "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-113";
+const EU_AI_OMNIBUS_COOLEY = "https://cdp.cooley.com/digital-ai-omnibus-delays-key-deadlines-introduces-new-rules/";
 const DDG_5 = "https://www.gesetze-im-internet.de/ddg/__5.html";
 const DDG_33 = "https://www.gesetze-im-internet.de/ddg/__33.html";
 const UK_GDPR_27 = "https://www.legislation.gov.uk/eur/2016/679/article/27";
@@ -72,10 +75,10 @@ export const COMPLIANCE_EN: Guide = {
   short: "Pages and filings before launch",
   title: "Compliance pages and filings you need before launch: privacy policies, cookies, seller information pages and local representatives, and what a small seller abroad must do in each market",
   description:
-    "Market by market, the pages to put up, the filings to make and the representatives to appoint before launching to local users: privacy policies and auto-renewal rules in the US; PSE registration in Indonesia; Vietnam's Personal Data Protection Law; the notice under Japan's Act on Specified Commercial Transactions; Korea's E-Commerce Act; personal data localisation in Russia; China's Personal Information Protection Law and operating licence; the GDPR representative, cookies, 14-day withdrawal, the European Accessibility Act and the DSA in the EU; Germany's Impressum; and the UK's new cookie rules.",
+    "Market by market, the pages to put up, the filings to make and the representatives to appoint before launching to local users: privacy policies and auto-renewal rules in the US; PSE registration in Indonesia; Vietnam's Personal Data Protection Law; the notice under Japan's Act on Specified Commercial Transactions; Korea's E-Commerce Act; personal data localisation in Russia; China's Personal Information Protection Law and operating licence; the GDPR representative, cookies, 14-day withdrawal, the European Accessibility Act, the DSA and the AI Act's transparency duties in the EU; Germany's Impressum; and the UK's new cookie rules.",
   intro:
     "Being abroad with no local company does not put you out of reach of local law: Japan's Act on Specified Commercial Transactions, the EU and UK GDPR and China's Personal Information Protection Law all state that they cover foreign sellers, and Indonesia's PSE registration is required of operators abroad too; in 2022 PayPal and Steam were blocked there for not registering. Below, market by market: the pages to put up, the filings to make and the representatives to appoint before launching to local users, and the thresholds at which each applies. Tax registration is covered in the guide on tax for digital products, and ICP filing in the domain guide.",
-  checked: "2026-11-07",
+  checked: "2026-11-21",
   warning: {
     text: "This page summarises the laws of each country and what their regulators say. It is general information, not legal advice; for your own product and users, ask a local lawyer.",
   },
@@ -277,7 +280,7 @@ export const COMPLIANCE_EN: Guide = {
     },
     {
       id: "eu",
-      title: "EU: GDPR representative, cookies, 14-day withdrawal, accessibility and the DSA",
+      title: "EU: GDPR representative, cookies, 14-day withdrawal, accessibility, the DSA and AI Act transparency",
       items: [
         {
           text: "The privacy notice (GDPR Article 13) must give the contact details of the controller and its EU representative, the purposes and legal basis, the recipients, transfers abroad, the retention period, the user's rights and the right to complain. Breaches can be fined up to €20 million or 4% of global turnover.",
@@ -320,6 +323,14 @@ export const COMPLIANCE_EN: Guide = {
           sources: [
             { label: "DSA Regulation", url: EU_DSA },
             { label: "Belgian regulator (2026-09-22)", url: BIPT_DSA },
+          ],
+        },
+        {
+          text: "AI chat and generation products: the transparency duties in Article 50 of the AI Act apply from 2 August 2026. If users talk to an AI system, they must be told they are dealing with AI, unless that is obvious; if you make deep fakes by generating or altering images, audio or video, you must disclose that the content is AI-generated or manipulated; and systems that generate synthetic content must mark their output in a machine-readable way that shows it is AI-made. According to Cooley's summary (a secondary source), the AI Omnibus published on 24 July 2026 only delays the machine-readable marking (paragraph 2) to 2 December 2026 for systems already on the market before 2 August; the disclosure to users and the deep-fake labelling were not delayed.",
+          sources: [
+            { label: "AI Act Art. 50 (Commission AI Act Service Desk)", url: EU_AI_ACT_50 },
+            { label: "Art. 113 (dates of application)", url: EU_AI_ACT_113 },
+            { label: "Cooley (2026-08-03)", url: EU_AI_OMNIBUS_COOLEY },
           ],
         },
         {
@@ -396,6 +407,7 @@ export const COMPLIANCE_EN: Guide = {
     "Korea: how a small foreign seller with no business licence should fill in the business details on its home page, and whether it must file a mail-order business report.",
     "Whether Japan's external transmission rule covers operators abroad, and whether the \"returnable within 8 days\" rule applies to digital content and online services.",
     "How exactly section 5 of Germany's DDG applies to sellers outside the EU.",
+    "The scope of the EU AI Omnibus delay to Article 50: we have only Cooley's summary and did not read the regulation itself on EUR-Lex.",
     "Whether the UK ICO's annual data protection fee applies to controllers based abroad.",
     "China: whether a site on a server abroad that charges users in China counts as providing services \"within China\" and whether it needs an operating licence; and whether a foreign site collecting personal information directly from people in China counts as data export.",
   ],

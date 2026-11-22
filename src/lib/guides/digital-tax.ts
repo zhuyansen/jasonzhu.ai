@@ -19,7 +19,7 @@ export const DIGITAL_TAX: Guide = {
     "境外卖家把订阅软件、AI 工具、电子书卖给各国消费者时的税：欧盟和英国从第一笔就要交，日本、韩国、印尼、越南、俄罗斯给境外卖家的专门规定，美国各州的销售税，以及 Paddle、Lemon Squeezy、FastSpring 和应用商店替你交了哪些。",
   intro:
     "卖给个人消费者的数字产品，多数市场按买家所在地收税，境外卖家也逃不掉：欧盟和英国从第一笔就要交，日本、韩国、印尼、越南、俄罗斯都有专门给境外卖家的规定。最省事的办法是用代收平台（Merchant of Record），由它当卖方，替你算税、收税、交税。下面「境外卖家」都指在当地没有公司或机构的卖家。",
-  checked: "2026-11-07",
+  checked: "2026-11-21",
   warning: {
     text: "这一页按各国税务机关和法律原文整理，是一般信息，不是税务建议。具体到你自己的情况，请找当地的税务顾问。",
   },
@@ -34,10 +34,11 @@ export const DIGITAL_TAX: Guide = {
           sources: [{ label: "Paddle 税务", url: PADDLE_TAX }],
         },
         {
-          text: "Lemon Squeezy 只说自己作为代收方代收代缴，没公布逐国清单，也不卖给俄罗斯买家。它 2026 年 1 月宣布推出 Stripe Managed Payments，并计划帮现有用户迁移；Stripe 这套方案在 80 多个国家代缴，包括欧盟、英国、美国、日本、韩国、印尼、越南，不包括俄罗斯和中国大陆。",
+          text: "Lemon Squeezy 只说自己作为代收方代收代缴，没公布逐国清单，也不卖给俄罗斯买家。它 2026 年 1 月宣布推出 Stripe Managed Payments；11 月 16 日宣布关停：当天起不再接受新店注册，2027 年 3 月 31 日停止收款，迁移工具 2026 年 12 月 2 日上线，只迁到 Stripe Managed Payments，而 Managed Payments 不是 Lemon Squeezy 支持的每个国家都能用。Stripe 这套方案在 80 多个国家代缴，包括欧盟、英国、美国、日本、韩国、印尼、越南，不包括俄罗斯和中国大陆。",
           sources: [
             { label: "Lemon Squeezy 税务", url: "https://docs.lemonsqueezy.com/help/payments/sales-tax-vat" },
             { label: "Lemon Squeezy 2026 公告", url: "https://www.lemonsqueezy.com/blog/2026-update" },
+            { label: "Lemon Squeezy 关停公告（2026-11-16）", url: "https://www.lemonsqueezy.com/blog/saying-goodbye-to-lemon-squeezy" },
             { label: "Stripe Managed Payments", url: STRIPE_MP },
           ],
         },
@@ -272,7 +273,7 @@ export const DIGITAL_TAX: Guide = {
     "日本：「基准期间」的具体定义，以及 2024 年改正对新设外国公司的其他规定。",
     "欧盟：电子书等能不能用低税率，各国不同，没有逐国查。",
     "美国：各州的申报频率和地方税没覆盖；不同来源统计的 SaaS 应税州数不一致。",
-    "Paddle 税务页是 2025 年 8 月的版本，越南改成 10% 以后是否已更新；Lemon Squeezy 迁移到 Stripe 的时间表没公布。",
+    "Paddle 税务页是 2025 年 8 月的版本，越南改成 10% 以后是否已更新。",
   ],
   related: [
     { label: "收款平台选择器", path: "/payments" },

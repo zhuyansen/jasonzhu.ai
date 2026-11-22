@@ -49,7 +49,7 @@ export const COMPANY_ROLES_EN: Guide = {
     "You have a Chinese company, a UK company and a US single-member LLC. Which one should own the China app and which the global app, in what order to get D-U-N-S numbers and Apple, Google and Chinese Android store developer accounts, what each company files every year, and how the Chinese company can charge the UK company a service fee under a contract for development work. Based on official pages.",
   intro:
     "Each company has its own hurdles. Apple's China storefront needs an MIIT filing number, which only a Chinese company can get. Store revenue booked to the UK company is generally not subject to US withholding under the US-UK tax treaty. A US LLC is the easiest way to open a US Stripe account, but a foreign-owned single-member LLC has to file Form 5472 every year. Below is one way to split the work and an order for opening accounts, then what each company has to do based on official pages, and finally how to move money between the three companies in a compliant way.",
-  checked: "2026-10-20",
+  checked: "2026-11-21",
   sections: [
     {
       id: "roles",
@@ -194,6 +194,13 @@ export const COMPANY_ROLES_EN: Guide = {
           sources: [
             { label: "Annual accounts", url: "https://www.gov.uk/file-your-company-annual-accounts" },
             { label: "Confirmation statement", url: "https://www.gov.uk/file-your-confirmation-statement-with-companies-house" },
+          ],
+        },
+        {
+          text: "Companies House identity verification: a legal requirement since 18 November 2025 for directors and people with significant control (PSCs), usually done once, after which you get a personal code. Directors already in office give their code in the company's next confirmation statement after that date; the 12-month transition ended on 18 November 2026, and new directors give it with their appointment filing. From outside the UK you can try GOV.UK One Login online (whether it works depends on your ID), or have an authorised agent (ACSP: an accountant or solicitor registered with Companies House and supervised under UK anti-money-laundering rules, possibly for a fee) verify you; agents can do this from any country. Not verifying on time may be an offence, with fines and a note against your name on the public register.",
+          sources: [
+            { label: "GOV.UK identity verification (updated 2026-11-19)", url: "https://www.gov.uk/guidance/verifying-your-identity-for-companies-house" },
+            { label: "GOV.UK earlier guidance (code in the confirmation statement)", url: "https://www.gov.uk/guidance/when-you-need-to-verify-your-identity-for-companies-house" },
           ],
         },
       ],

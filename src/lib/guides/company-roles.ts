@@ -47,7 +47,7 @@ export const COMPANY_ROLES: Guide = {
     "同时有国内公司、英国公司和美国一人 LLC：国内版和海外版 App 各挂哪家，D-U-N-S 和苹果、Google、国内安卓商店的开发者账号按什么顺序开，三家每年各要报什么，国内公司给英国公司做开发怎么按合同收服务费。按官方页面整理。",
   intro:
     "三家各有门槛：苹果中国区要工信部备案号，只有国内公司办得了；商店收入挂英国公司，按英美税收协定一般不被美国预扣；美国 LLC 开 Stripe 美国账户最顺手，但外国人持有的一人 LLC 每年要交 5472。下面先给一种分工和开账号的顺序，再按官方页面整理每家要办的事，最后是三家之间的钱怎么合规地走。",
-  checked: "2026-10-20",
+  checked: "2026-11-21",
   sections: [
     {
       id: "roles",
@@ -192,6 +192,13 @@ export const COMPANY_ROLES: Guide = {
           sources: [
             { label: "年度账目", url: "https://www.gov.uk/file-your-company-annual-accounts" },
             { label: "确认声明", url: "https://www.gov.uk/file-your-confirmation-statement-with-companies-house" },
+          ],
+        },
+        {
+          text: "Companies House 身份验证：2025 年 11 月 18 日起是法定要求，董事和重要控制人（PSC）都要验证，一般只验一次，验完拿到个人验证码（personal code）。已在任的董事，在公司那之后交的下一份确认声明里填自己的验证码，12 个月过渡期已在 2026 年 11 月 18 日结束；新任董事在任命申报时就要交。人在英国以外的，可以用 GOV.UK One Login 在线验证（能不能用要看手上的证件），也可以找授权代理（ACSP：在 Companies House 登记、受英国反洗钱监管的会计师或律师，可能收费）代验，代理在哪个国家都能办。不按时验证可能构成违法，会被罚款，登记册上你的名字旁会被加注。",
+          sources: [
+            { label: "GOV.UK 身份验证（2026-11-19 更新）", url: "https://www.gov.uk/guidance/verifying-your-identity-for-companies-house" },
+            { label: "GOV.UK 旧版说明（确认声明交验证码）", url: "https://www.gov.uk/guidance/when-you-need-to-verify-your-identity-for-companies-house" },
           ],
         },
       ],

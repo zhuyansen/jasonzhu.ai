@@ -57,6 +57,9 @@ const EU_EAA = "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A3201
 const EU_DSA = "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32022R2065";
 const BIPT_DSA =
   "https://bipt.be/consumers/publication/providers-of-intermediary-services-without-an-establishment-in-the-eu-appointment-of-a-legal-representative";
+const EU_AI_ACT_50 = "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-50";
+const EU_AI_ACT_113 = "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-113";
+const EU_AI_OMNIBUS_COOLEY = "https://cdp.cooley.com/digital-ai-omnibus-delays-key-deadlines-introduces-new-rules/";
 const DDG_5 = "https://www.gesetze-im-internet.de/ddg/__5.html";
 const DDG_33 = "https://www.gesetze-im-internet.de/ddg/__33.html";
 const UK_GDPR_27 = "https://www.legislation.gov.uk/eur/2016/679/article/27";
@@ -70,10 +73,10 @@ export const COMPLIANCE: Guide = {
   short: "上线前的合规页面",
   title: "上线前必备的合规页面和登记：隐私政策、cookie、卖家信息页、当地代表，境外小卖家按市场要做什么",
   description:
-    "按市场整理面向当地用户上线前要挂的页面、要办的登记和要指定的代表：美国的隐私政策和自动续费规则，印尼 PSE 登记，越南个人数据保护法，日本特商法表记，韩国电子商务法，俄罗斯个人数据本地化，中国个人信息保护法和经营许可证，欧盟 GDPR 代表、cookie、14 天撤回、无障碍法和 DSA，德国 Impressum，英国 cookie 新规。",
+    "按市场整理面向当地用户上线前要挂的页面、要办的登记和要指定的代表：美国的隐私政策和自动续费规则，印尼 PSE 登记，越南个人数据保护法，日本特商法表记，韩国电子商务法，俄罗斯个人数据本地化，中国个人信息保护法和经营许可证，欧盟 GDPR 代表、cookie、14 天撤回、无障碍法、DSA 和 AI 法的透明度义务，德国 Impressum，英国 cookie 新规。",
   intro:
     "人在国外、没有当地公司，不等于当地法律管不到你：日本的特商法、欧盟和英国的 GDPR、中国的个人信息保护法都写明管境外卖家，印尼的 PSE 登记境外也要做，2022 年还因此封过 PayPal 和 Steam。下面按市场列出面向当地用户上线前要挂的页面、要办的登记、要指定的代表，以及达到什么门槛才适用。税务登记见「数字产品的税」那篇，ICP 备案见「域名怎么选」那篇。",
-  checked: "2026-11-07",
+  checked: "2026-11-21",
   warning: {
     text: "这一页按各国法律原文和监管机构的说明整理，是一般信息，不是法律建议。具体到你的产品和用户，请找当地律师。",
   },
@@ -275,7 +278,7 @@ export const COMPLIANCE: Guide = {
     },
     {
       id: "eu",
-      title: "欧盟：GDPR 代表、cookie、14 天撤回、无障碍和 DSA",
+      title: "欧盟：GDPR 代表、cookie、14 天撤回、无障碍、DSA 和 AI 法透明度",
       items: [
         {
           text: "隐私声明（GDPR 第 13 条）要写控制者和欧盟代表的联系方式、目的和法律依据、接收方、跨境传输、保存期限、各项权利和投诉权；违反最高罚 2,000 万欧元或全球营业额 4%。",
@@ -318,6 +321,14 @@ export const COMPLIANCE: Guide = {
           sources: [
             { label: "DSA 条例", url: EU_DSA },
             { label: "比利时监管机构（2026-09-22）", url: BIPT_DSA },
+          ],
+        },
+        {
+          text: "做 AI 聊天或生成产品的：《人工智能法》第 50 条的透明度义务 2026 年 8 月 2 日起适用。让用户和 AI 对话的，要让对方知道自己在和 AI 对话（一看就明白的除外）；生成或修改图片、音频、视频做出深度伪造的，要披露内容是 AI 生成或修改的；生成合成内容的系统，输出要做成机器可读、能识别出是 AI 生成的标记。据 Cooley 律所转述（二手），2026 年 7 月 24 日刊登的 AI Omnibus 只把这条机器可读标记（第 2 款）对 8 月 2 日前已上市的系统推迟到 2026 年 12 月 2 日，告知用户和深度伪造披露没有推迟。",
+          sources: [
+            { label: "AI 法第 50 条（欧委会 AI 法服务台）", url: EU_AI_ACT_50 },
+            { label: "第 113 条（适用日期）", url: EU_AI_ACT_113 },
+            { label: "Cooley（2026-08-03）", url: EU_AI_OMNIBUS_COOLEY },
           ],
         },
         {
@@ -394,6 +405,7 @@ export const COMPLIANCE: Guide = {
     "韩国没有营业执照的海外小卖家，首页的经营者信息怎么填、要不要做通信销售业申报。",
     "日本「外部送信规律」是否管境外运营者；数字内容和在线服务是否适用「8 天内可退」。",
     "德国 DDG 第 5 条对欧盟以外卖家的具体口径。",
+    "欧盟 AI Omnibus 对第 50 条的推迟范围：只看到 Cooley 律所的转述，没读 EUR-Lex 上的条例原文。",
     "英国 ICO 数据保护年费是否适用境外控制者。",
     "中国：境外服务器上的网站向境内用户收费，算不算「在境内」提供、要不要经营许可证；境外网站直接收集境内个人信息算不算数据出境。",
   ],
