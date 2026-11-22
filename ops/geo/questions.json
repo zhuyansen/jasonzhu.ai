@@ -7,15 +7,22 @@
     "Jason Zhu"
   ],
   "measurement_protocol": {
-    "runs_per_prompt": 5,
+    "_说明": "照实际做法写（2026-11-21 对过 .github/workflows/geo-panel.yml、ops/geo/panel_run.py、backlink-guard 0.12 的 asked）。冻结组和真实问法组（questions-real.json）用同一套测法。这里只是记录：问几次、问哪几家由工作流定，改这里不会改变面板怎么问。",
+    "runs_per_prompt": 3,
     "cadence": "weekly",
-    "rolling_window_weeks": 4,
-    "surface": "real_chat_interface",
+    "schedule": "每周一北京 11:37（GitHub 定时，常晚几小时）",
+    "surface": "mixed",
+    "engines": {
+      "chatgpt": {"runs": 3, "surface": "web_ui", "via": "DataForSEO llm_scraper（经 AIsa），未登录、美国英文"},
+      "gemini_app": {"runs": 3, "surface": "web_ui", "via": "DataForSEO llm_scraper（经 AIsa），未登录、美国英文"},
+      "ai_mode": {"runs": 3, "surface": "serp", "via": "DataForSEO 的 Google AI Mode 搜索结果页，美国英文"},
+      "perplexity": {"runs": 3, "surface": "api", "via": "Perplexity API，模型 sonar"},
+      "claude": {"runs": 1, "surface": "api", "via": "Claude API，模型 claude-sonnet-5-5，开联网搜索", "when": "每月第一个周一"}
+    },
     "disallow_raw_llm_api_without_web_rag": true,
     "separate_engine_reporting": true,
-    "metrics": ["page_cited", "site_cited", "brand_named"],
-    "expected_two_run_brand_overlap_ceiling": 0.404,
-    "expected_two_run_source_overlap_ceiling": 0.258
+    "metrics": ["site_cited", "page_cited", "named", "first_pick"],
+    "reference_only_metrics": ["first_pick"]
   },
   "questions": [
     {

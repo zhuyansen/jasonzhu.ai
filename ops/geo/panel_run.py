@@ -19,6 +19,13 @@
 基线每题只问了 1 次，和基线比只能比回答命中率，不能比「至少命中一次的题数」（问得多自然命中多）。
 安全过滤拒答、空回答不算有效回答，单独记数。
 
+只改报告和统计，不改怎么问（题目、引擎、每家次数、频率都在工作流里定）：
+  - 摘要每格带按题算的 95% 区间。同一题的几个回答几乎一样，有效样本是题数，不是回答数，
+    所以按题重抽（自助抽样 2,000 次，随机种子固定，同一份结果重算不变）。
+  - 单家的变化要区间不重叠（大约差 10–15 个百分点以上）才算数。
+  - 对照实验加置换检验的 p 值（题目层面打乱处理组、对照组标签 5,000 次），和「以现在的题数要差多少才测得出来」。
+  - 「排第一」只做参考，不进结论。每家标明是抓网页界面、搜索结果页，还是走 API。
+
 公开仓库里只提交分数（panel/results-<日期>.json、panel/summary-<日期>.md）。回答原文和别的网站的网址
 来自付费接口，不进仓库：完整结果写到 --full 指定的文件，由工作流加密后存进草稿 release。
 这个脚本也不往标准输出打印回答原文和别人的网址（公开仓库的 Actions 日志是公开的）。
@@ -35,7 +42,9 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import math
 import os
+import random
 import re
 import sys
 import urllib.parse
@@ -53,9 +62,21 @@ FACT_WINDOW = 80                # near 里的词要在数字前后这么多个�
 BASELINE = "results-2026-11-17-baseline.json"
 BASELINE_ENGINES = {"ChatGPT": "chatgpt", "Gemini": "gemini_app", "Perplexity": "perplexity", "Claude": "claude"}
 OWN = "jasonzhu.ai"
+OWN_ALIASES = ("jasonzhuai.vercel.app",)   # 本站在 Vercel 的默认域名（next.config 308 到 jasonzhu.ai），基线里出现过
 NAMES = ["Jason Zhu", "JasonZhu.AI"]
 LABEL = {"chatgpt": "ChatGPT", "gemini_app": "Gemini App", "ai_mode": "Google AI Mode", "perplexity": "Perplexity",
          "claude": "Claude", "gemini": "Gemini（接口）"}
+# 每家怎么问的。和 backlink-guard 0.12 的 asked.ENGINES 对应（kind：scraper 抓网页界面，serp 抓搜索结果页，llm 走 API）；
+# run 会把这次实际用的 kind 和 model 记进运行配置（lineage 的 engines），摘要优先用记下的，旧结果没有就用这张表
+SURFACE = {"chatgpt": "scraper", "gemini_app": "scraper", "ai_mode": "serp", "perplexity": "llm", "claude": "llm", "gemini": "llm"}
+MODEL = {"perplexity": "sonar", "claude": "claude-sonnet-5-5", "gemini": "gemini-3.8-flash"}
+KIND_ZH = {"scraper": "网页界面", "serp": "搜索结果页", "llm": "API"}
+KIND_VERB = {"scraper": "抓网页界面（未登录、美国英文）", "serp": "抓 Google 搜索结果页", "llm": "走 API（开联网搜索）"}
+BOOT = 2000                 # 区间：按题有放回地重抽这么多次
+PERM = 5000                 # 置换检验：打乱处理组、对照组标签这么多次
+SEED = 20261121             # 固定随机种子，同一份结果重算，区间和 p 值不变
+FLIP = (0.05, 0.15)         # 估「要差多少才测得出来」时，假设每周有这么多比例的题在引用、不引用之间翻转
+                            # （11-17 到 11-21 实测 ChatGPT 15%、Perplexity 20%，那几天站上改过东西，偏高）
 DEFAULT_ENGINES = "chatgpt:3,gemini_app:3,ai_mode:3,perplexity:3"   # 都是每个回答 $0.004–0.006 的；Claude 约 $0.045，按月加跑
 CALIBERS = ("site_cited", "page_cited", "named", "first_pick", "fact_used", "absorbed")
 CALIBER_ZH = {"site_cited": "引用本站", "page_cited": "引用对应页面", "named": "正文点名", "first_pick": "排第一",
@@ -206,6 +227,46 @@ def hits(rows: list[dict], caliber: str = "site_cited") -> set[tuple[str, str]]:
     return {(r["engine"], r["question_id"]) for r in valid(rows) if r.get(caliber)}
 
 
+# ───────────── 不确定性：按题算 ─────────────
+
+def per_question(rows: list[dict], engine: str, caliber: str, ids: set | None = None) -> dict[str, tuple[int, int]]:
+    """每道题：(命中的有效回答数, 有效回答数)。"""
+    out: dict[str, tuple[int, int]] = {}
+    for r in valid(rows):
+        if r["engine"] == engine and (ids is None or r["question_id"] in ids):
+            h, n = out.get(r["question_id"], (0, 0))
+            out[r["question_id"]] = (h + bool(r.get(caliber)), n + 1)
+    return out
+
+
+def cluster_ci(rows: list[dict], engine: str, caliber: str, ids: set | None = None) -> tuple[float, float] | None:
+    """按题聚类的 95% 区间（下限, 上限），没有有效回答是 None。
+
+    同一题的几个回答几乎一样（2026-11-21 实测：Perplexity 3 次完全相同，ChatGPT「有没有引用本站」3 次完全一致），
+    有效样本是题数，不是回答数。所以以题为单位有放回地重抽 BOOT 次，一道题的几个回答一起进出，
+    取第 2.5 和第 97.5 百分位。题按 id 排好再抽，随机种子固定：同一份结果重算，区间不变。
+    全都没命中（或全都命中）时重抽给不出宽度，改用按题数算的精确界：上限 1 − 0.025^(1/题数)，约 3.7/题数
+    （下限反过来）。题多时和「三分之一法则」差不多，题少时更准：4 题全没命中，上限是 60%，不是 75%。"""
+    per = [v for _, v in sorted(per_question(rows, engine, caliber, ids).items())]
+    if not per:
+        return None
+    k, hit, total = len(per), sum(h for h, _ in per), sum(n for _, n in per)
+    if hit == 0:
+        return 0.0, 1 - 0.025 ** (1 / k)
+    if hit == total:
+        return 0.025 ** (1 / k), 1.0
+    rnd, est = random.Random(SEED), []
+    for _ in range(BOOT):
+        pick = rnd.choices(per, k=k)
+        est.append(sum(h for h, _ in pick) / sum(n for _, n in pick))
+    est.sort()
+    return est[math.ceil(0.025 * BOOT) - 1], est[math.ceil(0.975 * BOOT) - 1]
+
+
+def overlap(a: tuple[float, float], b: tuple[float, float]) -> bool:
+    return a[0] <= b[1] and b[0] <= a[1]
+
+
 # ───────────── 读以前的结果 ─────────────
 
 def load_rows(path: Path) -> list[dict]:
@@ -252,6 +313,54 @@ def experiment_table(now: list[dict], base: list[dict], exp: dict, caliber: str 
     return out
 
 
+def net_change(now_q: dict, base_q: dict, treated: set, control: set) -> float | None:
+    """和 experiment_table 的净变化同一个算法，输入是 per_question 的结果；有一组没有有效回答就是 None。"""
+    def r(per: dict, ids: set) -> float | None:
+        n = sum(per[q][1] for q in ids if q in per)
+        return sum(per[q][0] for q in ids if q in per) / n if n else None
+    tn, tb, cn, cb = r(now_q, treated), r(base_q, treated), r(now_q, control), r(base_q, control)
+    if None in (tn, tb, cn, cb):
+        return None
+    return (tn - tb) - (cn - cb)
+
+
+def perm_test(now: list[dict], base: list[dict], exp: dict, engine: str, caliber: str = "site_cited") -> float | None:
+    """置换检验的 p 值：在题目层面把处理组、对照组的标签随机打乱 PERM 次（两组题数不变，随机种子固定），
+    看打乱后的净变化里，绝对值不小于实际净变化的占多少（分子分母各加 1）。题少的时候，这比看百分比诚实。"""
+    treated, control = set(exp["treated"]), set(exp["control"])
+    pool = sorted(treated | control)
+    now_q, base_q = per_question(now, engine, caliber, set(pool)), per_question(base, engine, caliber, set(pool))
+    seen = net_change(now_q, base_q, treated, control)
+    if seen is None:
+        return None
+    rnd, order, done, extreme = random.Random(SEED), list(pool), 0, 0
+    for _ in range(PERM):
+        rnd.shuffle(order)
+        t = set(order[:len(treated)])
+        v = net_change(now_q, base_q, t, set(order) - t)
+        if v is None:
+            continue
+        done += 1
+        extreme += abs(v) >= abs(seen) - 1e-9
+    return (extreme + 1) / (done + 1) if done else None
+
+
+def detectable(n_treated: int, n_control: int) -> tuple[int, int] | None:
+    """以现在的题数，净变化大约要差多少个百分点才测得出来（5% 显著性、80% 把握），按 FLIP 的两头各算一个。
+    每题每期按 1 个样本算（同一题的几个回答几乎一样）。每周有 r 比例的题在引用、不引用之间翻转时，
+    净变化的标准误约 √(r/处理组题数 + r/对照组题数)，要测得出来大约要 (1.96 + 0.84) 倍标准误。"""
+    if not n_treated or not n_control:
+        return None
+    lo, hi = ((1.96 + 0.84) * math.sqrt(r / n_treated + r / n_control) * 100 for r in FLIP)
+    return round(lo), round(hi)
+
+
+def paired_counts(now: list[dict], base: list[dict], exp: dict, engine: str, caliber: str = "site_cited") -> tuple[int, int]:
+    """两期都有有效回答的题：处理组几题、对照组几题。"""
+    both = set(per_question(now, engine, caliber)) & set(per_question(base, engine, caliber))
+    return len(both & set(exp["treated"])), len(both & set(exp["control"]))
+
+
 # ───────────── GA4：AI 带来的真实访问 ─────────────
 
 def is_ai(source: str) -> bool:
@@ -289,7 +398,8 @@ def lineage(sets: list[str], plan: dict[str, int], engines_spec: dict, max_usd: 
         "signature_facts": file_hash(FACTS),
         "runner": file_hash(Path(__file__)),
         "backlink_guard": bg_version,
-        "engines": {e: {"samples": n, "model": engines_spec.get(e, {}).get("model") or engines_spec.get(e, {}).get("path", "")}
+        "engines": {e: {"samples": n, "model": engines_spec.get(e, {}).get("model") or engines_spec.get(e, {}).get("path", ""),
+                        "kind": engines_spec.get(e, {}).get("kind", "")}    # scraper 抓网页界面，serp 抓搜索结果页，llm 走 API
                     for e, n in plan.items()},
         "max_usd": max_usd,
         "limit": limit,
@@ -326,17 +436,99 @@ def pct(hit: int, total: int) -> str:
     return f"{hit}/{total}（{hit * 100 // total}%）" if total else "–"
 
 
-def engine_table(rows: list[dict], base: list[dict] | None, ids: set | None = None) -> list[str]:
-    head = "| AI | 有效回答 | " + " | ".join(CALIBER_ZH[c] for c in CALIBERS) + " |" + (" 基线：引用本站 |" if base else "")
-    lines = [head, "|---|---|" + "---|" * len(CALIBERS) + ("---|" if base else "")]
+def pct_ci(rows: list[dict], engine: str, caliber: str, ids: set | None = None) -> str:
+    """「命中/有效（命中率，区间 下限–上限%）」。命中率和以前一样向下取整；区间向外取整，不会比算出来的窄。"""
+    hit, total = rate(rows, engine, caliber, ids)
+    if not total:
+        return "–"
+    lo, hi = cluster_ci(rows, engine, caliber, ids)
+    return f"{hit}/{total}（{hit * 100 // total}%，区间 {math.floor(lo * 100 + 1e-9)}–{math.ceil(hi * 100 - 1e-9)}%）"
+
+
+def fmt_p(p: float | None) -> str:
+    if p is None:
+        return "–"
+    return f"{p:.2f}" if p >= 0.01 else f"{p:.3f}"
+
+
+def surface_of(result: dict, engine: str) -> tuple[str, str]:
+    """(kind, model)：这次运行配置（lineage）里记下的优先，旧结果没记就用 SURFACE、MODEL 两张表。"""
+    got = ((result.get("lineage") or {}).get("engines") or {}).get(engine) or {}
+    kind = got.get("kind") or SURFACE.get(engine, "")
+    model = got["model"] if kind == "llm" and got.get("kind") == "llm" and got.get("model") else MODEL.get(engine, "")
+    return kind, model
+
+
+def surface_line(result: dict, engines: list[str]) -> str:
+    """「ChatGPT、Gemini App 抓网页界面（…）；Google AI Mode 抓 Google 搜索结果页；Perplexity（sonar）、Claude（…）走 API」"""
+    groups: dict[str, list[str]] = {}
+    for e in engines:
+        kind, model = surface_of(result, e)
+        groups.setdefault(kind, []).append(LABEL.get(e, e) + (f"（{model}）" if kind == "llm" and model else ""))
+    return "；".join("、".join(names) + ("" if names[-1].endswith("）") else " ") + KIND_VERB.get(kind, "不清楚怎么问的")
+                    for kind, names in groups.items())
+
+
+def engine_table(rows: list[dict], base: list[dict] | None, ids: set | None = None, result: dict | None = None) -> list[str]:
+    head = ("| AI | 怎么问的 | 有效回答 | " + " | ".join(CALIBER_ZH[c] + ("（只做参考）" if c == "first_pick" else "") for c in CALIBERS)
+            + " |" + (" 基线：引用本站 |" if base else ""))
+    lines = [head, "|---|---|---|" + "---|" * len(CALIBERS) + ("---|" if base else "")]
     measured = {c for r in rows for c in CALIBERS if c in r}      # 2026-11-22 前的结果没有后两列，显示 –，不显示 0
     for e in engines_in(rows):
         n = rate(rows, e, "site_cited", ids)[1]
-        cells = [LABEL.get(e, e), str(n)] + [pct(*rate(rows, e, c, ids)) if c in measured else "–" for c in CALIBERS]
+        cells = [LABEL.get(e, e), KIND_ZH.get(surface_of(result or {}, e)[0], "–"), str(n)]
+        cells += [pct_ci(rows, e, c, ids) if c in measured else "–" for c in CALIBERS]
         if base:
-            cells.append(pct(*rate(base, e, "site_cited", ids)))
+            cells.append(pct_ci(base, e, "site_cited", ids))
         lines.append("| " + " | ".join(cells) + " |")
     return lines
+
+
+def experiment_section(rows: list[dict], base: list[dict], exp: dict) -> list[str]:
+    """对照实验一段：两组各自的命中率和区间、净变化、置换检验 p 值、以现在的题数要差多少才测得出来。"""
+    treated, control = set(exp["treated"]), set(exp["control"])
+    out = [f"## 对照实验：{exp['note']}", "",
+           f"{exp['started']} 开始。处理组 {len(treated)} 题，对照组 {len(control)} 题，看的是「引用本站」。", "",
+           "| AI | 处理组 现在 | 处理组 基线 | 对照组 现在 | 对照组 基线 | 净变化 | p 值 |", "|---|---|---|---|---|---|---|"]
+    sizes: dict[tuple[int, int], list[str]] = {}
+    for t in experiment_table(rows, base, exp):
+        e = t["engine"]
+        net = "–" if t["net"] is None else f"{t['net'] * 100:+.0f} 个百分点"
+        out.append(f"| {LABEL.get(e, e)} | {pct_ci(rows, e, 'site_cited', treated)} | {pct_ci(base, e, 'site_cited', treated)} | "
+                   f"{pct_ci(rows, e, 'site_cited', control)} | {pct_ci(base, e, 'site_cited', control)} | {net} | "
+                   f"{fmt_p(perm_test(rows, base, exp, e))} |")
+        if t["net"] is not None:
+            sizes.setdefault(paired_counts(rows, base, exp, e), []).append(LABEL.get(e, e))
+    out += ["", f"净变化 = 处理组的变化 − 对照组的变化。p 值：把这 {len(treated | control)} 题的处理组、对照组标签随机打乱 "
+                f"{PERM:,} 次（随机种子固定），看有多大比例的打乱结果，净变化的绝对值不小于实际这个；小于 0.05 才算测出来了。", ""]
+    need = [f"{'、'.join(names)} " + (f"约 {d[0]}–{d[1]} 个百分点" if d[1] <= 100 else f"至少约 {d[0]} 个百分点，基本测不出来")
+            + f"（两期都问到的：处理组 {nt} 题、对照组 {nc} 题）"
+            for (nt, nc), names in sizes.items() if (d := detectable(nt, nc))]
+    if need:
+        out += ["以现在的题数，净变化大约要差这么多才测得出来：" + "；".join(need) +
+                f"。按每周有 {FLIP[0]:.0%}–{FLIP[1]:.0%} 的题在引用、不引用之间翻转估算（5% 显著性、80% 把握）。比这小的净变化只能看方向。", ""]
+    return out
+
+
+def compare_section(rows: list[dict], prev: list[dict], prev_day: str) -> list[str]:
+    """和上次比：只比两次都有有效回答的题。单家两次的区间不重叠才算数。"""
+    asked_both = {(r["engine"], r["question_id"]) for r in valid(rows)} & {(r["engine"], r["question_id"]) for r in valid(prev)}
+    new = [x for x in sorted(hits(rows) - hits(prev)) if x in asked_both]
+    gone = [x for x in sorted(hits(prev) - hits(rows)) if x in asked_both]
+    out = [f"## 和上次（{prev_day}）比", ""]
+    lines = []
+    for e in engines_in(rows):
+        ids = {q for x, q in asked_both if x == e}
+        if not ids:
+            continue
+        a, b = cluster_ci(rows, e, "site_cited", ids), cluster_ci(prev, e, "site_cited", ids)
+        verdict = "区间不重叠，算数" if a and b and not overlap(a, b) else "区间重叠，不算数"
+        lines.append(f"| {LABEL.get(e, e)} | {len(ids)} | {pct_ci(rows, e, 'site_cited', ids)} | {pct_ci(prev, e, 'site_cited', ids)} | {verdict} |")
+    if lines:
+        out += ["只比两次都问到的题。", "", "| AI | 题数 | 这次：引用本站 | 上次：引用本站 | 算不算数 |", "|---|---|---|---|---|"] + lines + [""]
+    out += ["新出现引用本站的：" + ("、".join(f"{LABEL.get(e, e)} · {q}" for e, q in new) or "没有"), "",
+            "这次没再引用的：" + ("、".join(f"{LABEL.get(e, e)} · {q}" for e, q in gone) or "没有"), ""]
+    return out
 
 
 def absorbed_section(rows: list[dict]) -> list[str]:
@@ -373,21 +565,26 @@ def summary(result: dict, prev: list[dict] | None = None, prev_day: str = "", pr
            f"每题问：{plan}。共 {len(rows)} 个回答，花费 ${result['cost_usd']:.2f}。", ""]
     if result.get("incomplete"):
         out += ["**这次不完整**：有的 AI 有效回答不到应有的一半，下面的数只能当参考。", ""]
-    out += ["每格是「命中的回答数/有效回答数」。同一个问题每次问答案都不一样，所以每题问多次。", ""]
+    out += [f"每格是「命中的回答数/有效回答数（命中率，区间）」。区间是按题算的 95% 区间：同一题的几个回答几乎一样，"
+            f"有效样本是题数，不是回答数，所以按题重抽 {BOOT:,} 次（随机种子固定，同一份结果重算不变）。"
+            "全都没命中（或全都命中）的格重抽给不出宽度，改用按题数算的精确界（约 3.7/题数）。", "",
+            "怎么算数：单家的变化要和比较对象的区间不重叠，大约差 10–15 个百分点以上才算数，区间重叠的只当噪声。"
+            "「排第一」只做参考，不进结论（同一题每次回答的排序都在变）。", "",
+            "怎么问的：" + surface_line(result, engines_in(rows)) + "。走 API 的，和用户在网页上看到的可能不一样。", ""]
     lin = result.get("lineage")
     if lin:
         out += ["运行配置：" + "、".join(f"{SET_ZH.get(k, k)} {v}" for k, v in lin["questions"].items())
                 + f"，事实清单 {lin['signature_facts'] or '无'}，脚本 {lin['runner']}，backlink-guard {lin['backlink_guard'] or '未知'}。", ""]
     for s in sets:
         ids = {r["question_id"] for r in rows if r["set"] == s}
-        out += [f"## {SET_ZH[s]}", ""] + engine_table(rows, base if s == "frozen" else None, ids) + [""]
+        out += [f"## {SET_ZH[s]}", ""] + engine_table(rows, base if s == "frozen" else None, ids, result) + [""]
         if s == "frozen" and base:
             out += ["基线是 2026-11-17 那次，每题每家只问了 1 次，Google AI Mode 当时没测。", ""]
     brand = {r["question_id"] for r in rows if r["kind"] == "brand"}
     if brand and len(brand) < len({r["question_id"] for r in rows}):
         others = {r["question_id"] for r in rows} - brand
         out += ["## 带品牌名的题和不带的分开看", "", "| AI | 带品牌名：引用本站 | 不带品牌名：引用本站 |", "|---|---|---|"]
-        out += [f"| {LABEL.get(e, e)} | {pct(*rate(rows, e, 'site_cited', brand))} | {pct(*rate(rows, e, 'site_cited', others))} |"
+        out += [f"| {LABEL.get(e, e)} | {pct_ci(rows, e, 'site_cited', brand)} | {pct_ci(rows, e, 'site_cited', others)} |"
                 for e in engines_in(rows)] + ["", "带品牌名的题本来就容易被引用，真正要看的是右边一列。", ""]
     exps = json.loads(EXPERIMENTS.read_text(encoding="utf-8")) if EXPERIMENTS.exists() else {}
     present = {r["question_id"] for r in rows}
@@ -395,25 +592,13 @@ def summary(result: dict, prev: list[dict] | None = None, prev_day: str = "", pr
         exp_base = PANEL / exp["baseline"]
         if exp["started"] > day or not exp_base.exists() or not present & set(exp["treated"] + exp["control"]):
             continue                    # 这次没问到实验里的题（比如只跑了真实问法组），这一段不出
-        out += [f"## 对照实验：{exp['note']}", "",
-                f"{exp['started']} 开始。处理组 {len(exp['treated'])} 题，对照组 {len(exp['control'])} 题，看的是「引用本站」。", "",
-                "| AI | 处理组 现在 | 处理组 基线 | 对照组 现在 | 对照组 基线 | 净变化 |", "|---|---|---|---|---|---|"]
-        for t in experiment_table(rows, load_rows(exp_base), exp):
-            net = "–" if t["net"] is None else f"{t['net'] * 100:+.0f} 个百分点"
-            out.append(f"| {LABEL.get(t['engine'], t['engine'])} | {pct(*t['treated_now'])} | {pct(*t['treated_base'])} | "
-                       f"{pct(*t['control_now'])} | {pct(*t['control_base'])} | {net} |")
-        out += ["", "净变化 = 处理组的变化 − 对照组的变化。题数少，只看方向，一两个回答就能让它变 10 个百分点以上。", ""]
+        out += experiment_section(rows, load_rows(exp_base), exp)
     out += absorbed_section(rows)
     if prev is not None:
         notes = lineage_diff(lin, prev_lineage)
         if notes:
             out += [f"## 和上次（{prev_day}）的运行配置不一样", ""] + [f"- {n}" for n in notes] + [""]
-        new, gone = sorted(hits(rows) - hits(prev)), sorted(hits(prev) - hits(rows))
-        asked_both = {(r["engine"], r["question_id"]) for r in valid(rows)} & {(r["engine"], r["question_id"]) for r in valid(prev)}
-        new, gone = [x for x in new if x in asked_both], [x for x in gone if x in asked_both]
-        out += [f"## 和上次（{prev_day}）比", "",
-                "新出现引用本站的：" + ("、".join(f"{LABEL.get(e, e)} · {q}" for e, q in new) or "没有"), "",
-                "这次没再引用的：" + ("、".join(f"{LABEL.get(e, e)} · {q}" for e, q in gone) or "没有"), ""]
+        out += compare_section(rows, prev, prev_day)
     bad = [(LABEL.get(e, e), t["refused"], t["empty"]) for e, t in tally(rows).items() if t["refused"] or t["empty"]]
     if bad:
         out += ["## 没答出来的", ""] + [f"- {name}：安全过滤拒答 {refused} 个，空回答 {empty} 个" for name, refused, empty in bad] + [""]
@@ -566,12 +751,56 @@ def selftest() -> int:
     row = experiment_table(now, base, {"treated": ["t1", "t2"], "control": ["c1", "c2"]})[0]
     assert row["treated_now"] == (2, 2) and row["control_base"] == (1, 2) and abs(row["net"] - 0.5) < 1e-9
     assert experiment_table(now, [mk("t1", True)], {"treated": ["t1", "t2"], "control": ["c1", "c2"]})[0]["net"] is None
-    # 旧格式的基线能读
+    # 按题算的区间：一题 3 次全中、一题 3 次全不中，重抽只会得到 0、50%、100%，区间就是 0–100%
+    two = [mk("q1", True)] * 3 + [mk("q2", False)] * 3
+    assert per_question(two, "chatgpt", "site_cited") == {"q1": (3, 3), "q2": (0, 3)}
+    assert cluster_ci(two, "chatgpt", "site_cited") == (0.0, 1.0) and pct_ci(two, "chatgpt", "site_cited") == "3/6（50%，区间 0–100%）"
+    assert cluster_ci([], "chatgpt", "site_cited") is None and pct_ci([], "chatgpt", "site_cited") == "–"
+    # 20 题里 5 题命中：区间包住 25%，重算不变，回答的先后顺序也不影响（题按 id 排好再抽）
+    mixed = [mk(f"q{i:02d}", i % 4 == 0) for i in range(20) for _ in range(3)]
+    ci = cluster_ci(mixed, "chatgpt", "site_cited")
+    assert 0.0 < ci[0] < 0.25 < ci[1] < 0.6 and ci == cluster_ci(list(reversed(mixed)), "chatgpt", "site_cited")
+    # 全都没命中、全都命中：精确界，17 题全没中上限约 19.5%，4 题全中下限约 40%
+    zero = [mk(f"z{i:02d}", False) for i in range(17) for _ in range(3)]
+    assert cluster_ci(zero, "chatgpt", "site_cited") == (0.0, 1 - 0.025 ** (1 / 17)) and pct_ci(zero, "chatgpt", "site_cited") == "0/51（0%，区间 0–20%）"
+    assert pct_ci([mk(f"f{i}", True) for i in range(4)], "chatgpt", "site_cited") == "4/4（100%，区间 39–100%）"
+    assert overlap((0.1, 0.3), (0.3, 0.5)) and not overlap((0.1, 0.29), (0.3, 0.5))
+    # 和上次比：12 题从全不中变成全中，区间不重叠才算数；同一份数据比自己，区间重叠，不算数
+    before = [mk(f"w{i:02d}", False) for i in range(12) for _ in range(3)]
+    after = [mk(f"w{i:02d}", True) for i in range(12) for _ in range(3)]
+    assert "| ChatGPT | 12 | 36/36（100%，区间 73–100%） | 0/36（0%，区间 0–27%） | 区间不重叠，算数 |" in compare_section(after, before, "x")
+    assert "区间重叠，不算数" in "\n".join(compare_section(mixed, mixed, "x"))
+    # 置换检验：处理组 6 题全从不引用变成引用、对照组 6 题不动 → 一样极端的分法只有 2/924，p 很小，重算不变；
+    # 两组一起变，净变化 0，p = 1；没有基线就没有 p
+    exp6 = {"note": "测试", "started": "2026-11-17", "treated": [f"t{i}" for i in range(6)], "control": [f"c{i}" for i in range(6)]}
+    base6 = [mk(x, False) for x in exp6["treated"] + exp6["control"]]
+    up6 = [mk(x, x.startswith("t")) for x in exp6["treated"] + exp6["control"]]
+    p6 = perm_test(up6, base6, exp6, "chatgpt")
+    assert p6 < 0.01 and p6 == perm_test(up6, base6, exp6, "chatgpt")
+    assert perm_test([mk(x, True) for x in exp6["treated"] + exp6["control"]], base6, exp6, "chatgpt") == 1.0
+    assert perm_test(up6, [], exp6, "chatgpt") is None and fmt_p(None) == "–" and fmt_p(0.4949) == "0.49" and fmt_p(0.0024) == "0.002"
+    # 以现在的题数要差多少才测得出来：处理 10 题、对照 6 题，约 32–56 个百分点；5 题对 1 题基本测不出来
+    assert detectable(10, 6) == (32, 56) and detectable(6, 6) == (36, 63) and detectable(0, 6) is None
+    sec = "\n".join(experiment_section(up6, base6, exp6))
+    assert "| ChatGPT | 6/6（100%，区间 54–100%） | 0/6（0%，区间 0–46%） | 0/6（0%，区间 0–46%） | 0/6（0%，区间 0–46%） | +100 个百分点 | 0.0" in sec
+    assert "打乱 5,000 次" in sec and "ChatGPT 约 36–63 个百分点（两期都问到的：处理组 6 题、对照组 6 题）" in sec
+    few = "\n".join(experiment_section(up6[:5] + up6[6:7], base6[:5] + base6[6:7], exp6))
+    assert "至少约" in few and "基本测不出来" in few and "处理组 5 题、对照组 1 题" in few
+    # 每家怎么问的：这次运行记下的优先，旧结果用表
+    assert surface_of({}, "perplexity") == ("llm", "sonar")
+    assert surface_of({"lineage": {"engines": {"perplexity": {"samples": 3, "model": "sonar-pro", "kind": "llm"}}}}, "perplexity") == ("llm", "sonar-pro")
+    assert surface_of({"lineage": {"engines": {"perplexity": {"samples": 3, "model": "x/llm_scraper", "kind": "scraper"}}}}, "perplexity")[0] == "scraper"
+    assert surface_line({}, ["chatgpt", "gemini_app", "ai_mode", "perplexity"]) == \
+        "ChatGPT、Gemini App 抓网页界面（未登录、美国英文）；Google AI Mode 抓 Google 搜索结果页；Perplexity（sonar）走 API（开联网搜索）"
+    # 旧格式的基线能读，而且里面只剩本站网址（PANEL.md：别的网站的网址不进公开仓库）
     old = PANEL / BASELINE
     if old.exists():
         b = load_rows(old)
         assert {r["engine"] for r in b} == {"chatgpt", "gemini_app", "perplexity", "claude"} and all(r["status"] == "answered" for r in b)
         assert rate(b, "perplexity", "site_cited") == (12, 20) and rate(b, "chatgpt", "page_cited") == (1, 20)   # 和 11-17 的摘要一致
+        hosts = {urllib.parse.urlparse(u).netloc.lower().removeprefix("www.")
+                 for u in re.findall(r"https?://[^\s)\]}\"'<>]+", old.read_text(encoding="utf-8"))}
+        assert hosts <= {OWN, *OWN_ALIASES}, f"基线里还有别的网站的网址：{sorted(hosts - {OWN, *OWN_ALIASES})[:5]}"
     assert is_ai("chatgpt.com") and is_ai("perplexity") and not is_ai("google")
     ga = {"ok": True, "srcLanding7": {"rows": [{"sessionSource": "chatgpt.com", "landingPage": "/en", "sessions": 3.0},
                                                {"sessionSource": "google", "landingPage": "/en", "sessions": 9.0}]}}
@@ -580,6 +809,9 @@ def selftest() -> int:
     text = summary(result, prev=[mk("data-x", False)], prev_day="2026-11-17")
     assert "新出现引用本站的：ChatGPT · data-x" in text and "安全过滤拒答 1 个" in text and "共 3 次会话" in text
     assert "对照实验" not in text                                  # data-x 不在任何实验的分组里
+    assert "| ChatGPT | 网页界面 | 1 | 1/1（100%，区间 2–100%） |" in text and "排第一（只做参考）" in text
+    assert "怎么问的：ChatGPT、Gemini App 抓网页界面" in text and "区间不重叠，大约差 10–15 个百分点以上才算数" in text
+    assert "| ChatGPT | 1 | 1/1（100%，区间 2–100%） | 0/1（0%，区间 0–98%） | 区间重叠，不算数 |" in text
     assert "other.example" not in text and "other.example" not in json.dumps(rows)              # 公开的部分没有别人的网址
     assert "other.example（2）" in appendix([{"cited": [page("https://other.example/a")], "fan_out": ["Best  X"]},
                                            {"cited": [page("https://other.example/b")], "fan_out": ["best x"]}])
