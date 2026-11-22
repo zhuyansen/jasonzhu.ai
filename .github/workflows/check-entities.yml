@@ -1,0 +1,35 @@
+name: 实体关系边检查
+
+# scripts/check-entities.mjs：Person 的 sameAs 只有个人档案、不和别的节点重复，不再引用 jasonzhu.ai 的 #organization，
+# 作品的作者指向 #person；博客 frontmatter 和 src/lib/research.ts 的 DOI 都在 src/lib/profiles.ts 的 WORKS 里。
+# push 时只查源文件（这时 Vercel 还没部署完，线上还是旧版本）；每天和手动运行时再查一遍线上页面。
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/lib/profiles.ts"
+      - "src/lib/research.ts"
+      - "src/content/blog/**"
+      - "scripts/check-entities.mjs"
+  schedule:
+    - cron: "41 2 * * *"
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: 源文件
+        if: github.event_name == 'push'
+        run: node scripts/check-entities.mjs --static
+
+      - name: 源文件和线上页面
+        if: github.event_name != 'push'
+        run: node scripts/check-entities.mjs https://jasonzhu.ai
