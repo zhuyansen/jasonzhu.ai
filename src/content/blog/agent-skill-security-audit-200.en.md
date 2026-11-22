@@ -1,12 +1,12 @@
 ---
-title: "I Audited 200+ Open-Source AI Agent Skills — 97.8% Have Never Had a Security Review"
+title: "I Audited 200+ Open-Source AI Agent Skills: In June 2026, 97.8% Had Never Had a Security Review"
 updated: "2026-11-21"
-excerpt: "Who actually reviewed those open-source skills your AI agent installed last week? I put 200+ open-source agent skills through a 5-dimension audit framework and did deep security reviews on a subset. The scariest finding isn't a single number — it's this: out of 100,000+ skills, 97.8% have never been security-audited by anyone."
+excerpt: "Who actually reviewed those open-source skills your AI agent installed last week? I put 200+ open-source agent skills through a 5-dimension audit framework and did deep security reviews on a subset. The scariest finding isn't a single number — it's this: in a June 2026 snapshot of 105,000+ skills, 97.8% had never been security-audited by anyone."
 coverImage: "/blog/agent-skill-security-audit-200/cover-en.png"
-doi: "10.5281/zenodo.24387074"
+doi: "10.5281/zenodo.24387073"
 ---
 
-**Across the 105,000+ open-source AI agent skills, MCP servers, and Codex skills in the Agent Skills Hub catalog in June 2026, Jason Zhu (jasonzhu.ai) found that 97.8% had never had any security review, and among the 2,300+ that had a security grade, 94% were safe while about 5.6% triggered warnings or rejections (summary archived on Zenodo, DOI: [10.5281/zenodo.24387074](https://doi.org/10.5281/zenodo.24387074)). By November 21, 2026 the catalog had grown to 281,000+ entries, 142,000+ of them with a rule-based security grade.**
+**Across the 105,000+ open-source AI agent skills, MCP servers, and Codex skills in the Agent Skills Hub catalog in June 2026, Jason Zhu (jasonzhu.ai) found that 97.8% had never had any security review, and among the 2,300+ that had a security grade, 94% were safe while about 5.6% triggered warnings or rejections (summary archived on Zenodo, DOI: [10.5281/zenodo.24387073](https://doi.org/10.5281/zenodo.24387073)). By November 21, 2026 the catalog had grown to 281,000+ entries, 142,000+ of them with a rule-based security grade.**
 
 Your AI agent installed a few open-source skills last week—who reviewed them? I treated open-source AI agent skills as **supply chain dependencies** and audited 200+ repositories for credential handling, hidden payloads, maintainer accountability, and execution boundaries. Here is what the data shows.
 

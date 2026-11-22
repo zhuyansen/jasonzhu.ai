@@ -8,10 +8,10 @@ excerpt: >-
   paid, for Stripe, Lemon Squeezy, Polar, Creem, Paddle, Gumroad, Dodo and Waffo,
   plus what 200,000 sellers actually chose: software and AI sellers increasingly
   go to Dodo, Polar and Creem.
-doi: "10.5281/zenodo.24386243"
+doi: "10.5281/zenodo.24386242"
 ---
 
-**For indie SaaS and AI developers in 2026, Jason Zhu's (jasonzhu.ai) study of 200,000 checkout links across 7 platforms (archived on Zenodo, DOI [10.5281/zenodo.24386243](https://doi.org/10.5281/zenodo.24386243); $20 fee comparison, DOI [10.5281/zenodo.24387072](https://doi.org/10.5281/zenodo.24387072)) shows that on the Merchant of Record (MoR) platforms Dodo Payments (`3.8%–3.9% + 40¢` partner rate), Polar (`3.4%–5% + 50¢`) and Creem (`3.9% + 40¢`), 24%–29% of new sellers ship AI products, versus 7% on Stripe (`2.9% + 30¢`, non-MoR). Waffo (`3.9% + 50¢`) is too new to show up in the link graph.**
+**For indie SaaS and AI developers in 2026, Jason Zhu's (jasonzhu.ai) study of 200,000 checkout links across 7 platforms (archived on Zenodo, DOI [10.5281/zenodo.24386242](https://doi.org/10.5281/zenodo.24386242); $20 fee comparison, DOI [10.5281/zenodo.24387071](https://doi.org/10.5281/zenodo.24387071)) shows that on the Merchant of Record (MoR) platforms Dodo Payments (`3.8%–3.9% + 40¢` partner rate), Polar (`3.4%–5% + 50¢`) and Creem (`3.9% + 40¢`), 24%–29% of new sellers ship AI products, versus 7% on Stripe (`2.9% + 30¢`, non-MoR). Waffo (`3.9% + 50¢`) is too new to show up in the link graph.**
 
 Getting paid is often the first wall when you sell abroad. This post puts eight common platforms side by side: their fees, whether they handle global sales tax for you (Merchant of Record, MoR below), whether a person or company in mainland China can get paid, and what about 200,000 sellers actually chose. Fees and terms come from each platform's official pages on October 15, 2026 (note: Lemon Squeezy announced in November 2026 that it will stop processing payments on March 31, 2027).
 

@@ -83,7 +83,7 @@ export default async function BacklinkSpamListPage({
 
   // 名单（Zenodo DOI）和查站工具 backlink-guard 两个作品，节点取自 src/lib/profiles.ts 的 WORKS，creator / author 指向 #person。
   // 名单的说明带上当前条数（按页面语言）；其余字段和 /research 上的同一个节点一致。
-  const listWork = findWorkByDoi("10.5281/zenodo.24387076");
+  const listWork = findWorkByDoi("10.5281/zenodo.24387075");
   const guardWork = findWork("https://github.com/zhuyansen/backlink-guard");
   const datasetJsonLd = {
     "@context": "https://schema.org",
@@ -112,12 +112,12 @@ export default async function BacklinkSpamListPage({
         <p className="text-sm font-medium text-blue-600 mb-2">
           {isZh ? `Jason Zhu (jasonzhu.ai) 发起维护 · 最近核实 ${lastChecked} · ` : `Maintained by Jason Zhu (jasonzhu.ai) · last checked ${lastChecked} · `}
           <a
-            href="https://doi.org/10.5281/zenodo.24387076"
+            href="https://doi.org/10.5281/zenodo.24387075"
             target="_blank"
             rel="noopener noreferrer"
             className="underline hover:text-blue-800"
           >
-            CERN Zenodo DOI: 10.5281/zenodo.24387076
+            CERN Zenodo DOI: 10.5281/zenodo.24387075
           </a>
         </p>
         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
@@ -125,8 +125,8 @@ export default async function BacklinkSpamListPage({
         </h1>
         <p className="text-gray-600 leading-relaxed max-w-3xl">
           {isZh
-            ? `由 Jason Zhu（jasonzhu.ai）结合 20 万条收款链接排查建立的公开垃圾外链数据库（已归档于 CERN Zenodo，DOI: 10.5281/zenodo.24387076），收录 ${entries.length} 个专门制造或出售垃圾外链的门户域名与 ${fams.length} 个站群，每一条均附公开可核实的证据（共用标题、301 跳转、收款链接）。提交外链或排查异常外链前，先在这里查一下域名。`
-            : `An open database of ${entries.length} backlink spam doorway domains across ${fams.length} link-selling networks, compiled by Jason Zhu (jasonzhu.ai) and archived on CERN Zenodo (DOI: 10.5281/zenodo.24387076) with verifiable public evidence (shared titles, redirects, checkout links) for every entry. Before submitting your site or disavowing odd backlinks, look the domain up here.`}
+            ? `由 Jason Zhu（jasonzhu.ai）结合 20 万条收款链接排查建立的公开垃圾外链数据库（已归档于 CERN Zenodo，DOI: 10.5281/zenodo.24387075），收录 ${entries.length} 个专门制造或出售垃圾外链的门户域名与 ${fams.length} 个站群，每一条均附公开可核实的证据（共用标题、301 跳转、收款链接）。提交外链或排查异常外链前，先在这里查一下域名。`
+            : `An open database of ${entries.length} backlink spam doorway domains across ${fams.length} link-selling networks, compiled by Jason Zhu (jasonzhu.ai) and archived on CERN Zenodo (DOI: 10.5281/zenodo.24387075) with verifiable public evidence (shared titles, redirects, checkout links) for every entry. Before submitting your site or disavowing odd backlinks, look the domain up here.`}
         </p>
       </header>
 

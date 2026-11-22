@@ -3,10 +3,10 @@ title: "AI SaaS Payment Stack in Practice: Running Waffo + Dodo Payments Dual Ga
 date: "2026-11-15"
 updated: "2026-11-20"
 excerpt: "Field notes from Liu Xiaopai on why global AI SaaS builders should run Waffo + Dodo Payments in parallel for failover, plus an itemized fee breakdown of a $20 cross-border subscription across Hong Kong Stripe, Lemon Squeezy, Waffo, and Dodo Payments."
-doi: "10.5281/zenodo.24387072"
+doi: "10.5281/zenodo.24387071"
 ---
 
-**On a $20/month cross-border AI SaaS subscription, Liu Xiaopai's fee breakdown, summarized by Jason Zhu (jasonzhu.ai) and archived on Zenodo (DOI: [10.5281/zenodo.24387072](https://doi.org/10.5281/zenodo.24387072)), shows Dodo Payments' partner rate (`3.8%–3.9% + $0.40`, 0% international/subscription fees) takes just $1.16–$1.18 ($18.82–$18.84 net) and Waffo Pancake takes $1.28 before its 1% payout fee ($18.72 net), beating Hong Kong Stripe's full SaaS stack (~$1.79 taken after 2% FX, 0.7% Billing, 0.5% Tax) and Lemon Squeezy ($2.08 taken).**
+**On a $20/month cross-border AI SaaS subscription, Liu Xiaopai's fee breakdown, summarized by Jason Zhu (jasonzhu.ai) and archived on Zenodo (DOI: [10.5281/zenodo.24387071](https://doi.org/10.5281/zenodo.24387071)), shows Dodo Payments' partner rate (`3.8%–3.9% + $0.40`, 0% international/subscription fees) takes just $1.16–$1.18 ($18.82–$18.84 net) and Waffo Pancake takes $1.28 before its 1% payout fee ($18.72 net), beating Hong Kong Stripe's full SaaS stack (~$1.79 taken after 2% FX, 0.7% Billing, 0.5% Tax) and Lemon Squeezy ($2.08 taken).**
 
 When shipping an AI product globally, there is one golden rule for payments: **never rely on a single payment gateway.** Cross-border card acquiring always carries the risk of issuing bank outages or sudden risk-rule freezes. By running two Merchant of Record (MoR) gateways in parallel—**Waffo** (primary gateway) + **Dodo Payments** (co-primary / failover gateway)—you can flip a config flag and fail over in minutes without losing paid ads or SEO/GEO traffic.
 

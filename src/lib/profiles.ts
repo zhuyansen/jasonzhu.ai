@@ -50,7 +50,7 @@ export interface Work {
   url: string;
   /** 同一个作品的其他页面。只放同一个东西：同一篇论文的 SSRN 页和 Zenodo 页算；装着两份数据的合集镜像不算 */
   sameAs: string[];
-  /** Zenodo 版本 DOI，不带 https://doi.org/ */
+  /** Zenodo 总 DOI（concept DOI，不随版本变），不带 https://doi.org/ */
   doi?: string;
   ssrnId?: string;
   datePublished?: string;
@@ -67,106 +67,105 @@ const CC_BY = "https://creativecommons.org/licenses/by/4.0/";
 const MIT = "https://opensource.org/licenses/MIT";
 
 /**
- * 作品清单。名字和 DOI 照 2026-11-21 的 Zenodo、SSRN、GitHub 记录写；数据集名去掉了记录标题里要改的说法
- * （"200,000 Indie Developer"、"105,000+"），DOI 不变。Zenodo 发新版本后，doi 和名字一起换，
- * 博客 frontmatter 和 src/lib/research.ts 里的 DOI 也要跟着换（scripts/check-entities.mjs 会查三处对不对得上）。
- * 安全论文的 DOI（24420920）到 2026-11-21 还没在 doi.org 登记，所以 sameAs 放 Zenodo 记录页，不放 DOI 网址。
+ * 作品清单。2026-11-22 起 Zenodo 上的作品一律写总 DOI（concept DOI）：它总指向最新版本，以后发新版本不用改这里。
+ * 名字照 2026-11-22 发布的新版本写。博客 frontmatter 和 src/lib/research.ts 里的 DOI 要和这里一致（scripts/check-entities.mjs 会查）。
+ * 写进站上之前先查 https://doi.org/api/handles/<DOI>，responseCode 为 1 才用：安全论文的第一版 DOI（24420920）一直没登记上。
  */
 export const WORKS: Work[] = [
   {
-    id: "https://doi.org/10.5281/zenodo.24420871",
+    id: "https://doi.org/10.5281/zenodo.24420870",
     type: "ScholarlyArticle",
     label: "Working paper: payment gateways to Merchant of Record platforms",
-    name: "The Structural Shift from Payment Gateways to Merchant of Record Platforms Among Independent Software and AI Founders: Evidence from 200,000 Live Checkout Links and a $20 Cross-Border Subscription Fee Audit (2023–2026)",
-    description: "Working paper on which payment platforms independent software and AI sellers use, from checkout-link data and a fee audit of a $20 cross-border subscription.",
+    name: "Payment Platforms of New Online Sellers, 2023–2026: AI Sellers Make Up a Far Larger Share on Merchant of Record Platforms than on Stripe (Evidence from 200,000 Checkout Links and a $20 Cross-Border Subscription Fee Comparison)",
+    description: "Working paper on which payment platforms new online sellers use, from checkout-link data, with an itemized fee comparison for a $20 cross-border subscription.",
     url: `${SITE_URL}/en/research/indie-saas-payments-mor-shift-2026`,
-    sameAs: ["https://zenodo.org/records/24420871", "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7737182"],
-    doi: "10.5281/zenodo.24420871",
+    sameAs: ["https://zenodo.org/records/24420870", "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7737182"],
+    doi: "10.5281/zenodo.24420870",
     ssrnId: "7737182",
     datePublished: "2026-11-21",
     pdfUrl: `${SITE_URL}/papers/Zhu-2026-Indie-SaaS-Payments-MoR-Shift-Working-Paper.pdf`,
     license: CC_BY,
   },
   {
-    id: "https://doi.org/10.5281/zenodo.24420920",
+    id: "https://doi.org/10.5281/zenodo.24420919",
     type: "ScholarlyArticle",
     label: "Working paper: supply-chain security of open-source AI agent skills",
-    name: "Supply-Chain Security in Open-Source AI Agent Ecosystems: Empirical Evidence and a Five-Dimension Audit Framework Across 105,000+ Indexed Agent Skills and Model Context Protocol (MCP) Servers",
-    description: "Working paper on the security of open-source AI agent skills and MCP servers, using Agent Skills Hub's index, with a five-dimension audit framework.",
+    name: "Supply-Chain Security in Open-Source AI Agent Ecosystems: Security-Grade Coverage in a June 2026 Snapshot of 105,000+ Agent Skills and MCP Servers, and a Five-Dimension Review Checklist",
+    description: "Working paper on security grades for open-source AI agent skills and MCP servers in Agent Skills Hub's catalog (June and July 2026 snapshots), with a five-dimension review checklist.",
     url: `${SITE_URL}/en/research/ai-agent-skills-mcp-supply-chain-security-2026`,
-    sameAs: ["https://zenodo.org/records/24420920", "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7737258"],
-    doi: "10.5281/zenodo.24420920",
+    sameAs: ["https://zenodo.org/records/24420919", "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7737258"],
+    doi: "10.5281/zenodo.24420919",
     ssrnId: "7737258",
     datePublished: "2026-11-21",
     pdfUrl: `${SITE_URL}/papers/Zhu-2026-AI-Agent-Skills-MCP-Supply-Chain-Security-Working-Paper.pdf`,
     license: CC_BY,
   },
   {
-    id: "https://doi.org/10.5281/zenodo.24386243",
+    id: "https://doi.org/10.5281/zenodo.24386242",
     type: "Dataset",
     label: "Dataset: payment platform adoption, summary table",
-    name: "Payment Platform Adoption Among Websites Linking to Hosted Checkout Pages, 2023–2026 (Summary Table)",
+    name: "New Sellers on Seven Checkout Platforms, 2023 to 15 October 2026: Summary Tables",
     description: "Summary table behind the 2026 indie payments report on jasonzhu.ai: new sellers per year and per payment platform, counted from websites that link to hosted checkout pages. The link-level data behind it is not included.",
-    url: "https://zenodo.org/records/24386243",
+    url: "https://zenodo.org/records/24386242",
     sameAs: [],
-    doi: "10.5281/zenodo.24386243",
+    doi: "10.5281/zenodo.24386242",
     datePublished: "2026-11-20",
     license: CC_BY,
   },
   {
-    id: "https://doi.org/10.5281/zenodo.24387072",
+    id: "https://doi.org/10.5281/zenodo.24387071",
     type: "Dataset",
     label: "Dataset: fees on a $20 cross-border subscription",
-    name: "Merchant of Record and Payment Gateway Real Fee Benchmark on a $20 Cross-Border AI SaaS Subscription (November 2026)",
-    description: "Itemized fees on a $20 cross-border subscription for Merchant of Record platforms and payment gateways, from the fee comparison on jasonzhu.ai (November 2026).",
-    url: "https://zenodo.org/records/24387072",
+    name: "Fees Taken from a $20 Cross-Border Subscription, Itemized for Eight Payment Setups (November 2026)",
+    description: "Itemized fees on a $20 cross-border subscription for eight payment setups (Merchant of Record platforms and Stripe Hong Kong), most rows from Liu Xiaopai's breakdown of November 2026.",
+    url: "https://zenodo.org/records/24387071",
     sameAs: [],
-    doi: "10.5281/zenodo.24387072",
+    doi: "10.5281/zenodo.24387071",
     datePublished: "2026-11-20",
     license: CC_BY,
   },
   {
-    id: "https://doi.org/10.5281/zenodo.24387074",
+    id: "https://doi.org/10.5281/zenodo.24387073",
     type: "Dataset",
     label: "Dataset: AI agent skills security audit, summary table",
-    name: "Open-Source AI Agent Skills and MCP Servers Supply-Chain Security Audit (Summary Table, 2026)",
-    description: "Summary table with aggregate counts from Agent Skills Hub's security audit of open-source AI agent skills and MCP servers, from a 2026 snapshot of its index.",
-    url: "https://zenodo.org/records/24387074",
+    name: "Security-Grade Coverage in the Agent Skills Hub Catalog: June 2026 Snapshot (105,000+ Entries) and November 2026 Count",
+    description: "Share of the Agent Skills Hub catalog with a security grade in a June 2026 snapshot (105,000+ entries), with the catalog count of November 2026.",
+    url: "https://zenodo.org/records/24387073",
     sameAs: [],
-    doi: "10.5281/zenodo.24387074",
+    doi: "10.5281/zenodo.24387073",
     datePublished: "2026-11-20",
     license: CC_BY,
   },
   {
-    id: "https://doi.org/10.5281/zenodo.24387076",
+    id: "https://doi.org/10.5281/zenodo.24387075",
     type: "Dataset",
     label: "Dataset: backlink spam list",
-    name: "Backlink Spam Doorway Domains & Link-Selling Networks Evidence Database (2026)",
-    description: "Doorway domains and link-selling networks that sell or fake backlinks, each listed with public evidence such as shared titles, redirects or checkout links. The live list is kept at jasonzhu.ai/en/backlink-spam-list and on GitHub.",
-    url: "https://zenodo.org/records/24387076",
+    name: "Backlink Spam List: 581 Doorway Domains and Link Sellers with Public Evidence (Snapshot of 28 October 2026)",
+    description: "581 doorway domains and link sellers that sell or fake backlinks, each listed with public evidence such as shared titles, redirects or checkout links (snapshot of 28 October 2026). The live list is kept at jasonzhu.ai/en/backlink-spam-list and on GitHub.",
+    url: "https://zenodo.org/records/24387075",
     sameAs: [
       "https://github.com/zhuyansen/backlink-spam-list",
       "https://huggingface.co/datasets/jasonzhuyansen/backlink-spam-doorway-domains-2026",
       "https://www.kaggle.com/datasets/yansenzhu/backlink-spam-doorway-domains-2026",
     ],
-    doi: "10.5281/zenodo.24387076",
+    doi: "10.5281/zenodo.24387075",
     datePublished: "2026-11-20",
     downloads: [{ url: "https://raw.githubusercontent.com/zhuyansen/backlink-spam-list/main/list.csv", format: "text/csv" }],
     license: CC_BY,
   },
   {
-    id: "https://doi.org/10.5281/zenodo.21292799",
+    id: "https://doi.org/10.5281/zenodo.21292798",
     type: "Dataset",
     label: "Dataset: AI Agent Skills Security Grades (130K), Agent Skills Hub",
     name: "AI Agent Skills Security Grades (130K)",
     description: "Rule-based security grades for about 130,000 open-source AI agent skills and MCP servers indexed by Agent Skills Hub.",
-    url: "https://zenodo.org/records/21292799",
+    url: "https://zenodo.org/records/21292798",
     sameAs: [
       "https://www.wikidata.org/wiki/Q141735092",
       "https://huggingface.co/datasets/jasonzhuyansen/agent-skills-security-grades",
       "https://www.kaggle.com/datasets/yansenzhu/agent-skills-security-grades",
     ],
-    doi: "10.5281/zenodo.21292799",
+    doi: "10.5281/zenodo.21292798",
     datePublished: "2026-07-10",
     publisher: "https://agentskillshub.top/#organization",
     license: CC_BY,

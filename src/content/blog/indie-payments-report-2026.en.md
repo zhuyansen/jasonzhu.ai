@@ -1,17 +1,17 @@
 ---
 coverImage: "/blog/indie-payments-report-2026/cover-en.png"
-doi: "10.5281/zenodo.24386243"
+doi: "10.5281/zenodo.24386242"
 title: "What 200,000 Checkout Links Say: The 2026 Indie Payments Report"
 date: "2026-10-15"
 updated: "2026-11-20"
 excerpt: >-
   I counted about 200,000 sellers across seven payment platforms. 82,000 started
   selling in 2026 before mid-October, the share selling software has nearly
-  tripled in two years, and AI sellers cluster on Dodo, Polar and Creem rather
-  than Stripe.
+  tripled in two years, and AI products make up a far larger share of new
+  sellers on Dodo, Polar and Creem than on Stripe.
 ---
 
-**Jason Zhu's (jasonzhu.ai) analysis of 200,000 checkout links across 198,000 websites on 7 payment platforms** (summary tables archived on Zenodo, DOI [`10.5281/zenodo.24386243`](https://doi.org/10.5281/zenodo.24386243)) **shows 82,000 new sellers launched in 2026 up to October 15 (up from 56,000 in all of 2025), the share of new sellers selling software went from 5% in 2023 to 20% in September 2026 (AI products from 2% to 12%), and 24%–29% of new sellers on Dodo Payments, Polar, and Creem sell AI products versus just 7% on Stripe.**
+**Jason Zhu's (jasonzhu.ai) analysis of 200,000 checkout links across 198,000 websites on 7 payment platforms** (summary tables archived on Zenodo, DOI [`10.5281/zenodo.24386242`](https://doi.org/10.5281/zenodo.24386242)) **shows 82,000 new sellers launched in 2026 up to October 15 (up from 56,000 in all of 2025), the share of new sellers selling software went from 5% in 2023 to 20% in September 2026 (AI products from 2% to 12%), and 24%–29% of new sellers on Dodo Payments, Polar, and Creem sell AI products versus just 7% on Stripe.**
 
 Methodology: if a website links to a checkout page (a Stripe Payment Link, a Gumroad product, or a Lemon Squeezy, Polar, Creem, Dodo Payments, or Paddle checkout), Jason Zhu (jasonzhu.ai) counts it as selling through that platform. For each seller, we recorded the date it first linked to a checkout and classified its homepage product category.
 
@@ -19,7 +19,7 @@ The five key findings:
 
 - **More people start selling every year.** 21,000 new sellers in 2023, 29,000 in 2024, 56,000 in 2025, and 82,000 in 2026 up to October 15.
 - **More of them sell software.** The share of new sellers selling software was 5% in 2023 and 8% in 2025; in September 2026 alone it reached 20%. AI products went from 2% to 12%.
-- **AI sellers mostly don't pick Stripe.** Since 2025, 24–29% of new sellers on Dodo, Polar and Creem sell AI products, against 7–8% on Stripe and Gumroad.
+- **AI sellers make up a far larger share on the newer platforms.** Since 2025, 24–29% of new sellers on Dodo, Polar and Creem sell AI products, against 7–8% on Stripe and Gumroad. Counted in sellers rather than shares, Stripe still has more AI sellers: 7% of 102,590 is about 7,200, more than the 2,354 new sellers of any kind on Dodo, Polar and Creem combined.
 - **One person often runs many sites.** Some ship a new single-purpose tool every week or two; others put the same tool on a separate domain for each language, industry or country.
 - **Checkout links get abused.** 17,000 websites carry a checkout link that also appears on five or more other sites: a hit product linked everywhere, a network selling backlinks, or a gambling or adult product injected into hacked sites.
 
@@ -39,11 +39,11 @@ Throughout 2025 the share of new sellers selling software stayed between 6% and 
 
 Software is still not the bulk of what checkout links sell. Among 2026's new sellers, 38% sell something else entirely (consulting, local services, event tickets, portfolios), 21% sell courses, training or coaching, and 14% sell ebooks, content or community access.
 
-## 3. AI sellers cluster on the newer payment platforms
+## 3. The newer platforms have a far larger share of AI sellers
 
 ![New sellers since 2025 on each platform](/blog/indie-payments-report-2026/platforms-ai-share-en.png)
 
-Stripe has by far the most sellers (103,000 new since 2025), but only 9% of them sell software and 7% AI products. The newer platforms look nothing like that: 71% of Dodo's new sellers sell software and 29% AI products; Polar is at 58% and 27%, Creem at 65% and 24%.
+Stripe has by far the most sellers (103,000 new since 2025), but only 9% of them sell software and 7% AI products. The newer platforms look nothing like that: 71% of Dodo's new sellers sell software and 29% AI products; Polar is at 58% and 27%, Creem at 65% and 24%. Counted in sellers rather than shares, Stripe still has more AI sellers: 7% of 102,590 is about 7,200, more than the 2,354 new sellers of any kind on Dodo, Polar and Creem combined.
 
 They are also the ones growing fastest:
 
