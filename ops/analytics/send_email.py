@@ -1,6 +1,6 @@
 """用 Resend 把日报发到邮箱。标题里直接带关键数和故障标记，不开信就知道今天要不要看。
 
-Env：RESEND_API_KEY（必需）、DIGEST_FROM（默认 news@jasonzhu.ai，已在 Resend 验证）、DIGEST_TO（默认站长邮箱）
+Env：RESEND_API_KEY（必需）、DIGEST_FROM（默认 news@jasonzhu.ai，已在 Resend 验证）、DIGEST_TO（必需，收件人，放在仓库 secret 里，不写进公开代码）
 用法：python send_email.py digest.md
 """
 import os
@@ -19,7 +19,9 @@ def main():
     if not key:
         sys.exit("RESEND_API_KEY 没配")
     sender = os.environ.get("DIGEST_FROM") or "JasonZhu.AI 数据日报 <news@jasonzhu.ai>"
-    to = os.environ.get("DIGEST_TO") or "m17551076169@gmail.com"
+    to = os.environ.get("DIGEST_TO", "").strip()
+    if not to:
+        raise SystemExit("缺 DIGEST_TO：收件人放在 GitHub secret DIGEST_TO 里，本地运行时用环境变量传")
 
     m = re.search(r"新订阅 \*\*(\d+)\*\*", md)
     head = f"新订阅 {m.group(1)}" if m else "订阅数据缺失"

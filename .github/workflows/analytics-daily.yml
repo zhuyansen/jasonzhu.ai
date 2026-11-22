@@ -114,6 +114,7 @@ jobs:
       - name: Email
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          DIGEST_TO: ${{ secrets.DIGEST_TO }}
         run: python send_email.py digest.md
 
       - uses: actions/upload-artifact@v4

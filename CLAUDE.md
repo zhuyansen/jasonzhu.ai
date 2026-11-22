@@ -77,7 +77,7 @@ Git：commit 后如远程有新提交（cron 会自动 commit 快讯），先 `g
 
 **提示词库（app/[lang]/prompts/claude-opus-5-5，收 Opus 5.5 + Sonnet 5.5 + Haiku 5.5（10/7 发布）+ Fable 5.5（内测·未官宣，`MODEL_PREVIEW` 标注），URL 保留原样）**
 - 源 `src/content/opus-prompts/cases.json`（全部作品，含无提示词的）→ `generate-opus-prompts.mjs`（已接入 prebuild）→ 站内列表收全部作品，和 GitHub 合集一致；没有提示词的作品不建详情页、卡片直链 X 原帖（2026-11-17 起与图片库/Gemini 库统一，不再产生上千个 noindex 详情页）。采集管线和已知的坑见 `scripts/opus-prompts/README.md`。
-- 视频和封面是 X 的外链。`video.twimg.com` 拒绝带外站 Referer 的请求，所以 `/prompts/*` 是 `Referrer-Policy: no-referrer`（next.config 响应头 + 页面 metadata），不要删。
+- 视频和封面是 X 的外链。`video.twimg.com` 拒绝带外站 Referer 的请求；靠 `no-referrer` 绕过它违反 X 条款（不许绕过技术限制），2026-11-21 起不再站内播放：只显示封面（pbs.twimg.com 带本站 Referer 也能加载），点封面去 X 看原视频。**不要再把 `no-referrer` 加回来。**
 - 客户端组件只能引 `@/lib/opus-prompts-shared`；`@/lib/opus-prompts` 导入整份 JSON，引了会打进 JS 包。
 - 提示词一律原文照录，出处必须可追溯；人工把关记录在 `scripts/opus-prompts/data/curation.json`，下架也走这里。
 - X 数据（两个库共用 `scripts/opus-prompts/lib/x.mjs`）：2026-11-07 起 Jason 定的顺序是先 AIsa（`AISA_API_KEY`，tool router 的 `get_twitter_tweet_advanced_search`）、出错再直连 twitterapi.io（`TWITTERAPI_IO_KEY`）。AIsa 的 X 工具底层就是 twitterapi.io，返回格式和价格一样（每条 $0.00015），换通道不影响数据；两边各自一个钱包，一边余额用完另一边顶上。起因：11-06 twitterapi.io 余额用完，两个库停了一天。
@@ -119,7 +119,7 @@ Git：commit 后如远程有新提交（cron 会自动 commit 快讯），先 `g
 - `ops/geo/panel_run.py` 用 backlink-guard 的 `asked`（AIsa）把题库问一遍：ChatGPT、Gemini App、Google AI Mode、Perplexity 每题 3 次，Claude 每月第一个周一 1 次。记引用本站、引用对应页面、正文点名、排第一四个口径，和上周、和 11-17 的基线比，发邮件给 ALERT_EMAIL。说明在 `ops/geo/PANEL.md`。
 - 题库的题目不要改，要加题就加新 id：`ops/geo/questions.json` 是冻结组（GIGALinks 的实验 12-01、12-15、01-01 用它复测），`questions-real.json` 是不带品牌名的真实问法组。改页面前在 `ops/geo/experiments.json` 记一笔（改了哪些题对应的页面、哪些故意不改），摘要会分组算。
 - 公开仓库只提交分数（`ops/geo/panel/`）。回答原文和别的网站的网址来自付费接口，加密后放草稿 release `geo-panel-state`（密钥 `SELLER_STATE_KEY`），不进仓库，也不打印到 Actions 日志。
-- 同一天跑两次，每家的命中率差 1 到 4 个百分点：周与周之间 5 个百分点以内的变化不算数。
+- 每格都带按题算的 95% 区间。单家要区间不重叠、大约差 10–15 个百分点以上才算数；5 个百分点这种门槛太低（同一次运行里每题问 3 次几乎不独立，有效样本是题数）。
 
 **Vercel 请求额度（2026-10-07 事故后，Pro 套餐，每月 1000 万 Edge Requests）**
 - 全站链接一律 `import Link from "@/components/Link"`（默认 `prefetch={false}`），**不要直接用 `next/link`**：默认预加载会让导航 / 页脚 / 提示词卡片每次访问多发十几到几十个请求。2026-10-07 免费版 30 天用到 440 万次（额度 100 万），整站被停用（402 DEPLOYMENT_DISABLED），升级 Pro 才恢复。
