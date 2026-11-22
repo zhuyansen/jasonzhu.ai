@@ -7,6 +7,7 @@ import {
   RESEARCH_AUTHOR,
   WORKING_PAPERS,
 } from "@/lib/research";
+import { findWorkByDoi, PERSON_REF, workNode, type Work } from "@/lib/profiles";
 
 const SITE_URL = "https://jasonzhu.ai";
 
@@ -82,36 +83,37 @@ export default async function WorkingPaperDetailPage({
 
   const pdfUrl = `${SITE_URL}${paper.pdfPath}`;
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ScholarlyArticle",
-    "@id": `${SITE_URL}/${lang}/research/${paper.slug}#paper`,
+  // 论文节点取自 src/lib/profiles.ts 的 WORKS：@id 是 Zenodo DOI，sameAs 连着 Zenodo 记录页和 SSRN 页（同一篇论文），
+  // 和 /research 页上是同一个节点。本页再补摘要、关键词这些只在详情页显示的字段。
+  // 论文用到的数据集用 citation 指过去，作者都指向 #person；发布方是作者本人（个人站，不写公司）。
+  const work = findWorkByDoi(paper.zenodoDoi);
+  const datasets = paper.datasetDois
+    .map((d) => findWorkByDoi(d.doi))
+    .filter((w): w is Work => Boolean(w));
+  const paperNode = {
+    ...(work
+      ? workNode(work)
+      : {
+          "@type": "ScholarlyArticle",
+          "@id": `https://doi.org/${paper.zenodoDoi}`,
+          url: `${SITE_URL}/en/research/${paper.slug}`,
+          sameAs: [paper.zenodoUrl, paper.ssrnUrl],
+          author: PERSON_REF,
+          encoding: { "@type": "MediaObject", encodingFormat: "application/pdf", contentUrl: pdfUrl },
+        }),
+    name: paper.title,
     headline: paper.title,
     alternativeHeadline: paper.titleZh,
     abstract: paper.abstract,
     datePublished: paper.date,
     inLanguage: "en",
     keywords: paper.keywords.join(", "),
-    url: `${SITE_URL}/${lang}/research/${paper.slug}`,
-    sameAs: [paper.zenodoUrl, paper.ssrnUrl],
-    identifier: [
-      { "@type": "PropertyValue", propertyID: "DOI", value: paper.zenodoDoi },
-      { "@type": "PropertyValue", propertyID: "SSRN", value: paper.ssrnId },
-    ],
-    author: {
-      "@id": `${SITE_URL}/#person`,
-      "@type": "Person",
-      name: RESEARCH_AUTHOR.name,
-      alternateName: RESEARCH_AUTHOR.altName,
-      sameAs: [RESEARCH_AUTHOR.orcidUrl],
-    },
-    publisher: { "@id": `${SITE_URL}/#organization` },   // 全站 Organization 的 @id（layout.tsx）
-    license: "https://creativecommons.org/licenses/by/4.0/",
-    encoding: {
-      "@type": "MediaObject",
-      encodingFormat: "application/pdf",
-      contentUrl: pdfUrl,
-    },
+    publisher: PERSON_REF,
+    ...(datasets.length ? { citation: datasets.map((d) => ({ "@id": d.id })) } : {}),
+  };
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [paperNode, ...datasets.map(workNode)],
   };
 
   return (

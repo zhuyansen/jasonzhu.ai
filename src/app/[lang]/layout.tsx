@@ -7,7 +7,7 @@ import GoogleOneTap from "@/components/GoogleOneTap";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
 import "../globals.css";
 import ThirdPartyAnalytics from "@/components/ThirdPartyAnalytics";
-import { AUTHOR_ALT_NAME, AUTHOR_ALT_NAMES, AUTHOR_NAME, ORCID_ID, ORCID_URL, PERSON_SAME_AS } from "@/lib/profiles";
+import { AUTHOR_ALT_NAMES, AUTHOR_NAME, ORCID_ID, ORCID_URL, PERSON_ID, PERSON_PROFILES, RELATED_SITES } from "@/lib/profiles";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,15 +23,19 @@ import WebMcpRegister from "@/components/WebMcpRegister";
 
 const SITE_URL = "https://jasonzhu.ai";
 
-// 全站 JSON-LD：Organization + Person + WebSite + Service/Offer（Jason Barnard Kalicube @id 实体消歧 + CERN Zenodo 学术锚点 + ORCID）
+// 全站 JSON-LD：Person（本人）+ WebSite + Service（GoSail Club）+ AgentSkillsHub。
+// 个人站，不写公司（2026-11-21 Jason 定）：没有 Organization 节点，网站的作者和发布者、GoSail Club 的提供者都是 #person。
+// AgentSkillsHub 是作者办的另一个网站，单独一个节点，founder 指向 #person。
+// 论文、数据集、开源工具不放进全站图，只在 /research、引用它的博客文章页和 /backlink-spam-list 输出（src/lib/profiles.ts 的 WORKS）。
 // 按路由语言输出中/英文描述与对应语言 URL，避免 /en 页向英文知识图谱与 Gemini 喂中文实体文本。
 function buildSiteJsonLd(lang: Locale) {
   const isZh = lang === "zh";
+  const person = { "@id": PERSON_ID };
 
   const personJsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "@id": "https://jasonzhu.ai/#person",
+    "@id": PERSON_ID,
     name: AUTHOR_NAME,
     alternateName: AUTHOR_ALT_NAMES,
     identifier: {
@@ -43,13 +47,14 @@ function buildSiteJsonLd(lang: Locale) {
     url: `${SITE_URL}/${lang}`,
     image: "https://jasonzhu.ai/avatar.jpg",
     email: "mailto:jason@jasonzhu.ai",
-    sameAs: PERSON_SAME_AS,
+    // 只放代表本人的档案；论文、数据集、软件包、AgentSkillsHub 都是别的实体
+    sameAs: PERSON_PROFILES.map((p) => p.url),
     jobTitle: isZh
-      ? "前搜广推与知识图谱算法工程师、AI 应用与出海独立开发研究者（GoSail Global 创始人）"
-      : "AI Engineer, Go-Global Indie SaaS Researcher & Founder of GoSail Global",
+      ? "前搜广推与知识图谱算法工程师、AI 应用与出海独立开发研究者"
+      : "AI Engineer & Go-Global Indie SaaS Researcher",
     description: isZh
-      ? "前搜广推与知识图谱算法工程师，现 AI 应用与出海独立开发研究者（jasonzhu.ai / GitHub: zhuyansen）。《20 万条独立开发者收款链接实证报告》（CERN Zenodo DOI: 10.5281/zenodo.24386243）与《105,626 个 AI Agent Skills 安全审计基准》（DOI: 10.5281/zenodo.24387074）作者。"
-      : "Former search, recommendation, and knowledge-graph algorithm engineer, now an AI applications and go-global indie SaaS researcher (jasonzhu.ai / GitHub: zhuyansen). Author of the 200,000 Indie Checkout Links Benchmark (CERN Zenodo DOI: 10.5281/zenodo.24386243) and the 105,626 Open-Source AI Agent Skills Security Audit (DOI: 10.5281/zenodo.24387074).",
+      ? "前搜广推与知识图谱算法工程师，现 AI 应用与出海独立开发研究者（jasonzhu.ai / GitHub: zhuyansen），创办了 Agent Skills Hub。工作论文和数据集见 jasonzhu.ai/zh/research。"
+      : "Former search, recommendation, and knowledge-graph algorithm engineer, now an AI applications and go-global indie SaaS researcher (jasonzhu.ai / GitHub: zhuyansen). Founder of Agent Skills Hub. Working papers and datasets: jasonzhu.ai/en/research.",
     knowsAbout: [
       "Generative Engine Optimization (GEO)",
       "Cross-Border Indie SaaS Payment Gateways (Stripe, Dodo Payments, Waffo, Polar, Creem)",
@@ -57,65 +62,33 @@ function buildSiteJsonLd(lang: Locale) {
       "AI Agent Skills & MCP Server Security Auditing",
       "Information Retrieval, Knowledge Graphs & Entity Resolution",
     ],
-    worksFor: { "@id": "https://jasonzhu.ai/#organization" },
-  };
-
-  const organizationJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": "https://jasonzhu.ai/#organization",
-    name: "JasonZhu.AI (GoSail Global)",
-    legalName: "BRICKAI (GoSailGlobal LLC)",
-    url: `${SITE_URL}/${lang}`,
-    logo: "https://jasonzhu.ai/avatar.jpg",
-    email: "jason@jasonzhu.ai",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "30 N Gould St, Ste N",
-      addressLocality: "Sheridan",
-      addressRegion: "WY",
-      postalCode: "82801",
-      addressCountry: "US",
-    },
-    contactPoint: {
-      "@type": "ContactPoint",
-      contactType: "customer support",
-      email: "jason@jasonzhu.ai",
-      url: `${SITE_URL}/${lang}/services`,
-      availableLanguage: ["en", "zh-CN"],
-    },
-    founder: { "@id": "https://jasonzhu.ai/#person", "@type": "Person", name: AUTHOR_NAME },
-    subOrganization: {
-      "@type": "Organization",
-      "@id": "https://agentskillshub.top/#organization",
-      name: "Agent Skills Hub",
-      url: "https://agentskillshub.top/",
-      founder: { "@id": "https://jasonzhu.ai/#person" },
-      sameAs: [
-        "https://www.wikidata.org/wiki/Q141986406",
-        "https://www.crunchbase.com/organization/agent-skills-hub",
-        "https://github.com/zhuyansen/agent-skills-hub",
-        "https://www.npmjs.com/package/@agentskillshub/cli",
-        "https://www.npmjs.com/package/@agentskillshub/mcp",
-      ],
-    },
-    // 公司自己的主页。作者的 ORCID、Scholar、GitHub 等是人的，不放这里，否则公司和人会被认成同一个实体。
-    sameAs: ["https://www.linkedin.com/company/gosailglobal/"],
   };
 
   const websiteJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": "https://jasonzhu.ai/#website",
+    "@id": `${SITE_URL}/#website`,
     name: "JasonZhu.AI",
     url: `${SITE_URL}/${lang}`,
     description: isZh
-      ? "AI工具评测、实战教程、行业洞察与出海增长策略（20万卖家收款基准与10.5万AI Skills安全审计）"
-      : "Hands-on AI tool reviews, tutorials, indie SaaS payment benchmarks (200,000 checkout links), and open-source AI agent skills security audits.",
-    author: { "@id": "https://jasonzhu.ai/#person", "@type": "Person", name: "Jason Zhu" },
-    publisher: { "@id": "https://jasonzhu.ai/#organization" },
+      ? "AI 工具评测、实战教程、行业洞察与出海增长策略，附独立开发者收款数据和 AI Agent Skills 安全审计。"
+      : "Hands-on AI tool reviews, tutorials, indie SaaS payment data, and open-source AI agent skills security audits.",
+    author: person,
+    publisher: person,
     inLanguage: isZh ? "zh-CN" : "en",
   };
+
+  // AgentSkillsHub 的 sameAs 只放描述它自己的页面（Wikidata、Crunchbase）
+  const relatedSitesJsonLd = RELATED_SITES.map((s) => ({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": s.id,
+    name: s.name,
+    alternateName: s.alternateName,
+    url: s.url,
+    founder: person,
+    sameAs: s.sameAs,
+  }));
 
   const serviceJsonLd = {
     "@context": "https://schema.org",
@@ -123,12 +96,7 @@ function buildSiteJsonLd(lang: Locale) {
     name: isZh
       ? "GoSail Club 启航会 & 企业 AI 实战培训"
       : "GoSail Club Community & Enterprise AI Training",
-    provider: {
-      "@type": "Organization",
-      "@id": "https://jasonzhu.ai/#organization",
-      name: "JasonZhu.AI (GoSail Global)",
-      url: `${SITE_URL}/${lang}`,
-    },
+    provider: person,
     description: isZh
       ? "AI 出海实战社群（GoSail Club）、企业 AI 培训、MCN 合作与跨境出海技术咨询服务。"
       : "Going-global indie SaaS community (GoSail Club), enterprise AI workflow training (Claude Code & Cursor), MCN partnerships, and cross-border technical consulting.",
@@ -142,7 +110,7 @@ function buildSiteJsonLd(lang: Locale) {
     },
   };
 
-  return { personJsonLd, organizationJsonLd, websiteJsonLd, serviceJsonLd };
+  return { personJsonLd, websiteJsonLd, serviceJsonLd, relatedSitesJsonLd };
 }
 
 interface Props {
@@ -232,7 +200,7 @@ export default async function LangLayout({ children, params }: Props) {
   const lang = (rawLang === "en" ? "en" : "zh") as Locale;
   const isZh = lang === "zh";
   const dict = await getDictionary(lang);
-  const { personJsonLd, organizationJsonLd, websiteJsonLd, serviceJsonLd } = buildSiteJsonLd(lang);
+  const { personJsonLd, websiteJsonLd, serviceJsonLd, relatedSitesJsonLd } = buildSiteJsonLd(lang);
 
   return (
     <html
@@ -268,12 +236,6 @@ export default async function LangLayout({ children, params }: Props) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationJsonLd),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
             __html: JSON.stringify(websiteJsonLd),
           }}
         />
@@ -283,6 +245,13 @@ export default async function LangLayout({ children, params }: Props) {
             __html: JSON.stringify(serviceJsonLd),
           }}
         />
+        {relatedSitesJsonLd.map((site) => (
+          <script
+            key={site["@id"]}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(site) }}
+          />
+        ))}
       </head>
       <body className="min-h-full flex flex-col bg-white text-gray-900">
         <WebMcpRegister />

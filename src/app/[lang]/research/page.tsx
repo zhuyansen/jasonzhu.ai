@@ -7,6 +7,7 @@ import {
   RESEARCH_IDENTIFIERS,
   WORKING_PAPERS,
 } from "@/lib/research";
+import { findWorkByDoi, PERSON_ID, workNode, type Work } from "@/lib/profiles";
 
 const SITE_URL = "https://jasonzhu.ai";
 
@@ -52,42 +53,37 @@ export default async function ResearchPage({
   const lang = rawLang === "en" ? "en" : "zh";
   const isEn = lang === "en";
 
+  // 本页列出的论文和数据集（含论文引用的 130K 数据集），节点取自 src/lib/profiles.ts 的 WORKS：
+  // 同一个作品在 /research、博客文章页、/backlink-spam-list 上是同一个 @id、同样的 sameAs。
+  // 论文标题用本页显示的那个；每个作品的作者都指向 #person。
+  const pageWorks: Work[] = [];
+  const add = (doi: string) => {
+    const w = findWorkByDoi(doi);
+    if (w && !pageWorks.includes(w)) pageWorks.push(w);
+  };
+  WORKING_PAPERS.forEach((p) => add(p.zenodoDoi));
+  OPEN_DATASETS.forEach((d) => add(d.zenodo));
+  WORKING_PAPERS.forEach((p) => p.datasetDois.forEach((d) => add(d.doi)));
+  const paperTitle = (w: Work) => WORKING_PAPERS.find((p) => findWorkByDoi(p.zenodoDoi) === w)?.title;
+
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "@id": `${SITE_URL}/${lang}/research#collection`,
-    url: `${SITE_URL}/${lang}/research`,
-    name: isEn
-      ? "Empirical Working Papers & Open Datasets — Jason Zhu"
-      : "实证工作论文与开源数据集 — Jason Zhu",
-    author: { "@id": `${SITE_URL}/#person` },
-    hasPart: [
-      ...WORKING_PAPERS.map((p) => ({
-        "@type": "ScholarlyArticle",
-        headline: p.title,
-        datePublished: p.date,
-        url: `${SITE_URL}/${lang}/research/${p.slug}`,
-        sameAs: [p.zenodoUrl, p.ssrnUrl],
-        identifier: [
-          { "@type": "PropertyValue", propertyID: "DOI", value: p.zenodoDoi },
-          { "@type": "PropertyValue", propertyID: "SSRN", value: p.ssrnId },
-        ],
-        encoding: {
-          "@type": "MediaObject",
-          encodingFormat: "application/pdf",
-          contentUrl: `${SITE_URL}${p.pdfPath}`,
-        },
-        author: { "@id": `${SITE_URL}/#person` },
-        license: "https://creativecommons.org/licenses/by/4.0/",
-      })),
-      ...OPEN_DATASETS.map((d) => ({
-        "@type": "Dataset",
-        name: d.name,
-        url: d.zenodo,
-        sameAs: [d.huggingface, d.kaggle, d.github],
-        license: "https://creativecommons.org/licenses/by/4.0/",
-        creator: { "@id": `${SITE_URL}/#person` },
-      })),
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": `${SITE_URL}/${lang}/research#collection`,
+        url: `${SITE_URL}/${lang}/research`,
+        name: isEn
+          ? "Empirical Working Papers & Open Datasets — Jason Zhu"
+          : "实证工作论文与开源数据集 — Jason Zhu",
+        author: { "@id": PERSON_ID },
+        hasPart: pageWorks.map((w) => ({ "@id": w.id })),
+      },
+      ...pageWorks.map((w) => {
+        const node = workNode(w);
+        const title = paperTitle(w);
+        return title ? { ...node, name: title, headline: title } : node;
+      }),
     ],
   };
 

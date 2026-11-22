@@ -13,7 +13,7 @@ import GiscusComments from "@/components/GiscusComments";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
 import { extractFaq, faqJsonLd } from "@/lib/faq";
 import { tagLabel } from "@/lib/tag-labels";
-import { AUTHOR_NAME } from "@/lib/profiles";
+import { AUTHOR_NAME, PERSON_ID, workNode, workRef, worksCitedIn } from "@/lib/profiles";
 import { fitTitle, fitDescription } from "@/lib/social";
 import type { Metadata } from "next";
 
@@ -174,10 +174,14 @@ export default async function BlogPostPage({ params }: Props) {
     ],
   };
 
+  // 文中引用的作品（frontmatter 的 doi，以及正文里出现的 DOI、GitHub 仓库、PyPI 页）。
+  // 文章只用 citation 指向它们：文章不是数据集，不写 DOI 当自己的 identifier / sameAs。
+  const citedWorks = worksCitedIn(`${post.doi ?? ""}\n${post.content}`);
+
   // Article JSON-LD structured data
   const articleJsonLd = {
     "@context": "https://schema.org",
-    "@type": post.doi ? ["Article", "ScholarlyArticle"] : "Article",
+    "@type": "Article",
     headline: post.title,
     description: post.excerpt || post.title,
     datePublished: post.date,
@@ -185,11 +189,11 @@ export default async function BlogPostPage({ params }: Props) {
     // 投稿文的作者是撰稿人（主页未知就没有 url）；publisher 始终链接到 Entity Home @id
     author: post.author
       ? { "@type": "Person", name: post.author.name, url: post.author.url }
-      : { "@type": "Person", "@id": `${SITE_URL}/#person`, name: AUTHOR_NAME, url: SITE_URL },
+      : { "@type": "Person", "@id": PERSON_ID, name: AUTHOR_NAME, url: SITE_URL },
     publisher: {
       "@type": "Person",
-      "@id": `${SITE_URL}/#person`,
-      name: "Jason Zhu",
+      "@id": PERSON_ID,
+      name: AUTHOR_NAME,
       url: SITE_URL,
     },
     mainEntityOfPage: {
@@ -200,116 +204,13 @@ export default async function BlogPostPage({ params }: Props) {
       ? `${SITE_URL}${post.coverImage}`
       : `${SITE_URL}/${lang}/blog/${slug}/opengraph-image`,
     keywords: post.tags.map((t) => tagLabel(t, lang)).join(", "),
-    ...(post.doi
-      ? {
-          sameAs: [
-            `https://doi.org/${post.doi}`,
-            `https://zenodo.org/records/${post.doi.split("zenodo.").pop()}`,
-          ],
-          identifier: {
-            "@type": "PropertyValue",
-            propertyID: "DOI",
-            value: post.doi,
-            url: `https://doi.org/${post.doi}`,
-          },
-          citation: {
-            "@type": "Dataset",
-            "@id": `https://doi.org/${post.doi}`,
-            name: post.title,
-            identifier: `https://doi.org/${post.doi}`,
-            url: `https://zenodo.org/records/${post.doi.split("zenodo.").pop()}`,
-          },
-        }
-      : {}),
+    ...(citedWorks.length ? { citation: citedWorks.map(workRef) } : {}),
   };
 
-  // Google Dataset Search 专项 JSON-LD（仅对带 CERN Zenodo DOI 的实证数据集报告生成）
-  const datasetJsonLd = post.doi
-    ? {
-        "@context": "https://schema.org",
-        "@type": "Dataset",
-        "@id": `https://doi.org/${post.doi}`,
-        name: post.title,
-        description: post.excerpt || post.title,
-        url: `${SITE_URL}/${lang}/blog/${slug}`,
-        sameAs: [
-          `https://doi.org/${post.doi}`,
-          `https://zenodo.org/records/${post.doi.split("zenodo.").pop()}`,
-          ...(post.doi === "10.5281/zenodo.24386243" || post.doi === "10.5281/zenodo.24387072"
-            ? [
-                "https://huggingface.co/datasets/jasonzhuyansen/indie-saas-payments-benchmark-2026",
-                "https://www.kaggle.com/datasets/yansenzhu/indie-saas-payments-benchmark-2026",
-                "https://github.com/zhuyansen/indie-saas-payments-benchmark-2026",
-              ]
-            : []),
-          ...(post.doi === "10.5281/zenodo.24387074"
-            ? [
-                "https://www.wikidata.org/wiki/Q141735092",
-                "https://huggingface.co/datasets/jasonzhuyansen/agent-skills-security-grades",
-                "https://www.kaggle.com/datasets/yansenzhu/agent-skills-security-grades",
-              ]
-            : []),
-        ],
-        identifier: [
-          `https://doi.org/${post.doi}`,
-          {
-            "@type": "PropertyValue",
-            propertyID: "DOI",
-            value: post.doi,
-            url: `https://doi.org/${post.doi}`,
-          },
-        ],
-        creator: {
-          "@type": "Person",
-          "@id": `${SITE_URL}/#person`,
-          name: AUTHOR_NAME,
-          url: SITE_URL,
-        },
-        publisher: {
-          "@type": "Organization",
-          "@id": `${SITE_URL}/#organization`,
-          name: "Jason Zhu (jasonzhu.ai)",
-          url: SITE_URL,
-        },
-        license: "https://creativecommons.org/licenses/by/4.0/",
-        isAccessibleForFree: true,
-        inLanguage: lang === "en" ? "en" : "zh-CN",
-        datePublished: post.date,
-        dateModified: post.updated || post.date,
-        keywords: post.tags.map((t) => tagLabel(t, lang)),
-        distribution: [
-          {
-            "@type": "DataDownload",
-            encodingFormat: "text/markdown",
-            contentUrl: `${SITE_URL}/api/md/${lang}/blog/${slug}`,
-          },
-          {
-            "@type": "DataDownload",
-            encodingFormat: "text/html",
-            contentUrl: `https://zenodo.org/records/${post.doi.split("zenodo.").pop()}`,
-          },
-          ...(post.doi === "10.5281/zenodo.24386243"
-            ? [
-                {
-                  "@type": "DataDownload",
-                  encodingFormat: "text/csv",
-                  contentUrl:
-                    "https://raw.githubusercontent.com/zhuyansen/indie-saas-payments-benchmark-2026/main/data/platform-adoption-200k-2026.csv",
-                },
-              ]
-            : []),
-          ...(post.doi === "10.5281/zenodo.24387072"
-            ? [
-                {
-                  "@type": "DataDownload",
-                  encodingFormat: "text/csv",
-                  contentUrl:
-                    "https://raw.githubusercontent.com/zhuyansen/indie-saas-payments-benchmark-2026/main/data/mor-20usd-subscription-fees-2026.csv",
-                },
-              ]
-            : []),
-        ],
-      }
+  // 文中引用的作品各自一个节点（数据集、论文、开源工具），作者指向 #person。
+  // 节点和 /research、/backlink-spam-list 上的同一个作品完全一样（src/lib/profiles.ts 的 WORKS）。
+  const worksJsonLd = citedWorks.length
+    ? { "@context": "https://schema.org", "@graph": citedWorks.map(workNode) }
     : null;
 
   // FAQPage JSON-LD：文章含「## 常见问题」段落时自动生成
@@ -339,11 +240,11 @@ export default async function BlogPostPage({ params }: Props) {
           __html: JSON.stringify(articleJsonLd),
         }}
       />
-      {datasetJsonLd && (
+      {worksJsonLd && (
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(datasetJsonLd),
+            __html: JSON.stringify(worksJsonLd),
           }}
         />
       )}

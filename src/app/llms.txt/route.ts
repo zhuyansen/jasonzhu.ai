@@ -1,8 +1,17 @@
 import { getAllPosts } from "@/lib/mdx";
 import { GUIDES } from "@/lib/go-global-guides";
-import { AUTHOR_ALT_NAME, AUTHOR_NAME, PROFILES } from "@/lib/profiles";
+import { AUTHOR_ALT_NAME, AUTHOR_NAME, PERSON_PROFILES, RELATED_SITES, WORKS, type Work } from "@/lib/profiles";
 
 const SITE_URL = "https://jasonzhu.ai";
+
+/** 作品一行：主页面，括号里是 DOI 和同一个作品的其他页面（Zenodo 记录页就是主页面或 DOI，不重复列） */
+function workLine(w: Work) {
+  const extra = [
+    ...(w.doi ? [`DOI ${w.doi}`] : []),
+    ...w.sameAs.filter((u) => !u.includes("zenodo.org/records/")),
+  ];
+  return `- ${w.label}: ${w.url}${extra.length ? `（${extra.join("；")}）` : ""}`;
+}
 
 /** English excerpts are cut at a word boundary, not mid-word. */
 function clip(text: string, max: number) {
@@ -38,7 +47,7 @@ export async function GET(request: Request) {
     "",
     `- [博客全集](${SITE_URL}/zh/blog): AI 教程、出海实战、变现案例`,
     `- [Blog (English)](${SITE_URL}/en/blog): the same articles in English`,
-    `- [Working Papers & Open Datasets (English)](${SITE_URL}/en/research): Empirical PDF working papers (SSRN #7737182 & #7737258; CERN Zenodo DOIs 10.5281/zenodo.24420871 & 10.5281/zenodo.24420920), BibTeX, and CC-BY-4.0 datasets`,
+    `- [Working Papers & Open Datasets (English)](${SITE_URL}/en/research): Empirical PDF working papers (SSRN #7737182 & #7737258; archived on Zenodo, DOIs 10.5281/zenodo.24420871 & 10.5281/zenodo.24420920), BibTeX, and CC-BY-4.0 datasets`,
     `- [Working Paper 1 PDF — 200k Indie SaaS Payments & $20 MoR Audit](${SITE_URL}/en/research/indie-saas-payments-mor-shift-2026)`,
     `- [Working Paper 2 PDF — 105K+ AI Agent Skills & MCP Security Audit](${SITE_URL}/en/research/ai-agent-skills-mcp-supply-chain-security-2026)`,
     `- [AI 快讯](${SITE_URL}/zh/news): 每日 AI 行业动态 + 融资速递（由 AI 整理；带「Jason 说」的期数经本人点评）`,
@@ -75,7 +84,15 @@ export async function GET(request: Request) {
     "## 作者",
     "",
     `- ${AUTHOR_NAME}（${AUTHOR_ALT_NAME}）：前 AI 算法工程师，现全职 AI 博主 / 出海教练`,
-    ...PROFILES.map((p) => `- ${p.label}: ${p.url}`),
+    ...PERSON_PROFILES.map((p) => `- ${p.label}: ${p.url}`),
+    "",
+    "## 作品（论文、数据集、开源工具）",
+    "",
+    ...WORKS.map(workLine),
+    "",
+    "## 作者办的另一个网站",
+    "",
+    ...RELATED_SITES.map((s) => `- ${s.label}: ${s.url}（${s.sameAs.join("；")}）`),
     "",
   ];
 

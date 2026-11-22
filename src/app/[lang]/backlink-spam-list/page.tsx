@@ -10,6 +10,7 @@ import {
 } from "@/lib/spam-list";
 import SpamListClient from "./SpamListClient";
 import { withSocialCards } from "@/lib/social";
+import { findWork, findWorkByDoi, workNode } from "@/lib/profiles";
 
 const SITE_URL = "https://jasonzhu.ai";
 // 名单在 GitHub 上由大家共同维护；页面每天最多重读一次（ISR），不用为名单变化重新部署
@@ -80,45 +81,24 @@ export default async function BacklinkSpamListPage({
         ["shortener", "a URL shortener used for bulk backlinks", "the site itself"],
       ];
 
+  // 名单（Zenodo DOI）和查站工具 backlink-guard 两个作品，节点取自 src/lib/profiles.ts 的 WORKS，creator / author 指向 #person。
+  // 名单的说明带上当前条数（按页面语言）；其余字段和 /research 上的同一个节点一致。
+  const listWork = findWorkByDoi("10.5281/zenodo.24387076");
+  const guardWork = findWork("https://github.com/zhuyansen/backlink-guard");
   const datasetJsonLd = {
     "@context": "https://schema.org",
-    "@type": "Dataset",
-    "@id": "https://doi.org/10.5281/zenodo.24387076",
-    name: isZh
-      ? "垃圾外链来源库：卖外链站群与门户域名公开证据库 (2026)"
-      : "Backlink Spam Doorway Domains & Link-Selling Networks Evidence Database (2026)",
-    description: isZh
-      ? `由 Jason Zhu (jasonzhu.ai) 维护的 ${entries.length} 个垃圾外链门户域名与 ${fams.length} 个卖外链站群公开证据库。`
-      : `An open dataset of ${entries.length} backlink spam doorway domains across ${fams.length} link-selling networks with verifiable public evidence, maintained by Jason Zhu (jasonzhu.ai).`,
-    url: `${SITE_URL}/${lang}/backlink-spam-list`,
-    inLanguage: isZh ? "zh-CN" : "en",
-    sameAs: [
-      "https://doi.org/10.5281/zenodo.24387076",
-      "https://zenodo.org/records/24387076",
-      "https://huggingface.co/datasets/jasonzhuyansen/backlink-spam-doorway-domains-2026",
-      "https://www.kaggle.com/datasets/yansenzhu/backlink-spam-doorway-domains-2026",
-      "https://github.com/zhuyansen/backlink-spam-list",
-    ],
-    identifier: "https://doi.org/10.5281/zenodo.24387076",
-    license: "https://creativecommons.org/licenses/by/4.0/",
-    isAccessibleForFree: true,
-    creator: {
-      "@type": "Person",
-      "@id": `${SITE_URL}/#person`,
-      name: "Jason Zhu",
-      url: `${SITE_URL}/${lang}`,
-    },
-    distribution: [
-      {
-        "@type": "DataDownload",
-        encodingFormat: "text/csv",
-        contentUrl: "https://raw.githubusercontent.com/zhuyansen/backlink-spam-list/main/list.csv",
-      },
-      {
-        "@type": "DataDownload",
-        encodingFormat: "text/html",
-        contentUrl: "https://huggingface.co/datasets/jasonzhuyansen/backlink-spam-doorway-domains-2026",
-      },
+    "@graph": [
+      ...(listWork
+        ? [
+            {
+              ...workNode(listWork),
+              description: isZh
+                ? `由 Jason Zhu (jasonzhu.ai) 维护的 ${entries.length} 个垃圾外链门户域名与 ${fams.length} 个卖外链站群公开证据库，每条附公开可核实的证据。`
+                : `An open dataset of ${entries.length} backlink spam doorway domains across ${fams.length} link-selling networks with verifiable public evidence, maintained by Jason Zhu (jasonzhu.ai).`,
+            },
+          ]
+        : []),
+      ...(guardWork ? [workNode(guardWork)] : []),
     ],
   };
 
