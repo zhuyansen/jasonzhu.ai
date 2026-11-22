@@ -1,5 +1,5 @@
 {
-  "note": "New-version drafts made on 2026-11-21 with new_version.py draft. None is published. Each draft's metadata is the published version online (creators and ORCID untouched) with only the keys in its zenodo_metadata.json replaced. Publish after review: python3 ops/geo/zenodo/new_version.py publish <draft_id> --yes. The reserved DOI becomes the new version's DOI; the concept DOI always resolves to the newest version.",
+  "note": "New versions made with new_version.py: drafts on 2026-11-21, published on 2026-11-22 after review and checked on the public API (each is the latest version, files match, DOIs resolve on doi.org). Each version's metadata is the published version online with only the keys in its zenodo_metadata.json replaced; creators were never sent. Cite the concept DOI: it always resolves to the newest version.",
   "drafts": [
     {
       "record": "24386243",
@@ -8,7 +8,9 @@
       "concept_doi": "10.5281/zenodo.24386242",
       "edit_url": "https://zenodo.org/deposit/24432849",
       "old_title": "200,000 Indie Developer Checkout Links and Payment Platform Adoption Dataset (2023–2026)",
-      "new_title": "New Sellers on Seven Checkout Platforms, 2023 to 15 October 2026: Summary Tables"
+      "new_title": "New Sellers on Seven Checkout Platforms, 2023 to 15 October 2026: Summary Tables",
+      "status": "published 2026-11-22, checked",
+      "published_doi": "10.5281/zenodo.24432849"
     },
     {
       "record": "24387072",
@@ -17,7 +19,9 @@
       "concept_doi": "10.5281/zenodo.24387071",
       "edit_url": "https://zenodo.org/deposit/24432852",
       "old_title": "Merchant of Record and Payment Gateway Real Fee Benchmark on a $20 Cross-Border AI SaaS Subscription (November 2026)",
-      "new_title": "Fees Taken from a $20 Cross-Border Subscription, Itemized for Eight Payment Setups (November 2026)"
+      "new_title": "Fees Taken from a $20 Cross-Border Subscription, Itemized for Eight Payment Setups (November 2026)",
+      "status": "published 2026-11-22, checked",
+      "published_doi": "10.5281/zenodo.24432852"
     },
     {
       "record": "24387074",
@@ -26,7 +30,9 @@
       "concept_doi": "10.5281/zenodo.24387073",
       "edit_url": "https://zenodo.org/deposit/24432855",
       "old_title": "Open-Source AI Agent Skills and MCP Servers Supply-Chain Security Audit Dataset (105,000+ Indexed Skills, 2026)",
-      "new_title": "Security-Grade Coverage in the Agent Skills Hub Catalog: June 2026 Snapshot (105,000+ Entries) and November 2026 Count"
+      "new_title": "Security-Grade Coverage in the Agent Skills Hub Catalog: June 2026 Snapshot (105,000+ Entries) and November 2026 Count",
+      "status": "published 2026-11-22, checked",
+      "published_doi": "10.5281/zenodo.24432855"
     },
     {
       "record": "24387076",
@@ -35,7 +41,9 @@
       "concept_doi": "10.5281/zenodo.24387075",
       "edit_url": "https://zenodo.org/deposit/24432843",
       "old_title": "Public Database of Backlink Spam Doorway Domains, Link-Selling Networks, and Checkout Link Abuse (2026)",
-      "new_title": "Backlink Spam List: 581 Doorway Domains and Link Sellers with Public Evidence (Snapshot of 28 October 2026)"
+      "new_title": "Backlink Spam List: 581 Doorway Domains and Link Sellers with Public Evidence (Snapshot of 28 October 2026)",
+      "status": "published 2026-11-22, checked",
+      "published_doi": "10.5281/zenodo.24432843"
     },
     {
       "record": "24420920",
@@ -44,28 +52,45 @@
       "concept_doi": "10.5281/zenodo.24420919",
       "edit_url": "https://zenodo.org/deposit/24432858",
       "old_title": "Supply-Chain Security in Open-Source AI Agent Ecosystems: Empirical Evidence and a Five-Dimension Audit Framework Across 105,000+ Indexed Agent Skills and Model Context Protocol (MCP) Servers",
-      "new_title": "Supply-Chain Security in Open-Source AI Agent Ecosystems: Security-Grade Coverage in a June 2026 Snapshot of 105,000+ Agent Skills and MCP Servers, and a Five-Dimension Review Checklist"
+      "new_title": "Supply-Chain Security in Open-Source AI Agent Ecosystems: Security-Grade Coverage in a June 2026 Snapshot of 105,000+ Agent Skills and MCP Servers, and a Five-Dimension Review Checklist",
+      "status": "published 2026-11-22, checked",
+      "published_doi": "10.5281/zenodo.24432858"
+    },
+    {
+      "record": "24420871",
+      "draft_id": 24435484,
+      "published_doi": "10.5281/zenodo.24435484",
+      "concept_doi": "10.5281/zenodo.24420870",
+      "status": "published 2026-11-22, checked",
+      "old_title": "The Structural Shift from Payment Gateways to Merchant of Record Platforms Among Independent Software and AI Founders: Evidence from 200,000 Live Checkout Links and a $20 Cross-Border Subscription Fee Audit (2023–2026)",
+      "new_title": "Payment Platforms of New Online Sellers, 2023–2026: AI Sellers Make Up a Far Larger Share on Merchant of Record Platforms than on Stripe (Evidence from 200,000 Checkout Links and a $20 Cross-Border Subscription Fee Comparison)"
+    },
+    {
+      "record": "24387070",
+      "draft_id": 24435488,
+      "published_doi": "10.5281/zenodo.24435488",
+      "concept_doi": "10.5281/zenodo.24387069",
+      "status": "published 2026-11-22, checked",
+      "role": "duplicate; README only, points to 10.5281/zenodo.24386242"
+    },
+    {
+      "record": "24387080",
+      "draft_id": 24435489,
+      "published_doi": "10.5281/zenodo.24435489",
+      "concept_doi": "10.5281/zenodo.24387079",
+      "status": "published 2026-11-22, checked",
+      "role": "duplicate; README only, points to 10.5281/zenodo.24387073"
+    },
+    {
+      "record": "24387082",
+      "draft_id": 24435490,
+      "published_doi": "10.5281/zenodo.24435490",
+      "concept_doi": "10.5281/zenodo.24387081",
+      "status": "published 2026-11-22, checked",
+      "role": "duplicate; README only, points to 10.5281/zenodo.24387075"
     }
   ],
   "not_handled": {
-    "duplicates_published_2026_11_20": [
-      {
-        "record": "24387070",
-        "duplicate_of": "24386243",
-        "title": "200,000 Indie Developer Checkout Links and Payment Platform Adoption Dataset (2023–2026)"
-      },
-      {
-        "record": "24387080",
-        "duplicate_of": "24387074",
-        "title": "Open-Source AI Agent Skills and MCP Servers Supply-Chain Security Audit Dataset (105,000+ Indexed Skills, 2026)"
-      },
-      {
-        "record": "24387082",
-        "duplicate_of": "24387076",
-        "title": "Public Database of Backlink Spam Doorway Domains, Link-Selling Networks, and Checkout Link Abuse (2026)"
-      }
-    ],
-    "empty_draft_2026_07_10": "21292023",
-    "payments_working_paper_24420871": "no new version (wording-only changes); its metadata still has isIdenticalTo the blog post"
+    "empty_draft_2026_07_10": "21292023 (left alone)"
   }
 }

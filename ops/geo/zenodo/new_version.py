@@ -57,8 +57,16 @@ RECORDS: dict[str, tuple[str, list[str]]] = {
                  ["README.md", "backlink-spam-list.csv"]),
     "24420920": ("wp-24420920-security-working-paper",
                  ["../../papers/Zhu-2026-AI-Agent-Skills-MCP-Supply-Chain-Security-Working-Paper.pdf"]),
+    "24420871": ("wp-24420871-payments-working-paper",
+                 ["../../papers/Zhu-2026-Indie-SaaS-Payments-MoR-Shift-Working-Paper.pdf"]),
+    # duplicates published by mistake on 2026-11-20: a version that keeps only a note pointing to the real record
+    "24387070": ("dup-24387070", ["README.md"]),
+    "24387080": ("dup-24387080", ["README.md"]),
+    "24387082": ("dup-24387082", ["README.md"]),
 }
 REQUIRED = ("title", "publication_date", "version", "description")
+# Duplicates keep their creators exactly as published (no ORCID there; a junk record should not join the ORCID list).
+DUPLICATES = {"24387070", "24387080", "24387082"}
 # Never sent from here: they come from the published version online (another session fixed the creators).
 FROM_ONLINE_ONLY = ("creators", "doi", "prereserve_doi")
 # Wording these records must not carry (an archive is not an endorsement).
@@ -222,7 +230,8 @@ def cmd_draft(record: str, reuse: str | None = None) -> int:
     need(code == 200, f"cannot re-read the draft (HTTP {code}) {current}")
     meta = laid_over(base_metadata(published.get("metadata", {}), current.get("metadata", {})), overlay_of(record))
     creators = [(c.get("name"), c.get("orcid")) for c in meta.get("creators", [])]
-    need(creators == [(NAME, ORCID)], f"the published version's creators are {creators}, not {NAME} with the ORCID")
+    ok = creators == [(NAME, ORCID)] or (record in DUPLICATES and [n for n, _ in creators] == [NAME])
+    need(ok, f"the published version's creators are {creators}, not {NAME} with the ORCID")
     code, body = call("PUT", f"{API}/deposit/depositions/{draft['id']}", token, {"metadata": meta})
     need(code == 200, f"metadata refused (HTTP {code}) {body}")
     code, final = call("GET", f"{API}/deposit/depositions/{draft['id']}", token)
