@@ -1,8 +1,8 @@
 {
  "model": "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.5)",
  "threshold": 5000,
- "updatedAt": "2026-11-21T01:17:14.825Z",
- "statsCheckedAt": "2026-11-21T01:17:14.825Z",
+ "updatedAt": "2026-11-22T01:17:18.734Z",
+ "statsCheckedAt": "2026-11-22T01:17:18.734Z",
  "inclusionRule": "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -8538,6 +8538,57 @@
    }
   },
   {
+   "id": "2123816232109719894",
+   "url": "https://x.com/Rubzem/status/2123816232109719894",
+   "author": {
+    "handle": "Rubzem",
+    "name": "S"
+   },
+   "postedAt": "2026-11-20T16:30:22.000Z",
+   "addedAt": "2026-11-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "浏览器端科幻第一人称射击游戏原型",
+    "en": "Browser-based sci-fi FPS game prototype"
+   },
+   "summary": {
+    "zh": "一款网页端科幻第一人称射击游戏，包含44平方公里战场、多种载具和110多个单位，由Fable 5.2负责策划、Opus 5.5负责实现，并使用了Tripo生成的379个3D模型。",
+    "en": "A browser-based sci-fi FPS game with a 44 km² battlefield, vehicles, and 110+ units, built using Fable 5.2 for planning, Opus 5.5 for implementation, and 379 3D models from Tripo."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Tripo",
+    "Fable 5.2"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 325961,
+    "likes": 704,
+    "replies": 114,
+    "reposts": 75,
+    "bookmarks": 362,
+    "checkedAt": "2026-11-22T01:17:18.734Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2123816057983074304/img/88SxwsxEkd0wlfpV.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2123816057983074304/vid/avc1/1280x720/jI8w-k6WQ0mljFKx.mp4?tag=16",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 135
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103407771102421285",
    "url": "https://x.com/tetumemo/status/2103407771102421285",
    "author": {
@@ -14896,6 +14947,64 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2123878763624857693",
+   "url": "https://x.com/eliadele/status/2123878763624857693",
+   "author": {
+    "handle": "eliadele",
+    "name": "Elia De Leo"
+   },
+   "postedAt": "2026-11-20T20:38:51.000Z",
+   "addedAt": "2026-11-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "波拉波拉岛水上飞机 3D 场景多模型对比",
+    "en": "Bora Bora seaplane 3D scene comparison"
+   },
+   "summary": {
+    "zh": "在OutputBench上对Gemini 4 Neon、GPT-6.2 Astra、Claude Fable 5.2和Claude Opus 5.5用同一提示词生成的HTML 3D水上飞机场景进行横向对比。",
+    "en": "A side-by-side comparison on OutputBench of HTML 3D seaplane scenes generated from the same prompt by Gemini 4 Neon, GPT-6.2 Astra, Claude Fable 5.2, and Claude Opus 5.5."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/eliadele/status/2123878763624857693",
+    "text": "Ultra-realistic seaplane flying over Bora Bora, landing on the water, and letting passengers off"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Gemini 4 Neon",
+    "GPT-6.2 Astra",
+    "Claude Fable 5.2",
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 186163,
+    "likes": 755,
+    "replies": 15,
+    "reposts": 35,
+    "bookmarks": 332,
+    "checkedAt": "2026-11-22T01:17:18.734Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2123878694540419072/img/wsLz7tTa9pItro4G.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2123878694540419072/vid/avc1/960x720/7U_FUTwNO0lgAH63.mp4?tag=29",
+    "width": 960,
+    "height": 720,
+    "durationSec": 76
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -26551,6 +26660,57 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2123902537937866974",
+   "url": "https://x.com/shmopixbzn/status/2123902537937866974",
+   "author": {
+    "handle": "shmopixbzn",
+    "name": "shmopix"
+   },
+   "postedAt": "2026-11-20T22:13:19.000Z",
+   "addedAt": "2026-11-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "Blender 与 Three.js 3D 船只生成对比",
+    "en": "3D ship in Blender vs Three.js"
+   },
+   "summary": {
+    "zh": "对比了用Claude Opus 5.5 High完成同一3D飞船任务的效果与耗时，其中Blender用时2小时，Three.js用时28分钟。",
+    "en": "A comparison of two 3D ship scenes created by giving Claude Opus 5.5 High the same task in Blender (2 hours) and Three.js (28 minutes)."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Blender",
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 108609,
+    "likes": 730,
+    "replies": 122,
+    "reposts": 16,
+    "bookmarks": 649,
+    "checkedAt": "2026-11-22T01:17:18.734Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2123901308344098816/img/a6Bg41a0IPGE9Svm.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2123901308344098816/vid/avc1/1280x720/1fB-sM0AsRVRikaz.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 20
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -39843,6 +40003,59 @@
     "width": 720,
     "height": 720,
     "durationSec": 10
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2123675208041312427",
+   "url": "https://x.com/badboyfoxy/status/2123675208041312427",
+   "author": {
+    "handle": "badboyfoxy",
+    "name": "badboyfoxy"
+   },
+   "postedAt": "2026-11-20T07:10:00.000Z",
+   "addedAt": "2026-11-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "一周内完成的3D游戏原型",
+    "en": "3D game prototype built in one week"
+   },
+   "summary": {
+    "zh": "作者在一周内开发的游戏，使用了Fable 5.2、虚幻引擎、Blender和Tripo，并以Opus 5.5作为开发辅助。",
+    "en": "A game developed in one week using Fable 5.2 alongside Unreal Engine, Blender, Tripo, and Opus 5.5 as an assistant."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Fable 5.2",
+    "Unreal Engine",
+    "Blender",
+    "Tripo"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 69466,
+    "likes": 203,
+    "replies": 138,
+    "reposts": 17,
+    "bookmarks": 144,
+    "checkedAt": "2026-11-22T01:17:18.734Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2123635378208813056/img/eMdjMjltn7mQbKkS.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2123635378208813056/vid/avc1/1280x720/qydWLcEQNne5P0HX.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 98
    },
    "evidence": {
     "via": "daily",
@@ -62788,6 +63001,62 @@
    }
   },
   {
+   "id": "2123898746329071698",
+   "url": "https://x.com/SamgreyAi/status/2123898746329071698",
+   "author": {
+    "handle": "SamgreyAi",
+    "name": "Sam"
+   },
+   "postedAt": "2026-11-20T21:58:15.000Z",
+   "addedAt": "2026-11-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "夜间飞机起飞多模型效果对比",
+    "en": "Night airplane takeoff multi-model comparison"
+   },
+   "summary": {
+    "zh": "对比了Opus 5.5、Astra 6.2和Gemini 4 Neon基于同一提示词生成的飞机夜间起飞场景。",
+    "en": "A comparison of three night airplane takeoff scenes generated from the same prompt using Opus 5.5, Astra 6.2, and Gemini 4 Neon."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/SamgreyAi/status/2123898746329071698",
+    "text": "an airplane taking off at night"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Gemini 4 Neon",
+    "Astra 6.2"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 39194,
+    "likes": 107,
+    "replies": 25,
+    "reposts": 8,
+    "bookmarks": 40,
+    "checkedAt": "2026-11-22T01:17:18.734Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2123898554414424064/img/HcUbNwfSS1jt5880.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2123898554414424064/vid/avc1/480x782/XQQo_yHH4yOW0Gmb.mp4?tag=29",
+    "width": 480,
+    "height": 782,
+    "durationSec": 10
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2107752774423511539",
    "url": "https://x.com/KanaWorks_AI/status/2107752774423511539",
    "author": {
@@ -68060,6 +68329,58 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2123816445180088544",
+   "url": "https://x.com/AIMind_Ai/status/2123816445180088544",
+   "author": {
+    "handle": "AIMind_Ai",
+    "name": "AiMind"
+   },
+   "postedAt": "2026-11-20T16:31:13.000Z",
+   "addedAt": "2026-11-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "多模型绘制草莓对比测试",
+    "en": "Model battle drawing a strawberry"
+   },
+   "summary": {
+    "zh": "用同一提示词对比测试 Claude Opus 5.5、Fable 5.2 与 Gemini 4 Neon、Carbon 绘制草莓的效果，并提到成本差异及某模型画成了番茄。",
+    "en": "A model comparison testing Claude Opus 5.5 and Fable 5.2 against Gemini 4 Neon and Carbon using the same prompt to draw a strawberry, noting cost differences and a tomato output."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Claude Fable 5.2",
+    "Gemini 4 Neon",
+    "Gemini 4 Carbon"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 35050,
+    "likes": 115,
+    "replies": 36,
+    "reposts": 8,
+    "bookmarks": 53,
+    "checkedAt": "2026-11-22T01:17:18.734Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2123816357686890496/img/DJF74xBBCg4xQ78R.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2123816357686890496/vid/avc1/720x900/dIVvbpkfA8g2_oS-.mp4?tag=29",
+    "width": 720,
+    "height": 900,
+    "durationSec": 31
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -74458,6 +74779,56 @@
     "width": 1280,
     "height": 720,
     "durationSec": 52
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2123745767286276410",
+   "url": "https://x.com/rewind02/status/2123745767286276410",
+   "author": {
+    "handle": "rewind02",
+    "name": "rewind"
+   },
+   "postedAt": "2026-11-20T11:50:22.000Z",
+   "addedAt": "2026-11-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "基于物理渲染的浏览器游戏场景",
+    "en": "Browser game environments with physically based rendering"
+   },
+   "summary": {
+    "zh": "使用 Opus 5.5 与 Three.js 构建浏览器端 3D 游戏环境，通过对照精选的游戏和电影参考帧进行数学拟合来调优渲染参数。",
+    "en": "Browser-based 3D game environments built with Opus 5.5 and Three.js by fitting rendering parameters mathematically against hand-picked game and film reference frames."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 30008,
+    "likes": 620,
+    "replies": 41,
+    "reposts": 34,
+    "bookmarks": 697,
+    "checkedAt": "2026-11-22T01:17:18.734Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2123745647811510272/img/18al8zE0bz1h1EER.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2123745647811510272/vid/avc1/1280x720/6-jMlYog_66igRCe.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 22
    },
    "evidence": {
     "via": "daily",
@@ -87189,6 +87560,54 @@
     "width": 720,
     "height": 1280,
     "durationSec": 49
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2123752991694205295",
+   "url": "https://x.com/saluiux/status/2123752991694205295",
+   "author": {
+    "handle": "saluiux",
+    "name": "Salman"
+   },
+   "postedAt": "2026-11-20T12:19:05.000Z",
+   "addedAt": "2026-11-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "基于技能构建的动态界面",
+    "en": "Live animated UI built with skills"
+   },
+   "summary": {
+    "zh": "使用 Opus 5.5 结合 Jakub Krehel 的 Better UI 技能和 Emil Kowalski 的 Animations 技能制作的在线界面版本。",
+    "en": "A live UI version built with Opus 5.5 using Jakub Krehel's Better UI skill and Emil Kowalski's Animations skill."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 23064,
+    "likes": 451,
+    "replies": 7,
+    "reposts": 12,
+    "bookmarks": 828,
+    "checkedAt": "2026-11-22T01:17:18.734Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2123751932191797248/img/a1GUHachbrUHKXMf.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2123751932191797248/vid/avc1/1280x720/4tl3sl7jP-d4USx0.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 14
    },
    "evidence": {
     "via": "daily",
@@ -112781,6 +113200,65 @@
    }
   },
   {
+   "id": "2123911052832190818",
+   "url": "https://x.com/maxt3chno/status/2123911052832190818",
+   "author": {
+    "handle": "maxt3chno",
+    "name": "Max"
+   },
+   "postedAt": "2026-11-20T22:47:10.000Z",
+   "addedAt": "2026-11-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "诅咒战锤3D建模多模型对比",
+    "en": "Cursed war hammer 3D modeling comparison"
+   },
+   "summary": {
+    "zh": "一项盲测对比 Claude Opus 5.5、GPT Astra 6.2 和 Gemini 4 Neon 在无参考图和外部资产的情况下，通过 Blender MCP 根据同一提示词构建诅咒战锤 3D 模型。",
+    "en": "A blind Blender MCP test comparing Claude Opus 5.5, GPT Astra 6.2, and Gemini 4 Neon modeling a cursed 3D war hammer from a single prompt without external assets or references."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/maxt3chno/status/2123911186903167192",
+    "text": "TASK\nCreate a 3D model in Blender: a cursed two-handed war hammer from a\ndark-fantasy horror world. It should feel ancient, heavy and evil.\n\nWhat I want to see:\n- Size: about 1.3 m long, standing upright. Long handle, heavy head.\n- Head: dark, rusty iron. One side is a heavy rectangular hammer block; the\nother side is a curved, downward-hooked blade like a claw. In the center,\non top of the handle, sits a horned skull ornament with jagged spikes\naround it. Fresh blood drips from the tip of the curved blade.\n- Runes: glowing red runes carved into both sides of the head and running\ndown the upper part of the handle.\n- Handle: dark, cracked wood with reddish stains. A rusty chain is wrapped\naround the top of the handle just below the head, with a loose end hanging\ndown. Several iron bands wrap around the handle, a few iron nails stick out\nof it, and the lower part is a grip tightly wrapped in criss-crossed\nleather strips.\n- Pommel: an iron ornament with a skull at the bottom, ending in a sharp\nspike.\n- Wear: everything is rusty, scratched, chipped and stained with old\nblood. Very textured and highly detailed. It must look worn and real,\nnot clean, not plastic, not cartoony.\n\nThe exact shapes, rune designs and smaller details are up to you.\n\nWORKING FOLDER\nYour working folder is: [FOLDER]\nSave all files there and nowhere else.\n\nSETUP\n- You must work through the Blender MCP connection only.\n- Before doing anything else, check the Blender MCP connection. If you cannot\nconnect, STOP immediately and tell me. Do not try to work around it (no\nwriting scripts for me to run manually, no other tools).\n- Start from an empty scene: delete all default objects first.\n- You can and should look at the viewport and renders through the MCP to check\nand improve your work.\n- There is no limit on iterations. Keep working until you consider the result\nfinished. Work autonomously and do not ask me questions.\n\nRULES\n- Create everything yourself inside Blender: modeling, sculpting, modifiers,\ngeometry nodes, shader nodes, procedural textures, texture painting and\nbaking are all allowed.\n- Stay inside your working folder. Do NOT read, list, search or open any\nfiles or folders outside it (no browsing my other projects, user folders,\nconfig files, or other drives). The only things you may access are your\nworking folder and Blender through the MCP.\n- Inside Blender, do not open, append or link any other .blend files.\n- You MAY use the internet only for Blender / Python API documentation and\ntechnical help.\n- You MUST NOT download or import any ready-made models, textures, images,\nHDRIs, materials, add-ons, asset packs or asset libraries (including the Poly\nHaven, Sketchfab and Hyper3D/Rodin integrations, if your MCP offers them).\n- You MUST NOT search for or look at reference images of hammers or similar\nobjects.\n- You MUST NOT use external AI generators (image, texture or 3D).\n- Do not read or write any memory, notes or rules files, and do not use\nknowledge from my previous projects. Work only from this prompt.\n\nPOLYGON BUDGET\n- The hammer must be between 80,000 and 100,000 triangles, counted with all\nmodifiers evaluated, as shown in Blender's scene statistics.\n- Fine detail beyond that budget must come from materials (procedural\ntextures, bump/normal maps, or baked maps you generated yourself).\n- Scene elements other than the hammer (a ground plane, a backdrop) must stay\nsimple: max 2,000 triangles in total.\n\nPRESENTATION\n- I will record a video myself by orbiting around the hammer in the Blender\nviewport (Rendered shading mode), so it must look impressive in real time\nfrom every angle.\n- Use EEVEE as the render engine. All materials and effects must look good in\nEEVEE viewport rendering.\n- Place the hammer at the world origin, standing upright, with its object\norigin at the center of the hammer so it orbits nicely.\n- Set up lighting, world background and atmosphere for a dark-fantasy horror\nmood that works from ALL viewing angles, not just from one camera. Use only\nBlender lights, world shaders and volumetrics, no external HDRIs.\n- The scene must stay smooth in the viewport: no effects that make real-time\norbiting laggy.\n- Save to the working folder:\n- hammer.blend\n- render_hero.png: one EEVEE still at 1080x1920 as a thumbnail.\n\nFINAL REPORT\nWhen you are done, report:\n- the final triangle count of the hammer\n- a short description of how you made it (techniques, materials, runes)\n- confirmation that no external assets were used"
+   },
+   "referenceAssets": true,
+   "tools": [
+    "Blender",
+    "Blender MCP",
+    "Fable 5.2",
+    "GPT Astra 6.2",
+    "Gemini 4 Neon"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 13985,
+    "likes": 119,
+    "replies": 15,
+    "reposts": 4,
+    "bookmarks": 140,
+    "checkedAt": "2026-11-22T01:17:18.734Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2123909795690184704/img/RZn8VXAj9KGKR5rE.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2123909795690184704/vid/avc1/1646x720/w07lrRQ0G6xWoVCs.mp4?tag=29",
+    "width": 1646,
+    "height": 720,
+    "durationSec": 40
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103308194852303245",
    "url": "https://x.com/VoidStateKate/status/2103308194852303245",
    "author": {
@@ -116066,6 +116544,57 @@
     "width": 1280,
     "height": 720,
     "durationSec": 46
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2123728056699224538",
+   "url": "https://x.com/tadako_ai/status/2123728056699224538",
+   "author": {
+    "handle": "tadako_ai",
+    "name": "ただこ（多田勇輝）"
+   },
+   "postedAt": "2026-11-20T10:40:00.000Z",
+   "addedAt": "2026-11-22",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "虚构化妆品广告短片",
+    "en": "Fictional cosmetics commercial"
+   },
+   "summary": {
+    "zh": "使用 Claude Code（Opus 5.5）与 Blender MCP 在约两小时内制作的虚构品牌化妆品广告，未使用实拍或 AI 视频生成。",
+    "en": "A fictional cosmetics commercial produced in about two hours using Claude Code (Opus 5.5) and Blender MCP without live filming or AI video generation."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Claude Code",
+    "Blender MCP"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 13260,
+    "likes": 121,
+    "replies": 8,
+    "reposts": 7,
+    "bookmarks": 109,
+    "checkedAt": "2026-11-22T01:17:18.734Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2123700190548992000/img/IQU0Sdk3ZYiAyXpw.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2123700190548992000/vid/avc1/720x1280/18Su-YyD5U5d1Gns.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 11
    },
    "evidence": {
     "via": "daily",
@@ -122232,6 +122761,61 @@
     "width": 720,
     "height": 800,
     "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2123783641088327940",
+   "url": "https://x.com/nerikeshi_k/status/2123783641088327940",
+   "author": {
+    "handle": "nerikeshi_k",
+    "name": "ねりけし🍪"
+   },
+   "postedAt": "2026-11-20T14:20:52.000Z",
+   "addedAt": "2026-11-22",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "基于Remotion自制的视频剪辑工具",
+    "en": "Custom video editing tool built with Remotion"
+   },
+   "summary": {
+    "zh": "使用 Claude Opus 5.5 制作的自定义视频编辑工具，底层基于 Remotion、React、Immer、Zustand、Vite 和 FFmpeg，用于改进此前用自作曲和插画制作 MV 的尝试。",
+    "en": "A custom video editing tool and music video follow-up built with Claude Opus 5.5 using Remotion, React, Immer, Zustand, Vite, and FFmpeg."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Remotion",
+    "React",
+    "Immer",
+    "Zustand",
+    "Vite",
+    "FFmpeg"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 11864,
+    "likes": 111,
+    "replies": 2,
+    "reposts": 5,
+    "bookmarks": 58,
+    "checkedAt": "2026-11-22T01:17:18.734Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2123782849958735872/img/OSHzMZ7Zet7lnLY9.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2123782849958735872/vid/avc1/1146x720/bUkkIvWZWyJbzoPw.mp4?tag=14",
+    "width": 1146,
+    "height": 720,
+    "durationSec": 65
    },
    "evidence": {
     "via": "daily",
@@ -132174,6 +132758,56 @@
    }
   },
   {
+   "id": "2123613656009392338",
+   "url": "https://x.com/fe_yukichi/status/2123613656009392338",
+   "author": {
+    "handle": "fe_yukichi",
+    "name": "ゆきち/ AI"
+   },
+   "postedAt": "2026-11-20T03:05:25.000Z",
+   "addedAt": "2026-11-22",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "Blender 三维达摩角色模型",
+    "en": "3D Daruma character model in Blender"
+   },
+   "summary": {
+    "zh": "使用 Claude Opus 5.5 与 Blender 制作的约 1 万三角面“达摩娘”3D 模型。",
+    "en": "A 3D character model of about 10,000 triangles created using Claude Opus 5.5 and Blender."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 9556,
+    "likes": 287,
+    "replies": 12,
+    "reposts": 8,
+    "bookmarks": 193,
+    "checkedAt": "2026-11-22T01:17:18.734Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2123613418007736320/img/esBceXNyaNQDh4nZ.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2123613418007736320/vid/avc1/698x1004/vSwmfUWSxEqgbVR9.mp4?tag=29",
+    "width": 698,
+    "height": 1004,
+    "durationSec": 21
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102650069136933039",
    "url": "https://x.com/studio_veco/status/2102650069136933039",
    "author": {
@@ -132569,6 +133203,56 @@
     "width": 1118,
     "height": 720,
     "durationSec": 43
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2123822432171806865",
+   "url": "https://x.com/rubenssoto_ai/status/2123822432171806865",
+   "author": {
+    "handle": "rubenssoto_ai",
+    "name": "Rubens Soto | AI & SaaS"
+   },
+   "postedAt": "2026-11-20T16:55:01.000Z",
+   "addedAt": "2026-11-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "模型写实与细节能力对比视频",
+    "en": "Model comparison video on realism and detail"
+   },
+   "summary": {
+    "zh": "一段对比 Claude Opus 5.5 与 Gemini Neon 视频生成效果的作品。",
+    "en": "A video comparing generation results between Claude Opus 5.5 and Gemini Neon."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Gemini Neon"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 9396,
+    "likes": 179,
+    "replies": 49,
+    "reposts": 9,
+    "bookmarks": 30,
+    "checkedAt": "2026-11-22T01:17:18.734Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2123821947171610624/img/bPSEzU2PVlQRpop8.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2123821947171610624/vid/avc1/720x810/50shNHja03AiwAZ-.mp4?tag=29",
+    "width": 720,
+    "height": 810,
+    "durationSec": 30
    },
    "evidence": {
     "via": "daily",
@@ -141219,6 +141903,54 @@
    }
   },
   {
+   "id": "2123752535106158980",
+   "url": "https://x.com/Tanjim38/status/2123752535106158980",
+   "author": {
+    "handle": "Tanjim38",
+    "name": "Tanjim"
+   },
+   "postedAt": "2026-11-20T12:17:16.000Z",
+   "addedAt": "2026-11-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "与设计师协作构建的产品界面",
+    "en": "Product interface built with designer"
+   },
+   "summary": {
+    "zh": "由资深产品设计师配合 Claude Opus 5.5 共同完成的网页应用作品。",
+    "en": "A web application created with Claude Opus 5.5 in collaboration with a senior product designer."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 7530,
+    "likes": 227,
+    "replies": 2,
+    "reposts": 9,
+    "bookmarks": 174,
+    "checkedAt": "2026-11-22T01:17:18.734Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2123752245258829824/img/KRPpCy1fbWiwak9q.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2123752245258829824/vid/avc1/1136x720/OLee2MPt0QWDRfPo.mp4?tag=29",
+    "width": 1136,
+    "height": 720,
+    "durationSec": 44
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103450061275586618",
    "url": "https://x.com/balaena01/status/2103450061275586618",
    "author": {
@@ -147442,6 +148174,57 @@
     "width": 1280,
     "height": 720,
     "durationSec": 44
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2123935773561094149",
+   "url": "https://x.com/wizardbrainz/status/2123935773561094149",
+   "author": {
+    "handle": "wizardbrainz",
+    "name": "wbk ᕦ(ò_ó )ᕤ"
+   },
+   "postedAt": "2026-11-21T00:25:23.000Z",
+   "addedAt": "2026-11-22",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "大规模军团实时路径追踪渲染",
+    "en": "Realtime path tracing of massive 3D armies"
+   },
+   "summary": {
+    "zh": "使用 Claude Opus 5.5 搭建的实时路径追踪实验项目，基于自研 Vulkan 渲染引擎与 NVIDIA DLSS-RR 及 Clustered LOD 技术渲染 6.4 万名角色。",
+    "en": "A real-time path-tracing experiment rendering 64,000 characters in a custom Vulkan engine with NVIDIA DLSS-RR and clustered LOD, built with Claude Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Vulkan",
+    "NVIDIA DLSS-RR"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 5499,
+    "likes": 119,
+    "replies": 8,
+    "reposts": 6,
+    "bookmarks": 59,
+    "checkedAt": "2026-11-22T01:17:18.734Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2123933261709918208/img/sGWhU4FQV5fwI03A.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2123933261709918208/vid/avc1/1280x720/bGvvyerIDy6bcw30.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 106
    },
    "evidence": {
     "via": "daily",
