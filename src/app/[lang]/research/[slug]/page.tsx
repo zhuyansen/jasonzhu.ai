@@ -105,7 +105,7 @@ export default async function WorkingPaperDetailPage({
       alternateName: RESEARCH_AUTHOR.altName,
       sameAs: [RESEARCH_AUTHOR.orcidUrl],
     },
-    publisher: { "@id": `${SITE_URL}/#org` },
+    publisher: { "@id": `${SITE_URL}/#organization` },   // 全站 Organization 的 @id（layout.tsx）
     license: "https://creativecommons.org/licenses/by/4.0/",
     encoding: {
       "@type": "MediaObject",

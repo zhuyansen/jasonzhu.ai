@@ -7,7 +7,7 @@ import GoogleOneTap from "@/components/GoogleOneTap";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
 import "../globals.css";
 import ThirdPartyAnalytics from "@/components/ThirdPartyAnalytics";
-import { AUTHOR_ALT_NAME, AUTHOR_ALT_NAMES, AUTHOR_NAME, ORCID_ID, ORCID_URL, PROFILES } from "@/lib/profiles";
+import { AUTHOR_ALT_NAME, AUTHOR_ALT_NAMES, AUTHOR_NAME, ORCID_ID, ORCID_URL, PERSON_SAME_AS } from "@/lib/profiles";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,7 +43,7 @@ function buildSiteJsonLd(lang: Locale) {
     url: `${SITE_URL}/${lang}`,
     image: "https://jasonzhu.ai/avatar.jpg",
     email: "mailto:jason@jasonzhu.ai",
-    sameAs: PROFILES.map((p) => p.url),
+    sameAs: PERSON_SAME_AS,
     jobTitle: isZh
       ? "前搜广推与知识图谱算法工程师、AI 应用与出海独立开发研究者（GoSail Global 创始人）"
       : "AI Engineer, Go-Global Indie SaaS Researcher & Founder of GoSail Global",
@@ -90,6 +90,7 @@ function buildSiteJsonLd(lang: Locale) {
       "@id": "https://agentskillshub.top/#organization",
       name: "Agent Skills Hub",
       url: "https://agentskillshub.top/",
+      founder: { "@id": "https://jasonzhu.ai/#person" },
       sameAs: [
         "https://www.wikidata.org/wiki/Q141986406",
         "https://www.crunchbase.com/organization/agent-skills-hub",
@@ -98,10 +99,8 @@ function buildSiteJsonLd(lang: Locale) {
         "https://www.npmjs.com/package/@agentskillshub/mcp",
       ],
     },
-    sameAs: [
-      "https://www.linkedin.com/company/gosailglobal/",
-      ...PROFILES.map((p) => p.url),
-    ],
+    // 公司自己的主页。作者的 ORCID、Scholar、GitHub 等是人的，不放这里，否则公司和人会被认成同一个实体。
+    sameAs: ["https://www.linkedin.com/company/gosailglobal/"],
   };
 
   const websiteJsonLd = {
