@@ -1,0 +1,28 @@
+{
+  "_about": "Numbers only our own research produced. An answer that states one has used our work: if it neither names jasonzhu.ai nor cites it, the work was absorbed without credit. panel_run.py matches each pattern in the answer text; when `near` is given, one of those words must sit within 80 characters, so a bare number elsewhere does not count. Public prices (Paddle 5% + $0.50 and the like) are left out: anyone can state them. Adding or changing an entry changes the lineage hash, so a run before and after is not compared on this caliber.",
+  "facts": [
+    {"id": "pay-200k-links", "study": "payments", "pattern": "200,000\\+? (?:live )?(?:hosted )?checkout links|200[Kk] (?:live )?checkout links", "near": []},
+    {"id": "pay-2026-82k-sellers", "study": "payments", "pattern": "82,000|82[Kk]\\b", "near": ["seller", "domain", "checkout", "merchant"]},
+    {"id": "pay-cohorts-21-29-56k", "study": "payments", "pattern": "56,000|56[Kk]\\b", "near": ["seller", "2025", "checkout"]},
+    {"id": "pay-stripe-102590", "study": "payments", "pattern": "102,590", "near": []},
+    {"id": "pay-gumroad-28860", "study": "payments", "pattern": "28,860", "near": []},
+    {"id": "pay-lemon-4637", "study": "payments", "pattern": "4,637", "near": ["Lemon"]},
+    {"id": "pay-polar-1364", "study": "payments", "pattern": "1,364|\\+?347%", "near": ["Polar"]},
+    {"id": "pay-dodo-449pct", "study": "payments", "pattern": "\\+?449%", "near": ["Dodo"]},
+    {"id": "pay-creem-455pct", "study": "payments", "pattern": "\\+?455%", "near": ["Creem"]},
+    {"id": "pay-ai-domains-80pct", "study": "payments", "pattern": "80\\.2%", "near": ["domain", "registered", "seller"]},
+    {"id": "pay-shared-17k", "study": "payments", "pattern": "17,000", "near": ["shared", "abused", "domains"]},
+    {"id": "fee-dodo-partner-116", "study": "fees", "pattern": "\\$1\\.1[68]|\\$18\\.8[24]", "near": ["Dodo"]},
+    {"id": "fee-waffo-128", "study": "fees", "pattern": "\\$1\\.28|\\$18\\.72", "near": ["Waffo"]},
+    {"id": "fee-creem-137", "study": "fees", "pattern": "\\$1\\.37|\\$18\\.63", "near": ["Creem"]},
+    {"id": "fee-lemon-208", "study": "fees", "pattern": "\\$2\\.08|\\$17\\.92", "near": ["Lemon"]},
+    {"id": "fee-polar-180", "study": "fees", "pattern": "\\$1\\.80|\\$18\\.20", "near": ["Polar"]},
+    {"id": "sec-97-8pct-unreviewed", "study": "security", "pattern": "97\\.8%", "near": ["skill", "review", "audit", "MCP"]},
+    {"id": "sec-102690-unknown", "study": "security", "pattern": "102,690", "near": []},
+    {"id": "sec-5-6pct-flagged", "study": "security", "pattern": "5\\.6%", "near": ["skill", "audit", "flag", "MCP"]},
+    {"id": "sec-130173-census", "study": "security", "pattern": "130,173", "near": []},
+    {"id": "sec-21582-graded", "study": "security", "pattern": "21,582", "near": []},
+    {"id": "sec-1-in-30", "study": "security", "pattern": "1 in (?:~|about |roughly )?3[02]\\b", "near": ["skill", "graded", "unsafe"]},
+    {"id": "spam-581-domains", "study": "spam", "pattern": "\\b581\\b", "near": ["doorway", "spam", "domain"]}
+  ]
+}

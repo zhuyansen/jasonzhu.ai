@@ -4,11 +4,16 @@
 提问只用 backlink-guard 的 asked（走 AIsa，和 2026-11-17 基线是同一批接口），这里只做四件事：
 读题库 → 调 asked → 给每个回答打分 → 和上一次、和基线比。
 
-四个口径分开记，不混着看：
+六个口径分开记，不混着看：
   site_cited  回答引用了 jasonzhu.ai 的任何页面
   page_cited  回答引用了这道题对应的那个页面
   named       回答正文里写了域名或名字
   first_pick  被引用的第一个网址是我们的
+  fact_used   回答里用了只有我们的研究才有的数字（signature-facts.json）
+  absorbed    用了这样的数字，却既没点名也没引用我们：工作被吸收了，没署名
+
+每次结果都记下运行配置（lineage）：题库、事实清单、这个脚本的哈希，backlink-guard 版本，每家的模型和
+采样次数。和上次比之前先对配置，题库或事实清单变了就明说，不硬比。
 
 同一个问题每次问答案都不一样，所以每家每题问几次（默认 3 次），按「几个回答里有几个命中」算。
 基线每题只问了 1 次，和基线比只能比回答命中率，不能比「至少命中一次的题数」（问得多自然命中多）。
@@ -28,6 +33,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -42,6 +48,8 @@ GEO = Path(__file__).resolve().parent
 PANEL = GEO / "panel"
 SETS = {"frozen": GEO / "questions.json", "real": GEO / "questions-real.json"}
 EXPERIMENTS = GEO / "experiments.json"
+FACTS = GEO / "signature-facts.json"
+FACT_WINDOW = 80                # near 里的词要在数字前后这么多个字符内
 BASELINE = "results-2026-11-17-baseline.json"
 BASELINE_ENGINES = {"ChatGPT": "chatgpt", "Gemini": "gemini_app", "Perplexity": "perplexity", "Claude": "claude"}
 OWN = "jasonzhu.ai"
@@ -49,8 +57,9 @@ NAMES = ["Jason Zhu", "JasonZhu.AI"]
 LABEL = {"chatgpt": "ChatGPT", "gemini_app": "Gemini App", "ai_mode": "Google AI Mode", "perplexity": "Perplexity",
          "claude": "Claude", "gemini": "Gemini（接口）"}
 DEFAULT_ENGINES = "chatgpt:3,gemini_app:3,ai_mode:3,perplexity:3"   # 都是每个回答 $0.004–0.006 的；Claude 约 $0.045，按月加跑
-CALIBERS = ("site_cited", "page_cited", "named", "first_pick")
-CALIBER_ZH = {"site_cited": "引用本站", "page_cited": "引用对应页面", "named": "正文点名", "first_pick": "排第一"}
+CALIBERS = ("site_cited", "page_cited", "named", "first_pick", "fact_used", "absorbed")
+CALIBER_ZH = {"site_cited": "引用本站", "page_cited": "引用对应页面", "named": "正文点名", "first_pick": "排第一",
+              "fact_used": "用了我们的数据", "absorbed": "用了没署名"}
 SET_ZH = {"frozen": "冻结组", "real": "真实问法组"}
 MIN_CHARS = 200                 # 没有任何引用、正文又短于这个长度的，当作没答出来
 REFUSAL = re.compile(r"safety (filters?|checks?)|can(no|['’])t help with that|unable to (help|assist) with", re.I)
@@ -114,9 +123,36 @@ def status_of(text: str, cited: list) -> str:
     return "answered"
 
 
-def score_row(row: dict, q: dict) -> dict:
-    """asked 的一个回答 → 一行分数。只留我们自己的网址，别的网站的不留。"""
+def load_facts(path: Path = FACTS) -> list[dict]:
+    if not path.exists():
+        return []
+    return [f | {"re": re.compile(f["pattern"], re.I)} for f in json.loads(path.read_text(encoding="utf-8"))["facts"]]
+
+
+_FACTS: list[dict] | None = None
+
+
+def facts_in(text: str, facts: list[dict] | None = None) -> list[str]:
+    """回答里出现的标志性事实的 id。给了 near 的，数字前后 FACT_WINDOW 个字符里要有其中一个词。"""
+    global _FACTS
+    if facts is None:
+        _FACTS = load_facts() if _FACTS is None else _FACTS
+        facts = _FACTS
+    text = text or ""
+    found = []
+    for f in facts:
+        for m in f["re"].finditer(text):
+            around = text[max(0, m.start() - FACT_WINDOW): m.end() + FACT_WINDOW].lower()
+            if not f["near"] or any(w.lower() in around for w in f["near"]):
+                found.append(f["id"])
+                break
+    return found
+
+
+def score_row(row: dict, q: dict, facts: list[dict] | None = None) -> dict:
+    """asked 的一个回答 → 一行分数。只留我们自己的网址，别的网站的不留；回答原文也不留，只留命中的事实 id。"""
     cited = row.get("cited") or []
+    used = facts_in(row.get("text"), facts)
     ours = sorted({norm_url(p["url"]) for p in cited if p.get("site") == OWN and p.get("url")})
     target = norm_url(q["target_url"]) if q.get("target_url") else ""
     return {
@@ -127,6 +163,9 @@ def score_row(row: dict, q: dict) -> dict:
         "page_cited_any_lang": bool(target) and any_lang(target) in {any_lang(u) for u in ours},
         "named": bool(row.get("named_you")),
         "first_pick": bool(cited) and cited[0].get("site") == OWN,
+        "fact_used": bool(used),
+        "absorbed": bool(used) and not row.get("named_you") and not row.get("cited_you"),
+        "facts": used,
         "read": bool(row.get("read_you")),
         "cited_count": len(cited),
         "our_urls": ours,
@@ -184,6 +223,14 @@ def load_rows(path: Path) -> list[dict]:
     return rows
 
 
+def previous_run(day: str) -> tuple[list[dict] | None, str, dict | None]:
+    """上一次的（回答行, 日期, 运行配置）；没有就是 (None, "", None)。"""
+    path = previous(day)
+    if not path:
+        return None, "", None
+    return load_rows(path), RESULT_NAME.match(path.name).group(1), json.loads(path.read_text(encoding="utf-8")).get("lineage")
+
+
 def previous(day: str) -> Path | None:
     """这一天之前最近的一次结果（不含基线）。"""
     found = sorted(p for p in PANEL.glob("results-*.json") if (m := RESULT_NAME.match(p.name)) and m.group(1) < day)
@@ -224,6 +271,55 @@ def ai_referrals(ga: dict) -> dict | None:
             "pages": [[p, int(n)] for p, n in by_page.most_common(8)]}
 
 
+# ───────────── 运行配置 ─────────────
+
+def file_hash(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()[:12] if path.exists() else ""
+
+
+def lineage(sets: list[str], plan: dict[str, int], engines_spec: dict, max_usd: float, limit: int) -> dict:
+    """这次是怎么跑的：两次结果能不能直接比，看的就是这些。"""
+    try:
+        from importlib.metadata import version
+        bg_version = version("backlink-guard")
+    except Exception:
+        bg_version = ""
+    return {
+        "questions": {s: file_hash(SETS[s]) for s in sets if s in SETS},
+        "signature_facts": file_hash(FACTS),
+        "runner": file_hash(Path(__file__)),
+        "backlink_guard": bg_version,
+        "engines": {e: {"samples": n, "model": engines_spec.get(e, {}).get("model") or engines_spec.get(e, {}).get("path", "")}
+                    for e, n in plan.items()},
+        "max_usd": max_usd,
+        "limit": limit,
+    }
+
+
+def lineage_diff(now: dict | None, prev: dict | None) -> list[str]:
+    """两次配置的差别，写成人话。旧结果没有配置记录的，说没法对。"""
+    if not now:
+        return []
+    if not prev:
+        return ["上次没有记运行配置（这个功能 2026-11-22 才加），没法确认两次是同一套题、同一批模型。"]
+    out = []
+    for s in sorted(set(now.get("questions", {})) | set(prev.get("questions", {}))):
+        a, b = prev.get("questions", {}).get(s), now.get("questions", {}).get(s)
+        if a and b and a != b:
+            out.append(f"{SET_ZH.get(s, s)}的题库改过（{a} → {b}）：这一组和上次的比较不作数。")
+    if prev.get("signature_facts") and prev.get("signature_facts") != now.get("signature_facts"):
+        out.append("事实清单改过：「用了我们的数据」「用了没署名」两列和上次不能比。")
+    for e, cfg in now.get("engines", {}).items():
+        old = prev.get("engines", {}).get(e)
+        if old and old.get("model") != cfg.get("model"):
+            out.append(f"{LABEL.get(e, e)} 的模型换了（{old.get('model')} → {cfg.get('model')}）。")
+        if old and old.get("samples") != cfg.get("samples"):
+            out.append(f"{LABEL.get(e, e)} 每题问的次数变了（{old.get('samples')} → {cfg.get('samples')}），看命中率，别看命中题数。")
+    if prev.get("backlink_guard") and prev.get("backlink_guard") != now.get("backlink_guard"):
+        out.append(f"backlink-guard 版本变了（{prev['backlink_guard']} → {now.get('backlink_guard')}），解析方式可能不同。")
+    return out
+
+
 # ───────────── 摘要 ─────────────
 
 def pct(hit: int, total: int) -> str:
@@ -231,18 +327,42 @@ def pct(hit: int, total: int) -> str:
 
 
 def engine_table(rows: list[dict], base: list[dict] | None, ids: set | None = None) -> list[str]:
-    head = "| AI | 有效回答 | 引用本站 | 引用对应页面 | 正文点名 | 排第一 |" + (" 基线：引用本站 |" if base else "")
-    lines = [head, "|---|---|---|---|---|---|" + ("---|" if base else "")]
+    head = "| AI | 有效回答 | " + " | ".join(CALIBER_ZH[c] for c in CALIBERS) + " |" + (" 基线：引用本站 |" if base else "")
+    lines = [head, "|---|---|" + "---|" * len(CALIBERS) + ("---|" if base else "")]
+    measured = {c for r in rows for c in CALIBERS if c in r}      # 2026-11-22 前的结果没有后两列，显示 –，不显示 0
     for e in engines_in(rows):
         n = rate(rows, e, "site_cited", ids)[1]
-        cells = [LABEL.get(e, e), str(n)] + [pct(*rate(rows, e, c, ids)) for c in CALIBERS]
+        cells = [LABEL.get(e, e), str(n)] + [pct(*rate(rows, e, c, ids)) if c in measured else "–" for c in CALIBERS]
         if base:
             cells.append(pct(*rate(base, e, "site_cited", ids)))
         lines.append("| " + " | ".join(cells) + " |")
     return lines
 
 
-def summary(result: dict, prev: list[dict] | None = None, prev_day: str = "") -> str:
+def absorbed_section(rows: list[dict]) -> list[str]:
+    """哪些数字被用了却没署名、被哪几家用了。只有我们自己的事实 id，没有回答原文。"""
+    used, absorbed = Counter(), Counter()
+    by = {}
+    for r in valid(rows):
+        for f in r.get("facts") or []:
+            used[f] += 1
+            if r.get("absorbed"):
+                absorbed[f] += 1
+                by.setdefault(f, set()).add(LABEL.get(r["engine"], r["engine"]))
+    if not any("fact_used" in r for r in rows):
+        return []                                                     # 旧结果，没测这一项
+    if not used:
+        return ["## 我们的数据有没有被用", "", "这次没有回答用到 signature-facts.json 里的数字。", ""]
+    out = ["## 我们的数据有没有被用", "",
+           "「用了没署名」= 回答写出了只有我们研究里才有的数字，却既没点名也没引用 jasonzhu.ai。"
+           "这说明内容已经被吸收（多半经别人转述），下一步是让它带上出处。", "",
+           "| 事实 | 被用的回答数 | 其中没署名 | 没署名的是哪几家 |", "|---|---|---|---|"]
+    for f, n in used.most_common():
+        out.append(f"| `{f}` | {n} | {absorbed.get(f, 0)} | {'、'.join(sorted(by.get(f, []))) or '–'} |")
+    return out + [""]
+
+
+def summary(result: dict, prev: list[dict] | None = None, prev_day: str = "", prev_lineage: dict | None = None) -> str:
     rows, day = result["rows"], result["date"]
     base_path = PANEL / BASELINE
     base = load_rows(base_path) if base_path.exists() else None
@@ -254,6 +374,10 @@ def summary(result: dict, prev: list[dict] | None = None, prev_day: str = "") ->
     if result.get("incomplete"):
         out += ["**这次不完整**：有的 AI 有效回答不到应有的一半，下面的数只能当参考。", ""]
     out += ["每格是「命中的回答数/有效回答数」。同一个问题每次问答案都不一样，所以每题问多次。", ""]
+    lin = result.get("lineage")
+    if lin:
+        out += ["运行配置：" + "、".join(f"{SET_ZH.get(k, k)} {v}" for k, v in lin["questions"].items())
+                + f"，事实清单 {lin['signature_facts'] or '无'}，脚本 {lin['runner']}，backlink-guard {lin['backlink_guard'] or '未知'}。", ""]
     for s in sets:
         ids = {r["question_id"] for r in rows if r["set"] == s}
         out += [f"## {SET_ZH[s]}", ""] + engine_table(rows, base if s == "frozen" else None, ids) + [""]
@@ -279,7 +403,11 @@ def summary(result: dict, prev: list[dict] | None = None, prev_day: str = "") ->
             out.append(f"| {LABEL.get(t['engine'], t['engine'])} | {pct(*t['treated_now'])} | {pct(*t['treated_base'])} | "
                        f"{pct(*t['control_now'])} | {pct(*t['control_base'])} | {net} |")
         out += ["", "净变化 = 处理组的变化 − 对照组的变化。题数少，只看方向，一两个回答就能让它变 10 个百分点以上。", ""]
+    out += absorbed_section(rows)
     if prev is not None:
+        notes = lineage_diff(lin, prev_lineage)
+        if notes:
+            out += [f"## 和上次（{prev_day}）的运行配置不一样", ""] + [f"- {n}" for n in notes] + [""]
         new, gone = sorted(hits(rows) - hits(prev)), sorted(hits(prev) - hits(rows))
         asked_both = {(r["engine"], r["question_id"]) for r in valid(rows)} & {(r["engine"], r["question_id"]) for r in valid(prev)}
         new, gone = [x for x in new if x in asked_both], [x for x in gone if x in asked_both]
@@ -349,13 +477,13 @@ def cmd_run(a) -> int:
     answers = [x | {"question_id": by_text[x["question"]]["id"]} for x in answers if x["question"] in by_text]
     rows = [score_row(x, by_text[x["question"]]) for x in answers]
     result = {"date": day, "site": OWN, "sets": a.sets.split(","), "engines": plan, "questions": len(qs),
-              "cost_usd": round(spent / 1e6, 4), "errors": len(errors), "left_out": len(left_out), "rows": rows}
+              "cost_usd": round(spent / 1e6, 4), "errors": len(errors), "left_out": len(left_out), "rows": rows,
+              "lineage": lineage(a.sets.split(","), plan, bg.ENGINES, a.max_usd, a.limit)}
     done = tally(rows)
     result["incomplete"] = any(done.get(e, {}).get("valid", 0) * 2 < len(qs) * n for e, n in plan.items())
     if a.ga and Path(a.ga).exists():
         result["ai_referrals"] = ai_referrals(json.loads(Path(a.ga).read_text(encoding="utf-8")))
-    prev_path = previous(day)
-    text = summary(result, load_rows(prev_path) if prev_path else None, RESULT_NAME.match(prev_path.name).group(1) if prev_path else "")
+    text = summary(result, *previous_run(day))
     if not a.dry:
         PANEL.mkdir(exist_ok=True)
         (PANEL / f"results-{day}.json").write_text(json.dumps(result, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
@@ -373,8 +501,7 @@ def cmd_run(a) -> int:
 def cmd_summary(a) -> int:
     path = Path(a.results)
     result = json.loads(path.read_text(encoding="utf-8"))
-    prev_path = previous(result["date"])
-    print(summary(result, load_rows(prev_path) if prev_path else None, RESULT_NAME.match(prev_path.name).group(1) if prev_path else ""))
+    print(summary(result, *previous_run(result["date"])))
     return 0
 
 
@@ -456,6 +583,33 @@ def selftest() -> int:
     assert "other.example" not in text and "other.example" not in json.dumps(rows)              # 公开的部分没有别人的网址
     assert "other.example（2）" in appendix([{"cited": [page("https://other.example/a")], "fan_out": ["Best  X"]},
                                            {"cited": [page("https://other.example/b")], "fan_out": ["best x"]}])
+    # 吸收：用了我们独有的数字，却没点名也没引用
+    facts = [{"id": "fee-waffo-128", "near": ["Waffo"], "re": re.compile(r"\$1\.28", re.I)},
+             {"id": "pay-stripe-102590", "near": [], "re": re.compile("102,590")}]
+    assert facts_in("Waffo Pancake keeps about $1.28 per $20 order", facts) == ["fee-waffo-128"]
+    assert facts_in("a coffee costs $1.28 here", facts) == []                      # 数字对，旁边没有 Waffo
+    assert facts_in("Stripe links: 102,590 sites. Waffo $1.28.", facts) == ["fee-waffo-128", "pay-stripe-102590"]
+    fee = "Waffo takes $1.28 on a $20 order. " + long
+    took = score_row({"engine": "chatgpt", "sample": 0, "text": fee, "cited": [page("https://other.example/a")],
+                      "cited_you": False, "named_you": ""}, q, facts)
+    credited = score_row({"engine": "perplexity", "sample": 0, "text": fee, "cited": [page("https://jasonzhu.ai/en")],
+                          "cited_you": True, "named_you": ""}, q, facts)
+    assert took["fact_used"] and took["absorbed"] and took["facts"] == ["fee-waffo-128"]
+    assert credited["fact_used"] and not credited["absorbed"]
+    assert "Waffo takes" not in json.dumps([took, credited])                       # 回答原文不进结果
+    sec = "\n".join(absorbed_section([took, credited]))
+    assert "| `fee-waffo-128` | 2 | 1 | ChatGPT |" in sec
+    assert absorbed_section([mk("x", True)]) == []                                 # 旧结果不出这一段
+    assert "| – | – |" in "\n".join(engine_table([mk("x", True)], None))             # 旧结果两列是 –
+    # 运行配置：题库、模型、次数变了要说出来
+    lin = {"questions": {"frozen": "aaa"}, "signature_facts": "f1", "runner": "r", "backlink_guard": "0.12.0",
+           "engines": {"chatgpt": {"samples": 3, "model": "m1"}}}
+    assert lineage_diff(lin, lin) == [] and "没有记运行配置" in lineage_diff(lin, None)[0]
+    changed = lineage_diff(lin, lin | {"questions": {"frozen": "bbb"}, "signature_facts": "f0",
+                                       "engines": {"chatgpt": {"samples": 1, "model": "m0"}}})
+    assert len(changed) == 4 and "题库改过" in changed[0]
+    text = summary(result | {"lineage": lin}, prev=[mk("data-x", False)], prev_day="2026-11-21", prev_lineage=None)
+    assert "运行配置：冻结组 aaa" in text and "和上次（2026-11-21）的运行配置不一样" in text
     print("自测通过")
     return 0
 
