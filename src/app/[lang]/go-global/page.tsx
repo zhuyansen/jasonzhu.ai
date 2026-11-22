@@ -14,6 +14,7 @@ import {
   GEFEI_SITES_ENGINE,
   GEO_NEW_SITE,
   GO_GLOBAL,
+  GO_GLOBAL_CHECKED,
   JESSE_SEO,
   KEYWORD_TOOLS,
   LEARN_SEO,
@@ -629,7 +630,10 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqJsonLd(NEWBIE_FAQ.map((f) => ({ question: isZh ? f.q.zh : f.q.en, answer: isZh ? f.a.zh : f.a.en })))),
+          __html: JSON.stringify({
+            ...faqJsonLd(NEWBIE_FAQ.map((f) => ({ question: isZh ? f.q.zh : f.q.en, answer: isZh ? f.a.zh : f.a.en }))),
+            dateModified: GO_GLOBAL_CHECKED,
+          }),
         }}
       />
       <GoGlobalBreadcrumb lang={lang} />
@@ -642,6 +646,11 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
           {isZh
             ? "从买域名到收到第一笔海外的钱，再到做 SEO 和外链，按顺序整理成四步。每一步都是我自己在用的工具和踩过的坑；收款部分按各平台的官方文档整理，每周再数一遍新卖家都在卖什么。"
             : "From buying a domain to the first payment from abroad, then SEO and backlinks, in four steps. Each step is what I use and what went wrong; the payment part follows each platform's own pages, and every week I count what new sellers sell."}
+        </p>
+        <p className="mt-3 text-xs text-gray-400">
+          {isZh
+            ? `本页最后核实：${GO_GLOBAL_CHECKED}。法律、税务信息仅供参考，以官方为准。`
+            : `Last checked: ${GO_GLOBAL_CHECKED}. Legal and tax information is for reference only; follow the official sources.`}
         </p>
       </header>
 
@@ -996,8 +1005,8 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
         <div className={`mt-3 ${BOX} text-sm text-gray-700`}>
           <span className="font-medium">{isZh ? "想看全部 SEO skill 与 16 项植错沙盒实测：" : "Every SEO skill & our 16-planted-bug benchmark: "}</span>
           {isZh
-            ? "我维护的开源合集，已收 293 个 SEO skill、SEO 数据 MCP 和 GEO 工具，并建了一个埋有 16 处真实 SEO 故障（HTTP 头 noindex、hreflang 指向 404、robots.txt 封锁目录内死链、错误 canonical 等）的 9 页测试站逐一实测——6/13 的工具会出现虚假「PASS」误报，3/13 因死守 robots.txt 漏查被拦截目录。唯一 16/16 全检出且 0 误报的是 aaron-marketing-skills，紧随其后是 squirrelscan（15/16，本地 310+ 规则）与 marketingskills（15/16）。"
-            : "the open-source directory I maintain: 293 security-graded SEO skills, SEO data MCP servers and GEO tools, benchmarked against a 9-page test shop with 16 planted bugs (HTTP-header noindex, hreflang→404, broken links behind robots.txt, wrong canonical). 6 of 13 tools hallucinated false 'PASS' claims; only aaron-marketing-skills found 16/16 with 0 false claims, followed by squirrelscan (15/16) and marketingskills (15/16)."}
+            ? "我维护的开源合集，已收 293 个 SEO skill、SEO 数据 MCP 和 GEO 工具，并建了一个埋有 16 处真实 SEO 故障（HTTP 头 noindex、hreflang 指向 404、robots.txt 封锁目录内死链、错误 canonical 等）的 9 页测试站逐一实测——6/13 的工具会出现虚假「PASS」误报，3/13 因死守 robots.txt 漏查被拦截目录。唯一 16/16 全检出且 0 误报的是 aaron-marketing-skills，紧随其后是 squirrelscan（15/16，本地 350+ 条规则，2026-11-21 查）与 marketingskills（15/16）。测试站是自建的，只有 9 页、16 处故障，样本小，名次只当参考。"
+            : "the open-source directory I maintain: 293 security-graded SEO skills, SEO data MCP servers and GEO tools, benchmarked against a 9-page test shop with 16 planted bugs (HTTP-header noindex, hreflang→404, broken links behind robots.txt, wrong canonical). 6 of 13 tools hallucinated false 'PASS' claims; only aaron-marketing-skills found 16/16 with 0 false claims, followed by squirrelscan (15/16, 350+ local rules as of 2026-11-21) and marketingskills (15/16). We built the test site ourselves and it has only 9 pages and 16 bugs, a small sample, so treat the ranking as a pointer."}
           <a href={SEO_TOOLS_DIRECTORY.hub} {...OUT} className="ml-1 text-blue-600 font-medium hover:underline">
             {isZh ? "293 个工具榜与 16 项植错横评（每 8 小时更新）→" : "293-Tool Directory & 16-Bug Benchmark →"}
           </a>
@@ -1036,8 +1045,8 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
         title={isZh ? "每周看数据：出海选品周报" : "Every week: the new-seller weekly"}
         lead={
           isZh
-            ? "每周一更新：8 家收款平台（Stripe、Lemon Squeezy、Paddle、Polar、Gumroad、Creem、Dodo Payments、Waffo）上新挂出收款链接的网站，大家在卖什么，谁加了第二家收款做双通道防封，哪些需求还没人做。"
-            : "Every Monday: the sites that started taking payments across 8 gateways (Stripe, Lemon Squeezy, Paddle, Polar, Gumroad, Creem, Dodo Payments, Waffo), what they sell, who added a 2nd failover gateway, and which demand nobody serves yet."
+            ? "每周一更新：7 家收款平台（Stripe、Lemon Squeezy、Paddle、Polar、Gumroad、Creem、Dodo Payments）上新挂出收款链接的网站，大家在卖什么，谁加了第二家收款做双通道防封，哪些需求还没人做。"
+            : "Every Monday: the sites that started taking payments across 7 payment platforms (Stripe, Lemon Squeezy, Paddle, Polar, Gumroad, Creem, Dodo Payments), what they sell, who added a 2nd failover gateway, and which demand nobody serves yet."
         }
       >
         <Weekly lang={lang} isZh={isZh} />

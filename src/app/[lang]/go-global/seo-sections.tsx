@@ -5,6 +5,7 @@ import {
   ERHU_GROWTH_DATA_11,
   GO_GLOBAL_ARSENAL_2026,
   MY_POSTS,
+  OFFICIAL_TOOLS_2026,
   SEO_SCHOOLS_MAP,
   SEO_WATER_SYSTEM_V8,
 } from "@/lib/go-global";
@@ -304,6 +305,7 @@ export function SeoSystem({ l, isZh }: { l: "zh" | "en"; isZh: boolean }) {
         {isZh ? "旧编号对照（2026-11-21 起按水流顺序编号）：" : "Old numbers (renumbered in flow order on Nov 21, 2026): "}
         {w.renumber.map(([n, o]) => `${n} = ${o}`).join(isZh ? "，" : ", ")}
       </p>
+      <p className="mt-1 text-[11px] text-gray-500 leading-relaxed">{w.corrections[l]}</p>
 
       <FromMyPost post={MY_POSTS.seoSystem} lang={l} />
     </div>
@@ -406,6 +408,26 @@ export function ArsenalMatrix({ l, isZh }: { l: "zh" | "en"; isZh: boolean }) {
             </div>
           </div>
         ))}
+      </div>
+      {/* 2026 年新出的免费官方工具：每样一行，链官方来源；编号对应上面的环节 */}
+      <div className="mt-3 rounded-xl border border-sky-200 bg-sky-50/50 p-3 text-xs leading-relaxed">
+        <p className="font-semibold text-gray-900 mb-1.5">
+          {isZh ? "2026 年新出的免费官方工具（2026-11-21 补）" : "Free official tools that arrived in 2026 (added 2026-11-21)"}
+        </p>
+        <ul className="space-y-1 text-gray-700">
+          {OFFICIAL_TOOLS_2026.map((t) => (
+            <li key={t.url}>
+              <span className="font-medium text-gray-900">
+                {t.stage} {t.name[l]}
+              </span>
+              {isZh ? "：" : ": "}
+              {t.what[l]}{" "}
+              <a href={t.url} {...OUT} className="text-blue-600 hover:underline">
+                {isZh ? "官方来源" : "Source"}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

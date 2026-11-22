@@ -4,6 +4,9 @@ import { getAllPosts, type BlogPostMeta } from "@/lib/mdx";
 
 export const GO_GLOBAL = "/go-global";
 
+/** 专题首页最后一次整页核实的日期：页面顶部显示，也写进 JSON-LD 的 dateModified（子页用各自指南里的 checked） */
+export const GO_GLOBAL_CHECKED = "2026-11-21";
+
 export interface PostGroup {
   id: string;
   zh: string;
@@ -192,7 +195,7 @@ export const DATA_TOOLS: Pick[] = [
     url: "https://goanyapi.com/",
   },
   {
-    what: { zh: "经 Stripe / Lemon Squeezy 验证的独立开发者真实 MRR 收入榜 + 1.1 万+ 移动 App 付费墙截图库（立项验真金白银，防被流量估算骗）", en: "Verified indie SaaS MRR leaderboard + 11,000+ mobile app paywall screens with revenue estimates" },
+    what: { zh: "经 Stripe、Creem、Dodo、RevenueCat 等平台验证的独立开发者 MRR 收入榜（它也出售 dofollow 外链位，这里只推荐用它查收入）+ 1.1 万+ 移动 App 付费墙截图库（立项验真金白银，防被流量估算骗）", en: "Indie MRR leaderboard verified through Stripe, Creem, Dodo, RevenueCat and others (it also sells dofollow link slots; we recommend it only for checking revenue) + 11,000+ mobile app paywall screens with revenue estimates" },
     name: "TrustMRR + PaywallPro / PaywallScreens",
     url: "https://trustmrr.com/",
   },
@@ -201,32 +204,32 @@ export const DATA_TOOLS: Pick[] = [
 
 export const SEO_SKILLS: Pick[] = [
   {
-    what: { zh: "16 项植错唯一 100% 检出且 0 误报（8 大审计门禁：CORE-EEAT / CITE / ROAS）——全站深度体检主力", en: "16/16 planted issues found with 0 false claims (8 auditor gates: CORE-EEAT, CITE, ROAS) — primary deep auditor" },
+    what: { zh: "16 项植错唯一 100% 检出且 0 误报（自建 9 页测试站、样本小，只当参考；8 大审计门禁：CORE-EEAT / CITE / ROAS）——全站深度体检主力", en: "16/16 planted issues found with 0 false claims (on our own 9-page test site, a small sample, so a pointer only; 8 auditor gates: CORE-EEAT, CITE, ROAS) — primary deep auditor" },
     name: "aaron-marketing-skills（🥇 实测第 1）",
     url: "https://agentskillshub.top/skill/aaron-he-zhu/aaron-marketing-skills/",
   },
   {
-    what: { zh: "本地 CLI 310+ 确定性规则，90 秒检出 15/16 且 0 误报——部署前快速回归主力（顶替误报多的 SEOmator 与漏查的 Wonfull）", en: "Local CLI with 310+ deterministic rules; 15/16 found with 0 false claims in 90s — primary pre-deploy regression check" },
+    what: { zh: "本地 CLI，350+ 条确定性规则（2026-11-21 查官网），在同一个测试站上 90 秒检出 15/16 且 0 误报——部署前快速回归主力（顶替误报多的 SEOmator 与漏查的 Wonfull）", en: "Local CLI with 350+ deterministic rules (checked on its site, 2026-11-21); 15/16 found with 0 false claims in 90s on the same test site — primary pre-deploy regression check" },
     name: "squirrelscan（🥈 实测第 2）",
     url: "https://agentskillshub.top/skill/squirrelscan/squirrelscan/",
   },
   {
-    what: { zh: "营销技能合集（CRO、文案、SEO、数据分析），60 秒检出 15/16 且 0 误报——落地页转化与文案体检主力", en: "Marketing skills: CRO, copy, SEO, analytics; 15/16 found with 0 false claims in 60s — primary CRO & copy auditor" },
+    what: { zh: "营销技能合集（CRO、文案、SEO、数据分析），在同一个测试站上 60 秒检出 15/16 且 0 误报——落地页转化与文案体检主力", en: "Marketing skills: CRO, copy, SEO, analytics; 15/16 found with 0 false claims in 60s on the same test site — primary CRO & copy auditor" },
     name: "marketingskills（🥉 Corey Haines）",
     url: "https://github.com/coreyhaines31/marketingskills",
   },
   {
-    what: { zh: "把 Google Search Console / Bing / GA4 直接连进 Claude Code 对话查真实曝光与气泡图四象限词", en: "Connect Google Search Console, Bing & GA4 directly into Claude Code via MCP" },
+    what: { zh: "把 Google Search Console 连进 Claude Code 对话，查真实曝光与气泡图四象限词（开源版只连 GSC；GA4 用 Google 官方的 GA4 MCP：googleanalytics/google-analytics-mcp）", en: "Connect Google Search Console to Claude Code via MCP for real impressions and bubble-chart queries (the open-source version connects GSC only; for GA4 use Google's official GA4 MCP, googleanalytics/google-analytics-mcp)" },
     name: "mcp-gsc / search-console-mcp",
     url: "https://agentskillshub.top/skill/AminForou/mcp-gsc/",
   },
   {
-    what: { zh: "开源命令行 + 网页版 AI 网站急诊室（100 分制 · 7 大类 · 26 项 HTTP/SSR/JSON-LD/llms.txt/WebMCP 检查，出一段给编程 agent 的修复提示词）。检查项和分值对齐 Hostinger 的免费检查工具，代码和文字是自己写的", en: "Open-source CLI plus a web version: 100 points, 7 categories, 26 checks, and a fix prompt for a coding agent. Checks and points follow Hostinger's free checker; code and wording are our own" },
+    what: { zh: "开源（GitHub）+ 网页版 AI 网站急诊室（100 分制 · 7 大类 · 26 项 HTTP/SSR/JSON-LD/llms.txt/WebMCP 检查，出一段给编程 agent 的修复提示词）。检查项和分值对齐 Hostinger 的免费检查工具，代码和文字是自己写的", en: "Open source (GitHub) plus a web version: 100 points, 7 categories, 26 checks, and a fix prompt for a coding agent. Checks and points follow Hostinger's free checker; code and wording are our own" },
     name: "ai-visibility-checker（26 项 AI 可读性检查）",
     url: "https://github.com/zhuyansen/ai-visibility-checker",
   },
   {
-    what: { zh: "淘汰/降级说明：SEOmator（64 项里 6 项虚假 PASS 误报）、claude-seo 等 3 款工具（死守 robots.txt 漏掉被封目录内全部故障）、子木/Wonfull（已被前 3 名零误报工具全面覆盖）", en: "Deprecated/demoted in our Nov benchmark: SEOmator (6 false PASS claims), claude-seo (blinded by robots.txt), and older checklist skills superseded by the top 3 zero-false-claim tools" },
+    what: { zh: "淘汰/降级说明（同一个自建 9 页测试站，样本小）：SEOmator（64 项里 6 项虚假 PASS 误报）、claude-seo 等 3 款工具（死守 robots.txt 漏掉被封目录内全部故障）、子木/Wonfull（已被前 3 名零误报工具全面覆盖）", en: "Deprecated/demoted in our Nov benchmark (the same small 9-page test site): SEOmator (6 false PASS claims), claude-seo (blinded by robots.txt), and older checklist skills superseded by the top 3 zero-false-claim tools" },
     name: "⚠️ 16 项植错沙盒淘汰榜（避坑参考）",
     url: "https://agentskillshub.top/best/seo-tools/",
   },
@@ -275,8 +278,8 @@ export const SEO_WATER_SYSTEM_V8 = {
       name: { zh: "进水口 · GEO / AI 引用", en: "Inflow · GEO & AI Citations" },
       who: { zh: "🤖备料 🧑发送", en: "🤖 prep · 🧑 ship" },
       rule: {
-        zh: "被提及 > 被链接（Ahrefs 7.5 万品牌研究：AI 可见度相关性 YouTube 提及 0.737 > 无链接品牌提及 0.66–0.71 >> 外链数 0.28）。v7 规则：llms.txt 降为可选；每月从 GA 筛 AI 来源落到 404 的编造网址 301 接回。",
-        en: "Being mentioned > being linked (YouTube mentions r=0.737 >> backlinks 0.28). v7: llms.txt is optional; 301-redirect hallucinated AI 404 URLs monthly.",
+        zh: "被提及 > 被链接（Ahrefs 7.5 万品牌研究，2025-12：和 AI 可见度的相关系数，YouTube 提及约 0.737，网页上的品牌提及（含带链接的）0.66–0.71，DR 约 0.27–0.33；外链数原文只说相关很弱，没给数。相关不是因果，大品牌各项都高）。v7 规则：llms.txt 降为可选（Google 官方说不需要 AI 专用文件；Ahrefs 2026-06 的研究里，放了 llms.txt 的域名 97% 在 5 月一次请求都没收到）；每月从 GA 筛 AI 来源落到 404 的编造网址 301 接回。",
+        en: "Being mentioned > being linked (Ahrefs' 75k-brand study, Dec 2025: correlation with AI visibility is about 0.737 for YouTube mentions, 0.66–0.71 for brand mentions on the web, linked or not, and about 0.27–0.33 for DR; for backlinks the study only calls the correlation very weak and gives no figure. Correlation, not causation: big brands score high on everything). v7: llms.txt is optional (Google says no AI-only files are needed; in Ahrefs' June 2026 study, 97% of domains with an llms.txt got no requests for it in May); 301-redirect hallucinated AI 404 URLs monthly.",
       },
       meter: { zh: "AI 引荐会话 + 品牌被提及数 + AI 来访落到 404 的次数", en: "AI sessions + brand mentions + AI visits landing on 404s" },
     },
@@ -341,8 +344,8 @@ export const SEO_WATER_SYSTEM_V8 = {
       name: { zh: "撑子页 · 程序化与专题长尾", en: "Sub-Pages · Programmatic & Topic Pages" },
       who: { zh: "🤖 卡阈值", en: "🤖 Gated" },
       rule: {
-        zh: "只对有曝光基础（pos 8–20）或 KGR < 0.25 的词建页（pos 50+ 属权威病，盲目造页只稀释整站权重）。页面必须有自己的「交付链理论 + 真实实测区块」，同模板下决定收不收的是有没有第三方之外的独特价值。v8 分批放闸：新页型按 5–10% 一批上，7 天出词率或有点击页占比 ≥1% 才放下一批。",
-        en: "Build sub-pages only for terms at pos 8–20 or KGR < 0.25 (pos 50+ is authority starvation). Every page needs its own methodology and hands-on test block. v8 batch gate: release new page types in 5–10% batches; require ≥1% click-earning or 7-day impression rate before unlocking the next batch.",
+        zh: "只对有曝光基础（pos 8–20）的词建页（pos 50+ 属权威病，盲目造页只稀释整站权重）；新站还没有 GSC 数据时，KGR（allintitle 结果数 ÷ 月搜索量）只当冷启动选题的筛子，这个阈值没有验证研究。页面必须有自己的「交付链理论 + 真实实测区块」，同模板下决定收不收的是有没有第三方之外的独特价值。v8 分批放闸：新页型按 5–10% 一批上，7 天出词率或有点击页占比 ≥1% 才放下一批。",
+        en: "Build sub-pages only for terms at pos 8–20 (pos 50+ is authority starvation); before a new site has GSC data, KGR (allintitle results ÷ monthly searches) is only a rough filter for picking first topics, and its threshold has no study behind it. Every page needs its own methodology and hands-on test block. v8 batch gate: release new page types in 5–10% batches; require ≥1% click-earning or 7-day impression rate before unlocking the next batch.",
       },
       meter: { zh: "每批出词率 + 有点击页占已发现页比例（≥1%）", en: "Batch impression rate & click-earning page ratio (≥1%)" },
     },
@@ -396,8 +399,8 @@ export const SEO_WATER_SYSTEM_V8 = {
       name: { zh: "迭代 · 五层水表与每周单实验闭环", en: "Iteration · 5-Layer Meters & Weekly 1-Experiment Loop" },
       who: { zh: "🤖 AI", en: "🤖 AI" },
       rule: {
-        zh: "水表从三层升为五层：① 点击层（GSC + GA 真人会话）· ② 引用层（GSC 生成式 AI 报告 + Bing AI Performance + Clarity 引用 + 每周 GEO 引用面板，51 题）· ③ 权威层（DR + 高权威引荐域 + 靶站是否放行 AI 爬虫）· ④ 收录层（N/M/X + 子站点地图读取 + Bing 收录数）· ⑤ 管材层（GSC 实际网址测试 + 404/规范网址一致率）。每周复盘只记「3 胜 3 忧 + 恰好 1 个实验」并写死回看日期。",
-        en: "Five layered meters: (1) Clicks (GSC + bot-filtered GA4), (2) AI Citations (GSC Generative AI report + Bing AI Performance + Clarity + the weekly GEO citation panel, 51 questions), (3) Authority (DR, referring domains & whether targets allow AI crawlers), (4) Indexing (N/M/X + child sitemap reads + Bing index count), (5) Pipe Health (GSC Live URL test + 404/canonical match). Weekly retro picks 3 wins, 3 worries, and 1 dated experiment.",
+        zh: "水表从三层升为五层：① 点击层（GSC + GA 真人会话）· ② 引用层（GSC 生成式 AI 报告 + Bing AI Performance + Clarity 引用 + 每周 GEO 引用面板，51 题；GSC 这份报告只有展示数，没有点击和查询词）· ③ 权威层（DR + 高权威引荐域 + 靶站是否放行 AI 爬虫）· ④ 收录层（N/M/X + 子站点地图读取 + Bing 收录数；IndexNow 只推 Bing 等几家，不覆盖 Google）· ⑤ 管材层（GSC 实际网址测试 + 404/规范网址一致率）。每周复盘只记「3 胜 3 忧 + 恰好 1 个实验」并写死回看日期。",
+        en: "Five layered meters: (1) Clicks (GSC + bot-filtered GA4), (2) AI Citations (GSC Generative AI report + Bing AI Performance + Clarity + the weekly GEO citation panel, 51 questions; the GSC report has impressions only, no clicks or queries), (3) Authority (DR, referring domains & whether targets allow AI crawlers), (4) Indexing (N/M/X + child sitemap reads + Bing index count; IndexNow reaches Bing and a few others, not Google), (5) Pipe Health (GSC Live URL test + 404/canonical match). Weekly retro picks 3 wins, 3 worries, and 1 dated experiment.",
       },
       meter: { zh: "五层月检完成率 + 每周单实验按期回看率", en: "5-layer monthly audit completion & dated experiment follow-through" },
     },
@@ -456,12 +459,12 @@ export const SEO_WATER_SYSTEM_V8 = {
     ["1", "Ⓠ"], ["2", "①a"], ["3", "①b"], ["4", "①c"], ["5", "②"], ["6", "⓪"], ["7", "③"],
     ["8", "④"], ["9", "⑤"], ["10", "⑥"], ["11", "⑦"], ["12", "⑩"], ["13", "⑧"], ["14", "⑨"],
   ],
-  /** v9 候选：2026-11-20 提出，2026-11-21 降为待验证。转正标准：处理组比对照组的「引用本站」连续 4 周高出 5 个百分点以上，或 GSC 上明显更好 */
+  /** v9 候选：2026-11-20 提出，2026-11-21 降为待验证。转正标准（2026-11-21 改）：单家相差 10 个点以上且按题算的区间不重叠，或用页面级指标做配对对照 */
   pending: {
     date: "2026-11-21",
     rule: {
-      zh: "这些来自书和演讲，讲得通，但还没在我们的站上测过。转正标准：改了的页面比没改的同类页，在 GEO 引用面板上「引用本站」连续 4 周高出 5 个百分点以上（同一天跑两次的误差是 1 到 4 个点），或 GSC 上明显更好。转正一条，并进上面对应的构件。",
-      en: "These come from books and talks. They make sense, but we have not tested them on our own sites. To move into the model, pages that got the change must beat similar pages that did not by more than 5 points on \"cites the site\" in the GEO citation panel for 4 weeks in a row (two runs on the same day differ by 1 to 4 points), or clearly beat them in Search Console.",
+      zh: "这些来自书和演讲，讲得通，但还没在我们的站上测过。转正标准：改了的页面和没改的同类页相比，在 GEO 引用面板上单家「引用本站」相差 10 个百分点以上，并且按题算的区间不重叠；或者用页面级指标（Bing AI Performance 的引用数、GSC 展示）做配对对照，改了的明显更好。面板一组只有几十到一百多个回答，5 个点的差测不出来。转正一条，并进上面对应的构件。",
+      en: "These come from books and talks. They make sense, but we have not tested them on our own sites. To move into the model, pages that got the change must beat similar pages that did not by 10 points or more on \"cites the site\" for a single assistant in the GEO citation panel, with per-question intervals that do not overlap; or clearly win a paired comparison on page-level numbers (Bing AI Performance citations, Search Console impressions). With a few dozen to about a hundred answers per group, the panel cannot detect a 5-point difference.",
     },
     items: [
       {
@@ -484,15 +487,9 @@ export const SEO_WATER_SYSTEM_V8 = {
       },
       {
         id: "3",
-        zh: "对比表、数据集、视频字幕比纯文字更容易被 AI 引用（Mike King；「YouTube 被引用率是其他视频平台的 200 倍」是他的说法，我们没核实）。测法：一组页面加对比表，同类页不加。",
-        en: "Tables, datasets and video transcripts get cited more than prose (Mike King; \"YouTube is cited 200 times more than other video platforms\" is his figure, not ours). Test: add comparison tables to some pages, not to similar ones.",
+        zh: "对比表、数据集、视频字幕比纯文字更容易被 AI 引用（Mike King；他书里「YouTube 被引次数是其他视频平台的 200 倍」转引的是 BrightEdge 2025-09 的厂商数据，不是他做的实验）。测法：一组页面加对比表，同类页不加。",
+        en: "Tables, datasets and video transcripts get cited more than prose (Mike King; the \"200 times the citations of other video platforms\" figure in his manual is BrightEdge's vendor data from September 2025, not his own test). Test: add comparison tables to some pages, not to similar ones.",
         status: { zh: "没开始", en: "Not started" },
-      },
-      {
-        id: "5",
-        zh: "固定 4 项实体信息，全网描述落在同一语义簇；全站 JSON-LD 用固定 @id 互相连起来（JOKER、Andrea Volpini；「检索准确率提高 30%」是他的实验）。已经全站上线、没有对照组，只能看品牌题的点名率趋势。",
-        en: "Fix four entity facts and keep every description in one semantic cluster; connect JSON-LD across pages with fixed @id values (JOKER, Andrea Volpini; \"30% better retrieval\" is his experiment). Already live site-wide with no control group, so we can only watch the trend on brand questions.",
-        status: { zh: "只能看趋势", en: "Trend only" },
       },
       {
         id: "7",
@@ -502,15 +499,20 @@ export const SEO_WATER_SYSTEM_V8 = {
       },
       {
         id: "1",
-        zh: "SEO 只能接住已有的需求；没人搜的新品类要同时做社媒和口碑（Eli Schwartz、Tim Soulo）。这是定方向的原则，不单独测。",
-        en: "SEO only captures existing demand; a category nobody searches for also needs social reach and word of mouth (Eli Schwartz, Tim Soulo). A principle for direction, not tested on its own.",
+        zh: "SEO 只能接住已有的需求；没人搜的新品类要同时做社媒和口碑（Eli Schwartz；Tim Soulo《DISCOVERABLE》，2026-11-24 出版，这里引的是出版前公开的内容）。这是定方向的原则，不单独测。",
+        en: "SEO only captures existing demand; a category nobody searches for also needs social reach and word of mouth (Eli Schwartz; Tim Soulo's DISCOVERABLE, published on 24 November 2026, quoted here from material released before publication). A principle for direction, not tested on its own.",
         status: { zh: "参考", en: "Reference" },
       },
     ],
     removed: {
-      zh: "删掉一条：「投外链前给靶站打 AI 影响分，75 分以上才投」。分数是我们自己凑的，Walker Sands 的指数算法不公开，对应的命令已经删除。",
-      en: "Dropped: \"score a target site's AI impact before pitching and only pitch above 75\". The score was our own; Walker Sands does not publish its method, and the command is gone.",
+      zh: "删掉一条：「投外链前给靶站打 AI 影响分，75 分以上才投」。分数是我们自己凑的，Walker Sands 的指数算法不公开，对应的命令已经删除。移出一条（2026-11-21）：固定 4 项实体信息、全站 JSON-LD 用固定 @id 互相连起来——已经全站上线，没有对照组，不计功。",
+      en: "Dropped: \"score a target site's AI impact before pitching and only pitch above 75\". The score was our own; Walker Sands does not publish its method, and the command is gone. Moved out (2026-11-21): fixing four entity facts and connecting JSON-LD across pages with fixed @id values. It is already live site-wide with no control group, so it earns no credit.",
     },
+  },
+  /** 2026-11-21 事实更正，不升版本（和 ops/geo/seo-watersystem-model.md 文首的变更记录对应） */
+  corrections: {
+    zh: "变更记录：2026-11-21 事实更正，不升版本。构件 3 的相关系数改按 Ahrefs 原文，llms.txt 的依据换成 Google 原文和 Ahrefs 2026-06 的数据；9 的 KGR 降为冷启动筛子；14 注明 GSC 生成式 AI 报告只有展示数、IndexNow 不覆盖 Google；待验证表改了转正标准，移出 @id 图谱一条。",
+    en: "Change log: factual corrections on 2026-11-21, no version change. Component 3's correlations now follow Ahrefs' text and its llms.txt basis is Google's own guidance plus Ahrefs' June 2026 data; 9's KGR is now only a cold-start filter; 14 notes that the GSC generative AI report shows impressions only and that IndexNow does not reach Google; the pending list has a new bar for moving in, and the @id graph item moved out.",
   },
 };
 
@@ -656,12 +658,12 @@ export const GEO_NEW_SITE = {
       "Grow from blue-ocean terms to mid-size terms to big ones. A blue-ocean term is not just small: the need is clear, it fits the product, you can deliver the result, the competition is beatable and it can convert.",
     ],
   },
-  // Google 官方对 GEO 的说法（AI 优化指南 2026-07-15 + Search Console 帮助），紧挨着子木的做法放，免得把「用扇出查询找主题」读成「一个词建一页」
+  // Google 官方对 GEO 的说法（AI 优化指南 2026-05-15 发布、英文原文 07-10 更新 + Search Console 帮助），紧挨着子木的做法放，免得把「用扇出查询找主题」读成「一个词建一页」
   official: {
     guide: "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide?hl=zh-cn",
     report: "https://support.google.com/webmasters/answer/16984139?hl=zh-cn",
-    zh: "Google 的官方说法（2026-07-15）：在 Google 搜索里做 GEO 就是做 SEO；把内容「分块」、llms.txt 这类 AI 专用文件、虚假提及，都可以不管；为每个扇出查询单独建页算规模化内容滥用，所以扇出查询拿来找主题，别一个词建一页。网站在 AI 概览和 AI 模式里被展示了多少次，看 Search Console 的「生成式 AI 效果报告」（2026-08-31 起全球可用）。",
-    en: "Google's own line (2026-07-15): for Google Search, GEO is SEO. Content chunking, AI-only files such as llms.txt and fake mentions can be ignored, and a page per fan-out query counts as scaled content abuse, so use fan-out queries to find topics, not to make one page each. How often AI Overviews and AI Mode show your site is in Search Console's generative AI performance report, live worldwide since 31 August 2026.",
+    zh: "Google 的官方说法（2026-05-15 发布，英文原文 07-10 更新）：在 Google 搜索里做 GEO 就是做 SEO；不需要把内容切成小块，也不需要 llms.txt 这类 AI 专用文件；刻意去刷「提及」没那么有用（原文 isn't as helpful as it might seem）；为每个扇出查询单独建页算规模化内容滥用，所以扇出查询拿来找主题，别一个词建一页。网站在 AI 概览和 AI 模式里被展示了多少次，看 Search Console 的「生成式 AI 效果报告」（2026-08-31 起全球可用，只有展示数，没有点击和查询词）。",
+    en: "Google's own line (published 2026-05-15, updated 2026-07-10): for Google Search, GEO is SEO. There is no need to break content into small chunks or to add AI-only files such as llms.txt, and seeking inauthentic mentions \"isn't as helpful as it might seem\". A page per fan-out query counts as scaled content abuse, so use fan-out queries to find topics, not to make one page each. How often AI Overviews and AI Mode show your site is in Search Console's generative AI performance report, live worldwide since 31 August 2026 (impressions only, no clicks or queries).",
   },
 };
 
@@ -740,7 +742,7 @@ export const ERHU_GROWTH_DATA_11 = {
       badge: { zh: "1–6 自己的真实数据（告诉 AI 你做得怎么样）", en: "1–6 Your First-Party Truth (How you are performing)" },
       color: "blue",
       items: [
-        { num: "1️⃣", name: { zh: "网站行为", en: "Web Traffic & Behavior" }, tools: "Google Analytics (GA4，剔除机房无头流量) / Vercel Analytics", toolsEn: "Google Analytics (GA4, minus data-center headless traffic) / Vercel Analytics", desc: { zh: "全站流量从哪来、看了什么、在哪一步走掉（按渠道 × 地区 × 端 × 页面 × 语言叉乘；Plausible 因试用锁站已退役）", en: "Where visitors come from, what they view, and where they drop off (channel × region × device × page × language; bot-filtered GA4)" } },
+        { num: "1️⃣", name: { zh: "网站行为", en: "Web Traffic & Behavior" }, tools: "Google Analytics (GA4，剔除机房无头流量) / Vercel Analytics", toolsEn: "Google Analytics (GA4, minus data-center headless traffic) / Vercel Analytics", desc: { zh: "全站流量从哪来、看了什么、在哪一步走掉（按渠道 × 地区 × 端 × 页面 × 语言叉乘；Plausible 试用到期后仪表盘锁定，我们已改用 GA4 + Vercel Analytics）", en: "Where visitors come from, what they view, and where they drop off (channel × region × device × page × language; bot-filtered GA4)" } },
         { num: "2️⃣", name: { zh: "自然搜索与 AI 表现", en: "Organic & AI Search" }, tools: "Google Search Console / Bing Webmaster Tools / mcp-gsc", desc: { zh: "用户搜什么词找到你、哪些页有曝光没点击（可用 mcp-gsc 直连 Claude，结合气泡图四象限与生成式 AI 效果报告）", en: "Queries, impressions without clicks, bubble-chart quadrants, and GSC Generative AI performance reports" } },
         { num: "3️⃣", name: { zh: "移动端 App 归因 (MMP)", en: "Mobile App Attribution" }, tools: "Adjust / AppsFlyer + RevenueCat", desc: { zh: "做 App 必配，看移动端安装与订阅具体由哪个渠道、哪个 Campaign 带来", en: "Essential for mobile apps to attribute installs and trials to exact channels and campaigns" } },
         { num: "4️⃣", name: { zh: "产品内行为与留存", en: "In-Product Retention" }, tools: "PostHog / Mixpanel / Amplitude + Microsoft Clarity", desc: { zh: "能把人找来不等于能留下来：看用户进来后用了什么核心功能、第几天还在（Cohort 留存）+ Clarity 死点击与 AI 引用报告", en: "Getting traffic is not keeping users: track feature adoption, Day-N cohort retention, and Clarity dead-clicks/AI citations" } },
@@ -818,38 +820,38 @@ export const GO_GLOBAL_ARSENAL_2026 = {
         en: "payment-guard (pre-review compliance CLI/Skill) + Payment Platform Picker (/go-global/payments) + HK/US/UK entity guides",
       },
       add: {
-        zh: "Waffo + Dodo Payments 双通道主备冗余（防单点封号，Dodo 3.8%–3.9%+$0.40 免国际卡费与订阅费，$20 订阅仅扣 $1.18，原生支持微信支付与 AI 积分计费）+ 8 大收款平台周报雷达（新增 Waffo / Dodo / Polar / Creem 监控）",
-        en: "Waffo + Dodo Payments dual-gateway failover ($1.18 fee on $20 sub, native WeChat Pay & AI credits) + 8-gateway weekly seller radar",
+        zh: "Waffo + Dodo Payments 双通道主备冗余（防单点封号，Dodo 3.8%–3.9%+$0.40 免国际卡费与订阅费，$20 订阅仅扣 $1.18，原生支持微信支付与 AI 积分计费）+ 收款平台新卖家雷达（new-term-radar 每周看 8 家，含 Waffo / Dodo / Polar / Creem；Waffo 在链接图里还没有数据，选品周报只统计另外 7 家）",
+        en: "Waffo + Dodo Payments dual-gateway failover ($1.18 fee on $20 sub, native WeChat Pay & AI credits) + a weekly new-seller radar (new-term-radar watches 8 platforms including Waffo, Dodo, Polar and Creem; Waffo has no data in the link graph yet, so the weekly report counts the other 7)",
       },
       drop: {
-        zh: "❌ 严禁单收款通道裸奔（水系执行手册红线：线上必须 ≥2 套收款通道热备）；❌ 淘汰「用 `mailto:` 假装收银台」（实测 90 会话 0 转化，换成真实 Stripe/Waffo 支付链接立竿见影）",
-        en: "❌ Banned single-gateway point of failure (always keep ≥2 live gateways); ❌ banned mailto: links in place of real checkout buttons (0/90 conversions)",
+        zh: "❌ 严禁单收款通道裸奔（水系执行手册红线：线上必须 ≥2 套收款通道热备）；❌ 淘汰「用 `mailto:` 假装收银台」（实测 90 会话 0 转化；已换成真实的 Stripe/Waffo 支付链接，换了以后的转化还没有数据）",
+        en: "❌ Banned single-gateway point of failure (always keep ≥2 live gateways); ❌ banned mailto: links in place of real checkout buttons (0/90 conversions; now real Stripe/Waffo checkout links, with no conversion data yet)",
       },
     },
     {
       stage: { zh: "④ 技术 SEO 与页面体检", en: "④ Technical SEO & Page Auditing" },
       keep: {
-        zh: "🥇 aaron-marketing-skills（16/16 全检出 0 误报）+ 🥈 squirrelscan（本地 310+ 规则 15/16 0 误报）+ 🥉 marketingskills（15/16 0 误报）+ AminForou/mcp-gsc（GSC/Bing/GA4 直连 Claude Code）",
-        en: "🥇 aaron-marketing-skills (16/16, 0 false claims) + 🥈 squirrelscan (15/16, 310+ local rules) + 🥉 marketingskills (15/16) + AminForou/mcp-gsc",
+        zh: "🥇 aaron-marketing-skills（16/16 全检出 0 误报）+ 🥈 squirrelscan（本地 350+ 条规则，2026-11-21 查；15/16 0 误报）+ 🥉 marketingskills（15/16 0 误报）（名次来自自建 9 页测试站，样本小）+ AminForou/mcp-gsc（开源版只把 GSC 连进 Claude Code；GA4 用 Google 官方的 GA4 MCP）",
+        en: "🥇 aaron-marketing-skills (16/16, 0 false claims) + 🥈 squirrelscan (15/16, 350+ local rules as of 2026-11-21) + 🥉 marketingskills (15/16) (ranks from our own 9-page test site, a small sample) + AminForou/mcp-gsc (the open-source version connects GSC only; GA4 via Google's official GA4 MCP)",
       },
       add: {
-        zh: "ai-visibility-checker（100 分制 7 关 26 项 AI 网站急诊室）+ geo_engine.py v9.0 `audit-16-guards`（确定性拦截 HTTP 头 X-Robots-Tag noindex、hreflang→404、canonical 误指首页、JSON-LD 语法错误）+ `section-candidates`（逐个 H2 检验独立检索候选达标率）+ 首屏前 50 词 BLUF 自动门禁",
-        en: "ai-visibility-checker (100-pt 26-check AI Clinic) + geo_engine.py v9.0 audit-16-guards + section-candidates (audits every H2 as an independent Retrieval Candidate) + 50-word BLUF gate",
+        zh: "ai-visibility-checker（100 分制 7 关 26 项 AI 网站急诊室）+ geo_engine.py `audit-16-guards`（确定性拦截 HTTP 头 X-Robots-Tag noindex、hreflang→404、canonical 误指首页、JSON-LD 语法错误）+ `section-candidates`（逐个 H2 检验独立检索候选达标率）+ 首屏前 50 词 BLUF 自动门禁（geo_engine.py 是内部脚本，在本站仓库 ops/ 目录，读者不能直接安装；BLUF 本身还在待验证）",
+        en: "ai-visibility-checker (100-pt 26-check AI Clinic) + geo_engine.py audit-16-guards + section-candidates (audits every H2 as an independent retrieval candidate) + 50-word BLUF gate (geo_engine.py is an internal script in this site's repo under ops/, not something readers can install; BLUF itself is still pending verification)",
       },
       drop: {
-        zh: "⚠️ 降级 SEOmator seo-audit-skill（64 项里 6 项虚假 PASS 误报）；⚠️ 降级 claude-seo 等 3 款死守 robots.txt 的工具（漏查被拦截目录内全部 bug）；❌ 淘汰把 FAQPage / TOC 当排名灵丹的装饰性做法（Suski 60 万答案证实无效）",
-        en: "⚠️ Demoted SEOmator (6 false PASS claims) and 3 robots.txt-blinded skills; ❌ retired decorative FAQPage/TOC stuffing (proven 0 impact across 600K AI answers)",
+        zh: "⚠️ 降级 SEOmator seo-audit-skill（64 项里 6 项虚假 PASS 误报）；⚠️ 降级 claude-seo 等 3 款死守 robots.txt 的工具（漏查被拦截目录内全部 bug）（这两条也来自自建 9 页测试站，样本小）；⚠️ 不再把 FAQ、目录当排名手段：FAQ、目录这类装饰在 Suski 的 20 项页面特征里排最后（相关性研究）",
+        en: "⚠️ Demoted SEOmator (6 false PASS claims) and 3 robots.txt-blinded skills (the same small 9-page test site); ⚠️ no longer treating FAQs and tables of contents as a ranking lever: such add-ons rank last among the 20 page features in Suski's study (a correlation study)",
       },
     },
     {
-      stage: { zh: "⑤ 外链、权威与 L1–L5 GEO 闭环武器库 v9.0", en: "⑤ Backlinks, Authority & L1–L5 GEO Arsenal v9.0" },
+      stage: { zh: "⑤ 外链、权威与 GEO 工具（L1–L5）", en: "⑤ Backlinks, Authority & GEO Tools (L1–L5)" },
       keep: {
-        zh: "backlink-guard v0.12.0（12 个 MCP/CLI 命令：find 按访客排外链页、vet 防毒、ai-access 查 AI 爬虫能不能读到、audit/lost 找带外链的 404 做 301、competitors --early 扒竞品头 90 天发射渠道、cited/asked 测 5 大 AI 引擎引用）+ 学术三连（CERN Zenodo DOI + HF + Kaggle 一鱼四吃）+ GitHub 每日自动更新榜单仓库矩阵",
-        en: "backlink-guard v0.12.0 (12 CLI/MCP commands: find, vet, ai-access, audit, lost 404 recovery, competitors --early, cited/asked 5-engine AI probe) + CERN Zenodo DOI / HF / Kaggle + daily GitHub awesome repos",
+        zh: "backlink-guard v0.12.0（12 个 MCP/CLI 命令：find 按访客排外链页、vet 防毒、ai-access 查 AI 爬虫能不能读到、audit/lost 找带外链的 404 做 301、competitors --early 扒竞品头 90 天发射渠道、cited/asked 测 5 大 AI 引擎引用）+ CERN Zenodo DOI 数据集（本站的数据只发在 Zenodo；Hugging Face 和 Kaggle 上的数据集是 AgentSkillsHub 发的）+ GitHub 每日自动更新榜单仓库矩阵",
+        en: "backlink-guard v0.12.0 (12 CLI/MCP commands: find, vet, ai-access, audit, lost 404 recovery, competitors --early, cited/asked 5-engine AI probe) + CERN Zenodo DOI datasets (this site publishes its data on Zenodo only; the Hugging Face and Kaggle datasets are AgentSkillsHub's) + daily GitHub awesome repos",
       },
       add: {
-        zh: "geo_engine.py v9.0 的 18 个子命令（含 v9 新增 3 个命令，都是粗查：`section-candidates` 看每个 H2 首段的长度和有没有数字或具体名称、`connected-kg` 看几个页面的 JSON-LD 是否共用同一个 `@id`、`brand-consensus` 看本站核心页面是否覆盖同一组主题词；配合原有的 `sro-and-recency` / `entity-molecule` / `serp-similarity` / `publisher-finder` / `proprietary-assets`）+ 每周 GEO 引用面板（`ops/geo/panel_run.py`，问 AI 引用了谁统一用它）+ `backlink-guard ai-access`（外站是否放行 AI 爬虫）+ `/api/md/...` 零噪 Markdown 端点 + `Dataset` JSON-LD + `/ai-info/` 机器可读签字事实页",
-        en: "geo_engine.py v9.0's 18 commands (including 3 new v9 commands, all rough checks: section-candidates looks at each H2's first paragraph length and whether it has a number or named entity; connected-kg checks whether pages share a JSON-LD `@id`; brand-consensus checks that this site's core pages cover the same topic terms; plus sro-and-recency, entity-molecule, serp-similarity, publisher-finder, proprietary-assets) + the weekly GEO citation panel (ops/geo/panel_run.py, the one place we ask AI assistants who they cite) + `backlink-guard ai-access` (whether a site lets AI crawlers in) + /api/md/... raw Markdown endpoint + Dataset JSON-LD + /ai-info/ fact page",
+        zh: "geo_engine.py 的 18 个子命令（含 2026-11-20 新加的 3 个命令，都是粗查：`section-candidates` 看每个 H2 首段的长度和有没有数字或具体名称、`connected-kg` 看几个页面的 JSON-LD 是否共用同一个 `@id`、`brand-consensus` 看本站核心页面是否覆盖同一组主题词；配合原有的 `sro-and-recency` / `entity-molecule` / `serp-similarity` / `publisher-finder` / `proprietary-assets`）+ 每周 GEO 引用面板（`ops/geo/panel_run.py`，问 AI 引用了谁统一用它）（geo_engine.py 和 panel_run.py 都是内部脚本，在本站仓库 ops/ 目录，读者不能直接安装）+ `backlink-guard ai-access`（外站是否放行 AI 爬虫）+ `/api/md/...` 零噪 Markdown 端点 + `Dataset` JSON-LD + `/ai-info/` 机器可读签字事实页",
+        en: "geo_engine.py's 18 commands (including 3 added on 2026-11-20, all rough checks: section-candidates looks at each H2's first paragraph length and whether it has a number or named entity; connected-kg checks whether pages share a JSON-LD `@id`; brand-consensus checks that this site's core pages cover the same topic terms; plus sro-and-recency, entity-molecule, serp-similarity, publisher-finder, proprietary-assets) + the weekly GEO citation panel (ops/geo/panel_run.py, the one place we ask AI assistants who they cite) (geo_engine.py and panel_run.py are internal scripts in this site's repo under ops/, not something readers can install) + `backlink-guard ai-access` (whether a site lets AI crawlers in) + /api/md/... raw Markdown endpoint + Dataset JSON-LD + /ai-info/ fact page",
       },
       drop: {
         zh: "❌ 10-06 起全面停止购买付费客座与付费目录 dofollow 外链；❌ 淘汰不查 robots.txt 盲投传统高 DR 门户（Walker Sands 的指数里 Forbes 55 分、TechTarget 82 分）；❌ 永久封存 Stripe Climate 捐赠外链（恒为 `ugc nofollow`）与 HARO；⚠️ `llms.txt` 降为可选",
@@ -859,20 +861,70 @@ export const GO_GLOBAL_ARSENAL_2026 = {
     {
       stage: { zh: "⑥ 数据监控与增长决策", en: "⑥ Analytics, Water Meters & AI Decisions" },
       keep: {
-        zh: "五层水表（GSC + 剔除机房流量的 GA4 + GSC 生成式 AI 报告 + Bing AI Performance + Clarity AI Citations/死点击录屏）+ `ops/analytics/digest.py` 每日 Resend 邮件日报（第一屏先报管线告警与 17 家 AI 引荐转化）+ 每周单实验复盘",
-        en: "5-layer water meters (GSC + bot-filtered GA4 + GSC Generative AI report + Bing AI Performance + Clarity AI Citations) + daily Resend digest (ops/analytics/digest.py) + weekly 1-experiment retro",
+        zh: "五层水表（GSC + 剔除机房流量的 GA4 + GSC 生成式 AI 报告（只有展示数）+ Bing AI Performance + Clarity AI Citations/死点击录屏；Clarity 的引用数只覆盖靠 Bing 检索的微软系 AI）+ `ops/analytics/digest.py` 每日 Resend 邮件日报（内部脚本，在本站仓库 ops/ 目录，读者不能直接安装；第一屏先报管线告警和来自 17 个 AI 域名的引荐访问）+ 每周单实验复盘",
+        en: "5-layer water meters (GSC + bot-filtered GA4 + GSC Generative AI report, impressions only + Bing AI Performance + Clarity AI Citations, which cover only Microsoft's Bing-grounded AI) + daily Resend digest (ops/analytics/digest.py, an internal script in this site's repo, not installable by readers; it opens with pipeline alerts and referrals from 17 AI domains) + weekly 1-experiment retro",
       },
       add: {
         zh: "二虎 11 份全链路增长数据 × 六维叉乘表（端 × 国家 × 卖点 × 目标 × SKU × 类别 → 付费人数 & 付费金额）+ 线索表单 `How did you find us?` AI 归因字段 + AIsa / GoAnyAPI 按次调用顶替高价月费（Similarweb $0.30/次仅关键站按需查）",
         en: "Erhu's 11 full-funnel growth feeds × 6D cross-slice matrix (resolving to Paying Users & Net Revenue) + 'How did you find us?' AI lead attribution + AIsa/GoAnyAPI pay-per-call replacing monthly SaaS",
       },
       drop: {
-        zh: "❌ 停用 Plausible（试用到期 402 锁站，已由「去机房无头流量的 GA4 + GSC + Vercel Analytics」完全替代）；❌ 严禁不剔除机房流量直接读 GA（曾高达 80%+ 假会话）或未统一归因口径直接让 AI 把多平台广告转化相加",
-        en: "❌ Retired Plausible (replaced by bot-filtered GA4 + GSC + Vercel Analytics); ❌ never read raw GA4 without stripping datacenter headless bots (80%+ noise) or sum unaligned ad-platform conversions",
+        zh: "❌ 停用 Plausible（试用到期后仪表盘锁定、不订阅会删历史数据；我们已改用 GA4 + Vercel Analytics）；❌ 严禁不剔除机房流量直接读 GA（曾高达 80%+ 假会话）或未统一归因口径直接让 AI 把多平台广告转化相加",
+        en: "❌ Retired Plausible (after the trial the dashboard locks and, without a subscription, the history is deleted; we moved to GA4 + Vercel Analytics); ❌ never read raw GA4 without stripping datacenter headless bots (80%+ noise) or sum unaligned ad-platform conversions",
       },
     },
   ],
 };
+
+/** 2026 年新出的免费官方工具（2026-11-21 按官方页面补，每样一行、链官方来源）。工具清单页放在上面那张表下面；stage 对应表里的环节编号。
+ *  Paddle 另有一个 draft-seller-policies（起草条款、退款、隐私三页），在嵌入式计费合作方的路径下、标着 internal，没放进来。 */
+export const OFFICIAL_TOOLS_2026: { stage: string; name: { zh: string; en: string }; url: string; what: { zh: string; en: string } }[] = [
+  {
+    stage: "③",
+    name: { zh: "Paddle 官方 agent skills", en: "Paddle's agent skills" },
+    url: "https://developer.paddle.com/.well-known/skills/index.json",
+    what: {
+      zh: "给编程 agent 用的一组公开技能：结账、订阅、Webhook、沙箱测试、查开户状态，其中 paddle-migrate-lemon-squeezy 帮你把 Lemon Squeezy 的接入迁到 Paddle；可以直接给 Claude Code 用。",
+      en: "A public set of skills for coding agents: checkout, subscriptions, webhooks, sandbox testing and onboarding checks, plus paddle-migrate-lemon-squeezy for moving a Lemon Squeezy integration to Paddle; usable directly in Claude Code.",
+    },
+  },
+  {
+    stage: "④",
+    name: { zh: "Cloudflare 代理就绪度检查（isitagentready.com）", en: "Cloudflare Agent Readiness (isitagentready.com)" },
+    url: "https://blog.cloudflare.com/agent-readiness/",
+    what: {
+      zh: "2026-04 上线，免费：查网站能不能被 AI 代理发现、读取和调用（Markdown、爬虫访问控制、MCP Server Card、WebMCP 等），失败项附一段可以交给编程 agent 的修复提示；自带 MCP 服务，也能用 URL Scanner API 跑。",
+      en: "Free since April 2026: checks whether AI agents can discover, read and use a site (Markdown, crawler access controls, MCP Server Card, WebMCP and more) and gives a fix prompt for coding agents on each failure; it has its own MCP server and also runs through the URL Scanner API.",
+    },
+  },
+  {
+    stage: "④",
+    name: { zh: "Lighthouse「Agentic Browsing」类别", en: "Lighthouse \"Agentic Browsing\" category" },
+    url: "https://developer.chrome.com/docs/lighthouse/agentic-browsing/scoring",
+    what: {
+      zh: "Chrome 150 起的 DevTools 里就有：查 WebMCP 注册、面向代理的无障碍、CLS 和 llms.txt；只给通过比例，不给 0–100 分；WebMCP 那几项要先报名 origin trial。",
+      en: "Built into DevTools from Chrome 150: checks WebMCP registration, an agent-focused accessibility subset, CLS and llms.txt; reports a pass ratio, not a 0–100 score; the WebMCP audits need the WebMCP origin trial.",
+    },
+  },
+  {
+    stage: "⑥",
+    name: { zh: "Google 官方 GA4 MCP", en: "Google's official GA4 MCP server" },
+    url: "https://github.com/googleanalytics/google-analytics-mcp",
+    what: {
+      zh: "googleanalytics/google-analytics-mcp：在 Claude Code 等 agent 里直接查 GA4，补上 mcp-gsc 开源版连不了的 GA4。",
+      en: "googleanalytics/google-analytics-mcp: query GA4 from Claude Code and other agents, which the open-source mcp-gsc does not cover.",
+    },
+  },
+  {
+    stage: "⑥",
+    name: { zh: "Microsoft Clarity MCP", en: "Microsoft Clarity MCP server" },
+    url: "https://github.com/microsoft/clarity-mcp-server",
+    what: {
+      zh: "microsoft/clarity-mcp-server：在 agent 里查 Clarity 的数据。",
+      en: "microsoft/clarity-mcp-server: query Clarity data from an agent.",
+    },
+  },
+];
 
 /** 增长：Jesse Lau 的「佛系 SEO」（用户 10-17 发来，2024-12-24 的帖子）：SEO 就照 Google 的新手指南做，工具只留两样免费的 */
 export const JESSE_SEO = {
@@ -902,17 +954,17 @@ export const ANALYTICS_BASICS = {
       why: { zh: "填好信息、配一条 DNS 记录就能接入；配合 mcp-gsc 可在 Claude Code 里直拉气泡图词表", en: "verified with a DNS record; pair with mcp-gsc in Claude Code" },
     },
     {
-      what: { zh: "访问量、时长、退出率与 5 大关键转化事件（⚠️ 水系 v5 铁律：读数前必先剔除机房无头浏览器流量，曾占原始会话 80%+）", en: "Visits, retention & key conversion events (strip datacenter headless-browser bots first — often 80%+ of raw sessions)" },
+      what: { zh: "访问量、时长、退出率；订阅、申请、下单这几个转化事件，要在 GA4 后台标成关键事件才计数（⚠️ 读数前先剔除机房无头浏览器流量，2026-09 实测曾占原始会话 80% 以上）", en: "Visits, engagement and exits; conversion events such as sign-ups, applications and orders only count once you mark them as key events in GA4 (strip datacenter headless-browser bots first; in our September 2026 check they were over 80% of raw sessions)" },
       name: "Google Analytics (GA4)",
       url: "https://analytics.google.com/analytics/web",
     },
     {
-      what: { zh: "用户操作录屏、死点击（Dead Clicks）定位 + 免费「AI Visibility Citations」引用水位表（看那 9 倍被 AI 引用却未点击的冰山）", en: "Session recordings, dead-click fixes & free AI Visibility Citations report (tracks the 9× unclicked AI citations)" },
+      what: { zh: "用户操作录屏、死点击（Dead Clicks）定位 + 免费「AI Visibility Citations」引用报告（只覆盖靠 Bing 检索的微软系 AI）", en: "Session recordings, dead-click fixes & the free AI Visibility Citations report (covers only Microsoft's AI experiences grounded in Bing search)" },
       name: "Microsoft Clarity + Bing Webmaster Tools",
       url: "https://clarity.microsoft.com/",
     },
     {
-      what: { zh: "轻量无 Cookie 统计（注：付费试用到期会 402 锁站，我们已在主力站停用，改用「去机房流量的 GA4 + Vercel Analytics」替代）", en: "Lightweight analytics (Note: locks with HTTP 402 after trial; we replaced it in production with bot-filtered GA4 + Vercel Analytics)" },
+      what: { zh: "轻量无 Cookie 统计（试用到期后仪表盘锁定、不订阅会删历史数据；我们已改用 GA4 + Vercel Analytics）", en: "Lightweight, cookie-free analytics (after the trial the dashboard locks and, without a subscription, the history is deleted; we moved to GA4 + Vercel Analytics)" },
       name: "Plausible（可选 / 已由 GA4 替代）",
       url: "https://plausible.io/",
     },
@@ -960,8 +1012,8 @@ export const PAGE_TUNING = {
     {
       name: { zh: "排名高、点击率低", en: "High rank, low CTR" },
       act: {
-        zh: "Jesse 认为这类词多半被 AI 摘要（AI Overviews）截走了点击，传统 SEO 没太好办法；但在 GEO 闭环里，这恰恰是「已经进检索池 Top-10 却没赢下 AI 首段引用/点击」的词——按 Tomek Rudzki 前 10% 铁律 + Suski 前 50 词法则，在该页首段前 50 词直接亮出品牌名 + 3 个硬核统计数字（或交互计算器），把「零点击曝光」转化为「AI 点名推荐 + 富媒体点击」。Google 给的检查方向：对手是不是用了结构化数据、这个词是不是在摘要里就拿到了答案，想让人点进来就改标题和描述。",
-        en: "Jesse notes AI Overviews take most of these clicks. In a GEO loop, however, High Rank + Low CTR means you already passed the Top-10 retrieval gate — apply Tomek Rudzki's top-10% rule and Suski's First-50-Words rule (place your brand name + 3 concrete stats or an interactive calculator in the opening 50 words) to win the AI Overview citation, and sharpen the title, meta description, and Schema rich results to win the click.",
+        zh: "Jesse 认为这类词多半被 AI 摘要（AI Overviews）截走了点击，传统 SEO 没太好办法。可以试一试、但还没在本站验证的做法：这些词已经排进前 10，在该页首段前 50 词直接给结论，写出品牌名和几个具体数字。依据是相关性研究：Suski 的数据里约三分之一的引用来自页面前 50 词，Tomek Rudzki 也说引用多来自页面开头（他的 92% 没找到一手出处）。Google 给的检查方向：对手是不是用了结构化数据、这个词是不是在摘要里就拿到了答案，想让人点进来就改标题和描述。",
+        en: "Jesse thinks AI Overviews take most of these clicks and classic SEO has little answer. One thing to try, not yet verified on our site: these queries already rank in the top 10, so open the page with the conclusion, the brand name and a few concrete numbers in the first 50 words. The basis is correlation studies: in Suski's data about a third of citations come from a page's first 50 words, and Tomek Rudzki also says citations mostly come from the top of the page (we could not find a primary source for his 92%). Google's checks: whether competitors use structured data and whether the snippet already answers the query; to earn the click, rework the title and description.",
       },
     },
   ],
@@ -1030,7 +1082,8 @@ export const LEARN_SEO = {
       {
         title: { zh: "垃圾内容政策", en: "Spam policies" },
         url: "https://developers.google.com/search/docs/essentials/spam-policies?hl=zh-cn",
-        updated: "2026-09-02",
+        // 英文原文「Last updated 2026-08-28」；中文译文页显示的是 2026-09-02（译文更新日）
+        updated: "2026-08-28",
         why: {
           zh: "哪些做法会被降权甚至移除：买卖链接、批量生成内容、滥用过期域名、借别人网站的声誉等",
           en: "what gets a site demoted or removed: buying or selling links, scaled content, expired domains, borrowing another site's reputation and more",
@@ -1049,10 +1102,11 @@ export const LEARN_SEO = {
       {
         title: { zh: "针对 Google 搜索中的生成式 AI 功能优化网站", en: "Optimizing your website for generative AI features on Google Search" },
         url: "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide?hl=zh-cn",
-        updated: "2026-07-15",
+        // 2026-05-15 随官方博客发布；英文原文「Last updated 2026-07-10」，中文译文页显示 2026-07-15（译文更新日）
+        updated: "2026-07-10",
         why: {
-          zh: "Google 对 GEO 的正式说法：在 Google 搜索里它就是 SEO；哪些 GEO 技巧可以不管，为什么不该给每个扇出查询单独建页",
-          en: "Google's formal line on GEO: for Google Search it is SEO; which GEO tricks to ignore, and why not to build a page per fan-out query",
+          zh: "2026-05-15 发布。Google 对 GEO 的正式说法：在 Google 搜索里它就是 SEO；哪些 GEO 技巧可以不管，为什么不该给每个扇出查询单独建页",
+          en: "published 2026-05-15. Google's formal line on GEO: for Google Search it is SEO; which GEO tricks to ignore, and why not to build a page per fan-out query",
         },
       },
       {
@@ -1140,11 +1194,11 @@ export const LEARN_SEO = {
       en: "web.cafe is 哥飞's paid community: anyone can see the titles and contents, but reading the tutorials needs a membership. The Ahrefs course in step one is free. All in Chinese.",
     },
   },
-  // 哥飞推荐博客评论外链；Google 的垃圾链接政策（2026-09-02 更新）点名了自动建链和评论里的优化链接，紧挨着写清楚
+  // 哥飞推荐博客评论外链；Google 的垃圾链接政策（英文原文 2026-08-28 更新）点名了自动建链和评论里的优化链接，紧挨着写清楚
   commentRule: {
     url: "https://developers.google.com/search/docs/essentials/spam-policies?hl=zh-cn#link-spam",
-    zh: "Google 的垃圾链接政策（2026-09-02 更新）把「用自动程序或服务给网站建链接」和「评论里带优化过的链接」都算作垃圾链接。评论只在相关的博客里认真写，别用工具批量发，也别塞关键词锚文本。",
-    en: "Google's link spam policy (updated 2026-09-02) counts links built with automated programs or services, and comments carrying optimized links, as link spam. Comment only on related blogs and write a real comment; never post in bulk with a tool or stuff keyword anchors.",
+    zh: "Google 的垃圾链接政策（英文原文 2026-08-28 更新）把「用自动程序或服务给网站建链接」和「评论里带优化过的链接」都算作垃圾链接。评论只在相关的博客里认真写，别用工具批量发，也别塞关键词锚文本。",
+    en: "Google's link spam policy (updated 2026-08-28) counts links built with automated programs or services, and comments carrying optimized links, as link spam. Comment only on related blogs and write a real comment; never post in bulk with a tool or stuff keyword anchors.",
   },
   // 2026 进阶必读：海外 6 本 SEO/GEO 经典专著与手册 + JOKER「降低机器 6 种不确定性」总纲
   advancedBooks: [
@@ -1168,8 +1222,8 @@ export const LEARN_SEO = {
       author: "Mike King",
       url: "https://ipullrank.com/ai-search-manual",
       takeaway: {
-        zh: "完整拆解 AI 检索 8 步流水线与 Query Fan-out 多模态路由：表格与带时间戳的视频字幕优先于纯文本；第 23 章实证 YouTube 被引用率是其他视频平台的 200 倍、出现在近 30% 的 AI Overviews 中（取决于前 30 秒亮出答案的字幕块余弦相似度）；第 21 章给出 Google UCP 与 OpenAI ACP 智能体交易协议。",
-        en: "Maps the 8-stage AI Search pipeline and modality-aware query fan-out: tables and timestamped transcripts beat prose; Ch.23 proves YouTube is cited 200x more than other video platforms and appears in ~30% of AI Overviews via first-30s transcript cosine similarity; Ch.21 covers Google UCP & OpenAI ACP agentic commerce protocols.",
+        zh: "完整拆解 AI 检索 8 步流水线与 Query Fan-out 多模态路由：表格与带时间戳的视频字幕优先于纯文本；第 23 章转引 BrightEdge 2025-09 的数据：YouTube 被引次数是其他视频平台的 200 倍，29.5% 的 AI 概览引用了 YouTube（这是 BrightEdge 自家产品的数据，不是 King 做的实验）；第 21 章给出 Google UCP 与 OpenAI ACP 智能体交易协议。",
+        en: "Maps the 8-stage AI Search pipeline and modality-aware query fan-out: tables and timestamped transcripts beat prose; Ch.23 cites BrightEdge data from September 2025: YouTube gets 200 times the citations of other video platforms, and 29.5% of AI Overviews cite YouTube (BrightEdge's own product data, not a King experiment); Ch.21 covers Google UCP & OpenAI ACP agentic commerce protocols.",
       },
     },
     {
@@ -1180,8 +1234,8 @@ export const LEARN_SEO = {
       author: "Andrea Volpini (SEO Week 2026 / arXiv:2604.17056)",
       url: "https://ipullrank.com/seo-week-2026-andrea-volpini",
       takeaway: {
-        zh: "实证 100 万 Token 窗口仍受「上下文腐烂（Context Rot）」困扰；Vertex AI Vector Search 2.0 对比 4 类站点证明：孤立 JSON-LD 对非 Schema 管线几乎无效，但跨页通过唯一 @id 互联的实体页图谱（Connected Entity Graph）把检索准确率提升了 +30%；结合 Google DeepMind TurboQuant（4.5x 推理路径）与 RLM-on-KG（在分散跨页证据上比微软 GraphRAG 高 +71%）。",
-        en: "Proves 1M-token windows still suffer from Context Rot; Vertex AI Vector Search 2.0 testing across 4 site types showed isolated JSON-LD adds little, whereas connected Entity Pages sharing unique @id identifiers boost retrieval accuracy by +30%; pairs DeepMind's TurboQuant (4.5x reasoning pathways) with RLM-on-KG (+71% over Microsoft GraphRAG).",
+        zh: "讲 100 万 Token 的上下文窗口仍有「上下文腐烂（Context Rot）」，主张各页用唯一 @id 连成实体图谱（Connected Entity Graph），而不是每页孤立地写 JSON-LD。演讲里引用的检索提升数字没有公开的一手来源，我们没核实；他署名的论文 arXiv:2604.17056（RLM-on-KG）测的是小说问答基准上的知识图谱问答，F1 提高 2–4 个百分点，和网站的结构化数据无关。",
+        en: "Argues that 1M-token windows still suffer from context rot, and that pages should be tied into a connected entity graph through unique @id values rather than carrying isolated JSON-LD. The retrieval gains quoted from the talk have no public primary source and we have not checked them; the paper arXiv:2604.17056 (RLM-on-KG) tests knowledge-graph question answering on a novel-based QA benchmark (F1 up 2–4 points) and has nothing to do with website structured data.",
       },
     },
     {
@@ -1189,7 +1243,7 @@ export const LEARN_SEO = {
         zh: "Eli Schwartz《Product-Led SEO》& Tim Soulo (Ahrefs CMO)《DISCOVERABLE》",
         en: "Eli Schwartz: Product-Led SEO & Tim Soulo (Ahrefs CMO): DISCOVERABLE",
       },
-      author: "Eli Schwartz / Tim Soulo (2026-11)",
+      author: "Eli Schwartz / Tim Soulo (DISCOVERABLE 2026-11-24)",
       url: "https://ahrefs.com/discoverable",
       takeaway: {
         zh: "战略层第一性原理：Eli 点破 SEO 只能「捕获已有需求（Capture Demand）」而不能为未知新品类凭空创造搜索需求；Tim Soulo 将所有产品破圈归纳为 3 条底层路径——Get Found（搜索/AI 检索捕获需求）、Get Noticed（社媒/投放打断注意力创造需求）、Get Talked About（靠独家工具与基准数据集触发口碑自传播）。",
@@ -1275,18 +1329,18 @@ export const SEO_SCHOOLS_MAP: {
         { name: "Eli Schwartz", url: "https://www.productledseo.com/t/playbooks", role: { zh: "《Product-Led SEO》作者、前 SurveyMonkey SEO 负责人（捕获需求 vs 创造需求）", en: "Author of Product-Led SEO, former SurveyMonkey SEO lead (Capture vs Create Demand)" } },
         { name: "Tim Soulo", handle: "@timsoulo", url: "https://ahrefs.com/discoverable", role: { zh: "Ahrefs CMO、《DISCOVERABLE》作者（Get Found / Get Noticed / Get Talked About）", en: "CMO at Ahrefs, author of DISCOVERABLE (Get Found / Get Noticed / Get Talked About)" } },
         { name: "Cyrus Shepard", handle: "@CyrusShepard", url: "https://zyppy.com/", role: { zh: "Zyppy 创始人（92.9% 赢家独有资产研究 & 28 天 AI Search 断流实验）", en: "Founder of Zyppy (92.9% proprietary asset study & 28-day AI Search opt-out test)" } },
-        { name: "Georg Richard Aare", url: "https://www.youtube.com/watch?v=n35P_Mjsk3Y", role: { zh: "RankUp 创始人（410,572 条 Claim 实证：首段一手经验 Top-3 概率 5.5x）", en: "Founder of RankUp (410,572-claim study: intro first-hand experience gives 5.5x Top-3 lift)" } },
+        { name: "Georg Richard Aare", url: "https://www.youtube.com/watch?v=n35P_Mjsk3Y", role: { zh: "RankUp 创始人（称统计了 410,572 条 Claim：首段写一手经验进 Top-3 的概率高 5.5 倍，未核实）", en: "Founder of RankUp (says a 410,572-claim study found first-hand experience in the intro gives a 5.5x Top-3 lift; unverified)" } },
         { name: "哥飞", nameEn: "Gefei", handle: "@gefei55", url: "https://new.web.cafe/tutorials", role: { zh: "出海新词工具站与广告/订阅变现社群主理人", en: "New-term tool sites & AdSense/subscription community host" } },
         { name: "大罗SEO", nameEn: "Daluo SEO", handle: "@daluoseo", url: "https://www.youtube.com/@daluoseo", role: { zh: "Product-Led SEO 中文拆解与程序化落地", en: "Product-Led SEO & programmatic landing pages in Chinese" } },
         { name: "Joker", handle: "@JokerMayCry_Jun", url: "https://mp.weixin.qq.com/s/ESPeoAGt5TToZrXqVItDyw", role: { zh: "《SEO 的下一次进化》作者：降低机器 6 种不确定性与新老赛道分层法则", en: "Author of 'The Next Evolution of SEO': 6 uncertainty reductions & niche maturity laws" } },
       ],
       core: {
-        zh: "反对按关键词工具词表批量写凑字数的科普长文（Eli 称之为红海 SEO）。战略上先按 Eli Schwartz 与 Tim Soulo《DISCOVERABLE》分清边界：SEO 只能「捕获已有需求（Get Found）」，没搜索量的新品类必须靠社媒打断注意力（Get Noticed）和独家工具/数据集触发口碑（Get Talked About）；Joker（2026-08-27）进一步点破：在新词、低竞争赛道，「Keyword+Page+Content+Backlinks」旧公式依然好用，但在成熟赛道与 AI 搜索里必须往上叠「Entity + Topic + Retrieval + Network」四层抽象。落地上，Cyrus Shepard 实证 92.9% 的核心更新赢家拥有 AI 无法凭空捏造的独有资产（互动计算器、一手数据集、在线工具），且 AI Overviews 贡献了 21%~23% 的点击；Georg Richard Aare 对 410,572 条 Claim 的统计量化出：首段亮一手实测经验进 Top-3 概率是 5.5 倍，单页凑齐 4~7 类一手资产进 Top-3 概率翻 1.9 倍。",
-        en: "Rejects cranking out filler articles from keyword spreadsheets ('Red Ocean SEO'). Strategically, Eli Schwartz and Tim Soulo (DISCOVERABLE) draw a hard line: SEO captures existing demand (Get Found), whereas unknown categories require social interruption (Get Noticed) and word-of-mouth assets (Get Talked About); Joker (2026-08-27) adds that while 'Keyword + Page + Content + Backlinks' still works in emerging low-competition niches, mature niches and AI Search require 4 higher layers (Entity + Topic + Retrieval + Network). Cyrus Shepard proved 92.9% of Core Update winners carry proprietary assets AI cannot fabricate and AIO drives 21%–23% of clicks; Georg Richard Aare's 410,572-claim study showed opening with first-hand experience lifts Top-3 probability by 5.5x.",
+        zh: "反对按关键词工具词表批量写凑字数的科普长文（Eli 称之为红海 SEO）。战略上先按 Eli Schwartz 与 Tim Soulo《DISCOVERABLE》分清边界：SEO 只能「捕获已有需求（Get Found）」，没搜索量的新品类必须靠社媒打断注意力（Get Noticed）和独家工具/数据集触发口碑（Get Talked About）；Joker（2026-08-27）进一步点破：在新词、低竞争赛道，「Keyword+Page+Content+Backlinks」旧公式依然好用，但在成熟赛道与 AI 搜索里必须往上叠「Entity + Topic + Retrieval + Network」四层抽象。落地上，Cyrus Shepard 实证 92.9% 的核心更新赢家拥有 AI 无法凭空捏造的独有资产（互动计算器、一手数据集、在线工具），且 AI Overviews 贡献了 21%~23% 的点击；Georg Richard Aare 称对 410,572 条 Claim 做了统计：首段亮一手实测经验进 Top-3 的概率是 5.5 倍，单页凑齐 4~7 类一手资产进 Top-3 的概率高 1.9 倍（未核实）。",
+        en: "Rejects cranking out filler articles from keyword spreadsheets ('Red Ocean SEO'). Strategically, Eli Schwartz and Tim Soulo (DISCOVERABLE) draw a hard line: SEO captures existing demand (Get Found), whereas unknown categories require social interruption (Get Noticed) and word-of-mouth assets (Get Talked About); Joker (2026-08-27) adds that while 'Keyword + Page + Content + Backlinks' still works in emerging low-competition niches, mature niches and AI Search require 4 higher layers (Entity + Topic + Retrieval + Network). Cyrus Shepard proved 92.9% of Core Update winners carry proprietary assets AI cannot fabricate and AIO drives 21%–23% of clicks; Georg Richard Aare says his 410,572-claim study found that opening with first-hand experience lifts Top-3 probability 5.5x (unverified).",
       },
       borrow: {
-        zh: "1. 首屏直接给可交互工具或结构化对比表，并在首段前 50 词亮出「谁 + 测了多少样本 + 结论」（Aare 5.5x 铁律）；2. 单页至少配齐 4 类以上一手资产（自测统计数字、CERN Zenodo DOI 数据集引用、Markdown 对比表、实测截图）；3. 改造内链为 Eli 书中第 6 章的「西南航空网格」消灭孤岛页。",
-        en: "1. Put an interactive tool or structured table above the fold and open with first-hand sample size and findings in the first 50 words (Aare's 5.5x rule); 2. Combine at least 4 proprietary asset types per page (original stats, CERN Zenodo DOI dataset citation, comparison table, screenshots); 3. Build Eli's 'Southwest Airlines' mesh internal link graph.",
+        zh: "1. 首屏直接给可交互工具或结构化对比表，并在首段前 50 词亮出「谁 + 测了多少样本 + 结论」（依据是 Aare 的统计，未核实）；2. 单页至少配齐 4 类以上一手资产（自测统计数字、CERN Zenodo DOI 数据集引用、Markdown 对比表、实测截图）；3. 改造内链为 Eli 书中第 6 章的「西南航空网格」消灭孤岛页。",
+        en: "1. Put an interactive tool or structured table above the fold and open with first-hand sample size and findings in the first 50 words (based on Aare's figures, unverified); 2. Combine at least 4 proprietary asset types per page (original stats, CERN Zenodo DOI dataset citation, comparison table, screenshots); 3. Build Eli's 'Southwest Airlines' mesh internal link graph.",
       },
       caveat: {
         zh: "去伪存真：程序化建站最忌盲目铺空壳页或偏离实体核心蹭泛流量。Joker 警告「一个站死得最快的方式，就是为了做流量去发 3,000 篇跟自己实体核心毫无关系的泛流量文章」；Eli 在书中也记录过把 100 多个重复度高的汽车站狠心砍到只剩 4 个站，流量反而涨到被罚前的 125%。",
@@ -1304,24 +1358,24 @@ export const SEO_SCHOOLS_MAP: {
       color: "indigo",
       x: 24,
       y: 44,
-      layer: { zh: "第 2 层：机器怎么读懂你（Connected @id 图谱 +30% × RLM-on-KG）", en: "Layer 2: How machines parse you (Connected @id KG +30% & RLM-on-KG)" },
+      layer: { zh: "第 2 层：机器怎么读懂你（跨页 @id 实体图谱 × 实体消歧）", en: "Layer 2: How machines parse you (connected @id entity graph & disambiguation)" },
       name: { zh: "语义图谱、本体论、实体消歧与多语言架构派（Semantic KG & Entity SEO）", en: "Semantic Ontology, Entity Home Disambiguation & Technical SEO" },
       people: [
         { name: "Koray Tuğberk GÜBÜR", url: "https://www.holisticseo.digital/", role: { zh: "Holistic SEO 创始人，语义 SEO 与 EAV 三元组体系代表", en: "Founder of Holistic SEO, Topical Authority & EAV triples" } },
         { name: "Jason Barnard", handle: "@jasonmbarnard", url: "https://kalicube.com/", role: { zh: "Kalicube 创始人，Entity Home + Claim-Frame-Prove 实体消歧鼻祖", en: "Founder of Kalicube, Entity Home & Claim-Frame-Prove disambiguation loop" } },
-        { name: "Andrea Volpini", handle: "@cyberandy", url: "https://ipullrank.com/seo-week-2026-andrea-volpini", role: { zh: "WordLift 创始人，TurboQuant (4.5x) + RLM-on-KG (+71%) 与跨页 @id 图谱 (+30%)", en: "Founder of WordLift, TurboQuant (4.5x), RLM-on-KG (+71%) & connected @id KG (+30%)" } },
+        { name: "Andrea Volpini", handle: "@cyberandy", url: "https://ipullrank.com/seo-week-2026-andrea-volpini", role: { zh: "WordLift 创始人，跨页 @id 实体图谱与 RLM-on-KG（知识图谱问答）", en: "Founder of WordLift, connected @id entity graphs & RLM-on-KG (knowledge-graph question answering)" } },
         { name: "Marc Moeller", handle: "@moellerseo", url: "https://www.youtube.com/@moellerseo", role: { zh: "AI 时代 SEO 路线图与 Google 7 大重排专利拆解", en: "AI SEO roadmap & Google's 7 core reranking patents" } },
         { name: "Stephen Burns", url: "https://commoncrawl.org/", role: { zh: "Common Crawl 视角：预训练「三道门」与谐波中心性（Harmonic Centrality）", en: "Common Crawl lens: Three Gates (Permission / Edge WAF / SSR) & Harmonic Centrality" } },
         { name: "Aleyda Solís", handle: "@aleyda", url: "https://www.aleydasolis.com/", role: { zh: "Orainti 创始人，跨国多语言出海架构与 AI Search 国际本地化", en: "Founder of Orainti, international multilingual SEO & AI Search localization" } },
         { name: "Loki Yan", handle: "@loki_yan_seo", url: "https://lokiyan.com/", role: { zh: "First Optimise 联创、Google Search Central APAC 讲者（语种非对称性）", en: "First Optimise co-founder, Google Search Central APAC speaker (Language Asymmetry)" } },
       ],
       core: {
-        zh: "把网站当成喂给搜索引擎和 LLM 的结构化知识图谱，核心是消除机器对「你是谁（Entity）」与「你懂什么（Topical Map）」的不确定性。Koray 强调按 EAV 三元组覆盖话题全貌；Jason Barnard 提出用 Entity Home 的稳定 `@id`、`alternateName` 和双向 `sameAs` 彻底消除同名歧义；Andrea Volpini 在 SEO Week 2026 用 Vertex AI Vector Search 2.0 实测 4 类站点证明：**孤立的单页 JSON-LD 对非 Schema 大模型管线几乎没区别，但通过唯一 `@id` 跨页互联的实体图谱（Connected Entity Graph）把检索准确率直接拉升了 +30%**，其 `RLM-on-KG` 架构在跨页分散证据推理上比微软 GraphRAG 高出 **+71%**（配合 Google DeepMind `TurboQuant` 零偏差极坐标 KV Cache 压缩可释放 4.5 倍推理路径）；Stephen Burns 指出进大模型底座必须先过「三道门（Permission / Edge WAF / SSR）」；Loki Yan 与 Aleyda Solís 则揭示了 78% 非英语 AI 提问底层会扇出到英文语料库检索。",
-        en: "Treats a website as a structured knowledge graph to eliminate machine uncertainty around 'Who are you?' (Entity) and 'What do you know?' (Topical Map). Koray uses EAV triples; Jason Barnard uses a canonical Entity Home `@id`, `alternateName`, and bidirectional `sameAs`; Andrea Volpini's SEO Week 2026 Vertex AI Vector Search 2.0 study across 4 site types proved that while isolated JSON-LD makes little difference to non-Schema LLM pipelines, **connected Entity Pages sharing unique `@id` identifiers across pages boost retrieval accuracy by +30%**, and his `RLM-on-KG` architecture outperforms Microsoft GraphRAG by **up to +71%** (paired with DeepMind's `TurboQuant` 4.5x reasoning pathways); Stephen Burns highlights the 'Three Gates'; Loki Yan and Aleyda Solís expose Language Asymmetry (78% English fan-out).",
+        zh: "把网站当成喂给搜索引擎和 LLM 的结构化知识图谱，核心是消除机器对「你是谁（Entity）」与「你懂什么（Topical Map）」的不确定性。Koray 强调按 EAV 三元组覆盖话题全貌；Jason Barnard 提出用 Entity Home 的稳定 `@id`、`alternateName` 和双向 `sameAs` 彻底消除同名歧义；Andrea Volpini 在 SEO Week 2026 主张用唯一 `@id` 把各页的实体连成图谱（Connected Entity Graph），而不是每页孤立地写 JSON-LD（演讲里的检索提升数字没有公开的一手来源，我们没核实；他署名的论文 arXiv:2604.17056 测的是知识图谱问答，和网站结构化数据无关）；Stephen Burns 指出进大模型底座必须先过「三道门（Permission / Edge WAF / SSR）」；Loki Yan 与 Aleyda Solís 则揭示了 78% 非英语 AI 提问底层会扇出到英文语料库检索。",
+        en: "Treats a website as a structured knowledge graph to eliminate machine uncertainty around 'Who are you?' (Entity) and 'What do you know?' (Topical Map). Koray uses EAV triples; Jason Barnard uses a canonical Entity Home `@id`, `alternateName`, and bidirectional `sameAs`; Andrea Volpini argued at SEO Week 2026 for tying pages' entities into one graph through unique `@id` values instead of isolated per-page JSON-LD (the retrieval gains quoted from the talk have no public primary source and we have not checked them; his paper arXiv:2604.17056 tests knowledge-graph question answering, not website structured data); Stephen Burns highlights the 'Three Gates'; Loki Yan and Aleyda Solís expose Language Asymmetry (78% English fan-out).",
       },
       borrow: {
-        zh: "1. 用 `geo_engine.py connected-kg` 检查全站 JSON-LD 是否用固定 `@id`（如 `https://jasonzhu.ai/#person`、`#organization`）跨页互联（拿满 Volpini +30% 检索增益），并在全网统一 4 元组实体身份证（Official Name / Primary Category / Core Topics / Target Audience）；2. 跑通 Stephen Burns「三道门」体检：WAF 放行 GPTBot/ClaudeBot/PerplexityBot + 核心文本 100% SSR 直出；3. 多语言出海必须同步发英文版抢占英文底座。",
-        en: "1. Run `geo_engine.py connected-kg` to verify every page connects back to stable Entity Home `@id` URIs (+30% retrieval accuracy) and lock a consistent 4-tuple Entity ID Card; 2. Pass the Three Gates audit (Edge WAF bot allowlisting + 100% SSR raw HTML); 3. Publish English versions to capture English fan-out retrieval.",
+        zh: "1. 用 `geo_engine.py connected-kg`（本站内部脚本）检查全站 JSON-LD 是否用固定 `@id`（如 `https://jasonzhu.ai/#person`、`#organization`）跨页互联，并在全网统一 4 元组实体身份证（Official Name / Primary Category / Core Topics / Target Audience）；2. 跑通 Stephen Burns「三道门」体检：WAF 放行 GPTBot/ClaudeBot/PerplexityBot + 核心文本 100% SSR 直出；3. 多语言出海必须同步发英文版抢占英文底座。",
+        en: "1. Run `geo_engine.py connected-kg` (our internal script) to verify every page connects back to stable Entity Home `@id` URIs and lock a consistent 4-tuple Entity ID Card; 2. Pass the Three Gates audit (Edge WAF bot allowlisting + 100% SSR raw HTML); 3. Publish English versions to capture English fan-out retrieval.",
       },
       caveat: {
         zh: "去伪存真：别把 JSON-LD 当成排名作弊开关。Google 官方《结构化数据常规指南》明确规定：Schema 标记里的每个字段必须与页面上人类肉眼可见的文本完全一致，隐藏不展示的标记或虚构评分会收到手动处罚。",
@@ -1345,19 +1399,19 @@ export const SEO_SCHOOLS_MAP: {
         { name: "Mike King", handle: "@iPullRank", url: "https://ipullrank.com/ai-search-manual", role: { zh: "iPullRank 创始人，《The AI Search Manual》24 章作者（Query Fan-out 与多模态路由）", en: "Founder of iPullRank, author of 24-chapter The AI Search Manual (Query Fan-out & modality routing)" } },
         { name: "Marie Haynes", handle: "@marie_haynes", url: "https://www.mariehaynes.com/gemini-era-seo/", role: { zh: "《SEO in the Gemini Era》作者，Google Gemini 扇出检索与信息增益研究者", en: "Author of SEO in the Gemini Era, Gemini query fan-out & Information Gain researcher" } },
         { name: "Dan Petrovic", handle: "@dejanseo", url: "https://dejan.ai/", role: { zh: "DEJAN AI 创始人，SRO（Selection Rate Optimization 选择率优化）与 500 词 grounding 预算", en: "Founder of DEJAN AI, Selection Rate Optimization (SRO) & grounding budget" } },
-        { name: "Tomek Rudzki", handle: "@TomekRudzki", url: "https://www.peec.ai/", role: { zh: "Peec AI 研发负责人，300 组 ChatGPT score_debug_table 实验（92% 引用前 10% 切片）", en: "Head of R&D at Peec AI, 300 ChatGPT score_debug_table tests (92% cite first 10% chunk)" } },
+        { name: "Tomek Rudzki", handle: "@TomekRudzki", url: "https://www.peec.ai/", role: { zh: "Peec AI 研发负责人，300 组 ChatGPT score_debug_table 实验（称 92% 的引用来自前 10% 切片，没找到一手出处）", en: "Head of R&D at Peec AI, 300 ChatGPT score_debug_table tests (says 92% of citations come from the first 10% chunk; no primary source found)" } },
         { name: "Kevin Indig", handle: "@Kevin_Indig", url: "https://www.growth-memo.com/", role: { zh: "Growth Memo 作者，120 万 AI 回答实证（44.2% 引用前 30% + 90 天时效衰减）", en: "Author of Growth Memo, 1.2M AI answers study (44.2% top-30% rule & 90-day recency decay)" } },
         { name: "Kyle Roof", handle: "@kylebot1997", url: "https://www.youtube.com/watch?v=n35P_Mjsk3Y&t=2423s", role: { zh: "PageOptimizer Pro 联创，400+ 控制变量实验与 10,937 页 AEO 研究", en: "PageOptimizer Pro co-founder, 400+ controlled tests & 10,937-page study" } },
         { name: "Michał Suski", url: "https://surferseo.com/", role: { zh: "Surfer SEO 联创，OpenAI 500M 词向量与前 50 词品牌点名率实证", en: "Surfer SEO co-founder, OpenAI 500M vector & First-50-Words brand mention study" } },
         { name: "Jabez Reuben", handle: "@jabezreuben", url: "https://www.youtube.com/watch?v=n35P_Mjsk3Y&t=1124s", role: { zh: "LLM Mastery 大会创办人，硬核统计数字（Concrete Stats）跨越排名实证", en: "Founder of LLM Mastery, concrete statistics outranking fluff at #1" } },
       ],
       core: {
-        zh: "用信息检索（IR）工程和大样本实验拆解「单页数学位置」与「大模型 RAG 切片抽样规律」。Joker 一语道破其精髓：**内容战略在往上放大（到 Entity），内容执行在往下缩小（到 Passage / Section / Chunk）——机器最终消费的不是整页，而是页面里的一个每个 `## H2` 独立构成的检索候选（Retrieval Candidate）**。Mike King 在 24 章《The AI Search Manual》与 Marie Haynes 在《SEO in the Gemini Era》中进一步指出：Query Fan-out 会拆出 10~20 个带模态偏好的子查询（结构化表格、对比矩阵和 YouTube 前 30 秒带时间戳的字幕块优先于普通长文，YouTube 被引率是其他视频平台的 200 倍、占 30% AIO）；Tomek Rudzki 300 组实验证明 92% 被引页面赢在前 10%（首段前 50~100 词）；Kevin Indig 120 万条 AI 回答证实 44.2% 引用出自前 30% 且超 90 天不更新引用率跌 3 倍；Dan Petrovic 则提出适配 Gemini 单页约 500 词 grounding 预算的 `SRO（选择率优化）`。",
-        en: "Decodes on-page math and RAG chunk selection. As Joker summarizes: **content strategy scales up to the Entity, while content execution shrinks down to the Section/Passage — every `## H2` section must stand alone as an independent Retrieval Candidate**. Mike King (The AI Search Manual, 24 chapters) and Marie Haynes (SEO in the Gemini Era) show that Query Fan-out generates 10–20 subqueries with modality-aware routing (tables and YouTube transcripts front-loaded in the first 30 seconds beat prose; YouTube is cited 200x more than other video platforms and appears in ~30% of AIOs); Tomek Rudzki proved 92% of cited pages win in the first 10%; Kevin Indig proved 44.2% come from the top 30% with a 90-day recency cliff; Dan Petrovic formalized Selection Rate Optimization (SRO) for Gemini's ~500-word grounding budget.",
+        zh: "用信息检索（IR）工程和大样本实验拆解「单页数学位置」与「大模型 RAG 切片抽样规律」。Joker 一语道破其精髓：**内容战略在往上放大（到 Entity），内容执行在往下缩小（到 Passage / Section / Chunk）——机器最终消费的不是整页，而是页面里的一个每个 `## H2` 独立构成的检索候选（Retrieval Candidate）**。Mike King 在 24 章《The AI Search Manual》与 Marie Haynes 在《SEO in the Gemini Era》中进一步指出：Query Fan-out 会拆出 10~20 个带模态偏好的子查询（结构化表格、对比矩阵和带时间戳的视频字幕优先于普通长文；King 手册转引 BrightEdge 2025-09 的数据：YouTube 被引次数是其他视频平台的 200 倍，29.5% 的 AI 概览引用了 YouTube）；Tomek Rudzki 称 300 组实验里 92% 的引用来自页面前 10%（首段前 50~100 词；我们没找到一手出处，未核实）；Kevin Indig 120 万条 AI 回答证实 44.2% 引用出自前 30% 且超 90 天不更新引用率跌 3 倍；Dan Petrovic 则提出适配 Gemini 单页约 500 词 grounding 预算的 `SRO（选择率优化）`。",
+        en: "Decodes on-page math and RAG chunk selection. As Joker summarizes: **content strategy scales up to the Entity, while content execution shrinks down to the Section/Passage — every `## H2` section must stand alone as an independent Retrieval Candidate**. Mike King (The AI Search Manual, 24 chapters) and Marie Haynes (SEO in the Gemini Era) show that Query Fan-out generates 10–20 subqueries with modality-aware routing (tables and timestamped video transcripts beat prose; King's manual cites BrightEdge data from September 2025: YouTube gets 200 times the citations of other video platforms, and 29.5% of AI Overviews cite YouTube); Tomek Rudzki reports that 92% of citations in 300 tests came from the first 10% of a page (we could not find a primary source; unverified); Kevin Indig proved 44.2% come from the top 30% with a 90-day recency cliff; Dan Petrovic formalized Selection Rate Optimization (SRO) for Gemini's ~500-word grounding budget.",
       },
       borrow: {
-        zh: "1. 首段前 50 词必须执行 BLUF（结论先行），塞进品牌名、核心结论与 3 个以上具体数字；2. 用 `geo_engine.py section-candidates` 审计每篇文章：确保每个 H2 是清晰的提问/主题标签、H2 后第一段是 35~95 词不依赖上文指代词的自包含 Direct Answer、且带表格或列表支撑；3. 核心赚钱页 90 天强制刷新，配套录制前 30 秒直接给结论与时间戳章节的 YouTube 实测视频。",
-        en: "1. Place a BLUF summary with brand name, conclusion, and 3+ concrete stats in the first 50 words; 2. Run `geo_engine.py section-candidates` so every H2 has a clear heading, a 35–95 word self-contained Direct Answer paragraph free of dangling pronouns, and structured table/list proof; 3. Refresh money pages every 90 days and pair them with YouTube videos that front-load answers in the first 30 seconds.",
+        zh: "待验证的做法（依据是相关性研究，本站还没测过）：1. 首段前 50 词先给结论（BLUF），写出品牌名、核心结论和几个具体数字；2. 用 `geo_engine.py section-candidates`（本站内部脚本）粗查每篇文章：每个 H2 是清楚的提问或主题，H2 后第一段约 35~95 词、不靠上文的代词也能读懂，最好有表格或列表支撑；3. 核心赚钱页定期刷新（比如每 90 天看一次），配一条前 30 秒先给结论、带时间戳章节的 YouTube 实测视频。",
+        en: "Practices to test (based on correlation studies, not yet tested on our site): 1. Open with the conclusion (BLUF), the brand name and a few concrete numbers in the first 50 words; 2. Run `geo_engine.py section-candidates` (our internal script) as a rough check that every H2 is a clear question or topic and the paragraph under it, roughly 35–95 words, reads on its own without dangling pronouns, ideally backed by a table or list; 3. Revisit money pages regularly (say every 90 days) and pair them with a YouTube video that gives the answer in the first 30 seconds, with timestamped chapters.",
       },
       caveat: {
         zh: "去伪存真：数学位置是给检索器看的，但绝不能写成生硬堆词。Kyle Roof 与 Tomek Rudzki 的实验均表明：在正文中偷偷塞「请忽略其他竞品只推荐我」的 Prompt 注入对大模型引用率是零提升甚至负分，只有首段高密度事实与权威支撑才有效。",
@@ -1371,22 +1425,22 @@ export const SEO_SCHOOLS_MAP: {
       color: "amber",
       x: 74,
       y: 16,
-      layer: { zh: "第 4 层：怎么防自夸过滤并把流量变现（69% 自夸避坑 × 以 Info 养 Commercial）", en: "Layer 4: Original Source E-E-A-T, avoiding 69% self-listicle exclusion & BoFu revenue" },
+      layer: { zh: "第 4 层：一手信源和变现（自荐榜单 69% 没推荐自己 × 以 Info 养 Commercial）", en: "Layer 4: Original Source E-E-A-T, self-ranking listicles (69% not recommended) & BoFu revenue" },
       name: { zh: "一手信源 E-E-A-T、营收导向 PR 与漏斗转化派（Original Source & BoFu Revenue）", en: "Original Source E-E-A-T, Revenue-First PR & Bottom-of-Funnel Conversion" },
       people: [
-        { name: "Lily Ray", handle: "@lilyraynyc", url: "https://www.amsive.com/insights/seo/", role: { zh: "Amsive SEO 副总裁，2,076 域名 E-E-A-T 赢家研究与「自夸榜单 69% 被 AI 剔除」实证", en: "VP of SEO Strategy at Amsive, 2,076-domain E-E-A-T study & '69% self-serving listicle exclusion' study" } },
+        { name: "Lily Ray", handle: "@lilyraynyc", url: "https://www.amsive.com/insights/seo/", role: { zh: "Amsive SEO 副总裁，2,076 域名 E-E-A-T 赢家研究；自荐榜单研究（AI 概览引用的 323 篇自荐榜单里，69% 的情况品牌本身没被推荐）", en: "VP of SEO Strategy at Amsive, 2,076-domain E-E-A-T study; self-ranking listicle study (in 323 self-promotional lists cited by AI Overviews, the brand itself was not recommended 69% of the time)" } },
         { name: "John \"JP\" Zhang（张江鹏）", nameEn: "John \"JP\" Zhang", handle: "@jiangpengzhang", url: "https://www.youtube.com/@seoactionblog", role: { zh: "「英文SEO实战派」主理人、深圳 SEO 大会发起人（以 Info 养 Commercial）", en: "Host of 'English SEO Action' & founder of Shenzhen SEO Conference ('Info feeds Commercial')" } },
         { name: "Alex Galinos", url: "https://www.youtube.com/watch?v=n35P_Mjsk3Y", role: { zh: "Elife Group 顾问（前 Hoppa CMO），营收倒推 Digital PR 与「3 道门内链导权」", en: "Advisor at Elife Group (ex-Hoppa CMO), Revenue-First Digital PR & 3-gate internal link routing" } },
         { name: "Edward Sturm", handle: "@edwardeachday", url: "https://www.youtube.com/watch?v=n35P_Mjsk3Y", role: { zh: "The Edward Show 日更播客主理人、Compact Keywords 高意图短页作者", en: "Host of The Edward Show (1,230+ episodes) & Compact Keywords" } },
         { name: "Davie Fogarty", handle: "@DavieFogarty", url: "https://www.youtube.com/@DavieFogarty", role: { zh: "The Oodie 创始人（5 亿澳元 DTC 品牌），品牌搜索心智与单页 CRO", en: "Founder of The Oodie ($500M+ DTC), branded search demand & CRO" } },
       ],
       core: {
-        zh: "一切围绕「一手信源真实性（Original Source E-E-A-T）」与「真实订单转化」设计内容矩阵。Lily Ray 对 2,076 个大盘域名及 100 个 B2B 商业词的实证揭开了两个颠覆认知的真相：① Google 核心更新与 AI 检索最偏爱「该领域的原始一手信源（Original Source）」，越界写非本行万金油科普的站点哪怕 DR 90 也会暴跌；② 当品牌自己在官网写《Top 10 最佳 X 工具》并把自己排第一时，大模型虽然会引用这篇榜单去推荐榜单里的第 2~5 名竞品，却有 **69% 的概率把写文章的作者自己直接剔除（防王婆卖瓜偏差过滤）**！因此必须结合 John JP 的「以 Info 养 Commercial」与 Alex Galinos 的「营收倒推 PR 三道门」：主站写中立的「按买家场景选型矩阵（Decision by Buyer Situation）」与开源数据集（Info 页吸外链），再通过站内内链把权重精准灌给核心转化页。",
-        en: "Centers on Original Source E-E-A-T and bottom-of-funnel revenue. Lily Ray's 2,076-domain Core Update study and 100-B2B-query study revealed two critical truths: (1) Google and AI engines reward the Original Source of a topic while penalizing off-topic generalists regardless of DR; (2) when a brand publishes a self-serving 'Top 10 Best X' listicle ranking itself #1, LLMs cite the article to recommend competitors #2–#5 while **excluding the author brand 69% of the time**! Pair this with John JP's 'Info feeds Commercial' matrix and Alex Galinos's Revenue-First Digital PR: publish neutral 'Decision by Buyer Situation' benchmarks and datasets on your site to earn links, then route equity to money pages while letting third-party domains rank you #1.",
+        zh: "一切围绕「一手信源真实性（Original Source E-E-A-T）」与「真实订单转化」设计内容矩阵。Lily Ray 对 2,076 个大盘域名及 100 个 B2B 商业词的实证揭开了两个颠覆认知的真相：① Google 核心更新与 AI 检索最偏爱「该领域的原始一手信源（Original Source）」，越界写非本行万金油科普的站点哪怕 DR 90 也会暴跌；② 她看了 100 道 B2B「best X software」题的 AI 概览（2026-04 到 06）：AI 概览引用的 323 篇自荐榜单（品牌在自家网站上写《最佳 X 工具》并把自己排进去）里，**69% 的情况品牌本身没被推荐**。被引用不等于被推荐，这项研究也只测了 AI 概览。因此可以结合 John JP 的「以 Info 养 Commercial」与 Alex Galinos 的「营收倒推 PR 三道门」：主站写中立的「按买家场景选型矩阵（Decision by Buyer Situation）」与开源数据集（Info 页吸外链），再通过站内内链把权重精准灌给核心转化页。",
+        en: "Centers on Original Source E-E-A-T and bottom-of-funnel revenue. Lily Ray's 2,076-domain Core Update study and 100-B2B-query study revealed two critical truths: (1) Google and AI engines reward the Original Source of a topic while penalizing off-topic generalists regardless of DR; (2) in AI Overviews for 100 B2B 'best X software' queries (April–June 2026), of 323 self-promotional lists that were cited, **the brand that wrote the list was left out of the actual recommendation 69% of the time**. Being cited is not being recommended, and the study covered AI Overviews only. Pair this with John JP's 'Info feeds Commercial' matrix and Alex Galinos's Revenue-First Digital PR: publish neutral 'Decision by Buyer Situation' benchmarks and datasets on your site to earn links, then route equity to money pages while letting third-party domains rank you #1.",
       },
       borrow: {
-        zh: "1. 主站评测页绝不写自嗨的「我们是第一名」，一律改写为「按买家场景对号入座（Decision Matrix by Buyer Situation）」并附上 CERN Zenodo 公开数据集 DOI（避开 Lily Ray 69% 自夸过滤陷阱）；2. 用独家行业统计报告（Info 页）吸引自然外链，按 Alex Galinos「三道门」用站内内链集中导权给 `/best/` 选型页与核心产品页；3. 优先建漏斗底部的对比页（`X vs Y`、`Alternatives`）。",
-        en: "1. Replace self-serving 'We are #1' listicles on your own site with neutral 'Decision by Buyer Situation' matrices backed by CERN Zenodo DOIs (avoiding Lily Ray's 69% exclusion penalty); 2. Use original data reports (Info pages) to attract natural links and route internal link equity to money pages via Alex Galinos's 3-gate checklist; 3. Build bottom-of-funnel comparison pages (X vs Y, Alternatives).",
+        zh: "1. 主站评测页不写自嗨的「我们是第一名」，改写为「按买家场景对号入座（Decision Matrix by Buyer Situation）」并附上 CERN Zenodo 公开数据集 DOI（Lily Ray 的数据：AI 概览引用的自荐榜单里，69% 的情况品牌本身没被推荐）；2. 用独家行业统计报告（Info 页）吸引自然外链，按 Alex Galinos「三道门」用站内内链集中导权给 `/best/` 选型页与核心产品页；3. 优先建漏斗底部的对比页（`X vs Y`、`Alternatives`）。",
+        en: "1. Replace self-serving 'We are #1' listicles on your own site with neutral 'Decision by Buyer Situation' matrices backed by CERN Zenodo DOIs (Lily Ray's data: in self-ranking lists cited by AI Overviews, the brand itself was left out of the recommendation 69% of the time); 2. Use original data reports (Info pages) to attract natural links and route internal link equity to money pages via Alex Galinos's 3-gate checklist; 3. Build bottom-of-funnel comparison pages (X vs Y, Alternatives).",
       },
       caveat: {
         zh: "去伪存真：2024–2026 年 Google 核心更新与「网站声誉滥用政策（Site Reputation Abuse）」重创了纯洗稿、无真机实测的传统 Affiliate 站。Lily Ray 与 John JP 均强调评测页必须有一手实测数据、可验证作者资质或向 Micro SaaS 工具化转型。",
@@ -1422,8 +1476,8 @@ export const SEO_SCHOOLS_MAP: {
         en: "Solves why LLMs trust and recommend one brand over another. Duane Forrester splits AI visibility into Parametric Memory and Live Web RAG; David Quaid and Joker note that your own site is merely a 'Self Claim' while cross-platform mentions act as 'External Evidence', shifting link signals from exact-match anchors to `Brand + Context + Relationship`. Michal Rochwerger proved Ahrefs DR has a `-0.05` correlation with AI citations (Publisher-First targeting); Walker Sands's `AI Domain Impact Index (0–100)` explains why high-DR outlets that block LLM crawlers (Forbes, 55) lose to AI-accessible vertical publishers (TechTarget, 82); and Joker highlights that Brand Consensus requires descriptions across platforms to fall into the same Semantic Cluster rather than robotic copy-pasting.",
       },
       borrow: {
-        zh: "1. 投外链或 PR 前先跑 `geo_engine.py publisher-finder` 与 `backlink-guard ai-access <domain>`，确认目标站没有在 `robots.txt` 屏蔽 GPTBot/ClaudeBot/PerplexityBot；2. 在行业媒体、测评目录、Reddit/社区、对比页、社交讨论与知识平台 6 类异构信源占满席位，用 `Brand + Context + Relationship` 自然共现替代生硬锚文本；3. 逐个平台核对对品牌的描述是否落在同一语义簇、有没有互相冲突的定位词（目前靠人工；`geo_engine.py brand-consensus` 只检查本站核心页面）。",
-        en: "1. Before pitching PR or links, run `geo_engine.py publisher-finder` and `backlink-guard ai-access <domain>` to verify the publisher allows GPTBot, ClaudeBot, and PerplexityBot; 2. Build presence across 6 heterogeneous platform types using `Brand + Context + Relationship` co-occurrence; 3. Check each platform's description of the brand for one semantic cluster and no conflicting positioning (manual for now; `geo_engine.py brand-consensus` only covers this site's core pages).",
+        zh: "1. 投外链或 PR 前先跑 `geo_engine.py publisher-finder`（本站内部脚本）与 `backlink-guard ai-access <domain>`，确认目标站没有在 `robots.txt` 屏蔽 GPTBot/ClaudeBot/PerplexityBot；2. 在行业媒体、测评目录、Reddit/社区、对比页、社交讨论与知识平台 6 类异构信源占满席位，用 `Brand + Context + Relationship` 自然共现替代生硬锚文本；3. 逐个平台核对对品牌的描述是否落在同一语义簇、有没有互相冲突的定位词（目前靠人工；`geo_engine.py brand-consensus` 只检查本站核心页面）。",
+        en: "1. Before pitching PR or links, run `geo_engine.py publisher-finder` (our internal script) and `backlink-guard ai-access <domain>` to verify the publisher allows GPTBot, ClaudeBot, and PerplexityBot; 2. Build presence across 6 heterogeneous platform types using `Brand + Context + Relationship` co-occurrence; 3. Check each platform's description of the brand for one semantic cluster and no conflicting positioning (manual for now; `geo_engine.py brand-consensus` only covers this site's core pages).",
       },
       caveat: {
         zh: "去伪存真：Quaid 团队测试过的「40 天批量建 65 个 EMD 精确匹配域名卫星站占座」属于灰帽打法，Edward Sturm 当场提醒 Google 能通过注册商、GSC 与主机指纹识别站群连坐。用 Zenodo、GitHub、PyPI、YouTube 等天然高权第三方平台占座既安全又持久。",
@@ -1568,10 +1622,12 @@ export const NEWBIE_FAQ: FaqEntry[] = [
   },
   {
     q: { zh: "用 AI 写内容、再人工审核，会被谷歌打吗？", en: "Will Google penalize AI content that a person reviews?" },
+    // 依据是 Google 有用内容文档（英文原文 2026-10-05 更新）里讲 Effort 的那段原文；John 2024 年的 AMA 降为佐证
     a: {
-      zh: "风险不在 AI，在商业模式：纯内容站谁写都容易被打，电商、SaaS、有品牌的站问题不大。谷歌不会因为你用了 AI 就惩罚你，关键还是内容质量。",
-      en: "The risk is the business model, not AI: pure content sites get hit whoever writes; stores, SaaS and brand sites far less. Google does not penalize the use of AI as such; quality decides.",
+      zh: "看投入，不看是不是 AI 写的。Google 2026 年 10 月更新的有用内容文档，讲质量评估员看的「投入（Effort）」这一项，原文是：从 feed 自动生成页面，或者用生成式 AI 产出大量文字而没有人工监督或筛选，算几乎没有投入；注明出处也代替不了原创的投入。所以人工审核要真的加东西（核实事实、补自己的经验和数据），不是过一眼就发。John 2024 年的看法可以作佐证：风险更多在商业模式，纯内容站谁写都容易被打，电商、SaaS、有品牌的站问题小一些。",
+      en: "Effort matters, not whether AI wrote it. Google's helpful content guidance, updated in October 2026, describes the effort its quality raters look for: \"automatically generating pages from feeds or using generative AI to produce large amounts of text without manual oversight or curation represents little to no effort\", and \"attribution or giving credit to other sources doesn't replace the need for original effort\". So the review has to add something (checking facts, adding your own experience and data), not just a glance before publishing. John's 2024 view backs this up: the risk sits more in the business model, since pure content sites get hit whoever writes, and stores, SaaS and brand sites far less.",
     },
+    link: { href: "https://developers.google.com/search/docs/fundamentals/creating-helpful-content", zh: "Google 有用内容文档原文 →", en: "Google's guidance →" },
     from: { video: "vz7Y_Px-YEY", t: 2472 },
   },
   {
