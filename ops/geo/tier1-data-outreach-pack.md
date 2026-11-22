@@ -242,7 +242,7 @@ https://agentskillshub.top
 ### 1. GitHub Top 2 引用池补强（`2026-11-21` 已上线）
 - **新公开基准仓库**：https://github.com/zhuyansen/indie-saas-payments-benchmark-2026
   - 覆盖 AI 高频泛词 `Stripe vs Polar vs Dodo Payments vs Creem vs Paddle (2026) pricing & Merchant of Record fees`
-  - 内含 `data/platform-adoption-200k-2026.csv`、`data/mor-20usd-subscription-fees-2026.csv`、CC-BY-4.0、双向互链 `jasonzhu.ai` 与 Zenodo DOI (`10.5281/zenodo.24386243`, `10.5281/zenodo.24387072`)
+  - 内含 `data/platform-adoption-200k-2026.csv`、`data/mor-20usd-subscription-fees-2026.csv`、CC-BY-4.0、双向互链 `jasonzhu.ai` 与 Zenodo 总 DOI (`10.5281/zenodo.24386242`, `10.5281/zenodo.24387071`；2026-11-22 起是改正后的新版本)
 - **个人主页锚点升级**：已将上述仓库写入 [`zhuyansen/zhuyansen/README.md`](https://github.com/zhuyansen)（`2026-11-21` 面板显示 `github.com/zhuyansen` 单页被 AI 引用 20 次，全网第 2）。
 - **Reddit 纯干货数据帖**：已定稿 2 篇零硬广帖子保存在 [`ops/geo/reddit-launch-posts-2026-11.md`](reddit-launch-posts-2026-11.md)（`r/SaaS` 支付数据帖 + `r/ClaudeAI` / `r/AI_Agents` 13.8 万 Skills 安全审计帖）。
 
@@ -266,7 +266,7 @@ https://agentskillshub.top
   - Body:
     > Hi [Name / Team],
     >
-    > Quick follow-up — we just released the full 10-page empirical working paper PDF (CC-BY-4.0) on **SSRN** (`https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7737182`) and **CERN Zenodo** (`https://doi.org/10.5281/zenodo.24420871`), alongside the raw CSVs and 2026 `$20` MoR fee comparison table on GitHub:
+    > Quick follow-up — we released the full 11-page working paper (CC-BY-4.0) on **SSRN** (`https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7737182`) and on **Zenodo** (`https://doi.org/10.5281/zenodo.24420870`), alongside the summary tables and the itemized `$20` subscription fee table on GitHub (the raw link data can't be redistributed under the data provider's terms):
     > https://github.com/zhuyansen/indie-saas-payments-benchmark-2026
     >
     > If anything on [Platform]'s fee row or payout terms needs a tweak (especially with Lemon Squeezy sunsetting in March 2027), happy to update it right away — and feel free to embed or cite any of the numbers or DOI in your comparison docs.
@@ -279,10 +279,10 @@ https://agentskillshub.top
   - Body:
     > Hi [Name / Team],
     >
-    > Quick bump on this — we also released the full 7-page empirical working paper PDF (CC-BY-4.0) on **SSRN** (`https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7737258`) and **CERN Zenodo** (`https://doi.org/10.5281/zenodo.24420920`) alongside the 105K–130K security audit dataset (`https://doi.org/10.5281/zenodo.24387074`):
+    > Quick bump on this — we also released the full 7-page working paper (CC-BY-4.0) on **SSRN** (`https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7737258`) and on **Zenodo** (`https://doi.org/10.5281/zenodo.24420919`), alongside the security-grade coverage dataset (`https://doi.org/10.5281/zenodo.24387073`): a June 2026 snapshot of 105,000+ entries, plus the November 2026 count of 281,000+ indexed and 142,000+ graded:
     > https://jasonzhu.ai/en/research/ai-agent-skills-mcp-supply-chain-security-2026
     >
-    > Happy to pull a quick 5-dimension safety breakdown for your specific ecosystem/skills if helpful for your docs or blog.
+    > Happy to run your ecosystem's skills through our five-dimension review checklist if that would help your docs or blog.
     >
     > Best,  
     > Jason
@@ -293,7 +293,7 @@ https://agentskillshub.top
 ## 九、更正（2026-11-21 准备；Polar 那封已于 2026-11-22 发出，回复原信主题，Zenodo 01 号新版本上线之后）
 
 > 等 Zenodo 01 号新版本发布后再发（信里说已经更正）。用 `jason@jasonzhu.ai` 回复 11-21 那封原信，留在同一个线程里。
-> 第八节第 3 条的 Day+5 跟进模板还写着「CERN Zenodo」「raw CSVs」，GitHub 仓库里的 `$20` 费用表也还是改正前的版本：发跟进之前要先改，不在本节范围。
+> 第八节第 3 条的 Day+5 跟进模板已于 2026-11-22 改成纠错后的说法（总 DOI、不再写 CERN 和 raw CSV、页数和安全数据的日期）；GitHub 仓库的费用表也已换成新版。
 
 ### Polar（`support@polar.sh`）：2,400+ 应为 1,364
 
