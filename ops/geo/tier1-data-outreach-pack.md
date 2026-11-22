@@ -287,3 +287,25 @@ https://agentskillshub.top
     > Best,  
     > Jason
 
+
+---
+
+## 九、待发更正（2026-11-21 准备，**未发**）
+
+> 等 Zenodo 01 号新版本发布后再发（信里说已经更正）。用 `jason@jasonzhu.ai` 回复 11-21 那封原信，留在同一个线程里。
+> 第八节第 3 条的 Day+5 跟进模板还写着「CERN Zenodo」「raw CSVs」，GitHub 仓库里的 `$20` 费用表也还是改正前的版本：发跟进之前要先改，不在本节范围。
+
+### Polar（`support@polar.sh`）：2,400+ 应为 1,364
+
+- Subject: `Re: [原主题]`
+- Body:
+  > Hi Polar team,
+  >
+  > A correction to my note of November 21. I wrote that we tracked "2,400+ new sellers in 2026 through mid-October" on Polar. The right figure, from the report itself, is 1,364 new Polar sellers in 2026 up to October 15 (305 in 2025 and 55 in 2024). The 2,400 came from a summary table on Zenodo that did not match the report; that table has now been replaced with a corrected version: https://doi.org/10.5281/zenodo.24386242
+  >
+  > The shares I quoted are unchanged: among new Polar sellers since 2025, 58% sell software and 27% sell AI products, against 7% AI on Stripe.
+  >
+  > Sorry for the error.
+  >
+  > Jason Zhu
+  > https://jasonzhu.ai/en/blog/indie-payments-report-2026
