@@ -1,5 +1,7 @@
 # Tier-1 免费数据反向 Outreach & Tier-2 多模态分发一键执行包
 
+> **部分数字和博客原表对不上（见调研模块 0），核正前不要再引用。**
+> **本站不买 dofollow 外链（2026-10-06 起），付费曝光一律 `rel="sponsored"`**：第五节两处买插链的建议标了「**不做**」。收件人的个人邮箱和 Resend 发送 ID 不在公开仓库里记，要查去 Resend 后台（2026-11-21 改）。
 > **创建日期**：`2026-11-21`
 > **核心策略**：用已经签发 **CERN Zenodo 永久 DOI** 的一手实证数据集（Tier-0），零成本撬动高权重行业官网博客/媒体/榜单（Tier-1）与高召回社区/视频节点（Tier-2）。
 > **DiD 防污染红线（截至 `2026-12-15`）**：本包内所有外联靶点**严禁触碰** `agentskillshub.top` 的 16 道空白对照题与 `jasonzhu.ai` 的 6 道空白对照题（`prompts-*` / `learn-*` / `data-ai-money-map`）。
@@ -8,12 +10,12 @@
 
 ## 一、`jasonzhu.ai` Tier-1 免费数据反向 Outreach（4 家支付平台官网博客/创始人）
 
-**为什么转化率极高？** 在我们的 20 万收款链接研究中，**Dodo Payments（29% AI 卖家 / 71% 软件卖家）、Polar（27% / 58%）、Creem（24% / 65%）、Waffo（26% / 68% & \$1.28 极低实扣）** 的表现大幅领先 Stripe（仅 7% AI / 9% 软件），且数据已归档 **CERN Zenodo DOI**——对他们而言，这是求之不得的第三方中立背书，极易换到**官方博客 / 对比页 / X 官号转发**的顶级 Tier-1 外链与品牌提及。
+**为什么转化率极高？** 在我们的 20 万收款链接研究中，**Dodo Payments（29% AI 卖家 / 71% 软件卖家）、Polar（27% / 58%）、Creem（24% / 65%）、Waffo（26% / 68% & \$1.28 极低实扣）** 的表现大幅领先 Stripe（仅 7% AI / 9% 软件），且数据已归档 **CERN Zenodo DOI**——对他们的内容团队可能有用，有机会换到**官方博客 / 对比页 / X 官号转发**的引用和品牌提及。
 
 ### 1. Dodo Payments（最优先：数据第 1 名）
 - **核实渠道**：
-  - 创始人邮箱：`rishabh@dodopayments.com`（Rishabh Goel, Co-Founder & CEO）、`ayush@dodopayments.com`（Ayush Agarwal, CPTO）
-  - X：`@garGoel91`、`@dodopayments`
+  - 收件人：Dodo 创始人（CEO）、Dodo 联合创始人（CPTO），发的是个人邮箱
+  - X：Dodo 创始人的个人号、`@dodopayments`
   - 联系页：`https://dodopayments.com/contact`
 - **邮件主题**：`Data point for your blog: Dodo Payments leads AI SaaS seller share (29% vs Stripe 7%) in our 200k checkout study`
 - **正文（直接复制发送）**：
@@ -39,7 +41,7 @@ Founder, JasonZhu.AI (https://jasonzhu.ai)
 
 ### 2. Polar（高权威开源开发圈，DR 高、AI 检索权重极强）
 - **核实渠道**：
-  - X DM / 公开 @：`@birk`（Birk Jernström, Founder & CEO）、`@polar_sh`
+  - X DM / 公开 @：Polar 创始人的个人号、`@polar_sh`
   - 邮箱：`support@polar.sh`（转内容/营销团队）
 - **X DM / 邮件模板**：
 ```text
@@ -55,7 +57,7 @@ Sharing in case your team wants an independent, citable dataset for Polar's blog
 ### 3. Creem（出海独立开发者高重合度）
 - **核实渠道**：
   - 邮箱：`contact@creem.io`、`info@creem.io`
-  - X：`@sudoferraz`（Gabriel Ferraz, Co-Founder & CEO）、`@creem_io`
+  - X：Creem 创始人的个人号、`@creem_io`
 - **邮件主题**：`200k Indie Checkout Study: Creem at 65% software / 24% AI sellers (open Zenodo dataset)`
 - **正文**：
 ```text
@@ -77,7 +79,7 @@ https://jasonzhu.ai
 ### 4. Waffo（$20 实测标准费率全场最低）
 - **核实渠道**：
   - 官网联系表单（选 Press & Media / Partnerships）：`https://waffo.com` Contact 页
-  - 公开商务邮箱：`eric.chu@waffo.com` / LinkedIn 联系 Frankie Fan (CEO) 或 Steve Shen (CBO)
+  - 收件人：Waffo 商务（个人邮箱）；或在 LinkedIn 联系 Waffo 的 CEO、CBO
 - **邮件 / 表单正文**：
 ```text
 Hi Waffo team,
@@ -107,7 +109,7 @@ Agent Skills Hub (agentskillshub.top) — Open-source directory and pre-install 
 ```
 
 ### 2. `agensi.io`（Panel B #2 · 3 引擎共 7 次引用 · 跟进 11-06 邮件）
-- **核实渠道**：`info@agensi.io`（Founder & CEO Samuel Rose）
+- **核实渠道**：`info@agensi.io`（Agensi 创始人）
 - **邮件主题**：`Re: Adding Agent Skills Hub (agentskillshub.top) to your 2026 AI Agent Skills Marketplaces guide`
 - **正文**：
 ```text
@@ -153,7 +155,7 @@ https://agentskillshub.top
 
 ### 5. `itechguides.com`（Panel A #1 · 独覆盖 `+10` 题）
 - **核实渠道**：`contact@yorkermedia.com`（母公司 Yorker Media，支持编辑合作/目录收录/赞助位）
-- **策略建议**：先以「提供 43 规则安全审计数据 & 免费 `/analyzer/` 预检工具」发免费编辑推荐信；若对方回复仅走 Yorker Media 商业收录报价，再结合第 3 步 `\$150–\$400` 试水预算评估单页流量与 `robots.txt` AI 放行度后再决定是否付费。
+- **策略建议**：先以「提供 43 规则安全审计数据 & 免费 `/analyzer/` 预检工具」发免费编辑推荐信；若对方回复仅走 Yorker Media 商业收录报价，再结合第 3 步 `\$150–\$400` 试水预算评估单页流量与 `robots.txt` AI 放行度后再决定是否付费。（付费收录只在对方标 `rel="sponsored"` 时才考虑，买带排名权重的链接位**不做**；这家 11-21 报的是 `\$149`/月租位，已婉拒。）
 
 ---
 
@@ -195,7 +197,8 @@ https://agentskillshub.top
 - **最值钱的首页突破口**：
   - `skills repo`（`vol=260, KD=55`）已在 **第 7 名**（指向 `/`）
   - `awesome-agent skills github` / `awesome-agent-skills github` / `github awesome skills` 卡在 **第 17–18 名**
-- **试水建议（INSERT.LINK / Collaborator.pro 买 3 条，预算 `\$120–\$250`）**：
+- **试水建议（INSERT.LINK / Collaborator.pro 买 3 条，预算 `\$120–\$250`）——不做**：
+  - **不做** · 买插链违反 Google 垃圾政策的「链接垃圾」（买卖传递排名的链接），本站 2026-10-06 起不做。下面保留原文，只当了解。
   - 精准筛选**已排首页、放行 AI 爬虫的 Claude Code / MCP / AI Coding 工具对比页**，插链指向 `https://agentskillshub.top/`（锚文本用自然品牌/数据描述：`Agent Skills Hub (agentskillshub.top)`、`open-source AI agent skills security index`）与 `https://agentskillshub.top/how-we-grade/`。
   - *注：`/best/ppt-presentation/`（`guizang ppt skill` pos 18、`anthropic pptx skill` pos 24）属于 GIGALinks DiD 空白对照组，`2026-12-15` 前先不单独投外链，实验验收后再补链冲前 3。*
 
@@ -204,24 +207,26 @@ https://agentskillshub.top
 - **试水建议**：
   1. 先发本文第一节的 **4 封零成本数据反向 Outreach**（Dodo / Polar / Creem / Waffo），拿行业官网 Tier-1 链；
   2. 同步发 `dev.to` + Reddit 实证帖（先抢 Perplexity/ChatGPT 2 周内召回）；
-  3. 若追加 `\$150–\$300` 小预算，在 **INSERT.LINK / Collaborator.pro** 精选 **3–4 个已排首页的「Stripe alternatives / Merchant of Record / Lemon Squeezy migration」SaaS 博客对比页**，以引用 `200,000 Indie Checkout Links Study` 为理由精准插链指向 `/en/blog/indie-payments-report-2026` 和 `/en/blog/choose-payment-platform-2026`。
+  3. **不做** · 买插链违反「链接垃圾」，本站 2026-10-06 起不做。原文：若追加 `\$150–\$300` 小预算，在 **INSERT.LINK / Collaborator.pro** 精选 **3–4 个已排首页的「Stripe alternatives / Merchant of Record / Lemon Squeezy migration」SaaS 博客对比页**，以引用 `200,000 Indie Checkout Links Study` 为理由精准插链指向 `/en/blog/indie-payments-report-2026` 和 `/en/blog/choose-payment-platform-2026`。
 
 ---
 
 ## 六、外发邮件审计日志（`2026-11-21 11:40 UTC` · Resend 8/8 `SENT`）
 
-> 统一设置 `reply_to: m17551076169@gmail.com`（因 `jasonzhu.ai` 尚未配置 MX 收信记录，避免对方回复退信）。
+> 统一把 `reply_to` 设成了 Jason 的个人邮箱：当时 `jasonzhu.ai` 还没有 MX 收信记录，怕对方回复退信。2026-11-21 晚些时候已给 `jasonzhu.ai` 配了邮件转发（MX 指向 Spaceship 的转发服务器），以后发信用 `jason@jasonzhu.ai` 收回复就行。
 
-| 站点 / 靶点 | 收件邮箱 | 发件身份 | 状态 | Resend ID |
-| :--- | :--- | :--- | :--- | :--- |
-| `jasonzhu.ai` / Dodo Payments | `rishabh@dodopayments.com` | `Jason Zhu <jason@jasonzhu.ai>` | `SENT` | `01a1fde8-ae1f-7a48-8bba-6671ca52c041` |
-| `jasonzhu.ai` / Polar | `support@polar.sh` | `Jason Zhu <jason@jasonzhu.ai>` | `SENT` | `01a1fde8-b2e8-7e2b-9173-6d68147706fb` |
-| `jasonzhu.ai` / Creem | `contact@creem.io` | `Jason Zhu <jason@jasonzhu.ai>` | `SENT` | `01a1fde8-b753-7a31-9c6b-02df66dfa29a` |
-| `jasonzhu.ai` / Waffo | `eric.chu@waffo.com` | `Jason Zhu <jason@jasonzhu.ai>` | `SENT` | `01a1fde8-bdeb-7533-b9a8-e19aac16fd26` |
-| `agentskillshub.top` / Agensi | `info@agensi.io` | `Jason Zhu <jason@agentskillshub.top>` | `SENT` | `01a1fde8-c26c-7b6f-bcb9-97b27f30341b` |
-| `agentskillshub.top` / Kipt | `hello@kipt.me` | `Jason Zhu <jason@agentskillshub.top>` | `SENT` | `01a1fde8-c749-7d30-b2ae-b7bf10e7e5f5` |
-| `agentskillshub.top` / Firecrawl | `help@firecrawl.com` | `Jason Zhu <jason@agentskillshub.top>` | `SENT` | `01a1fde8-cbc1-79fa-87a2-d698f328bb78` |
-| `agentskillshub.top` / iTechGuides (Yorker Media) | `contact@yorkermedia.com` | `Jason Zhu <jason@agentskillshub.top>` | `SENT` | `01a1fde8-d07a-7e00-99b4-164947400a95` |
+| 站点 / 靶点 | 收件人 | 发件身份 | 状态 |
+| :--- | :--- | :--- | :--- |
+| `jasonzhu.ai` / Dodo Payments | Dodo 创始人 | `Jason Zhu <jason@jasonzhu.ai>` | `SENT` |
+| `jasonzhu.ai` / Polar | `support@polar.sh` | `Jason Zhu <jason@jasonzhu.ai>` | `SENT` |
+| `jasonzhu.ai` / Creem | `contact@creem.io` | `Jason Zhu <jason@jasonzhu.ai>` | `SENT` |
+| `jasonzhu.ai` / Waffo | Waffo 商务 | `Jason Zhu <jason@jasonzhu.ai>` | `SENT` |
+| `agentskillshub.top` / Agensi | `info@agensi.io` | `Jason Zhu <jason@agentskillshub.top>` | `SENT` |
+| `agentskillshub.top` / Kipt | `hello@kipt.me` | `Jason Zhu <jason@agentskillshub.top>` | `SENT` |
+| `agentskillshub.top` / Firecrawl | `help@firecrawl.com` | `Jason Zhu <jason@agentskillshub.top>` | `SENT` |
+| `agentskillshub.top` / iTechGuides (Yorker Media) | `contact@yorkermedia.com` | `Jason Zhu <jason@agentskillshub.top>` | `SENT` |
+
+个人邮箱和每封信的 Resend 发送 ID 不在公开仓库里记，查 Resend 后台。
 
 ---
 
@@ -243,16 +248,16 @@ https://agentskillshub.top
 
 ### 2. 8 封外联实时看板（按 `2026-11-21` AI 引用池权重排序）
 
-| 优先级 | 靶点（`2026-11-21` AI 面板引用数） | 邮箱 | 当前状态 | 下一步动作（默认 `2026-11-26` Day+5） |
+| 优先级 | 靶点（`2026-11-21` AI 面板引用数） | 收件人 | 当前状态 | 下一步动作（默认 `2026-11-26` Day+5） |
 | :--- | :--- | :--- | :--- | :--- |
-| **P0** | **Dodo Payments** (`dodopayments.com`: **22 次**) | `rishabh@dodopayments.com` | `SENT`（待回） | 若 `11-26` 无回复，发下方 Day+5 附 GitHub CSV 核对链接的短跟进 |
+| **P0** | **Dodo Payments** (`dodopayments.com`: **22 次**) | Dodo 创始人 | `SENT`（待回） | 若 `11-26` 无回复，发下方 Day+5 附 GitHub CSV 核对链接的短跟进 |
 | **P0** | **Creem** (`creem.io`: **16 次**) | `contact@creem.io` | `SENT`（待回） | 同上（邀请 PR 校对 2026 费率行，极易触发产品/增长团队回复） |
 | **P0** | **Polar** (`polar.sh`: **11 次**) | `support@polar.sh` | `SENT`（待回） | 同上（附 GitHub 仓库 + 邀请核对 May 2026 新费率） |
-| **P1** | **Waffo** | `eric.chu@waffo.com` | `SENT`（待回） | 同上（附 GitHub `$20` 实测表，`Waffo $18.72` 排第 2） |
+| **P1** | **Waffo** | Waffo 商务 | `SENT`（待回） | 同上（附 GitHub `$20` 实测表，`Waffo $18.72` 排第 2） |
 | **P1** | **Firecrawl** | `help@firecrawl.com` | `SENT`（待回） | 若 `11-26` 无回复，发安全审计数据集 + `dev.to` 文章链接短跟进 |
 | **P1** | **Agensi** | `info@agensi.io` | `SENT`（待回） | 同上 |
 | **P1** | **Kipt** | `hello@kipt.me` | `SENT`（待回） | 同上 |
-| **Closed** | iTechGuides (Yorker Media) | `contact@yorkermedia.com` | `DECLINED`（纯付费租位 `$149/mo`） | 已于 `2026-11-21` 礼貌婉拒（Resend ID: `01a1fe01-585b-72c6-a54f-fb03658b2760`），不再跟进 |
+| **Closed** | iTechGuides (Yorker Media) | `contact@yorkermedia.com` | `DECLINED`（纯付费租位 `$149/mo`） | 已于 `2026-11-21` 礼貌婉拒，不再跟进 |
 
 ### 3. Day+5（`2026-11-26`）高回复率短跟进模板（升级版：附 SSRN 工作论文 + Zenodo PDF DOI + GitHub CSV）
 
