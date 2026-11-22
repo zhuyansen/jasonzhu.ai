@@ -2,6 +2,8 @@
 
 import { useState, useSyncExternalStore } from "react";
 import Link from "@/components/Link";
+import TrackedLink from "@/components/TrackedLink";
+import { track } from "@/lib/track";
 import {
   GUARD_REPO,
   holder,
@@ -422,9 +424,9 @@ function CheckCta({ lang, rows }: { lang: Lang; rows: PickRow[] }) {
       <pre className="text-sm bg-black/40 rounded-lg p-3 overflow-x-auto mb-3">
         <code>{command}</code>
       </pre>
-      <a href={GUARD_REPO} target="_blank" rel="noopener noreferrer" className="text-sm text-blue-300 hover:underline">
+      <TrackedLink href={GUARD_REPO} target="_blank" rel="noopener noreferrer" className="text-sm text-blue-300 hover:underline">
         {t.checkLink} →
-      </a>
+      </TrackedLink>
     </section>
   );
 }
@@ -447,6 +449,11 @@ export default function PaymentPicker({ data, lang }: { data: GuardData; lang: L
   }));
   const sellOptions = Object.keys(data.products).map((key) => ({ key, label: SELL_SHORT[key]?.[lang] ?? data.products[key][lang] }));
 
+  // 用户换了选项、出了新结果才记；打开页面（含带参数的分享链接）显示的默认结果不算。只发两个选项的 key，不带别的信息。
+  function recordResult(nextWho: string, nextSell: string) {
+    if (nextWho !== who || nextSell !== sell) track("payment_picker_result", { who: nextWho, sell: nextSell });
+  }
+
   return (
     <div>
       <Choices
@@ -455,6 +462,7 @@ export default function PaymentPicker({ data, lang }: { data: GuardData; lang: L
         value={who}
         lang={lang}
         onChoose={(key) => {
+          recordResult(key, sell);
           setWho(key);
           syncUrl("who", key);
         }}
@@ -470,6 +478,7 @@ export default function PaymentPicker({ data, lang }: { data: GuardData; lang: L
         value={sell}
         lang={lang}
         onChoose={(key) => {
+          recordResult(who, key);
           setSell(key);
           syncUrl("sell", key);
         }}

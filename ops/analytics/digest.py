@@ -7,7 +7,9 @@ AI_REFERRERS = ("chatgpt.com", "chat.openai.com", "perplexity.ai", "gemini.googl
                 "kimi.moonshot.cn", "deepseek.com", "chat.deepseek.com", "copilot.microsoft.com", "yuanbao.tencent.com",
                 "metaso.cn", "grok.com", "you.com", "phind.com", "poe.com")
 CONVERSIONS = {"newsletter_subscribe": "邮件订阅", "club_apply_submit": "GoSail Club 申请", "checkout_order_created": "创建支付订单",
-               "prompt_copy": "复制提示词", "prompt_try_claude": "在 Claude 里试试"}            # 和 src/lib/track.ts 的 TrackEvent 对应
+               "prompt_copy": "复制提示词", "prompt_try_claude": "在 Claude 里试试",
+               "github_click": "去 GitHub", "referral_click": "点推荐或合作链接", "payment_picker_result": "收款选择器出结果",
+               "ai_readiness_scan": "AI 网站急诊室查站", "wechat_copy": "复制微信号", "contact_click": "点邮箱或 X 私信"}  # 和 src/lib/track.ts 的 TrackEvent 对应
 DIM_KEYS = {"timestamp", "requestPath", "referrerHostname", "country", "deviceType", "osName", "browserName", "route", "environment",
             "utmSource", "utmMedium", "utmCampaign", "utmContent", "utmTerm", "projectId", "projectName", "requestHostname", "visitorId", "flags"}
 

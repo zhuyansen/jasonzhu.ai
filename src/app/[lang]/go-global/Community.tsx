@@ -1,4 +1,5 @@
 import Link from "@/components/Link";
+import TrackedLink from "@/components/TrackedLink";
 import { COMMUNITY } from "@/lib/payment-community";
 
 /** 社群经验（哥飞的朋友们 + 刘小排收款实测）：按身份的两条路 + 选型要点 + Waffo/Dodo $20 订阅真实损耗对比。和官方数据分开放，注明出处和日期。 */
@@ -87,8 +88,10 @@ export default function Community({ lang, tips = true }: { lang: string; tips?: 
         </ul>
 
         <div className="flex flex-wrap items-center gap-3 text-xs">
-          <a
+          <TrackedLink
             href={dp.partnerUrl}
+            event="referral_click"
+            params={{ partner: "dodo" }}
             target="_blank"
             rel="nofollow noopener noreferrer"
             className="inline-flex items-center rounded-lg bg-teal-700 px-3 py-1.5 font-semibold text-white hover:bg-teal-800 transition-colors"
@@ -96,7 +99,7 @@ export default function Community({ lang, tips = true }: { lang: string; tips?: 
             {isZh
               ? "Dodo 专属费率注册入口（3.8%+$0.40，免国际卡/订阅费，前 $200 免手续费）→"
               : "Dodo Partner Rate Signup (3.8%+$0.40, 0% intl/sub fee, first $200 fee-free) →"}
-          </a>
+          </TrackedLink>
           <span className="text-gray-500">
             {isZh
               ? "（这是刘小排在原文里公开的 Dodo 邀请链接，费率是他谈下来的；不是本站的推荐链接，本站不拿分成）"

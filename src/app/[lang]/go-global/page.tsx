@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "@/components/Link";
 import SubscribeForm from "@/components/SubscribeForm";
+import TrackedLink from "@/components/TrackedLink";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
 import {
   ANALYTICS_BASICS,
@@ -84,9 +85,9 @@ function Card({ href, title, body, external }: { href: string; title: string; bo
     </>
   );
   return external ? (
-    <a href={href} {...OUT} className={cls}>
+    <TrackedLink href={href} {...OUT} className={cls}>
       {inner}
-    </a>
+    </TrackedLink>
   ) : (
     <Link href={href} className={cls}>
       {inner}
@@ -101,14 +102,16 @@ function PickList({ title, picks, lang, source }: { title: string; picks: Pick[]
       <ul className="space-y-1.5 text-sm text-gray-700">
         {picks.map((p) => (
           <li key={p.name}>
-            <a
+            <TrackedLink
               href={p.url}
+              event={p.referral ? "referral_click" : undefined}
+              params={p.referral ? { partner: p.name.toLowerCase() } : undefined}
               target="_blank"
               rel={p.referral ? "sponsored noopener noreferrer" : "noopener noreferrer"}
               className="font-medium text-blue-600 hover:underline"
             >
               {p.name}
-            </a>
+            </TrackedLink>
             {p.referral && <span className="ml-1 text-xs text-gray-400">{lang === "zh" ? "（推荐链接）" : "(referral link)"}</span>}
             <span className="text-gray-500">
               {" · "}
@@ -143,9 +146,9 @@ function SharedPickList({ title, picks, lang, source, tip }: { title: string; pi
       <ul className="space-y-1.5 text-sm text-gray-700">
         {picks.map((p) => (
           <li key={p.name}>
-            <a href={p.url} {...OUT} className="font-medium text-blue-600 hover:underline">
+            <TrackedLink href={p.url} {...OUT} className="font-medium text-blue-600 hover:underline">
               {p.name}
-            </a>
+            </TrackedLink>
             <span className="text-gray-500">
               {" · "}
               {p.what[lang]}
@@ -482,9 +485,9 @@ function Backlinks({ lang, l, isZh }: { lang: string; l: "zh" | "en"; isZh: bool
             ? "每天扫描 10 路早筛信号（X 实验室/博主、HF、GitHub 爆发项目、90 天内起量新域名、GSC 3d vs 60d 新词、TrustMRR 真实收入榜、Reddit/Freelancer 求工具帖、8 家收款平台新卖家、9 路新发产品源、AdSense 同站长矩阵 + 投流新词 + 用户差评痛点），并用 14 天后 Google Trends 自动复盘各信号命中率（已砍掉 0 命中的竞品 Sitemap diff）。开源，支持 CLI、Agent Skill 与 MCP。"
             : "Scans 10 early-signal channels daily (X labs, HF, GitHub breakouts, <90d rising domains, GSC 3d vs 60d new queries, TrustMRR verified revenue, Reddit/Freelancer tool requests, 8-gateway new sellers, 9 launch feeds, AdSense publisher-ID reverse lookup + Ads new advertisers + 1–3★ user pain points) and auto-verifies signal hit rates against 14-day Google Trends (retired 0-hit competitor sitemap diff). Open source via CLI, Agent Skill & MCP."}
         </p>
-        <a href={NEW_TERM_RADAR} {...OUT} className="text-sm text-blue-600 hover:underline">
+        <TrackedLink href={NEW_TERM_RADAR} {...OUT} className="text-sm text-blue-600 hover:underline">
           GitHub →
-        </a>
+        </TrackedLink>
         <FromMyPost post={MY_POSTS.radar} lang={l} />
       </div>
       <div className={BOX}>
@@ -505,9 +508,9 @@ function Backlinks({ lang, l, isZh }: { lang: string; l: "zh" | "en"; isZh: bool
             : "12 CLI/MCP commands: vet link sellers/PBNs/demoted sites before submitting, check whether AI crawlers can read a site (ai-access), find directories by real search visitors, uncover competitors' first-90-day launch channels (competitors --early), recover backlinked 404s with 301 targets (lost), and probe AI Overview & 5-engine citations (cited / asked --rank)."}
         </p>
         <p className="text-sm flex flex-wrap gap-x-4 gap-y-1">
-          <a href={BACKLINK_GUARD} {...OUT} className="text-blue-600 hover:underline">
+          <TrackedLink href={BACKLINK_GUARD} {...OUT} className="text-blue-600 hover:underline">
             GitHub →
-          </a>
+          </TrackedLink>
           <Link href={`/${lang}/backlink-spam-list`} className="text-blue-600 hover:underline">
             {isZh ? "垃圾外链来源库 →" : "Backlink spam list →"}
           </Link>
@@ -559,9 +562,9 @@ function Faq({ lang, isZh }: { lang: string; isZh: boolean }) {
             {f.link && (
               <p className="mt-1 text-sm">
                 {f.link.href.startsWith("http") ? (
-                  <a href={f.link.href} {...OUT} className="text-blue-600 hover:underline">
+                  <TrackedLink href={f.link.href} {...OUT} className="text-blue-600 hover:underline">
                     {isZh ? f.link.zh : f.link.en}
-                  </a>
+                  </TrackedLink>
                 ) : (
                   <Link href={`/${lang}${f.link.href}`} className="text-blue-600 hover:underline">
                     {isZh ? f.link.zh : f.link.en}
@@ -999,9 +1002,9 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
             {isZh ? "293 个工具榜与 16 项植错横评（每 8 小时更新）→" : "293-Tool Directory & 16-Bug Benchmark →"}
           </a>
           <span className="mx-1 text-gray-400">·</span>
-          <a href={SEO_TOOLS_DIRECTORY.repo} {...OUT} className="text-blue-600 hover:underline">
+          <TrackedLink href={SEO_TOOLS_DIRECTORY.repo} {...OUT} className="text-blue-600 hover:underline">
             GitHub
-          </a>
+          </TrackedLink>
         </div>
         <PageTuning l={l} isZh={isZh} />
         <Backlinks lang={lang} l={l} isZh={isZh} />

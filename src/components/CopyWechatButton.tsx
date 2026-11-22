@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { track } from "@/lib/track";
 
 interface Props {
   wechatId: string;
@@ -14,6 +15,7 @@ export default function CopyWechatButton({ wechatId, isZh }: Props) {
     try {
       await navigator.clipboard.writeText(wechatId);
       setCopied(true);
+      track("wechat_copy");
       setTimeout(() => setCopied(false), 2000);
     } catch {
       // ignore

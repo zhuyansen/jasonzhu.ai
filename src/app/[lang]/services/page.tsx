@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "@/components/Link";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
 import CopyWechatButton from "@/components/CopyWechatButton";
+import TrackedLink from "@/components/TrackedLink";
 import { withSocialCards } from "@/lib/social";
 
 export async function generateMetadata({
@@ -60,8 +61,10 @@ export default async function ServicesPage({
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-2 shrink-0">
-            <a
+            <TrackedLink
               href="https://x.com/GoSailGlobal"
+              event="contact_click"
+              params={{ method: "x" }}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-gray-900 text-white rounded-lg text-xs font-medium hover:bg-gray-800 transition-colors"
@@ -70,7 +73,7 @@ export default async function ServicesPage({
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
               </svg>
               X / Twitter
-            </a>
+            </TrackedLink>
             <CopyWechatButton wechatId={wechatId} isZh={isZh} />
             <Link
               href={`/${lang}/about`}
@@ -149,14 +152,16 @@ export default async function ServicesPage({
           {dict.services.ctaDesc}
         </p>
         <div className="flex flex-wrap justify-center gap-3">
-          <a
+          <TrackedLink
             href="https://x.com/GoSailGlobal"
+            event="contact_click"
+            params={{ method: "x" }}
             target="_blank"
             rel="noopener noreferrer"
             className="px-5 py-2.5 bg-[var(--primary)] text-white rounded-lg text-sm font-medium hover:bg-[var(--primary-dark)] transition-colors"
           >
             {dict.services.ctaDM}
-          </a>
+          </TrackedLink>
           <CopyWechatButton wechatId={wechatId} isZh={isZh} />
           <Link
             href={`/${lang}/about`}

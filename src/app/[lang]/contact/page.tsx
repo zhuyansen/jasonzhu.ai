@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "@/components/Link";
+import TrackedLink from "@/components/TrackedLink";
 import { type Locale } from "@/lib/dictionaries";
 import { withSocialCards } from "@/lib/social";
 
@@ -51,8 +52,10 @@ export default async function ContactPage({
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-        <a
+        <TrackedLink
           href="mailto:jason@jasonzhu.ai"
+          event="contact_click"
+          params={{ method: "email" }}
           className="p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition-all bg-white"
         >
           <p className="text-xs font-semibold uppercase tracking-wider text-gray-400">
@@ -64,10 +67,12 @@ export default async function ContactPage({
           <p className="text-xs text-gray-500 mt-1">
             {isZh ? "商务合作、企业内训与技术咨询首选" : "Primary channel for business & consulting"}
           </p>
-        </a>
+        </TrackedLink>
 
-        <a
+        <TrackedLink
           href="https://x.com/GoSailGlobal"
+          event="contact_click"
+          params={{ method: "x" }}
           target="_blank"
           rel="noopener noreferrer"
           className="p-5 rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition-all bg-white"
@@ -81,7 +86,7 @@ export default async function ContactPage({
           <p className="text-xs text-gray-500 mt-1">
             {isZh ? "私信直达（DM 开放）" : "Direct message open on X"}
           </p>
-        </a>
+        </TrackedLink>
 
         <div className="p-5 rounded-xl border border-gray-200 bg-gray-50">
           <p className="text-xs font-semibold uppercase tracking-wider text-gray-400">
@@ -93,7 +98,7 @@ export default async function ContactPage({
           </p>
         </div>
 
-        <a
+        <TrackedLink
           href="https://github.com/zhuyansen"
           target="_blank"
           rel="noopener noreferrer"
@@ -108,7 +113,7 @@ export default async function ContactPage({
           <p className="text-xs text-gray-500 mt-1">
             {isZh ? "开源项目与 AgentSkillsHub 仓库" : "Open-source repositories & AgentSkillsHub"}
           </p>
-        </a>
+        </TrackedLink>
       </div>
 
       <div className="rounded-xl border border-gray-200 bg-white p-6 mb-6 space-y-5">

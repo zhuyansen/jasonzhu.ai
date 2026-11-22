@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "@/components/Link";
+import { track } from "@/lib/track";
 import {
   BENCHMARK_HALL_OF_FAME,
   CATEGORIES,
@@ -348,6 +349,8 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
         setError(data?.error || (isZh ? "诊断失败，请检查域名是否可访问" : "Scan failed"));
       } else if (data?.report) {
         setReport(data.report as ScanReport);
+        // 只发域名：report.domain 是服务端规范过的主机名（不带协议、路径、参数、端口）；finalUrl 是完整网址，不发
+        track("ai_readiness_scan", { domain: (data.report as ScanReport).domain });
         setPreviousScore(typeof data.previousScore === "number" ? data.previousScore : null);
         setScoreDelta(typeof data.scoreDelta === "number" ? data.scoreDelta : null);
         setActiveLevel(null);
