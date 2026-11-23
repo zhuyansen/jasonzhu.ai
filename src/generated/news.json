@@ -1,5 +1,91 @@
 [
   {
+    "slug": "2026-11-24",
+    "date": "2026-11-24",
+    "title": "AI 快讯 · 11月24日",
+    "items": [
+      {
+        "title": "CLI-Anything开源，让软件原生适配AI智能体",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/HKUDS/CLI-Anything",
+        "summary": "港大HKUDS开源CLI-Anything及CLI-Hub工具包，支持通过pip一键安装和管理社区构建的命令行接口，帮助AI智能体直接调用各类传统软件功能，打通Agent落地的最后一公里。",
+        "titleEn": "CLI-Anything Open-Sourced to Make Software Agent-Native",
+        "summaryEn": "HKUDS has open-sourced CLI-Anything alongside CLI-Hub, a package manager allowing developers to browse and install community-built command-line wrappers via pip. By turning existing GUI and web software into agent-native interfaces, it gives coding and automation agents reliable, structured access to everyday tools."
+      },
+      {
+        "title": "Cursor发布官方插件规范，加速开发工具生态集成",
+        "source": "GitHub Trending",
+        "category": "AI 工具动态",
+        "url": "https://github.com/cursor/plugins",
+        "summary": "Cursor开源官方插件规范及首批内置插件，每个插件以独立目录与plugin.json清单管理，覆盖开发工具、框架与SaaS集成，并上线Teaching等实用技能插件，提升IDE扩展性。",
+        "titleEn": "Cursor Releases Official Plugin Specification and Marketplace",
+        "summaryEn": "Cursor has published its official plugin specification alongside curated plugins for developer tools, frameworks, and SaaS platforms. Each plugin uses a standalone directory with a .cursor-plugin/plugin.json manifest, standardizing how third-party workflows and utilities like skill mapping integrate directly into the Cursor editor."
+      },
+      {
+        "title": "谷歌搜索AI模式接入个人数据，实现深度定制化检索",
+        "source": "Google AI Blog",
+        "category": "AI 工具动态",
+        "url": "https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps/",
+        "summary": "谷歌推出Search个人智能功能，用户授权后可将Google Wallet、Drive与Gemini应用连接至搜索AI模式，在保障隐私安全的前提下，生成更贴合个人上下文的精准检索结果。",
+        "titleEn": "Google Search AI Mode Integrates Personal Data Apps",
+        "summaryEn": "Google is rolling out Personal Intelligence in Search AI Mode, allowing users to opt in and connect Google Wallet, Drive, and the Gemini app. By grounding search responses in personal context across connected apps, Google delivers more tailored answers while keeping data permissions user-controlled."
+      },
+      {
+        "title": "Richpanel接入GPT-6系列，30天自动化50%客服",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/business/customer-stories/richpanel-ai-customer-support",
+        "summary": "客服SaaS平台Richpanel披露基于GPT-6系列的落地实践：用GPT-6 Astra与GPT-6.1 Sol驱动工具调用与流程执行，GPT-6 Luna负责对话交互，30天内自动化半数工单。",
+        "titleEn": "Richpanel Automates 50% of Support Using GPT-6 Models",
+        "summaryEn": "Customer support platform Richpanel shared how it automated 50% of client support tickets within 30 days using OpenAI's newest models. It pairs GPT-6 Astra and GPT-6.1 Sol for reliable tool use and procedural execution with GPT-6 Luna for natural conversational interactions."
+      },
+      {
+        "title": "Search-Native预训练：从底层赋予模型原生搜索能力",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2611.26809",
+        "summary": "传统大模型仅在后训练阶段学习调用搜索。该研究在预训练语料中规模化注入网页搜索查询与本地索引结果，让模型原生掌握检索逻辑，开发者无需复杂微调即可获得更可靠的Agent工具调用底座。",
+        "titleEn": "Search-Native Pretraining Teaches Search During Pretraining",
+        "summaryEn": "Most models learn web search only during post-training, leaving brittle tool-use behavior. This paper proposes Search-Native Pretraining, augmenting standard pretraining corpora with search queries and locally indexed web responses. For developers, this builds stronger native retrieval habits directly into base models."
+      },
+      {
+        "title": "无标注视频自蒸馏：让多模态模型学会预测未来动作",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2611.26954",
+        "summary": "视觉语言模型预测后续事件往往依赖昂贵人工标注或大模型蒸馏。新方法利用“过去-未来”视频片段构造自监督信号进行策略内自蒸馏，大幅降低多模态视频推理与具身智能规划的训练数据门槛。",
+        "titleEn": "On-Policy Self-Distillation Trains Video Foresight Without Labels",
+        "summaryEn": "Training vision-language models to anticipate future actions usually requires costly annotations or larger teacher models. This paper introduces an on-policy self-distillation method using unlabeled past-future video pairs as natural supervision, offering developers a scalable way to train video foresight for robotics and agents."
+      },
+      {
+        "title": "GameWM提出交互中心世界模型，重构下一代游戏引擎",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2611.19247",
+        "summary": "现有视频世界模型大多只充当游戏引擎的“画面渲染器”，未能参与核心交互。GameWM探索以交互为中心的世界模型架构，让生成式模型深度理解玩法与动态反馈，为AI原生游戏开发提供新范式。",
+        "titleEn": "GameWM Introduces Interaction-Centric World Models for Games",
+        "summaryEn": "Current generative video models mostly act as visual renderers layered over traditional game engines. GameWM proposes an interaction-centric world model where the neural model handles dynamic gameplay interactions rather than merely restyling pre-authored motion, pointing developers toward truly AI-native game architectures."
+      },
+      {
+        "title": "NextUnit-Bench实测：智能体两小时定制建模",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2611.25252",
+        "summary": "与其追求单一通用预测模型，不如让编码智能体为每个新任务现场建模。该研究在24个工业设备数据集上测试智能体两小时交付可执行模型的能力，验证了“通用建模智能体”在工程落地中的潜力。",
+        "titleEn": "NextUnit-Bench Tests LLM Agents Building Custom Industrial Models",
+        "summaryEn": "Instead of building one universal predictive model, can LLM coding agents act as general modelers for each new task? NextUnit-Bench tests agents given two hours across 24 industrial datasets to deliver deployable fault-prediction models, highlighting practical agent-driven AutoML workflows."
+      }
+    ],
+    "jasonSays": "Agent生态加速工程化落地，CLI-Anything与Cursor插件规范统一了工具接入，搜索原生预训练则强化底层能力。",
+    "jasonSaysEn": "The agent ecosystem is rapidly standardizing, as CLI-Anything and Cursor's plugin spec streamline tool integration while Search-Native pretraining strengthens foundational retrieval.",
+    "filename": "2026-11-24.md",
+    "coverImage": "/news/2026-11-24.png",
+    "coverImageEn": "/news/en/2026-11-24.png",
+    "coverWebp": "/news/2026-11-24.webp",
+    "coverWebpEn": "/news/en/2026-11-24.webp"
+  },
+  {
     "slug": "2026-11-23",
     "date": "2026-11-23",
     "title": "AI 快讯 · 11月23日",
