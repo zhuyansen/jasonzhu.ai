@@ -12,16 +12,16 @@
 
 | 事项 | 谁 | 什么时候 / 触发条件 | 状态 |
 |---|---|---|---|
-| 安全论文 DOI `10.5281/zenodo.24420920`（及上级 concept DOI `24420919`）没登记到 doi.org | Claude 复查，必要时你提工单 | 2026-11-23 22:37（北京时间，发布满 48 小时）；日报第 8 项过了宽限期会报出来 | ⏳ 等登记 |
+| 安全论文 DOI `10.5281/zenodo.24420920`（及上级 concept DOI `24420919`）没登记到 doi.org | Claude 复查，必要时你提工单 | 2026-11-23 22:37（北京时间，发布满 48 小时）；日报第 8 项过了宽限期会报出来 | 🟡 11-23 下午查：concept DOI `24420919` 和 1.1 版 `24432858` 已能解析，只剩已被取代的 1.0 版 `24420920` 没登记。站上用 concept DOI，不受影响；22:37 后还不行再用下文的工单模板 |
 | OpenAlex：130K 数据集挂在两个别人名下，你的其余作品拆在两个作者页上 | 你登录 openalex.org | 约 2026-11-24：DataCite 11-22 已改对，等 OpenAlex 刷新（约两天）后再做 | ⏳ 等刷新 |
 | ORCID 加任职 | Claude 在你的 Chrome 里填写，你确认后保存 | 2026-11-22 | ✅ GoSailGlobal LLC · Sheridan, Wyoming, US · BRICKAI / Agent Skills Hub · Founder；开始日期没填；ORCID 公开接口已能查到 |
 | Wikidata：第一批（建人物条目） | 你 | **暂缓**：Zenodo 数据纠正发布完，并且有 2–3 个独立来源报道之后再说（Jason 2026-11-22 定） | ⏸ 暂缓。现有两个条目是用临时账号 `~2026-55148-80` 建的；批次文件 `ops/geo/wikidata/2026-11-22-batch1-person.txt` 留着不用 |
 | Wikidata：第二批（6 个作品条目 + 连上 ASH 和 130K 数据集） | 你 | 同上，第一批之后 | ⏸ 暂缓 |
-| 学术外联三封 | 邮件由 Claude 在 Gmail 写信页填好、你点发送；LinkedIn 那条你自己发 | 2026-11-22 | 🟡 两封邮件已发（SkillProbe 一作、NVIDIA 一作），LinkedIn 待发；回复记在本地草稿文件末尾 |
+| 学术外联三封 | 邮件由 Claude 在 Gmail 写信页填好、你点发送；LinkedIn 那条你自己发 | 2026-11-22 | 🟡 两封邮件已发（SkillProbe 一作、NVIDIA 一作），LinkedIn 待发；回复记在本地草稿文件末尾。两封的第二条数据用的是论文 1.0 版说法，更正信都在原对话里回复：给 NVIDIA 一作的已发（11-23），给 SkillProbe 一作的已在 Gmail 填好，等你点发送 |
 | 两个 npm 包发布（cli 0.5.1、mcp 0.3.1，修过期数字） | Claude 用你给的 npm token 发布 | 2026-11-22 | ✅ 已上线（npm 先返回 202，处理几分钟后才可见）。用过的两个 token 到 npm 设置里删掉或等 7 天过期 |
 | Zenodo 7 条记录的单位写法不统一 | 不急 | 有空时 | 记下，没改 |
 | Zenodo 纠错新版本：01/02/03/04 四份数据集、两篇工作论文、3 份 11-20 重复记录（24387070、24387080、24387082） | Claude（数据纠错子代理） | 2026-11-22 | ✅ 全部发布并核对：新版本 24432849、24432852、24432855、24432843、24432858、24435484，重复记录 24435488/89/90 指向正版；站上改用总 DOI（每个都在 doi.org 查过能解析）；GitHub、HF、Kaggle 镜像和 dev.to 文章同步改正；给 Polar 的更正信已发（2026-11-22） |
-| SSRN 两篇论文上传改版 PDF | Claude 在你的 Chrome 里上传，你登录 | Zenodo 新版本发布后 | ⬜ 改版说明在 `ops/geo/papers/SSRN-revision-notes-2026-11-21.md` |
+| SSRN 两篇论文换成 1.1 版 | SSRN 客服；换不了就由 Claude 在你的 Chrome 里走 Revise（你登录） | 等客服回复，或等 SSRN 的审核通过邮件 | 🟡 11-23 查：两篇都还在审核队列（PRELIMINARY_UPLOAD），通过前没有 Edit 和 Revise。当天用网站邮箱写信请客服在审核前换成 1.1 版（附两份 PDF，Resend 显示已送达）。改版说明和进展在 `ops/geo/papers/SSRN-revision-notes-2026-11-21.md` |
 | 个人档案回链 jasonzhu.ai：Hugging Face、Kaggle、YouTube、B 站没有；X 的 website 字段是 gosaillab.com | 你登录各平台改 | 随时 | ⬜ 清单见下面 2026-11-22 · v2.3 第 4 条 |
 | Google Scholar 个人页设成公开（现在对外 404）；B 站改名、写简介（现在是「香菇的猪」、简介空） | 你 | 随时 | ⬜ 这两条还在 Person 的 sameAs 里 |
 | 每日实体检查 `check-entities.yml` | 自动 | 每天 | ✅ 已上线，手动跑过一次通过（run 44981354838） |

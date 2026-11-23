@@ -4,6 +4,8 @@
 
 Zenodo：两篇都已发布新版本。收款论文 10.5281/zenodo.24435484（总 DOI 10.5281/zenodo.24420870）；安全论文 10.5281/zenodo.24432858（总 DOI 10.5281/zenodo.24420919）。
 
+**进展（2026-11-23）：** 两篇在 SSRN 都还在审核队列，My Papers 里的状态是 PRELIMINARY_UPLOAD。审核通过前页面上没有 Edit，也没有 Revise，所以没法自己换稿。点论文编号打开的是公开摘要页，不是编辑入口。当天用网站邮箱写信给 SSRN 客服，请他们在审核前换成 1.1 版：信里写了两篇的新标题，附了两份 PDF，Resend 显示已送达。如果客服答复审核前换不了，就等 SSRN 的通过邮件，再按下面的内容走 Revise（通过后论文会出现在 My Papers 的 Approved 区，Revise 在那里）。
+
 ---
 
 ## 1. Supply-chain security paper（SSRN abstract_id 7737258）
