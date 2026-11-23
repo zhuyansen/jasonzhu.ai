@@ -31,14 +31,15 @@ export async function generateMetadata({
   const paper = getWorkingPaper(slug);
   if (!paper) return {};
 
+  const isEn = lang === "en";
   const canonical = `${SITE_URL}/${lang}/research/${paper.slug}`;
   const pdfUrl = `${SITE_URL}${paper.pdfPath}`;
 
   // Highwire Press citation_* meta tags per Google Scholar Inclusion Guidelines
   const base = withSocialCards(
     {
-      title: `${paper.title} — Jason Zhu`,
-      description: paper.abstract.slice(0, 260),
+      title: isEn ? paper.title : paper.titleZh,
+      description: isEn ? paper.abstract : paper.abstractZh,
       alternates: {
         canonical,
         languages: {
