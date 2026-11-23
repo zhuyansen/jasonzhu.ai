@@ -131,7 +131,7 @@ jobs:
           [ -f "$RUNNER_TEMP/fanout.md" ] && { echo; cat "$RUNNER_TEMP/fanout.md"; } >> "$RUNNER_TEMP/appendix.md" || true
 
       - name: 提交分数
-        if: inputs.publish != '0'
+        if: (inputs.publish || '1') != '0'
         env:
           DAY: ${{ steps.run.outputs.day }}
         run: |
@@ -145,7 +145,7 @@ jobs:
           git push -q origin HEAD:main
 
       - name: 发邮件
-        if: inputs.publish != '0'
+        if: (inputs.publish || '1') != '0'
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           ALERT_EMAIL: ${{ secrets.ALERT_EMAIL }}
@@ -153,7 +153,7 @@ jobs:
         run: python ops/geo/panel_run.py mail --summary "ops/geo/panel/summary-$DAY.md" --appendix "$RUNNER_TEMP/appendix.md" --to "$ALERT_EMAIL"
 
       - name: 完整结果加密存档（不进仓库）
-        if: inputs.publish != '0'
+        if: (inputs.publish || '1') != '0'
         env:
           GH_TOKEN: ${{ github.token }}
           SELLER_STATE_KEY: ${{ secrets.SELLER_STATE_KEY }}
@@ -178,7 +178,7 @@ jobs:
           exit 1
 
       - name: 失败告警
-        if: failure() && inputs.publish != '0'
+        if: failure() && (inputs.publish || '1') != '0'
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           ALERT_EMAIL: ${{ secrets.ALERT_EMAIL }}

@@ -176,7 +176,7 @@ jobs:
 
       - name: 提交上线（只提交这一期的文件）
         id: push
-        if: steps.write.outputs.issue != '' && inputs.publish != '0'
+        if: steps.write.outputs.issue != '' && (inputs.publish || '1') != '0'
         env:
           N: ${{ steps.write.outputs.issue }}
           TODAY: ${{ steps.day.outputs.today }}
