@@ -7,6 +7,9 @@
 #         加密后放进草稿 release「geo-panel-state」，密钥用 SELLER_STATE_KEY（和卖家历史库同一把）。
 #         解密：gh release download geo-panel-state -p 'panel-<日期>.json.gz.enc' &&
 #               openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000 -pass env:SELLER_STATE_KEY -in panel-<日期>.json.gz.enc | gunzip
+#   子查询 ops/geo/fanout.py：问完再让 Gemini（接口）每题答 1 次拿它的搜索词，连同 ChatGPT、Perplexity 回答里自带的搜索词，
+#         每条查 Google 和 Bing 前 20，看我们排不排得上（约 $4–5，fanout_usd 封顶，填 0 不跑）。计数提交到
+#         ops/geo/panel/fanout-<日期>.json，搜索词原文只进邮件和加密存档。这一步失败不挡面板本身。
 #   通知  摘要发到 ALERT_EMAIL。失败、或有的 AI 有效回答不到一半（结果不完整），也发邮件。
 #   手动  Actions → Run workflow。试跑填 limit=3、publish=0：只问前 3 题，不提交、不存档、不发邮件。
 #   改动  改页面前先在 ops/geo/experiments.json 记一笔（改了哪些题的页面、哪些故意不改），周报会按处理组和对照组分开算。
@@ -34,6 +37,9 @@ on:
       publish:
         description: "填 0：不提交、不存档、不发邮件（试跑用）"
         default: "1"
+      fanout_usd:
+        description: "子查询这一步最多花多少美元；填 0 不跑"
+        default: "6"
 
 permissions:
   contents: write
@@ -102,6 +108,28 @@ jobs:
           # 2 = 结果不完整：照样存档、发邮件，最后一步再把这次运行标成失败
           [ "$CODE" = "0" ] || [ "$CODE" = "2" ]
 
+      - name: 子查询：AI 搜了什么、我们排不排得上（失败不挡后面）
+        id: fanout
+        continue-on-error: true
+        env:
+          AISA_API_KEY: ${{ secrets.AISA_API_KEY }}
+          DAY: ${{ steps.run.outputs.day }}
+          IN_SETS: ${{ inputs.sets }}
+          IN_LIMIT: ${{ inputs.limit }}
+          IN_PUBLISH: ${{ inputs.publish }}
+          IN_FANOUT_USD: ${{ inputs.fanout_usd }}
+        run: |
+          USD="${IN_FANOUT_USD:-6}"
+          if [ "$USD" = "0" ]; then echo "fanout_usd=0，不跑"; exit 0; fi
+          python ops/geo/fanout.py --selftest
+          ARGS=(--sets "${IN_SETS:-$DEFAULT_SETS}" --full "$RUNNER_TEMP/panel-full.json" --max-usd "$USD" --date "$DAY"
+                --public "ops/geo/panel/fanout-$DAY.json" --appendix "$RUNNER_TEMP/fanout.md" --archive "$RUNNER_TEMP/fanout-full.json")
+          [ -n "$IN_LIMIT" ] && ARGS+=(--limit "$IN_LIMIT")
+          [ "$IN_PUBLISH" = "0" ] && ARGS+=(--dry)
+          python ops/geo/fanout.py run "${ARGS[@]}" | tee -a "$GITHUB_STEP_SUMMARY"
+          # 邮件里的附录接在面板附录后面
+          [ -f "$RUNNER_TEMP/fanout.md" ] && { echo; cat "$RUNNER_TEMP/fanout.md"; } >> "$RUNNER_TEMP/appendix.md" || true
+
       - name: 提交分数
         if: inputs.publish != '0'
         env:
@@ -110,6 +138,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add "ops/geo/panel/results-$DAY.json" "ops/geo/panel/summary-$DAY.md"
+          [ -f "ops/geo/panel/fanout-$DAY.json" ] && git add "ops/geo/panel/fanout-$DAY.json"
           if git diff --cached --quiet; then echo "没有新结果可提交"; exit 0; fi
           git commit -q -m "GEO 引用面板 $DAY"
           git pull -q --rebase origin main
@@ -136,6 +165,10 @@ jobs:
               -R "$GITHUB_REPOSITORY"
           gzip -c "$RUNNER_TEMP/panel-full.json" | openssl enc -aes-256-cbc -pbkdf2 -iter 200000 -salt -pass env:SELLER_STATE_KEY -out "$RUNNER_TEMP/panel-$DAY.json.gz.enc"
           gh release upload geo-panel-state "$RUNNER_TEMP/panel-$DAY.json.gz.enc" --clobber -R "$GITHUB_REPOSITORY"
+          if [ -f "$RUNNER_TEMP/fanout-full.json" ]; then
+            gzip -c "$RUNNER_TEMP/fanout-full.json" | openssl enc -aes-256-cbc -pbkdf2 -iter 200000 -salt -pass env:SELLER_STATE_KEY -out "$RUNNER_TEMP/fanout-$DAY.json.gz.enc"
+            gh release upload geo-panel-state "$RUNNER_TEMP/fanout-$DAY.json.gz.enc" --clobber -R "$GITHUB_REPOSITORY"
+          fi
           echo "已存档：$(du -h "$RUNNER_TEMP/panel-$DAY.json.gz.enc" | cut -f1)"
 
       - name: 结果不完整，这次运行算失败

@@ -8,6 +8,8 @@
 | 文件 | 是什么 |
 |---|---|
 | `panel_run.py` | 读题库、调 backlink-guard 的 `asked` 提问、打分、出摘要、发邮件。`--selftest` 不联网 |
+| `fanout.py` | 子查询：AI 回答每道题前实际搜了什么，我们在这些搜索里排第几。见下面「子查询」。`--selftest` 不联网 |
+| `panel/fanout-<日期>.json` | 每次子查询的计数（每题搜了几条、我们排上几条、缺口几条），不含搜索词原文 |
 | `questions.json` | 冻结组 21 题。**不要改题目**：GIGALinks 的实验要在 12-01、12-15、01-01 用同一套题复测。`measurement_protocol` 照实际做法记（每家每题几次、哪家走 API），只是记录，问法由工作流定 |
 | `questions-real.json` | 真实问法组 30 题，都不带品牌名。25 题是三家 AI 写的「买家会怎么问」，5 题是 Google 上真实出现的查询。2026-11-23 起每周跑，题目同样不要改 |
 | `experiments.json` | 改动记录和对照实验的分组 |
@@ -70,11 +72,30 @@
 
 一次只改一样。同一周里改了两样，就分不清是谁的效果。
 
+## 子查询（2026-11-23 起）
+
+AI 拿到一道题，会先自己拆成几条搜索词去搜，回答只能引用这些搜索搜得到的页面。所以「被引用」前面还有一关：
+AI 搜的那几条词下面有没有我们。面板问完之后，`fanout.py` 接着做：
+
+1. **拿到真实的搜索词，不靠猜。**
+   - Gemini（接口，开 Google 搜索）每题答 1 次，它会返回自己搜过的词，代表 Google 这一路（Gemini App 和 AI Mode 不给搜索词）；
+   - ChatGPT、Perplexity（还有每月加跑的 Claude）的回答里本来就带着搜索词，直接从面板这次的完整结果里读。
+2. **每条词查 Google 和 Bing 前 20 名**（ChatGPT 联网用的是 Bing），记下我们排第几、排上的是哪一页。
+3. **出缺口清单。** 在 Google 和 Bing 前 20 都没有我们的词叫缺口；几家 AI 都搜过的缺口排最前面，那是共用的入口。
+   每道题列出缺口举例，对着题目对应的页面补内容。另列「AI 搜这些词时最常排在第一页、也被引用的页面」：
+   别人的这类页面是投稿、被收录、请求加链接的候选。
+
+只看邮件里的这一段，不和面板的六个口径混算。搜索词同一题每周都会变（措辞、条数），**看的是缺口在不在缩小、
+排上的词多不多，不看某一条词**。各家措辞不同，同一意思写法不一样就算不同的词，「几家共搜」会偏少。
+
 ## 花费
 
 每个回答：ChatGPT、Gemini App、Google AI Mode $0.004，Perplexity 约 $0.006，Claude 约 $0.045。
 定时任务问两套题（51 题），四家各 3 次，一次约 $2.8；每月第一个周一加问 Claude，那次约 $5.4。一个月 4 到 5 次，约 $14–17。
 只问冻结组 21 题的话，一次约 $1.2，加 Claude 约 $2.2。工作流里 `max_usd` 封顶（默认 7），超了的不问。
+
+子查询另算：Gemini 接口每题约 $0.047，每条词查 Google、Bing 各约 $0.0035。51 题每周约 $4–5，
+`fanout_usd` 封顶（默认 6，填 0 不跑）。钱不够时先查搜得最多的词，搜得少的留到下次。
 
 ## 什么不进仓库
 
@@ -89,6 +110,8 @@
 python3 ops/geo/panel_run.py --selftest
 python3 ops/geo/panel_run.py run --sets frozen --limit 3 --dry          # 试跑 3 题，不写文件
 python3 ops/geo/panel_run.py summary ops/geo/panel/results-<日期>.json   # 从结果重新出摘要
+python3 ops/geo/fanout.py --selftest
+python3 ops/geo/fanout.py run --sets real --limit 2 --max-usd 0.5 --dry   # 试跑 2 题子查询（约 $0.1）
 ```
 
 本机要先 `pip install "backlink-guard>=0.12"`（`gemini_app` 引擎从 0.12.0 起有）并 `aisa login`。
