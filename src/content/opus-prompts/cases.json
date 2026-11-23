@@ -1,8 +1,8 @@
 {
  "model": "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.5)",
  "threshold": 5000,
- "updatedAt": "2026-11-22T01:17:18.734Z",
- "statsCheckedAt": "2026-11-22T01:17:18.734Z",
+ "updatedAt": "2026-11-23T01:17:23.159Z",
+ "statsCheckedAt": "2026-11-23T01:17:23.159Z",
  "inclusionRule": "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -2287,6 +2287,59 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124153573718307003",
+   "url": "https://x.com/M__Houser/status/2124153573718307003",
+   "author": {
+    "handle": "M__Houser",
+    "name": "Mike Houser"
+   },
+   "postedAt": "2026-11-21T14:50:51.000Z",
+   "addedAt": "2026-11-23",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "《龙之时代》开放世界游戏展示",
+    "en": "Age of Dragon game reveal"
+   },
+   "summary": {
+    "zh": "独立制作人使用 Opus 5.5、Fable 5.2、Three.js，结合 Tripo 生成数百个 3D 模型并通过 MCP 调用 Blender，耗时数日打造出大型 RPG 游戏《Age of Dragon》雏形。",
+    "en": "An open-world RPG prototype called Age of Dragon, built solo with Opus 5.5, Fable 5.2, Three.js, Tripo 3D models, and Blender via MCP."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Fable 5.2",
+    "Tripo",
+    "Blender",
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 937460,
+    "likes": 2801,
+    "replies": 436,
+    "reposts": 128,
+    "bookmarks": 1488,
+    "checkedAt": "2026-11-23T01:17:23.159Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2124151533650718720/img/QvVpCf7sUl1j038k.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2124151533650718720/vid/avc1/1264x720/jugmQNBop3CZgDT8.mp4",
+    "width": 1264,
+    "height": 720,
+    "durationSec": 90
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -21054,6 +21107,59 @@
     "width": 1280,
     "height": 720,
     "durationSec": 180
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124137226452013553",
+   "url": "https://x.com/prasenx/status/2124137226452013553",
+   "author": {
+    "handle": "prasenx",
+    "name": "Prasenjit"
+   },
+   "postedAt": "2026-11-21T13:45:54.000Z",
+   "addedAt": "2026-11-23",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "关于万物之美的短片",
+    "en": "Film about everything it finds beautiful"
+   },
+   "summary": {
+    "zh": "创作者仅用一条提示词，让 Claude Opus 5.5 创作了一部展现“它认为美好的一切”的短片，并分享了部分视频截图。",
+    "en": "A short film generated from a single prompt asking Claude Opus 5.5 to depict everything it finds beautiful."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/prasenx/status/2124137226452013553",
+    "text": "make a film about everything it finds beautiful"
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 136962,
+    "likes": 2462,
+    "replies": 92,
+    "reposts": 104,
+    "bookmarks": 597,
+    "checkedAt": "2026-11-23T01:17:23.159Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/media/HXpj4u1bIAEDBHS.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2124116413866803200/vid/avc1/1280x720/0mywAQqXA7lmyP3J.mp4",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 68
    },
    "evidence": {
     "via": "daily",
@@ -41929,6 +42035,60 @@
    }
   },
   {
+   "id": "2124138343646556529",
+   "url": "https://x.com/Mr_Salio/status/2124138343646556529",
+   "author": {
+    "handle": "Mr_Salio",
+    "name": "Salio"
+   },
+   "postedAt": "2026-11-21T13:50:20.000Z",
+   "addedAt": "2026-11-23",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "四款模型同素材视频剪辑对比",
+    "en": "Four-model video clip editing comparison"
+   },
+   "summary": {
+    "zh": "作者用同一条提示词且不使用任何插件或工具，让 Astra 6.2、Sol 6.2、Opus 5.5 和 Neon 4 分别剪辑同一段视频，并对比了四者的耗时与花费。",
+    "en": "A video clip edit comparison across Astra 6.2, Sol 6.2, Opus 5.5, and Neon 4 using the same prompt and no tools or plugins."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Astra 6.2",
+    "Sol 6.2",
+    "Neon 4"
+   ],
+   "resources": [
+    "https://discord.gg/XpH4eTYTr"
+   ],
+   "stats": {
+    "views": 66830,
+    "likes": 346,
+    "replies": 50,
+    "reposts": 20,
+    "bookmarks": 265,
+    "checkedAt": "2026-11-23T01:17:23.159Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2124138183457718272/img/KWBxXqWwRq725q8b.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2124138183457718272/vid/avc1/1280x720/l3w7N42-TFYuoUVf.mp4",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 33
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2120105823737397644",
    "url": "https://x.com/charliejhills/status/2120105823737397644",
    "author": {
@@ -43465,6 +43625,59 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2123967133084516858",
+   "url": "https://x.com/JamesMalsawm/status/2123967133084516858",
+   "author": {
+    "handle": "JamesMalsawm",
+    "name": "James Malsawm"
+   },
+   "postedAt": "2026-11-21T02:30:00.000Z",
+   "addedAt": "2026-11-23",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "多模型同提示词生成效果与速度对比",
+    "en": "Multi-model output quality and speed comparison"
+   },
+   "summary": {
+    "zh": "作者使用同一提示词对 Gemini 4 Neon 与 Claude Opus 5.5、Astra 6.2 进行了对比测试，从生成质量、速度、价格以及 Antigravity 额度限制等方面分享了评测结论。",
+    "en": "A model comparison evaluating Gemini 4 Neon against Claude Opus 5.5 and Astra 6.2 on quality, speed, and cost using the same prompt."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Gemini 4 Neon",
+    "Astra 6.2",
+    "GPT",
+    "Antigravity"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 63682,
+    "likes": 273,
+    "replies": 50,
+    "reposts": 10,
+    "bookmarks": 83,
+    "checkedAt": "2026-11-23T01:17:23.159Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2123812719451344896/img/Qz63uH2_d1grf7DA.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2123812719451344896/vid/avc1/1280x720/-AadHjHUvcs9LlTb.mp4",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 29
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -50702,6 +50915,63 @@
    }
   },
   {
+   "id": "2124282462343967111",
+   "url": "https://x.com/dotey/status/2124282462343967111",
+   "author": {
+    "handle": "dotey",
+    "name": "宝玉"
+   },
+   "postedAt": "2026-11-21T23:23:00.000Z",
+   "addedAt": "2026-11-23",
+   "lang": "zh",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "黎曼猜想机器验证证明科普视频",
+    "en": "Riemann Hypothesis machine-verified proof explainer"
+   },
+   "summary": {
+    "zh": "一段 5 分钟的黎曼猜想证明科普视频，作者使用 Opus 5.5 搭配 open-artifact（Motion Artifact）技能及 Gemini 3.8 TTS 生成并配音。",
+    "en": "A 5-minute educational video explaining the Lean-verified Riemann Hypothesis proof, created using Opus 5.5, the open-artifact Motion Artifact skill, and Gemini 3.8 TTS."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/dotey/status/2124295497795920225",
+    "text": "/open-artifact motion 帮我制作一个教学视频，介绍费曼定理被证明这件事，历史，意义，为什么这么多年没有被证明，为什么现在被证明了，会带来什么样的变化。配合 Gemini TTS，检索相关资料和 YouTube 视频，使用其中片段，时长不限。"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Motion Artifact",
+    "open-artifact",
+    "Gemini 3.8 TTS"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 53455,
+    "likes": 253,
+    "replies": 101,
+    "reposts": 31,
+    "bookmarks": 184,
+    "checkedAt": "2026-11-23T01:17:23.159Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2124281217524596736/img/EOC5mniVJgEu0WpK.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2124281217524596736/vid/avc1/1280x720/6pzeogmsjhXkIovP.mp4",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 299
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2112833515037610354",
    "url": "https://x.com/Pluvio9yte/status/2112833515037610354",
    "author": {
@@ -55745,6 +56015,56 @@
     "width": 720,
     "height": 720,
     "durationSec": 24
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124144919287840954",
+   "url": "https://x.com/yulikay/status/2124144919287840954",
+   "author": {
+    "handle": "yulikay",
+    "name": "Yuli Kay"
+   },
+   "postedAt": "2026-11-21T14:16:28.000Z",
+   "addedAt": "2026-11-23",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "塞浦路斯旅行短片剪辑",
+    "en": "Cyprus travel mini-vlog video edit"
+   },
+   "summary": {
+    "zh": "一段塞浦路斯首日旅行短 Vlog，作者将拍摄的视频素材上传至 SpaceCutAI 并给出修改意见，由其中的 Claude Opus 5.5 完成剪辑、字幕、配音与配乐。",
+    "en": "A mini travel vlog of Day 1 in Cyprus edited from user-provided video clips by Claude Opus 5.5 inside SpaceCutAI, including cuts, captions, voiceover, and music."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "SpaceCutAI"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 46742,
+    "likes": 339,
+    "replies": 45,
+    "reposts": 4,
+    "bookmarks": 228,
+    "checkedAt": "2026-11-23T01:17:23.159Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2124143753153662976/img/_vM__QjZdcURF3ht.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2124143753153662976/vid/avc1/1280x720/4vklPAmzYC6siU8P.mp4",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 59
    },
    "evidence": {
     "via": "daily",
@@ -62594,6 +62914,58 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124284345263559127",
+   "url": "https://x.com/soareso/status/2124284345263559127",
+   "author": {
+    "handle": "soareso",
+    "name": "Soares 🇧🇷"
+   },
+   "postedAt": "2026-11-21T23:30:29.000Z",
+   "addedAt": "2026-11-23",
+   "lang": "pt",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "Remotion与视频模型效果对比",
+    "en": "Video generation comparison with Remotion"
+   },
+   "summary": {
+    "zh": "作者用同一个提示词分别对比了 Opus 5.5（代码加 Remotion）、Grok Imagine 和 Google Flow 的生成效果。",
+    "en": "A comparison of outputs generated from the same prompt using Opus 5.5 with code and Remotion, Grok Imagine, and Google Flow."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Remotion",
+    "Grok Imagine",
+    "Google Flow"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 39861,
+    "likes": 427,
+    "replies": 33,
+    "reposts": 22,
+    "bookmarks": 324,
+    "checkedAt": "2026-11-23T01:17:23.159Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2124283958120570881/img/752IPbgbGxGHTwIs.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2124283958120570881/vid/avc1/1280x720/blfKpZfQsp-GHv1I.mp4",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 6
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -95702,6 +96074,56 @@
    }
   },
   {
+   "id": "2124109788883853698",
+   "url": "https://x.com/thebuggeddev/status/2124109788883853698",
+   "author": {
+    "handle": "thebuggeddev",
+    "name": "The Bugged Dev"
+   },
+   "postedAt": "2026-11-21T11:56:52.000Z",
+   "addedAt": "2026-11-23",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "comparison",
+   "title": {
+    "zh": "3D世界生成同题测试",
+    "en": "3D world generation task test"
+   },
+   "summary": {
+    "zh": "对比展示了 Gemini 4 Neon 与 Claude Opus 5.5 在同一 3D 世界生成任务上的表现，两者均基于输入参考图，通过 1 个主提示词和 3 到 5 次微调迭代完成。",
+    "en": "A comparison showing Gemini 4 Neon performing the same 3D world generation task from an input reference as Claude Opus 5.5, each using one master prompt and 3-5 iterations."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Gemini 4 Neon"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 19746,
+    "likes": 402,
+    "replies": 24,
+    "reposts": 21,
+    "bookmarks": 172,
+    "checkedAt": "2026-11-23T01:17:23.159Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2124109343666896896/img/v1Xp4ghspZKK5Khf.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2124109343666896896/vid/avc1/1106x720/vCkV9voCM4y2lLJF.mp4",
+    "width": 1106,
+    "height": 720,
+    "durationSec": 45
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2117891574587908310",
    "url": "https://x.com/GabLattanzio/status/2117891574587908310",
    "author": {
@@ -109139,6 +109561,56 @@
     "width": 720,
     "height": 912,
     "durationSec": 17
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124273127614017837",
+   "url": "https://x.com/ivanainai/status/2124273127614017837",
+   "author": {
+    "handle": "ivanainai",
+    "name": "Ivana"
+   },
+   "postedAt": "2026-11-21T22:45:55.000Z",
+   "addedAt": "2026-11-23",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "GTA风格场景生成对比",
+    "en": "GTA-style scene generation comparison"
+   },
+   "summary": {
+    "zh": "作者展示了 Gemini 4 Neon 与 Opus 5.5 的对比效果，并列出了两款模型的按百万 token 计费价格。",
+    "en": "A side-by-side comparison between Gemini 4 Neon and Opus 5.5, noting their token pricing."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Gemini 4 Neon"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 15239,
+    "likes": 194,
+    "replies": 18,
+    "reposts": 10,
+    "bookmarks": 43,
+    "checkedAt": "2026-11-23T01:17:23.159Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2124271262151159808/img/A73iEX8oG_EBhiJI.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2124271262151159808/vid/avc1/720x812/OxeNZX6P8KALxTeY.mp4",
+    "width": 720,
+    "height": 812,
+    "durationSec": 24
    },
    "evidence": {
     "via": "daily",
@@ -130653,6 +131125,54 @@
    }
   },
   {
+   "id": "2124075827017273804",
+   "url": "https://x.com/kevserctk/status/2124075827017273804",
+   "author": {
+    "handle": "kevserctk",
+    "name": "Kevser"
+   },
+   "postedAt": "2026-11-21T09:41:55.000Z",
+   "addedAt": "2026-11-23",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "视觉作品展示",
+    "en": "Visual creation showcase"
+   },
+   "summary": {
+    "zh": "作者展示了一件使用 Claude Opus 5.5 制作的作品，但未说明具体制作过程或提示词。",
+    "en": "A work created with Claude Opus 5.5, shared without details on how it was made or what prompt was used."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 10094,
+    "likes": 409,
+    "replies": 31,
+    "reposts": 14,
+    "bookmarks": 296,
+    "checkedAt": "2026-11-23T01:17:23.159Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2124075199398039552/img/Qnb1y-IfnM-0jRiS.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2124075199398039552/vid/avc1/770x720/TSrGEb5LvcH3Qm8S.mp4",
+    "width": 770,
+    "height": 720,
+    "durationSec": 10
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2110702464198660316",
    "url": "https://x.com/hagihide/status/2110702464198660316",
    "author": {
@@ -145003,6 +145523,64 @@
    }
   },
   {
+   "id": "2124203254011854973",
+   "url": "https://x.com/Bhavani_00007/status/2124203254011854973",
+   "author": {
+    "handle": "Bhavani_00007",
+    "name": "Bhavy☄️"
+   },
+   "postedAt": "2026-11-21T18:08:16.000Z",
+   "addedAt": "2026-11-23",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "Three.js埃菲尔铁塔生成对比",
+    "en": "Three.js Eiffel Tower model comparison"
+   },
+   "summary": {
+    "zh": "作者让 Gemini 4 Neon、GPT-6.2 Astra、GPT-6.2 Sol 和 Opus 5.5 分别用 Three.js 构建埃菲尔铁塔，并展示对比结果。",
+    "en": "A comparison of Three.js Eiffel Tower builds generated by Gemini 4 Neon, GPT-6.2 Astra, GPT-6.2 Sol, and Opus 5.5."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/Bhavani_00007/status/2124203254011854973",
+    "text": "build the Eiffel Tower in Three.js"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Three.js",
+    "Gemini 4 Neon",
+    "GPT-6.2 Astra",
+    "GPT-6.2 Sol"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 6593,
+    "likes": 106,
+    "replies": 30,
+    "reposts": 3,
+    "bookmarks": 14,
+    "checkedAt": "2026-11-23T01:17:23.159Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2124203061245792256/img/SENilKsXzxtN6le4.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2124203061245792256/vid/avc1/720x960/MPtB8FxCGTqeKqx8.mp4",
+    "width": 720,
+    "height": 960,
+    "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2118665193479659569",
    "url": "https://x.com/shmidtqq/status/2118665193479659569",
    "author": {
@@ -145105,6 +145683,54 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124142792977093019",
+   "url": "https://x.com/Aygramm_/status/2124142792977093019",
+   "author": {
+    "handle": "Aygramm_",
+    "name": "Ayomide Adeji"
+   },
+   "postedAt": "2026-11-21T14:08:01.000Z",
+   "addedAt": "2026-11-23",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "纯代码生成60帧广告片",
+    "en": "Code-generated 60fps commercial ad"
+   },
+   "summary": {
+    "zh": "一条纯代码生成的 60fps 广告视频，包含动画和 89 个同步音效。作者用英语向 Claude Opus 5.5 描述需求并提供导演式修改意见完成制作。",
+    "en": "A code-based advertisement rendered at 60fps with animations and 89 sound effects, created by describing the ad and giving director-style notes to Claude Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 6564,
+    "likes": 114,
+    "replies": 83,
+    "reposts": 10,
+    "bookmarks": 108,
+    "checkedAt": "2026-11-23T01:17:23.159Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2124142708889415681/img/ISV2lS-qgOgUB_FG.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2124142708889415681/vid/avc1/1280x720/wQH1geIzRnXR-bC-.mp4",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 28
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -145600,6 +146226,56 @@
    }
   },
   {
+   "id": "2123982460090503626",
+   "url": "https://x.com/parhelion318/status/2123982460090503626",
+   "author": {
+    "handle": "parhelion318",
+    "name": "Dr. Apolotary"
+   },
+   "postedAt": "2026-11-21T03:30:54.000Z",
+   "addedAt": "2026-11-23",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "仿生模拟植物合成器",
+    "en": "Bio-inspired generative plant synth"
+   },
+   "summary": {
+    "zh": "一个仿生慢速合成器，其中模拟植物会根据地点、时间和天气模拟生长并在数天内生成独特声音，使用 Fable 5.2 和 Opus 5.5 制作，并附有植物学手册。",
+    "en": "A slow bio-inspired synthesizer featuring a simulated plant that grows based on location, time, and weather to produce evolving sounds, built with Fable 5.2 and Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Fable 5.2"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 6438,
+    "likes": 209,
+    "replies": 9,
+    "reposts": 25,
+    "bookmarks": 119,
+    "checkedAt": "2026-11-23T01:17:23.159Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2123982314959261696/img/ZLMgEuLEZfXCj7YH.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2123982314959261696/vid/avc1/720x1220/nbAmKvByb9LSXkYt.mp4",
+    "width": 720,
+    "height": 1220,
+    "durationSec": 23
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2114392673947709526",
    "url": "https://x.com/Haleeeemahh/status/2114392673947709526",
    "author": {
@@ -146070,6 +146746,57 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124152598148087954",
+   "url": "https://x.com/rewind02/status/2124152598148087954",
+   "author": {
+    "handle": "rewind02",
+    "name": "rewind"
+   },
+   "postedAt": "2026-11-21T14:46:58.000Z",
+   "addedAt": "2026-11-23",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "旧金山网页城市驾驶游戏",
+    "en": "San Francisco browser city driving game"
+   },
+   "summary": {
+    "zh": "一款基于浏览器的旧金山城市驾驶游戏，包含交通系统、警察 AI 和完整 HUD，使用 Opus 5.5、Blender（通过 MCP）和 Three.js 制作。",
+    "en": "A browser-based San Francisco city driving game with traffic, police AI, and a full HUD, built with Opus 5.5, Blender via MCP, and Three.js."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Blender",
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 6198,
+    "likes": 108,
+    "replies": 12,
+    "reposts": 11,
+    "bookmarks": 94,
+    "checkedAt": "2026-11-23T01:17:23.159Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2124152515063091200/img/bSqKRLrcQZI5gIGb.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2124152515063091200/vid/avc1/1280x636/A09jFoJK0IJtb1rA.mp4",
+    "width": 1280,
+    "height": 636,
+    "durationSec": 71
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -147081,6 +147808,60 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124166516476461488",
+   "url": "https://x.com/dingchilling/status/2124166516476461488",
+   "author": {
+    "handle": "dingchilling",
+    "name": "@dingchilling"
+   },
+   "postedAt": "2026-11-21T15:42:17.000Z",
+   "addedAt": "2026-11-23",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "小探险家3D角色动画",
+    "en": "Little explorers 3D character animation"
+   },
+   "summary": {
+    "zh": "一个展示小探险家的 3D 场景作品，在 T3 Code 中通过 Neon Orchestrator、Claude Opus 5.5 Medium 和 GPT-6.2 Astra Medium 以 Python 驱动 Blender 制作。",
+    "en": "A 3D scene featuring little explorers, created using Python-driven Blender in T3 Code with Neon Orchestrator, Claude Opus 5.5 Medium, and GPT-6.2 Astra Medium."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Blender",
+    "Python",
+    "T3 Code",
+    "Neon Orchestrator",
+    "GPT-6.2 Astra Medium"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 5904,
+    "likes": 153,
+    "replies": 13,
+    "reposts": 10,
+    "bookmarks": 35,
+    "checkedAt": "2026-11-23T01:17:23.159Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2124163115042619392/img/1j3tMcrYg59Vx-HK.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2124163115042619392/vid/avc1/1280x720/WqPM6lqiWCJNMeHe.mp4",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 27
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }

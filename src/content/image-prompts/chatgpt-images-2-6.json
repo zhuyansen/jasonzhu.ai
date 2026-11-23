@@ -3,8 +3,8 @@
  "model": "ChatGPT Images 2.6",
  "released": "2026-11-04T23:35:14Z",
  "threshold": 5000,
- "updatedAt": "2026-11-22T01:26:23.406Z",
- "statsCheckedAt": "2026-11-22T01:26:23.406Z",
+ "updatedAt": "2026-11-23T01:29:18.983Z",
+ "statsCheckedAt": "2026-11-23T01:29:18.983Z",
  "inclusionRule": "Original post by the creator, images / GIF / video attached, >= 5000 views on that post, creator states it was made with ChatGPT Images 2.6 (GPT-Image-2.6). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -652,6 +652,58 @@
      "width": 2236,
      "height": 1440,
      "durationSec": 33
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124144021392232613",
+   "url": "https://x.com/Avenoxai/status/2124144021392232613",
+   "author": {
+    "handle": "Avenoxai",
+    "name": "Avenox"
+   },
+   "postedAt": "2026-11-21T14:12:54.000Z",
+   "addedAt": "2026-11-23",
+   "lang": "tr",
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "日落海滨公路敞篷车，GTA 风格车险广告视频",
+    "en": "Sunset coastal drive, GTA-style car insurance video ad"
+   },
+   "summary": {
+    "zh": "在 Claude Code 中使用品牌标志制作的 GTA 风格汽车保险广告视频，画面由 GPT Image 2.6 生成，场景由 Seedance 2.5 制作。",
+    "en": "A GTA-style car insurance ad video created within Claude Code using a logo, GPT Image 2.6 for visuals, and Seedance 2.5 for scenes."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Claude Fable",
+    "Seedance",
+    "Claude Code"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 52993,
+    "likes": 206,
+    "replies": 17,
+    "reposts": 3,
+    "bookmarks": 200,
+    "checkedAt": "2026-11-23T01:29:18.983Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2124143972864122880/vid/avc1/1280x720/sggsk2fJleA4Xy0o.mp4?tag=16",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2124143972864122880/img/RftMx0hTci_mYZ2Y.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 40
     }
    ],
    "evidence": {
@@ -1916,6 +1968,77 @@
    }
   },
   {
+   "id": "2124234296877809889",
+   "url": "https://x.com/sipteaandcoffee/status/2124234296877809889",
+   "author": {
+    "handle": "sipteaandcoffee",
+    "name": "kold Coffee"
+   },
+   "postedAt": "2026-11-21T20:11:37.000Z",
+   "addedAt": "2026-11-23",
+   "lang": "en",
+   "kind": "work",
+   "category": "design",
+   "title": {
+    "zh": "四款弧形镂空纸艺美妆杂志封面设计",
+    "en": "Four crescent paper-cutout beauty magazine covers"
+   },
+   "summary": {
+    "zh": "在 TapNow 上使用 GPT Image 2.6 生成的时尚美妆杂志封面模板，采用多层哑光纸张镂空与瑞士平面设计排版风格。",
+    "en": "A beauty magazine cover template generated with GPT Image 2.6 on TapNow, featuring layered matte paper cutouts and Swiss-style typography."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "post",
+    "sourceUrl": "https://x.com/sipteaandcoffee/status/2124234296877809889",
+    "text": "Create a luxury contemporary beauty magazine cover featuring [MAIN SUBJECT] alongside [SECONDARY SUBJECT], visually exploring [CONCEPT] through architectural elegance, sculptural minimalism, and avant-garde editorial art direction.\n\nDesign an asymmetrical composition using oversized, overlapping matte [COLOR] paper surfaces with a sculptural crescent-shaped opening, revealing an intimate, photorealistic beauty portrait beneath. Selectively expose the subject's expressive eye, sculpted eyebrow, cheekbone, nose, and lips while concealing the remaining facial features behind the architectural layers.\n\nInclude elegantly positioned hands interacting naturally with the paper edges, sophisticated [NAIL DESIGN], luxurious [MAKEUP], and carefully styled [HAIRSTYLE].\n\nIntroduce the secondary subject within the lower portion of the opening, establishing a meaningful visual connection with the main subject. Preserve authentic anatomy, realistic textures, and natural proportions.\n\nUse soft directional studio lighting, realistic skin texture, luminous cosmetic highlights, atmospheric shadows, subtle physical depth, and premium editorial photography.\n\nMaintain a harmonious, restricted color palette of [COLOR PALETTE], with matte paper finishes, complementary cosmetic tones, and refined photographic contrast.\n\nTYPOGRAPHY & LAYOUT\nLeft section: Oversized experimental headline \"[HEADLINE]\", combining thin condensed and extra-bold uppercase typography.\nBeneath the headline: Small category text \"[CATEGORY]\" and a sophisticated editorial description \"[DESCRIPTION]\".\nUpper right corner: Minimal publication information \"[ISSUE]\".\nLower right section: Elegant editorial title \"[TITLE]\" and a poetic multiline statement \"[TAGLINE]\".\nContemporary Swiss graphic design, sculptural paper layering, architectural negative space, precise typographic hierarchy, asymmetrical visual balance, subtle embossed print textures, and sophisticated collectible fashion-magazine aesthetics.\n\nNo distorted anatomy, unnecessary decorations, random typography, artificial skin smoothing, or excessive visual effects.\n\nVertical 3:4 composition, ultra-photorealistic, ultra-high-resolution, premium print-ready editorial quality."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "TapNow"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 25672,
+    "likes": 183,
+    "replies": 32,
+    "reposts": 17,
+    "bookmarks": 54,
+    "checkedAt": "2026-11-23T01:29:18.983Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXrKl5ZbQAATWjU.jpg",
+     "width": 1744,
+     "height": 2336
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXrKolUaIAAB54P.jpg",
+     "width": 880,
+     "height": 1168
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXrKqnfasAARjrC.jpg",
+     "width": 1744,
+     "height": 2336
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXrKr20bgAABKjP.jpg",
+     "width": 880,
+     "height": 1168
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2122497368625184947",
    "url": "https://x.com/viktoroddy/status/2122497368625184947",
    "author": {
@@ -2685,6 +2808,60 @@
    }
   },
   {
+   "id": "2124213815697158160",
+   "url": "https://x.com/kevin_t_ngo/status/2124213815697158160",
+   "author": {
+    "handle": "kevin_t_ngo",
+    "name": "Kevin Ngo"
+   },
+   "postedAt": "2026-11-21T18:50:14.000Z",
+   "addedAt": "2026-11-23",
+   "lang": "en",
+   "kind": "work",
+   "category": "gif",
+   "title": {
+    "zh": "白发麻花辫少女日落场景，3D 游戏电影预告片",
+    "en": "Animated 3D girl with white braid in sunset game trailer"
+   },
+   "summary": {
+    "zh": "由 Claude 调用游戏引擎制作的电影预告片，结合 fal 上的 GPT Image 2.6 生成角色美术，以及 Tripo、Meshy 和 ElevenLabs 完成三维模型、骨骼绑定与配音。",
+    "en": "A movie trailer created by Claude using a game engine, with GPT Image 2.6 on fal for character art, Tripo for 3D models, Meshy for rigging, and ElevenLabs for voices."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Claude",
+    "fal",
+    "Tripo",
+    "Meshy",
+    "ElevenLabs"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 19013,
+    "likes": 433,
+    "replies": 41,
+    "reposts": 26,
+    "bookmarks": 218,
+    "checkedAt": "2026-11-23T01:29:18.983Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2124213361152053248/vid/avc1/1280x720/SQ50gIUfeK9Nwfr5.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2124213361152053248/img/_1ZpcxdvZ01YP8xm.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 48
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2119154946969133308",
    "url": "https://x.com/alexcooldev/status/2119154946969133308",
    "author": {
@@ -3347,6 +3524,77 @@
    }
   },
   {
+   "id": "2124087683983257695",
+   "url": "https://x.com/ZaraIrahh/status/2124087683983257695",
+   "author": {
+    "handle": "ZaraIrahh",
+    "name": "Zara"
+   },
+   "postedAt": "2026-11-21T10:29:02.000Z",
+   "addedAt": "2026-11-23",
+   "lang": "en",
+   "kind": "work",
+   "category": "design",
+   "title": {
+    "zh": "地标建筑摄影与几何抽象分屏海报系列",
+    "en": "Landmarks in split photo and geometric poster series"
+   },
+   "summary": {
+    "zh": "在 OpenArt 上使用 GPT Image 2.6 基于上传照片生成的上下对半艺术海报，上半部分保留原图，下半部分将其特征转化为极简几何符号。",
+    "en": "A 50/50 split contemporary art poster generated from an uploaded photo using GPT Image 2.6 on OpenArt, pairing the original image with minimalist geometric symbols."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "post",
+    "sourceUrl": "https://x.com/ZaraIrahh/status/2124087683983257695",
+    "text": "From the image I uploaded, create a premium artistic poster in a vertical 3:4 aspect ratio, divided precisely into two equal halves (50/50).\n\nTop Half: Preserve the original subject, composition, textures, and natural lighting of the uploaded image. Apply only subtle color adjustments to achieve an artistic photographic aesthetic. Do not distort, modify, or alter the subject in any way.\n\nBottom Half: Transform the most distinctive features of the image into an abstract, minimalist geometric symbol system that still makes the original subject recognizable. Use modular geometric shapes, curves, negative space, technical grids, fine lines, and small graphic symbols inspired by Deconstructed Swiss Design, Post-digital Graphic Design, and Generative Symbol Systems.\n\nUse a color palette sampled directly from the original image, with a lightly textured warm ivory paper background. Maintain a spacious, refined, and sophisticated layout.\n\nBoth halves must be visually connected through shapes, colors, and concepts, creating the impression of a contemporary art exhibition poster.\n\nMandatory Requirements:\n\n* The poster must be divided into exactly two equal halves (50/50).\n\n* The top half must retain the original photograph.\n\n* The bottom half must feature abstract graphics developed directly from the subject.\n\n* Do not use random decorative shapes or unrelated graphic elements."
+   },
+   "referenceAssets": true,
+   "tools": [
+    "OpenArt"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 15620,
+    "likes": 411,
+    "replies": 40,
+    "reposts": 55,
+    "bookmarks": 230,
+    "checkedAt": "2026-11-23T01:29:18.983Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXpGbmZagAAgZGS.jpg",
+     "width": 1086,
+     "height": 1448
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXpGcvtaYAACjin.jpg",
+     "width": 1086,
+     "height": 1448
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXpGeAWbsAAR1rF.jpg",
+     "width": 1086,
+     "height": 1448
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXpGe0DaUAASXSm.jpg",
+     "width": 1086,
+     "height": 1448
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2118685698056483227",
    "url": "https://x.com/SOPHIA_AIART/status/2118685698056483227",
    "author": {
@@ -3390,6 +3638,71 @@
      "url": "https://pbs.twimg.com/media/HWcVaaVa8AAVgsp.jpg",
      "width": 1088,
      "height": 1920
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124175776727658761",
+   "url": "https://x.com/Just_sharon7/status/2124175776727658761",
+   "author": {
+    "handle": "Just_sharon7",
+    "name": "Sharon Riley"
+   },
+   "postedAt": "2026-11-21T16:19:05.000Z",
+   "addedAt": "2026-11-23",
+   "lang": "en",
+   "kind": "work",
+   "category": "portrait",
+   "title": {
+    "zh": "罪恶都市街头系列：敞篷车、快餐店鳄鱼与赛车",
+    "en": "Vice City scenes: neon convertible, diner gator, race car"
+   },
+   "summary": {
+    "zh": "在 TapNow 上使用 GPT Image 2.6 基于女性参考照片生成的“罪恶都市”风格人像，将人物置于霓虹街道与兰博基尼跑车旁的场景中。",
+    "en": "A Vice City-inspired portrait generated with GPT Image 2.6 on TapNow from a female reference photo, placing the subject in a neon-lit street scene beside a Lamborghini."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "post",
+    "sourceUrl": "https://x.com/Just_sharon7/status/2124175776727658761",
+    "text": "MAIN CHARACTER: Use the uploaded female reference image @[Image 1](image_1) as the exact facial identity reference. A stunning 25-year-old woman @[Image 1](image_1) with shoulder-length blonde wavy bob hair, voluminous side-parted hairstyle, beautiful blue eyes, sharply defined eyebrows, glamorous smoky eye makeup, long curled eyelashes, softly sculpted cheekbones, glowing skin with realistic texture, glossy nude-pink lips, and large silver hoop earrings.\nOUTFIT: An oversized black cropped American football jersey featuring a large red number \"10\" with bold white outlines, red and white striped sleeve cuffs and V-neckline. Distressed white denim shorts with ripped detailing and frayed edges, a delicate silver waist chain, and chunky black leather platform ankle boots.\nPOSE AND EXPRESSION: The woman stands confidently in the middle of a rain-soaked street, directly in front of a metallic lavender-purple Lamborghini Aventador with both scissor doors raised. Her right arm is extended toward the camera, dramatically throwing hundred-dollar bills into the air, while her left hand holds a large black leather duffel bag overflowing with bundles of cash. She looks directly into the camera with a fearless, glamorous, rebellious, and completely unbothered expression.\nENVIRONMENT AND BACKGROUND: A chaotic Vice City boulevard at night, surrounded by towering skyscrapers illuminated with hot-pink, purple, and cyan neon lights. Customized American muscle cars, muscular tattooed men wearing white tank tops and gold chains, cheering spectators, police officers, and multiple police vehicles flashing red and blue emergency lights. A police helicopter flies overhead, projecting a powerful white searchlight toward the street. A glowing pink neon \"VICE CITY\" sign, tropical palm trees, thick purple smoke, realistic rainfall, scattered banknotes, and wet asphalt reflecting the colorful city lights.\nCAMERA AND COMPOSITION: Dramatic low-angle 24mm wide-angle cinematic shot, full-body female portrait, character positioned prominently in the center, slightly tilted Dutch-angle composition, realistic depth of field, powerful female protagonist energy.\nVISUAL STYLE: Ultra-realistic GTA VI-inspired next-generation AAA video game graphics, Unreal Engine 5 cinematic rendering, ray-traced reflections, realistic skin and fabric textures, volumetric smoke, detailed rain droplets, saturated neon colors, cinematic lighting, character-focused composition, 8K detail, 3:4 vertical aspect ratio.\nIDENTITY LOCK: Preserve the exact facial identity, blue eyes, nose, lips, facial structure, skin tone, and recognizable features from the uploaded blonde female reference image. adjust her makeup and clothing according to the prompt. No facial identity changes."
+   },
+   "referenceAssets": true,
+   "tools": [
+    "TapNow"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 14975,
+    "likes": 237,
+    "replies": 48,
+    "reposts": 12,
+    "bookmarks": 9,
+    "checkedAt": "2026-11-23T01:29:18.983Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXqV96waEAAOlhx.jpg",
+     "width": 880,
+     "height": 1168
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXqV_SJaYAExHAd.jpg",
+     "width": 880,
+     "height": 1168
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXqWAmrbQAAjsee.jpg",
+     "width": 880,
+     "height": 1168
     }
    ],
    "evidence": {
@@ -5539,6 +5852,65 @@
      "url": "https://pbs.twimg.com/media/HWlFvsFaIAEF68R.jpg",
      "width": 896,
      "height": 1152
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124201696830386391",
+   "url": "https://x.com/Just_sharon7/status/2124201696830386391",
+   "author": {
+    "handle": "Just_sharon7",
+    "name": "Sharon Riley"
+   },
+   "postedAt": "2026-11-21T18:02:04.000Z",
+   "addedAt": "2026-11-23",
+   "lang": "en",
+   "kind": "work",
+   "category": "design",
+   "title": {
+    "zh": "石榴与草莓植物图鉴及几何重构分屏海报",
+    "en": "Botanical pomegranate and strawberry split geometry posters"
+   },
+   "summary": {
+    "zh": "创作者在 Higgsfield 上使用 GPT Image 2.6，基于上传的照片生成了上下对半构图的平面设计海报：上半部分保留原照片，下半部分将其视觉特征提炼为抽象图形标志。",
+    "en": "A split editorial design poster generated with GPT Image 2.6 on Higgsfield from an uploaded photograph, pairing the original photo on top with an abstract graphic emblem below."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "post",
+    "sourceUrl": "https://x.com/Just_sharon7/status/2124201696830386391",
+    "text": "\"task\": \"Reinterpret the uploaded photograph as a sophisticated, self-contained editorial design poster that explores the relationship between photographic reality and abstract visual identity.\",\n\n\"output_specifications\": {\n\"aspect_ratio\": \"3:4\",\n\"orientation\": \"Vertical\",\n\"resolution\": \"Ultra-high-resolution, 8K, print-ready\",\n\"quality\": \"Premium contemporary art publication\",\n\"layout\": \"Two precisely equal horizontal sections\",\n\"upper_section\": \"50% original photography\",\n\"lower_section\": \"50% abstract graphic identity\"\n},\n\n\"composition\": {\n\"structure\": \"Divide the canvas horizontally at its exact midpoint, establishing a perfectly balanced relationship between photographic representation and graphic abstraction.\",\n\"alignment\": \"Edge-to-edge composition with an unmistakable separation between the upper and lower sections.\",\n\"visual_balance\": \"Both sections must communicate the same visual character through entirely different artistic languages.\",\n\"art_direction\": \"Contemporary cultural branding meets experimental editorial design.\"\n},\n\n\"upper_section\": {\n\"title\": \"Photographic Reality\",\n\"canvas_coverage\": \"50%\",\n\n\"image_preservation\": {\n\"source\": \"Use the uploaded photograph as the primary visual reference.\",\n\"identity_lock\": \"Maintain the exact identity, facial features, anatomy, proportions, expression, pose, and recognizable characteristics of the original subject.\",\n\"composition\": \"Respect the original photographic framing, perspective, spatial relationships, and environmental details.\",\n\"lighting\": \"Retain authentic illumination, natural highlights, realistic shadows, and existing atmospheric conditions.\",\n\"textures\": \"Preserve genuine surface details, materials, skin textures, and photographic depth.\",\n\"background_extension\": \"If additional framing is required, extend the surrounding environment naturally without stretching or modifying the subject.\"\n},\n\n\"photographic_treatment\": {\n\"color_grading\": \"Apply restrained, refined editorial color correction inspired by luxury independent photography publications.\",\n\"contrast\": \"Balanced tonal separation with natural shadow depth and controlled highlights.\",\n\"retouching\": \"Minimal and nearly invisible.\",\n\"realism\": \"Maintain authentic photographic quality without artificial reconstruction or stylization.\",\n\"final_appearance\": \"An exhibition-quality fine-art photograph presented within a contemporary design journal.\"\n}\n},\n\n\"lower_section\": {\n\"title\": \"Abstract Visual Signature\",\n\"canvas_coverage\": \"50%\",\n\n\"creative_objective\": \"Distill the fundamental visual character of the photograph into one original, memorable, and independently recognizable graphic emblem.\",\n\n\"visual_analysis\": {\n\"silhouette\": \"Identify the most distinctive external contours of the original subject.\",\n\"geometry\": \"Discover underlying shapes, structural relationships, proportions, and directional movement.\",\n\"recognition\": \"Isolate the features that make the photographic subject immediately distinguishable.\",\n\"emotion\": \"Translate the atmosphere, personality, tension, and narrative energy of the photograph into visual form.\",\n\"simplification\": \"Remove unnecessary information until only the essential visual characteristics remain.\"\n},\n\n\"symbol_construction\": {\n\"approach\": \"Conceptual abstraction rather than direct illustration.\",\n\"dominant_element\": \"One bold yet highly refined abstract identity mark.\",\n\"design_methods\": [\n\"Geometric fragmentation and reconstruction\",\n\"Modular visual components\",\n\"Architectural structural relationships\",\n\"Controlled asymmetry\",\n\"Intelligent use of negative space\",\n\"Fine technical linework\",\n\"Intersecting circular trajectories\",\n\"Minimal abstract nodes\",\n\"Symbolic reduction\",\n\"Precision-based spatial composition\"\n],\n\"positioning\": \"Place the primary emblem centrally or with a carefully considered off-center alignment.\",\n\"scale\": \"Large enough to establish a clear visual hierarchy while preserving extensive surrounding negative space.\",\n\"recognizability\": \"The emblem should subtly evoke the original photograph without reproducing its complete appearance.\",\n\"independence\": \"The finished symbol must function as a standalone visual identity suitable for professional cultural branding.\"\n}\n},\n\n\"graphic_design_language\": {\n\"primary_influences\": [\n\"Contemporary Swiss typography\",\n\"Post-digital visual culture\",\n\"Experimental editorial systems\",\n\"Architectural identity design\",\n\"Generative graphic structures\",\n\"Modernist symbolic abstraction\",\n\"Independent art publishing\",\n\"Contemporary museum branding\"\n],\n\n\"visual_character\": [\n\"Intellectual\",\n\"Minimalist\",\n\"Architectural\",\n\"Conceptual\",\n\"Distinctive\",\n\"Systematic\",\n\"Emotionally expressive\",\n\"Culturally sophisticated\"\n],\n\n\"creative_contrasts\": {\n\"geometry\": \"Mathematical precision contrasted with subtle organic irregularity.\",\n\"composition\": \"Structured visual order balanced against experimental asymmetry.\",\n\"materiality\": \"Clean digital construction combined with authentic analog printing characteristics.\",\n\"expression\": \"Rational graphic forms carrying the emotional qualities of the original photograph.\"\n},\n\n\"supporting_elements\": [\n\"Extremely fine construction lines\",\n\"Subtle geometric grids\",\n\"Partial circular outlines\",\n\"Tiny registration markers\",\n\"Minimal structural connections\",\n\"Small archival indexing elements\"\n],\n\n\"restraint\": \"Supporting graphic details must remain visually secondary to the central emblem.\"\n},\n\n\"typography\": {\n\"purpose\": \"Typography should operate as a quiet structural detail within the visual identity rather than promotional messaging.\",\n\"style\": \"Minimalist, technical, archival, and contemporary sans-serif typography.\",\n\"scale\": \"Very small, discreet typographic elements.\",\n\"optional_details\": [\n\"Archival identification numbers\",\n\"Short alphanumeric references\",\n\"Edition markers\",\n\"Minimal indexing codes\",\n\"Abstract technical annotations\",\n\"Small registration labels\"\n],\n\"placement\": \"Intentionally positioned near construction lines, margins, or structural reference points.\",\n\"restrictions\": \"No oversized headlines, lengthy descriptions, meaningless paragraphs, or dominant text elements.\"\n},\n\n\"color_direction\": {\n\"palette_generation\": \"Sample the most significant colors directly from the uploaded photograph and reinterpret them as a unified graphic identity palette.\",\n\n\"background\": {\n\"preferred_colors\": [\n\"Soft ivory\",\n\"Warm white\",\n\"Natural paper white\",\n\"Muted light grey\"\n],\n\"appearance\": \"Clean, understated, and materially authentic.\"\n},\n\n\"symbol_colors\": {\n\"primary\": \"Use the strongest visually meaningful tone extracted from the photograph.\",\n\"secondary\": \"Introduce complementary shades only when necessary to reinforce structure.\",\n\"accents\": \"Use carefully placed touches of cyan, teal, cobalt blue, orange, magenta, or other colors only when naturally supported by the source image.\"\n},\n\n\"color_philosophy\": \"Color must establish identity, hierarchy, and structural meaning rather than simply decorate the composition.\",\n\n\"restrictions\": [\n\"No excessive saturation\",\n\"No arbitrary color combinations\",\n\"No artificial neon illumination\",\n\"No generic commercial gradients\",\n\"No overwhelming multicolor compositions\"\n]\n},\n\n\"print_and_material_aesthetic\": {\n\"surface\": \"Premium uncoated archival paper with subtle physical texture.\",\n\n\"analog_effects\": [\n\"Fine paper fibers\",\n\"Restrained risograph grain\",\n\"Delicate photocopier texture\",\n\"Almost imperceptible ink registration shifts\",\n\"Subtle scanner imperfections\",\n\"Slightly irregular printed edges\",\n\"Minimal ink-density variations\"\n],\n\n\"intensity\": \"Extremely subtle and carefully controlled.\",\n\"purpose\": \"Create the tactile authenticity of a limited-edition experimental design publication without sacrificing graphic clarity.\",\n\"finish\": \"Museum-quality printed artwork with a sophisticated analog-digital aesthetic.\"\n},\n\n\"visual_hierarchy\": {\n\"upper_half\": \"The original photographic subject remains the principal visual focus.\",\n\"lower_half\": \"A single abstract emblem becomes the exclusive dominant graphic element.\",\n\"secondary_details\": \"Construction lines, typography, and technical markers remain understated.\",\n\"negative_space\": \"Maintain generous uninterrupted space around the emblem to emphasize its sculptural and symbolic qualities.\",\n\"overall_balance\": \"Create a visually harmonious dialogue between representational imagery and conceptual abstraction.\"\n},\n\n\"creative_references\": [\n\"Contemporary independent design studios\",\n\"Experimental Swiss graphic design publications\",\n\"Modern architectural branding systems\",\n\"International contemporary art institutions\",\n\"Limited-edition cultural posters\",\n\"Avant-garde editorial photography\",\n\"Generative visual identity systems\",\n\"Museum exhibition graphics\"\n],\n\n\"strict_requirements\": [\n\"Maintain an exact vertical 3:4 aspect ratio.\",\n\"Divide the poster into two mathematically equal horizontal sections.\",\n\"The photographic image must occupy precisely the upper 50%.\",\n\"The abstract visual identity must occupy precisely the lower 50%.\",\n\"Preserve the original subject's recognizable identity and physical characteristics.\",\n\"Do not distort, stretch, reconstruct, or replace the photographic subject.\",\n\"Create only one dominant abstract identity mark.\",\n\"Derive the emblem directly from the photograph's defining visual characteristics.\",\n\"Maintain generous negative space.\",\n\"Use a sophisticated and cohesive color palette.\",\n\"Keep all analog print textures subtle.\",\n\"Present the finished artwork as a standalone flat poster without frames, walls, or presentation mockups.\"\n],\n\n\"negative_prompt\": [\n\"Distorted facial features\",\n\"Altered subject identity\",\n\"Incorrect anatomy\",\n\"Stretched photography\",\n\"Unequal horizontal sections\",\n\"Literal subject illustration in the lower half\",\n\"Generic stock logos\",\n\"Multiple competing symbols\",\n\"Excessive geometric decoration\",\n\"Infographic layouts\",\n\"Oversized typography\",\n\"Random text\",\n\"Visual clutter\",\n\"Heavy distressing\",\n\"Cheap neon effects\",\n\"Oversaturated colors\",\n\"Commercial advertising aesthetics\",\n\"Artificial photographic filters\",\n\"Excessive gradients\",\n\"Three-dimensional logo mockups\",\n\"Watermarks\",\n\"Decorative borders\"\n],\n\n\"final_creative_goal\": \"Transform a single photograph into a sophisticated visual research artifact that presents two interpretations of the same subject. The upper half preserves its physical reality, while the lower half captures its essence through intelligent geometric abstraction. The resulting emblem should possess its own recognizable personality, symbolic meaning, and visual memory, as though developed by an internationally recognized contemporary design studio.\"\n}"
+   },
+   "referenceAssets": true,
+   "tools": [
+    "Higgsfield"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 5131,
+    "likes": 185,
+    "replies": 51,
+    "reposts": 11,
+    "bookmarks": 9,
+    "checkedAt": "2026-11-23T01:29:18.983Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXqtwLZb0AAcBKf.jpg",
+     "width": 880,
+     "height": 1168
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXqtwLqacAALNEx.jpg",
+     "width": 880,
+     "height": 1168
     }
    ],
    "evidence": {
