@@ -1,0 +1,794 @@
+{
+ "date": "2026-11-23",
+ "site": "jasonzhu.ai",
+ "sets": [
+  "frozen",
+  "real"
+ ],
+ "questions": 51,
+ "cost_usd": 5.4699,
+ "lineage": {
+  "backlink_guard": "0.12.1",
+  "gemini_model": "gemini-3.8-flash",
+  "gemini_samples": 1,
+  "depth": 20,
+  "panel_answers": 604,
+  "fanout_script": "8713c272901e"
+ },
+ "totals": {
+  "searches": 454,
+  "read": 336,
+  "google": 0,
+  "bing": 0,
+  "google_top10": 0,
+  "bing_top10": 0,
+  "either": 0,
+  "shared": 1,
+  "by_engine": {
+   "chatgpt": 350,
+   "gemini": 105
+  }
+ },
+ "questions_rows": [
+  {
+   "question_id": "brand-who-is-jasonzhu",
+   "set": "frozen",
+   "target_url": "https://jasonzhu.ai/en/about",
+   "searches": 8,
+   "read": 6,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 6,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 4,
+    "gemini": 4
+   }
+  },
+  {
+   "question_id": "brand-site-overview",
+   "set": "frozen",
+   "target_url": "https://jasonzhu.ai/en",
+   "searches": 4,
+   "read": 4,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 4,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 1,
+    "gemini": 3
+   }
+  },
+  {
+   "question_id": "brand-ai-consulting",
+   "set": "frozen",
+   "target_url": "https://jasonzhu.ai/en/services",
+   "searches": 2,
+   "read": 2,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 2,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 1,
+    "gemini": 1
+   }
+  },
+  {
+   "question_id": "brand-x-handbook",
+   "set": "frozen",
+   "target_url": "https://jasonzhu.ai/en/handbook",
+   "searches": 7,
+   "read": 2,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 2,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 4,
+    "gemini": 3
+   }
+  },
+  {
+   "question_id": "data-indie-payments-200k",
+   "set": "frozen",
+   "target_url": "https://jasonzhu.ai/en/blog/indie-payments-report-2026",
+   "searches": 6,
+   "read": 5,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 5,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 3,
+    "gemini": 3
+   }
+  },
+  {
+   "question_id": "data-choose-payment-platform",
+   "set": "frozen",
+   "target_url": "https://jasonzhu.ai/en/blog/choose-payment-platform-2026",
+   "searches": 12,
+   "read": 11,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 11,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 9,
+    "gemini": 3
+   }
+  },
+  {
+   "question_id": "data-dodo-waffo-20usd-fee",
+   "set": "frozen",
+   "target_url": "https://jasonzhu.ai/en/blog/dodo-payments-waffo-ai-saas-fee-comparison",
+   "searches": 15,
+   "read": 11,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 11,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 11,
+    "gemini": 4
+   }
+  },
+  {
+   "question_id": "data-lemon-squeezy-shutdown",
+   "set": "frozen",
+   "target_url": "https://jasonzhu.ai/en/blog/chuhai-weekly-06",
+   "searches": 6,
+   "read": 5,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 5,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 3,
+    "gemini": 3
+   }
+  },
+  {
+   "question_id": "data-backlink-spam-list",
+   "set": "frozen",
+   "target_url": "https://jasonzhu.ai/en/backlink-spam-list",
+   "searches": 7,
+   "read": 5,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 5,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 5,
+    "gemini": 2
+   }
+  },
+  {
+   "question_id": "data-indie-seller-weekly",
+   "set": "frozen",
+   "target_url": "https://jasonzhu.ai/en/go-global/weekly",
+   "searches": 9,
+   "read": 8,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 8,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 6,
+    "gemini": 3
+   }
+  },
+  {
+   "question_id": "data-ai-money-map",
+   "set": "frozen",
+   "target_url": "https://jasonzhu.ai/en/blog/ai-money-map-2026",
+   "searches": 8,
+   "read": 6,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 6,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 7,
+    "gemini": 1
+   }
+  },
+  {
+   "question_id": "global-us-llc-dev-accounts",
+   "set": "frozen",
+   "target_url": "https://jasonzhu.ai/en/blog/us-llc-developer-accounts",
+   "searches": 16,
+   "read": 12,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 12,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 14,
+    "gemini": 2
+   }
+  },
+  {
+   "question_id": "global-us-llc-mercury-stripe",
+   "set": "frozen",
+   "target_url": "https://jasonzhu.ai/en/blog/us-llc-mercury-stripe-168-usd",
+   "searches": 15,
+   "read": 10,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 10,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 13,
+    "gemini": 2
+   }
+  },
+  {
+   "question_id": "global-uk-company-2h",
+   "set": "frozen",
+   "target_url": "https://jasonzhu.ai/en/blog/uk-company-registration-2hours",
+   "searches": 7,
+   "read": 7,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 7,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 6,
+    "gemini": 1
+   }
+  },
+  {
+   "question_id": "global-uk-wise-business",
+   "set": "frozen",
+   "target_url": "https://jasonzhu.ai/en/blog/uk-company-wise-business-account",
+   "searches": 7,
+   "read": 6,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 6,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 5,
+    "gemini": 2
+   }
+  },
+  {
+   "question_id": "global-uk-annual-review",
+   "set": "frozen",
+   "target_url": "https://jasonzhu.ai/en/blog/uk-company-annual-review-diy-guide",
+   "searches": 9,
+   "read": 1,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 1,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 8,
+    "gemini": 1
+   }
+  },
+  {
+   "question_id": "prompts-claude-opus-55",
+   "set": "frozen",
+   "target_url": "https://jasonzhu.ai/en/prompts/claude-opus-5-5",
+   "searches": 9,
+   "read": 8,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 8,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 6,
+    "gemini": 3
+   }
+  },
+  {
+   "question_id": "prompts-chatgpt-images-26",
+   "set": "frozen",
+   "target_url": "https://jasonzhu.ai/en/prompts/chatgpt-images-2-6",
+   "searches": 8,
+   "read": 5,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 5,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 5,
+    "gemini": 3
+   }
+  },
+  {
+   "question_id": "prompts-gemini-4",
+   "set": "frozen",
+   "target_url": "https://jasonzhu.ai/en/prompts/gemini-4",
+   "searches": 4,
+   "read": 4,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 4,
+   "shared_gaps": 1,
+   "by_engine": {
+    "chatgpt": 3,
+    "gemini": 2
+   }
+  },
+  {
+   "question_id": "learn-free-ai-map",
+   "set": "frozen",
+   "target_url": "https://jasonzhu.ai/en/blog/ai-free-learning-hub",
+   "searches": 15,
+   "read": 4,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 4,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 15
+   }
+  },
+  {
+   "question_id": "learn-openai-startup-credits",
+   "set": "frozen",
+   "target_url": "https://jasonzhu.ai/en/blog/openai-startup-credits-application-guide",
+   "searches": 8,
+   "read": 6,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 6,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 5,
+    "gemini": 3
+   }
+  },
+  {
+   "question_id": "real-pay-china-founder",
+   "set": "real",
+   "target_url": "https://jasonzhu.ai/en/go-global/open-account",
+   "searches": 11,
+   "read": 8,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 8,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 9,
+    "gemini": 2
+   }
+  },
+  {
+   "question_id": "real-pay-mor-tax",
+   "set": "real",
+   "target_url": "https://jasonzhu.ai/en/blog/choose-payment-platform-2026",
+   "searches": 14,
+   "read": 13,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 13,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 12,
+    "gemini": 2
+   }
+  },
+  {
+   "question_id": "real-pay-compare-six",
+   "set": "real",
+   "target_url": "https://jasonzhu.ai/en/blog/choose-payment-platform-2026",
+   "searches": 27,
+   "read": 22,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 22,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 18,
+    "gemini": 9
+   }
+  },
+  {
+   "question_id": "real-pay-tax-headaches",
+   "set": "real",
+   "target_url": "https://jasonzhu.ai/en/go-global/payments",
+   "searches": 8,
+   "read": 5,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 5,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 6,
+    "gemini": 2
+   }
+  },
+  {
+   "question_id": "real-pay-creem-vs-dodo",
+   "set": "real",
+   "target_url": "https://jasonzhu.ai/en/go-global/open-account",
+   "searches": 9,
+   "read": 9,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 9,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 6,
+    "gemini": 3
+   }
+  },
+  {
+   "question_id": "real-pay-fastest-approval",
+   "set": "real",
+   "target_url": "https://jasonzhu.ai/en/go-global/open-account",
+   "searches": 17,
+   "read": 17,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 17,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 14,
+    "gemini": 3
+   }
+  },
+  {
+   "question_id": "real-co-us-llc-nonresident",
+   "set": "real",
+   "target_url": "https://jasonzhu.ai/en/blog/us-llc-mercury-stripe-168-usd",
+   "searches": 10,
+   "read": 8,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 8,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 10
+   }
+  },
+  {
+   "question_id": "real-co-mercury-docs",
+   "set": "real",
+   "target_url": "https://jasonzhu.ai/en/blog/us-llc-mercury-stripe-168-usd",
+   "searches": 5,
+   "read": 2,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 2,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 4,
+    "gemini": 1
+   }
+  },
+  {
+   "question_id": "real-co-ein-no-ssn",
+   "set": "real",
+   "target_url": "https://jasonzhu.ai/en/blog/us-llc-developer-accounts",
+   "searches": 6,
+   "read": 4,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 4,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 6
+   }
+  },
+  {
+   "question_id": "real-co-wise-director-abroad",
+   "set": "real",
+   "target_url": "https://jasonzhu.ai/en/blog/uk-company-wise-business-account",
+   "searches": 7,
+   "read": 4,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 4,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 6,
+    "gemini": 1
+   }
+  },
+  {
+   "question_id": "real-co-uk-from-overseas",
+   "set": "real",
+   "target_url": "https://jasonzhu.ai/en/blog/uk-company-registration-2hours",
+   "searches": 10,
+   "read": 10,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 10,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 9,
+    "gemini": 1
+   }
+  },
+  {
+   "question_id": "real-co-us-or-uk-remote",
+   "set": "real",
+   "target_url": "https://jasonzhu.ai/en/go-global",
+   "searches": 9,
+   "read": 8,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 8,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 9
+   }
+  },
+  {
+   "question_id": "real-prompts-opus-examples",
+   "set": "real",
+   "target_url": "https://jasonzhu.ai/en/prompts/claude-opus-5-5",
+   "searches": 5,
+   "read": 3,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 3,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 3,
+    "gemini": 2
+   }
+  },
+  {
+   "question_id": "real-prompts-gallery",
+   "set": "real",
+   "target_url": "https://jasonzhu.ai/en/prompts",
+   "searches": 4,
+   "read": 4,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 4,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 3,
+    "gemini": 1
+   }
+  },
+  {
+   "question_id": "real-prompts-images-mockups",
+   "set": "real",
+   "target_url": "https://jasonzhu.ai/en/prompts/chatgpt-images-2-6",
+   "searches": 10,
+   "read": 8,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 8,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 8,
+    "gemini": 2
+   }
+  },
+  {
+   "question_id": "real-prompts-three-models",
+   "set": "real",
+   "target_url": "https://jasonzhu.ai/en/prompts",
+   "searches": 10,
+   "read": 10,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 10,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 7,
+    "gemini": 3
+   }
+  },
+  {
+   "question_id": "real-learn-anthropic-free",
+   "set": "real",
+   "target_url": "https://jasonzhu.ai/en/blog/openai-academy-vs-anthropic-learning-paths",
+   "searches": 4,
+   "read": 4,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 4,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 1,
+    "gemini": 3
+   }
+  },
+  {
+   "question_id": "real-learn-nvidia-dli",
+   "set": "real",
+   "target_url": "https://jasonzhu.ai/en/blog/nvidia-dli-free-courses",
+   "searches": 5,
+   "read": 5,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 5,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 3,
+    "gemini": 2
+   }
+  },
+  {
+   "question_id": "real-learn-roadmap",
+   "set": "real",
+   "target_url": "https://jasonzhu.ai/en/blog/ai-free-learning-hub",
+   "searches": 8,
+   "read": 3,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 3,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 8
+   }
+  },
+  {
+   "question_id": "real-learn-manager",
+   "set": "real",
+   "target_url": "https://jasonzhu.ai/en/blog/ai-free-learning-hub",
+   "searches": 17,
+   "read": 12,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 12,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 13,
+    "gemini": 4
+   }
+  },
+  {
+   "question_id": "real-learn-certifications",
+   "set": "real",
+   "target_url": "https://jasonzhu.ai/en/blog/ai-free-learning-hub",
+   "searches": 21,
+   "read": 5,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 5,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 18,
+    "gemini": 3
+   }
+  },
+  {
+   "question_id": "real-weekly-new-paid",
+   "set": "real",
+   "target_url": "https://jasonzhu.ai/en/go-global/weekly",
+   "searches": 12,
+   "read": 8,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 8,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 9,
+    "gemini": 3
+   }
+  },
+  {
+   "question_id": "real-weekly-ideas",
+   "set": "real",
+   "target_url": "https://jasonzhu.ai/en/go-global/weekly",
+   "searches": 14,
+   "read": 10,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 10,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 12,
+    "gemini": 2
+   }
+  },
+  {
+   "question_id": "real-weekly-roundup",
+   "set": "real",
+   "target_url": "https://jasonzhu.ai/en/go-global/weekly",
+   "searches": 7,
+   "read": 4,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 4,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 5,
+    "gemini": 2
+   }
+  },
+  {
+   "question_id": "real-weekly-solo-paid",
+   "set": "real",
+   "target_url": "https://jasonzhu.ai/en/go-global/weekly",
+   "searches": 8,
+   "read": 7,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 7,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 8
+   }
+  },
+  {
+   "question_id": "gsc-fable-55-release-date",
+   "set": "real",
+   "target_url": "https://jasonzhu.ai/en/prompts/claude-opus-5-5/fable-5-5",
+   "searches": 5,
+   "read": 4,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 4,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 1,
+    "gemini": 4
+   }
+  },
+  {
+   "question_id": "gsc-anthropic-course-alternatives",
+   "set": "real",
+   "target_url": "https://jasonzhu.ai/en/blog/openai-academy-vs-anthropic-learning-paths",
+   "searches": 4,
+   "read": 4,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 4,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 3,
+    "gemini": 1
+   }
+  },
+  {
+   "question_id": "gsc-nvidia-dli-free-courses",
+   "set": "real",
+   "target_url": "https://jasonzhu.ai/en/blog/nvidia-dli-free-courses",
+   "searches": 5,
+   "read": 5,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 5,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 3,
+    "gemini": 2
+   }
+  },
+  {
+   "question_id": "gsc-openai-academy-alternatives",
+   "set": "real",
+   "target_url": "https://jasonzhu.ai/en/blog/openai-academy-vs-anthropic-learning-paths",
+   "searches": 4,
+   "read": 4,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 4,
+   "shared_gaps": 0,
+   "by_engine": {
+    "chatgpt": 3,
+    "gemini": 1
+   }
+  },
+  {
+   "question_id": "gsc-opus-55-pixel-art",
+   "set": "real",
+   "target_url": "https://jasonzhu.ai/en/prompts/claude-opus-5-5",
+   "searches": 2,
+   "read": 2,
+   "ranked": 0,
+   "top10": 0,
+   "gaps": 2,
+   "shared_gaps": 0,
+   "by_engine": {
+    "gemini": 2
+   }
+  }
+ ],
+ "errors": 0,
+ "left_out": 0
+}
