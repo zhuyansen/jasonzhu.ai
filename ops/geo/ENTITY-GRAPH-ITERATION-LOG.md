@@ -50,11 +50,13 @@
 | `8772edf` | 定时触发时 `inputs.publish` 为空，`!= '0'` 判成假，提交、邮件、存档被跳过：改成 `(inputs.publish \|\| '1') != '0'`（geo-panel、seller-weekly） |
 | `e24dd97` | 子查询：Google 结果改从 breadcrumb 认网站；先查 `site:jasonzhu.ai` 自检，不过就写「测不出来」；Bing 默认不查；11-23 的排名标作废 |
 | `62cf192` | 品牌词每周查（4 个词各 3 次）；缺口只算不带品牌名的题；Gemini 子查询改成每月一次；定时运行后直接看仓库里有没有当天的分数；`experiments.json` 补上 11-22、11-24；Person 的 sameAs 拿掉 B 站 |
-| 本次 | 日志瘦身，操作步骤挪进 SOP；SOP 加维护规则，2C、Phase 3 改成不做 |
+| `3d80543` | 日志瘦身，操作步骤挪进 SOP；SOP 加维护规则，2C、Phase 3 改成不做 |
+| ASH `6054e06e` | 学术索引检查（第 8 项）改成每周一；其余日子日报不出这一段，也不报「没核成」 |
+| backlink-guard `5ed6810`（0.12.2，已上 PyPI） | 上游修好：Google 结果从 breadcrumb 认网站；Bing 不再问 `site:` 词。面板下次安装自动用上，`fanout.py` 里那层补丁变成空操作 |
 
 ### 怎么验证的
 
-fanout 自测通过；真接口跑冻结组前 5 题：自检 `site:jasonzhu.ai` 排第 1，4 道品牌题单列、不进缺口，品牌词 4 个都有名次；`npx tsc --noEmit` 通过。
+fanout 自测通过；真接口跑冻结组前 5 题：自检 `site:jasonzhu.ai` 排第 1，4 道品牌题单列、不进缺口，品牌词 4 个都有名次；`npx tsc --noEmit` 通过。部署后线上 Person 的 sameAs 是 12 条、没有 B 站，`node scripts/check-entities.mjs` 通过。backlink-guard 194 个测试通过，真接口 `site:jasonzhu.ai` 第一条认出本站；PyPI 已是 0.12.2。
 
 ### 效果看哪、哪天看
 
