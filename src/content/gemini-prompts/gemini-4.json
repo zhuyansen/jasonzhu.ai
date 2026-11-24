@@ -3,10 +3,75 @@
  "model": "Gemini 4",
  "released": "2026-10-14T00:00:00Z",
  "threshold": 5000,
- "updatedAt": "2026-11-23T01:57:47.325Z",
- "statsCheckedAt": "2026-11-23T01:34:45.555Z",
+ "updatedAt": "2026-11-24T11:30:46.410Z",
+ "statsCheckedAt": "2026-11-24T11:25:04.779Z",
  "inclusionRule": "Original post by the creator, media attached, >= 5000 views on that post, and the creator's own text says Gemini 4 (Argon, Carbon, Hydrogen, Krypton, Pro...) built it in code; same-prompt comparisons against other models included. Seeded on 2026-11-16 from the Claude 5.5 library. Later posts that embed another account's upload are excluded.",
  "cases": [
+  {
+   "id": "2124465319087308918",
+   "url": "https://x.com/kinderlayer/status/2124465319087308918",
+   "author": {
+    "handle": "kinderlayer",
+    "name": "Kinder"
+   },
+   "postedAt": "2026-11-22T11:29:37.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "kind": "comparison",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [
+    "claude",
+    "gpt",
+    "grok"
+   ],
+   "category": "mechanics",
+   "title": {
+    "zh": "发动机剖面点火运行动画",
+    "en": "Cross-section engine firing animation"
+   },
+   "summary": {
+    "zh": "作者用同一提示词对比了 Claude Fable 5.2、GPT-6.2 Astra、Gemini 4 Neon 和 Grok 4.7 构建内燃机剖面模拟的效果，其中三个做出了完整机械细节，底部右侧的一个只给出了简易结构。",
+    "en": "Compared Claude Fable 5.2, GPT-6.2 Astra, Gemini 4 Neon, and Grok 4.7 on a cross-section engine simulation; three built full mechanics while one made a piston on a stick."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/kinderlayer/status/2124465319087308918",
+    "text": "a single engine firing in cross-section - fuel, pistons, cams, the works"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Claude Fable 5.2",
+    "GPT-6.2 Astra",
+    "Grok 4.7"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 827391,
+    "likes": 1354,
+    "replies": 231,
+    "reposts": 80,
+    "bookmarks": 852,
+    "checkedAt": "2026-11-24T11:11:12.811Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2124465251814977536/vid/avc1/720x1280/2w9MshOKoc_G4nNf.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2124465251814977536/img/tO4cssVkNf8KfMs4.jpg",
+     "width": 720,
+     "height": 1280,
+     "durationSec": 12
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
   {
    "id": "2110131790136401989",
    "url": "https://x.com/semichenkko/status/2110131790136401989",
@@ -44,12 +109,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 632567,
-    "likes": 3959,
+    "views": 633975,
+    "likes": 3952,
     "replies": 208,
     "reposts": 231,
-    "bookmarks": 1207,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "bookmarks": 1202,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -103,12 +168,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 433166,
-    "likes": 365,
+    "views": 433220,
+    "likes": 364,
     "replies": 121,
     "reposts": 8,
     "bookmarks": 389,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -123,6 +188,114 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124784458528420031",
+   "url": "https://x.com/sonuv_dev/status/2124784458528420031",
+   "author": {
+    "handle": "sonuv_dev",
+    "name": "sou | Ai & Tech"
+   },
+   "postedAt": "2026-11-23T08:37:46.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "scene3d",
+   "title": {
+    "zh": "高斯泼溅草地日出与蝴蝶",
+    "en": "Gaussian splat meadow sunrise with butterfly"
+   },
+   "summary": {
+    "zh": "作者让 Gemini 4 Neon 配合 Ink Studio 实现日出效果，生成了一段 10 秒的草地日出动画，共用了 15.1 万个高斯泼溅点，画面里还有一只蝴蝶飞过。",
+    "en": "A 10-second sunrise scene over a meadow, rendered with 151,000 Gaussian splats and including a butterfly. The creator says it was made by asking Gemini 4 Neon with Ink Studio to make the sun rise."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Ink Studio"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 430724,
+    "likes": 105,
+    "replies": 4,
+    "reposts": 2,
+    "bookmarks": 2,
+    "checkedAt": "2026-11-24T11:25:04.779Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2124784122929508352/vid/avc1/1280x720/32FiLY2Iibt5CMEB.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2124784122929508352/img/L0UQR-NLNAbX0zor.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 10
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124322570652528876",
+   "url": "https://x.com/anabology/status/2124322570652528876",
+   "author": {
+    "handle": "anabology",
+    "name": "anabology"
+   },
+   "postedAt": "2026-11-22T02:02:23.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "motion",
+   "title": {
+    "zh": "编程生成的《The Current Thing》音乐视频",
+    "en": "Coded music video 'The Current Thing'"
+   },
+   "summary": {
+    "zh": "作者让 Gemini 4 Neon 自由创作音乐视频《THE CURRENT THING》，经过多天反复调整视差和动画问题后完成，并表示用 Fable 同期可做出多个视频。",
+    "en": "Gemini 4 Neon made an original music video titled \"THE CURRENT THING\" after days of prompting to fix parallax issues; the creator noted Fable would have been faster."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Fable"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 300700,
+    "likes": 2525,
+    "replies": 199,
+    "reposts": 270,
+    "bookmarks": 1098,
+    "checkedAt": "2026-11-24T11:11:12.811Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2124322406088966144/vid/avc1/1280x720/GVMTQy93uvZMGytS.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2124322406088966144/img/pfI4VnGJrTRlJqqn.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 226
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -165,12 +338,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 243560,
-    "likes": 1399,
+    "views": 243796,
+    "likes": 1394,
     "replies": 79,
     "reposts": 52,
     "bookmarks": 503,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -224,12 +397,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 230403,
-    "likes": 243,
+    "views": 230430,
+    "likes": 242,
     "replies": 74,
     "reposts": 10,
     "bookmarks": 164,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -281,12 +454,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 216870,
-    "likes": 1230,
+    "views": 217114,
+    "likes": 1228,
     "replies": 80,
-    "reposts": 92,
-    "bookmarks": 326,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "reposts": 91,
+    "bookmarks": 328,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -399,12 +572,12 @@
    "tools": [],
    "resources": [],
    "stats": {
-    "views": 204044,
-    "likes": 970,
+    "views": 205941,
+    "likes": 969,
     "replies": 77,
     "reposts": 35,
-    "bookmarks": 149,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "bookmarks": 150,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -454,12 +627,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 198484,
-    "likes": 2012,
+    "views": 198716,
+    "likes": 2008,
     "replies": 69,
     "reposts": 96,
-    "bookmarks": 395,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "bookmarks": 394,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -515,12 +688,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 195952,
-    "likes": 2134,
-    "replies": 148,
-    "reposts": 109,
-    "bookmarks": 632,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "views": 196726,
+    "likes": 2136,
+    "replies": 149,
+    "reposts": 108,
+    "bookmarks": 631,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -701,12 +874,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 160630,
-    "likes": 1577,
+    "views": 160799,
+    "likes": 1575,
     "replies": 85,
-    "reposts": 113,
-    "bookmarks": 589,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "reposts": 110,
+    "bookmarks": 588,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -849,6 +1022,62 @@
    }
   },
   {
+   "id": "2121701704139956250",
+   "url": "https://x.com/EnvolDev/status/2121701704139956250",
+   "author": {
+    "handle": "EnvolDev",
+    "name": "Tony"
+   },
+   "postedAt": "2026-11-14T20:28:00.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "en",
+   "models": [
+    "hydrogen"
+   ],
+   "rivals": [
+    "claude",
+    "gpt"
+   ],
+   "category": "motion",
+   "title": {
+    "zh": "《云端之上》影片对比",
+    "en": "Rio Above the Clouds film comparison"
+   },
+   "summary": {
+    "zh": "创作者比较了四个模型制作《云上里约》，并表示场景由三维代码生成，再录制成视频。",
+    "en": "The creator compared four models on a film called Rio Above the Clouds, saying the scenes were written as 3D code and recorded as video."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 146091,
+    "likes": 341,
+    "replies": 60,
+    "reposts": 10,
+    "bookmarks": 185,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2121475910901841920/vid/avc1/810x720/wPDYNwFD1EPwJR9w.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2121475910901841920/img/wrYF-a81VM_5OH-o.jpg",
+     "width": 810,
+     "height": 720,
+     "durationSec": 25
+    }
+   ],
+   "evidence": {
+    "via": "seed-from-claude-library",
+    "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2123756243827486822",
    "url": "https://x.com/mizugame_22/status/2123756243827486822",
    "author": {
@@ -957,12 +1186,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 130643,
-    "likes": 713,
+    "views": 130709,
+    "likes": 712,
     "replies": 54,
-    "reposts": 65,
-    "bookmarks": 158,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "reposts": 63,
+    "bookmarks": 157,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -972,62 +1201,6 @@
      "width": 720,
      "height": 720,
      "durationSec": 20
-    }
-   ],
-   "evidence": {
-    "via": "seed-from-claude-library",
-    "seed": true,
-    "modelAttribution": "creator-stated, not independently reproduced"
-   }
-  },
-  {
-   "id": "2121701704139956250",
-   "url": "https://x.com/EnvolDev/status/2121701704139956250",
-   "author": {
-    "handle": "EnvolDev",
-    "name": "Tony"
-   },
-   "postedAt": "2026-11-14T20:28:00.000Z",
-   "addedAt": "2026-11-16",
-   "lang": "en",
-   "models": [
-    "hydrogen"
-   ],
-   "rivals": [
-    "claude",
-    "gpt"
-   ],
-   "category": "motion",
-   "title": {
-    "zh": "《云端之上》影片对比",
-    "en": "Rio Above the Clouds film comparison"
-   },
-   "summary": {
-    "zh": "创作者比较了四个模型制作《云上里约》，并表示场景由三维代码生成，再录制成视频。",
-    "en": "The creator compared four models on a film called Rio Above the Clouds, saying the scenes were written as 3D code and recorded as video."
-   },
-   "prompt": null,
-   "referenceAssets": false,
-   "tools": [
-    "Three.js"
-   ],
-   "resources": [],
-   "stats": {
-    "views": 130193,
-    "likes": 327,
-    "replies": 58,
-    "reposts": 9,
-    "bookmarks": 176,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
-   },
-   "media": [
-    {
-     "type": "video",
-     "url": "https://video.twimg.com/amplify_video/2121475910901841920/vid/avc1/810x720/wPDYNwFD1EPwJR9w.mp4?tag=29",
-     "poster": "https://pbs.twimg.com/amplify_video_thumb/2121475910901841920/img/wrYF-a81VM_5OH-o.jpg",
-     "width": 810,
-     "height": 720,
-     "durationSec": 25
     }
    ],
    "evidence": {
@@ -1071,12 +1244,12 @@
    "tools": [],
    "resources": [],
    "stats": {
-    "views": 129419,
-    "likes": 1407,
+    "views": 129594,
+    "likes": 1404,
     "replies": 121,
     "reposts": 42,
-    "bookmarks": 397,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "bookmarks": 393,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -1313,12 +1486,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 122622,
-    "likes": 1232,
+    "views": 122691,
+    "likes": 1229,
     "replies": 45,
     "reposts": 39,
-    "bookmarks": 166,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "bookmarks": 165,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -1333,6 +1506,60 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124565795003105494",
+   "url": "https://x.com/xikhar/status/2124565795003105494",
+   "author": {
+    "handle": "xikhar",
+    "name": "Shikhar"
+   },
+   "postedAt": "2026-11-22T18:08:52.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "motion",
+   "title": {
+    "zh": "塞尔达时之笛纸艺卷轴动画",
+    "en": "Ocarina of Time papercraft scrolling animation"
+   },
+   "summary": {
+    "zh": "作者结合自定义的 papercraft 技能框架与引导提示，让 Gemini 4 Neon 在浏览器中用 Three.js 制作了《塞尔达传说：时之笛》纸艺风格卷轴动画。",
+    "en": "Gemini 4 Neon built a browser-based Ocarina of Time papercraft scrolling animation in Three.js using a custom papercraft skill and steering prompts."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 122409,
+    "likes": 3081,
+    "replies": 78,
+    "reposts": 254,
+    "bookmarks": 2454,
+    "checkedAt": "2026-11-24T11:11:12.811Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2124564372186185728/vid/avc1/1280x720/YKD83rZMiRYzjCQu.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2124564372186185728/img/uRbTQ0wxzd_esVoo.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 47
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -1368,12 +1595,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 119785,
-    "likes": 139,
+    "views": 120608,
+    "likes": 138,
     "replies": 45,
     "reposts": 8,
     "bookmarks": 105,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -1388,6 +1615,62 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124585541328896367",
+   "url": "https://x.com/0xRhinoX/status/2124585541328896367",
+   "author": {
+    "handle": "0xRhinoX",
+    "name": "Rhino"
+   },
+   "postedAt": "2026-11-22T19:27:20.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "kind": "comparison",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [
+    "claude"
+   ],
+   "category": "ui",
+   "title": {
+    "zh": "Windows XP 桌面界面复刻",
+    "en": "Windows XP desktop recreation"
+   },
+   "summary": {
+    "zh": "作者对比了 Claude Fable 5.2 和 Gemini 4 Neon 复刻 Windows XP 的表现：Gemini 4 Neon 耗时 56 分钟、花费 23 美元做出真正的 Windows XP，而 Claude Fable 5.2 耗时 85 分钟、花费 306 美元却做成了 Poke OS。",
+    "en": "Compared Claude Fable 5.2 and Gemini 4 Neon on rebuilding Windows XP; Neon built Windows XP in 56 minutes for $23, while Fable spent 85 minutes and $306 on Poke OS."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Claude Fable 5.2"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 120519,
+    "likes": 933,
+    "replies": 84,
+    "reposts": 51,
+    "bookmarks": 424,
+    "checkedAt": "2026-11-24T11:11:12.811Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2124577655030677504/vid/avc1/720x814/JlU4u_tTkpOsu_8O.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2124577655030677504/img/B_MSaDLZyClsPm9A.jpg",
+     "width": 1080,
+     "height": 1222,
+     "durationSec": 30
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -1423,12 +1706,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 117352,
-    "likes": 237,
+    "views": 117394,
+    "likes": 236,
     "replies": 36,
     "reposts": 14,
-    "bookmarks": 177,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "bookmarks": 178,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -1438,6 +1721,69 @@
      "width": 720,
      "height": 1280,
      "durationSec": 15
+    }
+   ],
+   "evidence": {
+    "via": "seed-from-claude-library",
+    "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2110192618269221048",
+   "url": "https://x.com/rubenssoto_ai/status/2110192618269221048",
+   "author": {
+    "handle": "rubenssoto_ai",
+    "name": "Rubens Soto | AI & SaaS"
+   },
+   "postedAt": "2026-10-14T02:15:00.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "argon"
+   ],
+   "rivals": [
+    "claude",
+    "gpt"
+   ],
+   "category": "scene3d",
+   "title": {
+    "zh": "Opus 5.5对比Gemini 4与GPT 6",
+    "en": "Opus 5.5 vs Gemini 4 vs GPT 6 comparison"
+   },
+   "summary": {
+    "zh": "作者用同一个通用提示词（生成一个自包含HTML文件，内含鹈鹕骑自行车的SVG动画）比较了Opus 5.5、Gemini 4 Argon、GPT 6.1 Sol和GPT 6 Astra的表现。",
+    "en": "A comparison of Opus 5.5, Gemini 4 Argon, GPT 6.1 Sol, and GPT 6 Astra using the same generic prompt asking for a self-contained HTML/SVG animation of a pelican riding a bicycle."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/rubenssoto_ai/status/2110477365071819210",
+    "text": "Create a self-contained HTML file with a 2D SVG animation of a pelican riding a bicycle"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Gemini 4 Argon",
+    "GPT 6.1 Sol",
+    "GPT 6 Astra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 115488,
+    "likes": 645,
+    "replies": 89,
+    "reposts": 34,
+    "bookmarks": 92,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2110178014185041922/vid/avc1/1280x720/jppEQorIT10izn8a.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2110178014185041922/img/tMMJdHFu-SzuM6bB.jpg",
+     "width": 1280,
+     "height": 720,
+     "durationSec": 30
     }
    ],
    "evidence": {
@@ -1506,69 +1852,6 @@
    }
   },
   {
-   "id": "2110192618269221048",
-   "url": "https://x.com/rubenssoto_ai/status/2110192618269221048",
-   "author": {
-    "handle": "rubenssoto_ai",
-    "name": "Rubens Soto | AI & SaaS"
-   },
-   "postedAt": "2026-10-14T02:15:00.000Z",
-   "addedAt": "2026-10-15",
-   "lang": "en",
-   "models": [
-    "argon"
-   ],
-   "rivals": [
-    "claude",
-    "gpt"
-   ],
-   "category": "scene3d",
-   "title": {
-    "zh": "Opus 5.5对比Gemini 4与GPT 6",
-    "en": "Opus 5.5 vs Gemini 4 vs GPT 6 comparison"
-   },
-   "summary": {
-    "zh": "作者用同一个通用提示词（生成一个自包含HTML文件，内含鹈鹕骑自行车的SVG动画）比较了Opus 5.5、Gemini 4 Argon、GPT 6.1 Sol和GPT 6 Astra的表现。",
-    "en": "A comparison of Opus 5.5, Gemini 4 Argon, GPT 6.1 Sol, and GPT 6 Astra using the same generic prompt asking for a self-contained HTML/SVG animation of a pelican riding a bicycle."
-   },
-   "prompt": {
-    "kind": "brief",
-    "source": "author_reply",
-    "sourceUrl": "https://x.com/rubenssoto_ai/status/2110477365071819210",
-    "text": "Create a self-contained HTML file with a 2D SVG animation of a pelican riding a bicycle"
-   },
-   "referenceAssets": false,
-   "tools": [
-    "Gemini 4 Argon",
-    "GPT 6.1 Sol",
-    "GPT 6 Astra"
-   ],
-   "resources": [],
-   "stats": {
-    "views": 115428,
-    "likes": 645,
-    "replies": 89,
-    "reposts": 34,
-    "bookmarks": 92,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
-   },
-   "media": [
-    {
-     "type": "video",
-     "url": "https://video.twimg.com/amplify_video/2110178014185041922/vid/avc1/1280x720/jppEQorIT10izn8a.mp4?tag=29",
-     "poster": "https://pbs.twimg.com/amplify_video_thumb/2110178014185041922/img/tMMJdHFu-SzuM6bB.jpg",
-     "width": 1280,
-     "height": 720,
-     "durationSec": 30
-    }
-   ],
-   "evidence": {
-    "via": "seed-from-claude-library",
-    "seed": true,
-    "modelAttribution": "creator-stated, not independently reproduced"
-   }
-  },
-  {
    "id": "2115953941808550313",
    "url": "https://x.com/noclipepe/status/2115953941808550313",
    "author": {
@@ -1604,12 +1887,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 113509,
+    "views": 113601,
     "likes": 569,
     "replies": 28,
     "reposts": 25,
     "bookmarks": 152,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -1668,12 +1951,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 109481,
-    "likes": 1000,
-    "replies": 75,
-    "reposts": 50,
-    "bookmarks": 325,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "views": 109551,
+    "likes": 1001,
+    "replies": 74,
+    "reposts": 49,
+    "bookmarks": 324,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -1728,12 +2011,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 105531,
-    "likes": 497,
-    "replies": 41,
+    "views": 105546,
+    "likes": 495,
+    "replies": 40,
     "reposts": 9,
     "bookmarks": 169,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -1842,12 +2125,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 98859,
-    "likes": 185,
+    "views": 98923,
+    "likes": 186,
     "replies": 49,
     "reposts": 6,
-    "bookmarks": 92,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "bookmarks": 91,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -1899,12 +2182,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 97159,
-    "likes": 876,
+    "views": 97243,
+    "likes": 875,
     "replies": 20,
-    "reposts": 6,
-    "bookmarks": 193,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "reposts": 5,
+    "bookmarks": 192,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -1963,12 +2246,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 95937,
-    "likes": 1096,
+    "views": 96003,
+    "likes": 1092,
     "replies": 81,
     "reposts": 70,
-    "bookmarks": 232,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "bookmarks": 230,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -2025,12 +2308,12 @@
     "https://cloud.typingmind.com/share/778ad886-772a-4e2d-955d-97ba32fcdc48"
    ],
    "stats": {
-    "views": 95335,
-    "likes": 1058,
-    "replies": 60,
+    "views": 95696,
+    "likes": 1059,
+    "replies": 59,
     "reposts": 58,
-    "bookmarks": 366,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "bookmarks": 367,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -2085,12 +2368,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 94909,
-    "likes": 970,
+    "views": 94988,
+    "likes": 969,
     "replies": 62,
     "reposts": 41,
-    "bookmarks": 227,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "bookmarks": 226,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -2195,12 +2478,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 92998,
-    "likes": 1104,
-    "replies": 104,
+    "views": 93268,
+    "likes": 1100,
+    "replies": 105,
     "reposts": 66,
-    "bookmarks": 317,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "bookmarks": 315,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -2311,12 +2594,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 87829,
-    "likes": 339,
+    "views": 88030,
+    "likes": 337,
     "replies": 25,
-    "reposts": 29,
+    "reposts": 28,
     "bookmarks": 87,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -2326,6 +2609,67 @@
      "width": 720,
      "height": 720,
      "durationSec": 11
+    }
+   ],
+   "evidence": {
+    "via": "seed-from-claude-library",
+    "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2113360370811470100",
+   "url": "https://x.com/Haleeeemahh/status/2113360370811470100",
+   "author": {
+    "handle": "Haleeeemahh",
+    "name": "Haleemah"
+   },
+   "postedAt": "2026-10-22T20:02:31.000Z",
+   "addedAt": "2026-10-24",
+   "lang": "en",
+   "models": [
+    "argon",
+    "carbon"
+   ],
+   "rivals": [
+    "claude",
+    "kimi",
+    "qwen"
+   ],
+   "category": "scene3d",
+   "title": {
+    "zh": "四模型竞技场对比",
+    "en": "Four-model arena comparison"
+   },
+   "summary": {
+    "zh": "创作者在 arena 中用三个模型对比 Opus 5.5，并更看好 Gemini；帖子提到进行了三次提示词尝试，但未公开提示词内容。",
+    "en": "Three models were tested against Opus 5.5 in an arena, with the creator favoring Gemini. The creator mentions making three prompt attempts."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Gemini 4 Carbon",
+    "Gemini 4 Argon",
+    "Kimi K3.1",
+    "Qwen 4"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 87873,
+    "likes": 278,
+    "replies": 42,
+    "reposts": 11,
+    "bookmarks": 50,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2113360316046135296/vid/avc1/1168x720/Nb57XoNzt-UqwaVy.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2113360316046135296/img/_lZkHSfDhpVF1sib.jpg",
+     "width": 1168,
+     "height": 720,
+     "durationSec": 12
     }
    ],
    "evidence": {
@@ -2391,63 +2735,59 @@
    }
   },
   {
-   "id": "2113360370811470100",
-   "url": "https://x.com/Haleeeemahh/status/2113360370811470100",
+   "id": "2124460788501106722",
+   "url": "https://x.com/chetaslua/status/2124460788501106722",
    "author": {
-    "handle": "Haleeeemahh",
-    "name": "Haleemah"
+    "handle": "chetaslua",
+    "name": "Chetaslua"
    },
-   "postedAt": "2026-10-22T20:02:31.000Z",
-   "addedAt": "2026-10-24",
-   "lang": "en",
+   "postedAt": "2026-11-22T11:11:37.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "kind": "work",
    "models": [
-    "argon",
-    "carbon"
+    "gemini-4"
    ],
-   "rivals": [
-    "claude",
-    "kimi",
-    "qwen"
-   ],
-   "category": "scene3d",
+   "rivals": [],
+   "category": "motion",
    "title": {
-    "zh": "四模型竞技场对比",
-    "en": "Four-model arena comparison"
+    "zh": "纯代码驱动的歌唱 ASCII 字符动画",
+    "en": "Singing ASCII art animation in pure code"
    },
    "summary": {
-    "zh": "创作者在 arena 中用三个模型对比 Opus 5.5，并更看好 Gemini；帖子提到进行了三次提示词尝试，但未公开提示词内容。",
-    "en": "Three models were tested against Opus 5.5 in an arena, with the creator favoring Gemini. The creator mentions making three prompt attempts."
+    "zh": "作者让 Gemini 4 Neon 纯靠代码自选歌词演唱一首歌，并用 ASCII 字符画展示思考过程，未使用任何外部素材、TTS、AI 语音、插件或技能。",
+    "en": "Gemini 4 Neon was prompted to sing a self-written song and show ASCII art of its thoughts in pure code, with no external assets, TTS, AI voice, plugins, or skills."
    },
-   "prompt": null,
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/chetaslua/status/2124460788501106722",
+    "text": "sing a song with lyrics of its own choosing, and to use ASCII art to show what's going on inside its head while it thinks"
+   },
    "referenceAssets": false,
-   "tools": [
-    "Gemini 4 Carbon",
-    "Gemini 4 Argon",
-    "Kimi K3.1",
-    "Qwen 4"
-   ],
+   "tools": [],
    "resources": [],
    "stats": {
-    "views": 87606,
-    "likes": 278,
-    "replies": 42,
-    "reposts": 11,
-    "bookmarks": 49,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "views": 87149,
+    "likes": 480,
+    "replies": 71,
+    "reposts": 42,
+    "bookmarks": 236,
+    "checkedAt": "2026-11-24T11:11:12.811Z"
    },
    "media": [
     {
      "type": "video",
-     "url": "https://video.twimg.com/amplify_video/2113360316046135296/vid/avc1/1168x720/Nb57XoNzt-UqwaVy.mp4?tag=29",
-     "poster": "https://pbs.twimg.com/amplify_video_thumb/2113360316046135296/img/_lZkHSfDhpVF1sib.jpg",
-     "width": 1168,
-     "height": 720,
-     "durationSec": 12
+     "url": "https://video.twimg.com/amplify_video/2124459457673625600/vid/avc1/1266x720/cYFSRz_23NEzxMS1.mp4",
+     "poster": "https://pbs.twimg.com/media/HXuYnwqbwAA-roJ.jpg",
+     "width": 2048,
+     "height": 1164,
+     "durationSec": 146
     }
    ],
    "evidence": {
-    "via": "seed-from-claude-library",
-    "seed": true,
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -2545,12 +2885,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 85235,
-    "likes": 204,
+    "views": 85244,
+    "likes": 201,
     "replies": 15,
-    "reposts": 13,
+    "reposts": 12,
     "bookmarks": 96,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -2655,12 +2995,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 81336,
-    "likes": 297,
+    "views": 81351,
+    "likes": 295,
     "replies": 67,
     "reposts": 11,
     "bookmarks": 116,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -2710,12 +3050,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 79248,
-    "likes": 1256,
-    "replies": 72,
+    "views": 79464,
+    "likes": 1253,
+    "replies": 71,
     "reposts": 26,
     "bookmarks": 79,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -2768,12 +3108,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 77874,
+    "views": 77901,
     "likes": 496,
     "replies": 66,
     "reposts": 22,
     "bookmarks": 95,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -2823,12 +3163,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 77057,
+    "views": 77072,
     "likes": 429,
     "replies": 40,
     "reposts": 23,
     "bookmarks": 122,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -2995,12 +3335,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 68451,
-    "likes": 634,
+    "views": 68466,
+    "likes": 633,
     "replies": 52,
     "reposts": 30,
-    "bookmarks": 180,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "bookmarks": 181,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -3050,12 +3390,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 67463,
-    "likes": 333,
+    "views": 67525,
+    "likes": 331,
     "replies": 30,
     "reposts": 6,
     "bookmarks": 97,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -3103,12 +3443,12 @@
    "tools": [],
    "resources": [],
    "stats": {
-    "views": 65492,
+    "views": 65514,
     "likes": 318,
     "replies": 12,
     "reposts": 11,
     "bookmarks": 107,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -3269,12 +3609,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 64124,
+    "views": 64245,
     "likes": 1136,
     "replies": 70,
-    "reposts": 22,
-    "bookmarks": 137,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "reposts": 23,
+    "bookmarks": 138,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -3449,12 +3789,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 63041,
-    "likes": 576,
+    "views": 63156,
+    "likes": 575,
     "replies": 54,
     "reposts": 28,
     "bookmarks": 176,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -3571,12 +3911,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 62058,
-    "likes": 308,
+    "views": 62077,
+    "likes": 304,
     "replies": 25,
     "reposts": 2,
-    "bookmarks": 133,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "bookmarks": 131,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -3586,6 +3926,61 @@
      "width": 720,
      "height": 900,
      "durationSec": 98
+    }
+   ],
+   "evidence": {
+    "via": "seed-from-claude-library",
+    "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2121623349386477877",
+   "url": "https://x.com/xKaka1456/status/2121623349386477877",
+   "author": {
+    "handle": "xKaka1456",
+    "name": "卡卡"
+   },
+   "postedAt": "2026-11-14T15:16:39.000Z",
+   "addedAt": "2026-11-16",
+   "lang": "ja",
+   "models": [
+    "krypton"
+   ],
+   "rivals": [
+    "claude"
+   ],
+   "category": "scene3d",
+   "title": {
+    "zh": "模型输出并排对比",
+    "en": "Side-by-side model output comparison"
+   },
+   "summary": {
+    "zh": "这条帖子比较了 Opus 5.5 和 Gemini 4 Krypton，分别给出 0 分和 100 分。",
+    "en": "The post compares Opus 5.5 with Gemini 4 Krypton, assigning them scores of 0 and 100."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Gemini 4 Krypton"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 61608,
+    "likes": 541,
+    "replies": 55,
+    "reposts": 16,
+    "bookmarks": 97,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2121620876638703616/vid/avc1/720x972/5AzihQHMXIdBvmfL.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2121620876638703616/img/lpTt70njVWQ-QB6K.jpg",
+     "width": 720,
+     "height": 972,
+     "durationSec": 12
     }
    ],
    "evidence": {
@@ -3712,6 +4107,58 @@
    }
   },
   {
+   "id": "2124508873897726028",
+   "url": "https://x.com/thebuggeddev/status/2124508873897726028",
+   "author": {
+    "handle": "thebuggeddev",
+    "name": "The Bugged Dev"
+   },
+   "postedAt": "2026-11-22T14:22:41.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "scene3d",
+   "title": {
+    "zh": "交互式 3D 人眼结构与视觉模拟",
+    "en": "Interactive 3D human eye and vision model"
+   },
+   "summary": {
+    "zh": "作者用 Gemini 4 Neon 构建了基于 Navarro 和 Gullstrand 生物测量参数的 60fps 3D 交互式人眼模拟，包含折射着色器、瞳孔反应、眼球追踪以及矫正镜片和色觉异常等测试功能。",
+    "en": "Gemini 4 Neon built a 60fps 3D human eye simulation based on Navarro and Gullstrand biometry, with refraction shaders, pupil reactions, eye tracking, and vision controls."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 58780,
+    "likes": 1157,
+    "replies": 62,
+    "reposts": 127,
+    "bookmarks": 894,
+    "checkedAt": "2026-11-24T11:11:12.811Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2124506977971892224/vid/avc1/1106x720/SP--Nrk-nzhlp1Zb.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2124506977971892224/img/yUdKs3yxdtJwGZqH.jpg",
+     "width": 2828,
+     "height": 1840,
+     "durationSec": 85
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2122221106304352257",
    "url": "https://x.com/analogalok/status/2122221106304352257",
    "author": {
@@ -3770,61 +4217,6 @@
    "evidence": {
     "via": "daily",
     "seed": false,
-    "modelAttribution": "creator-stated, not independently reproduced"
-   }
-  },
-  {
-   "id": "2121623349386477877",
-   "url": "https://x.com/xKaka1456/status/2121623349386477877",
-   "author": {
-    "handle": "xKaka1456",
-    "name": "卡卡"
-   },
-   "postedAt": "2026-11-14T15:16:39.000Z",
-   "addedAt": "2026-11-16",
-   "lang": "ja",
-   "models": [
-    "krypton"
-   ],
-   "rivals": [
-    "claude"
-   ],
-   "category": "scene3d",
-   "title": {
-    "zh": "模型输出并排对比",
-    "en": "Side-by-side model output comparison"
-   },
-   "summary": {
-    "zh": "这条帖子比较了 Opus 5.5 和 Gemini 4 Krypton，分别给出 0 分和 100 分。",
-    "en": "The post compares Opus 5.5 with Gemini 4 Krypton, assigning them scores of 0 and 100."
-   },
-   "prompt": null,
-   "referenceAssets": false,
-   "tools": [
-    "Gemini 4 Krypton"
-   ],
-   "resources": [],
-   "stats": {
-    "views": 57562,
-    "likes": 537,
-    "replies": 55,
-    "reposts": 16,
-    "bookmarks": 93,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
-   },
-   "media": [
-    {
-     "type": "video",
-     "url": "https://video.twimg.com/amplify_video/2121620876638703616/vid/avc1/720x972/5AzihQHMXIdBvmfL.mp4?tag=29",
-     "poster": "https://pbs.twimg.com/amplify_video_thumb/2121620876638703616/img/lpTt70njVWQ-QB6K.jpg",
-     "width": 720,
-     "height": 972,
-     "durationSec": 12
-    }
-   ],
-   "evidence": {
-    "via": "seed-from-claude-library",
-    "seed": true,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -3918,12 +4310,12 @@
    "tools": [],
    "resources": [],
    "stats": {
-    "views": 56710,
-    "likes": 102,
+    "views": 56801,
+    "likes": 101,
     "replies": 7,
     "reposts": 2,
     "bookmarks": 15,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -4090,12 +4482,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 54526,
+    "views": 54601,
     "likes": 160,
     "replies": 34,
     "reposts": 8,
     "bookmarks": 26,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -4149,12 +4541,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 54020,
-    "likes": 288,
+    "views": 54046,
+    "likes": 287,
     "replies": 25,
     "reposts": 13,
-    "bookmarks": 109,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "bookmarks": 108,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -4424,12 +4816,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 51901,
+    "views": 51967,
     "likes": 316,
     "replies": 30,
     "reposts": 16,
     "bookmarks": 46,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -4486,12 +4878,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 51788,
+    "views": 51967,
     "likes": 175,
     "replies": 26,
     "reposts": 8,
     "bookmarks": 64,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -4501,6 +4893,63 @@
      "width": 720,
      "height": 1280,
      "durationSec": 39
+    }
+   ],
+   "evidence": {
+    "via": "seed-from-claude-library",
+    "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2120956699951628637",
+   "url": "https://x.com/marcthecreatorr/status/2120956699951628637",
+   "author": {
+    "handle": "marcthecreatorr",
+    "name": "Marcel"
+   },
+   "postedAt": "2026-11-12T19:07:37.000Z",
+   "addedAt": "2026-11-14",
+   "lang": "en",
+   "models": [
+    "hydrogen"
+   ],
+   "rivals": [
+    "claude"
+   ],
+   "category": "svg",
+   "title": {
+    "zh": "女孩与猫的双人自行车 SVG",
+    "en": "Girl and cat tandem ride SVG"
+   },
+   "summary": {
+    "zh": "作品是一个吉卜力风格的 SVG：女孩和猫在金色时刻骑着相连的自行车，并比较了 Claude Code 与 Cursor 的生成结果。",
+    "en": "The work is an SVG of a girl and her cat riding joined bicycles at golden hour in a Ghibli style, compared across Claude Code and Cursor workflows."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Gemini 4 Hydrogen",
+    "Claude Code",
+    "Cursor"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 51250,
+    "likes": 381,
+    "replies": 48,
+    "reposts": 22,
+    "bookmarks": 101,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2120956511706820608/vid/avc1/720x720/m4kybuC0mYSlpn2P.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2120956511706820608/img/--IRgcT_lAngEvPo.jpg",
+     "width": 720,
+     "height": 720,
+     "durationSec": 28
     }
    ],
    "evidence": {
@@ -4545,12 +4994,12 @@
    "tools": [],
    "resources": [],
    "stats": {
-    "views": 51048,
-    "likes": 344,
+    "views": 51074,
+    "likes": 342,
     "replies": 37,
     "reposts": 24,
-    "bookmarks": 111,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "bookmarks": 110,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -4780,12 +5229,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 47573,
-    "likes": 207,
+    "views": 47586,
+    "likes": 206,
     "replies": 19,
     "reposts": 10,
     "bookmarks": 54,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -4835,12 +5284,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 47065,
-    "likes": 200,
+    "views": 47082,
+    "likes": 199,
     "replies": 44,
     "reposts": 6,
     "bookmarks": 88,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -4972,6 +5421,66 @@
    }
   },
   {
+   "id": "2111501344750059978",
+   "url": "https://x.com/vib3coded/status/2111501344750059978",
+   "author": {
+    "handle": "vib3coded",
+    "name": "Vib3Coded"
+   },
+   "postedAt": "2026-10-17T16:55:25.000Z",
+   "addedAt": "2026-10-19",
+   "lang": "en",
+   "models": [
+    "argon"
+   ],
+   "rivals": [
+    "claude"
+   ],
+   "category": "scene3d",
+   "title": {
+    "zh": "3D西瓜毛发渲染对比",
+    "en": "3D watermelon fur render comparison"
+   },
+   "summary": {
+    "zh": "创作者用同一段详细的Three.js提示词，对比了Claude Opus 5.5和Gemini 4 Argon生成的可交互3D毛绒西瓜效果，并比较了API成本。",
+    "en": "A comparison of Claude Opus 5.5 and Gemini 4 Argon generating an interactive 3D furry watermelon in a browser using the same detailed Three.js prompt, with API cost comparison."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/vib3coded/status/2111502058608050536",
+    "text": "Build a single self-contained HTML page (no build step) showing an interactive 3D \"Fluffy Watermelon\" covered in long fur, rendered with WebGL using three.js r147 (UMD build: https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js). All UI text in English.\n\nSCENE & LOOK\n- Full-screen canvas on a soft watermelon-flesh pink studio background: vertical gradient #ECB3AB → #F7CFC7 (lighter band in the middle) → #E8A9A0, used as the scene background.\n- A big oblong watermelon lying on its side along the X axis: half-length 1.38, radius 0.98, blunt barrel-like ends, small dimples at both ends, slightly flattened belly, subtle surface unevenness. Start in a 3/4 view (about -0.32 rad around Y, 0.1 rad tilt), camera FOV 30°, framed to fill ~80% of the height.\n- Rind pattern under the fur: light green (#A8D66B) with 16 dark green (#1C4D1C) stripes running stem to blossom, with ragged finger-like edges (sine meander + value noise), plus a pale cream \"field spot\" on the underside. Each hair takes the colour of its own root, so the stripes stay crisp through the fur.\n- A short, dried, ribbed stem stub at one end with a slightly domed pale cut cap, and a thin curly helical tendril springing from beside it.\n- One directional light from upper-left-front, wrap diffuse, Kajiya-Kay anisotropic highlight along the hair tangent, darker roots (occlusion by hair height), slight per-hair brightness variation.\n\nFUR (most important: it must look crisp, never blurry)\n- Fur length 0.2 units. Hairs grow out along the normal, then bend: combed from the stem end toward the blossom end and draped down the flanks (no whorls at the ends), plus slight gravity.\n- Undercoat: shell texturing with ~64 instanced shells of the body mesh that reach only 50% of the fur length. Procedural hair cells in UV space (density scaled so one cell is ~3.4 device pixels at the default view), two hair populations (long + fine underfur), hairs gathering into locks toward their tips, analytic anti-aliased coverage, alpha blending, shells write depth. Fade shells out where the surface is seen edge-on and discard faint fragments, so no dotted rim appears at the outline.\n- Guard hairs: ~90,000 individual tapered, camera-facing ribbon strands (instanced, 7 segments each) that follow exactly the same bend function, with a minimum width of ~0.75 px so they stay sharp. Draw them twice: once before the shells and once after (depth-tested), so faint edge fur never hides them and they always lie crisply on top.\n- Always render at the device's full pixel ratio (capped at 2) and NEVER lower it for performance. If frames are slow, reduce the shell count first (down to 32), then the guard-hair count.\n\nINTERACTION\n- Drag to rotate freely (trackball style) with inertia after a flick. The fur lags behind the rotation through a damped spring and flops back. Gentle idle breeze in the fur; after 3 s without input, a slow auto-turn.\n- Mouse wheel / pinch to zoom (smooth dolly). Double-click or \"0\" resets with an eased animation. Arrow keys rotate.\n- Custom cursor: the native grab hand plus a thin dark 46 px ring that follows the pointer and shrinks while dragging. Hovering gently parts the fur under the cursor, as if stroking it.\n- Respect prefers-reduced-motion (no idle spin, no breeze).\n\nUI & ROBUSTNESS\n- Bottom-left caption: \"Fluffy Watermelon\" and a hint \"Drag to rotate · Scroll to zoom · Double-click to reset\" (on touch devices: \"Drag to rotate · Pinch to zoom\") that fades after the first interaction. Font: Onest from Google Fonts with system fallbacks.\n- Guard against a zero-sized container at load: clamp width/height to at least 1 and, every frame, recover from any non-finite camera distance or rotation state.\n- Show a small on-page note if the WebGL context is lost or a shader fails to compile, and a fallback message if WebGL is unavailable."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 46520,
+    "likes": 282,
+    "replies": 42,
+    "reposts": 19,
+    "bookmarks": 88,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2111501172259401728/vid/avc1/720x910/RromXVXy38McpR73.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2111501172259401728/img/ie1WUG426dYfuoTw.jpg",
+     "width": 720,
+     "height": 910,
+     "durationSec": 15
+    }
+   ],
+   "evidence": {
+    "via": "seed-from-claude-library",
+    "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2123411465143009414",
    "url": "https://x.com/amihai/status/2123411465143009414",
    "author": {
@@ -5022,66 +5531,6 @@
    "evidence": {
     "via": "daily",
     "seed": false,
-    "modelAttribution": "creator-stated, not independently reproduced"
-   }
-  },
-  {
-   "id": "2111501344750059978",
-   "url": "https://x.com/vib3coded/status/2111501344750059978",
-   "author": {
-    "handle": "vib3coded",
-    "name": "Vib3Coded"
-   },
-   "postedAt": "2026-10-17T16:55:25.000Z",
-   "addedAt": "2026-10-19",
-   "lang": "en",
-   "models": [
-    "argon"
-   ],
-   "rivals": [
-    "claude"
-   ],
-   "category": "scene3d",
-   "title": {
-    "zh": "3D西瓜毛发渲染对比",
-    "en": "3D watermelon fur render comparison"
-   },
-   "summary": {
-    "zh": "创作者用同一段详细的Three.js提示词，对比了Claude Opus 5.5和Gemini 4 Argon生成的可交互3D毛绒西瓜效果，并比较了API成本。",
-    "en": "A comparison of Claude Opus 5.5 and Gemini 4 Argon generating an interactive 3D furry watermelon in a browser using the same detailed Three.js prompt, with API cost comparison."
-   },
-   "prompt": {
-    "kind": "full",
-    "source": "author_reply",
-    "sourceUrl": "https://x.com/vib3coded/status/2111502058608050536",
-    "text": "Build a single self-contained HTML page (no build step) showing an interactive 3D \"Fluffy Watermelon\" covered in long fur, rendered with WebGL using three.js r147 (UMD build: https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js). All UI text in English.\n\nSCENE & LOOK\n- Full-screen canvas on a soft watermelon-flesh pink studio background: vertical gradient #ECB3AB → #F7CFC7 (lighter band in the middle) → #E8A9A0, used as the scene background.\n- A big oblong watermelon lying on its side along the X axis: half-length 1.38, radius 0.98, blunt barrel-like ends, small dimples at both ends, slightly flattened belly, subtle surface unevenness. Start in a 3/4 view (about -0.32 rad around Y, 0.1 rad tilt), camera FOV 30°, framed to fill ~80% of the height.\n- Rind pattern under the fur: light green (#A8D66B) with 16 dark green (#1C4D1C) stripes running stem to blossom, with ragged finger-like edges (sine meander + value noise), plus a pale cream \"field spot\" on the underside. Each hair takes the colour of its own root, so the stripes stay crisp through the fur.\n- A short, dried, ribbed stem stub at one end with a slightly domed pale cut cap, and a thin curly helical tendril springing from beside it.\n- One directional light from upper-left-front, wrap diffuse, Kajiya-Kay anisotropic highlight along the hair tangent, darker roots (occlusion by hair height), slight per-hair brightness variation.\n\nFUR (most important: it must look crisp, never blurry)\n- Fur length 0.2 units. Hairs grow out along the normal, then bend: combed from the stem end toward the blossom end and draped down the flanks (no whorls at the ends), plus slight gravity.\n- Undercoat: shell texturing with ~64 instanced shells of the body mesh that reach only 50% of the fur length. Procedural hair cells in UV space (density scaled so one cell is ~3.4 device pixels at the default view), two hair populations (long + fine underfur), hairs gathering into locks toward their tips, analytic anti-aliased coverage, alpha blending, shells write depth. Fade shells out where the surface is seen edge-on and discard faint fragments, so no dotted rim appears at the outline.\n- Guard hairs: ~90,000 individual tapered, camera-facing ribbon strands (instanced, 7 segments each) that follow exactly the same bend function, with a minimum width of ~0.75 px so they stay sharp. Draw them twice: once before the shells and once after (depth-tested), so faint edge fur never hides them and they always lie crisply on top.\n- Always render at the device's full pixel ratio (capped at 2) and NEVER lower it for performance. If frames are slow, reduce the shell count first (down to 32), then the guard-hair count.\n\nINTERACTION\n- Drag to rotate freely (trackball style) with inertia after a flick. The fur lags behind the rotation through a damped spring and flops back. Gentle idle breeze in the fur; after 3 s without input, a slow auto-turn.\n- Mouse wheel / pinch to zoom (smooth dolly). Double-click or \"0\" resets with an eased animation. Arrow keys rotate.\n- Custom cursor: the native grab hand plus a thin dark 46 px ring that follows the pointer and shrinks while dragging. Hovering gently parts the fur under the cursor, as if stroking it.\n- Respect prefers-reduced-motion (no idle spin, no breeze).\n\nUI & ROBUSTNESS\n- Bottom-left caption: \"Fluffy Watermelon\" and a hint \"Drag to rotate · Scroll to zoom · Double-click to reset\" (on touch devices: \"Drag to rotate · Pinch to zoom\") that fades after the first interaction. Font: Onest from Google Fonts with system fallbacks.\n- Guard against a zero-sized container at load: clamp width/height to at least 1 and, every frame, recover from any non-finite camera distance or rotation state.\n- Show a small on-page note if the WebGL context is lost or a shader fails to compile, and a fallback message if WebGL is unavailable."
-   },
-   "referenceAssets": false,
-   "tools": [
-    "Three.js"
-   ],
-   "resources": [],
-   "stats": {
-    "views": 46386,
-    "likes": 282,
-    "replies": 42,
-    "reposts": 19,
-    "bookmarks": 88,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
-   },
-   "media": [
-    {
-     "type": "video",
-     "url": "https://video.twimg.com/amplify_video/2111501172259401728/vid/avc1/720x910/RromXVXy38McpR73.mp4?tag=29",
-     "poster": "https://pbs.twimg.com/amplify_video_thumb/2111501172259401728/img/ie1WUG426dYfuoTw.jpg",
-     "width": 720,
-     "height": 910,
-     "durationSec": 15
-    }
-   ],
-   "evidence": {
-    "via": "seed-from-claude-library",
-    "seed": true,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -5166,12 +5615,12 @@
    "tools": [],
    "resources": [],
    "stats": {
-    "views": 46142,
-    "likes": 230,
+    "views": 46151,
+    "likes": 229,
     "replies": 35,
     "reposts": 8,
     "bookmarks": 30,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -5511,12 +5960,12 @@
     "https://pokeable.app/jar/firefly"
    ],
    "stats": {
-    "views": 42470,
+    "views": 42475,
     "likes": 123,
     "replies": 29,
     "reposts": 3,
     "bookmarks": 54,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -5566,12 +6015,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 42052,
+    "views": 42345,
     "likes": 309,
     "replies": 22,
     "reposts": 14,
-    "bookmarks": 63,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "bookmarks": 62,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -5705,6 +6154,64 @@
    }
   },
   {
+   "id": "2119927838321328577",
+   "url": "https://x.com/noclipepe/status/2119927838321328577",
+   "author": {
+    "handle": "noclipepe",
+    "name": "noclipepe"
+   },
+   "postedAt": "2026-11-09T22:59:17.000Z",
+   "addedAt": "2026-11-11",
+   "lang": "en",
+   "models": [
+    "carbon"
+   ],
+   "rivals": [
+    "claude",
+    "gpt"
+   ],
+   "category": "game",
+   "title": {
+    "zh": "Chrome 恐龙游戏模型对比",
+    "en": "Chrome Dino model comparison"
+   },
+   "summary": {
+    "zh": "创作者将Chrome恐龙游戏改造成兰博主题版本，并比较了Fable 5.2、Opus 5.5、Gemini 4 Carbon和GPT-6 Astra的表现。",
+    "en": "A Chrome Dino game was transformed into a Rambo-themed version and compared across Fable 5.2, Opus 5.5, Gemini 4 Carbon, and GPT-6 Astra."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Fable 5.2",
+    "Gemini 4 Carbon",
+    "GPT-6 Astra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 39544,
+    "likes": 183,
+    "replies": 20,
+    "reposts": 6,
+    "bookmarks": 94,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2119923874267607040/vid/avc1/720x900/R1aQKWQKg-ftwUUj.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2119923874267607040/img/3L1LL6Id1yXrKHCY.jpg",
+     "width": 720,
+     "height": 900,
+     "durationSec": 27
+    }
+   ],
+   "evidence": {
+    "via": "seed-from-claude-library",
+    "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2123898746329071698",
    "url": "https://x.com/SamgreyAi/status/2123898746329071698",
    "author": {
@@ -5799,12 +6306,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 38724,
-    "likes": 378,
+    "views": 38733,
+    "likes": 375,
     "replies": 52,
     "reposts": 25,
-    "bookmarks": 133,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "bookmarks": 132,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -5814,63 +6321,6 @@
      "width": 720,
      "height": 910,
      "durationSec": 14
-    }
-   ],
-   "evidence": {
-    "via": "seed-from-claude-library",
-    "seed": true,
-    "modelAttribution": "creator-stated, not independently reproduced"
-   }
-  },
-  {
-   "id": "2120956699951628637",
-   "url": "https://x.com/marcthecreatorr/status/2120956699951628637",
-   "author": {
-    "handle": "marcthecreatorr",
-    "name": "Marcel"
-   },
-   "postedAt": "2026-11-12T19:07:37.000Z",
-   "addedAt": "2026-11-14",
-   "lang": "en",
-   "models": [
-    "hydrogen"
-   ],
-   "rivals": [
-    "claude"
-   ],
-   "category": "svg",
-   "title": {
-    "zh": "女孩与猫的双人自行车 SVG",
-    "en": "Girl and cat tandem ride SVG"
-   },
-   "summary": {
-    "zh": "作品是一个吉卜力风格的 SVG：女孩和猫在金色时刻骑着相连的自行车，并比较了 Claude Code 与 Cursor 的生成结果。",
-    "en": "The work is an SVG of a girl and her cat riding joined bicycles at golden hour in a Ghibli style, compared across Claude Code and Cursor workflows."
-   },
-   "prompt": null,
-   "referenceAssets": false,
-   "tools": [
-    "Gemini 4 Hydrogen",
-    "Claude Code",
-    "Cursor"
-   ],
-   "resources": [],
-   "stats": {
-    "views": 38676,
-    "likes": 379,
-    "replies": 49,
-    "reposts": 22,
-    "bookmarks": 99,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
-   },
-   "media": [
-    {
-     "type": "video",
-     "url": "https://video.twimg.com/amplify_video/2120956511706820608/vid/avc1/720x720/m4kybuC0mYSlpn2P.mp4?tag=29",
-     "poster": "https://pbs.twimg.com/amplify_video_thumb/2120956511706820608/img/--IRgcT_lAngEvPo.jpg",
-     "width": 720,
-     "height": 720,
-     "durationSec": 28
     }
    ],
    "evidence": {
@@ -5976,12 +6426,12 @@
     "https://pokeable.app/jelly/cube"
    ],
    "stats": {
-    "views": 38375,
+    "views": 38384,
     "likes": 128,
     "replies": 24,
     "reposts": 7,
     "bookmarks": 47,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -6141,12 +6591,12 @@
    "tools": [],
    "resources": [],
    "stats": {
-    "views": 37941,
+    "views": 37953,
     "likes": 140,
     "replies": 13,
     "reposts": 7,
     "bookmarks": 15,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -6156,6 +6606,61 @@
      "width": 1920,
      "height": 720,
      "durationSec": 11
+    }
+   ],
+   "evidence": {
+    "via": "seed-from-claude-library",
+    "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2111580341626687586",
+   "url": "https://x.com/EnvolDev/status/2111580341626687586",
+   "author": {
+    "handle": "EnvolDev",
+    "name": "Tony"
+   },
+   "postedAt": "2026-10-17T22:09:19.000Z",
+   "addedAt": "2026-10-19",
+   "lang": "en",
+   "models": [
+    "argon"
+   ],
+   "rivals": [
+    "claude",
+    "deepseek",
+    "muse"
+   ],
+   "category": "scene3d",
+   "title": {
+    "zh": "埃菲尔铁塔建造模型基准对比",
+    "en": "Eiffel Tower build benchmark across models"
+   },
+   "summary": {
+    "zh": "一次埃菲尔铁塔基准测试，用相同的提示词对比了DeepSeek V4.1 Flash、Gemini 4 Argon、Muse Spark 1.3和Claude Haiku 5.5在成本与耗时上的表现。",
+    "en": "An Eiffel Tower benchmark comparing DeepSeek V4.1 Flash, Gemini 4 Argon, Muse Spark 1.3, and Claude Haiku 5.5 on cost and build time, using the same prompt for all four."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 37893,
+    "likes": 222,
+    "replies": 15,
+    "reposts": 15,
+    "bookmarks": 49,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2111580062806061056/vid/avc1/810x720/TUoXSrRy7m9XsM_7.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2111580062806061056/img/_aLvjTlSfGM6FTqA.jpg",
+     "width": 810,
+     "height": 720,
+     "durationSec": 20
     }
    ],
    "evidence": {
@@ -6225,61 +6730,6 @@
    }
   },
   {
-   "id": "2111580341626687586",
-   "url": "https://x.com/EnvolDev/status/2111580341626687586",
-   "author": {
-    "handle": "EnvolDev",
-    "name": "Tony"
-   },
-   "postedAt": "2026-10-17T22:09:19.000Z",
-   "addedAt": "2026-10-19",
-   "lang": "en",
-   "models": [
-    "argon"
-   ],
-   "rivals": [
-    "claude",
-    "deepseek",
-    "muse"
-   ],
-   "category": "scene3d",
-   "title": {
-    "zh": "埃菲尔铁塔建造模型基准对比",
-    "en": "Eiffel Tower build benchmark across models"
-   },
-   "summary": {
-    "zh": "一次埃菲尔铁塔基准测试，用相同的提示词对比了DeepSeek V4.1 Flash、Gemini 4 Argon、Muse Spark 1.3和Claude Haiku 5.5在成本与耗时上的表现。",
-    "en": "An Eiffel Tower benchmark comparing DeepSeek V4.1 Flash, Gemini 4 Argon, Muse Spark 1.3, and Claude Haiku 5.5 on cost and build time, using the same prompt for all four."
-   },
-   "prompt": null,
-   "referenceAssets": false,
-   "tools": [],
-   "resources": [],
-   "stats": {
-    "views": 37791,
-    "likes": 220,
-    "replies": 15,
-    "reposts": 15,
-    "bookmarks": 49,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
-   },
-   "media": [
-    {
-     "type": "video",
-     "url": "https://video.twimg.com/amplify_video/2111580062806061056/vid/avc1/810x720/TUoXSrRy7m9XsM_7.mp4?tag=29",
-     "poster": "https://pbs.twimg.com/amplify_video_thumb/2111580062806061056/img/_aLvjTlSfGM6FTqA.jpg",
-     "width": 810,
-     "height": 720,
-     "durationSec": 20
-    }
-   ],
-   "evidence": {
-    "via": "seed-from-claude-library",
-    "seed": true,
-    "modelAttribution": "creator-stated, not independently reproduced"
-   }
-  },
-  {
    "id": "2110290068514762969",
    "url": "https://x.com/renoiseai/status/2110290068514762969",
    "author": {
@@ -6311,12 +6761,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 37605,
-    "likes": 160,
+    "views": 37618,
+    "likes": 161,
     "replies": 12,
-    "reposts": 9,
+    "reposts": 8,
     "bookmarks": 90,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -6326,64 +6776,6 @@
      "width": 1280,
      "height": 720,
      "durationSec": 15
-    }
-   ],
-   "evidence": {
-    "via": "seed-from-claude-library",
-    "seed": true,
-    "modelAttribution": "creator-stated, not independently reproduced"
-   }
-  },
-  {
-   "id": "2119927838321328577",
-   "url": "https://x.com/noclipepe/status/2119927838321328577",
-   "author": {
-    "handle": "noclipepe",
-    "name": "noclipepe"
-   },
-   "postedAt": "2026-11-09T22:59:17.000Z",
-   "addedAt": "2026-11-11",
-   "lang": "en",
-   "models": [
-    "carbon"
-   ],
-   "rivals": [
-    "claude",
-    "gpt"
-   ],
-   "category": "game",
-   "title": {
-    "zh": "Chrome 恐龙游戏模型对比",
-    "en": "Chrome Dino model comparison"
-   },
-   "summary": {
-    "zh": "创作者将Chrome恐龙游戏改造成兰博主题版本，并比较了Fable 5.2、Opus 5.5、Gemini 4 Carbon和GPT-6 Astra的表现。",
-    "en": "A Chrome Dino game was transformed into a Rambo-themed version and compared across Fable 5.2, Opus 5.5, Gemini 4 Carbon, and GPT-6 Astra."
-   },
-   "prompt": null,
-   "referenceAssets": false,
-   "tools": [
-    "Fable 5.2",
-    "Gemini 4 Carbon",
-    "GPT-6 Astra"
-   ],
-   "resources": [],
-   "stats": {
-    "views": 37274,
-    "likes": 177,
-    "replies": 20,
-    "reposts": 6,
-    "bookmarks": 92,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
-   },
-   "media": [
-    {
-     "type": "video",
-     "url": "https://video.twimg.com/amplify_video/2119923874267607040/vid/avc1/720x900/R1aQKWQKg-ftwUUj.mp4?tag=29",
-     "poster": "https://pbs.twimg.com/amplify_video_thumb/2119923874267607040/img/3L1LL6Id1yXrKHCY.jpg",
-     "width": 720,
-     "height": 900,
-     "durationSec": 27
     }
    ],
    "evidence": {
@@ -6471,6 +6863,66 @@
      "width": 360,
      "height": 640,
      "durationSec": 0
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124760560445030409",
+   "url": "https://x.com/SPAC89/status/2124760560445030409",
+   "author": {
+    "handle": "SPAC89",
+    "name": "Iam_"
+   },
+   "postedAt": "2026-11-23T07:02:48.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "kind": "comparison",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [
+    "claude"
+   ],
+   "category": "scene3d",
+   "title": {
+    "zh": "3D 场景生成测试",
+    "en": "3D scene generation test"
+   },
+   "summary": {
+    "zh": "作者用同一个 3D 任务测试了 GLM 5.4 Max、Gemini 4 Neon、Opus 5.5 xhigh 和 Fable 5.2 high。结论是 GLM 5.4 Max 胜过 Opus 5.5，可以排进前二，生成速度也快。",
+    "en": "A 3D generation test comparing GLM 5.4 Max with Gemini 4 Neon, Opus 5.5 xhigh and Fable 5.2 high. The creator concluded that GLM 5.4 Max beat Opus 5.5 and ranks in the top two."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "GLM 5.4 Max",
+    "Claude Opus 5.5",
+    "Fable 5.2",
+    "Kimi 3.1 Pro",
+    "Cerebras"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 35350,
+    "likes": 281,
+    "replies": 31,
+    "reposts": 19,
+    "bookmarks": 65,
+    "checkedAt": "2026-11-24T11:25:04.779Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2124760428240687104/vid/avc1/1280x720/494TPSPqE1llLQcj.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2124760428240687104/img/eNKF9M_ictO0dcBV.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 30
     }
    ],
    "evidence": {
@@ -6569,12 +7021,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 34862,
-    "likes": 389,
+    "views": 34910,
+    "likes": 390,
     "replies": 36,
     "reposts": 23,
     "bookmarks": 124,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -6622,12 +7074,12 @@
    "tools": [],
    "resources": [],
    "stats": {
-    "views": 33413,
-    "likes": 174,
+    "views": 33464,
+    "likes": 173,
     "replies": 30,
     "reposts": 0,
-    "bookmarks": 80,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "bookmarks": 79,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -6678,12 +7130,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 32714,
-    "likes": 234,
+    "views": 32724,
+    "likes": 233,
     "replies": 12,
     "reposts": 6,
     "bookmarks": 40,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -6735,12 +7187,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 32352,
+    "views": 32390,
     "likes": 344,
     "replies": 41,
     "reposts": 19,
     "bookmarks": 104,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -6817,6 +7269,60 @@
    }
   },
   {
+   "id": "2124497953016656155",
+   "url": "https://x.com/IamEmily2050/status/2124497953016656155",
+   "author": {
+    "handle": "IamEmily2050",
+    "name": "Emily"
+   },
+   "postedAt": "2026-11-22T13:39:17.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "scene3d",
+   "title": {
+    "zh": "潮水修道院光线追踪体素短片",
+    "en": "Tidewater Abbey ray-traced voxel film"
+   },
+   "summary": {
+    "zh": "作者使用 Antigravity（/Swarm）和 Gemini 4 Neon High，经 1,510 次模型调用生成了“Tidewater Abbey”项目，包含 1.013 亿个方块、26 MB 单文件 HTML 及 2 分钟 4K 光追影片。",
+    "en": "Built Tidewater Abbey, a 2-minute ray-traced 4K film and 26 MB HTML file from 101.3 million boxes, using Antigravity (/Swarm) and Gemini 4 Neon High across 1,510 model calls."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Antigravity"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 32114,
+    "likes": 572,
+    "replies": 61,
+    "reposts": 49,
+    "bookmarks": 295,
+    "checkedAt": "2026-11-24T11:11:12.811Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2124497148247195649/vid/avc1/1280x720/ltJ_zMbN8vniBjU6.mp4",
+     "poster": "https://pbs.twimg.com/media/HXu65nRasAEvwdG.jpg",
+     "width": 3840,
+     "height": 2160,
+     "durationSec": 120
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2110357629159854196",
    "url": "https://x.com/anxuanng/status/2110357629159854196",
    "author": {
@@ -6851,12 +7357,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 31679,
-    "likes": 455,
+    "views": 31691,
+    "likes": 453,
     "replies": 26,
     "reposts": 20,
     "bookmarks": 186,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -6906,12 +7412,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 30841,
-    "likes": 412,
+    "views": 30850,
+    "likes": 410,
     "replies": 40,
     "reposts": 15,
     "bookmarks": 61,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -6959,12 +7465,12 @@
    "tools": [],
    "resources": [],
    "stats": {
-    "views": 30781,
-    "likes": 286,
+    "views": 30790,
+    "likes": 285,
     "replies": 14,
     "reposts": 16,
     "bookmarks": 37,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -7069,12 +7575,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 30622,
-    "likes": 208,
+    "views": 30643,
+    "likes": 209,
     "replies": 14,
     "reposts": 12,
-    "bookmarks": 44,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "bookmarks": 43,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -7084,6 +7590,61 @@
      "width": 1280,
      "height": 720,
      "durationSec": 15
+    }
+   ],
+   "evidence": {
+    "via": "seed-from-claude-library",
+    "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2112583451958538598",
+   "url": "https://x.com/anxuanng/status/2112583451958538598",
+   "author": {
+    "handle": "anxuanng",
+    "name": "An Xuan"
+   },
+   "postedAt": "2026-10-20T16:35:19.000Z",
+   "addedAt": "2026-10-21",
+   "lang": "en",
+   "models": [
+    "argon"
+   ],
+   "rivals": [
+    "claude"
+   ],
+   "category": "sim",
+   "title": {
+    "zh": "芯片厂模拟策略场景对比",
+    "en": "Chip fab strategy sim comparison"
+   },
+   "summary": {
+    "zh": "作者用同一份需求，比较了Opus 5.5（70分钟）和Gemini 4 Argon（85分钟）生成的芯片工厂3D场景，场景中的扫描仪和晶圆舱模型均用Blender制作。",
+    "en": "A playable chip fab environment with scanners and wafer pods modeled in Blender was built from the same brief by Opus 5.5 (70 min) and Gemini 4 Argon (85 min), comparing layout approaches."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 29835,
+    "likes": 721,
+    "replies": 11,
+    "reposts": 84,
+    "bookmarks": 538,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2112583320798404608/vid/avc1/720x810/Ypq_BjPseWyMW9Y_.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2112583320798404608/img/l_yfgPNneGXnTucU.jpg",
+     "width": 720,
+     "height": 810,
+     "durationSec": 30
     }
    ],
    "evidence": {
@@ -7206,61 +7767,6 @@
    }
   },
   {
-   "id": "2112583451958538598",
-   "url": "https://x.com/anxuanng/status/2112583451958538598",
-   "author": {
-    "handle": "anxuanng",
-    "name": "An Xuan"
-   },
-   "postedAt": "2026-10-20T16:35:19.000Z",
-   "addedAt": "2026-10-21",
-   "lang": "en",
-   "models": [
-    "argon"
-   ],
-   "rivals": [
-    "claude"
-   ],
-   "category": "sim",
-   "title": {
-    "zh": "芯片厂模拟策略场景对比",
-    "en": "Chip fab strategy sim comparison"
-   },
-   "summary": {
-    "zh": "作者用同一份需求，比较了Opus 5.5（70分钟）和Gemini 4 Argon（85分钟）生成的芯片工厂3D场景，场景中的扫描仪和晶圆舱模型均用Blender制作。",
-    "en": "A playable chip fab environment with scanners and wafer pods modeled in Blender was built from the same brief by Opus 5.5 (70 min) and Gemini 4 Argon (85 min), comparing layout approaches."
-   },
-   "prompt": null,
-   "referenceAssets": false,
-   "tools": [
-    "Blender"
-   ],
-   "resources": [],
-   "stats": {
-    "views": 29742,
-    "likes": 721,
-    "replies": 11,
-    "reposts": 83,
-    "bookmarks": 539,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
-   },
-   "media": [
-    {
-     "type": "video",
-     "url": "https://video.twimg.com/amplify_video/2112583320798404608/vid/avc1/720x810/Ypq_BjPseWyMW9Y_.mp4?tag=29",
-     "poster": "https://pbs.twimg.com/amplify_video_thumb/2112583320798404608/img/l_yfgPNneGXnTucU.jpg",
-     "width": 720,
-     "height": 810,
-     "durationSec": 30
-    }
-   ],
-   "evidence": {
-    "via": "seed-from-claude-library",
-    "seed": true,
-    "modelAttribution": "creator-stated, not independently reproduced"
-   }
-  },
-  {
    "id": "2124083607635718386",
    "url": "https://x.com/WrongNebula/status/2124083607635718386",
    "author": {
@@ -7348,12 +7854,12 @@
     "https://cloud.typingmind.com/share/22068d58-aae2-474e-9b13-caf53804ee81"
    ],
    "stats": {
-    "views": 29228,
-    "likes": 934,
+    "views": 29377,
+    "likes": 931,
     "replies": 26,
     "reposts": 66,
-    "bookmarks": 426,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "bookmarks": 427,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -7404,12 +7910,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 29139,
+    "views": 29210,
     "likes": 317,
-    "replies": 54,
+    "replies": 53,
     "reposts": 19,
     "bookmarks": 35,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -7460,12 +7966,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 28909,
-    "likes": 235,
+    "views": 29058,
+    "likes": 236,
     "replies": 49,
     "reposts": 36,
     "bookmarks": 44,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -7520,12 +8026,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 28516,
+    "views": 28597,
     "likes": 143,
-    "replies": 29,
+    "replies": 28,
     "reposts": 3,
     "bookmarks": 54,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -7578,12 +8084,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 28132,
-    "likes": 402,
+    "views": 28201,
+    "likes": 403,
     "replies": 27,
-    "reposts": 16,
-    "bookmarks": 64,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "reposts": 15,
+    "bookmarks": 65,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -7598,6 +8104,60 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124408795334119710",
+   "url": "https://x.com/antiAIvo/status/2124408795334119710",
+   "author": {
+    "handle": "antiAIvo",
+    "name": "纳米AI"
+   },
+   "postedAt": "2026-11-22T07:45:01.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [
+    "deepseek"
+   ],
+   "category": "ui",
+   "title": {
+    "zh": "智能体循环架构交互式网页",
+    "en": "Agent loop architecture HTML visualization"
+   },
+   "summary": {
+    "zh": "作者基于七期 DeepSeek Harness 源码笔记，使用 Gemini 4 Neon 经多轮样式调整，制作了完整 Agent Loop 架构可视化单页 HTML。",
+    "en": "Built an interactive HTML visualization of the DeepSeek Harness Agent Loop architecture covering seven source-code study articles using Gemini 4 Neon over multiple iterations."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 28132,
+    "likes": 515,
+    "replies": 24,
+    "reposts": 78,
+    "bookmarks": 435,
+    "checkedAt": "2026-11-24T11:11:12.811Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2124407300790345728/vid/avc1/1202x720/zoFGzlFNk6aof-sn.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2124407300790345728/img/iYqrsoaR8INGYMl5.jpg",
+     "width": 3060,
+     "height": 1830,
+     "durationSec": 24
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -7711,6 +8271,66 @@
    }
   },
   {
+   "id": "2111932183946449162",
+   "url": "https://x.com/gtanczyk/status/2111932183946449162",
+   "author": {
+    "handle": "gtanczyk",
+    "name": "Grzegorz Tańczyk"
+   },
+   "postedAt": "2026-10-18T21:27:25.000Z",
+   "addedAt": "2026-10-20",
+   "lang": "en",
+   "models": [
+    "argon"
+   ],
+   "rivals": [
+    "claude",
+    "gpt",
+    "grok",
+    "muse"
+   ],
+   "category": "scene3d",
+   "title": {
+    "zh": "多模型赛博朋克角色对比",
+    "en": "Multi-model cyberpunk character comparison"
+   },
+   "summary": {
+    "zh": "一项对比实验，使用Opus 5.5、GPT-6.1 Sol、Gemini 4 Argon、Grok 4.7和Muse Wonder等多个模型生成赛博朋克游戏角色，作者在回复中分享了实验成本细节。",
+    "en": "A comparison of cyberpunk game characters generated by multiple models including Opus 5.5, GPT-6.1 Sol, Gemini 4 Argon, Grok 4.7 and Muse Wonder, with cost details for the experiment shared in replies."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Claude Code",
+    "OpenRouter",
+    "Gemini API"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 27480,
+    "likes": 229,
+    "replies": 23,
+    "reposts": 4,
+    "bookmarks": 138,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2111930547479904257/vid/avc1/1280x720/9OcxVbkwdrh96uP5.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2111930547479904257/img/wsxjnQcZi2jTf_xN.jpg",
+     "width": 1280,
+     "height": 720,
+     "durationSec": 24
+    }
+   ],
+   "evidence": {
+    "via": "seed-from-claude-library",
+    "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2123832990598045903",
    "url": "https://x.com/DanielZambrini/status/2123832990598045903",
    "author": {
@@ -7763,66 +8383,6 @@
    }
   },
   {
-   "id": "2111932183946449162",
-   "url": "https://x.com/gtanczyk/status/2111932183946449162",
-   "author": {
-    "handle": "gtanczyk",
-    "name": "Grzegorz Tańczyk"
-   },
-   "postedAt": "2026-10-18T21:27:25.000Z",
-   "addedAt": "2026-10-20",
-   "lang": "en",
-   "models": [
-    "argon"
-   ],
-   "rivals": [
-    "claude",
-    "gpt",
-    "grok",
-    "muse"
-   ],
-   "category": "scene3d",
-   "title": {
-    "zh": "多模型赛博朋克角色对比",
-    "en": "Multi-model cyberpunk character comparison"
-   },
-   "summary": {
-    "zh": "一项对比实验，使用Opus 5.5、GPT-6.1 Sol、Gemini 4 Argon、Grok 4.7和Muse Wonder等多个模型生成赛博朋克游戏角色，作者在回复中分享了实验成本细节。",
-    "en": "A comparison of cyberpunk game characters generated by multiple models including Opus 5.5, GPT-6.1 Sol, Gemini 4 Argon, Grok 4.7 and Muse Wonder, with cost details for the experiment shared in replies."
-   },
-   "prompt": null,
-   "referenceAssets": false,
-   "tools": [
-    "Claude Code",
-    "OpenRouter",
-    "Gemini API"
-   ],
-   "resources": [],
-   "stats": {
-    "views": 27458,
-    "likes": 229,
-    "replies": 23,
-    "reposts": 4,
-    "bookmarks": 138,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
-   },
-   "media": [
-    {
-     "type": "video",
-     "url": "https://video.twimg.com/amplify_video/2111930547479904257/vid/avc1/1280x720/9OcxVbkwdrh96uP5.mp4?tag=29",
-     "poster": "https://pbs.twimg.com/amplify_video_thumb/2111930547479904257/img/wsxjnQcZi2jTf_xN.jpg",
-     "width": 1280,
-     "height": 720,
-     "durationSec": 24
-    }
-   ],
-   "evidence": {
-    "via": "seed-from-claude-library",
-    "seed": true,
-    "modelAttribution": "creator-stated, not independently reproduced"
-   }
-  },
-  {
    "id": "2110471008285282669",
    "url": "https://x.com/higgsfield_ai/status/2110471008285282669",
    "author": {
@@ -7855,12 +8415,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 27340,
+    "views": 27365,
     "likes": 220,
     "replies": 23,
     "reposts": 12,
     "bookmarks": 52,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -7919,12 +8479,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 27023,
+    "views": 27055,
     "likes": 122,
     "replies": 14,
     "reposts": 10,
-    "bookmarks": 24,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "bookmarks": 23,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -7939,6 +8499,68 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124353151646200097",
+   "url": "https://x.com/teddyaisi/status/2124353151646200097",
+   "author": {
+    "handle": "teddyaisi",
+    "name": "Teddy"
+   },
+   "postedAt": "2026-11-22T04:03:54.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "kind": "comparison",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [
+    "gpt"
+   ],
+   "category": "scene3d",
+   "title": {
+    "zh": "巴洛克图书馆漫游场景",
+    "en": "Baroque library synchronized walkthrough"
+   },
+   "summary": {
+    "zh": "作者用纯 Three.js 对比了 GPT-6.2-Astra 与 Gemini 4 Neon 生成 20 秒巴洛克风格图书馆漫游的效果，前者耗时 1 小时 5 分 29 秒、花费 9.44 美元，后者耗时 1 小时 19 分 23 秒、花费 10.85 美元，未给出胜负结论。",
+    "en": "Compared GPT-6.2-Astra and Gemini 4 Neon in pure Three.js on a 20-second Baroque library walk; Astra cost $9.44 in 1h 5m 29s versus Neon at $10.85 in 1h 19m 23s, with no winner stated."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/teddyaisi/status/2124353151646200097",
+    "text": "20-second synchronized walk through a grand Baroque library"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "GPT-6.2-Astra",
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 27050,
+    "likes": 219,
+    "replies": 36,
+    "reposts": 16,
+    "bookmarks": 86,
+    "checkedAt": "2026-11-24T11:11:12.811Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2124352679287959552/vid/avc1/720x810/Oom8G3-3N8m1R3dX.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2124352679287959552/img/HY8O2kU6zwLIyBW5.jpg",
+     "width": 1280,
+     "height": 1440,
+     "durationSec": 20
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -8001,6 +8623,60 @@
    }
   },
   {
+   "id": "2121326233044537688",
+   "url": "https://x.com/noclipepe/status/2121326233044537688",
+   "author": {
+    "handle": "noclipepe",
+    "name": "noclipepe"
+   },
+   "postedAt": "2026-11-13T19:36:00.000Z",
+   "addedAt": "2026-11-15",
+   "lang": "en",
+   "models": [
+    "carbon",
+    "hydrogen"
+   ],
+   "rivals": [
+    "claude"
+   ],
+   "category": "scene3d",
+   "title": {
+    "zh": "飞屋房子建模四模型对比测试",
+    "en": "Up house build test across four models"
+   },
+   "summary": {
+    "zh": "作者用同一提示词和参考图，一次性生成电影《飞屋环游记》风格的房子。对比了 Fable 5.2、Opus 5.5、Gemini 4 Carbon 和 Gemini 4 Hydrogen 的耗时和费用。",
+    "en": "An Up-style house test run one-shot with the same prompt and reference. Fable 5.2, Opus 5.5, Gemini 4 Carbon and Gemini 4 Hydrogen are compared on time and cost."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 26851,
+    "likes": 147,
+    "replies": 17,
+    "reposts": 5,
+    "bookmarks": 43,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2121325889690460160/vid/avc1/1080x720/KcFTTJmE24C4xxeM.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2121325889690460160/img/Ej_0aw6X-YRrAMZ9.jpg",
+     "width": 1080,
+     "height": 720,
+     "durationSec": 36
+    }
+   ],
+   "evidence": {
+    "via": "seed-from-claude-library",
+    "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2110449758439723292",
    "url": "https://x.com/higgsfield_ai/status/2110449758439723292",
    "author": {
@@ -8033,12 +8709,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 26385,
-    "likes": 211,
+    "views": 26453,
+    "likes": 212,
     "replies": 38,
     "reposts": 18,
     "bookmarks": 59,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -8092,12 +8768,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 26332,
-    "likes": 122,
+    "views": 26350,
+    "likes": 119,
     "replies": 37,
     "reposts": 2,
     "bookmarks": 46,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -8154,12 +8830,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 26170,
-    "likes": 152,
+    "views": 26306,
+    "likes": 155,
     "replies": 39,
-    "reposts": 48,
+    "reposts": 52,
     "bookmarks": 66,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -8266,12 +8942,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 25965,
+    "views": 26050,
     "likes": 431,
     "replies": 27,
     "reposts": 18,
     "bookmarks": 75,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -8281,60 +8957,6 @@
      "width": 720,
      "height": 900,
      "durationSec": 25
-    }
-   ],
-   "evidence": {
-    "via": "seed-from-claude-library",
-    "seed": true,
-    "modelAttribution": "creator-stated, not independently reproduced"
-   }
-  },
-  {
-   "id": "2121326233044537688",
-   "url": "https://x.com/noclipepe/status/2121326233044537688",
-   "author": {
-    "handle": "noclipepe",
-    "name": "noclipepe"
-   },
-   "postedAt": "2026-11-13T19:36:00.000Z",
-   "addedAt": "2026-11-15",
-   "lang": "en",
-   "models": [
-    "carbon",
-    "hydrogen"
-   ],
-   "rivals": [
-    "claude"
-   ],
-   "category": "scene3d",
-   "title": {
-    "zh": "飞屋房子建模四模型对比测试",
-    "en": "Up house build test across four models"
-   },
-   "summary": {
-    "zh": "作者用同一提示词和参考图，一次性生成电影《飞屋环游记》风格的房子。对比了 Fable 5.2、Opus 5.5、Gemini 4 Carbon 和 Gemini 4 Hydrogen 的耗时和费用。",
-    "en": "An Up-style house test run one-shot with the same prompt and reference. Fable 5.2, Opus 5.5, Gemini 4 Carbon and Gemini 4 Hydrogen are compared on time and cost."
-   },
-   "prompt": null,
-   "referenceAssets": true,
-   "tools": [],
-   "resources": [],
-   "stats": {
-    "views": 25864,
-    "likes": 144,
-    "replies": 17,
-    "reposts": 3,
-    "bookmarks": 42,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
-   },
-   "media": [
-    {
-     "type": "video",
-     "url": "https://video.twimg.com/amplify_video/2121325889690460160/vid/avc1/1080x720/KcFTTJmE24C4xxeM.mp4?tag=29",
-     "poster": "https://pbs.twimg.com/amplify_video_thumb/2121325889690460160/img/Ej_0aw6X-YRrAMZ9.jpg",
-     "width": 1080,
-     "height": 720,
-     "durationSec": 36
     }
    ],
    "evidence": {
@@ -8458,6 +9080,69 @@
    }
   },
   {
+   "id": "2124625485590327733",
+   "url": "https://x.com/maxt3chno/status/2124625485590327733",
+   "author": {
+    "handle": "maxt3chno",
+    "name": "Max"
+   },
+   "postedAt": "2026-11-22T22:06:04.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "kind": "comparison",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [
+    "claude"
+   ],
+   "category": "scene3d",
+   "title": {
+    "zh": "Blender 北欧战王王座模型",
+    "en": "Norse war-king throne built in Blender"
+   },
+   "summary": {
+    "zh": "作者使用无外部素材的北欧王座 3D 建模提示词，在 Blender MCP 中对 Claude Opus 5.5 与 Gemini 4 Neon 进行盲测，两侧分别耗时 32 分钟和 29 分钟，作者表示两者结果已难分高下。",
+    "en": "Ran a blind Blender MCP test comparing Claude Opus 5.5 and Gemini 4 Neon on an ancient Norse throne prompt without external assets; outputs took 32 and 29 minutes and look closely matched."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/maxt3chno/status/2124625701697368556",
+    "text": "TASK\nCreate a 3D model in Blender: an ancient Norse war-king's throne from a\ndark-fantasy world. It should feel heavy, old, grim and powerful.\n\nWhat I want to see:\n- Size: about 2.2 m tall without the antlers, about 2.8 m tall with them.\nWide and massive.\n- Base: a stepped platform of dark, weathered stone with carved\ninterlaced Norse knotwork on the front step.\n- Backrest: tall, arched, made of vertical dark wooden planks. Two\nintertwined serpent-dragons are carved in relief on it, their bodies\nbraided together, heads facing each other at the top.\n- Top: a deer skull with huge antlers, mounted inside an iron ring at\nthe top of the backrest and bound with rope.\n- Side posts: two thick carved wooden posts covered in knotwork,\nreinforced with riveted iron bands. A large bearded battle axe is\nmounted on top of each post, blades facing outward.\n- Banners: a tattered dark-red cloth banner hangs from an iron rod on each\nside, below the axes, with a pale Norse symbol on it. The bottom edges\nare torn and frayed.\n- Armrests: ending in carved snarling wolf or dragon heads with open jaws.\n- Seat: draped with a heavy, torn dark-red cloth with a woven knotwork\nstripe down the middle, hanging over the front edge.\n- Wear: old cracked wood, dull dark iron and bronze, dirt and dust in the\ncarvings, faded and frayed fabric. Very textured and highly detailed.\nIt must look ancient and real, not clean, not plastic, not cartoony.\n\nThe exact shapes, carving patterns and smaller details are up to you.\n\nWORKING FOLDER\nYour working folder is: [FOLDER]\nSave all files there and nowhere else.\n\nSETUP\n- You must work through the Blender MCP connection only.\n- Before doing anything else, check the Blender MCP connection. If you cannot\nconnect, STOP immediately and tell me. Do not try to work around it (no\nwriting scripts for me to run manually, no other tools).\n- Start from an empty scene: delete all default objects first.\n- You can and should look at the viewport and renders through the MCP to check\nand improve your work.\n- There is no limit on iterations. Keep working until you consider the result\nfinished. Work autonomously and do not ask me questions.\n\nRULES\n- Create everything yourself inside Blender: modeling, sculpting, modifiers,\ngeometry nodes, shader nodes, procedural textures, cloth simulation,\ntexture painting and baking are all allowed.\n- Stay inside your working folder. Do NOT read, list, search or open any\nfiles or folders outside it (no browsing my other projects, user folders,\nconfig files, or other drives). The only things you may access are your\nworking folder and Blender through the MCP.\n- Inside Blender, do not open, append or link any other .blend files.\n- You MAY use the internet only for Blender / Python API documentation and\ntechnical help.\n- You MUST NOT download or import any ready-made models, textures, images,\nHDRIs, materials, add-ons, asset packs or asset libraries (including the Poly\nHaven, Sketchfab and Hyper3D/Rodin integrations, if your MCP offers them).\n- You MUST NOT search for or look at reference images of thrones or similar\nobjects.\n- You MUST NOT use external AI generators (image, texture or 3D).\n- Do not read or write any memory, notes or rules files, and do not use\nknowledge from my previous projects. Work only from this prompt.\n\nPOLYGON BUDGET\n- The throne must be between 150,000 and 200,000 triangles, counted with\nall modifiers evaluated, as shown in Blender's scene statistics.\n- Fine detail beyond that budget must come from materials (procedural\ntextures, bump/normal maps, or baked maps you generated yourself).\n- Scene elements other than the throne (a ground plane, a backdrop) must\nstay simple: max 2,000 triangles in total.\n\nPRESENTATION\n- I will record a video myself by orbiting around the throne in the Blender\nviewport (Rendered shading mode), so it must look impressive in real time\nfrom every angle.\n- Use EEVEE as the render engine. All materials and effects must look good in\nEEVEE viewport rendering.\n- Place the throne at the world origin, standing on the ground, with its\nobject origin at the center of the throne so it orbits nicely.\n- Set up lighting, world background and atmosphere for a dark-fantasy mood\nthat works from ALL viewing angles, not just from one camera. Use only\nBlender lights, world shaders and volumetrics, no external HDRIs.\n- The scene must stay smooth in the viewport: no effects that make real-time\norbiting laggy.\n- Save to the working folder:\n- throne.blend\n- render_hero.png: one EEVEE still at 1080x1920 as a thumbnail.\n\nFINAL REPORT\nWhen you are done, report:\n- the final triangle count of the throne\n- a short description of how you made it (techniques, materials, carvings)\n- confirmation that no external assets were used"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Blender",
+    "Blender MCP",
+    "Claude Opus 5.5"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 25303,
+    "likes": 228,
+    "replies": 38,
+    "reposts": 9,
+    "bookmarks": 153,
+    "checkedAt": "2026-11-24T11:11:12.811Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2124624167647469568/vid/avc1/1110x720/rL71qzRmRS7Vz8Fh.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2124624167647469568/img/4vtbZ7Lyfl2akGlw.jpg",
+     "width": 2220,
+     "height": 1440,
+     "durationSec": 19
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2110385278246654052",
    "url": "https://x.com/MiaAI_lab/status/2110385278246654052",
    "author": {
@@ -8494,12 +9179,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 25228,
-    "likes": 217,
+    "views": 25243,
+    "likes": 216,
     "replies": 20,
     "reposts": 5,
     "bookmarks": 68,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -8607,12 +9292,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 24763,
-    "likes": 113,
+    "views": 24778,
+    "likes": 114,
     "replies": 24,
     "reposts": 4,
     "bookmarks": 23,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -8627,6 +9312,58 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124352577852821919",
+   "url": "https://x.com/chasen_liao/status/2124352577852821919",
+   "author": {
+    "handle": "chasen_liao",
+    "name": "Chasen"
+   },
+   "postedAt": "2026-11-22T04:01:37.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "ui",
+   "title": {
+    "zh": "Pi 智能体架构交互式可视化网页",
+    "en": "Interactive Pi agent architecture visualizer"
+   },
+   "summary": {
+    "zh": "作者参考已有网站的设计风格，使用 Gemini 4 Neon 制作了一个用于拆解讲解 Pi Agent Harness 架构的交互式可视化网页。",
+    "en": "Built an interactive web visualizer explaining Pi's agent harness design using Gemini 4 Neon, referencing an existing design site (designed-to-scale.vercel.app)."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 23792,
+    "likes": 415,
+    "replies": 35,
+    "reposts": 50,
+    "bookmarks": 427,
+    "checkedAt": "2026-11-24T11:11:12.811Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2124351290855874560/vid/avc1/1280x720/PSwOhaLiiD_SeP5w.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2124351290855874560/img/gDkwk-2Tm1nOT31W.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 30
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -8665,12 +9402,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 23504,
+    "views": 23521,
     "likes": 159,
     "replies": 29,
     "reposts": 10,
     "bookmarks": 44,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -8729,12 +9466,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 23295,
-    "likes": 110,
+    "views": 23296,
+    "likes": 109,
     "replies": 31,
-    "reposts": 9,
+    "reposts": 8,
     "bookmarks": 48,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -8788,12 +9525,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 23090,
-    "likes": 247,
+    "views": 23097,
+    "likes": 246,
     "replies": 26,
     "reposts": 7,
     "bookmarks": 79,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -8966,12 +9703,12 @@
    "tools": [],
    "resources": [],
    "stats": {
-    "views": 22286,
+    "views": 22317,
     "likes": 104,
     "replies": 7,
     "reposts": 4,
-    "bookmarks": 46,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "bookmarks": 45,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -9149,12 +9886,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 21378,
+    "views": 21426,
     "likes": 456,
     "replies": 4,
     "reposts": 60,
-    "bookmarks": 352,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "bookmarks": 353,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -9169,6 +9906,61 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124572099750891577",
+   "url": "https://x.com/ai_for_success/status/2124572099750891577",
+   "author": {
+    "handle": "ai_for_success",
+    "name": "AshutoshShrivastava"
+   },
+   "postedAt": "2026-11-22T18:33:55.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "motion",
+   "title": {
+    "zh": "图像转 3D 动态效果演示",
+    "en": "Image-to-3D motion teaser"
+   },
+   "summary": {
+    "zh": "作者在数小时内结合 Gemini 4 Neon、Antigravity 与 Magnific MCP 完成了一个图像转 3D 及动态效果项目，并表示后续会发布完整教程。",
+    "en": "Built an image-to-3D-to-motion project in a few hours using Gemini 4 Neon, Antigravity, and Magnific MCP, with a full guide planned for later."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Antigravity",
+    "Magnific MCP"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 20991,
+    "likes": 458,
+    "replies": 37,
+    "reposts": 25,
+    "bookmarks": 410,
+    "checkedAt": "2026-11-24T11:11:12.811Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2124571243206889472/vid/avc1/1434x720/YUy5D90h8mfXxROD.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2124571243206889472/img/TSs-qQJ5LUMWbyN9.jpg",
+     "width": 3840,
+     "height": 1928,
+     "durationSec": 8
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -9260,12 +10052,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 19991,
-    "likes": 153,
+    "views": 20016,
+    "likes": 154,
     "replies": 8,
     "reposts": 16,
     "bookmarks": 29,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -9315,12 +10107,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 19869,
+    "views": 19912,
     "likes": 318,
     "replies": 30,
     "reposts": 30,
     "bookmarks": 91,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -9330,6 +10122,61 @@
      "width": 720,
      "height": 720,
      "durationSec": 21
+    }
+   ],
+   "evidence": {
+    "via": "seed-from-claude-library",
+    "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2110417458846916697",
+   "url": "https://x.com/higgsfield_ai/status/2110417458846916697",
+   "author": {
+    "handle": "higgsfield_ai",
+    "name": "Higgsfield AI 🧩"
+   },
+   "postedAt": "2026-10-14T17:08:26.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "argon"
+   ],
+   "rivals": [
+    "claude"
+   ],
+   "category": "game",
+   "title": {
+    "zh": "赛博朋克游戏开发对比",
+    "en": "Cyberpunk game dev comparison"
+   },
+   "summary": {
+    "zh": "对比Gemini 4 Argon和Claude Opus 5.5在Higgsfield平台上构建赛博朋克战斗游戏。",
+    "en": "A comparison of Gemini 4 Argon and Claude Opus 5.5 building a cyberpunk combat game on Higgsfield."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Higgsfield"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 19808,
+    "likes": 189,
+    "replies": 17,
+    "reposts": 26,
+    "bookmarks": 39,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2110416827285377024/vid/avc1/720x810/YFsw_05DdFNY35CM.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2110416827285377024/img/_XAtiwwkhY69HJ65.jpg",
+     "width": 720,
+     "height": 810,
+     "durationSec": 20
     }
    ],
    "evidence": {
@@ -9395,13 +10242,79 @@
    }
   },
   {
-   "id": "2110417458846916697",
-   "url": "https://x.com/higgsfield_ai/status/2110417458846916697",
+   "id": "2124470064422527151",
+   "url": "https://x.com/fe_yukichi/status/2124470064422527151",
    "author": {
-    "handle": "higgsfield_ai",
-    "name": "Higgsfield AI 🧩"
+    "handle": "fe_yukichi",
+    "name": "ゆきち/ AI"
    },
-   "postedAt": "2026-10-14T17:08:26.000Z",
+   "postedAt": "2026-11-22T11:48:28.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "scene3d",
+   "title": {
+    "zh": "Blender Q 版低多边形人体素模",
+    "en": "Chibi low-poly base body mesh in Blender"
+   },
+   "summary": {
+    "zh": "作者使用 Gemini 4 Neon 配合单条结构化提示词和角色参考图，在 Blender 中生成了约 4800 三角面的 Q 版低模人型素体。",
+    "en": "Creator built a chibi-style low-poly 3D humanoid base mesh (~4,800 triangles) in Blender using Gemini 4 Neon with a single structured prompt and character reference images."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 19515,
+    "likes": 245,
+    "replies": 4,
+    "reposts": 14,
+    "bookmarks": 243,
+    "checkedAt": "2026-11-24T11:11:12.811Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2124470047800426496/vid/avc1/786x720/5r3xRzCBlk65cSjs.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2124470047800426496/img/4lbMNiHb2-CzgWDf.jpg",
+     "width": 1024,
+     "height": 938,
+     "durationSec": 17
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXuiEbjbQAAU7lK.png",
+     "width": 543,
+     "height": 768
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXuiFr_agAA9NhS.png",
+     "width": 403,
+     "height": 768
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2110121002332295599",
+   "url": "https://x.com/techhalla/status/2110121002332295599",
+   "author": {
+    "handle": "techhalla",
+    "name": "TechHalla"
+   },
+   "postedAt": "2026-10-13T21:30:25.000Z",
    "addedAt": "2026-10-15",
    "lang": "en",
    "models": [
@@ -9410,37 +10323,43 @@
    "rivals": [
     "claude"
    ],
-   "category": "game",
+   "category": "scene3d",
    "title": {
-    "zh": "赛博朋克游戏开发对比",
-    "en": "Cyberpunk game dev comparison"
+    "zh": "达芬奇工作室3D复原：双模型对比",
+    "en": "Da Vinci workshop 3D build: Gemini vs Opus"
    },
    "summary": {
-    "zh": "对比Gemini 4 Argon和Claude Opus 5.5在Higgsfield平台上构建赛博朋克战斗游戏。",
-    "en": "A comparison of Gemini 4 Argon and Claude Opus 5.5 building a cyberpunk combat game on Higgsfield."
+    "zh": "作者用同一条提示分别让Gemini 4 Argon和Opus 5.5制作一个可交互的达芬奇工坊三维网页体验，并比较两者效果，认为Opus 5.5更接近预期。",
+    "en": "The creator gave Gemini 4 Argon and Opus 5.5 the same prompt to build an interactive 3D Leonardo da Vinci workshop experience and compared the results, preferring Opus 5.5's output."
    },
-   "prompt": null,
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/techhalla/status/2110121005201150011",
+    "text": "I want you to create a fully immersive web experience called \"Leonardo da Vinci's Workshop\".\n\nThe core of the experience should be an antique-style book containing Leonardo's actual designs and sketches. Use four of his most iconic inventions.\n\nWhen the user clicks on one of the designs, the original sketch should come to life as a fully interactive 3D model built with Three.js and WebGL.\n\nThe 3D experience should feel polished, visually impressive, and actually demonstrate how the invention works."
+   },
    "referenceAssets": false,
    "tools": [
-    "Higgsfield"
+    "Three.js",
+    "WebGL"
    ],
    "resources": [],
    "stats": {
-    "views": 19746,
-    "likes": 189,
-    "replies": 17,
-    "reposts": 26,
-    "bookmarks": 39,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "views": 19504,
+    "likes": 127,
+    "replies": 26,
+    "reposts": 8,
+    "bookmarks": 77,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
      "type": "video",
-     "url": "https://video.twimg.com/amplify_video/2110416827285377024/vid/avc1/720x810/YFsw_05DdFNY35CM.mp4?tag=29",
-     "poster": "https://pbs.twimg.com/amplify_video_thumb/2110416827285377024/img/_XAtiwwkhY69HJ65.jpg",
+     "url": "https://video.twimg.com/amplify_video/2110119796457033728/vid/avc1/720x900/N8QNe-V3-9wlBLfI.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2110119796457033728/img/gn7uGEhyKPj8auZm.jpg",
      "width": 720,
-     "height": 810,
-     "durationSec": 20
+     "height": 900,
+     "durationSec": 101
     }
    ],
    "evidence": {
@@ -9505,67 +10424,6 @@
    "evidence": {
     "via": "daily",
     "seed": false,
-    "modelAttribution": "creator-stated, not independently reproduced"
-   }
-  },
-  {
-   "id": "2110121002332295599",
-   "url": "https://x.com/techhalla/status/2110121002332295599",
-   "author": {
-    "handle": "techhalla",
-    "name": "TechHalla"
-   },
-   "postedAt": "2026-10-13T21:30:25.000Z",
-   "addedAt": "2026-10-15",
-   "lang": "en",
-   "models": [
-    "argon"
-   ],
-   "rivals": [
-    "claude"
-   ],
-   "category": "scene3d",
-   "title": {
-    "zh": "达芬奇工作室3D复原：双模型对比",
-    "en": "Da Vinci workshop 3D build: Gemini vs Opus"
-   },
-   "summary": {
-    "zh": "作者用同一条提示分别让Gemini 4 Argon和Opus 5.5制作一个可交互的达芬奇工坊三维网页体验，并比较两者效果，认为Opus 5.5更接近预期。",
-    "en": "The creator gave Gemini 4 Argon and Opus 5.5 the same prompt to build an interactive 3D Leonardo da Vinci workshop experience and compared the results, preferring Opus 5.5's output."
-   },
-   "prompt": {
-    "kind": "full",
-    "source": "author_reply",
-    "sourceUrl": "https://x.com/techhalla/status/2110121005201150011",
-    "text": "I want you to create a fully immersive web experience called \"Leonardo da Vinci's Workshop\".\n\nThe core of the experience should be an antique-style book containing Leonardo's actual designs and sketches. Use four of his most iconic inventions.\n\nWhen the user clicks on one of the designs, the original sketch should come to life as a fully interactive 3D model built with Three.js and WebGL.\n\nThe 3D experience should feel polished, visually impressive, and actually demonstrate how the invention works."
-   },
-   "referenceAssets": false,
-   "tools": [
-    "Three.js",
-    "WebGL"
-   ],
-   "resources": [],
-   "stats": {
-    "views": 19461,
-    "likes": 127,
-    "replies": 26,
-    "reposts": 8,
-    "bookmarks": 77,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
-   },
-   "media": [
-    {
-     "type": "video",
-     "url": "https://video.twimg.com/amplify_video/2110119796457033728/vid/avc1/720x900/N8QNe-V3-9wlBLfI.mp4?tag=29",
-     "poster": "https://pbs.twimg.com/amplify_video_thumb/2110119796457033728/img/gn7uGEhyKPj8auZm.jpg",
-     "width": 720,
-     "height": 900,
-     "durationSec": 101
-    }
-   ],
-   "evidence": {
-    "via": "seed-from-claude-library",
-    "seed": true,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -9654,12 +10512,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 19059,
+    "views": 19111,
     "likes": 196,
     "replies": 14,
     "reposts": 17,
     "bookmarks": 62,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -9674,6 +10532,63 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124525907113361657",
+   "url": "https://x.com/Avenoxai/status/2124525907113361657",
+   "author": {
+    "handle": "Avenoxai",
+    "name": "Avenox"
+   },
+   "postedAt": "2026-11-22T15:30:22.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [
+    "claude"
+   ],
+   "category": "motion",
+   "title": {
+    "zh": "基于录音生成的动态图形短视频",
+    "en": "Motion graphics Reels from audio recording"
+   },
+   "summary": {
+    "zh": "作者在 Antigravity 中向 Gemini 4 Neon 提供 28 秒语音录音并要求制作 Reels 视频，模型在 21 分钟内自行生成了动效与画面，作者认为 Opus 仍略胜一筹。",
+    "en": "Creator gave Gemini 4 Neon a 28-second voice recording in Antigravity to produce a Reels video with motion graphics and visuals in 21 minutes, noting Opus remains slightly ahead."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Antigravity",
+    "Opus"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 19075,
+    "likes": 229,
+    "replies": 16,
+    "reposts": 6,
+    "bookmarks": 247,
+    "checkedAt": "2026-11-24T11:11:12.811Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2124525879821000704/vid/avc1/720x1280/KQVWWk0uAsmM8Ucy.mp4?tag=16",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2124525879821000704/img/Vth4-NneUw0E-mAt.jpg",
+     "width": 1080,
+     "height": 1920,
+     "durationSec": 28
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -9879,12 +10794,12 @@
    "tools": [],
    "resources": [],
    "stats": {
-    "views": 18356,
+    "views": 18387,
     "likes": 159,
     "replies": 29,
     "reposts": 8,
     "bookmarks": 33,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -9894,6 +10809,132 @@
      "width": 810,
      "height": 720,
      "durationSec": 25
+    }
+   ],
+   "evidence": {
+    "via": "seed-from-claude-library",
+    "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124558621782495548",
+   "url": "https://x.com/niachito/status/2124558621782495548",
+   "author": {
+    "handle": "niachito",
+    "name": "Nacho Iannella"
+   },
+   "postedAt": "2026-11-22T17:40:22.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "ui",
+   "title": {
+    "zh": "带动画微交互的 HTML 测试落地页",
+    "en": "Animated HTML and CSS test landing page"
+   },
+   "summary": {
+    "zh": "作者通过 Antigravity CLI 使用 Gemini 4 Neon 生成带动画与微交互的 HTML/CSS 着陆页，并测试了现有项目修改，认为其执行能力接近 Claude Code。",
+    "en": "Creator used Gemini 4 Neon via Antigravity CLI to build an HTML/CSS landing page with animations and tested an existing project, finding execution close to Claude Code."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/niachito/status/2124558621782495548",
+    "text": "armame una landing de prueba simple html y css con animaciones y microinteracciones para entender todas las capacidades de tu modelo, elegi el tema que mas quieras sorprendeme"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Antigravity CLI",
+    "Claude Opus 5.5",
+    "Claude Sonnet 5.5",
+    "Claude Code"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 18377,
+    "likes": 289,
+    "replies": 7,
+    "reposts": 22,
+    "bookmarks": 197,
+    "checkedAt": "2026-11-24T11:11:12.811Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2124557906947215360/vid/avc1/1266x720/fodkMB9lQaI07nls.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2124557906947215360/img/ZbzCAfHmS56XXb1-.jpg",
+     "width": 2880,
+     "height": 1636,
+     "durationSec": 37
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2116950986661171337",
+   "url": "https://x.com/0xRhinoX/status/2116950986661171337",
+   "author": {
+    "handle": "0xRhinoX",
+    "name": "Rhino"
+   },
+   "postedAt": "2026-11-01T17:50:20.000Z",
+   "addedAt": "2026-11-03",
+   "lang": "en",
+   "models": [
+    "argon"
+   ],
+   "rivals": [
+    "claude",
+    "gpt",
+    "deepseek"
+   ],
+   "category": "physics",
+   "title": {
+    "zh": "果冻魔方模型对比",
+    "en": "Jelly Rubik's cube model comparison"
+   },
+   "summary": {
+    "zh": "作者比较了四个 AI 模型生成果冻魔方的效果，并列出了各自的费用和运行时长。",
+    "en": "The creator compared four AI models on generating a Rubik's cube made of jelly, presenting the results and their reported cost and runtime."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/0xRhinoX/status/2116950986661171337",
+    "text": "a Rubik's cube made of JELLY."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "DeepSeek V4.1 Flash",
+    "GPT-6 Astra",
+    "Gemini 4 Argon"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 18172,
+    "likes": 154,
+    "replies": 14,
+    "reposts": 9,
+    "bookmarks": 38,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2116946475099832320/vid/avc1/1212x720/S7NeP_FiY6D4foUF.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2116946475099832320/img/H0bns7kuY9BtK-c0.jpg",
+     "width": 1212,
+     "height": 720,
+     "durationSec": 30
     }
    ],
    "evidence": {
@@ -9967,66 +11008,56 @@
    }
   },
   {
-   "id": "2116950986661171337",
-   "url": "https://x.com/0xRhinoX/status/2116950986661171337",
+   "id": "2124792127422959781",
+   "url": "https://x.com/Mr_Salio/status/2124792127422959781",
    "author": {
-    "handle": "0xRhinoX",
-    "name": "Rhino"
+    "handle": "Mr_Salio",
+    "name": "Salio"
    },
-   "postedAt": "2026-11-01T17:50:20.000Z",
-   "addedAt": "2026-11-03",
-   "lang": "en",
+   "postedAt": "2026-11-23T09:08:14.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "kind": "comparison",
    "models": [
-    "argon"
+    "gemini-4"
    ],
-   "rivals": [
-    "claude",
-    "gpt",
-    "deepseek"
-   ],
-   "category": "physics",
+   "rivals": [],
+   "category": "ui",
    "title": {
-    "zh": "果冻魔方模型对比",
-    "en": "Jelly Rubik's cube model comparison"
+    "zh": "模型生成效果对比",
+    "en": "Model output comparison"
    },
    "summary": {
-    "zh": "作者比较了四个 AI 模型生成果冻魔方的效果，并列出了各自的费用和运行时长。",
-    "en": "The creator compared four AI models on generating a Rubik's cube made of jelly, presenting the results and their reported cost and runtime."
+    "zh": "作者对比了 GLM 5.4 和 Gemini 4 Neon 的生成结果，认为 GLM 5.4 表现尚可，但没有达到预期，希望下一版能有改进。",
+    "en": "A comparison of GLM 5.4 and Gemini 4 Neon outputs. The creator found GLM 5.4 not bad but weaker than expected."
    },
-   "prompt": {
-    "kind": "brief",
-    "source": "post",
-    "sourceUrl": "https://x.com/0xRhinoX/status/2116950986661171337",
-    "text": "a Rubik's cube made of JELLY."
-   },
+   "prompt": null,
    "referenceAssets": false,
    "tools": [
-    "DeepSeek V4.1 Flash",
-    "GPT-6 Astra",
-    "Gemini 4 Argon"
+    "GLM 5.4"
    ],
    "resources": [],
    "stats": {
-    "views": 18138,
-    "likes": 155,
-    "replies": 14,
-    "reposts": 9,
-    "bookmarks": 39,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "views": 18001,
+    "likes": 133,
+    "replies": 16,
+    "reposts": 1,
+    "bookmarks": 15,
+    "checkedAt": "2026-11-24T11:25:04.779Z"
    },
    "media": [
     {
      "type": "video",
-     "url": "https://video.twimg.com/amplify_video/2116946475099832320/vid/avc1/1212x720/S7NeP_FiY6D4foUF.mp4?tag=29",
-     "poster": "https://pbs.twimg.com/amplify_video_thumb/2116946475099832320/img/H0bns7kuY9BtK-c0.jpg",
-     "width": 1212,
-     "height": 720,
-     "durationSec": 30
+     "url": "https://video.twimg.com/amplify_video/2124791950310039552/vid/avc1/1280x720/eyCY5SmD52d5Xjez.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2124791950310039552/img/9Guc6PdgkuoBsdtm.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 24
     }
    ],
    "evidence": {
-    "via": "seed-from-claude-library",
-    "seed": true,
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -10121,12 +11152,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 17918,
+    "views": 17929,
     "likes": 109,
     "replies": 32,
     "reposts": 5,
     "bookmarks": 30,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -10180,12 +11211,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 17816,
+    "views": 17829,
     "likes": 105,
     "replies": 39,
     "reposts": 1,
     "bookmarks": 52,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -10242,12 +11273,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 17524,
+    "views": 17531,
     "likes": 183,
     "replies": 43,
     "reposts": 13,
     "bookmarks": 36,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -10302,12 +11333,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 17453,
+    "views": 17480,
     "likes": 219,
     "replies": 21,
     "reposts": 22,
     "bookmarks": 43,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -10434,6 +11465,124 @@
      "url": "https://pbs.twimg.com/media/HXmXajxaoAAqp0B.jpg",
      "width": 992,
      "height": 1200
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124421508563149279",
+   "url": "https://x.com/Leviwoyun/status/2124421508563149279",
+   "author": {
+    "handle": "Leviwoyun",
+    "name": "Levi 卧云"
+   },
+   "postedAt": "2026-11-22T08:35:32.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "kind": "work",
+   "models": [
+    "hydrogen",
+    "krypton"
+   ],
+   "rivals": [],
+   "category": "scene3d",
+   "title": {
+    "zh": "Three.js 构建的兰博基尼毒药三维模型",
+    "en": "Three.js 3D model of a Lamborghini Veneno"
+   },
+   "summary": {
+    "zh": "作者以 Gemini 4 Neon 统筹 5 个 Gemini 4 Hydrogen 子代理，用 Three.js 经三轮迭代耗时一小时构建出兰博基尼毒药模型，称其建模水平堪比 GPT。",
+    "en": "Creator used Gemini 4 Neon to orchestrate five Gemini 4 Hydrogen sub-agents to model a Lamborghini Veneno in Three.js over three iterations in one hour, comparing its modeling to GPT."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/Leviwoyun/status/2124421508563149279",
+    "text": "用 three.js 构建一台兰博基尼毒药"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "GPT",
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 16857,
+    "likes": 138,
+    "replies": 36,
+    "reposts": 6,
+    "bookmarks": 81,
+    "checkedAt": "2026-11-24T11:11:12.811Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2124421429336948737/vid/avc1/1280x720/Znb306Sfi6qCnnh3.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2124421429336948737/img/CGRHD0Jj2HXI5tjx.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 32
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124698835801031129",
+   "url": "https://x.com/DynamicWebPaige/status/2124698835801031129",
+   "author": {
+    "handle": "DynamicWebPaige",
+    "name": "👩‍💻 Paige Bailey"
+   },
+   "postedAt": "2026-11-23T02:57:32.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "sim",
+   "title": {
+    "zh": "实时 3D 卫星轨道追踪器",
+    "en": "Live 3D satellite orbital tracker"
+   },
+   "summary": {
+    "zh": "作者用 Gemini 4 Neon 做了一个浏览器端的实时 3D 卫星追踪器，可显示 1.2 万多颗卫星。轨道数据来自 CelesTrak，由 Python 代理定时缓存，satellite.js 负责 SGP4 轨道计算，Three.js 着色器渲染地球昼夜光照。",
+    "en": "A live 3D browser tracker for more than 12,500 satellites, built with Gemini 4 Neon. A Python proxy caches CelesTrak orbit data, satellite.js runs SGP4 to compute positions, and Three.js shaders render Earth's day and night lighting."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "CelesTrak",
+    "satellite.js",
+    "Three.js",
+    "Python"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 16837,
+    "likes": 404,
+    "replies": 40,
+    "reposts": 41,
+    "bookmarks": 221,
+    "checkedAt": "2026-11-24T11:25:04.779Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2124698740179283968/vid/avc1/1280x720/YzbJGyhE1tXYKzJx.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2124698740179283968/img/5mBCmKFX8G0O5R3o.jpg",
+     "width": 1280,
+     "height": 720,
+     "durationSec": 67
     }
    ],
    "evidence": {
@@ -10609,6 +11758,63 @@
    }
   },
   {
+   "id": "2121221667619852660",
+   "url": "https://x.com/marcthecreatorr/status/2121221667619852660",
+   "author": {
+    "handle": "marcthecreatorr",
+    "name": "Marcel"
+   },
+   "postedAt": "2026-11-13T12:40:30.000Z",
+   "addedAt": "2026-11-15",
+   "lang": "en",
+   "models": [
+    "hydrogen"
+   ],
+   "rivals": [
+    "claude"
+   ],
+   "category": "scene3d",
+   "title": {
+    "zh": "同一提示词的3D飞船建模对比",
+    "en": "3D ship build comparison with same prompt"
+   },
+   "summary": {
+    "zh": "作者把同一段提示词分别交给 Sonnet 5.5（在 Claude Code 中）和 Gemini 4 Hydrogen（通过 Cursor），各生成一个 3D 飞船场景，并对比了效果、耗时和费用。Hydrogen 需要再改一版才能用。",
+    "en": "The creator gave Sonnet 5.5 (in Claude Code) and Gemini 4 Hydrogen (via Cursor) the same prompt for a 3D ship scene and compared results, time and cost. Hydrogen needed a second pass."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Claude Code",
+    "Cursor",
+    "Gemini 4 Hydrogen"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 16103,
+    "likes": 121,
+    "replies": 37,
+    "reposts": 5,
+    "bookmarks": 27,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2121221429853134848/vid/avc1/720x720/LcQeSk50ZJgW0jS-.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2121221429853134848/img/tmfLYkezKWakHyki.jpg",
+     "width": 720,
+     "height": 720,
+     "durationSec": 54
+    }
+   ],
+   "evidence": {
+    "via": "seed-from-claude-library",
+    "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2111365849793593530",
    "url": "https://x.com/pegonch/status/2111365849793593530",
    "author": {
@@ -10647,12 +11853,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 16057,
+    "views": 16079,
     "likes": 130,
     "replies": 19,
     "reposts": 6,
     "bookmarks": 43,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -10757,12 +11963,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 15637,
+    "views": 15664,
     "likes": 113,
     "replies": 14,
     "reposts": 14,
     "bookmarks": 24,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -10772,63 +11978,6 @@
      "width": 1152,
      "height": 720,
      "durationSec": 14
-    }
-   ],
-   "evidence": {
-    "via": "seed-from-claude-library",
-    "seed": true,
-    "modelAttribution": "creator-stated, not independently reproduced"
-   }
-  },
-  {
-   "id": "2121221667619852660",
-   "url": "https://x.com/marcthecreatorr/status/2121221667619852660",
-   "author": {
-    "handle": "marcthecreatorr",
-    "name": "Marcel"
-   },
-   "postedAt": "2026-11-13T12:40:30.000Z",
-   "addedAt": "2026-11-15",
-   "lang": "en",
-   "models": [
-    "hydrogen"
-   ],
-   "rivals": [
-    "claude"
-   ],
-   "category": "scene3d",
-   "title": {
-    "zh": "同一提示词的3D飞船建模对比",
-    "en": "3D ship build comparison with same prompt"
-   },
-   "summary": {
-    "zh": "作者把同一段提示词分别交给 Sonnet 5.5（在 Claude Code 中）和 Gemini 4 Hydrogen（通过 Cursor），各生成一个 3D 飞船场景，并对比了效果、耗时和费用。Hydrogen 需要再改一版才能用。",
-    "en": "The creator gave Sonnet 5.5 (in Claude Code) and Gemini 4 Hydrogen (via Cursor) the same prompt for a 3D ship scene and compared results, time and cost. Hydrogen needed a second pass."
-   },
-   "prompt": null,
-   "referenceAssets": false,
-   "tools": [
-    "Claude Code",
-    "Cursor",
-    "Gemini 4 Hydrogen"
-   ],
-   "resources": [],
-   "stats": {
-    "views": 15533,
-    "likes": 119,
-    "replies": 37,
-    "reposts": 5,
-    "bookmarks": 27,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
-   },
-   "media": [
-    {
-     "type": "video",
-     "url": "https://video.twimg.com/amplify_video/2121221429853134848/vid/avc1/720x720/LcQeSk50ZJgW0jS-.mp4?tag=29",
-     "poster": "https://pbs.twimg.com/amplify_video_thumb/2121221429853134848/img/tmfLYkezKWakHyki.jpg",
-     "width": 720,
-     "height": 720,
-     "durationSec": 54
     }
    ],
    "evidence": {
@@ -10878,12 +12027,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 15487,
+    "views": 15505,
     "likes": 128,
     "replies": 22,
     "reposts": 6,
     "bookmarks": 15,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -10893,6 +12042,68 @@
      "width": 720,
      "height": 960,
      "durationSec": 15
+    }
+   ],
+   "evidence": {
+    "via": "seed-from-claude-library",
+    "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2110329593441796383",
+   "url": "https://x.com/vib3coded/status/2110329593441796383",
+   "author": {
+    "handle": "vib3coded",
+    "name": "Vib3Coded"
+   },
+   "postedAt": "2026-10-14T11:19:17.000Z",
+   "addedAt": "2026-10-15",
+   "lang": "en",
+   "models": [
+    "argon"
+   ],
+   "rivals": [
+    "claude",
+    "gpt"
+   ],
+   "category": "physics",
+   "title": {
+    "zh": "运河风车3D场景模型对比",
+    "en": "3D canal and windmill scene model comparison"
+   },
+   "summary": {
+    "zh": "作者用一段详细的WebGPU/WGSL提示词让Opus 5.5制作出一个带物理水面、船只和野生动物的果冻风格运河船闸互动场景，效果优于用同一任务测试的ChatGPT-6 Astra和Gemini 4 Argon。",
+    "en": "Using a detailed WebGPU/WGSL prompt, Opus 5.5 built an interactive jelly diorama of an English canal lock scene with physics-based water, boats and wildlife, outperforming ChatGPT-6 Astra and Gemini 4 Argon on the same task."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/vib3coded/status/2110329833653772346",
+    "text": "Build \"Lock Jelly.\" — a single self-contained HTML file (WebGPU + WGSL, no libraries, no network, works from file://), part of a \"Material Studies\" series of jelly dioramas. If WebGPU is missing or the adapter fails, show a clean fallback card instead of the scene.\n\nCONCEPT\nA square block of clear coloured jelly (about 5.2 × 5.2 units, ~2 units high) holding a little English canal scene. The canal runs along the FRONT edge of the block, so the block's front face cuts the water lengthways: you see the lock chamber in cross-section, the water inside it rising and falling between the gates, fish swimming, the boat's hull below the waterline. All cut faces show candy-coloured soil strata; under the pounds a blue-grey puddle-clay lining, under the chamber a brick invert on a concrete bed, under the fields brown earth and turf.\n\nLAYOUT (left to right along the front)\n- Upper pound on the left at the higher level, opening into a round winding hole (a bay for turning boats); near the lock it narrows between brick wing walls.\n- The lock chamber in the middle: brick walls with dressed-stone quoins and coping, a slimy band between the two water levels and weed below, an iron ladder, a gauge board, a stone cill under the top gate, recesses that the open gates fold into.\n- Below the bottom gate a short walled tail, then the lower pound bends away from the front face, runs under a humpback brick bridge into a basin with a willow-covered island, lily pads in its corners and a sunken bicycle on the bed.\n- The ground steps down from an upper terrace to a lower one along a grassy bank.\n- Behind the lock: stone setts around the chamber, bollards, a gravel towpath, a lane, the keeper's whitewashed cottage with a slate roof, green door, picket-fence garden full of flowers and washing flapping on a line, a gas lamp, a bench, a white windmill with turning lattice sails, oaks, willows, poplars, a hedge, sheep, reeds on the soft banks.\n\nWATER\n- Linear shallow-water waves on a staggered grid (~168²) with a little surface tension, so short ripples are springy like jelly; damping and firmness are adjustable.\n- Three separate bodies of water — upper pound, chamber, lower pound — each with its own rest level. Faces between bodies stay shut unless the gate between them is open and the levels are equal. The chamber's level is moved bodily when paddles are drawn (Torricelli-style flow), with boils, white water and a dimple at the intake.\n- Rendering: refraction of the scene behind, flavour-coloured absorption, sun caustics on the bed, soft light shafts, foam (wakes, paddle churn), a meniscus line on the cut faces. Split the surface mesh along the gate lines so the step in level at a shut gate is a clean wall hidden by the gate leaf, not a ramp.\n- The block itself can be tipped by dragging its side; the jelly shears and wobbles, the water sloshes, and it settles back.\n\nTHE LOCK AND THE KEEPER\n- Two single-leaf timber gates (planks, rails, diagonal brace, iron straps, a walkway with a handrail), each with a white balance beam with black bands. Ground-paddle pedestals with toothed racks that rise when wound.\n- An articulated lock keeper (flat cap, navy jumper, cords, windlass in hand; torso, arms, thighs and shins as separate parts). He walks with a proper gait, plans his route around the bench, pedestals, bollards and any beam lying across his way (going round the beam's end), leans his back on a beam and walks it round backwards to swing a gate, winds the windlass with his arm circling the spindle, and sits on his bench between jobs. He sets off for the gate as the boat comes in.\n- The cycle: the boat lies in the full chamber → keeper shuts the top gate → winds up the bottom paddles → the chamber empties into the tail with white water → winds them down → opens the bottom gate → the boat leaves, runs the tail, swings round the bend, ducks under the bridge, goes round the island and comes back into the chamber bow first → shut bottom gate → round to the top paddles → chamber fills with boils → open the top gate → the boat goes up the pound, turns in the winding hole and comes back. Repeat forever. A gate may only open when the levels match.\n\nBOATS\n- A traditional narrowboat \"Wobble\": black lofted hull, a green cabin with red lining-out, brass portholes, a cratch board and cover at the bow, a chimney with brass bands (puffing smoke), a painted Buckby can, plank and pole on the roof, rope fenders, a headlamp, a brass swan-neck tiller and a steerer in a red jumper. It follows smooth filleted routes (check the stern never swings out through the block's face), slows near the gates, heaves, pitches and rolls on the local surface, and hands its displaced volume back to the water so it makes bow waves and wakes.\n- Three moored narrowboats in the basin in different liveries with flowerpots on the roofs and one ginger cat, tied to bank pins with stretchy mooring lines.\n\nLIFE\n- Roach, perch and bream as boids that stay in their own body of water (they can only move between pound and chamber while a gate is open), under the surface and hulls, off the bed, scattering from the boat and splashes.\n- Mallards (drakes, ducks) and a duck with four ducklings that follow exactly along her trail; a pair of mute swans in the basin. They paddle the surface, ride the chamber down and up, upend now and then, get out of the boat's way and come for bread.\n- A grey heron that wades in the shallows or stands on a moored boat's roof, stabs at fish (sometimes catching one), and flaps off somewhere quieter when the boat passes or someone toots.\n- Chimney smoke from the boat and the cottage.\n\nUI (editorial, like a print magazine)\n- Top-left: small caps eyebrow \"MATERIAL STUDIES\", a huge italic serif title \"Lock / Jelly.\", a short subtitle. Top-right: a status pill \"WebGPU · Live / Paused / Unavailable\".\n- Right: a frosted-glass control panel (a bottom sheet on mobile) with: buttons Hurry (speeds the keeper, paddles and boat), Toot (horn; also Space), Throw bread, Rubber duck (drops a yellow rubber duck that floats upright, can be picked up and thrown, rides the lock, is stopped by gates and shoved by boats); a liveliness meter; tallies Trips · Lockfuls · Fed; a status line \"Wobble — Emptying the lock 62%\" telling the story step by step; three flavours Greengage, Elderflower, Blackcurrant (change the water colour/absorption and strata); sliders Firmness, Wave damping, Paddle speed; Reset, Pause, Sound on/off, View.\n- Bottom-left: \"How to play — Throw bread. Toot the horn. Hurry the keeper.\" with a small line of instructions.\n- Interaction: drag across the water to make waves, drag the block's side to tip it, pick up and throw rubber ducks, drag empty space to orbit, scroll/pinch to zoom; touch works.\n- Soft studio lighting on a warm paper backdrop with the block's tinted, caustic-flecked shadow; WebAudio sounds: the boat's horn, the gate thudding shut, a creak, the windlass ratchet, and the rush of water that swells with the flow.\n\nQUALITY\nKeep it smooth (fixed-step physics, cheap per frame), no console errors, no page scroll, works at phone width. Test it headlessly: a full round trip happens, levels go exactly from upper to lower and back, no gate opens across a step, the keeper never walks into the water or through obstacles, the boat never touches a gate leaf, and every button works."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "ChatGPT-6 Astra",
+    "Gemini 4 Argon"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 15334,
+    "likes": 318,
+    "replies": 24,
+    "reposts": 28,
+    "bookmarks": 129,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2110329499719966720/vid/avc1/720x910/sMhqrraaXHtZpftm.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2110329499719966720/img/ng3OjfgDWIERJp0Z.jpg",
+     "width": 720,
+     "height": 910,
+     "durationSec": 18
     }
    ],
    "evidence": {
@@ -10958,68 +12169,6 @@
    }
   },
   {
-   "id": "2110329593441796383",
-   "url": "https://x.com/vib3coded/status/2110329593441796383",
-   "author": {
-    "handle": "vib3coded",
-    "name": "Vib3Coded"
-   },
-   "postedAt": "2026-10-14T11:19:17.000Z",
-   "addedAt": "2026-10-15",
-   "lang": "en",
-   "models": [
-    "argon"
-   ],
-   "rivals": [
-    "claude",
-    "gpt"
-   ],
-   "category": "physics",
-   "title": {
-    "zh": "运河风车3D场景模型对比",
-    "en": "3D canal and windmill scene model comparison"
-   },
-   "summary": {
-    "zh": "作者用一段详细的WebGPU/WGSL提示词让Opus 5.5制作出一个带物理水面、船只和野生动物的果冻风格运河船闸互动场景，效果优于用同一任务测试的ChatGPT-6 Astra和Gemini 4 Argon。",
-    "en": "Using a detailed WebGPU/WGSL prompt, Opus 5.5 built an interactive jelly diorama of an English canal lock scene with physics-based water, boats and wildlife, outperforming ChatGPT-6 Astra and Gemini 4 Argon on the same task."
-   },
-   "prompt": {
-    "kind": "full",
-    "source": "author_reply",
-    "sourceUrl": "https://x.com/vib3coded/status/2110329833653772346",
-    "text": "Build \"Lock Jelly.\" — a single self-contained HTML file (WebGPU + WGSL, no libraries, no network, works from file://), part of a \"Material Studies\" series of jelly dioramas. If WebGPU is missing or the adapter fails, show a clean fallback card instead of the scene.\n\nCONCEPT\nA square block of clear coloured jelly (about 5.2 × 5.2 units, ~2 units high) holding a little English canal scene. The canal runs along the FRONT edge of the block, so the block's front face cuts the water lengthways: you see the lock chamber in cross-section, the water inside it rising and falling between the gates, fish swimming, the boat's hull below the waterline. All cut faces show candy-coloured soil strata; under the pounds a blue-grey puddle-clay lining, under the chamber a brick invert on a concrete bed, under the fields brown earth and turf.\n\nLAYOUT (left to right along the front)\n- Upper pound on the left at the higher level, opening into a round winding hole (a bay for turning boats); near the lock it narrows between brick wing walls.\n- The lock chamber in the middle: brick walls with dressed-stone quoins and coping, a slimy band between the two water levels and weed below, an iron ladder, a gauge board, a stone cill under the top gate, recesses that the open gates fold into.\n- Below the bottom gate a short walled tail, then the lower pound bends away from the front face, runs under a humpback brick bridge into a basin with a willow-covered island, lily pads in its corners and a sunken bicycle on the bed.\n- The ground steps down from an upper terrace to a lower one along a grassy bank.\n- Behind the lock: stone setts around the chamber, bollards, a gravel towpath, a lane, the keeper's whitewashed cottage with a slate roof, green door, picket-fence garden full of flowers and washing flapping on a line, a gas lamp, a bench, a white windmill with turning lattice sails, oaks, willows, poplars, a hedge, sheep, reeds on the soft banks.\n\nWATER\n- Linear shallow-water waves on a staggered grid (~168²) with a little surface tension, so short ripples are springy like jelly; damping and firmness are adjustable.\n- Three separate bodies of water — upper pound, chamber, lower pound — each with its own rest level. Faces between bodies stay shut unless the gate between them is open and the levels are equal. The chamber's level is moved bodily when paddles are drawn (Torricelli-style flow), with boils, white water and a dimple at the intake.\n- Rendering: refraction of the scene behind, flavour-coloured absorption, sun caustics on the bed, soft light shafts, foam (wakes, paddle churn), a meniscus line on the cut faces. Split the surface mesh along the gate lines so the step in level at a shut gate is a clean wall hidden by the gate leaf, not a ramp.\n- The block itself can be tipped by dragging its side; the jelly shears and wobbles, the water sloshes, and it settles back.\n\nTHE LOCK AND THE KEEPER\n- Two single-leaf timber gates (planks, rails, diagonal brace, iron straps, a walkway with a handrail), each with a white balance beam with black bands. Ground-paddle pedestals with toothed racks that rise when wound.\n- An articulated lock keeper (flat cap, navy jumper, cords, windlass in hand; torso, arms, thighs and shins as separate parts). He walks with a proper gait, plans his route around the bench, pedestals, bollards and any beam lying across his way (going round the beam's end), leans his back on a beam and walks it round backwards to swing a gate, winds the windlass with his arm circling the spindle, and sits on his bench between jobs. He sets off for the gate as the boat comes in.\n- The cycle: the boat lies in the full chamber → keeper shuts the top gate → winds up the bottom paddles → the chamber empties into the tail with white water → winds them down → opens the bottom gate → the boat leaves, runs the tail, swings round the bend, ducks under the bridge, goes round the island and comes back into the chamber bow first → shut bottom gate → round to the top paddles → chamber fills with boils → open the top gate → the boat goes up the pound, turns in the winding hole and comes back. Repeat forever. A gate may only open when the levels match.\n\nBOATS\n- A traditional narrowboat \"Wobble\": black lofted hull, a green cabin with red lining-out, brass portholes, a cratch board and cover at the bow, a chimney with brass bands (puffing smoke), a painted Buckby can, plank and pole on the roof, rope fenders, a headlamp, a brass swan-neck tiller and a steerer in a red jumper. It follows smooth filleted routes (check the stern never swings out through the block's face), slows near the gates, heaves, pitches and rolls on the local surface, and hands its displaced volume back to the water so it makes bow waves and wakes.\n- Three moored narrowboats in the basin in different liveries with flowerpots on the roofs and one ginger cat, tied to bank pins with stretchy mooring lines.\n\nLIFE\n- Roach, perch and bream as boids that stay in their own body of water (they can only move between pound and chamber while a gate is open), under the surface and hulls, off the bed, scattering from the boat and splashes.\n- Mallards (drakes, ducks) and a duck with four ducklings that follow exactly along her trail; a pair of mute swans in the basin. They paddle the surface, ride the chamber down and up, upend now and then, get out of the boat's way and come for bread.\n- A grey heron that wades in the shallows or stands on a moored boat's roof, stabs at fish (sometimes catching one), and flaps off somewhere quieter when the boat passes or someone toots.\n- Chimney smoke from the boat and the cottage.\n\nUI (editorial, like a print magazine)\n- Top-left: small caps eyebrow \"MATERIAL STUDIES\", a huge italic serif title \"Lock / Jelly.\", a short subtitle. Top-right: a status pill \"WebGPU · Live / Paused / Unavailable\".\n- Right: a frosted-glass control panel (a bottom sheet on mobile) with: buttons Hurry (speeds the keeper, paddles and boat), Toot (horn; also Space), Throw bread, Rubber duck (drops a yellow rubber duck that floats upright, can be picked up and thrown, rides the lock, is stopped by gates and shoved by boats); a liveliness meter; tallies Trips · Lockfuls · Fed; a status line \"Wobble — Emptying the lock 62%\" telling the story step by step; three flavours Greengage, Elderflower, Blackcurrant (change the water colour/absorption and strata); sliders Firmness, Wave damping, Paddle speed; Reset, Pause, Sound on/off, View.\n- Bottom-left: \"How to play — Throw bread. Toot the horn. Hurry the keeper.\" with a small line of instructions.\n- Interaction: drag across the water to make waves, drag the block's side to tip it, pick up and throw rubber ducks, drag empty space to orbit, scroll/pinch to zoom; touch works.\n- Soft studio lighting on a warm paper backdrop with the block's tinted, caustic-flecked shadow; WebAudio sounds: the boat's horn, the gate thudding shut, a creak, the windlass ratchet, and the rush of water that swells with the flow.\n\nQUALITY\nKeep it smooth (fixed-step physics, cheap per frame), no console errors, no page scroll, works at phone width. Test it headlessly: a full round trip happens, levels go exactly from upper to lower and back, no gate opens across a step, the keeper never walks into the water or through obstacles, the boat never touches a gate leaf, and every button works."
-   },
-   "referenceAssets": false,
-   "tools": [
-    "ChatGPT-6 Astra",
-    "Gemini 4 Argon"
-   ],
-   "resources": [],
-   "stats": {
-    "views": 15263,
-    "likes": 318,
-    "replies": 24,
-    "reposts": 28,
-    "bookmarks": 129,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
-   },
-   "media": [
-    {
-     "type": "video",
-     "url": "https://video.twimg.com/amplify_video/2110329499719966720/vid/avc1/720x910/sMhqrraaXHtZpftm.mp4?tag=29",
-     "poster": "https://pbs.twimg.com/amplify_video_thumb/2110329499719966720/img/ng3OjfgDWIERJp0Z.jpg",
-     "width": 720,
-     "height": 910,
-     "durationSec": 18
-    }
-   ],
-   "evidence": {
-    "via": "seed-from-claude-library",
-    "seed": true,
-    "modelAttribution": "creator-stated, not independently reproduced"
-   }
-  },
-  {
    "id": "2112514831362175151",
    "url": "https://x.com/kinderlayer/status/2112514831362175151",
    "author": {
@@ -11049,12 +12198,12 @@
    "tools": [],
    "resources": [],
    "stats": {
-    "views": 14822,
-    "likes": 110,
+    "views": 14834,
+    "likes": 108,
     "replies": 27,
     "reposts": 3,
     "bookmarks": 39,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -11064,6 +12213,62 @@
      "width": 720,
      "height": 1280,
      "durationSec": 15
+    }
+   ],
+   "evidence": {
+    "via": "seed-from-claude-library",
+    "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2118809236046246316",
+   "url": "https://x.com/deweytn/status/2118809236046246316",
+   "author": {
+    "handle": "deweytn",
+    "name": "Claudia Galeán (💫,💫)"
+   },
+   "postedAt": "2026-11-06T20:54:22.000Z",
+   "addedAt": "2026-11-08",
+   "lang": "en",
+   "models": [
+    "hydrogen"
+   ],
+   "rivals": [
+    "claude"
+   ],
+   "category": "motion",
+   "title": {
+    "zh": "动效模型对比",
+    "en": "Motion graphics model comparison"
+   },
+   "summary": {
+    "zh": "帖子比较了 Gemini 4 Hydrogen 和 Gemini 3.8 Flash 生成的动态图形，并附带一次 Opus 5.5 的运行结果，同时报告了生成耗时。",
+    "en": "The post compares motion-graphics outputs from Gemini 4 Hydrogen and Gemini 3.8 Flash, with an Opus 5.5 run as a bonus. It reports their generation times."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Gemini 4 Hydrogen",
+    "Gemini 3.8 Flash"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 14817,
+    "likes": 165,
+    "replies": 5,
+    "reposts": 4,
+    "bookmarks": 58,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2118808656166682624/vid/avc1/1280x720/F7XCgyE1llQK7O-1.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2118808656166682624/img/ufROIdABFBKkgA2d.jpg",
+     "width": 1280,
+     "height": 720,
+     "durationSec": 43
     }
    ],
    "evidence": {
@@ -11130,62 +12335,6 @@
    }
   },
   {
-   "id": "2118809236046246316",
-   "url": "https://x.com/deweytn/status/2118809236046246316",
-   "author": {
-    "handle": "deweytn",
-    "name": "Claudia Galeán (💫,💫)"
-   },
-   "postedAt": "2026-11-06T20:54:22.000Z",
-   "addedAt": "2026-11-08",
-   "lang": "en",
-   "models": [
-    "hydrogen"
-   ],
-   "rivals": [
-    "claude"
-   ],
-   "category": "motion",
-   "title": {
-    "zh": "动效模型对比",
-    "en": "Motion graphics model comparison"
-   },
-   "summary": {
-    "zh": "帖子比较了 Gemini 4 Hydrogen 和 Gemini 3.8 Flash 生成的动态图形，并附带一次 Opus 5.5 的运行结果，同时报告了生成耗时。",
-    "en": "The post compares motion-graphics outputs from Gemini 4 Hydrogen and Gemini 3.8 Flash, with an Opus 5.5 run as a bonus. It reports their generation times."
-   },
-   "prompt": null,
-   "referenceAssets": false,
-   "tools": [
-    "Gemini 4 Hydrogen",
-    "Gemini 3.8 Flash"
-   ],
-   "resources": [],
-   "stats": {
-    "views": 14761,
-    "likes": 165,
-    "replies": 5,
-    "reposts": 4,
-    "bookmarks": 60,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
-   },
-   "media": [
-    {
-     "type": "video",
-     "url": "https://video.twimg.com/amplify_video/2118808656166682624/vid/avc1/1280x720/F7XCgyE1llQK7O-1.mp4?tag=29",
-     "poster": "https://pbs.twimg.com/amplify_video_thumb/2118808656166682624/img/ufROIdABFBKkgA2d.jpg",
-     "width": 1280,
-     "height": 720,
-     "durationSec": 43
-    }
-   ],
-   "evidence": {
-    "via": "seed-from-claude-library",
-    "seed": true,
-    "modelAttribution": "creator-stated, not independently reproduced"
-   }
-  },
-  {
    "id": "2113321010913292308",
    "url": "https://x.com/AI_Screening/status/2113321010913292308",
    "author": {
@@ -11220,12 +12369,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 14593,
+    "views": 14605,
     "likes": 152,
     "replies": 8,
     "reposts": 10,
     "bookmarks": 26,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -11276,12 +12425,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 14430,
+    "views": 14440,
     "likes": 176,
     "replies": 13,
     "reposts": 4,
     "bookmarks": 28,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -11332,12 +12481,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 14285,
+    "views": 14298,
     "likes": 130,
     "replies": 27,
     "reposts": 4,
     "bookmarks": 46,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -11447,12 +12596,12 @@
    "tools": [],
    "resources": [],
    "stats": {
-    "views": 14063,
+    "views": 14114,
     "likes": 114,
     "replies": 14,
     "reposts": 3,
     "bookmarks": 33,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -11507,12 +12656,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 13977,
-    "likes": 125,
+    "views": 14004,
+    "likes": 124,
     "replies": 11,
     "reposts": 10,
     "bookmarks": 40,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -11563,12 +12712,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 13812,
+    "views": 13824,
     "likes": 120,
     "replies": 14,
     "reposts": 7,
     "bookmarks": 45,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -11791,12 +12940,12 @@
    "tools": [],
    "resources": [],
    "stats": {
-    "views": 12429,
-    "likes": 135,
+    "views": 12521,
+    "likes": 134,
     "replies": 32,
     "reposts": 3,
     "bookmarks": 16,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -11903,12 +13052,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 12329,
+    "views": 12350,
     "likes": 125,
     "replies": 8,
     "reposts": 3,
     "bookmarks": 44,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -11959,12 +13108,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 12176,
+    "views": 12181,
     "likes": 93,
     "replies": 15,
     "reposts": 2,
     "bookmarks": 8,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -12071,12 +13220,12 @@
    "tools": [],
    "resources": [],
    "stats": {
-    "views": 11891,
+    "views": 11895,
     "likes": 105,
     "replies": 4,
     "reposts": 0,
     "bookmarks": 26,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -12131,12 +13280,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 11731,
+    "views": 11739,
     "likes": 114,
     "replies": 9,
     "reposts": 10,
     "bookmarks": 40,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -12190,12 +13339,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 11663,
+    "views": 11665,
     "likes": 141,
     "replies": 14,
     "reposts": 6,
     "bookmarks": 40,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -12249,12 +13398,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 11193,
-    "likes": 103,
-    "replies": 42,
-    "reposts": 5,
+    "views": 11203,
+    "likes": 102,
+    "replies": 41,
+    "reposts": 4,
     "bookmarks": 62,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -12361,12 +13510,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 10893,
-    "likes": 103,
+    "views": 10906,
+    "likes": 102,
     "replies": 14,
     "reposts": 4,
     "bookmarks": 11,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -12584,12 +13733,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 10389,
-    "likes": 122,
+    "views": 10401,
+    "likes": 121,
     "replies": 19,
     "reposts": 9,
     "bookmarks": 49,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -12641,12 +13790,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 10298,
+    "views": 10304,
     "likes": 105,
     "replies": 7,
     "reposts": 6,
     "bookmarks": 33,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -12697,12 +13846,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 10182,
+    "views": 10192,
     "likes": 111,
     "replies": 22,
     "reposts": 7,
     "bookmarks": 41,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -12810,12 +13959,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 9834,
+    "views": 9869,
     "likes": 126,
     "replies": 26,
     "reposts": 4,
     "bookmarks": 18,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -12870,12 +14019,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 9825,
-    "likes": 111,
+    "views": 9844,
+    "likes": 112,
     "replies": 23,
     "reposts": 12,
     "bookmarks": 54,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -13038,12 +14187,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 9437,
-    "likes": 129,
+    "views": 9444,
+    "likes": 128,
     "replies": 37,
     "reposts": 2,
-    "bookmarks": 17,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "bookmarks": 18,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -13170,12 +14319,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 9037,
-    "likes": 136,
+    "views": 9093,
+    "likes": 135,
     "replies": 31,
     "reposts": 11,
     "bookmarks": 41,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -13227,12 +14376,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 9028,
-    "likes": 138,
+    "views": 9037,
+    "likes": 137,
     "replies": 19,
     "reposts": 7,
     "bookmarks": 39,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -13342,12 +14491,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 8885,
+    "views": 8957,
     "likes": 125,
     "replies": 31,
     "reposts": 9,
     "bookmarks": 38,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -13434,6 +14583,117 @@
    }
   },
   {
+   "id": "2124678987725336848",
+   "url": "https://x.com/DanielleFong/status/2124678987725336848",
+   "author": {
+    "handle": "DanielleFong",
+    "name": "Danielle Fong 🔆"
+   },
+   "postedAt": "2026-11-23T01:38:39.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "sim",
+   "title": {
+    "zh": "风驱动爆炸烟羽扩散模型",
+    "en": "Wind-driven explosion plume dispersion model"
+   },
+   "summary": {
+    "zh": "作者让 Gemini 4 Neon 结合 earth.nullschool.net 的风场预报数据，为一次叠氮化铅引爆事件搭建了初步的烟羽扩散模型，用来估计引爆时机的影响。后续版本发布在 plume.earth 上。",
+    "en": "Gemini 4 Neon built a first-cut plume dispersion model for a lead azide detonation, using wind prediction data from earth.nullschool.net. Later builds are hosted on plume.earth."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "earth.nullschool.net"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 8570,
+    "likes": 189,
+    "replies": 10,
+    "reposts": 15,
+    "bookmarks": 55,
+    "checkedAt": "2026-11-24T11:25:04.779Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2124678400065585152/vid/avc1/746x720/B_82ESNdnuSWsexC.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2124678400065585152/img/6xE7xxi148aHGA_K.jpg",
+     "width": 1900,
+     "height": 1830,
+     "durationSec": 225
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2110525248257089589",
+   "url": "https://x.com/xikhar/status/2110525248257089589",
+   "author": {
+    "handle": "xikhar",
+    "name": "Shikhar"
+   },
+   "postedAt": "2026-10-15T00:16:45.000Z",
+   "addedAt": "2026-10-16",
+   "lang": "en",
+   "models": [
+    "argon"
+   ],
+   "rivals": [
+    "claude"
+   ],
+   "category": "scene3d",
+   "title": {
+    "zh": "Gemini与Opus的3D渲染对比",
+    "en": "3D render comparison Gemini vs Opus"
+   },
+   "summary": {
+    "zh": "创作者用同一个提示词分别在Gemini 4 Argon和Claude Opus 5.5上生成3D渲染图进行对比，认为Opus 5.5在设计审美上更出色。",
+    "en": "A 3D render comparison between Gemini 4 Argon and Claude Opus 5.5 using the same prompt, with the creator noting Opus 5.5 shows better taste in design."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Gemini 4 Argon",
+    "Astra",
+    "Codex"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 8522,
+    "likes": 178,
+    "replies": 19,
+    "reposts": 3,
+    "bookmarks": 43,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2110525186193883136/vid/avc1/1280x720/V0p7QnfnTfR3qWm9.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2110525186193883136/img/Axl_xVDcX38awL9n.jpg",
+     "width": 1280,
+     "height": 720,
+     "durationSec": 10
+    }
+   ],
+   "evidence": {
+    "via": "seed-from-claude-library",
+    "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2124028084022353961",
    "url": "https://x.com/antiAIvo/status/2124028084022353961",
    "author": {
@@ -13486,59 +14746,64 @@
    }
   },
   {
-   "id": "2110525248257089589",
-   "url": "https://x.com/xikhar/status/2110525248257089589",
+   "id": "2124721602856354005",
+   "url": "https://x.com/teddyaisi/status/2124721602856354005",
    "author": {
-    "handle": "xikhar",
-    "name": "Shikhar"
+    "handle": "teddyaisi",
+    "name": "Teddy"
    },
-   "postedAt": "2026-10-15T00:16:45.000Z",
-   "addedAt": "2026-10-16",
-   "lang": "en",
+   "postedAt": "2026-11-23T04:28:00.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "kind": "comparison",
    "models": [
-    "argon"
+    "gemini-4"
    ],
    "rivals": [
-    "claude"
+    "gpt"
    ],
    "category": "scene3d",
    "title": {
-    "zh": "Gemini与Opus的3D渲染对比",
-    "en": "3D render comparison Gemini vs Opus"
+    "zh": "维多利亚式水晶玻璃植物温室漫步",
+    "en": "Victorian glass botanical conservatory walk"
    },
    "summary": {
-    "zh": "创作者用同一个提示词分别在Gemini 4 Argon和Claude Opus 5.5上生成3D渲染图进行对比，认为Opus 5.5在设计审美上更出色。",
-    "en": "A 3D render comparison between Gemini 4 Argon and Claude Opus 5.5 using the same prompt, with the creator noting Opus 5.5 shows better taste in design."
+    "zh": "作者给 GPT-6.2-Astra 和 Gemini 4 Neon 同一个提示，用纯 Three.js 制作 20 秒的维多利亚式玻璃温室晨间漫步场景。Astra 花费 6.87 美元、用时约 47 分钟，Neon 花费 10.19 美元、用时约 1 小时 14 分钟。作者没有给出结论，交由读者评判。",
+    "en": "GPT-6.2-Astra and Gemini 4 Neon each built a 20-second walk through a Victorian glass conservatory in pure Three.js from the same prompt. Astra cost $6.87 and took 46m46s; Neon cost $10.19 and took 1h13m54s. The creator drew no conclusion."
    },
-   "prompt": null,
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/teddyaisi/status/2124721602856354005",
+    "text": "20-second morning walk through a Victorian crystal glass botanical conservatory"
+   },
    "referenceAssets": false,
    "tools": [
-    "Gemini 4 Argon",
-    "Astra",
-    "Codex"
+    "GPT-6.2-Astra",
+    "Three.js"
    ],
    "resources": [],
    "stats": {
-    "views": 8468,
-    "likes": 179,
-    "replies": 19,
-    "reposts": 3,
-    "bookmarks": 42,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "views": 8446,
+    "likes": 135,
+    "replies": 24,
+    "reposts": 5,
+    "bookmarks": 30,
+    "checkedAt": "2026-11-24T11:25:04.779Z"
    },
    "media": [
     {
      "type": "video",
-     "url": "https://video.twimg.com/amplify_video/2110525186193883136/vid/avc1/1280x720/V0p7QnfnTfR3qWm9.mp4?tag=29",
-     "poster": "https://pbs.twimg.com/amplify_video_thumb/2110525186193883136/img/Axl_xVDcX38awL9n.jpg",
+     "url": "https://video.twimg.com/amplify_video/2124720694026199040/vid/avc1/720x810/9uEMztwXL-8YYsll.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2124720694026199040/img/CyzjOWDtvfOcGQ6R.jpg",
      "width": 1280,
-     "height": 720,
-     "durationSec": 10
+     "height": 1440,
+     "durationSec": 20
     }
    ],
    "evidence": {
-    "via": "seed-from-claude-library",
-    "seed": true,
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -13583,12 +14848,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 8333,
+    "views": 8412,
     "likes": 137,
     "replies": 24,
     "reposts": 18,
     "bookmarks": 43,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -13698,12 +14963,12 @@
     "https://cloud.typingmind.com/share/42cd4cc3-9e8c-40d0-9718-ae0ade5c1ae5"
    ],
    "stats": {
-    "views": 7951,
-    "likes": 111,
+    "views": 7957,
+    "likes": 110,
     "replies": 7,
     "reposts": 7,
     "bookmarks": 26,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -13832,6 +15097,61 @@
    }
   },
   {
+   "id": "2120479775764459951",
+   "url": "https://x.com/marcthecreatorr/status/2120479775764459951",
+   "author": {
+    "handle": "marcthecreatorr",
+    "name": "Marcel"
+   },
+   "postedAt": "2026-11-11T11:32:29.000Z",
+   "addedAt": "2026-11-13",
+   "lang": "en",
+   "models": [
+    "carbon"
+   ],
+   "rivals": [
+    "claude"
+   ],
+   "category": "scene3d",
+   "title": {
+    "zh": "体素浮空王国效果对比",
+    "en": "Voxel floating kingdom comparison"
+   },
+   "summary": {
+    "zh": "作者用同一提示词让 Gemini 4 Carbon 和 Claude Opus 5.5 制作一个体素漂浮王国，并比较两者的耗时和成本。",
+    "en": "A voxel floating kingdom was created for a comparison between Gemini 4 Carbon and Claude Opus 5.5 using the same prompt. The post compares their time and cost."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Gemini 4 Carbon"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 7256,
+    "likes": 109,
+    "replies": 21,
+    "reposts": 3,
+    "bookmarks": 20,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2120477994527391744/vid/avc1/1280x720/KJPTlpF43SOSWJWA.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2120477994527391744/img/Xf2Zn7kQpJ1y4o3-.jpg",
+     "width": 1280,
+     "height": 720,
+     "durationSec": 58
+    }
+   ],
+   "evidence": {
+    "via": "seed-from-claude-library",
+    "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2121868841345237315",
    "url": "https://x.com/Lentils80/status/2121868841345237315",
    "author": {
@@ -13905,61 +15225,6 @@
    }
   },
   {
-   "id": "2120479775764459951",
-   "url": "https://x.com/marcthecreatorr/status/2120479775764459951",
-   "author": {
-    "handle": "marcthecreatorr",
-    "name": "Marcel"
-   },
-   "postedAt": "2026-11-11T11:32:29.000Z",
-   "addedAt": "2026-11-13",
-   "lang": "en",
-   "models": [
-    "carbon"
-   ],
-   "rivals": [
-    "claude"
-   ],
-   "category": "scene3d",
-   "title": {
-    "zh": "体素浮空王国效果对比",
-    "en": "Voxel floating kingdom comparison"
-   },
-   "summary": {
-    "zh": "作者用同一提示词让 Gemini 4 Carbon 和 Claude Opus 5.5 制作一个体素漂浮王国，并比较两者的耗时和成本。",
-    "en": "A voxel floating kingdom was created for a comparison between Gemini 4 Carbon and Claude Opus 5.5 using the same prompt. The post compares their time and cost."
-   },
-   "prompt": null,
-   "referenceAssets": false,
-   "tools": [
-    "Gemini 4 Carbon"
-   ],
-   "resources": [],
-   "stats": {
-    "views": 7114,
-    "likes": 109,
-    "replies": 21,
-    "reposts": 3,
-    "bookmarks": 20,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
-   },
-   "media": [
-    {
-     "type": "video",
-     "url": "https://video.twimg.com/amplify_video/2120477994527391744/vid/avc1/1280x720/KJPTlpF43SOSWJWA.mp4?tag=29",
-     "poster": "https://pbs.twimg.com/amplify_video_thumb/2120477994527391744/img/Xf2Zn7kQpJ1y4o3-.jpg",
-     "width": 1280,
-     "height": 720,
-     "durationSec": 58
-    }
-   ],
-   "evidence": {
-    "via": "seed-from-claude-library",
-    "seed": true,
-    "modelAttribution": "creator-stated, not independently reproduced"
-   }
-  },
-  {
    "id": "2115802517942497491",
    "url": "https://x.com/dromexa/status/2115802517942497491",
    "author": {
@@ -13991,12 +15256,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 7077,
-    "likes": 131,
+    "views": 7097,
+    "likes": 130,
     "replies": 9,
     "reposts": 10,
-    "bookmarks": 26,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "bookmarks": 25,
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -14164,12 +15429,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 6392,
+    "views": 6403,
     "likes": 129,
     "replies": 18,
     "reposts": 6,
     "bookmarks": 9,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {
@@ -14219,12 +15484,12 @@
    ],
    "resources": [],
    "stats": {
-    "views": 6261,
+    "views": 6262,
     "likes": 113,
     "replies": 40,
     "reposts": 3,
     "bookmarks": 13,
-    "checkedAt": "2026-11-16T10:43:30.012Z"
+    "checkedAt": "2026-11-23T11:55:30.830Z"
    },
    "media": [
     {

@@ -1,8 +1,8 @@
 {
  "model": "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.5)",
  "threshold": 5000,
- "updatedAt": "2026-11-23T11:55:30.830Z",
- "statsCheckedAt": "2026-11-23T11:55:30.830Z",
+ "updatedAt": "2026-11-24T11:01:32.489Z",
+ "statsCheckedAt": "2026-11-24T11:01:32.489Z",
  "inclusionRule": "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -10064,6 +10064,56 @@
    }
   },
   {
+   "id": "2124695716396507469",
+   "url": "https://x.com/itsshara_ai/status/2124695716396507469",
+   "author": {
+    "handle": "itsshara_ai",
+    "name": "Shara"
+   },
+   "postedAt": "2026-11-23T02:45:08.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "写实风格郊狼与走鹃沙漠追逐喜剧",
+    "en": "Photorealistic coyote and roadrunner desert chase comedy"
+   },
+   "summary": {
+    "zh": "一部使用 Opus 5.5 与 Seedance 2.5 制作的 81.5 秒写实风格喜剧视频，讲述郊狼与走鹃在沙漠峡谷追逐的故事。",
+    "en": "An 81.5-second live-action wildlife comedy video featuring a coyote and roadrunner, created with Opus 5.5 and Seedance 2.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Seedance 2.5"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 278672,
+    "likes": 2868,
+    "replies": 192,
+    "reposts": 290,
+    "bookmarks": 922,
+    "checkedAt": "2026-11-24T11:01:32.489Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2124695684855312384/img/fe3wxF0HG-zZbxab.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2124695684855312384/vid/avc1/1280x718/kinU9t1hQeky_ByQ.mp4?tag=16",
+    "width": 1280,
+    "height": 718,
+    "durationSec": 82
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2104301990985498783",
    "url": "https://x.com/mattshumer_/status/2104301990985498783",
    "author": {
@@ -10410,6 +10460,66 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124805520263422440",
+   "url": "https://x.com/treyscalez/status/2124805520263422440",
+   "author": {
+    "handle": "treyscalez",
+    "name": "trey"
+   },
+   "postedAt": "2026-11-23T10:01:27.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "Vox风格雕刻地图解说动画",
+    "en": "Vox-style engraved map explainer animation"
+   },
+   "summary": {
+    "zh": "使用 Opus 5.5 配合旁白制作的 Vox 风格地图解说动画，通过详细提示词调用 Python、OpenCV、Pillow 与 FFmpeg 渲染完成。",
+    "en": "A Vox-style animated map explainer video made with Opus 5.5 and a voiceover, using a detailed prompt that renders frames in Python, OpenCV, Pillow, and FFmpeg."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "post",
+    "sourceUrl": "https://x.com/treyscalez/status/2124805520263422440",
+    "text": "<inputs>\nAsk me for my voiceover (mp3 or wav) and its exact script, pasted as text. If I don't have one, pitch 3 map stories (a war, a voyage, a trade route, how a country was made), each with one surprising true fact, then write a 25-35 s script for me to record, one short sentence per beat. Ask if I have an SFX pack to upload. Then show me the beat list and the camera plan before you render anything.\n</inputs>\n\n<direction>\nA 1920x1080 Vox-style map explainer. The whole video lives on ONE engraved paper map, and the camera flies across it as the story moves. Collage pieces are pinned to real places: black-and-white halftone cut-outs, yellow paint, felt-marker ink, paper tags and ransom-note letters.\n- Palette: board #EFEBE3, ink #1D1C20, ONE accent yellow #EDBD2E, beige sheets #F1EDE4. No other colours, ever. Never a dark background.\n- Map engraving:\n- Sea: 4 coast-parallel lines at 8/19/32/48 px from the shore, then wavy horizontal lines every 22 px.\n- Land: a diagonal hatch every 22 px. The featured region gets a cross-hatch every 13 px.\n- Lines: coastline 6 px. Borders 4 px dashed (22 on, 18 off). A dotted graticule every 10°. One compass rose in open sea.\n- Labels: engraved place names in letter-spaced Libre Caslon (italic for oceans). No other text is baked into the map.\n- The featured region is painted yellow, multiplied at 90% so the hatching shows through, and revealed with a sweep (south→north, 16 frames) on the word that names it.\n- Everything animates on twos. Every paper piece \"boils\" ±1.5 px and ±0.4° every 8 frames. Pieces arrive with a slap (scale 1.1 → 0.98 → 1.0, on twos), never a fade.\n- Text only on paper: a title card, yellow tags, notes, ransom letters.\n- Title card: top left, beige, 560 px wide, rotated −1.2°, with a small yellow \"FIG. 0N\" tag. Its serif lines (Libre Caslon, 68 px) type on at 1 letter per frame.\n- Notes: Permanent Marker, 58-84 px, lower-case, written on at 1.3 letters per frame.\n- Tags: Special Elite, 22-26 px, letter-spaced, on small yellow paper strips.\n- Ransom letters: one cut-paper letter slapped down every 3-4 frames, cycling Caslon Bold, Anton and Special Elite on ink, beige and yellow squares.\n- Banned: any colour except the palette, photos of real people, logos, burned-in subtitles, glassy UI cards, a frame where nothing moves, and any invented fact.\n</direction>\n\n<structure>\nLength: the voice decides, plus a 1.3 s hold after the last word. One sentence = one beat. A beat starts 6 frames before its first word.\n0 s the home region at zoom ~0.6: it paints yellow on its name, and a ransom number slaps onto it\n→ pull out WIDE (~0.32) so both sides of the story fit: a dashed arc between them with a distance tag, and the far party as a cut-out pinned to its capital, circled\n→ the causes as arrows across the map, one per clause, each with a dated tag; a cut-out prop travels along the last arrow and lands\n→ zoom to the event city (~1.35): the date on the title card, pieces dropping in one by one with ink splash marks, and the big true number in ransom letters with a tag under it\n→ the reaction/joke beat at the same spot: a cut-out character, a marker note, an ink circle\n→ the next city (~1.15): a dated tag, a document cut-out; on the verb, pull WIDE and fly the document along a dashed trail to the other side\n→ the consequence back on the region (~0.7): an ink X per event, in date order, each with a \"PLACE YEAR\" tag\n→ final pull out WIDE: the payoff name in ransom letters over the region, the losing side's cut-out swapped for its sad version with a marker note, and a beige sheet bottom-centre with a bold Caslon line and a ransom payoff word underlined with a yellow highlighter. Hold to the end.\n</structure>\n\n<build>\n1. Tools: Python, numpy, OpenCV, Pillow and FFmpeg. Fonts from https://github.com/google/fonts (Libre Caslon Text, Permanent Marker, Special Elite, Anton). Tell me anything you installed.\n2. Timing:\n- Try faster-whisper word timestamps first.\n- If the model download is blocked, use ffmpeg silencedetect (−35 dB, 0.15 s) to find the speech spans, map each span to its words from my script, and spread the words inside each span by syllable count.\n- The voice starts at frame 4. Every cue is \"word ± frames\", and repeated words are found by their occurrence number.\n3. Map:\n- Plot coastlines as hand-written lon/lat vertices. Project equirectangular with longitude scaled by cos(mid-latitude), 7200 px wide.\n- Smooth every coast with 3 Chaikin passes. Build 4 mip levels (INTER_AREA) and pick level floor(log2(1/zoom) + 0.15) each frame, so the hatching never shimmers.\n4. Camera: keyframes of (frame, lon, lat, zoom), eased with smoothstep, zoom interpolated in log space, stepped on twos. One move every 1-3 sentences, 16-26 frames long. The camera never shows past the map's edge.\n5. Collage pieces, drawn fully in code: grayscale shapes with soft shading for characters, props and documents.\n- Halftone: a 5 px dot screen at 45°, mixed at 34%, contrast 1.25, plus grain.\n- Edge and shadow: a 7 px white scissor edge with a noisy wobble, and a shadow offset (5, 7) px, blurred 6 px, at 32%.\n- Documents are engraved line art on cream paper, with no halftone.\n- Pin each piece to a lon/lat plus a pixel offset. Pieces keep a constant screen size.\n- Movers travel along their arrow's spline with smoothstep and a ±4° wobble.\n6. Ink:\n- Project the control points to the screen every frame and draw there, so the weight stays 5-6 px at every zoom.\n- Felt marker: circles stamped every 1.6 px with a ±15% width wobble and tapered ends, plus a dry crayon pass at 0.32 width with 35% dropouts, merged with max().\n- Boil: 3 jitter seeds, cycled every 8 frames.\n- Reveal each mark along its own path over 8-15 frames.\n- Arrowheads 26 px at ±0.48 rad. Dashes 27 on, 19 off.\n- Ink X: two 20 px strokes over 6 frames.\n- Highlighter: 26-34 px of yellow, multiplied.\n7. Finish: a paper texture multiplied over every frame (cloud noise, fibres, creases, grain, a soft vignette), plus dust specks swapped every 8 frames.\n8. Render:\n- Draw frames with numpy/OpenCV at 30 fps, split across CPU workers, each piping raw RGB to ffmpeg libx264 CRF 16. Concat the segments.\n- Before the full render, show me a 10-12 frame contact sheet. Fix overlaps, empty stretches, text off-frame and blank map edges.\n9. Sound:\n- Use my SFX pack if I upload one; if not, synthesize: a paper slap for each piece, a marker scratch for each ink mark, typewriter ticks for typed text, a scribble for the yellow reveal, and a soft whoosh on every fast camera move.\n- SFX sit at about 0.32 × the voice peak. Merge same-type hits within 3 frames.\n- Peak at −0.3 dB, mux as AAC 192k.\n</build>\n\n<gotchas>\nSmoothing a closed land polygon rounds its corners at the map edge into a fake coastline, so push every closing corner off the canvas first. A shot zoomed onto a coast shows blank board past the map's edge, so draw the map at least 25° beyond any shot. At city zoom 0.2° is only about 16 px, so space pieces with pixel offsets, not degrees. Give every element an end frame, or tags from the last beat collide with the next beat's. Check every pinned note at both of its camera positions, because a note that fits wide can sit off-screen when zoomed in. If the crayon pass overwrites the marker pass instead of using max(), the ink and the yellow go see-through. Size the title card from its line count. Coastlines are approximations, so say so; every date, number and place must be real. Draw no real person's likeness: use generic characters (a king, a colonist, a sailor).\n</gotchas>\n\n<start>\nAsk for my voiceover and script (or pitch 3 map stories), then show me the beat list and the camera plan.\n</start>"
+   },
+   "referenceAssets": true,
+   "tools": [
+    "Python",
+    "NumPy",
+    "OpenCV",
+    "Pillow",
+    "FFmpeg",
+    "faster-whisper"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 268584,
+    "likes": 2754,
+    "replies": 30,
+    "reposts": 132,
+    "bookmarks": 5545,
+    "checkedAt": "2026-11-24T11:01:32.489Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2124804755813761024/img/kbp8SWhDIZO6hrZN.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2124804755813761024/vid/avc1/1280x720/zdWnCO5k3kB1Vwt4.mp4",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 32
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -37026,6 +37136,59 @@
    }
   },
   {
+   "id": "2124813049760772144",
+   "url": "https://x.com/RJasonHA/status/2124813049760772144",
+   "author": {
+    "handle": "RJasonHA",
+    "name": "Fries"
+   },
+   "postedAt": "2026-11-23T10:31:22.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "纯代码合成演唱《Daisy Bell》动画",
+    "en": "Code-only synthesized Daisy Bell singing animation"
+   },
+   "summary": {
+    "zh": "通过一段简短提示词让 Opus 5.5 不使用任何外部资源、纯靠代码生成的《Daisy Bell》演唱视频。",
+    "en": "A code-only video of Opus 5.5 singing Daisy Bell, generated from a short prompt prohibiting any external assets."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/RJasonHA/status/2124813049760772144",
+    "text": "挑选一首歌并演唱，全程不许使用任何外部资源只能使用代码"
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 77545,
+    "likes": 808,
+    "replies": 105,
+    "reposts": 92,
+    "bookmarks": 455,
+    "checkedAt": "2026-11-24T11:01:32.489Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2124812932689301504/img/ccWpIA09_qQcNn1s.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2124812932689301504/vid/avc1/1280x720/VZOJiMFgrZxJ-Utg.mp4",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 91
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2119913518015435103",
    "url": "https://x.com/QQTeng/status/2119913518015435103",
    "author": {
@@ -43140,6 +43303,58 @@
     "width": 1280,
     "height": 720,
     "durationSec": 20
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124790912618545223",
+   "url": "https://x.com/Linus_K_AI/status/2124790912618545223",
+   "author": {
+    "handle": "Linus_K_AI",
+    "name": "Linus Konetschnig"
+   },
+   "postedAt": "2026-11-23T09:03:24.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "受帝国时代2启发的网页即时战略游戏原型",
+    "en": "Browser RTS game prototype inspired by AoE II"
+   },
+   "summary": {
+    "zh": "受《帝国时代 II》启发的网页即时战略游戏原型《Age of Vibe Coders》，使用 omp、Opus 5.5、fal 和 Three.js 制作。",
+    "en": "A browser-based real-time strategy game prototype inspired by Age of Empires II, built with omp, Opus 5.5, fal, and Three.js."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "omp",
+    "fal",
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 65573,
+    "likes": 422,
+    "replies": 36,
+    "reposts": 26,
+    "bookmarks": 277,
+    "checkedAt": "2026-11-24T11:01:32.489Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2124790653477384192/img/clILzsrbmFjsSz_8.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2124790653477384192/vid/avc1/1280x720/RNFWwYYHSd8KLlR-.mp4",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 53
    },
    "evidence": {
     "via": "daily",
@@ -51273,6 +51488,63 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124422187927179304",
+   "url": "https://x.com/Isabell2987/status/2124422187927179304",
+   "author": {
+    "handle": "Isabell2987",
+    "name": "Isabella"
+   },
+   "postedAt": "2026-11-22T08:38:14.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "软糖橙片软体交互场景对比",
+    "en": "Gummy orange slice soft-body scene comparison"
+   },
+   "summary": {
+    "zh": "这是一个基于 WebGPU 的交互式 3D 软糖橙片场景，具有软体物理拉伸效果，作者用同一段提示词对比了 Fable 5.2 与 Claude Opus 5.5 的生成效果。",
+    "en": "An interactive WebGPU 3D gummy orange slice scene with soft-body physics, comparing Fable 5.2 and Claude Opus 5.5 using the same detailed prompt."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/Isabell2987/status/2124422192050168079",
+    "text": "Create Citrus Jellyy — an interactive 3D scene featuring a gummy orange slice. Everything must run directly in the browser in a single HTML file using WebGPU and WGSL shaders. Build genuine volumetric 3D geometry, not an image or a prerecorded animation.\nAPPEARANCE\nA thick semicircular orange slice with vibrant orange flesh, a pale pith layer, and a firmer outer rind.\nVisible radial segments, thin internal membranes, and tiny bubbles.\nA juicy, translucent gummy material with soft highlights, light refraction, and depth-dependent color.\nAvoid making it look like rigid plastic or glass.\nUse a light cream background, soft studio lighting, and a contact shadow. Avoid overexposure.\nPHYSICS AND INTERACTION\nLet users grab any visible point with a mouse or finger and pull it.\nDeformation must originate at the grab point and propagate naturally through neighboring areas.\nThe flesh should stretch and narrow under tension, while the rind offers more resistance.\nOn release, the slice should spring back gently, with oscillations gradually settling.\nUse a stable soft-body simulation: a spring mesh or volumetric elastic constraints with volume preservation.\nSegments, membranes, and bubbles must deform with the flesh rather than separating or floating independently.\nInclude ground collisions: the slice should squash slightly on impact and wobble afterward.\nPrevent instant snapping back, endless oscillation, and exploding geometry.\nINTERFACE\n\nA minimal editorial layout with generous whitespace.\nA large italic serif heading, “Citrus Jelly.”, on the left.\nA compact control panel on the right with Firmness and Internal damping sliders.\nGive it a nudge, Reset, and Pause buttons.\nShow mesh and ¼ speed toggles.\nThree color presets: Orange, Blood Orange, and Lemon.\nA small interaction hint: “Grab. Stretch. Let go.”\nAll labels in English, with comfortable desktop and mobile controls.\nTECHNICAL REQUIREMENTS\nGenuine WebGPU rendering, not a Canvas 2D substitute.\nGenerate geometry and materials in code without premade models.\nUse a fixed simulation timestep and constraints that prevent excessive stretching.\nMaintain smooth performance during grabbing, dragging, and release.\nDisplay a clear fallback message when WebGPU is unavailable.\nTest different grab locations, strong stretching, oscillation decay, collisions, and reset.\nThe main priority is a convincing gummy feel. The slice should look soft, juicy, and so satisfying in motion that people want to keep stretching it."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Fable 5.2",
+    "WebGPU",
+    "WGSL"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 53580,
+    "likes": 221,
+    "replies": 25,
+    "reposts": 49,
+    "bookmarks": 108,
+    "checkedAt": "2026-11-24T10:54:36.226Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2124422147649232896/img/nwFZpdkBSNLowtAm.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2124422147649232896/vid/avc1/720x932/2IiIc9JKAbN47mzN.mp4",
+    "width": 720,
+    "height": 932,
+    "durationSec": 17
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -68955,6 +69227,60 @@
    }
   },
   {
+   "id": "2124760560445030409",
+   "url": "https://x.com/SPAC89/status/2124760560445030409",
+   "author": {
+    "handle": "SPAC89",
+    "name": "Iam_"
+   },
+   "postedAt": "2026-11-23T07:02:48.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "四款AI模型3D生成质量对比测试",
+    "en": "3D quality comparison across four AI models"
+   },
+   "summary": {
+    "zh": "一项 3D 生成效果对比测试，将 GLM 5.4 Max 与 Gemini 4 Neon、Opus 5.5 xhigh 及 Fable 5.2 high 进行了比较。",
+    "en": "A 3D generation comparison testing GLM 5.4 Max against Gemini 4 Neon, Opus 5.5 xhigh, and Fable 5.2 high."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "GLM 5.4 Max",
+    "Gemini 4 Neon",
+    "Fable 5.2",
+    "Kimi 3.1 Pro",
+    "Cerebras"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 35336,
+    "likes": 281,
+    "replies": 31,
+    "reposts": 19,
+    "bookmarks": 65,
+    "checkedAt": "2026-11-24T11:01:32.489Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2124760428240687104/img/eNKF9M_ictO0dcBV.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2124760428240687104/vid/avc1/1280x720/494TPSPqE1llLQcj.mp4",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2119941490969624679",
    "url": "https://x.com/muku_sns/status/2119941490969624679",
    "author": {
@@ -69895,6 +70221,56 @@
     "width": 1398,
     "height": 720,
     "durationSec": 65
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124450317836407098",
+   "url": "https://x.com/nono_ai_archive/status/2124450317836407098",
+   "author": {
+    "handle": "nono_ai_archive",
+    "name": "노노아카이브"
+   },
+   "postedAt": "2026-11-22T10:30:00.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "基于图形母题的茶品牌动态设计",
+    "en": "Tea brand motion design from graphic motif"
+   },
+   "summary": {
+    "zh": "这是一个茶品牌设计作品，作者以一个图形母题为起点，使用 GPT 完成设计延展与包装，再由 Claude Opus 5.5 制作动效与交互。",
+    "en": "A tea brand design project starting from one graphic motif, using GPT for design expansion and packaging and Claude Opus 5.5 for motion and interaction."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "GPT"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 34614,
+    "likes": 1136,
+    "replies": 9,
+    "reposts": 155,
+    "bookmarks": 714,
+    "checkedAt": "2026-11-24T10:54:36.226Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2122210263713865728/img/RA6vw7477QFenoaC.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2122210263713865728/vid/avc1/720x900/J6JsTM9OY5vCjmvq.mp4?tag=29",
+    "width": 720,
+    "height": 900,
+    "durationSec": 12
    },
    "evidence": {
     "via": "daily",
@@ -79428,6 +79804,58 @@
    }
   },
   {
+   "id": "2124585579430224024",
+   "url": "https://x.com/M__Houser/status/2124585579430224024",
+   "author": {
+    "handle": "M__Houser",
+    "name": "Mike Houser"
+   },
+   "postedAt": "2026-11-22T19:27:29.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "守时者动画3D游戏角色",
+    "en": "The Time Keeper animated 3D game character"
+   },
+   "summary": {
+    "zh": "游戏角色 The Time Keeper 的 3D 动画制作案例：先用 GPT6-Astra 生成概念图，经 Tripo 转成 3D 模型后，再通过 Blender MCP 由 Claude Opus 5.5 绑定骨骼并制作动画。",
+    "en": "An animated 3D game character named The Time Keeper, created from GPT6-Astra concept art, converted to 3D with Tripo, and rigged and animated by Claude Opus 5.5 in Blender."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Blender",
+    "Tripo",
+    "GPT6-Astra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 27868,
+    "likes": 359,
+    "replies": 23,
+    "reposts": 35,
+    "bookmarks": 465,
+    "checkedAt": "2026-11-24T10:54:36.226Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2124585543153709056/img/gtTLlexyXeeAGn7_.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2124585543153709056/vid/avc1/1280x720/_Ciwir1KCJTjVVje.mp4?tag=16",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 29
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2116088544519188528",
    "url": "https://x.com/ggs4ns/status/2116088544519188528",
    "author": {
@@ -80487,6 +80915,56 @@
    }
   },
   {
+   "id": "2124540239716773940",
+   "url": "https://x.com/aymanemsi/status/2124540239716773940",
+   "author": {
+    "handle": "aymanemsi",
+    "name": "Aymane"
+   },
+   "postedAt": "2026-11-22T16:27:19.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "推理过程界面动效",
+    "en": "Reasoning process UI animation"
+   },
+   "summary": {
+    "zh": "作者在 Hermes Agent 桌面应用中使用 Claude Opus 5.5 制作的一段推理过程动画。",
+    "en": "A reasoning animation created with Claude Opus 5.5 inside the Hermes Agent desktop application."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Hermes Agent"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 27049,
+    "likes": 258,
+    "replies": 41,
+    "reposts": 5,
+    "bookmarks": 101,
+    "checkedAt": "2026-11-24T10:54:36.226Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2124540228022996992/img/ydjth0bQomoBfUKf.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2124540228022996992/vid/avc1/414x212/4cACWKiStp9Wb2Ph.mp4?tag=29",
+    "width": 414,
+    "height": 212,
+    "durationSec": 15
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2109570757579649086",
    "url": "https://x.com/ChrisGPT/status/2109570757579649086",
    "author": {
@@ -80733,6 +81211,57 @@
     "width": 720,
     "height": 900,
     "durationSec": 18
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124450946780737696",
+   "url": "https://x.com/skpnky/status/2124450946780737696",
+   "author": {
+    "handle": "skpnky",
+    "name": "sk builds"
+   },
+   "postedAt": "2026-11-22T10:32:30.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "双模型纯Three.js场景生成对比",
+    "en": "Three.js scene comparison between models"
+   },
+   "summary": {
+    "zh": "作者使用同一提示词对 Neon 与 Claude Opus 5.5 生成纯 Three.js 3D 场景的效果进行了对比测试。",
+    "en": "A Three.js scene comparison between Neon and Claude Opus 5.5 using the same prompt."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Neon",
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 26948,
+    "likes": 227,
+    "replies": 105,
+    "reposts": 3,
+    "bookmarks": 40,
+    "checkedAt": "2026-11-24T10:54:36.226Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2124448870612484096/img/LjSt3pJ9Vun2gQ-m.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2124448870612484096/vid/avc1/720x952/21RJ8N3EF6zPJl9R.mp4?tag=29",
+    "width": 720,
+    "height": 952,
+    "durationSec": 13
    },
    "evidence": {
     "via": "daily",
@@ -83864,6 +84393,62 @@
    }
   },
   {
+   "id": "2124625485590327733",
+   "url": "https://x.com/maxt3chno/status/2124625485590327733",
+   "author": {
+    "handle": "maxt3chno",
+    "name": "Max"
+   },
+   "postedAt": "2026-11-22T22:06:04.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "北欧战王王座Blender盲测对比",
+    "en": "Blind Norse throne Blender comparison"
+   },
+   "summary": {
+    "zh": "使用 Blender MCP 盲测对比 Opus 5.5 与 Gemini 4 Neon，在不借助外部资产和参考图的情况下根据详细提示词生成 3D 诺尔斯战王宝座模型。",
+    "en": "Blind Blender MCP comparison between Opus 5.5 and Gemini 4 Neon building a 3D ancient Norse war-king's throne from a detailed prompt with no external assets."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/maxt3chno/status/2124625701697368556",
+    "text": "TASK\nCreate a 3D model in Blender: an ancient Norse war-king's throne from a\ndark-fantasy world. It should feel heavy, old, grim and powerful.\n\nWhat I want to see:\n- Size: about 2.2 m tall without the antlers, about 2.8 m tall with them.\nWide and massive.\n- Base: a stepped platform of dark, weathered stone with carved\ninterlaced Norse knotwork on the front step.\n- Backrest: tall, arched, made of vertical dark wooden planks. Two\nintertwined serpent-dragons are carved in relief on it, their bodies\nbraided together, heads facing each other at the top.\n- Top: a deer skull with huge antlers, mounted inside an iron ring at\nthe top of the backrest and bound with rope.\n- Side posts: two thick carved wooden posts covered in knotwork,\nreinforced with riveted iron bands. A large bearded battle axe is\nmounted on top of each post, blades facing outward.\n- Banners: a tattered dark-red cloth banner hangs from an iron rod on each\nside, below the axes, with a pale Norse symbol on it. The bottom edges\nare torn and frayed.\n- Armrests: ending in carved snarling wolf or dragon heads with open jaws.\n- Seat: draped with a heavy, torn dark-red cloth with a woven knotwork\nstripe down the middle, hanging over the front edge.\n- Wear: old cracked wood, dull dark iron and bronze, dirt and dust in the\ncarvings, faded and frayed fabric. Very textured and highly detailed.\nIt must look ancient and real, not clean, not plastic, not cartoony.\n\nThe exact shapes, carving patterns and smaller details are up to you.\n\nWORKING FOLDER\nYour working folder is: [FOLDER]\nSave all files there and nowhere else.\n\nSETUP\n- You must work through the Blender MCP connection only.\n- Before doing anything else, check the Blender MCP connection. If you cannot\nconnect, STOP immediately and tell me. Do not try to work around it (no\nwriting scripts for me to run manually, no other tools).\n- Start from an empty scene: delete all default objects first.\n- You can and should look at the viewport and renders through the MCP to check\nand improve your work.\n- There is no limit on iterations. Keep working until you consider the result\nfinished. Work autonomously and do not ask me questions.\n\nRULES\n- Create everything yourself inside Blender: modeling, sculpting, modifiers,\ngeometry nodes, shader nodes, procedural textures, cloth simulation,\ntexture painting and baking are all allowed.\n- Stay inside your working folder. Do NOT read, list, search or open any\nfiles or folders outside it (no browsing my other projects, user folders,\nconfig files, or other drives). The only things you may access are your\nworking folder and Blender through the MCP.\n- Inside Blender, do not open, append or link any other .blend files.\n- You MAY use the internet only for Blender / Python API documentation and\ntechnical help.\n- You MUST NOT download or import any ready-made models, textures, images,\nHDRIs, materials, add-ons, asset packs or asset libraries (including the Poly\nHaven, Sketchfab and Hyper3D/Rodin integrations, if your MCP offers them).\n- You MUST NOT search for or look at reference images of thrones or similar\nobjects.\n- You MUST NOT use external AI generators (image, texture or 3D).\n- Do not read or write any memory, notes or rules files, and do not use\nknowledge from my previous projects. Work only from this prompt.\n\nPOLYGON BUDGET\n- The throne must be between 150,000 and 200,000 triangles, counted with\nall modifiers evaluated, as shown in Blender's scene statistics.\n- Fine detail beyond that budget must come from materials (procedural\ntextures, bump/normal maps, or baked maps you generated yourself).\n- Scene elements other than the throne (a ground plane, a backdrop) must\nstay simple: max 2,000 triangles in total.\n\nPRESENTATION\n- I will record a video myself by orbiting around the throne in the Blender\nviewport (Rendered shading mode), so it must look impressive in real time\nfrom every angle.\n- Use EEVEE as the render engine. All materials and effects must look good in\nEEVEE viewport rendering.\n- Place the throne at the world origin, standing on the ground, with its\nobject origin at the center of the throne so it orbits nicely.\n- Set up lighting, world background and atmosphere for a dark-fantasy mood\nthat works from ALL viewing angles, not just from one camera. Use only\nBlender lights, world shaders and volumetrics, no external HDRIs.\n- The scene must stay smooth in the viewport: no effects that make real-time\norbiting laggy.\n- Save to the working folder:\n- throne.blend\n- render_hero.png: one EEVEE still at 1080x1920 as a thumbnail.\n\nFINAL REPORT\nWhen you are done, report:\n- the final triangle count of the throne\n- a short description of how you made it (techniques, materials, carvings)\n- confirmation that no external assets were used"
+   },
+   "referenceAssets": true,
+   "tools": [
+    "Blender",
+    "Gemini 4 Neon"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 25291,
+    "likes": 228,
+    "replies": 38,
+    "reposts": 9,
+    "bookmarks": 152,
+    "checkedAt": "2026-11-24T10:54:36.226Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2124624167647469568/img/4vtbZ7Lyfl2akGlw.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2124624167647469568/vid/avc1/1110x720/rL71qzRmRS7Vz8Fh.mp4",
+    "width": 1110,
+    "height": 720,
+    "durationSec": 19
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2110385278246654052",
    "url": "https://x.com/MiaAI_lab/status/2110385278246654052",
    "author": {
@@ -86560,6 +87145,64 @@
     "width": 720,
     "height": 944,
     "durationSec": 65
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124585991663153497",
+   "url": "https://x.com/pradeepXkapoor/status/2124585991663153497",
+   "author": {
+    "handle": "pradeepXkapoor",
+    "name": "Pradeep Kapoor"
+   },
+   "postedAt": "2026-11-22T19:29:07.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "雨林立体书的五种动画风格",
+    "en": "Rainforest pop-up book in five animation styles"
+   },
+   "summary": {
+    "zh": "使用 Opus 5.5 通过 Python、Skia、NumPy 和 FFmpeg 纯代码生成并合成音效的热带雨林立体书动画，同一场景呈现五种艺术风格。",
+    "en": "An animated rainforest pop-up book rendered in five art styles with synthesised sound, built purely in code with Opus 5.5, Python, Skia, NumPy, and FFmpeg."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/pradeepXkapoor/status/2124585997908476379",
+    "text": "Create an animated pop-up book entirely in code: no image generators, no downloaded art, no browser. Use Python with Skia and numpy to draw every frame, pipe the frames into ffmpeg, and synthesise all the sound in code too.\nThe scene: \"Río de la Luna\", a rainforest gorge whose river pours out of a full moon. Include:\n•karst towers\n•a rope bridge with three tiny travellers\n•a kapok tree with monkeys and a toucan\n•a temple ruin with pilgrims and lanterns\n•a heron, and a canoe on a pull-tab\n•mist, and birds\nThe beat (about 10 s, 1920×1080, 30 fps):\n1An open atlas rests on a desk, showing a flat map of the valley.\n2A thin page turns with a real paper curl.\n3The board opens and the pop-up rises with real paper engineering. Use V-folds and layers on tabs, with the opening angle of the page driving every fold. Pieces lock upright with a soft spring.\n4Life switches on: the river flows, birds lift off, the canoe slides on its tab, mist rises, lanterns glow.\n5Slow push-in and hold on the finished scene.\nRender the same scene in five art styles, each with its own animation feel:\n1Cut-paper diorama under a warm desk lamp, with real soft cast shadows and fibred paper. Springy pop.\n2Risograph pop-up in three spot inks: yellow, fluorescent pink and blue. It prints one ink pass at a time while you watch, in stop-motion on twos.\n3Naturalist's field atlas: a pen-and-pencil drawing stands up first, then watercolour floods in from back to front. Slow bloom.\n4Night lantern atlas: luminous inks on indigo paper. The moon is a real light source; light runs down the waterfall, lanterns catch one by one, fireflies rise. Floaty.\n5Gilded engraver's atlas: hand-coloured copperplate with jewel washes, a gold-leaf moon with a moving sheen, and an oxblood leather binding. Stately, no bounce.\nSound: synthesised paper foley (a rustle on the page turn, little snaps as pieces lock open) over a soft jungle ambience.\nThe edit: cut the five styles into one montage with no titles. Start each style once its pop-up is already rising. End on a fast relay that cuts between all five styles every 0.4 s at the same moment of the animation, so the art style changes while the motion carries on.\nTone: vivid, tactile, calm and ASMR-satisfying, with a dreamlike touch. Nothing cluttered or chaotic."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Python",
+    "Skia",
+    "NumPy",
+    "FFmpeg"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 23862,
+    "likes": 611,
+    "replies": 25,
+    "reposts": 43,
+    "bookmarks": 658,
+    "checkedAt": "2026-11-24T10:54:36.226Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2124585464967663616/img/c93OM_qWMq6QKuPR.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2124585464967663616/vid/avc1/1280x720/Z7MGQLcX4WeDgeSM.mp4",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 28
    },
    "evidence": {
     "via": "daily",
@@ -92978,6 +93621,61 @@
    }
   },
   {
+   "id": "2124766933451161937",
+   "url": "https://x.com/EvaahereAi/status/2124766933451161937",
+   "author": {
+    "handle": "EvaahereAi",
+    "name": "Evaa AI"
+   },
+   "postedAt": "2026-11-23T07:28:07.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "可交互果冻橙片效果对比",
+    "en": "Interactive gummy orange slice side-by-side test"
+   },
+   "summary": {
+    "zh": "基于同一提示词生成的 WebGPU 交互式 3D 果冻橙片单页网页场景，用于对比 Opus 5.5 与 Fable 5.2 的生成效果。",
+    "en": "An interactive 3D gummy orange slice scene built in a single HTML file with WebGPU shaders, comparing Opus 5.5 and Fable 5.2 from the same prompt."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/EvaahereAi/status/2124766940728263081",
+    "text": "Create Citrus Jellyy — an interactive 3D scene featuring a gummy orange slice. Everything must run directly in the browser in a single HTML file using WebGPU and WGSL shaders. Build genuine volumetric 3D geometry, not an image or a prerecorded animation.\nAPPEARANCE\nA thick semicircular orange slice with vibrant orange flesh, a pale pith layer, and a firmer outer rind.\nVisible radial segments, thin internal membranes, and tiny bubbles.\nA juicy, translucent gummy material with soft highlights, light refraction, and depth-dependent color.\nAvoid making it look like rigid plastic or glass.\nUse a light cream background, soft studio lighting, and a contact shadow. Avoid overexposure.\nPHYSICS AND INTERACTION\nLet users grab any visible point with a mouse or finger and pull it.\nDeformation must originate at the grab point and propagate naturally through neighboring areas.\nThe flesh should stretch and narrow under tension, while the rind offers more resistance.\nOn release, the slice should spring back gently, with oscillations gradually settling.\nUse a stable soft-body simulation: a spring mesh or volumetric elastic constraints with volume preservation.\nSegments, membranes, and bubbles must deform with the flesh rather than separating or floating independently.\nInclude ground collisions: the slice should squash slightly on impact and wobble afterward.\nPrevent instant snapping back, endless oscillation, and exploding geometry.\nINTERFACE\n\nA minimal editorial layout with generous whitespace.\nA large italic serif heading, “Citrus Jelly.”, on the left.\nA compact control panel on the right with Firmness and Internal damping sliders.\nGive it a nudge, Reset, and Pause buttons.\nShow mesh and ¼ speed toggles.\nThree color presets: Orange, Blood Orange, and Lemon.\nA small interaction hint: “Grab. Stretch. Let go.”\nAll labels in English, with comfortable desktop and mobile controls.\nTECHNICAL REQUIREMENTS\nGenuine WebGPU rendering, not a Canvas 2D substitute.\nGenerate geometry and materials in code without premade models.\nUse a fixed simulation timestep and constraints that prevent excessive stretching.\nMaintain smooth performance during grabbing, dragging, and release.\nDisplay a clear fallback message when WebGPU is unavailable.\nTest different grab locations, strong stretching, oscillation decay, collisions, and reset.\nThe main priority is a convincing gummy feel. The slice should look soft, juicy, and so satisfying in motion that people want to keep stretching it."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Fable 5.2"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 21172,
+    "likes": 200,
+    "replies": 21,
+    "reposts": 89,
+    "bookmarks": 30,
+    "checkedAt": "2026-11-24T11:01:32.489Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2124766887045427200/img/Kr5G_xjfnItuaYOz.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2124766887045427200/vid/avc1/720x932/HPQtV0aDOFCpuEQo.mp4",
+    "width": 720,
+    "height": 932,
+    "durationSec": 17
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2115882221319958984",
    "url": "https://x.com/elvar_official/status/2115882221319958984",
    "author": {
@@ -93122,6 +93820,57 @@
     "width": 1280,
     "height": 720,
     "durationSec": 33
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124600807123288538",
+   "url": "https://x.com/EnvolDev/status/2124600807123288538",
+   "author": {
+    "handle": "EnvolDev",
+    "name": "Tony"
+   },
+   "postedAt": "2026-11-22T20:28:00.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "太空列车界面设计多模型对比",
+    "en": "Space train UI design model comparison"
+   },
+   "summary": {
+    "zh": "对比 GPT-6.2 Astra、Fable 5.2 与 Opus 5.5 在同一“太空列车”提示词下完成 UI 和设计任务的成本、耗时及效果。",
+    "en": "Cost, runtime, and UI design comparison between GPT-6.2 Astra, Fable 5.2, and Opus 5.5 on the same Space Train prompt."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "GPT-6.2 Astra",
+    "Fable 5.2"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 21085,
+    "likes": 156,
+    "replies": 14,
+    "reposts": 14,
+    "bookmarks": 56,
+    "checkedAt": "2026-11-24T10:54:36.226Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2124592311917228032/img/HgirNLZwlXOpZMQ4.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2124592311917228032/vid/avc1/720x1280/Ece-vDcYvnPwpW3j.mp4",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 25
    },
    "evidence": {
     "via": "daily",
@@ -94129,6 +94878,56 @@
     "width": 1322,
     "height": 720,
     "durationSec": 32
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124619089029353974",
+   "url": "https://x.com/AmbroseAbaasa/status/2124619089029353974",
+   "author": {
+    "handle": "AmbroseAbaasa",
+    "name": "Verse 👾"
+   },
+   "postedAt": "2026-11-22T21:40:38.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "AI生成视频作品展示",
+    "en": "AI generated video showcase"
+   },
+   "summary": {
+    "zh": "使用 Opus 5.5 与 Seedance 2.5 制作的作品，作者未公开提示词或制作流程细节。",
+    "en": "A work made with Opus 5.5 and Seedance 2.5; the creator did not share the prompt or workflow details."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Seedance 2.5"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 20706,
+    "likes": 199,
+    "replies": 54,
+    "reposts": 23,
+    "bookmarks": 27,
+    "checkedAt": "2026-11-24T10:54:36.226Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2124619032493981696/img/17e1mcWW1u2-sZRt.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2124619032493981696/vid/avc1/1280x720/he7TTGjgy5P5OfDj.mp4",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 46
    },
    "evidence": {
     "via": "daily",
@@ -96631,6 +97430,56 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124662724219068510",
+   "url": "https://x.com/LexnLin/status/2124662724219068510",
+   "author": {
+    "handle": "LexnLin",
+    "name": "Leon Lin"
+   },
+   "postedAt": "2026-11-23T00:34:02.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "使用技能包前后的界面生成对比",
+    "en": "Skill vs no skill UI generation comparison"
+   },
+   "summary": {
+    "zh": "使用 Opus 5.5 对比新版 TasteSkill 与无技能情况下一次性生成网站的效果，作者称生成过程中未使用参考素材。",
+    "en": "A oneshot site comparison using Opus 5.5 with an upcoming version of TasteSkill versus no skill, with no reference assets used during generation."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "TasteSkill"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 19835,
+    "likes": 596,
+    "replies": 25,
+    "reposts": 15,
+    "bookmarks": 465,
+    "checkedAt": "2026-11-24T10:54:36.226Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2124662345657958400/img/qmvRKcoB7hgbTtMR.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2124662345657958400/vid/avc1/1176x720/mDthdosEQnLZWwMu.mp4",
+    "width": 1176,
+    "height": 720,
+    "durationSec": 40
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -118764,6 +119613,57 @@
    }
   },
   {
+   "id": "2124335094819119426",
+   "url": "https://x.com/rubenssoto_ai/status/2124335094819119426",
+   "author": {
+    "handle": "rubenssoto_ai",
+    "name": "Rubens Soto | AI & SaaS"
+   },
+   "postedAt": "2026-11-22T02:52:09.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "三款模型生成质量对比",
+    "en": "Three-model output quality comparison"
+   },
+   "summary": {
+    "zh": "使用同一未公开提示词对 Opus 5.5、Gemini Neon 和 GPT-6.2 Astra 进行一次性生成对比，重点比较三者的成本与输出质量。",
+    "en": "A one-shot comparison of Opus 5.5, Gemini Neon, and GPT-6.2 Astra on the same undisclosed prompt, focusing on cost and output quality."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Gemini Neon",
+    "GPT-6.2 Astra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 12940,
+    "likes": 138,
+    "replies": 61,
+    "reposts": 6,
+    "bookmarks": 30,
+    "checkedAt": "2026-11-24T10:54:36.226Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2124334446753005568/img/B68SjU73QA0KmMTR.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2124334446753005568/vid/avc1/720x1214/uHEJStc_s_wMze7-.mp4",
+    "width": 720,
+    "height": 1214,
+    "durationSec": 40
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2105401665360986275",
    "url": "https://x.com/PDyv9gdatT4132/status/2105401665360986275",
    "author": {
@@ -122290,6 +123190,63 @@
     "width": 1280,
     "height": 720,
     "durationSec": 9
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124474268079567329",
+   "url": "https://x.com/AIMind_Ai/status/2124474268079567329",
+   "author": {
+    "handle": "AIMind_Ai",
+    "name": "AiMind"
+   },
+   "postedAt": "2026-11-22T12:05:10.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "冰冻西瓜融化爆炸四模型对比",
+    "en": "Frozen watermelon explosion model comparison"
+   },
+   "summary": {
+    "zh": "作者使用同一提示词让 GPT-6.2 Astra、Claude Fable 5.2、Claude Opus 5.5 和 Gemini 4 Neon 生成西瓜冰冻、融化后爆炸的画面并对比效果。",
+    "en": "A comparison of GPT-6.2 Astra, Claude Fable 5.2, Claude Opus 5.5, and Gemini 4 Neon given the same prompt to freeze, melt, and blow up a watermelon."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/AIMind_Ai/status/2124474268079567329",
+    "text": "freeze a watermelon in ice, melt it, then blow it up"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "GPT-6.2 Astra",
+    "Claude Fable 5.2",
+    "Gemini 4 Neon"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 12106,
+    "likes": 103,
+    "replies": 46,
+    "reposts": 5,
+    "bookmarks": 37,
+    "checkedAt": "2026-11-24T10:54:36.226Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2124474006644338688/img/2v9onVPesdc0COFX.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2124474006644338688/vid/avc1/720x900/UaQ52NNPfdalRk16.mp4?tag=29",
+    "width": 720,
+    "height": 900,
+    "durationSec": 32
    },
    "evidence": {
     "via": "daily",
@@ -134039,6 +134996,56 @@
    }
   },
   {
+   "id": "2124598468669034696",
+   "url": "https://x.com/itsluneri/status/2124598468669034696",
+   "author": {
+    "handle": "itsluneri",
+    "name": "Luneri"
+   },
+   "postedAt": "2026-11-22T20:18:42.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "两款模型视频生成效果对比",
+    "en": "Two-model video output comparison"
+   },
+   "summary": {
+    "zh": "对比 Claude Opus 5.5 与 Gemini 4 Neon 的生成效果，并给出两者的 token 用量、预估费用和耗时数据。",
+    "en": "A comparison between Claude Opus 5.5 and Gemini 4 Neon reporting each model's token count, estimated cost, and generation time."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Gemini 4 Neon"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 9359,
+    "likes": 128,
+    "replies": 9,
+    "reposts": 4,
+    "bookmarks": 17,
+    "checkedAt": "2026-11-24T10:54:36.226Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2124597911124094976/img/ggDa58VZ1E1Ipy0T.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2124597911124094976/vid/avc1/1280x720/N9vA_NvBogbRIRFn.mp4",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 48
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103627106240602357",
    "url": "https://x.com/lemcosmos/status/2103627106240602357",
    "author": {
@@ -136253,6 +137260,57 @@
     "width": 1280,
     "height": 720,
     "durationSec": 31
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124525186988839409",
+   "url": "https://x.com/rewind02/status/2124525186988839409",
+   "author": {
+    "handle": "rewind02",
+    "name": "rewind"
+   },
+   "postedAt": "2026-11-22T15:27:31.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "地球尺度程序化行星三维模拟",
+    "en": "Earth-sized procedural planet simulation"
+   },
+   "summary": {
+    "zh": "作者通过 Unity 插件和 Blender MCP 调用 Opus 5.5，结合 Hillaire 2020 论文与分步指令，在 Unity 6 URP 中构建了地球大小的程序化行星。",
+    "en": "An earth-sized procedural planet created in Unity 6 URP and Blender using Opus 5.5 via the Unity plugin and MCP, guided by the Hillaire 2020 paper and multi-step prompts."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Blender",
+    "Unity 6"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 8990,
+    "likes": 238,
+    "replies": 16,
+    "reposts": 16,
+    "bookmarks": 243,
+    "checkedAt": "2026-11-24T10:54:36.226Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2124524981853777920/img/cJhpDXyZCeoFCLKb.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2124524981853777920/vid/avc1/1280x720/WJtLoI8upxYsczMi.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 200
    },
    "evidence": {
     "via": "daily",
@@ -144945,6 +146003,63 @@
    }
   },
   {
+   "id": "2124718701035553237",
+   "url": "https://x.com/euviz/status/2124718701035553237",
+   "author": {
+    "handle": "euviz",
+    "name": "Elvis Sampaio"
+   },
+   "postedAt": "2026-11-23T04:16:28.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "models": [
+    "opus-5.5",
+    "sonnet-5.5",
+    "haiku-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "Three.js 3D动画视频作品",
+    "en": "Three.js 3D animated video showcase"
+   },
+   "summary": {
+    "zh": "使用 Opus 5.5、Sonnet 5.5 和 Haiku 5.5 在 Three.js 中建模生成的视频，结合了 ElevenLabs 配音、Epidemic Sound 音效，以及用 ChatGPT、Gemini 和 After Effects 制作的参考素材。",
+    "en": "A video modeled in Three.js using Opus 5.5, Sonnet 5.5, and Haiku 5.5, combining ElevenLabs voiceover, Epidemic Sound audio, and reference assets made with ChatGPT, Gemini, and After Effects."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Three.js",
+    "ElevenLabs",
+    "Epidemic Sound",
+    "ChatGPT",
+    "Gemini",
+    "After Effects"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 6831,
+    "likes": 113,
+    "replies": 14,
+    "reposts": 6,
+    "bookmarks": 142,
+    "checkedAt": "2026-11-24T11:01:32.489Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2124718581891899392/img/-RjxjB_uIMOOyuOk.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2124718581891899392/vid/avc1/720x1280/YnYluuj0TYKbJtMg.mp4?tag=14",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 80
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2114441029638410489",
    "url": "https://x.com/vib3coded/status/2114441029638410489",
    "author": {
@@ -145353,6 +146468,62 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124529713125187838",
+   "url": "https://x.com/vib3coded/status/2124529713125187838",
+   "author": {
+    "handle": "vib3coded",
+    "name": "Vib3Coded"
+   },
+   "postedAt": "2026-11-22T15:45:30.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "models": [
+    "sonnet-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "悬浮岛像素风帕德尔网球比赛对比",
+    "en": "Floating island pixel-art padel match comparison"
+   },
+   "summary": {
+    "zh": "作者使用 Claude Sonnet 5.5 耗时 27 分钟、基于 Three.js 制作了单文件 HTML5 像素风浮岛笼式网球对战玩具，并与 GPT-6.2 Astra 的生成效果进行了对比。",
+    "en": "A 3D pixel-art padel match on a floating island, built as a single-file HTML5 app using Three.js and Claude Sonnet 5.5 in 27 minutes and compared against GPT-6.2 Astra."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/vib3coded/status/2124529758172041713",
+    "text": "Build a single-file HTML5 toy, \"Pixel Padel\": a 2 x 2 padel match on a floating pixel-art island that plays itself forever (autopilot by default, endless matches), where the court surface can be repainted at any moment (blue turf, green turf, clay, hard court, beach sand, grass) and every surface really changes how the ball bounces and how the players move. The human can take over either pair. three.js r128 from cdnjs, everything else procedural and inline, no asset files, no build step for the player.\n\nLOOK\n- Render the 3D scene to a low-res target (default 2 px art pixels on wide stages, 1 px on phones; slider 1-6), then a post pass: depth-based outlines, snap every pixel to one fixed 90-colour OKLab palette, ordered Bayer dither. Orthographic camera with smooth azimuth / elevation / zoom, pixel-snapped. Sun shadow map; day / dusk / night lighting with four floodlight poles registered as point lights BEFORE the lights are initialised.\n- Island (about 104 x 76 m): the same floating island as the other games of the series: a slab of 1 m voxel columns with a rounded outline, a terraced rim, layered soil and slate strata, hanging roots and floating rocks underneath, bushes and flowers on a lawn rim, drifting birds. A 1024 px ground canvas paints a mown lawn (stripes, tufts, flowers), a paved plaza of two warm greys round the court and the stands, gravel paths to a clubhouse and a shop container, a timber terrace. Static meshes are merged by material after building (before anything dynamic is added; the court floor, the glass and the players live in a group that is never merged).\n- Scenery: a clubhouse (white walls, terracotta roof, glazed windows, striped awning, a lit \"PADEL CLUB\" sign, planters), a shop container with an awning, parasols with chairs, palms, cypress trees, hedges, four flag poles in the team colours, a high umpire chair at the net outside the far wall with an umpire who turns his head to follow the ball and raises a flag after each point, benches, a ball basket, a water cooler, racket bags. Four stands (4, 3, 2, 2 rows) hold an instanced crowd (body, head, hat, waving flags) that jumps harder the better the point was; each stand is a \"lift sector\" that rises out of the way when it stands between the camera and the court. A big scoreboard sign over the far stand shows both pairs, sets, games and points and is redrawn only when the score changes.\n\nTHE COURT\n- 20 x 10 m. The floor is a plane with a 1280 x 640 canvas texture (64 px per metre) that is repainted on demand. Lines: the two service lines 6.95 m from the net, the centre service line, a shadow stripe under the net, shade along the walls. Surface painters: blue turf (sanded pile, mown stripes), green turf, clay (blotches, brush strokes, slide marks), hard court (blue centre with a green run-off band, specks, cracks), sand (ripples, footprints, blue ribbon lines), grass (mown stripes, worn bare patches at the baselines and the net).\n- Walls: glass 3 m with mesh to 4 m at both back walls and in the four corners (|x| >= 6 m), mesh 3 m along the middle of the side walls, steel posts every 2 m, top and mid rails, a door in each side wall. The glass is a transparent, depth-write-off plane with a canvas texture (a tint, diagonal highlight streaks, panel seams every 2 m); the mesh is an alpha-tested wire texture. The walls whose outward normal faces the camera fade out (opacity lerps by the dot product with the camera direction, mesh depth-write is switched off while faded) so you always see the court through the near wall; the far walls stay solid. A ring flashes on the glass where the ball hits it.\n- Net: two posts at the walls, 0.88 m in the middle with a little sag to 0.92 m at the posts, white tape, a centre strap, an alpha-tested mesh that wobbles when hit.\n\nSURFACES (a table; the same numbers drive physics, sound, dust and UI)\n- Each has: vertical restitution e, horizontal speed kept at a bounce fx, a random kick, the players' run-speed factor, the players' grip (how fast they can change velocity: low grip = sliding), a dust colour and the line colour. Blue turf e .76 fx .80; green turf .72 / .75; clay .80 / .64, grip .60 (slides, dust); hard .70 / .93, grip 1.15, run 1.05; sand .58 / .62, run .88; grass .62 / .84, kick .10 (a small random deflection), grip .78.\n- Changing the surface repaints the court with a wipe: the new texture is revealed from one end over 1.1 s with a bright seam while a little paint-roller machine rides along the court; the old canvas is kept so a second change mid-wipe never shows a mixed court. The director camera cuts to the tactical view for a few seconds. The panel has six swatch buttons, three small bar meters (Bounce, Pace, Grip) and a one-line note per surface; key C cycles surfaces; an option \"new surface for every match\" (on by default in autopilot) walks through all six.\n- Also switchable: wall type glass / mesh (glass restitution .78 with .94 tangential retention, mesh .46 / .80 and a random kick), ball speed (worn / normal / new: flight times x 1.2 / 1 / .84), wind (calm / breeze / gale; an acceleration that wanders slowly), level (easy / normal / pro), format (quick: first to 4 games, tie-break to 5; one set to 6, tie-break to 7; best of 3), deuce (golden point / advantage), speed (1/2x, 1x, 2x).\n\nTHE BALL\n- Position, velocity, drag exp(-0.15 dt), gravity, wind. One shared step function (used by the live ball and by the predictor) handles: the net plane (tape clip = a net cord that lets the ball dribble over, a body hit drops it dead on the hitter's side), the floor with the surface's restitution / speed loss / kick, the back walls and side walls (glass or mesh, with different heights; above the top it is \"out of the court\") and reports events {floor, wall, net, over}. A launch solver computes the velocity that lands a ball on a chosen floor spot after a chosen flight time (iterating against drag); the net clearance is checked along the flight and the flight time is lengthened until it clears.\n- Predictor: every other frame the live ball is simulated forward 4.5 s at 1/60 with all bounces; each sample records time, position, how many floor bounces have happened so far on each half, and whether a wall was hit. The AI plans over this path.\n\nRULES (a state machine: pre, serve, rally, point, fault, over)\n- Serve: the server stands behind the service line on the right or left half (by point parity), drops the ball from the free hand, lets it bounce on his own side and hits it underhand low across the net into the DIAGONAL service box (between the net and the service line, the opposite half). Faults: net body, wall or over-the-top before the bounce, first bounce outside the box or on the wrong half, the ball dropped twice without being hit. A net cord that still lands in the box is a let and is replayed; a second fault is a double fault. The serve must bounce before the receiver may touch it (the AI and the contact test both enforce this).\n- Rally: after the opponent's shot the ball may bounce once on your side (volleys before the bounce are fine, except for the serve); after that bounce it may come off the glass and the mesh and you may still play it; a second floor bounce on your side loses the point. A return must cross the net and bounce on the opponent's floor before it touches any wall (a wall or the top first = out); a ball that bounced and then leaves the court over the wall (a \"por tres\" when it was a smash) is a winner; a net body hit or a ball that bounces on the hitter's own side loses the point. One hit per pair per rally turn, players stay on their own half.\n- Scoring: 0 / 15 / 30 / 40 with golden point (the next point at 40-40 wins) or advantage; games; sets (6 games, win by 2, tie-break at 6-6); a tie-break to 7 (5 in quick mode) win by 2 with the server changing after the first point and then every two points; the serving pair changes every game and inside a pair the server alternates; ends are changed after every odd game and every 6 tie-break points. Rolling statistics: aces, winners, smash winners, wall plays (returns played after a wall rebound), errors, double faults, matches won, longest rally. After a match the winners celebrate for 8 s and a new match starts (and, if the option is on, a new surface).\n\nPLAYERS\n- Jointed voxel figures (hips, torso, head, shoulders, elbows, wrists, knees) with a padel racket (handle, throat, solid oval face in the team colour with a rim and holes) on a wrist group; two pairs, Azure and Amber, four different looks. Poses with keyframes and ease, every channel critically damped by a spring: ready (knees bent, racket up, free hand at the throat), run cycle, forehand and backhand (low to high variants mixed by the contact height; back swing, contact, follow-through across the body), volley punch (either hand), smash (jump, trophy pose, overhead contact), bandeja (high slice), lob (deep knee bend, low to high), the drop, the underhand serve, celebration, dejection, the umpire's sit and flag.\n- Each stroke has a duration, a contact window, a reach (a horizontal radius around a point in front of and beside the hitter on the racket side, and a height range; smash adds the jump height) and a lead time (action start to contact). The ball is only played if it is inside the reach during the window and the rules allow it. Movement: acceleration scaled by the surface grip, speed by the surface run factor; on slippery surfaces sliding feet kick up dust; partners are pushed apart; players are clamped to their own half and to the walls.\n\nAI (both pairs, any level)\n- Planning: for each player, walk the predicted path and take the first sample that is on my side of the net, within the walls, before the second bounce, not a volley of the serve, whose height fits a stroke (smash 2.25-3.15 m near the net, bandeja overhead, volley before the bounce inside a volley zone that grows when the surface kills the bounce, forehand / backhand after the bounce) and which the player can reach in time (distance to the stand spot / run speed + the stroke's lead). A first pass skips samples right in front of a wall rebound so players let the ball come off the glass; a second pass accepts anything. The pair member with the best score takes the ball (with hysteresis), the other holds position. The stand spot is chosen from forehand or backhand, whichever is closer.\n- Style at the moment of the swing: smash / bandeja from high balls; volleys deep, angled or as drop volleys; lob when both opponents are at the net and the ball is low; drop shot when both are deep and I am near the net; drive otherwise. The target is the best of 12 random floor spots by distance from both opponents (plus depth and wall bonuses, plus noise) inside a range that depends on the style; flight times by style (drive ~17 m/s, smash ~26, lob ~2 s, ...). Errors: a random target error that depends on the level, the incoming ball speed, the player's running speed, how awkward the height is, and a fatigue factor that grows with the rally length (so marathons end); unforced errors (wide, long, into the tape) with a per-style probability.\n- Formation per pair: net / mid / back zones; the pair advances after a lob or an overhead, retreats when it reads a lob or a deep fast ball (apex above 4.3 m or a deep first bounce) and holds the net against short balls; the two players stay about 3.2 m apart across the court and follow the ball sideways. Serve positions: the server behind the line, his partner at the net, the receiver in the diagonal box area, his partner at the net.\n\nHUMAN CONTROL\n- Modes: Watch (default), play Azure, play Amber, two players on one keyboard (WASD + Space / J / K, and the arrows + Enter / . / /). The controlled player of a pair is the one who can reach the ball first (with a margin so it does not flicker); a yellow arrow floats over him and a ring on the floor shows where the incoming ball will bounce. Space serves (once to drop, again after the bounce; pressing early is queued) and in a rally swings: the stroke (forehand, backhand, volley, bandeja) is chosen from the ball's predicted height, bounce count and side. J smashes, K lobs. The direction held while hitting aims: sideways picks the corner, towards the opponents makes it deep, back makes it a soft drop. Shift sprints. Touch: a virtual stick and three round buttons (Hit, Smash, Lob) under the stage on coarse pointers.\n\nCAMERAS AND UI\n- Director camera (re-picks by rally): side TV, behind the server, behind a baseline, tactical high view, ball cam, a close celebration cut, an orbit after a match; fixed cameras Side TV, Baseline, Tactical, Ball cam, Island on keys 1-6. Zoom is given in metres of visible width, corrected for the stage aspect ratio. Drag to turn, wheel / pinch to zoom, Q / E rotate, L light, P pause, N new match, M sound, G glass / mesh, C repaint.\n- Masthead with the live score; a framed stage with a score-bug (two rows: kit, name, serving ball, completed sets, games, points; a header line with the format and golden point / advantage / tie-break), a rally shot counter, call-out captions (FAULT, LET, OUT, NET, SMASH, LOB, GOLDEN POINT, CHANGE ENDS, ACE, WALL WINNER ...), chips (live / paused, speed, surface, camera, wind) and the latest log line. Panel (below on phones): the court painter first, then match settings, how to play, view (camera, light, turn / zoom, pixel size, outlines, dither, raw 3D, sound, stands lift), a stats table, the rally log, a \"How it's drawn\" note with the palette swatches. No horizontal scroll at 390 px. Fonts Alfa Slab One, Oswald, Public Sans; CSS tokens with a dark scheme.\n- Sound with the Web Audio API only (off by default): the hollow \"pok\" of a racket (harder for smashes, softer for lobs), a bounce that sounds different on each surface (hard tick, soft clay thud, sand hiss, grass), glass thump with a ring, mesh rattle, the net, a whistle, crowd cheer, wind and birds.\n\nQUALITY BAR\n- Headless checks (step the simulation deterministically; software GL is far too slow for real time; apply the player poses every few steps because the held ball follows the hand): no console errors; soak runs of 900-2400 simulated seconds at every level, format and surface with no NaN, no player outside the court, no state stuck (pre < 3 s, serve < 3 s unless a human is serving, rally < 70 s), average rally 8-13 shots (sand shorter), a healthy mix of winners, errors and net points, some faults and aces; a unit test of the scoring that plays 900 random matches over all formats and both deuce rules and verifies set scores, tie-breaks, the serving order (including the 1-2-2-2 tie-break order) and change-of-ends flags; a scripted human completes serves and rallies; all panel buttons, keys and the touch buttons work; 390 px has no horizontal scroll; the repaint wipe is verified by sampling the canvas; scan the file for personal data before publishing."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Three.js",
+    "GPT-6.2 Astra"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 6723,
+    "likes": 152,
+    "replies": 31,
+    "reposts": 25,
+    "bookmarks": 75,
+    "checkedAt": "2026-11-24T10:54:36.226Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2124529630321246208/img/J52pWtwwSlOfODB8.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2124529630321246208/vid/avc1/720x936/RLjaIo04rajANhap.mp4?tag=29",
+    "width": 720,
+    "height": 936,
+    "durationSec": 17
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -149121,6 +150292,58 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124503876456038461",
+   "url": "https://x.com/yoshi_yurutsuri/status/2124503876456038461",
+   "author": {
+    "handle": "yoshi_yurutsuri",
+    "name": "Yoshi / よっしぃ"
+   },
+   "postedAt": "2026-11-22T14:02:50.000Z",
+   "addedAt": "2026-11-24",
+   "lang": "",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "代码生成音画同步孔版印刷风动画",
+    "en": "Audio-reactive risograph code animation"
+   },
+   "summary": {
+    "zh": "作者使用 Claude Opus 5.5 结合 Lemo-Opuscar 的“Risograph Print”风格，仅通过代码生成了随音乐变化色彩与光影的孔版印刷风视频。",
+    "en": "A risograph-style music-reactive video generated with code using Claude Opus 5.5 and the Risograph Print style from Lemo-Opuscar."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Lemo-Opuscar"
+   ],
+   "resources": [
+    "https://lemomo-ai.github.io/lemo-opuscar/styles/risograph/"
+   ],
+   "stats": {
+    "views": 5350,
+    "likes": 120,
+    "replies": 5,
+    "reposts": 7,
+    "bookmarks": 111,
+    "checkedAt": "2026-11-24T10:54:36.226Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2124503183900962816/img/MgTeYLtRthZZqcnR.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2124503183900962816/vid/avc1/1280x720/HgUJyNIQSAgpBs76.mp4?tag=14",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 63
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
