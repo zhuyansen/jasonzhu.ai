@@ -55,7 +55,7 @@ from pathlib import Path
 
 GEO = Path(__file__).resolve().parent
 PANEL = GEO / "panel"
-SETS = {"frozen": GEO / "questions.json", "real": GEO / "questions-real.json"}
+SETS = {"frozen": GEO / "questions.json", "real": GEO / "questions-real.json", "gsc": GEO / "questions-gsc.json"}
 EXPERIMENTS = GEO / "experiments.json"
 FACTS = GEO / "signature-facts.json"
 FACT_WINDOW = 80                # near 里的词要在数字前后这么多个字符内
@@ -81,7 +81,7 @@ DEFAULT_ENGINES = "chatgpt:3,gemini_app:3,ai_mode:3,perplexity:3"   # 都是每�
 CALIBERS = ("site_cited", "page_cited", "named", "first_pick", "fact_used", "absorbed")
 CALIBER_ZH = {"site_cited": "引用本站", "page_cited": "引用对应页面", "named": "正文点名", "first_pick": "排第一",
               "fact_used": "用了我们的数据", "absorbed": "用了没署名"}
-SET_ZH = {"frozen": "冻结组", "real": "真实问法组"}
+SET_ZH = {"frozen": "冻结组", "real": "真实问法组", "gsc": "Search Console 真题组"}
 MIN_CHARS = 200                 # 没有任何引用、正文又短于这个长度的，当作没答出来
 REFUSAL = re.compile(r"safety (filters?|checks?)|can(no|['’])t help with that|unable to (help|assist) with", re.I)
 RESULT_NAME = re.compile(r"^results-(\d{4}-\d{2}-\d{2})\.json$")
@@ -852,7 +852,7 @@ def main() -> int:
     ap = argparse.ArgumentParser(description="GEO 引用面板")
     sub = ap.add_subparsers(dest="cmd", required=True)
     r = sub.add_parser("run", help="问一遍、打分、写结果")
-    r.add_argument("--sets", default="frozen", help="题库，逗号分隔：frozen、real（默认 frozen）")
+    r.add_argument("--sets", default="frozen", help="题库，逗号分隔：frozen、real、gsc（默认 frozen）")
     r.add_argument("--engines", default=DEFAULT_ENGINES, help=f"引擎:次数，逗号分隔（默认 {DEFAULT_ENGINES}）")
     r.add_argument("--max-usd", type=float, default=3.0, help="这次最多花多少美元（默认 3）")
     r.add_argument("--limit", type=int, default=0, help="只问前 N 题（试跑用）")

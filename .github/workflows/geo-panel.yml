@@ -11,11 +11,18 @@
 #         每条查 Google 前 20，看我们排不排得上；先查 site:jasonzhu.ai 自检，第一条不是本站就写「测不出来」、不查排名
 #         再把 4 个品牌词各查 3 次（实体图谱的效果指标）。平时约 $1.5，每月第一个周一约 $4（fanout_usd 封顶，填 0 不跑）。计数提交到
 #         ops/geo/panel/fanout-<日期>.json，搜索词原文只进邮件和加密存档。这一步失败不挡面板本身。
+#   行动清单 ops/geo/fanout_actions.py：不另花钱，读面板和子查询的结果，出三张表进邮件：每道题的公共词（几次回答都用过的词）
+#         和题目页面比、页面上缺哪些词；每道题的代表搜索词和它的 Google 名次；AI 搜这些词时 Google 第一页上的外部网站，
+#         按能补上几道「我们没排上」的题排（投稿、请求收录先找它们）。页面按 ops/geo/demand.json（Search Console 展示数）排先后。
+#         计数提交到 ops/geo/panel/actions-<日期>.json。失败不挡后面。
+#   中文检查 ops/geo/zh_check.py：每月第一个周一，真实问法组的中文版问 ChatGPT 3 次、Claude 1 次，看 AI 用什么语言搜、
+#         引不引中文页（约 $1.8，zh_usd 封顶）。env 里 ZH_MONTHLY 是 "1" 才跑，默认关；计数提交到 ops/geo/panel/zh-<日期>.json。
 #   通知  摘要发到 ALERT_EMAIL。失败、或有的 AI 有效回答不到一半（结果不完整），也发邮件。
 #   手动  Actions → Run workflow。试跑填 limit=3、publish=0：只问前 3 题，不提交、不存档、不发邮件。
 #   改动  改页面前先在 ops/geo/experiments.json 记一笔（改了哪些题的页面、哪些故意不改），周报会按处理组和对照组分开算。
 #         两套题的题目都不要改，要加题就加新 id：ops/geo/questions.json 是冻结组，GIGALinks 的实验要在 12-01、12-15、01-01
 #         用同一套题复测；ops/geo/questions-real.json 改了题，前后就没法比。
+#         ops/geo/questions-gsc.json（Search Console 真题组，17 题）默认不跑：每周约多 $1.4，要跑就在 DEFAULT_SETS 加上 gsc。
 name: GEO 引用面板（每周）
 
 on:
@@ -24,7 +31,7 @@ on:
   workflow_dispatch:
     inputs:
       sets:
-        description: "题库，逗号分隔：frozen（冻结组）、real（真实问法组）；留空 = 定时任务用的那套"
+        description: "题库，逗号分隔：frozen（冻结组）、real（真实问法组）、gsc（Search Console 真题组）；留空 = 定时任务用的那套"
         default: ""
       engines:
         description: "引擎:次数，逗号分隔；留空 = 平时那四家各 3 次，每月第一个周一加 claude:1"
@@ -41,6 +48,9 @@ on:
       fanout_usd:
         description: "子查询这一步最多花多少美元；填 0 不跑"
         default: "6"
+      zh_usd:
+        description: "中文检查最多花多少美元（只在每月第一个周一、且 ZH_MONTHLY=1 时跑）；填 0 不跑"
+        default: "3"
 
 permissions:
   contents: write
@@ -50,7 +60,8 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  DEFAULT_SETS: frozen,real
+  DEFAULT_SETS: frozen,real          # 要加 Search Console 真题组：frozen,real,gsc（每周约多 $1.4）
+  ZH_MONTHLY: "0"                    # 每月第一个周一的中文检查：改成 "1" 才跑（每月约 $1.8）
   DEFAULT_ENGINES: chatgpt:3,gemini_app:3,ai_mode:3,perplexity:3
 
 jobs:
@@ -134,6 +145,45 @@ jobs:
           # 邮件里的附录接在面板附录后面
           [ -f "$RUNNER_TEMP/fanout.md" ] && { echo; cat "$RUNNER_TEMP/fanout.md"; } >> "$RUNNER_TEMP/appendix.md" || true
 
+      - name: 行动清单：改哪页、补哪些词、去哪些站（不花钱，失败不挡后面）
+        id: actions
+        continue-on-error: true
+        env:
+          DAY: ${{ steps.run.outputs.day }}
+          IN_SETS: ${{ inputs.sets }}
+          IN_LIMIT: ${{ inputs.limit }}
+          IN_PUBLISH: ${{ inputs.publish }}
+        run: |
+          python ops/geo/fanout_actions.py --selftest
+          ARGS=(--sets "${IN_SETS:-$DEFAULT_SETS}" --full "$RUNNER_TEMP/panel-full.json" --date "$DAY"
+                --public "ops/geo/panel/actions-$DAY.json" --appendix "$RUNNER_TEMP/actions.md")
+          [ -f "$RUNNER_TEMP/fanout-full.json" ] && ARGS+=(--archive "$RUNNER_TEMP/fanout-full.json")
+          [ -n "$IN_LIMIT" ] && ARGS+=(--limit "$IN_LIMIT")
+          [ "$IN_PUBLISH" = "0" ] && ARGS+=(--dry)
+          python ops/geo/fanout_actions.py run "${ARGS[@]}" | tee -a "$GITHUB_STEP_SUMMARY"
+          [ -f "$RUNNER_TEMP/actions.md" ] && { echo; cat "$RUNNER_TEMP/actions.md"; } >> "$RUNNER_TEMP/appendix.md" || true
+
+      - name: 中文检查（每月第一个周一，ZH_MONTHLY=1 才跑，失败不挡后面）
+        id: zh
+        continue-on-error: true
+        env:
+          AISA_API_KEY: ${{ secrets.AISA_API_KEY }}
+          DAY: ${{ steps.run.outputs.day }}
+          IN_LIMIT: ${{ inputs.limit }}
+          IN_PUBLISH: ${{ inputs.publish }}
+          IN_ZH_USD: ${{ inputs.zh_usd }}
+        run: |
+          USD="${IN_ZH_USD:-3}"
+          if [ "$ZH_MONTHLY" != "1" ] || [ "$USD" = "0" ]; then echo "中文检查没开（ZH_MONTHLY=$ZH_MONTHLY，zh_usd=$USD）"; exit 0; fi
+          if [ "$(TZ=Asia/Shanghai date +%-d)" -gt 7 ] && [ "$GITHUB_EVENT_NAME" = "schedule" ]; then echo "不是每月第一个周一，不跑"; exit 0; fi
+          python ops/geo/zh_check.py --selftest
+          ARGS=(--max-usd "$USD" --date "$DAY" --public "ops/geo/panel/zh-$DAY.json" --appendix "$RUNNER_TEMP/zh.md"
+                --archive "$RUNNER_TEMP/zh-full.json")
+          [ -n "$IN_LIMIT" ] && ARGS+=(--limit "$IN_LIMIT")
+          [ "$IN_PUBLISH" = "0" ] && ARGS+=(--dry)
+          python ops/geo/zh_check.py run "${ARGS[@]}" | tee -a "$GITHUB_STEP_SUMMARY"
+          [ -f "$RUNNER_TEMP/zh.md" ] && { echo; cat "$RUNNER_TEMP/zh.md"; } >> "$RUNNER_TEMP/appendix.md" || true
+
       - name: 提交分数
         if: (inputs.publish || '1') != '0'
         env:
@@ -143,6 +193,8 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add "ops/geo/panel/results-$DAY.json" "ops/geo/panel/summary-$DAY.md"
           [ -f "ops/geo/panel/fanout-$DAY.json" ] && git add "ops/geo/panel/fanout-$DAY.json"
+          [ -f "ops/geo/panel/actions-$DAY.json" ] && git add "ops/geo/panel/actions-$DAY.json"
+          [ -f "ops/geo/panel/zh-$DAY.json" ] && git add "ops/geo/panel/zh-$DAY.json"
           if git diff --cached --quiet; then echo "没有新结果可提交"; exit 0; fi
           git commit -q -m "GEO 引用面板 $DAY"
           git pull -q --rebase origin main
@@ -172,6 +224,10 @@ jobs:
           if [ -f "$RUNNER_TEMP/fanout-full.json" ]; then
             gzip -c "$RUNNER_TEMP/fanout-full.json" | openssl enc -aes-256-cbc -pbkdf2 -iter 200000 -salt -pass env:SELLER_STATE_KEY -out "$RUNNER_TEMP/fanout-$DAY.json.gz.enc"
             gh release upload geo-panel-state "$RUNNER_TEMP/fanout-$DAY.json.gz.enc" --clobber -R "$GITHUB_REPOSITORY"
+          fi
+          if [ -f "$RUNNER_TEMP/zh-full.json" ]; then
+            gzip -c "$RUNNER_TEMP/zh-full.json" | openssl enc -aes-256-cbc -pbkdf2 -iter 200000 -salt -pass env:SELLER_STATE_KEY -out "$RUNNER_TEMP/zh-$DAY.json.gz.enc"
+            gh release upload geo-panel-state "$RUNNER_TEMP/zh-$DAY.json.gz.enc" --clobber -R "$GITHUB_REPOSITORY"
           fi
           echo "已存档：$(du -h "$RUNNER_TEMP/panel-$DAY.json.gz.enc" | cut -f1)"
 

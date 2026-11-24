@@ -1,0 +1,24 @@
+{
+  "generated": "2026-11-24",
+  "site": "jasonzhu.ai",
+  "_说明": "Search Console 真题组：都是 Google Search Console 里近 3 个月（2026-08-21 到 11-21）真实出现、展示 ≥ 15 次的查询，原样照用，不带品牌名；target_url 是这个查询实际落到的页面（query × page）。和 questions-real.json 里 5 道 gsc 题不重复。选题偏提示词库和学习页：全站的展示和点击主要在这两块，出海专题只占约 1.5%（2026-11-21 复盘）。人搜的是 2–8 个词的短词，AI 会自己扩写成 10 个词左右的搜索，这组题正好看「短词 → AI 搜索词」。题目定了就不要改，要加题就加新 id。默认不进每周运行，要 Jason 确认费用后在工作流的 DEFAULT_SETS 加上 gsc。",
+  "questions": [
+    {"id": "gsc-fable-55", "kind": "gsc", "question": "fable 5.5", "target_url": "https://jasonzhu.ai/en/prompts/claude-opus-5-5/fable-5-5", "impressions": 359},
+    {"id": "gsc-openai-startup-credits", "kind": "gsc", "question": "openai startup credits", "target_url": "https://jasonzhu.ai/en/blog/openai-startup-credits-application-guide", "impressions": 293},
+    {"id": "gsc-deep-learning-nvidia-course", "kind": "gsc", "question": "deep learning nvidia course", "target_url": "https://jasonzhu.ai/en/blog/nvidia-dli-free-courses", "impressions": 98},
+    {"id": "gsc-deep-learning-institute", "kind": "gsc", "question": "deep learning institute", "target_url": "https://jasonzhu.ai/en/blog/nvidia-dli-free-courses", "impressions": 81},
+    {"id": "gsc-best-nvidia-dli-beginners", "kind": "gsc", "question": "best nvidia dli courses for beginners", "target_url": "https://jasonzhu.ai/en/blog/nvidia-dli-free-courses", "impressions": 22},
+    {"id": "gsc-ai-certifications-big-three", "kind": "gsc", "question": "does openai or anthropic or microsoft offer ai certifications", "target_url": "https://jasonzhu.ai/en/blog/openai-academy-vs-anthropic-learning-paths", "impressions": 54},
+    {"id": "gsc-openai-vs-anthropic-academy", "kind": "gsc", "question": "openai academy vs anthropic academy", "target_url": "https://jasonzhu.ai/en/blog/openai-academy-vs-anthropic-learning-paths", "impressions": 48},
+    {"id": "gsc-anthropic-alternatives-platforms", "kind": "gsc", "question": "best online platforms for anthropic ai course alternatives", "target_url": "https://jasonzhu.ai/en/blog/openai-academy-vs-anthropic-learning-paths", "impressions": 34},
+    {"id": "gsc-yunwu-api", "kind": "gsc", "question": "yunwu api", "target_url": "https://jasonzhu.ai/en/blog/ai-proxy-services-recommendation", "impressions": 77},
+    {"id": "gsc-agent-three-pillars", "kind": "gsc", "question": "ai agent harness framework skill memory protocol three pillars", "target_url": "https://jasonzhu.ai/en/blog/ai-agent-complete-picture", "impressions": 25},
+    {"id": "gsc-dragon-ball-fighterz-port", "kind": "gsc", "question": "dragon ball fighterz port", "target_url": "https://jasonzhu.ai/en/prompts/claude-opus-5-5/2106363469519872338", "impressions": 93},
+    {"id": "gsc-colorfigures-github", "kind": "gsc", "question": "colorfigures github", "target_url": "https://jasonzhu.ai/en/prompts/claude-opus-5-5/2112220170727080328", "impressions": 83},
+    {"id": "gsc-opus-55-pcb-design", "kind": "gsc", "question": "opus 5.5 pcb design", "target_url": "https://jasonzhu.ai/en/prompts/claude-opus-5-5/2102948414824812739", "impressions": 64},
+    {"id": "gsc-minecraft-opus-55", "kind": "gsc", "question": "minecraft opus 5.5", "target_url": "https://jasonzhu.ai/en/prompts/claude-opus-5-5/2102470200415166699", "impressions": 29},
+    {"id": "gsc-roblox-opus-55", "kind": "gsc", "question": "roblox opus 5.5", "target_url": "https://jasonzhu.ai/en/prompts/claude-opus-5-5/2102487879809126834", "impressions": 25},
+    {"id": "gsc-fallout-new-york-browser", "kind": "gsc", "question": "fallout new york browser", "target_url": "https://jasonzhu.ai/en/prompts/claude-opus-5-5/2104644598626934858", "impressions": 22},
+    {"id": "gsc-video-to-live-photo-zh", "kind": "gsc", "question": "视频转live photo", "target_url": "https://jasonzhu.ai/zh/blog/video-to-live-photo", "impressions": 18}
+  ]
+}

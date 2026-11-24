@@ -10,6 +10,12 @@
 | `panel_run.py` | 读题库、调 backlink-guard 的 `asked` 提问、打分、出摘要、发邮件。`--selftest` 不联网 |
 | `fanout.py` | 子查询：AI 回答每道题前实际搜了什么，我们在这些搜索里排第几。见下面「子查询」。`--selftest` 不联网 |
 | `panel/fanout-<日期>.json` | 每次子查询的计数（每题搜了几条、我们排上几条、缺口几条），不含搜索词原文 |
+| `fanout_actions.py` | 行动清单：页面缺哪些公共词、每题代表搜索词的名次、外部网站覆盖表，进邮件。不另花钱，`--selftest` 不联网 |
+| `panel/actions-<日期>.json` | 每次行动清单的计数（每题公共词几个、页面缺几个、代表搜索词名次），不含搜索词和别的网站 |
+| `demand.json` | Search Console 近 3 个月各页面的展示和点击，行动清单用它排先后。每月更新（`fanout_actions.py demand`） |
+| `questions-gsc.json` | Search Console 真题组 17 题，原样照用。默认不跑，题目同样不要改 |
+| `questions-real-zh.json`、`zh_check.py` | 真实问法组的中文版和每月中文检查（AI 用中文提问时用什么语言搜）。默认不跑 |
+| `panel/zh-<日期>.json` | 每次中文检查的计数，不含搜索词 |
 | `questions.json` | 冻结组 21 题。**不要改题目**：GIGALinks 的实验要在 12-01、12-15、01-01 用同一套题复测。`measurement_protocol` 照实际做法记（每家每题几次、哪家走 API），只是记录，问法由工作流定 |
 | `questions-real.json` | 真实问法组 30 题，都不带品牌名。25 题是三家 AI 写的「买家会怎么问」，5 题是 Google 上真实出现的查询。2026-11-23 起每周跑，题目同样不要改 |
 | `experiments.json` | 改动记录和对照实验的分组 |
@@ -100,6 +106,66 @@ AI 搜的那几条词下面有没有我们。面板问完之后，`fanout.py` �
 只看邮件里的这一段，不和面板的六个口径混算。搜索词同一题每周都会变（措辞、条数），**看的是缺口在不在缩小、
 排上的词多不多，不看某一条词**。各家措辞不同，同一意思写法不一样就算不同的词，「几家共搜」会偏少。
 
+## 行动清单（2026-11-24 起）
+
+`fanout_actions.py` 接在子查询后面，不另花钱。它读面板和子查询的结果，把缺口变成能动手的三张表，放进邮件：
+
+1. **先改哪些页、补哪些词。**
+   - 每道题挑出「公共词」：几次回答里至少两次都用过的词。同一题问 3 次，整句几乎每次都变（两次之间原样相同的只有 7–16%），
+     但 83–86% 的用词就是这批词。
+   - 把公共词和题目对应的页面正文比，列出页面上没有的词。
+   - 再看 AI 常拼进搜索词、页面上却一个都没有的几类词：条件（资格、要求、材料、审核）、成本（费用、价格）、适用对象
+     （地区、身份）、年份。
+   - 页面按 `demand.json` 排先后，也就是 Search Console 近 3 个月的展示数：有人搜的先改。
+2. **代表搜索词。** 每道题挑一条覆盖公共词最多的真实搜索词，报它的 Google 名次。整句每周会变，但「这道题最典型的那条搜索」
+   可以逐周比。
+3. **外部网站。** AI 搜这些词时，Google 第一页上的网站按能补上几道「我们一条都没排上」的题排（Rochwerger 的 publisher-first）。
+   - 平台（Reddit、YouTube、LinkedIn……）自己去发；
+   - 媒体、博客去投稿或请求收录；
+   - 官方站（stripe.com、irs.gov……）只能在页面里引用、链接，单独列一行，不参与排名。
+
+缺的词要先判断再补，不能照单全收：
+- 有的是 AI 理解偏了：问 fable 5.5，AI 去搜 Xbox 上的游戏《Fable》。这时该在页面上写清楚「不是那个」，不是把词补进去。
+- 竞品名是 AI 拿来对比的那一圈，页面上写到它们，才进得了对比类的搜索。
+
+改了页面，照样先在 `experiments.json` 记一笔。计数（每题公共词几个、页面缺几个、代表搜索词名次）提交到
+`ops/geo/panel/actions-<日期>.json`，看的是缺的词在不在变少，不看单周。
+
+`demand.json` 每月更新一次：在 Search Console 导出页面维度（或用 openseo 的 `get_search_console_performance`，
+dimensions=["page"]），然后跑 `python3 ops/geo/fanout_actions.py demand 导出文件.json`。
+
+### AI 的搜索词长什么样（2026-11-24 的研究摘要）
+
+把 11-21、11-23 两次面板和三轮中英文测试里的约 1,300 条搜索词，和 Search Console 里人搜的词放在一起拆开看：
+
+- **人搜的：** 中位 3 个词，基本只有一个名字（fable 5.5、openai startup credits）。
+- **ChatGPT 搜的：** 中位 11 个词，一条里拼 4 类词：主体 + 条件或成本 + 适用对象 + 来源（official、site:）+ 年份。
+  - 题目里没有、它自己加的词：2026 在 40–55% 的搜索里，official 29–34%，pricing 20–21%，site: 12%。site: 几乎都指向官方站和政府站。
+  - 41–49% 的搜索写进了题目没提的品牌，也就是它拿来对比的那一圈。
+- **Claude 搜的：** 7 个词、3 类；**Gemini（接口）搜的：** 5–6 个词、2 类，最接近人搜的样子。
+- **用中文问：** ChatGPT 238 条搜索词里 237 条是英文，换成新加坡地区加中文界面也是 99.6%；用词和英文提问几乎一样。
+  Claude 75% 英文，引用的网页里 24% 是中文页。中文用户问 AI 出海问题，答案主要引英文页。
+- best、top、reviews 很少（1–5%）：这批题是查规则、查官方信息，不是挑商品，和 Peec 在消费品上看到的不一样。
+
+## 新题组和中文检查（2026-11-24 加，默认都不跑）
+
+- **Search Console 真题组** `questions-gsc.json`：17 道 Search Console 里真实出现的查询，原样照用，偏提示词库和学习页
+  （全站的展示和点击主要在这两块）。每周约多 $1.4（每月第一个周一再多约 $1.5）。要跑就把工作流的 `DEFAULT_SETS` 改成
+  `frozen,real,gsc`；周报里它单独一张表，不影响冻结组和真实问法组前后的比较。
+- **中文检查** `zh_check.py`：每月第一个周一，真实问法组的中文版（`questions-real-zh.json`）问 ChatGPT 3 次、Claude 1 次，
+  看英文搜索词占比、引用中文页的比例、引用本站哪一页，约 $1.8。要跑就把工作流 env 里的 `ZH_MONTHLY` 改成 `"1"`。
+
+## 2027 年 1 月起的测量改法（GIGALinks 实验结束后再动）
+
+冻结组在 12-01、12-15、01-01 要给 GIGALinks 实验复测，在那之前问法不动。之后按 11-21 复盘的建议改，总花费基本不变：
+
+1. 每周一问 3 次，改成周一、周三、周五各问 1 次：同一时刻的 3 次几乎一样，有效样本是题数；分三天问，才看得出波动。
+2. Perplexity 只问 1 次：它的接口每次回答几乎一样，省下的钱用来加题。
+3. 题量加到 100–150 题：
+   - 冻结组照旧每次都问；
+   - 新题来自 Search Console 和 Bing 站长后台的 AI Performance（Copilot 真实搜过、引用了本站的词）。
+4. 改的那一周在 `experiments.json` 记一笔，周报会在运行配置里标出来；前后两段不直接比。
+
 ## 花费
 
 每个回答：ChatGPT、Gemini App、Google AI Mode $0.004，Perplexity 约 $0.006，Claude 约 $0.045。
@@ -125,6 +191,10 @@ python3 ops/geo/panel_run.py run --sets frozen --limit 3 --dry          # 试跑
 python3 ops/geo/panel_run.py summary ops/geo/panel/results-<日期>.json   # 从结果重新出摘要
 python3 ops/geo/fanout.py --selftest
 python3 ops/geo/fanout.py run --sets real --limit 2 --max-usd 0.5 --dry   # 试跑 2 题子查询（约 $0.1）
+python3 ops/geo/fanout_actions.py --selftest
+python3 ops/geo/fanout_actions.py run --sets frozen,real --full 面板完整结果.json --archive 子查询完整结果.json --dry
+python3 ops/geo/zh_check.py --selftest
+python3 ops/geo/zh_check.py run --limit 2 --max-usd 0.3 --dry          # 试跑 2 题中文检查（约 $0.13）
 ```
 
 本机要先 `pip install "backlink-guard>=0.12"`（`gemini_app` 引擎从 0.12.0 起有）并 `aisa login`。

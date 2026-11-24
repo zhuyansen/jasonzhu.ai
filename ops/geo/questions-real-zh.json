@@ -1,0 +1,217 @@
+{
+ "generated": "2026-11-24",
+ "site": "jasonzhu.ai",
+ "_说明": "真实问法组 30 题的中文版（按国内创始人的说法写，产品名保留英文），只给 zh_check.py 每月查一次「用中文问时 AI 用什么语言搜、引不引中文页」，不进每周面板。id 在原题 id 前加 zh-，question_en 是原题；target_url 是原题页面的中文版。2026-11-23 第一次手动测：ChatGPT 238 条搜索词 237 条英文，换成新加坡加中文界面也一样（99.6%）；Claude 75% 英文、引用里 24% 是中文页。题目定了就不要改，要加题就加新 id。",
+ "questions": [
+  {
+   "id": "zh-real-pay-china-founder",
+   "kind": "assistant",
+   "question": "我一个人在国内做 AI SaaS 工具，想卖给全球用户，能直接用 Stripe 收款吗？还是得用 Paddle、Polar 这类 MoR 平台？",
+   "question_en": "I'm a solo founder building an AI SaaS tool in China, can I sell to global customers using Stripe, or do I need Paddle, Polar, or another merchant of record?",
+   "target_url": "https://jasonzhu.ai/zh/go-global/open-account"
+  },
+  {
+   "id": "zh-real-pay-mor-tax",
+   "kind": "assistant",
+   "question": "做 AI SaaS 的独立开发者，不想请会计，又要处理好 VAT 和销售税，有哪些 MoR 平台可以选？",
+   "question_en": "What merchant of record options exist for an AI SaaS founder who wants to handle VAT and sales tax without hiring an accountant?",
+   "target_url": "https://jasonzhu.ai/zh/blog/choose-payment-platform-2026"
+  },
+  {
+   "id": "zh-real-pay-compare-six",
+   "kind": "assistant",
+   "question": "对比一下 Stripe、Paddle、Creem、Dodo Payments、Polar 和 Lemon Squeezy：手续费、提现、税务处理，以及支不支持中国大陆的卖家。",
+   "question_en": "Compare Stripe, Paddle, Creem, Dodo Payments, Polar and Lemon Squeezy on fees, payouts, tax handling, and whether they support sellers based in mainland China.",
+   "target_url": "https://jasonzhu.ai/zh/blog/choose-payment-platform-2026"
+  },
+  {
+   "id": "zh-real-pay-tax-headaches",
+   "kind": "assistant",
+   "question": "独立开发者想在全球卖订阅，又不想被税务搞得头大，用哪个支付平台最好？",
+   "question_en": "What payment platforms are best for indie hackers who want to sell subscriptions globally and avoid tax headaches?",
+   "target_url": "https://jasonzhu.ai/zh/go-global/payments"
+  },
+  {
+   "id": "zh-real-pay-creem-vs-dodo",
+   "kind": "assistant",
+   "question": "小卖家卖数字产品，Creem 和 Dodo Payments 实际差别在哪？尤其是开户要求和审核要多久。",
+   "question_en": "What are the realistic differences between Creem and Dodo Payments for a small digital product seller, especially around onboarding requirements and approval times?",
+   "target_url": "https://jasonzhu.ai/zh/go-global/open-account"
+  },
+  {
+   "id": "zh-real-pay-fastest-approval",
+   "kind": "assistant",
+   "question": "我在深圳，做的独立 App 要收 100 多个国家用户的钱。哪个支付平台开户审核最快？要交哪些材料？",
+   "question_en": "My indie app takes payments from customers in over 100 countries and I'm based in Shenzhen; walk me through which payment platform would approve my account fastest and what documents I'd need to submit.",
+   "target_url": "https://jasonzhu.ai/zh/go-global/open-account"
+  },
+  {
+   "id": "zh-real-co-us-llc-nonresident",
+   "kind": "assistant",
+   "question": "非美国居民人在海外，怎么注册美国 LLC？",
+   "question_en": "How do I set up a US LLC from abroad as a non-resident founder?",
+   "target_url": "https://jasonzhu.ai/zh/blog/us-llc-mercury-stripe-168-usd"
+  },
+  {
+   "id": "zh-real-co-mercury-docs",
+   "kind": "assistant",
+   "question": "非美国居民能给 LLC 开 Mercury 账户吗？需要哪些材料？",
+   "question_en": "Can non-US residents open a Mercury account for an LLC, and what documents do they need?",
+   "target_url": "https://jasonzhu.ai/zh/blog/us-llc-mercury-stripe-168-usd"
+  },
+  {
+   "id": "zh-real-co-ein-no-ssn",
+   "kind": "assistant",
+   "question": "外国人持有的单成员 LLC 申请 EIN，和普通的有什么不同？没有 SSN 怎么申请？",
+   "question_en": "What's the difference between an EIN application for a foreign-owned single-member LLC and a regular one, and how do I apply without an SSN?",
+   "target_url": "https://jasonzhu.ai/zh/blog/us-llc-developer-accounts"
+  },
+  {
+   "id": "zh-real-co-wise-director-abroad",
+   "kind": "assistant",
+   "question": "董事不住在英国，怎么给英国有限公司开 Wise Business 账户？",
+   "question_en": "Steps to open a Wise Business account for a UK limited company when the director lives outside the UK",
+   "target_url": "https://jasonzhu.ai/zh/blog/uk-company-wise-business-account"
+  },
+  {
+   "id": "zh-real-co-uk-from-overseas",
+   "kind": "assistant",
+   "question": "人在海外，怎么一步步注册英国有限公司，再开商业银行账户？",
+   "question_en": "Step-by-step guide to forming a UK limited company from overseas and opening business bank accounts",
+   "target_url": "https://jasonzhu.ai/zh/blog/uk-company-registration-2hours"
+  },
+  {
+   "id": "zh-real-co-us-or-uk-remote",
+   "kind": "assistant",
+   "question": "远程注册美国或英国公司、开收款账户，最简单的办法是什么？",
+   "question_en": "What’s the easiest way to register a company in the US or UK and open payments accounts remotely?",
+   "target_url": "https://jasonzhu.ai/zh/go-global"
+  },
+  {
+   "id": "zh-real-prompts-opus-examples",
+   "kind": "assistant",
+   "question": "我想要一些 Claude Opus 5.5 的提示词示例，能给我几个吗？",
+   "question_en": "I need prompt examples for Claude Opus 5.5—can you show me a few?",
+   "target_url": "https://jasonzhu.ai/zh/prompts/claude-opus-5-5"
+  },
+  {
+   "id": "zh-real-prompts-gallery",
+   "kind": "assistant",
+   "question": "哪里能找到提示词效果展示的合集？",
+   "question_en": "Where can I find a gallery of prompt showcase examples?",
+   "target_url": "https://jasonzhu.ai/zh/prompts"
+  },
+  {
+   "id": "zh-real-prompts-images-mockups",
+   "kind": "assistant",
+   "question": "有哪些大家实际用过的 ChatGPT Images 2.6 提示词，能给一个小咖啡品牌做产品样机图？",
+   "question_en": "What are some good real-world prompts people have used with ChatGPT Images 2.6 for creating product mockups for a small coffee brand?",
+   "target_url": "https://jasonzhu.ai/zh/prompts/chatgpt-images-2-6"
+  },
+  {
+   "id": "zh-real-prompts-three-models",
+   "kind": "assistant",
+   "question": "给我看一些 Claude Opus 5.5、ChatGPT Images 2.6 和 Gemini 4 的真实提示词案例。",
+   "question_en": "Show me real-world prompt examples for Claude Opus 5.5, ChatGPT Images 2.6, and Gemini 4.",
+   "target_url": "https://jasonzhu.ai/zh/prompts"
+  },
+  {
+   "id": "zh-real-learn-anthropic-free",
+   "kind": "assistant",
+   "question": "Anthropic 官方有哪些学 Claude 的免费 AI 课程？",
+   "question_en": "What free official AI courses does Anthropic offer for learning Claude?",
+   "target_url": "https://jasonzhu.ai/zh/blog/openai-academy-vs-anthropic-learning-paths"
+  },
+  {
+   "id": "zh-real-learn-nvidia-dli",
+   "kind": "assistant",
+   "question": "哪里能找到英伟达的免费深度学习培训，比如深度学习学院（DLI）的课程？",
+   "question_en": "Where can I find NVIDIA's free deep learning training, like the Deep Learning Institute courses?",
+   "target_url": "https://jasonzhu.ai/zh/blog/nvidia-dli-free-courses"
+  },
+  {
+   "id": "zh-real-learn-roadmap",
+   "kind": "assistant",
+   "question": "我想要一份官方出的、从入门到进阶的免费 AI 学习路线，应该从哪开始？",
+   "question_en": "I want a free beginner-to-advanced AI learning roadmap from official providers. Where should I start?",
+   "target_url": "https://jasonzhu.ai/zh/blog/ai-free-learning-hub"
+  },
+  {
+   "id": "zh-real-learn-manager",
+   "kind": "assistant",
+   "question": "我是不懂技术的管理者，想搞明白大语言模型怎么工作、工作里怎么用。Anthropic、OpenAI、英伟达、Google 的官方免费课程，哪些适合我？按什么顺序学？",
+   "question_en": "I'm a non-technical manager who wants to understand how large language models work and how to use them at work. Which official free courses from Anthropic, OpenAI, NVIDIA, or Google would suit me, and in what order should I take them?",
+   "target_url": "https://jasonzhu.ai/zh/blog/ai-free-learning-hub"
+  },
+  {
+   "id": "zh-real-learn-certifications",
+   "kind": "assistant",
+   "question": "帮我找大公司出的官方免费 AI 课程和证书。",
+   "question_en": "Help me find official free courses and certifications for AI from major companies.",
+   "target_url": "https://jasonzhu.ai/zh/blog/ai-free-learning-hub"
+  },
+  {
+   "id": "zh-real-weekly-new-paid",
+   "kind": "assistant",
+   "question": "这周有哪些新的独立软件和 AI 产品开始收费了？",
+   "question_en": "What new indie software and AI products started taking payments this week?",
+   "target_url": "https://jasonzhu.ai/zh/go-global/weekly"
+  },
+  {
+   "id": "zh-real-weekly-ideas",
+   "kind": "assistant",
+   "question": "给我看一些新鲜的独立软件点子，来自最近才开通收款或付费套餐的产品。",
+   "question_en": "Show me fresh indie software ideas from products that only recently turned on billing, payments, or paid plans.",
+   "target_url": "https://jasonzhu.ai/zh/go-global/weekly"
+  },
+  {
+   "id": "zh-real-weekly-roundup",
+   "kind": "assistant",
+   "question": "我想每周看一份刚开始赚钱的独立软件和 AI 产品清单，该看哪里？",
+   "question_en": "I want a weekly list of new indie software and AI products that have just started making money; what should I look at?",
+   "target_url": "https://jasonzhu.ai/zh/go-global/weekly"
+  },
+  {
+   "id": "zh-real-weekly-solo-paid",
+   "kind": "assistant",
+   "question": "我在找最近从免费内测转成付费的独立开发者 SaaS。能列出这周开始收费的产品和它们的价格吗？",
+   "question_en": "I'm looking for solo-developer SaaS apps that recently switched from free beta to paid pricing. Can you list any that went live with payments this week and what they charge?",
+   "target_url": "https://jasonzhu.ai/zh/go-global/weekly"
+  },
+  {
+   "id": "zh-gsc-fable-55-release-date",
+   "kind": "gsc",
+   "question": "fable 5.5 发布时间",
+   "question_en": "fable 5.5 release date",
+   "target_url": "https://jasonzhu.ai/zh/prompts/claude-opus-5-5/fable-5-5"
+  },
+  {
+   "id": "zh-gsc-anthropic-course-alternatives",
+   "kind": "gsc",
+   "question": "anthropic ai 课程 替代",
+   "question_en": "anthropic ai course alternatives",
+   "target_url": "https://jasonzhu.ai/zh/blog/openai-academy-vs-anthropic-learning-paths"
+  },
+  {
+   "id": "zh-gsc-nvidia-dli-free-courses",
+   "kind": "gsc",
+   "question": "英伟达 深度学习学院 免费课程",
+   "question_en": "nvidia deep learning institute free courses",
+   "target_url": "https://jasonzhu.ai/zh/blog/nvidia-dli-free-courses"
+  },
+  {
+   "id": "zh-gsc-openai-academy-alternatives",
+   "kind": "gsc",
+   "question": "openai academy 替代",
+   "question_en": "openai academy alternatives",
+   "target_url": "https://jasonzhu.ai/zh/blog/openai-academy-vs-anthropic-learning-paths"
+  },
+  {
+   "id": "zh-gsc-opus-55-pixel-art",
+   "kind": "gsc",
+   "question": "opus 5.5 像素画",
+   "question_en": "opus 5.5 pixel art",
+   "target_url": "https://jasonzhu.ai/zh/prompts/claude-opus-5-5"
+  }
+ ]
+}
