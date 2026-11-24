@@ -15,6 +15,7 @@
 | 事项 | 谁 | 什么时候 | 状态 |
 |---|---|---|---|
 | 第一次带新检查的定时运行：「分数进了仓库」那步通过、子查询自检通过、邮件里有品牌词名次 | Claude | 2026-11-30（周一）跑完后 | ⏳ |
+| Search Console 看 4 个品牌词（jasonzhu.ai、jasonzhu ai、jason zhu gosail、gosail club）的展示和名次：v2.4 定了要做，还没做 | Claude | 和 11-30 的读数一起 | ⏳ |
 | OpenAlex：130K 数据集（W7167922915）还挂在 A5009989201「竹彦 森」名下，按 ORCID 查不到作者（11-24 查） | OpenAlex 客服 | 等回复；回复发到你 OpenAlex 账号的邮箱 | 🟡 11-24 Claude 在你的 Chrome 里用你的 OpenAlex 账号提了工单（请求 28329）；认领、合并作者页不做 |
 | B 站改名、写简介（现在是「香菇的猪」、简介空），改好后告诉 Claude 加回 sameAs | 你 | 不急 | ⬜ 11-24 已从 sameAs 拿掉 |
 | 学术外联 | 你 | 等回复 | 🟡 两封邮件（SkillProbe 一作、NVIDIA 一作）和更正信都已发，LinkedIn 邀请已发；不再追加。回复记在 `~/出海/specs/2026-11-22-academic-outreach.md` 末尾 |
