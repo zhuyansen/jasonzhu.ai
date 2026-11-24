@@ -1,5 +1,91 @@
 [
   {
+    "slug": "2026-11-25",
+    "date": "2026-11-25",
+    "title": "AI 快讯 · 11月25日",
+    "items": [
+      {
+        "title": "Superpowers开源智能体技能框架与开发方法论",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/obra/superpowers",
+        "summary": "开源项目 Superpowers 为编码智能体提供可组合技能框架与开发方法论，适配 Claude Code、Cursor、Codex CLI 与 Gemini 等工具，通过初始指令约束智能体按规范执行开发，提升复杂项目交付稳定性。",
+        "titleEn": "Superpowers Open-Sources Agentic Skills Framework for Coding Agents",
+        "summaryEn": "Superpowers provides a composable agentic skills framework and structured software development methodology for coding agents including Claude Code, Cursor, Codex CLI, and Gemini. By pairing modular skills with strict initial instructions, it helps developers standardize how agents plan, build, and verify code across complex engineering workflows."
+      },
+      {
+        "title": "英伟达迎回创始人黄仁勋，OpenAI公开预训练曲线",
+        "source": "Latent Space",
+        "category": "AI 工具动态",
+        "url": "https://latent.space/p/ainews-jensen-is-back-and-openai-shows-its-pretraining-curve-joined-by-microsoft/",
+        "summary": "据 Latent Space 报道，英伟达正式迎回创始人回归掌舵；同日 OpenAI 罕见公开内部预训练损失曲线，并联合微软提出共享训练算力上限倡议，揭示大模型规模化演进与行业算力治理新动向。",
+        "titleEn": "Nvidia Reinstates Founder as OpenAI Shares Pretraining Curve",
+        "summaryEn": "Nvidia has reinstated its founder, marking a major leadership turn for the AI chipmaker. Meanwhile, OpenAI published its internal pretraining loss curve and, joined by Microsoft, proposed a shared training limit, offering rare transparency into scaling laws and emerging industry guardrails for frontier compute."
+      },
+      {
+        "title": "OpenAI联合思科开源Linux安全运行时Shirudo",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/introducing-shirudo",
+        "summary": "OpenAI 与思科联合推出开源 Linux 运行时工具 Shirudo，用于在系统打补丁期间持续保护正在运行的服务。对运维与基础设施团队而言，该工具可降低漏洞修复窗口期的被攻击风险，提升生产环境稳定性。",
+        "titleEn": "OpenAI and Cisco Open-Source Shirudo Runtime for Linux",
+        "summaryEn": "OpenAI and Cisco have introduced Shirudo, an open-source Linux runtime designed to protect running systems while security patches are being rolled out. For infrastructure and security teams, it reduces exposure during patch windows and helps keep production workloads safe without immediate downtime."
+      },
+      {
+        "title": "GPT-6展现原生蛋白质设计能力，五项靶点获实验验证",
+        "source": "OpenAI Blog",
+        "category": "AI 工具动态",
+        "url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities",
+        "summary": "OpenAI 公布 GPT-6 系列模型最新科学进展，模型可通过推理与代码生成直接设计蛋白质结构与序列，并在实验室测试中对五个靶点展现出结合证据，标志着通用大模型在生物医药研发中的实用化迈出关键一步。",
+        "titleEn": "GPT-6 Demonstrates Intrinsic Protein-Design Capabilities in Lab Tests",
+        "summaryEn": "OpenAI revealed that GPT-6 models can intrinsically design protein structures and sequences using reasoning and code generation. Laboratory experiments found binding evidence across five targets, highlighting how general-purpose frontier models are moving beyond text and coding into verifiable wet-lab biological engineering."
+      },
+      {
+        "title": "Beam模型发布：23B激活参数实现百万上下文推理",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2611.26358",
+        "summary": "Beam 是面向编码与智能体的稀疏 MoE 模型（总参 501.3B、激活 23.4B），支持百万级上下文。它仅需同类模型 1/4 至 1/3 的推理算力即可达到前沿推理水平，大幅降低长代码库 Agent 部署成本。",
+        "titleEn": "Beam MoE Model Delivers Frontier Reasoning With 1M Context",
+        "summaryEn": "Beam is a 501.3B-total, 23.4B-active sparse MoE model engineered for coding, reasoning, and agentic workloads with a 1M-token context window. By achieving frontier reasoning with three to four times less inference compute, it gives developers a far more cost-efficient backbone for long-context agents."
+      },
+      {
+        "title": "VideoJSON：用极简JSON与编码智能体检索超长视频",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2611.28167",
+        "summary": "针对数天乃至数周的超长视频检索，VideoJSON 抛弃复杂的记忆图谱，改用视觉模型按分钟生成极简 JSON 记录，并让编码智能体自主编写搜索程序，启发开发者用轻量索引配合代码检索替代繁琐的记忆架构。",
+        "titleEn": "VideoJSON Beats Complex Memory Graphs for Ultra-Long Video",
+        "summaryEn": "Instead of relying on rigid memory graphs for multi-day video search, VideoJSON indexes each minute into a minimal JSON record and lets a coding agent write custom search programs. For developers, this shows that simple structured indexes paired with agent-written code can outperform complex memory pipelines."
+      },
+      {
+        "title": "前沿模型仅凭单段文本即可零样本溯源人类或AI作者",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2611.26216",
+        "summary": "研究发现，无需联网或对比样本，GPT-6.1 Sol、Claude Fable 5.2 等前沿模型仅凭单段文本即可零样本识别作者归属、所属实验室乃至具体人类写作者，提醒开发者关注内容溯源与输出匿名性风险。",
+        "titleEn": "Frontier Models Unmask Human or AI Authors From One Text",
+        "summaryEn": "Without tools or reference samples, frontier models such as Claude Fable 5.2, GPT-6.1 Sol, and Gemini 4 Carbon can identify from a single text whether a human or AI wrote it, which lab built it, and often which person authored it—highlighting new stakes for content attribution and anonymity."
+      },
+      {
+        "title": "SMB Bench：评估智能体应对延迟后果的长期运营能力",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2611.28158",
+        "summary": "针对多日连续运营中“当下决策数周后才暴露后果”的难题，研究推出 90 天批发仿真环境 SMB Bench。它帮助开发者评估并训练智能体在缺货、现金流约束等延迟反馈场景下的长期规划能力，而非仅测单轮任务。",
+        "titleEn": "SMB Bench Tests AI Agents on Delayed Operational Consequences",
+        "summaryEn": "SMB Bench introduces a calibrated 90-day wholesale simulator to test how language model agents handle decisions whose consequences unfold weeks later, such as lost customers and cash crunches. For developers building autonomous business agents, it provides a realistic benchmark beyond isolated single-turn tasks."
+      }
+    ],
+    "jasonSays": "OpenAI公开预训练曲线与Shirudo开源，加上Beam与Superpowers等更新，推动模型透明化与智能体工程落地。",
+    "jasonSaysEn": "OpenAI's pretraining curve release and Shirudo open-sourcing, alongside Beam and Superpowers, highlight growing momentum in model transparency and practical agent engineering.",
+    "filename": "2026-11-25.md",
+    "coverImage": "/news/2026-11-25.png",
+    "coverImageEn": "/news/en/2026-11-25.png",
+    "coverWebp": "/news/2026-11-25.webp",
+    "coverWebpEn": "/news/en/2026-11-25.webp"
+  },
+  {
     "slug": "2026-11-24",
     "date": "2026-11-24",
     "title": "AI 快讯 · 11月24日",
