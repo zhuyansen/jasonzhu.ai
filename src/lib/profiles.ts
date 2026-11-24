@@ -8,6 +8,8 @@
 //
 // 2026-10-28 问四个 AI「Jason Zhu 是谁」：ChatGPT、Gemini 直接认出，豆包、DeepSeek 先列了一串同名的人，
 // 所以补上中文名和国内平台的个人主页。视频号没有网页版主页，不放。
+// 2026-11-24 拿掉 B 站（space.bilibili.com/266242152）：主页名字是「香菇的猪」、简介是空的，证明不了是本人，
+// 反而让「这个账号是谁」更乱。改名成 Jason Zhu / 祝彦森、简介写上 jasonzhu.ai 之后再加回来。
 
 export const SITE_URL = "https://jasonzhu.ai";
 export const PERSON_ID = `${SITE_URL}/#person`;
@@ -31,7 +33,6 @@ export const PERSON_PROFILES: { label: string; url: string }[] = [
   { label: "Hugging Face", url: "https://huggingface.co/jasonzhuyansen" },
   { label: "Kaggle", url: "https://www.kaggle.com/yansenzhu" },
   { label: "YouTube", url: "https://www.youtube.com/@JasonZhuGoSail" },
-  { label: "B 站", url: "https://space.bilibili.com/266242152" },
   { label: "抖音", url: "https://www.douyin.com/user/MS4wLjABAAAABDQoQfOA67afaoRQ4u79rww04pMm4OoHwwyzJvPWS9E" },
   { label: "小红书", url: "https://www.xiaohongshu.com/user/profile/5bffc7d70000000008003b90" },
 ];

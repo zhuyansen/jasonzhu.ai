@@ -19,7 +19,11 @@ Google 结果怎么认网站：2026-11 起 AIsa 给的 Google 结果网址全是
 （2026-11-24 一小时内从第 1 掉到前 10 以外），它测的是排名，不是工具坏没坏。
 
 「缺口」：一条词在 Google 前 20 没有 jasonzhu.ai（开了 --bing 时 Bing 前 20 也没有）。两家以上 AI 都搜过的缺口优先补：
-那是多家共用的入口，排上去一次，几家都能看到。
+那是多家共用的入口，排上去一次，几家都能看到。缺口只算不带品牌名的题：品牌题 AI 搜的多是 site:jasonzhu.ai 这类词，
+本站本来就该在，算进去会把「排上了」拉高（2026-11-24 起）。品牌题在邮件里单列一行。
+
+品牌词：另把几个品牌词（BRAND_TERMS）各查 3 次 Google，只记本站名次。这是实体图谱自己的效果指标：
+2026-11-24 抽样，直接搜「jasonzhu.ai」5 次都不在前 20，「jasonzhu ai」8 次里只有 2 次第 1。
 
 提问和查排名都走 backlink-guard（AIsa 接口，和面板同一批），这里只做合并、按题归类和出报告。
 
@@ -51,6 +55,8 @@ SOURCES = ("chatgpt", "perplexity", "claude", "gemini")      # 会给出搜索�
 LABEL = pr.LABEL
 CANARY = "site:" + pr.OWN  # 自检词：第一条必是本站。查不到，说明认网站这一步坏了或本站掉出索引（只查 Google，Bing 不支持 site:）
 CANARY_USD = 0.02
+BRAND_TERMS = ("jasonzhu.ai", "jasonzhu ai", "jason zhu gosail", "gosail club")   # 改了词前后就不能比，要改就加新词
+BRAND_SAMPLES = 3       # 同一个词每次查结果都可能不同，查 3 次看几次进前 3
 
 
 def norm(q: str) -> str:
@@ -110,6 +116,29 @@ def canary(bg, Budget) -> dict:
 
 # ───────────── 合并、归类 ─────────────
 
+def brand_serp(bg, Budget, terms=BRAND_TERMS, samples: int = BRAND_SAMPLES) -> dict:
+    """品牌词在 Google 的名次：每个词查 samples 次，只记本站名次（不在前 20 记 None），不记别的网站，可以公开。
+    第一页一个网站都认不出的那次不算查到；接口报错的那次也不算。"""
+    from concurrent.futures import ThreadPoolExecutor
+    budget = Budget(len(terms) * samples * 0.005)
+
+    def one(term: str):
+        try:
+            p = bg.placed(bg.results_for("google", term, budget, True), pr.OWN)
+        except Exception:  # 接口报错、超预算
+            return term, "failed"
+        return term, (p["you"] if readable(p) else "unreadable")
+    with ThreadPoolExecutor(4) as pool:
+        got = list(pool.map(one, [t for t in terms for _ in range(samples)]))
+    rows = []
+    for t in terms:
+        seen = [v for term, v in got if term == t]
+        ok = [v for v in seen if v not in ("failed", "unreadable")]
+        rows.append({"term": t, "positions": ok, "read": len(ok), "samples": samples,
+                     "top3": sum(v is not None and v <= 3 for v in ok), "top20": sum(v is not None for v in ok)})
+    return {"terms": rows, "cost": budget.spent}
+
+
 def by_question(answers: list[dict]) -> dict[str, dict[str, set]]:
     """{题 id: {搜索词: {哪几家搜过}}}。"""
     out: dict[str, dict[str, set]] = defaultdict(lambda: defaultdict(set))
@@ -144,7 +173,7 @@ def question_rows(qs: list[dict], fan: dict, placed: dict) -> list[dict]:
         top10 = [t for t in read if any(p is not None and p <= FIRST for p in (placed[t]["google"], placed[t]["bing"]))]
         gaps = [t for t in read if t not in ranked]
         shared_gaps = [t for t in gaps if len(terms[t]) >= 2]
-        rows.append({"question_id": q["id"], "set": q["set"], "target_url": q.get("target_url", ""),
+        rows.append({"question_id": q["id"], "set": q["set"], "brand": q.get("kind") == "brand", "target_url": q.get("target_url", ""),
                      "searches": len(terms), "read": len(read), "ranked": len(ranked), "top10": len(top10),
                      "gaps": len(gaps), "shared_gaps": len(shared_gaps),
                      "by_engine": {e: sum(e in s for s in terms.values()) for e in SOURCES if any(e in s for s in terms.values())}})
@@ -173,12 +202,29 @@ def pos(p) -> str:
     return "—" if p is None else str(p)
 
 
+def brand_lines(serp: dict) -> list[str]:
+    """品牌词那一段：每个词查了几次、名次、几次进前 3。"""
+    if not serp or not serp.get("terms"):
+        return []
+    out = [f"### 品牌词在 Google 的名次（每个词查 {BRAND_SAMPLES} 次）", "",
+           "实体图谱自己的效果指标：别人直接搜这些词时，本站能不能排在最前面。", "",
+           "| 词 | 每次的名次 | 进前 3 |", "|---|---|---|"]
+    for r in serp["terms"]:
+        shown = "、".join("前 20 外" if v is None else str(v) for v in r["positions"]) or "没查到"
+        miss = r["samples"] - r["read"]
+        out.append(f"| {r['term']} | {shown}" + (f"（另有 {miss} 次没查成）" if miss else "") + f" | {r['top3']}/{r['read']} |")
+    return out + [""]
+
+
 def appendix(day: str, qs: list[dict], fan: dict, placed: dict, ranks: dict, tot: dict, gemini_model: str,
-             cost: float, left_out: int, check: dict, bing: bool = False, unreadable: int = 0) -> str:
-    """只进邮件和加密存档：搜索词原文、我们的名次、缺口、AI 搜这些词时常见的页面。"""
+             cost: float, left_out: int, check: dict, bing: bool = False, unreadable: int = 0,
+             brand: dict | None = None, serp: dict | None = None) -> str:
+    """只进邮件和加密存档：搜索词原文、我们的名次、缺口、AI 搜这些词时常见的页面。
+    fan 只放不带品牌名的题；brand = {"questions": 品牌题数, "tot": 品牌题的 totals}，只出一行。"""
     q_of = {q["id"]: q for q in qs}
+    brand = brand or {"questions": 0, "tot": None}
     out = [f"## AI 实际搜了什么，我们在不在（子查询，{day}）", "",
-           f"AI 回答这 {len(qs)} 道题时一共搜了 **{tot['searches']} 条不同的词**（"
+           f"AI 回答这 {len(qs) - brand['questions']} 道不带品牌名的题时一共搜了 **{tot['searches']} 条不同的词**（"
            + "、".join(f"{LABEL.get(e, e)} {n}" for e, n in tot["by_engine"].items()) + "），"
            f"其中 {tot['shared']} 条不止一家搜过。Gemini 是接口（{gemini_model}，开 Google 搜索），代表 Google 这一路。", ""]
     if not check.get("ok"):
@@ -194,6 +240,11 @@ def appendix(day: str, qs: list[dict], fan: dict, placed: dict, ranks: dict, tot
              + (f"另有 {unreadable} 条 Google 结果认不出是哪些网站，没算进去。" if unreadable else "")
              + f"这部分花费 ${cost:.2f}" + (f"，预算没查到 {left_out} 次" if left_out else "") + "。")
     out += [line, ""]
+    bt = brand.get("tot")
+    if brand["questions"] and bt:
+        out += [f"品牌题 {brand['questions']} 道另算，不进下面的缺口：AI 搜了 {bt['searches']} 条，"
+                f"我们在 Google 前 {TOP} 的 {bt['google']}/{bt['read']} 条（前 {FIRST}：{bt['google_top10']}）。", ""]
+    out += brand_lines(serp)
 
     gaps = []
     for qid, terms in fan.items():
@@ -283,18 +334,28 @@ def cmd_run(a) -> int:
             spent += budget.spent
     unreadable = sum(1 for r in ranks.get("searches") or []
                      if "first_page" in (r.get("google") or {}) and not readable(r["google"]))
-    fan = by_question(answers)
+    serp = {"terms": [], "cost": 0}
+    if check["ok"] and a.brand:
+        serp = brand_serp(bg, Budget)
+        spent += serp["cost"]
+    brand_ids = {q["id"] for q in qs if q.get("kind") == "brand"}
+    fan_all = by_question(answers)
+    fan = {k: v for k, v in fan_all.items() if k not in brand_ids}         # 缺口只看不带品牌名的题
     placed = placements(ranks)
     tot = totals(fan, placed)
+    tot_brand = totals({k: v for k, v in fan_all.items() if k in brand_ids}, placed)
     model = bg.ENGINES["gemini"].get("model", "")
     public = {"date": day, "site": pr.OWN, "sets": a.sets.split(","), "questions": len(qs), "cost_usd": round(spent / 1e6, 4),
               "lineage": {"backlink_guard": bg_version, "gemini_model": model, "gemini_samples": a.gemini, "depth": TOP,
                           "engines": list(bg.RANK_PATHS), "google_sites_from": "breadcrumb",
                           "panel_answers": len(panel), "fanout_script": pr.file_hash(Path(__file__))},
               "google_check": check, "unreadable_google": unreadable,
-              "totals": tot, "questions_rows": question_rows(qs, fan, placed),
+              "brand_serp": serp["terms"],
+              "totals": totals(fan_all, placed), "totals_unbranded": tot, "totals_brand": tot_brand,
+              "questions_rows": question_rows(qs, fan_all, placed),
               "errors": len(errors), "left_out": len(left) + len(ranks.get("left_out") or [])}
-    text = appendix(day, qs, fan, placed, ranks, tot, model, spent / 1e6, public["left_out"], check, a.bing, unreadable)
+    text = appendix(day, qs, fan, placed, ranks, tot, model, spent / 1e6, public["left_out"], check, a.bing, unreadable,
+                    {"questions": len(brand_ids), "tot": tot_brand}, serp)
     if not a.dry:
         if a.public:
             Path(a.public).parent.mkdir(parents=True, exist_ok=True)
@@ -310,8 +371,9 @@ def cmd_run(a) -> int:
         print(f"子查询：{len(qs)} 题，AI 搜了 {t['searches']} 条不同的词（{t['by_engine']}）；Google 排名测不出来"
               f"（自检：{check['why']}），没查排名；花费 ${spent / 1e6:.2f}；接口报错 {len(errors)}")
         return 3
-    print(f"子查询：{len(qs)} 题，AI 搜了 {t['searches']} 条不同的词（{t['by_engine']}），查到排名 {t['read']} 条"
-          f"（另有 {unreadable} 条认不出网站）；自检词本站排第 {check['position']}；我们在 Google 前 {TOP} {t['google']} 条"
+    b3 = sum(r["top3"] for r in serp["terms"]), sum(r["read"] for r in serp["terms"])
+    print(f"子查询：不带品牌名的 {len(qs) - len(brand_ids)} 题，AI 搜了 {t['searches']} 条不同的词（{t['by_engine']}），查到排名 {t['read']} 条"
+          f"（另有 {unreadable} 条认不出网站）；自检词本站排第 {check['position']}；品牌词进前 3：{b3[0]}/{b3[1]} 次；我们在 Google 前 {TOP} {t['google']} 条"
           f"（前 {FIRST} {t['google_top10']} 条）" + (f"，Bing 前 {TOP} {t['bing']} 条" if a.bing else "")
           + f"；花费 ${spent / 1e6:.2f}；接口报错 {len(errors)}，预算没做到 {public['left_out']}")
     return 0
@@ -320,8 +382,10 @@ def cmd_run(a) -> int:
 # ───────────── 自测 ─────────────
 
 def selftest() -> int:
+    from types import SimpleNamespace
     qs = [{"id": "q1", "set": "real", "kind": "", "question": "how to pay", "target_url": "https://jasonzhu.ai/en/a"},
-          {"id": "q2", "set": "real", "kind": "", "question": "which mor", "target_url": ""}]
+          {"id": "q2", "set": "real", "kind": "", "question": "which mor", "target_url": ""},
+          {"id": "qb", "set": "frozen", "kind": "brand", "question": "who is jason", "target_url": ""}]
     answers = [{"engine": "chatgpt", "question_id": "q1", "fan_out": ["Stripe China ", "polar fees"]},
                {"engine": "gemini", "question_id": "q1", "fan_out": ["stripe   china", "Paddle countries"]},
                {"engine": "perplexity", "question_id": "q2", "fan_out": ["best mor 2026"]},
@@ -348,13 +412,34 @@ def selftest() -> int:
     assert "| stripe china | ChatGPT、Gemini（接口） | q1 | jasonzhu.ai/en/a | a.com |" in text, text
     assert "polar fees：Google 4，Bing —" in text and "← 本站" not in text
     assert "测不出来" not in text and "本站在 Google 排第 1" in text, text
+    assert "道不带品牌名的题" in text and "品牌题" not in text, text      # 没传品牌题就不出那一行
+    serp = {"terms": [{"term": "jasonzhu.ai", "positions": [None, 2], "read": 2, "samples": 3, "top3": 1, "top20": 1}]}
+    branded = appendix("2026-11-23", qs, fan, placed, ranks, tot, "m", 0.1, 0, {"ok": True, "position": 1}, False, 0,
+                       {"questions": 1, "tot": tot}, serp)
+    assert "AI 回答这 2 道不带品牌名的题" in branded and "品牌题 1 道另算" in branded, branded
+    assert "| jasonzhu.ai | 前 20 外、2（另有 1 次没查成） | 1/2 |" in branded, branded
+    calls = []
+
+    def fake_results(engine, term, budget, fresh):
+        calls.append(term)
+        return {"jasonzhu.ai": [None], "gosail club": [3]}.get(term, ["x"])
+
+    def fake_placed(rows, own):
+        v = rows[0]
+        if v == "x":
+            raise RuntimeError("boom")
+        return {"you": v, "first_page": ["a.com"]}
+    fake_bg = SimpleNamespace(results_for=fake_results, placed=fake_placed)
+    got = brand_serp(fake_bg, lambda usd: SimpleNamespace(spent=0), ("jasonzhu.ai", "gosail club", "bad"), 2)
+    by = {r["term"]: r for r in got["terms"]}
+    assert len(calls) == 6 and by["jasonzhu.ai"]["positions"] == [None, None] and by["jasonzhu.ai"]["top3"] == 0
+    assert by["gosail club"]["top3"] == 2 and by["bad"]["read"] == 0, by
     bad = appendix("2026-11-23", qs, fan, placed, ranks, tot, "m", 0.1, 0, {"ok": False, "why": "第一页没有本站"})
     assert "Google 排名这次测不出来" in bad and "我们在 Google 前" not in bad and "| q1 | 3 |" in bad, bad
     assert readable({"first_page": []}) is False and readable({"first_page": ["a.com"], "you": None})
     assert from_breadcrumb({"breadcrumb": "https://jasonzhu.ai › en › blog"}) == "https://jasonzhu.ai/en/blog"
     assert from_breadcrumb({"breadcrumb": "https://jasonzhu.ai › ..."}) == "https://jasonzhu.ai"
     assert from_breadcrumb({"breadcrumb": "2.1K+ followers"}) == ""
-    from types import SimpleNamespace
 
     def raw(data):      # backlink-guard 0.12.1 对读不出的跳转的输出
         items = [i for i in data["items"] if i.get("type") == "organic" and i.get("url")]
@@ -368,6 +453,7 @@ def selftest() -> int:
     assert got[0] == {"url": "https://www.jasonzhu.ai/en", "site": "jasonzhu.ai", "position": 1, "from_breadcrumb": True}, got
     assert got[1]["redirect"] is True and got[1]["site"] == "", got
     pub = json.dumps(question_rows(qs, fan, placed)) + json.dumps(tot)
+    assert json.dumps(question_rows(qs, fan, placed)).count('"brand": true') == 1
     assert "stripe" not in pub and "a.com" not in pub, "公开文件不能带搜索词和别的网站"
     print("fanout selftest ok")
     return 0
@@ -389,6 +475,7 @@ def main() -> int:
     r.add_argument("--appendix", help="邮件里看的部分（含搜索词原文）")
     r.add_argument("--archive", help="完整结果，加密存档用")
     r.add_argument("--bing", action="store_true", help="也查 Bing（AIsa 转的 Bing 结果对新品牌不可靠，默认不查）")
+    r.add_argument("--no-brand", dest="brand", action="store_false", help="不查品牌词（默认查，约 $0.05）")
     r.add_argument("--dry", action="store_true", help="什么文件都不写")
     a = ap.parse_args()
     return cmd_run(a)

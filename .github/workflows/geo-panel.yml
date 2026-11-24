@@ -7,9 +7,9 @@
 #         加密后放进草稿 release「geo-panel-state」，密钥用 SELLER_STATE_KEY（和卖家历史库同一把）。
 #         解密：gh release download geo-panel-state -p 'panel-<日期>.json.gz.enc' &&
 #               openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000 -pass env:SELLER_STATE_KEY -in panel-<日期>.json.gz.enc | gunzip
-#   子查询 ops/geo/fanout.py：问完再让 Gemini（接口）每题答 1 次拿它的搜索词，连同 ChatGPT、Perplexity 回答里自带的搜索词，
+#   子查询 ops/geo/fanout.py：ChatGPT、Perplexity 回答里自带的搜索词（每周），加上每月第一个周一让 Gemini（接口）每题答 1 次拿的搜索词，
 #         每条查 Google 前 20，看我们排不排得上；先查 site:jasonzhu.ai 自检，第一条不是本站就写「测不出来」、不查排名
-#         （约 $3–4，fanout_usd 封顶，填 0 不跑）。计数提交到
+#         再把 4 个品牌词各查 3 次（实体图谱的效果指标）。平时约 $1.5，每月第一个周一约 $4（fanout_usd 封顶，填 0 不跑）。计数提交到
 #         ops/geo/panel/fanout-<日期>.json，搜索词原文只进邮件和加密存档。这一步失败不挡面板本身。
 #   通知  摘要发到 ALERT_EMAIL。失败、或有的 AI 有效回答不到一半（结果不完整），也发邮件。
 #   手动  Actions → Run workflow。试跑填 limit=3、publish=0：只问前 3 题，不提交、不存档、不发邮件。
@@ -123,7 +123,10 @@ jobs:
           USD="${IN_FANOUT_USD:-6}"
           if [ "$USD" = "0" ]; then echo "fanout_usd=0，不跑"; exit 0; fi
           python ops/geo/fanout.py --selftest
-          ARGS=(--sets "${IN_SETS:-$DEFAULT_SETS}" --full "$RUNNER_TEMP/panel-full.json" --max-usd "$USD" --date "$DAY"
+          # Gemini 每题约 $0.047，一次约 $2.4：只在每月第一个周一问（和 Claude 加跑同一天）。平时只用面板回答里自带的搜索词
+          GEMINI=0
+          [ "$(TZ=Asia/Shanghai date +%-d)" -le 7 ] && GEMINI=1
+          ARGS=(--sets "${IN_SETS:-$DEFAULT_SETS}" --full "$RUNNER_TEMP/panel-full.json" --max-usd "$USD" --date "$DAY" --gemini "$GEMINI"
                 --public "ops/geo/panel/fanout-$DAY.json" --appendix "$RUNNER_TEMP/fanout.md" --archive "$RUNNER_TEMP/fanout-full.json")
           [ -n "$IN_LIMIT" ] && ARGS+=(--limit "$IN_LIMIT")
           [ "$IN_PUBLISH" = "0" ] && ARGS+=(--dry)
@@ -172,6 +175,22 @@ jobs:
           fi
           echo "已存档：$(du -h "$RUNNER_TEMP/panel-$DAY.json.gz.enc" | cut -f1)"
 
+      - name: 核对：当天的分数真的进了仓库
+        # 11-23 那次定时运行显示成功，提交、邮件、存档三步却全被跳过了。这一步不看运行状态，直接看仓库里有没有当天的文件
+        id: landed
+        if: (inputs.publish || '1') != '0'
+        env:
+          DAY: ${{ steps.run.outputs.day }}
+        run: |
+          git fetch -q origin main
+          for f in "results-$DAY.json" "summary-$DAY.md"; do
+            if ! git cat-file -e "origin/main:ops/geo/panel/$f" 2>/dev/null; then
+              echo "::error::ops/geo/panel/$f 没进仓库"
+              exit 1
+            fi
+          done
+          echo "当天的分数已在仓库里：results-$DAY.json、summary-$DAY.md"
+
       - name: 结果不完整，这次运行算失败
         if: steps.run.outputs.code == '2'
         run: |
@@ -185,10 +204,16 @@ jobs:
           ALERT_EMAIL: ${{ secrets.ALERT_EMAIL }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           CODE: ${{ steps.run.outputs.code }}
+          LANDED: ${{ steps.landed.outcome }}
         run: |
           python3 - <<'PY'
           import json, os, urllib.request
-          why = "结果不完整：有的 AI 有效回答不到应有的一半，摘要已经另发。" if os.environ.get("CODE") == "2" else "工作流中途失败了，这周没有结果。"
+          if os.environ.get("LANDED") == "failure":
+              why = "跑完了，但当天的分数没进仓库（提交那步被跳过或推送失败）。邮件和存档可能也没做，看运行日志。"
+          elif os.environ.get("CODE") == "2":
+              why = "结果不完整：有的 AI 有效回答不到应有的一半，摘要已经另发。"
+          else:
+              why = "工作流中途失败了，这周没有结果。"
           req = urllib.request.Request("https://api.resend.com/emails", method="POST",
               data=json.dumps({"from": "GEO 引用面板 <news@jasonzhu.ai>", "to": [os.environ["ALERT_EMAIL"]], "subject": "GEO 引用面板这周有问题",
                                "html": f"<p>{why}</p><p><a href='{os.environ['RUN_URL']}'>看运行日志</a></p>"}).encode(),
