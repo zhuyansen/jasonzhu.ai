@@ -1,7 +1,7 @@
 {
   "generated": "2026-11-24",
   "site": "jasonzhu.ai",
-  "_说明": "Search Console 真题组：都是 Google Search Console 里近 3 个月（2026-08-21 到 11-21）真实出现、展示 ≥ 15 次的查询，原样照用，不带品牌名；target_url 是这个查询实际落到的页面（query × page）。和 questions-real.json 里 5 道 gsc 题不重复。选题偏提示词库和学习页：全站的展示和点击主要在这两块，出海专题只占约 1.5%（2026-11-21 复盘）。人搜的是 2–8 个词的短词，AI 会自己扩写成 10 个词左右的搜索，这组题正好看「短词 → AI 搜索词」。题目定了就不要改，要加题就加新 id。默认不进每周运行，要 Jason 确认费用后在工作流的 DEFAULT_SETS 加上 gsc。",
+  "_说明": "Search Console 真题组：都是 Google Search Console 里近 3 个月（2026-08-21 到 11-21）真实出现、展示 ≥ 15 次的查询，原样照用，不带品牌名；target_url 是这个查询实际落到的页面（query × page）。和 questions-real.json 里 5 道 gsc 题不重复。选题偏提示词库和学习页：全站的展示和点击主要在这两块，出海专题只占约 1.5%（2026-11-21 复盘）。人搜的是 2–8 个词的短词，AI 会自己扩写成 10 个词左右的搜索，这组题正好看「短词 → AI 搜索词」。题目定了就不要改，要加题就加新 id。2026-11-24 Jason 确认加入每周运行，第一次是 2026-11-30。",
   "questions": [
     {"id": "gsc-fable-55", "kind": "gsc", "question": "fable 5.5", "target_url": "https://jasonzhu.ai/en/prompts/claude-opus-5-5/fable-5-5", "impressions": 359},
     {"id": "gsc-openai-startup-credits", "kind": "gsc", "question": "openai startup credits", "target_url": "https://jasonzhu.ai/en/blog/openai-startup-credits-application-guide", "impressions": 293},
