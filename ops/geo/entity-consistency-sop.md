@@ -5,9 +5,9 @@
 > **Version:** v2.3（2026-11-22 北京时间，修改轮 2）。这一版改了文件名（`git log --follow` 能看到之前的历史）。v2.1 以来的每次改动记在 [`ENTITY-GRAPH-ITERATION-LOG.md`](ENTITY-GRAPH-ITERATION-LOG.md)（发现、修复、谁做、复查日期）  
 > **Scope:** 让本人、作品和网站在搜索引擎、AI 和学术索引（Google、Bing、OpenAlex、Semantic Scholar、Google Scholar）里的信息一致：哪些网址代表本人，哪些是作品，怎么存档到 Zenodo 和 SSRN，怎么核对。
 
-> [!warning] 现在的状态（2026-11-21）
-> - **数据纠正完之前（修改轮 2 的代理 Z 在做：Zenodo 新版本、工作论文改版），不再往 ORCID、Google Scholar、SSRN、OpenAlex、Wikidata 这些学术图谱里绑新东西。** 迭代记录「当前待办」里的 ORCID 任职、Wikidata 两批、OpenAlex 认领、学术外联三封，都先停。
-> - Wikidata 个人条目**暂缓**，理由见第 6 节 Phase 3。
+> [!warning] 现在的状态（2026-11-24）
+> - **11-24 起转成维护：学术图谱只修错，不扩张**，规则见第 4 节「维护规则」。数据纠正 11-22 已做完（Zenodo 发了 9 个新版本）。还没办完的事看迭代记录的「当前待办」。
+> - Wikidata 个人条目**不做**（11-24 从「暂缓」改成「不做」），条件见第 6 节 Phase 3。
 > - 个人站，不写公司：本站 JSON-LD 没有 Organization 节点，网站的发布者是本人。规则见第 4 节「实体规则」。
 
 ---
@@ -37,13 +37,13 @@ Search engines and AI answer engines do **not** trust self-proclaimed JSON-LD on
 ```mermaid
 flowchart LR
   P["Person: Jason Zhu / 祝彦森\njasonzhu.ai/#person"]
-  PROF["个人档案 = Person 的 sameAs（13 个）\nORCID · Google Scholar · SSRN 作者页 · LinkedIn 个人页\nProduct Hunt · X · GitHub · Hugging Face · Kaggle\nYouTube · B 站 · 抖音 · 小红书"]
+  PROF["个人档案 = Person 的 sameAs（12 个）\nORCID · Google Scholar · SSRN 作者页 · LinkedIn 个人页\nProduct Hunt · X · GitHub · Hugging Face · Kaggle\nYouTube · 抖音 · 小红书"]
   WEB["WebSite\njasonzhu.ai/#website"]
   SVC["Service: GoSail Club"]
   HUB["AgentSkillsHub（另一个网站）\nagentskillshub.top/#organization\nsameAs: Wikidata Q141986406 · Crunchbase"]
   PAPER["ScholarlyArticle ×2\n@id = Zenodo DOI\nsameAs: Zenodo 记录页 · SSRN 论文页"]
   DATA["Dataset ×5\n@id = Zenodo DOI\n130K 那份 sameAs: Wikidata Q141735092 · HF · Kaggle"]
-  SW["SoftwareSourceCode ×4\n@id = GitHub 仓库\nsameAs: PyPI"]
+  SW["SoftwareSourceCode ×4\n@id = GitHub 仓库\nsameAs: PyPI（ai-visibility-checker 没发 PyPI，不写）"]
 
   P -->|sameAs| PROF
   WEB -->|"author / publisher"| P
@@ -73,7 +73,7 @@ flowchart LR
 | **1. Primary Key & Disambiguation** | `Jason Zhu` collided with medical/chemistry scholars & `Jason (Siyu) Zhu`; CN `祝彦森` and EN `Jason Zhu` were split. | Minted **ORCID** (`0009-0000-2894-6285`), verified **Google Scholar** (`AlP5JacAAAAJ`) with the author's own email, unifying 2019 CN papers + 2026 EN research with zero medical misattribution, and OAuth-bound **SSRN** (`14044888`). | [ORCID](https://orcid.org/0009-0000-2894-6285) · [Scholar](https://scholar.google.com/citations?user=AlP5JacAAAAJ) · [SSRN](https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=14044888) |
 | **2. Typed Triples & Schema Hygiene** | `/en` JSON-LD leaked Chinese copy; Person/Org/Product/Dataset collapsed into one `sameAs`; dead Wikidata QID present. | 中文外泄、失效 QID 已修。**sameAs 混用当时没修好**：2026-11-21 线上实测，Person 的 sameAs 23 条里有 10 条是作品或别的网站（6 个 DOI、2 篇 SSRN 论文页、PyPI、agentskillshub.top），Organization 的 sameAs 用的是同一份列表；`Person -founder-> 公司 -subOrganization-> AgentSkillsHub` 这条边也不对（个人站不写公司）。`f06c11a`（11-22）先把 Person 的 sameAs 收到 13 个个人档案。`08fce2d`（修改轮 2）去掉 Organization 节点；AgentSkillsHub 单独成节点，founder → #person；论文、数据集、工具拆进 `WORKS`，只在 /research、引用它的博客文章页和 /backlink-spam-list 输出；加了 `scripts/check-entities.mjs`。 | `src/lib/profiles.ts` · `src/app/[lang]/layout.tsx` · `scripts/check-entities.mjs` |
 | **3. 9-Graph Bidirectional Corroboration** | One-way outbound links from main site only; HF/Kaggle incomplete. | Back-wrote ORCID into **5/5 Zenodo datasets**; completed **3/3 HuggingFace** and **3/3 Kaggle** datasets with ORCID+DOI+URL anchors; updated GitHub profile/repo, Product Hunt (`@yansen_zhu`), LinkedIn, and PyPI `pyproject.toml`.（更正：11-21 实测 24386243 没挂 ORCID，11-22 用 `zenodo/fix_creators.py` 补上。各个人档案有没有链回本站，见第 5 节「回链核对」。） | [HF](https://huggingface.co/jasonzhuyansen) · [Kaggle](https://www.kaggle.com/yansenzhu) · [PH](https://www.producthunt.com/@yansen_zhu) · [GitHub](https://github.com/zhuyansen) |
-| **4. Scholarly PDF Crawler Ingestion** | Bare CSVs on Zenodo are skipped by Google Scholar / OpenAlex paper crawlers. | Typeset 2 formal Typst academic Working Paper PDFs (10p + 7p), published to **Zenodo (`workingpaper`)** + **SSRN (CC BY)** + hosted at **`jasonzhu.ai/en/research/[slug]`** with Highwire Press `citation_*` meta tags & BibTeX.（安全论文的 DOI `10.5281/zenodo.24420920` 到 2026-11-21 还没在 doi.org 登记，打开是 404。） | [Paper 1 Zenodo](https://doi.org/10.5281/zenodo.24420871) · [SSRN #7737182](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7737182) · [Paper 2 Zenodo](https://doi.org/10.5281/zenodo.24420920) · [SSRN #7737258](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7737258) |
+| **4. Scholarly PDF Crawler Ingestion** | Bare CSVs on Zenodo are skipped by Google Scholar / OpenAlex paper crawlers. | Typeset 2 formal Typst academic Working Paper PDFs (10p + 7p), published to **Zenodo (`workingpaper`)** + **SSRN (CC BY)** + hosted at **`jasonzhu.ai/en/research/[slug]`** with Highwire Press `citation_*` meta tags & BibTeX.（安全论文的 DOI `10.5281/zenodo.24420920` 到 2026-11-21 还没在 doi.org 登记，打开是 404。） | [Paper 1 Zenodo](https://doi.org/10.5281/zenodo.24420870) · [SSRN #7737182](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7737182) · [Paper 2 Zenodo](https://doi.org/10.5281/zenodo.24420919) · [SSRN #7737258](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7737258) |
 
 ---
 
@@ -134,15 +134,15 @@ Whenever a new flagship empirical study is published on `jasonzhu.ai`, run this 
 - **PyPI / npm:** `https://pypi.org/project/backlink-guard/` · `@agentskillshub/cli` · `@agentskillshub/mcp`
 
 ### Working Papers (PDF) & Open Datasets (All CC-BY-4.0)
-| Artifact | Zenodo DOI | SSRN / Mirrors |
+| Artifact | Zenodo 总 DOI | SSRN / Mirrors |
 | :--- | :--- | :--- |
-| **Working Paper #1 (10p PDF):** 200K Indie Payments & \$20 MoR Shift | `10.5281/zenodo.24420871` | SSRN `#7737182` · `jasonzhu.ai/en/research/indie-saas-payments-mor-shift-2026` |
-| **Working Paper #2 (7p PDF):** 105K+ AI Agent Skills & MCP Security | `10.5281/zenodo.24420920`（11-21 还没在 doi.org 登记） | SSRN `#7737258` · `jasonzhu.ai/en/research/ai-agent-skills-mcp-supply-chain-security-2026` |
-| **Dataset 1:** 收款平台采用情况汇总表（9 行，不含链接） | `10.5281/zenodo.24386243` | GitHub · HF · Kaggle 上的 `indie-saas-payments-benchmark-2026` 把 01 和 02 合在一起，不算同一个数据集，JSON-LD 不写 sameAs |
-| **Dataset 2:** \$20 MoR Cross-Border Fee Benchmark | `10.5281/zenodo.24387072` | 同上（合在一起的镜像） |
-| **Dataset 3:** AI Agent Skills 安全审计汇总表（3 行） | `10.5281/zenodo.24387074` | 没有镜像。HF、Kaggle 上的 `agent-skills-security-grades` 是 Dataset 5 |
-| **Dataset 4:** 垃圾外链名单（Zenodo 现版本只有 3 行"模式"，没有域名；换成真实域名表的新版本在做） | `10.5281/zenodo.24387076` | GitHub `backlink-spam-list` · HF · Kaggle。`backlink-guard` 是另一个作品（软件），不是镜像 |
-| **Dataset 5:** 130K AI Agent Skills Security Grades（AgentSkillsHub 发布） | `10.5281/zenodo.21292799` | Wikidata `Q141735092` · HF · Kaggle |
+| **Working Paper #1 (10p PDF):** 200K Indie Payments & \$20 MoR Shift | `10.5281/zenodo.24420870` | SSRN `#7737182` · `jasonzhu.ai/en/research/indie-saas-payments-mor-shift-2026` |
+| **Working Paper #2 (7p PDF):** 105K+ AI Agent Skills & MCP Security | `10.5281/zenodo.24420919`（1.0 版 `24420920` 一直没登记上，不用） | SSRN `#7737258` · `jasonzhu.ai/en/research/ai-agent-skills-mcp-supply-chain-security-2026` |
+| **Dataset 1:** 收款平台采用情况汇总表（9 行，不含链接） | `10.5281/zenodo.24386242` | GitHub · HF · Kaggle 上的 `indie-saas-payments-benchmark-2026` 把 01 和 02 合在一起，不算同一个数据集，JSON-LD 不写 sameAs |
+| **Dataset 2:** \$20 MoR Cross-Border Fee Benchmark | `10.5281/zenodo.24387071` | 同上（合在一起的镜像） |
+| **Dataset 3:** AI Agent Skills 安全审计汇总表（3 行） | `10.5281/zenodo.24387073` | 没有镜像。HF、Kaggle 上的 `agent-skills-security-grades` 是 Dataset 5 |
+| **Dataset 4:** 垃圾外链名单（Zenodo 现版本只有 3 行"模式"，没有域名；换成真实域名表的新版本在做） | `10.5281/zenodo.24387075` | GitHub `backlink-spam-list` · HF · Kaggle。`backlink-guard` 是另一个作品（软件），不是镜像 |
+| **Dataset 5:** 130K AI Agent Skills Security Grades（AgentSkillsHub 发布） | `10.5281/zenodo.21292798` | Wikidata `Q141735092` · HF · Kaggle |
 
 ### 回链核对（2026-11-21 查，2026-11-24 定要不要补）
 
@@ -181,21 +181,21 @@ Whenever a new flagship empirical study is published on `jasonzhu.ai`, run this 
 
 > **2026-11-21 起暂停。** 数据纠正完之前，不往学术图谱绑新东西（2C），也不发引用这些数字和 DOI 的外联、PR 和帖子（2A、2B、2D）。依据：调研模块 0「先改源头，再发任何东西」。下面的文案等 Zenodo 新版本发布后按新数字重写。
 >
-> 下面文案里的 DOI 是旧的版本号，用之前换成总 DOI：收款论文 `10.5281/zenodo.24420870`，安全论文 `10.5281/zenodo.24420919`。安全论文的 1.0 版 `24420920` 一直没登记上，不能用。
+> 下面文案里的 DOI 11-24 已换成总 DOI：收款论文 `10.5281/zenodo.24420870`，安全论文 `10.5281/zenodo.24420919`。安全论文的 1.0 版 `24420920` 一直没登记上，不能用。
 
 #### 2A. Upgrade Day+5 Media Outreach (`2026-11-26` follow-up)
 Append this 2-line scholarly citation hook to the Day+5 follow-up in `ops/geo/tier1-data-outreach-pack.md`:
-> *"Quick update: we also released the full 10-page empirical working paper PDF (CC-BY-4.0) on SSRN (`https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7737182`) and Zenodo (`https://doi.org/10.5281/zenodo.24420871`) in case your editorial team prefers citing a permanent DOI / PDF."*
+> *"Quick update: we also released the full 10-page empirical working paper PDF (CC-BY-4.0) on SSRN (`https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7737182`) and Zenodo (`https://doi.org/10.5281/zenodo.24420870`) in case your editorial team prefers citing a permanent DOI / PDF."*
 
 #### 2B. High-DR GitHub Awesome Lists PRs (Ready-to-Submit Copy)
 Submit purely neutral, zero-promo dataset/benchmark entries to 3 high-star curated repos:
 1. **`punkpeye/awesome-mcp-servers` / `wong2/awesome-mcp-servers` (Security / Benchmarks section):**
    ```markdown
-   - [AI Agent Skills & MCP Security Audit Benchmark (105K–130K)](https://doi.org/10.5281/zenodo.24420920) — Open-source 44-rule static security grading census and 5-dimension supply-chain audit working paper across 130,000+ indexed agent skills and MCP servers ([SSRN #7737258](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7737258), CC-BY-4.0).
+   - [AI Agent Skills & MCP Security Audit Benchmark (105K–130K)](https://doi.org/10.5281/zenodo.24420919) — Open-source 44-rule static security grading census and 5-dimension supply-chain audit working paper across 130,000+ indexed agent skills and MCP servers ([SSRN #7737258](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7737258), CC-BY-4.0).
    ```
 2. **`hesreallyhim/awesome-claude-code` / `travisvn/awesome-claude-skills` (Security & Auditing section):**
    ```markdown
-   - [Agent Skills Hub Security Rubric & 130K Audit Dataset](https://agentskillshub.top/how-we-grade/) — Open 44-rule security grading methodology and working paper analyzing credential custody, shell hooks, and prompt injection across 105K+ open-source Claude skills ([Zenodo DOI](https://doi.org/10.5281/zenodo.24420920)).
+   - [Agent Skills Hub Security Rubric & 130K Audit Dataset](https://agentskillshub.top/how-we-grade/) — Open 44-rule security grading methodology and working paper analyzing credential custody, shell hooks, and prompt injection across 105K+ open-source Claude skills ([Zenodo DOI](https://doi.org/10.5281/zenodo.24420919)).
    ```
 3. **`mezod/awesome-indie` / `indie-saas` resource lists (Payments / Research section):**
    ```markdown
@@ -210,14 +210,14 @@ Submit purely neutral, zero-promo dataset/benchmark entries to 3 high-star curat
   >
   > Hello, the work https://openalex.org/W7167922915 (DOI 10.5281/zenodo.21292799) is attributed to author A5009989201, who is a different person. DataCite lists a single creator for this DOI: Zhu, Jason, ORCID 0009-0000-2894-6285. Could you reassign this authorship to an author linked to that ORCID? Thank you.
 
-- Watch for Zenodo (`24420871`, `24420920`) and SSRN (`7737182`, `7737258`) to propagate via DataCite → **OpenAlex** (`https://openalex.org`) and **Semantic Scholar** (`https://www.semanticscholar.org`).
+- Watch for Zenodo（总 DOI `24420870`、`24420919`）and SSRN (`7737182`, `7737258`) to propagate via DataCite → **OpenAlex** (`https://openalex.org`) and **Semantic Scholar** (`https://www.semanticscholar.org`).
 - Claim the author profile on Semantic Scholar and link ORCID `0009-0000-2894-6285`; verify Google Scholar (`AlP5JacAAAAJ`) auto-indexes both PDFs and merge any duplicate manual entries.
 
 #### 2D. Community RAG Seeding (Hacker News + Warmed Reddit)
 - **Hacker News (`Show HN`):**
   - Title: `Show HN: 200k live indie checkout links (2023–2026) and a $20 MoR fee audit (CC-BY CSV + PDF)`
   - URL: `https://github.com/zhuyansen/indie-saas-payments-benchmark-2026`
-  - First comment: share 3 concise raw numbers + Zenodo PDF DOI (`24420871`) + limitations (Paddle JS overlay undercount).
+  - First comment: share 3 concise raw numbers + Zenodo PDF 总 DOI (`24420870`) + limitations (Paddle JS overlay undercount).
 - **Reddit:** 先在相关版块正常参与讨论，不为发帖刷 karma，也不研究怎么绕过 AutoMod 和版规。帖子开头写明作者身份和与产品的关系。稿子在 `ops/geo/reddit-launch-posts-2026-11.md`（修改轮 2 在重写）。
 
 ### Phase 3: Wikidata 个人条目（不做）

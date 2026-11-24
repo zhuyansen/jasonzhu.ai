@@ -2,12 +2,13 @@
 
 > **本站的做法（2026-10-06 起）**：本站不买 dofollow 外链，付费曝光一律 `rel="sponsored"`。手册里的付费插链、过期域名 301、PPN（第六节 Tier-1B、打法二、打法三）原文保留、标「**不做**」，只当了解，不执行；每条写了违反 Google 垃圾政策的哪一条，四条政策的原文要点见 [`tiered-links-domain-geo-arsenal.md`](tiered-links-domain-geo-arsenal.md) 文首。
 > **2026-11-21 核对后改过一轮**（依据：调研模块 0、1、3）：走样的数字和"定律"改正，找不到出处的删掉；点名竞品的话删掉；本机绝对路径改成仓库里的相对路径。下面的相关性研究（Suski、Ahrefs 等）都只说明"有关系"，不说明"改了就有用"。
-> **最后更新**：`2026-11-21`
+> **最后更新**：`2026-11-24`（顶部脚本清单、架构图的 L5 和第二节 L4、L5 两行按 11-24 的代码改）
 > **核心理念**：**不为了省钱而妥协精度**——开源权威图谱（CERN Zenodo / DataCite / OpenAlex / Common Crawl / WildChat-1M）提供**“不可伪造的学术级身份与大模型底层语料”**；商业级重武器（**DataForSEO** / **Aisa.one** / **Ahrefs** / **Google Search Console API**）提供**“Google 前 10 排名监控、AI Overviews 真实解析、外链图谱与多模型并发探测”**。
 > **核心武器脚本**：
-> 1. 统一 L1–L5 巡检与首段改写引擎：[`ops/geo/geo_engine.py`](geo_engine.py)
-> 2. CERN Zenodo 数据集打包、API 一键发布与 6 节点同步监控器：[`ops/geo/zenodo/publish_zenodo.py`](zenodo/publish_zenodo.py)
-> 3. GIGALinks 双账号站内双重差分（DiD）受控实验队列：[`ops/geo/citations/gigalinks-controlled-experiment-queue.md`](citations/gigalinks-controlled-experiment-queue.md)
+> 1. L1–L4 巡检引擎（只检查不改文件；批量改首段的命令 11-21 删了）：[`ops/geo/geo_engine.py`](geo_engine.py)
+> 2. L5 测量（每周一自动跑，说明在 [`PANEL.md`](PANEL.md)）：[`panel_run.py`](panel_run.py) 问四家 AI → [`fanout.py`](fanout.py) 读出 AI 搜过的词、查 Google 前 20 名次 → [`fanout_actions.py`](fanout_actions.py) 出行动清单；每月加 [`zh_check.py`](zh_check.py) 中文检查
+> 3. CERN Zenodo 数据集打包、API 一键发布与 6 节点同步监控器：[`ops/geo/zenodo/publish_zenodo.py`](zenodo/publish_zenodo.py)
+> 4. GIGALinks 双账号站内双重差分（DiD）受控实验队列：[`ops/geo/citations/gigalinks-controlled-experiment-queue.md`](citations/gigalinks-controlled-experiment-queue.md)
 
 ---
 
@@ -40,14 +41,14 @@ flowchart TB
 
     subgraph L5["L5 多引擎面板（每家每题 3 次）与双重差分验收层 (Multi-Run Panel & DiD)"]
         direction LR
-        L5_OS["🟢 本地诊断与受控实验<br/>• ops/geo/panel_run.py 每周引用面板<br/>• 抓出 PAGE_CITED_WITHOUT_BRAND_NAME<br/>• 双重差分 (Treatment Δ - Control Δ)"]
+        L5_OS["🟢 本地诊断与受控实验<br/>• ops/geo/panel_run.py 每周引用面板<br/>• fanout.py 读出 AI 搜过的词、查 Google 前 20<br/>• fanout_actions.py 行动清单：缺词、外部网站<br/>• 抓出 PAGE_CITED_WITHOUT_BRAND_NAME<br/>• 双重差分 (Treatment Δ - Control Δ)"]
         L5_PRO["🟣 商业付费多模型网关<br/>• Aisa.one 统一网关 (并发跑 GPT/Claude/Gemini/Perplexity)<br/>• DataForSEO AI Optimization / LLM Mentions API<br/>• ChatGPT、Gemini App 抓网页界面，Perplexity、Claude 走 API (含扇出查询提取)"]
     end
 
     L1 --> L2 --> L3 --> L4 --> L5
     L5 -- "1. 发现只引不点名漏损 → 回写首段前50词" --> L4
     L5 -- "2. 提取真实 fan_out_queries & 0引用题 → 定向发 Zenodo DOI + GIGALinks" --> L2
-    L5 -- "3. 查扇出子查询的 Google 结果里有没有本站 → DataForSEO SERP + Ahrefs" --> L3
+    L5 -- "3. 查 AI 搜过的词在 Google 前 20 有没有本站 → fanout.py 每周跑（DataForSEO SERP）" --> L3
 ```
 
 ---
@@ -62,8 +63,8 @@ flowchart TB
 | **L1 预训练语料与外链图谱层** | 域名中心性（Harmonic Centrality）与外链毒性控制；第三方外围页能否被索引 | • **Common Crawl CDX & Web Graph**<br>• **Hugging Face `FineWeb`**<br>• **Wayback Machine CDX** | • **DataForSEO Backlinks API**（正是你做 20 万收款链接报告的主力数据源！）<br>• **Ahrefs Site Explorer / Referring Domains**<br>• **Google Search Console URL Inspection API** | 1. **Gate 1 止损秒查**：`11-24` 检查 GIGALinks 首批 8 篇外围页有没有被 Google 收录，直接用 **DataForSEO SERP `site:url`** 批量秒查，不用肉眼搜。<br>2. **持续造一手报告**：每月用 **DataForSEO Backlinks API** 跑增量收款链接数据 → 自动生成新 CSV → 更新 Zenodo DOI 版本（`v2`, `v3`），形成永动机。 |
 | **L2 权威实体与知识图谱层** | 解决同名实体混淆（Wikidata 同名学者），建立无链接也能被 AI 认出的零歧义信标 | • **CERN Zenodo REST API**（签发永久 DOI）<br>• **DataCite Global Registry**<br>• **OpenAlex (2.5 亿文献图谱)**<br>• **Wikidata Entity API** | • **GIGALinks 双账号（62 Credits 付费额度）**<br>• **Google Knowledge Graph Search API**<br>• **DataForSEO Brand SERP / Mentions API** | **“Zenodo DOI × GIGALinks”化学反应**：<br>GIGALinks 不许带超链接，单写品牌名容易损耗；现在把开源拿到的 **CERN Zenodo DOI (`10.5281/zenodo.24386243`)** 作为纯文本信标塞进 GIGALinks 付费稿里，让商业分发渠道成为学术 DOI 的放大器。 |
 | **L3 检索门槛（Google Top 10）与扇出层** | 被引用的站几乎都在 Google 有排名（Suski，域名层面）；按网页和同一道题，AI 概览约 38%、ChatGPT 约 10% 的引用来自前 10（Ahrefs）。原写的「95% 被引用的网页在这道题前 10，不进前 10 改写首段也拿不到门票」是把域名层面的数说成了网页层面，删掉 | • **Hugging Face `WildChat-1M`**<br>• **LMSYS `Search Arena`**<br>• **Google Autocomplete 下拉接口**<br>• **Hacker News Algolia API** | • **DataForSEO SERP API（含 `Google Organic` + `Google AI Overviews` + `People Also Ask`）**<br>• **Google Search Console Search Analytics API**<br>• **Ahrefs Keywords Explorer** | **开源工具最大的盲区就是查不到真实 Google 排名和 AI Overviews**！<br>1. 用 **DataForSEO SERP API** 直接查我们 21 道目标题 + 扇出子词在 Google 是否进 Top 10，以及 **Google AI Overviews (AIO)** 到底引用了谁。<br>2. 用 **GSC API** 抓出“高曝光、排名第 8–15 名”的临门一脚词，定向投 GIGALinks 推入 Top 10（效果由现有对照实验验证）。 |
-| **L4 页面切片与首段前 50 词（待验证）** | 约 1/3 引用来自页面前 50 词；意图匹配的页 42% 对跑题的博客 13%；有 JSON-LD 的高 3.7 个百分点（作者说主要因为有人维护的站才有标记，不是因果）。都是相关性，水系模型里放在「待验证」 | • **[`ops/geo/geo_engine.py`](geo_engine.py) (`audit-all-blogs` / `upgrade-all-blogs`)**<br>• **Schema.org `Article` + `Dataset` JSON-LD**<br>• **前台急诊室 [`/go-global/ai-readiness`](../../src/app/[lang]/go-global/ai-readiness/AiReadinessClinic.tsx)** | • **Aisa.one（Claude Opus / GPT / Gemini 统一 API 网关）**<br>• **DataForSEO On-Page / Content Analysis API** | 当需要根据 **DataForSEO SERP** 抓回来的竞品 Top-3 事实清单（Check 4: Fact Coverage，`39% vs 26%`）批量扩写文章对比表或重写前 50 词时，直接调 **Aisa.one API** 自动对标竞品补齐缺失事实。 |
-| **L5 多轮面板监控与双重差分验收层** | 同一道题跑两次，品牌只有约 40% 重合（Suski）：每题要问多次、各家分开报。本面板每家每题 3 次；同一时刻的 3 次几乎一样，有效样本是题数，不是回答数（见 `PANEL.md`） | • **[`ops/geo/panel_run.py`](panel_run.py)（每周面板，2026-11-21 起取代 `panel-gap`）**<br>• **本地 `ops/geo/panel/*.json` 面板**<br>• **DiD 双重差分净效应公式** | • **Aisa.one 统一大模型网关**（带 Online Search / Perplexity Sonar / Gemini Grounding / OpenAI Web Search 并发调用）<br>• **DataForSEO AI Optimization / ChatGPT Scraper API** | 现在由 `panel_run.py` 调 backlink-guard 的 `asked`（经 AIsa 调 DataForSEO）全自动跑：ChatGPT、Gemini App 抓网页界面，Google AI Mode 抓搜索结果页，Perplexity（sonar）和 Claude（claude-sonnet-5-5，开联网搜索）走 API；每家每题 3 次，Claude 每月 1 次。走 API 的两家，和用户在网页上看到的可能不一样。 |
+| **L4 页面切片与首段前 50 词（待验证）** | 约 1/3 引用来自页面前 50 词；意图匹配的页 42% 对跑题的博客 13%；有 JSON-LD 的高 3.7 个百分点（作者说主要因为有人维护的站才有标记，不是因果）。都是相关性，水系模型里放在「待验证」 | • **[`ops/geo/geo_engine.py`](geo_engine.py) (`audit-all-blogs`，只检查)**；批量加模板开头的 `upgrade-all-blogs` 11-21 删了，加上去的模板开头已撤回<br>• **Schema.org `Article` + `Dataset` JSON-LD**<br>• **前台急诊室 [`/go-global/ai-readiness`](../../src/app/[lang]/go-global/ai-readiness/AiReadinessClinic.tsx)** | • **Aisa.one（Claude Opus / GPT / Gemini 统一 API 网关）**<br>• **DataForSEO On-Page / Content Analysis API** | 当需要根据 **DataForSEO SERP** 抓回来的竞品 Top-3 事实清单（Check 4: Fact Coverage，`39% vs 26%`）批量扩写文章对比表或重写前 50 词时，直接调 **Aisa.one API** 自动对标竞品补齐缺失事实。 |
+| **L5 多轮面板监控与双重差分验收层** | 同一道题跑两次，品牌只有约 40% 重合（Suski）：每题要问多次、各家分开报。本面板每家每题 3 次；同一时刻的 3 次几乎一样，有效样本是题数，不是回答数（见 `PANEL.md`） | • **[`ops/geo/panel_run.py`](panel_run.py)（每周面板，2026-11-21 起取代 `panel-gap`）**<br>• **[`ops/geo/fanout.py`](fanout.py)（11-23 起：读出 AI 搜过的词，查 Google 前 20 名次）**<br>• **[`ops/geo/fanout_actions.py`](fanout_actions.py)（11-24 起：行动清单，列页面缺的词、代表搜索词的名次、按覆盖题数排的外部网站）**<br>• **[`ops/geo/zh_check.py`](zh_check.py)（每月第一个周一的中文检查）**<br>• **本地 `ops/geo/panel/*.json` 面板**<br>• **DiD 双重差分净效应公式** | • **Aisa.one 统一大模型网关**（带 Online Search / Perplexity Sonar / Gemini Grounding / OpenAI Web Search 并发调用）<br>• **DataForSEO AI Optimization / ChatGPT Scraper API** | 现在由 `panel_run.py` 调 backlink-guard 的 `asked`（经 AIsa 调 DataForSEO）全自动跑：ChatGPT、Gemini App 抓网页界面，Google AI Mode 抓搜索结果页，Perplexity（sonar）和 Claude（claude-sonnet-5-5，开联网搜索）走 API；每家每题 3 次，Claude 每月 1 次。走 API 的两家，和用户在网页上看到的可能不一样。 |
 
 ---
 

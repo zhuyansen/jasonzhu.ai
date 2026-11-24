@@ -5,9 +5,10 @@ GEO Closed-Loop Engine v9.0 (L1 -> L2 -> L3 -> L4 -> L5 · 18 Subcommands; the w
 Modules:
   1. [L1 Crawl & Pretrain]    Common Crawl CDX API + 16-Planted-Bug Guards (`audit-16-guards`, `check-gigalinks-index`)
   2. [L2 Entity & Ontology]   Wikidata/OpenAlex KG + cross-page JSON-LD @id + topic terms on core pages (`connected-kg`, `brand-consensus`, `entity-molecule`)
-  3. [L3 Fan-out & Prompts]   HF WildChat-1M + Google Suggest Fan-out + SERP Similarity (`fanout`, `serp-similarity`, `goany-trends`)
+  3. [L3 SERP Gate & Fan-out] HF WildChat-1M + Google Suggest Fan-out + SERP Similarity + Publisher-First (`fanout`, `serp-similarity`, `goany-trends`, `publisher-finder`, `check-top10-and-aio`)
   4. [L4 Chunking & Section]  First-50-Words BLUF + H2 first paragraphs + SRO & 90d Recency + Proprietary Assets (`section-candidates`, `sro-and-recency`, `proprietary-assets`)
-  5. [L5 Off-Site]            Publisher-First (`publisher-finder`, `check-top10-and-aio`)
+  5. [L5 Measure]             Not in this file: ops/geo/panel_run.py (weekly panel) -> fanout.py (AI search words, Google top 20)
+                              -> fanout_actions.py (action list); zh_check.py monthly. See ops/geo/PANEL.md. Here only `full-audit` reads panel gaps.
 
 Removed on 2026-11-21 (one implementation each):
   three-gates, ai-domain-impact                    -> `backlink-guard ai-access <domain>`
@@ -1261,7 +1262,8 @@ def audit_section_retrieval_candidates(md_path: Path, brand_tokens: list[str]) -
 
 
 def audit_connected_entity_graph(urls: list[str]) -> dict[str, Any]:
-    """Andrea Volpini (WordLift SEO Week 2026, +30% retrieval accuracy):
+    """Idea from Andrea Volpini (WordLift, SEO Week 2026). The "+30% retrieval accuracy" figure was dropped on 2026-11-21:
+    no primary source; the paper measured 2-4 F1 points on a knowledge-graph QA benchmark, not on websites.
     Verifies whether JSON-LD across multiple pages shares stable @id identifiers and links entities into a connected graph."""
     page_nodes: list[dict[str, Any]] = []
     all_ids: dict[str, list[str]] = {}
@@ -1397,7 +1399,7 @@ def main() -> int:
     p_sec = sub.add_parser("section-candidates", help="L4 JOKER Sec.10/16 & iPullRank Ch.08: Audit every H2 section as an independent Retrieval Candidate")
     p_sec.add_argument("--file", default="choose-payment-platform-2026.en.md", help="Blog filename under src/content/blog")
 
-    p_kg = sub.add_parser("connected-kg", help="L2 Andrea Volpini (WordLift, +30%% accuracy): Verify cross-page connected JSON-LD @id graph")
+    p_kg = sub.add_parser("connected-kg", help="L2: Verify cross-page connected JSON-LD @id graph (idea from Andrea Volpini, WordLift)")
     p_kg.add_argument("--urls", nargs="*", default=[
         "https://jasonzhu.ai/zh/go-global",
         "https://jasonzhu.ai/en/blog/indie-payments-report-2026",

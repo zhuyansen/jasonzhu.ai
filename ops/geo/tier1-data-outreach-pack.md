@@ -76,7 +76,8 @@ Jason Zhu
 https://jasonzhu.ai
 ```
 
-### 4. Waffo（$20 实测标准费率全场最低）
+### 4. Waffo（$20 订阅扣 $1.28，不含 1% 提现费）
+> **更正（2026-11-24）：** 下面这封 11-21 发出的信说 Waffo 是「最低」，不对。按 Zenodo 02 号第 2 版（总 DOI `10.5281/zenodo.24387071`）：Dodo 合作费率扣 $1.16–$1.18，比 Waffo 低；Waffo 的 $1.28 没算 1% 提现费，不能和含提现费的数直接比；这些数字出自刘小排 2026-11-15 的公众号，不是我们实测。第 2 版已经去掉排名。要不要给 Waffo 发更正信，等 Jason 定。正文按原样留作发信记录。
 - **核实渠道**：
   - 官网联系表单（选 Press & Media / Partnerships）：`https://waffo.com` Contact 页
   - 收件人：Waffo 商务（个人邮箱）；或在 LinkedIn 联系 Waffo 的 CEO、CBO

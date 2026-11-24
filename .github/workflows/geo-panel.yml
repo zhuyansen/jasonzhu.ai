@@ -17,7 +17,7 @@
 #         按能补上几道「我们没排上」的题排（投稿、请求收录先找它们）。页面按 ops/geo/demand.json（Search Console 展示数）排先后。
 #         计数提交到 ops/geo/panel/actions-<日期>.json。失败不挡后面。
 #   中文检查 ops/geo/zh_check.py：每月第一个周一，真实问法组的中文版问 ChatGPT 3 次、Claude 1 次，看 AI 用什么语言搜、
-#         引不引中文页（约 $1.8，zh_usd 封顶）。env 里 ZH_MONTHLY 是 "1" 才跑，默认关；计数提交到 ops/geo/panel/zh-<日期>.json。
+#         引不引中文页（约 $1.8，zh_usd 封顶）。env 里 ZH_MONTHLY 是 "1" 才跑，11-24 起打开（改成 "0" 就停）；「第一个周一」按北京时间 7 号以内算，第一次是 12-07；计数提交到 ops/geo/panel/zh-<日期>.json。
 #   通知  摘要发到 ALERT_EMAIL。失败、或有的 AI 有效回答不到一半（结果不完整），也发邮件。
 #   手动  Actions → Run workflow。试跑填 limit=3、publish=0：只问前 3 题，不提交、不存档、不发邮件。
 #   改动  改页面前先在 ops/geo/experiments.json 记一笔（改了哪些题的页面、哪些故意不改），周报会按处理组和对照组分开算。

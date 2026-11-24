@@ -224,7 +224,7 @@ export const SEO_SKILLS: Pick[] = [
     url: "https://agentskillshub.top/skill/AminForou/mcp-gsc/",
   },
   {
-    what: { zh: "开源（GitHub）+ 网页版 AI 网站急诊室（100 分制 · 7 大类 · 26 项 HTTP/SSR/JSON-LD/llms.txt/WebMCP 检查，出一段给编程 agent 的修复提示词）。检查项和分值对齐 Hostinger 的免费检查工具，代码和文字是自己写的", en: "Open source (GitHub) plus a web version: 100 points, 7 categories, 26 checks, and a fix prompt for a coding agent. Checks and points follow Hostinger's free checker; code and wording are our own" },
+    what: { zh: "网页版 AI 网站急诊室（本站 /go-global/ai-readiness，100 分制 · 7 大类 · 26 项 HTTP/SSR/JSON-LD/llms.txt/WebMCP 检查，出一段给编程 agent 的修复提示词）。命令行版在 GitHub 上，2026-11-24 起归档、不再维护。检查项和分值对齐 Hostinger 的免费检查工具，代码和文字是自己写的", en: "A web version on this site (/go-global/ai-readiness): 100 points, 7 categories, 26 checks, and a fix prompt for a coding agent. The command-line version on GitHub was archived on 2026-11-24 and is no longer maintained. Checks and points follow Hostinger's free checker; code and wording are our own" },
     name: "ai-visibility-checker（26 项 AI 可读性检查）",
     url: "https://github.com/zhuyansen/ai-visibility-checker",
   },
@@ -667,12 +667,12 @@ export const GEO_NEW_SITE = {
   },
 };
 
-/** 增长：SEO 关键词与哥飞 AI 工具箱（用户 10-17 给的分组名「seo关键词」+ 11-20 补入哥飞开放 API/MCP 与工具箱 + 自研 new-term-radar v0.7.0） */
+/** 增长：SEO 关键词与哥飞 AI 工具箱（用户 10-17 给的分组名「seo关键词」+ 11-20 补入哥飞开放 API/MCP 与工具箱 + 自研 new-term-radar v0.7.1） */
 export const KEYWORD_TOOLS: SharedPick[] = [
   {
     what: {
-      zh: "自研 10 信号新词雷达 v0.7.0（抓 X/HF/GitHub 爆发/新注册即排名站/8 大收款平台新卖家/TrustMRR 收入/Reddit 求助，14 天后自动复核信号命中率。比趋势曲线早多少，只核对过一个例子：雷达报出 Strata，比它在 DataForSEO Trends 里起量早 3 天，一个例子不代表一般情况）",
-      en: "Our 10-signal new-term radar v0.7.0 (catches X, HF, GitHub breakouts, newly ranked domains, 8-gateway new sellers & TrustMRR revenue, with 14-day self-review. How far ahead of the trend curves it runs has been checked once: it named Strata three days before Strata's rise in DataForSEO Trends, and one example says little about the general case)",
+      zh: "自研 10 信号新词雷达 v0.7.1（抓 X/HF/GitHub 爆发/新注册即排名站/8 大收款平台新卖家/TrustMRR 收入/Reddit 求助，14 天后自动复核信号命中率。比趋势曲线早多少，只核对过一个例子：雷达报出 Strata，比它在 DataForSEO Trends 里起量早 3 天，一个例子不代表一般情况）",
+      en: "Our 10-signal new-term radar v0.7.1 (catches X, HF, GitHub breakouts, newly ranked domains, 8-gateway new sellers & TrustMRR revenue, with 14-day self-review. How far ahead of the trend curves it runs has been checked once: it named Strata three days before Strata's rise in DataForSEO Trends, and one example says little about the general case)",
     },
     name: "new-term-radar（自研开源 CLI / MCP / Skill）",
     url: "https://github.com/zhuyansen/new-term-radar",
@@ -786,8 +786,8 @@ export const GO_GLOBAL_ARSENAL_2026 = {
     {
       stage: { zh: "① 选品与需求雷达", en: "① Demand & Niche Radar" },
       keep: {
-        zh: "new-term-radar v0.7.0（自研 10 信号：X / HF / GitHub 爆发 / 新站 whois / 8 大收款平台新卖家 / TrustMRR 收入 / Reddit 求助 + 14 天 Trends 自动复核）+ App Store 评论 RSS / Sensor Tower 下拉 + PaywallPro / PaywallScreens（1.1 万+ 付费墙）",
-        en: "new-term-radar v0.7.0 (10 signals + 14-day self-review) + App Store Reviews RSS / Sensor Tower dropdown + PaywallPro / PaywallScreens (11K+ paywalls)",
+        zh: "new-term-radar v0.7.1（自研 10 信号：X / HF / GitHub 爆发 / 新站 whois / 8 大收款平台新卖家 / TrustMRR 收入 / Reddit 求助 + 14 天 Trends 自动复核）+ App Store 评论 RSS / Sensor Tower 下拉 + PaywallPro / PaywallScreens（1.1 万+ 付费墙）",
+        en: "new-term-radar v0.7.1 (10 signals + 14-day self-review) + App Store Reviews RSS / Sensor Tower dropdown + PaywallPro / PaywallScreens (11K+ paywalls)",
       },
       add: {
         zh: "哥飞需求挖掘机 & KGR 工具 + GoAnyAPI 广告透明中心新广告主监控（抓「刚决定在某词上投钱」的对手）+ Chrome / YouTube 教程评论痛点抓取（pains 命令）",
@@ -846,8 +846,8 @@ export const GO_GLOBAL_ARSENAL_2026 = {
     {
       stage: { zh: "⑤ 外链、权威与 GEO 工具（L1–L5）", en: "⑤ Backlinks, Authority & GEO Tools (L1–L5)" },
       keep: {
-        zh: "backlink-guard v0.12.0（12 个 MCP/CLI 命令：find 按访客排外链页、vet 防毒、ai-access 查 AI 爬虫能不能读到、audit/lost 找带外链的 404 做 301、competitors --early 扒竞品头 90 天发射渠道、cited/asked 测 5 大 AI 引擎引用）+ 存档于 Zenodo 的数据集（有 DOI；部分在 GitHub、Hugging Face、Kaggle 上另有镜像）+ GitHub 每日自动更新榜单仓库矩阵",
-        en: "backlink-guard v0.12.0 (12 CLI/MCP commands: find, vet, ai-access, audit, lost 404 recovery, competitors --early, cited/asked 5-engine AI probe) + datasets archived on Zenodo (with DOIs; some mirrored on GitHub, Hugging Face and Kaggle) + daily GitHub awesome repos",
+        zh: "backlink-guard v0.12.2（12 个 MCP/CLI 命令：find 按访客排外链页、vet 防毒、ai-access 查 AI 爬虫能不能读到、audit/lost 找带外链的 404 做 301、competitors --early 扒竞品头 90 天发射渠道、cited/asked 测 5 大 AI 引擎引用）+ 存档于 Zenodo 的数据集（有 DOI；部分在 GitHub、Hugging Face、Kaggle 上另有镜像）+ GitHub 每日自动更新榜单仓库矩阵",
+        en: "backlink-guard v0.12.2 (12 CLI/MCP commands: find, vet, ai-access, audit, lost 404 recovery, competitors --early, cited/asked 5-engine AI probe) + datasets archived on Zenodo (with DOIs; some mirrored on GitHub, Hugging Face and Kaggle) + daily GitHub awesome repos",
       },
       add: {
         zh: "geo_engine.py 的 18 个子命令（含 2026-11-20 新加的 3 个命令，都是粗查：`section-candidates` 看每个 H2 首段的长度和有没有数字或具体名称、`connected-kg` 看几个页面的 JSON-LD 是否共用同一个 `@id`、`brand-consensus` 看本站核心页面是否覆盖同一组主题词；配合原有的 `sro-and-recency` / `entity-molecule` / `serp-similarity` / `publisher-finder` / `proprietary-assets`）+ 每周 GEO 引用面板（`ops/geo/panel_run.py`，问 AI 引用了谁统一用它）（geo_engine.py 和 panel_run.py 都是内部脚本，在本站仓库 ops/ 目录，读者不能直接安装）+ `backlink-guard ai-access`（外站是否放行 AI 爬虫）+ `/api/md/...` 零噪 Markdown 端点 + `Dataset` JSON-LD + `/ai-info/` 机器可读签字事实页",
