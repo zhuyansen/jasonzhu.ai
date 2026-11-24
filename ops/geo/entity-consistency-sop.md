@@ -148,7 +148,7 @@ Whenever a new flagship empirical study is published on `jasonzhu.ai`, run this 
 
 每个个人档案有没有链回 jasonzhu.ai。只用公开、免费的接口和不登录的页面；补回链要本人登录各平台去改。
 
-2026-11-24 定：只补 X（website 字段改成 jasonzhu.ai）和 YouTube（简介加链接），Google Scholar 设成公开；Hugging Face、Kaggle 不补；B 站已从 sameAs 拿掉。
+2026-11-24 定：只补 X（website 字段改成 jasonzhu.ai）和 YouTube（加链接），Google Scholar 设成公开；Hugging Face、Kaggle 不补；B 站已从 sameAs 拿掉。11-24 已做：YouTube、Google Scholar；X 等人机验证。
 
 | 档案 | 链回本站 | 怎么查的、看到什么 |
 | :--- | :--- | :--- |
@@ -157,11 +157,11 @@ Whenever a new flagship empirical study is published on `jasonzhu.ai`, run this 
 | X | 部分 | `api.fxtwitter.com` 的 website 字段是 gosaillab.com；简介正文里写了 jasonzhu.ai |
 | Hugging Face | 没有 | 个人页没填网站和任何社交链接（对照：别人的个人页能读到这些链接） |
 | Kaggle | 没有 | 公开页显示 "No bio yet"，没有外链 |
-| YouTube | 没有 | 「关于」里只链 X，没有链接栏 |
+| YouTube | 有（11-24） | 频道「链接」加了 JasonZhu.AI → https://jasonzhu.ai，不登录打开频道页能看到 |
 | B 站 | 没有 | 公开接口：账号名「香菇的猪」，简介空白，外人看不出是同一个人 |
 | 抖音 | 没看到 | 不登录能看到的部分没有 jasonzhu.ai |
 | 小红书 | 没看到 | 不登录能看到的部分没有（网址跳到 rednote.com） |
-| Google Scholar | 打不开 | 个人页对外返回 404，像是没设成公开（对照：公开的个人页同样方法能打开） |
+| Google Scholar | 公开（11-24） | 11-24 前对外返回 404；勾上「将我的个人学术档案设为公开」后不登录能打开，个人页的「首页」链到 https://jasonzhu.ai/en |
 | SSRN 作者页 | 不确定 | 脚本访问被拦（403 / Content Blocked），要在浏览器里打开确认 |
 | LinkedIn | 不确定 | 要登录才能确认 |
 | Product Hunt | 不确定 | Cloudflare 拦截脚本，要在浏览器里打开确认 |
