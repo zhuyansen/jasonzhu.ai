@@ -23,7 +23,7 @@
 
 **不做了（2026-11-24 定）：** Wikidata 人物条目和 6 个作品条目（有 2–3 家独立媒体报道后再议，条件见 SOP Phase 3）；OpenAlex 认领、合并作者页、补 DOI；为进学术索引去找 Semantic Scholar 收录、arXiv 背书；Hugging Face、Kaggle 补回链；Zenodo 单位写法统一；追安全论文 1.0 版 DOI `24420920` 的登记（已被 1.1 版取代，站上用总 DOI `24420919`；11-24 查总 DOI 和 1.1 版 `24432858` 都能解析）。
 
-**最近办完：** X 的 website 从 gosaillab.com 改成 jasonzhu.ai（11-24，你本人改的；`api.fxtwitter.com` 和 twitterapi.io 都读到）；npm 两个旧 token（`agentskillshub-4`、`agentskillshub -3`）删了，jasonzhu0526 账号下只剩 3 个早已过期的；2027-01 起跳过 2FA 的 token 不能直接发布，下次发版要换方式（11-24）；Google Scholar 个人页设成公开，不登录能打开了（11-24）；YouTube 频道加了 jasonzhu.ai 链接（11-24）；ORCID 加任职（11-22）；npm 两个包发布 cli 0.5.1、mcp 0.3.1（11-22）；Zenodo 纠错新版本 24432849、24432852、24432855、24432843、24432858、24435484，重复记录 24435488/89/90 指向正版，GitHub、HF、Kaggle 镜像和 dev.to 文章同步改正，给 Polar 的更正信已发（11-22）；每日实体检查 `check-entities.yml` 上线（11-22）。
+**最近办完：** SOP 文档更正（11-24，`81d2e18`）：文首状态改成维护规则，Wikidata 个人条目写「不做」，个人档案 13 个改 12 个，第 5 节清单和外联文案里的 DOI 换成总 DOI；X 的 website 从 gosaillab.com 改成 jasonzhu.ai（11-24，你本人改的；`api.fxtwitter.com` 和 twitterapi.io 都读到）；npm 两个旧 token（`agentskillshub-4`、`agentskillshub -3`）删了，jasonzhu0526 账号下只剩 3 个早已过期的；2027-01 起跳过 2FA 的 token 不能直接发布，下次发版要换方式（11-24）；Google Scholar 个人页设成公开，不登录能打开了（11-24）；YouTube 频道加了 jasonzhu.ai 链接（11-24）；ORCID 加任职（11-22）；npm 两个包发布 cli 0.5.1、mcp 0.3.1（11-22）；Zenodo 纠错新版本 24432849、24432852、24432855、24432843、24432858、24435484，重复记录 24435488/89/90 指向正版，GitHub、HF、Kaggle 镜像和 dev.to 文章同步改正，给 Polar 的更正信已发（11-22）；每日实体检查 `check-entities.yml` 上线（11-22）。
 
 ---
 
