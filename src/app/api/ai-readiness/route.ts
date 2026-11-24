@@ -262,20 +262,60 @@ export async function GET(request: NextRequest) {
   const failCounter: Record<string, number> = {};
   let analyzedDomainsCount = 0;
 
+  let benchmarks = BENCHMARK_HALL_OF_FAME;
+
   try {
     const supabase = getSupabase();
-    let query = supabase
-      .from("ai_readiness_scans")
-      .select("domain, score, grade, score_delta, failed_checks, is_hidden, created_at", { count: "exact" })
-      .or("is_hidden.is.null,is_hidden.eq.false")
-      .order("created_at", { ascending: false })
-      .limit(120);
+    const benchmarkDomains = BENCHMARK_HALL_OF_FAME.map((b) => b.domain);
 
-    if (q) {
-      query = query.ilike("domain", `%${q}%`);
+    const [scansRes, benchRes] = await Promise.all([
+      (() => {
+        let query = supabase
+          .from("ai_readiness_scans")
+          .select("domain, score, grade, score_delta, failed_checks, is_hidden, created_at", { count: "exact" })
+          .or("is_hidden.is.null,is_hidden.eq.false")
+          .order("created_at", { ascending: false })
+          .limit(120);
+        if (q) {
+          query = query.ilike("domain", `%${q}%`);
+        }
+        return query;
+      })(),
+      supabase
+        .from("ai_readiness_scans")
+        .select("domain, score, grade, category_scores, created_at")
+        .in("domain", benchmarkDomains)
+        .order("created_at", { ascending: false })
+        .limit(30),
+    ]);
+
+    const { data, count, error } = scansRes;
+
+    if (!benchRes.error && Array.isArray(benchRes.data) && benchRes.data.length > 0) {
+      const latestBench = new Map<string, (typeof benchRes.data)[number]>();
+      for (const row of benchRes.data) {
+        if (!latestBench.has(row.domain)) {
+          latestBench.set(row.domain, row);
+        }
+      }
+      benchmarks = BENCHMARK_HALL_OF_FAME.map((b) => {
+        const live = latestBench.get(b.domain);
+        if (!live || typeof live.score !== "number") return b;
+        const nextBreakdown = { ...b.categoryBreakdown };
+        if (live.category_scores && typeof live.category_scores === "object") {
+          for (const [k, v] of Object.entries(live.category_scores as Record<string, { earned?: number } | number>)) {
+            if (typeof v === "number") nextBreakdown[k] = v;
+            else if (v && typeof v.earned === "number") nextBreakdown[k] = v.earned;
+          }
+        }
+        return {
+          ...b,
+          score: live.score,
+          grade: (live.grade as typeof b.grade) || b.grade,
+          categoryBreakdown: nextBreakdown,
+        };
+      });
     }
-
-    const { data, count, error } = await query;
 
     if (!error && Array.isArray(data) && data.length > 0) {
       if (typeof count === "number") {
@@ -339,7 +379,7 @@ export async function GET(request: NextRequest) {
     .slice(0, 6);
 
   return NextResponse.json({
-    benchmarks: BENCHMARK_HALL_OF_FAME,
+    benchmarks,
     recentScans,
     totalScans,
     insights: {

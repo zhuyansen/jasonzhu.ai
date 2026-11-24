@@ -253,6 +253,7 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
   const [hideModalDomain, setHideModalDomain] = useState<string | null>(null);
 
   // 大盘与实时记录
+  const [benchmarks, setBenchmarks] = useState<BenchmarkEntry[]>(BENCHMARK_HALL_OF_FAME);
   const [recentScans, setRecentScans] = useState<RecentScanRow[]>([]);
   const [totalScans, setTotalScans] = useState<number>(BENCHMARK_HALL_OF_FAME.length);
   const [insights, setInsights] = useState<ClinicInsights>({
@@ -292,6 +293,7 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
     fetch(url)
       .then((r) => r.json())
       .then((d) => {
+        if (Array.isArray(d?.benchmarks)) setBenchmarks(d.benchmarks);
         if (Array.isArray(d?.recentScans)) setRecentScans(d.recentScans);
         if (typeof d?.totalScans === "number") setTotalScans(d.totalScans);
         if (d?.insights) setInsights(d.insights);
@@ -619,7 +621,7 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
               <span className="text-slate-400 font-medium">
                 {isZh ? "👉 一键调阅典型公开病例：" : "👉 Try a public benchmark case:"}
               </span>
-              {BENCHMARK_HALL_OF_FAME.map((b) => (
+              {benchmarks.map((b) => (
                 <button
                   key={b.domain}
                   type="button"
@@ -1811,7 +1813,7 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
-                {BENCHMARK_HALL_OF_FAME.map((b: BenchmarkEntry) => (
+                {benchmarks.map((b: BenchmarkEntry) => (
                   <tr key={b.domain} className="hover:bg-blue-50/30 transition-colors">
                     <td className="py-3.5 pl-4 pr-3">
                       <p className="font-bold text-gray-900">{b.domain}</p>
