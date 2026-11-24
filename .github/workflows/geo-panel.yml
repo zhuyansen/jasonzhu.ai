@@ -8,7 +8,8 @@
 #         解密：gh release download geo-panel-state -p 'panel-<日期>.json.gz.enc' &&
 #               openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000 -pass env:SELLER_STATE_KEY -in panel-<日期>.json.gz.enc | gunzip
 #   子查询 ops/geo/fanout.py：问完再让 Gemini（接口）每题答 1 次拿它的搜索词，连同 ChatGPT、Perplexity 回答里自带的搜索词，
-#         每条查 Google 和 Bing 前 20，看我们排不排得上（约 $4–5，fanout_usd 封顶，填 0 不跑）。计数提交到
+#         每条查 Google 前 20，看我们排不排得上；先查 site:jasonzhu.ai 自检，第一条不是本站就写「测不出来」、不查排名
+#         （约 $3–4，fanout_usd 封顶，填 0 不跑）。计数提交到
 #         ops/geo/panel/fanout-<日期>.json，搜索词原文只进邮件和加密存档。这一步失败不挡面板本身。
 #   通知  摘要发到 ALERT_EMAIL。失败、或有的 AI 有效回答不到一半（结果不完整），也发邮件。
 #   手动  Actions → Run workflow。试跑填 limit=3、publish=0：只问前 3 题，不提交、不存档、不发邮件。
