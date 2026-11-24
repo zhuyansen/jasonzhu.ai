@@ -1,30 +1,70 @@
 # 实体图谱迭代记录
 
-方法论和资产清单在 [`entity-consistency-sop.md`](entity-consistency-sop.md)（2026-11-21 由 ENTITY-GRAPH-INFILTRATION-PLAYBOOK.md 改名）。这里记每一轮**发现了什么、改了什么、谁来做、什么时候复查**，最新的在上面。
+方法论、规则和操作步骤在 [`entity-consistency-sop.md`](entity-consistency-sop.md)。这里只记两样：**还没办完的事**，和**每一轮发现了什么、改了什么、效果怎么看**，最新的在上面。做完的操作步骤不留在这里，要看去 git 历史。
 
-**怎么查现状：** agent-skills-hub 仓库的 `python3 ops/geo/entity_audit.py --mode molecule --no-save`，一共 8 项。第 7 项查各处事实是否一致，第 8 项查学术索引。第 7、8 项每天也会跑一遍，结果进 ASH 的「数据四件套日报」邮件，有问题时邮件标题会提示。
+**怎么查现状：**
+- 事实和学术索引：agent-skills-hub 仓库的 `python3 ops/geo/entity_audit.py --mode molecule --no-save`，一共 8 项。第 7 项（各处事实是否一致）每天跑，第 8 项（学术索引）每周一跑，结果进 ASH 的「数据四件套日报」邮件，有问题时邮件标题会提示。
+- 效果：GEO 面板（[`PANEL.md`](PANEL.md)），每周一自动跑。实体图谱看三样：不带品牌名的题有没有引用本站；AI 搜的不带品牌名的词，我们在 Google 前 20 有几条；品牌词（`brand_serp`）本站排第几。
 
-**每条记录写：** 证据（怎么查到的，能复现）→ 做了什么（提交号、文件）→ 谁做 → 怎么验证的 → 下次什么时候看。
+**每一轮记四样：** 证据（怎么查到的，能复现）→ 改了什么（提交号）→ 怎么验证 → 效果看哪一项、哪天看。改动同时在 [`experiments.json`](experiments.json) 记一条，面板周报才对得上。
 
 ---
 
 ## 当前待办
 
-| 事项 | 谁 | 什么时候 / 触发条件 | 状态 |
+| 事项 | 谁 | 什么时候 | 状态 |
 |---|---|---|---|
-| 安全论文 DOI `10.5281/zenodo.24420920`（及上级 concept DOI `24420919`）没登记到 doi.org | Claude 复查，必要时你提工单 | 2026-11-23 22:37（北京时间，发布满 48 小时）；日报第 8 项过了宽限期会报出来 | 🟡 11-23 下午查：concept DOI `24420919` 和 1.1 版 `24432858` 已能解析，只剩已被取代的 1.0 版 `24420920` 没登记。站上用 concept DOI，不受影响；22:37 后还不行再用下文的工单模板 |
-| OpenAlex：130K 数据集挂在两个别人名下，你的其余作品拆在两个作者页上 | 你登录 openalex.org | 约 2026-11-24：DataCite 11-22 已改对，等 OpenAlex 刷新（约两天）后再做 | ⏳ 等刷新 |
-| ORCID 加任职 | Claude 在你的 Chrome 里填写，你确认后保存 | 2026-11-22 | ✅ GoSailGlobal LLC · Sheridan, Wyoming, US · BRICKAI / Agent Skills Hub · Founder；开始日期没填；ORCID 公开接口已能查到 |
-| Wikidata：第一批（建人物条目） | 你 | **暂缓**：Zenodo 数据纠正发布完，并且有 2–3 个独立来源报道之后再说（Jason 2026-11-22 定） | ⏸ 暂缓。现有两个条目是用临时账号 `~2026-55148-80` 建的；批次文件 `ops/geo/wikidata/2026-11-22-batch1-person.txt` 留着不用 |
-| Wikidata：第二批（6 个作品条目 + 连上 ASH 和 130K 数据集） | 你 | 同上，第一批之后 | ⏸ 暂缓 |
-| 学术外联三封 | 邮件由 Claude 在 Gmail 写信页填好、你点发送；LinkedIn 那条你自己发 | 2026-11-22 | 🟡 两封邮件已发（SkillProbe 一作、NVIDIA 一作），LinkedIn 待发；回复记在本地草稿文件末尾。两封的第二条数据用的是论文 1.0 版说法，更正信已在原对话里回复，两封都已发（11-23） |
-| 两个 npm 包发布（cli 0.5.1、mcp 0.3.1，修过期数字） | Claude 用你给的 npm token 发布 | 2026-11-22 | ✅ 已上线（npm 先返回 202，处理几分钟后才可见）。🟡 用过的两个 token（`agentskillshub-4`、`agentskillshub -3`）还没删：删除要在 npm 设置页过安全密钥或密码验证，等你操作；它们 2027-02-19 才过期（之前写「等 7 天过期」是错的）。npm 从 2027-01 起不再允许跳过 2FA 的 token 直接发布，下次发版要换发布方式 |
-| Zenodo 7 条记录的单位写法不统一 | 不急 | 有空时 | 记下，没改 |
-| Zenodo 纠错新版本：01/02/03/04 四份数据集、两篇工作论文、3 份 11-20 重复记录（24387070、24387080、24387082） | Claude（数据纠错子代理） | 2026-11-22 | ✅ 全部发布并核对：新版本 24432849、24432852、24432855、24432843、24432858、24435484，重复记录 24435488/89/90 指向正版；站上改用总 DOI（每个都在 doi.org 查过能解析）；GitHub、HF、Kaggle 镜像和 dev.to 文章同步改正；给 Polar 的更正信已发（2026-11-22） |
-| SSRN 两篇论文换成 1.1 版 | SSRN 客服；换不了就由 Claude 在你的 Chrome 里走 Revise（你登录） | 等客服回复，或等 SSRN 的审核通过邮件 | 🟡 11-23 查：两篇都还在审核队列（PRELIMINARY_UPLOAD），通过前没有 Edit 和 Revise。当天用网站邮箱写信请客服在审核前换成 1.1 版（附两份 PDF，Resend 显示已送达）。改版说明和进展在 `ops/geo/papers/SSRN-revision-notes-2026-11-21.md` |
-| 个人档案回链 jasonzhu.ai：Hugging Face、Kaggle、YouTube、B 站没有；X 的 website 字段是 gosaillab.com | 你登录各平台改 | 随时 | ⬜ 清单见下面 2026-11-22 · v2.3 第 4 条 |
-| Google Scholar 个人页设成公开（现在对外 404）；B 站改名、写简介（现在是「香菇的猪」、简介空） | 你 | 随时 | ⬜ 这两条还在 Person 的 sameAs 里 |
-| 每日实体检查 `check-entities.yml` | 自动 | 每天 | ✅ 已上线，手动跑过一次通过（run 44981354838） |
+| 第一次带新检查的定时运行：「分数进了仓库」那步通过、子查询自检通过、邮件里有品牌词名次 | Claude | 2026-11-30（周一）跑完后 | ⏳ |
+| OpenAlex：130K 数据集（W7167922915）还挂在 A5009989201「竹彦 森」名下，按 ORCID 查不到作者（11-24 查） | 你提工单，模板在 SOP 2C | 现在 | 🟡 只做这一件；认领、合并作者页不做 |
+| 回链：X 的 website 字段改成 jasonzhu.ai；YouTube 简介加 jasonzhu.ai 链接 | 你登录改 | 定一天一起做，约 10 分钟 | ⬜ |
+| Google Scholar 个人页对外 404：点公开；不想公开就告诉 Claude 从 sameAs 删掉 | 你 | 同上 | ⬜ |
+| B 站改名、写简介（现在是「香菇的猪」、简介空），改好后告诉 Claude 加回 sameAs | 你 | 不急 | ⬜ 11-24 已从 sameAs 拿掉 |
+| npm 两个旧 token（`agentskillshub-4`、`agentskillshub -3`）删掉 | 你在 npm 设置页过安全密钥或密码验证 | 现在 | 🟡 还没删，2027-02-19 才过期。2027-01 起跳过 2FA 的 token 不能直接发布，下次发版要换方式 |
+| 学术外联 | 你 | 等回复 | 🟡 两封邮件（SkillProbe 一作、NVIDIA 一作）和更正信都已发，LinkedIn 邀请已发；不再追加。回复记在 `~/出海/specs/2026-11-22-academic-outreach.md` 末尾 |
+| SSRN 两篇换成 1.1 版 | SSRN 客服 | 等邮件 | ⏳ 不再跟进；审核通过后看一眼是不是 1.1 版（`papers/SSRN-revision-notes-2026-11-21.md`） |
+
+**不做了（2026-11-24 定）：** Wikidata 人物条目和 6 个作品条目（有 2–3 家独立媒体报道后再议，条件见 SOP Phase 3）；OpenAlex 认领、合并作者页、补 DOI；为进学术索引去找 Semantic Scholar 收录、arXiv 背书；Hugging Face、Kaggle 补回链；Zenodo 单位写法统一；追安全论文 1.0 版 DOI `24420920` 的登记（已被 1.1 版取代，站上用总 DOI `24420919`；11-24 查总 DOI 和 1.1 版 `24432858` 都能解析）。
+
+**最近办完：** ORCID 加任职（11-22）；npm 两个包发布 cli 0.5.1、mcp 0.3.1（11-22）；Zenodo 纠错新版本 24432849、24432852、24432855、24432843、24432858、24435484，重复记录 24435488/89/90 指向正版，GitHub、HF、Kaggle 镜像和 dev.to 文章同步改正，给 Polar 的更正信已发（11-22）；每日实体检查 `check-entities.yml` 上线（11-22）。
+
+---
+
+## 2026-11-24 · v2.4：转成维护，加效果指标
+
+### 证据
+
+- **11-23 面板**（[摘要](panel/summary-2026-11-23.md)）：带品牌名的题四家引用本站 50–100%；不带品牌名的 ChatGPT 5%、Gemini App 3%、Google AI Mode 2%、Perplexity 29%。冻结组和 11-21 比，四家都在区间内，实体改动还没测出效果。
+- **AI 自己搜的词：** 不带品牌名的 122 条里，我们在 Google 前 20 只有 6 条，前 10 只有 3 条。这是 11-24 用修好的代码重查邮件里能看到的 162 条（全部 454 条在加密存档里），每条查 1 次。
+- **品牌词：** 直接搜「jasonzhu.ai」5 次都不在 Google 前 20，前 20 全是别的 Jason Zhu；「jasonzhu ai」8 次里 2 次第 1；「gosail club」3 次都不在前 20。实体图谱真正该补的是这里。
+- **学术站不在 AI 的引用里：** 11-23 AI 引用最多的 20 个网站里，Zenodo、OpenAlex、SSRN、Scholar、Wikidata 一个都没有。
+- **测量自己出了四次错**，都是「没测到」被写成「0」或「通过」：定时运行跳过提交却显示成功；子查询的 Google 结果全认不出网站，报成「前 20 共 0 条」；AIsa 的 Bing 结果对新品牌不相干；ASH 实体审计第 3 项（v2.2 时发现）。
+
+### 决定（Jason 2026-11-24「按你的来」）
+
+实体图谱转成维护：每天查事实、每周查品牌词；学术图谱只修错、不扩张；时间挪到不带品牌名的搜索词缺口上。
+
+### 改了什么
+
+| 提交 | 改动 |
+|---|---|
+| `8772edf` | 定时触发时 `inputs.publish` 为空，`!= '0'` 判成假，提交、邮件、存档被跳过：改成 `(inputs.publish \|\| '1') != '0'`（geo-panel、seller-weekly） |
+| `e24dd97` | 子查询：Google 结果改从 breadcrumb 认网站；先查 `site:jasonzhu.ai` 自检，不过就写「测不出来」；Bing 默认不查；11-23 的排名标作废 |
+| `62cf192` | 品牌词每周查（4 个词各 3 次）；缺口只算不带品牌名的题；Gemini 子查询改成每月一次；定时运行后直接看仓库里有没有当天的分数；`experiments.json` 补上 11-22、11-24；Person 的 sameAs 拿掉 B 站 |
+| 本次 | 日志瘦身，操作步骤挪进 SOP；SOP 加维护规则，2C、Phase 3 改成不做 |
+
+### 怎么验证的
+
+fanout 自测通过；真接口跑冻结组前 5 题：自检 `site:jasonzhu.ai` 排第 1，4 道品牌题单列、不进缺口，品牌词 4 个都有名次；`npx tsc --noEmit` 通过。
+
+### 效果看哪、哪天看
+
+每周一的面板邮件，看走势，差 10–15 个百分点以上才算数。第一次带新检查的定时运行是 11-30。
+
+| 指标 | 起点 | 在哪看 |
+|---|---|---|
+| 品牌词进 Google 前 3 | jasonzhu.ai 0/3，jasonzhu ai 1/3，gosail club 0/3（11-24） | 邮件「品牌词」、`fanout-<日期>.json` 的 `brand_serp` |
+| 不带品牌名的题引用本站 | ChatGPT 5%、Gemini App 3%、Google AI Mode 2%、Perplexity 29%（11-23） | 面板摘要「带品牌名的题和不带的分开看」 |
+| 不带品牌名的搜索词在 Google 前 20 | 6/122（11-24 重查） | 邮件「AI 实际搜了什么」、`totals_unbranded` |
 
 ---
 
@@ -50,21 +90,7 @@ v2.2 第 5 条：Person 的 sameAs 里混着作品、另一个网站，Organizat
 
 部署后用脚本抓线上 JSON-LD：`/en`、`/zh`、`/en/about` 各 4 个节点，Person 的 sameAs 13 条全是个人档案，没有 worksFor；`/en/blog/indie-payments-report-2026`、`/en/research`、`/en/backlink-spam-list` 的作品节点作者都指向 #person；检查脚本 21 页通过。
 
-### 回链核对（补回链要你登录各平台）
-
-| 档案 | 链回 jasonzhu.ai |
-|---|---|
-| ORCID、GitHub | 有 |
-| X | 部分：website 字段是 gosaillab.com，简介正文写了 jasonzhu.ai |
-| Hugging Face、Kaggle、YouTube、B 站 | 没有 |
-| 抖音、小红书 | 不登录看不到 |
-| SSRN、LinkedIn、Product Hunt | 脚本被拦或要登录，没法确认 |
-
-GitHub 简介里「200k Checkout Links & 105k」两个数要等 Zenodo 纠错发布后跟着改。
-
-### 下次看
-
-Zenodo 新版本发布后当天：站上 DOI 换成 concept DOI，跑 `node scripts/check-entities.mjs`；2026-11-24 和 v2.2 的 OpenAlex 复查一起看。
+回链核对表挪进了 SOP 第 5 节「回链核对」。
 
 ---
 
@@ -118,55 +144,10 @@ Zenodo 新版本发布后当天：站上 DOI 换成 concept DOI，跑 `node scri
 | 8 | 联系同领域三篇论文的作者，SkillProbe 那封问 arXiv cs.CR 背书 | Claude 起草，你发 | 草稿里有对方的邮箱，这个仓库是公开的，所以只存本地：`~/出海/specs/2026-11-22-academic-outreach.md` | 回复记在那份文件末尾的表里 |
 | + | `agentskillshub-mcp` 的 GitHub 仓库简介去掉「100K+」 | Claude | 改成不带数字的版本，和 npm 文案「对 AI 不写数字」的规则一致 | `gh api` 已确认 |
 
-### 你要做的
-
-**OpenAlex（约 11-24 之后）**
-
-1. 先看那天的日报「学术索引」。W7167922915 如果已经不挂在 A5009989201 / A5048188910 名下，说明 OpenAlex 已经按 DataCite 的新数据刷新了。
-2. 在 openalex.org 注册（免费），进 Settings → Link ORCID，用 ORCID 登录。如果有作者页挂着你的 ORCID，会自动认领给你。
-3. 认领后，在你的作者页用 DOI 添加作品：
-   - 7 个 Zenodo DOI：24420871、24420920、24386243、24387072、24387074、24387076、21292799，前缀都是 `10.5281/zenodo.`；
-   - A5163069727、A5087679970 上的作品也加进来。OpenAlex 的说法是，加进来就算合并。
-4. 如果没有任何作者页挂着你的 ORCID，就打开 A5163069727 点 Claim，在"证明链接"里填一个同时写着你 OpenAlex 账号邮箱的论文页面。安全那篇工作论文的 PDF 首页印着联系邮箱（已核实）：OpenAlex 账号用那个邮箱注册，就能用论文链接证明。个人网站和 LinkedIn 它不认。
-5. 如果 W7167922915 还挂在别人名下，又移不过来：到 help.openalex.org 提工单。写明作者 A5009989201、A5048188910，作品 W7167922915，证据是 DataCite 上 `10.5281/zenodo.21292799` 的唯一作者是 Zhu, Jason，ORCID 0009-0000-2894-6285。
-
-**ORCID 任职（orcid.org → Employment → Add）**
-
-- 组织：GoSailGlobal LLC。不在下拉列表里就手动填，城市 Sheridan，州 Wyoming，国家 United States。这个地址和 jasonzhu.ai 结构化数据里公开的公司地址一致。
-- 职位：Founder；部门可以填 BRICKAI / Agent Skills Hub。
-- 开始时间：按实际填（我不知道）。
-- URL：https://jasonzhu.ai/en
-
-**Wikidata（quickstatements.toolforge.org，用你的 Wikidata 账号登录）**
-
-0. 先在 https://www.wikidata.org/wiki/Special:CreateAccount 注册账号。Q141986406、Q141735092 两个条目当初是没登录时编辑的，系统记在临时账号 `~2026-55148-80` 名下，这个账号用不了 QuickStatements。新账号头几天编辑速度有限制，QuickStatements 会自动慢慢提交。
-1. New batch → 粘贴 `wikidata/2026-11-22-batch1-person.txt` 的内容 → Import V1 commands → Run。建好后记下新人物条目的 QID。
-2. 把 QID 告诉 Claude，或者自己运行 `python3 ops/geo/wikidata/quickstatements.py works Q你的QID > batch2.txt`，再按同样步骤提交。第二批会：
-   - 给 AgentSkillsHub（Q141986406）填创办人；
-   - 给 130K 数据集（Q141735092）填作者，并删掉原来的纯文字作者名；
-   - 建 5 个作品条目。24420920 的 DOI 打不开，脚本会自动跳过。等它能解析了再跑一次即可：已经有 Wikidata 条目的 DOI 会自动跳过，不会重复建。
-3. 第二批之后，在 Q141986406 页面手动删掉旧的「founder: unknown value」那条。QuickStatements 删不掉这种值。
-4. 风险：这是给自己建条目。每条陈述都带了来源（ORCID、Zenodo、ASH /about/），措辞中立，但仍可能有编辑提出质疑。真有人质疑，就以 130K 数据集和 AgentSkillsHub 两个条目需要指向作者为理由（Wikidata 收录标准第 3 条"结构性需要"）。
-
-**外联**：打开 `~/出海/specs/2026-11-22-academic-outreach.md`，按里面的顺序发。
-
-### Zenodo 工单模板（11-23 后 DOI 仍打不开时用）
-
-先由 Claude 用 token 对这条记录做一次不改内容的「编辑 → 发布」，这样会重新触发 DOI 登记。还不行，你再提工单，地址 https://zenodo.org/support，类别选 "Record / DOI"：
-
-> Subject: DOI 10.5281/zenodo.24420920 (and concept 10.5281/zenodo.24420919) not registered with DataCite
->
-> Hello, record https://zenodo.org/records/24420920 was published on 2026-11-21 at 14:37 UTC and shows DOI 10.5281/zenodo.24420920, but the DOI does not resolve at doi.org (handle API returns responseCode 100) and DataCite returns 404 for it and for the concept DOI 10.5281/zenodo.24420919. A record I published two minutes earlier (24420871) registered normally. Could you re-trigger the DataCite registration? Thank you.
-
-### 复查节点
-
-- **2026-11-23 晚：** DOI 24420920。过了宽限期，日报第 8 项会把它列为问题。
-- **约 2026-11-24：** OpenAlex 刷新后，看 W7167922915 挂在谁名下、有没有作者页挂上 ORCID，然后做上面的 OpenAlex 步骤。
-- **每周看一次日报第 8 项的覆盖率：** OpenAlex 目标 7/7，Wikidata 目标 7/7，Semantic Scholar 要等 arXiv。
+操作步骤（OpenAlex、ORCID、Wikidata、外联）和 Zenodo 工单模板已删：做完了或者 11-24 定了不做。OpenAlex 工单模板挪进 SOP 2C；原文看 git 历史（`53bb913`）。
 
 ### 顺带记下
 
-- **Agent Skills '26（ACM CAIS 2026）** 是专门讨论 agent skills 的学术研讨会，NVIDIA 那篇 Evaluating Skills 就在这里发表。明年可以考虑投稿，比单靠 SSRN 和 Zenodo 更容易进 Semantic Scholar 和 Google Scholar。
 - **大模型实体识别的证据：** 2026 年的研究里，没有一篇单独测出 Wikidata 或 sameAs 对大模型认出品牌的效果。能确认的是：认不认得按话题算；不带品牌名的问题里，品牌被提到的概率低得多。所以实体图谱只算地基，效果要看 GEO 面板里"不带品牌名的题"和"用了没署名"两列。
 
 ---

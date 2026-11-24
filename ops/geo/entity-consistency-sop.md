@@ -98,12 +98,22 @@ Whenever a new flagship empirical study is published on `jasonzhu.ai`, run this 
 
 ### 实体规则（2026-11-21 起）
 
-- `PERSON_PROFILES`：只放代表本人的档案：ORCID、Google Scholar、SSRN 作者页、LinkedIn 个人页、Product Hunt、X、GitHub 用户页、Hugging Face 用户页、Kaggle 用户页、YouTube、B 站、抖音、小红书。全站 Person 的 sameAs 只读它。
+- `PERSON_PROFILES`：只放代表本人的档案：ORCID、Google Scholar、SSRN 作者页、LinkedIn 个人页、Product Hunt、X、GitHub 用户页、Hugging Face 用户页、Kaggle 用户页、YouTube、抖音、小红书。全站 Person 的 sameAs 只读它。B 站 2026-11-24 拿掉了：主页名字是「香菇的猪」、简介空，证明不了是本人；改名、写上 jasonzhu.ai 后再加回。
 - `WORKS`：论文写 ScholarlyArticle，同一篇论文的 SSRN 页和 Zenodo 页用 sameAs 连在一起；Zenodo 数据集写 Dataset；开源工具写 SoftwareSourceCode（codeRepository 放 GitHub 仓库，PyPI 放 sameAs）。sameAs 只放同一个作品：HF、Kaggle、GitHub 上把 01 和 02 合在一起的那份镜像，两份都不写。
 - `RELATED_SITES`：AgentSkillsHub。单独一个节点，founder 指向 #person；sameAs 只放 Wikidata Q141986406 和 Crunchbase；不挂在谁下面。
 - 个人站，不写公司：没有 Organization 节点。网站的作者和发布者、GoSail Club 的提供者都是 #person。
 - 作品不进全站图，只在 /research、引用它的博客文章页和 /backlink-spam-list 输出，author 或 creator 指向 #person。
 - 检查：`node scripts/check-entities.mjs`（线上），`node scripts/check-entities.mjs http://localhost:3000`（本地）。Zenodo 发新版本换 DOI 时，`WORKS`、博客 frontmatter 的 `doi`、`src/lib/research.ts` 三处一起换，脚本会查。
+
+### 维护规则（2026-11-24 起）
+
+依据：2026-11-23 面板里带品牌名的题四家已经引用本站 50–100%，AI 引用最多的 20 个网站里没有一个学术站；差距在不带品牌名的题。详见 `ENTITY-GRAPH-ITERATION-LOG.md` v2.4。
+
+1. **学术图谱只修错，不扩张。** 只修错的事实：作品挂在别人名下、DOI 打不开、数字和源头对不上。不新建 Wikidata 条目，不认领、合并 OpenAlex 作者页，不为进学术索引去找 Semantic Scholar 收录、arXiv 背书。
+2. **只用总 DOI（concept DOI）。** 站上、镜像、文案一律写总 DOI，它总指向最新版本。数据小错攒着，每季度一起发一次 Zenodo 新版本：每发一次都要同步站上、三个镜像、dev.to 和已发出去的更正信。
+3. **每个检查分三种结果：通过、有问题、测不出来。** 先查一个必中的东西（比如 `site:jasonzhu.ai` 第一条必是本站），查不中就写「测不出来」，不写 0 或「通过」。定时任务最后一步直接看结果文件进没进仓库，不看运行状态。
+4. **每轮改动在 `experiments.json` 记一条：** 日期、改了什么、预期动面板哪一项。面板周报会列出最近 5 条。
+5. **效果看三样：** 面板里不带品牌名的题有没有引用本站；AI 搜的不带品牌名的词，我们在 Google 前 20 有几条；品牌词（`brand_serp`）本站排第几。都是每周一的面板邮件，看走势，差 10–15 个百分点以上才算数。
 
 ---
 
@@ -134,9 +144,11 @@ Whenever a new flagship empirical study is published on `jasonzhu.ai`, run this 
 | **Dataset 4:** 垃圾外链名单（Zenodo 现版本只有 3 行"模式"，没有域名；换成真实域名表的新版本在做） | `10.5281/zenodo.24387076` | GitHub `backlink-spam-list` · HF · Kaggle。`backlink-guard` 是另一个作品（软件），不是镜像 |
 | **Dataset 5:** 130K AI Agent Skills Security Grades（AgentSkillsHub 发布） | `10.5281/zenodo.21292799` | Wikidata `Q141735092` · HF · Kaggle |
 
-### 回链核对（2026-11-21）
+### 回链核对（2026-11-21 查，2026-11-24 定要不要补）
 
 每个个人档案有没有链回 jasonzhu.ai。只用公开、免费的接口和不登录的页面；补回链要本人登录各平台去改。
+
+2026-11-24 定：只补 X（website 字段改成 jasonzhu.ai）和 YouTube（简介加链接），Google Scholar 设成公开；Hugging Face、Kaggle 不补；B 站已从 sameAs 拿掉。
 
 | 档案 | 链回本站 | 怎么查的、看到什么 |
 | :--- | :--- | :--- |
@@ -168,6 +180,8 @@ Whenever a new flagship empirical study is published on `jasonzhu.ai`, run this 
 ### Phase 2: Build the Third-Party Citation Graph (Weeks 2–4 — Highest GEO ROI)
 
 > **2026-11-21 起暂停。** 数据纠正完之前，不往学术图谱绑新东西（2C），也不发引用这些数字和 DOI 的外联、PR 和帖子（2A、2B、2D）。依据：调研模块 0「先改源头，再发任何东西」。下面的文案等 Zenodo 新版本发布后按新数字重写。
+>
+> 下面文案里的 DOI 是旧的版本号，用之前换成总 DOI：收款论文 `10.5281/zenodo.24420870`，安全论文 `10.5281/zenodo.24420919`。安全论文的 1.0 版 `24420920` 一直没登记上，不能用。
 
 #### 2A. Upgrade Day+5 Media Outreach (`2026-11-26` follow-up)
 Append this 2-line scholarly citation hook to the Day+5 follow-up in `ops/geo/tier1-data-outreach-pack.md`:
@@ -188,8 +202,14 @@ Submit purely neutral, zero-promo dataset/benchmark entries to 3 high-star curat
    - [Indie SaaS Payments & MoR Benchmark (200K Checkout Links, 2023–2026)](https://github.com/zhuyansen/indie-saas-payments-benchmark-2026) — Open CC-BY-4.0 CSV dataset and 10-page working paper comparing Stripe, Polar, Dodo Payments, Creem, Paddle, Waffo, and Lemon Squeezy ([SSRN #7737182](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7737182)).
    ```
 
-#### 2C. Claim Auto-Generated OpenAlex & Semantic Scholar Profiles (Week 2–3)
-- 暂停，等数据纠正完（见文首）。
+#### 2C. OpenAlex、Semantic Scholar：只修挂错人的作品（2026-11-24 定）
+- **不做：** 认领、合并 OpenAlex 作者页，补 DOI，认领 Semantic Scholar 作者页（见第 4 节「维护规则」第 1 条）。下面几行是原计划，留着备查。
+- **只做一件：** 作品挂在别人名下就提工单。2026-11-24 查，130K 数据集 W7167922915 还挂在 A5009989201「竹彦 森」名下，按 ORCID 查 OpenAlex 作者查不到。到 https://help.openalex.org 提交（用你自己的邮箱）：
+
+  > Subject: Wrong author on W7167922915 (doi:10.5281/zenodo.21292799)
+  >
+  > Hello, the work https://openalex.org/W7167922915 (DOI 10.5281/zenodo.21292799) is attributed to author A5009989201, who is a different person. DataCite lists a single creator for this DOI: Zhu, Jason, ORCID 0009-0000-2894-6285. Could you reassign this authorship to an author linked to that ORCID? Thank you.
+
 - Watch for Zenodo (`24420871`, `24420920`) and SSRN (`7737182`, `7737258`) to propagate via DataCite → **OpenAlex** (`https://openalex.org`) and **Semantic Scholar** (`https://www.semanticscholar.org`).
 - Claim the author profile on Semantic Scholar and link ORCID `0009-0000-2894-6285`; verify Google Scholar (`AlP5JacAAAAJ`) auto-indexes both PDFs and merge any duplicate manual entries.
 
@@ -200,8 +220,10 @@ Submit purely neutral, zero-promo dataset/benchmark entries to 3 high-star curat
   - First comment: share 3 concise raw numbers + Zenodo PDF DOI (`24420871`) + limitations (Paddle JS overlay undercount).
 - **Reddit:** 先在相关版块正常参与讨论，不为发帖刷 karma，也不研究怎么绕过 AutoMod 和版规。帖子开头写明作者身份和与产品的关系。稿子在 `ops/geo/reddit-launch-posts-2026-11.md`（修改轮 2 在重写）。
 
-### Phase 3: Wikidata 个人条目（暂缓）
+### Phase 3: Wikidata 个人条目（不做）
 
+> **2026-11-24 从「暂缓」改成「不做」**（见第 4 节「维护规则」第 1 条）：有 2–3 家独立媒体报道本人或作品后再议。下面是 11-21 暂缓时的理由和条件，留着备查。
+>
 > **暂缓（2026-11-21 定）。** 11-22 那版把「等三个条件」去掉了，现在改回来，理由：
 > - 网站的 Wikidata 条目 08-09 因为知名度不够被删过一次；
 > - 自己发的 SSRN 论文、Zenodo 记录不算独立来源；
@@ -230,4 +252,4 @@ Submit purely neutral, zero-promo dataset/benchmark entries to 3 high-star curat
 - **Q1 2027 Milestone (March–April 2027):** Lemon Squeezy officially sunsets payment processing on **March 31, 2027**. Re-run the DataForSEO checkout-link census in April 2027 to publish **v2.0: *"Where 4,600+ Lemon Squeezy Merchants Actually Migrated After March 31, 2027"***:
   - Publish via **Zenodo `New Version`** (preserves the permanent Concept DOI while boosting recency).
   - Push updated CSVs to GitHub / HuggingFace / Kaggle and upload v2 PDF to SSRN + `jasonzhu.ai/en/research`.
-- **Verification Loop:** Re-run the 270-response 5-engine GEO citation panel (`ops/geo/`) on **2026-11-28**, **2026-12-15**, and **2027-01-15** to track brand + DOI citation lift across ChatGPT, Perplexity, Claude, Gemini, and Grok.
+- **复测：** GEO 引用面板每周一自动跑（`.github/workflows/geo-panel.yml`，看法见 `PANEL.md`），不用另排日子。
