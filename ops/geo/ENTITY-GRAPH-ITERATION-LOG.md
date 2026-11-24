@@ -16,15 +16,14 @@
 |---|---|---|---|
 | 第一次带新检查的定时运行：「分数进了仓库」那步通过、子查询自检通过、邮件里有品牌词名次 | Claude | 2026-11-30（周一）跑完后 | ⏳ |
 | OpenAlex：130K 数据集（W7167922915）还挂在 A5009989201「竹彦 森」名下，按 ORCID 查不到作者（11-24 查） | OpenAlex 客服 | 等回复；回复发到你 OpenAlex 账号的邮箱 | 🟡 11-24 Claude 在你的 Chrome 里用你的 OpenAlex 账号提了工单（请求 28329）；认领、合并作者页不做 |
-| 回链：X 的 website 字段改成 jasonzhu.ai | Claude 在你的 Chrome 里改；X 先要你点一次人机验证 | 你点完验证后 | 🟡 YouTube 已加链接 JasonZhu.AI → https://jasonzhu.ai（11-24，不登录能看到） |
+| 回链：X 的 website 字段改成 jasonzhu.ai（11-24 查还是 gosaillab.com） | 你：编辑个人资料 →「网站」填 jasonzhu.ai → 保存。改完 Claude 用 `api.fxtwitter.com` 核对 | 关掉 Chrome 远程调试、重启 Chrome 后 | 🟡 11-24 Claude 在你的 Chrome 里打开 X，每个页面都被转到人机验证页 x.com/account/access；Claude 不替你过人机验证 |
 | B 站改名、写简介（现在是「香菇的猪」、简介空），改好后告诉 Claude 加回 sameAs | 你 | 不急 | ⬜ 11-24 已从 sameAs 拿掉 |
-| npm 两个旧 token（`agentskillshub-4`、`agentskillshub -3`）删掉 | 你在 npm 验证页点「Use security key」 | 现在 | 🟡 11-24 已选好两个、走到验证页，等你验证。2027-02-19 才过期；2027-01 起跳过 2FA 的 token 不能直接发布，下次发版要换方式 |
 | 学术外联 | 你 | 等回复 | 🟡 两封邮件（SkillProbe 一作、NVIDIA 一作）和更正信都已发，LinkedIn 邀请已发；不再追加。回复记在 `~/出海/specs/2026-11-22-academic-outreach.md` 末尾 |
 | SSRN 两篇换成 1.1 版 | SSRN 客服 | 等邮件 | ⏳ 不再跟进；审核通过后看一眼是不是 1.1 版（`papers/SSRN-revision-notes-2026-11-21.md`） |
 
 **不做了（2026-11-24 定）：** Wikidata 人物条目和 6 个作品条目（有 2–3 家独立媒体报道后再议，条件见 SOP Phase 3）；OpenAlex 认领、合并作者页、补 DOI；为进学术索引去找 Semantic Scholar 收录、arXiv 背书；Hugging Face、Kaggle 补回链；Zenodo 单位写法统一；追安全论文 1.0 版 DOI `24420920` 的登记（已被 1.1 版取代，站上用总 DOI `24420919`；11-24 查总 DOI 和 1.1 版 `24432858` 都能解析）。
 
-**最近办完：** Google Scholar 个人页设成公开，不登录能打开了（11-24）；YouTube 频道加了 jasonzhu.ai 链接（11-24）；ORCID 加任职（11-22）；npm 两个包发布 cli 0.5.1、mcp 0.3.1（11-22）；Zenodo 纠错新版本 24432849、24432852、24432855、24432843、24432858、24435484，重复记录 24435488/89/90 指向正版，GitHub、HF、Kaggle 镜像和 dev.to 文章同步改正，给 Polar 的更正信已发（11-22）；每日实体检查 `check-entities.yml` 上线（11-22）。
+**最近办完：** npm 两个旧 token（`agentskillshub-4`、`agentskillshub -3`）删了，jasonzhu0526 账号下只剩 3 个早已过期的；2027-01 起跳过 2FA 的 token 不能直接发布，下次发版要换方式（11-24）；Google Scholar 个人页设成公开，不登录能打开了（11-24）；YouTube 频道加了 jasonzhu.ai 链接（11-24）；ORCID 加任职（11-22）；npm 两个包发布 cli 0.5.1、mcp 0.3.1（11-22）；Zenodo 纠错新版本 24432849、24432852、24432855、24432843、24432858、24435484，重复记录 24435488/89/90 指向正版，GitHub、HF、Kaggle 镜像和 dev.to 文章同步改正，给 Polar 的更正信已发（11-22）；每日实体检查 `check-entities.yml` 上线（11-22）。
 
 ---
 

@@ -148,13 +148,13 @@ Whenever a new flagship empirical study is published on `jasonzhu.ai`, run this 
 
 每个个人档案有没有链回 jasonzhu.ai。只用公开、免费的接口和不登录的页面；补回链要本人登录各平台去改。
 
-2026-11-24 定：只补 X（website 字段改成 jasonzhu.ai）和 YouTube（加链接），Google Scholar 设成公开；Hugging Face、Kaggle 不补；B 站已从 sameAs 拿掉。11-24 已做：YouTube、Google Scholar；X 等人机验证。
+2026-11-24 定：只补 X（website 字段改成 jasonzhu.ai）和 YouTube（加链接），Google Scholar 设成公开；Hugging Face、Kaggle 不补；B 站已从 sameAs 拿掉。11-24 已做：YouTube、Google Scholar；X 等本人改（X 在 Claude 打开的每个页面都要人机验证，Claude 不替人过验证）。
 
 | 档案 | 链回本站 | 怎么查的、看到什么 |
 | :--- | :--- | :--- |
 | ORCID | 有 | 公开 API `researcher-urls`：`https://jasonzhu.ai/en` |
 | GitHub | 有 | `gh api users/zhuyansen` 的 blog 字段：`https://jasonzhu.ai`。简介里的「200k Checkout Links & 105k」数据纠正后要改 |
-| X | 部分 | `api.fxtwitter.com` 的 website 字段是 gosaillab.com；简介正文里写了 jasonzhu.ai |
+| X | 部分 | `api.fxtwitter.com` 的 website 字段是 gosaillab.com（11-24 再查还是）；简介正文里写了 jasonzhu.ai |
 | Hugging Face | 没有 | 个人页没填网站和任何社交链接（对照：别人的个人页能读到这些链接） |
 | Kaggle | 没有 | 公开页显示 "No bio yet"，没有外链 |
 | YouTube | 有（11-24） | 频道「链接」加了 JasonZhu.AI → https://jasonzhu.ai，不登录打开频道页能看到 |
