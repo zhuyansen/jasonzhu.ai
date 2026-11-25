@@ -16,7 +16,9 @@ export const PERSON_ID = `${SITE_URL}/#person`;
 
 export const AUTHOR_NAME = "Jason Zhu";
 export const AUTHOR_ALT_NAME = "祝彦森";
-export const AUTHOR_ALT_NAMES = ["祝彦森", "Yansen Zhu", "zhuyansen", "GoSailGlobal", "JasonZhu.AI"];
+// 2026-11-24 拿掉「GoSailGlobal」：它是公司名（GoSailGlobal LLC，agentskillshub.top 上的运营公司节点），
+// 放在人的别名里，人和公司就能靠这个名字被并成一个实体。X 账号 @GoSailGlobal 仍在 PERSON_PROFILES 里。
+export const AUTHOR_ALT_NAMES = ["祝彦森", "Yansen Zhu", "zhuyansen", "JasonZhu.AI"];
 
 export const ORCID_ID = "0009-0000-2894-6285";
 export const ORCID_URL = `https://orcid.org/${ORCID_ID}`;

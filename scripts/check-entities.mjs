@@ -9,6 +9,8 @@
  *     AgentSkillsHub 自己的 @id（https://agentskillshub.top/#organization）不算，它是另一个网站。
  *  4. 作品节点（ScholarlyArticle、Dataset、SoftwareSourceCode）的 author 或 creator 指向 #person；
  *     AgentSkillsHub 节点的 founder 指向 #person。
+ *  5. Person 的 alternateName 里没有公司名（GoSailGlobal、BRICKAI）：同一个名字既是人的别名又是公司名，
+ *     人和公司就会被并成一个实体（2026-11-24）。
  * 联网之前先查一遍源文件：博客 frontmatter 的 doi、src/lib/research.ts 里的 DOI 都要在 src/lib/profiles.ts 的 WORKS 里
  * （Zenodo 发新版本换 DOI 时三处一起换），PERSON_PROFILES 每条都符合第 1 条。
  *
@@ -25,6 +27,7 @@ import path from "path";
 const ROOT = process.cwd();
 const PERSON_ID = "https://jasonzhu.ai/#person";
 const HUB_ID = "https://agentskillshub.top/#organization";
+const COMPANY_NAMES = /gosail\s*global|brickai/i;   // 运营公司 GoSailGlobal LLC 的名字，不能当人的别名
 const WORK_TYPES = new Set(["ScholarlyArticle", "Dataset", "SoftwareSourceCode"]);
 
 const PROFILE_PATTERNS = [
@@ -167,6 +170,9 @@ function checkPage(where, html) {
     }
     const sameAs = asList(n.sameAs).map(String);
     if (id === PERSON_ID) {
+      for (const a of asList(n.alternateName).map(String)) {
+        if (COMPANY_NAMES.test(a)) fail(where, `Person 的 alternateName 有公司名「${a}」`);
+      }
       for (const u of sameAs) {
         const p = profileProblem(u);
         if (p) fail(where, `Person 的 sameAs 有 ${u}（${p}）`);
