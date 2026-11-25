@@ -4,11 +4,13 @@ excerpt: "Both of the top AI companies offer official free learning platforms �
 coverImage: "/blog/openai-academy-vs-anthropic-learning-paths/cover-en.png"
 ---
 
-> **Bottom line up front: both are free, the paths are complementary — skip the expensive bootcamps and go straight to the official sources.**
+**Short answer (checked November 25, 2026): if you want a free alternative to Anthropic's Claude courses, OpenAI Academy is the most direct one, and the other way round. Both are free to take.** Anthropic's courses go deeper on building with Claude (API, MCP, Claude Code); OpenAI Academy covers ChatGPT at work, Codex and rolling AI out across a team. Neither offers a certification exam that's open to the public right now: Anthropic's Claude Certified Architect exams are only for members of the Claude Partner Network, and OpenAI says the badges from its free Academy courses are not certifications.
+
+> **Updated November 25, 2026.** I wrote this in May 2026 and recommended the $99 Claude Certified Architect exam to anyone who wanted a certificate. Anthropic's certification page says the exams are available to members of the Claude Partner Network ([Anthropic](https://claude.com/resources/articles/four-role-based-claude-certifications)), and OpenAI's help center says Academy badges and completion certificates are not OpenAI Certifications ([OpenAI](https://help.openai.com/en/articles/20001270-openai-academy-courses)). The certification advice below is corrected; the course lists are still the May 2026 lineup.
 
 Two of the world's leading AI companies — OpenAI and Anthropic — have both made their official learning curricula **completely free and open to everyone**. Their design philosophies, however, are quite different:
 
-- **Anthropic**: Certification-driven. 13 structured courses + a $99 engineer certification
+- **Anthropic**: Developer-focused. 13 structured courses (May 2026) on the API, MCP, Claude Code and Skills; the certification exam is for Claude Partner Network members
 - **OpenAI**: Accessibility-driven. Live sessions + recorded content + community + resource libraries, covering everyone from individual users to enterprise IT admins
 
 This post organizes all 15 OpenAI Academy courses into a **10-week roadmap**, with direct links to each course, followed by a full comparison checklist against the Anthropic learning path.
@@ -107,9 +109,9 @@ Dedicated resource collections for Higher Education, K–12, Nonprofits, Small B
 
 | Dimension | Anthropic | OpenAI Academy |
 |-----------|-----------|----------------|
-| **Design philosophy** | Certification-driven | Accessibility-driven |
-| **Number of courses** | 13 structured courses | 15+ courses + resource libraries |
-| **Certification** | ✅ Claude Certified Architect ($99) | ⏳ Rolling out mid-2026 |
+| **Design philosophy** | Developer-focused | Accessibility-driven |
+| **Number of courses** | 13 structured courses (May 2026) | 15+ courses + resource libraries (May 2026) |
+| **Certification** (checked Nov 25, 2026) | Claude Certified Architect: exams for Claude Partner Network members only | Academy badges are not certifications; OpenAI Certified (through Coursera) is for eligible learners |
 | **Learning format** | 12-week linear curriculum | Live + recorded + community + resources |
 | **Target audience** | AI engineers / developers | General public (consumers + enterprise + education + government) |
 | **Enterprise IT deployment** | Weaker | Stronger (Workspace Agents course) |
@@ -121,9 +123,9 @@ Dedicated resource collections for Higher Education, K–12, Nonprofits, Small B
 
 ## Which Path Should You Take? Two Goals, Two Paths
 
-**Goal 1: Earn an AI certification you can put on your resume or LinkedIn → Start with Anthropic**
+**Goal 1: Build products with Claude (API, MCP, Claude Code) → Start with Anthropic**
 
-13 structured courses leading to a $99 engineer certification, with zero preparation cost.
+13 structured courses that go from Claude basics to agent architecture, at zero cost. If you work at a Claude Partner Network firm, they double as prep for the Claude Certified Architect exam; if you don't, the exam isn't open to you, so judge the courses on what they teach.
 
 **Goal 2: Help your team or company get more out of ChatGPT → Start with OpenAI Academy**
 
@@ -138,8 +140,8 @@ Stronger enterprise IT perspective plus an industry-specific resource library �
 1. **Pick a goal before picking a path**: Don't tackle both simultaneously — commit to one path for three months
 2. **Anthropic priority order**: Claude 101 → Building Apps with API → MCP (both courses) → Claude Code → Skills
 3. **OpenAI priority order**: ChatGPT 101/102 → The prompting trio → Pick the relevant section of ChatGPT for Any Role based on your job
-4. **Certification isn't the finish line**: Once you pass the Claude Certified Architect exam, immediately apply what you've learned to a real project — a personal product or an internal company tool both count
-5. **Before mid-2026**: Keep an eye on OpenAI's certification launch — the first wave typically comes with discounts and peak credibility
+4. **Ship something with it**: Certificate or not (the Claude Certified Architect exam is for partner-network members), apply what you've learned to a real project right away — a personal product or an internal company tool both count
+5. **On OpenAI certification**: Academy badges are not certifications. OpenAI Certified, a separate program delivered through Coursera inside ChatGPT, issues credentials to eligible learners; OpenAI's help center lists who qualifies
 
 ---
 
@@ -151,11 +153,15 @@ Completely free, though you'll need to register an account. Go to academy.openai
 
 ### Should I choose the OpenAI or Anthropic learning path?
 
-They're complementary, not competing. Anthropic is certification-driven (13 courses + a $99 engineer certificate), making it a better fit for developers who need credentials. OpenAI is accessibility-driven, better suited for individuals and teams looking to build broad AI literacy. Both are free — if you have time, do both.
+They're complementary, not competing. Anthropic's courses are developer-focused (13 courses as of May 2026, covering the API, MCP, Claude Code and Skills), a better fit if you build with Claude. OpenAI is accessibility-driven, better suited for individuals and teams looking to build broad AI literacy. Both are free — if you have time, do both.
+
+### What are the alternatives to Anthropic's AI courses?
+
+OpenAI Academy is the most direct one: free, official, and it covers the same ground for ChatGPT and Codex that Anthropic's courses cover for Claude. Google, Microsoft, AWS, NVIDIA, IBM, DeepLearning.AI and Hugging Face also run free official AI courses; the 10-platform map linked at the end of this post compares them.
 
 ### Does OpenAI offer an official certification?
 
-Certifications are expected to launch around mid-2026; for now, it's primarily free coursework. If you want a resume-ready credential right now, go with Anthropic's $99 certification first.
+Not through OpenAI Academy: OpenAI's help center says Academy badges and certificates of completion are not OpenAI Certifications. OpenAI Certified, a separate program delivered through Coursera inside ChatGPT, issues credentials to eligible learners. Anthropic's Claude Certified Architect exam isn't an open alternative either, because it's only for Claude Partner Network members (checked November 25, 2026).
 
 ---
 

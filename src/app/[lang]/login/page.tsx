@@ -3,8 +3,9 @@ import { Suspense } from "react";
 import LoginClient from "./LoginClient";
 import { withSocialCards } from "@/lib/social";
 
-const SITE_URL = "https://jasonzhu.ai";
-
+// 登录页 noindex, nofollow，不写 canonical：?mode=signup&next=… 这些变体原来 canonical 指回 /login，
+// 而 /login 本身 noindex，2026-11-22 站点审计记成 canonical 指向 noindex 页。不收录的页不需要 canonical 和 hreflang。
+// alternates 要显式写成空的：不写会继承 [lang]/layout 的 canonical（指向首页）。
 export async function generateMetadata({
   params,
 }: {
@@ -16,14 +17,7 @@ export async function generateMetadata({
     title: isZh ? "登录 — GoSail Club" : "Sign in — GoSail Club",
     description: isZh ? "登录查看你的 GoSail Club 会员中心。" : "Sign in to your GoSail Club dashboard.",
     robots: { index: false, follow: false },
-    alternates: {
-      canonical: `${SITE_URL}/${lang}/login`,
-      languages: {
-        zh: `${SITE_URL}/zh/login`,
-        en: `${SITE_URL}/en/login`,
-        "x-default": `${SITE_URL}/en/login`,
-      },
-    },
+    alternates: {},
   }, lang);
 }
 

@@ -1,6 +1,7 @@
 ---
 title: "OpenAI Academy vs Anthropic：两套头部 AI 公司的免费学习路径对比"
 date: "2026-05-04"
+updated: "2026-11-25"
 category: "教程"
 tags: ["OpenAI", "Anthropic", "学习路径", "Claude", "ChatGPT", "Codex", "AI 认证"]
 tweetUrl: "https://x.com/GoSailGlobal/status/2054019746300043550"
@@ -8,11 +9,13 @@ coverImage: "/blog/openai-academy-vs-anthropic-learning-paths/cover.png"
 excerpt: "两家头部 AI 公司都有官方免费学习平台，加起来 25+ 门课、几百小时内容，足够把你从 AI 新手培养到能写进简历的工程师。这篇按 10 周路线图整理 OpenAI Academy 全部 15 门课，并跟 Anthropic 路径做完整对比。"
 ---
 
-> **结论先放：两家都免费，路径互补，省下被割韭菜报班的钱直接刷官方就行。**
+**一句话回答（2026 年 11 月 25 日核对）：想找 Anthropic 官方 Claude 课的免费替代，最直接的就是 OpenAI Academy，反过来也一样，两家的课都免费。** Anthropic 更偏用 Claude 做开发（API、MCP、Claude Code）；OpenAI Academy 更偏 ChatGPT 办公、Codex 和团队落地。两家现在都没有对公众开放的认证考试：Anthropic 的 Claude Certified Architect 考试只对 Claude 合作伙伴网络（Claude Partner Network）的成员开放；OpenAI 官方说明，免费课程发的徽章不算认证。
+
+> **2026 年 11 月 25 日更新。** 这篇写于 2026 年 5 月，当时我把 $99 的 Claude Certified Architect 考试推荐给所有想拿证的读者。Anthropic 的认证说明写的是考试只对 Claude 合作伙伴网络的成员开放（[Anthropic](https://claude.com/resources/articles/four-role-based-claude-certifications)）；OpenAI 帮助中心写明 Academy 的徽章和结课证书不是 OpenAI 认证（[OpenAI](https://help.openai.com/en/articles/20001270-openai-academy-courses)）。下文和认证有关的建议已改正，课程清单仍是 2026 年 5 月的版本。
 
 两家头部 AI 公司——OpenAI 和 Anthropic——都已经把官方学习课程做成**完全免费、对所有人开放**的产品。两家的设计哲学截然不同：
 
-- **Anthropic**：认证驱动。13 门结构化课程 + $99 工程师认证证书
+- **Anthropic**：面向开发者。13 门结构化课程（2026 年 5 月），讲 API、MCP、Claude Code 和 Skills；认证考试只对 Claude 合作伙伴网络成员开放
 - **OpenAI**：全民驱动。直播 + 录播 + 社区 + 资源库，覆盖个人到企业 IT admin
 
 这篇按 **10 周路线图**整理 OpenAI Academy 全部 15 门课程，每门附官方直达链接，并在最后给出与 Anthropic 路径的对比清单。
@@ -111,9 +114,9 @@ Higher Education / K-12 / Nonprofits / Small Business / Healthcare / Veterans �
 
 | 维度 | Anthropic | OpenAI Academy |
 |------|-----------|----------------|
-| **设计哲学** | 认证驱动 | 全民驱动 |
-| **课程数** | 13 门结构化 | 15+ 门 + 资源库 |
-| **认证** | ✅ Claude Certified Architect（$99）| ⏳ 2026 年中陆续推出 |
+| **设计哲学** | 面向开发者 | 全民驱动 |
+| **课程数** | 13 门结构化（2026 年 5 月）| 15+ 门 + 资源库（2026 年 5 月）|
+| **认证**（2026-11-25 核对）| Claude Certified Architect：考试只对 Claude 合作伙伴网络成员开放 | Academy 徽章不算认证；OpenAI Certified（经 Coursera）面向符合条件的学员 |
 | **学习路径** | 12 周线性课程 | 直播 + 录播 + 社区 + 资源 |
 | **目标用户** | AI 工程师 / 开发者 | 全民 AI 素养（C 端 + 企业 + 教育 + 政府）|
 | **企业 IT 部署** | 较弱 | 较强（Workspace Agents 课）|
@@ -125,9 +128,9 @@ Higher Education / K-12 / Nonprofits / Small Business / Healthcare / Veterans �
 
 ## 该走哪条？两个目标两条路
 
-**目标 1：拿一份能写进简历 / LinkedIn 的 AI 认证 → 先走 Anthropic**
+**目标 1：用 Claude 做产品（API、MCP、Claude Code）→ 先走 Anthropic**
 
-13 门结构化课程 → 一张 $99 工程师认证证书，准备过程零成本。
+13 门结构化课程，从 Claude 入门讲到智能体架构，零成本。如果你在 Claude 合作伙伴网络的公司工作，这套课正好是 Claude Certified Architect 考试的备考；不在的话考试对你不开放，就按课程本身学到什么来判断值不值得刷。
 
 **目标 2：我团队 / 公司怎么用好 ChatGPT → 先走 OpenAI Academy**
 
@@ -142,8 +145,8 @@ Higher Education / K-12 / Nonprofits / Small Business / Healthcare / Veterans �
 1. **先选目标再选路径**：不要两条同时开搞，3 个月内只攻一条
 2. **Anthropic 优先级**：Claude 101 → Building Apps with API → MCP（双课）→ Claude Code → Skills
 3. **OpenAI 优先级**：ChatGPT 101/102 → Prompting 三件套 → 按你岗位选 ChatGPT for Any Role 对应章节
-4. **认证不是终点**：考过 Claude Certified Architect 后，立刻找一个真实项目落地（个人产品 / 公司内部 tool 都行）
-5. **2026 年中前**：盯紧 OpenAI 的认证发布，第一波考通常折扣 + 含金量都最优
+4. **学完就做一个东西**：不管有没有证（Claude Certified Architect 考试只对合作伙伴网络成员开放），立刻找一个真实项目落地（个人产品 / 公司内部 tool 都行）
+5. **OpenAI 的认证**：Academy 徽章不算认证。OpenAI Certified 是另一套项目，在 ChatGPT 里经 Coursera 学习和考核，向符合条件的学员发证书；谁符合条件以 OpenAI 帮助中心为准
 
 ---
 
@@ -155,11 +158,15 @@ Higher Education / K-12 / Nonprofits / Small Business / Healthcare / Veterans �
 
 ### OpenAI 和 Anthropic 的学习路径选哪个？
 
-互补，不冲突。Anthropic 是认证驱动（13 门课 + $99 工程师证书），适合要凭证的开发者；OpenAI 是全民驱动，适合个人和团队普及。两家都免费，时间够就都刷。
+互补，不冲突。Anthropic 的课面向开发者（2026 年 5 月时 13 门，讲 API、MCP、Claude Code 和 Skills），用 Claude 做开发的先走它；OpenAI 是全民驱动，适合个人和团队普及。两家都免费，时间够就都刷。
+
+### Anthropic 的 AI 课有什么替代？
+
+最直接的是 OpenAI Academy：免费、官方出品，Anthropic 的课讲 Claude 的那些内容，它在 ChatGPT 和 Codex 上基本都有对应。Google、微软、AWS、NVIDIA、IBM、DeepLearning.AI 和 Hugging Face 也有免费的官方 AI 课，文末的 10 大平台全景图有对比。
 
 ### OpenAI 有官方认证证书吗？
 
-认证预计 2026 年中推出，目前以免费课程为主。想现在就拿能写简历的证书，先走 Anthropic 的 $99 认证。
+OpenAI Academy 里没有：OpenAI 帮助中心写明，Academy 的徽章和结课证书不是 OpenAI 认证。OpenAI Certified 是另一套项目，在 ChatGPT 里经 Coursera 学习和考核，向符合条件的学员发证书。Anthropic 的 Claude Certified Architect 也不是谁都能考，考试只对 Claude 合作伙伴网络成员开放（2026 年 11 月 25 日核对）。
 
 ---
 

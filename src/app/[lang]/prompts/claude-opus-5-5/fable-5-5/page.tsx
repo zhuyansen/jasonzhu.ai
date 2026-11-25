@@ -20,7 +20,9 @@ const PATH = `${LIB}/fable-5-5`;
 const FIRST_PAGE = 24;
 const MODEL: ClaudeModel = "fable-5.5";
 /** 上一次人工核实 Anthropic 官方状态的日期（不跟库的每日更新走，免得看起来像每天都核实过） */
-const STATUS_CHECKED = "2026-10-27";
+const STATUS_CHECKED = "2026-11-25";
+/** 核实那天 Anthropic 模型列表（platform.claude.com/docs/en/models/overview）上最新的 Fable，和 STATUS_CHECKED 一起改 */
+const LATEST_FABLE = "Fable 5.2";
 
 function fableCases(): OpusCaseSlim[] {
   return getOpusLibrary().cases.filter((c) => (c.models || ["opus-5.5"]).includes(MODEL));
@@ -28,9 +30,15 @@ function fableCases(): OpusCaseSlim[] {
 
 const copy = (isZh: boolean, n: number, withPrompt: number, preview: boolean) => ({
   title: isZh ? `Claude Fable 5.5 作品与提示词：${n} 个创作者实测案例${preview ? "（内测）" : ""}` : `Claude Fable 5.5: ${n} Real Examples and Prompts${preview ? " (Preview)" : ""}`,
-  desc: isZh
-    ? `${n} 个创作者说用 Claude Fable 5.5 做的视频、动效、3D 和游戏，原帖播放均过 5,000，点封面去 X 看原视频；其中 ${withPrompt} 个附作者公开的原文提示词。${preview ? `截至 ${STATUS_CHECKED}，Anthropic 尚未官宣 Fable 5.5，也没有公布发布日期。` : ""}`
-    : `${n} videos, motion graphics, 3D scenes and games creators say they made with Claude Fable 5.5, each with 5,000+ views on X; ${withPrompt} include the creator's prompt, verbatim.${preview ? ` As of ${STATUS_CHECKED}, Anthropic has not announced Fable 5.5 or a release date.` : ""}`,
+  // 内测期间发布状态放在最前（2026-11-25）：这页在 Google 上排「fable 5.5 release date」，搜的人先要的是这个答案。
+  // 英文压在 160 字符以内，超了 fitDescription 会截到第一句，作品数就没了。
+  desc: preview
+    ? isZh
+      ? `截至 ${STATUS_CHECKED} 未官宣：Anthropic 没有公布 Fable 5.5 的发布日期，官方模型列表上最新的 Fable 是 ${LATEST_FABLE}。下面是 ${n} 个创作者说用它做的视频、动效、3D 和游戏，${withPrompt} 个附原文提示词。`
+      : `Not announced (checked ${STATUS_CHECKED}): no Fable 5.5 release date; the newest Fable is ${LATEST_FABLE}. ${n} works creators say they made with it, ${withPrompt} with prompts.`
+    : isZh
+      ? `${n} 个创作者说用 Claude Fable 5.5 做的视频、动效、3D 和游戏，原帖播放均过 5,000，点封面去 X 看原视频；其中 ${withPrompt} 个附作者公开的原文提示词。`
+      : `${n} videos, motion graphics, 3D scenes and games creators say they made with Claude Fable 5.5, each with 5,000+ views on X; ${withPrompt} include the creator's prompt, verbatim.`,
 });
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -80,7 +88,7 @@ export default async function FablePage({ params }: { params: Promise<{ lang: st
   const faqs: [string, string][] = isZh
     ? [
         ["Fable 5.5 发布了吗？什么时候发布？", preview
-          ? `截至 ${STATUS_CHECKED}，Anthropic 还没有官宣 Fable 5.5，也没有公布发布日期或模型 ID。网上流传的「发布日期」和「已上线」截图都没有得到官方确认。这里收的作品来自说自己拿到了内测资格的创作者，模型归属以作者自述为准，本站没有逐条复现。`
+          ? `截至 ${STATUS_CHECKED}，Anthropic 还没有官宣 Fable 5.5，也没有公布发布日期或模型 ID；官方模型列表上最新的 Fable 是 ${LATEST_FABLE}。网上流传的「发布日期」和「已上线」截图都没有得到官方确认。这里收的作品来自说自己拿到了内测资格的创作者，模型归属以作者自述为准，本站没有逐条复现。`
           : "Fable 5.5 已经正式发布，详见 Anthropic 官方公告。"],
         ["Fable 5.5 能做什么样的作品？", `这里 ${cases.length} 个作品里最多的是：${topCats.join("、")}。和 Opus / Sonnet 一样，它不直接生成视频文件，作品都是模型写代码渲染出来，或者驱动 Blender、After Effects 等软件做出来的。`],
         ["Fable 5.5 和 Opus 5.5 有什么区别？", "官方还没有公布 Fable 5.5 的能力说明，所以这里不做比较。想看同一个任务在不同模型上的效果，可以在提示词库里看「模型对比」分类，那些是创作者自己并排跑的结果。"],
@@ -89,7 +97,7 @@ export default async function FablePage({ params }: { params: Promise<{ lang: st
       ]
     : [
         ["Has Fable 5.5 been released? When is the release date?", preview
-          ? `As of ${STATUS_CHECKED}, Anthropic has not announced Fable 5.5 and has published no release date or model ID. Circulating "release dates" and "it's live" screenshots have not been confirmed by Anthropic. The works here come from creators who say they have preview access; model attribution is as stated by each creator and was not reproduced by us.`
+          ? `As of ${STATUS_CHECKED}, Anthropic has not announced Fable 5.5 and has published no release date or model ID; the newest Fable on Anthropic's model list is ${LATEST_FABLE}. Circulating "release dates" and "it's live" screenshots have not been confirmed by Anthropic. The works here come from creators who say they have preview access; model attribution is as stated by each creator and was not reproduced by us.`
           : "Fable 5.5 has been released; see Anthropic's announcement for details."],
         ["What can Fable 5.5 make?", `The most common kinds among the ${cases.length} works here: ${topCats.join(", ")}. Like Opus and Sonnet, it doesn't output video files; every piece was rendered from code it wrote, or made by driving tools such as Blender or After Effects.`],
         ["How is Fable 5.5 different from Opus 5.5?", "Anthropic hasn't published what Fable 5.5 can do, so we don't compare them here. For the same task run on several models, see the Comparisons category in the library: creators ran those side by side themselves."],
@@ -137,18 +145,19 @@ export default async function FablePage({ params }: { params: Promise<{ lang: st
         <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3 text-balance">
           {isZh ? "Claude Fable 5.5 作品与提示词" : "Claude Fable 5.5 examples and prompts"}
         </h1>
+        {/* 发布状态在 H1 下第一段：搜「fable 5.5 release date」的人先看到答案，作品介绍放在后面 */}
+        {preview && (
+          <p className="mb-4 max-w-3xl rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900 leading-relaxed">
+            {isZh
+              ? `发布状态：截至 ${STATUS_CHECKED}，Anthropic 还没有官宣 Fable 5.5，也没有公布发布日期或模型 ID；官方模型列表上最新的 Fable 是 ${LATEST_FABLE}。下面的作品来自说自己拿到内测资格的创作者，模型归属以作者自述为准。`
+              : `Release status: as of ${STATUS_CHECKED}, Anthropic has not announced Fable 5.5 and has published no release date or model ID; the newest Fable on Anthropic's model list is ${LATEST_FABLE}. The works below come from creators who say they have preview access; attribution is as each creator states it.`}
+          </p>
+        )}
         <p className="text-gray-600 max-w-3xl leading-relaxed">
           {isZh
             ? `${cases.length} 个创作者说用 Claude Fable 5.5 做的作品，按原帖播放量排序，点封面去 X 看原视频。其中 ${withPrompt} 个附作者公开的原文提示词。`
             : `${cases.length} works creators say they made with Claude Fable 5.5, ranked by views on the original post; click a cover to watch it on X. ${withPrompt} include the creator's own prompt, verbatim.`}
         </p>
-        {preview && (
-          <p className="mt-4 max-w-3xl rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900 leading-relaxed">
-            {isZh
-              ? `发布状态：截至 ${STATUS_CHECKED}，Anthropic 还没有官宣 Fable 5.5，也没有公布发布日期。这些作品来自说自己拿到内测资格的创作者，模型归属以作者自述为准。`
-              : `Release status: as of ${STATUS_CHECKED}, Anthropic has not announced Fable 5.5 or a release date. These works come from creators who say they have preview access; attribution is as each creator states it.`}
-          </p>
-        )}
         <dl className="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm">
           {[
             [isZh ? "Fable 5.5 作品" : "Works", cases.length.toLocaleString("en-US")],

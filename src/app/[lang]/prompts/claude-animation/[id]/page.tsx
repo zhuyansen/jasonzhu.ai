@@ -46,17 +46,21 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const summary = full[id]?.summary;
   const description = fitDescription((isZh ? summary?.zh : summary?.en) || c.prompt.excerpt.slice(0, 150));
   const image = coverOf(c.media[0]);
+  // 和 canonical 指向的 Claude 5.5 库那页一起：那页因为短提示词、零点击不收录时，这页也不收录（src/content/opus-prompts/noindex.json）。
+  // 不收录时 canonical 和 hreflang 指回本页：指向一个 noindex 页，等于同时说「合并到那页」和「那页不要」，
+  // 2026-11-22 站点审计把这两页（中英）记成 canonical 指向 noindex 页。
+  const noindexed = isPromptNoindexed("claude-animation", id);
+  const base = noindexed ? PATH : CANONICAL_PATH;
   return withSocialCards({
     title,
     description,
-    // 和 canonical 指向的 Claude 5.5 库那页一起：那页因为短提示词、零点击不收录时，这页也不收录（src/content/opus-prompts/noindex.json）
-    ...(isPromptNoindexed("claude-animation", id) ? { robots: NOINDEX_ROBOTS } : {}),
+    ...(noindexed ? { robots: NOINDEX_ROBOTS } : {}),
     // Same work, same prompt as the Claude 5.5 library's page for it: that page is the canonical
     // one, so the two libraries do not compete with duplicate pages. This library's list page is
     // what ranks for "Claude animation prompts"; its detail pages stay out of the sitemap.
     alternates: {
-      canonical: `${SITE_URL}/${lang}/${CANONICAL_PATH}/${id}`,
-      languages: { zh: `${SITE_URL}/zh/${CANONICAL_PATH}/${id}`, en: `${SITE_URL}/en/${CANONICAL_PATH}/${id}`, "x-default": `${SITE_URL}/zh/${CANONICAL_PATH}/${id}` },
+      canonical: `${SITE_URL}/${lang}/${base}/${id}`,
+      languages: { zh: `${SITE_URL}/zh/${base}/${id}`, en: `${SITE_URL}/en/${base}/${id}`, "x-default": `${SITE_URL}/zh/${base}/${id}` },
     },
     openGraph: { type: "article", title, description, url: `${SITE_URL}/${lang}/${PATH}/${id}`, images: image ? [{ url: image }] : undefined },
   }, rawLang);

@@ -127,8 +127,10 @@ Git：commit 后如远程有新提交（cron 会自动 commit 快讯），先 `g
 **Vercel 请求额度（2026-10-07 事故后，Pro 套餐，每月 1000 万 Edge Requests）**
 - 全站链接一律 `import Link from "@/components/Link"`（默认 `prefetch={false}`），**不要直接用 `next/link`**：默认预加载会让导航 / 页脚 / 提示词卡片每次访问多发十几到几十个请求。2026-10-07 免费版 30 天用到 440 万次（额度 100 万），整站被停用（402 DEPLOYMENT_DISABLED），升级 Pro 才恢复。
 - `middleware.ts` 只匹配 `/`、`/admin`、`/auth`、会员中心 / 登录、不带语言前缀的旧链接；带 `/zh` `/en` 的公开页不经过它，不要改回匹配全部页面。本地 `next dev` 下 `/` 会 404（中间件在开发环境不生效），用生产构建 `next start` 验证 rewrite。
-- `src/app/robots.ts` 构建时生成 robots.txt：搜索引擎和 `*-User` 代理不受影响。不要再加回 `public/robots.txt`（会和它冲突）。
+- `src/app/robots.txt/route.ts` 生成 robots.txt：搜索引擎和 `*-User` 代理不受影响。不要再加回 `public/robots.txt`（会和它冲突）。
   - AI 爬虫分两组（2026-11-02）：检索类（OAI-SearchBot、Claude-SearchBot、PerplexityBot）单独一组、明确 Allow: /，放在前面；训练类（GPTBot、ClaudeBot 等）在后面。2026-11-17 起 Claude 库统一改为「无提示词不建详情页」，不再逐条列 `Disallow`，文件体积压回 `< 1 KB`（远低于 RFC 9309 的 500 KiB 上限）。
+  - 站内搜索结果不让抓（2026-11-25）：`BASE_DISALLOW` 里有 `/*?q=`，三组都带。提示词详情页的标签链到 `列表页?q=标签`、页脚搜博客也是 `?q=`，这些网址 canonical 指回列表页，11-22 审计里有 516 个，只占抓取量。要做能收录的标签页，用固定路径，别用 `?q=`。
+  - noindex 的页不要再写指向别处的 canonical（2026-11-25）：登录页不写 canonical；动画库详情页在 Claude 库同号那页 noindex 时 canonical 指回本页。审计会把「canonical 指向 noindex 页」记成问题。
 - 用量查询：`GET https://api.vercel.com/v2/usage?teamId=…&type=requests`（按天），`/v4/usage/top?pathType=request_path&sortKey=requests`（按路径）。
 
 **SEO/AI-SEO 已就位的约定**

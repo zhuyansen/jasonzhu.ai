@@ -1,4 +1,6 @@
-const BASE_DISALLOW = ["/api/", "/admin", "/dashboard"];
+// /*?q= 是站内搜索结果（提示词详情页的标签、页脚搜博客都带 ?q=）：canonical 本来就指回列表页，
+// 2026-11-22 审计里这类网址有 516 个，只占抓取量；按 Google 对站内搜索、筛选网址的建议直接不让抓。
+const BASE_DISALLOW = ["/api/", "/admin", "/dashboard", "/*?q="];
 
 const AI_SEARCH_CRAWLERS = ["OAI-SearchBot", "Claude-SearchBot", "PerplexityBot", "ChatGPT-User"];
 const AI_TRAINING_CRAWLERS = [

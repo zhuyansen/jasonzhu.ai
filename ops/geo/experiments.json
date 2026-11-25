@@ -11,7 +11,8 @@
     { "date": "2026-11-24", "note": "给机器读的入口，不是实验，没改任何题目对应页面的正文：llms.txt 加了「机器可读数据」「引用规则」两节；新增 /agents.md（Agent 能做什么、哪些要用户本人来）和 /data/payment-guard.json（收款选择器同一份数据，带核实日期）。收款数据的 JSON 和 data-choose-payment-platform 等收款题同一主题，复测时如果 AI 引用了这个 JSON，记在这条下面。同一天起 GA4 记 text_fragment 事件（AI 引用链接里的原句），只是测量。" },
     { "date": "2026-11-24", "note": "人和公司拆开：Person 的别名去掉公司名 GoSailGlobal；agentskillshub.top 上运营公司 GoSailGlobal LLC 单列成节点，ASH 机构不再带公司法定名和本人的 X、YouTube（ASH 站 11-25 上线）" },
     { "date": "2026-11-25", "note": "不是实验，没改任何题目对应页面的正文：Claude 提示词库没有详情页的旧编号（没有提示词的作品、移出合集的作品、AI 编出来的编号）从 404 改成 301 到同语言列表页，规则在 next.config.ts，按 opus-prompts.json 现算；/.well-known/mcp/server-card.json 照实重写，写明本站没有远程 MCP 服务，只列浏览器端 WebMCP 工具和只读文件。同一天急诊室（/go-global/ai-readiness）第 7 关服务卡片的修复建议改成「有远程 MCP 服务才发卡片」，模板按 MCP 的 SEP-2127 重写，也不是题目对应页面。复测时如果 AI 引用了提示词库列表页，记在这条下面。" },
-    { "date": "2026-11-25", "note": "利益说明，不是实验，正文没改：/blog/ai-proxy-services-recommendation（中英）原来写「纯推荐，无广告合作」，其实 8 个链接里有 5 个带邀请码（apimart、云雾、AiGoCode、PipeLLM、oFox），改成写明「标了邀请链接的 5 个带邀请码，通过它们注册，我或推荐人会拿到返佣」，这 5 个链接加 rel=sponsored；这页对应 gsc 组的 gsc-yunwu-api，gsc 组 11-30 才第一次跑，改在基线之前。/go-global 收款那块「我首推 Waffo」后面加一句利益说明（和 Waffo 有合作关系），对应 real-co-us-or-uk-remote、zh-real-co-us-or-uk-remote，只多一句话。" }
+    { "date": "2026-11-25", "note": "利益说明，不是实验，正文没改：/blog/ai-proxy-services-recommendation（中英）原来写「纯推荐，无广告合作」，其实 8 个链接里有 5 个带邀请码（apimart、云雾、AiGoCode、PipeLLM、oFox），改成写明「标了邀请链接的 5 个带邀请码，通过它们注册，我或推荐人会拿到返佣」，这 5 个链接加 rel=sponsored；这页对应 gsc 组的 gsc-yunwu-api，gsc 组 11-30 才第一次跑，改在基线之前。/go-global 收款那块「我首推 Waffo」后面加一句利益说明（和 Waffo 有合作关系），对应 real-co-us-or-uk-remote、zh-real-co-us-or-uk-remote，只多一句话。" },
+    { "date": "2026-11-25", "note": "站点技术修复，不是实验，没改题目对应页面的正文：robots.txt 不让抓站内搜索结果（/*?q=，提示词详情页的标签链接和页脚博客搜索都带它，11-22 站点审计里有 516 个这样的网址，canonical 本来就指回列表页）；登录页去掉 canonical 和 hreflang（?mode=signup 这类变体原来 canonical 指回 noindex 的 /login）；Claude 动画库详情页在 Claude 库同号那页不收录时，canonical 改指本页（原来指向一个 noindex 页）。" }
   ],
   "experiments": [
     {
@@ -40,6 +41,32 @@
         "data-ai-money-map"
       ],
       "来源": "ops/geo/citations/gigalinks-controlled-experiment-queue.md 的分组；data-backlink-spam-list 只投过 1 篇，两组都不算"
+    },
+    {
+      "id": "bluf-real-2026-11-25",
+      "note": "真实问法组：Google 已排第 5–20 名的题，对应页面开头先给结论",
+      "started": "2026-11-25",
+      "baseline": "results-2026-11-23.json",
+      "treated": [
+        "real-learn-anthropic-free",
+        "gsc-anthropic-course-alternatives",
+        "gsc-openai-academy-alternatives",
+        "real-learn-nvidia-dli",
+        "gsc-nvidia-dli-free-courses",
+        "gsc-fable-55-release-date"
+      ],
+      "control": [
+        "real-learn-roadmap",
+        "real-learn-manager",
+        "real-prompts-opus-examples",
+        "gsc-opus-55-pixel-art",
+        "real-prompts-gallery",
+        "real-prompts-three-models",
+        "real-prompts-images-mockups"
+      ],
+      "怎么选的": "2026-11-25 用两个来源定名次：美国 Google 桌面前 20 名（OpenSEO 的 SERP，每题一条代表搜索词，3 次抓取合并）和 Search Console 近 3 个月全球平均名次（展示 10 次以上）。任一落在第 5–20 名算入选，共 7 题：gsc-anthropic-course-alternatives（GSC 6.1）、gsc-nvidia-dli-free-courses（GSC 8.0）、real-learn-nvidia-dli（GSC「nvidia dli free courses」7.5）、gsc-fable-55-release-date（GSC「fable 5.5 release」7.3、「fable 5.5」6.2）、real-prompts-opus-examples（SERP 13，GSC「claude opus 5.5 prompts」14.2）、gsc-opus-55-pixel-art（SERP 5，GSC 详情页 8.9–9.6）、real-pay-fastest-approval（SERP 16，只在 1/3 次抓取里出现）。其余 23 题的前 20 名里没有本站，光改开头进不了第一页。代表搜索词是人工挑的（面板 11-23 的子查询名次作废了，没有现成的）。",
+      "改了什么": "openai-academy-vs-anthropic-learning-paths（中英）：开头先回答「Anthropic 课的替代」和「有没有认证」，认证相关的过时说法按官方页面改正（Claude Certified Architect 考试只对 Claude Partner Network 成员开放；OpenAI Academy 的徽章不是认证），常见问题加一条「Anthropic 的 AI 课有什么替代」；nvidia-dli-free-courses（中英）：「一句话回答」挪到更新说明前面，标上 10-04 的核对日期，加官方免费课清单链接，内容没重新核对；/prompts/claude-opus-5-5/fable-5-5（中英）：发布状态挪到 H1 下第一段，人工核实日期 10-27 改成 11-25，写明官方模型列表上最新的是 Fable 5.2，meta 描述也先写发布状态。questions-real-zh.json 里同号的 zh-* 题对应的中文页同样改了。",
+      "故意不改": "real-prompts-opus-examples、gsc-opus-55-pixel-art 对应的 Claude 库列表页是 GIGALinks 实验的对照组（prompts-claude-opus-55），复测到 2027-01-01，期间不动，所以放进本实验的对照组；real-pay-fastest-approval 证据只有 1/3 次抓取，排上的是收款选择器（交互工具，打开就是结论），不改，也不进两组（它的页面是 GIGALinks 处理组）。real-learn-certifications 不进两组：它的代表搜索词在 Google 上排的是这次改过的 openai-academy 那页（GSC 7.0），算哪组都不干净。对照组只取学习、提示词两类没改页面的题：收款、注册公司、周报的页面是 GIGALinks 处理组，混进来会把两个实验搅在一起。"
     }
   ]
 }
