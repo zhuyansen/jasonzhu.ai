@@ -187,8 +187,8 @@ export const CATEGORIES: CategoryMeta[] = [
     name: { zh: "第 7 关：工具接口（Agent Interaction）", en: "Level 7: Agent Interaction" },
     badge: { zh: "终极关卡 · 10 分", en: "WebMCP & Server Card · 10 pts" },
     symptom: {
-      zh: "99% 网站拿不到满分的终极大关：发布 /.well-known/mcp/server-card.json 并暴露 WebMCP 工具，让你的网站从「只能被 AI 读」进化成「能被 AI Agent 直接调用」！",
-      en: "The final boss level: publish /.well-known/mcp/server-card.json and expose WebMCP tools so AI agents can call your site as a tool.",
+      zh: "99% 网站拿不到满分的终极大关：暴露 WebMCP 工具，让你的网站从「只能被 AI 读」进化成「能被 AI Agent 直接调用」；有远程 MCP 服务的，再发布服务卡片告诉 Agent 去哪连。",
+      en: "The final boss level: expose WebMCP tools so AI agents can call your site as a tool; if you run a remote MCP server, also publish its server card so agents know where to connect.",
     },
     courseTieIn: {
       zh: "对应《第 1 课大结局》从静态网页进化为 Agent 可调用节点（WebMCP + MCP Server Card）",
@@ -1113,8 +1113,8 @@ export async function runAiReadinessScan(rawDomain: string): Promise<ScanReport>
     categoryKey: "agent_native",
     title: { zh: "HTTP Link 响应头暴露 llms.txt 与 MCP 发现入口", en: "Link headers" },
     whyItMatters: {
-      zh: "即使 Agent 只做一次 HEAD 请求，也能从 HTTP `Link:` 响应头直接发现 `/llms.txt` 和 `/.well-known/mcp/server-card.json`。",
-      en: "Exposes /llms.txt and /.well-known/mcp/server-card.json in the HTTP Link response header for zero-parse discovery.",
+      zh: "即使 Agent 只做一次 HEAD 请求，也能从 HTTP `Link:` 响应头直接发现 `/llms.txt`（有远程 MCP 服务的，还有它的服务卡片）。",
+      en: "Exposes /llms.txt (and, if you run a remote MCP server, its server card) in the HTTP Link response header for zero-parse discovery.",
     },
     status: hasAgentLinkHeader ? "passed" : "failed",
     score: hasAgentLinkHeader ? 1 : 0,
@@ -1123,8 +1123,8 @@ export async function runAiReadinessScan(rawDomain: string): Promise<ScanReport>
     prompt: hasAgentLinkHeader
       ? null
       : {
-          zh: `在服务端响应头中添加 HTTP Link 头：\nLink: <https://${domain}/llms.txt>; rel="llms-txt"; type="text/markdown", <https://${domain}/.well-known/mcp/server-card.json>; rel="service-desc"; type="application/json"`,
-          en: `Add an HTTP 'Link' response header pointing to /llms.txt and /.well-known/mcp/server-card.json.`,
+          zh: `在服务端响应头中添加 HTTP Link 头：\nLink: <https://${domain}/llms.txt>; rel="llms-txt"; type="text/markdown"\n有远程 MCP 服务、发了服务卡片的，在同一个 Link 头里再加一项指向卡片：<https://${domain}/.well-known/mcp/server-card.json>; rel="service-desc"; type="application/json"。没有就别加。`,
+          en: `Add an HTTP 'Link' response header pointing to /llms.txt. If you run a remote MCP server and publish its server card, add the card's URL to the same header (rel="service-desc"); otherwise leave it out.`,
         },
   });
 
@@ -1176,30 +1176,51 @@ export async function runAiReadinessScan(rawDomain: string): Promise<ScanReport>
   });
 
   // 7.2 MCP Server Card published (4 pts)
+  // 修复建议（2026-11-25 起）：有远程 MCP 服务才发卡片。MCP 的 SEP-2127（Final）规定卡片只描述远程服务：
+  // 名字 + 连接地址（remotes），不列工具；推荐放在「服务地址/server-card」，网站级入口是 /.well-known/ai-catalog.json。
+  // 这一项沿用旧草案的 /.well-known/mcp/server-card.json（Hostinger、Cloudflare isitagentready 也查这里），分值不变，
+  // 只是多认 remotes，按新模板写的卡片照样拿 4 分。以前的模板给每个网站一张带 search_site 工具的卡片，
+  // 没有 MCP 服务的网站照抄就成了假卡片（本站 11-19 那张就是这样）。
   let mcpPts = 0;
   let mcpDetail = `访问 /.well-known/mcp/server-card.json 返回 HTTP ${mcpRes.status}`;
   if (mcpRes.status === 200 && !(mcpRes.headers["content-type"] || "").toLowerCase().includes("text/html")) {
     try {
-      const card = JSON.parse(mcpRes.text) as Record<string, unknown>;
-      if (card && typeof card === "object" && (card["serverInfo"] || card["name"]) && (card["tools"] || card["capabilities"] || card["transport"] || card["endpoints"])) {
+      const card = JSON.parse(mcpRes.text) as Record<string, unknown> | null;
+      const isObj = card !== null && typeof card === "object";
+      const hasName = isObj && Boolean(card["serverInfo"] || card["name"]);
+      const hasConn = isObj && Boolean(card["remotes"] || card["tools"] || card["capabilities"] || card["transport"] || card["endpoints"]);
+      if (isObj && hasName && hasConn) {
         mcpPts = 4;
         const info = (card["serverInfo"] as Record<string, unknown>) || card;
         mcpDetail = `已发布合法的 MCP Server Card（name="${String(info["name"] || domain)}"）`;
       } else {
         mcpPts = 2;
-        mcpDetail = "JSON 可解析，但缺少 serverInfo / tools / capabilities 标准字段";
+        const missing = [!hasName && "服务名（name）", !hasConn && "连接地址（remotes）"].filter(Boolean).join("和");
+        mcpDetail = `JSON 可解析，但没写${missing}`;
       }
     } catch {
       mcpDetail = "/.well-known/mcp/server-card.json 不是合法的 JSON";
     }
   }
+  const cardName = `${domain.replace(/^www\./, "").split(".").reverse().join(".")}/mcp`;
+  const cardTemplate = (description: string) =>
+    [
+      "{",
+      '  "$schema": "https://static.modelcontextprotocol.io/schemas/v1/server-card.schema.json",',
+      `  "name": "${cardName}",`,
+      '  "version": "1.0.0",',
+      `  "description": "${description}",`,
+      `  "websiteUrl": "https://${domain}",`,
+      `  "remotes": [{ "type": "streamable-http", "url": "https://${domain}/mcp" }]`,
+      "}",
+    ].join("\n");
   checks.push({
     key: "agent_interaction.mcp_server_card",
     categoryKey: "agent_interaction",
     title: { zh: "发布 /.well-known/mcp/server-card.json", en: "MCP Server Card published" },
     whyItMatters: {
-      zh: "MCP 官方发卡路径：让外部 Agent 目录与客户端自动发现你的站点元信息、工具列表与端点。",
-      en: "Publishes machine-readable MCP server metadata and tool definitions at /.well-known/mcp/server-card.json.",
+      zh: "给有远程 MCP 服务的网站用：MCP 客户端和目录先读这张卡片，就知道服务叫什么、去哪个地址连，不用先连上。卡片不列工具，工具连上以后再取。没有远程 MCP 服务的网站用不上。",
+      en: "For sites that run a remote MCP server: clients and registries read the card to learn the server's name and endpoint before connecting. It doesn't list tools; those are fetched after connecting. Sites without a remote MCP server don't need one.",
     },
     status: mcpPts === 4 ? "passed" : mcpPts > 0 ? "partial" : "failed",
     score: mcpPts,
@@ -1209,8 +1230,24 @@ export async function runAiReadinessScan(rawDomain: string): Promise<ScanReport>
       mcpPts === 4
         ? null
         : {
-            zh: `创建静态文件 public/.well-known/mcp/server-card.json，返回 JSON：\n{\n  "version": "1.0",\n  "protocolVersion": "2025-06-18",\n  "serverInfo": { "name": "${domain}", "title": "${domain}", "version": "1.0.0", "description": "Official MCP Server Card for ${domain}" },\n  "capabilities": { "tools": { "listChanged": false } },\n  "tools": [{ "name": "search_site", "description": "Search ${domain}", "inputSchema": { "type": "object", "properties": { "query": { "type": "string" } } } }]\n}`,
-            en: `Publish a valid JSON file at /.well-known/mcp/server-card.json containing serverInfo, capabilities, and tools.`,
+            zh: [
+              `先确认有没有远程 MCP 服务：MCP 客户端能直接连上的网址，比如 https://${domain}/mcp。npm 包、本机命令（这类去 MCP 官方 Registry 登记）、网页里的 WebMCP 工具都不算。`,
+              "",
+              "没有：不要发这张卡片，也别照抄网上带 tools 列表的模板。卡片里写了连不上的地址、调不了的工具，Agent 会照着去连，白跑一趟。这一项空着只少 4 分；页面里的搜索做成 7.1 的 WebMCP 工具，内容入口写进 /llms.txt。",
+              "",
+              "有：按 MCP 的服务卡片规范（SEP-2127）写一张，只写名字和连接地址，不列工具（客户端连上以后自己取）。地址换成真实的：",
+              cardTemplate("<这个服务能做什么，100 个字符以内>"),
+              `规范推荐放在「服务地址 + /server-card」（上例是 https://${domain}/mcp/server-card），并在 /.well-known/ai-catalog.json 里登记；这一项查的是旧草案的位置 /.well-known/mcp/server-card.json，同样的内容这里也放一份。规范：https://github.com/modelcontextprotocol/experimental-ext-server-card`,
+            ].join("\n"),
+            en: [
+              `First check whether you run a remote MCP server: a URL an MCP client can connect to directly, such as https://${domain}/mcp. An npm package or a local command (list those in the official MCP Registry) and WebMCP tools in your pages don't count.`,
+              "",
+              "No remote server: don't publish this card, and don't copy templates that list tools. A card pointing to an endpoint or tools nobody can call sends agents to a dead end. Leaving this check empty costs 4 points; put your search into WebMCP tools (7.1) and your content into /llms.txt.",
+              "",
+              "Remote server: write a card following the MCP Server Card spec (SEP-2127) with its name and endpoint only, no tool list (clients fetch tools after connecting). Use your real URL:",
+              cardTemplate("<what the server does, under 100 characters>"),
+              `The spec recommends hosting it at <server URL>/server-card (here https://${domain}/mcp/server-card) and listing it in /.well-known/ai-catalog.json; this check reads the older draft location /.well-known/mcp/server-card.json, so serve the same JSON there too. Spec: https://github.com/modelcontextprotocol/experimental-ext-server-card`,
+            ].join("\n"),
           },
   });
 

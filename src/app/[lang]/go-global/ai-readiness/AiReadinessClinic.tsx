@@ -143,14 +143,14 @@ const SANDBOX_UPGRADES: SandboxUpgradeItem[] = [
     pts: 10,
     stage: "4. Describe",
     title: {
-      zh: "第 7 关终极药方：暴露 WebMCP 工具 + 发布 /.well-known/mcp/server-card.json",
-      en: "Level 7 Boss Fix: Expose WebMCP tools + publish MCP Server Card",
+      zh: "第 7 关终极药方：暴露 WebMCP 工具；有远程 MCP 服务的，再发布服务卡片",
+      en: "Level 7 Boss Fix: Expose WebMCP tools (+ a server card if you run a remote MCP server)",
     },
     symptom: {
       zh: "99% 网站卡在这一关：没有把网页变成 Agent 可调用的工具节点（丢 10 分）",
       en: "99% of sites fail here: no WebMCP tools or MCP Server Card (-10 pts)",
     },
-    fixCode: `<form toolname="search_docs" tooldescription="Search documentation" toolautosubmit="true">\n  <input name="q" />\n</form>\n// + /.well-known/mcp/server-card.json`,
+    fixCode: `<form toolname="search_docs" tooldescription="Search documentation" toolautosubmit="true">\n  <input name="q" />\n</form>\n// + /.well-known/mcp/server-card.json, only if you run a remote MCP server`,
   },
 ];
 
