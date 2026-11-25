@@ -2,15 +2,16 @@
 #
 #   提问  ops/geo/panel_run.py 调 backlink-guard 的 asked（AIsa 接口，AISA_API_KEY）。平时问 ChatGPT、Gemini App、
 #         Google AI Mode、Perplexity，每题各 3 次；每月第一个周一加问 Claude 1 次（一个回答约 $0.045，是别家的 10 倍）。
-#         题库是冻结组 21 题、真实问法组 30 题、Search Console 真题组 17 题（2026-11-30 起），一次约 $3.7，加 Claude 约 $6.7。
-#         max_usd 封顶（默认 9），超了的不问。
+#         题库是冻结组 21 题、真实问法组 30 题、Search Console 真题组 17 题、收款格子组 36 题（后两组 2026-11-30 起），
+#         一次约 $5.7（11-23 实测每个回答约 $0.0046）。加 Claude 要约 $10.4–11.1，超过 max_usd：按题库顺序问，Claude 问到
+#         第 60 题左右预算就用完，收款格子组基本问不到 Claude。max_usd 封顶（默认 9），超了的不问。
 #   存放  分数提交到 ops/geo/panel/（公开）。回答原文和别的网站的网址来自付费接口，不进仓库、不进日志：
 #         加密后放进草稿 release「geo-panel-state」，密钥用 SELLER_STATE_KEY（和卖家历史库同一把）。
 #         解密：gh release download geo-panel-state -p 'panel-<日期>.json.gz.enc' &&
 #               openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000 -pass env:SELLER_STATE_KEY -in panel-<日期>.json.gz.enc | gunzip
 #   子查询 ops/geo/fanout.py：ChatGPT、Perplexity 回答里自带的搜索词（每周），加上每月第一个周一让 Gemini（接口）每题答 1 次拿的搜索词，
 #         每条查 Google 前 20，看我们排不排得上；先查 site:jasonzhu.ai 自检，第一条不是本站就写「测不出来」、不查排名
-#         再把 4 个品牌词各查 3 次（实体图谱的效果指标）。平时约 $1.5，每月第一个周一约 $4（fanout_usd 封顶，填 0 不跑）。计数提交到
+#         再把 4 个品牌词各查 3 次（实体图谱的效果指标）。平时约 $2.5，每月第一个周一会碰到 fanout_usd 封顶（默认 8，填 0 不跑）。计数提交到
 #         ops/geo/panel/fanout-<日期>.json，搜索词原文只进邮件和加密存档。这一步失败不挡面板本身。
 #   行动清单 ops/geo/fanout_actions.py：不另花钱，读面板和子查询的结果，出四张表进邮件：每道题的公共词（几次回答都用过的词）
 #         和题目页面比、页面上缺哪些词；每道题的代表搜索词和它的 Google 名次；AI 搜这些词时 Google 第一页上的外部网站，
@@ -25,6 +26,7 @@
 #         两套题的题目都不要改，要加题就加新 id：ops/geo/questions.json 是冻结组，GIGALinks 的实验要在 12-01、12-15、01-01
 #         用同一套题复测；ops/geo/questions-real.json 改了题，前后就没法比。
 #         ops/geo/questions-gsc.json（Search Console 真题组，17 题）2026-11-24 Jason 确认每周跑，题目同样不要改。
+#         ops/geo/questions-grid-payments.json（收款格子组，36 题：场景 × 人群 × 问题）2026-11-25 Jason 确认每周跑，题目同样不要改。
 name: GEO 引用面板（每周）
 
 on:
@@ -33,7 +35,7 @@ on:
   workflow_dispatch:
     inputs:
       sets:
-        description: "题库，逗号分隔：frozen（冻结组）、real（真实问法组）、gsc（Search Console 真题组）；留空 = 定时任务用的那套"
+        description: "题库，逗号分隔：frozen（冻结组）、real（真实问法组）、gsc（Search Console 真题组）、grid（收款格子组）；留空 = 定时任务用的那套"
         default: ""
       engines:
         description: "引擎:次数，逗号分隔；留空 = 平时那四家各 3 次，每月第一个周一加 claude:1"
@@ -62,7 +64,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  DEFAULT_SETS: frozen,real,gsc      # gsc = Search Console 真题组，2026-11-24 Jason 确认加入（每周约多 $1.4）
+  DEFAULT_SETS: frozen,real,gsc,grid # gsc = Search Console 真题组，2026-11-24 Jason 确认加入（每周约多 $1.4）；grid = 收款格子组，2026-11-25 Jason 确认加入（每周约多 $2）
   ZH_MONTHLY: "1"                    # 每月第一个周一的中文检查，2026-11-24 Jason 确认打开（每月约 $1.8）；改成 "0" 就停
   DEFAULT_ENGINES: chatgpt:3,gemini_app:3,ai_mode:3,perplexity:3
 

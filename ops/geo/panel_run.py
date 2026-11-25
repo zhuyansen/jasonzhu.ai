@@ -59,7 +59,11 @@ from pathlib import Path
 
 GEO = Path(__file__).resolve().parent
 PANEL = GEO / "panel"
-SETS = {"frozen": GEO / "questions.json", "real": GEO / "questions-real.json", "gsc": GEO / "questions-gsc.json"}
+GRID = GEO / "questions-grid-payments.json"
+SETS = {"frozen": GEO / "questions.json", "real": GEO / "questions-real.json", "gsc": GEO / "questions-gsc.json", "grid": GRID}
+# 收款格子组的三个维度（题库里每题的 grid 字段），摘要按它排成 9 × 4 的格子表
+GRID_AXES = {"scene": ("AI 订阅", "课程和数字产品", "实物"), "who": ("大陆个人", "香港公司", "美国 LLC"),
+             "ask": ("能不能开户", "到手多少", "审核多久", "被冻结怎么办")}
 EXPERIMENTS = GEO / "experiments.json"
 FACTS = GEO / "signature-facts.json"
 FACT_WINDOW = 80                # near 里的词要在数字前后这么多个字符内
@@ -86,7 +90,7 @@ DEFAULT_ENGINES = "chatgpt:3,gemini_app:3,ai_mode:3,perplexity:3"   # 都是每�
 CALIBERS = ("site_cited", "page_cited", "named", "first_pick", "fact_used", "absorbed")
 CALIBER_ZH = {"site_cited": "引用本站", "page_cited": "引用对应页面", "named": "正文点名", "first_pick": "排第一",
               "fact_used": "用了我们的数据", "absorbed": "用了没署名"}
-SET_ZH = {"frozen": "冻结组", "real": "真实问法组", "gsc": "Search Console 真题组"}
+SET_ZH = {"frozen": "冻结组", "real": "真实问法组", "gsc": "Search Console 真题组", "grid": "收款格子组"}
 MIN_CHARS = 200                 # 没有任何引用、正文又短于这个长度的，当作没答出来
 REFUSAL = re.compile(r"safety (filters?|checks?)|can(no|['’])t help with that|unable to (help|assist) with", re.I)
 RESULT_NAME = re.compile(r"^results-(\d{4}-\d{2}-\d{2})\.json$")
@@ -685,6 +689,47 @@ def absorbed_section(rows: list[dict]) -> list[str]:
     return out + [""]
 
 
+def grid_meta(path: Path = GRID) -> dict[str, dict]:
+    """收款格子组每道题在哪一格：{题 id: {scene, who, ask}}，从题库的 grid 字段读（结果文件里不重复存）。没有文件是空的。"""
+    if not path.exists():
+        return {}
+    return {q["id"]: q["grid"] for q in json.loads(path.read_text(encoding="utf-8"))["questions"] if q.get("grid")}
+
+
+def grid_section(rows: list[dict], meta: dict[str, dict] | None = None) -> list[str]:
+    """收款格子：每一格这次有没有被 AI 引用。一格算「被引用」= 至少一家的多数票引用了本站（过半的有效回答引用，平票不算），
+    和 GEO 总页「Query 格子」水表的口径一样。每格写多数票引用了本站的是哪几家；有一家引用到这道题的对应页面，标「含对应页」。"""
+    meta = grid_meta() if meta is None else meta
+    rs = [r for r in rows if r.get("set") == "grid" and r["question_id"] in meta]
+    if not rs:
+        return []
+    site, page, engines = majority(rs), majority(rs, "page_cited"), engines_in(rs)
+    at = {(g["scene"], g["who"], g["ask"]): qid for qid, g in meta.items()}
+    asked = {r["question_id"] for r in rs}
+    hit = {q for q in asked if any(site.get((e, q)) for e in engines)}
+    hit_page = {q for q in asked if any(page.get((e, q)) for e in engines)}
+
+    def cell(qid: str | None) -> str:
+        if qid is None:
+            return "（没有这格）"
+        if qid not in asked:
+            return "没问"
+        if not any((e, qid) in site for e in engines):
+            return "没测到"                 # 没有有效回答，或每家都是平票
+        cited = [LABEL.get(e, e) for e in engines if site.get((e, qid))]
+        return ("、".join(cited) + ("（含对应页）" if qid in hit_page else "")) if cited else "–"
+
+    out = ["## 收款格子：哪几格被 AI 引用", "",
+           f"格子 {len(meta)} 个，这次问到 {len(asked)} 个；被 AI 引用的格子 {len(hit)} 个（至少一家多数票引用本站），"
+           f"其中引用到对应页面的 {len(hit_page)} 个。每格写的是多数票引用了本站的几家，「–」是都没引用，"
+           "「没测到」是没有有效回答或平票。有答案的格子（站上有一段直接回答）不在面板里量，见 GEO 总页「Query 格子」。", "",
+           "| 场景 × 人群 | " + " | ".join(GRID_AXES["ask"]) + " |", "|---|" + "---|" * len(GRID_AXES["ask"])]
+    for scene in GRID_AXES["scene"]:
+        for who in GRID_AXES["who"]:
+            out.append(f"| {scene} × {who} | " + " | ".join(cell(at.get((scene, who, ask))) for ask in GRID_AXES["ask"]) + " |")
+    return out + [""]
+
+
 def summary(result: dict, prev: list[dict] | None = None, prev_day: str = "", prev_lineage: dict | None = None) -> str:
     rows, day = result["rows"], result["date"]
     base_path = PANEL / BASELINE
@@ -711,6 +756,8 @@ def summary(result: dict, prev: list[dict] | None = None, prev_day: str = "", pr
         out += [f"## {SET_ZH[s]}", ""] + engine_table(rows, base if s == "frozen" else None, ids, result) + [""]
         if s == "frozen" and base:
             out += ["基线是 2026-11-17 那次，每题每家只问了 1 次，Google AI Mode 当时没测。", ""]
+        if s == "grid":
+            out += grid_section(rows)
     brand = {r["question_id"] for r in rows if r["kind"] == "brand"}
     if brand and len(brand) < len({r["question_id"] for r in rows}):
         others = {r["question_id"] for r in rows} - brand
@@ -1027,6 +1074,37 @@ def selftest() -> int:
     assert len(changed) == 4 and "题库改过" in changed[0]
     text = summary(result | {"lineage": lin}, prev=[mk("data-x", False)], prev_day="2026-11-21", prev_lineage=None)
     assert "运行配置：冻结组 aaa" in text and "和上次（2026-11-21）的运行配置不一样" in text
+    # 收款格子：一格算被引用 = 至少一家多数票引用本站。g1 ChatGPT 3 次 2 中、Perplexity 1 次 1 中且是对应页；g2 全没中；
+    # g3 一中一不中是平票，没测到；g4 在题库里但这次没问；题库里没有的格写「（没有这格）」
+    gm = {"g1": {"scene": "AI 订阅", "who": "大陆个人", "ask": "能不能开户"}, "g2": {"scene": "AI 订阅", "who": "大陆个人", "ask": "到手多少"},
+          "g3": {"scene": "实物", "who": "美国 LLC", "ask": "被冻结怎么办"}, "g4": {"scene": "实物", "who": "美国 LLC", "ask": "审核多久"}}
+    gr = lambda qid, hit, e="chatgpt", **kw: {"engine": e, "question_id": qid, "set": "grid", "status": "answered",
+                                              "site_cited": hit, "page_cited": False} | kw
+    grows = ([gr("g1", True)] * 2 + [gr("g1", False), gr("g1", True, "perplexity", page_cited=True)]
+             + [gr("g2", False)] * 3 + [gr("g3", True), gr("g3", False)])
+    sec = "\n".join(grid_section(grows, gm))
+    assert "格子 4 个，这次问到 3 个；被 AI 引用的格子 1 个（至少一家多数票引用本站），其中引用到对应页面的 1 个。" in sec, sec
+    assert "| AI 订阅 × 大陆个人 | ChatGPT、Perplexity（含对应页） | – | （没有这格） | （没有这格） |" in sec, sec
+    assert "| 实物 × 美国 LLC | （没有这格） | （没有这格） | 没问 | 没测到 |" in sec, sec
+    assert grid_section([mk("x", True)], gm) == [] and grid_section(grows, {}) == []          # 没有格子题就不出这一段
+    # 收款格子组的题库：36 格各一题，id 和格子对得上，问法来源可查，和别的题组不重复（load_questions 不报错）
+    if GRID.exists():
+        gq = json.loads(GRID.read_text(encoding="utf-8"))["questions"]
+        code = {"scene": dict(zip(GRID_AXES["scene"], ("ai", "course", "goods"))), "who": dict(zip(GRID_AXES["who"], ("cn", "hk", "us"))),
+                "ask": dict(zip(GRID_AXES["ask"], ("open", "net", "review", "frozen")))}
+        others = {q["id"] for s in ("frozen", "real", "gsc") for q in json.loads(SETS[s].read_text(encoding="utf-8"))["questions"]}
+        assert len(gq) == 36 and len({tuple(q["grid"][k] for k in code) for q in gq}) == 36, "收款格子组要 36 格各一题"
+        for q in gq:
+            g, src = q["grid"], q["phrasing_source"]
+            assert all(g[k] in code[k] for k in code) and q["kind"] == "grid", q["id"]
+            assert q["id"] == "grid-pay-" + "-".join(code[k][g[k]] for k in code), q["id"]
+            assert not q["target_url"] or q["target_url"].startswith(f"https://{OWN}/en/"), q["id"]
+            assert not re.search(r"[㐀-鿿]", q["question"]) and OWN.split(".")[0] not in q["question"].lower(), q["id"]
+            ref = re.fullmatch(r"fanout:(.+)@\d{4}-\d{2}-\d{2}", src)
+            assert src == "drafted" or src.startswith("gsc:") or (src.startswith("set:") and src[4:] in others) \
+                or (ref and ref.group(1) in others), (q["id"], src)
+        assert [q["id"] for q in load_questions(["grid"])] == [q["id"] for q in gq]
+        assert len(load_questions(list(SETS))) == sum(len(json.loads(p.read_text(encoding="utf-8"))["questions"]) for p in SETS.values())
     print("自测通过")
     return 0
 
@@ -1037,7 +1115,7 @@ def main() -> int:
     ap = argparse.ArgumentParser(description="GEO 引用面板")
     sub = ap.add_subparsers(dest="cmd", required=True)
     r = sub.add_parser("run", help="问一遍、打分、写结果")
-    r.add_argument("--sets", default="frozen", help="题库，逗号分隔：frozen、real、gsc（默认 frozen）")
+    r.add_argument("--sets", default="frozen", help="题库，逗号分隔：frozen、real、gsc、grid（默认 frozen）")
     r.add_argument("--engines", default=DEFAULT_ENGINES, help=f"引擎:次数，逗号分隔（默认 {DEFAULT_ENGINES}）")
     r.add_argument("--max-usd", type=float, default=3.0, help="这次最多花多少美元（默认 3）")
     r.add_argument("--limit", type=int, default=0, help="只问前 N 题（试跑用）")
