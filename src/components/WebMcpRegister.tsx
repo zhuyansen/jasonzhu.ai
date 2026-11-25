@@ -15,6 +15,8 @@ interface ModelContextLike {
   registerTool?: (tool: ModelContextTool) => unknown;
 }
 
+// 浏览器端 WebMCP 工具，只在支持 navigator.modelContext 的浏览器里、打开本站页面时存在；本站没有远程 MCP 服务。
+// 改名字或功能时同步改 public/.well-known/mcp/server-card.json（2026-11-25 照实重写过：以前写成了以 llms.txt 为端点的 MCP 服务）。
 const TOOLS: ModelContextTool[] = [
   {
     name: "search_jasonzhu_articles",

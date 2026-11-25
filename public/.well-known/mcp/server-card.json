@@ -1,45 +1,49 @@
 {
-  "version": "1.0",
-  "protocolVersion": "2025-06-18",
   "name": "jasonzhu-ai",
-  "description": "Jason Zhu (祝彦森) — AI tool tutorials, going-global playbooks for indie founders, daily AI news, and GoSail Club community resources.",
-  "url": "https://jasonzhu.ai",
-  "endpoint": "https://jasonzhu.ai/llms.txt",
-  "documentationUrl": "https://jasonzhu.ai/llms.txt",
+  "title": "JasonZhu.AI",
+  "description": "jasonzhu.ai does not run a remote MCP server. There is no MCP endpoint to connect to, so this card lists no transport. What the site offers agents: read-only WebMCP tools that its pages register in the browser (listed under tools), and plain HTTPS files that need no MCP (listed in instructions).",
+  "instructions": "Without a browser, read these over plain HTTPS: https://jasonzhu.ai/llms.txt (site guide and citation rules), https://jasonzhu.ai/agents.md (what an agent may and may not do on this site), https://jasonzhu.ai/data/payment-guard.json (payment-platform data with check dates), https://jasonzhu.ai/feed/blog.xml and https://jasonzhu.ai/feed/news.xml (RSS). The tools below exist only inside a jasonzhu.ai page loaded in a browser that supports WebMCP (navigator.modelContext). An MCP client cannot call them through this card.",
+  "documentationUrl": "https://jasonzhu.ai/agents.md",
   "iconUrl": "https://jasonzhu.ai/favicon.ico",
-  "serverInfo": {
-    "name": "jasonzhu-ai",
-    "title": "JasonZhu.AI Knowledge & Search Tools",
-    "version": "1.0.0"
-  },
-  "transport": {
-    "type": "streamable-http",
-    "endpoint": "https://jasonzhu.ai/llms.txt"
-  },
-  "capabilities": {
-    "tools": {
-      "listChanged": false
-    },
-    "resources": {
-      "subscribe": false,
-      "listChanged": false
-    },
-    "prompts": {
-      "listChanged": false
-    }
-  },
-  "authentication": {
-    "required": false,
-    "schemes": []
-  },
+  "updated": "2026-11-25",
   "tools": [
     {
       "name": "search_jasonzhu_articles",
-      "description": "Search JasonZhu.AI tutorials, going-global guides, and AI tool reviews by keyword."
+      "title": "Search the link list in llms.txt",
+      "description": "WebMCP, registered by a page script. Fetches /llms.txt and returns up to 20 of its link lines that contain the keyword, plus the blog URL. It does not search article text.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": { "type": "string", "description": "Keyword to look for in the link lines of /llms.txt." },
+          "lang": { "type": "string", "enum": ["zh", "en"], "description": "Language of the returned blog URL." }
+        },
+        "required": ["query"]
+      },
+      "annotations": { "readOnlyHint": true }
+    },
+    {
+      "name": "search_jasonzhu_blog",
+      "title": "Filter the blog list",
+      "description": "WebMCP, declared by the search form in the page footer. Opens /{lang}/blog?q={keyword}; the page filters its article list in the browser.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "q": { "type": "string", "description": "Keyword to filter the blog list by." }
+        }
+      },
+      "annotations": { "readOnlyHint": true }
     },
     {
       "name": "get_going_global_guides",
-      "description": "List going-global playbooks (UK/US company registration, Stripe/Wise payments, SEO & GEO schools map)."
+      "title": "Links to the going-global guides",
+      "description": "WebMCP, registered by a page script. Returns five fixed links: the going-global hub, the payment selector, the account-opening guide, GoSail Club and services. It does no lookup.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "lang": { "type": "string", "enum": ["zh", "en"], "description": "Language of the returned links." }
+        }
+      },
+      "annotations": { "readOnlyHint": true }
     }
   ]
 }

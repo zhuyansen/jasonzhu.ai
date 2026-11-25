@@ -1,4 +1,49 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import type { NextConfig } from "next";
+
+// Claude 提示词库的旧详情页 301 到同语言列表页（2026-11-25 起）。
+// 11-17 起没有提示词的作品不建详情页，更早还有作品移出合集。这些旧地址每天有一千多次爬虫来访，全是 404，
+// 其中有 Claude、ChatGPT 替用户现场读页，还有 AI 自己编出来的编号（GEOInflow 爬虫日志：近 30 天 9,700 多次）。
+// 规则：凡是数字编号、又没有详情页的地址，一律跳走。有详情页的编号从 src/generated/opus-prompts.json 现算，
+// 和详情页 generateStaticParams 用同一份数据、同一个条件（带提示词），所以每次构建自动更新：作品有了提示词就不再被跳走。
+// 规则在 Vercel 路由层执行，不经过 middleware，也不调函数。Next 要求每条规则编译后的正则不超过 4096 个字符，
+// 所以按编号前缀分组：每组一条规则，排除这组里有详情页的编号；不属于任何一组的编号，由最后一条兜底。
+const PROMPT_LIB = "prompts/claude-opus-5-5";
+const MAX_GROUP_CHARS = 1500;
+
+function promptDetailRedirects() {
+  const lib = JSON.parse(readFileSync(join(process.cwd(), "src/generated/opus-prompts.json"), "utf8")) as {
+    cases: { id: string; prompt: unknown }[];
+  };
+  const live = lib.cases.filter((c) => c.prompt).map((c) => c.id);
+  if (live.length === 0 || live.some((id) => !/^\d+$/.test(id))) {
+    throw new Error("提示词库没有带提示词的作品，或出现了非数字编号：先核对数据，再改 next.config.ts 的跳转规则");
+  }
+  const groups: [string, string[]][] = [];
+  const byPrefix = (ids: string[], len: number) => {
+    const m = new Map<string, string[]>();
+    for (const id of ids) m.set(id.slice(0, len), [...(m.get(id.slice(0, len)) ?? []), id]);
+    return [...m].sort(([a], [b]) => a.localeCompare(b));
+  };
+  const add = (prefix: string, ids: string[]) => {
+    const chars = ids.reduce((n, id) => n + id.length - prefix.length + 1, 0);
+    if (chars <= MAX_GROUP_CHARS || ids.every((id) => id.length <= prefix.length + 1)) groups.push([prefix, ids]);
+    else for (const [p, sub] of byPrefix(ids, prefix.length + 1)) add(p, sub);
+  };
+  for (const [p, ids] of byPrefix(live, 4)) add(p, ids);
+  const rule = (idPattern: string) => ({
+    source: `/:lang(zh|en)/${PROMPT_LIB}/:id(${idPattern})`,
+    destination: `/:lang/${PROMPT_LIB}`,
+    statusCode: 301,
+  });
+  return [
+    // 以 p 开头、但后面不是这组任何一个有详情页的编号
+    ...groups.map(([p, ids]) => rule(`${p}(?!(?:${ids.map((id) => id.slice(p.length)).join("|")})(?!\\d))\\d+`)),
+    // 不以任何一组的前缀开头
+    rule(`(?!(?:${groups.map(([p]) => p).join("|")}))\\d+`),
+  ];
+}
 
 const nextConfig: NextConfig = {
   // 根布局是动态段 [lang]，Next 无法在 layout 里 SSR 出 404（body 只剩脚本，见 vercel/next.js#62228）。
@@ -25,6 +70,8 @@ const nextConfig: NextConfig = {
         destination: "https://jasonzhu.ai/:path*",
         permanent: true,
       },
+      // 提示词库没有详情页的旧编号 → 列表页（说明见文件开头）
+      ...promptDetailRedirects(),
     ];
   },
   async headers() {

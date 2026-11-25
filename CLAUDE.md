@@ -77,6 +77,7 @@ Git：commit 后如远程有新提交（cron 会自动 commit 快讯），先 `g
 
 **提示词库（app/[lang]/prompts/claude-opus-5-5，收 Opus 5.5 + Sonnet 5.5 + Haiku 5.5（10/7 发布）+ Fable 5.5（内测·未官宣，`MODEL_PREVIEW` 标注），URL 保留原样）**
 - 源 `src/content/opus-prompts/cases.json`（全部作品，含无提示词的）→ `generate-opus-prompts.mjs`（已接入 prebuild）→ 站内列表收全部作品，和 GitHub 合集一致；没有提示词的作品不建详情页、卡片直链 X 原帖（2026-11-17 起与图片库/Gemini 库统一，不再产生上千个 noindex 详情页）。采集管线和已知的坑见 `scripts/opus-prompts/README.md`。
+- 没有详情页的数字编号（没有提示词的作品、移出合集的作品、AI 编出来的编号）301 到同语言列表页（2026-11-25 起，以前每天一千多次爬虫 404）。规则是 `next.config.ts` 的 `promptDetailRedirects()`，每次构建按 `opus-prompts.json` 里带提示词的编号现算，和详情页 `generateStaticParams` 同一个条件；改「哪些作品有详情页」的条件时两边一起改。
 - 视频和封面是 X 的外链。`video.twimg.com` 拒绝带外站 Referer 的请求；靠 `no-referrer` 绕过它违反 X 条款（不许绕过技术限制），2026-11-21 起不再站内播放：只显示封面（pbs.twimg.com 带本站 Referer 也能加载），点封面去 X 看原视频。**不要再把 `no-referrer` 加回来。**
 - 客户端组件只能引 `@/lib/opus-prompts-shared`；`@/lib/opus-prompts` 导入整份 JSON，引了会打进 JS 包。
 - 提示词一律原文照录，出处必须可追溯；人工把关记录在 `scripts/opus-prompts/data/curation.json`，下架也走这里。
@@ -133,6 +134,7 @@ Git：commit 后如远程有新提交（cron 会自动 commit 快讯），先 `g
 **SEO/AI-SEO 已就位的约定**
 - 文章里写 `## 常见问题`（或英文 `## FAQ`）段 + `### 问题`，src/lib/faq.ts 自动生成 FAQPage JSON-LD——写内容时优先带上。
 - app/llms.txt/route.ts 动态生成 LLM 爬虫导览；/feed/blog.xml、/feed/news.xml 双 RSS。
+- `public/.well-known/mcp/server-card.json` 照实写（2026-11-25 重写）：本站没有远程 MCP 服务，卡片不写 transport / endpoint，只列浏览器端 WebMCP 工具（`WebMcpRegister.tsx` 和页脚搜索表单）和只读文件。11-19 版把 llms.txt 写成了 MCP 端点，还列了两个没有服务端的工具，别改回去。
 - 博客封面用 next/image + priority（勿改回裸 img，LCP 曾 13.8s）。作者中文名是**祝彦森**（不是朱延森）。
 - 标题：站名由 layout 的标题模板加，页面标题里不要再写「— JasonZhu.AI」（联系页、全站目录页写过，成了「… — JasonZhu.AI | JasonZhu.AI」）。标题加站名超过 60 个字符时自动不带站名：`withSocialCards` 统一处理，没走它的页面（博客文章、Claude 库详情页）自己调 `fitTitle`（`src/lib/social.ts`）。提示词详情页和博客的 meta description 超过 160 个字符时用 `fitDescription` 截到完整句子。
 - 标题层级不跳级（2026-11-20 全站审计后）：H1 下面的小节用 h2。页脚三栏、订阅框（SubscribeForm）、手册 / 学习全景图 / 收款选择器的小节标题都是 h2；BlogCard 默认 h3（首页在 h2 小节下面），博客列表页传 `heading="h2"`。博客正文里的「# 标题」渲染成 h2，一页只有一个 H1。

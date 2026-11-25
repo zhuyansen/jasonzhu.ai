@@ -80,16 +80,17 @@ export default function Footer({ lang, dict }: FooterProps) {
           </div>
         </div>
 
-        {/* Declarative WebMCP tool form for in-browser AI agents */}
+        {/* 声明式 WebMCP 工具：给浏览器里的 AI Agent 用。名字不能和 WebMcpRegister 里脚本注册的工具重名（以前都叫
+            search_jasonzhu_articles，同名的两个工具浏览器只能留一个）。改名字或功能时同步改 public/.well-known/mcp/server-card.json */}
         <form
           action={`/${lang}/blog`}
           method="get"
           role="search"
           className="sr-only"
           {...({
-            toolname: "search_jasonzhu_articles",
+            toolname: "search_jasonzhu_blog",
             tooldescription:
-              "Search JasonZhu.AI tutorials, Claude Code / Cursor guides, and going-global playbooks.",
+              "Filter the JasonZhu.AI blog list by keyword (opens /blog?q=).",
           } as Record<string, string>)}
         >
           <input
