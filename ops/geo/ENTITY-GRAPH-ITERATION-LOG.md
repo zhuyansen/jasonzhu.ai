@@ -18,6 +18,7 @@
 | Search Console 看 4 个品牌词（jasonzhu.ai、jasonzhu ai、jason zhu gosail、gosail club）的展示和名次：v2.4 定了要做，还没做 | Claude | 和 11-30 的读数一起 | ⏳ |
 | OpenAlex：两个数据集挂在别人名下。130K 数据集（W7167922915）在 A5009989201「竹彦 森」名下；《Backlink Spam List》（W7237096646，重复记录 W7237007813）在 A5087679970 名下，这个作者页其余 7 个作品是斯坦福一位做金融和机器学习的 Jason Zhu 的。你的另外 7 个作品在 A5163069727，没挂 ORCID；按 ORCID 查不到作者（11-24 查） | OpenAlex 客服 | 等回复；回复发到你 OpenAlex 账号的邮箱 | 🟡 11-24 Claude 在你的 Chrome 里用你的 OpenAlex 账号提了两张工单：请求 28329（130K）、28427（Backlink Spam List）；认领、合并作者页不做 |
 | ASH 每日任务第一次带「实体关系」检查：Entity relations 那步成功，日报里有「🔗 实体关系」一节，9 条都过 | Claude | 11-25 的定时运行（20:20 UTC 排程，常晚几个小时） | ⏳ |
+| ASH `4e90ec7` 上线后核对：首页和 /ai-info/ 的 130K 数据集 sameAs 里有总 DOI | Claude | 部署排在数据同步后面（11-25） | ⏳ |
 | ASH 审计第 8 项认不出「混了别人作品的作者页」：把 A5087679970 当成「你被拆出来的作者页」，没发现它主要是斯坦福另一位 Jason Zhu 的 | Claude | 不急 | ⬜ |
 | B 站改名、写简介（现在是「香菇的猪」、简介空），改好后告诉 Claude 加回 sameAs | 你 | 不急 | ⬜ 11-24 已从 sameAs 拿掉 |
 | 学术外联 | 你 | 等回复 | 🟡 两封邮件（SkillProbe 一作、NVIDIA 一作）和更正信都已发，LinkedIn 邀请已发；不再追加。回复记在 `~/出海/specs/2026-11-22-academic-outreach.md` 末尾 |
@@ -53,6 +54,7 @@
 | gosailglobal.com（Cloudflare 版本 `06c7b1de`，11-25） | Organization 补 `@id` https://gosailglobal.com/#organization、legalName、founder → #person、subOrganization → ASH 机构；sameAs 拿掉本人的 X，只留公司 LinkedIn；7 个页面上 9 处 X 链接去掉 rel="me"（它和 sameAs 是同一个声明）。页面上看得见的文字没动。官网源码不在 git 里，是本机的 Cloudflare Workers 静态站 `gosailglobal-site`，用 wrangler 部署；要回滚用上一版 `7f431dac` |
 | ASH `a57a0f5`（11-25） | 9 条关系规则写成 `ops/geo/entity_edges.py`（13 个离线测试），并进审计第 1 项：有一条不过，第 1 项就是 ISSUES_FOUND。每日 analytics 任务加「Entity relations」一步，日报加「🔗 实体关系」一节。本人的档案以 jasonzhu.ai 上 Person 的 sameAs 为准，读不到时第 1 条用备用名单、第 2 条不查 |
 | gosailglobal.com（Cloudflare 版本 `786a9182`，11-25） | 页面上看得见的 X 改标成创始人的：首页 Company details 的「X」行改成「Founder：Jason Zhu（链到 jasonzhu.ai/en）、@GoSailGlobal on X」；联系页那节标题改成「Founder on X」，说明改成「Product news and updates from our founder, Jason Zhu.」；7 个页面页脚的「X」改成「Founder on X」 |
+| ASH `4e90ec7`（11-25） | 130K 数据集两个站的 `@id` 不一样：本站用总 DOI `21292798`，ASH 用 `#dataset`、identifier 写版本 DOI `21292799`。ASH 首页和 /ai-info/ 的数据集节点在 sameAs 里加上总 DOI，也就是本站给它的 `@id`，两个站明确是同一个节点。identifier 仍写版本 DOI：Zenodo 上只有一个版本，Wikidata Q141735092、ORCID、已发的文章记的都是它；ASH 其余 28 个文件不动。SOP 维护规则第 2 条加了这条例外 |
 
 ### 怎么验证的
 
@@ -61,6 +63,7 @@
 - **gosailglobal.com：** 部署前先确认线上 10 个文件和本地逐字节一致，部署不会盖掉别处的改动；部署后线上 7 个页面（含 404）和改后的文件逐字节一致，首页 JSON-LD 能解析，sameAs 里没有 x.com，www 子域同样生效。
 - **ASH 每日检查（`a57a0f5`）：** 改之前（`77e2eb2^`）的首页、联系页和 8 篇博客查出 18 处，规则 1–8 都报到；改之后 0 处；线上 12 个页面、25 段 JSON-LD 0 处；把首页换成改之前的版本喂给第 1 项，它报 ISSUES_FOUND。42 个 geo 离线测试在 Python 3.12 和 3.14 都通过。每日任务还没真跑过，见待办。
 - **gosailglobal.com 第二次（`786a9182`）：** 部署前在本机起静态服务，用 agent-browser 自己的浏览器按桌面 1280、手机 390 宽截图看了首页 Company details、联系页和页脚；部署后线上 7 个页面和改后的文件逐字节一致，JSON-LD 没变。
+- **130K 数据集（`4e90ec7`）：** 首页 6 段 JSON-LD 都能解析，生成器里 /ai-info/ 那段能解析，`node --check` 通过，9 条关系规则 0 处。先查过：总 DOI 解析到的就是 `21292799` 这条记录（唯一版本），OpenAlex 已把两个 DOI 认作同一个作品 W7167922915。上线后的核对见待办。
 
 ### 效果看哪、哪天看
 
