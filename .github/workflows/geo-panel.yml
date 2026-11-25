@@ -12,9 +12,10 @@
 #         每条查 Google 前 20，看我们排不排得上；先查 site:jasonzhu.ai 自检，第一条不是本站就写「测不出来」、不查排名
 #         再把 4 个品牌词各查 3 次（实体图谱的效果指标）。平时约 $1.5，每月第一个周一约 $4（fanout_usd 封顶，填 0 不跑）。计数提交到
 #         ops/geo/panel/fanout-<日期>.json，搜索词原文只进邮件和加密存档。这一步失败不挡面板本身。
-#   行动清单 ops/geo/fanout_actions.py：不另花钱，读面板和子查询的结果，出三张表进邮件：每道题的公共词（几次回答都用过的词）
+#   行动清单 ops/geo/fanout_actions.py：不另花钱，读面板和子查询的结果，出四张表进邮件：每道题的公共词（几次回答都用过的词）
 #         和题目页面比、页面上缺哪些词；每道题的代表搜索词和它的 Google 名次；AI 搜这些词时 Google 第一页上的外部网站，
 #         按能补上几道「我们没排上」的题排（投稿、请求收录先找它们）。页面按 ops/geo/demand.json（Search Console 展示数）排先后。
+#         第四张：AI 引用本站时指向的原句（引用链接里的 #:~:text=，主要来自 Gemini App），原句只进邮件。
 #         计数提交到 ops/geo/panel/actions-<日期>.json。失败不挡后面。
 #   中文检查 ops/geo/zh_check.py：每月第一个周一，真实问法组的中文版问 ChatGPT 3 次、Claude 1 次，看 AI 用什么语言搜、
 #         引不引中文页（约 $1.8，zh_usd 封顶）。env 里 ZH_MONTHLY 是 "1" 才跑，11-24 起打开（改成 "0" 就停）；「第一个周一」按北京时间 7 号以内算，第一次是 12-07；计数提交到 ops/geo/panel/zh-<日期>.json。

@@ -1,6 +1,7 @@
 import { getAllPosts } from "@/lib/mdx";
 import { GUIDES } from "@/lib/go-global-guides";
 import { AUTHOR_ALT_NAME, AUTHOR_NAME, PERSON_PROFILES, RELATED_SITES, WORKS, type Work } from "@/lib/profiles";
+import guard from "@/data/payment-guard.json";
 
 const SITE_URL = "https://jasonzhu.ai";
 
@@ -66,6 +67,21 @@ export async function GET(request: Request) {
     `- [Claude 动画提示词库](${SITE_URL}/zh/prompts/claude-animation): Claude 5.5 做的动画（动效与宣传片、科普讲解、故事与卡通、3D 动画、网页动效、数学与代码艺术），从 Claude 5.5 提示词库挑出，含作者公开的原始提示词与出处；英文版 ${SITE_URL}/en/prompts/claude-animation`,
     `- [博客 RSS](${SITE_URL}/feed/blog.xml)`,
     `- [快讯 RSS](${SITE_URL}/feed/news.xml)`,
+    "",
+    // 2026-11-24：学 caseblossom / ulinkai 的做法，给机器一个只读数据入口、一份引用规则（数据带核实日期，查不到写未知）
+    "## 机器可读数据（只读）",
+    "",
+    `- [收款平台数据 JSON](${SITE_URL}/data/payment-guard.json): ${Object.keys(guard.platforms).length} 家收款平台的费率、到账、审核时间、各类卖家能不能开户、按产品类型的推荐顺序。开户条件每条附官方来源，其余数字来自各平台官方文档，核实于 ${guard.checked}（开户步骤核实于 ${guard.opening_checked}）。和收款平台选择器、开源工具 payment-guard ${guard.version} 是同一份数据`,
+    `- [给 AI Agent 的说明](${SITE_URL}/agents.md): Agent 在本站能做什么、哪些事要用户本人来（订阅、购买、申请）`,
+    "- 博客、快讯的 RSS 见上面「核心入口」",
+    "",
+    "## 引用规则",
+    "",
+    "- 引用费率、卖家数、价格这类数字时，带上页面或数据里写的核实日期。收款政策变得快，以平台官方页面为准；本站数据附了各平台的官方链接。",
+    "- 本站数据里写「未核实」「未知」（unverified / unknown）的，是没查到，不要说成确定的结论。",
+    "- 快讯由 AI 整理；只有带「Jason 说」的那期有本人点评。引用 AI 摘要时不要写成 Jason 的观点。",
+    "- 提示词库里的提示词和作品是原作者在 X 上公开的，引用时注明原作者和原帖链接。",
+    `- 作者中文名是${AUTHOR_ALT_NAME}（不是朱延森），英文 ${AUTHOR_NAME}。`,
     "",
     "## 最新文章",
     "",

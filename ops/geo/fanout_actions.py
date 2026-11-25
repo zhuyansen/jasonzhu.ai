@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """子查询之后：把这周 AI 搜过的词，变成「改哪页、补哪几个词、去哪几个站」。
 
-fanout.py 回答「AI 搜了什么、我们在 Google 排没排上」。这里接着做三件事，只读面板和 fanout.py 的存档，不另花钱：
+fanout.py 回答「AI 搜了什么、我们在 Google 排没排上」。这里接着做四件事，只读面板和 fanout.py 的存档，不另花钱：
 
   1 页面缺的词：同一道题问几次，整句几乎每次都不一样（两次之间原样相同的只有 7–16%），但 83–86% 的用词是同一批
     「公共词」（至少两个回答都用过的词；2026-11-24 用 11-21、11-23 两次面板和三轮中英文测试算的，见 PANEL.md）。
@@ -11,6 +11,8 @@ fanout.py 回答「AI 搜了什么、我们在 Google 排没排上」。这里�
     那条搜索」可以逐周比，比看几百条各不相同的整句稳。
   3 外部网站：AI 搜这些词时 Google 第一页上的网站，按覆盖了几道题排（贪心：每次挑能多盖住最多「我们一条都没排上的题」
     的站）。这是 Rochwerger 讲的 publisher-first：投稿、被收录、请求加链接，先找它们。官方站只能引用，不能投稿，单独标出。
+  4 被引的原句（2026-11-24 起）：Gemini App 的引用链接几乎都带 #:~:text=（AI 拿来当证据的那句原文），从面板回答的
+    cited 里挑出本站的，按页面和句子合并；顺带算每家引擎的链接里带原句、带 utm_source 的比例（GA4 看到的只是点进来的那部分）。
   页面按 demand.json 排先后：Search Console 近 3 个月有展示的页面先改（出海专题只占全站点击约 1.5%，提示词库和学习页更多）。
 
 报告只进邮件（--appendix）：里面有搜索词原文和别的网站的域名，来自付费接口。--public 只写计数，标准输出也只打计数
@@ -29,6 +31,7 @@ import html
 import json
 import re
 import sys
+import urllib.parse
 import urllib.request
 from collections import Counter, defaultdict
 from datetime import datetime
@@ -43,6 +46,7 @@ MIN_ANSWERS = 2         # 公共词：至少几个回答都用过
 SHOWN_WORDS = 8
 SHOWN_PAGES = 15
 SHOWN_SITES = 15
+SHOWN_QUOTES = 15       # 第 3 张表：本站被引的原句最多列几句
 CLASS_SHARE = 0.4       # 这道题至少这个比例的搜索都带某一类词，页面却一个都没有，才报「缺这一类」
 UA = "jasonzhu-geo-panel/1.0 (+https://jasonzhu.ai)"
 CJK = re.compile(r"[㐀-鿿]")
@@ -132,6 +136,81 @@ def load_demand(path: Path = DEMAND) -> dict[str, dict]:
     if not path.exists():
         return {}
     return {norm_url(k): v for k, v in json.loads(path.read_text(encoding="utf-8")).get("pages", {}).items()}
+
+
+# ───────────── AI 引用本站时指向的原句 ─────────────
+
+def text_directive(url: str) -> tuple[str, str] | None:
+    """网址里的 #:~:text=（Gemini App 的引用链接几乎都带）→ (开头, 结尾)；没有原句返回 None。
+    格式是 [前文-,]开头[,结尾][,-后文]，句子里的逗号和连字符被编码成 %2C、%2D，所以先按逗号切、再解码。"""
+    if ":~:" not in url:
+        return None
+    for part in url.split(":~:", 1)[1].split("&"):
+        if not part.startswith("text="):
+            continue
+        bits = [b for b in part[len("text="):].split(",") if b and not b.endswith("-") and not b.startswith("-")]
+        bits = [" ".join(urllib.parse.unquote(b).split()) for b in bits]
+        if bits and bits[0]:
+            return bits[0], (bits[1] if len(bits) > 1 else "")
+    return None
+
+
+def own_host(url: str) -> bool:
+    host = (urllib.parse.urlsplit(url).hostname or "").lower().removeprefix("www.")
+    return host in {pr.OWN, *pr.OWN_ALIASES}
+
+
+def quotes(answers: list[dict]) -> tuple[dict, list[dict]]:
+    """每家引擎：引用链接几条、带原句几条、带 utm_source 几条，其中本站几条；本站被引的原句按（页面, 句子）合并。
+    只读面板回答的 cited，不另花钱。"""
+    engines = defaultdict(Counter)
+    found = {}
+    for a in answers:
+        e = a.get("engine") or "?"
+        for c in a.get("cited") or []:
+            url = c.get("url") or ""
+            if not url:
+                continue
+            tx, own = text_directive(url), own_host(url)
+            engines[e].update(links=1, with_text=bool(tx), with_utm="utm_source=" in url, own=own, own_with_text=own and bool(tx))
+            if own and tx:
+                path = urllib.parse.urlsplit(url).path.rstrip("/") or "/"
+                row = found.setdefault((path, tx), {"path": path, "start": tx[0], "end": tx[1], "times": 0,
+                                                     "engines": set(), "questions": set()})
+                row["times"] += 1
+                row["engines"].add(e)
+                if a.get("question_id"):
+                    row["questions"].add(a["question_id"])
+    stats = {e: {k: c[k] for k in ("links", "with_text", "with_utm", "own", "own_with_text")} for e, c in sorted(engines.items())}
+    rows = sorted(found.values(), key=lambda r: (-r["times"], -len(r["questions"]), r["path"], r["start"]))
+    return stats, rows
+
+
+def clip(s: str, n: int) -> str:
+    return s if len(s) <= n else s[:n - 1].rstrip() + "…"
+
+
+def quote_section(stats: dict, rows: list[dict]) -> list[str]:
+    out = ["", "### 3 AI 引用本站时指向哪句话", "",
+           "引用链接里的 #:~:text= 就是 AI 拿来当证据的那句原文：点进来的访客会看到这句被高亮。"
+           "这里是面板里的那一半；真实访客点进来的那一半在 GA4 的 text_fragment 事件里。", ""]
+    if not stats:
+        return out + ["这次没有面板回答（--full 没给或是空的）。"]
+    share = lambda a, b: f"{a}/{b}（{round(100 * a / b)}%）" if b else "0"
+    out += ["| 引擎 | 引用链接 | 带原句 | 带 utm_source | 其中本站 | 本站带原句 |", "|---|---|---|---|---|---|"]
+    out += [f"| {e} | {s['links']} | {share(s['with_text'], s['links'])} | {share(s['with_utm'], s['links'])} | {s['own']} | "
+            f"{s['own_with_text']} |" for e, s in stats.items()]
+    if not rows:
+        return out + ["", "本站被引的链接里没有带原句的。"]
+    out += ["", "| 页面 | 原句（开头 … 结尾） | 次数 | 引擎 | 题 |", "|---|---|---|---|---|"]
+    for r in rows[:SHOWN_QUOTES]:
+        said = clip(r["start"], 70) + (f" … {clip(r['end'], 40)}" if r["end"] else "")
+        said = said.replace("|", "\\|")
+        out.append(f"| {r['path']} | {said} | {r['times']} | {'、'.join(sorted(r['engines']))} | "
+                   f"{'、'.join(sorted(r['questions'])[:4])}{' 等' if len(r['questions']) > 4 else ''} |")
+    if len(rows) > SHOWN_QUOTES:
+        out.append(f"\n另有 {len(rows) - SHOWN_QUOTES} 句只列计数。")
+    return out
 
 
 # ───────────── 外部网站 ─────────────
@@ -229,7 +308,7 @@ def pos(p) -> str:
 
 
 def report(day: str, rows: list[dict], sites: list[dict], ranks_ok: bool, officials: list[dict] | None = None,
-           read: tuple[int, int] = (0, 0)) -> str:
+           read: tuple[int, int] = (0, 0), quoted: tuple[dict, list[dict]] | None = None) -> str:
     out = [f"## 子查询之后：改哪页、补哪些词、去哪些站（{day}）", "",
            "公共词 = 同一道题至少两个回答都用过的词；整句每次都变，这批词基本不变。页面按 Search Console 近 3 个月的展示次数排，"
            "有人搜的先改。代表搜索词 = 这道题覆盖公共词最多的那条真实搜索词。", ""]
@@ -269,11 +348,14 @@ def report(day: str, rows: list[dict], sites: list[dict], ranks_ok: bool, offici
         out.append("没有：这次没有查到 Google 第一页（子查询没跑或自检没过）。")
     if officials:
         out += ["", "官方站（只能在页面里引用、链接，不能投稿）：" + "、".join(f"{s['site']}（{s['questions']} 题）" for s in officials)]
+    if quoted is not None:
+        out += quote_section(*quoted)
     return "\n".join(out) + "\n"
 
 
-def public_counts(day: str, rows: list[dict], sites: list[dict]) -> dict:
-    """只有计数，不含搜索词、不含别的网站。"""
+def public_counts(day: str, rows: list[dict], sites: list[dict], quoted: tuple[dict, list[dict]] | None = None) -> dict:
+    """只有计数，不含搜索词、不含别的网站，也不含被引的原句（原句只进邮件）。"""
+    stats, qrows = quoted or ({}, [])
     return {"date": day, "questions": len(rows), "with_searches": sum(1 for r in rows if r["answers"]),
             "pages_checked": sum(1 for r in rows if r["missing"] is not None),
             "rows": [{"question_id": r["question_id"], "target_url": r["target_url"], "impressions": r["impressions"],
@@ -281,7 +363,8 @@ def public_counts(day: str, rows: list[dict], sites: list[dict]) -> dict:
                       "missing_classes": None if r["missing_classes"] is None else len(r["missing_classes"]),
                       "representative_google": r["rep_google"], "representative_checked": r["rep_checked"],
                       "best_google": r["best_google"]} for r in rows],
-            "sites_listed": len(sites), "sites_new_questions": sum(s["new"] for s in sites)}
+            "sites_listed": len(sites), "sites_new_questions": sum(s["new"] for s in sites),
+            "citation_markers": stats, "own_quoted_sentences": len(qrows), "own_quoted_pages": len({r["path"] for r in qrows})}
 
 
 # ───────────── 命令 ─────────────
@@ -294,6 +377,7 @@ def cmd_run(a) -> int:
     answers = []
     if a.full and Path(a.full).exists():
         answers = [x for x in json.loads(Path(a.full).read_text(encoding="utf-8")).get("answers") or [] if x.get("question_id") in q_of]
+    quoted = quotes(answers) if a.full and Path(a.full).exists() else None     # 只看面板回答：子查询存档里没有引用链接
     ranks, ranks_ok = {"searches": []}, False
     if a.archive and Path(a.archive).exists():
         arch = json.loads(Path(a.archive).read_text(encoding="utf-8"))
@@ -309,8 +393,8 @@ def cmd_run(a) -> int:
     all_terms = {t for per in fan.values() for t in per}
     read = (sum(1 for t in all_terms if placed.get(t, {}).get("read")), len(all_terms))
     day = a.date or datetime.now(pr.CST).strftime("%Y-%m-%d")
-    text = report(day, rows, sites, ranks_ok, officials, read)
-    counts = public_counts(day, rows, sites)
+    text = report(day, rows, sites, ranks_ok, officials, read, quoted)
+    counts = public_counts(day, rows, sites, quoted)
     if not a.dry:
         if a.appendix:
             Path(a.appendix).write_text(text, encoding="utf-8")
@@ -320,7 +404,8 @@ def cmd_run(a) -> int:
     # 标准输出只打计数
     miss = [r for r in rows if r["missing"]]
     print(f"行动清单：{counts['with_searches']}/{counts['questions']} 道不带品牌名的题有搜索词；页面取到 {counts['pages_checked']} 个题的页面，"
-          f"{len(miss)} 道题的页面缺公共词；排名{'可用' if ranks_ok else '不可用'}，外部网站列了 {len(sites)} 个"
+          f"{len(miss)} 道题的页面缺公共词；排名{'可用' if ranks_ok else '不可用'}，外部网站列了 {len(sites)} 个；"
+          f"本站被引的原句 {counts['own_quoted_sentences']} 句"
           + ("（--dry：什么都没写）" if a.dry else ""))
     return 0
 
@@ -384,6 +469,27 @@ def selftest() -> int:
     assert "只供参考" in report("d", [], [], True, [], (9, 454)) and "只供参考" not in report("d", [], [], True, [], (400, 454))
     assert site_kind("google.co.uk", ["How does Google rank?"]) == OFFICIAL and site_labels("deepmind.google") == ["deepmind"]
     assert site_kind("google.com.hk", ["What about Stripe?"]) == "媒体、博客（投稿、请求收录）"
+    # 第 3 张表：被引的原句（11-23 面板里 Gemini App 的真实链接格式：开头,结尾；逗号编码成 %2C）
+    assert text_directive("https://jasonzhu.ai/en#:~:text=JasonZhu.AI.%20AI%20tool%20reviews%2C%20hands-on,Free.%20Latest") == \
+        ("JasonZhu.AI. AI tool reviews, hands-on", "Free. Latest")
+    assert text_directive("https://jasonzhu.ai/en/x#top:~:text=pre-,Only%20this,-suf&text=second") == ("Only this", "")
+    assert text_directive("https://jasonzhu.ai/en/x?utm_source=chatgpt.com") is None and text_directive("https://x.ai/#:~:text=") is None
+    cite = lambda *urls: [{"url": u, "site": (urllib.parse.urlsplit(u).hostname or "").removeprefix("www.")} for u in urls]
+    panel = [{"engine": "gemini_app", "question_id": "q1", "cited": cite("https://jasonzhu.ai/en/contact#:~:text=Contact%20Jason%20Zhu.,Open",
+                                                                        "https://other.example/a#:~:text=Secret%20other%20sentence")},
+             {"engine": "gemini_app", "question_id": "q2", "cited": cite("https://www.jasonzhu.ai/en/contact/#:~:text=Contact%20Jason%20Zhu.,Open")},
+             {"engine": "chatgpt", "question_id": "q1", "cited": cite("https://jasonzhu.ai/en/x?utm_source=chatgpt.com", "https://other.example/b?utm_source=chatgpt.com")},
+             {"engine": "perplexity", "question_id": "q1", "cited": cite("https://jasonzhu.ai/en/x")}]
+    stats, qrows = quotes(panel)
+    assert stats["gemini_app"] == {"links": 3, "with_text": 3, "with_utm": 0, "own": 2, "own_with_text": 2}, stats
+    assert stats["chatgpt"] == {"links": 2, "with_text": 0, "with_utm": 2, "own": 1, "own_with_text": 0}, stats
+    assert len(qrows) == 1 and qrows[0]["path"] == "/en/contact" and qrows[0]["times"] == 2 and qrows[0]["questions"] == {"q1", "q2"}, qrows
+    text = report("2026-11-30", [], [], False, [], (0, 0), (stats, qrows))
+    assert "### 3 AI 引用本站时指向哪句话" in text and "Contact Jason Zhu. … Open" in text and "3/3（100%）" in text, text
+    assert "Secret other sentence" not in text      # 别的网站被引的句子不列
+    pub = json.dumps(public_counts("2026-11-30", [], [], (stats, qrows)), ensure_ascii=False)
+    assert "Contact Jason" not in pub and "other.example" not in pub and '"own_quoted_sentences": 1' in pub, pub
+    assert "### 3" not in report("d", [], [], False) and "没有面板回答" in "\n".join(quote_section({}, []))
     print("selftest ok")
     return 0
 

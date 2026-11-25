@@ -118,9 +118,10 @@ Git：commit 后如远程有新提交（cron 会自动 commit 快讯），先 `g
 **GEO 引用面板（.github/workflows/geo-panel.yml，每周一北京 11:37，2026-11-21 起）**
 - `ops/geo/panel_run.py` 用 backlink-guard 的 `asked`（AIsa）把题库问一遍：ChatGPT、Gemini App、Google AI Mode、Perplexity 每题 3 次，Claude 每月第一个周一 1 次。记引用本站、引用对应页面、正文点名、排第一四个口径，和上周、和 11-17 的基线比，发邮件给 ALERT_EMAIL。说明在 `ops/geo/PANEL.md`。
 - 题库的题目不要改，要加题就加新 id：`ops/geo/questions.json` 是冻结组（GIGALinks 的实验 12-01、12-15、01-01 用它复测），`questions-real.json` 是不带品牌名的真实问法组。改页面前在 `ops/geo/experiments.json` 记一笔（改了哪些题对应的页面、哪些故意不改），摘要会分组算。
+- **AI 爬虫来访已经在记（2026-10-26 起），不要在 middleware 里再记一份**：Vercel Log Drain → Supabase 函数 `vercel-drain`（只收 User-Agent 像爬虫的请求；表 `vercel_drain` 只是中转，取走就删）→ Jason 本机的 GEOInflow（geo-chain 仓库，Docker）按爬虫、类型分类，按官方 IP 段核对真假，带状态码。看数据开本机 GEOInflow。
 - 公开仓库只提交分数（`ops/geo/panel/`）。回答原文和别的网站的网址来自付费接口，加密后放草稿 release `geo-panel-state`（密钥 `SELLER_STATE_KEY`），不进仓库，也不打印到 Actions 日志。
 - 每格都带按题算的 95% 区间。单家要区间不重叠、大约差 10–15 个百分点以上才算数；5 个百分点这种门槛太低（同一次运行里每题问 3 次几乎不独立，有效样本是题数）。
-- 子查询（`fanout.py`）之后是行动清单（`fanout_actions.py`，2026-11-24 起，不另花钱）：每题的公共词和页面比、列出页面缺的词，每题代表搜索词的 Google 名次，外部网站按能补上几道没排上的题排，页面按 `demand.json`（Search Console 展示数）排先后。缺的词要先判断再补（AI 会理解偏，比如把 fable 5.5 当成 Xbox 游戏）。`questions-gsc.json`（Search Console 真题组，每周跑）和 `zh_check.py`（每月第一个周一的中文检查）2026-11-24 Jason 确认打开，开关在工作流的 `DEFAULT_SETS`、`ZH_MONTHLY`；再加题组、加钱先问他。
+- 子查询（`fanout.py`）之后是行动清单（`fanout_actions.py`，2026-11-24 起，不另花钱）：每题的公共词和页面比、列出页面缺的词，每题代表搜索词的 Google 名次，外部网站按能补上几道没排上的题排，页面按 `demand.json`（Search Console 展示数）排先后；第四张表列 AI 引用本站时指向的原句（引用链接里的 `#:~:text=`，主要是 Gemini App），原句只进邮件。缺的词要先判断再补（AI 会理解偏，比如把 fable 5.5 当成 Xbox 游戏）。`questions-gsc.json`（Search Console 真题组，每周跑）和 `zh_check.py`（每月第一个周一的中文检查）2026-11-24 Jason 确认打开，开关在工作流的 `DEFAULT_SETS`、`ZH_MONTHLY`；再加题组、加钱先问他。
 
 **Vercel 请求额度（2026-10-07 事故后，Pro 套餐，每月 1000 万 Edge Requests）**
 - 全站链接一律 `import Link from "@/components/Link"`（默认 `prefetch={false}`），**不要直接用 `next/link`**：默认预加载会让导航 / 页脚 / 提示词卡片每次访问多发十几到几十个请求。2026-10-07 免费版 30 天用到 440 万次（额度 100 万），整站被停用（402 DEPLOYMENT_DISABLED），升级 Pro 才恢复。
