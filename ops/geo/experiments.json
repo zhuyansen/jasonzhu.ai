@@ -8,7 +8,8 @@
     { "date": "2026-11-24", "note": "Person 的 sameAs 去掉 B 站（主页名字和简介对不上本人），剩 12 个个人档案" },
     { "date": "2026-11-24", "note": "个人档案回链补齐：YouTube 频道加 jasonzhu.ai 链接，Google Scholar 个人页设成公开，X 的 website 从 gosaillab.com 改成 jasonzhu.ai" },
     { "date": "2026-11-24", "note": "出海主页和工具清单的事实更正，不是实验：new-term-radar、backlink-guard 的版本号改成 0.7.1、0.12.2；ai-visibility-checker 命令行版归档，工具清单里的条目改成以网页版急诊室为主" },
-    { "date": "2026-11-24", "note": "给机器读的入口，不是实验，没改任何题目对应页面的正文：llms.txt 加了「机器可读数据」「引用规则」两节；新增 /agents.md（Agent 能做什么、哪些要用户本人来）和 /data/payment-guard.json（收款选择器同一份数据，带核实日期）。收款数据的 JSON 和 data-choose-payment-platform 等收款题同一主题，复测时如果 AI 引用了这个 JSON，记在这条下面。同一天起 GA4 记 text_fragment 事件（AI 引用链接里的原句），只是测量。" }
+    { "date": "2026-11-24", "note": "给机器读的入口，不是实验，没改任何题目对应页面的正文：llms.txt 加了「机器可读数据」「引用规则」两节；新增 /agents.md（Agent 能做什么、哪些要用户本人来）和 /data/payment-guard.json（收款选择器同一份数据，带核实日期）。收款数据的 JSON 和 data-choose-payment-platform 等收款题同一主题，复测时如果 AI 引用了这个 JSON，记在这条下面。同一天起 GA4 记 text_fragment 事件（AI 引用链接里的原句），只是测量。" },
+    { "date": "2026-11-24", "note": "人和公司拆开：Person 的别名去掉公司名 GoSailGlobal；agentskillshub.top 上运营公司 GoSailGlobal LLC 单列成节点，ASH 机构不再带公司法定名和本人的 X、YouTube（ASH 站 11-25 上线）" }
   ],
   "experiments": [
     {
