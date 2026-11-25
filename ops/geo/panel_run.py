@@ -23,7 +23,11 @@
   - 摘要每格带按题算的 95% 区间。同一题的几个回答几乎一样，有效样本是题数，不是回答数，
     所以按题重抽（自助抽样 2,000 次，随机种子固定，同一份结果重算不变）。
   - 单家的变化要区间不重叠（大约差 10–15 个百分点以上）才算数。
-  - 对照实验加置换检验的 p 值（题目层面打乱处理组、对照组标签 5,000 次），和「以现在的题数要差多少才测得出来」。
+  - 对照实验加置换检验的 p 值（题目层面打乱处理组、对照组标签 5,000 次），和「以现在的题数要差多少才测得出来」（MDE），
+    每家一格。MDE 用实测的噪声 v 算，不再假设：不在处理组、两期都问到的题，每题两期命中率之差的平方取平均，
+    另给几家合在一起的 v。某一家这样的题不到 8 道（或者一点没变，v = 0），这一家才退回假设（每周 5%–15% 的题翻转），标「假设」。
+  - 和上次比加每周翻转率：每家每题取多数票（平票不算），和上次不一样算翻了一次；每家和几家合在一起各带精确的 95% 区间
+    （Clopper–Pearson）。
   - 「排第一」只做参考，不进结论。每家标明是抓网页界面、搜索结果页，还是走 API。
 
 公开仓库里只提交分数（panel/results-<日期>.json、panel/summary-<日期>.md）。回答原文和别的网站的网址
@@ -75,8 +79,9 @@ KIND_VERB = {"scraper": "抓网页界面（未登录、美国英文）", "serp":
 BOOT = 2000                 # 区间：按题有放回地重抽这么多次
 PERM = 5000                 # 置换检验：打乱处理组、对照组标签这么多次
 SEED = 20261121             # 固定随机种子，同一份结果重算，区间和 p 值不变
-FLIP = (0.05, 0.15)         # 估「要差多少才测得出来」时，假设每周有这么多比例的题在引用、不引用之间翻转
+FLIP = (0.05, 0.15)         # 只在测不了噪声时用：假设每周有这么多比例的题在引用、不引用之间翻转，摘要里标「假设」
                             # （11-17 到 11-21 实测 ChatGPT 15%、Perplexity 20%，那几天站上改过东西，偏高）
+MIN_NOISE_Q = 8             # 一家至少要有这么多道不在处理组、两期都有回答的题，才用实测的噪声 v 算「要差多少才测得出来」
 DEFAULT_ENGINES = "chatgpt:3,gemini_app:3,ai_mode:3,perplexity:3"   # 都是每个回答 $0.004–0.006 的；Claude 约 $0.045，按月加跑
 CALIBERS = ("site_cited", "page_cited", "named", "first_pick", "fact_used", "absorbed")
 CALIBER_ZH = {"site_cited": "引用本站", "page_cited": "引用对应页面", "named": "正文点名", "first_pick": "排第一",
@@ -267,6 +272,51 @@ def overlap(a: tuple[float, float], b: tuple[float, float]) -> bool:
     return a[0] <= b[1] and b[0] <= a[1]
 
 
+def clopper_pearson(k: int, n: int, alpha: float = 0.05) -> tuple[float, float] | None:
+    """n 个里有 k 个时，这个比例的精确 95% 区间（Clopper–Pearson）；n = 0 是 None。
+    下限是让「至少 k 个」的概率正好 2.5% 的比例，上限是让「至多 k 个」的概率正好 2.5% 的比例。
+    二项分布的累计概率用 math.comb 逐项加（取对数再加，n 大了也不溢出），比例用二分法找，到浮点数的精度为止。
+    0 个时下限是 0，上限是 1 − 0.025^(1/n)（20 个里 0 个：约 16.8%）；n 个全是时反过来。"""
+    if not n:
+        return None
+    logc = [math.log(math.comb(n, i)) for i in range(n + 1)]
+
+    def at_most(j: int, p: float) -> float:            # 比例是 p 时，n 个里至多 j 个的概率；p 越大，它越小
+        lp, lq = math.log(p), math.log1p(-p)
+        return sum(math.exp(logc[i] + i * lp + (n - i) * lq) for i in range(j + 1))
+
+    def solve(j: int, target: float) -> float:          # 找 at_most(j, p) = target 的 p
+        lo, hi = 0.0, 1.0
+        for _ in range(100):
+            mid = (lo + hi) / 2
+            if mid in (lo, hi):                         # 已经分不出来了
+                break
+            lo, hi = (mid, hi) if at_most(j, mid) > target else (lo, mid)
+        return (lo + hi) / 2
+
+    return (0.0 if k == 0 else solve(k - 1, 1 - alpha / 2)), (1.0 if k == n else solve(k, alpha / 2))
+
+
+def majority(rows: list[dict], caliber: str = "site_cited") -> dict[tuple[str, str], bool]:
+    """每个（AI, 题目）的多数票：有效回答里过半命中是 True，过半没命中是 False。
+    平票的（比如 2 个有效回答 1 中 1 不中）不算，不在结果里；没有有效回答的也不在。"""
+    count: dict[tuple[str, str], tuple[int, int]] = {}
+    for r in valid(rows):
+        h, n = count.get((r["engine"], r["question_id"]), (0, 0))
+        count[(r["engine"], r["question_id"])] = (h + bool(r.get(caliber)), n + 1)
+    return {k: 2 * h > n for k, (h, n) in count.items() if 2 * h != n}
+
+
+def flips(now: list[dict], prev: list[dict], caliber: str = "site_cited") -> dict[str, tuple[int, int]]:
+    """每周翻转：每家 (多数票和上次不一样的题数, 两次都有多数票的题数)。两次里有一次平票、或没有有效回答的题不算。"""
+    a, b = majority(now, caliber), majority(prev, caliber)
+    out: dict[str, tuple[int, int]] = {}
+    for e, q in sorted(set(a) & set(b)):
+        f, n = out.get(e, (0, 0))
+        out[e] = (f + (a[(e, q)] != b[(e, q)]), n + 1)
+    return out
+
+
 # ───────────── 读以前的结果 ─────────────
 
 def load_rows(path: Path) -> list[dict]:
@@ -345,20 +395,64 @@ def perm_test(now: list[dict], base: list[dict], exp: dict, engine: str, caliber
     return (extreme + 1) / (done + 1) if done else None
 
 
-def detectable(n_treated: int, n_control: int) -> tuple[int, int] | None:
-    """以现在的题数，净变化大约要差多少个百分点才测得出来（5% 显著性、80% 把握），按 FLIP 的两头各算一个。
-    每题每期按 1 个样本算（同一题的几个回答几乎一样）。每周有 r 比例的题在引用、不引用之间翻转时，
-    净变化的标准误约 √(r/处理组题数 + r/对照组题数)，要测得出来大约要 (1.96 + 0.84) 倍标准误。"""
+def mde(v: float, n_treated: int, n_control: int) -> float | None:
+    """以现在的题数，净变化至少要差多少个百分点才测得出来（5% 显著性、80% 把握）：
+    (1.96 + 0.84) × √(v/处理组题数 + v/对照组题数) × 100。每题每期按 1 个样本算（同一题的几个回答几乎一样）。
+    v 估的是一道题两期命中率之差的方差（measured_noise 不减平均变化，整体一起涨跌时偏大，偏保守）：
+    净变化是两组各自平均变化之差，标准误约 √(v/处理组题数 + v/对照组题数)，要测得出来大约要 (1.96 + 0.84) 倍标准误。
+    每题只有 0 和 1 时，v 就是翻转的题占多少。"""
     if not n_treated or not n_control:
         return None
-    lo, hi = ((1.96 + 0.84) * math.sqrt(r / n_treated + r / n_control) * 100 for r in FLIP)
-    return round(lo), round(hi)
+    return (1.96 + 0.84) * math.sqrt(v / n_treated + v / n_control) * 100
+
+
+def detectable(n_treated: int, n_control: int) -> tuple[int, int] | None:
+    """测不了噪声时的退路：v 取 FLIP 假设的两头（每周 5%、15% 的题翻转），各算一个 mde，取整。"""
+    if not n_treated or not n_control:
+        return None
+    lo, hi = (round(mde(r, n_treated, n_control)) for r in FLIP)
+    return lo, hi
 
 
 def paired_counts(now: list[dict], base: list[dict], exp: dict, engine: str, caliber: str = "site_cited") -> tuple[int, int]:
     """两期都有有效回答的题：处理组几题、对照组几题。"""
     both = set(per_question(now, engine, caliber)) & set(per_question(base, engine, caliber))
     return len(both & set(exp["treated"])), len(both & set(exp["control"]))
+
+
+def measured_noise(now: list[dict], base: list[dict], exp: dict, engine: str, caliber: str = "site_cited") -> tuple[float, int] | None:
+    """实测的噪声 (v, 题数)。取不在处理组、两期都有有效回答的题（对照组，加上没分进两组的题），
+    每题两期命中率之差的平方，取平均。命中率和 net_change 用的一样：per_question 的「命中/有效」。
+    这些题没为这个实验改过，它们两期之间的变化就是本来的波动。没有这样的题是 None。题按 id 排好再加，重算不变。"""
+    now_q, base_q = per_question(now, engine, caliber), per_question(base, engine, caliber)
+    ids = sorted((set(now_q) & set(base_q)) - set(exp["treated"]))
+    if not ids:
+        return None
+    return sum((now_q[q][0] / now_q[q][1] - base_q[q][0] / base_q[q][1]) ** 2 for q in ids) / len(ids), len(ids)
+
+
+def engine_mde(now: list[dict], base: list[dict], exp: dict, engine: str, caliber: str = "site_cited") -> dict | None:
+    """一家的「要差多少才测得出来」：{nt, nc, v, k} 加上 mde（实测，一个数）或 assumed（假设，FLIP 两头的范围）。
+    nt、nc 是 paired_counts 的处理组、对照组题数，有一组是 0 就是 None。k 是算 v 用了几道题。
+    k 不到 MIN_NOISE_Q，或者 v = 0（这些题两期一点没变，不等于没有波动，只是没测到），就退回 FLIP 的假设。"""
+    nt, nc = paired_counts(now, base, exp, engine, caliber)
+    if not nt or not nc:
+        return None
+    v, k = measured_noise(now, base, exp, engine, caliber) or (0.0, 0)
+    if k >= MIN_NOISE_Q and v > 0:
+        return {"nt": nt, "nc": nc, "v": v, "k": k, "mde": mde(v, nt, nc)}
+    return {"nt": nt, "nc": nc, "v": v, "k": k, "assumed": detectable(nt, nc)}
+
+
+def mde_cell(m: dict | None) -> str:
+    """表里「要差多少才测得出」那一格。实测的是一个数；假设的是 FLIP 两头的范围，后面标「假设」。"""
+    if not m:
+        return "–"
+    if "mde" in m:
+        d = round(m["mde"])
+        return f"约 {d} 个百分点" + ("，基本测不出来" if d > 100 else "")
+    lo, hi = m["assumed"]
+    return (f"约 {lo}–{hi} 个百分点" if hi <= 100 else f"至少约 {lo} 个百分点，基本测不出来") + "（假设）"
 
 
 # ───────────── GA4：AI 带来的真实访问 ─────────────
@@ -451,6 +545,15 @@ def fmt_p(p: float | None) -> str:
     return f"{p:.2f}" if p >= 0.01 else f"{p:.3f}"
 
 
+def flip_cell(k: int, n: int) -> str:
+    """「翻了的/总数（翻转率，区间 下限–上限%）」，区间是 Clopper–Pearson。翻转率一般只有百分之几到十几，
+    命中率那样取整会丢太多，这里保留一位小数，四舍五入。"""
+    if not n:
+        return "–"
+    lo, hi = clopper_pearson(k, n)
+    return f"{k}/{n}（{k / n * 100:.1f}%，区间 {lo * 100:.1f}–{hi * 100:.1f}%）"
+
+
 def surface_of(result: dict, engine: str) -> tuple[str, str]:
     """(kind, model)：这次运行配置（lineage）里记下的优先，旧结果没记就用 SURFACE、MODEL 两张表。"""
     got = ((result.get("lineage") or {}).get("engines") or {}).get(engine) or {}
@@ -485,36 +588,56 @@ def engine_table(rows: list[dict], base: list[dict] | None, ids: set | None = No
 
 
 def experiment_section(rows: list[dict], base: list[dict], exp: dict) -> list[str]:
-    """对照实验一段：两组各自的命中率和区间、净变化、置换检验 p 值、以现在的题数要差多少才测得出来。"""
+    """对照实验一段：两组各自的命中率和区间、净变化、置换检验 p 值，和以现在的题数要差多少才测得出来（MDE）。
+    MDE 用实测的噪声 v 算（measured_noise），每家一格；某一家测不了才按 FLIP 假设，标「假设」。另给几家合在一起的 v。"""
     treated, control = set(exp["treated"]), set(exp["control"])
     out = [f"## 对照实验：{exp['note']}", "",
            f"{exp['started']} 开始。处理组 {len(treated)} 题，对照组 {len(control)} 题，看的是「引用本站」。", "",
-           "| AI | 处理组 现在 | 处理组 基线 | 对照组 现在 | 对照组 基线 | 净变化 | p 值 |", "|---|---|---|---|---|---|---|"]
+           "| AI | 处理组 现在 | 处理组 基线 | 对照组 现在 | 对照组 基线 | 净变化 | p 值 | 要差多少才测得出 |",
+           "|---|---|---|---|---|---|---|---|"]
     sizes: dict[tuple[int, int], list[str]] = {}
+    measured, assumed, noises = [], [], []
     for t in experiment_table(rows, base, exp):
-        e = t["engine"]
+        e, name = t["engine"], LABEL.get(t["engine"], t["engine"])
         net = "–" if t["net"] is None else f"{t['net'] * 100:+.0f} 个百分点"
-        out.append(f"| {LABEL.get(e, e)} | {pct_ci(rows, e, 'site_cited', treated)} | {pct_ci(base, e, 'site_cited', treated)} | "
+        m = engine_mde(rows, base, exp, e) if t["net"] is not None else None
+        out.append(f"| {name} | {pct_ci(rows, e, 'site_cited', treated)} | {pct_ci(base, e, 'site_cited', treated)} | "
                    f"{pct_ci(rows, e, 'site_cited', control)} | {pct_ci(base, e, 'site_cited', control)} | {net} | "
-                   f"{fmt_p(perm_test(rows, base, exp, e))} |")
-        if t["net"] is not None:
-            sizes.setdefault(paired_counts(rows, base, exp, e), []).append(LABEL.get(e, e))
+                   f"{fmt_p(perm_test(rows, base, exp, e))} | {mde_cell(m)} |")
+        if (got := measured_noise(rows, base, exp, e)):
+            noises.append(got)
+        if m:
+            sizes.setdefault((m["nt"], m["nc"]), []).append(name)
+            (measured if "mde" in m else assumed).append((name, m))
     out += ["", f"净变化 = 处理组的变化 − 对照组的变化。p 值：把这 {len(treated | control)} 题的处理组、对照组标签随机打乱 "
                 f"{PERM:,} 次（随机种子固定），看有多大比例的打乱结果，净变化的绝对值不小于实际这个；小于 0.05 才算测出来了。", ""]
-    need = [f"{'、'.join(names)} " + (f"约 {d[0]}–{d[1]} 个百分点" if d[1] <= 100 else f"至少约 {d[0]} 个百分点，基本测不出来")
-            + f"（两期都问到的：处理组 {nt} 题、对照组 {nc} 题）"
-            for (nt, nc), names in sizes.items() if (d := detectable(nt, nc))]
-    if need:
-        out += ["以现在的题数，净变化大约要差这么多才测得出来：" + "；".join(need) +
-                f"。按每周有 {FLIP[0]:.0%}–{FLIP[1]:.0%} 的题在引用、不引用之间翻转估算（5% 显著性、80% 把握）。比这小的净变化只能看方向。", ""]
+    if not sizes:
+        return out
+    out += ["「要差多少才测得出」（MDE）：以现在的题数，净变化至少要有这么大，才有 80% 的把握在 5% 显著性下测出来，"
+            "算法是 (1.96 + 0.84) × √(v/处理组题数 + v/对照组题数) × 100 个百分点，题数只算两期都问到的（"
+            + "；".join(f"{'、'.join(names)}：处理组 {nt} 题、对照组 {nc} 题" for (nt, nc), names in sizes.items())
+            + "）。比 MDE 小的净变化只是方向，不算结果。", "",
+            "v 是实测的噪声，不是假设的：取两期都问到、又不在处理组的题（对照组，加上没分进两组的题），"
+            "每题两期的命中率相减、平方，再取平均。这些题没为这个实验改过，它们两期之间的变化就是本来的波动；"
+            "每题的命中率只有 0 和 1 时，v 就是两期之间翻转的题占多少。"
+            + ("各家：" + "、".join(f"{name} {m['v']:.2f}（{m['k']} 题）" for name, m in measured) + "。" if measured else ""), ""]
+    if (k := sum(n for _, n in noises)) >= MIN_NOISE_Q:     # 合在一起的题也不到 MIN_NOISE_Q 道，就不给这个数
+        out += [f"几家合在一起：v = {sum(v * n for v, n in noises) / k:.2f}（{len(noises)} 家共 {k} 题）。", ""]
+    if assumed:
+        why = [f"{name} 的 {m['k']} 道题两期一点没变（v = 0，测不出波动）" if m["k"] >= MIN_NOISE_Q
+               else f"{name} 只有 {m['k']} 道这样的题（不到 {MIN_NOISE_Q} 道）" for name, m in assumed]
+        out += ["；".join(why) + f"，v 测不准，按以前的假设估算：每周有 {FLIP[0]:.0%}–{FLIP[1]:.0%} 的题在引用、不引用之间翻转"
+                f"（v 取 {FLIP[0]:.2f}–{FLIP[1]:.2f}），表里标「假设」。", ""]
     return out
 
 
 def compare_section(rows: list[dict], prev: list[dict], prev_day: str) -> list[str]:
-    """和上次比：只比两次都有有效回答的题。单家两次的区间不重叠才算数。"""
+    """和上次比：只比两次都有有效回答的题。单家两次的区间不重叠才算数。
+    另给每周翻转率（flips）：每家每题的多数票和上次不一样的占多少，每家一格，再给几家合在一起的，都带 Clopper–Pearson 区间。"""
     asked_both = {(r["engine"], r["question_id"]) for r in valid(rows)} & {(r["engine"], r["question_id"]) for r in valid(prev)}
     new = [x for x in sorted(hits(rows) - hits(prev)) if x in asked_both]
     gone = [x for x in sorted(hits(prev) - hits(rows)) if x in asked_both]
+    flipped = flips(rows, prev)
     out = [f"## 和上次（{prev_day}）比", ""]
     lines = []
     for e in engines_in(rows):
@@ -523,9 +646,17 @@ def compare_section(rows: list[dict], prev: list[dict], prev_day: str) -> list[s
             continue
         a, b = cluster_ci(rows, e, "site_cited", ids), cluster_ci(prev, e, "site_cited", ids)
         verdict = "区间不重叠，算数" if a and b and not overlap(a, b) else "区间重叠，不算数"
-        lines.append(f"| {LABEL.get(e, e)} | {len(ids)} | {pct_ci(rows, e, 'site_cited', ids)} | {pct_ci(prev, e, 'site_cited', ids)} | {verdict} |")
+        lines.append(f"| {LABEL.get(e, e)} | {len(ids)} | {pct_ci(rows, e, 'site_cited', ids)} | {pct_ci(prev, e, 'site_cited', ids)} | "
+                     f"{verdict} | {flip_cell(*flipped.get(e, (0, 0)))} |")
     if lines:
-        out += ["只比两次都问到的题。", "", "| AI | 题数 | 这次：引用本站 | 上次：引用本站 | 算不算数 |", "|---|---|---|---|---|"] + lines + [""]
+        out += ["只比两次都问到的题。", "", "| AI | 题数 | 这次：引用本站 | 上次：引用本站 | 算不算数 | 多数票翻了的 |",
+                "|---|---|---|---|---|---|"] + lines + [""]
+        total = sum(f for f, _ in flipped.values()), sum(n for _, n in flipped.values())
+        if total[1]:
+            out += [f"每周翻转率，几家合在一起：{flip_cell(*total)}。每家每题取多数票（过半的有效回答引用了本站算引用，平票的不算），"
+                    "和上次不一样就算翻了一次；区间是精确的 95% 二项区间（Clopper–Pearson）。"
+                    "翻转率说明两次之间有多少题会在引用、不引用之间换边，单题的「新出现」「没再引用」要先当成这种波动，"
+                    "不能直接算成改动的效果。", ""]
     out += ["新出现引用本站的：" + ("、".join(f"{LABEL.get(e, e)} · {q}" for e, q in new) or "没有"), "",
             "这次没再引用的：" + ("、".join(f"{LABEL.get(e, e)} · {q}" for e, q in gone) or "没有"), ""]
     return out
@@ -768,8 +899,31 @@ def selftest() -> int:
     # 和上次比：12 题从全不中变成全中，区间不重叠才算数；同一份数据比自己，区间重叠，不算数
     before = [mk(f"w{i:02d}", False) for i in range(12) for _ in range(3)]
     after = [mk(f"w{i:02d}", True) for i in range(12) for _ in range(3)]
-    assert "| ChatGPT | 12 | 36/36（100%，区间 73–100%） | 0/36（0%，区间 0–27%） | 区间不重叠，算数 |" in compare_section(after, before, "x")
-    assert "区间重叠，不算数" in "\n".join(compare_section(mixed, mixed, "x"))
+    flipped12 = compare_section(after, before, "x")
+    assert "| ChatGPT | 12 | 36/36（100%，区间 73–100%） | 0/36（0%，区间 0–27%） | 区间不重叠，算数 | 12/12（100.0%，区间 73.5–100.0%） |" in flipped12
+    assert any(s.startswith("每周翻转率，几家合在一起：12/12（100.0%，区间 73.5–100.0%）。") for s in flipped12)
+    same = "\n".join(compare_section(mixed, mixed, "x"))
+    assert "区间重叠，不算数" in same and "| 0/20（0.0%，区间 0.0–16.8%） |" in same       # 同一份数据比自己，一题都没翻
+    # Clopper–Pearson：20 个里 0 个，上限就是 1 − 0.025^(1/20)，约 16.8%；82 个里 8 个约 4.3%–18.3%
+    # （对照值用分数精确算、二分 60 次得到）；k 个和 n − k 个的区间互为镜像；全中时下限 0.025^(1/n)；n 大了也不溢出
+    assert clopper_pearson(0, 20)[0] == 0.0 and abs(clopper_pearson(0, 20)[1] - (1 - 0.025 ** (1 / 20))) < 1e-12
+    lo, hi = clopper_pearson(8, 82)
+    assert abs(lo - 0.0430688434401038) < 1e-9 and abs(hi - 0.1832139383994276) < 1e-9
+    assert flip_cell(8, 82) == "8/82（9.8%，区间 4.3–18.3%）" and flip_cell(0, 0) == "–" and clopper_pearson(0, 0) is None
+    a, b = clopper_pearson(3, 20), clopper_pearson(17, 20)
+    assert abs(a[0] - (1 - b[1])) < 1e-12 and abs(a[1] - (1 - b[0])) < 1e-12
+    assert clopper_pearson(12, 12)[1] == 1.0 and abs(clopper_pearson(12, 12)[0] - 0.025 ** (1 / 12)) < 1e-12
+    lo, hi = clopper_pearson(150, 1500)
+    assert 0.08 < lo < 0.1 < hi < 0.12
+    # 多数票：3 次里 2 次中算中；2 个有效回答 1 中 1 不中是平票，不算；拒答不算有效回答，剩下的 1 个说了算
+    px = lambda r: r | {"engine": "perplexity"}
+    prev_m = [mk("m1", True)] * 2 + [mk("m1", False), mk("m2", True), mk("m2", False)] + [mk("m3", True)] * 3 + [mk("m4", False), px(mk("m1", False))]
+    now_m = [mk("m1", False)] * 3 + [mk("m2", True)] * 3 + [mk("m3", True)] * 2 + [mk("m3", False), mk("m4", True),
+                                                                                   mk("m4", False) | {"status": "refused"}, px(mk("m1", False))]
+    assert majority(prev_m) == {("chatgpt", "m1"): True, ("chatgpt", "m3"): True, ("chatgpt", "m4"): False, ("perplexity", "m1"): False}
+    assert flips(now_m, prev_m) == {"chatgpt": (2, 3), "perplexity": (0, 1)}            # m1、m4 翻了，m2 平票不算，m3 没翻
+    text_m = "\n".join(compare_section(now_m, prev_m, "x"))
+    assert f"| 区间重叠，不算数 | {flip_cell(2, 3)} |" in text_m and f"每周翻转率，几家合在一起：{flip_cell(2, 4)}。" in text_m
     # 置换检验：处理组 6 题全从不引用变成引用、对照组 6 题不动 → 一样极端的分法只有 2/924，p 很小，重算不变；
     # 两组一起变，净变化 0，p = 1；没有基线就没有 p
     exp6 = {"note": "测试", "started": "2026-11-17", "treated": [f"t{i}" for i in range(6)], "control": [f"c{i}" for i in range(6)]}
@@ -779,13 +933,44 @@ def selftest() -> int:
     assert p6 < 0.01 and p6 == perm_test(up6, base6, exp6, "chatgpt")
     assert perm_test([mk(x, True) for x in exp6["treated"] + exp6["control"]], base6, exp6, "chatgpt") == 1.0
     assert perm_test(up6, [], exp6, "chatgpt") is None and fmt_p(None) == "–" and fmt_p(0.4949) == "0.49" and fmt_p(0.0024) == "0.002"
-    # 以现在的题数要差多少才测得出来：处理 10 题、对照 6 题，约 32–56 个百分点；5 题对 1 题基本测不出来
+    # 以现在的题数要差多少才测得出来（MDE）。退路（按 FLIP 假设）：处理 10 题、对照 6 题，约 32–56 个百分点
     assert detectable(10, 6) == (32, 56) and detectable(6, 6) == (36, 63) and detectable(0, 6) is None
+    assert abs(mde(0.15, 10, 6) - 56) < 1e-9 and mde(0.1, 0, 6) is None
+    assert mde_cell(None) == "–" and mde_cell({"mde": 118.8}) == "约 119 个百分点，基本测不出来"
+    assert mde_cell({"assumed": (32, 56)}) == "约 32–56 个百分点（假设）" and mde_cell({"assumed": (69, 119)}) == "至少约 69 个百分点，基本测不出来（假设）"
+    # 实测：处理组 6 题、对照组 6 题，另有 4 题没分组，基线每题 1 次、全不中，这次每题 3 次。
+    # 不在处理组的 10 题里，ChatGPT 的 c0 从 0 变成 3/3（差的平方 1），x0 从 0 变成 1/3（1/9），其余没变：v = (1 + 1/9)/10 = 1/9，
+    # MDE = 2.8 × √(v/6 + v/6) × 100 ≈ 54；Perplexity 的 c0、c1 翻了：v = 2/10，MDE ≈ 72。合在一起 (10/9 + 2)/20 ≈ 0.16
+    xs = [f"x{i}" for i in range(4)]
+    base10 = base6 + [mk(x, False) for x in xs]
+    base10 += [px(r) for r in base10]
+    now10 = ([mk(x, True) for x in exp6["treated"] for _ in range(3)] + [mk(x, x == "c0") for x in exp6["control"] for _ in range(3)]
+             + [mk(x, x == "x0" and s == 0) for x in xs for s in range(3)])
+    now10 += ([px(mk(x, True)) for x in exp6["treated"] for _ in range(3)] + [px(mk(x, x in ("c0", "c1"))) for x in exp6["control"] for _ in range(3)]
+              + [px(mk(x, False)) for x in xs for _ in range(3)])
+    v, k = measured_noise(now10, base10, exp6, "chatgpt")
+    assert k == 10 and abs(v - 1 / 9) < 1e-12 and (v, k) == measured_noise(list(reversed(now10)), list(reversed(base10)), exp6, "chatgpt")
+    assert measured_noise(now10, base10, exp6, "perplexity") == (0.2, 10) and measured_noise(now10, [], exp6, "chatgpt") is None
+    got = engine_mde(now10, base10, exp6, "chatgpt")
+    assert (got["nt"], got["nc"], got["k"]) == (6, 6, 10) and abs(got["mde"] - 2.8 * math.sqrt(2 / 54) * 100) < 1e-9 and "assumed" not in got
+    sec = "\n".join(experiment_section(now10, base10, exp6))
+    assert re.search(r"^\| ChatGPT \| .* \| 约 54 个百分点 \|$", sec, re.M) and re.search(r"^\| Perplexity \| .* \| 约 72 个百分点 \|$", sec, re.M)
+    assert "各家：ChatGPT 0.11（10 题）、Perplexity 0.20（10 题）。" in sec and "几家合在一起：v = 0.16（2 家共 20 题）。" in sec
+    assert "ChatGPT、Perplexity：处理组 6 题、对照组 6 题" in sec and "比 MDE 小的净变化只是方向，不算结果" in sec
+    assert "v 是实测的噪声" in sec and "（假设）" not in sec and "按以前的假设" not in sec
+    # 退路一：不在处理组的只有对照组 6 题，不到 8 道，按 FLIP 假设，标「假设」；合在一起也不到 8 道，不给合在一起的 v
     sec = "\n".join(experiment_section(up6, base6, exp6))
     assert "| ChatGPT | 6/6（100%，区间 54–100%） | 0/6（0%，区间 0–46%） | 0/6（0%，区间 0–46%） | 0/6（0%，区间 0–46%） | +100 个百分点 | 0.0" in sec
-    assert "打乱 5,000 次" in sec and "ChatGPT 约 36–63 个百分点（两期都问到的：处理组 6 题、对照组 6 题）" in sec
+    assert re.search(r"^\| ChatGPT \| .* \| 约 36–63 个百分点（假设） \|$", sec, re.M) and "打乱 5,000 次" in sec
+    assert "ChatGPT 只有 6 道这样的题（不到 8 道），v 测不准，按以前的假设估算：每周有 5%–15% 的题" in sec
+    assert "各家：" not in sec and "几家合在一起" not in sec
+    # 退路二：10 题都在，但两期一点没变（v = 0），也按假设，不写成「约 0 个百分点」
+    still = [r for r in now10 if r["engine"] == "chatgpt" and r["question_id"] not in ("c0", "x0")] + [mk(x, False) for x in ("c0", "x0")]
+    assert engine_mde(still, base10, exp6, "chatgpt")["assumed"] == (36, 63)
+    sec = "\n".join(experiment_section(still, base10, exp6))
+    assert "ChatGPT 的 10 道题两期一点没变（v = 0，测不出波动）" in sec and "约 0 个百分点" not in sec
     few = "\n".join(experiment_section(up6[:5] + up6[6:7], base6[:5] + base6[6:7], exp6))
-    assert "至少约" in few and "基本测不出来" in few and "处理组 5 题、对照组 1 题" in few
+    assert "至少约 69 个百分点，基本测不出来（假设）" in few and "处理组 5 题、对照组 1 题" in few
     # 每家怎么问的：这次运行记下的优先，旧结果用表
     assert surface_of({}, "perplexity") == ("llm", "sonar")
     assert surface_of({"lineage": {"engines": {"perplexity": {"samples": 3, "model": "sonar-pro", "kind": "llm"}}}}, "perplexity") == ("llm", "sonar-pro")
