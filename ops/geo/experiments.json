@@ -13,7 +13,8 @@
     { "date": "2026-11-25", "note": "不是实验，没改任何题目对应页面的正文：Claude 提示词库没有详情页的旧编号（没有提示词的作品、移出合集的作品、AI 编出来的编号）从 404 改成 301 到同语言列表页，规则在 next.config.ts，按 opus-prompts.json 现算；/.well-known/mcp/server-card.json 照实重写，写明本站没有远程 MCP 服务，只列浏览器端 WebMCP 工具和只读文件。同一天急诊室（/go-global/ai-readiness）第 7 关服务卡片的修复建议改成「有远程 MCP 服务才发卡片」，模板按 MCP 的 SEP-2127 重写，也不是题目对应页面。复测时如果 AI 引用了提示词库列表页，记在这条下面。" },
     { "date": "2026-11-25", "note": "利益说明，不是实验，正文没改：/blog/ai-proxy-services-recommendation（中英）原来写「纯推荐，无广告合作」，其实 8 个链接里有 5 个带邀请码（apimart、云雾、AiGoCode、PipeLLM、oFox），改成写明「标了邀请链接的 5 个带邀请码，通过它们注册，我或推荐人会拿到返佣」，这 5 个链接加 rel=sponsored；这页对应 gsc 组的 gsc-yunwu-api，gsc 组 11-30 才第一次跑，改在基线之前。/go-global 收款那块「我首推 Waffo」后面加一句利益说明（和 Waffo 有合作关系），对应 real-co-us-or-uk-remote、zh-real-co-us-or-uk-remote，只多一句话。" },
     { "date": "2026-11-25", "note": "站点技术修复，不是实验，没改题目对应页面的正文：robots.txt 不让抓站内搜索结果（/*?q=，提示词详情页的标签链接和页脚博客搜索都带它，11-22 站点审计里有 516 个这样的网址，canonical 本来就指回列表页）；登录页去掉 canonical 和 hreflang（?mode=signup 这类变体原来 canonical 指回 noindex 的 /login）；Claude 动画库详情页在 Claude 库同号那页不收录时，canonical 改指本页（原来指向一个 noindex 页）。" },
-    { "date": "2026-11-25", "note": "不是实验：新增 grid 题组（收款 36 格：场景 × 人群 × 问题），每周跑；冻结组不动。格子覆盖率见总页 Query 格子" }
+    { "date": "2026-11-25", "note": "不是实验：新增 grid 题组（收款 36 格：场景 × 人群 × 问题），每周跑；冻结组不动。格子覆盖率见总页 Query 格子" },
+    { "date": "2026-11-25", "note": "不是实验，没有题目对应这页：/blog/anthropic-claude-certified-architect-roadmap（中英）按官方现行规则重写。开头先答谁能考（考试只对 Claude 合作伙伴网络成员开放，成员免费），写清五种认证、Architect – Foundations 的考法（$125、120 分钟 60 题、720 分及格、有效期 12 个月，出自官方考试指南 1.0 版），去掉原来的 $99、免注册、13 门课；4 个失效的课程链接换成现在的地址，中英封面重做。起因是 11-25 的 OpenSEO 审计：claude certified architect 美国月搜索约 18,100，这页已收录但美国实测不在前 20。全景图页（learn-free-ai-map 对照组）照旧等到 2027-01-01。" }
   ],
   "experiments": [
     {

@@ -1,96 +1,135 @@
 ---
-title: "Anthropic Claude Certified Architect Complete Roadmap: 8 Free Courses + $99 Exam"
-excerpt: "Anthropic launched the Claude Certified Architect certification on March 12, 2026, with 13 self-paced courses — all completely free, no registration required, no paywalls. The exam itself costs just $99. This post walks through a 12-week roadmap covering the 8 key courses in Weeks 1–9, with direct links to each."
+title: "Claude Certified Architect: Who Can Take It, How to Prepare"
+excerpt: "Claude certification exams are open only to Claude Partner Network members, and membership is free for organizations bringing Claude to market. The Architect – Foundations exam (CCAR-F) costs $125: 60 questions in 120 minutes, pass mark 720 of 1,000. Who qualifies, the five certifications, what the exam covers, and a free 12-week study plan."
 coverImage: "/blog/anthropic-claude-certified-architect-roadmap/cover-en.png"
 ---
 
-Anthropic launched the **Claude Certified Architect** certification on March 12, 2026, along with 13 self-paced courses. Here's what you need to know upfront:
+**Short answer (checked November 25, 2026): the Claude Certified Architect exam is open only to members of the Claude Partner Network.** Any organization bringing Claude to market can join for free, so in practice you sit the exam through your employer. The Foundations exam (code CCAR-F) costs $125 and has 60 questions in 120 minutes, proctored online or at a Pearson VUE test center; the pass mark is 720 out of 1,000. The Anthropic Academy courses that prepare you are free for anyone.
 
-- **All courses are free**: no subscription, no paywall, no account required to get started
-- **Exam costs $99**: zero cost to prepare — you only pay when you're ready to sit the exam
-- **Platform**: [anthropic.skilljar.com](https://anthropic.skilljar.com)
-
-Below is a breakdown of the 8 key courses covering Weeks 1–9 of the **12-week roadmap**, each with a direct link to the official course page.
+> **Updated November 25, 2026.** I first published this in May 2026 as a study roadmap, priced the exam at $99 and wrote as if anyone could book it. Neither holds today: Anthropic opens its exams to partner-network members, and the official exam guide lists a $125 fee. Four course links had also moved. This version follows Anthropic's [exam page and guide](https://anthropic-partners.skilljar.com/claude-certified-architect-foundations-certification) (guide version 1.0, effective July 2026), its [certification overview](https://claude.com/resources/articles/four-role-based-claude-certifications) and Pearson's [exam page](https://www.pearsonvue.com/us/en/anthropic.html).
 
 ---
 
-## Weeks 1–2 · Foundations
+## Who can take the exam
 
-### 1. Claude 101 (Anthropic Academy · Free)
+- **Partner-network members only.** "Exams are available to members of the Claude Partner Network," says Anthropic's [certification overview](https://claude.com/resources/articles/four-role-based-claude-certifications). Pearson's [exam page](https://www.pearsonvue.com/us/en/anthropic.html) says the same.
+- **Joining is free.** Any organization bringing Claude to market is eligible, and membership is free of charge ([Anthropic, March 12, 2026](https://www.anthropic.com/news/claude-partner-network)).
+- **The certificate is yours, not your employer's.** Certifications belong to individual people, not firms ([Anthropic, June 3, 2026](https://www.anthropic.com/news/services-track-partner-hub)).
+- **Why firms care.** New partners start at the Registered tier with a commitment to 10 certified practitioners. A practitioner counts while their certification is current and they have used Claude in the past 90 days.
+- **Who it's designed for.** The exam guide describes a solution architect with 6+ months of hands-on work with the Claude API, the Claude Agent SDK, Claude Code and MCP.
+
+Training a team on Claude? See [team training](/en/services).
+
+---
+
+## The five Claude certifications
+
+| Certification | Exam code | Who it's for |
+|---|---|---|
+| Associate – Foundations | CCAO-F | Everyday use of Claude, for anyone working on Claude projects |
+| Developer – Foundations | CCDV-F | Engineers building with the Claude API, tool use and agents |
+| Developer – Professional | CCDV-P | The advanced developer exam |
+| Architect – Foundations | CCAR-F | Solution architects who design and build agent systems with Claude |
+| Architect – Professional | CCAR-P | Integration architecture, governance and evaluation at large-enterprise scale; the next step after Foundations |
+
+Names and codes are from Pearson's exam page (updated November 24, 2026); the descriptions are from Anthropic's certification overview. Pearson lists updated content for the Associate – Foundations, Developer – Foundations and Architect – Professional exams from December 7, 2026.
+
+---
+
+## How the Architect – Foundations exam works
+
+| Item | Detail |
+|---|---|
+| Questions | 60, multiple-choice and multiple-response |
+| Format | 4 scenarios picked at random from a bank of 6 |
+| Time | 120 minutes |
+| Delivery | Proctored, online or at a Pearson VUE test center |
+| Pass mark | Scaled score of 720 on a 100–1,000 scale |
+| Fee | $125 per attempt; any partner-tier discount shows at checkout |
+| Valid for | 12 months; renewing on time is a free, non-proctored assessment |
+| Retakes | Wait 14, then 30, then 90 days; up to 4 attempts in 12 months |
+
+The scenarios come from real customer work: a customer-support agent, a multi-agent research pipeline, Claude Code in CI/CD, developer productivity tools and structured data extraction. You can cancel or reschedule up to 24 hours before the appointment; later changes forfeit the fee.
+
+The exam covers five domains:
+
+| Domain | Weight | Free course that covers it |
+|---|---|---|
+| 1. Agentic Architecture & Orchestration | 27% | Building with the Claude API; Introduction to subagents |
+| 2. Tool Design & MCP Integration | 18% | Introduction to Model Context Protocol; Model Context Protocol: Advanced Topics |
+| 3. Claude Code Configuration & Workflows | 20% | Claude Code in Action; Introduction to agent skills |
+| 4. Prompt Engineering & Structured Output | 20% | Building with the Claude API |
+| 5. Context Management & Reliability | 15% | Building with the Claude API; Introduction to subagents |
+
+Domains and weights are from the exam guide; the course column is my own mapping.
+
+---
+
+## How to prepare: a 12-week plan with free courses
+
+Every course below is free on [Anthropic Academy](https://anthropic.skilljar.com). Links re-checked on November 25, 2026.
+
+### Weeks 1–2 · Foundations
+
+#### 1. Claude 101
 
 🔗 [anthropic.skilljar.com/claude-101](https://anthropic.skilljar.com/claude-101)
 
-Covers Claude's usage patterns, capabilities, Projects, Artifacts, Skills, Connectors, and real-world workflows.
+Covers how Claude works day to day: Projects, Artifacts, Skills, Connectors and real-world workflows.
 
-> ⚠️ **Even if you've been using Claude for months, start here** — the exam assumes you have a solid grasp of all these foundational concepts.
+> ⚠️ **Even if you've been using Claude for months, start here.** The exam assumes you know these basics.
 
-### 2. AI Fluency: Framework and Foundations (Anthropic Academy · Free)
+#### 2. AI Fluency: Framework & Foundations
 
-🔗 [anthropic.skilljar.com/ai-fluency-framework](https://anthropic.skilljar.com/ai-fluency-framework-foundations)
+🔗 [anthropic.skilljar.com/ai-fluency-framework-foundations](https://anthropic.skilljar.com/ai-fluency-framework-foundations)
 
-Co-developed with university professors, this course introduces **four core principles** for effective AI collaboration:
+Co-developed with university professors, this course introduces **four core principles** for working with AI:
 
 - **Delegation**: what to hand off to AI vs. handle yourself
 - **Description**: how to clearly communicate your intent
 - **Discernment**: how to evaluate whether AI output is correct
 - **Diligence**: your responsibility to verify in a human-AI workflow
 
-This is the theoretical foundation for working alongside AI — it helps you build the right mental model before diving into technical content.
+### Weeks 3–5 · Building with the Claude API (domains 1, 4 and 5)
 
----
+#### 3. Building with the Claude API
 
-## Weeks 3–5 · Building with the Claude API (Flagship Course)
+🔗 [anthropic.skilljar.com/claude-with-the-anthropic-api](https://anthropic.skilljar.com/claude-with-the-anthropic-api)
 
-### 3. Building Applications with the Claude API (Anthropic Academy · Free · 8.1 hours)
-
-🔗 [anthropic.skilljar.com/claude-with-the-api](https://anthropic.skilljar.com/claude-with-the-api)
-
-**This is the centerpiece of the entire certification path.** It covers everything from basic API calls to advanced agentic architectures and RAG pipelines:
+**The centerpiece of the plan.** It runs from basic API calls to agentic architectures:
 
 - System prompts
 - Tool use
 - Streaming
-- Authentication
 - Structured outputs
 - Context management
 - Production patterns
 
-Maps directly to exam Domains 1, 4, and 5.
+> 📚 **Supplementary resource**: [Claude API documentation](https://platform.claude.com/docs)
 
-> 📚 **Supplementary resource**: [Anthropic API Documentation](https://docs.anthropic.com)
+### Weeks 6–7 · Model Context Protocol (domain 2)
 
----
+#### 4. Introduction to Model Context Protocol
 
-## Weeks 6–7 · Model Context Protocol (MCP)
+🔗 [anthropic.skilljar.com/introduction-to-model-context-protocol](https://anthropic.skilljar.com/introduction-to-model-context-protocol)
 
-### 4. Introduction to Model Context Protocol (Anthropic Academy · Free)
+The fundamentals of MCP: **tools, resources and prompts**.
 
-🔗 [anthropic.skilljar.com/introduction-to-mcp](https://anthropic.skilljar.com/introduction-to-mcp)
+#### 5. Model Context Protocol: Advanced Topics
 
-Fundamentals of MCP: **tools, resources, and prompts**. Directly covers exam Domain 2 (Tool Design & MCP Integration).
+🔗 [anthropic.skilljar.com/model-context-protocol-advanced-topics](https://anthropic.skilljar.com/model-context-protocol-advanced-topics)
 
-### 5. Model Context Protocol Advanced (Anthropic Academy · Free)
+Hands-on MCP servers and clients, including sampling, notifications, filesystem access and production transports.
 
-🔗 [anthropic.skilljar.com/model-context-protocol-advanced](https://anthropic.skilljar.com/model-context-protocol-advanced)
+> 📚 **Supplementary resource**: [MCP specification and docs](https://modelcontextprotocol.io)
 
-Hands-on Python implementation of MCP servers and clients, including:
+### Weeks 8–9 · Claude Code and agent skills (domain 3)
 
-- Sampling
-- Notifications
-- Filesystem access
-- Production transport mechanisms
-
-> 📚 **Supplementary resource**: [Official MCP Specification](https://modelcontextprotocol.io)
-
----
-
-## Weeks 8–9 · Claude Code Development Workflows
-
-### 6. Claude Code in Action (Anthropic Academy · Free)
+#### 6. Claude Code in Action
 
 🔗 [anthropic.skilljar.com/claude-code-in-action](https://anthropic.skilljar.com/claude-code-in-action)
 
-Full Claude Code configuration walkthrough:
+Configuring Claude Code for a team:
 
 - `CLAUDE.md` hierarchy
 - Path-specific rules
@@ -99,61 +138,91 @@ Full Claude Code configuration walkthrough:
 - Hooks
 - CI/CD integration
 
-### 7. Claude Code on Coursera (Vanderbilt University · Free Audit)
+#### 7. Claude Code on Coursera (Vanderbilt University · free audit)
 
 🔗 [coursera.org/specializations](https://www.coursera.org/specializations/generative-ai-software-engineering)
 
-The specific module is **Claude Code: Software Engineering with Generative AI Agents**, taught by Dr. Jules White as part of the "Generative AI Software Engineering Specialization." Focuses on **AI-first development** and the **"Best of N" pattern**.
+The module is **Claude Code: Software Engineering with Generative AI Agents**, taught by Dr. Jules White as part of the "Generative AI Software Engineering Specialization". It focuses on **AI-first development** and the **"Best of N" pattern**.
 
-> 💡 **Audit for free — no payment needed.** This course offers a different perspective from Anthropic's official materials, so studying both side by side is highly recommended.
+> 💡 **Audit it for free.** It comes at the material from a different angle than Anthropic's courses, so taking both side by side is worth it.
 
-### 8. Building Skills for Claude Code (Anthropic Academy · Free)
+#### 8. Introduction to agent skills
 
-🔗 [anthropic.skilljar.com/building-skills-for-claude-code](https://anthropic.skilljar.com/building-skills-for-claude-code)
+🔗 [anthropic.skilljar.com/introduction-to-agent-skills](https://anthropic.skilljar.com/introduction-to-agent-skills)
 
-Dedicated to **creating, configuring, and distributing reusable Skills** — directly relevant to the exam's production-grade workflow requirements.
+Creating, configuring and sharing reusable skills, which the exam tests under Claude Code configuration.
+
+### Weeks 10–12 · Subagents and the official practice projects
+
+#### 9. Introduction to subagents
+
+🔗 [anthropic.skilljar.com/introduction-to-subagents](https://anthropic.skilljar.com/introduction-to-subagents)
+
+Spawning subagents and passing context between them, which shows up in domains 1 and 5.
+
+#### 10. Build the exam guide's practice projects
+
+The exam guide's "How to Prepare" section lists hands-on work. Do these before you book:
+
+- **An agent with the Claude Agent SDK**: a complete agentic loop with tool calling, error handling and session management, plus subagents
+- **Claude Code on a real project**: a `CLAUDE.md` hierarchy, path-specific rules in `.claude/rules/`, custom skills and at least one MCP server
+- **MCP tools**: descriptions that tell similar tools apart, structured error responses, and tool selection tested with ambiguous requests
+- **A structured data extraction pipeline**: tool use with JSON schemas, validation-retry loops and batch processing with the Message Batches API
+- **Prompting, context and escalation**: few-shot examples for ambiguous cases, scratchpad files for long sessions, and human-review routing
+
+Then work through the sample questions in the exam guide.
 
 ---
 
-## Weeks 10–12 · Remaining Courses from the Full 13-Course Curriculum
+## If your company isn't a partner
 
-The remaining 5 courses (Weeks 10–12) cover more advanced topics — production deployment, evaluation and monitoring, advanced agentic patterns, exam prep, and more. See the full catalog at [anthropic.skilljar.com](https://anthropic.skilljar.com).
+- **Ask your employer.** Any organization bringing Claude to market can join the [Claude Partner Network](https://www.anthropic.com/news/claude-partner-network) for free, and certifications count toward its standing.
+- **Take the courses anyway.** They're free and cover all five exam domains.
+- **Show the skill without the credential.** Publish one of the practice projects above, such as an MCP server or an Agent SDK agent, on GitHub.
 
 ---
 
 ## My Study Recommendations
 
-1. **Don't skip Claude 101**: The exam assumes you already understand Projects, Artifacts, Skills, and Connectors — don't take that for granted.
-2. **Go through the flagship course twice**: Building Applications with the Claude API is incredibly dense. One pass won't be enough.
-3. **Actually build something for the MCP section**: Finish the intro course, then immediately spin up an MCP server. That hands-on experience is worth more than ten lectures.
-4. **Alternate between the Claude Code and Coursera courses**: They approach the material differently — one is Anthropic's official practitioner perspective, the other is more academic and AI-first engineering focused.
-5. **The $99 exam is worth it**: You spend nothing during prep, and the certification is something you can put on your resume and LinkedIn.
+1. **Don't skip Claude 101**: The exam assumes you already understand Projects, Artifacts, Skills and Connectors.
+2. **Go through Building with the Claude API twice**: It's dense, and it feeds three of the five domains.
+3. **Actually build something for the MCP section**: Finish the intro course, then spin up an MCP server. That hands-on experience is worth more than ten lectures.
+4. **Alternate between the Claude Code and Coursera courses**: One is Anthropic's practitioner view, the other is more academic and AI-first.
+5. **Book the exam once the practice projects work**: It's $125 an attempt, changes inside 24 hours forfeit the fee, and the credential lasts 12 months.
 
 ---
 
 ## FAQ
 
-### How much does the Claude certification cost overall?
+### Can anyone take the Claude Certified Architect exam?
 
-All 13 courses are completely free — no subscription, no paywall, and no account required to start (access at anthropic.skilljar.com). The only thing you pay for is the final Claude Certified Architect exam, which costs $99. Preparation is entirely free.
+No. Exams are open to members of the Claude Partner Network. Membership is free for organizations bringing Claude to market, and the certification belongs to the person who passes.
 
-### How long does it take to prepare for the Claude Certified Architect exam?
+### How much does the Claude Certified Architect exam cost?
 
-The official curriculum is structured as a 12-week roadmap. Weeks 1–9 cover the 8 key courses, with the flagship course — Building Applications with the Claude API — clocking in at 8.1 hours. Developers with a solid background can move through it faster; if you're starting from scratch, the week-by-week pacing is worth following.
+$125 per attempt for Architect – Foundations, according to Anthropic's exam guide (version 1.0, effective July 2026). Partner tiers may get a discount on the first attempt; checkout shows the final fee.
 
-### Can a complete beginner prepare for this exam?
+### What's on the Claude Certified Architect exam?
 
-Start with Claude 101 and AI Fluency — the exam assumes you know this material throughout. Even if you've been using Claude for months, don't skip Claude 101.
+60 questions in 120 minutes across five domains: Agentic Architecture & Orchestration (27%), Tool Design & MCP Integration (18%), Claude Code Configuration & Workflows (20%), Prompt Engineering & Structured Output (20%) and Context Management & Reliability (15%). The pass mark is a scaled 720 out of 1,000.
 
-### Is this certification worth pursuing?
+### Is Anthropic Academy the same as Claude certification?
 
-It's one of the most substantive AI certifications available in 2026: exam-validated, full-stack coverage from API to agentic architecture, and directly resume-worthy. For developers building AI applications, it's the best return on a $99 investment right now.
+No. Anthropic Academy courses are free for anyone. The certification exams are proctored, cost money and are open to partner-network members.
+
+### How long is the certification valid?
+
+12 months. Renewing on time is a free, non-proctored assessment on the Anthropic Partner Academy; if it lapses, you retake the full exam at the full fee.
+
+### How long does it take to prepare?
+
+The exam guide expects about six months of hands-on work with Claude. If you already build with the API and Claude Code, the 12-week plan above covers the courses and practice projects; starting from scratch, plan for longer.
 
 ---
 
 ## The Bottom Line
 
-> **Anthropic's 13-course curriculum is the most comprehensive free learning path for Claude engineers available today — exam-driven and full-stack in scope, covering Foundations → API → MCP → Claude Code → Skills. If your goal is an AI certification you can actually put on your resume, this is the best value path out there.**
+> **If you build with Claude at a partner firm, the Foundations exam is worth booking: $125, 120 minutes, and the free Anthropic Academy courses cover all five domains. If you're not at a partner, take the same courses and build the guide's practice projects; those skills are what the exam measures.**
 
 Want to see how OpenAI Academy stacks up? Check out → [OpenAI Academy vs. Anthropic: A Full Comparison of Two Free AI Learning Paths](/en/blog/openai-academy-vs-anthropic-learning-paths)
 
