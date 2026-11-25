@@ -1,11 +1,13 @@
 ---
 title: "My Go-To AI API Proxy Services: A Curated Roundup"
-excerpt: "A roundup of the AI API proxy services I actually use, covering use cases like AI image/video generation and coding — all recommended by friends I trust, zero paid promotions."
+excerpt: "A roundup of the AI API proxy services I actually use, covering use cases like AI image/video generation and coding — all recommended by friends I trust. Some links carry invite codes that pay a commission."
 ---
 
 > Source: [@GoSailGlobal](https://x.com/GoSailGlobal/status/2043962377939628517)
 
-There's no shortage of AI API proxy services out there — the market is flooded with options and it's hard to know what's worth your time. Here's a list of the services **my friends run and that I personally use** (this is a genuine recommendation post, no sponsored content whatsoever).
+There's no shortage of AI API proxy services out there — the market is flooded with options and it's hard to know what's worth your time. Here's a list of the services **my friends run and that I personally use**.
+
+> Disclosure (updated November 25, 2026): the five links marked "referral link" carry invite codes. If you sign up through them, I or the person who recommended the service earn a commission.
 
 ## What Is an AI API Proxy?
 
@@ -23,13 +25,13 @@ An AI API proxy (sometimes called a "relay" or "middleware") is a service that m
 These proxies are built for creative AI workflows — think generating images with Midjourney, DALL-E, or Stable Diffusion, or producing videos with Sora and Runway.
 
 **APIMart (recommended by 书虫)**
-- Website: [apimart.ai](https://apimart.ai/register?aff=npuNLN)
+- Website: [apimart.ai](https://apimart.ai/register?aff=npuNLN "sponsored") (referral link)
 - Recommended by: 书虫 [@APIMart_](https://x.com/APIMart_)
 - Highlights: Supports a wide range of model APIs including image and video generation, at competitive prices
 - Best for: Creators who need to generate images or videos at scale
 
 **Yunwu AI**
-- Website: [yunwu.ai](https://yunwu.ai/register?aff=xlFA)
+- Website: [yunwu.ai](https://yunwu.ai/register?aff=xlFA "sponsored") (referral link)
 - Highlights: Aggregates multiple AI models with support for image and video generation APIs
 - Best for: Users who need access to a variety of creative AI models
 
@@ -38,13 +40,13 @@ These proxies are built for creative AI workflows — think generating images wi
 These proxies are tailored for programming use cases — great for use inside AI coding tools like Cursor, Windsurf, and Claude Code.
 
 **AiGoCode (recommended by 涛哥)**
-- Website: [aigocode.com](https://aigocode.com/invite/ZS329NMN)
+- Website: [aigocode.com](https://aigocode.com/invite/ZS329NMN "sponsored") (referral link)
 - Recommended by: 涛哥 [@sitinme](https://x.com/sitinme)
 - Highlights: Purpose-built API relay for coding workflows, reliable and easy to use
 - Best for: Day-to-day software development
 
 **PipeLLM (recommended by c大)**
-- Website: [pipellm.ai](https://code.pipellm.ai/login?ref=rtpmnwrf)
+- Website: [pipellm.ai](https://code.pipellm.ai/login?ref=rtpmnwrf "sponsored") (referral link)
 - Recommended by: c大 [@Cydiar404](https://x.com/Cydiar404)
 - Highlights: Multi-model switching support, well-suited for developers in their daily workflow
 - Best for: Developers who frequently switch between models
@@ -64,7 +66,7 @@ Beyond what I use personally, here are a few others with a solid community reput
 - Highlights: A platform for AI compute resources and API services
 
 **oFox AI (recommended by ofox)**
-- Website: [ofox.ai](https://ofox.ai/x/janson_z)
+- Website: [ofox.ai](https://ofox.ai/x/janson_z "sponsored") (referral link)
 - X: [@ooffooxx](https://x.com/ooffooxx)
 - Highlights: Clean and easy to use, supports APIs for a range of mainstream models
 

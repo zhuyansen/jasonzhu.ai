@@ -385,6 +385,10 @@ export default async function BlogPostPage({ params }: Props) {
             // 页面标题已经是 H1；正文里的「# 标题」（12 篇文章开头重复了一遍标题）降为 H2，一页只有一个 H1
             // （OpenSEO 2026-11-19 报 12 页多个 H1）
             h1: (props) => <h2 {...props} />,
+            // 推广链接（带邀请码、有返佣）在 md 里写成 [文字](网址 "sponsored")：渲染成 rel="sponsored"，不显示这个 title。
+            // Google 要求推广链接标 sponsored；写成 title 而不是 <a> 标签，generate-posts 的关键词就不会收进 href、rel（2026-11-25 起）
+            a: ({ title, ...props }) =>
+              title === "sponsored" ? <a {...props} rel="sponsored" /> : <a title={title} {...props} />,
             img: (props) => (
               // 正文图原图直出（不走 next/image），懒加载：滚到附近才下载，长文不再一打开就下全部图片
               // eslint-disable-next-line @next/next/no-img-element

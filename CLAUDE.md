@@ -133,6 +133,7 @@ Git：commit 后如远程有新提交（cron 会自动 commit 快讯），先 `g
 
 **SEO/AI-SEO 已就位的约定**
 - 文章里写 `## 常见问题`（或英文 `## FAQ`）段 + `### 问题`，src/lib/faq.ts 自动生成 FAQPage JSON-LD——写内容时优先带上。
+- 博客里的推广链接（带邀请码、有返佣）写成 `[文字](网址 "sponsored")`，博客页渲染成 `rel="sponsored"`、不显示这个 title；正文写明哪些链接有返佣（2026-11-25 起，中转站那篇原来写「纯推荐无广」，其实 5 个链接带邀请码）。别写成 `<a>` 标签，generate-posts 会把 href、rel 收进搜索关键词。
 - app/llms.txt/route.ts 动态生成 LLM 爬虫导览；/feed/blog.xml、/feed/news.xml 双 RSS。
 - `public/.well-known/mcp/server-card.json` 照实写（2026-11-25 重写）：本站没有远程 MCP 服务，卡片不写 transport / endpoint，只列浏览器端 WebMCP 工具（`WebMcpRegister.tsx` 和页脚搜索表单）和只读文件。11-19 版把 llms.txt 写成了 MCP 端点，还列了两个没有服务端的工具，别改回去。
 - 急诊室（`src/lib/ai-readiness-scanner.ts` 第 7 关 7.2）给别的网站的修复建议（2026-11-25 起）：有远程 MCP 服务才发卡片。模板按 MCP 的 SEP-2127 写（name + remotes，不列工具；规范在 github.com/modelcontextprotocol/experimental-ext-server-card），评分多认 `remotes`、分值不变；没有远程 MCP 服务的建议不发，空着这 4 分。以前给每个网站一张带 `search_site` 工具的模板，别加回来。

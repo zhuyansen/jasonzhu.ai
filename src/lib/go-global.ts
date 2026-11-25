@@ -171,10 +171,10 @@ export const STACK: Pick[] = [
   { what: { zh: "数据库", en: "Database" }, name: "Supabase", url: "https://supabase.com", why: { zh: "免费额度内不花钱", en: "free within its quota" } },
 ];
 
-/** 支付：我在帖子里首推 Waffo——海外主体用 Waffo，独立开发者用 Waffo Pancake */
+/** 支付：我在帖子里首推 Waffo——海外主体用 Waffo，独立开发者用 Waffo Pancake。我和 Waffo 有合作关系，推荐后面要带这句利益说明（2026-11-25 起） */
 export const MY_PAYMENT_PICK = {
-  zh: "我首推 Waffo：有海外主体用 Waffo，独立开发者用 Waffo Pancake。",
-  en: "My first pick is Waffo: Waffo for a company abroad, Waffo Pancake for an indie developer.",
+  zh: "我首推 Waffo：有海外主体用 Waffo，独立开发者用 Waffo Pancake。利益说明：我和 Waffo 有合作关系。",
+  en: "My first pick is Waffo: Waffo for a company abroad, Waffo Pancake for an indie developer. Disclosure: I have a business relationship with Waffo.",
 };
 
 export const DATA_TOOLS: Pick[] = [

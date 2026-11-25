@@ -1,9 +1,10 @@
 ---
 title: "AI中转站推荐：我自己在用的API代理服务整理"
 date: "2026-04-14"
+updated: "2026-11-25"
 category: "出海"
 tags: ["AI中转站", "API", "工具推荐", "出海"]
-excerpt: "整理了我自己在用的AI中转站服务，涵盖AI生图生视频、代码编程等场景，都是朋友们在做的靠谱服务，纯推荐无广。"
+excerpt: "整理了我自己在用的AI中转站服务，涵盖AI生图生视频、代码编程等场景，都是朋友们在做的靠谱服务；部分链接带邀请码，有返佣。"
 slug: "ai-proxy-services-recommendation"
 ---
 
@@ -11,7 +12,9 @@ slug: "ai-proxy-services-recommendation"
 
 > 来源：[@GoSailGlobal](https://x.com/GoSailGlobal/status/2043962377939628517)
 
-太多中转站了，市面上各种各样的AI API代理服务让人眼花缭乱。这里列举一下**朋友们在做的、且我自己也在用的**中转站服务（本文纯推荐，无广告合作）。
+太多中转站了，市面上各种各样的AI API代理服务让人眼花缭乱。这里列举一下**朋友们在做的、且我自己也在用的**中转站服务。
+
+> 说明（2026-11-25 更新）：标了「邀请链接」的 5 个链接带邀请码，通过它们注册，我或推荐人会拿到返佣。
 
 ## 什么是AI中转站？
 
@@ -29,13 +32,13 @@ AI中转站（API Proxy）是一种代理服务，帮助开发者和用户更方
 这类中转站主要用于创意类AI工作，比如用Midjourney、DALL-E、Stable Diffusion生成图片，或者用Sora、Runway等生成视频。
 
 **APIMart（书虫推荐）**
-- 官网：[apimart.ai](https://apimart.ai/register?aff=npuNLN)
+- 官网：[apimart.ai](https://apimart.ai/register?aff=npuNLN "sponsored")（邀请链接）
 - 推荐人：书虫 [@APIMart_](https://x.com/APIMart_)
 - 特点：支持AI生图、生视频等多种模型API调用，价格实惠
 - 适合：需要批量生成图片/视频的创作者
 
 **云雾 AI**
-- 官网：[yunwu.ai](https://yunwu.ai/register?aff=xlFA)
+- 官网：[yunwu.ai](https://yunwu.ai/register?aff=xlFA "sponsored")（邀请链接）
 - 特点：聚合多家AI模型，支持图像生成、视频生成等创意类API
 - 适合：需要多种创意AI模型的用户
 
@@ -44,13 +47,13 @@ AI中转站（API Proxy）是一种代理服务，帮助开发者和用户更方
 这类中转站专注于编程场景，适合在Cursor、Windsurf、Claude Code等AI编程工具中使用。
 
 **AiGoCode（涛哥推荐）**
-- 官网：[aigocode.com](https://aigocode.com/invite/ZS329NMN)
+- 官网：[aigocode.com](https://aigocode.com/invite/ZS329NMN "sponsored")（邀请链接）
 - 推荐人：涛哥 [@sitinme](https://x.com/sitinme)
 - 特点：专注编程场景的API中转服务，稳定好用
 - 适合：日常编程开发
 
 **PipeLLM（c大推荐）**
-- 官网：[pipellm.ai](https://code.pipellm.ai/login?ref=rtpmnwrf)
+- 官网：[pipellm.ai](https://code.pipellm.ai/login?ref=rtpmnwrf "sponsored")（邀请链接）
 - 推荐人：c大 [@Cydiar404](https://x.com/Cydiar404)
 - 特点：支持多模型切换，适合开发者日常编程使用
 - 适合：需要频繁切换模型的开发者
@@ -70,7 +73,7 @@ AI中转站（API Proxy）是一种代理服务，帮助开发者和用户更方
 - 特点：AI算力和API服务平台
 
 **oFox AI（ofox推荐）**
-- 官网：[ofox.ai](https://ofox.ai/x/janson_z)
+- 官网：[ofox.ai](https://ofox.ai/x/janson_z "sponsored")（邀请链接）
 - X：[@ooffooxx](https://x.com/ooffooxx)
 - 特点：简洁好用，支持多种主流模型API
 
