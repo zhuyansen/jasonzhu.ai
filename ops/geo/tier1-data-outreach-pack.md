@@ -77,7 +77,7 @@ https://jasonzhu.ai
 ```
 
 ### 4. Waffo（$20 订阅扣 $1.28，不含 1% 提现费）
-> **更正（2026-11-24）：** 下面这封 11-21 发出的信说 Waffo 是「最低」，不对。按 Zenodo 02 号第 2 版（总 DOI `10.5281/zenodo.24387071`）：Dodo 合作费率扣 $1.16–$1.18，比 Waffo 低；Waffo 的 $1.28 没算 1% 提现费，不能和含提现费的数直接比；这些数字出自刘小排 2026-11-15 的公众号，不是我们实测。第 2 版已经去掉排名。要不要给 Waffo 发更正信，等 Jason 定。正文按原样留作发信记录。
+> **更正（2026-11-24）：** 下面这封 11-21 发出的信说 Waffo 是「最低」，不对。按 Zenodo 02 号第 2 版（总 DOI `10.5281/zenodo.24387071`）：Dodo 合作费率扣 $1.16–$1.18，比 Waffo 低；Waffo 的 $1.28 没算 1% 提现费，不能和含提现费的数直接比；这些数字出自刘小排 2026-11-15 的公众号，不是我们实测。第 2 版已经去掉排名。2026-11-25 Jason 定了发：已回在原信线程里更正（抄送他的 Gmail），正文见第九节。下面的正文按原样留作发信记录。
 - **核实渠道**：
   - 官网联系表单（选 Press & Media / Partnerships）：`https://waffo.com` Contact 页
   - 收件人：Waffo 商务（个人邮箱）；或在 LinkedIn 联系 Waffo 的 CEO、CBO
@@ -220,8 +220,8 @@ https://agentskillshub.top
 | :--- | :--- | :--- | :--- |
 | `jasonzhu.ai` / Dodo Payments | Dodo 创始人 | `Jason Zhu <jason@jasonzhu.ai>` | `SENT` |
 | `jasonzhu.ai` / Polar | `support@polar.sh` | `Jason Zhu <jason@jasonzhu.ai>` | `SENT` |
-| `jasonzhu.ai` / Creem | `contact@creem.io` | `Jason Zhu <jason@jasonzhu.ai>` | `SENT` |
-| `jasonzhu.ai` / Waffo | Waffo 商务 | `Jason Zhu <jason@jasonzhu.ai>` | `SENT` |
+| `jasonzhu.ai` / Creem | `contact@creem.io` | `Jason Zhu <jason@jasonzhu.ai>` | `BOUNCED`（Resend 记为退信，对方没收到；2026-11-25 查到） |
+| `jasonzhu.ai` / Waffo | Waffo 商务 | `Jason Zhu <jason@jasonzhu.ai>` | `SENT`；2026-11-25 回原信更正 |
 | `agentskillshub.top` / Agensi | `info@agensi.io` | `Jason Zhu <jason@agentskillshub.top>` | `SENT` |
 | `agentskillshub.top` / Kipt | `hello@kipt.me` | `Jason Zhu <jason@agentskillshub.top>` | `SENT` |
 | `agentskillshub.top` / Firecrawl | `help@firecrawl.com` | `Jason Zhu <jason@agentskillshub.top>` | `SENT` |
@@ -235,6 +235,7 @@ https://agentskillshub.top
 
 - **`agentskillshub.top`**（`#5087821`，`canonical_url: https://agentskillshub.top/how-we-grade/`）：https://dev.to/yansen_zhu_9b0dae1c4cc0da/we-audited-138000-open-source-ai-agent-skills-mcp-servers-why-low-star-repos-carry-9x-higher-1hlk
 - **`jasonzhu.ai`**（`#5087822`，`canonical_url: https://jasonzhu.ai/en/blog/indie-payments-report-2026`）：https://dev.to/yansen_zhu_9b0dae1c4cc0da/i-analyzed-200000-indie-checkout-links-2023-2026-why-ai-saas-builders-are-choosing-mors-over-1020
+- 2026-11-25：两篇文末各加了一行 `*Disclosure: This article was created with the help of AI.*`。dev.to 的 AI 辅助文章规则（https://dev.to/guidelines-for-ai-assisted-articles-on-dev ）要求写明；同一份规则还说 AI 辅助的文章不能推广任何业务（包括自己的），主要为了给别的网站做外链的文章可以封号（个人博客除外）。以后在 dev.to 发文照这个来。
 
 ---
 
@@ -252,9 +253,9 @@ https://agentskillshub.top
 | 优先级 | 靶点（`2026-11-21` AI 面板引用数） | 收件人 | 当前状态 | 下一步动作（默认 `2026-11-26` Day+5） |
 | :--- | :--- | :--- | :--- | :--- |
 | **P0** | **Dodo Payments** (`dodopayments.com`: **22 次**) | Dodo 创始人 | `SENT`（待回） | 若 `11-26` 无回复，发下方 Day+5 附 GitHub CSV 核对链接的短跟进 |
-| **P0** | **Creem** (`creem.io`: **16 次**) | `contact@creem.io` | `SENT`（待回） | 同上（邀请 PR 校对 2026 费率行，极易触发产品/增长团队回复） |
+| **P0** | **Creem** (`creem.io`: **16 次**) | `contact@creem.io` | 退信，没送到 | 别往这个地址发跟进。原信把「其他标 3.9% 的 MoR」那一行当成 Creem 的数（$1.37），要重新联系就换渠道、用 Zenodo 02 号第 2 版的说法 |
 | **P0** | **Polar** (`polar.sh`: **11 次**) | `support@polar.sh` | `SENT`（待回） | 同上（附 GitHub 仓库 + 邀请核对 May 2026 新费率） |
-| **P1** | **Waffo** | Waffo 商务 | `SENT`（待回） | 同上（附 GitHub `$20` 实测表，`Waffo $18.72` 排第 2） |
+| **P1** | **Waffo** | Waffo 商务 | `SENT`（待回）；11-25 已回原信更正 | 跟进只附 GitHub 费用表，不再排名次（第 2 版已去掉排名） |
 | **P1** | **Firecrawl** | `help@firecrawl.com` | `SENT`（待回） | 若 `11-26` 无回复，发安全审计数据集 + `dev.to` 文章链接短跟进 |
 | **P1** | **Agensi** | `info@agensi.io` | `SENT`（待回） | 同上 |
 | **P1** | **Kipt** | `hello@kipt.me` | `SENT`（待回） | 同上 |
@@ -292,6 +293,25 @@ https://agentskillshub.top
 ---
 
 ## 九、更正（2026-11-21 准备；Polar 那封已于 2026-11-22 发出，回复原信主题，Zenodo 01 号新版本上线之后）
+
+### Waffo（Waffo 商务，2026-11-25 已发）：「最低」不成立
+
+- Subject: `Re: Independent $20 AI SaaS Fee Benchmark: Waffo Pancake ranked lowest standard MoR fee ($1.28 cut)`（原信标题里就写着 lowest）
+- Body:
+  > Hi Eric and Waffo team,
+  >
+  > A correction to my note of November 21. I wrote that Waffo Pancake's $1.28 on a $20 monthly subscription was the lowest standard MoR fee in the benchmark. That comparison was not like for like, and the ranking does not hold:
+  >
+  > - The $1.28 leaves out Waffo's 1% payout fee, while some of the totals it was ranked against include one. With the payout fee counted, Waffo comes to about $1.47, while the row for other MoR platforms advertising 3.9% starts at $1.37 with its payout fee included.
+  > - Dodo Payments' negotiated partner rate takes $1.16-$1.18 on the same sale.
+  > - Most of the figures come from Liu Xiaopai's WeChat post of November 15, 2026, not from our own transactions, so calling it a real-world benchmark overstated what we did.
+  >
+  > Version 2 of the dataset credits him, marks which rows include a payout fee, and no longer ranks the setups: https://doi.org/10.5281/zenodo.24387071
+  >
+  > Sorry for the error.
+  >
+  > Jason Zhu
+  > https://jasonzhu.ai/en/blog/dodo-payments-waffo-ai-saas-fee-comparison
 
 > 等 Zenodo 01 号新版本发布后再发（信里说已经更正）。用 `jason@jasonzhu.ai` 回复 11-21 那封原信，留在同一个线程里。
 > 第八节第 3 条的 Day+5 跟进模板已于 2026-11-22 改成纠错后的说法（总 DOI、不再写 CERN 和 raw CSV、页数和安全数据的日期）；GitHub 仓库的费用表也已换成新版。
