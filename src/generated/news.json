@@ -1,5 +1,73 @@
 [
   {
+    "slug": "2026-11-26",
+    "date": "2026-11-26",
+    "title": "AI 快讯 · 11月26日",
+    "items": [
+      {
+        "title": "Claude BugHunter发布：84个红队安全测试技能集",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://github.com/elementalsouls/Claude-BugHunter",
+        "summary": "该项目提供了一套集成Claude Code的红队测试工具包，包含84项技能、15条斜杠命令和681个漏洞审计模式。对于安全研究员和开发者而言，这极大降低了自动化漏洞扫描与基础设施攻击模拟的开发门槛。",
+        "titleEn": "Claude BugHunter Released: 84 Skill Bundle for Red-Teaming",
+        "summaryEn": "This project offers a Claude Code skill bundle for red-teaming, featuring 84 skills, 15 slash commands, and 681 vulnerability report patterns. It significantly lowers the barrier for developers and security researchers to automate vulnerability scanning and infrastructure stress-testing."
+      },
+      {
+        "title": "CLI-Anything：让所有软件原生支持AI智能体调度",
+        "source": "GitHub Trending",
+        "category": "Skills 生态",
+        "url": "https://clianything.cc/",
+        "summary": "CLI-Anything通过统一的CLI-Hub标准，旨在将传统桌面软件转化为智能体可直接调用的接口。它解决了当前AI智能体难以操作本地闭源软件的痛点，推动了“软件即工具”的生态集成。",
+        "titleEn": "CLI-Anything: Making All Software Agent-Native",
+        "summaryEn": "CLI-Anything introduces a unified CLI-Hub standard to turn traditional software into agent-native tools. It solves the critical pain point of AI agents struggling to interact with local closed-source applications, accelerating the 'software-as-a-tool' ecosystem integration."
+      },
+      {
+        "title": "MiniMind开源：3元成本两小时训练64M大模型",
+        "source": "GitHub Trending",
+        "category": "AI 论文",
+        "url": "https://github.com/jingyaogong/minimind",
+        "summary": "该项目展示了如何用极低成本（3元）和极快速度在个人GPU上训练出一个64M参数的微型模型，并完整复现了从预训练、SFT到RLHF的链路。这对于研究模型极简架构和轻量化部署具有极高的教学意义。",
+        "titleEn": "MiniMind Open Source: Train a 64M LLM in 2 Hours",
+        "summaryEn": "This project demonstrates how to train a 64M parameter LLM from scratch on a consumer GPU with minimal cost (3 RMB) and time (2 hours). It covers the entire pipeline including pretraining, SFT, and RLHF, offering high educational value for lightweight model research and deployment."
+      },
+      {
+        "title": "FNS架构：通过复杂二次动力学实现恒定存储的权重生成",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2611.32393",
+        "summary": "研究提出了分形神经合成（FNS），利用仅24字节的坐标种子替代传统庞大的权重张量。这对于在微控制器（MCU）或受限边缘设备上部署复杂模型具有革命性意义，解决了存储瓶颈。",
+        "titleEn": "Fractal Neural Synthesis: Constant-Storage Weight Derivation via Complex Quadratic Dynamics",
+        "summaryEn": "The paper introduces Fractal Neural Synthesis (FNS), replacing massive weight tensors with a constant 24-byte coordinate seed. This is revolutionary for deploying complex AI models on microcontrollers or resource-constrained edge devices by solving the persistent memory footprint bottleneck."
+      },
+      {
+        "title": "OWE-Bench：衡量智能体真实工程能力的长期基准",
+        "source": "HuggingFace Papers",
+        "category": "AI 论文",
+        "url": "https://huggingface.co/papers/2611.30017",
+        "summary": "OWE-Bench提供了一套包含26个复杂工程任务的评估基准，要求智能体在软件、物理和科学计算领域进行数亿token的深度推理。这对评估智能体长期任务执行力是更贴近实战的指标。",
+        "titleEn": "OWE-Bench: A Long-Horizon Benchmark for Real-World Engineering",
+        "summaryEn": "OWE-Bench introduces a benchmark featuring 26 long-horizon engineering tasks requiring deep reasoning across software, physical, and scientific computing. It provides a more practical metric for evaluating the real-world execution capability of AI agents compared to standard benchmarks."
+      },
+      {
+        "title": "Cursor插件规范正式发布，统一开发工具集成标准",
+        "source": "GitHub Trending",
+        "category": "AI 工具动态",
+        "url": "https://github.com/cursor/plugins",
+        "summary": "Cursor发布了官方插件规范，定义了统一的manifest结构。这标志着Cursor从单纯的代码编辑器向开发者生态平台转型，开发者可以更便捷地为AI编码助手扩展特定工具链功能。",
+        "titleEn": "Official Cursor Plugin Specification Released",
+        "summaryEn": "Cursor has released its official plugin specification with a unified manifest structure. This marks a transition from a standalone editor to an ecosystem platform, enabling developers to easily extend AI coding assistants with specialized toolchain functionality."
+      }
+    ],
+    "jasonSays": "今日重点在于开发者生态工具的基建化：从CLI-Anything到Claude插件，以及Cursor的官方规范，均在致力于将AI从对话框引向深度系统控制。同时，MiniMind的极简架构研究证明了个人算力在模型底层研究中的潜力。",
+    "jasonSaysEn": "The focus today is on the infrastructure shift in the developer ecosystem, with new standards for CLI-agents and Cursor plugins bridging the gap between AI and deep system control, while MiniMind demonstrates the potential for lightweight model research on consumer hardware.",
+    "filename": "2026-11-26.md",
+    "coverImage": "/news/2026-11-26.png",
+    "coverImageEn": "/news/en/2026-11-26.png",
+    "coverWebp": "/news/2026-11-26.webp",
+    "coverWebpEn": "/news/en/2026-11-26.webp"
+  },
+  {
     "slug": "2026-11-25",
     "date": "2026-11-25",
     "title": "AI 快讯 · 11月25日",
