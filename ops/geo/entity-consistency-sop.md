@@ -114,6 +114,7 @@ Whenever a new flagship empirical study is published on `jasonzhu.ai`, run this 
 3. **每个检查分三种结果：通过、有问题、测不出来。** 先查一个必中的东西（比如 `site:jasonzhu.ai` 第一条必是本站），查不中就写「测不出来」，不写 0 或「通过」。定时任务最后一步直接看结果文件进没进仓库，不看运行状态。
 4. **每轮改动在 `experiments.json` 记一条：** 日期、改了什么、预期动面板哪一项。面板周报会列出最近 5 条。
 5. **效果看三样：** 面板里不带品牌名的题有没有引用本站；AI 搜的不带品牌名的词，我们在 Google 前 20 有几条；品牌词（`brand_serp`）本站排第几。都是每周一的面板邮件，看走势，差 10–15 个百分点以上才算数。
+6. **人、产品、公司分开，不共用名字和账号（2026-11-24）：** X @GoSailGlobal、YouTube @JasonZhuGoSail 是本人档案，只放在 Person 的 sameAs；运营公司 GoSailGlobal LLC（BRICKAI）在 agentskillshub.top 上单列（`https://gosailglobal.com/#organization`），AgentSkillsHub 用 parentOrganization 指向它；本人的 alternateName 不放公司名（`check-entities.mjs` 第 5 条）。
 
 ---
 

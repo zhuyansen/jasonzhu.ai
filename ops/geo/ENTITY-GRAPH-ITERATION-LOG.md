@@ -16,14 +16,52 @@
 |---|---|---|---|
 | 第一次带新检查的定时运行：「分数进了仓库」那步通过、子查询自检通过、邮件里有品牌词名次 | Claude | 2026-11-30（周一）跑完后 | ⏳ |
 | Search Console 看 4 个品牌词（jasonzhu.ai、jasonzhu ai、jason zhu gosail、gosail club）的展示和名次：v2.4 定了要做，还没做 | Claude | 和 11-30 的读数一起 | ⏳ |
-| OpenAlex：130K 数据集（W7167922915）还挂在 A5009989201「竹彦 森」名下，按 ORCID 查不到作者（11-24 查） | OpenAlex 客服 | 等回复；回复发到你 OpenAlex 账号的邮箱 | 🟡 11-24 Claude 在你的 Chrome 里用你的 OpenAlex 账号提了工单（请求 28329）；认领、合并作者页不做 |
+| OpenAlex：两个数据集挂在别人名下。130K 数据集（W7167922915）在 A5009989201「竹彦 森」名下；《Backlink Spam List》（W7237096646，重复记录 W7237007813）在 A5087679970 名下，这个作者页其余 7 个作品是斯坦福一位做金融和机器学习的 Jason Zhu 的。你的另外 7 个作品在 A5163069727，没挂 ORCID；按 ORCID 查不到作者（11-24 查） | OpenAlex 客服 | 等回复；回复发到你 OpenAlex 账号的邮箱 | 🟡 11-24 Claude 在你的 Chrome 里用你的 OpenAlex 账号提了两张工单：请求 28329（130K）、28427（Backlink Spam List）；认领、合并作者页不做 |
+| ASH 站人和公司拆开（ASH `77e2eb2`）上线后核对：四个页面的 JSON-LD 有运营公司节点，ASH 机构不带法定名和本人账号；ASH 审计第 1 项 VERIFIED | Claude | ASH 部署排在数据同步后面，预计 11-25 03:40 UTC 上线 | ⏳ |
+| 公司官网 gosailglobal.com 的 Organization：sameAs 里有本人的 X（x.com/GoSailGlobal），要拿掉；补 `@id` https://gosailglobal.com/#organization 和 founder → https://jasonzhu.ai/#person | 你（官网源码不在本机，GitHub 上也没找到） | 不急 | ⬜ |
+| ASH 审计第 8 项认不出「混了别人作品的作者页」：把 A5087679970 当成「你被拆出来的作者页」，没发现它主要是斯坦福另一位 Jason Zhu 的 | Claude | 不急 | ⬜ |
 | B 站改名、写简介（现在是「香菇的猪」、简介空），改好后告诉 Claude 加回 sameAs | 你 | 不急 | ⬜ 11-24 已从 sameAs 拿掉 |
 | 学术外联 | 你 | 等回复 | 🟡 两封邮件（SkillProbe 一作、NVIDIA 一作）和更正信都已发，LinkedIn 邀请已发；不再追加。回复记在 `~/出海/specs/2026-11-22-academic-outreach.md` 末尾 |
 | SSRN 两篇换成 1.1 版 | SSRN 客服 | 等邮件 | ⏳ 不再跟进；审核通过后看一眼是不是 1.1 版（`papers/SSRN-revision-notes-2026-11-21.md`） |
 
 **不做了（2026-11-24 定）：** Wikidata 人物条目和 6 个作品条目（有 2–3 家独立媒体报道后再议，条件见 SOP Phase 3）；OpenAlex 认领、合并作者页、补 DOI；为进学术索引去找 Semantic Scholar 收录、arXiv 背书；Hugging Face、Kaggle 补回链；Zenodo 单位写法统一；追安全论文 1.0 版 DOI `24420920` 的登记（已被 1.1 版取代，站上用总 DOI `24420919`；11-24 查总 DOI 和 1.1 版 `24432858` 都能解析）。
 
-**最近办完：** SOP 文档更正（11-24，`81d2e18`）：文首状态改成维护规则，Wikidata 个人条目写「不做」，个人档案 13 个改 12 个，第 5 节清单和外联文案里的 DOI 换成总 DOI；X 的 website 从 gosaillab.com 改成 jasonzhu.ai（11-24，你本人改的；`api.fxtwitter.com` 和 twitterapi.io 都读到）；npm 两个旧 token（`agentskillshub-4`、`agentskillshub -3`）删了，jasonzhu0526 账号下只剩 3 个早已过期的；2027-01 起跳过 2FA 的 token 不能直接发布，下次发版要换方式（11-24）；Google Scholar 个人页设成公开，不登录能打开了（11-24）；YouTube 频道加了 jasonzhu.ai 链接（11-24）；ORCID 加任职（11-22）；npm 两个包发布 cli 0.5.1、mcp 0.3.1（11-22）；Zenodo 纠错新版本 24432849、24432852、24432855、24432843、24432858、24435484，重复记录 24435488/89/90 指向正版，GitHub、HF、Kaggle 镜像和 dev.to 文章同步改正，给 Polar 的更正信已发（11-22）；每日实体检查 `check-entities.yml` 上线（11-22）。
+**最近办完：** 本人的别名去掉公司名 GoSailGlobal，实体检查加第 5 条（11-24，`9b68f62`，线上 21 页通过）；SOP 文档更正（11-24，`81d2e18`）：文首状态改成维护规则，Wikidata 个人条目写「不做」，个人档案 13 个改 12 个，第 5 节清单和外联文案里的 DOI 换成总 DOI；X 的 website 从 gosaillab.com 改成 jasonzhu.ai（11-24，你本人改的；`api.fxtwitter.com` 和 twitterapi.io 都读到）；npm 两个旧 token（`agentskillshub-4`、`agentskillshub -3`）删了，jasonzhu0526 账号下只剩 3 个早已过期的；2027-01 起跳过 2FA 的 token 不能直接发布，下次发版要换方式（11-24）；Google Scholar 个人页设成公开，不登录能打开了（11-24）；YouTube 频道加了 jasonzhu.ai 链接（11-24）；ORCID 加任职（11-22）；npm 两个包发布 cli 0.5.1、mcp 0.3.1（11-22）；Zenodo 纠错新版本 24432849、24432852、24432855、24432843、24432858、24435484，重复记录 24435488/89/90 指向正版，GitHub、HF、Kaggle 镜像和 dev.to 文章同步改正，给 Polar 的更正信已发（11-22）；每日实体检查 `check-entities.yml` 上线（11-22）。
+
+---
+
+## 2026-11-24 · v2.5：人和公司拆开
+
+### 证据
+
+- **AI 回答里没混（11-24 各问一次）：** 问「jasonzhu.ai 的 Jason Zhu 是谁」，Perplexity 和 ChatGPT 都答对了身份、作品（JasonZhu.AI、AgentSkillsHub、GoSail、数据集）和机构（BRICKAI / GoSailGlobal LLC），没混进别的 Jason Zhu；问 ASH 的事实，Perplexity 6 项全对。混淆在下面几处。
+- **ASH 站的 JSON-LD 把产品、公司和人混在一起：** AgentSkillsHub 机构带着公司的法定名「BRICKAI (GoSailGlobal LLC)」和别名 BRICKAI；它的 sameAs 里有本人的 X（@GoSailGlobal）和 YouTube；首页的 Person 把 jasonzhu.ai 和 agentskillshub.top/about/ 放进 sameAs，还带 worksFor；8 篇博客的作者是没有 @id 的匿名 Person。
+- **名字撞车：** jasonzhu.ai 上本人的 alternateName 有「GoSailGlobal」，和公司同名；公司官网 gosailglobal.com 的 sameAs 也有 x.com/GoSailGlobal。这个 X 账号显示名是「Jason Zhu（GEO）」，是本人的。
+- **OpenAlex 混得比 28329 报的多：** 《Backlink Spam List》（W7237096646、重复记录 W7237007813）挂在 A5087679970 名下，这个作者页其余 7 个作品是斯坦福一位做金融和机器学习的 Jason Zhu 的（*Deep Learning in Asset Pricing*、*Forest through the Trees*）。DataCite 上这个数据集的作者挂着本人 ORCID。
+- **Google：** 搜「jasonzhu.ai」前 20 全是别的 Jason Zhu（v2.4 已记），改站解决不了。
+
+### 决定（Jason 2026-11-24「修」）
+
+人、产品、公司三个实体分开：X @GoSailGlobal 归本人；运营公司 GoSailGlobal LLC（BRICKAI）单列，AgentSkillsHub 用 parentOrganization 指向它；本人的别名里不放公司名。
+
+### 改了什么
+
+| 提交 | 改动 |
+|---|---|
+| ASH `77e2eb2` | 运营公司单列成节点（`@id` https://gosailglobal.com/#organization，法定名、别名 BRICKAI、注册地址、founder → #person），ASH 机构用 parentOrganization 指向它，不再带法定名和别名 BRICKAI；ASH 机构的 sameAs 拿掉本人的 X 和 YouTube，换成 ASH 自己的 @agentskillshub；首页和 /about/ 的 Person 用和 jasonzhu.ai 一样的 12 个个人档案，不放网站页面，去掉 worksFor；/ai-info/、/contact/ 只引用 `@id`；8 篇博客的作者接到 https://jasonzhu.ai/#person |
+| `9b68f62` | `AUTHOR_ALT_NAMES` 去掉 GoSailGlobal；`check-entities.mjs` 加第 5 条：Person 的 alternateName 不能有 GoSailGlobal、BRICKAI |
+| OpenAlex 请求 28427 | 《Backlink Spam List》挂错作者，接在 28329 后面报 |
+
+### 怎么验证的
+
+- **ASH：** 本地把改过的 25 段 JSON-LD 全部解析，按四条查：非 Person 节点的 sameAs 不能有个人档案、ASH 机构不带法定名、Person 没有 worksFor、首页和 /about/ 的个人档案和 jasonzhu.ai 一致。结果 0 个问题；同一套检查放在改之前的文件上能查出 3 类问题。上线后的核对见待办。
+- **jasonzhu.ai：** 第 5 条先在部署前的线上跑，报出 /en/about 的「GoSailGlobal」；部署后线上 21 页全部通过，Person 的 alternateName 是「祝彦森、Yansen Zhu、zhuyansen、JasonZhu.AI」。`npx tsc --noEmit` 通过。
+
+### 效果看哪、哪天看
+
+- **关系边：** jasonzhu.ai 的 `check-entities.yml` 每天跑，第 5 条防止公司名回到人的别名里；ASH 审计第 1 项每天跑。
+- **OpenAlex：** ASH 日报「学术索引」每周一看，两个数据集回到你名下才算修好。
+- **AI 回答：** 每周一面板的品牌题；ASH 引用面板下一次在 11-30。
 
 ---
 
