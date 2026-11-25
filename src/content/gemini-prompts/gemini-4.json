@@ -3,8 +3,8 @@
  "model": "Gemini 4",
  "released": "2026-10-14T00:00:00Z",
  "threshold": 5000,
- "updatedAt": "2026-11-24T11:30:46.410Z",
- "statsCheckedAt": "2026-11-24T11:25:04.779Z",
+ "updatedAt": "2026-11-25T01:25:51.759Z",
+ "statsCheckedAt": "2026-11-25T01:21:18.586Z",
  "inclusionRule": "Original post by the creator, media attached, >= 5000 views on that post, and the creator's own text says Gemini 4 (Argon, Carbon, Hydrogen, Krypton, Pro...) built it in code; same-prompt comparisons against other models included. Seeded on 2026-11-16 from the Claude 5.5 library. Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -1911,6 +1911,62 @@
    }
   },
   {
+   "id": "2124943461107576865",
+   "url": "https://x.com/0xRhinoX/status/2124943461107576865",
+   "author": {
+    "handle": "0xRhinoX",
+    "name": "Rhino"
+   },
+   "postedAt": "2026-11-23T19:09:35.000Z",
+   "addedAt": "2026-11-25",
+   "lang": "en",
+   "kind": "comparison",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [
+    "claude"
+   ],
+   "category": "ui",
+   "title": {
+    "zh": "浏览器中重现的 Windows 7 桌面",
+    "en": "Windows 7 desktop recreation in the browser"
+   },
+   "summary": {
+    "zh": "对比了 Claude Fable 5.2 和 Gemini 4 Neon 构建 Windows 7 的表现；Fable 5.2 因版权问题拒绝，而 Gemini 4 Neon 成功构建。",
+    "en": "Comparison between Claude Fable 5.2 and Gemini 4 Neon for building Windows 7; Fable 5.2 refused due to copyright, while Gemini 4 Neon completed the task."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Claude Fable 5.2"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 111098,
+    "likes": 962,
+    "replies": 78,
+    "reposts": 59,
+    "bookmarks": 387,
+    "checkedAt": "2026-11-25T01:21:18.586Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2124884419433414656/vid/avc1/720x814/YGpB6CZ_rutk29dO.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2124884419433414656/img/i1QVKEpqJdp9LWfq.jpg",
+     "width": 1080,
+     "height": 1222,
+     "durationSec": 26
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2111861310619029557",
    "url": "https://x.com/RafaCrackYT/status/2111861310619029557",
    "author": {
@@ -3187,6 +3243,64 @@
    }
   },
   {
+   "id": "2124849481351069716",
+   "url": "https://x.com/_ryu15_/status/2124849481351069716",
+   "author": {
+    "handle": "_ryu15_",
+    "name": "Ryu"
+   },
+   "postedAt": "2026-11-23T12:56:08.000Z",
+   "addedAt": "2026-11-25",
+   "lang": "ja",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "scene3d",
+   "title": {
+    "zh": "精灵堆叠 3D 动画",
+    "en": "Sprite stacking 3D animation"
+   },
+   "summary": {
+    "zh": "作者使用 Gemini 4 Neon 通过精灵堆叠技术制作了带有动画的伪 3D 像素艺术。",
+    "en": "The creator used Gemini 4 Neon to create pseudo-3D pixel art with animation via sprite stacking."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 75908,
+    "likes": 1828,
+    "replies": 21,
+    "reposts": 106,
+    "bookmarks": 941,
+    "checkedAt": "2026-11-25T01:21:18.586Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2124849470248783872/vid/avc1/508x474/IKilvv7-VJCleuwn.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2124849470248783872/img/zPG-IRA8CKF1-BQK.jpg",
+     "width": 508,
+     "height": 474,
+     "durationSec": 3
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HXz7VcJakAEobkB.jpg",
+     "width": 806,
+     "height": 453
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2123184113561817370",
    "url": "https://x.com/chetaslua/status/2123184113561817370",
    "author": {
@@ -3410,6 +3524,61 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124872477985644633",
+   "url": "https://x.com/shridharathi/status/2124872477985644633",
+   "author": {
+    "handle": "shridharathi",
+    "name": "Shridhar"
+   },
+   "postedAt": "2026-11-23T14:27:31.000Z",
+   "addedAt": "2026-11-25",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "scene3d",
+   "title": {
+    "zh": "墨西哥城 Blender 重建",
+    "en": "Mexico City blender recreation"
+   },
+   "summary": {
+    "zh": "作者使用 Swarm 和 Gemini 4 Neon 在 Blender 中重建了墨西哥城。",
+    "en": "The creator used Swarm and Gemini 4 Neon to recreate Mexico City in Blender."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Swarm",
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 66479,
+    "likes": 1619,
+    "replies": 88,
+    "reposts": 62,
+    "bookmarks": 909,
+    "checkedAt": "2026-11-25T01:21:18.586Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2124872057657638912/vid/avc1/1246x720/3aHJ8n2ESENy8A6l.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2124872057657638912/img/u535oQTVQagrbkOJ.jpg",
+     "width": 3738,
+     "height": 2160,
+     "durationSec": 16
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -5535,6 +5704,63 @@
    }
   },
   {
+   "id": "2124897056280219998",
+   "url": "https://x.com/ZryMiller/status/2124897056280219998",
+   "author": {
+    "handle": "ZryMiller",
+    "name": "Zach"
+   },
+   "postedAt": "2026-11-23T16:05:11.000Z",
+   "addedAt": "2026-11-25",
+   "lang": "en",
+   "kind": "comparison",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [
+    "gpt"
+   ],
+   "category": "motion",
+   "title": {
+    "zh": "落叶穿行四季变化动画",
+    "en": "Leaf falling through each season"
+   },
+   "summary": {
+    "zh": "对比了 Astra 6.2 和 Gemini 4 Neon 制作落叶随季节变化的动画，结果显示 Gemini 4 Neon 耗时更长且成本更高。",
+    "en": "A comparison between Astra 6.2 and Gemini 4 Neon to animate a leaf falling through seasons, with Gemini 4 Neon taking longer and costing more."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Astra 6.2",
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 46474,
+    "likes": 354,
+    "replies": 56,
+    "reposts": 6,
+    "bookmarks": 95,
+    "checkedAt": "2026-11-25T01:21:18.586Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2124896907252379648/vid/avc1/720x900/5wo3CkSnjil2YyXn.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2124896907252379648/img/xkrM-OsVYQWFTui3.jpg",
+     "width": 1080,
+     "height": 1350,
+     "durationSec": 20
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2124036193776263671",
    "url": "https://x.com/ogabezim/status/2124036193776263671",
    "author": {
@@ -5795,6 +6021,58 @@
      "width": 1920,
      "height": 1080,
      "durationSec": 30
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124846677547004099",
+   "url": "https://x.com/369Serena/status/2124846677547004099",
+   "author": {
+    "handle": "369Serena",
+    "name": "Serena 木瓜"
+   },
+   "postedAt": "2026-11-23T12:45:00.000Z",
+   "addedAt": "2026-11-25",
+   "lang": "zh",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "motion",
+   "title": {
+    "zh": "流畅短视频动画效果",
+    "en": "Smooth short motion video"
+   },
+   "summary": {
+    "zh": "作者使用 Gemini 4 Neon 制作了一段短视频，方法是向模型提供参考视频以拆解其技术手法，再指定想要的方向生成新视频。",
+    "en": "Created a short video using Gemini 4 Neon by feeding a reference video to the model to break down its techniques and generate a version in a chosen direction."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 43543,
+    "likes": 156,
+    "replies": 28,
+    "reposts": 12,
+    "bookmarks": 96,
+    "checkedAt": "2026-11-25T01:21:18.586Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2124831106658942976/vid/avc1/1280x720/sTQa-d8y-Dg4PHb6.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2124831106658942976/img/lWmObXTtM6tJheFZ.jpg",
+     "width": 1280,
+     "height": 720,
+     "durationSec": 10
     }
    ],
    "evidence": {
@@ -6208,6 +6486,62 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125022994263392260",
+   "url": "https://x.com/alexanderchen/status/2125022994263392260",
+   "author": {
+    "handle": "alexanderchen",
+    "name": "Alexander Chen"
+   },
+   "postedAt": "2026-11-24T00:25:37.000Z",
+   "addedAt": "2026-11-25",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "sim",
+   "title": {
+    "zh": "交互式系统可视化",
+    "en": "Interactive systems visualization"
+   },
+   "summary": {
+    "zh": "作者结合 Gemini 4 Neon 和 antigravity 通过代码构建了交互式动态图形系统，实现了三维图表生成及背景视频处理。",
+    "en": "The creator used Gemini 4 Neon and antigravity to build interactive motion graphics systems via code, involving 3D diagrams and background footage processing."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "antigravity",
+    "Three.js",
+    "FFmpeg"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 39456,
+    "likes": 671,
+    "replies": 22,
+    "reposts": 59,
+    "bookmarks": 353,
+    "checkedAt": "2026-11-25T01:21:18.586Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2125022556822417408/vid/avc1/960x720/TSrn-cFI6RLJ2uQu.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2125022556822417408/img/glMFg98PEI-b6qzw.jpg",
+     "width": 960,
+     "height": 720,
+     "durationSec": 49
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -6781,6 +7115,74 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124884267436228885",
+   "url": "https://x.com/mhgd3250905/status/2124884267436228885",
+   "author": {
+    "handle": "mhgd3250905",
+    "name": "uuugk（无 CD， 关必回）"
+   },
+   "postedAt": "2026-11-23T15:14:22.000Z",
+   "addedAt": "2026-11-25",
+   "lang": "zh",
+   "kind": "comparison",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "scene3d",
+   "title": {
+    "zh": "日漫风格路边篮球场箱庭场景",
+    "en": "Anime roadside basketball court diorama"
+   },
+   "summary": {
+    "zh": "对比了 Gemini 4 Neon 和 GLM-5.4 生成日漫风三维篮球场场景的能力，Gemini 4 Neon 的生成速度远快于后者。",
+    "en": "A comparison between Gemini 4 Neon and GLM-5.4 in generating a 3D anime-style basketball court scene, where Gemini 4 Neon performed significantly faster."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/mhgd3250905/status/2124887736436117949",
+    "text": "我希望你使用Three JS 3D 帮我创建一个箱庭式的场景，这个场景是 一个夜间，日漫里经常出现的路边篮球场（铁网围起来），比较黑，有路灯照亮，篮球场比较斑驳破旧，空荡荡的篮球场上有一个篮球在地上 篮球场一角有一颗樱花树，鼠标拨动会落花，整个场景建模风格渲染要是三渲二的日漫风格 请你开始工作吧 ！"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "GLM-5.4",
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 36844,
+    "likes": 169,
+    "replies": 31,
+    "reposts": 6,
+    "bookmarks": 77,
+    "checkedAt": "2026-11-25T01:21:18.586Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2124883764388265986/vid/avc1/724x720/9I46yq0ff4iFqrTN.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2124883764388265986/img/vEuU88Ml4PKicdal.jpg",
+     "width": 1274,
+     "height": 1266,
+     "durationSec": 32
+    },
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2124884008781938688/vid/avc1/732x720/ZQjPdFKr0Yg7sqzm.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2124884008781938688/img/NW6yDhsWlUy0905K.jpg",
+     "width": 1274,
+     "height": 1252,
+     "durationSec": 21
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -8677,6 +9079,58 @@
    }
   },
   {
+   "id": "2124917188742242616",
+   "url": "https://x.com/notjazii/status/2124917188742242616",
+   "author": {
+    "handle": "notjazii",
+    "name": "J A Z I I"
+   },
+   "postedAt": "2026-11-23T17:25:11.000Z",
+   "addedAt": "2026-11-25",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "motion",
+   "title": {
+    "zh": "五条悟领域展开素描风格动画",
+    "en": "Animated Gojo domain expansion sketch"
+   },
+   "summary": {
+    "zh": "作者使用 Gemini 4 Neon 并配合参考资料，制作了五条悟领域展开的素描风格动画。",
+    "en": "The creator used Gemini 4 Neon with reference materials to animate Gojo's domain expansion in a sketch style."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 26570,
+    "likes": 651,
+    "replies": 80,
+    "reposts": 29,
+    "bookmarks": 245,
+    "checkedAt": "2026-11-25T01:21:18.586Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2124914348355416064/vid/avc1/1462x720/amEMOuWNiM9ETBpX.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2124914348355416064/img/KNkpid3vP3ocPS95.jpg",
+     "width": 1902,
+     "height": 936,
+     "durationSec": 9
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2110449758439723292",
    "url": "https://x.com/higgsfield_ai/status/2110449758439723292",
    "author": {
@@ -9956,6 +10410,60 @@
      "width": 3840,
      "height": 1928,
      "durationSec": 8
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125001629850345678",
+   "url": "https://x.com/kevin_t_ngo/status/2125001629850345678",
+   "author": {
+    "handle": "kevin_t_ngo",
+    "name": "Kevin Ngo"
+   },
+   "postedAt": "2026-11-23T23:00:43.000Z",
+   "addedAt": "2026-11-25",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "game",
+   "title": {
+    "zh": "单个 HTML 文件的着色器渲染网页游戏",
+    "en": "Shader-rendered browser game in one HTML file"
+   },
+   "summary": {
+    "zh": "用户使用 Gemini 4 Neon 构建了一个 100KB 的着色器渲染 HTML 游戏，该项目基于另一位用户提供的提示词完成。",
+    "en": "The user built a shader-rendered game in a 100KB HTML file using Gemini 4 Neon, following a prompt provided by another user."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 20867,
+    "likes": 542,
+    "replies": 37,
+    "reposts": 38,
+    "bookmarks": 494,
+    "checkedAt": "2026-11-25T01:21:18.586Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2125000303015854081/vid/avc1/512x360/8bR0OT1j38hnuIBz.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2125000303015854081/img/WQHNiPC7xl1m9yXb.jpg",
+     "width": 1064,
+     "height": 746,
+     "durationSec": 20
     }
    ],
    "evidence": {
@@ -13870,6 +14378,74 @@
    }
   },
   {
+   "id": "2124923926522614078",
+   "url": "https://x.com/RezAIT00/status/2124923926522614078",
+   "author": {
+    "handle": "RezAIT00",
+    "name": "Rez"
+   },
+   "postedAt": "2026-11-23T17:51:57.000Z",
+   "addedAt": "2026-11-25",
+   "lang": "en",
+   "kind": "comparison",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [
+    "gpt"
+   ],
+   "category": "scene3d",
+   "title": {
+    "zh": "可拆解爆炸的写实机械计时腕表",
+    "en": "Exploding photoreal mechanical chronograph"
+   },
+   "summary": {
+    "zh": "对比了 Gemini 4 Neon 和 GPT-6.2 Sol 在构建复杂 3D 机械手表仿真项目时的表现与成本，作者表示更倾向于使用 Neon。",
+    "en": "A performance and cost comparison between Gemini 4 Neon and GPT-6.2 Sol building a complex 3D mechanical watch simulation, with the creator expressing a preference for Neon."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/RezAIT00/status/2124960863060685026",
+    "text": "# Task: a mind-blowing, photoreal 3D luxury mechanical chronograph that explodes into every one of its parts and reassembles, in one HTML file, plus a cinematic MP4\n\nThis is a public showcase that will be posted on X, side by side with another AI model given this exact prompt. People will judge it in the first two seconds, so it must look like a real watch photographed by a high-end watch photographer with a macro lens, not a toy built from cylinders. Make it as ultra-realistic and as insanely detailed as you possibly can: real micro-mechanics, real finishing, real light on real metal. Do not disappoint.\n\n## Your folder\nWork ONLY inside: `{{FOLDER}}` (create it if missing). Don't read, write or delete anything outside it, apart from tool installs and caches. If you need a local HTTP server, use a random high port (e.g. 4xxxx), never 3000/5173/8000/8080.\n\n## Deliverables (all in your folder)\n1. `chronograph.html`: ONE self-contained HTML file.\n- The only external dependency allowed is Three.js (core plus `examples/jsm` addons) loaded from an exact pinned version on jsdelivr or unpkg via an import map. Nothing else external: no downloaded 3D models (GLB/OBJ/FBX), no image textures, no HDRI files, no font files. Text on the dial may be drawn with canvas 2D using fonts already installed in the browser/OS, or built as geometry. Every mesh, material, procedural texture (sunray and guilloché dial finishes, perlage, Côtes de Genève stripes, brushing, engraving, leather grain, printed dial scales) and the environment lighting must be generated in code inside that file.\n- Opened in a browser it is an interactive watch studio:\n- orbit and zoom, all the way down to extreme macro (a few millimetres from the parts);\n- an Explode slider from fully assembled to fully exploded, plus buttons for Assembled, Exploded, Movement (turns the watch over to look through the sapphire caseback) and Cinematic (autoplays the film);\n- the hands show the real current local time and the movement runs live;\n- a working chronograph: clicking the 2 o'clock pusher starts and stops it, clicking the 4 o'clock pusher resets it, and the mechanism visibly responds (the column wheel indexes, the clutch engages, the hammers drop onto the heart cams and the hands fly back to zero);\n- hovering or clicking any part highlights it and shows its name (e.g. \"Escape wheel, 15 teeth\");\n- smooth: 50+ fps at 1080p on an RTX-class GPU (use instancing or merged geometry where it helps).\n- It also has a deterministic render mode for video capture, e.g. `chronograph.html?render=1` exposing `window.renderFrame(timeSeconds)` that poses everything for that time and renders exactly one frame, with no dependence on wall-clock time (re-rendering a frame gives the identical image).\n2. `chronograph.mp4`: the cinematic film, rendered from that same HTML file.\n- 1080x1080 (square), 60 fps, exactly 30.0 seconds (1800 frames), H.264 High profile, yuv420p, CRF 18 or lower, `-movflags +faststart`, no audio.\n- No on-screen text, captions, watermarks or UI in the video. The watch is the whole show.\n- The storyboard is in \"The film\" below.\n3. `stills/`: 6-8 PNG frames from the film at 1080x1080 (assembled hero, dial macro, the full exploded view, a movement macro, the balance and escapement close-up, the reassembled final shot).\n4. `NOTES.md`: short: what you built, key techniques, the number of distinct parts and total meshes, the exact render command, and your start time, finish time and total build time.\n\n## The watch (model it to scale: 1 unit = 1 mm)\nA 42 mm luxury automatic column-wheel chronograph in the tradition of haute horlogerie. Invent a fictional maker's name for the dial and caseback; no real brand names or logos.\n\nCase and exterior:\n- Case 42 mm across, about 14 mm thick, about 50 mm lug to lug, 20 mm between the lugs. Built from lathe and loft profiles with real chamfers: mirror-polished bevels alternating with finely brushed flats, and every edge carrying a small bevel that catches a highlight. Polished bezel with an engraved tachymeter scale, a screw-down crown with a knurled grip and an engraved emblem, two chronograph pushers, spring bars, gaskets.\n- Domed sapphire crystal with real transmission and refraction (IOR about 1.77), real thickness, distortion at the edge, a faint blue-violet anti-reflective sheen, and reflections of the studio.\n- A sapphire exhibition caseback held by screws, with an engraved text ring.\n- An alligator leather strap: procedural scale pattern with grain, contrast stitching, padded edges, and a polished pin buckle.\n\nDial (layered, with real depth):\n- Sunray-brushed or guilloché main dial whose anisotropic reflection turns as the light moves; applied, faceted, polished hour markers with lume plots; a printed minute track and tachymeter; three recessed sub-dials with a concentric snailed finish (30-minute counter, 12-hour counter, running seconds); a date window showing a real date disc under the dial; the printed maker's name.\n- Hands: faceted dauphine or leaf hour and minute hands with lume inlay, a slim central chronograph seconds hand with a counterweight, sub-dial hands, polished hand caps. The hands sit at realistic heights above the dial and cast soft shadows onto it.\n\nMovement (the star of the exploded view; every part a real, separately modelled 3D object):\n- About 30 mm across: a main plate with perlage, bridges with Côtes de Genève stripes and polished anglage (chamfered edges), gold-filled engravings.\n- Mainspring barrel with a toothed rim, ratchet wheel and click; the going train (centre, third, fourth and escape wheels) with actually cut teeth, crossed-out spokes, pinions and arbors; a 15-tooth club-tooth escape wheel; a pallet fork with two ruby pallet stones; a balance wheel with timing screws, and a hairspring that is a real Archimedean spiral of at least 12 coils that breathes as the balance swings.\n- Chronograph works: a castellated column wheel, the coupling clutch, the chronograph runner, the minute counter wheel, heart cams and reset hammers, and the operating levers.\n- Keyless works (winding stem, crown wheel, ratchet wheel, setting lever, yoke), motion works under the dial (cannon pinion, minute wheel, hour wheel), and the date disc with its jumper.\n- A skeletonised gold automatic rotor with engraving and a ball-bearing centre.\n- 30+ ruby jewels in gold chatons (deep red, translucent) and heat-blued steel screws with slotted heads (thin-film iridescent blue).\n- At least 150 distinct parts in total (every screw counts), each a separately named object.\n\n## Mechanical truth (this will be judged closely)\n- Tooth counts and gear ratios are self-consistent: the fourth wheel (running seconds) turns once per 60 s, the centre wheel once per hour, the hour wheel once per 12 h. The balance beats at 4 Hz (28,800 vph), so the seconds hands advance in 1/8 s steps. Meshing pairs turn in opposite directions at speeds set by their tooth ratios, phase-aligned so the teeth visibly interlock without passing through each other.\n- The escapement visibly works: the balance swings about 270°, the pallet fork flicks between its banking positions, and the escape wheel advances one step per beat.\n- The movement keeps running in the exploded view. Parts separate mostly along the watch's axis and stay aligned, like an exploded engineering drawing, so the train still reads as connected.\n- Screws unscrew (anticlockwise) as they lift off and screw back in (clockwise) on reassembly.\n\n## Realism (this is where the \"wow\" comes from)\n- PBR throughout with MeshPhysicalMaterial: polished and brushed steel (use anisotropy for the brushing and the sunray dial), rhodium-plated bridges, gold, heat-blued screws (iridescence), rubies and sapphire (transmission, IOR, attenuation colour), a lacquered dial (clearcoat), lume, leather. Procedural normal and roughness maps for every finish, at a resolution that survives macro shots.\n- Lighting: a dark, moody luxury studio. A procedural environment (PMREM from a custom scene of large softboxes, strip lights and a dark backdrop; the long strip reflections gliding over polished bevels and the sapphire are what make watches look real), a key light with soft shadows, rim lights to separate the silhouette, contact shadows and ambient occlusion, and a surface for the watch to rest on (dark stone, slate or leather).\n- Post-processing: physically based tone mapping (AgX/ACES/Neutral), bloom only on true specular glints, GTAO/SSAO, high-quality anti-aliasing (no jaggies and no shimmering on fine teeth and stripes), macro depth of field with real bokeh and focus pulls, subtle chromatic aberration towards the edges, a vignette and fine grain. Grade it like a flagship watch commercial.\n- Render the video frames supersampled (e.g. 2x internal resolution) and downscale for crisp edges.\n\n## The film (30 s)\n- 0-6 s: Darkness. A strip light sweeps across the polished case and reveals the watch at a low three-quarter hero angle, hands at 10:10, the running-seconds sub-dial ticking. A macro push-in with a rack focus from the edge of the crystal onto the applied markers.\n- 6-9 s: A low, grazing macro past the bezel, crown and pushers. The 2 o'clock pusher clicks and the central chronograph hand starts to sweep.\n- 9-16 s: The explosion. The crystal lifts, the bezel rises, the hands and dial float up, then the movement opens layer by layer (bridges, wheels, jewels, screws spinning out) while the strap and caseback drift away the other way. The camera pulls back to reveal the whole exploded constellation, slowly rotating, everything still running.\n- 16-23 s: A fly-through down the floating layers: past the swinging balance and breathing hairspring, the ticking pallet fork, the turning train, rubies glowing in the backlight, ending on the rotor's engraving.\n- 23-30 s: Reassembly in reverse with precise easing, screws spinning home, a final settle. End on the hero angle at 10:10 with a last glint across the crystal.\n- Slow, confident macro camera work, smooth easing, no jerks, no camera clipping through parts unless it is a deliberate pass between floating layers.\n\n## Rendering the MP4\n- Find what this machine has (OS, GPU, Node, Python, ffmpeg/ffprobe, an installed Chromium browser such as Chrome or Edge). If Playwright/Puppeteer aren't installed, install `playwright-core` or `puppeteer-core` locally in your folder and drive the installed browser.\n- Make sure WebGL runs on the real GPU (check that `WEBGL_debug_renderer_info` reports NVIDIA, not SwiftShader), e.g. with flags `--use-angle=d3d11 --enable-gpu --ignore-gpu-blocklist`, or run headed.\n- Capture deterministically, frame by frame, through your render mode and pipe the frames into ffmpeg. Do not screen-record in real time.\n- Verify with ffprobe: 1080x1080, 60 fps, 1800 frames, 30.00 s.\n\n## Quality bar: check your own work\nLook at your renders (open the PNGs with your image-reading tool) again and again while you build, and critique them harshly, as a master watchmaker and a VFX supervisor would: would a watch collector believe this is a photograph? Are the proportions and thicknesses right? Any faceting on curved surfaces, teeth that don't mesh or that pass through each other, z-fighting, holes, black artifacts, aliasing, flat or plastic-looking metal, blown-out highlights, or empty, under-detailed areas of the movement? Fix it and re-render. Before calling it done, extract and review frames from the finished MP4 (start, every ~3 s, end) at full size. Take the time you need; quality is the only thing that counts.\n\n## Final reply\nWhen done, reply with the absolute paths to `chronograph.html` and `chronograph.mp4`, the ffprobe stats (resolution, fps, frame count, duration, file size), the number of distinct parts, your total build time, and a 3-5 line summary of the film."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "GPT-6.2 Sol",
+    "Three.js",
+    "Node",
+    "Python",
+    "ffmpeg",
+    "ffprobe",
+    "Chromium",
+    "Playwright"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 10081,
+    "likes": 129,
+    "replies": 31,
+    "reposts": 7,
+    "bookmarks": 24,
+    "checkedAt": "2026-11-25T01:21:18.586Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2124923335993606144/vid/avc1/1440x720/FbbU25XYBcQ5aCix.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2124923335993606144/img/gGHHCMFxpN2vAhmI.jpg",
+     "width": 1920,
+     "height": 960,
+     "durationSec": 30
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2124147232635035902",
    "url": "https://x.com/DavidOndrej1/status/2124147232635035902",
    "author": {
@@ -15216,6 +15792,60 @@
      "width": 1920,
      "height": 1080,
      "durationSec": 48
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124922352698073593",
+   "url": "https://x.com/chetaslua/status/2124922352698073593",
+   "author": {
+    "handle": "chetaslua",
+    "name": "Chetaslua"
+   },
+   "postedAt": "2026-11-23T17:45:42.000Z",
+   "addedAt": "2026-11-25",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "motion",
+   "title": {
+    "zh": "英伟达 CEO 新闻一周回顾梗动画",
+    "en": "Week-in-review meme animation on Nvidia CEO news"
+   },
+   "summary": {
+    "zh": "创作者利用 Gemini 4 Neon 制作了一个网页，总结了本周新闻，包括黄仁勋回归英伟达 CEO 的假设性事件，通过分析视频帧和新闻内容生成。",
+    "en": "The creator used Gemini 4 Neon to build an HTML page summarizing weekly events, including Jensen Huang's hypothetical return as Nvidia CEO, by processing video frames and news."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Swarm"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 7107,
+    "likes": 176,
+    "replies": 7,
+    "reposts": 7,
+    "bookmarks": 40,
+    "checkedAt": "2026-11-25T01:21:18.586Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2124922156161339392/vid/avc1/1354x720/S_DDTfF9R4XjjdGi.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2124922156161339392/img/QjALP_zEeY8TOAaE.jpg",
+     "width": 3024,
+     "height": 1606,
+     "durationSec": 26
     }
    ],
    "evidence": {

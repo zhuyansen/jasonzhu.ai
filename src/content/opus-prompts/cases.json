@@ -1,8 +1,8 @@
 {
  "model": "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.5)",
  "threshold": 5000,
- "updatedAt": "2026-11-24T11:01:32.489Z",
- "statsCheckedAt": "2026-11-24T11:01:32.489Z",
+ "updatedAt": "2026-11-25T01:17:17.574Z",
+ "statsCheckedAt": "2026-11-25T01:17:17.574Z",
  "inclusionRule": "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -7195,6 +7195,57 @@
     "width": 1280,
     "height": 720,
     "durationSec": 36
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124918219341230407",
+   "url": "https://x.com/kinderlayer/status/2124918219341230407",
+   "author": {
+    "handle": "kinderlayer",
+    "name": "Kinder"
+   },
+   "postedAt": "2026-11-23T17:29:17.000Z",
+   "addedAt": "2026-11-25",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "AI自我对弈象棋对局",
+    "en": "Self-play chess match"
+   },
+   "summary": {
+    "zh": "作者使用 Claude Opus 5.5 和 Claude Fable 5.2 进行了两场 AI 国际象棋对弈，并由 Stockfish 对每一步进行评分。",
+    "en": "The creator used Claude Opus 5.5 and Claude Fable 5.2 to play a game of chess against each other, with every move scored by Stockfish."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Claude Fable 5.2",
+    "Stockfish"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 383718,
+    "likes": 368,
+    "replies": 50,
+    "reposts": 19,
+    "bookmarks": 424,
+    "checkedAt": "2026-11-25T01:17:17.574Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2124917717295673344/img/KVxDjI3w-uFquvZA.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2124917717295673344/vid/avc1/720x1280/ZGWd2r2qCwUEX1-g.mp4",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 93
    },
    "evidence": {
     "via": "daily",
@@ -44924,6 +44975,58 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125004311822324011",
+   "url": "https://x.com/0xmurasame/status/2125004311822324011",
+   "author": {
+    "handle": "0xmurasame",
+    "name": "Murasame"
+   },
+   "postedAt": "2026-11-23T23:11:23.000Z",
+   "addedAt": "2026-11-25",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "视频生成性能对比测试",
+    "en": "Video generation performance comparison"
+   },
+   "summary": {
+    "zh": "对比了 Fable 5.2 与 GPT-6 Astra 在生成电影级蒸汽火车场景时的性能与成本，并展示了包含多个模型的创作工作流。",
+    "en": "A performance and cost comparison between Fable 5.2 and GPT-6 Astra for generating a cinematic steam locomotive scene, including a multi-model workflow."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Fable 5.2",
+    "GPT-6 Astra",
+    "Kimi K3.1"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 62648,
+    "likes": 121,
+    "replies": 6,
+    "reposts": 9,
+    "bookmarks": 128,
+    "checkedAt": "2026-11-25T01:17:17.574Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125004119769219072/img/5n59IxaWVzNyYJbL.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125004119769219072/vid/avc1/720x720/5kNAg6jJWIiXuObF.mp4",
+    "width": 720,
+    "height": 720,
+    "durationSec": 15
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -99822,6 +99925,59 @@
    }
   },
   {
+   "id": "2124831684952523057",
+   "url": "https://x.com/Lummox_eth/status/2124831684952523057",
+   "author": {
+    "handle": "Lummox_eth",
+    "name": "Lummox"
+   },
+   "postedAt": "2026-11-23T11:45:25.000Z",
+   "addedAt": "2026-11-25",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "3D 章鱼灯塔场景生成对比",
+    "en": "3D octopus and lighthouse scene comparison"
+   },
+   "summary": {
+    "zh": "对比了四种使用 Blender 和 MCP 构建包含灯塔和巨型章鱼的 3D 场景的 AI 工作流，并评估了各方案的成本与时间效率。",
+    "en": "A comparison of four AI workflows using Blender and MCP to generate a 3D scene featuring a lighthouse and a giant octopus, evaluating cost and time efficiency."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "GPT-6.2 Astra",
+    "Fable 5.2",
+    "Blender",
+    "MCP"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 19055,
+    "likes": 112,
+    "replies": 27,
+    "reposts": 11,
+    "bookmarks": 82,
+    "checkedAt": "2026-11-25T01:17:17.574Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2124831619206799360/img/Lp48SD_wpoiVy83E.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2124831619206799360/vid/avc1/720x720/WLirtp4vLAt3GgZz.mp4",
+    "width": 720,
+    "height": 720,
+    "durationSec": 10
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2109609404450607352",
    "url": "https://x.com/0xZergs/status/2109609404450607352",
    "author": {
@@ -107759,6 +107915,59 @@
    }
   },
   {
+   "id": "2124959671714812281",
+   "url": "https://x.com/DanielZambrini/status/2124959671714812281",
+   "author": {
+    "handle": "DanielZambrini",
+    "name": "Daniel Zambrini"
+   },
+   "postedAt": "2026-11-23T20:14:00.000Z",
+   "addedAt": "2026-11-25",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "Opus 5.5 与 Fable 5.2 照片级动画对比测试",
+    "en": "Opus 5.5 vs Fable 5.2 photorealistic animation test"
+   },
+   "summary": {
+    "zh": "作者使用 Claude Opus 5.5 的 MAX 级别推理能力，沿用此前 Fable 5.2 的同一提示词，完全通过代码生成了写实风格的蜂鸟视角动画，未使用任何预生成素材。",
+    "en": "A photorealistic hummingbird POV animation generated entirely through code with Claude Opus 5.5 at MAX effort level, using the same prompt as an earlier Fable 5.2 animation without pre-generated assets."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Blender",
+    "Python",
+    "NumPy",
+    "FFmpeg"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 16342,
+    "likes": 180,
+    "replies": 19,
+    "reposts": 13,
+    "bookmarks": 125,
+    "checkedAt": "2026-11-25T01:17:17.574Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2124942803369136128/img/2TL-OF5NoepNkf0U.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2124942803369136128/vid/avc1/720x900/1WSw4zWs4BGWpoeD.mp4",
+    "width": 720,
+    "height": 900,
+    "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2111453039228043604",
    "url": "https://x.com/kyubuns/status/2111453039228043604",
    "author": {
@@ -114631,6 +114840,54 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125020059764666709",
+   "url": "https://x.com/reneedusigns/status/2125020059764666709",
+   "author": {
+    "handle": "reneedusigns",
+    "name": "Renee Du"
+   },
+   "postedAt": "2026-11-24T00:13:57.000Z",
+   "addedAt": "2026-11-25",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "用旧涂鸦制作的互动素描本",
+    "en": "Interactive sketchbook from old doodles"
+   },
+   "summary": {
+    "zh": "作者使用 Claude Opus 5.5 将自己的旧涂鸦转化并制作成了一个交互式素描本。",
+    "en": "An interactive sketchbook created with Claude Opus 5.5 by transforming the creator's old doodles."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 14161,
+    "likes": 383,
+    "replies": 18,
+    "reposts": 12,
+    "bookmarks": 297,
+    "checkedAt": "2026-11-25T01:17:17.574Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125019514085756928/img/FhJmr2YdLVyeUq5L.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125019514085756928/vid/avc1/1258x720/kqeKlQkSEAvH2-kB.mp4?tag=14",
+    "width": 1258,
+    "height": 720,
+    "durationSec": 49
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -133991,6 +134248,57 @@
    }
   },
   {
+   "id": "2124902808591704448",
+   "url": "https://x.com/maxt3chno/status/2124902808591704448",
+   "author": {
+    "handle": "maxt3chno",
+    "name": "Max"
+   },
+   "postedAt": "2026-11-23T16:28:03.000Z",
+   "addedAt": "2026-11-25",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "网页端 3D 僵尸动画",
+    "en": "Browser-based 3D zombie animation"
+   },
+   "summary": {
+    "zh": "作者在浏览器中将 Tripo 僵尸 3D 模型导入开源工具 ActionForge，让 Claude Opus 5.5 完成绑定并根据文字描述迭代生成动作，在 17 分钟内做出了自定义 3D 动画。",
+    "en": "A custom 3D zombie animation created in the browser in 17 minutes by uploading a Tripo mesh to ActionForge and having Claude Opus 5.5 rig it and generate motion from text descriptions."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "ActionForge",
+    "Tripo"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 9740,
+    "likes": 197,
+    "replies": 9,
+    "reposts": 14,
+    "bookmarks": 280,
+    "checkedAt": "2026-11-25T01:17:17.574Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2124902479838031872/img/cdVp5Sqjdus2thIt.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2124902479838031872/vid/avc1/1048x720/cxANv38pHUIa0L5E.mp4",
+    "width": 1048,
+    "height": 720,
+    "durationSec": 35
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2106155815707021549",
    "url": "https://x.com/devteamdrew/status/2106155815707021549",
    "author": {
@@ -141689,6 +141997,61 @@
     "width": 1280,
     "height": 720,
     "durationSec": 84
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2124912566266925411",
+   "url": "https://x.com/aburacadabra_/status/2124912566266925411",
+   "author": {
+    "handle": "aburacadabra_",
+    "name": "세일러아이리스"
+   },
+   "postedAt": "2026-11-23T17:06:49.000Z",
+   "addedAt": "2026-11-25",
+   "lang": "ko",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "motion",
+   "title": {
+    "zh": "银喉长尾山雀动画与代码合成音效",
+    "en": "Long-tailed tit animation with code-synthesized sound"
+   },
+   "summary": {
+    "zh": "作者向 Claude Code (Opus 5.5) 提供草图与参考动作视频，结合 Blender 与 Python 渲染 3D 画面、HyperFrames 与 GSAP 制作文字及界面动效，并用 NumPy 合成音效，完成了这段 20 秒视频。",
+    "en": "A 20-second video made with Claude Code (Opus 5.5) from a draft image and motion reference, using Blender and Python for 3D, HyperFrames and GSAP for UI, and NumPy for synthesized audio."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Claude Code",
+    "Blender",
+    "Python",
+    "HyperFrames",
+    "GSAP",
+    "NumPy"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 7912,
+    "likes": 139,
+    "replies": 11,
+    "reposts": 19,
+    "bookmarks": 150,
+    "checkedAt": "2026-11-25T01:17:17.574Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2124912361157099520/img/1cwoORWoIk_7aDxQ.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2124912361157099520/vid/avc1/1280x720/0H_pIsLez1DrZMGi.mp4",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 20
    },
    "evidence": {
     "via": "daily",
