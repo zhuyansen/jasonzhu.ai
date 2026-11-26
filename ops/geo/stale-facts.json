@@ -1,0 +1,565 @@
+{
+ "_about": "AI 回答里说错、过时、认错的事。panel_run.py 用 pattern（正则，不分大小写）在回答正文里找，先去掉链接网址（Gemini 的引用链接里带着本站原句，那不是 AI 自己说的）。near：命中处前后 window 个字符（默认 80）里要有其中一个词；unless：这个范围里有其中一个词就不算（多半是在澄清）；unless_answer：整段回答里有其中一个词就不算（两种意思都讲了，不算认错）；target：只看对应页面网址里含这一段的题。kind：wrong 说错（数字或说法不对），stale 过时（旧数字当成现在的），confusion 认错（混成别的人、别的网站、别的东西）。correct 是对的说法，进摘要；note 记出处和怎么判；since 是从哪天起算错（数据集、文章更正的日期；认错的是第一次记下的日期）。examples 是自测用的句子（自己写的，不是 AI 的回答原文）：hit 每句都要命中，miss 每句都不能命中。改了这个文件，运行配置里的 stale_facts 哈希就变，「AI 说错的事」一段和上次不能直接比。",
+ "facts": [
+  {
+    "id": "pay-polar-2400",
+    "kind": "wrong",
+    "pattern": "(?<![\\d$.,~])~?(?:2,400|2400|2\\.4\\s?[Kk])\\+?(?![\\d%]|,\\d)",
+    "near": ["Polar"],
+    "unless": ["this week", "per week", "a week", "每周", "本周"],
+    "window": 100,
+    "correct": "按报告原文：Polar 2026 年（截至 10 月 15 日）新增 1,364 个卖家，2025 年 305 个、2024 年 55 个，2025 年以来合计 1,664 个。2,400 是 Zenodo 01 号第 1 版表里的错数（第 1 版还把 2025 年写成 1,100）。",
+    "note": "出处：Zenodo 01 号第 1 版（2026-11-20）的表，和 11-21 发给 Polar 的信（「2,400+ new sellers」），11-22 已去信更正。见 ops/geo/tier1-data-outreach-pack.md 第九节、ops/geo/zenodo/01-indie-payments-200k-2026/README.md。只认 2,400：1,100 太常见（周报里每周 1,100 到 6,500 条），不认；周报语境里的数也不算。",
+    "since": "2026-11-21",
+    "examples": {
+     "hit": [
+      "Polar stood out sharply: 58% of new Polar sellers ship software and 27% ship AI products (vs. 7% on Stripe), with 2,400+ new sellers tracked in 2026 through mid-October.",
+      "| Polar | 2,400 | 58% | 27% |",
+      "Polar: about 2.4K new sellers in 2026."
+     ],
+     "miss": [
+      "Polar had 1,364 new sellers in 2026 up to October 15.",
+      "Polar: 1,664 new sellers since 2025, 58% selling software.",
+      "A course bundle costs 2,400 yuan.",
+      "Polar's startup program offers up to $2,400 in credits.",
+      "Stripe added 2,400 links this week; Polar added 155."
+     ]
+    }
+  },
+  {
+    "id": "pay-v1-platform-counts",
+    "kind": "wrong",
+    "pattern": "Dodo(?:\\s+Payments)?[^.\\n]{0,40}?(?<![\\d$.,~])~?980(?![\\d%]|,\\d)|Creem[^.\\n]{0,40}?(?<![\\d$.,~])~?620(?![\\d%]|,\\d)|Paddle[^.\\n]{0,40}?(?<![\\d$.,~])~?590(?![\\d%]|,\\d)|Lemon(?:\\s+Squeezy)?[^.\\n]{0,60}?(?<![\\d$.,~])~?4,?900(?![\\d%]|,\\d)|Gumroad[^.\\n]{0,40}?(?<![\\d$.,~])~?14,?500(?![\\d%]|,\\d)",
+    "correct": "按报告原文，2025 年以来的新卖家：Stripe 102,590、Gumroad 28,860、Lemon Squeezy 4,637、Polar 1,664、Dodo Payments 441、Creem 249、Paddle 84（只算经典收款链接）。980、620、590、4,900、14,500 都是 Zenodo 01 号第 1 版表里的错数。",
+    "note": "第 1 版的表不是报告里的数（ops/geo/zenodo/01-indie-payments-200k-2026/README.md「What changed」），dev.to 旧稿也用过它，11-22 已改。数字要紧挨着平台名（40 个字符内、同一句或表格同一行）才算。",
+    "since": "2026-11-21",
+    "examples": {
+     "hit": [
+      "| Dodo Payments | 980 | 71% | 29% |",
+      "Creem: 620 new sellers in 2026.",
+      "Paddle saw 590 new sellers this year.",
+      "Lemon Squeezy: about 4,900 new sellers in 2026."
+     ],
+     "miss": [
+      "Dodo Payments: 441 new sellers since 2025.",
+      "Creem charged us $620 in fees last quarter.",
+      "Creem had 249 new sellers since 2025.",
+      "Gumroad: 28,860 new sellers since 2025."
+     ]
+    }
+  },
+  {
+    "id": "pay-waffo-in-link-study",
+    "kind": "wrong",
+    "pattern": "Waffo(?:\\s+Pancake)?[^.\\n]{0,40}?(?:(?<![\\d$.,~])~?180(?![\\d%+]|,\\d)(?!\\s*(?:countries|markets|currencies))|\\b(?:68|26)(?:\\.0)?\\s?%)",
+    "near": ["seller", "software", "AI product", "checkout link", "200,000", "200k"],
+    "unless": ["week", "周"],
+    "correct": "Waffo Pancake 太新，链接图里没有它：20 万条收款链接的统计里没有 Waffo 的卖家数和占比。Waffo 只出现在 $20 费用对比里。",
+    "note": "Zenodo 01 号第 1 版有一行 Waffo（0 / 50 / 180 个新卖家，68% 卖软件、26% 卖 AI），源头没有这些数，第 2 版已删。新卖家周报从第 3 期起每周看 Waffo，周报里的数不算。",
+    "since": "2026-11-21",
+    "examples": {
+     "hit": [
+      "| Waffo Pancake | 180 new sellers | 68% | 26% |",
+      "Waffo (26% AI sellers / 68% software sellers) is close behind Dodo."
+     ],
+     "miss": [
+      "Waffo supports 180 countries and Alipay payouts.",
+      "Waffo takes $1.28 on a $20 subscription before its payout fee."
+     ]
+    }
+  },
+  {
+    "id": "pay-8-platforms",
+    "kind": "wrong",
+    "pattern": "\\b(?:across|on|over|covering|spanning|among)\\s+[*_]{0,2}(?:all\\s+)?(?:the\\s+)?(?:8|eight)\\s+(?:[\\w-]+\\s+){0,2}?(?:platforms|gateways|providers|processors|MoRs)\\b|\\b(?:8|eight)\\s+(?:[\\w-]+\\s+){0,2}?(?:platforms|gateways|providers|processors|MoRs)\\s+(?:tracked|covered|studied|analy[sz]ed)\\b",
+    "near": ["200,000", "200k", "198,000"],
+    "unless": ["Platforms Compared", "each week", "every week", "this week"],
+    "window": 200,
+    "correct": "20 万条收款链接的统计只有 7 家：Stripe、Gumroad、Lemon Squeezy、Polar、Creem、Dodo Payments、Paddle。Waffo 太新，链接图里没有它；8 是 $20 费用对比的行数。",
+    "note": "Zenodo 01 号第 1 版、11-21 的外联信和 dev.to 旧稿写过「8 platforms」，11-22 起站上改成 7 家。要写成这份数据覆盖 8 家、附近又有 20 万条才算：选平台文把 8 家放在一起比、新卖家周报从第 3 期起每周看 8 家（加了 Waffo），都不算。",
+    "since": "2026-11-21",
+    "examples": {
+     "hit": [
+      "The 200,000-link dataset compares sellers across 8 payment processors.",
+      "Jason Zhu's study of 200,000 checkout links across eight platforms.",
+      "In 200,000 checkout links, sellers are spread across **8 payment platforms**."
+     ],
+     "miss": [
+      "The study of 200,000 checkout links covers 7 platforms; the $20 fee comparison has 8 setups.",
+      "This post puts eight common platforms side by side, next to data from 200,000 checkout links.",
+      "Indie Seller Weekly counts 4,735 new checkout links across 8 payment platforms.",
+      "Beyond the 200,000-link study, every week Jason counts new checkout links across 8 payment platforms."
+     ]
+    }
+  },
+  {
+    "id": "pay-all-indie-devs",
+    "kind": "wrong",
+    "pattern": "\\b200(?:,000|[Kk])\\s+(?:\\*\\*)?indie\\s+(?:developers?|devs?|hackers?|makers?|founders?)\\b",
+    "correct": "20 万条收款链接的卖家不全是独立开发者：2026 年的新卖家里 38% 卖咨询、本地服务、活动门票这类，21% 卖课程、培训，14% 卖电子书、内容或社群。",
+    "note": "Zenodo 01 号第 1 版的标题叫「200,000 Indie Developer Checkout Links」，第 2 版改成按平台数新卖家。只说「200,000 indie checkout links」的不算。",
+    "since": "2026-11-21",
+    "examples": {
+     "hit": [
+      "The 200,000 Indie Developer Checkout Links dataset (2023–2026).",
+      "Data on 200K indie developers and their payment stacks."
+     ],
+     "miss": [
+      "I analyzed 200,000 indie checkout links on 198,000 websites.",
+      "200,000 checkout links from 2023 to 2026."
+     ]
+    }
+  },
+  {
+    "id": "pay-data-to-november",
+    "kind": "wrong",
+    "pattern": "(?:through|to|until|up\\s+to)\\s+November\\s+2026|2023\\s*[–-]\\s*November\\s+2026",
+    "near": ["200,000", "200k", "198,000", "checkout link"],
+    "window": 150,
+    "correct": "链接数据截至 2026 年 10 月 15 日（DataForSEO 的链接图，10 月 14、15 日查的），不到 11 月。",
+    "note": "Zenodo 01 号第 1 版写过数据到 2026 年 11 月。每周的新卖家周报是另一份数据，写到 11 月不算。",
+    "since": "2026-11-21",
+    "examples": {
+     "hit": [
+      "The 200,000 checkout links cover 2023 through November 2026."
+     ],
+     "miss": [
+      "The 200,000 checkout links cover 2023 to 15 October 2026.",
+      "Indie Seller Weekly tracks new sellers through November 2026."
+     ]
+    }
+  },
+  {
+    "id": "pay-software-quadrupled",
+    "kind": "wrong",
+    "pattern": "software[^.\\n]{0,60}?(?:quadrupl\\w*|four-?fold)|(?:quadrupl\\w*|four-?fold)[^.\\n]{0,40}?software",
+    "near": ["5%", "20%", "seller"],
+    "correct": "新卖家里卖软件的占比是 2023 年（全年）5%、2026 年 9 月（单月）20%，一个全年一个单月，不能说成翻了两番。",
+    "note": "报告英文版、Zenodo 01 号第 1 版和 dev.to 旧稿写过「quadrupled」，11-22 已改成按年份写。",
+    "since": "2026-11-22",
+    "examples": {
+     "hit": [
+      "The share of new sellers shipping software quadrupled from 5% to 20%."
+     ],
+     "miss": [
+      "The share of new sellers selling software went from 5% in 2023 to 20% in September 2026.",
+      "AI revenue quadrupled last year."
+     ]
+    }
+  },
+  {
+    "id": "pay-ai-prefer-mor",
+    "kind": "wrong",
+    "pattern": "(?:choos\\w*|prefer\\w*|pick\\w*|switch\\w*\\s+to|flock\\w*\\s+to|mov\\w*\\s+to)\\s+(?:the\\s+)?(?:merchants?\\s+of\\s+record|MoRs?)(?:\\s+platforms?)?\\s+(?:over|instead\\s+of|rather\\s+than)\\s+Stripe",
+    "near": ["200,000", "200k", "198,000", "checkout link", "jasonzhu", "Jason Zhu"],
+    "window": 150,
+    "correct": "各平台的占比是平台内部的构成，不是 AI 卖家的选择：Stripe 体量大得多，按绝对数 AI 卖家仍是 Stripe 上最多（7% × 102,590 ≈ 7,200，Dodo、Polar、Creem 三家所有新卖家加起来 2,354）。",
+    "note": "dev.to 旧标题「Why AI SaaS Builders Are Choosing MoRs Over Stripe」、收款论文 1.0 版的读法，11-22 已改。只泛泛说「很多人选 MoR 不选 Stripe」、旁边没提这份数据的不算。",
+    "since": "2026-11-22",
+    "examples": {
+     "hit": [
+      "Jason Zhu's study of 200,000 checkout links shows AI SaaS builders are choosing MoRs over Stripe."
+     ],
+     "miss": [
+      "Many founders choose a merchant of record over Stripe to offload sales tax.",
+      "In the 200,000 checkout links, Stripe still has more AI sellers in absolute numbers (about 7,200) than the newer MoRs."
+     ]
+    }
+  },
+  {
+    "id": "pay-17k-doorway",
+    "kind": "wrong",
+    "pattern": "(?:17,000|17[Kk])\\+?\\s+(?:[\\w-]+\\s+){0,4}?(?:recycled|injected|hijacked|abused|spam\\w*|doorway\\w*)\\b",
+    "correct": "17,000 个网站的收款链接同时出现在 5 个以上的站上，里面有到处被转发的爆款，也有卖外链的站群和被黑网站里注入的链接，不能全算成滥用；能举证的站群列在 /backlink-spam-list（581 个域名）。",
+    "note": "dev.to 旧稿第 4 节、Zenodo 04 号第 1 版把 17,000 全算成滥用（门户农场、回收或注入的链接），11-22 已改。",
+    "since": "2026-11-22",
+    "examples": {
+     "hit": [
+      "17,000+ websites sharing recycled or injected checkout links across doorway farms.",
+      "The study flagged 17,000 abused domains."
+     ],
+     "miss": [
+      "17,000 websites whose checkout link also appears on five or more other sites were left out.",
+      "The spam list has 581 doorway domains with public evidence."
+     ]
+    }
+  },
+  {
+    "id": "pay-made-up-operator-models",
+    "kind": "wrong",
+    "pattern": "AI\\s+wrapper\\s+studios?|niche\\s+micro-?SaaS\\s+portfolios?|SEO\\s*/\\s*directory\\s+funnels?|\\b276\\s+operators\\b",
+    "correct": "报告里多站经营的四种做法是：产品工厂、每种语言一个精确匹配域名（靠 AdSense）、每个行业一个域名、每个国家一个域名。276 是共用统计或广告账号的 276 组网站（覆盖 666 个站，大概率各是同一个人），不是 276 个经营者。",
+    "note": "dev.to 旧稿第 3 节编了四种模式（niche micro-SaaS portfolios、AI wrapper studios、SEO/directory funnels、developer toolkits），11-22 已换成报告原文。",
+    "since": "2026-11-22",
+    "examples": {
+     "hit": [
+      "276 operators running 666 monetized domains.",
+      "Four repeatable models: niche micro-SaaS portfolios, AI wrapper studios and SEO/directory funnels."
+     ],
+     "miss": [
+      "276 groups covering 666 sites share an analytics or ad account.",
+      "AI wrappers are a common business model."
+     ]
+    }
+  },
+  {
+    "id": "fee-waffo-lowest",
+    "kind": "wrong",
+    "pattern": "Waffo(?:\\s+Pancake)?\\W{0,6}\\(?\\s*(?:the\\s+)?(?:lowest|cheapest)|(?:lowest|cheapest)\\s+(?:standard\\s+|advertised\\s+)?(?:MoR\\s+)?(?:fees?|rate|cost|option|setup|price)\\W{0,12}(?:\\([^)]{0,40}\\)\\W{0,6})?Waffo|Waffo(?:\\s+Pancake)?\\s+(?:is|was|has|offers|charges|comes\\s+in\\s+at)\\s+(?:the\\s+)?(?:lowest|cheapest)|Waffo(?:\\s+Pancake)?(?:[^\\n|.]|\\.(?=\\d)){0,80}?\\s(?:—|–|-{1,2})\\s*(?:the\\s+)?(?:lowest|cheapest)",
+    "unless": ["not the lowest", "not the cheapest", "isn't the lowest", "isn't the cheapest", "no longer"],
+    "correct": "Waffo 的 $1.28 不含 1% 提现费（每次最少 $10），不能和含提现费的数直接排；同一笔 $20，Dodo 合作费率扣 $1.16–$1.18，比 Waffo 低。Zenodo 02 号第 2 版已经不排名次。",
+    "note": "11-21 给 Waffo 的信说它是「最低」，11-25 已回原线程更正（ops/geo/tier1-data-outreach-pack.md 第九节）。数字大多出自刘小排 2026-11-15 的公众号。",
+    "since": "2026-11-21",
+    "examples": {
+     "hit": [
+      "Cheapest MoR fee: Waffo, at $1.28 a month.",
+      "Pick **Waffo** (the lowest fee of any MoR here).",
+      "Waffo Pancake came out at $1.28 total cut ($18.72 net) — the lowest standard MoR fee in the benchmark.",
+      "Waffo Pancake has the lowest fee among the MoRs."
+     ],
+     "miss": [
+      "The partner rate on Dodo is cheapest; Waffo comes next.",
+      "Waffo takes $1.28 before its 1% payout fee.",
+      "Waffo is not the lowest once its payout fee is counted."
+     ]
+    }
+  },
+  {
+    "id": "fee-creem-137",
+    "kind": "wrong",
+    "pattern": "\\$1\\.37|\\$18\\.63",
+    "near": ["Creem"],
+    "unless": ["3.9%", "other MoR", "such as Creem", "e.g. Creem", "like Creem"],
+    "window": 60,
+    "correct": "$1.37 那一行在刘小排原文里是「其他标 3.9% 的 MoR 平台」，没点名 Creem。按 Creem 2026-10-15 公布的费率（3.9% + $0.40，提现 1% 或 7 美元取高）算出来也是 $1.37，所以错的是出处：不能说成对比里测的是 Creem。",
+    "note": "Zenodo 02 号第 1 版、11-21 给 Creem 的信把这行写成 Creem。命中的回答要人看一眼：按 Creem 自己的费率算出约 $1.37 的不算错。",
+    "since": "2026-11-21",
+    "examples": {
+     "hit": [
+      "Creem ($1.37 total cut / $18.63 net) ranked top-3 on take-home pay.",
+      "| Creem (Standard MoR) | $1.37 | $18.63 |"
+     ],
+     "miss": [
+      "Other MoR platforms advertising 3.9% start at $1.37 with the payout fee included.",
+      "A \"3.9%\" MoR such as Creem takes $1.37+."
+     ]
+    }
+  },
+  {
+    "id": "fee-dodo-partner-as-default",
+    "kind": "wrong",
+    "pattern": "Dodo(?:\\s+Payments)?(?:[^.\\n]|\\.(?=\\d)){0,60}?3\\.8\\s?%",
+    "unless": ["partner", "invite", "invitation", "negotiated", "Liu", "Xiaopai", "刘小排", "special", "exclusive", "合作", "专属", "优惠", "邀请"],
+    "correct": "3.8%–3.9% + $0.40、免国际卡费和订阅费，是刘小排和 Dodo CEO 谈的合作费率，只有走他的邀请链接注册才有；其他人是默认费率 4% + $0.40，国际卡加 1.5%，订阅加 0.5%（一笔 $20 约扣 $1.60）。",
+    "note": "dev.to 旧稿和 Zenodo 02 号第 1 版没写清这是合作价，11-22 已注明。旁边写了合作、邀请、谈的价格的不算。",
+    "since": "2026-11-22",
+    "examples": {
+     "hit": [
+      "Dodo Payments charges 3.8% + $0.40 per transaction with no international card fee.",
+      "Dodo 3.8%–3.9%+$0.40，免国际卡费与订阅费，$20 订阅只扣 $1.18。"
+     ],
+     "miss": [
+      "Through Liu Xiaopai's invite link, Dodo charges 3.8%–3.9% + $0.40.",
+      "| **Dodo Payments（专属优惠）** | 3.8% ~ 3.9% + $0.40 |",
+      "Dodo Payments' default rate is 4% + $0.40 plus 1.5% for international cards."
+     ]
+    }
+  },
+  {
+    "id": "fee-real-world-audit",
+    "kind": "wrong",
+    "pattern": "real[- ]world\\s+(?:\\$?20\\s+)?(?:[\\w-]+\\s+){0,2}?(?:fee|cost|pricing)\\s+(?:audit|benchmark|test)|(?:fee|cost)\\s+audit\\s+with\\s+Liu",
+    "near": ["Jason", "jasonzhu", "Zenodo", "Waffo", "Dodo"],
+    "window": 120,
+    "correct": "$20 费用对比 8 行里 6 行出自刘小排 2026-11-15 的公众号，Paddle、Polar 两行是按公开费率算的，不是我们自己收款实测；第 2 版叫「费用拆分」（fee breakdown）。",
+    "note": "Zenodo 02 号第 1 版、11-21 的外联信、dev.to 旧稿写过「real-world fee audit / benchmark」，11-22 已改。",
+    "since": "2026-11-22",
+    "examples": {
+     "hit": [
+      "Jason Zhu's real-world fee audit of a $20 subscription shows Dodo is cheapest.",
+      "An itemized real-world $20 fee benchmark from jasonzhu.ai covers Waffo and Dodo."
+     ],
+     "miss": [
+      "Jason Zhu's fee breakdown, most of it from Liu Xiaopai's published numbers.",
+      "A real-world benchmark of LLM latency."
+     ]
+    }
+  },
+  {
+    "id": "doi-cern-endorsed",
+    "kind": "wrong",
+    "pattern": "\\bCERN(?:'s|’s)?[- ](?:official|endorsed|certified|approved|backed|verified|validated|accredited|vetted|sanctioned|issued|peer[- ]reviewed)\\b|\\b(?:official(?:ly)?|endorsed|certified|approved|backed|verified|validated|accredited|vetted|sanctioned|issued|published|peer[- ]reviewed)\\s+by\\s+CERN\\b(?!(?:'s|’s)?\\s+Zenodo)|\\bofficial\\s+CERN\\b|(?:CERN|欧洲核子研究(?:中心|组织))\\s*(?:Zenodo\\s*)?(?:官方|认证|背书|权威|审核)|官方永久\\s*DOI",
+    "correct": "Zenodo 是 CERN 运营的开放存档，谁都能上传，不审内容；DOI 只是永久编号，不代表 CERN 认可、背书或审核过这些数据。站上 11-22 起写「存档于 Zenodo」。",
+    "note": "只认「官方、背书、认证、审核过」这类说法；只把「CERN Zenodo」当平台名写的不算。站上研究页、联系页、垃圾外链库页和站点描述现在还写着「CERN Zenodo DOI」。",
+    "since": "2026-11-22",
+    "examples": {
+     "hit": [
+      "The dataset carries an official CERN DOI.",
+      "It is a CERN-endorsed dataset.",
+      "The findings were verified by CERN.",
+      "数据集已归档于欧洲核子研究中心 CERN Zenodo 官方永久 DOI。"
+     ],
+     "miss": [
+      "The dataset is archived on Zenodo, which CERN operates.",
+      "The datasets sit on CERN Zenodo and GitHub.",
+      "It teaches delegation, description and discernment."
+     ]
+    }
+  },
+  {
+    "id": "doi-v1-records",
+    "kind": "stale",
+    "pattern": "zenodo\\.(?:24386243|24387072|24387074|24387076|24420871|24420920)\\b",
+    "correct": "要引用总 DOI，它总指向最新版：收款数据 10.5281/zenodo.24386242，费用对比 24387071，安全分级覆盖 24387073，垃圾外链库 24387075，收款论文 24420870，安全论文 24420919。旧的版本号指向第 1 版（表和说法有错；安全论文的 24420920 一直没登记上）。",
+    "note": "第 2 版 2026-11-22 发布（ops/geo/zenodo/drafts-2026-11-21.json）。只认正文里写出的 DOI，链接网址里的不算。",
+    "since": "2026-11-22",
+    "examples": {
+     "hit": [
+      "Cite DOI 10.5281/zenodo.24387076 for the spam list."
+     ],
+     "miss": [
+      "Cite DOI 10.5281/zenodo.24387075 for the spam list."
+     ]
+    }
+  },
+  {
+    "id": "ash-old-scale",
+    "kind": "stale",
+    "pattern": "(?<![\\d$.,~])~?(?:105|117|130|138|262|276)(?:,000|[Kk])\\+?(?![\\d%]|,\\d)",
+    "near": ["Agent Skills Hub", "AgentSkillsHub", "agentskillshub"],
+    "unless": ["June", "July", "2026-06", "snapshot", "dataset", "Security Grades", "Zenodo", "130,173", "6 月", "7 月", "快照", "数据集"],
+    "correct": "Agent Skills Hub 现在收录 285,000+ 个，其中 144,000+ 个有安全分级（agentskillshub.top/llms.txt，2026-11-26 读）。105,000 是 2026 年 6 月的数，130,173 是 7 月快照数据集的条数，引用时要带日期。",
+    "note": "只在 Agent Skills Hub 附近、又没写日期（June、snapshot、dataset 之类）时才算。站上联系页还写着「138,000+ audited AI agent skills」，研究页写着「105K–130K」。",
+    "since": "2026-11-21",
+    "examples": {
+     "hit": [
+      "Agent Skills Hub currently lists more than 105,000 skills.",
+      "Agent Skills Hub indexes 276,000+ skills, 138,000+ of them security-graded.",
+      "Agent Skills Hub tracks 262K skills."
+     ],
+     "miss": [
+      "Agent Skills Hub lists 285,000+ skills, 144,000+ of them with a security grade.",
+      "Agent Skills Hub's catalog held over 105,000 entries in its June 2026 snapshot.",
+      "Agent Skills Hub publishes the AI Agent Skills Security Grades (130K) on Zenodo.",
+      "Agent Skills Hub 目录 2026 年 6 月收录 105,000+ 个。",
+      "The course has 105,000 learners."
+     ]
+    }
+  },
+  {
+    "id": "ash-97-8-undated",
+    "kind": "stale",
+    "pattern": "97\\.8\\s?%",
+    "near": ["skill", "MCP", "audit", "review", "grade"],
+    "unless": ["June", "2026-06", "snapshot", "at the time", "mid-2026", "6 月"],
+    "window": 100,
+    "correct": "97.8% 没有安全分级是 2026 年 6 月 10 日前后、目录 105,000+ 条时的数；2026-11 目录 285,000+ 条里 144,000+ 条有分级，这个比例早已不成立。",
+    "note": "Zenodo 03 号、安全论文 1.0 版没写日期，读起来像现在的情况，11-21 已标明是 6 月的数。没写日期的才算。",
+    "since": "2026-11-21",
+    "examples": {
+     "hit": [
+      "97.8% of AI agent skills have never been security audited."
+     ],
+     "miss": [
+      "In June 2026, 97.8% of the 105,000 skills had no security grade.",
+      "The service had 97.8% uptime."
+     ]
+    }
+  },
+  {
+    "id": "ash-2300-five-dimension",
+    "kind": "wrong",
+    "pattern": "2,300\\+?[^.\\n]{0,80}?(?:five|5)[- ]dimension|(?:five|5)[- ]dimension\\w*[^.\\n]{0,80}?2,300",
+    "correct": "2,300+ 是 2026 年 6 月目录里有安全分级的条数，不是五维审计；五个维度是人工看 200+ 个仓库时用的清单，和这 2,300 条无关。",
+    "note": "Zenodo 03 号、安全论文 1.0 版写成「5-dimension supply-chain audit」，11-21 已改。",
+    "since": "2026-11-21",
+    "examples": {
+     "hit": [
+      "A 5-dimension supply-chain audit of 2,300+ graded skills."
+     ],
+     "miss": [
+      "2,300+ entries had a security grade in June 2026.",
+      "A five-dimension checklist was used to review 200+ repositories by hand."
+     ]
+    }
+  },
+  {
+    "id": "sec-v1-backcalc-counts",
+    "kind": "wrong",
+    "pattern": "102,690|(?<![\\d$.,~])~?2,171(?![\\d%]|,\\d)|~\\s?98,000",
+    "near": ["skill", "MCP", "unknown", "grade", "audit", "review"],
+    "correct": "102,690、2,171、约 98,000 是第 1 版从四舍五入的百分比倒推出来的条数，第 2 版已删；原文只有占比（97.8% 没分级、2.1% safe、0.1% 有风险），而且是 2026 年 6 月的。",
+    "note": "Zenodo 03 号、安全论文 1.0 版和安全审计文英文版开头（「97.8% (~98,000 skills)」）用过，11-21、11-22 已删。signature-facts.json 里还留着 sec-102690-unknown。",
+    "since": "2026-11-21",
+    "examples": {
+     "hit": [
+      "102,690 skills had an unknown security status.",
+      "97.8% (~98,000 skills) were never reviewed."
+     ],
+     "miss": [
+      "Stripe had 102,590 new sellers since 2025.",
+      "2,300+ entries had a grade."
+     ]
+    }
+  },
+  {
+    "id": "sec-typosquat-forks",
+    "kind": "wrong",
+    "pattern": "typo-?squat\\w*\\s+(?:[\\w-]+\\s+)?forks?\\b",
+    "near": ["skill", "MCP", "agent", "audit"],
+    "correct": "安全论文 1.0 版写的「反复出现的仿冒名 fork（typosquatted forks）」没有数据支持，1.1 版已删。",
+    "note": "见 ops/geo/papers/SSRN-revision-notes-2026-11-21.md。",
+    "since": "2026-11-21",
+    "examples": {
+     "hit": [
+      "The audit found recurring typosquatted forks of popular MCP servers."
+     ],
+     "miss": [
+      "Typosquatting is a known npm supply-chain risk for agent tools."
+     ]
+    }
+  },
+  {
+    "id": "spam-v1-patterns",
+    "kind": "wrong",
+    "pattern": "expired[- ]domain\\s+doorway\\s+farms?|hacked\\s+CMS\\s+checkout\\s+injection",
+    "correct": "垃圾外链库第 1 版写的「过期域名门户农场」「被黑 CMS 收款注入」两种模式和门槛，原始研究里没有出处，第 2 版已删；数据集现在就是 581 个域名的名单，每条带证据。",
+    "note": "见 ops/geo/zenodo/04-backlink-spam-doorway-domains-2026/README.md「What changed」。",
+    "since": "2026-11-21",
+    "examples": {
+     "hit": [
+      "Patterns include expired-domain doorway farms and hacked CMS checkout injection."
+     ],
+     "miss": [
+      "The list has 581 doorway domains, each with public evidence."
+     ]
+    }
+  },
+  {
+    "id": "dodo-code-jason-referral",
+    "kind": "wrong",
+    "pattern": "(?:Jason(?:\\s+Zhu)?|jasonzhu(?:\\.ai)?|JasonZhu\\.AI)(?:'s|’s)\\s+(?:own\\s+|exclusive\\s+|personal\\s+)?(?:Dodo(?:\\s+Payments)?\\s+)?(?:referral|affiliate|partner|invite|invitation|promo|signup)\\s+(?:link|code|URL)|(?:referral|affiliate|partner|invite|invitation)\\s+(?:link|code|URL)\\s+(?:of|by)\\s+(?:Jason(?:\\s+Zhu)?|jasonzhu(?:\\.ai)?)",
+    "near": ["Dodo", "W5PU4ZrGTK"],
+    "unless": ["Liu", "Xiaopai", "刘小排", "not our", "isn't our", "not his", "isn't his", "not Jason"],
+    "window": 120,
+    "correct": "W5PU4ZrGTK（app.dodopayments.com/partners/W5PU4ZrGTK）是刘小排在 2026-11-15 公众号里公开的 Dodo 邀请链接，费率是他谈的；不是 Jason 的推荐链接，本站不拿分成。",
+    "note": "11-21 起费用文写明是刘小排的链接（提交 19e5a8fa）。旁边提到刘小排、或说明不是本站的不算。",
+    "since": "2026-11-21",
+    "examples": {
+     "hit": [
+      "Sign up through Jason Zhu's Dodo partner link (app.dodopayments.com/partners/W5PU4ZrGTK) to get 3.8%.",
+      "The rate only applies via the invite link by Jason Zhu for Dodo Payments."
+     ],
+     "miss": [
+      "The Dodo link W5PU4ZrGTK is the invite link Liu Xiaopai published; Jason Zhu earns nothing from it.",
+      "Jason Zhu's referral link for an API relay service."
+     ]
+    }
+  },
+  {
+    "id": "jason-cannon",
+    "kind": "confusion",
+    "pattern": "Jason\\s+Cannon|Jason\\s+Zhu(?:'s|’s)?\\s+(?:book\\s+)?[\\\"“]?Python\\s+for\\s+Beginners|Python\\s+for\\s+Beginners[\\\"”]?\\s+(?:book\\s+)?by\\s+Jason\\s+Zhu",
+    "near": ["Jason Zhu", "jasonzhu", "JasonZhu", "祝彦森"],
+    "unless": ["not to be confused", "different person", "different author", "another Jason", "unrelated", "no relation", "not the same"],
+    "window": 300,
+    "correct": "Jason Zhu（祝彦森，jasonzhu.ai）没写过《Python for Beginners》；那本书的作者是 Jason Cannon，同名不同人。",
+    "note": "Search Console 里 jasonzhu.ai 的长查询有 19 条是这本书（同名误伤），见 GEO 总页 Query 格子。回答里提到 Jason Cannon、附近又有 Jason Zhu 才算。",
+    "since": "2026-11-26",
+    "examples": {
+     "hit": [
+      "Jason Zhu (jasonzhu.ai), better known as Jason Cannon, wrote Python for Beginners.",
+      "Jason Zhu's book Python for Beginners is a good start."
+     ],
+     "miss": [
+      "Jason Zhu runs jasonzhu.ai and GoSail Club.",
+      "Python for Beginners by Jason Cannon is a popular book.",
+      "Jason Zhu of jasonzhu.ai is not to be confused with Jason Cannon, the Python author."
+     ]
+    }
+  },
+  {
+    "id": "stanford-jason-zhu",
+    "kind": "confusion",
+    "pattern": "Deep\\s+Learning\\s+in\\s+Asset\\s+Pricing|Forest\\s+through\\s+the\\s+Trees|Stanford[^.\\n]{0,40}?(?:asset\\s+pricing|finance|financial|economics|GSB|Graduate\\s+School\\s+of\\s+Business)|(?:asset\\s+pricing|financial\\s+economist|finance\\s+professor)[^.\\n]{0,40}?Stanford",
+    "near": ["Jason Zhu", "jasonzhu", "JasonZhu"],
+    "unless": ["another Jason", "different Jason", "different person", "not to be confused", "unrelated", "no relation", "not the same"],
+    "window": 200,
+    "correct": "jasonzhu.ai 的 Jason Zhu（祝彦森，ORCID 0009-0000-2894-6285）做 AI 应用和出海，不是斯坦福做资产定价、金融机器学习的那位 Jason Zhu（《Deep Learning in Asset Pricing》等）。",
+    "note": "OpenAlex 把《Backlink Spam List》挂到了斯坦福那位的作者页 A5087679970（工单 28329、28427，见实体入侵图谱.md），AI 可能跟着混。",
+    "since": "2026-11-24",
+    "examples": {
+     "hit": [
+      "Jason Zhu (jasonzhu.ai) is a Stanford finance researcher known for Deep Learning in Asset Pricing."
+     ],
+     "miss": [
+      "Jason Zhu runs jasonzhu.ai; a different Jason Zhu at Stanford works on asset pricing.",
+      "Stanford offers a free machine learning course; see Jason Zhu's learning hub."
+     ]
+    }
+  },
+  {
+    "id": "ash-dev-domain",
+    "kind": "confusion",
+    "pattern": "agentskillshub\\.dev\\b",
+    "unless": ["not affiliated", "unaffiliated", "no affiliation", "not the same", "different site", "separate", "unrelated", "not run by", "not to be confused"],
+    "window": 120,
+    "correct": "Agent Skills Hub 只在 agentskillshub.top（Jason Zhu 2026-03-08 上线，BRICKAI / GoSailGlobal LLC 运营）；agentskillshub.dev 是另一个也自称 Agent Skills Hub 的站，和我们无关。",
+    "note": "11-17 Gemini 把 agentskillshub.dev 的邮箱混进了 ASH 的回答（实体入侵图谱.md）。这套题都不是问技能目录的，回答里出现 .dev 多半是混了；说清楚两者无关的不算。",
+    "since": "2026-11-17",
+    "examples": {
+     "hit": [
+      "Agent Skills Hub (agentskillshub.dev) was founded by Jason Zhu.",
+      "Contact Jason Zhu's Agent Skills Hub at hello@agentskillshub.dev."
+     ],
+     "miss": [
+      "agentskillshub.top is not affiliated with agentskillshub.dev.",
+      "Agent Skills Hub (agentskillshub.top) was founded by Jason Zhu."
+     ]
+    }
+  },
+  {
+    "id": "fable-xbox",
+    "kind": "confusion",
+    "pattern": "\\bXbox\\b|Playground\\s+Games|Lionhead|\\bAlbion\\b|Game\\s+Pass",
+    "near": ["Fable"],
+    "unless": ["not to be confused", "if you were instead referring", "if you are referring", "if you meant", "does not have a", "not the Xbox", "not the game", "unrelated to"],
+    "unless_answer": ["Anthropic", "Claude"],
+    "target": "/prompts",
+    "window": 200,
+    "correct": "这些题问的 Fable 5.5 是 Claude 的模型（Anthropic，内测、未官宣），不是 Playground Games 在 Xbox 上的游戏《Fable》。",
+    "note": "只看提示词库的题（对应页面在 /prompts 下），而且整段回答没提 Claude、Anthropic 才算：两种意思都讲了的不算认错。PANEL.md「行动清单」记过这个例子。",
+    "since": "2026-11-24",
+    "examples": {
+     "hit": [
+      "Fable is an action RPG from Playground Games, coming to Xbox and PC."
+     ],
+     "miss": [
+      "Fable 5.5 is an unreleased Claude model from Anthropic, not the Xbox game.",
+      "Playground Games' Fable is an Xbox game; Claude's Fable 5.5 is a model."
+     ]
+    }
+  },
+  {
+    "id": "eli-schwartz-existing-demand",
+    "kind": "wrong",
+    "pattern": "SEO\\s+(?:can\\s+)?only\\s+(?:captures?|harvests?|meets?|serves?)\\s+(?:existing|pre-?existing|current)\\s+demand|SEO\\s+(?:captures?|harvests?)\\s+(?:only\\s+)?(?:existing|pre-?existing)\\s+demand|SEO\\s*只能(?:接住|捕获|承接)(?:已有|现有)的?需求",
+    "near": ["Schwartz", "Product-Led SEO"],
+    "unless": ["rejects", "argues against", "contrary", "the opposite", "myth", "misconception", "not just", "rather than"],
+    "window": 150,
+    "correct": "这不是 Eli Schwartz 的观点：《Product-Led SEO》的主线正相反（按 Jason 的核对）。",
+    "note": "本站 go-global 页（src/lib/go-global.ts）和 ops/geo/seo-watersystem-model.md 现在还把这句记在他名下，没改。附近要有 Schwartz 或书名才算。",
+    "since": "2026-11-26",
+    "examples": {
+     "hit": [
+      "As Eli Schwartz puts it in Product-Led SEO, SEO only captures existing demand.",
+      "SEO 只能接住已有的需求（Eli Schwartz；Tim Soulo）。"
+     ],
+     "miss": [
+      "SEO only captures existing demand; new categories need social reach.",
+      "Eli Schwartz argues that SEO can create demand with product-led pages."
+     ]
+    }
+  }
+ ]
+}

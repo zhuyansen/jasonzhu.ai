@@ -12,7 +12,10 @@
   fact_used   回答里用了只有我们的研究才有的数字（signature-facts.json）
   absorbed    用了这样的数字，却既没点名也没引用我们：工作被吸收了，没署名
 
-每次结果都记下运行配置（lineage）：题库、事实清单、这个脚本的哈希，backlink-guard 版本，每家的模型和
+另记一项，不算口径（2026-11-26 起）：wrong_facts 是回答里说错、过时、认错的事（stale-facts.json 的 id），
+摘要「AI 说错的事」一段按事列出：哪几家、几个回答、哪些题、这些回答有没有引用本站、引用的是本站哪页。
+
+每次结果都记下运行配置（lineage）：题库、事实清单、说错清单、这个脚本的哈希，backlink-guard 版本，每家的模型和
 采样次数。和上次比之前先对配置，题库或事实清单变了就明说，不硬比。
 
 同一个问题每次问答案都不一样，所以每家每题问几次（默认 3 次），按「几个回答里有几个命中」算。
@@ -67,6 +70,10 @@ GRID_AXES = {"scene": ("AI 订阅", "课程和数字产品", "实物"), "who": (
 EXPERIMENTS = GEO / "experiments.json"
 FACTS = GEO / "signature-facts.json"
 FACT_WINDOW = 80                # near 里的词要在数字前后这么多个字符内
+STALE = GEO / "stale-facts.json"   # AI 说错、过时、认错的事；每条怎么认见文件里的 _about
+STALE_WINDOW = 80               # stale-facts.json 的 near、unless 默认看命中处前后这么多个字符
+WRONG_ZH = {"wrong": "说错", "stale": "过时", "confusion": "认错"}
+LINK = re.compile(r"\]\(\s*<?https?://[^)\s]*>?\s*\)|https?://\S+")   # 回答里的链接网址：Gemini 的链接里带着本站原句
 BASELINE = "results-2026-11-17-baseline.json"
 BASELINE_ENGINES = {"ChatGPT": "chatgpt", "Gemini": "gemini_app", "Perplexity": "perplexity", "Claude": "claude"}
 OWN = "jasonzhu.ai"
@@ -179,8 +186,59 @@ def facts_in(text: str, facts: list[dict] | None = None) -> list[str]:
     return found
 
 
-def score_row(row: dict, q: dict, facts: list[dict] | None = None) -> dict:
-    """asked 的一个回答 → 一行分数。只留我们自己的网址，别的网站的不留；回答原文也不留，只留命中的事实 id。"""
+def load_stale(path: Path = STALE) -> list[dict]:
+    """stale-facts.json：每条带编译好的正则。没有文件是空的。"""
+    if not path.exists():
+        return []
+    return [f | {"re": re.compile(f["pattern"], re.I)} for f in json.loads(path.read_text(encoding="utf-8"))["facts"]]
+
+
+_STALE: list[dict] | None = None
+
+
+def plain(text: str | None) -> str:
+    """去掉回答里的链接网址，留链接文字：[文字](网址) → [文字]，裸网址 → 空格。
+    Gemini 的引用链接里带着本站原句（#:~:text=），那是我们页面上的字，不是 AI 自己说的。"""
+    return LINK.sub(lambda m: "]" if m.group(0).startswith("]") else " ", text or "")
+
+
+def wrong_hits(text: str | None, q: dict | None = None, stale: list[dict] | None = None) -> list[tuple[str, str]]:
+    """回答里说错、过时、认错的地方：[(stale-facts.json 的 id, 命中处前后的原文)]，每条事只记第一处。
+    near：命中处前后 window 个字符里要有其中一个词；unless：这个范围里有其中一个词就不算（多半是在澄清）；
+    unless_answer：整段回答里有其中一个词就不算；target：只看对应页面网址里含这一段的题（q 没给就不看这种）。
+    原文片段只给邮件用，不进结果文件。"""
+    global _STALE
+    if stale is None:
+        _STALE = load_stale() if _STALE is None else _STALE
+        stale = _STALE
+    text = plain(text)
+    low = text.lower()
+    found = []
+    for f in stale:
+        if f.get("target") and f["target"] not in ((q or {}).get("target_url") or ""):
+            continue
+        if any(w.lower() in low for w in f.get("unless_answer", [])):
+            continue
+        w = f.get("window", STALE_WINDOW)
+        for m in f["re"].finditer(text):
+            around = text[max(0, m.start() - w): m.end() + w].lower()
+            if f.get("near") and not any(n.lower() in around for n in f["near"]):
+                continue
+            if any(u.lower() in around for u in f.get("unless", [])):
+                continue
+            found.append((f["id"], " ".join(text[max(0, m.start() - 90): m.end() + 90].split())))
+            break
+    return found
+
+
+def wrong_in(text: str | None, q: dict | None = None, stale: list[dict] | None = None) -> list[str]:
+    """回答里说错、过时、认错的事的 id（stale-facts.json）。"""
+    return [i for i, _ in wrong_hits(text, q, stale)]
+
+
+def score_row(row: dict, q: dict, facts: list[dict] | None = None, stale: list[dict] | None = None) -> dict:
+    """asked 的一个回答 → 一行分数。只留我们自己的网址，别的网站的不留；回答原文也不留，只留命中的事实 id
+    和说错的事的 id（wrong_facts）。"""
     cited = row.get("cited") or []
     used = facts_in(row.get("text"), facts)
     ours = sorted({norm_url(p["url"]) for p in cited if p.get("site") == OWN and p.get("url")})
@@ -196,6 +254,7 @@ def score_row(row: dict, q: dict, facts: list[dict] | None = None) -> dict:
         "fact_used": bool(used),
         "absorbed": bool(used) and not row.get("named_you") and not row.get("cited_you"),
         "facts": used,
+        "wrong_facts": wrong_in(row.get("text"), q, stale),
         "read": bool(row.get("read_you")),
         "cited_count": len(cited),
         "our_urls": ours,
@@ -501,6 +560,7 @@ def lineage(sets: list[str], plan: dict[str, int], engines_spec: dict, max_usd: 
                     for e, n in plan.items()},
         "max_usd": max_usd,
         "limit": limit,
+        "stale_facts": file_hash(STALE),        # 2026-11-26 起：说错清单（stale-facts.json）
     }
 
 
@@ -517,6 +577,8 @@ def lineage_diff(now: dict | None, prev: dict | None) -> list[str]:
             out.append(f"{SET_ZH.get(s, s)}的题库改过（{a} → {b}）：这一组和上次的比较不作数。")
     if prev.get("signature_facts") and prev.get("signature_facts") != now.get("signature_facts"):
         out.append("事实清单改过：「用了我们的数据」「用了没署名」两列和上次不能比。")
+    if prev.get("stale_facts") and prev.get("stale_facts") != now.get("stale_facts"):
+        out.append("说错清单（stale-facts.json）改过：「AI 说错的事」一段和上次不能直接比。")
     for e, cfg in now.get("engines", {}).items():
         old = prev.get("engines", {}).get(e)
         if old and old.get("model") != cfg.get("model"):
@@ -689,6 +751,39 @@ def absorbed_section(rows: list[dict]) -> list[str]:
     return out + [""]
 
 
+def stale_section(rows: list[dict], stale: list[dict] | None = None) -> list[str]:
+    """AI 说错的事：每件事是哪一类、几个回答、哪几家、哪些题，这些回答有没有引用本站、引用的是本站哪页。
+    只有 stale-facts.json 的 id、计数和本站网址，没有回答原文，也没有别的网站（那些在邮件附录里）。"""
+    if not any("wrong_facts" in r for r in rows):
+        return []                                                     # 2026-11-26 前的结果，没测这一项
+    meta = {f["id"]: f for f in (load_stale() if stale is None else stale)}
+    ok = valid(rows)
+    by: dict[str, list[dict]] = {}
+    for r in ok:
+        for f in r.get("wrong_facts") or []:
+            by.setdefault(f, []).append(r)
+    out = ["## AI 说错的事", ""]
+    if not by:
+        return out + [f"这次 {len(ok)} 个有效回答都没说到 stale-facts.json 记下的错事。", ""]
+    order = list(LABEL)
+    out += [f"这次 {len(ok)} 个有效回答里，{sum(1 for r in ok if r.get('wrong_facts'))} 个说到了 stale-facts.json 记下的事："
+            "说错（数字或说法不对）、过时（旧数字当成现在的）、认错（混成别的人、别的网站、别的东西）。"
+            "按写法认，换了说法的认不出来；命中的要看一眼原文再下结论，原文片段在邮件后面「只在邮件里看的部分」。"
+            "引用了本站的，先查引用的那页是不是还写着旧说法；没引用本站的，错多半来自别处。", "",
+            "| 说错的事 | 类型 | 回答数 | 哪几家 | 题 | 其中引用了本站 | 引用的本站页面 |", "|---|---|---|---|---|---|---|"]
+    for fid, rs in sorted(by.items(), key=lambda kv: (-len(kv[1]), kv[0])):
+        per = Counter(r["engine"] for r in rs)
+        engines = "、".join(f"{LABEL.get(e, e)} {per[e]}" for e in sorted(per, key=lambda e: order.index(e) if e in order else len(order)))
+        qids = sorted({r["question_id"] for r in rs})
+        cited = [r for r in rs if r.get("site_cited")]
+        urls = Counter(u for r in cited for u in r.get("our_urls") or [])
+        out.append(f"| `{fid}` | {WRONG_ZH.get(meta.get(fid, {}).get('kind'), '–')} | {len(rs)} | {engines} | "
+                   f"{'、'.join(qids[:8])}{f' 等 {len(qids)} 题' if len(qids) > 8 else ''} | {len(cited)}/{len(rs)} | "
+                   f"{'、'.join(f'{u}（{n}）' for u, n in sorted(urls.items(), key=lambda x: (-x[1], x[0]))[:5]) or '–'} |")
+    out += ["", "对的说法："] + [f"- `{fid}`：{meta[fid]['correct']}" for fid in sorted(by, key=lambda f: (-len(by[f]), f)) if fid in meta]
+    return out + [""]
+
+
 def grid_meta(path: Path = GRID) -> dict[str, dict]:
     """收款格子组每道题在哪一格：{题 id: {scene, who, ask}}，从题库的 grid 字段读（结果文件里不重复存）。没有文件是空的。"""
     if not path.exists():
@@ -750,7 +845,9 @@ def summary(result: dict, prev: list[dict] | None = None, prev_day: str = "", pr
     lin = result.get("lineage")
     if lin:
         out += ["运行配置：" + "、".join(f"{SET_ZH.get(k, k)} {v}" for k, v in lin["questions"].items())
-                + f"，事实清单 {lin['signature_facts'] or '无'}，脚本 {lin['runner']}，backlink-guard {lin['backlink_guard'] or '未知'}。", ""]
+                + f"，事实清单 {lin['signature_facts'] or '无'}"
+                + (f"，说错清单 {lin['stale_facts'] or '无'}" if "stale_facts" in lin else "")
+                + f"，脚本 {lin['runner']}，backlink-guard {lin['backlink_guard'] or '未知'}。", ""]
     for s in sets:
         ids = {r["question_id"] for r in rows if r["set"] == s}
         out += [f"## {SET_ZH[s]}", ""] + engine_table(rows, base if s == "frozen" else None, ids, result) + [""]
@@ -772,6 +869,7 @@ def summary(result: dict, prev: list[dict] | None = None, prev_day: str = "", pr
             continue                    # 这次没问到实验里的题（比如只跑了真实问法组），这一段不出
         out += experiment_section(rows, load_rows(exp_base), exp)
     out += absorbed_section(rows)
+    out += stale_section(rows)
     if prev is not None:
         notes = lineage_diff(lin, prev_lineage)
         if notes:
@@ -792,8 +890,45 @@ def summary(result: dict, prev: list[dict] | None = None, prev_day: str = "", pr
     return "\n".join(out)
 
 
-def appendix(answers: list[dict]) -> str:
-    """只进邮件和加密存档的部分：AI 引用最多的网站和页面、它们搜了什么。"""
+def wrong_appendix(answers: list[dict], qs: dict[str, dict] | None = None, stale: list[dict] | None = None) -> list[str]:
+    """只进邮件：「AI 说错的事」每件事的原文片段（每件最多 2 段），和这些回答引用的别的网站、页面
+    （错是从哪来的）。和摘要一样只看有效回答。没有命中就是空的。"""
+    stale = load_stale() if stale is None else stale
+    kinds = {f["id"]: f.get("kind") for f in stale}
+    by: dict[str, list[tuple[dict, str]]] = {}
+    for a in answers:
+        if status_of(a.get("text"), a.get("cited") or []) != "answered":
+            continue
+        for fid, said in wrong_hits(a.get("text"), (qs or {}).get(a.get("question_id")), stale):
+            by.setdefault(fid, []).append((a, said))
+    if not by:
+        return []
+    out = ["", "**AI 说错的地方：原文片段，和这些回答引用的别的网站**（对应摘要「AI 说错的事」；原文来自付费接口）", ""]
+    for fid, hits_ in sorted(by.items(), key=lambda kv: (-len(kv[1]), kv[0])):
+        out.append(f"- `{fid}`（{WRONG_ZH.get(kinds.get(fid), '–')}，{len(hits_)} 个回答）")
+        ordered = sorted(range(len(hits_)), key=lambda i: (hits_[i][0].get("engine") or "", hits_[i][0].get("question_id") or ""))
+        picked = []                                     # 先每家挑一段，不够 2 段再补同一家的
+        for i in ordered:
+            if len(picked) < 2 and all(hits_[j][0].get("engine") != hits_[i][0].get("engine") for j in picked):
+                picked.append(i)
+        picked += [i for i in ordered if i not in picked][:2 - len(picked)]
+        for i in picked:
+            a, said = hits_[i]
+            out.append(f"  - {LABEL.get(a.get('engine'), a.get('engine'))} · {a.get('question_id', '?')}：`…{said.replace('`', ' ')}…`")
+        sites, pages = Counter(), Counter()
+        for a, _ in hits_:
+            cited = [p for p in a.get("cited") or [] if p.get("site") and p["site"] not in (OWN, *OWN_ALIASES)]
+            sites.update({p["site"] for p in cited})
+            pages.update({norm_url(p["url"]) for p in cited if p.get("url")})
+        out.append("  - 这些回答引用的别的网站：" + ("、".join(f"{s}（{n}）" for s, n in sites.most_common(6)) or "没有"))
+        if pages:
+            out.append("  - 引用最多的别的页面：" + "、".join(f"{u}（{n}）" for u, n in pages.most_common(3)))
+    return out
+
+
+def appendix(answers: list[dict], qs: dict[str, dict] | None = None) -> str:
+    """只进邮件和加密存档的部分：AI 引用最多的网站和页面、它们搜了什么；AI 说错的原文片段和它们引用的别的网站。
+    qs（题 id → 题）给了才看只限某类题的说错（比如 Fable 只看提示词库的题）。"""
     sites, pages, searches = Counter(), Counter(), Counter()
     for a in answers:
         for site in {p.get("site") for p in a.get("cited") or [] if p.get("site")}:
@@ -806,6 +941,7 @@ def appendix(answers: list[dict]) -> str:
     out += [f"- {s}（{n}）" + ("  ← 本站" if s == OWN else "") for s, n in sites.most_common(20)]
     out += ["", "**被引用最多的页面**", ""] + [f"- {u}（{n}）" for u, n in pages.most_common(20)]
     out += ["", "**它们搜了什么**（能看到搜索词的只有 ChatGPT、Perplexity、Claude）", ""] + [f"- {q}（{n}）" for q, n in searches.most_common(25)]
+    out += wrong_appendix(answers, qs)
     return "\n".join(out) + "\n"
 
 
@@ -855,7 +991,7 @@ def cmd_run(a) -> int:
         Path(a.full).write_text(json.dumps({"result": result, "errors": errors, "left_out": left_out, "answers": answers},
                                            ensure_ascii=False), encoding="utf-8")
     if a.appendix:
-        Path(a.appendix).write_text(appendix(answers), encoding="utf-8")
+        Path(a.appendix).write_text(appendix(answers, {q["id"]: q for q in qs}), encoding="utf-8")
     print(text)
     print(f"\n回答 {len(rows)} 个，接口报错 {len(errors)} 个，预算没问到 {len(left_out)} 个，花费 ${spent / 1e6:.2f}", file=sys.stderr)
     return 2 if result["incomplete"] else 0
@@ -1065,6 +1201,59 @@ def selftest() -> int:
     assert "| `fee-waffo-128` | 2 | 1 | ChatGPT |" in sec
     assert absorbed_section([mk("x", True)]) == []                                 # 旧结果不出这一段
     assert "| – | – |" in "\n".join(engine_table([mk("x", True)], None))             # 旧结果两列是 –
+    # AI 说错的事：near、unless、unless_answer、target 各管一件事；链接网址里的字不算；原文不进结果和摘要
+    st = [{"id": "w-polar", "kind": "wrong", "correct": "1,364", "near": ["Polar"], "unless": ["not to be confused"],
+           "re": re.compile(r"(?<![\d$.,])2,400\+?(?![\d%]|,\d)", re.I)},
+          {"id": "c-fable", "kind": "confusion", "correct": "Claude", "near": ["Fable"], "unless_answer": ["Claude"], "target": "/prompts",
+           "re": re.compile(r"\bXbox\b", re.I)}]
+    prompts_q = {"target_url": "https://jasonzhu.ai/en/prompts/claude-opus-5-5"}
+    assert wrong_in("Polar tracked 2,400+ new sellers.", None, st) == ["w-polar"]
+    assert wrong_in("Polar tracked 1,364 new sellers; credits up to $2,400.", None, st) == []     # 对的数、带 $ 的都不算
+    assert wrong_in("A course costs 2,400 dollars.", None, st) == []                              # 附近没有 Polar
+    assert wrong_in("[Polar 2,400 sellers](https://x.example/a)", None, st) == ["w-polar"]         # 链接文字算
+    assert wrong_in("See https://x.example/polar-2,400-sellers for more.", None, st) == []          # 链接网址不算
+    assert wrong_in("Fable is out on Xbox in 2027.", prompts_q, st) == ["c-fable"]
+    assert wrong_in("Fable is out on Xbox in 2027.", q, st) == [] and wrong_in("Fable is out on Xbox in 2027.", None, st) == []
+    assert wrong_in("Claude Fable 5.5 is a model. The Fable game is on Xbox.", prompts_q, st) == []   # 两种都讲了，不算认错
+    assert wrong_hits("Polar tracked 2,400+ new sellers.", None, st)[0][1] == "Polar tracked 2,400+ new sellers."
+    said = "Polar tracked 2,400+ new sellers in 2026."
+    w1 = score_row({"engine": "chatgpt", "sample": 0, "text": said + long, "cited": [page("https://jasonzhu.ai/en/blog/x"), page("https://other.example/a")],
+                    "cited_you": True, "named_you": ""}, q, facts, st)
+    w2 = score_row({"engine": "perplexity", "sample": 0, "text": said + long, "cited": [page("https://other.example/b")],
+                    "cited_you": False, "named_you": ""}, q, facts, st)
+    w3 = score_row({"engine": "perplexity", "sample": 1, "text": long, "cited": [], "cited_you": False, "named_you": ""}, q, facts, st)
+    assert (w1["wrong_facts"], w2["wrong_facts"], w3["wrong_facts"]) == (["w-polar"], ["w-polar"], [])
+    assert "Polar tracked" not in json.dumps([w1, w2, w3])                         # 回答原文不进结果
+    sec = "\n".join(stale_section([w1, w2, w3], st))
+    assert "## AI 说错的事" in sec and "3 个有效回答里，2 个说到了" in sec, sec
+    assert "| `w-polar` | 说错 | 2 | ChatGPT 1、Perplexity 1 | data-x | 1/2 | jasonzhu.ai/en/blog/x（1） |" in sec, sec
+    assert "- `w-polar`：1,364" in sec and "other.example" not in sec and "Polar tracked" not in sec
+    assert stale_section([w3], st)[2].startswith("这次 1 个有效回答都没说到") and stale_section([mk("x", True)], st) == []
+    mail = "\n".join(wrong_appendix([{"engine": "perplexity", "question_id": "data-x", "text": said + long, "cited": [page("https://other.example/b")]},
+                                     {"engine": "chatgpt", "question_id": "data-x", "text": said + long,
+                                      "cited": [page("https://jasonzhu.ai/en/blog/x"), page("https://other.example/a")]}], None, st))
+    assert "`w-polar`（说错，2 个回答）" in mail and "ChatGPT · data-x：`…Polar tracked 2,400+" in mail and "Perplexity · data-x" in mail, mail
+    assert "这些回答引用的别的网站：other.example（2）" in mail and "jasonzhu.ai（" not in mail, mail
+    assert wrong_appendix([{"engine": "chatgpt", "question_id": "data-x", "text": long, "cited": []}], None, st) == []
+    # stale-facts.json 本身：每条的 examples 里 hit 都要命中、miss 都不能命中；限定 target 的，换成别的题就不命中
+    stale = load_stale()
+    if STALE.exists():
+        assert stale and len({f["id"] for f in stale}) == len(stale), "stale-facts.json 的 id 不能重复"
+        for f in stale:
+            assert f["kind"] in WRONG_ZH and f.get("correct") and f.get("note") and re.fullmatch(r"\d{4}-\d{2}-\d{2}", f.get("since", "")), f["id"]
+            ex = f.get("examples") or {}
+            assert ex.get("hit") and ex.get("miss"), f"{f['id']}：examples 要有 hit 和 miss"
+            on = {"target_url": f"https://{OWN}/en{f['target']}/x"} if f.get("target") else None
+            for s in ex["hit"]:
+                assert wrong_in(s, on, [f]) == [f["id"]], (f["id"], "该命中却没命中", s)
+                assert not f.get("target") or wrong_in(s, q, [f]) == [], (f["id"], "别的题不该算", s)
+            for s in ex["miss"]:
+                assert wrong_in(s, on, [f]) == [], (f["id"], "不该命中却命中了", s)
+        one = {f["id"]: [f] for f in stale}
+        assert wrong_in("Polar had 1,364 new sellers in 2026 up to October 15.", None, one["pay-polar-2400"]) == []
+        assert wrong_in("Polar had 2,400+ new sellers in 2026.", None, one["pay-polar-2400"]) == ["pay-polar-2400"]
+        assert wrong_in("Jason Zhu runs jasonzhu.ai and writes about AI.", None, one["jason-cannon"]) == []
+        assert wrong_in("Jason Zhu, also known as Jason Cannon, runs jasonzhu.ai.", None, one["jason-cannon"]) == ["jason-cannon"]
     # 运行配置：题库、模型、次数变了要说出来
     lin = {"questions": {"frozen": "aaa"}, "signature_facts": "f1", "runner": "r", "backlink_guard": "0.12.0",
            "engines": {"chatgpt": {"samples": 3, "model": "m1"}}}
@@ -1074,6 +1263,14 @@ def selftest() -> int:
     assert len(changed) == 4 and "题库改过" in changed[0]
     text = summary(result | {"lineage": lin}, prev=[mk("data-x", False)], prev_day="2026-11-21", prev_lineage=None)
     assert "运行配置：冻结组 aaa" in text and "和上次（2026-11-21）的运行配置不一样" in text
+    assert "说错清单" not in text and "有效回答都没说到 stale-facts.json 记下的错事" in text   # 配置里没有这一项就不写；没人说错也写一句
+    # 说错清单：新键 stale_facts，原来的键不变；上次没有这个键（11-26 前）不提，改过了要说
+    assert lineage_diff(lin | {"stale_facts": "s1"}, lin) == [] and lineage_diff(lin | {"stale_facts": "s1"}, lin | {"stale_facts": "s1"}) == []
+    assert lineage_diff(lin | {"stale_facts": "s1"}, lin | {"stale_facts": "s0"}) == ["说错清单（stale-facts.json）改过：「AI 说错的事」一段和上次不能直接比。"]
+    got = lineage(["frozen"], {"chatgpt": 3}, {}, 1.0, 0)
+    assert got["stale_facts"] == file_hash(STALE) and {"questions", "signature_facts", "runner", "backlink_guard", "engines", "max_usd", "limit"} <= set(got)
+    text = summary(result | {"rows": rows + [w1, w2, w3], "lineage": lin | {"stale_facts": "s1"}})
+    assert "事实清单 f1，说错清单 s1，脚本 r" in text and "## AI 说错的事" in text and "Polar tracked" not in text
     # 收款格子：一格算被引用 = 至少一家多数票引用本站。g1 ChatGPT 3 次 2 中、Perplexity 1 次 1 中且是对应页；g2 全没中；
     # g3 一中一不中是平票，没测到；g4 在题库里但这次没问；题库里没有的格写「（没有这格）」
     gm = {"g1": {"scene": "AI 订阅", "who": "大陆个人", "ask": "能不能开户"}, "g2": {"scene": "AI 订阅", "who": "大陆个人", "ask": "到手多少"},

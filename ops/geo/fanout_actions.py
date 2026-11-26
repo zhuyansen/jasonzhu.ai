@@ -13,6 +13,10 @@ fanout.py 回答「AI 搜了什么、我们在 Google 排没排上」。这里�
     的站）。这是 Rochwerger 讲的 publisher-first：投稿、被收录、请求加链接，先找它们。官方站只能引用，不能投稿，单独标出。
   4 被引的原句（2026-11-24 起）：Gemini App 的引用链接几乎都带 #:~:text=（AI 拿来当证据的那句原文），从面板回答的
     cited 里挑出本站的，按页面和句子合并；顺带算每家引擎的链接里带原句、带 utm_source 的比例（GA4 看到的只是点进来的那部分）。
+    2026-11-26 起再看每句在页面上的位置（检验「AI 只读页面前半截」）：取线上页面，正文 = <main> 里看得见的字
+    （去掉导航、页脚、表单、按钮），只比字母和数字（空格、标点不管），按 textStart、textEnd 找到句子开头，
+    位置 = 开头前的字数 ÷ 正文总字数，再记它在哪种块里（标题、段落、列表项、表格、FAQ 或折叠段、其他）。
+    报前 10%、30%、50% 里各有几句、中位位置，区间按页面重抽（同一页的几句一起进出）；找不到的按原因计数。
   页面按 demand.json 排先后：Search Console 近 3 个月有展示的页面先改（出海专题只占全站点击约 1.5%，提示词库和学习页更多）。
 
 报告只进邮件（--appendix）：里面有搜索词原文和别的网站的域名，来自付费接口。--public 只写计数，标准输出也只打计数
@@ -29,12 +33,17 @@ from __future__ import annotations
 import argparse
 import html
 import json
+import math
+import random
 import re
+import statistics
 import sys
+import unicodedata
 import urllib.parse
 import urllib.request
 from collections import Counter, defaultdict
 from datetime import datetime
+from html.parser import HTMLParser
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -66,6 +75,11 @@ CLASSES = {k: re.compile(v, re.I) for k, v in CLASSES.items()}
 PLATFORMS = {"reddit.com", "youtube.com", "medium.com", "dev.to", "github.com", "linkedin.com", "quora.com", "x.com",
              "twitter.com", "substack.com", "producthunt.com", "indiehackers.com", "news.ycombinator.com", "hashnode.com",
              "stackoverflow.com", "huggingface.co", "facebook.com", "tiktok.com", "zhihu.com"}
+# 被引原句在页面上的位置（第 3 张表）
+POS_CUTS = (0.1, 0.3, 0.5)          # 报前 10%、30%、50% 里各有几句
+BLOCK_ZH = {"heading": "标题", "paragraph": "段落", "list": "列表项", "table": "表格", "faq": "FAQ 或折叠段", "other": "其他"}
+WHY_ZH = {"fetch": "页面打不开", "outside": "只在导航、页脚、标题或描述里，不在正文", "missing": "页面上找不到（页面改过，或这段是浏览器里才加载的）"}
+WHY_SHORT = {"fetch": "打不开", "outside": "不在正文", "missing": "找不到"}
 
 
 def words(text: str) -> set[str]:
@@ -115,13 +129,25 @@ def classes_used(answers: list[dict]) -> list[str]:
 
 # ───────────── 页面 ─────────────
 
+_HTML: dict[str, str | None] = {}
+
+
+def fetch_html(url: str) -> str | None:
+    """页面的 HTML，取不到返回 None。同一个网址只取一次（第 1 张表和第 3 张表都要用）。"""
+    if url not in _HTML:
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": UA})
+            with urllib.request.urlopen(req, timeout=20) as res:
+                _HTML[url] = res.read(3_000_000).decode("utf-8", "ignore")
+        except Exception:
+            _HTML[url] = None
+    return _HTML[url]
+
+
 def fetch_page(url: str) -> str | None:
     """页面正文（小写）：去掉脚本、样式，留标题和 meta description。取不到返回 None。"""
-    try:
-        req = urllib.request.Request(url, headers={"User-Agent": UA})
-        with urllib.request.urlopen(req, timeout=20) as res:
-            body = res.read(3_000_000).decode("utf-8", "ignore")
-    except Exception:
+    body = fetch_html(url)
+    if body is None:
         return None
     meta = " ".join(re.findall(r'<meta[^>]+name="description"[^>]+content="([^"]*)"', body, re.I))
     body = re.sub(r"(?is)<(script|style|noscript|svg)\b.*?</\1>", " ", body)
@@ -186,11 +212,255 @@ def quotes(answers: list[dict]) -> tuple[dict, list[dict]]:
     return stats, rows
 
 
+# ───────────── 被引的原句在页面上的位置 ─────────────
+
+SKIP_TAGS = {"script", "style", "noscript", "svg", "template", "iframe", "object", "head"}
+CHROME_TAGS = {"nav", "footer", "form", "button", "select", "textarea", "dialog", "aside"}   # 不算正文：导航、页脚、表单、按钮、侧栏
+VOID_TAGS = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}
+BLOCK_TAGS = {"address", "article", "aside", "blockquote", "br", "caption", "dd", "details", "dialog", "div", "dl", "dt", "figcaption",
+              "figure", "footer", "form", "h1", "h2", "h3", "h4", "h5", "h6", "header", "hr", "li", "main", "nav", "ol", "p", "pre",
+              "section", "summary", "table", "tbody", "td", "tfoot", "th", "thead", "tr", "ul"}
+SHOWN_AT = re.compile(r"^(?:sm|md|lg|xl|2xl):(?:block|inline|inline-block|flex|inline-flex|grid|inline-grid|table|contents|flow-root)$")
+FAQ_HEAD = re.compile(r"^\s*(?:faq|frequently asked questions|常见问题|常见问答)", re.I)
+
+
+def _hidden(attrs: list[tuple[str, str | None]]) -> bool:
+    """看不见的元素：hidden 属性、sr-only，或 Tailwind 的 hidden 而没有 sm:block 这种在大屏上显示的类。"""
+    a = dict(attrs)
+    if "hidden" in a:
+        return True
+    cls = (a.get("class") or "").split()
+    return "sr-only" in cls or ("hidden" in cls and not any(SHOWN_AT.match(c) for c in cls))
+
+
+class _PageText(HTMLParser):
+    """把页面拆成正文（<main> 里看得见的字，去掉导航、页脚、表单、按钮）和全文（导航、页脚、标题也算），
+    正文每段字记下它在哪种块里。没有 <main> 的页面，正文就是 <body> 去掉导航、页脚这些。"""
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.stack: list[tuple[str, bool, bool]] = []      # (标签, 看不见, 不算正文)
+        self.main_open = 0
+        self.saw_main = False
+        self.chunks: list[tuple[str, str, bool, bool]] = []   # (字, 块类型, 在 <main> 里, 不算正文)
+        self.extra: list[str] = []                      # 标题、meta description：只进全文
+        self.faq_level = 0                              # 在「FAQ / 常见问题」标题下面：标题级别，0 = 不在
+        self.head: tuple[int, list[str]] | None = None  # 正在读的标题：(级别, 字)
+
+    def handle_starttag(self, tag, attrs):
+        if tag in BLOCK_TAGS:
+            self.chunks.append((" ", "", True, True))   # 块之间隔一个空格
+        if tag == "meta" and (dict(attrs).get("name") or "").lower() == "description":
+            self.extra.append(dict(attrs).get("content") or "")
+        if tag in VOID_TAGS:
+            return
+        if re.fullmatch(r"h[1-6]", tag):
+            level = int(tag[1])
+            if self.faq_level and level <= self.faq_level:
+                self.faq_level = 0
+            self.head = (level, [])
+        self.stack.append((tag, tag in SKIP_TAGS or _hidden(attrs), tag in CHROME_TAGS))
+        if tag == "main":
+            self.main_open += 1
+            self.saw_main = True
+
+    def handle_startendtag(self, tag, attrs):
+        if tag in BLOCK_TAGS:
+            self.chunks.append((" ", "", True, True))
+        if tag == "meta" and (dict(attrs).get("name") or "").lower() == "description":
+            self.extra.append(dict(attrs).get("content") or "")
+
+    def handle_endtag(self, tag):
+        if tag in BLOCK_TAGS:
+            self.chunks.append((" ", "", True, True))
+        if tag in VOID_TAGS or all(t != tag for t, _, _ in self.stack):
+            return
+        while self.stack:
+            t, _, _ = self.stack.pop()
+            if t == "main":
+                self.main_open -= 1
+            if re.fullmatch(r"h[1-6]", t) and self.head:
+                level, said = self.head
+                if FAQ_HEAD.match("".join(said)):
+                    self.faq_level = level
+                self.head = None
+            if t == tag:
+                break
+
+    def _kind(self) -> str:
+        tags = [t for t, _, _ in self.stack]
+        if "details" in tags or "summary" in tags or self.faq_level:
+            return "faq"
+        if any(t in ("table", "td", "th", "caption") for t in tags):
+            return "table"
+        for t in reversed(tags):
+            if re.fullmatch(r"h[1-6]", t):
+                return "heading"
+            if t == "li":
+                return "list"
+            if t in ("p", "blockquote", "dd", "dt", "figcaption"):
+                return "paragraph"
+        return "other"
+
+    def handle_data(self, data):
+        if self.stack and self.stack[-1][0] == "title":
+            self.extra.append(data)
+        if any(hide for _, hide, _ in self.stack):
+            return
+        if self.head:
+            self.head[1].append(data)
+        self.chunks.append((data, self._kind(), self.main_open > 0, any(c for _, _, c in self.stack)))
+
+
+def _join(chunks: list[tuple[str, str]]) -> tuple[str, list[tuple[int, int, str]]]:
+    """(字, 块类型) 拼成一段：空白合并成一个空格，NFKC 统一全角半角；记下每段字的 (起点, 终点, 块类型)。"""
+    out, spans = "", []
+    for data, kind in chunks:
+        s = re.sub(r"\s+", " ", unicodedata.normalize("NFKC", data))
+        if out.endswith(" ") or not out:
+            s = s.lstrip(" ")
+        if not s:
+            continue
+        if kind:
+            spans.append((len(out), len(out) + len(s), kind))
+        out += s
+    return out.rstrip(" "), spans
+
+
+def page_text(body: str) -> tuple[str, list[tuple[int, int, str]], str]:
+    """HTML → (正文, 正文里每段字的块类型, 全文)。"""
+    p = _PageText()
+    p.feed(body)
+    p.close()
+    main = [(d, k) for d, k, in_main, chrome in p.chunks if (in_main or not p.saw_main) and not (chrome and k)]
+    text, spans = _join(main)
+    full, _ = _join([(d, "") for d, _, _, _ in p.chunks] + [(" " + x, "") for x in p.extra])
+    return text, spans, full
+
+
+def skeleton(s: str) -> tuple[str, list[int]]:
+    """只留字母和数字（中文也算），都转小写，记下每个字在原文里的位置：空格、标点、符号、表情都不比。
+    Gemini 的原句常把两段拼成「标题. 正文」、把相邻的两个标签（分类和日期）粘在一起，这样都对得上。"""
+    keep, where = [], []
+    for i, ch in enumerate(unicodedata.normalize("NFKC", s)):
+        if ch.isalnum():
+            for c in ch.lower():
+                keep.append(c)
+                where.append(i)
+    return "".join(keep), where
+
+
+def locate(text: str, start: str, end: str = "") -> tuple[int, bool] | None:
+    """原句开头在 text 里的位置（text 的字数下标），和结尾在它后面对没对上；找不到开头是 None。
+    开头出现好几次时取第一处，和浏览器高亮 textStart,textEnd 一样（结尾只在开头后面找，所以挑不出更后面的那处）。
+    结尾对不上的（页面改过，或 AI 把后面一段拼了进来）照样按开头算位置。"""
+    sk, where = skeleton(text)
+    a, b = skeleton(start)[0], skeleton(end)[0] if end else ""
+    i = sk.find(a) if a else -1
+    if i < 0:
+        return None
+    return where[i], bool(b) and sk.find(b, i + len(a)) >= 0
+
+
+def block_at(spans: list[tuple[int, int, str]], off: int) -> str:
+    for s, e, kind in spans:
+        if s <= off < e:
+            return kind
+    return "other"
+
+
+def place_quotes(rows: list[dict], get=None) -> dict:
+    """第 3 张表的每句原句在本站线上页面正文里的位置：给每行加上 pos（0–1）、block（块类型）、end_ok（结尾对上没有）；
+    找不到的加 why（fetch 页面打不开、outside 只在导航页脚标题里、missing 页面上没有）。同一页只取一次。返回只有数的汇总。"""
+    get = get or fetch_html
+    pages: dict[str, tuple | None] = {}
+    for r in rows:
+        url = f"https://{pr.OWN}{r['path']}"
+        if url not in pages:
+            body = get(url)
+            pages[url] = None if body is None else page_text(body)
+        r.update(pos=None, block=None, end_ok=None, why=None)
+        if pages[url] is None:
+            r["why"] = "fetch"
+            continue
+        main, spans, full = pages[url]
+        got = locate(main, r["start"], r["end"])
+        if got is None:
+            r["why"] = "outside" if locate(full, r["start"], r["end"]) else "missing"
+            continue
+        r.update(pos=got[0] / len(main), block=block_at(spans, got[0]), end_ok=got[1])
+    return position_stats(rows)
+
+
+def page_boot(per_page: dict[str, list[float]], stat) -> list[float] | None:
+    """按页面重抽的 95% 区间：页面有放回地重抽 BOOT 次（随机种子固定），同一页的几句一起进出。
+    同一页的几句不独立（11-21 的 20 句里 9 句来自同一页），有效样本更接近页面数。不到 2 页给不出区间。"""
+    keys = sorted(per_page)
+    if len(keys) < 2:
+        return None
+    rnd, est = random.Random(pr.SEED), []
+    for _ in range(pr.BOOT):
+        est.append(stat([p for k in rnd.choices(keys, k=len(keys)) for p in per_page[k]]))
+    est.sort()
+    return [round(est[math.ceil(0.025 * pr.BOOT) - 1], 4), round(est[math.ceil(0.975 * pr.BOOT) - 1], 4)]
+
+
+def position_stats(rows: list[dict]) -> dict:
+    """只有数：几句、找到几句、几个页面，前 10%、30%、50% 里各有几句和区间，中位位置和区间，找不到的按原因，块类型。"""
+    found = [r for r in rows if r.get("pos") is not None]
+    per_page: dict[str, list[float]] = defaultdict(list)
+    for r in found:
+        per_page[r["path"]].append(r["pos"])
+    out = {"sentences": len(rows), "located": len(found), "pages": len(per_page),
+           "engines": sorted({e for r in rows for e in r.get("engines", ())}),
+           "not_located": dict(sorted(Counter(r["why"] for r in rows if r.get("why")).items())),
+           "blocks": dict(sorted(Counter(r["block"] for r in found).items())),
+           "end_matched": sum(1 for r in found if r.get("end_ok")), "end_given": sum(1 for r in found if r.get("end"))}
+    if found:
+        pos = [r["pos"] for r in found]
+        out["median"] = round(statistics.median(pos), 4)
+        out["median_ci"] = page_boot(per_page, statistics.median)
+        for cut in POS_CUTS:
+            key = f"first_{round(cut * 100)}pct"
+            out[key] = sum(p < cut for p in pos)
+            out[key + "_ci"] = page_boot(per_page, lambda ps, cut=cut: sum(p < cut for p in ps) / len(ps))
+    return out
+
+
+def position_lines(w: dict) -> list[str]:
+    """邮件里「原句在页面上的位置」一段（只有数，句子在上面的表里）。"""
+    n, k = w["located"], w["sentences"]
+    out = ["", "**原句在页面上的位置**（检验「AI 只读页面前半截」）：正文 = 线上页面 `<main>` 里看得见的字，去掉导航、页脚、表单、按钮；"
+           "位置 = 句子开头前的字数 ÷ 正文总字数。只比字母和数字，空格、标点不管；原句是「开头,结尾」的，按开头找"
+           "（出现几次取第一处，和浏览器高亮一样），结尾只用来核对。", ""]
+    if not k:
+        return out + ["这次没有本站被引的原句。"]
+    ci = lambda v: f"，区间 {math.floor(v[0] * 100 + 1e-9)}–{math.ceil(v[1] * 100 - 1e-9)}%" if v else ""    # 向外取整，不比算出来的窄
+    line = f"{k} 句里在页面正文找到 {n} 句（{w['pages']} 个页面）。"
+    if n:
+        line += "；".join(f"前 {round(c * 100)}%：{w[f'first_{round(c * 100)}pct']}/{n}"
+                         f"（{round(100 * w[f'first_{round(c * 100)}pct'] / n)}%{ci(w[f'first_{round(c * 100)}pct_ci'])}）" for c in POS_CUTS)
+        line += f"；中位位置 {round(w['median'] * 100)}%{('（' + ci(w['median_ci']).lstrip('，') + '）') if w['median_ci'] else ''}。"
+    out.append(line)
+    if n:
+        out += ["", f"区间按页面重抽 {pr.BOOT:,} 次（同一页的几句一起进出，随机种子固定）：同一页的几句不独立，有效样本更接近页面数；"
+                "页面少时区间偏窄，只当参考" + ("，这次不到 2 个页面，给不出区间" if not w["median_ci"] else "") + "。"
+                "在哪种块：" + "、".join(f"{BLOCK_ZH.get(b, b)} {c}" for b, c in sorted(w["blocks"].items(), key=lambda x: -x[1])) + "。"]
+    if w["not_located"]:
+        out += ["", f"找不到的 {k - n} 句：" + "；".join(f"{WHY_ZH.get(y, y)}{'' if WHY_ZH.get(y, y).endswith('）') else ' '}{c} 句"
+                                                      for y, c in w["not_located"].items()) + "。"]
+    who = "、".join(pr.LABEL.get(e, e) for e in w["engines"]) or "–"
+    out += ["", f"样本小，而且只来自引用链接带原句的那几家（这次是 {who}）。量的是 AI 拿来当证据的句子在页面哪里，不等于 AI 读到了哪里；"
+            "页面是跑这一步那天线上的版本，和 AI 读的那一版可能不同。"]
+    return out
+
+
 def clip(s: str, n: int) -> str:
     return s if len(s) <= n else s[:n - 1].rstrip() + "…"
 
 
-def quote_section(stats: dict, rows: list[dict]) -> list[str]:
+def quote_section(stats: dict, rows: list[dict], where: dict | None = None) -> list[str]:
+    """where 是 place_quotes 的汇总：给了就在原句表里加「在页面哪里」「什么块」两列，表下面加位置的统计。"""
     out = ["", "### 3 AI 引用本站时指向哪句话", "",
            "引用链接里的 #:~:text= 就是 AI 拿来当证据的那句原文：点进来的访客会看到这句被高亮。"
            "这里是面板里的那一半；真实访客点进来的那一半在 GA4 的 text_fragment 事件里。", ""]
@@ -202,15 +472,19 @@ def quote_section(stats: dict, rows: list[dict]) -> list[str]:
             f"{s['own_with_text']} |" for e, s in stats.items()]
     if not rows:
         return out + ["", "本站被引的链接里没有带原句的。"]
-    out += ["", "| 页面 | 原句（开头 … 结尾） | 次数 | 引擎 | 题 |", "|---|---|---|---|---|"]
+    placed = where is not None
+    out += ["", "| 页面 | 原句（开头 … 结尾） | 次数 | 引擎 | 题 |" + (" 在页面哪里 | 什么块 |" if placed else ""),
+            "|---|---|---|---|---|" + ("---|---|" if placed else "")]
     for r in rows[:SHOWN_QUOTES]:
         said = clip(r["start"], 70) + (f" … {clip(r['end'], 40)}" if r["end"] else "")
         said = said.replace("|", "\\|")
+        cells = (f" {round(r['pos'] * 100)}% | {BLOCK_ZH.get(r['block'], r['block'])} |" if r.get("pos") is not None
+                 else f" {WHY_SHORT.get(r.get('why'), '–')} | – |") if placed else ""
         out.append(f"| {r['path']} | {said} | {r['times']} | {'、'.join(sorted(r['engines']))} | "
-                   f"{'、'.join(sorted(r['questions'])[:4])}{' 等' if len(r['questions']) > 4 else ''} |")
+                   f"{'、'.join(sorted(r['questions'])[:4])}{' 等' if len(r['questions']) > 4 else ''} |" + cells)
     if len(rows) > SHOWN_QUOTES:
         out.append(f"\n另有 {len(rows) - SHOWN_QUOTES} 句只列计数。")
-    return out
+    return out + (position_lines(where) if placed else [])
 
 
 # ───────────── 外部网站 ─────────────
@@ -308,7 +582,7 @@ def pos(p) -> str:
 
 
 def report(day: str, rows: list[dict], sites: list[dict], ranks_ok: bool, officials: list[dict] | None = None,
-           read: tuple[int, int] = (0, 0), quoted: tuple[dict, list[dict]] | None = None) -> str:
+           read: tuple[int, int] = (0, 0), quoted: tuple[dict, list[dict]] | None = None, where: dict | None = None) -> str:
     out = [f"## 子查询之后：改哪页、补哪些词、去哪些站（{day}）", "",
            "公共词 = 同一道题至少两个回答都用过的词；整句每次都变，这批词基本不变。页面按 Search Console 近 3 个月的展示次数排，"
            "有人搜的先改。代表搜索词 = 这道题覆盖公共词最多的那条真实搜索词。", ""]
@@ -349,22 +623,26 @@ def report(day: str, rows: list[dict], sites: list[dict], ranks_ok: bool, offici
     if officials:
         out += ["", "官方站（只能在页面里引用、链接，不能投稿）：" + "、".join(f"{s['site']}（{s['questions']} 题）" for s in officials)]
     if quoted is not None:
-        out += quote_section(*quoted)
+        out += quote_section(*quoted, where)
     return "\n".join(out) + "\n"
 
 
-def public_counts(day: str, rows: list[dict], sites: list[dict], quoted: tuple[dict, list[dict]] | None = None) -> dict:
-    """只有计数，不含搜索词、不含别的网站，也不含被引的原句（原句只进邮件）。"""
+def public_counts(day: str, rows: list[dict], sites: list[dict], quoted: tuple[dict, list[dict]] | None = None,
+                  where: dict | None = None) -> dict:
+    """只有计数，不含搜索词、不含别的网站，也不含被引的原句（原句只进邮件）。where（原句在页面上的位置）也只有数。"""
     stats, qrows = quoted or ({}, [])
-    return {"date": day, "questions": len(rows), "with_searches": sum(1 for r in rows if r["answers"]),
-            "pages_checked": sum(1 for r in rows if r["missing"] is not None),
-            "rows": [{"question_id": r["question_id"], "target_url": r["target_url"], "impressions": r["impressions"],
-                      "core_words": len(r["core"]), "missing_words": None if r["missing"] is None else len(r["missing"]),
-                      "missing_classes": None if r["missing_classes"] is None else len(r["missing_classes"]),
-                      "representative_google": r["rep_google"], "representative_checked": r["rep_checked"],
-                      "best_google": r["best_google"]} for r in rows],
-            "sites_listed": len(sites), "sites_new_questions": sum(s["new"] for s in sites),
-            "citation_markers": stats, "own_quoted_sentences": len(qrows), "own_quoted_pages": len({r["path"] for r in qrows})}
+    out = {"date": day, "questions": len(rows), "with_searches": sum(1 for r in rows if r["answers"]),
+           "pages_checked": sum(1 for r in rows if r["missing"] is not None),
+           "rows": [{"question_id": r["question_id"], "target_url": r["target_url"], "impressions": r["impressions"],
+                     "core_words": len(r["core"]), "missing_words": None if r["missing"] is None else len(r["missing"]),
+                     "missing_classes": None if r["missing_classes"] is None else len(r["missing_classes"]),
+                     "representative_google": r["rep_google"], "representative_checked": r["rep_checked"],
+                     "best_google": r["best_google"]} for r in rows],
+           "sites_listed": len(sites), "sites_new_questions": sum(s["new"] for s in sites),
+           "citation_markers": stats, "own_quoted_sentences": len(qrows), "own_quoted_pages": len({r["path"] for r in qrows})}
+    if where is not None:
+        out["quote_positions"] = where              # 2026-11-26 起
+    return out
 
 
 # ───────────── 命令 ─────────────
@@ -393,8 +671,13 @@ def cmd_run(a) -> int:
     all_terms = {t for per in fan.values() for t in per}
     read = (sum(1 for t in all_terms if placed.get(t, {}).get("read")), len(all_terms))
     day = a.date or datetime.now(pr.CST).strftime("%Y-%m-%d")
-    text = report(day, rows, sites, ranks_ok, officials, read, quoted)
-    counts = public_counts(day, rows, sites, quoted)
+    try:
+        where = place_quotes(quoted[1]) if quoted else None  # 原句在页面上的位置：取本站线上页面，不花钱
+    except Exception as e:                                   # 量位置出错不挡前面几张表；日志只打错误类型，不打原句
+        print(f"原句在页面上的位置没量成：{type(e).__name__}", file=sys.stderr)
+        where = None
+    text = report(day, rows, sites, ranks_ok, officials, read, quoted, where)
+    counts = public_counts(day, rows, sites, quoted, where)
     if not a.dry:
         if a.appendix:
             Path(a.appendix).write_text(text, encoding="utf-8")
@@ -406,6 +689,8 @@ def cmd_run(a) -> int:
     print(f"行动清单：{counts['with_searches']}/{counts['questions']} 道不带品牌名的题有搜索词；页面取到 {counts['pages_checked']} 个题的页面，"
           f"{len(miss)} 道题的页面缺公共词；排名{'可用' if ranks_ok else '不可用'}，外部网站列了 {len(sites)} 个；"
           f"本站被引的原句 {counts['own_quoted_sentences']} 句"
+          + (f"，在页面正文里找到 {where['located']} 句" + (f"、中位位置 {round(where['median'] * 100)}%" if where.get("median") is not None else "")
+             if where else "")
           + ("（--dry：什么都没写）" if a.dry else ""))
     return 0
 
@@ -490,6 +775,70 @@ def selftest() -> int:
     pub = json.dumps(public_counts("2026-11-30", [], [], (stats, qrows)), ensure_ascii=False)
     assert "Contact Jason" not in pub and "other.example" not in pub and '"own_quoted_sentences": 1' in pub, pub
     assert "### 3" not in report("d", [], [], False) and "没有面板回答" in "\n".join(quote_section({}, []))
+    # 原句在页面上的位置：造一页，正文只算 <main> 里看得见的字；导航、页脚、表单、按钮、看不见的、脚本都不算
+    demo = """<!doctype html><html><head><title>Site title words</title><meta name="description" content="Meta words only here"/>
+<script>var x = "Words inside a script";</script></head><body><div hidden>Body hidden words</div>
+<header><nav><a>Blog</a><a>Header nav words</a></nav></header>
+<main><article><nav><ol><li>Home</li><li>Crumb words</li></ol></nav>
+<header><span>Guides</span><span>2026-01-02</span><h1>Contact the Demo Team</h1></header>
+<div class="prose"><p>Write to us about training and workshops; this paragraph takes up some room on the page.</p>
+<p class="hidden">Invisible words never shown</p><p class="hidden sm:block">Desktop only words are visible</p>
+<ul><li>Pricing: <strong>fees</strong> start at “3.9%” for most sellers.</li><li>Second item in the list.</li></ul>
+<table><tr><td>Both platforms handle global sales tax.</td></tr></table>
+<p>Repeated sentence here. Ending one.</p><p>Some filler text between the two repeats.</p><p>Repeated sentence here. Ending two.</p>
+<h2 id="faq">FAQ</h2><h3>Does it cost anything?</h3><p>No, every lesson in the demo is free.</p>
+<details><summary>More questions</summary><p>Answer inside a details block.</p></details></div>
+<form><button>Subscribe Free</button><p>Form words not content</p></form>
+<h2>Related Posts</h2><p>Last block of the page.</p></article></main>
+<footer><p>Footer words only here</p></footer></body></html>"""
+    text, spans, full = page_text(demo)
+    assert text.startswith("Guides2026-01-02 Contact the Demo Team Write to us about training"), text[:80]
+    for gone in ("Header nav words", "Crumb words", "Footer words", "Form words", "Subscribe Free", "Invisible words", "Body hidden",
+                 "inside a script", "Site title", "Meta words"):
+        assert gone not in text, gone
+    assert "Desktop only words are visible" in text and text.endswith("Last block of the page.")
+    assert all(x in full for x in ("Header nav words", "Footer words", "Site title words", "Meta words only here"))
+    assert "Invisible words" not in full and "inside a script" not in full
+    at = lambda s, e="": (lambda got: (round(got[0] / len(text), 3), block_at(spans, got[0]), got[1]) if got else None)(locate(text, s, e))
+    head, para = at("Contact the Demo Team. Write to us about", "this paragraph takes up"), at("Guides2026-01-02.")
+    assert head[1:] == ("heading", True) and para[1] == "other" and para[0] == 0.0, (head, para)   # 两段拼成一句、标签粘在一起都认得出
+    assert at('* Pricing: fees start at "3.9%" for')[1] == "list"                              # 直引号、弯引号、列表符号都不管
+    assert at("Both platforms handle global")[1] == "table"
+    one, gap = at("Repeated sentence here.", "Ending two."), at("Repeated sentence here. Ending one.")
+    assert one[0] == gap[0] and one[2] is True                                                    # 开头出现两次取第一处，结尾在后面能找到
+    assert at("Repeated sentence here.", "Not on the page")[2] is False                           # 结尾对不上，照样按开头算
+    assert at("Does it cost anything? No, every lesson")[1] == "faq" and at("Answer inside a details block.")[1] == "faq"
+    last = at("Last block of the page.")
+    assert last[1] == "paragraph" and last[0] > 0.9                                               # 「FAQ」下面一个同级标题就结束了
+    assert head[0] < at("Pricing: fees")[0] < at("Both platforms")[0] < at("Does it cost")[0] < last[0]
+    assert locate(text, "Footer words only here") is None and locate(full, "Footer words only here") is not None
+    # 每句的位置、找不到的原因、汇总：两页，另一页打不开
+    other_page = "<html><body><main><h1>Second page</h1><p>Alpha line near the top.</p>" + "<p>filler words here.</p>" * 30 + \
+                 "<p>Omega line at the bottom.</p></main></body></html>"
+    pages_ = {f"https://{pr.OWN}/en/demo": demo, f"https://{pr.OWN}/en/second": other_page}
+    q = lambda path, start, end="": {"path": path, "start": start, "end": end, "times": 1, "engines": {"gemini_app"}, "questions": {"q1"}}
+    qrows = [q("/en/demo", "Contact the Demo Team. Write to us about", "takes up some room"), q("/en/demo", "Pricing: fees start at"),
+             q("/en/demo", "Last block of the page."), q("/en/demo", "Footer words only here"), q("/en/demo", "Never written anywhere"),
+             q("/en/second", "Alpha line near the top."), q("/en/second", "Omega line at the bottom."), q("/en/gone", "Whatever")]
+    where = place_quotes(qrows, pages_.get)
+    assert [r["why"] for r in qrows] == [None, None, None, "outside", "missing", None, None, "fetch"], [r["why"] for r in qrows]
+    assert qrows[0]["block"] == "heading" and qrows[0]["end_ok"] is True and qrows[6]["pos"] > 0.9
+    assert (where["sentences"], where["located"], where["pages"]) == (8, 5, 2) and where["engines"] == ["gemini_app"]
+    assert where["not_located"] == {"fetch": 1, "missing": 1, "outside": 1} and where["end_matched"] == 1 and where["end_given"] == 1
+    pos = sorted(r["pos"] for r in qrows if r["pos"] is not None)
+    assert where["median"] == round(pos[2], 4) and where["first_10pct"] == sum(p < 0.1 for p in pos)
+    assert where["first_50pct"] == sum(p < 0.5 for p in pos) and where["first_50pct"] < where["located"]
+    lo, hi = where["median_ci"]
+    assert lo <= where["median"] <= hi and where == place_quotes([dict(r) for r in qrows], pages_.get)   # 区间重算不变
+    assert page_boot({"/a": [0.1, 0.2]}, statistics.median) is None                                # 只有一页，给不出区间
+    text3 = report("2026-11-30", [], [], False, [], (0, 0), ({"gemini_app": {"links": 8, "with_text": 8, "with_utm": 0, "own": 8,
+                                                                               "own_with_text": 8}}, qrows), where)
+    assert "| 在页面哪里 | 什么块 |" in text3 and re.search(r"\| \d+% \| 标题 \|", text3) and "| 不在正文 | – |" in text3 and "| 打不开 | – |" in text3, text3
+    assert "8 句里在页面正文找到 5 句（2 个页面）。前 10%：" in text3 and "中位位置" in text3 and "区间按页面重抽 2,000 次" in text3, text3
+    assert "找不到的 3 句：页面打不开 1 句；页面上找不到" in text3 and "这次是 Gemini App" in text3, text3
+    pub = json.dumps(public_counts("2026-11-30", [], [], ({}, qrows), where), ensure_ascii=False)
+    assert '"quote_positions"' in pub and '"located": 5' in pub and "Demo Team" not in pub and "Alpha line" not in pub, pub
+    assert "quote_positions" not in public_counts("d", [], [], ({}, qrows))                       # 没量位置就不写这一项
     print("selftest ok")
     return 0
 
