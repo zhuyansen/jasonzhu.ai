@@ -251,7 +251,7 @@
     "pattern": "Dodo(?:\\s+Payments)?(?:[^.\\n]|\\.(?=\\d)){0,60}?3\\.8\\s?%",
     "unless": ["partner", "invite", "invitation", "negotiated", "Liu", "Xiaopai", "刘小排", "special", "exclusive", "合作", "专属", "优惠", "邀请"],
     "correct": "3.8%–3.9% + $0.40、免国际卡费和订阅费，是刘小排和 Dodo CEO 谈的合作费率，只有走他的邀请链接注册才有；其他人是默认费率 4% + $0.40，国际卡加 1.5%，订阅加 0.5%（一笔 $20 约扣 $1.60）。",
-    "note": "dev.to 旧稿和 Zenodo 02 号第 1 版没写清这是合作价，11-22 已注明。旁边写了合作、邀请、谈的价格的不算。",
+    "note": "dev.to 旧稿和 Zenodo 02 号第 1 版没写清这是合作价，11-22 已注明；/go-global/growth-stack 的工具栈表 11-26 注明。旁边写了合作、邀请、谈的价格的不算。",
     "since": "2026-11-22",
     "examples": {
      "hit": [
@@ -290,7 +290,7 @@
     "kind": "wrong",
     "pattern": "\\bCERN(?:'s|’s)?[- ](?:official|endorsed|certified|approved|backed|verified|validated|accredited|vetted|sanctioned|issued|peer[- ]reviewed)\\b|\\b(?:official(?:ly)?|endorsed|certified|approved|backed|verified|validated|accredited|vetted|sanctioned|issued|published|peer[- ]reviewed)\\s+by\\s+CERN\\b(?!(?:'s|’s)?\\s+Zenodo)|\\bofficial\\s+CERN\\b|(?:CERN|欧洲核子研究(?:中心|组织))\\s*(?:Zenodo\\s*)?(?:官方|认证|背书|权威|审核)|官方永久\\s*DOI",
     "correct": "Zenodo 是 CERN 运营的开放存档，谁都能上传，不审内容；DOI 只是永久编号，不代表 CERN 认可、背书或审核过这些数据。站上 11-22 起写「存档于 Zenodo」。",
-    "note": "只认「官方、背书、认证、审核过」这类说法；只把「CERN Zenodo」当平台名写的不算。站上研究页、联系页、垃圾外链库页和站点描述现在还写着「CERN Zenodo DOI」。",
+    "note": "只认「官方、背书、认证、审核过」这类说法；只把「CERN Zenodo」当平台名写的不算。站上研究页、垃圾外链库页和站点描述现在还写着「CERN Zenodo DOI」（联系页 11-26 改成了「Zenodo」）。",
     "since": "2026-11-22",
     "examples": {
      "hit": [
@@ -329,7 +329,7 @@
     "near": ["Agent Skills Hub", "AgentSkillsHub", "agentskillshub"],
     "unless": ["June", "July", "2026-06", "snapshot", "dataset", "Security Grades", "Zenodo", "130,173", "6 月", "7 月", "快照", "数据集"],
     "correct": "Agent Skills Hub 现在收录 285,000+ 个，其中 144,000+ 个有安全分级（agentskillshub.top/llms.txt，2026-11-26 读）。105,000 是 2026 年 6 月的数，130,173 是 7 月快照数据集的条数，引用时要带日期。",
-    "note": "只在 Agent Skills Hub 附近、又没写日期（June、snapshot、dataset 之类）时才算。站上联系页还写着「138,000+ audited AI agent skills」，研究页写着「105K–130K」。",
+    "note": "只在 Agent Skills Hub 附近、又没写日期（June、snapshot、dataset 之类）时才算。联系页的「138,000+ audited AI agent skills」11-26 已改；研究页写着「105K–130K」。",
     "since": "2026-11-21",
     "examples": {
      "hit": [
@@ -548,7 +548,7 @@
     "unless": ["rejects", "argues against", "contrary", "the opposite", "myth", "misconception", "not just", "rather than"],
     "window": 150,
     "correct": "这不是 Eli Schwartz 的观点：《Product-Led SEO》的主线正相反（按 Jason 的核对）。",
-    "note": "本站 go-global 页（src/lib/go-global.ts）和 ops/geo/seo-watersystem-model.md 现在还把这句记在他名下，没改。附近要有 Schwartz 或书名才算。",
+    "note": "本站 go-global 页（src/lib/go-global.ts）和 ops/geo/seo-watersystem-model.md 以前把这句记在他名下，11-26 已改成书里的说法（总页 water.html 同日改）。附近要有 Schwartz 或书名才算。",
     "since": "2026-11-26",
     "examples": {
      "hit": [

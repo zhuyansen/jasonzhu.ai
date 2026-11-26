@@ -20,7 +20,7 @@ export async function generateMetadata({
         ? "全站目录 (HTML Sitemap)"
         : "HTML Sitemap & Directory",
       description: isZh
-        ? "JasonZhu.AI 全站内容分类目录：核心页面、AI 出海实战指南、全部深度教程博客与每日 AI 快讯索引（距首页 1 次点击直达）。"
+        ? "JasonZhu.AI 全站内容分类目录：核心页面、AI 出海实战指南、全部深度教程博客与每日 AI 快讯索引；目录挂在页脚，从首页点 2 次可到目录里的每一页。"
         : "Complete HTML Sitemap of JasonZhu.AI: core pages, going-global guides, all in-depth AI tutorials, and daily AI news archives.",
       alternates: {
         canonical: `https://jasonzhu.ai/${lang}/sitemap-html`,
@@ -47,7 +47,7 @@ export default async function HtmlSitemapPage({
   const posts = getAllPosts();
   const newsList = getAllDigests().filter(isDigestIndexable);
 
-  // Group posts by category for clean Product-Led SEO directory hierarchy
+  // Group posts by category for the directory
   const postsByCategory = new Map<string, typeof posts>();
   for (const post of posts) {
     const cat = post.category || (isZh ? "综合教程" : "General");
@@ -64,8 +64,8 @@ export default async function HtmlSitemapPage({
         </h1>
         <p className="text-sm text-gray-500">
           {isZh
-            ? `基于 Product-Led SEO 扁平内链架构生成：共收录 ${posts.length} 篇深度实战教程、${GUIDES.length + 3} 篇出海专题指南与 ${newsList.length} 期 AI 每日快讯，所有页面距首页不超过 2 次点击。`
-            : `Product-Led SEO flat link directory indexing ${posts.length} tutorials, ${GUIDES.length + 3} going-global playbooks, and ${newsList.length} AI daily news issues within 2 clicks of the homepage.`}
+            ? `这是挂在页脚的 HTML 站点目录（《Product-Led SEO》第 6 章建议大站都做一个）：共收录 ${posts.length} 篇深度实战教程、${GUIDES.length + 3} 篇出海专题指南与 ${newsList.length} 期 AI 每日快讯，每一页从首页点 2 次就能到。`
+            : `An HTML site directory linked from the footer, as chapter 6 of Product-Led SEO recommends for large sites: ${posts.length} tutorials, ${GUIDES.length + 3} going-global playbooks, and ${newsList.length} AI daily news issues, each within 2 clicks of the homepage.`}
         </p>
       </div>
 

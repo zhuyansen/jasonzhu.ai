@@ -147,8 +147,8 @@ export default async function ContactPage({
             </h3>
             <p>
               {isZh
-                ? "欢迎媒体、研究者与产品团队免费引用我在 CERN Zenodo 归档的 20 万卖家收款基准与 10.5 万 AI Agent Skills 安全审计数据集，需定制切片可直接发邮件。"
-                : "Journalists, researchers, and tool teams are welcome to cite my open CERN Zenodo benchmarks on 200,000+ indie SaaS checkouts and 138,000+ audited AI agent skills. Email for custom slices or commentary."}
+                ? "欢迎媒体、研究者与产品团队免费引用我存档在 Zenodo 的开放数据集：20 万卖家收款基准，以及 AI Agent Skills 安全分级数据集（2026 年 7 月快照，130,173 条）。Agent Skills Hub 现在收录 28.5 万个以上，其中 14.4 万个以上有安全分级。需要定制切片可直接发邮件。"
+                : "Journalists, researchers, and tool teams are welcome to cite my open datasets on Zenodo: a benchmark of 200,000+ indie SaaS checkouts and security grades for 130,173 AI agent skills (July 2026 snapshot). Agent Skills Hub now lists 285,000+ skills, 144,000+ of them security-graded. Email for custom slices or commentary."}
             </p>
           </div>
           <div>
@@ -190,8 +190,8 @@ export default async function ContactPage({
               {isZh ? "GoSail Club 会员与开源数据：" : "GoSail Club & open benchmarks:"}
             </strong>{" "}
             {isZh
-              ? "会员激活、发票或权益问题请备注下单邮箱；学术引用或媒体核对 CERN Zenodo 数据集请直接写明所需字段与截稿日期。"
-              : "For GoSail Club membership activation or billing support, include the email used at checkout. For press quotes or academic citations of the CERN Zenodo datasets, mention your deadline and the specific slice you need."}
+              ? "会员激活、发票或权益问题请备注下单邮箱；学术引用或媒体核对 Zenodo 数据集请直接写明所需字段与截稿日期。"
+              : "For GoSail Club membership activation or billing support, include the email used at checkout. For press quotes or academic citations of the Zenodo datasets, mention your deadline and the specific slice you need."}
           </li>
         </ul>
       </div>

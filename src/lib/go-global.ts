@@ -499,8 +499,8 @@ export const SEO_WATER_SYSTEM_V8 = {
       },
       {
         id: "1",
-        zh: "SEO 只能接住已有的需求；没人搜的新品类要同时做社媒和口碑（Eli Schwartz；Tim Soulo《DISCOVERABLE》，2026-11-24 出版，这里引的是出版前公开的内容）。这是定方向的原则，不单独测。",
-        en: "SEO only captures existing demand; a category nobody searches for also needs social reach and word of mouth (Eli Schwartz; Tim Soulo's DISCOVERABLE, published on 24 November 2026, quoted here from material released before publication). A principle for direction, not tested on its own.",
+        zh: "单靠 SEO 优化，接住的是已有的需求。没人搜的新品类有两种做法：Tim Soulo 主张同时做社媒和口碑（《DISCOVERABLE》，2026-11-24 出版，这里引的是出版前公开的内容）；Eli Schwartz 主张做一个搜索用户用得上的产品（数据页、工具、目录），让它带出新的搜索需求（《Product-Led SEO》p103–104、p190）。这是定方向的原则，不单独测。",
+        en: "SEO optimization on its own serves demand that already exists. For a category nobody searches for yet, Tim Soulo adds social reach and word of mouth (DISCOVERABLE, published on 24 November 2026, quoted here from material released before publication); Eli Schwartz builds a product searchers can use (a data page, a tool, a directory) and lets it create the search demand (Product-Led SEO, pp. 103–104, 190). A principle for direction, not tested on its own.",
         status: { zh: "参考", en: "Reference" },
       },
     ],
@@ -820,8 +820,8 @@ export const GO_GLOBAL_ARSENAL_2026 = {
         en: "payment-guard (pre-review compliance CLI/Skill) + Payment Platform Picker (/go-global/payments) + HK/US/UK entity guides",
       },
       add: {
-        zh: "Waffo + Dodo Payments 双通道主备冗余（防单点封号，Dodo 3.8%–3.9%+$0.40 免国际卡费与订阅费，$20 订阅仅扣 $1.18，原生支持微信支付与 AI 积分计费）+ 收款平台新卖家雷达（new-term-radar 每周看 8 家，含 Waffo / Dodo / Polar / Creem；Waffo 在链接图里还没有数据，选品周报只统计另外 7 家）",
-        en: "Waffo + Dodo Payments dual-gateway failover ($1.18 fee on $20 sub, native WeChat Pay & AI credits) + a weekly new-seller radar (new-term-radar watches 8 platforms including Waffo, Dodo, Polar and Creem; Waffo has no data in the link graph yet, so the weekly report counts the other 7)",
+        zh: "Waffo + Dodo Payments 双通道主备冗余（防单点封号；Dodo 走刘小排的邀请链接是他和 Dodo 谈的合作价 3.8%–3.9%+$0.40、免国际卡费与订阅费，$20 订阅约扣 $1.18，自己注册是默认费率，$20 约扣 $1.60；原生支持微信支付与 AI 积分计费）+ 收款平台新卖家雷达（new-term-radar 每周看 8 家，含 Waffo / Dodo / Polar / Creem；Waffo 在链接图里还没有数据，选品周报只统计另外 7 家）",
+        en: "Waffo + Dodo Payments dual-gateway failover (Dodo takes about $1.18 of a $20 subscription at the partner rate Liu Xiaopai negotiated, available only through his invite link, and about $1.60 at the default rate; native WeChat Pay & AI credits) + a weekly new-seller radar (new-term-radar watches 8 platforms including Waffo, Dodo, Polar and Creem; Waffo has no data in the link graph yet, so the weekly report counts the other 7)",
       },
       drop: {
         zh: "❌ 严禁单收款通道裸奔（水系执行手册红线：线上必须 ≥2 套收款通道热备）；❌ 淘汰「用 `mailto:` 假装收银台」（实测 90 会话 0 转化；已换成真实的 Stripe/Waffo 支付链接，换了以后的转化还没有数据）",
@@ -1246,8 +1246,8 @@ export const LEARN_SEO = {
       author: "Eli Schwartz / Tim Soulo (DISCOVERABLE 2026-11-24)",
       url: "https://ahrefs.com/discoverable",
       takeaway: {
-        zh: "战略层第一性原理：Eli 点破 SEO 只能「捕获已有需求（Capture Demand）」而不能为未知新品类凭空创造搜索需求；Tim Soulo 将所有产品破圈归纳为 3 条底层路径——Get Found（搜索/AI 检索捕获需求）、Get Noticed（社媒/投放打断注意力创造需求）、Get Talked About（靠独家工具与基准数据集触发口碑自传播）。",
-        en: "First-principles strategy: Eli proves SEO captures existing demand rather than creating demand for unknown categories; Tim Soulo distills all discovery into 3 paths — Get Found (Search/AI retrieval), Get Noticed (Social/Ads), and Get Talked About (Word-of-mouth via proprietary tools and benchmarks).",
+        zh: "战略层第一性原理：Eli 把 SEO 分成两种：从关键词工具出发、和所有人抢同一批词的红海 SEO，和从用户研究出发、做出还不存在的产品（数据页、工具、目录）的蓝海 SEO，后者能创造新的搜索需求（p100–104、p190）；Tim Soulo 将所有产品破圈归纳为 3 条底层路径——Get Found（搜索/AI 检索捕获需求）、Get Noticed（社媒/投放打断注意力创造需求）、Get Talked About（靠独家工具与基准数据集触发口碑自传播）。",
+        en: "First-principles strategy: Eli splits SEO in two: Red Ocean SEO starts from keyword tools and fights everyone for the same terms, while Blue Ocean SEO starts from user research and builds a product that does not exist yet (a data page, a tool, a directory), which can create new search demand (pp. 100–104, 190); Tim Soulo distills all discovery into 3 paths — Get Found (Search/AI retrieval), Get Noticed (Social/Ads), and Get Talked About (Word-of-mouth via proprietary tools and benchmarks).",
       },
     },
     {
@@ -1323,10 +1323,10 @@ export const SEO_SCHOOLS_MAP: {
       color: "blue",
       x: 22,
       y: 16,
-      layer: { zh: "第 1 层：建什么页面（捕获 vs 创造需求 × 4–7 类一手资产）", en: "Layer 1: What to build (Capture vs Create Demand & 4–7 asset types)" },
+      layer: { zh: "第 1 层：建什么页面（红海 vs 蓝海 SEO × 4–7 类一手资产）", en: "Layer 1: What to build (Red vs Blue Ocean SEO & 4–7 asset types)" },
       name: { zh: "产品驱动、新词工具交互与一手资产派（Product-Led & Proprietary Assets）", en: "Product-Led, Interactive Tools & Proprietary Assets" },
       people: [
-        { name: "Eli Schwartz", url: "https://www.productledseo.com/t/playbooks", role: { zh: "《Product-Led SEO》作者、前 SurveyMonkey SEO 负责人（捕获需求 vs 创造需求）", en: "Author of Product-Led SEO, former SurveyMonkey SEO lead (Capture vs Create Demand)" } },
+        { name: "Eli Schwartz", url: "https://www.productledseo.com/t/playbooks", role: { zh: "《Product-Led SEO》作者、前 SurveyMonkey SEO 负责人（红海 SEO vs 蓝海 SEO）", en: "Author of Product-Led SEO, former SurveyMonkey SEO lead (Red Ocean vs Blue Ocean SEO)" } },
         { name: "Tim Soulo", handle: "@timsoulo", url: "https://ahrefs.com/discoverable", role: { zh: "Ahrefs CMO、《DISCOVERABLE》作者（Get Found / Get Noticed / Get Talked About）", en: "CMO at Ahrefs, author of DISCOVERABLE (Get Found / Get Noticed / Get Talked About)" } },
         { name: "Cyrus Shepard", handle: "@CyrusShepard", url: "https://zyppy.com/", role: { zh: "Zyppy 创始人（92.9% 赢家独有资产研究 & 28 天 AI Search 断流实验）", en: "Founder of Zyppy (92.9% proprietary asset study & 28-day AI Search opt-out test)" } },
         { name: "Georg Richard Aare", url: "https://www.youtube.com/watch?v=n35P_Mjsk3Y", role: { zh: "RankUp 创始人（称统计了 410,572 条 Claim：首段写一手经验进 Top-3 的概率高 5.5 倍，未核实）", en: "Founder of RankUp (says a 410,572-claim study found first-hand experience in the intro gives a 5.5x Top-3 lift; unverified)" } },
@@ -1335,8 +1335,8 @@ export const SEO_SCHOOLS_MAP: {
         { name: "Joker", handle: "@JokerMayCry_Jun", url: "https://mp.weixin.qq.com/s/ESPeoAGt5TToZrXqVItDyw", role: { zh: "《SEO 的下一次进化》作者：降低机器 6 种不确定性与新老赛道分层法则", en: "Author of 'The Next Evolution of SEO': 6 uncertainty reductions & niche maturity laws" } },
       ],
       core: {
-        zh: "反对按关键词工具词表批量写凑字数的科普长文（Eli 称之为红海 SEO）。战略上先按 Eli Schwartz 与 Tim Soulo《DISCOVERABLE》分清边界：SEO 只能「捕获已有需求（Get Found）」，没搜索量的新品类必须靠社媒打断注意力（Get Noticed）和独家工具/数据集触发口碑（Get Talked About）；Joker（2026-08-27）进一步点破：在新词、低竞争赛道，「Keyword+Page+Content+Backlinks」旧公式依然好用，但在成熟赛道与 AI 搜索里必须往上叠「Entity + Topic + Retrieval + Network」四层抽象。落地上，Cyrus Shepard 实证 92.9% 的核心更新赢家拥有 AI 无法凭空捏造的独有资产（互动计算器、一手数据集、在线工具），且 AI Overviews 贡献了 21%~23% 的点击；Georg Richard Aare 称对 410,572 条 Claim 做了统计：首段亮一手实测经验进 Top-3 的概率是 5.5 倍，单页凑齐 4~7 类一手资产进 Top-3 的概率高 1.9 倍（未核实）。",
-        en: "Rejects cranking out filler articles from keyword spreadsheets ('Red Ocean SEO'). Strategically, Eli Schwartz and Tim Soulo (DISCOVERABLE) draw a hard line: SEO captures existing demand (Get Found), whereas unknown categories require social interruption (Get Noticed) and word-of-mouth assets (Get Talked About); Joker (2026-08-27) adds that while 'Keyword + Page + Content + Backlinks' still works in emerging low-competition niches, mature niches and AI Search require 4 higher layers (Entity + Topic + Retrieval + Network). Cyrus Shepard proved 92.9% of Core Update winners carry proprietary assets AI cannot fabricate and AIO drives 21%–23% of clicks; Georg Richard Aare says his 410,572-claim study found that opening with first-hand experience lifts Top-3 probability 5.5x (unverified).",
+        zh: "反对按关键词工具词表批量写凑字数的科普长文（Eli 称之为红海 SEO）。战略上，Tim Soulo《DISCOVERABLE》把被发现分成三条路：搜索接住已有需求（Get Found），没搜索量的新品类靠社媒打断注意力（Get Noticed）和独家工具/数据集触发口碑（Get Talked About）；Eli 的看法不同：独家工具和数据页本身就是 SEO（Product-Led SEO），能给新品类创造搜索需求（p103–104、p190）；Joker（2026-08-27）进一步点破：在新词、低竞争赛道，「Keyword+Page+Content+Backlinks」旧公式依然好用，但在成熟赛道与 AI 搜索里必须往上叠「Entity + Topic + Retrieval + Network」四层抽象。落地上，Cyrus Shepard 实证 92.9% 的核心更新赢家拥有 AI 无法凭空捏造的独有资产（互动计算器、一手数据集、在线工具），且 AI Overviews 贡献了 21%~23% 的点击；Georg Richard Aare 称对 410,572 条 Claim 做了统计：首段亮一手实测经验进 Top-3 的概率是 5.5 倍，单页凑齐 4~7 类一手资产进 Top-3 的概率高 1.9 倍（未核实）。",
+        en: "Rejects cranking out filler articles from keyword spreadsheets ('Red Ocean SEO'). Strategically, Tim Soulo (DISCOVERABLE) splits discovery into three paths: search captures existing demand (Get Found), while unknown categories need social interruption (Get Noticed) and word-of-mouth assets (Get Talked About). Eli Schwartz sees it differently: proprietary tools and data pages are SEO in themselves (Product-Led SEO) and can create search demand for a new category (pp. 103–104, 190); Joker (2026-08-27) adds that while 'Keyword + Page + Content + Backlinks' still works in emerging low-competition niches, mature niches and AI Search require 4 higher layers (Entity + Topic + Retrieval + Network). Cyrus Shepard proved 92.9% of Core Update winners carry proprietary assets AI cannot fabricate and AIO drives 21%–23% of clicks; Georg Richard Aare says his 410,572-claim study found that opening with first-hand experience lifts Top-3 probability 5.5x (unverified).",
       },
       borrow: {
         zh: "1. 首屏直接给可交互工具或结构化对比表，并在首段前 50 词亮出「谁 + 测了多少样本 + 结论」（依据是 Aare 的统计，未核实）；2. 单页至少配齐 4 类以上一手资产（自测统计数字、存档于 Zenodo 的数据集及其 DOI、Markdown 对比表、实测截图）；3. 改造内链为 Eli 书中第 6 章的「西南航空网格」消灭孤岛页。",
