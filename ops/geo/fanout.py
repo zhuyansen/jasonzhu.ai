@@ -22,6 +22,12 @@ Google 结果怎么认网站：2026-11 起 AIsa 给的 Google 结果网址全是
 那是多家共用的入口，排上去一次，几家都能看到。缺口只算不带品牌名的题：品牌题 AI 搜的多是 site:jasonzhu.ai 这类词，
 本站本来就该在，算进去会把「排上了」拉高（2026-11-24 起）。品牌题在邮件里单列一行。
 
+按题算的召回（2026-11-26 起）：上面「缺口」按搜索词汇总，搜得多的题占大头。另按题算：每道不带品牌名、查到排名的题，
+召回 = 我们进 Google 前 20 的词 ÷ 查到排名的词，每题同权取平均；覆盖 = 至少一条进前 20 的题占比。都按题有放回地重抽
+（panel_run 的 BOOT、SEED）给 95% 区间。再拿同一次面板里 ChatGPT 引用本站的比例，比「有覆盖」和「没覆盖」两组题，
+在题目层面打乱分组 PERM 次算 p 值：p < 0.05 才说「卡在搜索这一步」和引用有关。查的是 Google，ChatGPT 实际用的检索
+后端不是 Google，所以这只是相关。
+
 品牌词：另把几个品牌词（BRAND_TERMS）各查 3 次 Google，只记本站名次。这是实体图谱自己的效果指标：
 2026-11-24 抽样，直接搜「jasonzhu.ai」5 次都不在前 20，「jasonzhu ai」8 次里只有 2 次第 1。
 
@@ -40,6 +46,8 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
+import random
 import sys
 from collections import defaultdict
 from datetime import datetime
@@ -216,9 +224,84 @@ def brand_lines(serp: dict) -> list[str]:
     return out + [""]
 
 
+def _boot_mean(values: list[float]) -> tuple[float, float] | None:
+    """每题一个值（0–1）的平均数的 95% 区间：按题有放回地重抽 pr.BOOT 次，随机种子 pr.SEED。
+    全 0 或全 1 时重抽给不出宽度，改用和 panel_run.cluster_ci 一样的按题数精确界。"""
+    k = len(values)
+    if not k:
+        return None
+    if all(v == 0 for v in values):
+        return 0.0, 1 - 0.025 ** (1 / k)
+    if all(v == 1 for v in values):
+        return 0.025 ** (1 / k), 1.0
+    rnd, est = random.Random(pr.SEED), []
+    for _ in range(pr.BOOT):
+        pick = rnd.choices(values, k=k)
+        est.append(sum(pick) / k)
+    est.sort()
+    return est[math.ceil(0.025 * pr.BOOT) - 1], est[math.ceil(0.975 * pr.BOOT) - 1]
+
+
+MIN_GROUP = 3       # 有覆盖、没覆盖两组各至少这么多道题有 ChatGPT 的有效回答，才比引用率
+
+
+def recall_summary(rows: list[dict], scored: list[dict] | None = None, engine: str = "chatgpt") -> dict:
+    """按题算的子查询召回（2026-11-26 起）。rows：question_rows() 的输出；scored：同一次面板打过分的回答
+    （panel_run 的 rows，带 site_cited）。只算不带品牌名、至少查到一条排名的题。只有数，没有搜索词。"""
+    qs = sorted((r for r in rows if not r["brand"] and r["read"]), key=lambda r: r["question_id"])
+    if not qs:
+        return {"questions": 0}
+    rec = {r["question_id"]: r["ranked"] / r["read"] for r in qs}
+    cov = {q: rec[q] > 0 for q in rec}
+    lo_hi = lambda ci: [round(ci[0], 4), round(ci[1], 4)] if ci else None
+    out = {"questions": len(qs), "mean_recall": round(sum(rec.values()) / len(rec), 4),
+           "mean_recall_ci": lo_hi(_boot_mean(list(rec.values()))),
+           "covered": sum(cov.values()), "coverage": round(sum(cov.values()) / len(cov), 4),
+           "coverage_ci": lo_hi(_boot_mean([float(v) for v in cov.values()])), "engine": engine}
+    per = pr.per_question(scored or [], engine, "site_cited", set(rec))
+    rate = {q: h / n for q, (h, n) in per.items() if n}
+    yes = sorted(q for q in rate if cov[q])
+    no = sorted(q for q in rate if not cov[q])
+    out |= {"cited_covered": round(sum(rate[q] for q in yes) / len(yes), 4) if yes else None, "n_covered": len(yes),
+            "cited_uncovered": round(sum(rate[q] for q in no) / len(no), 4) if no else None, "n_uncovered": len(no), "p": None}
+    if len(yes) >= MIN_GROUP and len(no) >= MIN_GROUP:
+        diff = lambda a, b: sum(rate[q] for q in a) / len(a) - sum(rate[q] for q in b) / len(b)
+        seen, pool = diff(yes, no), sorted(rate)
+        rnd, extreme = random.Random(pr.SEED), 0
+        for _ in range(pr.PERM):
+            rnd.shuffle(pool)
+            extreme += abs(diff(pool[:len(yes)], pool[len(yes):])) >= abs(seen) - 1e-9
+        out["p"] = round((extreme + 1) / (pr.PERM + 1), 4)
+    return out
+
+
+def recall_lines(rec: dict | None) -> list[str]:
+    """邮件里「按题算的召回」一节。"""
+    out = ["### 按题算的召回（每题同权）", ""]
+    if not rec or not rec.get("questions"):
+        return out + ["这次算不出来：没有查到排名的不带品牌名的题。", ""]
+    pc = lambda x: f"{round(x * 100)}%"
+    ci = lambda c: f"区间 {pc(c[0])}–{pc(c[1])}" if c else ""
+    m_ci, c_ci = ci(rec["mean_recall_ci"]), ci(rec["coverage_ci"])
+    out.append(f"不带品牌名、查到排名的 {rec['questions']} 道题：每题平均召回 {pc(rec['mean_recall'])}"
+               + (f"（{m_ci}）" if m_ci else "") + f"；至少一条进 Google 前 {TOP} 的题 {rec['covered']}/{rec['questions']}"
+               + f"（{pc(rec['coverage'])}" + (f"，{c_ci}" if c_ci else "") + "）。")
+    name = LABEL.get(rec.get("engine", "chatgpt"), rec.get("engine", ""))
+    if rec.get("p") is not None:
+        out.append(f"{name} 引用本站：有覆盖的题 {pc(rec['cited_covered'])}（{rec['n_covered']} 题），没覆盖的题 "
+                   f"{pc(rec['cited_uncovered'])}（{rec['n_uncovered']} 题），置换检验 p = {rec['p']}。"
+                   + ("p < 0.05：搜不到和引用不到有关，补排名值得先做。" if rec["p"] < 0.05 else
+                      "p ≥ 0.05：这次看不出两者有关（题少时多半测不出，不等于无关）。"))
+    else:
+        out.append(f"{name} 引用率分组没比：有覆盖 {rec.get('n_covered', 0)} 题、没覆盖 {rec.get('n_uncovered', 0)} 题，"
+                   f"每组至少要 {MIN_GROUP} 题。")
+    out += ["召回 = 每道题 AI 搜的词里，我们进 Google 前 20 的比例。两期只比都有数的题，区间不重叠才算变化。", ""]
+    return out
+
+
 def appendix(day: str, qs: list[dict], fan: dict, placed: dict, ranks: dict, tot: dict, gemini_model: str,
              cost: float, left_out: int, check: dict, bing: bool = False, unreadable: int = 0,
-             brand: dict | None = None, serp: dict | None = None) -> str:
+             brand: dict | None = None, serp: dict | None = None, recall: dict | None = None) -> str:
     """只进邮件和加密存档：搜索词原文、我们的名次、缺口、AI 搜这些词时常见的页面。
     fan 只放不带品牌名的题；brand = {"questions": 品牌题数, "tot": 品牌题的 totals}，只出一行。"""
     q_of = {q["id"]: q for q in qs}
@@ -240,6 +323,8 @@ def appendix(day: str, qs: list[dict], fan: dict, placed: dict, ranks: dict, tot
              + (f"另有 {unreadable} 条 Google 结果认不出是哪些网站，没算进去。" if unreadable else "")
              + f"这部分花费 ${cost:.2f}" + (f"，预算没查到 {left_out} 次" if left_out else "") + "。")
     out += [line, ""]
+    if recall is not None:
+        out += recall_lines(recall)
     bt = brand.get("tot")
     if brand["questions"] and bt:
         out += [f"品牌题 {brand['questions']} 道另算，不进下面的缺口：AI 搜了 {bt['searches']} 条，"
@@ -303,10 +388,11 @@ def cmd_run(a) -> int:
         qs = qs[:a.limit]
     by_text = {q["question"]: q for q in qs}
 
-    panel = []
+    panel, scored = [], []
     if a.full and Path(a.full).exists():
         full = json.loads(Path(a.full).read_text(encoding="utf-8"))
         panel = [x for x in full.get("answers") or [] if x.get("question_id") in {q["id"] for q in qs}]
+        scored = (full.get("result") or {}).get("rows") or []      # 打过分的回答（带 site_cited），按题算召回时用
     spent, errors, left = 0, [], []
     gemini = []
     if a.gemini:
@@ -353,9 +439,10 @@ def cmd_run(a) -> int:
               "brand_serp": serp["terms"],
               "totals": totals(fan_all, placed), "totals_unbranded": tot, "totals_brand": tot_brand,
               "questions_rows": question_rows(qs, fan_all, placed),
+              "recall": recall_summary(question_rows(qs, fan_all, placed), scored) if check["ok"] else {"questions": 0},
               "errors": len(errors), "left_out": len(left) + len(ranks.get("left_out") or [])}
     text = appendix(day, qs, fan, placed, ranks, tot, model, spent / 1e6, public["left_out"], check, a.bing, unreadable,
-                    {"questions": len(brand_ids), "tot": tot_brand}, serp)
+                    {"questions": len(brand_ids), "tot": tot_brand}, serp, public["recall"])
     if not a.dry:
         if a.public:
             Path(a.public).parent.mkdir(parents=True, exist_ok=True)
@@ -375,7 +462,9 @@ def cmd_run(a) -> int:
     print(f"子查询：不带品牌名的 {len(qs) - len(brand_ids)} 题，AI 搜了 {t['searches']} 条不同的词（{t['by_engine']}），查到排名 {t['read']} 条"
           f"（另有 {unreadable} 条认不出网站）；自检词本站排第 {check['position']}；品牌词进前 3：{b3[0]}/{b3[1]} 次；我们在 Google 前 {TOP} {t['google']} 条"
           f"（前 {FIRST} {t['google_top10']} 条）" + (f"，Bing 前 {TOP} {t['bing']} 条" if a.bing else "")
-          + f"；花费 ${spent / 1e6:.2f}；接口报错 {len(errors)}，预算没做到 {public['left_out']}")
+          + f"；花费 ${spent / 1e6:.2f}；接口报错 {len(errors)}，预算没做到 {public['left_out']}"
+          + (f"；按题算：平均召回 {round(public['recall']['mean_recall'] * 100)}%，覆盖 {public['recall']['covered']}/{public['recall']['questions']} 题"
+             if public["recall"].get("questions") else ""))
     return 0
 
 
@@ -452,6 +541,28 @@ def selftest() -> int:
         {"type": "organic", "url": "https://google.com/goto?url=CAES", "breadcrumb": "235K+ followers"}]})
     assert got[0] == {"url": "https://www.jasonzhu.ai/en", "site": "jasonzhu.ai", "position": 1, "from_breadcrumb": True}, got
     assert got[1]["redirect"] is True and got[1]["site"] == "", got
+    # 按题算的召回：q1 召回 1/2、q2 1/1，品牌题不算
+    rec = recall_summary(question_rows(qs, fan, placed))
+    assert rec["questions"] == 2 and rec["mean_recall"] == 0.75 and rec["covered"] == 2 and rec["coverage"] == 1.0, rec
+    assert rec["coverage_ci"][1] == 1.0 and rec["p"] is None and rec["n_covered"] == 0, rec       # 没给打分结果：不比引用率
+    mk = lambda qid, ranked: {"question_id": qid, "brand": False, "read": 4, "ranked": ranked}
+    rs = [mk(f"c{i}", 2) for i in range(4)] + [mk(f"u{i}", 0) for i in range(4)]
+    cite = lambda qid, yes: {"engine": "chatgpt", "question_id": qid, "status": "answered", "site_cited": yes}
+    sc = [cite(f"c{i}", True) for i in range(4)] * 3 + [cite(f"u{i}", False) for i in range(4)] * 3
+    rec2 = recall_summary(rs, sc)
+    assert rec2["cited_covered"] == 1.0 and rec2["cited_uncovered"] == 0.0 and rec2["n_covered"] == 4, rec2
+    assert rec2["p"] is not None and rec2["p"] < 0.05, rec2       # 8 题完全分开：打乱后只有 2/70 的分法一样极端
+    assert recall_summary(rs, sc) == rec2                          # 种子固定：重算一样
+    rec3 = recall_summary(rs, [cite(f"c{i}", i % 2 == 0) for i in range(4)] * 3 + [cite(f"u{i}", i % 2 == 0) for i in range(4)] * 3)
+    assert rec3["p"] is not None and rec3["p"] > 0.5, rec3         # 两组一样：p 大
+    lines = "\n".join(recall_lines(rec2))
+    assert "平均召回 25%（区间" in lines and "4/8（50%，区间" in lines and "补排名值得先做" in lines, lines
+    assert "算不出来" in "\n".join(recall_lines({"questions": 0}))
+    with_rec = appendix("2026-11-23", qs, fan, placed, ranks, tot, "m", 0.1, 0, {"ok": True, "position": 1}, False,
+                        0, None, None, rec)
+    assert "### 按题算的召回" in with_rec and "至少一条进 Google 前 20 的题 2/2" in with_rec, with_rec
+    assert "按题算的召回" not in appendix("2026-11-23", qs, fan, placed, ranks, tot, "m", 0.1, 0, {"ok": False, "why": "x"})
+    assert "stripe" not in json.dumps(rec) and "a.com" not in json.dumps(rec)
     pub = json.dumps(question_rows(qs, fan, placed)) + json.dumps(tot)
     assert json.dumps(question_rows(qs, fan, placed)).count('"brand": true') == 1
     assert "stripe" not in pub and "a.com" not in pub, "公开文件不能带搜索词和别的网站"

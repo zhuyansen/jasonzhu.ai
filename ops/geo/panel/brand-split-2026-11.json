@@ -1,0 +1,44 @@
+{
+ "month": "2026-11",
+ "window": [
+  "2026-11-01",
+  "2026-11-23"
+ ],
+ "partial": true,
+ "site": "sc-domain:jasonzhu.ai",
+ "search_type": "web",
+ "brand_pattern": "jason\\s*-?\\s*zhu|jasonzhu|祝彦森|朱彦森|zhu\\s*yansen|yansen|gosail|go\\s*sail",
+ "split": {
+  "brand": {
+   "clicks": 247,
+   "impressions": 590,
+   "queries": 6
+  },
+  "nonbrand": {
+   "clicks": 71,
+   "impressions": 2705,
+   "queries": 754
+  },
+  "operator": {
+   "clicks": 0,
+   "impressions": 88,
+   "queries": 18
+  },
+  "anonymized": {
+   "clicks": 978,
+   "impressions": 22913
+  },
+  "total": {
+   "clicks": 1296,
+   "impressions": 26296
+  },
+  "nonbrand_share": {
+   "clicks": 0.2233,
+   "impressions": 0.8209
+  },
+  "anonymized_share": {
+   "clicks": 0.7546,
+   "impressions": 0.8713
+  }
+ }
+}

@@ -1,0 +1,469 @@
+{
+ "date": "2026-11-23",
+ "window_utc": [
+  "2026-11-16T16:00:00+00:00",
+  "2026-11-23T16:00:00+00:00"
+ ],
+ "days": 7,
+ "read_min": 2,
+ "panel_runs_skipped": 4,
+ "skip_note": "去掉了面板自己运行的 4 个时段",
+ "totals": {
+  "chatgpt": 784,
+  "chatgpt_other": 27,
+  "claude": 546
+ },
+ "classes": {
+  "读了不引": 11,
+  "没读也没引": 10,
+  "读了也被引": 3
+ },
+ "pages": [
+  {
+   "page": "/blog/nvidia-dli-free-courses",
+   "questions": [
+    "gsc-nvidia-dli-free-courses",
+    "real-learn-nvidia-dli"
+   ],
+   "chatgpt_reads": 5,
+   "chatgpt_reads_unverified": 0,
+   "claude_reads": 9,
+   "chatgpt_cited": 0,
+   "chatgpt_answers": 6,
+   "all_cited": 1,
+   "impressions": 5540,
+   "class": "读了不引",
+   "hold": "实验 bluf-real-2026-11-25 在跑，先不动"
+  },
+  {
+   "page": "/go-global/open-account",
+   "questions": [
+    "real-pay-china-founder",
+    "real-pay-creem-vs-dodo",
+    "real-pay-fastest-approval"
+   ],
+   "chatgpt_reads": 5,
+   "chatgpt_reads_unverified": 0,
+   "claude_reads": 0,
+   "chatgpt_cited": 0,
+   "chatgpt_answers": 9,
+   "all_cited": 3,
+   "impressions": 781,
+   "class": "读了不引",
+   "hold": "实验 gigalinks-jasonzhu 处理组的题也引用这页，改前先在 experiments.json 记一笔"
+  },
+  {
+   "page": "/go-global",
+   "questions": [
+    "real-co-us-or-uk-remote"
+   ],
+   "chatgpt_reads": 12,
+   "chatgpt_reads_unverified": 0,
+   "claude_reads": 1,
+   "chatgpt_cited": 0,
+   "chatgpt_answers": 3,
+   "all_cited": 0,
+   "impressions": 115,
+   "class": "读了不引",
+   "hold": null
+  },
+  {
+   "page": "/prompts",
+   "questions": [
+    "real-prompts-gallery",
+    "real-prompts-three-models"
+   ],
+   "chatgpt_reads": 11,
+   "chatgpt_reads_unverified": 0,
+   "claude_reads": 19,
+   "chatgpt_cited": 0,
+   "chatgpt_answers": 6,
+   "all_cited": 4,
+   "impressions": 114,
+   "class": "读了不引",
+   "hold": "实验 bluf-real-2026-11-25 在跑，先不动"
+  },
+  {
+   "page": "/backlink-spam-list",
+   "questions": [
+    "data-backlink-spam-list"
+   ],
+   "chatgpt_reads": 8,
+   "chatgpt_reads_unverified": 0,
+   "claude_reads": 0,
+   "chatgpt_cited": 0,
+   "chatgpt_answers": 3,
+   "all_cited": 3,
+   "impressions": 101,
+   "class": "读了不引",
+   "hold": "冻结到 2027-01-01"
+  },
+  {
+   "page": "/blog/us-llc-developer-accounts",
+   "questions": [
+    "global-us-llc-dev-accounts",
+    "real-co-ein-no-ssn"
+   ],
+   "chatgpt_reads": 18,
+   "chatgpt_reads_unverified": 0,
+   "claude_reads": 0,
+   "chatgpt_cited": 0,
+   "chatgpt_answers": 6,
+   "all_cited": 3,
+   "impressions": 97,
+   "class": "读了不引",
+   "hold": "冻结到 2027-01-01"
+  },
+  {
+   "page": "/blog/us-llc-mercury-stripe-168-usd",
+   "questions": [
+    "global-us-llc-mercury-stripe",
+    "real-co-mercury-docs",
+    "real-co-us-llc-nonresident"
+   ],
+   "chatgpt_reads": 3,
+   "chatgpt_reads_unverified": 0,
+   "claude_reads": 0,
+   "chatgpt_cited": 0,
+   "chatgpt_answers": 9,
+   "all_cited": 0,
+   "impressions": 65,
+   "class": "读了不引",
+   "hold": "冻结到 2027-01-01"
+  },
+  {
+   "page": "/blog/indie-payments-report-2026",
+   "questions": [
+    "data-indie-payments-200k"
+   ],
+   "chatgpt_reads": 5,
+   "chatgpt_reads_unverified": 0,
+   "claude_reads": 0,
+   "chatgpt_cited": 0,
+   "chatgpt_answers": 3,
+   "all_cited": 4,
+   "impressions": 63,
+   "class": "读了不引",
+   "hold": "冻结到 2027-01-01"
+  },
+  {
+   "page": "/blog/chuhai-weekly-06",
+   "questions": [
+    "data-lemon-squeezy-shutdown"
+   ],
+   "chatgpt_reads": 9,
+   "chatgpt_reads_unverified": 0,
+   "claude_reads": 1,
+   "chatgpt_cited": 0,
+   "chatgpt_answers": 3,
+   "all_cited": 6,
+   "impressions": 40,
+   "class": "读了不引",
+   "hold": "冻结到 2027-01-01"
+  },
+  {
+   "page": "/blog/dodo-payments-waffo-ai-saas-fee-comparison",
+   "questions": [
+    "data-dodo-waffo-20usd-fee"
+   ],
+   "chatgpt_reads": 7,
+   "chatgpt_reads_unverified": 0,
+   "claude_reads": 0,
+   "chatgpt_cited": 0,
+   "chatgpt_answers": 3,
+   "all_cited": 3,
+   "impressions": 7,
+   "class": "读了不引",
+   "hold": "冻结到 2027-01-01"
+  },
+  {
+   "page": "/prompts/gemini-4",
+   "questions": [
+    "prompts-gemini-4"
+   ],
+   "chatgpt_reads": 5,
+   "chatgpt_reads_unverified": 0,
+   "claude_reads": 2,
+   "chatgpt_cited": 0,
+   "chatgpt_answers": 3,
+   "all_cited": 3,
+   "impressions": 6,
+   "class": "读了不引",
+   "hold": "冻结到 2027-01-01"
+  },
+  {
+   "page": "/blog/openai-startup-credits-application-guide",
+   "questions": [
+    "learn-openai-startup-credits"
+   ],
+   "chatgpt_reads": 0,
+   "chatgpt_reads_unverified": 0,
+   "claude_reads": 0,
+   "chatgpt_cited": 0,
+   "chatgpt_answers": 3,
+   "all_cited": 3,
+   "impressions": 4191,
+   "class": "没读也没引",
+   "hold": "冻结到 2027-01-01"
+  },
+  {
+   "page": "/blog/openai-academy-vs-anthropic-learning-paths",
+   "questions": [
+    "gsc-anthropic-course-alternatives",
+    "gsc-openai-academy-alternatives",
+    "real-learn-anthropic-free"
+   ],
+   "chatgpt_reads": 0,
+   "chatgpt_reads_unverified": 0,
+   "claude_reads": 0,
+   "chatgpt_cited": 0,
+   "chatgpt_answers": 9,
+   "all_cited": 1,
+   "impressions": 4074,
+   "class": "没读也没引",
+   "hold": "实验 bluf-real-2026-11-25 在跑，先不动"
+  },
+  {
+   "page": "/prompts/claude-opus-5-5/fable-5-5",
+   "questions": [
+    "gsc-fable-55-release-date"
+   ],
+   "chatgpt_reads": 0,
+   "chatgpt_reads_unverified": 0,
+   "claude_reads": 0,
+   "chatgpt_cited": 0,
+   "chatgpt_answers": 3,
+   "all_cited": 0,
+   "impressions": 791,
+   "class": "没读也没引",
+   "hold": "实验 bluf-real-2026-11-25 在跑，先不动"
+  },
+  {
+   "page": "/go-global/payments",
+   "questions": [
+    "real-pay-tax-headaches"
+   ],
+   "chatgpt_reads": 1,
+   "chatgpt_reads_unverified": 0,
+   "claude_reads": 17,
+   "chatgpt_cited": 0,
+   "chatgpt_answers": 3,
+   "all_cited": 0,
+   "impressions": 221,
+   "class": "没读也没引",
+   "hold": null
+  },
+  {
+   "page": "/blog/uk-company-wise-business-account",
+   "questions": [
+    "global-uk-wise-business",
+    "real-co-wise-director-abroad"
+   ],
+   "chatgpt_reads": 0,
+   "chatgpt_reads_unverified": 0,
+   "claude_reads": 0,
+   "chatgpt_cited": 0,
+   "chatgpt_answers": 6,
+   "all_cited": 0,
+   "impressions": 165,
+   "class": "没读也没引",
+   "hold": "冻结到 2027-01-01"
+  },
+  {
+   "page": "/go-global/weekly",
+   "questions": [
+    "data-indie-seller-weekly",
+    "real-weekly-ideas",
+    "real-weekly-new-paid",
+    "real-weekly-roundup",
+    "real-weekly-solo-paid"
+   ],
+   "chatgpt_reads": 0,
+   "chatgpt_reads_unverified": 0,
+   "claude_reads": 0,
+   "chatgpt_cited": 0,
+   "chatgpt_answers": 14,
+   "all_cited": 9,
+   "impressions": 150,
+   "class": "没读也没引",
+   "hold": "冻结到 2027-01-01"
+  },
+  {
+   "page": "/blog/uk-company-registration-2hours",
+   "questions": [
+    "global-uk-company-2h",
+    "real-co-uk-from-overseas"
+   ],
+   "chatgpt_reads": 0,
+   "chatgpt_reads_unverified": 0,
+   "claude_reads": 0,
+   "chatgpt_cited": 0,
+   "chatgpt_answers": 6,
+   "all_cited": 0,
+   "impressions": 71,
+   "class": "没读也没引",
+   "hold": "冻结到 2027-01-01"
+  },
+  {
+   "page": "/blog/uk-company-annual-review-diy-guide",
+   "questions": [
+    "global-uk-annual-review"
+   ],
+   "chatgpt_reads": 0,
+   "chatgpt_reads_unverified": 0,
+   "claude_reads": 0,
+   "chatgpt_cited": 0,
+   "chatgpt_answers": 3,
+   "all_cited": 0,
+   "impressions": 62,
+   "class": "没读也没引",
+   "hold": "冻结到 2027-01-01"
+  },
+  {
+   "page": "/blog/ai-free-learning-hub",
+   "questions": [
+    "learn-free-ai-map",
+    "real-learn-certifications",
+    "real-learn-manager",
+    "real-learn-roadmap"
+   ],
+   "chatgpt_reads": 0,
+   "chatgpt_reads_unverified": 3,
+   "claude_reads": 1,
+   "chatgpt_cited": 0,
+   "chatgpt_answers": 12,
+   "all_cited": 3,
+   "impressions": 10,
+   "class": "没读也没引",
+   "hold": "冻结到 2027-01-01"
+  },
+  {
+   "page": "/blog/ai-money-map-2026",
+   "questions": [
+    "data-ai-money-map"
+   ],
+   "chatgpt_reads": 0,
+   "chatgpt_reads_unverified": 0,
+   "claude_reads": 0,
+   "chatgpt_cited": 0,
+   "chatgpt_answers": 3,
+   "all_cited": 0,
+   "impressions": 9,
+   "class": "没读也没引",
+   "hold": "冻结到 2027-01-01"
+  },
+  {
+   "page": "/prompts/claude-opus-5-5",
+   "questions": [
+    "gsc-opus-55-pixel-art",
+    "prompts-claude-opus-55",
+    "real-prompts-opus-examples"
+   ],
+   "chatgpt_reads": 35,
+   "chatgpt_reads_unverified": 0,
+   "claude_reads": 69,
+   "chatgpt_cited": 2,
+   "chatgpt_answers": 6,
+   "all_cited": 8,
+   "impressions": 23184,
+   "class": "读了也被引",
+   "hold": "冻结到 2027-01-01"
+  },
+  {
+   "page": "/blog/choose-payment-platform-2026",
+   "questions": [
+    "data-choose-payment-platform",
+    "real-pay-compare-six",
+    "real-pay-mor-tax"
+   ],
+   "chatgpt_reads": 6,
+   "chatgpt_reads_unverified": 1,
+   "claude_reads": 10,
+   "chatgpt_cited": 3,
+   "chatgpt_answers": 9,
+   "all_cited": 13,
+   "impressions": 453,
+   "class": "读了也被引",
+   "hold": "冻结到 2027-01-01"
+  },
+  {
+   "page": "/prompts/chatgpt-images-2-6",
+   "questions": [
+    "prompts-chatgpt-images-26",
+    "real-prompts-images-mockups"
+   ],
+   "chatgpt_reads": 12,
+   "chatgpt_reads_unverified": 0,
+   "claude_reads": 2,
+   "chatgpt_cited": 3,
+   "chatgpt_answers": 6,
+   "all_cited": 3,
+   "impressions": 40,
+   "class": "读了也被引",
+   "hold": "冻结到 2027-01-01"
+  }
+ ],
+ "unasked": [
+  {
+   "page": "/",
+   "chatgpt_reads": 248,
+   "claude_reads": 15,
+   "chatgpt_cited": 10
+  },
+  {
+   "page": "/about",
+   "chatgpt_reads": 13,
+   "claude_reads": 0,
+   "chatgpt_cited": 7
+  },
+  {
+   "page": "/go-global/ai-readiness",
+   "chatgpt_reads": 11,
+   "claude_reads": 1,
+   "chatgpt_cited": 0
+  },
+  {
+   "page": "/prompts/claude-opus-5-5/2103273003555402193",
+   "chatgpt_reads": 11,
+   "claude_reads": 10,
+   "chatgpt_cited": 0
+  },
+  {
+   "page": "/club",
+   "chatgpt_reads": 8,
+   "claude_reads": 1,
+   "chatgpt_cited": 3
+  },
+  {
+   "page": "/prompts/chatgpt-images-2-6/2120189335194706023",
+   "chatgpt_reads": 7,
+   "claude_reads": 0,
+   "chatgpt_cited": 0
+  },
+  {
+   "page": "/prompts/chatgpt-images-2-6/2120470049672826952",
+   "chatgpt_reads": 6,
+   "claude_reads": 0,
+   "chatgpt_cited": 0
+  },
+  {
+   "page": "/prompts/claude-opus-5-5/2102760783344189761",
+   "chatgpt_reads": 6,
+   "claude_reads": 1,
+   "chatgpt_cited": 0
+  },
+  {
+   "page": "/prompts/chatgpt-images-2-6/2118235544459387112",
+   "chatgpt_reads": 5,
+   "claude_reads": 0,
+   "chatgpt_cited": 0
+  },
+  {
+   "page": "/prompts/gemini-4/2110131790136401989",
+   "chatgpt_reads": 5,
+   "claude_reads": 0,
+   "chatgpt_cited": 0
+  }
+ ],
+ "script": "0d95d427ab7f"
+}

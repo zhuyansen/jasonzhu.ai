@@ -509,10 +509,48 @@ def site_kind(site: str, question_texts: list[str]) -> str:
 
 
 OFFICIAL = "官方（引用它，不能投稿）"
+YOUTUBE = ("youtube.com", "youtu.be")
 
 
-def coverage(fan: dict, placed: dict, q_of: dict, own: str = pr.OWN, shown: int = SHOWN_SITES) -> tuple[list[dict], list[dict]]:
-    """(能投放的站, 官方站)，每项 {site, kind, new, questions, searches, examples}。
+def bare(site: str | None) -> str:
+    s = (site or "").lower()
+    for pre in ("www.", "m."):
+        s = s.removeprefix(pre)
+    return s
+
+
+def is_youtube(site: str | None) -> bool:
+    s = bare(site)
+    return any(s == y or s.endswith("." + y) for y in YOUTUBE)
+
+
+def panel_cites(answers: list[dict], own: str = pr.OWN) -> tuple[Counter, dict, dict]:
+    """面板的有效回答里（2026-11-26 起）：每个外部网站被几个回答引用（同一回答引同一站多次只算一次）；
+    每道题、每家 AI 引 YouTube 的（回答数, 有效回答数）。只看面板回答：子查询存档里的 Gemini 接口回答没有引用链接。"""
+    sites, yt_q, yt_e = Counter(), {}, {}
+    for a in answers:
+        cited = a.get("cited") or []
+        if pr.status_of(a.get("text"), cited) != "answered":
+            continue
+        cs = {bare(c.get("site")) for c in cited if c.get("site")}
+        for site in cs:
+            if site != own and not site.endswith("." + own) and site not in pr.OWN_ALIASES:
+                sites[site] += 1
+        yt = any(is_youtube(x) for x in cs)
+        for key, d in ((a.get("question_id"), yt_q), (a.get("engine"), yt_e)):
+            h, n = d.get(key, (0, 0))
+            d[key] = (h + yt, n + 1)
+    return sites, yt_q, yt_e
+
+
+def yt_cell(t: tuple[int, int] | None) -> str:
+    return "—" if not t or not t[1] else f"{t[0]}/{t[1]}（{round(100 * t[0] / t[1])}%）"
+
+
+def coverage(fan: dict, placed: dict, q_of: dict, own: str = pr.OWN, shown: int = SHOWN_SITES,
+             cites: Counter | None = None, yt_q: dict | None = None) -> tuple[list[dict], list[dict]]:
+    """(能投放的站, 官方站)，每项 {site, kind, new, questions, searches, examples, cited, yt}。
+    cited：这个站在面板有效回答里被引了几次；yt：这个站出现的那几道题里，回答引 YouTube 的（回答数, 有效回答数）（2026-11-26 起）。
     能投放的（平台、媒体、博客）用贪心排：每次挑能多盖住最多「我们一条都没排上的题」的站。官方站只能引用、链接，
     不能投稿，单独按出现在几道题排，不参与贪心（不然它们会占掉前几名）。"""
     gapq, dom_q, dom_s = set(), defaultdict(set), Counter()
@@ -528,15 +566,20 @@ def coverage(fan: dict, placed: dict, q_of: dict, own: str = pr.OWN, shown: int 
                     dom_q[site].add(qid)
                     dom_s[site] += 1
     kind = {s: site_kind(s, [q_of[q]["question"] for q in qids if q in q_of]) for s, qids in dom_q.items()}
+    cites, yt_q = cites or Counter(), yt_q or {}
+
+    def extra(site: str, qids: set) -> dict:
+        return {"cited": cites.get(bare(site), 0),
+                "yt": (sum(yt_q.get(q, (0, 0))[0] for q in qids), sum(yt_q.get(q, (0, 0))[1] for q in qids))}
     officials = sorted((s for s in dom_q if kind[s] == OFFICIAL), key=lambda s: (-len(dom_q[s]), -dom_s[s], s))
     official_rows = [{"site": s, "kind": OFFICIAL, "new": 0, "questions": len(dom_q[s]), "searches": dom_s[s],
-                      "examples": sorted(dom_q[s])[:3]} for s in officials[:shown]]
+                      "examples": sorted(dom_q[s])[:3]} | extra(s, dom_q[s]) for s in officials[:shown]]
     order, covered, pool = [], set(), {s: q for s, q in dom_q.items() if kind[s] != OFFICIAL}
     while pool and len(order) < shown:
         site = max(sorted(pool), key=lambda s: (len((pool[s] & gapq) - covered), len(pool[s]), dom_s[s]))
         new = (pool[site] & gapq) - covered
         order.append({"site": site, "kind": kind[site], "new": len(new), "questions": len(pool[site]),
-                      "searches": dom_s[site], "examples": sorted(new or pool[site])[:3]})
+                      "searches": dom_s[site], "examples": sorted(new or pool[site])[:3]} | extra(site, pool[site]))
         covered |= new
         del pool[site]
     return order, official_rows
@@ -582,7 +625,8 @@ def pos(p) -> str:
 
 
 def report(day: str, rows: list[dict], sites: list[dict], ranks_ok: bool, officials: list[dict] | None = None,
-           read: tuple[int, int] = (0, 0), quoted: tuple[dict, list[dict]] | None = None, where: dict | None = None) -> str:
+           read: tuple[int, int] = (0, 0), quoted: tuple[dict, list[dict]] | None = None, where: dict | None = None,
+           yt_e: dict | None = None) -> str:
     out = [f"## 子查询之后：改哪页、补哪些词、去哪些站（{day}）", "",
            "公共词 = 同一道题至少两个回答都用过的词；整句每次都变，这批词基本不变。页面按 Search Console 近 3 个月的展示次数排，"
            "有人搜的先改。代表搜索词 = 这道题覆盖公共词最多的那条真实搜索词。", ""]
@@ -611,24 +655,33 @@ def report(day: str, rows: list[dict], sites: list[dict], ranks_ok: bool, offici
         ccell = "、".join(sorted({c for r in rs for c in (r["missing_classes"] or [])})) or "—"
         out.append(f"| {url.removeprefix('https://')} | {rs[0]['impressions']} | {qcell} | {mcell} | {ccell} |")
     out += ["", "### 2 外部网站：AI 搜这些词时常在 Google 第一页，按能补上几道「我们一条都没排上」的题排", ""]
+    if yt_e:
+        order_e = sorted(yt_e, key=lambda e: list(pr.LABEL).index(e) if e in pr.LABEL else len(pr.LABEL))
+        tot = (sum(h for h, _ in yt_e.values()), sum(n for _, n in yt_e.values()))
+        out += ["AI 回答引用 YouTube 的比例（面板的有效回答）：" + "、".join(f"{pr.LABEL.get(e, e)} {yt_e[e][0]}/{yt_e[e][1]}" for e in order_e)
+                + f"，合计 {yt_cell(tot)}。下表最后第二列是这个站出现的那几道题里回答引 YouTube 的比例：比例高的题，拍视频、"
+                "发到 YouTube 比投文章站更对路。「面板里被引」是这个站在面板所有有效回答里被引用的次数：第一页上有它、"
+                "回答又常引它的，最值得投。", ""]
     if sites:
         out += ["能投放的（平台自己发；媒体、博客投稿或请求收录）：", "",
-                "| 网站 | 类型 | 新补上几道题 | 一共出现在几道题 | 几条搜索的第一页 | 例题 |", "|---|---|---|---|---|---|"]
-        out += [f"| {s['site']} | {s['kind']} | {s['new']} | {s['questions']} | {s['searches']} | {'、'.join(s['examples'])} |"
-                for s in sites]
+                "| 网站 | 类型 | 新补上几道题 | 一共出现在几道题 | 几条搜索的第一页 | 面板里被引（回答数） | 这几道题的回答引 YouTube | 例题 |",
+                "|---|---|---|---|---|---|---|---|"]
+        out += [f"| {s['site']} | {s['kind']} | {s['new']} | {s['questions']} | {s['searches']} | {s.get('cited', '—')} | "
+                f"{yt_cell(s.get('yt'))} | {'、'.join(s['examples'])} |" for s in sites]
     elif ranks_ok:
         out.append("第一页上没有能投放的网站（都是官方站或本站）。")
     else:
         out.append("没有：这次没有查到 Google 第一页（子查询没跑或自检没过）。")
     if officials:
-        out += ["", "官方站（只能在页面里引用、链接，不能投稿）：" + "、".join(f"{s['site']}（{s['questions']} 题）" for s in officials)]
+        out += ["", "官方站（只能在页面里引用、链接，不能投稿）：" + "、".join(
+            f"{s['site']}（{s['questions']} 题" + (f"，面板里被引 {s['cited']} 次" if s.get("cited") else "") + "）" for s in officials)]
     if quoted is not None:
         out += quote_section(*quoted, where)
     return "\n".join(out) + "\n"
 
 
 def public_counts(day: str, rows: list[dict], sites: list[dict], quoted: tuple[dict, list[dict]] | None = None,
-                  where: dict | None = None) -> dict:
+                  where: dict | None = None, cites: tuple[Counter, dict, dict] | None = None) -> dict:
     """只有计数，不含搜索词、不含别的网站，也不含被引的原句（原句只进邮件）。where（原句在页面上的位置）也只有数。"""
     stats, qrows = quoted or ({}, [])
     out = {"date": day, "questions": len(rows), "with_searches": sum(1 for r in rows if r["answers"]),
@@ -642,6 +695,12 @@ def public_counts(day: str, rows: list[dict], sites: list[dict], quoted: tuple[d
            "citation_markers": stats, "own_quoted_sentences": len(qrows), "own_quoted_pages": len({r["path"] for r in qrows})}
     if where is not None:
         out["quote_positions"] = where              # 2026-11-26 起
+    if cites is not None:                           # 2026-11-26 起：只有数，没有网站名
+        _, _, yt_e = cites
+        out["panel_cites"] = {"valid_answers": sum(n for _, n in yt_e.values()),
+                              "youtube_answers": sum(h for h, _ in yt_e.values()),
+                              "youtube_by_engine": {e: list(v) for e, v in sorted(yt_e.items())},
+                              "listed_sites_cited": sum(1 for x in sites if x.get("cited"))}
     return out
 
 
@@ -656,6 +715,7 @@ def cmd_run(a) -> int:
     if a.full and Path(a.full).exists():
         answers = [x for x in json.loads(Path(a.full).read_text(encoding="utf-8")).get("answers") or [] if x.get("question_id") in q_of]
     quoted = quotes(answers) if a.full and Path(a.full).exists() else None     # 只看面板回答：子查询存档里没有引用链接
+    cites = panel_cites(answers) if a.full and Path(a.full).exists() else None
     ranks, ranks_ok = {"searches": []}, False
     if a.archive and Path(a.archive).exists():
         arch = json.loads(Path(a.archive).read_text(encoding="utf-8"))
@@ -667,7 +727,8 @@ def cmd_run(a) -> int:
     pages = {u: fetch_page(u) for u in targets}
     rows = rows_for(qs, answers, placed, load_demand(Path(a.demand)), pages)
     fan = {k: v for k, v in fo.by_question(answers).items() if q_of.get(k, {}).get("kind") != "brand"}
-    sites, officials = coverage(fan, placed, q_of) if ranks_ok else ([], [])
+    sites, officials = coverage(fan, placed, q_of, cites=cites[0] if cites else None,
+                                yt_q=cites[1] if cites else None) if ranks_ok else ([], [])
     all_terms = {t for per in fan.values() for t in per}
     read = (sum(1 for t in all_terms if placed.get(t, {}).get("read")), len(all_terms))
     day = a.date or datetime.now(pr.CST).strftime("%Y-%m-%d")
@@ -676,8 +737,8 @@ def cmd_run(a) -> int:
     except Exception as e:                                   # 量位置出错不挡前面几张表；日志只打错误类型，不打原句
         print(f"原句在页面上的位置没量成：{type(e).__name__}", file=sys.stderr)
         where = None
-    text = report(day, rows, sites, ranks_ok, officials, read, quoted, where)
-    counts = public_counts(day, rows, sites, quoted, where)
+    text = report(day, rows, sites, ranks_ok, officials, read, quoted, where, cites[2] if cites else None)
+    counts = public_counts(day, rows, sites, quoted, where, cites)
     if not a.dry:
         if a.appendix:
             Path(a.appendix).write_text(text, encoding="utf-8")
@@ -748,6 +809,26 @@ def selftest() -> int:
     assert [s["site"] for s in officials] == ["mercury.com", "stripe.com"] and officials[0]["kind"] == OFFICIAL, officials
     text = report("2026-11-30", list(rows.values()), sites, True, officials)
     assert "jasonzhu.ai/en/x | 50 |" in text and "页面打不开" in text and "doola.com" in text and "mercury.com（1 题）" in text
+    # 去哪投的两列（2026-11-26 起）：面板里被引几次；这个站出现的题里回答引 YouTube 的比例
+    yt_ans = [{"engine": "chatgpt", "question_id": "q1", "text": "x" * 300,
+               "cited": [{"site": "www.reddit.com"}, {"site": "youtube.com"}, {"site": "jasonzhu.ai"}]},
+              {"engine": "perplexity", "question_id": "q1", "text": "y" * 300, "cited": [{"site": "m.youtube.com"}, {"site": "reddit.com"}]},
+              {"engine": "chatgpt", "question_id": "q2", "text": "z" * 300, "cited": [{"site": "mercury.com"}]},
+              {"engine": "gemini_app", "question_id": "q2", "text": "Sorry, I can't help with that.", "cited": []}]   # 拒答不算
+    c_sites, c_q, c_e = panel_cites(yt_ans)
+    assert c_sites == {"reddit.com": 2, "youtube.com": 2, "mercury.com": 1}, c_sites       # m.youtube.com 算 youtube.com
+    assert c_q == {"q1": (2, 2), "q2": (0, 1)} and c_e == {"chatgpt": (1, 2), "perplexity": (1, 1)}, (c_q, c_e)
+    s2, o2 = coverage(fan, placed, {q["id"]: q for q in qs}, cites=c_sites, yt_q=c_q)
+    assert s2[0]["site"] == "reddit.com" and s2[0]["cited"] == 2 and s2[0]["yt"] == (2, 3), s2[0]    # reddit 在 q1、q2 两题
+    assert s2[1]["site"] == "doola.com" and s2[1]["cited"] == 0 and s2[1]["yt"] == (2, 2), s2[1]
+    assert [(x["site"], x["cited"]) for x in o2] == [("mercury.com", 1), ("stripe.com", 0)], o2
+    t2 = report("2026-11-30", list(rows.values()), s2, True, o2, yt_e=c_e)
+    assert "| reddit.com | 平台（可以自己发） | 1 | 2 | 2 | 2 | 2/3（67%） | q1 |" in t2, t2
+    assert "ChatGPT 1/2、Perplexity 1/1，合计 2/3（67%）" in t2 and "mercury.com（1 题，面板里被引 1 次）" in t2, t2
+    pub2 = public_counts("2026-11-30", list(rows.values()), s2, cites=(c_sites, c_q, c_e))
+    assert pub2["panel_cites"] == {"valid_answers": 3, "youtube_answers": 2, "youtube_by_engine": {"chatgpt": [1, 2], "perplexity": [1, 1]},
+                                   "listed_sites_cited": 1}, pub2["panel_cites"]
+    assert "reddit" not in json.dumps(pub2) and "youtube.com" not in json.dumps(pub2)
     pub = json.dumps(public_counts("2026-11-30", list(rows.values()), sites), ensure_ascii=False)
     assert "mercury" not in pub.lower() and "doola" not in pub and "reddit" not in pub, pub     # 公开计数里不能有搜索词和别的网站
     assert "页面打不开" not in report("d", [], [], False) and "测不出来" not in pub

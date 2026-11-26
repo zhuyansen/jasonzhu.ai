@@ -241,7 +241,7 @@ export const SEO_TOOLS_DIRECTORY = {
   repo: "https://github.com/zhuyansen/awesome-claude-seo-skills",
 };
 
-/** 通用 SEO 水系模型 v8（14 个构件 + 五层水表 + 六道放水闸门 + Jason 6 条排名理论），v9 的条目待验证。
+/** 通用 SEO 水系模型 v8（14 个构件 + 六层水表 + 六道放水闸门 + Jason 6 条排名理论），v9 的条目待验证。
  *  源自 ops/geo/seo-watersystem-model.md。2026-11-21 起构件按水流顺序编成 1–14（旧编号对照见 renumber），
  *  2026-11-20 加的 v9 降为「待验证」（pending），转正标准写在文档末尾。 */
 export const SEO_WATER_SYSTEM_V8 = {
@@ -396,13 +396,13 @@ export const SEO_WATER_SYSTEM_V8 = {
     {
       id: "14",
       tag: "v5/v6/v8",
-      name: { zh: "迭代 · 五层水表与每周单实验闭环", en: "Iteration · 5-Layer Meters & Weekly 1-Experiment Loop" },
+      name: { zh: "迭代 · 六层水表与每周单实验闭环", en: "Iteration · 6-Layer Meters & Weekly 1-Experiment Loop" },
       who: { zh: "🤖 AI", en: "🤖 AI" },
       rule: {
-        zh: "水表从三层升为五层：① 点击层（GSC + GA 真人会话）· ② 引用层（GSC 生成式 AI 报告 + Bing AI Performance + Clarity 引用 + 每周 GEO 引用面板，51 题；GSC 这份报告只有展示数，没有点击和查询词）· ③ 权威层（DR + 高权威引荐域 + 靶站是否放行 AI 爬虫）· ④ 收录层（N/M/X + 子站点地图读取 + Bing 收录数；IndexNow 只推 Bing 等几家，不覆盖 Google）· ⑤ 管材层（GSC 实际网址测试 + 404/规范网址一致率）。每周复盘只记「3 胜 3 忧 + 恰好 1 个实验」并写死回看日期。",
-        en: "Five layered meters: (1) Clicks (GSC + bot-filtered GA4), (2) AI Citations (GSC Generative AI report + Bing AI Performance + Clarity + the weekly GEO citation panel, 51 questions; the GSC report has impressions only, no clicks or queries), (3) Authority (DR, referring domains & whether targets allow AI crawlers), (4) Indexing (N/M/X + child sitemap reads + Bing index count; IndexNow reaches Bing and a few others, not Google), (5) Pipe Health (GSC Live URL test + 404/canonical match). Weekly retro picks 3 wins, 3 worries, and 1 dated experiment.",
+        zh: "水表从三层升为六层（2026-11-26 加了曝光层）：① 曝光层（GSC 展示数，品牌词、非品牌词分开看；曝光比点击早，是新页起作用最早看得到的信号）· ② 点击层（GSC + GA 真人会话，同样分品牌、非品牌：品牌词跟着名气涨，成绩看非品牌）· ③ 引用层（GSC 生成式 AI 报告 + Bing AI Performance + Clarity 引用 + 每周 GEO 引用面板，51 题；GSC 这份报告只有展示数，没有点击和查询词）· ④ 权威层（DR + 高权威引荐域 + 靶站是否放行 AI 爬虫）· ⑤ 收录层（N/M/X + 子站点地图读取 + Bing 收录数；IndexNow 只推 Bing 等几家，不覆盖 Google）· ⑥ 管材层（GSC 实际网址测试 + 404/规范网址一致率）。每周复盘只记「3 胜 3 忧 + 恰好 1 个实验」并写死回看日期。",
+        en: "Six layered meters, impressions added on 26 November 2026: (1) Impressions (GSC, brand and non-brand queries counted apart; impressions move before clicks, so they are the earliest sign a new page works), (2) Clicks (GSC + bot-filtered GA4, also split brand vs non-brand: brand queries grow with fame, non-brand is the score), (3) AI Citations (GSC Generative AI report + Bing AI Performance + Clarity + the weekly GEO citation panel, 51 questions; the GSC report has impressions only, no clicks or queries), (4) Authority (DR, referring domains & whether targets allow AI crawlers), (5) Indexing (N/M/X + child sitemap reads + Bing index count; IndexNow reaches Bing and a few others, not Google), (6) Pipe Health (GSC Live URL test + 404/canonical match). Weekly retro picks 3 wins, 3 worries, and 1 dated experiment.",
       },
-      meter: { zh: "五层月检完成率 + 每周单实验按期回看率", en: "5-layer monthly audit completion & dated experiment follow-through" },
+      meter: { zh: "六层月检完成率 + 每周单实验按期回看率", en: "6-layer monthly audit completion & dated experiment follow-through" },
     },
   ],
   gatesV8: {
@@ -451,8 +451,8 @@ export const SEO_WATER_SYSTEM_V8 = {
     { stage: { zh: "回看", en: "Look back" }, ids: ["14"] },
   ],
   flowLoop: {
-    zh: "14 迭代看五层水表，决定下一步先开哪个进水口、先通哪根管，再回到 1。",
-    en: "14 Iteration reads the five meters and decides which inflow to open or which pipe to fix next, then back to 1.",
+    zh: "14 迭代看六层水表，决定下一步先开哪个进水口、先通哪根管，再回到 1。",
+    en: "14 Iteration reads the six meters and decides which inflow to open or which pipe to fix next, then back to 1.",
   },
   /** 2026-11-21 起的新编号 ← 旧编号 */
   renumber: [
@@ -861,8 +861,8 @@ export const GO_GLOBAL_ARSENAL_2026 = {
     {
       stage: { zh: "⑥ 数据监控与增长决策", en: "⑥ Analytics, Water Meters & AI Decisions" },
       keep: {
-        zh: "五层水表（GSC + 剔除机房流量的 GA4 + GSC 生成式 AI 报告（只有展示数）+ Bing AI Performance + Clarity AI Citations/死点击录屏；Clarity 的引用数只覆盖靠 Bing 检索的微软系 AI）+ `ops/analytics/digest.py` 每日 Resend 邮件日报（内部脚本，在本站仓库 ops/ 目录，读者不能直接安装；第一屏先报管线告警和来自 17 个 AI 域名的引荐访问）+ 每周单实验复盘",
-        en: "5-layer water meters (GSC + bot-filtered GA4 + GSC Generative AI report, impressions only + Bing AI Performance + Clarity AI Citations, which cover only Microsoft's Bing-grounded AI) + daily Resend digest (ops/analytics/digest.py, an internal script in this site's repo, not installable by readers; it opens with pipeline alerts and referrals from 17 AI domains) + weekly 1-experiment retro",
+        zh: "六层水表（GSC 展示和点击，品牌词、非品牌词分开 + 剔除机房流量的 GA4 + GSC 生成式 AI 报告（只有展示数）+ Bing AI Performance + Clarity AI Citations/死点击录屏；Clarity 的引用数只覆盖靠 Bing 检索的微软系 AI）+ `ops/analytics/digest.py` 每日 Resend 邮件日报（内部脚本，在本站仓库 ops/ 目录，读者不能直接安装；第一屏先报管线告警和来自 17 个 AI 域名的引荐访问）+ 每周单实验复盘",
+        en: "6-layer water meters (GSC impressions and clicks, brand vs non-brand + bot-filtered GA4 + GSC Generative AI report, impressions only + Bing AI Performance + Clarity AI Citations, which cover only Microsoft's Bing-grounded AI) + daily Resend digest (ops/analytics/digest.py, an internal script in this site's repo, not installable by readers; it opens with pipeline alerts and referrals from 17 AI domains) + weekly 1-experiment retro",
       },
       add: {
         zh: "二虎 11 份全链路增长数据 × 六维叉乘表（端 × 国家 × 卖点 × 目标 × SKU × 类别 → 付费人数 & 付费金额）+ 线索表单 `How did you find us?` AI 归因字段 + AIsa / GoAnyAPI 按次调用顶替高价月费（Similarweb $0.30/次仅关键站按需查）",

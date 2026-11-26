@@ -185,7 +185,7 @@ export function SeoSchoolsMap({ l, isZh }: { l: "zh" | "en"; isZh: boolean }) {
 }
 
 // 页面优化：GSC 气泡图四象限（Jesse Lau 的帖子 + Google 官方教程），加同一栏目的两篇官方文档
-// 增长这一步的总框架：Jason 的「通用 SEO 水系模型 v8」（14 个构件按水流顺序 1–14 + 五层水表 + 六道放水闸门 + Jason 6 条排名理论；v9 的条目待验证）
+// 增长这一步的总框架：Jason 的「通用 SEO 水系模型 v8」（14 个构件按水流顺序 1–14 + 六层水表 + 六道放水闸门 + Jason 6 条排名理论；v9 的条目待验证）
 export function SeoSystem({ l, isZh }: { l: "zh" | "en"; isZh: boolean }) {
   const w = SEO_WATER_SYSTEM_V8;
   const byId = new Map(w.components.map((c) => [c.id, c]));
@@ -196,8 +196,8 @@ export function SeoSystem({ l, isZh }: { l: "zh" | "en"; isZh: boolean }) {
       <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">
         <h2 className="text-base font-semibold text-gray-900">
           {isZh
-            ? "SEO 系统：通用 SEO 水系模型 v8（14 个构件 · 5 层水表 · 6 道放水闸门）"
-            : "The SEO System: Water System Model v8 (14 Components · 5-Layer Meters · 6 Release Gates)"}
+            ? "SEO 系统：通用 SEO 水系模型 v8（14 个构件 · 6 层水表 · 6 道放水闸门）"
+            : "The SEO System: Water System Model v8 (14 Components · 6-Layer Meters · 6 Release Gates)"}
         </h2>
         <span className="text-xs px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 font-medium">
           {isZh ? "v8 已验证 · v9 待验证" : "v8 tested · v9 pending"}

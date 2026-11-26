@@ -188,6 +188,20 @@ jobs:
           python ops/geo/zh_check.py run "${ARGS[@]}" | tee -a "$GITHUB_STEP_SUMMARY"
           [ -f "$RUNNER_TEMP/zh.md" ] && { echo; cat "$RUNNER_TEMP/zh.md"; } >> "$RUNNER_TEMP/appendix.md" || true
 
+      - name: 水表曝光层：上个月的品牌词 / 非品牌词（每月第一个周一，不花钱，失败不挡后面）
+        id: brand
+        continue-on-error: true
+        env:
+          GSC_TOKEN_JSON: ${{ secrets.GSC_TOKEN_JSON }}
+          IN_PUBLISH: ${{ inputs.publish }}
+        run: |
+          if [ "$(TZ=Asia/Shanghai date +%-d)" -gt 7 ] && [ "$GITHUB_EVENT_NAME" = "schedule" ]; then echo "不是每月第一个周一，不跑"; exit 0; fi
+          python ops/geo/brand_split.py --selftest
+          ARGS=(--prev --appendix "$RUNNER_TEMP/brand.md")
+          [ "$IN_PUBLISH" != "0" ] && ARGS+=(--public auto)
+          python ops/geo/brand_split.py run "${ARGS[@]}" | tee -a "$GITHUB_STEP_SUMMARY"
+          [ -f "$RUNNER_TEMP/brand.md" ] && { echo; cat "$RUNNER_TEMP/brand.md"; } >> "$RUNNER_TEMP/appendix.md" || true
+
       - name: 提交分数
         if: (inputs.publish || '1') != '0'
         env:
@@ -199,6 +213,7 @@ jobs:
           [ -f "ops/geo/panel/fanout-$DAY.json" ] && git add "ops/geo/panel/fanout-$DAY.json"
           [ -f "ops/geo/panel/actions-$DAY.json" ] && git add "ops/geo/panel/actions-$DAY.json"
           [ -f "ops/geo/panel/zh-$DAY.json" ] && git add "ops/geo/panel/zh-$DAY.json"
+          ls ops/geo/panel/brand-split-*.json >/dev/null 2>&1 && git add ops/geo/panel/brand-split-*.json
           if git diff --cached --quiet; then echo "没有新结果可提交"; exit 0; fi
           git commit -q -m "GEO 引用面板 $DAY"
           git pull -q --rebase origin main

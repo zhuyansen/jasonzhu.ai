@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isZh = rawLang !== "en";
   const lang = isZh ? "zh" : "en";
   return withSocialCards({
-    title: isZh ? "SEO 水系模型：14 个构件、5 层水表和 6 道放水闸门" : "The SEO water-system model: 14 components, 5 meters, 6 gates",
+    title: isZh ? "SEO 水系模型：14 个构件、6 层水表和 6 道放水闸门" : "The SEO water-system model: 14 components, 6 meters, 6 gates",
     description: isZh
       ? "把 SEO 当一套水系来搭：需求、外链和 AI 引用进水，品牌实体蓄水，技术和内链输水，结果页出水，再回头看数据。v8 的每条规则都来自踩过的坑，v9 的新说法单列待验证。"
       : "SEO built as a water system: demand, links and AI citations flow in, the brand entity stores it, technical work and internal links carry it, the result page lets it out, and the data says what to fix next. Every v8 rule comes from a mistake we made.",
