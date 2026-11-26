@@ -1,0 +1,12 @@
+name = "jasonzhu-posthog-proxy"
+main = "worker.js"
+compatibility_date = "2026-11-01"
+
+[vars]
+POSTHOG_API_HOST = "us.i.posthog.com"
+POSTHOG_ASSET_HOST = "us-assets.i.posthog.com"
+
+# Optional custom domain route if jasonzhu.ai DNS is on Cloudflare:
+# routes = [
+#   { pattern = "e.jasonzhu.ai/*", zone_name = "jasonzhu.ai" }
+# ]

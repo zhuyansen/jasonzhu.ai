@@ -2,6 +2,10 @@
 // Vercel 环境变量 NEXT_PUBLIC_GA_ID / NEXT_PUBLIC_CLARITY_ID 可覆盖。
 export const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "G-CTZ8CEW9QZ";
 export const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_ID || "ys0uj89osn";
+// PostHog 免费档（经 Cloudflare Worker 第一方反代防拦截，不占 Vercel Edge 额度）；填入 phc_... 即生效
+export const POSTHOG_KEY = process.env.NEXT_PUBLIC_POSTHOG_KEY || "phc_pG5xDYAZeiY8KtYBStVp8tLZv7aS8i2WYckw44ayypnb";
+export const POSTHOG_HOST =
+  process.env.NEXT_PUBLIC_POSTHOG_HOST || "https://jasonzhu-posthog-proxy.m17551076169.workers.dev";
 
 // 转化事件名和 ops/analytics/digest.py 的 CONVERSIONS 对应，改名两边一起改
 export type TrackEvent = "newsletter_subscribe" | "club_apply_submit" | "checkout_order_created" | "prompt_copy" | "prompt_try_claude"
@@ -17,10 +21,18 @@ export type TrackEvent = "newsletter_subscribe" | "club_apply_submit" | "checkou
 
 export type TrackParams = Record<string, string | number | boolean | undefined>;
 
+interface PostHogBrowser {
+  capture?: (event: string, properties?: Record<string, unknown>, options?: Record<string, unknown>) => void;
+  opt_in_capturing?: () => void;
+  opt_out_capturing?: () => void;
+  set_config?: (config: Record<string, unknown>) => void;
+}
+
 declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void;
     clarity?: (...args: unknown[]) => void;
+    posthog?: PostHogBrowser;
   }
 }
 
@@ -29,6 +41,7 @@ export function track(event: TrackEvent, params: TrackParams = {}) {
     // beacon：订阅成功后马上跳页，普通请求会被页面卸载掐掉
     window.gtag?.("event", event, { ...params, transport_type: "beacon" });
     window.clarity?.("event", event);
+    window.posthog?.capture?.(event, params, { transport: "sendBeacon" });
   } catch {
     /* 统计失败不能影响业务 */
   }

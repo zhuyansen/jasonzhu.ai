@@ -1,31 +1,38 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState, useSyncExternalStore } from "react";
 import { usePathname } from "next/navigation";
 import { setConsent, storedConsent } from "@/lib/consent";
 
-// 只对时区在欧洲的访客显示；选过一次就不再出现。
-function inEurope() {
+function inEurope(): boolean {
   try {
     const z = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
-    return z.startsWith("Europe/") || ["Atlantic/Reykjavik", "Atlantic/Canary", "Atlantic/Madeira", "Atlantic/Azores", "Atlantic/Faroe"].includes(z);
+    return (
+      z.startsWith("Europe/") ||
+      z === "Atlantic/Reykjavik" ||
+      z === "Atlantic/Canary" ||
+      z === "Atlantic/Madeira" ||
+      z === "Atlantic/Azores" ||
+      z === "Atlantic/Faroe"
+    );
   } catch {
     return false;
   }
 }
 
+const subscribeNoop = () => () => {};
+const getNeedsConsent = () => !storedConsent() && inEurope();
+const getServerNeedsConsent = () => false;
+
 export default function ConsentBanner() {
-  const [show, setShow] = useState(false);
+  const needsConsent = useSyncExternalStore(subscribeNoop, getNeedsConsent, getServerNeedsConsent);
+  const [dismissed, setDismissed] = useState(false);
   const zh = (usePathname() || "").startsWith("/zh");
 
-  useEffect(() => {
-    if (!storedConsent() && inEurope()) setShow(true);
-  }, []);
-
-  if (!show) return null;
+  if (!needsConsent || dismissed) return null;
   const choose = (granted: boolean) => {
     setConsent(granted);
-    setShow(false);
+    setDismissed(true);
   };
 
   return (
@@ -33,8 +40,8 @@ export default function ConsentBanner() {
       <div className="mx-auto flex max-w-4xl flex-col gap-3 text-sm text-gray-700 sm:flex-row sm:items-center">
         <p className="flex-1">
           {zh
-            ? "本站用 Google Analytics 和 Microsoft Clarity（含匿名操作录屏）了解访问情况，需要你同意才写入统计 Cookie。拒绝也能正常浏览。"
-            : "This site uses Google Analytics and Microsoft Clarity (including session replays) to understand visits. They set analytics cookies only if you agree. Declining doesn't affect browsing."}{" "}
+            ? "本站用 Google Analytics、PostHog 和 Microsoft Clarity（含匿名操作录屏）了解访问情况，需要你同意才写入统计 Cookie 或本地标识。拒绝也能正常浏览。"
+            : "This site uses Google Analytics, PostHog and Microsoft Clarity (including session replays) to understand visits. Analytics identifiers are stored only if you agree. Declining doesn't affect browsing."}{" "}
           <a href={zh ? "/zh/privacy" : "/en/privacy"} className="text-blue-600 underline">
             {zh ? "隐私政策" : "Privacy policy"}
           </a>

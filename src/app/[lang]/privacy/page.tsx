@@ -62,8 +62,8 @@ export default async function PrivacyPage({
             </li>
             <li>
               {isZh
-                ? "访问数据：用 Vercel Analytics（不用 Cookie）、Google Analytics 4 和 Microsoft Clarity 统计访问来源、浏览的页面和站内操作；Clarity 会录下页面上的点击和滚动（会话录屏），表单输入会被遮挡"
-                : "Visit data: we use Vercel Analytics (cookieless), Google Analytics 4 and Microsoft Clarity to see where visits come from, which pages are viewed and what is clicked; Clarity records clicks and scrolling on the page (session replays) with form input masked"}
+                ? "访问数据：用 Vercel Analytics（不用 Cookie）、Google Analytics 4、PostHog（无第三方 Cookie）和 Microsoft Clarity 统计访问来源、浏览的页面和站内操作；Clarity 会录下页面上的点击和滚动（会话录屏），表单输入会被遮挡"
+                : "Visit data: we use Vercel Analytics (cookieless), Google Analytics 4, PostHog (cookieless localStorage/memory) and Microsoft Clarity to see where visits come from, which pages are viewed and what is clicked; Clarity records clicks and scrolling on the page (session replays) with form input masked"}
             </li>
             <li>
               {isZh
@@ -79,8 +79,8 @@ export default async function PrivacyPage({
           </h2>
           <p className="text-gray-600 leading-relaxed">
             {isZh
-              ? "我们收集的信息仅用于以下目的：发送 Newsletter 邮件、改善网站内容和用户体验、统计网站访问数据。我们不出售你的个人信息；访问数据由上面列出的统计服务（Google、Microsoft、Vercel）按各自的隐私政策处理。"
-              : "We use collected information solely for: sending newsletter emails, improving website content and user experience, and analyzing website traffic. We do not sell your personal information; visit data is processed by the analytics providers listed above (Google, Microsoft, Vercel) under their own privacy policies."}
+              ? "我们收集的信息仅用于以下目的：发送 Newsletter 邮件、改善网站内容和用户体验、统计网站访问数据。我们不出售你的个人信息；访问数据由上面列出的统计服务（Google、PostHog、Microsoft、Vercel）按各自的隐私政策处理。"
+              : "We use collected information solely for: sending newsletter emails, improving website content and user experience, and analyzing website traffic. We do not sell your personal information; visit data is processed by the analytics providers listed above (Google, PostHog, Microsoft, Vercel) under their own privacy policies."}
           </p>
         </section>
 

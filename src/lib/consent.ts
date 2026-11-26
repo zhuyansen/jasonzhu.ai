@@ -32,6 +32,13 @@ export function setConsent(granted: boolean) {
   try {
     window.gtag?.("consent", "update", { analytics_storage: v });
     window.clarity?.("consentv2", { ad_Storage: "denied", analytics_Storage: v });
+    if (granted) {
+      window.posthog?.set_config?.({ persistence: "localStorage" });
+      window.posthog?.opt_in_capturing?.();
+    } else {
+      window.posthog?.opt_out_capturing?.();
+      window.posthog?.set_config?.({ persistence: "memory" });
+    }
   } catch {
     /* 统计失败不能影响页面 */
   }
