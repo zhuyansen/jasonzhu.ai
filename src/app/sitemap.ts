@@ -89,16 +89,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  // 博客文章：lastmod 用 frontmatter date（真实日期，不造假）。
+  // 博客文章：lastmod 优先用真实更新日期（updated / updatedEn），否则用发布日期 date。
   // en URL 只收录真正有英文翻译的——未翻译的 en 页是中文内容的逐字节复制，
   // 提交进 sitemap 会触发 GSC「Google 选择的规范网页与用户指定的不同」。
   for (const post of getAllPosts()) {
     const langs = post.hasEnglish ? LANGS : (["zh"] as const);
-    const zhDate = new Date(post.date + "T08:00:00+08:00");
+    const zhDate = new Date((post.updated || post.date) + "T08:00:00+08:00");
+    const enDate = new Date((post.updatedEn || post.updated || post.date) + "T08:00:00+08:00");
     for (const lang of langs) {
       entries.push({
         url: `${SITE_URL}/${lang}/blog/${post.slug}`,
-        lastModified: lang === "en" ? enLastMod(zhDate) : zhDate,
+        lastModified: lang === "en" ? enLastMod(enDate) : zhDate,
         changeFrequency: "weekly",
         priority: 0.8,
       });
@@ -123,9 +124,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // 提示词库详情页：只有带提示词的作品有详情页。提示词不到 100 字符、3 个月零点击的那批 noindex，不进 sitemap
   // （名单和规则见 src/content/opus-prompts/noindex.json，2026-11-21）
 
-  // Opus 5.5 提示词库详情页：标题/简介中英都是人工写的，zh/en 都收
+  // Opus 5.5 提示词库详情页：标题/简介中英都是人工写的，zh/en 都收；
+  // 同款提示词分组里的非主案例已 canonical 到 group.key，不重复进 sitemap 以免内耗（2026-11-26）
   const opus = getOpusLibrary();
-  for (const c of opus.cases.filter((x) => x.prompt && !isPromptNoindexed("claude-opus-5-5", x.id))) {
+  const opusWithPromptIds = new Set(opus.cases.filter((x) => x.prompt).map((x) => x.id));
+  for (const c of opus.cases.filter(
+    (x) =>
+      x.prompt &&
+      !isPromptNoindexed("claude-opus-5-5", x.id) &&
+      !(x.group && x.group.key !== x.id && opusWithPromptIds.has(x.group.key))
+  )) {
     for (const lang of LANGS) {
       entries.push({
         url: `${SITE_URL}/${lang}/prompts/claude-opus-5-5/${c.id}`,

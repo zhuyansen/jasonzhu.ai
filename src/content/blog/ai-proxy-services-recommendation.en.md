@@ -1,28 +1,45 @@
 ---
-title: "My Go-To AI API Proxy Services: A Curated Roundup"
-excerpt: "A roundup of the AI API proxy services I actually use, covering use cases like AI image/video generation and coding — all recommended by friends I trust. Some links carry invite codes that pay a commission."
+title: "AI API Proxy Services: Yunwu API, Claude & OpenAI Relays"
+excerpt: "Hands-on comparison of 8 AI API proxy services (Yunwu AI, APIMart, AiGoCode, PipeLLM & more) for Claude, OpenAI, Gemini, and image/video relays."
 ---
 
 > Source: [@GoSailGlobal](https://x.com/GoSailGlobal/status/2043962377939628517)
 
-There's no shortage of AI API proxy services out there — the market is flooded with options and it's hard to know what's worth your time. Here's a list of the services **my friends run and that I personally use**.
+**Short Answer:** An AI API proxy relays Claude, OpenAI, Gemini, and creative model APIs through one pay-as-you-go key. For image and video workflows, Jason Zhu uses **APIMart** and **Yunwu AI**; for coding in Cursor, Windsurf, or Claude Code, **AiGoCode** and **PipeLLM**. Always keep 2–3 relays as backups.
 
 > Disclosure (updated November 25, 2026): the five links marked "referral link" carry invite codes. If you sign up through them, I or the person who recommended the service earn a commission.
 
+There's no shortage of AI API proxy services out there — the market is flooded with options and it's hard to know what's worth your time. Below is the curated list of services **my friends run and that I personally use**, plus four community-reputed alternatives and a practical checklist for evaluating stability and risk.
+
+## Quick Comparison: 8 AI API Proxy Services
+
+| Provider | Primary Focus | Best For | Vouched By | Referral Link |
+| --- | --- | --- | --- | --- |
+| **APIMart** | Image & video generation, multi-model APIs | Creators generating images or videos at scale | 书虫 (`@APIMart_`) | Yes (below) |
+| **Yunwu AI (Yunwu API)** | Multi-model aggregation, image & video APIs | Multi-model creative and general API workflows | Personal use | Yes (below) |
+| **AiGoCode** | Coding & IDE API relay | Daily development in Cursor, Windsurf & Claude Code | 涛哥 (`@sitinme`) | Yes (below) |
+| **PipeLLM** | Coding & multi-model switching | Developers frequently switching between models | c大 (`@Cydiar404`) | Yes (below) |
+| **AI奶爸Hub** | Codex model family APIs | Codex-focused engineering workloads | AI奶爸 (`@zstmfhy`) | No |
+| **DGrid AI** | AI compute & API services | Teams needing compute resources plus API access | Community reputation | No |
+| **oFox AI** | General mainstream model APIs | Clean, straightforward multi-model API setup | ofox (`@ooffooxx`) | Yes (below) |
+| **FluxNode** | Agent & coding workflows | Autonomous agent pipelines and coding tools | Neo (Agent Reach creator) | No |
+
+*Note: Pricing, rate limits, and supported model catalogs change frequently across relays. Always verify current per-token rates and test latency with a small balance before committing.*
+
 ## What Is an AI API Proxy?
 
-An AI API proxy (sometimes called a "relay" or "middleware") is a service that makes it easier for developers and users to access various AI model APIs. It typically solves the following problems:
+An AI API proxy (also called an API relay or middleware gateway) sits between your app or IDE and upstream model providers such as OpenAI, Anthropic (Claude), Google (Gemini), and creative media models. Developers typically use one to solve four practical problems:
 
-- **Network access**: Some AI services are not directly accessible in China
-- **Cost savings**: Aggregated purchasing helps reduce per-call API costs
-- **Unified interface**: One API key to access multiple models — no need to register separately for each
-- **Pay-as-you-go**: No monthly subscriptions; you only pay for what you use
+- **Network access**: Some AI services are not directly accessible from mainland China or restricted networks
+- **Cost flexibility**: Aggregated purchasing can help optimize per-call API spend compared to fixed seats
+- **Unified interface**: One API key and OpenAI/Anthropic-compatible base URL to access multiple models without registering separately for each provider
+- **Pay-as-you-go**: No mandatory monthly subscriptions; you pay based on actual usage
 
-## The Proxies I Use
+## The AI API Proxies I Personally Use
 
-### 1️⃣ AI Image & Video Generation
+### 1️⃣ AI Image & Video Generation (and Multi-Model Relays)
 
-These proxies are built for creative AI workflows — think generating images with Midjourney, DALL-E, or Stable Diffusion, or producing videos with Sora and Runway.
+These proxies are built for creative AI workflows — such as generating images with Midjourney, DALL-E, or Stable Diffusion, or producing videos with Sora and Runway — while also aggregating broader model APIs under one key.
 
 **APIMart (recommended by 书虫)**
 - Website: [apimart.ai](https://apimart.ai/register?aff=npuNLN "sponsored") (referral link)
@@ -30,14 +47,14 @@ These proxies are built for creative AI workflows — think generating images wi
 - Highlights: Supports a wide range of model APIs including image and video generation, at competitive prices
 - Best for: Creators who need to generate images or videos at scale
 
-**Yunwu AI**
+**Yunwu AI (Yunwu API)**
 - Website: [yunwu.ai](https://yunwu.ai/register?aff=xlFA "sponsored") (referral link)
-- Highlights: Aggregates multiple AI models with support for image and video generation APIs
-- Best for: Users who need access to a variety of creative AI models
+- Highlights: Aggregates multiple AI models through a unified relay interface, with strong coverage for image generation, video generation, and multi-model APIs
+- Best for: Users searching for a single-key relay across creative AI models and general API calls
 
-### 2️⃣ Coding & Development
+### 2️⃣ Coding & Development (Claude Code, Cursor & Windsurf)
 
-These proxies are tailored for programming use cases — great for use inside AI coding tools like Cursor, Windsurf, and Claude Code.
+These proxies are tailored for programming workflows — designed to plug directly into AI coding tools like Cursor, Windsurf, and Claude Code where streaming reliability and tool-calling fidelity matter most.
 
 **AiGoCode (recommended by 涛哥)**
 - Website: [aigocode.com](https://aigocode.com/invite/ZS329NMN "sponsored") (referral link)
@@ -51,9 +68,9 @@ These proxies are tailored for programming use cases — great for use inside AI
 - Highlights: Multi-model switching support, well-suited for developers in their daily workflow
 - Best for: Developers who frequently switch between models
 
-### 3️⃣ Other Honorable Mentions
+### 3️⃣ Other Community Honorable Mentions
 
-Beyond what I use personally, here are a few others with a solid community reputation:
+Beyond what I use personally, these four services carry a solid reputation in the builder community:
 
 **AI奶爸Hub**
 - Website: [ainaibahub.com](https://manage-xai.ainaibahub.com/)
@@ -75,25 +92,44 @@ Beyond what I use personally, here are a few others with a solid community reput
 - Recommended by: Neo, creator of Agent Reach
 - Highlights: Focused on agent and coding use cases
 
-## How to Choose
+## How to Evaluate Security, Stability & Fallback Risk
 
-When picking an API proxy, here are the key things to consider:
+Choosing an AI API proxy isn't just about the lowest headline rate. Before plugging a relay into your IDE or production agent pipeline, check five operational factors:
 
-1. **Use case**: For image/video generation, go with APIMart or Yunwu AI; for coding, try AiGoCode or PipeLLM
-2. **Reliability**: Prioritize services recommended by people you trust and those with a proven track record
-3. **Pricing**: Compare API rates across providers and choose based on your usage patterns
-4. **Latency**: If responsiveness matters for your workflow, run some tests before committing
-5. **Model coverage**: Make sure the service supports the specific models you need
+1. **Official channel vs. reverse-proxy risk**: Official-channel relays route through authorized API accounts, whereas reverse-engineered ("reverse proxy") relays mimic web sessions. Reverse proxies are far more prone to sudden upstream bans, dropped tool calls, truncated context windows, or silent model downgrades. Always run a real tool-calling and long-context test before relying on a provider.
+2. **Rate limits and burst concurrency**: Coding assistants and agent loops fire rapid parallel requests. Test how a relay handles concurrent tool calls and long streaming responses during peak hours, not just a single chat prompt.
+3. **Billing transparency and balance exposure**: Never park a large prepaid deposit in a single third-party relay. Top up a small test balance first, inspect the token usage logs against your client's counts, and scale gradually.
+4. **Multi-provider fallback setup**: Register 2–3 relays (for example, one primary coding relay plus one multi-model backup) and keep alternate base URLs and API keys ready in your environment config. If one upstream route degrades, you can fail over in seconds.
+5. **Data privacy and key hygiene**: Every prompt and code snippet passes through the proxy operator's server. Avoid sending production credentials, customer PII, or tightly restricted IP through unvetted relays, and rotate API keys periodically. If you need direct official billing with international cards instead of relays, see our [Global Payments Guide](/en/go-global/payments).
 
-## Tips
+## Practical Setup Tips
 
-- Sign up for 2–3 services at once so you always have a backup
-- Don't top up a large amount right away — start small and test things out first
-- Follow each provider on X; they frequently run promotional deals
-- For coding, the easiest setup is to configure the proxy API directly inside Cursor or Windsurf
+- **Keep a backup ready**: Sign up for 2–3 services at once so you always have a failover path during upstream outages
+- **Start with small top-ups**: Test latency, streaming stability, and billing accuracy with a minimal balance first
+- **Watch X for updates**: Follow each provider's X account for status notices, new model rollouts, and promotional deals
+- **Configure directly in your IDE**: For coding, set the proxy base URL and API key directly inside Cursor, Windsurf, or Claude Code so you can switch relays without touching project code
 
----
+## FAQ
 
-📎 **Original post**: [Jason Zhu's API Proxy Recommendations](https://x.com/GoSailGlobal/status/2043962377939628517)
+### What is Yunwu API and how does it compare to other AI API proxies?
 
-> For more AI tool recommendations, check out the [AI Tools page](/zh/tools), which includes a full list organized by category — including AI API proxies.
+Yunwu AI (often searched as Yunwu API, `yunwu.ai`) is a multi-model AI API proxy that aggregates image generation, video generation, and mainstream AI model APIs behind one unified key. Compared with coding-specialized relays like AiGoCode or PipeLLM, Yunwu AI and APIMart are primarily positioned for creative media generation and broad multi-model aggregation, so many developers pair Yunwu AI with a dedicated coding relay.
+
+### What is the difference between an official API relay and a reverse-proxy service?
+
+An official API relay forwards requests using legitimate upstream API keys or enterprise quotas, preserving standard streaming, context windows, and tool-calling behavior. A reverse-proxy service wraps consumer web sessions into an API-like endpoint; while sometimes cheaper, it carries much higher risk of rate-limit walls, broken function calling, and sudden outages when upstream platforms tighten enforcement.
+
+### Which AI API proxy is best for Claude Code, Cursor, and Windsurf?
+
+For daily software engineering inside Claude Code, Cursor, or Windsurf, prioritize relays built specifically for coding traffic — in this roundup, AiGoCode (recommended by 涛哥) for steady daily coding, PipeLLM (recommended by c大) if you frequently switch across models, or FluxNode for agent-heavy coding workflows. Always keep a second relay configured as a fallback.
+
+### How can I minimize downtime and balance risk when using AI API proxies?
+
+Follow three rules: never top up more than you are comfortable spending in a short testing window, maintain active accounts on at least 2–3 providers so you can swap base URLs immediately if one degrades, and avoid routing sensitive credentials or regulated production data through third-party proxies.
+
+## Further Reading
+
+- 📎 **Original X post**: [Jason Zhu's API Proxy Recommendations](https://x.com/GoSailGlobal/status/2043962377939628517)
+- **Building reliable agents on top of model APIs**: Read [AI Agent Harness Framework: Skill, Memory, Protocol & Safety](/en/blog/ai-agent-complete-picture) to see how architecture, memory, and security guardrails turn raw API calls into dependable agents.
+- **Direct international API billing**: Need global payment setups for official AI subscriptions or overseas SaaS revenue? Check the [Go-Global Payments Guide](/en/go-global/payments).
+- **Full tool directory**: Browse the [AI Tools page](/en/tools) for a categorized directory including AI API proxies and developer tools.

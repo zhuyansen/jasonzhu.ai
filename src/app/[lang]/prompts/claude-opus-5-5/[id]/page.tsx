@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "@/components/Link";
 import { notFound } from "next/navigation";
-import type { Locale } from "@/lib/dictionaries";
+import { getDictionary, type Locale } from "@/lib/dictionaries";
 import { MODEL_LABEL, categoryLabel, formatCount, formatDuration, getOpusCase, getOpusLibrary } from "@/lib/opus-prompts";
 import { relatedEnglishArticles } from "@/lib/related-articles";
 import { fitTitle } from "@/lib/social";
@@ -9,6 +9,7 @@ import fullData from "@/generated/opus-prompts-full.json";
 import CaseVideo from "../CaseVideo";
 import { isPromptNoindexed, NOINDEX_ROBOTS } from "../../noindex";
 import PromptsSubscribe from "../PromptsSubscribe";
+import SubscribeForm from "@/components/SubscribeForm";
 import { heardFromProps } from "@/lib/frozen-pages";
 import CopyPrompt, { TryInClaude } from "../CopyPrompt";
 
@@ -50,14 +51,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const modelName = (c.models || ["opus-5.5"]).map((m) => MODEL_LABEL[m]).join(" / ");
   const title = `${isZh ? c.title.zh : c.title.en}${isZh ? `｜${modelName} 提示词` : ` | ${modelName} Prompt`}`;
   const description = describe(isZh, isZh ? c.title.zh : c.title.en, c.author.handle, c.stats.views, c.prompt.kind, modelName);
+  // 同款提示词分组的非主案例（50 页）将 canonical 指向该组最高播放主案例 group.key，避免多页抢同一条提示词查询（2026-11-26）
+  const canonicalId = c.group && c.group.key !== id && getOpusCase(c.group.key)?.prompt ? c.group.key : id;
   return {
     title: fitTitle(title),
     description,
     // 短提示词、3 个月零点击的页面不收录（名单和规则见 src/content/opus-prompts/noindex.json）
     ...(isPromptNoindexed("claude-opus-5-5", id) ? { robots: NOINDEX_ROBOTS } : {}),
     alternates: {
-      canonical: `${SITE_URL}/${lang}/${PATH}/${id}`,
-      languages: { zh: `${SITE_URL}/zh/${PATH}/${id}`, en: `${SITE_URL}/en/${PATH}/${id}`, "x-default": `${SITE_URL}/zh/${PATH}/${id}` },
+      canonical: `${SITE_URL}/${lang}/${PATH}/${canonicalId}`,
+      languages: {
+        zh: `${SITE_URL}/zh/${PATH}/${canonicalId}`,
+        en: `${SITE_URL}/en/${PATH}/${canonicalId}`,
+        "x-default": `${SITE_URL}/en/${PATH}/${canonicalId}`,
+      },
     },
     openGraph: { type: "article", title, description, url: `${SITE_URL}/${lang}/${PATH}/${id}`, images: [{ url: c.video.poster }] },
     twitter: { card: "summary_large_image", title, description, images: [c.video.poster] },
@@ -70,11 +77,14 @@ export default async function OpusCasePage({ params }: Props) {
   const isZh = lang === "zh";
   const c = getOpusCase(id);
   if (!c || !c.prompt) notFound();
+  const dict = isZh ? await getDictionary("zh") : undefined;
   const modelName = (c.models || ["opus-5.5"]).map((m) => MODEL_LABEL[m]).join(" / ");
   const lib = getOpusLibrary();
   const prompt = full[id]?.prompt ?? null;
   const summary = full[id]?.summary ?? null;
   const title = isZh ? c.title.zh : c.title.en;
+  const primaryCase = c.group && c.group.key !== id ? getOpusCase(c.group.key) : undefined;
+  const isFable = (c.models || []).includes("fable-5.5");
 
   const related = lib.cases
     .filter((x) => x.id !== id && x.prompt && x.category === c.category)
@@ -125,10 +135,15 @@ export default async function OpusCasePage({ params }: Props) {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      <nav className="text-sm text-gray-400 mb-5">
+      <nav className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-gray-400 mb-5">
         <Link href={`/${lang}/${PATH}`} className="hover:text-[var(--primary)]">
           ← {isZh ? "Claude 5.5 提示词库" : "Claude 5.5 Prompt Library"}
         </Link>
+        {isFable && (
+          <Link href={`/${lang}/${PATH}/fable-5-5`} className="text-[var(--primary)] hover:underline">
+            {isZh ? "查看全部 Fable 5.5 案例与发布状态 →" : "See all Fable 5.5 examples & release status →"}
+          </Link>
+        )}
       </nav>
 
       <div className="flex items-center gap-2 text-xs text-gray-400 mb-2 flex-wrap">
@@ -159,6 +174,15 @@ export default async function OpusCasePage({ params }: Props) {
         </div>
       )}
 
+      {primaryCase?.prompt && (
+        <p className="mb-4 text-xs text-gray-500 bg-gray-50 border border-gray-100 rounded-lg px-3.5 py-2">
+          {isZh ? "本作品与站内另一高播放案例使用同款提示词：" : "Same prompt as our primary featured showcase: "}
+          <Link href={`/${lang}/${PATH}/${primaryCase.id}`} className="text-[var(--primary)] font-medium hover:underline">
+            {isZh ? primaryCase.title.zh : primaryCase.title.en} →
+          </Link>
+        </p>
+      )}
+
       <div className="relative aspect-video bg-black rounded-xl overflow-hidden">
         <CaseVideo poster={c.video.poster} postUrl={c.url} label={`${title} · @${c.author.handle}`} isZh={isZh} eager />
       </div>
@@ -171,6 +195,12 @@ export default async function OpusCasePage({ params }: Props) {
           </div>
         ))}
       </dl>
+
+      {!isZh && prompt && (
+        <div className="mt-5">
+          <PromptsSubscribe lang={lang} compact where="detail-top" {...heardFromProps(`/${lang}/prompts/claude-opus-5-5/${id}`)} />
+        </div>
+      )}
 
       {summary && <p className="mt-6 text-gray-600 leading-relaxed">{isZh ? summary.zh : summary.en}</p>}
 
@@ -201,6 +231,11 @@ export default async function OpusCasePage({ params }: Props) {
       {!isZh && prompt && (
         <div className="mt-6">
           <PromptsSubscribe lang={lang} where="detail" {...heardFromProps(`/${lang}/prompts/claude-opus-5-5/${id}`)} />
+        </div>
+      )}
+      {isZh && prompt && (
+        <div className="mt-6">
+          <SubscribeForm source={`prompts-detail-${id}`} lang="zh" dict={dict} {...heardFromProps(`/${lang}/prompts/claude-opus-5-5/${id}`)} />
         </div>
       )}
 

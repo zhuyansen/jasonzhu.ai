@@ -7,7 +7,9 @@ import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
 import SubscribeForm from "@/components/SubscribeForm";
-import { heardFromProps } from "@/lib/frozen-pages";
+import TrackedLink from "@/components/TrackedLink";
+import PromptsSubscribe from "@/app/[lang]/prompts/claude-opus-5-5/PromptsSubscribe";
+import { heardFromProps, isFrozenPath } from "@/lib/frozen-pages";
 import ViewCounter from "@/components/ViewCounter";
 import LikeButton from "@/components/LikeButton";
 import GiscusComments from "@/components/GiscusComments";
@@ -188,12 +190,22 @@ export default async function BlogPostPage({ params }: Props) {
   // 文章只用 citation 指向它们：文章不是数据集，不写 DOI 当自己的 identifier / sameAs。
   const citedWorks = worksCitedIn(`${post.doi ?? ""}\n${post.content}`);
 
+  const frozen = isFrozenPath(`/${lang}/blog/${slug}`);
+  const partnerOf = (href?: string) => {
+    try {
+      return href ? new URL(href).hostname.replace(/^www\./, "") : slug;
+    } catch {
+      return slug;
+    }
+  };
+
   // Article JSON-LD structured data
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: post.title,
     description: post.excerpt || post.title,
+    ...(!frozen ? { inLanguage: lang === "zh" ? "zh-CN" : "en", articleSection: catLabel(post.category) } : {}),
     datePublished: post.date,
     dateModified: post.updated || post.date,
     // 投稿文的作者是撰稿人（主页未知就没有 url）；publisher 始终链接到 Entity Home @id
@@ -396,9 +408,23 @@ export default async function BlogPostPage({ params }: Props) {
             // （OpenSEO 2026-11-19 报 12 页多个 H1）
             h1: (props) => <h2 {...props} />,
             // 推广链接（带邀请码、有返佣）在 md 里写成 [文字](网址 "sponsored")：渲染成 rel="sponsored"，不显示这个 title。
-            // Google 要求推广链接标 sponsored；写成 title 而不是 <a> 标签，generate-posts 的关键词就不会收进 href、rel（2026-11-25 起）
+            // 非冻结页同时记 GA4 referral_click 转化事件（2026-11-26 起）
             a: ({ title, ...props }) =>
-              title === "sponsored" ? <a {...props} rel="sponsored" /> : <a title={title} {...props} />,
+              title === "sponsored" ? (
+                !frozen && props.href ? (
+                  <TrackedLink
+                    {...props}
+                    href={props.href}
+                    rel="sponsored"
+                    event="referral_click"
+                    params={{ partner: partnerOf(props.href), slug }}
+                  />
+                ) : (
+                  <a {...props} rel="sponsored" />
+                )
+              ) : (
+                <a title={title} {...props} />
+              ),
             img: (props) => (
               // 正文图原图直出（不走 next/image），懒加载：滚到附近才下载，长文不再一打开就下全部图片
               // eslint-disable-next-line @next/next/no-img-element
@@ -425,9 +451,13 @@ export default async function BlogPostPage({ params }: Props) {
         <LikeButton slug={slug} />
       </div>
 
-      {/* Subscribe CTA */}
+      {/* Subscribe CTA：未冻结英文博客改用英文 Top 50 提示词订阅框（替代中文手册），冻结页保持原组件不变 */}
       <div className="mt-12">
-        <SubscribeForm source={`blog-${slug}`} lang={lang} dict={dict} {...heardFromProps(`/${lang}/blog/${slug}`)} />
+        {lang === "en" && !frozen ? (
+          <PromptsSubscribe lang="en" where={`blog-${slug}`} {...heardFromProps(`/${lang}/blog/${slug}`)} />
+        ) : (
+          <SubscribeForm source={`blog-${slug}`} lang={lang} dict={dict} {...heardFromProps(`/${lang}/blog/${slug}`)} />
+        )}
       </div>
 
       {/* Related Posts */}

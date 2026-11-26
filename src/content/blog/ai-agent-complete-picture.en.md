@@ -1,31 +1,37 @@
 ---
-title: >-
-  Skill, Harness, Memory, Safety: After 60 Articles and 20 Projects, We've
-  Mapped the Complete Puzzle of AI Agents
-excerpt: >-
-  Over the past three months, we wrote 60 articles on AI Agents covering four
-  directions: the Skill system, Harness governance, memory architecture, and
-  safety defense. This article brings all four pillars together to draw one
-  complete picture.
+title: "AI Agent Harness Framework: Skill, Memory, Protocol & Safety"
+excerpt: "AI Agent architecture explained: how a Harness differs from a Framework, plus the pillars of Skill, Memory, Protocol (MCP) & Safety across 20+ OSS projects."
 ---
 
-Over the past three months we have written nearly 60 articles about AI Agents, covering four directions: the Skill system, Harness governance, memory architecture, and security defense. Looking back, these four directions are really all solving the same problem: how to take an Agent from "usable" to "reliable." This article brings the four pillars together, drawing a complete picture with 20+ open-source projects and our hands-on experience.
+**Short Answer:** In **JasonZhu.AI**'s synthesis of 60 articles and 20+ open-source projects, an **AI Agent Framework** provides code building blocks, whereas a **Harness** engineers the runtime environment, workflows, and quality gates. Reliable agents combine three capability pillars — **Skill**, **Memory**, and **Protocol (MCP)** — bounded by **Security Defense**.
+
+Over the past three months we have written nearly 60 articles about AI Agents, covering four directions: the Skill system, Harness governance, memory architecture, and security defense — all connected by tool protocols like MCP. Looking back, these components solve one core problem: how to take an Agent from "usable" to "reliable." This guide maps the complete architecture using 20+ open-source projects and our hands-on production experience.
+
+## AI Agent Architecture at a Glance (5-Layer Summary)
+
+| Layer | Core Question | Role in Agent Architecture | Key Projects & Standards |
+| --- | --- | --- | --- |
+| **Harness vs. Framework** | *How does the agent execute and stay governed?* | Frameworks supply orchestration primitives; a Harness defines the runtime environment, collaboration patterns, eval loops, and quality gates | revfactory Harness, Dex Horthy RPI, OpenHarness, Claude Code internals |
+| **Skill** | *What specialized work can the agent do?* | Packages domain workflows, methodologies, personas, and checklists into reusable modules | Addy Osmani `agent-skills`, `superpowers`, `gstack`, `compound-engineering` |
+| **Memory** | *What does the agent retain across sessions?* | Persists decisions, patterns, and domain knowledge via files, vector RAG, knowledge graphs, or hybrid retrieval | `mempalace`, `agentmemory`, `claude-memory-compiler`, `CLAUDE.md` |
+| **Protocol (MCP)** | *How does the agent connect to tools & data?* | Standardizes JSON Schema tool definitions, context exchange, and cross-client server integration | Model Context Protocol (MCP), Claude Code MCP stack, `mempalace` 19 MCP tools |
+| **Security Defense** | *What is the agent forbidden to do?* | Enforces static scanning, tool pinning, runtime interception, MicroVM sandboxing, and human approval gates | `ClawKeeper`, Invariant MCP-Scan, AgentSeal, Docker Sandboxes, MCP Guardian |
 
 ---
 
-## Four Pillars, One Goal
+## Four Pillars, One Goal (Connected by Protocol)
 
 The essential difference between an AI Agent and an ordinary LLM call is that an Agent has execution capability. It can read and write files, run shell commands, call APIs, and browse the web. This means it can do an order of magnitude more things—but at the same time, the consequences of mistakes are also an order of magnitude more serious.
 
-Making an Agent work reliably requires all four pillars to hold at once.
+Making an Agent work reliably requires the three capability pillars (**Skill**, **Memory**, and **Protocol**) to operate inside a disciplined **Harness** with **Security Defense** enforcing hard boundaries.
 
 **The Skill system** answers "what can the Agent do?" It packages domain knowledge, workflows, and best practices into reusable modules, turning the Agent from a generalist into a specialist. Anthropic uses hundreds of Skills internally; Uber manages 500+ internally.
 
-**Harness governance** answers "how does the Agent do it?" It defines the Agent's workflows, collaboration patterns, and quality gates. From Prompt Engineering to Context Engineering to Harness Engineering, the engineer's role shifts from writing code to designing the Agent's operating environment.
+**Harness governance** answers "how does the Agent do it?" Unlike a traditional agent framework that only wires model calls and tool loops in code, a Harness defines the Agent's operating environment—workflows, collaboration patterns, context budgets, and quality gates. From Prompt Engineering to Context Engineering to Harness Engineering, the engineer's role shifts from writing code to designing the Agent's operating environment.
 
 **The memory system** answers "what does the Agent remember?" It accumulates experience across sessions and avoids repeating mistakes. From simple CLAUDE.md files to vector databases to knowledge graphs, 12+ open-source projects are competing for the best solution.
 
-**Security defense** answers "what does the Agent not do?" The MCP ecosystem produced 30+ CVEs in 60 days, and one-fifth of the packages in the OpenClaw store are malicious software. Execution permissions create an attack surface, and defenses must keep pace.
+**Protocol (MCP) & Security defense** answer "how does the Agent touch external tools—and what must it never do?" Standard protocols like MCP let Skills and Memory servers plug into any compatible Agent, but they also expand the blast radius. The MCP ecosystem produced 30+ CVEs in 60 days, and one-fifth of the packages in the OpenClaw store are malicious software. Execution permissions create an attack surface, and defenses must keep pace.
 
 ![Four Pillars](public/blog/agent-four-pillars/section1-four-pillars.png)
 
@@ -65,7 +71,7 @@ Mitchell Hashimoto's six-phase retrospective (issue 56) illustrates a genuine pa
 
 <a href="https://github.com/zstmfhy/Claude-code">Claude Code's internal architecture</a> (190 stars) demonstrates the reference implementation: 50+ commands, a JSON Schema–validated tool system, a complete MCP protocol implementation, and an agent system supporting parallel execution and context isolation. All external frameworks are built on top of this foundation.
 
-![Harness治理](public/blog/agent-four-pillars/section3-harness.png)
+![Harness Governance](public/blog/agent-four-pillars/section3-harness.png)
 
 ---
 
@@ -81,7 +87,7 @@ The newly added **<a href="https://github.com/milla-jovovich/mempalace">mempalac
 
 compound-engineering's `/ce:compound` command offers an interesting perspective: memory doesn't need to be a standalone piece of infrastructure—it can be embedded directly into the workflow. Lessons learned are automatically extracted at the end of each iteration and automatically loaded at the start of the next. gstack's `/learn` command does something similar, accumulating patterns across sessions.
 
-![记忆系统](public/blog/agent-four-pillars/section4-memory.png)
+![Memory Systems](public/blog/agent-four-pillars/section4-memory.png)
 
 ---
 
@@ -95,7 +101,9 @@ We conducted an in-depth investigation of agent security in issue 59. The data i
 
 The challenge with security is that it exists in tension with the other three pillars. More skills mean a larger attack surface; memory systems may store sensitive information; and the tool-calling permissions of the Harness are themselves a security risk. gstack's approach is worth noting: the `/guard` command provides security guardrails to prevent dangerous command execution, and the `/cso` command performs OWASP/STRIDE threat modeling, embedding security into the sprint pipeline rather than addressing it as an afterthought.
 
-![安全防御](public/blog/agent-four-pillars/section5-security.png)
+If you install community Skills or MCP servers in your own stack, vet them like supply-chain dependencies: you can browse security-graded Skills and MCPs on [Agent Skills Hub (agentskillshub.top)](https://agentskillshub.top) or read our [200+ Open-Source AI Agent Skills Security Audit](/en/blog/agent-skill-security-audit-200).
+
+![Security Defense](public/blog/agent-four-pillars/section5-security.png)
 
 ---
 
@@ -128,3 +136,29 @@ The takeaway for developers from this convergence is: you don't need to build fo
 Future Agent engineering tools will most likely converge into a unified framework: use Skill to define capability boundaries, use Harness to define execution flow, use memory to accumulate domain experience, and use security mechanisms as a safety net. The day the four pillars become one is the day Agents become truly reliable.
 
 ![Convergence Trend](public/blog/agent-four-pillars/section7-convergence.png)
+
+---
+
+## FAQ
+
+### What is the difference between an AI Agent Harness and an AI Agent Framework?
+
+An AI Agent Framework provides software abstractions—LLM wrappers, state loops, and tool bindings—for building an agent in code. A Harness goes a level higher to engineer the agent's operating environment: multi-agent collaboration patterns (such as Producer-Reviewer or Supervisor), context-budget discipline (staying in the "smart zone"), verification gates, and hard execution constraints that keep the agent reliable in production.
+
+### How do Skill, Memory, and Protocol work together as the three pillars of an AI Agent?
+
+Skill defines reusable domain workflows and methodologies (what the agent can do), Memory persists facts, decisions, and lessons across sessions (what the agent remembers), and Protocol—primarily MCP with JSON Schema validation—standardizes how the agent invokes external tools and memory servers across runtimes. The Harness coordinates all three inside deterministic quality gates.
+
+### Why is security defense necessary when adding Skills and MCP servers?
+
+Because execution permissions turn every Skill and MCP server into a supply-chain dependency. With 30+ MCP CVEs surfaced in 60 days and malicious packages appearing in public registries, teams need defense in depth: static scanning (such as Invariant MCP-Scan), tool-definition pinning (MCP Guardian), runtime policy interception (ClawKeeper), and sandboxed execution (Docker MicroVMs).
+
+### Do teams need to build separate systems for Skill, Harness, Memory, and Security?
+
+No. Modern open-source toolkits show rapid convergence: projects like `superpowers`, `gstack`, and `compound-engineering` already fold workflow constraints (Harness), cross-session pattern capture (Memory), and audit commands (Security) directly into structured Skills. Start with a disciplined Skill and Harness baseline, then add dedicated memory engines or runtime sandboxes as task complexity scales.
+
+## Further Reading & Resources
+
+- **Vet Skills & MCP servers before installing**: Browse security-graded open-source Skills and MCP servers on [Agent Skills Hub (agentskillshub.top)](https://agentskillshub.top).
+- **Pair your Harness with tested prompts**: Explore the [Claude Opus 5.5 Prompt Library](/en/prompts/claude-opus-5-5) for production-tested prompt structures and workflows.
+- **Hands-on architecture & go-global advisory**: Need help designing reliable AI Agent systems, Harness governance, or global growth pipelines for your team? See [JasonZhu.AI Services](/en/services).

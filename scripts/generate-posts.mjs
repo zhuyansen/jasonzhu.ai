@@ -51,11 +51,18 @@ const authorOf = (data, content) => {
   if (!name || SITE_AUTHOR_NAMES.has(name)) return undefined;
   return { name, url: url || undefined };
 };
-// 英文版的标题 / 摘要也进搜索索引，英文页能用英文搜
+// 英文版的标题 / 摘要 / 更新日期也进搜索索引与 sitemap，英文页能用英文搜
 const enMeta = new Map(
   enFiles.map((f) => {
     const { data } = matter(fs.readFileSync(path.join(BLOG_DIR, f), "utf-8"));
-    return [f.replace(/\.en\.mdx?$/, ""), { titleEn: data.title || undefined, excerptEn: data.excerpt || undefined }];
+    return [
+      f.replace(/\.en\.mdx?$/, ""),
+      {
+        titleEn: data.title || undefined,
+        excerptEn: data.excerpt || undefined,
+        updatedEn: data.updated || undefined,
+      },
+    ];
   })
 );
 
@@ -105,7 +112,7 @@ for (const post of posts) {
 }
 console.log(`Generated ${posts.length} post content files to ${CONTENT_DIR}`);
 
-// 英文版内容：<slug>.en.json，frontmatter 可覆盖 title/excerpt/coverImage（英文封面，用于英文页 hero 和 OG 图）
+// 英文版内容：<slug>.en.json，frontmatter 可覆盖 title/excerpt/coverImage/updated（英文封面与更新时间）
 for (const filename of enFiles) {
   const slug = filename.replace(/\.en\.mdx?$/, "");
   const { data, content } = matter(
@@ -118,6 +125,7 @@ for (const filename of enFiles) {
       title: data.title || undefined,
       excerpt: data.excerpt || undefined,
       coverImage: data.coverImage || undefined,
+      updated: data.updated || undefined,
     })
   );
 }

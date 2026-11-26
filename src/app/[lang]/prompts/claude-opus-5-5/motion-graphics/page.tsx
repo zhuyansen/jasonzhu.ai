@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import Link from "@/components/Link";
-import type { Locale } from "@/lib/dictionaries";
+import { getDictionary, type Locale } from "@/lib/dictionaries";
 import { getOpusLibrary } from "@/lib/opus-prompts";
 import { formatCount, type ClaudeModel, type OpusCaseSlim } from "@/lib/opus-prompts-shared";
 import { computeInsights } from "@/lib/opus-insights";
 import PromptLibraryClient from "../PromptLibraryClient";
 import InsightsSection from "../InsightsSection";
+import PromptsSubscribe from "../PromptsSubscribe";
+import SubscribeForm from "@/components/SubscribeForm";
+import { heardFromProps } from "@/lib/frozen-pages";
 import { withSocialCards } from "@/lib/social";
 
 /**
@@ -38,7 +41,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: c.desc,
     alternates: {
       canonical: `${SITE_URL}/${lang}/${PATH}`,
-      languages: { zh: `${SITE_URL}/zh/${PATH}`, en: `${SITE_URL}/en/${PATH}`, "x-default": `${SITE_URL}/zh/${PATH}` },
+      languages: { zh: `${SITE_URL}/zh/${PATH}`, en: `${SITE_URL}/en/${PATH}`, "x-default": `${SITE_URL}/en/${PATH}` },
     },
     openGraph: { type: "website", title: c.title, description: c.desc, url: `${SITE_URL}/${lang}/${PATH}` },
   }, rawLang);
@@ -48,6 +51,7 @@ export default async function MotionGraphicsPage({ params }: { params: Promise<{
   const { lang: rawLang } = await params;
   const lang = (rawLang === "en" ? "en" : "zh") as Locale;
   const isZh = lang === "zh";
+  const dict = isZh ? await getDictionary("zh") : undefined;
   const lib = getOpusLibrary();
   const cases = motionCases();
   const withPrompt = cases.filter((x) => x.prompt).length;
@@ -161,6 +165,12 @@ export default async function MotionGraphicsPage({ params }: { params: Promise<{
         </dl>
       </header>
 
+      {!isZh && (
+        <div className="mb-6">
+          <PromptsSubscribe lang={lang} compact where="motion-graphics" {...heardFromProps(`/${lang}/${PATH}`)} />
+        </div>
+      )}
+
       <PromptLibraryClient
         initial={initial}
         total={cases.length}
@@ -185,6 +195,14 @@ export default async function MotionGraphicsPage({ params }: { params: Promise<{
           ))}
         </div>
       </section>
+
+      <div className="mt-12">
+        {isZh ? (
+          <SubscribeForm source="prompts-motion-zh" lang="zh" dict={dict} {...heardFromProps(`/${lang}/${PATH}`)} />
+        ) : (
+          <PromptsSubscribe lang={lang} where="motion-graphics-bottom" {...heardFromProps(`/${lang}/${PATH}`)} />
+        )}
+      </div>
 
       <p className="mt-10 text-sm">
         <Link href={`/${lang}/${LIB}`} className="text-[var(--primary)] hover:underline">

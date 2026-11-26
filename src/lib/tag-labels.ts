@@ -61,6 +61,10 @@ export const TAG_EN: Record<string, string> = {
   "全家桶": "All-in-One", "银行开户": "Bank Account Opening", "出海收款": "Global Payments",
   "微信支付": "WeChat Pay", "个人主体": "Individual Sellers", "第三方支付": "Third-Party Payments",
   "数据保护": "Data Protection", "合规": "Compliance",
+  "电子签名平台对比": "E-Signature Comparison", "e签宝": "eSignBao", "法大大": "Fadada",
+  "培训课程制作": "Course Creation", "教学视频制作": "Training Video Production",
+  "Wise地址证明": "Wise Address Proof", "英国账单地址": "UK Billing Address",
+  "虎皮椒": "Xunhupay", "聚合支付": "Aggregated Payments",
 };
 
 export function tagLabel(tag: string, lang: string): string {

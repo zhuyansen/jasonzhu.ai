@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import postsData from "@/generated/posts.json";
+import { isFrozenPath } from "@/lib/frozen-pages";
 
 export interface BlogPostMeta {
   slug: string;
@@ -21,9 +22,10 @@ export interface BlogPostMeta {
   /** 系列里的期数（frontmatter issue） */
   issue?: number;
   hasEnglish?: boolean;
-  /** 英文版标题 / 摘要（有 .en.md 时），博客搜索用 */
+  /** 英文版标题 / 摘要 / 更新日期（有 .en.md 时），博客搜索与 sitemap 用 */
   titleEn?: string;
   excerptEn?: string;
+  updatedEn?: string;
   /** 正文小标题（最多 20 个），博客搜索用 */
   headings?: string[];
   /** 正文里的英文词 / 产品名（最多 40 个），博客搜索用 */
@@ -54,11 +56,13 @@ export function getPostBySlug(slug: string, lang?: "zh" | "en"): BlogPost | unde
     const en = JSON.parse(
       fs.readFileSync(path.join(contentDir, `${slug}.en.json`), "utf-8")
     );
+    const frozen = isFrozenPath(`/en/blog/${slug}`);
     return {
       ...meta,
       title: en.title || meta.title,
       excerpt: en.excerpt || meta.excerpt,
       coverImage: en.coverImage || meta.coverImage,
+      updated: frozen ? meta.updated : (en.updated || meta.updated),
       content: en.content,
     };
   }

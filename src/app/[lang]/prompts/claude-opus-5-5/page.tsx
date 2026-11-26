@@ -3,7 +3,7 @@ import Link from "@/components/Link";
 import type { Locale } from "@/lib/dictionaries";
 import { OPUS_CATEGORIES, getOpusLibrary } from "@/lib/opus-prompts";
 import PromptsSubscribe from "./PromptsSubscribe";
-import { heardFromProps } from "@/lib/frozen-pages";
+import { heardFromProps, isFrozenPath } from "@/lib/frozen-pages";
 import PromptLibraryClient from "./PromptLibraryClient";
 import InsightsSection from "./InsightsSection";
 import { computeInsights } from "@/lib/opus-insights";
@@ -220,34 +220,87 @@ export default async function OpusPromptsPage({ params }: { params: Promise<{ la
         </div>
       </section>
 
-      {/* 全部带提示词案例的真实链接：按钮翻页对爬虫不可见，这里给每个详情页一个入口 */}
-      <section className="mt-14">
-        <details className="border-t border-gray-100 pt-5">
-          <summary className="text-sm text-gray-500 cursor-pointer select-none hover:text-gray-700">
-            {isZh ? `按分类浏览全部 ${lib.withPrompt} 个带提示词案例` : `Browse all ${lib.withPrompt} cases with prompts by category`}
-          </summary>
-          <nav aria-label={isZh ? "全部带提示词案例" : "All cases with prompts"} className="mt-5 space-y-6">
-            {OPUS_CATEGORIES.filter((k) => cases.some((x) => x.prompt && x.category === k.key)).map((k) => (
-              <div key={k.key}>
-                <h3 className="text-sm font-semibold text-gray-700 mb-2">
-                  {k.icon} {isZh ? k.zh : k.en}
-                </h3>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-1.5">
-                  {cases
-                    .filter((x) => x.prompt && x.category === k.key)
-                    .map((x) => (
-                      <li key={x.id} className="text-sm truncate">
-                        <Link href={`/${lang}/${PATH}/${x.id}`} className="text-gray-500 hover:text-[var(--primary)]">
-                          {isZh ? x.title.zh : x.title.en}
-                        </Link>
-                      </li>
-                    ))}
-                </ul>
-              </div>
+      {/* 全部带提示词案例的真实链接：/en 处于 GEO 实验冻结期保留原样；/zh 改为按分类+精选 20 条，避免 SSR 吐出 680 条跨领域标题导致无关长尾误匹配（2026-11-26） */}
+      {isFrozenPath(`/${lang}/${PATH}`) ? (
+        <section className="mt-14">
+          <details className="border-t border-gray-100 pt-5">
+            <summary className="text-sm text-gray-500 cursor-pointer select-none hover:text-gray-700">
+              {isZh ? `按分类浏览全部 ${lib.withPrompt} 个带提示词案例` : `Browse all ${lib.withPrompt} cases with prompts by category`}
+            </summary>
+            <nav aria-label={isZh ? "全部带提示词案例" : "All cases with prompts"} className="mt-5 space-y-6">
+              {OPUS_CATEGORIES.filter((k) => cases.some((x) => x.prompt && x.category === k.key)).map((k) => (
+                <div key={k.key}>
+                  <h3 className="text-sm font-semibold text-gray-700 mb-2">
+                    {k.icon} {isZh ? k.zh : k.en}
+                  </h3>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-1.5">
+                    {cases
+                      .filter((x) => x.prompt && x.category === k.key)
+                      .map((x) => (
+                        <li key={x.id} className="text-sm truncate">
+                          <Link href={`/${lang}/${PATH}/${x.id}`} className="text-gray-500 hover:text-[var(--primary)]">
+                            {isZh ? x.title.zh : x.title.en}
+                          </Link>
+                        </li>
+                      ))}
+                  </ul>
+                </div>
+              ))}
+            </nav>
+          </details>
+        </section>
+      ) : (
+        <section className="mt-14 border-t border-gray-100 pt-6">
+          <h2 className="text-sm font-semibold text-gray-700 mb-3">
+            {isZh ? "按分类与专题浏览" : "Browse by category & collection"}
+          </h2>
+          <nav aria-label={isZh ? "分类与专题导航" : "Categories and collections"} className="flex flex-wrap gap-2 mb-5">
+            {OPUS_CATEGORIES.filter((k) => counts[k.key]).map((k) => (
+              <Link
+                key={k.key}
+                href={`/${lang}/${PATH}?category=${k.key}`}
+                className="px-3 py-1 rounded-full border border-gray-200 text-xs text-gray-600 hover:border-[var(--primary)] hover:text-[var(--primary)] transition-colors"
+              >
+                {k.icon} {isZh ? k.zh : k.en} ({counts[k.key]})
+              </Link>
             ))}
+            <Link
+              href={`/${lang}/${PATH}/universe`}
+              className="px-3 py-1 rounded-full border border-gray-200 text-xs text-gray-600 hover:border-[var(--primary)] hover:text-[var(--primary)] transition-colors"
+            >
+              {isZh ? "提示词宇宙" : "Prompt Universe"}
+            </Link>
+            <Link
+              href={`/${lang}/prompts/claude-animation`}
+              className="px-3 py-1 rounded-full border border-gray-200 text-xs text-gray-600 hover:border-[var(--primary)] hover:text-[var(--primary)] transition-colors"
+            >
+              {isZh ? "Claude 动画提示词库" : "Claude Animation Prompts"}
+            </Link>
+            <Link
+              href={`/${lang}/sitemap-html`}
+              className="px-3 py-1 rounded-full border border-gray-200 text-xs text-gray-600 hover:border-[var(--primary)] hover:text-[var(--primary)] transition-colors"
+            >
+              {isZh ? "全站目录索引" : "Full HTML Sitemap"}
+            </Link>
           </nav>
-        </details>
-      </section>
+          <h3 className="text-sm font-semibold text-gray-700 mb-2">
+            {isZh ? "热门带提示词案例（Top 20）" : "Top 20 cases with prompts"}
+          </h3>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-1.5">
+            {cases
+              .filter((x) => x.prompt)
+              .sort((a, b) => b.stats.views - a.stats.views)
+              .slice(0, 20)
+              .map((x) => (
+                <li key={x.id} className="text-sm truncate">
+                  <Link href={`/${lang}/${PATH}/${x.id}`} className="text-gray-500 hover:text-[var(--primary)]">
+                    {isZh ? x.title.zh : x.title.en}
+                  </Link>
+                </li>
+              ))}
+          </ul>
+        </section>
+      )}
 
       {/* 订阅 */}
       <div className="mt-16 text-center border-t border-gray-100 pt-10">
