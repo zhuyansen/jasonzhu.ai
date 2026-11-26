@@ -13,8 +13,9 @@
 | `fanout_actions.py` | 行动清单：页面缺哪些公共词、每题代表搜索词的名次、外部网站覆盖表，进邮件。不另花钱，`--selftest` 不联网 |
 | `panel/actions-<日期>.json` | 每次行动清单的计数（每题公共词几个、页面缺几个、代表搜索词名次，本站被引原句在页面上的位置），不含搜索词、别的网站和原句 |
 | `demand.json` | Search Console 近 3 个月各页面的展示和点击，行动清单用它排先后。每月更新（`fanout_actions.py demand`） |
-| `read_vs_cited.py` | 读了不引：AI 现场读了哪些页、面板里引了哪些页，按页对起来。**只在本机跑**（读本机 GEOInflow），见下面「三样新量法」 |
+| `read_vs_cited.py` | 读了不引：AI 现场读了哪些页、面板里引了哪些页，按页对起来。读 Supabase 视图 `ai_crawler_all`（经 `crawler_db.py`，CI 与本机皆可跑），见下面「三样新量法」 |
 | `panel/read-cited-<日期>.json` | 每期「读了不引」的计数：本站每页的读取次数、引用次数、分类，没有别的网站和回答原文 |
+| `crawler_db.py`、`bot_ip_ranges.py`、`crawler_report.py`、`geoinflow_export.py` | AI 爬虫长期表（方案 A1）：Supabase 读写助手、每日官方 IP 段刷新（`.github/workflows/bot-ip-ranges.yml`）、OpenSEO「AI 爬虫与核实」周报、GEOInflow 历史导出与归档 |
 | `brand_split.py` | 水表曝光层：Search Console 按品牌词 / 非品牌词拆展示和点击，每月第一个周一由工作流跑上个整月 |
 | `panel/brand-split-<年-月>.json` | 每月的品牌词 / 非品牌词计数，没有搜索词 |
 | `bing_ai.py` | Bing 站长后台「AI Performance」导出的导入脚本（Bing 没有接口，每月手动导出一次）。认概览、搜索词、页面三种表 |
@@ -207,7 +208,7 @@ dimensions=["page"]），然后跑 `python3 ops/geo/fanout_actions.py demand 导
    11-23 那期排名作废，第一次读数在 11-30。
 2. **行动清单「去哪投」表加两列**（`fanout_actions.py`，每周）：这个站在面板所有有效回答里被引了几次；这个站出现的那几道题里，
    回答引 YouTube 的比例。表上方另有一行各家 AI 引 YouTube 的比例。比例高的题，拍视频比投文章站更对路。公开文件只有计数（`panel_cites`）。
-3. **读了不引**（`read_vs_cited.py`，本机，每周一面板跑完后跑一次）。读：本机 GEOInflow 里 ChatGPT-User 的现场读取（IP 在 OpenAI 范围里的），
+3. **读了不引**（`read_vs_cited.py`，每周一面板跑完后跑一次）。读：Supabase 视图 `ai_crawler_all` 里 ChatGPT-User 的现场读取（IP 在 OpenAI 范围里的，经 `crawler_db.py`，CI 与本机皆可跑），
    面板日期往前 7 天，去掉面板自己运行的时段；引：这期面板 ChatGPT 的有效回答。有题指向的页分四类：读了也被引；**读了不引 → 改页面（L4）**；
    引了但没现场读；**没读也没引 → 补排名（L3）**。冻结组的页、在跑实验的页、实验处理组的题也引用的页，表里会标出来，先不改。
    另列「AI 读得多、面板没题的页」，要量就加新题（新 id）。11-23 那期：有题指向的 24 页里，读了不引 11 页（8 页冻结或在实验里），没读也没引 10 页。

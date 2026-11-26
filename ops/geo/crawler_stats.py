@@ -2,9 +2,9 @@
 """AI 爬虫与 AI 引用公开数据集（/research/ai-crawlers）的生成脚本。每月跑一次，可以重复跑。只用标准库。
 
 读两样东西，只往外写汇总数：
-  1. 本机 GEOInflow（Docker 容器 liekan-db-1）里 jasonzhu.ai 的爬虫日志表 liekan_log（2026-10-26 起），按 UTC 日、月汇总。
-     这些日志是 Vercel Log Drain 转进来的：只留 User-Agent 像爬虫的请求，分类（bot、vendor、bot_type）和 IP 段核验
-     （verification、verification_reason）都是 GEOInflow 做的，这里照用、只翻成英文代码。
+  1. Supabase 视图 public.ai_crawler_all（通过 ops/geo/crawler_db.py：CI 走 REST + SUPABASE_SERVICE_KEY，本机回退 supabase db query）：
+     2026-11-26 13:35 UTC 之前是 GEOInflow 导出的历史（ai_crawler_daily，保留旧标签），之后是 Vercel Log Drain 实时核验写入的长期表
+     （ai_crawler_hits，按官方每日刷新的 IP 段或反向 DNS 核验），按 UTC 日、月汇总。
   2. 仓库里的 GEO 引用面板结果 ops/geo/panel/results-*.json：每家 AI 引用本站的回答数，和按题算的 95% 区间。
      区间直接调 panel_run.py 的 rate / cluster_ci，和周报摘要是同一个算法、同一个随机种子，数字对得上。
      GA4 里 AI 带来的访问只用结果文件里已经公开的 ai_referrals（总数、按来源），来源写成 AI 的名字，不写域名。
@@ -14,14 +14,14 @@
   public/data/ai-crawlers/ai-crawlers-YYYY-MM.csv     每月一份：每天 × 每个爬虫一行
   public/data/ai-crawlers/ai-crawlers-latest.json     全部汇总（全英文，给下载、给 AI 读；逐日明细在 CSV 里）
 
-怎么跑（在仓库根目录；先 `docker ps` 看 liekan-db-1 在不在，不在就报错退出，不会写出空数据）：
+怎么跑（在仓库根目录；查不到数据库就报错退出，不会写出空数据）：
   python3 -I ops/geo/crawler_stats.py                      # 数据截到昨天（UTC），写全部文件
   python3 -I ops/geo/crawler_stats.py --until 2026-12-01   # 截止日（不含）。每月 1 日跑，就是上个月整月
   python3 -I ops/geo/crawler_stats.py --dry                # 只算、打印要点，不写文件
   python3 -I ops/geo/crawler_stats.py --selftest           # 不连数据库的自检
 同一个截止日重跑，输出逐字节相同；截止日变了，changelog 自动记一条。跑完照常 tsc、build，提交这三样文件。
 
-绝不公开（脚本也不查这些列）：IP（ip_masked、ip_hash）、User-Agent 原文、地理位置、单条日志和精确时间、
+绝不公开（脚本也不查这些列）：IP（ip_prefix）、User-Agent 原文、地理位置、单条日志和精确时间、
 完整网址和查询参数（只取语言前缀之后的第一段路径，问号、井号后面全部丢掉；不是本站栏目的路径合成一项）；
 面板的回答原文、搜索词、别的网站的网址（只用打分字段的计数）；GA4 的落地页。
 写文件前再扫一遍输出：出现像 IP 的字符串、带问号的路径、页面以外的中文，就报错退出。
@@ -35,14 +35,15 @@ import io
 import json
 import math
 import re
-import shutil
-import subprocess
 import sys
 from collections import Counter, defaultdict
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 GEO = Path(__file__).resolve().parent
+sys.path.insert(0, str(GEO))
+import crawler_db as db  # noqa: E402
+
 REPO = GEO.parent.parent
 PANEL_DIR = GEO / "panel"
 OUT_PAGE = REPO / "src" / "generated" / "ai-crawler-stats.json"
@@ -51,25 +52,23 @@ LATEST_NAME = "ai-crawlers-latest.json"
 SITE = "https://jasonzhu.ai"
 PAGE_PATH = "/research/ai-crawlers"
 DATA_URL = "/data/ai-crawlers"
-CONTAINER = "liekan-db-1"
-WEBSITE_ID = "a11d5ca8-c6e3-4683-bab7-808caef7fdff"   # jasonzhu.ai 在 GEOInflow 里的 website_id（liekan_log.website_id）
 DATASET_NAME = "AI crawler traffic and AI answer citations on jasonzhu.ai"
 
-# GEOInflow 的 bot_type → 英文代码。前三类合起来叫「AI 爬虫」
+# bot_type → 英文代码。前三类合起来叫「AI 爬虫」
 TYPE = {"训练": "training", "搜索": "ai_search", "用户触发": "user_triggered", "传统搜索": "search_engine", "其他": "other"}
 TYPE_ORDER = ("ai_search", "training", "user_triggered", "search_engine", "other")
 AI_TYPES = ("ai_search", "training", "user_triggered")
 # 公司名里的中文翻成英文；没翻的中文名会让脚本报错停住（英文页和下载文件里不能有中文）
 VENDOR = {"字节跳动": "ByteDance", "搜狗": "Sogou", "百度": "Baidu", "360": "Qihoo 360", "其他": "Unknown", "": "Unknown"}
-BOT = {"其他": "Unmapped"}   # GEOInflow 认不出是谁的爬虫（UA 像爬虫，但没对上任何已知的官方身份）
+BOT = {"其他": "Unmapped"}   # 认不出是谁的爬虫（UA 像爬虫，但没对上任何已知的官方身份）
 
-# verification_reason → 下载文件里的列。原因的中文说明见 GEOInflow src/lib/liekan/rules/verification-labels.ts。
-# 现在只用到 IP 段核验：verified_range（IP 在这家公布的 IP 段里）、range_mismatch（不在）。
-# stale_snapshot：这家公布了 IP 段，但 GEOInflow 手里那份超过 7 天没更新，没核验（Anthropic 全程、PerplexityBot 11-04 起是这样）。
-# 出现表里没有的原因（比如以后加了反向 DNS 核验）就报错停住：先想清楚怎么归类，再改这张表和页面上的说明。
+# reason → 下载文件里的列。历史数据沿用 GEOInflow verification_reason；新表新增反向 DNS 核验（verified_rdns / rdns_mismatch），
+# 归入已核实 / 核验未通过两列以保持输出结构不变。出现表里没有的原因就报错停住：先想清楚怎么归类，再改这张表和页面上的说明。
 VERIFY = {
     "verified_range": "verified_in_published_ranges",
+    "verified_rdns": "verified_in_published_ranges",
     "range_mismatch": "outside_published_ranges",
+    "rdns_mismatch": "outside_published_ranges",
     "stale_snapshot": "unverified_stale_range_list",
     "no_official_source": "unverified_no_published_ranges",
     "unmapped_identity": "unverified_unmapped_bot",
@@ -209,43 +208,43 @@ def pct_cell(hits: int, n: int, lo: float, hi: float) -> dict:
 
 # ───────────── 爬虫日志 ─────────────
 
-def docker_running() -> None:
-    if not shutil.which("docker"):
-        raise Abort("找不到 docker 命令")
-    out = subprocess.run(["docker", "inspect", "-f", "{{.State.Running}}", CONTAINER], capture_output=True, text=True)
-    if out.returncode or out.stdout.strip() != "true":
-        raise Abort(f"GEOInflow 的数据库容器 {CONTAINER} 没在跑（docker ps 看一下），这次不出数据")
-
-
-def psql(sql: str) -> list[dict]:
-    """在容器里跑一条 SELECT，按 CSV 读回来（psql 的 COPY … TO STDOUT，不经过文件）。"""
-    cmd = ["docker", "exec", CONTAINER, "psql", "-U", "liekan", "-d", "liekan", "-X", "-q", "-v", "ON_ERROR_STOP=1",
-           "-c", f"COPY ({sql}) TO STDOUT WITH (FORMAT csv, HEADER true)"]
-    out = subprocess.run(cmd, capture_output=True, encoding="utf-8", timeout=600)
-    if out.returncode:
-        raise Abort(f"查询失败：{out.stderr.strip()[:300]}")
-    return list(csv.DictReader(io.StringIO(out.stdout)))
+def query_db(sql: str) -> list[dict]:
+    try:
+        return db.query(sql)
+    except db.DBError as e:
+        raise Abort(f"Supabase 查询失败：{e}") from None
 
 
 def fetch_logs(until: date) -> dict:
     """只查汇总，不查 IP、UA、地理位置、单条日志。时间一律 UTC。"""
-    where = f"website_id = '{WEBSITE_ID}' AND created_at < '{until.isoformat()}T00:00:00Z'"
-    day = "to_char(created_at AT TIME ZONE 'UTC', 'YYYY-MM-DD')"
+    where = f"day < date {db.lit(until.isoformat())}"
     clean = "split_part(split_part(path, '?', 1), '#', 1)"
-    span = psql(f"SELECT min(created_at) AT TIME ZONE 'UTC' AS first, count(*) AS n FROM liekan_log WHERE {where}")
-    hours = psql(f"SELECT {day} AS day, count(DISTINCT date_trunc('hour', created_at AT TIME ZONE 'UTC')) AS hours "
-                 f"FROM liekan_log WHERE {where} GROUP BY 1")
-    main = psql(f"SELECT {day} AS day, vendor, bot, bot_type, coalesce(verification_reason, '') AS reason, "
-                f"status, count(*) AS n FROM liekan_log WHERE {where} GROUP BY 1, 2, 3, 4, 5, 6")
+    span = query_db(
+        f"SELECT to_char(min(first_at) AT TIME ZONE 'UTC', 'YYYY-MM-DD HH24:MI:SS.US') AS first, "
+        f"coalesce(sum(n), 0) AS n FROM public.ai_crawler_all WHERE {where}"
+    )
+    hours = query_db(
+        f"SELECT to_char(day, 'YYYY-MM-DD') AS day, "
+        f"length(replace(bit_or(hour_mask)::bit(24)::text, '0', '')) AS hours "
+        f"FROM public.ai_crawler_all WHERE {where} GROUP BY day"
+    )
+    main = query_db(
+        f"SELECT to_char(day, 'YYYY-MM-DD') AS day, vendor, bot, bot_type, coalesce(reason, '') AS reason, "
+        f"status, sum(n) AS n FROM public.ai_crawler_all WHERE {where} GROUP BY 1, 2, 3, 4, 5, 6"
+    )
     # 不以 / 开头的路径（整条网址之类）第一段记成 ':'，本站没有这个栏目，落进「不是本站路径」
-    sections = psql(f"SELECT to_char(created_at AT TIME ZONE 'UTC', 'YYYY-MM') AS month, "
-                    f"CASE WHEN left({clean}, 1) = '/' THEN split_part({clean}, '/', 2) ELSE ':' END AS seg1, "
-                    f"CASE WHEN split_part({clean}, '/', 2) IN ('zh', 'en') THEN split_part({clean}, '/', 3) ELSE '' END AS seg2, "
-                    f"bot_type, status, count(*) AS n FROM liekan_log WHERE {where} GROUP BY 1, 2, 3, 4, 5")
-    files = ", ".join(f"'{p}'" for p in MACHINE_FILES)
-    machine = psql(f"SELECT {clean} AS file, vendor, bot, bot_type, status, count(*) AS n FROM liekan_log "
-                   f"WHERE {where} AND {clean} IN ({files}) GROUP BY 1, 2, 3, 4, 5")
-    return {"span": span[0], "hours": hours, "main": main, "sections": sections, "machine": machine}
+    sections = query_db(
+        f"SELECT to_char(day, 'YYYY-MM') AS month, "
+        f"CASE WHEN left({clean}, 1) = '/' THEN split_part({clean}, '/', 2) ELSE ':' END AS seg1, "
+        f"CASE WHEN split_part({clean}, '/', 2) IN ('zh', 'en') THEN split_part({clean}, '/', 3) ELSE '' END AS seg2, "
+        f"bot_type, status, sum(n) AS n FROM public.ai_crawler_all WHERE {where} GROUP BY 1, 2, 3, 4, 5"
+    )
+    files = ", ".join(db.lit(p) for p in MACHINE_FILES)
+    machine = query_db(
+        f"SELECT {clean} AS file, vendor, bot, bot_type, status, sum(n) AS n FROM public.ai_crawler_all "
+        f"WHERE {where} AND {clean} IN ({files}) GROUP BY 1, 2, 3, 4, 5"
+    )
+    return {"span": span[0] if span else {"first": None, "n": 0}, "hours": hours, "main": main, "sections": sections, "machine": machine}
 
 
 def english(name: str, table: dict[str, str], what: str) -> str:
@@ -257,7 +256,7 @@ def english(name: str, table: dict[str, str], what: str) -> str:
 
 def build_crawl(raw: dict, until: date) -> dict:
     if not raw["main"] or int(raw["span"]["n"] or 0) == 0:
-        raise Abort("日志表里没有 jasonzhu.ai 的记录：转发链路（Vercel drain → Supabase → chain-relay）可能断了")
+        raise Abort("Supabase 视图 ai_crawler_all 里没有 jasonzhu.ai 的记录：检查历史回填和 vercel-drain 链路")
     first_ts = datetime.fromisoformat(raw["span"]["first"]).replace(tzinfo=timezone.utc)
     first_day, last_day = first_ts.date(), until - timedelta(days=1)
     hours = {r["day"]: int(r["hours"]) for r in raw["hours"]}
@@ -699,6 +698,8 @@ def selftest() -> int:
     assert [status_class(c) for c in (200, 206, 301, 308, 404, 499, 500, 0)] == \
         ["status_2xx", "status_2xx", "status_3xx", "status_3xx", "status_4xx", "status_4xx", "status_5xx", "status_other"]
     assert verify_col("verified_range") == "verified_in_published_ranges"
+    assert verify_col("verified_rdns") == "verified_in_published_ranges"
+    assert verify_col("rdns_mismatch") == "outside_published_ranges"
     assert verify_col("stale_snapshot") == "unverified_stale_range_list"
     assert verify_col(None) == "unverified_other"
     try:
@@ -752,7 +753,6 @@ def main() -> int:
         print(f"截止日 {until} 在今天（UTC {today}）之后", file=sys.stderr)
         return 2
     try:
-        docker_running()
         crawl = build_crawl(fetch_logs(until), until)
         cites = build_citations(crawl)
         prev = json.loads(OUT_PAGE.read_text(encoding="utf-8")) if OUT_PAGE.exists() else None

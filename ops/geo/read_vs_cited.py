@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""读了不引：AI 现场读了我们哪些页，面板里 AI 又引了哪些页，按页对起来（2026-11-26 起，只在本机跑）。
+"""读了不引：AI 现场读了我们哪些页，面板里 AI 又引了哪些页，按页对起来（2026-11-26 起）。
 
 为什么：排进 Google 第一页，AI 也不一定引用你。一页没被引用，可能是 AI 根本没读到（排名、检索的问题，L3），
 也可能读了却没选它（页面本身的问题，L4）。两种该做的事不一样，所以按页分开：
@@ -7,11 +7,12 @@
   读了不引：ChatGPT 这周现场读过这页（ChatGPT-User，IP 在 OpenAI 公布的范围里），面板里 ChatGPT 却没引它 → 改页面（L4）。
   引了但没现场读：ChatGPT 从自己的索引或缓存里引的，不用管。
   没读也没引：有题指向这页，但这周 ChatGPT 一次都没现场读、也没引 → 补排名（L3），先进它搜的那几条词的前 20。
-读和引都按 ChatGPT 一家对：现场读取只有 ChatGPT-User 能按 IP 核实。Claude-User 单列，只作参考（IP 没核）。
+读和引都按 ChatGPT 一家对：现场读取以 ChatGPT-User 为主（OpenAI 公布范围完整）。Claude-User 单列，只作参考。
 另列「AI 读得多、面板却没有题的页」：可以出新题（加新 id，旧题不改）。
 
 数据：
-  读：本机 GEOInflow（docker 里的 liekan-db-1，表 liekan_log），面板日期往前 DAYS 天（北京时间，含面板那天），只算 2xx、3xx。
+  读：Supabase 视图 public.ai_crawler_all（经 ops/geo/crawler_db.py，CI 用 SUPABASE_SERVICE_KEY 走 REST，本机回退 supabase db query），
+      含 GEOInflow 历史（2026-10-26 至 2026-11-26 13:35 UTC）和长期表 ai_crawler_hits。面板日期往前 DAYS 天（北京时间，含面板那天），只算 2xx、3xx。
       面板自己在跑的时段去掉：面板问 ChatGPT 时它会现场读页（gh 查 geo-panel 工作流每次运行的开始、结束时间；
       查不到就整天去掉面板那天，并在报告里写明）。
   引：ops/geo/panel/results-<日期>.json 的 our_urls（每个有效回答引用了本站哪些网址）。
@@ -19,7 +20,7 @@
   页按「去掉 /zh、/en 前缀的路径」合并：同一页的中英文版本算一页。
 局限：ChatGPT-User 的读取来自所有用户，不只我们的题；一页读得少不一定没排名（也可能没人问）。这是分诊，不是因果。
 
-只在本机跑（GEOInflow 不在 GitHub 上）。公开文件只有本站自己的路径和计数，没有回答原文、搜索词和别的网站。
+公开文件只有本站自己的路径和计数，没有回答原文、搜索词和别的网站。
 
 用法：
   python3 ops/geo/read_vs_cited.py --selftest
@@ -39,10 +40,9 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import crawler_db as db  # noqa: E402
 import panel_run as pr  # noqa: E402
 
-SITE_ID = "a11d5ca8-c6e3-4683-bab7-808caef7fdff"      # GEOInflow 里 jasonzhu.ai 的 website_id
-DB = ["docker", "exec", "liekan-db-1", "psql", "-U", "liekan", "-d", "liekan", "-At", "-F", "\t", "-c"]
 DAYS = 7
 READ_MIN = 2            # 一周里 ChatGPT 现场读了至少这么多次，才算「读过」（1 次可能是偶然一个人问到）
 NO_QUESTION_MIN = 5     # 没有题的页，一周读了至少这么多次才列出来，当出新题的候选
@@ -90,23 +90,27 @@ def panel_runs(start: datetime, end: datetime) -> list[tuple[datetime, datetime]
 
 def reads(start: datetime, end: datetime, skip: list[tuple[datetime, datetime]]) -> dict[str, Counter]:
     """{页: Counter(chatgpt=核实过的 ChatGPT-User 次数, chatgpt_other=IP 对不上的, claude=Claude-User)}。只算 2xx、3xx。"""
-    cond = " ".join(f"and not (created_at >= '{a.isoformat()}' and created_at < '{b.isoformat()}')" for a, b in skip)
-    sql = (f"select path, bot, verification, count(*) from liekan_log where website_id = '{SITE_ID}' "
-           f"and bot in ('ChatGPT-User', 'Claude-User') and status < 400 "
-           f"and created_at >= '{start.isoformat()}' and created_at < '{end.isoformat()}' {cond} group by 1, 2, 3")
-    out = subprocess.run(DB + [sql], capture_output=True, text=True, timeout=120)
-    if out.returncode:
-        raise SystemExit(f"GEOInflow 查不了（docker 里的 liekan-db-1 没开？）：{out.stderr.strip()[:200]}")
+    cond = " ".join(f"and not (t >= {db.lit(a.isoformat())}::timestamptz and t < {db.lit(b.isoformat())}::timestamptz)" for a, b in skip)
+    sql = (
+        "select path, bot, verified, sum(n) as n from public.ai_crawler_all "
+        "where bot in ('ChatGPT-User', 'Claude-User') and status < 400 and t is not null "
+        f"and t >= {db.lit(start.isoformat())}::timestamptz and t < {db.lit(end.isoformat())}::timestamptz {cond} "
+        "group by 1, 2, 3"
+    )
+    try:
+        rows = db.query(sql)
+    except db.DBError as e:
+        raise SystemExit(f"Supabase 查不了：{e}") from None
     got: dict[str, Counter] = defaultdict(Counter)
-    for line in out.stdout.splitlines():
-        path, bot, verification, n = line.split("\t")
-        key = page_key(path)
+    for r in rows:
+        key = page_key(r["path"])
         if not key or re.search(r"\.(txt|json|xml|png|jpe?g|webp|svg|ico|pdf|css|js)$", key):
             continue                        # llms.txt、服务卡片、图片这类不是页面
-        if bot == "ChatGPT-User":
-            got[key]["chatgpt" if verification == "verified_range" else "chatgpt_other"] += int(n)
+        n = int(r["n"])
+        if r["bot"] == "ChatGPT-User":
+            got[key]["chatgpt" if r["verified"] else "chatgpt_other"] += n
         else:
-            got[key]["claude"] += int(n)
+            got[key]["claude"] += n
     return got
 
 

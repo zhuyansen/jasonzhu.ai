@@ -15,6 +15,8 @@ const eslintConfig = defineConfig([
     // 第三方插件与 Node 脚本（CJS require / 控制台输出，不按前端规则 lint）
     ".obsidian/**",
     "scripts/**",
+    // Supabase Edge Functions（Deno 运行时，用 deno check / deno test 校验）
+    "supabase/functions/**",
   ]),
 ]);
 

@@ -1,0 +1,41 @@
+name: 爬虫官方 IP 段刷新 (每日)
+
+# 每天拉取各家爬虫官方公布的 IP 段，写入 Supabase 表 public.bot_ip_ranges。
+# 任一来源抓不到、格式不对或返回空列表时，不覆盖旧数据并以非零退出让 GitHub Actions 标红告警。
+
+on:
+  schedule:
+    - cron: "17 2 * * *" # UTC 02:17（北京时间 10:17）
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: bot-ip-ranges
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+      SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check secrets
+        run: |
+          test -n "$NEXT_PUBLIC_SUPABASE_URL" || { echo "missing NEXT_PUBLIC_SUPABASE_URL" >&2; exit 1; }
+          test -n "$SUPABASE_SERVICE_KEY" || { echo "missing SUPABASE_SERVICE_KEY" >&2; exit 1; }
+
+      - name: Selftest parser
+        run: python3 ops/geo/bot_ip_ranges.py --selftest
+
+      - name: Sync official bot IP ranges to Supabase
+        run: python3 ops/geo/bot_ip_ranges.py
