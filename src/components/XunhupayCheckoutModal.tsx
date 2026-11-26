@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import { track } from "@/lib/track";
 import { ALIPAY_ENABLED } from "@/lib/checkout-config";
+import { heardFromBody, heardFromTrackParam } from "@/lib/heard-from";
+import HeardFromField from "@/components/HeardFromField";
 
 interface Props {
   lang: "zh" | "en";
@@ -29,6 +31,9 @@ export default function XunhupayCheckoutModal({ lang, onClose, initialEmail = ""
     const m = document.cookie.match(/(?:^|;\s*)gsc_ref=([A-Z0-9]+)/);
     return m ? m[1] : "";
   });
+  // 「从哪知道这里」（选填，2026-11-26）：记在 KV 订单上，看付费的人有多少是 AI 助手带来的
+  const [heardFrom, setHeardFrom] = useState("");
+  const [heardFromNote, setHeardFromNote] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   const [alreadyMember, setAlreadyMember] = useState(false);
@@ -59,7 +64,7 @@ export default function XunhupayCheckoutModal({ lang, onClose, initialEmail = ""
       const res = await fetch("/api/checkout/xunhupay/create", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, wechat, github, channel, ref, ts: mountedAt.current }),
+        body: JSON.stringify({ email, wechat, github, channel, ref, ts: mountedAt.current, ...heardFromBody(heardFrom, heardFromNote) }),
       });
       const data = await res.json();
       if (!res.ok || !data.success) {
@@ -68,7 +73,7 @@ export default function XunhupayCheckoutModal({ lang, onClose, initialEmail = ""
         setSubmitting(false);
         return;
       }
-      track("checkout_order_created", { channel, amount: data.amount });
+      track("checkout_order_created", { channel, amount: data.amount, ...heardFromTrackParam(heardFrom) });
       setQrUrl(data.qrUrl);
       setPayUrl(data.payUrl);
       setAmount(data.amount);
@@ -175,6 +180,15 @@ export default function XunhupayCheckoutModal({ lang, onClose, initialEmail = ""
                 <p className="text-xs text-green-600 mt-1">{isZh ? "✓ 已带上推荐关系" : "✓ Referral applied"}</p>
               )}
             </div>
+            <HeardFromField
+              lang={lang}
+              labeled
+              value={heardFrom}
+              note={heardFromNote}
+              onValueChange={setHeardFrom}
+              onNoteChange={setHeardFromNote}
+              controlClassName="px-3.5 py-2.5 border border-gray-200 rounded-lg text-sm focus:border-[var(--primary)] focus:outline-none"
+            />
             <div>
               <label className="block text-xs font-medium text-gray-500 mb-1.5">{isZh ? "支付方式" : "Pay with"}</label>
               <div className={`grid gap-3 ${ALIPAY_ENABLED ? "grid-cols-2" : "grid-cols-1"}`}>

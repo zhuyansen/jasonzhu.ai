@@ -9,6 +9,7 @@ import fullData from "@/generated/opus-prompts-full.json";
 import CaseVideo from "../CaseVideo";
 import { isPromptNoindexed, NOINDEX_ROBOTS } from "../../noindex";
 import PromptsSubscribe from "../PromptsSubscribe";
+import { heardFromProps } from "@/lib/frozen-pages";
 import CopyPrompt, { TryInClaude } from "../CopyPrompt";
 
 const SITE_URL = "https://jasonzhu.ai";
@@ -199,7 +200,7 @@ export default async function OpusCasePage({ params }: Props) {
       )}
       {!isZh && prompt && (
         <div className="mt-6">
-          <PromptsSubscribe lang={lang} where="detail" />
+          <PromptsSubscribe lang={lang} where="detail" {...heardFromProps(`/${lang}/prompts/claude-opus-5-5/${id}`)} />
         </div>
       )}
 

@@ -9,6 +9,7 @@ import fullData from "@/generated/animation-prompts-full.json";
 import { withSocialCards, fitDescription } from "@/lib/social";
 import CopyPrompt from "../../claude-opus-5-5/CopyPrompt";
 import PromptsSubscribe from "../../claude-opus-5-5/PromptsSubscribe";
+import { heardFromProps } from "@/lib/frozen-pages";
 import CaseMedia from "../../chatgpt-images-2-6/CaseMedia";
 import { isPromptNoindexed, NOINDEX_ROBOTS } from "../../noindex";
 
@@ -168,7 +169,7 @@ export default async function AnimationCasePage({ params }: { params: Promise<{ 
 
           {!isZh && (
             <div className="mt-6">
-              <PromptsSubscribe lang={lang} where="detail" library="claude" />
+              <PromptsSubscribe lang={lang} where="detail" library="claude" {...heardFromProps(`/${lang}/prompts/claude-animation/${id}`)} />
             </div>
           )}
         </div>

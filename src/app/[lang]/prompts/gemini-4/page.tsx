@@ -5,6 +5,7 @@ import { getDictionary, type Locale } from "@/lib/dictionaries";
 import { getGeminiLibrary, GEMINI_LIBRARY_PATH, coverOf, formatCount } from "@/lib/gemini-prompts";
 import { withSocialCards } from "@/lib/social";
 import PromptsSubscribe from "../claude-opus-5-5/PromptsSubscribe";
+import { heardFromProps } from "@/lib/frozen-pages";
 import GeminiLibraryClient from "./GeminiLibraryClient";
 
 const SITE_URL = "https://jasonzhu.ai";
@@ -126,7 +127,7 @@ export default async function GeminiPromptsPage({ params }: { params: Promise<{ 
 
       {!isZh && (
         <div className="mb-6">
-          <PromptsSubscribe lang={lang} compact where="library" library="gemini" />
+          <PromptsSubscribe lang={lang} compact where="library" library="gemini" {...heardFromProps(`/${lang}/prompts/gemini-4`)} />
         </div>
       )}
 
@@ -160,7 +161,11 @@ export default async function GeminiPromptsPage({ params }: { params: Promise<{ 
       </section>
 
       <section className="mt-12 max-w-2xl">
-        {isZh ? <SubscribeForm source="gemini-4" lang={lang} dict={dict} /> : <PromptsSubscribe lang={lang} where="bottom" library="gemini" />}
+        {isZh ? (
+          <SubscribeForm source="gemini-4" lang={lang} dict={dict} {...heardFromProps(`/${lang}/prompts/gemini-4`)} />
+        ) : (
+          <PromptsSubscribe lang={lang} where="bottom" library="gemini" {...heardFromProps(`/${lang}/prompts/gemini-4`)} />
+        )}
       </section>
     </div>
   );

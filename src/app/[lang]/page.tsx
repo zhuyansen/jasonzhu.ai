@@ -2,6 +2,7 @@ import Link from "@/components/Link";
 import { getAllPosts } from "@/lib/mdx";
 import BlogCard from "@/components/BlogCard";
 import SubscribeForm from "@/components/SubscribeForm";
+import { heardFromProps } from "@/lib/frozen-pages";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
 
 export default async function HomePage({
@@ -125,7 +126,7 @@ export default async function HomePage({
 
       {/* Subscribe */}
       <section className="max-w-3xl mx-auto px-4 sm:px-6 py-6">
-        <SubscribeForm source="homepage" lang={lang} dict={dict} />
+        <SubscribeForm source="homepage" lang={lang} dict={dict} {...heardFromProps(`/${lang}`)} />
       </section>
 
       {/* About — 站点导览 + E-E-A-T 作者信号 */}

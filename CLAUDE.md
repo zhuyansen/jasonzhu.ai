@@ -30,6 +30,7 @@ node scripts/check-tag-labels.mjs   # 博客新用的中文标签有没有英文
 node scripts/check-sitemap.mjs   # 线上 sitemap URL 数量断言（防再次静默坏掉）
 node scripts/indexnow.mjs [range|--url u...] [--dry-run]  # 推 Bing IndexNow；.github/workflows/indexnow.yml 在内容 push / 快讯与提示词 cron 后自动跑
 node scripts/reconcile-leads.mjs # Supabase 恢复后把 KV 兜底的订阅线索、退订写回主表
+node scripts/check-frozen-pages.mjs  # 冻结页名单（src/lib/frozen-pages.ts）和 GEO 实验题库对不对得上
 
 # 群发邮件只看效果、不发信（不读名单、不需要密钥）：
 MODE=preview PREVIEW_OUT=/tmp/d.html node scripts/send-digest-email.mjs   # DATE=YYYY-MM-DD 换一期
@@ -101,6 +102,8 @@ Git：commit 后如远程有新提交（cron 会自动 commit 快讯），先 `g
 - **Supabase 权限（2026-10-05 修复泄露后）**：服务端 `getSupabase()` 用 `SUPABASE_SERVICE_KEY`（Vercel 和 GitHub Actions 各存一份，必须是 `sb_secret_…` 或旧版 service_role JWT——`sb_publishable_…` 是公开 key，等同 anon，曾经存错过一次）。subscribers / member_codes / club_applications 对 anon 完全不开放，news_* / page_views / page_likes 只读；浏览器端只用 Supabase 做登录。管理后台读订阅者和阅读数走 `/api/admin/subscribers`、`/api/admin/page-views`。策略以 `supabase/lock-down-rls.sql` 为准，新建表不要写 `FOR ALL USING (true)`。
 - 容灾：Supabase 主写 + Vercel KV 兜底（src/lib/lead-backup.ts，Upstash REST，list `pending_subscribers`）。Supabase 写失败但 KV 兜住时照常给 PDF、不报错。Supabase 免费档 0.5GB 超限会锁全项目写入且要等下个计费周期才解——见 memory。
 - views/likes API 有 isKnownSlug 白名单（历史上被 bot 灌了 46 万行撑爆过库）。
+- **「从哪知道这里」（2026-11-26 起）**：订阅框（SubscribeForm、PromptsSubscribe、手册、学习全景图）和虎皮椒结账框上一个选填下拉，选「其他」再多一个说明框（200 字），用来数从 AI 助手来的订阅和付费（GA4 认不出来）。选项、白名单在 `src/lib/heard-from.ts`，存固定英文值。/api/subscribe 在主写入之后单独 update `subscribers.heard_from / heard_from_note`（`supabase/add-heard-from.sql`；没加列时写不进只记日志，订阅照常），老订阅者只在没填过时写；KV 兜底和 reconcile-leads 带着它。结账存在 KV 订单的 `heardFrom`，付款回调只是整单带着走。GA4 的 newsletter_subscribe / checkout_order_created 多带参数 heard_from。日报订阅段「7 天从哪知道」一行（订阅 + 付费订单）。
+- **冻结页（到 2027-01-01 复测跑完）**：GEO 实验的目标页（`src/lib/frozen-pages.ts` 的 25 个英文页）渲染出来的 HTML 不能变，全站组件改样子也算。新加的页面功能用 `heardFromProps(路径)` 这种写法：冻结页一个 prop 都不传（传 false 也会写进页面的 RSC 数据），新组件默认不显示。加实验、换题后跑 `node scripts/check-frozen-pages.mjs`；实验结束后删名单，这些页才出现新功能。
 
 **会员 / 支付（2026-11-10 修过一轮，起因是全站隐式状态机排查）**
 - `profiles` 只能由服务端 service key 写（redeem、link-github、会员中心按邮箱认领）；登录用户对自己那行只读。以前用户能把自己的 `role` 改成 member（`supabase/lock-profiles-update.sql`）。新加会写 profiles 的功能也走 `getSupabase()`，不要用登录 session 的客户端写。

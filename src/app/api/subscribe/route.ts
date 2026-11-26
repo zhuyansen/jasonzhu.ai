@@ -1,18 +1,40 @@
 import { NextRequest, NextResponse } from "next/server";
+import type { SupabaseClient } from "@supabase/supabase-js";
 import { getSupabase } from "@/lib/supabase";
 import { rateLimit } from "@/lib/rate-limit";
 import { backupLead, clearPendingUnsubscribe } from "@/lib/lead-backup";
 import { isLeadMagnet, LINK_TTL_DAYS, type LinkLang } from "@/lib/download-link";
 import { overLimit, sendLeadMagnetEmail, sendPromptsEnWelcomeEmail } from "@/lib/lead-magnet-email";
+import { parseHeardFrom, type HeardFrom } from "@/lib/heard-from";
 
 export const dynamic = "force-dynamic";
+
+/**
+ * 「从哪知道这里」（2026-11-26 起）在主写入之后单独写一次：subscribers 还没加 heard_from / heard_from_note 两列
+ * （supabase/add-heard-from.sql）时这一步报错，只记日志，订阅照常成功。只写进还没填过的行：老订阅者已经答过就不覆盖。
+ */
+async function saveHeardFrom(supabase: SupabaseClient, id: string, heardFrom: HeardFrom | null, heardFromNote: string | null) {
+  if (!heardFrom) return;
+  try {
+    const { error } = await supabase
+      .from("subscribers")
+      .update({ heard_from: heardFrom, heard_from_note: heardFromNote })
+      .eq("id", id)
+      .is("heard_from", null)
+      .abortSignal(AbortSignal.timeout(3000));
+    if (error) console.warn("[subscribe] heard_from not saved", { id, heardFrom, error: error.message });
+  } catch (e) {
+    console.warn("[subscribe] heard_from not saved", { id, heardFrom, error: String(e) });
+  }
+}
 
 export async function POST(request: NextRequest) {
   const rateLimited = rateLimit(request, { limit: 10, prefix: "subscribe" });
   if (rateLimited) return rateLimited;
 
   try {
-    const { email, source, website, ts, magnet: rawMagnet, lang: rawLang } = await request.json();
+    const { email, source, website, ts, magnet: rawMagnet, lang: rawLang, heard_from: rawHeardFrom, heard_from_note: rawHeardFromNote } =
+      await request.json();
     // 送资料的入口（订阅框送手册、handbook、学习全景图）带 magnet：订阅后把 7 天下载链接发到邮箱（2026-10-31 起，PDF 不再有公开直链）
     const magnet = isLeadMagnet(rawMagnet) ? rawMagnet : null;
     const sourceStr = typeof source === "string" ? source : "website";
@@ -83,6 +105,8 @@ export async function POST(request: NextRequest) {
     }
 
     const addr = email.toLowerCase();
+    // 选填：不在白名单里的值当没填，绝不因为它拒绝订阅
+    const { heardFrom, heardFromNote } = parseHeardFrom(rawHeardFrom, rawHeardFromNote);
     // 订阅成功或已订阅都发下载链接；同一邮箱 24 小时最多 3 封。发信失败让用户重试（线索已经存下）
     const reply = async (alreadySubscribed: boolean, subscriberId: string | null = null) => {
       if (!magnet) {
@@ -156,6 +180,7 @@ export async function POST(request: NextRequest) {
         .select("id");
       // Supabase 写失败时记进 KV 的退订也撤掉，免得之后回灌又把人退订了
       await clearPendingUnsubscribe(existing.id);
+      await saveHeardFrom(supabase, existing.id, heardFrom, heardFromNote);
       return reply(!resumed?.length, existing.id);
     }
 
@@ -171,7 +196,7 @@ export async function POST(request: NextRequest) {
       .single();
 
     // 双写：独立 KV 备份（best-effort，不阻塞成功路径；Supabase 整库被限制时兜底）
-    const backedUp = await backupLead(email, sourceStr);
+    const backedUp = await backupLead(email, sourceStr, { heardFrom, heardFromNote });
 
     if (error) {
       console.error("Supabase insert error:", error);
@@ -186,6 +211,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    if (inserted?.id) await saveHeardFrom(supabase, inserted.id, heardFrom, heardFromNote);
     return reply(false, inserted?.id ?? null);
   } catch {
     return NextResponse.json(

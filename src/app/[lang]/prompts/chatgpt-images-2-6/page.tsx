@@ -5,6 +5,7 @@ import { getDictionary, type Locale } from "@/lib/dictionaries";
 import { getImageLibrary, IMAGE_LIBRARY_PATH, coverOf, formatCount } from "@/lib/image-prompts";
 import { withSocialCards } from "@/lib/social";
 import PromptsSubscribe from "../claude-opus-5-5/PromptsSubscribe";
+import { heardFromProps } from "@/lib/frozen-pages";
 import ImageLibraryClient from "./ImageLibraryClient";
 
 const SITE_URL = "https://jasonzhu.ai";
@@ -125,7 +126,7 @@ export default async function ImagePromptsPage({ params }: { params: Promise<{ l
       {/* 英文页的订阅入口：中文页底部那个订阅框送的是中文手册，英文访客用英文提示词库的订阅（2026-11-06） */}
       {!isZh && (
         <div className="mb-6">
-          <PromptsSubscribe lang={lang} compact where="library" library="images" />
+          <PromptsSubscribe lang={lang} compact where="library" library="images" {...heardFromProps(`/${lang}/prompts/chatgpt-images-2-6`)} />
         </div>
       )}
 
@@ -154,7 +155,11 @@ export default async function ImagePromptsPage({ params }: { params: Promise<{ l
       </section>
 
       <section className="mt-12 max-w-2xl">
-        {isZh ? <SubscribeForm source="images-2-6" lang={lang} dict={dict} /> : <PromptsSubscribe lang={lang} where="bottom" library="images" />}
+        {isZh ? (
+          <SubscribeForm source="images-2-6" lang={lang} dict={dict} {...heardFromProps(`/${lang}/prompts/chatgpt-images-2-6`)} />
+        ) : (
+          <PromptsSubscribe lang={lang} where="bottom" library="images" {...heardFromProps(`/${lang}/prompts/chatgpt-images-2-6`)} />
+        )}
       </section>
     </div>
   );

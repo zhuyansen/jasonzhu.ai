@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "@/components/Link";
+import HeardFromField from "@/components/HeardFromField";
+import { heardFromBody, heardFromTrackParam } from "@/lib/heard-from";
 import { track } from "@/lib/track";
 
 /**
@@ -77,17 +79,22 @@ export default function PromptsSubscribe({
   compact = false,
   where,
   library = "claude",
+  askHeardFrom = false,
 }: {
   lang: string;
   compact?: boolean;
   where: string;
   library?: Library;
+  /** 显示「从哪知道这里」：页面用 heardFromProps(路径) 传，冻结页不传（src/lib/frozen-pages.ts） */
+  askHeardFrom?: boolean;
 }) {
   const [email, setEmail] = useState("");
   const [website, setWebsite] = useState(""); // honeypot
   const [status, setStatus] = useState<"idle" | "loading" | "done" | "error">("idle");
   const [emailed, setEmailed] = useState(false);
   const [error, setError] = useState("");
+  const [heardFrom, setHeardFrom] = useState("");
+  const [heardFromNote, setHeardFromNote] = useState("");
   const mountedAt = useRef(0);
   useEffect(() => {
     mountedAt.current = Date.now();
@@ -105,7 +112,7 @@ export default function PromptsSubscribe({
       const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, source, lang: "en", website, ts: mountedAt.current }),
+        body: JSON.stringify({ email, source, lang: "en", website, ts: mountedAt.current, ...heardFromBody(heardFrom, heardFromNote) }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
@@ -114,7 +121,7 @@ export default function PromptsSubscribe({
         return;
       }
       setEmailed(Boolean(data.emailed));
-      track("newsletter_subscribe", { source: `${source}-${where}`, already: Boolean(data.alreadySubscribed) });
+      track("newsletter_subscribe", { source: `${source}-${where}`, already: Boolean(data.alreadySubscribed), ...heardFromTrackParam(heardFrom) });
       setStatus("done");
     } catch {
       setStatus("error");
@@ -159,12 +166,28 @@ export default function PromptsSubscribe({
     </form>
   );
 
+  // 放在 form 外面、紧跟着它：form 本身是一行 flex，塞进去会挤在同一行；不显示时页面 HTML 和以前一模一样
+  const heardFromField = askHeardFrom && (
+    <HeardFromField
+      lang="en"
+      value={heardFrom}
+      note={heardFromNote}
+      onValueChange={setHeardFrom}
+      onNoteChange={setHeardFromNote}
+      className="mt-2"
+      controlClassName="rounded-lg border border-gray-200 px-3 py-2 text-sm focus:border-[var(--primary)] focus:outline-none"
+    />
+  );
+
   if (compact) {
     return (
       <div className="rounded-xl border border-blue-100 bg-blue-50/60 px-4 py-3">
         <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
           <p className="text-sm text-gray-700">{t.pitch}</p>
-          <div className="lg:w-[26rem] lg:shrink-0">{form}</div>
+          <div className="lg:w-[26rem] lg:shrink-0">
+            {form}
+            {heardFromField}
+          </div>
         </div>
         {status === "error" && <p className="mt-2 text-xs text-red-500">{error}</p>}
       </div>
@@ -176,6 +199,7 @@ export default function PromptsSubscribe({
       <h2 className="text-base font-bold text-gray-900">{t.title}</h2>
       <p className="mt-1 text-sm text-gray-600 leading-relaxed">{t.body}</p>
       {form}
+      {heardFromField}
       {status === "error" && <p className="mt-2 text-xs text-red-500">{error}</p>}
     </div>
   );

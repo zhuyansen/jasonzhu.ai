@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "@/components/Link";
 import SubscribeForm from "@/components/SubscribeForm";
+import { heardFromProps } from "@/lib/frozen-pages";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
 import { GO_GLOBAL, groupPosts, postTitle } from "@/lib/go-global";
 import { GUIDES, guideBySlug, type Guide, type GuideItem, type GuideMine, type GuideSection } from "@/lib/go-global-guides";
@@ -240,7 +241,7 @@ export default async function GuidePage({ params }: { params: Promise<{ lang: st
           ← {isZh ? `回到${guide.parent?.short ?? "出海专题"}` : `Back to ${guide.parent?.short ?? "Going global"}`}
         </Link>
       </p>
-      <SubscribeForm source="go-global" lang={lang} dict={dict} />
+      <SubscribeForm source="go-global" lang={lang} dict={dict} {...heardFromProps(`/${lang}/go-global/${slug}`)} />
     </div>
   );
 }

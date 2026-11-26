@@ -9,6 +9,7 @@ import fullData from "@/generated/gemini-prompts-full.json";
 import { withSocialCards, fitDescription } from "@/lib/social";
 import CopyPrompt from "../../claude-opus-5-5/CopyPrompt";
 import PromptsSubscribe from "../../claude-opus-5-5/PromptsSubscribe";
+import { heardFromProps } from "@/lib/frozen-pages";
 import CaseMedia from "../../chatgpt-images-2-6/CaseMedia";
 import { isPromptNoindexed, NOINDEX_ROBOTS } from "../../noindex";
 
@@ -153,7 +154,7 @@ export default async function GeminiCasePage({ params }: { params: Promise<{ lan
 
           {!isZh && (
             <div className="mt-6">
-              <PromptsSubscribe lang={lang} where="detail" library="gemini" />
+              <PromptsSubscribe lang={lang} where="detail" library="gemini" {...heardFromProps(`/${lang}/prompts/gemini-4/${id}`)} />
             </div>
           )}
         </div>

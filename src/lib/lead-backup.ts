@@ -7,8 +7,8 @@
  *   KV_REST_API_TOKEN
  *
  * 兜底的线索存在 Redis list `pending_subscribers`，每条是 JSON：
- *   {"email","source","ts"}
- * 之后可用 admin 或脚本把它们回灌进 Supabase 主表。
+ *   {"email","source","ts"}，填了「从哪知道这里」的再多 "heard_from"（和选「其他」时的 "heard_from_note"），2026-11-26 起
+ * 之后可用 admin 或脚本把它们回灌进 Supabase 主表（scripts/reconcile-leads.mjs）。
  */
 // 兼容两种命名：Vercel KV 经典命名 / Upstash 原生命名
 const KV_URL = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL;
@@ -16,10 +16,11 @@ const KV_TOKEN = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST
 
 export const kvEnabled = () => Boolean(KV_URL && KV_TOKEN);
 
-/** 把一条线索 RPUSH 进备份 list。成功返回 true，失败/未配置返回 false。 */
+/** 把一条线索 RPUSH 进备份 list。成功返回 true，失败/未配置返回 false。heard：「从哪知道这里」，没填的键不写 */
 export async function backupLead(
   email: string,
-  source: string
+  source: string,
+  heard?: { heardFrom: string | null; heardFromNote: string | null }
 ): Promise<boolean> {
   if (!KV_URL || !KV_TOKEN) return false;
   try {
@@ -27,6 +28,8 @@ export async function backupLead(
       email: email.toLowerCase(),
       source: source || "website",
       ts: new Date().toISOString(),
+      ...(heard?.heardFrom ? { heard_from: heard.heardFrom } : {}),
+      ...(heard?.heardFromNote ? { heard_from_note: heard.heardFromNote } : {}),
     });
     // Upstash REST：/rpush/<key>/<value>
     const res = await fetch(

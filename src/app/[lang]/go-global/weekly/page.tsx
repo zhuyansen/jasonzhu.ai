@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "@/components/Link";
 import SubscribeForm from "@/components/SubscribeForm";
+import { heardFromProps } from "@/lib/frozen-pages";
 import { getWeeklyIssues } from "@/lib/mdx";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
 import GoGlobalBreadcrumb from "../Breadcrumb";
@@ -120,7 +121,7 @@ export default async function WeeklyPage({
       </section>
 
       {/* Subscribe */}
-      <SubscribeForm source="weekly" lang={lang} dict={dict} />
+      <SubscribeForm source="weekly" lang={lang} dict={dict} {...heardFromProps(`/${lang}/go-global/weekly`)} />
     </div>
   );
 }

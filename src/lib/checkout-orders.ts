@@ -24,6 +24,8 @@ export interface CheckoutOrder {
   resendId?: string; // 发信成功时 Resend 返回的邮件 id，方便按 id 直接核对投递状态
   ref?: string; // 推荐码（分销归因），付款成功后按 REFERRAL_RATE 记返佣
   refEmail?: string; // 推荐人邮箱（创建订单时已校验：码存在且非自荐）
+  heardFrom?: string; // 「从哪知道这里」（选填，src/lib/heard-from.ts 的值，2026-11-26 起）；付款回调存订单时整单带着走，不读它
+  heardFromNote?: string; // 选「其他」时的补充说明
   createdAt: string;
   paidAt?: string;
   alertedAt?: string; // 发货失败后第一次给 Jason 发告警的时间（只告警一次）

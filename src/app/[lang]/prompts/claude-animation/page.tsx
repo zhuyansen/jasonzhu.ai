@@ -5,6 +5,7 @@ import { getDictionary, type Locale } from "@/lib/dictionaries";
 import { getAnimationLibrary, ANIMATION_LIBRARY_PATH, coverOf, formatCount, animationCategoryLabel } from "@/lib/animation-prompts";
 import { withSocialCards } from "@/lib/social";
 import PromptsSubscribe from "../claude-opus-5-5/PromptsSubscribe";
+import { heardFromProps } from "@/lib/frozen-pages";
 import AnimationLibraryClient from "./AnimationLibraryClient";
 
 /**
@@ -146,7 +147,7 @@ export default async function ClaudeAnimationPage({ params }: { params: Promise<
 
       {!isZh && (
         <div className="mb-6">
-          <PromptsSubscribe lang={lang} compact where="library" library="claude" />
+          <PromptsSubscribe lang={lang} compact where="library" library="claude" {...heardFromProps(`/${lang}/prompts/claude-animation`)} />
         </div>
       )}
 
@@ -180,7 +181,11 @@ export default async function ClaudeAnimationPage({ params }: { params: Promise<
       </section>
 
       <section className="mt-12 max-w-2xl">
-        {isZh ? <SubscribeForm source="claude-animation" lang={lang} dict={dict} /> : <PromptsSubscribe lang={lang} where="bottom" library="claude" />}
+        {isZh ? (
+          <SubscribeForm source="claude-animation" lang={lang} dict={dict} {...heardFromProps(`/${lang}/prompts/claude-animation`)} />
+        ) : (
+          <PromptsSubscribe lang={lang} where="bottom" library="claude" {...heardFromProps(`/${lang}/prompts/claude-animation`)} />
+        )}
       </section>
     </div>
   );

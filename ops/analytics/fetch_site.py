@@ -1,6 +1,7 @@
 """站内一手数据 + 自动化管线健康
 
-- 订阅：Supabase subscribers（只取 source / created_at / unsubscribed_at，不取邮箱）+ KV 兜底队列积压（订阅、退订）
+- 订阅：Supabase subscribers（只取 source / created_at / unsubscribed_at / heard_from，不取邮箱）+ KV 兜底队列积压（订阅、退订）
+- 「从哪知道这里」：近 7 天新订阅（Supabase heard_from）和付费订单（KV xhpay_order:*）各按来源计数
 - 文章阅读：Supabase page_views 是累计计数，和上次快照（state/page_views.json，CI 用 actions/cache 带过来）做差得到当日增量
 - 管线：今日快讯有没有出、昨天那期的邮件发完没有（KV 发信账本）、提示词库每日收录、GitHub 合集同步、各 workflow 最近一次结果、线上 sitemap 条数
 """
@@ -76,6 +77,62 @@ def unsubscribes(get, since):
         return None
     by_day = Counter(str(datetime.fromisoformat(x["unsubscribed_at"].replace("Z", "+00:00")).astimezone(CST).date()) for x in r.json())
     return {"total": int(tot.headers.get("content-range", "*/0").split("/")[-1]), "by_day": dict(by_day)}
+
+
+def heard_from(get):
+    """「从哪知道这里」（2026-11-26 起，订阅框上选填的一项）：近 7 天新订阅按 heard_from 计数，窗口和 by_source7 一样（昨天往前 7 天）。
+    只取 heard_from 和时间。subscribers 还没跑 supabase/add-heard-from.sql（没有这一列）时返回 {"column": False}，日报写「未接入」。"""
+    start = datetime.combine(today_cst() - timedelta(days=7), datetime.min.time(), CST)
+    rows, off = [], 0
+    while True:
+        r = get("subscribers", params={"select": "heard_from,created_at", "created_at": f"gte.{start.isoformat()}", "order": "created_at.asc",
+                                       "offset": off, "limit": 1000})
+        if r.status_code == 400 and "heard_from" in r.text:  # PostgREST 42703：column subscribers.heard_from does not exist
+            return {"column": False}
+        if not r.ok:  # 报错里带 Supabase 网址和查询参数，日报会进 Actions 运行摘要（公开仓库），只留状态码
+            raise RuntimeError(f"Supabase HTTP {r.status_code}")
+        batch = r.json(); rows += batch; off += len(batch)
+        if len(batch) < 1000:
+            break
+    c = Counter(x.get("heard_from") or "" for x in rows
+                if datetime.fromisoformat(x["created_at"].replace("Z", "+00:00")).astimezone(CST).date() < today_cst())
+    return {"column": True, "total": sum(c.values()), "counts": c.most_common()}
+
+
+def orders_heard_from():
+    """虎皮椒付费订单的「从哪知道这里」（下单时记在 KV 订单 xhpay_order:<单号> 的 heardFrom，2026-11-26 起）：
+    近 7 天（按下单时间，窗口同上）付了钱的订单按来源计数。没付款的订单 24 小时就过期，付过的留 30 天，所以只数 paid / completed。
+    KV 没配返回 None。SCAN 最多翻 50 页（每页 1000 个 key），翻不完就报错，不给半截数。"""
+    url, tok = secret("KV_REST_API_URL"), secret("KV_REST_API_TOKEN")
+    if not url or not tok:
+        return None
+
+    def cmd(*args):
+        r = requests.post(url.rstrip("/"), headers={"Authorization": f"Bearer {tok}"}, json=list(args), timeout=15)
+        if not r.ok:  # 不带网址：KV 主机名别进公开的运行摘要
+            raise RuntimeError(f"KV {args[0]} HTTP {r.status_code}")
+        return r.json().get("result")
+
+    keys, cursor = [], "0"
+    for _ in range(50):
+        cursor, batch = cmd("SCAN", cursor, "MATCH", "xhpay_order:*", "COUNT", "1000")
+        keys += batch
+        if str(cursor) == "0":
+            break
+    else:
+        raise RuntimeError("KV SCAN 翻了 50 页还没翻完")
+    start, c = today_cst() - timedelta(days=7), Counter()
+    for i in range(0, len(keys), 100):
+        for raw in cmd("MGET", *keys[i:i + 100]) or []:
+            try:
+                o = json.loads(raw) if raw else None
+            except ValueError:
+                continue
+            if not o or o.get("status") not in ("paid", "completed") or not o.get("createdAt"):
+                continue
+            if start <= datetime.fromisoformat(o["createdAt"].replace("Z", "+00:00")).astimezone(CST).date() < today_cst():
+                c[o.get("heardFrom") or ""] += 1
+    return {"total": sum(c.values()), "counts": c.most_common()}
 
 
 def page_views(get):
@@ -275,7 +332,8 @@ def sitemap():
 def main():
     out = {"ok": True, "errors": {}}
     get = supa()
-    for key, fn in (("subscribers", lambda: subscribers(get) if get else None), ("page_views", lambda: page_views(get) if get else None),
+    for key, fn in (("subscribers", lambda: subscribers(get) if get else None), ("heard_from", lambda: heard_from(get) if get else None),
+                    ("orders_heard_from", orders_heard_from), ("page_views", lambda: page_views(get) if get else None),
                     ("kv_pending", lambda: kv_pending(get) if get else None), ("news", news), ("prompt_library", prompt_library),
                     ("workflows", workflows), ("cron_triggers", cron_triggers), ("awesome", awesome), ("sitemap", sitemap)):
         try:

@@ -7,6 +7,7 @@ import fullData from "@/generated/image-prompts-full.json";
 import { withSocialCards, fitDescription } from "@/lib/social";
 import CopyPrompt from "../../claude-opus-5-5/CopyPrompt";
 import PromptsSubscribe from "../../claude-opus-5-5/PromptsSubscribe";
+import { heardFromProps } from "@/lib/frozen-pages";
 import CaseMedia from "../CaseMedia";
 import { isPromptNoindexed, NOINDEX_ROBOTS } from "../../noindex";
 
@@ -146,7 +147,7 @@ export default async function ImageCasePage({ params }: { params: Promise<{ lang
           {/* 英文详情页的订阅入口，和 Claude 库英文详情页一样放在提示词下面（2026-11-06） */}
           {!isZh && (
             <div className="mt-6">
-              <PromptsSubscribe lang={lang} where="detail" library="images" />
+              <PromptsSubscribe lang={lang} where="detail" library="images" {...heardFromProps(`/${lang}/prompts/chatgpt-images-2-6/${id}`)} />
             </div>
           )}
         </div>

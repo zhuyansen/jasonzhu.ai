@@ -3,12 +3,16 @@
 import { useState, useRef, useEffect } from "react";
 import type { Dictionary } from "@/lib/dictionaries";
 import { track } from "@/lib/track";
+import { heardFromBody, heardFromTrackParam } from "@/lib/heard-from";
+import HeardFromField from "@/components/HeardFromField";
 
 interface SubscribeFormProps {
   source?: string;
   compact?: boolean;
   lang?: string;
   dict?: Dictionary;
+  /** 显示「从哪知道这里」：页面用 heardFromProps(路径) 传，冻结页不传（src/lib/frozen-pages.ts）。compact 版没有地方放，不显示 */
+  askHeardFrom?: boolean;
 }
 
 export default function SubscribeForm({
@@ -16,6 +20,7 @@ export default function SubscribeForm({
   compact = false,
   lang = "zh",
   dict,
+  askHeardFrom = false,
 }: SubscribeFormProps) {
   const [email, setEmail] = useState("");
   const [website, setWebsite] = useState(""); // honeypot
@@ -23,6 +28,8 @@ export default function SubscribeForm({
   const [message, setMessage] = useState("");
   const [sentTo, setSentTo] = useState("");
   const [resend, setResend] = useState<"idle" | "loading" | "done" | "error">("idle");
+  const [heardFrom, setHeardFrom] = useState("");
+  const [heardFromNote, setHeardFromNote] = useState("");
   // time-trap 反 bot：渲染期不可调 Date.now()（react-hooks/purity），挂载后再记时
   const mountedAt = useRef<number>(0);
   useEffect(() => {
@@ -50,7 +57,7 @@ export default function SubscribeForm({
     fetch("/api/subscribe", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email: addr, source, magnet: "handbook", lang, website, ts: mountedAt.current }),
+      body: JSON.stringify({ email: addr, source, magnet: "handbook", lang, website, ts: mountedAt.current, ...heardFromBody(heardFrom, heardFromNote) }),
     });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -63,7 +70,7 @@ export default function SubscribeForm({
       const data = await res.json();
 
       if (res.ok) {
-        track("newsletter_subscribe", { source, already: Boolean(data.alreadySubscribed) });
+        track("newsletter_subscribe", { source, already: Boolean(data.alreadySubscribed), ...heardFromTrackParam(heardFrom) });
         setSentTo(email);
         setStatus("sent");
       } else {
@@ -187,6 +194,17 @@ export default function SubscribeForm({
             {status === "loading" ? t.submitting : t.submit}
           </button>
         </div>
+        {askHeardFrom && (
+          <HeardFromField
+            lang={lang}
+            value={heardFrom}
+            note={heardFromNote}
+            onValueChange={setHeardFrom}
+            onNoteChange={setHeardFromNote}
+            className="mt-2"
+            controlClassName="px-3 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-[var(--primary)] focus:ring-2 focus:ring-blue-100"
+          />
+        )}
         {status === "error" && (
           <p className="text-sm text-red-500 mt-2">{message}</p>
         )}

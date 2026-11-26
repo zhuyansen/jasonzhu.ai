@@ -3,6 +3,7 @@ import Link from "@/components/Link";
 import type { Locale } from "@/lib/dictionaries";
 import { OPUS_CATEGORIES, getOpusLibrary } from "@/lib/opus-prompts";
 import PromptsSubscribe from "./PromptsSubscribe";
+import { heardFromProps } from "@/lib/frozen-pages";
 import PromptLibraryClient from "./PromptLibraryClient";
 import InsightsSection from "./InsightsSection";
 import { computeInsights } from "@/lib/opus-insights";
@@ -171,7 +172,7 @@ export default async function OpusPromptsPage({ params }: { params: Promise<{ la
       {/* 英文页的订阅入口：访客以英语和韩国用户为主，中文手册对他们没用（2026-10-27） */}
       {!isZh && (
         <div className="mb-6">
-          <PromptsSubscribe lang={lang} compact where="library" />
+          <PromptsSubscribe lang={lang} compact where="library" {...heardFromProps(`/${lang}/prompts/claude-opus-5-5`)} />
         </div>
       )}
       <PromptLibraryClient initial={initial} total={cases.length} counts={counts} modelCounts={lib.modelCounts} lang={lang} fresh={fresh} universe />

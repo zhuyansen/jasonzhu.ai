@@ -33,7 +33,7 @@ async function reconcileLeads() {
   console.log(`📥 KV 待回灌线索：${leads.length} 条`);
   if (!leads.length) return;
 
-  let ok = 0, dup = 0, fail = 0;
+  let ok = 0, dup = 0, fail = 0, heardFail = 0;
   for (const lead of leads) {
     const res = await fetch(`${SB_URL}/rest/v1/subscribers`, {
       method: "POST",
@@ -46,8 +46,22 @@ async function reconcileLeads() {
     if (res.ok) ok++;
     else if (res.status === 409) dup++; // 已存在
     else { fail++; console.log(`  ⚠️ ${lead.email}: HTTP ${res.status}`); }
+    // 「从哪知道这里」（2026-11-26 起 KV 里可能带）：和接口一样单独写、只写进还没填过的行。
+    // 写不进（比如还没跑 supabase/add-heard-from.sql）只提示，不算失败、不挡清空队列
+    if ((res.ok || res.status === 409) && lead.heard_from) {
+      const hf = await fetch(`${SB_URL}/rest/v1/subscribers?email=eq.${encodeURIComponent(lead.email)}&heard_from=is.null`, {
+        method: "PATCH",
+        headers: {
+          apikey: SB_KEY, authorization: `Bearer ${SB_KEY}`,
+          "content-type": "application/json", Prefer: "return=minimal",
+        },
+        body: JSON.stringify({ heard_from: lead.heard_from, heard_from_note: lead.heard_from_note ?? null }),
+      });
+      if (!hf.ok) heardFail++;
+    }
   }
   console.log(`✅ 回灌完成：新增 ${ok}，已存在 ${dup}，失败 ${fail}`);
+  if (heardFail) console.log(`  ⚠️ 有 ${heardFail} 条「从哪知道这里」没写进去（subscribers 还没有 heard_from 列？）`);
 
   // 全部成功(无 fail)才清空 KV，避免丢线索
   if (fail === 0) {

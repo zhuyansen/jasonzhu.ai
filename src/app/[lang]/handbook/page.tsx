@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
 import HandbookClient from "./HandbookClient";
+import { heardFromProps } from "@/lib/frozen-pages";
 import { withSocialCards } from "@/lib/social";
 
 export async function generateMetadata({
@@ -30,5 +31,5 @@ export default async function HandbookPage({
   const lang = (rawLang === "en" ? "en" : "zh") as Locale;
   const dict = await getDictionary(lang);
 
-  return <HandbookClient lang={lang} dict={dict} />;
+  return <HandbookClient lang={lang} dict={dict} {...heardFromProps(`/${lang}/handbook`)} />;
 }

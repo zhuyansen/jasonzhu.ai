@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "@/components/Link";
 import SubscribeForm from "@/components/SubscribeForm";
+import { heardFromProps } from "@/lib/frozen-pages";
 import TrackedLink from "@/components/TrackedLink";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
 import {
@@ -1084,7 +1085,7 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
 
       <Guides lang={lang} isZh={isZh} />
 
-      <SubscribeForm source="go-global" lang={lang} dict={dict} />
+      <SubscribeForm source="go-global" lang={lang} dict={dict} {...heardFromProps(`/${lang}/go-global`)} />
     </div>
   );
 }

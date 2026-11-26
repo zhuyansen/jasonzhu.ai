@@ -7,6 +7,7 @@ import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
 import SubscribeForm from "@/components/SubscribeForm";
+import { heardFromProps } from "@/lib/frozen-pages";
 import ViewCounter from "@/components/ViewCounter";
 import LikeButton from "@/components/LikeButton";
 import GiscusComments from "@/components/GiscusComments";
@@ -426,7 +427,7 @@ export default async function BlogPostPage({ params }: Props) {
 
       {/* Subscribe CTA */}
       <div className="mt-12">
-        <SubscribeForm source={`blog-${slug}`} lang={lang} dict={dict} />
+        <SubscribeForm source={`blog-${slug}`} lang={lang} dict={dict} {...heardFromProps(`/${lang}/blog/${slug}`)} />
       </div>
 
       {/* Related Posts */}

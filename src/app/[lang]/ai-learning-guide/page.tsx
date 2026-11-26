@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { Locale } from "@/lib/dictionaries";
 import { fitDescription, fitTitle } from "@/lib/social";
 import AiLearningGuideClient from "./AiLearningGuideClient";
+import { heardFromProps } from "@/lib/frozen-pages";
 
 const SITE_URL = "https://jasonzhu.ai";
 
@@ -53,5 +54,5 @@ export default async function AiLearningGuidePage({
 }) {
   const { lang: rawLang } = await params;
   const lang = (rawLang === "en" ? "en" : "zh") as Locale;
-  return <AiLearningGuideClient lang={lang} />;
+  return <AiLearningGuideClient lang={lang} {...heardFromProps(`/${lang}/ai-learning-guide`)} />;
 }

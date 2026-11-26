@@ -10,6 +10,11 @@ CONVERSIONS = {"newsletter_subscribe": "邮件订阅", "club_apply_submit": "GoS
                "prompt_copy": "复制提示词", "prompt_try_claude": "在 Claude 里试试",
                "github_click": "去 GitHub", "referral_click": "点推荐或合作链接", "payment_picker_result": "收款选择器出结果",
                "ai_readiness_scan": "AI 网站急诊室查站", "wechat_copy": "复制微信号", "contact_click": "点邮箱或 X 私信"}  # 和 src/lib/track.ts 的 TrackEvent 对应
+# 「从哪知道这里」的值 → 日报里的叫法，和 src/lib/heard-from.ts 的 HEARD_FROM_OPTIONS 对应；"" 是没填
+HEARD_FROM_LABELS = {"chatgpt": "ChatGPT", "perplexity": "Perplexity", "gemini": "Gemini/AI 模式", "claude": "Claude", "other_ai": "其他 AI",
+                     "google": "Google 搜索", "bing": "Bing 搜索", "x": "X", "youtube": "YouTube", "xiaohongshu": "小红书", "wechat": "微信",
+                     "friend": "朋友推荐", "other": "其他", "": "没填"}
+AI_HEARD_FROM = {"chatgpt", "perplexity", "gemini", "claude", "other_ai"}
 DIM_KEYS = {"timestamp", "requestPath", "referrerHostname", "country", "deviceType", "osName", "browserName", "route", "environment",
             "utmSource", "utmMedium", "utmCampaign", "utmContent", "utmTerm", "projectId", "projectName", "requestHostname", "visitorId", "flags"}
 
@@ -49,6 +54,22 @@ def section_status(name, d, label):
         w(f"> ⚠️ **{label}未出数**：{d.get('error')}")
     w()
     return False
+
+
+def heard_from_part(d, err, missing):
+    """近 7 天按「从哪知道这里」的计数 → 一小段文字（订阅、付费订单各一段）。"""
+    if err:
+        return "⚠️ 没取到"
+    if d is None:
+        return missing
+    if d.get("column") is False:
+        return "未接入（先跑 supabase/add-heard-from.sql）"
+    if not d["total"]:
+        return "0"
+    counts = dict(d["counts"])
+    ai = sum(n for k, n in counts.items() if k in AI_HEARD_FROM)
+    parts = [f"{HEARD_FROM_LABELS.get(k, k)} {n}" for k, n in d["counts"] if k] + ([f"没填 {counts['']}"] if counts.get("") else [])
+    return " · ".join(parts) + f"（AI 助手 {ai}/{d['total']}）"
 
 
 def digest_email(yd):
@@ -298,6 +319,10 @@ if sub:
     w("近 7 天：" + " · ".join(f"{(today - timedelta(days=i)).strftime('%m/%d')} {bd.get(str(today - timedelta(days=i)), 0)}" for i in range(7, 0, -1)))
     if sub["by_source7"]:
         w("7 天来源：" + " · ".join(f"{s} {c}" for s, c in sub["by_source7"]))
+    # 2026-11-26 起订阅框、结账框上有选填的「从哪知道这里」：GA4 认不出从 AI 助手来的人，靠这一行看
+    errs = site.get("errors") or {}
+    w("7 天从哪知道：订阅 " + heard_from_part(site.get("heard_from"), errs.get("heard_from"), "未接入")
+      + "；付费订单 " + heard_from_part(site.get("orders_heard_from"), errs.get("orders_heard_from"), "未接入（没配 KV）"))
     if site.get("supabase_key") == "anon":
         w("> 用的是 anon key 读的（本地调试）；CI 用 service key。")
 else:

@@ -4,6 +4,8 @@ import { useState, useRef, useEffect, useSyncExternalStore } from "react";
 import Link from "@/components/Link";
 import type { Locale } from "@/lib/dictionaries";
 import { track } from "@/lib/track";
+import { heardFromBody, heardFromTrackParam } from "@/lib/heard-from";
+import HeardFromField from "@/components/HeardFromField";
 
 // URL 参数在一次访问里不变，不需要订阅
 const noSubscribe = () => () => {};
@@ -13,7 +15,7 @@ const PLATFORMS = [
   "AWS", "Meta", "IBM", "DeepLearning.AI", "Hugging Face",
 ];
 
-function GuideContent({ lang }: { lang: Locale }) {
+function GuideContent({ lang, askHeardFrom = false }: { lang: Locale; askHeardFrom?: boolean }) {
   const isZh = lang === "zh";
   // 邮件里的下载链接过期或无效时，middleware 带 ?expired=1 跳回这里
   // ?expired=1 在浏览器端读、服务端当 false：用 next/navigation 读 URL 参数会让整页退回客户端渲染（服务端 HTML 只剩 "..."，
@@ -30,6 +32,8 @@ function GuideContent({ lang }: { lang: Locale }) {
   const [errorMsg, setErrorMsg] = useState("");
   const [sentTo, setSentTo] = useState("");
   const [resend, setResend] = useState<"idle" | "loading" | "done" | "error">("idle");
+  const [heardFrom, setHeardFrom] = useState("");
+  const [heardFromNote, setHeardFromNote] = useState("");
   // time-trap 反 bot：渲染期不可调 Date.now()（react-hooks/purity），挂载后再记时
   const mountedAt = useRef<number>(0);
   useEffect(() => {
@@ -100,6 +104,7 @@ function GuideContent({ lang }: { lang: Locale }) {
         lang,
         website,
         ts: mountedAt.current,
+        ...heardFromBody(heardFrom, heardFromNote),
       }),
     });
 
@@ -111,7 +116,7 @@ function GuideContent({ lang }: { lang: Locale }) {
       const res = await send(email);
       const data = await res.json();
       if (res.ok) {
-        track("newsletter_subscribe", { source: "ai-learning-guide", already: Boolean(data.alreadySubscribed) });
+        track("newsletter_subscribe", { source: "ai-learning-guide", already: Boolean(data.alreadySubscribed), ...heardFromTrackParam(heardFrom) });
         setSentTo(email);
         setStatus("sent");
       } else {
@@ -241,6 +246,17 @@ function GuideContent({ lang }: { lang: Locale }) {
                 {status === "loading" ? t.unlocking : t.unlockBtn}
               </button>
             </div>
+              {askHeardFrom && (
+                <HeardFromField
+                  lang={lang}
+                  value={heardFrom}
+                  note={heardFromNote}
+                  onValueChange={setHeardFrom}
+                  onNoteChange={setHeardFromNote}
+                  className="mt-2"
+                  controlClassName="px-3 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-[var(--primary)] focus:ring-2 focus:ring-blue-100"
+                />
+              )}
             {status === "error" && (
               <p className="text-sm text-red-500 mt-2 text-center">{errorMsg}</p>
             )}
@@ -252,8 +268,9 @@ function GuideContent({ lang }: { lang: Locale }) {
   );
 }
 
-export default function AiLearningGuideClient({ lang }: { lang: Locale }) {
+/** askHeardFrom：显示「从哪知道这里」，page.tsx 用 heardFromProps(路径) 传（冻结页不传，见 src/lib/frozen-pages.ts） */
+export default function AiLearningGuideClient({ lang, askHeardFrom }: { lang: Locale; askHeardFrom?: boolean }) {
   return (
-    <GuideContent lang={lang} />
+    <GuideContent lang={lang} askHeardFrom={askHeardFrom} />
   );
 }
