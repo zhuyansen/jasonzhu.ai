@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase-browser";
+import { identifyUser, resetUser } from "@/lib/track";
 
 interface SimpleUser {
   id: string;
@@ -52,6 +53,12 @@ export default function DashboardClient({ lang, initialUser, initialProfile, sug
   const isZh = lang === "zh";
   const user = initialUser;
   const [profile, setProfile] = useState<Profile | null>(initialProfile);
+
+  useEffect(() => {
+    if (user?.id) {
+      identifyUser(user.id, { member_role: profile?.role || "free" });
+    }
+  }, [user?.id, profile?.role]);
   const [copied, setCopied] = useState(false);
   const [refCopied, setRefCopied] = useState(false);
   const refLink = referral ? `https://jasonzhu.ai/${lang}/club?ref=${referral.code}` : "";
@@ -101,6 +108,7 @@ export default function DashboardClient({ lang, initialUser, initialProfile, sug
   async function handleSignOut() {
     const supabase = createClient();
     await supabase.auth.signOut();
+    resetUser();
     window.location.href = `/${lang}`;
   }
 

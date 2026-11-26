@@ -127,7 +127,7 @@ def main():
             WHERE timestamp >= now() - INTERVAL {days} DAY
               AND {HOST_FILTER}
               AND event IN (
-                '$pageview', 'newsletter_subscribe', 'club_apply_submit', 'checkout_order_created',
+                '$pageview', 'newsletter_subscribe', 'club_apply_submit', 'checkout_order_created', 'checkout_completed',
                 'prompt_copy', 'prompt_try_claude', 'github_click', 'referral_click',
                 'payment_picker_result', 'ai_readiness_scan', 'wechat_copy', 'contact_click'
               )

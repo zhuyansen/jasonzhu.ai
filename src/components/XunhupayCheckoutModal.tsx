@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { track } from "@/lib/track";
+import { promoteGuestProfile, track } from "@/lib/track";
 import { ALIPAY_ENABLED } from "@/lib/checkout-config";
 import { heardFromBody, heardFromTrackParam } from "@/lib/heard-from";
 import HeardFromField from "@/components/HeardFromField";
@@ -74,6 +74,7 @@ export default function XunhupayCheckoutModal({ lang, onClose, initialEmail = ""
         return;
       }
       track("checkout_order_created", { channel, amount: data.amount, ...heardFromTrackParam(heardFrom) });
+      promoteGuestProfile({ checkout_started: true });
       setQrUrl(data.qrUrl);
       setPayUrl(data.payUrl);
       setAmount(data.amount);
@@ -91,6 +92,8 @@ export default function XunhupayCheckoutModal({ lang, onClose, initialEmail = ""
         const s = await fetch(`/api/checkout/xunhupay/status?order=${data.tradeOrderId}`).then((r) => r.json());
         if (s.status === "completed") {
           clearTimers();
+          promoteGuestProfile({ member_role: "member", paid_member: true });
+          window.posthog?.capture?.("checkout_completed", { channel, amount: data.amount, ...heardFromTrackParam(heardFrom) });
           setResult({ github: s.github, hubKey: s.hubKey });
           setStep("done");
         }

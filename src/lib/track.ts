@@ -23,6 +23,11 @@ export type TrackParams = Record<string, string | number | boolean | undefined>;
 
 interface PostHogBrowser {
   capture?: (event: string, properties?: Record<string, unknown>, options?: Record<string, unknown>) => void;
+  identify?: (distinctId: string, properties?: Record<string, unknown>) => void;
+  createPersonProfile?: () => void;
+  setPersonProperties?: (properties: Record<string, unknown>) => void;
+  reset?: () => void;
+  get_distinct_id?: () => string;
   opt_in_capturing?: () => void;
   opt_out_capturing?: () => void;
   set_config?: (config: Record<string, unknown>) => void;
@@ -33,6 +38,52 @@ declare global {
     gtag?: (...args: unknown[]) => void;
     clarity?: (...args: unknown[]) => void;
     posthog?: PostHogBrowser;
+    __phPendingIdentify?: { id: string; props?: TrackParams };
+  }
+}
+
+let lastIdentifiedKey = "";
+
+/**
+ * 登录/会员中心识别用户：只传 Supabase 匿名 UUID 和非隐私角色标签（绝不传邮箱/微信号等 PII）。
+ * Header 桌面端和移动端各挂了一个 AccountMenu，这里按 id+props 幂等去重，且兜底脚本尚未加载完的时序。
+ */
+export function identifyUser(userId: string, props?: TrackParams) {
+  if (!userId || typeof window === "undefined") return;
+  try {
+    const dedupKey = `${userId}:${props ? JSON.stringify(props) : ""}`;
+    if (lastIdentifiedKey === dedupKey && window.posthog?.identify) return;
+    lastIdentifiedKey = dedupKey;
+    window.__phPendingIdentify = { id: userId, props };
+    window.posthog?.identify?.(userId, props);
+  } catch {
+    /* 统计失败不能影响业务 */
+  }
+}
+
+/**
+ * 未登录直接扫码下单的访客：保持当前匿名 distinct_id 不变，升级为有画像访客（保留付款前读过的所有文章轨迹）；
+ * 若用户随后点「去会员中心」注册登录 Supabase，identifyUser(user.id) 会自动把该匿名画像合并进 user.id。
+ */
+export function promoteGuestProfile(props?: TrackParams) {
+  if (typeof window === "undefined") return;
+  try {
+    window.posthog?.createPersonProfile?.();
+    if (props) window.posthog?.setPersonProperties?.(props);
+  } catch {
+    /* 统计失败不能影响业务 */
+  }
+}
+
+/** 退出登录时重置 PostHog distinct_id，防止同一浏览器换号把两个人合并错。 */
+export function resetUser() {
+  if (typeof window === "undefined") return;
+  try {
+    lastIdentifiedKey = "";
+    delete window.__phPendingIdentify;
+    window.posthog?.reset?.();
+  } catch {
+    /* 统计失败不能影响业务 */
   }
 }
 

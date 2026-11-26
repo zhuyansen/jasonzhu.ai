@@ -3,6 +3,7 @@
 import Link from "@/components/Link";
 import { useEffect, useRef, useState } from "react";
 import { createClient } from "@/lib/supabase-browser";
+import { identifyUser, resetUser } from "@/lib/track";
 
 interface Props {
   lang: "zh" | "en";
@@ -70,9 +71,10 @@ export default function AccountMenu({ lang, compact = false }: Props) {
 
   useEffect(() => {
     const supabase = createClient();
-    const applySession = (session: { user: { email?: string | null; user_metadata?: Record<string, unknown> } } | null) => {
+    const applySession = (session: { user: { id: string; email?: string | null; user_metadata?: Record<string, unknown> } } | null) => {
       setLoggedIn(Boolean(session));
       if (session) {
+        identifyUser(session.user.id);
         const meta = session.user.user_metadata || {};
         setIdentity({
           avatarUrl: (meta.avatar_url as string) || (meta.picture as string) || null,
@@ -106,6 +108,7 @@ export default function AccountMenu({ lang, compact = false }: Props) {
   async function handleSignOut() {
     const supabase = createClient();
     await supabase.auth.signOut();
+    resetUser();
     window.location.href = `/${lang}`;
   }
 
