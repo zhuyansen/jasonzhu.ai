@@ -2,7 +2,7 @@ import Link from "@/components/Link";
 import { getAllPosts } from "@/lib/mdx";
 import BlogCard from "@/components/BlogCard";
 import SubscribeForm from "@/components/SubscribeForm";
-import { heardFromProps } from "@/lib/frozen-pages";
+import { heardFromProps, isFrozenPath } from "@/lib/frozen-pages";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
 
 export default async function HomePage({
@@ -22,8 +22,10 @@ export default async function HomePage({
   const pinned = pinnedSlugs
     .map((s) => allPosts.find((p) => p.slug === s))
     .filter((p): p is NonNullable<typeof p> => Boolean(p));
+  // /en 处于 GEO 实验冻结期，保留冻结前最新文章卡片；/zh 正常展示最新文章（2026-11-26）
+  const frozenHome = isFrozenPath(`/${lang}`);
   const rest = allPosts
-    .filter((p) => !pinnedSlugs.includes(p.slug))
+    .filter((p) => !pinnedSlugs.includes(p.slug) && (!frozenHome || p.date < "2026-11-26"))
     .slice(0, 6 - pinned.length);
   const posts = [...pinned, ...rest];
 

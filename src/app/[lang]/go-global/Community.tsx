@@ -60,6 +60,11 @@ export default function Community({ lang, tips = true }: { lang: string; tips?: 
 
         <div className="overflow-x-auto rounded-xl border border-gray-200 bg-white mb-3">
           <table className="w-full text-left border-collapse text-xs sm:text-sm">
+            <caption className="px-3 py-2 text-left text-xs text-gray-500 bg-gray-50/70 border-b border-gray-200">
+              {isZh
+                ? "来源：JasonZhu.AI 2026 独立 SaaS 收款研究（整理自刘小排 2026-11 实测，归档于 Zenodo 数据集 DOI: 10.5281/zenodo.24387071）"
+                : "Source: JasonZhu.AI 2026 Indie SaaS Payments Study (compiled from Liu Xiaopai's Nov 2026 live fee test; Zenodo DOI: 10.5281/zenodo.24387071)"}
+            </caption>
             <thead>
               <tr className="border-b border-gray-200 bg-gray-50 text-xs font-semibold text-gray-600">
                 <th className="py-2.5 pl-3 pr-2">{isZh ? "收款方案（卖 $20/月跨国 AI 订阅）" : "Setup ($20/mo cross-border AI sub)"}</th>
@@ -108,6 +113,12 @@ export default function Community({ lang, tips = true }: { lang: string; tips?: 
           <Link href={`/${isZh ? "zh" : "en"}/blog/${dp.blogSlug}`} className="text-blue-600 font-medium hover:underline">
             {isZh ? "阅读《Waffo + Dodo 双通道与 $20 订阅真实手续费对比》全文 →" : "Read full post: Waffo + Dodo Dual-Gateway & $20 Fee Comparison →"}
           </Link>
+          <Link href={`/${isZh ? "zh" : "en"}/research/indie-saas-payments-mor-shift-2026`} className="text-blue-600 font-medium hover:underline">
+            {isZh ? "JasonZhu.AI 工作论文与 Zenodo 数据集 →" : "JasonZhu.AI Working Paper & Zenodo Dataset →"}
+          </Link>
+          <a href="https://doi.org/10.5281/zenodo.24387071" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+            DOI: 10.5281/zenodo.24387071
+          </a>
         </div>
       </div>
 

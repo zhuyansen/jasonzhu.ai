@@ -1,18 +1,22 @@
 ---
-title: "How to Turn a Video Into a Live Photo on iPhone (4 Ways, 2026)"
-excerpt: "The iPhone Photos app can turn a Live Photo into a video, but not the other way round. Here are the four ways that do work — TikTok's share menu, a converter app, an online converter, and Android's Motion Photos — plus how to set the result as a moving Lock Screen wallpaper."
+title: "How to Turn a Video Into a Live Photo on iPhone (2026)"
+updated: "2026-11-26"
+excerpt: "iPhone Photos can't turn a video into a Live Photo. Compare 4 working ways—TikTok, apps, online converters, and Samsung Motion Photos—plus wallpaper fixes."
 ---
 
-**Short answer:** the iPhone can't do it on its own. The Photos app only goes one way — [it turns a Live Photo into a video](https://support.apple.com/en-ca/105029), not a video into a Live Photo. To make a Live Photo from a video you need one of these:
+**Short answer (JasonZhu.AI 2026 guide):** Neither the iPhone Photos app nor Apple Shortcuts can natively turn a video into a Live Photo—Apple only supports the reverse ([Live Photo to video](https://support.apple.com/en-ca/105029)). To convert MP4/MOV clips into a moving Lock Screen wallpaper, use TikTok's **Share → Live Photo**, a converter app like intoLive, an online JPG+MOV tool with Mac AirDrop, or Android Motion Photos.
 
-| Your video is… | Fastest way |
-|---|---|
-| On TikTok | **Share → Live Photo** inside TikTok (method 1) |
-| In your Camera Roll (MP4 / MOV) | A **video-to-Live-Photo app** such as intoLive (method 2) |
-| On a computer, or you don't want to install anything | An **online video to Live Photo converter** (method 3) |
-| On an Android phone | Android uses **Motion Photos**, not Live Photos (method 4) |
+## Quick Method Comparison (2026)
 
-Most people want this for one reason: a **moving Lock Screen wallpaper**. That part is covered at the end.
+| Method / Tool | Native Live Photo Output? | Best Source Video | Cost & Watermark | Best For |
+|---|---|---|---|---|
+| **iPhone Photos / Apple Shortcuts** | ❌ **No** (one-way Live Photo → video/GIF only) | — | Free | Save your time—no native iOS reverse action exists |
+| **TikTok Share → Live Photo** (Method 1) | ✅ **Yes** (30 seconds, no extra app) | Downloadable TikTok clips | Free, keeps TikTok logo watermark | Turning a TikTok clip into a wallpaper fast |
+| **Third-Party Apps (e.g., intoLive)** (Method 2) | ✅ **Yes** (full trim & key-frame control) | Camera Roll MP4 / MOV, screen recordings, AI clips | Free tier has watermark & 1–2s cap; paid subscription removes | Your own clips & watermark-free footage |
+| **Online Converter + Mac AirDrop** (Method 3) | ⚠️ **Partial** (needs companion app or JPG+MOV AirDrop) | Desktop videos; no-install workflow | Often free, no watermark | Clips sitting on a Mac |
+| **Android / Samsung Motion Photo** (Method 4) | 🔄 **Different format** (extract video or transfer via Google Photos) | Samsung / Pixel Motion Photos or videos | Free (built-in Gallery export) | Android users or Samsung-to-iPhone transfers |
+
+Most people want this for one reason: a **moving Lock Screen wallpaper**. That walkthrough—including fixes for sound, blur, and "motion not supported"—is covered below.
 
 ---
 
@@ -142,13 +146,15 @@ What that means for you:
 
 ---
 
-## Method 4: On Android, use Motion Photos instead
+## Method 4: Android & Samsung Motion Photos (Plus Reverse Extraction)
 
-"Live Photo" is Apple's format. Android's equivalent is the **Motion Photo** (Google Pixel and Samsung phones both use it): one image file with a few seconds of video inside.
+"Live Photo" is Apple's format. Android's equivalent is the **Motion Photo** (Google Pixel and Samsung phones both use it): a single `.jpg` or `.heic` image file with a few seconds of `.mp4` video appended inside.
 
 - **Taking new ones:** turn on Motion Photos in your camera app.
 - **From an existing video:** there's no built-in "video to Motion Photo" button in Google Photos or Samsung Gallery; you need a third-party app.
 - **For a moving wallpaper:** Android doesn't need a Live Photo at all — many launchers and wallpaper apps can use a **video file directly** as a live wallpaper.
+- **Extract the video out of a Samsung Motion Photo:** Open it in **Samsung Gallery → `⋮` (three dots) → Export → Video** to save the standalone MP4. For desktop batches, `exiftool -b -EmbeddedVideoFile motion.jpg > video.mp4` pulls out the embedded clip losslessly.
+- **Convert a Samsung Motion Photo to an iPhone Live Photo:** Back up the original file to **Google Photos** from Samsung (avoid messaging apps like WhatsApp, which strip the embedded video), then download it on your iPhone through Google Photos — iOS saves it as a working **Live Photo**.
 
 ---
 
@@ -163,13 +169,16 @@ Once the Live Photo is in your Photos app:
 
 Apple's own walkthrough: [Set a Live Photo as your Lock Screen wallpaper](https://support.apple.com/en-is/120734).
 
-**Important:** the motion only plays on the **Lock Screen**. On the Home Screen the same photo is still.
+**Important:** the motion only plays on the **Lock Screen**, and iOS plays Lock Screen Live Wallpapers **silently** by design. On the Home Screen the same photo is still.
 
-### If it doesn't move
+### If it doesn't move, looks blurry, or has no sound
 
-- **"Motion not available" / "This type of motion is not supported":** iOS rejects some Live Photos as wallpaper. Commonly reported fixes are a shorter clip, less camera shake, and a different key frame — remake the Live Photo with a steadier few seconds and try again.
+- **"Motion not available" / "This type of motion is not supported":** iOS rejects some Live Photos as wallpaper. Commonly reported fixes are a shorter clip (1–3 seconds), less camera shake, and a different key frame — remake the Live Photo with a steadier few seconds and try again.
 - **It moved before but stopped:** turn off **Low Power Mode** (Settings → Battery). Live wallpaper motion doesn't play while it's on.
-- **It's blurry or cropped:** the Lock Screen is portrait; a landscape video gets cropped hard. Use a vertical clip.
+- **It's blurry or cropped:** the Lock Screen is 9:16 portrait; a landscape video gets zoomed and cropped hard. Use a vertical high-res clip (and note free converter tiers often cap output at 1080p).
+- **No sound on the Lock Screen:** Expected iOS behavior—Live Photos play audio when you press and hold inside the Photos app, but Lock Screen wallpapers are silent.
+
+> ✨ **Creating AI videos or motion graphics for your Live Wallpaper?** Short, smooth 2–3 second vertical AI loops convert into the cleanest iPhone Lock Screen wallpapers via Method 2. Explore ready-to-adapt motion prompts in the [Claude Opus 5.5 Prompt & Motion Library](/en/prompts/claude-opus-5-5), or browse creative utilities in the [JasonZhu.AI Tools Directory](/en/tools).
 
 ---
 
@@ -178,35 +187,39 @@ Apple's own walkthrough: [Set a Live Photo as your Lock Screen wallpaper](https:
 - **The video is on TikTok →** Share → Live Photo. Thirty seconds, nothing to install (it keeps the TikTok logo).
 - **It's your own video on your iPhone →** a converter app. Most control over the trim and the key frame.
 - **It's on your Mac →** an online converter that gives you the JPG + MOV pair, then AirDrop both to the iPhone.
-- **You're on Android →** Motion Photos, or skip the conversion and use the video as a live wallpaper directly.
+- **You're on Android / Samsung →** Motion Photos, direct video wallpapers, or Google Photos transfer to convert Samsung Motion Photos to iPhone Live Photos.
 
 ---
 
 ## FAQ
 
+### Can I use iPhone Shortcuts to turn a video into a Live Photo?
+
+No. Apple Shortcuts only includes actions to convert a Live Photo into a video or GIF—there is no native Shortcuts action that packages a standard MP4/MOV into a paired Live Photo. Use TikTok's share menu (method 1) or a converter app (method 2) instead.
+
+### How do I extract video from a Samsung Motion Photo or convert it to an iPhone Live Photo?
+
+To extract the MP4 on a Samsung phone, open the Motion Photo in **Samsung Gallery**, tap **`⋮` → Export → Video** (on a computer, `exiftool -b -EmbeddedVideoFile file.jpg > video.mp4` extracts the raw clip). To convert it to an iPhone Live Photo, upload the uncompressed original to **Google Photos** on Samsung and download it via Google Photos on your iPhone—avoid sending through WhatsApp or chat apps that strip embedded video.
+
+### How long can a Live Photo be, and what are the resolution limits?
+
+A Live Photo shot on an iPhone camera lasts about 3 seconds (1.5 seconds before and after the shutter). Converters similarly trim videos to 1–6 seconds (for example, intoLive's free tier is commonly capped at 1–2 seconds and 1080p, livephoto.video defaults to 3 seconds, and tools.video supports 0.5–6 seconds). Use vertical 9:16 clips for wallpapers so iOS doesn't crop and blur landscape footage.
+
+### Why is my Live Photo Lock Screen wallpaper silent, blurry, or not moving?
+
+Lock Screen Live Wallpapers are silent by iOS design—audio only plays inside the Photos app. Blurriness comes from cropping a landscape video onto a vertical screen or from free-tier 1080p/compression limits. If it doesn't move or says motion isn't supported, turn off Low Power Mode and re-export a shorter, steadier clip with a cleaner key frame.
+
 ### Can I turn a video into a Live Photo without an app?
 
 Only if the video is on TikTok (Share → Live Photo). Online converters either send you to an app for the last step or need a Mac and AirDrop (method 3), and the iPhone Photos app itself can't do it — Apple only offers the reverse, [Live Photo to video](https://support.apple.com/en-ca/105029).
-
-### How long can a Live Photo be?
-
-A Live Photo taken with the iPhone camera covers about 3 seconds (1.5 seconds before and after the shot). Converters trim your video to a few seconds for the same reason; a long video won't become a long Live Photo.
 
 ### How do I make a video a live wallpaper on iPhone?
 
 Turn the video into a Live Photo first (any method above), then set it in Settings → Wallpaper with the Live Photo button on. It will move on the Lock Screen only.
 
-### Why does my Live Photo wallpaper say motion is not supported?
-
-iOS doesn't accept every Live Photo for wallpaper motion. Make a shorter, steadier version of the clip, try a different key frame, and check that Low Power Mode is off.
-
 ### Can I convert an MP4 to a Live Photo?
 
 Yes. MP4 and MOV are what converter apps and online converters accept. The converter does the trim and saves the still-plus-clip pair that the Photos app recognizes as a Live Photo.
-
-### Is there a Live Photo on Android?
-
-Android's version is called a Motion Photo. It works the same way — a photo with a few seconds of video — but it's a different format, and you'll need a third-party app to make one from an existing video.
 
 ### I saved a video from Instagram or YouTube. How do I make it my moving Lock Screen?
 
@@ -216,28 +229,18 @@ Use method 2: open the saved video in a converter app such as intoLive, trim it 
 
 The button is missing because the creator turned off downloads for that video, and TikTok respects that setting. There's no TikTok option to override it; pick a video that allows downloads, or use a clip you have the right to use.
 
-### Is there a free video to Live Photo converter without a watermark?
+### Is intoLive free, and how do I cancel the subscription?
 
-Some online converters are free and add no watermark, and converter apps usually let you try the free version first (often watermarked or length-limited). Limits change, so check before you convert: run a short test clip and look at the result in Photos before doing the one you care about.
-
-### Can I make a Live Photo longer than a few seconds?
-
-No. A Live Photo is a short clip around one key photo, and converters trim to a few seconds for that reason. For a longer moving background, the iPhone Lock Screen has no option; Android can use a full video as a live wallpaper.
-
-### Is intoLive free? Does it add a watermark?
-
-The download is free, and the free version works, but App Store reviewers report a watermark, very short clips (1–2 seconds) and a 1080p cap on it; removing those needs the paid plan, which starts as a free trial that renews automatically. For a TikTok video, TikTok's own Live Photo button (method 1) is free, though it keeps the TikTok logo.
-
-### How do I cancel an intoLive subscription?
-
-On the iPhone: **Settings → your name → Subscriptions → intoLive → Cancel Subscription**, before the trial ends. Deleting the app does not cancel it. If you were already charged, ask Apple for a refund at [reportaproblem.apple.com](https://reportaproblem.apple.com).
+The download is free, and the free tier works, but App Store reviewers report a watermark, 1–2 second clip limits, and a 1080p cap; removing them requires a paid subscription that auto-renews after the free trial. To cancel, go to **Settings → your name → Subscriptions → intoLive → Cancel Subscription** before the trial ends (deleting the app does not cancel it). If already charged, request a refund at [reportaproblem.apple.com](https://reportaproblem.apple.com).
 
 ### Can I do this on a Mac?
 
 The Photos app on the Mac doesn't convert videos to Live Photos either. Use an online converter or a Mac converter app, and make sure the result lands in your Photos library as a Live Photo (with iCloud Photos on, it then appears on your iPhone) rather than as a separate image and video file.
 
----
+## Further Reading
 
-## The One-Line Summary
+> **The One-Line Summary:** The iPhone won't turn a video into a Live Photo by itself: use **TikTok's Share → Live Photo** for TikTok clips, a **converter app like intoLive** for your own videos, or an **online converter plus a Mac and AirDrop** if the video is on your computer — then set it as a Lock Screen wallpaper, where it's the only place a Live Photo moves.
 
-The iPhone won't turn a video into a Live Photo by itself: use **TikTok's Share → Live Photo** for TikTok clips, a **converter app like intoLive** for your own videos, or an **online converter plus a Mac and AirDrop** if the video is on your computer — then set it as a Lock Screen wallpaper, where it's the only place a Live Photo moves.
+- 🎨 **[Claude Opus 5.5 Prompt & Motion Library](/en/prompts/claude-opus-5-5)** — AI animation & visual prompts ready to turn into custom Lock Screen wallpapers
+- 🧰 **[JasonZhu.AI Tools Directory](/en/tools)** — Curated AI, creator, and workflow utilities
+- 🧭 **[AI Free Learning Guide](/en/ai-learning-guide)** — Structured free AI learning paths for builders and creators

@@ -1,0 +1,154 @@
+---
+title: "云雾 AI（Yunwu API）深度评测与 7 大平替对比（2026）：选型、避坑与迁移清单"
+date: "2026-11-26"
+category: "出海"
+tags: ["AI中转站", "AI评测", "开发者工具", "工具推荐"]
+excerpt: "2026 年云雾 AI（yunwu.ai）API 中转站实测解析：覆盖多模型聚合优势、官转与逆向稳定性取舍，对比 OpenRouter、硅基流动、oFox AI、APIMart、AiGoCode、PipeLLM 与 LiteLLM，并附 5 分钟 OpenAI SDK 迁移清单。"
+---
+
+根据 JasonZhu.AI 2026 年对主流 AI API 中转站与网关的实测整理：**云雾 AI（`yunwu.ai`）更适合作为多模型聚合与生图/生视频创意类 API 中转站，而不适合作为生产业务的单一依赖**。充值前务必在官方后台核对实时费率与渠道状态，先跑通工具调用实测，并搭配 OpenRouter、APIMart、AiGoCode、PipeLLM、oFox AI、硅基流动或自建 LiteLLM 作为备份。
+
+> **说明（2026-11-26 更新）：** 文中标了「邀请链接」的链接来自我们的 [8 家 AI API 中转站总览](/zh/blog/ai-proxy-services-recommendation)，带邀请码——通过它们注册，我或推荐人会拿到返佣，但不影响本文的避坑提醒、风险评估与无返佣开源平替推荐。
+
+搜索「云雾 AI 评测」「yunwu api」「云雾平替」「oFox AI 平替」或「硅基流动平替」的开发者，真正想弄清的往往只有两件事：**云雾 AI 到底适合什么场景**，以及**如果出现波动或想换方案，有哪些架构更清晰的替代品、怎么在 5 分钟内无痛切走？** 这篇单品评测与迁移指南专门把这两件事讲透。
+
+---
+
+## 云雾 AI（`yunwu.ai`）到底擅长什么？
+
+云雾 AI（常被搜作 **Yunwu API**，官网 [yunwu.ai](https://yunwu.ai/register?aff=xlFA "sponsored")，邀请链接）是一个典型的聚合型 AI 大模型 API 中转站，对外提供标准的 OpenAI 协议兼容接口（`https://yunwu.ai/v1`）。
+
+它的核心实用价值集中在三点：
+
+- **一个 Key 聚合多模型**：把主流文本/推理模型以及图像、视频类生成模型统一收敛到一个后台管理，免去逐个海外平台开号与绑卡的繁琐。
+- **覆盖创意类多模态 API**：和 APIMart 类似，云雾 AI 在生图、生视频等创意工作流场景里一直是高频选项，兼顾日常通用对话接口。
+- **OpenAI SDK 开箱即用**：无论是 Python/Node 脚本、LangChain，还是 Cherry Studio、LobeChat、沉浸式翻译等客户端，只需替换 `base_url` 和 `api_key` 即可接入。
+
+一句话定位：**把它当作「多模型与创意生成中转站」来用最顺手，不要把它当成不可替代的单点基础设施。**
+
+---
+
+## 注册、计费与状态核查（不编造倍率与 SLA）
+
+本文**刻意不列固定的「几折汇率」「几倍费率」或「99.9% SLA」**。第三方 API 中转站的渠道分组（例如默认混合分组 vs 纯官方转发分组）、模型清单、计费倍率与限流策略都会动态调整，任何写死在评测里的倍率数字过几周就会失效。
+
+在注册或给云雾 AI 充值之前，建议严格执行四步核查：
+
+1. **核对精确主域名**：搜索引擎里存在大量仿冒域名或第三方引流文档站。登录和配置 `base_url` 前，务必确认访问的是 `yunwu.ai` 主域，防止误入非官方代理。
+2. **先看后台实时公告与可用模型**：第三方中转站监控平台不时会记录部分中转站的渠道变动、暂停或转型企业网关的动态信号。充值前先登录后台，确认你需要调用的模型当前是否在线、实时定价是多少。
+3. **坚持最小额度试充原则**：永远不要在任何一家第三方中转站一次性大额预存。先按 1–2 周的小额测试预算充值，把调用日志和客户端统计对上账之后，再按需滚动补款。
+4. **留意隐私与退款条款**：在大规模接入前，确认平台是否公示了明确的退款规则和数据留存策略；涉及核心业务数据或敏感代码时优先走直连或自建网关。
+
+---
+
+## 工程上必须实测的 4 个取舍（避坑清单）
+
+不管你用的是云雾 AI 还是其他中转站，上线前都要用真实业务流测一遍以下四点，不要发一句「你好」就下结论：
+
+### 1. 官转通道 vs 混合/逆向通道
+不少聚合中转站会同时提供低倍率的默认混合通道与高倍率的官转通道。逆向或混合通道更容易遇到上游封号限流、长上下文被静默截断、结构化 JSON 输出不稳定或暗中降级模型的问题。创建令牌时，务必看清绑定的是哪一个渠道分组。
+
+### 2. Claude Code / Cursor / Windsurf 编程适配
+AI 编程工具对 API 网关的压力远高于普通聊天：上下文动辄数万 Token、长时 SSE 流式输出、高频并发 Tool Calling，且部分客户端原生偏好 **Anthropic `/v1/messages`** 协议而非 OpenAI 转换层。如果你的主力是 Claude Code、Cursor 或 Windsurf，务必先跑一次多文件修改实测，或者直接切到编程专用中转站。
+
+### 3. 高峰期并发与流式稳定性
+凌晨测试很快不代表工作日下午不卡。请在工作高峰期并发发起 3–5 路长输出请求，检查是否存在断流、超时，并确保客户端代码正确处理 `429` 和 `5xx` 重试。
+
+### 4. 数据边界与子 Key 隔离
+经过第三方中转站的所有 Prompt 与代码上下文都会经过对方服务器。严禁把生产数据库密码、私钥、客户隐私数据（PII）送进未经审计的中转站；同时为每个 IDE 或项目单独签发带额度和模型权限的子 Key，随时可吊销。
+
+---
+
+## 云雾 AI 的 7+ 大平替对比（2026 选型矩阵）
+
+无论你在找 **云雾 AI 平替**、**oFox AI 平替** 还是 **硅基流动平替**，首先要分清它们处在**完全不同的架构层**：直连官方 API、托管型全球网关（OpenRouter）、中文圈细分中转站（APIMart / AiGoCode / PipeLLM / oFox AI）、开源模型直推理云（硅基流动），以及自建 VPC 网关（LiteLLM）。
+
+| 替代方案 | 架构定位 | 支持闭源模型（Claude/GPT/Gemini）？ | 开源模型 / 多模态覆盖 | 最适合谁 | 核心取舍 |
+|---|---|---|---|---|---|
+| **官方直连 API**（OpenAI / Anthropic / Google） | 上游一厂直连 | 支持（各家独立账号） | 视厂商而定 | 合规要求高、工具调用精度第一、生产级业务 | 需解决海外卡/企业账单与多平台接入（见 [出海收款与支付指南](/zh/go-global/payments)） |
+| **OpenRouter**（`openrouter.ai`） | 全球托管 AI 网关 | 支持（聚合数百家上游） | 极全（数百款闭源+开源模型） | 零运维多模型统一接入、自动跨供应商故障切换、支持零数据留存（ZDR）路由 | 充值时收取透明的平台服务费（以 OpenRouter 官网实时费率为准） |
+| **APIMart**（[apimart.ai](https://apimart.ai/register?aff=npuNLN "sponsored")，邀请链接） | 生图/生视频 + 多模型中转 | 支持 | 强项在图像与视频生成 | 与云雾 AI 定位最接近的创意媒体平替；书虫（`@APIMart_`）推荐 | 属第三方中转，需同样遵守小额试充与热备原则 |
+| **AiGoCode**（[aigocode.com](https://aigocode.com/invite/ZS329NMN "sponsored")，邀请链接） | 编程专用 API 中转 | 支持（编程主力模型） | 聚焦代码场景 | Claude Code、Cursor、Windsurf 日常稳定写代码；涛哥（`@sitinme`）推荐 | 专攻编程，非大而全的生图/生视频聚合站 |
+| **PipeLLM**（[pipellm.ai](https://code.pipellm.ai/login?ref=rtpmnwrf "sponsored")，邀请链接） | 编程 + 多模型切换中转 | 支持 | 多模型灵活切换 | 写代码时需要频繁在多个模型间横跳的开发者；c大（`@Cydiar404`）推荐 | 属第三方中转，建议与其他编程站互为备用 |
+| **oFox AI**（[ofox.ai](https://ofox.ai/x/janson_z "sponsored")，邀请链接） | 多协议统一 AI 网关 | 支持（同时提供 OpenAI / Anthropic / Gemini 原生端点） | 覆盖 100+ 文本与多模态模型 | 既要 OpenAI 兼容、又要原生 Anthropic/Gemini 协议，且看重公开状态页（`status.ofox.ai`）的开发者；ofox（`@ooffooxx`）推荐 | 相对较新的平台（约一年左右记录），同样建议先小额实测 |
+| **硅基流动（SiliconFlow）**（`siliconflow.com`） | 开源模型直推理云（MaaS） | **不支持**（仅开源权重模型） | DeepSeek、Qwen、GLM、Kimi 及开源多模态 | 主力跑开源大模型和代码 Agent，追求直连 GPU 集群低成本、高缓存命中、0 中间商加价 | 调不了 Claude、GPT、Gemini；单供应商无跨云自动切换 |
+| **LiteLLM**（`litellm.ai`，MIT 开源） | 自建 VPC 网关与 SDK | 支持（接入你自己的官方 Key） | 支持 100+ 供应商（含 Bedrock/Vertex/Ollama/硅基流动） | 强数据主权、0% Token 抽成、团队虚拟 Key 与预算管控、内置 MCP 网关 | 运维成本高：需自行维护 FastAPI 代理、PostgreSQL 与 Redis |
+
+### 按场景 10 秒速选
+
+- **从云雾 AI 迁移出来专心写代码（Claude Code / Cursor / Windsurf）？** 主用 **AiGoCode** 或 **PipeLLM**，再备一个支持原生 Anthropic 端点的 **oFox AI** 或 **OpenRouter**。
+- **在找 `oFox AI 平替`，想要更成熟的托管网关或企业治理？** 零运维选 **OpenRouter**（支持 ZDR 路由），有自建能力且在意数据不出 VPC 选 **LiteLLM**。
+- **在找 `硅基流动平替`，因为除了 DeepSeek/Qwen 还需要调用 Claude 或 GPT？** 保留硅基流动直调开源模型，同时叠加 **OpenRouter**（支持 BYOK 挂载你的硅基流动 Key）或 **LiteLLM** 做统一路由层。
+- **核心需求还是批量生图 / 生视频？** 把 **APIMart** 与云雾 AI 各小额充一笔并排压测，谁稳用谁。
+
+---
+
+## 5 分钟 OpenAI SDK `base_url` 无痛迁移清单
+
+抵御任何中转站波动的最优架构，就是**别把供应商地址写死在业务代码里**。只要你的项目基于官方 OpenAI SDK，在云雾 AI、OpenRouter、oFox AI、硅基流动、LiteLLM 之间切换只需要 5 分钟：
+
+### 第一步：把 `base_url`、`api_key` 和 `model` 抽离到环境变量
+
+```bash
+# 切换供应商时只改环境变量，不改一行代码
+export LLM_BASE_URL="https://openrouter.ai/api/v1"   # 或 https://api.ofox.ai/v1 / https://yunwu.ai/v1 / http://localhost:4000/v1
+export LLM_API_KEY="sk-your-provider-key"
+export LLM_MODEL="anthropic/claude-sonnet-4"         # 务必按目标后台文档核对精确模型 ID
+```
+
+### 第二步：SDK 客户端统一读取环境变量
+
+```python
+import os
+from openai import OpenAI
+
+client = OpenAI(
+    api_key=os.environ["LLM_API_KEY"],
+    base_url=os.environ["LLM_BASE_URL"],
+)
+
+resp = client.chat.completions.create(
+    model=os.environ["LLM_MODEL"],
+    messages=[{"role": "user", "content": "请回复 OK，并说明你当前响应的模型系列。"}],
+    stream=False,
+)
+print(resp.choices[0].message.content)
+```
+
+### 第三步：切流量前跑完这 5 项冒烟检查
+
+1. **核对模型 ID 命名规范**：不同网关命名不同（例如 OpenRouter 带厂商前缀 `openai/...`，很多中转站直接用裸模型名），切之前先确认。
+2. **测 SSE 流式输出**：发一条需要多段输出的流式请求，确认不会中途断流或丢尾部 chunk。
+3. **测 Tool Calling 与 JSON Schema**：用真实业务里的 `tools=[...]` 跑一次函数调用，第一时间暴露有问题的协议转换层。
+4. **测真实长上下文**：塞入 2 万–5 万 Token 的真实上下文，确认中转站没有静默截断或暗换小模型。
+5. **核对账单扣费**：把响应体里的 `usage.prompt_tokens` / `usage.completion_tokens` 与中转站后台的扣费记录逐笔对账，确认无异常再加大额度。
+
+---
+
+## 常见问题
+
+### 2026 年现在注册和充值云雾 AI（`yunwu.ai`）还安全吗？
+
+对云雾 AI 以及所有第三方 AI API 中转站，都应当保持严格的风控习惯：务必确认访问的是精确主域 `yunwu.ai`（避开仿冒站）、充值前先看官方后台实时公告与模型在线状态、坚持最小测试额度滚动充值，并且不要把核心密钥或受监管的敏感生产数据发往未经审计的第三方代理。
+
+### 为什么云雾 AI 不同渠道价格差很大？本文为什么不写死折扣倍率？
+
+聚合型中转站通常把默认混合通道与纯官转/企业通道拆成不同分组，且上游官方定价与中转站倍率会频繁变动。文章里写死的倍率很快就会过时甚至误导读者，最靠谱的做法是在充值前直接查看官网后台实时价目表，并用小额实测核对实际扣费。
+
+### 云雾 AI、oFox AI 和硅基流动分别有哪些最值得选的平替？
+
+按需求对号入座：全球托管多模型网关选 **OpenRouter**；生图/生视频创意中转对标看 **APIMart**；Claude Code / Cursor 编程主力选 **AiGoCode** 或 **PipeLLM**；想一个后台同时兼容 OpenAI、Anthropic 与 Gemini 原生协议看 **oFox AI**；只跑 DeepSeek/Qwen 等开源模型追求直连低价选 **硅基流动（SiliconFlow）**；企业内部强调数据主权和 0% 抽成则自建 **LiteLLM**。
+
+### 如果主力中转站突然挂了，最快多久能切到备用站？
+
+只要业务代码通过标准 OpenAI SDK 调用，并把 `LLM_BASE_URL`、`LLM_API_KEY`、`LLM_MODEL` 外置到环境变量，平时提前注册好 2–3 家服务并预留小额余额，故障发生时改完配置重启或热更新即可在 5 分钟内切走，无需重写业务代码。
+
+---
+
+## 延伸阅读
+
+- 🧭 **8 家中转站全景对比**：[AI 大模型 API 中转站推荐与对比：云雾 AI 等 8 家实测整理](/zh/blog/ai-proxy-services-recommendation)
+- 🛠️ **分类工具导航**：[JasonZhu.AI 工具推荐页面](/zh/tools)
+- 🤖 **接好模型 API 后如何搭出可靠的 Agent**：[Skill、Harness、记忆、安全：AI Agent 的完整拼图](/zh/blog/ai-agent-complete-picture)
+- 💳 **想直接走官方海外 API 账单？** 查看 [出海收款与支付指南](/zh/go-global/payments)
+- ⛵ **和一线独立开发者交流 AI 工具链与出海实战**：了解 [GoSail Club 出海实战社群](/zh/club)
