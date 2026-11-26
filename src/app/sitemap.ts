@@ -45,6 +45,7 @@ const STATIC_PATHS = [
   "/research", // 学术工作论文与开源数据集索引（PDF + SSRN + CERN Zenodo DOI + BibTeX）
   "/research/indie-saas-payments-mor-shift-2026",
   "/research/ai-agent-skills-mcp-supply-chain-security-2026",
+  "/research/ai-crawlers", // AI 爬虫与 AI 引用公开数据（2026-11-26 起，每月更新；中英文都是完整内容）
   "/contact",
   "/sitemap-html",
   "/privacy",

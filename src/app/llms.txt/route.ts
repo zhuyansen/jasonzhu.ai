@@ -2,6 +2,7 @@ import { getAllPosts } from "@/lib/mdx";
 import { GUIDES } from "@/lib/go-global-guides";
 import { AUTHOR_ALT_NAME, AUTHOR_NAME, PERSON_PROFILES, RELATED_SITES, WORKS, type Work } from "@/lib/profiles";
 import guard from "@/data/payment-guard.json";
+import { stats as crawlerStats } from "@/lib/ai-crawler-stats";
 
 const SITE_URL = "https://jasonzhu.ai";
 
@@ -73,6 +74,7 @@ export async function GET(request: Request) {
     "",
     `- [收款平台数据 JSON](${SITE_URL}/data/payment-guard.json): ${Object.keys(guard.platforms).length} 家收款平台的费率、到账、审核时间、各类卖家能不能开户、按产品类型的推荐顺序。开户条件每条附官方来源，其余数字来自各平台官方文档，核实于 ${guard.checked}（开户步骤核实于 ${guard.opening_checked}）。和收款平台选择器、开源工具 payment-guard ${guard.version} 是同一份数据`,
     `- [给 AI Agent 的说明](${SITE_URL}/agents.md): Agent 在本站能做什么、哪些事要用户本人来（订阅、购买、申请）`,
+    `- [AI crawler & AI citation data (English)](${SITE_URL}/en/research/ai-crawlers): 本站自己的 AI 爬虫日志汇总（${crawlerStats.coverage.first_day} 至 ${crawlerStats.coverage.last_day}，UTC：哪些爬虫、读了哪些栏目、多少能用公布的 IP 段核实）和每周 AI 引用面板的计数，每月更新，CC BY 4.0。JSON：${SITE_URL}/data/ai-crawlers/ai-crawlers-latest.json；每月 CSV 在同一目录`,
     "- 博客、快讯的 RSS 见上面「核心入口」",
     "",
     "## 引用规则",

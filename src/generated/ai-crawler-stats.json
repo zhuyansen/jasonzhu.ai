@@ -1,0 +1,3295 @@
+{
+ "name": "AI crawler traffic and AI answer citations on jasonzhu.ai",
+ "version": "2026-11-26",
+ "site": "jasonzhu.ai",
+ "landing_page": "https://jasonzhu.ai/en/research/ai-crawlers",
+ "creator": "Jason Zhu (jasonzhu.ai)",
+ "license": "CC-BY-4.0",
+ "license_url": "https://creativecommons.org/licenses/by/4.0/",
+ "update_cadence": "monthly",
+ "coverage": {
+  "timezone": "UTC",
+  "first_day": "2026-10-26",
+  "last_day": "2026-11-25",
+  "days": 31,
+  "first_request_utc": "2026-10-26 12:58",
+  "partial_days": [
+   "2026-10-26"
+  ]
+ },
+ "totals": {
+  "requests": 254425,
+  "ai_requests": 69348,
+  "by_type": {
+   "ai_search": 40039,
+   "training": 20330,
+   "user_triggered": 8979,
+   "search_engine": 51590,
+   "other": 133487
+  },
+  "status": {
+   "status_2xx": 242139,
+   "status_3xx": 1191,
+   "status_4xx": 11095,
+   "status_5xx": 0,
+   "status_other": 0
+  },
+  "ai_status": {
+   "status_2xx": 67376,
+   "status_3xx": 89,
+   "status_4xx": 1883,
+   "status_5xx": 0,
+   "status_other": 0
+  },
+  "verification": {
+   "verified_in_published_ranges": 63002,
+   "outside_published_ranges": 238,
+   "unverified_stale_range_list": 17772,
+   "unverified_no_published_ranges": 52756,
+   "unverified_unmapped_bot": 120657,
+   "unverified_other": 0
+  },
+  "ai_verification": {
+   "verified_in_published_ranges": 19902,
+   "outside_published_ranges": 128,
+   "unverified_stale_range_list": 17772,
+   "unverified_no_published_ranges": 31546,
+   "unverified_unmapped_bot": 0,
+   "unverified_other": 0
+  }
+ },
+ "months": [
+  {
+   "month": "2026-10",
+   "partial": true,
+   "first_day": "2026-10-26",
+   "last_day": "2026-10-31",
+   "days": 6,
+   "requests": 41207,
+   "ai_requests": 11091,
+   "by_type": {
+    "ai_search": 6954,
+    "training": 2187,
+    "user_triggered": 1950,
+    "search_engine": 8725,
+    "other": 21391
+   },
+   "status": {
+    "status_2xx": 40893,
+    "status_3xx": 63,
+    "status_4xx": 251,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "ai_status": {
+    "status_2xx": 11038,
+    "status_3xx": 21,
+    "status_4xx": 32,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "verification": {
+    "verified_in_published_ranges": 11651,
+    "outside_published_ranges": 0,
+    "unverified_stale_range_list": 1714,
+    "unverified_no_published_ranges": 10168,
+    "unverified_unmapped_bot": 17674,
+    "unverified_other": 0
+   },
+   "ai_verification": {
+    "verified_in_published_ranges": 3587,
+    "outside_published_ranges": 0,
+    "unverified_stale_range_list": 1714,
+    "unverified_no_published_ranges": 5790,
+    "unverified_unmapped_bot": 0,
+    "unverified_other": 0
+   }
+  },
+  {
+   "month": "2026-11",
+   "partial": true,
+   "first_day": "2026-11-01",
+   "last_day": "2026-11-25",
+   "days": 25,
+   "requests": 213218,
+   "ai_requests": 58257,
+   "by_type": {
+    "ai_search": 33085,
+    "training": 18143,
+    "user_triggered": 7029,
+    "search_engine": 42865,
+    "other": 112096
+   },
+   "status": {
+    "status_2xx": 201246,
+    "status_3xx": 1128,
+    "status_4xx": 10844,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "ai_status": {
+    "status_2xx": 56338,
+    "status_3xx": 68,
+    "status_4xx": 1851,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "verification": {
+    "verified_in_published_ranges": 51351,
+    "outside_published_ranges": 238,
+    "unverified_stale_range_list": 16058,
+    "unverified_no_published_ranges": 42588,
+    "unverified_unmapped_bot": 102983,
+    "unverified_other": 0
+   },
+   "ai_verification": {
+    "verified_in_published_ranges": 16315,
+    "outside_published_ranges": 128,
+    "unverified_stale_range_list": 16058,
+    "unverified_no_published_ranges": 25756,
+    "unverified_unmapped_bot": 0,
+    "unverified_other": 0
+   }
+  }
+ ],
+ "bots": [
+  {
+   "vendor": "Unknown",
+   "bot": "Unmapped",
+   "bot_type": "other",
+   "requests": 120657,
+   "verification": {
+    "verified_in_published_ranges": 0,
+    "outside_published_ranges": 0,
+    "unverified_stale_range_list": 0,
+    "unverified_no_published_ranges": 0,
+    "unverified_unmapped_bot": 120657,
+    "unverified_other": 0
+   },
+   "status": {
+    "status_2xx": 112904,
+    "status_3xx": 752,
+    "status_4xx": 7001,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "by_month": {
+    "2026-10": 17674,
+    "2026-11": 102983
+   },
+   "first_seen": "2026-10-26",
+   "last_seen": "2026-11-25",
+   "days_seen": 31
+  },
+  {
+   "vendor": "Exa",
+   "bot": "ExaSearchBot",
+   "bot_type": "ai_search",
+   "requests": 22218,
+   "verification": {
+    "verified_in_published_ranges": 0,
+    "outside_published_ranges": 0,
+    "unverified_stale_range_list": 0,
+    "unverified_no_published_ranges": 22218,
+    "unverified_unmapped_bot": 0,
+    "unverified_other": 0
+   },
+   "status": {
+    "status_2xx": 22077,
+    "status_3xx": 15,
+    "status_4xx": 126,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "by_month": {
+    "2026-10": 4332,
+    "2026-11": 17886
+   },
+   "first_seen": "2026-10-26",
+   "last_seen": "2026-11-25",
+   "days_seen": 31
+  },
+  {
+   "vendor": "Google",
+   "bot": "Googlebot",
+   "bot_type": "search_engine",
+   "requests": 18558,
+   "verification": {
+    "verified_in_published_ranges": 18496,
+    "outside_published_ranges": 62,
+    "unverified_stale_range_list": 0,
+    "unverified_no_published_ranges": 0,
+    "unverified_unmapped_bot": 0,
+    "unverified_other": 0
+   },
+   "status": {
+    "status_2xx": 18405,
+    "status_3xx": 81,
+    "status_4xx": 72,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "by_month": {
+    "2026-10": 4245,
+    "2026-11": 14313
+   },
+   "first_seen": "2026-10-26",
+   "last_seen": "2026-11-25",
+   "days_seen": 31
+  },
+  {
+   "vendor": "Microsoft",
+   "bot": "bingbot",
+   "bot_type": "search_engine",
+   "requests": 17814,
+   "verification": {
+    "verified_in_published_ranges": 17814,
+    "outside_published_ranges": 0,
+    "unverified_stale_range_list": 0,
+    "unverified_no_published_ranges": 0,
+    "unverified_unmapped_bot": 0,
+    "unverified_other": 0
+   },
+   "status": {
+    "status_2xx": 16928,
+    "status_3xx": 154,
+    "status_4xx": 732,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "by_month": {
+    "2026-10": 2882,
+    "2026-11": 14932
+   },
+   "first_seen": "2026-10-26",
+   "last_seen": "2026-11-25",
+   "days_seen": 31
+  },
+  {
+   "vendor": "Perplexity",
+   "bot": "PerplexityBot",
+   "bot_type": "ai_search",
+   "requests": 10602,
+   "verification": {
+    "verified_in_published_ranges": 1866,
+    "outside_published_ranges": 0,
+    "unverified_stale_range_list": 8736,
+    "unverified_no_published_ranges": 0,
+    "unverified_unmapped_bot": 0,
+    "unverified_other": 0
+   },
+   "status": {
+    "status_2xx": 10477,
+    "status_3xx": 5,
+    "status_4xx": 120,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "by_month": {
+    "2026-10": 1063,
+    "2026-11": 9539
+   },
+   "first_seen": "2026-10-26",
+   "last_seen": "2026-11-25",
+   "days_seen": 31
+  },
+  {
+   "vendor": "Yandex",
+   "bot": "YandexBot",
+   "bot_type": "search_engine",
+   "requests": 8589,
+   "verification": {
+    "verified_in_published_ranges": 0,
+    "outside_published_ranges": 0,
+    "unverified_stale_range_list": 0,
+    "unverified_no_published_ranges": 8589,
+    "unverified_unmapped_bot": 0,
+    "unverified_other": 0
+   },
+   "status": {
+    "status_2xx": 7189,
+    "status_3xx": 92,
+    "status_4xx": 1308,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "by_month": {
+    "2026-10": 531,
+    "2026-11": 8058
+   },
+   "first_seen": "2026-10-26",
+   "last_seen": "2026-11-25",
+   "days_seen": 27
+  },
+  {
+   "vendor": "ByteDance",
+   "bot": "Bytespider",
+   "bot_type": "training",
+   "requests": 5121,
+   "verification": {
+    "verified_in_published_ranges": 0,
+    "outside_published_ranges": 0,
+    "unverified_stale_range_list": 0,
+    "unverified_no_published_ranges": 5121,
+    "unverified_unmapped_bot": 0,
+    "unverified_other": 0
+   },
+   "status": {
+    "status_2xx": 5070,
+    "status_3xx": 1,
+    "status_4xx": 50,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "by_month": {
+    "2026-10": 985,
+    "2026-11": 4136
+   },
+   "first_seen": "2026-10-26",
+   "last_seen": "2026-11-25",
+   "days_seen": 31
+  },
+  {
+   "vendor": "Anthropic",
+   "bot": "ClaudeBot",
+   "bot_type": "training",
+   "requests": 4537,
+   "verification": {
+    "verified_in_published_ranges": 0,
+    "outside_published_ranges": 0,
+    "unverified_stale_range_list": 4537,
+    "unverified_no_published_ranges": 0,
+    "unverified_unmapped_bot": 0,
+    "unverified_other": 0
+   },
+   "status": {
+    "status_2xx": 4037,
+    "status_3xx": 0,
+    "status_4xx": 500,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "by_month": {
+    "2026-10": 543,
+    "2026-11": 3994
+   },
+   "first_seen": "2026-10-26",
+   "last_seen": "2026-11-25",
+   "days_seen": 25
+  },
+  {
+   "vendor": "Anthropic",
+   "bot": "Claude-User",
+   "bot_type": "user_triggered",
+   "requests": 4490,
+   "verification": {
+    "verified_in_published_ranges": 0,
+    "outside_published_ranges": 0,
+    "unverified_stale_range_list": 4490,
+    "unverified_no_published_ranges": 0,
+    "unverified_unmapped_bot": 0,
+    "unverified_other": 0
+   },
+   "status": {
+    "status_2xx": 4398,
+    "status_3xx": 21,
+    "status_4xx": 71,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "by_month": {
+    "2026-10": 1171,
+    "2026-11": 3319
+   },
+   "first_seen": "2026-10-26",
+   "last_seen": "2026-11-25",
+   "days_seen": 31
+  },
+  {
+   "vendor": "Ahrefs",
+   "bot": "AhrefsBot",
+   "bot_type": "other",
+   "requests": 4020,
+   "verification": {
+    "verified_in_published_ranges": 4001,
+    "outside_published_ranges": 19,
+    "unverified_stale_range_list": 0,
+    "unverified_no_published_ranges": 0,
+    "unverified_unmapped_bot": 0,
+    "unverified_other": 0
+   },
+   "status": {
+    "status_2xx": 4000,
+    "status_3xx": 2,
+    "status_4xx": 18,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "by_month": {
+    "2026-10": 511,
+    "2026-11": 3509
+   },
+   "first_seen": "2026-10-26",
+   "last_seen": "2026-11-25",
+   "days_seen": 31
+  },
+  {
+   "vendor": "Amazon",
+   "bot": "Amazonbot",
+   "bot_type": "training",
+   "requests": 3927,
+   "verification": {
+    "verified_in_published_ranges": 3927,
+    "outside_published_ranges": 0,
+    "unverified_stale_range_list": 0,
+    "unverified_no_published_ranges": 0,
+    "unverified_unmapped_bot": 0,
+    "unverified_other": 0
+   },
+   "status": {
+    "status_2xx": 3292,
+    "status_3xx": 2,
+    "status_4xx": 633,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "by_month": {
+    "2026-10": 417,
+    "2026-11": 3510
+   },
+   "first_seen": "2026-10-26",
+   "last_seen": "2026-11-25",
+   "days_seen": 31
+  },
+  {
+   "vendor": "OpenAI",
+   "bot": "OAI-SearchBot",
+   "bot_type": "ai_search",
+   "requests": 3820,
+   "verification": {
+    "verified_in_published_ranges": 3798,
+    "outside_published_ranges": 22,
+    "unverified_stale_range_list": 0,
+    "unverified_no_published_ranges": 0,
+    "unverified_unmapped_bot": 0,
+    "unverified_other": 0
+   },
+   "status": {
+    "status_2xx": 3812,
+    "status_3xx": 0,
+    "status_4xx": 8,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "by_month": {
+    "2026-10": 689,
+    "2026-11": 3131
+   },
+   "first_seen": "2026-10-26",
+   "last_seen": "2026-11-25",
+   "days_seen": 31
+  },
+  {
+   "vendor": "OpenAI",
+   "bot": "GPTBot",
+   "bot_type": "training",
+   "requests": 3785,
+   "verification": {
+    "verified_in_published_ranges": 3757,
+    "outside_published_ranges": 28,
+    "unverified_stale_range_list": 0,
+    "unverified_no_published_ranges": 0,
+    "unverified_unmapped_bot": 0,
+    "unverified_other": 0
+   },
+   "status": {
+    "status_2xx": 3762,
+    "status_3xx": 0,
+    "status_4xx": 23,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "by_month": {
+    "2026-10": 22,
+    "2026-11": 3763
+   },
+   "first_seen": "2026-10-27",
+   "last_seen": "2026-11-25",
+   "days_seen": 30
+  },
+  {
+   "vendor": "Ahrefs",
+   "bot": "AhrefsSiteAudit",
+   "bot_type": "other",
+   "requests": 3754,
+   "verification": {
+    "verified_in_published_ranges": 0,
+    "outside_published_ranges": 0,
+    "unverified_stale_range_list": 0,
+    "unverified_no_published_ranges": 3754,
+    "unverified_unmapped_bot": 0,
+    "unverified_other": 0
+   },
+   "status": {
+    "status_2xx": 3742,
+    "status_3xx": 4,
+    "status_4xx": 8,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "by_month": {
+    "2026-10": 914,
+    "2026-11": 2840
+   },
+   "first_seen": "2026-10-29",
+   "last_seen": "2026-11-20",
+   "days_seen": 3
+  },
+  {
+   "vendor": "Sogou",
+   "bot": "Sogou web spider",
+   "bot_type": "search_engine",
+   "requests": 3550,
+   "verification": {
+    "verified_in_published_ranges": 0,
+    "outside_published_ranges": 0,
+    "unverified_stale_range_list": 0,
+    "unverified_no_published_ranges": 3550,
+    "unverified_unmapped_bot": 0,
+    "unverified_other": 0
+   },
+   "status": {
+    "status_2xx": 3535,
+    "status_3xx": 0,
+    "status_4xx": 15,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "by_month": {
+    "2026-10": 537,
+    "2026-11": 3013
+   },
+   "first_seen": "2026-10-26",
+   "last_seen": "2026-11-25",
+   "days_seen": 31
+  },
+  {
+   "vendor": "Amazon",
+   "bot": "Amzn-SearchBot",
+   "bot_type": "ai_search",
+   "requests": 3282,
+   "verification": {
+    "verified_in_published_ranges": 3282,
+    "outside_published_ranges": 0,
+    "unverified_stale_range_list": 0,
+    "unverified_no_published_ranges": 0,
+    "unverified_unmapped_bot": 0,
+    "unverified_other": 0
+   },
+   "status": {
+    "status_2xx": 3084,
+    "status_3xx": 0,
+    "status_4xx": 198,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "by_month": {
+    "2026-10": 849,
+    "2026-11": 2433
+   },
+   "first_seen": "2026-10-26",
+   "last_seen": "2026-11-18",
+   "days_seen": 24
+  },
+  {
+   "vendor": "OpenAI",
+   "bot": "ChatGPT-User",
+   "bot_type": "user_triggered",
+   "requests": 3183,
+   "verification": {
+    "verified_in_published_ranges": 3105,
+    "outside_published_ranges": 78,
+    "unverified_stale_range_list": 0,
+    "unverified_no_published_ranges": 0,
+    "unverified_unmapped_bot": 0,
+    "unverified_other": 0
+   },
+   "status": {
+    "status_2xx": 3155,
+    "status_3xx": 4,
+    "status_4xx": 24,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "by_month": {
+    "2026-10": 526,
+    "2026-11": 2657
+   },
+   "first_seen": "2026-10-26",
+   "last_seen": "2026-11-25",
+   "days_seen": 31
+  },
+  {
+   "vendor": "Meta",
+   "bot": "Meta-ExternalAgent",
+   "bot_type": "training",
+   "requests": 2960,
+   "verification": {
+    "verified_in_published_ranges": 0,
+    "outside_published_ranges": 0,
+    "unverified_stale_range_list": 0,
+    "unverified_no_published_ranges": 2960,
+    "unverified_unmapped_bot": 0,
+    "unverified_other": 0
+   },
+   "status": {
+    "status_2xx": 2839,
+    "status_3xx": 13,
+    "status_4xx": 108,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "by_month": {
+    "2026-10": 220,
+    "2026-11": 2740
+   },
+   "first_seen": "2026-10-26",
+   "last_seen": "2026-11-25",
+   "days_seen": 25
+  },
+  {
+   "vendor": "Majestic",
+   "bot": "MJ12bot",
+   "bot_type": "other",
+   "requests": 2433,
+   "verification": {
+    "verified_in_published_ranges": 0,
+    "outside_published_ranges": 0,
+    "unverified_stale_range_list": 0,
+    "unverified_no_published_ranges": 2433,
+    "unverified_unmapped_bot": 0,
+    "unverified_other": 0
+   },
+   "status": {
+    "status_2xx": 2432,
+    "status_3xx": 0,
+    "status_4xx": 1,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "by_month": {
+    "2026-10": 1772,
+    "2026-11": 661
+   },
+   "first_seen": "2026-10-30",
+   "last_seen": "2026-11-23",
+   "days_seen": 19
+  },
+  {
+   "vendor": "Semrush",
+   "bot": "SemrushBot",
+   "bot_type": "other",
+   "requests": 2242,
+   "verification": {
+    "verified_in_published_ranges": 0,
+    "outside_published_ranges": 0,
+    "unverified_stale_range_list": 0,
+    "unverified_no_published_ranges": 2242,
+    "unverified_unmapped_bot": 0,
+    "unverified_other": 0
+   },
+   "status": {
+    "status_2xx": 2203,
+    "status_3xx": 5,
+    "status_4xx": 34,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "by_month": {
+    "2026-10": 520,
+    "2026-11": 1722
+   },
+   "first_seen": "2026-10-26",
+   "last_seen": "2026-11-25",
+   "days_seen": 31
+  },
+  {
+   "vendor": "Exa",
+   "bot": "ExaUser",
+   "bot_type": "user_triggered",
+   "requests": 1247,
+   "verification": {
+    "verified_in_published_ranges": 0,
+    "outside_published_ranges": 0,
+    "unverified_stale_range_list": 0,
+    "unverified_no_published_ranges": 1247,
+    "unverified_unmapped_bot": 0,
+    "unverified_other": 0
+   },
+   "status": {
+    "status_2xx": 1197,
+    "status_3xx": 28,
+    "status_4xx": 22,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "by_month": {
+    "2026-10": 253,
+    "2026-11": 994
+   },
+   "first_seen": "2026-10-26",
+   "last_seen": "2026-11-25",
+   "days_seen": 31
+  },
+  {
+   "vendor": "Google",
+   "bot": "Googlebot-Image",
+   "bot_type": "search_engine",
+   "requests": 910,
+   "verification": {
+    "verified_in_published_ranges": 910,
+    "outside_published_ranges": 0,
+    "unverified_stale_range_list": 0,
+    "unverified_no_published_ranges": 0,
+    "unverified_unmapped_bot": 0,
+    "unverified_other": 0
+   },
+   "status": {
+    "status_2xx": 910,
+    "status_3xx": 0,
+    "status_4xx": 0,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "by_month": {
+    "2026-10": 224,
+    "2026-11": 686
+   },
+   "first_seen": "2026-10-26",
+   "last_seen": "2026-11-25",
+   "days_seen": 31
+  },
+  {
+   "vendor": "Apple",
+   "bot": "Applebot",
+   "bot_type": "search_engine",
+   "requests": 877,
+   "verification": {
+    "verified_in_published_ranges": 877,
+    "outside_published_ranges": 0,
+    "unverified_stale_range_list": 0,
+    "unverified_no_published_ranges": 0,
+    "unverified_unmapped_bot": 0,
+    "unverified_other": 0
+   },
+   "status": {
+    "status_2xx": 849,
+    "status_3xx": 5,
+    "status_4xx": 23,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "by_month": {
+    "2026-10": 57,
+    "2026-11": 820
+   },
+   "first_seen": "2026-10-26",
+   "last_seen": "2026-11-25",
+   "days_seen": 31
+  },
+  {
+   "vendor": "DuckDuckGo",
+   "bot": "DuckDuckBot",
+   "bot_type": "search_engine",
+   "requests": 632,
+   "verification": {
+    "verified_in_published_ranges": 632,
+    "outside_published_ranges": 0,
+    "unverified_stale_range_list": 0,
+    "unverified_no_published_ranges": 0,
+    "unverified_unmapped_bot": 0,
+    "unverified_other": 0
+   },
+   "status": {
+    "status_2xx": 632,
+    "status_3xx": 0,
+    "status_4xx": 0,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "by_month": {
+    "2026-10": 145,
+    "2026-11": 487
+   },
+   "first_seen": "2026-10-26",
+   "last_seen": "2026-11-25",
+   "days_seen": 31
+  },
+  {
+   "vendor": "Common Crawl",
+   "bot": "CCBot",
+   "bot_type": "other",
+   "requests": 381,
+   "verification": {
+    "verified_in_published_ranges": 370,
+    "outside_published_ranges": 11,
+    "unverified_stale_range_list": 0,
+    "unverified_no_published_ranges": 0,
+    "unverified_unmapped_bot": 0,
+    "unverified_other": 0
+   },
+   "status": {
+    "status_2xx": 379,
+    "status_3xx": 2,
+    "status_4xx": 0,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "by_month": {
+    "2026-11": 381
+   },
+   "first_seen": "2026-11-05",
+   "last_seen": "2026-11-20",
+   "days_seen": 5
+  },
+  {
+   "vendor": "Baidu",
+   "bot": "Baiduspider-render",
+   "bot_type": "search_engine",
+   "requests": 337,
+   "verification": {
+    "verified_in_published_ranges": 0,
+    "outside_published_ranges": 0,
+    "unverified_stale_range_list": 0,
+    "unverified_no_published_ranges": 337,
+    "unverified_unmapped_bot": 0,
+    "unverified_other": 0
+   },
+   "status": {
+    "status_2xx": 337,
+    "status_3xx": 0,
+    "status_4xx": 0,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "by_month": {
+    "2026-10": 56,
+    "2026-11": 281
+   },
+   "first_seen": "2026-10-27",
+   "last_seen": "2026-11-24",
+   "days_seen": 16
+  },
+  {
+   "vendor": "Seznam",
+   "bot": "SeznamBot",
+   "bot_type": "search_engine",
+   "requests": 185,
+   "verification": {
+    "verified_in_published_ranges": 0,
+    "outside_published_ranges": 0,
+    "unverified_stale_range_list": 0,
+    "unverified_no_published_ranges": 185,
+    "unverified_unmapped_bot": 0,
+    "unverified_other": 0
+   },
+   "status": {
+    "status_2xx": 185,
+    "status_3xx": 0,
+    "status_4xx": 0,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "by_month": {
+    "2026-10": 33,
+    "2026-11": 152
+   },
+   "first_seen": "2026-10-26",
+   "last_seen": "2026-11-24",
+   "days_seen": 28
+  },
+  {
+   "vendor": "DuckDuckGo",
+   "bot": "DuckAssistBot",
+   "bot_type": "ai_search",
+   "requests": 108,
+   "verification": {
+    "verified_in_published_ranges": 108,
+    "outside_published_ranges": 0,
+    "unverified_stale_range_list": 0,
+    "unverified_no_published_ranges": 0,
+    "unverified_unmapped_bot": 0,
+    "unverified_other": 0
+   },
+   "status": {
+    "status_2xx": 108,
+    "status_3xx": 0,
+    "status_4xx": 0,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "by_month": {
+    "2026-10": 21,
+    "2026-11": 87
+   },
+   "first_seen": "2026-10-26",
+   "last_seen": "2026-11-25",
+   "days_seen": 29
+  },
+  {
+   "vendor": "Qwant",
+   "bot": "Qwantbot",
+   "bot_type": "search_engine",
+   "requests": 74,
+   "verification": {
+    "verified_in_published_ranges": 0,
+    "outside_published_ranges": 0,
+    "unverified_stale_range_list": 0,
+    "unverified_no_published_ranges": 74,
+    "unverified_unmapped_bot": 0,
+    "unverified_other": 0
+   },
+   "status": {
+    "status_2xx": 74,
+    "status_3xx": 0,
+    "status_4xx": 0,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "by_month": {
+    "2026-10": 9,
+    "2026-11": 65
+   },
+   "first_seen": "2026-10-26",
+   "last_seen": "2026-11-25",
+   "days_seen": 25
+  },
+  {
+   "vendor": "Mistral AI",
+   "bot": "MistralAI-User",
+   "bot_type": "user_triggered",
+   "requests": 59,
+   "verification": {
+    "verified_in_published_ranges": 59,
+    "outside_published_ranges": 0,
+    "unverified_stale_range_list": 0,
+    "unverified_no_published_ranges": 0,
+    "unverified_unmapped_bot": 0,
+    "unverified_other": 0
+   },
+   "status": {
+    "status_2xx": 59,
+    "status_3xx": 0,
+    "status_4xx": 0,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "by_month": {
+    "2026-11": 59
+   },
+   "first_seen": "2026-11-08",
+   "last_seen": "2026-11-20",
+   "days_seen": 4
+  },
+  {
+   "vendor": "Baidu",
+   "bot": "Baiduspider",
+   "bot_type": "search_engine",
+   "requests": 32,
+   "verification": {
+    "verified_in_published_ranges": 0,
+    "outside_published_ranges": 0,
+    "unverified_stale_range_list": 0,
+    "unverified_no_published_ranges": 32,
+    "unverified_unmapped_bot": 0,
+    "unverified_other": 0
+   },
+   "status": {
+    "status_2xx": 32,
+    "status_3xx": 0,
+    "status_4xx": 0,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "by_month": {
+    "2026-10": 4,
+    "2026-11": 28
+   },
+   "first_seen": "2026-10-27",
+   "last_seen": "2026-11-24",
+   "days_seen": 16
+  },
+  {
+   "vendor": "Google",
+   "bot": "Storebot-Google",
+   "bot_type": "search_engine",
+   "requests": 18,
+   "verification": {
+    "verified_in_published_ranges": 0,
+    "outside_published_ranges": 18,
+    "unverified_stale_range_list": 0,
+    "unverified_no_published_ranges": 0,
+    "unverified_unmapped_bot": 0,
+    "unverified_other": 0
+   },
+   "status": {
+    "status_2xx": 18,
+    "status_3xx": 0,
+    "status_4xx": 0,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "by_month": {
+    "2026-11": 18
+   },
+   "first_seen": "2026-11-16",
+   "last_seen": "2026-11-16",
+   "days_seen": 1
+  },
+  {
+   "vendor": "Qihoo 360",
+   "bot": "360Spider",
+   "bot_type": "search_engine",
+   "requests": 14,
+   "verification": {
+    "verified_in_published_ranges": 0,
+    "outside_published_ranges": 0,
+    "unverified_stale_range_list": 0,
+    "unverified_no_published_ranges": 14,
+    "unverified_unmapped_bot": 0,
+    "unverified_other": 0
+   },
+   "status": {
+    "status_2xx": 9,
+    "status_3xx": 5,
+    "status_4xx": 0,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "by_month": {
+    "2026-10": 2,
+    "2026-11": 12
+   },
+   "first_seen": "2026-10-29",
+   "last_seen": "2026-11-12",
+   "days_seen": 5
+  },
+  {
+   "vendor": "Anthropic",
+   "bot": "Claude-SearchBot",
+   "bot_type": "ai_search",
+   "requests": 9,
+   "verification": {
+    "verified_in_published_ranges": 0,
+    "outside_published_ranges": 0,
+    "unverified_stale_range_list": 9,
+    "unverified_no_published_ranges": 0,
+    "unverified_unmapped_bot": 0,
+    "unverified_other": 0
+   },
+   "status": {
+    "status_2xx": 9,
+    "status_3xx": 0,
+    "status_4xx": 0,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "by_month": {
+    "2026-11": 9
+   },
+   "first_seen": "2026-11-17",
+   "last_seen": "2026-11-17",
+   "days_seen": 1
+  }
+ ],
+ "daily_by_type": [
+  {
+   "date": "2026-10-26",
+   "coverage": "partial",
+   "ai_search": 428,
+   "training": 106,
+   "user_triggered": 126,
+   "search_engine": 637,
+   "other": 2398
+  },
+  {
+   "date": "2026-10-27",
+   "coverage": "full",
+   "ai_search": 1529,
+   "training": 369,
+   "user_triggered": 415,
+   "search_engine": 1507,
+   "other": 5549
+  },
+  {
+   "date": "2026-10-28",
+   "coverage": "full",
+   "ai_search": 1434,
+   "training": 410,
+   "user_triggered": 386,
+   "search_engine": 1388,
+   "other": 4444
+  },
+  {
+   "date": "2026-10-29",
+   "coverage": "full",
+   "ai_search": 1126,
+   "training": 272,
+   "user_triggered": 329,
+   "search_engine": 1444,
+   "other": 2618
+  },
+  {
+   "date": "2026-10-30",
+   "coverage": "full",
+   "ai_search": 1050,
+   "training": 689,
+   "user_triggered": 366,
+   "search_engine": 1694,
+   "other": 4350
+  },
+  {
+   "date": "2026-10-31",
+   "coverage": "full",
+   "ai_search": 1387,
+   "training": 341,
+   "user_triggered": 328,
+   "search_engine": 2055,
+   "other": 2032
+  },
+  {
+   "date": "2026-11-01",
+   "coverage": "full",
+   "ai_search": 1254,
+   "training": 194,
+   "user_triggered": 317,
+   "search_engine": 1761,
+   "other": 2067
+  },
+  {
+   "date": "2026-11-02",
+   "coverage": "full",
+   "ai_search": 1269,
+   "training": 704,
+   "user_triggered": 298,
+   "search_engine": 1999,
+   "other": 2362
+  },
+  {
+   "date": "2026-11-03",
+   "coverage": "full",
+   "ai_search": 1685,
+   "training": 773,
+   "user_triggered": 363,
+   "search_engine": 1430,
+   "other": 2876
+  },
+  {
+   "date": "2026-11-04",
+   "coverage": "full",
+   "ai_search": 1330,
+   "training": 254,
+   "user_triggered": 260,
+   "search_engine": 1117,
+   "other": 2986
+  },
+  {
+   "date": "2026-11-05",
+   "coverage": "full",
+   "ai_search": 1444,
+   "training": 281,
+   "user_triggered": 344,
+   "search_engine": 5091,
+   "other": 2515
+  },
+  {
+   "date": "2026-11-06",
+   "coverage": "full",
+   "ai_search": 1327,
+   "training": 752,
+   "user_triggered": 327,
+   "search_engine": 1153,
+   "other": 4309
+  },
+  {
+   "date": "2026-11-07",
+   "coverage": "full",
+   "ai_search": 1328,
+   "training": 353,
+   "user_triggered": 326,
+   "search_engine": 1831,
+   "other": 5527
+  },
+  {
+   "date": "2026-11-08",
+   "coverage": "full",
+   "ai_search": 1505,
+   "training": 245,
+   "user_triggered": 250,
+   "search_engine": 1259,
+   "other": 7031
+  },
+  {
+   "date": "2026-11-09",
+   "coverage": "full",
+   "ai_search": 1124,
+   "training": 274,
+   "user_triggered": 319,
+   "search_engine": 1427,
+   "other": 7002
+  },
+  {
+   "date": "2026-11-10",
+   "coverage": "full",
+   "ai_search": 1614,
+   "training": 565,
+   "user_triggered": 339,
+   "search_engine": 1225,
+   "other": 3720
+  },
+  {
+   "date": "2026-11-11",
+   "coverage": "full",
+   "ai_search": 1896,
+   "training": 339,
+   "user_triggered": 372,
+   "search_engine": 1600,
+   "other": 2884
+  },
+  {
+   "date": "2026-11-12",
+   "coverage": "full",
+   "ai_search": 1899,
+   "training": 234,
+   "user_triggered": 273,
+   "search_engine": 1387,
+   "other": 2729
+  },
+  {
+   "date": "2026-11-13",
+   "coverage": "full",
+   "ai_search": 1435,
+   "training": 939,
+   "user_triggered": 275,
+   "search_engine": 1101,
+   "other": 5328
+  },
+  {
+   "date": "2026-11-14",
+   "coverage": "full",
+   "ai_search": 1381,
+   "training": 252,
+   "user_triggered": 191,
+   "search_engine": 945,
+   "other": 4012
+  },
+  {
+   "date": "2026-11-15",
+   "coverage": "full",
+   "ai_search": 908,
+   "training": 302,
+   "user_triggered": 234,
+   "search_engine": 1048,
+   "other": 7358
+  },
+  {
+   "date": "2026-11-16",
+   "coverage": "full",
+   "ai_search": 881,
+   "training": 893,
+   "user_triggered": 206,
+   "search_engine": 1871,
+   "other": 4780
+  },
+  {
+   "date": "2026-11-17",
+   "coverage": "full",
+   "ai_search": 1172,
+   "training": 743,
+   "user_triggered": 278,
+   "search_engine": 1214,
+   "other": 6912
+  },
+  {
+   "date": "2026-11-18",
+   "coverage": "full",
+   "ai_search": 813,
+   "training": 776,
+   "user_triggered": 199,
+   "search_engine": 1205,
+   "other": 2547
+  },
+  {
+   "date": "2026-11-19",
+   "coverage": "full",
+   "ai_search": 894,
+   "training": 1005,
+   "user_triggered": 189,
+   "search_engine": 1542,
+   "other": 3272
+  },
+  {
+   "date": "2026-11-20",
+   "coverage": "full",
+   "ai_search": 955,
+   "training": 834,
+   "user_triggered": 201,
+   "search_engine": 2012,
+   "other": 5568
+  },
+  {
+   "date": "2026-11-21",
+   "coverage": "full",
+   "ai_search": 850,
+   "training": 722,
+   "user_triggered": 432,
+   "search_engine": 3179,
+   "other": 5761
+  },
+  {
+   "date": "2026-11-22",
+   "coverage": "full",
+   "ai_search": 2598,
+   "training": 2372,
+   "user_triggered": 225,
+   "search_engine": 2241,
+   "other": 3976
+  },
+  {
+   "date": "2026-11-23",
+   "coverage": "full",
+   "ai_search": 1443,
+   "training": 1103,
+   "user_triggered": 225,
+   "search_engine": 1807,
+   "other": 5551
+  },
+  {
+   "date": "2026-11-24",
+   "coverage": "full",
+   "ai_search": 1399,
+   "training": 1458,
+   "user_triggered": 309,
+   "search_engine": 1547,
+   "other": 3402
+  },
+  {
+   "date": "2026-11-25",
+   "coverage": "full",
+   "ai_search": 681,
+   "training": 1776,
+   "user_triggered": 277,
+   "search_engine": 1873,
+   "other": 7621
+  }
+ ],
+ "sections": [
+  {
+   "section": "/prompts",
+   "requests": 150282,
+   "ai_requests": 42975,
+   "by_type": {
+    "ai_search": 29621,
+    "training": 8032,
+    "user_triggered": 5322,
+    "search_engine": 22446,
+    "other": 84861
+   },
+   "status": {
+    "status_2xx": 139497,
+    "status_3xx": 926,
+    "status_4xx": 9859,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "ai_status": {
+    "status_2xx": 41285,
+    "status_3xx": 36,
+    "status_4xx": 1654,
+    "status_5xx": 0,
+    "status_other": 0
+   }
+  },
+  {
+   "section": "/_next",
+   "requests": 47744,
+   "ai_requests": 8410,
+   "by_type": {
+    "ai_search": 2242,
+    "training": 6127,
+    "user_triggered": 41,
+    "search_engine": 21363,
+    "other": 17971
+   },
+   "status": {
+    "status_2xx": 47665,
+    "status_3xx": 7,
+    "status_4xx": 72,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "ai_status": {
+    "status_2xx": 8381,
+    "status_3xx": 0,
+    "status_4xx": 29,
+    "status_5xx": 0,
+    "status_other": 0
+   }
+  },
+  {
+   "section": "/blog",
+   "requests": 21529,
+   "ai_requests": 8069,
+   "by_type": {
+    "ai_search": 4799,
+    "training": 2347,
+    "user_triggered": 923,
+    "search_engine": 2116,
+    "other": 11344
+   },
+   "status": {
+    "status_2xx": 21245,
+    "status_3xx": 31,
+    "status_4xx": 253,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "ai_status": {
+    "status_2xx": 7895,
+    "status_3xx": 21,
+    "status_4xx": 153,
+    "status_5xx": 0,
+    "status_other": 0
+   }
+  },
+  {
+   "section": "/news",
+   "requests": 13437,
+   "ai_requests": 3199,
+   "by_type": {
+    "ai_search": 528,
+    "training": 2660,
+    "user_triggered": 11,
+    "search_engine": 1111,
+    "other": 9127
+   },
+   "status": {
+    "status_2xx": 13427,
+    "status_3xx": 0,
+    "status_4xx": 10,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "ai_status": {
+    "status_2xx": 3199,
+    "status_3xx": 0,
+    "status_4xx": 0,
+    "status_5xx": 0,
+    "status_other": 0
+   }
+  },
+  {
+   "section": "/go-global",
+   "requests": 4355,
+   "ai_requests": 1841,
+   "by_type": {
+    "ai_search": 1177,
+    "training": 256,
+    "user_triggered": 408,
+    "search_engine": 337,
+    "other": 2177
+   },
+   "status": {
+    "status_2xx": 4324,
+    "status_3xx": 2,
+    "status_4xx": 29,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "ai_status": {
+    "status_2xx": 1817,
+    "status_3xx": 1,
+    "status_4xx": 23,
+    "status_5xx": 0,
+    "status_other": 0
+   }
+  },
+  {
+   "section": "/robots.txt",
+   "requests": 5900,
+   "ai_requests": 1600,
+   "by_type": {
+    "ai_search": 477,
+    "training": 287,
+    "user_triggered": 836,
+    "search_engine": 1556,
+    "other": 2744
+   },
+   "status": {
+    "status_2xx": 5854,
+    "status_3xx": 46,
+    "status_4xx": 0,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "ai_status": {
+    "status_2xx": 1598,
+    "status_3xx": 2,
+    "status_4xx": 0,
+    "status_5xx": 0,
+    "status_other": 0
+   }
+  },
+  {
+   "section": "/",
+   "requests": 3049,
+   "ai_requests": 1476,
+   "by_type": {
+    "ai_search": 213,
+    "training": 67,
+    "user_triggered": 1196,
+    "search_engine": 880,
+    "other": 693
+   },
+   "status": {
+    "status_2xx": 2967,
+    "status_3xx": 82,
+    "status_4xx": 0,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "ai_status": {
+    "status_2xx": 1473,
+    "status_3xx": 3,
+    "status_4xx": 0,
+    "status_5xx": 0,
+    "status_other": 0
+   }
+  },
+  {
+   "section": "/favicon.ico",
+   "requests": 2911,
+   "ai_requests": 470,
+   "by_type": {
+    "ai_search": 390,
+    "training": 77,
+    "user_triggered": 3,
+    "search_engine": 994,
+    "other": 1447
+   },
+   "status": {
+    "status_2xx": 2911,
+    "status_3xx": 0,
+    "status_4xx": 0,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "ai_status": {
+    "status_2xx": 470,
+    "status_3xx": 0,
+    "status_4xx": 0,
+    "status_5xx": 0,
+    "status_other": 0
+   }
+  },
+  {
+   "section": "/sitemap.xml",
+   "requests": 504,
+   "ai_requests": 259,
+   "by_type": {
+    "ai_search": 1,
+    "training": 248,
+    "user_triggered": 10,
+    "search_engine": 139,
+    "other": 106
+   },
+   "status": {
+    "status_2xx": 503,
+    "status_3xx": 1,
+    "status_4xx": 0,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "ai_status": {
+    "status_2xx": 259,
+    "status_3xx": 0,
+    "status_4xx": 0,
+    "status_5xx": 0,
+    "status_other": 0
+   }
+  },
+  {
+   "section": "/club",
+   "requests": 315,
+   "ai_requests": 139,
+   "by_type": {
+    "ai_search": 92,
+    "training": 19,
+    "user_triggered": 28,
+    "search_engine": 34,
+    "other": 142
+   },
+   "status": {
+    "status_2xx": 315,
+    "status_3xx": 0,
+    "status_4xx": 0,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "ai_status": {
+    "status_2xx": 139,
+    "status_3xx": 0,
+    "status_4xx": 0,
+    "status_5xx": 0,
+    "status_other": 0
+   }
+  },
+  {
+   "section": "/about",
+   "requests": 282,
+   "ai_requests": 119,
+   "by_type": {
+    "ai_search": 75,
+    "training": 14,
+    "user_triggered": 30,
+    "search_engine": 33,
+    "other": 130
+   },
+   "status": {
+    "status_2xx": 277,
+    "status_3xx": 0,
+    "status_4xx": 5,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "ai_status": {
+    "status_2xx": 119,
+    "status_3xx": 0,
+    "status_4xx": 0,
+    "status_5xx": 0,
+    "status_other": 0
+   }
+  },
+  {
+   "section": "/data",
+   "requests": 266,
+   "ai_requests": 102,
+   "by_type": {
+    "ai_search": 77,
+    "training": 23,
+    "user_triggered": 2,
+    "search_engine": 91,
+    "other": 73
+   },
+   "status": {
+    "status_2xx": 266,
+    "status_3xx": 0,
+    "status_4xx": 0,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "ai_status": {
+    "status_2xx": 102,
+    "status_3xx": 0,
+    "status_4xx": 0,
+    "status_5xx": 0,
+    "status_other": 0
+   }
+  },
+  {
+   "section": "/backlink-spam-list",
+   "requests": 190,
+   "ai_requests": 79,
+   "by_type": {
+    "ai_search": 54,
+    "training": 11,
+    "user_triggered": 14,
+    "search_engine": 22,
+    "other": 89
+   },
+   "status": {
+    "status_2xx": 190,
+    "status_3xx": 0,
+    "status_4xx": 0,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "ai_status": {
+    "status_2xx": 79,
+    "status_3xx": 0,
+    "status_4xx": 0,
+    "status_5xx": 0,
+    "status_other": 0
+   }
+  },
+  {
+   "section": "/tools",
+   "requests": 206,
+   "ai_requests": 73,
+   "by_type": {
+    "ai_search": 52,
+    "training": 12,
+    "user_triggered": 9,
+    "search_engine": 39,
+    "other": 94
+   },
+   "status": {
+    "status_2xx": 206,
+    "status_3xx": 0,
+    "status_4xx": 0,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "ai_status": {
+    "status_2xx": 73,
+    "status_3xx": 0,
+    "status_4xx": 0,
+    "status_5xx": 0,
+    "status_other": 0
+   }
+  },
+  {
+   "section": "(other site sections)",
+   "requests": 3135,
+   "ai_requests": 489,
+   "by_type": {
+    "ai_search": 236,
+    "training": 139,
+    "user_triggered": 114,
+    "search_engine": 409,
+    "other": 2237
+   },
+   "status": {
+    "status_2xx": 2489,
+    "status_3xx": 17,
+    "status_4xx": 629,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "ai_status": {
+    "status_2xx": 487,
+    "status_3xx": 0,
+    "status_4xx": 2,
+    "status_5xx": 0,
+    "status_other": 0
+   }
+  },
+  {
+   "section": "(not a site path)",
+   "requests": 320,
+   "ai_requests": 48,
+   "by_type": {
+    "ai_search": 5,
+    "training": 11,
+    "user_triggered": 32,
+    "search_engine": 20,
+    "other": 252
+   },
+   "status": {
+    "status_2xx": 3,
+    "status_3xx": 79,
+    "status_4xx": 238,
+    "status_5xx": 0,
+    "status_other": 0
+   },
+   "ai_status": {
+    "status_2xx": 0,
+    "status_3xx": 26,
+    "status_4xx": 22,
+    "status_5xx": 0,
+    "status_other": 0
+   }
+  }
+ ],
+ "machine_files": [
+  {
+   "file": "/robots.txt",
+   "requests": 5900,
+   "ai_requests": 1600,
+   "status_2xx": 5854,
+   "status_4xx": 0,
+   "by_bot": [
+    [
+     "Unmapped",
+     2041
+    ],
+    [
+     "Googlebot",
+     926
+    ],
+    [
+     "Claude-User",
+     786
+    ],
+    [
+     "SemrushBot",
+     441
+    ],
+    [
+     "YandexBot",
+     284
+    ],
+    [
+     "ClaudeBot",
+     217
+    ],
+    [
+     "OAI-SearchBot",
+     194
+    ],
+    [
+     "PerplexityBot",
+     179
+    ],
+    [
+     "bingbot",
+     178
+    ],
+    [
+     "AhrefsBot",
+     131
+    ],
+    [
+     "MJ12bot",
+     124
+    ],
+    [
+     "Applebot",
+     108
+    ],
+    [
+     "Bytespider",
+     67
+    ],
+    [
+     "DuckAssistBot",
+     64
+    ],
+    [
+     "ExaSearchBot",
+     40
+    ],
+    [
+     "ExaUser",
+     38
+    ],
+    [
+     "SeznamBot",
+     23
+    ],
+    [
+     "Qwantbot",
+     16
+    ],
+    [
+     "Sogou web spider",
+     11
+    ],
+    [
+     "DuckDuckBot",
+     10
+    ],
+    [
+     "ChatGPT-User",
+     8
+    ],
+    [
+     "AhrefsSiteAudit",
+     4
+    ],
+    [
+     "MistralAI-User",
+     4
+    ],
+    [
+     "CCBot",
+     3
+    ],
+    [
+     "Amazonbot",
+     2
+    ],
+    [
+     "GPTBot",
+     1
+    ]
+   ]
+  },
+  {
+   "file": "/sitemap.xml",
+   "requests": 504,
+   "ai_requests": 259,
+   "status_2xx": 503,
+   "status_4xx": 0,
+   "by_bot": [
+    [
+     "ClaudeBot",
+     218
+    ],
+    [
+     "bingbot",
+     94
+    ],
+    [
+     "Unmapped",
+     66
+    ],
+    [
+     "AhrefsBot",
+     32
+    ],
+    [
+     "GPTBot",
+     30
+    ],
+    [
+     "Googlebot",
+     17
+    ],
+    [
+     "SeznamBot",
+     17
+    ],
+    [
+     "ChatGPT-User",
+     8
+    ],
+    [
+     "YandexBot",
+     8
+    ],
+    [
+     "AhrefsSiteAudit",
+     6
+    ],
+    [
+     "Sogou web spider",
+     3
+    ],
+    [
+     "ExaUser",
+     2
+    ],
+    [
+     "CCBot",
+     1
+    ],
+    [
+     "ExaSearchBot",
+     1
+    ],
+    [
+     "SemrushBot",
+     1
+    ]
+   ]
+  },
+  {
+   "file": "/llms.txt",
+   "requests": 88,
+   "ai_requests": 32,
+   "status_2xx": 88,
+   "status_4xx": 0,
+   "by_bot": [
+    [
+     "Unmapped",
+     44
+    ],
+    [
+     "ExaSearchBot",
+     10
+    ],
+    [
+     "ChatGPT-User",
+     8
+    ],
+    [
+     "Googlebot",
+     7
+    ],
+    [
+     "Amazonbot",
+     4
+    ],
+    [
+     "ExaUser",
+     4
+    ],
+    [
+     "AhrefsBot",
+     3
+    ],
+    [
+     "GPTBot",
+     2
+    ],
+    [
+     "OAI-SearchBot",
+     2
+    ],
+    [
+     "ClaudeBot",
+     1
+    ],
+    [
+     "Googlebot-Image",
+     1
+    ],
+    [
+     "PerplexityBot",
+     1
+    ],
+    [
+     "YandexBot",
+     1
+    ]
+   ]
+  },
+  {
+   "file": "/llms-full.txt",
+   "requests": 3,
+   "ai_requests": 0,
+   "status_2xx": 0,
+   "status_4xx": 3,
+   "by_bot": [
+    [
+     "Unmapped",
+     3
+    ]
+   ]
+  },
+  {
+   "file": "/ai.txt",
+   "requests": 23,
+   "ai_requests": 0,
+   "status_2xx": 0,
+   "status_4xx": 23,
+   "by_bot": [
+    [
+     "Unmapped",
+     23
+    ]
+   ]
+  },
+  {
+   "file": "/agents.md",
+   "requests": 1,
+   "ai_requests": 0,
+   "status_2xx": 1,
+   "status_4xx": 0,
+   "by_bot": [
+    [
+     "Unmapped",
+     1
+    ]
+   ]
+  },
+  {
+   "file": "/.well-known/mcp/server-card.json",
+   "requests": 9,
+   "ai_requests": 8,
+   "status_2xx": 6,
+   "status_4xx": 3,
+   "by_bot": [
+    [
+     "ChatGPT-User",
+     8
+    ],
+    [
+     "Unmapped",
+     1
+    ]
+   ]
+  }
+ ],
+ "last_7_days": {
+  "first_day": "2026-11-19",
+  "last_day": "2026-11-25",
+  "bots": [
+   {
+    "vendor": "Unknown",
+    "bot": "Unmapped",
+    "bot_type": "other",
+    "requests": 29929
+   },
+   {
+    "vendor": "Microsoft",
+    "bot": "bingbot",
+    "bot_type": "search_engine",
+    "requests": 6199
+   },
+   {
+    "vendor": "Perplexity",
+    "bot": "PerplexityBot",
+    "bot_type": "ai_search",
+    "requests": 4422
+   },
+   {
+    "vendor": "Google",
+    "bot": "Googlebot",
+    "bot_type": "search_engine",
+    "requests": 4255
+   },
+   {
+    "vendor": "Exa",
+    "bot": "ExaSearchBot",
+    "bot_type": "ai_search",
+    "requests": 3544
+   },
+   {
+    "vendor": "Ahrefs",
+    "bot": "AhrefsSiteAudit",
+    "bot_type": "other",
+    "requests": 2840
+   },
+   {
+    "vendor": "Anthropic",
+    "bot": "ClaudeBot",
+    "bot_type": "training",
+    "requests": 2786
+   },
+   {
+    "vendor": "OpenAI",
+    "bot": "GPTBot",
+    "bot_type": "training",
+    "requests": 2506
+   },
+   {
+    "vendor": "Yandex",
+    "bot": "YandexBot",
+    "bot_type": "search_engine",
+    "requests": 2418
+   },
+   {
+    "vendor": "Meta",
+    "bot": "Meta-ExternalAgent",
+    "bot_type": "training",
+    "requests": 1966
+   },
+   {
+    "vendor": "Ahrefs",
+    "bot": "AhrefsBot",
+    "bot_type": "other",
+    "requests": 1716
+   },
+   {
+    "vendor": "Amazon",
+    "bot": "Amazonbot",
+    "bot_type": "training",
+    "requests": 1150
+   },
+   {
+    "vendor": "OpenAI",
+    "bot": "ChatGPT-User",
+    "bot_type": "user_triggered",
+    "requests": 907
+   },
+   {
+    "vendor": "ByteDance",
+    "bot": "Bytespider",
+    "bot_type": "training",
+    "requests": 862
+   },
+   {
+    "vendor": "OpenAI",
+    "bot": "OAI-SearchBot",
+    "bot_type": "ai_search",
+    "requests": 831
+   },
+   {
+    "vendor": "Sogou",
+    "bot": "Sogou web spider",
+    "bot_type": "search_engine",
+    "requests": 743
+   },
+   {
+    "vendor": "Anthropic",
+    "bot": "Claude-User",
+    "bot_type": "user_triggered",
+    "requests": 711
+   },
+   {
+    "vendor": "Semrush",
+    "bot": "SemrushBot",
+    "bot_type": "other",
+    "requests": 592
+   },
+   {
+    "vendor": "Exa",
+    "bot": "ExaUser",
+    "bot_type": "user_triggered",
+    "requests": 239
+   },
+   {
+    "vendor": "Google",
+    "bot": "Googlebot-Image",
+    "bot_type": "search_engine",
+    "requests": 183
+   },
+   {
+    "vendor": "Apple",
+    "bot": "Applebot",
+    "bot_type": "search_engine",
+    "requests": 166
+   },
+   {
+    "vendor": "DuckDuckGo",
+    "bot": "DuckDuckBot",
+    "bot_type": "search_engine",
+    "requests": 111
+   },
+   {
+    "vendor": "Majestic",
+    "bot": "MJ12bot",
+    "bot_type": "other",
+    "requests": 72
+   },
+   {
+    "vendor": "Baidu",
+    "bot": "Baiduspider-render",
+    "bot_type": "search_engine",
+    "requests": 63
+   },
+   {
+    "vendor": "Seznam",
+    "bot": "SeznamBot",
+    "bot_type": "search_engine",
+    "requests": 32
+   },
+   {
+    "vendor": "Qwant",
+    "bot": "Qwantbot",
+    "bot_type": "search_engine",
+    "requests": 25
+   },
+   {
+    "vendor": "DuckDuckGo",
+    "bot": "DuckAssistBot",
+    "bot_type": "ai_search",
+    "requests": 23
+   },
+   {
+    "vendor": "Baidu",
+    "bot": "Baiduspider",
+    "bot_type": "search_engine",
+    "requests": 6
+   },
+   {
+    "vendor": "Common Crawl",
+    "bot": "CCBot",
+    "bot_type": "other",
+    "requests": 2
+   },
+   {
+    "vendor": "Mistral AI",
+    "bot": "MistralAI-User",
+    "bot_type": "user_triggered",
+    "requests": 1
+   }
+  ]
+ },
+ "citations": {
+  "runs": [
+   {
+    "date": "2026-11-17",
+    "baseline": true,
+    "questions": {
+     "frozen": 20
+    },
+    "brand_questions": 4,
+    "unbranded_questions": 16,
+    "engines": [
+     {
+      "engine": "chatgpt",
+      "label": "ChatGPT",
+      "surface": "web interface (logged out, US English)",
+      "model": "",
+      "samples": 1,
+      "sets": {
+       "frozen": {
+        "site_cited": {
+         "hits": 3,
+         "answers": 20,
+         "pct": 15,
+         "ci_pct": [
+          0,
+          30
+         ]
+        },
+        "page_cited": {
+         "hits": 1,
+         "answers": 20,
+         "pct": 5,
+         "ci_pct": [
+          0,
+          15
+         ]
+        },
+        "named": {
+         "hits": 6,
+         "answers": 20,
+         "pct": 30,
+         "ci_pct": [
+          10,
+          50
+         ]
+        }
+       }
+      },
+      "branded": {
+       "hits": 3,
+       "answers": 4,
+       "pct": 75,
+       "ci_pct": [
+        25,
+        100
+       ]
+      },
+      "unbranded": {
+       "hits": 0,
+       "answers": 16,
+       "pct": 0,
+       "ci_pct": [
+        0,
+        21
+       ]
+      }
+     },
+     {
+      "engine": "gemini_app",
+      "label": "Gemini App",
+      "surface": "web interface (logged out, US English)",
+      "model": "",
+      "samples": 1,
+      "sets": {
+       "frozen": {
+        "site_cited": {
+         "hits": 5,
+         "answers": 20,
+         "pct": 25,
+         "ci_pct": [
+          10,
+          45
+         ]
+        },
+        "page_cited": {
+         "hits": 3,
+         "answers": 20,
+         "pct": 15,
+         "ci_pct": [
+          0,
+          30
+         ]
+        },
+        "named": {
+         "hits": 4,
+         "answers": 20,
+         "pct": 20,
+         "ci_pct": [
+          5,
+          40
+         ]
+        }
+       }
+      },
+      "branded": {
+       "hits": 4,
+       "answers": 4,
+       "pct": 100,
+       "ci_pct": [
+        39,
+        100
+       ]
+      },
+      "unbranded": {
+       "hits": 1,
+       "answers": 16,
+       "pct": 6,
+       "ci_pct": [
+        0,
+        19
+       ]
+      }
+     },
+     {
+      "engine": "perplexity",
+      "label": "Perplexity",
+      "surface": "API with web search",
+      "model": "sonar",
+      "samples": 1,
+      "sets": {
+       "frozen": {
+        "site_cited": {
+         "hits": 12,
+         "answers": 20,
+         "pct": 60,
+         "ci_pct": [
+          40,
+          80
+         ]
+        },
+        "page_cited": {
+         "hits": 12,
+         "answers": 20,
+         "pct": 60,
+         "ci_pct": [
+          40,
+          80
+         ]
+        },
+        "named": {
+         "hits": 4,
+         "answers": 20,
+         "pct": 20,
+         "ci_pct": [
+          5,
+          40
+         ]
+        }
+       }
+      },
+      "branded": {
+       "hits": 4,
+       "answers": 4,
+       "pct": 100,
+       "ci_pct": [
+        39,
+        100
+       ]
+      },
+      "unbranded": {
+       "hits": 8,
+       "answers": 16,
+       "pct": 50,
+       "ci_pct": [
+        25,
+        75
+       ]
+      }
+     },
+     {
+      "engine": "claude",
+      "label": "Claude",
+      "surface": "API with web search",
+      "model": "claude-sonnet-5-5",
+      "samples": 1,
+      "sets": {
+       "frozen": {
+        "site_cited": {
+         "hits": 2,
+         "answers": 8,
+         "pct": 25,
+         "ci_pct": [
+          0,
+          50
+         ]
+        },
+        "page_cited": {
+         "hits": 0,
+         "answers": 8,
+         "pct": 0,
+         "ci_pct": [
+          0,
+          37
+         ]
+        },
+        "named": {
+         "hits": 2,
+         "answers": 8,
+         "pct": 25,
+         "ci_pct": [
+          0,
+          50
+         ]
+        }
+       }
+      },
+      "branded": {
+       "hits": 2,
+       "answers": 2,
+       "pct": 100,
+       "ci_pct": [
+        15,
+        100
+       ]
+      },
+      "unbranded": {
+       "hits": 0,
+       "answers": 6,
+       "pct": 0,
+       "ci_pct": [
+        0,
+        46
+       ]
+      }
+     }
+    ],
+    "ai_referrals": null
+   },
+   {
+    "date": "2026-11-21",
+    "baseline": false,
+    "questions": {
+     "frozen": 21
+    },
+    "brand_questions": 4,
+    "unbranded_questions": 17,
+    "engines": [
+     {
+      "engine": "chatgpt",
+      "label": "ChatGPT",
+      "surface": "web interface (logged out, US English)",
+      "model": "",
+      "samples": 3,
+      "sets": {
+       "frozen": {
+        "site_cited": {
+         "hits": 17,
+         "answers": 63,
+         "pct": 26,
+         "ci_pct": [
+          9,
+          47
+         ]
+        },
+        "page_cited": {
+         "hits": 6,
+         "answers": 63,
+         "pct": 9,
+         "ci_pct": [
+          0,
+          24
+         ]
+        },
+        "named": {
+         "hits": 18,
+         "answers": 63,
+         "pct": 28,
+         "ci_pct": [
+          11,
+          48
+         ]
+        }
+       }
+      },
+      "branded": {
+       "hits": 11,
+       "answers": 12,
+       "pct": 91,
+       "ci_pct": [
+        75,
+        100
+       ]
+      },
+      "unbranded": {
+       "hits": 6,
+       "answers": 51,
+       "pct": 11,
+       "ci_pct": [
+        0,
+        30
+       ]
+      }
+     },
+     {
+      "engine": "gemini_app",
+      "label": "Gemini App",
+      "surface": "web interface (logged out, US English)",
+      "model": "",
+      "samples": 3,
+      "sets": {
+       "frozen": {
+        "site_cited": {
+         "hits": 7,
+         "answers": 56,
+         "pct": 12,
+         "ci_pct": [
+          3,
+          25
+         ]
+        },
+        "page_cited": {
+         "hits": 3,
+         "answers": 56,
+         "pct": 5,
+         "ci_pct": [
+          0,
+          15
+         ]
+        },
+        "named": {
+         "hits": 11,
+         "answers": 56,
+         "pct": 19,
+         "ci_pct": [
+          4,
+          39
+         ]
+        }
+       }
+      },
+      "branded": {
+       "hits": 7,
+       "answers": 12,
+       "pct": 58,
+       "ci_pct": [
+        41,
+        67
+       ]
+      },
+      "unbranded": {
+       "hits": 0,
+       "answers": 44,
+       "pct": 0,
+       "ci_pct": [
+        0,
+        21
+       ]
+      }
+     },
+     {
+      "engine": "ai_mode",
+      "label": "Google AI Mode",
+      "surface": "Google search results page (US English)",
+      "model": "",
+      "samples": 3,
+      "sets": {
+       "frozen": {
+        "site_cited": {
+         "hits": 11,
+         "answers": 59,
+         "pct": 18,
+         "ci_pct": [
+          6,
+          34
+         ]
+        },
+        "page_cited": {
+         "hits": 4,
+         "answers": 59,
+         "pct": 6,
+         "ci_pct": [
+          0,
+          15
+         ]
+        },
+        "named": {
+         "hits": 12,
+         "answers": 59,
+         "pct": 20,
+         "ci_pct": [
+          6,
+          37
+         ]
+        }
+       }
+      },
+      "branded": {
+       "hits": 8,
+       "answers": 9,
+       "pct": 88,
+       "ci_pct": [
+        72,
+        100
+       ]
+      },
+      "unbranded": {
+       "hits": 3,
+       "answers": 50,
+       "pct": 6,
+       "ci_pct": [
+        0,
+        16
+       ]
+      }
+     },
+     {
+      "engine": "perplexity",
+      "label": "Perplexity",
+      "surface": "API with web search",
+      "model": "sonar",
+      "samples": 3,
+      "sets": {
+       "frozen": {
+        "site_cited": {
+         "hits": 51,
+         "answers": 63,
+         "pct": 80,
+         "ci_pct": [
+          66,
+          96
+         ]
+        },
+        "page_cited": {
+         "hits": 48,
+         "answers": 63,
+         "pct": 76,
+         "ci_pct": [
+          57,
+          91
+         ]
+        },
+        "named": {
+         "hits": 26,
+         "answers": 63,
+         "pct": 41,
+         "ci_pct": [
+          22,
+          62
+         ]
+        }
+       }
+      },
+      "branded": {
+       "hits": 12,
+       "answers": 12,
+       "pct": 100,
+       "ci_pct": [
+        39,
+        100
+       ]
+      },
+      "unbranded": {
+       "hits": 39,
+       "answers": 51,
+       "pct": 76,
+       "ci_pct": [
+        52,
+        95
+       ]
+      }
+     },
+     {
+      "engine": "claude",
+      "label": "Claude",
+      "surface": "API with web search",
+      "model": "claude-sonnet-5-5",
+      "samples": 1,
+      "sets": {
+       "frozen": {
+        "site_cited": {
+         "hits": 5,
+         "answers": 21,
+         "pct": 23,
+         "ci_pct": [
+          9,
+          43
+         ]
+        },
+        "page_cited": {
+         "hits": 2,
+         "answers": 21,
+         "pct": 9,
+         "ci_pct": [
+          0,
+          24
+         ]
+        },
+        "named": {
+         "hits": 5,
+         "answers": 21,
+         "pct": 23,
+         "ci_pct": [
+          9,
+          43
+         ]
+        }
+       }
+      },
+      "branded": {
+       "hits": 3,
+       "answers": 4,
+       "pct": 75,
+       "ci_pct": [
+        25,
+        100
+       ]
+      },
+      "unbranded": {
+       "hits": 2,
+       "answers": 17,
+       "pct": 11,
+       "ci_pct": [
+        0,
+        30
+       ]
+      }
+     }
+    ],
+    "ai_referrals": {
+     "window_first_day": "2026-11-14",
+     "window_last_day": "2026-11-20",
+     "sessions": 75,
+     "by_assistant": [
+      [
+       "ChatGPT",
+       55
+      ],
+      [
+       "Claude",
+       20
+      ]
+     ],
+     "user_triggered_fetches": {
+      "Anthropic": 626,
+      "Exa": 186,
+      "Mistral AI": 21,
+      "OpenAI": 665,
+      "Perplexity": 0
+     }
+    }
+   },
+   {
+    "date": "2026-11-23",
+    "baseline": false,
+    "questions": {
+     "frozen": 21,
+     "real": 30
+    },
+    "brand_questions": 4,
+    "unbranded_questions": 47,
+    "engines": [
+     {
+      "engine": "chatgpt",
+      "label": "ChatGPT",
+      "surface": "web interface (logged out, US English)",
+      "model": "",
+      "samples": 3,
+      "sets": {
+       "frozen": {
+        "site_cited": {
+         "hits": 18,
+         "answers": 63,
+         "pct": 28,
+         "ci_pct": [
+          11,
+          48
+         ]
+        },
+        "page_cited": {
+         "hits": 9,
+         "answers": 63,
+         "pct": 14,
+         "ci_pct": [
+          3,
+          29
+         ]
+        },
+        "named": {
+         "hits": 20,
+         "answers": 63,
+         "pct": 31,
+         "ci_pct": [
+          12,
+          51
+         ]
+        }
+       },
+       "real": {
+        "site_cited": {
+         "hits": 0,
+         "answers": 86,
+         "pct": 0,
+         "ci_pct": [
+          0,
+          12
+         ]
+        },
+        "page_cited": {
+         "hits": 0,
+         "answers": 86,
+         "pct": 0,
+         "ci_pct": [
+          0,
+          12
+         ]
+        },
+        "named": {
+         "hits": 0,
+         "answers": 86,
+         "pct": 0,
+         "ci_pct": [
+          0,
+          12
+         ]
+        }
+       }
+      },
+      "branded": {
+       "hits": 10,
+       "answers": 12,
+       "pct": 83,
+       "ci_pct": [
+        50,
+        100
+       ]
+      },
+      "unbranded": {
+       "hits": 8,
+       "answers": 137,
+       "pct": 5,
+       "ci_pct": [
+        0,
+        14
+       ]
+      }
+     },
+     {
+      "engine": "gemini_app",
+      "label": "Gemini App",
+      "surface": "web interface (logged out, US English)",
+      "model": "",
+      "samples": 3,
+      "sets": {
+       "frozen": {
+        "site_cited": {
+         "hits": 7,
+         "answers": 61,
+         "pct": 11,
+         "ci_pct": [
+          1,
+          25
+         ]
+        },
+        "page_cited": {
+         "hits": 5,
+         "answers": 61,
+         "pct": 8,
+         "ci_pct": [
+          0,
+          20
+         ]
+        },
+        "named": {
+         "hits": 12,
+         "answers": 61,
+         "pct": 19,
+         "ci_pct": [
+          5,
+          37
+         ]
+        }
+       },
+       "real": {
+        "site_cited": {
+         "hits": 3,
+         "answers": 81,
+         "pct": 3,
+         "ci_pct": [
+          0,
+          9
+         ]
+        },
+        "page_cited": {
+         "hits": 2,
+         "answers": 81,
+         "pct": 2,
+         "ci_pct": [
+          0,
+          7
+         ]
+        },
+        "named": {
+         "hits": 2,
+         "answers": 81,
+         "pct": 2,
+         "ci_pct": [
+          0,
+          7
+         ]
+        }
+       }
+      },
+      "branded": {
+       "hits": 6,
+       "answers": 12,
+       "pct": 50,
+       "ci_pct": [
+        16,
+        84
+       ]
+      },
+      "unbranded": {
+       "hits": 4,
+       "answers": 130,
+       "pct": 3,
+       "ci_pct": [
+        0,
+        7
+       ]
+      }
+     },
+     {
+      "engine": "ai_mode",
+      "label": "Google AI Mode",
+      "surface": "Google search results page (US English)",
+      "model": "",
+      "samples": 3,
+      "sets": {
+       "frozen": {
+        "site_cited": {
+         "hits": 10,
+         "answers": 61,
+         "pct": 16,
+         "ci_pct": [
+          3,
+          33
+         ]
+        },
+        "page_cited": {
+         "hits": 3,
+         "answers": 61,
+         "pct": 4,
+         "ci_pct": [
+          0,
+          15
+         ]
+        },
+        "named": {
+         "hits": 13,
+         "answers": 61,
+         "pct": 21,
+         "ci_pct": [
+          6,
+          39
+         ]
+        }
+       },
+       "real": {
+        "site_cited": {
+         "hits": 1,
+         "answers": 88,
+         "pct": 1,
+         "ci_pct": [
+          0,
+          4
+         ]
+        },
+        "page_cited": {
+         "hits": 1,
+         "answers": 88,
+         "pct": 1,
+         "ci_pct": [
+          0,
+          4
+         ]
+        },
+        "named": {
+         "hits": 1,
+         "answers": 88,
+         "pct": 1,
+         "ci_pct": [
+          0,
+          4
+         ]
+        }
+       }
+      },
+      "branded": {
+       "hits": 7,
+       "answers": 10,
+       "pct": 70,
+       "ci_pct": [
+        25,
+        100
+       ]
+      },
+      "unbranded": {
+       "hits": 4,
+       "answers": 139,
+       "pct": 2,
+       "ci_pct": [
+        0,
+        9
+       ]
+      }
+     },
+     {
+      "engine": "perplexity",
+      "label": "Perplexity",
+      "surface": "API with web search",
+      "model": "sonar",
+      "samples": 3,
+      "sets": {
+       "frozen": {
+        "site_cited": {
+         "hits": 45,
+         "answers": 63,
+         "pct": 71,
+         "ci_pct": [
+          52,
+          91
+         ]
+        },
+        "page_cited": {
+         "hits": 39,
+         "answers": 63,
+         "pct": 61,
+         "ci_pct": [
+          42,
+          81
+         ]
+        },
+        "named": {
+         "hits": 22,
+         "answers": 63,
+         "pct": 34,
+         "ci_pct": [
+          15,
+          58
+         ]
+        }
+       },
+       "real": {
+        "site_cited": {
+         "hits": 9,
+         "answers": 90,
+         "pct": 10,
+         "ci_pct": [
+          0,
+          24
+         ]
+        },
+        "page_cited": {
+         "hits": 6,
+         "answers": 90,
+         "pct": 6,
+         "ci_pct": [
+          0,
+          17
+         ]
+        },
+        "named": {
+         "hits": 0,
+         "answers": 90,
+         "pct": 0,
+         "ci_pct": [
+          0,
+          12
+         ]
+        }
+       }
+      },
+      "branded": {
+       "hits": 12,
+       "answers": 12,
+       "pct": 100,
+       "ci_pct": [
+        39,
+        100
+       ]
+      },
+      "unbranded": {
+       "hits": 42,
+       "answers": 141,
+       "pct": 29,
+       "ci_pct": [
+        17,
+        45
+       ]
+      }
+     }
+    ],
+    "ai_referrals": {
+     "window_first_day": "2026-11-16",
+     "window_last_day": "2026-11-22",
+     "sessions": 70,
+     "by_assistant": [
+      [
+       "ChatGPT",
+       52
+      ],
+      [
+       "Claude",
+       18
+      ]
+     ],
+     "user_triggered_fetches": {
+      "Anthropic": 606,
+      "Exa": 206,
+      "Mistral AI": 21,
+      "OpenAI": 897,
+      "Perplexity": 0
+     }
+    }
+   }
+  ],
+  "engines": [
+   "ChatGPT",
+   "Gemini App",
+   "Google AI Mode",
+   "Perplexity",
+   "Claude"
+  ],
+  "set_labels": {
+   "frozen": "Fixed set",
+   "real": "Real-world phrasing set",
+   "gsc": "Search Console query set",
+   "grid": "Payments grid set"
+  },
+  "method": "panel_run.py cluster_ci (question-level bootstrap, 2,000 resamples, fixed seed)",
+  "panel_days": {
+   "bots": [
+    "ChatGPT-User",
+    "Claude-User"
+   ],
+   "days": [
+    {
+     "date": "2026-11-17",
+     "ChatGPT-User": 104,
+     "Claude-User": 107
+    },
+    {
+     "date": "2026-11-21",
+     "ChatGPT-User": 322,
+     "Claude-User": 80
+    },
+    {
+     "date": "2026-11-23",
+     "ChatGPT-User": 77,
+     "Claude-User": 93
+    }
+   ],
+   "median_other_days": {
+    "ChatGPT-User": 93,
+    "Claude-User": 160
+   }
+  }
+ },
+ "downloads": [
+  {
+   "file": "ai-crawlers-2026-10.csv",
+   "url": "/data/ai-crawlers/ai-crawlers-2026-10.csv",
+   "format": "text/csv",
+   "month": "2026-10",
+   "partial": true,
+   "rows": 153,
+   "bytes": 11712
+  },
+  {
+   "file": "ai-crawlers-2026-11.csv",
+   "url": "/data/ai-crawlers/ai-crawlers-2026-11.csv",
+   "format": "text/csv",
+   "month": "2026-11",
+   "partial": true,
+   "rows": 657,
+   "bytes": 49389
+  },
+  {
+   "file": "ai-crawlers-latest.json",
+   "url": "/data/ai-crawlers/ai-crawlers-latest.json",
+   "format": "application/json",
+   "month": "",
+   "partial": false,
+   "rows": 0,
+   "bytes": 0
+  }
+ ],
+ "changelog": [
+  {
+   "date": "2026-11-26",
+   "en": "First release. Crawler logs 2026-10-26 to 2026-11-25 (UTC); answer panel runs 2026-11-17 to 2026-11-23.",
+   "zh": "首次发布。爬虫日志 2026-10-26 至 2026-11-25（UTC），引用面板 2026-11-17 至 2026-11-23 的几次。"
+  }
+ ]
+}

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/Link";
 import { withSocialCards } from "@/lib/social";
 import {
   OPEN_DATASETS,
@@ -8,6 +8,7 @@ import {
   WORKING_PAPERS,
 } from "@/lib/research";
 import { findWorkByDoi, PERSON_ID, workNode, type Work } from "@/lib/profiles";
+import { fmt, fmtDay, stats as crawlerStats } from "@/lib/ai-crawler-stats";
 
 const SITE_URL = "https://jasonzhu.ai";
 
@@ -126,6 +127,40 @@ export default async function ResearchPage({
           ))}
         </div>
       </div>
+
+      {/* 持续更新的数据：AI 爬虫与 AI 引用（2026-11-26 起，每月更新） */}
+      <section className="mb-14">
+        <h2 className="text-xl font-bold text-gray-900 mb-5 pb-2 border-b border-gray-200">
+          {isEn ? "Live Data (Updated Monthly)" : "持续更新的数据（每月）"}
+        </h2>
+        <Link
+          href={`/${lang}/research/ai-crawlers`}
+          className="block p-6 rounded-xl border border-gray-200 bg-white shadow-sm hover:border-blue-300 transition-colors"
+        >
+          <div className="flex flex-wrap items-center gap-2 text-xs text-gray-500 mb-2">
+            <span>
+              {isEn
+                ? `${fmtDay(crawlerStats.coverage.first_day, "en")} to ${fmtDay(crawlerStats.coverage.last_day, "en")} (UTC)`
+                : `${crawlerStats.coverage.first_day} 至 ${crawlerStats.coverage.last_day}（UTC）`}
+            </span>
+            <span>·</span>
+            <span>CSV · JSON</span>
+            <span>·</span>
+            <span className="font-mono text-emerald-700">CC-BY-4.0</span>
+          </div>
+          <h3 className="text-lg font-bold text-gray-900 leading-snug mb-2">
+            {isEn
+              ? "How AI crawlers read a real indie site, and how often AI answers cite it"
+              : "AI 爬虫怎么读一个真实的独立站，AI 回答又有多常引用它"}
+          </h3>
+          <p className="text-sm text-gray-600 leading-relaxed">
+            {isEn
+              ? `${fmt(crawlerStats.totals.ai_requests)} AI crawler requests to jasonzhu.ai in ${crawlerStats.coverage.days} days: which crawlers came, what they read, how many could be verified against published IP ranges, and how often ChatGPT, Gemini, Google AI Mode and Perplexity cite the site.`
+              : `${crawlerStats.coverage.days} 天里 jasonzhu.ai 收到 ${fmt(crawlerStats.totals.ai_requests)} 次 AI 爬虫请求：哪些爬虫来过、读了什么、多少能用公布的 IP 段核实身份，以及 ChatGPT、Gemini、Google AI Mode、Perplexity 引用本站的比例。`}
+          </p>
+          <span className="inline-block mt-3 text-sm font-medium text-blue-700">{isEn ? "See the data →" : "看数据 →"}</span>
+        </Link>
+      </section>
 
       {/* Working Papers */}
       <section className="mb-14">
