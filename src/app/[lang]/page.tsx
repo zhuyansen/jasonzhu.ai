@@ -233,6 +233,22 @@ export default async function HomePage({
             </div>
             <span className="text-xs text-gray-400 shrink-0">→</span>
           </a>
+          {/* 研究页（两篇工作论文 + 数据集，挂 Zenodo DOI）以前只从联系页进，爬虫要走 3–5 层；首页直接链过去（2026-11-26） */}
+          <Link
+            href={`/${lang}/research`}
+            className="group md:col-span-2 flex items-center gap-4 bg-white rounded-xl border border-gray-100 p-5 hover:border-gray-200 hover:shadow-sm transition-all"
+          >
+            <span className="text-2xl">📄</span>
+            <div className="flex-1 min-w-0">
+              <h3 className="text-sm font-semibold text-gray-900 group-hover:text-[var(--primary)] transition-colors">
+                {dict.home.researchTitle}
+              </h3>
+              <p className="text-xs text-gray-400 mt-0.5 truncate">
+                {dict.home.researchDesc}
+              </p>
+            </div>
+            <span className="text-xs text-gray-400 shrink-0">→</span>
+          </Link>
         </div>
       </section>
 

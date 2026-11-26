@@ -47,6 +47,13 @@ function xHandle(url?: string) {
   return m ? `@${m[1]}` : undefined;
 }
 
+/** 显示宽度：中日韩文字和全角标点算 2（一个汉字在搜索结果里约占两个英文字母宽），其余算 1 */
+function displayWidth(s: string) {
+  let w = 0;
+  for (const ch of s) w += /[⺀-鿿豈-﫿＀-￯]/.test(ch) ? 2 : 1;
+  return w;
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang, slug } = await params;
   const post = getPostBySlug(slug, lang === "en" ? "en" : "zh");
@@ -60,7 +67,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const fallbackDesc = isEn
     ? `${post.title} — ${byline}, with hands-on analysis and practical takeaways on ${post.category}.`
     : `${post.title} - ${byline}，涵盖${post.category}领域的深度分析与实战经验分享。`;
-  const description = fitDescription(post.excerpt && post.excerpt.length >= 50 ? post.excerpt : fallbackDesc);
+  // 摘要够长就用摘要。中文按显示宽度判断：以前一律要求 50 个字符，55 篇 24–49 字的中文手写摘要被换成了上面的套话（2026-11-26 改）
+  const excerptLongEnough = !!post.excerpt && (isEn ? post.excerpt.length >= 50 : displayWidth(post.excerpt) >= 40);
+  const description = fitDescription(excerptLongEnough ? post.excerpt : fallbackDesc);
 
   const seoTitle = lang === "en" && EN_SEO_TITLES[slug] ? EN_SEO_TITLES[slug] : post.title;
 
