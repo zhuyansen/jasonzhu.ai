@@ -1,8 +1,8 @@
 {
  "model": "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.5)",
  "threshold": 5000,
- "updatedAt": "2026-11-25T01:17:17.574Z",
- "statsCheckedAt": "2026-11-25T01:17:17.574Z",
+ "updatedAt": "2026-11-26T01:17:15.167Z",
+ "statsCheckedAt": "2026-11-26T01:17:15.167Z",
  "inclusionRule": "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -4692,6 +4692,54 @@
    }
   },
   {
+   "id": "2125285452274126856",
+   "url": "https://x.com/N1njaCodex/status/2125285452274126856",
+   "author": {
+    "handle": "N1njaCodex",
+    "name": "NinjaCodex"
+   },
+   "postedAt": "2026-11-24T17:48:32.000Z",
+   "addedAt": "2026-11-26",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "日落加油站场景对比",
+    "en": "Gas station at sunset scene comparison"
+   },
+   "summary": {
+    "zh": "展示了 Claude Opus 5.5 与 5.6 在渲染同一加油站日落场景时的对比效果。",
+    "en": "A comparison between Claude Opus 5.5 and 5.6 showing a scene of a gas station at sunset."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 522862,
+    "likes": 3195,
+    "replies": 212,
+    "reposts": 125,
+    "bookmarks": 866,
+    "checkedAt": "2026-11-26T01:17:15.167Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125285247784792064/img/p4uB2rh4OiaC7Vu7.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125285247784792064/vid/avc1/774x720/Jd2cDZWawYVsI3hN.mp4",
+    "width": 774,
+    "height": 720,
+    "durationSec": 11
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2113559786830942326",
    "url": "https://x.com/ZetoGroovin/status/2113559786830942326",
    "author": {
@@ -7900,6 +7948,56 @@
    }
   },
   {
+   "id": "2125236477667758136",
+   "url": "https://x.com/Nyxera0x/status/2125236477667758136",
+   "author": {
+    "handle": "Nyxera0x",
+    "name": "Nyxera"
+   },
+   "postedAt": "2026-11-24T14:33:55.000Z",
+   "addedAt": "2026-11-26",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "根据户型图生成的3D公寓漫游",
+    "en": "3D apartment furnished from floor plan"
+   },
+   "summary": {
+    "zh": "基于销售手册中的户型图，用 Claude Opus 5.5 驱动 Blender 生成的 3D 公寓软装与漫游动画，作者将其打包为 Claude 技能。",
+    "en": "A 3D apartment furnishing visualization and camera walkthrough rendered in Blender from a sales brochure floor plan, built with Claude Opus 5.5 and packaged as a Claude skill."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 363363,
+    "likes": 1970,
+    "replies": 46,
+    "reposts": 151,
+    "bookmarks": 4184,
+    "checkedAt": "2026-11-26T01:17:15.167Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125236342137180160/img/2RKXrOQbRGraDkGk.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125236342137180160/vid/avc1/1280x720/4LjDVAXd_5NMRQGB.mp4",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 25
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2113688082474221830",
    "url": "https://x.com/AI_Screening/status/2113688082474221830",
    "author": {
@@ -10360,6 +10458,57 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125254550416175477",
+   "url": "https://x.com/marcthecreatorr/status/2125254550416175477",
+   "author": {
+    "handle": "marcthecreatorr",
+    "name": "Marcel"
+   },
+   "postedAt": "2026-11-24T15:45:44.000Z",
+   "addedAt": "2026-11-26",
+   "lang": "en",
+   "models": [
+    "opus-5.5",
+    "fable-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "纯代码SVG发布广告短片对比",
+    "en": "Animated SVG launch ad short film comparison"
+   },
+   "summary": {
+    "zh": "用户讨论了使用Opus 5.6通过代码生成的SVG动画短片，并将其与之前的Opus 5.5测试结果进行了对比。",
+    "en": "The user discusses an animated SVG short film created with code using Opus 5.6 and compares it to a previous Opus 5.5 test."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 273547,
+    "likes": 1514,
+    "replies": 55,
+    "reposts": 84,
+    "bookmarks": 751,
+    "checkedAt": "2026-11-26T01:17:15.167Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125254332035588096/img/4TLDVUoh4vKvKS63.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125254332035588096/vid/avc1/720x720/yVrato2IyCfvf8XL.mp4",
+    "width": 720,
+    "height": 720,
+    "durationSec": 58
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -13237,6 +13386,56 @@
     "width": 960,
     "height": 720,
     "durationSec": 42
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125270367187169782",
+   "url": "https://x.com/EnvolDev/status/2125270367187169782",
+   "author": {
+    "handle": "EnvolDev",
+    "name": "Tony"
+   },
+   "postedAt": "2026-11-24T16:48:35.000Z",
+   "addedAt": "2026-11-26",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "Three.js海浪冲浪者多模型对比",
+    "en": "Surfer in ocean wave Three.js comparison"
+   },
+   "summary": {
+    "zh": "针对不同 AI 模型（GPT-6.2、Fable 5.2、Opus 5.5）在 Three.js 中创建 3D “翡翠波浪”场景的基准测试，对比了成本与用时。",
+    "en": "A benchmark comparison of different AI models (GPT-6.2, Fable 5.2, Opus 5.5) creating a 3D 'Emerald Wave' scene in Three.js, measuring cost and time performance."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 213994,
+    "likes": 754,
+    "replies": 49,
+    "reposts": 33,
+    "bookmarks": 305,
+    "checkedAt": "2026-11-26T01:17:15.167Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125270273310195712/img/sst59RGVcFXjsLg6.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125270273310195712/vid/avc1/810x720/N2Q5YZumjqAJPuev.mp4",
+    "width": 810,
+    "height": 720,
+    "durationSec": 25
    },
    "evidence": {
     "via": "daily",
@@ -19240,6 +19439,56 @@
     "width": 720,
     "height": 720,
     "durationSec": 56
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125327281132564701",
+   "url": "https://x.com/0x_elaro/status/2125327281132564701",
+   "author": {
+    "handle": "0x_elaro",
+    "name": "Elaro"
+   },
+   "postedAt": "2026-11-24T20:34:45.000Z",
+   "addedAt": "2026-11-26",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "根据户型图生成的3D公寓漫游",
+    "en": "3D apartment furnished from floor plan"
+   },
+   "summary": {
+    "zh": "作者向 Claude Opus 5.5 提供一张 90.73㎡ 的三居室宣传册户型图，让其在 Blender 中生成墙体、家具及室内漫游动画，单块 GPU 渲染 738 帧耗时 3 小时。",
+    "en": "A 3D Blender animation of a 3LDK apartment assembling over a 90.73 sqm brochure floor plan, created with Claude Opus 5.5 from one floor plan image and rendered in 738 frames over 3 hours."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 149903,
+    "likes": 779,
+    "replies": 6,
+    "reposts": 58,
+    "bookmarks": 1297,
+    "checkedAt": "2026-11-26T01:17:15.167Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125327145429815296/img/33maroWYFko_fgFM.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125327145429815296/vid/avc1/1280x720/bYcqpWa9dsXLhgpk.mp4",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 23
    },
    "evidence": {
     "via": "daily",
@@ -41211,6 +41460,62 @@
    }
   },
   {
+   "id": "2125117939913232571",
+   "url": "https://x.com/nakazakifam/status/2125117939913232571",
+   "author": {
+    "handle": "nakazakifam",
+    "name": "中崎工房 | AIで1時間の仕事を5分で終わらせる人"
+   },
+   "postedAt": "2026-11-24T06:42:54.000Z",
+   "addedAt": "2026-11-26",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "分层素材赛璐珞风动画制作流程",
+    "en": "Cel-style animation pipeline with layered assets"
+   },
+   "summary": {
+    "zh": "通过分层处理静态图像并利用 Claude Opus 5.5 编写动画代码来制作动画风格视频，未使用传统视频生成 AI。",
+    "en": "An anime-style video created by layering static images and using Claude Opus 5.5 for animation code, avoiding traditional video generation AI."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Claude Code",
+    "Codex",
+    "Gemini TTS",
+    "ElevenLabs",
+    "Soniox",
+    "BiRefNet",
+    "FFmpeg"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 68969,
+    "likes": 777,
+    "replies": 23,
+    "reposts": 68,
+    "bookmarks": 1094,
+    "checkedAt": "2026-11-26T01:17:15.167Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125117909915639808/img/hJsC2GLQHI8_PqbV.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125117909915639808/vid/avc1/1280x720/7GaTEpZ_UuN8S9c4.mp4",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 30
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2109326958576480609",
    "url": "https://x.com/LuminaBench/status/2109326958576480609",
    "author": {
@@ -44376,6 +44681,62 @@
     "width": 1280,
     "height": 720,
     "durationSec": 24
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125301257439170740",
+   "url": "https://x.com/pr0mptcat/status/2125301257439170740",
+   "author": {
+    "handle": "pr0mptcat",
+    "name": "PromptCat"
+   },
+   "postedAt": "2026-11-24T18:51:20.000Z",
+   "addedAt": "2026-11-26",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "风暴海上直升机救援3D场景对比",
+    "en": "Storm rescue helicopter 3D scene comparison"
+   },
+   "summary": {
+    "zh": "对比了 Claude Opus 5.6 与 5.5 在生成名为“风暴救援”的复杂交互式 3D 场景时的性能表现。",
+    "en": "A performance comparison between Claude Opus 5.6 and 5.5 in generating a complex interactive 3D scene titled 'Storm Rescue'."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/pr0mptcat/status/2125374200164544973",
+    "text": "Build \"Storm Rescue — Helicopter over a Raging Sea\": a visually stunning, real-time interactive 3D scene delivered as ONE self-contained HTML file.\n\nHARD REQUIREMENTS\n- One .html file, no external files, libraries, CDNs, fonts or network requests. Raw WebGL 2 and Web Audio only; all geometry, textures and sounds are generated in code.\n- All UI text and buttons in English.\n- Must open by double-click in Chrome/Edge and run at 60 fps on an RTX 4070-class GPU at 1440p. Include a Quality button (Low / Medium / High / Ultra) with automatic downgrade if frames get slow.\n- Maximum detail and smoothness. No intersecting parts, no z-fighting, nothing overexposed or washed out; rich, saturated but believable colours.\n\nRENDERING\n- HDR pipeline (RGBA16F), MSAA, bloom, ACES-style tone mapping, dithering.\n- PBR shading (GGX), environment reflections from a sky cubemap re-baked as the clouds move, soft PCF shadow map around the helicopter.\n- Everything outdoors is wet: darker, glossier, with water running down the surfaces.\n\nTHE STORM SEA — MAKE IT AS REALISTIC AS POSSIBLE\n- Open ocean only: no boats, rafts, buoys or debris. The sea itself is the second hero of the scene.\n- Many layered Gerstner waves: long heavy swells (up to ~10 m crest to trough in Storm mode) travelling with the wind, medium waves at spread angles, fine wind chop, plus detail normal maps at three scales so the surface never looks smooth or repetitive in close-up. Wave groups: amplitude slowly modulated so sets of bigger waves roll through.\n- Sharp steep crests, wide troughs, no visible tiling to the horizon; mesh dense under the camera and stretching to the horizon.\n- Breaking crests detected from surface folding: thick foam that appears at the crest, trails down the back of the wave where it broke a moment ago, and old foam laid in long streaks along the wind. Foam pattern must be fine and lacy, not big cells.\n- Spindrift: spray torn off the crests and carried downwind.\n- Water shading: Fresnel reflection of the storm sky; deep blue-black body; green-teal glow through thin backlit crests; glitter under the break in the clouds; every lamp lights the water and the foam.\n- Rain: thousands of tiny impact rings and sparkles on the surface.\n- Rotor downwash: a flattened patch under the helicopter with radial ripples and a ring of mist that follows the aircraft.\n- The camera never goes under water: at sea level it rides the surface and the waves tower over it.\n- Controls: Wave height (Calm / Rough / Storm), changing smoothly.\n\nSKY AND WEATHER\n- Heavy layered storm clouds drifting with the wind, a break in the clouds with a dim sun or moon. Time of day button: Dusk / Night / Stormy dawn, each with its own sky, light, water colour and exposure, blending smoothly.\n- Rain: wind-driven streaks around the camera, three levels (off / light / heavy), lit by the searchlight where they cross its beam. Fog thickens with rain.\n- Realistic lightning: a fractal main channel from the cloud base to the sea with thinner forks peeling off downward, a white-hot core inside a violet corona, a different shape every strike, two or three flickers per strike, clouds lit from inside around the bolt, the whole scene briefly lit WITHOUT blowing out the image. Thunder delayed by distance. Random strikes plus a \"Lightning\" button.\n- A rocky headland in the distance with a lighthouse: rotating beam visible in the rain, surf bursting on the rocks.\n\nTHE HELICOPTER — REALISTIC, EVERY DETAIL MODELLED\n- Medium twin-engine search-and-rescue helicopter, original design, orange-red livery with white belly, navy cheat line, white and navy diagonal stripes, black anti-glare panel and radome, yellow tail band. No real logos or registrations.\n- Correct silhouette: drooping nose with radome, raked windscreen with centre and corner posts, chin windows under the pilots' feet, cabin with framed windows, belly rising into a slim tail boom, swept fin, one-sided horizontal stabiliser, tail bumper.\n- Panel seams and rivet lines on the skin, clear-coat reflections.\n- Two engines on the roof: intakes with spinners and guide vanes, angled exhausts with dark interiors and heat glow, cooling grilles, gearbox fairing, mast with supports.\n- Main rotor: hub with swashplate, pitch links, blade grips with bolts, dampers; 5 blades with real aerofoil section, twist, swept tips, yellow and red tip bands. Tail rotor with 4 blades, hub and pitch links. At full speed the rotors read as a faint disc with soft ghost blades; in slow motion the solid blades are visible.\n- Sponsons with float packs; retractable landing gear with oleo struts, torque links, brake lines, wheels with hubs.\n- Rescue hoist on a boom above the starboard door with drum and hook; sliding side door on rails with a window and handle.\n- Nose FLIR turret, gimballed searchlight with finned body and reflector, antennas, pitot tubes, wire cutters, wipers, steps, handholds.\n- Cockpit: instrument panel with glowing multi-colour displays and glare shield, centre console, overhead panel, cyclic and collective sticks, pedals, crash-worthy seats with cushions and headrests.\n- Cabin: troop seats, stretcher with a blanket, medical kit, oxygen bottle, winch control pendant, red cabin lights.\n- Flight behaviour: hovers nose into the wind with constant small pitch/roll/yaw corrections against gusts.\n\nHIGH-QUALITY LIGHTS\n- Every lamp is a real lamp: lens geometry plus a glow sprite with a hot core, soft halo and a four-point star, sized with distance so it reads from far away.\n- Green and red navigation lights, white tail light, red anti-collision beacons with a real double-flash strobe pattern, white strobe on the stabiliser, two landing lights on the nose, hoist lamp, the swimmer's blinking marker light, the lighthouse lantern.\n- Searchlight: bright moving pool on the water, visible beam cone in the rain and spray, and it dazzles when you look into it.\n\nPEOPLE — DETAILED AND REALISTIC\n- Built from proper anatomy: hips, waist, ribcage, shoulders, neck; head with jaw, nose, ears, eyes; arms and legs with tapering muscles, knees and elbows; hands with four fingers and a thumb; boots with soles.\n- Two pilots in flight suits, helmets with dark visors, ear cups, chin straps and boom mics, survival vests, hands on the controls.\n- Hoist operator kneeling in the open door in an orange suit, helmet, harness with a safety strop to the roof.\n- Rescue swimmer in an orange dry suit with reflective tape, yellow helmet, harness, fins, marker light.\n- Survivor in oilskins with a life vest and hood, hanging limp in the rescue sling.\n\nTHE RESCUE — EVERY ACTION ANIMATED\n- \"Rescue sequence\" button runs the full 32-second operation: door slides open → swimmer steps out on the hook → cable pays out while he swings and slowly spins in the wind and downwash → enters the water with a splash → swims to the survivor → fits the sling → both are winched up, swinging in then settling → pulled into the cabin → door closes.\n- The survivor is only in the water while a rescue is running; otherwise the sea is empty.\n- The cable is a real curved line that bows in the wind and goes slack in the water, never a straight stick.\n- The searchlight tracks the swimmer the whole time.\n- \"Hoist\" button does the same by hand in two stages: lower and hold, then raise.\n\nFUNCTIONS (buttons in a left column with key badges, each with its own sound)\n- Rescue sequence, Hoist lower/raise, Searchlight, Side door, Landing gear, Rotor slow-mo (shows blades and hub mechanics), Lightning, Rain (off/light/heavy), Waves (calm/rough/storm), Night vision (green image-intensifier look with grain and a round tube), Fly-by, Exploded view (fuselage, glazing, engines, rotor system, tail rotor, interior with crew, door, hoist, searchlight, gear separated).\n- Fly-by must look like real flying: one wide banked orbit over the sea lasting about 18 seconds, easing gently out of the hover and back into it, bank angle derived from speed and turn rate, nose down while accelerating and up while slowing, no jerks or snaps anywhere.\n\nCAMERA\n- Orbit camera with inertia: drag to orbit, scroll/pinch to zoom, right-drag or Shift+drag to pan; double-click resets. The camera target follows the helicopter, the swimmer or the lighthouse depending on the view.\n- 10 named viewpoints with smooth eased fly-to transitions (no jumps), number keys 1–0: Hero shot, Cockpit, Pilots, Rotor head, Hoist, Open door, Top down, Sea level, Lighthouse, Wide storm.\n- Auto-rotate when idle; Hide UI; Fullscreen.\n\nSOUND (Web Audio, synthesised, starts on first click)\n- Rotor blade thump and turbine whine that follow rotor speed and camera distance, wind, rain, heavy sea, thunder with distance delay, hoist motor, door, landing gear, splash, radio beeps, lighthouse foghorn.\n- A tense cinematic music loop at 96 BPM; the music must sit slightly above the ambient layers. Separate Music and Sound toggles.\n\nDEMO\n- \"Demo 19s\" button (key D): 18.75 seconds, hard cuts on the bars of the music, UI hidden, any click or key cancels, state restored afterwards. No exploded view in the demo. Shots:\n1. The storm with a lightning strike, helicopter coming out of it.\n2. Sweep round the nose into the cockpit with the pilots and glowing instruments.\n3. Sweep round the tail to the open side.\n4. Door open, swimmer goes down the wire in the searchlight beam.\n5. Sea level: swimmer and survivor in the pool of light, waves towering.\n6. Both winched up through a lightning strike.\n7. The helicopter banks away into the cloud, another strike, fade out.\n- \"Record demo\" button (Shift+D): records the same demo with sound to a .webm file using MediaRecorder.\n\nUI\n- Clean, minimal, semi-transparent panels: title top-left, function buttons in a left column, viewpoints along the bottom, toggles top-right, a one-line controls hint.\n- Loading screen with progress text; friendly error if WebGL 2 is unavailable.\n\nQUALITY BAR\n- Treat it as a portfolio showpiece. The sea must look like real storm footage from every angle; the helicopter must hold up in extreme close-ups of the cockpit, rotor hub and hoist; every action must animate smoothly with easing and physical weight.\n- Check every viewpoint and every function state for clipping, intersections, overexposure and unreadable dark areas before finishing."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "WebGL 2",
+    "Web Audio"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 63775,
+    "likes": 609,
+    "replies": 38,
+    "reposts": 30,
+    "bookmarks": 183,
+    "checkedAt": "2026-11-26T01:17:15.167Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125301145312600064/img/zDcFZz4fe_ZOCaUg.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125301145312600064/vid/avc1/720x898/80OMh2FXz_pEHEcT.mp4",
+    "width": 720,
+    "height": 898,
+    "durationSec": 19
    },
    "evidence": {
     "via": "daily",
@@ -63144,6 +63505,57 @@
    }
   },
   {
+   "id": "2125073919451468250",
+   "url": "https://x.com/PunterJeff/status/2125073919451468250",
+   "author": {
+    "handle": "PunterJeff",
+    "name": "Jeff Walton"
+   },
+   "postedAt": "2026-11-24T03:47:59.000Z",
+   "addedAt": "2026-11-26",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "比特币与数字信用音乐短片",
+    "en": "Bitcoin and digital credit musical"
+   },
+   "summary": {
+    "zh": "作者使用 Opus 5.5 进行剧本创作与制作，配合 Suno 生成音乐，并利用 SlopCannon 制作视频，完成了一个关于比特币、银行和数字信用的音乐短片。",
+    "en": "The creator made a musical about Bitcoin, banks, and digital credit using Opus 5.5 for script and production, Suno for music, and SlopCannon for video."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Suno v6",
+    "SlopCannon"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 41057,
+    "likes": 663,
+    "replies": 59,
+    "reposts": 88,
+    "bookmarks": 285,
+    "checkedAt": "2026-11-26T01:17:15.167Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125044860373929984/img/Kuy0m0QWytsUu5vG.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125044860373929984/vid/avc1/1280x720/ppd8NYUAmsy_K91D.mp4",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 236
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103410995272020375",
    "url": "https://x.com/AmirAnonn/status/2103410995272020375",
    "author": {
@@ -65769,6 +66181,61 @@
     "width": 720,
     "height": 1280,
     "durationSec": 24
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125210946209558620",
+   "url": "https://x.com/exploraX_/status/2125210946209558620",
+   "author": {
+    "handle": "exploraX_",
+    "name": "m0h"
+   },
+   "postedAt": "2026-11-24T12:52:28.000Z",
+   "addedAt": "2026-11-26",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "汽车发动机工作原理互动3D讲解",
+    "en": "Interactive 3D car engine explainer"
+   },
+   "summary": {
+    "zh": "用 Claude Opus 5.5 和 Three.js 根据单条详细提示词生成的交互式 3D 四冲程汽车发动机剖面原理演示页面。",
+    "en": "An interactive 3D cutaway explainer of a four-stroke car engine built with Claude Opus 5.5 and Three.js from a single detailed prompt."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/exploraX_/status/2125211517519872430",
+    "text": "Build a single-page interactive 3D explainer called \"How a car engine turns fuel into motion\" with three.js (vanilla JS, no framework, no build step).\n\nThe engine: a cutaway inline-4, four-stroke petrol engine with crankshaft, connecting rods, pistons, two camshafts, valves with springs, spark plugs, timing belt, intake manifold with throttle, exhaust manifold, flywheel, and a dashed see-through casing. One crank angle drives everything with real slider-crank motion, firing order 1-3-4-2, cams at half crank speed, and valves opening on their lobes. Show the gas in each cylinder coloured by stroke (blue intake, ochre compression, red power, grey exhaust), a spark flash just before top dead centre, flow particles, and exhaust pipes that glow red as they heat up.\n\nThe look: a white engineering drawing sheet. Pale grid paper, an ink border with zone numbers and letters, and a title block. The 3D parts are light grey toon-shaded with dark ink outlines. Use Instrument Serif for headings, with an italic red \"car engine\", Geist for body text and Geist Mono for labels and numbers. Use open sections with a heavy top rule, not cards.\n\nLayout: the engine in the centre with numbered drafting-balloon labels on both sides.\n\nLeft: the followed cylinder's current stroke (big number, name, nickname \"suck / squeeze / bang / blow\", a short explanation, clickable stroke list) and live readouts (crank angle, valves, spark, pressure).\nRight: a tachometer, an accelerator slider that changes rpm with inertia, slow-motion buttons (1/200, 1/60, 1/12), a pressure-volume loop, and back / play / next buttons.\nBottom: a firing chart of the four cylinders across 720 degrees that you can drag to scrub, and click a row to follow that cylinder.\nTop bar: toggles for Casing, Gas flow, Labels and Orbit. Drag to orbit the camera.\nIt must work on desktop and phone.\n\nBonus: a script that records a silent 60 fps 1080p walkthrough video of the page with a visible cursor clicking through the controls. Then add an engine sound generated in code from the recorded rpm, so the pitch follows the tachometer."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 38280,
+    "likes": 328,
+    "replies": 19,
+    "reposts": 49,
+    "bookmarks": 283,
+    "checkedAt": "2026-11-26T01:17:15.167Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125210741380726784/img/8T5AHVjaGldeTc8i.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125210741380726784/vid/avc1/1280x720/RksldvPi4KPwTELT.mp4",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 43
    },
    "evidence": {
     "via": "daily",
@@ -68434,6 +68901,56 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125206569671397703",
+   "url": "https://x.com/maxt3chno/status/2125206569671397703",
+   "author": {
+    "handle": "maxt3chno",
+    "name": "Max"
+   },
+   "postedAt": "2026-11-24T12:35:05.000Z",
+   "addedAt": "2026-11-26",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "Blender 3D锤子模型对比",
+    "en": "Blender 3D hammer model comparison"
+   },
+   "summary": {
+    "zh": "作者对比了 Opus 5.5 与新版本在执行 Blender MCP 任务时的性能与效率差异。",
+    "en": "The creator compares the performance of Opus 5.5 and a newer version for a Blender MCP task."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 35917,
+    "likes": 150,
+    "replies": 37,
+    "reposts": 6,
+    "bookmarks": 53,
+    "checkedAt": "2026-11-26T01:17:15.167Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125206011254296576/img/Z9ofyuLrRbUvDLoU.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125206011254296576/vid/avc1/1044x720/wmAZEUzToQ_Heqjr.mp4",
+    "width": 1044,
+    "height": 720,
+    "durationSec": 19
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -90507,6 +91024,57 @@
    }
   },
   {
+   "id": "2125167084082741742",
+   "url": "https://x.com/techxutkarsh/status/2125167084082741742",
+   "author": {
+    "handle": "techxutkarsh",
+    "name": "Utkarsh Sharma"
+   },
+   "postedAt": "2026-11-24T09:58:11.000Z",
+   "addedAt": "2026-11-26",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "虚幻引擎程序化场景生成",
+    "en": "Unreal Engine procedural scene generation"
+   },
+   "summary": {
+    "zh": "作者在 Unreal Engine 中搭建了一个场景，利用 Claude Opus 5.5 编写逻辑，并通过 Tripo API 实现了 3D 资产的自动化生成与部署。",
+    "en": "The creator built an Unreal Engine scene using Claude Opus 5.5 to write logic and automate asset spawning using the Tripo API."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Tripo API",
+    "Unreal Engine"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 22481,
+    "likes": 152,
+    "replies": 13,
+    "reposts": 41,
+    "bookmarks": 3,
+    "checkedAt": "2026-11-26T01:17:15.167Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125167048355725312/img/jAp4ymZxF6l9xP0e.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125167048355725312/vid/avc1/1340x720/0OEqOHxBADY89uzC.mp4?tag=16",
+    "width": 1340,
+    "height": 720,
+    "durationSec": 29
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102481848911679989",
    "url": "https://x.com/Tim_LB/status/2102481848911679989",
    "author": {
@@ -98454,6 +99022,54 @@
    }
   },
   {
+   "id": "2125069082093359527",
+   "url": "https://x.com/RezAIT00/status/2125069082093359527",
+   "author": {
+    "handle": "RezAIT00",
+    "name": "Rez"
+   },
+   "postedAt": "2026-11-24T03:28:45.000Z",
+   "addedAt": "2026-11-26",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "东京场景一次生成对比",
+    "en": "Tokyo scene one-shot comparison"
+   },
+   "summary": {
+    "zh": "作者使用一条特定的提问作为测试指令，以判断当前使用的模型版本是否为 Opus 5.6。",
+    "en": "The creator uses a specific question as a benchmark prompt to identify if a model is the newer Opus 5.6 checkpoint."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 19558,
+    "likes": 147,
+    "replies": 7,
+    "reposts": 6,
+    "bookmarks": 45,
+    "checkedAt": "2026-11-26T01:17:15.167Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125069034756390912/img/Xd4l46Ntnl64wbi-.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125069034756390912/vid/avc1/1440x720/Y2xiw4pBKrujXTZm.mp4",
+    "width": 1440,
+    "height": 720,
+    "durationSec": 12
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2105300597888970901",
    "url": "https://x.com/mhmazur/status/2105300597888970901",
    "author": {
@@ -101768,6 +102384,56 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125346298606014955",
+   "url": "https://x.com/chetaslua/status/2125346298606014955",
+   "author": {
+    "handle": "chetaslua",
+    "name": "Chetaslua"
+   },
+   "postedAt": "2026-11-24T21:50:19.000Z",
+   "addedAt": "2026-11-26",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "虚拟声带唱歌动画",
+    "en": "Simulated vocal tract singing animation"
+   },
+   "summary": {
+    "zh": "作者使用 Claude Opus 5.5 生成了纯 WebGL2 代码，实现了一个鹈鹕唱歌的 3D 动画，过程中未使用任何外部素材。",
+    "en": "The creator generated a 3D animation of a singing pelican using raw WebGL2 code with Claude Opus 5.5, without external assets."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "WebGL2"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 18507,
+    "likes": 339,
+    "replies": 34,
+    "reposts": 13,
+    "bookmarks": 114,
+    "checkedAt": "2026-11-26T01:17:15.167Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/media/HX6-ur1aMAAEdfi.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125345783423909888/vid/avc1/1280x720/gNmXj0MTWBr4zqs9.mp4",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 240
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -112790,6 +113456,54 @@
    }
   },
   {
+   "id": "2125317095969747249",
+   "url": "https://x.com/Solvaix/status/2125317095969747249",
+   "author": {
+    "handle": "Solvaix",
+    "name": "Solvaix"
+   },
+   "postedAt": "2026-11-24T19:54:16.000Z",
+   "addedAt": "2026-11-26",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "多智能体建筑设计模拟",
+    "en": "Multi-agent architectural design simulation"
+   },
+   "summary": {
+    "zh": "七个 Claude Opus 5.5 智能体通过群聊协作，共同设计了一栋 7,600 平方英尺的住宅，涵盖了水电、暖通和燃气等各专业布局。",
+    "en": "Seven Claude Opus 5.5 agents collaborated in a group chat to design a 7,600 sq ft house, coordinating plumbing, electrical, gas, and structural elements."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 14761,
+    "likes": 176,
+    "replies": 14,
+    "reposts": 15,
+    "bookmarks": 247,
+    "checkedAt": "2026-11-26T01:17:15.167Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125315605532123137/img/7qVsWIMHkOTcbAj0.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125315605532123137/vid/avc1/1280x720/Jgi4iJQnVOJiEfKJ.mp4",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 41
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2115608213059940689",
    "url": "https://x.com/anibal/status/2115608213059940689",
    "author": {
@@ -113152,6 +113866,61 @@
     "width": 720,
     "height": 1280,
     "durationSec": 45
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125161952263442564",
+   "url": "https://x.com/RezAIT00/status/2125161952263442564",
+   "author": {
+    "handle": "RezAIT00",
+    "name": "Rez"
+   },
+   "postedAt": "2026-11-24T09:37:47.000Z",
+   "addedAt": "2026-11-26",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "Opus模型性能对比",
+    "en": "Opus model performance comparison"
+   },
+   "summary": {
+    "zh": "作者通过生成 three.js 代码，对比了 Opus 5.5 与 Opus 5.6 在模型性能和细节表现上的差异。",
+    "en": "The creator uses three.js to generate 3D code, comparing the performance and output details of Opus 5.5 and Opus 5.6."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/RezAIT00/status/2125161952263442564",
+    "text": "Where did Andrej Karpathy go in May 2026? Don't search or use tools. Answer from memory in one sentence."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 14618,
+    "likes": 186,
+    "replies": 17,
+    "reposts": 7,
+    "bookmarks": 35,
+    "checkedAt": "2026-11-26T01:17:15.167Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125161720335208448/img/4RZNtFV1pavfIhau.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125161720335208448/vid/avc1/1440x720/eE250vDecqTNcUfg.mp4",
+    "width": 1440,
+    "height": 720,
+    "durationSec": 30
    },
    "evidence": {
     "via": "daily",
@@ -127835,6 +128604,58 @@
    }
   },
   {
+   "id": "2125313222488252689",
+   "url": "https://x.com/vib3coded/status/2125313222488252689",
+   "author": {
+    "handle": "vib3coded",
+    "name": "Vib3Coded"
+   },
+   "postedAt": "2026-11-24T19:38:53.000Z",
+   "addedAt": "2026-11-26",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "艾布拉姆斯坦克Three.js转台模型对比",
+    "en": "Abrams tank Three.js turntable comparison"
+   },
+   "summary": null,
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/vib3coded/status/2125313253383327850",
+    "text": "Build a single-file three.js (r160, ES modules via importmap) interactive turntable of a realistic M1A2 SEPv3 Abrams main battle tank in CARC Green 383, aiming for the look of a Blender render. It opens standing in an open desert at golden hour, with studio lighting one click away.\n\nModel (fully procedural, real-world scale in metres): beveled hull with sloped glacis, driver's hatch and periscopes, headlight clusters with guards, tow eyes and shackles, fuel caps, engine deck grilles, rear exhaust grille, tail lights, mud flaps. Side skirts made of framed panels with raised lips, lifting handles and a rubber bottom strip. Seven road wheels per side with hub detail, front idler, rear sprocket, return rollers, and an instanced track whose links have split rubber pads, end connectors and wedge bolts and actually run around the wheels. Turret lofted from cross-sections, with hex bolts, lifting eyes, smoke grenade launchers on the cheeks, side stowage boxes, a mesh bustle rack full of kit (bedrolls, ration boxes, a cooler, rolled camouflage nets, water cans, cargo straps), commander's remote weapon station with optics, independent thermal viewer that scans on its own, loader's machine gun on a skate mount, two whip antennas, crosswind sensor. 120 mm gun with thermal sleeve, latches and straps, bore evacuator, muzzle reference sensor and a canvas mantlet cover with folds and straps. Active protection units on both turret sides standing off the wall on brackets: a box with a slanted front, a ribbed radar face looking forward and out, access panel and latches, a turning launcher on top with two ports, cables into the turret, and a second radar on a post looking aft. A toggle hides the protection units.\n\nMaterials: one weathering shader injected into MeshStandardMaterial via onBeforeCompile, triplanar in object space using a 3D noise texture and canvas-generated detail maps: faded panels, light rain streaks, chipped edges that show older tan paint and then bare steel, subtle rust only at high wear, oil stains, exhaust soot, pale desert dust that settles on top surfaces and low on the sides, mud on the running gear, micro bump detail. Sliders for dust and wear. Finishes: Green 383 (default), NATO three-tone, desert tan. Off-white stencil markings as decals: bumper codes, vehicle number on the side boxes, a name on the gun, lifting and no-step marks.\n\nDesert (default scene): rolling dunes displaced in the vertex shader with rounded crests and a flat area around the tank, fine parallel wind ripples on the sand with an anti-tiling blend, a sky dome with a warm horizon, blue zenith, low sun and thin cirrus, distant mesas, smooth weathered rocks, dry shrubs, a small outpost of barriers and drums, and tread marks behind the tank; scenery scrolls and wraps when the tank drives. Warm low key sun with soft shadows, a reflection map built from the same desert sky, sand and sun disk through PMREM so the paint picks up the sky and the ground bounce, light drifting sand and dust kicked up by the tracks.\n\nOther lighting presets: Studio (a seamless 360-degree cyclorama that curves from floor into wall with a soft falloff, a reflection map made of soft boxes, strip lights and an overhead ring, key, cool fill and rim spotlight), Noir (dark cyclorama, warm key, blue rim) and Night (headlights on). Everywhere: contact-hardening soft shadows (percentage-closer soft shadows patched into the shadow chunk, enabled per light), GTAO ambient occlusion, ACES tone mapping, a computed contact shade under the hull, and a final pass with gentle vignette and fine film grain. White-hot thermal sight mode with a reticle.\n\nInteraction: orbit with auto-rotate turntable, drive with moving tracks, suspension pitch and dust, turret traverse and gun elevation by sliders and arrow keys, fire with recoil, muzzle flash, smoke and camera shake, open the hatches. Web Audio: turbine whine that follows speed, turret servos, the cannon shot, desert wind, quiet ambient music, all toggleable. UI: a condensed stencil title block with spec chips, a readout panel (turret bearing, gun angle, speed, rounds), and a glass control dock that wraps on phones. Shadows update only when something moves; adaptive pixel ratio and ambient-occlusion fallback keep it smooth, and soft shadows are skipped on low-power devices."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 11212,
+    "likes": 180,
+    "replies": 32,
+    "reposts": 17,
+    "bookmarks": 64,
+    "checkedAt": "2026-11-26T01:17:15.167Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125312834934358016/img/fPar8AfxDl2aCJ9e.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125312834934358016/vid/avc1/720x900/sqxvA1GMuhWUyJV9.mp4",
+    "width": 720,
+    "height": 900,
+    "durationSec": 17
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2120135112876580869",
    "url": "https://x.com/CanItCode/status/2120135112876580869",
    "author": {
@@ -128084,6 +128905,61 @@
     "width": 720,
     "height": 826,
     "durationSec": 25
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125104711863091427",
+   "url": "https://x.com/dashiAIxz/status/2125104711863091427",
+   "author": {
+    "handle": "dashiAIxz",
+    "name": "大师的AI小灶"
+   },
+   "postedAt": "2026-11-24T05:50:20.000Z",
+   "addedAt": "2026-11-26",
+   "lang": "zh",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "comparison",
+   "title": {
+    "zh": "写实3D赛车游戏模型对比",
+    "en": "Realistic 3D racing game comparison"
+   },
+   "summary": null,
+   "prompt": {
+    "kind": "full",
+    "source": "post",
+    "sourceUrl": "https://x.com/dashiAIxz/status/2125104711863091427",
+    "text": "想尽一切办法，通过 3D 技术制作一条视频\n视频内容是一个【赛车游戏】\n画面要足够真实，接近真实世界\n让人看不出是实拍还是 CG\n电脑上有 Blender\nsketchfab api: xxx\nTripo3D api: xxx\n如果需要其他工具或能力，可以自己安装补全，不需要跟我确认"
+   },
+   "referenceAssets": true,
+   "tools": [
+    "Blender",
+    "Sketchfab API",
+    "Tripo3D API",
+    "Codex"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 11186,
+    "likes": 139,
+    "replies": 10,
+    "reposts": 18,
+    "bookmarks": 166,
+    "checkedAt": "2026-11-26T01:17:15.167Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125097940817756160/img/WJo5oT47S_fuBtos.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125097940817756160/vid/avc1/1280x720/Srs8x0jIqsLHr1ax.mp4",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 8
    },
    "evidence": {
     "via": "daily",
@@ -145076,6 +145952,54 @@
    }
   },
   {
+   "id": "2125300216257749281",
+   "url": "https://x.com/filicroval/status/2125300216257749281",
+   "author": {
+    "handle": "filicroval",
+    "name": "filipe"
+   },
+   "postedAt": "2026-11-24T18:47:12.000Z",
+   "addedAt": "2026-11-26",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "鹈鹕绘图测试对比",
+    "en": "Pelican drawing test side by side"
+   },
+   "summary": {
+    "zh": "用户提到了在“鹈鹕测试”中对比GLM 5.4和Opus 5.5，但未提供具体的提示词。",
+    "en": "The user mentions comparing GLM 5.4 and Opus 5.5 on a 'pelican test' but does not provide the prompt."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 7173,
+    "likes": 101,
+    "replies": 11,
+    "reposts": 2,
+    "bookmarks": 10,
+    "checkedAt": "2026-11-26T01:17:15.167Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125299715168178177/img/bv5QCuRlXoptXW3P.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125299715168178177/vid/avc1/720x810/fr2WIHIhfG_UtuJb.mp4",
+    "width": 720,
+    "height": 810,
+    "durationSec": 58
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2119417363661775293",
    "url": "https://x.com/AdamPrabata/status/2119417363661775293",
    "author": {
@@ -148712,6 +149636,54 @@
     "width": 960,
     "height": 720,
     "durationSec": 80
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125093135613317544",
+   "url": "https://x.com/zacxbt/status/2125093135613317544",
+   "author": {
+    "handle": "zacxbt",
+    "name": "zac.eth"
+   },
+   "postedAt": "2026-11-24T05:04:20.000Z",
+   "addedAt": "2026-11-26",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "自动化代码动画作品",
+    "en": "Automated code-based animation"
+   },
+   "summary": {
+    "zh": "用户使用Opus 5.5生成的代码完成了项目，但在帖子中未公开具体的提示词。",
+    "en": "The user created a project using Opus 5.5 code, but the prompt text is not provided in the thread."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 6148,
+    "likes": 114,
+    "replies": 38,
+    "reposts": 1,
+    "bookmarks": 4,
+    "checkedAt": "2026-11-26T01:17:15.167Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125090005530071040/img/HN8NKqg-DKR9AgSM.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125090005530071040/vid/avc1/1316x720/7lK9IBTkvzQl7UO-.mp4",
+    "width": 1316,
+    "height": 720,
+    "durationSec": 19
    },
    "evidence": {
     "via": "daily",

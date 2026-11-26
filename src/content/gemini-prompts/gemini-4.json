@@ -3,8 +3,8 @@
  "model": "Gemini 4",
  "released": "2026-10-14T00:00:00Z",
  "threshold": 5000,
- "updatedAt": "2026-11-25T01:25:51.759Z",
- "statsCheckedAt": "2026-11-25T01:21:18.586Z",
+ "updatedAt": "2026-11-26T01:32:48.464Z",
+ "statsCheckedAt": "2026-11-26T01:28:05.076Z",
  "inclusionRule": "Original post by the creator, media attached, >= 5000 views on that post, and the creator's own text says Gemini 4 (Argon, Carbon, Hydrogen, Krypton, Pro...) built it in code; same-prompt comparisons against other models included. Seeded on 2026-11-16 from the Claude 5.5 library. Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -237,6 +237,66 @@
      "width": 1920,
      "height": 1080,
      "durationSec": 10
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125206633722601572",
+   "url": "https://x.com/_philschmid/status/2125206633722601572",
+   "author": {
+    "handle": "_philschmid",
+    "name": "Philipp Schmid"
+   },
+   "postedAt": "2026-11-24T12:35:20.000Z",
+   "addedAt": "2026-11-26",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "ui",
+   "title": {
+    "zh": "多洛米蒂高山野花网页长文",
+    "en": "Dolomites alpine wildflowers web essay"
+   },
+   "summary": {
+    "zh": "作者团队在 Antigravity 中为 Gemini 4 Neon 开发了一项实验性前端技能，并结合 Nano Banana 生成配图，制作了关于多洛米蒂高山野花的网页长文。",
+    "en": "Built an experimental frontend skill for Gemini 4 Neon in Antigravity, using Nano Banana for visuals, to generate a web essay on Dolomites alpine wildflowers."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/_philschmid/status/2125206633722601572",
+    "text": "Create an illustrated long-form field web essay on alpine wildflowers of the Dolomites with elevation band notes."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Nano Banana",
+    "Antigravity"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 353747,
+    "likes": 3215,
+    "replies": 134,
+    "reposts": 163,
+    "bookmarks": 4116,
+    "checkedAt": "2026-11-26T01:28:05.076Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2125205913275346944/vid/avc1/1280x720/xQ1iLjk2ItlFAKLM.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2125205913275346944/img/_8axEVROEzXsFz6j.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 18
     }
    ],
    "evidence": {
@@ -1555,6 +1615,66 @@
      "width": 1920,
      "height": 1080,
      "durationSec": 47
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125157673448677586",
+   "url": "https://x.com/thebuggeddev/status/2125157673448677586",
+   "author": {
+    "handle": "thebuggeddev",
+    "name": "The Bugged Dev"
+   },
+   "postedAt": "2026-11-24T09:20:47.000Z",
+   "addedAt": "2026-11-26",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "mechanics",
+   "title": {
+    "zh": "装甲怪兽卡车工程模拟",
+    "en": "Armored monster truck engineering simulation"
+   },
+   "summary": {
+    "zh": "作者让 Gemini 4 Neon 根据单张参考图，使用 bpy 和自定义 TSL 着色器生成具备驾驶物理效果与机械系统的 3D 装甲怪物卡车 TITAN 6×6。",
+    "en": "Gemini 4 Neon generated a 3D armored monster truck (TITAN 6×6) from one reference image using bpy and TSL shaders with driving physics and mechanical systems."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/thebuggeddev/status/2125157673448677586",
+    "text": "build TITAN 6×6, a futuristic armored monster truck from a single reference image, with actual driving physics and working mechanical systems"
+   },
+   "referenceAssets": true,
+   "tools": [
+    "bpy",
+    "TSL"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 121996,
+    "likes": 2073,
+    "replies": 130,
+    "reposts": 154,
+    "bookmarks": 1257,
+    "checkedAt": "2026-11-26T01:28:05.076Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2125153220083486720/vid/avc1/1106x720/v6cjmuADVYl7eoyq.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2125153220083486720/img/y7vmxafueonDK5B6.jpg",
+     "width": 2828,
+     "height": 1840,
+     "durationSec": 124
     }
    ],
    "evidence": {
@@ -5071,6 +5191,58 @@
    }
   },
   {
+   "id": "2125304389539975350",
+   "url": "https://x.com/WinterArc2125/status/2125304389539975350",
+   "author": {
+    "handle": "WinterArc2125",
+    "name": "Winter"
+   },
+   "postedAt": "2026-11-24T19:03:47.000Z",
+   "addedAt": "2026-11-26",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "motion",
+   "title": {
+    "zh": "速写风格动漫打斗场景动画",
+    "en": "Sketch-style anime fight scene animation"
+   },
+   "summary": {
+    "zh": "Gemini 4 Neon 根据参考图片制作了一段《进击的巨人》战斗场景动画。",
+    "en": "Gemini 4 Neon created an animated fight scene from Attack on Titan based on a reference image."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 51571,
+    "likes": 748,
+    "replies": 43,
+    "reposts": 25,
+    "bookmarks": 435,
+    "checkedAt": "2026-11-26T01:28:05.076Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2125304285256695808/vid/avc1/640x360/ouaHZy7KO-IUsJ9W.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2125304285256695808/img/iAYflZBxm5LdZq-g.jpg",
+     "width": 640,
+     "height": 360,
+     "durationSec": 10
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2120956699951628637",
    "url": "https://x.com/marcthecreatorr/status/2120956699951628637",
    "author": {
@@ -5235,6 +5407,60 @@
      "width": 1080,
      "height": 1168,
      "durationSec": 24
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125051736406770029",
+   "url": "https://x.com/DanielleFong/status/2125051736406770029",
+   "author": {
+    "handle": "DanielleFong",
+    "name": "Danielle Fong 🔆"
+   },
+   "postedAt": "2026-11-24T02:19:50.000Z",
+   "addedAt": "2026-11-26",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "sim",
+   "title": {
+    "zh": "旧金山水文模型",
+    "en": "San Francisco hydrological model"
+   },
+   "summary": {
+    "zh": "作者通过整合 @solve_sf 的实时数据和一个提供的代码库，构建了一个旧金山水文模型，用于监测下水道堵塞情况。",
+    "en": "The creator built a hydrological model for San Francisco to monitor drain clogging by integrating live @solve_sf data and a provided repo."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "SmallSF"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 50270,
+    "likes": 764,
+    "replies": 51,
+    "reposts": 60,
+    "bookmarks": 504,
+    "checkedAt": "2026-11-26T01:28:05.076Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2125051339587948544/vid/avc1/720x748/MscHbDMKCiOzJLjr.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2125051339587948544/img/hKfQM8eoWIJuiXzo.jpg",
+     "width": 1944,
+     "height": 2022,
+     "durationSec": 83
     }
    ],
    "evidence": {
@@ -5861,6 +6087,112 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125269462853271952",
+   "url": "https://x.com/vipinxtwt/status/2125269462853271952",
+   "author": {
+    "handle": "vipinxtwt",
+    "name": "Vipin"
+   },
+   "postedAt": "2026-11-24T16:45:00.000Z",
+   "addedAt": "2026-11-26",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "motion",
+   "title": {
+    "zh": "关于喜欢人类之处的动画视频",
+    "en": "Animated video on what it likes about humanity"
+   },
+   "summary": {
+    "zh": "作者要求 Gemini 4 Neon 制作一个关于它如何看待人类优点的视频，模型在 17 分钟内完成了任务。",
+    "en": "The creator asked Gemini 4 Neon to make a video about what it likes about humanity, which it completed in 17 minutes."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Antigravity"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 45779,
+    "likes": 709,
+    "replies": 55,
+    "reposts": 43,
+    "bookmarks": 407,
+    "checkedAt": "2026-11-26T01:28:05.076Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2125251346412761088/vid/avc1/1280x720/qnmT7vRs_TVqVKJg.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2125251346412761088/img/1uVjBxSJby9J7awc.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 95
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125225607546179893",
+   "url": "https://x.com/SkyzeeReal/status/2125225607546179893",
+   "author": {
+    "handle": "SkyzeeReal",
+    "name": "Skyzee 然"
+   },
+   "postedAt": "2026-11-24T13:50:44.000Z",
+   "addedAt": "2026-11-26",
+   "lang": "in",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "motion",
+   "title": {
+    "zh": "3D 动画测试",
+    "en": "3D animation test"
+   },
+   "summary": {
+    "zh": "作者探讨了 Gemini 4 Neon 在 3D 动画生成方面的表现，认为 Claude 可能更易用，而 Gemini 需要更详细的提示词。",
+    "en": "The creator discusses the performance of Gemini 4 Neon in 3D animation generation, suggesting that Claude may be easier to use while Gemini requires more detailed prompting."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Claude"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 45325,
+    "likes": 243,
+    "replies": 28,
+    "reposts": 9,
+    "bookmarks": 230,
+    "checkedAt": "2026-11-26T01:28:05.076Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HX5ROUYbMAARrWk.jpg",
+     "width": 1918,
+     "height": 1003
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -7382,6 +7714,58 @@
      "width": 1080,
      "height": 1350,
      "durationSec": 31
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125076324536762753",
+   "url": "https://x.com/huang18825/status/2125076324536762753",
+   "author": {
+    "handle": "huang18825",
+    "name": "渣渣渣渣渣"
+   },
+   "postedAt": "2026-11-24T03:57:32.000Z",
+   "addedAt": "2026-11-26",
+   "lang": "zh",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "game",
+   "title": {
+    "zh": "折纸风平台跳跃游戏",
+    "en": "Origami-style platformer game"
+   },
+   "summary": {
+    "zh": "作者使用 Gemini 4 Neon 制作了一款涂鸦折纸风格的平台跳跃游戏，模型不仅构思了故事主题，还完成了分镜设计、游戏录屏及后期剪辑工作。",
+    "en": "The user created a paper-craft style platformer game using Gemini 4 Neon, noting its capability to generate creative themes and handle full production including recording and editing."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 35062,
+    "likes": 402,
+    "replies": 100,
+    "reposts": 34,
+    "bookmarks": 227,
+    "checkedAt": "2026-11-26T01:28:05.076Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2125076150204743680/vid/avc1/1280x720/m_h-sXX-LljfwU-t.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2125076150204743680/img/mIYj4lcMvBKtzGFG.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 36
     }
    ],
    "evidence": {
@@ -9999,6 +10383,186 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125272904233525667",
+   "url": "https://x.com/TheCoderBtw/status/2125272904233525667",
+   "author": {
+    "handle": "TheCoderBtw",
+    "name": "TheCoderBTW"
+   },
+   "postedAt": "2026-11-24T16:58:40.000Z",
+   "addedAt": "2026-11-26",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [
+    "claude"
+   ],
+   "category": "ui",
+   "title": {
+    "zh": "类异星工厂风格的智能体工作画布",
+    "en": "Factorio-style agent workspace canvas"
+   },
+   "summary": {
+    "zh": "作者通过改进界面设计工具（/reframe），为名为 Acan 的 AI 智能体软件工厂项目构建了类似《异星工厂》风格的 2D 交互界面。",
+    "en": "The creator refined the UI design for an AI agent software factory called 'Acan' / 'World Canvas', utilizing /reframe skills to achieve a specific 'Factorio-like' aesthetic."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Factorio",
+    "Meta AI",
+    "Factory",
+    "pstack",
+    "Fable 5.2",
+    "SQLite"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 23002,
+    "likes": 336,
+    "replies": 12,
+    "reposts": 8,
+    "bookmarks": 682,
+    "checkedAt": "2026-11-26T01:28:05.076Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HX57sywasAAg6A0.jpg",
+     "width": 1895,
+     "height": 949
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HX57vQMakAAfajY.jpg",
+     "width": 1896,
+     "height": 949
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HX58DLDbMAA_M-9.jpg",
+     "width": 1910,
+     "height": 960
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125330110806888928",
+   "url": "https://x.com/blueemi99/status/2125330110806888928",
+   "author": {
+    "handle": "blueemi99",
+    "name": "bluedev"
+   },
+   "postedAt": "2026-11-24T20:45:59.000Z",
+   "addedAt": "2026-11-26",
+   "lang": "en",
+   "kind": "comparison",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [
+    "claude"
+   ],
+   "category": "ui",
+   "title": {
+    "zh": "使用与不使用设计技能的落地页对比",
+    "en": "Landing page with and without a design skill"
+   },
+   "summary": {
+    "zh": "作者对比了 Gemini 4 Neon 在使用与不使用新前端技能时的表现，认为其设计水准远不及 Opus 5.5 和 Fable 5.2。",
+    "en": "The creator compares Gemini 4 Neon's performance with and without a new frontend skill for landing page creation, finding the design quality inferior to Opus 5.5 and Fable 5.2."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Opus 5.5",
+    "Fable 5.2"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 22864,
+    "likes": 199,
+    "replies": 18,
+    "reposts": 4,
+    "bookmarks": 101,
+    "checkedAt": "2026-11-26T01:28:05.076Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2125329842845392896/vid/avc1/2152x720/6TZJEDVhMPJcNmVT.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2125329842845392896/img/-Rlmlig1XFacNye-.jpg",
+     "width": 2560,
+     "height": 856,
+     "durationSec": 21
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125137350590374110",
+   "url": "https://x.com/369Serena/status/2125137350590374110",
+   "author": {
+    "handle": "369Serena",
+    "name": "Serena 木瓜"
+   },
+   "postedAt": "2026-11-24T08:00:02.000Z",
+   "addedAt": "2026-11-26",
+   "lang": "zh",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "motion",
+   "title": {
+    "zh": "新闻纪实风格短片《黄仁勋归来》",
+    "en": "News documentary short on Jensen Huang"
+   },
+   "summary": {
+    "zh": "作者利用 Gemini 4 Neon 制作了关于黄仁勋的新闻纪录片，模型自主完成了调查、配图、配乐及配音工作。",
+    "en": "The creator used Gemini 4 Neon to produce a news documentary video about Jensen Huang, relying on the model for research, media sourcing, and editing."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 22529,
+    "likes": 162,
+    "replies": 29,
+    "reposts": 11,
+    "bookmarks": 143,
+    "checkedAt": "2026-11-26T01:28:05.076Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2125096994582794241/vid/avc1/1280x720/PHDfKjc5blFLsRV2.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2125096994582794241/img/5V-fON1AEB-CQLvP.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 86
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
