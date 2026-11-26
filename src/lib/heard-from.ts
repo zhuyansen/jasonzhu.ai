@@ -15,6 +15,10 @@ export const HEARD_FROM_OPTIONS = [
   { value: "perplexity", zh: "Perplexity", en: "Perplexity" },
   { value: "gemini", zh: "Gemini 或 Google AI 模式", en: "Gemini or Google AI Mode" },
   { value: "claude", zh: "Claude", en: "Claude" },
+  // 2026-11-26 加：中文用户常用的三家单列，免得都落进「其他 AI 助手」分不出来
+  { value: "doubao", zh: "豆包", en: "Doubao" },
+  { value: "kimi", zh: "Kimi", en: "Kimi" },
+  { value: "deepseek", zh: "DeepSeek", en: "DeepSeek" },
   { value: "other_ai", zh: "其他 AI 助手", en: "Another AI assistant" },
   { value: "google", zh: "Google 搜索", en: "Google Search" },
   { value: "bing", zh: "Bing 搜索", en: "Bing Search" },

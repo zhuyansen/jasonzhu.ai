@@ -414,27 +414,31 @@ def previous(day: str) -> Path | None:
 # ───────────── 对照实验 ─────────────
 
 def experiment_table(now: list[dict], base: list[dict], exp: dict, caliber: str = "site_cited") -> list[dict]:
-    """处理组和对照组各自的回答命中率，这次和基线各一个；净变化 = 处理组的变化 − 对照组的变化。"""
+    """处理组和对照组各自的回答命中数（命中, 有效），这次和基线各一个，照原样给出来方便核对；
+    净变化用 net_change：只算两期都有有效回答的题，每题同权（2026-11-26 起，和「要差多少才测得出」同一口径）。"""
     treated, control = set(exp["treated"]), set(exp["control"])
     out = []
     for e in engines_in(now):
         tn, cn, tb, cb = rate(now, e, caliber, treated), rate(now, e, caliber, control), rate(base, e, caliber, treated), rate(base, e, caliber, control)
-        net = None
-        if all(x[1] for x in (tn, cn, tb, cb)):
-            net = (tn[0] / tn[1] - tb[0] / tb[1]) - (cn[0] / cn[1] - cb[0] / cb[1])
+        pool = treated | control
+        net = net_change(per_question(now, e, caliber, pool), per_question(base, e, caliber, pool), treated, control)
         out.append({"engine": e, "treated_now": tn, "control_now": cn, "treated_base": tb, "control_base": cb, "net": net})
     return out
 
 
 def net_change(now_q: dict, base_q: dict, treated: set, control: set) -> float | None:
-    """和 experiment_table 的净变化同一个算法，输入是 per_question 的结果；有一组没有有效回答就是 None。"""
-    def r(per: dict, ids: set) -> float | None:
-        n = sum(per[q][1] for q in ids if q in per)
-        return sum(per[q][0] for q in ids if q in per) / n if n else None
-    tn, tb, cn, cb = r(now_q, treated), r(base_q, treated), r(now_q, control), r(base_q, control)
-    if None in (tn, tb, cn, cb):
+    """净变化 = 处理组每题变化的平均 − 对照组每题变化的平均。输入是 per_question 的结果。
+    只算两期都有有效回答的题，每题同权，和 mde() 的口径一样（2026-11-26 起；以前按回答合并、也不要求两期都有，
+    回答多的题权重大）。有一组没有这样的题就是 None。"""
+    def change(ids: set) -> float | None:
+        both = sorted(q for q in ids if q in now_q and q in base_q and now_q[q][1] and base_q[q][1])
+        if not both:
+            return None
+        return sum(now_q[q][0] / now_q[q][1] - base_q[q][0] / base_q[q][1] for q in both) / len(both)
+    t, c = change(treated), change(control)
+    if t is None or c is None:
         return None
-    return (tn - tb) - (cn - cb)
+    return t - c
 
 
 def perm_test(now: list[dict], base: list[dict], exp: dict, engine: str, caliber: str = "site_cited") -> float | None:
@@ -1065,6 +1069,12 @@ def selftest() -> int:
     row = experiment_table(now, base, {"treated": ["t1", "t2"], "control": ["c1", "c2"]})[0]
     assert row["treated_now"] == (2, 2) and row["control_base"] == (1, 2) and abs(row["net"] - 0.5) < 1e-9
     assert experiment_table(now, [mk("t1", True)], {"treated": ["t1", "t2"], "control": ["c1", "c2"]})[0]["net"] is None
+    # 净变化只算两期都有回答的题、每题同权（2026-11-26 起，和 mde 同口径）：t1 这期问了 3 次，按回答合并时它占 3/4，
+    # 每题同权时只占一半；t3 只有这一期有回答，不算
+    now2 = [mk("t1", True)] * 3 + [mk("t2", False), mk("t3", True), mk("c1", True), mk("c2", False)]
+    base2 = [mk("t1", False), mk("t2", False), mk("c1", True), mk("c2", False)]
+    n2 = experiment_table(now2, base2, {"treated": ["t1", "t2", "t3"], "control": ["c1", "c2"]})[0]["net"]
+    assert abs(n2 - 0.5) < 1e-9, n2        # 处理组每题变化 (+1, 0) 平均 +0.5，对照组 0；以前按回答合并、连 t3 一起算是 4/5 − 0/2 = 0.8
     # 按题算的区间：一题 3 次全中、一题 3 次全不中，重抽只会得到 0、50%、100%，区间就是 0–100%
     two = [mk("q1", True)] * 3 + [mk("q2", False)] * 3
     assert per_question(two, "chatgpt", "site_cited") == {"q1": (3, 3), "q2": (0, 3)}

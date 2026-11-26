@@ -11,10 +11,11 @@ CONVERSIONS = {"newsletter_subscribe": "邮件订阅", "club_apply_submit": "GoS
                "github_click": "去 GitHub", "referral_click": "点推荐或合作链接", "payment_picker_result": "收款选择器出结果",
                "ai_readiness_scan": "AI 网站急诊室查站", "wechat_copy": "复制微信号", "contact_click": "点邮箱或 X 私信"}  # 和 src/lib/track.ts 的 TrackEvent 对应
 # 「从哪知道这里」的值 → 日报里的叫法，和 src/lib/heard-from.ts 的 HEARD_FROM_OPTIONS 对应；"" 是没填
-HEARD_FROM_LABELS = {"chatgpt": "ChatGPT", "perplexity": "Perplexity", "gemini": "Gemini/AI 模式", "claude": "Claude", "other_ai": "其他 AI",
+HEARD_FROM_LABELS = {"chatgpt": "ChatGPT", "perplexity": "Perplexity", "gemini": "Gemini/AI 模式", "claude": "Claude",
+                     "doubao": "豆包", "kimi": "Kimi", "deepseek": "DeepSeek", "other_ai": "其他 AI",
                      "google": "Google 搜索", "bing": "Bing 搜索", "x": "X", "youtube": "YouTube", "xiaohongshu": "小红书", "wechat": "微信",
                      "friend": "朋友推荐", "other": "其他", "": "没填"}
-AI_HEARD_FROM = {"chatgpt", "perplexity", "gemini", "claude", "other_ai"}
+AI_HEARD_FROM = {"chatgpt", "perplexity", "gemini", "claude", "doubao", "kimi", "deepseek", "other_ai"}
 DIM_KEYS = {"timestamp", "requestPath", "referrerHostname", "country", "deviceType", "osName", "browserName", "route", "environment",
             "utmSource", "utmMedium", "utmCampaign", "utmContent", "utmTerm", "projectId", "projectName", "requestHostname", "visitorId", "flags"}
 
