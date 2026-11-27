@@ -674,6 +674,70 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
         </div>
       </header>
 
+      <section id="remote-company-payments" className="mb-10 rounded-2xl border border-blue-100 bg-blue-50/40 p-5">
+        <h2 className="text-base font-semibold text-gray-900 mb-2">
+          {isZh
+            ? "一句话结论：远程注册美国 / 英国公司并开收款账户（核实于 2026-11-27）"
+            : "In short: registering a US or UK company and opening payment accounts remotely (checked 2026-11-27)"}
+        </h2>
+        <p className="text-sm text-gray-800 leading-relaxed mb-4">
+          {isZh ? (
+            <>
+              非美国、非英国居民全程<strong>无需签证、SSN 或本人到场</strong>，即可远程注册公司并开立收款账户。美国最简路径是注册 <strong>怀俄明州 LLC</strong>（注册代理 + Articles of Organization + 免费 IRS Form SS-4 申请 EIN），拿到 EIN 后申请 <strong>Mercury / Wise Business + Stripe</strong>；英国最快自助路径是在 <strong>Companies House</strong> 在线注册 <strong>UK Ltd</strong>（2026 年 2 月 1 日起电子官费 £100，通常 24 小时内出证），配 <strong>Wise Business + Stripe UK</strong>。若暂无海外公司，可先用个人身份接 MoR（Paddle、Dodo Payments、Waffo Pancake）跑通首单。
+            </>
+          ) : (
+            <>
+              Non-US and non-UK founders can register a company and open payment accounts <strong>100% remotely — no visa, SSN, or local visit required</strong>. The simplest US path is a <strong>Wyoming LLC</strong> (registered agent + Articles of Organization + free IRS Form SS-4 EIN), then <strong>Mercury or Wise Business + Stripe US</strong>. The fastest DIY UK path is a <strong>UK Ltd</strong> filed online at <strong>Companies House</strong> (£100 digital fee from 1 Feb 2026, usually approved within 24 hours), then <strong>Wise Business + Stripe UK</strong>.
+            </>
+          )}
+        </p>
+
+        <div className="overflow-x-auto rounded-xl border border-blue-100 bg-white">
+          <table className="min-w-full text-left border-collapse text-xs sm:text-sm">
+            <thead className="bg-gray-50 border-b border-gray-200 text-gray-600">
+              <tr>
+                <th scope="col" className="py-2 pl-3 pr-2 font-semibold whitespace-nowrap">{isZh ? "市场" : "Market"}</th>
+                <th scope="col" className="py-2 px-2 font-semibold whitespace-nowrap">{isZh ? "常用主体" : "Entity"}</th>
+                <th scope="col" className="py-2 px-2 font-semibold">{isZh ? "到场 / 本地地址" : "Visit / local address"}</th>
+                <th scope="col" className="py-2 px-2 font-semibold">{isZh ? "必需要件" : "Required items"}</th>
+                <th scope="col" className="py-2 px-2 font-semibold">{isZh ? "税号" : "Tax ID"}</th>
+                <th scope="col" className="py-2 px-2 font-semibold">{isZh ? "远程收款账户" : "Remote payment accounts"}</th>
+                <th scope="col" className="py-2 pl-2 pr-3 font-semibold">{isZh ? "官方费用与时效" : "Official fee & timeline"}</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-100 text-gray-700 align-top">
+              <tr>
+                <th scope="row" className="py-2.5 pl-3 pr-2 font-semibold text-gray-900 whitespace-nowrap">{isZh ? "美国" : "US"}</th>
+                <td className="py-2.5 px-2 whitespace-nowrap">Wyoming LLC<br /><span className="text-xs text-gray-500">{isZh ? "（融资选 Delaware C-Corp）" : "(Delaware C-Corp for VC)"}</span></td>
+                <td className="py-2.5 px-2">{isZh ? "全程远程，无需签证或 SSN；需美国注册代理地址" : "100% remote, no visa/SSN; US registered agent address required"}</td>
+                <td className="py-2.5 px-2">{isZh ? "注册代理 + Articles of Organization + Operating Agreement" : "Registered agent + Articles of Organization + Operating Agreement"}</td>
+                <td className="py-2.5 px-2">
+                  {isZh ? "IRS Form SS-4 免费申请 EIN（传真/电话，无需 SSN/ITIN）" : "EIN via IRS Form SS-4 ($0 direct by fax/phone, no SSN/ITIN)"}{" "}
+                  <a href="https://www.irs.gov/forms-pubs/about-form-ss-4" {...OUT} className="text-blue-600 hover:underline">IRS</a>
+                </td>
+                <td className="py-2.5 px-2">Mercury / Wise Business + Stripe US / Paddle / Dodo</td>
+                <td className="py-2.5 pl-2 pr-3">
+                  {isZh ? "怀俄明州在线官费 $100（提交即生效；纸质最长 15 工作日），年报最低 $60/年（不含代理服务费）" : "$100 Wyoming online filing (active on completion; paper up to 15 business days); $60/yr min annual report (excl. agent fee)"}{" "}
+                  <a href="https://sos.wyo.gov/Business/StartABusiness.aspx" {...OUT} className="text-blue-600 hover:underline">{isZh ? "州务卿官网" : "sos.wyo.gov"}</a>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" className="py-2.5 pl-3 pr-2 font-semibold text-gray-900 whitespace-nowrap">{isZh ? "英国" : "UK"}</th>
+                <td className="py-2.5 px-2 whitespace-nowrap">UK Ltd<br /><span className="text-xs text-gray-500">{isZh ? "（Private Ltd by Shares）" : "(Private Ltd by Shares)"}</span></td>
+                <td className="py-2.5 px-2">{isZh ? "全程远程，董事不限国籍；需英国实体注册办公地址（非 PO Box）+ 注册邮箱" : "100% remote, overseas directors allowed; UK physical registered office (no PO Box) + registered email"}</td>
+                <td className="py-2.5 px-2">{isZh ? "董事/股东护照与住址证明 + 英国注册地址 + SIC 代码 + 章程" : "Director/shareholder ID + UK registered office + SIC code + Articles"}</td>
+                <td className="py-2.5 px-2">{isZh ? "成立后 HMRC 自动寄发公司税号 UTR" : "Company UTR issued automatically by HMRC after incorporation"}</td>
+                <td className="py-2.5 px-2">Wise Business + Stripe UK / Paddle / Dodo</td>
+                <td className="py-2.5 pl-2 pr-3">
+                  {isZh ? "Companies House 电子官费 £100（2026-02-01 起；加急当日 £156），在线通常 24 小时内出证；电子年审 £50/年" : "£100 digital fee at Companies House (from 1 Feb 2026; £156 same-day), usually within 24h; £50/yr digital confirmation statement"}{" "}
+                  <a href="https://www.gov.uk/government/publications/companies-house-fees/companies-house-fees" {...OUT} className="text-blue-600 hover:underline">gov.uk</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
       <Beginners isZh={isZh} />
 
       <Step
@@ -833,6 +897,48 @@ export default async function GoGlobalPage({ params }: { params: Promise<{ lang:
             <a href="https://mp.weixin.qq.com/s/uTtP5zv_exiHa52qSa07BA" {...OUT} className="text-blue-600 hover:underline">
               {isZh ? "微信原文" : "WeChat source"}
             </a>
+          </div>
+          <div className="mt-3 pt-3 border-t border-gray-200 leading-relaxed">
+            <p className="font-medium text-gray-900 mb-1">
+              {isZh ? "选美国还是英国公司、哪些账户可远程开（3 条边界）：" : "Choosing US vs UK company & remote accounts (3 decision rules):"}
+            </p>
+            <ul className="list-disc pl-5 space-y-1 text-gray-700">
+              <li>
+                {isZh
+                  ? "若独立自筹、轻资产卖软件/AI SaaS：选怀俄明州 LLC（官费 $100 + 年报最低 $60/年 + 免费 EIN），配 Mercury / Wise Business + Stripe US。"
+                  : "If you are a bootstrapped solo founder selling software/AI SaaS: choose a Wyoming LLC ($100 state filing + $60/yr min annual report + $0 EIN) for Mercury/Wise Business + Stripe US."}
+              </li>
+              <li>
+                {isZh ? (
+                  <>
+                    若计划向美元 VC 融资：直接选特拉华 C-Corp（投资人标准结构，官费见{" "}
+                    <a href="https://corp.delaware.gov/fee/" {...OUT} className="text-blue-600 hover:underline">corp.delaware.gov</a>
+                    ）。
+                  </>
+                ) : (
+                  <>
+                    If you plan to raise VC: choose a Delaware C-Corp (investor-standard structure; fees at{" "}
+                    <a href="https://corp.delaware.gov/fee/" {...OUT} className="text-blue-600 hover:underline">corp.delaware.gov</a>
+                    ).
+                  </>
+                )}
+              </li>
+              <li>
+                {isZh ? (
+                  <>
+                    若客户集中在英国/欧洲或想自己最快走官网出证：选英国 Ltd（
+                    <a href="https://www.gov.uk/limited-company-formation/register-your-company" {...OUT} className="text-blue-600 hover:underline">Companies House</a>{" "}
+                    在线 £100，通常 24 小时出证），配 Wise Business + Stripe UK。注意：Mercury、Wise 等账户对创始人国籍、居住地与行业有独立 KYC 限制，注册前先核对准入清单。
+                  </>
+                ) : (
+                  <>
+                    If buyers are mainly in the UK/EU or you want fast direct DIY filing: choose a UK Ltd (£100 online at{" "}
+                    <a href="https://www.gov.uk/limited-company-formation/register-your-company" {...OUT} className="text-blue-600 hover:underline">Companies House</a>
+                    , usually within 24h) for Wise Business + Stripe UK. Note: fintech accounts (Mercury, Wise) enforce passport-country, residence, and industry KYC restrictions — check eligibility before incorporating.
+                  </>
+                )}
+              </li>
+            </ul>
           </div>
         </div>
         <div className="mt-6 pt-5 border-t border-gray-200">

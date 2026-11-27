@@ -12,8 +12,10 @@ const FROZEN_PATHS: ReadonlySet<string> = new Set([
   "/en",
   "/en/about",
   "/en/backlink-spam-list",
+  "/en/blog/ai-agent-complete-picture",
   "/en/blog/ai-free-learning-hub",
   "/en/blog/ai-money-map-2026",
+  "/en/blog/ai-proxy-services-recommendation",
   "/en/blog/choose-payment-platform-2026",
   "/en/blog/chuhai-weekly-06",
   "/en/blog/dodo-payments-waffo-ai-saas-fee-comparison",
@@ -26,6 +28,10 @@ const FROZEN_PATHS: ReadonlySet<string> = new Set([
   "/en/blog/uk-company-wise-business-account",
   "/en/blog/us-llc-developer-accounts",
   "/en/blog/us-llc-mercury-stripe-168-usd",
+  "/en/go-global",
+  "/en/go-global/open-account",
+  "/en/go-global/payment-risk",
+  "/en/go-global/payments",
   "/en/go-global/weekly",
   "/en/handbook",
   "/en/prompts",
@@ -34,6 +40,7 @@ const FROZEN_PATHS: ReadonlySet<string> = new Set([
   "/en/prompts/claude-opus-5-5/fable-5-5",
   "/en/prompts/gemini-4",
   "/en/services",
+  "/zh/blog/video-to-live-photo",
 ]);
 
 /** path 是不带域名的站内路径，比如 /en/blog/xxx（结尾的 / 不影响） */

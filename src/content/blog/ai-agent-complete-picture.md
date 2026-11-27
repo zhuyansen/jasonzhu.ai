@@ -1,30 +1,41 @@
 ---
 title: "Skill、Harness、记忆、安全：60篇文章和20个项目之后，我们画出了AI Agent的完整拼图"
 date: "2026-04-11"
+updated: "2026-11-27"
 category: "观点"
 tags: ["AI Agent", "Skill系统", "安全", "开源"]
-excerpt: "过去三个月写了60篇AI Agent文章，覆盖Skill系统、Harness治理、记忆架构、安全防御四个方向。这篇文章把四根柱子拉到一起，画一张完整的图。"
+excerpt: "过去三个月写了60篇AI Agent文章，覆盖Skill系统、Harness治理、记忆架构、安全防御四个方向。这篇文章把三支柱（Skill、Memory、Protocol）与Harness、安全边界拉到一起，画一张完整的图。"
 ---
 
-过去三个月我们写了将近 60 篇关于 AI Agent 的文章，覆盖了 Skill 系统、Harness 治理、记忆架构、安全防御四个方向。回头看，这四个方向其实在解同一个问题：怎么让 Agent 从"能用"变成"可靠"。这篇文章把四根柱子拉到一起，用 20+ 个开源项目和我们的实战经验，画一张完整的图
+**一句话结论：** **AI Agent Harness** 是包在语言模型外围的运行时治理层——**Framework（框架）**提供编排代码积木，**Harness** 负责约束运行环境、上下文预算与质量门禁（参考 [Microsoft Learn 的 Harness 概念](https://learn.microsoft.com/en-us/agent-framework/concepts/harness)）。可靠的 Agent 靠三根能力支柱撑起——**Skill（能做什么）**、**Memory（记住什么）**、**Protocol（如何经由 [MCP](https://modelcontextprotocol.io/specification) 接入工具并驱动控制循环）**——外加 **Security Defense（安全边界）**兜底。*（更新于 2026-11-27）*
+
+过去三个月我们写了将近 60 篇关于 AI Agent 的文章，覆盖了 Skill 系统、Harness 治理、记忆架构、安全防御四个方向。回头看，这几个方向其实在解同一个问题：怎么让 Agent 从"能用"变成"可靠"。这篇文章用 20+ 个开源项目和实战经验，画一张完整的图。
+
+### 三支柱别名对照：Framework vs. Harness
+
+| 支柱 | 常见别名 | Framework 提供什么 | Harness 强制什么 |
+| --- | --- | --- | --- |
+| **Skill（技能）** | tools、capabilities、领域工作流 | 工具绑定与提示词模板 | 强制检查清单、评估闭环与评审门禁 |
+| **Memory（记忆）** | context/state、压缩（compaction）、持久化笔记 | 会话状态与检索钩子 | 上下文预算、主动压缩、跨会话规则 |
+| **Protocol（协议）** | MCP、tool-calling loop、执行策略 | LLM 调用循环与 MCP 客户端 SDK | 工具定义钉住、权限策略、人工审批拦截 |
 
 ---
 
-## 四根柱子，一个目标
+## 三支柱 + 安全边界（运行在 Harness 内）
 
-AI Agent 和普通 LLM 调用的本质区别在于它有执行能力。能读写文件、能跑 Shell、能调 API、能上网。这意味着它能做的事情多了一个数量级，但同时出错的后果也严重了一个数量级
+AI Agent 和普通 LLM 调用的本质区别在于它有执行能力。能读写文件、能跑 Shell、能调 API、能上网。这意味着它能做的事情多了一个数量级，但同时出错的后果也严重了一个数量级。
 
-让 Agent 可靠地工作需要四根柱子同时撑住
+让 Agent 可靠地工作，需要 **Skill、Memory、Protocol** 三根能力支柱在 **Harness** 内协同，并由 **安全防御** 划清硬边界：
 
-**Skill 系统**解决"Agent 能做什么"。把领域知识、工作流、最佳实践打包成可复用的模块，让 Agent 从通才变专家。Anthropic 内部用了几百个 Skills，Uber 内部管理着 500+ 个
+**Skill 系统**解决"Agent 能做什么"。把领域知识、工作流、最佳实践打包成可复用的模块，让 Agent 从通才变专家。Anthropic 内部用了几百个 Skills，Uber 内部管理着 500+ 个。
 
-**Harness 治理**解决"Agent 怎么做"。定义 Agent 的工作流程、协作模式、质量门禁。从 Prompt Engineering 到 Context Engineering 到 Harness Engineering，工程师的角色从写代码变成了设计 Agent 的运行环境
+**Harness 治理**解决"Agent 怎么做"。定义 Agent 的工作流程、协作模式、上下文预算与质量门禁。从 Prompt Engineering 到 Context Engineering 到 Harness Engineering，工程师的角色从写代码变成了设计 Agent 的运行环境。
 
-**记忆系统**解决"Agent 记住什么"。跨 session 积累经验，避免重复犯错。从简单的 CLAUDE.md 文件到向量数据库到知识图谱，12+ 个开源项目在竞争最优方案
+**记忆系统**解决"Agent 记住什么"。跨 session 积累经验，避免重复犯错。从简单的 CLAUDE.md 文件到向量数据库到知识图谱，12+ 个开源项目在竞争最优方案。
 
-**安全防御**解决"Agent 不做什么"。MCP 生态 60 天爆出 30+ 个 CVE，OpenClaw 商店五分之一的包是恶意软件。执行权限带来攻击面，防御必须跟上
+**Protocol（MCP）与安全防御**解决"Agent 怎么接外部工具，以及绝不能做什么"。Protocol 既包含 [MCP 协议规范](https://modelcontextprotocol.io/specification)，也涵盖控制循环与调用策略；统一接口的同时也放大了攻击面：2026 年初（1–3 月）MCP 生态 60 天内集中爆出 30+ 个 CVE（此前已有 [CVE-2025-6514](https://github.com/advisories/GHSA-6xpm-ggf7-wc3p) 与 [CVE-2025-49596](https://github.com/modelcontextprotocol/inspector/security/advisories/GHSA-7f8r-222p-6f5g) 等高危 RCE）；2026 年 2 月 OpenClaw/ClawHub（ClawHavoc 事件）多方审计检出 341–824 个恶意 Skill（Koi Security，占初期 2,857 个包的约 12%）、安天 CERT 统计历史发布恶意包 1,184 个，[Snyk ToxicSkills（2026 年 2 月）](https://snyk.io/blog/toxicskills-malicious-ai-agent-skills-clawhub/)扫描 3,984 个 Skill 发现 36.82% 存在安全缺陷（含 76 个确认活跃恶意载荷）。执行权限带来攻击面，防御必须跟上。
 
-![四根柱子](public/blog/agent-four-pillars/section1-four-pillars.png)
+![三支柱与安全边界](public/blog/agent-four-pillars/section1-four-pillars.png)
 
 ---
 
@@ -82,9 +93,9 @@ compound-engineering 的 /ce:compound 命令提供了一个有趣的视角：记
 
 ---
 
-## 安全防御：从 30 个 CVE 到三层纵深
+## 安全防御：从 30+ 个 MCP CVE 到三层纵深
 
-我们在第 59 篇深度调研了 Agent 安全领域。数据触目惊心：MCP 生态 60 天 30+ 个 CVE，43% 的 MCP 服务器有命令注入漏洞，OpenClaw 商店 1184 个恶意包，Claude Code 自身两个高危 CVE，87% 的 AI 生成 PR 引入安全漏洞
+我们在第 59 篇深度调研了 Agent 安全领域。2026 年初的数据触目惊心：MCP 生态 60 天内（2026 年 1–3 月）爆出 **30+ 个 CVE**（约 43% 涉及命令注入，此前已有 `mcp-remote` 的 [CVE-2025-6514](https://github.com/advisories/GHSA-6xpm-ggf7-wc3p) 与 MCP Inspector 的 [CVE-2025-49596](https://github.com/modelcontextprotocol/inspector/security/advisories/GHSA-7f8r-222p-6f5g) 等高危 RCE）；2026 年 2 月 OpenClaw/ClawHub（ClawHavoc 事件）被安天 CERT 统计到 **1,184 个历史发布的恶意包**（Koi Security 同月追踪 341 → 824 个，[Snyk ToxicSkills（2026 年 2 月）](https://snyk.io/blog/toxicskills-malicious-ai-agent-skills-clawhub/)扫描 3,984 个 Skill 发现 36.82% 存在缺陷、含 76 个确认活跃恶意载荷）；加上 Claude Code 自身两个高危 CVE。
 
 **<a href="https://github.com/SafeAI-Lab-X/ClawKeeper">ClawKeeper</a>**（464 星）提出了三层防御纵深：Skill 层通过 Markdown 策略注入告诉 Agent "什么不该做"，Plugin 层在运行时拦截危险操作（11 个核心模块覆盖 10 个威胁域），Watcher 层作为独立守护进程监控所有行为并可强制人工确认。论文在 140 个对抗测试实例上达到了最优防御性能
 

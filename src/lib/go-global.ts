@@ -5,7 +5,7 @@ import { getAllPosts, type BlogPostMeta } from "@/lib/mdx";
 export const GO_GLOBAL = "/go-global";
 
 /** 专题首页最后一次整页核实的日期：页面顶部显示，也写进 JSON-LD 的 dateModified（子页用各自指南里的 checked） */
-export const GO_GLOBAL_CHECKED = "2026-11-21";
+export const GO_GLOBAL_CHECKED = "2026-11-27";
 
 export interface PostGroup {
   id: string;
@@ -1555,6 +1555,17 @@ export const NEWBIE_FAQ: FaqEntry[] = [
       en: "No. Stripe opens no accounts for individuals or companies in mainland China; a Hong Kong individual account needs an HKID and a US one an SSN or ITIN, so a mainland founder opens with a Hong Kong or US company.",
     },
     link: { href: "/go-global/open-account", zh: "看各家对个人和公司的要求 →", en: "What each platform asks →" },
+  },
+  {
+    q: {
+      zh: "远程出海该选美国 LLC、特拉华 C-Corp 还是英国 Ltd？哪些收款账户能远程开？",
+      en: "Should I register a US LLC, Delaware C-Corp, or UK Ltd — and which remote accounts can I open?",
+    },
+    a: {
+      zh: "按三条边界分流：① 独立自筹、轻资产卖软件或 AI SaaS，选怀俄明州 LLC 最省事（州官费 $100、年报最低 $60/年、IRS Form SS-4 申请 EIN 免费），拿到 EIN 后可申请 Mercury、Wise Business 与 Stripe 美国户；② 计划向美元 VC 融资，直接选特拉华 C-Corp（投资人标准结构，官费见 corp.delaware.gov/fee/）；③ 客户集中在英国/欧洲或想自己最快走官网出证，选英国 Ltd（2026-02-01 起 Companies House 电子官费 £100，在线通常 24 小时内出证），配 Wise Business 与 Stripe 英国户。注意：Mercury、Wise 等账户对创始人国籍、居住地与行业有独立 KYC 准入限制，注册公司前务必先核对目标账户当期支持国家与行业清单。",
+      en: "Use three rules: (1) If you are a bootstrapped solo founder selling software or AI SaaS, a Wyoming LLC ($100 state filing, $60/yr min annual report, $0 IRS Form SS-4 EIN) is simplest for Mercury, Wise Business, and Stripe US; (2) if you plan to raise VC funding, choose a Delaware C-Corp instead (investor-standard structure; see corp.delaware.gov/fee/); (3) if most buyers are in the UK/EU or you want the fastest direct government DIY filing, a UK Ltd (£100 digital fee at Companies House from 1 Feb 2026, usually within 24h) pairs cleanly with Wise Business and Stripe UK. Bank and fintech onboarding (such as Mercury and Wise) enforces nationality, residence, and industry KYC restrictions — verify current eligibility before incorporating.",
+    },
+    link: { href: "/go-global/open-account", zh: "查看美/英/港公司开户与银行清单 →", en: "See US/UK/HK entity & account matrix →" },
   },
   {
     q: { zh: "第一家收款平台开哪个？", en: "Which payment platform should I open first?" },

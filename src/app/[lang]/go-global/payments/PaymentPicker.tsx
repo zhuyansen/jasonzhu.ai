@@ -40,6 +40,18 @@ const SELL_SHORT: Record<string, { zh: string; en: string }> = {
   donation: { zh: "打赏捐赠", en: "Donations and tips" },
 };
 
+const BEST_FOR: Record<string, { zh: string; en: string }> = {
+  waffo: { zh: "无需公司；支持支付宝/大陆银行卡提现，0 国际与订阅费", en: "No company needed; Alipay or CN bank payout; 0% intl/sub fee" },
+  dodo: { zh: "AI SaaS 与个人卖家；全球 MoR，原生支持 AI 积分计费", en: "AI SaaS & solo founders; global MoR with native AI credits" },
+  paddle: { zh: "成熟 SaaS 与 B2B 发票；5% + $0.50 全包 MoR", en: "Established SaaS & B2B invoicing; all-in 5% + $0.50 MoR" },
+  creem: { zh: "1–2 天审核、支付宝提现；社群 2026-08 起不推荐", en: "1–2 day review & Alipay payout; community cautions since Aug 2026" },
+  paypal: { zh: "买家认知度高；非 MoR，销售税/VAT 需自报", en: "Broad buyer familiarity; non-MoR, you handle sales tax/VAT" },
+  stripe: { zh: "美/英/港公司，追求最低本土费率与自定义结账（非 MoR）", en: "US/UK/HK entities wanting lowest domestic fees & custom checkout (non-MoR)" },
+  polar: { zh: "美/英/港开源与 SaaS 团队（仅 Stripe Connect Express 出款）", en: "US/UK/HK open-source & SaaS teams (Stripe Connect Express payouts)" },
+  gumroad: { zh: "一次性数字商品/创作者；费率较高（10% + $0.50 + 刷卡费）", en: "One-off digital downloads/creators; higher 10% + $0.50 + card fee" },
+  lemonsqueezy: { zh: "仅限老店（2026-11-16 停收新店，2027-03-31 停服）", en: "Legacy stores only (closed to new stores Nov 16, 2026; stops Mar 31, 2027)" },
+};
+
 const T = {
   zh: {
     colon: "：",
@@ -55,7 +67,9 @@ const T = {
     keep: (sale: number, v: number) => `卖 $${sale} 到手 $${v.toFixed(2)}`,
     mor: "代收税（MoR）",
     all: "全部平台",
-    cols: ["平台", "能不能开户", "收不收这类产品", "代收税（MoR）", "卖 $20 到手", "同类卖家在用"],
+    cols: ["平台", "能不能开户", "收不收这类产品", "谁报销售税 / VAT", "卖 $20 到手", "适合谁", "同类卖家在用"],
+    taxPlatform: "平台代报（MoR）",
+    taxYou: "卖家自报",
     under: "（低估）",
     say: "平台怎么看这类产品",
     out: "不考虑的",
@@ -88,7 +102,9 @@ const T = {
     keep: (sale: number, v: number) => `$${v.toFixed(2)} kept from a $${sale} sale`,
     mor: "Merchant of Record",
     all: "Every platform",
-    cols: ["Platform", "Can you open it", "Takes this product", "Merchant of Record", "Kept from $20", "Sellers like you use it"],
+    cols: ["Platform", "Can you open it", "Takes this product", "Who files sales tax / VAT", "Kept from $20", "Best for", "Sellers like you use it"],
+    taxPlatform: "Platform (MoR)",
+    taxYou: "You",
     under: " (undercounted)",
     say: "What the platforms say about this kind of product",
     out: "Left out",
@@ -258,8 +274,9 @@ function PlatformTable({ data, lang, table }: { data: GuardData; lang: Lang; tab
                 </th>
                 <td className="px-3 py-2 whitespace-nowrap">{data.words[lang].open[r.open]}</td>
                 <td className="px-3 py-2 whitespace-nowrap">{data.words[lang].fit[r.fit]}</td>
-                <td className="px-3 py-2">{data.platforms[r.platform].mor ? "✅" : "–"}</td>
+                <td className="px-3 py-2 whitespace-nowrap">{data.platforms[r.platform].mor ? t.taxPlatform : t.taxYou}</td>
                 <td className="px-3 py-2 tabular-nums">${r.keep.toFixed(2)}</td>
+                <td className="px-3 py-2 text-xs text-gray-600 leading-relaxed min-w-[180px]">{BEST_FOR[r.platform]?.[lang] ?? "–"}</td>
                 <td className="px-3 py-2 tabular-nums whitespace-nowrap">
                   {r.share === null ? "–" : `${r.share}%${r.platform === "paddle" ? t.under : ""}`}
                 </td>

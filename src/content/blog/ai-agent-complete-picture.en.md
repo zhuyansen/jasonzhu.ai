@@ -1,11 +1,12 @@
 ---
 title: "AI Agent Harness Framework: Skill, Memory, Protocol & Safety"
+updated: "2026-11-27"
 excerpt: "AI Agent architecture explained: how a Harness differs from a Framework, plus the pillars of Skill, Memory, Protocol (MCP) & Safety across 20+ OSS projects."
 ---
 
-**Short Answer:** In **JasonZhu.AI**'s synthesis of 60 articles and 20+ open-source projects, an **AI Agent Framework** provides code building blocks, whereas a **Harness** engineers the runtime environment, workflows, and quality gates. Reliable agents combine three capability pillars — **Skill**, **Memory**, and **Protocol (MCP)** — bounded by **Security Defense**.
+**Short Answer:** An **AI Agent Harness** is the runtime layer around a language model — a **Framework** supplies code building blocks, while a **Harness** enforces runtime workflows, context budgets, and quality gates (see [Microsoft Learn's Agent Harness concept](https://learn.microsoft.com/en-us/agent-framework/concepts/harness)). A reliable agent rests on three capability pillars — **Skill** (what it can do), **Memory** (what it retains), and **Protocol** (how it connects via [MCP](https://modelcontextprotocol.io/specification) and runs its tool-calling loop) — bounded by **Security Defense**. *(Last updated: 2026-11-27)*
 
-Over the past three months we have written nearly 60 articles about AI Agents, covering four directions: the Skill system, Harness governance, memory architecture, and security defense — all connected by tool protocols like MCP. Looking back, these components solve one core problem: how to take an Agent from "usable" to "reliable." This guide maps the complete architecture using 20+ open-source projects and our hands-on production experience.
+Over the past three months we have written nearly 60 articles about AI Agents, covering the Skill system, Harness governance, memory architecture, and security defense — all connected by tool protocols like MCP. Looking back, these components solve one core problem: how to take an Agent from "usable" to "reliable." This guide maps the complete architecture using 20+ open-source projects and hands-on production experience.
 
 ## AI Agent Architecture at a Glance (5-Layer Summary)
 
@@ -14,12 +15,20 @@ Over the past three months we have written nearly 60 articles about AI Agents, c
 | **Harness vs. Framework** | *How does the agent execute and stay governed?* | Frameworks supply orchestration primitives; a Harness defines the runtime environment, collaboration patterns, eval loops, and quality gates | revfactory Harness, Dex Horthy RPI, OpenHarness, Claude Code internals |
 | **Skill** | *What specialized work can the agent do?* | Packages domain workflows, methodologies, personas, and checklists into reusable modules | Addy Osmani `agent-skills`, `superpowers`, `gstack`, `compound-engineering` |
 | **Memory** | *What does the agent retain across sessions?* | Persists decisions, patterns, and domain knowledge via files, vector RAG, knowledge graphs, or hybrid retrieval | `mempalace`, `agentmemory`, `claude-memory-compiler`, `CLAUDE.md` |
-| **Protocol (MCP)** | *How does the agent connect to tools & data?* | Standardizes JSON Schema tool definitions, context exchange, and cross-client server integration | Model Context Protocol (MCP), Claude Code MCP stack, `mempalace` 19 MCP tools |
+| **Protocol (MCP)** | *How does the agent connect to tools & data?* | Standardizes JSON Schema tool definitions, context exchange, and cross-client server integration | [Model Context Protocol (MCP)](https://modelcontextprotocol.io/specification), Claude Code MCP stack, `mempalace` 19 MCP tools |
 | **Security Defense** | *What is the agent forbidden to do?* | Enforces static scanning, tool pinning, runtime interception, MicroVM sandboxing, and human approval gates | `ClawKeeper`, Invariant MCP-Scan, AgentSeal, Docker Sandboxes, MCP Guardian |
+
+### Three Pillars Alias Map: Framework vs. Harness
+
+| Pillar | Also called | Framework provides | Harness enforces |
+| --- | --- | --- | --- |
+| **Skill** | tools, capabilities, domain workflows | Tool bindings & prompt templates | Mandatory checklists, evals, and review gates |
+| **Memory** | context/state, compaction, persistent notes | Session state & retrieval hooks | Context-window budgets, compaction, cross-session rules |
+| **Protocol** | MCP, tool-calling loop, execution policy | LLM call loop & MCP client SDK | Tool pinning, permission policy, human-approval gates |
 
 ---
 
-## Four Pillars, One Goal (Connected by Protocol)
+## Three Pillars + Safety Boundary (Inside a Harness)
 
 The essential difference between an AI Agent and an ordinary LLM call is that an Agent has execution capability. It can read and write files, run shell commands, call APIs, and browse the web. This means it can do an order of magnitude more things—but at the same time, the consequences of mistakes are also an order of magnitude more serious.
 
@@ -31,9 +40,9 @@ Making an Agent work reliably requires the three capability pillars (**Skill**, 
 
 **The memory system** answers "what does the Agent remember?" It accumulates experience across sessions and avoids repeating mistakes. From simple CLAUDE.md files to vector databases to knowledge graphs, 12+ open-source projects are competing for the best solution.
 
-**Protocol (MCP) & Security defense** answer "how does the Agent touch external tools—and what must it never do?" Standard protocols like MCP let Skills and Memory servers plug into any compatible Agent, but they also expand the blast radius. The MCP ecosystem produced 30+ CVEs in 60 days, and one-fifth of the packages in the OpenClaw store are malicious software. Execution permissions create an attack surface, and defenses must keep pace.
+**Protocol (MCP) & Security defense** answer "how does the Agent touch external tools—and what must it never do?" Protocol covers both the [MCP specification](https://modelcontextprotocol.io/specification) tool interface and the control loop/policy governing when tools fire. Standardizing connections also expands the blast radius: early-2026 audits documented 30+ MCP CVEs in a 60-day surge (Jan–Mar 2026, alongside critical RCEs like [CVE-2025-6514](https://github.com/advisories/GHSA-6xpm-ggf7-wc3p) and [CVE-2025-49596](https://github.com/modelcontextprotocol/inspector/security/advisories/GHSA-7f8r-222p-6f5g)), while Feb 2026 ClawHub ("ClawHavoc") audits uncovered 341–824 malicious skills (Koi Security, ~12% of the initial 2,857-skill registry) and 1,184 historically published malicious packages (Antiy CERT), plus 36.82% of 3,984 scanned skills with security flaws ([Snyk ToxicSkills, Feb 2026](https://snyk.io/blog/toxicskills-malicious-ai-agent-skills-clawhub/)). Execution permissions create an attack surface, and defenses must keep pace.
 
-![Four Pillars](public/blog/agent-four-pillars/section1-four-pillars.png)
+![Three Pillars + Safety Boundary](public/blog/agent-four-pillars/section1-four-pillars.png)
 
 ---
 
@@ -91,9 +100,9 @@ compound-engineering's `/ce:compound` command offers an interesting perspective:
 
 ---
 
-## Security Defense: From 30 CVEs to Three Layers of Defense in Depth
+## Security Defense: From 30+ MCP CVEs to Three Layers of Defense in Depth
 
-We conducted an in-depth investigation of agent security in issue 59. The data is alarming: 30+ CVEs in the MCP ecosystem in 60 days, 43% of MCP servers with command injection vulnerabilities, 1,184 malicious packages in the OpenClaw marketplace, two high-severity CVEs in Claude Code itself, and 87% of AI-generated PRs introducing security vulnerabilities.
+We conducted an in-depth investigation of agent security in issue 59. The early-2026 numbers are stark: **30+ CVEs** disclosed across the MCP ecosystem in a 60-day surge (Jan–Mar 2026, with ~43% involving command injection, following critical RCEs like [CVE-2025-6514](https://github.com/advisories/GHSA-6xpm-ggf7-wc3p) in `mcp-remote` and [CVE-2025-49596](https://github.com/modelcontextprotocol/inspector/security/advisories/GHSA-7f8r-222p-6f5g) in MCP Inspector); **1,184 historically published malicious skills** catalogued on OpenClaw/ClawHub by Antiy CERT during the Feb 2026 ClawHavoc campaign (alongside Koi Security's 341 → 824 findings and [Snyk ToxicSkills's Feb 2026 audit](https://snyk.io/blog/toxicskills-malicious-ai-agent-skills-clawhub/) finding 36.82% of 3,984 skills with flaws and 76 active malicious payloads); plus two high-severity CVEs in Claude Code itself.
 
 **<a href="https://github.com/SafeAI-Lab-X/ClawKeeper">ClawKeeper</a>** (464 stars) proposes a three-layer defense in depth: the Skill layer uses Markdown policy injection to tell agents "what not to do"; the Plugin layer intercepts dangerous operations at runtime (11 core modules covering 10 threat domains); and the Watcher layer acts as an independent daemon monitoring all behavior with the ability to enforce human confirmation. The paper achieved state-of-the-art defensive performance on 140 adversarial test instances.
 

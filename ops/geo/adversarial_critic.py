@@ -733,11 +733,13 @@ def selftest() -> int:
     frozen = load_hard_frozen_pages()
     assert "/blog/nvidia-dli-free-courses" in frozen
     assert "/blog/us-llc-developer-accounts" in frozen
-    assert "/go-global" not in frozen
-    assert "/go-global/open-account" not in frozen
-    assert "/go-global/payments" not in frozen
+    assert "/go-global" in frozen
+    assert "/go-global/open-account" in frozen
+    assert "/go-global/payments" in frozen
+    assert "/go-global/domains" not in frozen
 
     # 3. 选页逻辑：冻结与在跑实验页必须被剔除，非冻结页与软提醒页保留
+    test_frozen = {"/blog/nvidia-dli-free-courses": "frozen-pages.ts 硬冻结"}
     fake_rc = {
         "pages": [
             {"page": "/blog/nvidia-dli-free-courses", "class": "读了不引", "chatgpt_reads": 5, "claude_reads": 9,
@@ -753,7 +755,7 @@ def selftest() -> int:
         ]
     }
     all_qs = load_all_questions()
-    sel, skip = select_targets(fake_rc, all_qs, frozen)
+    sel, skip = select_targets(fake_rc, all_qs, test_frozen)
     assert [x["page"] for x in sel] == ["/go-global", "/go-global/open-account", "/go-global/payments"]
     assert [x["page"] for x in skip] == ["/blog/nvidia-dli-free-courses"]
 

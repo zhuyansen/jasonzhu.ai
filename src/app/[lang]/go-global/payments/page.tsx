@@ -212,9 +212,70 @@ export default async function PaymentsPage({ params }: { params: Promise<{ lang:
             ? "选谁来收钱、卖什么，下面马上给出：哪几家能开户、收不收你这类产品、卖一笔 20 美元的海外订单到手多少，以及排名靠前那几家的开户步骤。每一条都来自平台自己的文档，并附原文链接。"
             : "Pick who holds the account and what you sell. Below you get which platforms you can open, whether they take your kind of product, what a $20 sale to a buyer abroad leaves you, and the steps to open the top ones. Every line comes from the platform's own pages, linked."}
         </p>
+        <div className="mt-4 rounded-xl border border-blue-100 bg-blue-50/50 p-4 text-sm text-gray-800 leading-relaxed">
+          {isZh ? (
+            <>
+              <strong className="text-gray-900">一句话结论：</strong>
+              想面向全球卖订阅又不想自己申报销售税 / VAT，选 <strong>Merchant of Record（MoR，代收代缴平台）</strong>——平台以法定销售方身份自动算税、代收并申报全球销售税与 VAT。
+              <strong>Paddle、Dodo Payments、Waffo Pancake、Creem</strong> 均为 MoR 且接受个人和公司开户（含中国大陆个人）；<strong>PayPal 与默认 Stripe 不是 MoR</strong>，销售税与 VAT 仍由你自行处理。以下费率、开户资格与平台状态按各平台官方文档核实于 {data.checked}。
+            </>
+          ) : (
+            <>
+              <strong className="text-gray-900">In short: </strong>
+              To sell subscriptions globally without filing sales tax or VAT yourself, pick a <strong>Merchant of Record (MoR)</strong> — the platform acts as the legal reseller and calculates, collects, and remits global sales tax and VAT for you.{" "}
+              <strong>Paddle, Dodo Payments, Waffo Pancake, and Creem</strong> are MoRs that accept individuals and companies (including mainland China); <strong>PayPal and default Stripe are not MoRs</strong>, so tax stays with you. Eligibility, fees, and status below were verified against official docs on {data.checked}.
+            </>
+          )}
+        </div>
       </header>
 
       <PaymentPicker data={data} lang={lang} />
+
+      <section id="boundary-and-status" className="mt-10 rounded-2xl border border-amber-200 bg-amber-50/40 p-5 text-sm text-gray-800 leading-relaxed space-y-2.5">
+        <h2 className="text-base font-semibold text-gray-900">
+          {isZh ? "非中国大陆卖家边界 & 平台状态变更（核实于 2026-11-27）" : "Not in mainland China? & Dated platform status changes (checked 2026-11-27)"}
+        </h2>
+        <ul className="list-disc pl-5 space-y-2">
+          <li>
+            {isZh ? (
+              <>
+                <strong>Stripe 与 Polar 仅对大陆个人/主体不可用，非大陆卖家可用：</strong>
+                选择器默认按「中国大陆个人」过滤。如果你持有香港、美国、英国公司或身处 Stripe 支持国家/地区，<strong>Stripe</strong> 美国基础费率为 2.9% + $0.30（国际卡 +1.5%、换汇 +1%，默认非 MoR，
+                <a href="https://stripe.com/pricing" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">官方费率</a>
+                ）；<strong>Polar</strong> 为 MoR，2026-05-27 起新组织 5% + $0.50（国际 +1.5%，或月付 3.4%–3.8%，
+                <a href="https://polar.sh/docs/merchant-of-record/fees" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">官方费率</a>
+                ）。
+              </>
+            ) : (
+              <>
+                <strong>Stripe &amp; Polar are open to founders outside mainland China: </strong>
+                The picker defaults to mainland China individuals, which filters out Stripe and Polar. If you operate a US, UK, or Hong Kong entity (or reside in a Stripe-supported country), <strong>Stripe</strong> US domestic pricing starts at 2.9% + $0.30 (+1.5% international cards, +1% FX; non-MoR by default;{" "}
+                <a href="https://stripe.com/pricing" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">official pricing</a>
+                ), and <strong>Polar</strong> acts as an MoR at 5% + $0.50 for new organizations from 27 May 2026 (+1.5% international;{" "}
+                <a href="https://polar.sh/docs/merchant-of-record/fees" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">official fees</a>
+                ).
+              </>
+            )}
+          </li>
+          <li>
+            {isZh ? (
+              <>
+                <strong>Lemon Squeezy 停服提示：</strong>
+                <strong>Lemon Squeezy 已于 2026 年 11 月 16 日停止接受新店注册，并将于 2027 年 3 月 31 日停止处理支付</strong>（
+                <a href="https://docs.lemonsqueezy.com/migration" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">官方迁移说明</a>
+                ）。新出海 SaaS 项目请直接选用仍在运营的 MoR（Paddle、Dodo Payments、Waffo Pancake 或 Polar）。
+              </>
+            ) : (
+              <>
+                <strong>Lemon Squeezy shutdown notice: </strong>
+                <strong>Lemon Squeezy stopped taking new stores on 16 November 2026 and stops processing payments on 31 March 2027</strong> (
+                <a href="https://docs.lemonsqueezy.com/migration" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">official migration guide</a>
+                ). New indie SaaS sellers should pick an active MoR such as Paddle, Dodo Payments, Waffo Pancake, or Polar instead.
+              </>
+            )}
+          </li>
+        </ul>
+      </section>
 
       <section id="verified-fee-benchmark" className="mt-12 scroll-mt-24">
         <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
