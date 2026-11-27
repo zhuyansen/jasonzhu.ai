@@ -1,35 +1,52 @@
 ---
-title: "IBM SkillsBuild 免费 AI 课攻略：1000+ 门课全网第一，但注册时一步选错少一半"
+title: "IBM SkillsBuild 免费 AI 课（2026）：10 小时拿官方徽章"
 date: "2026-05-18"
+updated: "2026-11-27"
 category: "教程"
 tags: ["IBM", "SkillsBuild", "AI 徽章", "免费课程", "学习路径", "转行"]
 coverImage: "/blog/ibm-skillsbuild-ai-courses/cover.png"
-excerpt: "IBM SkillsBuild 是大厂里免费课数量第一的平台，1000+ 门课。但有个大坑：注册时身份选错，课程直接少一半。这篇教你避坑，附三段式 AI 学习路径和官方徽章说明。"
+excerpt: "IBM SkillsBuild 提供 1,000+ 门免费课，核心 AI Fundamentals 约 10 小时 6 模块，考过 80% 免费领 Credly 数字徽章。附 Adult Learners 注册避坑与三段式学习路线。"
 ---
 
-IBM SkillsBuild 是大厂里**免费课数量第一**的平台——**1000+ 门课**，全部免费。
-
-但它有一个**大坑**，很多人踩了都不知道：
-
-> ⚠️ **注册时身份选错，课程会少一半。**
-
-平台把用户分三类：**高中生 / 大学生 / 成人学习者（Adult Learners）**。只有选 **Adult Learners**，才能看到完整的 AI 学习路径。选错了，一半的课直接对你隐藏。
+**一句话结论：** 按 JasonZhu.AI 2026 年实测整理，IBM SkillsBuild 是大厂中免费课数量最多的平台（1,000+ 门全免费），核心 *Artificial Intelligence Fundamentals* 仅需约 **10 小时、6 个模块**，考核达 **80%+** 即可免费领取可核验的 **Credly 官方数字徽章**。但注册有个大坑：年满 18 岁务必要选 **Adult Learners**，选错身份会隐藏近一半 AI 课程。
 
 **主站入口**：[skillsbuild.org](https://skillsbuild.org/)
 
+> ⚠️ **注册避坑提醒**：平台把用户分成 **High School Students（高中生）/ College Students（大学生）/ Adult Learners（成人学习者）** 三类。想看到完整 AI 课程库和职业路径，务必选择 **Adult Learners**；选错身份，近一半课程会直接对你隐藏。
+
 ---
 
-## AI 学习路径分三段
+## IBM SkillsBuild 免费 AI 学习路线与徽章总览（2026）
 
-### 第一段·建立知识
+| 阶段 | 核心课程 / 路径 | 预计耗时 | 费用 | 可获凭证 | 适合人群 |
+|---|---|---|---|---|---|
+| **前置测评** | [AI Level Up 评估](https://assessment.skillsbuild.org/) | 约 10–15 分钟 | **免费** | 个性化学习路线 | 快速过滤 1,000+ 门课的噪音 |
+| **第一段·打基础** | [Artificial Intelligence Fundamentals](https://skillsbuild.org/adult-learners/explore-learning/artificial-intelligence)（6 模块） | **约 10 小时** *(含新版生成式 AI / Agent 扩展约 10–20 小时)* | **免费** | **IBM 官方 Credly 数字徽章**（考核 80%+） | 零基础入门、在校生、跨行转行者 |
+| **第二段·岗位实战** | *AI for Customer Service*、*AI for Marketing*、*AI for HR* | 自定进度 | **免费** | 对应职能工作流技能与徽章 | 在职人士把 AI 直接接入当前岗位 |
+| **第三段·职业进阶** | *AI Developer*、*Data Scientist*、*IT Engineer* 路径 | 多门组合 | **免费** | **IBM 官方数字徽章**（可挂 LinkedIn） | 明确转行或深耕技术方向的求职者 |
 
-**Artificial Intelligence Fundamentals**
+---
+
+## 第一段拆解：Artificial Intelligence Fundamentals（约 10 小时 · 6 个模块）
 
 🔗 [skillsbuild.org AI Fundamentals](https://skillsbuild.org/adult-learners/explore-learning/artificial-intelligence)
 
-10-20 小时学完，拿一枚 **IBM 官方数字徽章**。AI 的基础认知从这里建立。
+这是 IBM SkillsBuild 性价比最高的一枚入门数字凭证，**零代码基础也能学**，标准主线约 **10 小时**覆盖 6 个模块（2026 年同步上线了包含生成式 AI 与 Agent 的新版两段式 AI 基础课，合并完成约 10–20 小时）：
 
-### 第二段·把 AI 应用到真实场景
+| 模块 | 核心内容 |
+|---|---|
+| **1. AI 基础概念** | 人工智能核心定义、发展脉络与典型应用场景 |
+| **2. 自然语言处理与计算机视觉** | NLP、语音识别与视觉理解的基本原理 |
+| **3. 机器学习与深度学习** | 监督/无监督学习、神经网络与模型训练基础 |
+| **4. Watson Studio 模拟实验** | 零代码动手体验 AI 模型搭建与测试 |
+| **5. AI 伦理与治理** | 偏见、公平性、可解释性与负责任的 AI 落地 |
+| **6. AI 职业前景** | 典型 AI 岗位拆解与后续进阶学习路径 |
+
+**免费徽章认领方式**：完成学习并通过考核（达到 **80%+**）后，用注册 IBM SkillsBuild 时的**同一个邮箱**登录 **Credly** 即可一键认领官方数字徽章，直接挂到简历和 LinkedIn。
+
+---
+
+## 第二段·把 AI 应用到真实场景
 
 三门工作流案例课，**特别适合在职转 AI 的人**：
 
@@ -39,7 +56,9 @@ IBM SkillsBuild 是大厂里**免费课数量第一**的平台——**1000+ 门�
 
 不是讲抽象概念，是把 AI 套进具体岗位工作流——你现在的岗位大概率能对上一门。
 
-### 第三段·进阶职业方向
+---
+
+## 第三段·进阶职业方向
 
 三条职业路径，按你想转的方向选：
 
@@ -53,53 +72,59 @@ IBM SkillsBuild 是大厂里**免费课数量第一**的平台——**1000+ 门�
 
 ## 操作建议（避坑 + 提效）
 
-1. **注册时身份选 Adult Learners** —— 最关键一步，选错少看一半课
+1. **注册时身份选 Adult Learners** —— 最关键一步，选错少看一半课。
 2. **进站第一件事：跑一次 AI Level Up 评估**
    🔗 [assessment.skillsbuild.org](https://assessment.skillsbuild.org/)
-   评估完会给你**定制路径**，别自己瞎挑——IBM 课太多，没评估很容易迷路
+   评估完会给你**定制路径**，别自己瞎挑——IBM 课太多，没评估很容易迷路。
 
 ---
 
 ## 我的学习建议
 
-1. **身份一定选对**：Adult Learners，这是 IBM SkillsBuild 最大的坑
-2. **先评估再学**：1000+ 门课，AI Level Up 评估帮你筛掉 90% 噪音
-3. **第二段最适合转行者**：AI for X 系列把 AI 直接接到你现在的岗位，转型摩擦最小
-4. **徽章及时挂 LinkedIn**：IBM 官方数字徽章在招聘市场有认可度，学完一段挂一段
-5. **课多不是优势是负担**：IBM 强在数量，但必须靠评估 + 路径来收敛，否则容易学杂
-
----
-
-## 常见问题
-
-### IBM SkillsBuild 注册有什么坑？
-
-最大的坑：注册时身份必须选 Adult Learners（成人学习者）。选成高中生/大学生，一半的 AI 课程会直接对你隐藏。
-
-### IBM 的数字徽章有用吗？
-
-IBM 官方数字徽章可验证、可挂 LinkedIn。第一枚从 Artificial Intelligence Fundamentals 拿，10-20 小时学完。
-
-### 在职转行适合 IBM 的课吗？
-
-特别适合。AI for Customer Service / Marketing / HR 三门场景课不讲抽象概念，直接把 AI 套进具体岗位工作流，你现在的岗位大概率能对上一门。
+1. **身份一定选对**：Adult Learners，这是 IBM SkillsBuild 最大的坑。
+2. **先评估再学**：1,000+ 门课，AI Level Up 评估帮你筛掉 90% 噪音。
+3. **第二段最适合转行者**：AI for X 系列把 AI 直接接到你现在的岗位，转型摩擦最小。
+4. **徽章及时挂 LinkedIn**：IBM 官方 Credly 数字徽章可在线核验，学完一段挂一段，再配一个真实作品更有说服力。
+5. **课多不是优势是负担**：IBM 强在数量，但必须靠评估 + 路径来收敛，否则容易学杂。
+6. **知道何时升级到监考认证**：IBM 是入门性价比最高的 **0 元 Credly 徽章**；如果目标岗位看重云端实验或监考证书，建议接着看 [微软 AI 认证完整攻略](/zh/blog/microsoft-learn-ai-certifications) 和 [2026 免费 AI 认证全对比](/zh/blog/ai-certifications-comparison-2026)。
 
 ---
 
 ## 一句话总结
 
-> **IBM SkillsBuild 课最多（1000+ 门）但坑也明确——注册选 Adult Learners、进站先跑 AI Level Up 评估。三段式路径从建立知识到职业转型全覆盖，每段发 IBM 官方徽章。是想「边转行边攒可信凭证」的人值得薅的一家。**
-
-→ [Meta PyTorch 官方教程攻略](/zh/blog/meta-pytorch-tutorials-guide)
-→ [AWS Skill Builder 免费 AI 课攻略](/zh/blog/aws-skill-builder-free-ai-courses)
-→ [微软 AI 认证完整攻略](/zh/blog/microsoft-learn-ai-certifications)
-→ [NVIDIA DLI 免费课完整攻略](/zh/blog/nvidia-dli-free-courses)
-→ [Google Skills 游戏化学习路径](/zh/blog/google-skills-ai-learning-paths)
-→ [Claude Certified Architect 完整路线图](/zh/blog/anthropic-claude-certified-architect-roadmap)
-→ [OpenAI Academy vs Anthropic 完整对比](/zh/blog/openai-academy-vs-anthropic-learning-paths)
-
-下一篇会扒 **DeepLearning.AI**——这家有一样东西，上面七家全都没有。
+> **IBM SkillsBuild 课最多（1,000+ 门）但坑也明确——注册选 Adult Learners、进站先跑 AI Level Up 评估。先用约 10 小时拿下 Artificial Intelligence Fundamentals 的免费 Credly 徽章，再按三段式路径衔接岗位场景与职业转型，是「边转行边攒可信凭证」最划算的起点。**
 
 ---
 
-📚 **[10 大平台 AI 免费学习全景图 →](/zh/blog/ai-free-learning-hub)** 一张表 + 按身份选路径，完整系列总目录。
+## 常见问题
+
+### IBM SkillsBuild 的 AI 课真的全免费吗？Artificial Intelligence Fundamentals 要学多久？
+
+完全免费，包括全部 6 个模块、Watson Studio 模拟实验和官方数字徽章都不收费。标准版 **Artificial Intelligence Fundamentals** 约 **10 小时**即可学完；如果加上 2026 年新版涵盖生成式 AI 与 Agent 的扩展内容，整体约 10–20 小时。
+
+### IBM SkillsBuild 注册有什么坑？为什么看不到完整课程？
+
+最大的坑是账号身份选错。平台区分高中生、大学生和 **Adult Learners（成人学习者）**，年满 18 岁务必选 **Adult Learners**，选成学生身份会让近一半 AI 课程和职业路径直接对你隐藏。
+
+### IBM 官方数字徽章怎么领？写进简历和 LinkedIn 有用吗？
+
+完成课程考核并达到 **80%+** 后，使用注册 IBM SkillsBuild 时的**同一个邮箱**登录 **Credly** 即可认领官方数字徽章，支持一键同步到 LinkedIn 并附带官方核验链接。对在校生、非技术岗和转行者来说，这是零成本的高性价比入门背书。
+
+### 在职转行学完 IBM SkillsBuild 后，下一步选微软还是 Anthropic？
+
+在职转行先在 IBM 完成 *AI for Customer Service / Marketing / HR* 等场景课衔接当前岗位；想补「可核验云端实操凭证」或公众可报的监考认证，推荐衔接 [Microsoft Applied Skills 与 AI-901 / AI-103](/zh/blog/microsoft-learn-ai-certifications)；想深入 Agent 与工程开发，可以看 [Anthropic Claude 认证与免费课路线](/zh/blog/anthropic-claude-certified-architect-roadmap) 或总览 [2026 五大厂商 AI 认证全对比](/zh/blog/ai-certifications-comparison-2026)。
+
+## 延伸阅读
+
+- 🏆 **五大厂商横向对比**：[2026 免费 AI 认证全对比：OpenAI、Anthropic、微软、NVIDIA 与 IBM 怎么选](/zh/blog/ai-certifications-comparison-2026)
+- 🧭 **交互式选课工具**：[JasonZhu.AI 免费 AI 学习路线指南](/zh/ai-learning-guide)
+- 📚 **10 大平台总目录**：[10 大平台 AI 免费学习全景图](/zh/blog/ai-free-learning-hub)
+- 🔬 **本系列其他平台攻略**：
+  - [微软 AI 认证完整攻略（Applied Skills / AI-901 / AI-103）](/zh/blog/microsoft-learn-ai-certifications)
+  - [Anthropic Claude 认证（2026）：架构师考试与免费备考路线](/zh/blog/anthropic-claude-certified-architect-roadmap)
+  - [OpenAI Academy vs Anthropic 完整对比](/zh/blog/openai-academy-vs-anthropic-learning-paths)
+  - [NVIDIA DLI 免费课完整攻略](/zh/blog/nvidia-dli-free-courses)
+  - [Google Skills 游戏化学习路径](/zh/blog/google-skills-ai-learning-paths)
+  - [AWS Skill Builder 免费 AI 课攻略](/zh/blog/aws-skill-builder-free-ai-courses)
+  - [Meta PyTorch 官方教程攻略](/zh/blog/meta-pytorch-tutorials-guide)
+  - [DeepLearning.AI 完整选课指南](/zh/blog/deeplearning-ai-courses-guide)

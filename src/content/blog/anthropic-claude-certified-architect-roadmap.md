@@ -1,47 +1,47 @@
 ---
-title: "Claude Certified Architect 认证（2026）：谁能考、怎么准备"
+title: "Anthropic Claude 认证（2026）：架构师考试与免费备考路线"
 date: "2026-05-04"
-updated: "2026-11-25"
+updated: "2026-11-27"
 category: "教程"
 tags: ["Anthropic", "Claude", "认证", "Claude Code", "MCP", "学习路径"]
 tweetUrl: "https://x.com/GoSailGlobal/status/2035945586751619284"
 coverImage: "/blog/anthropic-claude-certified-architect-roadmap/cover.png"
-excerpt: "Claude 认证考试只对 Claude 合作伙伴网络（Claude Partner Network）的成员开放，把 Claude 推向市场的机构都能免费加入。Architect – Foundations（CCAR-F）考试 $125：120 分钟 60 题，720 分（满分 1,000）及格。这篇讲清谁能考、五种认证、考什么，以及 12 周免费备考路线。"
+excerpt: "2026 年 Anthropic Claude 认证（5 门考试，$99–$175）仅向 CPN 合作机构成员开放。拆解架构师 CCAR-F 考试规则、Skilljar 免费课与 12 周备考路线。"
 ---
 
-**一句话回答（2026 年 11 月 25 日核对）：Claude Certified Architect 考试只对 Claude 合作伙伴网络（Claude Partner Network）的成员开放。** 把 Claude 推向市场的机构都能免费加入，所以实际上是通过所在公司去考。Foundations 考试（代码 CCAR-F）$125，120 分钟 60 题，在线监考或去 Pearson VUE 考点，720 分（满分 1,000）及格。备考用的 Anthropic Academy 课程对所有人免费。
+**一句话结论：** 按 JasonZhu.AI 2026 年 11 月实测核对，Anthropic 的 **Claude 认证体系**包含 5 门监考考试（$99–$175），目前**仅对 Claude 合作伙伴网络（CPN）成员机构员工开放**。核心科目 **Architect – Foundations（`CCAR-F`）** 标价 $125，120 分钟 60 题、720/1,000 及格；但 Skilljar 上的 Anthropic Academy 备考课对所有人免费。
 
-> **2026 年 11 月 25 日更新。** 这篇 2026 年 5 月首发时是一份备考路线，写的是考试 $99，读起来像是谁都能报。这两点现在都不成立：Anthropic 的考试只对合作伙伴网络成员开放，官方考试指南写的考试费是 $125。另外有 4 个课程链接已经换了地址。这一版按 Anthropic 的[考试页和考试指南](https://anthropic-partners.skilljar.com/claude-certified-architect-foundations-certification)（指南 1.0 版，2026 年 7 月生效）、[认证介绍](https://claude.com/resources/articles/four-role-based-claude-certifications)和 Pearson 的[考试页](https://www.pearsonvue.com/us/en/anthropic.html)重写。
+> **2026 年 11 月 27 日更新。** 这篇 2026 年 5 月首发时是一份备考路线，写的是考试 $99，读起来像是谁都能报。这两点现在都不成立：Anthropic 的考试只对合作伙伴网络成员开放，官方考试指南写明 `CCAR-F` 考试费为 $125。另外有 4 个课程链接已经换了地址。这一版按 Anthropic 的[考试页和考试指南](https://anthropic-partners.skilljar.com/claude-certified-architect-foundations-certification)（指南 1.0 版，2026 年 7 月生效）、[认证介绍](https://claude.com/resources/articles/four-role-based-claude-certifications)和 Pearson 的[考试页](https://www.pearsonvue.com/us/en/anthropic.html)全面更新。
 
 ---
 
-## 谁能考
+## 2026 年 Anthropic 五门 Claude 认证全览
 
-- **只对合作伙伴网络成员开放。** Anthropic 的[认证介绍](https://claude.com/resources/articles/four-role-based-claude-certifications)原话是「Exams are available to members of the Claude Partner Network」，Pearson 的[考试页](https://www.pearsonvue.com/us/en/anthropic.html)也这么写。
+| 认证科目 | 考试代码 | 官方标价* | 报考资格 | 有效期与续证 | 适合人群 |
+|---|---|---|---|---|---|
+| **Associate – Foundations** | `CCAO-F` | $99 | 仅限 CPN 成员 | 12 个月（Credly 徽章；按时免费在线续证） | 日常用 Claude 工作、参与 Claude 项目的人 |
+| **Developer – Foundations** | `CCDV-F` | $125 | 仅限 CPN 成员 | 12 个月（Credly 徽章；按时免费在线续证） | 用 Claude API、工具调用和智能体做应用的工程师 |
+| **Developer – Professional** | `CCDV-P` | $175 | 仅限 CPN 成员 | 12 个月（Credly 徽章；按时免费在线续证） | 开发者方向的进阶认证 |
+| **Architect – Foundations** | `CCAR-F` | $125 | 仅限 CPN 成员 | 12 个月（Credly 徽章；按时免费在线续证） | 设计和搭建 Claude 智能体系统的解决方案架构师 |
+| **Architect – Professional** | `CCAR-P` | $175 | 仅限 CPN 成员 | 12 个月（Credly 徽章；按时免费在线续证） | 大型企业规模的集成架构、治理和评估；Foundations 之后的下一步 |
+
+*\*合作伙伴级别折扣在结账时自动显示。名称和代码来自 Pearson 考试页（2026 年 11 月 24 日更新），适合人群来自 Anthropic 官方认证介绍。Pearson 写明 `CCAO-F`、`CCDV-F` 和 `CCAR-P` 三门考试自 2026 年 12 月 7 日起更新考纲内容。*
+
+---
+
+## 谁能考（CPN 合作伙伴资格说明）
+
+- **只对合作伙伴网络成员开放。** Anthropic 的[认证介绍](https://claude.com/resources/articles/four-role-based-claude-certifications)原话是「Exams are available to members of the Claude Partner Network」，Pearson 的[考试页](https://www.pearsonvue.com/us/en/anthropic.html)也明确如此，报名必须使用 CPN 成员机构认证的企业邮箱。
 - **加入免费。** 任何把 Claude 推向市场的机构都可以加入，不收费（[Anthropic，2026 年 3 月 12 日](https://www.anthropic.com/news/claude-partner-network)）。
 - **证书归个人，不归公司**（[Anthropic，2026 年 6 月 3 日](https://www.anthropic.com/news/services-track-partner-hub)）。
 - **公司为什么在意。** 新加入的合作伙伴从 Registered 级别起步，要承诺 10 名持证人员；证书在有效期内、并且过去 90 天用过 Claude 的人才算数。
 - **适合谁。** 考试指南描述的理想考生是解决方案架构师，有 6 个月以上用 Claude API、Claude Agent SDK、Claude Code 和 MCP 做实际项目的经验。
 
-想给团队做 Claude 培训？看[企业培训](/zh/services)。
+想给团队做 Claude 培训？看[企业培训](/zh/services)。如果你不在合作机构内、想找面向全球个人直接开放的大厂 AI 认证，推荐先看[2026 五大厂商 AI 认证全对比](/zh/blog/ai-certifications-comparison-2026)或[微软 AI 认证完整攻略](/zh/blog/microsoft-learn-ai-certifications)。
 
 ---
 
-## 五种 Claude 认证
-
-| 认证 | 考试代码 | 适合谁 |
-|---|---|---|
-| Associate – Foundations | CCAO-F | 日常用 Claude 工作、参与 Claude 项目的人 |
-| Developer – Foundations | CCDV-F | 用 Claude API、工具调用和智能体做应用的工程师 |
-| Developer – Professional | CCDV-P | 开发者方向的进阶考试 |
-| Architect – Foundations | CCAR-F | 设计和搭建 Claude 智能体系统的解决方案架构师 |
-| Architect – Professional | CCAR-P | 大型企业规模的集成架构、治理和评估；Foundations 之后的下一步 |
-
-名称和代码来自 Pearson 考试页（2026 年 11 月 24 日更新），适合谁来自 Anthropic 的认证介绍。Pearson 写明 Associate – Foundations、Developer – Foundations 和 Architect – Professional 三门考试 2026 年 12 月 7 日起换新内容。
-
----
-
-## Architect – Foundations 怎么考
+## Architect – Foundations（`CCAR-F`）怎么考
 
 | 项目 | 说明 |
 |---|---|
@@ -51,7 +51,7 @@ excerpt: "Claude 认证考试只对 Claude 合作伙伴网络（Claude Partner N
 | 考试方式 | 有监考，在线或去 Pearson VUE 考点 |
 | 及格线 | 换算分 720（满分 1,000） |
 | 考试费 | 每次 $125，合作伙伴级别的折扣在结账时显示 |
-| 有效期 | 12 个月，按时续证是一次免费、无监考的测评 |
+| 有效期 | 12 个月（颁发 Credly 数字徽章）；按时续证是一次免费、无监考的测评 |
 | 重考 | 依次等 14、30、90 天；12 个月内最多考 4 次 |
 
 场景来自真实客户项目：客服智能体、多智能体调研流水线、CI/CD 里的 Claude Code、开发者效率工具、结构化数据抽取。预约前 24 小时以上可以取消或改期，24 小时内改动考试费作废。
@@ -66,13 +66,13 @@ excerpt: "Claude 认证考试只对 Claude 合作伙伴网络（Claude Partner N
 | 4. Prompt Engineering & Structured Output（提示词与结构化输出） | 20% | Building with the Claude API |
 | 5. Context Management & Reliability（上下文管理与可靠性） | 15% | Building with the Claude API；Introduction to subagents |
 
-领域和占比来自考试指南，「对应的免费课」一列是我自己的对照。
+领域和占比来自考试指南，「对应的免费课」一列是我自己的对照。想把 Skill、Harness、记忆、协议与安全放到一张完整的工程拼图里理解，可以配合阅读[AI Agent 完整拼图深度拆解](/zh/blog/ai-agent-complete-picture)。
 
 ---
 
-## 怎么准备：12 周免费课程路线
+## 怎么准备：12 周免费课程路线（Skilljar 官方公开课）
 
-下面的课都在 [Anthropic Academy](https://anthropic.skilljar.com) 免费学，链接 2026 年 11 月 25 日重新核对过。
+下面的课都在 [Anthropic Academy](https://anthropic.skilljar.com)（Skilljar 平台）免费学，链接 2026 年 11 月 25 日重新核对过。
 
 ### Weeks 1-2·基础阶段
 
@@ -182,55 +182,50 @@ MCP 基础：**工具、资源、提示**。
 ## 公司不是合作伙伴怎么办
 
 - **先问公司。** 任何把 Claude 推向市场的机构都能免费加入 [Claude 合作伙伴网络](https://www.anthropic.com/news/claude-partner-network)，持证人员还能计入公司的合作伙伴级别。
-- **课照样学。** 课程免费，覆盖考试的全部五个领域。
-- **没证书也能证明能力。** 把上面的某个练习项目（比如一个 MCP 服务器或 Agent SDK 智能体）公开放到 GitHub。
+- **课照样学。** Skilljar 公开课免费，覆盖考试的全部五个领域。
+- **没证书也能证明能力。** 把上面的某个练习项目（比如一个 MCP 服务器或 Agent SDK 智能体）公开放到 GitHub，同时可以搭配面向公众开放的 [Microsoft Applied Skills 或 AI-103](/zh/blog/microsoft-learn-ai-certifications) 补齐简历凭证。
 
 ---
 
 ## 我的学习建议
 
-1. **不要跳过 Claude 101**：考试默认你掌握 Projects / Artifacts / Skills / Connectors 这些基础概念
-2. **核心课刷两遍**：Building with the Claude API 信息密度高，五个领域里有三个靠它
-3. **MCP 部分必须动手**：基础课看完直接搭一个 MCP server，比看 10 节理论强
-4. **Claude Code 课和 Coursera 课交替学**：一个偏 Anthropic 官方实践，一个偏学院派 AI-first 工程
-5. **练习项目跑通了再报名**：每次考试 $125，24 小时内改期考试费作废，证书有效期 12 个月
-
----
-
-## 常见问题
-
-### 谁都能考 Claude Certified Architect 吗？
-
-不能。考试只对 Claude 合作伙伴网络的成员开放。把 Claude 推向市场的机构可以免费加入，证书归通过考试的个人。
-
-### Claude Certified Architect 考试多少钱？
-
-Architect – Foundations 每次 $125，出自 Anthropic 的考试指南（1.0 版，2026 年 7 月生效）。合作伙伴级别第一次考试可能有折扣，以结账时显示的价格为准。
-
-### Claude Certified Architect 考什么？
-
-120 分钟 60 题，分五个领域：智能体架构与编排（27%）、工具设计与 MCP 集成（18%）、Claude Code 配置与工作流（20%）、提示词与结构化输出（20%）、上下文管理与可靠性（15%）。换算分 720（满分 1,000）及格。
-
-### Anthropic Academy 和 Claude 认证是一回事吗？
-
-不是。Anthropic Academy 的课程对所有人免费；认证考试有监考、要付费，只对合作伙伴网络成员开放。
-
-### 证书有效期多久？
-
-12 个月。按时续证是在 Anthropic Partner Academy 上做一次免费、无监考的测评；过期了要按全价重考。
-
-### 要准备多久？
-
-考试指南期望考生有大约 6 个月用 Claude 做实际项目的经验。已经在用 API 和 Claude Code 开发的人，按上面 12 周路线学完课程、做完练习项目就够；零基础要留更长时间。
+1. **不要跳过 Claude 101**：考试默认你掌握 Projects / Artifacts / Skills / Connectors 这些基础概念。
+2. **核心课刷两遍**：Building with the Claude API 信息密度高，五个领域里有三个靠它。
+3. **MCP 部分必须动手**：基础课看完直接搭一个 MCP server，比看 10 节理论强。
+4. **Claude Code 课和 Coursera 课交替学**：一个偏 Anthropic 官方实践，一个偏学院派 AI-first 工程。
+5. **练习项目跑通了再报名**：每次考试 $125，24 小时内改期考试费作废，证书有效期 12 个月。
 
 ---
 
 ## 一句话总结
 
-> **如果你在合作伙伴公司用 Claude 做开发，Foundations 考试值得报：$125、120 分钟，五个领域都能用 Anthropic Academy 的免费课准备。不在合作伙伴公司，就学同样的课、做指南里的练习项目，考试考的正是这些能力。**
-
-想看 OpenAI Academy 的对应路径？参考 → [OpenAI Academy vs Anthropic：两套免费 AI 学习路径完整对比](/zh/blog/openai-academy-vs-anthropic-learning-paths)
+> **如果你在 CPN 合作伙伴公司用 Claude 做开发，Architect – Foundations（`CCAR-F`）考试值得报：$125、120 分钟，五个领域都能用 Skilljar 上的免费课准备。不在合作伙伴公司，就学同样的课、把练习项目开源到 GitHub——招聘团队真正看重的正是这些实战能力。**
 
 ---
 
-📚 **[10 大平台 AI 免费学习全景图 →](/zh/blog/ai-free-learning-hub)** 一张表 + 按身份选路径，完整系列总目录。
+## 常见问题
+
+### 2026 年 Anthropic 认证谁都能考吗？有哪些科目？
+
+不能。Anthropic 官方五门认证（`CCAO-F`、`CCDV-F`、`CCDV-P`、`CCAR-F`、`CCAR-P`）目前**只对 Claude 合作伙伴网络（CPN）成员机构员工开放**。把 Claude 推向市场的机构可免费加入 CPN，通过考试后证书归个人所有，不归公司。
+
+### Claude Certified Architect（CCAR-F）考试多少钱？考什么？
+
+**Architect – Foundations（`CCAR-F`）** 官方标价每次 **$125**（其余四门标价 **$99–$175**，合作伙伴级别折扣在结账时显示）。考试为 **120 分钟 60 题**（6 选 4 真实业务场景），覆盖智能体架构与编排（27%）、Claude Code 配置与工作流（20%）、提示词与结构化输出（20%）、工具设计与 MCP 集成（18%）、上下文管理与可靠性（15%）五个领域，通过 Pearson VUE 监考，换算分 **720/1,000** 及格。
+
+### Skilljar 上的 Anthropic Academy 免费课和 Claude 认证是一回事吗？
+
+不是。Skilljar 平台上的 **Anthropic Academy**（`anthropic.skilljar.com`）对所有人免费开放，学完只发完课证明；正式的 **Claude 认证**是有监考、需付费的 Pearson VUE 考试，仅限 CPN 成员报考，通过后颁发可核验的 **Credly 数字徽章**。
+
+### Claude 认证有效期多久？备考和重考规则是什么？
+
+证书有效期为 **12 个月**。按时续证可在 Anthropic Partner Academy 完成免费、无监考的在线测评；过期则需按全价重考。重考冷却期依次为 14 天、30 天、90 天，12 个月内最多考 4 次。官方指南建议具备约 6 个月实操经验，已有 API 与 Claude Code 基础的开发者可按本文 12 周路线系统备考。
+
+## 延伸阅读
+
+- 🏆 **五大厂商横向对比**：[2026 免费 AI 认证全对比：OpenAI、Anthropic、微软、NVIDIA 与 IBM 怎么选](/zh/blog/ai-certifications-comparison-2026)
+- ⚔️ **两强路径对比**：[OpenAI Academy vs Anthropic：两套免费 AI 学习路径完整对比](/zh/blog/openai-academy-vs-anthropic-learning-paths)
+- 🧩 **Agent 工程深度拆解**：[Skill、Harness、记忆、安全：AI Agent 的完整拼图](/zh/blog/ai-agent-complete-picture)
+- 🏅 **公众可考替代路线**：[微软 AI 认证完整攻略（Applied Skills / AI-901 / AI-103）](/zh/blog/microsoft-learn-ai-certifications)
+- 🧭 **交互式选课工具**：[JasonZhu.AI 免费 AI 学习路线指南](/zh/ai-learning-guide)
+- 📚 **10 大平台总目录**：[10 大平台 AI 免费学习全景图](/zh/blog/ai-free-learning-hub)
