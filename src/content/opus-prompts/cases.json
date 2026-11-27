@@ -1,8 +1,8 @@
 {
  "model": "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.5)",
  "threshold": 5000,
- "updatedAt": "2026-11-26T01:17:15.167Z",
- "statsCheckedAt": "2026-11-26T01:17:15.167Z",
+ "updatedAt": "2026-11-27T01:17:17.268Z",
+ "statsCheckedAt": "2026-11-27T01:17:17.268Z",
  "inclusionRule": "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -37892,6 +37892,57 @@
    }
   },
   {
+   "id": "2125418681773838590",
+   "url": "https://x.com/Mulight/status/2125418681773838590",
+   "author": {
+    "handle": "Mulight",
+    "name": "Mulight 沐光"
+   },
+   "postedAt": "2026-11-25T02:37:56.000Z",
+   "addedAt": "2026-11-27",
+   "lang": "zh",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "Blender 3D书房建模与灯光渲染",
+    "en": "3D study room modeled and lit in Blender"
+   },
+   "summary": {
+    "zh": "作者使用谷歌反重力（Google Antigravity）内置的 Claude Opus 5.5 调用 Blender，在十分钟内完成了一间书房的 3D 建模以及灯光和材质设置。",
+    "en": "A 3D study room scene with lighting and materials, created in ten minutes by calling Blender from Claude Opus 5.5 inside Google Antigravity."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Google Antigravity",
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 76706,
+    "likes": 887,
+    "replies": 62,
+    "reposts": 101,
+    "bookmarks": 800,
+    "checkedAt": "2026-11-27T01:17:17.268Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125417836575395840/img/LyLwMEc3kfL939So.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125417836575395840/vid/avc1/1346x720/5NK67tSB_WMBMIod.mp4?tag=29",
+    "width": 1346,
+    "height": 720,
+    "durationSec": 27
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102731155879391418",
    "url": "https://x.com/melih_cat/status/2102731155879391418",
    "author": {
@@ -46302,6 +46353,54 @@
    }
   },
   {
+   "id": "2125683940803719343",
+   "url": "https://x.com/0x_elaro/status/2125683940803719343",
+   "author": {
+    "handle": "0x_elaro",
+    "name": "Elaro"
+   },
+   "postedAt": "2026-11-25T20:11:59.000Z",
+   "addedAt": "2026-11-27",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "手绘平面图生成可漫游日式房屋3D模型",
+    "en": "Walkable 3D Japanese house from floor plan"
+   },
+   "summary": {
+    "zh": "作者向 Claude Opus 5.5 提供了一张 14m×14m 的手绘平面图，生成了一座包含中庭和和室、由 2,444 个部件构成的可漫游 3D 日式住宅模型。",
+    "en": "A walkable 3D Japanese house model with 2,444 parts and a central courtyard, built by Claude Opus 5.5 from a single hand-drawn 14m x 14m floor plan."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 61191,
+    "likes": 364,
+    "replies": 9,
+    "reposts": 33,
+    "bookmarks": 361,
+    "checkedAt": "2026-11-27T01:17:17.268Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125682769372041216/img/LhIdhooIqviJ8FUw.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125682769372041216/vid/avc1/1280x720/nbCxBe2joZIUCLPb.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 24
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103235288306774127",
    "url": "https://x.com/ailker/status/2103235288306774127",
    "author": {
@@ -49774,6 +49873,56 @@
    }
   },
   {
+   "id": "2125671456948597154",
+   "url": "https://x.com/N1njaCodex/status/2125671456948597154",
+   "author": {
+    "handle": "N1njaCodex",
+    "name": "NinjaCodex"
+   },
+   "postedAt": "2026-11-25T19:22:23.000Z",
+   "addedAt": "2026-11-27",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "日落场景生成质量与耗时对比",
+    "en": "Sunset scene quality and speed comparison"
+   },
+   "summary": {
+    "zh": "作者对比了 Claude Opus 5.5（耗时 18 分钟）与疑似切换后的 Opus 5.6（耗时 1 小时 15 分钟）在同一场景下的日落天空渲染效果与耗时。",
+    "en": "A comparison of sky and sunset output quality and runtime between Claude Opus 5.5 (18 minutes) and an apparent Claude Opus 5.6 (1 hour 15 minutes)."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Claude Opus 5.6"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 56112,
+    "likes": 491,
+    "replies": 48,
+    "reposts": 28,
+    "bookmarks": 135,
+    "checkedAt": "2026-11-27T01:17:17.268Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125671357945978880/img/ZRLDo-zQpWnuSd_G.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125671357945978880/vid/avc1/774x720/GLKTW7ETf8SGnyBX.mp4?tag=29",
+    "width": 774,
+    "height": 720,
+    "durationSec": 11
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2111750475930570800",
    "url": "https://x.com/AI_Screening/status/2111750475930570800",
    "author": {
@@ -52305,6 +52454,57 @@
    "evidence": {
     "via": "search",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125548561890771349",
+   "url": "https://x.com/noclipepe/status/2125548561890771349",
+   "author": {
+    "handle": "noclipepe",
+    "name": "noclipepe"
+   },
+   "postedAt": "2026-11-25T11:14:02.000Z",
+   "addedAt": "2026-11-27",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "炽热铁球撞击物体Three.js模拟对比",
+    "en": "Red hot ball vs 8 objects Three.js comparison"
+   },
+   "summary": {
+    "zh": "作者对比了 Claude Opus 5.5 与 Opus 5.6 在不使用外部资产的情况下纯用 Three.js 代码生成“炽热红球与 8 个物体”的渲染效果、耗时及费用。",
+    "en": "A comparison between Claude Opus 5.5 and Opus 5.6 generating pure Three.js scenes with no external assets using the same prompt for a red hot ball and eight objects."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js",
+    "Claude Opus 5.6"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 53174,
+    "likes": 130,
+    "replies": 25,
+    "reposts": 3,
+    "bookmarks": 53,
+    "checkedAt": "2026-11-27T01:17:17.268Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125548132440190976/img/S6WpwDf8dKdzyvZr.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125548132440190976/vid/avc1/720x720/PgeNxusxFpDPoSYq.mp4?tag=29",
+    "width": 720,
+    "height": 720,
+    "durationSec": 71
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -67684,6 +67884,56 @@
    }
   },
   {
+   "id": "2125422309116879008",
+   "url": "https://x.com/Viniai_/status/2125422309116879008",
+   "author": {
+    "handle": "Viniai_",
+    "name": "Vini"
+   },
+   "postedAt": "2026-11-25T02:52:21.000Z",
+   "addedAt": "2026-11-27",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "雪林多头怪兽预告片",
+    "en": "Snowy forest creature trailer"
+   },
+   "summary": {
+    "zh": "作者使用 Claude Opus 5.5 配合 Seedance 2.5 制作了一段 53 秒的暗黑奇幻雪林怪兽预告片风格 AI 视频，并在回复中公布了完整的分镜提示词。",
+    "en": "A 53-second dark-fantasy creature trailer video featuring a multi-headed snowy forest beast, made with Claude Opus 5.5 and Seedance 2.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Seedance 2.5"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 37079,
+    "likes": 336,
+    "replies": 81,
+    "reposts": 33,
+    "bookmarks": 74,
+    "checkedAt": "2026-11-27T01:17:17.268Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125422259896717312/img/Jt_SDLLW_INNrPHv.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125422259896717312/vid/avc1/1280x720/BQfJoe_tUs6HiOBh.mp4?tag=16",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 61
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103432080730583486",
    "url": "https://x.com/MakeAI_CEO/status/2103432080730583486",
    "author": {
@@ -72507,6 +72757,56 @@
     "width": 1152,
     "height": 720,
     "durationSec": 42
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125414140957384814",
+   "url": "https://x.com/itsshara_ai/status/2125414140957384814",
+   "author": {
+    "handle": "itsshara_ai",
+    "name": "Shara"
+   },
+   "postedAt": "2026-11-25T02:19:54.000Z",
+   "addedAt": "2026-11-27",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "郊狼与走鹃的黑洞陷阱",
+    "en": "Coyote and roadrunner black hole trap"
+   },
+   "summary": {
+    "zh": "作者使用 Claude Opus 5.5 配合 Seedance 2.5 制作了一段 30 秒的写实风格沙漠公路“黑洞陷阱”搞笑追逐视频，并公布了完整的 3 段分镜提示词与参考图生成建议。",
+    "en": "A 30-second live-action-style desert slapstick chase video featuring a coyote, roadrunner, and black hole trap, made with Claude Opus 5.5 and Seedance 2.5."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Seedance 2.5"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 32819,
+    "likes": 320,
+    "replies": 92,
+    "reposts": 27,
+    "bookmarks": 85,
+    "checkedAt": "2026-11-27T01:17:17.268Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125414117469274112/img/fsrQE6wC8fEKeR_5.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125414117469274112/vid/avc1/1280x720/yQioph_HFmv7by8O.mp4?tag=16",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 30
    },
    "evidence": {
     "via": "daily",
@@ -78642,6 +78942,62 @@
    }
   },
   {
+   "id": "2125712540369875352",
+   "url": "https://x.com/shmopixbzn/status/2125712540369875352",
+   "author": {
+    "handle": "shmopixbzn",
+    "name": "shmopix"
+   },
+   "postedAt": "2026-11-25T22:05:38.000Z",
+   "addedAt": "2026-11-27",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "Blender与Three.js生成的经典鸥翼跑车",
+    "en": "1950s gullwing coupe in Blender and Three.js"
+   },
+   "summary": {
+    "zh": "作者使用相同提示词让 Claude Opus 5.5 High 分别在 Blender 和 Three.js 中生成 1950 年代鸥翼门轿跑 3D 模型并进行对比，全程仅通过后续提示词修改细节。",
+    "en": "A comparison of two 3D 1950s gullwing coupe models generated with Claude Opus 5.5 High from the same prompt, one in Blender and one in Three.js, refined via follow-up prompts."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/shmopixbzn/status/2125712540369875352",
+    "text": "build a 1950s gullwing coupe"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Blender",
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 28742,
+    "likes": 248,
+    "replies": 30,
+    "reposts": 10,
+    "bookmarks": 141,
+    "checkedAt": "2026-11-27T01:17:17.268Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125711679619043328/img/RN51m1WM8txZpjW5.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125711679619043328/vid/avc1/1280x720/0yxAlyc0vBICd6ar.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 12
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2107031729705984163",
    "url": "https://x.com/berlified/status/2107031729705984163",
    "author": {
@@ -83330,6 +83686,62 @@
    }
   },
   {
+   "id": "2125410894939111807",
+   "url": "https://x.com/lucian__03/status/2125410894939111807",
+   "author": {
+    "handle": "lucian__03",
+    "name": "루샨 lucian"
+   },
+   "postedAt": "2026-11-25T02:07:00.000Z",
+   "addedAt": "2026-11-27",
+   "lang": "ko",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "单文件3D挖掘机模拟器对比",
+    "en": "Single-file 3D excavator simulator comparison"
+   },
+   "summary": {
+    "zh": "作者用同一段提示词让 Claude Opus 5.5 和 Opus 5.6 在不使用外部资源的情况下，一次性用 Three.js 在单个 HTML 文件中生成 3D 液压挖掘机模拟器并对比效果。",
+    "en": "A side-by-side comparison of single-file Three.js 3D hydraulic excavator simulators generated in one shot by Claude Opus 5.5 and Opus 5.6 without external assets."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/lucian__03/status/2125410896096768434",
+    "text": "Build an ultra-realistic, fully functional 3D hydraulic excavator simulator in a single index.html file using Three.js.\n\nProcedurally model every component, including the tracks, cabin, boom, arm, bucket, hydraulic cylinders, hoses, and mechanical linkages.\n\nThe excavator must actually excavate terrain, collect soil into its bucket, transport it, and dump it elsewhere. Terrain deformation, soil volume conservation, hydraulic piston movement, joint constraints, and bucket collisions must be physically consistent.\n\nInclude highly detailed geometry, realistic materials, dynamic shadows, reflections, dust particles, and cinematic lighting.\n\nAutomatically start the simulation immediately on page load. Continuously repeat the complete excavation cycle: digging, scooping, lifting, rotating, dumping, and returning to the starting position.\n\nThe entire simulation must loop seamlessly and indefinitely, without visible resets, abrupt transitions, pauses, or user interaction. Keep the terrain and soil physically consistent across repeated cycles.\n\nUse a cinematic camera angle that clearly captures the entire excavation process. Minimize UI elements and maximize the visual presentation.\n\nDo not fake the excavation using predetermined visual effects. Do not use external models, images, or textures. Everything must be generated through code.\n\nMake it look and behave like a premium next-generation engineering simulator, with the visual fidelity of an AAA video game.\n\nComplete everything in one shot. Do not ask questions."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Three.js",
+    "Claude Opus 5.6"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 26293,
+    "likes": 235,
+    "replies": 30,
+    "reposts": 16,
+    "bookmarks": 89,
+    "checkedAt": "2026-11-27T01:17:17.268Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125318296396599296/img/nsyj91V1XqpkBQnB.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125318296396599296/vid/avc1/1494x720/vode2_apVfD5jHXk.mp4?tag=29",
+    "width": 1494,
+    "height": 720,
+    "durationSec": 21
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2115581339357286477",
    "url": "https://x.com/devteamdrew/status/2115581339357286477",
    "author": {
@@ -84955,6 +85367,54 @@
     "width": 900,
     "height": 720,
     "durationSec": 15
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125613023968567710",
+   "url": "https://x.com/sylvechv/status/2125613023968567710",
+   "author": {
+    "handle": "sylvechv",
+    "name": "Sylve"
+   },
+   "postedAt": "2026-11-25T15:30:11.000Z",
+   "addedAt": "2026-11-27",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "product",
+   "title": {
+    "zh": "ESP32方块呼吸练习应用",
+    "en": "Box-breathing app on ESP32"
+   },
+   "summary": {
+    "zh": "作者使用 Claude Opus 5.5 一次性生成了一个方形呼吸训练应用，运行在微雪 ESP32-S3 AMOLED 触控开发板上。",
+    "en": "A box-breathing application created in one shot with Claude Opus 5.5 to run on a Waveshare ESP32-S3 AMOLED touch board."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 25401,
+    "likes": 232,
+    "replies": 23,
+    "reposts": 5,
+    "bookmarks": 123,
+    "checkedAt": "2026-11-27T01:17:17.268Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125612938585075712/img/PkyyQG8rXLCQhtXo.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125612938585075712/vid/avc1/720x960/gjBL5D0rxstkVGWD.mp4?tag=29",
+    "width": 720,
+    "height": 960,
+    "durationSec": 29
    },
    "evidence": {
     "via": "daily",
@@ -87002,6 +87462,58 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125595652101197918",
+   "url": "https://x.com/gooby_esq/status/2125595652101197918",
+   "author": {
+    "handle": "gooby_esq",
+    "name": "gooby_esq"
+   },
+   "postedAt": "2026-11-25T14:21:09.000Z",
+   "addedAt": "2026-11-27",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "四乐章交响曲动画",
+    "en": "Animated four-movement symphony"
+   },
+   "summary": {
+    "zh": "作者参考现有 LilyPond 乐谱，让 Claude Opus 5.5 在“演员-评论家”循环中迭代 2500 轮创作出四乐章新浪漫主义交响曲，随后用 EastWest 音源制作音频并制作了动画。",
+    "en": "A four-movement neo-romantic symphony written by Claude Opus 5.5 over 2,500 actor-critic loop cycles using LilyPond scores for reference, then mocked up with EastWest virtual instruments."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "LilyPond",
+    "EastWest",
+    "REAPER"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 24233,
+    "likes": 209,
+    "replies": 18,
+    "reposts": 10,
+    "bookmarks": 150,
+    "checkedAt": "2026-11-27T01:17:17.268Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125592337216684032/img/ugTudJMGTF4PWzAZ.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125592337216684032/vid/avc1/1280x720/QoDZ3dMVr909TVYE.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 1514
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -100893,6 +101405,61 @@
    }
   },
   {
+   "id": "2125563003462615488",
+   "url": "https://x.com/N1njaCodex/status/2125563003462615488",
+   "author": {
+    "handle": "N1njaCodex",
+    "name": "NinjaCodex"
+   },
+   "postedAt": "2026-11-25T12:11:25.000Z",
+   "addedAt": "2026-11-27",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "中式帆船场景对比",
+    "en": "Chinese sailing ships scene comparison"
+   },
+   "summary": {
+    "zh": "作者使用完全相同的提示词，分别让 Claude Opus 5.5 和 Opus 5.6 生成独立 HTML 格式的互动 3D 场景，展现黎明时分中式帆船航行在喀斯特海湾中的画面并进行对比。",
+    "en": "A comparison of interactive standalone HTML 3D scenes depicting a Chinese junk sailing through a misty karst bay at dawn, generated from the same prompt by Opus 5.5 and Opus 5.6."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/N1njaCodex/status/2125563041643127077",
+    "text": "Build from scratch a fully interactive, cinematic, stylized 3D scene of a grand Chinese junk sailing through a misty karst bay at dawn. Make it as detailed and high-quality as possible.\n\nSCENE\n- A calm, jade-green bay surrounded by tall limestone karst towers (Ha Long Bay / Guilin style): sheer fluted cliffs, ledges, tidal notches at the waterline, vegetation clinging to slopes and summits, layered ranks fading into morning mist.\n- Dawn light: low warm sun behind the sails, soft pink-gold sky with clouds, cool blue mist in the distance, light shafts, height fog.\n- Water: gentle waves, mirror-like reflections of the cliffs and ships, cat's-paw ripple patches, sun glitter, lantern glints, white foam at the bow and a lacy V-shaped wake behind every ship.\n\nHERO SHIP\n- A large five-masted junk (~45 m) with red battened sails: fan-shaped, curved leeches, bamboo battens, parrels, sheetlets fanning to the euphroes, lazy jacks, four-part halyard tackles, wear and patched panels, natural cloth flutter in the wind.\n- Hull: raked transoms, high stern, bow horns, painted sheer strakes in red and jade, a painted eye on the bow, wales, gold studs, fenders, a large rudder and tiller, a painted ornamental stern board with carved gilded cloud scrolls.\n- Gilded carving: dragon heads rearing from the bow horns (open jaws, antler horns, whiskers, flame mane); a long relief dragon with dorsal spines and clawed legs writhing along the upper hull towards the eye.\n- Lacquered round shields with gold petal wreaths hung along the bulwarks, bronze swivel guns on the rail.\n- Deck: cabins with lattice windows and glowing paper lanterns, woven mat roofs, a helm pavilion on the poop with red columns and a sweeping jade-tiled roof with upturned eaves, a windlass, anchors, hatches, crates, jars, straw rice sacks, barrels, rope coils, a yuloh scull.\n- Rigging dressed with strings of paper lanterns and small colored pennants between the mast trucks, long streamers flying from the mastheads, a rope ladder up the mainmast.\n- Crew of 12+ posed sailors in conical straw hats, headbands and caps: hauling a halyard, steering, the captain with hands behind his back, two drinking tea, sculling, carrying a sack, coiling rope, a lookout shading his eyes, one climbing the mast.\n\nSURROUNDINGS\n- A convoy of 5–6 smaller junks with different sail dyes (red, ochre, oxblood), each with its own wake.\n- Pagodas on small rocky islets drifting past with the cliffs.\n- Hundreds of floating lotus lanterns, bamboo rafts with fishermen and cormorants, flocks of white egrets, thin galley smoke.\n\nCAMERA & IMAGE\n- Slow cinematic auto-orbit with low water-skimming passes, wide shots of the whole fleet and close passes along the hull showing the carvings and crew.\n- Mouse drag to orbit, wheel/pinch to zoom, double-click or a few seconds idle returns to the auto camera.\n- Depth of field focused on the ship (background softens on close-ups), bloom, ACES tone mapping, color grade, vignette, subtle grain, soft shadows.\n- The ship gently heaves, pitches and rolls with the waves; nothing in slow motion.\n\nMANDATORY REQUIREMENTS\n- No text of any kind may appear anywhere inside the scene: no titles, names, logos, descriptions, credits, labels, characters or control instructions in any language.\n- Deliver the entire project as one final standalone HTML file that opens directly in a web browser, with all assets (textures, geometry, code) generated procedurally or embedded inside it. No external requests.\n- No primitive placeholder shapes in the finished result. Lighting must reveal the geometry.\n- Balance visual quality and real-time performance: level of detail for distant ships, adaptive resolution if the frame rate drops.\n- Actually test the finished result in a desktop web browser: capture screenshots from many angles, inspect the console for errors and warnings, and fix every visible or technical issue. Verify the final file opens directly, has no text, and has no runtime errors.\n- Then finish the task with only a brief response."
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Claude Opus 5.6"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 18943,
+    "likes": 366,
+    "replies": 38,
+    "reposts": 25,
+    "bookmarks": 102,
+    "checkedAt": "2026-11-27T01:17:17.268Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125562778916163584/img/CJD6xB6RDqkQz-52.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125562778916163584/vid/avc1/720x882/3bacy9Afy5tegsDw.mp4?tag=29",
+    "width": 720,
+    "height": 882,
+    "durationSec": 18
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103862007208591605",
    "url": "https://x.com/KashPrime/status/2103862007208591605",
    "author": {
@@ -111061,6 +111628,58 @@
    }
   },
   {
+   "id": "2125633183161139699",
+   "url": "https://x.com/EnvolDev/status/2125633183161139699",
+   "author": {
+    "handle": "EnvolDev",
+    "name": "Tony"
+   },
+   "postedAt": "2026-11-25T16:50:17.000Z",
+   "addedAt": "2026-11-27",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "冬日王冠多模型生成对比",
+    "en": "Winter Crown multi-model comparison"
+   },
+   "summary": {
+    "zh": "作者使用同一个“Winter Crown”提示词测试了 GPT-6.2 Astra、Fable 5.2、Claude Opus 5.5 和 GPT-6.2 Sol，并对比了各自的生成效果、耗时与成本。",
+    "en": "A cost, generation time, and output comparison across GPT-6.2 Astra, Fable 5.2, Claude Opus 5.5, and GPT-6.2 Sol using the same Winter Crown prompt."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "GPT-6.2 Astra",
+    "Fable 5.2",
+    "GPT-6.2 Sol"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 15498,
+    "likes": 103,
+    "replies": 7,
+    "reposts": 2,
+    "bookmarks": 24,
+    "checkedAt": "2026-11-27T01:17:17.268Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125632934812205059/img/Q7y6Zm9TM7ytmwhu.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125632934812205059/vid/avc1/810x720/ySinouVxOE8e9Jof.mp4?tag=29",
+    "width": 810,
+    "height": 720,
+    "durationSec": 25
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2121701481204326632",
    "url": "https://x.com/papadupapadu/status/2121701481204326632",
    "author": {
@@ -112491,6 +113110,54 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125736677993861469",
+   "url": "https://x.com/julianleiss/status/2125736677993861469",
+   "author": {
+    "handle": "julianleiss",
+    "name": "Julián Leiss"
+   },
+   "postedAt": "2026-11-25T23:41:32.000Z",
+   "addedAt": "2026-11-27",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "石与光：3D石头视觉短片",
+    "en": "Piedra y luz: 3D visual essay on stones"
+   },
+   "summary": {
+    "zh": "名为《piedra y luz》的3D视觉随笔作品，测试了 Opus 5.5 的三维建模能力，以墨西哥诗人奥克塔维奥·帕斯的口吻致敬石头。",
+    "en": "A 3D visual essay titled \"piedra y luz\" testing Opus 5.5's three-dimensional modeling capabilities, presented as an ode to stones in the voice of poet Octavio Paz."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 15067,
+    "likes": 406,
+    "replies": 25,
+    "reposts": 17,
+    "bookmarks": 377,
+    "checkedAt": "2026-11-27T01:17:17.268Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125736465967566848/img/aBuQ8eBUrtjqe2th.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125736465967566848/vid/avc1/720x1280/Ol8XdIU69m8R6gpl.mp4?tag=29",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 35
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -139698,6 +140365,56 @@
    }
   },
   {
+   "id": "2125597881675694098",
+   "url": "https://x.com/lemomo_ai/status/2125597881675694098",
+   "author": {
+    "handle": "lemomo_ai",
+    "name": "Lemomo"
+   },
+   "postedAt": "2026-11-25T14:30:01.000Z",
+   "addedAt": "2026-11-27",
+   "lang": "zh",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "刀脊悬崖越野摩托3D一次生成的",
+    "en": "Cliff ridge dirt bike 3D tracking shot"
+   },
+   "summary": {
+    "zh": "15秒一镜到底3D动画，越野摩托沿悬崖刀脊疾驰。场景、车辆与灯光均由 Claude Opus 5.5 编写代码在 Blender 中生成并渲染，骑手动作数据取自视频模型。",
+    "en": "A 15-second one-take 3D animation of a dirt bike racing along a cliffside ridge, procedurally modeled and rendered in Blender via code from Claude Opus 5.5 using video-model motion data."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 8669,
+    "likes": 120,
+    "replies": 30,
+    "reposts": 13,
+    "bookmarks": 65,
+    "checkedAt": "2026-11-27T01:17:17.268Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125582828037640192/img/N6M2XHJWTXkCUl4m.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125582828037640192/vid/avc1/1280x720/OgxW7j7KV9KUaTnF.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 15
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2114414708270739508",
    "url": "https://x.com/ashen_one/status/2114414708270739508",
    "author": {
@@ -144773,6 +145490,56 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125665054368702531",
+   "url": "https://x.com/Aygramm_/status/2125665054368702531",
+   "author": {
+    "handle": "Aygramm_",
+    "name": "Ayomide Adeji"
+   },
+   "postedAt": "2026-11-25T18:56:56.000Z",
+   "addedAt": "2026-11-27",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "GTA 5到GTA 6转场剪辑",
+    "en": "GTA 5 to GTA 6 transition edit"
+   },
+   "summary": {
+    "zh": "使用 Claude Opus 5.5 制作的《GTA 5》到《GTA 6》转场剪辑视频，未使用 After Effects、CapCut 或 AI 视频生成器，完整工作流与提示词分享在 Telegram 频道中。",
+    "en": "A GTA 5 to GTA 6 video edit made with Claude Opus 5.5 without After Effects, CapCut, or AI video generators, with the full workflow and prompt shared via Telegram."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [
+    "https://t.me/aygrammgenlab/951"
+   ],
+   "stats": {
+    "views": 7538,
+    "likes": 103,
+    "replies": 68,
+    "reposts": 3,
+    "bookmarks": 103,
+    "checkedAt": "2026-11-27T01:17:17.268Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/media/HX_g4kkXgAABtpa.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125664811782443008/vid/avc1/1280x720/Ap4fOzDEq793OYLg.mp4?tag=29",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 31
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -151366,6 +152133,60 @@
     "width": 1280,
     "height": 720,
     "durationSec": 50
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125609179339465012",
+   "url": "https://x.com/vib3coded/status/2125609179339465012",
+   "author": {
+    "handle": "vib3coded",
+    "name": "Vib3Coded"
+   },
+   "postedAt": "2026-11-25T15:14:54.000Z",
+   "addedAt": "2026-11-27",
+   "lang": "en",
+   "models": [
+    "opus-5.5",
+    "sonnet-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "交互式WebGPU毛绒螃蟹对比",
+    "en": "Interactive WebGPU plush crab comparison"
+   },
+   "summary": {
+    "zh": "对比作品：作者使用同一份详细提示词，分别让 Claude Opus 5.5 和 Claude Sonnet 5.5 生成单文件交互式 WebGPU 毛绒螃蟹网页。",
+    "en": "A comparison of interactive WebGPU plush crab pages built as a single HTML file from the same detailed prompt by Claude Opus 5.5 and Claude Sonnet 5.5."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/vib3coded/status/2125609231155900512",
+    "text": "Create a self-contained interactive WebGPU page \"Plush Crab\" in the existing Material Studies plush series\n(No. 020, fig. 20), matching the series' editorial layout: serif masthead, specimen control panel, live\nreadouts, collapsible \"Inside the experiment\" notes, English UI, works on mobile, graceful no-WebGPU fallback.\n\nTHE TOY: a cute plush crab sitting on a studio table. A wide, puffy domed shell with a flat seat and a soft\nbrow; two eyes on short stalks, each a fuzzy eyeball with a round white felt patch and a glossy safety eye;\nan embroidered smile and soft blush cheeks; pale spots scattered over the top of the shell; a paler\nunderside; stitched seams where legs are sewn on. Real-time shell-texture fur (many shells, alpha-to-coverage,\nMSAA) that lags behind jiggles and can be combed. Palettes: Coral (default), Sand, Blue (with red claw tips).\n\nBODY: one SDF meshed with surface nets, simulated as an XPBD soft body (hex lattice, shape matching +\ntetrahedral volume) under gravity and friction; it breathes, rights itself, can be grabbed, squashed,\nlifted and thrown, and lands softly.\n\nLEGS AND CLAWS: eight walking legs and two arms are rods with a plastic \"wire\" inside — posed toward\nblended targets (sit, stand, hide, wave, hang), and bent legs keep the new shape until \"Straighten\".\nEach arm ends in a chunky claw with two fat fingers that hang from the arm tip in the claw's own frame;\nopening and closing is a single angle. Legs get pale joint bands and toes; claw fingers get dark tips.\n\nBEHAVIOUR: \"Scuttle\" walks sideways (keeps its side to the goal) with an alternating gait and footholds;\n\"Snip snip\" raises both claws and snaps them a beat apart (count snips in a readout); \"Hide\" pulls the legs in\nand covers its eyes with the claws, then peeks out; \"Wave claws\" raises them high. With the Finger tool it\nscuttles toward a held-out finger, turns to face it, reaches with its claws and gives a gentle pinch (toast);\npoking the shell makes it hide. Held up in the air, legs dangle and paddle. Idle: small scuttles, snips, waves.\n\nCONTROLS: tools Hand / Finger / Comb; sliders Stuffing, Pile, Wire; buttons Scuttle, Snip snip, Hide,\nWave claws, Straighten, Smooth fur, Reset; ¼ speed, Mesh, Pause. Readouts: Mass, Volume (% of rest),\nSteps, Snips. Single HTML file, no external models or textures."
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 5493,
+    "likes": 104,
+    "replies": 26,
+    "reposts": 12,
+    "bookmarks": 30,
+    "checkedAt": "2026-11-27T01:17:17.268Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125609057322975232/img/wCbZ4wbzoyRDiVTS.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125609057322975232/vid/avc1/720x910/8CK2-i8qlhP4DY9s.mp4?tag=29",
+    "width": 720,
+    "height": 910,
+    "durationSec": 17
    },
    "evidence": {
     "via": "daily",

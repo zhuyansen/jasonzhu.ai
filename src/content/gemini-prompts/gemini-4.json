@@ -3,8 +3,8 @@
  "model": "Gemini 4",
  "released": "2026-10-14T00:00:00Z",
  "threshold": 5000,
- "updatedAt": "2026-11-26T01:32:48.464Z",
- "statsCheckedAt": "2026-11-26T01:28:05.076Z",
+ "updatedAt": "2026-11-27T01:43:28.278Z",
+ "statsCheckedAt": "2026-11-27T01:29:29.242Z",
  "inclusionRule": "Original post by the creator, media attached, >= 5000 views on that post, and the creator's own text says Gemini 4 (Argon, Carbon, Hydrogen, Krypton, Pro...) built it in code; same-prompt comparisons against other models included. Seeded on 2026-11-16 from the Claude 5.5 library. Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -6145,6 +6145,70 @@
    }
   },
   {
+   "id": "2125587499431100527",
+   "url": "https://x.com/mizugame_22/status/2125587499431100527",
+   "author": {
+    "handle": "mizugame_22",
+    "name": "MizuGame｜無駄にガチなAI使い"
+   },
+   "postedAt": "2026-11-25T13:48:46.000Z",
+   "addedAt": "2026-11-27",
+   "lang": "ja",
+   "kind": "comparison",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [
+    "gpt"
+   ],
+   "category": "scene3d",
+   "title": {
+    "zh": "雨夜涨潮中的严岛神社大鸟居",
+    "en": "Itsukushima Great Torii gate in rain at night"
+   },
+   "summary": {
+    "zh": "对比了 Gemini 4 Neon（Antigravity）和 GPT-6.2 Astra（Codex）用同一句提示词在 Blender 5.2 Cycles 中制作严岛大鸟居的效果，未定胜负，由观众评判哪个更逼真。",
+    "en": "Compared Gemini 4 Neon (Antigravity) and GPT-6.2 Astra (Codex) building Itsukushima Torii in Blender 5.2 Cycles from the same one-line prompt; asks viewers which looks more photorealistic."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/mizugame_22/status/2125587499431100527",
+    "text": "満ち潮の夜、雨の厳島神社の大鳥居を、写真と見まがうほど写実的に。"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "GPT-6.2 Astra",
+    "Blender",
+    "Antigravity",
+    "Codex"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 45692,
+    "likes": 114,
+    "replies": 5,
+    "reposts": 11,
+    "bookmarks": 73,
+    "checkedAt": "2026-11-27T01:29:29.242Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2125587478933635072/vid/avc1/720x842/Tjs_o1MhARUvyTpK.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2125587478933635072/img/b_WdDd8NNnMkrVM5.jpg",
+     "width": 1200,
+     "height": 1406,
+     "durationSec": 10
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2125225607546179893",
    "url": "https://x.com/SkyzeeReal/status/2125225607546179893",
    "author": {
@@ -6703,6 +6767,65 @@
    }
   },
   {
+   "id": "2125635764029370722",
+   "url": "https://x.com/AmirMushich/status/2125635764029370722",
+   "author": {
+    "handle": "AmirMushich",
+    "name": "AmirMušić"
+   },
+   "postedAt": "2026-11-25T17:00:33.000Z",
+   "addedAt": "2026-11-27",
+   "lang": "en",
+   "kind": "comparison",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [
+    "claude",
+    "gpt"
+   ],
+   "category": "scene3d",
+   "title": {
+    "zh": "机械手三维建模与动画",
+    "en": "3D robotic hand modeling and animation"
+   },
+   "summary": {
+    "zh": "对比了 Gemini 4 Neon、Claude Fable 5.2 和 GPT-6.2 Astra 根据单张参考图在 Blender 中建模并制作机械手动画的表现；作者认为 Astra 最佳，Gemini 凭借动画逻辑和低成本排第二，Fable 垫底。",
+    "en": "Compared Gemini 4 Neon, Claude Fable 5.2, and GPT-6.2 Astra modeling and animating a robo-hand in Blender from a reference image; ranked Astra first, Gemini second for animation and cost, Fable third."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Claude Fable 5.2",
+    "GPT-6.2 Astra",
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 41690,
+    "likes": 300,
+    "replies": 32,
+    "reposts": 18,
+    "bookmarks": 152,
+    "checkedAt": "2026-11-27T01:29:29.242Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2125631368692469760/vid/avc1/720x1080/4P8CbOcLY5X3IYh3.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2125631368692469760/img/4WHZSXJqWN6o50uI.jpg",
+     "width": 1080,
+     "height": 1620,
+     "durationSec": 12
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2122290663643353165",
    "url": "https://x.com/kinderlayer/status/2122290663643353165",
    "author": {
@@ -6927,6 +7050,62 @@
      "width": 736,
      "height": 1200,
      "durationSec": 10
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125605969799365018",
+   "url": "https://x.com/kinderlayer/status/2125605969799365018",
+   "author": {
+    "handle": "kinderlayer",
+    "name": "Kinder"
+   },
+   "postedAt": "2026-11-25T15:02:09.000Z",
+   "addedAt": "2026-11-27",
+   "lang": "en",
+   "kind": "comparison",
+   "models": [
+    "argon"
+   ],
+   "rivals": [
+    "claude"
+   ],
+   "category": "scene3d",
+   "title": {
+    "zh": "宫殿中破石而出的翡翠黑豹",
+    "en": "Emerald panther emerging in palace"
+   },
+   "summary": {
+    "zh": "对比了 Claude Fable 5.2 和 Gemini 4 Argon 使用同一提示词生成宫殿中翡翠堆里跃出的大型猫科动物的效果，作者未揭晓各自对应哪款模型，由观众自行判断。",
+    "en": "Compared Claude Fable 5.2 and Gemini 4 Argon on the same prompt of an emerald panther emerging from raw emeralds in a palace, without revealing which model produced which result."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Claude Fable 5.2"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 39169,
+    "likes": 146,
+    "replies": 35,
+    "reposts": 3,
+    "bookmarks": 67,
+    "checkedAt": "2026-11-27T01:29:29.242Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2125605883220508672/vid/avc1/720x1280/LvrwKb9n3JDtI3Mm.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2125605883220508672/img/Zh8PZ_iRUdej0k5E.jpg",
+     "width": 720,
+     "height": 1280,
+     "durationSec": 30
     }
    ],
    "evidence": {
@@ -7510,6 +7689,69 @@
      "width": 1274,
      "height": 1252,
      "durationSec": 21
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125706215699460335",
+   "url": "https://x.com/kevin_t_ngo/status/2125706215699460335",
+   "author": {
+    "handle": "kevin_t_ngo",
+    "name": "Kevin Ngo"
+   },
+   "postedAt": "2026-11-25T21:40:30.000Z",
+   "addedAt": "2026-11-27",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "game",
+   "title": {
+    "zh": "可游玩的网页塔防游戏",
+    "en": "Playable browser tower defense game"
+   },
+   "summary": {
+    "zh": "使用 Gemini 4 Neon 制作了一款可在浏览器游玩的塔防游戏，并通过 fal 调用 GPT Image 2.6 生成概念图用于 Blender 建模，同时使用了 Tripo3D 资产和 ElevenLabs 音效。",
+    "en": "Built a browser-playable tower defense game with Gemini 4 Neon, using GPT Image 2.6 concept images for Blender assets alongside Tripo3D and ElevenLabs sound effects via fal."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/kevin_t_ngo/status/2125706215699460335",
+    "text": "make a tower defense game, playable in your browser"
+   },
+   "referenceAssets": true,
+   "tools": [
+    "fal",
+    "GPT Image 2.6",
+    "Blender",
+    "Tripo3D",
+    "ElevenLabs"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 36227,
+    "likes": 552,
+    "replies": 54,
+    "reposts": 37,
+    "bookmarks": 359,
+    "checkedAt": "2026-11-27T01:29:29.242Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2125705131534716928/vid/avc1/720x720/sr7mKLPhrSJSxG1C.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2125705131534716928/img/sWc8P3drqRmMxMLp.jpg",
+     "width": 1080,
+     "height": 1080,
+     "durationSec": 50
     }
    ],
    "evidence": {
@@ -9463,6 +9705,58 @@
    }
   },
   {
+   "id": "2125671539463078081",
+   "url": "https://x.com/lyraxana/status/2125671539463078081",
+   "author": {
+    "handle": "lyraxana",
+    "name": "lyra"
+   },
+   "postedAt": "2026-11-25T19:22:42.000Z",
+   "addedAt": "2026-11-27",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "motion",
+   "title": {
+    "zh": "4K 纯 ASCII 字符版钢铁侠画面",
+    "en": "4K pure 7-bit ASCII Iron Man scene"
+   },
+   "summary": {
+    "zh": "使用 Gemini 4 Neon（xhigh）制作了《钢铁侠》经典台词场景的 4K 纯 7 位 ASCII 字符动画，每帧包含 107,520 个字符，未使用 Unicode 方块字符或视频叠加。",
+    "en": "Built a 4K animation of the \"And I... am... Iron Man\" scene rendered with 107,520 pure 7-bit ASCII characters per frame using Gemini 4 Neon (xhigh), with no Unicode blocks or video overlay."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 26626,
+    "likes": 407,
+    "replies": 20,
+    "reposts": 18,
+    "bookmarks": 65,
+    "checkedAt": "2026-11-27T01:29:29.242Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2125671027497951232/vid/avc1/1370x720/J18VOpFoD0PfVS36.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2125671027497951232/img/zdZ25hc0yHzM8cyg.jpg",
+     "width": 3840,
+     "height": 2016,
+     "durationSec": 12
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2124917188742242616",
    "url": "https://x.com/notjazii/status/2124917188742242616",
    "author": {
@@ -9981,6 +10275,60 @@
    }
   },
   {
+   "id": "2125683230917484707",
+   "url": "https://x.com/devteamdrew/status/2125683230917484707",
+   "author": {
+    "handle": "devteamdrew",
+    "name": "DreW"
+   },
+   "postedAt": "2026-11-25T20:09:10.000Z",
+   "addedAt": "2026-11-27",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "ui",
+   "title": {
+    "zh": "元素生物精灵图鉴应用",
+    "en": "Elemental creature index with sprites"
+   },
+   "summary": {
+    "zh": "受 fofrAI 启发，在 Netlify 中让 Gemini 4 Neon 制作了 NeonMiniDex 网页应用，由模型自行挑选元素属性并为每种属性生成了对应精灵图。",
+    "en": "Asked Gemini 4 Neon in Netlify to create NeonMiniDex, a web app where the model selected elemental types and generated a sprite for each, inspired by fofrAI."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Netlify"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 25276,
+    "likes": 408,
+    "replies": 18,
+    "reposts": 21,
+    "bookmarks": 327,
+    "checkedAt": "2026-11-27T01:29:29.242Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2125683185778368512/vid/avc1/1168x720/eWR7keKZtSzXcgCi.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2125683185778368512/img/_AYZziy3urjB9zD0.jpg",
+     "width": 1470,
+     "height": 906,
+     "durationSec": 30
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2110385278246654052",
    "url": "https://x.com/MiaAI_lab/status/2110385278246654052",
    "author": {
@@ -10037,6 +10385,61 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125628756694106485",
+   "url": "https://x.com/thtbee_/status/2125628756694106485",
+   "author": {
+    "handle": "thtbee_",
+    "name": "Bee"
+   },
+   "postedAt": "2026-11-25T16:32:42.000Z",
+   "addedAt": "2026-11-27",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "scene3d",
+   "title": {
+    "zh": "迭代生成的 Three.js 三维场景",
+    "en": "Iterative Three.js 3D visual scene"
+   },
+   "summary": {
+    "zh": "创作者使用 Antigravity 中的 Gemini 4 Neon swarm 和 Three.js，通过 4 小时的评审-比较-返回循环迭代构建了一个场景。",
+    "en": "Built a Three.js scene using Gemini 4 Neon swarm in Antigravity over 4 hours of continuous iteration in a review-compare-return loop."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Antigravity",
+    "Three.js"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 24950,
+    "likes": 579,
+    "replies": 62,
+    "reposts": 33,
+    "bookmarks": 296,
+    "checkedAt": "2026-11-27T01:29:29.242Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2125626348127612928/vid/avc1/1280x720/6wZumTmeaBrRPNyj.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2125626348127612928/img/8bAEYaN5kRZTMZA7.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 73
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -12303,6 +12706,58 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125453436590432292",
+   "url": "https://x.com/_ryu15_/status/2125453436590432292",
+   "author": {
+    "handle": "_ryu15_",
+    "name": "Ryu"
+   },
+   "postedAt": "2026-11-25T04:56:02.000Z",
+   "addedAt": "2026-11-27",
+   "lang": "ja",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "scene3d",
+   "title": {
+    "zh": "低多边形 3D 蔚蓝档案霍克玛场景",
+    "en": "Low-poly 3D Blue Archive Chokmah scene"
+   },
+   "summary": {
+    "zh": "创作者使用开源仓库、参考图片和参考视频，通过 Gemini 4 Neon 制作了《蔚蓝档案》角色霍克玛的低多边形 3D 动画并进行了细节修改。",
+    "en": "Created a low-poly 3D animation of Chokmah from Blue Archive using Gemini 4 Neon, a GitHub repository, reference images, and a reference video."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 17683,
+    "likes": 231,
+    "replies": 9,
+    "reposts": 23,
+    "bookmarks": 173,
+    "checkedAt": "2026-11-27T01:29:29.242Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2125453179810885632/vid/avc1/1280x720/IgLV30E7X0KIZP0R.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2125453179810885632/img/p-r1Yh-spOgPJfzG.jpg",
+     "width": 1920,
+     "height": 1080,
+     "durationSec": 147
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -15179,6 +15634,66 @@
    "evidence": {
     "via": "seed-from-claude-library",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125639642330357994",
+   "url": "https://x.com/samsheffer/status/2125639642330357994",
+   "author": {
+    "handle": "samsheffer",
+    "name": "Sam Sheffer"
+   },
+   "postedAt": "2026-11-25T17:15:57.000Z",
+   "addedAt": "2026-11-27",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "physics",
+   "title": {
+    "zh": "实时 WebGL 流体动力学交互演示",
+    "en": "Real-time WebGL fluid dynamics playground"
+   },
+   "summary": {
+    "zh": "创作者在 Google AI Studio 中用 Gemini 4 Neon 通过一条提示词构建了 60 帧的 WebGL 流体动力学交互网页，并手动微调了按钮设计。",
+    "en": "Built a 60 fps WebGL Navier-Stokes fluid dynamics playground with Gemini 4 Neon in Google AI Studio from one prompt, with manual button design tweaks."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/samsheffer/status/2125646411341627765",
+    "text": "build me an impressive physics demo rendered at 60 fps, works well in any browser, and involves clicking your mouse or tapping the screen. maybe something with fluid dynamics?"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Google AI Studio",
+    "WebGL"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 9632,
+    "likes": 117,
+    "replies": 21,
+    "reposts": 8,
+    "bookmarks": 47,
+    "checkedAt": "2026-11-27T01:29:29.242Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2125638641233895424/vid/avc1/1334x720/0IiMT5S2974YXHPD.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2125638641233895424/img/jomq-XaRZVpywJYk.jpg",
+     "width": 3840,
+     "height": 2072,
+     "durationSec": 12
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
