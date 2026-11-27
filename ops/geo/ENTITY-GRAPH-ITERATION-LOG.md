@@ -4,6 +4,7 @@
 
 **怎么查现状：**
 - 事实和学术索引：agent-skills-hub 仓库的 `python3 ops/geo/entity_audit.py --mode molecule --no-save`，一共 8 项。第 7 项（各处事实是否一致）每天跑，第 8 项（学术索引）每周一跑，结果进 ASH 的「数据四件套日报」邮件，有问题时邮件标题会提示。
+- 关系边：ASH 的 `python3 ops/geo/entity_edges.py --json`（12 条，读 sitemap 每种模板，约 200 页；GIGALinks 冻结页上的发现单列到 2027-01-01），每天跑，结果在日报「🔗 实体关系」；本站的 `node scripts/check-entities.mjs`，每天跑。
 - 效果：GEO 面板（[`PANEL.md`](PANEL.md)），每周一自动跑。实体图谱看三样：不带品牌名的题有没有引用本站；AI 搜的不带品牌名的词，我们在 Google 前 20 有几条；品牌词（`brand_serp`）本站排第几。
 
 **每一轮记四样：** 证据（怎么查到的，能复现）→ 改了什么（提交号）→ 怎么验证 → 效果看哪一项、哪天看。改动同时在 [`experiments.json`](experiments.json) 记一条，面板周报才对得上。
@@ -14,17 +15,85 @@
 
 | 事项 | 谁 | 什么时候 | 状态 |
 |---|---|---|---|
+| ASH 每日任务第一次带 12 条关系规则和冻结单列：Entity relations 那步成功；日报「🔗 实体关系」写明按模板的覆盖（约 200 页）、0 个问题、🧊 冻结约 199 条 | Claude | 11-27 20:20 UTC 那次跑完后 | ⏳ |
 | 第一次带新检查的定时运行：「分数进了仓库」那步通过、子查询自检通过、邮件里有品牌词名次 | Claude | 2026-11-30（周一）跑完后 | ⏳ |
-| Search Console 看 4 个品牌词（jasonzhu.ai、jasonzhu ai、jason zhu gosail、gosail club）的展示和名次：v2.4 定了要做，还没做 | Claude | 和 11-30 的读数一起 | ⏳ |
-| OpenAlex：两个数据集挂在别人名下。130K 数据集（W7167922915）在 A5009989201「竹彦 森」名下；《Backlink Spam List》（W7237096646，重复记录 W7237007813）在 A5087679970 名下，这个作者页其余 7 个作品是斯坦福一位做金融和机器学习的 Jason Zhu 的。你的另外 7 个作品在 A5163069727，没挂 ORCID；按 ORCID 查不到作者（11-24 查） | OpenAlex 客服 | 等回复；回复发到你 OpenAlex 账号的邮箱 | 🟡 11-24 Claude 在你的 Chrome 里用你的 OpenAlex 账号提了两张工单：请求 28329（130K）、28427（Backlink Spam List）；认领、合并作者页不做 |
-| ASH 审计第 8 项认不出「混了别人作品的作者页」：把 A5087679970 当成「你被拆出来的作者页」，没发现它主要是斯坦福另一位 Jason Zhu 的 | Claude | 不急 | ⬜ |
+| Search Console 看 4 个品牌词（jasonzhu.ai、jasonzhu ai、jason zhu gosail、gosail club）的展示、平均名次和落地页：只作诊断，品牌词达标仍按每周 3 次抽样算；产品词、公司词另列一组（v2.6） | Claude | 和 11-30 的读数一起 | ⏳ |
+| v2.6 第二批，衡量口径：full 模式的 Layer B、C 退役；每周加 3 道消歧题（先拿存下的回答回放打分，额度等你定）；「数据被用却没署名」逐条核出处，加一列新口径；「不带品牌名的词进 Google 前 20」加一列只比两期都查到的同一个词的口径 | Claude | 11-30 读数前后 | ⬜ |
+| ASH 冻结页的同类修复：分支 `entity/gigalinks-frozen-fixes`（`08fa81f8`）合并上线。改的是首页 `index.html`（所有 SPA 页都继承它的 `twitter:site` 和首页那份 Person）、场景页和日报的模板、/blog/securing-117k-ai-skills/ | Claude | 2027-01-02（GIGALinks 01-01 读完以后） | ⏳ 01-02 起检查不再把这些算冻结，合不合并都会报 |
+| ASH 的 MCP server card（`/.well-known/mcp/server-card.json`）手写着 267,000+，线上实际是 287,000+；在事实检查 20% 的容差内，所以没报。改成构建时和 llms.txt 一起填 | Claude | 第二批一起 | ⬜ |
+| 你本人的 3 件：X @GoSailGlobal 简介第一行改成 jasonzhu.ai，gosaillab.com 挪到后面并写明是 MCN 服务，location 不放品牌名；GitHub 简介的 DOI 换成总 DOI 24386242，去掉「105k」，不写会变的数字；ORCID 上 5 个旧版本作品换成最新版本（要登录） | 你 | 有空时，一共约 20 分钟 | ⬜ |
+| 要你定的 3 件：关于页正文写不写分工（ASH 由 GoSailGlobal LLC 运营、GoSail Lab 是你的 MCN 服务、ORCID 写进正文；只写文字，不加节点）；Wikidata 产品条目 Q141986406 的 P2037 = zhuyansen（建议只监测，要动只删不增，由你提交）；每周 3 道消歧题要花的 Perplexity 额度 | 你 | 不急 | ⬜ |
+| OpenAlex：130K 数据集（W7167922915）仍在 A5009989201「竹彦 森」名下。《Backlink Spam List》（W7237096646，重复记录 W7237007813）11-26 已挪回 A5163069727，这个作者页的 9 个作品都是你的，但没挂 ORCID；按 ORCID 查不到作者（11-27 查） | OpenAlex 客服 | 等回复；回复发到你 OpenAlex 账号的邮箱 | 🟡 11-24 Claude 在你的 Chrome 里用你的 OpenAlex 账号提了两张工单：请求 28329（130K）、28427（Backlink Spam List）。28427 对应的作品已挪回，工单是否结案没核实；认领、合并作者页不做 |
 | B 站改名、写简介（现在是「香菇的猪」、简介空），改好后告诉 Claude 加回 sameAs | 你 | 不急 | ⬜ 11-24 已从 sameAs 拿掉 |
 | 学术外联 | 你 | 等回复 | 🟡 两封邮件（SkillProbe 一作、NVIDIA 一作）和更正信都已发，LinkedIn 邀请已发；不再追加。回复记在 `~/出海/specs/2026-11-22-academic-outreach.md` 末尾 |
 | SSRN 两篇换成 1.1 版 | SSRN 客服 | 等邮件 | ⏳ 不再跟进；审核通过后看一眼是不是 1.1 版（`papers/SSRN-revision-notes-2026-11-21.md`） |
 
 **不做了（2026-11-24 定）：** Wikidata 人物条目和 6 个作品条目（有 2–3 家独立媒体报道后再议，条件见 SOP Phase 3）；OpenAlex 认领、合并作者页、补 DOI；为进学术索引去找 Semantic Scholar 收录、arXiv 背书；Hugging Face、Kaggle 补回链；Zenodo 单位写法统一；追安全论文 1.0 版 DOI `24420920` 的登记（已被 1.1 版取代，站上用总 DOI `24420919`；11-24 查总 DOI 和 1.1 版 `24432858` 都能解析）。
 
-**最近办完：** ASH 每日任务第一次带「实体关系」检查，9 条都过（11-26，定时运行 `45745517933`，提交 `996dcf4`）：Entity relations 那步成功；线上 12 个页面（8 篇博客）、25 段 JSON-LD、12 个本人档案，0 处问题，没有页面抓取失败；日报里有「🔗 实体关系」一节，写的是「✅ 9 条都过」；13 个离线测试也通过，修复前混在一起的图照样报出 1–8 条。130K 数据集两个站的 `@id` 对上（11-25，ASH `4e90ec7`，09:11 UTC 上线）：首页和 /ai-info/ 的数据集 sameAs 里有总 DOI，identifier 仍是版本 DOI，所有 JSON-LD 都能解析，线上 9 条关系规则 VERIFIED；ASH 每天查人和公司分开（11-25，ASH `a57a0f5`）：9 条规则写成 `ops/geo/entity_edges.py`，并进审计第 1 项，每日 analytics 任务跑，日报加「实体关系」一节；改之前的文件查出 18 处，现在线上 0 处。公司官网看得见的 X 改标成创始人的（11-25，Cloudflare 版本 `786a9182`）；ASH 站人和公司拆开上线（11-25，`77e2eb2`）：线上 12 个页面的 JSON-LD 按 9 条查 0 个问题，上线前同一脚本查出 25 个；ASH 审计第 1–7 项 VERIFIED；jasonzhu.ai 实体检查通过；公司官网 gosailglobal.com 改好（11-25，Cloudflare 版本 `06c7b1de`）：Organization 补 `@id`、founder → #person、subOrganization → ASH，sameAs 只留公司 LinkedIn，9 处 X 链接去掉 rel="me"；线上 7 个页面和改后的文件逐字节一致；本人的别名去掉公司名 GoSailGlobal，实体检查加第 5 条（11-24，`9b68f62`，线上 21 页通过）；SOP 文档更正（11-24，`81d2e18`）：文首状态改成维护规则，Wikidata 个人条目写「不做」，个人档案 13 个改 12 个，第 5 节清单和外联文案里的 DOI 换成总 DOI；X 的 website 从 gosaillab.com 改成 jasonzhu.ai（11-24，你本人改的；`api.fxtwitter.com` 和 twitterapi.io 都读到）；npm 两个旧 token（`agentskillshub-4`、`agentskillshub -3`）删了，jasonzhu0526 账号下只剩 3 个早已过期的；2027-01 起跳过 2FA 的 token 不能直接发布，下次发版要换方式（11-24）；Google Scholar 个人页设成公开，不登录能打开了（11-24）；YouTube 频道加了 jasonzhu.ai 链接（11-24）；ORCID 加任职（11-22）；npm 两个包发布 cli 0.5.1、mcp 0.3.1（11-22）；Zenodo 纠错新版本 24432849、24432852、24432855、24432843、24432858、24435484，重复记录 24435488/89/90 指向正版，GitHub、HF、Kaggle 镜像和 dev.to 文章同步改正，给 Polar 的更正信已发（11-22）；每日实体检查 `check-entities.yml` 上线（11-22）。
+**最近办完：** v2.6 第一批，补检查、修错（11-27，见下）：ASH 非冻结页修好（`e200ca6e`），关系检查扩到每种页面模板、12 条规则、冻结页单列（`63cef48a`），11-27 06:31 UTC 上线后线上 200 页 0 个问题；事实检查 18 个来源 0 处冲突；公司官网改成 44 条规则、加别名 BRICKAI（Cloudflare `49ac6ae7`）；本站 `check-entities.mjs` 改成和 PERSON_PROFILES 逐条比、读不到 Person 就失败，SOP 2A、2B、2D 写明不做；冻结页的修复在 ASH 分支上，2027-01-02 合并。ASH 审计第 8 项认不出「混了别人作品的作者页」也一起修了（`63cef48a`）。ASH 每日任务第一次带「实体关系」检查，9 条都过（11-26，定时运行 `45745517933`，提交 `996dcf4`）：Entity relations 那步成功；线上 12 个页面（8 篇博客）、25 段 JSON-LD、12 个本人档案，0 处问题，没有页面抓取失败；日报里有「🔗 实体关系」一节，写的是「✅ 9 条都过」；13 个离线测试也通过，修复前混在一起的图照样报出 1–8 条。11-27 更正：这次「都过」只覆盖这 12 页，全站另有 36 页违反第 8 条，产品的 founder 断了也报不出来，见 v2.6。130K 数据集两个站的 `@id` 对上（11-25，ASH `4e90ec7`，09:11 UTC 上线）：首页和 /ai-info/ 的数据集 sameAs 里有总 DOI，identifier 仍是版本 DOI，所有 JSON-LD 都能解析，线上 9 条关系规则 VERIFIED；ASH 每天查人和公司分开（11-25，ASH `a57a0f5`）：9 条规则写成 `ops/geo/entity_edges.py`，并进审计第 1 项，每日 analytics 任务跑，日报加「实体关系」一节；改之前的文件查出 18 处，现在线上 0 处。公司官网看得见的 X 改标成创始人的（11-25，Cloudflare 版本 `786a9182`）；ASH 站人和公司拆开上线（11-25，`77e2eb2`）：线上 12 个页面的 JSON-LD 按 9 条查 0 个问题，上线前同一脚本查出 25 个；ASH 审计第 1–7 项 VERIFIED；jasonzhu.ai 实体检查通过；公司官网 gosailglobal.com 改好（11-25，Cloudflare 版本 `06c7b1de`）：Organization 补 `@id`、founder → #person、subOrganization → ASH，sameAs 只留公司 LinkedIn，9 处 X 链接去掉 rel="me"；线上 7 个页面和改后的文件逐字节一致；本人的别名去掉公司名 GoSailGlobal，实体检查加第 5 条（11-24，`9b68f62`，线上 21 页通过）；SOP 文档更正（11-24，`81d2e18`）：文首状态改成维护规则，Wikidata 个人条目写「不做」，个人档案 13 个改 12 个，第 5 节清单和外联文案里的 DOI 换成总 DOI；X 的 website 从 gosaillab.com 改成 jasonzhu.ai（11-24，你本人改的；`api.fxtwitter.com` 和 twitterapi.io 都读到）；npm 两个旧 token（`agentskillshub-4`、`agentskillshub -3`）删了，jasonzhu0526 账号下只剩 3 个早已过期的；2027-01 起跳过 2FA 的 token 不能直接发布，下次发版要换方式（11-24）；Google Scholar 个人页设成公开，不登录能打开了（11-24）；YouTube 频道加了 jasonzhu.ai 链接（11-24）；ORCID 加任职（11-22）；npm 两个包发布 cli 0.5.1、mcp 0.3.1（11-22）；Zenodo 纠错新版本 24432849、24432852、24432855、24432843、24432858、24435484，重复记录 24435488/89/90 指向正版，GitHub、HF、Kaggle 镜像和 dev.to 文章同步改正，给 Polar 的更正信已发（11-22）；每日实体检查 `check-entities.yml` 上线（11-22）。
+
+---
+
+## 2026-11-27 · v2.6：多模型复盘，第一批补检查、修错
+
+### 证据
+
+- **多模型复盘（11-27，pstack arena）：** Grok 4.7、GPT-6.2 Astra、Claude Fable 5.2 各自独立写下一版方案（Gemini 两次失败，没交卷），GPT-6.2 Astra 匿名打分，Claude Opus 5.5 合成。合成稿里的 18 条现状写进复查脚本重跑：属实 18、不符 0。全文在本机总文档 `~/出海/specs/实体入侵图谱.md` 附录 D（内部，不进仓库）。下面几条是这一轮要修的。
+- **11-26 的「9 条都过」只覆盖 12 页：** 把 ASH 的 sitemap 全量扫一遍，场景页 24/74、蓝皮书页 12/17 带着不是 `#person` 的「Jason Zhu」，违反第 8 条。把产品节点的 founder 删掉或改指公司，9 条也都报 0 处；没有 JSON-LD 的博客页也算通过。
+- **ASH 的 `twitter:site` 是本人的 @GoSailGlobal：** 仓库 20 个文件 22 处，线上也是这样，分享卡把产品归到了本人的账号上。
+- **/ai-info/ 的三处摘要（description、og、twitter）写的是「287,000+ … graded」**，表格里已评级是 146,000+。事实检查不读 meta，所以没查到。
+- **公司官网写「42 published rules」，ASH 现在是 44 条。** 公司官网不在任何检查里。
+- **本站 `check-entities.mjs` 一个 Person 都没读到时也打印「通过」**，`x.com/<任意账号>` 都算个人档案。
+- **学术检查把任何同名的 Jason Zhu 都算成本人**，修复建议写着「添加即合并」，违反维护规则第 1 条。
+- **ASH 还有 10 行用着旧的版本 DOI 24387074：** `entity_audit.py` 7 行（其中两行是通过条件），首页、`llms.txt`、`CITATION.cff` 各 1 行。
+- **SOP 2A 还写着「2026-11-26 follow-up」**，和 11-24 定的「学术外联不再追加」矛盾。
+
+### 决定
+
+- Jason 11-26 选了 arena、四家各出一个模型、推理强度 high；11-27 说「写，开工」：第一批（附录 D 第 1–9 条）当天做。
+- 改到一半发现 ASH 的 GIGALinks 实验把一批页面冻结到 2027-01-01：全部 /best/，以及 /、/zh/、/how-we-grade/、/analyzer/、/agent-skills-directories/、/daily/、/stats/、/blog/securing-117k-ai-skills/。所有 SPA 页共用的首页 `index.html` 也算冻结。Jason 选「等 01-01 读完再改」：冻结页的修复放在分支上，2027-01-02 合并；在那之前，检查把冻结页上的发现单列为「🧊 冻结中」，不算问题。
+
+### 改了什么
+
+| 提交 | 改动 |
+|---|---|
+| ASH `e200ca6e` | 非冻结页修好：蓝皮书页的作者和审阅者改成只引用 `#person`（共用 `founder-ld.mjs`）；技能、审计、对比页模板和 11 篇博客的 `twitter:site` 从 @GoSailGlobal 改成产品的 @agentskillshub，博客另加 `twitter:creator` @GoSailGlobal；/about/ 的 Person 别名和本站对齐（祝彦森、Yansen Zhu、zhuyansen、JasonZhu.AI）；/ai-info/ 的 founder 只留引用，三处摘要把总数写成收录数（indexed）；`llms.txt`、`CITATION.cff` 换成总 DOI 24387073 和最新标题 |
+| ASH `63cef48a` | 关系检查读 sitemap 的每种模板：static、categories、scenarios、comparisons、book、blog 全查，top、audit、daily 各取固定的 20 页，一次约 200 页。规则从 9 条加到 12 条：第 10 条产品的 founder 必须是 `#person`；第 11 条已知的博客页必须有作者边；第 12 条 `twitter:site` 不能是本人的档案。第 2 条连别名一起比。冻结页上的发现单列，2027-01-01 以后自动算回问题。事实检查读三处摘要，收录数和已评级数分开比，来源加上公司官网首页、本站 /en/about 和 `llms.txt`。学术检查认本人要 ORCID 一致，或作品 DOI 在本人的作品单里；不再建议认领、合并。`entity_audit.py` 的通过条件换成总 DOI。日报「🔗 实体关系」按规则分组，并写出覆盖了多少页 |
+| ASH 分支 `entity/gigalinks-frozen-fixes`（`08fa81f8`，没合并） | 冻结页的同类修复：首页 `index.html`（`twitter:site`、Person 别名、DOI）、场景页和日报模板、/blog/securing-117k-ai-skills/。2027-01-02 合并 |
+| gosailglobal.com（Cloudflare 版本 `49ac6ae7`） | 「42 published rules」改成 44；Organization 加 `alternateName` BRICKAI，Company details 加一行「Also known as: BRICKAI」。归属不变 |
+| jasonzhu.ai（和这条记录同一个提交） | `check-entities.mjs`：Person 的 sameAs 要和 `PERSON_PROFILES` 逐条一致，多了、少了都报；关于页读不到 Person 记「测不出来」并失败，查全站一个都读不到也失败；B 站规则去掉。SOP 2A、2B、2D 写明「不做（11-24 定）」，删掉 11-26 的跟进 |
+
+### 怎么验证的
+
+- **ASH 关系检查，上线前后用同一个脚本：**
+  - 上线前（冻结页已单列）线上 198 页，60 个问题：第 2 条 2 处（/about/、/ai-info/），第 8 条 12 处（蓝皮书页），第 12 条 46 处（/about/、/ai-info/、20 个审计页、11 篇博客、13 个对比页）。
+  - 11-27 06:31 UTC 部署（运行 `45949188392`）以后：线上 200 页，0 个问题，VERIFIED，没有抓取失败。
+  - 🧊 冻结 199 条，落在 119 页上：
+    - 第 12 条 119 页：/best/ 74、/daily/ 20、蓝皮书 17，加上首页、/zh/、/analyzer/、/agent-skills-directories/、/enterprise/、/submit/、/verified-creator/、/blog/securing-117k-ai-skills/；
+    - 第 8 条 28 个 /best/ 页，56 处；
+    - 第 2 条 24 页：蓝皮书 17 页加 7 个 SPA 页，别名都来自首页那份 Person。
+  - 第 8 条的 /best/ 从复盘时的 24 页变成 28 页。多出的 4 页是 summarization、content-writing 的中英两版，11-27 ASH `5a5b1974` 改过这两个冻结页。
+- **直接抽查线上页面：**
+  - `twitter:site` 是 @agentskillshub：4 个技能页、3 个审计页、2 个对比页、/category/、/about/、/ai-info/。
+  - 博客：`twitter:creator` 是 @GoSailGlobal，作者是 `#person`。
+  - 蓝皮书页：作者是 `#person`。它的 `twitter:site` 和那份带「Zhu Yansen」的 Person 来自冻结的首页，等分支合并。
+  - /about/：Person 别名是「祝彦森、Yansen Zhu、zhuyansen、JasonZhu.AI」，12 个档案。/ai-info/：founder 只剩引用。
+  - 仓库 main 上，写着 @GoSailGlobal 的 `twitter:site` 只剩 4 处，都在冻结的文件里；分支上是 0 处。
+- **事实检查：** 部署后线上 18 个来源，0 处冲突，VERIFIED。部署前唯一的冲突是 /ai-info/ 摘要里的「287,000+ … graded」，现在没了。公司官网线上能看到「44 published rules」、`alternateName` BRICKAI 和「Also known as: BRICKAI」。
+- **离线测试：**
+  - ASH geo 76 个通过：关系 34 个、学术 12 个、事实 23 个。冻结分支上 `founder-ld` 4 个通过。
+  - 这些情况都会报警：删掉产品的 founder、founder 改指公司、博客页没有 JSON-LD 或没有作者、`twitter:site` 用本人档案、别名和本站不一致、收录数和已评级数对调、公司官网规则数不对。
+- **学术检查：**
+  - 回放旧的响应，报挂错。
+  - 今天的响应：130K 仍在「竹彦 森」名下；A5163069727 算你的（9 个作品里 6 个能用 ORCID 或 DataCite 的 DOI 对上）。
+  - 输出里没有「认领」「合并」。
+- **本站：** `check-entities.mjs` 线上 21 页通过，两个关于页都读到了 Person 和 12 个档案；`--static` 通过。样例里塞进 x.com/agentskillshub 会失败，页面上没有 Person 也会失败。
+
+### 效果看哪、哪天看
+
+- **ASH 每日任务：** 11-27 20:20 UTC 那次是第一次带 12 条规则和冻结单列。日报「🔗 实体关系」应写出约 200 页的覆盖、0 个问题、🧊 冻结约 199 条。
+- **2027-01-02：** 冻结分支合并上线。从这天起，冻结页上的发现算回问题，不合并也会在日报里报出来。
+- **面板：** 11-30 第一次读数（见当前待办）。这一轮改的是结构化数据和检查，不指望面板马上有变化。
 
 ---
 

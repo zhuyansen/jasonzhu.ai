@@ -88,6 +88,10 @@
     {
       "date": "2026-11-27",
       "note": "不是页面改动，两项基础设施/诊断落地（没动任何页面，冻结页 0 变更）：(1) 修好 Bing IndexNow 红警告：查清 2026-11-06 起 opus-prompts-daily.yml 因中文+全角括号工作流名从未触发 indexnow.yml 的 workflow_run，改为在 opus-prompts-daily.yml / seller-weekly.yml / translate-content.yml 推送后直接调 scripts/indexnow.mjs，并修掉 scripts/indexnow.mjs 对无点评 noindex 快讯白等 15 分钟的问题；当场补推 11-06 至 11-27 共 462 条线上 sitemap URL（HTTP 200）。(2) 新增 CE-GAD 对抗式引用诊断脚本 ops/geo/adversarial_critic.py（硬拦截 25 个冻结/实验页），对 5 个非冻结页（/go-global、/go-global/open-account、/go-global/payments、/go-global/payment-risk、/blog/ai-agent-complete-picture，6 题）跑完首轮 1 轮 Pairwise Critique（Claude Opus 5.5 + Sonar 探针，花费 $0.4222，跳过 9 个冻结/实验页，产出 18 条 ≤3/题最小补丁，详报存本机 specs/adversarial-critic-2026-11-27.md，公开只留计数 critic-2026-11-27.json）。【3 周后效果验证节点：2026-12-18 / 2026-12-21 周一面板】按 Jason 拍板应用补丁前，先在本文件 experiments[] 登记处理组与对照组，3 周后复测验证引用率与 Bing IndexNow 警告消除效果。"
+    },
+    {
+      "date": "2026-11-27",
+      "note": "实体图谱 v2.6 第一批（本站页面 0 变更，冻结页 0 变更）：ASH 蓝皮书 12 页作者接到 #person，非冻结模板的 twitter:site 从本人 @GoSailGlobal 改成产品 @agentskillshub，/ai-info/ 摘要把收录数写成 indexed，配套数据集换总 DOI 24387073（ASH e200ca6e）；ASH 关系检查扩到每种页面模板、加第 10–12 条，事实检查读摘要和公司官网、本站，学术检查不再建议认领合并（ASH 63cef48a）；公司官网 44 条规则、别名 BRICKAI（Cloudflare 49ac6ae7）；本站只改 check-entities.mjs 和 SOP。GIGALinks 冻结页（ASH 全部 /best/、/、/zh/ 等）的同类修复在 ASH 分支 entity/gigalinks-frozen-fixes，2027-01-02 合并，读 12-01、12-15、01-01 不受影响。"
     }
   ],
   "experiments": [

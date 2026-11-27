@@ -1,9 +1,11 @@
 /**
  * 实体关系边检查（2026-11-21 起）。抓页面里的 JSON-LD，查四条：
- *  1. Person（@id https://jasonzhu.ai/#person）的 sameAs 只能是代表本人的档案：ORCID、Google Scholar、SSRN 作者页、
- *     LinkedIn 个人页、Product Hunt、X、GitHub 用户页、Hugging Face 用户页、Kaggle 用户页、YouTube、B 站、抖音、小红书。
- *     DOI、Zenodo、pypi.org、SSRN 论文页（abstract_id）、agentskillshub、GitHub 仓库页都不行。
- *     以后有了 Wikidata 个人条目，先把它加进下面的 PROFILE_PATTERNS。
+ *  1. Person（@id https://jasonzhu.ai/#person）的 sameAs 和 src/lib/profiles.ts 的 PERSON_PROFILES 一模一样：多一个、少一个
+ *     都不行（2026-11-27 起；之前按网址格式放行，产品的 x.com/agentskillshub 写进 Person 也能过）。PERSON_PROFILES 自己的
+ *     每一条还要像个人档案（下面的 PROFILE_PATTERNS）：ORCID、Google Scholar、SSRN 作者页、LinkedIn 个人页、Product Hunt、
+ *     X、GitHub 用户页、Hugging Face 用户页、Kaggle 用户页、YouTube、抖音、小红书。DOI、Zenodo、pypi.org、SSRN 论文页
+ *     （abstract_id）、agentskillshub、GitHub 仓库页都不行；B 站 11-24 拿掉了，改名后要加回来，先把规则加回 PROFILE_PATTERNS。
+ *     以后有了 Wikidata 个人条目，也先加进 PROFILE_PATTERNS。
  *  2. 同一个网址不能既在 Person 的 sameAs 里，又在别的节点的 sameAs 里（所有被查的页面合起来算）。
  *  3. 不再引用 jasonzhu.ai 的 #organization / #org，也没有 @id 在 jasonzhu.ai 上的 Organization 节点。
  *     AgentSkillsHub 自己的 @id（https://agentskillshub.top/#organization）不算，它是另一个网站。
@@ -11,6 +13,8 @@
  *     AgentSkillsHub 节点的 founder 指向 #person。
  *  5. Person 的 alternateName 里没有公司名（GoSailGlobal、BRICKAI）：同一个名字既是人的别名又是公司名，
  *     人和公司就会被并成一个实体（2026-11-24）。
+ *  6. 关于页（/en/about、/zh/about）是本人的定义页，必须读到 Person 和它的 sameAs；查全站时至少读到一处。读不到算
+ *     「测不出来」，退出码 1：之前一个 Person 都没读到也打印「通过」（2026-11-27）。别的页面只引用 @id 就行。
  * 联网之前先查一遍源文件：博客 frontmatter 的 doi、src/lib/research.ts 里的 DOI 都要在 src/lib/profiles.ts 的 WORKS 里
  * （Zenodo 发新版本换 DOI 时三处一起换），PERSON_PROFILES 每条都符合第 1 条。
  *
@@ -41,7 +45,6 @@ const PROFILE_PATTERNS = [
   /^https:\/\/huggingface\.co\/[\w-]+$/, // 用户页；/datasets/... 过不了
   /^https:\/\/(www\.)?kaggle\.com\/[\w-]+$/,
   /^https:\/\/(www\.)?youtube\.com\/@[\w.-]+$/,
-  /^https:\/\/space\.bilibili\.com\/\d+$/,
   /^https:\/\/(www\.)?douyin\.com\/user\/[\w-]+$/,
   /^https:\/\/(www\.)?xiaohongshu\.com\/user\/profile\/\w+$/,
 ];
@@ -68,6 +71,8 @@ const types = (n) => (Array.isArray(n["@type"]) ? n["@type"] : [n["@type"]]).fil
 const asList = (v) => (v == null ? [] : Array.isArray(v) ? v : [v]);
 const refsPerson = (v) => asList(v).some((x) => x && typeof x === "object" && x["@id"] === PERSON_ID);
 
+const PROFILES = new Map(); // PERSON_PROFILES：规范化网址 -> 原网址，第 1 条的基准，不取自被查的页面
+const personPages = new Set(); // 读到本人 Person 和 sameAs 的页面
 const problems = new Set();
 const fail = (where, msg) => problems.add(`${where}: ${msg}`);
 
@@ -90,6 +95,7 @@ function staticChecks() {
   for (const u of personUrls) {
     const p = profileProblem(u);
     if (p) fail("src/lib/profiles.ts PERSON_PROFILES", `${u}（${p}）`);
+    PROFILES.set(norm(u), u);
   }
 
   const cited = [];
@@ -174,9 +180,17 @@ function checkPage(where, html) {
         if (COMPANY_NAMES.test(a)) fail(where, `Person 的 alternateName 有公司名「${a}」`);
       }
       for (const u of sameAs) {
-        const p = profileProblem(u);
-        if (p) fail(where, `Person 的 sameAs 有 ${u}（${p}）`);
+        if (!PROFILES.has(norm(u))) {
+          const p = profileProblem(u);
+          fail(where, `Person 的 sameAs 有 ${u}（不在 src/lib/profiles.ts 的 PERSON_PROFILES 里${p ? "，" + p : ""}）`);
+        }
         personSameAs.set(norm(u), u);
+      }
+      if (sameAs.length) {
+        const seen = new Set(sameAs.map(norm));
+        const missing = [...PROFILES.keys()].filter((k) => !seen.has(k)).map((k) => PROFILES.get(k));
+        if (missing.length) fail(where, `Person 的 sameAs 少了 ${missing.join("、")}`);
+        personPages.add(where);
       }
     } else {
       for (const u of sameAs) {
@@ -218,6 +232,10 @@ if (!args.includes("--static")) {
   for (const [k, u] of personSameAs) {
     if (otherSameAs.has(k)) fail("跨页面", `${u} 同时在 Person 和别的节点的 sameAs 里：${otherSameAs.get(k).slice(0, 3).join("；")}`);
   }
+  for (const p of ["/en/about", "/zh/about"].filter((p) => paths.includes(p))) {
+    if (!personPages.has(p)) fail(p, "没读到本人的 Person（#person）和它的 sameAs：测不出来（关于页是本人的定义页）");
+  }
+  if (!given.length && personPages.size === 0) fail("全站", "一个带 sameAs 的本人 Person 都没读到：测不出来");
   console.log(`Person 的 sameAs 共 ${personSameAs.size} 个网址；其他节点的 sameAs 共 ${otherSameAs.size} 个网址`);
 }
 

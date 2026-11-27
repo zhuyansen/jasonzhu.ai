@@ -180,11 +180,11 @@ Whenever a new flagship empirical study is published on `jasonzhu.ai`, run this 
 
 ### Phase 2: Build the Third-Party Citation Graph (Weeks 2–4 — Highest GEO ROI)
 
-> **2026-11-21 起暂停。** 数据纠正完之前，不往学术图谱绑新东西（2C），也不发引用这些数字和 DOI 的外联、PR 和帖子（2A、2B、2D）。依据：调研模块 0「先改源头，再发任何东西」。下面的文案等 Zenodo 新版本发布后按新数字重写。
+> **不做（2026-11-24 定，见第 4 节「维护规则」第 1 条）。** 2A、2B、2D 的外联、PR 和帖子不再追加，2C 不往学术图谱绑新东西。11-21 先按「数据纠正完之前」暂停；数据 11-22 纠正完以后没有恢复，因为 11-24 定的是学术图谱只修错、不扩张，学术外联不再追加。下面的文案留作记录，不要照着发（2026-11-27 改：原来的写法读起来像数据纠正完就能发）。
 >
 > 下面文案里的 DOI 11-24 已换成总 DOI：收款论文 `10.5281/zenodo.24420870`，安全论文 `10.5281/zenodo.24420919`。安全论文的 1.0 版 `24420920` 一直没登记上，不能用。
 
-#### 2A. Upgrade Day+5 Media Outreach (`2026-11-26` follow-up)
+#### 2A. Upgrade Day+5 Media Outreach（不做：原定 2026-11-26 的跟进不发）
 Append this 2-line scholarly citation hook to the Day+5 follow-up in `ops/geo/tier1-data-outreach-pack.md`:
 > *"Quick update: we also released the full 10-page empirical working paper PDF (CC-BY-4.0) on SSRN (`https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7737182`) and Zenodo (`https://doi.org/10.5281/zenodo.24420870`) in case your editorial team prefers citing a permanent DOI / PDF."*
 
