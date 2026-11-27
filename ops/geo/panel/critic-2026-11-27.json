@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-27",
+  "verify_after": "2026-12-18",
+  "model": "anthropic/claude-opus-5.5",
+  "probe_mode": "live-probe",
+  "pages_diagnosed": 5,
+  "questions_diagnosed": 6,
+  "pages_skipped_frozen": 9,
+  "total_patches": 18,
+  "cost_usd": 0.4222,
+  "diagnosed_pages": [
+    "/blog/ai-agent-complete-picture",
+    "/go-global",
+    "/go-global/open-account",
+    "/go-global/payment-risk",
+    "/go-global/payments"
+  ],
+  "script": "ops/geo/adversarial_critic.py"
+}

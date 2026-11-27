@@ -39,10 +39,16 @@ jobs:
       - name: Regenerate
         run: node scripts/generate-news.mjs && node scripts/generate-posts.mjs
       - name: Commit and push
+        id: push
         run: |
           if git diff --quiet && [ -z "$(git ls-files --others --exclude-standard src/content src/generated)" ]; then echo "no changes"; exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add src/content src/generated
           git commit -m "🌐 内容补英文版（${{ inputs.mode }}）"
-          for i in 1 2 3; do git pull --rebase && git push && exit 0; sleep 10; done; exit 1
+          for i in 1 2 3; do git pull --rebase && git push && { echo "pushed=true" >> "$GITHUB_OUTPUT"; echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"; exit 0; }; sleep 10; done; exit 1
+
+      - name: Push IndexNow
+        if: steps.push.outputs.pushed == 'true'
+        continue-on-error: true
+        run: node scripts/indexnow.mjs "${{ steps.push.outputs.sha }}~1..${{ steps.push.outputs.sha }}"

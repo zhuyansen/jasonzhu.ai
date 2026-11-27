@@ -202,6 +202,7 @@ jobs:
           fi
 
       - name: 上线（提交到 main）
+        id: publish
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -212,7 +213,14 @@ jobs:
             git commit -m "✨ 提示词库每日收录 $(date -u +%F)"
             git pull --rebase
             git push
+            echo "pushed=true" >> "$GITHUB_OUTPUT"
+            echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
           fi
+
+      - name: 推送 IndexNow（Bing 收录）
+        if: steps.publish.outputs.pushed == 'true'
+        continue-on-error: true
+        run: node scripts/indexnow.mjs "${{ steps.publish.outputs.sha }}~1..${{ steps.publish.outputs.sha }}"
 
       - name: 滚动 PR（拿不准的作品）
         if: ${{ !inputs.only || inputs.only == 'claude' }}

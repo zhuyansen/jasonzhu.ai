@@ -84,6 +84,10 @@
     {
       "date": "2026-11-26",
       "note": "不是实验，纯测量与基础设施（方案 A1 并行期，没动任何页面）：Supabase 新建 ai_crawler_hits / bot_ip_ranges / ai_crawler_daily 与合并视图 ai_crawler_all（只存 /24、/48 网段前缀，开 RLS 仅 service role）；vercel-drain 函数迁入本仓库并双写 vercel_drain + ai_crawler_hits（GEOInflow 保持并行）；新增每日官方 IP 段刷新工作流 bot-ip-ranges.yml；GEOInflow 10-26 至 11-26 13:35 UTC 历史已回填 ai_crawler_daily 并本机归档；crawler_stats.py 与 read_vs_cited.py 改读 Supabase，新增 OpenSEO 周报脚本 crawler_report.py。"
+    },
+    {
+      "date": "2026-11-27",
+      "note": "不是页面改动，两项基础设施/诊断落地（没动任何页面，冻结页 0 变更）：(1) 修好 Bing IndexNow 红警告：查清 2026-11-06 起 opus-prompts-daily.yml 因中文+全角括号工作流名从未触发 indexnow.yml 的 workflow_run，改为在 opus-prompts-daily.yml / seller-weekly.yml / translate-content.yml 推送后直接调 scripts/indexnow.mjs，并修掉 scripts/indexnow.mjs 对无点评 noindex 快讯白等 15 分钟的问题；当场补推 11-06 至 11-27 共 462 条线上 sitemap URL（HTTP 200）。(2) 新增 CE-GAD 对抗式引用诊断脚本 ops/geo/adversarial_critic.py（硬拦截 25 个冻结/实验页），对 5 个非冻结页（/go-global、/go-global/open-account、/go-global/payments、/go-global/payment-risk、/blog/ai-agent-complete-picture，6 题）跑完首轮 1 轮 Pairwise Critique（Claude Opus 5.5 + Sonar 探针，花费 $0.4222，跳过 9 个冻结/实验页，产出 18 条 ≤3/题最小补丁，详报存本机 specs/adversarial-critic-2026-11-27.md，公开只留计数 critic-2026-11-27.json）。【3 周后效果验证节点：2026-12-18 / 2026-12-21 周一面板】按 Jason 拍板应用补丁前，先在本文件 experiments[] 登记处理组与对照组，3 周后复测验证引用率与 Bing IndexNow 警告消除效果。"
     }
   ],
   "experiments": [
