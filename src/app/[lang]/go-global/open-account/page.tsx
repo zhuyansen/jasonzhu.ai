@@ -4,7 +4,7 @@ import { faqJsonLd, type FaqItem } from "@/lib/faq";
 import { GO_GLOBAL, POST_GROUPS, groupPosts, postTitle } from "@/lib/go-global";
 import { getGuardData } from "@/lib/payment-guard";
 import type { GuardData, Lang, PlatformFacts } from "@/lib/payment-guard-types";
-import { PERSON_REF, findWork, findWorkByDoi, workRef } from "@/lib/profiles";
+import { PERSON_REF, findWork, findWorkByDoi, workNode, workRef, type Work } from "@/lib/profiles";
 import GoGlobalBreadcrumb from "../Breadcrumb";
 import Community from "../Community";
 import { withSocialCards } from "@/lib/social";
@@ -380,19 +380,25 @@ export default async function OpenAccountPage({ params }: { params: Promise<{ la
 
   const guardWork = findWork("https://github.com/zhuyansen/payment-guard");
   const sellersDataset = findWorkByDoi("10.5281/zenodo.24386242");
+  const citedWorks = [guardWork, sellersDataset].filter((w): w is Work => Boolean(w));
   const webPageJsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": `${SITE_URL}/${lang}${PATH}#webpage`,
-    url: `${SITE_URL}/${lang}${PATH}`,
-    name: isZh
-      ? "个人还是公司？海外收款平台开户指南（大陆、香港、美国、英国）"
-      : "Individual or company? Opening a payment account to sell abroad",
-    inLanguage: isZh ? "zh-CN" : "en",
-    dateModified: data.checked,
-    author: PERSON_REF,
-    publisher: PERSON_REF,
-    citation: [guardWork, sellersDataset].filter(Boolean).map((w) => workRef(w!)),
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${SITE_URL}/${lang}${PATH}#webpage`,
+        url: `${SITE_URL}/${lang}${PATH}`,
+        name: isZh
+          ? "个人还是公司？海外收款平台开户指南（大陆、香港、美国、英国）"
+          : "Individual or company? Opening a payment account to sell abroad",
+        inLanguage: isZh ? "zh-CN" : "en",
+        dateModified: data.checked,
+        author: PERSON_REF,
+        publisher: PERSON_REF,
+        citation: citedWorks.map(workRef),
+      },
+      ...citedWorks.map(workNode),
+    ],
   };
 
   return (
