@@ -209,6 +209,11 @@ export default async function LangLayout({ children, params }: Props) {
       suppressHydrationWarning
     >
       <head>
+        {/* Chrome WebMCP Origin Trial (Chrome 149–162, https://jasonzhu.ai, expires 2027-03-29) */}
+        <meta
+          httpEquiv="origin-trial"
+          content="AkXVskd0NyBZIc5EHmIQwmGBijmoV//aMxMft3l/PaYSmUFwOP/uIGilupEBFeBhZ7c237QIO6x2o9JI//u0BQQAAABLeyJvcmlnaW4iOiJodHRwczovL2phc29uemh1LmFpOjQ0MyIsImZlYXR1cmUiOiJXZWJNQ1AiLCJleHBpcnkiOjE4MDYzNjQ4MDB9"
+        />
         <link
           rel="alternate"
           type="application/rss+xml"

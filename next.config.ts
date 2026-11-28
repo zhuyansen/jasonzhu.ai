@@ -99,6 +99,12 @@ const nextConfig: NextConfig = {
             key: "Permissions-Policy",
             value: "camera=(), microphone=(), geolocation=()",
           },
+          {
+            // Chrome WebMCP Origin Trial (Chrome 149–162, origin https://jasonzhu.ai, expires 2027-03-29, registration 2623610665733980161)
+            key: "Origin-Trial",
+            value:
+              "AkXVskd0NyBZIc5EHmIQwmGBijmoV//aMxMft3l/PaYSmUFwOP/uIGilupEBFeBhZ7c237QIO6x2o9JI//u0BQQAAABLeyJvcmlnaW4iOiJodHRwczovL2phc29uemh1LmFpOjQ0MyIsImZlYXR1cmUiOiJXZWJNQ1AiLCJleHBpcnkiOjE4MDYzNjQ4MDB9",
+          },
         ],
       },
       // 提示词库原来在这里单独发 Referrer-Policy: no-referrer，好让 video.twimg.com 不认出外站引用、站内播放 X 原视频。
