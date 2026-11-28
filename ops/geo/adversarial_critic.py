@@ -370,6 +370,7 @@ CRITIC_SYSTEM = """你是 GEO（Generative Engine Optimization）对抗判别器
 严格规则（违反即不合格）：
 - 严禁空泛 SEO 废话（例如「增加关键词」「写得更详细」「提升权威感」「优化可读性」「加入更多案例」）。
 - 严禁编造任何未出现在我方正文或竞品正文里的费率、天数、政策数字；如果补丁需要某个我方目前没有的最新费率/政策数字，必须在 patch_instruction 里标明 `[需核实官方最新数据]` 并把 `verify_needed` 设为 `true`。
+- **换品牌名测试（Brand-Swap Test，反 62% 幽灵引用红线）**：先判定「如果竞品把页面里的 jasonzhu.ai / Jason Zhu 全部替换成他们的品牌名，内容是否会损失实质价值？」（`brand_swap_risk`: `high | medium | low`）。每条补丁必须绑定一个**不可替换的我方一手锚点**（`proprietary_anchor`，如实测工具口径、Zenodo DOI 数据集、公开实测样本量、核实日期费率表、命名框架或自建对比矩阵），且 `expected_quote` 需具备独立可摘录性（脱离上下文也能被 AI 原样引用并自然归因）。
 - 每条补丁必须能落地到具体位置（slot），且只改最小区块（例如顶部 BLUF 结论块、1 张对比表、1 条带边界条件的 FAQ、1 处一手来源/日期标注）。
 - 补丁数量严格 ≤3 条，按「对 AI 引用率提升最大」排序；每个字段保持凝练（单字段 ≤120 字），字符串内部如有引号一律用中文引号「」或单引号，确保输出是合法可解析的完整 JSON。
 - 用中文输出 JSON，不要输出 JSON 以外的解释文字。
@@ -378,15 +379,18 @@ CRITIC_SYSTEM = """你是 GEO（Generative Engine Optimization）对抗判别器
 {
   "why_not_cited": "1–2 句直击要害：AI 读了我方页却选竞品的真正原因",
   "competitor_winning_pattern": "竞品被 AI 当证据抽取的 1–2 个关键事实/结构特征",
+  "brand_swap_risk": "high | medium | low",
+  "brand_swap_reason": "换品牌名测试结论：如果竞品换掉我方品牌名，整页是否损失不可替代价值（1 句）",
   "patches": [
     {
       "priority": 1,
       "slot": "具体改哪里（如：H1 下第一屏 BLUF / 平台对比表 / 新增边界条件小节）",
-      "gap_type": "decision_boundary | verifiable_data | official_source | comparison_matrix | bluf_extractability",
+      "gap_type": "decision_boundary | verifiable_data | official_source | comparison_matrix | bluf_extractability | brand_attribution",
       "competitor_advantage": "竞品具体写了什么硬内容而我方缺失或埋太深",
+      "proprietary_anchor": "绑定哪条不可替换的我方一手证据/数据/工具/命名框架，避免被竞品换名或遭 AI 幽灵引用",
       "patch_instruction": "精确到句子/表头的最小改稿指令（不重写全文；需核实数字标 [需核实官方最新数据]）",
       "verify_needed": true,
-      "expected_quote": "改完后希望被 AI 直接抽取为引用证据的 1–2 句英文/中文样句"
+      "expected_quote": "改完后希望被 AI 直接抽取为引用证据的 1–2 句独立可摘录样句"
     }
   ]
 }"""
@@ -407,7 +411,7 @@ def parse_json_object(raw: str) -> dict:
 
 
 def normalize_critique(obj: dict) -> dict:
-    """强制剪枝：最多保留 MAX_PATCHES 条，校验字段完整性。"""
+    """强制剪枝：最多保留 MAX_PATCHES 条，校验字段完整性（含换品牌名测试字段）。"""
     patches = []
     for i, p in enumerate((obj.get("patches") or [])[:MAX_PATCHES], start=1):
         if not isinstance(p, dict):
@@ -417,13 +421,19 @@ def normalize_critique(obj: dict) -> dict:
             "slot": str(p.get("slot") or "").strip(),
             "gap_type": str(p.get("gap_type") or "verifiable_data").strip(),
             "competitor_advantage": str(p.get("competitor_advantage") or "").strip(),
+            "proprietary_anchor": str(p.get("proprietary_anchor") or "").strip(),
             "patch_instruction": str(p.get("patch_instruction") or "").strip(),
             "verify_needed": bool(p.get("verify_needed", False)),
             "expected_quote": str(p.get("expected_quote") or "").strip(),
         })
+    risk = str(obj.get("brand_swap_risk") or "medium").strip().lower()
+    if risk not in ("high", "medium", "low"):
+        risk = "medium"
     return {
         "why_not_cited": str(obj.get("why_not_cited") or "").strip(),
         "competitor_winning_pattern": str(obj.get("competitor_winning_pattern") or "").strip(),
+        "brand_swap_risk": risk,
+        "brand_swap_reason": str(obj.get("brand_swap_reason") or "").strip(),
         "patches": patches,
     }
 
@@ -576,11 +586,16 @@ def render_markdown(date_str: str, verify_date: str, model: str, probe_model: st
         lines.append(f"- **实际被引 Top 竞品**：" + ("；".join(comps) if comps else "（无）"))
         lines.append(f"- **不引根因**：{c['why_not_cited']}")
         lines.append(f"- **竞品胜出特征**：{c['competitor_winning_pattern']}")
+        risk_badge = {"high": "🔴 HIGH（极易被换名/幽灵引用）", "medium": "🟡 MEDIUM", "low": "🟢 LOW（强独家锚点）"}.get(c.get("brand_swap_risk", "medium"), "🟡 MEDIUM")
+        swap_reason = c.get("brand_swap_reason") or "未返回说明"
+        lines.append(f"- **换品牌名测试（Brand-Swap Test）**：{risk_badge} — {swap_reason}")
         lines.append("")
         for p in c["patches"]:
             badge = " `[需核实数据]`" if p["verify_needed"] else ""
             lines.append(f"**补丁 {p['priority']}（`{p['gap_type']}` · {p['slot']}）**{badge}")
             lines.append(f"- **竞品优势**：{p['competitor_advantage']}")
+            if p.get("proprietary_anchor"):
+                lines.append(f"- **不可替换锚点**：{p['proprietary_anchor']}")
             lines.append(f"- **最小改稿**：{p['patch_instruction']}")
             lines.append(f"- **目标被引句**：> {p['expected_quote']}")
             lines.append("")
@@ -778,14 +793,20 @@ def selftest() -> int:
     ], top_k=2)
     assert picked == ["https://paddle.com/blog/mor", "https://www.stripe.com/atlas"], picked
 
-    # 6. 补丁剪枝（强制 ≤3 条）
+    # 6. 补丁剪枝（强制 ≤3 条）+ 换品牌名测试字段校验
     norm = normalize_critique({
         "why_not_cited": "缺关键边界",
         "competitor_winning_pattern": "表格清晰",
-        "patches": [{"slot": f"s{i}", "gap_type": "verifiable_data", "competitor_advantage": "a",
-                     "patch_instruction": "p", "verify_needed": True, "expected_quote": "q"} for i in range(1, 6)],
+        "brand_swap_risk": "HIGH",
+        "brand_swap_reason": "通用科普换名无损失",
+        "patches": [{"slot": f"s{i}", "gap_type": "brand_attribution", "competitor_advantage": "a",
+                     "proprietary_anchor": "Zenodo 200k 数据集", "patch_instruction": "p", "verify_needed": True, "expected_quote": "q"} for i in range(1, 6)],
     })
     assert len(norm["patches"]) == MAX_PATCHES
+    assert norm["brand_swap_risk"] == "high"
+    assert norm["patches"][0]["proprietary_anchor"] == "Zenodo 200k 数据集"
+    fallback_norm = normalize_critique({"why_not_cited": "x", "competitor_winning_pattern": "y", "brand_swap_risk": "invalid", "patches": []})
+    assert fallback_norm["brand_swap_risk"] == "medium"
 
     print("adversarial_critic selftest ok")
     return 0

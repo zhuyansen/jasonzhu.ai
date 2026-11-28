@@ -1,16 +1,19 @@
 #!/usr/bin/env python3
-"""按目录汇总 Search Console 曝光 / 点击 / CTR 与 Money Pages 转化复盘（适配 2026-12-19 转化闸门）。
+"""按目录汇总 Search Console 曝光 / 点击 / CTR、GA4 原生 AI Assistant 频道、Money Pages 与 6 类单点瓶颈诊断（适配 2026-12-19 转化闸门）。
 
-对应 SEO 复盘原则（按目录看盘，不盯单页短期波动；把转化归因回着陆页锁出 Money Pages）：
+对应 SEO/GEO 复盘原则（按目录看盘 + 归因 Money Pages + Semrush #10 6 类瓶颈诊断 + GA4 AI Assistant 频道）：
 - 默认读取 ops/geo/demand.json（与 fanout_actions.py 同源），也支持直接喂 GSC 导出的「网页」CSV 或 JSON；
-- 可选 --previous <旧周期 demand.json/csv> 输出各目录环比增减；
-- 可选 --conversions <GA4/Supabase 着陆页转化 JSON/CSV> 接入 12-19 转化闸门复盘，按 转化 × 曝光 排序锁出 Money Pages；
+- 可选 --previous <旧周期 demand.json/csv> 输出各目录环比增减与内容衰减检测；
+- 可选 --conversions <GA4/Supabase 着陆页转化 JSON/CSV> 接入 12-19 转化闸门复盘，锁出 Money Pages；
+- 可选 --ga4-ai <GA4 Traffic Acquisition 导出 CSV/JSON> 自动过滤原生 AI Assistant 默认频道（medium: ai-assistant）与主流 AI 引擎来源；
+- 自动读取最新 ops/geo/panel/results-*.json 与 read-cited-*.json（可用 --panel / --read-cited 指定或 --no-panel 关闭），
+  识别「AI 提品牌但不引链接」与「AI 引链接但无点击回流」两类 GEO 瓶颈；
 - 自动标记哪些页面在 src/lib/frozen-pages.ts 冻结期内，避免复盘改稿误碰冻结页。
 
 用法：
-  python3 ops/geo/directory_report.py                                       # 基于 ops/geo/demand.json 打印 Markdown
-  python3 ops/geo/directory_report.py --gsc Pages.csv                       # 直接读 GSC 导出的 Pages.csv
-  python3 ops/geo/directory_report.py --previous old.json --conversions ga4.csv
+  python3 ops/geo/directory_report.py                                       # 基于 ops/geo/demand.json + 最新面板打印 Markdown
+  python3 ops/geo/directory_report.py --gsc Pages.csv --ga4-ai ga4_ai.csv
+  python3 ops/geo/directory_report.py --previous old.json --conversions ga4.csv --ga4-ai ga4_ai.csv
   python3 ops/geo/directory_report.py --json-out /tmp/dir_report.json
   python3 ops/geo/directory_report.py --selftest
 """
@@ -29,8 +32,29 @@ from typing import Any
 from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[2]
-DEFAULT_DEMAND = ROOT / "ops" / "geo" / "demand.json"
+GEO_DIR = ROOT / "ops" / "geo"
+PANEL_DIR = GEO_DIR / "panel"
+DEFAULT_DEMAND = GEO_DIR / "demand.json"
 FROZEN_TS = ROOT / "src" / "lib" / "frozen-pages.ts"
+
+AI_ASSISTANT_HOSTS = {
+    "chatgpt.com": "ChatGPT",
+    "chat.openai.com": "ChatGPT",
+    "perplexity.ai": "Perplexity",
+    "gemini.google.com": "Gemini",
+    "claude.ai": "Claude",
+    "copilot.microsoft.com": "Copilot",
+    "deepseek.com": "DeepSeek",
+    "chat.deepseek.com": "DeepSeek",
+    "kimi.com": "Kimi",
+    "kimi.moonshot.cn": "Kimi",
+    "doubao.com": "Doubao",
+    "grok.com": "Grok",
+    "you.com": "You.com",
+    "phind.com": "Phind",
+    "poe.com": "Poe",
+    "metaso.cn": "Metaso",
+}
 
 # 商业/转化导向目录：即使目前流量占比低，也单独拉表盯 12-19 转化闸门
 COMMERCIAL_DIRS = {
@@ -73,7 +97,17 @@ class PageRow:
     clicks: int
     position: float
     conversions: int = 0
+    ai_sessions: int = 0
+    ai_conversions: int = 0
     frozen: bool = False
+
+
+@dataclass
+class Ga4AiData:
+    total_sessions: int = 0
+    total_conversions: int = 0
+    by_page: dict[str, dict[str, float]] = field(default_factory=dict)
+    by_engine: dict[str, dict[str, int]] = field(default_factory=dict)
 
 
 @dataclass
@@ -272,11 +306,221 @@ def load_conversions(path: Path) -> dict[str, int]:
     return dict(out)
 
 
-def aggregate_by_directory(rows: list[PageRow], conversions: dict[str, int] | None = None) -> dict[str, DirStats]:
+def _classify_ai_engine(source_or_medium: str) -> str | None:
+    s = (source_or_medium or "").strip().lower()
+    if not s:
+        return None
+    for host, name in AI_ASSISTANT_HOSTS.items():
+        if host in s:
+            return name
+    for kw, name in (
+        ("chatgpt", "ChatGPT"),
+        ("openai", "ChatGPT"),
+        ("perplexity", "Perplexity"),
+        ("gemini", "Gemini"),
+        ("claude", "Claude"),
+        ("copilot", "Copilot"),
+        ("deepseek", "DeepSeek"),
+        ("kimi", "Kimi"),
+        ("doubao", "Doubao"),
+    ):
+        if kw in s:
+            return name
+    return None
+
+
+def load_ga4_ai(path: Path) -> Ga4AiData:
+    """读取 GA4 Traffic Acquisition 导出（CSV/JSON），自动过滤原生 AI Assistant 默认频道（medium: ai-assistant）与 AI 引擎来源。"""
+    raw = path.read_text("utf-8-sig")
+    out = Ga4AiData()
+
+    records: list[dict[str, Any]] = []
+    if path.suffix.lower() == ".json":
+        data = json.loads(raw)
+        if isinstance(data, list):
+            records = [r for r in data if isinstance(r, dict)]
+        elif isinstance(data, dict):
+            records = [r for r in (data.get("rows") or data.get("pages") or []) if isinstance(r, dict)]
+    elif path.suffix.lower() == ".csv":
+        # 跳过 GA4 导出顶部以 # 开头的注释行
+        lines = [ln for ln in raw.splitlines() if not ln.lstrip().startswith("#")]
+        for rec in csv.DictReader(io.StringIO("\n".join(lines))):
+            records.append({k.strip().lower(): (v or "").strip() for k, v in rec.items() if k})
+    else:
+        raise ValueError(f"Unsupported GA4 AI format: {path}")
+
+    for raw_rec in records:
+        rec = {str(k).strip().lower(): raw_rec[k] for k in raw_rec}
+        channel = str(
+            rec.get("session default channel group")
+            or rec.get("default channel group")
+            or rec.get("channel")
+            or rec.get("会话默认渠道分组")
+            or ""
+        ).strip()
+        source_medium = str(
+            rec.get("session source / medium")
+            or rec.get("session source/medium")
+            or rec.get("source / medium")
+            or rec.get("source")
+            or rec.get("会话来源/媒介")
+            or ""
+        ).strip()
+        medium = str(rec.get("session medium") or rec.get("medium") or "").strip()
+
+        engine = _classify_ai_engine(source_medium)
+        is_ai_row = (
+            "ai assistant" in channel.lower()
+            or "ai-assistant" in medium.lower()
+            or "ai-assistant" in source_medium.lower()
+            or "ai_referral" in source_medium.lower()
+            or engine is not None
+        )
+        # 如果文件本身没有渠道/来源列（即用户已提前在 GA4 筛选好 AI Assistant 导出的着陆页表），全部视为 AI Assistant 行
+        has_channel_cols = bool(channel or source_medium or medium)
+        if has_channel_cols and not is_ai_row:
+            continue
+
+        sessions = _parse_int(rec.get("sessions") or rec.get("会话数") or rec.get("visits") or 0)
+        key_events = _parse_int(
+            rec.get("key events") or rec.get("conversions") or rec.get("关键事件") or rec.get("转化次数") or 0
+        )
+        eng_rate = _parse_float(rec.get("engagement rate") or rec.get("互动率") or 0.0)
+        if eng_rate > 1.0:
+            eng_rate = eng_rate / 100.0
+
+        out.total_sessions += sessions
+        out.total_conversions += key_events
+
+        eng_key = engine or ("AI Assistant" if is_ai_row else "AI Assistant")
+        eb = out.by_engine.setdefault(eng_key, {"sessions": 0, "conversions": 0})
+        eb["sessions"] += sessions
+        eb["conversions"] += key_events
+
+        lp = str(
+            rec.get("landing page + query string")
+            or rec.get("landing page")
+            or rec.get("landing_page")
+            or rec.get("path")
+            or rec.get("page")
+            or rec.get("着陆页")
+            or ""
+        ).strip()
+        if lp:
+            norm_path, _, _ = normalize_url_parts(lp)
+            pb = out.by_page.setdefault(norm_path, {"sessions": 0, "conversions": 0, "eng_weighted": 0.0})
+            pb["sessions"] += sessions
+            pb["conversions"] += key_events
+            pb["eng_weighted"] += eng_rate * sessions
+
+    return out
+
+
+def _latest_panel_file(pattern: str) -> Path | None:
+    if not PANEL_DIR.exists():
+        return None
+    files = sorted(PANEL_DIR.glob(pattern))
+    return files[-1] if files else None
+
+
+def load_panel_signals(
+    panel_path: Path | None = None,
+    read_cited_path: Path | None = None,
+    geo_dir: Path = GEO_DIR,
+) -> dict[str, Any]:
+    """加载最新 GEO 面板（results-*.json）与 read-cited-*.json，用于识别第 5/6 类 AI 瓶颈。"""
+    # 建立 qid -> target_path 映射
+    qid_to_path: dict[str, str] = {}
+    for qf in sorted(geo_dir.glob("questions*.json")):
+        try:
+            qdata = json.loads(qf.read_text("utf-8"))
+        except (OSError, ValueError):
+            continue
+        for q in qdata.get("questions") or []:
+            if q.get("id") and q.get("target_url"):
+                p, _, _ = normalize_url_parts(q["target_url"])
+                qid_to_path[q["id"]] = p
+
+    named_not_cited: list[dict[str, Any]] = []
+    cited_pages: dict[str, dict[str, Any]] = {}
+    panel_date = ""
+
+    if panel_path and panel_path.exists():
+        pdata = json.loads(panel_path.read_text("utf-8"))
+        panel_date = str(pdata.get("date") or panel_path.stem)
+        q_agg: dict[str, dict[str, Any]] = defaultdict(lambda: {"named": 0, "cited": 0, "total": 0, "engines": set()})
+        for r in pdata.get("rows") or []:
+            if r.get("status") != "answered":
+                continue
+            qid = str(r.get("question_id") or "")
+            if not qid:
+                continue
+            b = q_agg[qid]
+            b["total"] += 1
+            if r.get("named"):
+                b["named"] += 1
+            if r.get("site_cited"):
+                b["cited"] += 1
+            if r.get("named") and not r.get("site_cited"):
+                b["engines"].add(str(r.get("engine") or ""))
+            for u in r.get("our_urls") or []:
+                np, _, _ = normalize_url_parts(f"https://{u}" if "://" not in str(u) else str(u))
+                cp = cited_pages.setdefault(np, {"path": np, "citations": 0, "questions": set()})
+                cp["citations"] += 1
+                cp["questions"].add(qid)
+
+        for qid, b in q_agg.items():
+            # 提了品牌至少 1 次，且出现过「提品牌但未引链接」的回答（优先排高提低引）
+            if b["named"] > 0 and b["named"] > b["cited"]:
+                named_not_cited.append({
+                    "question_id": qid,
+                    "target_path": qid_to_path.get(qid, ""),
+                    "named_runs": b["named"],
+                    "cited_runs": b["cited"],
+                    "total_runs": b["total"],
+                    "engines": sorted(e for e in b["engines"] if e),
+                })
+        named_not_cited.sort(key=lambda x: (x["named_runs"] - x["cited_runs"], x["named_runs"]), reverse=True)
+
+    if read_cited_path and read_cited_path.exists():
+        rc = json.loads(read_cited_path.read_text("utf-8"))
+        for row in rc.get("pages") or []:
+            all_cited = int(row.get("all_cited") or 0)
+            if all_cited <= 0:
+                continue
+            pk = str(row.get("page") or "")
+            en_path = f"/en{'' if pk == '/' else pk}"
+            cp = cited_pages.setdefault(en_path, {"path": en_path, "citations": 0, "questions": set()})
+            cp["citations"] = max(cp["citations"], all_cited)
+            for qid in row.get("questions") or []:
+                cp["questions"].add(qid)
+
+    cited_list = [
+        {"path": v["path"], "citations": v["citations"], "questions": sorted(v["questions"])}
+        for v in cited_pages.values()
+    ]
+    cited_list.sort(key=lambda x: (-x["citations"], x["path"]))
+
+    return {
+        "panel_date": panel_date,
+        "named_not_cited": named_not_cited,
+        "cited_pages": cited_list,
+    }
+
+
+def aggregate_by_directory(
+    rows: list[PageRow],
+    conversions: dict[str, int] | None = None,
+    ga4_ai: Ga4AiData | None = None,
+) -> dict[str, DirStats]:
     conv_map = conversions or {}
+    ai_pages = ga4_ai.by_page if ga4_ai else {}
     groups: dict[str, DirStats] = {}
     for row in rows:
         row.conversions = conv_map.get(row.path, 0)
+        if row.path in ai_pages:
+            row.ai_sessions = int(ai_pages[row.path]["sessions"])
+            row.ai_conversions = int(ai_pages[row.path]["conversions"])
         d = groups.get(row.directory)
         if d is None:
             d = DirStats(directory=row.directory)
@@ -322,12 +566,149 @@ def quick_win_pages(rows: list[PageRow], limit: int = 10) -> list[PageRow]:
     return cands[:limit]
 
 
+def diagnose_bottlenecks(
+    rows: list[PageRow],
+    prev_rows: list[PageRow] | None = None,
+    has_conversions: bool = False,
+    ga4_ai: Ga4AiData | None = None,
+    panel_signals: dict[str, Any] | None = None,
+    frozen_paths: set[str] | None = None,
+    limit: int = 5,
+) -> list[dict[str, Any]]:
+    """Semrush #10 六类单点瓶颈诊断矩阵：将 GSC + 转化 + 环比 + GEO 面板 + GA4 AI 流量映射成可执行行动。"""
+    frozen = frozen_paths or set()
+
+    # 1. 高曝光、低排名 → 意图匹配或站点权重不足
+    p1 = [r for r in rows if r.impressions >= 150 and r.position > 15.0]
+    p1.sort(key=lambda r: (r.frozen, -r.impressions))
+    p1_items = [
+        f"`{r.path}` ({r.impressions:,} 曝 / 排 {r.position:.1f}{' 🔒' if r.frozen else ''})"
+        for r in p1[:limit]
+    ]
+
+    # 2. 高排名、低 CTR → Title / 摘要钩子弱
+    p2 = [r for r in rows if r.impressions >= 200 and r.position <= 10.0 and (r.clicks / r.impressions) < 0.025]
+    p2.sort(key=lambda r: (r.frozen, -r.impressions))
+    p2_items = [
+        f"`{r.path}` (排 {r.position:.1f} / CTR {r.clicks / r.impressions * 100:.1f}%{' 🔒' if r.frozen else ''})"
+        for r in p2[:limit]
+    ]
+
+    # 3. 高流量、低转化 → 缺明确下一步 CTA / 承接页
+    p3_items: list[str] = []
+    if has_conversions:
+        p3 = [r for r in rows if r.clicks >= 50 and (r.conversions / r.clicks) < 0.01]
+        p3.sort(key=lambda r: (r.frozen, -r.clicks))
+        p3_items = [
+            f"`{r.path}` ({r.clicks:,} 点 / {r.conversions} 转{' 🔒' if r.frozen else ''})"
+            for r in p3[:limit]
+        ]
+
+    # 4. 有曝光但环比下滑 / 掉排名 → 内容过期需刷新
+    p4_items: list[str] = []
+    if prev_rows is not None:
+        prev_map = {r.path: r for r in prev_rows}
+        declining: list[tuple[PageRow, int, float]] = []
+        for r in rows:
+            pr = prev_map.get(r.path)
+            if not pr or pr.impressions < 100:
+                continue
+            drop_pct = (r.impressions - pr.impressions) / pr.impressions
+            pos_worse = r.position - pr.position
+            if drop_pct <= -0.25 or pos_worse >= 3.0:
+                declining.append((r, r.impressions - pr.impressions, pos_worse))
+        declining.sort(key=lambda t: (t[0].frozen, t[1]))
+        p4_items = [
+            f"`{r.path}` (曝 {di:+,} / 排名 {dp:+.1f}{' 🔒' if r.frozen else ''})"
+            for r, di, dp in declining[:limit]
+        ]
+
+    # 5. AI 提品牌但不引链接 → 品牌有认知，缺可引用原始证据页
+    p5_items: list[str] = []
+    if panel_signals:
+        for item in (panel_signals.get("named_not_cited") or [])[:limit]:
+            tp = item.get("target_path") or ""
+            mark = " 🔒" if tp in frozen else ""
+            p5_items.append(
+                f"`{item['question_id']}` (提 {item['named_runs']} / 引 {item['cited_runs']}{' · ' + tp if tp else ''}{mark})"
+            )
+
+    # 6. AI 引链接但无点击回流 → 缺点击回访的独家工具/完整数据钩子
+    p6_items: list[str] = []
+    if panel_signals:
+        ai_by_page = ga4_ai.by_page if ga4_ai else {}
+        for cp in panel_signals.get("cited_pages") or []:
+            path = cp["path"]
+            ai_sess = int(ai_by_page.get(path, {}).get("sessions", 0))
+            if ga4_ai is not None:
+                if ai_sess == 0:
+                    p6_items.append(f"`{path}` (被引 {cp['citations']} 次 / GA4 AI 回流 0{' 🔒' if path in frozen else ''})")
+            else:
+                p6_items.append(f"`{path}` (被引 {cp['citations']} 次 · 待喂 `--ga4-ai` 核对回流)")
+            if len(p6_items) >= limit:
+                break
+
+    return [
+        {
+            "id": "high_imp_low_rank",
+            "symptom": "高曝光、低排名（曝 ≥ 150 · 排名 > 15）",
+            "root_cause": "意图匹配偏差或主题集群/内链/外链权重不足",
+            "action": "拆低 DR 排前面竞品结构；补内部专题互链与第三方 Source Opportunities",
+            "status": "measured",
+            "candidates": p1_items,
+        },
+        {
+            "id": "high_rank_low_ctr",
+            "symptom": "高排名、低 CTR（排 ≤ 10 · 曝 ≥ 200 · CTR < 2.5%）",
+            "root_cause": "Title / Meta 摘要钩子弱，或被 AI Overview 直接截流",
+            "action": "非冻结页优先重写 Title（补年份/实测数字/对比边界）与首段价值钩子",
+            "status": "measured",
+            "candidates": p2_items,
+        },
+        {
+            "id": "high_traffic_low_conv",
+            "symptom": "高流量、低转化（点击 ≥ 50 · 转化率 < 1%）",
+            "root_cause": "着陆页缺清晰下一步 CTA / 商业承接路径",
+            "action": "在首屏下方与正文痛点处补直达工具/订阅/咨询 CTA，对照 12-19 转化闸门",
+            "status": "measured" if has_conversions else "needs_conversions",
+            "candidates": p3_items,
+        },
+        {
+            "id": "declining_visibility",
+            "symptom": "有曝光但环比下滑（曝光降 ≥ 25% 或掉 ≥ 3 名）",
+            "root_cause": "内容/费率/政策信息过期或被竞品更新超越",
+            "action": "刷新核实日期与一手官方口径（冻结页记入解冻队列）",
+            "status": "measured" if prev_rows is not None else "needs_previous",
+            "candidates": p4_items,
+        },
+        {
+            "id": "ai_mentioned_not_cited",
+            "symptom": "AI 提品牌但不引链接（named > site_cited）",
+            "root_cause": "有品牌心智但缺独立可摘录的一手证据/数据页",
+            "action": "为对应题补可引用的原创数据锚点、核实表与自归因句（过换品牌名测试）",
+            "status": "measured" if panel_signals else "needs_panel",
+            "candidates": p5_items,
+        },
+        {
+            "id": "ai_cited_no_referral",
+            "symptom": "AI 引链接但无点击回流（被引 ≥ 1 · GA4 AI 访问 = 0）",
+            "root_cause": "回答里已读完结论，缺促使访客点进来的互动工具/完整数据集/模板钩子",
+            "action": "把静态结论页挂上可交互计算器/原始 CSV 下载/复制即用模板，拉高回流点击",
+            "status": "measured" if (panel_signals and ga4_ai is not None) else "needs_ga4_ai",
+            "candidates": p6_items,
+        },
+    ]
+
+
 def format_markdown(
     meta_source: str,
     rows: list[PageRow],
     dirs: dict[str, DirStats],
     prev_dirs: dict[str, DirStats] | None = None,
     has_conversions: bool = False,
+    ga4_ai: Ga4AiData | None = None,
+    bottlenecks: list[dict[str, Any]] | None = None,
+    panel_date: str = "",
 ) -> str:
     total_imp = sum(d.impressions for d in dirs.values())
     total_clk = sum(d.clicks for d in dirs.values())
@@ -335,11 +716,12 @@ def format_markdown(
     total_ctr = (total_clk / total_imp * 100) if total_imp else 0.0
 
     lines = [
-        "# Search Console 按目录复盘 & Money Pages 看盘",
+        "# Search Console 按目录复盘 & Money Pages / 6 类瓶颈看盘",
         "",
-        f"- **数据源**：{meta_source}",
+        f"- **数据源**：{meta_source}" + (f" · GEO 面板 `{panel_date}`" if panel_date else ""),
         f"- **总计**：{len(rows)} 个页面 · {total_imp:,} 曝光 · {total_clk:,} 点击 · 整体 CTR {total_ctr:.2f}%"
-        + (f" · {total_conv:,} 转化" if has_conversions else ""),
+        + (f" · {total_conv:,} 转化" if has_conversions else "")
+        + (f" · GA4 AI Assistant {ga4_ai.total_sessions:,} 会话 / {ga4_ai.total_conversions:,} 转化" if ga4_ai else ""),
         "",
         "## 1. 按目录汇总（不盯单页波动，看目录结构）",
         "",
@@ -404,6 +786,8 @@ def format_markdown(
     m_hdr = ["页面", "目录", "曝光", "点击", "CTR", "排名"]
     if has_conversions:
         m_hdr.append("转化")
+    if ga4_ai:
+        m_hdr.append("GA4 AI 会话")
     m_hdr.append("冻结状态")
     lines.append("| " + " | ".join(m_hdr) + " |")
     lines.append("| " + " | ".join(["---"] * len(m_hdr)) + " |")
@@ -412,7 +796,9 @@ def format_markdown(
         c = [f"`{r.path}`", f"`{r.directory}`", f"{r.impressions:,}", f"{r.clicks:,}", f"{ctr:.2f}%", f"{r.position:.1f}"]
         if has_conversions:
             c.append(f"{r.conversions:,}")
-        c.append("🔒 冻结至 2027-01-01" if r.frozen else "✅ 可改")
+        if ga4_ai:
+            c.append(f"{r.ai_sessions:,}")
+        c.append("🔒 冻结" if r.frozen else "✅ 可改")
         lines.append("| " + " | ".join(c) + " |")
 
     # 高曝光低点击速赢候选
@@ -430,6 +816,50 @@ def format_markdown(
             status = "🔒 冻结（暂不动）" if r.frozen else "✅ 可优先改 Title/首段"
             lines.append(f"| `{r.path}` | `{r.directory}` | {r.impressions:,} | {r.clicks:,} | {ctr:.2f}% | {r.position:.1f} | {status} |")
 
+    # Section 5: GA4 原生 AI Assistant 频道看盘
+    lines.extend(["", "## 5. GA4 原生 `AI Assistant` 频道看盘（Semrush #10 · 12-19 转化闸门）", ""])
+    if ga4_ai:
+        lines.append(f"- **AI Assistant 渠道总计**：**{ga4_ai.total_sessions:,}** 会话 · **{ga4_ai.total_conversions:,}** 关键事件/转化")
+        if ga4_ai.by_engine:
+            lines.extend(["", "| AI 引擎来源 | 会话数 | 转化/Key Events | 转化率 |", "| --- | ---: | ---: | ---: |"])
+            for eng, stats in sorted(ga4_ai.by_engine.items(), key=lambda kv: -kv[1]["sessions"]):
+                cvr = (stats["conversions"] / stats["sessions"] * 100) if stats["sessions"] else 0.0
+                lines.append(f"| {eng} | {stats['sessions']:,} | {stats['conversions']:,} | {cvr:.2f}% |")
+        if ga4_ai.by_page:
+            lines.extend(["", "| 着陆页 | AI 会话数 | AI 转化 | 互动率 |", "| --- | ---: | ---: | ---: |"])
+            for lp, stats in sorted(ga4_ai.by_page.items(), key=lambda kv: (-kv[1]["sessions"], kv[0]))[:10]:
+                er = (stats["eng_weighted"] / stats["sessions"] * 100) if stats["sessions"] else 0.0
+                lines.append(f"| `{lp}` | {int(stats['sessions']):,} | {int(stats['conversions']):,} | {er:.1f}% |")
+    else:
+        lines.extend([
+            "- **当前未传入 `--ga4-ai`**：本站 `next.config.ts` 已配置 `Referrer-Policy: strict-origin-when-cross-origin`，`ThirdPartyAnalytics.tsx` 已加载 GA4 `gtag`、`text_fragment` 与 PostHog `entry_ai_engine`，不会吞掉 AI 引擎来源。",
+            "- **12-19 复盘导出方式**：GA4 → **Reports → Acquisition → Traffic acquisition** → 过滤 `Session default channel group = AI Assistant`（或 `medium = ai-assistant`），叠加次级维度 `Landing page + query string` 导出 CSV，运行：",
+            "  `python3 ops/geo/directory_report.py --ga4-ai ga4_ai_assistant.csv --conversions ga4_landing_conv.csv`",
+            "- **注意口径边界**：GA4 仅抓带 Referrer 的点击回流，零点击品牌心智须与下方 GEO 引用面板及 `brand_split.py` 品牌词搜索并排看。",
+        ])
+
+    # Section 6: 6 类单点瓶颈诊断矩阵
+    if bottlenecks:
+        lines.extend([
+            "",
+            "## 6. 6 类单点瓶颈自动诊断矩阵（Semrush #10）",
+            "",
+            "| 瓶颈现象 | 真正瓶颈 | 优先动作 | 当前命中样本（🔒=冻结不动） |",
+            "| --- | --- | --- | --- |",
+        ])
+        status_hint = {
+            "needs_conversions": "（待传入 `--conversions`）",
+            "needs_previous": "（待传入 `--previous`）",
+            "needs_panel": "（未找到 `ops/geo/panel/results-*.json`）",
+            "needs_ga4_ai": "（待传入 `--ga4-ai` 核对 0 回流）",
+        }
+        for b in bottlenecks:
+            if b["candidates"]:
+                sample_str = "<br>".join(b["candidates"])
+            else:
+                sample_str = status_hint.get(b["status"], "当前无命中 ✅")
+            lines.append(f"| {b['symptom']} | {b['root_cause']} | {b['action']} | {sample_str} |")
+
     return "\n".join(lines) + "\n"
 
 
@@ -438,6 +868,8 @@ def to_json_payload(
     rows: list[PageRow],
     dirs: dict[str, DirStats],
     prev_dirs: dict[str, DirStats] | None = None,
+    ga4_ai: Ga4AiData | None = None,
+    bottlenecks: list[dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     total_imp = sum(d.impressions for d in dirs.values())
     total_clk = sum(d.clicks for d in dirs.values())
@@ -450,6 +882,8 @@ def to_json_payload(
             "clicks": total_clk,
             "ctr": round((total_clk / total_imp) if total_imp else 0.0, 4),
             "conversions": sum(d.conversions for d in dirs.values()),
+            "ga4_ai_sessions": ga4_ai.total_sessions if ga4_ai else 0,
+            "ga4_ai_conversions": ga4_ai.total_conversions if ga4_ai else 0,
         },
         "directories": [
             {
@@ -483,10 +917,23 @@ def to_json_payload(
                 "clicks": r.clicks,
                 "position": r.position,
                 "conversions": r.conversions,
+                "ai_sessions": r.ai_sessions,
                 "frozen": r.frozen,
             }
             for r in money_page_candidates(rows)
         ],
+        "ga4_ai": {
+            "total_sessions": ga4_ai.total_sessions,
+            "total_conversions": ga4_ai.total_conversions,
+            "by_engine": ga4_ai.by_engine,
+            "by_page": {
+                k: {"sessions": int(v["sessions"]), "conversions": int(v["conversions"])}
+                for k, v in ga4_ai.by_page.items()
+            },
+        }
+        if ga4_ai
+        else None,
+        "bottlenecks": bottlenecks or [],
     }
 
 
@@ -504,7 +951,8 @@ def selftest() -> int:
         gsc_csv.write_text(
             "Top pages,Clicks,Impressions,CTR,Position\n"
             "https://jasonzhu.ai/en/go-global/payments,40,1000,4.0%,6.5\n"
-            "https://jasonzhu.ai/zh/go-global/ai-readiness,10,500,2.0%,11.0\n"
+            "https://jasonzhu.ai/zh/go-global/ai-readiness,5,500,1.0%,18.0\n"
+            "https://jasonzhu.ai/en/tools,8,600,1.3%,7.2\n"
             "https://jasonzhu.ai/en/prompts/claude-opus-5-5,300,6000,5.0%,5.2\n",
             encoding="utf-8",
         )
@@ -512,7 +960,17 @@ def selftest() -> int:
         conv_csv.write_text(
             "Landing page,Conversions\n"
             "/en/go-global/payments,8\n"
-            "/zh/go-global/ai-readiness,3\n",
+            "/zh/go-global/ai-readiness,3\n"
+            "/en/prompts/claude-opus-5-5,1\n",
+            encoding="utf-8",
+        )
+        ga4_ai_csv = t / "ga4_ai.csv"
+        ga4_ai_csv.write_text(
+            "# GA4 Export\n"
+            "Session default channel group,Session source / medium,Landing page,Sessions,Key events,Engagement rate\n"
+            "AI Assistant,chatgpt.com / ai-assistant,/en/go-global/payments,24,4,72.5%\n"
+            "AI Assistant,perplexity.ai / ai-assistant,/zh/go-global/ai-readiness,12,2,65.0%\n"
+            "Organic Search,google / organic,/en/tools,500,10,50.0%\n",
             encoding="utf-8",
         )
         prev_json = t / "prev.json"
@@ -520,46 +978,82 @@ def selftest() -> int:
             json.dumps({
                 "pages": {
                     "https://jasonzhu.ai/en/go-global/payments": {"impressions": 600, "clicks": 20, "position": 8.0},
+                    "https://jasonzhu.ai/en/tools": {"impressions": 1000, "clicks": 30, "position": 5.0},
                 }
             }),
             encoding="utf-8",
         )
+        panel_json = t / "results.json"
+        panel_json.write_text(
+            json.dumps({
+                "date": "2026-11-23",
+                "rows": [
+                    {"question_id": "brand-who-is-jasonzhu", "engine": "gemini_app", "status": "answered", "named": True, "site_cited": False, "our_urls": []},
+                    {"question_id": "data-choose-payment-platform", "engine": "chatgpt", "status": "answered", "named": True, "site_cited": True, "our_urls": ["jasonzhu.ai/en/tools"]},
+                ],
+            }),
+            encoding="utf-8",
+        )
 
-        _, rows = load_gsc_rows(gsc_csv, frozen_paths={"/en/go-global/payments"})
+        frozen_set = {"/en/go-global/payments"}
+        _, rows = load_gsc_rows(gsc_csv, frozen_paths=frozen_set)
         convs = load_conversions(conv_csv)
-        dirs = aggregate_by_directory(rows, convs)
+        ga4_ai = load_ga4_ai(ga4_ai_csv)
+        assert ga4_ai.total_sessions == 36
+        assert ga4_ai.total_conversions == 6
+        assert ga4_ai.by_engine["ChatGPT"]["sessions"] == 24
+        assert ga4_ai.by_engine["Perplexity"]["sessions"] == 12
+
+        dirs = aggregate_by_directory(rows, convs, ga4_ai)
         _, prev_rows = load_gsc_rows(prev_json)
         prev_dirs = aggregate_by_directory(prev_rows)
+        psig = load_panel_signals(panel_json, None, GEO_DIR)
+        bns = diagnose_bottlenecks(rows, prev_rows, True, ga4_ai, psig, frozen_set)
+        bn_map = {b["id"]: b for b in bns}
+        assert len(bns) == 6
+        assert bn_map["high_imp_low_rank"]["candidates"]
+        assert bn_map["high_rank_low_ctr"]["candidates"]
+        assert bn_map["high_traffic_low_conv"]["candidates"]
+        assert bn_map["declining_visibility"]["candidates"]
+        assert bn_map["ai_mentioned_not_cited"]["candidates"]
+        assert bn_map["ai_cited_no_referral"]["candidates"]
 
         assert dirs["/go-global"].pages == 2
         assert dirs["/go-global"].impressions == 1500
-        assert dirs["/go-global"].clicks == 50
+        assert dirs["/go-global"].clicks == 45
         assert dirs["/go-global"].conversions == 11
-        assert abs(dirs["/go-global"].avg_position - ((6.5 * 1000 + 11.0 * 500) / 1500)) < 1e-6
 
-        md = format_markdown("test", rows, dirs, prev_dirs, has_conversions=True)
-        assert "`/go-global`" in md and "+900" in md and "🔒 冻结" in md and "✅ 可改" in md
-        payload = to_json_payload("test", rows, dirs, prev_dirs)
-        assert payload["totals"]["conversions"] == 11
-        assert payload["money_pages"][0]["path"] == "/en/go-global/payments"
+        md = format_markdown("test", rows, dirs, prev_dirs, has_conversions=True, ga4_ai=ga4_ai, bottlenecks=bns, panel_date="2026-11-23")
+        assert "`/go-global`" in md and "AI Assistant" in md and "6 类单点瓶颈自动诊断矩阵" in md
+        payload = to_json_payload("test", rows, dirs, prev_dirs, ga4_ai=ga4_ai, bottlenecks=bns)
+        assert payload["totals"]["conversions"] == 12
+        assert payload["totals"]["ga4_ai_sessions"] == 36
+        assert len(payload["bottlenecks"]) == 6
 
-    # Also smoke-test against repo's real demand.json if present
+    # Also smoke-test against repo's real demand.json + latest panel if present
     if DEFAULT_DEMAND.exists():
         frozen = load_frozen_paths()
         _, real_rows = load_gsc_rows(DEFAULT_DEMAND, frozen)
         assert len(real_rows) > 0
         real_dirs = aggregate_by_directory(real_rows)
         assert "/prompts" in real_dirs and "/blog" in real_dirs
+        psig = load_panel_signals(_latest_panel_file("results-*.json"), _latest_panel_file("read-cited-*.json"), GEO_DIR)
+        bns = diagnose_bottlenecks(real_rows, None, False, None, psig, frozen)
+        assert len(bns) == 6
 
     print("自测通过 (directory_report.py)")
     return 0
 
 
 def main(argv: list[str]) -> int:
-    parser = argparse.ArgumentParser(description="按目录汇总 GSC 曝光/点击/CTR 与 Money Pages 复盘")
+    parser = argparse.ArgumentParser(description="按目录汇总 GSC、GA4 AI Assistant 与 6 类单点瓶颈复盘")
     parser.add_argument("--gsc", type=Path, default=DEFAULT_DEMAND, help="GSC 数据源（默认 ops/geo/demand.json，也支持 Pages.csv）")
-    parser.add_argument("--previous", type=Path, default=None, help="上一周期 GSC 数据（JSON/CSV），用于输出目录环比")
+    parser.add_argument("--previous", type=Path, default=None, help="上一周期 GSC 数据（JSON/CSV），用于输出目录环比与衰减诊断")
     parser.add_argument("--conversions", type=Path, default=None, help="着陆页转化数据（GA4/Supabase 导出 JSON/CSV）")
+    parser.add_argument("--ga4-ai", type=Path, default=None, help="GA4 Traffic Acquisition 导出（自动过滤原生 AI Assistant 频道）")
+    parser.add_argument("--panel", type=Path, default=None, help="GEO 面板 results-*.json（默认自动取最新）")
+    parser.add_argument("--read-cited", type=Path, default=None, help="read-cited-*.json（默认自动取最新）")
+    parser.add_argument("--no-panel", action="store_true", help="不自动加载 GEO 面板数据")
     parser.add_argument("--out", type=Path, default=None, help="可选：Markdown 输出路径")
     parser.add_argument("--json-out", type=Path, default=None, help="可选：JSON 输出路径")
     parser.add_argument("--selftest", action="store_true", help="运行自测")
@@ -571,14 +1065,43 @@ def main(argv: list[str]) -> int:
     frozen = load_frozen_paths()
     meta_source, rows = load_gsc_rows(args.gsc, frozen)
     convs = load_conversions(args.conversions) if args.conversions else None
-    dirs = aggregate_by_directory(rows, convs)
+    ga4_ai = load_ga4_ai(args.ga4_ai) if args.ga4_ai else None
+    dirs = aggregate_by_directory(rows, convs, ga4_ai)
 
+    prev_rows = None
     prev_dirs = None
     if args.previous:
         _, prev_rows = load_gsc_rows(args.previous, frozen)
         prev_dirs = aggregate_by_directory(prev_rows)
 
-    md = format_markdown(meta_source, rows, dirs, prev_dirs, has_conversions=bool(args.conversions))
+    panel_signals = None
+    panel_date = ""
+    if not args.no_panel:
+        p_path = args.panel or _latest_panel_file("results-*.json")
+        rc_path = args.read_cited or _latest_panel_file("read-cited-*.json")
+        if p_path or rc_path:
+            panel_signals = load_panel_signals(p_path, rc_path, GEO_DIR)
+            panel_date = panel_signals.get("panel_date", "")
+
+    bottlenecks = diagnose_bottlenecks(
+        rows=rows,
+        prev_rows=prev_rows,
+        has_conversions=bool(args.conversions),
+        ga4_ai=ga4_ai,
+        panel_signals=panel_signals,
+        frozen_paths=frozen,
+    )
+
+    md = format_markdown(
+        meta_source,
+        rows,
+        dirs,
+        prev_dirs,
+        has_conversions=bool(args.conversions),
+        ga4_ai=ga4_ai,
+        bottlenecks=bottlenecks,
+        panel_date=panel_date,
+    )
     if args.out:
         args.out.parent.mkdir(parents=True, exist_ok=True)
         args.out.write_text(md, encoding="utf-8")
@@ -588,7 +1111,7 @@ def main(argv: list[str]) -> int:
     if args.json_out:
         args.json_out.parent.mkdir(parents=True, exist_ok=True)
         args.json_out.write_text(
-            json.dumps(to_json_payload(meta_source, rows, dirs, prev_dirs), ensure_ascii=False, indent=2) + "\n",
+            json.dumps(to_json_payload(meta_source, rows, dirs, prev_dirs, ga4_ai=ga4_ai, bottlenecks=bottlenecks), ensure_ascii=False, indent=2) + "\n",
             encoding="utf-8",
         )
     return 0

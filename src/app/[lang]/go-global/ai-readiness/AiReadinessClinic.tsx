@@ -150,7 +150,7 @@ const SANDBOX_UPGRADES: SandboxUpgradeItem[] = [
       zh: "99% 网站卡在这一关：没有把网页变成 Agent 可调用的工具节点（丢 10 分）",
       en: "99% of sites fail here: no WebMCP tools or MCP Server Card (-10 pts)",
     },
-    fixCode: `<form toolname="search_docs" tooldescription="Search documentation" toolautosubmit="true">\n  <input name="q" />\n</form>\n// + /.well-known/mcp/server-card.json, only if you run a remote MCP server`,
+    fixCode: `<form toolname="search_docs" tooldescription="Search documentation" toolautosubmit="true">\n  <input name="q" aria-label="Search documentation" />\n</form>\n// + /.well-known/mcp/server-card.json, only if you run a remote MCP server`,
   },
 ];
 
@@ -408,17 +408,32 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
   const passedCount = report ? report.passedKeys.length : 0;
   const failedCount = report ? report.failedKeys.length : 0;
 
+  useEffect(() => {
+    if (!hideModalDomain) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setHideModalDomain(null);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [hideModalDomain]);
+
   return (
     <div className="space-y-10">
       {/* ═══════════════════════════════════════════════════════════════════════
           付费隐藏域名 / 解锁 L1~L4 内部核心经验 弹窗 (Modal)
           ═══════════════════════════════════════════════════════════════════════ */}
       {hideModalDomain && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/70 p-4 backdrop-blur-xs">
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/70 p-4 backdrop-blur-xs"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="hide-domain-modal-title"
+        >
           <div className="relative w-full max-w-lg rounded-3xl border border-slate-700 bg-slate-900 p-6 md:p-7 text-white shadow-2xl">
             <button
               type="button"
               onClick={() => setHideModalDomain(null)}
+              aria-label={isZh ? "关闭弹窗" : "Close dialog"}
               className="absolute top-5 right-5 rounded-full bg-white/10 px-2.5 py-1 text-xs text-slate-300 hover:bg-white/20 cursor-pointer"
             >
               ✕
@@ -426,7 +441,7 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
             <div className="inline-flex items-center gap-2 rounded-full bg-amber-500/20 border border-amber-400/30 px-3 py-1 text-xs font-bold text-amber-300 mb-3">
               {isZh ? "🔒 隐私保护 & 内部高阶特权" : "🔒 Stealth Privacy & VIP Playbook"}
             </div>
-            <h3 className="text-xl font-extrabold text-white mb-2">
+            <h3 id="hide-domain-modal-title" className="text-xl font-extrabold text-white mb-2">
               {isZh
                 ? `隐藏「${hideModalDomain}」的公开体检记录 & 解锁内部配方`
                 : `Hide "${hideModalDomain}" from Public Directory & Unlock VIP Playbook`}
@@ -438,7 +453,7 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
             </p>
             <ul className="space-y-2.5 text-xs text-slate-200 mb-6 bg-slate-950/80 border border-white/10 rounded-2xl p-4">
               <li className="flex items-start gap-2">
-                <span className="text-emerald-400 font-bold">✓</span>
+                <span className="text-emerald-400 font-bold" aria-hidden="true">✓</span>
                 <span>
                   {isZh
                     ? "【榜单隐身特权】：将你的域名从公开病历库与选品雷达中永久隐藏（is_hidden = true），防止同行窥探你的新站域名与技术短板。"
@@ -446,7 +461,7 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
                 </span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-emerald-400 font-bold">✓</span>
+                <span className="text-emerald-400 font-bold" aria-hidden="true">✓</span>
                 <span>
                   {isZh
                     ? "【解锁 L1~L4 内部核心经验】：获取对外保密的搜广推/图谱内部参数（新站抓取配额安全线、防折叠阈值、跨语种扇出词槽矩阵与黄金首段切片公式）。"
@@ -454,7 +469,7 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
                 </span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-emerald-400 font-bold">✓</span>
+                <span className="text-emerald-400 font-bold" aria-hidden="true">✓</span>
                 <span>
                   {isZh
                     ? "【每周闭环实验带练】：加入 GoSail Club 内部会员或预约 1v1 深度诊断。"
@@ -510,9 +525,17 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
             </span>
           </div>
 
-          <div className="inline-flex rounded-2xl bg-slate-800/90 border border-white/10 p-1 text-xs font-semibold">
+          <div
+            role="tablist"
+            aria-label={isZh ? "工具模式切换" : "Tool mode switcher"}
+            className="inline-flex rounded-2xl bg-slate-800/90 border border-white/10 p-1 text-xs font-semibold"
+          >
             <button
+              id="tab-clinic"
               type="button"
+              role="tab"
+              aria-selected={mode === "clinic"}
+              aria-controls="panel-clinic"
               onClick={() => setMode("clinic")}
               className={`rounded-xl px-3.5 py-2 transition-all cursor-pointer ${
                 mode === "clinic"
@@ -523,7 +546,11 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
               {isZh ? "🏥 实时网站急诊室" : "🏥 Live Site Clinic"}
             </button>
             <button
+              id="tab-sandbox"
               type="button"
+              role="tab"
+              aria-selected={mode === "sandbox"}
+              aria-controls="panel-sandbox"
               onClick={() => setMode("sandbox")}
               className={`rounded-xl px-3.5 py-2 transition-all cursor-pointer ${
                 mode === "sandbox"
@@ -537,7 +564,7 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
         </div>
 
         {mode === "clinic" ? (
-          <div className="relative">
+          <div id="panel-clinic" role="tabpanel" aria-labelledby="tab-clinic" className="relative">
             <div className="max-w-3xl mb-6">
               <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-white mb-2">
                 {isZh
@@ -559,6 +586,7 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
                   "Run a live 26-check, 100-point AI Readiness and GEO visibility diagnosis on a domain name.",
                 toolautosubmit: "true",
               } as React.FormHTMLAttributes<HTMLFormElement>)}
+              aria-label={isZh ? "AI 就绪度网站体检表单" : "AI readiness domain scan form"}
               onSubmit={(e) => {
                 e.preventDefault();
                 handleScan();
@@ -566,12 +594,16 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
               className="flex flex-col sm:flex-row gap-3"
             >
               <div className="relative flex-1 flex items-center rounded-2xl bg-white/95 text-gray-900 shadow-inner focus-within:ring-2 focus-within:ring-blue-400">
-                <span className="pl-4 pr-2 text-sm font-mono text-gray-400 select-none">
+                <span className="pl-4 pr-2 text-sm font-mono text-gray-400 select-none" aria-hidden="true">
                   https://
                 </span>
                 <input
+                  id="clinic-domain-input"
                   type="text"
                   name="domain"
+                  inputMode="url"
+                  autoComplete="url"
+                  aria-label={isZh ? "输入要体检的网站域名" : "Website domain to scan"}
                   value={domainInput}
                   onChange={(e) => setDomainInput(e.target.value)}
                   placeholder={
@@ -647,17 +679,21 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
 
             {/* 7 关实时扫描动画进度条 */}
             {loading && (
-              <div className="mt-6 rounded-2xl border border-blue-400/30 bg-slate-950/70 p-4">
+              <div
+                role="status"
+                aria-live="polite"
+                className="mt-6 rounded-2xl border border-blue-400/30 bg-slate-950/70 p-4"
+              >
                 <div className="flex items-center justify-between text-xs text-blue-200 mb-2">
                   <span className="font-mono flex items-center gap-2">
-                    <span className="inline-block h-3.5 w-3.5 animate-spin rounded-full border-2 border-blue-400 border-t-transparent" />
+                    <span className="inline-block h-3.5 w-3.5 animate-spin rounded-full border-2 border-blue-400 border-t-transparent" aria-hidden="true" />
                     {scanSteps[scanStepIdx]}
                   </span>
                   <span className="font-bold">
                     {isZh ? `进度 ${scanStepIdx + 1} / 7` : `Step ${scanStepIdx + 1} / 7`}
                   </span>
                 </div>
-                <div className="grid grid-cols-7 gap-1.5">
+                <div className="grid grid-cols-7 gap-1.5" aria-hidden="true">
                   {CATEGORIES.map((c, idx) => (
                     <div
                       key={c.key}
@@ -671,7 +707,7 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
             )}
 
             {error && (
-              <div className="mt-5 rounded-2xl border border-red-400/40 bg-red-950/60 p-4 text-sm text-red-200">
+              <div role="alert" className="mt-5 rounded-2xl border border-red-400/40 bg-red-950/60 p-4 text-sm text-red-200">
                 ⚠️ {error}
               </div>
             )}
@@ -680,7 +716,7 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
           /* ═══════════════════════════════════════════════════════════════════
              模式 B：第 1 课 7 关互动模拟器
              ═══════════════════════════════════════════════════════════════════ */
-          <div className="relative">
+          <div id="panel-sandbox" role="tabpanel" aria-labelledby="tab-sandbox" className="relative">
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 mb-6 border-b border-white/10">
               <div className="max-w-2xl">
                 <div className="inline-flex items-center gap-2 rounded-full bg-emerald-500/20 border border-emerald-400/30 px-3 py-1 text-xs font-semibold text-emerald-300 mb-2">
@@ -761,13 +797,22 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
             <div className="grid gap-3.5 md:grid-cols-2">
               {SANDBOX_UPGRADES.map((item) => {
                 const active = Boolean(sandboxChecked[item.id]);
+                const toggleItem = () =>
+                  setSandboxChecked((prev) => ({ ...prev, [item.id]: !prev[item.id] }));
                 return (
                   <div
                     key={item.id}
-                    onClick={() =>
-                      setSandboxChecked((prev) => ({ ...prev, [item.id]: !prev[item.id] }))
-                    }
-                    className={`rounded-2xl border p-4 transition-all cursor-pointer ${
+                    role="button"
+                    tabIndex={0}
+                    aria-pressed={active}
+                    onClick={toggleItem}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        toggleItem();
+                      }
+                    }}
+                    className={`rounded-2xl border p-4 transition-all cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 ${
                       active
                         ? "border-emerald-400 bg-emerald-950/50 shadow-md shadow-emerald-950/30"
                         : "border-white/15 bg-white/5 hover:border-blue-400/60 hover:bg-white/10"
@@ -776,6 +821,7 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
                     <div className="flex items-start justify-between gap-2 mb-1.5">
                       <div className="flex items-center gap-2.5">
                         <span
+                          aria-hidden="true"
                           className={`inline-flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold flex-none ${
                             active
                               ? "bg-emerald-500 text-white"
@@ -819,7 +865,11 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
           2. 实时体检临床报告（含：GEO 五阶段漏斗条 + L1~L4 高阶病灶透视 + 7 关明细）
           ═══════════════════════════════════════════════════════════════════════ */}
       {report && (
-        <section className="rounded-3xl border border-gray-200 bg-white p-6 md:p-8 shadow-sm space-y-8">
+        <section
+          aria-live="polite"
+          aria-label={isZh ? `${report.domain} AI 就绪度体检报告` : `${report.domain} AI Readiness Scan Report`}
+          className="rounded-3xl border border-gray-200 bg-white p-6 md:p-8 shadow-sm space-y-8"
+        >
           {/* 顶部仪表盘头卡 */}
           <div
             className={`rounded-2xl border bg-gradient-to-br p-5 md:p-6 ${
@@ -1092,12 +1142,13 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
                       <p className="text-xs text-gray-700 leading-relaxed mb-2">
                         {sig.publicFinding[lang]}
                       </p>
-                      <div
+                      <button
+                        type="button"
                         onClick={() => setHideModalDomain(report.domain)}
-                        className="rounded-lg bg-slate-100 border border-slate-200 px-2.5 py-1.5 text-[11px] font-medium text-slate-600 hover:border-amber-400 hover:text-slate-900 cursor-pointer transition-colors"
+                        className="w-full text-left rounded-lg bg-slate-100 border border-slate-200 px-2.5 py-1.5 text-[11px] font-medium text-slate-600 hover:border-amber-400 hover:text-slate-900 cursor-pointer transition-colors"
                       >
                         {sig.lockedHint[lang]}
-                      </div>
+                      </button>
                     </div>
                   );
                 })}
@@ -1218,6 +1269,7 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
                 )}
                 <button
                   type="button"
+                  aria-pressed={onlyFailedFilter}
                   onClick={() => setOnlyFailedFilter((v) => !v)}
                   className={`rounded-lg border px-2.5 py-1 font-medium cursor-pointer ${
                     onlyFailedFilter
@@ -1245,6 +1297,7 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
                   <button
                     key={cat.key}
                     type="button"
+                    aria-pressed={isSelected}
                     onClick={() =>
                       setActiveLevel(isSelected ? null : cat.level)
                     }
@@ -1392,10 +1445,15 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
                   : `Bind your email to track ${report.domain}'s Stage 5 (Measure) baseline (${report.score}/100):`}
               </p>
 
-              <form onSubmit={handleMonitorSubmit} className="flex gap-2">
+              <form
+                onSubmit={handleMonitorSubmit}
+                aria-label={isZh ? "开启掉分提醒邮件订阅表单" : "Score alert email subscription form"}
+                className="flex gap-2"
+              >
                 <input
                   type="email"
                   required
+                  aria-label={isZh ? "接收复诊提醒的邮箱" : "Email address for re-scan alerts"}
                   value={monitorEmail}
                   onChange={(e) => setMonitorEmail(e.target.value)}
                   placeholder={isZh ? "输入你的常用邮箱..." : "you@example.com"}
@@ -1417,10 +1475,10 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
                 </button>
               </form>
               {monitorMsg && (
-                <p className="mt-2 text-xs font-medium text-emerald-700">✅ {monitorMsg}</p>
+                <p role="status" aria-live="polite" className="mt-2 text-xs font-medium text-emerald-700">✅ {monitorMsg}</p>
               )}
               {monitorErr && (
-                <p className="mt-2 text-xs font-medium text-red-600">⚠️ {monitorErr}</p>
+                <p role="alert" className="mt-2 text-xs font-medium text-red-600">⚠️ {monitorErr}</p>
               )}
             </div>
 
@@ -1687,7 +1745,8 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
             </div>
             <div className="flex gap-2 sm:w-80">
               <input
-                type="text"
+                type="search"
+                aria-label={isZh ? "按域名检索公开病历档案库" : "Filter public clinic records by domain"}
                 value={publicSearchQuery}
                 onChange={(e) => {
                   const val = e.target.value;
