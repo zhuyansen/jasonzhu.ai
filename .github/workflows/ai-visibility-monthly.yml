@@ -1,0 +1,193 @@
+# 每月自动跑两张独立英文 AI 推荐月榜：
+#   1. 出海收款 / MoR 平台（/research/ai-visibility/payments-mor）：10 题 × 4 引擎 × 3 轮 = 120 条回答（约 $0.55）
+#   2. 中国出海 AI 工具（/research/ai-visibility/china-ai-global）：20 题 × 4 引擎 × 3 轮 = 240 条回答（约 $1.10）
+#
+# 四引擎覆盖（对齐 daydream 4–5 引擎标准 + Marc Moeller Google AI Mode 离线向量 vs Perplexity 实时检索差异）：
+#   chatgpt（网页界面）、gemini_app（Gemini App）、ai_mode（Google AI Mode）、perplexity（Perplexity 实时检索）
+#
+# 隐私与安全：
+#   - 只有聚合百分比、Wilson 95% CI、跨轮区间与 CSV 提交进公开仓库；
+#   - 原始 AI 回答文本经过 AES-256-CBC（SELLER_STATE_KEY）加密后上传至草稿 release `geo-panel-state`，绝不进公开库与日志。
+name: AI 推荐月榜（每月自动跑两张榜）
+
+on:
+  schedule:
+    # 每月 2 号 北京时间 12:17（UTC 04:17），避开 1 号月结与周一 GEO 面板高峰
+    - cron: "17 4 2 * *"
+  workflow_dispatch:
+    inputs:
+      period:
+        description: "期数 YYYY-MM（留空 = 当前北京时间年月）"
+        default: ""
+      rounds:
+        description: "每题每引擎采样轮次（默认 3）"
+        default: "3"
+      engines:
+        description: "引擎列表，逗号分隔（默认 chatgpt,gemini_app,ai_mode,perplexity）"
+        default: "chatgpt,gemini_app,ai_mode,perplexity"
+      payments_max_usd:
+        description: "出海收款榜预算上限（美元，默认 1.20）"
+        default: "1.20"
+      china_ai_max_usd:
+        description: "中国出海 AI 工具榜预算上限（美元，默认 2.00）"
+        default: "2.00"
+      publish:
+        description: "填 0 = 试跑，不提交、不存档、不发邮件"
+        default: "1"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ai-visibility-monthly
+  cancel-in-progress: false
+
+jobs:
+  monthly-index:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 安装依赖
+        run: pip install -q "backlink-guard>=0.12,<0.13" requests
+
+      - name: 自测
+        run: python ops/geo/leaderboard_build.py --selftest
+
+      - name: 4 引擎多轮采样两张月榜（出海收款 + 中国出海 AI 工具）
+        id: run
+        env:
+          AISA_API_KEY: ${{ secrets.AISA_API_KEY }}
+          IN_PERIOD: ${{ inputs.period }}
+          IN_ROUNDS: ${{ inputs.rounds }}
+          IN_ENGINES: ${{ inputs.engines }}
+          IN_PAY_USD: ${{ inputs.payments_max_usd }}
+          IN_AI_USD: ${{ inputs.china_ai_max_usd }}
+        run: |
+          PERIOD="${IN_PERIOD:-$(TZ=Asia/Shanghai date +%Y-%m)}"
+          ROUNDS="${IN_ROUNDS:-3}"
+          ENGINES="${IN_ENGINES:-chatgpt,gemini_app,ai_mode,perplexity}"
+          echo "period=$PERIOD" >> "$GITHUB_OUTPUT"
+
+          python -u ops/geo/leaderboard_build.py run-aisa \
+            --board payments-mor \
+            --period "$PERIOD" \
+            --rounds "$ROUNDS" \
+            --engines "$ENGINES" \
+            --max-usd "${IN_PAY_USD:-1.20}" \
+            --raw-out "$RUNNER_TEMP/ai-visibility-$PERIOD-payments-mor.json"
+
+          python -u ops/geo/leaderboard_build.py run-aisa \
+            --board china-ai-global \
+            --period "$PERIOD" \
+            --rounds "$ROUNDS" \
+            --engines "$ENGINES" \
+            --max-usd "${IN_AI_USD:-2.00}" \
+            --raw-out "$RUNNER_TEMP/ai-visibility-$PERIOD-china-ai-global.json"
+
+      - name: 加密存档原始回答（不进公开仓库）
+        if: (inputs.publish || '1') != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SELLER_STATE_KEY: ${{ secrets.SELLER_STATE_KEY }}
+          PERIOD: ${{ steps.run.outputs.period }}
+        run: |
+          gh release view geo-panel-state -R "$GITHUB_REPOSITORY" >/dev/null 2>&1 || \
+            gh release create geo-panel-state --draft --title "GEO 面板完整结果（加密）" \
+              --notes "加密原始采样存档，用 SELLER_STATE_KEY 解密。" \
+              -R "$GITHUB_REPOSITORY"
+          for b in payments-mor china-ai-global; do
+            f="$RUNNER_TEMP/ai-visibility-$PERIOD-$b.json"
+            if [ -f "$f" ]; then
+              gzip -c "$f" | openssl enc -aes-256-cbc -pbkdf2 -iter 200000 -salt -pass env:SELLER_STATE_KEY \
+                -out "$RUNNER_TEMP/ai-visibility-$PERIOD-$b.json.gz.enc"
+              gh release upload geo-panel-state "$RUNNER_TEMP/ai-visibility-$PERIOD-$b.json.gz.enc" --clobber -R "$GITHUB_REPOSITORY"
+            fi
+          done
+
+      - name: 提交并推送最新月榜数据（触发 Vercel 自动重建）
+        if: (inputs.publish || '1') != '0'
+        env:
+          PERIOD: ${{ steps.run.outputs.period }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/generated/ai-visibility-leaderboard.json public/data/ai-visibility/
+          if git diff --cached --quiet; then
+            echo "榜单无变化，跳过提交"
+            exit 0
+          fi
+          git commit -m "data(geo): monthly 4-engine AI Visibility Index ($PERIOD)"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            sleep 5
+          done
+          exit 1
+
+      - name: 邮件通知月榜已更新
+        if: success() && (inputs.publish || '1') != '0'
+        continue-on-error: true
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          ALERT_EMAIL: ${{ secrets.ALERT_EMAIL }}
+          PERIOD: ${{ steps.run.outputs.period }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request
+          from pathlib import Path
+          data = json.loads(Path("src/generated/ai-visibility-leaderboard.json").read_text(encoding="utf-8"))
+          lines = [f"<h2>AI 推荐月榜已自动更新（{os.environ['PERIOD']}）</h2>"]
+          for b in data.get("boards") or []:
+              m = b["methodology"]
+              top3 = ", ".join(f"#{r['rank']} {r['name']} ({r['mention_rate_pct']}%)" for r in (b["rankings"] or [])[:3])
+              lines.append(
+                  f"<p><b>{b['title_zh']}</b><br/>"
+                  f"样本：{m['total_answers']} 条 / {m['rounds']} 轮 / 引擎：{', '.join(m['engines'])}<br/>"
+                  f"Top 3：{top3}<br/>"
+                  f"<a href='https://jasonzhu.ai/zh/research/ai-visibility/{b['id']}'>查看中文页</a> · "
+                  f"<a href='https://jasonzhu.ai/en/research/ai-visibility/{b['id']}'>View EN</a></p>"
+              )
+          req = urllib.request.Request(
+              "https://api.resend.com/emails",
+              method="POST",
+              data=json.dumps({
+                  "from": "GEO 月度榜单 <news@jasonzhu.ai>",
+                  "to": [os.environ["ALERT_EMAIL"]],
+                  "subject": f"AI 推荐月榜已自动更新（{os.environ['PERIOD']}）",
+                  "html": "\n".join(lines),
+              }).encode("utf-8"),
+              headers={"Authorization": "Bearer " + os.environ["RESEND_API_KEY"], "Content-Type": "application/json", "User-Agent": "jasonzhu-ai-visibility"},
+          )
+          print(urllib.request.urlopen(req, timeout=30).read().decode())
+          PY
+
+      - name: 失败告警
+        if: failure() && (inputs.publish || '1') != '0'
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          ALERT_EMAIL: ${{ secrets.ALERT_EMAIL }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request
+          req = urllib.request.Request(
+              "https://api.resend.com/emails",
+              method="POST",
+              data=json.dumps({
+                  "from": "GEO 月度榜单 <news@jasonzhu.ai>",
+                  "to": [os.environ["ALERT_EMAIL"]],
+                  "subject": "AI 推荐月榜自动运行失败",
+                  "html": f"<p>本月 AI 推荐月榜工作流失败，请查看日志：</p><p><a href='{os.environ['RUN_URL']}'>{os.environ['RUN_URL']}</a></p>",
+              }).encode("utf-8"),
+              headers={"Authorization": "Bearer " + os.environ["RESEND_API_KEY"], "Content-Type": "application/json", "User-Agent": "jasonzhu-ai-visibility"},
+          )
+          print(urllib.request.urlopen(req, timeout=30).read().decode())
+          PY

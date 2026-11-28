@@ -163,11 +163,11 @@ export default async function ResearchPage({
           </Link>
 
           <Link
-            href={`/${lang}/research/ai-visibility`}
+            href={`/${lang}/research/ai-visibility/payments-mor`}
             className="block p-6 rounded-xl border border-gray-200 bg-white shadow-sm hover:border-blue-300 transition-colors"
           >
             <div className="flex flex-wrap items-center gap-2 text-xs text-gray-500 mb-2">
-              <span>{isEn ? "Track A: SaaS Payments / MoR · Track B: China Global AI Tools" : "选题 A：出海收款 MoR · 选题 B：中国出海 AI 工具"}</span>
+              <span>{isEn ? "2026-11 · 10 prompts · 10 payment / MoR platforms" : "2026-11 · 10 道买方题 · 10 家收款 / MoR 平台"}</span>
               <span>·</span>
               <span>CSV</span>
               <span>·</span>
@@ -175,16 +175,42 @@ export default async function ResearchPage({
             </div>
             <h3 className="text-lg font-bold text-gray-900 leading-snug mb-2">
               {isEn
-                ? "Monthly AI Visibility Index: Who Do AI Answer Engines Actually Recommend?"
-                : "海外英文 AI 推荐月榜：ChatGPT / Perplexity 到底推荐了哪些品牌？"}
+                ? "Indie & AI SaaS Payments / MoR AI Visibility Index"
+                : "独立开发 / AI SaaS 收款与 MoR 平台英文 AI 推荐月榜"}
             </h3>
             <p className="text-sm text-gray-600 leading-relaxed">
               {isEn
-                ? "Multi-round sampling across frozen English buyer prompts with Wilson 95% confidence intervals, cross-round spread disclosure, zero paid placements, and strict self-rank restraint."
-                : "基于冻结英文买方题库与多轮采样，公开 Wilson 95% 置信区间与跨轮波动区间，零付费上榜且绝不自吹第一。"}
+                ? "Multi-round AI recommendation rates, Wilson 95% confidence intervals, and official-domain citation shares across Stripe, Paddle, Creem, Dodo Payments, Polar, Waffo, and more."
+                : "基于固定英文收款采购题库多轮采样，量化 Creem、Paddle、Dodo Payments、Stripe、Polar、Waffo 等平台在 AI 回答中的真实推荐率与官网直引率。"}
             </p>
             <span className="inline-block mt-3 text-sm font-medium text-blue-700">
-              {isEn ? "Open leaderboard & frozen prompts →" : "查看榜单原型与冻结题库 →"}
+              {isEn ? "Open payments leaderboard →" : "查看收款平台月榜 →"}
+            </span>
+          </Link>
+
+          <Link
+            href={`/${lang}/research/ai-visibility/china-ai-global`}
+            className="block p-6 rounded-xl border border-gray-200 bg-white shadow-sm hover:border-blue-300 transition-colors"
+          >
+            <div className="flex flex-wrap items-center gap-2 text-xs text-gray-500 mb-2">
+              <span>{isEn ? "2026-11 · 20 prompts · 24 global AI products" : "2026-11 · 20 道买方题 · 24 款中外 AI 工具"}</span>
+              <span>·</span>
+              <span>CSV</span>
+              <span>·</span>
+              <span className="font-mono text-emerald-700">CC-BY-4.0</span>
+            </div>
+            <h3 className="text-lg font-bold text-gray-900 leading-snug mb-2">
+              {isEn
+                ? "China-Originated Global AI Tools: English AI Visibility Index"
+                : "中国出海 AI 工具英文 AI 搜索推荐月榜"}
+            </h3>
+            <p className="text-sm text-gray-600 leading-relaxed">
+              {isEn
+                ? "How often China-originated global AI tools (CapCut, HeyGen, Kling, DeepSeek, Manus, Kimi, Genspark, etc.) vs. Western incumbents are recommended in English AI buyer answers."
+                : "跨 AI 视频、编程 Agent、设计与搜索 4 大赛道，量化中国出海 AI 工具对比欧美老牌在海外英文 AI 搜索回答中的真实提及率与官网直引率。"}
+            </p>
+            <span className="inline-block mt-3 text-sm font-medium text-blue-700">
+              {isEn ? "Open global AI tools leaderboard →" : "查看出海 AI 工具月榜 →"}
             </span>
           </Link>
         </div>

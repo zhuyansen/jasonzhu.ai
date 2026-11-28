@@ -121,8 +121,13 @@ def normalize_answers(raw_obj: Any, source_label: str) -> list[dict[str, Any]]:
     return out
 
 
-def aggregate_board(config: dict[str, Any], raw_records: list[dict[str, Any]], period: str) -> dict[str, Any]:
-    """按榜单配置聚合多轮回答，计算推荐率、官网直引率、首位率、95% CI 与跨轮波动区间。"""
+def aggregate_board(
+    config: dict[str, Any],
+    raw_records: list[dict[str, Any]],
+    period: str,
+    prev_board: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    """按榜单配置聚合多轮回答，计算推荐率、官网直引率、首位率、95% CI、跨轮波动区间与环比变化。"""
     allowed_qids = {q["id"] for q in config.get("questions") or []}
     prefixes = tuple(config.get("question_filter_prefixes") or [])
 
@@ -132,6 +137,13 @@ def aggregate_board(config: dict[str, Any], raw_records: list[dict[str, Any]], p
     ]
     brands = compile_brand_patterns(config.get("brands") or [])
     affiliated_set = {x.lower() for x in (config.get("affiliated_brands") or [])}
+
+    prev_rates: dict[str, float] = {}
+    prev_period = ""
+    if prev_board and prev_board.get("status") == "published" and prev_board.get("period") != period:
+        prev_period = str(prev_board.get("period") or "")
+        for r in prev_board.get("rankings") or []:
+            prev_rates[r["brand_id"]] = float(r.get("mention_rate_pct") or 0.0)
 
     n_total = len(matched)
     engines = sorted({r["engine"] for r in matched})
@@ -200,6 +212,7 @@ def aggregate_board(config: dict[str, Any], raw_records: list[dict[str, Any]], p
             if by_engine_total[e] > 0
         }
         is_aff = (bid.lower() in affiliated_set) or any(d in affiliated_set for d in b["_domains"])
+        mom_delta = round(m_pct - prev_rates[bid], 1) if (n_total > 0 and bid in prev_rates) else None
         rankings.append({
             "brand_id": bid,
             "name": b["name"],
@@ -209,6 +222,7 @@ def aggregate_board(config: dict[str, Any], raw_records: list[dict[str, Any]], p
             "is_affiliated": is_aff,
             "mentions": m_cnt,
             "mention_rate_pct": m_pct,
+            "mom_delta": mom_delta,
             "ci95_low": ci_lo,
             "ci95_high": ci_hi,
             "round_min_pct": r_min,
@@ -223,10 +237,24 @@ def aggregate_board(config: dict[str, Any], raw_records: list[dict[str, Any]], p
     for idx, row in enumerate(rankings, start=1):
         row["rank"] = idx
 
+    # 保留最近 12 个月的历史快照摘要（用于跨月环比追踪）
+    history = list((prev_board or {}).get("history") or [])
+    if n_total > 0:
+        snap = {
+            "period": period,
+            "total_answers": n_total,
+            "engines": engines,
+            "top_rates": {r["brand_id"]: r["mention_rate_pct"] for r in rankings},
+        }
+        history = [h for h in history if h.get("period") != period]
+        history.append(snap)
+        history = history[-12:]
+
     return {
         "id": config["id"],
         "status": "published" if n_total > 0 else "awaiting_first_run",
         "period": period,
+        "prev_period": prev_period,
         "title_en": config["title_en"],
         "title_zh": config["title_zh"],
         "subtitle_en": config["subtitle_en"],
@@ -243,6 +271,7 @@ def aggregate_board(config: dict[str, Any], raw_records: list[dict[str, Any]], p
         },
         "questions_preview": config.get("questions") or [],
         "rankings": rankings,
+        "history": history,
         "csv_path": f"/data/ai-visibility/{config['id']}.csv",
     }
 
@@ -444,8 +473,8 @@ def cmd_run_live(args: argparse.Namespace) -> int:
         print(f"已将原始采样写入本地（不进公开库）：{rp}", flush=True)
 
     normalized = normalize_answers(raw_answers, source_label="live")
-    board = aggregate_board(cfg, normalized, period=args.period)
     boards = load_existing_boards()
+    board = aggregate_board(cfg, normalized, period=args.period, prev_board=boards.get(args.board))
     for cid, c in configs.items():
         if cid not in boards:
             boards[cid] = aggregate_board(c, [], period=args.period)
@@ -453,6 +482,76 @@ def cmd_run_live(args: argparse.Namespace) -> int:
     save_generated(boards)
     csv_p = write_board_csv(board)
     print(f"完成实时采样聚合：{args.board}，样本={board['methodology']['total_answers']}，花费=${total_cost:.4f}，CSV={csv_p}", flush=True)
+    return 0
+
+
+def cmd_run_aisa(args: argparse.Namespace) -> int:
+    """使用仓库标准 backlink-guard（AIsa）跑 4 引擎多轮采样：ChatGPT + Gemini App + Google AI Mode + Perplexity。"""
+    try:
+        from backlink_guard import asked as bg
+    except ImportError:
+        raise SystemExit('缺少 backlink-guard：pip install "backlink-guard>=0.12,<0.13"')
+
+    configs = load_all_configs()
+    if args.board not in configs:
+        raise SystemExit(f"未知榜单 ID: {args.board}（可选：{', '.join(configs.keys())}）")
+    cfg = configs[args.board]
+    qs = cfg["questions"]
+    by_text = {q["question"]: q for q in qs}
+    engines = [e.strip() for e in args.engines.split(",") if e.strip()]
+    unknown = [e for e in engines if e not in bg.ENGINES]
+    if unknown:
+        raise SystemExit(f"backlink-guard 不支持这些引擎：{unknown}")
+
+    res = bg.asked(
+        "jasonzhu.ai",
+        [q["question"] for q in qs],
+        names=["Jason Zhu", "JasonZhu.AI"],
+        engines=engines,
+        samples=args.rounds,
+        max_usd=args.max_usd,
+        fresh=True,
+    )
+    spent_usd = round(float(res.get("cost") or 0.0) / 1e6, 4)
+    answers = [x | {"question_id": by_text[x["question"]]["id"]} for x in (res.get("answers") or []) if x.get("question") in by_text]
+    errors = res.get("errors") or []
+    left_out = res.get("left_out") or []
+
+    if args.raw_out:
+        rp = Path(args.raw_out)
+        rp.parent.mkdir(parents=True, exist_ok=True)
+        rp.write_text(
+            json.dumps(
+                {
+                    "board": args.board,
+                    "period": args.period,
+                    "engines": engines,
+                    "rounds": args.rounds,
+                    "cost_usd": spent_usd,
+                    "errors": errors,
+                    "left_out": left_out,
+                    "answers": answers,
+                },
+                ensure_ascii=False,
+            ),
+            encoding="utf-8",
+        )
+        print(f"已将原始采样写入临时文件（加密存档，绝不进公开库）：{rp}", flush=True)
+
+    normalized = normalize_answers(answers, source_label="aisa")
+    boards = load_existing_boards()
+    board = aggregate_board(cfg, normalized, period=args.period, prev_board=boards.get(args.board))
+    for cid, c in configs.items():
+        if cid not in boards:
+            boards[cid] = aggregate_board(c, [], period=args.period)
+    boards[args.board] = board
+    save_generated(boards)
+    csv_p = write_board_csv(board)
+    print(
+        f"完成 4 引擎采样聚合：{args.board} | 引擎={','.join(board['methodology']['engines'])} "
+        f"| 样本={board['methodology']['total_answers']} | 报错={len(errors)} | 花费=${spent_usd:.4f} | CSV={csv_p}",
+        flush=True,
+    )
     return 0
 
 
@@ -490,6 +589,13 @@ def selftest() -> int:
     assert by_id["creem"]["first_mention_rate_pct"] == 50.0
     assert by_id["paddle"]["round_min_pct"] == 100.0 and by_id["paddle"]["round_max_pct"] == 100.0
 
+    # Verify MoM delta computation
+    board_dec = aggregate_board(cfg, raw[:1], period="2026-12", prev_board=board)
+    assert board_dec["prev_period"] == "2026-11"
+    dec_by_id = {r["brand_id"]: r for r in board_dec["rankings"]}
+    assert dec_by_id["paddle"]["mom_delta"] == 0.0
+    assert len(board_dec["history"]) == 2
+
     # Verify real configs load cleanly
     real_cfgs = load_all_configs()
     assert "payments-mor" in real_cfgs and "china-ai-global" in real_cfgs
@@ -519,6 +625,14 @@ def main() -> int:
     lv.add_argument("--max-usd", type=float, default=0.60)
     lv.add_argument("--raw-out", default="", help="原始回答本地保存路径（务必存 specs/ 或 /tmp，绝不进公开库）")
 
+    ai = sub.add_parser("run-aisa", help="通过 backlink-guard（AIsa）跑 4 引擎多轮采样并聚合（月度 GitHub Actions 默认用）")
+    ai.add_argument("--board", required=True)
+    ai.add_argument("--period", default=datetime.now(timezone(timedelta(hours=8))).strftime("%Y-%m"))
+    ai.add_argument("--rounds", type=int, default=3)
+    ai.add_argument("--engines", default="chatgpt,gemini_app,ai_mode,perplexity")
+    ai.add_argument("--max-usd", type=float, default=1.50)
+    ai.add_argument("--raw-out", default="", help="原始回答临时保存路径（供加密上传 Release，绝不进公开库）")
+
     args = ap.parse_args()
     if args.selftest:
         return selftest()
@@ -540,8 +654,8 @@ def main() -> int:
         for idx, inp in enumerate(args.inputs, start=1):
             raw = json.loads(Path(inp).read_text(encoding="utf-8"))
             all_recs.extend(normalize_answers(raw, source_label=f"f{idx}"))
-        board = aggregate_board(configs[args.board], all_recs, period=args.period)
         boards = load_existing_boards()
+        board = aggregate_board(configs[args.board], all_recs, period=args.period, prev_board=boards.get(args.board))
         for cid, c in configs.items():
             if cid not in boards:
                 boards[cid] = aggregate_board(c, [], period=args.period)
@@ -552,6 +666,8 @@ def main() -> int:
         return 0
     if args.cmd == "run-live":
         return cmd_run_live(args)
+    if args.cmd == "run-aisa":
+        return cmd_run_aisa(args)
     ap.print_help()
     return 1
 

@@ -46,7 +46,9 @@ const STATIC_PATHS = [
   "/research/indie-saas-payments-mor-shift-2026",
   "/research/ai-agent-skills-mcp-supply-chain-security-2026",
   "/research/ai-crawlers", // AI 爬虫与 AI 引用公开数据（2026-11-26 起，每月更新；中英文都是完整内容）
-  "/research/ai-visibility", // 海外英文 AI 推荐月榜：出海收款 MoR 与中国出海 AI 工具（2026-11 起，每月更新）
+  "/research/ai-visibility", // 月度英文 AI 推荐榜总览
+  "/research/ai-visibility/payments-mor", // 独立专页：独立开发/AI SaaS 收款与 MoR 平台 AI 推荐月榜
+  "/research/ai-visibility/china-ai-global", // 独立专页：中国出海 AI 工具英文 AI 搜索推荐月榜
   "/contact",
   "/sitemap-html",
   "/privacy",
