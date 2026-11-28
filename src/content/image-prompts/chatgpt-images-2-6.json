@@ -3,8 +3,8 @@
  "model": "ChatGPT Images 2.6",
  "released": "2026-11-04T23:35:14Z",
  "threshold": 5000,
- "updatedAt": "2026-11-27T01:26:13.859Z",
- "statsCheckedAt": "2026-11-27T01:26:13.859Z",
+ "updatedAt": "2026-11-28T01:29:44.422Z",
+ "statsCheckedAt": "2026-11-28T01:29:44.422Z",
  "inclusionRule": "Original post by the creator, images / GIF / video attached, >= 5000 views on that post, creator states it was made with ChatGPT Images 2.6 (GPT-Image-2.6). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -490,6 +490,59 @@
      "url": "https://pbs.twimg.com/media/HWWVPNxbkAARj_K.jpg",
      "width": 1220,
      "height": 2944
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125773150701125998",
+   "url": "https://x.com/sunnariwakaru1/status/2125773150701125998",
+   "author": {
+    "handle": "sunnariwakaru1",
+    "name": "すん / AIでめんどうな仕事を消す人/365日AI触っている変な人"
+   },
+   "postedAt": "2026-11-26T02:06:28.000Z",
+   "addedAt": "2026-11-28",
+   "lang": "ja",
+   "kind": "work",
+   "category": "gif",
+   "title": {
+    "zh": "会说话的电灯泡少女带字幕角色动画",
+    "en": "Talking chibi lightbulb girl animation with subtitles"
+   },
+   "summary": {
+    "zh": "未使用视频生成 AI，基于单张图片制作的会说话和动作的角色“ぴかり”。作者通过 Codex 调用 GPT-Image-2.6 绘制角色，由 Claude Fable 5.2 整合控制，并结合 ElevenLabs 实现配音与自动口型同步。",
+    "en": "An animated talking character named Pikari made from one image without video AI, using GPT-Image-2.6 via Codex for art, Claude Fable 5.2 for assembly, and ElevenLabs for voice."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Codex",
+    "Claude",
+    "Fable 5.2",
+    "ElevenLabs"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 76982,
+    "likes": 494,
+    "replies": 10,
+    "reposts": 35,
+    "bookmarks": 762,
+    "checkedAt": "2026-11-28T01:29:44.422Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2125773123509526528/vid/avc1/720x1280/d5EO6Fe-ZT-a3mO9.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2125773123509526528/img/DuRlfPEGDKJ0X8N_.jpg",
+     "width": 1080,
+     "height": 1920,
+     "durationSec": 53
     }
    ],
    "evidence": {
@@ -2929,6 +2982,71 @@
    }
   },
   {
+   "id": "2125916156494262704",
+   "url": "https://x.com/sipteaandcoffee/status/2125916156494262704",
+   "author": {
+    "handle": "sipteaandcoffee",
+    "name": "kold Coffee"
+   },
+   "postedAt": "2026-11-26T11:34:43.000Z",
+   "addedAt": "2026-11-28",
+   "lang": "en",
+   "kind": "work",
+   "category": "edit",
+   "title": {
+    "zh": "原图转潮玩手办钥匙扣对比海报组图",
+    "en": "Original photo to vinyl doll keychain comparison posters"
+   },
+   "summary": {
+    "zh": "使用 TapNow 上的 GPT-Image-2.6 将上传的人像照片生成 3:4 对比海报，上半部分保留原图，下半部分呈现手持哑光软胶公仔的效果。",
+    "en": "A 3:4 comparison poster pairing an uploaded portrait with a matte soft vinyl doll version held by a hand, generated with GPT-Image-2.6 on TapNow."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "post",
+    "sourceUrl": "https://x.com/sipteaandcoffee/status/2125916156494262704",
+    "text": "Make the portrait I uploaded into a \"original photo × vinyl doll\" comparison poster.Each person makes one picture separately, and multiple pictures are shown in the order in which they are uploaded.When there is a layout reference picture, follow its composition and font level. The characters, costumes and props are subject to the current original photo. 【First half · Original photo】 Center and embed the original photo in equal proportions without cropping.The left and right spaces are filled with light colors taken from the photos.If the original photo is from the carousel screenshot, partially repair the round arrows on both sides and the paging dots at the bottom, and make up for the covered clothing, background, and lines.Retain the original polka dots, character expressions and composition of the clothes. 【Lower half * Doll】 Make the characters into matte soft vinyl pendants of about 7-10 cm, with big heads and small bodies, sculptural hair bunches, and small metal rings on the top of their heads.Retain the characteristics of the person most recognized in the original photo, including facial orientation, line of sight, expression, hairstyle, outfit, gestures and carry-on https://props.design/ the facial features according to each person's demeanor to avoid applying the same face. The doll is placed on the right side and is held by a real hand from the bottom right.Retain natural finger contact, shadows and soft reflections to make it look like a physical collection of real shots.The background color scheme echoes the original photo, with a shallow depth of field, leaving a continuous clean space on the left. 【Lower left side * font and design】 Use two lines of ultra-thick, narrow-body, all-uppercase English titles as the visual center, aligned to the left, and the line spacing is compact.Put a thin horizontal line above the title.Under the title, use handwritten characters colored from the characters' costumes or props to write a detailed annotation of 1-3 words, with hand-painted ellipses and thin leads.Please avoid your face and hands. The annotations ARE separated BY thin HORIZONTAL LINES BELOW, and A line OF fine print ART TOY EDITION 01 WITH wide SPACING IS ARRANGED, and A SHORT ENGLISH DESCRIPTION IS PLACED.The title and annotations are written according to the characters of this one.For example, LITTLE/SORCERER is equipped with handwritten Star Hat, and SEA/BREEZE is equipped with handwritten Dark Shades. 【output】 3:4 Vertical view, 1536×2048, half of the upper and lower https://sides.mr/. made a wordless 3:2 doll picture, and then spliced the original photo and typesetting.Check the English spelling before delivery, and zoom in to confirm that the carousel arrows and paging dots are clean."
+   },
+   "referenceAssets": true,
+   "tools": [
+    "TapNow"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 20846,
+    "likes": 173,
+    "replies": 37,
+    "reposts": 10,
+    "bookmarks": 17,
+    "checkedAt": "2026-11-28T01:29:44.422Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HYDFYfQbYAAOl1y.jpg",
+     "width": 880,
+     "height": 1168
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HYDFYfCagAESdXb.jpg",
+     "width": 880,
+     "height": 1168
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HYDFYfCaIAIH36B.jpg",
+     "width": 880,
+     "height": 1168
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2118181775688241456",
    "url": "https://x.com/op7418/status/2118181775688241456",
    "author": {
@@ -3591,6 +3709,140 @@
      "width": 1280,
      "height": 720,
      "durationSec": 136
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125797925695684995",
+   "url": "https://x.com/DeepBlueX0/status/2125797925695684995",
+   "author": {
+    "handle": "DeepBlueX0",
+    "name": "DeepBlue深藍"
+   },
+   "postedAt": "2026-11-26T03:44:55.000Z",
+   "addedAt": "2026-11-28",
+   "lang": "zh",
+   "kind": "work",
+   "category": "design",
+   "title": {
+    "zh": "四位经典虚构女性角色极简负空间海报",
+    "en": "Minimalist negative-space posters of four iconic heroines"
+   },
+   "summary": {
+    "zh": "作者使用 GPT-Image-2.6 配合结构化中文提示词，随机抽取并生成了 6 张极简实验平面设计风格的 9:16 女性角色海报。",
+    "en": "Six experimental minimalist 9:16 graphic design posters of randomly drawn popular fictional female characters, generated using a structured Chinese prompt with GPT-Image-2.6."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "post",
+    "sourceUrl": "https://x.com/DeepBlueX0/status/2125797925695684995",
+    "text": "《角色的另一種存在》× 熱門虛構女性角色 × 感知補全 × 實驗性極簡平面設計。\n\n每張獨立隨機抽取一位熱門成年虛構女性角色，保留其標誌性造型、代表色與人物氣質。\n\n根據角色自身的視覺特徵、性格、能力、身份與文化意象，獨立構思一種令人意想不到的藝術表現機制。\n\n透過光影、色彩、材質、正負形、文字、光學現象或其他具有創造性的視覺語言，重新構築角色的存在形式。\n\n讓人物形態在顯現與消失、具象與抽象、完整與缺失之間形成微妙關係，使觀眾透過有限的視覺線索逐漸辨認角色，並發現作品中隱藏的創意。\n\n以精緻的平面設計語言排版角色名稱及其對應的作品、企劃或品牌名稱，使文字成為整體藝術構成的一部分。\n\n自由選擇藝術媒介、材質、色彩、人物姿態、觀看角度與構圖。同組角色、核心創意機制及視覺表現各不相同。\n\n極簡構圖，主體突出，適度留白，兼具高級藝術美感、視覺驚喜與角色文化共鳴。\n\n9:16直式獨立單圖，每張分別生成，不自動裁切。\n左下深藍色實心圓點#0B3D91，後接白色自然手寫體「DeepBlue」。\n\nn=6"
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 17462,
+    "likes": 467,
+    "replies": 5,
+    "reposts": 44,
+    "bookmarks": 259,
+    "checkedAt": "2026-11-28T01:29:44.422Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HYBZ7-Jb0AAUQy6.jpg",
+     "width": 941,
+     "height": 1672
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HYBZ7-RaUAA4Yzl.jpg",
+     "width": 941,
+     "height": 1672
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HYBZ7-PaQAA1g2n.jpg",
+     "width": 941,
+     "height": 1672
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HYBZ7-Ea0AAmvfR.jpg",
+     "width": 941,
+     "height": 1672
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125896985832288732",
+   "url": "https://x.com/Just_sharon7/status/2125896985832288732",
+   "author": {
+    "handle": "Just_sharon7",
+    "name": "Sharon Riley"
+   },
+   "postedAt": "2026-11-26T10:18:33.000Z",
+   "addedAt": "2026-11-28",
+   "lang": "en",
+   "kind": "work",
+   "category": "edit",
+   "title": {
+    "zh": "摄影与复古平涂插画双联海报系列",
+    "en": "Photo and retro flat-illustration diptych poster series"
+   },
+   "summary": {
+    "zh": "通过 TapNow 调用 GPT-Image-2.6，将上传的照片转化为 3:4 双联海报，上半部分保留原图，下半部分为日式复古扁平插画风格。",
+    "en": "A 3:4 vertical diptych poster pairing an uploaded photograph on top with a Japanese retro flat illustration version below, created with GPT-Image-2.6 on TapNow."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "post",
+    "sourceUrl": "https://x.com/Just_sharon7/status/2125896985832288732",
+    "text": "Transform the uploaded photograph into a 3:4 vertical diptych poster, divided horizontally into two equal-height sections.\n\nUpper Half — Original Photography\n\nPreserve the original photograph faithfully, maintaining its authentic photographic quality, composition, colors, lighting, and subject details. Do not add any text.\n\nLower Half — Japanese Retro Flat Illustration\n\nReinterpret the same scene in a Japanese retro flat illustration style, featuring thick, rounded black outlines, a limited color palette, and solid, flat color fills.\n\nBehind the main subject, incorporate dense, sharply defined black-and-white screen-printed polka dots, with uniform size and consistent spacing.\n\nIndependently generate a meaningful 2–4-word English headline and complementary supporting text inspired by the visual content and atmosphere of the photograph. Use ultra-thin typography and an asymmetrical editorial layout. Avoid repetitive or predefined design templates.\n\nThe illustration, typography, and graphic symbols should collectively occupy approximately 70% of the lower section, leaving the remaining space as generous, intentional negative space.\n\nIncorporate a moderate number of thematic graphic elements that complement the subject and strengthen the visual narrative.\n\nVisual Aesthetic: Japanese vintage graphic design, retro editorial illustration, bold rounded contours, screen-printing aesthetics, minimalist composition, playful visual storytelling, and sophisticated typography.\n\nAvoid: Award logos, gradients, 3D effects, excessive decoration, and generic template-based layouts."
+   },
+   "referenceAssets": true,
+   "tools": [
+    "TapNow"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 17322,
+    "likes": 209,
+    "replies": 67,
+    "reposts": 6,
+    "bookmarks": 11,
+    "checkedAt": "2026-11-28T01:29:44.422Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HYCw9dtacAAcpEY.jpg",
+     "width": 880,
+     "height": 1168
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HYCw9dpasAAmmMq.jpg",
+     "width": 880,
+     "height": 1168
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HYCw9deb0AAhzpO.jpg",
+     "width": 880,
+     "height": 1168
     }
    ],
    "evidence": {
@@ -5096,6 +5348,58 @@
      "url": "https://pbs.twimg.com/media/HWZ43tjbkAAJYlh.jpg",
      "width": 1280,
      "height": 720
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2126053444452757556",
+   "url": "https://x.com/gamemangaanime/status/2126053444452757556",
+   "author": {
+    "handle": "gamemangaanime",
+    "name": "ち～ぽん✨🤔"
+   },
+   "postedAt": "2026-11-26T20:40:15.000Z",
+   "addedAt": "2026-11-28",
+   "lang": "ja",
+   "kind": "opinion",
+   "category": "gif",
+   "title": {
+    "zh": "含角色状态栏的像素风俯视角 RPG 森林小径动画",
+    "en": "Animated pixel-art RPG forest path with character HUD"
+   },
+   "summary": {
+    "zh": "作者使用 Opus 5.6（界面显示为 Sonnet 5.5 High）在约 15 分钟内制作的游戏演示，包含配乐与音效，并调用 GPT-Image-2.6 生成像素风角色及动画。",
+    "en": "A playable game demo built in about 15 minutes with Opus 5.6 (displayed as Sonnet 5.5 High), including music, sound effects, and pixel-art characters generated with GPT-Image-2.6."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Opus 5.6",
+    "Sonnet 5.5 High",
+    "Claude Code"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 11234,
+    "likes": 182,
+    "replies": 10,
+    "reposts": 18,
+    "bookmarks": 98,
+    "checkedAt": "2026-11-28T01:29:44.422Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2126052332521811968/vid/avc1/822x720/rK7IvnLXU1cl5-RO.mp4?tag=29",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2126052332521811968/img/iPL1E-rJdlq_9C1i.jpg",
+     "width": 1280,
+     "height": 1120,
+     "durationSec": 49
     }
    ],
    "evidence": {
@@ -7016,6 +7320,69 @@
      "url": "https://pbs.twimg.com/media/HXqtwLqacAALNEx.jpg",
      "width": 880,
      "height": 1168
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125972504040943855",
+   "url": "https://x.com/Ziha_ai/status/2125972504040943855",
+   "author": {
+    "handle": "Ziha_ai",
+    "name": "Ziha"
+   },
+   "postedAt": "2026-11-26T15:18:38.000Z",
+   "addedAt": "2026-11-28",
+   "lang": "en",
+   "kind": "work",
+   "category": "edit",
+   "title": {
+    "zh": "生活照转复古波普风波点双联海报系列",
+    "en": "Candid photos turned into retro pop-art diptych posters"
+   },
+   "summary": {
+    "zh": "在 ChatGPT 上使用 GPT-Image-2.6，将上传的照片制作成上下分栏的 3:4 海报，上方保留原片，下方转为日式复古扁平插画。",
+    "en": "A 3:4 vertical diptych poster converting an uploaded photograph into a split layout with the original photo above and a Japanese retro flat illustration below, made with GPT-Image-2.6 on ChatGPT."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "post",
+    "sourceUrl": "https://x.com/Ziha_ai/status/2125972504040943855",
+    "text": "Transform the uploaded photograph into a 3:4 vertical diptych poster, divided horizontally into two equal-height sections.\n\nUpper Half — Original Photography\n\nPreserve the original photograph faithfully, maintaining its authentic photographic quality, composition, colors, lighting, and subject details. Do not add any text.\n\nLower Half — Japanese Retro Flat Illustration\n\nReinterpret the same scene in a Japanese retro flat illustration style, featuring thick, rounded black outlines, a limited color palette, and solid, flat color fills.\n\nBehind the main subject, incorporate dense, sharply defined black-and-white screen-printed polka dots, with uniform size and consistent spacing.\n\nIndependently generate a meaningful 2–4-word English headline and complementary supporting text inspired by the visual content and atmosphere of the photograph. Use ultra-thin typography and an asymmetrical editorial layout. Avoid repetitive or predefined design templates.\n\nThe illustration, typography, and graphic symbols should collectively occupy approximately 70% of the lower section, leaving the remaining space as generous, intentional negative space.\n\nIncorporate a moderate number of thematic graphic elements that complement the subject and strengthen the visual narrative.\n\nVisual Aesthetic: Japanese vintage graphic design, retro editorial illustration, bold rounded contours, screen-printing aesthetics, minimalist composition, playful visual storytelling, and sophisticated typography.\n\nAvoid: Award logos, gradients, 3D effects, excessive decoration, and generic template-based layouts."
+   },
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 5036,
+    "likes": 161,
+    "replies": 8,
+    "reposts": 20,
+    "bookmarks": 100,
+    "checkedAt": "2026-11-28T01:29:44.422Z"
+   },
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HYD4nMXaYAAhn74.jpg",
+     "width": 1086,
+     "height": 1448
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HYD4nMgaMAAnL9Z.jpg",
+     "width": 1086,
+     "height": 1448
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HYD4nMZboAAomg6.jpg",
+     "width": 1086,
+     "height": 1448
     }
    ],
    "evidence": {

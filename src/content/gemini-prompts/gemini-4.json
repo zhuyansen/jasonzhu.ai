@@ -3,8 +3,8 @@
  "model": "Gemini 4",
  "released": "2026-10-14T00:00:00Z",
  "threshold": 5000,
- "updatedAt": "2026-11-27T01:43:28.278Z",
- "statsCheckedAt": "2026-11-27T01:29:29.242Z",
+ "updatedAt": "2026-11-28T01:36:26.687Z",
+ "statsCheckedAt": "2026-11-28T01:32:05.719Z",
  "inclusionRule": "Original post by the creator, media attached, >= 5000 views on that post, and the creator's own text says Gemini 4 (Argon, Carbon, Hydrogen, Krypton, Pro...) built it in code; same-prompt comparisons against other models included. Seeded on 2026-11-16 from the Claude 5.5 library. Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -17263,6 +17263,60 @@
      "width": 1920,
      "height": 1080,
      "durationSec": 50
+    }
+   ],
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2126100769808257294",
+   "url": "https://x.com/alexanderchen/status/2126100769808257294",
+   "author": {
+    "handle": "alexanderchen",
+    "name": "Alexander Chen"
+   },
+   "postedAt": "2026-11-26T23:48:19.000Z",
+   "addedAt": "2026-11-28",
+   "lang": "en",
+   "kind": "work",
+   "models": [
+    "gemini-4"
+   ],
+   "rivals": [],
+   "category": "ui",
+   "title": {
+    "zh": "164 年间 17547 份菜单探索应用",
+    "en": "Explorer of 17,547 menus across 164 years"
+   },
+   "summary": {
+    "zh": "作者使用 Gemini 4 Neon 和 Antigravity 制作了一个带声音的项目，用于探索跨越 164 年的 17,547 份菜单。",
+    "en": "Built an audio-enabled project exploring 17,547 menus spanning 164 years using Gemini 4 Neon and Antigravity."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Antigravity"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 5440,
+    "likes": 161,
+    "replies": 11,
+    "reposts": 10,
+    "bookmarks": 95,
+    "checkedAt": "2026-11-28T01:32:05.719Z"
+   },
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2126096909630578689/vid/avc1/720x720/shINwV3vy3aqbSWD.mp4",
+     "poster": "https://pbs.twimg.com/amplify_video_thumb/2126096909630578689/img/-359DOkLZr2Zi0s4.jpg",
+     "width": 1440,
+     "height": 1440,
+     "durationSec": 131
     }
    ],
    "evidence": {

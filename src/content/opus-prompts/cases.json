@@ -1,8 +1,8 @@
 {
  "model": "Claude 5.5 (Opus 5.5 · Sonnet 5.5 · Haiku 5.5 · Fable 5.5)",
  "threshold": 5000,
- "updatedAt": "2026-11-27T01:17:17.268Z",
- "statsCheckedAt": "2026-11-27T01:17:17.268Z",
+ "updatedAt": "2026-11-28T01:17:14.539Z",
+ "statsCheckedAt": "2026-11-28T01:17:14.539Z",
  "inclusionRule": "Original post by the creator, native video attached, >= 5000 views on that post, creator states it was made with Claude Opus 5.5, Sonnet 5.5, Haiku 5.5 or Fable 5.5 (Fable 5.5 is in limited preview, not yet announced). Later posts that embed another account's upload are excluded.",
  "cases": [
   {
@@ -569,6 +569,61 @@
     "width": 1280,
     "height": 720,
     "durationSec": 46
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125779541952246039",
+   "url": "https://x.com/karpathy/status/2125779541952246039",
+   "author": {
+    "handle": "karpathy",
+    "name": "Andrej Karpathy"
+   },
+   "postedAt": "2026-11-26T02:31:52.000Z",
+   "addedAt": "2026-11-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "game",
+   "title": {
+    "zh": "基于美国真实数据的文明风格地图",
+    "en": "US real-data Civilization game map"
+   },
+   "summary": {
+    "zh": "使用 Claude Code 中的 Opus 5.5 耗时约 7 小时、编写 4.5 万行代码构建的《文明》风格美国地图，整合了 31 个公开数据集到 25 公里六边形网格上。",
+    "en": "An interactive Civilization-style US map populated with 31 public datasets on a 25 km hex grid, built by Claude Opus 5.5 in Claude Code over 7 hours."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/karpathy/status/2125779541952246039",
+    "text": "populate a Civilization-style game map with real data from the US"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Claude Code"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 2863511,
+    "likes": 28356,
+    "replies": 1591,
+    "reposts": 2369,
+    "bookmarks": 16148,
+    "checkedAt": "2026-11-28T01:17:14.539Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125775560517570561/img/GDE8h47dSgwy5uSy.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125775560517570561/vid/avc1/1280x720/yACmfVI05_1cfkBl.mp4",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 30
    },
    "evidence": {
     "via": "daily",
@@ -2827,6 +2882,66 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2126041304421323256",
+   "url": "https://x.com/treyscalez/status/2126041304421323256",
+   "author": {
+    "handle": "treyscalez",
+    "name": "trey"
+   },
+   "postedAt": "2026-11-26T19:52:01.000Z",
+   "addedAt": "2026-11-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "手绘赛璐珞风格代码动画短片",
+    "en": "Hand-inked cartoon cel animated short"
+   },
+   "summary": {
+    "zh": "一个用于 Claude Opus 5.5 的动画制作提示词，通过 Python 生成 SVG 并结合 rsvg-convert、Pillow 与 ffmpeg 合成手绘赛璐珞风格竖屏动画短片。",
+    "en": "A reusable prompt for Claude Opus 5.5 that generates hand-inked, cel-style vertical animated shorts from a story using Python, SVG, Pillow, and ffmpeg."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "post",
+    "sourceUrl": "https://x.com/treyscalez/status/2126041304421323256",
+    "text": "<inputs>\nAsk me for: the story (a true event, a legend, a \"what if\", or just a topic and you pitch me 5 story ideas), the length (default 60 to 90 seconds, or a 10 second test scene), and the voice (I upload my own voiceover, you write a script for me to record, or captions only with no voice). Then ask if I am uploading a sound effects pack and any reference frames. Everything else you decide from the story: the cast, the era, the sets, the palette. If I upload references, study them at full size and zoomed to pixel level before drawing anything.\n</inputs>\n\n<direction>\nTurn any story into an animated short that looks like an old hand-inked cartoon cel, drawn fully in code. No AI image or video generators, no stock art, no photos. Design a new original cast for every story. Never copy a character from my references or from any existing channel. Historical figures are fine as caricatures. Never draw a real living person.\n\nThe style is fixed. Only the story, cast, sets and palette change.\n\nLINE. Thin dip-pen ink, about 3 to 5 px at 1080 wide. Strokes swell with pressure and end in points. Ink is warm sepia-black (#170b08), never navy or pure digital black. The finest strokes go dark red (#4d140a) and slightly see-through. Outlines wobble a little. Never thick, even, sticker-style outlines.\n\nCOLOUR. Flat fills, no gradients on characters. Pick 4 or 5 colours per video from the story's world and lock them: one blue (cobalt or periwinkle), one warm skin tone used for the whole cast (hot pink, salmon or orange-red), one pale (cream or lilac), and one or two accents (gold, red, green). Skin gets one darker tone where something throws shade and one lighter tone where fat or bone catches light. Nothing else.\n\nCAST. Caricature, not anatomy. Give every character one silhouette and one feature you could recognise from across a room: a huge jaw, a long nose, a moustache, gold teeth, a hat, a hairstyle. Heads are big lumpy masses with small features crowded in the middle. Vary the build across the cast: one huge, one thin, one short. Leads get full detail. Extras get the same line with fewer marks. Age and weight are drawn as structure: jowls, a second chin, deep nose-to-jowl folds, stacked bags under the eyes, wrinkles that follow the skull. Eyes are small with a hooded lid, lilac whites and a thick lash line. Facial hair is solid black or pale with barbed edges.\n\nTEXTURE. Short ticks and dots, never long hatching. Rows of small dashes for fur, wool and knit. Tick marks and pores on skin, bristles for stubble. Patterned cloth gets real pattern: plaid, brocade scrolls, medallions, florals. Stone gets broken course lines and branching cracks. Wood gets grain ticks and plank seams.\n\nHANDS. Two separate hands, one lit and one in shade. Padded finger joints, crease ticks at the knuckles, a short dark nail that stops at the fingertip, knuckle bumps, and a ring where the character would wear one.\n\nSETS. Build each location from the story: throne room, street, farm, ship, courtroom, market, battlefield. Light is always two flat tones split by hard diagonal edges. At night, lit surfaces are pink or salmon and shadow is cobalt, under a pale moon with a soft halo. By day, the sky is pale blue, sunlit surfaces are warm and shadows are blue-violet. Interiors get one shaft of light from a window or door, falling as a warm patch on a cool room. Add one sparkle glint on any lamp, coin or blade. Behind a close-up, throw the set out of focus.\n\nPROPS. Every noun in the script gets a visual. Money, letters, weapons, food and animals are drawn in the same ink and flat colour, never left as words.\n\nEXPRESSIONS. Give each lead at least five heads: neutral, blink, anger, smug or joy, shock. Add grief or fear if the story needs them. Open mouths are fully drawn: lip rim, dark interior, tongue, both rows of teeth one by one, gums on a grin. When a mouth opens, the jaw really drops and the chin, jowls and beard go with it. Shock is big lilac discs with pinprick pupils. Anger is small pupils, brows driven down, flared nostrils.\n\nFINISH. Run every frame through an old-cartoon pass: soften the ink by about 1 px, then an unsharp pass (radius 5, 60 percent) so each stroke gets a faint pale rim. Add slow, slight mottling to flat fills. Blur the colour channels more than brightness and shift them 2 px off-register. Gentle bloom, warm tone, blacks lifted to deep brown, a light vignette, fine grain in brightness only. Fills stay smooth.\n</direction>\n\n<structure>\n1. Script. Open in the middle of the worst or strangest moment, in present tense, in one line. Then who this is, what they wanted, the turn, the twist, and one closing line that lands the point. Short sentences. About 3.5 words per second with almost no pauses, so 60 seconds is about 210 words. Check every fact in a true story and tell me anything you could not confirm.\n2. Title. \"He [did X] for [Y]\" or \"How [someone] [outcome]\". Give me three options.\n3. Shot list. Break the script into clauses. Every clause gets a shot with four things: who or what is on screen, an expression, a body action and a camera move. If a clause cannot be acted out, rewrite the clause.\n4. Shot rhythm. Cycle close-up, wide, prop insert, reaction. Never hold the same framing for two shots in a row. Put a second character reacting on screen in at least a quarter of the shots.\n5. Pace. The picture changes about every 2.3 seconds, something new starts about every second, and something moves in at least 95 percent of frames.\n6. Camera. Never still: push-ins, drifts, orbits around a set, punch-ins on reveals. No hard cuts. Move between locations with a zoom-whip or blur-whip of 4 to 6 frames.\n7. Acting. Pose changes snap in one frame and overshoot on a spring. Calm is slow breathing and a blink. Smug is chin up, head cocked, a silent chuckle. Shock is head back, body recoiling, hands flying off what they hold. Anger is a fist up, head forward, chest heaving. Grief is head down, shoulders dropping, slow. Faces change every 0.3 to 0.8 seconds while a character is on screen.\n8. Life in the background. Something always moves behind the action: smoke, embers, birds, water, flags, a crowd.\n9. Captions. Bold rounded yellow (#ffe21a) with a dark outline, lower middle of frame, 1 to 3 words, timed to the spoken words. Each chunk arrives dim for 3 frames, then goes full.\n</structure>\n\n<build>\n1. Python writes SVG, rsvg-convert rasterises it, Pillow and numpy composite the frames, ffmpeg encodes. 1080x1920, 30 fps.\n2. If there is a voiceover, time every word first (Whisper if it is available, otherwise ask me for the script and spread the words across the audio by length) and hang every shot, action and caption on those word times. With no voice, use about 1.1 seconds per caption chunk.\n3. Write one ink function that turns a point list into a filled, variable-width polygon: Catmull-Rom smoothing, pressure modulation, tapered ends, slight wobble. Draw every line with it. Never use SVG stroke.\n4. Write the reusable kit once, then build each story from it: ink, ticks, dash rows, fur, cracks, masonry, scrolls, medallions, fingers, teeth, eyes with a lid, and a jaw-drop warp.\n5. Jitter polygon edges so shapes look hand-cut. Use a fixed random seed, reseeded at the start of every body part, so each part redraws identically on every frame and only what you change moves.\n6. Build each lead as a jointed cut-out rig: body, each arm, collar or shoulders, one head per expression, hands, plus any extra pose the script needs. Each part sits on its own transparent layer with its own pivot, on a canvas padded left and right, rendered at 2x. Extras can be single drawings with a breathing bob.\n7. Build each set in depth layers (foreground, mid, back, sky) so the camera gets parallax when it moves.\n8. Per frame, pose the joints, multiply by the camera matrix, and draw each layer straight to the output size with one affine transform. Apply the finish to the whole composed frame, then burn the caption on after it so the text stays crisp.\n9. Encode one mp4 per shot with libx264 at CRF 17, put the whips inside the shot files, then join with the concat demuxer and stream copy. Add sound last with the video stream copied.\n10. Sound. If I upload my sound effects pack, use it. One effect per event (whoosh on a whip, sting on a shock, hit under an impact, chime on a reveal), each peak on its impact frame, about 8 per 10 seconds, all under the voice.\n</build>\n\n<gotchas>\nThick brush outlines make it look like sticker art. Normal face proportions read as generic cartoon, so exaggerate the head and shrink the features. Long flowing hatch strokes are wrong; use ticks, dots and dash rows. Two characters with the same silhouette will be confused, so change the build, hat or hair. A nail drawn past the fingertip turns a hand into a claw. A beard or moustache will cover a grin unless the smile is wide enough to clear it. Tight close-ups hide hands and raised arms, so pull wider whenever the body is acting. Clamp the camera so it never shows past the edge of a set. If the whole drawing shimmers between expressions, a part is not being reseeded. A puppet rig cannot turn a head or change a silhouette, so every pose that changes the outline needs its own drawn part. Do not reuse a cast or a set from one story in the next, or the videos will look mass produced. Keep captions clear of faces and hands. If I gave you references, compare your stills against them side by side at pixel level, give me an honest percentage for how close each is, and list what still gives it away. Do not round up.\n</gotchas>\n\n<start>\nAsk me the inputs. Then show me, in this order, and wait for my yes at each step: the script and three titles, the design sheet for the cast and sets with the locked palette, and the shot list with a contact sheet of one still per shot. Then render the video and tell me anything that came out weaker than planned.\n</start>"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Python",
+    "rsvg-convert",
+    "Pillow",
+    "numpy",
+    "ffmpeg",
+    "Whisper"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 813264,
+    "likes": 11538,
+    "replies": 171,
+    "reposts": 785,
+    "bookmarks": 10325,
+    "checkedAt": "2026-11-28T01:17:14.539Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2126040788022767616/img/ZYeDNbNgBHbZCI6X.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2126040788022767616/vid/avc1/720x1280/TmCaLzvD9Yx4gd6L.mp4",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 102
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -14096,6 +14211,57 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125909076781527361",
+   "url": "https://x.com/RealFedeURU/status/2125909076781527361",
+   "author": {
+    "handle": "RealFedeURU",
+    "name": "Fede(URU) 🇺🇾"
+   },
+   "postedAt": "2026-11-26T11:06:36.000Z",
+   "addedAt": "2026-11-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "Three.js场景生成模型对比",
+    "en": "Three.js scene generation model comparison"
+   },
+   "summary": {
+    "zh": "一条展示 Three.js 作品对比的帖子，对比了 Opus 4.6 与 Opus 5.5 的生成效果，作者未公开提示词。",
+    "en": "A Three.js comparison post contrasting outputs from Claude Opus 4.6 and Opus 5.5; no prompt was shared."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Three.js",
+    "Opus 4.6"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 204882,
+    "likes": 4034,
+    "replies": 69,
+    "reposts": 174,
+    "bookmarks": 916,
+    "checkedAt": "2026-11-28T01:17:14.539Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125597076327145472/img/GB-omKVywMDDH8cV.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125597076327145472/vid/avc1/720x720/gZKPmOh6gOIBchA6.mp4",
+    "width": 720,
+    "height": 720,
+    "durationSec": 28
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -33420,6 +33586,63 @@
    }
   },
   {
+   "id": "2125976371600257533",
+   "url": "https://x.com/thegreatest_sv/status/2125976371600257533",
+   "author": {
+    "handle": "thegreatest_sv",
+    "name": "kiosa"
+   },
+   "postedAt": "2026-11-26T15:34:00.000Z",
+   "addedAt": "2026-11-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "活体脊柱解剖与物理模拟",
+    "en": "Living spine anatomy and physics simulation"
+   },
+   "summary": {
+    "zh": "使用 Claude Opus 5.5 制作的动态脊柱解剖与物理模拟作品，帖子推荐了 BlenderMCP 等 7 个医学开源项目，并在回复中向无法私信的用户发送了提示词截图。",
+    "en": "A spine simulation with pulsing CSF, blood flow, and nutrient diffusion built with Claude Opus 5.5; the author lists BlenderMCP and six medical repos and replies with prompt images."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "BlenderMCP",
+    "Blender",
+    "nnU-Net",
+    "MONAI",
+    "TotalSegmentator",
+    "3D Slicer",
+    "OpenSim",
+    "SimVascular"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 87225,
+    "likes": 1247,
+    "replies": 110,
+    "reposts": 201,
+    "bookmarks": 1709,
+    "checkedAt": "2026-11-28T01:17:14.539Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125954355907989504/img/7zy_88YK0D690tdF.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125954355907989504/vid/avc1/720x900/cQyJ_Ai2nPJu-oPi.mp4",
+    "width": 720,
+    "height": 900,
+    "durationSec": 25
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2112171076184584469",
    "url": "https://x.com/whydeso/status/2112171076184584469",
    "author": {
@@ -36813,6 +37036,56 @@
     "width": 720,
     "height": 1280,
     "durationSec": 64
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125882381185986754",
+   "url": "https://x.com/AmirMakir/status/2125882381185986754",
+   "author": {
+    "handle": "AmirMakir",
+    "name": "Amir Makir"
+   },
+   "postedAt": "2026-11-26T09:20:31.000Z",
+   "addedAt": "2026-11-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "四维真空量子引力研究科普",
+    "en": "Quantum vacuum gravity research explainer"
+   },
+   "summary": {
+    "zh": "一个时长3分钟的量子真空引力研究科普视频，使用 Opus 5.5 生成可视化画面，并结合 Remotion 和作者的开源仓库 papertalk 制作。",
+    "en": "A 3-minute explainer video on quantum vacuum gravity research with Opus 5.5 visualizations, created using Remotion and the author's papertalk repository."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Remotion"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 78819,
+    "likes": 1193,
+    "replies": 18,
+    "reposts": 135,
+    "bookmarks": 885,
+    "checkedAt": "2026-11-28T01:17:14.539Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125882034862321664/img/z4jZKF_bjEFKkh1q.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125882034862321664/vid/avc1/1280x720/6oR7wjPa3jvdcWCg.mp4",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 171
    },
    "evidence": {
     "via": "daily",
@@ -42897,6 +43170,54 @@
    }
   },
   {
+   "id": "2125995754292715930",
+   "url": "https://x.com/gamemangaanime/status/2125995754292715930",
+   "author": {
+    "handle": "gamemangaanime",
+    "name": "ち～ぽん✨🤔"
+   },
+   "postedAt": "2026-11-26T16:51:01.000Z",
+   "addedAt": "2026-11-28",
+   "lang": "ja",
+   "models": [
+    "sonnet-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "角色三视图生成3D模型查看器",
+    "en": "Character turnaround to 3D model viewer"
+   },
+   "summary": {
+    "zh": "使用 Sonnet 5.5 根据角色三视图参考图生成的、可在 HTML 中查看的 3D 模型。",
+    "en": "An HTML-viewable 3D model generated by Sonnet 5.5 from a character turnaround reference image."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 67262,
+    "likes": 1107,
+    "replies": 32,
+    "reposts": 84,
+    "bookmarks": 1014,
+    "checkedAt": "2026-11-28T01:17:14.539Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125995621580709888/img/5ge3oXP94hhikWir.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125995621580709888/vid/avc1/800x720/cBgOUUoZi0nEsWO6.mp4",
+    "width": 800,
+    "height": 720,
+    "durationSec": 29
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103535619603567054",
    "url": "https://x.com/EnvolDev/status/2103535619603567054",
    "author": {
@@ -46653,6 +46974,62 @@
    }
   },
   {
+   "id": "2125845143081173011",
+   "url": "https://x.com/nakazakifam/status/2125845143081173011",
+   "author": {
+    "handle": "nakazakifam",
+    "name": "中崎工房 | AIで1時間の仕事を5分で終わらせる人"
+   },
+   "postedAt": "2026-11-26T06:52:33.000Z",
+   "addedAt": "2026-11-28",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "production",
+   "title": {
+    "zh": "分层赛璐璐风格动画制作流程",
+    "en": "Layered cel-style animation pipeline"
+   },
+   "summary": {
+    "zh": "一部不使用视频生成 AI 的赛璐珞风格动画视频，采用背景分层动态与台词同步口型，结合 Claude Code（Opus 5.5）、Codex 图像生成、ElevenLabs、Soniox 和 FFmpeg 制作。",
+    "en": "A cel-animation style video with layered background motion and dialogue-synced mouth shapes, made using Claude Code (Opus 5.5), Codex image generation, ElevenLabs, Soniox, and FFmpeg."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Claude Code",
+    "Codex",
+    "ElevenLabs",
+    "Soniox",
+    "FFmpeg",
+    "Epidemic Sound",
+    "効果音ラボ"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 60650,
+    "likes": 913,
+    "replies": 25,
+    "reposts": 94,
+    "bookmarks": 990,
+    "checkedAt": "2026-11-28T01:17:14.539Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125843404433047552/img/RJ1SyeT3AFUD4dDV.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125843404433047552/vid/avc1/1280x720/PVi7urjEWekM9dgT.mp4",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 51
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2105116325794488736",
    "url": "https://x.com/PuppyPriestess/status/2105116325794488736",
    "author": {
@@ -49565,6 +49942,57 @@
     "width": 720,
     "height": 900,
     "durationSec": 27
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125926503594811463",
+   "url": "https://x.com/Masimo_Blue/status/2125926503594811463",
+   "author": {
+    "handle": "Masimo_Blue",
+    "name": "マシモGPT🤖@ChatGPT/Claude/Gemini/GrokなどLLMをこねくり回す人"
+   },
+   "postedAt": "2026-11-26T12:15:50.000Z",
+   "addedAt": "2026-11-28",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "各模型创作的超土味歌曲对比",
+    "en": "Cheesy songs comparison across AI models"
+   },
+   "summary": {
+    "zh": "一条对比视频，展示了 Claude Opus 5.5、GPT-6.2 Sol 和 Gemini 4 Neon 创作的刻意做俗的歌曲及各自在视频中说明的设计思路。",
+    "en": "A video comparing intentionally tacky songs and model explanations of their design choices generated by Claude Opus 5.5, GPT-6.2 Sol, and Gemini 4 Neon."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "GPT-6.2 Sol",
+    "Gemini 4 Neon"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 56674,
+    "likes": 414,
+    "replies": 12,
+    "reposts": 63,
+    "bookmarks": 182,
+    "checkedAt": "2026-11-28T01:17:14.539Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125926451811897344/img/A_di_eo0aa3wd-YG.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125926451811897344/vid/avc1/1280x720/6pp6Ou-8ZQUsqW4r.mp4",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 60
    },
    "evidence": {
     "via": "daily",
@@ -99582,6 +100010,61 @@
    }
   },
   {
+   "id": "2126070591015026855",
+   "url": "https://x.com/vib3coded/status/2126070591015026855",
+   "author": {
+    "handle": "vib3coded",
+    "name": "Vib3Coded"
+   },
+   "postedAt": "2026-11-26T21:48:24.000Z",
+   "addedAt": "2026-11-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "豹2A7坦克建模效果对比",
+    "en": "Leopard 2A7 tank model comparison"
+   },
+   "summary": {
+    "zh": "用 Claude Opus 5.5（耗时 38 分钟）与 Claude Opus 5.6（耗时 24 分钟）分别生成的 Leopard 2A7 坦克对比作品。",
+    "en": "A 3D Leopard 2A7 tank comparison made with Claude Opus 5.5 (38 minutes) and Claude Opus 5.6 (24 minutes)."
+   },
+   "prompt": {
+    "kind": "brief",
+    "source": "post",
+    "sourceUrl": "https://x.com/vib3coded/status/2126070591015026855",
+    "text": "build a Leopard 2A7"
+   },
+   "referenceAssets": false,
+   "tools": [
+    "Claude Opus 5.6"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 19527,
+    "likes": 255,
+    "replies": 26,
+    "reposts": 17,
+    "bookmarks": 75,
+    "checkedAt": "2026-11-28T01:17:14.539Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2126068869932478466/img/borcUrcbOzmtcST0.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2126068869932478466/vid/avc1/720x930/zYrN7eBiQQgWdTCI.mp4",
+    "width": 720,
+    "height": 930,
+    "durationSec": 18
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2105300597888970901",
    "url": "https://x.com/mhmazur/status/2105300597888970901",
    "author": {
@@ -99732,6 +100215,54 @@
     "width": 720,
     "height": 864,
     "durationSec": 24
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125817462583353452",
+   "url": "https://x.com/ApriloneHS/status/2125817462583353452",
+   "author": {
+    "handle": "ApriloneHS",
+    "name": "Doggg"
+   },
+   "postedAt": "2026-11-26T05:02:33.000Z",
+   "addedAt": "2026-11-28",
+   "lang": "zh",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "education",
+   "title": {
+    "zh": "加密货币套利入门科普短片",
+    "en": "Crypto arbitrage explainer short"
+   },
+   "summary": {
+    "zh": "用 Opus 5.5 制作的科普小短片，讲解在 @entropyIO 上的价差收敛与延时套利两种方式。",
+    "en": "An educational short video explaining spread convergence and latency arbitrage on @entropyIO, made with Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 19477,
+    "likes": 307,
+    "replies": 28,
+    "reposts": 38,
+    "bookmarks": 334,
+    "checkedAt": "2026-11-28T01:17:14.539Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125815583363235840/img/639XN4q1JTct53u9.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125815583363235840/vid/avc1/1280x720/mZ_DfzVG_nMxIGs3.mp4",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 510
    },
    "evidence": {
     "via": "daily",
@@ -102649,6 +103180,54 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2126045813369676137",
+   "url": "https://x.com/Solvaix/status/2126045813369676137",
+   "author": {
+    "handle": "Solvaix",
+    "name": "Solvaix"
+   },
+   "postedAt": "2026-11-26T20:09:56.000Z",
+   "addedAt": "2026-11-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "多智能体协同建筑机电模拟",
+    "en": "Multi-agent townhouse MEP simulation"
+   },
+   "summary": {
+    "zh": "由四个 Claude Opus 5.5 智能体协作完成的三层联排别墅机电管道（MEP）设计与审图模拟。",
+    "en": "An MEP engineering simulation for a 3-story Seattle townhouse created by four Claude Opus 5.5 agents designing and reviewing the plans."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 18600,
+    "likes": 192,
+    "replies": 8,
+    "reposts": 26,
+    "bookmarks": 241,
+    "checkedAt": "2026-11-28T01:17:14.539Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2126045324028289024/img/kZGVUHhK5_20pVF7.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2126045324028289024/vid/avc1/720x1280/Ew443DemnEnqSwIn.mp4",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 34
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -105935,6 +106514,56 @@
    }
   },
   {
+   "id": "2126011438485643591",
+   "url": "https://x.com/pr0mptcat/status/2126011438485643591",
+   "author": {
+    "handle": "pr0mptcat",
+    "name": "PromptCat"
+   },
+   "postedAt": "2026-11-26T17:53:20.000Z",
+   "addedAt": "2026-11-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "陨石撞击动画生成速度对比",
+    "en": "Meteor impact animation speed comparison"
+   },
+   "summary": {
+    "zh": "用 Claude Opus 5.6（13 分钟）与 Claude Opus 5.5（30 分钟）制作的陨石撞击效果对比作品。",
+    "en": "A meteor impact simulation comparing Claude Opus 5.6 (13 minutes) against Claude Opus 5.5 (30 minutes)."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Claude Opus 5.6"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 17498,
+    "likes": 150,
+    "replies": 8,
+    "reposts": 9,
+    "bookmarks": 39,
+    "checkedAt": "2026-11-28T01:17:14.539Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2126010833960370176/img/SMozQ2Tz48QELJk3.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2126010833960370176/vid/avc1/720x898/L-Z6h_BCj1k1ghk5.mp4",
+    "width": 720,
+    "height": 898,
+    "durationSec": 20
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2110415126964896155",
    "url": "https://x.com/higgsfield_ai/status/2110415126964896155",
    "author": {
@@ -108087,6 +108716,57 @@
    }
   },
   {
+   "id": "2125885519104229392",
+   "url": "https://x.com/anvithbuilds/status/2125885519104229392",
+   "author": {
+    "handle": "anvithbuilds",
+    "name": "Anvith Shetty"
+   },
+   "postedAt": "2026-11-26T09:32:59.000Z",
+   "addedAt": "2026-11-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "卡通动画短片",
+    "en": "Animated cartoon clip"
+   },
+   "summary": {
+    "zh": "用 Claude Opus 5.5 制作的动画短片，其中图像由 ChatGPT 生成，配音和音乐来自 ElevenLabs。",
+    "en": "A cartoon created with Claude Opus 5.5 using images from ChatGPT and voices and music from ElevenLabs."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "ChatGPT",
+    "ElevenLabs"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 16708,
+    "likes": 386,
+    "replies": 23,
+    "reposts": 16,
+    "bookmarks": 324,
+    "checkedAt": "2026-11-28T01:17:14.539Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125884409048141825/img/B6f3ddsZ0lyDwPRj.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125884409048141825/vid/avc1/1280x720/vGBB9ycd84_M3ZUs.mp4",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 19
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2119772039037014524",
    "url": "https://x.com/anstapnever/status/2119772039037014524",
    "author": {
@@ -108693,6 +109373,57 @@
    "evidence": {
     "via": "fxtwitter",
     "seed": true,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125913740701044884",
+   "url": "https://x.com/fuckscales/status/2125913740701044884",
+   "author": {
+    "handle": "fuckscales",
+    "name": "F*ck Scales"
+   },
+   "postedAt": "2026-11-26T11:25:08.000Z",
+   "addedAt": "2026-11-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "低多边形风格产品视频",
+    "en": "Low-poly 3D product video"
+   },
+   "summary": {
+    "zh": "一个低多边形风格的电商喜剧短视频，包含产品亮相镜头，使用 Claude Opus 5.5、Claude Code 和 Blender 制作。",
+    "en": "A short low-poly ecommerce comedy video with a product reveal, made using Claude Opus 5.5, Claude Code, and Blender."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Blender",
+    "Claude Code"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 16443,
+    "likes": 253,
+    "replies": 2,
+    "reposts": 19,
+    "bookmarks": 391,
+    "checkedAt": "2026-11-28T01:17:14.539Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125913639584489472/img/6svtqNmdP54oWvoz.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125913639584489472/vid/avc1/720x1280/kzO7VfonWClzsBAW.mp4",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 29
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
   },
@@ -109805,6 +110536,54 @@
    }
   },
   {
+   "id": "2125947735660486857",
+   "url": "https://x.com/Nyxera0x/status/2125947735660486857",
+   "author": {
+    "handle": "Nyxera0x",
+    "name": "Nyxera"
+   },
+   "postedAt": "2026-11-26T13:40:13.000Z",
+   "addedAt": "2026-11-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "平面图生成的3D日本农舍与武士宅邸对比",
+    "en": "3D Japanese farmhouse vs samurai house from floor plans"
+   },
+   "summary": {
+    "zh": "作者使用自定义 Claude 技能，让 Claude Opus 5.5 根据农舍和武士住宅的平面图照片分别生成完整 3D 房屋模型。",
+    "en": "Claude Opus 5.5 used a custom skill to turn floor plan photos of a farmhouse and a samurai house into 3D houses."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 16137,
+    "likes": 158,
+    "replies": 20,
+    "reposts": 11,
+    "bookmarks": 200,
+    "checkedAt": "2026-11-28T01:17:14.539Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125946437057814528/img/aVMSWwRD7O5019Pj.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125946437057814528/vid/avc1/720x900/J7WSJ1WJOFf3iw0q.mp4",
+    "width": 720,
+    "height": 900,
+    "durationSec": 16
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2118870207045529812",
    "url": "https://x.com/SamGCoder/status/2118870207045529812",
    "author": {
@@ -110558,6 +111337,54 @@
     "width": 720,
     "height": 812,
     "durationSec": 24
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2126050832688807969",
+   "url": "https://x.com/caesarscales/status/2126050832688807969",
+   "author": {
+    "handle": "caesarscales",
+    "name": "caesar"
+   },
+   "postedAt": "2026-11-26T20:29:53.000Z",
+   "addedAt": "2026-11-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "2.5D火柴人动画",
+    "en": "2.5D stickman animation"
+   },
+   "summary": {
+    "zh": "作者使用 Claude Opus 5.5 与自动化 Claude 技能制作的 2.5D 火柴人动画。",
+    "en": "2.5D stickman animations created with Claude Opus 5.5 using an automated Claude skill."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 15891,
+    "likes": 172,
+    "replies": 11,
+    "reposts": 10,
+    "bookmarks": 274,
+    "checkedAt": "2026-11-28T01:17:14.539Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2126050435211337728/img/S9JR_kpGO3cxgDzN.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2126050435211337728/vid/avc1/720x1280/1R1KurnU8z-SvnNP.mp4",
+    "width": 720,
+    "height": 1280,
+    "durationSec": 65
    },
    "evidence": {
     "via": "daily",
@@ -116592,6 +117419,56 @@
    }
   },
   {
+   "id": "2125910525284638881",
+   "url": "https://x.com/noclipepe/status/2125910525284638881",
+   "author": {
+    "handle": "noclipepe",
+    "name": "noclipepe"
+   },
+   "postedAt": "2026-11-26T11:12:21.000Z",
+   "addedAt": "2026-11-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "十二阶段多米诺连锁反应模拟对比",
+    "en": "12-stage chain reaction simulation comparison"
+   },
+   "summary": {
+    "zh": "完全由代码生成、未使用外部素材的 12 阶段连锁反应动画，用于对比 Opus 5.5 与 Opus 5.6 的表现。",
+    "en": "A 12-stage chain reaction generated entirely in code without external assets, comparing Opus 5.5 and Opus 5.6."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Opus 5.6"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 14047,
+    "likes": 106,
+    "replies": 26,
+    "reposts": 2,
+    "bookmarks": 44,
+    "checkedAt": "2026-11-28T01:17:14.539Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125910329863417856/img/l3CV-fvIZdWa7wYp.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125910329863417856/vid/avc1/720x720/I95acvM-vmkH-3gN.mp4",
+    "width": 720,
+    "height": 720,
+    "durationSec": 64
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103801828744061307",
    "url": "https://x.com/cyrilXBT/status/2103801828744061307",
    "author": {
@@ -121845,6 +122722,58 @@
    },
    "evidence": {
     "via": "search",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125999865452728770",
+   "url": "https://x.com/hanghuang_/status/2125999865452728770",
+   "author": {
+    "handle": "hanghuang_",
+    "name": "Hang Huang ☁️"
+   },
+   "postedAt": "2026-11-26T17:07:21.000Z",
+   "addedAt": "2026-11-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "贪吃蛇游戏生成对比",
+    "en": "Snake game build speed comparison"
+   },
+   "summary": {
+    "zh": "以制作贪吃蛇游戏为基准测试，对比通过 Claude Code 运行的 Opus 5.5 与部署在 InstaBox H100 上的 Inkling 2 Mini。",
+    "en": "A Snake game benchmark comparing Opus 5.5 via Claude Code against Inkling 2 Mini hosted on an InstaBox H100 GPU."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Inkling 2 Mini",
+    "InstaBox",
+    "Claude Code"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 12841,
+    "likes": 117,
+    "replies": 33,
+    "reposts": 3,
+    "bookmarks": 79,
+    "checkedAt": "2026-11-28T01:17:14.539Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/ext_tw_video_thumb/2125999832875626496/pu/img/y1AYnfhmHTVtadDG.jpg",
+    "mp4": "https://video.twimg.com/ext_tw_video/2125999832875626496/pu/vid/avc1/1280x720/lqy6seJhyyPA6z93.mp4?tag=12",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 32
+   },
+   "evidence": {
+    "via": "daily",
     "seed": false,
     "modelAttribution": "creator-stated, not independently reproduced"
    }
@@ -127769,6 +128698,58 @@
    }
   },
   {
+   "id": "2125882250872946865",
+   "url": "https://x.com/sibucho_labo/status/2125882250872946865",
+   "author": {
+    "handle": "sibucho_labo",
+    "name": "しぶちょー"
+   },
+   "postedAt": "2026-11-26T09:20:00.000Z",
+   "addedAt": "2026-11-28",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "斯特林发动机三维设计与渲染",
+    "en": "Stirling engine 3D design and render"
+   },
+   "summary": {
+    "zh": "作者使用手机端 Claude Duet 虚拟环境中的 SolidCraft 与 Blender，让 Opus 5.5 完成了斯特林发动机的设计与渲染。",
+    "en": "A Stirling engine designed and rendered end-to-end by Opus 5.5 inside Claude Duet using SolidCraft and Blender."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Claude Duet",
+    "SolidCraft",
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 11541,
+    "likes": 155,
+    "replies": 4,
+    "reposts": 15,
+    "bookmarks": 68,
+    "checkedAt": "2026-11-28T01:17:14.539Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125795475576279040/img/hI3bitmiNn1SWTue.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125795475576279040/vid/avc1/1280x720/G1NQKzNLI39p45qF.mp4",
+    "width": 1280,
+    "height": 720,
+    "durationSec": 29
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2103677214135124053",
    "url": "https://x.com/cyrilXBT/status/2103677214135124053",
    "author": {
@@ -130290,6 +131271,58 @@
     "width": 960,
     "height": 720,
     "durationSec": 6
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2126094054836650147",
+   "url": "https://x.com/aicreataro/status/2126094054836650147",
+   "author": {
+    "handle": "aicreataro",
+    "name": "aicreataro"
+   },
+   "postedAt": "2026-11-26T23:21:38.000Z",
+   "addedAt": "2026-11-28",
+   "lang": "ja",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "stories",
+   "title": {
+    "zh": "三维文字与AI视频融合短片",
+    "en": "3D typography and video music piece"
+   },
+   "summary": {
+    "zh": "作者借助 Opus 5.5 与 Blender 用大量立体文字构建人物和击碎特效，并结合 Seedance 2.5 视频素材与 Suno 音乐制作的短片。",
+    "en": "A 3D video combining thousands of 3D text blocks in Blender with Seedance 2.5 footage and Suno music, made with Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": true,
+   "tools": [
+    "Blender",
+    "Seedance 2.5",
+    "Suno"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 11007,
+    "likes": 263,
+    "replies": 10,
+    "reposts": 20,
+    "bookmarks": 201,
+    "checkedAt": "2026-11-28T01:17:14.539Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2126092902728384513/img/xbK1Xf3y7jNE5kPt.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2126092902728384513/vid/avc1/852x720/hrzEXx336TOcV5KR.mp4",
+    "width": 852,
+    "height": 720,
+    "durationSec": 40
    },
    "evidence": {
     "via": "daily",
@@ -135641,6 +136674,59 @@
    }
   },
   {
+   "id": "2125766986344862095",
+   "url": "https://x.com/vib3coded/status/2125766986344862095",
+   "author": {
+    "handle": "vib3coded",
+    "name": "Vib3Coded"
+   },
+   "postedAt": "2026-11-26T01:41:59.000Z",
+   "addedAt": "2026-11-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "comparison",
+   "category": "comparison",
+   "title": {
+    "zh": "日本安宅船水上要塞场景对比",
+    "en": "Japanese floating fortress scene comparison"
+   },
+   "summary": {
+    "zh": "展示日本战国时代安宅船舰队、船员及沿岸神社的 3D 场景，由作者用同一段提示词分别让 Opus 5.5 与 Opus 5.6 生成为独立网页。",
+    "en": "A 3D scene of a Sengoku-era Japanese atakebune warship squadron with crew and coastal shrine, generated as a standalone web page by Opus 5.5 and Opus 5.6 from the same prompt."
+   },
+   "prompt": {
+    "kind": "full",
+    "source": "author_reply",
+    "sourceUrl": "https://x.com/vib3coded/status/2125767097062129871",
+    "text": "Create a highly detailed, cinematic 3D scene of a Japanese atakebune (a Sengoku-era fortress warship) sailing through the Seto Inland Sea in bright late-morning light. Make it as detailed and high-quality as possible.\n\nTHE SHIP\n- A large atakebune, about 36 m long: a flat-bottomed Japanese hull with a hard chine, wide flaring planks, iron cramps across the plank seams, a strongly raked bow with a small fore platform, and a broad open stern with a large rudder and tiller.\n- On the hull sits a fortress box whose shield walls stick out past the hull sides. The walls are black lacquered boards with raised battens, red lacquered horizontal beams studded with gold nail heads, and black posts with gilt plates. Two rows of loopholes alternate square gun ports and tall arrow slits, and a few musket barrels poke out. Gold family-crest plates are set along the walls, with a large gold crest on the bow wall.\n- About 60 long Japanese sculling oars (ro) come out of ports along the bottom of the walls. They trail aft and down into the water and move with a real sculling motion: a side-to-side sweep with a twist of the blade, never a rowing stroke. Small white splashes rise at the blades.\n- On top is a flat fighting deck with a parapet. Toward the stern stands a three-storey castle tower (like a Japanese castle keep):\n- ground storey: white plaster walls over black weatherboards, windows with black lattice bars, and a curved slate-grey tiled roof with triangular dormer gables;\n- second storey: white plaster with its own tiled skirt roof;\n- top storey: black lacquer with gold bands and bell-shaped gilt windows, surrounded by a red lacquered balcony railing with gold onion-shaped finials, under a hip-and-gable roof with white gable walls, black barge boards and gold ornaments.\nThe roofs have slightly upturned corners, ridge tiles, rafter ends and a row of gilded tile ends along the eaves. A gold shachihoko (a carp with a tiger head) stands at each end of the top ridge.\n- On the bow is a gilded dragon head with an open jaw, horns, whiskers and a flame-like mane, on a scaled neck rising from the stem post. Iron four-armed grapnel anchors hang at the bow, with a windlass and coiled cable. Two bronze cannons sit at the bow corners.\n- A single mast lashed with black rope bands, stepped between two great posts so it can be lowered. A double yard carries a big square sail of cream cotton strips laced together, with a large black three-comma crest (mitsudomoe) in the middle. Add rigging: forestays fanning to the bow, backstays, lifts, braces, halyards and sheets. A long five-colour streamer flies from the masthead.\n- Eighteen tall nobori banners stand along the parapets, plus two large ones at the stern. Use four designs (white/black, red/white, navy/gold, black/red), each with a geometric family crest. A golden folding-fan standard with a red sun disc stands at the stern.\n- All cloth (sail, banners, streamer) ripples naturally in a steady following wind.\n\nCREW (period-accurate, fully modelled jointed figures)\n- Ashigaru foot soldiers in black lacquered armour and conical jingasa hats. Most aim matchlock muskets over the parapet; others hold their muskets upright or draw tall asymmetric longbows.\n- Spearmen holding tall yari upright, and spear racks against the tower.\n- Samurai officers in laced armour (red, blue, green or orange lacing), with helmets carrying a gilded crescent crest, shoulder guards, tassets and small crested banners on their backs.\n- The commander, seated on a folding camp stool inside a white curtain enclosure marked with black bands and a crest, wearing a red surcoat and holding a gilded war fan; armoured guards on each side; a man blowing a conch.\n- A drummer with a headband beating a red taiko drum, lookouts on the tower balcony, a helmsman at the tiller, and an anchor party on the bow.\n- Deck props: black lacquered ammunition chests with gilt corners and crests, powder kegs, arrow bundles and rope coils.\n\nTHE SQUADRON\n- Four small kobaya escorts and two larger escort ships keep station around the flagship. Each has low shield walls with loopholes, its own sculling oars, musketeers, an officer, a helmsman, two fluttering banners and its own foam wake.\n\nENVIRONMENT\n- A calm, deep blue-green sea with gentle waves, sun glitter, clear reflections of the ship and the islands, a white wake and soft foam along the hull.\n- Rounded granite islands thickly covered in forest and windswept Japanese black pines with flat cloud-like foliage. Pale rocky shores and small beaches at the waterline.\n- On the nearest island: a great vermilion torii gate standing in the water with its reflection, a shrine hall on stilts at the shore, stone lanterns, and a five-storey pagoda with a bronze spire on the hillside.\n- Layers of more distant islands and mainland mountains fading blue into the haze.\n- A deep blue sky with fair-weather cumulus and high cirrus, a warm sun with a soft glow, and gulls in the air.\n- Physically based lighting with soft shadows, ambient bounce from the sea, subtle bloom, filmic tone mapping and gentle depth of field.\n\nCAMERA AND ANIMATION\n- A slow automatic cinematic camera tour around the ship at different heights and distances: low over the oars, close on the dragon, along the castle tower, high over the whole squadron.\n- The user can rotate the view with the mouse or touch and zoom with the wheel or pinch; a double click returns to the automatic tour.\n- All motion is natural and real-time: the ship heaves, pitches and rolls on the swell; the oars scull; the cloth flutters; the escorts bob; the water flows; the birds fly. No slow motion.\n\nSTRICT REQUIREMENTS\n- No text of any kind may appear anywhere inside the scene: no titles, names, logos, descriptions, credits, labels or control instructions in any language. Crests must be purely geometric symbols that cannot be read as characters.\n- No primitive placeholders: every object must be properly modelled.\n- Deliver one final standalone page file that opens directly in a web browser, with all assets embedded (procedural geometry and textures, no external files or network requests).\n- Actually test the finished result in a desktop web browser: capture screenshots from several angles, inspect the browser console for errors, and fix every visible or technical issue. Verify that the file opens directly, contains no text and has no runtime errors.\n- Finish with a brief response."
+   },
+   "referenceAssets": false,
+   "tools": [],
+   "resources": [],
+   "stats": {
+    "views": 9817,
+    "likes": 126,
+    "replies": 22,
+    "reposts": 10,
+    "bookmarks": 32,
+    "checkedAt": "2026-11-28T01:17:14.539Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125766882103799808/img/Z32OPFNEpefRHVQB.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125766882103799808/vid/avc1/720x884/wzCvmjWsdF9EWs9j.mp4",
+    "width": 720,
+    "height": 884,
+    "durationSec": 16
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
    "id": "2102702170986463421",
    "url": "https://x.com/vikktorrrre/status/2102702170986463421",
    "author": {
@@ -136348,6 +137434,56 @@
     "width": 1280,
     "height": 720,
     "durationSec": 61
+   },
+   "evidence": {
+    "via": "daily",
+    "seed": false,
+    "modelAttribution": "creator-stated, not independently reproduced"
+   }
+  },
+  {
+   "id": "2125978784868233708",
+   "url": "https://x.com/Lummox_eth/status/2125978784868233708",
+   "author": {
+    "handle": "Lummox_eth",
+    "name": "Lummox"
+   },
+   "postedAt": "2026-11-26T15:43:35.000Z",
+   "addedAt": "2026-11-28",
+   "lang": "en",
+   "models": [
+    "opus-5.5"
+   ],
+   "kind": "work",
+   "category": "art3d",
+   "title": {
+    "zh": "机械师机器人组装前臂动画",
+    "en": "Robot mechanic assembling its own forearm"
+   },
+   "summary": {
+    "zh": "一段 10 秒的 Blender 分屏动画，展示机器人机械师组装自身前臂的过程及右侧材质与左侧骨骼绑定视图，由作者借助 Opus 5.5 制作。",
+    "en": "A 10-second split-view Blender animation showing a robot mechanic assembling its own forearm alongside its rig, made with Opus 5.5."
+   },
+   "prompt": null,
+   "referenceAssets": false,
+   "tools": [
+    "Blender"
+   ],
+   "resources": [],
+   "stats": {
+    "views": 9516,
+    "likes": 155,
+    "replies": 25,
+    "reposts": 10,
+    "bookmarks": 150,
+    "checkedAt": "2026-11-28T01:17:14.539Z"
+   },
+   "video": {
+    "poster": "https://pbs.twimg.com/amplify_video_thumb/2125978122533138432/img/5g0ek8pWn6nnBs5C.jpg",
+    "mp4": "https://video.twimg.com/amplify_video/2125978122533138432/vid/avc1/1260x720/ieSrBHeh_byEHaT2.mp4",
+    "width": 1260,
+    "height": 720,
+    "durationSec": 10
    },
    "evidence": {
     "via": "daily",
