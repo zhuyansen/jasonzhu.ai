@@ -1,16 +1,44 @@
 {
+  "version": "1.0",
+  "protocolVersion": "2025-06-18",
   "name": "jasonzhu-ai",
-  "title": "JasonZhu.AI",
-  "description": "jasonzhu.ai does not run a remote MCP server. There is no MCP endpoint to connect to, so this card lists no transport. What the site offers agents: browser-side WebMCP tools that its pages register via document.modelContext or declarative HTML forms (listed under tools), and plain HTTPS files that need no MCP (listed in instructions).",
-  "instructions": "Without a browser, read these over plain HTTPS: https://jasonzhu.ai/llms.txt (site guide and citation rules), https://jasonzhu.ai/agents.md (what an agent may and may not do on this site), https://jasonzhu.ai/data/payment-guard.json (payment-platform data with check dates), https://jasonzhu.ai/data/ai-visibility/payments-mor.csv and https://jasonzhu.ai/data/ai-visibility/china-ai-global.csv (monthly AI visibility indices), https://jasonzhu.ai/feed/blog.xml and https://jasonzhu.ai/feed/news.xml (RSS). The tools below exist only inside a jasonzhu.ai page loaded in a browser that supports WebMCP (document.modelContext / declarative <form toolname>). An external MCP client cannot call them through this card.",
+  "title": "JasonZhu.AI MCP Server",
+  "description": "Remote Streamable HTTP MCP server and browser WebMCP tools for JasonZhu.AI: deterministic SaaS payment/MoR net payout comparisons, monthly AI Visibility Indices, live 26-check AI Readiness audits, and hands-on AI & going-global guides.",
+  "endpoint": "https://jasonzhu.ai/api/mcp",
   "documentationUrl": "https://jasonzhu.ai/agents.md",
   "iconUrl": "https://jasonzhu.ai/favicon.ico",
   "updated": "2026-11-28",
+  "serverInfo": {
+    "name": "jasonzhu-ai",
+    "title": "JasonZhu.AI MCP Server",
+    "version": "1.0.0"
+  },
+  "transport": {
+    "type": "streamable-http",
+    "endpoint": "https://jasonzhu.ai/api/mcp"
+  },
+  "capabilities": {
+    "tools": {
+      "listChanged": false
+    },
+    "resources": {
+      "subscribe": false,
+      "listChanged": false
+    },
+    "prompts": {
+      "listChanged": false
+    }
+  },
+  "authentication": {
+    "required": false,
+    "schemes": []
+  },
+  "instructions": "Connect directly via MCP Streamable HTTP at https://jasonzhu.ai/api/mcp (no authentication required; e.g. `claude mcp add --transport http jasonzhu https://jasonzhu.ai/api/mcp`). In Chrome 149+, pages also register browser-side WebMCP tools via document.modelContext. Plain HTTPS endpoints: https://jasonzhu.ai/llms.txt, https://jasonzhu.ai/agents.md, https://jasonzhu.ai/data/payment-guard.json, https://jasonzhu.ai/data/ai-visibility/payments-mor.csv, and https://jasonzhu.ai/data/ai-visibility/china-ai-global.csv.",
   "tools": [
     {
       "name": "recommend_payment_mor",
       "title": "Recommend SaaS Payment / MoR Platforms & Net Payouts",
-      "description": "WebMCP, registered by a page script. Fetches /data/payment-guard.json and runs pickTable() for a founder's entity and product type, returning deterministic $20 net take-home figures, eligibility, exclusions, and the pre-filtered interactive selector URL.",
+      "description": "Compare cross-border payment and Merchant of Record (MoR) platforms for a founder's entity and product type, returning deterministic $20 net take-home figures, eligibility, exclusions, and official sources.",
       "inputSchema": {
         "type": "object",
         "properties": {
@@ -39,9 +67,41 @@
       }
     },
     {
+      "name": "get_ai_visibility_index",
+      "title": "Get Monthly AI Visibility Index",
+      "description": "Return the latest monthly empirical AI Visibility Index ('payments-mor' or 'china-ai-global') with mention rates, Wilson 95% confidence intervals, official domain citation rates, and open CC-BY-4.0 CSV URL.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "board": {
+            "type": "string",
+            "enum": ["payments-mor", "china-ai-global"],
+            "description": "Which standalone monthly leaderboard to inspect."
+          },
+          "origin": {
+            "type": "string",
+            "enum": ["all", "cn_global", "challenger", "global_incumbent"],
+            "description": "Optional filter by brand origin cohort."
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 50,
+            "description": "Maximum ranked brands to return."
+          }
+        },
+        "required": ["board"]
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "consequentialHint": false,
+        "untrustedContentHint": false
+      }
+    },
+    {
       "name": "scan_ai_readiness",
-      "title": "Run 26-Check AI Readiness & GEO Audit",
-      "description": "WebMCP, exposed declaratively by the scan form on /{lang}/go-global/ai-readiness (with SubmitEvent.respondWith) and registered imperatively on other pages. Sends POST /api/ai-readiness to probe 26 live HTTP/SEO/GEO signals for a domain and logs the domain in the public clinic directory.",
+      "title": "Run Live 26-Check AI Readiness & GEO Audit",
+      "description": "Probe 26 live HTTP/SEO/GEO/WebMCP signals on any public domain and return a 100-point AI Readiness score, grade, passed/failed check keys, and report link.",
       "inputSchema": {
         "type": "object",
         "properties": {
@@ -58,52 +118,23 @@
         "required": ["domain"]
       },
       "annotations": {
-        "readOnlyHint": false,
+        "readOnlyHint": true,
         "consequentialHint": false,
         "untrustedContentHint": true
       }
     },
     {
       "name": "search_jasonzhu_articles",
-      "title": "Search the link list in llms.txt",
-      "description": "WebMCP, registered by a page script. Fetches /llms.txt and returns up to 20 of its link lines that contain the keyword, plus the blog URL. It does not search article text.",
+      "title": "Search JasonZhu.AI Research, Guides & Playbooks",
+      "description": "Search Jason Zhu's published research reports, AI coding tutorials, going-global playbooks, and SEO/GEO guides by keyword or tag.",
       "inputSchema": {
         "type": "object",
         "properties": {
-          "query": { "type": "string", "description": "Keyword to look for in the link lines of /llms.txt." },
-          "lang": { "type": "string", "enum": ["zh", "en"], "description": "Language of the returned blog URL." }
+          "query": { "type": "string", "description": "Keyword or topic to search." },
+          "lang": { "type": "string", "enum": ["zh", "en"], "description": "Preferred output language." },
+          "limit": { "type": "integer", "minimum": 1, "maximum": 20, "description": "Maximum results to return." }
         },
         "required": ["query"]
-      },
-      "annotations": {
-        "readOnlyHint": true,
-        "consequentialHint": false,
-        "untrustedContentHint": false
-      }
-    },
-    {
-      "name": "search_jasonzhu_blog",
-      "title": "Filter the blog list",
-      "description": "WebMCP, declared by the search form in the page footer. Opens /{lang}/blog?q={keyword}; the page filters its article list in the browser.",
-      "inputSchema": {
-        "type": "object",
-        "properties": {
-          "q": { "type": "string", "description": "Keyword to filter the blog list by." }
-        }
-      },
-      "annotations": {
-        "readOnlyHint": true
-      }
-    },
-    {
-      "name": "get_going_global_guides",
-      "title": "Links to the going-global guides & monthly AI visibility indices",
-      "description": "WebMCP, registered by a page script. Returns fixed links to the going-global hub, payment selector, AI Readiness Clinic, monthly AI visibility indices, account-opening guide, GoSail Club, and services.",
-      "inputSchema": {
-        "type": "object",
-        "properties": {
-          "lang": { "type": "string", "enum": ["zh", "en"], "description": "Language of the returned links." }
-        }
       },
       "annotations": {
         "readOnlyHint": true,
