@@ -607,14 +607,14 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
                       res
                         ? {
                             domain: res.domain,
+                            finalUrl: res.finalUrl,
                             score: res.score,
+                            coreScore: res.coreScore,
                             grade: res.grade,
-                            passedChecks: res.checks.filter((c) => c.status === "pass").length,
-                            totalChecks: res.checks.length,
-                            topIssues: res.checks
-                              .filter((c) => c.status !== "pass")
-                              .slice(0, 5)
-                              .map((c) => ({ key: c.key, status: c.status, summary: c.summary })),
+                            passedCount: res.passedKeys.length,
+                            failedCount: res.failedKeys.length,
+                            failedKeys: res.failedKeys.slice(0, 8),
+                            scannedAt: res.scannedAt,
                             reportUrl: `https://jasonzhu.ai/${lang}/go-global/ai-readiness`,
                           }
                         : { error: "Scan failed or domain was empty." }

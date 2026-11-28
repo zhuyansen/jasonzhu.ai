@@ -151,10 +151,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // ChatGPT Images 2.6 合集详情页：只有带提示词的作品有详情页，zh/en 都收
   const images = getImageLibrary();
   for (const c of images.cases.filter((x) => x.prompt && !isPromptNoindexed("chatgpt-images-2-6", x.id))) {
+    const imgDate = c.addedAt || c.postedAt || images.updatedAt;
     for (const lang of LANGS) {
       entries.push({
         url: `${SITE_URL}/${lang}/prompts/chatgpt-images-2-6/${c.id}`,
-        lastModified: new Date(c.addedAt || c.postedAt || images.updatedAt),
+        ...(imgDate ? { lastModified: new Date(imgDate) } : {}),
         changeFrequency: "monthly",
         priority: 0.6,
       });
@@ -164,10 +165,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Gemini 4 合集详情页：同图片库，只有带提示词的作品有详情页
   const gemini = getGeminiLibrary();
   for (const c of gemini.cases.filter((x) => x.prompt && !isPromptNoindexed("gemini-4", x.id))) {
+    const gemDate = c.addedAt || c.postedAt || gemini.updatedAt;
     for (const lang of LANGS) {
       entries.push({
         url: `${SITE_URL}/${lang}/prompts/gemini-4/${c.id}`,
-        lastModified: new Date(c.addedAt || c.postedAt || gemini.updatedAt),
+        ...(gemDate ? { lastModified: new Date(gemDate) } : {}),
         changeFrequency: "monthly",
         priority: 0.6,
       });
