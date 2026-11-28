@@ -178,11 +178,12 @@ export default function LeaderboardClient({
       {(categories.length > 1 || availableOrigins.length > 1) && (
         <div className="flex flex-wrap items-center justify-between gap-3">
           {categories.length > 1 ? (
-            <div className="flex flex-wrap gap-1.5">
+            <div className="flex flex-wrap gap-1.5" role="group" aria-label={isEn ? "Filter by vertical" : "按赛道筛选"}>
               <button
                 type="button"
+                aria-pressed={activeCategory === "__all__"}
                 onClick={() => setActiveCategory("__all__")}
-                className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${
+                className={`px-3 py-1 rounded-full text-xs font-medium transition-colors cursor-pointer ${
                   activeCategory === "__all__"
                     ? "bg-gray-900 text-white"
                     : "bg-gray-100 text-gray-700 hover:bg-gray-200"
@@ -194,8 +195,9 @@ export default function LeaderboardClient({
                 <button
                   key={c}
                   type="button"
+                  aria-pressed={activeCategory === c}
                   onClick={() => setActiveCategory(c)}
-                  className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${
+                  className={`px-3 py-1 rounded-full text-xs font-medium transition-colors cursor-pointer ${
                     activeCategory === c
                       ? "bg-gray-900 text-white"
                       : "bg-gray-100 text-gray-700 hover:bg-gray-200"
@@ -210,11 +212,12 @@ export default function LeaderboardClient({
           )}
 
           {availableOrigins.length > 1 && (
-            <div className="flex flex-wrap items-center gap-1.5 text-xs">
+            <div className="flex flex-wrap items-center gap-1.5 text-xs" role="group" aria-label={isEn ? "Filter by brand origin" : "按品牌阵营筛选"}>
               <button
                 type="button"
+                aria-pressed={originFilter === "__all__"}
                 onClick={() => setOriginFilter("__all__")}
-                className={`px-2.5 py-1 rounded-md border transition-colors ${
+                className={`px-2.5 py-1 rounded-md border transition-colors cursor-pointer ${
                   originFilter === "__all__"
                     ? "border-blue-600 bg-blue-50 text-blue-700 font-medium"
                     : "border-gray-200 bg-white text-gray-600 hover:border-gray-300"
@@ -226,8 +229,9 @@ export default function LeaderboardClient({
                 <button
                   key={orig}
                   type="button"
+                  aria-pressed={originFilter === orig}
                   onClick={() => setOriginFilter(orig)}
-                  className={`px-2.5 py-1 rounded-md border transition-colors ${
+                  className={`px-2.5 py-1 rounded-md border transition-colors cursor-pointer ${
                     originFilter === orig
                       ? "border-blue-600 bg-blue-50 text-blue-700 font-medium"
                       : "border-gray-200 bg-white text-gray-600 hover:border-gray-300"
@@ -333,8 +337,10 @@ export default function LeaderboardClient({
       <section className="rounded-xl border border-gray-200 bg-white p-5">
         <button
           type="button"
+          aria-expanded={showQuestions}
+          aria-controls="frozen-prompts-list"
           onClick={() => setShowQuestions((v) => !v)}
-          className="w-full flex items-center justify-between text-left"
+          className="w-full flex items-center justify-between text-left cursor-pointer"
         >
           <div>
             <h2 className="text-sm sm:text-base font-bold text-gray-900">
@@ -353,7 +359,7 @@ export default function LeaderboardClient({
           </span>
         </button>
         {showQuestions && (
-          <ol className="mt-4 pt-4 border-t border-gray-100 space-y-2 text-xs sm:text-sm text-gray-700">
+          <ol id="frozen-prompts-list" className="mt-4 pt-4 border-t border-gray-100 space-y-2 text-xs sm:text-sm text-gray-700">
             {board.questions_preview.map((q, idx) => (
               <li key={q.id} className="flex items-start gap-2.5">
                 <span className="font-mono text-gray-400 shrink-0 w-6 text-right">{idx + 1}.</span>

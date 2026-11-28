@@ -325,9 +325,9 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
         "Stage 4 & 5: Scanning WebMCP tools, Server Card & logging public record...",
       ];
 
-  async function handleScan(targetDomain?: string) {
+  async function handleScan(targetDomain?: string): Promise<ScanReport | null> {
     const target = (targetDomain ?? domainInput).trim();
-    if (!target) return;
+    if (!target) return null;
     setDomainInput(target);
     setMode("clinic");
     setLoading(true);
@@ -349,17 +349,22 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
       const data = await res.json();
       if (!res.ok || data?.error) {
         setError(data?.error || (isZh ? "诊断失败，请检查域名是否可访问" : "Scan failed"));
+        return null;
       } else if (data?.report) {
-        setReport(data.report as ScanReport);
+        const scanned = data.report as ScanReport;
+        setReport(scanned);
         // 只发域名：report.domain 是服务端规范过的主机名（不带协议、路径、参数、端口）；finalUrl 是完整网址，不发
-        track("ai_readiness_scan", { domain: (data.report as ScanReport).domain });
+        track("ai_readiness_scan", { domain: scanned.domain });
         setPreviousScore(typeof data.previousScore === "number" ? data.previousScore : null);
         setScoreDelta(typeof data.scoreDelta === "number" ? data.scoreDelta : null);
         setActiveLevel(null);
         refreshDashboard(publicSearchQuery);
+        return scanned;
       }
+      return null;
     } catch (e) {
       setError(e instanceof Error ? e.message : isZh ? "网络请求异常" : "Network error");
+      return null;
     } finally {
       clearInterval(timer);
       setLoading(false);
@@ -578,7 +583,7 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
               </p>
             </div>
 
-            {/* WebMCP 声明式搜索框 */}
+            {/* WebMCP 声明式搜索框（遵循 Chrome 149 Declarative API：toolname + tooldescription + toolautosubmit + SubmitEvent.respondWith） */}
             <form
               {...({
                 toolname: "scan_ai_readiness",
@@ -589,11 +594,40 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
               aria-label={isZh ? "AI 就绪度网站体检表单" : "AI readiness domain scan form"}
               onSubmit={(e) => {
                 e.preventDefault();
-                handleScan();
+                const formData = new FormData(e.currentTarget);
+                const submittedDomain = String(formData.get("domain") || domainInput).trim();
+                const scanPromise = handleScan(submittedDomain);
+                const nativeEvt = e.nativeEvent as Event & {
+                  agentInvoked?: boolean;
+                  respondWith?: (p: Promise<unknown>) => void;
+                };
+                if (nativeEvt.agentInvoked && typeof nativeEvt.respondWith === "function") {
+                  nativeEvt.respondWith(
+                    scanPromise.then((res) =>
+                      res
+                        ? {
+                            domain: res.domain,
+                            score: res.score,
+                            grade: res.grade,
+                            passedChecks: res.checks.filter((c) => c.status === "pass").length,
+                            totalChecks: res.checks.length,
+                            topIssues: res.checks
+                              .filter((c) => c.status !== "pass")
+                              .slice(0, 5)
+                              .map((c) => ({ key: c.key, status: c.status, summary: c.summary })),
+                            reportUrl: `https://jasonzhu.ai/${lang}/go-global/ai-readiness`,
+                          }
+                        : { error: "Scan failed or domain was empty." }
+                    )
+                  );
+                }
               }}
               className="flex flex-col sm:flex-row gap-3"
             >
               <div className="relative flex-1 flex items-center rounded-2xl bg-white/95 text-gray-900 shadow-inner focus-within:ring-2 focus-within:ring-blue-400">
+                <label htmlFor="clinic-domain-input" className="sr-only">
+                  {isZh ? "输入要体检的网站域名" : "Website domain to scan"}
+                </label>
                 <span className="pl-4 pr-2 text-sm font-mono text-gray-400 select-none" aria-hidden="true">
                   https://
                 </span>
@@ -1450,7 +1484,11 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
                 aria-label={isZh ? "开启掉分提醒邮件订阅表单" : "Score alert email subscription form"}
                 className="flex gap-2"
               >
+                <label htmlFor="clinic-monitor-email" className="sr-only">
+                  {isZh ? "接收复诊提醒的邮箱" : "Email address for re-scan alerts"}
+                </label>
                 <input
+                  id="clinic-monitor-email"
                   type="email"
                   required
                   aria-label={isZh ? "接收复诊提醒的邮箱" : "Email address for re-scan alerts"}
@@ -1744,7 +1782,11 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
               </p>
             </div>
             <div className="flex gap-2 sm:w-80">
+              <label htmlFor="clinic-public-search" className="sr-only">
+                {isZh ? "按域名检索公开病历档案库" : "Filter public clinic records by domain"}
+              </label>
               <input
+                id="clinic-public-search"
                 type="search"
                 aria-label={isZh ? "按域名检索公开病历档案库" : "Filter public clinic records by domain"}
                 value={publicSearchQuery}

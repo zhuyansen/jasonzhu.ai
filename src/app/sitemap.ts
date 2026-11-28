@@ -140,7 +140,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const lang of LANGS) {
       entries.push({
         url: `${SITE_URL}/${lang}/prompts/claude-opus-5-5/${c.id}`,
-        lastModified: new Date(opus.updatedAt),
+        // 用单条作品真实收录/发布时间，不跟整库 opus.updatedAt 每天全量刷新（遵循 Google 反伪造日期原则）
+        lastModified: new Date(c.addedAt || c.postedAt || opus.updatedAt),
         changeFrequency: "monthly",
         priority: 0.6,
       });
@@ -153,7 +154,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const lang of LANGS) {
       entries.push({
         url: `${SITE_URL}/${lang}/prompts/chatgpt-images-2-6/${c.id}`,
-        lastModified: new Date(c.addedAt || images.updatedAt || Date.now()),
+        lastModified: new Date(c.addedAt || c.postedAt || images.updatedAt),
         changeFrequency: "monthly",
         priority: 0.6,
       });
@@ -166,7 +167,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const lang of LANGS) {
       entries.push({
         url: `${SITE_URL}/${lang}/prompts/gemini-4/${c.id}`,
-        lastModified: new Date(c.addedAt || gemini.updatedAt || Date.now()),
+        lastModified: new Date(c.addedAt || c.postedAt || gemini.updatedAt),
         changeFrequency: "monthly",
         priority: 0.6,
       });
