@@ -1,10 +1,20 @@
 ---
 title: "OpenAI Agents SDK 大升级：把 Harness 和 Sandbox 做进 SDK，和 Anthropic 路线相反"
 date: "2026-04-17"
+updated: "2026-11-28"
 category: "AI Agent"
 tags: ["AI Agent", "OpenAI", "Anthropic", "SDK", "Harness", "开发者工具"]
 excerpt: "OpenAI 给 Agents SDK 做了一次大升级，核心是把 harness 和 sandbox 做进了 SDK。Anthropic Claude Agent SDK 走的路线刚好是对立的方向——一个「帮你搭好」，一个「给你工具箱」。"
 ---
+
+**2026-11-28 实测补充（选型边界与供应链安全红线）**：我在企业 AI 工程工作坊与自身自动化流水线里长期对比 OpenAI Agents SDK 与 Claude Agent SDK 两条路线，发现真正决定团队能不能稳定跑进生产的，不只是 Harness 是托管还是自搭，而是**外部 Skills/MCP 挂载前的安全隔离**。我们公开发布的 130,173 个开源 Agent Skill 静态审计研究（工作论文 DOI：`10.5281/zenodo.24420919`，详见 [开源研究与数据集](/zh/research)）实测显示，即便是 ≥5 Star 的热门仓库，也有 **3.3%（约 1/30）** 触发了高危安全评级。
+
+| 路线对比 | 托管型（OpenAI Agents SDK） | 工具箱型（Anthropic Claude Agent SDK） |
+| --- | --- | --- |
+| 适合谁 | 想快速接入多模型 + 云端 Sandbox，不想自己维护状态与重试的小团队 | 需要强定制工程红线、接管本地 CLI/CI 工作流与审计日志的研发团队 |
+| **慎选边界** | 强合规内网或需要完全掌控执行层观测日志时**不适合**全托管 | 如果团队没有明确的代码审查与 Skill 白名单规范，放权给本地 Agent 风险高 |
+
+如果你也在评估企业级 Agent 落地架构或网站被 AI 爬虫/Agent 抓取与引用的实测表现，可结合 [AI 爬虫与引用月度数据](/zh/research/ai-crawlers) 查看，或通过 [合作与联系入口](/zh/contact) 交流具体场景。
 
 OpenAI 在 2026 年 4 月 15 日给 Agents SDK 做了一次大升级，核心是把 harness 和 sandbox 这两件事做进了 SDK。过去开发 agent 要自己 wire agent loop、自己维护 tool integration、自己处理 retry 和 state，现在这些全由 SDK 托管。Anthropic Claude Agent SDK 走的路线刚好是对立的方向
 

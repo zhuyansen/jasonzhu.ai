@@ -108,7 +108,7 @@ Wise 要求上传的文件必须为清晰的 **PDF、JPEG 或 PNG**（高分辨�
 - [年审 + 零申报：自己办省一半费用](/zh/blog/uk-company-annual-review-tax-filing)
 - [年审实战 Timeline：£228 全程 + 省税信息差](/zh/blog/uk-company-annual-review-timeline-checklist)
 
-如果你还在对比英国公司、美国 LLC 与香港公司的开户和收款全链路，可以直接看 [海外开户与主体指南](/zh/go-global/open-account)；如果在实操中遇到银行 KYC 或出海落地卡点，也欢迎加入 [GoSail Club 启航会](/zh/club)，和正在跑通海外收款的独立开发者交流真实踩坑经验。
+如果你还在对比英国公司、美国 LLC 与香港公司的开户和收款全链路，可以直接看 [出海实战指南总枢纽](/zh/go-global) 与 [海外开户与主体指南](/zh/go-global/open-account)；如果在实操中遇到银行 KYC 或出海落地卡点，也欢迎加入 [GoSail Club 启航会](/zh/club)，和正在跑通海外收款的独立开发者交流真实踩坑经验。
 
 ---
 

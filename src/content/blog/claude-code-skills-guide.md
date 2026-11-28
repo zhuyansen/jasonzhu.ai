@@ -1,10 +1,19 @@
 ---
 title: "Claude Code Skills 实用指南：提升开发效率的秘密武器"
 date: "2026-03-25"
+updated: "2026-11-28"
 category: "教程"
 tags: ["Claude Code", "Skills", "AI编程"]
-excerpt: "深入解析Claude Code的Skills系统，包括Design Skills评测、SEO审计、代码质量红线等实用技巧。"
+excerpt: "深入解析Claude Code的Skills系统，包括Design Skills评测、SEO审计、代码质量红线与2026年11月实测安全边界。"
 ---
+
+**2026-11-28 实测更新（JasonZhu.AI 一手数据与选型边界）**：我自己在团队培训与建站实操中长期重度使用 Claude Code Skills，并在 2026 年完成了 130,173 个开源 Agent Skill 仓库的静态安全扫描（Zenodo 开放数据集 DOI：`10.5281/zenodo.21292798`，详见 [开源研究与数据集](/zh/research)）。实测发现：**在 21,582 个 ≥5 Star 的热门仓库中，仍有 3.3%（约每 30 个就有 1 个）触发了 UNSAFE/REJECT 安全告警**（5–20 Star 仓高风险率 3.8%，1,000+ Star 降至 0.4%）。
+
+| 核心维度（2026-11 动态口径） | 实测结论 | 适用边界（什么时候别乱装） |
+| --- | --- | --- |
+| 开源 Skills 生态规模 | AgentSkillsHub 已收录 285,000+，其中 144,000+ 完成安全分级 | **不适合**在生产环境未经审计直接安装低 Star 第三方 Skill |
+| SEO / GEO 审计类 Skill | 结合免费 [AI 就绪度 26 项体检工具](/zh/go-global/ai-readiness) 可一键查技术债 | 仅靠纯 Prompt 体检容易产生假 PASS，必须配合规则脚本核验 |
+| 企业团队引入方式 | 先在仓库落地 `CLAUDE.md` 红线 + 精选 3–5 个白名单 Skill | 团队超过 5 人需统一权限与审查流程，可参考 [企业工作坊与联系入口](/zh/contact) |
 
 ## 什么是 Claude Code Skills？
 

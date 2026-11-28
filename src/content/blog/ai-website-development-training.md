@@ -139,7 +139,10 @@ AI 默认只追求“让当前这次对话的需求跑通”，不会主动替�
 - [Skill、Harness、记忆、安全：60 篇文章和 20 个项目之后，我们画出了 AI Agent 的完整拼图](/zh/blog/ai-agent-complete-picture)
 - [同名不同命：两个 SEO Audit Skills 的定位差异与推荐](/zh/blog/two-seo-audit-skills-comparison)
 - [企业 AI 培训与定制化技术咨询服务](/zh/services)
+- [AI 就绪度 26 项免费体检工具（网站 SEO / GEO 实测）](/zh/go-global/ai-readiness)
+- [AI 爬虫与引用月度实测数据](/zh/research/ai-crawlers)
 - [GoSail 会员俱乐部：Skills 套件、出海手册与闭门实操会](/zh/club)
+- [预约企业内训或 1v1 沟通（交付边界与联系入口）](/zh/contact)
 
 ---
 

@@ -254,4 +254,4 @@ JasonZhu.AI的搭建证明了一件事：
 
 ---
 
-💡 **如果你也想搭建类似的个人品牌网站，欢迎参考这篇文章的技术方案，或通过[服务页面](/zh/services)联系我咨询。**
+💡 **如果你也想搭建类似的个人品牌网站，欢迎参考这篇文章的技术方案，用免费的 [AI 就绪度 26 项体检工具](/zh/go-global/ai-readiness) 自测上线质量，查看本站 [开源研究数据集](/zh/research) 与 [AI 爬虫与引用月度数据](/zh/research/ai-crawlers)，或通过 [服务页面](/zh/services) / [联系入口](/zh/contact) 咨询。**

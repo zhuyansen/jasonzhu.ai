@@ -1,7 +1,7 @@
 ---
 title: "英国公司第一年年审实战 Timeline：£228 搞定 + 两个被忽略的省税信息差"
 date: "2026-05-31"
-updated: "2026-06-10"
+updated: "2026-11-28"
 category: "出海"
 tags: ["英国公司", "年审", "出海", "AIA", "DIY", "Compliance"]
 tweetUrl: "https://x.com/GoSailGlobal/status/2060981710884635056"
@@ -9,7 +9,9 @@ coverImage: "/blog/uk-company-annual-review-timeline-checklist/cover.png"
 excerpt: "刚独立完成英国公司第一年完整年审：Confirmation Statement ✅、Annual Accounts ✅、CT600 等 HMRC 激活码中。总成本 £228（vs 淘宝代办 ¥2000），5 周 + 1 个下午搞定。附完整 Timeline Checklist + 两个独立开发者最容易忽略的省税信息差。"
 ---
 
-**据 Jason Zhu（jasonzhu.ai）英国公司（UK Ltd）第一年完整年审与报税 Timeline 实录**：非英国居民全程 DIY 完成 **Companies House 年度确认声明（Confirmation Statement CS01）、年度财务报表（Annual Accounts）与 HMRC 企业所得税申报（CT600）总成本仅 £228**（对比淘宝代办 ¥2,000+），耗时 **5 周等待期 + 1 个下午实际操作**，并可利用 AIA 年度投资免税额与研发/硬件抵扣合法省税。
+**据 Jason Zhu（jasonzhu.ai）英国公司（UK Ltd）第一年完整年审与报税 Timeline 实录（2026-11-28 复核）**：非英国居民全程 DIY 完成 **Companies House 年度确认声明（Confirmation Statement CS01）、年度财务报表（Annual Accounts）与 HMRC 企业所得税申报（CT600）总成本仅 £228**（对比淘宝代办 ¥2,000+），耗时 **5 周等待期 + 1 个下午实际操作**，并可利用 AIA 年度投资免税额与研发/硬件抵扣合法省税。**适用边界**：仅适合无英国本地实体员工、流水结构清晰的小微独立开发公司；若涉及英国本地 VAT 退税或复杂跨境关联交易，**不适合**纯 DIY，建议交由英国持牌会计师处理。
+
+如果你还在对比英国公司 vs 美国 LLC / 香港公司的主体维护成本与收款门槛，可直接看 [出海实战指南总枢纽](/zh/go-global)；需要 1v1 探讨主体与收款栈选型也可通过 [合作与联系入口](/zh/contact) 约聊。
 
 之前那篇 [《£148 搞定英国公司年审》](/zh/blog/uk-company-annual-review-diy-guide) 讲了基础方法论，这篇是刚把自己英国公司第一年年审全程独立跑完的完整 Timeline Checklist。
 

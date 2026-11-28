@@ -198,8 +198,15 @@ def audit_post_text(slug: str, md_text: str, frozen_paths: set[str] | None = Non
 
     fm, body = split_frontmatter(md_text)
     title = fm.get("title") or fm.get("titleEn") or slug
-    desc = fm.get("description") or fm.get("descriptionEn") or ""
-    date_str = fm.get("updatedAt") or fm.get("date") or ""
+    desc = fm.get("description") or fm.get("descriptionEn") or fm.get("excerpt") or ""
+    date_str = fm.get("updated") or fm.get("updatedAt") or fm.get("date") or ""
+
+    # 0. GrowthX Discern 事故防护闸门：硬拦截未删提示词/占位符泄漏
+    leak_pat = re.compile(
+        r"(\[Human review\b|\[TODO\b|\[需核实|\[待补充|\[INSERT_|Lorem ipsum|\{\{TODO)",
+        re.I,
+    )
+    placeholder_leaks = leak_pat.findall(body)
 
     # 切出开篇（前 ~900 字符 ≈ 英文 150–250 词 / 中文 350–450 字）
     clean_body = strip_md_noise(body).strip()
@@ -227,7 +234,6 @@ def audit_post_text(slug: str, md_text: str, frozen_paths: set[str] | None = Non
 
     # 4. 原创截图 / 图表（2.4x）
     images = re.findall(r"!\[([^\]]*)\]\(([^)]+)\)", body)
-    # 排除纯封面/无意义文件名，统计正文图数量
     has_screenshots = len(images) >= 1
 
     # 5. 决策边界 / 80-20 独家判断（防换品牌名测试失分）
@@ -251,6 +257,8 @@ def audit_post_text(slug: str, md_text: str, frozen_paths: set[str] | None = Non
     missing = [k for k, v in checks.items() if not v]
     if is_frozen:
         action = "FROZEN（2027-01-01 前冻结，仅观测不改稿）"
+    elif placeholder_leaks:
+        action = f"BLOCK_LEAK（拦截未删占位符/提示词：{', '.join(placeholder_leaks[:3])}）"
     elif unique_count >= 4 and topic_res["business_potential_score"] >= 2:
         action = "PASS（商业潜力 + ≥4 种独有素材达标）"
     elif topic_res["business_potential_score"] <= 1:
@@ -267,6 +275,7 @@ def audit_post_text(slug: str, md_text: str, frozen_paths: set[str] | None = Non
         "primary_pillar": topic_res["primary_pillar"],
         "target_money_pages": topic_res["target_money_pages"],
         "unique_evidence_count": unique_count,
+        "placeholder_leaks": placeholder_leaks,
         "checks": checks,
         "image_count": len(images),
         "action": action,

@@ -1,15 +1,20 @@
 ---
 title: "同名不同命：两个SEO Audit Skills的定位差异与推荐"
 date: "2026-04-14"
+updated: "2026-11-28"
 category: "AI工具"
 tags: ["Claude Code", "Skills", "SEO", "Agent"]
-excerpt: "Claude Code Skills生态越来越丰富，连skill都开始重名了。两个都叫seo-audit的skill，定位和实现思路完全不同，这里做个对比推荐。"
+excerpt: "Claude Code Skills生态越来越丰富，连skill都开始重名了。本文对比两个同名seo-audit skill，并补充2026年11月16项植错测试站实测边界。"
 slug: "two-seo-audit-skills-comparison"
 ---
 
 # 同名不同命：两个SEO Audit Skills的定位差异与推荐
 
 > 来源：[@GoSailGlobal](https://x.com/GoSailGlobal/status/2043971983772397720)
+
+**2026-11-28 实测更新（16 项植错沙盒横评与选型边界）**：这篇文章写于 2026 年 4 月。到了 2026 年 11 月，我在维护 [出海实战指南总枢纽](/zh/go-global) 里的 293 个 SEO Skill / GEO 工具合集时，专门建了一个埋有 **16 处真实 SEO 故障**（HTTP 头 `noindex`、hreflang 指向 404、`robots.txt` 封锁目录死链、错误 canonical 等）的 9 页测试站逐一跑过实测：**13 个参测工具里有 6 个出现了虚假「PASS」误报**，3 个死守 `robots.txt` 漏查拦截目录；仅 `aaron-marketing-skills` 做到 16/16 全检出且 0 误报，`squirrelscan`（本地 350+ 规则）与 `marketingskills` 均检出 15/16。
+
+- **适用边界（什么时候别只靠单个 Skill）**：纯 LLM 驱动的审计很容易把没爬到的项误报成正常；如果是给独立站或出海 SaaS 做上线前/AI 引用体检，建议先用免费的 [AI 就绪度 26 项体检工具](/zh/go-global/ai-readiness) 跑一次确定性检查，再对照 [AI 爬虫与引用月度实测数据](/zh/research/ai-crawlers) 看真实抓取与引用差；需要整站 SEO/GEO 诊断也可直接通过 [联系入口](/zh/contact) 沟通。
 
 Skill多了，还会重名。
 

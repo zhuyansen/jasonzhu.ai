@@ -60,6 +60,8 @@ excerpt: "英国公司年审+零申报淘宝报价2000，自己通过1stFormatio
 - [£148 搞定年审：DIY vs 淘宝同口径对比](/zh/blog/uk-company-annual-review-diy-guide)
 - [年审实战 Timeline：£228 全程 + 省税信息差](/zh/blog/uk-company-annual-review-timeline-checklist)
 
+延伸阅读：如果你也在对比英国公司、美国 LLC 与香港公司的注册维护成本及收款栈选型，可以直接查看 [出海实战指南总枢纽](/zh/go-global)；有具体主体与合规问题也可通过 [联系入口](/zh/contact) 交流。
+
 ---
 
 **撰稿人**: [Jason Zhu](https://x.com/GoSailGlobal) | [原文链接](https://x.com/GoSailGlobal/status/2036410947762528571)

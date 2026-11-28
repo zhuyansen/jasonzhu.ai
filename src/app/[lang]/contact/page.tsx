@@ -253,6 +253,71 @@ export default async function ContactPage({
         </div>
       </div>
 
+      <section
+        aria-label={isZh ? "交付周期、透明边界与白帽原则" : "Scope, Timelines & White-Hat Guardrails"}
+        className="rounded-xl border border-gray-200 bg-white p-6 mb-6 space-y-4"
+      >
+        <h2 className="text-lg font-bold text-gray-900">
+          {isZh ? "交付周期、公开标价与白帽边界" : "Deliverables, Timelines & White-Hat Guardrails"}
+        </h2>
+        <div className="overflow-x-auto">
+          <table className="w-full text-left text-xs sm:text-sm border-collapse">
+            <thead>
+              <tr className="border-b border-gray-200 text-gray-700">
+                <th className="py-2 pr-3 font-semibold">{isZh ? "合作形式" : "Engagement"}</th>
+                <th className="py-2 pr-3 font-semibold">{isZh ? "典型周期" : "Typical Timeline"}</th>
+                <th className="py-2 pr-3 font-semibold">{isZh ? "核心交付物" : "Concrete Deliverables"}</th>
+                <th className="py-2 font-semibold">{isZh ? "价格透明度" : "Pricing"}</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-100 text-gray-600">
+              <tr>
+                <td className="py-2.5 pr-3 font-medium text-gray-900">
+                  {isZh ? "GoSail Club 启航会" : "GoSail Club Membership"}
+                </td>
+                <td className="py-2.5 pr-3">{isZh ? "按年（即开即用）" : "Annual (instant access)"}</td>
+                <td className="py-2.5 pr-3">
+                  {isZh ? "出海实战手册、Skills 工具包、闭门复盘与社群问答" : "Going-global playbooks, skills kit, teardown sessions & community"}
+                </td>
+                <td className="py-2.5 font-mono text-gray-900">
+                  {isZh ? "公开明码 ¥365/年" : "Published: ¥365/yr"}
+                </td>
+              </tr>
+              <tr>
+                <td className="py-2.5 pr-3 font-medium text-gray-900">
+                  {isZh ? "企业 AI 实战工作坊" : "Enterprise AI Workshop"}
+                </td>
+                <td className="py-2.5 pr-3">{isZh ? "1–5 天（≥50% 现场实操）" : "1–5 days (≥50% hands-on)"}</td>
+                <td className="py-2.5 pr-3">
+                  {isZh ? "定制课程大纲、Claude Code / Cursor 工程红线（CLAUDE.md）、团队 Skills 与工作流闭环" : "Tailored syllabus, CLAUDE.md quality guardrails, team skills & live workflow setup"}
+                </td>
+                <td className="py-2.5">
+                  {isZh ? "按人数与天数邮件 24h 内给区间" : "Range quoted within 24h by team size & days"}
+                </td>
+              </tr>
+              <tr>
+                <td className="py-2.5 pr-3 font-medium text-gray-900">
+                  {isZh ? "出海收款 / SEO & GEO 诊断" : "Going-Global / SEO & GEO Advisory"}
+                </td>
+                <td className="py-2.5 pr-3">{isZh ? "单次 1v1 或 4–12 周项目" : "1v1 session or 4–12 week sprint"}</td>
+                <td className="py-2.5 pr-3">
+                  {isZh ? "主体与 MoR 净到手对比方案、AI 引擎多轮抽样基线、可核验改稿与外联清单" : "Entity/MoR payout roadmap, multi-engine AI citation baseline & verifiable editorial/PR backlog"}
+                </td>
+                <td className="py-2.5">
+                  {isZh ? "按范围明码报价，监测算力透明拆项" : "Scoped flat fee; API/monitoring usage itemized"}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="text-xs text-gray-500 leading-relaxed pt-1">
+          <strong className="text-gray-800">{isZh ? "白帽底线（明确不做）：" : "White-Hat Guardrails (What We Never Do): "}</strong>
+          {isZh
+            ? "不卖/不买付费外链、不搭 PBN 站群、不刷 Reddit/论坛水军、不承诺不可控的单日排名或虚假保底曝光；所有内容上线前均需人工核验数字与事实来源。"
+            : "No paid backlink schemes, no PBNs, no undisclosed Reddit/forum astroturfing, and no fake single-day ranking guarantees. Every empirical claim is source-checked before publication."}
+        </p>
+      </section>
+
       <div className="rounded-xl border border-gray-200 bg-white p-6 mb-6 space-y-4">
         <h2 className="text-lg font-bold text-gray-900">
           {isZh ? "发邮件前可以顺带说明" : "Before You Write: Quick Checklist"}
