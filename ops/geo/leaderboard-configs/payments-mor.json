@@ -1,0 +1,34 @@
+{
+  "id": "payments-mor",
+  "title_en": "Indie & AI SaaS Payments / MoR AI Visibility Index",
+  "title_zh": "独立开发 / AI SaaS 收款与 MoR 平台英文 AI 推荐月榜",
+  "subtitle_en": "Monthly multi-round sampling across ChatGPT, Perplexity, Gemini, and Google AI Mode on real cross-border SaaS payment & Merchant of Record buyer questions.",
+  "subtitle_zh": "基于海外真实英文收款与 Merchant of Record 采购提问，跨 ChatGPT、Perplexity、Gemini 与 Google AI Mode 多轮采样，追踪各收款平台在 AI 答案中的真实推荐率与波动区间。",
+  "cadence": "monthly",
+  "affiliated_brands": ["jasonzhu.ai"],
+  "question_filter_prefixes": ["real-pay-", "grid-pay-ai-", "grid-pay-course-"],
+  "questions": [
+    {"id": "real-pay-china-founder", "category": "Cross-Border Onboarding", "question": "What is the best Merchant of Record or payment platform for a Chinese indie founder selling an AI SaaS globally?"},
+    {"id": "real-pay-tax-headaches", "category": "MoR vs Stripe", "question": "Best Merchant of Record for indie SaaS to handle global VAT and sales tax automatically in 2026"},
+    {"id": "real-pay-creem-vs-dodo", "category": "MoR Comparison", "question": "Creem vs Dodo Payments vs Paddle for a $20/month AI SaaS subscription: fees and payout comparison"},
+    {"id": "mor-04", "category": "Lemon Squeezy Migration", "question": "Best Lemon Squeezy alternatives in 2026 for indie SaaS and digital products"},
+    {"id": "mor-05", "category": "AI SaaS Billing", "question": "Which payment platform has the highest adoption among solo AI SaaS founders in 2026?"},
+    {"id": "mor-06", "category": "No-LLC Onboarding", "question": "Can an individual indie developer without a US LLC accept Stripe or MoR subscription payments globally?"},
+    {"id": "mor-07", "category": "Pricing & Net Payout", "question": "Compare net take-home payout on a $20 SaaS subscription across Paddle, Polar, Creem, Dodo Payments, and Stripe"},
+    {"id": "mor-08", "category": "Alipay & WeChat Pay", "question": "Which Merchant of Record platforms support Alipay, WeChat Pay, and global credit cards for SaaS?"},
+    {"id": "mor-09", "category": "Open-Source / Dev Tools", "question": "Best developer-friendly Merchant of Record for open-source SaaS and CLI tools"},
+    {"id": "mor-10", "category": "Chargeback & Risk", "question": "Best payment processor for high-growth AI wrapper SaaS to reduce Stripe freeze and chargeback risk"}
+  ],
+  "brands": [
+    {"id": "stripe", "name": "Stripe", "origin": "global_incumbent", "category": "PSP", "domains": ["stripe.com"], "aliases": ["stripe", "stripe atlas", "stripe billing"]},
+    {"id": "paddle", "name": "Paddle", "origin": "global_incumbent", "category": "MoR", "domains": ["paddle.com"], "aliases": ["paddle"]},
+    {"id": "lemon-squeezy", "name": "Lemon Squeezy", "origin": "global_incumbent", "category": "MoR (Winding Down 2027)", "domains": ["lemonsqueezy.com"], "aliases": ["lemon squeezy", "lemonsqueezy"]},
+    {"id": "dodo-payments", "name": "Dodo Payments", "origin": "challenger", "category": "MoR", "domains": ["dodopayments.com"], "aliases": ["dodo payments", "dodopayments"]},
+    {"id": "polar", "name": "Polar", "origin": "challenger", "category": "MoR", "domains": ["polar.sh"], "aliases": ["polar.sh", "polar"]},
+    {"id": "creem", "name": "Creem", "origin": "challenger", "category": "MoR", "domains": ["creem.io"], "aliases": ["creem.io", "creem"]},
+    {"id": "waffo", "name": "Waffo", "origin": "cn_global", "category": "MoR / Cross-Border", "domains": ["waffo.com"], "aliases": ["waffo", "waffo pancake"]},
+    {"id": "gumroad", "name": "Gumroad", "origin": "global_incumbent", "category": "Creator MoR", "domains": ["gumroad.com"], "aliases": ["gumroad"]},
+    {"id": "fastspring", "name": "FastSpring", "origin": "global_incumbent", "category": "Enterprise MoR", "domains": ["fastspring.com"], "aliases": ["fastspring"]},
+    {"id": "paypal", "name": "PayPal", "origin": "global_incumbent", "category": "PSP", "domains": ["paypal.com"], "aliases": ["paypal", "braintree"]}
+  ]
+}

@@ -133,33 +133,61 @@ export default async function ResearchPage({
         <h2 className="text-xl font-bold text-gray-900 mb-5 pb-2 border-b border-gray-200">
           {isEn ? "Live Data (Updated Monthly)" : "持续更新的数据（每月）"}
         </h2>
-        <Link
-          href={`/${lang}/research/ai-crawlers`}
-          className="block p-6 rounded-xl border border-gray-200 bg-white shadow-sm hover:border-blue-300 transition-colors"
-        >
-          <div className="flex flex-wrap items-center gap-2 text-xs text-gray-500 mb-2">
-            <span>
+        <div className="space-y-4">
+          <Link
+            href={`/${lang}/research/ai-crawlers`}
+            className="block p-6 rounded-xl border border-gray-200 bg-white shadow-sm hover:border-blue-300 transition-colors"
+          >
+            <div className="flex flex-wrap items-center gap-2 text-xs text-gray-500 mb-2">
+              <span>
+                {isEn
+                  ? `${fmtDay(crawlerStats.coverage.first_day, "en")} to ${fmtDay(crawlerStats.coverage.last_day, "en")} (UTC)`
+                  : `${crawlerStats.coverage.first_day} 至 ${crawlerStats.coverage.last_day}（UTC）`}
+              </span>
+              <span>·</span>
+              <span>CSV · JSON</span>
+              <span>·</span>
+              <span className="font-mono text-emerald-700">CC-BY-4.0</span>
+            </div>
+            <h3 className="text-lg font-bold text-gray-900 leading-snug mb-2">
               {isEn
-                ? `${fmtDay(crawlerStats.coverage.first_day, "en")} to ${fmtDay(crawlerStats.coverage.last_day, "en")} (UTC)`
-                : `${crawlerStats.coverage.first_day} 至 ${crawlerStats.coverage.last_day}（UTC）`}
+                ? "How AI crawlers read a real indie site, and how often AI answers cite it"
+                : "AI 爬虫怎么读一个真实的独立站，AI 回答又有多常引用它"}
+            </h3>
+            <p className="text-sm text-gray-600 leading-relaxed">
+              {isEn
+                ? `${fmt(crawlerStats.totals.ai_requests)} AI crawler requests to jasonzhu.ai in ${crawlerStats.coverage.days} days: which crawlers came, what they read, how many could be verified against published IP ranges, and how often ChatGPT, Gemini, Google AI Mode and Perplexity cite the site.`
+                : `${crawlerStats.coverage.days} 天里 jasonzhu.ai 收到 ${fmt(crawlerStats.totals.ai_requests)} 次 AI 爬虫请求：哪些爬虫来过、读了什么、多少能用公布的 IP 段核实身份，以及 ChatGPT、Gemini、Google AI Mode、Perplexity 引用本站的比例。`}
+            </p>
+            <span className="inline-block mt-3 text-sm font-medium text-blue-700">{isEn ? "See the data →" : "看数据 →"}</span>
+          </Link>
+
+          <Link
+            href={`/${lang}/research/ai-visibility`}
+            className="block p-6 rounded-xl border border-gray-200 bg-white shadow-sm hover:border-blue-300 transition-colors"
+          >
+            <div className="flex flex-wrap items-center gap-2 text-xs text-gray-500 mb-2">
+              <span>{isEn ? "Track A: SaaS Payments / MoR · Track B: China Global AI Tools" : "选题 A：出海收款 MoR · 选题 B：中国出海 AI 工具"}</span>
+              <span>·</span>
+              <span>CSV</span>
+              <span>·</span>
+              <span className="font-mono text-emerald-700">CC-BY-4.0</span>
+            </div>
+            <h3 className="text-lg font-bold text-gray-900 leading-snug mb-2">
+              {isEn
+                ? "Monthly AI Visibility Index: Who Do AI Answer Engines Actually Recommend?"
+                : "海外英文 AI 推荐月榜：ChatGPT / Perplexity 到底推荐了哪些品牌？"}
+            </h3>
+            <p className="text-sm text-gray-600 leading-relaxed">
+              {isEn
+                ? "Multi-round sampling across frozen English buyer prompts with Wilson 95% confidence intervals, cross-round spread disclosure, zero paid placements, and strict self-rank restraint."
+                : "基于冻结英文买方题库与多轮采样，公开 Wilson 95% 置信区间与跨轮波动区间，零付费上榜且绝不自吹第一。"}
+            </p>
+            <span className="inline-block mt-3 text-sm font-medium text-blue-700">
+              {isEn ? "Open leaderboard & frozen prompts →" : "查看榜单原型与冻结题库 →"}
             </span>
-            <span>·</span>
-            <span>CSV · JSON</span>
-            <span>·</span>
-            <span className="font-mono text-emerald-700">CC-BY-4.0</span>
-          </div>
-          <h3 className="text-lg font-bold text-gray-900 leading-snug mb-2">
-            {isEn
-              ? "How AI crawlers read a real indie site, and how often AI answers cite it"
-              : "AI 爬虫怎么读一个真实的独立站，AI 回答又有多常引用它"}
-          </h3>
-          <p className="text-sm text-gray-600 leading-relaxed">
-            {isEn
-              ? `${fmt(crawlerStats.totals.ai_requests)} AI crawler requests to jasonzhu.ai in ${crawlerStats.coverage.days} days: which crawlers came, what they read, how many could be verified against published IP ranges, and how often ChatGPT, Gemini, Google AI Mode and Perplexity cite the site.`
-              : `${crawlerStats.coverage.days} 天里 jasonzhu.ai 收到 ${fmt(crawlerStats.totals.ai_requests)} 次 AI 爬虫请求：哪些爬虫来过、读了什么、多少能用公布的 IP 段核实身份，以及 ChatGPT、Gemini、Google AI Mode、Perplexity 引用本站的比例。`}
-          </p>
-          <span className="inline-block mt-3 text-sm font-medium text-blue-700">{isEn ? "See the data →" : "看数据 →"}</span>
-        </Link>
+          </Link>
+        </div>
       </section>
 
       {/* Working Papers */}
