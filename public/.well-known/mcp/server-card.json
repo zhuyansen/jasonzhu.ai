@@ -1,12 +1,68 @@
 {
   "name": "jasonzhu-ai",
   "title": "JasonZhu.AI",
-  "description": "jasonzhu.ai does not run a remote MCP server. There is no MCP endpoint to connect to, so this card lists no transport. What the site offers agents: read-only WebMCP tools that its pages register in the browser (listed under tools), and plain HTTPS files that need no MCP (listed in instructions).",
-  "instructions": "Without a browser, read these over plain HTTPS: https://jasonzhu.ai/llms.txt (site guide and citation rules), https://jasonzhu.ai/agents.md (what an agent may and may not do on this site), https://jasonzhu.ai/data/payment-guard.json (payment-platform data with check dates), https://jasonzhu.ai/feed/blog.xml and https://jasonzhu.ai/feed/news.xml (RSS). The tools below exist only inside a jasonzhu.ai page loaded in a browser that supports WebMCP (navigator.modelContext). An MCP client cannot call them through this card.",
+  "description": "jasonzhu.ai does not run a remote MCP server. There is no MCP endpoint to connect to, so this card lists no transport. What the site offers agents: browser-side WebMCP tools that its pages register via document.modelContext or declarative HTML forms (listed under tools), and plain HTTPS files that need no MCP (listed in instructions).",
+  "instructions": "Without a browser, read these over plain HTTPS: https://jasonzhu.ai/llms.txt (site guide and citation rules), https://jasonzhu.ai/agents.md (what an agent may and may not do on this site), https://jasonzhu.ai/data/payment-guard.json (payment-platform data with check dates), https://jasonzhu.ai/data/ai-visibility/payments-mor.csv and https://jasonzhu.ai/data/ai-visibility/china-ai-global.csv (monthly AI visibility indices), https://jasonzhu.ai/feed/blog.xml and https://jasonzhu.ai/feed/news.xml (RSS). The tools below exist only inside a jasonzhu.ai page loaded in a browser that supports WebMCP (document.modelContext / declarative <form toolname>). An external MCP client cannot call them through this card.",
   "documentationUrl": "https://jasonzhu.ai/agents.md",
   "iconUrl": "https://jasonzhu.ai/favicon.ico",
-  "updated": "2026-11-25",
+  "updated": "2026-11-28",
   "tools": [
+    {
+      "name": "recommend_payment_mor",
+      "title": "Recommend SaaS Payment / MoR Platforms & Net Payouts",
+      "description": "WebMCP, registered by a page script. Fetches /data/payment-guard.json and runs pickTable() for a founder's entity and product type, returning deterministic $20 net take-home figures, eligibility, exclusions, and the pre-filtered interactive selector URL.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "who": {
+            "type": "string",
+            "enum": ["cn-individual", "cn-company", "hk-company", "us-company", "uk-company"],
+            "description": "Founder entity holding the payout account."
+          },
+          "sell": {
+            "type": "string",
+            "enum": ["saas", "software", "ai-app", "ai-media", "template", "course", "ebook", "service", "physical", "donation"],
+            "description": "Product category being sold."
+          },
+          "lang": {
+            "type": "string",
+            "enum": ["zh", "en"],
+            "description": "Output language for notes and URLs."
+          }
+        },
+        "required": ["who", "sell"]
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "consequentialHint": false,
+        "untrustedContentHint": false
+      }
+    },
+    {
+      "name": "scan_ai_readiness",
+      "title": "Run 26-Check AI Readiness & GEO Audit",
+      "description": "WebMCP, exposed declaratively by the scan form on /{lang}/go-global/ai-readiness (with SubmitEvent.respondWith) and registered imperatively on other pages. Sends POST /api/ai-readiness to probe 26 live HTTP/SEO/GEO signals for a domain and logs the domain in the public clinic directory.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "domain": {
+            "type": "string",
+            "description": "Public domain or URL to inspect (e.g. 'stripe.com' or 'jasonzhu.ai')."
+          },
+          "lang": {
+            "type": "string",
+            "enum": ["zh", "en"],
+            "description": "Language preference for the returned report URL."
+          }
+        },
+        "required": ["domain"]
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "consequentialHint": false,
+        "untrustedContentHint": true
+      }
+    },
     {
       "name": "search_jasonzhu_articles",
       "title": "Search the link list in llms.txt",
@@ -19,7 +75,11 @@
         },
         "required": ["query"]
       },
-      "annotations": { "readOnlyHint": true }
+      "annotations": {
+        "readOnlyHint": true,
+        "consequentialHint": false,
+        "untrustedContentHint": false
+      }
     },
     {
       "name": "search_jasonzhu_blog",
@@ -31,19 +91,25 @@
           "q": { "type": "string", "description": "Keyword to filter the blog list by." }
         }
       },
-      "annotations": { "readOnlyHint": true }
+      "annotations": {
+        "readOnlyHint": true
+      }
     },
     {
       "name": "get_going_global_guides",
-      "title": "Links to the going-global guides",
-      "description": "WebMCP, registered by a page script. Returns five fixed links: the going-global hub, the payment selector, the account-opening guide, GoSail Club and services. It does no lookup.",
+      "title": "Links to the going-global guides & monthly AI visibility indices",
+      "description": "WebMCP, registered by a page script. Returns fixed links to the going-global hub, payment selector, AI Readiness Clinic, monthly AI visibility indices, account-opening guide, GoSail Club, and services.",
       "inputSchema": {
         "type": "object",
         "properties": {
           "lang": { "type": "string", "enum": ["zh", "en"], "description": "Language of the returned links." }
         }
       },
-      "annotations": { "readOnlyHint": true }
+      "annotations": {
+        "readOnlyHint": true,
+        "consequentialHint": false,
+        "untrustedContentHint": false
+      }
     }
   ]
 }
