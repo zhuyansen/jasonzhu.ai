@@ -23,7 +23,7 @@ export async function generateMetadata({
         languages: {
           zh: "https://jasonzhu.ai/zh/contact",
           en: "https://jasonzhu.ai/en/contact",
-          "x-default": "https://jasonzhu.ai/zh/contact",
+          "x-default": "https://jasonzhu.ai/en/contact",
         },
       },
     },

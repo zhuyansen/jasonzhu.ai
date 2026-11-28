@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       : "SEO built as a water system: demand, links and AI citations flow in, the brand entity stores it, technical work and internal links carry it, the result page lets it out, and the data says what to fix next. Every v8 rule comes from a mistake we made.",
     alternates: {
       canonical: `${SITE_URL}/${lang}${GO_GLOBAL}${PATH}`,
-      languages: { zh: `${SITE_URL}/zh${GO_GLOBAL}${PATH}`, en: `${SITE_URL}/en${GO_GLOBAL}${PATH}`, "x-default": `${SITE_URL}/zh${GO_GLOBAL}${PATH}` },
+      languages: { zh: `${SITE_URL}/zh${GO_GLOBAL}${PATH}`, en: `${SITE_URL}/en${GO_GLOBAL}${PATH}`, "x-default": `${SITE_URL}/en${GO_GLOBAL}${PATH}` },
     },
   }, rawLang);
 }

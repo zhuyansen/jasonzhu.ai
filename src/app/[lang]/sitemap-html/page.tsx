@@ -27,7 +27,7 @@ export async function generateMetadata({
         languages: {
           zh: "https://jasonzhu.ai/zh/sitemap-html",
           en: "https://jasonzhu.ai/en/sitemap-html",
-          "x-default": "https://jasonzhu.ai/zh/sitemap-html",
+          "x-default": "https://jasonzhu.ai/en/sitemap-html",
         },
       },
     },

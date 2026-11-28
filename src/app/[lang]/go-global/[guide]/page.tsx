@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "@/components/Link";
 import SubscribeForm from "@/components/SubscribeForm";
-import { heardFromProps } from "@/lib/frozen-pages";
+import { heardFromProps, isFrozenPath } from "@/lib/frozen-pages";
 import { getDictionary, type Locale } from "@/lib/dictionaries";
 import { GO_GLOBAL, groupPosts, postTitle } from "@/lib/go-global";
 import { GUIDES, guideBySlug, type Guide, type GuideItem, type GuideMine, type GuideSection } from "@/lib/go-global-guides";
@@ -37,10 +37,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const guide = guideBySlug(slug, lang);
   if (!guide) return {};
   const url = (l: string) => `${SITE_URL}/${l}${GO_GLOBAL}/${guide.slug}`;
+  // 冻结页（如 /en/go-global/payment-risk）保持原有 x-default 不变，其余指南页统一指向 /en
+  const xDefault = isFrozenPath(`/en${GO_GLOBAL}/${guide.slug}`) ? url("zh") : url("en");
   return withSocialCards({
     title: guide.title,
     description: guide.description,
-    alternates: { canonical: url(lang), languages: { zh: url("zh"), en: url("en"), "x-default": url("zh") } },
+    alternates: { canonical: url(lang), languages: { zh: url("zh"), en: url("en"), "x-default": xDefault } },
   }, rawLang);
 }
 

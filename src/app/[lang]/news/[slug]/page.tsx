@@ -82,7 +82,7 @@ export async function generateMetadata({
         ? {
             zh: `${SITE_URL}/zh/news/${slug}`,
             en: `${SITE_URL}/en/news/${slug}`,
-            "x-default": `${SITE_URL}/zh/news/${slug}`,
+            "x-default": `${SITE_URL}/en/news/${slug}`,
           }
         : {
             zh: `${SITE_URL}/zh/news/${slug}`,

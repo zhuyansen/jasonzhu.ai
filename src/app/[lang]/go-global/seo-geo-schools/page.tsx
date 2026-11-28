@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       : "SEO and GEO practitioners placed by on-site vs off-site and long-term vs short-term: each school's core claim, what you can borrow, and which claims to check first.",
     alternates: {
       canonical: `${SITE_URL}/${lang}${GO_GLOBAL}${PATH}`,
-      languages: { zh: `${SITE_URL}/zh${GO_GLOBAL}${PATH}`, en: `${SITE_URL}/en${GO_GLOBAL}${PATH}`, "x-default": `${SITE_URL}/zh${GO_GLOBAL}${PATH}` },
+      languages: { zh: `${SITE_URL}/zh${GO_GLOBAL}${PATH}`, en: `${SITE_URL}/en${GO_GLOBAL}${PATH}`, "x-default": `${SITE_URL}/en${GO_GLOBAL}${PATH}` },
     },
   }, rawLang);
 }

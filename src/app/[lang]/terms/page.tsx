@@ -20,7 +20,7 @@ export async function generateMetadata({
       languages: {
         zh: "https://jasonzhu.ai/zh/terms",
         en: "https://jasonzhu.ai/en/terms",
-        "x-default": "https://jasonzhu.ai/zh/terms",
+        "x-default": "https://jasonzhu.ai/en/terms",
       },
     },
   }, rawLang);

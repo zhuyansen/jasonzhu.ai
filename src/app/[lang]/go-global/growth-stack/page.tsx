@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       : "For building, payments, technical SEO, links and GEO, and data: the tools we keep, add and retire at each stage, plus the 11 data feeds to have before asking AI for growth decisions.",
     alternates: {
       canonical: `${SITE_URL}/${lang}${GO_GLOBAL}${PATH}`,
-      languages: { zh: `${SITE_URL}/zh${GO_GLOBAL}${PATH}`, en: `${SITE_URL}/en${GO_GLOBAL}${PATH}`, "x-default": `${SITE_URL}/zh${GO_GLOBAL}${PATH}` },
+      languages: { zh: `${SITE_URL}/zh${GO_GLOBAL}${PATH}`, en: `${SITE_URL}/en${GO_GLOBAL}${PATH}`, "x-default": `${SITE_URL}/en${GO_GLOBAL}${PATH}` },
     },
   }, rawLang);
 }

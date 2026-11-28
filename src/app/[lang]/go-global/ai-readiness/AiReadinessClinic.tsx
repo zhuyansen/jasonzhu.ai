@@ -906,6 +906,44 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
                 </div>
               </div>
             </div>
+
+            {typeof report.coreScore === "number" && (
+              <div className="mt-4 pt-4 border-t border-gray-200/70 grid gap-2.5 sm:grid-cols-2 text-xs">
+                <div className="flex items-center justify-between gap-2 rounded-xl bg-white/90 border border-emerald-200/80 px-3.5 py-2.5">
+                  <div>
+                    <span className="font-bold text-gray-900">
+                      {isZh ? "核心基础分（22 项必做）" : "Core AI Search Score (22 checks)"}
+                    </span>
+                    <p className="text-[11px] text-gray-500 mt-0.5">
+                      {isZh
+                        ? "直接影响 Google / ChatGPT / Perplexity 抓取、渲染与实体识别"
+                        : "Directly governs crawl access, SSR readability, sitemaps & JSON-LD"}
+                    </p>
+                  </div>
+                  <span className="font-mono font-black text-emerald-700 text-sm whitespace-nowrap">
+                    {report.coreScore}/100
+                    <span className="text-[11px] font-normal text-gray-400 ml-1">
+                      ({report.coreEarned}/{report.coreMax})
+                    </span>
+                  </span>
+                </div>
+                <div className="flex items-center justify-between gap-2 rounded-xl bg-white/90 border border-violet-200/80 px-3.5 py-2.5">
+                  <div>
+                    <span className="font-bold text-gray-900">
+                      {isZh ? "前沿实验标准（4 项选做）" : "Experimental Standards (4 optional)"}
+                    </span>
+                    <p className="text-[11px] text-gray-500 mt-0.5">
+                      {isZh
+                        ? "llms.txt (7) + WebMCP (6) + MCP Server Card (4) — 目前非搜索引擎硬门槛"
+                        : "llms.txt (7) + WebMCP (6) + MCP Server Card (4) — not yet required for citations"}
+                    </p>
+                  </div>
+                  <span className="font-mono font-black text-violet-700 text-sm whitespace-nowrap">
+                    {report.experimentalEarned ?? 0}/{report.experimentalMax ?? 17}
+                  </span>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* ─────────────────────────────────────────────────────────────────
@@ -1520,8 +1558,13 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
                                   {passed ? "✓" : partial ? "!" : "✕"}
                                 </span>
                                 <div>
-                                  <p className="text-sm font-bold text-gray-900">
-                                    {chk.title[lang]}
+                                  <p className="text-sm font-bold text-gray-900 flex flex-wrap items-center gap-2">
+                                    <span>{chk.title[lang]}</span>
+                                    {chk.experimental && (
+                                      <span className="rounded-full bg-violet-100 text-violet-800 px-2 py-0.5 text-[10px] font-bold">
+                                        {isZh ? "实验标准 · 非必选" : "Experimental · Optional"}
+                                      </span>
+                                    )}
                                   </p>
                                   <p className="text-xs text-gray-600 mt-0.5 leading-relaxed">
                                     {chk.whyItMatters[lang]}
@@ -1868,8 +1911,8 @@ export default function AiReadinessClinic({ lang }: { lang: "zh" | "en" }) {
           </h2>
           <p className="text-sm text-gray-600 leading-relaxed">
             {isZh
-              ? "越靠前的关卡分值越重（第 1 关门卫 20 分 + 第 2 关无 JS 可读 18 分 + 第 3 关地图指路 16 分 = 基础生命线 54 分），越靠后的关卡决定了你能否从 75 分普通站晋级为 95+ 分的 AI Agent 原生标杆站。7 类 26 项和分值对齐 Hostinger 的免费 AI Visibility Checker，检测代码和文字是我们自己写的，和 Hostinger 无关；命令行版开源在 GitHub（zhuyansen/ai-visibility-checker）："
-              : "Early levels carry the highest weight (Crawl 20 + Readability 18 + Findability 16 = 54 baseline pts), while Levels 6 & 7 elevate you from a 75-pt site to a 95+ Agent-Ready benchmark. The 7 categories, 26 checks and their points follow Hostinger's free AI Visibility Checker; the code and wording are our own, and we are not affiliated with Hostinger. The CLI version is open source on GitHub (zhuyansen/ai-visibility-checker):"}
+              ? "总分 100 分拆成两层：前 22 项为核心必做基础（83 分，折算为独立「核心基础分 /100」，其中第 1 关门卫 20 + 第 2 关无 JS 可读 18 + 第 3 关路牌 16 = 基础生命线 54 分，直接决定 Google / ChatGPT / Perplexity 能不能抓取、看懂和引用你）；另外 4 项（llms.txt 7 分 + WebMCP 6 分 + MCP Server Card 4 分 = 17 分）已单独标注为「实验标准」，目前并非主流搜索引擎硬门槛，避免误导独立站盲目追 100 分。7 类 26 项框架参考 Hostinger 免费 AI Visibility Checker，检测代码与口径为本站独立实现；旧命令行版开源在 GitHub（zhuyansen/ai-visibility-checker）："
+              : "The 100-point rubric is split into two transparent tiers: 22 Core AI Search checks (83 pts, also reported as a standalone 0–100 Core Score — Crawl 20 + Readability 18 + Findability 16 = 54 baseline pts that directly affect Google, ChatGPT, and Perplexity indexing), plus 4 Experimental Agent Standards (17 pts: llms.txt 7 + WebMCP 6 + MCP Server Card 4), explicitly badged as optional so founders don't chase experimental checkboxes before fixing core crawl/SSR blockers. The 7-category layout follows Hostinger's free AI Visibility Checker; the scanner implementation and tiered scoring are our own (CLI archived at github.com/zhuyansen/ai-visibility-checker):"}
           </p>
         </div>
 

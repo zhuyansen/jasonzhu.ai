@@ -14,6 +14,13 @@
 
 export type CheckStatus = "passed" | "partial" | "failed";
 
+export const EXPERIMENTAL_CHECK_KEYS: ReadonlySet<string> = new Set([
+  "agent_native.llms_txt",
+  "agent_native.llms_well_formed",
+  "agent_interaction.webmcp_tools",
+  "agent_interaction.mcp_server_card",
+]);
+
 export interface CheckResult {
   key: string;
   categoryKey: string;
@@ -22,6 +29,7 @@ export interface CheckResult {
   status: CheckStatus;
   score: number;
   maxScore: number;
+  experimental?: boolean;
   detail: string;
   prompt: { zh: string; en: string } | null;
 }
@@ -78,6 +86,13 @@ export interface ScanReport {
   finalUrl: string;
   scannedAt: string;
   score: number;
+  /** 22 项核心必做检查（83 分）折算的 0–100 核心分，与 4 项实验标准解耦 */
+  coreScore?: number;
+  coreEarned?: number;
+  coreMax?: number;
+  /** 4 项前沿实验标准（llms.txt 7 分 + WebMCP 6 分 + MCP Server Card 4 分 = 17 分） */
+  experimentalEarned?: number;
+  experimentalMax?: number;
   grade: "A" | "B" | "C" | "D" | "F";
   label: { zh: string; en: string };
   categories: CategoryScore[];
@@ -1252,8 +1267,14 @@ export async function runAiReadinessScan(rawDomain: string): Promise<ScanReport>
   });
 
   // ═══════════════════════════════════════════════════════════════════════
-  // 汇总 7 大关卡与总分
+  // 汇总 7 大关卡与总分（拆出 22 项核心基础 83 分 vs 4 项前沿实验标准 17 分）
   // ═══════════════════════════════════════════════════════════════════════
+  for (const c of checks) {
+    if (EXPERIMENTAL_CHECK_KEYS.has(c.key)) {
+      c.experimental = true;
+    }
+  }
+
   const categories: CategoryScore[] = CATEGORIES.map((cat) => {
     const catChecks = checks.filter((c) => c.categoryKey === cat.key);
     const earned = catChecks.reduce((sum, c) => sum + c.score, 0);
@@ -1271,6 +1292,13 @@ export async function runAiReadinessScan(rawDomain: string): Promise<ScanReport>
   });
 
   const totalScore = categories.reduce((sum, c) => sum + c.earned, 0);
+  const coreChecks = checks.filter((c) => !c.experimental);
+  const experimentalChecks = checks.filter((c) => c.experimental);
+  const coreEarned = coreChecks.reduce((sum, c) => sum + c.score, 0);
+  const coreMax = coreChecks.reduce((sum, c) => sum + c.maxScore, 0);
+  const coreScore = coreMax > 0 ? Math.round((coreEarned / coreMax) * 100) : 0;
+  const experimentalEarned = experimentalChecks.reduce((sum, c) => sum + c.score, 0);
+  const experimentalMax = experimentalChecks.reduce((sum, c) => sum + c.maxScore, 0);
   const { grade, label } = scoreToGrade(totalScore);
   const passedKeys = checks.filter((c) => c.status === "passed").map((c) => c.key);
   const failedChecks = checks.filter((c) => c.status !== "passed");
@@ -1507,6 +1535,11 @@ export async function runAiReadinessScan(rawDomain: string): Promise<ScanReport>
     finalUrl: homeRes.finalUrl || baseUrl,
     scannedAt: new Date().toISOString(),
     score: totalScore,
+    coreScore,
+    coreEarned,
+    coreMax,
+    experimentalEarned,
+    experimentalMax,
     grade,
     label,
     categories,
@@ -1653,6 +1686,7 @@ export interface CheckCatalogItem {
   key: string;
   level: number;
   maxScore: number;
+  experimental?: boolean;
   title: { zh: string; en: string };
 }
 
@@ -1677,11 +1711,11 @@ export const CHECK_CATALOG: Record<string, CheckCatalogItem> = {
   "commercial_legibility.trust_pages": { key: "commercial_legibility.trust_pages", level: 5, maxScore: 4, title: { zh: "关于我们、联系方式与隐私/条款链接齐全", en: "About, contact and legal pages linked" } },
   "commercial_legibility.machine_contact": { key: "commercial_legibility.machine_contact", level: 5, maxScore: 4, title: { zh: "机器可读的真实联系信息（mailto + contactPoint）", en: "Machine-readable contact details" } },
   "commercial_legibility.pricing": { key: "commercial_legibility.pricing", level: 5, maxScore: 4, title: { zh: "免登录、免 JS 即可读取价格或免费档位说明", en: "Prices reachable without JS or login" } },
-  "agent_native.llms_txt": { key: "agent_native.llms_txt", level: 6, maxScore: 4, title: { zh: "提供 /llms.txt AI 专属索引文件", en: "llms.txt served" } },
-  "agent_native.llms_well_formed": { key: "agent_native.llms_well_formed", level: 6, maxScore: 3, title: { zh: "llms.txt 符合标准 Markdown 语法结构", en: "llms.txt well-formed" } },
+  "agent_native.llms_txt": { key: "agent_native.llms_txt", level: 6, maxScore: 4, experimental: true, title: { zh: "提供 /llms.txt AI 专属索引文件", en: "llms.txt served" } },
+  "agent_native.llms_well_formed": { key: "agent_native.llms_well_formed", level: 6, maxScore: 3, experimental: true, title: { zh: "llms.txt 符合标准 Markdown 语法结构", en: "llms.txt well-formed" } },
   "agent_native.markdown_negotiation": { key: "agent_native.markdown_negotiation", level: 6, maxScore: 2, title: { zh: "支持 Accept: text/markdown 内容协商直出", en: "Markdown served on request" } },
   "agent_native.link_headers": { key: "agent_native.link_headers", level: 6, maxScore: 1, title: { zh: "HTTP Link 响应头暴露 llms.txt 与 MCP 发现入口", en: "Link headers" } },
-  "agent_interaction.webmcp_tools": { key: "agent_interaction.webmcp_tools", level: 7, maxScore: 6, title: { zh: "暴露 WebMCP 浏览器端 Agent 可调用工具", en: "WebMCP tools exposed" } },
-  "agent_interaction.mcp_server_card": { key: "agent_interaction.mcp_server_card", level: 7, maxScore: 4, title: { zh: "发布 /.well-known/mcp/server-card.json", en: "MCP Server Card published" } },
+  "agent_interaction.webmcp_tools": { key: "agent_interaction.webmcp_tools", level: 7, maxScore: 6, experimental: true, title: { zh: "暴露 WebMCP 浏览器端 Agent 可调用工具", en: "WebMCP tools exposed" } },
+  "agent_interaction.mcp_server_card": { key: "agent_interaction.mcp_server_card", level: 7, maxScore: 4, experimental: true, title: { zh: "发布 /.well-known/mcp/server-card.json", en: "MCP Server Card published" } },
 };
 

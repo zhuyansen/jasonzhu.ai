@@ -59,12 +59,6 @@ export async function middleware(request: NextRequest) {
   const url = request.nextUrl.clone();
   url.pathname = pathname === "/" ? "/en" : `/${defaultLocale}${pathname}`;
   const res = NextResponse.rewrite(url);
-  if (pathname === "/") {
-    res.headers.set(
-      "Link",
-      '</llms.txt>; rel="describedby"; type="text/plain", </.well-known/mcp/server-card.json>; rel="service-desc"; type="application/json"'
-    );
-  }
   return authRefresh(res);
 }
 
