@@ -14,6 +14,20 @@ on:
       - "public/data/opus-prompts/**"
       - "public/data/image-prompts/**"
       - "public/data/gemini-prompts/**"
+      - "src/generated/ai-visibility-leaderboard.json"
+      - "src/lib/guides/**"
+      - "src/lib/go-global*.ts"
+      - "src/app/[lang]/research/**"
+      - "src/app/[lang]/go-global/**"
+      - "src/app/[lang]/tools/**"
+      - "src/app/[lang]/contact/**"
+      - "src/app/[lang]/services/**"
+      - "src/app/[lang]/about/**"
+      - "src/app/[lang]/handbook/**"
+      - "src/app/[lang]/ai-learning-guide/**"
+      - "src/app/[lang]/backlink-spam-list/**"
+      - "src/app/[lang]/club/page.tsx"
+      - "src/app/[lang]/prompts/claude-animation/**"
   workflow_run:
     # 注意：GitHub workflow_run 按中文/全角括号工作流名匹配不可靠（2026-11-06 起提示词库每日收录从未触发过本工作流，导致 Bing 报 IndexNow 红警告）。
     # 因此 opus-prompts-daily.yml / seller-weekly.yml / translate-content.yml 改为 push 后直接调 scripts/indexnow.mjs；

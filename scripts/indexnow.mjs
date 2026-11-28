@@ -47,8 +47,10 @@ function isNewsDigestIndexable(file) {
 function loadSkippedPromptUrls() {
   const skipped = new Set();
   try {
-    const noindex = JSON.parse(fs.readFileSync("src/content/opus-prompts/noindex.json", "utf8"));
-    for (const [libSlug, ids] of Object.entries(noindex || {})) {
+    const raw = JSON.parse(fs.readFileSync("src/content/opus-prompts/noindex.json", "utf8"));
+    const libs = raw?.libraries && typeof raw.libraries === "object" ? raw.libraries : raw;
+    for (const [libSlug, entry] of Object.entries(libs || {})) {
+      const ids = Array.isArray(entry) ? entry : entry?.noindex;
       if (!Array.isArray(ids)) continue;
       for (const id of ids) {
         skipped.add(`${SITE_URL}/zh/prompts/${libSlug}/${id}`);
@@ -75,7 +77,10 @@ const SKIPPED_PROMPT_URLS = loadSkippedPromptUrls();
 function urlsForFile(file) {
   const both = (p) => [`${SITE_URL}/zh${p}`, `${SITE_URL}/en${p}`];
   const blog = file.match(/^src\/content\/blog\/([^/_][^/]*?)(\.en)?\.mdx?$/);
-  if (blog) return [...both(`/blog/${blog[1]}`), ...both("/blog"), ...both("")];
+  if (blog) {
+    const extra = blog[1].startsWith("chuhai-weekly-") ? both("/go-global/weekly") : [];
+    return [...both(`/blog/${blog[1]}`), ...both("/blog"), ...both(""), ...extra];
+  }
   const news = file.match(/^src\/content\/news\/(\d{4}-\d{2}-\d{2})\.md$/);
   if (news) {
     // 只有带人工点评的快讯才进 sitemap；无点评的快讯 noindex，只推首页即可，避免白等 15 分钟
@@ -90,10 +95,35 @@ function urlsForFile(file) {
     return [...both(PROMPT_LIBS["image-prompts"]), ...both("/prompts")];
   if (file === "src/content/gemini-prompts/gemini-4.json")
     return [...both(PROMPT_LIBS["gemini-prompts"]), ...both("/prompts")];
+  if (file.startsWith("src/app/[lang]/prompts/claude-animation/"))
+    return [...both("/prompts/claude-animation"), ...both("/prompts")];
   // 作品详情页按 public/data/<库>/<id>.json 推：生成脚本只给有提示词的作品写这个文件，正好是有详情页、进 sitemap 的那些
   // （Claude 库没提示词的详情页 noindex，图片库没提示词的没有详情页、卡片直链 X）。文件只含提示词全文，数据核验改播放量不会动它。
   const work = file.match(/^public\/data\/(opus-prompts|image-prompts|gemini-prompts)\/(\d{15,})\.json$/);
   if (work) return both(`${PROMPT_LIBS[work[1]]}/${work[2]}`).filter((u) => !SKIPPED_PROMPT_URLS.has(u));
+
+  // AI Visibility 月榜数据更新
+  if (file === "src/generated/ai-visibility-leaderboard.json")
+    return [...both("/research/ai-visibility"), ...both("/research")];
+
+  // 出海专题指南数据文件（src/lib/guides/<slug>.ts 或 src/lib/guides/en/<slug>.ts）
+  const guide = file.match(/^src\/lib\/guides\/(?:en\/)?([a-z0-9-]+)\.ts$/);
+  if (guide && guide[1] !== "types" && guide[1] !== "index")
+    return [...both(`/go-global/${guide[1]}`), ...both("/go-global")];
+  if (file === "src/lib/go-global.ts" || file === "src/lib/go-global-guides.ts")
+    return both("/go-global");
+
+  // 核心静态/专题路由页面（research / go-global / tools / contact / services / about / handbook / ai-learning-guide / backlink-spam-list / club）
+  const appPage = file.match(
+    /^src\/app\/\[lang\]\/(research|go-global|tools|contact|services|about|handbook|ai-learning-guide|backlink-spam-list|club)(?:\/(.*))?\/[^/]+\.tsx?$/
+  );
+  if (appPage) {
+    const [, section, subpath] = appPage;
+    if (subpath && subpath.includes("[")) return both(`/${section}`);
+    const route = subpath ? `/${section}/${subpath}` : `/${section}`;
+    const parent = subpath && (section === "research" || section === "go-global") ? both(`/${section}`) : [];
+    return [...both(route), ...parent];
+  }
   return [];
 }
 
