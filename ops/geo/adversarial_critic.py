@@ -357,15 +357,73 @@ def live_probe_competitors(api_key: str, question_text: str, probe_model: str = 
     }
 
 
+def hank_followup_probe(
+    api_key: str,
+    question_text: str,
+    initial_answer: str,
+    comp_urls: list[str],
+    probe_model: str = DEFAULT_PROBE_MODEL,
+) -> dict:
+    """Hank Chang 三层追问法（不直接问「为什么没推我」，先扒推竞品的理由，再定位错在 W.W.P / C.S.T / T.PR 哪一圈）。"""
+    comp_hosts = [host_of(u) for u in comp_urls[:4] if host_of(u)]
+    comp_list = ", ".join(comp_hosts) if comp_hosts else "the cited sources"
+    total_cost = 0.0
+
+    # Layer 2: 为什么推荐/引用这几家竞品？
+    q2 = (
+        f"In your previous answer, why did you choose to recommend or cite {comp_list}? "
+        "Specifically list which concrete facts, third-party reviews, benchmarks, or page sections made you trust them."
+    )
+    r2 = openrouter_chat(
+        api_key=api_key,
+        model=probe_model,
+        messages=[
+            {"role": "user", "content": question_text},
+            {"role": "assistant", "content": initial_answer[:1200] or "(cited external sources)"},
+            {"role": "user", "content": q2},
+        ],
+        max_tokens=550,
+        temperature=0.1,
+    )
+    total_cost += r2["cost_usd"]
+
+    # Layer 3: 为什么没提 JasonZhu.AI？
+    q3 = (
+        "Why was JasonZhu.AI (jasonzhu.ai, which publishes independent indie SaaS payment benchmarks, "
+        "going-global guides, and Zenodo datasets) not included in your recommendations or citations for this question? "
+        "Be specific about whether the gap is unclear brand positioning, missing on-page facts/structure, or lack of third-party corroboration."
+    )
+    r3 = openrouter_chat(
+        api_key=api_key,
+        model=probe_model,
+        messages=[
+            {"role": "user", "content": question_text},
+            {"role": "assistant", "content": initial_answer[:1000] or "(cited external sources)"},
+            {"role": "user", "content": q2},
+            {"role": "assistant", "content": r2["content"][:900]},
+            {"role": "user", "content": q3},
+        ],
+        max_tokens=550,
+        temperature=0.1,
+    )
+    total_cost += r3["cost_usd"]
+
+    return {
+        "why_competitors": r2["content"][:1200].strip(),
+        "why_not_us": r3["content"][:1200].strip(),
+        "cost_usd": total_cost,
+    }
+
+
 # ───────────── CE-GAD Pairwise Adversarial Critique ─────────────
 
-CRITIC_SYSTEM = """你是 GEO（Generative Engine Optimization）对抗判别器，遵循 CE-GAD（On-Policy Generative Adversarial Distillation）剪枝原则。
+CRITIC_SYSTEM = """你是 GEO（Generative Engine Optimization）对抗判别器，遵循 CE-GAD（On-Policy Generative Adversarial Distillation）剪枝原则，并结合 Hank Chang「三圈归因模型（W.W.P / C.S.T / T.PR）」。
 你会拿到：
 1. 一道真实用户提问（AI 搜索引擎回答该题时，现场读过 jasonzhu.ai 的页面，但最终引用了竞品页面，没有引用 jasonzhu.ai）；
 2. 我方页面正文（jasonzhu.ai）；
-3. 实际被引的 Top 1–2 竞品页面正文（以及实时 AI 回答摘要/被引原句）。
+3. 实际被引的 Top 1–2 竞品页面正文（以及实时 AI 回答摘要/被引原句/三层追问实录）。
 
-你的任务：找出 AI 为什么选竞品而不选我方的**决定性差异**，并只输出 **≤3 条最小、最高信噪比的改稿补丁**。
+你的任务：先判定失分根因落在「三个圈」的哪一圈（`wwp` 内圈定位与 Title / `cst` 中圈内容结构与技术 / `tpr` 外圈第三方背书与清单 / `mixed` 混合），再找出 AI 选竞品而不选我方的**决定性差异**，只输出 **≤3 条最小、最高信噪比的改稿补丁**。
 
 严格规则（违反即不合格）：
 - 严禁空泛 SEO 废话（例如「增加关键词」「写得更详细」「提升权威感」「优化可读性」「加入更多案例」）。
@@ -377,6 +435,8 @@ CRITIC_SYSTEM = """你是 GEO（Generative Engine Optimization）对抗判别器
 
 输出 JSON schema：
 {
+  "circle_root_cause": "wwp | cst | tpr | mixed",
+  "circle_diagnosis": "1 句说明失分主要在哪个圈（内圈 W.W.P 定位不清 / 中圈 C.S.T 缺事实或结构难抽 / 外圈 T.PR 缺第三方推荐清单佐证）",
   "why_not_cited": "1–2 句直击要害：AI 读了我方页却选竞品的真正原因",
   "competitor_winning_pattern": "竞品被 AI 当证据抽取的 1–2 个关键事实/结构特征",
   "brand_swap_risk": "high | medium | low",
@@ -411,7 +471,7 @@ def parse_json_object(raw: str) -> dict:
 
 
 def normalize_critique(obj: dict) -> dict:
-    """强制剪枝：最多保留 MAX_PATCHES 条，校验字段完整性（含换品牌名测试字段）。"""
+    """强制剪枝：最多保留 MAX_PATCHES 条，校验字段完整性（含换品牌名测试与三圈归因字段）。"""
     patches = []
     for i, p in enumerate((obj.get("patches") or [])[:MAX_PATCHES], start=1):
         if not isinstance(p, dict):
@@ -429,7 +489,12 @@ def normalize_critique(obj: dict) -> dict:
     risk = str(obj.get("brand_swap_risk") or "medium").strip().lower()
     if risk not in ("high", "medium", "low"):
         risk = "medium"
+    circle = str(obj.get("circle_root_cause") or "cst").strip().lower()
+    if circle not in ("wwp", "cst", "tpr", "mixed"):
+        circle = "cst"
     return {
+        "circle_root_cause": circle,
+        "circle_diagnosis": str(obj.get("circle_diagnosis") or "").strip(),
         "why_not_cited": str(obj.get("why_not_cited") or "").strip(),
         "competitor_winning_pattern": str(obj.get("competitor_winning_pattern") or "").strip(),
         "brand_swap_risk": risk,
@@ -440,7 +505,8 @@ def normalize_critique(obj: dict) -> dict:
 
 def run_pairwise_critique(api_key: str, model: str, question_id: str, question_text: str,
                           our_page: dict, comp_pages: list[dict], ai_answer_excerpt: str = "",
-                          gemini_quotes: list[str] | None = None) -> tuple[dict, float]:
+                          gemini_quotes: list[str] | None = None,
+                          followup: dict | None = None) -> tuple[dict, float]:
     comp_blocks = []
     for idx, cp in enumerate(comp_pages, start=1):
         if cp.get("ok"):
@@ -458,6 +524,12 @@ def run_pairwise_critique(api_key: str, model: str, question_id: str, question_t
         user_parts.append(f"## 实时 AI 回答摘要（用于观察 AI 实际抽取了什么信息结构）:\n{ai_answer_excerpt}")
     if gemini_quotes:
         user_parts.append("## 面板记录的竞品被引原句 (#:~:text=):\n" + "\n".join(f"- {q}" for q in gemini_quotes))
+    if followup:
+        user_parts.append(
+            "## Hank 三层追问实录（用于精准定位错在内圈 W.W.P / 中圈 C.S.T / 外圈 T.PR）:\n"
+            f"- **Layer 2（AI 为什么推荐/引用这些竞品）**：{followup.get('why_competitors', '')}\n"
+            f"- **Layer 3（AI 为什么没提 JasonZhu.AI）**：{followup.get('why_not_us', '')}"
+        )
 
     total_cost = 0.0
     last_err: Exception | None = None
@@ -557,6 +629,12 @@ def select_targets(read_cited_data: dict, all_qs: dict[str, dict], hard_frozen: 
 
 def render_markdown(date_str: str, verify_date: str, model: str, probe_model: str | None,
                     total_cost: float, diagnostics: list[dict], skipped: list[dict]) -> str:
+    circle_badges = {
+        "wwp": "🎯 内圈 W.W.P（定位/Title/首页定海神针）",
+        "cst": "🧱 中圈 C.S.T（内容事实/页面结构/技术）",
+        "tpr": "🌐 外圈 T.PR（第三方榜单/社区/外部背书）",
+        "mixed": "🔀 混合（站内 C.S.T + 站外 T.PR 共同缺口）",
+    }
     lines = [
         f"# CE-GAD 对抗式引用诊断报告（{date_str}）",
         "",
@@ -584,11 +662,17 @@ def render_markdown(date_str: str, verify_date: str, model: str, probe_model: st
         lines.append(f"- **真实提问**：{d['question_text']}")
         comps = [f"{cp['url']} ({'已抓正文 ' + str(cp['chars']) + ' 字' if cp['ok'] else '抓正文受限: ' + str(cp.get('error'))})" for cp in d["competitors"]]
         lines.append(f"- **实际被引 Top 竞品**：" + ("；".join(comps) if comps else "（无）"))
+        c_badge = circle_badges.get(c.get("circle_root_cause", "cst"), circle_badges["cst"])
+        lines.append(f"- **三圈归因（W.W.P / C.S.T / T.PR）**：{c_badge}" + (f" — {c['circle_diagnosis']}" if c.get("circle_diagnosis") else ""))
         lines.append(f"- **不引根因**：{c['why_not_cited']}")
         lines.append(f"- **竞品胜出特征**：{c['competitor_winning_pattern']}")
         risk_badge = {"high": "🔴 HIGH（极易被换名/幽灵引用）", "medium": "🟡 MEDIUM", "low": "🟢 LOW（强独家锚点）"}.get(c.get("brand_swap_risk", "medium"), "🟡 MEDIUM")
         swap_reason = c.get("brand_swap_reason") or "未返回说明"
         lines.append(f"- **换品牌名测试（Brand-Swap Test）**：{risk_badge} — {swap_reason}")
+        if d.get("followup"):
+            fu = d["followup"]
+            lines.append(f"- **Hank Layer 2（为什么推竞品）**：{fu['why_competitors'][:320]}")
+            lines.append(f"- **Hank Layer 3（为什么没提我们）**：{fu['why_not_us'][:320]}")
         lines.append("")
         for p in c["patches"]:
             badge = " `[需核实数据]`" if p["verify_needed"] else ""
@@ -666,6 +750,17 @@ def cmd_run(a: argparse.Namespace) -> int:
                 comp_urls = probe["cited_urls"]
                 ai_excerpt = probe["answer_excerpt"]
 
+            followup: dict | None = None
+            if a.three_layer and total_cost < a.max_usd:
+                followup = hank_followup_probe(
+                    api_key=api_key,
+                    question_text=qtext,
+                    initial_answer=ai_excerpt,
+                    comp_urls=comp_urls,
+                    probe_model=a.probe_model,
+                )
+                total_cost += followup["cost_usd"]
+
             # 抓取前 2 个可打开的竞品页（最多试 4 个候选 URL）
             comp_pages: list[dict] = []
             failed_comps: list[dict] = []
@@ -689,6 +784,7 @@ def cmd_run(a: argparse.Namespace) -> int:
                 comp_pages=comp_pages,
                 ai_answer_excerpt=ai_excerpt,
                 gemini_quotes=gemini_quotes,
+                followup=followup,
             )
             total_cost += cost
             diagnostics.append({
@@ -703,6 +799,7 @@ def cmd_run(a: argparse.Namespace) -> int:
                 "question_text": qtext,
                 "our_chars": our_page["chars"],
                 "competitors": comp_pages,
+                "followup": followup,
                 "critique": critique,
                 "cost_usd": cost,
             })
@@ -721,6 +818,7 @@ def cmd_run(a: argparse.Namespace) -> int:
             "verify_after": verify_date,
             "model": a.model,
             "probe_mode": "panel-full" if full_data else "live-probe",
+            "three_layer_enabled": bool(a.three_layer),
             "pages_diagnosed": len({d["page"] for d in diagnostics}),
             "questions_diagnosed": len(diagnostics),
             "pages_skipped_frozen": len(skipped),
@@ -793,8 +891,10 @@ def selftest() -> int:
     ], top_k=2)
     assert picked == ["https://paddle.com/blog/mor", "https://www.stripe.com/atlas"], picked
 
-    # 6. 补丁剪枝（强制 ≤3 条）+ 换品牌名测试字段校验
+    # 6. 补丁剪枝（强制 ≤3 条）+ 换品牌名测试 + 三圈归因校验
     norm = normalize_critique({
+        "circle_root_cause": "TPR",
+        "circle_diagnosis": "外圈缺少独立榜单推荐",
         "why_not_cited": "缺关键边界",
         "competitor_winning_pattern": "表格清晰",
         "brand_swap_risk": "HIGH",
@@ -804,22 +904,25 @@ def selftest() -> int:
     })
     assert len(norm["patches"]) == MAX_PATCHES
     assert norm["brand_swap_risk"] == "high"
+    assert norm["circle_root_cause"] == "tpr"
     assert norm["patches"][0]["proprietary_anchor"] == "Zenodo 200k 数据集"
-    fallback_norm = normalize_critique({"why_not_cited": "x", "competitor_winning_pattern": "y", "brand_swap_risk": "invalid", "patches": []})
+    fallback_norm = normalize_critique({"circle_root_cause": "unknown", "why_not_cited": "x", "competitor_winning_pattern": "y", "brand_swap_risk": "invalid", "patches": []})
     assert fallback_norm["brand_swap_risk"] == "medium"
+    assert fallback_norm["circle_root_cause"] == "cst"
 
     print("adversarial_critic selftest ok")
     return 0
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="CE-GAD 对抗式引用诊断（针对非冻结「读了不引」页产出 ≤3 条最小补丁）")
+    ap = argparse.ArgumentParser(description="CE-GAD 对抗式引用诊断（针对非冻结「读了不引」页产出 ≤3 条最小补丁 + Hank 三层追问三圈归因）")
     ap.add_argument("--selftest", action="store_true", help="跑本地单测后退出")
     sub = ap.add_subparsers(dest="cmd")
     r = sub.add_parser("run", help="跑一轮对抗式引用诊断")
     r.add_argument("--read-cited", default="", help="read_vs_cited.py 的公开 JSON（默认最新一份）")
     r.add_argument("--full", default="", help="panel-full.json（生产模式：直接提取真实被引竞品，不另花搜索费）")
     r.add_argument("--live-probe", action="store_true", help="无 panel-full.json 时，用 OpenRouter 联网模型现取 Top 2 竞品")
+    r.add_argument("--three-layer", action="store_true", help="开启 Hank 三层追问法（先问为什么推竞品，再问为什么没提 JasonZhu.AI，受 --max-usd 封顶）")
     r.add_argument("--extra-questions", default="", help="额外补充的非冻结题目 ID（逗号分隔）")
     r.add_argument("--only-chatgpt-reads", action="store_true", help="只跑 ChatGPT 读了不引，不纳入 Claude 高读零引页")
     r.add_argument("--model", default=DEFAULT_MODEL, help=f"判别模型（默认 {DEFAULT_MODEL}）")

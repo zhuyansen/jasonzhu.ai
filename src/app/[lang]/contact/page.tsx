@@ -282,6 +282,14 @@ export default async function ContactPage({
               ? "会员激活、发票或权益问题请备注下单邮箱；学术引用或媒体核对 Zenodo 数据集请直接写明所需字段与截稿日期。"
               : "For GoSail Club membership activation or billing support, include the email used at checkout. For press quotes or academic citations of the Zenodo datasets, mention your deadline and the specific slice you need."}
           </li>
+          <li>
+            <strong className="text-gray-900">
+              {isZh ? "顺手告知你的发现渠道：" : "How you found JasonZhu.AI:"}
+            </strong>{" "}
+            {isZh
+              ? "一句话注明你是从 Google 搜索、ChatGPT / Perplexity / Claude 推荐、X（Twitter）还是朋友介绍找到这里的，帮助我持续改进公开内容与工具。"
+              : "A one-line note on whether you found this site via Google Search, ChatGPT / Perplexity / Claude, X (Twitter), or a referral helps me prioritize which public tools and benchmarks to keep updating."}
+          </li>
         </ul>
       </div>
 

@@ -379,6 +379,8 @@ def render_pitch_draft(opp: dict[str, Any], probe: dict[str, Any] | None = None)
     if topic == "payments":
         is_creem_dodo = ("creem" in joined and "dodo" in joined)
         if is_creem_dodo:
+            angle_name = "Angle 2 · Creem vs. Dodo Real $20 Subscription Net-Take-Home"
+            target_money_url = "https://jasonzhu.ai/en/go-global/payments"
             subject = f"2026 empirical data for your Creem vs. Dodo Payments guide ({host})"
             body = (
                 f"Hi {host} editorial team,\n\n"
@@ -391,10 +393,29 @@ def render_pitch_draft(opp: dict[str, Any], probe: dict[str, Any] | None = None)
                 "Feel free to cite any of the CSV tables directly if helpful—no obligation at all, and happy to pull a custom slice if you update the comparison.\n\n"
                 "Best,\n"
                 "Jason Zhu\n"
-                "Research & Open Datasets: https://jasonzhu.ai/en/research\n"
+                "Live Payment Calculator: https://jasonzhu.ai/en/go-global/payments\n"
+                "Press / Data Inquiries: jason@jasonzhu.ai"
+            )
+        elif opp.get("bucket") == "media_newsletter":
+            angle_name = "Angle 1 · AI SaaS MoR Market Shift Trend"
+            target_money_url = "https://jasonzhu.ai/en/research"
+            subject = f"Data story: AI SaaS concentration on Dodo (29%) / Polar (27%) / Creem (24%) vs. Stripe (7%)"
+            body = (
+                f"Hi {host} team,\n\n"
+                f"Saw your coverage in \"{title}\" ({url}) and thought one counter-intuitive finding from our open dataset might fit a future briefing.\n\n"
+                "Across ~200,000 hosted checkout links across 7 platforms (2023–Oct 2026) archived on Zenodo (CC-BY-4.0, DOI: https://doi.org/10.5281/zenodo.24386242):\n"
+                "- Among new sellers, AI products make up **29%** on Dodo Payments, **27%** on Polar, and **24%** on Creem, vs. **7%** on Stripe (though Stripe still leads in absolute volume at ~7,200 AI sellers).\n"
+                "- With Lemon Squeezy winding down on March 31, 2027, indie SaaS founders are actively migrating.\n"
+                "- Full working paper (DOI: https://doi.org/10.5281/zenodo.24420870) & raw CSVs: https://jasonzhu.ai/en/research\n\n"
+                "Feel free to cite the numbers or email me for a custom slice.\n\n"
+                "Best,\n"
+                "Jason Zhu\n"
+                "Open Benchmarks & Zenodo DOIs: https://jasonzhu.ai/en/research\n"
                 "Press / Data Inquiries: jason@jasonzhu.ai"
             )
         else:
+            angle_name = "Angle 2 · Real $20 Subscription Net-Take-Home Math"
+            target_money_url = "https://jasonzhu.ai/en/go-global/payments"
             subject = f"Open 2026 dataset (200k checkout links + $20 MoR fees) for \"{title[:55]}\""
             body = (
                 f"Hi {host} team,\n\n"
@@ -406,10 +427,12 @@ def render_pitch_draft(opp: dict[str, Any], probe: dict[str, Any] | None = None)
                 "The full PDF working paper (DOI: https://doi.org/10.5281/zenodo.24420870) and raw CSVs are free to cite under CC-BY-4.0. Happy to send a custom cut if useful.\n\n"
                 "Best,\n"
                 "Jason Zhu\n"
-                "Research & Open Datasets: https://jasonzhu.ai/en/research\n"
+                "Live Payment Calculator: https://jasonzhu.ai/en/go-global/payments\n"
                 "Press / Data Inquiries: jason@jasonzhu.ai"
             )
     elif topic == "company":
+        angle_name = "Angle 3 · Cross-Border Entity & Payout Compliance"
+        target_money_url = "https://jasonzhu.ai/en/go-global"
         subject = f"2026 US LLC vs. UK Ltd fee & banking benchmark for {host}"
         body = (
             f"Hi {host} editorial team,\n\n"
@@ -418,23 +441,36 @@ def render_pitch_draft(opp: dict[str, Any], probe: dict[str, Any] | None = None)
             "If you update the guide, feel free to reference any of the fee tables or our 200k-seller payment dataset (Zenodo DOI: https://doi.org/10.5281/zenodo.24386242).\n\n"
             "Best,\n"
             "Jason Zhu\n"
-            "Research & Benchmarks: https://jasonzhu.ai/en/research\n"
+            "Entity & Payment Stack Guide: https://jasonzhu.ai/en/go-global\n"
             "Press / Data Inquiries: jason@jasonzhu.ai"
         )
     elif topic == "skills":
-        subject = f"Open 130K AI Agent Skills security dataset (Zenodo DOI) for {host}"
+        if any(k in joined for k in ("enterprise", "team", "governance", "audit", "training")):
+            angle_name = "Angle 2 · Enterprise AI Agent Governance"
+            target_money_url = "https://jasonzhu.ai/en/services"
+            subject = f"Empirical governance data: 1 in 30 AI agent skills fail static security checks (130K dataset)"
+        elif any(k in joined for k in ("tool", "scanner", "directory", "checker", "mcp")):
+            angle_name = "Angle 3 · Open Developer Security Catalog"
+            target_money_url = "https://jasonzhu.ai/en/go-global/ai-readiness"
+            subject = f"Free 285K AI Agent Skills catalog + 130K Zenodo security dataset for {host}"
+        else:
+            angle_name = "Angle 1 · AI Agent Supply-Chain Risk"
+            target_money_url = "https://jasonzhu.ai/en/research"
+            subject = f"Open 130K AI Agent Skills security dataset (Zenodo DOI) for {host}"
         body = (
             f"Hi {host} team,\n\n"
             f"Enjoyed your coverage in \"{title}\" ({url}). If you ever add empirical security numbers on MCP servers / AI coding agent skills, we published an open CC-BY-4.0 dataset covering 130,173 repositories (July 2026 snapshot, Zenodo DOI: https://doi.org/10.5281/zenodo.21292798; working paper DOI: https://doi.org/10.5281/zenodo.24420919):\n\n"
             "- Among 21,582 repos with 5+ GitHub stars, **3.3% (~1 in 30)** triggered UNSAFE/REJECT static security grades (3.8% for 5–20 stars vs. 0.4% for 1,000+ stars).\n"
-            "- Live catalog (285,000+ indexed, 144,000+ graded): https://agentskillshub.top\n\n"
+            f"- Open study & methodology: {target_money_url} (live catalog of 285,000+ skills at https://agentskillshub.top)\n\n"
             "Free to cite with zero strings attached.\n\n"
             "Best,\n"
             "Jason Zhu\n"
-            "Research & Open Datasets: https://jasonzhu.ai/en/research\n"
+            f"Primary Resource: {target_money_url}\n"
             "Press / Data Inquiries: jason@jasonzhu.ai"
         )
     else:
+        angle_name = "General Open Dataset Pitch"
+        target_money_url = "https://jasonzhu.ai/en/research"
         subject = f"Open empirical dataset for your piece on {host}"
         body = (
             f"Hi {host} team,\n\n"
@@ -460,6 +496,7 @@ def render_pitch_draft(opp: dict[str, Any], probe: dict[str, Any] | None = None)
     return (
         f"### Target: `{host}` — {title}\n\n"
         f"- **目标 URL**：{url}\n"
+        f"- **PR 切入角度（一研三拆）**：`{angle_name}` → 优先导链至 `{target_money_url}`\n"
         f"- **触发题号**：{', '.join(f'`{q}`' for q in opp['questions'])}\n"
         f"- {contact_hint}\n"
         f"- **Subject**：`{subject}`\n\n"

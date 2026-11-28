@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "updated_at": "2026-11-28",
+  "cadence": "quarterly",
+  "notes": "Top 20 high-commercial-intent / JTBD queries across JasonZhu.AI's 4 business pillars. Record quarterly SERP composition (has_ai_overview, dominant_format, top5_domains) and run ops/geo/serp_freshness.py serp-diff to detect intent drift and AIO interception.",
+  "queries": [
+    {"id": "pay-01", "pillar": "payments-entity", "biz_score": 3, "locale": "US", "query": "best merchant of record for ai saas", "target_page": "/en/go-global/payments", "has_ai_overview": null, "dominant_format": "", "top5_domains": []},
+    {"id": "pay-02", "pillar": "payments-entity", "biz_score": 3, "locale": "US", "query": "creem vs dodo payments", "target_page": "/en/go-global/payments", "has_ai_overview": null, "dominant_format": "", "top5_domains": []},
+    {"id": "pay-03", "pillar": "payments-entity", "biz_score": 3, "locale": "US", "query": "lemon squeezy alternatives 2026", "target_page": "/en/go-global/payments", "has_ai_overview": null, "dominant_format": "", "top5_domains": []},
+    {"id": "pay-04", "pillar": "payments-entity", "biz_score": 3, "locale": "US", "query": "polar vs paddle vs creem fees", "target_page": "/en/go-global/payments", "has_ai_overview": null, "dominant_format": "", "top5_domains": []},
+    {"id": "pay-05", "pillar": "payments-entity", "biz_score": 3, "locale": "US", "query": "how can chinese founders accept stripe payments", "target_page": "/en/go-global", "has_ai_overview": null, "dominant_format": "", "top5_domains": []},
+    {"id": "pay-06", "pillar": "payments-entity", "biz_score": 3, "locale": "US", "query": "wyoming llc vs uk ltd for indie saas", "target_page": "/en/go-global", "has_ai_overview": null, "dominant_format": "", "top5_domains": []},
+    {"id": "pay-07", "pillar": "payments-entity", "biz_score": 3, "locale": "CN", "query": "独立开发者出海收款 Stripe MoR 对比", "target_page": "/zh/go-global/payments", "has_ai_overview": null, "dominant_format": "", "top5_domains": []},
+    {"id": "pay-08", "pillar": "payments-entity", "biz_score": 3, "locale": "CN", "query": "中国开发者注册香港公司还是美国LLC开Stripe", "target_page": "/zh/go-global", "has_ai_overview": null, "dominant_format": "", "top5_domains": []},
+    {"id": "pay-09", "pillar": "payments-entity", "biz_score": 3, "locale": "US", "query": "dodo payments vs waffo fees", "target_page": "/en/blog/dodo-payments-waffo-ai-saas-fee-comparison", "has_ai_overview": null, "dominant_format": "", "top5_domains": []},
+    {"id": "pay-10", "pillar": "payments-entity", "biz_score": 3, "locale": "US", "query": "merchant of record supporting alipay wechat pay", "target_page": "/en/go-global/payments", "has_ai_overview": null, "dominant_format": "", "top5_domains": []},
+    {"id": "ent-01", "pillar": "enterprise-ai", "biz_score": 3, "locale": "CN", "query": "企业 AI 实战培训 Claude Code Cursor 内训", "target_page": "/zh/services", "has_ai_overview": null, "dominant_format": "", "top5_domains": []},
+    {"id": "ent-02", "pillar": "enterprise-ai", "biz_score": 3, "locale": "US", "query": "enterprise claude code workshop training", "target_page": "/en/services", "has_ai_overview": null, "dominant_format": "", "top5_domains": []},
+    {"id": "ent-03", "pillar": "enterprise-ai", "biz_score": 3, "locale": "US", "query": "ai search readiness checker tool geo audit", "target_page": "/en/go-global/ai-readiness", "has_ai_overview": null, "dominant_format": "", "top5_domains": []},
+    {"id": "ent-04", "pillar": "enterprise-ai", "biz_score": 2, "locale": "US", "query": "ai crawler traffic vs citations benchmark", "target_page": "/en/research/ai-crawlers", "has_ai_overview": null, "dominant_format": "", "top5_domains": []},
+    {"id": "ent-05", "pillar": "enterprise-ai", "biz_score": 3, "locale": "CN", "query": "出海独立站 GEO 优化 AI搜索引用诊断", "target_page": "/zh/services", "has_ai_overview": null, "dominant_format": "", "top5_domains": []},
+    {"id": "club-01", "pillar": "gosail-club", "biz_score": 3, "locale": "CN", "query": "独立开发者出海实战社群 启航会", "target_page": "/zh/club", "has_ai_overview": null, "dominant_format": "", "top5_domains": []},
+    {"id": "club-02", "pillar": "gosail-club", "biz_score": 2, "locale": "CN", "query": "独立开发出海周刊 实测案例", "target_page": "/zh/go-global/weekly", "has_ai_overview": null, "dominant_format": "", "top5_domains": []},
+    {"id": "res-01", "pillar": "agentskillshub-research", "biz_score": 3, "locale": "US", "query": "ai agent skills security audit benchmark dataset", "target_page": "/en/research", "has_ai_overview": null, "dominant_format": "", "top5_domains": []},
+    {"id": "res-02", "pillar": "agentskillshub-research", "biz_score": 3, "locale": "US", "query": "mcp server skills supply chain security vulnerabilities", "target_page": "/en/research", "has_ai_overview": null, "dominant_format": "", "top5_domains": []},
+    {"id": "res-03", "pillar": "agentskillshub-research", "biz_score": 3, "locale": "US", "query": "indie saas payment platform market share 2026 benchmark", "target_page": "/en/research", "has_ai_overview": null, "dominant_format": "", "top5_domains": []}
+  ]
+}
