@@ -487,25 +487,28 @@ def paired_counts(now: list[dict], base: list[dict], exp: dict, engine: str, cal
     return len(both & set(exp["treated"])), len(both & set(exp["control"]))
 
 
-def measured_noise(now: list[dict], base: list[dict], exp: dict, engine: str, caliber: str = "site_cited") -> tuple[float, int] | None:
+def measured_noise(now: list[dict], base: list[dict], exp: dict, engine: str, caliber: str = "site_cited",
+                   exclude: frozenset = frozenset()) -> tuple[float, int] | None:
     """实测的噪声 (v, 题数)。取不在处理组、两期都有有效回答的题（对照组，加上没分进两组的题），
     每题两期命中率之差的平方，取平均。命中率和 net_change 用的一样：per_question 的「命中/有效」。
-    这些题没为这个实验改过，它们两期之间的变化就是本来的波动。没有这样的题是 None。题按 id 排好再加，重算不变。"""
+    这些题没为这个实验改过，它们两期之间的变化就是本来的波动。没有这样的题是 None。题按 id 排好再加，重算不变。
+    exclude 是别的实验的处理组（2026-11-27 起）：那些题为别的实验改过，它们的变化不是本来的波动，也不算进 v。"""
     now_q, base_q = per_question(now, engine, caliber), per_question(base, engine, caliber)
-    ids = sorted((set(now_q) & set(base_q)) - set(exp["treated"]))
+    ids = sorted((set(now_q) & set(base_q)) - set(exp["treated"]) - set(exclude))
     if not ids:
         return None
     return sum((now_q[q][0] / now_q[q][1] - base_q[q][0] / base_q[q][1]) ** 2 for q in ids) / len(ids), len(ids)
 
 
-def engine_mde(now: list[dict], base: list[dict], exp: dict, engine: str, caliber: str = "site_cited") -> dict | None:
+def engine_mde(now: list[dict], base: list[dict], exp: dict, engine: str, caliber: str = "site_cited",
+               exclude: frozenset = frozenset()) -> dict | None:
     """一家的「要差多少才测得出来」：{nt, nc, v, k} 加上 mde（实测，一个数）或 assumed（假设，FLIP 两头的范围）。
     nt、nc 是 paired_counts 的处理组、对照组题数，有一组是 0 就是 None。k 是算 v 用了几道题。
     k 不到 MIN_NOISE_Q，或者 v = 0（这些题两期一点没变，不等于没有波动，只是没测到），就退回 FLIP 的假设。"""
     nt, nc = paired_counts(now, base, exp, engine, caliber)
     if not nt or not nc:
         return None
-    v, k = measured_noise(now, base, exp, engine, caliber) or (0.0, 0)
+    v, k = measured_noise(now, base, exp, engine, caliber, exclude) or (0.0, 0)
     if k >= MIN_NOISE_Q and v > 0:
         return {"nt": nt, "nc": nc, "v": v, "k": k, "mde": mde(v, nt, nc)}
     return {"nt": nt, "nc": nc, "v": v, "k": k, "assumed": detectable(nt, nc)}
@@ -657,10 +660,61 @@ def engine_table(rows: list[dict], base: list[dict] | None, ids: set | None = No
     return lines
 
 
-def experiment_section(rows: list[dict], base: list[dict], exp: dict) -> list[str]:
-    """对照实验一段：两组各自的命中率和区间、净变化、置换检验 p 值，和以现在的题数要差多少才测得出来（MDE）。
-    MDE 用实测的噪声 v 算（measured_noise），每家一格；某一家测不了才按 FLIP 假设，标「假设」。另给几家合在一起的 v。"""
+PAGE_CALIBER = "page_cited_any_lang"    # 引用了题目自己的目标页（中英文版都算）
+
+
+def target_pages() -> dict[str, str]:
+    """题号 → 目标页（any_lang 之后），几套题合在一起。"""
+    out = {}
+    for path in SETS.values():
+        if path.exists():
+            for q in json.loads(path.read_text(encoding="utf-8"))["questions"]:
+                if q.get("target_url"):
+                    out[q["id"]] = any_lang(norm_url(q["target_url"]))
+    return out
+
+
+def cross_lines(rows: list[dict], exp: dict, others: list[dict], pages: dict[str, str]) -> list[str]:
+    """几个实验同时跑时会不会串：这个实验的题，回答里引用了别的实验处理组的目标页（那些页为别的实验改过）几次。
+    「引用本站」只要引了本站任何一页就算，别的实验改过的页被引用，会被算成这个实验的变化（2026-11-27 起）。"""
+    other_pages = {pages[q] for o in others for q in o["treated"] if q in pages}
+    if not other_pages:
+        return []
+    cells = []
+    for name, ids in (("处理组", set(exp["treated"])), ("对照组", set(exp["control"]))):
+        ok = [r for r in valid(rows) if r["question_id"] in ids]
+        hit = [r for r in ok if {any_lang(u) for u in r.get("our_urls") or []} & (other_pages - {pages.get(r["question_id"])})]
+        cells.append(f"{name} {len(hit)}/{len(ok)} 个有效回答")
+    return [f"跟别的实验串没串：这次回答引用了别的实验处理组的页（那些页为别的实验改过）——{'，'.join(cells)}。"
+            "不是 0 的话，上面「引用本站」的变化里有一部分来自别的实验，以下面「引用对应页面」为准。", ""]
+
+
+def page_lines(rows: list[dict], base: list[dict], exp: dict) -> list[str]:
+    """同一个实验只算「引用对应页面」：题目自己的目标页被引用才算。目标页冻结，别的实验改别的页影响不到它。
+    两期用同一列：基线有「中英文版都算」（page_cited_any_lang，2026-11-22 起才有）就用它，没有就两期都用 page_cited（只认同一语言版本）。"""
+    caliber = PAGE_CALIBER if any(PAGE_CALIBER in r for r in base) else "page_cited"
+    if not any(caliber in r for r in base):
+        return ["只算「引用对应页面」：基线里还没有这一列，从有这一列的结果当基线起才有。", ""]
     treated, control = set(exp["treated"]), set(exp["control"])
+    lang = "中英文版都算" if caliber == PAGE_CALIBER else "只认同一语言版本，基线只有这一列"
+    out = [f"只算「引用对应页面」（题目自己的目标页被引用才算，{lang}；不受别的实验改的页影响）：", "",
+           "| AI | 处理组 现在 | 处理组 基线 | 对照组 现在 | 对照组 基线 | 净变化 | p 值 |", "|---|---|---|---|---|---|---|"]
+    for t in experiment_table(rows, base, exp, caliber):
+        e = t["engine"]
+        net = "–" if t["net"] is None else f"{t['net'] * 100:+.0f} 个百分点"
+        out.append(f"| {LABEL.get(e, e)} | {pct_ci(rows, e, caliber, treated)} | {pct_ci(base, e, caliber, treated)} | "
+                   f"{pct_ci(rows, e, caliber, control)} | {pct_ci(base, e, caliber, control)} | {net} | "
+                   f"{fmt_p(perm_test(rows, base, exp, e, caliber))} |")
+    return out + [""]
+
+
+def experiment_section(rows: list[dict], base: list[dict], exp: dict, others: list[dict] = (),
+                       pages: dict[str, str] | None = None) -> list[str]:
+    """对照实验一段：两组各自的命中率和区间、净变化、置换检验 p 值，和以现在的题数要差多少才测得出来（MDE）。
+    MDE 用实测的噪声 v 算（measured_noise），每家一格；某一家测不了才按 FLIP 假设，标「假设」。另给几家合在一起的 v。
+    others 是同时在跑的别的实验（2026-11-27 起）：它们的处理组不算进 v；另给「跟别的实验串没串」一行和只算「引用对应页面」的表。"""
+    treated, control = set(exp["treated"]), set(exp["control"])
+    exclude = frozenset(q for o in others for q in o["treated"]) - treated - control
     out = [f"## 对照实验：{exp['note']}", "",
            f"{exp['started']} 开始。处理组 {len(treated)} 题，对照组 {len(control)} 题，看的是「引用本站」。", "",
            "| AI | 处理组 现在 | 处理组 基线 | 对照组 现在 | 对照组 基线 | 净变化 | p 值 | 要差多少才测得出 |",
@@ -670,24 +724,27 @@ def experiment_section(rows: list[dict], base: list[dict], exp: dict) -> list[st
     for t in experiment_table(rows, base, exp):
         e, name = t["engine"], LABEL.get(t["engine"], t["engine"])
         net = "–" if t["net"] is None else f"{t['net'] * 100:+.0f} 个百分点"
-        m = engine_mde(rows, base, exp, e) if t["net"] is not None else None
+        m = engine_mde(rows, base, exp, e, exclude=exclude) if t["net"] is not None else None
         out.append(f"| {name} | {pct_ci(rows, e, 'site_cited', treated)} | {pct_ci(base, e, 'site_cited', treated)} | "
                    f"{pct_ci(rows, e, 'site_cited', control)} | {pct_ci(base, e, 'site_cited', control)} | {net} | "
                    f"{fmt_p(perm_test(rows, base, exp, e))} | {mde_cell(m)} |")
-        if (got := measured_noise(rows, base, exp, e)):
+        if (got := measured_noise(rows, base, exp, e, exclude=exclude)):
             noises.append(got)
         if m:
             sizes.setdefault((m["nt"], m["nc"]), []).append(name)
             (measured if "mde" in m else assumed).append((name, m))
     out += ["", f"净变化 = 处理组的变化 − 对照组的变化。p 值：把这 {len(treated | control)} 题的处理组、对照组标签随机打乱 "
                 f"{PERM:,} 次（随机种子固定），看有多大比例的打乱结果，净变化的绝对值不小于实际这个；小于 0.05 才算测出来了。", ""]
+    if others:
+        out += cross_lines(rows, exp, list(others), target_pages() if pages is None else pages)
+        out += page_lines(rows, base, exp)
     if not sizes:
         return out
     out += ["「要差多少才测得出」（MDE）：以现在的题数，净变化至少要有这么大，才有 80% 的把握在 5% 显著性下测出来，"
             "算法是 (1.96 + 0.84) × √(v/处理组题数 + v/对照组题数) × 100 个百分点，题数只算两期都问到的（"
             + "；".join(f"{'、'.join(names)}：处理组 {nt} 题、对照组 {nc} 题" for (nt, nc), names in sizes.items())
             + "）。比 MDE 小的净变化只是方向，不算结果。", "",
-            "v 是实测的噪声，不是假设的：取两期都问到、又不在处理组的题（对照组，加上没分进两组的题），"
+            "v 是实测的噪声，不是假设的：取两期都问到、又不在处理组的题（对照组，加上没分进两组的题；别的实验的处理组不算），"
             "每题两期的命中率相减、平方，再取平均。这些题没为这个实验改过，它们两期之间的变化就是本来的波动；"
             "每题的命中率只有 0 和 1 时，v 就是两期之间翻转的题占多少。"
             + ("各家：" + "、".join(f"{name} {m['v']:.2f}（{m['k']} 题）" for name, m in measured) + "。" if measured else ""), ""]
@@ -871,7 +928,8 @@ def summary(result: dict, prev: list[dict] | None = None, prev_day: str = "", pr
         exp_base = PANEL / exp["baseline"]
         if exp["started"] > day or not exp_base.exists() or not present & set(exp["treated"] + exp["control"]):
             continue                    # 这次没问到实验里的题（比如只跑了真实问法组），这一段不出
-        out += experiment_section(rows, load_rows(exp_base), exp)
+        others = [o for o in exps["experiments"] if o is not exp]
+        out += experiment_section(rows, load_rows(exp_base), exp, others)
     out += absorbed_section(rows)
     out += stale_section(rows)
     if prev is not None:
@@ -1164,6 +1222,24 @@ def selftest() -> int:
     assert "ChatGPT 的 10 道题两期一点没变（v = 0，测不出波动）" in sec and "约 0 个百分点" not in sec
     few = "\n".join(experiment_section(up6[:5] + up6[6:7], base6[:5] + base6[6:7], exp6))
     assert "至少约 69 个百分点，基本测不出来（假设）" in few and "处理组 5 题、对照组 1 题" in few
+    # 几个实验同时跑（2026-11-27）：别的实验的处理组不算进 v；x0 归别的实验处理，剩 9 题，c0 翻了一次：v = 1/9
+    assert measured_noise(now10, base10, exp6, "chatgpt", exclude=frozenset({"x0"})) == (1 / 9, 9)
+    other = {"treated": ["x0"], "control": []}
+    sec = "\n".join(experiment_section(now10, base10, exp6, [other], pages={}))
+    assert "跟别的实验串没串" not in sec and "基线里还没有这一列" in sec      # 没有页面名单不出串没串那行；基线一列「引用对应页面」都没有
+    ans = lambda qid, urls, page: {"engine": "chatgpt", "question_id": qid, "status": "answered", "site_cited": bool(urls),
+                                   "page_cited_any_lang": page, "our_urls": urls}
+    pg = {"t0": "jasonzhu.ai/blog/t", "c0": "jasonzhu.ai/blog/c", "x0": "jasonzhu.ai/go-global"}
+    ex2 = {"note": "x", "started": "2026-11-01", "treated": ["t0"], "control": ["c0"]}
+    now2 = [ans("t0", ["jasonzhu.ai/zh/go-global"], False), ans("t0", ["jasonzhu.ai/en/blog/t"], True), ans("c0", [], False)]
+    base2 = [ans("t0", [], False), ans("c0", [], False)]
+    sec = "\n".join(experiment_section(now2, base2, ex2, [other], pages=pg))
+    assert "处理组 1/2 个有效回答，对照组 0/1 个有效回答" in sec       # 中文版的 /go-global 也算别的实验的页
+    assert "只算「引用对应页面」" in sec and re.search(r"^\| ChatGPT \| 1/2", sec, re.M) and "基线里还没有这一列" not in sec
+    assert "处理组 0/2" in "\n".join(cross_lines(now2, ex2, [{"treated": ["t0"]}], pg))   # 题目自己的目标页不算串
+    old2 = [{k: v for k, v in r.items() if k != "page_cited_any_lang"} | {"page_cited": False} for r in base2]
+    sec = "\n".join(page_lines([r | {"page_cited": r["page_cited_any_lang"]} for r in now2], old2, ex2))
+    assert "只认同一语言版本，基线只有这一列" in sec and re.search(r"^\| ChatGPT \| 1/2", sec, re.M)   # 旧基线只有 page_cited：两期都用它
     # 每家怎么问的：这次运行记下的优先，旧结果用表
     assert surface_of({}, "perplexity") == ("llm", "sonar")
     assert surface_of({"lineage": {"engines": {"perplexity": {"samples": 3, "model": "sonar-pro", "kind": "llm"}}}}, "perplexity") == ("llm", "sonar-pro")

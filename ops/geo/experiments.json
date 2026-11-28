@@ -92,6 +92,10 @@
     {
       "date": "2026-11-27",
       "note": "实体图谱 v2.6 第一批（本站页面 0 变更，冻结页 0 变更）：ASH 蓝皮书 12 页作者接到 #person，非冻结模板的 twitter:site 从本人 @GoSailGlobal 改成产品 @agentskillshub，/ai-info/ 摘要把收录数写成 indexed，配套数据集换总 DOI 24387073（ASH e200ca6e）；ASH 关系检查扩到每种页面模板、加第 10–12 条，事实检查读摘要和公司官网、本站，学术检查不再建议认领合并（ASH 63cef48a）；公司官网 44 条规则、别名 BRICKAI（Cloudflare 49ac6ae7）；本站只改 check-entities.mjs 和 SOP。GIGALinks 冻结页（ASH 全部 /best/、/、/zh/ 等）的同类修复在 ASH 分支 entity/gigalinks-frozen-fixes，2027-01-02 合并，读 12-01、12-15、01-01 不受影响。"
+    },
+    {
+      "date": "2026-11-27",
+      "note": "不是实验，只改周报的算法（不改题、不改页面）：几个实验同时跑时防止互相串。(1) 每个对照实验加一张只算「引用对应页面」的表：题目自己的目标页被引用才算，目标页冻结，别的实验改别的页影响不到它；基线没有「中英文版都算」那一列时两期都用 page_cited（GIGALinks 的 11-17 基线就是这样）。(2) 加一行「跟别的实验串没串」：这个实验的题，回答引用了别的实验处理组目标页的次数；11-23 回放 GIGALinks 处理组 0/119、对照组 0/71。(3) 估计波动（MDE 里的 v）时把所有实验的处理组都排除，以前只排除本实验的。起因：周报只看「引用本站」，CE-GAD 11-27 改的 /go-global、/go-global/payments 和 GIGALinks 处理组的收款、注册公司题同话题，bluf 改的学习、提示词页和 GIGALinks 对照组同话题。"
     }
   ],
   "experiments": [
