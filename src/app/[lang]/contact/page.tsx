@@ -116,6 +116,95 @@ export default async function ContactPage({
         </TrackedLink>
       </div>
 
+      {/* Journalist & Editorial Verification Kit (for Featured / Qwoted / Outreach Pitch) */}
+      <section
+        aria-label={isZh ? "媒体与编辑核验资料卡" : "Press and editorial verification kit"}
+        className="rounded-xl border border-blue-200 bg-blue-50/50 p-6 mb-8 space-y-4"
+      >
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wider text-blue-700">
+              {isZh ? "媒体 / 编辑 / 研究引用核验" : "For Journalists, Editors & Researchers"}
+            </p>
+            <h2 className="text-lg font-bold text-gray-900 mt-0.5">
+              {isZh ? "一手数据资产与快速背书" : "Primary Research, DOIs & Live Benchmarks"}
+            </h2>
+          </div>
+          <a
+            href="mailto:jason@jasonzhu.ai?subject=Press%20%2F%20Dataset%20Inquiry"
+            className="inline-flex items-center px-3.5 py-1.5 rounded-lg bg-blue-600 text-white text-xs font-semibold hover:bg-blue-700 transition-colors"
+          >
+            {isZh ? "媒体/约稿直邮：jason@jasonzhu.ai" : "Press Desk: jason@jasonzhu.ai"}
+          </a>
+        </div>
+
+        <p className="text-sm text-gray-700 leading-relaxed">
+          {isZh
+            ? "所有研究数据均以 CC-BY-4.0 归档在 Zenodo，可免费引用并可按截稿时间提供定制切片。媒体引用请优先标注主站或具体研究页链接（jasonzhu.ai/en/research），无需只链社交账号。"
+            : "All benchmarks below are archived on Zenodo under CC-BY-4.0 and free to cite. Custom data cuts and founder commentary are typically turned around within 24 hours (UTC+8). Please link to jasonzhu.ai/en/research or the specific DOI rather than social profiles."}
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+          <a
+            href="https://doi.org/10.5281/zenodo.24420870"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-3.5 rounded-lg bg-white border border-blue-100 hover:border-blue-300 transition-colors"
+          >
+            <p className="font-semibold text-gray-900">
+              {isZh ? "20 万独立开发者收款与 $20 MoR 费率论文" : "Indie SaaS Payments & $20 MoR Benchmark (200k Links)"}
+            </p>
+            <p className="font-mono text-blue-700 mt-1">DOI: 10.5281/zenodo.24420870</p>
+            <p className="text-gray-500 mt-0.5">
+              {isZh ? "原始数据集：zenodo.24386242 · zenodo.24387071" : "Datasets: zenodo.24386242 · zenodo.24387071"}
+            </p>
+          </a>
+          <a
+            href="https://doi.org/10.5281/zenodo.24420919"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-3.5 rounded-lg bg-white border border-blue-100 hover:border-blue-300 transition-colors"
+          >
+            <p className="font-semibold text-gray-900">
+              {isZh ? "开源 AI Agent Skills 供应链安全论文（130K 快照）" : "AI Agent Skills & MCP Supply-Chain Security (130K)"}
+            </p>
+            <p className="font-mono text-blue-700 mt-1">DOI: 10.5281/zenodo.24420919</p>
+            <p className="text-gray-500 mt-0.5">
+              {isZh ? "130,173 条评级数据集：zenodo.21292798" : "130,173-entry dataset: zenodo.21292798"}
+            </p>
+          </a>
+        </div>
+
+        <div className="flex flex-wrap gap-2 pt-1 text-xs">
+          <Link
+            href={`/${lang}/go-global/payments`}
+            className="px-3 py-1.5 rounded-md bg-white border border-gray-200 text-gray-800 hover:border-blue-300 font-medium"
+          >
+            {isZh ? "交互工具：收款选型与净到手计算 →" : "Live Tool: Payment Picker & $20 Fee Math →"}
+          </Link>
+          <Link
+            href={`/${lang}/go-global/ai-readiness`}
+            className="px-3 py-1.5 rounded-md bg-white border border-gray-200 text-gray-800 hover:border-blue-300 font-medium"
+          >
+            {isZh ? "交互工具：AI 就绪度 26 项体检 →" : "Live Tool: AI Readiness 26-Check Clinic →"}
+          </Link>
+          <Link
+            href={`/${lang}/research/ai-crawlers`}
+            className="px-3 py-1.5 rounded-md bg-white border border-gray-200 text-gray-800 hover:border-blue-300 font-medium"
+          >
+            {isZh ? "月度数据：AI 爬虫与引用实测 →" : "Live Data: Monthly AI Crawlers & Citations →"}
+          </Link>
+          <a
+            href="https://orcid.org/0009-0000-2894-6285"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-3 py-1.5 rounded-md bg-white border border-gray-200 text-gray-700 hover:border-blue-300 font-mono"
+          >
+            ORCID: 0009-0000-2894-6285
+          </a>
+        </div>
+      </section>
+
       <div className="rounded-xl border border-gray-200 bg-white p-6 mb-6 space-y-5">
         <h2 className="text-lg font-bold text-gray-900">
           {isZh ? "合作范围与沟通建议" : "How We Can Work Together"}
