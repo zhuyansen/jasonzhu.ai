@@ -5,7 +5,7 @@
   "boards": [
     {
       "id": "china-ai-global",
-      "status": "awaiting_first_run",
+      "status": "published",
       "period": "2026-11",
       "title_en": "China-Originated Global AI Tools: English AI Visibility Index",
       "title_zh": "中国出海 AI 工具英文 AI 搜索推荐月榜",
@@ -14,10 +14,12 @@
       "cadence": "monthly",
       "methodology": {
         "frozen_questions": 20,
-        "questions_sampled": 0,
-        "total_answers": 0,
-        "rounds": 0,
-        "engines": [],
+        "questions_sampled": 20,
+        "total_answers": 60,
+        "rounds": 3,
+        "engines": [
+          "perplexity"
+        ],
         "self_rank_policy": "Affiliated domains/products are disclosed and excluded from #1 self-promotion.",
         "noise_disclosure": "AI recommendations vary up to ~50-60% across single-day runs; we publish Wilson 95% CI and cross-round min-max spread."
       },
@@ -125,23 +127,26 @@
       ],
       "rankings": [
         {
-          "brand_id": "canva",
-          "name": "Canva",
+          "brand_id": "claude-code",
+          "name": "Claude Code / Anthropic",
           "origin": "global_incumbent",
-          "category": "AI Design & Creative",
+          "category": "AI Coding & Agents",
           "domains": [
-            "canva.com"
+            "anthropic.com",
+            "claude.ai"
           ],
           "is_affiliated": false,
-          "mentions": 0,
-          "mention_rate_pct": 0.0,
-          "ci95_low": 0.0,
-          "ci95_high": 0.0,
-          "round_min_pct": 0.0,
-          "round_max_pct": 0.0,
-          "cited_rate_pct": 0.0,
-          "first_mention_rate_pct": 0.0,
-          "by_engine": {},
+          "mentions": 25,
+          "mention_rate_pct": 41.7,
+          "ci95_low": 30.1,
+          "ci95_high": 54.3,
+          "round_min_pct": 40.0,
+          "round_max_pct": 45.0,
+          "cited_rate_pct": 5.0,
+          "first_mention_rate_pct": 18.3,
+          "by_engine": {
+            "perplexity": 41.7
+          },
           "rank": 1
         },
         {
@@ -153,37 +158,106 @@
             "capcut.com"
           ],
           "is_affiliated": false,
-          "mentions": 0,
-          "mention_rate_pct": 0.0,
-          "ci95_low": 0.0,
-          "ci95_high": 0.0,
-          "round_min_pct": 0.0,
-          "round_max_pct": 0.0,
-          "cited_rate_pct": 0.0,
-          "first_mention_rate_pct": 0.0,
-          "by_engine": {},
+          "mentions": 21,
+          "mention_rate_pct": 35.0,
+          "ci95_low": 24.2,
+          "ci95_high": 47.6,
+          "round_min_pct": 35.0,
+          "round_max_pct": 35.0,
+          "cited_rate_pct": 35.0,
+          "first_mention_rate_pct": 3.3,
+          "by_engine": {
+            "perplexity": 35.0
+          },
           "rank": 2
         },
         {
-          "brand_id": "claude-code",
-          "name": "Claude Code / Anthropic",
+          "brand_id": "canva",
+          "name": "Canva",
           "origin": "global_incumbent",
-          "category": "AI Coding & Agents",
+          "category": "AI Design & Creative",
           "domains": [
-            "anthropic.com",
-            "claude.ai"
+            "canva.com"
           ],
           "is_affiliated": false,
-          "mentions": 0,
-          "mention_rate_pct": 0.0,
-          "ci95_low": 0.0,
-          "ci95_high": 0.0,
-          "round_min_pct": 0.0,
-          "round_max_pct": 0.0,
+          "mentions": 16,
+          "mention_rate_pct": 26.7,
+          "ci95_low": 17.1,
+          "ci95_high": 39.0,
+          "round_min_pct": 25.0,
+          "round_max_pct": 30.0,
           "cited_rate_pct": 0.0,
-          "first_mention_rate_pct": 0.0,
-          "by_engine": {},
+          "first_mention_rate_pct": 13.3,
+          "by_engine": {
+            "perplexity": 26.7
+          },
           "rank": 3
+        },
+        {
+          "brand_id": "runway",
+          "name": "Runway",
+          "origin": "global_incumbent",
+          "category": "AI Video & Avatar",
+          "domains": [
+            "runwayml.com"
+          ],
+          "is_affiliated": false,
+          "mentions": 14,
+          "mention_rate_pct": 23.3,
+          "ci95_low": 14.4,
+          "ci95_high": 35.4,
+          "round_min_pct": 20.0,
+          "round_max_pct": 25.0,
+          "cited_rate_pct": 0.0,
+          "first_mention_rate_pct": 11.7,
+          "by_engine": {
+            "perplexity": 23.3
+          },
+          "rank": 4
+        },
+        {
+          "brand_id": "perplexity",
+          "name": "Perplexity",
+          "origin": "global_incumbent",
+          "category": "AI Search & Productivity",
+          "domains": [
+            "perplexity.ai"
+          ],
+          "is_affiliated": false,
+          "mentions": 12,
+          "mention_rate_pct": 20.0,
+          "ci95_low": 11.8,
+          "ci95_high": 31.8,
+          "round_min_pct": 20.0,
+          "round_max_pct": 20.0,
+          "cited_rate_pct": 5.0,
+          "first_mention_rate_pct": 13.3,
+          "by_engine": {
+            "perplexity": 20.0
+          },
+          "rank": 5
+        },
+        {
+          "brand_id": "heygen",
+          "name": "HeyGen",
+          "origin": "cn_global",
+          "category": "AI Video & Avatar",
+          "domains": [
+            "heygen.com"
+          ],
+          "is_affiliated": false,
+          "mentions": 12,
+          "mention_rate_pct": 20.0,
+          "ci95_low": 11.8,
+          "ci95_high": 31.8,
+          "round_min_pct": 20.0,
+          "round_max_pct": 20.0,
+          "cited_rate_pct": 20.0,
+          "first_mention_rate_pct": 6.7,
+          "by_engine": {
+            "perplexity": 20.0
+          },
+          "rank": 6
         },
         {
           "brand_id": "cursor",
@@ -195,16 +269,63 @@
             "cursor.sh"
           ],
           "is_affiliated": false,
-          "mentions": 0,
-          "mention_rate_pct": 0.0,
-          "ci95_low": 0.0,
-          "ci95_high": 0.0,
-          "round_min_pct": 0.0,
-          "round_max_pct": 0.0,
+          "mentions": 9,
+          "mention_rate_pct": 15.0,
+          "ci95_low": 8.1,
+          "ci95_high": 26.1,
+          "round_min_pct": 10.0,
+          "round_max_pct": 20.0,
           "cited_rate_pct": 0.0,
-          "first_mention_rate_pct": 0.0,
-          "by_engine": {},
-          "rank": 4
+          "first_mention_rate_pct": 11.7,
+          "by_engine": {
+            "perplexity": 15.0
+          },
+          "rank": 7
+        },
+        {
+          "brand_id": "kling",
+          "name": "Kling AI",
+          "origin": "cn_global",
+          "category": "AI Video & Avatar",
+          "domains": [
+            "klingai.com"
+          ],
+          "is_affiliated": false,
+          "mentions": 9,
+          "mention_rate_pct": 15.0,
+          "ci95_low": 8.1,
+          "ci95_high": 26.1,
+          "round_min_pct": 15.0,
+          "round_max_pct": 15.0,
+          "cited_rate_pct": 0.0,
+          "first_mention_rate_pct": 1.7,
+          "by_engine": {
+            "perplexity": 15.0
+          },
+          "rank": 8
+        },
+        {
+          "brand_id": "sora",
+          "name": "OpenAI Sora",
+          "origin": "global_incumbent",
+          "category": "AI Video & Avatar",
+          "domains": [
+            "sora.com",
+            "openai.com"
+          ],
+          "is_affiliated": false,
+          "mentions": 7,
+          "mention_rate_pct": 11.7,
+          "ci95_low": 5.8,
+          "ci95_high": 22.2,
+          "round_min_pct": 10.0,
+          "round_max_pct": 15.0,
+          "cited_rate_pct": 5.0,
+          "first_mention_rate_pct": 1.7,
+          "by_engine": {
+            "perplexity": 11.7
+          },
+          "rank": 9
         },
         {
           "brand_id": "deepseek",
@@ -215,118 +336,40 @@
             "deepseek.com"
           ],
           "is_affiliated": false,
-          "mentions": 0,
-          "mention_rate_pct": 0.0,
-          "ci95_low": 0.0,
-          "ci95_high": 0.0,
-          "round_min_pct": 0.0,
-          "round_max_pct": 0.0,
+          "mentions": 6,
+          "mention_rate_pct": 10.0,
+          "ci95_low": 4.7,
+          "ci95_high": 20.1,
+          "round_min_pct": 10.0,
+          "round_max_pct": 10.0,
           "cited_rate_pct": 0.0,
-          "first_mention_rate_pct": 0.0,
-          "by_engine": {},
-          "rank": 5
-        },
-        {
-          "brand_id": "devin",
-          "name": "Devin",
-          "origin": "global_incumbent",
-          "category": "AI Coding & Agents",
-          "domains": [
-            "devin.ai",
-            "cognition.ai"
-          ],
-          "is_affiliated": false,
-          "mentions": 0,
-          "mention_rate_pct": 0.0,
-          "ci95_low": 0.0,
-          "ci95_high": 0.0,
-          "round_min_pct": 0.0,
-          "round_max_pct": 0.0,
-          "cited_rate_pct": 0.0,
-          "first_mention_rate_pct": 0.0,
-          "by_engine": {},
-          "rank": 6
-        },
-        {
-          "brand_id": "gamma",
-          "name": "Gamma",
-          "origin": "global_incumbent",
-          "category": "AI Design & Creative",
-          "domains": [
-            "gamma.app"
-          ],
-          "is_affiliated": false,
-          "mentions": 0,
-          "mention_rate_pct": 0.0,
-          "ci95_low": 0.0,
-          "ci95_high": 0.0,
-          "round_min_pct": 0.0,
-          "round_max_pct": 0.0,
-          "cited_rate_pct": 0.0,
-          "first_mention_rate_pct": 0.0,
-          "by_engine": {},
-          "rank": 7
-        },
-        {
-          "brand_id": "genspark",
-          "name": "Genspark",
-          "origin": "cn_global",
-          "category": "AI Coding & Agents",
-          "domains": [
-            "genspark.ai"
-          ],
-          "is_affiliated": false,
-          "mentions": 0,
-          "mention_rate_pct": 0.0,
-          "ci95_low": 0.0,
-          "ci95_high": 0.0,
-          "round_min_pct": 0.0,
-          "round_max_pct": 0.0,
-          "cited_rate_pct": 0.0,
-          "first_mention_rate_pct": 0.0,
-          "by_engine": {},
-          "rank": 8
-        },
-        {
-          "brand_id": "hailuo",
-          "name": "Hailuo AI (MiniMax)",
-          "origin": "cn_global",
-          "category": "AI Video & Avatar",
-          "domains": [
-            "hailuoai.video",
-            "minimax.io"
-          ],
-          "is_affiliated": false,
-          "mentions": 0,
-          "mention_rate_pct": 0.0,
-          "ci95_low": 0.0,
-          "ci95_high": 0.0,
-          "round_min_pct": 0.0,
-          "round_max_pct": 0.0,
-          "cited_rate_pct": 0.0,
-          "first_mention_rate_pct": 0.0,
-          "by_engine": {},
-          "rank": 9
-        },
-        {
-          "brand_id": "heygen",
-          "name": "HeyGen",
-          "origin": "cn_global",
-          "category": "AI Video & Avatar",
-          "domains": [
-            "heygen.com"
-          ],
-          "is_affiliated": false,
-          "mentions": 0,
-          "mention_rate_pct": 0.0,
-          "ci95_low": 0.0,
-          "ci95_high": 0.0,
-          "round_min_pct": 0.0,
-          "round_max_pct": 0.0,
-          "cited_rate_pct": 0.0,
-          "first_mention_rate_pct": 0.0,
-          "by_engine": {},
+          "first_mention_rate_pct": 3.3,
+          "by_engine": {
+            "perplexity": 10.0
+          },
           "rank": 10
+        },
+        {
+          "brand_id": "manus",
+          "name": "Manus",
+          "origin": "cn_global",
+          "category": "AI Coding & Agents",
+          "domains": [
+            "manus.im"
+          ],
+          "is_affiliated": false,
+          "mentions": 6,
+          "mention_rate_pct": 10.0,
+          "ci95_low": 4.7,
+          "ci95_high": 20.1,
+          "round_min_pct": 10.0,
+          "round_max_pct": 10.0,
+          "cited_rate_pct": 5.0,
+          "first_mention_rate_pct": 1.7,
+          "by_engine": {
+            "perplexity": 10.0
+          },
+          "rank": 11
         },
         {
           "brand_id": "kimi",
@@ -338,36 +381,62 @@
             "moonshot.ai"
           ],
           "is_affiliated": false,
-          "mentions": 0,
-          "mention_rate_pct": 0.0,
-          "ci95_low": 0.0,
-          "ci95_high": 0.0,
-          "round_min_pct": 0.0,
-          "round_max_pct": 0.0,
-          "cited_rate_pct": 0.0,
+          "mentions": 6,
+          "mention_rate_pct": 10.0,
+          "ci95_low": 4.7,
+          "ci95_high": 20.1,
+          "round_min_pct": 10.0,
+          "round_max_pct": 10.0,
+          "cited_rate_pct": 5.0,
           "first_mention_rate_pct": 0.0,
-          "by_engine": {},
-          "rank": 11
+          "by_engine": {
+            "perplexity": 10.0
+          },
+          "rank": 12
         },
         {
-          "brand_id": "kling",
-          "name": "Kling AI",
-          "origin": "cn_global",
+          "brand_id": "synthesia",
+          "name": "Synthesia",
+          "origin": "global_incumbent",
           "category": "AI Video & Avatar",
           "domains": [
-            "klingai.com"
+            "synthesia.io"
           ],
           "is_affiliated": false,
-          "mentions": 0,
-          "mention_rate_pct": 0.0,
-          "ci95_low": 0.0,
-          "ci95_high": 0.0,
-          "round_min_pct": 0.0,
-          "round_max_pct": 0.0,
+          "mentions": 6,
+          "mention_rate_pct": 10.0,
+          "ci95_low": 4.7,
+          "ci95_high": 20.1,
+          "round_min_pct": 5.0,
+          "round_max_pct": 15.0,
+          "cited_rate_pct": 1.7,
+          "first_mention_rate_pct": 0.0,
+          "by_engine": {
+            "perplexity": 10.0
+          },
+          "rank": 13
+        },
+        {
+          "brand_id": "genspark",
+          "name": "Genspark",
+          "origin": "cn_global",
+          "category": "AI Coding & Agents",
+          "domains": [
+            "genspark.ai"
+          ],
+          "is_affiliated": false,
+          "mentions": 6,
+          "mention_rate_pct": 10.0,
+          "ci95_low": 4.7,
+          "ci95_high": 20.1,
+          "round_min_pct": 10.0,
+          "round_max_pct": 10.0,
           "cited_rate_pct": 0.0,
           "first_mention_rate_pct": 0.0,
-          "by_engine": {},
-          "rank": 12
+          "by_engine": {
+            "perplexity": 10.0
+          },
+          "rank": 14
         },
         {
           "brand_id": "lovart",
@@ -378,36 +447,131 @@
             "lovart.ai"
           ],
           "is_affiliated": false,
-          "mentions": 0,
-          "mention_rate_pct": 0.0,
-          "ci95_low": 0.0,
-          "ci95_high": 0.0,
-          "round_min_pct": 0.0,
-          "round_max_pct": 0.0,
-          "cited_rate_pct": 0.0,
-          "first_mention_rate_pct": 0.0,
-          "by_engine": {},
-          "rank": 13
+          "mentions": 3,
+          "mention_rate_pct": 5.0,
+          "ci95_low": 1.7,
+          "ci95_high": 13.7,
+          "round_min_pct": 5.0,
+          "round_max_pct": 5.0,
+          "cited_rate_pct": 5.0,
+          "first_mention_rate_pct": 5.0,
+          "by_engine": {
+            "perplexity": 5.0
+          },
+          "rank": 15
         },
         {
-          "brand_id": "manus",
-          "name": "Manus",
-          "origin": "cn_global",
-          "category": "AI Coding & Agents",
+          "brand_id": "gamma",
+          "name": "Gamma",
+          "origin": "global_incumbent",
+          "category": "AI Design & Creative",
           "domains": [
-            "manus.im"
+            "gamma.app"
           ],
           "is_affiliated": false,
-          "mentions": 0,
-          "mention_rate_pct": 0.0,
-          "ci95_low": 0.0,
-          "ci95_high": 0.0,
-          "round_min_pct": 0.0,
-          "round_max_pct": 0.0,
+          "mentions": 3,
+          "mention_rate_pct": 5.0,
+          "ci95_low": 1.7,
+          "ci95_high": 13.7,
+          "round_min_pct": 5.0,
+          "round_max_pct": 5.0,
+          "cited_rate_pct": 0.0,
+          "first_mention_rate_pct": 5.0,
+          "by_engine": {
+            "perplexity": 5.0
+          },
+          "rank": 16
+        },
+        {
+          "brand_id": "pixverse",
+          "name": "PixVerse",
+          "origin": "cn_global",
+          "category": "AI Design & Creative",
+          "domains": [
+            "pixverse.ai"
+          ],
+          "is_affiliated": false,
+          "mentions": 3,
+          "mention_rate_pct": 5.0,
+          "ci95_low": 1.7,
+          "ci95_high": 13.7,
+          "round_min_pct": 5.0,
+          "round_max_pct": 5.0,
+          "cited_rate_pct": 5.0,
+          "first_mention_rate_pct": 0.0,
+          "by_engine": {
+            "perplexity": 5.0
+          },
+          "rank": 17
+        },
+        {
+          "brand_id": "devin",
+          "name": "Devin",
+          "origin": "global_incumbent",
+          "category": "AI Coding & Agents",
+          "domains": [
+            "devin.ai",
+            "cognition.ai"
+          ],
+          "is_affiliated": false,
+          "mentions": 3,
+          "mention_rate_pct": 5.0,
+          "ci95_low": 1.7,
+          "ci95_high": 13.7,
+          "round_min_pct": 5.0,
+          "round_max_pct": 5.0,
           "cited_rate_pct": 0.0,
           "first_mention_rate_pct": 0.0,
-          "by_engine": {},
-          "rank": 14
+          "by_engine": {
+            "perplexity": 5.0
+          },
+          "rank": 18
+        },
+        {
+          "brand_id": "hailuo",
+          "name": "Hailuo AI (MiniMax)",
+          "origin": "cn_global",
+          "category": "AI Video & Avatar",
+          "domains": [
+            "hailuoai.video",
+            "minimax.io"
+          ],
+          "is_affiliated": false,
+          "mentions": 3,
+          "mention_rate_pct": 5.0,
+          "ci95_low": 1.7,
+          "ci95_high": 13.7,
+          "round_min_pct": 5.0,
+          "round_max_pct": 5.0,
+          "cited_rate_pct": 0.0,
+          "first_mention_rate_pct": 0.0,
+          "by_engine": {
+            "perplexity": 5.0
+          },
+          "rank": 19
+        },
+        {
+          "brand_id": "windsurf",
+          "name": "Windsurf",
+          "origin": "global_incumbent",
+          "category": "AI Coding & Agents",
+          "domains": [
+            "windsurf.com",
+            "codeium.com"
+          ],
+          "is_affiliated": false,
+          "mentions": 3,
+          "mention_rate_pct": 5.0,
+          "ci95_low": 1.7,
+          "ci95_high": 13.7,
+          "round_min_pct": 5.0,
+          "round_max_pct": 5.0,
+          "cited_rate_pct": 0.0,
+          "first_mention_rate_pct": 0.0,
+          "by_engine": {
+            "perplexity": 5.0
+          },
+          "rank": 20
         },
         {
           "brand_id": "midjourney",
@@ -418,16 +582,18 @@
             "midjourney.com"
           ],
           "is_affiliated": false,
-          "mentions": 0,
-          "mention_rate_pct": 0.0,
-          "ci95_low": 0.0,
-          "ci95_high": 0.0,
+          "mentions": 2,
+          "mention_rate_pct": 3.3,
+          "ci95_low": 0.9,
+          "ci95_high": 11.4,
           "round_min_pct": 0.0,
-          "round_max_pct": 0.0,
+          "round_max_pct": 5.0,
           "cited_rate_pct": 0.0,
           "first_mention_rate_pct": 0.0,
-          "by_engine": {},
-          "rank": 15
+          "by_engine": {
+            "perplexity": 3.3
+          },
+          "rank": 21
         },
         {
           "brand_id": "monica",
@@ -441,114 +607,15 @@
           "mentions": 0,
           "mention_rate_pct": 0.0,
           "ci95_low": 0.0,
-          "ci95_high": 0.0,
+          "ci95_high": 6.0,
           "round_min_pct": 0.0,
           "round_max_pct": 0.0,
           "cited_rate_pct": 0.0,
           "first_mention_rate_pct": 0.0,
-          "by_engine": {},
-          "rank": 16
-        },
-        {
-          "brand_id": "sora",
-          "name": "OpenAI Sora",
-          "origin": "global_incumbent",
-          "category": "AI Video & Avatar",
-          "domains": [
-            "sora.com",
-            "openai.com"
-          ],
-          "is_affiliated": false,
-          "mentions": 0,
-          "mention_rate_pct": 0.0,
-          "ci95_low": 0.0,
-          "ci95_high": 0.0,
-          "round_min_pct": 0.0,
-          "round_max_pct": 0.0,
-          "cited_rate_pct": 0.0,
-          "first_mention_rate_pct": 0.0,
-          "by_engine": {},
-          "rank": 17
-        },
-        {
-          "brand_id": "perplexity",
-          "name": "Perplexity",
-          "origin": "global_incumbent",
-          "category": "AI Search & Productivity",
-          "domains": [
-            "perplexity.ai"
-          ],
-          "is_affiliated": false,
-          "mentions": 0,
-          "mention_rate_pct": 0.0,
-          "ci95_low": 0.0,
-          "ci95_high": 0.0,
-          "round_min_pct": 0.0,
-          "round_max_pct": 0.0,
-          "cited_rate_pct": 0.0,
-          "first_mention_rate_pct": 0.0,
-          "by_engine": {},
-          "rank": 18
-        },
-        {
-          "brand_id": "pixverse",
-          "name": "PixVerse",
-          "origin": "cn_global",
-          "category": "AI Design & Creative",
-          "domains": [
-            "pixverse.ai"
-          ],
-          "is_affiliated": false,
-          "mentions": 0,
-          "mention_rate_pct": 0.0,
-          "ci95_low": 0.0,
-          "ci95_high": 0.0,
-          "round_min_pct": 0.0,
-          "round_max_pct": 0.0,
-          "cited_rate_pct": 0.0,
-          "first_mention_rate_pct": 0.0,
-          "by_engine": {},
-          "rank": 19
-        },
-        {
-          "brand_id": "runway",
-          "name": "Runway",
-          "origin": "global_incumbent",
-          "category": "AI Video & Avatar",
-          "domains": [
-            "runwayml.com"
-          ],
-          "is_affiliated": false,
-          "mentions": 0,
-          "mention_rate_pct": 0.0,
-          "ci95_low": 0.0,
-          "ci95_high": 0.0,
-          "round_min_pct": 0.0,
-          "round_max_pct": 0.0,
-          "cited_rate_pct": 0.0,
-          "first_mention_rate_pct": 0.0,
-          "by_engine": {},
-          "rank": 20
-        },
-        {
-          "brand_id": "synthesia",
-          "name": "Synthesia",
-          "origin": "global_incumbent",
-          "category": "AI Video & Avatar",
-          "domains": [
-            "synthesia.io"
-          ],
-          "is_affiliated": false,
-          "mentions": 0,
-          "mention_rate_pct": 0.0,
-          "ci95_low": 0.0,
-          "ci95_high": 0.0,
-          "round_min_pct": 0.0,
-          "round_max_pct": 0.0,
-          "cited_rate_pct": 0.0,
-          "first_mention_rate_pct": 0.0,
-          "by_engine": {},
-          "rank": 21
+          "by_engine": {
+            "perplexity": 0.0
+          },
+          "rank": 22
         },
         {
           "brand_id": "trae",
@@ -562,13 +629,15 @@
           "mentions": 0,
           "mention_rate_pct": 0.0,
           "ci95_low": 0.0,
-          "ci95_high": 0.0,
+          "ci95_high": 6.0,
           "round_min_pct": 0.0,
           "round_max_pct": 0.0,
           "cited_rate_pct": 0.0,
           "first_mention_rate_pct": 0.0,
-          "by_engine": {},
-          "rank": 22
+          "by_engine": {
+            "perplexity": 0.0
+          },
+          "rank": 23
         },
         {
           "brand_id": "vidu",
@@ -583,33 +652,14 @@
           "mentions": 0,
           "mention_rate_pct": 0.0,
           "ci95_low": 0.0,
-          "ci95_high": 0.0,
+          "ci95_high": 6.0,
           "round_min_pct": 0.0,
           "round_max_pct": 0.0,
           "cited_rate_pct": 0.0,
           "first_mention_rate_pct": 0.0,
-          "by_engine": {},
-          "rank": 23
-        },
-        {
-          "brand_id": "windsurf",
-          "name": "Windsurf",
-          "origin": "global_incumbent",
-          "category": "AI Coding & Agents",
-          "domains": [
-            "windsurf.com",
-            "codeium.com"
-          ],
-          "is_affiliated": false,
-          "mentions": 0,
-          "mention_rate_pct": 0.0,
-          "ci95_low": 0.0,
-          "ci95_high": 0.0,
-          "round_min_pct": 0.0,
-          "round_max_pct": 0.0,
-          "cited_rate_pct": 0.0,
-          "first_mention_rate_pct": 0.0,
-          "by_engine": {},
+          "by_engine": {
+            "perplexity": 0.0
+          },
           "rank": 24
         }
       ],
@@ -617,7 +667,7 @@
     },
     {
       "id": "payments-mor",
-      "status": "awaiting_first_run",
+      "status": "published",
       "period": "2026-11",
       "title_en": "Indie & AI SaaS Payments / MoR AI Visibility Index",
       "title_zh": "独立开发 / AI SaaS 收款与 MoR 平台英文 AI 推荐月榜",
@@ -626,10 +676,12 @@
       "cadence": "monthly",
       "methodology": {
         "frozen_questions": 10,
-        "questions_sampled": 0,
-        "total_answers": 0,
-        "rounds": 0,
-        "engines": [],
+        "questions_sampled": 10,
+        "total_answers": 30,
+        "rounds": 3,
+        "engines": [
+          "perplexity"
+        ],
         "self_rank_policy": "Affiliated domains/products are disclosed and excluded from #1 self-promotion.",
         "noise_disclosure": "AI recommendations vary up to ~50-60% across single-day runs; we publish Wilson 95% CI and cross-round min-max spread."
       },
@@ -695,96 +747,18 @@
             "creem.io"
           ],
           "is_affiliated": false,
-          "mentions": 0,
-          "mention_rate_pct": 0.0,
-          "ci95_low": 0.0,
-          "ci95_high": 0.0,
-          "round_min_pct": 0.0,
-          "round_max_pct": 0.0,
-          "cited_rate_pct": 0.0,
-          "first_mention_rate_pct": 0.0,
-          "by_engine": {},
+          "mentions": 27,
+          "mention_rate_pct": 90.0,
+          "ci95_low": 74.4,
+          "ci95_high": 96.5,
+          "round_min_pct": 80.0,
+          "round_max_pct": 100.0,
+          "cited_rate_pct": 50.0,
+          "first_mention_rate_pct": 16.7,
+          "by_engine": {
+            "perplexity": 90.0
+          },
           "rank": 1
-        },
-        {
-          "brand_id": "dodo-payments",
-          "name": "Dodo Payments",
-          "origin": "challenger",
-          "category": "MoR",
-          "domains": [
-            "dodopayments.com"
-          ],
-          "is_affiliated": false,
-          "mentions": 0,
-          "mention_rate_pct": 0.0,
-          "ci95_low": 0.0,
-          "ci95_high": 0.0,
-          "round_min_pct": 0.0,
-          "round_max_pct": 0.0,
-          "cited_rate_pct": 0.0,
-          "first_mention_rate_pct": 0.0,
-          "by_engine": {},
-          "rank": 2
-        },
-        {
-          "brand_id": "fastspring",
-          "name": "FastSpring",
-          "origin": "global_incumbent",
-          "category": "Enterprise MoR",
-          "domains": [
-            "fastspring.com"
-          ],
-          "is_affiliated": false,
-          "mentions": 0,
-          "mention_rate_pct": 0.0,
-          "ci95_low": 0.0,
-          "ci95_high": 0.0,
-          "round_min_pct": 0.0,
-          "round_max_pct": 0.0,
-          "cited_rate_pct": 0.0,
-          "first_mention_rate_pct": 0.0,
-          "by_engine": {},
-          "rank": 3
-        },
-        {
-          "brand_id": "gumroad",
-          "name": "Gumroad",
-          "origin": "global_incumbent",
-          "category": "Creator MoR",
-          "domains": [
-            "gumroad.com"
-          ],
-          "is_affiliated": false,
-          "mentions": 0,
-          "mention_rate_pct": 0.0,
-          "ci95_low": 0.0,
-          "ci95_high": 0.0,
-          "round_min_pct": 0.0,
-          "round_max_pct": 0.0,
-          "cited_rate_pct": 0.0,
-          "first_mention_rate_pct": 0.0,
-          "by_engine": {},
-          "rank": 4
-        },
-        {
-          "brand_id": "lemon-squeezy",
-          "name": "Lemon Squeezy",
-          "origin": "global_incumbent",
-          "category": "MoR (Winding Down 2027)",
-          "domains": [
-            "lemonsqueezy.com"
-          ],
-          "is_affiliated": false,
-          "mentions": 0,
-          "mention_rate_pct": 0.0,
-          "ci95_low": 0.0,
-          "ci95_high": 0.0,
-          "round_min_pct": 0.0,
-          "round_max_pct": 0.0,
-          "cited_rate_pct": 0.0,
-          "first_mention_rate_pct": 0.0,
-          "by_engine": {},
-          "rank": 5
         },
         {
           "brand_id": "paddle",
@@ -795,56 +769,40 @@
             "paddle.com"
           ],
           "is_affiliated": false,
-          "mentions": 0,
-          "mention_rate_pct": 0.0,
-          "ci95_low": 0.0,
-          "ci95_high": 0.0,
-          "round_min_pct": 0.0,
-          "round_max_pct": 0.0,
-          "cited_rate_pct": 0.0,
-          "first_mention_rate_pct": 0.0,
-          "by_engine": {},
-          "rank": 6
+          "mentions": 26,
+          "mention_rate_pct": 86.7,
+          "ci95_low": 70.3,
+          "ci95_high": 94.7,
+          "round_min_pct": 80.0,
+          "round_max_pct": 90.0,
+          "cited_rate_pct": 10.0,
+          "first_mention_rate_pct": 20.0,
+          "by_engine": {
+            "perplexity": 86.7
+          },
+          "rank": 2
         },
         {
-          "brand_id": "paypal",
-          "name": "PayPal",
-          "origin": "global_incumbent",
-          "category": "PSP",
-          "domains": [
-            "paypal.com"
-          ],
-          "is_affiliated": false,
-          "mentions": 0,
-          "mention_rate_pct": 0.0,
-          "ci95_low": 0.0,
-          "ci95_high": 0.0,
-          "round_min_pct": 0.0,
-          "round_max_pct": 0.0,
-          "cited_rate_pct": 0.0,
-          "first_mention_rate_pct": 0.0,
-          "by_engine": {},
-          "rank": 7
-        },
-        {
-          "brand_id": "polar",
-          "name": "Polar",
+          "brand_id": "dodo-payments",
+          "name": "Dodo Payments",
           "origin": "challenger",
           "category": "MoR",
           "domains": [
-            "polar.sh"
+            "dodopayments.com"
           ],
           "is_affiliated": false,
-          "mentions": 0,
-          "mention_rate_pct": 0.0,
-          "ci95_low": 0.0,
-          "ci95_high": 0.0,
-          "round_min_pct": 0.0,
-          "round_max_pct": 0.0,
-          "cited_rate_pct": 0.0,
-          "first_mention_rate_pct": 0.0,
-          "by_engine": {},
-          "rank": 8
+          "mentions": 23,
+          "mention_rate_pct": 76.7,
+          "ci95_low": 59.1,
+          "ci95_high": 88.2,
+          "round_min_pct": 70.0,
+          "round_max_pct": 80.0,
+          "cited_rate_pct": 50.0,
+          "first_mention_rate_pct": 10.0,
+          "by_engine": {
+            "perplexity": 76.7
+          },
+          "rank": 3
         },
         {
           "brand_id": "stripe",
@@ -855,16 +813,62 @@
             "stripe.com"
           ],
           "is_affiliated": false,
-          "mentions": 0,
-          "mention_rate_pct": 0.0,
-          "ci95_low": 0.0,
-          "ci95_high": 0.0,
-          "round_min_pct": 0.0,
-          "round_max_pct": 0.0,
+          "mentions": 18,
+          "mention_rate_pct": 60.0,
+          "ci95_low": 42.3,
+          "ci95_high": 75.4,
+          "round_min_pct": 60.0,
+          "round_max_pct": 60.0,
+          "cited_rate_pct": 20.0,
+          "first_mention_rate_pct": 30.0,
+          "by_engine": {
+            "perplexity": 60.0
+          },
+          "rank": 4
+        },
+        {
+          "brand_id": "polar",
+          "name": "Polar",
+          "origin": "challenger",
+          "category": "MoR",
+          "domains": [
+            "polar.sh"
+          ],
+          "is_affiliated": false,
+          "mentions": 17,
+          "mention_rate_pct": 56.7,
+          "ci95_low": 39.2,
+          "ci95_high": 72.6,
+          "round_min_pct": 50.0,
+          "round_max_pct": 70.0,
           "cited_rate_pct": 0.0,
-          "first_mention_rate_pct": 0.0,
-          "by_engine": {},
-          "rank": 9
+          "first_mention_rate_pct": 10.0,
+          "by_engine": {
+            "perplexity": 56.7
+          },
+          "rank": 5
+        },
+        {
+          "brand_id": "lemon-squeezy",
+          "name": "Lemon Squeezy",
+          "origin": "global_incumbent",
+          "category": "MoR (Winding Down 2027)",
+          "domains": [
+            "lemonsqueezy.com"
+          ],
+          "is_affiliated": false,
+          "mentions": 6,
+          "mention_rate_pct": 20.0,
+          "ci95_low": 9.5,
+          "ci95_high": 37.3,
+          "round_min_pct": 10.0,
+          "round_max_pct": 30.0,
+          "cited_rate_pct": 0.0,
+          "first_mention_rate_pct": 10.0,
+          "by_engine": {
+            "perplexity": 20.0
+          },
+          "rank": 6
         },
         {
           "brand_id": "waffo",
@@ -875,15 +879,83 @@
             "waffo.com"
           ],
           "is_affiliated": false,
-          "mentions": 0,
-          "mention_rate_pct": 0.0,
-          "ci95_low": 0.0,
-          "ci95_high": 0.0,
+          "mentions": 5,
+          "mention_rate_pct": 16.7,
+          "ci95_low": 7.3,
+          "ci95_high": 33.6,
+          "round_min_pct": 10.0,
+          "round_max_pct": 20.0,
+          "cited_rate_pct": 0.0,
+          "first_mention_rate_pct": 3.3,
+          "by_engine": {
+            "perplexity": 16.7
+          },
+          "rank": 7
+        },
+        {
+          "brand_id": "fastspring",
+          "name": "FastSpring",
+          "origin": "global_incumbent",
+          "category": "Enterprise MoR",
+          "domains": [
+            "fastspring.com"
+          ],
+          "is_affiliated": false,
+          "mentions": 4,
+          "mention_rate_pct": 13.3,
+          "ci95_low": 5.3,
+          "ci95_high": 29.7,
+          "round_min_pct": 10.0,
+          "round_max_pct": 20.0,
+          "cited_rate_pct": 10.0,
+          "first_mention_rate_pct": 0.0,
+          "by_engine": {
+            "perplexity": 13.3
+          },
+          "rank": 8
+        },
+        {
+          "brand_id": "gumroad",
+          "name": "Gumroad",
+          "origin": "global_incumbent",
+          "category": "Creator MoR",
+          "domains": [
+            "gumroad.com"
+          ],
+          "is_affiliated": false,
+          "mentions": 1,
+          "mention_rate_pct": 3.3,
+          "ci95_low": 0.6,
+          "ci95_high": 16.7,
           "round_min_pct": 0.0,
-          "round_max_pct": 0.0,
+          "round_max_pct": 10.0,
           "cited_rate_pct": 0.0,
           "first_mention_rate_pct": 0.0,
-          "by_engine": {},
+          "by_engine": {
+            "perplexity": 3.3
+          },
+          "rank": 9
+        },
+        {
+          "brand_id": "paypal",
+          "name": "PayPal",
+          "origin": "global_incumbent",
+          "category": "PSP",
+          "domains": [
+            "paypal.com"
+          ],
+          "is_affiliated": false,
+          "mentions": 1,
+          "mention_rate_pct": 3.3,
+          "ci95_low": 0.6,
+          "ci95_high": 16.7,
+          "round_min_pct": 0.0,
+          "round_max_pct": 10.0,
+          "cited_rate_pct": 0.0,
+          "first_mention_rate_pct": 0.0,
+          "by_engine": {
+            "perplexity": 3.3
+          },
           "rank": 10
         }
       ],

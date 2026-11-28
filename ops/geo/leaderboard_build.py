@@ -326,43 +326,56 @@ def load_env_key(name: str) -> str:
     return ""
 
 
-def openrouter_sample(api_key: str, model: str, question: str) -> dict[str, Any]:
+def openrouter_sample(api_key: str, model: str, question: str, retries: int = 3) -> dict[str, Any]:
+    import time
+
     payload = {
         "model": model,
         "messages": [{"role": "user", "content": question}],
         "max_tokens": 700,
         "temperature": 0.2,
     }
-    req = urllib.request.Request(
-        OPENROUTER_URL,
-        method="POST",
-        data=json.dumps(payload).encode("utf-8"),
-        headers={
-            "Authorization": f"Bearer {api_key}",
-            "Content-Type": "application/json",
-            "HTTP-Referer": SITE,
-            "X-Title": "jasonzhu-ai-visibility-index",
-        },
-    )
-    with urllib.request.urlopen(req, timeout=90) as resp:
-        data = json.loads(resp.read().decode("utf-8"))
-    msg = (data.get("choices") or [{}])[0].get("message") or {}
-    usage = data.get("usage") or {}
-    cites = []
-    for c in data.get("citations") or []:
-        cites.append(c if isinstance(c, str) else c.get("url", ""))
-    for ann in msg.get("annotations") or []:
-        uc = ann.get("url_citation") or {}
-        if uc.get("url"):
-            cites.append(uc["url"])
-    return {
-        "text": msg.get("content") or "",
-        "citations": [c for c in cites if c],
-        "cost_usd": float(usage.get("cost") or 0.0),
-    }
+    body_bytes = json.dumps(payload).encode("utf-8")
+    last_err: Exception | None = None
+    for attempt in range(1, retries + 1):
+        try:
+            req = urllib.request.Request(
+                OPENROUTER_URL,
+                method="POST",
+                data=body_bytes,
+                headers={
+                    "Authorization": f"Bearer {api_key}",
+                    "Content-Type": "application/json",
+                    "HTTP-Referer": SITE,
+                    "X-Title": "jasonzhu-ai-visibility-index",
+                },
+            )
+            with urllib.request.urlopen(req, timeout=45) as resp:
+                data = json.loads(resp.read().decode("utf-8"))
+            msg = (data.get("choices") or [{}])[0].get("message") or {}
+            usage = data.get("usage") or {}
+            cites = []
+            for c in data.get("citations") or []:
+                cites.append(c if isinstance(c, str) else c.get("url", ""))
+            for ann in msg.get("annotations") or []:
+                uc = ann.get("url_citation") or {}
+                if uc.get("url"):
+                    cites.append(uc["url"])
+            return {
+                "text": msg.get("content") or "",
+                "citations": [c for c in cites if c],
+                "cost_usd": float(usage.get("cost") or 0.0),
+            }
+        except Exception as exc:
+            last_err = exc
+            if attempt < retries:
+                time.sleep(1.5 * attempt)
+    raise RuntimeError(f"OpenRouter failed after {retries} retries: {last_err}")
 
 
 def cmd_run_live(args: argparse.Namespace) -> int:
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+
     configs = load_all_configs()
     if args.board not in configs:
         raise SystemExit(f"未知榜单 ID: {args.board}（可选：{', '.join(configs.keys())}）")
@@ -372,35 +385,63 @@ def cmd_run_live(args: argparse.Namespace) -> int:
         raise SystemExit("缺少 OPENROUTER_API_KEY（检查环境变量或 ~/.claude/.env）")
 
     models = [m.strip() for m in args.models.split(",") if m.strip()]
+    jobs = [
+        (rnd, model, q)
+        for rnd in range(1, args.rounds + 1)
+        for model in models
+        for q in cfg["questions"]
+    ]
     total_cost = 0.0
+    errors = 0
     raw_answers: list[dict[str, Any]] = []
-    for rnd in range(1, args.rounds + 1):
-        for model in models:
-            eng = model.split("/")[0]
-            for q in cfg["questions"]:
-                if total_cost >= args.max_usd:
-                    print(f"[budget] 达到预算上限 ${total_cost:.4f} >= ${args.max_usd:.2f}，停止采样")
-                    break
-                res = openrouter_sample(api_key, model, q["question"])
-                total_cost += res["cost_usd"]
-                raw_answers.append({
-                    "question_id": q["id"],
-                    "engine": eng,
-                    "model": model,
-                    "round": rnd,
-                    "text": res["text"],
-                    "citations": res["citations"],
-                })
-            if total_cost >= args.max_usd:
-                break
+
+    def _run_one(job: tuple[int, str, dict[str, Any]]) -> dict[str, Any]:
+        rnd, model, q = job
+        res = openrouter_sample(api_key, model, q["question"])
+        return {
+            "question_id": q["id"],
+            "engine": model.split("/")[0],
+            "model": model,
+            "round": rnd,
+            "text": res["text"],
+            "citations": res["citations"],
+            "cost_usd": res["cost_usd"],
+        }
+
+    # 分批并发（每批 4 路），既提速 4 倍又能精确卡住 --max-usd 预算上限
+    batch_size = max(1, min(args.workers, 6))
+    for i in range(0, len(jobs), batch_size):
         if total_cost >= args.max_usd:
+            print(f"[budget] 达到预算上限 ${total_cost:.4f} >= ${args.max_usd:.2f}，停止采样", flush=True)
             break
+        batch = jobs[i : i + batch_size]
+        with ThreadPoolExecutor(max_workers=batch_size) as ex:
+            futs = [ex.submit(_run_one, j) for j in batch]
+            for f in as_completed(futs):
+                try:
+                    item = f.result()
+                    total_cost += item.pop("cost_usd", 0.0)
+                    raw_answers.append(item)
+                except Exception as exc:
+                    errors += 1
+                    print(f"[warn] 单题采样失败（已跳过）: {exc}", flush=True)
+        print(
+            f"[{args.board}] 进度 {min(i + batch_size, len(jobs))}/{len(jobs)} | 成功 {len(raw_answers)} | 失败 {errors} | 累计 ${total_cost:.4f}",
+            flush=True,
+        )
 
     if args.raw_out:
         rp = Path(args.raw_out)
         rp.parent.mkdir(parents=True, exist_ok=True)
-        rp.write_text(json.dumps({"board": args.board, "period": args.period, "cost_usd": round(total_cost, 4), "answers": raw_answers}, ensure_ascii=False, indent=2), encoding="utf-8")
-        print(f"已将原始采样写入本地（不进公开库）：{rp}")
+        rp.write_text(
+            json.dumps(
+                {"board": args.board, "period": args.period, "cost_usd": round(total_cost, 4), "errors": errors, "answers": raw_answers},
+                ensure_ascii=False,
+                indent=2,
+            ),
+            encoding="utf-8",
+        )
+        print(f"已将原始采样写入本地（不进公开库）：{rp}", flush=True)
 
     normalized = normalize_answers(raw_answers, source_label="live")
     board = aggregate_board(cfg, normalized, period=args.period)
@@ -411,7 +452,7 @@ def cmd_run_live(args: argparse.Namespace) -> int:
     boards[args.board] = board
     save_generated(boards)
     csv_p = write_board_csv(board)
-    print(f"完成实时采样聚合：{args.board}，样本={board['methodology']['total_answers']}，花费=${total_cost:.4f}，CSV={csv_p}")
+    print(f"完成实时采样聚合：{args.board}，样本={board['methodology']['total_answers']}，花费=${total_cost:.4f}，CSV={csv_p}", flush=True)
     return 0
 
 
@@ -474,6 +515,7 @@ def main() -> int:
     lv.add_argument("--period", default=datetime.now(timezone(timedelta(hours=8))).strftime("%Y-%m"))
     lv.add_argument("--rounds", type=int, default=3)
     lv.add_argument("--models", default="perplexity/sonar")
+    lv.add_argument("--workers", type=int, default=4, help="并发数（默认 4，最多 6）")
     lv.add_argument("--max-usd", type=float, default=0.60)
     lv.add_argument("--raw-out", default="", help="原始回答本地保存路径（务必存 specs/ 或 /tmp，绝不进公开库）")
 
